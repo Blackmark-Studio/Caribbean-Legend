@@ -2689,7 +2689,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Chimiset_44":
-			dialog.text = "To nie ma sensu, Mary. Wystarczy, że spojrzysz w lustro – jesteście do siebie podobne jak dwie krople wody. Tylko to przenikliwe spojrzenie odziedziczyłeś po ojcu.";
+			dialog.text = "To nie ma sensu, Mary. Wystarczy, że spojrzysz w lustro – jesteście do siebie podobne jak dwie krople wody. Tylko oczy masz po ojcu.";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Chimiset_44_add";
 			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("Chimiset"));
@@ -5041,7 +5041,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Tichingitu_Final_3":
 			dialog.text = "Co kapitan "+pchar.name+" zamierza zrobić dalej?";
-			link.l1 = "Mary i ja potrzebujemy chwilę sam na sam. Zbierz wszystkich rannych i odprowadź ich na statek, także zabierzcie zabitych — pochowamy ich na morzu. I, "+npchar.name+"… przekaż Alonso, że ojca Mary należy pochować zgodnie z protestanckim zwyczajem, gdzieś tutaj. O tym, że to on będzie pochowany, powinni wiedzieć tylko on i ty. O tym miejscu nie mówić nikomu, w tym Mary. Nie warto, by dręczyła się wspomnieniami.";
+			link.l1 = "Mary i ja potrzebujemy chwilę sam na sam. Zbierz wszystkich rannych i odprowadź ich na statek, także zabierzcie zabitych — pochowamy ich na morzu. I, "+npchar.name+"... przekaż Alonso, że ojca Mary należy pochować zgodnie z protestanckim zwyczajem, gdzieś tutaj. O tym, że to on będzie pochowany, powinni wiedzieć tylko on i ty. O tym miejscu nie mówić nikomu, w tym Mary. Nie warto, by dręczyła się wspomnieniami.";
 			link.l1.go = "WildRose_Tichingitu_Final_4";
 		break;
 
@@ -5054,20 +5054,20 @@ void ProcessDialogEvent()
 		
 		// Дюран
 		case "WildRose_Duran_Final_1":   
-			dialog.text = "Twardzi drańcy… Ale przechytrzyliśmy ich, ha-ha. Niech teraz gniją tu i myślą, czy warto było się z nami zadawać.";
-			link.l1 = "Dziękuję, "+npchar.name+", świetna robota. Strach pomyśleć, co by się stało z Mary… i ze mną… gdybym nie wysłał was osłonić tyły…";
+			dialog.text = "Twardzi drańcy... Ale przechytrzyliśmy ich, ha-ha. Niech teraz gniją tu i myślą, czy warto było się z nami zadawać.";
+			link.l1 = "Dziękuję, "+npchar.name+", świetna robota. Strach pomyśleć, co by się stało z Mary... i ze mną... gdybym nie wysłał was osłonić tyły...";
 			link.l1.go = "WildRose_Duran_Final_2";
 			DelLandQuestMark(npchar);
 		break;
 
 		case "WildRose_Duran_Final_2":
 			dialog.text = "Ha, kapitanie, dałbyś radę, znam cię. Widziałeś ten topór u ich wodza? Nie odrywałem od niego wzroku. Jeśli ci się nie spodoba — nie urazisz się, jeśli mi go dasz.";
-			link.l1 = "Hm… Zobaczymy, przyjacielu, zobaczymy. A tymczasem zbierz tych, co przeżyli, i odprowadź ich na statek. Zabierzcie też poległych — oddamy ich morzu. I jeszcze: ten wodz — to ojciec Mary. Weź Alonso i pochowaj go zgodnie z protestanckim zwyczajem, gdzieś tutaj. Nikt nie powinien wiedzieć, gdzie leży grób. Zwłaszcza Mary. Nie chcę, by męczyła się wspomnieniami.";
+			link.l1 = "Hm... Zobaczymy, przyjacielu, zobaczymy. A tymczasem zbierz tych, co przeżyli, i odprowadź ich na statek. Zabierzcie też poległych — oddamy ich morzu. I jeszcze: ten wodz — to ojciec Mary. Weź Alonso i pochowaj go zgodnie z protestanckim zwyczajem, gdzieś tutaj. Nikt nie powinien wiedzieć, gdzie leży grób. Zwłaszcza Mary. Nie chcę, by męczyła się wspomnieniami.";
 			link.l1.go = "WildRose_Duran_Final_3";
 		break;
 
 		case "WildRose_Duran_Final_3":
-			dialog.text = "Zostanie zrobione, kapitanie. Chwila… A nie… Idę.";
+			dialog.text = "Zostanie zrobione, kapitanie. Chwila... A nie... Idę.";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_31");
@@ -5103,7 +5103,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Irons_Final_2":
-			dialog.text = "E‑e… właściwie to jestem oficerem, i…";
+			dialog.text = "E‑e... właściwie to jestem oficerem, i...";
 			link.l1 = "Tymczasowo. Dziś oficer — jutro marynarz, pojutrze — żebrak.";
 			link.l1.go = "WildRose_Irons_Final_3";
 		break;

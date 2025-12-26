@@ -224,7 +224,15 @@ Prologue_Inventory_controlsimg2 {Alchemy}
 Prologue_Amulet {Amulettes}
 Prologue_Amulet_descr
 {
-Les amulettes sont de puissants amplificateurs pour le personnage et se divisent en offensives, défensives et de soutien. Notez que vous ne pouvez pas équiper une amulette offensive et une défensive en même temps, alors choisissez vos ensembles avec soin.~En plus des amulettes, il existe deux autres types d’amplificateurs : les talismans et les porte-bonheurs.~Les talismans durent plus longtemps que les amulettes et ont des effets plus larges, tandis que les porte-bonheurs sont très puissants, durent indéfiniment et ont un emplacement dédié dans l’inventaire.~Gardez toujours plusieurs ensembles dans l’inventaire pour réussir les tests de compétence difficiles et les combats difficiles en mer et sur terre.~Attention : après activation, retirer une amulette ou un talisman le détruit, alors décidez bien.
+Les amulettes et les talismans sont de puissants bonus temporaires pour le personnage et s’installent dans des emplacements spéciaux de l’inventaire.
+~
+Les talismans peuvent être fabriqués par le joueur, tandis que les amulettes ne peuvent être que trouvées ou achetées.
+~
+Il existe également des Wards : ils possèdent une puissance immense, agissent sans limite de durée et disposent d’un emplacement distinct dans l’inventaire.
+~
+Conservez toujours plusieurs ensembles dans votre inventaire pour les épreuves de compétences particulièrement difficiles et les combats éprouvants en mer comme sur terre.
+~
+Attention : après activation, retirer une amulette ou un talisman le détruit. Réfléchissez bien avant d’agir.
 }
 Prologue_Trading {Bases du commerce}
 Prologue_Trading_descr
@@ -274,4 +282,10 @@ Prologue_DeadSearch {Fouille}
 Prologue_DeadSearch_descr
 {
 Après chaque combat, il est temps de ramasser le butin.Vous pouvez fouiller n’importe quel ennemi vaincu en appuyant sur le bouton de fouille.~Trouvez l’élixir de soin dont Alonso a besoin !
+}
+MapEncounter {Bateaux aux voiles colorées}
+MapEncounter_descr
+{
+Parfois, au cours d’une quête, vous devrez trouver un navire particulier sur la carte du monde.~
+Cherchez un navire aux voiles colorées à l’endroit indiqué dans le journal et interagissez avec lui.
 }

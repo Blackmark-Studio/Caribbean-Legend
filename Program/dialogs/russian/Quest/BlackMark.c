@@ -1656,6 +1656,12 @@ void ProcessDialogEvent()
 		//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "Irons_officer":
 			dialog.text = "Да-а-а, капитан?";
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				Link.l1 = "Томми, похоже, с этого момента наши пути расходятся.";
+				Link.l1.go = "SharlieEpilog_Irons_1";
+				break;
+			}
 			if (startHeroType == 4 && CheckAttribute(pchar, "questTemp.BlackMarkQuestCompleted"))
 			{
 				dialog.text = "Ну что, Румба, на чьих костях сегодня спляшем?";
@@ -1880,7 +1886,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -1895,7 +1901,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;
@@ -1911,7 +1917,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetMusketBullets1_" + i;
 			}
 		break;
@@ -1925,7 +1931,7 @@ void ProcessDialogEvent()
 			if(LAi_SetCharacterUseBullet(NPChar, MUSKET_ITEM_TYPE, sBullet))
 			{
 				rItem = ItemsFromID(sBullet);
-				notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+				notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			}
 			LAi_GunSetUnload(NPChar, MUSKET_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
@@ -2138,5 +2144,56 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddDialogExitQuestFunction("BM_Irons_tieyasal_otkaz");
 		break;
+		
+	// Эпилог
+		case "SharlieEpilog_Irons_1":
+			dialog.text = "Ха. Да ты гляди, и шутить научился. Почти как я. Но на такую наживку я не клюну, даже не надейся.";
+			link.l1 = "Ты не понял - это не шутки. Я отправляюсь в Европу, к отцу. Ты, конечно, можешь остаться здесь, подождать... но я не знаю, сколько времени это займёт.";
+			link.l1.go = "SharlieEpilog_Irons_2";
+		break;
+		
+		case "SharlieEpilog_Irons_2":
+			dialog.text = "Да уж, ты не так хорош, чтобы шутить с таким лицом. Значит, даёшь мне пинка под зад? После того как я твою шкуру спасал? После всего, что сделал для тебя?";
+			link.l1 = "Не драматизируй, Томми. Ты делал свою работу, и получал за неё жалованье. Признаю - ты хорош в своём деле. И если решишь подождать, буду рад снова видеть тебя на борту. А пока...";
+			link.l1.go = "SharlieEpilog_Irons_3";
+		break;
+		
+		case "SharlieEpilog_Irons_3":
+			dialog.text = "Великодушно, чёрт побери. Что ж, спасибо, капитан-предатель, сэр. Так и запишем - 'верный пёс может дождаться хозяина, если не сдохнет от скуки'.";
+			link.l1 = "Не принимай это близко к сердцу. Так сложились обстоятельства.";
+			link.l1.go = "SharlieEpilog_Irons_nothing";
+			link.l2 = "Понимаю, ты зол. Я бы тоже на твоём месте не обрадовался бы. Я выплачу тебе месячное жалование сверх того, что тебе полагается. Надеюсь, ты не держишь на меня зла.";
+			link.l2.go = "SharlieEpilog_Irons_salary";
+			link.l3 = "Знаю, эта новость застала тебя врасплох, и у тебя есть основания негодовать. Я готов выплатить тебе троейное месячное жалование сверх того, что тебе положено.";
+			link.l3.go = "SharlieEpilog_Irons_salary_X3";
+		break;
+		
+		case "SharlieEpilog_Irons_nothing":
+			dialog.text = "К чёрту обстоятельства. И тебя к чёрту. Жалею, что вообще связался с тобой. И знаешь что? Это не ты выгоняешь меня - я сам ухожу.";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Irons_exit";
+		break;
+		
+		case "SharlieEpilog_Irons_salary":
+			dialog.text = "Оставь эти гроши для побирушек. Обойдусь и без твоих подачек.";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Irons_exit";
+			//
+			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+		break;
+		
+		case "SharlieEpilog_Irons_salary_X3":
+			dialog.text = "Тройное жалованье? Вот это щедрость... Я прямо растроган. Давай сюда свою подачку. Поставлю за неё выпивку парням в таверне - в честь капитана Шарля де Мора: образца преданности, символа дружбы, примера для подражания.";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Irons_exit";
+			//
+			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+		break;
+		
+		case "SharlieEpilog_Irons_exit":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Irons_exit");
+		break;
+	
 	}
 } 

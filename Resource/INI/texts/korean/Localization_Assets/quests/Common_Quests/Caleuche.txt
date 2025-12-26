@@ -1,0 +1,40 @@
+Caleuche_1 {Tuttuathapak}
+Caleuche_2 { }
+Caleuche_3 {선장-언데드}
+Caleuche_4 { }
+Caleuche_5 {유령선}
+Caleuche_6 {Fergus}
+Caleuche_7 {Hooper}
+Caleuche_8 {유령선에서 탈출했습니다!}
+Caleuche_9 {Reginald}
+Caleuche_10 {Jackson}
+Caleuche_11 {Harpy}
+Caleuche_12 {셰벡 'Harpy'}
+Caleuche_13 {죽은 여주인}
+Caleuche_14 { }
+Caleuche_15 {Chavinavy}
+Caleuche_16 { }
+Caleuche_17 {Esberto}
+Caleuche_18 {Salinas}
+Caleuche_19 {투투아타파크의 호신부가 힘을 잃었습니다!}
+Caleuche_20 {T' 키를 눌러 사용}
+Caleuche_21 {포털이 차단되었습니다!}
+Caleuche_22 {차비나비 추장}
+Caleuche_23 { }
+Caleuche_24 {사원 언데드}
+Caleuche_25 { }
+Caleuche_26 {수평선에 유령선이다!}
+Caleuche_27 {Baltazar}
+Caleuche_28 {de Cordes}
+Caleuche_29 { }
+Caleuche_30 {더 민첩해진 느낌이 듭니다}
+Caleuche_31 {더 단단해진 기분이 듭니다}
+Caleuche_32 {더 강해진 기분이 듭니다}
+Caleuche_33 {통찰력이 예리해집니다}
+Caleuche_34 {통찰력이 높아진 기분이다}
+Caleuche_35 {자신감이 생긴다}
+Caleuche_36 {영감이 솟는다}
+Caleuche_37 {유령선이 수평선에 나타났다!}
+Caleuche_38 {부상으로 의식을 잃었습니다...}
+Caleuche_39 { }
+Caleuche_40 { }

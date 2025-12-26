@@ -1844,7 +1844,7 @@ string findTraderCity(ref NPChar)
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(npchar.nation), sti(colonies[n].nation));
-		if (colonies[n].id != "Panama" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //не на свой остров
+		if (colonies[n].id != "Panama" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //не на свой остров
 		{
 			if (nation == RELATION_ENEMY || sti(npchar.nation) == PIRATE)
 			{
@@ -1868,7 +1868,7 @@ string findPassangerCity(ref NPChar)
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(npchar.nation), sti(colonies[n].nation));
-		if (colonies[n].nation != "none" && colonies[n].id != "Panama" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //не на свой остров
+		if (colonies[n].nation != "none" && colonies[n].id != "Panama" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //не на свой остров
 		{
 			if (nation == RELATION_ENEMY || sti(npchar.nation) == PIRATE)
 			{

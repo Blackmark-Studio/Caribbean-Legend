@@ -1,0 +1,8 @@
+Tonzag_1 {ödül avcıları}
+Tonzag_2 { }
+Tonzag_3 { }
+Tonzag_4 {6 saat geçti...}
+Tonzag_5 {Keşif modu: zamanlayıcı devre dışı.}
+Tonzag_6 {Bronz Atlı Açıldı}
+Tonzag_7 {Alberto}
+Tonzag_8 {Gaodio}

@@ -2,7 +2,7 @@
 // здесь и далее ник boal - это разработческий ник ALexusB
 
 #define VERSION_NUMBER1       "Caribbean Legend "
-#define VERSION_NUMBER2       "ver. 1.6.0 (26.12.25)"
+#define VERSION_NUMBER2       "ver. 1.7.0 (26.12.25)"
 #define VERSION_NUMBER3       "BlackMark.bz"
 
 #define VERSION_NUM      150  // текущий номер
@@ -78,6 +78,8 @@ bool SandBoxMode = false;
 bool bGlobalTutor = false;
 //belamour не обновлять интерфейсы
 bool DontRefreshBLI = false;
+// безопасный режим
+bool bSFW = false;
 // belamour переспектива наземной камеры
 //int iLocCamPersp = 1;
 // belamour переспектива морской камеры

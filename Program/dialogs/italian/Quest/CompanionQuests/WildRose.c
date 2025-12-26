@@ -276,7 +276,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Djerry_4":
-			dialog.text = "Ah sì, certo, ahah. E poi William Bishop mi scuoierà vivo – me l'ha raccontato uno nero della piantagione… Bishop non ci va leggero con chi scappa – che tu sia nero o bianco, non fa differenza.";
+			dialog.text = "Ah sì, certo, ahah. E poi William Bishop mi scuoierà vivo – me l'ha raccontato uno nero della piantagione... Bishop non ci va leggero con chi scappa – che tu sia nero o bianco, non fa differenza.";
 			link.l1 = "Temo che, in un modo o nell'altro, dovrai tornare alla piantagione...";
 			link.l1.go = "Djerry_5";
 			link.l2 = "Quindi, non tornerai alla piantagione di tua spontanea volontà, giusto?";
@@ -929,7 +929,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_82":
-			dialog.text = "Ieri abbiamo parlato del farsetto e del nido di corvo, dove una volta l'avevo nascosto… E all'improvviso mi è venuta una nostalgia tremenda per quei tempi in cui mi rifugiavo lì da tutti, per leggere in silenzio libri sulla grande terra… Non ho resistito e ci sono andata. Prima potevo restare lì per ore, ma oggi… ho semplicemente aspettato l'alba. E ho capito: più di ogni altra cosa al mondo, voglio stare accanto a te.";
+			dialog.text = "Ieri abbiamo parlato del farsetto e del nido di corvo, dove una volta l'avevo nascosto... E all'improvviso mi è venuta una nostalgia tremenda per quei tempi in cui mi rifugiavo lì da tutti, per leggere in silenzio libri sulla grande terra... Non ho resistito e ci sono andata. Prima potevo restare lì per ore, ma oggi... ho semplicemente aspettato l'alba. E ho capito: più di ogni altra cosa al mondo, voglio stare accanto a te.";
 			link.l1 = "E io sono con te, "+npchar.name+". Allora, andiamo   da Donald? Avremo di che parlare, giusto?";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap2_IslandOfJustice_7");
@@ -1649,7 +1649,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_23":
-			dialog.text = "Eh, guardo i giovani d'oggi e… no, no, noi non ci comportavamo così con i più grandi. Ma tu non c'entri, ovviamente. Volevo solo dire che sarà più facile se rispondo alle tue domande una alla volta, invece che a tutte insieme…";
+			dialog.text = "Eh, guardo i giovani d'oggi e... no, no, noi non ci comportavamo così con i più grandi. Ma tu non c'entri, ovviamente. Volevo solo dire che sarà più facile se rispondo alle tue domande una alla volta, invece che a tutte insieme...";
 			link.l1 = "...";
 			link.l1.go = "Oreli_23_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1671,7 +1671,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_25":
-			dialog.text = "Sono arrivata sull'Isola nel 1633, a volte quella giornata mi torna negli incubi. La tempesta, la nostra 'Reprisal' – il fluyt su cui io e mio marito stavamo navigando verso la Florida – sbattuto dalle onde, pronto a capovolgersi da un momento all'altro, e noi che ripetevamo tutte le preghiere che conoscevamo e ne inventavamo di nuove… E poi uno schianto e…";
+			dialog.text = "Sono arrivata sull'Isola nel 1633, a volte quella giornata mi torna negli incubi. La tempesta, la nostra 'Reprisal' – il fluyt su cui io e mio marito stavamo navigando verso la Florida – sbattuto dalle onde, pronto a capovolgersi da un momento all'altro, e noi che ripetevamo tutte le preghiere che conoscevamo e ne inventavamo di nuove... E poi uno schianto e...";
 			link.l1 = "...";
 			link.l1.go = "Oreli_25_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -3622,7 +3622,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Oreli_74":
-			dialog.text = "Il cappello di tua madre, Teresa. Ce l'aveva con sé quando i superstiti del naufragio furono portati sulla 'Ceres Smitty'. Quando Teresa è morta, ho raccolto quel cappello da terra accanto al suo letto – e poi me ne sono dimenticata… Me ne sono ricordata solo oggi, durante la nostra conversazione.";
+			dialog.text = "Il cappello di tua madre, Teresa. Ce l'aveva con sé quando i superstiti del naufragio furono portati sulla 'Ceres Smitty'. Quando Teresa è morta, ho raccolto quel cappello da terra accanto al suo letto – e poi me ne sono dimenticata... Me ne sono ricordata solo oggi, durante la nostra conversazione.";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Oreli_74_add";
 		break;
@@ -3993,14 +3993,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_214_1":
-			dialog.text = "Penso che Eric e Aurélie parlassero dell'Isola, giusto? E di quelle persone che vivevano qui – tanto tempo fa. Ero piccola e non capivo, ma ora… ora l'ho capito davvero. Perché qui da più tempo di me ci sono Antonio, Cécile… e alcuni rivados, come Chimiseta – ma con nessuno di loro sono mai stata davvero vicina. Gli altri invece: Eric, Aurélie, Alan e tanti altri, – sono morti.";
+			dialog.text = "Penso che Eric e Aurélie parlassero dell'Isola, giusto? E di quelle persone che vivevano qui – tanto tempo fa. Ero piccola e non capivo, ma ora... ora l'ho capito davvero. Perché qui da più tempo di me ci sono Antonio, Cécile... e alcuni rivados, come Chimiseta – ma con nessuno di loro sono mai stata davvero vicina. Gli altri invece: Eric, Aurélie, Alan e tanti altri, – sono morti.";
 			link.l1 = "Capisco. Il mondo è diventato... un po' più piccolo, giusto?";
 			link.l1.go = "WildRose_Mary_215";
 			AddCharacterExpToSkill(pchar, "Sneak", 100);
 		break;
 
 		case "WildRose_Mary_214_2":
-			dialog.text = "Penso che Eric e Aurélie parlassero dell'Isola, giusto? E di quella gente che viveva qui – tanto, tanto tempo fa. Ero piccola e non capivo, ma ora… ora l'ho realizzato davvero. Perché solo Antonio, Cécile… e alcuni Rivadòs, come Chimiseta, vivono qui da più tempo di me – ma con nessuno di loro sono mai stata davvero vicina. Gli altri: Eric, Aurélie, Alan e tanti altri, – sono morti.";
+			dialog.text = "Penso che Eric e Aurélie parlassero dell'Isola, giusto? E di quella gente che viveva qui – tanto, tanto tempo fa. Ero piccola e non capivo, ma ora... ora l'ho realizzato davvero. Perché solo Antonio, Cécile... e alcuni Rivadòs, come Chimiseta, vivono qui da più tempo di me – ma con nessuno di loro sono mai stata davvero vicina. Gli altri: Eric, Aurélie, Alan e tanti altri, – sono morti.";
 			link.l1 = "Capisco. Il mondo è diventato... un po' più piccolo, giusto?";
 			link.l1.go = "WildRose_Mary_215";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
@@ -4019,7 +4019,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_217":
-			dialog.text = "Non so come spiegartelo. Sai che odore ha l'aria prima di un temporale? Ricordi – quando sei arrivato qui per la prima volta, che tensione si sentiva ovunque… Tutti erano pronti a sbranarsi a vicenda, molti sentivano l'odore della polvere da sparo e del sangue. Dopo che hai ucciso Chad, tutto è cambiato – era come se si potesse respirare più facilmente… Ma ora – quella sensazione è tornata di nuovo.";
+			dialog.text = "Non so come spiegartelo. Sai che odore ha l'aria prima di un temporale? Ricordi – quando sei arrivato qui per la prima volta, che tensione si sentiva ovunque... Tutti erano pronti a sbranarsi a vicenda, molti sentivano l'odore della polvere da sparo e del sangue. Dopo che hai ucciso Chad, tutto è cambiato – era come se si potesse respirare più facilmente... Ma ora – quella sensazione è tornata di nuovo.";
 			link.l1 = "Sì, ho sentito qualcosa di simile. Ma forse è solo l'atmosfera, giusto? Un funerale, dopotutto...";
 			link.l1.go = "WildRose_Mary_218_1";
 			link.l2 = "Sei esausta, "+npchar.name+". Riposati un po' – ti sentirai meglio. E poi, come si può sentirsi diversamente a un funerale, giusto?";
@@ -4027,14 +4027,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_218_1":
-			dialog.text = "Quando abbiamo affidato al mare Erik e tanti altri abitanti dell'Isola, non era così, te lo dico io. Si sentiva una sorta di… unione. Ma oggi – alcuni si guardavano quasi come lupi, anche se recitavano la stessa preghiera.";
+			dialog.text = "Quando abbiamo affidato al mare Erik e tanti altri abitanti dell'Isola, non era così, te lo dico io. Si sentiva una sorta di... unione. Ma oggi – alcuni si guardavano quasi come lupi, anche se recitavano la stessa preghiera.";
 			link.l1 = "Parli di Leighton e Donald, giusto?";
 			link.l1.go = "WildRose_Mary_219";
 			AddCharacterExpToSkill(pchar, "Commerce", 100);
 		break;
 
 		case "WildRose_Mary_218_2":
-			dialog.text = "Quando abbiamo affidato al mare Erik e tanti altri abitanti dell'Isola, non era così, te lo dico io. Si sentiva una specie di… unione. Ma oggi – alcuni si guardavano quasi come lupi, anche se recitavano la stessa preghiera.";
+			dialog.text = "Quando abbiamo affidato al mare Erik e tanti altri abitanti dell'Isola, non era così, te lo dico io. Si sentiva una specie di... unione. Ma oggi – alcuni si guardavano quasi come lupi, anche se recitavano la stessa preghiera.";
 			link.l1 = "Parli di Leighton e Donald, giusto?";
 			link.l1.go = "WildRose_Mary_219";
 			AddCharacterExpToSkill(pchar, "Defence", 100);
@@ -4663,7 +4663,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_27":
-			dialog.text = "Quel bastardo crudele addestrava l'equipaggio a tal punto che la gente crollava in mare dalla stanchezza. Se conosci il suo nome e sai che era il comandante della 'Cornwall', avrai sicuramente visto i suoi documenti — lucidi come il didietro leccato di un gatto\nIl nostro eroico Joshua aveva una scatola piena di medaglie. Tanti ragazzini ingenui come te volevano servire sotto il suo comando — in fondo, diciamolo, falciava voi ranocchi come una falce affilata falcia l'erba bagnata dalla pioggia — ma una volta saliti a bordo della 'Cornwall', capivano in fretta il loro errore\nEravamo stanchi morti di sopportarlo, "+pchar.lastname+". Qualcuno aveva persino scritto delle richieste di trasferimento – ma finivano perse sugli scaffali dell'Ammiragliato o bruciate nei suoi forni. Però la vita ci ha comunque dato una possibilità – non hanno trasferito noi dalla 'Cornwall', ma qualcun altro… a bordo. John Lawson – il cocco di Cromwell, sicuramente ne hai sentito parlare, giusto?";
+			dialog.text = "Quel bastardo crudele addestrava l'equipaggio a tal punto che la gente crollava in mare dalla stanchezza. Se conosci il suo nome e sai che era il comandante della 'Cornwall', avrai sicuramente visto i suoi documenti — lucidi come il didietro leccato di un gatto\nIl nostro eroico Joshua aveva una scatola piena di medaglie. Tanti ragazzini ingenui come te volevano servire sotto il suo comando — in fondo, diciamolo, falciava voi ranocchi come una falce affilata falcia l'erba bagnata dalla pioggia — ma una volta saliti a bordo della 'Cornwall', capivano in fretta il loro errore\nEravamo stanchi morti di sopportarlo, "+pchar.lastname+". Qualcuno aveva persino scritto delle richieste di trasferimento – ma finivano perse sugli scaffali dell'Ammiragliato o bruciate nei suoi forni. Però la vita ci ha comunque dato una possibilità – non hanno trasferito noi dalla 'Cornwall', ma qualcun altro... a bordo. John Lawson – il cocco di Cromwell, sicuramente ne hai sentito parlare, giusto?";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Rupert_28";
 		break;
@@ -4763,7 +4763,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_49":
-			dialog.text = "Io, giusto per farti sapere, sono una navigatrice esperta – non come tanti altri. Non c'è stato nessun errore, tenevamo la rotta dritta verso nord. Ma appena siamo entrati nello Stretto Sopravento, si è scatenata una tempesta terribile. Ancora mi chiedo per quale miracolo non ci siamo schiantati contro la costa cubana, ma invece siamo stati trascinati lungo di essa…";
+			dialog.text = "Io, giusto per farti sapere, sono una navigatrice esperta – non come tanti altri. Non c'è stato nessun errore, tenevamo la rotta dritta verso nord. Ma appena siamo entrati nello Stretto Sopravento, si è scatenata una tempesta terribile. Ancora mi chiedo per quale miracolo non ci siamo schiantati contro la costa cubana, ma invece siamo stati trascinati lungo di essa...";
 			link.l1 = "Un vero miracolo – non c'è altra spiegazione.";
 			link.l1.go = "WildRose_Rupert_50";
 		break;

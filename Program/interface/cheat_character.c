@@ -414,7 +414,7 @@ void CalculateInfoDataF1()
 
     pchar.Skill.FreeSkill = sti(pchar.Skill.FreeSkill) + 35;
     
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
     //LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
@@ -446,7 +446,7 @@ void CalculateInfoDataF3()
 
    pchar.perks.FreePoints_self = sti(pchar.perks.FreePoints_self) + 1;
 
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
     SetFormatedText("INFO_TEXT", totalInfo);
 
@@ -483,7 +483,7 @@ void CalculateInfoDataF5()
     if(!CheckAttribute(pchar, "cheats.energyplus")) pchar.cheats.energyplus = 10.0;
 		else pchar.cheats.energyplus = stf(pchar.cheats.energyplus) + 10.0;
     
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
     SetFormatedText("INFO_TEXT", totalInfo);
 
@@ -515,7 +515,7 @@ void CalculateInfoDataF7()
 
 	ChangeCharacterComplexReputation(pchar,"nobility", -5);
 
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
 	
     SetFormatedText("INFO_TEXT", totalInfo);
@@ -573,7 +573,7 @@ void CalculateInfoDataF10()
 		totalInfo = totalInfo + NewStr() + " God mode ON "+ NewStr();
         
     }
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
     SetFormatedText("INFO_TEXT", totalInfo);
 
@@ -632,7 +632,7 @@ void CalculateInfoDataF13()
 		DeleteAttribute(pchar, "cheats.dopgrus");
 	}
 	
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
     SetFormatedText("INFO_TEXT", totalInfo);
 
@@ -656,7 +656,7 @@ void CalculateInfoDataF14()
 		DeleteAttribute(pchar, "cheats.bladedamage");
 	}
 
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
 	
     SetFormatedText("INFO_TEXT", totalInfo);
@@ -682,7 +682,7 @@ void CalculateInfoDataF15()
 		DeleteAttribute(pchar, "cheats.gundamage");
 	}
 
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
     
     SetFormatedText("INFO_TEXT", totalInfo);
@@ -709,7 +709,7 @@ void CalculateInfoDataF16()
 		DeleteAttribute(pchar, "cheats.guncharge");
 	}
     
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
 	
     SetFormatedText("INFO_TEXT", totalInfo);
@@ -735,7 +735,7 @@ void CalculateInfoDataF17()
 		DeleteAttribute(pchar, "cheats.sliding");
 	}
    
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
     
     SetFormatedText("INFO_TEXT", totalInfo);
@@ -761,7 +761,7 @@ void CalculateInfoDataF18()
 		DeleteAttribute(pchar, "cheats.energyupdate");
 	}
 	
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
 	
     SetFormatedText("INFO_TEXT", totalInfo);

@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 			attrLoc = Sea_FindNearColony();
 			if (attrLoc != "none") 
 			{
-                link.l3 = "Wir sind nicht weit von "+GetConvertStr(attrLoc+" Stadt","LocLables.txt")+". Und ich könnte dich hier gehen lassen.";
+                link.l3 = "Wir sind nicht weit von "+GetCityName(attrLoc)+". Und ich könnte dich hier gehen lassen.";
 			    link.l3.go = "free_withoutFee";
 			}
 			else
@@ -161,7 +161,7 @@ void ProcessDialogEvent()
 				attrLoc = Sea_FindNearColony();
 				if (attrLoc != "none") 
 				{
-					link.l4 = "Wir sind nicht weit von "+GetConvertStr(attrLoc+" Stadt","LocLables.txt")+". Und ich könnte dich hier gehen lassen.";
+					link.l4 = "Wir sind nicht weit von "+GetCityName(attrLoc)+". Und ich könnte dich hier gehen lassen.";
 					link.l4.go = "free_withoutFee";
 				}
 				else

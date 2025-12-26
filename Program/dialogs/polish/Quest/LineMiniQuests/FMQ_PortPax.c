@@ -58,7 +58,7 @@ void ProcessDialogEvent()
 		case "officer_5":
 			PlaySound("Voice\English\z_arest_02.wav");
 			dialog.text = "Co do diabła się tu dzieje, panowie? Słyszałem walkę.";
-			link.l1 = "Uff... Oficerze, jestem tu na prośbę kelnerki z tawerny — twierdziła, że ktoś tutaj jest zabijany, i niestety miała rację — tamci dwaj łajdacy zaatakowali tego szlachetnego szlachcica. Niestety, nie udało mi się go uratować. Dranie go zamordowali.";
+			link.l1 = "Uff... Oficerze, jestem tu na prośbę kelnerki z karczmy — twierdziła, że ktoś tutaj jest zabijany, i niestety miała rację — tamci dwaj łajdacy zaatakowali tego szlachetnego szlachcica. Niestety, nie udało mi się go uratować. Dranie go zamordowali.";
 			link.l1.go = "officer_6";
 		break;
 		
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noble":
-			dialog.text = "Permettetemi di spiegare tutto, ufficiale! Io, Don Domingo Ortiz Albalate da Santo Domingo, sono arrivato a Port-au-Prince su invito di una giovane signora. In attesa dell’incontro, mi sono fermato in una taverna. Ma non erano passate nemmeno due ore quando dos canallas malditas sono irrotte nella mia stanza, e se non fosse stato per l’aiuto tempestivo di "+GetSexPhrase("questo buon señor comparso","questa bella señorita comparsa")+", sarei stato nei guai.";
+			dialog.text = "Pozwól, że wszystko wyjaśnię, oficerze! Ja, Don Domingo Ortiz Albalate z Santo Domingo, przybyłem do Port-au-Prince na zaproszenie młodej damy. Czekając na spotkanie, zatrzymałem się w karczmie. Nie minęły nawet dwie godziny, gdy do mojego pokoju wpadło dwóch malditas canallas, i gdyby nie "+GetSexPhrase("pojawił się tu ten dobry pan","pojawiła się tu ta piękna pani")+", byłbym w sporych tarapatach.";
 			link.l1 = "Don Domingo Ortiz Albalate? Jesteś Hiszpanem?";
 			link.l1.go = "noble_1";
 		break;
@@ -101,8 +101,8 @@ void ProcessDialogEvent()
 		
 		case "noble_3":
 			PlaySound("Voice\English\LE\Domingo\Domingo_01.wav");
-			dialog.text = ""+UpperFirst(GetAddress_Form(NPChar))+" Kapitanie! "+UpperFirst(GetAddress_Form(NPChar))+" Kapitanie! Przysięgam na Santiago i Błogosławioną Dziewicę, że jesteś szlachetnym człowiekiem, a prawdziwy syn Kastylii zawsze nagradza taką szlachetność! Chciałbym, abyś został nagrodzony później, gdy zakończę swoje sprawy tutaj. Proszę, zaszczyć mnie wizytą w moim skromnym domu w Santo Domingo! Jest blisko bram miasta. Wystawię dla ciebie ucztę, "+GetSexPhrase("mój buen amigo","mi salvadora")+"! Zapamiętaj moje imię, to Don Domingo Ortiz Albalate!";
-			link.l1 = "...";
+			dialog.text = ""+UpperFirst(GetAddress_Form(NPChar))+" Kapitanie! "+UpperFirst(GetAddress_Form(NPChar))+" Kapitanie! Przysięgam na Santiago i Błogosławioną Dziewicę, że jesteś szlachetnym człowiekiem, a prawdziwy syn Kastylii zawsze nagradza taką szlachetność! Chciałbym, abyś został nagrodzony później, gdy zakończę swoje sprawy tutaj. Proszę, zaszczyć mnie wizytą w moim skromnym domu w Santo Domingo! Jest blisko bram miasta. Wystawię dla ciebie ucztę, "+GetSexPhrase("mi buen amigo","mi salvadora")+"! Zapamiętaj moje imię, to Don Domingo Ortiz Albalate!";
+			link.l1 = "Yyy... bien, bien...";
 			link.l1.go = "noble_4";
 		break;
 		
@@ -139,7 +139,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noble_9":
-			dialog.text = "Tylko podejrzenia... straszliwe podejrzenia, "+GetSexPhrase("mi buen amigo","mi salvadora")+"! Jak mógł mój matki brat zrobić coś takiego?";
+			dialog.text = "Tylko podejrzenia... straszliwe podejrzenia, "+GetSexPhrase("mi buen amigo","mi salvadora")+"! Jak mógł brat mojej matki zrobić coś takiego?";
 			link.l1 = "Możesz mnie wtajemniczyć? Przykro mi, Don Domingo, ale z mojego doświadczenia wynika, że krewni często są najgorszymi wrogami, jakich człowiek może mieć...";
 			link.l1.go = "noble_10";
 		break;
@@ -330,13 +330,13 @@ void ProcessDialogEvent()
 		
 		case "noble_36":
 			PlaySound("Voice\English\LE\Domingo\Domingo_05.wav");
-			dialog.text = "Wujek Luis jest tam, gdzie jego dusza powinna być - w piekle... "+pchar.name+", wysłał cię do mnie mój anioł stróż! Cieszę się, że nie zaufałeś słowu tego łajdaka. Szczerze mówiąc, obawiałem się, że po prostu zostawisz mnie tutaj samego, żeby walczyć z tą kanalią\nTak, "+GetAddress_Form(NPChar)+", sam nie jestem doskonały, ale to... to plugawe kłamstwo o tym, że wynająłem piratów, aby zamordowali moich własnych rodziców! Obwiniać mnie o to... to! Bah! Zasłużony los.";
+			dialog.text = "Wujek Luis jest tam, gdzie jego dusza powinna być - w piekle... "+pchar.name+", wysłał cię do mnie mój anioł stróż! Cieszę się, że nie zaufałeś słowu tego łajdaka. Szczerze mówiąc, obawiałem się, że po prostu zostawisz mnie tutaj samego, żeby walczyć z tą kanalią\nTak, "+GetAddress_Form(NPChar)+", sam nie jestem doskonały, ale to... to plugawe kłamstwo o tym, że wynająłem piratów, aby zamordowali moich własnych rodziców! Obwiniać mnie o to... to! Argh! Zasłużony los.";
 			link.l1 = "Cieszę się, że dotarliśmy, Don Domingo. Co teraz? Mam nadzieję, że nie naruszyliśmy hiszpańskiego prawa.";
 			link.l1.go = "noble_37";
 		break;
 		
 		case "noble_37":
-			dialog.text = "Z prawem? Ha-ha! Nie, "+pchar.name+", pokażę tę wspaniałą księgę rachunkową z wszystkimi operacjami przemytniczymi mojego wuja. Nie zapomnij o kilku zamachach na moje życie, mamy wielką liczbę świadków po jego ostatniej próbie właśnie teraz. Nie martw się o to, "+GetAddress_Form(NPChar)+". To moje miasto, czas im wszystkim pokazać!";
+			dialog.text = "Prawa? Ha-ha! Nie, "+pchar.name+", pokażę tę wspaniałą księgę rachunkową ze wszystkimi operacjami przemytniczymi mojego wuja. Nie zapomnij o kilku zamachach na moje życie, mamy wielką liczbę świadków po jego ostatniej próbie właśnie teraz. Nie martw się o to, "+GetAddress_Form(NPChar)+". To moje miasto, czas im wszystkim pokazać!";
 			link.l1 = "Proszę postępuj ostrożnie, señor. Niech myślą o tobie lepiej niż myśleli o twoim zmarłym wujku.";
 			link.l1.go = "noble_38";
 		break;
@@ -357,20 +357,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noble_40":
-			dialog.text = "Plantacja jest wspaniała, nie mogę tego samego powiedzieć o pieniądzach - okazuje się, że mój drogi wujek przesyłał wszystkie pieniądze do banku w Kartagenie. Odzyskanie mojego złota zajmie dużo czasu prawnikom. Ale to w porządku, mogę to załatwić. Nie smuć się kapitanie, dotrzymam obietnic, by wynagrodzić cię za twoją szlachetność, uczciwość i przyjaźń!";
+			dialog.text = "Plantacja jest wspaniała, nie mogę tego samego powiedzieć o pieniądzach - okazuje się, że mój drogi wujek przesyłał wszystkie pieniądze do banku w Kartagenie. Odzyskanie mojego złota zajmie dużo czasu prawnikom. Ale w porządku, mogę to załatwić. Nie smuć się kapitanie, dotrzymam obietnic, by wynagrodzić cię za twoją szlachetność, uczciwość i przyjaźń!";
 			link.l1 = "Nie myślałem o nagrodzie, gdy walczyłem po twojej stronie, señor...";
 			link.l1.go = "noble_41";
 		break;
 		
 		case "noble_41":
-			dialog.text = "Znam to, kapitanie, i to mówi wiele o twoim charakterze! Każdy dobry uczynek musi zostać nagrodzony. Więc, chociaż w tej chwili nie mam pieniędzy, wydam rozkazy, aby załadować twój statek towarami z mojej plantacji. Mam na myśli kawę, świetną partię tego towaru. Jestem pewien, że będziesz mógł sprzedać to z dużym zyskiem.";
+			dialog.text = "Znam to, kapitanie, i to mówi wiele o twoim charakterze! Każdy dobry uczynek musi zostać nagrodzony. Chociaż w tej chwili nie mam pieniędzy, to przynajmniej wydam rozkaz, aby załadować twój statek towarami z mojej plantacji. Mam na myśli kawę, świetną partię tego towaru. Jestem pewien, że będziesz mógł ją sprzedać z dużym zyskiem.";
 			link.l1 = "O! To jest miłe..";
 			link.l1.go = "noble_42";
 		break;
 		
 		case "noble_42":
 			dialog.text = "Ponadto mam kilka rzeczy, które dla mnie mają małą wartość, ale dla każdego żeglarza, takiego jak ty, są bezcenne. Dobra luneta i trzy amulety. Proszę, przyjmij to, teraz wszystko jest twoje.";
-			link.l1 = "Wdzięczność!";
+			link.l1 = "Jestem wdzięczny!";
 			link.l1.go = "noble_43";
 		break;
 		
@@ -473,14 +473,14 @@ void ProcessDialogEvent()
 		
 		case "uncle_5":
 			dialog.text = "Ach Ugo! Najgorszy łotr z nich wszystkich! Ugo uwielbiał swego hulaszczego pana. Wszystkie zbrodnie jego pana były dla niego niczym dziecięce psoty. Pamiętaj, "+GetSexPhrase("młody człowiek","señorita")+", interesy rodzinne są tylko dla rodziny. Ci, którzy wtykają nos i wścibiają się, znajdą się w tarapatach.";
-			link.l1 = "Teraz mi grozisz.";
+			link.l1 = "Ty mi grozisz?";
 			link.l1.go = "uncle_6";
 		break;
 		
 		case "uncle_6":
 			int icpy = GetOfficersQuantity(pchar);
 			iTotalTemp = 10000+10000*icpy;
-			dialog.text = "Ostrzeżenie. Proszę posłuchać, kapitanie: "+GetSexPhrase("zaszedł pan za daleko, ale ","")+"nie uważam pana za wroga, raczej za osobę w błędzie. Dlatego moja propozycja jest taka: proszę się odwrócić i odejść. Nie chcę rozlewu krwi. Nasze sprawy rodzinne załatwimy sami. "+GetSexPhrase("Jestem gotów zrekompensować panu koszty związane z moim siostrzeńcem:","Aby ułatwić decyzję, jestem gotów zapłacić:")+" "+FindRussianMoneyString(iTotalTemp)+" w gotówce. Proszę je wziąć i zapomnieć o tym miejscu. W przeciwnym razie moi strażnicy pana zabiją.";
+			dialog.text = "Raczej ostrzegam. Proszę posłuchać, kapitanie: "+GetSexPhrase("zaszedł pan za daleko, ale ","")+"nie uważam pana za wroga, raczej za osobę w błędzie. Dlatego moja propozycja jest taka: proszę się odwrócić i odejść. Nie chcę rozlewu krwi. Nasze sprawy rodzinne załatwimy sami. "+GetSexPhrase("Jestem gotów zrekompensować panu koszty związane z moim siostrzeńcem:","Aby ułatwić decyzję, jestem gotów zapłacić:")+" "+FindRussianMoneyString(iTotalTemp)+" w gotówce. Proszę je wziąć i zapomnieć o tym miejscu. W przeciwnym razie moi strażnicy pana zabiją.";
 			link.l1 = "'Rodzina przede wszystkim' – tak zawsze mówię. To nie moja sprawa, więc oddaj pieniądze i 'vaya con Dios.'";
 			link.l1.go = "uncle_7";
 			link.l2 = "Twoja opowieść śmierdzi gorzej niż nawóz z twojej plantacji. Don Domingo może nie jest świętym, ale ty señor jesteś diabłem!";
@@ -506,7 +506,7 @@ void ProcessDialogEvent()
 			pchar.quest.FMQP_SantoDomingoOver.over = "yes";
 			PlaySound("Voice\English\Serve_senior.wav");
 			dialog.text = TimeGreeting()+" "+GetAddress_Form(NPChar)+". Jak mogę służyć?";
-			link.l1 = "Witajcie. Wybaczcie, ale czy to rezydencja Señora Domingo Albalate?";
+			link.l1 = "Witaj. Wybacz, ale czy to rezydencja Señora Domingo Albalate?";
 			link.l1.go = "ugo_1";
 		break;
 		
@@ -518,7 +518,7 @@ void ProcessDialogEvent()
 		
 		case "ugo_2":
 			dialog.text = "Ach, "+GetSexPhrase("caballero","señorita")+", Don Domingo nie jest teraz w domu. Osobiście sam chciałbym wiedzieć, gdzie znaleźć tego niegrzecznego chłopca... eh, przepraszam, młodego señora. Czy mogę zapytać, czego od niego potrzebujesz?";
-			link.l1 = "„Cóż... Pomogłem Don Domingo przez przypadek. Został zaatakowany przez dwóch łotrów w karczmie w Port-au-Prince. Pomogłem waszemu panu w obronie przed tymi... jak ich nazwał... maldita canalla. Don Domingo zaprosił mnie, bym go odwiedził tutaj, kiedy zakończy swoje śledztwo. Myślałem, że wszystko powinno być już załatwione, więc spodziewałem się zobaczyć go w domu.”";
+			link.l1 = "Cóż... Pomogłem Don Domingo przez przypadek. Został zaatakowany przez dwóch łotrów w karczmie w Port-au-Prince. Pomogłem waszemu panu w obronie przed tymi... jak ich nazwał... maldita canalla. Don Domingo zaprosił mnie, bym go odwiedził tutaj, kiedy zakończy swoje śledztwo. Myślałem, że wszystko powinno być już załatwione, więc spodziewałem się zobaczyć go w domu.";
 			link.l1.go = "ugo_3";
 		break;
 		

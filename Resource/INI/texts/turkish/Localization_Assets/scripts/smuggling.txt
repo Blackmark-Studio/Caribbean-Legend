@@ -1,0 +1,2 @@
+smuggling_1 {Kaçakçılar daha iyi davranır (}
+smuggling_2 {Kaçakçılar hoşlanmaz (}

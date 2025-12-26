@@ -1,0 +1,157 @@
+info
+{
+財宝ジェネレーター
+    スクリプト作成：ALexusB 05.11.04
+}
+type_full_1 {地図はまだ新しく、 紙も黄ばんでいない。 #sMapIslName#の印は急いで描かれたようだが、 もしそれを信じるなら、 宝は#sMaplocName#に隠されている。}
+type_full_1_isl {島}
+type_full_1_mein {本土}
+type_full_2 {地図はかなり雑に描かれており、#sMapIslName#はかろうじて判別できる程度だ。 印からすると宝は#sMaplocName#に隠されているようだが、 確かめるには実際に行ってみるしかない。}
+type_full_2_isl {島}
+type_full_2_mein {本土}
+type_full_3 {この地図は持ち主にとって価値がなかったようだ――#sMapIslName#の輪郭は水染みで滲んでいる。 宝の場所はどうやら#sMaplocName#らしい。}
+type_full_3_isl {島々}
+type_full_3_mein {本土}
+type_full_4 {地図には #sMapIslName# が描かれている。宝の隠し場所は #sMaplocName# だ。 作者の未熟さは努力で補われており、 子供が描いたような風変わりな動物たちが余白を飾っている。}
+type_full_4_isl {島}
+type_full_4_mein {本土}
+type_full_5 {地図は #sMapIslName# の輪郭を正確に描いています。 宝の場所は #sMaplocName# です。 作者がかなり詳しい手順を残しているので、 見つけるのは難しくありません。}
+type_full_5_isl {島}
+type_full_5_mein {本土}
+type_full_6 {この地図は上質な罫線入りの紙に描かれている。 #sMapIslName# の輪郭はひと目でわかる。 裏面のメモによれば、 宝の場所は #sMaplocName# だ。}
+type_full_6_isl {島}
+type_full_6_mein {本土}
+type_full_7
+{
+ここは#sMapIslName#だ。 地図には隠された財宝の場所が示されている――それは#sMaplocName#。 悪名高い海賊がその財宝を隠したのだ。  
+地図の信憑性は茶色く乾いた血の染みによって裏付けられており、 この紙切れが何度も持ち主を変えてきたことも物語っている。
+}
+type_full_7_isl {島}
+type_full_7_mein {本土}
+type_full_8 {この地図は多くの手を渡ってきたようだ――紙はところどころ焦げ、#sMapIslName#の輪郭には何度も折り畳まれた跡が交差している。 宝の場所は#sMaplocName#。 どうやら、 そこには本当に貴重なものが眠っているらしい。}
+type_full_8_isl {島々}
+type_full_8_mein {本土}
+type_full_9 {この地図に精密に描かれた#sMapIslName#は、 渦巻き模様や海の怪物の絵に囲まれている。 地図の作者が誰であれ、 確かな腕前で宝に何か貴重なものを隠したのは間違いない。 あとは#sMaplocName#へ向かうだけだ。}
+type_full_9_isl {島}
+type_full_9_mein {本土}
+type_full_10 {この地図の半分同士は合わないが、 筆跡やインクの色、 紙の状態から同じ作者であることは明らかだ。 #sMapIslName#の輪郭はぼやけ、 インクで汚れている。 宝はどうやら#sMaplocName#に隠されているようだ。}
+type_full_10_isl {島}
+type_full_10_mein {本土}
+type_full_11 {この地図は丁寧に斜めに切り分けられており、 片方だけでは #sMapIslName# を特定することはできません。 書き込みは整った筆跡で記されており、 宝の在り処――#sMaplocName#――がすぐに分かります。 紙の状態から見て、 宝は何十年も前からそこに眠っているようです。}
+type_full_11_isl {島}
+type_full_11_mein {本土}
+type_full_12 {この地図は二つの断片から作られており、 非常に古びた印象を受ける。 #sMapIslName#の輪郭は数十年前のものだ。 説明や手がかりは古風な言葉で書かれ、 ラテン語も多い。 #sMaplocName#に眠る財宝の規模は計り知れない。}
+type_full_12_isl {島々}
+type_full_12_mein {本土}
+type_quest_0
+{
+ここは#sMapIslName#だ。隠された財宝の場所がここ、#sMaplocName#として記されている。かつて#sMapOwner#がこの地に財を隠したという。
+地図に残る茶色い血痕は、 その真贋を物語り、 血塗られた所有の歴史をほのめかしている。
+}
+type_quest_0_isl {島}
+type_quest_0_mein {本土}
+type_part {これは大きな宝の地図の一部だ。 これだけでは宝の場所はわからない。 他の欠片を見つけて地図を完成させれば、 謎が明らかになるだろう。}
+type_fake
+{
+この地図は宝のありかを示しているらしい。 確かめてみることもできるが、 どうやら偽物のようだ。
+この紙切れは捨ててしまうのが賢明だろう。
+}
+Antigua_Grot {ファルマス湾の右側の洞窟内}
+Antigua_Grot_box1 {大きな石の上の宝箱}
+SentJons_TownCave {セントジョンズの地下牢で}
+SentJons_TownCave_box1 {行き止まりの板の下}
+SentJons_TownCave_box2 {鉱山の行き止まりで}
+SentJons_TownCave_box3 {がれきのそばで}
+Barbados_Cave {ブリッジタウン近くの洞窟で}
+Barbados_Cave_box1 {行き止まりの板の下}
+Beliz_Cave {ベリーズの出口右手の洞窟内}
+Beliz_Cave_box1 {石橋のそばの宝箱}
+Beliz_Cave_box2 {大きな石の上の宝箱}
+Beliz_Cave_box3 {天井から垂れ下がるロープのそばの宝箱}
+Beliz_Cave_2 {ベリーズの出口の向かいにある洞窟内}
+Beliz_Cave_2_box1 {行き止まりの板の下}
+Bermudes_Dungeon {シャープタウンの造船所の地下にあるダンジョンで}
+Bermudes_Dungeon_box1 {閉ざされた扉の奥の宝箱}
+Bermudes_Dungeon_box2 {開いた扉の奥の宝箱}
+Bermudes_Dungeon_box3 {行き止まりの宝箱}
+Bermudes_Dungeon_box4 {樽の裏の宝箱}
+Caracas_Grot {カラカスの出口右側の洞窟内}
+Caracas_Grot_box1 {大きな石の上の宝箱}
+Cartahena_Cave {カルタヘナの出口の向かいにある洞窟内}
+Cartahena_Cave_box1 {松明の下の宝箱}
+Cartahena_Cave_box2 {行き止まりの宝箱}
+Cartahena_Cave_box3 {松明のそばの宝箱}
+Caiman_Grot {砂浜の右手にある洞窟の中}
+Caiman_Grot_box1 {[ERROR: APIConnectionError]}
+Charles_Grot {ハーフムーン湾の右手の洞窟内}
+Charles_Grot_box1 {岸辺の宝箱}
+Cuba_Grot {カマグエイ岬の右手にある洞窟内}
+Cuba_Grot_box1 {岸辺の宝箱}
+Cumana_Cave {カラパノ湾の右手にある洞窟内}
+Cumana_Cave_box1 {石橋のそばの宝箱}
+Cumana_Cave_box2 {大きな石の上の宝箱}
+Cumana_Cave_box3 {天井から垂れるロープのそばの宝箱}
+Curacao_Cave {ブランカ・ ラグーンの右手にある洞窟内}
+Curacao_Cave_box1 {松明の下の宝箱}
+Curacao_Cave_box2 {行き止まりの宝箱}
+Curacao_Cave_box3 {松明のそばの宝箱}
+Dominica_Grot {スコッツヘッド湾の左手の洞窟内}
+Dominica_Grot_box1 {岸辺の宝箱}
+Guadeloupe_Cave {グアドループ灯台の左手の洞窟内}
+Guadeloupe_Cave_box1 {松明の奥のくぼみにある宝箱}
+Guadeloupe_Cave_box2 {柱の後ろのくぼみにある箱}
+Guadeloupe_Cave_box3 {壁際の石の裏にある宝箱}
+Hispaniola_Cave {ポルトープランス近くの洞窟で}
+Hispaniola_Cave_box1 {石の橋のそばの宝箱}
+Hispaniola_Cave_box2 {大きな石の上の宝箱}
+Hispaniola_Cave_box3 {天井から垂れ下がるロープのそばの宝箱}
+Jamaica_Grot {ポートロイヤル灯台の右手にある洞窟内}
+Jamaica_Grot_box1 {大きな石の上の宝箱}
+Maracaibo_Cave {マラカイボの出口の向かいにある洞窟内}
+Maracaibo_Cave_box1 {松明の下の宝箱}
+Maracaibo_Cave_box2 {行き止まりの宝箱}
+Maracaibo_Cave_box3 {松明のそばの宝箱}
+Marigo_Cave {フィリップスバーグの出口の向かいにある洞窟内}
+Marigo_Cave_box1 {松明の下の宝箱}
+Marigo_Cave_box2 {行き止まりの宝箱}
+Marigo_Cave_box3 {松明のそばの宝箱}
+Panama_Cave {ポルトベロの出口を左に出た洞窟内}
+Panama_Cave_box1 {行き止まりの板の下}
+Pearl_Grot {ベリーズとブルーウェルドの間、 西海岸近くの洞窟内}
+Pearl_Grot_box1 {大きな石の上の宝箱}
+PortoBello_Cave {モスキート湾の右手にある洞窟内}
+PortoBello_Cave_box1 {行き止まりの板の下}
+SanJuan_Cave {サンファン近くの洞窟内}
+SanJuan_Cave_box1 {石橋のそばの宝箱}
+SanJuan_Cave_box2 {大きな石の上の宝箱}
+SanJuan_Cave_box3 {天井から垂れるロープのそばの宝箱}
+SantaCatalina_Cave {ケープ・ペルラスの右手の洞窟内}
+SantaCatalina_Cave_box1 {松明の下の宝箱}
+SantaCatalina_Cave_box2 {行き止まりの宝箱}
+SantaCatalina_Cave_box3 {松明のそばの宝箱}
+SantaCatalina_Grot {サン・ フアン・ デル・ ノルテ湾の右手の洞窟内}
+SantaCatalina_Grot_box1 {岸辺の宝箱}
+SantaCatalina_PearlCave {サン・ フアン・ デル・ ノルテ湾の左手にある洞窟内}
+SantaCatalina_PearlCave_box1 {石橋のそばの宝箱}
+SantaCatalina_PearlCave_box2 {大きな石の上の宝箱}
+SantaCatalina_PearlCave_box3 {天井から吊るされたロープのそばの宝箱}
+Tenotchitlan_Cave {アステカ寺院の北の洞窟内}
+Tenotchitlan_Cave_box1 {石橋のそばの宝箱}
+Tenotchitlan_Cave_box2 {大きな石の上の宝箱}
+Tenotchitlan_Cave_box3 {天井から垂れるロープのそばの宝箱}
+Terks_Grot {ノーザン湾の右手にある洞窟内}
+Terks_Grot_box1 {大きな石の上の宝箱}
+Tortuga_Grot {フィッシュアイ・ ビーチの向かいの洞窟内}
+Tortuga_Grot_box1 {岸辺の宝箱}
+Tortuga_Cave {トルトゥーガの地下牢で}
+Tortuga_Cave_box1 {閉ざされた扉の奥の宝箱}
+Trinidad_Grot {トリニダードの灯台の向かいの洞窟内}
+Trinidad_Grot_box1 {岸辺の宝箱}
+Martinique_Grot {ラマンタン・ビーチ近くの洞窟で}
+Martinique_Grot_box1 {岸辺の宝箱}
+FortFrance_Dungeon {サン＝ピエールの地下牢で}
+FortFrance_Dungeon_box1 {高台の上の宝箱}
+FortFrance_Dungeon_box2 {上層の開いた扉の奥にある宝箱}
+FortFrance_Dungeon_box3 {リフトの近くの宝箱}
+FortFrance_Dungeon_box4 {下層の開いた扉の奥にある宝箱}
+FortFrance_Dungeon_box5 {木箱の下}

@@ -70,7 +70,7 @@ void InitGoods()
 	// товары повседневного спроса	
 	Goods[GOOD_FOOD].Name		    		= "Food";
 	Goods[GOOD_FOOD].Weight	        		= 1;
-	Goods[GOOD_FOOD].Cost	        		= 20;
+	Goods[GOOD_FOOD].Cost	        		= 95;
 	Goods[GOOD_FOOD].Units	        		= 10;
 	Goods[GOOD_FOOD].Swim.Model	    		= "barrel";
 	Goods[GOOD_FOOD].Swim.Time	    		= 45;
@@ -78,8 +78,8 @@ void InitGoods()
 	Goods[GOOD_FOOD].DontDrop				= 1;	
 	Goods[GOOD_FOOD].trade_type				= T_TYPE_AMMUNITION;
 	Goods[GOOD_FOOD].type					= T_TYPE_NORMAL;
-	Goods[GOOD_FOOD].Norm          			= 1200;
-	Goods[GOOD_FOOD].MediumNorm			= 0.5;
+	Goods[GOOD_FOOD].Norm          			= 1750;
+	Goods[GOOD_FOOD].MediumNorm				= 0.75;
 	Goods[GOOD_FOOD].SmallNorm				= 0.5;	
 		
 	Goods[GOOD_SAILCLOTH].Name				= "Sailcloth";

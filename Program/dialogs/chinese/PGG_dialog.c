@@ -718,7 +718,7 @@ void ProcessDialogEvent()
 		if (PChar.GenQuest.PGG_Quest.Island.Town == "" || PChar.GenQuest.PGG_Quest.Island.Town == "Caiman" ||
 			PChar.GenQuest.PGG_Quest.Island.Town == "Terks" || PChar.GenQuest.PGG_Quest.Island.Town == "Dominica")
 		{
-			sLoc = GetConvertStr(PChar.GenQuest.PGG_Quest.Island, "LocLables.txt") + "";
+			sLoc = GetIslandNameByID(PChar.GenQuest.PGG_Quest.Island) + "";
 		}
 		else
 		{
@@ -727,11 +727,11 @@ void ProcessDialogEvent()
 		
 		if (sti(PChar.GenQuest.PGG_Quest.Template)) 
 		{
-			sTmp +=	", 在" + sLoc + "附近的" + GetConvertStr(PChar.GenQuest.PGG_Quest.Island.Shore, "LocLables.txt") + "海湾停靠补给。 ";
+			sTmp +=	", 在" + sLoc + "附近的" + GetLocationNameByID(PChar.GenQuest.PGG_Quest.Island.Shore) + "海湾停靠补给。 ";
 		}
 		else
 		{
-			sTmp += ", 在" + sLoc + "附近遭遇风暴沉没。 但他们设法保护了部分货物, 并在" + GetConvertStr(PChar.GenQuest.PGG_Quest.Island.Shore, "LocLables.txt") +
+			sTmp += ", 在" + sLoc + "附近遭遇风暴沉没。 但他们设法保护了部分货物, 并在" + GetLocationNameByID(PChar.GenQuest.PGG_Quest.Island.Shore) +
 				"海湾登陆。 现在他们在等待他们的中队到来。 ";
 		}
 		
@@ -766,7 +766,7 @@ void ProcessDialogEvent()
 		AddQuestUserData("Gen_PGGQuest1", "sNation", NationNameGenitive(sti(PChar.GenQuest.PGG_Quest.Nation)));
 		AddQuestUserData("Gen_PGGQuest1", "sGoods", PChar.GenQuest.PGG_Quest.Goods.Text));
 		AddQuestUserData("Gen_PGGQuest1", "sColony", sLoc);
-		AddQuestUserData("Gen_PGGQuest1", "sShore", GetConvertStr(PChar.GenQuest.PGG_Quest.Island.Shore, "LocLables.txt"));
+		AddQuestUserData("Gen_PGGQuest1", "sShore", GetLocationNameByID(PChar.GenQuest.PGG_Quest.Island.Shore));
 		break;
 
 	case "Quest_1_Ship_Detail_1":

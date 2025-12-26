@@ -1,0 +1,1532 @@
+info
+{
+KKS 아이템 설명 파일  
+버전 0.0.1 (2010.11.21, 편집: Metazot), belamour 흉갑 및 부적 수정 2020.09.29  
+belamour legendary edition용 업데이트 2021.09.20  
+텍스트 내 빠른 탐색을 위한 항목 배열 순서:  
+1. 장비  
+1.1 근접무기  
+1.2 화기  
+1.3 방어구, 의복  
+1.4 광학 기기  
+1.5 항해 기기  
+1.6 부적  
+1.7 탈리스만  
+1.8 호신부  
+2. 화폐, 보석  
+2.1 통화, 상자  
+2.2 보석, 금속  
+2.3 장신구  
+3. 문서  
+3.1 특허  
+3.2 면허  
+3.3 지도  
+3.4 편지  
+3.5 조제법  
+4. 인벤토리  
+4.1 도구  
+4.2 약제, 물약, 약초  
+4.3 탄약  
+4.4 일반 아이템  
+4.5 퀘스트 아이템  
+5. 잡동사니
+}
+new_string
+{
+
+}
+Potion parameters {용량}
+health value {hp}
+weapon blade parameters {공격: #f.1WeightAttack# 밸런스: #f.1Balance#}
+weapon blade type {종류: #sFencingTypeName#}
+weapon gun parameters {피해: #ddmg_min#-#ddmg_max#}
+weapon gun parameters equipped {피해: #ddmg_min#-#ddmg_max#, 재장전 시간: #dchargespeed#초}
+mushket parameters {피해: #ddmg_min#-#ddmg_max#}
+mushket parameters equipped {피해: #ddmgmin#-#ddmgmax#, 재장전 시간: #dchargespeed#초}
+weapon grape parameters {피해: #dbasedmg#x#dshards#, 확산: #sarea#}
+weapon grape parameters equipped {피해: #dbasedmg#x#dshards#, 확산: #sarea#, 재장전 시간: #dchargespeed#초}
+youve_got {아이템 발견 -}
+used_item {아이템 사용 -}
+youve_gotNotif {새 아이템:}
+used_itemNotif {아이템 소모:}
+flower_find {뜻밖의 횡재!}
+itmname_unarmed {비무장}
+itmdescr_unarmed {무기가 없다면 주먹으로 상대 얼굴을 한 대 날릴 수 있습니다. 그 틈에 도망칠 수 있길 바라세요.}
+itmname_rabble {화로집게}
+itmdescr_rabble {단조된 쇠 벽난로 집게. 적이 뒤에서 머리를 맞아줄 때만 무기로 쓸 수 있다.}
+itmname_slave_01 {작살}
+itmdescr_slave_01 {포경꾼의 작살이지만, 한 번만 맞아도 몸을 꿰뚫고 끌려간다. 작살의 갈고리가 박히면, 몸을 도려내야만 뺄 수 있다.}
+itmname_slave_02 {마체테}
+itmdescr_slave_02 {이 지역의 특산품. 저급 강철로 만든 긴 베기용 칼로, 사탕수수와 덩굴, 그리고 팔다리를 자르는 데 널리 쓰인다.}
+itmname_blade_01 {Naab'Te}
+itmdescr_blade_01 {잇자 부족 인디언들이 사용한 짧은 한손 찌르기용 창으로, 유럽산 할버드 파편으로 만든 강철 촉과 가로대를 갖추고 있다.}
+itmname_blade_02 {워 클럽}
+itmdescr_blade_02 {총 개머리판을 닮은 이차 곤봉. 볼록한 형태 덕분에 타격 시 힘이 한 점에 집중되어, 강철 흉갑도 끝의 스파이크로 꿰뚫을 수 있다.}
+itmname_blade_03 {스토코}
+itmdescr_blade_03 {이탈리아 도시인들 사이에서 인기 있는 플뢰레. 휘지 않는 삼각형 스토코 검신은 찌르기 공격에 최적이며, 복잡한 손 보호대는 숙련된 결투사가 적의 칼날을 잡아낼 수 있게 해준다.}
+itmname_blade_04 {메서}
+itmdescr_blade_04 {제작이 쉽고 신뢰할 수 있는 단도형 검으로, 독일의 도시 민병대와 소박한 수입의 용병들 사이에서 인기가 높다. 최고의 제품은 쾰른에서 만들어진다.}
+itmname_blade_05 {커틀라스}
+itmdescr_blade_05 {승선 전투나 적의 침입을 막을 때 선원이 가장 신뢰하는 무기. 곡선형 칼날과 넓은 손 보호대 덕분에 찌르기와 베기 모두 가능하지만, 짧은 길이와 단면 날로 인해 좁은 선상 전투 외에는 활용도가 떨어진다.}
+itmname_blade_06 {스키아보나}
+itmdescr_blade_06 {베네치아 도제의 달마티아 근위대가 사용한 전설적인 레이피어. 양날의 검은 찌르기와 베기에 모두 뛰어나며, 손을 안전하게 감싸는 가드 덕분에 ‘요람’이라는 별명으로 불린다.}
+itmname_blade_07 {리터슈베르트}
+itmdescr_blade_07 {지난 세기 중기 기병이 사용하던 브로드소드. 묵직한 칼날은 거의 모든 갑옷을 베어낼 수 있지만, 무겁고 균형이 맞지 않아 보병전에서는 다루기 어렵다.}
+itmname_blade_08 {빌보}
+itmdescr_blade_08 {넓은 베기용 칼날과 컵 모양의 가드를 가진 짧은 스페인 레이피어로, 스페인 선원들 사이에서 널리 쓰였습니다. 이름은 원산지인 빌바오에서 유래했습니다.}
+itmname_blade_09 {카소레타}
+itmdescr_blade_09 {컵 모양의 가드가 달린 가벼운 플뢰레로, 스페인 귀족의 복장에 필수적인 무기입니다. 이것 없이는 신사가 소송을 제기하거나 법정에서 증언하는 것조차 허락되지 않았습니다.}
+itmname_blade_10 {교수형}
+itmdescr_blade_10 {손잡이에 달린 갈고리 때문에 ‘교수형’이라 불린 해군 커틀라스. 돛대에 오를 때 무기를 고정하는 데 쓰였다. 교수형을 차고 다니는 것, 그리고 결국 교수형이 되는 것—대부분의 해적이 맞이한 운명이었다.}
+itmname_blade_11 {행거}
+itmdescr_blade_11 {병사, 정찰병, 포병 등 지상군이 허리에 차고 다니는 커틀러스와 비슷한 짧은 검입니다. 보조 무기로 사용됩니다.}
+itmname_blade_12 {단도 세이버}
+itmdescr_blade_12 {커틀러스보다 약간 길고 세이버보다는 짧은 이 검은 머스킷병과 포병이 애용하는 편리하고 컴팩트한 무기입니다. 해상과 육상 전투 모두에 적합합니다.}
+itmname_blade_13 {브로드소드}
+itmdescr_blade_13 {이 검은 최근 프랑스 해군 장교들 사이에서 계급의 상징일 뿐만 아니라 믿을 만한 전투용 무기로 인기를 얻고 있습니다. 브로드소드(넓은 칼날의 검)는 힘 있고 숙련된 자의 손에 들리면 막강한 위력을 발휘합니다. 다만 결투용으로는 다소 무거운 편입니다.}
+itmname_blade_14 {왈롱 소드}
+itmdescr_blade_14 {스페인령 네덜란드 병사들 사이에서 인기 있던 레이피어. 손재주보다는 기동성, 민첩함, 그리고 힘이 더 중요하다. 이 검이라면 우아한 검술을 자랑하는 도전자라도 손쉽게 팔뚝을 베어낼 수 있다.}
+itmname_blade_15 {카포디몬테}
+itmdescr_blade_15 {휘어진 검신을 지닌 해군 레이피어로, 찌르기와 베기 모두에 능하다. 단순한 가드지만 대부분의 베기 공격을 막기에 충분하다.}
+itmname_blade_16 {스몰소드}
+itmdescr_blade_16 {우아한 평평한 가드가 달린 짧은 레이피어로, 정장과 함께 착용하도록 만들어졌습니다. 프랑스 펜싱 학교의 영향으로 최근에 등장한 무기입니다. 베기에는 너무 가볍지만, 번개처럼 빠른 찌르기를 구사할 수 있습니다.}
+itmname_blade_17 {컵힐트 레이피어}
+itmdescr_blade_17 {스페인 결투사들이 선호하는 이 플뢰레는 짧은 손잡이로 찌르기에 유리하지만, 칼날은 베기에도 적합합니다. 가장자리가 아래로 굽은 종 모양의 가드는 적의 공격으로부터 손을 보호합니다.}
+itmname_blade_18 {파펜하이머}
+itmdescr_blade_18 {독특한 가드가 돋보이는 이 기병용 검은 30년 전쟁 당시 고트프리트 하인리히 그라프 추 파펜하임의 기병대가 명성을 떨쳤습니다. 그 명성 덕분에 기병대에서 출세를 꿈꾸는 젊은 귀족들 사이에서 인기를 끌었습니다.}
+itmname_blade_19 {해군 세이버}
+itmdescr_blade_19 {임관한 해군 장교를 위한 세이버. 퍼레이드에도, 뒤엉킨 삭구를 자를 때도, 예상치 못한 위치에서 치명타를 가할 때도 모두 훌륭하다.}
+itmname_blade_20 {마돈나}
+itmdescr_blade_20 {공포의 헝가리 후사르가 쓰던 사브르. 서유럽 전장에 막 등장했지만, 이미 균형과 강인함으로 큰 존경을 받고 있다. 분명히 밝은 미래가 기다린다.}
+itmname_blade_21 {하이랜드 백소드}
+itmdescr_blade_21 {이 전통적인 스코틀랜드 바스켓힐트 소드는 하이랜드 귀족들이 사랑하는 무기입니다. 손이 안전하게 보호되고 칼날이 정확히 적을 벨 때, 거칠고 충동적인 하이랜더처럼 싸울 수 있습니다.}
+itmname_blade_22 {예언자의 분노}
+itmdescr_blade_22 {오래되고 거의 직선에 가까운 가벼운 세이버로, 곡선 손잡이가 있어 베기와 찌르기 모두에 적합합니다. 면도날처럼 날카로운 칼날이 갑옷 판금과 갈비뼈 사이를 쉽게 파고듭니다.}
+itmname_blade_23 {시미터}
+itmdescr_blade_23 {화려하게 장식된 곡도. 빠른 전투를 위해 만들어졌으며, 곡선형 칼날은 강력한 베기 공격을 가능하게 한다. 이 사브르의 손잡이에는 적대적인 진을 쫓기 위한 고대 부적이 박혀 있다.}
+itmname_blade_24 {파트리사 칸다}
+itmdescr_blade_24 {먼 인도의 불굴의 시크교도들이 사용하는 신성한 무기. 뛰어난 품질의 강철로 적의 칼날을 베어낼 수 있다. 손잡이는 유럽 검객들에게는 다소 낯설지만, 검끝으로 타격을 가할 수 있게 설계되어 있다.}
+itmname_blade_25 {플람베르그 레이피어}
+itmdescr_blade_25 {이 스페인식 컵 힐트와 물결 모양의 칼날을 가진 레이피어는 상대뿐만 아니라 사용하는 이에게도 매우 위험한 무기입니다. 이 칼날에 입은 가벼운 상처조차도 쉽게 아물지 않는다고 전해집니다. 이런 무기의 소유자는 대개 좋지 않은 평판을 가지고 있습니다.}
+itmname_blade_26 {Asoleda}
+itmdescr_blade_26 {베르됭에서 제작된 길고 가느다란 경량 결투용 레이피어. 칼날이 매우 좁아 베기 공격은 불가능하지만, 긴 길이로 적을 멀리 떼어놓을 수 있다.}
+itmname_blade_27 {스웹트힐트 레이피어}
+itmdescr_blade_27 {이 레이피어는 전설적인 균형 덕분에 '색슨의 깃털'이라 불립니다. 손의 미세한 움직임에도 칼날이 즉각 반응해 베기와 찌르기가 모두 쉽습니다. 정교한 가드는 손을 든든하게 보호해줍니다.}
+itmname_blade_28 {카타나}
+itmdescr_blade_28
+{
+전설의 섬 시팡구에서 온 기이한 검. 고급 강철로 만들어진 긴 칼날과 손잡이는 한 손이나 양손 모두로 휘두를 수 있게 해줍니다.
+이 검이 이국적인 동방에서 카리브까지 어떤 여정을 거쳤는지, 그 이야기를 들을 수 있다면... 어떻게 이곳에 오게 된 걸까요?
+}
+itmname_blade_29 {스토르타}
+itmdescr_blade_29 {아고스티노 바르바리고의 접현 세이버 — 패배를 모르는 전설적인 베네치아 제독의 검. 어쩌면 모든 전투에서 그와 함께한 이 특별한 검 덕분이었을지도 모른다.}
+itmname_blade_30 {해군 클레왕}
+itmdescr_blade_30 {동인도 회사 선장을 위해 주문 제작된 커틀러스. 이 검의 제작자는 다양한 무기의 장점을 모으고 단점은 대부분 피하는 데 성공했다.}
+itmname_blade_31 {나르발}
+itmdescr_blade_31 {조개껍질 모양의 가드와 일각고래 뿔 손잡이가 달린 명품 접현 브로드소드. 칼날은 최고급 강철로 만들어졌으며 완벽한 균형을 자랑한다.}
+itmname_blade_32 {타나토스}
+itmdescr_blade_32 {제3차 십자군 시대의 고대 아밍 소드. 이 검은 박물관에 있을 물건이 아니다. 400년이 지난 지금도 칼날은 여전히 면도날처럼 날카롭다.}
+itmname_blade_33 {수호자의 검}
+itmdescr_blade_33 {늙은 기사용 양손검.}
+itmname_topor_01 {마쿠아위틀}
+itmdescr_topor_01 {아즈텍과 마야의 무거운 검형 철퇴로, 철목으로 만들어졌으며 양옆에 날카로운 흑요석 조각이 붙어 있습니다. 정복자들은 이 무시무시한 무기로 인디언들이 한 번에 스페인 말의 목을 베었다고 전했습니다.}
+itmname_topor_02 {전투 도끼}
+itmdescr_topor_02 {긴 자루와 비어드 블레이드는 경갑 상대를 손쉽게 절단하는 무시무시한 무기가 됩니다. 짧게 잡으면 칼날이 손을 안전하게 보호합니다.}
+itmname_topor_03 {구덴닥}
+itmdescr_topor_03 {네덜란드 게우젠의 단순하지만 위협적인 무기. 황금 박차 전투에서 수천 개가 번쩍이자 귀족 적군이 혼비백산 도망쳤다.}
+itmname_topor_04 {기병 도끼}
+itmdescr_topor_04 {이 무기를 다루려면 큰 힘이 필요하지만, 그만한 가치가 있습니다. 날카로운 칼날은 강력한 베기 공격을 가하고, 부리 부분은 어떤 갑옷도 꿰뚫으며, 강철 도끼 자루는 적의 무기에 끄떡없습니다.}
+itmname_topor_05 {토마호크}
+itmdescr_topor_05 {뒤쪽에 부리가 달린 좁은 도끼로, 근접전에서 치명적이며 정글 탐험에도 매우 유용하다. 원래는 철을 다루지 못하는 현지 인디언과의 교역을 위해 만들어졌지만, 지금은 식민지 개척민들 사이에서 큰 인기를 끌고 있다.}
+itmname_topor_06 {독수리}
+itmdescr_topor_06 {화려한 ‘턱’과 묵직한 ‘부리’를 가진 접현 도끼. 사소한 것을 단칼에 가르거나, 어떤 싸움이든 끝내고 싶은 이에게 완벽한 선택.}
+itmname_blade_36 {몰타 검}
+itmdescr_blade_36 {몰타 기사단의 의식용 검으로, 총독 포앵시 기사로부터 샤를 드 모르에게 탁월한 공로를 인정받아 하사된 것이다. 검신에는 A.S. 이니셜이 새겨져 있다.}
+itmname_knife_01 {부적 '족장의 발톱'}
+itmdescr_knife_01
+{
+겉보기엔 평범한 단검이지만… 모스크바인 파데이는 이 단검이 인디언 주술사에게 마법이 걸려 있고, 많은 숨겨진 비밀을 지녔다고 주장한다.  
+과연 어떤 비밀일까?
+}
+itmname_knife_02 {마리아}
+itmdescr_knife_02 {디에고 데 몬토야가 소유했던 훌륭한 단검. 전 주인에게 특별한 의미가 있었던 듯, 세심하게 관리된 흔적이 역력하다.}
+itmname_knife_03 {가보 단검}
+itmdescr_knife_03 {드 몽페 가문의 무기, 일명 ‘이쑤시개’. 값진 물건이라 급할 땐 팔기 쉽다 — 결국 가문 문장이란 게 다 뭐겠는가?}
+itmname_khopesh1 {호페쉬}
+itmdescr_khopesh1 {신들이 아직 세상에 머물던 시절의 의식용 무기.}
+itmname_khopesh2 {아루바의 코페쉬}
+itmdescr_khopesh2 {이 화면은 볼 수 없습니다.}
+itmname_khopesh3 {그을린 코페시}
+itmdescr_khopesh3 {신들이 아직 세상에 머물던 시절의 의식용 무기. 피를 갈구하니, 깨인 선장은 이런 것을 지녀선 안 된다.}
+itmname_machete2 {콘키스타도르 마체테}
+itmdescr_machete2 {알 수 없는 합금으로 정교하게 제작된 마체테. 문명 사회에서도, 고대 피라미드에서도 손색없다.}
+itmname_topor_07 {군용 도끼}
+itmdescr_topor_07 {훈련되지 않은 민병대도 쓸 수 있는 기본 도끼지만, 효과는 제한적입니다. 방어에는 부적합합니다.}
+itmname_pirate_cutlass {블레이즈의 커틀러스}
+itmdescr_pirate_cutlass {진정한 전설이자 신세계 해적들 사이에서 가장 존경받는 위엄의 상징, 그리고 선장에게는 그저 훌륭한 무기.}
+itmname_blade_38 {결투용 레이피어}
+itmdescr_blade_38 {유럽 전역에서 인기 있는 훌륭한 결투용 무기. 하지만 정글에서는 다소 어색해 보일 수 있다.}
+itmname_blade_39 {싸움꾼의 레이피어}
+itmdescr_blade_39 {노련한 결투가를 위해 맞춤 제작된 뛰어난 레이피어. 즉, 합법적 살인을 위한 완벽한 무기다.}
+itmname_blade_40 {이탈리아 레이피어}
+itmdescr_blade_40 {레이피어의 무게와 지나친 장식은 이것이 전투용이 아닌 의식용 무기임을 분명히 보여줍니다.}
+itmname_blade_41 {젠}
+itmdescr_blade_41 {비운의 운명으로 이국의 바다에 흘러온 먼 문명의 무기. 독특한 구조 덕분에 어떤 검술도 능숙하게 구사할 수 있다.}
+itmname_blade_42 {군용 브로드소드}
+itmdescr_blade_42 {기본적인 병사용 무기로, 최소한의 군사 훈련만 필요합니다.}
+itmname_saber {기병도}
+itmdescr_saber {진정한 애국자이자 장교에게 어울리는 무기. 수많은 영광스러운 전투를 거쳤으나, 이런 곳에 머물 운명은 아니었다.}
+itmname_q_blade_10 {위르겐 슈미트의 행어}
+itmdescr_q_blade_10
+{
+위르겐 슈미트가 제작한 접현 커틀라스.
+고급 강철로 만들어졌으며 균형이 뛰어납니다.
+}
+itmname_q_blade_13 {위르겐 슈미트의 브로드소드}
+itmdescr_q_blade_13
+{
+위르겐 슈미트가 제작한 장교용 사브르.
+고급 강철로 만들어졌으며 완벽한 균형을 자랑합니다.
+}
+itmname_q_blade_16 {Jurgen Schmidt의 스몰소드}
+itmdescr_q_blade_16
+{
+장인 Jürgen Schmidt가 제작한 스몰소드.
+고급 강철로 만들어졌으며
+탁월한 균형을 자랑합니다.
+}
+itmname_q_blade_18 {위르겐 슈미트의 파펜하이머}
+itmdescr_q_blade_18
+{
+마이스터 Jürgen Schmidt가 제작한 파펜하이머.
+고급 강철로 만들어진 검날은
+탁월한 균형을 자랑합니다.
+}
+itmname_q_blade_19 {위르겐 슈미트의 해상 세이버}
+itmdescr_q_blade_19
+{
+장인 Jürgen Schmidt가 제작한 해군 세이버.
+고급 강철로 만들어졌으며 완벽한 균형을 자랑합니다.
+}
+itmname_q_blade_21 {위르겐 슈미트의 백소드}
+itmdescr_q_blade_21
+{
+장인 Jürgen Schmidt가 제작한 Kleeblattsäbel.
+고급 강철로 만들어진 검날에
+탁월한 균형을 자랑합니다.
+}
+itmname_shamshir {샴시르}
+itmdescr_shamshir {기마전을 위해 만들어진 페르시아 곡도. 사막 전쟁의 거친 본성을 담았다. 베기 효율과 찍기의 단순함을 모두 갖췄다. 광역 베기를 즐기는 이들에게 최고의 선택.}
+itmname_lacrima_patris {Lacrima Patris}
+itmdescr_lacrima_patris {화려하게 장식된 검이지만, 의식용처럼 보여도 뛰어난 전투력을 자랑합니다. 범죄자와 이단자를 벌하는 신실한 선장의 손에 들리면 더욱 날카로워집니다.}
+lacrima_patris_parameters {함포 사거리 증가: #f.1RangeBonus#%}
+itmname_blade_SP_3low {교수형 집행인}
+itmdescr_blade_SP_3low {이 커틀러스는 터키 사브르와 유럽 팔치온의 특징을 모두 지녔습니다. 넓어진 칼날은 가장 단단한 갑옷도 베어냅니다. 행맨과 함께라면 어떤 접현 전투도 빠르고 잔혹하게 끝납니다.}
+itmname_blade_SP_3 {교수형 집행인}
+itmdescr_blade_SP_3 {요릭의 해골이 자루에 박혀, 죽음의 두려움을 떨치고 저승사자를 똑바로 마주하라 속삭인다. 진정한 무장의 힘이 깨어난다.}
+itmname_pistol1 {보병 권총}
+itmdescr_pistol1 {일반식 부싯돌 장치와 벨트에 걸 수 있는 고리가 달린 군용 권총. 저렴하고 다루기 쉬워 널리 사용된다.}
+itmname_pistol2 {산탄 리볼버}
+itmdescr_pistol2 {삼연장 측면 산탄총. 제작이 매우 복잡하며, 희귀하고 값비싼 무기입니다.}
+itmname_pistol3 {트롬본}
+itmdescr_pistol3 {접현용 산탄총. 트롬본은 민첩한 단일 적이나 중무장 상대에겐 효과가 적지만, 오합지졸 무리에 쏘면 제대로 위력을 발휘한다.}
+itmname_pistol4 {4연발 권총}
+itmdescr_pistol4 {네 개의 총열을 가진 권총, 공학의 경이. 재장전은 느리지만 네 발이면 어떤 싸움도 뒤집을 수 있다.}
+itmname_pistol5 {결투용 피스톨}
+itmdescr_pistol5 {륜형식 장치가 달린 희귀한 결투용 권총. 정교한 장인정신이 적에게 거의 기회를 주지 않지만, 느린 재장전이 인상을 다소 흐린다.}
+itmname_pistol6 {쌍총 피스톨}
+itmdescr_pistol6 {두 발이 장전되는 권총. 한 번 더 쏠 수 있어 더욱 든든합니다.}
+itmname_pistol7 {콜트 리볼버}
+itmdescr_pistol7 {19세기 전반 콜트사 마크가 새겨진 캡록 리볼버. 발사 시 적을 잠시 혼란시킵니다. 사용하려면 특수 탄약이 필요합니다.}
+itmname_pistol8 {블런더버스}
+itmdescr_pistol8 {특별한 해군용 머스킷총으로, 한 손으로도 사격할 수 있습니다. 강철탄을 사용해 어떤 갑옷도 쉽게 관통합니다.}
+itmname_pistol9 {2연발 권총}
+itmdescr_pistol9 {극히 희귀한 단발식 작센 피스톨로, 두 발을 연속 발사합니다. 재장전 시간이 긴 것이 특징입니다.}
+itmname_pistol10 {황금 독수리}
+itmdescr_pistol10 {세 번째엔 반드시 통한다는 말처럼, 이 고급 권총이 그 증거입니다. 노련한 군인이나 숙련된 사수에게 믿음직한 선택입니다.}
+itmname_pistol11 {괴물}
+itmdescr_pistol11 {정체불명의 무기 천재가 만든 접현용 권총도끼. 권총으로도, 도끼로도 형편없다. 하지만 순식간에 벌어지는 접현전의 혼란 속, 매 순간이 중요한 그때엔 이만한 게 없다.}
+itmname_pistol12 {절단 라이플}
+itmdescr_pistol12 {분해된 4연발 카빈. 정확도는 다소 떨어졌지만 근접전에 적합하고 여전히 빠르게 재장전됩니다. 일반 4연발 권총의 훌륭한 대안입니다.}
+itmname_pistol13 {플린트록 리볼버}
+itmdescr_pistol13 {총기 제작의 걸작. 30여 년 전, 유럽에서 저명한 군 지도자를 위해 맞춤 제작된 무기. 아마도 현시대 최고의 연발 권총일 것이다.}
+itmname_pistol14 {2연장 결투용 피스톨}
+itmdescr_pistol14 {극도로 비싸고 치명적이며 전혀 실용적이지 않은 예술 작품.}
+itmname_mortairgun {수류탄포}
+itmdescr_mortairgun {휴대용 박격포 – 소규모 적 집단 공격에 뛰어난 도구입니다. 매복 시 사용할 때 가장 효과적입니다.}
+itmname_mushket1 {화승총}
+itmdescr_mushket1 {강력하고 무거운 보병용 머스킷, 검증된 화승식 장전 방식.}
+itmname_mushket2 {해군 카빈}
+itmdescr_mushket2 {최신 영국제 퓨질을 단축한 버전으로, 총검이 장착되어 있습니다. 식민지 및 해군 보병의 표준 장비입니다.}
+itmname_mushket3 {아르케부스}
+itmdescr_mushket3
+{
+승선용 화승총 블런더버스  
+세월이 지나 제 빛을 잃었어도, 총구 앞에 선 적들은 그 사실을 잊는다.
+}
+itmname_mushket5 {조준경 소총}
+itmdescr_mushket5 {강화된 강선총신과 조준 망원경이 달린 맞춤형 휠록 라이플. 부유한 사냥꾼이나 스포츠맨의 무기.}
+itmname_mushket6 {드럼 샷건}
+itmdescr_mushket6 {분리 가능한 다중 챔버 실린더가 달린 포르투갈제 머스킷툰. 아쉽게도 교체식 메커니즘이 손상되어 재장전 속도가 느려진다.}
+itmname_mushket7 {고급 머스킷}
+itmdescr_mushket7 {병사들의 머스킷처럼 값싼 대량 생산이 아닌, 이 무기는 장인들이 아낌없이 좋은 재료로 제작해 뛰어난 성능을 자랑합니다.}
+itmname_mushket8 {4연발 라이플}
+itmdescr_mushket8 {수제 4연발 라이플. 혁신적인 분해 시스템으로 1분 안에 권총으로 변환할 수 있습니다. 독특한 재장전 방식으로 적에게 탄환 세례를 퍼부으세요!}
+itmname_m8_barrel {개머리판과 총열}
+itmdescr_m8_barrel {분해된 4연발 라이플의 개머리판과 총열.}
+itmname_mushket9 {오래된 아르케부스}
+itmdescr_mushket9 {오래됐지만 믿음직한 아르케부스. 전해지는 이야기에 따르면, 코르테스 본인이 이 총으로 정글에 산탄을 퍼부어 원주민들에게 공포를 안겼다고 한다.}
+UpgradeStageInfo_mushket9_1 {지금은 꽤 초라해 보이지만, 제대로 관리하고 좋은 도구를 쓰면 달라질 수 있습니다.}
+UpgradeStageInfo_mushket9_2 {개머리판을 교체하고 깨끗이 손질하니 이제 더 이상 녹슨 쇳덩이처럼 보이지 않는다. 이런 무기라면 등에 메고 거리를 걸어도 부끄럽지 않다.}
+UpgradeStageInfo_mushket9_3 {새로운 자물쇠로 교체하자 현대 무기와 닮아가기 시작했다. 뼈기름으로 윤활된 금속이 햇빛 아래에서 장인의 손에서 막 나온 듯 빛난다.}
+UpgradeStageInfo_mushket9_4
+{
+당신의 손에서 이 무기는 완성에 이르렀습니다. 더 이상 발전시킬 곳이 없습니다. 마지막 손질인 확장된 총열로 장전이 훨씬 쉬워지고 빨라져, 효율이 크게 높아졌습니다.  
+스스로 자랑스러워해도 좋습니다.
+}
+itmname_FirearmStockPart_1 {개머리판과 램로드}
+itmdescr_FirearmStockPart_1 {고풍스러운 총에 쓰이는 아름답게 조각된 개머리판과 총열을 닦는 솔 달린 청소 막대. 이들은 캔버스 천에 곱게 싸여 보물의 다른 물건들과는 멀리 떨어진 구석에 조심스럽게 놓여 있었는데, 마치 훨씬 나중에 따로 두어진 듯했다.}
+itmname_FirearmStockPart_2 {자물쇠와 뼈 오일}
+itmdescr_FirearmStockPart_2 {최신식 스프링 자물쇠, 헝겊, 그리고 무기 손질용 뼈기름 약병이 블랙우드에서 발견된 아르케부스에 수상할 만큼 잘 맞는다. 이들은 다른 귀중품과는 따로 보물에 놓여 있었다.}
+itmname_FirearmStockPart_3 {총신과 화약병}
+itmdescr_FirearmStockPart_3 {이 아이템 세트는 어떤 장총이든 장전 속도를 크게 높여주지만, 왠지 그 아르케부스에 가장 잘 어울릴 것 같은 느낌이 듭니다. 다른 보물들과 달리, 습기를 막기 위해 작은 종이 꾸러미에 포장되어 있습니다.}
+itmname_grape_mushket {핸드 모르타르}
+itmdescr_grape_mushket {휴대용 박격포는 소규모 적 집단을 공격할 때 훌륭한 보조 무기입니다. 매복에서 사용하는 것이 더 효과적입니다. 사격 시에는 페타르드나 수류탄을 사용합니다.}
+itmname_Mushket2x2 {더블배럴 카빈}
+itmdescr_Mushket2x2 {귀족들이 사슴 매복 사냥을 즐길 때 애용하는 선물용 더블배럴 산탄총. 하지만 분명한 건, 강선이 새겨진 이 총은 어떤 표적도 확실히 쓰러뜨린다는 점이다.}
+itmname_mushket10 {제국 머스킷}
+itmdescr_mushket10 {30년 전쟁 시대의 단발 귀족 머스킷. 총검이 장착되어 있으며 신성 로마 제국 특유의 문양으로 장식되어 있습니다.}
+itmname_howdah {하우다}
+itmdescr_howdah {대구경 쌍총 권총으로, 아프리카 덤불이나 인도 정글에서 사냥꾼의 최고의 동반자입니다. 멧돼지, 호랑이, 적대적인 원주민까지 확실하게 제압합니다.}
+itmname_nocirass {흉갑 없음}
+itmdescr_nocirass {갑옷을 오래 입고 있으면 쉽게 지칩니다. 잠시 내려놓고, 휴식을 취하며 계피를 넣은 따뜻한 커피나 더 독한 한 잔을 즐기세요.}
+itmname_cirass1 {보병 갑옷}
+itmdescr_cirass1 {요새 공성전에서 사용된 보병용 흉갑입니다. 강철과 납탄을 잘 막아주지만, 움직임이 둔해져 근접전에서는 몸이 둔해집니다. 유럽과 카리브 해 모두에서 널리 쓰였습니다.}
+itmname_cirass2 {라이타르 흉갑}
+itmdescr_cirass2 {중기 기병용으로 잘 만들어진 갑옷입니다. 가슴과 등을 뛰어나게 보호하지만, 보병 진형에서는 무게와 불편한 착용감이 착용자의 속도와 민첩성을 떨어뜨립니다.}
+itmname_cirass3 {의장 흉갑}
+itmdescr_cirass3 {고급 강철로 만든 경갑 흉갑. 더블릿 안에 착용 가능. 움직임은 거의 제한하지 않으며, 유탄과 스치는 공격에만 확실한 방어를 제공함.}
+itmname_cirass4 {밀라노 흉갑}
+itmdescr_cirass4 {최고급의 희귀 갑옷. 칼날과 탄환을 모두 막아내면서도 놀랄 만큼 가볍다. 수많은 홈이 만들어내는 탄성과 강인함이 그 비밀이다.}
+itmname_cirass5 {가죽 벨트}
+itmdescr_cirass5 {두꺼운 가죽으로 만든 코르셋으로, 뼈로 보호받지 못하는 주요 장기를 감쌉니다. 레이피어나 총알에는 취약하지만, 없는 것보단 낫습니다.}
+itmname_cirass6 {가죽 재킷}
+itmdescr_cirass6 {부드럽게 가공한 가죽으로 만든 노련한 결투가의 조끼. 눈에 띄지 않게 착용하며, 근접무기의 베기 공격으로부터 상체 전체를 보호합니다.}
+itmname_cirass7 {브리건딘}
+itmdescr_cirass7 {금속 판이 덧대어진 가죽 조끼 — 꽤 괜찮은 방어력을 제공하지만, 착용 시 무게감이 느껴진다.}
+itmname_cirass8 {고리 갑옷}
+itmdescr_cirass8 {가죽과 금속으로 만든 독특한 갑옷으로, 옆구리와 쇄골까지 상체 전체를 보호합니다. 여러 조절 버클이 옷 안에 착용할 때의 불편함을 줄여줍니다.}
+itmname_cirass9 {강화 브리건딘}
+itmdescr_cirass9 {직업 용병의 갑옷이자 결투가들이 선호하는 최고의 선택. 큐라스에 가까운 방호력과 무게를 지녔지만, 뛰어난 맞춤 제작으로 움직임이 전혀 제한되지 않는다.}
+itmname_cirass10 {아이언사이드 흉갑}
+itmdescr_cirass10 {꽤 낡고 불완전한 의회파 기병 장비 세트. 여전히 좋은 방어력을 제공하며, 풍부한 주머니와 탄약집 덕분에 사격과 재장전이 훨씬 수월하다.}
+itmname_cirass11 {거울 흉갑}
+itmdescr_cirass11 {이런 갑옷은 러시아 차르국과 오스만 제국에서 흔히 볼 수 있습니다. 이 갑옷은 오랜 여정을 거쳐 당신의 손에 들어왔습니다.}
+itmname_suit1 {프랑스 군복}
+itmdescr_suit1 {영국 해군 장교 제복.}
+itmname_suit2 {영국 군복}
+itmdescr_suit2 {블랙 가드 장교의 제복 — 스코틀랜드 근위대 정예 부대 출신.}
+itmname_suit3 {스페인 제복}
+itmdescr_suit3 {카탈루냐 근위대 장교의 제복.}
+itmname_suit4 {리그 슈트}
+itmdescr_suit4
+{
+리그 용병 복장  
+금속 판을 덧대고 조절 가능한 스트랩을 더해, 빠르고 거친 전투에 최적화된 장비. 반가면이 신분을 감춰준다.
+}
+itmname_suit5 {제독 제복}
+itmdescr_suit5 {프랑스 해군 고위 장교의 제복. 예술 작품이라 해도 손색없다.}
+itmname_underwater {잠수복}
+itmdescr_underwater {헨리크 베데커의 얕은 바닷속 이동을 위한 특수 잠수복. 최고의 갑옷보다 뛰어난 보호력을 제공합니다!}
+itmname_lantern {랜턴}
+itmdescr_lantern {작은 랜턴은 어둠 속에서 꼭 필요한 동반자입니다. 허리에 차면 밤길이나 동굴, 그로토, 던전에서도 길을 밝힐 수 있습니다. 키보드 'L' 키로 간편하게 켜고 끌 수 있습니다.}
+itmname_hat1 {콘도티에레의 모자}
+itmdescr_hat1 {결투사와 검객이 즐겨 쓰는 이 모자는 착용자에게 근접무기 실력을 끊임없이 연마하도록 영감을 줍니다.}
+itmname_hat2 {카발리에 모자}
+itmdescr_hat2 {한때 귀족들이 즐겨 썼던 화려하고 다채로운 모자. 하지만 카리브 해에서는 악명 높은 상징이 되었다. 이곳에서 이 모자를 쓰는 이는 유럽의 나약한 귀족이 아니라, 어떤 무기든 지치지 않고 싸우는 노련한 결투가와 모험가들이다.}
+itmname_hat3 {선원의 삼각모}
+itmdescr_hat3 {평범한 삼각모로, 선원들 사이에서 널리 쓰입니다. 옛 해양 전통에 따르면, 이 모자는 폭풍을 헤엄쳐 넘고, 첫 해전에서 살아남으며, 그 뒤 배를 수리한 선원에게 주어진다고 합니다.}
+itmname_hat4 {해군 장교의 삼각모}
+itmdescr_hat4 {삼각모는 해군 장교들 사이에서 인기가 많다. 이 모자를 보기만 해도 평범한 선원들은 놀라울 만큼 재빠르게 움직인다. 존경심 때문인지, 벌에 대한 두려움 때문인지는… 굳이 묻지 않아도 알 일이다.}
+itmname_hat5 {제독의 모자}
+itmdescr_hat5 {이런 모자는 평생 한 번도 보기 힘듭니다. 주변 모두에게 영감을 주고 사기를 북돋웁니다. 그 소유자와 같은 함대에서 복무하는 것은 큰 영광이며, 모든 선원과 장교가 그를 따라 지옥이라도 함께 갈 것입니다.}
+itmname_hat6 {네덜란드 모자}
+itmdescr_hat6 {값비싸고 우아한 모자로, 중간 상인들이 특히 선호합니다. 독특한 모양 덕분에 멀리서도 협상가를 쉽게 알아보고 치열한 흥정을 준비할 수 있습니다.}
+itmname_hat7 {행운의 모자}
+itmdescr_hat7 {이 대담한 모자는 행운을 가져다준다고 전해집니다. 세월에 닳고 해졌지만 여전히 고귀해 보이죠. 만약 이 모자를 갖게 된다면, 가장 힘든 순간에도 반드시 비장의 한 수가 남아 있을 겁니다.}
+itmname_hat8 {Charlie Prince의 삼각모}
+itmdescr_hat8 {이 모자는 상인들, 특히 스페인 상인들에게 해적 깃발보다 더 큰 두려움을 줍니다. 그 명성은 바다의 거친 사내조차도 창백해지고 떨게 만듭니다. 찰리 프린스가 태어난 그날이 저주받기를.}
+itmname_hat9 {그림의 모자}
+itmdescr_hat9 {이 모자는 카리브 해 어디에서나 악명 높으며, 그 이름만으로도 모두가 몸서리친다. 주인의 배를 공격할 자는 미치광이뿐이고, 직접 마주친다면 두려움에 칼과 화기의 쓰임조차 잊게 된다. 명심하라: 저편으로 가는 건 쉽다. 돌아오는 것이 어렵다.}
+itmname_hat10 {용병 모자}
+itmdescr_hat10 {현장에서 만든 이 갑옷 모자는 볼품없어 보여도 탄환을 막아 생명을 지킬 수 있습니다.}
+itmname_hat10_part {무두질한 가죽}
+itmdescr_hat10_part {잘 무두질된 황소 가죽 한 조각. 모자 제작에 안성맞춤입니다.}
+itmname_spyglass1 {저렴한 망원경}
+itmdescr_spyglass1 {거의 쓸모없는 망원경. 자존심 있는 선장은 이런 잡동사니를 들고 다니지 않는다.}
+itmname_spyglass2 {일반 망원경}
+itmdescr_spyglass2 {평범한 망원경. 렌즈는 무난하지만 더 좋은 것도 있다.}
+itmname_spyglass3 {좋은 망원경}
+itmdescr_spyglass3 {빛나게 연마된 렌즈의 망원경.}
+itmname_spyglass4 {우수한 망원경}
+itmdescr_spyglass4 {베릴' 렌즈가 장착된 망원경. 오직 한정판만이 더 우수하다.}
+itmname_spyglass5 {항해 망원경}
+itmdescr_spyglass5 {독특한 광학 기기. 순수한 수정으로 만든 완벽하게 맞춰진 렌즈와 삼각대가 모든 것을 선명하게 보여줍니다.}
+itmname_spyglassSP3 {망원경 '죽은 자의 눈'}
+itmdescr_spyglassSP3 {뼈로 장식된 이 망원경은 놀랍게도 고급 렌즈를 사용한다.}
+itmname_sand_clock {모래시계}
+itmdescr_sand_clock {모래시계는 선장이 Forro와 Greenwich의 정확한 시간을 '휴대'하여, 선박에 크로노미터가 있다면 이를 맞출 수 있게 해줍니다.}
+itmname_astrolab {아스트롤라베}
+itmdescr_astrolab {이 장치는 항해사가 천체의 위치를 측정할 수 있게 해줍니다.}
+itmname_compass1 {선박 나침반}
+itmdescr_compass1 {이 장치는 항해사가 천체가 보이지 않을 때도 북쪽을 찾을 수 있게 해줍니다. 지구 자체가 거대한 자석이라는 개념은 1600년 영국의 의사이자 자연철학자인 윌리엄 길버트가 처음 제안했습니다.}
+itmname_clock1 {크로노미터}
+itmdescr_clock1 {선박 크로노미터. 이 장치는 경도를 측정하는 데 사용되며, 모래시계를 통해 정기적으로 정확한 시간으로 보정해야 합니다. 이 정확한 시간은 훗날 그리니치 평균시로 알려지게 됩니다.}
+itmname_clock2 {작동 중인 크로노미터}
+itmdescr_clock2 {시간이 정해진 Forro Island 선박 크로노미터. 30일 동안 최소 오차로 선박의 경도를 측정할 수 있습니다.}
+itmname_sextant1 {육분의}
+itmdescr_sextant1 {지리 좌표를 측정하는 데 쓰이는 독특한 장치. 이 섹스턴트의 원래 주인은 시대를 한참 앞서 있었으나, 작동에 필요한 정밀한 시계가 아직 발명되지 않아 지금은 사용할 수 없다.}
+itmname_sextant2 {작동하는 육분의}
+itmdescr_sextant2
+{
+지리 좌표를 측정하는 독특한 장치. 미래에서 온 크로노그래프를 손에 넣었으니, 이제 항상 위도와 경도를 확인할 수 있습니다.
+높은 정밀도로 선박 속도가 5% 증가합니다.
+장착 시 항해술 성장 속도가 빨라집니다.
+}
+itmname_bussol {부솔}
+itmdescr_bussol
+{
+아스트롤라브와 선박 나침반이 결합된 항해 도구입니다. 지리적 위도를 항상 측정할 수 있습니다.
+장착 시 항해술 숙련도 상승이 빨라집니다.
+}
+itmname_clock3 {알렉서스의 크로노미터}
+itmdescr_clock3 {마스터 Alexus의 소장품인 20세기 중반 자동 감기 기능의 정밀 해상 크로노미터.}
+itmname_talisman1 {부적 '쥐의 신'}
+itmdescr_talisman1 {쥐, 개, 그리고 겁 많은 아이들까지 이 가면만 보면 불난 듯 달아난다!}
+itmname_talisman2 {부적 'Jonah'}
+itmdescr_talisman2 {격렬한 바다에 제물로 바쳐졌다 살아남은 예언자의 이름을 딴 켈트 원형 십자가.}
+itmname_talisman3 {부적 '토르의 망치'}
+itmdescr_talisman3 {노르드 천둥과 번개의 신 토르의 망치, 묠니르 모양의 황금 펜던트.}
+itmname_talisman4 {부적 'Janissary'}
+itmdescr_talisman4
+{
+예니체리 상급자의 오스만 팔보호구.
+선원 규율이 증가합니다.
+}
+itmname_talisman6 {부적 '여신'}
+itmdescr_talisman6 {오물의 포식자 여신 트라솔테오틀의 조각상.}
+itmname_talisman7 {부적 '스카라베'}
+itmdescr_talisman7 {근면한 스카라베 모양의 거대한 고대 이집트 반지.}
+itmname_talisman8 {부적 '전갈'}
+itmdescr_talisman8
+{
+메디치 가문의 전갈 모양 브로치.  
+강력한 해독제가 숨겨진 비밀 칸이 있습니다.
+}
+itmname_talisman9 {성 루이 훈장}
+itmdescr_talisman9 {프랑스 선장이라면 누구나 탐내는 최고의 전리품.}
+itmname_talisman10 {부적 ‘포획자’}
+itmdescr_talisman10 {진주 채집꾼의 호신부.}
+itmname_talisman11 {부적 '치킨 스톤'}
+itmdescr_talisman11 {그냥 구멍 뚫린 돌. 행운을 위해!}
+itmname_talisman12 {인내의 부적}
+itmdescr_talisman12 {질병과 악귀를 막아준다는 타이노족의 우상 인형.}
+itmname_talisman13 {타이노 부적}
+itmdescr_talisman13 {타이노 신의 부적상, 부와 축적의 수호신.}
+itmname_talisman14 {부적 'Ranyi'}
+itmdescr_talisman14 {도교 승려가 부적을 건 뱀 머리 물고기 모양 브로치로, 이동 속도가 크게 빨라집니다.}
+itmname_talisman15 {부적 '검은 표식'}
+itmdescr_talisman15 {블랙 스팟의 소유자는 즉시 미신과 전설, 소문에 휩싸입니다.}
+itmname_talisman16 {부적 '황금 의식용 단검'}
+itmdescr_talisman16 {스페인 용광로에서 기적적으로 녹지 않고 살아남은 아즈텍의 황금 의식용 단검. 고대 장인의 정교한 솜씨가 이 보물을 발견한 이의 마음을 흔들었는지도 모른다.}
+itmname_talisman17 {부적 'Liber Misericordiae'}
+itmdescr_talisman17 {주인에게는 일기장처럼 깊이 개인적인 의미를 지닌 성경 사본. 많은 이들이 성경을 등불이자 길잡이로 지니지만, 이 책은 말 그대로 명예의 규범이다.}
+talisman17_quests {교회 퀘스트: #dQBonus# / 5}
+talisman17_questsNoBonus {교회 퀘스트: 0 / 5}
+itmname_talisman18 {부적 'Blackwood의 규약'}
+itmdescr_talisman18 {앨버트 블랙우드의 개인 규율서. 레이디 베스의 구조, 사수 배치, 시폭스의 전투 전술이 상세히 기록되어 있다. 별도의 장에서는 보물 사냥과 뛰어난 사수에게 전리품을 보상하는 방법을 다룬다.}
+talisman18_Bonus {발견한 보물 : #dQBonus# / 10}
+talisman18_NoBonus {발견한 보물 : 0 / 10}
+itmname_talisman19 {부적 '요릭의 해골'}
+itmdescr_talisman19
+{
+‘Memento’의 선장 모티머 그림의 해골. 그는 자신의 죽음을 끝내 받아들이지 못했다. 너도 그를 알았지, #sName#.
+죽은 자는 산 자에게 가르침을 주고, 이 유물은 주인의 욕망에 맞춰 변한다.
+소지하고 있으면 모든 장교가 불멸이 된다.
+}
+talisman19_InSlot
+{
+배는 동시에 장막의 양쪽에 존재한다. 살아 있던 나무는 죽어 살아 있는 이들을 섬긴다. 캡틴 'Memento'의 해골은 죽음이 없음을, 끝까지 싸워야 함을 모든 배에 일깨운다.
+~
+선체가 2%씩 손실될 때마다 선박 속도와 함포 피해가 각각 0.75%, 0.5% 증가합니다.
+~
+패널티 없음, 여러 번 발동 가능.
+}
+itmname_talisman20 {스트렐치 장식띠}
+itmdescr_talisman20 {여러 가죽끈과 화약병, 수많은 종이 탄약으로 이루어진 탄띠. 유럽 전장마다 다양한 형태와 용도로 쓰이지만, 이 탄띠는 먼 이국에서 온 손님으로, 거친 시베리아 숲의 환상적인 야수들이 장식되어 있다.}
+itmname_talisman20_part {머스킷병의 화약통}
+itmdescr_talisman20_part {이국적인 동물 무늬가 새겨진 독특한 형태의 화려한 화약통. 가장자리는 동유럽풍 자수로 장식되어 있다.}
+itmname_totem_01 {부적 '주철 목구멍'}
+itmdescr_totem_01 {은으로 된 바닥에 취기를 막는 마법이 걸린 머그잔. 아무리 과하게 마셔도 맨정신을 지켜준다.}
+itmname_totem_02 {부적 '스파인바이터'}
+itmdescr_totem_02 {징벌용으로 위협적인 채찍. 선원과 원치 않는 승객 모두의 선상 규율을 크게 강화한다.}
+itmname_totem_03 {부적 '큐피드의 연고'}
+itmdescr_totem_03 {고급 부토니에 케이스에 담긴 특제 연고. 사창가 방문도 건강에 이롭게 만들어줍니다.}
+itmname_totem_04 {탈리스만 'Myrmidon'}
+itmdescr_totem_04 {터키석이 박힌 수제 은 팔찌. 충성과 복종의 상징.}
+itmname_totem_05 {부적 '강철 배'}
+itmdescr_totem_05 {보호 판금이 달린 가죽 벨트. 방심한 총알도 심장 두 치 앞에서 막아낸다.}
+itmname_totem_06 {부적 '강인한 자'}
+itmdescr_totem_06 {피로를 덜어주는 장화. 모든 부두 노동자의 꿈. 무거운 짐도 더 멀리, 더 오래 지치지 않고 나를 수 있습니다.}
+itmname_totem_07 {부적 '음유시인'}
+itmdescr_totem_07 {달콤한 음색의 류트가 바다 모험의 낭만을 노래하며 마음을 사로잡습니다! 선술집에서 연주하면 더 많은 이들이 당신의 선원으로 합류하고 싶어할 것입니다.}
+itmname_totem_08 {부적 '불의 지배자'}
+itmdescr_totem_08 {꺼지지 않는 포수의 파이프. 특히 직접 함포를 지휘할 때 주인의 위엄을 더해준다.}
+itmname_totem_09 {부적 'Arguzin'}
+itmdescr_totem_09 {대포 소리 속에서도 뚜렷이 울리는 뿔나팔. 이것만 있으면 초보도 금세 바다의 사나이로 거듭난다.}
+itmname_totem_10 {부적 '과부 제조자'}
+itmdescr_totem_10 {자비 없이 빠르고 결코 빗나가지 않는 카탈루냐 나바하. 이 칼로 훈련하면 세이버와 커틀라스 실력이 크게 향상되며, 특히 난투에서 효과적입니다.}
+itmname_totem_11 {부적 '구울'}
+itmdescr_totem_11 {결투 중 오른손의 마법이 깃든 구리 반지가 검을 통해 적의 기운을 흡수합니다.}
+itmname_totem_12 {부적 '재규어의 아들'}
+itmdescr_totem_12 {목에 건 재규어 발톱이 시야를 날카롭게 해 치명적인 찌르기를 가능하게 합니다.}
+itmname_totem_13 {부적 '조커'}
+itmdescr_totem_13 {언제나 손에 쥔 유용한 패는 도박에서 승리할 확률을 높여줍니다.}
+itmname_indian_1 {호신부 '부두 인형'}
+itmdescr_indian_1
+{
+주술 인형 — 희생자의 영혼에 달라붙는다는 소문이 있는 섬뜩한 토착 유물.
+ ~약점을 노릴 때, 예를 들어 머리를 맞출 때 가하는 피해가 증가할 수 있습니다.
+}
+itmname_indian_2 {호신부 '화약 감별사'}
+itmdescr_indian_2
+{
+화약의 품질을 검사하는 장치. ~
+고급 화약은 연소가 고르게 이루어져 모든 탄환의 피해를 높여주며, 특히 직접 탄약을 제작할 때 유용하다.
+}
+itmname_indian_3 {호신부 '의식용 칼'}
+itmdescr_indian_3
+{
+흑요석 제사용 단검. 이단적인 아즈텍 신들의 축복을 얻기 위해 얼마나 많은 영혼을 바쳤는지는 아무도 모른다. 그러나 흑요석 날은 아직도 무뎌지지 않았다.
+ ~적에게 치명타 피해 증가; 그들의 영혼에 평안을.
+}
+itmname_indian_4 {호신부 '도끼'}
+itmdescr_indian_4
+{
+아사트루 룬이 새겨진 펜던트. 어떻게 카리브 해까지 흘러왔는지는 아무도 모른다. 하지만 도끼에 대한 묘한 충동을 불러일으킨다.
+ ~팔에 예상치 못한 힘이 솟아올라 중화기 공격력이 증가한다.
+}
+itmname_indian_5 {아뮬렛 '찬차'}
+itmdescr_indian_5
+{
+끔찍한 의식으로 말린 머리. 이런 부적을 만들려면 사악한 이교 의식이 필요하다.
+ ~선장의 허리띠에 이걸 본다면, 누구든—아군이든 적군이든—접현대는 두려움과 경계심을 품게 된다.
+}
+itmname_indian_6 {호신부 '산호 머리'}
+itmdescr_indian_6
+{
+산호 조각으로 만든 조각상. 행운을 부르고 손을 더욱 침착하게 해준다고 전해진다.
+ ~어쨌든, 이것과 함께 쏘는 화기류 일제 사격은 훨씬 더 정돈된다.
+}
+itmname_indian_7 {호신부 '혹등이'}
+itmdescr_indian_7
+{
+꼽추 모양의 테라코타 인형 — 노트르담의 그가 아니라, 근면의 수호자입니다.
+ ~이 인형과 함께라면 고된 정글 행군과 접현 전투도 더 쉽게 견딜 수 있습니다.
+}
+itmname_indian_8 {아뮬렛 'Xiuhtecuhtli'}
+itmdescr_indian_8
+{
+화염과 화산의 지배자인 아즈텍 신의 토템 조각상. 만약 아즈텍에 화약이 있었다면, 그 역시 이 신의 영역이었을 것이다.
+ ~신비롭게도 함포 사격이 더욱 치명적으로 변한다.
+}
+itmname_indian_9 {아뮬렛 'Baldo'}
+itmdescr_indian_9
+{
+까마귀 모양의 켈트 브로치. 켈트 부족 중 가장 뛰어난 섬의 뱃사람들이 이런 장신구를 착용했다고 전해진다.
+ ~포수들이 특히 감탄하여, 대포 장전과 조준이 훨씬 빨라진다.
+}
+itmname_indian_10 {아뮬렛 'Cascavella'}
+itmdescr_indian_10
+{
+마법이 깃든 방울뱀 해골.
+ ~아직 송곳니에 독이 남아 있는 듯하다. 그렇지 않다면 일격에 중독시키는 힘을 설명하기 어렵다.
+}
+itmname_indian_11 {호신부 '응곰보 가면'}
+itmdescr_indian_11
+{
+시보네이족의 의식용 가면. 소문에 따르면 거짓 기억을 심어줄 수 있다고 한다.
+ ~장신구로 눈길을 끌거나, 반대로 군중 속에 녹아들 때 유용하다.
+}
+itmname_amulet_1 {아뮬렛 '응옴보 실드'}
+itmdescr_amulet_1 {응고보 부적으로 강화된 뼈와 산호 목걸이. ~이 목걸이와 함께라면 가장 가벼운 갑옷도 칼날을 튕겨냅니다.}
+itmname_amulet_2 {아뮬렛 'Euchologion'}
+itmdescr_amulet_2 {은도금 표지의 기도서. ~의로운 이를 그리스도의 적, 특히 납탄으로부터 지켜줍니다.}
+itmname_amulet_3 {아뮬렛 '십자가'}
+itmdescr_amulet_3 {축복받은 가톨릭 십자가. ~죄인은 죽을 곳에서, 의인은 상처만 입게 하는 기적의 구원.}
+itmname_amulet_4 {아뮬렛 'El trozo'}
+itmdescr_amulet_4 {시신에서 꺼낸 레이피어 파편. ~착용자에게 광란을 부여하고 이교도의 황홀경에 빠뜨립니다.}
+itmname_amulet_5 {아뮬렛 'Sogbo'}
+itmdescr_amulet_5 {부두 신화의 번개 정령. ~포수의 속도를 높여 함포 재장전을 빠르게 합니다.}
+itmname_amulet_6 {아뮬렛 '마돈나'}
+itmdescr_amulet_6 {성모 마리아의 성화가 새겨진 성스러운 유물함. ~죽음과 중상을 피하는 데 도움을 줍니다.}
+itmname_amulet_7 {호신부 '성수'}
+itmdescr_amulet_7 {성수로 채운 은 플라스크 펜던트. ~영적·육체적 질병과 상처로부터 보호합니다.}
+itmname_amulet_8 {호신부 '닻'}
+itmdescr_amulet_8 {주문이 새겨진 은 펜던트. ~선원들은 이것이 선체를 수면 아래 날아드는 유탄으로부터 지켜준다고 믿는다.}
+itmname_amulet_9 {아뮬렛 '엔콜피온'}
+itmdescr_amulet_9 {성 크리스토퍼의 유물이 담긴 거대한 은십자가. ~순례자의 여정을 지켜주고 전투 중 돛을 보호해줍니다.}
+itmname_amulet_10 {아뮬렛 '기적의 손'}
+itmdescr_amulet_10 {세일러의 수호성인 성 니콜라스의 메달. ~이것이 있으면 모든 선원이 무사히 집으로 돌아갈 확률이 높아진다.}
+itmname_amulet_11 {아뮬렛 'Cimaruta'}
+itmdescr_amulet_11 {고대 마법이 깃든 부적. ~기이한 행운을 불러 crew를 접현 전 총격에서 보호합니다.}
+itmname_obereg_1 {아뮬렛 'Teredo'}
+itmdescr_obereg_1 {배좀벌레가 피하는 사이프러스 마스크. ~선체 수리 비용 절감.}
+itmname_obereg_2 {아뮬렛 'Xochipilli'}
+itmdescr_obereg_2 {직조공의 수호신 소치필리의 의식용 토기. 선박 수리를 더 경제적으로 만듭니다.}
+itmname_obereg_3 {아뮬렛 'Monkey'}
+itmdescr_obereg_3 {현지에서는 이 설화석고 용기가 힘을 준다고 믿습니다. ~이것과 함께라면 무거운 짐도 훨씬 쉽게 들 수 있습니다.}
+itmname_obereg_4 {아뮬렛 '집시의 부채'}
+itmdescr_obereg_4 {호기심 많은 시선을 돌리는 특별한 안달루시아 부적. 경비병과 순찰을 속일 수 있습니다. ~도시와 항구에 은밀히 침입하는 데 도움을 줍니다.}
+itmname_obereg_5 {호신부 '비취 거북이'}
+itmdescr_obereg_5 {초기 콘키스타도르들이 지녔던 오래된 호신부. ~이 부적을 지니면 행운이 따르기 시작합니다.}
+itmname_obereg_6 {호신부 '몽키피스트'}
+itmdescr_obereg_6 {튼튼한 밧줄로 만든 복잡한 매듭과 손목 고리. ~주로 노련한 선원들이 착용하며, 당신의 말에 더 큰 신뢰를 더해줍니다.}
+itmname_obereg_7 {아뮬렛 'Fisherman'}
+itmdescr_obereg_7 {행운을 빌며 선원들이 착용하는 마법이 깃든 낚시바늘. ~특히 미숙한 항해사의 조종 실력을 향상시킵니다.}
+itmname_obereg_8 {아뮬렛 '상인의 염주'}
+itmdescr_obereg_8 {고귀한 산호로 만든 수도원 묵주. ~거래 시 집중력을 높이고 계산을 정확히 하여 성공 확률이 증가합니다.}
+itmname_obereg_9 {아뮬렛 'Ehecatl'}
+itmdescr_obereg_9 {아즈텍 바람의 신 머리 모양의 고대 그릇. ~이 그릇을 지니면 언제나 순풍이 불어 선박의 속도가 빨라진다.}
+itmname_obereg_10 {아뮬렛 '뱃사람의 귀걸이'}
+itmdescr_obereg_10 {케이프 혼을 돈 조타수의 귀걸이. ~암초와 얕은 바다에서 조종을 돕고, 선박의 기동성을 높여줍니다.}
+itmname_obereg_11 {아뮬렛 'Pilgrim'}
+itmdescr_obereg_11 {항해자 브렌던의 십자가. ~미세한 바람의 변화도 감지해 선박의 반응성을 높여줍니다.}
+itmname_rat_poison {비소}
+itmdescr_rat_poison {비소 — 유황 냄새가 나는 탈크 같은 가루로, 선상에서 쥐를 일시적으로 박멸하는 데 사용됩니다.}
+itmname_gold {페소}
+itmdescr_gold {신대륙의 은광에서 주조된 스페인 달러로, 세계 최초의 국제 통화입니다. 어디서나 통용되지만 특히 신대륙에서 널리 쓰입니다. 역사적으로 페소는 8 레알로 나뉘었기에 '피스 오브 에잇'이라 불렸습니다.}
+itmname_gold_dublon {금화 더블룬}
+itmdescr_gold_dublon {신세계에서 채굴한 순금으로 주조된 스페인 더블 에스쿠도 주화. '더블' 또는 '두블룬'은 유럽에선 보통 100페소의 가치가 있지만, 이 세상의 끝자락인 이곳에선 그렇지 않습니다. 카리브 해에서는 두블룬이 희귀하고 귀한 화폐로 여겨집니다. 두블룬이 가득 든 상자는 모든 해적의 꿈입니다.}
+itmname_chest {상자}
+itmdescr_chest {자물쇠가 채워진 상자. 안에는 스페인 금화 150닢이 들어 있다.}
+itmname_chest_open {빈 상자}
+itmdescr_chest_open {동전 운반과 보관을 위한 평범한 상자. 하지만 지금은 아쉽게도 완전히 비어 있다.}
+itmname_icollection {보물}
+itmdescr_icollection {보석이 박힌 값비싼 금 장신구 모음, 누구에게나 소중한 보물입니다.}
+itmname_purse1 {지갑}
+itmdescr_purse1 {금화 몇 개가 들어 있는 평범한 돈주머니.}
+itmname_purse2 {무거운 돈주머니}
+itmdescr_purse2 {두툼한 더블룬이 담긴 천 주머니.}
+itmname_purse3 {꽉 찬 돈주머니}
+itmdescr_purse3 {금화로 가득 찬 두툼한 가죽 주머니.}
+itmname_jewelry1 {자수정}
+itmdescr_jewelry1 {헤시피 광산에서 나온 보석. 뱃사람들 말로는 술을 멀리하게 해주고, 이미 마셨다면 숙취도 막아준다고 한다.}
+itmname_jewelry2 {다이아몬드}
+itmdescr_jewelry2 {남아메리카 포르투갈 해안의 광산에서 나온 다이아몬드는 성실한 이에게는 사업에 도움이 되지만, 도둑이나 살인자, 악당에게는 불행만을 가져온다.}
+itmname_jewelry3 {루비}
+itmdescr_jewelry3 {루비는 카리브 해에서 좀처럼 보기 힘든 보석입니다. 희귀함과 경도로 다이아몬드에 견줄 만한 유일한 보석이죠.}
+itmname_jewelry4 {에메랄드}
+itmdescr_jewelry4 {콜롬비아의 유명한 광산에서 나온 에메랄드. 유럽이나 아프리카의 보석도 그 순도에는 미치지 못한다.}
+itmname_jewelry5 {금덩이}
+itmdescr_jewelry5 {진짜 금덩이야. 이게 어떻게 광산에서 빠져나온 거지?! ...더 생각하지 않는 게 좋겠다.}
+itmname_jewelry6 {은괴}
+itmdescr_jewelry6 {안데스 산맥의 스페인 광산에서 훔쳐온 은 덩어리.}
+itmname_jewelry7 {청색 호박}
+itmdescr_jewelry7 {히스파니올라 섬에서만 나는 매우 희귀한 호박. 유럽의 보석상들이 거액을 주고 사려 한다.}
+itmname_jewelry8 {호박}
+itmdescr_jewelry8 {호박은 화석화된 나무 수지치고는 꽤 아름답습니다. 과거를 연구하는 이들에게도 유용하지만, 실험에 너무 몰두하지 않는 한에만 그렇죠.}
+itmname_jewelry9 {흑수정}
+itmdescr_jewelry9 {연금술사들이 종종 현자의 돌을 찾기 위해 사용하는 애도석입니다. 이 돌은 저승과의 연결을 맺어주며, 인물의 성격을 크게 부각시켜줍니다. 선과 악 모두를.}
+itmname_jewelry10 {백금 주괴}
+itmdescr_jewelry10 {순도 높은 페루산 백금 주괴. 스페인인들은 녹는점이 높고 금 채굴 시 '불순물'로 자주 발견된다는 이유로 이 귀한 금속을 과소평가했으며, 그래서 '작은 은'이라는 이름이 붙었다.}
+itmname_jewelry11 {운석}
+itmdescr_jewelry11 {희귀한 행운! 지구의 두꺼운 대기를 뚫고 살아남은 우주에서 온 손님입니다.}
+itmname_jewelry12 {구리 주괴}
+itmdescr_jewelry12 {서부 스페인 메인 광산에서 제련된 구리 주괴.}
+itmname_jewelry13 {철 주괴}
+itmdescr_jewelry13 {철 주괴. 칼이나 편자를 만들 때 흔히 쓰이는 재료.}
+itmname_jewelry14 {화염 오팔}
+itmdescr_jewelry14 {뉴 스페인에서 채굴된 유명한 파이어 오팔. 신세계에서만 나며, 유럽에서 매우 귀하게 여겨진다.}
+itmname_jewelry15 {아쿠아마린}
+itmdescr_jewelry15 {선원들은 이 바닷물빛 보석이 폭풍을 잠재우고 해전에서 승리를 가져다준다고 믿습니다. 금 장식에 세우면 더욱 아름답게 빛납니다.}
+itmname_jewelry16 {오팔}
+itmdescr_jewelry16 {진짜 오팔은 매우 드물게 발견되어 다른 보석보다 더 비쌀 수 있습니다.}
+itmname_jewelry17 {자신스}
+itmdescr_jewelry17 {핏빛 지르콘은 가슴 아픈 불운한 사랑의 상징입니다. 옛 어른들은 이 돌이 연기력을 키우는 데도 도움이 된다고 합니다.}
+itmname_jewelry18 {크리소프레이즈}
+itmdescr_jewelry18 {열 명 중 아홉 명의 의사가 이 돌이 남성의 지구력을 높여준다고 주장합니다.}
+itmname_jewelry19 {산호}
+itmdescr_jewelry19 {붉은 산호는 소유자를 폭력으로부터 지켜준다고 여겨집니다. 다듬어 세공된 산호는 지중해 연안 출신들에게 특히 인기가 많습니다.}
+itmname_jewelry20 {터키석}
+itmdescr_jewelry20 {터키석은 충성과 고귀함의 상징입니다. 고대 전사들은 검 손잡이에 터키석을 장식했고, 마야와 아즈텍인들은 옥만큼이나 소중히 여겼습니다.}
+itmname_jewelry21 {청금석}
+itmdescr_jewelry21 {누에바 에스파냐 광산에서 채굴된 아주라이트. 짙은 남색 바탕에 피라이트의 금빛 내포물이 별빛처럼 반짝여 ‘천상의 돌’로도 불린다. 많은 원주민 부족이 이 돌을 신성하게 여겼다.}
+itmname_jewelry22 {비취}
+itmdescr_jewelry22 {비취는 고귀한 전사의 돌입니다. 유럽인이 오기 전, 아즈텍과 마야는 은이나 금이 아닌 비취를 진정한 부의 상징으로 여겼습니다.}
+itmname_jewelry23 {금록석}
+itmdescr_jewelry23 {포르투갈 광산에서 온 귀한 노란색 보석. 도박꾼들에게 행운을 가져다준다고 여겨집니다.}
+itmname_jewelry24 {카메오 펜던트}
+itmdescr_jewelry24 {카메오, 진주, 다이아몬드가 장식된 극도로 아름다운 펜던트. 정교한 세공은 유명한 유럽 보석세공사의 작품임을 짐작하게 한다. 이 카리브에는 아직 이런 수준의 장인이 없다.}
+itmname_jewelry25 {카메오 귀걸이}
+itmdescr_jewelry25 {카메오, 진주, 다이아몬드가 어우러진 아름다운 귀걸이. 정교한 세공은 유명한 유럽 보석 세공사의 작품임을 짐작하게 한다. 이 카리브 해에는 아직 이런 수준의 장인이 없다.}
+itmname_jewelry26 {카메오 팔찌}
+itmdescr_jewelry26 {카메오, 진주, 다이아몬드가 어우러진 극도로 아름다운 팔찌. 정교한 세공은 유명한 유럽 보석 세공사의 작품임을 짐작하게 한다. 이 카리브 해에는 아직 이런 수준의 장인이 없다.}
+itmname_jewelry27 {루비 반지}
+itmdescr_jewelry27 {커다란 루비가 박힌 거대한 은반지. 옛 장인의 솜씨로 보인다. 누군가의 가보일지도 모른다.}
+itmname_jewelry28 {사파이어 반지}
+itmdescr_jewelry28 {커다란 사파이어가 박힌 두꺼운 은반지. 옛 장인의 솜씨로 보인다. 어쩌면 누군가의 가보일지도 모른다.}
+itmname_jewelry29 {터키석 반지}
+itmdescr_jewelry29 {커다란 터키석이 박힌 두꺼운 은반지. 옛 장인의 솜씨로 보인다. 누군가의 가보였을지도 모른다.}
+itmname_jewelry30 {금제 의식용 단검}
+itmdescr_jewelry30 {스페인에 의해 녹여지지 않고 우연히 살아남은 황금 아즈텍 의식용 단검. 이 고대 장인의 뛰어난 솜씨에 매료된 것은 당신뿐만이 아니었을지도 모릅니다.}
+itmname_jewelry31 {금 장례 가면}
+itmdescr_jewelry31 {행운으로 녹여지지 않고 남은 마야의 황금 의식 가면. 이 보물을 발견한 정복자도 당신처럼 고대 장인의 놀라운 솜씨에 매료되었을지 모릅니다.}
+itmname_jewelry32 {금팔찌}
+itmdescr_jewelry32 {행운으로 녹아내림을 피한 깃털 달린 뱀 모양의 아즈텍 황금 팔찌. 이 고대 장인의 놀라운 솜씨에 매료된 것은 당신뿐만이 아닐지도 모릅니다.}
+itmname_jewelry33 {금제 성작}
+itmdescr_jewelry33 {찬란한 장인의 솜씨로 만든 황금 성배. 성스러운 성찬을 담기 위해 제작되었습니다. 어느 대성당이든 탐낼 만한 귀한 보물입니다.}
+itmname_jewelry34 {청금석 십자가}
+itmdescr_jewelry34 {커다란 금 십자가 중앙에 큰 청금석이 박혀 있다. 이런 귀중한 물건은 주교나 대주교만이 소유할 수 있다.}
+itmname_jewelry35 {금향로}
+itmdescr_jewelry35 {순금으로 만든 무거운 향로. 식민지 교구에서는 너무 화려해 어울리지 않는다.}
+itmname_jewelry36 {귀중한 반지}
+itmdescr_jewelry36 {커다란 아쿠아마린이 박힌 금반지로, 보석으로 장식된 복잡한 꽃무늬가 돋보입니다. 이 독특한 장신구는 상당한 가치를 지닙니다. 왕실에 어울릴 만한 선물이 될 것입니다.}
+itmname_jewelry37 {귀중한 브로치}
+itmdescr_jewelry37 {포도넝쿨을 형상화한 보석 장식의 황금 브로치. 이 독특한 장신구는 상당한 값어치를 할 것이다. 왕실에 어울릴 만한 선물이다.}
+itmname_jewelry38 {귀중한 반지.}
+itmdescr_jewelry38 {커다란 다이아몬드와 에메랄드가 장식된 황금 반지. 이 독특한 보석은 엄청난 가치를 지닙니다. 왕실에 어울릴 만한 선물이 될 것입니다.}
+itmname_jewelry39 {귀중한 펜던트}
+itmdescr_jewelry39 {다이아몬드와 고풍스러운 에나멜 그림으로 장식된 황금 펜던트. 이 독특한 장신구는 엄청난 가치를 지닙니다. 왕실에 어울릴 만한 선물이 될 것입니다.}
+itmname_jewelry40 {에메랄드 반지}
+itmdescr_jewelry40 {커다란 원석 에메랄드가 박힌 두꺼운 금반지. 다소 투박하지만 값비싼 물건이다. 현지 장인들이 중요한 부탁의 대가로 만든 것일지도 모른다.}
+itmname_jewelry41 {루비 반지}
+itmdescr_jewelry41 {수수한 취향의 아가씨도 행복하게 해줄 아름다운 금반지와 루비.}
+itmname_jewelry42 {에메랄드 구슬}
+itmdescr_jewelry42 {스페인 수출 기준에 미달한 카보숑 구슬도 부유한 숙녀의 가슴을 장식할 수 있습니다.}
+itmname_jewelry43 {보석 펜던트}
+itmdescr_jewelry43 {거친 남자에겐 큰 원석이 박힌 금 펜던트도 보석을 모르는 이의 걸작처럼 보일 수 있다.}
+itmname_jewelry44 {콘키스타도르 팔찌}
+itmdescr_jewelry44 {말총에 금 조각을 꿰어 만든 팔찌. 이런 식으로 금을 지니는 풍습은 콘키스타도르들이 실용을 위해 고안했다고 전해진다.}
+itmname_jewelry45 {금 십자가}
+itmdescr_jewelry45 {이런 터키석이 박힌 금 십자가라면 금발에 파란 눈을 가진 좋은 집안 아가씨에게 잘 어울릴 거야.}
+itmname_jewelry46 {금반지}
+itmdescr_jewelry46 {작은 소달라이트 크리스탈이 박힌 금반지. 소박하지만 세련됨.}
+itmname_jewelry47 {산호 팔찌}
+itmdescr_jewelry47 {붉은 산호와 은 장식이 어우러진 팔찌는 누군가의 검은 손목을 빛낼 수 있다.}
+itmname_jewelry48 {은 반지}
+itmdescr_jewelry48 {꽃무늬가 새겨진 소박한 은반지. 없는 것보단 낫다.}
+itmname_jewelry49 {비취 구슬}
+itmdescr_jewelry49 {비취 구슬은 부족 남성들의 관심을 받기 힘든 인디언 여성들의 꿈입니다.}
+itmname_jewelry50 {비취 반지}
+itmdescr_jewelry50 {단단한 비취 원석에서 깎아낸 반지. 만든 장인의 인내는 성경의 욥에 비길 만하다.}
+itmname_jewelry51 {페소 귀걸이}
+itmdescr_jewelry51 {뚫린 은화 페소로 만든 즉석 귀걸이. 해적 같은 분위기를 풍기며, 필요할 땐 선술집 계산도 할 수 있다!}
+itmname_jewelry52 {큰 진주}
+itmdescr_jewelry52 {완벽한 형태와 광택을 지닌 커다란 진주. 바다가 준 드문 선물로, 백 년이 넘었을지도 모를 영롱한 보석이다.}
+itmname_jewelry53 {작은 진주}
+itmdescr_jewelry53 {예쁜 작은 진주.}
+itmname_meteorite {큰 운석 파편}
+itmdescr_meteorite {희귀한 행운입니다! 지구의 두꺼운 대기를 뚫고 살아남은 우주의 손님. 크고 아주 무겁습니다...}
+itmname_patent_england {영국 특허}
+itmdescr_patent_england {영국 총독 식민지 사무국에서 발급한 특허증으로, 당신이 영국의 공식 임무를 수행하고 있음을 증명합니다. 이에 따라 국가 이익을 수호하고, 규정에 따라 선박을 유지해야 할 의무가 부여됩니다.}
+itmname_patent_holland {네덜란드 특허}
+itmdescr_patent_holland {네덜란드 서인도 회사 이사회가 발급한 특허장으로, 당신이 네덜란드 연합주에 복무 중임을 증명합니다. 이로 인해 조국의 이익을 보호하고 선박을 규정에 맞게 유지해야 할 의무가 부여됩니다.}
+itmname_patent_france {프랑스 특허}
+itmdescr_patent_france {루이 14세 폐하의 식민지 사무국에서 발급한 특허장은 당신이 프랑스의 공식 임무를 수행하고 있음을 증명합니다. 이에 따라 국가의 이익을 보호하고 규정에 따라 선박을 유지해야 할 의무가 부여됩니다.}
+itmname_patent_spain {스페인 특허}
+itmdescr_patent_spain {폐하 필리프 4세의 식민지 사무국에서 발급한 특허장은 당신이 스페인에 복무 중임을 증명합니다. 이에 따라 국가 이익 보호와 규정에 맞는 선박 유지에 대한 의무가 부과됩니다.}
+itmname_map_bad {저렴한 지도}
+itmdescr_map_bad {수십 년 전 제노바에서 인쇄된 신세계 초기 탐험가들의 지도. 세월에 바랜 양피지 위에 흐릿하게 그려진 섬들의 윤곽은 정확한 위치를 알 수 없게 한다.}
+itmname_EngTradeLicence {영국 무역 허가증}
+itmdescr_EngTradeLicence {영국 도시와 항구를 무역 등 평화로운 목적으로 방문할 수 있습니다. #sAction_date#에 발급되었으며, 유효 기간은 #sValidity#입니다.}
+itmname_FraTradeLicence {프랑스 무역 허가증}
+itmdescr_FraTradeLicence {프랑스 도시와 항구를 무역 등 평화로운 목적으로 방문할 수 있습니다. #sAction_date#에 발급되었으며, 유효 기간은 #sValidity#입니다.}
+itmname_SpaTradeLicence {스페인 무역 허가증}
+itmdescr_SpaTradeLicence {신세계의 스페인 도시와 항구를 무역 등 평화로운 목적으로 방문할 수 있습니다. #sAction_date#에 발급되었으며, 유효 기간은 #sValidity#입니다.}
+itmname_HolTradeLicence {네덜란드 서인도 회사 면허증}
+itmdescr_HolTradeLicence {모든 식민지의 도시와 항구를 무역 등 평화로운 목적으로 방문할 수 있습니다. #sAction_date#에 발급되었으며, 유효 기간은 #sValidity#입니다.}
+itmname_MapsAtlas {지도첩}
+itmdescr_MapsAtlas {카리브 해와 스페인 본토 여러 지역의 지도가 모여 있습니다. 이 귀한 지도 없이는 신세계에서의 항해가 거의 불가능합니다.}
+itmname_Map_Best {훌륭한 지도}
+itmdescr_Map_Best {전설적인 영국 모험가 프랜시스 드레이크 경의 정밀한 지도를 복사한 것. 바다 사나이라면 필요한 거의 모든 것이 담겨 있다.}
+itmname_map_normal {일반 지도}
+itmdescr_map_normal {이 지도는 상인들이 함께 만든 것입니다. 주요 도시 이름과 섬의 정확한 좌표는 카리브 해에서 무역을 하는 평범한 선장에게 꼭 필요한 정보입니다.}
+itmname_map_beliz {벨리즈 지도}
+itmdescr_map_beliz {벨리즈와 그 주변 지역이 표시된 지도.}
+itmname_map_santa {블루웰드 지도}
+itmdescr_map_santa {블루웰드 마을과 주변 지역이 표시된 지도.}
+itmname_map_bermudas {Isla del Tesoro 지도}
+itmdescr_map_bermudas {Isla del Tesoro의 모든 경로와 정착지가 표시된 지도.}
+itmname_map_jam {자메이카 지도}
+itmdescr_map_jam {자메이카 섬의 모든 경로와 정착지가 표시된 지도.}
+itmname_map_cuba {쿠바 지도}
+itmdescr_map_cuba {쿠바 섬의 모든 경로와 정착지가 표시된 지도.}
+itmname_map_hisp {이스파니올라 지도}
+itmdescr_map_hisp {히스파니올라의 해적 섬에 있는 마을과 은밀한 장소들이 표시된 지도입니다.}
+itmname_map_antigua {안티구아 지도}
+itmdescr_map_antigua {앤티과 섬의 대략적인 지도지만, 사용하기엔 충분하다.}
+itmname_map_barbados {바베이도스 지도}
+itmdescr_map_barbados {바베이도스 섬의 지도가 그려진 지도.}
+itmname_map_cayman {카이만 지도}
+itmdescr_map_cayman {무인 케이맨 제도 지도.}
+itmname_map_Curacao {퀴라소 지도}
+itmdescr_map_Curacao {거칠게 그린 퀴라소 섬 지도지만, 여행에는 충분하다.}
+itmname_map_guad {과들루프 지도}
+itmdescr_map_guad {과달루프의 정밀 지도.}
+itmname_map_TORTUGA {토르투가 지도}
+itmdescr_map_TORTUGA {토르투가의 상세 지도.}
+itmname_map_dominica {도미니카 지도}
+itmdescr_map_dominica {무인도 도미니카의 지도.}
+itmname_map_martiniqua {마르티니크 지도}
+itmdescr_map_martiniqua {마르티니크 섬의 훌륭한 지도.}
+itmname_map_trinidad {트리니다드 지도}
+itmdescr_map_trinidad {트리니다드 쌍둥이 섬의 지도.}
+itmname_map_nevis {세인트크리스토퍼 지도}
+itmdescr_map_nevis {세인트 크리스토퍼 지도.}
+itmname_map_sm {세인트마틴 지도}
+itmdescr_map_sm {세인트 마틴의 지도.}
+itmname_map_terks {터크스 지도}
+itmdescr_map_terks {정체불명의 손이 그린 야생 터크스 제도의 지도.}
+itmname_map_maine_1 {누에그라나다 지도, 중앙}
+itmdescr_map_maine_1 {스페인 본토 뉴그라나다 일부 지역의 지도. 가르타헤나와 마라카이보가 두드러지게 표시되어 있다.}
+itmname_map_maine_2 {카라카스 지도}
+itmdescr_map_maine_2 {스페인 본토의 넓은 지역이 그려진 지도.}
+itmname_map_panama {누에바 그라나다 지도, 서부}
+itmdescr_map_panama {파나마 지협 지도.}
+itmname_map_cumana {쿠마나 지도}
+itmdescr_map_cumana {쿠마나가 중심에 있는 스페인 메인 일부 지도.}
+itmname_map_puerto {푸에르토리코 지도}
+itmdescr_map_puerto {푸에르토리코 섬을 그린 지도.}
+itmname_mapQuest {보물 지도}
+itmdescr_mapQuest {이 지도는 보물이 묻힌 위치를 가리킵니다. 정말 그곳에 있을까요? ‘X’ 표시를 찾아가야만 알 수 있습니다.}
+itmname_map_full {보물 지도}
+itmdescr_map_full {이 지도는 보물이 묻힌 위치를 가리킵니다. 정말 그곳에 있을까요? ‘X’ 표시를 직접 찾아봐야 알 수 있습니다.}
+itmname_map_part1 {보물 지도 조각}
+itmdescr_map_part1 {보물 지도의 일부입니다. 나머지 조각을 모두 찾아야 목적지를 알 수 있습니다.}
+itmname_map_part2 {보물 지도의 일부}
+itmdescr_map_part2 {보물 지도의 일부입니다. 나머지 조각들을 모두 찾아야 목적지를 알 수 있습니다.}
+itmname_map_LSC {버려진 배의 도시 지도}
+itmdescr_map_LSC {버려진 함선의 도시를 처음 찾는 이라면 이 지도가 없이는 길을 잃고 말 것이다.}
+itmname_A_map_beliz {벨리즈의 훌륭한 지도}
+itmdescr_A_map_beliz {Beliz 주변을 매우 정밀하게 그린 지도입니다. 뒷면에는 지도 제작자 Jose Dios의 이름이 적혀 있습니다.}
+itmname_A_map_santa {훌륭한 Blueweld 지도}
+itmdescr_A_map_santa {Blueweld 주변을 매우 정밀하게 그린 지도입니다. 뒷면에는 지도 제작자 Jose Dios의 이름이 적혀 있습니다.}
+itmname_A_map_bermudas {훌륭한 Isla del Tesoro 지도}
+itmdescr_A_map_bermudas {극도로 정밀하게 그려진 Isla del Tesoro의 지도입니다. 뒷면에는 지도 제작자 Jose Dios의 이름이 적혀 있습니다.}
+itmname_A_map_jam {자메이카의 우수한 지도}
+itmdescr_A_map_jam {자메이카 섬의 매우 정밀한 지도. 뒷면에는 지도 제작자 Jose Dios의 이름이 적혀 있다.}
+itmname_A_map_cuba {쿠바의 우수한 지도}
+itmdescr_A_map_cuba {쿠바 섬의 매우 정밀한 지도. 뒷면에는 지도 제작자 Jose Dios의 이름이 적혀 있다.}
+itmname_A_map_hisp {이스파뇰라의 우수한 지도}
+itmdescr_A_map_hisp {히스파니올라 섬의 매우 정밀한 지도. 뒷면에는 지도 제작자 호세 디오스의 이름이 적혀 있다.}
+itmname_A_map_antigua {훌륭한 안티구아 지도}
+itmdescr_A_map_antigua {앤티과 섬의 매우 정밀한 지도입니다. 뒷면에는 지도 제작자 호세 디오스의 이름이 적혀 있습니다.}
+itmname_A_map_barbados {바베이도스의 우수한 지도}
+itmdescr_A_map_barbados {바베이도스 섬의 매우 정밀한 지도입니다. 뒷면에는 지도 제작자 호세 디오스의 이름이 적혀 있습니다.}
+itmname_A_map_cayman {케이맨의 우수한 지도}
+itmdescr_A_map_cayman {카이만섬의 매우 정밀한 지도. 뒷면에는 지도 제작자 Jose Dios의 이름이 적혀 있다.}
+itmname_A_map_Curacao {훌륭한 쿠라사오 지도}
+itmdescr_A_map_Curacao {쿠라사오 섬의 매우 정밀한 지도입니다. 뒷면에는 지도 제작자 호세 디오스의 이름이 적혀 있습니다.}
+itmname_A_map_guad {훌륭한 과들루프 지도}
+itmdescr_A_map_guad {과들루프 섬의 매우 정밀한 지도. 뒷면에는 지도 제작자 Jose Dios의 이름이 적혀 있다.}
+itmname_A_map_TORTUGA {훌륭한 토르투가 지도}
+itmdescr_A_map_TORTUGA {토르투가 섬의 매우 정밀한 지도. 뒷면에는 지도 제작자 호세 디오스의 이름이 적혀 있다.}
+itmname_A_map_dominica {도미니카 우수 지도}
+itmdescr_A_map_dominica {도미니카 섬의 매우 정밀한 지도. 뒷면에는 지도 제작자 호세 디오스의 이름이 적혀 있다.}
+itmname_A_map_martiniqua {마르티니크의 우수한 지도}
+itmdescr_A_map_martiniqua {마르티니크 섬의 매우 정밀한 지도입니다. 뒷면에는 지도 제작자 Jose Dios의 이름이 적혀 있습니다.}
+itmname_A_map_trinidad {훌륭한 트리니다드 지도}
+itmdescr_A_map_trinidad {트리니다드 제도의 매우 정밀한 지도. 뒷면에는 지도 제작자 Jose Dios의 이름이 적혀 있다.}
+itmname_A_map_nevis {세인트크리스토퍼의 우수한 지도}
+itmdescr_A_map_nevis {세인트 크리스토퍼 섬의 매우 정밀한 지도. 뒷면에는 지도 제작자 호세 디오스의 이름이 적혀 있다.}
+itmname_A_map_sm {세인트마틴의 우수한 지도}
+itmdescr_A_map_sm {세인트마틴 섬의 매우 정밀한 지도. 뒷면에는 지도 제작자 Jose Dios의 이름이 적혀 있다.}
+itmname_A_map_terks {터크스의 훌륭한 지도}
+itmdescr_A_map_terks {터크스 섬의 매우 정밀한 지도. 뒷면에는 지도 제작자 Jose Dios의 이름이 적혀 있다.}
+itmname_A_map_maine_1 {뉴그라나다 지도, 중심부 (우수)}
+itmdescr_A_map_maine_1 {뉴그라나다 중심부를 매우 정밀하게 그린 지도. 뒷면에는 지도 제작자 호세 디오스의 이름이 적혀 있다.}
+itmname_A_map_maine_2 {카라카스의 우수한 지도}
+itmdescr_A_map_maine_2 {카라카스 주변을 매우 정밀하게 그린 지도입니다. 뒷면에는 지도 제작자 호세 디오스의 이름이 적혀 있습니다.}
+itmname_A_map_panama {뉴 그라나다 서부의 우수한 지도}
+itmdescr_A_map_panama {파나마 지협의 매우 정밀한 지도. 뒷면에는 지도 제작자 Jose Dios의 이름이 적혀 있다.}
+itmname_A_map_cumana {쿠마나의 우수한 지도}
+itmdescr_A_map_cumana {쿠마나 주변을 매우 정밀하게 그린 지도. 뒷면에는 지도 제작자 호세 디오스의 이름이 적혀 있다.}
+itmname_A_map_puerto {훌륭한 푸에르토리코 지도}
+itmdescr_A_map_puerto {푸에르토리코 섬의 매우 정밀한 지도. 뒷면에는 지도 제작자 호세 디오스의 이름이 적혀 있다.}
+itmname_A_map_perl {훌륭한 Providence 지도}
+itmdescr_A_map_perl {프로비던스 섬의 매우 정밀한 지도입니다. 뒷면에는 지도 제작자 호세 디오스의 이름이 적혀 있습니다.}
+itmname_map_half_beatriss {샤프의 지도 반쪽}
+itmdescr_map_half_beatriss {헬렌 맥아더의 어머니 비트리스가 소유했던 전설의 지도 반쪽.}
+itmname_map_half_blaze {샤프의 지도 반쪽}
+itmdescr_map_half_blaze {블레이즈 샤프가 소유했던 전설적인 지도의 절반.}
+itmname_map_sharp_full {Nicholas Sharp의 지도}
+itmdescr_map_sharp_full {두 조각을 합쳐 완성한 이슬라 델 테소로의 전체 지도. 소지자는 섬의 소유권을 증명할 수 있습니다.}
+itmname_LSC_navigation_map {버려진 배의 도시 항로 안내}
+itmdescr_LSC_navigation_map
+{
+이 해도가 없으면 Justice Island에 도달할 수 없습니다.
+북위 24도 21분, 서경 84도 50분.
+}
+itmname_RingCapBook {Santa Lucia' 항해일지}
+itmdescr_RingCapBook
+{
+핀네스 ‘Santa Lucia’의 항해 일지.
+읽어볼 만하다 – 마지막 순간까지 기록이 남아 있다.
+}
+itmname_leather_bag {여행가방}
+itmdescr_leather_bag {사창가에서 도망친 소녀의 여행가방. 약간의 돈, 서류, 괜찮은 드레스와 몇 가지 소지품이 들어 있다. 안쓰럽게도, 가방 자체가 내용물보다 더 무겁다.}
+itmname_sicretLetter {비밀 전문.}
+itmdescr_sicretLetter {#sCity# 주지사에게 전달할 서류 꾸러미입니다. #sMayor#이(가) 최대한 빨리 받기를 기다리고 있습니다.}
+itmname_letter_1 {봉인된 편지}
+itmdescr_letter_1 {편지는 봉인되어 있습니다. 내용을 알려면 읽어야 하지만, 먼저 봉인을 뜯어야 합니다.}
+itmdescr_letter_1_Fadey {인디언 범죄자 티칭기투의 사면을 요청하는 페데이 모스코바이트의 청원.}
+itmdescr_letter_SharkGoldFleet_1 {카라카스 항만청장의 봉인된 서신. 포르토 벨로 항만청장에게 직접 전달해야 함.}
+itmname_letter_2 {봉인된 편지}
+itmdescr_letter_2 {편지는 봉인되어 있습니다. 내용을 알려면 읽어야 하지만, 먼저 봉인을 뜯어야 합니다.}
+itmdescr_letter_SharkGoldFleet_2 {봉인된 회신 - 포르토 벨로 항만청장의 확인서. 카라카스 항만청장에게 직접 전달해야 합니다.}
+itmdescr_letter_2_PortmanLevelUp1 {중요한 정부 공문.}
+itmdescr_letter_2_PortmanLevelUp2 {카리브 해 모든 상점의 최신 가격표.}
+itmdescr_letter_2_PortmanLevelUp3 {비즈니스 문서로, 현재 통화 환율과 주식 정보를 담고 있습니다.}
+itmname_letter_open {열린 편지}
+itmdescr_letter_open {편지는 이미 열어보고 읽은 듯하다. 받는 사람이 눈치채지 않길 바란다.}
+itmdescr_letter_open_usurer {Folke Deluc 명의의 채무 증서.}
+itmname_Malyava {감옥에서 온 편지}
+itmdescr_Malyava {도둑의 쪽지.}
+itmname_PostLetters {배달용 우편}
+itmdescr_PostLetters {봉인된 편지와 기타 문서.}
+itmname_letter_consumption {산호세 사령관에게 보내는 편지}
+itmdescr_letter_consumption
+{
+수확은 거의 끝났습니다. 이것이 우리 계약의 두 번째 부분입니다. 세 번째 부분은 늘 그렇듯 마지막에 처리하겠습니다. 함께 거래하게 되어 기뻤습니다. 이번이 마지막이 아니길 바랍니다.
+J.
+}
+itmname_letter_church {봉인된 서신}
+itmdescr_letter_church {교회 공문. 가능한 한 빨리 수신자에게 전달해야 합니다.}
+itmname_prayer_book {기도서}
+itmdescr_prayer_book {기도서 더미. 가능한 한 빨리 수취인에게 전달해야 합니다.}
+itmname_ContraPostLetters {우편 서신}
+itmdescr_ContraPostLetters {봉인된 편지와 기타 문서들입니다. 가능한 한 빨리 각하께 전달해야 합니다.}
+itmname_letter_svenson {얀 스벤손의 편지}
+itmdescr_letter_svenson {얀 스벤손이 스티브 도드슨-샤크에게 보낸 봉인된 편지.}
+itmname_letter_chad {열린 편지}
+itmdescr_letter_chad {믿을 만한 명사수를 찾았습니다. 이제 약속하신 강선총신과 목표 제거 허가만 기다리고 있습니다.}
+itmdescr_letter_adolf
+{
+약속한 일을 모두 끝내면 새 선실로 돌아가 우리를 기다리시오. 자정에 열쇠를 받으러 가겠소.
+M.
+}
+itmdescr_letter_adolf_1
+{
+마르첼로, 우리는 네가 준 금액의 두 배로 합의했잖아. 카빈총은 훨씬 더 가치가 있다는 걸 너도 알지. 나머지 돈을 주지 않으면, 네가 'Eva'에서 Kapper와 무슨 일을 꾸몄는지 곧장 제독에게 알릴 거야.
+아돌프.
+}
+itmdescr_letter_aeva
+{
+‘Eva’만한 곳이 없어. 요즘 Cecille은 늘 그 늙은이 Orelie랑 어울리거나 선술집에 있어서, 화물창이 텅 비었지. 누가 갑자기 나타난다 해도, 술 한잔 하는 게 뭐 어때?
+Marcello.
+}
+itmdescr_letter_valet {데이비드 팩맨(일명 'Knave')에게 보내는 흥미로운 편지.}
+itmname_letter_chad_1 {열린 편지}
+itmdescr_letter_chad_1 {채드 캐퍼가 메리 캐스퍼에게 보낸 편지.}
+itmdescr_letter_facio {주세페 파치오의 해명서}
+itmdescr_letter_axel
+{
+채드, 네 부탁대로 내 창고를 뒤져봤어. 아일랜드 위스키는 '부쉬밀스'라는 오래된 몰트 한 통만 있더군. 100두블룬이면 괜찮다면 와서 가져가.
+악셀.
+}
+itmdescr_letter_vargant
+{
+계획이 실패하면, 너와 David를 Sabu-Matila 만의 'Centurion'에서 기다리겠다. 내 동생의 안전은 네 목숨이 걸린 일이야. 그가 내 말이라 생각하고 무조건 따르도록 해. Tyrex에게 도전할 생각은 절대 하지 마라—그는 너희 둘을 순식간에 갈기갈기 찢어버릴 거다.
+Jackman.
+}
+itmname_letter_parol {쪽지}
+itmdescr_letter_parol {광산에 들어가는 비밀번호가 변경되었습니다. 새 비밀번호는 'Neptune'입니다.}
+itmdescr_letter_ouster
+{
+이제 그곳은 더 이상 안전하지 않아. 영국인들이 뭔가를 알아냈어. 나는 12도 1분 북위, 60도 11분 서경에서 일주일 동안 화물을 가지고 기다릴 거야. 이번엔 꼭 실망시키지 마!
+M.R.
+}
+itmdescr_letter_parol_FMQP {우고가 돈 도밍고 알발라테에게 쓴 미완성 편지.}
+itmname_letter_mine {광산 문서}
+itmdescr_letter_mine {포트 로열의 'Sir Lawrence Beltrop'라는 인물이 공식적으로 버려진 광산의 소유주임을 증명하는 문서.}
+itmname_letter_jess {찢어진 쪽지}
+itmdescr_letter_jess {제시카 로즈의 일기 한 쪽.}
+itmname_letter_beatriss {오래된 편지}
+itmdescr_letter_beatriss {비트리스 샤프가 오빠 블레이즈에게 보낸 편지.}
+itmname_letter_baker {서면 진술}
+itmdescr_letter_baker {세인트 존스의 전 집행인 레이먼드 베이커의 기록된 증언.}
+itmdescr_letter_pinett {바스테르 은행가의 불법 행위를 밝히는 베르트랑 피네트의 증언.}
+itmname_Cromvel_depeshe {크롬웰의 전문}
+itmdescr_Cromvel_depeshe
+{
+...호송대를 만나 합류하고 전력을 보강하여 뉴네덜란드 해안까지 호위하라.
+나막신을 신은 네덜란드인들에게 영국 해군의 위력을 똑똑히 보여주도록 하라.
+전대는 #sDay#.#sMonth#.#sYear#에 북위 18도 40분, 서경 72도 10분에 도착할 것이다.
+}
+itmname_specialletter {편지}
+itmdescr_specialletter {봉인된 편지. 읽으려면 먼저 봉인을 풀어야 합니다.}
+itmdescr_specialletter_mishelle {미셸 드 몽페르가 샤를 드 모르에게 보낸 편지.}
+itmdescr_specialletter_vinsento {산티아고의 종교재판관 빈센토 신부가 샤를 드 모르에게 보낸 편지.}
+itmdescr_specialletter_dichoso {미겔 디초소가 아르투로 로페스에게 보낸 편지.}
+itmname_recipe_powder_pellet {설명}
+itmdescr_recipe_powder_pellet {섬광탄 폭죽 만드는 방법 안내}
+itmname_recipe_grenade {설명}
+itmdescr_recipe_grenade {수류탄 만드는 법.}
+itmname_recipe_harpoon {지침}
+itmdescr_recipe_harpoon {작살 화살 제작법}
+itmname_recipe_GunEchin {지침}
+itmdescr_recipe_GunEchin {못 머리와 조각을 사용해 못 파편 폭약을 만드는 방법.}
+itmname_recipe_potion2 {엘릭서 조제법}
+itmdescr_recipe_potion2 {치유 물약 제조에 필요한 모든 정보가 담긴 조제법.}
+itmname_recipe_potion3 {해독제 조합법}
+itmdescr_recipe_potion3 {해독제 제조에 필요한 모든 정보가 담긴 조제법.}
+itmname_recipe_potion4 {혼합약 조제법}
+itmdescr_recipe_potion4 {혼합물을 만드는 데 필요한 모든 정보가 담긴 조제법.}
+itmname_recipe_berserker_potion {오메토츨리 팅크제 조제법}
+itmdescr_recipe_berserker_potion {오메토츨리 팅크제 제조에 필요한 모든 정보가 담긴 조제법.}
+itmname_recipe_PerksPotion {망각의 물약 조제법}
+itmdescr_recipe_PerksPotion {복잡하고 값비싼 장기 조제법. 설명에 따르면, 과거를 버리고 운명을 바꿀 수 있다고 한다.}
+itmname_recipe_totem_01 {부적 제조법}
+itmdescr_recipe_totem_01 {주물 목구멍 부적 제작에 필요한 모든 정보가 담긴 조제법.}
+itmname_recipe_totem_02 {부적 제조법}
+itmdescr_recipe_totem_02 {탈리스만 'Spinebiter' 제작에 필요한 모든 정보가 담긴 조합법.}
+itmname_recipe_totem_03 {부적 제작법}
+itmdescr_recipe_totem_03 {탈리스만 'Cupid's Balm' 제작에 필요한 모든 정보가 담긴 조제법.}
+itmname_recipe_totem_04 {부적 제작법}
+itmdescr_recipe_totem_04 {부적 'Myrmidon' 제작에 필요한 모든 정보가 담긴 조합법.}
+itmname_recipe_totem_05 {부적 제조법}
+itmdescr_recipe_totem_05 {부적 'Iron navel' 제작에 필요한 모든 정보가 담긴 조제법.}
+itmname_recipe_totem_06 {부적 제조법}
+itmdescr_recipe_totem_06 {부적 'Stayer' 제작에 필요한 모든 정보가 담긴 조합법.}
+itmname_recipe_totem_07 {부적 제조법}
+itmdescr_recipe_totem_07 {탈리스만 'Minstrel' 제작에 필요한 모든 정보가 담긴 조합법.}
+itmname_recipe_totem_08 {부적 제조법}
+itmdescr_recipe_totem_08 {부적 '불의 군주'를 만드는 데 필요한 모든 정보가 담긴 조합법.}
+itmname_recipe_totem_09 {부적 제작법}
+itmdescr_recipe_totem_09 {탈리스만 'Arguzin' 제작에 필요한 모든 정보가 담긴 조리법.}
+itmname_recipe_totem_10 {부적 제조법}
+itmdescr_recipe_totem_10 {부적 'Widowmaker' 제작에 필요한 모든 정보가 담긴 조제법.}
+itmname_recipe_totem_11 {부적 제작법}
+itmdescr_recipe_totem_11 {탈리스만 'Ghoul' 제작에 필요한 모든 정보가 담긴 조합법.}
+itmname_recipe_totem_12 {부적 제조법}
+itmdescr_recipe_totem_12 {탈리스만 'Son of a Jaguar' 제작에 필요한 모든 정보가 담긴 조합법.}
+itmname_recipe_totem_13 {부적 제조법}
+itmdescr_recipe_totem_13 {탈리스만 'Joker' 제작에 필요한 모든 정보가 담긴 조리법.}
+itmname_alchemy_tool {연금술사의 상자}
+itmdescr_alchemy_tool {기묘한 도구와 약병, 시약이 가득 담긴 상자. 초보 연금술사에게는 더없이 귀중한 보물.}
+itmname_Tool {목수 도구함}
+itmdescr_Tool {조선소에서 훔친 목수 도구.}
+itmname_Tailor_Tool {재봉 도구}
+itmdescr_Tailor_Tool
+{
+온갖 역경을 스스로 헤쳐 온 노련한 방랑자의 휴대용 바느질 세트.
+능숙한 손에 쥐어진 가위, 바늘, 바늘꽂이, 그리고 실걸이는 진정한 기적을 만들어냅니다!
+}
+itmname_Mechanic_Tool {작업대 & 도구함}
+itmdescr_Mechanic_Tool {소규모 수리에 필요한 장비가 모두 편리한 케이스에 담겨 있어, 여가 시간에 손재주를 부리는 이들에게 큰 도움이 됩니다.}
+itmname_Tigel {도가}
+itmdescr_Tigel {금속을 매우 높은 온도에서 녹이기 위해 만든 도가니.}
+itmname_potion1 {치유 물약}
+itmdescr_potion1 {가벼운 상처를 빠르게 치유하는 약초 물약.}
+itmname_potion2 {엘릭서}
+itmdescr_potion2 {백여 가지 희귀 약초로 만든 이 엘릭서는 가장 심각한 상처도 치유할 수 있습니다.}
+itmname_potion3 {해독제}
+itmdescr_potion3 {이 해독제는 희귀한 재료로 우려낸 물약입니다. 맛은 끔찍하지만, 독에 고통스럽게 죽는 것보단 낫다고 모두가 말할 겁니다.}
+itmname_potion4 {혼합물}
+itmdescr_potion4 {이 혼합물은 해독제와 치유 물약이 결합된 것으로, 중독을 해소하고 상처도 회복합니다.}
+itmname_potionrum {럼주 병}
+itmdescr_potionrum {믿음직한 럼주 한 병 없이 완벽한 선원은 없다. 그로그와 추억을 만드는 데 필수품. 부상을 입었다면, 알코올이 통증을 덜어주고 치유를 돕는다.}
+itmname_potionwine {최상급 와인}
+itmdescr_potionwine {최고급 프랑스 와인. 편안한 효과로 체력을 회복하고 감염을 막아줍니다.}
+itmname_potion5 {생강 뿌리}
+itmdescr_potion5 {부작용 없는 강화 약초.}
+itmname_potion6 {잉카 물약}
+itmdescr_potion6 {이 물약은 잉카 사원 전사들이 전투에서 분노를 집중하기 위해 만들었습니다. 전투 중 기절을 막아주지만, 체력이 감소합니다.}
+itmname_potion7 {이슈첼의 눈물}
+itmdescr_potion7 {냄새도 맛도 없는 수상쩍게 뿌연 액체. 마야 사제들이 달의 여신을 기리는 의식에 썼다고 전해진다. 현지 원주민들은 비밀을 지키고 있지만, 이 물약이 잃어버린 건강을 회복시켜준다는 소문이 돈다.}
+itmname_Ultimate_potion {코만치 물약}
+itmdescr_Ultimate_potion {최악의 질병이나 치명적인 독도 치유하는 기적의 물약.}
+itmname_berserker_potion {오메토츨리 팅크제}
+itmdescr_berserker_potion
+{
+초인적인 힘과 지구력을 끌어내고, 민첩성과 반응 속도를 높이며, 마시는 이를 고통에 무감각하게 만드는 전설의 물약입니다.
+이 효과는 1분에 한 번, 최대 12초 동안만 지속됩니다. 체력이 감소합니다.
+}
+itmname_mangarosapower {해일 물약}
+itmdescr_mangarosapower {아멜리아의 비법으로 망가로사를 우려낸 물약. 화약과 훈제 나무의 향, 그리고 날카로운 유황 내음이 감돈다. 이 향은 천둥이 울리고 연기가 하늘을 뒤덮는 포갑판으로 당신을 이끈다.}
+itmname_mangarosafast {돌풍 물약}
+itmdescr_mangarosafast
+{
+아멜리아의 비법으로 망가로사를 우려낸 물약.
+갓 꺾은 나뭇가지의 쌉쌀한 연기와 달궈진 쇠내음이 어우러져, 해질녘 대장간을 떠올리게 한다. 이 향은 전투의 열기와 칼날이 부딪히는 격전을 불러일으킨다.
+}
+itmname_mangarosatotal {바다의 포션}
+itmdescr_mangarosatotal {아멜리아의 레시피로 만든 망가로사 포션. 폭풍 뒤 갑판처럼 짠 바람과 젖은 나무 향이 감돈다. 바다 내음과 은은한 해조류의 쓴맛이 가슴속에 바다가 펼쳐진 듯한 가벼움과 자유를 선사한다.}
+itmname_vodka {차르 보드카}
+itmdescr_vodka {곡물 증류주에 노간주나무 열매와 세인트존스워트를 우려내고, 장미수 한 방울과 갈랑갈 뿌리로 숙성시킨 술. 러시아 차르국의 스트렐치들이 전장에서 몸을 덥히고 기운을 북돋우기 위해 마셨다.}
+itmname_PerksPotion {망각의 물약}
+itmdescr_PerksPotion {비틀린 목이 달린 녹아내린 해골 모양의 바이알. 점성 있는 기름 같은 액체가 금빛과 진홍빛으로 빛나며, 마치 살아 있는 불꽃이 안에서 뛰는 듯하다. 세 가지 제물, 즉 육체, 기억, 부를 담고 있다.}
+itmname_cannabis1 {독초(다투라)}
+itmdescr_cannabis1 {치유 물약에 사용됨.}
+itmname_cannabis2 {사바디야}
+itmdescr_cannabis2 {치유 물약에 사용됨.}
+itmname_cannabis3 {버베나}
+itmdescr_cannabis3 {신비로운 약초. 다양한 믿음이 얽혀 있다. 물약에 쓰인다.}
+itmname_cannabis4 {아이페카쿠아나}
+itmdescr_cannabis4 {맛과 냄새는 끔찍하지만 연금술에 널리 쓰이는 약초입니다.}
+itmname_cannabis5 {구아라나}
+itmdescr_cannabis5 {물약에 사용됨.}
+itmname_cannabis6 {자메이카 페퍼}
+itmdescr_cannabis6 {물약에 사용됨.}
+itmname_cannabis7 {망가 로사}
+itmdescr_cannabis7
+{
+이 관목의 잎은 현지 원주민들에게 매우 귀하게 여겨집니다.
+이 식물은 오직 소수의 깨달은 이들만이 아는 신비한 힘을 지녔다고도 전해집니다.
+}
+itmname_GunPowder {화약}
+itmdescr_GunPowder {유황, 목탄, 초석(질산칼륨)을 혼합한 가루. 모든 화기류에 필수. 무기 종류에 따라 화약 소모량이 다릅니다.}
+itmname_bullet {납탄환}
+itmdescr_bullet {머스킷과 권총에 모두 쓰이는 범용 탄환입니다. 탄환의 피해량은 사용하는 무기에 따라 달라집니다.}
+itmname_grapeshot {산탄}
+itmdescr_grapeshot
+{
+납제 산탄 또는 대구경 탄환. 산탄포에서만 사용됩니다. 여러 대상을 동시에 공격합니다.
+포신에 장전할 수 있는 산탄의 양은 무기 종류에 따라 다릅니다.
+}
+itmname_cartridge {종이 탄약}
+itmdescr_cartridge {화약, 납탄, 그리고 완충재가 하나로 결합된 탄약. 화약이 젖지 않도록 기름종이로 감쌌다. 사용 시 재장전 속도가 크게 빨라지고, 고른 연소로 인해 피해량이 증가한다.}
+itmname_powder_pellet {폭약}
+itmdescr_powder_pellet {휴대용 박격포에서 발사할 수 있는 페타르드. 폭발 시 밝은 섬광을 일으키며 여러 대상을 동시에 기절시킬 수 있습니다. 아군 피해 주의.}
+itmname_grenade {수류탄}
+itmdescr_grenade {핸드 모르타에서 발사할 수 있는 수류탄. 여러 대상에게 큰 피해를 줄 수 있습니다. 아군 피해 가능.}
+itmname_harpoon {화살}
+itmdescr_harpoon {작살을 개조해 만든 짧고 무거운 철제 화살. 블런더버스에 장전해 쏠 수 있으며, 묵직한 무게와 보강된 촉이 중장갑 적에게도 치명상을 입힌다.}
+itmname_GunPowder_colt {무연화약}
+itmdescr_GunPowder_colt {더 빠르고 깨끗하게 타는 개량 화약. 콜트 리볼버 탄환 제작에 필요.}
+itmname_shotgun_bullet {납탄환}
+itmdescr_shotgun_bullet {탄환 몰드로 제작한 리볼버 탄약용 탄환.}
+itmname_shotgun_cartridge {리볼버 탄환}
+itmdescr_shotgun_cartridge {방수 황동 케이스에 담긴 화약과 탄환.}
+itmname_OxyHydSilver {폭발성 은}
+itmdescr_OxyHydSilver {뇌은. 매우 민감하며 떨어뜨리면 폭발할 수 있음.}
+itmname_GunCap_colt {퍼커션 캡}
+itmdescr_GunCap_colt {콜트 리볼버의 탄환 발사에 필요한 은폭약으로 만든 구리 퍼커션 캡.}
+itmname_GunEchin {못 파편}
+itmdescr_GunEchin
+{
+대구경 산탄포에 사용하는 거칠게 잘린 못. 인체와 총열에 치명적인 피해를 입힌다.
+특유의 형태로 인해 무기 산탄 범위가 줄어든다.
+}
+itmname_bullet_double {이중 탄환 장전}
+itmdescr_bullet_double {화약을 두 배로 넣고 탄환에 잘게 썬 두블룬까지 더해 행운을 빈다. 총열 파손을 막으려면 화약 시험기가 필요하다.}
+itmname_grapeshot_double {이중 산탄 장전}
+itmdescr_grapeshot_double
+{
+화약을 더 담고, 행운을 빌며 잘게 썬 두블룬을 섞은 산탄입니다. 사용하는 무기에 따라 효과가 달라집니다.
+화약 측정기가 없으면 총열이 파열될 위험이 높아집니다.
+}
+itmname_ArmoryPaper {화약지}
+itmdescr_ArmoryPaper {이 종이는 종이 바탕에 파라핀을 스며들게 하여 만듭니다. 카리브 해에서는 꽤 희귀하고 값비싼 편으로 주로 식품 포장에 쓰이지만, 능숙한 손에 들어가면 다른 용도로도 활용될 수 있습니다.}
+itmname_argbullet {은탄환}
+itmdescr_argbullet {현지의 쌍검 전문가들에 따르면, 은탄환은 괴물, 시어머니, 그리고 부두교 마법으로 되살아난 언데드에게 매우 효과적이라고 합니다.}
+itmname_Mineral1 {구리 주전자}
+itmdescr_Mineral1 {물이나 와인을 따르기에 매우 편리한 주전자.}
+itmname_Mineral2 {거북등 빗}
+itmdescr_Mineral2 {값비싸지만 풍성한 머릿결을 가진 이에게 꼭 필요한 세면도구.}
+itmname_Mineral3 {양초}
+itmdescr_Mineral3 {밀랍 양초.}
+itmname_Mineral4 {헤라클레스장수풍뎅이}
+itmdescr_Mineral4 {인간이 알고 있는 가장 큰 딱정벌레의 건조 표본(최대 20인치). 헤라클레스 딱정벌레는 체중 대비 지구에서 가장 강한 생물로, 자기 몸무게의 100배가 넘는 무게를 들어올릴 수 있다.}
+itmname_Mineral5 {아이콘 램프}
+itmdescr_Mineral5 {청동 성상 램프로 밤에는 책을 읽고, 아침에는 커피를 끓일 수 있습니다.}
+itmname_Mineral6 {손거울}
+itmdescr_Mineral6 {작은 손거울. 코끝조차 겨우 비칠 정도다.}
+itmname_Mineral7 {도자기 파이프}
+itmdescr_Mineral7 {네덜란드산 수공예품으로, 중국에서 전해진 기법으로 만들어졌습니다. 값싼 점토 파이프보다 고급스러워 현지 담배 애호가들에게 인기가 많습니다.}
+itmname_Mineral8 {구두}
+itmdescr_Mineral8 {짝이 없는 구두. 불길한 징조.}
+itmname_Mineral9 {낡은 머그컵}
+itmdescr_Mineral9 {낡고 빛바랜 주석 머그잔.}
+itmname_Mineral10 {부싯돌}
+itmdescr_Mineral10 {강철에 부딪혀 불을 일으키는 부싯돌. 17세기의 라이터.}
+itmname_Mineral11 {은 주전자}
+itmdescr_Mineral11 {아름다운 은 주전자.}
+itmname_Mineral12 {재규어의 발톱}
+itmdescr_Mineral12 {재규어의 잘린 발톱으로 만든 목걸이. 정글의 인디언 전사들 사이에서 인기가 많다.}
+itmname_Mineral13 {채찍}
+itmdescr_Mineral13 {가죽 끈으로 만든 채찍. 갑판장의 필수품이다. 떠도는 개를 쫓거나 건방진 자를 혼내는 데도 쓸 수 있다.}
+itmname_Mineral14 {뱀파이어의 날개}
+itmdescr_Mineral14 {현지 흡혈박쥐(Desmodus rotundus)의 말린 날개. 마녀와 인디언 주술사들이 의식에 사용한다고 전해진다.}
+itmname_Mineral15 {접이식 나이프}
+itmdescr_Mineral15 {선원의 없어서는 안 될 동반자.}
+itmname_Mineral16 {숫돌}
+itmdescr_Mineral16 {칼날을 가는 숫돌 조각.}
+itmname_Mineral17 {빈 약병}
+itmdescr_Mineral17 {빈 유리 약병.}
+itmname_Mineral18 {담배}
+itmdescr_Mineral18 {파이프 담배가 든 상자. 신세계 식민지 개척자들이 인디언에게서 배운 유행 취미다. 16세기 스페인 의사 니콜라스 모나르데스는 담배가 변비를 완화하고 근육을 이완시키며, 몸의 모공을 열어준다고 썼다.}
+itmname_Mineral19 {은수저}
+itmdescr_Mineral19 {아름다운 은숟가락. 분명 하인이 좋은 집에서 훔쳐온 것이다.}
+itmname_Mineral20 {나무 숟가락}
+itmdescr_Mineral20 {모든 선원은 식사 전에 이것을 꼭 챙깁니다.}
+itmname_Mineral21 {필기도구}
+itmdescr_Mineral21 {거위 깃털과 잉크병은 교양인의 상징이다.}
+itmname_Mineral22 {끈}
+itmdescr_Mineral22 {가느다란 끈 뭉치.}
+itmname_Mineral23 {못}
+itmdescr_Mineral23 {쇠못. 신발, 지붕, 배까지 뭐든 수리에 쓸 수 있습니다.}
+itmname_Mineral24 {벨트}
+itmdescr_Mineral24 {평범한 가죽 벨트. 바지를 고정하고 소지품을 휴대하는 데 유용합니다.}
+itmname_Mineral25 {갑판장 호각}
+itmdescr_Mineral25 {모든 자존심 있는 갑판장은 이걸로 선원들에게 명령을 내립니다.}
+itmname_Mineral26 {카드 덱}
+itmdescr_Mineral26 {해진 트럼프 카드 한 벌.}
+itmname_Mineral27 {절구와 공이}
+itmdescr_Mineral27 {약초와 기타 재료를 가루로 빻아 다양한 물약을 만들 수 있습니다. 호두껍질보다 단단한 것은 빻지 못합니다.}
+itmname_Mineral28 {에틸 알코올}
+itmdescr_Mineral28 {몇몇 미친 연금술사들은 이 순수 에틸 알코올을 정상인처럼 마시지 않고, 은폭약을 만들 때 사용한다.}
+itmname_Mineral29 {질산}
+itmdescr_Mineral29 {질산은 8세기부터 알려져 있습니다. 내화성 비금속 도가니가 있다면 뇌은 제조에 쓸 수 있습니다. 반응성이 매우 높으니 피부 접촉을 피하고, 절대 맛보지 마십시오.}
+itmname_Mineral30 {노예 족쇄}
+itmdescr_Mineral30 {노예상들이 도망을 막기 위해 쓰는 손목 족쇄.}
+itmname_Mineral31 {마법이 깃든 뼈}
+itmdescr_Mineral31 {구리 고리가 달린 인간 손가락뼈. 부두 주술사가 주문에 사용합니다.}
+itmname_Mineral32 {탄환 주형}
+itmdescr_Mineral32 {이 장치는 콜트 리볼버에 맞는 형태와 크기의 탄환을 주조할 수 있게 해줍니다.}
+itmname_Mineral33 {문신 염료}
+itmdescr_Mineral33 {문신 염료.}
+itmname_Mineral34 {빈 약병}
+itmdescr_Mineral34 {세상에서 가장 깨끗한 약병은 아니지만, 액체를 담을 수 있습니다.}
+itmname_Mineral35 {류트}
+itmdescr_Mineral35 {현대 기타의 조상인 악기.}
+itmname_crab_pincers {게 집게}
+itmdescr_crab_pincers {거대 적게의 집게.}
+itmname_crab_jaw {게턱}
+itmdescr_crab_jaw {맹독샘이 들어 있는 거대 게의 턱.}
+itmname_ShipyardsMap {도면}
+itmdescr_ShipyardsMap {#sShipName# 설계도.}
+itmdescr_ShipyardsMap_PortmanLevelUp4 {최신 기술이 적용된 선박 설계도.}
+itmname_MayorsRing {결혼 반지}
+itmdescr_MayorsRing {#sCityName#의 총독의 결혼 반지입니다. 그는 이 반지를 되찾고 싶어할 것입니다.}
+itmname_UsurersJew {보석}
+itmdescr_UsurersJew {#sCityName#의 고리대금업자가 가진 훌륭한 #sJevelType#}
+itmname_Key1 {단순 열쇠}
+itmdescr_Key1 {간단한 자물쇠 열쇠.}
+itmname_Key2 {일반 열쇠}
+itmdescr_Key2 {중간 난이도의 일반 자물쇠용 열쇠.}
+itmname_Key3 {복잡한 열쇠}
+itmdescr_Key3 {복잡한 자물쇠용 열쇠.}
+itmname_key_capper {Tartarus' 열쇠}
+itmdescr_key_capper {Tartarus'호의 문과 상자를 여는 열쇠.}
+itmname_key_gun {청동 열쇠}
+itmdescr_key_gun {아돌프 바르비에의 시신에서 발견된 열쇠. 하지만 무엇을 열 수 있을까?}
+itmname_keys_skel {자물쇠따개 세트}
+itmdescr_keys_skel {이 자물쇠따개 세트로 다양한 자물쇠를 열 수 있습니다.}
+itmname_sant_anna_key {화려한 열쇠}
+itmdescr_sant_anna_key {정교한 이빨이 복잡하게 맞물린 고급 열쇠. 유럽 장인의 솜씨가 아니면 만들 수 없었을 것이다. 이제 이 열쇠에 맞는 자물쇠를 찾아보자!}
+itmname_key_betancur {낡은 열쇠}
+itmdescr_key_betancur {빛바랜 황동 열쇠. 무엇을 여는지는 알 수 없다. 하지만 이 열쇠가 발견된 곳을 보면, 아마도 매우 귀중한 무언가를 여는 열쇠일 것이다.}
+itmname_key_mary {Mary Casper의 열쇠}
+itmdescr_key_mary {플뤼트선 'Ceres Smithy'의 메리 선실 열쇠.}
+itmname_key_facio {황동 열쇠}
+itmdescr_key_facio {Giuseppe Fazio의 열쇠.}
+itmdescr_key_facioQ {Carolina'호의 문과 Giuseppe Fazio 선실의 상자 중 하나를 여는 열쇠.}
+itmname_key_levasser {르바세르의 열쇠}
+itmdescr_key_levasser {프랑수아 르바세르의 시신에서 얻은 열쇠다. 이제 이 열쇠로 열 수 있는 상자를 찾아보자.}
+itmname_key_candlestick_LeFransua {열쇠}
+itmdescr_key_candlestick_LeFransua {낡고 닳은 열쇠. 무엇을 여는지는 아직 알 수 없다.}
+itmname_PortmansBook {항해일지}
+itmdescr_PortmansBook {건망증 많은 선장이 두고 간 항해일지입니다. 그에게 돌려줘야 합니다.}
+itmname_CaptainBook {선박 서류}
+itmdescr_CaptainBook {건망증 많은 선장이 두고 간 선박 서류. 그에게 돌려줘야 한다.}
+itmname_bible {성경}
+itmdescr_bible {현지어로 인쇄되고 정성스럽게 제본된 구약과 신약 성경. 가톨릭 교회는 종교개혁 시기 개신교 번역의 확산에 맞서 16세기 후반에 자국어 성경 번역을 공식 허가했다.}
+itmname_ChurchGenQuest1Bible {교회 필사본}
+itmdescr_ChurchGenQuest1Bible {#sCity#의 신부에게 전달해야 할 중요한 교회 문서.}
+itmname_ChurchGenQuest2Cup {성찬잔}
+itmdescr_ChurchGenQuest2Cup {#sCity#의 신부에게 전달해야 할 성찬용 성배입니다. 축성된 성배는 반드시 금이나 은으로 만들어져야 하므로 제법 무겁습니다.}
+itmname_MerdokArchive {John Murdock의 기록 보관소}
+itmdescr_MerdokArchive {Van Merden의 일기. 암호로 옮겨 적혀 있어, 알 수 없는 문자와 숫자가 뒤섞인 난해한 기록처럼 보인다. 해독 키를 찾아야 읽을 수 있다.}
+itmname_MineArchive {암호화된 문서}
+itmdescr_MineArchive {문서는 오랫동안 방치되어 있었고, 내용도 암호화되어 있다. 분명히 리그 고위 장교의 개인 보험일 것이다.}
+itmname_Cipher {아카이브 암호}
+itmdescr_Cipher {[ERROR: RateLimitError]}
+itmname_JacobJournal {Jacob van Berg의 항해일지}
+itmdescr_JacobJournal {Mirage'호 선장 Jacob van Berg의 항해일지.}
+itmname_FleetwoodJournal {Richard Fleetwood의 항해일지}
+itmdescr_FleetwoodJournal {Valkyrie'호 선장 Richard Fleetwood의 항해일지.}
+itmname_ClementLebrunJournal {클레망 르브랑의 항해일지}
+itmdescr_ClementLebrunJournal {토르투가 출신 그 대담한 자의 항해일지. 모든 페이지가 완전히 찢겨 나갔다.}
+itmname_FernandoDeAlavidaJournal {Fernando de Alavida 항해일지}
+itmdescr_FernandoDeAlavidaJournal {Fernando de Alavida의 항해일지.}
+itmname_FernandoDeAlavidaPismo {구겨진 편지}
+itmdescr_FernandoDeAlavidaPismo
+{
+분노에 찬 채 구겨져 선실 구석에 아무렇게나 던져진 종이 조각. 잉크가 번져 마지막 몇 줄만 읽을 수 있다:  
+'...그럼에도 불구하고 보물을 납골당에 보관하는 것은 삼가시길 강력히 권고합니다. 최근 섬에서는 이교도 도굴꾼에 대한 소문이 늘고 있어, 영주의 안식처가 위태로울까 두렵습니다.'
+}
+itmname_MC_Letter {봉인된 편지}
+itmdescr_MC_Letter {애비게일의 몸값 조건이 담긴 리처드 플리트우드 앞으로의 편지.}
+itmdescr_MC_Letter1 {Richard Fleetwood의 답변.}
+itmdescr_MC_Letter2 {플리트우드가 루카스 로덴부르크에게 보내는 편지.}
+itmdescr_MC_Letter3 {Lucas Rodenburg가 van Merden에게 보낸 편지.}
+itmname_NPC_Letter {봉인된 편지}
+itmdescr_NPC_Letter {리처드 플리트우드가 애비게일에게 보낸 편지.}
+itmdescr_NPC_Letter1 {리처드 플리트우드의 서신.}
+itmdescr_NPC_Letter2 {에르퀼 톤자가 남긴 작별 편지.}
+itmdescr_NPC_Letter3 {어딘가의 섬 지도와 'X' 표시가 그려진 봉투 - 동굴로 보인다.}
+itmdescr_NPC_Letter4 {루카스 로덴부르크가 산티아고 은행가에게 보낸 편지.}
+itmname_DTSG_letter1 {반쯤 탄 편지 조각}
+itmdescr_DTSG_letter1 {그을린 자국으로 보아, 이 편지는 최근에 불에 탄 것 같다.}
+itmdescr_DTSG_letter2 {찰리 크니펠의 외모를 상세히 묘사한 편지.}
+itmname_Drugstore_keys {약국 열쇠}
+itmdescr_Drugstore_keys {이 열쇠들은 John Murdock의 집 모든 문을 엽니다.}
+itmname_MaltieBase_keys {지하감옥 열쇠}
+itmdescr_MaltieBase_keys {이 열쇠들은 생피에르에 있는 몰타 기사단 지하 감옥의 감방을 엽니다.}
+itmname_Finger {잘린 손가락}
+itmdescr_Finger {반지 낀 손가락. 페르난도 사망의 증거.}
+itmdescr_finger_rober {반지가 낀 손가락. 로베르 마르텐의 죽음을 증명하는 증거.}
+itmname_GastonHead {인간 머리}
+itmdescr_GastonHead {잘린 인간의 머리. 섬뜩한 동행.}
+itmname_SkullAztec {비취 해골}
+itmdescr_SkullAztec {아름답고 신비로운 고대 유물로, 한 덩어리의 옥에서 깎아낸 듯하다.}
+itmname_suit_1 {고가 의류}
+itmdescr_suit_1 {총독이 주최하는 공식 연회에도 손색없는 고급 의상.}
+itmname_crowbar {금속 쇠지렛대}
+itmdescr_crowbar {작은 쇠지렛대. 상자, 머리, 게딱지를 따는 데 쓸 수 있다. 'G.F.' 표시가 새겨져 있다.}
+itmname_bucher_ring {거대한 반지}
+itmdescr_bucher_ring {Captain Butcher의 반지.}
+itmname_cask_whisky {아일리시 위스키 통}
+itmdescr_cask_whisky {더블린 타운에서 증류된 고급 'Bushmills' 아이리시 위스키 몇 병이 담긴 나무 상자.}
+itmname_cask_gin {진 통나무통}
+itmdescr_cask_gin {진귀한 유럽산 진 한 통. 이 카리브에서는 극소수만이 누릴 수 있는 술이다.}
+itmname_buben {주술사의 탬버린}
+itmdescr_buben {그들의 주술사가 영혼과 대화할 때 쓴다는 인디언 탬버린. 적어도 식민지인들에게는 그렇게 말하지...}
+itmname_smoking_tube {파이프}
+itmdescr_smoking_tube {북미 평원 인디언의 정교한 파이프. 어쩌다 이곳에 온 걸까?}
+itmname_chemistry {라부아지에의 화학 입문서}
+itmdescr_chemistry {Traite Elementaire de Chimie'라는 제목의 인쇄된 책. 평범한 사람에겐 이해할 수 없는 메모와 정의가 가득하다. 저자는 'Lavoisier'라는 인물이며, 표지에는 'Printed in Paris, 1789 AD'라고 적혀 있다. 인쇄소의 실수임이 틀림없다.}
+itmname_shark_teeth {상어 이빨}
+itmdescr_shark_teeth {S.D. 이니셜이 새겨진 큰 백상아리의 이빨}
+itmname_witches_hammer {말레우스 말레피카룸'}
+itmdescr_witches_hammer {독일 성직자 하인리히 크라머와 야코프 슈프렝거가 중세 말기에 저술한 마녀사냥 논문으로, 영어로는 '마녀의 망치'로 알려져 있습니다. 가톨릭 교회에서 부정확하다고 비난받았음에도 불구하고, 평신도와 세속 법정 사이에서 큰 인기를 끌고 있습니다.}
+itmname_calendar_maya {마야 달력}
+itmdescr_calendar_maya {다섯 조각을 모아 완성한 마야력.}
+itmname_splinter_js {장식된 파편}
+itmdescr_splinter_js {얀 스벤손이 소유한 아름다운 인디언 문양의 돌 조각.}
+itmname_splinter_nh {장식된 파편}
+itmdescr_splinter_nh {네이선 호크의 소유였던 아름다운 인디언 문양의 돌 조각.}
+itmname_splinter_mt {장식된 파편}
+itmdescr_splinter_mt {마커스 타이렉스가 소유한 아름다운 인디언 문양의 돌 조각.}
+itmname_splinter_zm {장식된 파편}
+itmdescr_splinter_zm {자카리 말로우의 소유였던 아름다운 인디언 문양의 돌 조각.}
+itmname_splinter_jb {장식된 파편}
+itmdescr_splinter_jb {자크 바르바종 소유의 아름다운 인디언 문양이 새겨진 돌 조각.}
+itmname_Almanac {연감}
+itmdescr_Almanac {두꺼운 책.}
+itmdescr_jinobook {지노 기네일리의 연감.}
+itmdescr_Almanac_FMQP {루이스 오르티스의 회계 장부.}
+itmname_VerifyPaper {사략 허가장}
+itmdescr_VerifyPaper {사략 허가장.}
+itmdescr_VincentoPaper {소지자가 스페인 식민지 산티아고를 자유롭게 방문할 수 있도록 허가합니다. 종교재판관 빈센토 신부의 친필 서명.}
+itmdescr_VincentoPaper_A {소지자는 산티아고와 산호세 스페인 식민지를 자유롭게 방문할 수 있습니다. 종교재판관 빈센토 신부의 친필 서명.}
+itmname_skinmap {두 현현' 지도}
+itmdescr_skinmap {카리브 해의 희미한 윤곽이 보이는 무두질 가죽 조각.}
+itmname_arrowway {나침반 '길의 화살'}
+itmdescr_arrowway {배의 나침반. 바늘이 북쪽을 빼고 온갖 방향을 가리키며 미친 듯이 돌아간다.}
+itmname_ArchyBook {일지}
+itmdescr_ArchyBook {아치볼드 콜훈의 일지. 읽어볼 만한 가치가 있겠군.}
+itmname_key_archy {철 열쇠}
+itmdescr_key_archy {아치볼드 콜훈의 열쇠. 상자를 여는 데 쓰이는 듯하다.}
+itmdescr_key_mask {‘Santa Quiteria’ 선장의 해골에서 발견된 열쇠. 상자를 여는 데 쓰이는 듯하다.}
+itmname_SQCapBook {항해일지}
+itmdescr_SQCapBook {Santa Quiteria' 선장의 항해일지. 읽어볼 만한 흥미로운 내용이 있을 것 같다.}
+itmname_mark_map {메모가 있는 지도}
+itmdescr_mark_map {잃어버린 Ksocheatem 섬을 찾기 위해 쓰이는 지도.}
+itmname_mask_false {고대 인디언 가면}
+itmdescr_mask_false {Ksocheatem 섬에서 발견된 불길한 고대 인디언 가면.}
+itmname_mask_true {쿠쿨칸의 가면}
+itmdescr_mask_true {마야 신 쿠쿨칸, ‘날개 달린 뱀’의 강력한 유물.}
+itmname_stonekey {석 열쇠}
+itmdescr_stonekey {이차 사제 카넥의 열쇠.}
+itmname_Tablet_1 {고대 석판}
+itmdescr_Tablet_1 {하늘의 마야 신 이참나의 석판.}
+itmname_Tablet_2 {고대 석판}
+itmdescr_Tablet_2 {마야 태양신 키니치 아하우의 석판.}
+itmname_Tablet_3 {고대 석판}
+itmdescr_Tablet_3 {물과 비의 마야 신 차악의 석판.}
+itmname_Tablet_4 {고대 석판}
+itmdescr_Tablet_4 {불과 폭풍의 마야 신 토힐의 석판.}
+itmname_Tablet_5 {고대 석판}
+itmdescr_Tablet_5 {마야 전쟁의 신 카윌의 석판.}
+itmname_Tablet_6 {고대 석판}
+itmdescr_Tablet_6 {무역의 마야 신 에크 추아의 석판.}
+itmname_alexs_chest {강철 상자}
+itmdescr_alexs_chest {장인 Alexus의 금속 상자, 단단히 잠김.}
+itmname_treasure_note {보물 쪽지}
+itmdescr_treasure_note {이 쪽지는 보물 속에서 발견되었습니다. 작성자는 이미 오래전에 세상을 떠났을 가능성이 높습니다. 내용은 선상 일지의 특별 섹션에 신중히 옮겨 적어야 합니다.}
+itmname_PR_Letter {누군가 남긴 쪽지}
+itmdescr_PR_Letter {낡고 해진 종이에 적힌 쪽지. 내용은 분명 남이 보면 안 될 것이다.}
+itmname_quest_potion {약초 달임}
+itmdescr_quest_potion {이 물약의 진짜 효능은 그것을 만든 자만이 안다.}
+itmname_GS_letters {용병이 전달한 쪽지}
+itmdescr_GS_letters {항만청장이 직접 쓴 정보. 그의 고객들이 언제, 어떤 항로로 출항했는지 기록되어 있으며, 모두 해적의 습격을 받았다.}
+itmname_SM_necklace_Julie {Julie d'Armagnac의 목걸이}
+itmdescr_SM_necklace_Julie {줄리의 마음에 가까운 보석. 우아하고 세련된 이 목걸이는 그녀의 추억을 지키는 듯하다. 비밀을 간직할 수 있는 물건이 있다면, 이 목걸이가 그중 하나일 것이다.}
+itmname_TBP_letter {열린 편지}
+itmdescr_TBP_letter {날 협박하고도 무사할 수 있을 거라 생각했나? 착각이었지. 곧 네 대담함을 뼈저리게 후회하게 될 거다. 네 죽음은 길고 고통스러울 것이며, 아무도 널 구해주지 못할 거다.}
+itmdescr_letter_open_Regata {레가타 참가자 초대장.}
+itmname_kaleuche_amulet1 {이상한 호신부}
+itmdescr_kaleuche_amulet1 {매끄러운 조약돌로 만든 화려하게 칠해진 인디언 부적.}
+itmname_kaleuche_amulet1_potion {툿투아타팍의 물약}
+itmdescr_kaleuche_amulet1_potion {카라이브 인디언 샤먼 투투아타파크가 망가로사로 빚은 물약. 반응 속도가 영구히 증가하고 경무기 숙련이 향상됩니다.}
+itmname_kaleuche_amulet2 {인디언 호신부}
+itmdescr_kaleuche_amulet2 {매끈한 조약돌로 만든 독특한 인디언 부적. 화려하게 채색되어 있다.}
+itmdescr_kaleuche_amulet2_sword {카리브 인디언 샤먼 투투아타파크가 부여한 부적입니다. 차비나비 신전이 당신의 무기에 취약해지고, 그들의 공격으로부터 보호를 받습니다. 모든 무기 기술이 25% 증가합니다.}
+itmname_kaleuche_amulet2_potion {툿투아타팍의 물약}
+itmdescr_kaleuche_amulet2_potion {카라이브 인디언 샤먼 투투아타파크가 망가로사로 빚은 물약. 영구적으로 지구력이 오르고 중무기 기술이 향상됩니다.}
+itmname_kaleuche_amulet3 {인디언 호신부}
+itmdescr_kaleuche_amulet3 {매끄러운 조약돌로 만든 화려하게 칠해진 인디언 부적.}
+itmdescr_kaleuche_amulet3_shield {카리브 인디언 샤먼 투투아타파크가 부적에 마법을 걸었습니다. 차비나비 신전이 당신의 무기에 약해지고, 그들의 공격으로부터 보호를 받습니다. 받는 모든 피해가 25% 감소하며 중독을 막아줍니다.}
+itmname_kaleuche_amulet3_potion {툿투아타팍의 물약}
+itmdescr_kaleuche_amulet31_potion {카라이브 인디언 주술사 Tuttuathapak이 망가로사로 빚은 물약. 힘이 영구적으로 증가하고 중화기 숙련도가 향상됩니다.}
+itmdescr_kaleuche_amulet32_potion {카라이브 인디언 주술사 Tuttuathapak이 망가로사로 빚은 물약. 통찰이 영구적으로 증가하고 화기류 숙련도가 향상됩니다.}
+itmdescr_kaleuche_amulet33_potion {카라이브 인디언 샤먼 투투아타파크가 망가로사로 빚은 물약. 영구적으로 재능이 오르고 은신 기술이 향상됩니다.}
+itmdescr_kaleuche_amulet34_potion {카라이브 인디언 주술사 Tuttuathapak이 망가로사로 빚은 물약. 리더십이 영구적으로 오르고 카리스마가 증가합니다.}
+itmdescr_kaleuche_amulet35_potion {카라이브 인디언 주술사 Tuttuathapak이 망가로사로 빚은 물약. 영구적으로 행운이 오르고 성공이 증가합니다.}
+itmname_kaleuche_letter {말아 올린 쪽지}
+itmdescr_kaleuche_letter
+{
+받는 이를 찾아, 자정에 성문에서 정글로 이어지는 길을 따라가라.
+...사흘 뒤에 배가 Chetumal 만에 도착한다. 화물은 밤에 두 구명정에 실릴 것이다. 두 번째 배는 하역 후 하루가 지나서야 도착한다...
+}
+itmname_kaleuche_key {강철 열쇠}
+itmdescr_kaleuche_key {바베이도스 등대에 있는 상자용 레지널드 잭슨의 열쇠.}
+itmdescr_kaleuche_key_crypt {묘지 납골당 문 열쇠.}
+itmdescr_kaleuche_key_FMQT {르바쎄르의 상자 열쇠 복제본.}
+itmname_MerrimanBook {금속 상자}
+itmdescr_MerrimanBook {Joachim Merriman의 은신처에서 가져온 금속 상자.}
+itmname_KhaelRoa_item {재규어 가죽}
+itmdescr_KhaelRoa_item
+{
+차비나비 족장의 위대한 선물 — 신 유므 시밀이 직접 축복한 아름다운 재규어 가죽입니다.
+화기류로 주는 피해가 10배 증가합니다. 효과는 최대 2일간 지속됩니다.
+}
+itmname_key_candlestick_PortRoyal {열쇠}
+itmdescr_key_candlestick_PortRoyal {낡고 오래된 열쇠. 무엇을 여는지는 아직 알 수 없다.}
+itmname_key_candlestick_FortFrance {열쇠}
+itmdescr_key_candlestick_FortFrance {낡고 오래된 열쇠. 무엇을 여는지는 아직 알 수 없다.}
+itmname_key_candlestick_Villemstad {비밀 결사의 반지}
+itmdescr_key_candlestick_Villemstad {커다란 고풍스러운 루비 반지. 내게 열쇠가 될 것 같다.}
+itmname_LadyBeth_Book {블랙우드의 일지}
+itmdescr_LadyBeth_Book {비참한 남자의 생각.}
+itmname_LadyBeth_Map {Blackwood의 지도}
+itmdescr_LadyBeth_Map {위대한 보물 사냥꾼이 찾는 가장 귀한 보물로 가는 길.}
+itmname_BoxOfBalls {포탄 상자}
+itmdescr_BoxOfBalls {이 상자에는 짚과 포탄 여덟 개만 들어 있다.}
+itmname_Tutorial_key {열쇠}
+itmdescr_Tutorial_key {쇠 열쇠.}
+itmname_Tutorial_journal {선장의 일지. 제4권.}
+itmdescr_Tutorial_journal {Ulysse 선장의 항해일지 네 번째 권. 이제 막 시작되어 기록이 몇 개 없다.}
+itmname_Suspicious_Potion {수상한 물약}
+itmdescr_Suspicious_Potion {제대로 돼야 할 텐데.}
+itmname_LFD_letter {마리사 칼데라에게 보내는 편지}
+itmdescr_LFD_letter {갈색으로 변한 잉크와 세월에 누렇게 바랜 종이가 이 편지의 오래된 연륜을 드러냅니다. 내용은 밀랍 봉인 아래에 단단히 감춰져 있습니다. 이런 편지는 대개 특별한 가치를 지닙니다. 수신인은 포르토 벨로의 마리사 칼데라입니다.}
+itmname_OZ_book {대장장이 서적}
+itmdescr_OZ_book {세바스찬이 카드 게임에서 어이없이 잃어버린 지식의 보고. 도면과 메모로 가득한 묵직한 고서로, 대장장이에게는 진정한 보물이다.}
+itmname_OZ_letter {쪽지}
+itmdescr_OZ_letter {자정에 동굴에서 만나. 짐을 챙겨서 갈레라 곶으로 가자. 거기서 우리가 픽업될 거고, 드디어 이 누추한 섬을 떠나게 될 거야. 이 한심한 놈들보다 훨씬 큰 고기를 손질할 날이 기다려진다.}
+itmname_wolfreeks_book {항해일지}
+itmdescr_wolfreeks_book {Wulfric Iogansen의 항해일지.}
+itmdescr_ignasio_book {이그나시오 마르코의 항해일지.}
+itmname_Bunch {근접무기 묶음}
+itmdescr_Bunch {일반 도끼와 검 30개 묶음.}
+itmname_Dove {전서구}
+itmdescr_Dove {스파이크라는 이름의 전서구입니다. 이 용감한 깃털 친구는 카리브 해 어디서든 라 베가로 돌아갈 수 있습니다.}
+itmname_key_scotland {녹슨 열쇠}
+itmdescr_key_scotland {오래 전에 죽은 스코틀랜드인의 바랜 해골에서 발견된 낡은 열쇠.}
+itmname_key_ruins {은 열쇠}
+itmdescr_key_ruins {폐허에서 발견된 변색된 은 열쇠.}
+itmname_indian_poison {타이노족의 독}
+itmdescr_indian_poison
+{
+비밀 식물과 맹독 개구리 점액으로 만든 치명적인 독. 아주 작은 상처에도 치명적이며, 해독제로도 치료할 수 없습니다. 칼날과 탄환에 바르는 독으로 사용할 수 있습니다.
+효과는 이틀간 지속됩니다.
+}
+itmname_mapEnrico {Camilla의 지도}
+itmdescr_mapEnrico {20년 전 버려진 스페인 광산 마을의 보물로 이끄는 지도입니다.}
+itmname_Reserve_item_01 {봉인된 편지}
+itmdescr_Reserve_item_01 {이것은 Eclatant 선장의 이름으로 보내는 서신입니다.}
+itmdescr_Reserve_item_01_1 {네덜란드 서인도 회사 이사 피터 스타이브센트에게 보내는 슈발리에 필리프 드 푸앵시의 편지}
+itmdescr_Reserve_item_01_2 {네덜란드 서인도 회사 이사 피터 스타이브센트에게 보내는 슈발리에 필리프 드 푸앵시의 편지}
+itmdescr_Reserve_item_01_3 {자메이카 주지사 에드워드 도일리 대령에게 보내는 필리프 드 푸앵시 슈발리에의 편지}
+itmname_Reserve_item_01_1 {두꺼운 장부}
+itmdescr_Reserve_item_01_4 {회계 장부.}
+itmname_blackpearl {흑진주}
+itmdescr_blackpearl {전설적인 흑진주. 배 이름으로 딱이다.}
+itmname_islamona_toolbox {공구함}
+itmdescr_islamona_toolbox {유럽산 고급 도구. 선박과 주택 건축용.}
+itmname_Memento_Book {그림의 일지}
+itmdescr_Memento_Book {3막의 비극}
+itmname_Memento_letter {메멘토 편지}
+itmdescr_Memento_letter {메멘토 편지}
+itmname_LEDR_Book {디에고 벨라스케스 데 쿠엘라르의 일지}
+itmdescr_LEDR_Book {쿠바의 초대 총독이자 스페인 정복자인 디에고 벨라스케스 데 쿠엘라르의 일지.}
+itmtype_gun {화기}
+itmtype_blade {근접무기}
+itmtype_spyglass {망원경}
+itmtype_patent {특허}
+itmtype_cirass {갑옷}
+itmtype_maps {지도}
+itmtype_tool {도구}
+itmtype_talisman {호신부}
+itmtype_slot {호신부}
+itmtype_special {특수}
+itmtype_ammo {탄약}
+itmtype_lantern {도구}
+itmtype_hat {모자}
+itmtype_musket {화기}
+itmname_LEDR_key {철 열쇠}
+itmdescr_LEDR_key {주교의 유해에서 발견된 열쇠. 곤살로의 말에 따르면, 그는 이 열쇠를 절대 손에서 놓지 않았다고 한다. 괜히 호기심 많은 선원이 그의 은닉처를 찾아낼까 두려웠던 모양이다. 아니면, 굳이 열쇠를 항상 지니고 다닐 이유가 있었을까?}
+itmname_recipe_potion1 {치유 물약 조제법}
+itmdescr_recipe_potion1 {치유 물약 제조법이 모두 담긴 조제법.}
+itmname_blade_WR {재탄생}
+itmdescr_blade_WR
+{
+루퍼트 노스우드의 위대한 세이버.  
+황금 불사조가 장식된 거대한 가드는 고통과 재탄생의 증인이다. 칼날은 거울처럼 빛나며, 풀러를 따라 이렇게 새겨져 있다: VULNERATUS NON VICTUS — “상처 입었으나 꺾이지 않았다.” 이 검이 얼마나 많은 영혼을 거두었는지는 오직 신만이 아신다...
+}
+itmname_hat11 {테레사의 모자}
+itmdescr_hat11 {오렐리 베르탱이 보존한 메리의 어머니 머리장식. 세월이 흘렀어도 여전히 우아함과 품위를 간직하고 있다.}
+itmname_talisman21 {밀수업자의 부적}
+itmdescr_talisman21 {허브와 재가 담긴 주머니, 검은 액체가 든 작은 병, 해골 메달—외부인에겐 기이한 조합이지만, 암거래에 익숙한 이들에겐 소중한 부적입니다. 이런 부적은 진짜 밀수꾼만이 착용합니다.}
+itmname_blade_WR_1 {환생}
+itmdescr_blade_WR_1
+{
+루퍼트 노스우드의 위대한 세이버.  
+황금 불사조가 장식된 거대한 가드는 고통과 재탄생의 증인이다. 칼날은 거울처럼 빛나며, 풀러를 따라 이렇게 새겨져 있다: VULNERATUS NON VICTUS — “상처 입었으나 꺾이지 않았다.” 이 검이 얼마나 많은 영혼을 거두었는지는 오직 신만이 아신다...
+}
+itmname_piratesJournal_1 {해적 일지}
+itmdescr_piratesJournal_1 {값싼 재료로 만들어진 낡은 문서. 여러 사람의 손을 거친 흔적이 역력하다. 습격과 밀수 기록이 담겨 있다.}
+itmname_piratesJournal_2 {해적 일지}
+itmdescr_piratesJournal_2 {삶은 가죽으로 제본된 해적선의 항해일지. 안에는 상인 선단 약탈과 공해상 갈취가 단정한 필체로 기록되어 있다.}
+itmname_piratesJournal_3 {해적 규범}
+itmdescr_piratesJournal_3 {가죽과 금속으로 제본된 두꺼운 선박 문서. 엠보싱과 보석으로 화려하게 장식된 표지는 그 자체로 값진 보물이다. 내부에는 식민지 습격, 왕실 호위대 약탈, 대규모 해전 등 모험 소설에나 나올 기록들이 담겨 있다.}
+itmname_pistol15 {증정용 화기}
+itmdescr_pistol15 {명예로운 네덜란드 서인도 회사에서 5년간의 근속을 기념하여 17인 평의회가 특별히 의뢰한 선물.}
+itmname_VD_Contract {반 도른의 계약}
+itmdescr_VD_Contract {해군 등록국장의 원본 계약서. 7년 전에 만료되었습니다. 이렇게 중요한 문서가 당신 도착 전에 책상 위에 놓여 있었다는 건 수상합니다.}
+itmname_BookSp4 {이상한 책}
+itmdescr_BookSp4 {이 책은 표지 색뿐만 아니라 무게로도 다른 책들과 다릅니다.}
+itmname_Doc1Sp4 {브라질 정세 보고}
+itmdescr_Doc1Sp4 { }
+itmname_Doc2Sp4 {앤티과에서 온 편지}
+itmdescr_Doc2Sp4 { }
+itmname_VD_key {Van Doorn 열쇠}
+itmdescr_VD_key {해군 등록소의 지하실을 개방합니다.}
+itmname_CatharinaLetter {카타리나의 편지}
+itmdescr_CatharinaLetter {고운 종이에 적힌 편지. 아직도 사랑스럽고 아름다운 여인의 향기가 남아 있다. 몇 주 전에 도착했지만, 끝내 읽히지 않았다.}
+itmname_Visser_Key {Maarten Visser의 열쇠}
+itmdescr_Visser_Key {마르텐 비서가 마이클 로젠크래프트 선장에게 해군 등록 대가로 뇌물을 받은 증거.}

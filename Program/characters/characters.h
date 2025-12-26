@@ -64,6 +64,14 @@ string  LoyalityTable[MORALE_TABLE_SIZE];
 #define SPECIAL_A	"Agility"
 #define SPECIAL_L	"Luck"  //21
 
+#define PIRATES_P	"Strength"   // Сила
+#define PIRATES_I	"Perception" // Восприятие
+#define PIRATES_R	"Agility"    // Реакция
+#define PIRATES_A	"Charisma"   // Лидерство
+#define PIRATES_T	"Intellect"  // Талант
+#define PIRATES_E	"Endurance"  // Выносливость
+#define PIRATES_S	"Luck"       // Удача
+
 #define SPECIAL_TYPE	"SPECIAL"
 #define SKILL_TYPE	    "Skill"
 // boal <--

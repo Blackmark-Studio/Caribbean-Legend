@@ -1,0 +1,20 @@
+LSC_Q2Utilite_1 { }
+LSC_Q2Utilite_2 { }
+LSC_Q2Utilite_3 {@GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'의 선장 @<GetFullName(sld)>이(가) 도시에 있습니다. 그는 지금 항구 사무실에 있을 것입니다.}
+LSC_Q2Utilite_4 {선장 @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'이(가) 도시에 있습니다. 항만 사무실에 있을 것입니다.}
+LSC_Q2Utilite_5 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'의 선장 @<GetFullName(sld)>이 도시에 있습니다. 그는 지금 항만 사무소에 있을 것입니다.}
+LSC_Q2Utilite_6 {, ~에 있는}
+LSC_Q2Utilite_7 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>'의 선장 @<GetFullName(sld)>은(는) 항구에 정박한 배 위에 있습니다. 이상한 사람이죠, 절대 육지에 내리지 않더군요.}
+LSC_Q2Utilite_8 {선장 @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'은(는) 항구에 정박한 자신의 배에 있습니다. 이상한 사람이지요, 절대 뭍에 내리지 않습니다.}
+LSC_Q2Utilite_9 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>'의 선장 @<GetFullName(sld)>은 항구에 정박한 배에 있습니다. 이상한 사람이지요, 절대 육지에 내리지 않아요.}
+LSC_Q2Utilite_10 {, ~에 있는}
+LSC_Q2Utilite_11 {선장 @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>'이(가) 도시에 있습니다. 이름은 아마 @<GetFullName(sld)>일 거예요.}
+LSC_Q2Utilite_12 {지금 선장 @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>'이(가) 도시에 있습니다.}
+LSC_Q2Utilite_13 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>'의 선장님이 도시에 있습니다. 이름은 아마 @<GetFullName(sld)>일 거예요.}
+LSC_Q2Utilite_14 {선장 @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>'은(는) 항구에 정박해 있습니다. 이름은 아마 @<GetFullName(sld)>일 겁니다.}
+LSC_Q2Utilite_15 {선장 @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>'이(가) 항구에 자신의 배에 있습니다.}
+LSC_Q2Utilite_16 {선장 @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>'은(는) 항구에 정박 중입니다. 이름은 아마 @<GetFullName(sld)>일 거예요.}
+LSC_Q2Utilite_17 {, ~에 있는}
+LSC_Q2Utilite_18 {Mary Celeste}
+LSC_Q2Utilite_19 {선박이 비어 있습니다}
+LSC_Q2Utilite_20 {브리건틴 'Mary Celeste'}

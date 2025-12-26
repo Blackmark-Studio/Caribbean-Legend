@@ -1,6 +1,49 @@
 info
 {
-Универсальный создатель героев адд-она SLiB    Скрипт создан ALexusB 09.10.04    Путь к файлу \RESOURCE\INI\TEXTS\RUSSIAN\HeroDescribe.txt        версия 02.07.06    hero_qty - количество героев    ps_hero_qty - количество псевдо-героев (могут встретиться как квестовые персонажи в игре, в ПГГ берутся строго персонажы мужского пола)    heroName_Х        - имя героя    heroLastname_Х    - фамилия героя    heroNameGen_ и heroLastnameGen_ - родительный падеж,   heroLastnameDat_  - дательный падеж.    heroFace_Х        - номер портрета    heroModel_Х       - список моделей через зяпятую без пробелов, может быть меньше, чем полный список, тогда первая возмется            (без брони, лёгкая, средняя, крутая, золотая, одежда_1, одежда_2, одежда_3)    heroType_Х        - тип героя (влияет на стартовые параметры)        значения только: Corsair, Merchant, Adventurerили (для русской версии)Корсар,Торговец,Авантюрист    heroNation_Х      - стартовая нация героя (нейтральные отношения)        значения только: ENGLAND, FRANCE, SPAIN, HOLLAND            или (для русской версии)Англия            Франция            Испания            Голландия    sex_X             - пол (man, woman, skeleton)    animation_X       - анимация (man, woman, towngirl)    hero_Х            - краткая биография героя (не более 5-7 строк, что бы помещалось в поле текста)    Х - порядковый номер героя в списке        Где что:    Текстуры портретов \RESOURCE\Textures\INTERFACES\PORTRAITS  (64, 128, 256)    Скины              \RESOURCE\Textures\Characters    Модели             \RESOURCE\MODELS\Characters    Головы             \RESOURCE\MODELS\Heads    Анимация головы    \RESOURCE\animation\Heads и \RESOURCE\animation\Heads\AN        Обязательно сохраните исходный файл до редактирования. Иначе обновления могут не установится.    Перед установкой верните его на место, установите обновление. После чего повторите настройку своего героя (героев).        _______________               С заботой о Вас, ALexusB
+Универсальный создатель героев адд-она SLiB
+    Скрипт создан ALexusB 09.10.04
+    Путь к файлу \RESOURCE\INI\TEXTS\RUSSIAN\HeroDescribe.txt
+    
+    версия 02.07.06
+
+    hero_qty - количество героев
+    ps_hero_qty - количество псевдо-героев (могут встретиться как квестовые персонажи в игре, в ПГГ берутся строго персонажы мужского пола)
+    heroName_Х        - имя героя
+    heroLastname_Х    - фамилия героя
+    heroNameGen_ и heroLastnameGen_ - родительный падеж,   heroLastnameDat_  - дательный падеж.
+    heroFace_Х        - номер портрета
+    heroModel_Х       - список моделей через зяпятую без пробелов, может быть меньше, чем полный список, тогда первая возмется
+            (без брони, лёгкая, средняя, крутая, золотая, одежда_1, одежда_2, одежда_3)
+    heroType_Х        - тип героя (влияет на стартовые параметры)
+        значения только: Corsair, Merchant, Adventurer
+или (для русской версии)
+Корсар,
+Торговец,
+Авантюрист
+    heroNation_Х      - стартовая нация героя (нейтральные отношения)
+        значения только: ENGLAND, FRANCE, SPAIN, HOLLAND
+            или (для русской версии)
+Англия
+            Франция
+            Испания
+            Голландия
+    sex_X             - пол (man, woman, skeleton)
+    animation_X       - анимация (man, woman, towngirl)
+    hero_Х            - краткая биография героя (не более 5-7 строк, что бы помещалось в поле текста)
+    Х - порядковый номер героя в списке
+    
+    Где что:
+    Текстуры портретов \RESOURCE\Textures\INTERFACES\PORTRAITS  (64, 128, 256)
+    Скины              \RESOURCE\Textures\Characters
+    Модели             \RESOURCE\MODELS\Characters
+    Головы             \RESOURCE\MODELS\Heads
+    Анимация головы    \RESOURCE\animation\Heads и \RESOURCE\animation\Heads\AN
+    
+    Обязательно сохраните исходный файл до редактирования. Иначе обновления могут не установится.
+    Перед установкой верните его на место, установите обновление. После чего повторите настройку своего героя (героев).
+    
+    _______________
+               С заботой о Вас, ALexusB
 }
 Merchant {Тем, кто отважится заняться торговлей в водах Карибского архипелага, кишащих каперами, пиратами и просто разбойниками разных мастей, придётся не только отслеживать цены на островах с целью получения максимальной прибыли, но и научится твёрдо держать клинок, для того, чтоб эту прибыль сохранить.}
 Corsair {Корсар - разбойник или романтик? Это будет зависеть от того, каким Вы сделаете своего ГГ. Но есть качества, без которых невозможно стать корсаром, это - бесстрашие, упорство и скорость принятия решения. Дерзайте.}
@@ -59,12 +102,12 @@ heroNation_4 {Береговое братство}
 sex_4 {woman}
 animation_4 {rumba}
 hero_4 {Una joven pirata, ahijada de Forest Devil, barón de los Hermanos de la Costa. Él la protege de la dura realidad de lo que verdaderamente son piratas y de las atrocidades que pueden cometer. Para Helen, la piratería es todo romance, contrabando de poca monta, libertad... y la cubierta de su amada goleta de guerra, la Rainbow.}
-heroName_5 {Джессика}
-heroLastname_5 {Брэдфорд}
-heroNameGen_5 {Джессики}
-heroLastnameGen_5 {Брэдфорд}
-heroNameDat_5 {Джессике}
-heroLastNameDat_5 {Брэдфорд}
+heroName_5 {Jessica}
+heroLastname_5 {Bradford}
+heroNameGen_5 {Jessica}
+heroLastnameGen_5 {Bradford}
+heroNameDat_5 {Jessica}
+heroLastNameDat_5 {Bradford}
 heroFace_5 {244}
 heroModel_5 {jessika}
 heroType_5 {Корсар}

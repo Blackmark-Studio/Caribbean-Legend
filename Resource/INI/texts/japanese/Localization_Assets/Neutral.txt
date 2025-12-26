@@ -1,0 +1,36 @@
+Neutral_1 {盗賊}
+Neutral_2 {メモを残しました}
+Neutral_3 {ジャック}
+Neutral_4 {ヴェイルズ}
+Neutral_5 {海獣}
+Neutral_6 { }
+Neutral_7 { }
+Neutral_8 {ゴールデン・シーガル}
+Neutral_9 {トリスタン}
+Neutral_10 {レニエ}
+Neutral_11 {水平線上に海賊船だ！ こちらの進路を塞ごうとしている。}
+Neutral_12 {扉の向こうから声がする}
+Neutral_13 {Betsy}
+Neutral_14 {Price}
+Neutral_15 {アイテム獲得：Betsy Priceの書類}
+Neutral_16 {引き渡し：Betsy Priceの書類}
+Neutral_17 {レア}
+Neutral_18 {カルノ}
+Neutral_19 {ピエール}
+Neutral_20 {水平線に海賊船だ！ こちらの進路を横切ってくる。}
+Neutral_21 {デッキ}
+Neutral_22 {洞窟の入口はクモの巣で覆われている。 長い間、 誰も入っていないようだ。}
+Neutral_23 {家の中はめちゃくちゃだ。 どうやら来るべき場所に来たようだ。}
+Neutral_24 {The Ghost}
+Neutral_25 {Dolores}
+Neutral_26 {Moño}
+Neutral_27 {Marisa}
+Neutral_28 {Caldera}
+Neutral_29 {Felipe}
+Neutral_30 {Alarcón}
+Neutral_31 {Sebastián}
+Neutral_32 {Córdoba}
+Neutral_33 {Javier}
+Neutral_34 {Castillo}
+Neutral_35 {Gonzalo}
+Neutral_36 {Peralta}

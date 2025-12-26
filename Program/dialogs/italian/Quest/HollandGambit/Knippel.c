@@ -523,6 +523,13 @@ void ProcessDialogEvent()
 		//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "Knippel_officer":
 			dialog.text = "Ahoy capitano, palle incatenate sul mio deretano!";
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				dialog.text = "Cannonata nel mio fegato, capitano. Non metterò più piede a terra. L’ultima volta che giocavo a dadi alla taverna, un bastardo mi ha svuotato le tasche fino all’ultimo soldo.";
+				Link.l1 = "Ah‑ah, sei sicuro di non averle semplicemente giocate tutte al tavolo, "+npchar.name+"? Comunque… volevo parlarti. Ho deciso di salpare verso l’Europa — come passeggero, sulla nave di un altro. Non so quando tornerò. Non ti chiederò di aspettarmi qui. E non ti trascinerò con me.";
+				Link.l1.go = "SharlieEpilog_Knippel_1";
+				break;
+			}
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
 				Link.l4 = "Messer Knippel, sto per mettermi in viaggio verso l’antica città perduta degli indiani, Tayasal. Parliamoci chiaro: sarà una faccenda davvero rischiosa, e per giunta fuori dal comune – dovremo arrivarci passando attraverso... questa statuetta magica. Vuoi venire con me?";
@@ -659,7 +666,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -674,7 +681,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;		
@@ -713,6 +720,29 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("Tieyasal", "22");
 			npchar.quest.Tieyasal = "teleport";
+		break;
+		
+		// Эпилог
+		case "SharlieEpilog_Knippel_1":
+			dialog.text = "Beh, che peccato, cannonata nel mio attrezzo. A dire il vero, non mi dispiacerebbe vedere l’Europa.";
+			link.l1 = "Non me lo aspettavo da te. Allora, benvenuto a bordo della pinaccia '"+GetShipName("Ulysse")+"'! Se vuoi, possiamo far visita al nostro vecchio amico Richard Fleetwood. Sono sicuro che avrai qualcosa da dirgli.";
+			link.l1.go = "SharlieEpilog_Knippel_2";
+		break;
+
+		case "SharlieEpilog_Knippel_2":
+			dialog.text = "No, signore. Al diavolo Richard. Non voglio sentirne parlare, e tanto meno vederlo.";
+			link.l1 = "Come vuoi, "+npchar.name+", come vuoi. Salpiamo tra due settimane. Sto pianificando una buona festa d’addio. Spero che ti unirai a noi.";
+			link.l1.go = "SharlieEpilog_Knippel_3";
+		break;
+
+		case "SharlieEpilog_Knippel_3":
+			dialog.text = "Che una cannonata mi spezza il collo se rifiuto, capitano!";
+			link.l1 = "Eccellente. Allora ci vediamo alla taverna appena avrò sistemato tutto il resto.";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Knippel_officer";
+			npchar.quest.SharlieEpilog_FarewellOfficers = true;
+			pchar.questTemp.SharlieEpilog_Knippel = true;
+			pchar.questTemp.SharlieEpilog_Friends = sti(pchar.questTemp.SharlieEpilog_Friends) + 1;
 		break;
 		
 		case "Exit":

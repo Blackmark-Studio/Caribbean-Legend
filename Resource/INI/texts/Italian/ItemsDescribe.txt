@@ -407,29 +407,29 @@ itmdescr_talisman20 {Una bandoliera composta da più cinghie, una fiaschetta da 
 itmname_talisman20_part {Fiaschetta da polvere del moschettiere}
 itmdescr_talisman20_part {Un'elegante fiaschetta da polvere di forma insolita, decorata con immagini di animali esotici di terre lontane. I bordi sono ricamati con un motivo dell’Europa orientale.}
 itmname_totem_01 {Talismano 'Gola di ghisa'}
-itmdescr_totem_01 {Una tazza incantata contro l'ubriachezza con fondo in argento.}
+itmdescr_totem_01 {Boccale con un incantesimo contro l’ubriachezza e fondo d’argento. Aiuta a restare sobri anche nella peggiore sbornia.}
 itmname_totem_02 {Talismano 'Spina di mare'}
-itmdescr_totem_02 {Una frusta dall'aspetto spaventoso per esecuzioni.}
+itmdescr_totem_02 {Frusta dall’aspetto intimidatorio per le esecuzioni. Aumenta molto la disciplina a bordo, sia tra i marinai sia tra i passeggeri riluttanti.}
 itmname_totem_03 {Talismano 'Balsamo di Cupido'}
-itmdescr_totem_03 {Una pomata speciale in una costosa boutonnière.}
+itmdescr_totem_03 {Unguento speciale in una costosa custodia da boutonnière. Rende salutare qualsiasi visita al bordello.}
 itmname_totem_04 {Talismano 'Myrmidon'}
-itmdescr_totem_04 {Un bracciale d'argento portato a mano con turchese.}
+itmdescr_totem_04 {Bracciale d’argento lavorato a mano con turchese. Simbolo di lealtà e subordinazione.}
 itmname_totem_05 {Talismano 'Ventre di ferro'}
-itmdescr_totem_05 {Una cintura di cuoio ornata da placche protettive.}
+itmdescr_totem_05 {Cintura di cuoio decorata con placche protettive. Fermerà una pallottola vagante a due pollici dal cuore.}
 itmname_totem_06 {Talismano 'Omoforte'}
-itmdescr_totem_06 {Stivali che alleviano la fatica.}
+itmdescr_totem_06 {Stivali che alleviano la fatica, il sogno di ogni lavoratore del porto. Ti aiutano a trasportare pesi più lontano e più a lungo senza crollare dalla stanchezza.}
 itmname_totem_07 {Talismano 'Menestrello'}
-itmdescr_totem_07 {Un liuto dalla voce dolce che canterà la romantica avventura marina e accenderà i cuori!}
+itmdescr_totem_07 {Un liuto dalla voce dolce canterà la romantica delle avventure marine e accenderà il cuore! Suonalo in taverna e più persone vorranno unirsi alla tua ciurma.}
 itmname_totem_08 {Talismano 'Signore del fuoco'}
-itmdescr_totem_08 {Raddoppia la velocità di addestramento dei cannonieri.}
+itmdescr_totem_08 {Pipa da fumo del comandante d’artiglieria, che non si spegne mai. Rende il proprietario più autorevole, soprattutto se comanda lui stesso l’artiglieria di bordo.}
 itmname_totem_09 {Talismano 'Arguzin'}
-itmdescr_totem_09 {Un corno i cui segnali si odono chiaramente anche durante una cannonata.}
+itmdescr_totem_09 {Corno i cui segnali si sentono chiaramente anche durante la cannonata. Con esso, qualsiasi topo di terra diventerà presto un lupo di mare.}
 itmname_totem_10 {Talismano 'Vedova'}
-itmdescr_totem_10 {Una navaja catalana rapida, spietata e infallibile.}
+itmdescr_totem_10 {Svelta navaja catalana che non conosce pietà né fallisce un colpo. Allenarsi con essa migliora notevolmente l’uso di sciabole e machete, soprattutto nelle risse.}
 itmname_totem_11 {Talismano 'Ghoul'}
-itmdescr_totem_11 {Un anello di rame incantato sulla mano destra che, attraverso la lama, ruba energia all'avversario durante il duello.}
+itmdescr_totem_11 {Anello di rame incantato alla mano destra che, attraverso la lama, ruba energia al nemico durante un duello.}
 itmname_totem_12 {Talismano 'Figlio del giaguaro'}
-itmdescr_totem_12 {Artiglio di giaguaro al collo aumenterà la tua visione notturna.}
+itmdescr_totem_12 {Un artiglio di giaguaro al collo rende la vista più acuta, permettendo affondi particolarmente pericolosi.}
 itmname_totem_13 {Talismano 'Joker'}
 itmdescr_totem_13 {Una carta utile sempre a portata di mano che aumenta le probabilità di vincita nei giochi d'azzardo.}
 itmname_indian_1 {Amuleto 'Bambola Voodoo'}

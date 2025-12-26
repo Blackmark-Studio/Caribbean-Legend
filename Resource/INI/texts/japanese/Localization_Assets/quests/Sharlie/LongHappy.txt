@@ -1,0 +1,44 @@
+LongHappy_1 {結婚の決断には 「考えを口にする」 オプションを使ってください}
+LongHappy_2 {アボット・ブノワが上陸した！}
+LongHappy_3 {@<sti(pchar.questTemp.LongHappy.MarryRum)> 樽のラム酒と@<sti(pchar.questTemp.LongHappy.MarryMoney)> ペソ。}
+LongHappy_4 {ラム酒50樽、ワイン20樽、そして30万ペソ。}
+LongHappy_5 {ラム酒100樽、ワイン50樽、50万ペソ。}
+LongHappy_6 {でもその前に、 サン＝ピエールの酒場で宴を開かなくては。 急ごう！}
+LongHappy_7 {でもその前に、 イスラ・ テソロで祝宴を開かなくては。 急ごう！}
+LongHappy_8 {まずはサン＝ピエールの酒場で宴の手配をしなければなりません！}
+LongHappy_9 {まずはイスラ・ テソロで祝宴を開かなくてはなりません！}
+LongHappy_10 {Sea Devil}
+LongHappy_11 {Jan}
+LongHappy_12 {Svensson}
+LongHappy_13 {マッコウクジラ}
+LongHappy_14 {Marcus}
+LongHappy_15 {Tyrex}
+LongHappy_16 { }
+LongHappy_17 {Steven}
+LongHappy_18 {Dodson}
+LongHappy_19 {しばらく時が流れた…@<NewStr()>宴は最高潮に盛り上がっている…}
+LongHappy_20 {Tichingitu}
+LongHappy_21 {Nathaniel}
+LongHappy_22 {Mauritz}
+LongHappy_23 {Dussak}
+LongHappy_24 {Jacques}
+LongHappy_25 {Barbazon}
+LongHappy_26 {Black Dragon}
+LongHappy_27 {ヤン・ スヴェンソンはボートで脱出した！}
+LongHappy_28 {スティーブン・ ドッドソンはボートで脱出した！}
+LongHappy_29 {マーカス・ タイレックスはボートで逃げた！}
+LongHappy_30 {ベルナール・ ヴァンサンは、 マーカス・ タイレックスの古き同志であり仲間だったが、 カタコンベを抜けて押し寄せた傭兵の残党を町から一掃する中で命を落とした。 勝利を目前にしながら、 あと数時間届かなかった… ~}
+LongHappy_31 {それだけじゃない――マーカス・ タイレックス本人も、 船が拿捕された際に消息を絶った。 ヤン・ スヴェンソンが捜索を指揮しているが、 老バロンが砲弾や荒波にも屈しなかったことを願う。 彼を失えば、 コーストの同胞団にとって取り返しのつかない損失となるだろう。 ~}
+LongHappy_32 {私もまた、 失うものがありました。 戦争が平和な命を奪うのは、 いつだって辛いものです。 ジーノ・ グヴィネイリ――親しい友人であり、 優れた科学者が、 この卑劣な襲撃の犠牲となってしまいました。 私は彼を然るべく埋葬するため、 アンティグアへ戻ります。}
+LongHappy_33 {私もまた大きな喪失を免れなかった。 忠実な同志であり士官のティチンギトゥは、 妻とダニエル・ ホークを銃弾から守ってくれた。 殺し屋は報いを受けたが、 その代償はあまりに大きい。 そして、 それだけでは終わらなかった。 親友であり優れた科学者でもあったジーノ・ グヴィネイリも、 この卑劣な襲撃の犠牲となってしまった。 私は彼らを正しく葬るため、 アンティグアへ戻るつもりだ。}
+LongHappy_34 {しかし、 希望の光もある。 戦友ティチンギトゥは戦いの最初で行方不明になった。 生きているとは思いもしなかったが、 ヤンによれば、 地元酒場の店主の姪と一緒に、 襲撃前にサボ＝マティラ・ コーブの方へ向かうのを見かけたらしい。 何があっても驚かないつもりだったが、 若い娘と酔っ払って逃げるなんて？ それがティチンギトゥなのか？ ！ いずれにせよ、 怒れる叔父が重い棍棒を持ち出す前に、 急いで二人を見つけなければならない。}
+LongHappy_35 {Tichingituは回復し、 士官としての任務に就く準備ができています}
+LongHappy_36 {Jean}
+LongHappy_37 {David}
+LongHappy_38 {Prosper}
+LongHappy_39 {Trubal}
+LongHappy_40 {Bernard}
+LongHappy_41 {Vensan}
+LongHappy_42 {@<GetFullName(sld)> が士官としてチームに加わりました}
+LongHappy_43 {@<GetFullName(sld)> を白兵戦士官に任命できます}
+LongHappy_44 {翌朝…}

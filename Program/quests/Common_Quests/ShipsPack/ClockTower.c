@@ -158,18 +158,9 @@ int SellJournals()
 	int i, j;
 	int sold = 0;
 	int dub = 0;
-	/* int prices[3] = {25, 60, 125};
-	string journalNames[3] = {"piratesJournal_1", "piratesJournal_2", "piratesJournal_3"}; */
-	int prices[3];
-	prices[0] = 25;
-	prices[1] = 60;
-	prices[2] = 125;
-	
-	string journalNames[3];
-	journalNames[0] = "piratesJournal_1";
-	journalNames[1] = "piratesJournal_2";
-	journalNames[2] = "piratesJournal_3";
-    
+	int prices[3] = {25, 60, 125};
+	string journalNames[3] = {"piratesJournal_1", "piratesJournal_2", "piratesJournal_3"};
+
 	for(j = 0; j < 5; j++)
 	{
 		for(i = 0; i < 3; i++)
@@ -415,9 +406,6 @@ void ClockTower_AmsterdamInTheHarbor_Kino_Sounds()
         SetEventHandler("FaderEvent_EndFade", "ClockTower_AmsterdamInTheHarbor_Kino_Sounds", 1);
         // Звуки катсцены, чтобы потом выключить
         TEV.SP4_Static_Sounds.s1 = SendMessage(Sound, "lslfff", MSG_SOUND_EVENT_PLAY, "Location/SP4_Piple_Talk", 0, 29.00, 2.00, -39.00);
-        // Ambience SP4 scene (прописать и удалить этот коммент)
-        // TEV.SP4_Static_Sounds.s2 = SendMessage(Sound, "lslfff", MSG_SOUND_EVENT_PLAY, "", 0, --, --, --);
-        // TEV.SP4_Static_Sounds.s2 = SendMessage(Sound, "lslfff", MSG_SOUND_EVENT_PLAY, "", 0, --, --, --);
         return;
     }
 
@@ -595,14 +583,10 @@ void ClockTower_AmsterdamInTheHarbor_Kino_7(string qName)
 	
 	sld = CharacterFromID("ClockTower_Johan");
 	LAi_LoginInCaptureTown(sld, false);
-	
+
 	EndQuestMovie();
-	// DeleteAttribute(pchar, "questTemp.lockedMusic");
 
     SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, sti(TEV.SP4_Static_Sounds.s1), 0);
-    // Ambience SP4 scene (прописать и удалить этот коммент)
-    // SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, sti(TEV.SP4_Static_Sounds.s2), 0);
-    // SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, sti(TEV.SP4_Static_Sounds.s3), 0);
 
     DeleteAttribute(PChar, "questTemp.NoFast");
 	SetLocationCapturedState("Villemstad_town", false);
@@ -1005,10 +989,10 @@ void Open_BookSp4()
 void Open_Villemstad_ClockCellar()
 {
 	DeleteAttribute(&locations[FindLocation("Villemstad_ClockCellar")], "models.always.WineCellar_Room");
-	ref sld = &Locations[FindLocation("Villemstad_ClockCellar")];
-	sld.models.always.WineCellar_Room = "WineCellar_RoomOpened";
-	sld.models.day.charactersPatch = "WineCellar_RoomOpened_patch";
-	sld.models.night.charactersPatch = "WineCellar_RoomOpened_patch";
+	ref loc = &Locations[FindLocation("Villemstad_ClockCellar")];
+	loc.models.always.WineCellar_Room = "WineCellar_RoomOpened";
+	loc.models.day.charactersPatch = "WineCellar_RoomOpened_patch";
+	loc.models.night.charactersPatch = "WineCellar_RoomOpened_patch";
 	
 	LAi_SetActorType(pchar);
 	DoQuestFunctionDelay("OpenWardrobe_Sound", 0.85);

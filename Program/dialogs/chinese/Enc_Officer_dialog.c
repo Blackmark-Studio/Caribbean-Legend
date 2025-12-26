@@ -76,6 +76,22 @@ void ProcessDialogEvent()
 			}
 			// 刚刚雇佣 <--
    			dialog.text = "你想要什么, 船长? ";
+			// эпилог -->
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers") && npchar.id == "Folke")
+			{
+						dialog.text = "我不太喜欢这天气, 船长。 我已经注意到风暴的最初征兆了。";
+						Link.l1 = ""+npchar.name+", 我需要和你谈谈。 我直说了: 我要去欧洲, 时间不定。 让你留在这里等我回来既不明智, 也不安全, 但我也不可能把所有人都带走。 我会搭别人的船离开, 作为乘客。";
+						Link.l1.go = "SharlieEpilog_Folke_1";
+						break;
+			}
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers") && npchar.id == "Duran")
+			{
+						dialog.text = "(打哈欠) 真无聊…… ";
+						Link.l1 = "很久没出去散散心了吧, "+npchar.name+"？";
+						Link.l1.go = "SharlieEpilog_Duran_1";
+						break;
+			}
+			// эпилог <--
 			// 船上同伴的对话.
 			if (CheckAttribute(NPChar, "IsCompanionClone"))
 			{
@@ -669,7 +685,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -684,7 +700,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			Diag.CurrentNode = Diag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;
@@ -700,7 +716,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetMusketBullets1_" + i;
 			}
 		break;	
@@ -715,7 +731,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, MUSKET_ITEM_TYPE);
 			Diag.CurrentNode = Diag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetMusketBullets");
 			DialogExit();
 		break;
@@ -1624,5 +1640,111 @@ void ProcessDialogEvent()
 			
 			AddDialogExitQuestFunction("Tonzag_AlonsoBoardingDialog");
 		break;
+		
+		// --> Эпилог
+		case "SharlieEpilog_Folke_1": // Фульк
+			dialog.text = "这么说…… 是时候道别了? ";
+			link.l1 = "看起来是这样。说实话，我原以为做出这个决定会容易一些。";
+			link.l1.go = "SharlieEpilog_Folke_2";
+		break;
+		
+		case "SharlieEpilog_Folke_2":
+			dialog.text = "那……谢谢您, 船长, 感谢您的一切。我见过不少船长, 但我发誓, 您是最出色的那一个。 能在同一面旗帜下与您航行, 是我的荣幸。";
+			link.l1 = "你是一名忠诚的军官, "+npchar.name+"。感谢你的服役。希望命运还能让我们再度相遇…… 而不是站在对立的阵营。";
+			link.l1.go = "SharlieEpilog_Folke_nothing";
+			link.l2 = "听你这么说我很高兴, 朋友。 真的很欣慰。 我会安排给你一份相当于一个月薪水的遣散费。 感谢你多年来的服务与忠诚。 还有…… 我觉得, 是时候让你自己当船长了。 好好想想这件事吧。";
+			link.l2.go = "SharlieEpilog_Folke_salary";
+			link.l3 = "我也要谢谢你, 兄弟。 你是一名出色而老练的军官。 作为对你忠诚的回报, 我会安排给你相当于三个月薪水的遣散费。而且, "+npchar.name+", 要是我听说你又因为欠债被关进了地牢…… 我发誓, 我会丢下一切, 回来把你捞出来, 然后亲手把你丢到一座荒岛上。";
+			link.l3.go = "SharlieEpilog_Folke_salary_X3";
+		break;
+		
+		case "SharlieEpilog_Folke_nothing":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Folke_exit");
+		break;
+		
+		case "SharlieEpilog_Folke_salary":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Folke_exit");
+			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+		break;
+		
+		case "SharlieEpilog_Folke_salary_X3":
+			dialog.text = "哈哈, 不会的, 船长, 我再也不会去找高利贷了。 至于当船长——这个想法倒是挺有意思的。 说实话, 我自己也不止一次想过这事。 也许, 我真的会这么做。";
+			link.l1 = "还有一件事。 我打算在酒馆办一场告别酒宴。 希望你也能来。 正好也是个把咱们的人招进你船队的好机会。";
+			link.l1.go = "SharlieEpilog_Folke_salary_X3_2";
+			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+		break;
+		
+		case "SharlieEpilog_Folke_salary_X3_2":
+			dialog.text = "我一定会来的, 船长。";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Folke_salary_X3_3";
+		break;
+		
+		case "SharlieEpilog_Folke_salary_X3_3":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Folke_exit");
+		break;
+		
+		case "SharlieEpilog_Duran_1":
+			dialog.text = "是啊——要说很久, 那还真是太保守了。久到我自己都快忘了该怎么放松了, 哈哈。";
+			link.l1 = "那也许你会对我接下来要告诉你的事感兴趣。 你看, 我得启程前往旧大陆了。 我已经很久没见过父亲了, 这让他很担心——老实说, 我自己也是。 但这次, 我会以乘客的身份出发, 搭乘别人的船。";
+			link.l1.go = "SharlieEpilog_Duran_2";
+		break;
+
+		case "SharlieEpilog_Duran_2":
+			dialog.text = "乘客? 这可真新鲜。";
+			link.l1 = "我想弄清楚, 自己是否还该继续这样下去。 谁知道呢, 也许好运会在我还没准备好之前就离我而去。";
+			link.l1.go = "SharlieEpilog_Duran_3";
+		break;
+
+		case "SharlieEpilog_Duran_3":
+			dialog.text = "原来如此。 哈哈哈。 我可不信你真能离开大海。记住我的话——真正的海狼要是上了岸, 不是无聊到酗酒而亡, 就是直接去上吊。";
+			link.l1 = "正因为如此, 我才选择当乘客——想看看当那一天来临时, 我是否真能那样活下去。但重点不在这儿: 我不能把你们带在身边, 也不能强迫你们等待。 连我自己都不知道什么时候会回来。 我敢肯定, 父亲会希望我留下来, 打理家族事务。";
+			link.l1.go = "SharlieEpilog_Duran_4";
+		break;
+
+		case "SharlieEpilog_Duran_4":
+			dialog.text = "也就是说, 接下来各走各的了? 好吧…… 这迟早都会发生。我不喜欢告别, 所以别指望我掉眼泪或者拥抱。";
+			link.l1 = "感谢你的服务。我相信你不会混得太差, 但还是尽量别在我们下次见面之前就把命丢了。";
+			link.l1.go = "SharlieEpilog_Duran_nothing";
+			link.l2 = "那就听我一句劝——离老本行远点。 那条路不会给你带来好结果。 来, 拿点银子, 先撑一阵子。 我当然不建议你去当兵, 但给某个私掠船长当贴身护卫, 倒是个不错的选择。 好好想想。";
+			link.l2.go = "SharlieEpilog_Duran_salary";
+			link.l3 = "没有眼泪, 只有银子。 哈哈, 看你眼睛都亮了。 拿着吧, 三个月的薪水——够你在勒弗朗索瓦请所有海盗喝上一周, 或者简单点说, 安稳活上半年。 希望你能找到新的目标, 也找到谋生的路子。";
+			link.l3.go = "SharlieEpilog_Duran_salary_X3";
+		break;
+		
+		case "SharlieEpilog_Duran_nothing":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Duran_exit");
+		break;
+		
+		case "SharlieEpilog_Duran_salary":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Duran_exit");
+			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+		break;
+		
+		case "SharlieEpilog_Duran_salary_X3":
+			dialog.text = "我已经想好了。 我要去当寻宝人。 这事儿…… 挺有感觉的。";
+			link.l1 = "哈哈! 好选择! 还有一件事: 我打算在离开前好好狂欢一场。 所以, 如果你愿意, 就来酒馆吧。";
+			link.l1.go = "SharlieEpilog_Duran_salary_X3_2";
+			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+		break;
+		
+		case "SharlieEpilog_Duran_salary_X3_2":
+			dialog.text = "你在开玩笑吗, 船长? 哈哈! 这种事我绝对不会错过! ";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Duran_salary_X3_3";
+		break;
+		
+		case "SharlieEpilog_Duran_salary_X3_3":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Duran_exit");
+		break;
+		
+		
+		// <-- Эпилог
 	}
 }

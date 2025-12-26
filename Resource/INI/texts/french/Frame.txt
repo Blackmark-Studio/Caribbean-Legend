@@ -23,3 +23,11 @@ Frame_DayPassed_4 {Quatre jours se sont écoulés...}
 Frame_DayPassed_5 {Cinq jours se sont écoulés...}
 Frame_DayPassed_6 {Six jours se sont écoulés...}
 Frame_WeekPassed {Une semaine s'est écoulée...}
+Frame_WeekPassed_2 {Deux semaines se sont écoulées ...}
+Frame_WeekPassed_3 {Trois semaines se sont écoulées...}
+Frame_MonthPassed {Un mois s'est écoulé...}
+Frame_MonthPassed_2 {Deux mois se sont écoulés...}
+Frame_MonthPassed_3 {Trois mois se sont écoulés...}
+Frame_YearPassed {Une année s'est écoulée...}
+Frame_YearPassed_2 {Deux ans se sont écoulés...}
+Frame_YearPassed_3 {Trois ans se sont écoulés...}

@@ -7,7 +7,7 @@ RPGUtilite_6 {good}
 RPGUtilite_7 {excellent}
 RPGUtilite_8 {Vitality Increased}
 RPGUtilite_9 {Vitality Decreased}
-RPGUtilite_10 {Bounty Increased!}
+RPGUtilite_10 {National Rep Decreased!}
 RPGUtilite_11 {National Rep Increased!}
 RPGUtilite_12 {National Rep Increased!}
 RPGUtilite_13 {National Rep Decreased!}

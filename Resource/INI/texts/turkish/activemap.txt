@@ -1,0 +1,22 @@
+CONTRABAND {Kaçak Mal}
+EXPORT {Dışa Aktar}
+IMPORT {İthalat}
+Trade_assistant {Ticaret Asistanı}
+No_price {Fiyat listesi yok}
+No_profit {Kârlı anlaşma yok}
+Distance {Mesafe}
+To {Oraya}
+From {Geri}
+day {gün}
+day2 {gün}
+days {gün}
+hour {saat}
+hour2 {saat}
+hours {saat}
+hours2 {saat}
+nautical_mile {deniz mili}
+nautical_mile2 {deniz mili}
+nautical_miles {deniz mili}
+nautical_miles2 {deniz mili}
+TRAVEL_from {-den}
+TRAVEL_to {kadar}

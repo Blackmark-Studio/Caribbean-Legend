@@ -5,7 +5,7 @@
 #event_handler("frame", "CheckGameModeConditions");
 #event_handler("frame", "CheckItemsGameModeConditions");
 
-string GameModeConditions[MAX_GAMEMODE_CONDITIONS] = { "", "", "", "", "", "", "", "", "", "", };
+string GameModeConditions[MAX_GAMEMODE_CONDITIONS] = {"", "", "", "", "", "", "", "", "", ""};
 string sCurGameModeCondition = "";
 
 void SetGameModeCondition(string _sQuest)

@@ -193,33 +193,7 @@ void LocationWaitNihgtEndFadeIn()
 	}	
 }
 
-//navy -->
-void LocationMakeClone(string _locId)
-{
-	ref rOrg, rClone;
-	int iOrg, iClone;
-
-	iOrg = FindLocation(_locId);
-	iClone = FindLocation("Clone_location");
-
-	makeref(rOrg, Locations[iOrg]);
-	makeref(rClone, Locations[iClone]);
-
-	DeleteAttribute(rClone, "");
-	CopyAttributes(rClone, rOrg);
-	rClone.id = "Clone_location";
-	rClone.type = "clone";
-	rClone.index = iClone;
-//а так не работает... :) проверка только на аттрибут ;)	
-//	rClone.habitues = false;
-	DeleteAttribute(rClone, "habitues");
-
-	pchar.questTemp.LocationClone = true;
-	pchar.questTemp.LocationClone.id = rOrg.id;
-}
-//navy <--
-
-// mitrokosta - аналог функции выше, но без лишних атрибутов
+// mitrokosta
 void CloneLocation(string fromLoc, string targetLoc) {
 	ref rOrg, rClone;
 	int iOrg, iClone;

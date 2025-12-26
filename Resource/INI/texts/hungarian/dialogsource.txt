@@ -1,1 +1,0 @@
-SelectDeliveryTradeDialog0 {A fájl üres, a Storm-2.5 kernellel való kompatibilitás érdekében. Valamilyen okból ott kell lennie, a szkriptekben viszont nincs.}

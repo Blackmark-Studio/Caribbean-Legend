@@ -2141,8 +2141,8 @@ void ContraPass_Sink(string qName)//провалили
 void CustomPatrol_CreateShip(string qName)
 {
 	int iNation = sti(pchar.GenQuest.CustomPatrol.Nation);
-	int iRank = sti(pchar.rank)+makeint(MOD_SKILL_ENEMY_RATE/2)+2;
-	int iScl = 2*sti(pchar.rank)+10;
+	int iRank = sti(pchar.rank)+makeint(MOD_SKILL_ENEMY_RATE/2)+1;
+	int iScl = 2*sti(pchar.rank)+5;
 	int iShipType = sti(pchar.GenQuest.CustomPatrol.ShipType);
 	int iShipTypeA = sti(pchar.GenQuest.CustomPatrol.ShipTypeA);
 	int iCannon = sti(pchar.GenQuest.CustomPatrol.Cannon);
@@ -2159,7 +2159,7 @@ void CustomPatrol_CreateShip(string qName)
 	sld.Ship.Mode = "pirate";
 	sld.WatchFort = true;
 	sld.Coastal_Captain = true;
-	if (hrand(1) == 0) AddCharacterGoods(sld, GOOD_SLAVES, 250+(hrand(100, "1")));
+	if (hrand(1) == 0) AddCharacterGoods(sld, GOOD_SLAVES, 50+(hrand(25, "1")));
 	Group_AddCharacter("ContraCureer", "ContraCureerCap");
 	sld = GetCharacter(NPC_GenerateCharacter("ContraContraCap", "citiz_"+(rand(9)+41), "man", "man", iRank, iNation, iDay, true, "quest"));//конрик-приемщик
 	FantomMakeSmallSailor(sld, iShipType, "", iCannon, iScl, iScl, iScl, iScl, iScl);
@@ -2169,7 +2169,7 @@ void CustomPatrol_CreateShip(string qName)
 	sld.Ship.Mode = "pirate";
 	sld.WatchFort = true;
 	sld.Coastal_Captain = true;
-	if (hrand(1) == 1) AddCharacterGoods(sld, GOOD_SLAVES, 250+(hrand(100, "1")));
+	if (hrand(1) == 1) AddCharacterGoods(sld, GOOD_SLAVES, 50+(hrand(25, "1")));
 	Group_AddCharacter("ContraCureer", "ContraContraCap");
 	Group_SetGroupCommander("ContraCureer", "ContraCureerCap");
 	Group_SetAddress("ContraCureer", pchar.GenQuest.CustomPatrol.Island, "Quest_Ships", "Quest_Ship_"+lcr);

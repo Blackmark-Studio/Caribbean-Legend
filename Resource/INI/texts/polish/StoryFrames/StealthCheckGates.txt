@@ -1,0 +1,65 @@
+Node0_title {Przy bramie}
+Node0_a {Wychodzisz ku bramom miasta zza $rand(drzev|skał|gęstych krzaków). Wysokie kamienne mury wznoszą się ponad dżunglą, zwieńczone $rand(flagami|sztandarami|proporcami) $nationGen($attr($context.localization.iNation)). Powoli zbliżasz się do bramy.}
+Node0_b_a {Na ścieżce widać ślady niedawnej walki — krew oraz rozbity wóz z $rand(rumem|przyprawami|trzciną cukrową). Strażnicy przy bramie wyglądają na spiętych i nerwowo wpatrują się w dżunglę, a na murach wzmocniono wartę.}
+Node0_b_b {Przy bramie stoi wóz załadowany $rand(prochem dla fortu|kulami armatnimi|prowiantem). Straż miejska i załoga fortu gwałtownie się kłócą. Z urywków rozmów wynika, że doszło do jakiejś $rand(biurokratycznej zwłoki|pomyłki), a ładunek nie jest przepuszczany.}
+Node0_b_c {Pod murem na beczce siedzi $rand(stary gwardzista|siwowłosy strażnik) i snuje opowieści o $rand(potwornym napadzie piratów|straszliwej epidemii w garnizonie|krwawym buncie na plantacji). Strażnicy przy bramie słuchają uważnie, bardziej z szacunku niż z prawdziwego zainteresowania.}
+Node0_b_d {Przy bramie trzymają na kolanach $rand(schwyconego złodzieja|dezertera z garnizonu|wrogiego szpiega). Sierżant żąda natychmiastowego rozstrzygnięcia jego losu — powiesić go przy murze bez zbędnej zwłoki. Strażnicy kłócą się, próbując ustalić, kto się tym zajmie i odpowie przed komendantem.}
+Node0_c_a {Do bramy podbiega $rand(chłopiec-posłaniec|przerażona kobieta|pijany marynarz) i krzyczy coś o $rand(pożarze w porcie|bójce na targu|ucieczce z więzienia). Strażnicy nerwowo spoglądają po sobie: pomóc trzeba, ale posterunku opuścić nie wolno.}
+Node0_c_b {Nad murem wisi świeże obwieszczenie o $rand(zwołaniu milicji|naborze rekrutów|rozszerzeniu straży). Skoro takie ogłoszenia wiszą nawet poza miastem, widać wyraźny brak żołnierzy.}
+Node0_c_c {Pod murem w cieniu nie ma żywej duszy, lecz w błocie przy fosie coś leży. Strażnicy i przechodnie niczego nie zauważają, ale z twojego miejsca wyraźnie widać metaliczny błysk.}
+Node0_d {Trzeba znaleźć sposób, by dostać się do miasta. A może po prostu wedrzeć się do środka?}
+Node0_b_a_reaction {Opowiedzieć o potyczce z tubylcami}
+Node0_b_a_reaction_log {Opowiadasz strażnikom, że w dżungli natknąłeś się na agresywnych tubylców, barwnie opisując walkę i przywołując całe swoje doświadczenie bojowe. Wierzą ci i $rand(wysyłają kilku strażników do dżungli|dzielą się z tobą zapasami|obiecują jak najszybciej rozprawić się z tym problemem).}
+Node0_b_a_reaction_factor {Niespodziewany sojusznik}
+Node0_b_b_reaction {Zaproponować rozstrzygnięcie sporu}
+Node0_b_b_reaction_log_0 {Udaje ci się wniknąć w istotę problemu z ładunkiem i znaleźć jego przyczynę. Jak zwykle winna była błędna interpretacja rozkazów. Po twojej interwencji eskorta szybko odjeżdża z ładunkiem, a strażnicy patrzą na ciebie z wdzięcznością.}
+Node0_b_b_reaction_log_1 {Nie udaje ci się zrozumieć źródła problemu z ładunkiem i tylko wprowadzasz wszystkich w większe zamieszanie. Strażnicy i wartownicy nie kryją swojego rozdrażnienia.}
+Node0_b_b_reaction_factor {Arbiter}
+Node0_b_c_reaction {Opowiedzieć swoją historię}
+Node0_b_c_reaction_log {Znajdujesz odpowiedni moment i opowiadasz swoją historię. Jest ona $rand(imponująca, choć nie jesteś wybitnym gawędziarzem|brzmiała znacznie lepiej w twojej głowie, a strażnicy uśmiechają się pobłażliwie|dość poruszająca i zdaje się zmiękczyć serce starego weterana).}
+Node0_b_c_reaction_factor {Dobry gawędziarz}
+Node0_b_d_reaction {Zaproponować wykupienie więźnia}
+Node0_b_d_reaction_log {Sugerujesz strażnikom, by nie marnowali sił — z tego przestępcy wyjdzie doskonały, silny i posłuszny niewolnik, a oni pozbędą się problemu. Sierżant zastanawia się chwilę, po czym zgadza się z ulgą.}
+Node0_b_d_reaction_factor {Handlarz niewolników}
+Node0_c_a_reaction {Zaproponować pomoc}
+Node0_c_a_reaction_log {Oferujesz strażnikom pomoc w rozwiązaniu problemu. Wierzą ci i dziękują za propozycję, ale mimo to odmawiają. Takimi sprawami powinna zajmować się straż, a nie cywile.}
+Node0_c_a_reaction_factor {Praworządny obywatel}
+Node0_c_b_reaction {Powiedzieć, że chcesz wstąpić do służby}
+Node0_c_b_reaction_log_0 {Prosisz o wezwanie werbownika i wyrażasz gotowość wstąpienia w szeregi żołnierzy. Na potwierdzenie słów demonstrujesz swoje umiejętności posługiwania się bronią palną, robiąc wrażenie na strażnikach.}
+Node0_c_b_reaction_log_1 {Prosisz o wezwanie werbownika, lecz spotykasz się z odmową. Chcąc zmienić zdanie strażników, postanawiasz zademonstrować swoje umiejętności z bronią palną, ale $rand(upuszczasz pistolet|komicznie plączesz się w pasie|potykasz się i przewracasz). Strażnicy śmieją się z ciebie i nadają ci wojskową ksywkę — $rand(Postrach Dżungli|Sokole Oko|Pocisk Przeznaczenia|Szybki Lont|Diamentowe Oko|Pewna Ręka). Dowódca warty klepie cię po ojcowsku po ramieniu.}
+Node0_c_b_reaction_factor {Rekrut}
+Node0_c_c_reaction {Zbadać miejsce}
+Node0_c_c_reaction_log_0 {Przeszukujesz miejsce, w którym zauważyłeś błysk, i znajdujesz $rand(klamrę żołnierskiego pasa|rapier oficerski|spinkę strażnika). Szczęśliwym zbiegiem okoliczności właściciel jest na służbie i bardzo dziękuje za zwrot zguby.}
+Node0_c_c_reaction_log_1 {Przeszukujesz miejsce, w którym dostrzegłeś błysk, ale niczego nie znajdujesz. Masz wrażenie, że $rand(twoja wyobraźnia płata ci figle|dziś fortuna się od ciebie odwróciła).}
+Node0_c_c_reaction_factor {Przydatne znalezisko}
+Node0_a_action {Spróbować przejść}
+Node0_b_action {Przebić się siłą}
+Node0_c_action {Okazać licencję}
+Node0_success {Udaje ci się dostać do miasta przez bramę. $rand(Szybko znikasz w tłumie|kluczysz ulicami, by całkowicie się zgubić|kierujesz się ku straganom i mieszasz się z gapiów). Po krótkim czasie upewniasz się, że nikt cię nie śledzi, i możesz spokojnie zająć się swoimi sprawami.}
+Node0_success_action {Świetnie!}
+Node1_a {Nie udaje ci się uchodzić za sprzymierzeńca i strażnicy wyraźnie się napinają. Półkole zaczyna się zamykać. Sytuacja szybko się zaostrza.}
+Node1_b_a {Jeden ze strażników niezgrabnie przestępuje z nogi na nogę i co chwila chwyta się za bok — spod munduru widać świeży, zakrwawiony bandaż.}
+Node1_b_b {Podchodzi do ciebie sierżant i żąda, byś udał się z nim do komendantury w celu ustalenia tożsamości. Jest szczupły i bardzo młody, wyraźnie próbuje się wykazać i zdobyć szacunek podwładnych.}
+Node1_c_a {W szczelinie wrót na moment miga sylwetka $rand(urzędnika miejskiego|duchownego), a wartownicy instynktownie się prostują.}
+Node1_c_b {Za bramą nagle rozlega się krótki dźwięk dzwonka — nadszedł czas zmiany warty, a każde opóźnienie działa na nerwy zmęczonych strażników.}
+Node1_d {Decyzję trzeba podjąć natychmiast.}
+Node1_b_a_reaction {Zaproponować pomoc rannemu strażnikowi}
+Node1_b_a_reaction_log {Proponujesz rannemu strażnikowi leczniczy eliksir. Dziękuje ci i opowiada, że został ranny przez $rand(Karaibów|Guaraní|Taíno|Arawaków) podczas patrolu. Rana długo się goiła, ale teraz czuje się znacznie lepiej.}
+Node1_b_a_reaction_factor {Pomoc medyczna}
+Node1_b_b_reaction {Demonstracyjnie podporządkować się sierżantowi}
+Node1_b_b_reaction_log_0 {Okazujesz młodemu sierżantowi szacunek i zgadzasz się na jego warunki, pod warunkiem że wszystko odbędzie się zgodnie z przepisami. Jego ton wyraźnie łagodnieje.}
+Node1_b_b_reaction_log_1 {Próbujesz wzmocnić autorytet sierżanta, ale robisz to bardzo nieporadnie. Wygląda to jak kpina, co potwierdzają niezręczne chichoty za jego plecami. Czerwienieje, a oczy zachodzą mu krwią.}
+Node1_b_b_reaction_factor {Okazany szacunek}
+Node1_c_a_reaction {Powiedzieć, że spóźniasz się na ważne spotkanie}
+Node1_c_a_reaction_log_0 {Mówisz, że spóźniasz się na ważne spotkanie i że ten incydent zostanie zgłoszony odpowiednim osobom. Wyglądasz wystarczająco poważnie, by ci uwierzyli. Strażnicy są zdezorientowani, co otwiera okno możliwości.}
+Node1_c_a_reaction_log_1 {Próbujesz przekonać strażników, że przybyłeś w ważnej sprawie, ale brzmi to zupełnie niewiarygodnie. Ta nieudana próba tylko bardziej ich irytuje.}
+Node1_c_a_reaction_factor {Ważna persona}
+Node1_c_b_reaction {Zaproponować wartownikom rum}
+Node1_c_b_reaction_log {Sugerujesz strażnikom, by pominęli formalności i szybciej zakończyli służbę, po czym częstujesz ich rumem. Wyraźnie łagodnieją i wydają się gotowi przymknąć oko na swoje podejrzenia. W końcu wszyscy jesteśmy ludźmi.}
+Node1_c_b_reaction_factor {Rum dla ludu}
+Node1_a_action {Spróbować załagodzić sytuację}
+Node1_b_action {Uciec z powrotem do dżungli}
+Node1_success {Udaje ci się załagodzić sytuację w ostatniej chwili. $rand(Przemykasz do miasta pod czujnym spojrzeniem strażników|wchodzisz do miasta, starając się nie zdradzić zdenerwowania). Lepiej nie zatrzymywać się długo w $colonyVoc($attr($context.context.colonyId)).}
+Node1_success_action {Szybko do miasta!}
+Node1_fail {Straż podnosi alarm — zostałeś zdemaskowany. Strażnicy już zbiegają się do bramy, więc decydujesz się uciekać, zanim cała kolonia zostanie postawiona na nogi.}
+Node1_fail_action {Uciekaj!}

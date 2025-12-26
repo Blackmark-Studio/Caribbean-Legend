@@ -1,3 +1,4 @@
+#include "interface\utils\button_icons.c"
 
 native string LanguageGetLanguage();
 native int LanguageOpenFile(string sFileName);
@@ -11,7 +12,7 @@ native string LanguageGetFaderPic(string faderPicName);
 native string DialogAssembleStr(string idStr, string paramStr);
 native string DialogAddParamToStr(string oldParamStr, string paramID, string paramValue);
 native string StringFromKey(string key_name, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9, string arg10, string arg11, string arg12, string arg13, string arg14, string arg15, string arg16, string arg17, string arg18, string arg19);
-
+native void __RefreshLocalization();
 //native int NFFindFiles(ref rObject, string sDirectory, string sMask, bool bRecursive);
 
 native void XI_SetColorCorrection(float fContrast, float fGamma, float fBrightness);
@@ -240,6 +241,22 @@ string GetFacePictureName(int charIdx)
 	if(charIdx<0) return "emptyface";
 	return "face";
 }
+
+void TextButton_SetRightText(string sNode, string sText)
+{
+	SendMessage(&GameInterface, "lsls", MSG_INTERFACE_MSG_TO_NODE, sNode, 9, sText);
+}
+
+void TextButton_SetRightTextWidth(string sNode, int width)
+{
+	SendMessage(&GameInterface, "lsll", MSG_INTERFACE_MSG_TO_NODE, sNode, 10, width);
+}
+
+void TextButton_ChangePartPicture(string sNode, string sPart, string sGroup, string sPic)
+{
+	SendMessage(&GameInterface, "lslsss", MSG_INTERFACE_MSG_TO_NODE, sNode, 11, sPart, sGroup, sPic);
+}
+
 //-------------------------------------------------------------------------------------------------------------
 // FormatedText
 //-------------------------------------------------------------------------------------------------------------
@@ -251,6 +268,11 @@ void SetFormatedText(string sNodeName, string sText)
 void AddLineToFormatedText(string sNodeName, string sText)
 {
 	SendMessage(&GameInterface,"lsle",MSG_INTERFACE_MSG_TO_NODE, sNodeName, 0, &sText);
+}
+//-------------------------------------------------------------------------------------------------------------
+void SetColorToFormatedText(string sNodeName, int index, int color)
+{
+	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,sNodeName, 8, index, color);
 }
 //-------------------------------------------------------------------------------------------------------------
 void SelectLineInFormatedText(string sNodeName, int line)
@@ -1251,7 +1273,7 @@ int GetSelectedRow(string tableName)
 	return SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, tableName, 1);
 }
 
-// JOKERTODO допилить функцию под Y координату
+// JOKERBACKLOG допилить функцию под Y координату
 void AutoLayoutCenter(string nodeList, int factQty)
 {
 	if (nodeList == "") return;
@@ -1299,5 +1321,25 @@ void AutoLayoutCenter(string nodeList, int factQty)
 
 void SetFormatedTextButton(string nodeName, string text)
 {
-	SendMessage( &GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,nodeName, 0, text); // если текст начинается с #, то ставится в точности он (иначе это ID строки)
+	SendMessage(&GameInterface, "lsls", MSG_INTERFACE_MSG_TO_NODE, nodeName, 0, text); // если текст начинается с #, то ставится в точности он (иначе это ID строки)
+}
+
+void Picture_GetTexture(string sNode, ref iTexture)
+{
+	SendMessage(&GameInterface, "lsle", MSG_INTERFACE_MSG_TO_NODE, sNode, 10, &iTexture);
+}
+
+void Picture_SetTexture(string sNode, int iTexture)
+{
+	SendMessage(&GameInterface, "lsll", MSG_INTERFACE_MSG_TO_NODE, sNode, 7, iTexture);
+}
+
+void Picture_SetColor(string sNode, int iColor)
+{
+	SendMessage(&GameInterface, "lsll", MSG_INTERFACE_MSG_TO_NODE, sNode, 4, iColor);
+}
+
+void StringCollection_ChangeColor(string sNode, int iText, int iColor)
+{
+	SendMessage(&GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, sNode, 3, iText, iColor);
 }

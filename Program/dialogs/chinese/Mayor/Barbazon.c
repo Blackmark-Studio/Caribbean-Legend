@@ -1,4 +1,5 @@
-// 勒弗朗索瓦的雅克.巴尔巴宗
+// Жак Барбазон в Ле Франсуа
+int iBarbazonTotalTemp;
 void ProcessDialogEvent()
 {
 	ref NPChar, sld;
@@ -12,7 +13,7 @@ void ProcessDialogEvent()
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
 
-//--> -----------------------------------------------愤怒模块-------------------------------------------------
+//--> -----------------------------------------------блок angry-------------------------------------------------
     if (CheckAttribute(npchar, "angry") && !CheckAttribute(npchar, "angry.ok"))
     {
         npchar.angry.ok = 1;
@@ -24,38 +25,46 @@ void ProcessDialogEvent()
         }
         else
         {
-            switch (npchar.angry.kind) // 此处配置愤怒反应 (npchar.angry.name 已去除空格) 
+            switch (npchar.angry.kind) //сюда расписываем реакцию ангри. В npchar.angry.name пробелы удалены!!!
             {
                 case "repeat":
                     if (npchar.angry.name == "Firsttime") Dialog.CurrentNode = "AngryRepeat_1";
                     if (npchar.angry.name == "I_know_you_good") Dialog.CurrentNode = "AngryRepeat_2";
+					if (npchar.angry.name == "pirate_threat")
+                    {
+                        if (Dialog.CurrentNode == "I_know_you_good") Dialog.CurrentNode = "AngryRepeat_2";
+                        else Dialog.CurrentNode = "AngryRepeat_1";
+                    }
                 break;
             }
         }
     }
-//< —-------------------------------------------愤怒模块------------------------------------------------------
+//<-- -------------------------------------------блок angry------------------------------------------------------
 
     switch(Dialog.CurrentNode)
     {
-    // --------------------------------- —首次对话 - 初次见面---------------------------------------
+    // ----------------------------------- Диалог первый - первая встреча---------------------------------------
         case "First time":
-            dialog.text = NPCStringReactionRepeat("你有什么事要告诉我吗? 没有? 那就滚开! ",
-                         "我想我已经说清楚了, 别再烦我。 ", "尽管我说得很清楚, 你还是在烦我! ",
-                         "好吧, 我受够这种无礼了。 ", "repeat", 3, npchar, Dialog.CurrentNode);
-            link.l1 = HeroStringReactionRepeat("我这就走。 ",
-                                               "好的, 雅克... ",
-                                               "抱歉, 雅克... ",
-                                               "哎哟... ", npchar, Dialog.CurrentNode);
-            link.l1.go = "exit";
-            NextDiag.TempNode = "First time";
-			
-            if (sti(pchar.GenQuest.Piratekill) > 20)
+			if (sti(pchar.GenQuest.Piratekill) > 20)
             {
                 dialog.text = RandPhraseSimple("你疯了吗? 想当屠夫? 所有海盗都在生你的气, 小子, 你最好离开这里... ", "看来你脑子坏了, 小子。 想活动下筋骨? 无意冒犯, 但你在这里无事可做, 滚吧! ");
                 link.l1 = RandPhraseSimple("听着, 我想解决这个问题... ", "帮我解决这个麻烦... ");
                 link.l1.go = "pirate_town";
                 break;
             }
+			
+			link.l0 = ""+npchar.name+", 我想和你谈谈我在海上的安全问题。 " + GetSexPhrase("兄弟们","姐妹们") + "对我这点微不足道的名声表现得过于热情。 你能不能帮我敲打敲打他们?";
+			link.l0.go = "pirate_threat";
+			
+            dialog.text = NPCStringReactionRepeat("你有什么事要告诉我吗? 没有? 那就滚开! ",
+                        "我想我已经说清楚了, 别再烦我。 ", "尽管我说得很清楚, 你还是在烦我! ",
+                        "好吧, 我受够这种无礼了。 ", "repeat", 3, npchar, Dialog.CurrentNode);
+            link.l1 = HeroStringReactionRepeat("我这就走。 ",
+                        "好的, "+npchar.name+"... ",
+                        "抱歉, "+npchar.name+"... ",
+                        "哎哟... ", npchar, Dialog.CurrentNode);
+            link.l1.go = "exit";
+            NextDiag.TempNode = "First time";
 			
         //----------------------------------传奇 - 巴尔巴宗的诱惑---------------------------------------
             if (CheckAttribute(pchar, "questTemp.Saga.BarbTemptation") && pchar.questTemp.Saga.BarbTemptation == "begin")
@@ -109,7 +118,18 @@ void ProcessDialogEvent()
         break;
 
         case "I_know_you_good":
-            dialog.text = NPCStringReactionRepeat(GetFullName(pchar) + "! 你这次需要什么? ",
+            if (sti(pchar.GenQuest.Piratekill) > 20)
+            {
+                dialog.text = RandPhraseSimple("你疯了吗? 想当屠夫? 所有海盗都在生你的气, 小子, 你最好离开这里... ", "看来你脑子坏了, 小子。 想活动下筋骨? 无意冒犯, 但你在这里无事可做, 滚吧! ");
+                link.l1 = RandPhraseSimple("听着, 我想解决这个问题... ", "帮我解决这个麻烦... ");
+                link.l1.go = "pirate_town";
+                break;
+            }
+			
+			link.l0 = ""+npchar.name+", 我想和你谈谈我在海上的安全问题。 " + GetSexPhrase("兄弟们","姐妹们") + "对我这点微不足道的名声表现得过于热情。 你能不能帮我敲打敲打他们?";
+			link.l0.go = "pirate_threat";
+			
+			dialog.text = NPCStringReactionRepeat(GetFullName(pchar) + "! 你这次需要什么? ",
                          "你是不是忘了什么事要告诉我? 我在听。 ", "这要持续多久... 如果你没事做, 就别打扰别人! ",
                          "你让我礼貌待人, 但我也要求你同样礼貌! ", "repeat", 10, npchar, Dialog.CurrentNode);
             link.l1 = HeroStringReactionRepeat("没什么, 只是来看看。 ",
@@ -119,15 +139,7 @@ void ProcessDialogEvent()
             link.l1.go = "exit";
             NextDiag.TempNode = "I_know_you_good";
 
-            if (sti(pchar.GenQuest.Piratekill) > 20)
-            {
-                dialog.text = RandPhraseSimple("你疯了吗? 想当屠夫? 所有海盗都在生你的气, 小子, 你最好离开这里... ", "看来你脑子坏了, 小子。 想活动下筋骨? 无意冒犯, 但你在这里无事可做, 滚吧! ");
-                link.l1 = RandPhraseSimple("听着, 我想解决这个问题... ", "帮我解决这个麻烦... ");
-                link.l1.go = "pirate_town";
-                break;
-            }
-
-            // 船长委托 - 赎金
+            //поручение капитана - выкуп
             if (CheckAttribute(pchar, "GenQuest.CaptainComission") && CheckAttribute(pchar, "GenQuest.CaptainComission.toMayor"))
             {
                 link.l1 = "我来是为了你的囚犯。 ";
@@ -818,6 +830,55 @@ void ProcessDialogEvent()
             AddMoneyToCharacter(pchar, -1000000);
             pchar.GenQuest.Piratekill = 0;
         break;
+		
+		case "pirate_threat":
+			if (GetNpcQuestPastDayWOInit(NPChar, "ThreatTalk") == 0)
+			{
+				dialog.text = NPCStringReactionRepeat("今天我们已经讨论过这个问题了。",
+													  "我说得还不够清楚吗?",
+													  "你这烦人的劲儿快把我逼疯了。",
+													  "我已经受够了。滚出去!",
+													  "repeat", 3, npchar, Dialog.CurrentNode);
+				link.l1 = HeroStringReactionRepeat("那就改天再说吧…… ",
+												   "当然, "+npchar.name+"…… ",
+												   "对不起, "+npchar.name+"…… ",
+												   "呃…… ", npchar, Dialog.CurrentNode);
+				link.l1.go = "exit";
+				break;
+			}
+			if (iGPThreat != 0)
+			{
+				iBarbazonTotalTemp = 10 * iGPThreatRate;
+				dialog.text = "哈! 看来咱们兄弟最近没少让你头疼, " + GetSexPhrase("伙计", "姑娘") + "? 我当然可以暂时让他们收敛点。 不过你得大出血一回。 " + FindRussianDublonString(iBarbazonTotalTemp) + "放在桌上, 我们就算谈妥了。";
+				if (PCharDublonsTotal() > iBarbazonTotalTemp)
+				{
+					if (iGPThreat < 5) link.l0 = "当然, 这是你的钱。";
+					else link.l0 = "看样子我没得选。这是你的钱。";
+					link.l0.go = "pirate_threat_pay";
+				}
+				link.l1 = "那我还是改天再来吧…… ";
+				link.l1.go = "exit";
+			}
+			else
+			{
+				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
+				if (NextDiag.TempNode != "I_know_you_good")
+					dialog.text = "你疯了" + GetSexPhrase("", "吗") + "? 兄弟们一看到你就像见了瘟疫一样闪得远远的。 别烦我, 赶紧走人。";
+				else
+					dialog.text = "你在说啥, " + GetSexPhrase("伙计", "姑娘") + "? 你这人惹人烦得很, 连狗都不乐意跟你扯上关系。 谁都不想搭理你。";
+				link.l1 = "明白了…… ";
+				link.l1.go = "exit";
+			}
+		break;
+
+		case "pirate_threat_pay":
+			iGPThreatRate = 0;
+			iGPThreat = 0;
+			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
+			RemoveDublonsFromPCharTotal(iBarbazonTotalTemp);
+			DialogExit();
+			PiratesDecreaseNotif("");
+		break;
     }
 }
 

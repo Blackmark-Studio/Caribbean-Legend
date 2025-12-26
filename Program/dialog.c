@@ -23,10 +23,11 @@ string	PathDlgLngExtn = "";//fix
 
 string dialogEditStrings[10];
 
-void  ProcessCommonDialog(ref NPChar, aref Link, aref NextDiag)
+void ProcessCommonDialog(ref NPChar, aref Link, aref NextDiag)
 {
     ProcessCommonDialogEvent(NPChar, Link, NextDiag);
 }
+
 //Инициализация
 void DialogsInit()
 {
@@ -53,7 +54,7 @@ void DialogControls_Unlock()
 }
 
 //Начать диалог
-bool DialogMain(ref Character)
+bool DialogMain(ref Character, bool bPlayerInit)
 {
 	//Если диалог запущен, выходим
 	if(dialogRun != false) return false;
@@ -86,7 +87,7 @@ bool DialogMain(ref Character)
 	//Можем начинать диалог
 	dialogRun = true;
 	dialogSelf = false;
-    if (!bBettaTestMode) PostEvent("DialogControls_Lock", 0);
+    if (!bBettaTestMode && !bPlayerInit) PostEvent("DialogControls_Lock", 0);
 	LAi_Character_StartDialog(mainChr, Character);
 	LAi_Character_StartDialog(Character, mainChr);
 	SendMessage(mainChr, "lsl", MSG_CHARACTER_EX_MSG, "InDialog", 1);
@@ -304,7 +305,7 @@ void StartDialogWithMainCharacter()
 	//С непрогруженными персонажами не беседуем
 	if(!IsEntity(&Characters[person])) return;
 	//Начинаем диалог
-	DialogMain(&Characters[person]);
+	DialogMain(&Characters[person], true);
 	//Trace("Dialog: start dialog " + person + " whith main character");
 }
 
@@ -518,18 +519,18 @@ void UpdateDynamicRole(ref Dialog, ref chr)
 	// belamour return только в особых ситуациях
 	if(RoleFromID(chr))
 	{
-		Dialog.role = GetConvertStr(chr.role, "roles.txt");
+		Dialog.role = GetCharacterRole(chr);
 		if(chr.role == "friend")
 			Dialog.role = Dialog.role + " / " + GetJobsList(chr, " / ");
 		return;
 	}
 	if (CheckAttribute(chr, "SpecialRole")) 
 	{
-		Dialog.role = GetConvertStr(chr.SpecialRole, "roles.txt");
+		Dialog.role = GetCharacterSpecialRole(chr);
 		return;
 	}
 	if (CheckAttribute(chr, "Payment")) Dialog.role = GetJobsList(chr, " / ");
-	else if (CheckAttributeHasValue(chr, "role")) Dialog.role = GetConvertStr(chr.role, "roles.txt");
+	else if (CheckAttributeHasValue(chr, "role")) Dialog.role = GetCharacterRole(chr);
 }
 
 bool RoleFromID(ref chr)

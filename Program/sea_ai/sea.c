@@ -75,8 +75,6 @@ float	SeaMapLoadAY = 10.54;
 float	fSeaExp = 0.0;
 float	fSeaExpTimer = 0.0;
 
-int	iSeaSectionLang = -1;
-
 void DeleteSeaEnvironment()
 {
     PauseParticles(true); //fix
@@ -160,9 +158,6 @@ void DeleteSeaEnvironment()
 
 	// delete fantom and dead groups
 		Group_DeleteUnusedGroup();
-
-	//
-		LanguageCloseFile(iSeaSectionLang); iSeaSectionLang = -1;
 }
 
 void CreateSeaEnvironment()
@@ -171,8 +166,6 @@ void CreateSeaEnvironment()
 	
 	sCurrentSeaExecute = SEA_EXECUTE;
 	sCurrentSeaRealize = SEA_REALIZE;
-
-	iSeaSectionLang = LanguageOpenFile("SeaSection.txt");
 
 	CreateParticleEntity();
 
@@ -318,6 +311,13 @@ void Sea_LandLoad()
 				return;
 			}
 		}
+
+		if (!STH_CanEnterTown(sColony))
+		{
+			if (IsDay()) Event("StoryFrameLaunch", "ssss", "ssss", "StealthCheckHarbour", "colonyId", sColony);
+			else Event("StoryFrameLaunch", "ssssss", "ssssss", "StealthCheckNight", "colonyId", sColony, "entryPoint", "port");
+			return;
+		}
 	}
 	pchar.CheckEnemyCompanionType = "Sea_LandLoad"; // откуда вход
     if (!CheckEnemyCompanionDistance2GoAway(true)) return; // && !bBettaTestMode  табличка выхода из боя
@@ -339,6 +339,7 @@ void Sea_LandLoad()
 		DeleteAttribute(pchar, "CheckStateOk"); // проверка протектором
 		if(CheckAttribute(pchar,"StealtDeceptionPenalty")) DeleteAttribute(pchar,"StealtDeceptionPenalty");
 		Group_FreeAllDead();
+		PostEvent("Event_NewAutoSave", 500, "s", "Moor");
 	}
 	DoQuestFunctionDelay("Hat6_deal", 2.5);
 }
@@ -388,6 +389,14 @@ void Sea_MapLoadXZ_AY(float x, float z, float ay)
 
 void Sea_MapLoad()
 {
+	SetEventHandler("Event_AfterSave", "Sea_MapLoad_Continue", 1);
+	NewAutoSave("Map");
+}
+
+void Sea_MapLoad_Continue()
+{
+	DelEventHandler("Event_AfterSave", "Sea_MapLoad_Continue");
+	
 	// boal 201004 проверка на перегруз и мин команду -->
 	ref  rPlayer = GetMainCharacter();
     int  i, cn;
@@ -509,7 +518,7 @@ void Land_MapLoad()
 	SeaMapLoadAY = stf(pchar.Ship.Ang.y);
 }
 
-string sTaskList[2];
+string sTaskList[2]; // ~!~ TO_DO: ref
 
 void Sea_FreeTaskList()
 {

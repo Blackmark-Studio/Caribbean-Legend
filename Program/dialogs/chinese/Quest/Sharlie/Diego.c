@@ -27,19 +27,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patrol_1":
-			dialog.text = "好吧……一切看起来都没问题。文件填写得很规范, 还有宗教裁判官的签名。刚才多有怀疑, 还请见谅。你来灯塔做什么? ";
+			dialog.text = "好吧…… 一切看起来都没问题。文件填写得很规范, 还有宗教裁判官的签名。刚才多有怀疑, 还请见谅。你来灯塔做什么? ";
 			link.l1 = "我无权回答这样的问题。如果您真的想了解我为宗教裁判官工作的目的, 建议您直接去圣地亚哥向他本人询问以获得解释。您身为军官, 想必也明白军务和公务的机密。老实说, 我唯一能告诉您的, 就是我正在调查一艘西班牙船只失事的情况。";
 			link.l1.go = "patrol_2";
 		break;
 		
 		case "patrol_2":
-			dialog.text = "请允许我再次致歉, 先生。我绝不敢再耽搁您……啊, 请等一下! 我刚才是不是瞥见了寒光一闪, 还是我眼花了? 您的匕首可真有趣! 能让我看看吗? ";
+			dialog.text = "请允许我再次致歉, 先生。我绝不敢再耽搁您…… 啊, 请等一下! 我刚才是不是瞥见了寒光一闪, 还是我眼花了? 您的匕首可真有趣! 能让我看看吗? ";
 			link.l1 = "一定要记得还给我。这对我来说非常重要。";
 			link.l1.go = "patrol_3";
 		break;
 		
 		case "patrol_3":
-			dialog.text = "天啊! 这把匕首我认识, 我在图书馆的书里见过! 这是Cortes本人用过的匕首! 你看, 这里还有烙印……先生, 求您别拒绝, 让我把这把匕首收下吧! 我专门收藏古代和定制武器, 这可真是不可多得的珍品。我一定会出高价购买。";
+			dialog.text = "天啊! 这把匕首我认识, 我在图书馆的书里见过! 这是Cortes本人用过的匕首! 你看, 这里还有烙印…… 先生, 求您别拒绝, 让我把这把匕首收下吧! 我专门收藏古代和定制武器, 这可真是不可多得的珍品。我一定会出高价购买。";
 			link.l1 = "先生, 这把匕首不卖。是别人送给我的礼物, 俺可没打算随便卖给谁。请把它还给俺。";
 			link.l1.go = "patrol_4";
 		break;
@@ -51,7 +51,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patrol_5":
-			dialog.text = "唉, 那真可惜……好吧, 把你的宝贝拿走吧。老子可不敢再打扰你了。祝你好运! ";
+			dialog.text = "唉, 那真可惜…… 好吧, 把你的宝贝拿走吧。老子可不敢再打扰你了。祝你好运! ";
 			link.l1 = "一切顺利, 军官。";
 			link.l1.go = "patrol_6";
 		break;
@@ -71,8 +71,8 @@ void ProcessDialogEvent()
 		
 		case "shore":
 			PlaySound("Voice\English\Sharlie\Diego De Montoya.wav");
-			dialog.text = "够了! 老子要跟他好好谈谈……";
-			link.l1 = "所以, 眼前这位就是Diego de Montoya本人……不过, 抱歉, senor。咱们以前见过面吧? 哦, 对了, 特立尼达, 当地的灯塔。可我记得你那时候用的可不是这个名字……";
+			dialog.text = "够了! 老子要跟他好好谈谈…… ";
+			link.l1 = "所以, 眼前这位就是Diego de Montoya本人…… 不过, 抱歉, senor。咱们以前见过面吧? 哦, 对了, 特立尼达, 当地的灯塔。可我记得你那时候用的可不是这个名字…… ";
 			link.l1.go = "shore_1";
 		break;
 		
@@ -96,7 +96,7 @@ void ProcessDialogEvent()
 		
 		case "shore_4":
 			dialog.text = "那如果老子给你承诺呢? ";
-			link.l1 = "‘吃青蛙的’这个词? 嗯……";
+			link.l1 = "‘吃青蛙的’这个词? 嗯…… ";
 			link.l1.go = "shore_5";
 		break;
 		

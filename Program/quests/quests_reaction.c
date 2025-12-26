@@ -1185,6 +1185,8 @@ void QuestComplete(string sQuestName, string qname)
 			}
 			if (CheckAttribute(pchar, "GenQuest.LigaAttack.Go")) DoQuestReloadToLocation(pchar.location + "_upstairs", "goto", "goto1", "LigaAttack_LoginKillers"); //лига ночных убийц атакует
 			else DoQuestReloadToLocation(pchar.location + "_upstairs", "goto", "goto1", "restore_hp");
+			
+			PostEvent("Event_NewAutoSave", 1000, "s", "TavernRest");
 		break;
 		
 		case "restore_hp":
@@ -1322,6 +1324,7 @@ void QuestComplete(string sQuestName, string qname)
 			AddCharacterExpToSkill(pchar, "Leadership", 30);
 			AddCharacterExpToSkill(pchar, "FencingS", -15);
 			AddCharacterExpToSkill(pchar, "Pistol", -15);
+			NewAutoSave("BrothelRest");
 		break;
 		////////////////////////////////////////////////////////////////////////
 		//  Конец    Бордель
@@ -1426,7 +1429,8 @@ void QuestComplete(string sQuestName, string qname)
 		break;
 
 		case "PlaySex_2":
-			PlayStereoSound("sex\sex" + sGlobalTemp + ".wav");
+			if(bSFW) PlayStereoSound("sex\sex_sfw_brothel.wav");
+			else PlayStereoSound("sex\sex" + sGlobalTemp + ".wav");
             AddTimeToCurrent(2, rand(30));
 			LAi_SetCurHPMax(pchar); // Rebbebion, полностью восстанавливаем здоровье и энергию
 			if (pchar.location == "SanJuan_houseS1Bedroom")
@@ -1626,6 +1630,7 @@ void QuestComplete(string sQuestName, string qname)
 		if(MysteryOfBetsyPrice_QuestComplete(sQuestName, qname)) return;
 		if(LaEspadaDelRey_QuestComplete(sQuestName, qname)) return;
 		if(WildRose_QuestComplete(sQuestName, qname)) return;
+		if(SharlieEpilog_QuestComplete(sQuestName, qname)) return;
 	}	
 }
 

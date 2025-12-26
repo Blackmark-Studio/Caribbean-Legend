@@ -26,8 +26,8 @@ Roger_25 {Eine Stunde später...@<NewStr()>Die Seide wurde beim Käufer abgelade
 Roger_26 {Moray}
 Roger_27 {Paul}
 Roger_28 {Chant}
-Roger_29 {Jean}
-Roger_30 {Picard}
+Roger_29 { }
+Roger_30 { }
 Roger_31 {30 Kalte Waffen wurden aus dem Arsenal des Schiffes entwendet.}
 Roger_32 {Gesammelte kalte Waffen - 30 Stück}
 Roger_33 {Keine kalten Waffen}
@@ -140,4 +140,4 @@ Roger_139 {Aus irgendeinem Grund muss ich immer an Mirabelle denken. Wie ist sie
 Roger_140 {Knippel}
 Roger_141 {Longway}
 Roger_142 {Tichingitu}
-Roger_143 {Thomas}
+Roger_143 {Tommy}

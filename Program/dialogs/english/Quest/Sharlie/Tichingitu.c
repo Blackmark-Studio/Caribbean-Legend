@@ -140,6 +140,14 @@ void ProcessDialogEvent()
 	//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "Tichingitu_officer":
 			dialog.text = "Tichingitu listens to you, Captain "+pchar.name+"!";
+			// Эпилог
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				dialog.text = ""+npchar.name+" sees confusion in Captain "+pchar.name+"'s eyes.";
+				Link.l1 = "You always see right through me, my friend. You see, I must return home — to Europe. I've made a hard decision — to sail on someone else's ship, as a passenger.";
+				Link.l1.go = "SharlieEpilog_Tichingitu_1";
+				break;
+			}
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
 				Link.l4 = "Tichingitu, I'm about to depart for an old Indian village called Tayasal. I won't lie to you, it's an extremely dangerous journey and very unusual: through a teleportation idol. You... Will you join me?";
@@ -217,7 +225,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -232,7 +240,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;
@@ -248,7 +256,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -263,7 +271,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, MUSKET_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetMusketBullets");
 			DialogExit();
 		break;
@@ -451,6 +459,35 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("FolkeDeluc", "2");
 			ReturnOfficer_Tichingitu();
+		break;
+		
+		// Эпилог
+		case "SharlieEpilog_Tichingitu_1":
+			dialog.text = "Captain "+pchar.name+" not take "+npchar.name+" with him?";
+			link.l1 = "You're my friend, "+npchar.name+", and of course I invite you to come with me on this journey. But you must understand — people in the Old World aren’t used to seeing natives. They’ll point at you and assume you’re my slave, and treat you as such.";
+			link.l1.go = "SharlieEpilog_Tichingitu_2";
+		break;
+
+		case "SharlieEpilog_Tichingitu_2":
+			dialog.text = ""+npchar.name+" does not care. "+npchar.name+" knows pale-faces despise natives, and will follow Captain "+pchar.name+" as promised — until his last breath.";
+			link.l1 = "Not everyone despises natives. But most are wary — it’s how they defend their faith against the unfamiliar. Either way, I won’t let anyone humiliate you or treat you like a slave. I’m sure no one from your tribe has ever seen Europe — not even that damned shaman in his wildest dreams could imagine it.";
+			link.l1.go = "SharlieEpilog_Tichingitu_3";
+		break;
+
+		case "SharlieEpilog_Tichingitu_3":
+			dialog.text = "Maskoke Indian is not sailor. They never reach Europe. I hear: big canoe takes two full moons to get there.";
+			link.l1 = "Yes, "+npchar.name+", and that’s if the wind is favorable. It’s not an easy journey. We set sail in two weeks... and I’m glad you’re coming with us. I plan to hold a small celebration at the tavern before we leave. I know you don’t like fire-water, but I’ll be happy if you join us.";
+			link.l1.go = "SharlieEpilog_Tichingitu_4";
+		break;
+		
+		case "SharlieEpilog_Tichingitu_4":
+			dialog.text = ""+npchar.name+" will come. But maybe better — celebration boarding?";
+			link.l1 = "Ha-ha. Not this time, my friend — not the occasion. I’ll let you know when we begin. Now I must go — duty calls.";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Tichingitu_officer";
+			npchar.quest.SharlieEpilog_FarewellOfficers = true;
+			pchar.questTemp.SharlieEpilog_Tichingitu = true;
+			pchar.questTemp.SharlieEpilog_Friends = sti(pchar.questTemp.SharlieEpilog_Friends) + 1;
 		break;
 		
 		case "Exit":

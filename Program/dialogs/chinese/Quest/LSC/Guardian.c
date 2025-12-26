@@ -158,7 +158,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "还要什么密码? 让我过去, 否则别怪我不客气……";
+				link.l1 = "还要什么密码? 让我过去, 否则别怪我不客气…… ";
 				link.l1.go = "check_parol_wrong";
 			}
 		break;
@@ -446,7 +446,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "还要什么密码? 让我过去, 否则别怪我不客气……";
+				link.l1 = "还要什么密码? 让我过去, 否则别怪我不客气…… ";
 				link.l1.go = "Rcheck_parol_wrong";
 			}
 		break;

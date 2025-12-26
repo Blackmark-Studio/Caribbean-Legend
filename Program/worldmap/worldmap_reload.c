@@ -45,25 +45,29 @@ void wdmReloadToSea()
 	//Удаляем атрибуты выделенных энкаунтеров
 	worldMap.deleteUpdate = "";
 	
-	//  AutoSave boal 17.04.24 -->
-	if (sti(wdmLoginToSea.storm) == 0 && !isShipEncounterType && MakeAutoSave2()) // не в шторме, не в бою
-	{
-		SetEventHandler("evntSaveGameAfter","WdmReloadAferSave", 0);
-	}
+	if (sti(wdmLoginToSea.storm) == 0 && !isShipEncounterType) // не в шторме, не в бою
+		MapToSea_CheckAutoSave();
 	else
-	{
 		WdmReloadStart(isShipEncounterType);
-	}
-	//  AutoSave boal 17.04.24 <--
-	
-	
 }
-//  AutoSave boal 17.04.24 -->
-void WdmReloadAferSave()
+
+void MapToSea_CheckAutoSave()
 {
-	DelEventHandler("evntSaveGameAfter","WdmReloadAferSave"); // убрать прерывание
-	WdmReloadStart(false); // то, что было бы сразу
+	if(!CheckAttribute(&InterfaceStates,"EnabledAutoSaveMode2") || sti(InterfaceStates.EnabledAutoSaveMode2) != 1)
+	{
+		WdmReloadStart(false);
+		return;
+	}
+	SetEventHandler("Event_AfterSave", "MapToSea_Continue", 1);
+	NewAutoSave("MapToSea");
 }
+
+void MapToSea_Continue()
+{
+	DelEventHandler("Event_AfterSave", "MapToSea_Continue");
+	WdmReloadStart(false);
+}
+
 void WdmReloadStart(bool isShipEncounterType)
 {
 	//Фейдер

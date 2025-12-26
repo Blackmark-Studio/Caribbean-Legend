@@ -147,7 +147,7 @@ void ModifyGunDamageByPerks(ref attacker, ref enemy, ref damageMtp, int nEnemies
 
 // Это можно было бы сделать модификаторами персонажей, но нужны уведомления
 // С появлением событий-на-персонаже можно будет убрать туда
-void ModifyGunDamageByQuestSituations(ref attacker, ref enemy, float damageMtp)
+void ModifyGunDamageByQuestSituations(ref attacker, ref enemy, ref damageMtp)
 {
 	// калеуче
 	if (IsCharacterEquippedArtefact(enemy, "kaleuche_amulet3"))
@@ -177,7 +177,7 @@ void ModifyGunDamageByQuestSituations(ref attacker, ref enemy, float damageMtp)
 	}
 }
 
-void ModifyDamageMtpByHeadshot(ref attacker, ref attackerTable, ref enemy, string weaponType, float damageMtp)
+void ModifyDamageMtpByHeadshot(ref attacker, ref attackerTable, ref enemy, string weaponType, ref damageMtp)
 {
 	if (IsMainCharacter(enemy)) return; // ГГ не получает хедшотов
 
@@ -189,7 +189,7 @@ void ModifyDamageMtpByHeadshot(ref attacker, ref attackerTable, ref enemy, strin
 	else if(IsMainCharacter(attacker)) log_info(XI_ConvertString("HeadShot"));
 }
 
-void ModifyGunDamageByAiming(float aimingTime, float damageMtp)
+void ModifyGunDamageByAiming(float aimingTime, ref damageMtp)
 {
 	if (aimingTime < 0.0) return;
 	float fMaxTime = MAX_AIMING_TIME;

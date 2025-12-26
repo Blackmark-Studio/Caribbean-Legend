@@ -334,7 +334,7 @@ void SetNextDeck(ref enemy, int boardingLocationIdx, bool IsFort)
 }
 
 // Устанавливаем локацию для драки
-void BRD_SetLocationForFight(string deckID, int locID, ref echr, bool IsFort)
+void BRD_SetLocationForFight(ref deckID, ref locID, ref echr, bool IsFort)
 {
 	if (IsFort) deckID = GetShipLocationID(echr);
 	else deckID = ChooseDeck(pchar, echr);

@@ -83,10 +83,10 @@ void CreateTraders(aref loc)
 					break;
 				}
 			
-				iChar = NPC_GeneratePhantomCharacter(sType, iNation, iSex, 180);
+				iChar = NPC_GeneratePhantomCharacterForLoc(sType, iNation, iSex, 180, loc);
 
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, iSex);
+				SetNPCModelUniqForLoc(chr, sType, iSex, loc);
 				
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "citizen";
@@ -157,7 +157,8 @@ void CreateCitizens(aref loc)
 	int iChar, i, iSex;
 	bool bOk;
 	string slai_group, locatorName, sType;
-    slai_group = GetNationNameByType(iNation)  + "_citizens"; 
+    slai_group = GetNationNameByType(iNation)  + "_citizens";
+	string sPostProcessCallbackName = "";
 	string blade; // belamour ночной приключенец
 	// legendary edition отключаем Дело чести для адмирала и губернатора
 	if(CheckAttribute(pchar, "questTemp.Patria.GenGovernor")) generateAffairOfHonor = false;
@@ -201,9 +202,9 @@ void CreateCitizens(aref loc)
 				log_testinfo("Сгенерировался 'Ночной приключенец' : Матрос");
 				iSex = MAN;
 				sType = "sailor";
-				iChar = NPC_GeneratePhantomCharacter("sailor", iNation, iSex, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc("sailor", iNation, iSex, 2, loc);
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, iSex);
+				SetNPCModelUniqForLoc(chr, sType, iSex, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "citizen";
 				LAi_SetCitizenType(chr);
@@ -241,9 +242,9 @@ void CreateCitizens(aref loc)
 				log_testinfo("Сгенерировался 'Ночной приключенец' : Горожанин");
 				iSex = MAN;
 				sType = "citizen";
-				iChar = NPC_GeneratePhantomCharacter("citizen", iNation, iSex, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc("citizen", iNation, iSex, 2, loc);
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, iSex);
+				SetNPCModelUniqForLoc(chr, sType, iSex, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "citizen";
 				LAi_SetCitizenType(chr);
@@ -282,9 +283,9 @@ void CreateCitizens(aref loc)
 				log_testinfo("Сгенерировался 'Ночной приключенец' : Контрабандист");
 				iSex = MAN;
 				sType = "pirate";
-				iChar = NPC_GeneratePhantomCharacter("pirate", iNation, iSex, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc("pirate", iNation, iSex, 2, loc);
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, iSex);
+				SetNPCModelUniqForLoc(chr, sType, iSex, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "marginal";
 				LAi_SetCitizenType(chr);
@@ -316,9 +317,9 @@ void CreateCitizens(aref loc)
 				log_testinfo("Сгенерировался 'Ночной приключенец' : Дворянин");
 				iSex = MAN;
 				sType = "noble";
-				iChar = NPC_GeneratePhantomCharacter("noble", iNation, iSex, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc("noble", iNation, iSex, 2, loc);
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, iSex);
+				SetNPCModelUniqForLoc(chr, sType, iSex, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "citizen";
 				LAi_SetCitizenType(chr);
@@ -397,18 +398,43 @@ void CreateCitizens(aref loc)
 		iConvQty = rand(2)+4;
 	}
     arrayNPCModelHow = 0;
+
+	if (CheckAttribute(loc, "PostProcessCharacterCallback"))
+	{
+		sPostProcessCallbackName = loc.PostProcessCharacterCallback;
+	}
+
+	bool bHasCallback = CheckAttribute(loc, "CreateModelCallback");
+
+	if (!bHasCallback || sPostProcessCallbackName == "")
+	{
+		// Не доверяем iColony, она сработает не для всех случаев
+		int iLinkedColonyNum = GiveColonyIndexByLocation(loc);
+		if (iLinkedColonyNum != -1)
+		{
+			ref rLinkedColony = &colonies[iLinkedColonyNum];
+			bHasCallback = bHasCallback || CheckAttribute(rLinkedColony, "CreateModelCallback");
+			if (sPostProcessCallbackName == "" && CheckAttribute(rLinkedColony, "PostProcessCharacterCallback"))
+			{
+				sPostProcessCallbackName = rLinkedColony.PostProcessCharacterCallback;
+			}
+		}
+	}
+
 	if (checkAttribute(loc, "citizens") || loc.type == "church")
 	{
-		if(iNation != PIRATE || sti(Colonies[iColony].HeroOwn) == true)//колония
+		if(iNation != PIRATE || sti(Colonies[iColony].HeroOwn) == true || bHasCallback)//колония
 		{
 			if (Colonies[iColony].id == "Pirates") return; // Исла-Тесоро у англичан заполним в другом месте
 			for(i=0; i<iSailorQty; i++)//матросы
 			{
                 iSex = MAN;
 				sType = "sailor";
-				iChar = NPC_GeneratePhantomCharacter("sailor", iNation, iSex, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc("sailor", iNation, iSex, 2, loc);
+				if (iChar == -1)
+					continue;
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, iSex);
+				SetNPCModelUniqForLoc(chr, sType, iSex, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "citizen";
 				LAi_SetLoginTime(chr, 6.0, 21.99);
@@ -430,15 +456,21 @@ void CreateCitizens(aref loc)
 					chr.talker = rand(9);
 					chr.role = "sailor";
 				}
+				if (sPostProcessCallbackName != "")
+				{
+					call sPostProcessCallbackName(chr, sType, iSex, loc);
+				}
 				ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Мирные граждане
 			}
 			for(i=0; i<iGipsyQty; i++)//цыганки
 			{
                 iSex = WOMAN;
 				sType = "gipsy";
-				iChar = NPC_GeneratePhantomCharacter("gipsy", iNation, iSex, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc("gipsy", iNation, iSex, 2, loc);
+				if (iChar == -1)
+					continue;
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, iSex);
+				SetNPCModelUniqForLoc(chr, sType, iSex, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "citizen";
 				LAi_SetLoginTime(chr, 6.0, 21.99);
@@ -450,14 +482,20 @@ void CreateCitizens(aref loc)
 				chr.dialog.currentnode = "first time";
 				chr.greeting = "gipsy";
 				chr.talker = 5;
+				if (sPostProcessCallbackName != "")
+				{
+					call sPostProcessCallbackName(chr, sType, iSex, loc);
+				}
 			}
 			for(i=0; i<iContraQty; i++)//контрики и прочие темные личности
 			{
                 iSex = MAN;
 				sType = "marginal";
-				iChar = NPC_GeneratePhantomCharacter("marginal", iNation, iSex, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc("marginal", iNation, iSex, 2, loc);
+				if (iChar == -1)
+					continue;
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, iSex);
+				SetNPCModelUniqForLoc(chr, sType, iSex, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "citizen";
 				chr.Role = "marginal_town";
@@ -482,15 +520,21 @@ void CreateCitizens(aref loc)
 				chr.dialog.filename    = "Population\Marginal.c";
 				chr.dialog.currentnode = "first time";
 				chr.greeting = "marginal";
+				if (sPostProcessCallbackName != "")
+				{
+					call sPostProcessCallbackName(chr, sType, iSex, loc);
+				}
 				ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Мирные граждане
 			}
 			for(i=0; i<iCapQty; i++)//капитаны кораблей
 			{
 				iSex = MAN;
 				sType = "captain";
-				iChar = NPC_GeneratePhantomCharacter("captain", iNation, iSex, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc("captain", iNation, iSex, 2, loc);
+				if (iChar == -1)
+					continue;
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, iSex);
+				SetNPCModelUniqForLoc(chr, sType, iSex, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "citizen";
 				LAi_SetLoginTime(chr, 6.0, 21.99);
@@ -508,6 +552,10 @@ void CreateCitizens(aref loc)
 				chr.dialog.filename    = "Population\Captain.c";
 				chr.dialog.currentnode = "first time";
 				chr.greeting = "captain";
+				if (sPostProcessCallbackName != "")
+				{
+					call sPostProcessCallbackName(chr, sType, iSex, loc);
+				}
 				ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Мирные граждане
 			}
 			for(i=0; i<iCitizQty; i++)//мещане-бюргеры + посетители церкви
@@ -515,9 +563,11 @@ void CreateCitizens(aref loc)
 				if (loc.type == "church") iSex = MAN;
 				else iSex = rand(WOMAN);
 				sType = "citizen";
-				iChar = NPC_GeneratePhantomCharacter("citizen", iNation, iSex, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc("citizen", iNation, iSex, 2, loc);
+				if (iChar == -1)
+					continue;
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, iSex);
+				SetNPCModelUniqForLoc(chr, sType, iSex, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "citizen";
 				LAi_SetLoginTime(chr, 6.0, 21.99);
@@ -598,15 +648,21 @@ void CreateCitizens(aref loc)
 						}
 					}
 				}
+				if (sPostProcessCallbackName != "")
+				{
+					call sPostProcessCallbackName(chr, sType, iSex, loc);
+				}
 				// <--
 			}
 			for(i=0; i<iNobleQty; i++)//дворяне
 			{
 				iSex = rand(WOMAN);
 				sType = "noble";
-				iChar = NPC_GeneratePhantomCharacter("noble", iNation, iSex, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc("noble", iNation, iSex, 2, loc);
+				if (iChar == -1)
+					continue;
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, iSex);
+				SetNPCModelUniqForLoc(chr, sType, iSex, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "citizen";
 				LAi_SetLoginTime(chr, 6.0, 21.99);
@@ -653,6 +709,10 @@ void CreateCitizens(aref loc)
 					chr.dialog.filename = "Population\Noblegirl.c";
 					chr.greeting = "noble_female";
 				}
+				if (sPostProcessCallbackName != "")
+				{
+					call sPostProcessCallbackName(chr, sType, iSex, loc);
+				}
 				ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Мирные граждане
 			}
 			for(i=0; i<iIndianQty; i++)//индейцы
@@ -660,9 +720,11 @@ void CreateCitizens(aref loc)
                 if (i < 9) iSex = MAN;
 				else iSex = WOMAN;
 				sType = "indian";
-				iChar = NPC_GeneratePhantomCharacter("indian", iNation, iSex, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc("indian", iNation, iSex, 2, loc);
+				if (iChar == -1)
+					continue;
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, iSex);
+				SetNPCModelUniqForLoc(chr, sType, iSex, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "citizen";
 				LAi_SetLoginTime(chr, 6.0, 21.99);
@@ -687,15 +749,21 @@ void CreateCitizens(aref loc)
 				PlaceCharacter(chr, "goto", "random_free");
 				chr.dialog.filename    = "Population\Indian.c";
 				chr.dialog.currentnode = "first time";
+				if (sPostProcessCallbackName != "")
+				{
+					call sPostProcessCallbackName(chr, sType, iSex, loc);
+				}
 				ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Мирные граждане
 			}
 			for(i=0; i<iConvQty; i++)//каторжники на руднике
 			{
                 iSex = MAN;
 				sType = "convict";
-				iChar = NPC_GeneratePhantomCharacter("convict", iNation, iSex, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc("convict", iNation, iSex, 2, loc);
+				if (iChar == -1)
+					continue;
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, iSex);
+				SetNPCModelUniqForLoc(chr, sType, iSex, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "citizen";
 				LAi_SetLoginTime(chr, 6.0, 21.99);
@@ -708,15 +776,21 @@ void CreateCitizens(aref loc)
 				chr.dialog.filename    = "Population\Convict.c";
 				chr.dialog.currentnode = "first time";
 				chr.greeting = "convict";
+				if (sPostProcessCallbackName != "")
+				{
+					call sPostProcessCallbackName(chr, sType, iSex, loc);
+				}
 				ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Мирные граждане
 			}
 			for(i=0; i<iMonkQty; i++)//монахи
 			{
                 iSex = MAN;
 				sType = "monk";
-				iChar = NPC_GeneratePhantomCharacter("monk", iNation, iSex, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc("monk", iNation, iSex, 2, loc);
+				if (iChar == -1)
+					continue;
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, iSex);
+				SetNPCModelUniqForLoc(chr, sType, iSex, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "citizen";
 				chr.role = "monk";
@@ -748,6 +822,10 @@ void CreateCitizens(aref loc)
 				chr.dialog.filename    = "Population\Monk.c";
 				chr.dialog.currentnode = "first time";
 				chr.greeting = "monk";
+				if (sPostProcessCallbackName != "")
+				{
+					call sPostProcessCallbackName(chr, sType, iSex, loc);
+				}
 			}
 		}
 		else
@@ -756,9 +834,11 @@ void CreateCitizens(aref loc)
 			{
 				iSex = MAN;
 				sType = "pirate";
-				iChar = NPC_GeneratePhantomCharacter("pirate", iNation, iSex, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc("pirate", iNation, iSex, 2, loc);
+				if (iChar == -1)
+					continue;
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, iSex);
+				SetNPCModelUniqForLoc(chr, sType, iSex, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "citizen";
 				LAi_SetLoginTime(chr, 6.0, 21.99);
@@ -770,6 +850,10 @@ void CreateCitizens(aref loc)
 				chr.dialog.currentnode = "first time";
 				chr.greeting = "town_pirate";
 				PlaceCharacter(chr, "goto", "random_free");
+				if (sPostProcessCallbackName != "")
+				{
+					call sPostProcessCallbackName(chr, sType, iSex, loc);
+				}
 				ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Мирные граждане
 			}
 		}
@@ -784,18 +868,12 @@ void CreateCitizens(aref loc)
 		iCitizensQuantity = GetAttributesNum(st);
 		for (i=0; i<iCitizensQuantity; i++)
 		{
-			if(iNation != PIRATE)
-			{
-                sType = "soldier";
-				iChar = NPC_GeneratePhantomCharacter("soldier", iNation, MAN, 2);
-			}
-			else
-			{
-                sType = "pirate";
-				iChar = NPC_GeneratePhantomCharacter("pirate", iNation, MAN, 2);
-			}
+			sType = "soldier";
+			iChar = NPC_GeneratePhantomCharacterForLoc("soldier", iNation, MAN, 2, loc);
+			if (iChar == -1)
+				continue;
 			chr = &characters[iChar];
-			SetNPCModelUniq(chr, sType, MAN);
+			SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 			chr.City = Colonies[iColony].id;
             chr.CityType = "soldier";
 			chr.RebirthPhantom = true; 
@@ -860,18 +938,12 @@ void CreateCitizens(aref loc)
 		}
 		for (i=0; i<iCitizensQuantity-2; i++)
 		{
-			if(iNation != PIRATE && LAi_IsCapturedLocation == 0)
-			{
-                sType = "soldier";
-				iChar = NPC_GeneratePhantomCharacter("soldier", iNation, MAN, 2);
-			}
-			else
-			{
-                sType = "pirate";
-				iChar = NPC_GeneratePhantomCharacter("pirate", iNation, MAN, 2);
-			}
+			sType = "soldier";
+			iChar = NPC_GeneratePhantomCharacterForLoc("soldier", iNation, MAN, 2, loc);
+			if (iChar == -1)
+				continue;
 			chr = &characters[iChar];
-			SetNPCModelUniq(chr, sType, MAN);
+			SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 			chr.City = Colonies[iColony].id;
             chr.CityType = "soldier";
             SetFantomParamFromRank(chr, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true); // бравые орлы
@@ -879,13 +951,11 @@ void CreateCitizens(aref loc)
 			LAi_CharacterReincarnation(chr, true, true);
 			LAi_SetReincarnationRankStep(chr, MOD_SKILL_ENEMY_RATE+2); //задаем шаг на увеличение ранга фантомам на реинкарнацию
 			LAi_SetLoginTime(chr, 0.0, 24.0);
-			ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);  // RB Стража
-			
 			chr.dialog.filename = "Common_Soldier.c";
 			chr.dialog.currentnode = "first time";
 
 			LAi_SetPatrolType(chr);
-			
+			ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);  // RB Стража
             if (sti(Colonies[iColony].HeroOwn) == true)
 			{
 				LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
@@ -910,16 +980,12 @@ void CreateCitizens(aref loc)
 		//мушкетеры
 		for (i=1; i<=2; i++)
 		{
-			if(iNation == PIRATE)
-			{
-                sType = "mush_ctz_" + (rand(2)+7);
-			}
-			else
-			{
-                sType = "mush_" + NationShortName(iNation) + "_" + i;
-			}
-			chr = GetCharacter(NPC_GenerateCharacter("GenChar_", sType, "man", "mushketer", sti(pchar.rank), iNation, 2, false, "soldier"));
-			chr.id = "GenChar_" + chr.index;	
+			sType = "mushketer";
+			iChar = NPC_GeneratePhantomCharacterForLoc("mushketer", iNation, MAN, 2, loc);
+			if (iChar == -1)
+				continue;
+			chr = &characters[iChar];
+			SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 			chr.reputation = (1 + rand(44) + rand(44));// репа всем горожанам
 			chr.City = Colonies[iColony].id;
             chr.CityType = "soldier";
@@ -929,14 +995,13 @@ void CreateCitizens(aref loc)
 			LAi_SetReincarnationRankStep(chr, MOD_SKILL_ENEMY_RATE+2); //задаем шаг на увеличение ранга фантомам на реинкарнацию
             SetFantomParamFromRank(chr, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true); // бравые орлы
 			LAi_SetLoginTime(chr, 0.0, 24.0); //а ночью будет беготня от патруля :)
-			ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Стража
-
 			PlaceCharacter(chr, "patrol", "random_free");
 
 			chr.dialog.filename = "Common_Soldier.c";
 			chr.dialog.currentnode = "first time";				
 
 			LAi_SetPatrolType(chr);
+			ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Стража
 			
             if (sti(Colonies[iColony].HeroOwn) == true)
 			{
@@ -1028,12 +1093,12 @@ void CreateCitizens(aref loc)
 		iSailorQty = GetAttributesNum(locatorGroup);
 		for (i = 1; i <= iSailorQty; i++)
 		{
-			sType = "sailor";
-			iChar = NPC_GeneratePhantomCharacter(sType, iNation, MAN, 2);
-			chr = &characters[iChar];
-			chr.model.animation = "fisher";
 			sType = "fisher";
-			SetNPCModelUniq(chr, sType, MAN);
+			iChar = NPC_GeneratePhantomCharacterForLoc(sType, iNation, MAN, 2, loc);
+			if (iChar == -1)
+				continue;
+			chr = &characters[iChar];
+			SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 			if(!HasSubStr(chr.model, "fisherman")) chr.model = "fisherman_"+sti(rand(10)+1);
 			chr.City = Colonies[iColony].id;
 			RemoveAllCharacterItems(chr, true);
@@ -1056,12 +1121,12 @@ void CreateCitizens(aref loc)
 		iSailorQty = GetAttributesNum(locatorGroup);
 		for (i = 1; i <= iSailorQty; i++)
 		{
-			sType = "sailor";
-			iChar = NPC_GeneratePhantomCharacter(sType, iNation, MAN, 2);
-			chr = &characters[iChar];
-			chr.model.animation = "fisher";
 			sType = "fisher";
-			SetNPCModelUniq(chr, sType, MAN);
+			iChar = NPC_GeneratePhantomCharacterForLoc(sType, iNation, MAN, 2, loc);
+			if (iChar == -1)
+				continue;
+			chr = &characters[iChar];
+			SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 			if(!HasSubStr(chr.model, "fisherman")) chr.model = "fisherman_"+sti(rand(10)+1);
 			chr.City = Colonies[iColony].id;
 			RemoveAllCharacterItems(chr, true);
@@ -1086,89 +1151,40 @@ void CreateCitizens(aref loc)
 		for (i = 1; i <= iSailorQty; i++)
 		{
 			
-				iSex = rand(WOMAN);
-				sType = "citizen";
-				iChar = NPC_GeneratePhantomCharacter("citizen", iNation, iSex, 2);
-				chr = &characters[iChar];
-				if(iSex == WOMAN) chr.model.animation = "woman";
-					else chr.model.animation = "man";
-				SetNPCModelUniq(chr, sType, iSex);
-				if(iSex == WOMAN)
+			iSex = rand(WOMAN);
+			sType = "citizen";
+			iChar = NPC_GeneratePhantomCharacterForLoc("citizen", iNation, iSex, 2, loc);
+			if (iChar == -1)
+				continue;
+			chr = &characters[iChar];
+			SetNPCModelUniqForLoc(chr, sType, iSex, loc);
+			if(iSex == MAN)
+			{
+				if(rand(3) == 2)
 				{
-					switch (rand(13))
-					{
-						case 0: chr.model = "Girl_1"; break;
-						case 1: chr.model = "Girl_2"; break;
-						case 2: chr.model = "Girl_3"; break;
-						case 3: chr.model = "Girl_4"; break;
-						case 4: chr.model = "Girl_5"; break;
-						case 5: chr.model = "Girl_8"; break;
-						case 6: chr.model = "Women_9"; break;
-						case 7: chr.model = "Women_10"; break;
-						case 8: chr.model = "Women_12"; break;
-						case 9: chr.model = "Women_13"; break;
-						case 10: chr.model = "Women_14"; break;
-						case 11: chr.model = "Women_15"; break;
-						case 12: chr.model = "Women_16"; break;
-						case 13: chr.model = "Women_18"; break;
-					}
-					int k = 0;
-					while (!CheckNPCModelUniq(chr) && k < 10)
-					{
-						k++;
-						switch (rand(13))
-						{
-							case 0: chr.model = "Girl_1"; break;
-							case 1: chr.model = "Girl_2"; break;
-							case 2: chr.model = "Girl_3"; break;
-							case 3: chr.model = "Girl_4"; break;
-							case 4: chr.model = "Girl_5"; break;
-							case 5: chr.model = "Girl_8"; break;
-							case 6: chr.model = "Women_9"; break;
-							case 7: chr.model = "Women_10"; break;
-							case 8: chr.model = "Women_12"; break;
-							case 9: chr.model = "Women_13"; break;
-							case 10: chr.model = "Women_14"; break;
-							case 11: chr.model = "Women_15"; break;
-							case 12: chr.model = "Women_16"; break;
-							case 13: chr.model = "Women_18"; break;
-						}
-					}
-					arrayNPCModel[arrayNPCModelHow] = chr.model;
-					arrayNPCModelHow++;
+					CreateModel(iChar, "drinker", iSex, loc);
 				}
-				else
-				{
-					if(rand(3) == 2)
-					{
-						k = 0;
-						while (!CheckNPCModelUniq(chr) && k < 10)
-						{
-							k++;
-							chr.model = "drinker_"+sti(rand(15)+1)
-						}
-					}
-				}
-				chr.City = Colonies[iColony].id;
-				RemoveAllCharacterItems(chr, true);
-				chr.CityType = "citizen";
-				chr.chr_ai.hp_max = 1;
-				chr.chr_ai.hp = 1;
-                MakeUnpushable(chr, true);
-				if(HasSubStr(chr.model, "drinker"))
-				{
-					LAi_SetDrinkerSitBenchType(chr);
-					LAi_SetLoginTime(chr, 18.30, 23.99);
-				}
-				else
-				{
-					LAi_SetBenchSitType(chr);
-					LAi_SetLoginTime(chr, 10.0, 17.99);
-				}
-				ChangeCharacterAddressGroup(chr, loc.id, "benchsit", "benchsit"+i);
-				if (sti(Colonies[iColony].HeroOwn) == true) LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
-				else LAi_group_MoveCharacter(chr, slai_group);
-				//chr.dialog.currentnode = "first time";
+			}
+			chr.City = Colonies[iColony].id;
+			RemoveAllCharacterItems(chr, true);
+			chr.CityType = "citizen";
+			chr.chr_ai.hp_max = 1;
+			chr.chr_ai.hp = 1;
+			MakeUnpushable(chr, true);
+			if(HasSubStr(chr.model, "drinker"))
+			{
+				LAi_SetDrinkerSitBenchType(chr);
+				LAi_SetLoginTime(chr, 18.30, 23.99);
+			}
+			else
+			{
+				LAi_SetBenchSitType(chr);
+				LAi_SetLoginTime(chr, 10.0, 17.99);
+			}
+			ChangeCharacterAddressGroup(chr, loc.id, "benchsit", "benchsit"+i);
+			if (sti(Colonies[iColony].HeroOwn) == true) LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
+			else LAi_group_MoveCharacter(chr, slai_group);
+			//chr.dialog.currentnode = "first time";
 		}
 	}
 	
@@ -1179,11 +1195,13 @@ void CreateCitizens(aref loc)
 		iSailorQty = GetAttributesNum(locatorGroup);
 		for (i = 1; i <= iSailorQty; i++)
 		{
-			sType = "sailor";
-			iChar = NPC_GeneratePhantomCharacter(sType, iNation, MAN, 2);
+			sType = "blacksmith";
+			iChar = NPC_GeneratePhantomCharacterForLoc(sType, iNation, MAN, 2, loc);
+			if (iChar == -1)
+				continue;
 			chr = &characters[iChar];
-			chr.model.animation = "blacksmith";
-			chr.model = "blacksmith_"+sti(rand(17)+1);
+			SetNPCModelUniqForLoc(chr, sType, MAN, loc);
+
 			chr.City = Colonies[iColony].id;
 			RemoveAllCharacterItems(chr, true);
 			chr.CityType = sType;
@@ -1206,32 +1224,24 @@ void CreateCitizens(aref loc)
 		iSailorQty = GetAttributesNum(locatorGroup);
 		for (i = 1; i <= iSailorQty; i++)
 		{
-				sType = "citizen";
-				iChar = NPC_GeneratePhantomCharacter("citizen", iNation, MAN, 2);
-				chr = &characters[iChar];
-				chr.model.animation = "man";
-				chr.model = "drinker_"+sti(rand(15)+1));
-				
-				k = 0;
-				while (!CheckNPCModelUniq(chr) && k < 10)
-				{
-					k++;
-					chr.model = "drinker_"+sti(rand(15)+1));
-				}
-					arrayNPCModel[arrayNPCModelHow] = chr.model;
-					arrayNPCModelHow++;
-				chr.City = Colonies[iColony].id;
-				RemoveAllCharacterItems(chr, true);
-				chr.CityType = "citizen";
-				LAi_SetLoginTime(chr, 18.29, 23.99);
-				chr.chr_ai.hp_max = 1;
-				chr.chr_ai.hp = 1;
-                MakeUnpushable(chr, true);
-				LAi_SetDrinkerSitType(chr);
-				ChangeCharacterAddressGroup(chr, loc.id, "drinkersit", "drinkersit"+i);
-				if (sti(Colonies[iColony].HeroOwn) == true) LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
-				else LAi_group_MoveCharacter(chr, slai_group);
-				//chr.dialog.currentnode = "first time";
+			sType = "citizen";
+			iChar = NPC_GeneratePhantomCharacterForLoc("drinker", iNation, MAN, 2, loc);
+			if (iChar == -1)
+				continue;
+			chr = &characters[iChar];
+			SetNPCModelUniqForLoc(chr, "drinker", MAN, loc);
+			chr.City = Colonies[iColony].id;
+			RemoveAllCharacterItems(chr, true);
+			chr.CityType = "citizen";
+			LAi_SetLoginTime(chr, 18.29, 23.99);
+			chr.chr_ai.hp_max = 1;
+			chr.chr_ai.hp = 1;
+			MakeUnpushable(chr, true);
+			LAi_SetDrinkerSitType(chr);
+			ChangeCharacterAddressGroup(chr, loc.id, "drinkersit", "drinkersit"+i);
+			if (sti(Colonies[iColony].HeroOwn) == true) LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
+			else LAi_group_MoveCharacter(chr, slai_group);
+			//chr.dialog.currentnode = "first time";
 		}
 	}
 	
@@ -1242,51 +1252,45 @@ void CreateCitizens(aref loc)
 		iSailorQty = GetAttributesNum(locatorGroup);
 		for (i = 1; i <= iSailorQty; i++)
 		{
-				sType = "citizen";
-				iChar = NPC_GeneratePhantomCharacter("citizen", iNation, MAN, 2);
-				chr = &characters[iChar];
-				chr.model.animation = "man";
-				chr.model = "drinker_"+sti(rand(15)+1));
-				
-				k = 0;
-				while (!CheckNPCModelUniq(chr) && k < 10)
-				{
-					k++;
-					chr.model = "drinker_"+sti(rand(15)+1));
-				}
-					arrayNPCModel[arrayNPCModelHow] = chr.model;
-					arrayNPCModelHow++;
-				chr.City = Colonies[iColony].id;
-				RemoveAllCharacterItems(chr, true);
-				chr.CityType = "citizen";
-				LAi_SetLoginTime(chr, 18.29, 23.99);
-				chr.chr_ai.hp_max = 1;
-				chr.chr_ai.hp = 1;
-                MakeUnpushable(chr, true);
-				LAi_SetDrinkerStayType(chr);
-				ChangeCharacterAddressGroup(chr, loc.id, "drinkerstay", "drinkerstay"+i);
-				if (sti(Colonies[iColony].HeroOwn) == true) LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
-				else LAi_group_MoveCharacter(chr, slai_group);
-				//chr.dialog.currentnode = "first time";
+			sType = "citizen";
+			iChar = NPC_GeneratePhantomCharacterForLoc("drinker", iNation, MAN, 2, loc);
+			if (iChar == -1)
+				continue;
+			chr = &characters[iChar];
+			SetNPCModelUniqForLoc(chr, "drinker", MAN, loc);
+			chr.City = Colonies[iColony].id;
+			RemoveAllCharacterItems(chr, true);
+			chr.CityType = "citizen";
+			LAi_SetLoginTime(chr, 18.29, 23.99);
+			chr.chr_ai.hp_max = 1;
+			chr.chr_ai.hp = 1;
+			MakeUnpushable(chr, true);
+			LAi_SetDrinkerStayType(chr);
+			ChangeCharacterAddressGroup(chr, loc.id, "drinkerstay", "drinkerstay"+i);
+			if (sti(Colonies[iColony].HeroOwn) == true) LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
+			else LAi_group_MoveCharacter(chr, slai_group);
+			//chr.dialog.currentnode = "first time";
 		}
 	}
 	
 	// belamour legendary edition дополнительный народ в новом Виллемстаде -->
 	if(loc.id == "villemstad_town")
 	{
-		if(rand(9) > 1) sType = "sailor"; 
+		if (rand(9) > 1) sType = "sailor";
 		else sType = "pirate";
 		// пока что занимаем все места, потом посмотрим и сделаем на rand
 		iSailorQty = 3;
-		if(iSailorQty > 0) // матросы(контрики) у костра
+		if (iSailorQty > 0) // матросы(контрики) у костра
 		{
-			for(i=1; i<=iSailorQty; i++)
+			for (i = 1; i <= iSailorQty; i++)
 			{
-				iChar = NPC_GeneratePhantomCharacter(sType, HOLLAND, MAN, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc(sType, HOLLAND, MAN, 2, loc);
+				if (iChar == -1)
+					continue;
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, MAN);
+				SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 				chr.City = Colonies[iColony].id;
-				if(sType =="sailor")
+				if (sType == "sailor")
 				{
 					chr.CityType = "sailor";
 					chr.greeting = "town_sailor";
@@ -1300,20 +1304,22 @@ void CreateCitizens(aref loc)
 				}
 				chr.dialog.currentnode = "first time";
 				//LAi_SetLoginTime(chr, 20.0, 7.99);
-				ChangeCharacterAddressGroup(chr, "villemstad_town", "sit", "fire1_"+i);
+				ChangeCharacterAddressGroup(chr, "villemstad_town", "sit", "fire1_" + i);
 				LAi_SetGroundSitTypeNoGroup(chr);
 			}
 		}
 		iSailorQty = 1;
-		if(iSailorQty > 0) // матрос(контрик) под навесом
+		if (iSailorQty > 0) // матрос(контрик) под навесом
 		{
-			for(i=1; i<=iSailorQty; i++)
+			for (i = 1; i <= iSailorQty; i++)
 			{
-				iChar = NPC_GeneratePhantomCharacter(sType, HOLLAND, MAN, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc(sType, HOLLAND, MAN, 2, loc);
+				if (iChar == -1)
+					continue;
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, MAN);
+				SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 				chr.City = Colonies[iColony].id;
-				if(sType =="sailor")
+				if (sType == "sailor")
 				{
 					chr.CityType = "sailor";
 					chr.greeting = "town_sailor";
@@ -1327,125 +1333,143 @@ void CreateCitizens(aref loc)
 				}
 				chr.dialog.currentnode = "first time";
 				//LAi_SetLoginTime(chr, 20.0, 7.99);
-				ChangeCharacterAddressGroup(chr, "villemstad_town", "sit", "fire2_"+i);
+				ChangeCharacterAddressGroup(chr, "villemstad_town", "sit", "fire2_" + i);
 				LAi_SetGroundSitTypeNoGroup(chr);
 			}
 		}
 		iSailorQty = 2;
-		if(iSailorQty > 0) // матросы у моря
+		if (iSailorQty > 0) // матросы у моря
 		{
-			for(i=1; i<=iSailorQty; i++)
+			for (i = 1; i <= iSailorQty; i++)
 			{
 				sType = "sailor";
-				iChar = NPC_GeneratePhantomCharacter("sailor", HOLLAND, MAN, 2);
+				iChar = NPC_GeneratePhantomCharacterForLoc("sailor", HOLLAND, MAN, 2, loc);
+				if (iChar == -1)
+					continue;
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, MAN);
+				SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "sailor";
 				chr.greeting = "town_sailor";
-				chr.dialog.filename    = "Population\sailor.c";
+				chr.dialog.filename = "Population\sailor.c";
 				chr.dialog.currentnode = "first time";
 				LAi_SetLoginTime(chr, 6.0, 21.99);
-				ChangeCharacterAddressGroup(chr, "villemstad_town", "sit", "fire3_"+i);
+				ChangeCharacterAddressGroup(chr, "villemstad_town", "sit", "fire3_" + i);
 				LAi_SetGroundSitTypeNoGroup(chr);
 			}
 		}
 		// кэп(горожанин) гуляет и облокачивается на перила
-		sType = RandPhraseSimple("citizen","Captain");
-		iChar = NPC_GeneratePhantomCharacter(sType, HOLLAND, MAN, 2);
-		chr = &characters[iChar];
-		SetNPCModelUniq(chr, sType, MAN);
-		chr.City = Colonies[iColony].id;
-		chr.CityType = sType;
-		chr.TownBar = true;
-		if(sType == "citizen") 
+		sType = RandPhraseSimple("citizen", "captain");
+		iChar = NPC_GeneratePhantomCharacterForLoc(sType, HOLLAND, MAN, 2, loc);
+		if (iChar != -1)
 		{
-			chr.dialog.filename = "Population\Townman.c";
-			chr.greeting = "citizen_male";
-		}
-		else 
-		{
-			chr.dialog.filename = "Population\Captain.c";
-			chr.greeting = "captain";
-		}
-		chr.dialog.currentnode = "first time";
-		LAi_SetLoginTime(chr, 6.0, 21.99);
-		ChangeCharacterAddressGroup(chr, "villemstad_town", "barmen", "stay");
-		LAi_SetBarmanType(chr);
-		
-		// горожанин рядом с продавцом
-		iCitizQty = 1;
-		if(iCitizQty > 0)
-		{
-			iChar = NPC_GeneratePhantomCharacter("citizen", HOLLAND, MAN, 2);
 			chr = &characters[iChar];
-			SetNPCModelUniq(chr, "citizen", MAN);
+			SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 			chr.City = Colonies[iColony].id;
-			chr.CityType = "citizen";
-			chr.dialog.filename = "Population\Townman.c";
-			chr.greeting = "citizen_male";
+			chr.CityType = sType;
+			chr.TownBar = true;
+			if (sType == "citizen")
+			{
+				chr.dialog.filename = "Population\Townman.c";
+				chr.greeting = "citizen_male";
+			}
+			else
+			{
+				chr.dialog.filename = "Population\Captain.c";
+				chr.greeting = "captain";
+			}
 			chr.dialog.currentnode = "first time";
 			LAi_SetLoginTime(chr, 6.0, 21.99);
-			ChangeCharacterAddressGroup(chr, "villemstad_town", "sit", "sit1");
-			LAi_SetSitType(chr);
+			ChangeCharacterAddressGroup(chr, "villemstad_town", "barmen", "stay");
+			LAi_SetBarmanType(chr);
+		}
+		// горожанин рядом с продавцом
+		iCitizQty = 1;
+		if (iCitizQty > 0)
+		{
+			iChar = NPC_GeneratePhantomCharacterForLoc("citizen", HOLLAND, MAN, 2, loc);
+			if (iChar != -1)
+			{
+				chr = &characters[iChar];
+				SetNPCModelUniqForLoc(chr, "citizen", MAN, loc);
+				chr.City = Colonies[iColony].id;
+				chr.CityType = "citizen";
+				chr.dialog.filename = "Population\Townman.c";
+				chr.greeting = "citizen_male";
+				chr.dialog.currentnode = "first time";
+				LAi_SetLoginTime(chr, 6.0, 21.99);
+				ChangeCharacterAddressGroup(chr, "villemstad_town", "sit", "sit1");
+				LAi_SetSitType(chr);
+			}
 		}
 		// столик во внутреннем дворике
-		sType = RandPhraseSimple("citizen","sailor");
-		iChar = NPC_GeneratePhantomCharacter(sType, HOLLAND, MAN, 1);
-		chr = &characters[iChar];
-		SetNPCModelUniq(chr, sType, MAN);
-		chr.City = Colonies[iColony].id;
-		if(sType =="sailor") chr.dialog.filename = "Population\sailor.c";
-		else chr.dialog.filename = "Population\Townman.c";
-		chr.CityType = sType;	
-		chr.greeting = "habitue";
-		chr.dialog.currentnode = "first time";
-		LAi_SetLoginTime(chr, 10.0, 01.99);
-		ChangeCharacterAddressGroup(chr, "villemstad_town", "sit", "sit_front1");
-		LAi_SetSitType(chr);
-		
-		
-		sType = RandPhraseSimple("citizen","sailor");
-		iChar = NPC_GeneratePhantomCharacter(sType, HOLLAND, MAN, 1);
-		chr = &characters[iChar];
-		SetNPCModelUniq(chr, sType, MAN);
-		chr.City = Colonies[iColony].id;
-		if(sType =="sailor") chr.dialog.filename = "Population\sailor.c";
-		else chr.dialog.filename = "Population\Townman.c";
-		chr.CityType = sType;	
-		chr.greeting = "habitue";
-		chr.dialog.currentnode = "first time";
-		LAi_SetLoginTime(chr, 10.0, 01.99);
-		ChangeCharacterAddressGroup(chr, "villemstad_town", "sit", "sit_front2");
-		LAi_SetSitType(chr);
+		sType = RandPhraseSimple("citizen", "sailor");
+		iChar = NPC_GeneratePhantomCharacterForLoc(sType, HOLLAND, MAN, 1, loc);
+		if (iChar != -1)
+		{
+			chr = &characters[iChar];
+			SetNPCModelUniqForLoc(chr, sType, MAN, loc);
+			chr.City = Colonies[iColony].id;
+			if (sType == "sailor") chr.dialog.filename = "Population\sailor.c";
+			else chr.dialog.filename = "Population\Townman.c";
+			chr.CityType = sType;
+			chr.greeting = "habitue";
+			chr.dialog.currentnode = "first time";
+			LAi_SetLoginTime(chr, 10.0, 01.99);
+			ChangeCharacterAddressGroup(chr, "villemstad_town", "sit", "sit_front1");
+			LAi_SetSitType(chr);
+		}
 		
 		sType = RandPhraseSimple("citizen","sailor");
-		iChar = NPC_GeneratePhantomCharacter(sType, HOLLAND, MAN, 1);
-		chr = &characters[iChar];
-		SetNPCModelUniq(chr, sType, MAN);
-		chr.City = Colonies[iColony].id;
-		if(sType =="sailor") chr.dialog.filename = "Population\sailor.c";
-		else chr.dialog.filename = "Population\Townman.c";
-		chr.CityType = sType;	
-		chr.greeting = "habitue";
-		chr.dialog.currentnode = "first time";
-		LAi_SetLoginTime(chr, 10.0, 01.99);
-		ChangeCharacterAddressGroup(chr, "villemstad_town", "sit", "sit_base1");
-		LAi_SetSitType(chr);
-		
+		iChar = NPC_GeneratePhantomCharacterForLoc(sType, HOLLAND, MAN, 1, loc);
+		if (iChar != -1)
+		{
+			chr = &characters[iChar];
+			SetNPCModelUniqForLoc(chr, sType, MAN, loc);
+			chr.City = Colonies[iColony].id;
+			if (sType == "sailor") chr.dialog.filename = "Population\sailor.c";
+			else chr.dialog.filename = "Population\Townman.c";
+			chr.CityType = sType;
+			chr.greeting = "habitue";
+			chr.dialog.currentnode = "first time";
+			LAi_SetLoginTime(chr, 10.0, 01.99);
+			ChangeCharacterAddressGroup(chr, "villemstad_town", "sit", "sit_front2");
+			LAi_SetSitType(chr);
+		}
+
 		sType = RandPhraseSimple("citizen","sailor");
-		iChar = NPC_GeneratePhantomCharacter(sType, HOLLAND, MAN, 1);
-		chr = &characters[iChar];
-		SetNPCModelUniq(chr, sType, MAN);
-		chr.City = Colonies[iColony].id;
-		if(sType =="sailor") chr.dialog.filename = "Population\sailor.c";
-		else chr.dialog.filename = "Population\Townman.c";
-		chr.CityType = sType;	
-		chr.greeting = "habitue";
-		chr.dialog.currentnode = "first time";
-		LAi_SetLoginTime(chr, 10.0, 01.99);
-		ChangeCharacterAddressGroup(chr, "villemstad_town", "sit", "sit_base2");
-		LAi_SetSitType(chr);
+		iChar = NPC_GeneratePhantomCharacterForLoc(sType, HOLLAND, MAN, 1, loc);
+		if (iChar != -1)
+		{
+			chr = &characters[iChar];
+			SetNPCModelUniqForLoc(chr, sType, MAN, loc);
+			chr.City = Colonies[iColony].id;
+			if (sType == "sailor") chr.dialog.filename = "Population\sailor.c";
+			else chr.dialog.filename = "Population\Townman.c";
+			chr.CityType = sType;
+			chr.greeting = "habitue";
+			chr.dialog.currentnode = "first time";
+			LAi_SetLoginTime(chr, 10.0, 01.99);
+			ChangeCharacterAddressGroup(chr, "villemstad_town", "sit", "sit_base1");
+			LAi_SetSitType(chr);
+		}
+
+		sType = RandPhraseSimple("citizen","sailor");
+		iChar = NPC_GeneratePhantomCharacterForLoc(sType, HOLLAND, MAN, 1, loc);
+		if (iChar != -1)
+		{
+			chr = &characters[iChar];
+			SetNPCModelUniqForLoc(chr, sType, MAN, loc);
+			chr.City = Colonies[iColony].id;
+			if (sType == "sailor") chr.dialog.filename = "Population\sailor.c";
+			else chr.dialog.filename = "Population\Townman.c";
+			chr.CityType = sType;
+			chr.greeting = "habitue";
+			chr.dialog.currentnode = "first time";
+			LAi_SetLoginTime(chr, 10.0, 01.99);
+			ChangeCharacterAddressGroup(chr, "villemstad_town", "sit", "sit_base2");
+			LAi_SetSitType(chr);
+		}
 	}
 }
 
@@ -1506,6 +1530,7 @@ void CreateIslatesoroEng(aref loc)//Jason, Исла Тесоро при пров
 			sld.city = "Pirates";
 			sld.citytype = "soldier";
 			LAi_SetPatrolType(sld);
+			ForceOldGenerateToNew(sld, iRank);
 			LAi_group_MoveCharacter(sld, "ENGLAND_CITIZENS");
 		}
 	}
@@ -1551,6 +1576,7 @@ void CreateHabitues(aref loc)
 			int iChar;
 			int i, n, k;
 			string sTemp;
+			string sType;
 
 			slai_group = GetNationNameByType(iNation)  + "_citizens";
 
@@ -1561,9 +1587,11 @@ void CreateHabitues(aref loc)
 				{
 					if (CheckFreeLocator(loc.id, "sit_base" + i, -1))
 					{
-						iChar = NPC_GeneratePhantomCharacter("spa_soldier", iNation, MAN, 1);
+						iChar = NPC_GeneratePhantomCharacterForLoc("spa_soldier", iNation, MAN, 1, loc);
+						if (iChar == -1)
+							continue;
 						chr = &characters[iChar];
-						SetNPCModelUniq(chr, "spa_soldier", MAN);
+						SetNPCModelUniqForLoc(chr, "spa_soldier", MAN, loc);
 						chr.City = Colonies[iColony].id;
 						chr.CityType = "citizen";
 						ChangeCharacterAddressGroup(chr, loc.id, "sit", "sit_base" + i);
@@ -1588,9 +1616,11 @@ void CreateHabitues(aref loc)
 				}
 				for (i=0; i<=rand(2); i++)
 				{
-				    iChar = NPC_GeneratePhantomCharacter("spa_soldier", iNation, MAN, 1);
+					iChar = NPC_GeneratePhantomCharacterForLoc("spa_soldier", iNation, MAN, 1, loc);
+					if (iChar == -1)
+						continue;
 					chr = &characters[iChar];
-					SetNPCModelUniq(chr, "spa_soldier", MAN);
+					SetNPCModelUniqForLoc(chr, "spa_soldier", MAN, loc);
 					chr.City = Colonies[iColony].id;
 					chr.CityType = "citizen";
 					sTemp = PlaceCharacter(chr, "sit", "random_free"); // может не быть вовсе, если все места заняты
@@ -1620,28 +1650,31 @@ void CreateHabitues(aref loc)
 				i = rand(3)+1;
 				if (CheckFreeLocator(loc.id, "sit_base"+i, -1))
 				{
-					iChar = NPC_GeneratePhantomCharacter("trader", iNation, MAN, 1);
-					chr = &characters[iChar];
-					SetNPCModelUniq(chr, "trader", MAN);
-					chr.City = Colonies[iColony].id;
-					chr.CityType = "citizen";
-					ChangeCharacterAddressGroup(chr, loc.id, "sit", "sit_base"+i);
-					chr.Default           = loc.id;
-					chr.Default.group     = "sit";
-					chr.Default.ToLocator = "sit_front"+i;
-					LAi_SetSitType(chr);
-					LAi_group_MoveCharacter(chr, slai_group);
-					chr.dialog.filename = "Quest\QuestTrader_dialog.c";
-					chr.dialog.currentnode = "first time";
-					chr.greeting = "captain_trader";
-					chr.role = "captain_trader";
-					if (sti(Colonies[iColony].HeroOwn) == true)
+					iChar = NPC_GeneratePhantomCharacterForLoc("trader", iNation, MAN, 1, loc);
+					if (iChar != -1)
 					{
-						LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
-					}
-					else
-					{
+						chr = &characters[iChar];
+						SetNPCModelUniqForLoc(chr, "trader", MAN, loc);
+						chr.City = Colonies[iColony].id;
+						chr.CityType = "citizen";
+						ChangeCharacterAddressGroup(chr, loc.id, "sit", "sit_base"+i);
+						chr.Default           = loc.id;
+						chr.Default.group     = "sit";
+						chr.Default.ToLocator = "sit_front"+i;
+						LAi_SetSitType(chr);
 						LAi_group_MoveCharacter(chr, slai_group);
+						chr.dialog.filename = "Quest\QuestTrader_dialog.c";
+						chr.dialog.currentnode = "first time";
+						chr.greeting = "captain_trader";
+						chr.role = "captain_trader";
+						if (sti(Colonies[iColony].HeroOwn) == true)
+						{
+							LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
+						}
+						else
+						{
+							LAi_group_MoveCharacter(chr, slai_group);
+						}
 					}
 				}
 			}
@@ -1659,34 +1692,37 @@ void CreateHabitues(aref loc)
 					string sModelGS = "sailor"; // модель морячка по умолчанию
 					if(CheckAttribute(pchar, "questTemp.Mtraxx.CharleePrince")) sModelGS = "pirate"; // для Чарли Принца
 					if(CheckAttribute(pchar, "questTemp.CharleePrince")) sModelGS = "pirate"; // для Чарли Принца
-					iChar = NPC_GeneratePhantomCharacter(sModelGS, sHeroNation, MAN, 1);
-					chr = &characters[iChar];
-					SetNPCModelUniq(chr, sModelGS, MAN);
-					if(isMainCharacterPatented()) // На службе у нации
+					iChar = NPC_GeneratePhantomCharacterForLoc(sModelGS, sHeroNation, MAN, 1, loc);
+					if (iChar != -1)
 					{
-						chr.model = "sold_" + NationShortName(sti(chr.nation)) + "_" + (1 + rand(7));
-						FaceMaker(chr);
-						CirassMaker(chr);
-						Characters_RefreshModel(chr); 
-					}
-					chr.City = Colonies[iColony].id;
-					chr.CityType = "citizen";
-					ChangeCharacterAddressGroup(chr, loc.id, "sit", "sit_base"+i);
-					chr.Default           = loc.id;
-					chr.Default.group     = "sit";
-					chr.Default.ToLocator = "sit_front"+i;
-					LAi_SetSitType(chr);
-					LAi_group_MoveCharacter(chr, slai_group);
-					chr.dialog.filename = "GenQuests_Dialog.c";
-					chr.dialog.currentnode = "GuiltySailor";
-					chr.greeting = "habitue";
-					if (sti(Colonies[iColony].HeroOwn) == true)
-					{
-						LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
-					}
-					else
-					{
+						chr = &characters[iChar];
+						SetNPCModelUniqForLoc(chr, "sailor", MAN, loc);
+						if (isMainCharacterPatented()) // На службе у нации
+						{
+							chr.model = "sold_" + NationShortName(sti(chr.nation)) + "_" + (1 + rand(7));
+							FaceMaker(chr);
+							CirassMaker(chr);
+							Characters_RefreshModel(chr);
+						}
+						chr.City = Colonies[iColony].id;
+						chr.CityType = "citizen";
+						ChangeCharacterAddressGroup(chr, loc.id, "sit", "sit_base" + i);
+						chr.Default = loc.id;
+						chr.Default.group = "sit";
+						chr.Default.ToLocator = "sit_front" + i;
+						LAi_SetSitType(chr);
 						LAi_group_MoveCharacter(chr, slai_group);
+						chr.dialog.filename = "GenQuests_Dialog.c";
+						chr.dialog.currentnode = "GuiltySailor";
+						chr.greeting = "habitue";
+						if (sti(Colonies[iColony].HeroOwn) == true)
+						{
+							LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
+						}
+						else
+						{
+							LAi_group_MoveCharacter(chr, slai_group);
+						}
 					}
 				}
 				DeleteAttribute(pchar, "GenQuest.GuiltySailor"); 
@@ -1701,28 +1737,31 @@ void CreateHabitues(aref loc)
 				log_testinfo("Сгенерировался квест: Хороший специалист");
 				i = rand(3)+1;
 				if(CheckFreeLocator(loc.id, "sit_base"+i, -1))
-				{   
-					iChar = NPC_GeneratePhantomCharacter("sailor", sHeroNation, MAN, 1);
-					chr = &characters[iChar];
-					SetNPCModelUniq(chr, "sailor", MAN);
-					chr.City = Colonies[iColony].id;
-					chr.CityType = "citizen";
-					ChangeCharacterAddressGroup(chr, loc.id, "sit", "sit_base"+i);
-					chr.Default           = loc.id;
-					chr.Default.group     = "sit";
-					chr.Default.ToLocator = "sit_front"+i;
-					LAi_SetSitType(chr);
-					LAi_group_MoveCharacter(chr, slai_group);
-					chr.dialog.filename = "GenQuests_Dialog.c";
-					chr.dialog.currentnode = "ExpertSailor";
-					chr.greeting = "town_sailor";
-					if (sti(Colonies[iColony].HeroOwn) == true)
+				{
+					iChar = NPC_GeneratePhantomCharacterForLoc("sailor", sHeroNation, MAN, 1, loc);
+					if (iChar != -1)
 					{
-						LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
-					}
-					else
-					{
+						chr = &characters[iChar];
+						SetNPCModelUniqForLoc(chr, "sailor", MAN, loc);
+						chr.City = Colonies[iColony].id;
+						chr.CityType = "citizen";
+						ChangeCharacterAddressGroup(chr, loc.id, "sit", "sit_base"+i);
+						chr.Default           = loc.id;
+						chr.Default.group     = "sit";
+						chr.Default.ToLocator = "sit_front"+i;
+						LAi_SetSitType(chr);
 						LAi_group_MoveCharacter(chr, slai_group);
+						chr.dialog.filename = "GenQuests_Dialog.c";
+						chr.dialog.currentnode = "ExpertSailor";
+						chr.greeting = "town_sailor";
+						if (sti(Colonies[iColony].HeroOwn) == true)
+						{
+							LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
+						}
+						else
+						{
+							LAi_group_MoveCharacter(chr, slai_group);
+						}
 					}
 				}
 				DeleteAttribute(pchar, "GenQuest.ExpertSailor"); 
@@ -1735,11 +1774,13 @@ void CreateHabitues(aref loc)
 			{
                 if (CheckFreeLocator(loc.id, "sit_base" + i, -1))
 				{
-					string sType = RandPhraseSimple("citizen","sailor");
+					sType = RandPhraseSimple("citizen","sailor");
 					if (Colonies[iColony].nation == PIRATE) sType = RandPhraseSimple("pirate","sailor");
-					iChar = NPC_GeneratePhantomCharacter(sType, iNation, MAN, 1);
+					iChar = NPC_GeneratePhantomCharacterForLoc(sType, iNation, MAN, 1, loc);
+					if (iChar == -1)
+						continue;
 					chr = &characters[iChar];
-					SetNPCModelUniq(chr, sType, MAN);
+					SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 					chr.City = Colonies[iColony].id;
 					chr.CityType = "citizen";
 					ChangeCharacterAddressGroup(chr, loc.id, "sit", "sit_base" + i);
@@ -1806,9 +1847,11 @@ void CreateHabitues(aref loc)
 						}
 						sType = RandPhraseSimple("citizen","sailor");
 						if (Colonies[iColony].nation == PIRATE) sType = RandPhraseSimple("pirate","sailor");
-						iChar = NPC_GeneratePhantomCharacter(sType, iNation, MAN, 1);
+						iChar = NPC_GeneratePhantomCharacterForLoc(sType, iNation, MAN, 1, loc);
+						if (iChar == -1)
+							continue;
 						chr = &characters[iChar];
-						SetNPCModelUniq(chr, sType, MAN);
+						SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 						chr.City = Colonies[iColony].id;
 						chr.CityType = "citizen";
 						ChangeCharacterAddressGroup(chr, loc.id, "sit", "sit_ground" + i);
@@ -1839,7 +1882,7 @@ void CreateHabitues(aref loc)
 				{ // грузим контрикова агента, он статик, но локацию и локатор ставим тут
 		            chr.City = Colonies[iColony].id;  // это можно прописать в статике, но мне лениво по 20 городам лазить.
 		            chr.nation = iNation; // нация его нужна, тк она будет нацией патруля на берегу, он не пират
-					CreateModel(iChar, "pirate", MAN);
+					CreateModel(iChar, "pirate", MAN, loc);
 					sTemp = PlaceCharacter(chr, "sit", "random_free");
 					ReSitCharacterOnFree(chr, loc.id, sTemp);
 					LAi_group_MoveCharacter(chr, slai_group);
@@ -1860,9 +1903,11 @@ void CreateHabitues(aref loc)
 				iCitizensQuantity = 2;
 				for (i = 0; i <iCitizensQuantity; i++)
 				{
-					iChar = NPC_GeneratePhantomCharacter("pofficer", iNation, MAN, 1);
+					iChar = NPC_GeneratePhantomCharacterForLoc("pofficer", iNation, MAN, 1, loc);
+					if (iChar == -1)
+						continue;
 					chr = &characters[iChar];
-					SetNPCModelUniq(chr, "pofficer", MAN);
+					SetNPCModelUniqForLoc(chr, "pofficer", MAN, loc);
 					SetOfficerParam(chr, rand(4));
 					sTemp = PlaceCharacter(chr, "sit", "random_free");
 					ReSitCharacterOnFree(chr, loc.id, sTemp);
@@ -1900,35 +1945,38 @@ void CreateHabitues(aref loc)
 			if (hrand(99, Colonies[iColony].id) < i || TestRansackCaptain)
 			{
                 TEV.TavernMapBonus = 0;
-                iChar = NPC_GeneratePhantomCharacter("pirate", iNation, MAN, 1);
-				chr = &characters[iChar];
-				SetNPCModelUniq(chr, "pirate", MAN);
-				chr.City = Colonies[iColony].id;
-				chr.CityType = "citizen";
-				sTemp = PlaceCharacter(chr, "sit", "random_free"); // может не быть вовсе, если все места заняты
-				ReSitCharacterOnFree(chr, loc.id, sTemp);
-
-				LAi_SetSitType(chr);
-				LAi_group_MoveCharacter(chr, slai_group);
-				chr.dialog.filename = "Enc_Treasure_dialog.c";
-				chr.dialog.currentnode = "first time";
-				chr.greeting = "map_trader";
-
-		        if (GetCharacterItem(pchar, "map_full") == 0) // нет карты - генерим, если купит
-		        {
-		            aref item;
-		            Items_FindItem("map_full", &item);
-					sTemp = Colonies[iColony].id;
-					FillMapForTreasure(item, sTemp);
-					pchar.GenQuest.TreasureMoney = 45 + hrand(75, sTemp); // Addon-2016 Jason
-		        }
-          		if (sti(Colonies[iColony].HeroOwn) == true)
+				iChar = NPC_GeneratePhantomCharacterForLoc("pirate", iNation, MAN, 1, loc);
+				if (iChar != -1)
 				{
-					LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
-				}
-				else
-				{
+					chr = &characters[iChar];
+					SetNPCModelUniqForLoc(chr, "pirate", MAN, loc);
+					chr.City = Colonies[iColony].id;
+					chr.CityType = "citizen";
+					sTemp = PlaceCharacter(chr, "sit", "random_free"); // может не быть вовсе, если все места заняты
+					ReSitCharacterOnFree(chr, loc.id, sTemp);
+
+					LAi_SetSitType(chr);
 					LAi_group_MoveCharacter(chr, slai_group);
+					chr.dialog.filename = "Enc_Treasure_dialog.c";
+					chr.dialog.currentnode = "first time";
+					chr.greeting = "map_trader";
+
+					if (GetCharacterItem(pchar, "map_full") == 0) // нет карты - генерим, если купит
+					{
+						aref item;
+						Items_FindItem("map_full", &item);
+						sTemp = Colonies[iColony].id;
+						FillMapForTreasure(item, sTemp);
+						chr.TreasureMoney = 45 + hrand(75, sTemp); // Addon-2016 Jason
+					}
+					if (sti(Colonies[iColony].HeroOwn) == true)
+					{
+						LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
+					}
+					else
+					{
+						LAi_group_MoveCharacter(chr, slai_group);
+					}
 				}
 			}
             else TEV.TavernMapBonus = sti(TEV.TavernMapBonus) + 2;
@@ -1938,9 +1986,11 @@ void CreateHabitues(aref loc)
             iCitizensQuantity = rand(3) - 1;
             for (i = 0; i <iCitizensQuantity; i++)
             {
-                iChar = NPC_GeneratePhantomCharacter(sType, iNation, MAN, 1);
-                chr = &characters[iChar];
-                SetNPCModelUniq(chr, sType, MAN);
+				iChar = NPC_GeneratePhantomCharacterForLoc(sType, iNation, MAN, 1, loc);
+				if(iChar == -1)
+					continue;
+				chr = &characters[iChar];
+				SetNPCModelUniqForLoc(chr, sType, MAN, loc);
                 chr.City = Colonies[iColony].id;
                 chr.CityType = "citizen";
                 sTemp = PlaceCharacter(chr, "sit", "random_free"); // может не быть вовсе, если все места заняты
@@ -1974,74 +2024,40 @@ void CreateHabitues(aref loc)
 				{
 					int iSex = rand(WOMAN);
 					sType = "citizen";
-					iChar = NPC_GeneratePhantomCharacter(sType, iNation, iSex, 1);
+					iChar = NPC_GeneratePhantomCharacterForLoc(sType, iNation, iSex, 1, loc);
 					chr = &characters[iChar];
 					chr.City = Colonies[iColony].id;
 					chr.CityType = "citizen";
-					if(iSex == WOMAN) 
+
+					string sMType = "";
+					chr.model = "";
+					if(rand(1) == 0)
 					{
-						if(rand(1) == 0) 
-						{
-							k = 0;
-							chr.model = "woman_flutist_"+sti(rand(7)+1);
-							while (!CheckNPCModelUniq(chr) && k < 10)
-							{
-								k++;
-								chr.model = "woman_flutist_"+sti(rand(7)+1);
-							}
-							arrayNPCModel[arrayNPCModelHow] = chr.model;
-							arrayNPCModelHow++;
-							chr.model.animation = "woman_musician";
-							if(rand(1) == 1) LAi_SetFlutistStayType(chr);
-								else LAi_SetFlutistSitType(chr);
-						}
-						else 
-						{
-							k = 0;
-							chr.model = "woman_violinist_"+sti(rand(3)+1);
-							while (!CheckNPCModelUniq(chr) && k < 10)
-							{
-								k++;
-								chr.model = "woman_violinist_"+sti(rand(3)+1);
-							}
-							arrayNPCModel[arrayNPCModelHow] = chr.model;
-							arrayNPCModelHow++;
-							chr.model.animation = "woman_musician";
-							LAi_SetViolinistStayType(chr);
-						}
+						sMType = "flutist";
 					}
-					else 
+					else
 					{
-						if(rand(1) == 0)
+						sMType = "violinist";
+					}
+
+					SetNPCModelUniqForLoc(chr, sMType, iSex, loc);
+
+					if (sMType == "violinist")
+					{
+						LAi_SetViolinistStayType(chr);
+					}
+					else
+					{
+						if(rand(1) == 1)
 						{
-							k = 0;
-							chr.model = "flutist_"+sti(rand(11)+1);
-							while (!CheckNPCModelUniq(chr) && k < 10)
-							{
-								k++;
-								chr.model = "flutist_"+sti(rand(11)+1);
-							}
-							arrayNPCModel[arrayNPCModelHow] = chr.model;
-							arrayNPCModelHow++;
-							chr.model.animation = "musician";
-							if(rand(1) == 1) LAi_SetFlutistStayType(chr);
-								else LAi_SetFlutistSitType(chr);
+							LAi_SetFlutistStayType(chr);
 						}
 						else
 						{
-							k = 0;
-							chr.model = "violinist_"+sti(rand(16)+1);
-							while (!CheckNPCModelUniq(chr) && k < 10)
-							{
-								k++;
-								chr.model = "violinist_"+sti(rand(16)+1);
-							}
-							arrayNPCModel[arrayNPCModelHow] = chr.model;
-							
-							chr.model.animation = "musician";
-							LAi_SetViolinistStayType(chr);
+							LAi_SetFlutistSitType(chr);
 						}
 					}
+
 					RemoveAllCharacterItems(chr, true);
 					chr.chr_ai.hp_max = 1;
 					chr.chr_ai.hp = 1;
@@ -2132,6 +2148,7 @@ void CreateMaltains(aref loc)//Jason, заполнение базы мальти
 				LAi_LoginInCaptureTown(sld, true);
 				LAi_SetLoginTime(sld, 0.0, 24.0);
 				LAi_SetPatrolType(sld);
+				ForceOldGenerateToNew(sld, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+10);
 				sld.city = "FortFrance";
 				sld.citytype = "soldier";
 				PlaceCharacter(sld, "goto", "random_free");
@@ -2739,18 +2756,24 @@ void CreateMayak(aref loc)
 				for (i=0; i<iCitizensQuantity; i++)
 				{
 					solderLoc = GetAttributeN(st, i);
-					locatorName = GetAttributeName(solderLoc);					
-					if (findsubstr(locatorName, "protector" , 0) != -1) 
-					{		
-						iChar = NPC_GeneratePhantomCharacter("soldier", iNation, MAN, 2);
+					locatorName = GetAttributeName(solderLoc);
+					if (findsubstr(locatorName, "protector" , 0) != -1)
+					{
+						iChar = NPC_GeneratePhantomCharacterForLoc("soldier", iNation, MAN, 2, loc);
+						if (iChar == -1)
+							continue;
 						chr = &characters[iChar];
+						SetNPCModelUniqForLoc(chr, "soldier", MAN, loc);
 					}
 					else
 					{
-						chr = GetCharacter(NPC_GenerateCharacter("GenChar_", "mush_eng_1", "man", "mushketer", sti(pchar.rank), iNation, 2, false, "soldier"));
-						chr.id = "GenChar_" + chr.index;
+						iChar = NPC_GeneratePhantomCharacterForLoc("mushketer", iNation, MAN, 2, loc);
+						if (iChar == -1)
+							continue;
+						chr = &characters[iChar];
+						SetNPCModelUniqForLoc(chr, "mushketer", MAN, loc);
 						chr.MusketerDistance = 0;
-					}					
+					}
 					chr.City = Colonies[iColony].id;
 					chr.CityType = "soldier";
 					chr.greeting = "soldier_common";
@@ -2786,13 +2809,17 @@ void CreateMayak(aref loc)
 				iCitizensQuantity = GetAttributesNum(st);
 				for (i=0; i<iCitizensQuantity; i++)
 				{
-					iChar = NPC_GeneratePhantomCharacter("soldier", iNation, MAN, 2);
+					iChar = NPC_GeneratePhantomCharacterForLoc("soldier", iNation, MAN, 2, loc);
+					if (iChar == -1)
+						continue;
 					chr = &characters[iChar];
+					SetNPCModelUniqForLoc(chr, "soldier", MAN, loc);
 					chr.City = Colonies[iColony].id;
 					chr.CityType = "soldier";
 					SetFantomParamFromRank(chr, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true); // бравые орлы
 					LAi_SetLoginTime(chr, 0.0, 24.0);
 					LAi_SetPatrolType(chr);
+					ForceOldGenerateToNew(chr, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE);
 					LAi_group_MoveCharacter(chr, slai_group);
 					chr.greeting = "soldier";
 					PlaceCharacter(chr, "patrol", "random_free");
@@ -2820,20 +2847,11 @@ void CreateBrothels(aref loc)
 		{
 			makeref(location, loc);
 		}
+		arrayNPCModelHow = 0;
 		if (!CheckAttribute(location, "Brothel_date") || GetNpcQuestPastDayParam(location, "Brothel_date") > 100)
 		{
 			ref sld;
 			int iColony, iNation, qty, num, qtyAll, qtyStay, qtySit, SitLocatorNum;
-			// ==>  массив моделек шлюх, чтоб не двоились в локациях
-			string horse[8];
-			horse[0] = "women_19";
-			horse[1] = "women_20";
-			horse[2] = "women_21";
-			horse[3] = "women_22";
-			horse[4] = "women_23";
-			horse[5] = "women_24";
-			horse[6] = "women_25";
-			horse[7] = "women_26";
 			SaveCurrentNpcQuestDateParam(location, "Brothel_date");
 			if(CheckAttribute(location, "fastreload"))
 			{
@@ -2851,54 +2869,47 @@ void CreateBrothels(aref loc)
 			trace("qtyAll " + qtyAll + " qtyStay "+qtyStay+ " qtySit "+qtySit);
 			while (qty <= qtyAll)
 			{
-				num = rand(7);
-				if (horse[num] != "")
+
+				sld = GetCharacter(NPC_GenerateCharacter("HorseGen_"+location.index +"_"+ qty, "women_19", "woman", "woman", 3, iNation, 100, false, "soldier"));
+				sld.model = "";
+				SetNPCModelUniqForLoc(sld, "horse", WOMAN, location);
+				sld.City = location.fastreload;
+				sld.CityType = "horse";
+				sld.dialog.filename = "Common_Brothel.c";
+				sld.dialog.currentnode = "Horse_talk";
+				sld.greeting = "whore";
+				sld.role = "whore";
+				sld.quest.price = 250 + 40*(rand(5) + rand(5));
+				switch (location.fastreload)
 				{
-					sld = GetCharacter(NPC_GenerateCharacter("HorseGen_"+location.index +"_"+ qty, horse[num], "woman", "woman", 3, iNation, 100, false, "soldier"));
-					sld.City = location.fastreload;
-					sld.CityType = "horse";
-					sld.dialog.filename = "Common_Brothel.c";
-					sld.dialog.currentnode = "Horse_talk";
-					sld.greeting = "whore";
-					sld.role = "whore";
-					switch (location.fastreload)
-					{
-						case "Marigo": 			sld.quest.price = 40*(rand(5) + rand(5)); 			break;
-						case "Tortuga":   		sld.quest.price = 40*(rand(5) + rand(5)); 			break;
-						case "FortFrance":  	sld.quest.price = 50 + 40*(rand(5) + rand(5)); 		break;
-						case "PortRoyal":  		sld.quest.price = 150 + 40*(rand(5) + rand(5)); 	break;
-						case "Charles":   		sld.quest.price = 200 + 40*(rand(5) + rand(5)); 	break;
-						case "Bridgetown":  	sld.quest.price = 250 + 40*(rand(5) + rand(5)); 	break;
-						case "SantoDomingo": 	sld.quest.price = 300 + 40*(rand(5) + rand(5)); 	break;
-						case "Panama":   		sld.quest.price = 500 + 40*(rand(5) + rand(5)); 	break;
-					}
-					//LAi_SetCitizenType(sld);
-					if(qty <= qtyStay)
-					{
-						LAi_SetHorseStayType(sld);
-						LAi_group_MoveCharacter(sld, slai_group);
-						ChangeCharacterAddressGroup(sld, location.id, "goto", "goto"+qty);
-					}
-					else
-					{
-						if(qtySit > 0)
-						{
-							/* if(horse[num] == "women_21" || horse[num] == "women_22")
-							{
-								horse[num] = "";
-								qty++;
-								continue;
-							} */
-							trace(" qtySit ");
-							LAi_SetHorseSitType(sld);
-							LAi_group_MoveCharacter(sld, slai_group);
-							ChangeCharacterAddressGroup(sld, location.id, "HorseSit", "HorseSit"+SitLocatorNum);
-							SitLocatorNum ++;
-						}
-					}
-					horse[num] = "";
-					qty++;
+					case "Marigo": 			sld.quest.price = 40*(rand(5) + rand(5)); 			break;
+					case "Tortuga":   		sld.quest.price = 40*(rand(5) + rand(5)); 			break;
+					case "FortFrance":  	sld.quest.price = 50 + 40*(rand(5) + rand(5)); 		break;
+					case "PortRoyal":  		sld.quest.price = 150 + 40*(rand(5) + rand(5)); 	break;
+					case "Charles":   		sld.quest.price = 200 + 40*(rand(5) + rand(5)); 	break;
+					case "Bridgetown":  	sld.quest.price = 250 + 40*(rand(5) + rand(5)); 	break;
+					case "SantoDomingo": 	sld.quest.price = 300 + 40*(rand(5) + rand(5)); 	break;
+					case "Panama":   		sld.quest.price = 500 + 40*(rand(5) + rand(5)); 	break;
 				}
+				//LAi_SetCitizenType(sld);
+				if(qty <= qtyStay)
+				{
+					LAi_SetHorseStayType(sld);
+					LAi_group_MoveCharacter(sld, slai_group);
+					ChangeCharacterAddressGroup(sld, location.id, "goto", "goto"+qty);
+				}
+				else
+				{
+					if(qtySit > 0)
+					{
+						trace(" qtySit ");
+						LAi_SetHorseSitType(sld);
+						LAi_group_MoveCharacter(sld, slai_group);
+						ChangeCharacterAddressGroup(sld, location.id, "HorseSit", "HorseSit"+SitLocatorNum);
+						SitLocatorNum ++;
+					}
+				}
+				qty++;
 			}
 		}
 	}
@@ -3807,19 +3818,13 @@ void CreateFortsNPC(aref loc)
 			makearef(st, loc.locators.soldiers);
 			iCitizensQuantity = GetAttributesNum(st);		
 			for (i=0; i<iCitizensQuantity; i++)
-			{	
-				if(iNation != PIRATE)
-				{
-					sType = "soldier";
-					iChar = NPC_GeneratePhantomCharacter("soldier", iNation, MAN, 2);
-				}
-				else
-				{
-					sType = "pirate";
-					iChar = NPC_GeneratePhantomCharacter("pirate", iNation, MAN, 2);
-				}
+			{
+				sType = "soldier";
+				iChar = NPC_GeneratePhantomCharacterForLoc("soldier", iNation, MAN, 2, loc);
+				if (iChar == -1)
+					continue;
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, MAN);
+				SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "soldier";
 				chr.RebirthPhantom = true; 
@@ -3878,18 +3883,12 @@ void CreateFortsNPC(aref loc)
 			iCitizensQuantity = GetAttributesNum(st);
 			for (i=0; i<iCitizensQuantity; i++)
 			{
-				if(iNation != PIRATE)
-				{
-					sType = "soldier";
-					iChar = NPC_GeneratePhantomCharacter("soldier", iNation, MAN, 2);
-				}
-				else
-				{
-					sType = "pirate";
-					iChar = NPC_GeneratePhantomCharacter("pirate", iNation, MAN, 2);
-				}
+				sType = "soldier";
+				iChar = NPC_GeneratePhantomCharacterForLoc("soldier", iNation, MAN, 2, loc);
+				if (iChar == -1)
+					continue;
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, MAN);
+				SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "fortPatrol";
 				SetFantomParamFromRank(chr, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true); // бравые орлы
@@ -3898,6 +3897,7 @@ void CreateFortsNPC(aref loc)
 				LAi_SetReincarnationRankStep(chr, MOD_SKILL_ENEMY_RATE+2); //задаем шаг на увеличение ранга фантомам на реинкарнацию
 				LAi_SetLoginTime(chr, 0.0, 24.0);
 				LAi_SetPatrolType(chr);
+				ForceOldGenerateToNew(chr, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE);
 
 				if (sti(Colonies[iColony].HeroOwn) == true)
 				{
@@ -3994,9 +3994,11 @@ void CreatIslaMonaNPC(ref loc)
 				if(j < 1) j=1;
 				for(i=1; i<=j; i++)
 				{
-					iChar = NPC_GeneratePhantomCharacter("sailor", PIRATE, MAN, 1);
+					iChar = NPC_GeneratePhantomCharacterForLoc("sailor", PIRATE, MAN, 1, loc);
+					if (iChar == -1)
+						continue;
 					chr = &characters[iChar];
-					SetNPCModelUniq(chr, "sailor", MAN);
+					SetNPCModelUniqForLoc(chr, "sailor", MAN, loc);
 					chr.City = Colonies[iColony].id;
 					chr.CityType = "sailor";
 					chr.greeting = "town_sailor";
@@ -4022,9 +4024,11 @@ void CreatIslaMonaNPC(ref loc)
 			{
 				if (CheckFreeLocator(loc.id, "sit_base" + i, -1))
 				{
-					iChar = NPC_GeneratePhantomCharacter("citizen", PIRATE, MAN, 1);
+					iChar = NPC_GeneratePhantomCharacterForLoc("citizen", PIRATE, MAN, 1, loc);
+					if (iChar == -1)
+						continue;
 					chr = &characters[iChar];
-					SetNPCModelUniq(chr, "citizen", MAN);
+					SetNPCModelUniqForLoc(chr, "citizen", MAN, loc);
 					chr.City = Colonies[iColony].id;
 					chr.CityType = "citizen";
 					ChangeCharacterAddressGroup(chr, loc.id, "sit", "sit_base" + i);
@@ -4042,9 +4046,11 @@ void CreatIslaMonaNPC(ref loc)
 			}
 			for (i=1; i<=rand(1)+2; i++) // 2-3 матроса
 			{
-				iChar = NPC_GeneratePhantomCharacter("sailor", PIRATE, MAN, 1);
+				iChar = NPC_GeneratePhantomCharacterForLoc("sailor", PIRATE, MAN, 1, loc);
+				if (iChar == -1)
+					continue;
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, "sailor", MAN);
+				SetNPCModelUniqForLoc(chr, "sailor", MAN, loc);
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "citizen";
 				sTemp = PlaceCharacter(chr, "sit", "random_free"); 
@@ -4066,10 +4072,11 @@ void CreatIslaMonaNPC(ref loc)
 				iSailorQty = GetAttributesNum(locatorGroup);
 				for (i = 1; i <= iSailorQty; i++)
 				{
-					iChar = NPC_GeneratePhantomCharacter("sailor", PIRATE, MAN, 2);
+					iChar = NPC_GeneratePhantomCharacterForLoc("blacksmith", PIRATE, MAN, 2, loc);
+					if (iChar == -1)
+						continue;
 					chr = &characters[iChar];
-					chr.model.animation = "blacksmith";
-					chr.model = "blacksmith_"+sti(rand(17)+1);
+					SetNPCModelUniqForLoc(chr, "blacksmith", MAN, loc);
 					chr.City = Colonies[FindColony("islamona")].id;
 					RemoveAllCharacterItems(chr, true);
 					chr.CityType = "sailor";
@@ -4102,9 +4109,11 @@ void CreatIslaMonaNPC(ref loc)
 				if(j < 1) j=1;
 				for(i=1; i<=j; i++)
 				{
-					iChar = NPC_GeneratePhantomCharacter("sailor", PIRATE, MAN, 1);
+					iChar = NPC_GeneratePhantomCharacterForLoc("sailor", PIRATE, MAN, 1, loc);
+					if (iChar == -1)
+						continue;
 					chr = &characters[iChar];
-					SetNPCModelUniq(chr, "sailor", MAN);
+					SetNPCModelUniqForLoc(chr, "sailor", MAN, loc);
 					chr.City = Colonies[iColony].id;
 					chr.CityType = "sailor";
 					chr.greeting = "town_sailor";
@@ -4148,12 +4157,13 @@ void CreatIslaMonaNPC(ref loc)
 				int iSailorQty = GetAttributesNum(locatorGroup);
 				for (i = 1; i <= iSailorQty; i++)
 				{
-					iChar = NPC_GeneratePhantomCharacter("sailor", PIRATE, MAN, 1);
+					iChar = NPC_GeneratePhantomCharacterForLoc("fisher", PIRATE, MAN, 1, loc);
+					if (iChar == -1)
+						continue;
 					chr = &characters[iChar];
+					SetNPCModelUniqForLoc(chr, "fisher", MAN, loc);
 					RemoveAllCharacterItems(chr, true);
 					chr.City = Colonies[FindColony("islamona")].id;
-					chr.model.animation = "fisher";
-					SetNPCModelUniq(chr, "fisher", MAN);
 					if(!HasSubStr(chr.model, "fisherman")) chr.model = "fisherman_"+sti(rand(10)+1);
 					//chr.model = "fisherman_1";
 					chr.CityType = "sailor";
@@ -4176,12 +4186,13 @@ void CreatIslaMonaNPC(ref loc)
 				iSailorQty = GetAttributesNum(locatorGroup);
 				for (i = 1; i <= iSailorQty; i++)
 				{
-					iChar = NPC_GeneratePhantomCharacter("sailor", PIRATE, MAN, 1);
+					iChar = NPC_GeneratePhantomCharacterForLoc("fisher", PIRATE, MAN, 1, loc);
+					if (iChar == -1)
+						continue;
 					chr = &characters[iChar];
+					SetNPCModelUniqForLoc(chr, "fisher", MAN, loc);
 					RemoveAllCharacterItems(chr, true);
 					chr.City = Colonies[iColony].id;
-					chr.model.animation = "fisher";
-					SetNPCModelUniq(chr, "fisher", MAN);
 					if(!HasSubStr(chr.model, "fisherman")) chr.model = "fisherman_"+sti(rand(10)+1);
 					//chr.model = "fisherman_1";
 					chr.CityType = "sailor";
@@ -4274,15 +4285,62 @@ bool CheckNPCModelUniq(ref chr)
 	return bOk;
 }
 
-void SetNPCModelUniq(ref chr, string sType, int iSex)
+void SetNPCModelUniqForLoc(ref chr, string sType, int iSex, aref arLoc)
 {
-	int i;
-	
-	i = 0;
-	while (!CheckNPCModelUniq(chr) && i < 10)
+	int i = 0;
+
+	string sOrigModel = chr.model;
+	string sOrigAnimation = chr.model.animation;
+	string sOrigHeight = chr.model.height;
+	string sOrigSex = chr.sex;
+	bool bSuccess = true;
+
+	while (chr.model == "" || !CheckNPCModelUniq(chr))
 	{
-	    i++;
-	    CreateModel(sti(chr.index), sType, iSex);
+		if (i >= 10)
+		{
+			break;
+		}
+
+		int j = 0;
+		bool bResult = false;
+		while (j < 10)
+		{
+			bResult = CreateModel(sti(chr.index), sType, iSex, arLoc);
+			if (bResult)
+			{
+				sOrigModel = chr.model;
+				sOrigAnimation = chr.model.animation;
+				sOrigHeight = chr.model.height;
+				sOrigSex = chr.sex;
+				break;
+			}
+
+			j++;
+		}
+
+		if (!bResult)
+		{
+			bSuccess = false;
+			if (chr.model == "")
+			{
+				chr.model = "none";
+			}
+			trace("Unable to find model for sType="+sType+" iSex="+iSex);
+		}
+		i++;
+	}
+
+	if (!bSuccess)
+	{
+		if (sOrigModel != "")
+		{
+			chr.model = sOrigModel;
+		}
+		chr.model.animation = sOrigAnimation;
+		chr.model.height = sOrigHeight;
+		chr.sex = sOrigSex;
+		return;
 	}
 	arrayNPCModel[arrayNPCModelHow] = chr.model;
 	arrayNPCModelHow++;

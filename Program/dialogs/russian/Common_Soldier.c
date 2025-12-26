@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	
 	DeceptionChance = sti(GetSummonSkillFromName(pchar, SKILL_SNEAK)*100/110);
 	if(DeceptionChance - DeceptionPenalty > 50) DeceptionChance -= DeceptionPenalty;
-	if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE) 
+	if (false) 
 	{
 		DeceptionChance = sti(GetSummonSkillFromName(pchar, SKILL_SNEAK)*100/310);
 		if(DeceptionChance - DeceptionPenalty > 50) DeceptionChance -= DeceptionPenalty;
@@ -63,10 +63,10 @@ void ProcessDialogEvent()
 		
 		case "First time":			
             NextDiag.TempNode = "First time";
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+			if (false)
 			{
-				// заглушка на пирата
-				if (sti(pchar.nation) == PIRATE)
+				// // заглушка на пирата
+				if (false)
 				{
     				dialog.text = RandPhraseSimple("Пираты в городе?! Ну дела... Хватай е"+ GetSexPhrase("го","е") +"!!", "Это пират!! Держи е"+ GetSexPhrase("го","е") +"!!!");
 					link.l1 = RandPhraseSimple("Пират, ну и что?..", "Хех, попробуйте схватить.");
@@ -94,7 +94,8 @@ void ProcessDialogEvent()
 			else
 			{
 				// eddy. проверяем, не казачок ли. -->
-				if (GetNationRelation(sti(NPChar.nation), GetBaseHeroNation()) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+				// JOKERTODO продублировать поведение на другие языки, если так норм
+				if (false)
 				{
 					// грамота Винсенто
 					if(CheckAttribute(pchar, "questTemp.Guardoftruth") && CheckCharacterItem(pchar, "VerifyPaper") && npchar.city == "santiago")
@@ -146,7 +147,7 @@ void ProcessDialogEvent()
 					{
 						//==> по флагу
 						// заглушка на пирата
-						if (sti(pchar.nation) == PIRATE)
+						if (false)
 						{
     						dialog.text = RandPhraseSimple("Пираты в городе?! Ну дела... Хватай его!!", "Это пират!! Держи его!!!");
 							link.l1 = RandPhraseSimple("Да, пират, ну и что?..", "Хех, попробуйте схватить...");
@@ -175,7 +176,7 @@ void ProcessDialogEvent()
 				// <-- eddy. проверяем, не казачок ли.
 				else
 				{
-					if (sti(NPChar.nation) == PIRATE)
+					if (false)
 					{
 						if (sti(rColony.HeroOwn) == true) // наш горожанин
 						{
@@ -518,7 +519,6 @@ void ProcessDialogEvent()
 				dialog.text = "Только подумать, какая наглость! Явиться в город под видом торговца! Да твои портреты развешаны в каждой казарме, негодяй! Ну, теперь ты не уйдешь! Хватай его!";
 				link.l1 = RandPhraseSimple("Аргх!..", "Ну, вы сами напросились...");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (pchar.location != "LosTeques_town" && findsubstr(pchar.location.from_sea, "_town" , 0) == -1) //если причалил не в городе 300912
@@ -526,7 +526,6 @@ void ProcessDialogEvent()
 				dialog.text = "Вы прибыли сюда торговать? Позвольте спросить - на чём? Где ваш корабль? Всё это очень подозрительно - я вынужден вас задержать до выяснения. Сдайте оружие и следуйте за мной!";
 				link.l1 = RandPhraseSimple("Как бы не так!", "После дождичка, в четверг...");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (iTemp == -1)
@@ -534,7 +533,6 @@ void ProcessDialogEvent()
 				dialog.text = "Ваша лицензия подлежит изъятию, так как просрочена и поэтому недействительна. Сдайте оружие и следуйте за мной для последующих разбирательств!";
 				link.l1 = RandPhraseSimple("Как бы не так!", "После дождичка, в четверг...");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (iTemp == 0)

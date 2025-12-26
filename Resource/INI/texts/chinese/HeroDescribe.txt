@@ -59,12 +59,12 @@ heroNation_4 {Береговое братство}
 sex_4 {woman}
 animation_4 {rumba}
 hero_4 {年轻的海盗, “森林恶魔”- 海岸兄弟会男爵的门徒。 然而, 男爵向她隐瞒了真正海盗的残酷现 实和他们可能犯下的暴行。 对海伦而言, 海盗生涯充满浪漫、 小规模走私、 自由... 以及她心爱的武装纵帆船“Rainbow”的甲板。}
-heroName_5 {Джессика}
-heroLastname_5 {Брэдфорд}
-heroNameGen_5 {Джессики}
-heroLastnameGen_5 {Брэдфорд}
-heroNameDat_5 {Джессике}
-heroLastNameDat_5 {Брэдфорд}
+heroName_5 {Jessica}
+heroLastname_5 {Bradford}
+heroNameGen_5 {Jessica}
+heroLastnameGen_5 {Bradford}
+heroNameDat_5 {Jessica}
+heroLastNameDat_5 {Bradford}
 heroFace_5 {244}
 heroModel_5 {jessika}
 heroType_5 {Корсар}

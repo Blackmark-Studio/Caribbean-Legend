@@ -29,7 +29,7 @@ void ProcessDialogEvent()
 	{
 		case "First time":
 			dialog.text = "Ach, witaj, kochaniutki. Czego ci trzeba?";
-			link.l1 = "Nic, jak sądzę.";
+			link.l1 = "Niczego, jak sądzę.";
 			link.l1.go = "exit";
 			link.l2 = RandPhraseSimple("Chciałbym o coś zapytać.", "Potrzebuję pewnych informacji.");
 			link.l2.go = "quests";//(перессылка в файл города)
@@ -199,7 +199,7 @@ void ProcessDialogEvent()
 				dialog.text = LinkRandPhrase(
 					"Och, nie jestem pewna, kochaniutki. Niedawno przyszedł tu facet, który szukał pomocy w zabijaniu szczurów... a tydzień później ktoś zatruł garnizon w forcie. Moi ludzie mieli potem niezłą przeprawę z żołnierzami... Przesłuchiwali nas przez dwa tygodnie, zanim znaleźli winnego. Okazało się, że to był szpieg.",
 					"A skąd pewność, że to nie trucizna dla jakiegoś szlachcica? Może jesteś zbyt tchórzliwy, by stanąć z nim w pojedynku jak mężczyzna?",
-					"Słyszałam, że ktoś otruł kupca w tawernie. Umarł w męczarniach — piana na ustach, siny jak bakłażan. Podobno zabrano mu cały towar. To nie była twoja sprawka... prawda?"
+					"Słyszałam, że ktoś otruł kupca w karczmie. Umarł w męczarniach — piana na ustach, siny jak bakłażan. Podobno zabrano mu cały towar. To nie była twoja sprawka... prawda?"
 				);				
 				link.l1 = "Ej, nie przesadzaj, cygańska dziewko! Nie zamierzam truć ludzi — to kobiecy sposób zabijania, nie w moim stylu. Na mężczyzn mam swój miecz, ale z tymi przeklętymi szczurami za cholerę nie mogę sobie poradzić!";
 				link.l1.go = "get_poison_2";
@@ -267,7 +267,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = LinkRandPhrase(
 					"Złoto to jedno, ale sekrety to zupełnie inna cena, przyjacielu.",
-					"Możemsz kupować, ale nie zdradzamy, co z tym robimy. To nasza tajemnica.",
+					"Możemy kupować, ale nie zdradzamy, co z tym robimy. To nasza tajemnica.",
 					"Nie, młody wilku morski. Tego nie opowiadamy obcym. Albo pieniądze albo nie."
 				) + " Pięćdziesiąt dublonów – to nasza oferta. Nikt ci nie zapłaci więcej";
 				link.l1 = "Och, dobrze... Tak czy inaczej, mi to pasuje. Pięćdziesiąt dublonów. Weź to";
@@ -331,7 +331,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mangarosa_4":
-			dialog.text = "Młody sole, zaufaj mi, nie potrzebujesz tego. Nie mieszaj się, ta roślina cię zrujnuje. Otępia umysł i powoduje, że tyjesz. Nawet nie pytaj. Ale... widzę przed sobą odważnego człowieka, z mieczem, człowieka morza... może nawet kapitana?";
+			dialog.text = "Młody sokole, zaufaj mi, nie potrzebujesz tego. Nie mieszaj się, ta roślina cię zrujnuje. Otępia umysł i powoduje, że tyjesz. Nawet nie pytaj. Ale... widzę przed sobą odważnego człowieka, z mieczem, człowieka morza... może nawet kapitana?";
 			link.l1 = "Masz rację.";
 			link.l1.go = "mangarosa_5";
 		break;
@@ -419,12 +419,12 @@ string GuessText()
 		case 5: sText = "Przygotuj się na dotkliwą stratę, mój drogi... ale nie trać ducha! Masz wielu przyjaciół – i jeszcze wszystko przed tobą."; break;
 		case 6: sText = "Morze odbierze ci coś ważnego... ale zachowasz to, co najważniejsze. Przetrwasz – nawet jeśli nie wygrasz."; break;
 		case 7: sText = "Zła passa cię nie opuszcza, kapitanie! Odpocznij, wypij rum i znajdź ramiona, które ukoją twój los."; break;
-		case 8: sText = "Dostaniesz to, czego tak bardzo pragniesz, kapitanie… ale nie spodziewaj się po tym niczego dobrego. To, za czym tak goniłeś, przyniesie ci tylko kłopoty. Może lepiej zawróć, póki czas."; break;
+		case 8: sText = "Dostaniesz to, czego tak bardzo pragniesz, kapitanie... ale nie spodziewaj się po tym niczego dobrego. To, za czym tak goniłeś, przyniesie ci tylko kłopoty. Może lepiej zawróć, póki czas."; break;
 		case 9: sText = "Widzę na twojej twarzy znak wielkiego szczęścia... Los szykuje ci o wiele więcej dobra, niż się spodziewasz, młody człowieku."; break;
 		case 10: sText = "Zastanów się raz jeszcze nad swoim aktualnym pragnieniem. Czy... oby na pewno tego chcesz? Los daje ci rzadką szansę, by zmienić kierunek."; break;
 		case 11: sText = "Taka okazja nie zdarza się codziennie. Zrób przerwę, rozpal fajkę, pomyśl, zanim ruszysz dalej. Pośpiech prowadzi prosto do grobu."; break;
-		case 12: sText = "Twoje wysiłki nie przyniosą oczekiwanego skutku… ale nie trać nadziei, sokole. Wielkie szczęście czeka cię wtedy, gdy najmniej się tego spodziewasz."; break;
-		case 13: sText = "Twój problem nie znajdzie łatwego rozwiązania… ale jesteś uparty. I choć nie pójdzie po twojej myśli, osiągniesz swój cel – choć może nie tam, gdzie go szukałeś."; break;
+		case 12: sText = "Twoje wysiłki nie przyniosą oczekiwanego skutku... ale nie trać nadziei, sokole. Wielkie szczęście czeka cię wtedy, gdy najmniej się tego spodziewasz."; break;
+		case 13: sText = "Twój problem nie znajdzie łatwego rozwiązania... ale jesteś uparty. I choć nie pójdzie po twojej myśli, osiągniesz swój cel – choć może nie tam, gdzie go szukałeś."; break;
 		case 14: sText = "Rzuć to, czym się teraz zajmujesz. To przedsięwzięcie nie skończy się dobrze. Jeśli będziesz brnął dalej, to nie tylko ty możesz ucierpieć – ale i ci, których kochasz."; break;
 		case 15: sText = "Zbliża się pewne wydarzenie, kapitanie, które odmieni całe twoje życie. Twoje obecne zmartwienia staną się wtedy bez znaczenia."; break;
 		case 16: sText = "Na drodze do twojego marzenia czai się niebezpieczeństwo. Teoretycznie może ci się udać... ale tylko jeśli będziesz miał dużo szczęścia. Lepiej zawróć, zanim stracisz wszystko. Albo... Spróbuj oszukać przeznaczenie i przegrywaj dziś w kości."; break;

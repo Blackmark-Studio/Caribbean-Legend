@@ -275,9 +275,9 @@ void FillPriceListTown(string _tabName)
 			GameInterface.(_tabName).(row).td1.icon.width  = 26;
 		    GameInterface.(_tabName).(row).td1.icon.height = 26;
 		    GameInterface.(_tabName).(row).td1.icon.offset = "0, 3";
-			GameInterface.(_tabName).(row).td2.str = GetConvertStr(cityId + " Town", "LocLables.txt");
+			GameInterface.(_tabName).(row).td2.str = GetCityName(cityId);
 			GameInterface.(_tabName).(row).td2.scale = 0.85;
-			GameInterface.(_tabName).(row).td3.str = GetConvertStr(rCity.islandLable, "LocLables.txt");
+			GameInterface.(_tabName).(row).td3.str = GetIslandName(rCity);
 			GameInterface.(_tabName).(row).td3.scale = 0.8;
 			GameInterface.(_tabName).(row).td4.scale = 0.75;
 			if (CheckAttribute(nulChr, "PriceList." + cityId + ".AltDate"))
@@ -310,52 +310,8 @@ void FillPriceListTownSorted(string _tabName)
 	
 	// LDH 06Jul17 -->
 	// belamour немного переделал метод для алфавитного порядка
-    string AlphaColonies[MAX_OURCOLONIES];
-    z = 0;
-	AlphaColonies[z] = "BasTer";          z = z + 1;
-	AlphaColonies[z] = "Beliz";           z = z + 1;
-	AlphaColonies[z] = "SantaCatalina";   z = z + 1;  // Blueweld
-	AlphaColonies[z] = "Bridgetown";      z = z + 1;
-	AlphaColonies[z] = "Villemstad";      z = z + 1;
-    AlphaColonies[z] = "Havana";          z = z + 1;
-	AlphaColonies[z] = "Charles";         z = z + 1; 
-	AlphaColonies[z] = "Caracas";         z = z + 1;
-	AlphaColonies[z] = "Cartahena";       z = z + 1;
-	AlphaColonies[z] = "Cumana";          z = z + 1;
-	AlphaColonies[z] = "LaVega";          z = z + 1;
-	AlphaColonies[z] = "LeFransua";		  z = z + 1;
-	AlphaColonies[z] = "Maracaibo";       z = z + 1;
-	AlphaColonies[z] = "FortOrange";      z = z + 1;
-    AlphaColonies[z] = "Panama";          z = z + 1;
-	AlphaColonies[z] = "PortoBello";      z = z + 1;
-	AlphaColonies[z] = "PortPax";         z = z + 1;
-	AlphaColonies[z] = "PortRoyal";       z = z + 1;
-	AlphaColonies[z] = "PuertoPrincipe";  z = z + 1;
-	AlphaColonies[z] = "SanAndres";	      z = z + 1;
-    AlphaColonies[z] = "SantoDomingo";    z = z + 1;
-	AlphaColonies[z] = "Santiago";        z = z + 1;
-	AlphaColonies[z] = "PortSpein";       z = z + 1;
-	AlphaColonies[z] = "SanJuan";         z = z + 1;
-	AlphaColonies[z] = "FortFrance";      z = z + 1;
-	AlphaColonies[z] = "SentJons";        z = z + 1;
-	AlphaColonies[z] = "Tortuga";         z = z + 1;
-	AlphaColonies[z] = "Marigo";          z = z + 1;
-    AlphaColonies[z] = "Pirates";         z = z + 1;
-	
-	AlphaColonies[z] = "LosTeques";       z = z + 1;
-	AlphaColonies[z] = "Terks";           z = z + 1;
-    AlphaColonies[z] = "Dominica";        z = z + 1;
-    AlphaColonies[z] = "Pearl";           z = z + 1;
-    AlphaColonies[z] = "Caiman";          z = z + 1;
-    AlphaColonies[z] = "Tenotchitlan";    z = z + 1;
-    AlphaColonies[z] = "LostShipsCity";   z = z + 1;
-    AlphaColonies[z] = "KhaelRoa";        z = z + 1;
-    AlphaColonies[z] = "Ksochitam";       z = z + 1;
-    AlphaColonies[z] = "RockIsland";      z = z + 1;
-    AlphaColonies[z] = "SantaQuiteria";   z = z + 1;
-    AlphaColonies[z] = "IslaDeVieques";   z = z + 1;
-    AlphaColonies[z] = "Is";              
-   
+    string AlphaColonies[MAX_OURCOLONIES] = {"BasTer", "Beliz", "SantaCatalina", "Bridgetown", "Villemstad", "Havana", "Charles", "Caracas", "Cartahena", "Cumana", "LaVega", "LeFransua", "Maracaibo", "FortOrange", "Panama", "PortoBello", "PortPax", "PortRoyal", "PuertoPrincipe", "SanAndres", "SantoDomingo", "Santiago", "PortSpein", "SanJuan", "FortFrance", "SentJons", "Tortuga", "Marigo", "Pirates", "LosTeques", "Terks", "Dominica", "Pearl", "Caiman", "Tenotchitlan", "LostShipsCity", "KhaelRoa", "Ksochitam", "RockIsland", "SantaQuiteria", "IslaDeVieques", "Is"};
+
 	// belamour сортировка Трейдбука по нациям -->
 	string OurColonies[MAX_OURCOLONIES];
 	ref rCitySort;
@@ -512,9 +468,9 @@ void FillPriceListTownSorted(string _tabName)
 			GameInterface.(_tabName).(row).td1.icon.width  = 26;
 		    GameInterface.(_tabName).(row).td1.icon.height = 26;
 		    GameInterface.(_tabName).(row).td1.icon.offset = "0, 3";
-			GameInterface.(_tabName).(row).td2.str = GetConvertStr(cityId + " Town", "LocLables.txt");
+			GameInterface.(_tabName).(row).td2.str = GetCityName(cityId);
 			GameInterface.(_tabName).(row).td2.scale = 0.85;
-			GameInterface.(_tabName).(row).td3.str = GetConvertStr(rCity.islandLable, "LocLables.txt");
+			GameInterface.(_tabName).(row).td3.str = GetIslandName(rCity);
 			GameInterface.(_tabName).(row).td3.scale = 0.8;
 			GameInterface.(_tabName).(row).td4.scale = 0.75;
 			if (CheckAttribute(nulChr, "PriceList." + cityId + ".AltDate"))
@@ -592,13 +548,8 @@ void FillPriceListTownSortedByDate(string _tabName) {
 	n = 1;
 	firstId = "";
 	totalEntries = GetAttributesNum(rootItems);
+	int entryIndices[totalEntries];
 
-	int entryIndices[2];
-	
-	if (totalEntries > 2) {
-		SetArraySize(&entryIndices, totalEntries);
-	}
-	
 	for (i = 0; i < totalEntries; i++) {
 		entryIndices[i] = i;
 	}
@@ -637,9 +588,9 @@ void FillPriceListTownSortedByDate(string _tabName) {
 			GameInterface.(_tabName).(row).td1.icon.width  = 26;
 			GameInterface.(_tabName).(row).td1.icon.height = 26;
 			GameInterface.(_tabName).(row).td1.icon.offset = "0, 3";
-			GameInterface.(_tabName).(row).td2.str = GetConvertStr(cityId + " Town", "LocLables.txt");
+			GameInterface.(_tabName).(row).td2.str = GetCityName(cityId);
 			GameInterface.(_tabName).(row).td2.scale = 0.85;
-			GameInterface.(_tabName).(row).td3.str = GetConvertStr(rCity.islandLable, "LocLables.txt");
+			GameInterface.(_tabName).(row).td3.str = GetIslandName(rCity);
 			GameInterface.(_tabName).(row).td3.scale = 0.8;
 			GameInterface.(_tabName).(row).td4.scale = 0.75;
 			if (CheckAttribute(nulChr, "PriceList." + cityId + ".AltDate"))
@@ -671,55 +622,9 @@ void FillPriceListClockwiseSort(string _tabName)
     aref    curItem;
     ref     rCity;
 
-// LDH 06Jul17 -->
-    string OurColonies[MAX_OURCOLONIES];
-    i = 0;
-    OurColonies[i] = "Havana";          i = i + 1;
-    OurColonies[i] = "Santiago";        i = i + 1;
-    OurColonies[i] = "PuertoPrincipe";  i = i + 1;
-    OurColonies[i] = "PortRoyal";       i = i + 1;
-    OurColonies[i] = "FortOrange";      i = i + 1;
-    OurColonies[i] = "Tortuga";         i = i + 1;
-    OurColonies[i] = "PortPax";         i = i + 1;
-    OurColonies[i] = "SantoDomingo";    i = i + 1;
-    OurColonies[i] = "LaVega";          i = i + 1;
-    OurColonies[i] = "Terks";           i = i + 1;
-    OurColonies[i] = "SanJuan";         i = i + 1;
-    OurColonies[i] = "Pirates";         i = i + 1;
-    OurColonies[i] = "Marigo";          i = i + 1;
-    OurColonies[i] = "Charles";         i = i + 1;
-    OurColonies[i] = "SentJons";        i = i + 1;
-    OurColonies[i] = "BasTer";          i = i + 1;
-    OurColonies[i] = "Dominica";        i = i + 1;
-    OurColonies[i] = "FortFrance";      i = i + 1;
-    OurColonies[i] = "LeFransua";       i = i + 1;
-    OurColonies[i] = "Bridgetown";      i = i + 1;
-    OurColonies[i] = "Villemstad";      i = i + 1;
-    OurColonies[i] = "PortSpein";       i = i + 1;
-    OurColonies[i] = "Cumana";          i = i + 1;
-    OurColonies[i] = "Caracas";         i = i + 1;
-    OurColonies[i] = "Maracaibo";       i = i + 1;
-    OurColonies[i] = "Cartahena";       i = i + 1;
-    OurColonies[i] = "PortoBello";      i = i + 1;
-    OurColonies[i] = "Panama";          i = i + 1;
-    OurColonies[i] = "Pearl";           i = i + 1;
-    OurColonies[i] = "SantaCatalina";   i = i + 1;  // Blueweld
-    OurColonies[i] = "Beliz";           i = i + 1;
-    OurColonies[i] = "Caiman";          i = i + 1;
-    
-    OurColonies[i] = "Tenotchitlan";    i = i + 1;
-    OurColonies[i] = "LosTeques";       i = i + 1;
-    OurColonies[i] = "LostShipsCity";   i = i + 1;
-    OurColonies[i] = "KhaelRoa";        i = i + 1;
-    OurColonies[i] = "Ksochitam";       i = i + 1;
-    OurColonies[i] = "RockIsland";      i = i + 1;
-    OurColonies[i] = "SantaQuiteria";   i = i + 1;
-    OurColonies[i] = "IslaDeVieques";   i = i + 1;
-    OurColonies[i] = "Is";              i = i + 1;
-    OurColonies[i] = "SanAndres";
+// LDH 06Jul17
+    string OurColonies[MAX_OURCOLONIES] = {"Havana", "Santiago", "PuertoPrincipe", "PortRoyal", "FortOrange", "Tortuga", "PortPax", "SantoDomingo", "LaVega", "Terks", "SanJuan", "Pirates", "Marigo", "Charles", "SentJons", "BasTer", "Dominica", "FortFrance", "LeFransua", "Bridgetown", "Villemstad", "PortSpein", "Cumana", "Caracas", "Maracaibo", "Cartahena", "PortoBello", "Panama", "Pearl", "SantaCatalina", "Beliz", "Caiman", "Tenotchitlan", "LosTeques", "LostShipsCity", "KhaelRoa", "Ksochitam", "RockIsland", "SantaQuiteria", "IslaDeVieques", "Is", "SanAndres"};
 
-// LDH 06Jul17 <--
-    
     // шапка -->
     GameInterface.(_tabName).select = 0;
     GameInterface.(_tabName).hr.td1.str = "Нация";
@@ -768,9 +673,9 @@ void FillPriceListClockwiseSort(string _tabName)
 			GameInterface.(_tabName).(row).td1.icon.width  = 26;
 		    GameInterface.(_tabName).(row).td1.icon.height = 26;
 		    GameInterface.(_tabName).(row).td1.icon.offset = "0, 3";
-			GameInterface.(_tabName).(row).td2.str = GetConvertStr(cityId + " Town", "LocLables.txt");
+			GameInterface.(_tabName).(row).td2.str = GetCityName(cityId);
 			GameInterface.(_tabName).(row).td2.scale = 0.85;
-			GameInterface.(_tabName).(row).td3.str = GetConvertStr(rCity.islandLable, "LocLables.txt");
+			GameInterface.(_tabName).(row).td3.str = GetIslandName(rCity);
 			GameInterface.(_tabName).(row).td3.scale = 0.8;
 			GameInterface.(_tabName).(row).td4.scale = 0.75;
 			if (CheckAttribute(nulChr, "PriceList." + cityId + ".AltDate"))
@@ -916,7 +821,7 @@ void ShowInfoWindow()
 		    sGroupPicture = GameInterface.(CurTable).(CurRow).UserData.ID;
 		    sHeader = XI_ConvertString(GameInterface.(CurTable).(CurRow).UserData.ID);
 		    iItem = sti(GameInterface.(CurTable).(CurRow).UserData.IDX);
-		    sText1  = GetAssembledString(GetConvertStr(GameInterface.(CurTable).(CurRow).UserData.ID + "_descr", "GoodsDescribe.txt"), &Goods[iItem]);
+		    sText1  = GetAssembledString(GetGoodDescr(GameInterface.(CurTable).(CurRow).UserData.ID), &Goods[iItem]);
 			sText2 = "Цвета указателя типа товара :" + newStr() + 
 				 "- зелёный : колониальные товары" + newStr() + 
 				 "- синий : импортные товары" + newStr() + 
@@ -945,7 +850,7 @@ void ShowInfoWindow()
 		break;
 		// <--
 	}
-	CreateTooltip(sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64);
+	//CreateTooltip(sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64); // не компилится
 
 }
 void HideInfoWindow()

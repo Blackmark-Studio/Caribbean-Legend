@@ -1,0 +1,5 @@
+reaction_functions_1 {망가로사 물약 과다 복용!}
+reaction_functions_2 {중독되었습니다}
+reaction_functions_3 {특수 망가로사 물약 사용!}
+reaction_functions_4 {망가로사 물약의 효과가 끝났습니다}
+reaction_functions_5 {거래하기 좋은 날, 화물창이 가득 찼다! +}

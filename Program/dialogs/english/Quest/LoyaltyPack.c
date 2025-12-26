@@ -26,6 +26,17 @@ void ProcessDialogEvent()
 		
 		case "Alonso":
 			NextDiag.TempNode = "Alonso";
+			
+			// --> Эпилог
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				dialog.text = "...";
+				Link.l1 = "Alonso, I need to talk to you.";
+				Link.l1.go = "SharlieEpilog_Alonso_1";
+				break;
+			}
+			// эпилог <--
+			
 			if (GetDLCenabled(DLC_APPID_1))
 			{
 				if(CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.FirstStage", "ready"))
@@ -301,7 +312,7 @@ void ProcessDialogEvent()
             SetAlchemyRecipeKnown("vodka");
 
             dialog.text = "That's the brew I was telling you about. And the recipe. In case you take a liking to it, heh-heh.";
-            link.l1 = "Sorry, my friend, but scribbles and some murky concoction don't…";
+            link.l1 = "Sorry, my friend, but scribbles and some murky concoction don't...";
             link.l1.go = "Alonso_Lvl_8_Gift_3";
         break;
 
@@ -437,5 +448,71 @@ void ProcessDialogEvent()
             link.l1.go = "exit";
 			AddDialogExitQuestFunction("LoyaltyPack_FourthStage_DlgExit");
         break;
+		
+		// --> Эпилог
+		case "SharlieEpilog_Alonso_1":
+			dialog.text = "Is this about Floran? I already told him that...";
+			link.l1 = "No, buddy, it's a completely different matter. I've decided to sail to Europe. For an indefinite period.";
+			link.l1.go = "SharlieEpilog_Alonso_2";
+		break;
+
+		case "SharlieEpilog_Alonso_2":
+			if (GetCompanionQuantity(pchar) <= 1) sStr = "our ship";
+			else sStr = "our ships";
+			dialog.text = "No problem, cap. The ship is sturdy, the crew is seasoned, we just need some provisions...";
+			link.l1 = "I'll be sailing on someone else's ship. As a passenger. You'll need to dock "+sStr+" at the port authority and disband the crew. And decide: stay here and join another crew, or come with me to France — as a friend.";
+			link.l1.go = "SharlieEpilog_Alonso_3";
+		break;
+
+		case "SharlieEpilog_Alonso_3":
+			dialog.text = "...";
+			link.l1 = "By the way, totally unrelated: (whispering) I know a couple of babes in Bordeaux... You won't find sorceresses like that in the Caribbean. They’re into guys like you, and if you start telling them about our battles...";
+			link.l1.go = "SharlieEpilog_Alonso_4";
+		break;
+
+		case "SharlieEpilog_Alonso_4":
+			dialog.text = "Well, if it’s for the babes… I’m in. Heh-heh. But why not on our ship? And why as a passenger? The lads might grumble a bit, but they'd follow you to heaven or hell.";
+			link.l1 = "When I first arrived here, I couldn’t picture myself as a sailor. And now I can’t imagine any other life. I want to see if I can handle not being a captain anymore... and maybe leaving behind raiding convoys and life at sea.";
+			link.l1.go = "SharlieEpilog_Alonso_nothing";
+			link.l2 = "Long story. I’ll tell you at the tavern — over a mug of rum. And invite the crew. Let’s throw a grand farewell party. Here, take this — hand out a month’s pay as severance.";
+			link.l2.go = "SharlieEpilog_Alonso_salary";
+		break;
+		
+		case "SharlieEpilog_Alonso_nothing":
+			dialog.text = "You can’t escape fate, cap. If you’re meant to be a captain till your dying day — so be it.";
+			link.l1 = "We’ll see, "+npchar.name+", we’ll see. But for now — time to get things moving. We set sail in two weeks. You’ll never guess which ship...";
+			link.l1.go = "SharlieEpilog_Alonso_5";
+		break;
+		
+		case "SharlieEpilog_Alonso_salary":
+			dialog.text = "Now that’s more like it! That'll make breaking the news to them a lot easier.";
+			link.l1 = "You’ll never guess which ship...";
+			link.l1.go = "SharlieEpilog_Alonso_5";
+			salary = GetSalaryForShip(PChar);
+			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+		break;
+
+		case "SharlieEpilog_Alonso_5":
+			dialog.text = "Don’t keep me in suspense, cap.";
+			link.l1 = "On the pinnace '"+GetShipName("Ulysse")+"'.";
+			link.l1.go = "SharlieEpilog_Alonso_6";
+		break;
+
+		case "SharlieEpilog_Alonso_6":
+			dialog.text = "No way... We're sailing out on the very ship we once arrived on? I can’t believe it...";
+			link.l1 = "That’s the one, "+npchar.name+". I’ll tell you how I found it later — at the tavern, over a mug of rum. Right now, we’ve got work to do.";
+			link.l1.go = "SharlieEpilog_Alonso_7";
+		break;
+
+		case "SharlieEpilog_Alonso_7":
+			dialog.text = "Aye aye, cap... Man... I’ll miss the lads. They’re like family to me. But what can you do...";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Alonso";
+			npchar.quest.SharlieEpilog_FarewellOfficers = true;
+			AddDialogExitQuestFunction("SharlieEpilog_Alonso_exit");
+		break;
+
+		// эпилог <--
 	}
 } 

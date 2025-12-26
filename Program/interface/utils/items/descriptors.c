@@ -34,7 +34,7 @@ aref GetItemDescriptors(ref ref_Id_Idx)
 	return descriptors;
 }
 
-void SetDescriptorsTooltip(string sCurrentNode, string header, string text, string badText, string goodText, ref rObject)
+void SetDescriptorsTooltip(string sCurrentNode, ref header, ref text, ref badText, ref goodText, ref rObject)
 {
 	if (!HasSubStr(sCurrentNode, "DESCRIPTOR_")) return;
 

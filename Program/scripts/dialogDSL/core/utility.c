@@ -17,7 +17,7 @@ string DLG_GetObjectAttributeSafe(ref obj, string attribute)
 string DLG_A(ref args, int index)
 {
   string argName = "var" + index;
-  return DLG_GetObjectAttributeSafe(&args, &argName);
+  return DLG_GetObjectAttributeSafe(&args, argName);
 }
 
 // Syntax sugar for consistency
@@ -46,7 +46,7 @@ string DLG_A2(ref args)
 
 // func("aXbXcX", "X", "Y", 0) → "aYbYcY"
 // func("aXbXcX", "X", "Y", 3) → "aXbYcY"
-void DLG_ReplaceAllMatches(string input, string key, string replace, int curPos)
+void DLG_ReplaceAllMatches(ref input, string key, string replace, int curPos)
 {
   int markPos = FindSubStr(&input, key, curPos);
   if (markPos < 0) return;
@@ -79,5 +79,5 @@ void DLG_SplitString(ref result, string input, string bySym, int iteration)
   else result.(varName) = strcut(&input, 0, iPos-1);
 
   if (iPos +1 == len) return;
-  DLG_SplitString(result, strcut(&input, iPos+1, len-1), &bySym, iteration+1);
+  DLG_SplitString(result, strcut(&input, iPos+1, len-1), bySym, iteration+1);
 }

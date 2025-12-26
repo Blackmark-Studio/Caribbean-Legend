@@ -12,7 +12,7 @@ void Mtraxx_TerraxReset(int i) // общая функция при провал�
 	if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 	{
 		DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
-		DeleteAttribute(pchar,"perks.list.FlagSpa"); 
+		STH_SetJokerFlag(SPAIN, false); 
 		log_info(StringFromKey("Roger_1"));
 	}
 	if(CheckAttribute(pchar,"questTemp.Mtraxx.GiveMeSlaves")) DeleteAttribute(pchar,"questTemp.Mtraxx.GiveMeSlaves");
@@ -1057,8 +1057,8 @@ void Mtraxx_PlantPrepareTimeOver(string qName) // стал заниматься 
 void Mtraxx_PlantSetMaxRocur() // ставим Жана Пикара
 {
 	sld = GetCharacter(NPC_GenerateCharacter("Mrt_Rocur", "Jan_Slave", "man", "man", 20, PIRATE, -1, false, "soldier"));
-	sld.name = StringFromKey("Roger_29");
-	sld.lastname = StringFromKey("Roger_30");
+	sld.name = GetCharacterName("Jean");
+	sld.lastname = GetCharacterName("Picard");
 	sld.Dialog.Filename = "Quest\Roger.c";
 	sld.Dialog.currentnode = "rocur";
 	sld.greeting = "Rocur_01";
@@ -1101,8 +1101,8 @@ void Mtraxx_PlantMakeMaxRocurClone() // ставим клон Жана Пика�
 {
 	sld = GetCharacter(NPC_GenerateCharacter("Mrt_Rocur_clone", "Jan_Slave", "man", "man", 20, PIRATE, -1, false, "soldier"));
 	SetFantomParamFromRank(sld, 15, true);
-	sld.name = StringFromKey("Roger_29");
-	sld.lastname = StringFromKey("Roger_30");
+	sld.name = GetCharacterName("Jean");
+	sld.lastname = GetCharacterName("Picard");
 	sld.Dialog.Filename = "Quest\Roger.c";
 	sld.Dialog.currentnode = "rocur_4";
 	sld.SpecialRole = "mtraxx_vanguard";
@@ -2039,7 +2039,7 @@ void Mtraxx_PlantGoHomeOver(string qName) // истекло время на во
 	if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 	{
 		DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
-		DeleteAttribute(pchar,"perks.list.FlagSpa"); 
+		STH_SetJokerFlag(SPAIN, false); 
 		log_info(StringFromKey("Roger_1"));
 	}
 }
@@ -2737,10 +2737,12 @@ void Mtraxx_MirabellaSex(string qName) // секс с Мирабель
 			fTime = 5.0;
 		break;
 	}
-	PlayStereoSound("sex\sex" + sTemp + ".wav");
+
 	WaitDate("", 0, 0, 0, 2, 30);
 	SetLaunchFrameFormParam("", "", 0, fTime);
 	SetLaunchFrameFormPic("loading\inside\censored1.tga");
+	if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+	else PlayStereoSound("sex\sex" + sTemp + ".wav");
 	LaunchFrameForm();
 	if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
 	{
@@ -4718,6 +4720,24 @@ void Mtraxx_WolfreekCreateGaspar()
 	LAi_SetOwnerType(sld);
 }
 
+void CreateGaspar_Sandbox()  // Гаспар во фриплее
+{
+	ref loc = &Locations[FindLocation("Tortuga_Town")];
+	DeleteAttribute(loc, "reload.l15.disable");
+				
+	sld = GetCharacter(NPC_GenerateCharacter("GasparGold", "banker_6", "man", "man", 10, PIRATE, -1, true, "citizen"));
+	sld.Merchant.type = "GasparGold";
+	sld.dialog.filename = "Quest\Roger.c";
+	sld.dialog.currentnode = "GasparGold_meeting_sandbox";
+	sld.name = StringFromKey("Roger_74");
+	sld.lastname = StringFromKey("Roger_75");
+	sld.money = 5000000;
+	AddItems(sld, "gold_dublon", 1000);
+	ChangeCharacterAddressGroup(sld, "Tortuga_houseS3", "barmen", "stay");
+	LAi_SetOwnerType(sld);
+	AddQuestRecordInfo("Useful_Acquaintances", "8");
+}
+
 void Mtraxx_WolfreekPellyGemsToPrince (string qName)
 {
 	DeleteAttribute(loadedLocation,"reload.l15.disable");
@@ -4909,6 +4929,7 @@ void Mtraxx_WolfreekCannon(string qName) // в локации форта пер�
 		CreateLocationParticles("Bombard", "quest", "mortair_battle", 1.0, 90, 90, "cannon_fire_2");
 		CreateLocationParticles("blast_dirt", "quest", "mortair_battle", 1.0, 90, 90, "");
 		CreateLocationParticles("blast_dirt", "quest", "mortair_battle", 1.0, 90, 90, "");
+		SetCameraShake(2.0, 2.5, 5.0, 0.13, 0.5, true, false, CAM_EASING_SMOOTH_STEP);
 		DoQuestFunctionDelay("Mtraxx_WolfreekGameover", 0.5);
 	}
 }
@@ -5287,7 +5308,7 @@ void Mtraxx_CorridaIgnasioFail() // провал перехвата Тореро
 	if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 	{
 		DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
-		DeleteAttribute(pchar,"perks.list.FlagSpa"); 
+		STH_SetJokerFlag(SPAIN, false); 
 		log_info(StringFromKey("Roger_1"));
 	}
 }
@@ -8613,7 +8634,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		if (!CheckAttribute(pchar, "questTemp.Mtraxx.Cartahena.Fort")) return true;
 		sld = CharacterFromID("Cartahena Fort Commander");
 		Fort_SetAbordageMode(pchar, sld);
-		AutoSave();
+	//	AutoSave();
 		// Mtraxx_CartahenaPrepareFortBattle();
 	}
 	else if (sQuestName == "Mtraxx_CartahenaFortFirstBattle") // бой в цитадели форта // патч 17/1

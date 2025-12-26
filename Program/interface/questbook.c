@@ -577,63 +577,47 @@ void ShowInfoWindow()
 	int nChooseNum = -1;
 	string sRow;
 	aref arCurRow;
-	
+	bool bTooltip = true;
 	sGroupPicture = "";
 	switch (sCurrentNode)
 	{
-		case "TABBTN_QUEST":
-			sHeader = XI_ConvertString("QuestsBook");
-			sText1 = XI_ConvertString("QuestsBook_Descr");
-		break;
-		case "TABBTN_QUESTARJ":
-			sHeader = XI_ConvertString("QuestsLogBook");
-			sText1 = XI_ConvertString("QuestsLogBook_Descr");
-		break;
-		case "TABBTN_INFO":
-			sHeader = XI_ConvertString("DocsBook");
-			sText1 = XI_ConvertString("DocsBook_Descr");
-		break;
-		case "TABBTN_CASHBOOK":
-			sHeader = XI_ConvertString("CashBook");
-			sText1 = XI_ConvertString("CashBook_Descr1");
-			sText2 = XI_ConvertString("CashBook_Descr2");
-		break;
-		case "TABBTN_SHIP_PLACE":
-			sHeader = XI_ConvertString("ShipsPlaceBook");
-			sText1 = XI_ConvertString("ShipsPlaceBook_Descr1");
-		break;
-		case "TABBTN_STOREBOOK":
-			sHeader = XI_ConvertString("StorageBook");
-			sText1 = XI_ConvertString("StorageBook_Descr");
-		break;
-		case "TABBTN_TRADEBOOK":
-			sHeader = XI_ConvertString("TradeBook");
-			sText1 = XI_ConvertString("TradeBook_Descr1");
-		break;
-		case "TABBTN_STATISTIC":
-			sHeader = XI_ConvertString("StatisticsBook");
-			sText1 = XI_ConvertString("StatisticsBook_Descr");
-		break;
-		case "QUEST_TEXT":
-			if (currentTab == 0)
+		case "HELP":
+			switch(currentTab)
 			{
-				sHeader = XI_ConvertString("QuestsBook");
-				sText1 = XI_ConvertString("QuestsBook_Descr");
+				case 0:
+					sHeader = XI_ConvertString("QuestsBook");
+					sText1 = XI_ConvertString("QuestsBook_Descr");
+				break;
+				case 1:
+					sHeader = XI_ConvertString("QuestsLogBook");
+					sText1 = XI_ConvertString("QuestsLogBook_Descr");
+				break;
+				case 2:
+					sHeader = XI_ConvertString("DocsBook");
+					sText1 = XI_ConvertString("DocsBook_Descr");
+				break;
+				case 3:
+					sHeader = XI_ConvertString("CashBook");
+					sText1 = XI_ConvertString("CashBook_Descr1");
+					sText2 = XI_ConvertString("CashBook_Descr2");
+				break;
+				case 4:
+					sHeader = XI_ConvertString("ShipsPlaceBook");
+					sText1 = XI_ConvertString("ShipsPlaceBook_Descr1");
+				break;
+				case 5:
+					sHeader = XI_ConvertString("StorageBook");
+					sText1 = XI_ConvertString("StorageBook_Descr");
+				break;
+				case 6:
+					sHeader = XI_ConvertString("TradeBook");
+					sText1 = XI_ConvertString("TradeBook_Descr1");
+				break;
+				case 7:
+					sHeader = XI_ConvertString("StatisticsBook");
+					sText1 = XI_ConvertString("StatisticsBook_Descr");
+				break;
 			}
-			if (currentTab == 1)
-			{
-				sHeader = XI_ConvertString("QuestsLogBook");
-				sText1 = XI_ConvertString("QuestsLogBook_Descr");
-			}
-			if (currentTab == 2)
-			{
-				sHeader = XI_ConvertString("DocsBook");
-				sText1 = XI_ConvertString("DocsBook_Descr");
-			}
-		break;
-		case "TABLE_CITY":
-				sHeader = XI_ConvertString("StorageBook");
-				sText1 = XI_ConvertString("StorageBook_Descr");
 		break;
 		case "TABLE_GOODS":
 			CloseTooltipNew();
@@ -642,15 +626,14 @@ void ShowInfoWindow()
 			makearef(arCurRow, GameInterface.TABLE_GOODS.(sRow));
 			sGroup = "GOODS";
 			if (!CheckAttribute(arCurRow, "UserData.IDX")) {
-				sHeader = XI_ConvertString("StorageBook");
-				sText1 = XI_ConvertString("StorageBook_Descr");
+				bTooltip = false;
 			} else {
 				iItem = sti(arCurRow.UserData.IDX);
 				sHeader = XI_ConvertString(arCurRow.UserData.ID);
 				sGroupPicture = arCurRow.UserData.ID;
 				picW = 128;
 				picH = 128;
-				sText1  = GetAssembledString(GetConvertStr(arCurRow.UserData.ID + "_descr", "GoodsDescribe.txt"), &Goods[iItem]);
+				sText1  = GetAssembledString(GetGoodDescr(arCurRow.UserData.ID), &Goods[iItem]);
 			}
 		break;
 		case "TABLE_SHIP_PLACE":
@@ -659,8 +642,7 @@ void ShowInfoWindow()
 			sRow = "tr"+nChooseNum;
 			makearef(arCurRow, GameInterface.TABLE_SHIP_PLACE.(sRow));
 			if (!CheckAttribute(arCurRow, "UserData.IDX")) {
-				sHeader = XI_ConvertString("ShipsPlaceBook");
-				sText1 = XI_ConvertString("ShipsPlaceBook_Descr1");
+				bTooltip = false;
 			} else {
 				int chrIdx = sti(arCurRow.UserData.IDX);
 				ref chref = GetCharacter(chrIdx);
@@ -676,14 +658,6 @@ void ShowInfoWindow()
 				sText3 = " ";
 			}
 		break;
-		case "TRADEBOOK_TABLE_CITY":
-			sHeader = XI_ConvertString("TradeBook");
-			sText1 = XI_ConvertString("TradeBook_Descr1");
-		break;
-		case "TRADEBOOK_TABLE_CITY_BY_GOOD":
-			sHeader = XI_ConvertString("TradeBook");
-			sText1 = XI_ConvertString("TradeBook_Descr1");
-		break;
 		case "TRADEBOOK_TABLE_GOODS":
 			CloseTooltipNew();
 			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TRADEBOOK_TABLE_GOODS", 1);
@@ -692,14 +666,12 @@ void ShowInfoWindow()
 		    sGroup = "GOODS";
 			sGroupPicture = "";
 			if (!CheckAttribute(arCurRow, "UserData.IDX")) {
-				sHeader = XI_ConvertString("TradeBook");
-				sText1  = XI_ConvertString("TradeBook_Descr1");
-				sText2  = XI_ConvertString("TradeBook_Descr2");
+				bTooltip = false;
 			} else {
 		    iItem = sti(arCurRow.UserData.IDX);
 			sGroupPicture = arCurRow.UserData.ID;
 		    sHeader = XI_ConvertString(arCurRow.UserData.ID);
-		    sText1  = GetAssembledString(GetConvertStr(arCurRow.UserData.ID + "_descr", "GoodsDescribe.txt"), &Goods[iItem]);
+		    sText1  = GetAssembledString(GetGoodDescr(arCurRow.UserData.ID), &Goods[iItem]);
 			sText2 = XI_ConvertString("TradeBook_Descr3");
 			picW = 128;
 			picH = 128;
@@ -720,7 +692,8 @@ void ShowInfoWindow()
 		break;
 		//<--- sith
 	}
-	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false);
+	if(bTooltip)
+		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false);
 }
 
 void procTabChange()
@@ -1176,11 +1149,11 @@ void FillShipPlaceTable(string _tabName)
 					GameInterface.(_tabName).(row).td4.icon.width  = 40;
 				    GameInterface.(_tabName).(row).td4.icon.height = 40;
 				    GameInterface.(_tabName).(row).td4.icon.offset = "-2, 0";
-					GameInterface.(_tabName).(row).td4.str = GetConvertStr(rCity.id + " Town", "LocLables.txt");
+					GameInterface.(_tabName).(row).td4.str = GetCityName(rCity.id);
 					GameInterface.(_tabName).(row).td4.line_space_modifier = 0.8;	
 					GameInterface.(_tabName).(row).td4.textoffset = "40, 0";
 					
-					GameInterface.(_tabName).(row).td5.str = GetConvertStr(rCity.islandLable, "LocLables.txt");
+					GameInterface.(_tabName).(row).td5.str = GetIslandName(rCity);
 					
 					GameInterface.(_tabName).(row).td6.str = chref.ShipInStockMan.AltDate;
 					
@@ -1274,8 +1247,8 @@ void FillPriceListTown(string _tabName)
 			GameInterface.(_tabName).(row).td1.icon.width  = 40;
 			GameInterface.(_tabName).(row).td1.icon.height = 40;
 			GameInterface.(_tabName).(row).td1.icon.offset = "10, 0";
-			GameInterface.(_tabName).(row).td2.str = GetConvertStr(rCity.id + " Town", "LocLables.txt");
-			GameInterface.(_tabName).(row).td3.str = GetConvertStr(rCity.islandLable, "LocLables.txt");
+			GameInterface.(_tabName).(row).td2.str = GetCityName(rCity.id);
+			GameInterface.(_tabName).(row).td3.str = GetIslandName(rCity);
 			GameInterface.(_tabName).(row).td4.str = GetStorageUsedWeight(refStorage) + " / " + iMaxGoodsStore;
 			GameInterface.(_tabName).(row).td5.str = GetNpcQuestPastMonthParam(chref, "Storage.Date") * sti(chref.MoneyForStorage);
 			cn++;
@@ -1409,8 +1382,8 @@ void TradebookFillPriceListTown(string _tabName)
 			GameInterface.(_tabName).(row).td1.icon.width  = 35;
 		    GameInterface.(_tabName).(row).td1.icon.height = 35;
 		    GameInterface.(_tabName).(row).td1.icon.offset = "13, 2";
-			GameInterface.(_tabName).(row).td2.str = GetConvertStr(cityId + " Town", "LocLables.txt");
-			GameInterface.(_tabName).(row).td3.str = GetConvertStr(rCity.islandLable, "LocLables.txt");
+			GameInterface.(_tabName).(row).td2.str = GetCityName(cityId);
+			GameInterface.(_tabName).(row).td3.str = GetIslandName(rCity);
 			if (CheckAttribute(nulChr, "PriceList." + cityId + ".AltDate"))
 		    {
 		        GameInterface.(_tabName).(row).td4.str = nulChr.PriceList.(cityId).AltDate;
@@ -1784,7 +1757,7 @@ void TradebookFillPriceListByGood(string _tabName, int goodIdx)
 		GameInterface.(_tabName).(row).td1.icon.width  = 35;
 		GameInterface.(_tabName).(row).td1.icon.height = 35;
 		GameInterface.(_tabName).(row).td1.icon.offset = "13, 2";
-		GameInterface.(_tabName).(row).td2.str = GetConvertStr(cityId + " Town", "LocLables.txt");
+		GameInterface.(_tabName).(row).td2.str = GetCityName(cityId);
 		GameInterface.(_tabName).(row).td3.icon.group = "TRADE_TYPE";
 		GameInterface.(_tabName).(row).td3.icon.image = "ico_" + nulChr.PriceList.(cityId).(sGoods).TradeType;
 		GameInterface.(_tabName).(row).td3.icon.offset = "5,2";

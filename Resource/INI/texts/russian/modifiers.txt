@@ -8,5 +8,3 @@ incomingDamageReduction {Защита от урона}
 RangeIncomingDamageReduction {Защита от урона огнестрела}
 Shot_Damage {Урон огнестрела}
 HeadshotDamage {Урон от попадания в голову}
-Grapeshot_Damage {Увеличенный урон при стрельбе картечью}
-Bullet_Damage {Увеличенный урон при стрельбе пулями}

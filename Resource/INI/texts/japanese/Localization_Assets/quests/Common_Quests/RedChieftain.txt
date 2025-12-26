@@ -1,0 +1,7 @@
+RedChieftain_1 {族長}
+RedChieftain_2 {Kanauri}
+RedChieftain_3 {インディアン}
+RedChieftain_4 {カイマン族の}
+RedChieftain_5 {酋長があなたの船を去った！}
+RedChieftain_6 {インディアン}
+RedChieftain_7 {カイマン族の}

@@ -1,0 +1,170 @@
+Node0_title {Gizli sızma}
+Node0_a_a {Şehre, karanlıkta sessizce yanaşıp sızarsın. $rand(Gece liman çürüme, tuz ve ağaç kokar. Bir yerde donanım gıcırdar, bir yelken şaklar; her ses gereğinden fazla yüksek gelir. İskele boyunca ilerler, fenerlerin ışık lekelerine girmemeye çalışırsın.|Gece rıhtımındaki su zift gibi karadır. Fenerlerin köz gibi ışıkları suda zar zor seçilir; derinlik sonsuz görünür. Islak tahtalar ayaklarının altında tok bir gıcırtıyla inler; gürültüyü saklamak için dalganın ritmine uyarak yürüdüğünü fark edersin.|Gece limanı uyumaz — sadece uyuyor numarası yapar. Seni karşılayan çınlayan sessizlik aslında hayat doludur. Karanlıkta denizciler homurdanır, cam şıngırdar, bir kadın kısa bir kahkaha atar. Bir depoda bir yük güm diye düşer; küfürler ve ağustosböceklerinin cırtırtısı duyulur. Her adımda daha emin yürürsün.)}
+Node0_a_b
+{
+Şehrin yarı açık kapılarından sessizce süzülerek içeri girersin.
+$rand(
+Duvarın gölgesinde durur, gözlerinin karanlığa alışmasını beklersin. Kapıların ardında şehir bambaşka sesler çıkarır: parlak, boşluklu ve yankılı; gece sessizliğini yaran uğultular. Bir yerde su damlar, ayak sesleri ve fısıltılar duyulur — şehir yabancı ama canlıdır.|
+Kapının ardındaki gece sokağı boş gibi görünür, ama bu bir aldatmacadır. Hava hışırtılar, uzak sesler, hareket ve dünkü yemek kokularıyla doludur. Duvarlarla bütünleşerek durur ve dinlersin.|
+Kapıdan birkaç adım uzaklaşıp durursun, karanlığa karışırsın. Ay ışığı şehrin üzerine düşerek tuhaf gölgeler yaratır. Bir yerde kepenk çarpar, bir tabela gıcırdar, bir kahkaha duyulur ve hemen gecede kaybolur. Burada bir yabancısın.
+)
+}
+Node0_b_a {$rand(Evler arasında dümdüz uzanan karanlık bir şerit gibi bir ara sokak vardır. Neredeyse hiç ışık düşmez ve oradan şüpheli bir ses de gelmez — ne sesler, ne adımlar, sadece sessizlik ve karanlık.| Solda, duvarlar arasında sıkışmış dar bir sokak uzanır. Zemin seviyesindeki pencereler kepenklerle kapalıdır, kapılar ağır asma kilitlerle kilitlenmiştir ve geçidi aydınlatması gereken fener neredeyse sönmüştür.| Evler arasındaki geçitlerden biri boş ve terk edilmiş görünür. Girişi, örümcek ağlarıyla kaplı fıçılar ve çürümüş çuvallarla doludur. Hatta fare sesleri duyduğunu sanırsın.)}
+Node0_b_b {$rand(Hedefe giden tek ara sokak düzensiz şekilde aydınlatılmıştır: sallanan bir fenerin parlak ışığı duvarlara ve köşelere çarpıp parçalanır, keskin gölgeler bırakır. Çamurun üzerinde taze bot izleri görünür ve derinlerden konuşma kırıntıları gelir. Mekân canlı ve öngörülemez görünür.| Evler arasındaki en yakın geçit uzun ve dolambaçlıdır; pek çok yan kolu ve dönüşü vardır. İçeride çok sayıda loş ışık bulunur — kapanmamış kapı ve kepenklerden ışık sızar.| Meyhaneye giden ara sokak kıvrılıp daralır; zaten sınırlı olan alan sandıklar ve çürük tahtalarla doludur. Duvarlar boyunca düzensiz gölgeler dolaşır; sokağın derinlerinde bir ışık kaynağı hareket ediyormuş gibidir.)}
+Node0_c_a {$rand(Öndeki geniş cadde ıssız bir meydanın etrafından dolaşıp meyhaneye doğru gider. Dükkanlar kapalıdır, kapılar sürgülüdür, fenerler her kuytu köşeyi parlakça aydınlatır.| Geniş cadde dümdüz uzanır; ilerideki her yaya apaçık görünür. Gece vakti azdırlar — yalnızca birkaç ayyaş bu caddenin bittiği meyhaneye doğru sendeleyerek gider.| Geniş cadde tüm şehri boydan boya geçer; zengin evler ve dükkânlarla çevrilidir. Parlak ışık ve seyrek muhafız devriyeleri, akşam gezintisi için güvenli kılar.)}
+Node0_c_b
+{
+$rand(
+Geniş cadde tüm şehri baştan başa geçer ve geç saate rağmen hâlâ canlıdır. Sanki biri hararetle tartışıyormuş gibi gürültü ve uğultu duyarsın.| 
+Geniş cadde, şu anda nöbet değişiminin yapıldığı bir meydanın etrafından dolaşır — bir çavuş, gardiyan sırasının önünde volta atıp onları mevzilerine yerleştirir.| 
+Merkez cadde bu saat için alışılmadık derecede kalabalıktır: limana önemli bir ticaret gemisi gelmiştir ve sokakta muhafızlar ile hamallar gidip gelmektedir.
+)
+}
+Node0_d {Güvenli bir yere hangi yoldan gideceğine karar vermelisin. Gölgelerde saklanarak dar ara sokaklardan mı, yoksa dikkat çekmemeye çalışarak geniş caddeden mi?}
+Node0_a_action {Ara sokaklardan git}
+Node0_b_action {Ana caddelerden gitmek}
+Node0_c_action {Geç olmadan geri dönmek}
+Node1_a {Bir sorun çıkmadan meyhaneye varmayı umarak ara sokağa girersin}
+Node1_b_a
+{
+Birden, sokağın derinliklerinde duvara kurulmuş küçük bir karakol görürsün. Evler arasındaki dar alanda üç muhafız durmaktadır: biri fener tutar, biri sessizliği dinler, üçüncüsü sanki bir işaret bekler gibi karanlığa bakar. Geçidin boşuna kapatılmadığı bellidir.
+Onlardan biri başını hızla kaldırır, uzun süre sana bakar ve gür bir sesle sorar: “Kim var orada?”
+}
+Node1_b_b
+{
+Birden sokağın derinliklerinde hareket ve kısık sesler fark edersin. İki kişi üçüncüyü duvara bastırmıştır: biri yakasından tutar, diğeri ceplerini ustalıkla yoklar. Kurban bağırmadan debelenir; sanki daha büyük belalar çekmekten korkar gibidir.
+Hırsızlardan biri, bir şey hissetmiş gibi aniden döner. Bakışı karanlığı tarar ve senin yönünde durur.
+}
+Node1_b_c
+{
+Birden sokağın derinliklerinden, etin taşa çarpması gibi boğuk bir ses gelir. Ay ışığında bir adamın duvara yaslanıp yavaşça aşağı kaydığını görürsün. Yakınlarda biri diz çökmüş, bıçağı aceleyle koluna silmektedir. Sahneye öyle dalmışsındır ki, botunun hain bir çakıl taşına dokunduğunu fark etmezsin.
+O anda katil donar ve başını sertçe kaldırır. Bakışı karanlığı yarar ve sesin kaynağına kilitlenir. Henüz fark edilmedin, ama yabancı bir varlığı açıkça hissetmiştir.
+}
+Node1_c {Durum hızla tırmanıyor — henüz fark edilmedin, ama bu her an değişebilir. Bir karar vermek gerekiyor.}
+Node1_b_a_reaction {Donup kalmak ve nefesini tutmak}
+Node1_b_a_reaction_log_0 {Soğuk duvara yaslanıp nefesini tutarsın. Gölgeler siluetini parçalar ve muhafızın bakışı ara sokakta kayar, tutunacak bir şey bulamaz. Dayanılmaz bir saniye geçer, sonra bir tane daha, ve gerilim yavaş yavaş dağılır. Sonunda muhafız vazgeçer, bunu farelere ve rüzgâra bağlar ve işlerine geri dönerler.}
+Node1_b_a_reaction_log_1 {Duvara yapışıp kalırsın, ama en kötü anda ayağın ıslak taşta haince kayar. Ses neredeyse duyulmazdır, ama yeterlidir. Muhafız durur, fenerini kaldırır ve ışığı duvarlar ile zeminde yavaşça gezdirir.}
+Node1_b_a_reaction_factor {Özdenetim}
+Node1_b_b_reaction {Alternatif bir yol bulmak}
+Node1_b_b_reaction_log_0 {Evler arasında neredeyse tamamen gölgede kalan dar bir yan geçit fark edersin. Kullanışsız görünür, ama geçilebilir. Duvara yakın durarak sessizce süzülür ve gözden kaybolursun. Soyguncular, birinin yakında olduğundan habersiz, arkada kalır.}
+Node1_b_b_reaction_log_1 {Benzer bir geçit bulursun, ancak çok dar ve dağınıktır. Sıkışarak geçmeye çalışırken, ayağının altında bir şey sessiz ama hain bir sesle oynar. Soyguncu yeniden döner ve bu kez saklanmaya çalıştığın yere doğrudan bakar. Bir dolambaç var, ama artık risksiz kullanmak mümkün değildir.}
+Node1_b_b_reaction_factor {Gizli patikalar}
+Node1_b_c_reaction {Bir taş atıp katilin dikkatini dağıtmak}
+Node1_b_c_reaction_log_0 {Karanlıkta küçük bir taş bulur ve dikkatlice kendinden uzağa fırlatırsın. Taş duvara kuru bir tıkırtıyla çarpar. Katil sesin geldiği yöne doğru aniden döner ve bir anlığına ara sokak onun dikkatinden kurtulur.}
+Node1_b_c_reaction_log_1 {Taşı fırlatırsın, ama binanın köşesine çarparak tamamen başka bir yöne seker. Ses fazlasıyla yakındır. Katil karanlığa daha da dikkatle bakar. Sanki seni duymak için nefesini bile tutmuştur.}
+Node1_b_c_reaction_factor {Dikkat dağıtma}
+Node1_a_action {Sessizce geçmek}
+Node1_b_action {Tamamen sessiz hareket edebilirim}
+Node1_success
+{
+Fark edilmeden sıyrılmayı başarırsın, ara sokaklarda dolanarak sonunda güvenli bir yere — şehir meyhanesine — ulaşırsın.
+$rand(
+Gergin gece şehri geri çekilir, yerini sıcak ışığa ve seslerin uğultusuna bırakır. Burada güvendesin.|
+Ara sokaklar, temkinli bakışlar ve gece sesleriyle birlikte geride kalır. Meyhane kapısında şehir yeniden gürültülü ve kayıtsız olur — buradan çıkan artık düşman sayılmaz.
+)
+}
+Node1_success_action {Harika!}
+Node2_a {Dikkat çekmeden meyhaneye ulaşmayı umarak geniş bir caddeye çıkıyorsun.}
+Node2_b_a {$rand(Başta her şey yolunda gider|Başta her şey sakin görünür), ancak yolun ortasında bir şehir devriyesiyle karşılaşırsın. İki muhafız ağır adımlarla yürüyüp alçak sesle konuşurken, üçüncüsü biraz geride kalıp sokağı dikkatle süzer. Yolunu kesmezler ya da işaret vermezler, fakat içlerinden birinin bakışı normalden uzun süre üzerinde kalır; sanki bu gece manzarasına uyup uymadığını tartıyordur.}
+Node2_b_b
+{
+Neredeyse tüm yolu sorunsuz geçersin, fakat tam sonunda beklenmedik bir engelle karşılaşırsın.
+Sokağın ortasında sarhoş bir $rand(denizci|işçi) grubu durmaktadır. Yüksek sesle güler, şarkı söylerler, biri kart oynar.
+İçlerinden biri seni fark edip gözlerini kısar, sanki senden olup olmadığını tartar; diğerleri ise yavaş yavaş yaklaşarak seni çevirir. Grup dağılmaya niyetli değildir ve gerilim artar.
+}
+Node2_b_c
+{
+Yolun ancak üçte birini katetmişken, aniden küçük ve renkli bir grupla burun buruna gelirsin: iyi giyimli bir asilzade, yerel genelevden iki kurtizan ve ellerinde fener taşıyan bir hizmetkâr.
+Yavaş ve kayıtsız adımlarla yürür, güler ve sohbet ederler; tüm sokak sanki onların varlığına uyum sağlar.
+Yaklaştığında asilzadenin değerlendiren bakışı üzerinde gezinir. Kurtizanlar gülmeyi bırakıp seni dikkatle süzer, hizmetkâr ise donar.
+Sende bir şey, yabancı olduğunu ele verir.
+}
+Node2_c {Fazla dikkat çekmeden meyhaneye ulaşman gerekiyor.}
+Node2_b_a_reaction {Meyhanenin yolunu sormak}
+Node2_b_a_reaction_log_0
+{
+Fener ışığında görünecek kadar yaklaşıp sakin bir sesle meyhaneye nasıl gidileceğini sorarsın.
+Muhafızlardan biri homurdanarak bir şeyler söyler, ama yine de yönü gösterir ve yakın bir işaret noktası tarif eder.
+}
+Node2_b_a_reaction_log_1
+{
+Soruyu sorduğun anda muhafızlar arasındaki konuşma yarıda kesilir. Boğucu bir sessizlikte devriye seni dikkatle süzer.
+Birkaç eziyetli saniyenin ardından muhafızlardan biri sonunda cevap verir ve yolu gösterir. Sen uzaklaşırken, onlar bakışlarını uzun süre üzerinden çekmez.
+}
+Node2_b_a_reaction_factor {Yolunu kaybetmiş}
+Node2_b_b_reaction {Bir denizci şarkısı söylemek}
+Node2_b_b_reaction_log_0 {Şarkıya karışmak için doğru anı yakalar ve tanıdık bir nakaratı kısık sesle söylemeye başlarsın. Gerginlik hızla dağılır: biri omzuna vurur, biri eline bir kupa tutuşturur. Birkaç kıta sonra, onaylayıcı tezahüratlar eşliğinde yoluna devam edersin.}
+Node2_b_b_reaction_log_1 {Şarkıya karışmak için doğru anı bulmaya çalışırsın, ancak sözleri karıştırır ve falsolu söylersin. Kahkahalar ıslıklara dönüşür; bir sarhoş kavga çıkarmaya bile yeltenir, ama zamanında durdurulur. Aceleyle geri çekilirsin ve çıkardığın gürültü kesinlikle istenmeyen dikkati çekecektir.}
+Node2_b_b_reaction_factor {Şanti}
+Node2_b_c_reaction {Asilzadeye şarap ikram etmek}
+Node2_b_c_reaction_log_0
+{
+Topluluğun genel havasına ayak uydurursun: bir gülümseme, kısa bir söz, bir el hareketi — sanki bu gece yürüyüşünün başından beri bir parçasıymışsın ve sadece hemen tanınmamışsın. Asilzade güler ve sana başını sallar, sanki seni nereden gördüğünü yeni hatırlamış gibi. Kurtizanlar da tonu yakalar ve sohbet yeniden hafif ve kaygısız akar.
+Şarap içmeyi ve meyhaneye gitmeyi önerirsin, ancak bu grubun açıkça başka planları vardır. Hizmetkâr feneri yana çevirir ve onlar oyalanmadan uzaklaşır.
+}
+Node2_b_c_reaction_log_1
+{
+Neşeli tonu sürdürmeye çalışırsın, ancak çok sert bir karşılık alırsın. Asilzade kıyafetin hakkında yüksek sesle alaycı bir laf eder; sanki böyle giysilerin düzgün yerlerde giyilebileceğine inanamıyormuş gibi vurgular. Kurtizanlar kahkahalarla güler ve ona daha da yaklaşır.
+Şarap teklif edersin, ancak asilzade sertçe elini sallar. Kendini sarhoş edip birtakım serseriler tarafından soyulmaya niyeti olmadığını yüksek sesle ilan eder. Sesi sokakta yankılanır, hizmetkâr feneri daha yükseğe kaldırıp yüzünü aydınlatır ve bu fazlasıyla gereksiz dikkat çeker.
+}
+Node2_b_c_reaction_factor {Seçkin çevre}
+Node2_a_action {Meyhaneye ulaşmaya çalışmak}
+Node2_b_action {Birindenmişim gibi davranmakta çok iyiyim}
+Node2_c_action {Bir sorun çıkarsa diye ticaret lisansım var}
+Node2_success
+{
+Işıklandırılmış sokaklardan ilerleyip hiçbir yerde gerekenden fazla oyalanmadan meyhaneye ulaşırsın. Kapılar arkandan kapanır ve gece şehrini dışarıda bırakır.
+$rand(
+Sokağın uğultusu salonun gürültüsüyle, yemek ve içki kokularıyla kaybolur. Burada kim olduğun ya da nereden geldiğin kimsenin umurunda değildir — sadece bir müşteri daha olursun.|
+Geniş caddeler, yabancı bakışlar ve gereksiz ilgiyle birlikte dışarıda kalır. Meyhanenin içinde şehir yeniden kayıtsızlaşır ve bundan sonra sen arka planın bir parçasısın.
+)
+}
+Node2_success_action {Harika!}
+Node3_a
+{
+Neredeyse meyhaneye varmışken muhafızlar yolunu keser. Farklı yönlerden çıkarak yarım daire oluştururlar; sanki görünmez bir mengeneyle etrafını sıkıyorlardır. Bir şey seni ele vermiştir ve her adımında hissettiğin takip edilme duygusu sonunda somutlaşır.
+
+Sakin ve kendinden emin adımlarla ilerler, eşit mesafeyi korurlar; sanki fazla baskı uygulamamaya özen gösterirler. Bazıları silahlarını tutmaktadır, ancak henüz kaldırmazlar.
+
+Birkaç adım önünde muhafızlar durur ve bir çavuş öne çıkar. Elini kaldırır ve kimlik tespiti için seni karakola gitmeye davet eder.
+}
+Node3_b_a {Çavuşun sesi uykulu ve kararsızdır; sürekli arkasında duran beyaz saçlı muhafıza — belli ki akıl hocasına — bakıp durur. Muhtemelen çavuş sadece göze girmek istiyordur.}
+Node3_b_b {Çavuşun arkasındaki muhafızlar esner ve gözlerini ovuşturur — belli ki onları az önce, gecenin ortasında kışladan kaldırmışlardır. Uyku yerini huzursuzluğa bırakır.}
+Node3_b_c {Çavuş “karakol” dediğinde saftaki iki kişi birbirine bakar. Biri neredeyse fark edilmez bir şekilde başını sallar, diğeri çenesini sıkar. Belli ki her şeyin sessizce ve hızlıca, uzun sorgular ya da sahneler olmadan bitmesini istiyorlar. Belki de gözaltın yasa dışıdır.}
+Node3_c_a {Meyhanenin girişinde birden tanıdık yüzler görürsün — birkaç müdavim hava almak için dışarı çıkmıştır ve onların tanıdığın kaçakçılar olduğunu hemen anlarsın. Geçmişte onlarla birkaç iş yapmıştın ve şimdi bu durum lehine işleyebilir.}
+Node3_c_b {Birden meyhanenin penceresi kırılır ve içinden bir sandalye fırlar. Bağırışlar ve küfürler duyarsın. Muhafızlar refleksle o yöne döner, sonra tekrar sana bakar. Havada sessiz bir soru asılı kalır.}
+Node3_c_c {Aniden meyhaneden iyi giyimli iki adam çıkar. Yüksek sesle tartışırlar ve belli ki bir meseleyi kan dökerek çözmeye niyetlidirler. Birkaç iğneleyici sözden sonra biri rapierini, diğeri tabancasını çıkarır.}
+Node3_d {Hâlâ bir fırsat penceresi varken harekete geçmelisin.}
+Node3_b_a_reaction {Çavuşun otoritesini güçlendirmek}
+Node3_b_a_reaction_log
+{
+Çavuşa özellikle saygılı bir şekilde hitap eder ve dikkati için teşekkür edersin. Her türlü emri yerine getirmeye hazır olduğunu söylersin, ancak önce geceyi geçirmenize izin verilmesini rica edersin.
+Belirgin şekilde yumuşar.
+}
+Node3_b_a_reaction_factor {Yasaya saygı}
+Node3_b_b_reaction {Yorgunluktan faydalanmak}
+Node3_b_b_reaction_log {Muhafızların ruh hâlini kolayca sezer ve ona uyum sağlarsın. Bu geceki yanlış anlaşılmanın burada ve şimdi, karakol ve evrak işleriyle vakit kaybetmeden çözülebileceğini sakin bir şekilde söylersin. Muhafızların yüzlerinde bir rahatlama gölgesi belirir.}
+Node3_b_b_reaction_factor {Rüzgâr gülü}
+Node3_b_c_reaction {Yasaya dayanmak}
+Node3_b_c_reaction_log {Sakin bir tonla gözaltının gerekçeye dayanması gerektiğini belirtir ve yasanın sınırları içinde kalarak tüzüğe uygun hareket etmeyi önerirsin.}
+Node3_b_c_reaction_factor {Kuralcılık}
+Node3_c_a_reaction {Kaçakçıları seslenmek}
+Node3_c_a_reaction_log_0 {Kaçakçıları seslenirsin. Seni süzerler ve birkaç saniye sonra gülümserler. Bu insanlar muhafızlarla muhatap olmanın nasıl sonuçlanabileceğini iyi bilir ve seni sıcak bir şekilde selamlar. Muhafızlar biraz yumuşar.}
+Node3_c_a_reaction_log_1 {Kaçakçıları seslenirsin ama karşılık vermezler. Onlardan biri sana kısa bir bakış atıp yere tükürür ve meyhaneye girer. Diğeri onu takip eder. Ya seni hatırlamamışlardır ya da seninle uğraşmak istememişlerdir. Her hâlükârda muhafızların gözünde daha da şüpheli görünürsün.}
+Node3_c_a_reaction_factor {Karanlık işler}
+Node3_c_b_reaction {Dikkati meyhaneye yönlendirmek}
+Node3_c_b_reaction_log {Kendin gibi barışçıl bir tüccarın kamu düzeni için tehdit oluşturmadığını, buna karşılık meyhanedeki kargaşanın kendiliğinden dinmeyeceğini söylersin. Ne kadar uzarsa sonuçları o kadar kötü olur. Muhafızlara önce kavgayla ilgilenmelerini, karakol işini sabaha bırakmalarını önerirsin. Çavuş derin düşüncelere dalar.}
+Node3_c_b_reaction_factor {Kargaşa}
+Node3_c_c_reaction {Düzene çağırmak}
+Node3_c_c_reaction_log {Şehir sınırları içinde düelloyu yasaklayan yasaya atıfta bulunur ve düellocuları düzene çağırırsın. Azarın sırasında neredeyse fark ettirmeden muhafızların desteğini alırsın ve artık sana belirgin şekilde daha sıcak davranırlar.}
+Node3_c_c_reaction_factor {Düelloya müdahale etmek}
+Node3_a_action {Durumu yumuşatmaya çalışmak}
+Node3_b_action {Çavuşa korkunç bir hata yapıldığını söylemek}
+Node3_success
+{
+Çavuş bir an daha tereddüt eder, ardından sertçe başını sallar ve kısa bir emir verir. Muhafızlar dönüp kenara çekilir, mevzilerine dağılır. Yarım daire çözülür, adımlar uzaklaşır, sesler gece gürültüsüne karışır.
+Oyalanmazsın. Birkaç hızlı adım — ve meyhane kapısı arkandan kapanır. İçerisi sıcak, dar ve gürültülüdür; dışarıda kalan her şey bir anda önemini yitirir.
+}
+Node3_success_action {Harika!}
+Node3_fail {Muhafızların sabrı tükenir. Çavuş konuşmayı sertçe keser ve eliyle işaret verir. Yarım daire daralır, biri omzunla çarpar, biri kolundan yakalar. Yakalandığını ve geri dönüş olmadığını anlarsın. Kan dökerek şehirden çıkman gerekecek.}
+Node3_fail_action {Savaşa!}

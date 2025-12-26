@@ -1,0 +1,33 @@
+Slavetrader_1 {탐험 모드: 타이머 연장됨. 퀘스트를 완료하세요!}
+Slavetrader_2 { }
+Slavetrader_3 { }
+Slavetrader_4 { }
+Slavetrader_5 { }
+Slavetrader_6 { }
+Slavetrader_7 { }
+Slavetrader_8 {Nabukee}
+Slavetrader_9 {Anaconda}
+Slavetrader_10 {카라카스 출신}
+Slavetrader_11 {쿠마나 출신}
+Slavetrader_12 {Fransua}
+Slavetrader_13 {Gontier}
+Slavetrader_14 {간주함}
+Slavetrader_15 {간주됨}
+Slavetrader_16 {바베이도스 해안에서}
+Slavetrader_17 {과들루프 해안에서}
+Slavetrader_18 {산티아고 근처}
+Slavetrader_19 {아바나 근처}
+Slavetrader_20 {토르투가 해안에서}
+Slavetrader_21 {트리니다드 해안에서}
+Slavetrader_22 {세인트 크리스토퍼 해안에서}
+Slavetrader_23 {산토도밍고 근처}
+Slavetrader_24 {포르토프랭스 근처}
+Slavetrader_25 {카르타헤나 근처}
+Slavetrader_26 {Tamango}
+Slavetrader_27 { }
+Slavetrader_28 {Sven}
+Slavetrader_29 {Carlson}
+Slavetrader_30 {Janna}
+Slavetrader_31 {Mollery}
+Slavetrader_32 {Izaura}
+Slavetrader_33 { }

@@ -1,0 +1,9 @@
+FalseTrace_1 {Adam}
+FalseTrace_2 {Rayner}
+FalseTrace_3 {fleyt '@<pchar.questTemp.FalseTrace.ShipName>'}
+FalseTrace_4 {Adam Rayner bir sandalı çalıp karısıyla kaçtı!}
+FalseTrace_5 {Cockeyed}
+FalseTrace_6 {Solly}
+FalseTrace_7 {altın cevherli fleut}
+FalseTrace_8 {Katerine}
+FalseTrace_9 {Rayner}

@@ -338,16 +338,6 @@ void ShowInfoWindow()
 		    sText1  = GetRPGText("Ship_abilities");
 		    sText3  = GetRPGText("Abilities_active");
 		break;
-		case "TABLE_PERKS":
-		    sHeader = XI_ConvertString("Personal abilities");
-		    sText1  = GetRPGText("Personal_abilities");
-		    sText3  = GetRPGText("Abilities_active");
-		break;
-		case "TABLE_PERKS2":
-		    sHeader = XI_ConvertString("Ship abilities");
-		    sText1  = GetRPGText("Ship_abilities");
-		    sText3  = GetRPGText("Abilities_active");
-		break;
 		case "PERK_TABLE_NEED":
 		    sHeader = GetRPGText("PERK_TABLE_NEED");
 		    sText1  = GetRPGText("PERK_TABLE_NEED_desc");

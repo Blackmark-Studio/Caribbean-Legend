@@ -116,7 +116,7 @@ void ProcessDialogEvent()
 				link.l2.go = "arest_1";
 				break;
             }
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+			if (false)
 			{
     			dialog.text = "Une effraction ! Gardes ! Alerte ! Meurtre !";
 				link.l1 = "Merde !";
@@ -904,7 +904,7 @@ void ProcessDialogEvent()
                 if (CheckAttribute(aData, "PlayerHelpMayor") && sti(aData.PlayerHelpMayor) == true
                 && CheckAttribute(aData, "HelpColony") && sti(aData.HelpColony) == true )
                 {
-                    AddMoneyToCharacter(Pchar,(sti(aData.iSquadronPower)*3000));
+                    AddMoneyToCharacter(Pchar,(sti(aData.iSquadronPower)*1500));
                     ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 20);
                     ChangeCharacterComplexReputation(pchar,"nobility", 10);
                     AddCharacterExpToSkill(GetMainCharacter(), "Leadership", 180);
@@ -1048,7 +1048,7 @@ void ProcessDialogEvent()
                 if (CheckAttribute(aData, "PlayerHelpMayor") && sti(aData.PlayerHelpMayor) == true
                 && CheckAttribute(aData, "HelpColony") && sti(aData.HelpColony) == true )
                 {
-                    AddMoneyToCharacter(Pchar,(sti(aData.iSquadronPower)*3000));
+                    AddMoneyToCharacter(Pchar,(sti(aData.iSquadronPower)*1500));
                     ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 20);
                     ChangeCharacterComplexReputation(pchar,"nobility", 10);
                     AddCharacterExpToSkill(GetMainCharacter(), "Leadership", 180);
@@ -1751,114 +1751,253 @@ void ProcessDialogEvent()
 				}
 				break;
 			}
-			sTemp = npchar.city;
-			//занят ПГГ
-			i = CheckAvailableTaskForNPC(NPChar, PGG_TASK_WORKONMAYOR);
-			if (i != -1)
+			else
 			{
-				dialog.text = "Hélas, aujourd'hui je n'ai pas de travail pour toi. Le dernier a été fait par "+GetFullName(&Characters[i])+" Reviens demain, peut-être que quelque chose apparaîtra.";
-				link.l1 = "Oh, diable ! Pas de chance...";
+				if(sti(pchar.reputation.nobility) > 41) {dialog.text = "Je combats l’illégalité de toutes mes forces sur les terres qui m’ont été confiées, et j’ai toujours une mission pour les capitaines dignes de ce nom, comme vous. Dans quel type de tâches souhaitez-vous vous illustrer ?";}
+				else {dialog.text = "Je fais tout mon possible pour maintenir l’ordre sur les terres qui m’ont été confiées, et même pour quelqu’un avec une réputation comme la vôtre, capitaine, j’ai une mission. Dans quel type de tâches souhaitez-vous mettre vos talents à profit ?";}
+				link.l1 = "Je voudrais me concentrer sur les affaires internes de la colonie et des territoires avoisinants.";
+				link.l1.go = "GovQuestGroup1";
+				link.l2 = "Je préfère participer à des opérations menées au-delà de vos possessions.";
+				link.l2.go = "GovQuestGroup2";
+				link.l3 = "Je suis intéressé par des missions risquées pouvant influencer les relations internationales et renforcer la position de "+ NationNameGenitive(sti(NPChar.nation))+".";
+				link.l3.go = "GovQuestGroup3";
+				link.l4 = "Je vous prie de m’excuser — je ne souhaite pas accepter d’engagements pour le moment.";
+				link.l4.go = "exit";
+			}
+		break;	
+		
+		case "GovQuestGroup1":
+			// Группа 1 - Местные
+			if (CheckAttribute(npchar, "work_date") && GetNpcQuestPastDayParam(npchar, "work_date") <= 1)
+			{
+				dialog.text = RandPhraseSimple("Je n’ai pas de travail de ce genre pour vous aujourd’hui. Revenez demain, peut-être...", 
+						"Hélas, je n’ai actuellement aucune mission de ce type. Revenez plus tard, dans un jour ou deux.", 
+						"Je ne peux pas vous charger de quoi que ce soit de ce genre aujourd’hui. Je serai heureux de vous revoir un autre jour.");
+				link.l1 = RandPhraseSimple("Pitié...","Ah, quel dommage, "+GetAddress_FormToNPC(NPChar)+". ");
 				link.l1.go = "exit";
 				break;
 			}
-//navy <--
-			if (!CheckAttribute(npchar, "work_date") || GetNpcQuestPastDayParam(npchar, "work_date") > 2 || bBettaTestMode)
-    		{	
-				SaveCurrentNpcQuestDateParam(npchar, "work_date");
-				if(CheckAttribute(pchar, "questTemp.StatusCity") && pchar.questTemp.StatusCity == npchar.city)
-				{
-					dialog.text = "Vous arrivez juste à temps, capitaine. Je dois résoudre un problème urgent lié à la contrebande de marchandises vers notre colonie. Je suppose que votre navire est en état de naviguer et prêt au combat.";
-					link.l1 = "Mon navire est toujours prêt pour la mer et apte au combat. Je vous en prie, dites-m'en plus sur la mission à venir, votre grâce.";
-					link.l1.go = "CustomPatrol";
-					break;
-				}
-				if (rand(5) > 4 && !bBettaTestMode && pchar.location == "Panama_townhall") // patch-5
-				{
-					dialog.text = LinkRandPhrase("Pour l'instant, je n'ai pas de travail pour vous. Revenez demain, je suppose...","Hélas, je n'ai pas de travail pour vous aujourd'hui. Revenez dans un jour ou deux, s'il vous plaît.","Aujourd'hui, je n'ai rien à vous proposer. Je serai ravi de vous voir un autre jour.");
-					link.l1 = "Je comprends, "+GetAddress_FormToNPC(NPChar)+".";
-					link.l1.go = "exit";
-				}
-				else
-				{
-					sTemp = GetSpyColony(npchar);
-					// не даём задание пробраться во вражеский город, если у нации ГГ нет врагов
-					if (sTemp == "none")
-						i = 1 + hrand(6);
-					else
-						i = hrand(7);
-					switch (i)
+			pchar.GenQuest.Governor.Group1.index = hrand(2);
+			i = pchar.GenQuest.Governor.Group1.index;
+			switch (i)
+			{
+				case 0: // Отказ
+					dialog.text = RandPhraseSimple("Je n’ai pas de travail de ce genre pour vous aujourd’hui. Revenez demain, peut-être...", 
+						"Hélas, je n’ai actuellement aucune mission de ce type. Revenez plus tard, dans un jour ou deux.", 
+						"Je ne peux pas vous charger de quoi que ce soit de ce genre aujourd’hui. Je serai heureux de vous revoir un autre jour.");
+				link.l1 = RandPhraseSimple("Pitié...","Ah, quel dommage, "+GetAddress_FormToNPC(NPChar)+". ");
+				link.l1.go = "exit";
+				break;
+						
+				case 1: // Таможенный патруль
+					if (CheckAttribute(pchar, "GenQuest.Governor.Group1.day") && sti(pchar.GenQuest.Governor.Group1.day) == GetDataDay())
 					{
-						//========== пробраться во вражеский город ============//Jason: оставляем, как годный
-						case 0:
-							pchar.GenQuest.Intelligence.Terms = hrand(10) + (42 - MOD_SKILL_ENEMY_RATE); //сроки выполнения задания
-							pchar.GenQuest.Intelligence.Money = ((hrand(4) + 6) * 2000) + (sti(pchar.rank) * 1000 + 10000); //вознаграждение
-							pchar.GenQuest.Intelligence.City = sTemp; //враждебная колония
-                            sTemp = ", which is on " + XI_ConvertString(colonies[FindColony(pchar.GenQuest.Intelligence.City)].islandLable+"Dat");                         
-							dialog.text = "J'ai une mission pour vous, qui comporte des risques sérieux. J'ai besoin que vous vous infiltriez dans "+XI_ConvertString("Colony"+pchar.GenQuest.Intelligence.City+"Acc")+sTemp+", rencontre une certaine personne là-bas, puis remets-moi ce qu'il te donnerait.";
-							link.l1 = "Hmm, je ne pense pas que dans "+XI_ConvertString("Colony"+pchar.GenQuest.Intelligence.City+"Dat")+" Je serai un invité bienvenu...";
-							link.l1.go = "Intelligence";
-						break;
-						//========== квест уничтожения банды ============ //Jason: оставляем, как классику
-						case 1:
-							pchar.GenQuest.DestroyGang.Terms = hrand(2) + 2; //сроки выполнения задания
-							pchar.GenQuest.DestroyGang.Money = ((hrand(6)+4)*500)+(sti(pchar.rank)*300+2000); //вознаграждение
-							makearef(arName, pchar.GenQuest.DestroyGang);
-							arName.nation = PIRATE;
-							arName.sex = "man";
-							SetRandomNameToCharacter(arName); //имя бандита в структуру квеста	
-							dialog.text = "Je viens d'avoir une mission pour vous. Dans la jungle près de "+XI_ConvertString("Colony"+npchar.city+"Gen")+" une bande de brigands est apparue, et je sais que le chef de cette bande se nomme "+GetFullName(arName)+". Localisez et éliminez cette bande de vauriens.";
-							link.l1 = "Suis-je d'une manière ou d'une autre limité dans les termes ?";
-							link.l1.go = "DestroyGang";
-						break;
-						
-						//========== контркурьер - отобрать почту ============
-						case 2:
-							dialog.text = "Oui, j'ai une mission pour vous. Pour l'accomplir, vous devrez faire preuve de rapidité et aussi d'une certaine habileté au combat naval. Êtes-vous prêt à prouver votre valeur ?";
-							link.l1 = "Votre Grâce, pouvez-vous révéler plus de détails sur la mission ?";
-							link.l1.go = "TakePostcureer";
-						break;
-						
-						//========== контрфрахт - потопить корабль с боеприпасами ============
-						case 3:
-							dialog.text = "Oui, j'ai une mission pour vous. Pour l'accomplir, vous devrez faire preuve d'une galanterie exceptionnelle et aussi d'une certaine compétence en combat naval. Êtes-vous prêt à prouver votre valeur ?";
-							link.l1 = "Votre Grâce, pouvez-vous révéler plus de détails sur la mission à venir ?";
-							link.l1.go = "TakeArsenalship";
-						break;
-						//========== ОЗГ - охотник на пирата ============
-						case 4:
-							dialog.text = "Oui, j'ai une mission importante pour vous. Pour l'accomplir, vous devrez utiliser toutes vos compétences. Cela implique des pirates...";
-							link.l1 = "Des pirates ? Pouvez-vous me dire plus en détail ce qui est attendu de moi, alors ?";
-							link.l1.go = "TakePirateship";
-						break;
-						//========== ОЗГ - охотник на пассажира ============
-						case 5:
-							dialog.text = "Vous arrivez à point nommé, monsieur. J'ai une mission urgente qui vous conviendra parfaitement. Elle implique de traquer et capturer une certaine personne...";
-							link.l1 = "Une chasse à l'homme ? Pouvez-vous me dire plus en détail ce qu'on attend de moi ?";
-							link.l1.go = "TakePassenger";
-						break;
-						//========== Патруль - таможенник ============
-						case 6:
-							dialog.text = "Vous arrivez à temps, capitaine. Je dois régler un problème urgent lié à la contrebande de marchandises vers notre colonie. Je suppose que votre navire est en bon état et prêt pour le combat ?";
-							link.l1 = "Mon navire est toujours prêt pour la mer et prêt pour la bataille. Je vous prie, parlez-moi davantage de la mission à venir, votre grâce.";
-							link.l1.go = "CustomPatrol";
-						break;
-							//========== Найти дезертира ============
-						case 7:
-							dialog.text = "J'ai une mission pour vous qui implique de visiter plusieurs colonies dans les Caraïbes. Êtes-vous prêt pour un long voyage ?";
-							link.l1 = "Oui, mes hommes et moi sommes prêts à partir sur-le-champ. Que devrai-je faire exactement ?";
-							link.l1.go = "FindFugitive";
+						dialog.text = "Vous avez changé d’avis, capitaine ? Les contrebandiers sont toujours en liberté et n’ont probablement pas renoncé à leurs intentions.";
+						link.l1 = "Je vous prie de me rappeler les détails de cette mission, Votre Grâce.";
+						link.l1.go = "CustomPatrol";
+						link.l2 = RandPhraseSimple("Je suis désolé, mais je ne suis pas prêt à accomplir cette mission pour le moment.", 
+							"Je regrette, mais je ne suis pas en mesure d’exécuter cette tâche pour l’instant.", 
+							"Veuillez m’excuser — je ne suis toujours pas prêt à entreprendre cette mission.");
+						link.l2.go = "exit";
 						break;
 					}
-				}
+					dialog.text = "Vous arrivez à temps, capitaine. Je dois régler un problème urgent lié à la contrebande de marchandises vers notre colonie. Je suppose que votre navire est en bon état et prêt pour le combat ?";
+					link.l1 = "Mon navire est toujours prêt pour la mer et prêt pour la bataille. Je vous prie, parlez-moi davantage de la mission à venir, votre grâce.";
+					link.l1.go = "CustomPatrol";
+				break;
+						
+				case 2: // Уничтожение банды
+					if (CheckAttribute(pchar, "GenQuest.Governor.Group1.day") && sti(pchar.GenQuest.Governor.Group1.day) == GetDataDay())
+					{
+						dialog.text = "Alors vous avez finalement décidé d’éliminer les bandits, capitaine ? Hélas, ils menacent toujours le bien-être de notre colonie.";
+						link.l1 = "Je vous prie de me rappeler les détails de cette mission, Votre Grâce.";
+						link.l1.go = "DestroyGang";
+						link.l2 = RandPhraseSimple("Je suis désolé, mais je ne suis pas prêt à accomplir cette mission pour le moment.", 
+							"Je regrette, mais je ne suis pas en mesure d’exécuter cette tâche pour l’instant.", 
+							"Veuillez m’excuser — je ne suis toujours pas prêt à entreprendre cette mission.");
+						link.l2.go = "exit";
+						break;
+					}
+					pchar.GenQuest.DestroyGang.Terms = hrand(2) + 2;
+					pchar.GenQuest.DestroyGang.Money = ((hrand(6)+4)*500)+5000+(sti(pchar.rank)*500);
+					makearef(arName, pchar.GenQuest.DestroyGang);
+					arName.nation = PIRATE;
+					arName.sex = "man";
+					SetRandomNameToCharacter(arName);
+					dialog.text = "Je viens d'avoir une mission pour vous. Dans la jungle près de "+XI_ConvertString("Colony"+npchar.city+"Gen")+" une bande de brigands est apparue, et je sais que le chef de cette bande se nomme "+GetFullName(arName)+". Localisez et éliminez cette bande de vauriens.";
+					link.l1 = "Suis-je d'une manière ou d'une autre limité dans les termes ?";
+					link.l1.go = "DestroyGang";
+				break;
 			}
-			else
-			{
-				dialog.text = LinkRandPhrase("Aujourd'hui, je ne peux vous proposer aucun travail.","Aujourd'hui, il n'y a plus de travail pour vous.","Plus de travail pour aujourd'hui, désolé. Revenez demain, et nous verrons...");
-				link.l1 = RandPhraseSimple("Pitié...","Ah, quel dommage, "+GetAddress_FormToNPC(NPChar)+". ");
-        		link.l1.go = "exit";
-			}
-		//---------------------------- генератор квестов мэра -------------------------------
 		break;
+
+		case "GovQuestGroup2":
+			// Группа 2 - За границами острова, но не государственные
+			if (CheckAttribute(npchar, "work_date") && GetNpcQuestPastDayParam(npchar, "work_date") <= 1)
+			{
+				dialog.text = RandPhraseSimple("Je n’ai pas de travail de ce genre pour vous aujourd’hui. Revenez demain, peut-être...", 
+						"Hélas, je n’ai actuellement aucune mission de ce type. Revenez plus tard, dans un jour ou deux.", 
+						"Je ne peux pas vous charger de quoi que ce soit de ce genre aujourd’hui. Je serai heureux de vous revoir un autre jour.");
+				link.l1 = RandPhraseSimple("Pitié...","Ah, quel dommage, "+GetAddress_FormToNPC(NPChar)+". ");
+				link.l1.go = "exit";
+				break;
+			}
+			pchar.GenQuest.Governor.Group2.index = hrand(3);
+			i = pchar.GenQuest.Governor.Group2.index;
+			switch (i)
+			{
+				case 0: // Нет заданий
+					dialog.text = RandPhraseSimple("Je n’ai pas de travail de ce genre pour vous aujourd’hui. Revenez demain, peut-être...", 
+							"Hélas, je n’ai actuellement aucune mission de ce type. Revenez plus tard, dans un jour ou deux.", 
+							"Je ne peux pas vous charger de quoi que ce soit de ce genre aujourd’hui. Je serai heureux de vous revoir un autre jour.");
+					link.l1 = RandPhraseSimple("Pitié...","Ah, quel dommage, "+GetAddress_FormToNPC(NPChar)+". ");
+					link.l1.go = "exit";
+				break;
+						
+				case 1:  // ОЗГ - захватить пассажира
+					if (CheckAttribute(pchar, "GenQuest.Governor.Group2.day") && sti(pchar.GenQuest.Governor.Group2.day) == GetDataDay())
+					{
+						dialog.text = "Vous avez décidé de ne pas laisser passer l’occasion de faire vos preuves ? J’ai besoin de ce vaurien vivant — et le plus vite possible.";
+						link.l1 = "Je vous prie de me rappeler les détails de cette mission, Votre Grâce.";
+						link.l1.go = "TakePassenger";
+						link.l2 = RandPhraseSimple("Je suis désolé, mais je ne suis pas prêt à accomplir cette mission pour le moment.", 
+							"Je regrette, mais je ne suis pas en mesure d’exécuter cette tâche pour l’instant.", 
+							"Veuillez m’excuser — je ne suis toujours pas prêt à entreprendre cette mission.");
+						link.l2.go = "exit";
+						break;
+					}
+					dialog.text = "Vous arrivez à point nommé, monsieur. J'ai une mission urgente qui vous conviendra parfaitement. Elle implique de traquer et capturer une certaine personne...";
+					link.l1 = "Une chasse à l'homme ? Pouvez-vous me dire plus en détail ce qu'on attend de moi ?";
+					link.l1.go = "TakePassenger";
+				break;
+						
+				case 2: // Найти дезертира
+					if (CheckAttribute(pchar, "GenQuest.Governor.Group2.day") && sti(pchar.GenQuest.Governor.Group2.day) == GetDataDay())
+					{
+						dialog.text = "Vous avez changé d’avis, capitaine ? Vous avez finalement décidé de traquer le fugitif ?";
+						link.l1 = "Je vous prie de me rappeler les détails de cette mission, Votre Grâce.";
+						link.l1.go = "FindFugitive";
+						link.l2 = RandPhraseSimple("Je suis désolé, mais je ne suis pas prêt à accomplir cette mission pour le moment.", 
+							"Je regrette, mais je ne suis pas en mesure d’exécuter cette tâche pour l’instant.", 
+							"Veuillez m’excuser — je ne suis toujours pas prêt à entreprendre cette mission.");
+						link.l2.go = "exit";
+						break;
+					}
+					dialog.text = "J'ai une mission pour vous qui implique de visiter plusieurs colonies dans les Caraïbes. Êtes-vous prêt pour un long voyage ?";
+					link.l1 = "Oui, mes hommes et moi sommes prêts à partir sur-le-champ. Que devrai-je faire exactement ?";
+					link.l1.go = "FindFugitive";
+				break;
+						
+				case 3: // Уничтожить корабль пиратов
+					if (CheckAttribute(pchar, "GenQuest.Governor.Group2.day") && sti(pchar.GenQuest.Governor.Group2.day) == GetDataDay())
+					{
+						dialog.text = "Le pirate attaque toujours les marchands, capitaine. J’espère que cette fois, vous êtes prêt à vous charger de son élimination.";
+						link.l1 = "Je vous prie de me rappeler les détails de cette mission, Votre Grâce.";
+						link.l1.go = "TakePirateship";
+						link.l2 = RandPhraseSimple("Je suis désolé, mais je ne suis pas prêt à accomplir cette mission pour le moment.", 
+							"Je regrette, mais je ne suis pas en mesure d’exécuter cette tâche pour l’instant.", 
+							"Veuillez m’excuser — je ne suis toujours pas prêt à entreprendre cette mission.");
+						link.l2.go = "exit";
+						break;
+					}
+					dialog.text = "Oui, j'ai une mission importante pour vous. Pour l'accomplir, vous devrez utiliser toutes vos compétences. Cela implique des pirates...";
+					link.l1 = "Des pirates ? Pouvez-vous me dire plus en détail ce qui est attendu de moi, alors ?";
+					link.l1.go = "TakePirateship";
+				break;
+			}
+		break;
+
+		case "GovQuestGroup3":
+			// Группа 3 - Государственные разборки, тяжелые бои
+			if (CheckAttribute(npchar, "work_date") && GetNpcQuestPastDayParam(npchar, "work_date") <= 1)
+			{
+				dialog.text = RandPhraseSimple("Je n’ai pas de travail de ce genre pour vous aujourd’hui. Revenez demain, peut-être...", 
+						"Hélas, je n’ai actuellement aucune mission de ce type. Revenez plus tard, dans un jour ou deux.", 
+						"Je ne peux pas vous charger de quoi que ce soit de ce genre aujourd’hui. Je serai heureux de vous revoir un autre jour.");
+				link.l1 = RandPhraseSimple("Pitié...","Ah, quel dommage, "+GetAddress_FormToNPC(NPChar)+". ");
+				link.l1.go = "exit";
+				break;
+			}
+			pchar.GenQuest.Governor.Group3.index = hrand(3);
+			i = pchar.GenQuest.Governor.Group3.index;
+			switch (i)
+			{
+				case 0: // Отказ
+					dialog.text = RandPhraseSimple("Je n’ai pas de travail de ce genre pour vous aujourd’hui. Revenez demain, peut-être...", 
+							"Hélas, je n’ai actuellement aucune mission de ce type. Revenez plus tard, dans un jour ou deux.", 
+							"Je ne peux pas vous charger de quoi que ce soit de ce genre aujourd’hui. Je serai heureux de vous revoir un autre jour.");
+					link.l1 = RandPhraseSimple("Pitié...","Ah, quel dommage, "+GetAddress_FormToNPC(NPChar)+". ");
+					link.l1.go = "exit";
+				break;
+						
+				case 1: // Контркурьер
+					if (CheckAttribute(pchar, "GenQuest.Governor.Group3.day") && pchar.GenQuest.Governor.Group3.day == GetDataDay())
+					{
+						dialog.text = "Le temps presse. Vous êtes des nôtres ou vous êtes encore venu pour bavarder ?";
+						link.l1 = "Je vous prie de me rappeler les détails de cette mission, Votre Grâce.";
+						link.l1.go = "TakePostcureer";
+						link.l2 = RandPhraseSimple("Je suis désolé, mais je ne suis pas prêt à accomplir cette mission pour le moment.", 
+							"Je regrette, mais je ne suis pas en mesure d’exécuter cette tâche pour l’instant.", 
+							"Veuillez m’excuser — je ne suis toujours pas prêt à entreprendre cette mission.");
+						link.l2.go = "exit";
+						break;
+					}
+					dialog.text = "Oui, j'ai une mission pour vous. Pour l'accomplir, vous devrez faire preuve de rapidité et aussi d'une certaine habileté au combat naval. Êtes-vous prêt à prouver votre valeur ?";
+					link.l1 = "Votre Grâce, pouvez-vous révéler plus de détails sur la mission ?";
+					link.l1.go = "TakePostcureer";
+				break;
+						
+				case 2: // Контрфрахт - уничтожить корабль с арсеналом
+					if (CheckAttribute(pchar, "GenQuest.Governor.Group3.day") && pchar.GenQuest.Governor.Group3.day == GetDataDay())
+					{
+						dialog.text = "Auriez-vous enfin trouvé le courage, capitaine ? Prêt à frapper les réserves de l’ennemi ?";
+						link.l1 = "Je vous prie de me rappeler les détails de cette mission, Votre Grâce.";
+						link.l1.go = "TakeArsenalship";
+						link.l2 = RandPhraseSimple("Je suis désolé, mais je ne suis pas prêt à accomplir cette mission pour le moment.", 
+							"Je regrette, mais je ne suis pas en mesure d’exécuter cette tâche pour l’instant.", 
+							"Veuillez m’excuser — je ne suis toujours pas prêt à entreprendre cette mission.");
+						link.l2.go = "exit";
+						break;
+					}
+					dialog.text = "Oui, j'ai une mission pour vous. Pour l'accomplir, vous devrez faire preuve d'une galanterie exceptionnelle et aussi d'une certaine compétence en combat naval. Êtes-vous prêt à prouver votre valeur ?";
+					link.l1 = "Votre Grâce, pouvez-vous révéler plus de détails sur la mission à venir ?";
+					link.l1.go = "TakeArsenalship";
+				break;
+						
+				case 3: // Проникновение во враждебный город
+					if (CheckAttribute(pchar, "GenQuest.Governor.Group3.day") && pchar.GenQuest.Governor.Group3.day == GetDataDay())
+					{
+						dialog.text = "Vous vous êtes déjà renseigné sur cette mission, capitaine. J’espère que cette fois, ce n’est pas juste par pure curiosité ?";
+						link.l1 = "Je vous prie de me rappeler les détails de cette mission, Votre Grâce.";
+						link.l1.go = "Intelligence";
+						link.l2 = RandPhraseSimple("Je suis désolé, mais je ne suis pas prêt à accomplir cette mission pour le moment.", 
+							"Je regrette, mais je ne suis pas en mesure d’exécuter cette tâche pour l’instant.", 
+							"Veuillez m’excuser — je ne suis toujours pas prêt à entreprendre cette mission.");
+						link.l2.go = "exit";
+						break;
+					}
+					sTemp = GetSpyColony(npchar);
+					if (sTemp == "none")
+					{
+						dialog.text = RandPhraseSimple("Je n’ai pas de travail de ce genre pour vous aujourd’hui. Revenez demain, peut-être...", 
+								"Hélas, je n’ai actuellement aucune mission de ce type. Revenez plus tard, dans un jour ou deux.", 
+								"Je ne peux pas vous charger de quoi que ce soit de ce genre aujourd’hui. Je serai heureux de vous revoir un autre jour.");
+						link.l1 = RandPhraseSimple("Pitié...","Ah, quel dommage, "+GetAddress_FormToNPC(NPChar)+". ");
+						link.l1.go = "exit";
+						break;
+					}
+					pchar.GenQuest.Intelligence.Terms = hrand(10) + (42 - MOD_SKILL_ENEMY_RATE);
+					pchar.GenQuest.Intelligence.Money = ((hrand(5)+11)*2000)+(sti(pchar.rank)*1500);
+					pchar.GenQuest.Intelligence.City = sTemp;
+					sTemp = ", which is on " + XI_ConvertString(GetIslandByColony(&colonies[FindColony(pchar.GenQuest.Intelligence.City)])+"Dat");
+					dialog.text = "J'ai une mission pour vous, qui comporte des risques sérieux. J'ai besoin que vous vous infiltriez dans "+XI_ConvertString("Colony"+pchar.GenQuest.Intelligence.City+"Acc")+sTemp+", rencontre une certaine personne là-bas, puis remets-moi ce qu'il te donnerait.";
+					link.l1 = "Hmm, je ne pense pas que dans "+XI_ConvertString("Colony"+pchar.GenQuest.Intelligence.City+"Dat")+" Je serai un invité bienvenu...";
+					link.l1.go = "Intelligence";
+				break;
+			}
+		break;
+		//---------------------------- генератор квестов мэра -------------------------------
+		
 
 		case "sell_prisoner":
             dialog.text = "Qui souhaitez-vous rançonner ?";
@@ -2208,6 +2347,7 @@ void ProcessDialogEvent()
 		//	Уничтожение банды
 		/////////////////////////////////////////////////////////////////////////////////////////////////
 		case "DestroyGang":
+			pchar.GenQuest.Governor.Group1.day = GetDataDay();
 			dialog.text = "Bien sûr. Pour accomplir cette mission, je vous donne "+FindRussianDaysString(sti(pchar.GenQuest.DestroyGang.Terms))+", et ta récompense en cas de succès sera "+FindRussianMoneyString(sti(pchar.GenQuest.DestroyGang.Money))+".";
 			link.l1 = "Oui, j'accepte cette tâche.";
 		    link.l1.go = "DestroyGang_agree";
@@ -2283,7 +2423,8 @@ void ProcessDialogEvent()
 			pchar.GenQuest.TakePostcureer.ShipType = SelectCureerShipType();
 			pchar.GenQuest.TakePostcureer.ShipName = GenerateRandomNameToShip(sti(pchar.GenQuest.TakePostcureer.Nation));
 			pchar.GenQuest.TakePostcureer.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.TakePostcureer.ShipType));
-			pchar.GenQuest.TakePostcureer.Money = ((hrand(5)+hrand(6, "1")+4)*2000)+(sti(pchar.rank)*500);
+			pchar.GenQuest.TakePostcureer.Money = ((hrand(5)+hrand(6, "1")+42)*600)+(sti(pchar.rank)*1600);
+			pchar.GenQuest.Governor.Group3.day = GetDataDay();
 			dialog.text = "Bien sûr. Vous devrez localiser un navire courrier de "+NationNameGenitive(sti(pchar.GenQuest.TakePostcureer.Nation))+" du nom de '"+pchar.GenQuest.TakePostcureer.ShipName+", aborde-le et apporte-moi les papiers, que tu devrais pouvoir trouver dans la cabine du capitaine. Ce navire passera près de "+XI_ConvertString("Colony"+pchar.GenQuest.TakePostcureer.City+"Gen")+" approximativement dans "+FindRussianDaysString(pchar.GenQuest.TakePostcureer.Terms)+".";
 			link.l1 = "Très bien, j'accepte cette mission. Et quels types de documents dois-je chercher ?";
 		    link.l1.go = "TakePostcureer_agree";
@@ -2353,7 +2494,8 @@ void ProcessDialogEvent()
 			pchar.GenQuest.TakeArsenalship.ShipName = GenerateRandomNameToShip(sti(pchar.GenQuest.TakeArsenalship.Nation));
 			pchar.GenQuest.TakeArsenalship.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.TakeArsenalship.ShipType));
 			pchar.GenQuest.TakeArsenalship.CannonA = SelectLevelCannonParameter(sti(pchar.GenQuest.TakeArsenalship.ShipTypeA)); // Addon 2016-1 Jason пиратская линейка
-			pchar.GenQuest.TakeArsenalship.Money = ((hrand(5)+hrand(6, "1")+4)*1800)+(sti(pchar.rank)*500);
+			pchar.GenQuest.TakeArsenalship.Money = ((hrand(5)+hrand(6, "1")+36)*700)+(sti(pchar.rank)*1600);
+			pchar.GenQuest.Governor.Group3.day = GetDataDay();
 			dialog.text = "Bien sûr. Vous devrez localiser un transport militaire de "+NationNameGenitive(sti(pchar.GenQuest.TakeArsenalship.Nation))+", with gunpowder and ammunition on board; the name of the vessel is '"+pchar.GenQuest.TakeArsenalship.ShipName+"', find and destroy it. We'll weaken our enemy by doing that\nThe transport will sail with an escort to the colony "+XI_ConvertString("Colony"+pchar.GenQuest.TakeArsenalship.City)+", and will be approximately in "+FindRussianDaysString(pchar.GenQuest.TakeArsenalship.Terms)+", so you should hurry.";
 			link.l1 = "D'accord, j'accepte. Dois-je couler le navire arsenal ou devrais-je tenter de le capturer ?";
 		    link.l1.go = "TakeArsenalship_agree";
@@ -2400,7 +2542,8 @@ void ProcessDialogEvent()
 			pchar.GenQuest.TakePirateship.ShipName = GenerateRandomNameToShip(PIRATE);
 			pchar.GenQuest.TakePirateship.Name = GenerateRandomName(PIRATE, "man");
 			pchar.GenQuest.TakePirateship.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.TakePirateship.ShipType));
-			pchar.GenQuest.TakePirateship.Money = ((hrand(5)+hrand(6, "1")+4)*2400)+(sti(pchar.rank)*500);
+			pchar.GenQuest.TakePirateship.Money = ((hrand(5) + hrand(6, "1")+4)*800)+13000+(sti(pchar.rank)*1250);
+			pchar.GenQuest.Governor.Group2.day = GetDataDay();
 			dialog.text = "Bien sûr. Je suis vraiment furieux des agissements d'un capitaine pirate, dont le nom est "+pchar.GenQuest.TakePirateship.Name+". Ce gredin a pris l'habitude de piller nos marchands, ce qui nuit énormément au commerce entre les colonies. C'est maintenant le moment idéal pour se débarrasser de ce bâtard, car je viens juste de découvrir où il se cache en ce moment. Es-tu prêt à envoyer ce fils de pute sur le Siège du Jugement de Dieu ?";
 			link.l1 = "Je serais honoré ! Où puis-je trouver ce pirate ?";
 		    link.l1.go = "TakePirateship_agree";
@@ -2463,7 +2606,8 @@ void ProcessDialogEvent()
 			pchar.GenQuest.TakePassenger.ShipName = GenerateRandomNameToShip(sti(pchar.GenQuest.TakePassenger.Nation));
 			pchar.GenQuest.TakePassenger.Name = GenerateRandomName(sti(pchar.GenQuest.TakePassenger.Nation), "man");
 			pchar.GenQuest.TakePassenger.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.TakePassenger.ShipType));
-			pchar.GenQuest.TakePassenger.Money = ((hrand(5)+hrand(6, "1")+4)*2200)+(sti(pchar.rank)*500);
+			pchar.GenQuest.TakePassenger.Money = ((hrand(5) + hrand(6, "1")+4)*500)+12500+(sti(pchar.rank)*1000);
+			pchar.GenQuest.Governor.Group2.day = GetDataDay();
 			string sText = SelectPassText();
 			dialog.text = "Bien sûr. Je parle d'un gredin du nom de "+pchar.GenQuest.TakePassenger.Name+". "+sText+" Je le cherchais depuis pas mal de temps, et maintenant j'ai enfin obtenu des informations fiables sur l'endroit où il se trouve. J'ai besoin que tu m'amènes cet homme, coûte que coûte vivant. Je veux le pendre en public sur la place de notre ville. Es-tu prêt à entreprendre cette mission ?";
 			link.l1 = "Je suis prêt, "+GetAddress_FormToNPC(NPChar)+"Où puis-je trouver ce vaurien ?";
@@ -2501,13 +2645,14 @@ void ProcessDialogEvent()
 			pchar.GenQuest.questName = "CustomPatrol"; //тип квеста
 			pchar.GenQuest.CustomPatrol.Nation = sti(npchar.nation);//нация
 			pchar.GenQuest.CustomPatrol.Island = Islands[GetCharacterCurrentIsland(PChar)].id;
-			pchar.GenQuest.CustomPatrol.LoginDay = rand(4)+1;
-			pchar.GenQuest.CustomPatrol.Loginlocator = rand(3)+4;
+			pchar.GenQuest.CustomPatrol.LoginDay = rand(2)+1;
+			pchar.GenQuest.CustomPatrol.Loginlocator = rand(3)+3;
 			pchar.GenQuest.CustomPatrol.ShipType = SelectCustomPatrolShipType(FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_UNIVERSAL);
 			pchar.GenQuest.CustomPatrol.ShipTypeA = SelectCustomPatrolShipType(FLAG_SHIP_TYPE_RAIDER);
 			pchar.GenQuest.CustomPatrol.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.CustomPatrol.ShipType));
-			pchar.GenQuest.CustomPatrol.Money = ((hrand(5)+hrand(6, "1")+4)*1400)+(sti(pchar.rank)*300);
-			dialog.text = "J'ai des informations fiables qu'un certain capitaine a arrangé une transaction avec des contrebandiers concernant la vente de quelques esclaves. Comme vous devez le savoir, de telles transactions par des particuliers dans nos colonies sont caractérisées comme des marchandises de contrebande\nLe problème est que je ne connais ni l'heure exacte, ni la date, ni l'endroit où les contrebandiers se rencontreront. On sait seulement qu'une transaction criminelle sera réalisée dans les cinq prochains jours sur notre île. Pour aggraver les choses, tous mes navires de patrouille sont soit en réparation, soit impliqués dans d'autres tâches et ne peuvent pas trouver ces vauriens\nJe vous suggère de vous occuper de cette tâche - traquez les contrebandiers et traitez-les avec les méthodes les plus radicales, faites-en un exemple. Êtes-vous prêt à accomplir cette mission ?";
+			pchar.GenQuest.CustomPatrol.Money = ((hrand(5)+hrand(6, "1")+4)*450)+8200 + (sti(pchar.rank) * 750);
+			pchar.GenQuest.Governor.Group1.day = GetDataDay();
+			dialog.text = "J'ai des informations fiables qu'un certain capitaine a arrangé une transaction avec des contrebandiers concernant la vente de quelques esclaves. Comme vous devez le savoir, de telles transactions par des particuliers dans nos colonies sont caractérisées comme des marchandises de contrebande\nLe problème est que je ne connais ni l'heure exacte, ni la date, ni l'endroit où les contrebandiers se rencontreront. On sait seulement qu'une transaction criminelle sera réalisée dans les trois prochains jours sur notre île. Pour aggraver les choses, tous mes navires de patrouille sont soit en réparation, soit impliqués dans d'autres tâches et ne peuvent pas trouver ces vauriens\nJe vous suggère de vous occuper de cette tâche - traquez les contrebandiers et traitez-les avec les méthodes les plus radicales, faites-en un exemple. Êtes-vous prêt à accomplir cette mission ?";
 			link.l1 = "Je suis prêt, "+GetAddress_FormToNPC(NPChar)+"Dis-moi, as-tu des informations supplémentaires ? Comme le nom du capitaine, le nom ou le type de son navire ?";
 		    link.l1.go = "CustomPatrol_agree";
 			link.l2 = "Hmm... Non, je crois que je vais passer.";
@@ -2520,7 +2665,7 @@ void ProcessDialogEvent()
 			dialog.text = "Ma source vient de me dire qu'une transaction est en cours de préparation et sera bientôt conclue. C'est tout. Alors, gardez un œil vigilant sur tous les navires suspects dans nos eaux. Si vous réussissez, je vous paierai une somme de "+FindRussianMoneyString(sti(pchar.GenQuest.CustomPatrol.Money))+"\nDe plus, compte tenu des circonstances, je vous autorise à récupérer toute la cargaison de contrebande, que vous pourrez trouver. Officieusement, bien sûr, à condition que vous ne la vendiez pas dans notre ville.";
 			link.l1 = "Assez généreux. Très bien, je vais commencer à patrouiller les eaux de votre colonie, "+GetAddress_FormToNPC(NPChar)+".";
 			link.l1.go = "exit";
-			SetTimerCondition("AllMayorsQuests_Late", 0, 0, 6, false);
+			SetTimerCondition("AllMayorsQuests_Late", 0, 0, 4, false);
 			pchar.quest.CustomPatrol.win_condition.l1 = "location";
 			pchar.quest.CustomPatrol.win_condition.l1.location = pchar.GenQuest.CustomPatrol.Island;
 			pchar.quest.CustomPatrol.win_condition.l2 = "Timer";
@@ -2546,10 +2691,11 @@ void ProcessDialogEvent()
 			pchar.GenQuest.FindFugitive.City = SelectFugitiveCity();
 			pchar.GenQuest.FindFugitive.Chance = rand(2);
 			pchar.GenQuest.FindFugitive.Name = GenerateRandomName(sti(npchar.Nation), "man");
-			pchar.GenQuest.FindFugitive.Money = ((hrand(5)+hrand(6, "1")+4)*2600)+(sti(pchar.rank)*600);
+			pchar.GenQuest.FindFugitive.Money = ((hrand(5)+hrand(6, "1")+4)*600)+9600+(sti(pchar.rank)*900);
 			sText = SelectFugitiveText();
 			log_testinfo(pchar.GenQuest.FindFugitive.City);
 			log_testinfo(FindRussianDaysString(sti(pchar.GenQuest.FindFugitive.Chance)));
+			pchar.GenQuest.Governor.Group2.day = GetDataDay();
 			dialog.text = "Je vais tout vous raconter en détail. Une histoire très laide s'est produite - "+sText+"En interrogeant ses collègues et amis, nous croyons, non sans raison, que le déserteur s'est réfugié parmi les pirates dans l'un de leurs repaires\nJe vous suggère de visiter le nid des pirates, de trouver le fugitif, de l'arrêter et de le livrer ici. La désertion est une infraction grave, et ne peut rester impunie. Êtes-vous prêt à accepter cette mission ?";
 			link.l1 = "Je suis prêt, "+GetAddress_FormToNPC(NPChar)+"Pouvez-vous me dire le nom du déserteur ?";
 		    link.l1.go = "FindFugitive_agree";
@@ -2582,6 +2728,7 @@ void ProcessDialogEvent()
 		//	Проникновение во враждебный город
 		/////////////////////////////////////////////////////////////////////////////////////////////////
 		case "Intelligence":
+			pchar.GenQuest.Governor.Group3.day = GetDataDay();
 			dialog.text = "Je vois. Peut-être, une récompense de "+FindRussianMoneyString(sti(pchar.GenQuest.Intelligence.Money))+" sera une bonne incitation pour vous.";
 			link.l1 = "Oui, c'est une somme correcte... J'accepte cette mission.";
 		    link.l1.go = "Intelligence_agree";
@@ -2620,7 +2767,7 @@ void ProcessDialogEvent()
 				AddQuestUserData("MayorsQuestsList", "ColonyName", XI_ConvertString("Colony"+npchar.city+"Gen"));
 				AddQuestUserData("MayorsQuestsList", "MayorName", GetFullName(npchar));
 				AddQuestUserData("MayorsQuestsList", "sCity", XI_ConvertString("Colony"+pchar.GenQuest.Intelligence.City+"Acc"));
-				AddQuestUserData("MayorsQuestsList", "sIsland", XI_ConvertString(colonies[FindColony(pchar.GenQuest.Intelligence.City)].islandLable+"Dat"));
+				AddQuestUserData("MayorsQuestsList", "sIsland", XI_ConvertString(GetIslandByColony(&colonies[FindColony(pchar.GenQuest.Intelligence.City)])+"Dat"));
 				AddQuestUserData("MayorsQuestsList", "sWho", GetWorkTypeOfMan(&characters[GetCharacterIndex(sTemp)], "Gen"));
 				AddQuestUserData("MayorsQuestsList", "SpyName", GetFullName(&characters[GetCharacterIndex(sTemp)]));			
 				AddQuestUserData("MayorsQuestsList", "sDay", FindRussianDaysString(sti(pchar.GenQuest.Intelligence.Terms)));
@@ -2642,10 +2789,13 @@ void ProcessDialogEvent()
 		
 		// -------------- общий набор для всех квестов мэра ------------------
 		case "All_disagree":
-			dialog.text = "Tu me déçois !";
+			dialog.text = RandPhraseSimple(
+				"Hmm. Eh bien, j’ai surestimé votre détermination, capitaine.",
+				"Vous me décevez, capitaine. Il semble que vous n’ayez vraiment pas les qualités requises pour ce genre d’affaires.",
+				"La prochaine fois, capitaine, réfléchissez à deux fois avant de faire perdre mon temps avec des paroles creuses.");
 			link.l1 = "Je suis désolé, "+GetAddress_FormToNPC(NPChar)+", mais je ne peux pas accepter ce travail.";
 		    link.l1.go = "exit";
-			ChangeCharacterComplexReputation(pchar,"nobility", -2);
+			//ChangeCharacterComplexReputation(pchar,"nobility", -2);
 			
 			if (CheckAttribute(pchar, "GenQuest.questName"))
 			{

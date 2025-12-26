@@ -315,7 +315,6 @@ void ProcessDialogEvent()
 		break;
 		
 		case "depeshe_licence":
-			if (CheckCharacterItem(pchar, "HolTradeLicence")) TakeNationLicence(HOLLAND);
 			GiveNationLicence(HOLLAND, 180);
 			dialog.text = "Bien. Voici votre licence pour une durée de six mois.";
 			link.l1 = "Merci ! Et voici votre dépêche.";

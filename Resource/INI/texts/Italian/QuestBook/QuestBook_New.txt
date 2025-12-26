@@ -1,0 +1,983 @@
+#QUEST JusticeOnSale
+Extra: Contrabbandiere nei Guai
+#TEXT 1
+Ho accettato di aiutare una banda di contrabbandieri a liberare il loro capitano, che si trova nelle prigioni di @<cityName>. Forse mi converrebbe non immischiarmi in questa faccenda, ma la ricompensa è allettante. Dovrei parlare con il comandante... oppure sarebbe meglio consegnare tutta questa gentaglia alle autorità?
+#TEXT 2
+Essendo stato preso da faccende più importanti, mi sono dimenticato del capitano che avevo liberato dalla prigione e dell’accordo con la sua ciurma. Quel furfante avrà colto l’occasione per svignarsela. Pazienza, sia così.
+#TEXT 3
+Ho liberato il capitano dei contrabbandieri e ho ricevuto la mia ricompensa. Il denaro non ha odore.
+#TEXT 4
+Ho liberato il capitano dei contrabbandieri dalla prigione, ma quei furfanti hanno deciso di ingannarmi! Va bene, ora possono fare i loro affari con il diavolo!
+#TEXT 5
+Ho informato le autorità della città dei piani dei contrabbandieri: da qui in poi se la possono cavare da soli.
+#TEXT 6
+Una parte dei contrabbandieri è riuscita a fuggire. Il governatore di certo non sarà contento della mia lentezza.
+#TEXT 7
+Tutti i contrabbandieri hanno avuto ciò che si meritavano. Ora devo riferire al governatore e l’affare sarà concluso.
+
+#QUEST AffairOfHonor
+Extra: Questione d’Onore
+#TEXT 1
+Per caso, ho incontrato un ufficiale davvero maleducato. Dovrò insegnargli un po’ di buone maniere e difendere l’onore della ragazza. Tra due ore ci vediamo al faro.
+#TEXT 2
+Il villano è stato punito e l’onore oltraggiato è stato ristabilito! Devo subito portare questa bella notizia alla ragazza. Presto, ritorno in città!
+#TEXT 2_1
+Oh, accidenti. Ho perso il duello. Che sciocco che sono.
+#TEXT 3
+Un padre miserabile, un figlio buono a nulla, l’onore di una dama... Va bene, vediamo come andrà a finire stavolta. Cominciamo con una visita alla taverna e al bordello.
+#TEXT 3_1
+Eccellente! Ora resta solo una piccola cosa da fare: far fuori quel mascalzone.
+#TEXT 4
+Il lavoro è fatto, e padre e figlio possono dormire sonni tranquilli... almeno fino alla prossima volta. Ah, e mi sono guadagnato una ricompensa. Andiamo a prenderla!
+#TEXT 4_1
+Beh, me lo sono perso, e allora? Non è la fine del mondo.
+#TEXT 5
+Le cose vanno davvero così male se le autorità stanno distribuendo lettere di corsa a furfanti e ubriaconi a caso? Meglio che faccia un salto in taverna e scopra chi sta spaventando la gente del posto.
+#TEXT 6
+Un furfante in meno su questa terra. È bello fare del bene.
+#TEXT 6_1
+Ho cambiato idea, non combatterò. Non sono proprio dell’umore. E poi, la ragazza dovrebbe provare cosa vuol dire essere la concubina di un coraggioso corsaro, invece che una semplice cameriera in taverna.
+#TEXT 7
+Un duello! E non potrebbe esserci motivo più serio.
+#TEXT 8
+Il tizio insolente ha avuto quello che si meritava.
+#TEXT 8_1
+Forse mi sono tirato indietro... Non lo so.
+#TEXT 9
+Un cittadino mi ha raccontato un curioso metodo per fare soldi: derubare i compagni durante una partita a carte, poi accusarli di barare e infine sfidarli a duello per metterli a tacere e fermare le voci. Devo scoprire se questa storia è vera.
+#TEXT 10
+Sì, il cittadino aveva ragione. Povero Tom, anche lui, come gli altri, è caduto vittima di quel furfante. Ma ora ho messo fine a tutto questo.
+#TEXT 10_1
+Pfff! Carte, bari, duelli... Non ho tempo per queste sciocchezze!
+#TEXT 11
+Un maestro di scherma che ha paura di combattere, chi ci crederebbe mai! Il nipote del governatore non avrà vita facile con un insegnante così. Ma non sono affari miei, dopotutto. Preferisco andare dal mercante.
+#TEXT 12
+Il mercenario è morto. Andiamo a dare la buona notizia al maestro.
+#TEXT 12_1
+Quel mercenario sembrava davvero un tipo tosto. Ho deciso di non affrontarlo.
+#TEXT 13
+Sì, oggigiorno gli ufficiali non sono più quelli di una volta. Eppure anche loro preferiscono morire in duello piuttosto che cadere in battaglia. Beh, il mio compito è solo assicurarmi che il più meritevole sopravviva. Ho al massimo due giorni. Meglio cominciare subito a cercare la padrona.
+#TEXT 14
+Sembra che l’ufficiale che conoscevo sia stato fortunato, a differenza di quello che non conoscevo, che ora è morto. Adesso farei meglio a seguire il consiglio dei testimoni e lasciare la città per un po’.
+#TEXT 14_1
+Ho deciso di non immischiarmi negli affari altrui. Che se la sbrighino da soli.
+#TEXT 15
+"Giustizia Divina" suona alla grande! Dovrò intervenire e difendere il piantatore in duello.
+#TEXT 16
+Un'imboscata! Avrei dovuto capirlo. Ora il piantatore avrà argomenti solidi contro il suo vicino. È tempo di riscuotere la mia ricompensa: me la sono proprio guadagnata.
+#TEXT 16_1
+Interessante, adesso posso aspettarmi degli sconti dagli contrabbandieri locali?
+
+#QUEST BurntShipQuest
+Extra: Sostituzione della nave a @<cityName>
+#TEXT 1
+Il maestro di porto @<portmanName> di @<cityName> mi ha chiesto di trovare una nave straordinaria con una caratteristica particolare: @<text>. Mi ha promesso una ricompensa davvero generosa. Ho sei mesi di tempo per riuscirci.
+#TEXT 2
+Sembra che il maestro di porto @<portmanName> abbia risolto tutti i suoi problemi da solo. In ogni caso, non mi pare che ci abbia rimesso la faccia.
+#TEXT 3
+Il capo del porto non era uno sprovveduto e ha dato i soldi dell’assicurazione all’usuraio. Beh, almeno la nave è ancora mia. Vediamo come andrà a finire.
+#TEXT 4
+Ho ricevuto una ricompensa per una nave unica: @<money> pesos. Con questi soldi potrei comprare due navi simili. Devo ammettere che il capo del porto sa davvero il fatto suo e sa come convincere l’ufficio assicurazioni.
+#TEXT 5
+Ho deciso di tenere la nave per me. Mi è sembrato che @<money> pesos fossero davvero troppo pochi per una nave così splendida.
+
+#QUEST GiveShipLetters
+Extra: Oggetti Smarriti
+#TEXT 1
+Una scoperta curiosa! Qualcuno aveva fretta o era semplicemente distratto, in ogni caso, ha perso l’intero set di documenti della nave. Sono certo che il proprietario presto si farà vivo per reclamarli.
+#TEXT 2
+Beh, ho fatto un favore a della brava gente, e non mi è costato alcuna fatica.
+#TEXT 3
+Beh, il mondo non è privo di brave persone. È fantastico che il proprietario presto riavrà ciò che ha perso!
+#TEXT 4
+Beh, il mondo non è privo di brave persone. È stata una fortuna che sia passato dal cantiere navale.
+#TEXT 5
+La ricompensa era poca, ma in fondo non mi è costato quasi nulla.
+#TEXT 6
+Forse è meglio così. Non ci ho guadagnato molto, ma almeno adesso non devo più preoccuparmi di questi documenti.
+#TEXT 7
+È fantastico quando il mercante e la merce si incontrano così fortunatamente!
+#TEXT 8
+È fantastico quando i tuoi favori vengono ricompensati come si deve!
+#TEXT 9
+Ad ognuno secondo le sue opere! I documenti presto torneranno al loro legittimo proprietario, e il denaro è già finito nelle mie tasche.
+#TEXT 10
+Avrei dovuto consegnare questi documenti prima, così il loro proprietario non avrebbe dovuto procurarsene un nuovo set.
+
+#QUEST ReasonToFast
+Extra: Un Motivo per Fare Presto
+#TEXT 1
+Una ragazza carina ha spifferato che un ufficiale della guarnigione si è precipitato in una baia con tanta fretta da dimenticare persino i suoi divertimenti. Forse vale la pena dare un’occhiata?
+#TEXT 2
+Ci sono tanti chiacchieroni in giro. Forse me lo sono solo immaginato?
+#TEXT 3
+Forse, ho semplicemente ceduto davanti a una ragazza ferita. Non avrei dovuto inventare quello che mancava...
+#TEXT 4
+Che sfortuna! Quel tipo è arrivato proprio nel momento sbagliato. Ora è troppo tardi per capire cosa stavano tramando...
+#TEXT 5
+Si è scoperto che un messaggero dei pirati mi stava seguendo, e il pattugliatore lo stava aspettando qui. Ma sembra che sia riuscito a fingermi il messaggero, @<sName>.
+#TEXT 6
+Ho rintracciato il corrotto ufficiale di pattuglia e sono certo che avesse rapporti con i pirati. Purtroppo non sono riuscito ad arrestarlo, ma alla fine ha avuto la punizione che meritava.
+#TEXT 7
+Non sono riuscito a parlare con l’ufficiale di pattuglia. Bah, al diavolo lui, tanto!..
+#TEXT 8
+Che sfortuna! L’ufficiale di pattuglia è morto, e con lui è svanito anche il suo segreto...
+#TEXT 9
+Giuda nell’esercito cerca di ottenere i suoi 30 'denari'. Chissà quale favore può valere una tale montagna di @<sText>?
+#TEXT 10
+Un affare discutibile! Eppure, @<sName> non cercherebbe questa mappa senza un valido motivo.
+#TEXT 11
+@<sShipType> '@<sShipName>' con un carico di @<sGoodsName> sta gironzolando senza scorta. Un’informazione che potrebbe tornare utile...
+#TEXT 12
+Il governatore tiene i suoi oggetti di valore nel suo boudoir? Che imprudenza da parte sua...
+#TEXT 13
+Grazie a Dio, è finalmente finita!
+#TEXT 14
+Una bella lama è una ricompensa fantastica! Vale anche la pena scoprire se questa mappa può fruttare una manciata di gemme!
+#TEXT 15
+Ho messo le mani su una mappa dei pirati. Devo scoprire al più presto se vale davvero quello che ho pagato!
+#TEXT 16
+Huh... Ecco come la fiducia nella giustizia può rivoltarsi contro di te... Sono stato sospettato di aver attaccato la pattuglia...
+#TEXT 17
+Questa faccenda è finalmente finita e, a quanto pare, non ne sono uscito sconfitto!
+#TEXT 18
+La soffiata della guardia era giusta! Il grande bottino coprirà sicuramente tutte le mie spese.
+#TEXT 19
+Che sfortuna. Non sono riuscito a ricavare nulla di buono dalle informazioni per cui ho speso un sacco di soldi.
+#TEXT 20
+Ho dovuto consegnare @<sText> solo per non sentire il fiato caldo di @<sName> sul collo. La prossima volta sarò più prudente prima di lanciarmi in simili avventure.
+#TEXT 21
+@<sName> non rinuncerà facilmente a @<sText>. Devo andarmene da qui, e in fretta.
+#TEXT 22
+Si è scoperto che i pirati, in qualche modo, sono venuti a sapere della svista dell’ufficiale di pattuglia. Beh, affari suoi: probabilmente è già morto, e per me è proprio il momento di filarmela... Sembra che ormai non sia rimasto nessuno a cui @<sName> possa raccontare quello che ho fatto...
+#TEXT 23
+I pirati sapevano che avevo la mappa di @<sName>. Sapevano anche dell’isola dove aveva nascosto i suoi tesori. Per fortuna, la loro avidità ha avuto la meglio sul loro ingegno, così non sono riusciti a trovare il tesoro prima di me.
+#TEXT 24
+Considerando che le forze erano impari, sono stato costretto a consegnare il tesoro ai cacciatori di tesori di @<sName>. La prossima volta sarò più prudente prima di lanciarmi in simili avventure.
+#TEXT 25
+Sono riuscito ad affondare una nave pirata, proprio quella su cui era stata organizzata l’operazione con l’ufficiale di pattuglia. Immagino che il pattugliatore sia ormai morto: i pirati non perdonano certi errori... Beh, pare che non sia rimasto nessuno che possa raccontare a @<sName> quello che ho fatto...
+#TEXT 26
+Sono riuscito a cavarmela con quella storia del pattugliatore. Non credo che i pirati mi daranno la caccia per sempre. Di sicuro avranno altro a cui pensare.
+
+#QUEST PiratesOnUninhabited
+Extra: Salvato da @<shoreName>
+#TEXT 1
+A @<shoreName> ho accolto a bordo @<count> marinai dal relitto del pirata @<shipTypeName>. Mi hanno chiesto di portarli in una qualsiasi baia abitata. Beh, li capisco, in fondo, sono in rotta con la legge...
+#TEXT 2
+Ho consegnato i pirati naufraghi a @<toShore> e ho persino ricevuto una piccola ricompensa. Non è molto, certo, ma fa sempre comodo...
+#TEXT 3
+Ho portato i pirati dall’isola disabitata a @<toShore>. Ma quei furfanti hanno preteso che prestassi loro dei soldi. Ho dovuto spiegare che non presto denaro a gente come loro.
+#TEXT 4
+Ho portato i pirati dall’isola disabitata a @<toShore> e gli ho persino prestato un po’ di denaro... Non riesco nemmeno a immaginare come me la sarei cavata io, al loro posto, in una situazione così disperata...
+#TEXT 5
+A @<shoreName> ho accolto a bordo @<count> marinai sopravvissuti al naufragio del pirata @<shipTypeName>. Mi hanno chiesto di portarli in una baia abitata in cambio di una mappa del tesoro. Vedremo se la mappa esiste davvero... Oppure potrei consegnarli alle autorità. In quel caso, la ricompensa sarebbe assicurata...
+#TEXT 6
+Il furfante ha provato a ingannarmi, ma alla fine l’ha pagata cara.
+#TEXT 7
+Il furfante non aveva la mappa con sé, ma mi ha detto dove il capitano @<capName> aveva nascosto il suo bottino. Dovrò controllare a @<toShore>.
+#TEXT 8
+Non so se il tesoro fosse davvero a @<shore> oppure no. Non sono riuscito a trovarlo. Beh, almeno non ho speso poi così tanto.
+#TEXT 9
+Il pirata aveva ragione. A @<shore> ho davvero trovato un bel tesoro...
+#TEXT 10
+Quel pirata di certo non è uno sprovveduto. A quanto pare, aveva promesso quel tesoro non solo a me. Beh, comunque sia, alla fine sono stato io a metterci le mani sopra.
+#TEXT 11
+A @<shoreName> ho accolto a bordo @<count> marinai sopravvissuti al naufragio del pirata @<shipTypeName>. Ora devo portarli in una cala abitata, oppure consegnarli direttamente alle autorità.
+#TEXT 12
+Ho pensato che meglio un uccello in mano che due nel cespuglio, così ho consegnato i pirati al governatore @<mayorName>. Credo di aver fatto la cosa giusta, almeno il denaro tintinna già nelle mie tasche.
+#TEXT 13
+A @<shoreName> ho imbarcato @<count> marinai che erano stati lasciati a terra dal capitano @<badCapName>. Dicono che quel capitano ora naviga sulla @<ship> e traffica in schiavi. Abbiamo deciso di dargli la caccia insieme: se tutto va secondo i piani, io prenderò il carico e loro avranno la nave.
+#TEXT 14
+Sono salito a bordo della @<ship> e, nel suo stiva, ho davvero trovato gli schiavi. A quanto pare, avere amici tra i pirati ogni tanto torna utile...
+#TEXT 15
+Ho dovuto affondare @<ship> e sbarazzarmi anche dei pirati. Dubito che qualcuno ne sentirà la mancanza.
+#TEXT 16
+Nella foga della battaglia ho affondato la @<ship>. Ho dovuto risarcire i pirati per la perdita. In fondo, non potevo certo lasciarli senza alcun mezzo per sopravvivere, vero?
+
+#QUEST ShipWrecked
+Extra: Il Naufrago
+#TEXT 1
+A @<shoreName> ho accolto a bordo @<count> marinai dal relitto della @<shipTypeName> '@<ShipName>'. Ora devo portarli in una qualsiasi colonia di @<sNation>.
+#TEXT 2
+A @<shoreName> ho imbarcato @<count> marinai, abbandonati lì dal capitano @<badCapName>. Devo portarli in una qualsiasi colonia di @<sNation>.
+#TEXT 3
+A @<shoreName> ho imbarcato @<count> marinai dal relitto della @<shipTypeName> '@<ShipName>'. Devo portarli al più vicino insediamento.
+#TEXT 4
+A @<shoreName> ho imbarcato @<count> marinai, sbarcati dal capitano @<badCapName>. Devo portarli al più vicino insediamento.
+#TEXT 5
+A @<shoreName> ho incontrato @<count> marinai del relitto della @<shipTypeName> "@<ShipName>". Il loro capitano sembra aver preso troppi colpi in testa: insiste che lo porti a Dunkerque. Non ho idea di cosa fare con loro. Per ora li ho fatti salire a bordo. Non potevo certo lasciarli in quel posto desolato.
+#TEXT 6
+Ho consegnato il capitano @<sName> e i suoi marinai a @<sCity> e ho persino ricevuto una piccola ricompensa. Non è molto, ma fa sempre comodo.
+#TEXT 7
+Questo capitano fuori di testa pretende che lo porti a Dunkerque e non vuole proprio scendere dalla mia nave! Il suo comportamento sta diventando insopportabile! Non ho la minima idea di cosa fare in questa situazione!
+#TEXT 8
+Quel pazzo alla fine ha avuto quello che si meritava. Ho dovuto finirlo io. Non avevo davvero altra scelta. Parlava di tesori inimmaginabili, e non aveva nemmeno un cucchiaio. Che furfante...
+#TEXT 8_1
+Che razza di gente è venuta!? Le cose sono cambiate, ma non è un motivo per sbandierarlo davanti a tutti. Ho dovuto dare una lezione di buone maniere a quel cafone.
+#TEXT 9
+Finalmente sono riuscito a liberarmi di quel naufrago, e lui mi ha persino passato un pezzo di mappa. Devo filarmela prima che si accorga che l’ho imbrogliato. Ehehe... Dunki-irk... Dunki-iiirk...
+#TEXT 10
+A @<shoreName> ho incontrato dei marinai naufraghi. Devo informare il governatore dell’insediamento più vicino di @<sNation> su di loro. Credo che le provviste che ho lasciato basteranno finché non arriverà la nave di soccorso.
+#TEXT 11
+A @<shoreName> ho incontrato alcuni marinai abbandonati lì dal pirata @<sBadName>. Dovrei informare il governatore dell’insediamento @<sNation> più vicino. Credo che le provviste che ho lasciato basteranno finché non arriverà la nave di soccorso.
+#TEXT 12
+Ero troppo impegnato per tornare a quella baia sfortunata. Posso solo sperare che quei poveretti siano stati trovati e salvati da qualche altro capitano...
+#TEXT 13
+Ho informato il governatore di @<sCity> dei marinai abbandonati a @<ShoreName>, ma ho impiegato troppo tempo. Ora non ci resta che pregare il Signore che l’aiuto arrivi in tempo...
+#TEXT 14
+Ho informato il governatore di @<sCity> dei marinai abbandonati a @<ShoreName> e ho persino ricevuto una piccola ricompensa. Il governatore si è rallegrato nel sapere che il capitano della nave naufragata è sopravvissuto. Organizzerà subito una spedizione di salvataggio.
+#TEXT 15
+Ho accompagnato il capitano @<sName> e i suoi marinai fino all’insediamento più vicino e sono stato ricompensato generosamente, anche se non l’avevo mai chiesto...
+#TEXT 16
+A @<shoreName> ho accolto a bordo il capitano @<sName> insieme a @<count> dei suoi marinai. Il capitano sostiene che il pirata @<sBadName> abbia spinto l’equipaggio alla rivolta, lo abbia privato della sua nave e abbandonato lui e i suoi uomini a terra. Gli ho promesso che cercherò la sua nave, la '@<ShipName>', e gliela riporterò; in cambio, il contenuto della stiva sarà mio.
+#TEXT 17
+Come avevamo concordato, ho consegnato il capitano e i suoi marinai all’insediamento. L’unica ricompensa che ho ricevuto sono stati i loro ringraziamenti, ma in fondo non mi è costato nulla.
+#TEXT 18
+Sono salito a bordo del @<ShipType> "@<ShipName>" e, come d'accordo, l'ho restituito a @<sName>. Ho tenuto per me il carico della stiva. La giustizia è stata fatta.
+#TEXT 19
+Nella furia della battaglia, la @<ShipType> "@<ShipName>" è affondata e, ovviamente, tutto ciò che aveva nella stiva è andato perso. Mi dispiace molto per il capitano @<sName>. Ma ormai, quel che è fatto è fatto.
+
+#QUEST JungleGirl
+Extra: Damsel in the Jungle
+
+Lavoretto: Dama nella giungla
+#TEXT 1
+Ho promesso a @<sName> del villaggio di @<sCity> di portarle @<sText1> perle grandi e @<sText2> piccole per la collana della sua padrona. Ho solo 10 giorni: altrimenti tutto il mio impegno sarà stato inutile.
+#TEXT 2
+In cambio delle perle, @<sName> mi ha dato un amuleto davvero bello. In effetti, non sai mai dove perdi qualcosa e quando invece guadagni.
+#TEXT 3
+Non sono riuscito a raccogliere abbastanza perle per @<sName>. Mi dispiace per la ragazza, ma in fondo è colpa sua: non avrebbe dovuto cercare lavoro con una padrona così imprevedibile...
+#TEXT 4
+@<sName> sostiene di conoscere il luogo dove suo padre, il famigerato pirata @<sPirateName>, ha nascosto il suo tesoro. Si trova a @<sTreasureLoc>. Dobbiamo sbarcare a @<sShore>. Dopo aver trovato il tesoro, dovrò riportarla all’insediamento di @<sCity>.
+#TEXT 5
+@<sName> è morto, e non so dove siano nascosti i forzieri. Peccato, ma stavolta la fortuna non era dalla mia parte.
+#TEXT 5_1
+Ho deciso di non preoccuparmi della ricerca del tesoro del padre di @<sName>. Se vuole, può occuparsene da sola.
+#TEXT 6
+Il tesoro di @<sPirateName> era davvero immenso. Ho ricevuto la mia parte. Ora devo riportare @<sName> a casa, nell’insediamento di @<sCity>.
+#TEXT 7
+@<sName> è morta. Mi dispiace per la ragazza, era appena diventata ricca... Che morte assurda...
+#TEXT 8
+Ho riportato @<sName> a casa insieme al suo tesoro. In segno di gratitudine, mi ha fatto un regalo davvero bello... In effetti, è proprio piacevole rendere felici le persone...
+#TEXT 9
+La figlia di @<sText> nel villaggio di @<sCity> è scappata di casa. Diceva di odiare l’idea di sposare il figlio dell’usuraio e mi ha pregato di portarla dal suo innamorato, @<sLover>. E adesso che faccio con lei? Non vorrei rovinarle la vita, ma capisco anche i suoi genitori...
+#TEXT 10
+@<sName> è morto... Ecco cosa succede quando i giovani non ascoltano i genitori...
+#TEXT 11
+Ho consegnato la fuggitiva alle guardie. Ora decideranno loro cosa farne...
+#TEXT 12
+Nell’insediamento di @<sCity> anche la ragazza è scappata da me. Posso solo sperare che trovi la felicità che cerca, quella per cui è pronta a sacrificare tutto. Ah, la gioventù...
+#TEXT 13
+Ho riportato la fuggitiva da suo padre, e sono certo di aver fatto la cosa giusta. Cosa può essere peggiore del dolore di un genitore che ha perso l’unica figlia? E suo padre mi ha ricompensato generosamente.
+#TEXT 14
+Ho accompagnato la ragazza dal suo amato. D’ora in poi se la caveranno da soli, non sono la loro balia.
+#TEXT 15
+Mi sono impegnato a portare la coppia innamorata nella città di @<sCity>, dai genitori del suo futuro sposo. Credo sia la cosa giusta da fare.
+#TEXT 16
+Ho portato la coppia di innamorati dove avevo promesso. Ora dovrei andare da @<sText> e riscuotere la mia ricompensa dal padre dello sposo. Chissà quanto sarà felice di vedermi?
+#TEXT 17
+Ho deciso di non disturbare i genitori dello sposo, avranno sicuramente altre preoccupazioni. In fondo, la mia spesa in tutta questa faccenda è stata davvero minima.
+#TEXT 18
+Il padre dello sposo mi ha ringraziato e mi ha fatto un regalo davvero generoso... Quasi quasi invidio questi due giovani innamorati...
+#TEXT 19
+Sembra che sia stato tutto tempo perso. Il padre dello sposo si è rivelato un vero avaro. Mi viene quasi da compatire quei due ragazzi: nessuno dei due ha avuto fortuna con i genitori... Qui, in questo angolo sperduto, la gente ha il cuore duro e non parla d’altro che di oro. Eppure sono contento di aver dato una mano ai giovani. Meritano una vita migliore.
+#TEXT 20
+Mi sono impegnato a riportare la ragazza @<sName>, fuggita dal bordello di @<sBrothelCity>, ai suoi genitori a @<sCity>.
+#TEXT 21
+Ho accettato di portare a @<sName>, che era fuggita dal bordello, la sua borsa. Dovrò cercarla nella stanza privata. Dentro dovrebbero esserci un po’ di soldi, dei documenti, un vestito decente e altri effetti personali della povera ragazza.
+#TEXT 22
+Ero troppo impegnato e ho dovuto lasciare la ragazza in taverna. Spero comunque che sia abbastanza sveglia da cavarsela da sola.
+#TEXT 23
+Ho fatto tutto il possibile. Posso solo sperare che @<sName> arrivi sana e salva a casa sua.
+#TEXT 24
+Ho accompagnato @<sName> all’insediamento di @<sCity>. Non l’ho riportata dai suoi genitori: avranno sicuramente altre preoccupazioni...
+#TEXT 25
+Ho riportato @<sName> a casa. In cambio ho ricevuto una buona spada e anche una profonda soddisfazione morale.
+#TEXT 26
+Ho riportato @<sName> a casa. In cambio, ho ricevuto un ottimo moschetto e anche una profonda soddisfazione morale.
+#TEXT 27
+Ho riportato @<sName> a casa. Suo fratello mi ha proposto di unirmi a una spedizione contro i pirati, ma ho dovuto rifiutare.
+
+#QUEST ShipEpidemy
+Evento: L’epidemia
+#TEXT 1
+Sembra che abbia preso un’infezione. A quanto pare, il capitano della '@<sShipName>' non scherzava riguardo all’epidemia. D’ora in poi dovrò evitare il più possibile i contatti con l’equipaggio e stare più attento.
+#TEXT 2
+L’epidemia sta passando. Mi è tornato l’appetito, segno che sto guarendo, grazie a Dio.
+#TEXT 3
+Abbiamo un’epidemia a bordo. I marinai stanno morendo per una malattia. Il capitano della '@<sShipName>', che possa bruciare all’inferno, non scherzava affatto... E adesso cosa dobbiamo fare? Che la Santa Vergine ci protegga tutti.
+#TEXT 4
+La malattia sta regredendo. Sia lodata la Santissima Madre di Dio! D’ora in poi dovrò stare molto più attento...
+
+#QUEST ChurchGenQuest1
+Extra: Manoscritti del prete di @<sCity>
+#TEXT 1
+Il santo padre @<sName> mi ha affidato un incarico: recuperare preziosi manoscritti teosofici che lui, su ordine dei suoi superiori e per il bene dell’illuminazione, aveva consegnato al sacerdote di @<sOwnerCity>, il quale però non li ha restituiti nei tempi dovuti. Ho deciso di aiutarlo a risolvere questa delicata faccenda.
+#TEXT 2
+Uomini adulti, servitori di Dio, e si comportano come bambini! Pazienza, l’importante è che ho i manoscritti! Ora devo solo riportarli a @<sColony>.
+#TEXT 3_1
+Beh, è incredibile vedere come certa gente cerchi di giustificare la propria pigrizia e irresponsabilità con qualche nobile scusa. Come si possono affidare cose così preziose a uno sconosciuto, senza alcuna garanzia? Che prete sconsiderato... Ora devo inseguire quel @<sCapName>, capitano della "@<sShipName>", per tutto l’arcipelago.
+#TEXT 3_2
+Non sarà affatto facile cercare una nave di cui non conosco nemmeno il nome. E devo sbrigarmi, prima che quel capitano timorato di Dio si sbarazzi di questi preziosi libri... Ma prima di tutto devo scoprire qual è quel NOME SACRO che @<sCapName> ha scritto sul retro della sua vecchia carretta.
+#TEXT 4
+Mi chiedo perché dovrei essere io a pagare per i capricci religiosi di qualcun altro?! Maledizione! Spero davvero che vicino alla colonia di @<sColony> riesca finalmente a raggiungere quella vecchia carretta, la "@<sShipName>", con il suo capitano timorato di Dio al comando, e a strappargli quei documenti. Magari il Signore mi perdonerà un paio di peccati per questo.
+#TEXT 5
+Di nuovo senza fortuna. Quel @<sName> è davvero un tipo interessante: il prete gli ha affidato un carico di grande valore, ma solo a sentir pronunciare il suo nome gli ufficiali del porto tremano. Vedremo come andrà a finire quando ci incontreremo finalmente a @<sColony>...
+#TEXT 6
+Quel capitano è sicuramente una persona interessante. Bene, è ora di incontrarlo di persona, prendere finalmente quei libri tanto desiderati e consegnarli al loro legittimo proprietario a @<sColony>.
+#TEXT 7
+Oggi ho consegnato al prete di @<sColony> i suoi preziosi manoscritti e ho ricevuto la mia ricompensa, insieme a un avvertimento contro il peccato mortale dell’avidità.
+#TEXT 7_2
+Il vecchio pazzo @<sCapName> si è indebitato alla taverna e ha lasciato in pegno libri e manoscritti preziosi al proprietario. Sempre spese su spese... Riscatterò i manoscritti e li porterò finalmente a @<sColony>.
+#TEXT 8
+Un’altra voce nei miei conti: ho saldato il debito di un vecchio capodoglio, @<sName>, nella taverna. Ho riscattato i manoscritti del prete nella colonia di @<sColony>, e ora è il momento di restituirgli i suoi preziosi scritti e mostrargli anche il mio registro delle spese!
+#TEXT 9
+In effetti, ci sono ancora osti disinteressati in giro. Mi affretterò a @<sColony> per restituire i manoscritti teosofici e raccontare la storia di un locandiere che ha ceduto libri preziosi solo per mantenere la sua promessa.
+#TEXT 10
+Oh, cielo... Non avrei mai immaginato che un compito così semplice potesse richiedere così tanto tempo ed energie. Beh, almeno il timorato di Dio capitano @<sCapName> non mi ha dato problemi: mi ha consegnato i preziosi manoscritti e mi ha detto di sparire, cosa che ho fatto volentieri. Ora si torna a @<sColony>.
+
+#QUEST ChurchGenQuest2
+Extra: Rapina alla chiesa di @<sCity>
+#TEXT 1
+Rubare i soldi della chiesa! Ma che succede a questo mondo?! Beh, mentre padre @<sName> lancia maledizioni su questi sacrileghi, io dovrei passare a qualcosa di più concreto, e se il Signore non mi ricompenserà, di certo lo farà il Padre... Non possono essere andati lontano...
+#TEXT 2
+La gente in città dice che i soldi sono stati rubati dai banditi locali, che sono stati abbastanza furbi da sparire. Forse dovrei andare a cercarli nei loro territori di caccia.
+#TEXT 3
+In effetti, Dio dà a ognuno ciò che si merita: i banditi hanno avuto la loro punizione, e io ho preso il denaro della chiesa. Ora è il momento di tornare dal Padre.
+#TEXT 4
+Non è fantastico? Ho fatto un favore a Dio e non mi sono dimenticato nemmeno di me stesso. Una vera benedizione!
+#TEXT 5
+È persino più di quanto mi aspettassi! A volte lavorare per la Chiesa ripaga davvero!
+#TEXT 6
+Beh, sono ricco e sono maledetto. E allora? Con tutti questi soldi non mi importa né di Dio né del Diavolo.
+#TEXT 7
+La giungla è piena di furfanti di ogni tipo, ma non ho ancora trovato quelli che cercavo. Dovrò tornare in città per ottenere informazioni più precise su dove si trovano.
+#TEXT 8
+I ladri dei beni della chiesa erano più furbi di quanto pensassi e sono fuggiti dal villaggio. Devo sbrigarmi a raggiungere @<sCity> su @<sIsland>, prima che si siano già spesi tutto tra alcol e donne!
+#TEXT 9
+Beh, con i contrabbandieri è stato facile trovare un accordo. Aiutavano i furfanti per denaro e li tradivano per denaro. Va bene, allora rotta verso @<sShore>.
+#TEXT 10_1
+Ora, questa sì che è una storia... Possibile che padre @<sName> sia davvero così infido? In ogni caso, prima devo parlargli, magari sto sospettando di un uomo del tutto innocente...
+#TEXT 10_2
+Ora, questa sì che è una storia incredibile... Possibile che padre @<sName> sia davvero così infido? Beh, visto che ho eliminato tutti quei furfanti, ormai solo il padre in persona può confermare o smentire le loro parole...
+#TEXT 11_1
+Finalmente, ho trovato quei furfanti. Certo, non era il Santo Graal, ma comunque... Beh, è ora di tornare indietro.
+#TEXT 11_2
+Spero di aver fatto qualcosa di buono e che, quando arriverà il Giorno del Giudizio, l’Onnipotente lo tenga a mente per me: ho condiviso i miei averi con chi era meno fortunato, per mostrare loro la via della rettitudine. A proposito, dovrò dire al Padre che probabilmente anche i beni della sua chiesa sono stati usati per lo stesso scopo...
+#TEXT 11_3
+Chi avrebbe mai detto che i beni della chiesa potessero costare così tanto... Beh, almeno in cambio dei soldi ho ottenuto qualcosa. Porterò il calice al padre: magari allevierà un po’ il suo dispiacere per il denaro rubato...
+#TEXT 11_4
+Essere poveri non è un peccato... mentire lo è! E Dio ha premiato tanta nobiltà d’animo: i furfanti che l’hanno sfidato saranno puniti, i beni della chiesa saranno salvati, e io riceverò la mia giusta ricompensa!
+#TEXT 12_1
+Vorrei credere che il pentimento del prete di @<sCity> fosse sincero. Certo, ho perso qualcosa dal punto di vista materiale, ma la soddisfazione morale compensa ampiamente!
+#TEXT 12_2
+Che svolta inaspettata! A quanto pare, anche i sacerdoti possono cadere vittima dell’avidità. Ma, come si suol dire, tutto è bene quel che finisce bene. Padre @<sName> è riuscito a resistere alla tentazione e mi ha persino rimborsato le spese.
+#TEXT 12_3
+Che colpo di scena! A quanto pare, perfino i sacerdoti possono cadere vittima dell’avidità. Ma, come si suol dire, tutto è bene quel che finisce bene. Padre @<sName> è riuscito a resistere alla sua tentazione. Peccato che si sia dimenticato di rimborsarmi le spese, forse era troppo agitato. Ho dovuto ricordarglielo io.
+#TEXT 12_4
+In questi tempi dominati dall’avidità, persino il clero può cadere nelle tentazioni del Diavolo, figuriamoci la gente comune. Forse sembrerà una sciocchezza, ma io non ho accettato il denaro sporco di quel furfante in tonaca.
+#TEXT 12_5
+In effetti, il Signore è misericordioso se permette a peccatori come Padre @<sName> di ingannare la sua ingenua congregazione. Io però non sono così indulgente, e sarei felice di consegnare quel furfante alle autorità, ma, purtroppo, non ho prove concrete della sua complicità... Beh, direi che per oggi basta opere pie in nome del Signore. Almeno sono riuscito a farmi rimborsare le spese da quel mascalzone.
+#TEXT 12_6
+In verità, il Signore è misericordioso se permette a peccatori come padre @<sName> di ingannare la sua ingenua congregazione. Io però non sono così indulgente, e sarei ben felice di consegnare quel furfante alle autorità, ma purtroppo non ho prove concrete della sua complicità... Beh, basta così con le buone azioni in nome del Signore, tutto quello che mi resta sono spese e delusioni.
+#TEXT 12_7
+Non riesco ancora a scrollarmi di dosso i sospetti sul prete di @<sCity>. Certo, la parola di un prete vale più di quella di un bandito, ma tutta questa storia puzza. Basta così con le buone azioni in nome del Signore: tutto quello che mi resta sono spese e delusioni.
+#TEXT 12_8
+Padre ha accettato la notizia che tutti i soldi della chiesa alla fine sono stati sprecati in alcol per i banditi. Beh, neanche le mie spese sono state coperte, se questo può consolarlo.
+#TEXT 12_9
+Non è stato proprio un gesto da buon cristiano, ma la parrocchia non ci rimetterà e almeno una parte delle mie spese sarà coperta. L’importante è che i ladri non siano riusciti a mettere le mani sulle casse della chiesa.
+#TEXT 12_10
+Appropriarsi dei soldi della chiesa e ricevere una ricompensa per questo non è certo un gesto virtuoso, ma... Se non cambio l’attrezzatura della nave, uno dei marinai potrebbe cadere e morire, e questa colpa ricadrebbe su di me... Quanto al Padre, giuro che donerò alla sua chiesa una somma tre volte superiore a quella che ho preso!
+#TEXT 12_11
+Il Signore mi perdonerà? Solo Lui può sapere perché ho ingannato quel prete dal cuore puro. Già questo era un peccato, ma accettare il denaro che mi ha offerto con infinita gentilezza per consolarmi è stato un peccato ancora più grande.
+#TEXT 12_12
+Niente soldi! Niente gloria! Mi sono rimasti solo sporchi pettegolezzi!!! Non avrò mai più a che fare con questi ipocriti!
+#TEXT 13
+La Bibbia dice che tutte le prove che affrontiamo ci vengono date dal Signore secondo le nostre forze, e che Dio protegge l’agnello più debole. Eppure, sembra che io abbia perso le mie forze, e questo peso è diventato troppo grande per me. Spero che padre @<sName> capirà, quando gli confesserò che non sono riuscito a portare a termine la sua missione.
+
+#QUEST CaptainComission1
+Extra: L’ultimo desiderio
+#TEXT 1
+Capitano della @<sShipName>, @<sCapName>, prima di morire mi ha chiesto di dire a @<sCharName> di @<sCity> che non ha fatto in tempo a sbrigare il suo incarico. Dovrò trovare quest’uomo. L’ultima volontà di un morente va rispettata...
+#TEXT 2
+Ho deciso di non perdere tempo con questioni di poco conto. Sono sicuro che quell’uomo si sia ormai dimenticato di quella faccenda.
+#TEXT 3
+@<sCharName> mi ha proposto di riscattare il suo prigioniero, @<sCharType>. Ho rifiutato, dicendo di essere troppo impegnato.
+#TEXT 4
+@<sCharName> di @<sCity> mi ha chiesto di consegnare 150.000 pesos a @<sPirateName> a @<sPirateCity>, per liberare il suo @<sFamilyType> @<sSlaveName>, tenuto in ostaggio dai pirati in attesa del riscatto. Al mio ritorno, riceverò 40.000 pesos come ricompensa per il lavoro svolto.
+#TEXT 5
+Mi sono trovato in una situazione disperata. A quanto pare, @<sCapName> stava consegnando a @<sPirateName> a @<sPirateCity> un riscatto per alcuni prigionieri @<sSlaveName>: ben 3 scrigni d’oro. Quel tipo, @<sCharName>, mi ha detto che il suo incarico resta valido. Se non porto @<sSlaveName> alla taverna di @<sCity> entro 30 giorni, ha promesso di mandarmi addosso dei cacciatori di taglie... Ma come ho fatto a non notare quegli scrigni nella cabina del defunto capitano?!
+#TEXT 6
+Non sono riuscito a portare a termine l’incarico di @<sCharName>, ma dovrà perdonarmi. In fondo, potevo fare la stessa fine del capitano @<sCapName>.
+#TEXT 7
+Ebbene, il tempo per consegnare il prigioniero è scaduto. Vediamo ora cosa farà quel minaccioso signor @<sCharName>.
+#TEXT 8
+Ho deciso di rifiutare la missione di @<sCharName>. Forse si offenderà, ma dopotutto gli ho restituito i soldi.
+#TEXT 9
+Ho liberato il prigioniero. Ora devo portarlo da @<sCharName> a @<sCity>.
+#TEXT 10
+@<sName> si è stancato di aspettare il riscatto e ha venduto il suo prigioniero a una piantagione di Barbados. Forse è meglio così: uno schiavo non può valere più di un ostaggio. Devo sbrigarmi e andare a Barbados a trovare il colonnello Bishop.
+#TEXT 11
+Ho pagato @<sSum> pesos per @<sName>. Ora devo sbrigarmi ad arrivare a @<sCity> da @<sCharName>. Sarà sicuramente in pensiero, poveretto. E magari ci scappa anche una ricompensa.
+#TEXT 12
+Un pasticcio con i forzieri mi è costato caro. Ho pagato per @<sName> una bella somma di @<sSum> pesos. Ma il prigioniero non era uno sprovveduto: mi ha proposto di portarlo a @<sCity> in cambio di informazioni molto preziose. Ho accettato, visto che il cliente non sembrava intenzionato a pagarmi nulla.
+#TEXT 13
+Un pasticcio con i forzieri mi è costato caro. Ho pagato per @<sName> una bella somma di @<sSum> pesos. Pare che il tipo liberato non abbia nessuna intenzione di incontrare il mio cliente, ma non è affar mio. Non voglio altri guai per colpa di questo straccione.
+#TEXT 14
+Ho consegnato l’ex ostaggio, ora cittadino libero @<sName>, al suo parente e ho ricevuto la ricompensa promessa: 40.000 pesos in casse di credito.
+#TEXT 15
+Ho riportato l’ex ostaggio @<sName> dal suo parente, ma si è rifiutato di rimborsarmi le spese extra... La gente diventa davvero difficile quando non ha più bisogno di te.
+#TEXT 16
+Ho consegnato l’ex prigioniero al cliente. Si è scoperto che era uno specialista di @<sSpeciality>, ricercato da @<sNation>. Come ricompensa, ho ricevuto un prezioso dono a nome del governo.
+#TEXT 17
+Durante il tentativo di fuga, @<sName> è stato ucciso. Forse non avrei dovuto metterlo in pericolo. E adesso, cosa dirò al cliente?
+#TEXT 17_1
+@<sName> è morto nella giungla. Forse non avrei dovuto metterlo in pericolo. E adesso cosa dirò al cliente?
+#TEXT 18
+Sono riuscito a organizzare la fuga di @<sName> dalla piantagione. Ora devo solo trovarlo e portarlo al cliente.
+#TEXT 19
+Quel prigioniero non era così ingenuo: mi ha proposto di portarlo a @<sCity> in cambio di alcune informazioni molto preziose. Ho accettato, visto che il cliente non sembrava intenzionato a pagarmi nulla.
+#TEXT 20
+Sembra che il tipo che ho liberato non abbia alcuna intenzione di incontrare il mio cliente, ma non è affar mio. Non voglio altri guai per colpa di questo straccione.
+#TEXT 21
+Quell’ingegnere prigioniero si è rivelato davvero utile. Le informazioni che ho ottenuto da lui sarebbero preziose perfino per un veterano di mille battaglie.
+#TEXT 22
+Ho informato @<sCharName> della morte di @<sName>, suo parente. Ho tenuto il denaro del riscatto come rimborso delle mie spese.
+#TEXT 23
+Ho informato @<sCharName> della morte di @<sName>, suo parente, e gli ho restituito il denaro del riscatto: 150.000 pesos. Certo, avrei potuto chiedere un rimborso delle mie spese, ma in questa situazione non sarebbe stato opportuno.
+#TEXT 24
+@<sName> mi ha affidato il compito di affondare due navi pirata: '@<sShipName1>' e '@<sShipName2>', che sono salpate verso @<sShoreName> su @<sShoreType>. Devo riuscirci entro 15 giorni, prima che svuotino il nascondiglio.
+#TEXT 25
+Il compito di @<sName> è stato portato a termine, '@<sShipName1>' e '@<sShipName2>' sono stati distrutti. Ora devo sbrigarmi a raggiungere @<sCity> prima che @<sNameNom> venda il prigioniero agli schiavisti.
+#TEXT 26
+Non sono riuscito a raggiungere i pirati. Sicuramente ormai avranno già svuotato il nascondiglio. Dovrò tornare a @<sName> a mani vuote.
+#TEXT 27
+Non sono riuscito a trovare un accordo con @<sName>. Ora non ho idea se dovrei tornare a @<sCity> per incontrare @<sCharName>. Cosa gli dirò?
+#TEXT 28
+Dopo il mio errore durante la missione, @<sName> ha alzato il riscatto a 200.000 pesos. Non li ho pagati di tasca mia. Ora non so proprio se tornare a @<sCity> per incontrare @<sCharName>. Cosa gli dirò?
+#TEXT 29
+Dopo il mio errore durante la missione, @<sName> ha alzato il riscatto a 200.000 pesos. Ho dovuto pagare tutto di tasca mia. Ora devo sbrigarmi ad arrivare a @<sCity> per incontrare @<sCharName>. Forse il cliente mi rimborserà almeno una parte delle spese?
+#TEXT 30
+Non ho pagato una cifra così assurda. Riscattare un ostaggio è una cosa, ma comprare uno schiavo di piantagione è tutt’altra storia... Mi chiedo se Bishop abbia rafforzato la sorveglianza dopo l’incidente, o continua ancora a risparmiare?
+#TEXT 31
+@<sName> non vuole separarsi dal suo prigioniero senza un riscatto. Beh, dovrò trovare i soldi oppure lasciar perdere tutta questa faccenda.
+#TEXT 32
+Ho raccontato a @<sName> della morte del prigioniero. Ora sembra trovarsi nella stessa situazione senza via d’uscita in cui mi aveva messo lui stesso.
+#TEXT 33
+Non sono riuscito a distruggere le navi pirata @<sShipName1> e @<sShipName2>. Ora dovrò tornare a @<sName> a mani vuote.
+#TEXT 34
+Finalmente @<sName> è salito a bordo della mia nave. Ora devo sbrigarmi ad arrivare a @<sCity> per incontrare @<sCharName> prima che gli venga un colpo.
+#TEXT 35
+Eh... Non avrei dovuto scegliere questa opzione. Non c’era motivo di litigare con @<sName>. Ora sì che abbiamo dei problemi da risolvere...
+#TEXT 36
+Eh... Non avrei dovuto scegliere questa opzione. Non era necessario abbandonare la missione @<sName>. Ora il prigioniero dovrà essere riscattato per 250.000 pesos.
+
+#QUEST CaptainComission2
+Extra: Ultimo Desiderio
+#TEXT 1
+Capitano @<sName>, prima di morire, mi ha chiesto di avvertire il capitano della @<sShipType> '@<sShipName>', @<sCapName>, che sta per essere arrestato a @<sCity1>. Le autorità hanno fiutato qualcosa su di lui... La @<sShipTypeNom> salpa da @<sCity2> e arriverà al porto di @<sCity1> tra 10-15 giorni. Devo raggiungerla. L’ultima volontà di un morente va rispettata.
+#TEXT 2
+Ero troppo occupato per avvertire @<sCapName> del pericolo in arrivo. Immagino che se è abbastanza sveglio, riuscirà a cavarsela.
+#TEXT 3
+Ho portato a termine l’incarico di @<sName>, ma non ho aiutato il suo amico, dicendo che ero troppo occupato. È un tipo in gamba, se la caverà da solo.
+#TEXT 4
+Il capitano @<sName> mi ha chiesto di aiutarlo a portare di nascosto un carico di @<sGoods> da @<sShoreName>. Quando ho rifiutato, si è preso la mia nave e mi ha lasciato su una costa deserta. Ora devo ricominciare da zero... Ecco cosa succede a chi cerca di aiutare gli altri.
+#TEXT 5
+Il capitano @<sName> mi ha chiesto di aiutarlo a far uscire di nascosto un carico di @<sGoods> da @<sShoreName>. Quando ho rifiutato, ha provato a prendersi la mia nave. Ha fatto male a provarci: l’ho mandato a dormire tra gli squali. Peccato che non sappia dove sia il nascondiglio.
+#TEXT 6
+Il capitano @<sName> mi ha chiesto di aiutarlo a far uscire di nascosto un carico di @<sGoods> da @<sShoreName>. Quando ho rifiutato, ha cercato di impadronirsi della mia nave. Sono stato costretto a fuggire a vele spiegate.
+#TEXT 7
+Il capitano @<sName> mi ha chiesto di aiutarlo a far uscire di nascosto un carico di @<sGoods> da @<sShoreName>. Tutto quello che non entrerà nella sua stiva sarà mio... Dovrò attraccare a @<sShoreNameDat> subito dopo mezzanotte.
+#TEXT 8
+Ho cambiato idea e non voglio più avere a che fare con @<sName>. Che se la cavi da solo con le conseguenze.
+#TEXT 9
+Sembra che ci fosse un’imboscata a @<sShoreName>: la pattuglia è arrivata fin troppo in fretta. Il capitano @<sName> è stato ucciso nello scontro. I marinai hanno perlustrato la baia, ma non hanno trovato il nascondiglio. Forse le autorità l’hanno già svuotato...
+#TEXT 10
+Il carico è nelle stive. La mia parte è di @<sGoodsQuantity> pezzi di @<sGoods>. È il momento di separarci. Meglio sbrigarci, prima che la corona mandi i suoi cacciatori alle nostre calcagna.
+#TEXT 11
+Il carico è già nelle stive. La mia parte era di @<sGoodsQuantity> unità di @<sGoods>. Il capitano @<sName> teme che potremmo essere inseguiti e mi ha chiesto di scortare la sua nave fino a @<sShoreName>, su @<sShoreType>. Ho deciso di aiutarlo, anche perché mi ha promesso una ricompensa niente male: @<sSum> pesos.
+#TEXT 12
+Uno squadrone di pattuglia ci aspettava già all’uscita della baia. Non abbiamo avuto scelta: abbiamo dovuto combattere. La @<sShipType> '@<sShipName>', con la stiva piena di @<sGoods>, è affondata insieme al capitano @<sName>.
+#TEXT 13
+Abbiamo accettato la battaglia, e la @<sShipType> '@<sShipName>', con la stiva piena di @<sGoods>, è affondata... Beh, sembra che fosse volontà di Dio... Il coraggioso capitano @<sName> non ha fatto in tempo a godersi le sue nuove ricchezze.
+#TEXT 14
+Io e il capitano @<sName> abbiamo deciso che è meglio per entrambi prendere strade diverse, così da non doverci sentire legati da obblighi reciproci. Lui è andato a @<sShoreName>, mentre io mi sono occupato dei miei affari.
+#TEXT 15
+Non sono riuscito a scortare la @<sShipType> "@<sShipName>" in tempo, così il capitano @<sName> si è rifiutato di pagarmi la ricompensa. Ma almeno non ne sono uscito proprio da perdente.
+#TEXT 16
+Il capitano @<sName> mi ha attirato in una trappola e ha preteso che restituissi il carico o pagassi un riscatto in oro. A @<sShoreName>, una parte della sua ciurma era già pronta ad aspettarci. Non ho avuto scelta: ho dovuto accettare lo scontro.
+#TEXT 17
+Il capitano @<sName> mi ha attirato in una trappola e mi ha imposto di restituire il carico o pagare un riscatto in oro. Sulla spiaggia di @<sShoreName> una parte della sua ciurma era già pronta ad aspettarci. Ho dovuto dargli @<sSum> pesos.
+#TEXT 18
+Si è scoperto che il capitano della pattuglia @<sShipType>, @<sName>, ha legami con i contrabbandieri. Forse dovrei fargli visita nelle segrete del forte, non credi?
+#TEXT 19
+Si è scoperto che il capitano della pattuglia @<sShipType>, @<sName>, è coinvolto in una brutta faccenda legata a un carico scomparso. Forse dovrei fargli visita nelle segrete del forte, non credi?
+#TEXT 20
+Non sono riuscito a trovare il nascondiglio del capitano @<sName>. Credo sia meglio non disturbare il governatore di @<sCity> per questa faccenda.
+#TEXT 21
+Il capitano @<sName> ha accettato di mostrarmi il nascondiglio in cambio della metà del bottino. Prima però devo mettere in cella il fuggitivo sulla mia nave, e poi farò il resto.
+#TEXT 22
+Il capitano @<sName> è morto, e con lui sono svanite anche le mie speranze di trovare il tesoro.
+#TEXT 23
+Ho completamente fallito la missione del governatore... Che vergogna...
+#TEXT 24
+Il tesoro del capitano @<sName> si trova a @<sShoreName>. Devo preparare la stiva per caricare @<sGoodsQuantity> unità di @<sGoods>. Dobbiamo sbrigarci, prima che qualcuno trovi il nascondiglio.
+#TEXT 25
+Sono stato proprio uno sciocco a lasciar scappare il capitano @<sName>! Avrei potuto guadagnarci un bel po'.
+#TEXT 26
+Abbiamo trovato il nascondiglio: @<sGoodsQuantity> unità di @<sGoods> sono state caricate nella stiva. @<sSum1> di queste appartengono al capitano @<sName>. Tra @<sDays> giorni dovrò consegnarle a @<sShoreName> su @<sShoreType>. Che i segugi del governatore inseguano pure il capitano @<sName> e il suo prezioso carico, e aggiungano anche il mio nome alla loro lista.
+#TEXT 27
+Finalmente, il capitano @<sName> ha svelato il suo nascondiglio, ma avevo già deciso di non dividere il bottino con lui. Ha provato a opporsi alla mia scelta e l’ha pagata cara. Ora @<sGoodsQuantity> unità di @<sGoods> sono mie.
+#TEXT 28
+Finalmente, il capitano @<sName> ha svelato il suo nascondiglio, ma non ha sopportato l’idea che volessi consegnare tutto il carico alle autorità. Ho dovuto agire con decisione e il capitano ne è uscito senza vita. Ora devo informare il governatore di @<sCity> su dove si trova il bottino.
+#TEXT 29
+Non ho rivelato alle autorità dove si trova il nascondiglio del capitano @<sName>. Immagino che lo troveranno anche senza il mio aiuto.
+#TEXT 30
+Il compito affidato dal governatore di @<sCity> è stato portato a termine. Al posto di una ricompensa in denaro, ho ricevuto un dono davvero notevole.
+#TEXT 31
+Siamo arrivati tardi e a @<sShoreName> non c’era più nessun acquirente. Il capitano @<sName> mi ha proposto di comprare la sua parte, ma non vedo perché dovrei buttare via i miei soldi per una merce che ormai è già nella mia stiva. Abbiamo risolto la questione con un duello.
+#TEXT 32
+Siamo arrivati tardi e a @<sShoreName> non c’era più nessun acquirente. Il capitano @<sName> mi ha proposto di comprare la sua parte per @<sSum> pesos. Ho accettato e, in cambio, il capitano mi ha fatto un bel regalo. Ci siamo lasciati da amici.
+#TEXT 33
+A quanto pare, il capitano @<sName> non è riuscito a dividere il bottino con il suo equipaggio. Ho dovuto ridurre il numero di pretendenti alla loro parte. Anche il capitano non è sopravvissuto a lungo. Quindi, il nostro accordo non ha più valore: uno dei soci è morto. Ora il carico resta tutto mio.
+#TEXT 34
+A quanto pare, il capitano @<sName> non è riuscito a dividere il bottino con il suo equipaggio. Ho dovuto ridurre il numero di pretendenti alla loro parte. Inoltre, il capitano mi ha proposto di comprare la sua quota per @<sSum> pesos. Ho accettato e, in cambio, il capitano mi ha fatto un bel regalo. Ci siamo lasciati da amici.
+#TEXT 35
+A quanto pare, il capitano @<sName> non è riuscito a dividere il bottino con il suo equipaggio. Ho dovuto ridurre il numero di pretendenti alla loro parte. Inoltre, il capitano mi ha proposto di acquistare la sua quota per @<sSum> pesos. Mi ha anche chiesto di unirsi al mio equipaggio, ma ho rifiutato. È troppo indipendente per i miei gusti.
+#TEXT 36
+Sembra che il capitano @<sName> non abbia diviso il bottino con l’equipaggio. Ho dovuto ridurre il numero di pretendenti alla loro parte. Inoltre, il capitano mi ha proposto di riscattare il bottino per @<sSum> pesos. Così ho accettato. E l’ho anche assunto come ufficiale sotto il mio comando. Tutti cercano combattenti così.
+#TEXT 37
+Sono arrivato troppo tardi: il capitano della pattuglia @<sShipType>, @<sName>, è stato giustiziato insieme a tutto il suo equipaggio. Devo scoprire cosa è successo.
+#TEXT 38
+Sono arrivato troppo tardi: il capitano della pattuglia @<sShipType>, @<sName>, è stato giustiziato insieme a tutto il suo equipaggio. Tuttavia, potrebbe aver fatto in tempo a sbarcare il contenuto della stiva della @<sShipTypeQuest>.
+#TEXT 39
+Si scopre che le cose non sono così semplici come sembravano. Il capitano della pattuglia @<sShipType>, @<sName>, è stato giustiziato insieme a parte del suo equipaggio, ma non c’erano prove del suo crimine. Dovrei incontrare @<sCharName>, l’ex cannoniere ferito della @<sShipType> '@<sShipName>'.
+#TEXT 40
+Ex cannoniere del @<sShipType> '@<sShipName>', @<sName>, mi ha raccontato tutta la storia della fine del @<sShipTypeQuest> '@<sShipNameQuest>'. Ma quel tipo un po’ strano ha chiesto una cifra assurda per dirmi dove si trova il nascondiglio. Ho deciso di non pagare.
+#TEXT 41
+La conversazione con l’ex cannoniere della @<sShipType> '@<sShipName>' è stata davvero utile. Ora devo trovare @<sSum> pesos: è questa la somma che @<sName> vuole in cambio delle informazioni sul nascondiglio.
+#TEXT 42
+Ho lasciato perdere tutta la faccenda della cassa del capitano @<sName>. Che il vecchio cannoniere @<sCharName> mi perdoni, ma chiedeva davvero troppo, e ho cose più importanti da fare.
+#TEXT 43
+Ex cannoniere del @<sShipType> '@<sShipName>', @<sName>, mi ha raccontato tutta la storia della fine del @<sShipTypeQuest> '@<sShipNameQuest>'. A quanto pare, il nascondiglio esiste davvero e contiene tutto il carico del @<sShipTypeQuest>: lì sono custoditi @<sSum> pezzi di @<sGoods>. Devo preparare la stiva e raggiungere @<sShoreName> dopo mezzanotte: @<sName> mi aspetterà lì.
+#TEXT 44
+Ho perso stupidamente l’occasione di mettere le mani sul bottino del capitano @<sName>! Forse @<sCharName> non mi ha aspettato, oppure ha voluto giocarmi un brutto scherzo. In ogni caso, ho solo perso tempo e denaro...
+#TEXT 45
+I contrabbandieri hanno svuotato il nascondiglio del capitano @<sName>. Oppure, forse, @<sCharName> ha deciso di prendermi in giro e giocava su due fronti. In ogni caso, tempo e denaro buttati...
+#TEXT 46
+I contrabbandieri hanno trovato il nascondiglio del capitano @<sName> prima di me. Ho dovuto riprendere il carico con la forza. Purtroppo, il cannoniere @<sCharName> è morto. Ironia della sorte, tutti i membri dell’equipaggio di quella sventurata @<sShipType> '@<sShipName>' sono morti, e nessuno di loro ha potuto godere del loro gesto eroico... Ho preso tutte le merci che sono riuscito a stivare: @<sSum> unità di @<sGoods>.
+#TEXT 47
+I contrabbandieri hanno trovato il nascondiglio del capitano @<sName> prima di me. Ho dovuto riprendere il carico con la forza. Ho preso tutte le merci che sono riuscito a stivare: @<sSum> unità di @<sGoods>. Ora devo portare il cannoniere @<sCharName> all’insediamento di @<sCity>.
+#TEXT 48
+Ci siamo separati dall’ex cannoniere della @<sShipType> '@<sShipName>', @<sCharName>, nel porto di @<sCity>. In segno di gratitudine, mi ha regalato un oggetto di valore. Almeno qualcuno dell’equipaggio della @<sShipType> ha tratto qualche beneficio da quell’impresa rischiosa.
+#TEXT 49
+Si è scoperto che il capitano della pattuglia @<sShipType>, @<sName>, è stato arrestato per pirateria navale. Forse dovrei fargli visita nelle segrete del forte, non credi?
+#TEXT 50
+Si è scoperto che il capitano della pattuglia @<sShipType>, @<sName>, è stato arrestato per pirateria, e ora il governatore di @<sCity> sta cercando il suo nascondiglio. Mi sono offerto di aiutarlo in questa faccenda e ho ottenuto il permesso di visitare il prigioniero.
+#TEXT 51
+Mi sono completamente dimenticato del contratto con il capitano e il suo carico... Ma chi se ne importa... Me la caverò comunque. E scarico il capitano nella prima città che trovo.
+#TEXT 52
+Penso che il governatore non diventerà più povero solo perché l’ho ingannato. E il capitano... Beh, come si dice: dove si fa legna, volano le schegge.
+#TEXT 53
+Abbiamo trovato un bottino: @<sGoodsQuantity> pezzi di @<sGoods> sono stati caricati nella stiva. Di questi, @<sSum1> spettano al mio socio. Tra @<sDays> giorni dovrò consegnarli a @<sShoreName>, vicino a @<sShoreType>. Ho deciso di non consegnare il capitano alle autorità, ma di nascondermi insieme a lui! Ora che i segugi del governatore mi cerchino pure... buona fortuna a loro!
+#TEXT 54
+Sembra che il capitano @<sName> non sia riuscito a dividere il bottino con il suo equipaggio. Ho dovuto ridurre il numero di pretendenti alla sua parte. Poi lui ha cercato di ricomprarla da me, ma ho rifiutato di pagare. Un duello ha risolto la questione a mio vantaggio.
+#TEXT 55
+Il capitano @<sName> è morto per sbaglio mentre lo portavano dalla prigione alla mia nave. Peccato. Dimentica pure il nascondiglio.
+
+#QUEST Convict
+Extra: Fuggitivi
+#TEXT 1
+Nella giungla di @<sIslandType> ho incontrato @<sConvictNum> evasi in fuga. Ho deciso di accoglierli nella mia ciurma. Verso mezzanotte dovrò attraccare a @<sShoreName>.
+#TEXT 2
+I detenuti in fuga, che ho incontrato a @<sIslandType>, mi hanno chiesto di procurare loro una tartana o una lancia, promettendo il doppio della ricompensa. Dovrò portare la loro nuova barca a @<sShoreName>. La scadenza è domani mattina.
+#TEXT 3
+Ho cambiato idea: non aiuterò i detenuti. Dovranno cavarsela da soli.
+#TEXT 4
+Ho portato la nave a @<sShoreName>. I detenuti fuggitivi mi hanno pagato per intero.
+#TEXT 5
+Ho portato la nave a @<sShoreName>. Ma invece di pagarmi, i galeotti mi hanno fatto un bel regalo. Mi sta bene così.
+#TEXT 6
+Ho portato la nave a @<sShoreName>. Ma quei dannati galeotti hanno deciso di fregarmi. Ho dovuto spiegare loro che bisogna mantenere la parola data. Peccato che ormai questa lezione non servirà più a niente per loro.
+#TEXT 7
+I detenuti hanno visto ieri notte caricare la nave chiamata @<sShipName> con @<sGoodName>. Chiunque fossero, non possono essere andati lontano.
+#TEXT 8
+Nella giungla di @<sIslandType> ho incontrato @<sConvictNum> detenuti evasi. Mi hanno chiesto di portarli al faro di @<sCity>. Ho accettato di farlo per @<sSum> pesos. Verso mezzanotte dovrò mandare una scialuppa a prenderli a @<sShoreName>.
+#TEXT 9
+Ho rifiutato di prendere i detenuti a bordo, il che ha scatenato la loro aggressività. Ho dovuto calmarli a modo mio.
+#TEXT 10
+I prigionieri sono a bordo. Ora devo filarmela prima che arrivi una pattuglia.
+#TEXT 11
+Ho consegnato i prigionieri a @<sMayak> e ho ricevuto la mia ricompensa: @<sSum> pesos in lingotti d’oro. Come si suol dire, il denaro non ha odore...
+#TEXT 12
+Ho consegnato i prigionieri a @<sMayak>. Ma invece di ricevere il pagamento, i prigionieri mi hanno fatto un regalo davvero niente male. Mi sta bene così.
+#TEXT 13
+Ho consegnato i galeotti a @<sMayak>. Ma quei dannati hanno provato a fregarmi. Ho dovuto spiegare loro che la parola data va rispettata. Peccato che ormai questa lezione non gli servirà più.
+
+#QUEST HoldQuest
+Extra: Indizio dal capitano prigioniero
+#TEXT 1
+Il capitano prigioniero @<sName> mi ha detto che un ricco mercante sta trasportando @<sGoods> da @<sCityFrom> a @<sCityTo>. A volte assume una scorta. Si potrebbe tentare di intercettare la sua nave '@<sShipName>' mentre si avvicina a uno di questi porti. Se il capitano diceva la verità, il bottino sarà davvero ricco. Ah, il prigioniero è stato liberato, tra l’altro.
+#TEXT 2
+Prima che riuscissi a preparare l’assalto, la '@<sShipName>' aveva già levato l’ancora ed era salpata. Non credo avrò un’altra occasione per rintracciarla.
+#TEXT 3
+Ho fallito nel catturare la nave '@<sShipName>' carica di @<sGoods>. Non credo avrò un'altra occasione per rintracciarla.
+#TEXT 4
+Sono riuscito a catturare la nave '@<sShipName>' carica di @<sGoods>.
+#TEXT 5
+Nella furia della battaglia, la nave '@<sShipName>' è stata affondata e tutto il carico di @<sGoods> giace ora sul fondo del mare!
+#TEXT 6
+Il capitano prigioniero @<sName> mi ha detto che nella città di @<sCity> ha un amico, @<sNameChar>, che a quanto pare sarebbe disposto a pagare un grosso riscatto per liberare il suo vecchio compagno. Credo che dovrò andare a trovare questo suo 'amico'.
+#TEXT 7
+Quel capitano prigioniero @<sName> ha cercato di fregarmi! Beh, non la passerà liscia! Lo farò impiccare subito!
+#TEXT 8
+Il proprietario della taverna a @<sCity> mi ha consigliato di andare da @<sFoundChar>; con un po' di fortuna, troverò @<sName> lì.
+#TEXT 9
+Ho lasciato scappare @<sName> come uno sciocco! Avrei potuto ottenere un bel riscatto per il prigioniero.
+#TEXT 10
+Quel capitano prigioniero, @<sName>, ha cercato di fregarmi! Ma non la passerà liscia! Lo farò impiccare subito!
+#TEXT 11
+Il capitano prigioniero @<sName> non ha cercato di imbrogliarmi. Il suo compagno @<sNameChar> ha pagato subito @<sSum> pesos senza fare storie. Ora dovrò ordinare al nostromo di sbarcare il nostro malcapitato.
+#TEXT 12
+Il capitano prigioniero @<sName> mi ha detto che nella città di @<sCity> vive un certo @<sNameChar>, disposto a vendere la mappa del tesoro di @<sPirateName>. Non so se sia vero o meno, ma ho comunque dovuto liberare il prigioniero. Dovrò far visita a quel @<sNameChar> prima che si impossessi lui stesso del tesoro.
+#TEXT 13
+Non so se il capitano prigioniero @<sName> mi abbia ingannato o se sia stato solo un caso, ma non ho mai trovato @<sNameChar>, il proprietario della mappa... E dubito che lo troverò mai...
+#TEXT 14
+Ho lasciato @<sName> scappare come uno sciocco!
+#TEXT 15
+Ho comprato la mappa di @<sPirateName> per @<sSum> pesos. Spero solo che il tesoro sia ancora lì.
+#TEXT 16
+Ho deciso di non comprare la mappa da @<sName>. @<sSum> - è davvero troppo cara, soprattutto considerando che il tesoro potrebbe già non essere più lì...
+#TEXT 17
+Non c’era niente di valore nel forziere. Forse il proprietario del tesoro è arrivato prima di me, oppure quel furfante di @<sName> si è inventato un modo tutto suo per spillare soldi a ingenui come me.
+#TEXT 18
+Il capitano prigioniero @<sCapName> non mentiva. Tutti i tesori erano davvero lì. Questa sì che è fortuna!
+
+#QUEST zpq
+Il carico pericoloso
+#TEXT 0
+I contrabbandieri mormorano che in una delle colonie spagnole sul continente c’è un grosso problema con le scorte di polvere da sparo nel forte locale. Se se ne presenta l’occasione, dovrei parlare con i comandanti: forse qualcuno sarà interessato a comprare questo carico pericoloso da me. Ci sono solo due ostacoli: primo, pare che il comandante non voglia avere a che fare con gente poco raccomandabile; secondo, la partita sarà molto grande, quindi dovrò assicurarmi che la stiva della nave sia abbastanza capiente e che il carico sia al sicuro. Ma tutto questo verrà dopo: prima di tutto, bisogna trovare un acquirente disposto a trattare.
+#TEXT 1
+Il comandante del forte di Cumana mi ha chiesto di portargli una partita di polvere da sparo: ben 15.000 barili. La ricompensa di 100.000 pesos è davvero allettante. Ho deciso di accettare l’incarico, anche se trasportare così tanta polvere nella stiva è senza dubbio rischioso.
+#TEXT 2
+Il carico è stato consegnato e, nonostante la cattiva memoria del comandante del forte, sono comunque riuscito a ottenere la mia ricompensa.
+#TEXT 3
+Chi avrebbe mai pensato che il comandante del forte fosse solo un comune furfante! Ha approfittato della sua posizione per pagarmi solo la metà di quanto avevamo pattuito! Ho deciso che è comunque meglio, che niente, anche perché era troppo ben protetto...
+#TEXT 4
+Quel furfante in uniforme da ufficiale ha cercato di imbrogliarmi e prendersi metà della mia ricompensa! Un tradimento così non si può perdonare! Ho dovuto riprendermi ciò che mi spettava dal suo cadavere ancora caldo.
+#TEXT 5
+Quel furbo da quattro soldi ha provato a pagarmi solo metà della somma promessa. Ho dovuto spiegargli chi comandava davvero, e i miei argomenti sono stati piuttosto convincenti: alla fine, il comandante mi ha dato persino un quarto in più. Eppure, sono sicuro che in qualche modo anche lui ci abbia guadagnato.
+#TEXT 6
+Ho deciso di rifiutare questa missione. Centomila pesos sono una fortuna, ma la mia vita vale ancora di più per me.
+#TEXT 7
+All’uscita dalla città sono stato avvicinato da alcuni scagnozzi che, a quanto pare, mi stavano aspettando. Mi hanno gentilmente chiesto di consegnare tutto il mio denaro. Di sicuro erano stati mandati da quel lurido ratto. Beh, temo di averlo deluso ancora una volta...
+#TEXT 8
+All’uscita dal forte sono stato avvicinato da alcuni scagnozzi che, a quanto pare, mi stavano aspettando. Mi hanno 'gentilmente' chiesto di restituire tutti i miei soldi. Di sicuro li ha mandati quel lurido ratto. Ho preferito non mettermi nei guai: erano armati fino ai denti. Così ho dovuto consegnare tutto il denaro...
+
+#QUEST NoiseCemetery
+Cimitero Spettrale
+#TEXT 1
+La guardia del cimitero sull’isola di @<sCity> è terrorizzata. Da alcune notti sente strani rumori e lamenti inquietanti, come se ci fosse un fantasma. Non credo molto a queste storie, ma ho deciso di aiutare il povero vecchio e scoprire cosa sta succedendo. Nel peggiore dei casi, dovrò affrontare dei predoni... oppure scappare a gambe levate se davvero si tratta di uno spettro. Ora non mi resta che aspettare che cali la notte.
+#TEXT 2
+È insieme divertente e triste. Tutti questi rumori e lamenti non sono affatto i pianti di un fantasma, ma semplicemente gli incontri segreti di due innamorati. I loro genitori non vogliono che si vedano, così hanno pensato di trovarsi in un posto appartato. Ora posso tranquillizzare la guardia. Mentre vado da lui, dovrò pensare a cosa raccontargli.
+#TEXT 3
+Ho deciso di non rovinare la vita di quella sfortunata coppia e non ho detto nulla alla guardia. Giovani innamorati... Spero che per loro vada tutto bene.
+#TEXT 4
+Ho detto la verità alla guardia. All’inizio, ovviamente, era furioso, ma poi si è calmato. In fondo, abbiamo tutti i nostri peccati. Quei due non avevano altro posto dove incontrarsi. Giovani innamorati... Spero che per loro finisca tutto bene.
+#TEXT 5
+Ho deciso che non mi interessano i rumori o i terribili lamenti che il guardiano si è immaginato. Il mio tempo vale di più.
+
+#QUEST SixCaptains
+Sei Capitani
+#TEXT	1
+Forse è la prima volta che un semplice incontro con qualcuno che non aveva né affari né lavoro per me mi spinge a scrivere qualcosa su questo diario. Non capisco perché questo prete mi abbia colpito così tanto. Non so nemmeno come si chiama, e a volte diceva cose senza senso, ma è riuscito a farsi ricordare. Ci siamo già incontrati due volte, e potrei pensare che sia solo una coincidenza. Ma se dovessimo incontrarci ancora...
+Devo ammettere che il suo interesse è quasi lusinghiero. Quello sguardo che mi rivolge... sembra valutarmi, come se ammirasse ciò che ho fatto. E come dargli torto? Due navi leggendarie, due capitani le cui storie si raccontano in tutto l’arcipelago, entrambi caduti per mano mia.
+Mi chiedo cosa dirà quando scoprirà delle mie prossime imprese. L’arcipelago è immenso, ma la mia fama, a quanto pare, si sta diffondendo più in fretta di quanto immaginassi.
+#TEXT	2
+Diego de Landa - così ti chiami. Allora ci incontreremo di nuovo. Continua.
+
+#QUEST SharlieTutorial
+Prologo
+#TEXT	0
+Quanto mi sono stufato di tutto questo! Cinque giorni... e finalmente metterò piede a terra. Gli ultimi due mesi sono stati un vero incubo e non riesco proprio a capire come si possa, in stato di sanità mentale, legare la propria vita al mare!
+Intanto — mi aspetta il capitano. Ultimamente non mi piace affatto. A dire il vero, qui non mi piace proprio nulla.
+#TEXT	0.1
+A quanto pare, stasera mi aspetta una serata interessante. Intanto, il capitano mi ha dato carta bianca... nei limiti della nave, ha-ha! Posso tornare da lui in qualsiasi momento e concludere questa estenuante giornata.
+#TEXT	1
+Per 500 pesos posso vendere 3 bottiglie di rum al marinaio Henri sul ponte superiore. Sembra che il nostromo nella sala ufficiali venda di tutto un po’. Forse vale anche la pena cercare bene nella nave e parlare con gli altri marinai.
+#TEXT	2
+Per fortuna non bevo rum e sono riuscito a concludere un buon affare con Henri. L’equipaggio sembra aver apprezzato il mio impegno.
+#TEXT	3
+Il marinaio Paul si è strappato la schiena trasportando palle di cannone e mi ha chiesto aiuto. Le palle si trovano nella stiva, sicuramente in una delle innumerevoli casse.
+#TEXT	4
+Ho trascinato a fatica quelle dannate palle da Paul. Quel marinaio si comporta in modo sospetto, ma come ricompensa ho ricevuto una bottiglia di rum. Un premio prezioso, considerando la domanda locale per questo veleno.
+#TEXT	5
+Ho trovato la chiave del capitano! Mi chiedo quali tesori apra...
+
+#QUEST DWH
+Oscure acque della guarigione
+#TEXT	1
+A Bridgetown si mormora che la zingara del posto sia l’ultima speranza per la figlia gravemente malata di Thomas Morrison. Ma lei si ostina a non voler aiutare. Possibile che non provi davvero compassione per la povera ragazza?
+#TEXT	2
+La donna gitana mi ha detto che sarebbe disposta ad aiutare la ragazza, ma Thomas si rifiuta categoricamente di farla entrare in casa sua. Voglio andare da Thomas e capire perché sta respingendo l’ultima speranza di salvare la ragazza.
+#TEXT	3
+Il prete della chiesa locale ha minacciato Thomas Morrison di scomunica se accetterà l’aiuto della zingara per salvare la figlia gravemente malata. Ora Thomas è diviso tra la paura di perdere il favore della chiesa e la disperazione per la salute della bambina. Proverò a convincere il prete a chiudere un occhio su questo peccato, per un bene superiore: salvare la vita della ragazza!
+#TEXT	4
+Dovrò trovare delle soluzioni alternative. Il prete è senza dubbio testardo, e per certi versi ha anche ragione. Ma non posso comunque dargli ragione. Se c’è una possibilità di rimettere in sesto la ragazza, devo provarci.
+#TEXT	5
+Sono riuscito a convincere il prete. Ha accettato di chiudere un occhio sul coinvolgimento della zingara nella cura, a patto che Thomas si riscatti davanti a Dio con sincero pentimento e buone azioni.
+Ora devo trovare la mangarosa, l’ingrediente principale per la pozione della zingara. Questa pianta si riconosce dal profumo gradevole, dallo stelo alto e dalle foglie frastagliate. Posso trovare la mangarosa in una grotta fuori città, da certi 'loschi individui', probabilmente vagabondi o banditi. Meglio così: magari non dovrò nemmeno pagarli.
+#TEXT	6
+Ho fatto tutto ciò che era in mio potere. Ora non resta che confidare nelle capacità della zingara. Mi sono talmente dedicato a salvare la bambina che ho completamente trascurato i miei affari. Tornerò ad Antigua tra un mese. Entro allora, Esther dovrebbe essere completamente guarita.
+#TEXT	7
+La zingara è pronta ad aiutare la ragazza di nascosto, così Thomas non attirerà l’ira della Chiesa. Ora la cosa più importante è conquistare la sua fiducia.
+#TEXT	8
+Thomas mi ha dato l’oggetto personale di Esther: delle perle di giada. Ora devo trovare due steli di datura, uno di ipecacuana, uno di verbena, e poi potrò tornare dalla zingara.
+#TEXT	9
+Grazie ai miei sforzi e a quelli della zingara, la malattia di Esther è stata sconfitta! È bello sapere che tutto il nostro impegno non è stato vano e che la ragazza ora sta bene.
+#TEXT	10
+Ho fatto tutto ciò che dovevo. Ora non mi resta che sperare che la pozione della zingara funzioni davvero. Mi sono così immerso nel salvataggio della bambina che ho completamente dimenticato le mie faccende. Tornerò ad Antigua tra un mese. A quel punto, Esther dovrebbe essere completamente guarita.
+#TEXT	11
+Ora la zingara ha tutto il necessario per preparare la pozione curativa. Domattina dovrò prendere la medicina da lei e portarla a Thomas.
+
+#QUEST TPZ
+Commercio secondo la legge
+#TEXT 1
+I cittadini di Bas-Ter si lamentano perché nella taverna manca l’alcol. L’oste continua a promettere che sistemerà la cosa, ma finora non è cambiato nulla. Sembra proprio nei guai. E dove ci sono guai, c’è sempre la possibilità di guadagnarci qualcosa.
+#TEXT 2
+L’oste mi ha detto che il suo fornitore di Antigua ha perso la distilleria durante un’incursione di pirati e non potrà consegnare nulla per almeno due mesi. È disposto ad accettare qualsiasi partita di vino e rum, purché il commerciante abbia una buona reputazione. Stavolta niente controlli sui documenti, ma in futuro lavorerà solo con mercanti onesti e affidabili. Forse dovrei provare a procurarmi la merce tramite canali non ufficiali... Se gioco bene le mie carte, ci si può guadagnare.
+#TEXT 3
+I contrabbandieri al momento non hanno alcol da offrire. Però, vicino alla residenza del governatore vive un commerciante che traffica di nascosto piccole quantità di liquori. Forse vale la pena fargli visita.
+#TEXT 4
+Sono riuscito a trovare il contrabbandiere di alcolici. All’inizio pensava che fossi una spia delle autorità, ma l’ho convinto del contrario. Se lo aiuto a rendere legale la sua attività, in futuro potrò comprare vino e rum da lui a prezzi davvero vantaggiosi. Ma adesso è il momento di parlare con l’oste: forse posso guadagnare ancora qualche doblone con questo affare.
+#TEXT 5
+Ho stretto un accordo con l’oste, alle mie condizioni. È disposto a pagare 240 dobloni per 100 bottiglie di vino e 100 di rum, sia per questa partita che per le prossime. È ora di rendere legale l’attività di Christian.
+#TEXT 6
+Ho stretto un accordo con l’oste. È disposto a pagare 200 dobloni per 100 bottiglie di vino e 100 di rum, sia per questa consegna che per le prossime. È ora di rendere legale l’attività di Christian.
+#TEXT 7
+L’oste è soddisfatto: la taverna trabocca di alcol di nuovo. Anche Christian è contento: ha trovato un ottimo cliente e ora la sua attività è legale. Adesso tocca a me pensare a come guadagnarci qualcosa. Un brindisi a Christian!
+#TEXT 8
+Mi sono ritrovato a fare da intermediario. Sensazione strana. Tutti sono contenti: la taverna è di nuovo piena di vita, Christian probabilmente sta contando i dobloni che gli piovono addosso, e io ora ho un fornitore affidabile di alcolici nei Caraibi. E non ho dovuto nemmeno sguainare la spada una sola volta. Incredibile.
+#TEXT 9
+Proprio quando stavo iniziando a godermi il fatto che, per una volta, tutto fosse andato liscio, sono stato attaccato da una nave pirata nel porto. A quanto pare, i problemi con le forniture non erano affatto casuali: era tutto un piano del capitano di quella nave, deciso a prendere il controllo delle consegne alla taverna di Bas-Ter. Stavolta gli è andata male. Ha imparato una lezione mortale.
+#TEXT 10
+Sono stato attaccato in mare da una nave pirata. Chi fossero e cosa volessero, non lo saprò mai. La loro nave è affondata, portando con sé tutte le risposte.
+#TEXT 11
+I regolamenti commerciali sull’isola si sono rivelati piuttosto semplici: cento dobloni al mese come tassa al tesoro cittadino e una rendicontazione puntuale. Credo che Christian saprà cavarsela benissimo. Ora non resta che dare la buona notizia a quel furfante: è andato tutto alla perfezione.
+
+#QUEST GS
+Confini della Giustizia
+#TEXT	1
+È stato fatto un audace attentato contro il capo dell’Autorità Portuale di Belize. L’assalitore è riuscito a fuggire, ma ora è lui la preda. Si dice che il funzionario abbia messo una taglia sulla sua testa. Beh, il nemico sembra pericoloso, dovrò pensarci bene prima di mettermi sulle sue tracce.
+#TEXT	2
+Il capo del porto sostiene di non avere la minima idea di chi l’abbia aggredito, né del motivo. Dice che l’assalitore è solo un pazzo qualunque, uno dei tanti che girano per i Caraibi. Non sembra molto credibile, ma poco importa. Per la testa di questo 'pazzo' c’è una taglia di duecento dobloni. Questo è ciò che conta davvero. Inizierò le ricerche nelle insenature e grotte vicine: è lì che il fuggitivo probabilmente si nasconde dalla giustizia.
+#TEXT	3
+È fatta. È ora di tornare dal Capo del Porto e riscuotere la mia meritata ricompensa. Eppure, forse avrei dovuto ascoltare cosa aveva da dire il mercenario. Sembrava davvero convincente. D’altra parte, chi non cercherebbe di salvarsi la pelle, aggrappandosi anche alla più flebile speranza? Probabilmente era solo un altro dei suoi trucchi.
+#TEXT	4
+Il Capo del Porto mi ha pagato per intero, anzi, è stato persino più generoso del previsto. Mi ha offerto uno sconto permanente del cinquanta percento sull’ormeggio di una nave, per qualsiasi durata. Ma questa generosità non fa che aumentare i miei sospetti. E se il mercenario avesse detto la verità? Se davvero si fosse imbattuto nei pirati, perché non ha chiamato la guardia? Perché non ne ha parlato quando mi ha mandato a cercare l'assassino? Sono solo supposizioni, comunque. Quello che è fatto è fatto, e forse solo il tempo svelerà la verità. Devo andare avanti.
+#TEXT	5
+Il Capo del Porto è davvero un farabutto! Sorride mentre saluta i miei compagni che salpano, poi vende senza scrupoli le rotte delle loro navi ai pirati. Gente come lui non può restare impunita. Aspetterò che cali la notte e sistemerò la faccenda. Le sue luride azioni verranno alla luce. Gli appunti che mi ha dato il mercenario resteranno nella sua casa, ben visibili. Così tutta la città vedrà chi è davvero.
+#TEXT	6
+Il bastardo è morto! Ora devo solo lasciare gli appunti e sparire prima che tutta la guarnigione sia messa in allarme.
+#TEXT	7
+Il Capo del Porto non c’è più. Non manderà più nessuno nelle mani dei pirati. Oggi il mondo è un po’ migliore.
+
+#QUEST OS
+Vecchi conti
+#TEXT 1
+Il taverniere di Puerto Principe ha perso un intero barile di gin raro, arrivato dall’Europa. Se non si ritrova la merce, rischia davvero grosso. A giudicare dal suo panico, questa spedizione era destinata a qualcuno di importante, altrimenti, perché tutto questo trambusto?
+#TEXT 2
+Il gin è stato rubato proprio sotto il naso dell’oste. Ora la sua vita è appesa a un filo: il cliente misterioso non è certo uno che perdona gli errori. Offre centocinquanta dobloni a chiunque riesca a recuperare la botte. Ho già qualche idea. Primo passo: interrogare i marinai. Magari qualcuno ha visto qualcosa.
+#TEXT 3
+Tutta questa storia suona davvero sospetta. Ma credo di avere una teoria su cosa sia successo davvero. È ora di parlare con la cameriera.
+#TEXT 4
+Sotto pressione, la cameriera ha confessato che tutta la scena era stata organizzata da uno chiamato Jack Wales. Insieme al capitano della "Sea Wolf", hanno messo su un vero spettacolo per rubare la botte. Che fatica per un po’ di gin! A quanto pare, non sono solo bevitori, ma veri intenditori. La casa del ladro è proprio lì, a due passi ,  di fronte alla taverna.
+#TEXT 5
+Sono riuscito a riportare la botte all’oste giusto in tempo, salvandolo da un bel guaio. Devo dire che mi ha ricompensato generosamente: oltre ai dobloni, mi ha concesso vitto e alloggio gratis a vita nella sua taverna. Quanto alla cameriera, ha fatto bene a svanire, l’oste ha capito subito che anche lei era coinvolta nella faccenda.
+#TEXT 6
+L’equipaggio del 'Lupo di Mare' ha seguito il suo capitano. Meritavano davvero una fine simile? Chi può dirlo... Ma una cosa è certa: avrebbero dovuto pensarci due volte prima di mettersi contro di me.
+
+#QUEST UV
+Memoria Rubata
+#TEXT 1
+Si dice che Julie d’Armagnac, la nipote del governatore in persona, sia più triste che mai a Port-au-Prince. Un tempo era solare e piena di vita, ma ora si aggira per la città cupa come una nuvola di tempesta. Nessuno sa davvero cosa possa averla cambiata così, ma è chiaro che è successo qualcosa di grave.
+#TEXT 2
+Julie si trova in una situazione difficile. Le hanno rubato una collana a cui teneva molto. Non può rivolgersi alle guardie: suo zio, il governatore della parte francese di Hispaniola, le ha proibito severamente di contattare chi le aveva regalato il gioiello. Julie sospetta che sia stata la sua stessa domestica a rubarla. Non posso certo lasciarla sola in questo momento: ho deciso di aiutarla. Credo che la cosa migliore sia iniziare interrogando i mercanti del posto, il ladro avrà sicuramente cercato di vendere subito la collana.
+#TEXT 3
+Un certo Tristan Renier, capitano della "Gabbiano Dorato", ha recentemente comprato una collana da un mercante, potrebbe essere quella di Julie. La sua nave è ancora ancorata in porto. Se il mio intuito è giusto, la ladra potrebbe essere proprio Giselle, il cui nome il mercante ha lasciato sfuggire per sbaglio.
+#TEXT 4
+Tristan non era a bordo. Dovrei cercarlo in città.
+#TEXT 5
+Sono riuscito a recuperare la collana di Julie. Ora devo restituirla alla sua legittima proprietaria. Oppure... forse dovrei andare dal governatore e raccontargli tutto?
+#TEXT 6
+La collana è tornata alla sua affascinante proprietaria. La ladra si è rivelata essere la sua stessa cameriera, Giselle. Ora Julie sta mettendo in campo tutta la sua astuzia per punire la furba. Non vorrei proprio essere nei suoi panni.
+
+#QUEST VPVL
+Intrappolato nella Grande Cattura
+#TEXT   1
+Voci si diffondono a Saint Pierre sulla scomparsa del pescatore locale Pierre Carno. Da due cicli di marea la sua barca non è più tornata in porto, mentre sua moglie Lea, consumata dall’angoscia, veglia da sola sul molo, scrutando le acque agitate nella speranza di scorgere il marito. Solo il suo ritorno potrebbe lenire il dolore che la tormenta. Ma il mare, impietoso, non svela i suoi segreti e, con ogni rintocco di campana, la speranza si fa più flebile e le possibilità di sfuggire alla morte si riducono sempre di più.
+#TEXT   2
+Lea ha raccontato che suo marito ha fatto rotta verso la baia di Le Marin, nascosta lungo la costa sud dell’isola. Sono già passati due giorni da quando è salpato, ma di lui ancora nessuna traccia. Il dolore che si leggeva sul volto di questa povera donna mi ha spinto a offrirle il mio aiuto. Per prima cosa perlustrerò le acque della baia di Le Marin, magari Pierre è ancora in mare, trattenuto da qualche imprevisto. Se il mare sarà deserto, dovrò allora cercare lungo la riva ogni segno di lui o della sua nave.
+#TEXT   3
+Quei contrabbandieri che vivono sulla spiaggia mi hanno scambiato per uno degli scagnozzi del governatore e hanno cercato di mandarmi a fondo. Ma la sorte ha voltato loro le spalle: ora è il loro sangue che macchia la sabbia, non il mio. Devo indagare nella grotta marina di cui parlavano. Forse è proprio lì che tengono Pierre incatenato in quella prigione umida.
+#TEXT   4
+Pierre ora respira la dolce aria della libertà, ed è giunto il momento di restituirlo tra le braccia della sua devota moglie. Il destino è stato crudele con lui: la sua barca si è schiantata contro la barriera corallina e, appena sbarcato, è finito nelle mani di quei contrabbandieri confusi che l’hanno scambiato per un agente del governatore. Il poveretto ha subito torture e fame, costretto a confessare segreti che non aveva mai conosciuto. Rabbrividisco al pensiero di quale triste fine lo avrebbe atteso, se la Provvidenza non avesse guidato i miei passi verso quella maledetta grotta proprio in quel momento.
+#TEXT   5
+Pierre è tornato sano e salvo tra le braccia premurose della sua devota moglie. Ha promesso di mostrare la sua gratitudine non appena si sarà ripreso e insiste per condividere un bicchiere alla taverna domani dopo il sesto rintocco della campana. Eppure una domanda continua a rosicchiarmi la mente come un topo la cima di una nave: chi stavano davvero aspettando quei contrabbandieri sfortunati sulle rive di Le Marin? Dicevano che una nave sarebbe presto approdata. Gli uomini del governatore pagherebbero profumatamente per essere avvisati in anticipo di un simile carico di contrabbando. Oppure...
+#TEXT   6
+Ho riferito al governatore dei contrabbandieri che aspettavano una nave. Mi ha promesso che indagherà e dovrò tornare da lui tra tre giorni. Se il mio rapporto si rivelerà corretto, potrei ottenere una ricompensa.
+
+#QUEST TBP
+Mistero di Betsy Price
+#TEXT	1
+A Willemstad ho sentito una storia interessante: la taverna del posto aveva assunto di recente una cameriera di straordinaria bellezza, ma tre giorni fa è sparita all’improvviso. Il proprietario è preoccupato ed è disposto a pagare chiunque riesca a trovarla.
+#TEXT	2
+Le voci non mentono: la cameriera è davvero sparita. Il taverniere è visibilmente preoccupato... se per la sua scomparsa o per i profitti che calano, chi può dirlo. È disposto a pagare cento dobloni a chiunque la riporti indietro. Ho accettato di aiutarlo nelle ricerche. Cento dobloni sono un bel incentivo, ma ciò che mi incuriosisce di più è Betsy stessa. Che tipo di donna era, capace di incantare gli uomini al punto che lasciavano tutto pur di restare ore in taverna solo per guardarla? Per cominciare, dovremmo dare un’occhiata a casa sua. Secondo il locandiere, non è lontana dalla taverna, su una collina, proprio di fronte alla casa elegante con il balcone blu.
+#TEXT	3
+Betsy è chiaramente invischiata in faccende oscure. La lettera che ho trovato è una minaccia diretta alla sua vita, quindi la sua scomparsa è molto più grave di una semplice fuga. Forse è riuscita a nascondersi, ma non posso escludere il peggio. Devo scoprire chi potrebbe aver lasciato questo messaggio. Inizierò dal barista: magari ha notato qualcuno di sospetto vicino a lei.
+#TEXT	4
+Il ciondolo comprato dal vagabondo appartiene a Betsy. Lui l’ha trovato nell’aiuola vicino alla casa con la lanterna. Dobbiamo dare un’occhiata attenta da quelle parti.
+#TEXT	5
+Beh, che donna questa Betsy... O forse Miranda? No, meglio restare su Betsy, non c’è bisogno di scavare nel suo passato. In ogni caso, l’ho tirata fuori dalle grinfie di quei bastardi... È ora di riscuotere la ricompensa che mi spetta.
+#TEXT	6
+Il taverniere mi ha pagato generosamente per aver riportato indietro la sua preziosa cameriera. A dire il vero, non riesco a smettere di pensare a Betsy... Forse dovrei farle visita, prima o poi.
+
+#QUEST OZ
+Catene dell'azzardo
+#TEXT	1
+A San Jose il fabbro ha pagato caro la sua passione per le carte: in una partita con Javier Castillo ha perso qualcosa di molto prezioso. Secondo le voci, è completamente abbattuto: il lavoro non procede, nonostante sul suo futuro incomba una tempesta, perché se l'ordine non sarà pronto in tempo, l'ammiraglio si infurierà. Cosa poteva essere così prezioso da gettare un uomo in una tale disperazione?
+#TEXT	2
+Ora è chiaro cosa ha causato lo sconforto di Sebastian Cordoba. Ha perso un libro molto importante per il suo lavoro – un libro sull'arte della lavorazione del metallo. La sua situazione è aggravata dal fatto che Javier ha deciso di non perdere tempo e vendere il libro a un maestro armaiolo francese. Come al solito, i guai non vengono mai da soli. Poco prima, il fabbro aveva ricevuto un importante ordine dall'ammiraglio Eugenio de la Torre... Quando arriverà qui, saprà certamente perché il suo ordine non è stato eseguito. Venuto a sapere che il libro è finito nelle mani dei francesi, secondo il fabbro, sarà molto severo con lui. Ho accettato@<sSex> di aiutare il poveretto. Se riuscirò a restituirgli il libro, avrà una seconda possibilità e, spero, non ripeterà più i suoi errori, mentre io potrò sempre contare sui servizi di un buon fabbro. Comincerò cercando Javier, che sicuramente ora starà cercando di raggirare qualcun altro.
+#TEXT	3
+Sono riuscit@ a battere Javier! Il libro è con me. I suoi trucchi funzionano bene con gli ingenui, ma contro un giocatore serio – sono inutili. Non è riuscito ad accettare la sconfitta e mi ha accusat@ di barare. Beh, ho dovuto ridimensionare la sua arroganza.
+#TEXT	4
+Dannazione! Javier è davvero forte a carte. Ora devo trovare un modo per recuperare non solo il libro, ma anche i miei soldi! Per prima cosa dovrei informarmi meglio su di lui.
+#TEXT	5
+Dannazione! Javier non vuole nemmeno sentir parlare di una proroga del debito. Non lo lascerò così. Devo trovare un modo per mettergli pressione. Ma prima dovrei informarmi meglio su di lui.
+#TEXT	6
+Ho scoperto che Javier deve una grossa somma a un certo Felipe Alarcón. Forse, parlando con lui, troverò un modo per fare pressione sul debitore. La casa di Felipe si trova di fronte alla banca, è una splendida villa con colonne all'ingresso.
+#TEXT	7
+Ho ottenuto il permesso di Felipe di agire a suo nome. Ora posso esigere da Javier la restituzione immediata del denaro e, se non li ha, prendere per cominciare il libro.
+#TEXT	8
+Far perdere le staffe a Javier non è stato così difficile. A un passo dalla conclusione dell'affare, non ha retto la pressione – capendo che tutto poteva crollare in un momento, si è lanciato in combattimento senza pensarci. Il francese, arrivato per il libro, mi ha offerto ottantamila pesos – ma non ho voluto commerciare con il destino di Sebastian. Nelle tasche di Javier ho trovato solo un biglietto. A quanto pare, dopo questa transazione Javier intendeva lasciare l'isola con qualcuno. Devo controllare cosa nascondono in quella grotta. Sarebbe molto utile se lì ci fossero soldi, perché la questione con Felipe non è ancora risolta.
+#TEXT	8_1
+Sono riuscito a battere Javier! I suoi trucchi funzionano bene con gli ingenui, ma contro un giocatore serio sono inutili. Non riusciva ad accettare la sconfitta e mi ha accusato di barare. Beh, ho dovuto ridimensionarlo. Il francese venuto per il libro mi ha offerto ottantamila pesos – ma non avevo intenzione di mercanteggiare con il destino di Sebastian. 
+Nelle tasche di Javier ho trovato solo un biglietto. A quanto pare, dopo questo affare, Javier progettava di lasciare l’isola insieme a qualcuno. Devo controllare cosa nascondono in quella grotta.
+#TEXT	9
+Far perdere le staffe a Javier non è stato così difficile. A un passo dalla conclusione dell'affare, non ha retto la pressione – capendo che tutto poteva crollare in un momento, si è lanciato in combattimento senza pensarci. Il francese, arrivato per il libro, mi ha offerto ottantamila pesos – ma sono riuscit@ a spuntare centocinquantamila! Credo che ora sia meglio non farmi vedere da Sebastian. Nelle tasche di Javier non c'era nulla oltre a un biglietto. A quanto pare, dopo questa transazione Javier intendeva lasciare l'isola con qualcuno. Devo controllare cosa nascondono in quella grotta. Sarebbe molto utile se lì ci fossero soldi, perché la questione con Felipe non è ancora risolta. Non vorrei separarmi dai soldi ottenuti per la vendita del libro.
+#TEXT	9_1
+Sono riuscito a battere Javier! I suoi trucchi funzionano bene con gli ingenui, ma contro un giocatore serio sono inutili. Non riusciva ad accettare la sconfitta e mi ha accusato di barare. Beh, ho dovuto ridimensionarlo. Il francese venuto per il libro mi ha offerto ottantamila pesos – ma sono riuscito a spuntare centocinquantamila! Credo che ora sia meglio non incrociare Sebastian. 
+Nelle tasche di Javier non c’era altro che un biglietto. A quanto pare, dopo questo affare, Javier progettava di lasciare l’isola insieme a qualcuno. Devo controllare cosa nascondono in quella grotta.
+#TEXT	10
+Il libro è tornato nelle mani del suo proprietario. Spero che Sebastian abbia davvero imparato la lezione e che i miei sforzi non siano stati vani.
+#TEXT	11
+Non ho restituito i soldi a Felipe Alarcón. A quanto pare, non ha apprezzato la mossa – ora tutto l’esercito spagnolo vuole impiccarmi nella piazza.
+#TEXT	12
+Non ho restituito i soldi a Felipe Alarcón. Non ha apprezzato il gesto – si è lanciato all'attacco. L'ho sistemato senza problemi, ma ora, a quanto pare, dovrò aprirmi la strada fuori dalla città combattendo.
+
+#QUEST LFD
+Lettera da un morto
+#TEXT	1
+A Porto Bello circolano voci che il capitano del fluyt "Águila" abbia fatto una sfuriata al suo quartiermastro per aver lasciato l'equipaggio libero di andare in città. Di solito, se l'equipaggio resta a bordo, o c'è qualcosa che non devono raccontare, o la nave non ha intenzione di restare a lungo in porto. Devo parlare con i marinai, forse si presenterà un'opportunità per guadagnare.
+#TEXT	2
+Per le strade di Porto Bello ho incontrato un marinaio proprio di quel fluyt. Rischiava di arrivare in ritardo alla nave a causa della lunga ricerca di una certa Marisa Caldera. Nella stiva della sua nave, tra la roba vecchia, aveva trovato una vecchia lettera indirizzata a lei e aveva deciso di consegnarla nella speranza di ricevere una ricompensa.  
+Poiché non aveva più tempo, mi ha proposto di acquistare questa importante lettera per pochi soldi, e io ho accettat. In fondo, questa storia potrebbe davvero trasformarsi in un affare vantaggioso.
+#TEXT	3
+Il locandiere ha detto che Marisa non si fa vedere in città da quasi due anni. Dopo la notizia della morte del marito, è come scomparsa, evitando gli occhi della gente. Tuttavia, il suo nome è ancora sulle labbra di molti, e alcuni uomini continuano a interessarsi a lei. Si potrebbe pensare che si sia dedicata a qualcosa di indecente e per questo si nasconda, ma il proprietario della taverna assicura che Marisa era pia e trascorreva molto tempo in chiesa, quindi è difficile che sia coinvolta in cose simili. Devo continuare la ricerca. Ma dove trovarla? Chi potrà raccontarmi di più su di lei?
+#TEXT	4
+Il pastore ha confermato che Marisa Caldera ha lasciato la città da tempo e vi compare solo di rado. Non ne sa altro. Tuttavia, in città vive la sua amica Dolores Monjo, che forse sa più di lui. La sua casa si trova a sinistra dell'ufficio portuale.
+#TEXT	5
+A quanto pare, la situazione di Marisa è piuttosto difficile, visto che la sua amica mi ha accolto con tanta diffidenza appena ha sentito chi stavo cercando. Tuttavia, sono riuscit a convincere Dolores della purezza delle mie intenzioni. L'incontro è fissato per domani, dopo le undici di sera. Dolores non garantisce che Marisa verrà, ma ha promesso di riferirle tutto ciò di cui abbiamo parlato.
+#TEXT	6
+Marisa ha raccontato che il suo defunto marito aveva lasciato un nascondiglio da qualche parte fuori città. Ha paura di andarci da sola e mi ha chiesto di accompagnarla. Domani alle sette del mattino devo passare da lei per partire insieme.
+#TEXT	7
+Abbiamo trovato il nascondiglio appartenuto al marito di Marisa. Appena stavamo per andarcene, ci ha raggiunti un sicario mandato dal creditore Ramiro. Ho dovuto dargli una lezione mortale. Marisa, però, per usare un eufemismo, non ha gradito il mio gesto. È convinta che si dovesse risolvere tutto pacificamente, a qualsiasi costo. Be’, su questo non posso essere d'accordo. Ora resta solo accompagnarla in città, dove finalmente potrà iniziare una nuova vita tranquilla.
+#TEXT	8
+Abbiamo trovato il nascondiglio appartenuto al marito di Marisa. Ma appena stavamo per andarcene, ci ha raggiunti un sicario mandato dal creditore Ramiro. Ho sistemato tutto di tasca mia: debito pagato, interessi compresi. Ora la paura e la vita nell’ombra per la povera vedova appartengono al passato. Spero che possa ricominciare da capo, dimenticando tutto ciò che ha dovuto sopportare.
+
+#QUEST WildRose
+Rosa Selvaggia
+#TEXT	1
+Storia curiosa... Dalla piantagione del Bishop sono fuggiti alcuni schiavi — e non comuni, bensì disertori della marina. Pare che un soldato abbia riferito che Bishop abbia offerto una taglia per la loro cattura, e orde di uomini armati si siano gettate nella giungla per guadagnare qualcosa. Forse dovrei partecipare anch’io? D’altra parte il rischio di beccarsi una palla in pancia è altissimo — non tanto dai fuggiaschi, ma da chi li insegue.
+#TEXT	2
+Mary è sparita da qualche parte... senza dire una parola. Spero che non sia per colpa della nostra conversazione di ieri... Forse è semplicemente scesa nella sala. Devo cercarla lì.
+#TEXT	3
+È sorprendente come incontri casuali possano cambiare una persona. Soprattutto se è un razziatore con le mani fino al gomito nel sangue. I fuggiaschi, prima che li accerchiassero e massacrassero, hanno ferito alcuni guardiani e burattini del piantatore. Ma ciò che è ancora peggio — hanno stuprato e ucciso una giovane colona, e poi quasi ucciso anche il marito. A capo dei fuggiaschi c’era Jerry Casper.
+Dubito che sia — anche il parente più remoto della mia amata. Tuttavia questa storia ha fatto riflettere Mary: chi erano i suoi genitori? Non conosce né i loro nomi, né tanto meno il luogo della sua nascita.
+In ogni caso, se iniziamo la ricerca delle loro tracce, disperse vent’anni fa, allora solo sull’Isola della Giustizia. Forse qualcuno dei vecchi residenti potrà aiutarci...
+Mary ha detto che non bisogna dimenticare nulla al mondo, pur di sollevare il velo su quel mistero. Ma vedo che non vede l’ora di farlo il prima possibile.
+Quanto a me... devo aiutarla.
+Tuttavia so molto bene: certi segreti devono restare tali. Forse questo è uno di quelli. Dopotutto non è per nulla casuale che fino ad ora Mary non abbia saputo nulla dei suoi genitori.
+#TEXT	4
+Eccoci di nuovo in questo cimitero di navi... Non ho grande desiderio di restare qui questa volta, meglio metterci all’opera al più presto — chiedere a chi viveva qui vent’anni fa. Penso che convenga cominciare da Donald. Nonostante Mary dica che la volta scorsa non riuscì o non volle rispondere alle sue domande, chi se non il capo del clan 'Narval' può aiutarci?
+Una sensazione non troppo positiva riguardo al piano di Mary ancora mi tormenta, ma ormai è troppo tardi per tornare indietro. 
+#TEXT	5
+Non sono riuscito a parlare con Donald — ha organizzato delle esercitazioni per il suo clan sul cerchio esterno. Sembra che all’Isola della Giustizia si preparino ancora tempi turbolenti. Spero che Leighton Dexter abbia volontà e forza per tenere la situazione sotto controllo, ma in ogni caso dobbiamo ottenere al più presto le informazioni necessarie e ritirarci. L’ultima cosa che vorrei è trovarmi sotto il fuoco incrociato di gente che combatte per niente.
+Grenspy dovrebbe tornare domani — posso passare il tempo aspettando nella cabina di Mary sulla ‘Ceres Smiti’.
+#TEXT	6
+La conversazione con Grenspy si è rivelata quasi inutile. Dice di essere arrivato sull’Isola qualche anno dopo la nascita di Mary e di non aver mai conosciuto i suoi genitori. Nessuno può confermare le sue parole, ma non credo che abbia motivo di mentire.
+Ma qualcosa abbiamo scoperto. Primo: Mary è nata qui, sull’Isola — lo disse Donald a me, Erik Udett, vecchio marinaio che la crebbe, ormai passato a miglior vita. Secondo: nell’educazione di Mary ha partecipato Aureli Bertin — vive sull’Isola da molto tempo, e se assistette alla nascita di Mary al momento giusto, allora deve per forza conoscere i suoi genitori.
+Donald ha accennato che non sta bene — l’età, che vuoi farci. L’importante è che la memoria non la tradisca.
+#TEXT	14
+Não descobrimos tudo que queríamos, mas não queiramos irritar o Criador — Aureli lembrou de bastante coisa, e por isso somos gratos. A seguir, em ordem: confirma-se que Mary nasceu na Ilha da Justiça. Mas seus pais não eram habitantes locais, e sim náufragos milagrosamente salvos de uma tempestade cruel.  
+A mãe de Mary se chamava Teresa, ela deu à luz uma semana depois de chegar à Ilha — após isso faleceu, o que foi bem previsível, considerando as provações que enfrentou. O que ela esqueceu no navio — seja mercante ou de guerra — no último mês de gestação, só seu marido, o pai de Mary, poderia saber.  
+Mas com ele a coisa é bem mais complicada: Aureli só lembrou que o nome dele começava com 'J.'. Nada mais. Nem o nome do navio, nem o tipo de embarcação em que servia. Bertin afirma que esse misterioso 'J.' desapareceu sem deixar rastro poucos dias após o nascimento da filha, mas duvida que ele tenha morrido — considerando que naquela época tartanas de contrabandistas navegavam regularmente entre a Ilha e Cuba. Não há nenhuma evidência de que ele tenha sido morto nesse cemitério de navios.  
+É difícil supor se o pai de Mary ainda esteja vivo, assim como responder por que abandonou a filha recém-nascida. No entanto, talvez seja suficiente para Mary simplesmente saber quem ele era... Mas para avançar nesta empreitada difícil, é necessário descobrir ao menos o nome do navio que naufragou em uma das noites de junho de 1638 no anel externo. E nisso, espero, poderá nos ajudar ninguém menos que Donald Grenspy.
+#TEXT	15
+Minhas suposições se confirmaram: os Narvais de fato mantêm registro dos navios encalhados no anel externo da Ilha da Justiça, dos objetos recuperados deles e dos passageiros. Já é de certa forma uma boa tradição, seguida por cada novo chefe do clã "Narval", inclusive Grenspy. Entretanto, Donald não conseguiu disponibilizar esses registros para nós — Leighton Dexter os tomou dele há pouco tempo.
+#TEXT	16
+Não consigo me livrar da sensação de que nesta investigação, por assim dizer, somos perseguidos por alguma má sorte. Problemas infinitos e obstáculos. Ninguém sabe de nada, e os que poderiam nos ajudar estão à beira da morte ou já faleceram. Quanto aos registros dos navios, pelo menos para o ano de 1638 que precisamos, Leighton Dexter não os tem. Sumiram de algum lugar da cabine de Alan Milrow. Mary afirma que o antigo líder do clã 'Narval' cuidava tanto desses documentos e jamais os destruiria. Mas quem mais neste cemitério de navios poderia precisar de papéis que têm valor apenas para historiadores?
+#TEXT	17
+Finalmente se vislumbra uma saída desta caverna de ignorância e mistérios. A mãe de Mary e seu pai — Joshua Casper — chegaram à Ilha da Justiça a bordo do brig English da marinha 'Wrangler'. Com eles sobreviveram outros dois marinheiros, mas eles entregaram suas almas a Deus na noite seguinte. Uma voz interior me diz que não foi um acaso — mas provas depois de vinte anos, naturalmente, não há nenhuma. De qualquer modo, isso já não importa — descobrimos o que precisávamos, conversando, ao que parece, com todos que viram os acontecimentos daqueles dias com seus próprios olhos, e agora podemos deixar a Ilha da Justiça para trás.  
+Resta pensar a quem poderíamos recorrer para ajuda na busca de informações sobre Joshua Casper. Não conseguimos chegar sozinhos aos arquivos da Royal Navy...  
+Mas, antes de partir, quero me assegurar mais uma vez de que nada ficou de fora. Quem mais poderia contar algo? Quem está na ilha há tanto tempo que possa lembrar daqueles dias?
+#TEXT	18
+Devo ammettere che quasi mi sono dimenticato di Chimiset — ed è forse il più anziano abitante dell’Isola della Giustizia. È arrivato qui nel 1623 ed ha assistito alla nascita di Mary, alla morte di sua madre e alla sparizione del padre, che fu incarcerato dopo che due Narvali si rifiutarono di far entrare lo sciamano mentre la partoriente soffriva.  
+Dal racconto di Chimiset si può dedurre che Joshua Casper riuscì a fuggire ed imbarcarsi su una delle barche dei contrabbandieri — altro modo per lasciare questo posto non c’era. Sull’Isola lasciò la figlia neonato e certamente aveva in mente di tornare per lei — ma, se ha mai confidato queste intenzioni a qualcuno, non lo sapremo mai: coloro con cui avrebbe potuto parlare prima della sua sparizione sono ormai diventati nutrimento per i granchi. L’unico filo rimasto potrebbe essere il sacerdote ormai defunto — padre Domingo, che conversò con Casper sulla ‘Tartarus’. Forse teneva un diario, sulle pagine del quale sono rimaste tracce di quella conversazione. Se sia così o no, lo si può scoprire parlando con fratello Julian.  
+P.S. E un’altra cosa interessante. Poco prima di morire Teresa gridò il nome di un tale Ruperto. Non Joshua, suo marito e padre della sua bambina, che fece tutto il possibile per salvarla, ma proprio Ruperto.
+#TEXT	19
+La nostra visita a fratello Julian non è stata affatto vana — anche solo perché gli appunti di padre Domingo De la Cruz hanno rivelato la data di nascita di Mary: il 22 giugno 1638. Fu battezzata il 3 maggio, insieme a Fabian Gallard, figlio di Cécile Gallard, che morì poco dopo. Era Cécile a prendersi cura di Mary — ed è ancora la nostra ultima speranza per scoprire i dettagli della conversazione tra padre Domingo e Joshua Casper prima che costui scomparisse.
+#TEXT	20
+Più scopriamo sui genitori di Mary, più ci addentriamo in un pantano di enigmi e incomprensioni su ciò che accadde sull’Isola della Giustizia venti anni fa. È davvero curioso: chi fosse per Teresa quel Ruperto: un fratello, un amico o forse... un marito? La conversazione con Cécile Gallard mi ha fatto pensare che Joshua Casper potrebbe non essere stato del tutto onesto — e per qualche ragione aver usato un altro nome: uno diverso, o addirittura inventato.  
+Ma questa è solo un’ipotesi — niente più. Se dovessimo iniziare la ricerca negli archivi della flotta, sarebbe strettamente con il nome Joshua Casper. Tutto il resto sono solo supposizioni per ora.  
+Dobbiamo andare dall’abate Benoît a Saint-Pierre.
+#TEXT	22
+L’abate Benoît non è affatto così semplice come appare. Un lampo di eccitazione ha brillato nei suoi occhi — proprio nel momento in cui gli ho chiesto di procurarmi informazioni dall’archivio dell’Ammiragliato, che potrebbero riguardare segreti militari. O forse mi è sembrato? Però, se il passato dell’abate custodisce qualche segreto oscuro, è difficile credere che li condivida con me. Per quanto riguarda il passato del signor Casper — spero che otterremo qualche risposta tra due mesi — tanto ci vorrà per ottenere le informazioni necessarie.
+#TEXT	23
+E pensare che questa storia all’inizio sembrava tanto semplice! Ecco cosa sappiamo... Joshua Casper era un ufficiale dalla reputazione immacolata, capitano del brigantino 'Cornwell', che su ordine partì dall’Inghilterra per il mare dei Caraibi con le paga delle guarnigioni di Antigua e Providence — che allora erano ancora sotto controllo inglese. Presso le isole Azzorre avvenne uno scontro con una galeone spagnola, dove perì un terzo dell’equipaggio e uno degli ufficiali — Rupert Northwood. Così recita il rapporto ufficiale conservato presso l’amministrazione portuale di Saint John.  
+Dopo aver lasciato Antigua, il 'Cornwell' puntò verso Providence, ma concluse il suo viaggio sugli scogli dell’Isola della Giustizia, già con il nome 'Wrangler'.  
+Dal bastimento si salvarono quattro persone — il capitano, una donna e due marinai. Questi ultimi morirono meno di ventiquattro ore dopo. Furono forse uccisi? Probabilmente sí, poiché potevano sapere troppo. Fu oppure il vero Joshua Casper, innamorato folle della moglie del suo primo ufficiale — dato che correva tra i relitti in cerca di chi potesse salvare Teresa — oppure Rupert Northwood, il cui nome Teresa gridò prima di morire, non chiaro perché chiamatosi col nome del suo comandante.  
+La seconda versione non ha alcuna logica. Così come è assurdo che quell’uomo non sia tornato sull’Isola della Giustizia per sua figlia — né dopo un mese, né dopo un anno, né tantomeno dopo venti anni.  
+Forse è davvero morto — talvolta né l’esperienza, né il coraggio, né l’astuzia bastano contro le circostanze. Ma proprio come allora egli spinse troppo in là i propri passi, così ora siamo immersi fino al collo negli intrecci di questo mistero. E certo non intendiamo voltare le spalle o fermarci.  
+Vale la pena disturbare ancora Aureli Bertin, e poi decidere finalmente chi davvero stiamo cercando: Rupert Northwood o Joshua Casper?
+#TEXT	27
+Ce l’abbiamo fatta, dopotutto. Non siamo ancora riusciti a chiarire cosa sia accaduto a bordo del 'Cornwall' e come sia diventato il 'Wrangler' — ma si è incagliato contro le scogliere dell’Isola della Giustizia sotto il comando di Rupert Northwood. Se sia ancora vivo dopo due decenni, non lo so — come non so nemmeno dove cercarlo, nel caso lo sia. Ad aiutarci in questa faccenda sarà un nostro vecchio conoscente, che ha sia i contatti che le risorse per incarichi del genere. 
+Nel frattempo, mentre ci mettiamo in viaggio per raggiungerlo, dovrò riflettere seriamente su chi esattamente dovremmo chiedergli di cercare: Joshua Kasper o Rupert Northwood? Anche se... è abbastanza furbo da non usare nomi ripetuti. Certo, per uno che vive in fuga è sempre più sicuro usare il proprio vero nome, così da non ignorare per errore un richiamo rivolto a un alias. Ma era davvero così semplice il primo ufficiale del 'Cornwall'?
+#TEXT	28
+Partenza da Isola della Giustizia dovrà attendere. La scorsa notte Orelie Bertin non c’è più. La vecchia è morta nel sonno, con un sorriso sulle labbra. Abbiamo avuto fortuna ad arrivare qui con tutte le vele spiegate - se fossimo arrivati anche solo un giorno dopo, con chi avremmo parlato del padre di Marie? Eppure ho una strana sensazione che Orelie... come se ci stesse aspettando. 
+Questo pensiero non mi dà pace, e mentre Marie insieme agli abitanti dell’Isola si occupa dell’organizzazione del funerale, io farò un salto da Chimiset - devo parlarne con lui.
+#TEXT	29
+Tutto ha un prezzo. L’ho sempre saputo e ho cercato di tenerne conto quando prendevo certe decisioni. Se allora avessi saputo cosa Chimiset avrebbe imposto a Orelie, l’avrei portata da lui quella notte? Mi costa ammetterlo, ma credo che lo avrei fatto comunque — senza le conoscenze perdute nella memoria distorta dalla malattia di Orelie, non avremmo fatto alcun progresso nella ricerca del padre di Marie. 
+È crudele? Sicuramente. Cinico? Senza dubbio. Nelle ventiquattr'ore passate dal mio dialogo con Chimiset ho riflettuto molto su quella che lui chiama il fiume del tempo. In verità, non può essere invertito. Anche solo perché non ha senso — l’uomo, il più delle volte, prende consapevolmente una decisione in un punto preciso di quel corso, e dunque difficilmente la cambierà.
+Orelie Bertin, riposa in pace. Noi porteremo a termine ciò per cui tu, senza saperlo, hai dato la vita.
+#TEXT	30
+Fadey ha chiesto, come previsto, una bella somma — ma comunque meno di quanto avrebbe potuto, considerando il suo amore per l’oro. Dobbiamo presentarci da lui fra un mese — per allora, qualcosa sul padre di Marie dovrebbe chiarirsi.
+#TEXT	32
+Siamo quasi arrivati. Ci separa solo la distanza da Basse-Terre a Belize. È lì che si trova un uomo di nome Jerome Sovernie, che afferma di aver rintracciato Rupert Kasper. Issiamo tutte le vele e facciamo rotta verso ovest. I vent’anni di attesa di Marie per incontrare suo padre stanno quasi per finire.
+#TEXT	33
+Eccoci a Belize. Credo che trovare Jerome Sovernie non sarà difficile. Sono certo che il proprietario della taverna sappia dove alloggia. Eppure, quella rissa al 'Glass Eye' con il coinvolgimento di Jerome mi dà un po’ da pensare. Aveva un incarico importante e ben pagato — eppure vi si è buttato dentro. Forse è legato alla sua indagine su Rupert Kasper. Meglio non fare troppo rumore — e riflettere bene se valga la pena fare domande in taverna.
+#TEXT	35
+Abbiamo percorso un cammino lungo e tortuoso — e siamo giunti a una conclusione amara: fai attenzione a ciò che desideri. È questa la lezione che ci ha lasciato questa storia. La povera Marie, certo, merita un padre migliore di Rupert Northwood... ma i genitori non si scelgono.
+Beh, per quanto orribile sia stato l’esito, e per quanto il disincanto sia profondo — la vita continua. Abbiamo passato tutta la notte sulla riva, in silenzio, rotto solo di tanto in tanto da parole su quanto accaduto. Marie ha sopportato bene il colpo. Non si tormenterà pensando a chi fosse suo padre e quali 'imprese' abbia compiuto. E io... farò tutto ciò che posso per farle pensare a tutto ciò il meno possibile.
+
+
+#QUEST LEDR
+La Espada Del Rey
+#TEXT	1
+Si dice che a Sharptown giri un uomo proveniente proprio da quella nave che ora giace sulla costa della baia di Sabu-Matilla. A quanto pare, è l’unico sopravvissuto al naufragio. Ora vuole tornarci, ma non ha il coraggio di andare da solo — e per giustificarsi racconta strane storie su uno scheletro di indiano. Beh, vedremo... Forse vale la pena scortarlo. Mi chiedo cosa possa cercare lì dopo tutto questo tempo.
+#TEXT	2
+Ho accettato di aiutare il vecchio, Gonsalo Peralta. Non sembra pazzo, a parte i suoi racconti un po’ strani. Beh, non dovrebbe volerci molto — la baia è a due passi.
+#TEXT	3
+Quando ho accettato di accompagnare il vecchio, non immaginavo certo che avrei dovuto combattere contro degli scheletri. Scheletri! Per fortuna la sorte era dalla nostra parte, e nonostante lo shock siamo riusciti a respingerli. Nella cabina del capitano abbiamo trovato il baule del vescovo, pieno di gioielli e un vecchio diario appartenente a Diego Velázquez de Cuéllar — il famoso conquistador e primo governatore di Cuba. Anche solo sfogliando quelle memorie ti viene la pelle d’oca. Forse è lui la chiave per spezzare la maledizione che tormenta Gonsalo.
+#TEXT	4
+Il diario è sistemato. Ho riportato Gonsalo là dove l’ho incontrato — a Sharptown. Che viva in pace, se davvero gli incubi l’hanno lasciato. E io farò meglio a stare zitto — storie così si rivoltano facilmente contro chi le racconta.

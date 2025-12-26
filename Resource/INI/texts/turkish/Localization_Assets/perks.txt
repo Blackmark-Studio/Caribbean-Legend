@@ -1,0 +1,9 @@
+perks_1 {Fiyatlar güncellendi}
+perks_2 {'@<_ShipName>' gemisindeki gövde hasarı onarıldı.}
+perks_3 {@<_ShipName> – su hattı altında delik var!}
+perks_4 {$rand('$attr($context.ship.name)' ambarında değerli bir şey olmalı| '$attr($context.ship.name)' üzerinde kesinlikle önemli bir şey taşıyorlar)}
+perks_5 {$rand('$attr($context.ship.name)' ambarında pek bir şey yok|Görünüşe göre '$attr($context.ship.name)' ambarında değerli bir şey yok)}
+perks_6 {@<rChar.Ship.Name> gemisinde, izdihamda @<FindRussianSailorString(cn, "No")> öldü.}
+perks_7 {Hesaplamalara göre @<_ShipName> @<_PortName>'a vardı.}
+perks_8 {Hâlâ yolda.}
+perks_9 {Sergi ücreti alındı.}

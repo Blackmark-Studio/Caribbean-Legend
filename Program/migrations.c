@@ -161,8 +161,7 @@ void ApplyMigrationsForFolder(string migrationDir, string modName) {
 	trace("Applying migrations ("+migrationDir + "/" + modName+")...");
 	// построение списка миграций
 	int migrationsNum = 0;
-	string migrationsList[2];
-	
+
     object fileFinder;
 	if (modName != "")
 	{
@@ -176,11 +175,8 @@ void ApplyMigrationsForFolder(string migrationDir, string modName) {
 	aref fileList;
 	makearef(fileList, fileFinder.filelist);
 	int filesNum = GetAttributesNum(fileList);
-	
-	if (filesNum > 1) {
-		SetArraySize(&migrationsList, filesNum);
-	}
-	
+    string migrationsList[filesNum];
+
 	for (int i = 0; i < filesNum; i++) {
 		aref file = GetAttributeN(fileList, i);
 		string fileName = GetAttributeValue(file);

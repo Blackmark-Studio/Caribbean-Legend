@@ -87,17 +87,20 @@ int GetMoneyForOfficer(ref Npchar)
 	    }
 			float mtp = 1;
 			if (HasPerk(Npchar, "Trustworthy")) mtp -= PERK_VALUE_TRUSTWORTHY;
-	    return makeint(MOD_SKILL_ENEMY_RATE*4*sum*mtp);
+	    return makeint(MOD_SKILL_ENEMY_RATE*7*sum*mtp);
     }
 
     return 0;
 }
 int GetMoneyForOfficerFull(ref Npchar)
 {
-    float nLeaderShip = GetSummonSkillFromNameToOld(pchar, SKILL_LEADERSHIP);
-	float nCommerce   = GetSummonSkillFromNameToOld(pchar, SKILL_COMMERCE);
-	
-	return makeint(GetMoneyForOfficer(Npchar)*2/(nLeaderShip + nCommerce) );
+    float oLeaderShip = GetSummonSkillFromNameToOld(pchar,SKILL_LEADERSHIP);
+	float oCommerce   = GetSummonSkillFromNameToOld(pchar,SKILL_COMMERCE);	
+	// Влияния навыков (1..10 приводим к 0..1 аффинно) и степенная форма 0.55
+	float okCommerce   = pow((oCommerce) / 10.0, 0.55) * 0.65; // 65% вес
+	float okLeadership = pow((oLeaderShip) / 10.0, 0.55) * 0.35; // 35% вес
+	float mSkillOficcer  = 1.0 - 0.35 * (okCommerce + okLeadership); 
+	return makeint(GetMoneyForOfficer(Npchar)*mSkillOficcer);
 }
 
 int GetSalaryForShip(ref chref)

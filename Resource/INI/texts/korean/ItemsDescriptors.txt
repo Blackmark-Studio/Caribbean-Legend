@@ -1,0 +1,149 @@
+descriptor_Fancy {화려한}
+descriptor_Exotic {이국적}
+descriptor_HighQuality {고급}
+descriptor_GoodFit {평범}
+descriptor_HeartDefence {강화}
+descriptor_Unremarkable {평범}
+descriptor_WeaponType_0 {가벼운}
+descriptor_WeaponType_1 {중간}
+descriptor_WeaponType_2 {무거운}
+descriptor_WeaponLength_0 {짧은}
+descriptor_WeaponLength_1 {긴}
+descriptor_WeaponCurvature_0 {직도}
+descriptor_WeaponCurvature_1 {곡도}
+descriptor_ArmorType_0 {가벼운}
+descriptor_ArmorType_1 {중간}
+descriptor_ArmorType_2 {무거운}
+descriptor_ArmorMaterial_0 {천갑}
+descriptor_ArmorMaterial_1 {가죽}
+descriptor_ArmorMaterial_2 {판금}
+descriptor_ArmorMaterial_3 {압인}
+descriptor_ArmorMaterial_4 {단조}
+descriptor_AmuletType_0 {일상}
+descriptor_AmuletType_1 {이교}
+descriptor_AmuletType_2 {기독교}
+descriptor_SingleCharge {단발}
+descriptor_MultiCharge {연발}
+descriptor_OneHanded {한손}
+descriptor_TwoHanded {양손}
+descriptor_Bayonet {총검}
+descriptor_PiercingAmmo {철갑}
+descriptor_StunAmmo {기절}
+descriptor_EmpoweredAmmo {과충전}
+descriptor_SpyGlass {관측}
+descriptor_SpyGlass_Crew_0 {선원 추정}
+descriptor_SpyGlass_Crew_1 {선원 평가}
+descriptor_SpyGlass_Crew_2 {선원 수}
+descriptor_SpyGlass_Caliber_0 {함포}
+descriptor_SpyGlass_Caliber_1 {무장}
+descriptor_Special {특수}
+descriptor_Tool {도구}
+descriptor_Valuable {고가}
+descriptor_BulletNeedPowder {화약}
+descriptor_descr_BulletNeedPowder {이 탄약은 화약이 없으면 발사되지 않습니다.}
+descriptor_GrapeAmmo {산탄}
+descriptor_BulletAmmo {탄환}
+descriptor_BombAmmo {수류탄}
+descriptor_HealPotion {치유}
+descriptor_Alcohol {취기}
+descriptor_EnhancingPotion {강화}
+descriptor_AntidotePotion {해독제}
+descriptor_Metal {금속}
+descriptor_Trinket {장신구}
+descriptor_descr_Alcohol {말을 많게 하고 생각을 가볍게 하지만, 기술에 페널티를 부여합니다.}
+descriptor_descr_EnhancingPotion {특수 강화 효과가 있습니다.}
+descriptor_descr_AntidotePotion {독을 해독하고 중독을 멈춥니다.}
+descriptor_descr_Metal {땅에서 채취해 연금술에 사용합니다.}
+descriptor_descr_Trinket {세련된 것부터 평범한 것까지, 안목 있는 이와 시골 사람을 구분해 주는 물건들. 전당포에서 두블룬으로 교환할 수 있습니다.}
+descriptor_Junk {잡동사니}
+descriptor_Herb {약초}
+descriptor_descr_Herb {대지의 선물. 주로 연금술에서 연고와 물약 제작에 사용됨.}
+descriptor_descr_Fancy {이 아이템은 화려한 외관과 상감, 값비싼 재료로 눈에 띕니다. 착용 시 리더십이 $number($DescriptorBaseValue(Fancy)) 증가합니다. 효과는 중첩됩니다.}
+descriptor_descr_Exotic
+{
+이 물건은 선한 기독교인의 손에 있을 곳이 아니며, 소지자에 대한 소름끼치는 소문이 순식간에 퍼집니다.
+함대 전력이 $percent($DescriptorBaseValue(Exotic)) 증가합니다. 효과는 중첩됩니다.
+}
+descriptor_descr_HighQuality {이 무기는 뛰어난 제작으로 치명타 피해가 $percent($DescriptorBaseValue(HighQuality)) 증가합니다.}
+descriptor_descr_GoodFit {이 갑옷은 몸에 완벽하게 맞아 모든 무기의 공격 속도가 $percent($DescriptorBaseValue(GoodFit)) 증가합니다.}
+descriptor_descr_HeartDefence {이 갑옷은 주요 부위가 강화되어 적의 치명타 피해를 $percent($DescriptorBaseValue(HeartDefence))만큼 감소시킵니다.}
+descriptor_descr_Unremarkable
+{
+이런 물건은 누구나 가지고 있습니다. 이것을 착용하면 눈에 띄지 않고 기억에도 남지 않습니다.
+은신이 $number($DescriptorBaseValue(Unremarkable)) 증가합니다. 효과는 중첩됩니다.
+}
+descriptor_descr_WeaponType_0 {경무기는 가볍고 민첩하며 주로 1대1 결투에 적합합니다. 이 무기로 공격 시 속도가 5% 증가합니다.}
+descriptor_descr_WeaponType_1 {중무기는 무게와 속도의 균형이 뛰어나 다양한 상황에 적합합니다. 난투와 접현전에 이상적입니다.}
+descriptor_descr_WeaponType_2 {중화기는 엄청난 무게와 그에 걸맞은 피해를 줍니다. 대신 공격 속도가 5% 감소합니다.}
+descriptor_descr_WeaponLength_0 {이 무기는 적에게 접근해야 하며 근거리 전투에 더 적합합니다.}
+descriptor_descr_WeaponLength_1 {이 무기는 사거리가 길며 넓은 공간에서 효과적입니다.}
+descriptor_descr_WeaponCurvature_0 {이 무기는 직도이거나 약간만 곡도여서 빠른 공격에 더 적합합니다. 베기 공격에는 덜 효과적입니다.}
+descriptor_descr_WeaponCurvature_1 {이 무기는 곡선이 뚜렷하고 무게 중심이 앞쪽에 있어 빠른 공격보다는 베기에 더 적합합니다.}
+descriptor_descr_ArmorType_0 {경갑은 일반 옷과 거의 구분되지 않으며 움직임에 전혀 제약이 없습니다. 대신 방어력이 낮습니다.}
+descriptor_descr_ArmorType_1 {중갑은 움직임을 다소 제한하지만 주요 장기를 뛰어나게 보호합니다. 캐릭터 이동 속도가 5% 감소합니다.}
+descriptor_descr_ArmorType_2 {중갑은 무겁고 다루기 어렵지만, 요새를 돌파할 수 있습니다. 이동 속도 10% 감소.}
+descriptor_descr_ArmorMaterial_0 {천은 강한 타격에는 약하지만, 긁힘과 찰과상은 막아줍니다. 받는 피해가 4% 감소합니다.}
+descriptor_descr_ArmorMaterial_1 {가죽 갑옷은 술집 싸움에서는 도움이 되지만, 총알이나 숙련된 찌르기는 막지 못합니다. 받는 피해가 8% 감소합니다.}
+descriptor_descr_ArmorMaterial_2 {판금은 무게와 방어의 훌륭한 균형입니다. 생명을 지켜줄 수 있습니다. 받는 피해 15% 감소.}
+descriptor_descr_ArmorMaterial_3
+{
+압인 갑옷은 병사들을 위해 대량 생산되어 유럽 전쟁에서 사용됩니다.
+받는 피해가 22% 감소합니다.
+}
+descriptor_descr_ArmorMaterial_4 {고급 단조 갑옷은 제작이 복잡하고 비용이 많이 들어 카리브 해에서 보기 드뭅니다. 받는 피해가 35% 감소합니다.}
+descriptor_descr_AmuletType_0 {징조, 바다의 미신, 실제 인과관계를 활용합니다.}
+descriptor_descr_AmuletType_1 {이교 신들과 토착 의식의 힘을 끌어냅니다.}
+descriptor_descr_AmuletType_2 {기독교 성인과 올바른 신앙의 힘을 끌어냅니다.}
+descriptor_descr_SingleCharge {예비 탄약은 한 발뿐이니, 신중히 쏴라.}
+descriptor_descr_MultiCharge {여러 개의 총열, 실린더 또는 챔버가 있어 연속 사격이 가능합니다. 특별한 기술이 필요합니다.}
+descriptor_descr_OneHanded {벨트나 띠에 착용하는 휴대 무기. 단발식은 별도의 숙련이 필요하지 않습니다.}
+descriptor_descr_TwoHanded {양손으로 쏴야 하는 무거운 화기입니다. 사용하려면 특별한 기술이 필요합니다.}
+descriptor_descr_Bayonet {이 긴 총신의 화기는 총검이 장착되어 빠른 공격 피해가 25% 증가합니다.}
+descriptor_descr_PiercingAmmo {이 탄약은 명중 시 갑옷을 무시합니다.}
+descriptor_descr_StunAmmo {이 탄약은 적중 시 적에게 페널티를 부여합니다.}
+descriptor_descr_EmpoweredAmmo {이 탄약은 무기 성능을 향상시킵니다.}
+descriptor_descr_SpyGlass {모든 망원경은 선박의 종류, 이름, 상태, 속도, 함포 수를 확인할 수 있습니다.}
+descriptor_descr_SpyGlass_Crew_0 {이 망원경으로는 선원을 뚜렷이 볼 수 없어, 추정치가 대략적입니다.}
+descriptor_descr_SpyGlass_Crew_1 {이 망원경으로 선원 수를 정확히 파악하고, 머스킷 사수가 있는지 확인할 수 있습니다.}
+descriptor_descr_SpyGlass_Crew_2 {이 망원경은 적 선원과 머스킷병의 정확한 수, 그리고 선장의 스킬까지 보여줍니다.}
+descriptor_descr_SpyGlass_Caliber_0 {이 망원경은 대포의 수뿐만 아니라 구경까지도 확인할 수 있을 만큼 렌즈가 뛰어납니다.}
+descriptor_descr_SpyGlass_Caliber_1 {이 고급 망원경은 함포의 구경과 장전된 탄약 종류까지 확인할 수 있습니다.}
+descriptor_descr_Special {이 아이템은 특수한 속성을 지닙니다.}
+descriptor_descr_Tool {초보자에겐 무용지물인 복잡한 도구 세트. 하지만 당신은 다르다.}
+descriptor_descr_Valuable {매각 가치가 높음.}
+descriptor_descr_BulletNeedPower {화약이 없으면 발사할 수 없습니다.}
+descriptor_descr_GrapeAmmo {여러 개의 작은 탄환. 다수의 적이나 근거리 단일 대상에게 효과적입니다.}
+descriptor_descr_BulletAmmo {한 번에 한 발씩 장전 및 발사. 중거리와 장거리에서 효과적이며, 특히 헤드샷 시 뛰어남.}
+descriptor_descr_BombAmmo {폭발하여 주변 모든 대상을 공격합니다. 다수의 적에게 특히 효과적입니다.}
+descriptor_descr_HealPotion {이 물약은 체력을 회복합니다.}
+descriptor_descr_Junk {카리브 해 곳곳에서 흔히 발견되는 장신구들. 쓸 줄 아는 이에게만 가치가 있으며, 그렇지 않으면 어두운 구석에 먼지만 쌓인다.}
+descriptor_Alchemy {연금술}
+descriptor_descr_Alchemy {이 아이템은 연금술로 제작하거나 개조할 수 있습니다.}
+descriptor_Quest {퀘스트}
+descriptor_descr_Quest {이 아이템은 퀘스트에 필요합니다. 버리거나 판매할 수 없습니다.}
+descriptor_Map {지도}
+descriptor_descr_Map {어느 지역의 표시가 있는 종이 조각. 이런 아이템은 모두 즉시 지도에 복사됩니다.}
+descriptor_Fragile {취약}
+descriptor_descr_Fragile {이 아이템은 일정 횟수 사용 후 파괴됩니다.}
+descriptor_Cannoner {$key(Cannoner)}
+descriptor_Boatswain {$key(Boatswain)}
+descriptor_Carpenter {$key(Carpenter)}
+descriptor_Navigator {$key(Navigator)}
+descriptor_Treasurer {$key(Treasurer)}
+descriptor_Doctor {$key(Doctor)}
+descriptor_descr_Cannoner {효과는 포수에게 적용됩니다.}
+descriptor_descr_Boatswain {효과가 갑판장에게 적용됩니다.}
+descriptor_descr_Carpenter {효과가 목수에게 적용됩니다.}
+descriptor_descr_Navigator {[ERROR: RateLimitError]}
+descriptor_descr_Treasurer {효과가 재정관에게 적용됩니다.}
+descriptor_descr_Doctor {효과가 의사에게 적용됩니다.}
+descriptor_Ingredient {재료}
+descriptor_Jewelery {보석}
+descriptor_descr_Jewelery {귀중한 보석과 준보석. 판매하거나 연금술에 사용할 수 있습니다.}
+descriptor_descr_Ingredient {이 아이템은 연금술에 사용됩니다.}
+descriptor_Alternate {[ERROR: RateLimitError]}
+descriptor_descr_Alternate {[ERROR: RateLimitError]}
+descriptor_IntoxicatingPotion {취기}
+descriptor_descr_IntoxicatingPotion {혀를 풀고 생각을 가볍게 하지만, 기술에 페널티를 부여합니다.}
+descriptor_Fighter {$key(Fighter)}
+descriptor_descr_Fighter {효과는 선봉대에게 유용합니다.}

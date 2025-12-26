@@ -50,6 +50,8 @@ void ActiveF5Control()
 
 void ActiveF7Control()
 {
+	__RefreshLocalization();
+	return;
 	// Warship. Убить боижайшего персонажа
 	int characterIndex = LAi_FindNearestVisCharacter(PChar, 25);
 	ref characterRef;
@@ -95,7 +97,7 @@ void setclock()
 void ActiveF10Control()
 {
 	Log_Info("ЛОГЛОГ");
-	ChangeCharacterComplexReputation(pchar, "nobility", 100);
+	
 }
 
 void AdvanceTime() {

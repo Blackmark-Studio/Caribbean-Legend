@@ -1,0 +1,193 @@
+newLine
+{
+
+}
+HelpChooser {Yardım konusunu seç}
+MainInterface {Arayüz kontrolleri}
+DialogControls {Diyalog}
+WorldMapControls {Dünya haritası}
+BattleInterfaceControls {Arayüz kontrolleri}
+Sailing1Pers {1. şahıs deniz}
+Sailing3Pers {3. şahıs deniz}
+FightModeControls {Savaş modu}
+PrimaryLand {Karada kontroller}
+ChrCamTurnV {Kameranın karakteri dikey olarak takip etmesi}
+ChrCamTurnH {Kameranın karakteri yatay olarak takip etmesi}
+ChrCamCameraSwitch {Kamera modu}
+SwitchCameraOffset {Kamera görünümü}
+CharacterCamera_Forward {Kamera yakınlaştır}
+CharacterCamera_Backward {Kamera uzaklaştır}
+ChrAiming {Nişancı modu (basılı tut)}
+ChrAimingShot {Ateş Et}
+ChrCamCameraRadius {Kamera yakınlaştırma}
+ChrCamNormalize {Kamerayı ortala}
+ShipCamera_Turn_V {Gemiyle birlikte kameranın dikey hareketi}
+ShipCamera_Turn_H {Gemiyle birlikte kameranın yatay hareketi}
+ShipCamera_Forward {Yakınlaştır}
+ShipCamera_Backward {Uzaklaştır}
+DeckCamera_Turn_V {Dikey kamera döndürme (güverte görünümü)}
+DeckCamera_Turn_H {Yatay kamera dönüşü (güverte görünümü)}
+DeckCamera_Forward {İleri (güverte görünümü)}
+DeckCamera_Backward {Geri (güverte görünümü)}
+DeckCamera_Left {Sola yan adım (güverte görünümü)}
+DeckCamera_Right {Sağa yan adım (güverte görünümü)}
+ChrTurnH {Karakter döndürme}
+ChrTurnV {Karakter hareketi}
+ChrTurnHL {Karakteri sola döndür}
+ChrTurnHR {Karakteri sağa döndür}
+ChrAction {Eylemi gerçekleştir}
+ChrForward {İleri git}
+ChrForward1 {İleri git}
+ChrForward2 {İleri git (alternatif)}
+ChrBackward {Geri git}
+ChrBackward1 {Geri git}
+ChrSwitchWalk {Yürü/Koş}
+ChrSprint {Koşu}
+ChrRunStick {Yürü/Koş}
+ChrBlock {Engelle}
+ChrRecoil {Geri çekil}
+ChrParry {Savuşturma (alternatif)}
+ChrAttackForce {Hızlı saldırı}
+ChrAttackFast {Kesme saldırısı}
+ChrAttackRound {Grup saldırısı}
+ChrAttackBreak {Ağır saldırı}
+ChrAttackFient {Fint (alternatif)}
+ChrAttackBreakBase {Ağır saldırı}
+ChrAttackRoundBase {Grup saldırısı}
+ChrAttackChoseBase {Kombo kontrolü}
+ChrBlockBase {Engelle}
+ChrAttackBase {Hızlı saldırı / Savuşturma}
+ChrAltAttackBase {Kesme saldırısı / Grup saldırısı}
+ChrFire {Ateş}
+ChrFightMode {Savaş modu}
+ChrSwitchFightMode {Savaş modunu değiştir}
+BulletChanger {Mühimmat değiştir}
+PotionChanger {Sağlık iksirini değiştir}
+BOAL_UsePotion {Can iksiri kullan}
+BOAL_ActivateRush {Ometochtli tentürü kullan}
+BOAL_DeadSearch {Yağmala}
+UseAntidote {Panzehir kullan}
+Alchemy {Simya}
+Inventory {Envanter}
+ShipState {Filo}
+QuestBook {Günlük}
+MapView {Haritalar}
+Abilities {Karakter}
+Nations {Uluslar}
+Dolly {Maya idolünü etkinleştir}
+Ultimate_potion {Kızılderili iksirini iç}
+Ship_TurnLeft {Gemiyi sola çevir}
+Ship_TurnRight {Gemiyi sağa çevir}
+Ship_SailUp {Yelkenleri kaldır}
+Ship_SailDown {Yelkenleri indir}
+Ship_Fire {Ateş!}
+Sea_CameraSwitch {Donanma kamera modu}
+TelescopeMode {Dürbünü aç/kapat}
+TelescopeZoomIn {Dürbün (yakınlaştır)}
+TelescopeZoomOut {Dürbün (uzaklaştır)}
+BI_MapEnter {Küresel harita}
+WMapTurnH {Harita modunda kamerayı geminin etrafında döndür}
+WMapTurnV {Kamera yüksekliği (harita modunda)}
+WMapCameraRotate {Kamera kaydırma/döndürme modu açık}
+WMapForward {Kamerayı yakınlaştır}
+WMapBackward {Kamerayı uzaklaştır}
+WMapCameraSwitch {Görünüm modunu değiştir}
+WMapShipSailUp {İleri yelken aç}
+WMapShipSailDown {Geri yelken aç}
+WMapShipTurnLeft {Sola dön}
+WMapShipTurnRight {Sağa dön}
+WMapCancel {Haritadan denize çık}
+TimeScaleOn {Zamanı hızlandır}
+TimeScaleOff {Hızlandırmayı devre dışı bırak}
+Interface {Karakter menüsü}
+MainMenu {Ana menü}
+MainMenuDouble {Ana menü}
+Help {Oyun yardımı}
+BICommandsActivate {Eylem menüsü}
+LICommandsActivate {Eylem menüsü}
+BICommandsConfirm {Komut seç}
+BICommandsCancel {Komutu iptal et}
+BICommandsUp {Eylem menüsü - yukarı git}
+BICommandsDown {Eylem menüsü - aşağı in}
+BICommandsLeft {Eylem menüsü - sola git}
+BICommandsRight {Eylem menüsü - sağa git}
+MiniMapZoomIn {Mini haritayı yakınlaştır}
+MiniMapZoomOut {Mini haritayı uzaklaştır}
+BIFastCommand {Hızlı eylem}
+HelpChooser_Cancel {Yardımdan çık}
+HelpChooser_Action {Geçerli öğe için yardım göster}
+HelpChooser_Next {Sonraki yardım öğesi}
+HelpChooser_Prev {Önceki yardım öğesi}
+HelpChooser_Left {Sola (yardım modunda)}
+HelpChooser_Right {Sağa (yardım modunda)}
+HelpChooser_Up {Yukarı (yardım modunda)}
+HelpChooser_Down {Aşağı (yardım modunda)}
+DlgAction {Diyalogda yanıt seçimi}
+DlgAction1 {Diyalogda yanıt seçimi}
+DlgUp {Diyalogdaki önceki yanıta dön}
+DlgDown {Diyalogda sonraki yanıta geç}
+DlgScrollUp {Diyaloğu aşağı kaydır}
+DlgScrollDown {Diyaloğu yukarı kaydır}
+hk_charge1 {Topa gülle yükle}
+hk_charge2 {Saçma yükle}
+hk_charge3 {Zincir gülle yükle}
+hk_charge4 {Bombaları yükle}
+hk_Cure {Şifa karışımını kullan}
+hk_Rush {'Öfke' yeteneğini kullan}
+hk_ImmediateReload {Anında Yeniden Doldurma}
+hk_LightRepair {Acil onarım}
+hk_InstantRepair {Onarım}
+hk_Turn180 {Geri dönüş}
+hk_SandbankManeuver {Sığlık manevralarını etkinleştir}
+ChrStrafeLeft {Sola adım at}
+ChrStrafeRight {Sağa adım at}
+OfficersCharge {Subaylara emir : Serbest savaş}
+OfficersHold {Subaylara emir : Yerinde kal}
+OfficersFollow {Subaylara emir: Takip et}
+FLT_LoadBalls {Filo emri: topları gülle ile doldurun}
+FLT_LoadGrapes {Filo emri: toplara saçma yükle}
+FLT_LoadChain {Filo emri: toplara zincir gülleleri yükleyin}
+FLT_LoadBombs {Filo emri: toplara bomba yükleyin}
+FLT_SailAway {Filo komutu: uzaklaş}
+FLT_LowerSails {Filo komutu: yelkenleri indir}
+FLT_ProtFlagship {Filo emri: sancak gemisini koru}
+Fast_store {Hızlı Seyahat: Mağaza}
+Fast_shipyard {Hızlı Seyahat: Tersane}
+Fast_tavern {Hızlı Seyahat: Meyhane}
+Fast_townhall {Hızlı Seyahat: Belediye}
+Fast_bank {Hızlı Seyahat: Tefeci}
+Fast_church {Hızlı Seyahat: Kilise}
+Fast_brothel {Hızlı Seyahat: Genelev}
+Fast_portoffice {Hızlı Seyahat: Liman İdaresi}
+Fast_prison {Hızlı Seyahat: Hapishane}
+Fast_port {Hızlı Seyahat: Liman}
+LI_Fast_store {Mağaza}
+LI_Fast_shipyard {Tersane}
+LI_Fast_tavern {Meyhane}
+LI_Fast_townhall {Belediye}
+LI_Fast_bank {Tefeci}
+LI_Fast_church {Kilise}
+LI_Fast_brothel {Genelev}
+LI_Fast_portoffice {Liman Ofisi}
+LI_Fast_prison {Hapishane}
+LI_Fast_port {Liman}
+HK_Musket {Uzun namlulu silah kuşan}
+HK_FencingL {Hafif silah kuşan}
+HK_FencingS {Orta silah kuşan}
+HK_FencingH {Ağır silah kuşan}
+HK_bullet {Bir mermi yükle (değiştirici)}
+HK_cartridge {Kağıt kartuş yükle (değiştirici)}
+HK_grapeshot {Saçma yükle (değiştirici)}
+HK_harpoon {Ok atı yükle (değiştirici)}
+HK_GunEchin {Kirpi mermisi yükle (değiştirici)}
+HK_grenade {El bombası yükle (değiştirici)}
+hk_Cabin {Kaptan Kabini}
+CannonsRange {Atış menzilini göster}
+ChangeShowInterface {Arayüzü göster/gizle}
+FreeCam {Serbest Kamera}
+TimeScale {Zaman hızlandır/yavaşlat}
+TimeScaleFasterBA {Zamanı hızlandır}
+TimeScaleSlowerBA {Zaman yavaşlar}
+FireCamera_Set {Nişan modu}
+WMapDrawCircle {Çatışma Alanı}
+InterfaceTakeAll {Hepsini al}

@@ -40,7 +40,7 @@ void InitChrRebalance(ref chr)
 	ChrRebalance(chr, targetRank, chrtype, powerLvl, randomPirates, selfToShip)
 }
 
-void GEN_ModifyCaptainsRankByShip(ref chr, int targetRank, int playerRank, int powerLvl)
+void GEN_ModifyCaptainsRankByShip(ref chr, ref targetRank, int playerRank, ref powerLvl)
 {
 	if (CheckAttribute(chr, "personality.adaptiveRankMin")) return; // этих и так уже бафнули
 	int shipClass = GetCharacterShipClass(chr);
@@ -98,7 +98,7 @@ void ChrRebalance(ref chr, int targetRank, int chrtype, int powerLvl, bool rando
 	UpdateNpcFightAI(chr);            // апдейт всех желаний стрелять, бить определенными ударами и т. п.
 }
 
-void GEN_ModifyMusketers(ref chr, )
+void GEN_ModifyMusketers(ref chr)
 {
 	if (!IsMusketer(chr)) return;
 
@@ -510,7 +510,7 @@ void GEN_SetArchetype(ref chr, int chrtype)
 	string mainArchetype = chr.personality.mainArchetype;
 	string secondaryArchetype = chr.personality.secondaryArchetype;
 
-		if (chrtype == GEN_TYPE_ENEMY || chrtype == 2) //JOKERTODO здесь двойка из-за наличия раньше типа капитана, её можно удалить со следующим патчем, требующим новой игры
+		if (chrtype == GEN_TYPE_ENEMY || chrtype == 2) //JOKERBACKLOG здесь двойка из-за наличия раньше типа капитана, её можно удалить со следующим патчем, требующим новой игры
 		{
 			if (mainArchetype == GEN_ARCHETYPE_RANDOM) mainArchetype = GEN_GetArchetypeByWeapon(chr);
 			if (secondaryArchetype == GEN_ARCHETYPE_RANDOM) secondaryArchetype = GEN_GetArchetypeByIndex(rand(GEN_MAX_ARCHETYPES-1));

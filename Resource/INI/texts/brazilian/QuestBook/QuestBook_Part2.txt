@@ -1,0 +1,2097 @@
+#QUEST Gen_CityCapture
+Evento: Colônias Cercadas
+#TEXT t1
+@<sCity> foi conquistada para a glória de @<sNation>.
+#TEXT t2
+Saqueei @<sCity>.
+#TEXT t3
+Tomei posse de @<sCity> para mim.
+#TEXT t3_1
+@<sName> foi nomeado governador de @<sCity>.
+#TEXT t3_2
+@<sName> de @<sCity> foi dispensado de suas funções.
+#TEXT t4
+@<sCity> agora pertence a @<sNation>.
+#TEXT t5
+@<sNation> cercou @<sCity>. Tenho apenas @<sDay> para salvá-la.
+#TEXT t5_1
+Fuzileiros navais de @<sNation> desembarcaram perto de @<sCity>. Tenho apenas @<sDay> para lidar com eles.
+#TEXT t6
+A frota de @<sNation> foi destruída. @<sCity> está salva.
+#TEXT t6_1
+As forças de @<sNation> foram derrotadas. @<sCity> está salva.
+#TEXT t7
+Agora @<sCity> está sob meu comando.
+#TEXT t8
+Fechei um acordo com o governador-geral de @<sNation>. @<sCity> está agora sob meu comando.
+#TEXT dum
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#QUEST Gen_Contraband
+Evento: Negócio de Contrabando
+#TEXT t1
+Eles vão estar me esperando em @<sIsland>, num lugar chamado @<sLoc>.
+#TEXT t1_1
+Eles vão me esperar no continente, em um lugar chamado @<sLoc>.
+#TEXT dum
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#QUEST Gen_ContrabandTravel
+Evento: Navegando com Contrabandistas
+#TEXT 1
+Tenho uma chance de chegar a @<sLocTo>, que não fica longe de @<sPlaceTo>. O navio deles estará me esperando em @<sLoc> dentro de @<sDays>.
+Preciso conseguir @<sPrice> pesos.
+#TEXT 2
+Paguei pela viagem.
+#TEXT 3
+Cheguei tarde demais. Agora preciso esperar por outro navio.
+#TEXT 4
+Cheguei em @<sLocTo>. Hora de desembarcar.
+#TEXT 5
+Chegamos ao nosso destino, mas resolvi aproveitar a oportunidade — agora o navio deles é meu. Ainda estou me mantendo à tona.
+#TEXT dum
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#QUEST Gen_StrangeInfo
+Trabalho Paralelo: Boatos Estranhos
+#TEXT 1
+Dizem que @<sName> pretende se encontrar com contrabandistas em um lugar chamado @<sLoc>. Parece coisa ilegal. Talvez eu deva denunciar?
+#TEXT dum
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#QUEST Gen_PGGQuest1
+Trabalho Paralelo: Proposta do Pirata
+#TEXT q1_Tavern
+Encontrei um pirata peculiar na taverna que disse ter uma proposta interessante para mim. Seu navio se chama "@<sShipName>", e ele está me esperando. Talvez valha a pena fazer-lhe uma visita.
+#TEXT q1_Tavern_1
+Encontrei um pirata curioso na taverna que disse ter uma proposta interessante para mim. O navio dele se chama "@<sShipName>", e ele está me esperando. Talvez valha a pena fazer uma visita.
+#TEXT q1_Close
+A proposta dele não me agradou, então recusei.
+#TEXT q1_Detail_A
+Uma caravana de @<sNation>, carregada com @<sGoods>, está acampada não muito longe de @<sColony>. Podemos tentar tomar alguma carga valiosa.
+#TEXT q1_Detail_B
+Uma caravana de @<sNation> transportando @<sGoods> foi pega por uma tempestade e afundou perto de @<sColony>. A tripulação conseguiu salvar parte da carga e desembarcou na Baía de @<sShore>.
+#TEXT q1_RefuseFight
+Recusei-me a lutar contra @<sNation>, e @<sPsName> achou que eu lidaria com a tarefa sozinho. Seus oficiais me atacaram, e seu navio abriu fogo assim que cheguei à minha embarcação.
+#TEXT q1_Accept
+Gostei da proposta dele. Temos apenas @<nDays> para interceptar.
+#TEXT q1_Accept_1
+Gostei da proposta dele. Temos apenas @<nDays> para interceptar.
+#TEXT q1_PGGDeadNoShips
+Infelizmente, @<sPsName> morreu durante nossa viagem. Agora não faço ideia de onde procurar a caravana. Uma pena — esse prêmio escapou por entre meus dedos.
+#TEXT q1_PGGDeadNoShips_1
+Infelizmente, @<sPsName> morreu durante nossa viagem. Não posso fazer isso sozinho. Que pena—esse prêmio escapou por entre meus dedos.
+#TEXT q1_PGGDeadShips
+Infelizmente, @<sPsName> foi morto na batalha contra a caravana. Todo o saque agora é meu.
+#TEXT q1_PGGDead
+Infelizmente, @<sPsName> pereceu durante nossa viagem. Todo o saque agora me pertence.
+#TEXT q1_Time2Late
+Chegamos tarde demais — a presa escapou.
+#TEXT q1_Fail
+Nosso saque não foi tão valioso quanto esperávamos.
+#TEXT q1_FailPay
+@<sPsName> disse que tudo foi culpa minha e que agora estou em dívida com ele. Acho que ele tem razão. Paguei para evitar mais problemas.
+#TEXT q1_FailNotPay
+@<sPsName> disse que tudo foi culpa minha e que agora estou em dívida com ele. Mandei-o catar coquinho.
+#TEXT q1_OkShare
+O butim foi repartido conforme as leis da Irmandade. Espero que esta não seja nossa última aventura juntos.
+#TEXT q1_OkNotShare
+Dividir o saque? Prefiro passar a lâmina em alguns pescoços e ficar com tudo para mim.
+#TEXT dum
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#QUEST Rumour_GoldFleet
+Evento: Frota de Ouro Espanhola
+#TEXT 1
+Correm boatos de que a frota do tesouro espanhola partiu recentemente de Porto Bello e agora navega rumo a Havana. Talvez ainda não tenham chegado. Posso tentar interceptá-los.
+#TEXT 2
+Correm boatos de que a frota do tesouro espanhola partiu recentemente de Porto Bello e está navegando rumo a Havana. Talvez ainda não tenham chegado. Posso tentar interceptá-los.
+#TEXT 3
+Correm boatos de que a frota do tesouro espanhola partiu recentemente de Porto Bello e agora navega rumo a Havana. Talvez ainda não tenham chegado. Devo considerar a possibilidade de interceptá-los.
+#TEXT 4
+O comboio do tesouro espanhol foi afundado. A batalha foi dura, mas o prêmio valeu a pena.
+#TEXT 5
+Graças aos meus esforços, a frota do tesouro espanhola que partia de Porto Bello para Havana nunca chegou ao seu destino. Agora, sua carga repousa em meu porão.
+#TEXT 6
+Consegui destruir e saquear a Frota Dourada que transportava tesouros de Porto Bello.
+#TEXT 7
+Dizem que a frota do tesouro espanhola chegou a Cuba. Ouro e prata logo serão enviados para a Espanha sob forte escolta.
+#TEXT 8
+Dizem que a frota do tesouro espanhola chegou a Cuba. Em breve, ouro e prata serão enviados para a Espanha sob forte escolta.
+#TEXT 9
+Dizem por aí que a frota do tesouro espanhola chegou a Cuba. Ouro e prata logo serão enviados para a Espanha sob forte escolta.
+#TEXT 10
+Descobri que a frota do tesouro espanhola está se preparando para zarpar em Porto Bello. Eles partirão rumo a Cuba no início de @<sMonth>.
+#TEXT 11
+Descobri que a frota do tesouro espanhola está se preparando para zarpar em Porto Bello. Eles partirão rumo a Cuba na primeira metade de @<sMonth>.
+#TEXT 12
+Descobri que a frota do tesouro espanhola está se preparando para zarpar de Porto Bello. Eles partirão rumo a Cuba na primeira metade de @<sMonth>.
+#TEXT 13
+Lutamos com bravura contra os espanhóis—alguns dos navios deles jamais chegarão a Havana. O saque poderia ter sido melhor, mas fomos obrigados a recuar.
+#TEXT 14
+Lutamos bravamente contra os espanhóis—alguns dos navios deles jamais chegarão a Havana. O saque poderia ter sido melhor, mas tivemos que bater em retirada.
+#TEXT 15
+Lutamos bem contra os espanhóis—alguns dos navios deles jamais chegarão a Havana. O saque poderia ter sido melhor, mas tivemos que bater em retirada.
+#TEXT 15_none
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#QUEST MerchantOnMap
+Evento: Pista Concreta
+#TEXT 1
+Recebi informações sobre um navio mercante, "@<sShipName>", navegando sob a bandeira de @<sNation>. Ela está indo de @<sColony> para @<sNextColony>, com os porões cheios de @<sQuestGoodsIdx>. Acho que chegou a hora de aliviar esse navio dessa carga.
+#TEXT 2
+Recebi informações sobre um navio mercante, "@<sShipName>", navegando sob a bandeira de @<sNation>. Ela está viajando de @<sColony> para @<sNextColony> com uma carga de @<sQuestGoodsIdx>. Acho que chegou a hora de aliviar esse fardo dela.
+#TEXT 3
+Recebi informações sobre um navio mercante, "@<sShipName>", que navega sob a bandeira de @<sNation>. Ela parte de @<sColony> rumo a @<sNextColony>, com os porões abarrotados de @<sQuestGoodsIdx>. Acho que chegou a hora de aliviar um pouco essa carga.
+#TEXT 4
+Consegui capturar o "@<sShipName>", que tinha @<sQuestGoodsIdx> a bordo.
+#TEXT 5
+"@<sShipName>" afundou, levando toda a carga junto!
+#TEXT 6
+Soldados bem treinados de @<sNation> me aguardavam a bordo do "@<sShipName>". Era uma armadilha!
+#TEXT 7_NONE
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#QUEST ShipTuning
+Evento: Melhoria do Navio
+#TEXT t1
+@<sText>
+#TEXT End
+A melhoria foi bem-sucedida.
+#TEXT Lose
+Troquei de navio, então o acordo está cancelado.
+#TEXT dum
+/////////////////////////////////////////////////////////
+#QUEST ShipRepair
+Evento: Reparos Urgentes
+#TEXT t1
+@<sText>
+#TEXT End
+O conserto está concluído.
+#TEXT Lose
+Troquei de navio, então o acordo está desfeito.
+#TEXT dum
+#QUEST DELIVERY_TRADE_QUEST
+Trabalho Extra: Entrega de Carga
+#TEXT 1
+Preciso entregar @<sGoodQty> de @<sGoodGen> da loja em @<sBaseColony> para @<sTargetColony>@<island>. Tenho @<sTermsDelivery> para concluir a tarefa. A recompensa é de @<sMoney>.
+#TEXT 2
+O trabalho foi concluído dentro do prazo.
+#TEXT 3
+Falhei em entregar as mercadorias no prazo. Agora preciso voltar ao meu contratante e me explicar.
+#TEXT 4
+Um comerciante em @<sTargetColony> me passou a perna. Recusou-se a aceitar a carga e ainda sugeriu que eu ficasse com ela para mim mesmo.
+#TEXT 5
+Tive que pagar @<sMoney> como multa por não ter cumprido o prazo de entrega.
+Pelo menos posso arrumar outro trabalho, e minha reputação entre os mercadores continua intacta.
+#TEXT 6
+O lojista em @<sTargetColony> aceitou a devolução de @<sGoodQty> unidades de @<sGoodGen>. Isso me cai muito bem.
+#TEXT 7
+O lojista em @<sTargetColony> está exigindo que eu lhe pague @<sMoney> como compensação pelos lucros comerciais perdidos.
+Não posso entregar as mercadorias até pagar a multa.
+#TEXT 8
+Não tenho @<sGoodGen> suficientes. Preciso de mais @<sHaveNotQty> para fechar o acordo.
+Preciso encontrar mais carga, senão não vou conseguir aceitar trabalhos como este no futuro.
+#QUEST convoy_quest
+Trabalho Extra: Escolta
+#TEXT 1
+Recebi a tarefa de escoltar um mercador até @<sCity> até @<sDay>. Minha recompensa será de @<sMoney>.
+#TEXT 2
+O mercador se cansou de esperar pela minha escolta e deixou meu esquadrão.
+#TEXT 3
+O mercador está morto. Minha missão foi um fracasso total.
+#TEXT 4
+Terminei o trabalho.
+#TEXT 5
+O mercador deixou meu esquadrão. Bem, a culpa é toda minha. Não devia ter tentado atacá-lo.
+#QUEST Gen_convoy_passenger
+Trabalho Extra: Passageiro @<sName>. Entregar em @<sCity>.
+#TEXT 1
+Recebi a missão de levar @<sName> até a taverna em @<sCity> até @<sDay>. Ele vai me pagar @<sMoney> por esse serviço.
+#TEXT 2
+O passageiro se cansou de esperar pelo meu transporte e deixou meu navio.
+#TEXT 3
+O passageiro está morto e, surpreendentemente, nunca chegou a ser transportado. A missão fracassou.
+#TEXT 4
+Terminei o serviço.
+#TEXT 5
+Não cheguei a tempo. O passageiro me deu mais uma semana para concluir o serviço, mas reduziu a recompensa prometida. Agora é @<sMoney>.
+#TEXT 6
+Enganei meu passageiro — agora ele é meu prisioneiro.
+#QUEST MayorsQuestsList
+Trabalho Extra: Tarefas dos Governadores
+#TEXT 1
+@<MayorName>, o governador de @<ColonyName>, me incumbiu de caçar e eliminar uma quadrilha escondida na selva. O chefe deles é @<GangName>.
+Devo concluir até @<sDay>, e minha recompensa será @<sMoney>.
+#TEXT 2
+O serviço está feito—@<GangName> está morto, assim como sua quadrilha. Imagino que @<MayorName> ficará satisfeito. Hora de ir buscar minha recompensa.
+#TEXT 3
+@<MayorName>, o governador de @<ColonyName>, me encarregou de interceptar e abordar o navio-correio '@<sShipName>', que navega sob a bandeira de @<sNation>. A embarcação deve passar por @<sCity> em @<sDay>. Preciso recuperar a correspondência na cabine do capitão e entregá-la ao governador. Minha recompensa será de @<sMoney>.
+#TEXT 4
+Encontrei e abordei o navio. O pacote está em minhas mãos. Agora posso voltar e receber minha recompensa.
+#TEXT 4-1
+Encontrei o navio, mas não consegui garantir o pacote. Terei que voltar de mãos vazias.
+#TEXT 5
+Encontrei o navio, mas o capitão era forte demais e fui obrigado a recuar. Vou ter que voltar de mãos vazias.
+#TEXT 6
+@<MayorName>, o governador de @<ColonyName>, me encarregou de entrar discretamente em @<sCity>, na ilha @<sIsland>, encontrar um @<sWho> local chamado @<SpyName> e pegar um pacote com ele.
+Este pacote deve ser entregue diretamente ao governador. Minha recompensa é @<sMoney>.
+Uma observação importante: preciso agir com discrição e cautela, sem levantar suspeitas, ou o agente não fará contato comigo.
+#TEXT 7
+O trabalho para o governador de @<ColonyName> está concluído. Encontrei @<SpyName> em @<sCity> e recuperei o pacote. Não há tempo a perder—@<MayorName> está ansioso para ver esses documentos.
+#TEXT 8
+@<MayorName>, o governador de @<ColonyName>, me incumbiu de caçar e destruir o navio de transporte inimigo '@<sShipName>', que navega sob a bandeira de @<sNation> e transporta um carregamento de munições. A embarcação deve chegar a @<sCity> em @<sDay>. Minha recompensa por esse serviço será de @<sMoney>.
+#TEXT 8-1
+Fui vitorioso — a carga jamais chegará ao seu destino. Agora posso voltar para receber minha recompensa.
+#TEXT 9
+@<MayorName>, o governador de @<ColonyName>, me incumbiu de encontrar e eliminar um pirata imprudente chamado @<sName>. Pelas informações que consegui, esse canalha estará atacando a bordo de seu navio, '@<sShipName>', próximo de @<sCity> em @<sDay>. Minha recompensa por esse serviço será de @<sMoney>.
+#TEXT 9-1
+O serviço está feito. Ele e toda a sua tripulação estão mortos. Agora posso voltar para receber minha recompensa.
+#TEXT 10
+@<MayorName>, o governador de @<ColonyName>, me encarregou de encontrar e entregar um criminoso chamado @<sName>. Pelo que descobri, o homem que procuro estará a bordo do navio '@<sShipName>', que partirá de @<sCity> em @<sDay1> com destino a @<sCityA>. Parece que tenho apenas até @<sDay2> para interceptá-los. Minha recompensa será de @<sMoney>.
+#TEXT 10-1
+Encontrei e abordei o navio que procurava. O criminoso agora está preso no meu porão de carga. Hora de receber minha recompensa.
+#TEXT 10-2
+Encontrei o navio, mas fui tolo o bastante para afundá-lo junto com toda a tripulação — e o homem de quem precisava. Duvido que Sua Excelência vá ficar satisfeito.
+#TEXT 11
+@<MayorName>, o governador de @<ColonyName>, me incumbiu de caçar e eliminar contrabandistas que pretendem negociar escravos nos próximos três dias. Isso é tudo que sei até agora. Vou patrulhar as águas da região e inspecionar cada navio que cruzar meu caminho. Minha recompensa será @<sMoney> e todos os escravos apreendidos como espólio.
+#TEXT 11-1
+Os contrabandistas foram localizados e eliminados. Posso voltar para receber meu pagamento.
+#TEXT 12
+@<MayorName>, o governador de @<ColonyName>, me incumbiu de encontrar e entregar um desertor chamado @<sName>. Minha recompensa será de @<sMoney>. Pelo que descobri, ele está escondido em algum covil de piratas — mas qual deles? Hora de içar as velas. Tenho apenas 30 dias.
+#TEXT 12-1
+Estou quase localizando meu alvo. O estalajadeiro me disse para procurar o homem nas ruas durante o dia.
+#TEXT 12-2
+Estou quase localizando meu alvo. O mercador me disse para procurar o homem na taverna ao anoitecer.
+#TEXT 12-3
+Estou quase encontrando meu alvo. Um bêbado local me disse para procurar o homem em @<sShore> bem cedo pela manhã.
+#TEXT 12-4
+Conversei com o desertor. Ele me convenceu a deixá-lo ir. O homem já sofreu o bastante, e entregá-lo ao tribunal seria uma injustiça. Além disso, ele me ofereceu uma compensação. Bem, vou ter que mentir para meu contratante...
+#TEXT 20
+Não cheguei a tempo. @<MayorName> não vai ficar nada satisfeito com isso.
+#TEXT 21
+Fracassei uma missão para o governador de @<ColonyName>. Encontrei meu alvo, mas não consegui concluir o serviço. @<MayorName> está furioso...
+#QUEST GivePrisonFree
+Trabalho Extra: Fuga da Prisão
+#TEXT 1
+Tive a oportunidade de libertar um prisioneiro chamado @<sName> da prisão de @<sCity>. Agora, preciso levá-lo vivo até a gruta em @<sIsland>. Se a sorte estiver ao nosso lado, vamos dividir o tesouro dele.
+#TEXT 2
+Fracasso! @<sName> está morto. Não vou conseguir encontrar o tesouro dele sozinho...
+#TEXT 3_1
+Encontramos o tesouro e o dividimos entre nós. Fazia muito tempo que eu não via tantas joias!
+#TEXT 3_2
+Encontramos o tesouro e o dividimos, mas não vai nem cobrir meus gastos. Pelo menos fiquei com o artefato indígena para mim.
+#TEXT 3_3
+@<sName> me enganou para garantir sua liberdade. Não havia tesouro nenhum—apenas algumas munições como pagamento pelo meu trabalho. Melhor do que nada.
+#TEXT 3_4
+Não havia tesouro algum. @<sName> só tinha um pedaço do mapa verdadeiro, o que, claro, não ajudou muito. Guardei esse fragmento comigo. Preciso encontrar a segunda parte e reivindicar o tesouro.
+#TEXT 4
+Parece que fui enganado por @<sName>. No fim das contas, não havia tesouro algum. Da próxima vez, preciso ser mais cauteloso com as pessoas.
+#TEXT 5
+Recebi a missão de ajudar um prisioneiro chamado @<sName>, que está detido na prisão de @<sCity>. Preciso conversar com o comandante local.
+#TEXT 6
+Não consegui libertar o prisioneiro por dois dias. Que pena — ele vai ter que ficar lá mesmo. Uma lástima.
+#TEXT 7
+Não consegui libertar o prisioneiro. Que se dane o tesouro dele.
+#TEXT 8
+Um prisioneiro chamado @<sName> me pediu para entregar uma mensagem aos seus companheiros na cidade. Eles estão escondidos em uma das casas. Concordei em ajudar. Estou com a mensagem em mãos e tenho apenas dois dias para entregá-la.
+#TEXT 9
+Não consegui entregar a mensagem a tempo.
+#TEXT 10
+Entreguei a mensagem aos amigos do prisioneiro. Não esperava que tentassem me matar em vez de me recompensar. Da próxima vez, é melhor não confiar em canalhas desse tipo. Fui obrigado a matar todos eles.
+#TEXT 11
+Está feito. Os rapazes foram generosos e me deram @<iMoney>. Estou danadamente orgulhoso disso.
+#TEXT 13
+Os companheiros do prisioneiro me contaram que dois navios mercantes, '@<sShipName1>' e '@<sShipName2>', vão passar perto de @<sShoreName> nos próximos @<sDay>, transportando uma carga de @<sGoods>. Vale a pena considerar interceptá-los.
+#TEXT 13_1
+Cheguei na hora certa! Já os vejo—é hora de lutar.
+#TEXT 13_2
+Cheguei tarde demais, e não havia sinal dos navios. Quem sabe da próxima vez...
+#TEXT 14
+Os companheiros do prisioneiro me contaram que um navio-correio, '@<sShipName>', vai passar próximo de @<sShoreName> nos próximos @<sDay>, transportando uma grande carga de joias. Vale a pena considerar interceptá-lo.
+#TEXT 14_1
+Cheguei na hora certa! Já os vejo—é hora de lutar.
+#TEXT 14_2
+Cheguei tarde demais — o navio-correio '@<sShipName>' já zarpou rumo a destinos desconhecidos. Paciência... quem sabe na próxima vez.
+#TEXT 15
+Não encontrei nenhum navio mercante por lá. Malditos canalhas me enganaram. Eu não devia ter confiado em homens desse tipo...
+#TEXT 16
+Entreguei a mensagem aos comparsas do prisioneiro. Eles se ofereceram para me vender algumas informações por uma quantia considerável, mas recusei — não achei seus rostos confiáveis o bastante para arriscar meu ouro.
+#TEXT 17
+Entreguei a mensagem, apenas para ser roubado pelos comparsas do prisioneiro. Nunca mais confiarei nesses canalhas...
+#QUEST SeekMayorsRing
+Trabalho Extra: Anel Perdido
+#TEXT 1
+@<sName>, o governador de @<sCity>, me pediu para encontrar sua aliança de casamento em algum lugar dentro do bordel. Não faço ideia de onde possa estar. O bom governador se divertiu ontem à noite e não se lembra de nada.
+Preciso encontrar e devolver o anel antes que o dia termine.
+#TEXT 2
+Acontece que ele deu o anel para uma prostituta chamada @<sName>. Beber sempre acaba em confusão. Consegui comprá-lo de volta dela por cinco mil. Agora posso devolvê-lo.
+#TEXT 3
+Acontece que ele deu o anel para uma prostituta chamada @<sName>! Já recuperei o anel dela e agora posso devolvê-lo.
+#TEXT 4
+Não consegui encontrar o anel a tempo. Fracasso.
+#TEXT 5
+Não encontrei o anel. Um fracasso.
+#TEXT 6
+Encontrei o anel. Agora devo devolvê-lo.
+#TEXT 7
+O anel foi entregue.
+#QUEST PortmansBook_Delivery
+Trabalho Paralelo: @<sCity>, Mestre do Porto quer documentos devolvidos para @<sCapName>
+#TEXT 1
+O mestre do porto de @<sCity> me pediu para encontrar o capitão do @<sShipTypeName> "@<sShipName>". Preciso rastrear esse capitão distraído, @<sCapName>, e garantir que o diário de bordo do navio seja devolvido.
+O mestre do porto me contou que o capitão está indo para @<sTargetCity>@<sAreal>.
+#TEXT 2
+Consegui encontrar o homem que estava navegando para @<sTargetCity>. Missão cumprida.
+#TEXT 3
+Encontrei o homem em @<sCity>, no escritório do mestre do porto. Missão cumprida.
+#TEXT 4
+Dizem que o capitão @<sCapName> está navegando para @<sTargetCity>@<sAreal>.
+#TEXT 5
+O mestre do porto me informou que o capitão @<sCapName> do @<sShipTypeName> "@<sShipName>" partiu rumo a @<sTargetCity>@<sAreal>.
+#QUEST Portmans_SeekShip
+Trabalho Paralelo: @<sCity>, O Mestre do Porto Quer o Navio Roubado de Volta
+#TEXT 1
+O mestre do porto de @<sCity> me confiou uma missão importante. Roubaram o @<sShipTypeName> '@<sShipName>', e cabe a mim recuperá-lo.
+No momento, não tenho nenhuma pista. Preciso me manter atento no mar e fazer perguntas nas cidades.
+#TEXT 2
+O mestre do porto em @<sCity> me informou que o capitão @<sCapName>, do @<sShipTypeName> "@<sShipName>", zarpou rumo a @<sTargetCity>@<sAreal> em @<sDate>.
+#TEXT 3
+Dizem que o @<sShipTypeName> '@<sShipName>' estava navegando de @<sCity> para @<sTargetCity>@<sAreal>.
+#TEXT 4
+Parece que finalmente encontrei o navio roubado. Tentei conversar com o capitão, mas ele me expulsou. Vou ter que embarcar à força em sua embarcação.
+#TEXT 5
+Abordei o navio roubado. Posso voltar e receber minha recompensa.
+#TEXT 6
+O serviço está feito. Já recebi meu pagamento.
+#TEXT 7
+Tive que recusar essa missão.
+#TEXT 8
+Droga! Não consegui manter o navio à tona — ela afundou! O que vou levar de volta para meu contratante agora?
+#TEXT 9
+Subi a bordo do navio, mas ele afundou. Um fracasso total. O que vou dizer ao meu contratante?
+#QUEST SCQ_NM_battle
+Trabalho Paralelo: @<sCity>, Nobre @<sName>
+#TEXT 1
+Um nobre de @<sCity>, señor @<sName>, deseja acertar as contas com o Capitão @<sCapName>, que certa vez o insultou. Minha missão é encontrar e eliminar esse capitão. Tenho uma pista: ele comanda o @<sShipTypeName> '@<sShipName>', avistado recentemente em @<sQCity>.
+#TEXT 2
+O mestre do porto de @<sCity> me informou que o capitão @<sCapName> partiu rumo a @<sTargetCity>@<sAreal> em @<sDate>.
+#TEXT 3
+Dizem que o capitão @<sCapName> está navegando de @<sCity> para @<sTargetCity>@<sAreal>.
+#TEXT 4
+@<sCapName> foi encontrado e eliminado. Minha tarefa está cumprida. Agora posso retornar ao meu contratante em @<sCity> e receber meu pagamento. Ele pode ser encontrado na igreja local das 8 às 10 da manhã.
+#TEXT 5
+Encontrei o capitão que procurava e subi a bordo de seu navio. @<sName> está desconfiado e me obrigou a deixar a embarcação. Meu objetivo está claro: preciso afundar o @<sShipTypeName> dele.
+#QUEST SCQ_NM_prisoner
+Trabalho Paralelo: @<sCity>, Nobre @<sName>
+#TEXT 1
+Um fidalgo de @<sCity>, señor @<sName>, quer acertar as contas com um homem chamado @<sName1>, que o insultou no passado. Preciso encontrar esse homem e entregá-lo ao meu contratante. Tenho uma pista: ele serve a bordo do @<sShipTypeName> '@<sShipName>', sob o comando do capitão @<sCapName>. Este navio foi avistado recentemente em @<sQCity>.
+#TEXT 2
+O mestre do porto de @<sCity> me informou que o capitão @<sCapName> partiu rumo a @<sTargetCity>@<sAreal> em @<sDate>.
+#TEXT 3
+Dizem que o capitão @<sCapName> está navegando de @<sCity> para @<sTargetCity>@<sAreal>.
+#TEXT 4
+O capitão que eu procurava está morto. Agora não vou conseguir encontrar o oficial dele.
+#TEXT 5
+@<sName> foi encontrado e está agora sob custódia. O serviço está feito. Posso retornar ao meu contratante em @<sCity> para receber meu pagamento. Ele pode ser encontrado na igreja local das 8 às 10 da manhã.
+#TEXT 6
+Encontrei o capitão. Ele se recusou a entregar aquele canalha de oficial. Bem, azar o dele. Agora só me resta uma opção: preciso abordar o navio dele.
+#QUEST SCQ_NM_peace
+Trabalho Paralelo: @<sCity>, Nobre @<sName>
+#TEXT 1
+Um cidadão de @<sCity>, o nobre @<sName>, deseja encontrar seu velho amigo, @<sCapName>. Preciso localizar esse homem e entregar o pedido do nobre. A pista é que ele é capitão do @<sShipTypeName> “@<sShipName>”, e seu navio foi visto recentemente em @<sQCity>.
+#TEXT 2
+O mestre do porto de @<sCity> me informou que o capitão @<sCapName> partiu rumo a @<sTargetCity>@<sAreal> em @<sDate>.
+#TEXT 3
+Dizem que o capitão @<sCapName> está navegando de @<sCity> para @<sTargetCity>@<sAreal>.
+#TEXT 4
+Capitão @<sCapName> está morto. Minha missão fracassou.
+#TEXT 5
+Encontrei o capitão e entreguei o pedido do nobre. Minha tarefa está concluída e posso voltar para @<sCity> para receber meu pagamento. Meu contratante estará na igreja local entre 18h e 20h.
+#QUEST SCQ_manSlave
+Trabalho Paralelo: Pedido de Vingança de @<sName> de @<sCity>
+#TEXT 1
+Um cidadão, @<sName> de @<sCity>, se meteu em apuros há um ano. O capitão do @<sShipTypeName> '@<sShipName>', @<sCapName>, vendeu seu passageiro como escravo.
+Agora @<sName2> está sedento de vingança. Preciso caçar e matar aquele capitão traiçoeiro.
+#TEXT 2
+O mestre do porto de @<sCity> me informou que o capitão @<sCapName> zarpou para @<sTargetCity>@<sAreal> em @<sDate>.
+#TEXT 3
+Dizem que o capitão @<sCapName> está navegando de @<sCity> para @<sTargetCity>@<sAreal>.
+#TEXT 4
+Capitão @<sCapName> está morto. Minha missão está cumprida. Agora posso voltar para meu contratante em @<sCity> e receber minha recompensa.
+#TEXT 5
+Encontrei o capitão que estava procurando. Consegui conversar com ele, mas minha pergunta sobre seus passageiros o deixou bastante irritado. Parece que @<sName> está lucrando bem com esse tipo de negócio.
+Agora tudo está claro. Preciso afundar o @<sShipTypeName>.
+#TEXT 10
+O navio se foi. Não vou conseguir me vingar daquele homem.
+#QUEST SCQ_womanHasband
+Trabalho Extra: Marido Desaparecido
+#TEXT 1
+@<sName> de @<sCity> me pediu para encontrar o marido dela, um mercador que está no mar há tempo demais.
+Espero que ele esteja bem.
+#TEXT 2
+O mestre do porto em @<sCity> me informou que o capitão @<sCapName> partiu rumo a @<sTargetCity>@<sAreal> em @<sDate>.
+#TEXT 3
+Dizem que o capitão @<sCapName> está navegando de @<sCity> para @<sTargetCity>@<sAreal>.
+#TEXT 4
+@<sCapName> está morto. Droga. Minha missão fracassou.
+#TEXT 5
+Encontrei o capitão que procurava. Pelo visto, ele está ocupado demais fechando tantos negócios lucrativos para recusar qualquer um deles.
+O serviço está feito. Agora posso recolher minhas moedas.
+#TEXT 10
+O navio se foi. Não vou conseguir encontrar o homem.
+#QUEST SCQ_manRapeWife
+Trabalho Extra: @<sCity>, Salvando a Esposa Cativa
+#TEXT 1
+Um cidadão de @<sCity>, @<sName>, perdeu sua esposa — ela foi sequestrada por um pirata. Concordei em resgatá-la. O nome dela é @<sName2>. O pirata, @<sCapName>, comanda o @<sShipTypeName> "@<sShipName>".
+Espero conseguir encontrar o navio rapidamente.
+#TEXT 2
+O mestre do porto de @<sCity> me informou que o capitão @<sCapName> zarpou rumo a @<sTargetCity>@<sAreal> em @<sDate>.
+#TEXT 3
+Dizem que o capitão @<sCapName> está navegando de @<sCity> para @<sTargetCity>@<sAreal>.
+#TEXT 4
+O capitão @<sCapName> está morto, e ao que tudo indica, a pobre mulher também pereceu. A missão fracassou.
+#TEXT 5
+Encontrei o capitão @<sCapName>. A mulher sequestrada está presa na cabine dele. Agora preciso abordar o navio. Duvido que consiga resolver essa questão pacificamente com esse pirata...
+#TEXT 6
+Consegui salvar uma mulher chamada @<sName>, minha cliente. Agora posso levá-la de volta ao marido dela em @<sCity>.
+#TEXT 10
+O navio se foi. Não poderei ajudar aquele pobre homem a encontrar sua esposa.
+#QUEST SCQ_manFriend
+Trabalho Paralelo: @<sCity>, Encontrando um Velho Amigo
+#TEXT 1
+Concordei em ajudar um cidadão de @<sCity> chamado @<sName>. Minha missão é encontrar seu compatriota, um mercador chamado @<sCapName>, que navega no @<sShipTypeName> "@<sShipName>".
+Acho que vou encontrá-lo sem muita dificuldade.
+#TEXT 2
+O mestre do porto de @<sCity> me informou que o capitão @<sCapName> partiu rumo a @<sTargetCity>@<sAreal> em @<sDate>.
+#TEXT 3
+Dizem que o capitão @<sCapName> está navegando de @<sCity> para @<sTargetCity>@<sAreal>.
+#TEXT 4
+@<sCapName> está morto. Droga. Minha missão fracassou.
+#TEXT 5
+Encontrei o capitão e avisei que seu camarada estava à sua procura. Minha tarefa está cumprida. Hora de voltar para @<sCity> e receber meu pagamento.
+#TEXT 10
+O navio se foi. Agora não poderei ajudar meu contratante.
+#QUEST SCQ_womanRevenge
+Trabalho Extra: @<sCity>, Mulher Rejeitada
+#TEXT 1
+Concordei em atender a um pedido um tanto incomum de uma mulher chamada @<sName>, moradora de @<sCity>. Minha missão é encontrar o capitão @<sCapName>, comandante do @<sShipTypeName> "@<sShipName>."
+Preciso encontrá-lo, abordar seu navio e eliminar o homem. Mas antes disso, devo informar quem colocou preço em sua cabeça.
+Bem, só uma mulher desprezada busca vingança com tamanha determinação...
+#TEXT 2
+O mestre do porto de @<sCity> me informou que o capitão @<sCapName> partiu rumo a @<sTargetCity>@<sAreal> em @<sDate>.
+#TEXT 3
+Dizem que o capitão @<sCapName> está navegando de @<sCity> para @<sTargetCity>@<sAreal>.
+#TEXT 4
+O capitão está morto. Não consegui falar com ele, então a condição principal foi quebrada. Ele nunca soube por que morreu. A missão fracassou.
+#TEXT 5
+Capitão @<sCapName> está morto. Cumpri o pedido do meu contratante.
+A missão do Fury está concluída. Agora posso voltar para @<sCity> e receber minha recompensa.
+#TEXT 10
+O navio que eu procurava se foi. Minha chance de vingança escapou pelos meus dedos.
+#QUEST SCQ_womanPirates
+Trabalho Paralelo: @<sCity>, Salvando o Marido Cativo
+#TEXT 1
+Concordei em ajudar uma cidadã de @<sCity> chamada @<sName>. O marido dela está sendo mantido prisioneiro pelo capitão @<sCapName> do "@<sShipName>", um(a) @<sShipTypeName>.
+Preciso encontrar o capitão, embarcar no @<sShipTypeName2> dele e libertar o marido da pobre mulher, @<sName2>.
+#TEXT 2
+O mestre do porto de @<sCity> me informou que o capitão @<sCapName> partiu rumo a @<sTargetCity>@<sAreal> em @<sDate>.
+#TEXT 3
+Dizem que o capitão @<sCapName> está navegando de @<sCity> para @<sTargetCity>@<sAreal>.
+#TEXT 4
+O capitão @<sCapName> está morto, assim como o marido da mulher. A missão fracassou.
+#TEXT 5
+Encontrei o capitão @<sName>. Agora preciso abordar o navio dele, o @<sShipTypeName>.
+#TEXT 6
+Consegui libertar o prisioneiro. O serviço está feito. Hora de voltar para @<sCity>.
+#TEXT 10
+O navio se foi. Não vou conseguir salvar o homem.
+#QUEST Slavetrader
+Mercador de Escravos
+#TEXT 1
+Um agiota em @<sCity>, chamado @<sName>, me ofereceu @<sSum> por @<sQty> escravos. O dinheiro é bom e o serviço parece simples. Não vou perder tempo—@<sName> parece estar envolvido em negócios sérios, e posso lucrar bastante com isso.
+#TEXT 2
+Os escravos foram entregues e o pagamento recebido. Além disso, @<sName> me ofereceu outra missão para daqui a três semanas. Devo aceitá-la.
+#TEXT 3
+@<sName> me ordenou atrapalhar o negócio de seu concorrente. Preciso capturar o '@<sShipName>', que está indo para @<sShoreName> em @<sShoreType>. Tenho duas semanas.
+#TEXT 3_1
+Cheguei bem na hora! O capitão do '@<sShipName>' está embarcando escravos em um navio de contrabandistas. Preciso abordar ambos os navios e tomar a carga deles.
+#TEXT 4
+O serviço está feito. Hora de prestar contas ao meu contratante.
+#TEXT 5
+Meus adversários se mostraram formidáveis demais, e fui obrigado a bater em retirada. Preciso admitir, isso foi um fracasso.
+#TEXT 5_5
+Fracassei na missão, então @<sName> não vai mais negociar comigo. Que desperdício...
+#TEXT 6
+@<sName> ficou satisfeito com meu serviço. Pagou-me @<sMoney> pesos por @<sQty> escravos. Devo voltar para vê-lo daqui a um mês.
+#TEXT 7
+Cheguei tarde demais, e o '@<sShipName>' já havia partido. Terei que voltar de mãos vazias.
+#TEXT 7_1
+Cheguei tarde demais — a escuna '@<sShipName>' já havia zarpado. Não faço ideia de onde encontrá-la. Vou ter que voltar de mãos vazias.
+#TEXT 7_2
+Apesar de todos os meus esforços, não consegui encontrar '@<sShipName>'. Terei que voltar de mãos vazias.
+#TEXT 8
+Recusei o serviço. Não sou caçador de recompensas.
+#TEXT 9
+Fui um tolo em confiar nessa escória! Agora tenho que lidar com caçadores de recompensas...
+#TEXT 10
+@<sName> me confiou uma tarefa arriscada desta vez. Preciso abordar a pinassa @<sShipName>, que está navegando por perto. Tenho que agir com cautela e evitar ser atingido pelos canhões do forte.
+#TEXT 11
+O inimigo era forte demais. Não consegui abordar o '@<sShipName>'. Acho melhor nem falar com meu contratante...
+#TEXT 12
+A escuna '@<sShipName>' jaz no fundo do mar. Não há mais razão para procurar meu contratante agora.
+#TEXT 13
+Droga! A pinassa '@<sShipName>' era uma armadilha — não havia nenhum escravo a bordo, só soldados armados. Dá vontade de enfiar um pavio aceso entre os dedos do meu contratante...
+#TEXT 14
+Parece que @<sName> foi realmente traído — as últimas palavras do capitão da pinassa confirmam isso. As provas agora estão a bordo do brigantino '@<sShipName>', que segue para @<sIsland> a fim de chegar ao governador-geral. Preciso interceptar o navio e tomar o pacote com os documentos, ou estarei em sérios apuros.
+#TEXT 15
+Droga! Não consegui capturar a brigantina '@<sShipName>'. Bem, hora de procurar o advogado.
+#TEXT 16
+Consegui perseguir e capturar o '@<sShipName>'. Também encontrei os documentos de que precisava. Agora posso respirar aliviado.
+#TEXT 17
+Consegui perseguir e capturar o '@<sShipName>', mas não encontrei nenhum documento a bordo. Talvez tenham sido falsificados? Preciso conversar com o agiota.
+#TEXT 18
+Preciso encontrar e capturar o galeão pesado '@<sShipName>', que está navegando de @<sAreal> para Santiago. Tenho que ficar atento — há três mil escravos a bordo, uma verdadeira fortuna!
+#TEXT 19
+Isso foi inesperado. Não era um galeão—era um maldito navio de guerra comandado por um capitão habilidosíssimo, mas mesmo assim consegui derrotá-lo.
+#TEXT 20
+@<sName> me pediu para esperar cinco dias enquanto reúne o dinheiro para me pagar, e adiantou quinze baús de crédito. É difícil confiar nesse patife, mas duvido que ele tente me passar a perna.
+#TEXT 21
+@<sName> me pediu para encontrar e eliminar o traidor responsável pelos nossos problemas. O nome dele é Francois Gontier, e foi visto pela última vez no Panamá. Vou cuidar disso pessoalmente.
+#TEXT 21_1
+O balconista de Panamá me contou que Gontier provavelmente foi para Porto Bello.
+#TEXT 21_2
+Gontier comprou uma corveta lá. Preciso descobrir para onde ele foi.
+#TEXT 21_3
+De acordo com minhas informações, Gontier partiu para a Jamaica. Sua corveta se chama "@<sShip>".
+#TEXT 21_4
+Gontier estava hospedado em Maroon Town, alugando um quarto, mas agora sumiu. Não faço ideia de onde procurá-lo.
+#TEXT 21_5
+Uma garçonete me contou que sabe para onde Gontier foi, mas quer um pingente com joias em troca da informação. Preciso encontrar esse pingente se quiser rastrear Gontier.
+#TEXT 21_6
+Gontier foi para Havana. Excelente. Imagino que em breve vou encontrá-lo.
+#TEXT 21_7
+Interessante! Gontier tentou conseguir uma carta de corso espanhola, mas não teve sucesso. O taberneiro disse que ele acabou optando pela França. Hora de zarpar para Tortuga!
+#TEXT 21_8
+Algo está muito errado! Não há sinal da corveta, mas Gontier e seus homens estão perambulando pelas ruas. Preciso vasculhar a cidade e seus arredores.
+#TEXT 21_9
+O rato estava escondido em uma das casas. Assim que entrei no cômodo, os comparsas dele me atacaram. Fui obrigado a matá-los, embora duvide que alguém vá sentir falta desses canalhas. Gontier conseguiu escapar. A amante dele me contou que sua corveta está ancorada perto do farol em Tortuga. Preciso zarpar para lá antes que ele fuja de novo!
+#TEXT 21_10
+Fui lento demais, e Gontier conseguiu escapar. Não restaram pistas. Devo voltar ao meu contratante e relatar o fracasso da missão.
+#TEXT 21_11
+Gontier se mostrou forte demais para mim, então decidi recuar. Devo voltar ao meu contratante e relatar o fracasso da missão.
+#TEXT 21_12
+Está feito! Aquele canalha do Gontier agora serve de isca para tubarão.
+#TEXT 21_13
+Por eliminar o traidor, fui recompensado com uma luneta excelente. O agiota também me pagou 100.000 pesos, além de 50.000 como compensação pelas minhas despesas. Parece que meu contratante voltou a prosperar. Devo retornar em um mês com uma esquadra bem preparada. A próxima missão será coisa séria.
+#TEXT 21_14
+@<sName> não ficou satisfeito, mas me convidou a voltar em um mês com uma esquadra bem preparada. A próxima missão será de grande importância.
+#TEXT 22
+Eu estava certo. A barca naufragou, e todos os escravizados buscaram refúgio no farol. Tamango e seus guerreiros nos atacaram, mas conseguimos repelir o ataque. Os fugitivos restantes aceitaram seu destino e se renderam. Ao todo, capturei @<sQty> escravos.
+#TEXT 22_1
+@<sName> me ordenou navegar até Curaçao, que sofreu com uma grande fuga de escravos. Preciso descobrir mais sobre esse incidente.
+#TEXT 22_2
+Tive uma conversa interessante com o barman. Agora sei todos os detalhes sobre o motim. Também descobri que alguém roubou uma barca, e o barman tem certeza de que os escravos são os responsáveis.
+#TEXT 22_3
+O mestre do porto me deu apenas o nome da barca — '@<sShipName>'. Infelizmente, é tudo o que tenho até agora. Não faço ideia de por onde começar minha busca...
+#TEXT 22_4
+Surpreendentemente, consegui as informações de que precisava com um marinheiro bêbado. A barca foi vista em @<sAreal>. Segundo o relato dele, o navio naufragou. Devo seguir para lá e vasculhar todas as enseadas próximas.
+#TEXT 22_5
+@<sName> ficou satisfeito. Ele me pagou 330.000 pesos pelos escravos de Curaçao e @<sMoney> pelo restante. Devo encontrá-lo novamente daqui a um mês, como de costume.
+#TEXT 22_6
+@<sName> ficou satisfeito. Ele me pagou @<sMoney> por @<sQty> escravos. Devo encontrá-lo novamente daqui a um mês, como de costume.
+#TEXT 24
+Droga, nunca imaginei que @<sName> fosse tão determinado! Agora preciso tomar o forte de Havana. Pelas informações que recebi, há 5.000 escravos lá. Estou a caminho.
+#TEXT 25
+O agiota estava certo. Dois navios de linha patrulham perto das costas de Havana, e não parecem nada amigáveis. Preciso lidar com eles antes de atacar o forte.
+#TEXT 26
+Os navios de guerra inimigos foram destruídos. Agora é hora de tomar o forte.
+#TEXT 26_1
+Os navios de guerra inimigos foram destruídos, mas estou sem recursos para atacar Havana. Preciso recuar. Acho que não há razão para voltar ao meu contratante...
+#TEXT 27
+Havana caiu. O serviço está feito. @<sQty> escravos foram embarcados nos porões. Hora de zarpar de volta para casa.
+#TEXT 27_1
+Fracassei na missão ao atacar Havana por terra. Os escravizados estavam trancados dentro do forte, e os defensores tiveram tempo para se preparar. Acho que não há motivo para voltar ao meu contratante...
+#TEXT 28
+Cheguei tarde demais — todos os escravizados já foram enviados para as plantações em Cuba. Acho que não há motivo para voltar ao meu contratante...
+#TEXT 29
+Droga! Nem todos os escravos sobreviveram à travessia, e o agiota exige 5.000—nem um escravo a menos! Preciso encontrar o restante em uma semana, ou estarei em sérios apuros.
+#TEXT 30
+Falhei em entregar os escravos a tempo. Não há mais motivo para pressa—preciso vender os escravos, procurar os agentes e lidar com os caçadores de recompensas...
+#TEXT 31
+Não consegui reunir 5.000 escravos a tempo. Agora terei que lidar com caçadores de recompensas...
+#TEXT 32
+Os escravos foram entregues ao meu contratante. Devo visitá-lo daqui a uma semana para receber meu pagamento—mais de um milhão por esse serviço! É por isso que sigo nessa vida. Nem consigo imaginar o que a próxima missão vai trazer. Sim, esse negócio ainda vai me deixar rico!
+#TEXT 33
+Aquele canalha me passou a perna! Quando fui buscar minhas moedas, descobri que meu suposto "sócio" tinha sumido, levando tanto meu milhão quanto o dinheiro do investidor dele. Nunca fui enganado desse jeito antes! Mas ele vai ter o que merece. Sempre têm. O mundo é pequeno, e nossos caminhos ainda podem se cruzar. Esse rato vai pagar por tudo!
+
+#QUEST PrisonGun
+Trabalho Extra: Canhões do Forte
+#TEXT 1
+O comandante do forte de @<sCity> me ofereceu um serviço: reunir @<sQty> de @<sText>. As condições são rígidas — devo entregar todo o lote exatamente daqui a um mês, nem antes, nem depois. Aceitei, considerando o valor do acordo: @<sSum> pesos.
+#TEXT 2
+Os canhões foram entregues, e recebi meu pagamento — não em moedas, mas em baús de crédito. Isso me agrada, e imagino que o comandante pense o mesmo.
+#TEXT 3
+Que pena! O comandante recusou-se a comprar os canhões. E agora, o que faço com essa carga de ferro? Acho que vou ter que vendê-los ao estaleiro por algumas moedas...
+#TEXT 4
+Perdi tempo demais procurando canhões, e @<sName> acabou comprando de outro vendedor. Culpa minha...
+
+#QUEST Fraht
+Trabalho Extra: Cargas
+#TEXT 1
+Ofereci meu navio para transporte de carga em @<sStartCity>. Preciso entregar @<sGoodQty> de @<sGoods> em @<sTargetColony> dentro de @<sDay> dias. A recompensa é de @<sMoney>.
+#TEXT 2
+O serviço está feito — a carga foi entregue no prazo e intacta. As moedas agora são minhas.
+#TEXT 3
+O tempo para a entrega acabou. Preciso me apressar, ou meu cliente vai começar a desconfiar que algo está errado...
+#TEXT 3_1
+Cheguei tarde demais. Não há mais motivo para pressa...
+#TEXT 4
+Cheguei atrasado em @<sDay>, então meu pagamento foi reduzido para @<sMoney>.
+#TEXT 5
+Todos os acordos agora estão anulados. Se eu quiser tratar com eles novamente, preciso visitar o cliente e tentar resolver a situação.
+#TEXT 6
+Tive que pagar uma multa—@<sMoney>. Mesmo assim, posso voltar a procurar trabalho. Melhor consultar meu diário de comércio agora para encontrar o melhor preço para minha carga...
+#TEXT 7
+Esses burocratas são insolentes até a medula! Tentaram me deixar sem nem uma camisa nas costas. Prefiro abraçar o inimigo do que pagar uma quantia dessas para esses sanguessugas.
+#TEXT 8
+O mestre do porto em @<sStartCity> me pediu para conseguir e entregar @<sGoodQty> de @<sGoods> para a colônia. Ele prometeu pagar @<sText> por unidade. No total, vou receber @<sMoney>.
+#TEXT 9
+Fui lento demais—já se passou um mês. Agora não há mais motivo para pressa...
+
+#QUEST Postcureer
+Trabalho Extra: Entrega de Correspondência
+#TEXT 1
+Concordei em entregar uma carta em @<sTargetColony> até @<sDay>. Minha recompensa será de @<sMoney>.
+#TEXT 2
+O trabalho está feito, a correspondência foi entregue e recebi meu pagamento.
+#TEXT 3
+Estou ficando sem tempo, e a correspondência ainda não foi entregue. Preciso me apressar...
+#TEXT 4
+Não consegui entregar a correspondência a tempo em @<sDay>. Meu pagamento foi reduzido em 10% por cada dia de atraso, então recebi um total de @<sMoney>. Preciso me sair melhor da próxima vez.
+#TEXT 5
+Todos os acordos foram por água abaixo agora. Talvez eu deva entregar a mercadoria mesmo assim — pode ser que ainda haja uma chance.
+#TEXT 6
+Recebi uma missão especial do mestre do porto de @<sStartCity>. Preciso entregar @<sText> em @<sTargetColony> até @<sDay>. Minha recompensa será de @<sMoney>.
+#TEXT 7
+Agora vale tudo. Talvez eu deva entregar a correspondência afinal — ainda pode haver uma chance.
+#TEXT 8
+Não consegui entregar a correspondência até @<sDay>. Meu pagamento foi reduzido para @<sMoney>. Preciso me sair melhor da próxima vez.
+#TEXT 9
+Entreguei o pacote. Embora não tenha recebido nenhuma moeda, pelo menos minha reputação permanece intacta.
+#TEXT 10
+O trabalho está feito, a correspondência foi entregue e recebi meu pagamento.
+#TEXT 11
+Isso foi uma lástima—fui obrigado a entregar o pacote para uns canalhas. Preciso encontrar meu cliente e contar-lhe a verdade...
+#TEXT 12
+Assim que saí do escritório do mestre do porto, fui abordado por dois homens mascarados. Pareciam mercenários experientes, profissionais — ou pelo menos é o que imagino. Achei mais prudente abandonar a missão do que arriscar minha vida. Devo conversar com o mestre do porto e explicar a situação.
+#TEXT 13
+Assim que saí do escritório do mestre do porto, um homem se aproximou e me convidou para segui-lo até uma taverna para conversar sobre o pacote. Recusei — havia algo nisso que não me agradou.
+#TEXT 14
+Uma fragata me atacou bem no porto. Parece ser o navio daquele maldito agente que tentou "negociar" comigo.
+#TEXT 15
+Tive uma boa oportunidade de ganhar umas moedas—deixei o homem copiar aqueles documentos por @<sMoney>. Nada mal...
+#TEXT 16
+O agente tentou me subornar, mas falhou. Não sou nenhum Judas!
+#TEXT 17
+Bem... Meu cliente percebeu que o pacote havia sido aberto. Parece que o agente não foi nada profissional. Não recebi nenhuma moeda pela entrega e minha reputação saiu arranhada...
+
+#QUEST Escort
+Trabalho Paralelo: Escolta de Caravana
+#TEXT 1
+Preciso escoltar uma caravana comercial até @<sTargetColony> até @<sDay>. Minha recompensa será de @<sMoney>.
+#TEXT 2
+Missão concluída, os navios estão seguros e o pagamento é meu.
+#TEXT 3
+O tempo está se esgotando e ainda não cheguei ao meu destino. É melhor eu me apressar...
+#TEXT 4
+Cheguei atrasado, então meu pagamento foi reduzido em 10% por cada dia. Minha recompensa é @<sMoney>. Preciso me esforçar mais da próxima vez.
+#TEXT 5
+Todos os termos foram anulados. Os navios deixaram meu esquadrão. A missão fracassou.
+#TEXT 6
+Devo escoltar uma caravana comercial até @<sTargetColony> até @<sDay>. Minha recompensa será de @<sMoney>. Também devo entregar @<sGoodQty> unidades de @<sGoods> para receber mais @<sMoney1>.
+#TEXT 7
+Todos os termos foram anulados. Os navios deixaram meu esquadrão e a missão fracassou. Se quiser uma segunda chance nesse trabalho, preciso conversar com o cliente e tentar salvar a situação — pelo menos entregar a carga.
+#TEXT 8
+Tive que pagar uma multa — @<sMoney>. Ainda assim, posso voltar a procurar trabalho. Melhor dar uma olhada no meu diário de comércio agora para encontrar o melhor preço para minha carga...
+#TEXT 9
+Esses burocratas são insolentes demais! Tentaram me depenar até as roupas do corpo. Prefiro me aliar ao inimigo do que pagar uma quantia dessas pra esses sanguessugas.
+#TEXT 10
+Falhei em proteger os navios. A missão está perdida.
+#TEXT 11
+Infelizmente, um dos meus navios foi afundado durante a batalha com o inimigo. Consegui salvar o outro, mas não recebi nenhuma recompensa. Preciso estudar táticas com mais afinco para evitar erros assim no futuro...
+#TEXT 12
+Infelizmente, um dos navios afundou durante a batalha contra o inimigo. Consegui salvar o outro, mas não recebi nenhuma recompensa por isso. Preciso estudar táticas para evitar esses erros no futuro... Só me pagaram pelo transporte da carga—@<sMoney>.
+#TEXT 13
+A viagem foi um desastre — um dos meus navios afundou em batalha contra o inimigo, e perdi uma quantidade considerável de carga. Meu cliente se recusou a pagar e agora exige compensação pelos bens perdidos — @<sMoney>. Decidi aceitar os termos dele; não posso me dar ao luxo de fazer inimigos agora. Melhor consultar meu diário de comércio para encontrar o melhor preço para a carga...
+#TEXT 14
+Esses burocratas são insolentes demais! Tentaram me deixar sem nem uma camisa nas costas. Prefiro encarar o inimigo do que pagar uma quantia dessas para esses sanguessugas.
+#TEXT 15
+Falhei em proteger os navios. A missão está perdida. Se quiser outra chance nesse trabalho, preciso falar com o cliente e tentar contornar a situação — ou, no mínimo, entregar a carga.
+#TEXT 16
+Todos os acordos foram cancelados. A situação é crítica. Preciso me encontrar com o cliente e tentar resolver isso.
+#TEXT 17
+Apesar de ter perdido todos os navios que escoltava, ainda recebi pagamento pela carga entregue — apenas metade das moedas: @<sMoney>. Vai ter que servir, especialmente depois de uma viagem tão terrível...
+#TEXT 18
+Perdi os navios que deveria proteger, e meu pagamento foi reduzido pela metade. Além disso, fui multado em 10% por cada dia de atraso. No fim das contas, minha recompensa é @<sMoney>. Vai ter que servir, principalmente depois de uma viagem tão miserável...
+#TEXT 19
+Preciso me encontrar com um navio carregando armas em @<sTargetColony> e escoltá-lo em segurança até @<sStartCity>. Minha recompensa será de @<sMoney>. Tenho que zarpar imediatamente—o tempo é curto, apenas @<sDay>.
+#TEXT 20
+'@<sSName>' — o navio que transporta as armas — agora faz parte do meu esquadrão. Devemos zarpar de volta para casa.
+#TEXT 21
+Fui lento demais, e todos os acordos agora estão anulados. A missão fracassou.
+#TEXT 22
+Estive tão envolvido com meus próprios problemas que @<sSName> deixou meu esquadrão. Minha recompensa está perdida...
+#TEXT 23
+Falhei em proteger o navio. A missão está perdida.
+#TEXT 24
+O trabalho está feito. Escoltei o navio e recebi meu pagamento.
+#TEXT 25
+Preciso procurar o navio desaparecido '@<sSName>', escoltá-lo até @<sStartCity> ou trazer provas de sua destruição. A embarcação sumiu nas proximidades de @<sIsland>.
+#TEXT 26
+Perdi tempo demais lidando com meus próprios problemas. Não há mais razão para navegar até @<sIsland>—a missão fracassou.
+#TEXT 27
+Encontrei a '@<sSName>' perto da ilha. Ela mal se mantém à tona—o mastro se foi e a maioria da tripulação está perdida. Não pode navegar sem grandes reparos. Vou precisar comprar suprimentos na colônia mais próxima e trazê-los de volta. A lista: tábuas—@<sQty1>, lona de vela—@<sQty2> e algodão—@<sQty3>.
+#TEXT 28
+Perdi tempo demais, e o capitão do '@<sSName>' já partiu em seu navio avariado. A missão fracassou.
+#TEXT 29
+Reuni todos os materiais necessários. Agora preciso entregá-los em @<sShore>.
+#TEXT 30
+Os reparos estão concluídos. Podemos zarpar para @<sStartCity>.
+#TEXT 31
+Escoltei '@<sSName>' até @<sStartCity>. O capitão pagou minhas despesas e ainda me presenteou com um amuleto indígena em agradecimento pela ajuda.
+#TEXT 32
+Relatei ao mestre do porto e recebi @<sMoney> pesos.
+#TEXT 33
+Encontrei a '@<sSName>' perto da ilha, onde ela travava uma batalha contra piratas. Entrei na briga e, apesar da tempestade furiosa, derrotamos nossos inimigos. Agora devo falar com o capitão.
+#TEXT 33_1
+Decidi não perder mais tempo conversando com o capitão do navio perdido. Já os salvei dos piratas—isso basta.
+#TEXT 34
+Encontrei '@<sSName>' perto da ilha, travando batalha contra piratas. Entrei na briga, mas uma tempestade afundou o navio perdido antes que eu pudesse salvá-lo. Fiz tudo que estava ao meu alcance, e pelo menos agora sei a verdade sobre o que aconteceu. Devo voltar para @<sStartCity> e relatar esse infeliz acontecimento.
+#TEXT 35
+Consegui encontrar a '@<sSName>' perto da ilha. Ela estava em combate com piratas, e entrei na briga. Uma tempestade caiu, e o inimigo se mostrou forte demais, me obrigando a recuar. Não vou relatar isso; essa vergonha é só minha.
+#TEXT 36
+@<sSName> está na minha esquadra. Hora de zarpar para casa.
+#TEXT 37
+Escoltei '@<sSName>' até @<sStartCity>. O capitão e sua tripulação me recompensaram com @<sMoney> e um amuleto indígena pelo auxílio.
+#TEXT 38
+Não encontrei a '@<sSName>' perto das costas de @<sIsland>, mas localizei seu capitão e tripulação numa enseada chamada @<sShore>. Embarquei todos imediatamente; aqueles índios deixaram bem claro quais eram suas intenções.
+#TEXT 39
+Assim que alcançamos mar aberto, fomos atacados por uma corveta pirata — provavelmente o mesmo navio sobre o qual o capitão me alertou. Derrotei os piratas.
+#TEXT 40
+Cheguei em @<sStartCity>. O antigo capitão me recompensou com @<sMoney> e um amuleto pela minha ajuda. A tripulação dele continuará sob meu comando.
+#TEXT 41
+O mestre do porto de @<sStartCity> pediu que eu interviesse numa batalha próxima — piratas estão atacando navios mercantes. Concordei em ajudar. Preciso eliminar os piratas e impedir que afundem as embarcações mercantes.
+#TEXT 42
+Perdi tempo demais em terra firme—a batalha terminou sem mim. A missão fracassou.
+#TEXT 43
+A batalha foi um sucesso — todas as embarcações piratas foram destruídas e não sofremos baixas. Agora posso retornar e reivindicar minha recompensa.
+#TEXT 44
+A batalha até que correu bem, mas perdemos um dos nossos navios mercantes. Preciso relatar isso.
+#TEXT 45
+A batalha não foi a nosso favor; todos os piratas foram derrotados, mas apenas um navio mercante sobreviveu. Preciso relatar isso.
+#TEXT 46
+A batalha foi um desastre para nós; todas as embarcações mercantes foram perdidas. Isso é um fracasso.
+#TEXT 47
+O inimigo era forte demais; tive que recuar. É uma mancha vergonhosa no meu histórico.
+
+#QUEST Shadowtrader
+Concorrência Desleal
+#TEXT 1
+Um comerciante em @<sCity> está em apuros — não pode sair da loja nem por um instante. Preciso entregar sua carta ao comandante antes do anoitecer. O pagamento é de 300 pesos.
+#TEXT 2
+Parece que alguém está tentando arruinar os negócios do mercador vendendo mercadorias ilegalmente a preços baixos. Concordei em ajudar. Devo começar investigando os contrabandistas locais — eles certamente estão envolvidos nisso de alguma forma...
+#TEXT 3
+Minha conversa com os contrabandistas não serviu para nada—erro meu, imagino. Não restaram pistas; parece que o mercador terá que resolver isso sozinho.
+#TEXT 4
+Fui lento demais. A missão fracassou.
+#TEXT 5
+Consegui enganar os contrabandistas—eles marcaram um encontro comigo. Preciso ir ao escritório do mestre do porto local à noite; lá, eles vão me encontrar e me levar até a loja ilegal deles. Posso avisar o comandante e deixar que ele cuide disso, ou resolver tudo pessoalmente...
+#TEXT 6
+Perdi a reunião. A missão fracassou.
+#TEXT 7
+Decidi entregar todas as informações ao comandante. Ele me garantiu que os canalhas serão presos ainda esta noite. Daqui a alguns dias, devo procurar o mercador para receber minha recompensa.
+#TEXT 8
+Fui levado até o covil, onde enfrentei meu rival. Consegui assustá-lo—ele fugiu e ainda me pagou uma bela quantia. Agora posso voltar ao mercador e receber minha recompensa.
+#TEXT 9
+Fui levado até o covil onde encontrei meu rival. As negociações fracassaram e acabaram em briga. Matei dois dos homens dele, e ele implorou pela vida. Deixei que fosse embora e confisquei todos os pertences e moedas dele. Duvido que ele se arrisque a negociar nesta cidade de novo. Agora posso voltar ao comerciante e receber minha recompensa.
+#TEXT 10
+Fui levado até o covil onde enfrentei meu rival. As negociações logo se transformaram em violência. Matei o homem e dois de seus comparsas. Talvez seja o melhor assim—ele não incomodará mais ninguém. Agora posso voltar ao mercador e exigir minha recompensa.
+#TEXT 11
+Recebi 15.000 pesos por lidar com o concorrente. Nada mal...
+
+#QUEST Wine
+Mercadoria Escassa
+#TEXT 0
+Os soldados enlouqueceram! Agora estão exigindo vinho dos moradores. Devo comprar um pouco para ele ou relatar isso ao seu comandante? O comandante geralmente pode ser encontrado nas masmorras do forte.
+#TEXT 1
+O soldado @<sName> me pediu para comprar um lote de bom vinho francês — de dez a sessenta garrafas. Aceitei o pedido dele; talvez eu consiga um bom lucro com isso.
+#TEXT 1_1
+Consegui garantir o vinho. Durante nossa conversa, o soldado comentou que estará me esperando no alto do forte amanhã.
+#TEXT 2
+Já se passou uma semana, e meu amigo soldado provavelmente já zarpou, como disse que faria. Não preciso mais me preocupar com o pedido dele...
+#TEXT 3
+Paguei 1.000 moedas e agora sei quem vende vinho em grandes quantidades. É @<sName>, o dono da loja local. Preciso fazer uma visita a ele.
+#TEXT 4
+Esses mercadores são gananciosos demais. Não dizem uma palavra sem receber, e me recuso a pagar esses patifes.
+#TEXT 5
+Surpresa. @<sName> não negocia vinho. Parece que aquele patife mentiu para mim. Preciso ter uma conversa com ele.
+#TEXT 6
+Paguei 2.000 moedas, e o trapaceiro escreveu um bilhete para o dono da loja. Agora ele vai negociar comigo. Tudo bem; vou garantir meu lucro de qualquer jeito.
+#TEXT 6_1
+O charlatão escreveu um bilhete para o lojista. Agora ele vai negociar comigo.
+#TEXT 7
+Maldito canalha me enganou, se recusou a devolver meu dinheiro e ainda chamou os guardas! Que se dane...
+#TEXT 8
+Comprei vinho suficiente. Agora posso voltar ao soldado.
+
+#QUEST Findship
+Trabalho Extra: Preciso de um Navio
+#TEXT 1
+O mestre do estaleiro em @<sCity> me pediu para encontrar um @<sShip> e entregá-lo a ele. O estado e as características do navio não importam—apenas o tipo é relevante. Tenho dois meses para cumprir a tarefa. Minha recompensa será uma vez e meia o valor do navio.
+#TEXT 2
+Cheguei tarde demais. A missão fracassou.
+#TEXT 3
+Encontrei o navio e o entreguei ao meu cliente. Recebi @<sMoney>.
+
+#QUEST Device
+Trabalho Paralelo: Ladrão Azarado
+#TEXT 1
+Um ladrão misterioso roubou uma ferramenta valiosa do mestre do estaleiro de @<sCity>. O item em questão é @<sName>. Devo conversar com os moradores — talvez alguém tenha visto algo. Tenho uma descrição completa do que procuro: @<sDesc>.
+#TEXT 2
+Perdi tempo demais. A missão fracassou.
+#TEXT 3
+Encontrei o ladrão. No desespero, ele jogou o objeto fora da cidade, perto dos portões.
+#TEXT 4
+Consegui encontrar o ladrão, que me devolveu o item roubado sem resistência. Agora posso voltar ao meu cliente.
+#TEXT 5
+Encontrei o ladrão. Ele exigiu moedas por @<sName>. Para evitar confusão, paguei o sujeito. Agora estou com a ferramenta.
+#TEXT 6
+Encontrei o ladrão. Ele tentou fingir que não sabia de nada, mas o intimidei e ele devolveu a ferramenta roubada.
+#TEXT 7
+Encontrei o ladrão, mas ele se recusou a devolver o item roubado de boa vontade. Amedrontei-o, e ele fugiu. Agora a ferramenta roubada está perdida para sempre...
+#TEXT 8
+Encontrei o ladrão. Ele se recusou a devolver o item roubado pacificamente e reagiu com violência.
+#TEXT 9
+Os moradores me disseram que um vagabundo está com a ferramenta que procuro. Infelizmente, é tudo que sei até agora. Duvido que o ladrão tenha ido muito longe. Melhor vasculhar a cidade e seus arredores.
+#TEXT 10
+Recebi @<sMoney> como pagamento. Nada mal.
+
+#QUEST Sunplace
+Trabalho Paralelo: Concorrência Desleal
+#TEXT 1
+@<sName>, um comerciante de @<sCity>, me pediu um serviço de moral duvidosa. Minha missão é prejudicar seu concorrente — capturando ou afundando um de seus navios — em troca de @<sMoney>, sem contar qualquer pilhagem que eu conseguir. Preciso procurar pelo @<sType> '@<sSName>' nas proximidades de @<sShore>. Tenho apenas @<sDay> para concluir a tarefa.
+#TEXT 2
+Cheguei tarde demais. O navio já partiu, e não vou receber nenhuma carga. Talvez seja hora de agir por conta própria e resolver de vez com o concorrente dele. O resultado será o mesmo... Meu alvo está morando em algum lugar de @<sCity>.
+#TEXT 3
+Cheguei na hora certa! Já avisto o alvo. Às armas!
+#TEXT 4
+Foi uma boa batalha. Posso voltar ao meu contratante.
+#TEXT 5
+Droga! O capitão desse velho casco era habilidoso demais pra mim. Talvez seja hora de eu mesmo resolver isso e acabar de vez com o rival dele. O resultado será o mesmo... Meu alvo está morando em algum lugar de @<sCity>.
+#TEXT 6
+O balconista me contou que @<sName> está na loja local. Está na hora de fazer uma visita a ele.
+#TEXT 7
+O taberneiro me contou que @<sName> está atualmente no mar. Preciso procurar pelo seu lugre.
+#TEXT 8
+@<sName> foi eliminado. Espero que meu contratante fique satisfeito—sem homem, sem problema.
+#TEXT 9
+Mudei de ideia. Matar um homem desarmado não é do meu feitio.
+#TEXT 10
+Decidi deixar a lugre do mercador em paz. Tirar a vida de um homem pacífico não faz parte do meu caminho.
+#TEXT 11
+Mudei de ideia; não vou me envolver na briga deles.
+#TEXT 12
+O cliente ficou satisfeito e me pagou generosamente.
+#TEXT 13
+Sério?! Fiz muito mais do que o combinado, e mesmo assim ele não ficou satisfeito! Não acredito nesse papo de “grandes pecados” — esse homem claramente não tem consciência. Parece que ele já tinha seus próprios planos desde o começo. Que vá pro inferno; pelo menos me pagou.
+#TEXT 14
+Cheguei bem a tempo. Para minha surpresa, o '@<sSName>' não é um @<sType>—é um galeão pesado. Parece que o cliente se enganou. Mas será que não há @<sGoods> nos porões dela? De qualquer forma, terei que lutar.
+
+#QUEST TraderEscort
+Trabalho Extra: Escolta
+#TEXT 1
+Preciso escoltar um mercador de @<sStartCity> @<sAdd> até @<sDay>. Minha recompensa será de @<sMoney>.
+#TEXT 2
+Fui lento demais, e o mercador já partiu. A missão fracassou.
+#TEXT 3
+O navio do mercador foi afundado. A missão fracassou.
+#TEXT 4
+Escoltei o mercador, mas ele se recusou a pagar pelos meus serviços, alegando que não fiz o suficiente para protegê-lo. Se nossos caminhos se cruzarem novamente...
+#TEXT 5
+Escoltei o mercador, mas ele me pagou apenas metade do combinado, alegando que minha proteção não foi suficiente.
+#TEXT 6
+Escoltei meu cliente e recebi uma recompensa de @<sMoney>.
+#TEXT 7
+Escoltei meu cliente, mas ele não pôde me pagar. Em vez disso, revelou onde encontrar a frota de seu colega mercador, carregada com @<sAdd>. Devo zarpar para a ilha desabitada @<sIsland>; meu alvo estará lá em duas semanas.
+#TEXT 8
+Fui lento demais, e o mercador já partiu. Que pena...
+#TEXT 9
+Consegui abordar uma flauta mercante. Havia realmente uma grande quantidade de @<sAdd>. Isso me cai muito bem.
+#TEXT 10
+Meu oponente era forte demais, então decidi recuar. Que se dane a carga.
+#TEXT 11
+Os malditos canalhas me atraíram para uma emboscada—um esquadrão pirata estava à espreita. Fui obrigado a lutar contra eles e também contra meu antigo companheiro.
+#TEXT 12
+Fomos atacados por piratas assim que chegamos à ilha, mas a vitória foi minha.
+#TEXT 13
+Fomos atacados por piratas assim que chegamos à ilha. Em menor número, fui obrigado a recuar e deixar meu companheiro para trás. A missão fracassou.
+#TEXT 14
+O desgraçado imprudente hasteou a bandeira negra assim que chegamos à ilha. Não tive escolha a não ser lutar.
+#TEXT 15
+Afundei o fluyt. Uma pena—não vou conseguir reivindicar a carga dela.
+
+#QUEST Racing
+Trabalho Extra: Maratona Marítima
+#TEXT 1
+Conversei com um mercador insolente em @<sStartCity>. Ele afirma que chegará a @<sCity> até @<sDay>. Se eu chegar em @<sCity> antes dele, vou ganhar @<sMoney>. Hora de içar as velas.
+#TEXT 2
+Ha! Passei a perna naquele mercador—não há nenhuma flauta no porto de @<sCity>. Vou ficar na taverna e esperar meu rival azarado.
+#TEXT 3
+Inacreditável... Eu estava com todas as velas ao vento, mas mesmo assim aquele mercador me ultrapassou — o seu fluyt já está ancorado no porto. Preciso encontrá-lo na taverna.
+#TEXT 4
+Recebi minha recompensa com o estalajadeiro. Ótimo. Quem sabe existam outros mercadores confiantes demais por aí?
+#TEXT 5
+Desta vez perdi, mas certamente há outros mercadores como ele. Vou tentar de novo na próxima!
+#TEXT 6
+Mudei de ideia—não vou participar dessa corrida absurda. Que o homem fique com seu prêmio e seja feliz com isso.
+#TEXT 7
+Fiquei tão furioso com meu fracasso que ataquei o mercador bem ali no porto. Que tolo eu fui. Raiva cega, como dizem...
+
+#QUEST RedChieftain
+Chefe indígena
+#TEXT 1
+Kanauri, o chefe indígena, pediu minha ajuda. Os membros de sua tribo foram escravizados pela tripulação do navio de @<sText1> e estão sendo forçados a mergulhar em busca de pérolas. Aceitei ajudar, já que receberei toda a colheita deles como pagamento. Dois escunas fazem a guarda dos índios, e há um acampamento bem defendido na costa. O mais importante é que preciso me aproximar em uma embarcação pequena—como uma lugre ou uma escuna—para não ser notado. Tenho apenas um mês para cumprir essa tarefa, então não posso perder tempo.
+#TEXT 2
+Cheguei tarde demais — os índios já devem ter sido levados. Ah, essa é minha culpa... Vou desembarcar Kanauri no porto mais próximo; falhei com ele.
+#TEXT 3
+Consegui me manter escondido tempo suficiente para atacar o inimigo. Esses canalhas estão atirando em pescadores desarmados. Preciso destruí-los o quanto antes, antes que os índios sejam mortos.
+#TEXT 4
+O chefe me alertou para usar apenas um navio pequeno. Não há sinal dos tartanes indígenas; parece que os nativos recuaram para a selva. Maldição! Posso partir agora...
+#TEXT 5
+Os escunas inimigos foram destruídos. Agora preciso desembarcar e limpar a baía dos soldados para que os índios possam fugir para a selva. Tenho certeza de que também encontrarei algum saque no acampamento dos pescadores...
+#TEXT 6
+Os escunas foram demais para mim. Claro, eu só tinha um navio, e ele era mais fraco que qualquer um deles. Já chega—Kanauri vai ser desembarcado no próximo porto. É melhor ele procurar outro 'salvador'.
+#TEXT 7
+A batalha foi terrível; todas as tartanas indígenas foram destruídas. Não sobrou ninguém para salvar. Levarei Kanauri ao porto mais próximo—falhei com ele.
+#TEXT 8
+Todos os inimigos estão mortos. Os índios me pagaram bem e voltaram para a selva. Tenho respeito por homens como Kanauri — ele é um verdadeiro chefe de sua tribo.
+#TEXT 9
+Todos os inimigos estão mortos. Os índios me pagaram integralmente com as pérolas que haviam coletado e depois desapareceram na selva, voltando para sua aldeia. O chefe deles ainda me presenteou com um amuleto encantado como recompensa, dizendo que quem o usa não pode se afogar. Tenho grande respeito por homens como Kanauri — ele é um líder digno de sua tribo.
+
+#QUEST FalseTrace
+Falsa Pista
+#TEXT 1
+Tive um encontro interessante na taverna de @<sCity1>. Um homem chamado Adam Rayner me propôs um acordo: contou sobre um fluyt, o '@<sShip>', carregado de prata e navegando de Cartagena para @<sCity2>. Ele exigiu um décimo do saque. Aceitei os termos, já que ele vai velejar comigo e até pediu para participar do abordo. Adam não falou de um prazo exato, mas imagino que tenho apenas duas ou três semanas.
+#TEXT 2
+Apesar dos meus esforços, não consegui abordar o fluyt. Não importa — que se dane a prata.
+#TEXT 3
+Afundei o fluyt junto com toda a prata. Como pude ser tão descuidado...
+#TEXT 4
+Ora, veja só! Não havia prata nenhuma a bordo do fluyt. O capitão alega que é apenas um navio de suprimentos, destinado a entregar provisões. Mas havia também uma mulher — claramente a amante do capitão. Preciso chamar Adam à minha cabine para uma conversa. Vamos ver que desculpa esse patife vai inventar. É bom ele se esforçar bastante se quiser salvar o pescoço da forca...
+#TEXT 5
+Adam Rayner confessou que seu plano é tomar o fluyt com minha ajuda e recuperar sua esposa, Katerine Rayner, que fugiu dele. Ele promete me contar sobre o ouro de um tal Solly Vesgo como recompensa pelos meus serviços. Mas antes, devo levar tanto ele quanto sua esposa até @<sCity>. Posso confiar nesse patife? Talvez seja melhor conversar com a esposa dele primeiro — ela pode saber de algo importante...
+#TEXT 6
+As coisas estão ficando mais interessantes. Katerine odeia Adam como cão odeia gato—por isso fugiu dele. Mas isso é assunto de família e problema deles. Não me importo com Katerine nem com a proposta dela, então vou arriscar confiar em Adam mais uma vez. Próxima parada: @<sCity>.
+#TEXT 7
+As coisas estão ficando mais interessantes. Katerine odeia Adam como cão odeia gato—por isso fugiu dele. Ela está decidida a vingar a morte do amante, culpando o marido por ter tramado o ataque que levou a isso. Katerine me propôs um acordo: se eu matar o marido dela, ela revelará onde está o esconderijo secreto dele. Já não confio mais em Adam, então aceitei os termos dela. Vou zarpar para @<sCity>, mas em vez de atracar na cidade, vou desembarcar na costa mais próxima e resolver tudo com Adam ali mesmo.
+#TEXT 8
+As coisas estão ficando mais interessantes. Katerine odeia Adam como cão odeia gato—por isso fugiu dele. Ela afirma que seu capitão pode oferecer mais pela liberdade deles. Preciso ir conversar com a prisioneira.
+#TEXT 9
+A oferta do capitão era ainda mais suspeita do que a do Adam. Parece que ele está tentando armar uma armadilha para mim. Nem pensar! Prefiro confiar no Adam mais uma vez. Estou indo para @<sCity>.
+#TEXT 10
+A oferta do capitão parecia muito mais lucrativa e interessante do que a de Adam. Quem mente uma vez, mente de novo. Vou prender Rayner e trancá-lo no porão de carga.
+#TEXT 11
+Adam Rayner foi preso, apesar de ter resistido um pouco. Agora está acorrentado, e estou seguindo para @<sShore>.
+#TEXT 12
+Fui lento demais—Adam Rayner roubou um barco, levou sua esposa e fugiu do meu navio. Duvido que eu volte a vê-los algum dia...
+#TEXT 13
+Fui lento demais, e Solly Olho-Torto já pegou o tesouro dele. Deveria ter me esforçado mais...
+#TEXT 14
+Levei Adam e sua esposa até @<sCity>. Adam me contou que Solly escondeu seu saque numa gruta na baía de San Juan del Norte. Estou ajustando o rumo para a baía — restam apenas cinco dias.
+#TEXT 15
+Fui lento demais, e Solly Olho-Torto já pegou o tesouro dele. Deveria ter me esforçado mais...
+#TEXT 16
+Que batalha infernal! Os bandidos do Solly foram eliminados. Tem tanto tesouro aqui que vai precisar de várias viagens pra levar tudo.
+#TEXT 17
+Assim que embarquei, avistei o navio do Solly. Bem, azar o dele.
+#TEXT 18
+Assim que embarquei, avistei o navio do Solly. Ele era forte demais para mim, então tive que recuar e deixar todo o saque na praia...
+#TEXT 19
+Meu antigo prisioneiro cumpriu a palavra e me passou uma informação valiosa: em duas semanas, um galeão carregado de minério de ouro partirá de @<sCity> rumo à Europa. Estou de olho nisso. Acho que não preciso mais me preocupar com Adam...
+#TEXT 20
+Apesar de todos os meus esforços, não consegui capturar o galeão. Que seja, ao diabo com o ouro.
+#TEXT 21
+Afundei o galeão junto com todo o ouro. Que tolo eu fui...
+#TEXT 22
+O galeão pesado foi capturado. O capitão tinha razão—havia uma fortuna em ouro!
+#TEXT 23
+Adam Rayner foi morto diante da própria esposa, exatamente como ela queria. Estranhamente, ela parecia satisfeita ao ver sua morte. Ela me contou sobre o esconderijo secreto de Adam—fica em Port-au-Prince, perto do farol.
+#TEXT 24
+Encontrei o esconderijo do Adam. Sua quadrilha me emboscou quando eu voltava para o navio. Katerine armou a cilada, querendo vingança pela morte do amante. Não foi fácil, mas consegui eliminar os quatro bandidos. Katerine, confiante demais, ficou para assistir minha execução—acabou levando uma bala na cabeça pela traição. Chega de surpresas.
+#TEXT 25
+Encontrei o esconderijo de Adam. Quando voltava para o barco, fui emboscado pela quadrilha dele — Katerine armou a cilada, querendo vingar a morte do amante. A luta foi dura, mas consegui matar os quatro bandidos. Katerine, confiante demais, ficou para assistir à minha execução. Poupei sua vida e a deixei na ilha.
+#TEXT 26
+Fui atacado assim que subi a bordo. A ameaça de Katerine se confirmou. Enfrentei o inimigo e o destruí.
+#TEXT 27
+Fui atacado assim que subi a bordo. A ameaça de Katerine se confirmou. Decidi manter distância e recuar.
+
+#QUEST Portugal
+Caminho Longo até a Forca
+#TEXT 1
+Ouvi uma história interessante de um caçador de recompensas bêbado. Parece que o infame pirata Bartolomeu, o Português, está em Philipsburg procurando um médico. A Companhia Holandesa das Índias Ocidentais paga muito bem pela cabeça dele. Hugo tem razão — não posso deixar uma oportunidade dessas escapar. Preciso vasculhar a cidade e encontrar esse rato antes que ele suma!
+#TEXT 2
+Não consegui encontrar o pirata, então não receberei nenhuma recompensa. Vai saber—talvez seja melhor assim...
+#TEXT 3
+Hugo Avendell me convenceu a evitar as autoridades locais e entregar o português diretamente para a Companhia. Ele acha que o governador vai confiscar nosso prêmio e dar um jeito de nos passar a perna. Preciso trocar as roupas do português, já que os homens dele podem ainda estar na cidade. Tenho que encontrar algo adequado para ele vestir.
+#TEXT 4
+Droga! Fui lento demais — os portugueses conseguiram escapar. O quarto ainda fede a pólvora. Pobre doutor. Posso esquecer qualquer recompensa agora.
+#TEXT 5
+O doutor disse que o português está em estado grave demais e provavelmente não vai sobreviver à viagem até Curaçao. Minha última esperança é levá-lo até Gino Gvineili. Se esse gênio não puder ajudá-lo, ninguém mais poderá. Mas o tempo é curto—temos apenas três dias.
+#TEXT 6
+Cheguei tarde demais; a febre fez seu trabalho. Uma pena que o pirata não viveu o suficiente para encarar a forca...
+#TEXT 7
+Chegamos a Antígua, e o português ainda está vivo. Não vou deixar meu prisioneiro morrer antes de receber meus dobrões prometidos. Agora, tudo depende do Gino e de suas habilidades.
+#TEXT 8
+Eu sabia que ficamos tempo demais aqui! Finalmente nos encontraram, mas não são portugueses—são mercenários. Tive que negociar com eles. Agora temos apenas cinco dias para chegar a Martinica. Meu prisioneiro pode descansar na taverna de Saint-Pierre e, com sorte, sobreviver até Curaçao. Hugo desconfia que há mais facínoras por perto; talvez eu ainda precise enfrentá-los.
+#TEXT 9
+Fui convocado para uma audiência com Sua Graça, o governador, por um assunto importante. Interessante. De qualquer forma, os portugueses ficarão hospedados na taverna por alguns dias, então tenho tempo suficiente para conversar com Monsieur Jacques Dyel du Parquet.
+#TEXT 10
+Sua Graça me pediu para patrulhar as águas de sua colônia por dois dias; dizem que uma fragata pirata foi avistada recentemente. O medo costuma aumentar as histórias, mas 10.000 pesos extras cairiam muito bem. Aceitei, já que preciso ficar por aqui de qualquer jeito enquanto o português se recupera...
+#TEXT 11
+Já se passaram dois dias e ainda não há sinal da fragata pirata. É hora de prestar contas a Sua Graça.
+#TEXT 12
+Hugo é um tolo! Não, não é bem isso... ele é um covarde! Essa é a melhor maneira de descrevê-lo. Por que ainda não me livrei dele? Nunca fez nada para ajudar nos nossos negócios. Muito bem, vai perder a parte dele. Agora, é melhor eu ir até a taverna e falar com o taberneiro. Ele com certeza viu alguma coisa!
+#TEXT 13
+Descobri que nosso cliente foi levado por Franz Garcke e Hernando Vazquez. Hugo os conhece — ficou apavorado e fugiu assim que nossos facínoras apareceram. A lealdade dele à nossa causa está cada vez mais em dúvida, mas isso pode esperar. Tenho certeza de que levaram nosso homem para Le Francois. Onde mais homens como eles se esconderiam, senão sob a proteção de Jacques, o Bondoso? Preciso interceptá-los lá. Devo zarpar para o porto de Le Francois e impedir que embarquem meu prisioneiro em seu navio!
+#TEXT 14
+Encontrei os homens de Garcke, como já esperava. Pena para eles... Agora chegou a hora de encarar o chefe deles — ele deve estar no andar de cima com meu prisioneiro!
+#TEXT 15
+O português foi colocado no quarto, e nosso médico está de olho nele. Estou exausto de tudo isso... Melhor dar uma volta pela cidade; tenho dois dias para descansar.
+#TEXT 16
+Não consegui encontrar os portugueses, e provavelmente não vou conseguir. Que pena.
+#TEXT 17
+Consegui capturar Bartolomeu, o Português, mas precisei enfrentar seus antigos companheiros, que não estavam nem um pouco dispostos a deixá-lo vivo. Assim que estivermos longe deste lugar, preciso conversar com meu prisioneiro — há algo muito estranho com ele.
+#TEXT 18
+Como eu esperava, fui atacado pela fragata de Vazquez, o "Albatross". Hugo temia esse homem. Saí vitorioso, mas não encontrei sinal de Vazquez a bordo. É melhor eu conversar com meu prisioneiro.
+#TEXT 19
+Como eu previa, fui atacado pela fragata de Vazquez, a "Albatross". Optei por evitar o combate e consegui escapar. Preciso entregar o prisioneiro em Curaçao, mas antes devo conversar com ele.
+#TEXT 20
+Ah, como sou bondoso demais! Já salvei esse português tantas vezes que não consigo deixá-lo na forca. Mas que se dane — ele pode muito bem me abandonar já no próximo porto...
+#TEXT 21
+Chega de sentimentalismo com esse canalha. Já tive o bastante dele... Estou indo para Curaçao encontrar Matthias Beck.
+#TEXT 22
+Está feito. O português foi entregue aos seus juízes, e as moedas agora são minhas. Preciso admitir, não estou satisfeito com o desfecho disso. Gino tinha toda razão; salvar a vida de um homem só para vê-lo enforcado depois... isso não está certo.
+#TEXT 23
+Decidi deixar Bartolomeo ir; afinal, ele pagou um preço justo pela liberdade. Ele afirma ter um esconderijo secreto em Terks, cheio de pedras preciosas roubadas da Companhia, e por isso todos estão em sua caça. Só espero que ele não tenha mentido só para salvar o próprio pescoço... Também me alertou sobre Vazquez — esse pode virar um problema no futuro. Agora devo procurar o tesouro antes que os selvagens o encontrem. O que foi mesmo que ele disse? Na colina, debaixo da árvore?
+#TEXT 24
+Presenciei um confronto entre índios e fuzileiros holandeses. O que estariam fazendo aqui? Nenhum dos lados gostou da minha presença, então fui obrigado a lutar contra todos. Foi uma batalha difícil, mas agora todos jazem mortos, e eu continuo de pé. Agora posso procurar o tesouro.
+#TEXT 25
+O português não mentiu! Encontrei as joias de que ele falou. Um desfecho digno para uma história tão incrível.
+#TEXT 26
+Uma fragata holandesa me atacou perto das costas de Terks. Lutei com ela e a enviei para o fundo do mar. Duvido que tenham vindo até aqui só para passear nesta ilha acolhedora — deve haver alguma ligação com o tesouro de Bartolomeo. Talvez eu descubra mais na colônia holandesa mais próxima. É bom conversar com o pessoal da taverna.
+#TEXT 27
+Uma fragata holandesa me interceptou perto das costas de Turks, e decidi recuar. Duvido que tenham vindo até aqui só para passear por essa ilha acolhedora; deve ter algo a ver com o tesouro de Bartolomeo. Talvez eu descubra mais na colônia holandesa mais próxima. É bom conversar com o pessoal da taverna.
+#TEXT 28
+Por que eu deveria me importar com as intrigas da Companhia? No fim das contas, as joias estão comigo — é isso que importa.
+#TEXT 29
+Parece que finalmente descobri o que está acontecendo de verdade. Hernando Vazquez — ele não teve coragem de me enfrentar em Martinica. Tenho certeza de que assistiu à última batalha de sua fragata de longe, em segurança. Para salvar a própria pele, contou à Companhia sobre as gemas. Evitou me encontrar em Curaçao, e por isso veio para cá, para Philipsburg. Foi ele quem enviou a expedição holandesa para Turks.
+Bem, Don Sangue já viveu o bastante; chegou a hora de acabar com ele antes que descubra minha presença aqui. Devo ir direto ao governador — embora talvez valha a pena conversar com os criados dele antes.
+#TEXT 30
+Mudei de ideia. Vazquez não representa ameaça para mim — os holandeses não vão deixá-lo vivo, já que não encontraram pedras preciosas em Turks. Posso respirar aliviado agora; estou confiante.
+#TEXT 31
+Ora, veja só! Capturaram o português. Dizem que ele e o Vazquez serão executados em um mês. Está claro que a Companhia pretende interrogá-los antes. Preciso decidir meu próximo passo. O português pode acabar revelando meu envolvimento em toda essa história...
+#TEXT 32
+Bartolomeo está preso junto com seu companheiro Vazquez nas masmorras de Willemstad. Ha! Será que devo arriscar, ou mandar tudo às favas?
+#TEXT 33
+Decidi me afastar dessa aposta arriscada — e, mais importante ainda, inútil. Mesmo que o português fale, não vai ter muito o que contar. Existem centenas de capitães como eu por essas águas. Ora, ele nem sabe meu nome.
+#TEXT 34
+Consegui libertar Bartolomeo da prisão. Escapei por pouco—Vazquez me atacou pelas costas. Graças a Deus, Bartolomeo me alertou e o tiro não foi fatal. Agora não há mais com o que me preocupar. Preciso admitir, havia outro motivo para eu fazer isso. Gostando ou não, Gino estava certo: somos responsáveis por aqueles que cativamos.
+#TEXT 35
+Os portugueses não sobreviveram à batalha com os caçadores de recompensas...
+#TEXT 36
+Os portugueses não sobreviveram à batalha contra os homens de Franz Garcke...
+
+#QUEST Consumption
+O Preço do Consumo
+#TEXT 1
+A garçonete da taverna de San Jose está desesperada—ela acredita que seu irmão, preso nas masmorras locais por contrabando, não morreu de doença como disseram. Ele pode ainda estar em apuros, e não pude ignorar as lágrimas de uma moça tão bela, então prometi ajudar. É estranho que o irmão dela tenha morrido apenas duas semanas após ser encarcerado. Existe a chance de que o senhor Comandante esteja escondendo algo. Também devo conversar com o povo da cidade sobre essa epidemia estranha; às vezes, os boatos são a melhor fonte de informação.
+#TEXT 2
+Não consegui muita coisa com o estalajadeiro, mas ele confirmou minhas suspeitas. Parece que a tísica vem matando homens há um ano, e ninguém se importa — ou talvez só finjam não perceber. Consegui outra pista: houve um contrabandista que sobreviveu um tempo nas masmorras, apenas para morrer depois, fora da prisão. Talvez eu deva conversar com seus comparsas — podem revelar detalhes úteis.
+#TEXT 3
+O senhor Comandante não gostou nada do meu interesse. Na verdade, quase me pôs para fora. Ainda assim, devo admitir que o homem foi extremamente educado e paciente. Vou tentar descobrir mais sobre o senhor Comandante.
+#TEXT 4
+O estalajadeiro confirmou minhas suspeitas. Parece que a tísica vem matando homens há um ano, e ninguém se importa — ou talvez apenas finjam não perceber. Quanto ao señor Comandante... foi enviado para cá por causa de intrigas na Europa. Fortificou sua casa e nunca sai sem escolta. Certamente está escondendo algo, possivelmente ligado à tísica em seus calabouços. Preciso investigar a residência dele. Descobri também outra pista: um contrabandista que esteve nos calabouços e sobreviveu. Ele acabou morrendo, mas isso aconteceu fora da prisão. Talvez valha a pena conversar com seus comparsas — podem revelar algum detalhe.
+#TEXT 5
+Minhas suspeitas sobre o Señor Comandante estão ficando mais fortes. Dizem que ele foi enviado para cá por causa de intrigas na Europa. Fortificou sua casa e nunca sai sem escolta. Com certeza, esse homem está escondendo algo. Circulam boatos de que algo é consumido em seus calabouços. Preciso investigar a casa dele. Também encontrei outra pista: um contrabandista que esteve nos calabouços e sobreviveu. Ele acabou morrendo, mas foi fora da prisão. Talvez eu deva conversar com seus comparsas — podem revelar algum detalhe.
+#TEXT 6
+Parece que nosso infortúnio tem nome: Juan. Seja lá o que isso signifique, está claro que não se trata de mais uma doença qualquer que faz vítimas nas prisões. Melhor perguntar aos locais sobre esse tal "Juan".
+#TEXT 7
+Encontrei uma carta interessante na casa do Comandante. Parece que nosso coronel está negociando com um homem cujo nome começa com "J". Também achei algumas moedas — a parte dele da última transação.
+Bem, estou começando a entender que tipo de carga eles estão transportando.
+#TEXT 8
+Um oficial espanhol me abordou na rua, visivelmente preocupado. Implorou para que eu parasse de perguntar sobre Juan e a tuberculose. Marcou um encontro comigo fora dos portões da cidade esta noite. Sinto que estou no caminho certo.
+#TEXT 9
+Cheguei tarde demais — o médico espanhol se foi. Parece que ele também sucumbiu à tuberculose. Uma pena.
+#TEXT 10
+O oficial que prometeu me contar a verdade sobre o consumo está morto. Minha única chance de chegar até Juan se foi. Uma pena.
+#TEXT 11
+Então, o oficial Sergio Saldo me contou tudo. O senhor Comandante realmente está vendendo seus prisioneiros, disfarçando os desaparecimentos como mortes por tuberculose. Engraçado que seu parceiro de negócios atende pelo nome de Consumo — Juan "Consumo". Os homens dele tentaram nos matar durante o encontro; parece que alertei a quadrilha. Hora de caçar o resto deles e acabar com isso. Sergio disse que o navio de Juan estará navegando perto do Pontal da Galera até o meio-dia. Parece que Angelo ainda tem uma chance de voltar para casa...
+#TEXT 12
+A luta terminou e o navio foi afundado. Agora devo voltar para a garçonete.
+#TEXT 13
+Afundei o navio de Juan com todos os prisioneiros a bordo. Que desperdício! Preciso ser mais cuidadoso da próxima vez...
+#TEXT 14
+Juan se mostrou forte demais para mim, então decidi recuar — minha vida vale ser preservada.
+#TEXT 15
+Cheguei tarde demais a Galera Point — o navio de Juan já zarpou. Maldição.
+#TEXT 16
+Juan, o traficante de escravos, me pagou generosamente para poupar sua vida. O jovem e nobre oficial Sergio provavelmente vai prender o senhor Comandante, mas Juan com certeza vai dar um jeito de continuar seu comércio. E a garota... bem, é melhor que ela nunca saiba o destino do irmão.
+#TEXT 17
+Juan escapou do destino que merecia; tive que deixá-lo ir para salvar os escravizados. Angelo vai voltar para a irmã, e Consumo... talvez nossos caminhos se cruzem novamente algum dia, e eu possa terminar o que comecei...
+#TEXT 18
+A história chegou ao fim. Consumption está morto e nunca mais voltará a caçar pessoas com sua crueldade. Angelo vai reencontrar a irmã, assim como muitos outros hoje vão se reunir com suas famílias. Não tenho certeza se o señor Comandante será punido, mas isso já não é mais da minha conta...
+
+#QUEST Citizpassenger
+Trabalho Extra: Transportando @<sType> @<sName> para @<sCity>.
+#TEXT 1
+Preciso transportar um passageiro chamado @<sName> para @<sCity> em até @<sDays>. Minha recompensa será de @<sMoney>.
+#TEXT 2
+O passageiro se cansou de esperar que eu cumprisse minhas obrigações e partiu no último porto.
+#TEXT 3
+O trabalho está feito.
+
+#QUEST Monkletter
+Trabalho Extra: Correspondência da Igreja
+#TEXT 1
+Um monge de @<sStartCity> me pediu para entregar uma mensagem urgente a um sacerdote senhor em @<sCity>. Aceitei — ajudar homens santos é uma boa ação, e fica no meu caminho. Tenho duas semanas.
+#TEXT 2
+O padre não ficou satisfeito por eu ter chegado tarde demais, mas mesmo assim aceitou os documentos.
+#TEXT 3
+A mensagem foi entregue a tempo. Recebi uma bênção e algumas moedas de ouro.
+#TEXT 4
+Já se passaram duas semanas e ainda tenho um serviço a concluir. É melhor eu me apressar...
+
+#QUEST Churchbooks
+Trabalho Extra: Entrega de Livros de Oração
+#TEXT 1
+Um monge de @<sStartCity> me pediu para conseguir livros de oração para a paróquia local. Posso encontrá-los em qualquer colônia de @<sNation>. Tenho um mês para cumprir essa tarefa.
+#TEXT 2
+Recolhi os livros de oração. Hora de devolvê-los.
+#TEXT 3
+Apesar do meu atraso, o padre me agradeceu pelos meus esforços.
+#TEXT 4
+O santo padre me recompensou com um amuleto consagrado pelos meus esforços.
+#TEXT 5
+Já se passou um mês e ainda não terminei o serviço. É melhor eu me apressar...
+
+#QUEST Nobleslaves
+Trabalho Paralelo: Entrega de Escravos para um Fidalgo de @<sCity>
+#TEXT 1
+Um nobre de @<sCity> encomendou @<sQty> escravos de mim. Aceitei o acordo e serei pago @<sMoney> dobrões de ouro.
+#TEXT 2
+Os escravos foram entregues e o pagamento recebido.
+#TEXT 3
+Fui lento demais com o tráfico de escravos, e meu cliente resolveu o problema sem minha ajuda. Vou precisar encontrar outro comprador.
+
+#QUEST Noblelombard
+Trabalho Paralelo: Relíquia de Família
+#TEXT 1
+Um nobre de @<sCity>, chamado @<sName>, me pediu para negociar com o agiota local sobre uma relíquia de família. @<sName> prometeu me pagar o dobro dos meus gastos em três meses. Pode ser um investimento interessante. Preciso descobrir qual preço o agiota vai pedir.
+#TEXT 2
+Mudei de ideia. Cada um deve resolver seus próprios problemas.
+#TEXT 3
+Consegui fechar um acordo com o agiota. A quantia era absurda, e nem vou perder meu tempo indo atrás do fidalgo para discutir minha recompensa. Que ele fique com essas moedas; precisa delas mais do que eu.
+#TEXT 4
+Não consegui resolver com o agiota. @<sName> está descontente, mas não há mais nada que eu possa fazer.
+#TEXT 5
+@<sName> ficou realmente satisfeito por eu ter fechado um acordo com o agiota. Daqui a três meses, ele fará um depósito em meu nome.
+#TEXT 6
+@<sName> me enganou. Nunca teve a intenção de pagar suas dívidas e já partiu rumo à Europa. Tanto faz a palavra de um nobre...
+#TEXT 7
+@<sName> pagou o adiantamento, como havia prometido. Muito bom.
+
+#QUEST Marginpassenger
+Trabalho Paralelo: Sequestrador
+#TEXT 1
+@<sCity>. Comprei uma informação interessante de um homem chamado @<sName>. Trata-se de um passageiro “valioso” que pode render um bom resgate. Meu alvo é @<sName1>, que viajará a bordo do @<sShipType> "@<sShipName>" em @<sDay>, com destino a @<sTargetCity>. @<sName> sugeriu que, se eu intimidar o capitão, talvez ele entregue o passageiro sem resistência. Devo seguir para @<sTargetCity> e conversar com @<sName2>, que também tem seus próprios interesses nessa história; assim, recebo meu dinheiro e evito arrumar inimigos. Em alternativa, posso procurar o comandante local—@<sName> seria preso e eu receberia uma recompensa...
+#TEXT 2
+Fracassei ao tentar capturar '@<sShipName>'. Meus dobrões foram desperdiçados.
+#TEXT 3
+Afundei o '@<sShipName>' com toda a tripulação a bordo. Meus dobrões foram desperdiçados.
+#TEXT 4
+Encontrei o @<sShipType> '@<sShipName>' e conversei com seu capitão. Ele entregou o passageiro, e agora preciso providenciar o resgate de @<sName1>.
+#TEXT 5
+Encontrei o @<sShipType> '@<sShipName>' e conversei com o capitão. Ele se recusou a entregar o passageiro pacificamente. Azar o dele. Agora não me resta alternativa senão abordar o @<sShipType> dele.
+#TEXT 6
+Abordei o '@<sShipName>' e capturei o passageiro que procurava. Agora preciso negociar o resgate de @<sName1>.
+#TEXT 7
+Você está falando sério? Descobri que @<sName2> está morto. E agora, o que faço com minha "presa"? Levar esse passageiro de volta para @<sCity> é perigoso demais; não vou correr esse risco. Melhor seguir para Le Francois—dizem que Jacques, o Bondoso, chantageia os parentes de seus prisioneiros. Talvez eu consiga vender meu passageiro para ele.
+#TEXT 8
+O estalajadeiro me disse para procurar meu homem nas ruas, mas apenas entre a meia-noite e as nove da manhã.
+#TEXT 9
+O resgate foi recebido: @<sSum> dobrões. Melhor eu sair daqui — vai saber o que minha antiga "presa" pode contar sobre mim...
+#TEXT 10
+O resgate foi recebido. @<sSum>. Melhor eu sair daqui agora — vai saber o que minha antiga "presa" pode falar de mim...
+#TEXT 11
+@<sName2> se recusou a pagar. Então, o que faço com minha "presa"? É arriscado demais levá-los de volta para @<sCity>; não vou correr esse risco. Melhor seguir para Le Francois—dizem que Jacques, o Bondoso, chantageia os parentes de seus prisioneiros. Talvez eu consiga vender meu prisioneiro para ele.
+#TEXT 12
+O resgate é meu—@<sSum>. É uma quantia miserável, mas melhor do que nada.
+#TEXT 13
+Jacques me passou uma informação interessante. Preciso zarpar para @<sShore> imediatamente. Tenho apenas uma semana.
+#TEXT 14
+Cheguei tarde demais. Mais um prêmio escapou por entre meus dedos. Mais um fracasso...
+#TEXT 15
+Cheguei a @<sShore> no horário e derrotei as tropas espanholas. O saque valeu o esforço.
+#TEXT 16
+Jacques me passou uma informação interessante. A barquentina '@<sShipName>', carregada com madeira valiosa, vai zarpar de @<sCity> rumo a @<sCity1>. Devo tentar interceptá-la.
+#TEXT 17
+Fracassei em capturar a barquentina. Mais um fracasso...
+#TEXT 18
+Afundei a barquentina junto com toda a carga. Mais um fracasso...
+#TEXT 19
+A barca-escuna '@<sShipName>' foi abordada. A carga dela vai cobrir todas as minhas despesas e ainda sobra.
+#TEXT 20
+Informei o @<sName> ao comandante. Ele prometeu resolver o assunto, me elogiou e... ficou por isso mesmo. Pelo menos o governador vai saber da minha boa ação. Quanto aos meus dobrões perdidos—ninguém liga, claro.
+
+#QUEST MarchCap
+Trabalho Extra: Ataque Quente
+#TEXT 1
+O capitão @<sName> me convidou para saquear uma caravana mercante transportando @<sGoods>. Ela vai passar perto de @<sShore>, em @<sIsland>, dentro de @<sDays>. Aceitei — deve haver pilhagem suficiente para nós dois, e sempre é mais fácil lutar ao lado de um aliado.
+#TEXT 2
+Perdemos nossa presa. @<sName> ficou furioso, embora a culpa também fosse dele. Que se dane...
+#TEXT 3
+Infelizmente, @<sName> morreu antes de alcançarmos nossa presa. Preciso retornar. Que pena...
+#TEXT 3-1
+Infelizmente, @<sName> morreu antes de alcançarmos nossa presa. Agora terei que encontrar a caravana sozinho e enfrentá-los por conta própria, ou então desistir da perseguição.
+#TEXT 4
+@<sName> caiu em batalha contra a caravana. Agora preciso terminar a luta sozinho e reivindicar todo o saque.
+#TEXT 5
+Não ganhamos nada daquela batalha malfadada. @<sName> tentou jogar a culpa em mim, então mandei-o embora. Que vá para o inferno esse tolo...
+#TEXT 6
+Nosso saque foi muito magro. @<sName> ficou realmente descontente, e eu também. Dividimos o butim e cada um seguiu seu rumo. Espero nunca mais cruzar com ele.
+#TEXT 7
+Dividimos o saque. @<sName> pareceu bastante satisfeito, e eu também. Se ao menos houvesse mais ataques como este...
+#TEXT 8
+Nosso saque foi generoso. Dividimos o butim. @<sName> ficou extremamente satisfeito, assim como eu. Quem me dera houvesse mais ataques como esse...
+#TEXT 9
+Decidi não dividir o saque com meu companheiro. É tudo meu!
+#TEXT 10
+O capitão @<sName> me convidou para saquear uma caravana comercial transportando @<sGoods>. O comboio partirá de @<sCity1> rumo a @<sCity2> em @<sDays>. Aceitei — deve haver butim suficiente para nós dois, e sempre é mais fácil lutar ao lado de um aliado.
+#TEXT 11
+O capitão @<sName> me ofereceu a chance de encontrar e capturar um navio pirata carregado de @<sGoods>. O pirata, @<sName1>, está consertando sua embarcação perto de @<sShore>, em @<sIsland>. Aceitei, pois acredito que haverá saque suficiente para nós dois — e, além disso, lutar lado a lado sempre facilita as coisas. Temos @<sDays> dias para concluir a operação.
+
+#QUEST Bakaut
+Evento: Mercadorias de Valor Estratégico
+#TEXT 1
+Posso encontrar o galeão de Michael Rozenkraft próximo de @<sIsland> por @<sDays>. Preciso levar para ele pelo menos @<sQty> madeiras de ferro.
+#TEXT 2
+Negócio fechado — vendi @<sQty> madeiras de ferro por @<sDublon> doblões. Meu lucro total ficou em @<sDublon1> moedas. Nada mal...
+#TEXT 3
+Que situação lamentável... Não trouxe madeira de lei suficiente, e Michael se recusou a comprar o pouco que eu tinha. Preciso ficar mais atento da próxima vez, se não quiser perder um cliente tão valioso.
+#TEXT 4
+Fracassei com Rosenkraft pela terceira vez, e agora ele não quer mais saber de negócios comigo. Que desperdício...
+
+#QUEST Mangarosa
+Manga Rosa
+#TEXT 1
+Descobri uma planta bastante incomum—alta, com folhas divididas e um aroma forte e agradável. Nunca vi nada parecido antes. Algo me diz que essa planta pode ser valiosa, então a levei comigo. Preciso encontrar alguém que possa identificá-la.
+#TEXT 2
+Essa planta se chama Manga Rosa. Uma jovem mercadora me contou que tanto os índios quanto os ciganos pagariam muito bem por ela.
+#TEXT 3
+Os ciganos pagam cinquenta dobrões por cada Manga Rosa. Mal posso acreditar que uma planta valha tanto assim. Se eu encontrar mais Manga Rosa, posso vendê-la aos ciganos, mas apenas uma de cada vez.
+#TEXT 4
+Os ciganos usam Manga Rosa para misturar algo ao tabaco deles. A bruxa se recusou a revelar o segredo dessa mistura, mas mencionou uma feiticeira chamada Amelia que conhece os mistérios dessa planta. Amelia mora numa casa em algum lugar a sudoeste da Cidade Principal.
+
+#QUEST Amulet_Mayak4_Lighthouseroom
+Evento: Farol de Guadalupe
+#TEXT 1
+O guardião do farol de Guadalupe prometeu conseguir @<sAml> para mim em dois meses, por 15.000 pesos.
+#TEXT 2
+O amuleto foi entregue. Agora posso fazer outro pedido.
+
+#QUEST Amulet_Mayak9_Lighthouseroom
+Evento: Farol de Santiago
+#TEXT 1
+O guardião do farol de Santiago prometeu entregar @<sAml> em dois meses por 15.000 pesos.
+#TEXT 2
+O amuleto foi entregue. Agora posso fazer outro pedido.
+
+#QUEST Amulet_Mayak11_Lighthouseroom
+Evento: Farol de Cartagena
+#TEXT 1
+O guardião do farol de Cartagena prometeu me entregar @<sAml> em dois meses por 15.000 pesos.
+#TEXT 2
+O amuleto foi entregue. Agora posso fazer outro pedido.
+
+#QUEST Unique_Goods
+Evento: Mercadorias de Valor Estratégico
+#TEXT 1
+Jan Svenson vende 25 peças de pau-ferro nos dias 14 e 28 de cada mês. Cada lote custa 750 dobrões.
+#TEXT 1_1
+Consegui negociar com Jan Svenson para aumentar o fornecimento de pau-ferro. Agora, nos dias 14 e 28 de cada mês, posso comprar 125 toras de pau-ferro dele por 3.150 dobrões.
+#TEXT 2
+Fadey, o Moscovita, vai me vender 50 rolos de corda todo dia 20 de cada mês. Cada lote custa 500 dobrões.
+#TEXT 2_1
+Consegui negociar com Fadey, o Moscovita, para aumentar o fornecimento de cordas de cânhamo. Agora, todo dia 20 de cada mês, posso comprar 250 rolos de corda com Fadey por 2.125 dobrões.
+#TEXT 3
+De agora em diante, estou autorizado a comprar 30 fardos de seda naval com o novo vice-diretor da Companhia Holandesa das Índias Ocidentais, todo dia primeiro e quinze de cada mês. O preço de cada lote é 600 dobrões.
+#TEXT 3_1
+Consegui negociar com o Vice-Diretor da Companhia de Comércio Holandesa em Willemstad para aumentar o fornecimento de seda. Agora, nos dias 1º e 15 de cada mês, posso comprar 150 fardos de seda dele por 17 dobrões cada, totalizando 2.550 dobrões pelo lote inteiro.
+#TEXT 4
+Sergio Saldo me ofereceu vender 60 barris de resina no quinto dia de cada mês. Cada carregamento vai custar 600 dobrões.
+#TEXT 4_1
+Consegui negociar com Sergio Saldo para aumentar o fornecimento de resina. Agora, todo dia 5 de cada mês, posso comprar 300 barris de resina no farol de Trinidad por 2.550 doblões.
+#TEXT 5
+Todo dia 15 do mês, Rodrigo Jimenez, o administrador da minha fábrica, entrega um lote de 20 toras de pau-ferro. A fábrica pode armazenar até seis lotes ao mesmo tempo; quando atinge esse limite, todo o trabalho é interrompido. O pagamento é feito imediatamente por todos os lotes em estoque. Cada lote custa 200 dobrões, 5 garrafas de rum e 5 garrafas de vinho—o que dá 10 dobrões por tora. Nada mal...
+
+#QUEST Useful_Acquaintances
+Cordas para puxar
+#TEXT   1
+************************************************************
+Posso sempre comprar mangarosa com a cigana em Saint John's—três talos por trezentos e cinquenta dobrões de ouro.
+#TEXT   2
+************************************************************
+Na taberna de Willemstad, descanso e prazer sempre me aguardam. A encantadora Betsy Price cuida de tudo.
+#TEXT   3
+************************************************************
+O mestre do porto em Belize me concedeu um desconto de cinquenta por cento nas taxas de atracação para um navio, até a segunda classe, por qualquer período. A embarcação ficará sob sua supervisão pessoal e permanecerá ilesa, mesmo que a cidade seja sitiada.
+#TEXT   4
+************************************************************
+Agora posso comprar vinho e rum no dia 15 com Christian Deluce em Basse-Terre. A casa dele fica à direita da residência do governador. O preço é de 26 dobrões por lote de 20 garrafas de vinho, e o mesmo valor para o rum.
+************************************************************
+#TEXT   4_1
+Consegui negociar entregas maiores com Christian. A partir de agora, ele vai reservar cem garrafas de vinho e rum para mim todo dia 15 de cada mês. O preço continua igual—cento e trinta doblões pelo lote inteiro.
+#TEXT   6
+************************************************************
+Na taverna de Puerto Principe, tenho direito a hospedagem e bebidas gratuitas. O estalajadeiro também prometeu que, graças à sua influência, mais marinheiros estarão dispostos a servir sob meu comando.
+#TEXT   7
+************************************************************
+Na ferraria de San Jose, posso comprar os materiais e itens de que preciso. Ele recebe novos suprimentos uma vez por mês.
+
+
+#QUEST FMQ_Guadeloupe
+O Preço da Discrição
+#TEXT 1
+Um homem chamado Bertrand Pinette me abordou nas ruas de Basse-Terre. Ele me contratou para levá-lo, junto com dois companheiros, até a Baía dos Mosquitos, no continente espanhol, em até dez dias. Aceitei o serviço. Devo encontrar meus passageiros na Praia de Capster às dez horas desta noite.
+#TEXT 2
+Já passa da meia-noite, e cheguei tarde demais para buscar meus passageiros.
+#TEXT 3
+Todos os passageiros já estão a bordo—hora de zarpar. Que tripulação estranha: um oficial espanhol e um oficial francês, ambos muito reservados e calados. O que um militar espanhol fazia numa ilha francesa? Tenho um mau pressentimento sobre isso.
+#TEXT 4
+O prazo de dez dias já passou e ainda não cheguei ao meu destino. Preciso apressar-me.
+#TEXT 5
+Minha viagem até Maine demorou demais, e aqueles canalhas de passageiros tentaram se amotinar. Agora estão todos mortos. Já vão tarde.
+#TEXT 6
+Os passageiros foram entregues. É melhor eu me afastar o máximo possível da costa espanhola.
+#TEXT 7
+Meus instintos estavam certos; entregar Bertrand Pinette e suas mulheres me trouxe mais problemas do que lucro. Uma prisioneira de guerra fugitiva, um desertor e um farsante—que tripulação. Tenho certeza de que Pinette fez uma fortuna nessa viagem. Quanto a mim, estou obrigado a caçá-lo e trazê-lo de volta para Guadalupe. Não há nada que eu possa fazer; aquele maldito banqueiro me pegou pelo colarinho. Melhor zarpar para o Panamá, já que era o destino final dos meus passageiros. E da próxima vez, é bom eu aprender a ficar de boca fechada!
+#TEXT 8
+Não encontrei Pinette nem suas damas no Panamá. Era de se esperar — deve ter mentido por precaução. Melhor traçar rota para Portobelo agora.
+#TEXT 9
+O balconista me deu um conselho sensato: falar diretamente com Dom Carlos de Milyar sobre Pinette. Brilhante. Esse é o jeito mais rápido de acabar na prisão local. O sorriso presunçoso do balconista sugere que ele sabe muito mais do que está dizendo. Preciso tentar convencê-lo a revelar o que sabe.
+#TEXT 10
+Nenhum sinal de Pinette por aqui, mas consegui encontrar o rastro do terceiro passageiro — o desertor francês. Agora ele é um don espanhol, no comando do Sario. Recompensa de traidor, sem dúvida. Não me resta alternativa a não ser abordar o navio dele e capturar o tal 'Don Juan'. Mesmo que ele não saiba o paradeiro de Bertrand, entregá-lo pode ajudar a acalmar o governador de Guadalupe.
+#TEXT 11
+Parece que a sorte está do meu lado — uma escuna chamada "Sario" está ancorada em Portobelo. Tentar abordá-la bem debaixo dos canhões do forte seria loucura. Melhor esperar até que ela deixe o porto e siga para mar aberto.
+#TEXT 12
+O Sario está em alto-mar. Preciso persegui-lo!
+#TEXT 13
+Cometi um erro e ataquei Sario no porto de Portobello. Jean-Juan está morto. Todas as pistas desapareceram, e não faço ideia de onde encontrar Pinette. Devo esperar problemas com as autoridades francesas.
+#TEXT 14
+Don Juan foi capturado e agora está preso no meu porão de carga. Preciso conversar com ele sobre Pinette.
+#TEXT 15
+Fracassei ao tentar abordar o Sario e capturar Jean-Juan. Todas as pistas sumiram, e não faço ideia de onde encontrar Pinette. Melhor me preparar para problemas com as autoridades francesas.
+#TEXT 16
+Meu prisioneiro está pronto para revelar informações sobre Bertrand Pinette. Estou zarpando rumo à Baía dos Mosquitos.
+#TEXT 17
+Bertrand Pinette decidiu continuar com seus negócios escusos em Barbados. Devo procurá-lo na maior plantação da ilha.
+#TEXT 18
+Aquele canalha do Pinette se recusou a me acompanhar até o navio, então precisei dar uma lição nele. Posso ter problemas com as autoridades francesas, mas esse patife em particular não vai mais incomodar.
+#TEXT 19
+Aquele canalha do Pinette se recusou a me acompanhar até o navio. Foi tolice esperar algo diferente dele. Fica a lição. Agora preciso circular pela plantação e bolar um plano para capturar o Monsieur Bertrand à força.
+#TEXT 20
+Tenho um plano: há uma estrada que vai da plantação até o farol de Barbados. Vou ancorar meu navio perto do farol e preparar uma emboscada para Pinette no cruzamento entre a cidade e a plantação. Preciso encontrar um bom lugar onde eu possa ficar escondido por tempo suficiente. Bertrand costuma viajar para Bridgetown a negócios, então duvido que eu precise esperar mais do que alguns dias por ele.
+#TEXT 21
+Não tive coragem de atacar Pinette; ele estava muito bem protegido. Agora preciso fugir — ele percebeu minha emboscada e certamente avisará o comandante. Uma pena; é de se esperar problemas com as autoridades francesas daqui pra frente...
+#TEXT 22
+Bertrand Pinette agora é meu prisioneiro. Devo voltar a Basse-Terre e falar com o banqueiro.
+#TEXT 23
+Está feito. Consegui meu dinheiro e minha reputação. Essas 150 dobrões não compensam todos os meus problemas, mas já é alguma coisa. Esse foi o preço da minha imprudência.
+#TEXT 24
+Pinette me ofereceu uma solução interessante — uma carta que incrimina o banqueiro de Basse-Terre. Dom Juan estava certo sobre os ases na manga desse homem. Vai ser um prazer ver a cara do meu chantagista. E não posso esquecer do tesouro de Bertrand, que me espera numa caverna em Guadalupe.
+#TEXT 25
+A carta de Pinette causou um grande impacto no banqueiro. Ele vai ficar de boca fechada, disso tenho certeza. Agora devo verificar o esconderijo de Bertrand—é arriscado demais deixar aquilo lá por mais tempo.
+#TEXT 26
+Fui atacado por vários mercenários contratados pelo meu banqueiro em Basse-Terre. Parece que ele me considera uma testemunha perigosa e quer me ver morto. Muito bem, está na hora de fazer outra visita a ele.
+#TEXT 27
+O bastardo ficou apavorado. Tenho certeza de que ele não vai ousar tentar me prejudicar de novo.
+#TEXT 28
+O prazo de dois meses para encontrar Bertrand Pinette expirou. Agora preciso lidar com meus problemas de reputação nas colônias francesas... @<sAdd>@<sAdd1>
+#TEXT 29
+A carta de Pinette causou forte impressão no banqueiro. Ele vai ficar de boca fechada, com certeza. Melhor eu verificar o esconderijo do Bertrand agora — é arriscado demais deixar aquilo lá por mais tempo.
+
+#QUEST FMQ_Martinique
+Cão de Resina
+#TEXT 1
+Hoje conheci um carpinteiro no estaleiro de Saint-Pierre. Ele me disse que o construtor naval deseja falar comigo. Suspeito que valerá a pena — está claro que ele precisa dos meus serviços.
+#TEXT 2
+Mudei de ideia e decidi não visitar o estaleiro.
+#TEXT 3
+O construtor naval me pediu para atacar um comboio comercial espanhol, mas não me interessei e recusei.
+#TEXT 4
+O construtor naval me encarregou de localizar um comboio espanhol que navega de Port of Spain, em Trinidad, até San Juan, em Porto Rico. Preciso abordar o Bensecho, que transporta uma resina rara e valiosa. Se eu conseguir, posso ganhar cerca de 1.500 dobrões!
+#TEXT 5
+O Bensecho afundou no calor da batalha. Que pena.
+#TEXT 6
+Deixei o comboio mercante e Bensecho escaparem. Que pena...
+#TEXT 7
+Abordei o Bensecho, mas não consegui encontrar barris de resina suficientes para satisfazer meu cliente. Que pena.
+#TEXT 8
+O Bensecho foi saqueado, e agora a resina está guardada no meu porão. Hora de encontrar meu cliente.
+#TEXT 9
+Já faz mais de um mês desde que aceitei esse trabalho. O construtor naval de Saint-Pierre provavelmente já me esqueceu a essa altura.
+#TEXT 10
+Fui enganado da forma mais descarada: o mestre construtor naval e seu tenente, Felicien Gronier, me passaram a perna com aquela encenação de "Prisão do Contrabandista de Bom Coração". Não vou deixar isso barato. Gregoire Valinnie estava certo — paciência é fundamental neste caso. Devo permanecer em Saint-Pierre por um tempo e observar quando o estaleiro voltar a funcionar.
+#TEXT 11
+Não demorou muito. Dois dias, e o estaleiro já voltou ao normal. Devo fazer uma visita ao construtor naval e encarar aqueles olhos traiçoeiros.
+#TEXT 12
+Esse vigarista me contou uma história triste sobre seu 'terrível tempo na prisão' sem nem piscar. É um patife experiente—não adianta tentar pressioná-lo. Pra piorar, ele ainda tem um tenente colonial como amigo íntimo e cúmplice. Vou precisar bolar um plano...
+#TEXT 13
+Parece que não estou cercado apenas por hordas de canalhas e patifes — também tenho amigos. Meu velho e nobre conhecido, Gregoire Valinnie, resolveu investigar as últimas ações de Felicien Gronier. O tenente partiu para Guadalupe a bordo de uma tartana recém-construída chamada 'Topázio'. Devo segui-lo e descobrir o que ele está tramando.
+#TEXT 14
+Demorei demais e deixei Felicien Gronier escapar. Agora não há como recuperar o que perdi.
+#TEXT 15
+Avistei a tartana perto de Guadalupe, nas praias desertas da enseada de Morn l'O. Estão descarregando mercadorias na areia. Vou esperar terminarem, então desembarcar e “confiscar” a resina que me devem. Ali, não terão como escapar de mim.
+#TEXT 16
+Cheguei perto demais do Topázio e acabei alertando a tripulação. Agora a tartana está indo para o mar aberto, e há movimento na costa. Estraguei meu próprio plano—não faz sentido desembarcar ali agora. Tenho certeza de que aqueles canalhas vão esconder a mercadoria na mata.
+#TEXT 17
+O Topázio terminou de descarregar e agora está partindo. Melhor esperar algumas horas antes de desembarcar. Hora de recuperar minha resina.
+#TEXT 18
+Eliminamos a escória na praia, mas a luta ainda não acabou. O tenente Felicien Gronier apareceu em pessoa—parece que teve um pressentimento e voltou. Que timing perfeito, seu cão de breu! Trouxe cinco brutamontes com ele. Estão ali parados como estátuas, esperando...
+#TEXT 19
+Decidi não arriscar enfrentando o bando de Felicien Gronier — pareciam perigosos demais. Prefiro sair com menos butim e preservar minha vida. Além disso, metade da resina já é um saque e tanto.
+#TEXT 20
+Felicien Gronier tentou me ameaçar, mas as coisas não terminaram bem para ele nem para seus comparsas—vão ficar para sempre nesta costa. No fim das contas, mesmo recebendo só metade da minha resina, ainda consegui seda naval, cordas de cânhamo e madeira de ferro. Meus prejuízos foram mais do que compensados pelo lucro!
+#TEXT 21
+O Topázio me atacou quando eu deixava a baía. Por que essa pequena tartana escolheu travar sua última batalha comigo ainda é um mistério.
+#TEXT 22
+Demorei demais para desembarcar na costa, e agora os homens de Felicien Gronier já se foram. Uma pena, que desperdício...
+
+#QUEST FMQ_Nevis
+Fuga da Prisão
+#TEXT 1
+O tenente Caspar Gratton dos Fuzileiros Reais me pediu para levar ele e seu pequeno destacamento até a praia de Grand Case, em Sint Maarten. Com certeza não vieram a passeio, e essa ilha pertence aos holandeses. Mas isso não é problema meu—dez mil pesos por dois dias de serviço é uma recompensa e tanto.
+#TEXT 2
+Demorei na viagem, e os britânicos se amotinaram. Tive que acabar com a rebelião.
+#TEXT 3
+O tenente Caspar Gratton decidiu que eu deveria ajudá-lo em sua operação militar contra a Holanda. Sem chance. Escapar de Sint-Maarten agora é problema dele.
+#TEXT 4
+O tenente Kaspar Gratton e seus soldados já foram entregues em Sint Maarten, mas até agora nada de pagamento. Em vez disso, o tenente pediu para esperar alguns dias e depois levá-los até Antígua, onde seu comandante, o coronel Fox, pagaria generosamente. Sei... Só espero não acabar me metendo em confusão com os holandeses. Estou indo para o porto de Philipsburg: primeiro, para despistar qualquer suspeita dos holandeses, e segundo, para tentar descobrir o que esses fuzileiros britânicos vieram fazer aqui afinal.
+#TEXT 4_1
+O tenente Kaspar Gratton e seus soldados foram entregues em Sint Maarten, mas o pagamento não veio. Em vez disso, o tenente pediu para esperar alguns dias e depois levá-los até Antígua, onde seu comandante, o coronel Fox, me pagaria generosamente. Muito bem... Só espero que isso não acabe me trazendo problemas com os holandeses. Estou indo para o porto de Philipsburg: primeiro, para despistar qualquer suspeita dos holandeses, e segundo, para sondar a situação — por que fuzileiros britânicos desembarcaram aqui, se Inglaterra e Holanda estão em paz?
+#TEXT 5
+Já se passaram três dias e não descobri nada. Melhor voltar à Praia de Grand Case — talvez o tenente já esteja me esperando por lá.
+#TEXT 6
+O tenente Caspar Gratton nunca apareceu, afinal. Tenho a sensação de que ele nunca vai aparecer. É melhor eu sair daqui antes que seja tarde demais.
+#TEXT 7
+Isso só melhora... Liderei um grupo de saqueadores ingleses até Sint-Maarten, com ordens de infiltrar a prisão em Philipsburg e libertar os oficiais ingleses capturados. Se os holandeses descobrirem, estarei em apuros. Devo tentar encontrar meus passageiros na selva e avisá-los da emboscada? Ou seria mais sensato fugir deste lugar o quanto antes?
+#TEXT 8
+Aquele rapaz do governador quase me fez perder o juízo! Achei que os holandeses tinham descoberto meu envolvimento na operação militar inglesa... Mas, ao que parece, o governador quer que eu ajude a caçar espiões ingleses, prometendo uma bela recompensa por qualquer informação concreta. Se ele soubesse com quem está lidando... Preciso encontrar os britânicos e alertá-los ou, se já for tarde demais, dar um jeito de fugir desta ilha.
+#TEXT 9
+Aquele rapaz do governador quase me fez morrer do coração! Achei que os holandeses tinham descoberto meu envolvimento na operação militar inglesa... Mas, na verdade, o governador só quer que eu ajude a caçar espiões ingleses, prometendo uma recompensa por qualquer informação concreta. Se ele soubesse com quem realmente está lidando... Aceitei ajudar. Agora preciso encontrar os ingleses e avisá-los do perigo iminente, ou então ficar do lado dos holandeses. Para ser sincero, não devo nada ao tenente—ele mentiu para mim e nunca me pagou, então por que eu deveria me importar? Por enquanto, é melhor eu procurar o comandante.
+#TEXT 10
+O comandante está à beira de um colapso nervoso por algum motivo. Ainda assim, ele compartilhou algo interessante — a patrulha holandesa desapareceu. Isso só pode ser obra dos meus aliados. Estou indo para a selva.
+#TEXT 11
+Esse serviço de “passageiro” está me saindo caro demais! Agora o tenente quer que eu ajude a libertar os oficiais capturados. Muito esperto, tenente... Estou indo para a cidade. Os britânicos têm um agente na igreja local — Filippe Jacobsen. Posso encontrá-lo lá entre seis e dez da manhã. Ou então, posso trair o grupo de ataque para o comandante de Philipsburg.
+#TEXT 12
+Esse serviço de “passageiro” está me saindo caro demais! Agora o tenente quer minha ajuda para libertar os oficiais capturados. Muito esperto, tenente... Estou indo para a cidade. Os britânicos têm um agente na igreja local — Filippe Jacobsen. Posso encontrá-lo lá entre seis e dez horas da manhã.
+#TEXT 13
+Decidi não me envolver nos esquemas de Caspar Gratton. Entreguei ele e sua tripulação ao comandante de Philipsburg sem revelar meu envolvimento. Agora está nas mãos dos holandeses.
+#TEXT 14
+Está feito. Eu estava certo — os britânicos resistiram e foram aniquilados. Ninguém jamais saberá do meu envolvimento nesse assunto. Também recebi minha recompensa de dez mil pesos.
+#TEXT 15
+Decidi não me envolver nos esquemas de Caspar Gratton. Em vez disso, entreguei ele e sua tripulação ao comandante de Philipsburg sem revelar meu envolvimento. Também me ofereci para integrar o destacamento punitivo holandês.
+#TEXT 16
+Está feito. O grupo de ataque britânico foi eliminado, e não sem a minha ajuda. Não tenho dúvidas — não fui eu quem começou isso. Amanhã devo visitar o governador para receber minha recompensa.
+#TEXT 17
+Dez mil pesos e uma licença de três anos da Companhia Holandesa das Índias Ocidentais! Uma recompensa esplêndida, embora eu tema que os ingleses descubram meu envolvimento em tudo isso.
+#TEXT 18
+Jacobsen bolou um plano astuto: quer misturar o vinho dos soldados com uma poção cigana de sonhos. Tive que pagar isso do meu próprio bolso... A conta de Caspar Gratton só aumenta. Devo voltar à igreja amanhã, na mesma hora.
+#TEXT 19
+Arruinei o plano astuto de Jacobsen chegando atrasado ao nosso encontro. Maravilha. Será que ele conseguiu colocar vinho envenenado na prisão? Não faço ideia do que fazer agora. Não, há uma coisa — preciso sair daqui!
+#TEXT 20
+Jacobsen já preparou tudo: esta noite, os guardas da prisão vão provar nosso vinho dos sonhos. Precisamos começar a libertar os prisioneiros até a meia-noite. Todo cuidado é pouco; devo evitar as patrulhas nas ruas.
+#TEXT 21
+Então, Caspar Gratton e seus homens virão resgatar seus compatriotas esta noite, e eu vou escoltá-los até a porta da prisão... Duvido que um uniforme holandês ajude muito nas ruas; precisamos evitar as patrulhas a todo custo. Resta torcer para que a sorte esteja do nosso lado...
+#TEXT 22
+Meu timing impecável arruinou tudo. Que vergonha. É melhor eu sair daqui.
+#TEXT 23
+Cheguei atrasado ao encontro nos portões da cidade. Temo que os ingleses tenham entrado sozinhos e foram pegos pelas patrulhas. Isso é o fim. Melhor eu sair daqui.
+#TEXT 24
+Fomos descobertos pelas patrulhas. Consegui escapar, mas meus amigos ingleses não tiveram a mesma sorte. Que pena...
+#TEXT 25
+Está feito! Agora precisamos zarpar para a Praia de Grand Case e deixar Sint Maarten o quanto antes.
+#TEXT 26
+Parece que fomos descobertos pelos holandeses — armaram uma emboscada na praia. A luta foi dura, mas saímos vitoriosos.
+#TEXT 27
+Enfrentei uma patrulha holandesa e saí vitorioso, mas ainda não acabou—a corveta 'Zeepard' está se aproximando. Não devo arriscar outra batalha; é hora de zarpar rumo a Antígua.
+#TEXT 28
+Finalmente, entreguei os oficiais britânicos em Antígua. Amanhã, devo visitar o coronel Fox dos Fuzileiros Reais. Espero que ele demonstre alguma generosidade pelos meus esforços.
+#TEXT 29
+30.000 pesos, uma arcabuz e uma boa lâmina. É uma recompensa justa pelo trabalho, mas não é o tipo de serviço que eu aceitaria novamente.
+#TEXT 30
+Levei meu tempo para levar os ingleses até Antígua, e eles desembarcaram do meu navio sem nem se despedir. Bem típico dos ingleses...
+
+#QUEST FMQ_Tortuga
+Como em Casa
+#TEXT 1
+Tortuga me recebeu com um convite da esposa do governador para comparecer à reunião dela hoje à noite, depois das seis horas. Vai ser interessante observar a nobreza local. Só espero não encontrar nenhum marido furioso traído por minha causa—esse tipo de confusão era comum demais na minha terra natal.
+#TEXT 2
+Tortuga é um lugar curioso. As mulheres daqui sabem muito bem o que querem. Contei umas histórias de marinheiro para uma jovem bem ingênua, e agora estou convidado para encontrar ela e suas amigas no jardim do palácio do governador hoje à noite, depois das seis. Na Europa, as mulheres correm atrás de artistas nobres de famílias famosas. Aqui, basta ter um navio. Meu irmão estava certo; o dinheiro foi bem investido.
+#TEXT 3
+Mudei de ideia. Não tenho tempo para me preocupar com assuntos de mulheres.
+#TEXT 4
+Eu não esperava por isso. Ou será que esperava? A esposa do governador local queria que eu roubasse aquele fanático enlouquecido. Claro, preciso do dinheiro, mas não estou tão desesperado assim. A dama não ficou satisfeita, mas saí dessa história limpo e com vida. Devo avisar Levasseur sobre isso? Preciso decidir agora.
+#TEXT 5
+Decidi não me envolver. Assuntos de família costumam ser complicados.
+#TEXT 6
+O doce ar de romance da noite se dissipou depressa. A esposa do governador local quer que eu roube o próprio marido dela—com as minhas próprias mãos, é claro. As joias estão trancadas em um baú, e uma chave duplicada já foi feita. No momento, ela está com um pirata que se afoga em rum numa taverna. Como fui parar nessa situação? Será que a dama está me fazendo de tolo, ou é tola ela mesma? De qualquer forma, preciso do dinheiro; Michel não vai sair daquela cela sem a minha ajuda.
+#TEXT 7
+Contei ao Levasseur sobre os planos da esposa dele. Ele não reagiu nada bem—ficou furioso, jogou umas moedas de esmola na minha direção e me pôs pra fora. Acho que estou começando a sentir pena da mulher dele...
+#TEXT 8
+Já é tarde demais para procurar o pirata com a chave na taverna. Não faz mal—menos intriga significa menos problemas.
+#TEXT 9
+Maldição. Agora tudo faz sentido, graças ao meu novo conhecido. Ofereceram a ele a mesma recompensa, mas teve juízo e caiu fora. Também não sou tolo. Devo avisar o marido? Preciso decidir agora.
+#TEXT 10
+Meu encontro com o pirata foi proveitoso — cinquenta dobrões pela chave duplicada e alguns conselhos valiosos. Preciso ficar atento à mulher de Levasseur; está claro que ela está tentando me manipular.
+#TEXT 11
+A esposa do governador me pediu para entregar a chave duplicada e voltar no dia seguinte para receber minha parte. Não confiei nesse acordo e recusei. Está na hora de eu mesmo encontrar o baú e ficar com o tesouro.
+#TEXT 12
+Mudei de ideia e decidi não ajudar a esposa com o plano dela. É arriscado demais. Vou me livrar da chave duplicada e deixar toda essa confusão para trás.
+#TEXT 13
+Consegui arrombar o baú do Levasseur, mas ainda não voltei para a esposa dele. Adeus, sua malandra astuta — ha-ha.
+#TEXT 14
+Mudei de ideia e decidi não ajudar a esposa com o plano dela. Arriscado demais. Logo na primeira etapa, já houve derramamento de sangue. Nem cheguei a pegar a chave duplicada do corpo do pirata — melhor esquecer essa confusão de uma vez por todas.
+#TEXT 15
+Meu encontro com o pirata foi proveitoso. O barman e suas damas vão ter muito trabalho para limpar tudo. Estou com a chave duplicada—hora de fazer uma visita à esposa.
+#TEXT 16
+Está feito. Amanhã à noite devo encontrar a esposa do governador para receber minha parte. Ainda assim, enquanto escrevo estas linhas, sinto-me... estranho. Ingênuo, talvez. Quem sabe até tolo.
+#TEXT 17
+Isso não é brincadeira. Um capanga contratado acabou de tentar me matar, e tenho uma boa ideia de quem o enviou. Ainda assim, as coisas acabaram jogando a meu favor—fiquei com o saque e agora ganhei um combatente habilidoso para minha tripulação. Hora de fazer uma visita ao... cliente.
+#TEXT 18
+Isso não é brincadeira. Um capanga contratado acabou de tentar me matar, e tenho uma boa ideia de quem mandou. Ainda assim, as coisas acabaram a meu favor—até deixei o desgraçado sair vivo. Agora, é hora de fazer uma visita ao mandante.
+#TEXT 19
+Isso não é brincadeira. Um capanga contratado acabou de tentar me matar, e tenho uma boa ideia de quem o enviou. Ainda assim, as coisas acabaram do meu lado — o canalha está morto. Hora de fazer uma visita ao mandante.
+#TEXT 20
+Veja só — a moça realmente achou que eu daria uma parte para ela depois de mandar um assassino para me matar. Ha! Que tente a sorte.
+#TEXT 21
+Está feito. Peguei minha parte, mas ainda sinto que fui usado como uma prostituta. Da próxima vez, serei mais esperto. Parece que sempre é assim por aqui. Quase me lembra de casa.
+#TEXT 22
+Que desastre! Aquela maldita garota me roubou enquanto a gente se divertia na cama. Não tem a menor chance de eu contar isso pra alguém, então vou considerar ela a prostituta mais cara da minha vida. Fica a lição. Espero.
+#TEXT 23
+Droga! Aquela vadia realmente me enganou direitinho. A culpa é toda minha. Agora não há mais o que fazer. Pelo menos, foi uma lição valiosa.
+#TEXT 24
+Está feito. Estou vivo, com minha parte das moedas e um bom tanto de prazer. Que mulher! Estou começando a gostar desse novo modo de vida. Vou ter histórias para contar quando voltar para casa.
+
+#QUEST FMQ_Portpax
+Grão-Albalate
+#TEXT 1
+Hoje à noite, ajudei um homem chamado Don Domingo Albalate a sair de uma situação complicada. Ele é um jovem fidalgo espanhol e me convidou para visitá-lo em Santo Domingo. Sua casa fica logo ao lado dos portões da cidade.
+#TEXT 2
+Decidi não navegar para Santo Domingo. Afinal, é uma cidade espanhola.
+#TEXT 3
+Dom Domingo não apareceu para me encontrar. Em seu lugar, fui recebido por figuras estranhas e hostis. Devem estar esperando por Albalate. É melhor vasculhar a área e investigar.
+#TEXT 4
+Encontrei o corpo do verdadeiro Ugo — o criado de dom Domingo. Havia também um bilhete curioso e inacabado sobre a mesa: "Jovem señor, ainda não entendo o que realmente está acontecendo, mas você está em grande perigo. Sei que tais palavras não significam nada para você, mas, por favor, pelo seu pai — por favor, deixe a cidade o quanto antes! Encontrei documentos do seu tio..." Está claro que alguém está atrás do jovem dom. Seu fiel criado tentou alertar o mestre, mas foi impedido.
+#TEXT 5
+Ouvi a história de Don Albalate e concordei em levá-lo até sua plantação em Portobelo. Ele pagou generosamente adiantado, e ajudar um jovem señor em apuros é uma boa ação. Estou rumando para o sul a todo pano antes que o tio do jovem fidalgo volte de Cartagena.
+#TEXT 6
+Demorei demais para chegar a Portobelo, e Dom Albalate perdeu a paciência e foi embora.
+#TEXT 7
+Chegamos à plantação de Portobello. Preciso encontrar a casa de Luis Ortiz e vasculhar o interior em busca de pistas.
+#TEXT 8
+Encontrei o livro de contabilidade do Ortiz. Domingo ficou bastante perturbado ao ler as anotações—descobriu que seu tio o enganava há anos, sempre declarando uma renda menor do que a real. O grande Albalate está indo para Portobelo para apresentar o caso diante do tribunal.
+#TEXT 9
+Isso foi inesperado. Quando Don Luis Ortiz e seus capangas apareceram de surpresa, resolvi deixar que resolvessem seus assuntos de família sozinhos. Além disso, fui bem pago...
+#TEXT 10
+Don Diego e eu finalmente enfrentamos Luis Ortiz cara a cara assim que saímos da casa dele. O desgraçado tentou me subornar, mas falhou—e agora está morto. Infelizmente, o mesmo destino teve o pobre Grande Albalate. Que pena... Melhor eu sair daqui antes que as autoridades resolvam me tratar como cúmplice.
+#TEXT 11
+Don Diego e eu finalmente confrontamos Luis Ortiz assim que saímos da casa dele. O desgraçado tentou me subornar, mas fracassou—e agora ele e seus capangas estão servindo de comida para os vermes. Don Domingo pretende resolver logo os assuntos com a propriedade. Amanhã devo encontrá-lo para receber minha recompensa.
+#TEXT 12
+Este é o fim do curioso caso de Don Albalate. O jovem fidalgo decidiu assumir o controle e cuidar dos negócios da família por conta própria. Quanto a mim, fui generosamente recompensado pelos meus esforços.
+#TEXT 13
+Chegamos tarde demais a Portobelo—Luis Ortiz já havia destruído todas as provas. Don Domingo terá que enfrentar seus problemas no tribunal. Desejo-lhe sorte. Ainda assim, não saí de mãos vazias; o Grão-Senhor Albalate me presenteou com seu florete.
+#TEXT 14
+Não encontrei o jovem dom na casa do Marquês Albalate; em vez disso, fui recebido por seu criado, Ugo. Ele ficou visivelmente nervoso ao ouvir sobre o ataque ao seu mestre e correu direto para o comandante. Fui expulso do local sem cerimônia. Tudo bem, posso muito bem viver sem essa famosa “hospitalidade” espanhola.
+
+#QUEST FMQ_Lesson
+A Última Lição
+#TEXT 1
+Hoje encontrei Gregoire Valinnie — o mesmo fidalgo que me acolheu com tanta gentileza no meu primeiro dia nestas águas. Parece que foi há séculos. Ele me convidou para participar de um empreendimento bastante promissor, e aceitei. Daqui a uma semana, vamos zarpar rumo à costa de Boca de la Serpienta, desembarcar com um grupo de combatentes, localizar a expedição, reprimir a resistência indígena e tomar as mercadorias da Companhia. Arriscado, sem dúvida, mas o lucro pode compensar.
+#TEXT 2
+Droga! Gregoire Valinnie foi morto em combate. Não faz sentido continuar sem meu parceiro. Descanse em paz, amigo.
+#TEXT 3
+Não ousamos enfrentar os caribes em um confronto decisivo — estamos com poucos homens para isso. Melhor abrir mão do saque e continuar vivos. Estamos partindo.
+#TEXT 4
+Maldição! Que estupidez... Eles já devem ter levado toda a mercadoria. Gregoire Valinnie ficou furioso e abandonou meu esquadrão.
+#TEXT 5
+Conseguimos resgatar parte da carga do covil dos Caribes antes de sermos interrompidos pelas vanguardas inglesa e holandesa. É melhor zarparmos daqui. Nosso saque total: @<sSanl> de madeira de ferro, @<sSilk> de seda naval, @<sRope> de cordas e @<sOil> de resina. Rumo a Saint-Pierre, Martinica.
+#TEXT 6
+Vitória. Sangrenta e inútil como só ela. Não há como levarmos o prêmio com tantas baixas. Maldição!
+#TEXT 7
+Hoje à noite, vamos fechar o acordo na Baía de Lamentin. Em breve, teremos o dinheiro, e os outros ficarão com a carga ilegal. Meu parceiro é um homem de visão — disso não há dúvida.
+#TEXT 8
+Estou sem palavras. Ninguém nesta maldita região é digno de confiança. Consegui algumas moedas, mas... lição aprendida, e muito bem aprendida. Acho que devo ser grato pela experiência, mas aquele canalha que reze para que nossos caminhos nunca se cruzem de novo.
+#TEXT 9
+Não posso afirmar com certeza que foi a luta mais difícil da minha vida. Mas estou vivo, com o dinheiro e a carga em mãos. Mais uma praia tingida de sangue. Não sei como sobrevivi, mas sinto que isso é só o começo, e acabo de cruzar o ponto sem volta. De qualquer forma, obrigado pela lição, monsieur Gregoire. Aprendi direitinho.
+#TEXT 10
+Não posso afirmar com certeza que essa foi a luta mais difícil da minha vida. Mas estou vivo, e tenho tanto o dinheiro quanto a carga. Mais uma praia tingida de sangue. Duvido que teria sobrevivido sem Prosper. Só sei que ninguém viria me ajudar assim, de graça, na França. Aprendi a lição. Descanse em paz, meu amigo. Separei algumas moedas para sua filha; lamento não poder fazer mais por ela.
+#TEXT 11
+Que pena — o navio do Gregoire foi afundado em combate. Isso é um fracasso.
+#TEXT 12
+Que pena — o navio de Gregoire foi afundado em batalha na viagem de volta para Martinica. Toda a carga também se perdeu.
+#TEXT 13
+Demorei demais para chegar a Martinica, e Gregoire partiu com toda a carga roubada.
+#TEXT 14
+Não cheguei à Baía de Lamentin a tempo, e o acordo foi fechado sem mim. O navio do Gregoire já partiu, levando junto a minha parte.
+#TEXT 15
+Não posso afirmar com certeza que foi a luta mais difícil da minha vida, mas estou vivo — e com o dinheiro e a carga em mãos. Mais uma praia tingida de sangue. Duvido que teria sobrevivido sem Prosper. Uma coisa ficou clara: ninguém na França teria me ajudado tão prontamente. Aprendi a lição.
+
+#QUEST Roger_1
+Sob a Bandeira Negra: A Corrida pelo Âmbar
+#TEXT 1
+Marcus Tyrex, o famoso barão dos Irmãos e Guardião do Código, me incumbiu de investigar uma história sobre misteriosos depósitos de âmbar azul, contada por um capitão espanhol. Minhas ordens são claras: encontrar e garantir o âmbar, ou provar que não passa de conversa de bêbado. Aposto na segunda opção. Preciso ir até Santo Domingo e procurar uma prostituta chamada Gabriela Chapada. Tenho apenas três dias antes que essa informação perca o valor.
+#TEXT 2
+Demorei demais para chegar em Santo Domingo. Agora não tem como encontrar aquele capitão espanhol. Que pena perder a chance de trabalhar para um pirata famoso assim, tão de repente...
+#TEXT 3
+Gabriela me revelou o nome do meu valente soldado — Esberdo Cabanas. Ele partiu para Havana em busca dos recursos necessários para procurar âmbar. Talvez estivesse dizendo a verdade o tempo todo... É melhor eu zarpar para Cuba imediatamente.
+#TEXT 4
+Passei tempo demais investigando em Havana. É uma pena perder a oportunidade de trabalhar para um pirata tão famoso assim...
+#TEXT 5
+Fui informado no escritório do porto que o Cantavro está em patrulha, mas sua localização é confidencial. Não sou tolo a ponto de incomodar o comandante com esse tipo de assunto. Preciso encontrar outro jeito de conseguir a informação de que preciso.
+#TEXT 6
+Cheguei a Cuba, mas não há sinal do Cantavro. Melhor entrar na cidade e investigar.
+#TEXT 7
+Parece que encontrei uma maneira de rastrear o capitão Esberdo Cabanas. O inimigo do meu inimigo pode muito bem ser meu aliado. Duvido que o oficial preso tenha algum apreço por seu antigo capitão. É melhor eu fazer uma visita a esse amante de vinho e mulheres.
+#TEXT 8
+Ha! Isso é um começo! Agora só preciso ajudar meu bom amigo Lope... Melhor eu visitar o governador.
+#TEXT 9
+Agora é tarde demais para ajudar o prisioneiro. Não há como eu alcançar o Cantavro neste momento. Que pena.
+#TEXT 10
+Para garantir a libertação de Don Lope, preciso reunir 250 dobrões ou trinta mil pesos. O tempo está se esgotando...
+#TEXT 11
+Está feito. Custou-me uma fortuna, mas acredito que o prêmio final compensará meus gastos. Amanhã devo visitar meu amigo Lope em sua cela. Também preciso me preparar para zarpar imediatamente.
+#TEXT 12
+Esberdo Cabanas está agindo na Costa dos Mosquitos. Preciso me apressar — tenho cerca de sete dias!
+#TEXT 13
+Não cheguei à Costa dos Mosquitos a tempo. Que desastre. Que pena—agora não faz sentido encontrar Tyrex.
+#TEXT 14
+Consegui alcançar o Cantavro e seus botes, mas não consegui saquear nem um pedacinho de âmbar azul. Que vergonha!
+#TEXT 15
+Consegui saquear vários botes, mas o total do butim é apenas @<sQty> peças. Não vale a pena visitar Tyrex com uma quantia tão insignificante de pilhagem.
+#TEXT 16
+O saque foi realmente generoso; consegui juntar @<sQty> pedaços de âmbar azul, além de um pouco de âmbar comum. Preciso visitar Tyrex e me gabar do meu butim.
+#TEXT 17
+Preciso encontrar Rosario Gusman. Segundo o governador, esse caballero já tentou ajudar Don Lope Montoro. Não há tempo a perder. Don Rosario faz suas rondas pelos postos da guarda da cidade todos os dias, das 16h às 20h.
+
+#QUEST Roger_2
+Sob a Bandeira Negra: A Rota da Seda
+#TEXT 1
+Tyrex deve estar testando os limites da minha paciência. Em vez de caçar comboios mercantes, fui encarregado de encontrar um comprador confiável para uma mercadoria rara — seda naval. Não faço ideia por onde começar. Por ora, devo me encontrar com Careca Geffrey, capitão do galeão Serpente, em Capsterville, na ilha de São Cristóvão.
+#TEXT 2
+Perdi tempo demais, e o Careca Geffrey provavelmente já resolveu agir por conta própria, sem esperar ordens do Tyrex. Que pena...
+#TEXT 3
+Obrigado, Tyrex! Os contrabandistas estão oferecendo um preço que Marcus não aceita, e as lojas não são uma opção. Alguém por aí deve precisar dessa seda, já que os contrabandistas claramente estão revendendo. Preciso pensar — quem são os principais compradores de seda para navios? Se eu descobrir isso, encontrarei um comprador.
+#TEXT 4
+Conversei com o construtor naval em Capsterville, mas nossa conversa não levou a lugar nenhum. Ainda assim, sinto que estou no caminho certo. O construtor precisava de cordas vindas da Rússia — mas quem, por aqui, teria interesse em seda de Lyon?
+#TEXT 5
+Encontrei um possível comprador para minha seda, mas infelizmente não chegamos a um acordo. Ou ele desconfia que sou um dedo-duro, ou simplesmente não faz negócios com desconhecidos. Ainda assim, vi um brilho nos olhos dele quando mencionei a seda... Aposto que esse malandro já tem um fornecedor regular, e não é o governador. Forçar mais o mestre não vai adiantar; preciso descobrir quem são os fornecedores dele. Há um covil de piratas na Jamaica — Maroon Town. Devo ir até lá e investigar.
+#TEXT 6
+Um taberneiro em Maroon Town pode me indicar um sujeito que sabe de tudo o que acontece nessas águas. Preciso juntar 50 dobrões para o desgraçado ganancioso.
+#TEXT 7
+Parece que preciso encontrar um homem chamado Husky Billy, um ex-pirata que agora pesca perto da Jamaica em seu velho bote. Devo esperar por ele não muito longe do Cabo Negril. Sua embarcação se chama Fly Fish.
+#TEXT 8
+Billy pode me indicar o fornecedor de seda, mas quer em troca um novo escaler e um rolo de seda naval. Tenho três dias para entregar tudo a ele antes que zarpe para o mar aberto.
+#TEXT 9
+Segundo Husky Billy, todo mês, entre os dias 10 e 15, uma brigantina chamada Utrecht contrabandeia seda para o mestre do estaleiro de Port Royal. Preciso eliminar meu concorrente. Posso informar o governador—deixar que os ingleses façam o trabalho sujo e ainda ganhar o favor deles. Ou então, posso interceptar a Utrecht eu mesmo no mar. Ela deve estar vindo para a Jamaica, seja de Curaçao ou de St. Maarten. De qualquer forma, tirando ela do caminho, o cliente ficará muito mais receptivo.
+#TEXT 10
+Não consegui entregar o bote e a seda para Husky Billy a tempo. O pirata já deve estar bem longe. Não faz sentido contar ao Tyrex sobre meu fracasso.
+#TEXT 10-1
+Já se passou uma semana e ainda não há sinal do Peixe Voador. Devo ter perdido sua chegada. Uma pena — não preciso mais incomodar Tyrex agora.
+#TEXT 11
+Então, o Utrecht repousa no fundo do mar, junto com meus concorrentes. Devo aportar em Portland Cove para falar com os compradores.
+#TEXT 12
+Droga! A baía está vazia; alguém esteve aqui há pouco tempo, mas agora todos sumiram. Acho que lutei perto demais da costa. Duvido que o construtor de navios aceite conversar depois do que aconteceu. Não faz sentido procurar Tyrex agora. Um fracasso total.
+#TEXT 13
+Perdi o Utrecht. Estive tão perto, mas não consegui encontrá-la no mar.
+#TEXT 14
+Fracasso! Perdi minha chance de negociar com o trabalhador; ele me confundiu com um guarda, entrou em pânico e me atacou feito um tolo. Tolo. Fui obrigado a matar todos eles. Uma pena, mas esse assunto está encerrado.
+#TEXT 15
+Está feito. Consegui fechar um acordo com o trabalhador — 5 dobrões por um rolo. Agora devo zarpar para São Cristóvão e encontrar o Careca Geffrey.
+#TEXT 16
+Já se passaram dois meses. O Careca Geffrey provavelmente já vendeu a seda para outro comprador. Uma pena... mas ainda posso entregar a informação sobre o comprador para Tyrex. Preciso chegar a La Vega em até dez dias para dar tempo ao Tyrex de reunir seda suficiente. Com sorte, isso vai acalmar qualquer raiva que ele possa ter.
+#TEXT 17
+Todos os prazos já passaram faz tempo. Não faz sentido deixar Tyrex inquieto só por ficar aqui parado.
+#TEXT 18
+Já se passaram dois meses e ainda não consegui nenhuma pista sobre possíveis compradores. Isso é um fracasso total; não faz sentido navegar até Tyrex agora.
+#TEXT 19
+Passei as informações que recebi do Husky Billy para as autoridades locais. Agora, preciso esperar que eles lidem com meus concorrentes. Devo me encontrar com o governador até o 16º dia do mês de @<sTemp>.
+#TEXT 20
+Está feito. Meu concorrente foi eliminado por uma patrulha militar. Ainda recebi uma recompensa de 10.000 pesos, o que é um bônus bem-vindo. Devo visitar o construtor naval; agora ele deve estar mais disposto a colaborar.
+#TEXT 21
+Está feito. Consegui fechar um acordo com o construtor naval—5 dobrões por uma rodada. Agora devo zarpar para São Cristóvão e encontrar o Careca Geffrey.
+#TEXT 22
+O Careca Geffrey já recebeu suas ordens — está prestes a zarpar para a Jamaica com o primeiro carregamento de seda naval de Marcus Tyrex. Melhor eu seguir para La Vega.
+#TEXT 23
+Relatei tudo ao Marcus. Devo voltar em trinta dias para receber minha recompensa miserável e pegar uma nova missão.
+#TEXT 24
+Relatei tudo ao Marcus. Devo voltar a ele em vinte dias para receber minha recompensa e uma nova missão.
+
+#QUEST Roger_3
+Sob a Bandeira Negra: Sol Escaldante de Maracaibo
+#TEXT 1
+Desta vez, minha missão é libertar um ex-corsário chamado Jean Picard da escravidão. Ele está sendo mantido cativo em uma plantação em Maracaibo. Recebi o comando de outro pirata, o meio tapado Pelly Cutelo, e de sua barquentina, a Moray, para me ajudar. Pelly vai me esperar no Cabo Ponta Esfarrapada, em Barbados. Para entrar na plantação, vou precisar de um bom ardil. Como certamente estão precisando de mais escravos, vou me passar por um traficante de escravos. Conseguir cinquenta pessoas deve bastar—posso capturá-las no mar ou procurar o Fadey em Guadalupe. Ele já provou ser habilidoso em conseguir qualquer coisa que se deseje. Mas esses detalhes podem esperar; é hora de zarpar para Barbados.
+#TEXT 2
+Fui tolo ao perder tempo demais no caminho para Barbados. Fracassei. É uma vergonha estragar o serviço e decepcionar Marcus...
+#TEXT 3
+Pelly Cutelo recebeu ordens para navegar até Maracaibo, lançar âncora na Baía de Guajira e aguardar minha chegada. O Moray deve levar cerca de uma semana para chegar lá. Quanto a mim, preciso ir direto para a toca do leão—uma plantação próxima a Maracaibo. Jean Picard deve estar em algum lugar da propriedade. Para não levantar suspeitas, vou me passar por um traficante de escravos; levar cinquenta escravos deve tornar minha história convincente o bastante.
+#TEXT 4
+Fui tolo ao desperdiçar tanto tempo — fracassei. É vergonhoso ter estragado o serviço e decepcionado Marcus...
+#TEXT 4-1
+Ouvi boatos de que o capitão pirata Jean Picard foi morto por um guarda na plantação. Mas na verdade, fui eu quem causou isso.
+#TEXT 5
+Aqui estou eu na plantação, fingindo ser um mercador. Agora devo me concentrar em encontrar Jean Picard.
+#TEXT 6
+Encontrei Jean, mas não é prudente falar sobre sua fuga na frente dos guardas. Melhor esperar anoitecer e procurar Picard em uma das cabanas.
+#TEXT 7
+O plano é simples e direto. Os homens de Picard vão iniciar um motim por dentro, enquanto Pelly Cutelo e eu atacamos pelo lado de fora. Antes do assalto, preciso garantir que os piratas de Jean estejam bem armados. Podemos facilmente pegar 30 sabres e machados comuns do arsenal do navio, mas o restante terei que conseguir em outro lugar. Vou precisar de 30 pistolas com munição suficiente, até 90 frascos de remédio para emergências e, se possível, 2 mosquetes com 20 cargas cada. Vou conversar com Pelly sobre nossa estratégia e depois partir para Guadalupe para falar com Fadey. O moscovita deve ser capaz de providenciar tudo que precisamos.
+#TEXT 8
+As armas já estão reunidas. Preciso pensar em como levá-las até a plantação sem chamar atenção. Está na hora de conversar com Picard sobre isso.
+#TEXT 9
+Picard não é tolo, o que já o diferencia dos outros peões de Tyrex. As armas serão entregues na plantação, escondidas em caixotes de mercadorias. Preciso oferecer a eles 500 caixas de café, copra ou baunilha.
+#TEXT 10
+O acordo de troca de mercadorias está fechado; a negociação acontecerá amanhã à noite. Preciso encontrar Picard e avisá-lo.
+#TEXT 11
+Estraguei o acordo por não trazer mercadorias suficientes para negociar. É uma pena que tudo tenha desmoronado por causa da minha própria tolice...
+#TEXT 12
+Preciso levar meu navio até a Baía de Guajira e me preparar para atacar a plantação com Pelly ao meu lado antes da meia-noite.
+#TEXT 13
+Arruinei tudo ao não chegar ao ponto de encontro na hora marcada.
+#TEXT 14
+Minha tripulação se aproximou demais da entrada da plantação e disparou o alarme. Nosso plano de resgate foi totalmente arruinado.
+#TEXT 15
+Não consegui chegar à plantação a tempo. Nosso plano de resgate foi totalmente arruinado...
+#TEXT 16
+Devo ter demorado demais para reunir as armas para o resgate. Jean Picard e seus homens desapareceram da plantação — ou foram vendidos para outro lugar, ou torturados até a morte. Acabou.
+#TEXT 17
+Conseguimos iniciar um motim, mas Jean Picard foi morto durante a luta. Acabou.
+#TEXT 18
+Está feito! Mas ainda é cedo para comemorar—um esquadrão espanhol está vindo em nossa direção. Ordenei que Picard e Cutlass escapassem a bordo do Moray. Quanto a mim, estou me preparando para enfrentar os espanhóis.
+#TEXT 19
+O inimigo comanda uma força formidável. Devo afundar sua nau capitânia para semear confusão e, em seguida, fugir.
+#TEXT 20
+Uma batalha bem travada. Estou indo direto para La Vega para encontrar Tyrex.
+#TEXT 21
+Conseguimos — escapamos para a selva. Agora precisamos chegar à Baía de Guajira antes que mais espanhóis apareçam.
+#TEXT 22
+Decidi recusar os serviços do estimado Fadey e chegar à plantação de Maracaibo sem as mercadorias exigidas. Não vão inspecionar meu porão. É arriscado, claro, mas não há mais volta. Seja o que Deus quiser.
+#TEXT 23
+O adiantamento já foi pago, e amanhã às dez horas devo receber a remessa de escravizados de que preciso na Praia de Capster. Não podemos nos atrasar, para não decepcionar Fadey.
+#TEXT 24
+É isso — meu dinheiro se foi, perdido junto com os escravos porque cheguei atrasado ao encontro. Que tolo eu fui. Agora vou ter que aparecer de mãos abanando na plantação de Maracaibo.
+#TEXT 25
+O trato está feito — cinquenta cabeças de ouro negro agora ocupam meu porão. Ouro de verdade, considerando o preço alto que essa empreitada me custou; duvido até conseguir cobrir meus próprios gastos. De agora em diante, preciso cuidar dos meus interesses, e não encher os bolsos de outros. Ainda assim, sigo adiante com a operação para resgatar um tal de Jean Picard...
+#TEXT 26
+Decidi não me envolver com os escravos; isso está muito além das minhas posses no momento. Vou tentar aparecer na plantação de Maracaibo sem as mercadorias exigidas—assim, não vão inspecionar meu porão.
+#TEXT 27
+Minha ingenuidade me pregou uma peça cruel, e não consegui me passar por um traficante de escravos. Lamento ter estragado tudo de forma tão tola e decepcionado Marcus...
+#TEXT	28
+Estou diante de uma escolha difícil. Para garantir rapidamente a carga de que preciso, Cutlass me deu uma dica que estava guardando para si mesmo—uma grande caravana transportando café e outras especiarias. Em duas semanas, um comboio comercial francês vai passar perto de Guadalupe. Não consigo deixar de pensar se Cutlass me passou essa informação para ajudar nossa missão a avançar mais rápido, ou se está testando se tenho coragem de atacar meus próprios compatriotas como um verdadeiro pirata. De qualquer forma, vou manter isso em mente, mas não me sentirei preso a essa opção—sempre há outras caravanas para saquear, ou até maneiras legítimas de comprar o que preciso.
+#TEXT	29
+Mal posso acreditar na minha ousadia e sorte! Depois de juntar ouro suficiente, entrei de cabeça erguida na plantação e comprei Picard. O dono da plantação talvez tenha desconfiado das minhas verdadeiras intenções, já que deixei claro meu interesse em Jean e não o enganei com aquela história de precisar de um criado bonito para servir vinho nas festas. Mas isso pouco importa — o essencial é que Picard está livre, sem derramamento de sangue ou risco à sua vida. Agora podemos voltar para Marcus Terrax.
+#TEXT	30
+Engraçado—no começo, Cleaver tentou me convencer a gastar uma fortuna em um negócio, e quando recusei, ele me convenceu a gastar o mesmo valor em outra coisa completamente diferente. Paul está claramente preocupado com o bem-estar de Picard—não por bondade, mas por medo da punição severa de Marcus caso falhemos. Então, quando rejeitei a ideia de comprar Jean, Cleaver fez questão de insistir que precisávamos urgentemente fornecer armas e remédios para todos. Para ser exato, ele “gentilmente” resolveu tudo por conta própria—pela mesma quantia que custaria comprar Picard. Talvez tenha sido um gasto impulsivo, mas eu já estava cansado de escolher pessoalmente cada pistola de qualidade para nossos fugitivos! Falando nisso—é hora de procurar o Handsome e avisar que as armas já estão prontas.
+
+#QUEST Roger_4
+Erguendo a Jolly Roger: Contrabando Pirata para Iniciantes
+#TEXT 1
+Marcus Tyrex me enviou para Isla Tesoro para encontrar o mercador local. Finalmente, um trabalho digno de um verdadeiro pirata.
+#TEXT 2
+Demorei demais para chegar à Isla Tesoro, e agora é tarde demais. Uma pena—nada de trabalho para mim, então. Melhor eu procurar Tyrex, como combinamos.
+#TEXT 3
+Pasquale Lavoisier me encarregou de atacar um comboio mercante holandês que transporta uma carga de pau-ferro. A mercadoria está a bordo do Rosbohom, @<sShip>. Devo interceptá-los em @<sdegN> @<sminN> Norte, @<sdegW> @<sminW> Oeste dentro de cinco dias. Assim que garantir a madeira, preciso levá-la até Isla Tesoro e entregá-la a Pasquale. Tyrex tinha razão sobre essa missão.
+#TEXT 4
+Não consegui encontrar o comboio, apesar dos meus esforços. Uma pena... Melhor ir falar com Tyrex, como combinamos.
+#TEXT 5
+No calor da batalha, afundei o navio-alvo por acidente. Que tolice da minha parte... Não faz sentido contar isso ao mercador. Melhor procurar Tyrex, como combinamos.
+#TEXT 6
+O inimigo se mostrou forte demais para mim. Não há motivo para me envergonhar diante do mercador. Melhor ir encontrar Tyrex, como combinamos.
+#TEXT 7
+Encontrei o comboio holandês e o capturei como prêmio. Agora devo traçar rumo para Isla Tesoro.
+#TEXT 8
+O mercador não ficou satisfeito com o meu serviço. Que se dane esse aproveitador. Melhor eu procurar Tyrex, conforme combinamos.
+#TEXT 9
+O comerciante recebeu sua madeira de ferro, e eu recebi meu pagamento. Para falar a verdade, aquele maldito pão-duro me pagou só umas moedas de cobre pelo serviço. Não faço mais negócios com ele.
+#TEXT 10
+Encontrei o Geffrey Careca na Isla Tesoro. Ele me contou que Pasquale está aliado ao Tyrex. Agora tudo faz sentido. É uma pena que não haja como punir aquele maldito comerciante. Com um protetor desses...
+#TEXT 11
+Encontrei meu velho conhecido, Jean Picard, que estava prestes a contar para Marcus sobre a ganância de Pasquale Lavoisier. Não seria a decisão mais inteligente, então o alertei. Picard então sugeriu que eu recuperasse o que Pasquale me deve. Parece uma boa oportunidade. Devo encontrá-lo em duas semanas na Baía de Gonaives. Ao que tudo indica, Jean tem um plano para passar a perna naquele avarento de quatro olhos.
+#TEXT 12
+Jean Picard tem um plano para invadir a casa de Pasquale Lavoisier e Tyrex em La Vega. Precisamos concluir tudo antes do amanhecer.
+#TEXT 13
+Cheguei atrasado para meu encontro com Jean. Uma pena.
+#TEXT 14
+Cheguei à Baía de Gonaives a pé, o que deixou Picard furioso. Jean foi embora sem me contar seus planos. Que pena...
+#TEXT 15
+O roubo foi um sucesso. Minha parte deve passar de 100.000 pesos, o que cobre a dívida de Lavoisier comigo.
+Nos separamos de Jean Picard na Baía de Gonaives. Ele disse que está deixando tudo para trás e sugeriu que eu faça o mesmo. Suas palavras sobre Tyrex fazem sentido, mas ainda não chegou a minha hora. Por enquanto, preciso encontrar Marcus e relatar a ele sobre Ignacio Marco.
+#TEXT 16
+O roubo correu sem problemas. Minha parte deve passar de 100.000 pesos, mais do que suficiente para cobrir a dívida de Lavoisier comigo. Também impedi Jean de matar uma testemunha — uma prostituta que pertence ao Tyrex. Talvez eu esteja ficando mole, mas uma mulher em Isla Mona pode ser útil, heh. De qualquer forma, ela não vai conseguir fugir de lá.
+Nos separamos de Jean Picard na baía de Gonaives. Ele me disse que está desistindo e sugeriu que eu faça o mesmo. Suas palavras sobre Tyrex fazem sentido, mas ainda não é hora. Por enquanto, preciso encontrar Marcus e relatar a ele sobre Ignacio Marco.
+#TEXT 18
+Passamos tempo demais na selva a caminho de La Vega e não tivemos coragem de tentar o roubo. Jean ficou muito irritado. Preciso encontrar Marcus e relatar a ele sobre Ignacio Marco.
+#TEXT 19
+Acabei me esquecendo totalmente da proposta de Jean Picard. Que pena.
+
+#QUEST Roger_5
+Sob a Bandeira Negra: Pedras de Sangue e Floresta
+#TEXT 1
+Minha próxima missão é encontrar e saquear o vilarejo minerador espanhol de Mérida. Jean Picard irá me acompanhar. Tyrex também designou um de seus bucaneiros para minha tripulação—Luka Bayard, também chamado de Leprechaun. Devo encontrá-lo junto com seus homens no porto de La Vega.
+#TEXT 2
+Me distraí com outros assuntos, e agora Picard e Leprechaun deixaram meu navio. Que pena...
+#TEXT 3
+Nosso destino é o Cabo das Esperanças Ilusórias, ao sul do Lago Maracaibo. Não há tempo a perder!
+#TEXT 4
+Aqui estamos, no Mar das Espanhas. Precisamos encontrar uma aldeia indígena e conversar com o cacique sobre conseguir um guia para Mérida.
+#TEXT 5
+O chefe não é de muitas palavras. O duende estava certo — não vou conseguir avançar sem levar presentes.
+#TEXT 6
+O cacique indígena Kumwana prometeu reunir seus guerreiros e conversar com eles. Devo encontrá-lo amanhã de manhã para ouvir sua resposta.
+#TEXT 7
+Covardes, esses índios! Ninguém se atreve a me guiar até Mérida—todos temem uns tais Capongas escondidos na selva. Isso complica as coisas; melhor conversar com Leprechaun.
+#TEXT 8
+O plano não é dos mais promissores, mas vou tentar. Pretendo conquistar as índias com presentes e promessas—quem sabe alguma delas convença o marido a nos ajudar. Também há outra opção: pressionar o cacique. Vou apresentar a ele uma alternativa tão desagradável que ele será obrigado a me arrumar um guia em um dia. Antes de deixar a aldeia, preciso entregar mais frascos do antídoto ao Leprechaun.
+#TEXT 8a
+Deixei bem claro ao chefe dos nativos o que espera por ele e toda a sua aldeia se não me arranjarem um guia em 24 horas. Ele mencionou um tal de Tagofa, que talvez possa nos levar até Mérida. Veremos... Voltarei amanhã. Quero ver até onde vai a razão desse nativo.
+#TEXT 9
+Uma índia chamada Hayami prometeu conversar com seu marido, Tagofa. Devo encontrá-los depois do pôr do sol.
+#TEXT 10
+Tagofa concordou em nos guiar até Mérida, mas sua astuta mulher exigiu pagamento adiantado: duas pistolas—uma de duelo e uma bacamarte—cada uma com trinta cargas. Ela também quer uma luneta, um colar de esmeraldas e um anel de ouro com rubi.
+#TEXT 11
+Tagofa se juntou à minha tripulação. Para chegar a Mérida, vamos precisar de seis botes grandes. Como os Lokonos não têm embarcações adequadas, teremos que construí-las nós mesmos. Para isso, serão necessários vinte feixes de tábuas, dez fardos de couro e um oficial para supervisionar a obra—um carpinteiro designado.
+#TEXT 12
+Não demorou muito para convencer o governador de Mérida a entregar todas as pedras extraídas. Picard tinha razão — é uma carga pesada. Não resta mais nada a fazer aqui. Hora de voltar aos nossos botes.
+#TEXT 13
+Os imprudentes Capongas nos emboscaram dentro da caverna. Tive que derrotar mais um dos seus bandos.
+#TEXT 14
+Os botes estão prontos. Preciso trocar uma palavra com Tagofa.
+#TEXT 15
+Fomos atacados pelos infames Capongas, sobre os quais tenho ouvido tanto ultimamente. Agora estão todos mortos, e Mérida está logo ali adiante.
+#TEXT 16
+Os espanhóis se mostraram desconfiados e agressivos demais—não hesitaram em atacar minha tripulação. Esse foi o último erro que cometeram. A guarnição de Mérida foi aniquilada, e todos os seus defensores estão mortos. Hora de arrombar os portões.
+#TEXT 17
+Os últimos espanhóis, ansiosos por uma morte gloriosa, caíram. Está na hora de fazer uma visita ao governador.
+#TEXT 18
+O saque foi dividido de forma justa, e meus esforços para libertar Jean da escravidão foram plenamente recompensados. A sorte está ao meu lado. Agora é hora de zarpar para La Vega e prestar contas a Tyrex.
+#TEXT 19
+Demorei demais para juntar presentes para o casal de pele vermelha. O Duende e Jean decidiram que conseguem se virar sem mim. Talvez seja o melhor!
+#TEXT 20
+Fui lento demais, então Leprechaun e Jean decidiram que se sairiam melhor sem mim. Provavelmente foi o melhor!
+#TEXT 21
+Fui lento demais, então Leprechaun e Jean decidiram que podiam se virar sem mim. Provavelmente foi melhor assim!
+
+#QUEST Roger_6
+Erguendo a Jolly Roger: Mestre da Trapaça
+#TEXT 1
+Infelizmente, Marcus não tem mais trabalhos lucrativos para me oferecer. No entanto, o Mestre do Códice fez um pedido pessoal — devo escoltar o navio Kitty até Bridgetown, Barbados. Estou obrigado a agradar meu patrono. O navio está atualmente nas águas próximas de La Vega.
+#TEXT 2
+Parece que exagerei no rum, e agora o Kitty zarpou para Bridgetown sem mim. Que desperdício...
+#TEXT 3
+O Kitty afundou em uma batalha naval. Que vergonha... Não tenho como encarar Marcus agora.
+#TEXT 4
+Ora, ora! Ignacio Marco me procurou em Bridgetown e propôs uma parceria para atacar uma caravana de prata holandesa. É o mesmo Marco que armou para Jean Picard. Aceitei a proposta—o prêmio é tentador demais para recusar—mas preciso ficar atento com esse sujeito. Engraçado que a caravana está parada justamente numa ilha que já conheço muito bem...
+#TEXT 5
+Ora, ora! Ignacio Marco me procurou em Bridgetown e propôs uma parceria para atacar uma caravana holandesa de prata. É o mesmo Marco que armou para Jean Picard. Aceitei a oferta—o prêmio é tentador demais—mas preciso ficar atento com esse homem. A caravana está ancorada perto da ilha nestas coordenadas: 12° 48' Norte, 64° 41' Oeste.
+#TEXT 6
+A caravana está mesmo aqui. Ignacio Marco não mentiu. Muito bem, é hora de aliviar os holandeses de sua carga.
+#TEXT 7
+A luta com os holandeses terminou. Ignasio Marco está acenando para mim de sua polaca; parece que ele quer ir para terra dividir o butim, como era de se esperar. Estou prestes a me juntar a ele, mas também vou deixar um vigia na colina mais próxima com um luneta. Preciso garantir que o horizonte permaneça limpo.
+#TEXT 8
+Minha cautela me salvou — esse canalha do Ignasio Marco está de conluio com os castelhanos. É o mesmo golpe que derrubou Picard: um serviço com um parceiro perto da Costa do Sul, dividir o butim, e então o esquadrão espanhol aparece de surpresa. Se não fosse pelo meu vigia, teria sido pego igual ao Picard. Ainda tenho tempo para escapar... assim espero.
+#TEXT 9
+Não tenho certeza se devo enfrentar esse esquadrão espanhol. Acho que fugir é a melhor opção neste caso. Vou precisar de pelo menos 3.000 jardas de distância entre nós para ter uma chance de escapar.
+#TEXT 10
+Enfrentei uma batalha feroz contra o esquadrão pesado espanhol e os destruí. Agora eles sabem o que é enfrentar um verdadeiro corsário. Preciso me apressar e relatar tudo ao Tyrex o quanto antes.
+#TEXT 11
+Consegui escapar do esquadrão espanhol. É melhor eu me apressar e encontrar Tyrex o quanto antes.
+#TEXT 12
+O poderoso navio capitânia foi destruído. Agora podemos tentar escapar — só precisamos colocar mil jardas entre nós e eles.
+
+#QUEST Roger_7
+Sob a Bandeira Negra: Tesouros de Jarl
+#TEXT 1
+Mais um enigma de Tyrex: preciso zarpar rumo a um destino desconhecido em busca do tesouro deixado pelo pirata recém-falecido, Wulfric Jogansen. Tudo o que tenho é o diário de bordo dele. Melhor me recolher à minha cabine e estudá-lo com atenção, aproveitando para extrair o máximo de informações possível.
+#TEXT 2
+Encontrei uma pista no diário de bordo de Wulfric — Baía dos Mosquitos. Parece que ele visitava esse lugar com frequência. A baía dá acesso a várias cavernas no interior do continente. Devo investigar essas cavernas.
+#TEXT 3
+Fui atacado por caribes furiosos em uma gruta na Baía dos Mosquitos. Parece que interrompi algum ritual que eles faziam ao redor do fogo. Nunca fica mais fácil. Agora posso procurar o tesouro em paz.
+#TEXT 4
+Infelizmente, não há sinal de nenhum tesouro dentro da gruta na Baía dos Mosquitos.
+#TEXT 5
+Encontrei um baú com conteúdos bastante interessantes, embora eu tenha certeza de que não é o tesouro do Red Wulf.
+#TEXT 6
+Encontrei alguns mendigos na saída da caverna. Parece que o esconderijo que encontrei antes pertencia a eles.
+#TEXT 7
+Essa pista não levou a lugar nenhum. Eu devia ter esperado mais do Lobo Vermelho—ele não é como aqueles outros desgraçados que escondem o butim em cavernas à beira da estrada. Melhor eu voltar para minha cabine e tentar de novo.
+#TEXT 8
+Tenho outra pista. Wulfric tem visitado com frequência um certo Gaspard Parmentier em Tortuga. Ele pode ser o banqueiro pessoal do Viking. Preciso investigar isso.
+#TEXT 9
+Descobri como encontrar o local de Gaspard. Preciso ir até lá e perguntar discretamente sobre o Lobo Vermelho. Melhor ir durante o dia—banqueiros não gostam de visitas depois do anoitecer, heh-heh.
+#TEXT 10
+A casa de Gaspard Parmentier fica por perto. Bati na porta várias vezes, mas ninguém respondeu. Mesmo assim, ouvi passos lá dentro. Está claro que esse banqueiro está se escondendo de homens como eu—estranhos em quem não confia. Melhor esperar perto da escotilha para as masmorras e vigiar a entrada.
+#TEXT 11
+Por todos os mares! Meu velho amigo Pelly Cutlass apareceu na taverna do Gaspard, e a porta se abriu como mágica pra ele. Isso é um desaforo. Melhor esperar o Cutlass sair e depois sondar sobre ele ali no Gaspard. Pelly é um tolo; vai acabar me contando tudo que preciso saber.
+#TEXT 12
+Mais um beco sem saída! Gaspard Parmentier, também conhecido como Dentes de Ouro, não passa de um receptador comum de joias e pedras preciosas roubadas. Melhor voltar para minha cabine e repensar meu próximo passo.
+#TEXT 13
+Continuo esbarrando com a palavra "gord" em vários lugares. O que diabos isso significa? Sem outras pistas concretas para seguir, acho melhor investigar mais a fundo. Meu amigo Gino talvez consiga me ajudar a desvendar esse mistério. Estou indo para Antígua.
+#TEXT 14
+Notei que a palavra "gord" tem aparecido aqui e ali. O que diabos isso significa? Preciso descobrir, já que não tenho outras pistas concretas para seguir. Estou indo para La Vega pedir ajuda ao Tyrex com isso.
+#TEXT 15
+Então, Wulfric, o Viking, tinha uma base secreta em algum lugar do Arquipélago! Aposto que é lá que o tesouro dele está escondido. Melhor voltar para minha cabine e tentar descobrir a localização usando o diário de bordo do navio dele.
+#TEXT 16
+Acredito que finalmente encontrei o local do tesouro que venho procurando. Fica numa ilha que não aparece em nenhum mapa. Preciso explorá-la.
+#TEXT 17
+Fui atacado de surpresa na selva por uma horda de piratas. Devem ser homens de Wulfric, ainda sem saber do destino do seu capitão. Preciso reunir um grupo de abordagem e seguir em frente.
+#TEXT 18
+É isso — finalmente encontrei o tesouro de Wulfric. Apenas três dos seus homens sobreviveram, e agora fazem parte da minha tripulação: um carpinteiro chamado Rodgar e dois ajudantes dele. Agora é hora de procurar o tesouro. Ele deve estar escondido por aqui, e muito bem escondido.
+#TEXT 19
+Encontrei o tesouro do Lobo Vermelho—uma fortuna dos diabos: 750.000 pesos e 900 dobrões. Um terço vai para Tyrex, o resto é meu por direito. O segredo desta ilha fica só comigo. Agora, este é meu refúgio, minha fortaleza. Posso consertar navios e guardar mercadorias aqui. Quem sabe um dia eu construa e expanda ainda mais.
+#TEXT 20
+Agora tenho minha própria base! Suas coordenadas são 18° 42' Norte, 72° 9' Oeste. A ilha se chama Isla Mona. Rodgar Janssen vai ficar aqui para supervisionar a vila e cuidar dos reparos dos meus navios. Hora de encontrar Tyrex e fazer meu relatório.
+
+#QUEST Roger_8
+Erguendo a Jolly Roger: Corrida
+#TEXT 1
+Marcus me ordenou investigar a situação na Martinica. Dizem que Ignacio Marco foi visto por lá. Devo ficar de olho nesse canalha, mas estou proibido de atacá-lo—Marcus tem seus próprios planos para ele.
+#TEXT 2
+O Torero está atacando Le Francois, acompanhado por uma fragata e uma corveta. Meu amigo deve estar aqui, então. Preciso ir até Le Francois e evitar perguntar a qualquer um sobre Marco e sua tripulação. Minha missão é vigiar e observar.
+#TEXT 3
+Ignacio Marco passou quase duas horas na residência de Jacques Barbason, o chefe de Le Francois. Depois, seguiu para o porto acompanhado por dois senhores de expressão severa, provavelmente capitães de outros navios. É melhor eu zarpar logo para St. Pierre e continuar seguindo seus passos.
+#TEXT 4
+Ignacio Marco já havia zarpado quando cheguei ao meu navio. Não importa. Consegui informações valiosas; devo relatá-las a Marcus.
+#TEXT 5
+Não consegui chegar até Marcus em três semanas, e o plano dele foi por água abaixo. Que pena. Ainda assim, não estou fora do jogo — devo voltar em um mês com um único navio poderoso. E nunca mais posso me atrasar.
+#TEXT 6
+Então, devo executar o plano engenhoso de Marcus. Primeira etapa: preciso interceptar o Torero, que está navegando de Cuba para Philipsburg. O ideal é atacá-lo perto de Sint Maarten, mas não muito próximo da ilha—caso contrário, os piratas de Barbason podem perceber a batalha.
+#TEXT 7
+Afundei o Torero no calor da batalha. Que desperdício. Preciso informar Marcus.
+#TEXT 8
+Consegui abordar o Torero, mas não encontrei o diário de bordo. Agora não há como conseguir as informações de que precisamos. Que pena. Melhor eu ir falar com Marcus.
+#TEXT 9
+Ataquei o Torero muito perto de Sint Maarten e acabei sendo avistado por outros piratas. Que vergonha. Melhor eu procurar o Marcus.
+#TEXT 10
+Consegui abordar o Torero com sucesso. Ignacio Marco se recusou a se render, mas consegui ficar com o diário de bordo dele. Preciso voltar à minha cabine e examiná-lo.
+#TEXT 11
+Agora tenho todas as informações de que preciso. Pigeon Spyke está a caminho de Tyrex. É hora de sinalizar para o esquadrão de Barbason próximo a Sint-Maarten zarpar rumo a Porto Rico. Melhor manter distância—mil e quinhentas jardas do forte de Philipsburg devem ser suficientes.
+#TEXT 12
+Que pena. Dei o sinal errado para os piratas de Barbason. Melhor eu voltar para Marcus.
+#TEXT 13
+Que pena. Cheguei perto demais dos piratas do Barbason e acabei comprometendo a verdadeira lenda do Torero. Melhor eu voltar para Marcus.
+#TEXT 14
+O sinal foi dado! Os piratas estão indo direto para Porto Rico, onde a emboscada espanhola os espera. Preciso me apressar para interceptar a caravana de ouro. Espero que os reforços de Marcus cheguem a tempo.
+#TEXT 15
+Que pena! Perdi tempo demais e não consegui encontrar o comboio de ouro espanhol. Melhor eu voltar para Marcus.
+#TEXT 16
+Que vergonha! Esqueci totalmente das instruções do Marcus para não adicionar nenhum navio à minha esquadra além do Torero. Agora aquele pirata vai me perseguir por um bom tempo. Melhor eu voltar para Marcus.
+#TEXT 17
+Os reforços prometidos não decepcionaram—o próprio Marcus chegou para me ajudar a bordo do Red Dragon, seu navio de guerra! Os espanhóis se foram. Devo pegar um escaler.
+#TEXT 18
+Infelizmente, não conseguimos nenhum ouro nessa empreitada. Devo encontrar Marcus em três semanas—ele chegará em um único navio de guerra. Algo importante está por vir.
+#TEXT 19
+Infelizmente, não conseguimos tanto ouro quanto esperávamos com isso. Devo encontrar Marcus em três semanas; ele chegará em um único navio de guerra. Algo grande se aproxima no horizonte.
+#TEXT 20
+O saque foi bom, embora Tyrex esperasse mais. Devo encontrar Marcus em três semanas, e ele chegará em um único navio de guerra. Algo grande está por vir; espero que seja mais lucrativo do que o último ataque.
+#TEXT 21
+Tyrex e eu estamos bem satisfeitos com o tamanho do nosso prêmio. Daqui a três semanas, devo encontrar Marcus, que chegará em um único navio de guerra. Algo importante se aproxima no horizonte; espero que seja ainda maior do que nosso último saque.
+#TEXT 22
+Apesar do meu fracasso, Tyrex não ficou realmente irritado comigo. Daqui a três semanas, devo encontrar Marcus, comandando apenas um navio de guerra. Algo importante se aproxima; espero que seja mais grandioso do que o último saque.
+#TEXT 23
+Cheguei tarde demais — Tyrex já partiu para o saque. Que pena!
+#TEXT 24
+Não consegui encontrar o Torero em alto-mar. Tudo está perdido... Melhor eu voltar para Marcus.
+#TEXT 25
+Acabei esquecendo completamente as instruções de Markus — não devia perder tempo e precisava zarpar o quanto antes para Sint Maarten. Em vez disso, cuidei dos meus próprios assuntos. Como era de se esperar, não encontrei nenhum sinal de Torero. Agora estou voltando para Markus para confessar meu erro.
+
+#QUEST Roger_9
+Sob a Bandeira Negra: Cidade da Colheita Sangrenta
+#TEXT 1
+Yo-ho-ho! Marcus, o destemido Geffrey, Cutlass Pelly, Luke Leprechaun, Bernard Vensan, amigo do Tyrex, e eu estamos prestes a atacar Cartagena! Tem uma montanha de ouro esperando por nós dentro do forte da cidade, sem falar no resgate que vamos arrancar dos moradores. Que vida grandiosa — tirando a ressaca, ha-ha! Que festança tivemos ontem: rum, mulheres — La Vega tem muito a oferecer para Charlie Prince. Aqui sou respeitado! Amo essa vida!
+#TEXT 2
+Cometi um erro grave! Minhas supostas habilidades excepcionais de navegação fizeram com que os outros me abandonassem.
+#TEXT 3
+Cheguei à cidade de Cartagena. Minha primeira tarefa é eliminar os navios de patrulha.
+#TEXT 4
+O esquadrão espanhol foi eliminado. Devo embarcar no Red Dragon.
+#TEXT 5
+Tyrex e eu estamos nos preparando para bombardear o forte de Cartagena. Isso me faz hesitar, mas o Dragão Vermelho é uma fortaleza por si só.
+#TEXT 6
+A resistência foi esmagada. Cartagena é nossa! Marcus está indo para o forte buscar o ouro, e recebi ordens de cobrar o resgate do governador.
+#TEXT 7
+Fiz os espanhóis pagarem ainda mais do que Marcus exigiu — o resgate de 350.000 pesos está garantido. Agora, estou indo para o forte.
+#TEXT 8
+O ouro de Cartagena já está a bordo dos nossos navios. Minha parte ficou em @<sGold> peças de ouro e @<sMoney> pesos. Um prêmio gordo, e a divisão foi justa... mais ou menos. Não gostei nada do Marcus repartir o ouro sem mim—principalmente porque ficou com metade, o safado! É verdade, ele liderou a empreitada e tinha o maior navio... Mas deixa pra lá. Tenho novas ordens. Hora de zarpar para Tortuga e torrar meu dinheiro por lá. Mulheres e rum—pode apostar que não vou decepcionar!
+
+#QUEST Roger_10
+Sob a Bandeira Negra: Nêmesis
+#TEXT 1
+A vida está boa! O bordel da Janette não vai me esquecer tão cedo, ha-ha! Gastei uma fortuna lá, mas já consegui uma nova pista: minha nova paixão, Camilla, está me oferecendo um mapa do tesouro de uma cidade perdida de garimpeiros de ouro. Tenho certeza de que não é golpe, já que ela pretendia vender o mapa para Marcus antes de mim. Ela vai me esperar na igreja das 10h às 13h. Preciso separar 200 dobrões para ela.
+#TEXT 2
+Estou com o mapa da Camilla. Preciso estudá-lo com atenção e estar pronto para qualquer coisa. Melhor preparar munição, poções de cura e antídotos, caso as coisas saiam do controle.
+#TEXT 3
+Aqui está — a Lagoa Caratasca. Uma costa selvagem e deserta. Minha jornada até as ruínas começa agora.
+#TEXT 4
+Um obstáculo! Vou abrir caminho com explosivos, sem dúvida. Alguém já passou por aqui recentemente. Estou voltando ao meu navio para buscar um pouco de pólvora.
+#TEXT 5
+Os barris estão cheios de pólvora e prontos. Preciso acender o estopim e me abrigar.
+#TEXT 5-1
+Meu plano funcionou perfeitamente! O caminho está livre!
+#TEXT 6
+Encontrei as ruínas. Deve haver uma entrada para as masmorras onde o tesouro está enterrado por aqui.
+#TEXT 7
+Camilla, aquela desgraçada! Vendeu o mapa não só pra mim, mas também pro Cutlass! Nunca imaginei que a ganância pudesse cegar alguém desse jeito. Já fomos bons parceiros... Parece que o infeliz sempre teve inveja de mim.
+Encontrei o tesouro, mas ele está trancado atrás de grades de ferro. Melhor pegar algumas ferramentas no navio.
+#TEXT 8
+Droga! Isso dói! Jeffrey me passou a perna — maldito ganancioso. Já é o segundo 'amigo' da Irmandade que tenta me matar hoje por causa de ouro. Preciso sair daqui agora mesmo. Tem algo errado. Quem mais pode aparecer — Picard? Tínhamos um acordo, mas já não confio em nada. Os homens do Jeffrey ainda estão por aí; ouvi uns canalhas comentando sobre uma unidade de mosqueteiros que ele trouxe.
+#TEXT 9
+Infelizmente, ao invés de encontrar Jean, acabei topando com Luke Leprechaun aqui. Ele e seus bucaneiros armaram uma emboscada no andar de cima. Pelo visto, o velho caçador sempre guardou rancor de mim. É, confiar em bandidos e piratas como amigos nunca foi boa ideia!
+Não vejo isso apenas como um jogo de azar. Tem algo estranho no ar—é melhor eu sair daqui!
+#TEXT 10
+Tudo isso foi armado... Um maldito vingador do povo preparou uma armadilha pra mim. O nome do homem é Don Henrico, e o pior é que as acusações dele são totalmente justificadas e verdadeiras.
+Estou completamente sozinho neste calabouço escuro, assustador e silencioso. Estou cercado pelos mortos—nem mesmo ratos aparecem por aqui. Ainda me resta um pouco de tempo para encontrar uma saída antes que a fome me leve.
+#TEXT 11
+Encontrei uma chave enferrujada em um esqueleto, e ela abriu uma porta que levava para o subsolo. Talvez esse seja meu caminho para escapar?
+#TEXT 12
+Acordei suando frio. Quanto tempo será que dormi? Tive pesadelos horríveis com Mérida em chamas e seus habitantes mortos. Meu irmão Michel também estava lá. Ele disse algo sobre uma chave... perto de mim? Na escada?
+#TEXT 13
+É um milagre! Encontrei uma velha chave de prata na escada!
+#TEXT 14
+Descobri outra masmorra. Está inundada e lembra muito os próprios portões do Inferno. O ar é sufocante, carregado com o fedor de enxofre. Não faço ideia de para onde devo ir agora, e preciso ficar atento aos gêiseres escaldantes que irrompem das fendas.
+#TEXT 15
+Encontrei uma caverna com água fresca e limpa—exatamente o que eu precisava para aliviar a dor causada pelo ar sulfuroso e as queimaduras. O ar aqui dentro está diferente; deve haver uma saída por perto!
+#TEXT 16
+Reconheço este lugar! Passei por aqui a caminho das ruínas. Em breve, verei o mar!
+#TEXT 17
+Consegui! É como nascer de novo... Acho que mereci esse castigo. Sou um monstro.
+Chegou a hora de me separar de Marcus Tyrex e deixar a vida de pirata para trás. Não tenho dúvidas de que ainda vou esbarrar nos esquemas deles, mas nunca mais serei um deles. O pirata Charlie Prince ficou para trás, morto nas masmorras da cidade dos mortos.
+Eu, Charles de Maure, capitão francês e nobre, juro a mim mesmo e à minha consciência:
+... Juro que nenhum outro civil sofrerá por minha mão ou pela mão da minha tripulação.
+... Juro proteger as mulheres, independentemente de sua posição ou nacionalidade.
+... Juro que a tentação do ouro nunca mais vai nublar meu julgamento.
+... Juro pôr fim às ações de qualquer canalha que eu encontrar em minha jornada.
+... Juro que entre a riqueza e a honra, sempre escolherei a honra.
+... Juro que, em qualquer circunstância e companhia, permanecerei um homem honrado.
+Há muito o que fazer se quero restaurar meu bom nome — mas vou conseguir. Por ora, preciso seguir para St. Pierre e encontrar Michel. A vida continua!
+@<sText>
+#TEXT 18
+Consegui escapar da escuridão daqueles calabouços infernais—um verdadeiro batismo de fogo. Depois dessa provação, não faz mais sentido continuar como capanga do Marcus. Chega, não trabalho mais para ele e vou voltar para o meu irmão. A vida segue, com novos desafios e conquistas ainda maiores pela frente. Mas antes, preciso deixar o cheiro de enxofre sair do corpo...
+#TEXT	19
+Quando finalmente consegui voltar à terra firme, ainda oscilando entre a loucura, o medo, a incerteza e a esperança, meu leal amigo e camarada, @<pcharname>, estava lá para me receber. Graças a Deus, ele também sobreviveu a este dia. Em uma longa conversa, ele me ajudou a enxergar as coisas com mais clareza — e a tomar a decisão certa. Charlie Prince, o pirata que dançava conforme a música de Terrax, morreu hoje entre aqueles gêiseres. Charles de Maure, o nobre francês — e não algum pirata miserável — continua vivo. E daqui em diante, ninguém vai lhe dizer o que fazer. Ninguém ficará entre ele e suas ambições. Só eu escolherei meu caminho e como alcançar meus objetivos. Vou visitar meu irmão e dizer claramente que nada de bom jamais veio desse tal Terrax. Que ele diga o que quiser — eu encontrarei meu próprio caminho.
+#TEXT	20
+Nas catacumbas, me vi em um verdadeiro teatro de loucura e um turbilhão de emoções. Fui caçado pelo infame caçador de piratas espanhol, Don Enrico de la Vega — conhecido como Zorro. Estava impecavelmente vestido, com uma couraça leve, porém resistente, escondida sob as roupas. Meu oficial e amigo, Hercule Tonzag, desbaratou o plano do nobre. Quando Don Enrico viu Hercule, o veterano caçador de recompensas quase tremeu de medo — uma cena surpreendente que me trouxe de volta à razão. No fim, viramos o jogo e caçamos o caçador. Encurralado, Don Enrico mostrou ser um adversário habilidoso e perigoso, embora desonrado — mas havia nele certa dignidade. Juntos, derrotamos essa raposa — embora eu preferisse chamá-lo de serpente. Mesmo com a ajuda de Hercule, não foi tarefa fácil. Hercule me guiou por uma passagem secreta que havia descoberto, já que o caminho por onde entrei estava agora bloqueado por pedras.
+
+Agora chegou a hora de encontrar meu irmão. Decidi cortar todos os laços com Terrax, já que isso não me aproximou de salvar Michel, apesar de todas as promessas. Se algum dia eu voltar por esse caminho, será sob meus próprios termos—e apenas como Charles de Maure: orgulhoso, nobre e digno, não como peão de nenhum príncipe. Adeus, Charlie. Daqui em diante, sigo sozinho.

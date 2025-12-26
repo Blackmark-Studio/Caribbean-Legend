@@ -356,11 +356,33 @@ void chrCharacterKeys()
     else
 	{
     // boal <--
-	
-		Reload(chrWaitReloadRef, chrWaitReloadLocator, mc.location);
+		ref loc = &Locations[FindLocation(mc.location)];
+		if(chrGetLabelName(loc, chrWaitReloadLocator) == "sea")
+			LandToSea_CheckAutoSave();
+		else
+			Reload(chrWaitReloadRef, chrWaitReloadLocator, mc.location);
 	}
 	chrWaitReloadLocator = "";
 	chrWaitReloadIsNoLink = false;
+}
+
+void LandToSea_CheckAutoSave()
+{
+	if(!CheckAttribute(&InterfaceStates,"EnabledAutoSaveMode2") || sti(InterfaceStates.EnabledAutoSaveMode2) != 1)
+	{
+		Reload(chrWaitReloadRef, chrWaitReloadLocator, pchar.location);
+		return;
+	}
+	NullCharacter.AutoSave.Location = pchar.location;
+	NullCharacter.AutoSave.Locator = chrWaitReloadLocator;
+	SetEventHandler("Event_AfterSave", "LandToSea_Continue", 0);
+	NewAutoSave("LandToSea");
+}
+
+void LandToSea_Continue()
+{
+	DelEventHandler("Event_AfterSave", "LandToSea_Continue");
+	Reload(chrWaitReloadRef, NullCharacter.AutoSave.Locator, NullCharacter.AutoSave.Location);
 }
 
 bool chrIsNowEnableReload()

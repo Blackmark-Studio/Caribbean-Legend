@@ -153,7 +153,6 @@ void AddMapToPlayerAtlas(ref mapEntity)
 {
 	ref map = FindItem_VT(&mapEntity);
 	string mapId = map.id;
-	int idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 	aref areas;
 	makearef(areas, Atlas.areas);
 	bool notify = false;
@@ -170,8 +169,7 @@ void AddMapToPlayerAtlas(ref mapEntity)
 		notify = true;
 	}
 	else Atlas.rest.(mapId) = true;
-	if (notify) Notification(StringFromKey("characterUtilite_12", LanguageConvertString(idLngFile, map.name)), "MapsAtlas");
-	LanguageCloseFile(idLngFile);
+	if (notify) Notification(StringFromKey("characterUtilite_12", GetItemName(map)), "MapsAtlas");
 
 	pchar.MapsAtlasCount = CountAreasMapFromCharacter();
 	// даем скрытый перк если собрали все карты островов
@@ -184,30 +182,7 @@ void AddMapToPlayerAtlas(ref mapEntity)
 // Выбор обычной неповторяющейся карты
 string SelectUsualMaps(ref item, ref qMiss)
 {
-		string map[MAPS_IN_ATLAS];
-		map[0] = "map_jam";
-		map[1] = "map_cayman";
-		map[2] = "map_barbados";
-		map[3] = "map_trinidad";
-		map[4] = "map_Curacao";
-		map[5] = "map_martiniqua";
-		map[6] = "map_dominica";
-		map[7] = "map_puerto";
-		map[8] = "map_cuba";
-		map[9] = "map_hisp";
-		map[10] = "map_nevis";
-		map[11] = "map_guad";
-		map[12] = "map_antigua";
-		map[13] = "map_TORTUGA";
-		map[14] = "map_terks";
-		map[15] = "map_sm";
-		map[16] = "map_bermudas";
-		map[17] = "map_beliz";
-		map[18] = "map_santa";
-		map[19] = "map_maine_1";
-		map[20] = "map_maine_2";
-		map[21] = "map_panama";
-		map[22] = "map_cumana";
+		string map[MAPS_IN_ATLAS] = {"map_jam", "map_cayman", "map_barbados", "map_trinidad", "map_Curacao", "map_martiniqua", "map_dominica", "map_puerto", "map_cuba", "map_hisp", "map_nevis", "map_guad", "map_antigua", "map_TORTUGA", "map_terks", "map_sm", "map_bermudas", "map_beliz", "map_santa", "map_maine_1", "map_maine_2", "map_panama", "map_cumana"};
 
 		string storeArray[MAPS_IN_ATLAS];
 		int howStore = 0;
@@ -242,15 +217,14 @@ string SelectAdmiralMaps()
 {
 	string mapId = "";
 	string map[24];
-	string leftMaps[2];
+	string leftMaps[];
 	int n = 1;
 	int mapQty = FillAdmiralMaps(&map);
 
 	for (int i = 0; i < mapQty; i++) {
 		mapId = map[i];
 		if (CheckMapForEquipped(pchar, mapId)) continue;
-		SetArraySize(&leftMaps, n);
-		leftMaps[n-1] = mapId;
+		leftMaps += mapId;
 		n++;
 	}
 
@@ -318,31 +292,8 @@ int CountAreasMapFromCharacter()
 
 int FillAdmiralMaps(ref mapIds)
 {
-	mapIds[0] = "A_map_bermudas";
-	mapIds[1] = "A_map_jam";
-	mapIds[2] = "A_map_cayman";
-	mapIds[3] = "A_map_barbados";
-	mapIds[4] = "A_map_tortuga";
-	mapIds[5] = "A_map_curacao";
-	mapIds[6] = "A_map_martiniqua";
-	mapIds[7] = "A_map_dominica";
-	mapIds[8] = "A_map_trinidad";
-	mapIds[9] = "A_map_puerto";
-	mapIds[10] = "A_map_cuba";
-	mapIds[11] = "A_map_hisp";
-	mapIds[12] = "A_map_nevis";
-	mapIds[13] = "A_map_beliz";
-	mapIds[14] = "A_map_guad";
-	mapIds[15] = "A_map_santa";
-	mapIds[16] = "A_map_antigua";
-	mapIds[17] = "A_map_terks";
-	mapIds[18] = "A_map_sm";
-	mapIds[19] = "A_map_maine_1";
-	mapIds[20] = "A_map_maine_2";
-	mapIds[21] = "A_map_panama";
-	mapIds[22] = "A_map_cumana";
-	mapIds[23] = "A_map_perl";
-	return 24;
+    mapIds = {"A_map_bermudas", "A_map_jam", "A_map_cayman", "A_map_barbados", "A_map_tortuga", "A_map_curacao", "A_map_martiniqua", "A_map_dominica", "A_map_trinidad", "A_map_puerto", "A_map_cuba", "A_map_hisp", "A_map_nevis", "A_map_beliz", "A_map_guad", "A_map_santa", "A_map_antigua", "A_map_terks", "A_map_sm", "A_map_maine_1", "A_map_maine_2", "A_map_panama", "A_map_cumana", "A_map_perl"};
+    return GetArraySize(mapIds);
 }
 
 void RemoveAllAdmiralMap()

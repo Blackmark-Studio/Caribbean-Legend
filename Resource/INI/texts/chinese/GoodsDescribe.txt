@@ -229,6 +229,11 @@ Cannon_42_descr
 {
 可怕的加农炮, 海军火力的巅峰。 专门用于战列舰、 堡垒和欧洲主要战役。 需要庞大且训练有素的船员来操作。 射程 - #dFireRange#, 伤害 - x#f.1DamageMultiply#, 装填 - #dReloadTime# 秒。
 }
+Cannon_48 {48磅臼炮}
+Cannon_48_descr
+{
+可怕的加农炮, 海军火力的巅峰。 专门用于战列舰、 堡垒和欧洲主要战役。 需要庞大且训练有素的船员来操作。射程 - #dFireRange#, 伤害 - x#f.1DamageMultiply#, 装填 - #dReloadTime# 秒。
+}
 Culverine_8 {半长炮}
 Culverine_8_descr
 {

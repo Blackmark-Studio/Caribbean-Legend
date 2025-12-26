@@ -130,7 +130,6 @@ void ProcessDialogEvent()
 				dialog.text = "让我看看... 哈! 你的许可证过期了。 所以跟我来, 我带你去见指挥官... ";
 				link.l1 = RandPhraseSimple("该死! 我想是时候让你见识一下我的剑了, 伙计。 ", "我可不这么想... ");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			dialog.text = "好吧。 你可以进来。 规矩点, 别打扰奴隶。 ";

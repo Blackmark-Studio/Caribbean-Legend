@@ -304,6 +304,7 @@ void ProcessExitCancel()
 				{
 					PostEvent("evntQuestsCheck", 400);
 					ShipTaken(sti(refEnemyCharacter.index), KILL_BY_ABORDAGE, sti(pchar.index));
+					STH_StealShipFlag(sti(refEnemyCharacter.nation), GetCharacterShipClass(refEnemyCharacter));
 					UpdateRelations();
 					RefreshBattleInterface();
 				}
@@ -318,6 +319,7 @@ void ProcessExitCancel()
 		}
 		else
 		{
+			PostEvent("Event_NewAutoSave", 1000, "s", "AfterBoarding");
 			IDoExit(RC_INTERFACE_RANSACK_MAIN_EXIT);
 		}
 	}
@@ -856,11 +858,10 @@ void ShowInfoWindow()
 			if (CheckAttribute(&GameInterface, "TABLE_LIST." + sRow + ".index")) {
 				iItem = sti(GameInterface.TABLE_LIST.(sRow).index)
 				string GoodName = goods[iItem].name;
-				int lngFileID = LanguageOpenFile("GoodsDescribe.txt");
 				sHeader = XI_ConvertString(GoodName);
 				sGroup = "GOODS";
 				sGroupPicture = GoodName;
-				sText1 = GetAssembledString(LanguageConvertString(lngFileID,GoodName+"_descr"), &Goods[iItem]) + newStr() + "***";
+				sText1 = GetAssembledString(GetGoodDescr(&Goods[iItem]), &Goods[iItem]) + newStr() + "***";
 			} else {
 				sHeader = XI_Convertstring("Goods");
 				sText1  = GetRPGText("GoodsCargo_hint");
@@ -958,11 +959,11 @@ void ShowInfoWindow()
 		break;
 		case "FOOD_SHIP":
 			sHeader = XI_Convertstring("FoodShipInfoShort");
-			sText1 = GetConvertStr("Food_descr", "GoodsDescribe.txt");
+			sText1 = GetGoodDescr("Food");
 		break;
 		case "RUM_SHIP":
 			sHeader = XI_Convertstring("RumShipInfoShort");
-			sText1 = GetConvertStr("Rum_descr", "GoodsDescribe.txt");
+			sText1 = GetGoodDescr("Rum");
 		break;
 		case "MONEY_SHIP2":
 			sHeader = XI_Convertstring("CostPerMonth");
@@ -970,11 +971,11 @@ void ShowInfoWindow()
 		break;
 		case "FOOD_SHIP2":
 			sHeader = XI_Convertstring("FoodShipInfoShort");
-			sText1 = GetConvertStr("Food_descr", "GoodsDescribe.txt");
+			sText1 = GetGoodDescr("Food");
 		break;
 		case "RUM_SHIP2":
 			sHeader = XI_Convertstring("RumShipInfoShort");
-			sText1 = GetConvertStr("Rum_descr", "GoodsDescribe.txt");
+			sText1 = GetGoodDescr("Rum");
 		break;
 	}
 
@@ -1138,11 +1139,10 @@ void ShowGoodsInfo(int iGoodIndex)
 {
 	string GoodName = goods[iGoodIndex].name;
 
-	int lngFileID = LanguageOpenFile("GoodsDescribe.txt");
 	string sHeader = XI_ConvertString(GoodName);
 
     iCurGoodsIdx = iGoodIndex;
-	string goodsDescr = GetAssembledString( LanguageConvertString(lngFileID,goodName+"_descr"), &Goods[iGoodIndex]);
+	string goodsDescr = GetAssembledString(GetGoodDescr(&Goods[iGoodIndex]), &Goods[iGoodIndex]);
     goodsDescr += newStr() + XI_ConvertString("weight") + " " + Goods[iGoodIndex].weight + " " + XI_ConvertString("cwt") +
 	              ", " + XI_ConvertString("PackHolds") + " " + Goods[iGoodIndex].Units + " " + XI_ConvertString("units");
 
@@ -1158,7 +1158,6 @@ void ShowGoodsInfo(int iGoodIndex)
 	SetNewGroupPicture("QTY_GOODS_PICTURE", "GOODS", GoodName);
     SetFormatedText("QTY_CAPTION", sHeader);
     SetFormatedText("QTY_GOODS_INFO", goodsDescr);
-	LanguageCloseFile(lngFileID);
 	
 	iShipQty = GetCargoGoods(pchar, iGoodIndex);
     SetFormatedText("QTY_INFO_SHIP_QTY", its(iShipQty))
@@ -1443,6 +1442,7 @@ void GoToShipChange() // нажатие ОК на табличке ок-отме
 			}
 			else
 			{
+				PostEvent("Event_NewAutoSave", 1000, "s", "AfterBoarding");
 				IDoExit(RC_INTERFACE_RANSACK_MAIN_EXIT);
 			}
 		break;
@@ -1510,6 +1510,7 @@ void GoToShipChange() // нажатие ОК на табличке ок-отме
 				{
 					PostEvent("evntQuestsCheck", 400);
 					ShipTakenFree(sti(refEnemyCharacter.index), KILL_BY_ABORDAGE, sti(pchar.index)); // тут умер реальный кэп, апдайтим ещё
+					STH_StealShipFlag(sti(refEnemyCharacter.nation), GetCharacterShipClass(refEnemyCharacter));
 					SetCharacterRelationBoth(sti(xi_refCharacter.index), GetMainCharacterIndex(), RELATION_FRIEND);
 					UpdateRelations();
 					RefreshBattleInterface();
@@ -1524,6 +1525,7 @@ void GoToShipChange() // нажатие ОК на табличке ок-отме
 			}
 			else
 			{
+				PostEvent("Event_NewAutoSave", 1000, "s", "AfterBoarding");
 				IDoExit(RC_INTERFACE_RANSACK_MAIN_EXIT);
 			}
 		break;

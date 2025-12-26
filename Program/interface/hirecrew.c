@@ -105,7 +105,6 @@ void SetHireEffects()
 	string sRow, sCol, sBonus, sArrow;
 	int iRow, iCol, iBonus, nBonus, nPenalty;
 	bool bBonus;
-
 	nBonus = 0;
 	nPenalty = 0;
 	
@@ -259,14 +258,14 @@ void SetHireEffects()
 		GameInterface.TABLE_EFFECTS.(sRow).(sCol).effectID = "hat3";
 	}
 
-	int nCol;
+	int nCol = 5;
 	for(iRow = 1; iRow <= 2; iRow++)
 	{
 		sRow = "tr" + iRow;
-		if(iRow == 1)
+	/*	if(iRow == 1)
 			nCol = nBonus;
 		else
-			nCol = nPenalty;
+			nCol = nPenalty;	*/
 		for(iCol = 1; iCol <= nCol; iCol++)
 		{
 			sCol = "td" + iCol;
@@ -280,6 +279,11 @@ void SetHireEffects()
 			GameInterface.TABLE_EFFECTS.(sRow).(sCol).icon2.width = 50;
 			GameInterface.TABLE_EFFECTS.(sRow).(sCol).icon2.height = 50;
 			GameInterface.TABLE_EFFECTS.(sRow).(sCol).icon2.offset = "14, 5";
+			if(!CheckAttribute(&GameInterface, "TABLE_EFFECTS." + sRow + "." + sCol + ".effectID"))
+			{
+				GameInterface.TABLE_EFFECTS.(sRow).(sCol).icon1.image = "empty";
+				GameInterface.TABLE_EFFECTS.(sRow).(sCol).icon2.image = "empty";
+			}
 		}
 	}
 	GameInterface.TABLE_EFFECTS.select = 0;
@@ -584,11 +588,11 @@ void ShowInfoWindow()
 		break;
 		case "FOOD_SHIP":
 			sHeader = XI_Convertstring("FoodShipInfoShort");
-			sText1 = GetConvertStr("Food_descr", "GoodsDescribe.txt");
+			sText1 = GetGoodDescr("Food");
 		break;
 		case "RUM_SHIP":
 			sHeader = XI_Convertstring("RumShipInfoShort");
-			sText1 = GetConvertStr("Rum_descr", "GoodsDescribe.txt");
+			sText1 = GetGoodDescr("Rum");
 		break;
 		case "TABLE_EFFECTS":
 			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_EFFECTS", 1);

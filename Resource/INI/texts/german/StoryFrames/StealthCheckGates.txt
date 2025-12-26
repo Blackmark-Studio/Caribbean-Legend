@@ -1,0 +1,65 @@
+Node0_title {Am Tor}
+Node0_a {Du trittst aus $rand(Bäumen|Felsen|dichtem Gestrüpp) zu den Stadttoren. Hohe Steinmauern ragen über den Dschungel hinaus, gekrönt von $rand(Flaggen|Standarten|Wimpeln) $nationGen($attr($context.localization.iNation)). Langsam näherst du dich dem Tor.}
+Node0_b_a {Auf dem Pfad liegen Spuren eines kürzlichen Gefechts — Blut und ein zertrümmerter Wagen mit $rand(Rum|Gewürzen|Zuckerrohr). Die Torwachen wirken angespannt und spähen nervös in den Dschungel, während die Mauern stärker gesichert sind.}
+Node0_b_b {Am Tor steht ein Wagen mit $rand(Schwarzpulver für das Fort|Kanonenkugeln|Proviant). Stadtwachen und Fortsoldaten geraten heftig aneinander. Ihren Gesprächsfetzen nach zu urteilen gab es eine $rand(bürokratische Verzögerung|einen Fehler), und die Ladung darf nicht passieren.}
+Node0_b_c {Unter der Mauer sitzt ein $rand(alter Gardist|grauhaariger Wächter) auf einem Fass und erzählt Geschichten von einem $rand(grässlichen Piratenüberfall|schrecklichen Ausbruch einer Seuche in der Garnison|blutigen Aufstand auf einer Plantage). Die Torwachen hören aufmerksam zu, eher aus Respekt als aus echtem Interesse.}
+Node0_b_d {Am Tor halten sie einen $rand(gefassten Dieb|Deserteur aus der Garnison|feindlichen Spion) auf den Knien. Der Sergeant verlangt, sein Schicksal sofort zu entscheiden — ihn ohne weiteres Aufhebens an der Mauer aufzuhängen. Die Wachen streiten darüber, wer das ausbaden und vor dem Kommandanten geradestehen muss.}
+Node0_c_a {Ein $rand(Laufbursche|verängstigte Frau|betrunkener Matrose) rennt zum Tor und schreit etwas über einen $rand(Brand im Hafen|Marktstreit|Gefängnisausbruch). Die Wachen wechseln nervöse Blicke: Hilfe ist nötig, doch der Posten darf nicht verlassen werden.}
+Node0_c_b {Über der Mauer hängt ein frischer Aushang über $rand(das Aufgebot der Miliz|die Rekrutierung|die Erweiterung der Wache). Wenn solche Zettel sogar außerhalb der Stadt hängen, herrscht dort offensichtlich Soldatenmangel.}
+Node0_c_c {Im Schatten unter der Mauer ist niemand zu sehen, doch im Schlamm am Graben liegt etwas. Wachen und Passanten bemerken nichts, aber von deinem Standpunkt aus siehst du deutlich ein metallisches Aufblitzen.}
+Node0_d {Du musst einen Weg finden, in die Stadt zu gelangen. Oder vielleicht einfach hineinbrechen?}
+Node0_b_a_reaction {Von dem Zusammenstoß mit den Eingeborenen berichten}
+Node0_b_a_reaction_log {Du erzählst den Wachen, dass du im Dschungel auf aggressive Eingeborene gestoßen bist, und schilderst den Kampf in allen Farben, gestützt auf deine gesamte Kampferfahrung. Man glaubt dir und $rand(schickt mehrere Wachen in den Dschungel|teilt Vorräte mit dir|verspricht, sich so schnell wie möglich darum zu kümmern).}
+Node0_b_a_reaction_factor {Unerwarteter Verbündeter}
+Node0_b_b_reaction {Anbieten, den Streit zu schlichten}
+Node0_b_b_reaction_log_0 {Du verstehst das Kernproblem der Ladung und findest seine Ursache. Wie so oft lag es an einer falschen Auslegung der Befehle. Nach deinem Eingreifen zieht der Trupp rasch mit seiner Fracht ab, und die Wachen blicken dir dankbar nach.}
+Node0_b_b_reaction_log_1 {Du kannst die Ursache des Ladungsproblems nicht erkennen und bringst nur noch mehr Verwirrung. Wachen und Posten verbergen ihren Ärger nicht.}
+Node0_b_b_reaction_factor {Schiedsrichter}
+Node0_b_c_reaction {Deine Geschichte erzählen}
+Node0_b_c_reaction_log {Du findest den richtigen Moment und erzählst deine Geschichte. Sie $rand(klingt beeindruckend, auch wenn du kein begnadeter Erzähler bist|klang in deinem Kopf viel besser, und die Wachen lächeln nachsichtig|ist recht bewegend und scheint das Herz eines alten Veteranen erweicht zu haben).}
+Node0_b_c_reaction_factor {Guter Erzähler}
+Node0_b_d_reaction {Anbieten, den Gefangenen freizukaufen}
+Node0_b_d_reaction_log {Du schlägst den Wachen vor, ihre Kräfte nicht zu vergeuden — dieser Verbrecher würde einen ausgezeichneten, kräftigen und gehorsamen Sklaven abgeben und ihnen weitere Probleme ersparen. Der Sergeant überlegt kurz und stimmt dann erleichtert zu.}
+Node0_b_d_reaction_factor {Sklavenhändler}
+Node0_c_a_reaction {Hilfe anbieten}
+Node0_c_a_reaction_log {Du bietest den Wachen deine Hilfe bei der Bewältigung des Problems an. Sie glauben dir und danken dir für das Angebot, lehnen jedoch ab. Solche Angelegenheiten sind Sache der Wache, nicht der Zivilisten.}
+Node0_c_a_reaction_factor {Gesetzestreuer Bürger}
+Node0_c_b_reaction {Sagen, dass du in den Dienst treten willst}
+Node0_c_b_reaction_log_0 {Du bittest darum, einen Werber zu rufen, und erklärst deine Bereitschaft, in die Reihen der Soldaten einzutreten. Du demonstrierst deine Fertigkeit im Umgang mit Schusswaffen, und die Wachen sind beeindruckt.}
+Node0_c_b_reaction_log_1 {Du bittest darum, einen Werber zu rufen, wirst aber abgewiesen. Um die Wachen umzustimmen, willst du deine Fertigkeit im Umgang mit Schusswaffen demonstrieren, doch du $rand(lässt deine Pistole fallen|verhedderst dich komisch im Gürtel|stolperst und stürzt). Die Wachen lachen über dich und verpassen dir einen Soldatenspitznamen — $rand(Terror des Dschungels|Scharfes Auge|Kugel des Schicksals|Schnelle Zündschnur|Adlerauge|Feste Hand). Der Wachkommandant klopft dir väterlich auf die Schulter.}
+Node0_c_b_reaction_factor {Rekrut}
+Node0_c_c_reaction {Ort untersuchen}
+Node0_c_c_reaction_log_0 {Du durchsuchst die Stelle, an der du den Glanz bemerkt hast, und findest $rand(eine Gürtelschnalle eines Soldaten|einen Offiziersdegen|eine Manschettenknopf der Wache). Glücklicherweise ist der Besitzer gerade im Dienst und äußerst dankbar für die Rückgabe.}
+Node0_c_c_reaction_log_1 {Du durchsuchst die Stelle, an der du den Glanz bemerkt hast, findest aber nichts. Es scheint, dass $rand(deine Einbildung dir einen Streich spielt|dir heute das Glück nicht hold ist).}
+Node0_c_c_reaction_factor {Nützlicher Fund}
+Node0_a_action {Versuchen durchzukommen}
+Node0_b_action {Sich mit Gewalt durchkämpfen}
+Node0_c_action {Lizenz vorzeigen}
+Node0_success {Dir gelingt es, durch das Tor in die Stadt zu gelangen. Du $rand(gehst schnell in der Menge unter|schlängelst dich durch die Straßen, um endgültig unterzutauchen|gehst in Richtung der Marktstände und mischst dich unter die Schaulustigen). Nach kurzer Zeit bist du sicher, dass dir niemand folgt, und kannst ungestört deinen Geschäften nachgehen.}
+Node0_success_action {Ausgezeichnet!}
+Node1_a {Du kannst nicht als Freund durchgehen, und die Wachen spannen sich sichtbar an. Ein Halbkreis schließt sich um dich. Die Lage eskaliert schnell.}
+Node1_b_a {Einer der Gardisten tritt unbeholfen von einem Fuß auf den anderen und greift immer wieder nach seiner Seite – unter der Uniform ist ein frischer, blutdurchtränkter Verband zu sehen.}
+Node1_b_b {Ein Sergeant tritt an dich heran und fordert dich auf, zur Kommandantur mitzukommen, um deine Identität festzustellen. Er ist schmächtig und sehr jung und versucht offensichtlich, sich zu beweisen und den Respekt seiner Untergebenen zu gewinnen.}
+Node1_c_a {Im Spalt der Torflügel huscht für einen Moment die Gestalt eines $rand(städtischen Beamten|Priesters) vorbei, und die Wache richtet sich instinktiv auf.}
+Node1_c_b {Hinter dem Tor ertönt plötzlich ein kurzes Glockengeläut — es ist Zeit für den Wachwechsel, und jede Verzögerung geht den erschöpften Wachen auf die Nerven.}
+Node1_d {Eine Entscheidung muss unverzüglich getroffen werden.}
+Node1_b_a_reaction {Dem verletzten Gardisten Hilfe anbieten}
+Node1_b_a_reaction_log {Du bietest dem verletzten Gardisten ein heilendes Elixier an. Er dankt dir und erzählt, dass er während einer Patrouille von $rand(Kariben|Guaraní|Taíno|Arawaken) verwundet wurde. Die Wunde heilte nur schwer, doch jetzt fühlt er sich deutlich besser.}
+Node1_b_a_reaction_factor {Medizinische Hilfe}
+Node1_b_b_reaction {Sich demonstrativ dem Sergeanten unterordnen}
+Node1_b_b_reaction_log_0 {Du erweist dem jungen Sergeanten Respekt und stimmst seinen Bedingungen zu, bestehst jedoch darauf, dass alles regelkonform abläuft. Sein Ton wird merklich milder.}
+Node1_b_b_reaction_log_1 {Du versuchst, die Autorität des Sergeanten zu stärken, doch äußerst unbeholfen. Es wirkt wie Hohn, was das verlegene Kichern hinter seinem Rücken bestätigt. Er läuft rot an, seine Augen füllen sich mit Blut.}
+Node1_b_b_reaction_factor {Erwiesener Respekt}
+Node1_c_a_reaction {Sagen, dass ihr zu einem wichtigen Treffen zu spät kommt}
+Node1_c_a_reaction_log_0 {Ihr erklärt, dass ihr zu einem wichtigen Treffen zu spät kommt und dass dieser Vorfall den zuständigen Stellen gemeldet wird. Ihr wirkt ernst genug, um glaubwürdig zu sein. Die Wachen sind verunsichert, was ein Zeitfenster eröffnet.}
+Node1_c_a_reaction_log_1 {Du versuchst, die Wachen davon zu überzeugen, dass du wegen einer wichtigen Angelegenheit hier bist, klingst jedoch völlig unglaubwürdig. Der misslungene Versuch macht sie nur noch wütender.}
+Node1_c_a_reaction_factor {Wichtige Person}
+Node1_c_b_reaction {Den Wachen Rum anbieten}
+Node1_c_b_reaction_log {Du schlägst den Wachen vor, die Förmlichkeiten fallen zu lassen, um schneller vom Dienst abgelöst zu werden, und spendierst ihnen Rum. Sie werden merklich freundlicher und scheinen bereit, ihre Verdächtigungen zu übersehen. Schließlich sind wir alle nur Menschen.}
+Node1_c_b_reaction_factor {Rum für das Volk}
+Node1_a_action {Versuchen, die Lage zu entschärfen}
+Node1_b_action {Zurück in den Dschungel fliehen}
+Node1_success {Dir gelingt es im letzten Moment, die Situation zu entschärfen. Du $rand(schlüpfst unter den wachsamen Blicken der Wachen in die Stadt|betrittst die Stadt und versuchst, deine Unruhe nicht zu zeigen). Es ist besser, sich nicht lange in $colonyVoc($attr($context.context.colonyId)) aufzuhalten.}
+Node1_success_action {In die Stadt!}
+Node1_fail {Die Wachen schlagen Alarm — du bist enttarnt. Bereits eilen Gardisten zu den Toren, und du beschließt zu fliehen, bevor die ganze Kolonie alarmiert ist.}
+Node1_fail_action {Lauf!}

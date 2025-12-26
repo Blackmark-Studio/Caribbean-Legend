@@ -1,0 +1,20 @@
+BlackMark_1 {Kaçakçı}
+BlackMark_2 { }
+BlackMark_3 {Francis}
+BlackMark_4 {Reasley}
+BlackMark_5 {Tommy}
+BlackMark_6 {Irons}
+BlackMark_7 { }
+BlackMark_8 { }
+BlackMark_9 { }
+BlackMark_10 { }
+BlackMark_11 {Gabriel}
+BlackMark_12 {Callow}
+BlackMark_13 { }
+BlackMark_14 { }
+BlackMark_15 { }
+BlackMark_16 {Tamamdır. Gabe gelmeden hemen gitmeli}
+BlackMark_17 {İki saat sonra...}
+BlackMark_18 {Sabah oldu...}
+BlackMark_19 { }
+BlackMark_20 { }

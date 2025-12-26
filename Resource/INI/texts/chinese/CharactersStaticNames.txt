@@ -6,11 +6,11 @@ Jones {Jones}
 Francis {Francis}
 lord Willoughby {lord Willoughby}
 Gaston {Gaston}
-Bald-pate {秃头}
+Bald-pate {Bald-pate}
 Mirabelle {Mirabelle}
 Peter {Peter}
 Walles {Walles}
-One-eyed {独眼}
+One-eyed {One-eyed}
 Pascal {Pascal}
 Voisier {Voisier}
 Master {Master}
@@ -68,7 +68,7 @@ Timothy {Timothy}
 Vitrye {Vitrye}
 Simon {Simon}
 Merilin {Merilin}
-Sailor {水手}
+Sailor {Sailor}
 Pedro Carrilia {Pedro Carrilia}
 de Gusman {de Gusman}
 Dolores {Dolores}
@@ -145,6 +145,11 @@ d'Aubuisson {d'Aubuisson}
 Alicia {Alicia}
 Chardon {Chardon}
 de Maldonado {de Maldonado}
+Jean {Jean}
+Picard {Picard}
+Gustave {Gustave}
+Gachet {Gachet}
+de Monper {de Monper}
 Maarten {Maarten}
 Visser {Visser}
 Hendrik {Hendrik}
@@ -158,3 +163,6 @@ Ferguson {Ferguson}
 Willebrord {Willebrord}
 Snellius {Snellius}
 Stieltjes {Stieltjes}
+Moko {Moko}
+Bernard {Bernard}
+Throckmorton {Throckmorton}

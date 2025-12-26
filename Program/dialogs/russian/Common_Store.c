@@ -31,8 +31,6 @@ void ProcessDialogEvent()
 	{
 		rColony = GetColonyByIndex(iTest);
 	}
-	
-	int iSeaGoods = LanguageOpenFile("ShipEatGood.txt"); // нужно заменить на GetGoodsNameAlt(idx)
 
 	if(!CheckAttribute(npchar, "quest.trade_date"))
 	{
@@ -1356,7 +1354,7 @@ void ProcessDialogEvent()
             iQuantityGoods =  makeint(pchar.CargoQuest.iQuantityGoods);
 
             dialog.text = "Хм. Я слышал, что вы ещё не выполнили обязательства по предыдущему фрахту, а уже просите новый. Вы должны были доставить груз " +
-            LanguageConvertString(iSeaGoods, "seg_" + Goods[iTradeGoods].Name)+ " в " + XI_ConvertString("Colony"+pchar.CargoQuest.iTradeColony) + ".";
+            GetGoodsNameSeaSection(&Goods[iTradeGoods])+ " в " + XI_ConvertString("Colony"+pchar.CargoQuest.iTradeColony) + ".";
 			link.l1 = "Да, точно! Вы правы!";
 			link.l1.go = "exit";
 		break;
@@ -1992,7 +1990,6 @@ void ProcessDialogEvent()
 			DialogExit();			
 		break;
 	}
-	LanguageCloseFile(iSeaGoods);
 }
 
 int findStoreMan(ref NPChar, int iTradeNation)
@@ -2049,7 +2046,7 @@ string findSunplaceCity(ref NPChar) // new
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
+		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;

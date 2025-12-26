@@ -11,10 +11,7 @@ itm_stat_descr_damageReduction {该百分比在所有其他计算之前从受 �
 itm_stat_attack {伤害}
 itm_stat_descr_attack
 {
-斩击: #sattack.fast.min#–#sattack.fast.max# 伤害
-突刺: #sattack.force.min#–#sattack.force.max# 伤害
-旋风斩: #sattack.round.min#–#sattack.round.max# 伤害
-破甲击: #sattack.break.min#–#sattack.break.max# 伤害
+斩击: #sattack.fast.min#–#sattack.fast.max# 伤害突刺: #sattack.force.min#–#sattack.force.max# 伤害旋风斩: #sattack.round.min#–#sattack.round.max# 伤害破甲击: #sattack.break.min#–#sattack.break.max# 伤害
 }
 itm_stat_gundamage {火器伤害。}
 itm_stat_descr_gundamage {远程战斗中造成的伤害取决于技能 、武器属性和弹药。}
@@ -54,16 +51,14 @@ itm_stat_descr_secondary_hat10 {在摧毁时, 该物品会返还其主要材料,
 itm_stat_hat11 {拥抱}
 itm_stat_descr_hat11
 {
-耐力 +2
-用冷兵器击杀敌人可恢复25%能量。
+耐力 +2用冷兵器击杀敌人可恢复25%能量。
 }
 itm_stat_potion6 {坚韧}
 itm_stat_descr_potion6 {饮用此药剂可防止战斗中眩晕。}
 itm_stat_berserker_potion {原始狂怒}
 itm_stat_descr_berserker_potion
 {
-可瞬间激发强大力量与耐力, 大幅提升敏捷与反应速度, 减弱疼痛感, 并增强攻击性。
-效果持续不超过12秒, 每分钟仅可使用一次。
+可瞬间激发强大力量与耐力, 大幅提升敏捷与反应速度, 减弱疼痛感, 并增强攻击性。效果持续不超过12秒, 每分钟仅可使用一次。
 }
 itm_stat_mangarosafast {旋风}
 itm_stat_descr_mangarosafast {使用此药剂可使任意武器的攻击速 度提升5%。}
@@ -154,8 +149,7 @@ itm_stat_descr_totem_06 {超出负重不会减慢角色速度或带来 惩罚。
 itm_stat_totem_07 {召唤}
 itm_stat_descr_totem_07
 {
-新志愿者即使欠船员债务, 也会以更低的价格加入。
-仅主角可用。酒馆招募人数提高5%。
+新志愿者即使欠船员债务, 也会以更低的价格加入。仅主角可用。酒馆招募人数提高5%。
 }
 itm_stat_totem_08 {亲自参与}
 itm_stat_descr_totem_08 {舰炮瞄准射击伤害提高10%。}
@@ -170,8 +164,7 @@ itm_stat_descr_totem_12 {轻型武器的快速攻击伤害提高15%。}
 itm_stat_totem_13 {老千}
 itm_stat_descr_totem_13
 {
-大幅提升抽中所需牌和掷出目标点 数的概率。
-获得+1成功。
+大幅提升抽中所需牌和掷出目标点 数的概率。获得+1成功。
 }
 itm_stat_knife_01 {秘密}
 itm_stat_descr_knife_01 {这把匕首蕴藏着强大的隐秘力量。 佩戴在胸前作为护身符, 可战胜死亡。}
@@ -206,7 +199,7 @@ itm_stat_descr_talisman13 {奇异地提升你的负重能力。}
 itm_stat_talisman14 {灯塔}
 itm_stat_descr_talisman14 {导航技能提升15点。}
 itm_stat_talisman15 {恶名昭著}
-itm_stat_descr_talisman15 {舰队力量提升15%。由克伦威尔铁甲骑兵的领巾制成。}
+itm_stat_descr_talisman15 {舰队力量提升15%。 由克伦威尔铁甲骑兵的领巾制成。}
 itm_stat_talisman16 {丛林战士}
 itm_stat_descr_talisman16 {异域武器造成15%额外伤害}
 itm_stat_talisman17 {信仰之盾}
@@ -269,9 +262,7 @@ itm_stat_kaleuche_amulet3 {防御咒语}
 itm_stat_descr_kaleuche_amulet3 {使寺庙中的查维纳维 (Chavinavi) 怪物对武器伤害更为脆弱, 并对它们的攻击提供防护。将来自 任何武器类型的所受伤害降低25%, 并防止中毒。}
 itm_stat_descr_lacrima_patris_bonus
 {
-~
-~
-当前加成: $number($attr($context.KillerBonus.appliedbonus)) 伤害, 和 $number($attr($context.KillerBonus.RangeBonus))% 射程。
+~~当前加成: $number($attr($context.KillerBonus.appliedbonus)) 伤害, 和 $number($attr($context.KillerBonus.RangeBonus))% 射程。
 }
 itm_stat_blade_WR_1 {勤勉}
 itm_stat_descr_blade_WR_1 {战斗中生命恢复速度提升五倍。}
@@ -286,7 +277,7 @@ itm_stat_descr_PerksPotion {重置角色所有已学的Perks。服用后, 关于
 itm_stat_descr_talisman19_InSlot {每损失2%的船体会分别使炮弹速度和伤害提高0.75%和0.5%。}
 itm_stat_descr_talisman19_InInventory {在物品栏中时, 它会让所有军官变得不死。}
 itm_stat_piratesJournal_1 {劫掠者}
-itm_stat_descr_piratesJournal_1 {在世界地图上移动速度提高3%。如果旗舰是“阿姆斯特丹”, 该加成翻倍。这是最纯粹的海盗传统。}
+itm_stat_descr_piratesJournal_1 {在世界地图上移动速度提高3%。如果旗舰是“阿姆斯特丹”, 该加成翻倍。 这是最纯粹的海盗传统。}
 itm_stat_piratesJournal_2 {赃物收购者}
 itm_stat_descr_piratesJournal_2 {被盗货物的惩罚降低8%。如果旗舰是“阿姆斯特丹”, 该加成翻倍。}
 itm_stat_piratesJournal_3 {自给自足}

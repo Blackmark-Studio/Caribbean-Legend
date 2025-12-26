@@ -45,9 +45,9 @@ int Fantom_SetEncounterShips(ref rEnc, string sGroupName)
 	makearef(arShips, rEnc.FixedShips);
 
 	int i, q = GetAttributesNum(arShips);
-    int Commanders[2]; SetArraySize(&Commanders, q);
-    int iShipTypes[2]; SetArraySize(&iShipTypes, q);
-    string ShipModes[2]; SetArraySize(&ShipModes, q);
+    int Commanders[q];
+    int iShipTypes[q];
+    string ShipModes[q];
 
     // Найти подходящего командира и поставить его первым (флагман)
     int iCurClass, iBestClass = INT_MAX;
@@ -79,7 +79,7 @@ int Fantom_SetEncounterShips(ref rEnc, string sGroupName)
 	}
     // Перетасовать остальных, чтобы убрать чёткий порядок по специализациям
     int j, tmp;
-    int iSort[2]; SetArraySize(&iSort, q);
+    int iSort[q];
     for (i = 0; i < q; i++) iSort[i] = i;
     iSort[0] = Commanders[rand(numCandidates-1)]; // Флагман
     iSort[iSort[0]] = 0;

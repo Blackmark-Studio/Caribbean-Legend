@@ -60,6 +60,7 @@ void InitInterface(string iniName)
 	SetEventHandler("WarningHide","WarningHide",0);
 	SetEventHandler("OpenExchange", "OpenExchange", 0);
 	SetEventHandler("OnHeaderClick","OnHeaderClick",0);
+	SetEventHandler("CheckButtonChange","procCheckBoxChange",0);
 	// выбросить предмет
 	SetEventHandler("ShowBoxMove", "ShowBoxMove", 0);
 	SetEventHandler("GoodsExitCancel", "GoodsExitCancel", 0);
@@ -181,6 +182,7 @@ void IDoExit(int exitCode)
 	DelEventHandler("WarningHide","WarningHide");
 	DelEventHandler("PopupIsShown","PopupIsShown");
 	DelEventHandler("PopupIsClosed","PopupIsClosed");
+	DelEventHandler("CheckButtonChange","procCheckBoxChange");
 	// выбросить предмет
 	DelEventHandler("ShowBoxMove", "ShowBoxMove");
 	DelEventHandler("GoodsExitCancel", "GoodsExitCancel");
@@ -438,6 +440,7 @@ void RemoveItem()
 		case "TABBTNSLOT_11":
 			rItem = HAT_ITEM_TYPE; // шляпы
 			sMode = 18;
+			offy = -137;
 		break;
 	}
 	if (rNodName == "TABBTNSLOT_1" || rNodName == "TABBTNSLOT_2" || rNodName == "TABBTNSLOT_3" ||
@@ -552,6 +555,20 @@ void SetButtonsState()
 	}
 }
 
+void procCheckBoxChange()
+{
+	string ChBNodName = GetEventData();
+	int nBtnIndex = GetEventData();
+	int bBtnState = GetEventData();
+
+	if(ChBNodName == "HAT_CHECKBOX") 
+	{
+		xi_refCharacter.HatShow = bBtnState;
+		string hat = GetCharacterEquipByGroup(xi_refCharacter, HAT_ITEM_TYPE);
+		if(hat != "") SetEquipedItemToCharacter(xi_refCharacter, HAT_ITEM_TYPE, hat);
+	}
+}
+
 void SetVariable()
 {
 	SetCommonHeaderInfo();
@@ -574,6 +591,15 @@ void SetVariable()
 	// <----
 	FillTableOther();
 	SetHatSlot(xi_refCharacter);
+	// чекбокс шляп
+	if (CheckAttribute(xi_refCharacter, "HatShow"))
+	{
+		SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"HAT_CHECKBOX", 2, 1, sti(xi_refCharacter.HatShow));
+	}
+	else
+	{
+		SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"HAT_CHECKBOX", 2, 1, 1);
+	}
 	SetNewPicture("CHARACTER_BIG_PICTURE", "interfaces\le\portraits\512\face_" + xi_refCharacter.FaceId + ".tga");
 	SetFormatedText("HERO_NAME", GetFullName(xi_refCharacter));
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"HERO_NAME",5);
@@ -590,7 +616,7 @@ void SetVariable()
 	}
 	//navy <--
 	bool bShowNations = true;
-	if(CheckCharacterPerk(xi_refCharacter, "ByWorker"))
+	if (CheckCharacterPerk(xi_refCharacter, "ByWorker"))
 	{
 		SetNewGroupPicture("CHARACTER_NATION_PICTURE", "PERKS_ENABLE", "ByWorker");
 	}
@@ -720,7 +746,6 @@ void ShowInfoWindow()
 	int iItem;
 	ref arItm = &Items[iGoodIndex];
 	ref rItem = ItemsFromID(arItm.id);
-	int lngFileID = LanguageOpenFile("ItemsDescribe.txt");
 	int	picW = 128;
 	int	picH = 128;
 	
@@ -930,11 +955,11 @@ void ShowInfoWindow()
 		case "TABLE_ITEMS":
 		/*	if(CheckAttribute(&GameInterface, CurTable + "." + CurRow + ".index"))
 			{
-				sHeader = LanguageConvertString(lngFileID, rItem.name);
-				sText1  = GetAssembledString(LanguageConvertString(lngFileID, arItm.describe), rItem);
+				sHeader = GetItemName(rItem);
+				sText1  = GetAssembledString(GetItemDescr(arItm), rItem);
 				sGroup = rItem.picTexture;
 				sGroupPicture = "itm" + rItem.picIndex;
-				if(rItem.id == "talisman19") sText1 = GetItemDescribe(iGoodIndex);
+				if(rItem.id == "talisman19") sText1 = GetItemDescr(arItm);
 			}
 			else
 			{	*/
@@ -1010,15 +1035,15 @@ void ShowInfoWindow()
 			if(IsEquipCharacterByArtefact(xi_refCharacter, "talisman17"))
 			{
 				rItem = ItemsFromID("talisman17");
-				sHeader = LanguageConvertString(lngFileID, "itmname_talisman17");
-				sText1 = LanguageConvertString(lngFileID, "itmdescr_talisman17");
+				sHeader = GetItemName("talisman17");
+				sText1 = GetItemDescr("talisman17");
 				if(CheckAttribute(rItem,"QBonus"))
 				{
-					sText2 = GetAssembledString(LanguageConvertString(lngFileID,"talisman17_quests"), rItem);
+					sText2 = GetAssembledString(GetSimpleItemKey("talisman17_quests"), rItem);
 				}
 				else
 				{
-					sText2 = LanguageConvertString(lngFileID, "talisman17_questsNoBonus");
+					sText2 = GetSimpleItemKey("talisman17_questsNoBonus");
 				}
 				sGroup = rItem.picTexture;
 				sGroupPicture = "itm" + rItem.picIndex;
@@ -1049,8 +1074,14 @@ void ShowInfoWindow()
 			sText3 = XI_ConvertString("ItemSlot_Info_d1");
 		break;
 		case "TABBTNSLOT_11":
-		    sHeader = "Шляпа";
-			sText1 = "Шляпа";
+		    sHeader = XI_ConvertString("ItemSlot_11");
+			sText1 = XI_ConvertString("ItemSlot_11_d");
+			sText2 = XI_ConvertString("ItemSlot_Info_d1");
+			sText3 = XI_ConvertString("ItemSlot_Info_d2");
+		break;
+		case "HAT_CHECKBOX":
+			sHeader = XI_ConvertString("ItemSlot_11");
+			sText1 = XI_ConvertString("ItemSlot_11s_d");
 		break;
 	}
 
@@ -1058,7 +1089,6 @@ void ShowInfoWindow()
 	SetItemStatsTooltip(xi_refCharacter, sCurrentNode, &sHeader, &sText1, &sText2, &sText3);
 	if(sHeader != "" || sText1 != "")
 		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false);
-	LanguageCloseFile(lngFileID);
 }
 
 void HideInfoWindow()
@@ -1529,7 +1559,6 @@ void FillItemsTable(int _mode) // 1 - все 2 - снаряжение 3 - эли
 	string sGood;
 	string groupID;
 	string itemType;
-	int  idLngFile;
 	bool ok, ok0, ok1, ok2, ok3, ok4, ok5;
 	bool slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8;
 	aref rootItems, arItem;
@@ -1542,7 +1571,6 @@ void FillItemsTable(int _mode) // 1 - все 2 - снаряжение 3 - эли
 	GameInterface.TABLE_ITEMS.hr.td3.str = XI_ConvertString("ItemsQty");
 	GameInterface.TABLE_ITEMS.hr.td4.str = XI_ConvertString("ItemsWeightAll");
 	n = 1;
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 	Table_Clear("TABLE_ITEMS", false, true, false);
 	
 	// Заполним вещами от нас
@@ -1654,7 +1682,7 @@ void FillItemsTable(int _mode) // 1 - все 2 - снаряжение 3 - эли
 				GameInterface.TABLE_ITEMS.(row).td1.icon.height = 50;
 				GameInterface.TABLE_ITEMS.(row).td1.textoffset = "40,0";
 				GameInterface.TABLE_ITEMS.(row).td1.line_space_modifier = 0.7;
-				GameInterface.TABLE_ITEMS.(row).td1.str = LanguageConvertString(idLngFile, arItem.name);
+				GameInterface.TABLE_ITEMS.(row).td1.str = GetItemName(arItem);
 				
 				GameInterface.TABLE_ITEMS.(row).td2.str   = FloatToString(stf(arItem.Weight), 1);
 				if(groupID == MAPS_ITEM_TYPE)
@@ -1668,7 +1696,6 @@ void FillItemsTable(int _mode) // 1 - все 2 - снаряжение 3 - эли
     }
     
 	Table_UpdateWindow("TABLE_ITEMS");
-	LanguageCloseFile(idLngFile);
 	if (_mode == 1)
 	{
 		FillItemsSelected();
@@ -1707,6 +1734,7 @@ void FillItemsSelected()
 	SetNodeUsing("ITEM_5B", false);
 	SetNodeUsing("ITEM_4L", false);
 	SetNodeUsing("ITEM_11", false);
+	SetNodeUsing("HAT_CHECKBOX", false);
 	SetNodeUsing("TABBTNSLOT_2B", false);
 	SetNodeUsing("TABBTNSLOT_5B", false);
 	SetNodeUsing("TABBTNSLOT_4L", false);
@@ -1849,6 +1877,7 @@ void FillItemsSelected()
                 SetNewGroupPicture("ITEM_11", curItem.picTexture, "itm" + curItem.picIndex);
                 SetNodeUsing("ITEM_11", true);
                 SetNodeUsing("TABBTNSLOT_11", true);
+				if (HasHatLocator(xi_refCharacter)) SetNodeUsing("HAT_CHECKBOX", true);
                 if (GetCharacterEquipByGroup(xi_refCharacter, HAT_ITEM_TYPE) == "hat10")
                 {
                     ref hat10 = ItemsFromID("hat10");
@@ -2450,11 +2479,10 @@ void EquipPress()
 				    }
 				    else
 				    {
-                        //totalInfo = GetConvertStr(itmRef.MapIslId, "LocLables.txt");
                         i = FindLocation(itmRef.MapLocId);  // ищем ареал
                         if (i != -1 && locations[i].islandId != "Mein")
                         {
-                            totalInfo = GetConvertStr(locations[i].islandId, "LocLables.txt");
+                            totalInfo = GetIslandNameByID(locations[i].islandId);
                             totalInfo = GetConvertStr("type_full_" + itmRef.MapTypeIdx + "_isl", "MapDescribe.txt") + " " + totalInfo;
                         }
                         else
@@ -2796,6 +2824,10 @@ void EquipPress()
 										xi_refCharacter.reputation.fame = COMPLEX_REPUTATION_MAX - sti(xi_refCharacter.reputation.fame.talisman9);
 										DeleteAttribute(xi_refCharacter, "reputation.fame.talisman9");
 									}
+									if(itmGroup == HAT_ITEM_TYPE)
+									{
+										DeleteAttribute(xi_refCharacter, "HatShow"); // чистим атрибут показа шляп
+									}
 									RemoveCharacterEquip(xi_refCharacter, itmGroup);
 									Event(EVENT_CT_UPDATE_FELLOW, "a", xi_refCharacter);
 								}
@@ -2825,6 +2857,10 @@ void EquipPress()
 									if(itmRef.id == "hat10" && !CheckAttribute(itmRef, "durability"))
 									{
 										itmRef.durability = 45;
+									}
+									if(itmGroup == HAT_ITEM_TYPE)
+									{
+										xi_refCharacter.HatShow = 1; // показываем по умолчанию новую шляпу
 									}
 									EquipCharacterByItem(xi_refCharacter, itmRef.id);
 									Event(EVENT_CT_UPDATE_FELLOW, "a", xi_refCharacter);
@@ -2865,6 +2901,7 @@ void ExitMapWindow()
 	XI_WindowShow("MAP_WINDOW", false);
 	XI_WindowDisable("MAP_WINDOW", true);
 	XI_WindowDisable("MAIN_WINDOW", false);
+	XI_WindowDisable("ITEM_WINDOW", false);
 
 	SetFormatedText("MAP_TEXT", "");
 	SetCurrentNode("TABLE_ITEMS");
@@ -2875,6 +2912,7 @@ void ShowMapWindow()
 	XI_WindowShow("MAP_WINDOW", true);
 	XI_WindowDisable("MAP_WINDOW", false);
 	XI_WindowDisable("MAIN_WINDOW", true);
+	XI_WindowDisable("ITEM_WINDOW", true);
 	
 	SetCurrentNode("MAP_TEXT");
 }
@@ -3117,32 +3155,31 @@ void SetItemInfo(int iGoodIndex)
 	string sBullet;
 	string sAttr;
 	int i, n;
-	int lngFileID = LanguageOpenFile("ItemsDescribe.txt");
-	describeStr = GetItemDescribe(arItm);
+	describeStr = GetItemDescr(arItm);
 	if(CheckAttribute(arItm, "UpgradeStage"))
 	{
-		describeStr += " " + LanguageConvertString(lngFileID,"UpgradeStageInfo_" + arItm.id + "_" + sti(arItm.UpgradeStage));
+		describeStr += " " + GetItemUpgradeStage(arItm);
 	}
 	if(arItm.id == "talisman17")
 	{
 		if(CheckAttribute(arItm,"QBonus"))
 		{
-			describeStr += newStr() + GetAssembledString( LanguageConvertString(lngFileID,"talisman17_quests"), arItm) + newStr();
+			describeStr += newStr() + GetAssembledString( GetSimpleItemKey("talisman17_quests"), arItm) + newStr();
 		}
 		else
 		{
-			describeStr += newStr() + LanguageConvertString(lngFileID, "talisman17_questsNoBonus") + newStr();
+			describeStr += newStr() + GetSimpleItemKey("talisman17_questsNoBonus") + newStr();
 		}
 	}
 	if(arItm.id == "talisman18")
 	{
 		if(CheckAttribute(arItm,"QBonus"))
 		{
-			describeStr += newStr() + GetAssembledString( LanguageConvertString(lngFileID,"talisman18_Bonus"), arItm) + newStr();
+			describeStr += newStr() + GetAssembledString( GetSimpleItemKey("talisman18_Bonus"), arItm) + newStr();
 		}
 		else
 		{
-			describeStr += newStr() + LanguageConvertString(lngFileID, "talisman18_NoBonus") + newStr();
+			describeStr += newStr() + GetSimpleItemKey("talisman18_NoBonus") + newStr();
 		}
 	}
 	SetFormatedText("INFO_TEXT", describeStr);

@@ -93,7 +93,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_3":
-			dialog.text = "Yes to all your questions. For more than two days, we chased them all over the island with the soldiers. Then the bastards split up. Some retreated towards the cave, followed by the guards, and the rest bolted to the bay. They ambushed us about half a mile west of here, and we lost a few men. While we were regrouping and getting our bearings, they... had their way with that foolish girl…";
+			dialog.text = "Yes to all your questions. For more than two days, we chased them all over the island with the soldiers. Then the bastards split up. Some retreated towards the cave, followed by the guards, and the rest bolted to the bay. They ambushed us about half a mile west of here, and we lost a few men. While we were regrouping and getting our bearings, they... had their way with that foolish girl...";
 			link.l1 = "...";
 			link.l1.go = "Naemnik_6_add";
 		break;
@@ -247,7 +247,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_24":
-			dialog.text = "Well, well... What a cheeky little worm. Tell me, mate, is your girl any good in a hammock?  Then again, I have my doubts… but I’d be glad to find out for myself.";
+			dialog.text = "Well, well... What a cheeky little worm. Tell me, mate, is your girl any good in a hammock?  Then again, I have my doubts... but I’d be glad to find out for myself.";
 			link.l1 = "There you go, showing your true colors. The facade didn’t last long.";
 			link.l1.go = "Naemnik_bitva";
 		break;
@@ -276,7 +276,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Djerry_4":
-			dialog.text = "Uh-huh, sure, ha-ha. And then William Bishop would clear me of my own skin. Heard all about it from a black fella on the plantation… Bishop doesn’t care if you’re black or white - he’s quick to deal with runaways all the same. ";
+			dialog.text = "Uh-huh, sure, ha-ha. And then William Bishop would clear me of my own skin. Heard all about it from a black fella on the plantation... Bishop doesn’t care if you’re black or white - he’s quick to deal with runaways all the same. ";
 			link.l1 = "I'm afraid you'll have to go back to the plantation one way or another...";
 			link.l1.go = "Djerry_5";
 			link.l2 = "So you won’t go back to the plantation?";
@@ -343,7 +343,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_13":
-			dialog.text = "After what we heard from Bishop’s lackey, I have no doubt those poor souls died by his hand. But before that… Casper – were you paying attention to what he was saying?";
+			dialog.text = "After what we heard from Bishop’s lackey, I have no doubt those poor souls died by his hand. But before that... Casper – were you paying attention to what he was saying?";
 			link.l1 = "And what didn’t sit right with you, darling?";
 			link.l1.go = "Mary_14";
 		break;
@@ -796,7 +796,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Schmidt_1":
-			dialog.text = "Ah, "+pchar.name+" and Mary, what a surprise! Glad to see you both… alive and well, heh-heh. Two or three ships wrecked on the outer ring just this past month - the sea’s been damn restless lately. And hey, don’t go barging into locked doors - you’ll break the bloody lock, and then I’ll be the one fixing it. You’re here to see Donald, right?";
+			dialog.text = "Ah, "+pchar.name+" and Mary, what a surprise! Glad to see you both... alive and well, heh-heh. Two or three ships wrecked on the outer ring just this past month - the sea’s been damn restless lately. And hey, don’t go barging into locked doors - you’ll break the bloody lock, and then I’ll be the one fixing it. You’re here to see Donald, right?";
 			link.l1 = "And a good day to you, friend. We’re here to see him in person. But judging by the locked door, he’s either moved to another ship or doesn’t want to see old friends.";
 			link.l1.go = "Schmidt_2";
 			DelLandQuestMark(npchar);
@@ -963,14 +963,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Grinspy_5":
-			dialog.text = "Let me finish. Yes, we managed to preserve the peace, but our differences haven’t gone anywhere. At least not with the black-skinned heathens. Just last week, one of the Narwhals was killed in a tavern brawl. But we made sure to return the favor…";
+			dialog.text = "Let me finish. Yes, we managed to preserve the peace, but our differences haven’t gone anywhere. At least not with the black-skinned heathens. Just last week, one of the Narwhals was killed in a tavern brawl. But we made sure to return the favor...";
 			link.l1 = "Yes, yes - that’s how it always begins.";
 			link.l1.go = "Grinspy_7";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
 		break;
 		
 		case "Grinspy_6":
-			dialog.text = " Let me finish. Yes, we managed to preserve the peace, but our differences haven’t gone anywhere. At least not with the black-skinned heathens. Just last week, one of the Narwhals was killed in a tavern brawl. But we made sure to return the favor…";
+			dialog.text = " Let me finish. Yes, we managed to preserve the peace, but our differences haven’t gone anywhere. At least not with the black-skinned heathens. Just last week, one of the Narwhals was killed in a tavern brawl. But we made sure to return the favor...";
 			link.l1 = "Alright, that's exactly how it always begins.";
 			link.l1.go = "Grinspy_7";
 			AddCharacterExpToSkill(pchar, "Sneak", 100);
@@ -1037,7 +1037,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Grinspy_15":
-			dialog.text = "Tell me about them, please. You knew them! I asked you about them once before, and you wouldn’t answer me…";
+			dialog.text = "Tell me about them, please. You knew them! I asked you about them once before, and you wouldn’t answer me...";
 			link.l1 = "...";
 			link.l1.go = "Grinspy_15_add";
 		break;
@@ -1247,7 +1247,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jillian_12":
-			dialog.text = " You know as well as I do that there’s no proper physician here. And what could be done anyway? Old age spares no one… ";
+			dialog.text = " You know as well as I do that there’s no proper physician here. And what could be done anyway? Old age spares no one... ";
 			link.l1 = "...";
 			link.l1.go = "Jillian_12_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Jillian_clone"), CharacterFromID("Mary"));
@@ -1649,7 +1649,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_23":
-			dialog.text = "Ah, it’s just that when I look at young folks these days… no, no, we weren’t like that with our elders. But you’re not like that either, of course. I only meant to say that it’ll be easier for us if I answer your questions one at a time, not all in a jumble...";
+			dialog.text = "Ah, it’s just that when I look at young folks these days... no, no, we weren’t like that with our elders. But you’re not like that either, of course. I only meant to say that it’ll be easier for us if I answer your questions one at a time, not all in a jumble...";
 			link.l1 = "...";
 			link.l1.go = "Oreli_23_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -2166,7 +2166,7 @@ void ProcessDialogEvent()
         break;
 
         case "WildRose_Dexter_7":
-            dialog.text = "Why not? As you can probably guess, I couldn’t care less about the ships themselves. And the valuables stuffed in their holds? Same there. There's enough for everyone here, if people don’t get too greedy. At least, that’s how I see it. What I truly care about is weapons: muskets, sabres… cannons, even. Yes, those smartasses sometimes salvage those too. The brainless black bastards couldn’t manage it, but the Narwhals...";
+            dialog.text = "Why not? As you can probably guess, I couldn’t care less about the ships themselves. And the valuables stuffed in their holds? Same there. There's enough for everyone here, if people don’t get too greedy. At least, that’s how I see it. What I truly care about is weapons: muskets, sabres... cannons, even. Yes, those smartasses sometimes salvage those too. The brainless black bastards couldn’t manage it, but the Narwhals...";
             link.l1 = "And you decided to see just how ready the people of Greenspen are for a new round of conflict?";
             link.l1.go = "WildRose_Dexter_8";
         break;
@@ -2184,7 +2184,7 @@ void ProcessDialogEvent()
         break;
 
         case "WildRose_Dexter_10":
-            dialog.text = "That's just it, no, curse me if I lie! The black bastards have gone quiet, holed up on their ships…";
+            dialog.text = "That's just it, no, curse me if I lie! The black bastards have gone quiet, holed up on their ships...";
             link.l1 = "So what the hell is bothering you, then? "+npchar.name+"?";
             link.l1.go = "WildRose_Dexter_11";
         break;
@@ -2385,7 +2385,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Betancur_15":
-			dialog.text = " Those records… they include the year 1638, don’t they? Please, say they do!";
+			dialog.text = " Those records... they include the year 1638, don’t they? Please, say they do!";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Betancur_15_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Betancur"), CharacterFromID("Mary"));
@@ -2431,7 +2431,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Betancur_19":
-			dialog.text = " Please, make yourselves comfortable, research to your hearts’ content…";
+			dialog.text = " Please, make yourselves comfortable, research to your hearts’ content...";
 			link.l1 = "That's exactly what we'll do.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap2_IslandOfJustice_20");
@@ -2463,7 +2463,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Betancur_22":
-			dialog.text = " They weren’t well to begin with, as I recall. Now it comes back to me, "+pchar.name+" – I was near the Ceres Smithy when they were brought aboard… Yes, I was on the Esmeralda with Orelie Bertine, I believe. And there was also Chimiset, that shaman of the black heathens, who came to the store for some reason. At first, I thought the two sailors were already dead, but they passed only a day later…";
+			dialog.text = " They weren’t well to begin with, as I recall. Now it comes back to me, "+pchar.name+" – I was near the Ceres Smithy when they were brought aboard... Yes, I was on the Esmeralda with Orelie Bertine, I believe. And there was also Chimiset, that shaman of the black heathens, who came to the store for some reason. At first, I thought the two sailors were already dead, but they passed only a day later...";
 			link.l1 = "Well, nothing we can do about it. But we've already learned quite a lot. Thank you for your help, Antonio.";
 			link.l1.go = "WildRose_Betancur_23";
 		break;
@@ -2483,7 +2483,7 @@ void ProcessDialogEvent()
 		
 		case "WildRose_Chimiset_21":
 			dialog.text = "Good to see you again, my friend. What brings you here?";
-			link.l1 = " A request, +npchar.name+… Or rather, a question.";
+			link.l1 = " A request, +npchar.name+... Or rather, a question.";
 			link.l1.go = "WildRose_Chimiset_22";
 			DelLandQuestMark(npchar);
 		break;
@@ -2639,7 +2639,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Chimiset_39":
-			dialog.text = "There’s no point in lying – we managed to reach your mother, but it was too late: the Narwhals refused to let me onto the ‘Ceres Smithy’. Your father managed to… persuade them, but I saw poor Teresa only as she was drawing her last breath. She gave birth to you, and if I’d arrived sooner, maybe I could have saved her, but…";
+			dialog.text = "There’s no point in lying – we managed to reach your mother, but it was too late: the Narwhals refused to let me onto the ‘Ceres Smithy’. Your father managed to... persuade them, but I saw poor Teresa only as she was drawing her last breath. She gave birth to you, and if I’d arrived sooner, maybe I could have saved her, but...";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Chimiset_39_add";
 			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("Chimiset"));
@@ -4417,13 +4417,13 @@ void ProcessDialogEvent()
 			sld = CharacterFromID("Mary");
 			if (CheckCharacterItem(sld, "hat11")) // У Мэри есть своя шляпа
 			{
-				dialog.text = " Weeell… I’ve seen much in my long and hard life. Just when I think nothing can surprise me anymore, life proves me wrong. So, you actually survived… And even kept Theresa’s hat. I never thought I’d see it again. ";
+				dialog.text = " Weeell... I’ve seen much in my long and hard life. Just when I think nothing can surprise me anymore, life proves me wrong. So, you actually survived... And even kept Theresa’s hat. I never thought I’d see it again. ";
 				link.l1 = "...";
 				link.l1.go = "WildRose_Rupert_3_1_add";
 			}
 			else
 			{
-				dialog.text = " Weeell… I’ve seen much in my long and hard life. Just when I think nothing can surprise me anymore, life proves me wrong. So, you actually survived, Julia… ";
+				dialog.text = " Weeell... I’ve seen much in my long and hard life. Just when I think nothing can surprise me anymore, life proves me wrong. So, you actually survived, Julia... ";
 				link.l1 = "...";
 				link.l1.go = "WildRose_Rupert_3_add";
 			}
@@ -4496,7 +4496,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_7":
-			dialog.text = "Well, if that weren’t the case, you and your pal would already be lying on the ground, full of lead. I haven’t believed in God or the Devil for a long time, but maybe they do exist after all. The first one for sure—since He gave you Teresa’s looks. And that just saved your life right now. How does that saying go… The Lord works in mysterious ways, alright? Ha-ha-ha!";
+			dialog.text = "Well, if that weren’t the case, you and your pal would already be lying on the ground, full of lead. I haven’t believed in God or the Devil for a long time, but maybe they do exist after all. The first one for sure—since He gave you Teresa’s looks. And that just saved your life right now. How does that saying go... The Lord works in mysterious ways, alright? Ha-ha-ha!";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Rupert_7_add";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), CharacterFromID("Mary"));
@@ -4520,7 +4520,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_9":
-			dialog.text = " Of course you don’t. How could you…";
+			dialog.text = " Of course you don’t. How could you...";
 			link.l1 = "You don’t exactly look thrilled to see your daughter, Mister Casper. Especially after you just admitted she’s yours.";
 			link.l1.go = "WildRose_Rupert_10";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), CharacterFromID("Mary"));
@@ -4571,7 +4571,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_15":
-			dialog.text = "Tell me, "+pchar.lastname+", does she always throw such tantrums? She gets it from her mother. Teresa was a wonderful girl, the best I’ve ever met But boy could she scream up a storm when she got angry… What can I say... Irish.";
+			dialog.text = "Tell me, "+pchar.lastname+", does she always throw such tantrums? She gets it from her mother. Teresa was a wonderful girl, the best I’ve ever met But boy could she scream up a storm when she got angry... What can I say... Irish.";
 			link.l1 = "Don't you dare insult her! Mary isn't to blame for your misfortunes, and she certainly doesn't deserve to be treated like this.";
 			link.l1.go = "WildRose_Rupert_16";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), pchar);
@@ -4594,7 +4594,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_18":
-			dialog.text = "You’re blaming me for Mama’s death?! How does that make any sense? What did I do - get born? Is that my crime? Fine, Father. +pchar.name+ is right - just tell us everything. After that, we’ll leave. You’ll never see my face again… if that’s what you want... (begins sobbing)";
+			dialog.text = "You’re blaming me for Mama’s death?! How does that make any sense? What did I do - get born? Is that my crime? Fine, Father. +pchar.name+ is right - just tell us everything. After that, we’ll leave. You’ll never see my face again... if that’s what you want... (begins sobbing)";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Rupert_18_add";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), CharacterFromID("Mary"));
@@ -4606,7 +4606,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_19":
-			dialog.text = "Ahhh, just like Theresa. It’s like I’m back twenty years ago, ha! Oh what the hell, have it your way. I’m not going to enjoy relieving all those memories… So if, by the end of this little story, I feel like putting a bullet in your skull, darling - well, blame yourself.";
+			dialog.text = "Ahhh, just like Theresa. It’s like I’m back twenty years ago, ha! Oh what the hell, have it your way. I’m not going to enjoy relieving all those memories... So if, by the end of this little story, I feel like putting a bullet in your skull, darling - well, blame yourself.";
 			link.l1 = "Then you'll catch a bullet too, Rupert. And I don't think that's part of your plan – you look like someone who values his own life.";
 			link.l1.go = "WildRose_Rupert_20";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), CharacterFromID("Mary"));
@@ -4852,7 +4852,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Rupert_79":
 			dialog.text = "Somehow managing to get back on my feet, I left that cursed village and made my way to the coast, to Amatique Bay. There, I met some smugglers whose ship was anchored nearby and joined them, calling myself Rupert Casper — I didn't want to give up my first name, but I also kept the surname of one of those who'd ruined my life. Just so I’d never forget why I ended up here.";
-			link.l1 = " Everyone’s to blame, as far as you are concerned, Northwood… except for yourself. Still, I can see why — years of humiliation and hardship, and now you’re stuck in these woods. Who wouldn’t lose their mind? ";
+			link.l1 = " Everyone’s to blame, as far as you are concerned, Northwood... except for yourself. Still, I can see why — years of humiliation and hardship, and now you’re stuck in these woods. Who wouldn’t lose their mind? ";
 			link.l1.go = "WildRose_Rupert_80_1";
 			link.l2 = "You've been through a lot, Northwood – no doubt about it. And now, look where you are... In the woods, at the edge of civilization. You won't lose your mind out here...";
 			link.l2.go = "WildRose_Rupert_80_2";

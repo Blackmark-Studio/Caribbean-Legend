@@ -502,15 +502,13 @@ string descF5 = "Главному герою +35 скилов";
 int BOAL_debug_num = 1;
 void CalculateInfoDataF5()
 {
-    //idLngFile = LanguageOpenFile("ItemsDescribe.txt");
     // -->
     totalInfo = descF5;
 
     pchar.Skill.FreeSkill = sti(pchar.Skill.FreeSkill) + 35;
     
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
-    //LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
 
     // Статистика по читам
@@ -537,15 +535,13 @@ string descF7 = "Личные навыки +1 ";
 
 void CalculateInfoDataF7()
 {
-    //idLngFile = LanguageOpenFile("ItemsDescribe.txt");
     // -->
     totalInfo = descF7;
 
    pchar.perks.FreePoints_self = sti(pchar.perks.FreePoints_self) + 1;
 
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
-    //LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
 
     // Статистика по читам
@@ -604,7 +600,6 @@ string descF10 = "Бессмертие вкл/выкл";
 
 void CalculateInfoDataF10()
 {
-    //idLngFile = LanguageOpenFile("ItemsDescribe.txt");
     // -->
     totalInfo = descF10;
     ref mc;
@@ -621,9 +616,8 @@ void CalculateInfoDataF10()
         
     }
     // <--
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
-    //LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
 
     // Статистика по читам
@@ -665,7 +659,6 @@ void CalculateInfoDataF12()
 string descF13 = "Отношени у всех наций +10";
 void CalculateInfoDataF13()
 {
-    //idLngFile = LanguageOpenFile("ItemsDescribe.txt");
     // -->
     totalInfo = descF13;
 	
@@ -674,9 +667,8 @@ void CalculateInfoDataF13()
         ChangeCharacterNationReputation(pchar, j, 10);
     }
 
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
-    //LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
     //ProcessCancelExit();
 
@@ -687,7 +679,6 @@ void CalculateInfoDataF13()
 string descF14 = "Отношение у всех наций -10";
 void CalculateInfoDataF14()
 {
-   // idLngFile = LanguageOpenFile("ItemsDescribe.txt");
     // -->
     totalInfo = descF14;
 	
@@ -696,9 +687,8 @@ void CalculateInfoDataF14()
         ChangeCharacterNationReputation(pchar, j, -10);
     }
 
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
-    //LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
     //ProcessCancelExit();
 
@@ -710,15 +700,13 @@ string descF15 = "Повысить репутацию ";
 
 void CalculateInfoDataF15()
 {
-    //idLngFile = LanguageOpenFile("ItemsDescribe.txt");
     // -->
     totalInfo = descF15;
 
     ChangeCharacterComplexReputation(pchar,"nobility", 5);
 
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
-    //LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
     //ProcessCancelExit();
 
@@ -730,15 +718,13 @@ string descF16 = "Понизить репутацию ";
 
 void CalculateInfoDataF16()
 {
-    //idLngFile = LanguageOpenFile("ItemsDescribe.txt");
     // -->
     totalInfo = descF16;
 
     ChangeCharacterComplexReputation(pchar,"nobility", -5);
     // <
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
-    //LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
 
     // Статистика по читам
@@ -749,15 +735,13 @@ string descF17 = "Повысить известность ";
 
 void CalculateInfoDataF17()
 {
-    //idLngFile = LanguageOpenFile("ItemsDescribe.txt");
     // -->
     totalInfo = descF17;
 
    ChangeCharacterComplexReputation(pchar, "fame", 5);
    
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
-    //LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
 
     // Статистика по читам
@@ -768,15 +752,13 @@ string descF18 = "Понизить известность ";
 
 void CalculateInfoDataF18()
 {
-    //idLngFile = LanguageOpenFile("ItemsDescribe.txt");
     // -->
     totalInfo = descF18;
 
     ChangeCharacterComplexReputation(pchar, "fame", -5);
     // <
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
-   //LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
 
     // Статистика по читам
@@ -952,11 +934,10 @@ void CalculateInfoDataF27()
     totalInfo = descF27;
 
 	bEncOffGlobal = !bEncOffGlobal;
-	if (bEncOffGlobal) totalInfo = totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_off") + NewStr();
-	else totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_on") + NewStr();
+	if (bEncOffGlobal) totalInfo = totalInfo + NewStr() + GetSimpleItemKey("StrF27_off") + NewStr();
+	else totalInfo + NewStr() + GetSimpleItemKey("StrF27_on") + NewStr();
 
     totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile, "Cheat_success");
-    LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT",totalInfo);
 
     // Статистика по читам

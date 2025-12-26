@@ -82,4 +82,5 @@ SharlieFinal_81 {Gobart}
 SharlieFinal_82 {上校}
 SharlieFinal_83 {Kirk}
 SharlieFinal_84 {世界已改变, 你的英雄也一样 @<NewStr()> 但那是另一个故事了...}
-SharlieFinal_85 { }
+SharlieFinal_85 {The letter is written.}
+SharlieFinal_86 { }

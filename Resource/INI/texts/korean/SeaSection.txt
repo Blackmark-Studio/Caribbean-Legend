@@ -1,0 +1,60 @@
+Ship_critical {치명타!}
+Ship_critical_notif {- 치명타!}
+Ship_sunk {%1 "%2" 침몰. +%3 경험치 획득.}
+Ship_sunk_other {%1 "%2" 침몰함.}
+Ship_got_good {%2 %1센트너를 선적했습니다}
+Ship_cant_got_good {%1의 공간이 없습니다}
+Fort_destroy {요새 %1 파괴됨. +%2 경험 획득.}
+Fort_destroy_notif {요새 포대 제압됨!}
+Fort_cannon {요새의 대포가 파괴되었습니다!}
+seg_Balls {탄환}
+seg_Grapes {산탄}
+seg_Knippels {쇄탄}
+seg_Bombs {수류탄}
+seg_Sailcloth {돛천}
+seg_Planks {널빤지}
+seg_Slaves {노예}
+seg_Wheat {밀}
+seg_Ebony {흑단}
+seg_Chocolate {코코아}
+seg_Sugar { }
+seg_Wine {와인}
+seg_ShipSilk {선박견}
+seg_Rum {럼주}
+seg_Tobacco {담배}
+seg_Coffee {커피}
+seg_Mahogany {마호가니}
+seg_Cinnamon {바닐라}
+seg_Copra {코프라}
+seg_Paprika {파프리카}
+seg_Fruits {과일}
+seg_Ale {에일}
+seg_Ropes {밧줄}
+seg_Clothes {의류}
+seg_Cotton {면화}
+seg_Sandal {아이언우드}
+seg_Leather {가죽}
+seg_Oil {송진}
+seg_Food {식량}
+seg_Weapon {무기}
+seg_Gold {금}
+seg_Silver {은화}
+seg_Powder {화약}
+seg_Brick {벽돌}
+seg_Medicament {약품}
+seg_Cannon_3 {3파운드 팔코넷}
+seg_Cannon_6 {6파운더포}
+seg_Cannon_8 {8파운더포}
+seg_Cannon_12 {12파운더포}
+seg_Cannon_16 {16파운드포}
+seg_Cannon_18 {18파운드포}
+seg_Cannon_20 {20파운더포}
+seg_Cannon_24 {24파운더포}
+seg_Cannon_32 {32파운더포}
+seg_Cannon_36 {36파운더포}
+seg_Cannon_42 {42파운더포}
+seg_Cannon_48 {48파운더포}
+seg_Culverine_8 {세미쿨레브린}
+seg_Culverine_18 {쿠르브린}
+seg_Culverine_36 {풀 쿠르브린}
+sea_exp_add {#ERROR!}

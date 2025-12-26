@@ -13,17 +13,17 @@
 #define PERK_VALUE2_ADVANCED_DEFENSE 0.10  // защита от крита
 #define PERK_VALUE_MEDIC 25                // бонус хп
 #define PERK_VALUE_MUSCLES 0.10            // меньше энергии на удары тяжёлым оружием
-#define PERK_VALUE2_MUSCLES 0.04           // атак спид тяжёлым оружием
-#define PERK_VALUE3_MUSCLES 0.25           // ошеломление становится слабее
+#define PERK_VALUE2_MUSCLES 0.06           // атак спид тяжёлым оружием
+#define PERK_VALUE3_MUSCLES 0.35           // ошеломление становится слабее
 #define PERK_VALUE_HEARTBREAKER 0.10       // урон прямым длинным оружием
 #define PERK_VALUE2_HEARTBREAKER 0.03      // атак спид выпада
 #define PERK_VALUE_CRITICAL_HIT 0.035      // крит-шанс
-#define PERK_VALUE_REAPER 0.30             // крит-урон
+#define PERK_VALUE_REAPER 0.45             // крит-урон
 #define PERK_VALUE2_REAPER 0.03            // крит-шанс
 #define PERK_VALUE_BLADE_DANCER 0.30       // урон круговым ударом кривым оружием
 #define PERK_VALUE_STRYCHNINE 0.09         // шанс отравить
 #define PERK_VALUE_GRUS 35                 // переносимый вес
-#define PERK_VALUE_CONQUEST 0.15           // удары и пробивающие удары прямым длинным оружием наносят больше урона
+#define PERK_VALUE_CONQUEST 0.25           // удары и пробивающие удары прямым длинным оружием наносят больше урона
 #define PERK_VALUE_POWDER_FEEL 0.15        // увеличение выхлопа от крафта боеприпасов
 #define PERK_VALUE2_POWDER_FEEL 0.10       // шанс не потратить патрон при выстреле у не ГГ
 #define PERK_VALUE_DARK_HORSE 0.025        // увеличение хп/энергии от бытовых предметов
@@ -32,13 +32,13 @@
 #define PERK_VALUE2_BAYONET 0.30           // и ещё больше урона со штыком
 #define PERK_VALUE_SABRE_HURRICANE 0.10    // удары и выпады средним кривым оружием наносят больше урона
 #define PERK_VALUE2_SABRE_HURRICANE 90.0   // удары и выпады средним кривым оружием шире в градусах
-#define PERK_VALUE_PALACE_GUARD 0.15       // тяжелое кривое оружие наносит больше урона, кроме круговых
-#define PERK_VALUE2_PALACE_GUARD 0.20      // тяжелое кривое оружие наносит больше урона круговыми
-#define PERK_VALUE_HARD_HITTER 0.15        // пробивающие удары тяжелым оружием наносят больше урона
+#define PERK_VALUE_PALACE_GUARD 0.25       // тяжелое кривое оружие наносит больше урона, кроме круговых
+#define PERK_VALUE2_PALACE_GUARD 0.30      // тяжелое кривое оружие наносит больше урона круговыми
+#define PERK_VALUE_HARD_HITTER 0.25        // пробивающие удары тяжелым оружием наносят больше урона
 #define PERK_VALUE_FLANKING 0.05           // атаки кривым оружием совершаются быстрее
 #define PERK_VALUE_CUNNING_STRIKE 0.03     // легкое оружие имеет увеличенный шанс крита
-#define PERK_VALUE2_CUNNING_STRIKE 0.10    // атаки в спину наносят больше урона
-#define PERK_VALUE_QUIET 0.25              // не главный герой наносит на больше урона атаками в спину
+#define PERK_VALUE2_CUNNING_STRIKE 0.40    // атаки в спину наносят больше урона
+#define PERK_VALUE_QUIET 0.55              // не главный герой наносит на больше урона атаками в спину
 #define PERK_VALUE_COLLECTION 1000         // каждый размещенный на корабле экзотический предмет приносит песо за день стоянки
 #define PERK_VALUE2_COLLECTION 0.03        // каждый экзотический предмет, экипированный персножаем, увеличивает его урон
 #define PERK_VALUE_MARATHON_RUNNER 2.0     // сколько энергии требует спринт с перком
@@ -52,7 +52,7 @@
 #define PERK_VALUE_PRACTICE 2              // каждый экипированный предмет, который можно создать, увеличивает все умения
 #define PERK_VALUE_INVESTOR 1              // бонус процент вклада
 #define PERK_VALUE2_INVESTOR 10.0          // бонус к скиллам офицера
-#define PERK_VALUE_EXHAUSION 24            // парирование коротким оружием отнимает у врага больше энергии
+#define PERK_VALUE_EXHAUSTION 0.24         // парирование коротким оружием отнимает у врага больше энергии
 #define PERK_VALUE_SLIDING 0.45            // удар или выпад легким оружием может пробить блок
 #define PERK_VALUE_DRAGOON 0.10            // урон среднего оружия увеличен
 #define PERK_VALUE_INERTIA 0.10            // урон тяжелого оружия увеличен
@@ -67,17 +67,18 @@
 #define PERK_VALUE2_SHOOT_TO_KILL 5.0      // длительность замедления выстрелом
 #define PERK_VALUE_KERN 0.08               // бонус к урону огнестрела за пустой заряд
 #define PERK_VALUE2_KERN 0.04              // бонус к скорости перезарядки за пустой заряд
-#define PERK_VALUE_DODGY 0.35              // расталкивание в спринте становится сильнее
+#define PERK_VALUE_DODGY 0.40              // расталкивание в спринте становится сильнее
 #define PERK_VALUE_MASTER 0.001            // каждый изготовленный предмет, для которого требуется набор инструментов, увеличивает исходящий урон
 #define PERK_VALUE2_MASTER 0.001           // каждое выпитое персонажем зелье увеличивает исходящий урон
 #define PERK_VALUE_CAPTAIN 4               // минимальный ранг корабля, для которого в открытом море нужен перк
 #define PERK_VALUE_HP_PLUS 3               // доп хп за ранг
 #define PERK_VALUE_ENERGY_PLUS 2           // доп энергия за ранг
-#define PERK_VALUE_TRUSTWORTHY 0.25        // персонаж согласен служить за уменьшенное жалование
+#define PERK_VALUE_TRUSTWORTHY 0.35        // персонаж согласен служить за уменьшенное жалование
 #define PERK_VALUE_LOOTING 35              // увеличивает переносимый вес персонажа
 #define PERK_VALUE_MULE 2                  // увеличивает переносимый вес персонажа за ранг
 #define PERK_VALUE2_MULE 0.5               // процент снижения штрафа от тяжёлого оружия и брони у ГГ
 #define PERK_VALUE2_TIE_FIT 0.3            // процент снижения штрафа от оружия и брони у НПС
+#define PERK_VALUE_TIRELESS 0.15           // увеличивает скорость восстановления энергии
 
 // дальше корабельные
 #define PERK_VALUE_LONG_RANGE_SHOOT 1.10   // 
@@ -169,7 +170,7 @@ string PerkBaseValue(string valueName, string prefix)
 		case "value_Alchemy": return VarTypeToString(PERK_VALUE_ALCHEMY); break;
 		case "value_Investor": return VarTypeToString(PERK_VALUE_INVESTOR); break;
 		case "value_2Investor": return VarTypeToString(PERK_VALUE2_INVESTOR); break;
-		case "value_Exhausion": return VarTypeToString(PERK_VALUE_EXHAUSION); break;
+		case "value_Exhaustion": return VarTypeToString(PERK_VALUE_EXHAUSTION); break;
 		case "value_LongRangeShoot": return VarTypeToString(PERK_VALUE_LONG_RANGE_SHOOT); break;
 		case "value_SailsDamageUp": return VarTypeToString(PERK_VALUE_SAILS_DAMAGE_UP); break;
 		case "value_CannonProfessional": return VarTypeToString(PERK_VALUE_CANNON_PROFESSIONAL); break;
@@ -216,6 +217,7 @@ string PerkBaseValue(string valueName, string prefix)
 		case "value_Mule": return VarTypeToString(PERK_VALUE_MULE); break;
 		case "value_2Mule": return VarTypeToString(PERK_VALUE2_MULE); break;
 		case "value_2TieFit": return VarTypeToString(PERK_VALUE2_TIE_FIT); break;
+		case "value_Tireless": return VarTypeToString(PERK_VALUE_TIRELESS); break;
 	}
 
 	return "Error";

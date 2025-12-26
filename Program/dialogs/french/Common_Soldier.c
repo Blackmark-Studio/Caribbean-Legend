@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	
 	DeceptionChance = sti(GetSummonSkillFromName(pchar, SKILL_SNEAK)*100/110);
 	if(DeceptionChance - DeceptionPenalty > 50) DeceptionChance -= DeceptionPenalty;
-	if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE) 
+	if (false) 
 	{
 		DeceptionChance = sti(GetSummonSkillFromName(pchar, SKILL_SNEAK)*100/310);
 		if(DeceptionChance - DeceptionPenalty > 50) DeceptionChance -= DeceptionPenalty;
@@ -63,10 +63,10 @@ void ProcessDialogEvent()
 		
 		case "First time":			
             NextDiag.TempNode = "First time";
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+			if (false)
 			{
 				// заглушка на пирата
-				if (sti(pchar.nation) == PIRATE)
+				if (false)
 				{
     				dialog.text = RandPhraseSimple("Des pirates en ville?! Je n'y crois pas... Saisissez "+GetSexPhrase("lui","elle")+"!!","C'est un pirate ! Saisissez "+GetSexPhrase("lui","elle")+"!!!");
 					link.l1 = RandPhraseSimple("Je suis un pirate et alors ?","Heh, tu peux essayer...");
@@ -92,7 +92,7 @@ void ProcessDialogEvent()
 			else
 			{
 				// eddy. проверяем, не казачок ли. -->
-				if (GetNationRelation(sti(NPChar.nation), GetBaseHeroNation()) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+				if (false)
 				{
 					// грамота Винсенто
 					if(CheckAttribute(pchar, "questTemp.Guardoftruth") && CheckCharacterItem(pchar, "VerifyPaper") && npchar.city == "santiago")
@@ -143,7 +143,7 @@ void ProcessDialogEvent()
 					{
 						//==> по флагу
 						// заглушка на пирата
-						if (sti(pchar.nation) == PIRATE)
+						if (false)
 						{
     						dialog.text = RandPhraseSimple("Des pirates en ville ?! Je n'arrive pas à le croire... Arrêtez-le !","C'est un pirate! Attrapez-le!");
 							link.l1 = RandPhraseSimple("Oui, je suis un pirate - et alors?","Heh, attrape-moi si tu peux...");
@@ -513,7 +513,6 @@ void ProcessDialogEvent()
 				dialog.text = "Juste à y penser ! Quelle insolence ! Venir ici sous le déguisement d'un marchand ! Vos portraits sont affichés dans chaque caserne, espèce de salaud ! Vous ne vous en sortirez pas cette fois-ci ! Saisissez-le !";
 				link.l1 = RandPhraseSimple("Arrgh !..","Eh bien, vous l'avez demandé ...");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (pchar.location != "LosTeques_town" && findsubstr(pchar.location.from_sea, "_town" , 0) == -1) //если причалил не в городе 300912
@@ -521,7 +520,6 @@ void ProcessDialogEvent()
 				dialog.text = "Vous êtes venu pour faire du commerce ici ? Puis-je demander comment ? Où est votre navire ? Vous savez, tout cela a l'air très suspect, et je suis obligé de vous détenir jusqu'à ce que nous ayons tout éclairci. Rendez votre arme et suivez-moi !";
 				link.l1 = RandPhraseSimple("Va te faire foutre !","Quand deux dimanches viennent en une semaine...");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (iTemp == -1)
@@ -529,7 +527,6 @@ void ProcessDialogEvent()
 				dialog.text = "Votre licence doit être révoquée car elle est expirée et n'est donc pas valide. Rendez votre arme et suivez-moi pour une enquête plus approfondie!";
 				link.l1 = RandPhraseSimple("Va te faire foutre !","Quand deux dimanches viennent en une semaine...");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (iTemp == 0)

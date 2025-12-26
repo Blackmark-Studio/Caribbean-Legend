@@ -247,7 +247,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Wine_Bottles_free":
-			dialog.text = "Что-же... Хорошо. Сейчас напишу и, надеюсь, на ответную услугу в будущем.";
+			dialog.text = "Что ж... Хорошо. Сейчас напишу и, надеюсь, я смогу расчитывать на ответную услугу в будущем.";
 			link.l1 = "...";
 			link.l1.go = "Wine_Bottles_free_1";
 		break;

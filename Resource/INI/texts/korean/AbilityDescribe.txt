@@ -1,0 +1,341 @@
+newline
+{
+
+}
+BasicDefense {기본 방어}
+perkBasicDefense {받는 피해가 $percent($perkBaseValue(BasicDefense|1)) 감소합니다.}
+AdvancedDefense {고급 방어}
+perkAdvancedDefense {받는 피해가 $percent($perkBaseValue(AdvancedDefense|1)) 감소하고, 적의 치명타 피해가 $percent($perkBaseValue(AdvancedDefense|2)) 감소합니다.}
+CriticalHit {치명타}
+perkCriticalHit {기본 치명타 확률이 $percent($perkBaseValue(CriticalHit|1)) 증가합니다.}
+Grus {강인한 척추}
+perkGrus {소지 한도가 35파운드 증가합니다.}
+Tireless {지치지 않음}
+perkTireless {에너지 회복 속도가 $percent($perkBaseValue(Tireless|1)) 증가합니다.}
+HardHitter {무거운 손}
+perkHardHitter {중화기로 강공격 시 피해량 $percent($perkBaseValue(HardHitter|1)) 증가. 고급 강공격 해금.}
+BladeDancer {세이버의 춤}
+perkBladeDancer {곡도 광역 공격 시 피해 $percent($perkBaseValue(BladeDancer|1)) 증가.}
+Sliding {저항 불가 공격}
+perkSliding {경무기로 베기 또는 빠른 공격 시, 고급 특수 공격으로 $percent($perkBaseValue(Sliding|1)) 확률로 방어를 돌파할 수 있습니다.}
+Gunman {머스킷병}
+perkGunman
+{
+화기 피해량과 재장전 속도가 $percent($perkBaseValue(Gunman|1)) 증가합니다. 단발 양손 무기와 연발 한손 무기를 사용할 수 있습니다.
+~
+장교는 $key(descriptor_TwoHanded|ItemsDescriptors.txt) 무기를 명령받았을 때만 사용할 수 있습니다.
+}
+GunProfessional {척후병}
+perkGunProfessional {화기 피해와 재장전 속도가 $percent($perkBaseValue(GunProfessional|1)) 증가합니다. 양손 연발 화기를 사용할 수 있게 됩니다.}
+IronWill {강철 의지}
+perkIronWill {3분마다 치명상을 한 번 버틸 수 있습니다.}
+SharedExperience {눈치 빠른}
+perkSharedExperience {기술 성장 속도 15% 증가}
+Medic {건강한 습관}
+perkMedic {체력을 25만큼 증가시킵니다. 체력이 최대치의 절반 이하일 때, 자동 치유 속도가 두 배가 됩니다.}
+HPPlus {증가하는 생명력}
+perkHPPlus {캐릭터의 HP가 새로운 랭크마다 $perkBaseValue(HPPlus|1)씩 증가합니다. 특성은 소급 적용됩니다.}
+EnergyPlus {커져가는 에너지}
+perkEnergyPlus {새 등급마다 캐릭터의 에너지 예비력이 1 증가합니다. 소급 적용됩니다.}
+ByWorker {재능}
+perkByWorker {캐릭터는 동시에 두 개의 장교 직책을 맡을 수 있습니다}
+perkByWorkerShort {캐릭터는 동시에 두 개의 장교 직책을 맡을 수 있습니다}
+ByWorker2 {천재}
+perkByWorker2 {캐릭터는 동시에 최대 세 개의 장교 직위를 맡을 수 있습니다.}
+perkByWorker2Short {캐릭터는 한 번에 세 개의 장교 직책을 맡을 수 있습니다}
+Trustworthy {신뢰할 수 있는}
+perkTrustworthy {특정 퀘스트에서 대화 설득 옵션이 추가로 열립니다. 처벌을 피하거나 적대적인 도시에 쉽게 들어갈 수 있습니다.}
+ShipEscape {두 번째 기회}
+perkShipEscape
+{
+영웅의 침몰하는 배에서 구명정으로 함대 내 다른 배로 탈출할 수 있습니다.
+전투 중 선체가 15% 미만일 때, 화물창 메뉴에서 다른 함대 선박으로 이동하거나 교체할 수 있습니다.
+동료가 이 기술을 보유하면, 침몰선이나 화선에서 구명정을 타고 영웅의 배로 승객으로 돌아옵니다.
+}
+Alchemy {연금술}
+perkAlchemy {제조에 도구가 필요하지 않습니다. 사용 시 15% 확률로 물약을 소모하지 않습니다.}
+FastReload {사격 훈련}
+perkFastReload {함포 재장전 속도 10% 증가.}
+ImmediateReload {사격 준비}
+perkImmediateReload {다음 재장전 속도 30% 증가. 5분마다 사용 가능.}
+HullDamageUp {약점}
+perkHullDamageUp {적 선체에 가하는 피해가 10% 증가합니다.}
+SailsDamageUp {삭구 사격}
+perkSailsDamageUp {적 함선의 돛 피해가 10% 증가합니다.}
+CrewDamageUp {갑판 빗자루}
+perkCrewDamageUp {적 선원 피해가 10% 증가합니다.}
+CriticalShoot {치명타 사격}
+perkCriticalShoot {캐릭터가 적에게 치명타 일제사격을 가할 확률이 생깁니다. 확률: 5%.}
+LongRangeShoot {일제사격 사거리}
+perkLongRangeShoot {함포 사거리 10% 증가}
+CannonProfessional {숙련된 포수}
+perkCannonProfessional {함선 모든 부위 피해, 포신 조준 및 타겟팅 속도, 치명타 확률이 10% 증가합니다.}
+LongRangeGrappling {늑대의 손아귀}
+perkLongRangeGrappling {접현 거리 15% 증가}
+MusketsShoot {머스킷 일제사격}
+perkMusketsShoot
+{
+접현 전에 머스킷 일제 사격이 가해집니다.
+피해 규모는 선박 등급과 선봉대 수에 따라 달라집니다.
+}
+GrapplingProfessional {숙련된 갑판장}
+perkGrapplingProfessional {접현 거리 25% 증가. 각도와 속도에 상관없이 가능.}
+BasicBattleState {기본 선박 방어}
+perkBasicBattleState {선박이 받는 모든 피해가 10% 감소합니다.}
+AdvancedBattleState {고급 선박 방어}
+perkAdvancedBattleState {함선이 받는 모든 피해가 10% 추가로 감소합니다.}
+ShipDefenseProfessional {숙련된 목수}
+perkShipDefenseProfessional {함선이 받는 모든 피해가 추가로 5% 더 감소합니다. 적의 치명타 피해가 35% 감소합니다.}
+ShipSpeedUp {쾌속 항해}
+perkShipSpeedUp {선박 최대 속도 15% 증가}
+ShipTurnRateUp {선박 기동성 증가}
+perkShipTurnRateUp {선박 기동성 15% 증가}
+StormProfessional {폭풍 내성}
+perkStormProfessional {폭풍 피해 30% 감소.}
+Turn180 {회피 기동}
+perkTurn180 {1분 동안 선회 속도 4배 증가. 3분마다 사용 가능.}
+SailingProfessional {숙련된 항해사}
+perkSailingProfessional {선박 속도와 기동성이 5% 증가합니다. 도주 확률이 향상됩니다.}
+SeaDogProfessional {바다의 공포}
+perkSeaDogProfessional
+{
+Sea Terror의 기를 본 순간, 가장 대담한 모험가와 무법자조차 감히 운명을 시험하지 않습니다. 함대 전력이 $percent($PerkBaseValue(SeaDogProfessional|1)) 증가합니다.
+~
+플레이어만 사용할 수 있으며, $attr($context.rank) 등급이 필요합니다.
+}
+FlagPir {조리 로저}
+perkFlagPir
+{
+조리 로저 깃발로 교체할 수 있습니다.
+~
+이 기술은 플레이어만 사용할 수 있습니다.
+}
+FlagEng {잉글랜드 국기}
+perkFlagEng {선박의 rate에 해당하는 깃발만 사용할 수 있습니다. 깃발을 얻으려면 해당 rate의 선박을 나포하거나 면허를 구매해야 합니다.}
+FlagFra {프랑스 국기}
+perkFlagFra {선박의 rate에 해당하는 깃발만 사용할 수 있습니다. 깃발을 얻으려면 해당 rate의 선박을 나포하거나 면허를 구매해야 합니다.}
+FlagSpa {스페인 국기}
+perkFlagSpa {선박의 rate에 해당하는 깃발만 사용할 수 있습니다. 깃발을 얻으려면 해당 rate의 선박을 나포하거나 면허를 구매해야 합니다.}
+FlagHol {네덜란드 국기}
+perkFlagHol {선박의 rate에 해당하는 깃발만 사용할 수 있습니다. 깃발을 얻으려면 해당 rate의 선박을 나포하거나 면허를 구매해야 합니다.}
+Troopers {공성 전술}
+perkTroopers
+{
+요새 공격 전 함대의 선원을 합류시킬 수 있습니다.
+육상에서 정착지를 습격할 때 필요한 선원 수가 감소합니다.
+}
+BasicCommerce {기본 교역}
+perkBasicCommerce {구매 시 4% 더 이익을 얻습니다. 은행과 시장에서 수요 품목이 표시됩니다.}
+AdvancedCommerce {고급 교역}
+perkAdvancedCommerce {물품 판매 이익 4% 증가.}
+ProfessionalCommerce {숙련된 재정관}
+perkProfessionalCommerce {물품 매매 시 8% 더 이익을 얻습니다.}
+Carpenter {수동 수리}
+perkCarpenter {이동 중 선체와 돛이 천천히 수리됩니다. 판자와 돛천이 필요합니다.}
+InstantRepair {전투 수리}
+perkInstantRepair
+{
+전투 중 신속 수리로 최대 80%까지 내구도를 복구합니다. 선체에는 목재, 돛에는 천이 필요합니다.
+1.5분마다 사용 가능.
+}
+LightRepair {긴급 수리}
+perkLightRepair
+{
+추가 자원 없이 선체 HP의 최대 10%까지 수리할 수 있습니다. 이 기술이 없으면 선체 HP가 10% 미만일 때 선박이 서서히 손상됩니다.
+3분마다 사용 가능.
+}
+Builder {피해 통제}
+perkBuilder {수리 시 판자와 돛감 소모량이 25% 감소합니다.}
+SelfRepair {전면 수리}
+perkSelfRepair
+{
+선원과 함께 적합한 해안에서 선박을 완전히 수리할 수 있는 능력입니다. 선체와 돛대에는 판재가, 돛에는 천이 필요합니다. 선체, 돛, 돛대의 완전 복원이 가능합니다.
+
+수리 옵션은 해안 지역의 육지에서만 이용할 수 있습니다.
+}
+WindCatcher {바다의 감각}
+perkWindCatcher
+{
+선박 가속이 10% 빨라집니다.
+
+지도 보유 시 익숙한 해역에서 월드맵 이동 속도 증가.
+}
+SailsMan {쾌속 돛}
+perkSailsMan {최신 당근과 채찍 전략 덕분에 모든 돛 조작 속도가 10% 빨라집니다.}
+Doctor1 {의사}
+perkDoctor1 {해상 전투 중 부상과 산탄으로 인한 선원 손실이 5% 감소합니다.}
+Doctor2 {숙련된 의사}
+perkDoctor2 {해상 전투 중 부상과 산탄으로 인한 선원 손실이 10% 감소합니다.}
+TannedLeather {두꺼운 피부}
+perkTannedLeather {경갑은 방어력이 50% 증가하고 후퇴 시 에너지 소모가 30% 감소합니다.}
+RatsWolf {쥐늑대}
+perkRatsWolf {이 캐릭터의 배에서는 쥐와 해충으로 인한 화물 피해가 발생하지 않습니다.}
+Mimicry {의태}
+perkMimicry {해상 은신 판정이 50% 더 효과적입니다.}
+TreasureHunter {보물 사냥꾼}
+perkTreasureHunter {보물 지도 상인이 더 자주 등장하며, 보물의 가치도 더 높아집니다.}
+Dragoon {드라군}
+perkDragoon {중무기 피해량 10% 증가.}
+Bombardier {폭격수}
+perkBombardier {함포 내구도가 증가합니다.}
+Sniper {저격수}
+perkSniper {화기로 적을 공격하면 에너지가 감소합니다.}
+perkTreeMusketer {머스킷병}
+perkTreeSoldier {병사}
+perkTreeMastery {숙련}
+perkTreeBackground {배경}
+perkTreeFencing {펜서}
+perkTreePirat {해적}
+perkTreeAdventurer {모험가}
+perkTreeOfficer {장교}
+perkTreeFlags {기함기}
+perkTreeCannoner {$key(Cannoner)}
+perkTreeBoatswain {$key(Boatswain)}
+perkTreeCarpenter {$key(Carpenter)}
+perkTreeNavigator {$key(Navigator)}
+perkTreeTreasurer {$key(Treasurer)}
+perkTreeDoctor {$key(Doctor)}
+FastHands {빠른 손놀림}
+perkFastHands {화기류를 뽑고 넣는 속도가 $percent($perkBaseValue(FastHands|1)) 증가합니다.}
+AmmoRig {장비 설정}
+perkAmmoRig {화기류 재장전 속도 $percent($perkBaseValue(AmmoRig|1)) 증가.}
+Preaim {조준}
+perkPreaim {조준 모드가 $percent($perkBaseValue(Preaim|1)) 더 빠릅니다.}
+KeenEye {예리한 눈}
+perkKeenEye {헤드샷은 $percent($perkBaseValue(KeenEye|1)) 더 많은 피해를 줍니다.}
+PowderFeel {화약의 감각}
+perkPowderFeel {연금술로 제작하는 탄약량이 $percent($perkBaseValue(PowderFeel|1)) 증가합니다.}
+Drill {훈련}
+perkDrill {머스켓 장비 시 이동 속도와 조준 시 보행 속도가 18% 증가합니다. 고급 사격 자세가 해금됩니다.}
+LeadRain {납비}
+perkLeadRain {산탄은 적 한 명을 맞출 때마다 5%씩 추가 피해를 줍니다.}
+ShootToKill {사살 사격}
+perkShootToKill {화기로 적을 명중시키면 이동 속도가 25% 감소합니다. 지속 시간: 5초.}
+Muscles {근육 산}
+perkMuscles {중화기로 공격 시 에너지 소모가 $percent($perkBaseValue(Muscles|1)) 감소하고 속도가 $percent($perkBaseValue(Muscles|2)) 빨라집니다. 기절 회복이 $percent($perkBaseValue(Muscles|3)) 빨라집니다.}
+Conquest {콘키스타}
+perkConquest {긴 무기의 베기 공격과 강공격은 $percent($perkBaseValue(Conquest|1)) 만큼 더 많은 피해를 입힙니다.}
+PalaceGuard {궁전 경비대}
+perkPalaceGuard {무거운 곡도는 공격 시 $percent($perkBaseValue(PalaceGuard|1)) 더 높은 피해를 주며, 광역 공격 시 추가로 5% 더 피해를 입힙니다.}
+CunningStrike {교활한 일격}
+perkCunningStrike {경무기는 치명타 확률이 $percent($perkBaseValue(CunningStrike|1)) 증가합니다. 백어택은 $percent($perkBaseValue(CunningStrike|2)) 더 많은 피해를 줍니다.}
+Heartbreaker {심장파괴자}
+perkHeartbreaker {직선형 무기의 빠른 공격은 $percent($perkBaseValue(Heartbreaker|1)) 더 많은 피해를 주며 공격 속도가 $percent($perkBaseValue(Heartbreaker|2)) 증가합니다.}
+Dodgy {기회주의}
+perkDodgy {전력질주 밀치기가 $percent($perkBaseValue(Dodgy|1)) 더 강해지고 에너지를 덜 소모합니다.}
+Exhaustion {탈진}
+perkExhaustion {단검류로 패리 시 적의 기력이  $percent($perkBaseValue(Exhaustion|1)) 더 소모됩니다. 적의 기절 회복이 10% 더 오래 걸립니다.}
+Reaper {사신}
+perkReaper {치명타 피해  $percent($perkBaseValue(Reaper|1)) 증가, 빠른 공격 시 치명타 확률  $percent($perkBaseValue(Reaper|2)) 증가.}
+MarathonRunner {마라토너}
+perkMarathonRunner {전력질주 속도 $percent($perkBaseValue(MarathonRunner|2)) 증가, 소모 에너지 1/3 감소.}
+PerfectBalance {완벽한 균형}
+perkPerfectBalance {중무기 장착 시 받는 피해 $percent($perkBaseValue(PerfectBalance|1)) 감소.}
+Flanking {측면 공격}
+perkFlanking {곡도 무기 공격 속도 $percent($perkBaseValue(Flanking|1)) 증가. 고급 광역 공격 해제.}
+SabreHurricane {세이버 회오리}
+perkSabreHurricane {중간 곡도 무기로 베기와 빠른 공격 시 공격 범위가 넓어져 주변 적도 타격하며, 피해가 $percent($perkBaseValue(SabreHurricane|1)) 증가합니다.}
+Practice {실전 연습}
+perkPractice {장착한 제작 아이템마다 모든 기술이 2 증가합니다.}
+Strychnine {스트리크닌}
+perkStrychnine {공격과 사격 시 9% 확률로 대상에게 중독 효과를 부여합니다. 부적 보너스와 중첩됩니다.}
+DarkHorse {다크호스}
+perkDarkHorse {장착한 일상 호신부와 부적마다 체력과 기력이 2.5% 증가합니다.}
+Master {달인}
+perkMaster {도구 세트가 필요한 제작 아이템마다 공격력이 0.1% 증가합니다.}
+Quiet {가벼운 발걸음}
+perkQuiet {도둑질 중에는 발각되지 않습니다.}
+Looting {철저한 수색}
+perkLooting {접현이 끝나면 선원들이 자동으로 갑판을 수색해 모든 전리품을 전달합니다.}
+Collection {진귀한 물건}
+perkCollection {선박에 배치된 이국적 아이템마다 비적대 항구에서 하루마다 1,000페소를 획득합니다.}
+Tiefit {맞춤}
+perkTiefit {일상과 화려한 아이템의 기술 보너스가 3 증가합니다.}
+Investor {투자자}
+perkInvestor {예금 이자율이 1% 증가합니다.}
+Gossip {주목의 중심}
+perkGossip {이국적 아이템의 함대 전력 보너스가 5% 증가합니다.}
+Captain {선장}
+perkCaptain {이 캐릭터는 4등급 이상의 선박을 함대 소속으로 지휘할 수 있습니다. 루거나 슬루프 정도는 아무나 몰 수 있지만, 진짜 배를 다루려면 용기만으로는 부족합니다.}
+Chance {전부 아니면 전무}
+perkChance {단발 화기는 치명타 시 15% 더 높은 피해를 줍니다. 한손 화기의 치명타 확률이 2% 증가합니다.}
+Bayonet {총검突격}
+perkBayonet {양손 근접 공격은 15% 더 높은 피해를 주며, 총검 사용 시 추가로 30% 더 많은 피해를 입힙니다.}
+Kern {커른}
+perkKern {연발 화기는 빈 탄약마다 피해 8%와 재장전 속도 4% 보너스를 얻습니다.}
+MeatGrinder {고기 분쇄기}
+perkMeatGrinder {짧은 무기의 피해량이 10% 증가합니다.}
+NeckStrike {목 베기}
+perkNeckStrike {긴 무기 피해 10% 증가.}
+Stabbing {칼싸움}
+perkStabbing {짧은 무기 피해량 8% 증가.}
+Virtuosity {기교}
+perkVirtuosity {경무기 피해 10% 증가.}
+Puncher {펀치}
+perkPuncher {직도 무기 피해량 10% 증가.}
+Reach {사거리}
+perkReach {긴 무기 피해량 8% 증가.}
+Inertia {관성}
+perkInertia {중화기 피해 10% 증가.}
+OttomanGrip {오스만 그립}
+perkOttomanGrip {곡도 무기 피해량 10% 증가.}
+Mule {페르셰롱}
+perkMule {훈련의 성과 – 중화기와 중갑이 주는 둔화 효과가 50% 감소하고, 랭크마다 소지 중량이 2파운드씩 증가합니다.}
+BeneathWaterline {수선선 아래射}
+perkBeneathWaterline {선박을 명중시키면 수선 아래에 구멍이 생길 수 있으며, 구멍이 복구될 때까지 목표가 침수되고 느려집니다.}
+CoordinatedBoarding {공동 접현}
+perkCoordinatedBoarding {함대 내 선박이 충분히 가까우면 자신의 선장이 이끄는 접현에 합류할 수 있습니다.}
+Involvement {무기 제작자}
+perkInvolvement {갑판장은 접현 중 갑판에 올라와 전투에 합류합니다. 선원 한 명을 대체하며 사망하지 않습니다.}
+BruteForce {완력}
+perkBruteForce {도끼와 갑옷으로 무장한 병사들이 접현 중 일부 일반 선원을 대체합니다.}
+Ambuscade {매복 연대}
+perkAmbuscade {레피어와 연발 화기를 든 결투사가 접현 시 일부 일반 선원을 대체합니다.}
+LoneWolf {외로운 늑대}
+perkLoneWolf {함대에 선박이 1척만 있을 때, 도주 확률과 함대 전력이 $percent($perkBaseValue(LoneWolf|1)) 증가합니다.}
+Thrift {절약}
+perkThrift {돛 손상으로 인한 속도와 기동성 감소 효과가 10% 줄어듭니다.}
+QuickGlance {빠른 조준}
+perkQuickGlance {망원경으로 관측 시 선박의 유형과 특성을 확인합니다.}
+TrainedEye {예리한 눈}
+perkTrainedEye {망원경으로 관측 시 선박의 귀중품 대략 추정 가능}
+TradeConnections {교역 연결}
+perkTradeConnections {식민지 방문 시 가격 목록이 자동으로 갱신됩니다.}
+Intendant {병참관}
+perkIntendant {전투 및 도주 중 화물창 적재로 인한 속도와 기동성 페널티 감소.}
+Doctor {의사}
+perkDoctor {해상 전투 중 부상과 산탄으로 인한 선원 손실이 5% 감소합니다.}
+BoardingPrepare {준비}
+perkBoardingPrepare {접현대가 접현 중에 물약을 받습니다.}
+Cook {요리사}
+perkCook {식량 소모 5% 감소.}
+ChiefCook {수석 요리사}
+perkChiefCook {식량 소모량 10% 감소}
+Bartender {바텐더}
+perkBartender {럼 소비량 5% 감소}
+Moonshiner {양조사}
+perkMoonshiner {럼 소비량 10% 감소.}
+Quartermaster {사관}
+perkQuartermaster {최대 선원 수 10% 증가.}
+InstantBoarding {즉시 접현}
+Rush {오메토치틀리 팅크}
+perkRush
+{
+강력한 힘과 지구력이 즉시 발현되고, 민첩성과 반응 속도가 크게 증가하며, 극도의 공격성과 통증 무감각을 유발하는 취기 틴크처입니다.
+12초 동안 캐릭터의 공격이 훨씬 강해지고 받는 피해가 감소합니다.
+~
+이 능력은 1분 쿨다운이 있습니다.
+}
+perkTrustworthy_alternate {장교로 복무할 때, 해당 캐릭터는 $percent($perkBaseValue(Trustworthy|1))만큼 삭감된 급여를 받습니다.}
+perkAlchemy_alternate {사용 시 물약이 소모되지 않을 확률 $percent($perkBaseValue(Alchemy|1)) 부여.}
+perkPreaim_alternate {캐릭터는 체력이 가득하지 않은 적에게 사격 시 $percent($perkBaseValue(Preaim|2))만큼 추가 피해를 줍니다.}
+perkKeenEye_alternate {캐릭터의 치명타 사격 확률이 $percent($perkBaseValue(KeenEye|2)) 증가합니다.}
+perkPowderFeel_alternate {캐릭터가 사격 시 탄약을 소모하지 않을 확률이 $percent($perkBaseValue(PowderFeel|2))입니다.}
+perkMarathonRunner_alternate {캐릭터의 에너지 최대치가 $number($perkBaseValue(MarathonRunner|3)) 증가합니다.}
+perkQuiet_alternate {캐릭터가 등 뒤에서 공격 시 $percent($perkBaseValue(Quiet|1))만큼 추가 피해를 입힙니다.}
+perkCollection_alternate {캐릭터가 장착한 이국적 아이템마다 피해량이 $percent($perkBaseValue(Collection|2)) 증가합니다.}
+perkInvestor_alternate {캐릭터의 교역 및 리더십 기술이 $number($perkBaseValue(Investor|2)) 증가합니다.}
+perkGossip_alternate {동료로 참여 시, 해당 인물은 함대 전력을 $percent($perkBaseValue(Gossip|1))만큼 증가시킵니다.}
+perkMaster_alternate {캐릭터가 물약을 마실 때마다 공격력이 $percent($perkBaseValue(Master|2)) 증가합니다.}
+perkLooting_alternate {소지 중량이 $perkBaseValue(Looting|1)파운드 증가합니다.}
+perkMaster_currentBonus {현재 보너스: $percent($attr($context.ct.static.fast_Damage.perk_master))}

@@ -353,7 +353,6 @@ void FillTable()
 								Table_Clear("TABLE_LOCS",false,true,false);
 								GameInterface.TABLE_LOCS.select = 0;
 								GameInterface.TABLE_LOCS.top = 0;
-								int nFile = LanguageOpenFile("LocLables.txt");
 								ref rColony = &colonies[i];
 								string island = rColony.island;
 								string row = "";
@@ -366,7 +365,7 @@ void FillTable()
 									{
 										row = "tr" + n;
 										GameInterface.TABLE_LOCS.(row).td1.str = locations[z].id;
-										GameInterface.TABLE_LOCS.(row).td2.str = LanguageConvertString(nFile, locations[z].id.label);
+										GameInterface.TABLE_LOCS.(row).td2.str = GetLocationLabelByRef(&locations[z]);
 										if (HasSubStr(locations[z].id.label,"upstairs")) GameInterface.TABLE_LOCS.(row).td2.str = "Комната наверху таверны";
 										n++;
 									}
@@ -484,6 +483,12 @@ void FillTable()
 			setWDMPointXZ("Shore74");
 			ssColony = "IslaDeVieques";
 		}
+		if (fMouseX >= 1261.0 && fMouseX <= 1330.0 && fMouseY >= 424.0 && fMouseY <= 522.0)
+		{
+			setCharacterShipLocation(pchar, "Shore67");
+			setWDMPointXZ("Shore67");
+			ssColony = "RockIsland";
+		}
 		if (ssColony == "") return;
 		XI_WindowShow("TP_WINDOW", true);
 		XI_WindowDisable("TP_WINDOW", false);
@@ -491,7 +496,6 @@ void FillTable()
 		Table_Clear("TABLE_LOCS",false,true,false);
 		GameInterface.TABLE_LOCS.select = 0;
 		GameInterface.TABLE_LOCS.top = 0;
-		int nFile1 = LanguageOpenFile("LocLables.txt");
 		string row1 = "";
 		int x = 1;
 		GameInterface.TABLE_LOCS.hr.td1.str = "ID";
@@ -502,7 +506,7 @@ void FillTable()
 			{
 				row1 = "tr" + x;
 				GameInterface.TABLE_LOCS.(row1).td1.str = locations[y].id;
-				GameInterface.TABLE_LOCS.(row1).td2.str = LanguageConvertString(nFile1, locations[y].id.label);
+				GameInterface.TABLE_LOCS.(row1).td2.str = GetLocationLabelByRef(&locations[y]);
 				if (HasSubStr(locations[y].id.label,"upstairs")) GameInterface.TABLE_LOCS.(row1).td2.str = "Комната наверху таверны";
 				x++;
 			}
@@ -665,6 +669,12 @@ void SelectRColony()
 			setCharacterShipLocation(pchar, "Shore74");
 			setWDMPointXZ("Shore74");
 			DoQuestReloadToLocation("Shore74", "reload", "reload1", "");
+		}
+		if (fMouseX >= 1261.0 && fMouseX <= 1330.0 && fMouseY >= 424.0 && fMouseY <= 522.0)
+		{
+			setCharacterShipLocation(pchar, "Shore67");
+			setWDMPointXZ("Shore67");
+			DoQuestReloadToLocation("Shore67", "reload", "reload1", "");
 		}
 	}
 }
@@ -862,7 +872,7 @@ void ShowColonyInfo(int iColony)
 
 	ref refStore, refStore2;
 	aref arefStore2, refGoods;
-	for(i = 0; i < STORE_QUANTITY; i++)
+	for(i = 0; i < GetArraySize(&stores); i++)
 	{
 		makeref(refStore, Stores[i]);
 		if (refStore.colony == sColony)
@@ -967,7 +977,7 @@ void ShowColonyInfo(int iColony)
 	}
 		
 	//Find our store
-	for(i = 0; i < STORE_QUANTITY; i++)
+	for(i = 0; i < GetArraySize(&stores); i++)
 	{
 		makeref(refStore, Stores[i]);
 		if (refStore.colony == sTown)
@@ -980,7 +990,7 @@ void ShowColonyInfo(int iColony)
 	}
 	else
 	{
-		for(i = 0; i < STORE_QUANTITY; i++)
+		for(i = 0; i < GetArraySize(&stores); i++)
 		{
 			makeref(refStore2, Stores[i]);
 			if (refStore2.colony == sColony)

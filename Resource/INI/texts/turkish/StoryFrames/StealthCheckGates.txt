@@ -1,0 +1,65 @@
+Node0_title {Kapıda}
+Node0_a {$rand(Ağaçlar|Kayalar|Sık çalılıklar) arasından şehrin kapılarına çıkıyorsun. Yüksek taş surlar ormanın üzerinde yükseliyor, $nationGen($attr($context.localization.iNation))’e ait $rand(bayraklar|sancaklar|flamalar) ile süslü. Kapılara yavaşça yaklaşıyorsun.}
+Node0_b_a {Patikada yakın zamanda yaşanan bir çatışmanın izleri var — kan ve $rand(rom|baharat|şeker kamışı) yüklü parçalanmış bir araba. Kapıdaki muhafızlar gergin görünüyor, ormana huzursuzca bakıyor, surlarda ise güvenlik artırılmış.}
+Node0_b_b {Kapının yanında $rand(kale için barut|top gülleleri|erzak) yüklü bir araba duruyor. Şehir muhafızlarıyla kale nöbetçileri sert bir şekilde tartışıyor. Kopuk konuşmalardan bir $rand(bürokratik aksaklık|hata) yaşandığı anlaşılıyor ve yük içeri alınmıyor.}
+Node0_b_c {Duvarın altında $rand(yaşlı bir muhafız|saçı ağarmış bir nöbetçi) bir fıçıya oturmuş, $rand(korkunç bir korsan baskını|garnizonda yaşanan dehşet verici bir salgın|plantasyondaki kanlı bir isyan) hakkında hikâyeler anlatıyor. Kapıdaki muhafızlar, gerçek bir ilgiden çok saygıdan dinliyor.}
+Node0_b_d {Kapıda $rand(yakalanmış bir hırsız|garnizondan firar eden bir asker|düşman casusu) diz çöktürülmüş halde tutuluyor. Çavuş kaderinin hemen belirlenmesini ister — fazla uzatmadan duvarın dibinde asılmasını. Muhafızlar, kimin bu işi üstleneceğini ve komutana kimin hesap vereceğini tartışıyor.}
+Node0_c_a {Kapıya doğru $rand(ulak bir çocuk|korkmuş bir kadın|sarhoş bir denizci) koşarak gelip $rand(limanda yangın|pazarda kavga|hapishaneden kaçış) diye bağırıyor. Muhafızlar endişeyle bakışıyor: yardım etmek gerek, ama mevzi terk edilemez.}
+Node0_c_b {Duvarın üzerinde $rand(milis toplanması|asker alımı|muhafızların genişletilmesi) hakkında yeni bir duyuru asılı. Bu tür ilanlar şehir dışında bile varsa, asker sıkıntısı açık.}
+Node0_c_c {Duvarın altındaki gölgede kimse yok, ama hendek kenarındaki çamurda bir şey yatıyor. Nöbetçiler ve geçenler fark etmiyor, fakat sen metalik bir parıltıyı netçe görüyorsun.}
+Node0_d {Şehre girmenin bir yolunu bulmak gerekiyor. Ya da doğrudan içeri dalmak mı?}
+Node0_b_a_reaction {Yerlilerle yaşanan çatışmayı anlatmak}
+Node0_b_a_reaction_log {Muhafızlara ormanda saldırgan yerlilerle karşılaştığını anlatır, tüm savaş deneyimini kullanarak çatışmayı ayrıntılarıyla tasvir edersin. Sana inanırlar ve $rand(birkaç muhafızı ormana gönderirler|erzaklarını seninle paylaşırlar|bu belayı en kısa sürede halledeceklerine söz verirler).}
+Node0_b_a_reaction_factor {Beklenmedik müttefik}
+Node0_b_b_reaction {Anlaşmazlığı çözmeyi teklif etmek}
+Node0_b_b_reaction_log_0 {Yükle ilgili sorunun özüne inip kaynağını bulmayı başarırsın. Her zamanki gibi sorun, emirlerin yanlış yorumlanmasından kaynaklanıyordu. Müdahalenin ardından muhafızlar yükleriyle hızla ayrılır ve nöbetçiler sana minnetle bakar.}
+Node0_b_b_reaction_log_1 {Yükle ilgili sorunun kaynağını anlayamaz ve herkesi daha da şaşırtırsın. Muhafızlar ve nöbetçiler rahatsızlıklarını gizlemez.}
+Node0_b_b_reaction_factor {Hakem}
+Node0_b_c_reaction {Hikâyeni anlatmak}
+Node0_b_c_reaction_log {Uygun anı yakalar ve hikâyeni anlatırsın. Hikâye $rand(etkileyici görünür, ancak en yetenekli anlatıcı sen değilsindir|zihninde çok daha iyi duruyordu ve muhafızlar hoşgörülü bir şekilde gülümser|oldukça dokunaklıdır ve yaşlı bir gazinin kalbini yumuşatmış gibi görünür).}
+Node0_b_c_reaction_factor {İyi hikâye anlatıcısı}
+Node0_b_d_reaction {Tutsak için fidye teklif etmek}
+Node0_b_d_reaction_log {Muhafızlara boşuna çaba harcamamalarını önerirsin — bu suçlu güçlü ve uysal bir köle olur, onları da dertten kurtarır. Çavuş birkaç saniye düşünür ve ardından rahatlayarak kabul eder.}
+Node0_b_d_reaction_factor {Köle taciri}
+Node0_c_a_reaction {Yardım teklif etmek}
+Node0_c_a_reaction_log {Muhafızlara sorunu çözmede yardım teklif edersin. Sana inanır ve teklifin için teşekkür ederler, ancak yine de reddederler. Bu tür meselelerle siviller değil, muhafızlar ilgilenmelidir.}
+Node0_c_a_reaction_factor {Güvenilir vatandaş}
+Node0_c_b_reaction {Hizmete girmek istediğini söylemek}
+Node0_c_b_reaction_log_0 {Bir asker alım görevlisinin çağrılmasını ister ve saflara katılmaya hazır olduğunu söylersin. Sözlerini desteklemek için ateşli silah kullanma becerini gösterirsin ve muhafızlar etkilenir.}
+Node0_c_b_reaction_log_1 {Bir alım görevlisinin çağrılmasını istersin ama reddedilirsin. Muhafızların fikrini değiştirmek için ateşli silah kullanma becerini göstermeye karar verirsin, ancak $rand(tabancanı düşürürsün|kemerine komik bir şekilde takılırsın|tökezleyip düşersin). Muhafızlar sana güler ve askeri bir lakap takar — $rand(Ormanın Dehşeti|Keskin Göz|Kader Kurşunu|Hızlı Fitil|Elmas Göz|Sağlam El). Nöbet amiri babacan bir tavırla omzuna vurur.}
+Node0_c_b_reaction_factor {Acemi asker}
+Node0_c_c_reaction {Alanı incelemek}
+Node0_c_c_reaction_log_0 {Parıltıyı fark ettiğin yeri arar ve $rand(bir askerin kemer tokasını|bir subay rapierini|bir muhafız kol düğmesini) bulursun. Şans eseri sahibi şu anda görev başındadır ve eşyasını geri getirdiğin için minnettardır.}
+Node0_c_c_reaction_log_1 {Parıltıyı gördüğün yeri ararsın ama hiçbir şey bulamazsın. $rand(hayal gücünün sana bir oyun oynadığını|bugün şansının yaver gitmediğini) düşünürsün.}
+Node0_c_c_reaction_factor {Faydalı buluntu}
+Node0_a_action {Geçmeye çalışmak}
+Node0_b_action {Çatışarak geçmek}
+Node0_c_action {Lisansı göstermek}
+Node0_success {Kapıdan şehre girmeyi başarırsın. $rand(Hızla kalabalığa karışırsın|sokaklarda dolanarak tamamen kaybolursun|çarşıya yönelip meraklıların arasına karışırsın). Kısa bir süre sonra takip edilmediğinden emin olur ve işlerine gönül rahatlığıyla bakarsın.}
+Node0_success_action {Mükemmel!}
+Node1_a {Bir dost gibi görünemezsin ve muhafızlar gözle görülür şekilde gerilir. Yarım daire etrafında kapanmaya başlar. Durum hızla tırmanır.}
+Node1_b_a {Muhafızlardan biri beceriksizce ayak değiştirir ve durmadan yan tarafını tutar — üniformasının altından taze, kanlı bir sargı görünür.}
+Node1_b_b {Bir çavuş yanına gelir ve kimliğini tespit etmek için karakola gitmeni ister. Zayıf yapılı ve çok gençtir; astlarının saygısını kazanmak için kendini kanıtlamaya çalıştığı bellidir.}
+Node1_c_a {Kapı kanatlarının arasından bir anlığına $rand(şehir görevlisi|rahip) silueti belirir ve nöbetçiler içgüdüsel olarak toparlanır.}
+Node1_c_b {Kapının ardında aniden kısa bir çan sesi duyulur — nöbet değişimi vakti gelmiştir ve her gecikme yorgun muhafızların sinirlerini bozacaktır.}
+Node1_d {Hemen bir karar verilmelidir.}
+Node1_b_a_reaction {Yaralı muhafıza yardım teklif etmek}
+Node1_b_a_reaction_log {Yaralı muhafıza iyileştirici bir iksir sunarsın. Sana teşekkür eder ve devriye sırasında $rand(Karipler|Guarani|Taino|Arawaklar) tarafından yaralandığını anlatır. Yara zor iyileşmiştir ama şimdi kendini belirgin şekilde daha iyi hisseder.}
+Node1_b_a_reaction_factor {Tıbbi yardım}
+Node1_b_b_reaction {Çavuşa gösterişli bir şekilde boyun eğmek}
+Node1_b_b_reaction_log_0 {Genç çavuşa saygı gösterir ve her şeyin kurallara uygun olması şartıyla koşullarını kabul edersin. Tonu gözle görülür şekilde yumuşar.}
+Node1_b_b_reaction_log_1 {Çavuşun otoritesini güçlendirmeye çalışırsın ama bunu son derece beceriksizce yaparsın. Her şey alay gibi görünür ve arkasından gelen garip kıkırdamalar bunu doğrular. Yüzü kızarır, gözleri kan çanağına döner.}
+Node1_b_b_reaction_factor {Gösterilen saygı}
+Node1_c_a_reaction {Önemli bir toplantıya geç kaldığını söylemek}
+Node1_c_a_reaction_log_0 {Önemli bir toplantıya geç kaldığını ve bu olayın gerekli mercilere bildirileceğini söylersin. Yeterince ciddi görünerek inandırıcı olursun. Muhafızlar şaşkına döner ve bu bir fırsat penceresi açar.}
+Node1_c_a_reaction_log_1 {Önemli bir iş için geldiğini muhafızlara kanıtlamaya çalışırsın ama hiç inandırıcı olmazsın. Bu başarısız girişim onları daha da kızdırır.}
+Node1_c_a_reaction_factor {Önemli kişi}
+Node1_c_b_reaction {Muhafızlara rom teklif etmek}
+Node1_c_b_reaction_log {Muhafızlara formaliteleri bir kenara bırakıp nöbeti daha çabuk bitirmelerini önerir ve onlara rom ikram edersin. Gözle görülür şekilde yumuşarlar ve şüphelerini görmezden gelmeye hazır gibidirler. Sonuçta hepimiz insanız.}
+Node1_c_b_reaction_factor {Halk için rom}
+Node1_a_action {Durumu yatıştırmaya çalışmak}
+Node1_b_action {Tekrar ormana kaçmak}
+Node1_success {Son anda durumu yatıştırmayı başarırsın. $rand(Muhafızların dikkatli bakışları altında şehre sızarsın|gerginliğini belli etmemeye çalışarak şehre girersin). $colonyVoc($attr($context.context.colonyId))’de oyalanmamak en iyisi.}
+Node1_success_action {Çabuk şehre!}
+Node1_fail {Muhafızlar alarm verir — açığa çıktın. Muhafızlar kapılara koşarken, tüm koloni alarma geçmeden kaçmaya karar verirsin.}
+Node1_fail_action {Kaç!}

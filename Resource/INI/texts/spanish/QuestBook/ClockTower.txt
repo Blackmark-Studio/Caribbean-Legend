@@ -1,0 +1,20 @@
+#QUEST ClockTower
+Torre del Reloj
+#TEXT	1
+Aparentemente, la CIO comercia con algo más que licencias y herramientas inútiles. Si me hago útil para ellos, quizás la Compañía resulte útil para mí también. Lo más obvio es elevar mi reputación con las colonias holandesas hasta la Admiración.
+#TEXT	2
+He hecho suficiente por la República de las Provincias Libres. Es hora de hablar con ese tipo agradable, Johan, el guardia de la Oficina de Registro de Barcos.
+#TEXT	3
+¡Es asombroso que esta oficina siga a flote! Mis doblones no son suficientes para ellos, así que tendré que cazar piratas y recoger cinco diarios de navegación. Podría conseguir más, ya que dejaron bastante claro que la oficina estará dispuesta a pagar generosamente por ellos en el futuro. Si tan solo lo hubiera sabido antes…
+#TEXT	4
+Diarios recolectados. Hora de hablar con Johan.
+#TEXT	5
+Qué día tan largo. Willemstad recordará la llegada del Director durante mucho tiempo. Y aunque ahora soy cliente y van Doorn fue increíblemente cortés conmigo… tengo otra oferta de trabajo. Necesito entrar en la torre de noche y robar el contrato original de van Doorn. Me han prometido una recompensa en doblones y acceso ilimitado a los servicios de la oficina.
+#TEXT	6
+¡Tengo el contrato! Van Doorn realmente se ha quedado demasiado tiempo en esa torre. El subdirector Visser estará fuera de sí de alegría. Puedo encontrarlo durante el día en el ala central del edificio.
+#TEXT	7
+Ahora solo queda esperar. Debería visitar a Visser en un par de meses y averiguar cómo fue su golpe.
+#TEXT	8
+Creo que ha pasado suficiente tiempo. Hora de visitar a Visser en Curazao.
+#TEXT	9
+Y eso es todo. El Subdirector… o más bien, el Director Maarten Visser obtuvo lo que quería y cumplió su palabra: puedo usar los servicios de la oficina en cualquier momento sin esas ridículas citas. Van Doorn, por supuesto, se enteró de mi participación en este asunto dudoso, pero no tengo nada que temer del poder de su legendaria fragata. El buque insignia de la CIO solo vendrá por mi alma si los holandeses me consideran una amenaza suficiente para sus intereses. Dicen que este barco es una verdadera joya del Mar Caribe… tentador, maldición.

@@ -7,7 +7,7 @@ WarTartane {Tartany to te same łodzie rybackie, pospiesznie przystosowane do pr
 Barque {Barka idealnie nadaje się do długich rejsów. Posiada przestronną ładownię i dobre właściwości żeglugowe, przez co uważana jest za jeden z najbardziej zrównoważonych statków handlowych. Jednak jej imponujące rozmiary i stosunkowo słabe uzbrojenie czynią ją łatwym celem dla morskich rabusiów.}
 Schooner {Dobre właściwości żeglugowe, przestronna ładownia, małe zanurzenie i przyzwoite uzbrojenie sprawiły, że szkuner stał się jednym z najpopularniejszych statków małych klas. Nadaje się zarówno do handlu, kabotażu, jak i walki.}
 Barkentine {Pojawienie się barkentyny było podyktowane chęcią uproszczenia obsługi statku handlowego przez niedoświadczoną i nieliczną załogę. W tym celu żagle rejowe na grotmaszcie barki zastąpiono żaglami skośnymi, a kadłub nieco zmniejszono. Dzięki mieszanemu ożaglowaniu barkentyna pewnie płynie zarówno z wiatrem, jak i pod wiatr.}
-Shnyava {Szniwa i brygantyna były poprzednikami brygu. Dzięki udanej konstrukcji kadłuba, dobrej prędkości i zdolności do przenoszenia ciężkich dział, statki te zyskały dużą popularność zarówno na Karaibach, jak i w Europie. Często są wykorzystywane do eskortowania konwojów handlowych małych klas.}
+Shnyava {Snow i brygantyna były poprzednikami brygu. Dzięki udanej konstrukcji kadłuba, dobrej prędkości i zdolności do przenoszenia ciężkich dział, statki te zyskały dużą popularność zarówno na Karaibach, jak i w Europie. Często są wykorzystywane do eskortowania konwojów handlowych małych klas.}
 Fleut {Fluita to unikalny etap w rozwoju statków handlowych. Jej charakterystycznie zwężony pokład pozwalał na zmniejszenie opłat celnych, które były naliczane na podstawie szerokości górnego pokładu. Przestronna ładownia, duża prędkość i dobre właściwości na wiatr szybko uczyniły fluitę jednym z najpopularniejszych statków handlowych.}
 Caravel {Charakterystyczne ożaglowanie karaweli pozwala łatwo rozpoznać ten statek z daleka. Przestarzała konstrukcja sprawia, że właściwości żeglugowe karaweli są dość przeciętne, co uniemożliwia jej równą walkę ze współczesnymi statkami, mimo wystarczającej liczby dział.}
 Pinnace {Wraz z fluitą pinasa zyskała dużą popularność jako statek handlowy. Jest wystarczająco duża i mocna do długich rejsów morskich, a jej ładownia pozwala przewozić dużą ilość towarów. Dzięki ostrym liniom dziobu nawet z ciężkim kadłubem pinasa osiąga przyzwoitą prędkość.}
@@ -16,7 +16,8 @@ EastIndiaMan {Statki Kompanii Wschodnioindyjskiej połączyły najlepsze cechy p
 LuggerQuest {Lugier kurierski został zbudowany specjalnie na potrzeby służby posłańczej. Doskonałe właściwości żeglugowe, świetne osiągi na wiatr i dość silne uzbrojenie gwarantują niezawodne dostarczenie ważnych depesz i niewielkich cennych ładunków.}
 Lugger
 {
-Lugier to mały żaglowiec, który wielu marynarzy, zwłaszcza przemytników, ceni za zwrotność i uniwersalność. Lugry rekompensują brak prędkości przy pełnych żaglach doskonałymi kątami kursu na wiatr.Mimo niewielkich rozmiarów lugry mają dobrą dzielność morską i mogą odbywać długie rejsy.
+Lugier to mały żaglowiec, który wielu marynarzy, zwłaszcza przemytników, ceni za zwrotność i uniwersalność. Lugry rekompensują brak prędkości przy pełnych żaglach doskonałymi kątami kursu na wiatr.
+Mimo niewielkich rozmiarów lugry mają dobrą dzielność morską i mogą odbywać długie rejsy.
 }
 Sloop {Dobra prędkość i zwrotność oraz solidne uzbrojenie jak na swoje rozmiary sprawiają, że slup jest niezawodnym statkiem patrolowym, nadającym się również do rozpoznania.}
 Brigantine {Legendarny typ żaglowca. Szybka i zwrotna jak jaskółka, brygantyna jest szczególnie ceniona przez piratów i awanturników wszelkiej maści. Udana konstrukcja sprawia, że brygantyna doskonale nadaje się do każdego zadania – od walki po handel.}
@@ -26,7 +27,8 @@ Galeon_l {Galeon powstał na początku XVI wieku na bazie karaki i od początku 
 Galeon_sm {Symbol hiszpańskiej potęgi i ambicji. Pokłady lśnią złotymi ozdobami, a na rufie wznosi się wizerunek Matki Miłosierdzia, patronki statku. Dla jednych 'Santa Misericordia' to uosobienie porządku, dla innych – znienawidzony symbol królewskiego ucisku. A niektórzy widzą w niej prawdziwą Opatrzność Bożą.}
 LadyBeth
 {
-Wspaniały przykład angielskiego szkutnictwa, stworzony do samodzielnej służby patrolowej na niebezpiecznych wodach. Ta szniwa ma doskonałe właściwości żeglugowe i imponujące uzbrojenie jak na swoje rozmiary, co pozwala jej konkurować z jednostkami wyższych klas.Lata jej służby wojskowej dawno minęły, a sława poprzedniego właściciela częściej przyciąga handlarzy antykami i mapami skarbów niż wilków morskich.
+Wspaniały przykład angielskiego szkutnictwa, stworzony do samodzielnej służby patrolowej na niebezpiecznych wodach. Ten snow ma doskonałe właściwości żeglugowe i imponujące uzbrojenie jak na swoje rozmiary, co pozwala jej konkurować z jednostkami wyższych klas.
+Lata jej służby wojskowej dawno minęły, a sława poprzedniego właściciela częściej przyciąga handlarzy antykami i mapami skarbów niż wilków morskich.
 }
 Memento {W tym statku trudno dostrzec stary design angielskiego bryga, który rekompensuje swoje słabe właściwości żeglugowe imponującą siłą ognia i ciężkim, solidnym kadłubem. Ozdobiony plemiennymi amuletami i przesiąknięty śmiercią, przeraża nie tylko wrogów, ale także własną załogę.}
 Amsterdam {Amsterdam — okręt flagowy Holenderskiej Kompanii Zachodnioindyjskiej i najwspanialszy statek, jaki kiedykolwiek opuścił europejską stocznię. Harmonogramy przeglądów i podpisy mistrzów zdobią każdą armatę i każdy istotny element — nic na pokładzie Amsterdamu nie umyka dokumentacji i kontroli. Jej kapitanowie tradycyjnie wywodzą się nie spośród zahartowanych morskich wilków, lecz z szeregów cywilnych dyrektorów Kompanii. A jednak działa — zwiastun nadchodzącej nowej ery.}
@@ -40,13 +42,14 @@ Frigate_h {Ciężkie fregaty stały się kompromisem dla tych kapitanów, który
 LineShip {Okręty liniowe 4. rangi nie mogą konkurować pod względem siły ognia ze starszymi braćmi, więc nie ma sensu ustawiać ich w linii bojowej. Najlepiej sprawdzają się jako ochrona konwojów, ponieważ dzięki prędkości i zwrotności najskuteczniej wykonują to zadanie.}
 Warship {Statki tego typu budowano jeszcze za czasów kardynała Richelieu i dziś są konstrukcyjnie przestarzałe. Mają jednak dobre właściwości żeglugowe i mogą przenosić najcięższe działa, co czyni je groźną siłą.}
 Ecliaton {Statki tego typu budowano jeszcze za czasów kardynała Richelieu i dziś są konstrukcyjnie przestarzałe. Mają jednak dobre właściwości żeglugowe i mogą przenosić najcięższe działa, co czyni je groźną siłą.}
-Pink {Pink to mały statek przeznaczony do przewozu ładunków i ochrony małych konwojów. Choć jego uzbrojenie jest słabe, a załoga nieliczna, pink jest specjalnie zaprojektowany zarówno do handlu, jak i walki, a wielu kapitanów ceni go za prędkość i zwrotność. Małe rozmiary pinka nie pozwalają mu na długie rejsy morskie.}
+Pink {Pinka to mały statek przeznaczony do przewozu ładunków i ochrony małych konwojów. Choć jego uzbrojenie jest słabe, a załoga nieliczna, pinka jest specjalnie zaprojektowana zarówno do handlu, jak i walki, a wielu kapitanów ceni ją za prędkość i zwrotność. Małe rozmiary pinki nie pozwalają na długie rejsy morskie.}
 Battleship {Okręty liniowe 3. rangi są bardzo liczne i najbardziej zrównoważone pod względem cech bojowych, przeznaczone do walki w linii. Mają wystarczającą siłę ognia, by rzucić wyzwanie nawet 100-działowym lewiatanom. Jednocześnie znacznie je przewyższają pod względem prędkości i zwrotności.}
 Manowar {Okręty liniowe 2. rangi są podstawą potęgi morskiej każdego państwa. Wraz z okrętami 3. rangi tworzą flotę łączącą siłę z manewrowością. A przy braku w eskadrze okrętów 1. rangi niektóre z nich pełnią rolę okrętów flagowych.}
 Manowar_e {Okręt liniowy 1. rangi to prawdziwa pływająca twierdza. Dzięki przerażającej sile ognia może kilkoma celnymi salwami posłać na dno każdego przeciwnika. Nawet największe potęgi morskie nie mają wielu takich okrętów, a są one wykorzystywane jako okręty flagowe w wielkich bitwach morskich.}
 MayFang
 {
-Ta szebeka ma odciążony kadłub kosztem wytrzymałości, ale to czyni ją niezrównanym żeglarzem – na całych Karaibach nie znajdziesz innego statku, który potrafi płynąć niemal pod wiatr!A dwadzieścia dział średniego kalibru to mocny argument w rywalizacji morskiej.
+Ta szebeka ma odciążony kadłub kosztem wytrzymałości, ale to czyni ją niezrównanym żeglarzem – na całych Karaibach nie znajdziesz innego statku, który potrafi płynąć niemal pod wiatr!
+A dwadzieścia dział średniego kalibru to mocny argument w rywalizacji morskiej.
 }
 Mirage {W przeciwieństwie do bombowych keczy, korsarskie kecze nie mają gigantycznych moździerzy przeznaczonych do ostrzału fortec, ale mają lżejszy, opływowy kadłub, co pozytywnie wpływa na ich właściwości żeglugowe. Nawet jachty książąt mogłyby pozazdrościć prędkości tego korsarskiego kecza.}
 Himera {Statek-mistrzostwo, stworzony specjalnie na potrzeby brytyjskiego wywiadu morskiego. Pod względem parametrów porównywalny z okrętami wojennymi 3. klasy, zachowując łatwość obsługi 4. klasy.}
@@ -54,7 +57,7 @@ Valciria {Doskonały angielski bryg. Wysoka prędkość i zwrotność, dobre osi
 CORVETTE_QUEST {Jednostkowy statek, arcydzieło francuskich szkutników. Głęboka modernizacja konstrukcji korwety poprawiła prawie wszystkie jej cechy bez utraty prędkości. Zwiększona powierzchnia żagli i kaliber dział wymagają bardziej doświadczonej i liczniejszej załogi, ale jeśli próby na Karaibach się powiodą, zastosowane tu technologie mogą być prawdziwym przełomem w szkutnictwie.}
 Polacre_q {Mistrz, który umiejętnie połączył elementy szebeki i fregaty, stworzył polakrę o niezwykłym, mocnym i pojemnym kadłubie, wyróżniającym się wysokimi burtami, małym zanurzeniem i bardzo silnym uzbrojeniem. Trzy maszty i bukszpryt z żaglami różnych typów czynią ją szybką i bardzo zwrotną. Wszystkie te cechy są dobre osobno, a razem doskonałe – tylko właściciel zdecyduje: czy na morze wypłynie okręt wojenny, piracki czy handlowy.}
 ArabellaShip {Ten wyjątkowy statek łączy w sobie najlepsze cechy fregat i okrętów liniowych. Niesamowite właściwości żeglugowe łączą się z baterią ciężkich dział, a wnętrza mogą pomieścić całą kompanię piechoty morskiej. W doświadczonych rękach Fortuna może samotnie stawić czoła znacznie silniejszemu przeciwnikowi.}
-Flyingdutchman {"Caleuche". Postrach wszystkich, którzy pływają pod żaglami...}
+Flyingdutchman {Caleuche. Postrach wszystkich, którzy pływają pod żaglami...}
 Flyingdutchman_l {Kopia "Caleuche".}
 NewFlyingdutchman {To był kiedyś słynny "statek-widmo". Teraz został całkowicie przebudowany i jest potężnym galeonem wojennym, zdolnym walczyć na równi nawet z okrętami liniowymi. Przy imponującej prędkości jak na swoje rozmiary, dużej ładowni i potężnym uzbrojeniu jest w pełni samowystarczalnym statkiem, zdolnym zatapiać wrogie jednostki, abordować je, a nawet oblegać całe kolonie.}
 Santisima {Ten statek został zwodowany w słynnej stoczni w Hawanie. Jego kadłub jest nieco lżejszy i słabszy niż innych okrętów 1. rangi, ale rekompensują to znacznie lepsze właściwości żeglugowe.}
@@ -65,11 +68,13 @@ Speed {Prędkość – pokazuje aktualną maksymalną prędkość statku, uwzgl�
 Maneuver {Zwrotność – pokazuje zwrotność statku w danym momencie, uwzględniając wszystkie czynniki (ładunek, umiejętności kapitana, uszkodzenia statku) oraz maksymalną osiągalną zwrotność.}
 AgainstWind
 {
-Najlepszy kurs statku względem wiatru, przy którym może osiągnąć maksymalną prędkość. Wartości podane są w stopniach.Druga wartość pokazuje różnicę między aktualnym kierunkiem wiatru a najlepszym kątem kursu dla tego statku.
+Najlepszy kurs statku względem wiatru, przy którym może osiągnąć maksymalną prędkość. Wartości podane są w stopniach.
+Druga wartość pokazuje różnicę między aktualnym kierunkiem wiatru a najlepszym kątem kursu dla tego statku.
 }
 Capacity
 {
-Nośność – pokazuje aktualną i maksymalną pojemność statku. Im bardziej statek jest załadowany, tym staje się mniej zwrotny i wolniejszy.Działa zamontowane na statku również są brane pod uwagę przy obliczaniu nośności. Można je zdjąć, aby zwolnić dodatkowe miejsce na ładunek. W tym celu należy w interfejsie "Statek" wybrać aktualne działa w liście parametrów statku.
+Nośność – pokazuje aktualną i maksymalną pojemność statku. Im bardziej statek jest załadowany, tym staje się mniej zwrotny i wolniejszy.
+Działa zamontowane na statku również są brane pod uwagę przy obliczaniu nośności. Można je zdjąć, aby zwolnić dodatkowe miejsce na ładunek. W tym celu należy w interfejsie "Statek" wybrać aktualne działa w liście parametrów statku.
 }
 Crew {Załoga – pokazuje aktualną liczbę członków załogi, a także minimalną i maksymalną dla tego statku.}
 CannonType {Typ działa – pokazuje typ (działa lub kowerny), aktualny kaliber i liczbę zamontowanych dział}
@@ -77,15 +82,21 @@ sCannons {Pokazuje maksymalny dozwolony kaliber i maksymalną możliwą liczbę 
 Crew_Exp {Doświadczenie załogi}
 Crew_Exp_hint
 {
-Doświadczenie załogi dzieli się na trzy kategorie: morskie (wpływa na sterowność statku), artyleryjskie (szybkość przeładowania i celność ognia) i abordażowe (skuteczność załogi w walce wręcz).Doświadczona załoga w mniejszej liczbie może być skuteczniejsza niż przeładowany nowicjuszami statek.Doświadczenie we wszystkich trzech kategoriach zdobywa się podczas wykonywania odpowiednich czynności (manewrowanie, strzelanie, abordaż), ale także traci, jeśli nabyte umiejętności nie są praktykowane przez dłuższy czas.
+Doświadczenie załogi dzieli się na trzy kategorie: morskie (wpływa na sterowność statku), artyleryjskie (szybkość przeładowania i celność ognia) i abordażowe (skuteczność załogi w walce wręcz).
+Doświadczona załoga w mniejszej liczbie może być skuteczniejsza niż przeładowany nowicjuszami statek.
+Doświadczenie we wszystkich trzech kategoriach zdobywa się podczas wykonywania odpowiednich czynności (manewrowanie, strzelanie, abordaż), ale także traci, jeśli nabyte umiejętności nie są praktykowane przez dłuższy czas.
 }
 TakeAllGoods_hint {Przycisk "Przenieś wszystkie towary" przenosi towary na statek postaci zgodnie z ich średnią wartością jednostkową. Najpierw przenoszone są najcenniejsze towary, potem mniej cenne i tak dalej, aż w ładowni zabraknie miejsca.}
 GoodsKeys_hint
 {
-Klawisze strzałek "Lewo" i "Prawo" na klawiaturze przesuwają towary w wybranym wierszu tabeli o jedną paczkę. Jeśli przytrzymasz klawisz Shift – towary zostaną przeniesione w całości.Kliknięcie prawym przyciskiem myszy na strzałkach w wierszu z towarem w interfejsie przenosi dziesięć paczek towaru naraz.
+Klawisze strzałek "Lewo" i "Prawo" na klawiaturze przesuwają towary w wybranym wierszu tabeli o jedną paczkę. Jeśli przytrzymasz klawisz Shift – towary zostaną przeniesione w całości.
+Kliknięcie prawym przyciskiem myszy na strzałkach w wierszu z towarem w interfejsie przenosi dziesięć paczek towaru naraz.
 }
 Shipyard_hint
 {
-W stoczni można kupować, naprawiać lub sprzedawać statki.Bohater nie może sprzedać swojego statku, jeśli ma towarzyszy. Nie można też kupić statku dla towarzysza, jeśli bohater nie ma własnego statku.Aby zmienić statek bohatera lub towarzysza, zachowując całą zawartość ładowni i załogę, należy w liście statków eskadry bohatera (po lewej stronie interfejsu) wybrać statek, który ma zostać zastąpiony nowym, a w liście statków na sprzedaż w stoczni (po prawej stronie interfejsu) – wybrany, a następnie kliknąć przycisk "Kup".Aby kupić nowy statek (przydzielić nowego towarzysza), przed zakupem należy najpierw wybrać pusty slot na liście po lewej stronie.
+W stoczni można kupować, naprawiać lub sprzedawać statki.
+Bohater nie może sprzedać swojego statku, jeśli ma towarzyszy. Nie można też kupić statku dla towarzysza, jeśli bohater nie ma własnego statku.
+Aby zmienić statek bohatera lub towarzysza, zachowując całą zawartość ładowni i załogę, należy w liście statków eskadry bohatera (po lewej stronie interfejsu) wybrać statek, który ma zostać zastąpiony nowym, a w liście statków na sprzedaż w stoczni (po prawej stronie interfejsu) – wybrany, a następnie kliknąć przycisk "Kup".
+Aby kupić nowy statek (przydzielić nowego towarzysza), przed zakupem należy najpierw wybrać pusty slot na liście po lewej stronie.
 }
 NoneBoat2 {Brak statku.}

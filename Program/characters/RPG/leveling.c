@@ -310,6 +310,7 @@ void ApplayNewSkill(ref _chref, string _skill, int _addValue)
 				   Tutorial_Perk("");
 				   DeleteAttribute(_chref,"systeminfo.tutorial.Perk");
 			   }
+			   NewAutoSave("Perk");
            }
        }
     }
@@ -341,6 +342,7 @@ void ApplayNewSkill(ref _chref, string _skill, int _addValue)
 				    Tutorial_Perk("");
 				    DeleteAttribute(_chref,"systeminfo.tutorial.Perk");
 			   }
+			   NewAutoSave("Perk");
            }
        }
     }
@@ -381,6 +383,7 @@ void ApplayNewSkill(ref _chref, string _skill, int _addValue)
             AddMsgToCharacter(_chref, MSGICON_LEVELUP);
             LA_LevelUp(XI_ConvertString("Level Up"), ""+sti(_chref.rank)+"");
             Event("PlayerLevelUp");
+			NewAutoSave("Rank");
             //QuestsCheck();
         }
     }

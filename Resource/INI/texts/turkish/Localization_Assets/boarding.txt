@@ -1,0 +1,11 @@
+boarding_1 {Kaptan kendi hayatına son vermeyi seçti.}
+boarding_2 {Mürettebat kaptanları için savaşmayı reddetti.}
+boarding_3 {Kaptan güvertede!}
+boarding_4 {@<_Name> çatışmaya katılıyor!}
+boarding_5 {Kaptan öldü; sağ kalanlar teslim oldu.}
+boarding_6 {Kaptan öldü, ama mürettebat teslim olmayı reddediyor.}
+boarding_7 {Ganimet.}
+boarding_8 {Yağmadaki eşyalar.}
+boarding_9 {@<_ShipName> gemisinden aborda ekibi: @<_CrewSize>.}
+boarding_10 {@<_ShipName>'a dönen hayatta kalanlar: @<_CrewSize>.}
+boarding_11 {Yoldaş gemiyi bordalamak için yanaştıramadı.}

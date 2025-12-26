@@ -1354,7 +1354,7 @@ int LocationInitCuracao(int n)
 	// Дом представителя Голландской Вест-Индской компании
     //////////////////////////////////////////////////////////////////////////////////////////////////////
 	locations[n].id = "GVIK_residence";
-	locations[n].id.label = "Townhall"; // Rebbebion, лишний пробел
+	locations[n].id.label = "Townhall";
 	locations[n].image = "loading\inside\smallresidence.tga";
     locations[n].SpecialHandlers.l1 = "HWIC_SetClockSound";
 	//Town sack

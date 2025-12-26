@@ -1,0 +1,331 @@
+QuestsUtilite_1 {행운의 바퀴}
+QuestsUtilite_2 {같은 얘기를 반복하고 싶지 않아.}
+QuestsUtilite_3 {우린 이미 이 얘기를 했어요.}
+QuestsUtilite_4 {이미 이 얘기는 했잖아.}
+QuestsUtilite_5 {다시 말하지만, 같은 얘기를 반복하고 싶지 않습니다.}
+QuestsUtilite_6 {다시 말하지만, 더 이상 할 얘기는 없어!}
+QuestsUtilite_7 {내가 말했잖아, 우리 이미 얘기 다 했다고. 기억에 문제라도 있어?}
+QuestsUtilite_8 {다시는 당신과 이야기하고 싶지 않아요.}
+QuestsUtilite_9 {다시는 너와 말하지 않을 거야!}
+QuestsUtilite_10 {이제 정말 화가 난다}
+QuestsUtilite_11 { }
+QuestsUtilite_12 { }
+QuestsUtilite_13 {, 꺼져.}
+QuestsUtilite_14 {알겠어, 친구.}
+QuestsUtilite_15 {알겠어.}
+QuestsUtilite_16 {미안}
+QuestsUtilite_17 { }
+QuestsUtilite_18 { }
+QuestsUtilite_19 {, 미안...}
+QuestsUtilite_20 {알았어, 알았어. 진정해.}
+QuestsUtilite_21 {알겠으니 그만 소리 좀 질러.}
+QuestsUtilite_22 {실례합니다, 머리가 너무 아파서요...}
+QuestsUtilite_23 {알겠어.}
+QuestsUtilite_24 {안타깝군...}
+QuestsUtilite_25 {별일 아니군.}
+QuestsUtilite_26 {Lucas}
+QuestsUtilite_27 {Rodenburg}
+QuestsUtilite_28 {Abigail}
+QuestsUtilite_29 {Shneur}
+QuestsUtilite_30 {Solomon}
+QuestsUtilite_31 {Shneur}
+QuestsUtilite_32 {John}
+QuestsUtilite_33 {Murdock}
+QuestsUtilite_34 {Gino}
+QuestsUtilite_35 {Gvineili}
+QuestsUtilite_36 {Charlie}
+QuestsUtilite_37 {Knippel}
+QuestsUtilite_38 {Richard}
+QuestsUtilite_39 {Fleetwood}
+QuestsUtilite_40 {Jacob}
+QuestsUtilite_41 {van Berg}
+QuestsUtilite_42 {Longway}
+QuestsUtilite_43 { }
+QuestsUtilite_44 {Joachim}
+QuestsUtilite_45 {Merriman}
+QuestsUtilite_46 {Hercule}
+QuestsUtilite_47 {Tonzag}
+QuestsUtilite_48 {Michel}
+QuestsUtilite_49 {de Monper}
+QuestsUtilite_50 {abbot}
+QuestsUtilite_51 {Benoit}
+QuestsUtilite_52 {Fadey}
+QuestsUtilite_53 { }
+QuestsUtilite_54 {Diego}
+QuestsUtilite_55 {de Montoya}
+QuestsUtilite_56 {Alonso}
+QuestsUtilite_57 {de Maldonado}
+QuestsUtilite_58 {William}
+QuestsUtilite_59 {Paterson}
+QuestsUtilite_60 {Archibald}
+QuestsUtilite_61 {Colhaun}
+QuestsUtilite_62 {Jan}
+QuestsUtilite_63 {Svensson}
+QuestsUtilite_64 {Joanna}
+QuestsUtilite_65 {Svensson}
+QuestsUtilite_66 {Nathaniel}
+QuestsUtilite_67 {Hawk}
+QuestsUtilite_68 {Danielle}
+QuestsUtilite_69 {Hawk}
+QuestsUtilite_70 {Eduard}
+QuestsUtilite_71 {Doylie}
+QuestsUtilite_72 {Lawrence}
+QuestsUtilite_73 {Beltrop}
+QuestsUtilite_74 {Gladys}
+QuestsUtilite_75 {McArthur}
+QuestsUtilite_76 {Helen}
+QuestsUtilite_77 {McArthur}
+QuestsUtilite_78 {Jose}
+QuestsUtilite_79 {Dios}
+QuestsUtilite_80 {Albert}
+QuestsUtilite_81 {Loxley}
+QuestsUtilite_82 {Steven}
+QuestsUtilite_83 {Dodson}
+QuestsUtilite_84 {Chad}
+QuestsUtilite_85 {Kapper}
+QuestsUtilite_86 {Layton}
+QuestsUtilite_87 {Dexter}
+QuestsUtilite_88 {Eduard}
+QuestsUtilite_89 {Black}
+QuestsUtilite_90 {Chimiset}
+QuestsUtilite_91 { }
+QuestsUtilite_92 {Zicomo}
+QuestsUtilite_93 { }
+QuestsUtilite_94 {Giuseppe}
+QuestsUtilite_95 {Fazio}
+QuestsUtilite_96 {Axel}
+QuestsUtilite_97 {Yost}
+QuestsUtilite_98 {Sancho}
+QuestsUtilite_99 {Carpentero}
+QuestsUtilite_100 {brother}
+QuestsUtilite_101 {Julian}
+QuestsUtilite_102 {Mary}
+QuestsUtilite_103 {Casper}
+QuestsUtilite_104 {Henrick}
+QuestsUtilite_105 {Vedecker}
+QuestsUtilite_106 {Jurgen}
+QuestsUtilite_107 {Schmidt}
+QuestsUtilite_108 {Donald}
+QuestsUtilite_109 {Greenspen}
+QuestsUtilite_110 {Ole}
+QuestsUtilite_111 {Christiansen}
+QuestsUtilite_112 {Marcello}
+QuestsUtilite_113 { }
+QuestsUtilite_114 {Dougall}
+QuestsUtilite_115 {Abbot}
+QuestsUtilite_116 {Lionell}
+QuestsUtilite_117 {Maskered}
+QuestsUtilite_118 {Gerard}
+QuestsUtilite_119 {Smeets}
+QuestsUtilite_120 {Richard}
+QuestsUtilite_121 {Shambon}
+QuestsUtilite_122 {Alvaro}
+QuestsUtilite_123 {Gomez}
+QuestsUtilite_124 {Victor}
+QuestsUtilite_125 {Cassel}
+QuestsUtilite_126 {Adolf}
+QuestsUtilite_127 {Barbier}
+QuestsUtilite_128 {Curanai}
+QuestsUtilite_129 { }
+QuestsUtilite_130 {Ramona}
+QuestsUtilite_131 {Lozano}
+QuestsUtilite_132 {Oelart}
+QuestsUtilite_133 {Koteel}
+QuestsUtilite_134 {Jasper}
+QuestsUtilite_135 {Prutt}
+QuestsUtilite_136 {Leonard}
+QuestsUtilite_137 {Musket}
+QuestsUtilite_138 {Josef}
+QuestsUtilite_139 {Loderdale}
+QuestsUtilite_140 {Lorenzo}
+QuestsUtilite_141 {Solderra}
+QuestsUtilite_142 {Jacqueline}
+QuestsUtilite_143 {Turam}
+QuestsUtilite_144 {Jillian}
+QuestsUtilite_145 {Steiner}
+QuestsUtilite_146 {Tanneke}
+QuestsUtilite_147 {Aevers}
+QuestsUtilite_148 {Orelie}
+QuestsUtilite_149 {Bertine}
+QuestsUtilite_150 {Antonio}
+QuestsUtilite_151 {Betancourt}
+QuestsUtilite_152 {Cecille}
+QuestsUtilite_153 {Halard}
+QuestsUtilite_154 {Nathalie}
+QuestsUtilite_155 {Booshell}
+QuestsUtilite_156 {이게 바로 찾던 보물인 것 같군}
+QuestsUtilite_157 { }
+QuestsUtilite_158 { }
+QuestsUtilite_159 { }
+QuestsUtilite_160 { }
+QuestsUtilite_161 {교도관}
+QuestsUtilite_162 { }
+QuestsUtilite_163 {긴 날들은 지나갔다...}
+QuestsUtilite_164 {Anfitrite}
+QuestsUtilite_165 {Fuerte}
+QuestsUtilite_166 {Imperial}
+QuestsUtilite_167 {Bonnet}
+QuestsUtilite_168 {Trafalgar}
+QuestsUtilite_169 {Gloucester}
+QuestsUtilite_170 {Griffin}
+QuestsUtilite_171 {Languedoc}
+QuestsUtilite_172 {Leiden}
+QuestsUtilite_173 {Moloch}
+QuestsUtilite_174 {Cristobal}
+QuestsUtilite_175 {Soberano}
+QuestsUtilite_176 {Alcantara}
+QuestsUtilite_177 {Vanguard}
+QuestsUtilite_178 {Torbay}
+QuestsUtilite_179 {Russell}
+QuestsUtilite_180 {Barford}
+QuestsUtilite_181 {Pelican}
+QuestsUtilite_182 {Montebello}
+QuestsUtilite_183 {Zeelandia}
+QuestsUtilite_184 {Limeno}
+QuestsUtilite_185 {Leviathan}
+QuestsUtilite_186 {Phoenix}
+QuestsUtilite_187 {Neptune}
+QuestsUtilite_188 {Bourgogne}
+QuestsUtilite_189 {Pandora}
+QuestsUtilite_190 {Rotterdam}
+QuestsUtilite_191 {Meerman}
+QuestsUtilite_192 {Bucentaure}
+QuestsUtilite_193 {Concord}
+QuestsUtilite_194 {코만치 물약이 사용됨}
+QuestsUtilite_195 {건강이 완전히 회복된 기분이다!}
+QuestsUtilite_196 {Marlin}
+QuestsUtilite_197 {요격선}
+QuestsUtilite_198 {Aurora Bardot, 1612-1637, 하녀}
+QuestsUtilite_199 {네가 식탁 전체에 토했잖아, 이 빌어먹을 해적아!}
+QuestsUtilite_200 {Jules Couvier, 1591-1640, 지붕공}
+QuestsUtilite_201 {강한 바람이 불어오는 것 같군...}
+QuestsUtilite_202 {Gerard Lesbro, 1555-1596, 연금술사}
+QuestsUtilite_203 {이제 이 액체를 살짝 데워볼까요...}
+QuestsUtilite_204 {Judith Boson, 1589-1618, 가정교사}
+QuestsUtilite_205 {정말 바보 같군, 그분 부인은!}
+QuestsUtilite_206 {Auguste Poitier, 1567-1624, 총기 제작자}
+QuestsUtilite_207 {이거 봐, 이 총이 고장났군. 좀 더 자세히 살펴보자…}
+QuestsUtilite_208 {Marc Romari, 1544-1599, 고리대금업자}
+QuestsUtilite_209 {선생님, 정말로 도둑맞았다니까요!}
+QuestsUtilite_210 {Marcel d'Aubet, 1611-1650, 짐꾼}
+QuestsUtilite_211 {이 밧줄들 정말 썩은 것 같아...}
+QuestsUtilite_212 {Rose Duplan, 1621-1649, 하녀}
+QuestsUtilite_213 {이 상자에 주인은 뭘 숨겨뒀을까? 잠깐 없는 사이에 한번 볼까...}
+QuestsUtilite_214 {Victor Marion, 1577-1608, 감시인}
+QuestsUtilite_215 {어이, 누구야?}
+QuestsUtilite_216 {Alvaro Lopez, 1587-1633, 진주 채취자}
+QuestsUtilite_217 {이 석호에는 상어가 한 번도 들어온 적이 없다!}
+QuestsUtilite_218 {Gaspar Ibanez, 1599-1640, 목수}
+QuestsUtilite_219 {후안, 저 큰 도끼 좀 던져줘!}
+QuestsUtilite_220 {Lorenzo Perdoso, 1581-1630, 포수}
+QuestsUtilite_221 {총구에 화약을 더 쏟아부어! 더 많이! 그래, 그렇게...}
+QuestsUtilite_222 {Simon Zorrita, 1602-1645, 탐정}
+QuestsUtilite_223 {사령관님, 범죄를 밝혀냈습니다. 범인은 바로 당신입니다!}
+QuestsUtilite_224 {Lolita Cheka, 1610-1639, 재봉사}
+QuestsUtilite_225 {걱정 마요, 자기야. 내 남편은 아직 한참 후에야 수영에서 돌아올 거예요…}
+QuestsUtilite_226 {Ricardo Cazares, 1590-1633, 사냥꾼}
+QuestsUtilite_227 {이 뱀 알아. 전혀 해롭지 않아!}
+QuestsUtilite_228 {Isidro Davilla, 1588-1624, 방앗간 주인}
+QuestsUtilite_229 {내일 아침에 이 계단의 금이 간 디딤판을 교체할 거야...}
+QuestsUtilite_230 {Teodoro Bello, 1599-1646, 부관}
+QuestsUtilite_231 {이 악당 같은 자식! 자, 그 멍청하고 녹슨 쇳덩어리나 뽑아보시지!}
+QuestsUtilite_232 {Gelvira Cheka, 1605-1648, 상인}
+QuestsUtilite_233 {제 물품은 교환 및 환불이 불가합니다!}
+QuestsUtilite_234 {Jacob Black, 1608-1631, 어부}
+QuestsUtilite_235 {아버지의 보트는 수많은 폭풍을 견뎠지. 이번에도 무사할 거야...}
+QuestsUtilite_236 {Ralph Chaplin, 1602-1649, 나무꾼}
+QuestsUtilite_237 {존, 도끼를 손잡이에 단단히 고정했어?}
+QuestsUtilite_238 {Kermit Filler, 1615-1653, 바텐더}
+QuestsUtilite_239 {모건, 럼은 정말 희석하지 않았어, 엄마를 걸고 맹세해!}
+QuestsUtilite_240 {Laura Hart, 1605-1627, 창녀}
+QuestsUtilite_241 {감히 무슨 소리야! 나 매주 의원한테 진찰받거든!}
+QuestsUtilite_242 {Simon Luther, 1598-1639, 의사}
+QuestsUtilite_243 {흰 가루, 냄새 없고... 맛은 쓰다...}
+QuestsUtilite_244 {Oscar Marker, 1611-1642, 도둑}
+QuestsUtilite_245 {그래도 여기까지는 개의 사슬이 닿지 않네...}
+QuestsUtilite_246 {Macolm Camley, 1545-1587, 배우}
+QuestsUtilite_247 {이 빨간 코 가면을 쓰면 내가 꼭 요새 사령관 같군!}
+QuestsUtilite_248 {토비아스 필러, 1567-1599, 사냥꾼}
+QuestsUtilite_249 {John, 이 재규어는 꽤 순해 보여. 우리 문 열어봐...}
+QuestsUtilite_250 {Camille Rutter, 1571-1596, 농민 여성}
+QuestsUtilite_251 {오늘따라 우리 망둥이가 좀 안절부절못하네…}
+QuestsUtilite_252 {Fritz Loots, 1587-1631, 요리사}
+QuestsUtilite_253 {피클은 장교들 몫이고, 뱃사람 아가씨는 주는 대로 먹어야지!}
+QuestsUtilite_254 {Rupert Hofmeyr, 1601-1649, 서기}
+QuestsUtilite_255 {열 번째 말합니다, 이 멍청아! Minheer Gerritz는 오늘 당신을 안 만납니다!}
+QuestsUtilite_256 {Paul Wlecke, 1577-1622, 조타수}
+QuestsUtilite_257 {걱정 마세요, 선장님! 이 암초 구역은 제 손바닥 보듯 훤합니다!}
+QuestsUtilite_258 {Yedam Uustgen, 1589-1635, 대장장이}
+QuestsUtilite_259 {더 좋은 세이버가 아니라, 망치로 네 손부터 다듬어야겠군!}
+QuestsUtilite_260 {Katrina Erb, 1610-1644, 세탁부}
+QuestsUtilite_261 {리즈베스, 어디로 달려간 거야? 이들은 평화로운 인디언들이야, 백인에게는 해치지 않아…}
+QuestsUtilite_262 {Peter Konnink, 1561-1615, 머스킷병}
+QuestsUtilite_263 {탄약을 총구에 꽉 눌러 넣겠어...}
+QuestsUtilite_264 {Tanna Graaff, 1588-1607, 하녀}
+QuestsUtilite_265 {누가 아래층에서 걷고 있는 것 같아. 한밤중에 누구를 데려온 거야? 내가 가서 확인해볼게...}
+QuestsUtilite_266 {Krelis van Eck, 1572-1611, 갑판장}
+QuestsUtilite_267 {스무 대씩 쳐라! 아니, 서른 대다! 모두에게!}
+QuestsUtilite_268 {Jacob de Haez, 1611-1651, 여행가}
+QuestsUtilite_269 {카이만은 사람을 공격하지 않습니다. 아주 배고플 때만 그렇죠. 이 녀석은 분명 배가 부른가 봅니다...}
+QuestsUtilite_270 { }
+QuestsUtilite_271 { }
+QuestsUtilite_272 {독이 듣지 않았다!}
+QuestsUtilite_273 {타이노 독에 중독됨!}
+QuestsUtilite_274 {@<GetFullName(chref)> 타이노 독에 중독됨}
+QuestsUtilite_275 {액션 메뉴(ENTER)에서 빠른 이동으로 Le François에 가세요.}
+QuestsUtilite_276 {바다가 더 위험해지고 해적의 위협이 커졌습니다}
+QuestsUtilite_277 {키메라}
+QuestsUtilite_278 {~ 우리가 녀석들을 제대로 화나게 했군! 함대의 기함은 ~}
+QuestsUtilite_279 {Diego}
+QuestsUtilite_280 {de Landa}
+QuestsUtilite_281 {재규어}
+QuestsUtilite_282 {Bellona}
+QuestsUtilite_283 {미네르바}
+QuestsUtilite_284 {매너티}
+QuestsUtilite_285 {맹그로브}
+QuestsUtilite_286 {무역풍}
+QuestsUtilite_287 {트리톤}
+QuestsUtilite_288 {카카오}
+QuestsUtilite_289 {벌새}
+QuestsUtilite_290 {시빌}
+QuestsUtilite_291 {주노}
+QuestsUtilite_292 {오르페우스}
+QuestsUtilite_293 {구아바}
+QuestsUtilite_294 {모레나}
+QuestsUtilite_295 {포세이돈}
+QuestsUtilite_296 {바라쿠다}
+QuestsUtilite_297 {히드라}
+QuestsUtilite_298 {매너티}
+QuestsUtilite_299 {시타델}
+QuestsUtilite_300 {아나테마}
+QuestsUtilite_301 {키메라}
+QuestsUtilite_302 {네메시스}
+QuestsUtilite_303 {이구아나}
+QuestsUtilite_304 {세크로피아}
+QuestsUtilite_305 {하구}
+QuestsUtilite_306 {디오니소스}
+QuestsUtilite_307 {아스타르테}
+QuestsUtilite_308 {카론}
+QuestsUtilite_309 {Guacamayo}
+QuestsUtilite_310 {헬리아다}
+QuestsUtilite_311 {케르베로스}
+QuestsUtilite_312 {Bellerophon}
+QuestsUtilite_313 {모르페우스}
+QuestsUtilite_314 {페르세우스}
+QuestsUtilite_315 {테이퍼}
+QuestsUtilite_316 {커튼월}
+QuestsUtilite_317 {팔랑크스}
+QuestsUtilite_318 {군단}
+QuestsUtilite_319 {전초기지}
+QuestsUtilite_320 {드라이어드}
+QuestsUtilite_321 {고르곤}
+QuestsUtilite_322 {오벨리스크}
+QuestsUtilite_323 {Arabella}
+QuestsUtilite_324 {군단병}
+QuestsUtilite_325 {불칸}
+QuestsUtilite_326 {헬리아돈}
+QuestsUtilite_327 {헤파이스토스}
+QuestsUtilite_328 {센추리온}
+QuestsUtilite_329 {해적이 패배해 바다가 더 안전해졌다.}
+QuestsUtilite_330 {해적들이 강해졌고, 바다는 더욱 위험해졌다.}
+QuestsUtilite_331 {선장님, 저기 Amsterdam입니다! 이제 회사가 당신을 진정한 위협으로 여기고 있습니다.}

@@ -1,0 +1,63 @@
+#QUEST SharlieEpilog
+Epikriz
+#TEXT 1_1
+Abbot Benoît’i ziyaret ettim ve babamın tekrar görüşemeden önce hastalığın onu yenmesinden korktuğunu söyledi. Bana yazdığı mektupta da aynı şeyi söylüyordu, yalnız her geçen gün daha da güçsüz hissediyor oluşunu söylemekten kaçınmıştı.
+Zor bir karar vermek zorunda kaldım — mümkün olan en kısa sürede yelken açmak.
+Ancak mevcut durumumu göz önünde bulundurarak, her şeyi bırakıp Eski Dünya’ya dönmem mümkün değil. Önce, arşipelden temiz bir vicdanla ayrılabilmem için bir dizi karar almam gerekiyor. Abbot bu konuda bana yardım etmeyi vaat etti — onun yardımıyla gerekli talimatları yetkililere iletebileceğim.
+Ayrıca varsa tüm borçlarımı kapatmamı tavsiye etti. Tefecilerin eli uzun olur — paraları için hiçbir şeyden çekinmeyecekleri şüphesiz.
+#TEXT 1_2
+Abbot Benoît’i ziyaret ettim ve babamın tekrar görüşemeden önce hastalığın onu yenmesinden korktuğunu söyledi. Bana yazdığı mektupta da aynı şeyi söylüyordu, yalnız her geçen gün daha da güçsüz hissediyor oluşunu söylemekten kaçınmıştı.
+Ne yazık ki, şu anda Eski Dünya’ya gitmek pek mümkün görünmüyor — derhal çözülmesi gereken önemli işlerim var. Gidiş‑dönüş yolculuğu oldukça zaman alabilir ve eminim babam en az birkaç ay mülkte kalmam konusunda ısrar edecektir. Bu düşünce benim için pek de çekici değil.
+#TEXT 2
+Abbot haklı — artık yelken açmayı erteleyemem. Ancak mevcut durumumu göz önünde bulundurarak, her şeyi bırakıp Eski Dünya’ya dönmem mümkün değil. Önce, arşipelden temiz bir vicdanla ayrılabilmem için bir dizi karar almam gerekiyor. Papazın kendisi bana yardım etmeyi vaat etti — onun yardımıyla gerekli talimatları yetkililere iletebileceğim.
+Ayrıca varsa tüm borçlarımı kapatmamı tavsiye etti. Tefecilerin eli uzun olur — paraları için hiçbir şeyden çekinmeyecekleri şüphesiz.
+#TEXT 3_1
+Isla Mona’yı Majestelerinin egemenliğine bırakmaya karar verdim. Onların güvenliğini ancak böyle sağlayabiliriz. Abbot’un kuryeleri kararımı her iki tarafa da bildirecek. Umarım Rodgar yaklaşan medeniyete boyun eğecek gücü bulabilir.
+#TEXT 3_2
+Isla Mona’yı Jan Swenson’un gözetimine bırakmaya karar verdim. Eminim hem yerleşim sakinlerinin güvenliğini hem de ticaret karakolunun sorunsuz çalışmasını sağlayabilir. Elbette kârın bir payını istedim — böylesine lezzetli bir payı bedavaya vermek olmazdı.
+#TEXT 4_1
+Abbot’a Le François’deki baronluğumdan bahsettim ve ondan vazgeçme kararı aldığımı Marcus’a mektupla bildirdim. Açıkçası, bu içimde bir nebze hafiflik yarattı. Korsanlık dönemi sona erdi. Korsanların arasında arkadaşlarım kalsa bile — artık bununla hiç bir ilişki içinde olmak istemiyorum.
+#TEXT 4_2
+Abbot benim Le François’deki baronluğumu kesinlikle onaylayamazdı, bu yüzden bundan haberdar olması gerekmiyor. Yine de, onu bırakma kararımla ilgili bir mektubu Marcus’a yolladım. Ben yokken adımı kullanarak arşipelde korsanların neler yapabileceğini kim bilir? Yerimi kimin alacağı pek ilgimi çekmiyor.
+#TEXT 5_1
+İyice düşündükten sonra, Fransa patentinden vazgeçmeye karar verdim. Babamla görüşmeden önce böyle bir yükü omuzlarımda taşımak istemiyorum… ve itiraf etmek gerekirse, sürekli savaşlar olmadan yaşamanın ne demek olduğunu neredeyse unuttum. Umarım önümüzdeki aylar dayanılmaz derecede sıkıcı geçmez.
+#TEXT 5_2
+Kısa bir düşünüşten sonra, Fransa ve Majesteleri’nin hizmetinde kalmaya karar verdim. Yakında Eski Dünya’ya yelken açacağımı Capsterville makamlarına bildirdim, ancak itiraf etmem gerekirse orada uzun süre kalmamayı umuyorum. Gemi ve savaşlardan uzak bir yaşam bana… yabancı geliyor. Ama yolculukta kendimi dinlemek için yeterince zamanım olacak.
+#TEXT 6
+Yanıma @<sSum> peso almaya karar verdim. Daha fazla almak düşüncesizce olurdu — yol boyunca gemiye her şey olabilir. Bu paranın “temiz” olmasına dikkat ettim: abbot, @<tSum> peso bağış karşılığında buna kutsamasını verdi. Babamın gözünde bu para temiz — ve benim için gereken tek şey bu.
+#TEXT 7
+Eski Dünya’ya gitme kararımı Jan Swenson’a bildirmeye karar verdim. Birlikte yaşadığımız her şeyden sonra, onu habersiz bırakamazdım.
+#TEXT 8
+Daha fazla zaman olsaydı, Nathan ve Danielle Houk’a ayrılacağımı şahsen söylerdim. Sonuçta onlar benim için neredeyse bir aile olmuşlardı. Ama ne yazık ki şimdi buna hiç zaman yok. Bir mektubun ani ayrılığımın etkisini biraz hafifleteceğini düşünüyorum.
+#TEXT 8_1
+Gino Guineyli’ye arşipeli belirsiz bir süreliğine terk ettiğimi bildirdim. Mali olarak ona yardım edemediğim süre boyunca kendisine yaşam ve deney masrafları için evin bir bölümünü kiralama izni verdim.
+#TEXT 9
+Eh, sanırım tüm işler halledildi ve yelken açmaya her şey hazır. Abbot ile konuşmam gerekiyor.
+#TEXT 10
+Abbot bana, bir zamanlar henüz tembel bir hayat süren ve her namuslu adam için bela olan sırf *Ulysse* ile bu kıyılara vardığım günkü o pinasın şimdi açık artırmaya çıkarıldığını bildirdi. Şaşırtıcı — kader, her şeyin başladığı aynı gemiyle eve dönme şansını veriyor. Lanet olsun, bu cazip. Sanırım liman idaresine uğrayıp müzayedenin ne zaman olacağını öğrenmeliyim.
+#TEXT 11_1
+Vay canına! Açık artırma zaten yapıldı ve kazanan hiç kimse değil, Jean Picard oldu — bir zamanlar onu Maracaibo yakınlarındaki bir tarladan kurtarmış olan kişi. Korsanlığı bırakıp ticarete atılmaya karar vermiş ve bu vesileyle *Ulysse*’yi satın almış. Daha da ilginci — rotası benimkiyle aynı, Bordeaux’ya gidiyor.
+Bu yolculukta yolcu olmanın bana iyi geleceğini düşündüm ve onun gemisine binmek için rica ettim. Hayat, ev, aile üzerine düşünmek için zaman olacak… Belki de gerçekten karada yerleşme zamanı gelmiştir.
+Aile demişken — karımla henüz konuşmadım. Bunu daha önce yapmalıydım ama her zamanki gibi çok meşguldüm…
+Kalkış iki hafta sonra — Jean beni tavernada bekleyecek.
+#TEXT 11_2
+Vay canına! Açık artırma zaten yapıldı ve kazanan hiç kimse değil, Jean Picard oldu — bir zamanlar onu Maracaibo yakınlarındaki bir tarladan kurtarmış olan kişi. Korsanlığı bırakıp ticarete atılmaya karar vermiş ve bu vesileyle *Ulysse*’yi satın almış. Daha da ilginci — rotası benimkiyle aynı, Bordeaux’ya gidiyor.
+Bu yolculukta yolcu olmanın bana iyi geleceğini düşündüm ve onun gemisine binmek için rica ettim. Hayat, ev, aile üzerine düşünmek için zaman olacak… Belki de gerçekten karada yerleşip bir eş bulma zamanı gelmiştir ya da babamın ısrar ettiği gibi Yvonne La Brignée’ye bakmalıyım.
+Kalkış iki hafta sonra — Jean beni tavernada bekleyecek. Bu arada subaylarla konuşmam gerekiyor. Bu yolculuğum ne kadar sürecek kim bilir… Görünüşe göre vedalaşma zamanı geldi.
+#TEXT 11_3
+Geç kaldım — açık artırma zaten yapıldı ve kazanan @<sName> oldu. Pinasını satmayı kesinlikle reddetti, ancak görünen o ki rotamız aynı — ikimiz de Bordeaux’ya gidiyoruz. Bu yolculukta yolcu olmanın bana iyi geleceğini düşündüm ve onun gemisine binmek için rica ettim. Hayat, ev, aile üzerine düşünmek için zaman olacak… Belki de gerçekten karada yerleşme zamanı gelmiştir.
+Aile demişken — karımla henüz konuşmadım. Bunu daha önce yapmalıydım ama her zamanki gibi çok meşguldüm…
+#TEXT 11_4
+Geç kaldım — açık artırma zaten yapıldı ve kazanan @<sName> oldu. Pinasını satmayı kesinlikle reddetti, ancak görünen o ki rotamız aynı — ikimiz de Bordeaux’ya gidiyoruz. Bu yolculukta yolcu olmanın bana iyi geleceğini düşündüm ve onun gemisine binmek için rica ettim. Hayat, ev, aile üzerine düşünmek için zaman olacak… Belki de gerçekten karada yerleşip bir eş bulma zamanı gelmiştir ya da babamın ısrar ettiği gibi Yvonne La Brignée’ye bakmalıyım.
+Kalkış iki hafta sonra — kaptan beni tavernada bekleyecek. Bu arada Alonso ve subaylarla konuşmam gerekiyor. Bu yolculuğum ne kadar sürecek kim bilir… Görünüşe göre vedalaşma zamanı geldi.
+#TEXT 11_5
+Vay canına! Açık artırma zaten yapıldı ve kazanan hiç kimse değil, Jean Picard oldu — bir zamanlar Maracaibo yakınlarındaki bir tarladan kurtarmaya çalıştığım kişi. Görünüşe göre o haydut sadece hayatta kalmakla kalmamış, aynı zamanda plantasyon sahibinin dul eşinin tüm servetini de ele geçirmiş. Şimdi korsanlığı bırakıp ticarete atılmaya karar vermiş ve bu vesileyle *Ulysse*’yi satın almış. Daha da ilginci — rotası benimkiyle aynı, Bordeaux’ya gidiyor.
+Bu yolculukta yolcu olmanın bana iyi geleceğini düşündüm ve onun gemisine binmek için rica ettim. Hayat, ev, aile üzerine düşünmek için zaman olacak… Belki de gerçekten karada yerleşme zamanı gelmiştir.
+Aile demişken — karımla henüz konuşmadım. Bunu daha önce yapmalıydım ama her zamanki gibi çok meşguldüm…
+Kalkış iki hafta sonra. Jean beni tavernada bekleyecek — kalkıştan önce bir şölen yapma konusunda anlaştık.
+#TEXT 11_6
+Vay canına! Açık artırma zaten yapıldı ve kazanan hiç kimse değil, Jean Picard oldu — bir zamanlar Maracaibo yakınlarındaki bir tarladan kurtarmaya çalıştığım kişi. Görünüşe göre o haydut sadece hayatta kalmakla kalmamış, aynı zamanda plantasyon sahibinin dul eşinin tüm servetini de ele geçirmiş. Şimdi korsanlığı bırakıp ticarete atılmaya karar vermiş ve bu vesileyle *Ulysse*’yi satın almış. Daha da ilginci — rotası benimkiyle aynı, Bordeaux’ya gidiyor.
+Bu yolculukta yolcu olmanın bana iyi geleceğini düşündüm ve onun gemisine binmek için rica ettim. Hayat, ev, aile üzerine düşünmek için zaman olacak… Belki de gerçekten karada yerleşip bir eş bulma zamanı gelmiştir ya da babamın ısrar ettiği gibi Yvonne La Brignée’ye bakmalıyım.
+Kalkış iki hafta sonra. Jean beni tavernada bekleyecek — kalkıştan önce bir şölen yapma konusunda anlaştık. Bu arada subaylarla konuşmam gerekiyor. Bu yolculuğum ne kadar sürecek kim bilir… Görünüşe göre vedalaşma zamanı geldi.
+#TEXT 12
+Artık en zor kısım kaldı — mürettebatı ve subayları dağıtmak. Birlikte yaşadıklarımızı düşününce, bazılarıyla vedalaşmak özellikle zor olacak… Subaylarla ben ilgileneceğim, mürettebatla konuşmayı Alonso’ya bırakacağım.

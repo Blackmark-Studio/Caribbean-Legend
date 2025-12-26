@@ -1,0 +1,393 @@
+_info
+{
+Dosya - RPG sistemi açıklaması
+Oluşturan: ALexusB 17.08.05  // güncelleyen: Tymofei 12.12.2012
+}
+newline
+{
+
+}
+Strength
+{
+Güçlü korsanlar genellikle mükemmel Vanguards ve Topçulardır.
+Fiziksel güç gerektiren becerileri etkiler, özellikle 'Orta Silahlar', 'Ağır Silahlar' ve 'Toplar'.
+~
+Seviye başına HP miktarını ve maksimum envanter kapasitesini belirler.
+}
+Perception
+{
+Keskin korsanlar nişancı, gizli ajan ve Topçu olabilir.
+~
+'İsabet' ve 'Gizlilik' becerilerini etkiler.
+}
+Agility {Hareketlerin koordinasyonu ve ellerin çevikliği. ~ Etkiler: 'Borda', 'Hafif silahlar', 'Orta silahlar', 'Ateşli silahlar' ve seviye başına kazanılan enerji miktarı.}
+Charisma
+{
+Karizmatik korsanlar doğuştan lider, pazarlıkçı ve Hazinedar’dır.
+Gerçek bir lider, bir tüccardan mal almak için şiddete başvurmaz; tüccar, en ufak bir direniş göstermeden her şeyini verir. En iyi denizciler onun peşinden gider, en güzel kadınlar her limanda gelişini bekler.
+~
+' Liderlik' ve 'Ticaret' üzerinde etkilidir.
+Kaç subay işe alabileceğini belirler (A*2).
+}
+Intellect {Doğuştan gelen eğilimler, yetenekler, zeka ve durumlara hızla uyum sağlama becerisi. ~ 'Ticaret', 'Topçuluk', 'Navigasyon' ve seviye başına kazanılan enerji miktarını etkiler.}
+Endurance
+{
+Dayanıklı korsanlar Marangoz ve Cerrah olarak parıldar.
+~
+'Onarım' ve 'Savunma'yı etkiler.
+(P) ile aynıdır, maksimum Can ve envanter kapasitesini belirler.
+}
+Luck
+{
+Şanslı korsanlar usta nişancı, kumarbaz ve maceracıdır.
+~
+'​Ateşli silahlar', 'Fırsatçılık' ve 'Gizlilik' bu özelliğe bağlıdır.
+Bazı oyun olaylarının sonucunu ve kritik vuruş şansını büyük ölçüde belirler.
+}
+Crit
+{
+Düşmana kritik darbe veya atış yapma temel şansı.
+~
+G ve S’ye bağlıdır.
+~
+Yetenekler ve ekipman bu şansı artırabilir.
+}
+CharDefence
+{
+Temel Hasar Koruma istatistikleri. Gelen tüm hasarı belirli bir oranda azaltır.
+~
+Bu değerler kişisel Yetenekler ve ekipmandan etkilenir.
+}
+FencingL
+{
+Hafif kılıçlar, flöreler ve benzerlerini kullanma yeteneği.
+ (R*0.9+I*0.1)
+ ~
+ Silah hasarını ve saldırıların Enerji maliyetini etkiler.
+}
+FencingS
+{
+Kılıç gibi orta, dengeli ve çok yönlü bıçakları kullanma becerisi; hem güç hem çeviklik gerektirir.
+ (P*0.6+R*0.4)
+ ~
+ Silah hasarını ve saldırıların Enerji maliyetini etkiler.
+}
+FencingH
+{
+Geniş kılıçlar ve baltalar gibi ağır silahları kullanma becerisi. Yüksek fiziksel güç gerektirir.
+ (P*0.9+E*0.1)
+ ~
+ Silah hasarını ve saldırıların Enerji maliyetini etkiler.
+}
+Pistol
+{
+Her türlü ateşli silahı kullanma yeteneği.
+ (R*0.4+S*0.6)
+ ~
+ Hasarı ve yeniden doldurma hızını etkiler.
+}
+Fortune
+{
+Kumar ve yağmada biraz fırsatçılık işe yarar.
+Başarıya bağlıdır.(S)
+}
+Leadership
+{
+Bazı olayların ve diyalogların sonucunu etkiler. Ayrıca yeni mürettebat alımında ana beceridir.
+(A*0.8+T*0.2)
+}
+Commerce
+{
+Belirli ticaret diyaloglarında önemli rol oynar; hem satış hem alış fiyatlarını etkiler ve gemi yönetiminin toplam maliyetine yansır.
+(Y*0.8+L*0.2)
+}
+Accuracy
+{
+Açık denizlerde yol alanlar için en önemli yeteneklerden biri. İyi bir kaptan, barutu ve gülleleri balıkları korkutmak için harcamaz; her salvo hedefi bulur! Tuzlu rüzgar köprüdeki dumanı dağıttığında, ufukta düşman gemisi kalmaz! 
+(I*0.8+S*0.2)
+}
+Cannons
+{
+Topu hızla doldur, öne sür ve salvo yankısı daha bölmelerde çınlarken hemen temizle, tekrar doldur, nişan al, namlu ısınmasın diye su dök... Çarpışmanın ortasında fazlalığa yer yok: doldur, sür, ateş et!
+(T*0.6+P*0.4)
+}
+Sailing
+{
+Her koşulda bir gemiyi idare etme, aletleri kullanma ve filoya komuta etme yeteneği. En inatçı ve hantal gemi bile deneyimli bir kaptanın sağlam eline boyun eğer.
+ 'Sezgi' ve 'Yetenek'e bağlıdır (I0.2 + T0.8)
+~
+ Belirli bir sınıftaki gemiyi yönetmek için gereken minimum Navigasyon seviyesi:
+ sınıf 1 için 90 gerekir
+ sınıf 2 için 70 gerekir
+ sınıf 3 için 55 gerekir
+ sınıf 4 için 40 gerekir
+ sınıf 5 için 20 gerekir
+ sınıf 6 için 01 gerekir
+~
+ Navigasyon eksikliği, kahramanın tüm beceri ve niteliklerinde cezaya yol açar. Mevcut ve gereken Navigasyon değeri arasındaki fark ne kadar büyükse, cezalar o kadar ağır olur.
+}
+Repair
+{
+Düşman gemine bir mermi sağanağıyla saldırıp bordaları parçaladığında, yelkenleri delik deşik ettiğinde; fırtınada gövde çatırdayıp rüzgar halatları tel tel kopardığında, Onarım denizciliğin en hayati becerilerinden biri olur.
+(E*0.8+I*0.2)
+}
+Grappling
+{
+Düşman gemisine yanaşıp kancaları fırlatmak, titreyen düşmana çıkarma yapmak, güverteleri süpürüp gemiyi hak edilmiş bir ganimet olarak ele geçirmek — tüm bunlar büyük çeviklik ve deneyim ister, fakat ganimet tüm çabayı fazlasıyla karşılar.
+ (R*0.7+T*0.3)
+ ~
+ Aborda mesafesini etkiler.
+}
+Defence
+{
+Günbegün mürettebat gemiyle bütünleşir. Tecrübeli bir denizci, meyhaneden toplanan on acemiden daha değerlidir. İyi bir kaptan, adamlarını korumalı ve onları boş yere kaybetmemelidir.
+(E*0.5+A*0.5)
+}
+Sneak
+{
+Düşmana fark ettirmeden geçmek, açık denizde takipten kurtulmak ya da ansızın ortaya çıkıp hazırlıksız bir düşmana saldırmak — her kaptanın gizlilik becerisi olmalı.
+(S*0.5+I*0.5)
+}
+Loyality
+{
+Yaptıkların, subayların sadakatini etkiler. Beyaz şövalyeler bir alçağın hizmetine girmez, doğuştan haydutlar ise fazla uzun süre dürüst kalamaz.
+~
+Yüksek Otorite, kararlarının subaylarının sadakatini düşürme etkisini önemli ölçüde azaltır; özellikle de bu kararlar onların dünya görüşüne ters düşüyorsa.
+}
+Authority
+{
+Otorite, Şöhret ve Onur, ana karakteri diğer tüm oyun karakterlerinden ayırır.
+~
+Otorite, kahramanın çevresi tarafından (özellikle de filosundaki gemilerin mürettebatı tarafından) nasıl değerlendirildiğini gösterir. Kaptanın Otoritesi kritik seviyeye düşerse, ona kara işaret verilir ve görevini isteyerek ya da zorla bırakması istenir. Otoritesi yüksekse, mürettebat komutanının etrafında kenetlenir ve liderine olan inançla her türlü zorluğa göğüs gerer!
+~
+Onur, kahraman dünyayı ve insanlarını kurtardıkça artar. Verilen sözlerin bozulması, şiddet ve kötülükle ise en dip seviyelere iner. Onur, karakterin eylemlerine bağlıdır ve diğer insanların ona nasıl davrandığını etkiler.
+~
+Ancak kahraman tekdüze ve risksiz bir hayat sürerse, boş denizlerde yalnız yolculuk ederse, Onur ve Şöhreti avuçtan kayan kum gibi azalır ve sıradan bir seviyeye iner. Oyunda toplumun hafızası kısadır ve genellikle yarım oyun yılını geçmez.
+}
+Attention_abilities
+{
+Dikkat!
+Bazı yetenekler, belirli kahraman veya subay türleri için kullanılamayabilir.
+}
+Personal_abilities
+{
+Karakterin kişisel yeteneklerini geliştiren yeteneklerdir. Kişisel becerileri geliştirerek ilerleme kazanırsın.
+ ~
+ Eşik aşıldığında yeni bir kişisel Yetenek puanı alırsın. Farklı Yetenekler farklı sayıda puan gerektirir. Genellikle en güçlüleri yetenek ağacının sonunda bulunur.
+}
+Ship_abilities
+{
+Gemi yönetimini etkileyen yetenekler. Gemi becerilerini geliştirerek ilerleme kazanırsın.
+~
+Eşik aşıldığında yeni bir gemi Yetenek puanı alırsın. Farklı Yetenekler farklı sayıda puan gerektirir. Genellikle en güçlüleri yetenek ağacının sonunda bulunur.
+~
+Ana karakter, gemide görevlendirilen ve işini bilen subaylardan bu yetenekleri devralabilir.
+}
+Abilities_available {Sayı, kullanılmamış yetenek puanlarını gösterir.}
+Abilities_active {Sayı, bir karakterin etkinleştirdiği yetenekleri gösterir.}
+Rank
+{
+Rütbe, bir karakterin oyundaki ilerlemesini gösterir. Yetenek seviyelerini artırdıkça ilerleme kazanırsın.
+~
+Karakterin Rütbesi arttıkça Canı ve Enerjisi yükselir, daha güçlü düşmanlar ve yeni eşyalar daha sık ortaya çıkar.
+}
+Life
+{
+HP — bir karakterin fiziksel hasara karşı direncini gösterir. Sıfır ölüm, bir ise sonsuz olasılık demektir.
+ ~
+ Değeri G ve D’ye bağlıdır, rütbe ile artar.
+}
+Health {Canlılık, karakterin fiziksel durumunu gösterir. Kısa sürede ağır yaralar aldıkça azalır. Bir süre çatışmadan uzak durup yaraların iyileşmesine izin verirsen, yeniden artar. Dikkat edilmezse istatistiklere ve yeteneklere ciddi cezalar verebilir.}
+Energy
+{
+Enerji - karakterin fiziksel dayanıklılık havuzudur.
+
+~
+
+Yakın dövüşteki tüm saldırı hareketleri ve koşu Enerji tüketir; savaş sırasında karakter yorulur ve toparlanmak için nefeslenmeye ihtiyaç duyar.
+
+~
+
+Enerji değeri R ve T'ye bağlıdır ve rütbe ile artar.
+}
+Money {Para, herkesin efendisidir. Piyastre, taler, gine... Hepsi nakit olduktan sonra farkı ne!}
+Reputation
+{
+Onur, toplumun karaktere bakışını yansıtır.
+~
+Sorunları nasıl çözdüğünüz, onu şekillendirir.
+~
+Onur her zaman nötr bir duruma dönme eğilimindedir.
+}
+Weight
+{
+Ağırlık, bir karakterin taşıyabileceği en yüksek toplam yük miktarıdır.
+ Güç, Dayanıklılık, kişisel Yetenekler ve etkin muskalar etkiler.
+ ~
+ Aşırı yüklenen karakter daha yavaş hareket eder, cezalar alır ve hızlı seyahat kullanamaz.
+}
+Title {Unvan, karakterin hizmet ettiği devlete ne kadar faydalı olduğunu gösterir.}
+NextExp
+{
+Deneyim eşiği, mevcut yetenek, rütbe ve beceriye kaç puan atandığını ve bir sonraki puanı kazanmak için ne kadar deneyim gerektiğini gösterir.
+~
+Beceriler, ilgili eylemleri gerçekleştirdikçe gelişir. Örneğin, her isabetli tabanca atışıyla 'Ateşli silahlar' becerisi için deneyim puanı kazanırsınız. Bu beceri puanları, rütbe deneyimine ve kişisel/gemi yeteneklerine (beceri türüne bağlı olarak) eklenir.
+~
+Rütbe deneyim eşiğini aştığınızda kahraman yeni bir rütbe kazanır ve bununla birlikte daha fazla can ve yetenek puanı elde eder; oyuncu bu puanları dilediği gibi dağıtabilir.
+}
+TABLE_PERKS {Kahraman yetenekleri}
+TABLE_PERKS_desc
+{
+Yetenekler, karakterin yeni avantajlar kazanmasını veya daha önce erişilemeyen oyun özelliklerinin açılmasını sağlayan ek parametrelerdir. Yetenekler, bir karakterin belirli bir alanda uzmanlaşmasına ya da birçok konuda az çok bilgi sahibi olan bir genelci olmasına imkan tanır.
+~
+Seçili yeteneğin açıklamasını okumak ve varsa gereksinimlerini öğrenmek için çift tıklayın.
+~
+Bazı yetenekler, ön koşul olan başka yetenekler gerektirdiğinden hemen seçilemez. Önce ağaçtaki başlangıç yeteneklerini öğrenin, böylece yenileri açılır.
+}
+PERK_TABLE_NEED {Gerekli yetenekler}
+PERK_TABLE_NEED_desc {Bu yeteneği seçmek için, kahramanın önce bu ağaçtaki diğer tüm yetenekleri etkinleştirmesi gerekir.}
+Nation_hint
+{
+Kahramanın ulusu, oyunun başında seçtiği ya da şu anda hizmette olduğu patentin ulusudur. Ulus bilgisini "Karakter" penceresinde görebilirsin. "Ulus" penceresinde ise geminin mevcut bayrağını görebilirsin – gerçek kimliğini gizlemek için bu bayrağı yalnızca denizde değiştirebilirsin. Açık denizdeki gemiler ve limandaki muhafızlar kılığını fark edebilir. Kahramanın Gizlilik seviyesi, kılığın işe yarama ihtimalini etkiler. Eğer kahramanın kendi ulusu tarafından başına ödül konmuşsa, artık kendi ulusunun da düşmanı sayılır.
+~
+Düşman tanıma, devletler arası resmi ilişkiler ve başına konan ödüller dikkate alınarak yapılır.
+~
+Düşman şehirlerinde Hızlı Seyahat çalışmaz.
+}
+Drunk_hint {Alkol yeteneklerinizi etkiler. Sarhoşsanız acıyı pek hissetmezsiniz, ama hassas işleri de yapamazsınız.}
+England_descr {İngiltere. Britanya'nın denizlere gerçekten hükmetmesine daha bir asır var, fakat İspanya'nın gücüne meydan okuyacak yükselen bir deniz gücü varsa, o da İngiltere'dir. Fransa Avrupa'da İspanyol etkisine saldırırken, İngiliz korsanları ve donanma devriyeleri, Karayipler'e hükmetme yolunda korumasız İspanyol gemilerini avlıyor.}
+France_descr
+{
+Reformasyon’un başlangıcından bu yana Fransa’yı kasıp kavuran Katolik ve Huguenot mezhep savaşları, on beş yaşındaki Louis XIV de Bourbon’un tahta çıkışıyla büyük ölçüde sona erdi. Henüz Fransa’yı Altın Çağ’a taşıyacak ‘Güneş Kralı’ olmaktan uzak olan Kral Louis, büyük Kardinal Richelieu’nun izinden giderek devlet aygıtını köklü reformlarla güçlendirmek istiyor. Avrupa’da hâlâ çatışmalar sürerken, Kral Louis’nin gözünde en büyük tehdit, Bourbonların ezeli rakibi olan ve şu anda hem İspanya Kralı hem Kutsal Roma İmparatoru olan Habsburglar. Hem yakın hem uzak diyarlarda İspanyollarla rekabet edebilmek için, Kral Louis Jean-Baptiste Colbert’e Fransız Donanması’nı yeniden canlandırma emri verdi. Yeni ve verimli vergi sistemi sayesinde Fransa, neredeyse elli yıllık savaşın borçlarını ödemekle kalmıyor, donanma ve ordu reformları için de kaynak ayırabiliyor. Fransız Ordusu henüz Oliver Cromwell’in İngiliz Yeni Model Ordusu kadar modern veya savaş tecrübesine sahip olmasa da, yeni doğrusal savaş düzeninde kıtanın en iyi donanımlı ve eğitimli ordularından biri olma yolunda hızla ilerliyor. Toulon ve Saint-Nazaire’de en yeni tasarımlarla gemiler inşa ediliyor, iç bölgelerdeki fabrikalarda modern toplar dökülüyor.
+~
+İngilizlerin aksine, Fransa’nın ana endişeleri Avrupa kıtasında; sömürge meseleleri ise çoğunlukla Avusturya, İtalya ve İspanya’daki Habsburglara karşı Fransız sınırını savunma ihtiyacının gerisinde kalıyor.
+~
+Bu ihmal nedeniyle, Fransız Amerika Şirketi, Fransız şövalyesi ve Genel Vali Philippe de Poincy’nin aracılığıyla, Karayip Antilleri’ndeki bazı sömürge topraklarını Malta Şövalyeleri’ne satma kararı aldı. De Poincy ve Tarikat Büyük Üstadı Jean de Lascaris-Castellar, bu satın almayla, Akdeniz’de Berberi korsanlarını kovalarken kaybettikleri gelirleri, Kutsal Makam’ın hoş karşılamadığı daha... yaratıcı yöntemlerle telafi etmeyi umuyor. Tarikatın gelecek vadeden genç şövalyesi Michel de Monper ise, İspanyol gemilerine korsanlık yapmayı bile öneriyor!
+~
+Böylece Fransız soylularının en seçkinleri, şöhret, servet, macera ve belki de Fransız İmparatorluğu’nu genişletme umuduyla Karayip kolonilerine giden ilk gemiye atlamaya hazırlanıyor.
+~
+}
+Holland_descr {Hollanda. Hollanda Birleşik Eyaletleri, İspanya’ya karşı seksen yıl süren bağımsızlık savaşından yeni çıkmış genç bir ulustur. Hollandalılar tutumlu ve çalışkan, ticarette üstünlük arayan bir millettir. Şu anda Hollanda, ortak düşmanları İspanya’ya karşı Fransa’ya sessizce destek vermektedir; ancak genel olarak, her müşteriyle ticaret yapabilen (veya onları kandırabilen) tarafsız bir güç olmayı hedefler!}
+Spain_descr {İspanya. Büyük ama gücünü yitirmekte olan bir sömürge gücü. Karayip adalarının ve İspanyol Anakarası'nın büyük kısmını elinde tutan İspanya, Yeni Dünya'nın bitmek bilmeyen zenginliklerini ele geçirmek isteyen İngiltere ve Fransa'nın sürekli baskısı altında.}
+Pirate_descr
+{
+Korsanlar. Bu adamlar hiçbir bayrağa bağlı kalmaz ve Kıyı Kardeşliği'nin Korsan Yasası'na (ki aslında daha çok rehber gibidir) göre yaşarlar. Yine de, Port Royal ve Tortuga gibi İngiliz veya Fransız kolonilerinde ganimetlerini satarken valinin göz yumması işlerini engellemez. Duruma göre, korsanlar herhangi bir devletten menşur alıp 'yasal' olarak savaşabilirler, fakat nihayetinde hedefleri İngiliz ve Fransız kapitanlarına benzer: güzel, dolu bir İspanyol hazine gemisi.
+~
+Herhangi bir deniz devriyesi için ufukta bir korsan bayrağı görmek, aç bir kurda pastırma atmak gibidir. Korsanların büyük çoğunluğu için iki son vardır: darağacı ya da ilmeğin ucu.
+}
+Hunter_hint
+{
+Bir ulusun, vatandaşlarının ve askerlerinin size karşı tutumu. Ülke için yapılan iyi işler itibarınızı artırır; kötü işler ise başınıza ödül konmasına yol açabilir. Bu da karada ve denizde sürekli takip edilmeniz anlamına gelir.
+~
+Başınızdaki ödül, o ülke için yapılan iyi işler ya da rüşvetle azaltılabilir. Yeterli çabayla tarafsız bir ilişki yeniden kurulabilir.
+}
+LevelComplexity {Zorluk}
+LevelComplexity_desc
+{
+Bu parametre, kahramanın deneyim kazanma hızını, ilerleme oranını, düşman gücünü, geliri ve daha birçok unsuru etkiler.
+~
+Zorluk seviyesi 'Kolay'dan 'İmkansız'a kadar değişir.
+}
+RechargePistolOnLine {Tabanca doldurma}
+RechargePistolOnLine_desc
+{
+Bu modda tabancalar savaş sırasında yeniden doldurulamaz; yalnızca kılıç kınında iken doldurulabilir.
+~
+Bu mod oyundaki tüm karakterleri etkiler.
+}
+HardcoreGame {Demir İrade Modu}
+HardcoreGame_desc {Yeterince adrenalin yok mu? Gerçek bir korsan gibi hissetmek, yaptıklarının dünyaya etkisini tam anlamıyla görmek mi istiyorsun? Bu modda oyunu yalnızca kutsal topraklarda - kilisede - kaydedebilirsin. Her şeyi ilk seferde doğru yapmak zorundasın; tekrar tekrar kayıt yükleme şansın yok. Hatalara yer yok.}
+ArcadeSailMode_desc {Deniz savaşlarında hız ve dinamizm. Hızlı manevralar, yüksek sürat ve çabuk top doldurma – bir sonraki taktik hamleni dikkatlice düşünmeni gerektirir.}
+EncountersRate_desc {Oyun içi olayların sıklığı, özellikle de dünya haritasındaki gemi sayısı.}
+WorldAlivePause {Ulus görevleri}
+WorldAlivePause_desc
+{
+Bu mod, Uluslar için senaryo görevlerinden birini oynamanı sağlar, ancak bitmeden önce oyunun "canlı dünyası" devre dışı kalır: genel valinin şehirler arası hareketi, şehirlerin diğer uluslarca ele geçirilmesi ve kahramanın şehir fethetme fırsatı engellenir.
+~
+Canlı dünya, yalnızca senaryo tamamlandıktan sonra etkinleşir.
+}
+Prisoner {Tutsak}
+Prisoner_desc
+{
+Bir tutsak, iradesi dışında geminizde tutulan bir karakterdir. Her tutsağı geminizin ambarında sorgulayabilirsiniz. Çoğu zaman fidye alabilirsiniz; eğer tutsak bir korsansa, onu kahramanın mürettebatına katabilirsiniz. Teslim etmeniz gereken bir yolcuyu, yolculuk uzadığında ve şikayet etmeye başladığında da hapsedebilirsiniz. Kaptanlar ise, gemi baskını sırasında size teslim olanlar ya da açık denizde filikada yakaladıklarınızdır. En yüksek fidyeyi, tutsakla aynı milletten olan vali öder; ancak bu miktar, valilerin tutsak hakkındaki görüşleri gibi değişkenlik gösterir.
+Tutsak kaptanlar, kahramanınıza çeşitli isteklerle başvurabilir. Tutsaklarla iletişimden kaçınmayın; beklenmedik bir fayda sağlayabilir.
+}
+shipChoose_hint
+{
+Savaş dışında, yoldaş gemisinin görseline çift tıklayarak (veya 'Enter' tuşuna basarak) takas başlatabilirsin.
+~
+Bir yoldaş gemisine yaklaşarak ve hızlı komut 'Takas'ı seçerek de takas başlatabilirsin.
+Bu işlem savaşta veya savaş dışında yapılabilir.
+}
+GoodsCargo_hint
+{
+Gemideki yük: ambar içindeki cephane, mallar ve aletler.
+~
+Pencereye sığmayan öğeleri görmek için listenin sağındaki kaydırıcıyı kullanın.
+~
+Bir ürünün açıklamasını görmek, istenmeyen miktarı denize atmak veya bir mayın bırakmak için 'Enter' tuşuna basın ya da listedeki öğeye çift tıklayın.
+}
+EXP_SLIDE {Deneyim kazanma hızı}
+EXP_SLIDE_desc {Bu ayar, ana karakterin ve subaylarının deneyim kazanma hızını belirler. Hız arttıkça, yeni yetenek puanları, seviyeler ve beceriler daha çabuk elde edilir.}
+Partition_hint
+{
+Mürettebatın payları her ayın 1’ine kadar ödenmelidir. Yapılan ödemeler şunlardır:
+~
+Aylık masraf – denizciler ve subayların toplam maaşı, yaralıların tazminatı, gemi ve ekipman bakımı.
+~
+Ganimet payı – ele geçirilen değerli eşyaların bölüşülüp mürettebat arasında paylaştırılması.
+~
+Ele geçirilen tüm gemiler ve mallar paylaşıma tabidir. Kıyı Kardeşliği yasalarına göre, ölen denizci veya subayın payı ailesine ve dostlarına verilir.
+~
+Mürettebat üyeleri için paylar şöyledir:
+- denizci – 1 pay
+- subay – 10 pay
+- yoldaş – 30 pay
+- kaptan – 200-650 pay
+Ayrıca, kaptan filosundaki gemilerin sahibi olarak her gemiden ek 20-120 pay alır (gemi sınıfına göre değişir) ve tüm bakım ve kayıp masraflarını üstlenir.
+Kaptanın patenti varsa, ganimetin %10’u ulusal hazineye ödenir.
+~
+O ayın ödemesini geciktirmek, ay sonuna kadar mürettebatta huzursuzluğa yol açar; önceden ödeme ise morallerini yükseltir.
+~
+Geçmiş ayın ödemesini geciktirmek, mürettebatın moralini ve subaylar ile yoldaşların sadakatini ciddi şekilde düşürür.
+~
+}
+SeaBattleSave_desc
+{
+Denizde savaşta kayıt.
+Bu seçeneği devre dışı bırakmak, deniz savaşları sırasında oyunu kaydetme özelliğini kaldırır!
+}
+Rains_desc {Yağmur ve fırtınaları aç/kapat. Bu seçenek oyunun kararlılığını etkiler.}
+CasualMode_desc
+{
+Klasik mod, ana karakterin hikayesine odaklanmak isteyen oyuncular için uygundur. Keşif modundan biraz daha zordur ve daha fazla dikkat ile çaba gerektirir, ancak oyunun yazarlarının yarattığı atmosfere tamamen dalmanı sağlar.
+~
+Keşif modu, yeni başlayanlar ve çeşitli yan görevler ile serbest oyun için daha fazla zamana sahip olmak isteyen oyuncular için uygundur. Bu modda, ana görev hatlarını başlatmak için rütbe kısıtlamaları kaldırılmıştır, seçeneklerin az olduğu durumlarda zamanlayıcılar devre dışıdır ve küresel haritadaki zaman akışı seçilen zorluk seviyesine göre yavaşlar. Ana görevlerdeki düşmanlar daha zayıf olur ve ana karakterin gemisinin küresel haritadaki hızı %5 artar.
+}
+SourceBase {Temel Değer}
+SourceAdmiral {Amiral}
+SourceOfficer {Subay Bonusu}
+SourceAccountant {Hazinedar}
+SourceMangarosa {Mangarosa İksiri}
+SourceHealth {Canlılık Durumu}
+SourceEquip {Ekipman}
+SourceQuest {Benzersiz durum}
+SourceAlco {Sarhoş edici}
+SourceOverload {Aşırı Yük}
+SourceNavyPenalty {Navigasyon Becerisi başarısız}
+CritDamage
+{
+Kritik hasar çarpanı. Tüm değiştiricilerden sonra uygulanır.
+~
+Kişisel Yetenekler ve ekipman ile artırılabilir.
+}
+CritCharDefence
+{
+Düşman kritik hasarının toplam azaltılması.
+~
+Kişisel Yetenekler ve ekipmanla artırılabilir.
+}
+SourceSkill {Beceri}
+SourceChickenGod {Aruba'nın Lütfu}
+SourceSpecialityUpgrade {Alt sınıf yükseltmesi}
+SourceAudit {Denetim}

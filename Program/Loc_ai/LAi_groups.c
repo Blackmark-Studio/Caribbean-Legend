@@ -571,6 +571,10 @@ bool LAi_group_Attack(aref attack, aref hit)
 	{
 		return false;
 	}
+
+	// Бахнули кого-то дружелюбного к нам
+	if (IsMainCharacter(&attack) && !LAi_group_IsEnemy(&attack, &hit)) LICENSE_CheckViolationAgainstGroup_Land(&hit);
+
 	// <-- cle 1.5
 	//Натравим друг на друга
 	SendMessage(&LAi_grp_relations, "sss", "Attack", attack.chr_ai.group, hit.chr_ai.group);

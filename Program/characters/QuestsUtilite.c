@@ -2628,98 +2628,12 @@ void QuestAboardCabinDialogQuestSurrender()
 	DoQuestCheckDelay("LAi_ReloadBoarding", 1.0);
 }
 
-// eddy. лицензии торговых компаний. -->
-//дать лицензию
-void GiveNationLicence(int _nation, int _validity)
-{
-	string sTemp; 
-	ref rItem;
-	for(int i=0; i<4; i++)
-	{
-		if (CheckNationLicence(i) && GetDaysContinueNationLicence(i) == -1) TakeNationLicence(i);
-	}
-	if (_nation != PIRATE) 
-	{
-		if (CheckNationLicence(_nation)) TakeNationLicence(_nation);
-		sTemp = NationShortName(_nation)+"TradeLicence";
-		GiveItem2Character(pchar, sTemp);
-		rItem = ItemsFromID(sTemp);
-		SaveCurrentNpcQuestDateParam(rItem, "Action_date");
-		rItem.Action_date = GetCurrentDate(); 
-		rItem.Validity = FindRussianDaysString(_validity); //строка для дескрайба
-		rItem.Validity.QtyDays = _validity; //время действия лицензии в днях для расчетов
-	}
-}
-//забрать лицензию 
-void TakeNationLicence(int _nation)
-{
-	string sTemp; 
-	if (_nation != PIRATE && CheckNationLicence(_nation)) 
-	{
-		sTemp = NationShortName(_nation)+"TradeLicence";
-		TakeItemFromCharacter(pchar, sTemp);
-		DeleteAttribute(ItemsFromID(sTemp), "Action_date");
-		DeleteAttribute(ItemsFromID(sTemp), "Validity");
-	}
-}
-//проверить наличие лицензии
-bool CheckNationLicence(int _nation)
-{
-	if (_nation != PIRATE) 
-	{
-		if (CheckCharacterItem(pchar, NationShortName(_nation)+"TradeLicence")) return true; 
-	}
-	return false;
-}
-//проверить сроки лицензии, сколько осталось дней. если -1, то просрочена или отсутствует
-int GetDaysContinueNationLicence(int _nation)
-{
-	int iTerms = -1;
-	ref rItem;
-	if (_nation != PIRATE) 
-	{
-		if (CheckNationLicence(_nation))
-		{
-			rItem = ItemsFromID(NationShortName(_nation)+"TradeLicence");
-			
-			if(!CheckAttribute(rItem, "Validity")) // Warship 10.07.09 fix - Судя по логам, могло не быть
-			{
-				return -1;
-			}
-			
-			int Validity = sti(rItem.Validity.QtyDays);
-			iTerms = GetNpcQuestPastDayParam(rItem, "Action_date");
-			if (iTerms > Validity) iTerms = -1;
-			else iTerms = Validity - iTerms;
-		}
-	}
-	return iTerms;
-}
-//дать наименование лицензии, например 'Лицензия Голландской Вест-Индской компании'
-string GetRusNameNationLicence(int _nation)
-{
-	string sTemp, itmTitle;
-	int lngFileID;
-	if (_nation != PIRATE) 
-	{
-		if (CheckNationLicence(_nation))
-		{
-			sTemp = NationShortName(_nation)+"TradeLicence";
-			lngFileID = LanguageOpenFile("ItemsDescribe.txt");
-			itmTitle = LanguageConvertString(lngFileID, Items[GetItemIndex(sTemp)].name);
-		}
-	}
-	return itmTitle;
-}
-// eddy. лицензии торговых компаний. <--
-
 void SelectSlavetraderRendom() // работорговец, выбор города
 {
 	if (CheckAttribute(&colonies[1], "nation"))
 	{
 		int n, nation;
-		int storeArray[2];
-		SetArraySize(&storeArray, MAX_COLONIES);
+		int storeArray[MAX_COLONIES];
 		int howStore = 0;
 		for(n=0; n<MAX_COLONIES; n++)
 		{			
@@ -4725,19 +4639,15 @@ string ToUpper(string _text)
 // Первый символ в верхний регистр
 string UpperFirst(string _text)
 {
-	String firstSymbol = GetSymbol(_text, 0);
-	firstSymbol = ToUpper(firstSymbol);
-	
-	return firstSymbol + strcut(_text, 1, strlen(_text) - 1);
+    if (_text == "") return "";
+	return ToUpper(GetSymbol(_text, 0)) + strcut(_text, 1, strlen(_text) - 1);
 }
 
 // Первый символ в нижний регистр
 string LowerFirst(string _text)
 {
-	string firstSymbol = GetSymbol(_text, 0);
-	firstSymbol = GetStrSmallRegister(firstSymbol);
-	
-	return firstSymbol + strcut(_text, 1, strlen(_text) - 1);
+	if (_text == "") return "";
+	return GetStrSmallRegister(GetSymbol(_text, 0)) + strcut(_text, 1, strlen(_text) - 1);
 }
 // <--
 
@@ -5066,8 +4976,7 @@ string DesIsland()//Jason выбор рандомной необитайки - �
 string FindFriendCityToMC(bool bRand) //Jason выбрать радномный дружественный к ГГ город - вынес сюда
 {
 	int n;
-    int storeArray[2];
-	SetArraySize(&storeArray, MAX_COLONIES);
+    int storeArray[MAX_COLONIES];
     int howStore = 0;
 	int nation = GetBaseHeroNation(); // mitrokosta фикс зависимости от флага
 	if (nation == PIRATE) {
@@ -5093,8 +5002,7 @@ string FindFriendCityToMC(bool bRand) //Jason выбрать радномный 
 string FindEnemyCityToMC(bool bRand) //Jason выбрать радномный враждебный к ГГ город - вынес сюда
 {
 	int n;
-    int storeArray[2];
-	SetArraySize(&storeArray, MAX_COLONIES);
+    int storeArray[MAX_COLONIES];
     int howStore = 0;
 	int nation = GetBaseHeroNation(); // mitrokosta фикс зависимости от флага
 	if (nation == PIRATE) {
@@ -5134,8 +5042,7 @@ bool bRand - вид рандома true - обычный rand(), false - hrand()
 string FindQuestCity(ref ch, string relation, int _nation, bool bpirate, bool bRand)
 {
 	int n;
-    int storeArray[2];
-	SetArraySize(&storeArray, MAX_COLONIES);
+    int storeArray[MAX_COLONIES];
     int howStore = 0;
 	int nation = sti(ch.nation); 
 	bool nationSort = true;
@@ -6290,7 +6197,54 @@ void CaveEnc_FillSkeleton(ref chr, int i) // лут для скелетов в �
 		break;
 	}
 }
+
+bool IsNationLineship(int iNation, int iShipType)
+{
+	ref refShip;
+	makeref(refShip, ShipsTypes[iShipType]);
+	if (!CheckAttribute(refShip, "NationExclusive") || !CheckAttribute(refShip, "NationalLineShip"))
+	{
+		return false;
+	}
+	if (!sti(refShip.NationalLineShip))
+	{
+		return false;
+	}
+
+	return sti(refShip.NationExclusive) == iNation;
+}
 // поиск и определение линейных кораблей наций
+bool FindCompanionLineship(int iNation)
+{
+	for(int i=1; i<COMPANION_MAX; i++)
+	{
+		int iTemp = GetCompanionIndex(PChar, i);
+		if(iTemp > 0)
+		{
+			ref sld = GetCharacter(iTemp);
+			// Лучше переделать на специальный атрибут конкретного корабля "IgnoreNationCheck", но пока оставим так
+			if (sld.ship.name == GetShipName("Eclatant") && CheckAttribute(pchar, "questTemp.Patria.Ecliaton"))
+			{
+				continue;
+			}
+
+			if (sld.ship.name == GetShipName("Trafalgar") && CheckAttribute(pchar, "questTemp.Patria.Trafalgar"))
+			{
+				continue;
+			}
+
+			// Если в эскадре есть Эклятон и другой захваченный французский линкор, то прощения не будет.
+			int iShipType = sti(RealShips[sti(sld.ship.type)].basetype);
+			bool bFound = IsNationLineship(iNation, iShipType);
+			if (bFound)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
 bool FindCompanionShips(int Type)
 {
 	for(int i=1; i<COMPANION_MAX; i++)
@@ -6305,57 +6259,19 @@ bool FindCompanionShips(int Type)
 	return false;
 }
 
-bool LineShips_CheckAndIdentify(int Nation)
+bool LineShips_CheckAndIdentify(int iNation)
 {
 	if(GetCharacterEquipByGroup(pchar, HAT_ITEM_TYPE) == "hat5") return false;
-	
-	switch (Nation)
-	{
-		case ENGLAND:
-			if (sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_LSHIP_ENG && FindCompanionShips(SHIP_LSHIP_ENG) && Trafalgar_FindCompanionShip()) return false; // Jason, НСО
-			if (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LSHIP_ENG || FindCompanionShips(SHIP_LSHIP_ENG)) return true;
-		break;
-		
-		case FRANCE:
-			if (sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_LSHIP_FRA && FindCompanionShips(SHIP_LSHIP_FRA) && Ecliaton_FindCompanionShip()) return false; // Jason, НСО
-			if (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LSHIP_FRA || FindCompanionShips(SHIP_LSHIP_FRA)) return true;
-		break;
-		
-		case SPAIN:
-			if (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LSHIP_SPA || FindCompanionShips(SHIP_LSHIP_SPA)) return true;
-		break;
-		
-		case HOLLAND:
-			if (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LSHIP_HOL || FindCompanionShips(SHIP_LSHIP_HOL)) return true;
-		break;
-	}
-	return false;
-}
 
-bool Ecliaton_FindCompanionShip() // Jason, НСО
-{
-	for(int i=1; i<COMPANION_MAX; i++)
+	int iShipType = sti(RealShips[sti(pchar.ship.type)].basetype);
+	if (IsNationLineship(iNation, iShipType))
 	{
-		int iTemp = GetCompanionIndex(PChar, i);
-		if(iTemp > 0)
-		{
-			ref sld = GetCharacter(iTemp);
-			if(sld.ship.name == GetShipName("Eclatant") && CheckAttribute(pchar, "questTemp.Patria.Ecliaton")) return true;
-		}
+		return true;
 	}
-	return false;
-}
 
-bool Trafalgar_FindCompanionShip() // Jason, НСО
-{
-	for(int i=1; i<COMPANION_MAX; i++)
+	if (FindCompanionLineship(iNation))
 	{
-		int iTemp = GetCompanionIndex(PChar, i);
-		if(iTemp > 0)
-		{
-			ref sld = GetCharacter(iTemp);
-			if(sld.ship.name == GetShipName("Trafalgar") && CheckAttribute(pchar, "questTemp.Patria.Trafalgar")) return true;
-		}
+		return true;
 	}
 	return false;
 }

@@ -53,6 +53,7 @@ seg_Cannon_24 {24-libbre}
 seg_Cannon_32 {32-libbre}
 seg_Cannon_36 {36-libbre}
 seg_Cannon_42 {42-libbre}
+seg_Cannon_48 {48-libbre}
 seg_Culverine_8 {Semi-colubrina}
 seg_Culverine_18 {Colubrine}
 seg_Culverine_36 {Colubrine piene}

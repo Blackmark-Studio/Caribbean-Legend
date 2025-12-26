@@ -921,7 +921,7 @@ void ProcessDialogEvent()
 		//--> Дикая Роза
 		case "WildRose_Fadey_13":
 			dialog.text = "Ludzie są kompetentni, pracowici i umiejący działać, dlatego za usługi każdego z nich trzeba będzie zapłacić sto pięćdziesiąt dubli. Wysłannik, który wyruszy na Tortugę, do Hispanioli i Kuby, wymaga dodatkowego wynagrodzenia — pięćdziesiąt złotych monet ekstra. W końcu cztery osady to nie jedna.";
-			link.l1 = "Razem więc 800 dubli… No to zabieramy się do rozliczenia?";
+			link.l1 = "Razem więc 800 dubli... No to zabieramy się do rozliczenia?";
 			link.l1.go = "WildRose_Fadey_14";
 		break;
 		
@@ -934,7 +934,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "Hm… Nie mam przy sobie całej sumy.";
+				link.l1 = "Hm... Nie mam przy sobie całej sumy.";
 				link.l1.go = "WildRose_Fadey_14_nopay";
 			}
 		break;

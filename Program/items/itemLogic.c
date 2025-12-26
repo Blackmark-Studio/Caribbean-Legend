@@ -230,9 +230,8 @@ void Item_OnPickItem()
 	ref chr = GetMainCharacter();
 	makearef(activeLocation, Locations[sti(chr.itemLocationIndex)]);
 
-	int langFile = LanguageOpenFile("ItemsDescribe.txt");
 	string displayItemName, youvegotString;
-	youvegotString = LanguageConvertString(langFile, "youve_gotNotif");
+	youvegotString = GetSimpleItemKey("youve_gotNotif");
 	PlayStereoSound("interface\important_item.wav");
 
 	if (chr.activeRandItem == true)
@@ -258,7 +257,7 @@ void Item_OnPickItem()
 		
 		if(HasSubStr(Items[activeItem].id, "cannabis"))
 		{
-			notification(LanguageConvertString(langFile, "flower_find"), "Alchemy");
+			notification(GetSimpleItemKey("flower_find"), "Alchemy");
 			if(Items[activeItem].id == "cannabis7")
 				AddCharacterExpToSkill(pchar, SKILL_FORTUNE, 10.0);
 			else
@@ -283,7 +282,6 @@ void Item_OnPickItem()
 		// <===
 	}
 	DeleteAttribute(chr,"activeItem");
-	LanguageCloseFile(langFile);
 	QuestsCheck(); // legendary edition
 }
 
@@ -320,9 +318,8 @@ void Item_OnUseItem()
 	al.active = true;
 	al.timePassed = 0;
 
-	int langFile = LanguageOpenFile("ItemsDescribe.txt");
 	string displayItemName, youvegotString;
-	youvegotString = LanguageConvertString(langFile, "used_itemNotif");
+	youvegotString = GetSimpleItemKey("used_itemNotif");
 	displayItemName = GetItemName(&Items[activeItem]);
 	//Log_SetStringToLog(youvegotString+" "+displayItemName+"!");
 	notification(youvegotString+" "+displayItemName+"!", "BoxMinus");

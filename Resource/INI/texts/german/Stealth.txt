@@ -1,0 +1,13 @@
+license_violations_name {Verstöße}
+license_violation_tooltip_body {Als Verstoß gelten Angriffe auf Schiffe unter verbündeter oder neutraler Flagge, Aggressionen gegen Zivilisten, Seeraub und Angriffe auf Festungen.}
+license_violation_1 {Wir haben die Vertragsbedingungen verletzt. Das wird nicht folgenlos bleiben.}
+license_violation_2 {Wir haben den Vertrag zweimal verletzt. Unsere Lizenz wird bald entzogen.}
+license_violation_3 {Wir haben den Vertrag dreimal verletzt und unsere Handelslizenz verloren.}
+license_state
+{
+Läuft ab: $attr($context.humanExpireDate)~
+Verbleibende Tage: $attr($context.humanDaysLeft)
+}
+flags_newFlagTaken {Neue Flagge erobert}
+flags_allFlagsCollected {Alle Flaggen der Nation gesammelt}
+license_expired {Die Handelslizenz ist abgelaufen}

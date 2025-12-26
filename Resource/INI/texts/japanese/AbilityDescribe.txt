@@ -1,0 +1,341 @@
+newline
+{
+
+}
+BasicDefense {基本防御}
+perkBasicDefense {被ダメージを$percent($perkBaseValue(BasicDefense|1))減少させる。}
+AdvancedDefense {上級防御}
+perkAdvancedDefense {被ダメージを$percent($perkBaseValue(AdvancedDefense|1))、敵のクリティカルダメージを$percent($perkBaseValue(AdvancedDefense|2))軽減する。}
+CriticalHit {クリティカルヒット}
+perkCriticalHit {基本クリティカル率が$percent($perkBaseValue(CriticalHit|1))上昇}
+Grus {強靭な背骨}
+perkGrus {所持重量が35ポンド増加する。}
+Tireless {不屈}
+perkTireless {エネルギー回復速度が$percent($perkBaseValue(Tireless|1))上昇}
+HardHitter {重い手}
+perkHardHitter {重装武器の強攻撃はダメージが$percent($perkBaseValue(HardHitter|1))増加。上級強攻撃が解放される。}
+BladeDancer {サーベルの舞}
+perkBladeDancer {曲刀での範囲攻撃はダメージが$percent($perkBaseValue(BladeDancer|1))増加する。}
+Sliding {抗し難い一撃}
+perkSliding {軽量武器の斬撃または突き攻撃は、 特殊な上級攻撃で$percent($perkBaseValue(Sliding|1)) の確率でブロックを突破できる。}
+Gunman {銃士}
+perkGunman
+{
+火器のダメージとリロード速度が$percent($perkBaseValue(Gunman|1))上昇。 単発両手武器と連発片手武器が使用可能になる。
+~
+士官は$key(descriptor_TwoHanded|ItemsDescriptors.txt)を明示的な指示がある場合のみ使用できます。
+}
+GunProfessional {斥候}
+perkGunProfessional {火器のダメージとリロード速度が$percent($perkBaseValue(GunProfessional|1))上昇。 連発の両手火器が使用可能になる。}
+IronWill {鉄の意志}
+perkIronWill {3分ごとに致命傷を一度だけ耐えられる。}
+SharedExperience {飲み込みが早い}
+perkSharedExperience {スキル成長速度が15%上昇}
+Medic {健康的な習慣}
+perkMedic {体力が25増加する。 体力が最大値の半分未満の時、 パッシブ回復が2倍になる。}
+HPPlus {成長する生命}
+perkHPPlus {新しいランクごとにキャラクターのHPが$perkBaseValue(HPPlus|1)増加します。 このパークは遡及的に適用されます。}
+EnergyPlus {増大するエネルギー}
+perkEnergyPlus {新しいランクごとにキャラクターのエネルギー上限が1増加。効果は遡及します。}
+ByWorker {才能}
+perkByWorker {キャラクターは同時に2つの士官職に就けます}
+perkByWorkerShort {キャラクターは同時に2つの士官職に就ける}
+ByWorker2 {天才}
+perkByWorker2 {キャラクターは同時に3つまで士官職に就ける。}
+perkByWorker2Short {キャラクターは同時に3つの士官役職に就ける}
+Trustworthy {信頼できる}
+perkTrustworthy {特定のクエストで説得の選択肢が増え、 罰を回避したり敵対的な町に入りやすくなる。}
+ShipEscape {セカンドチャンス}
+perkShipEscape
+{
+ヒーローの沈みゆく船から艦隊の別の船へ救命艇で脱出できる。
+戦闘中、自船の船体が15％ 未満になると、 船倉メニューから他の艦隊船へ移動や交代が可能になる。
+仲間がこのスキルを持っている場合、 沈没船や火船から救命艇で脱出し、 ヒーローの船に乗客として戻る。
+}
+Alchemy {錬金術}
+perkAlchemy {レシピ作成に道具は不要。 使用時に15%の確率で薬を消費しない。}
+FastReload {射撃訓練}
+perkFastReload {大砲のリロード速度が10%上昇}
+ImmediateReload {射撃準備}
+perkImmediateReload {次のリロードが30%速くなります。5分ごとに使用可能。}
+HullDamageUp {弱点}
+perkHullDamageUp {敵船の船体へのダメージが10%増加する。}
+SailsDamageUp {索具作業}
+perkSailsDamageUp {敵船の帆へのダメージが10%増加する。}
+CrewDamageUp {デッキ用ほうき}
+perkCrewDamageUp {敵船の乗組員へのダメージが10%増加する。}
+CriticalShoot {クリティカルショット}
+perkCriticalShoot {キャラクターが敵にクリティカルな一斉射撃を行う確率が上昇する。 確率： 5%。}
+LongRangeShoot {ブロードサイド射程}
+perkLongRangeShoot {大砲の射程が10%上昇}
+CannonProfessional {熟練砲手}
+perkCannonProfessional {船体各部へのダメージ、 砲の照準・ 標的速度、 クリティカルショット確率が10%上昇。}
+LongRangeGrappling {狼のつかみ}
+perkLongRangeGrappling {白兵戦距離が15%増加する。}
+MusketsShoot {マスケット一斉射撃}
+perkMusketsShoot
+{
+白兵戦の前にマスケット銃の一斉射撃が行われます。
+損害の大きさは船のクラスと先鋒の人数によって決まります。
+}
+GrapplingProfessional {熟練の甲板長}
+perkGrapplingProfessional {白兵戦の距離が25%増加。 どの進入角度や速度でも可能。}
+BasicBattleState {基本的な船の防御}
+perkBasicBattleState {船への全ダメージが10%減少する。}
+AdvancedBattleState {高度な船防御}
+perkAdvancedBattleState {船への全ダメージがさらに10%減少する。}
+ShipDefenseProfessional {熟練の船大工}
+perkShipDefenseProfessional {船への全ダメージがさらに5%減少。 敵のクリティカルダメージを35%軽減。}
+ShipSpeedUp {高速航行}
+perkShipSpeedUp {船の最大速度が15%上昇}
+ShipTurnRateUp {船の機動性を上げる}
+perkShipTurnRateUp {船の機動性が15%上昇}
+StormProfessional {嵐耐性}
+perkStormProfessional {嵐によるダメージが30%減少。}
+Turn180 {回避機動}
+perkTurn180 {1分間、船の旋回速度が4倍になる。3分ごとに使用可能。}
+SailingProfessional {熟練の航海士}
+perkSailingProfessional {船の速度と機動性が5%上昇。逃走成功率が向上。}
+SeaDogProfessional {海の脅威}
+perkSeaDogProfessional
+{
+シー・ テラーの旗を見れば、 勇敢な冒険者や無法者でさえ運を試そうとはしない。 艦隊力が$percent($PerkBaseValue(SeaDogProfessional|1))増加する。
+~
+プレイヤー専用スキル。 習得にはランク$attr($context.rank)が必要。
+}
+FlagPir {ジョリー・ロジャー}
+perkFlagPir
+{
+ジョリー・ ロジャーに旗を変更できる能力。
+~
+このスキルはプレイヤー専用です。
+}
+FlagEng {イングランドの旗}
+perkFlagEng {使用できるのは、自船のrateに対応した旗のみです。 旗を入手するには、 対応するrateの船を拿捕するか、 ライセンスを購入する必要があります。}
+FlagFra {フランスの旗}
+perkFlagFra {使用できるのは、自船のrateに対応した旗のみです。 旗を入手するには、 対応するrateの船を拿捕するか、 ライセンスを購入する必要があります。}
+FlagSpa {スペインの旗}
+perkFlagSpa {使用できるのは、自船のrateに対応した旗のみです。 旗を入手するには、 対応するrateの船を拿捕するか、 ライセンスを購入する必要があります。}
+FlagHol {オランダの旗}
+perkFlagHol {使用できるのは、自船のrateに対応した旗のみです。 旗を入手するには、 対応するrateの船を拿捕するか、 ライセンスを購入する必要があります。}
+Troopers {包囲戦術}
+perkTroopers
+{
+要塞への総攻撃前に艦隊の乗組員を統合できるようになる。
+陸からの集落襲撃に必要な乗組員数が減少する。
+}
+BasicCommerce {基本取引}
+perkBasicCommerce {購入が4%お得になります。 銀行や市場で需要のある品がハイライト表示されます。}
+AdvancedCommerce {上級交易}
+perkAdvancedCommerce {商品の販売利益が4%増加する。}
+ProfessionalCommerce {熟練経理長}
+perkProfessionalCommerce {商品の売買が8%有利になる。}
+Carpenter {パッシブ修理}
+perkCarpenter {航行中に船体と帆がゆっくり修理されます。 板材と帆布が必要です。}
+InstantRepair {戦闘修理}
+perkInstantRepair
+{
+戦闘中に迅速修理を行い、最大80%まで船体と帆の耐久を回復します。 修理には板材と帆布が必要です。
+1.5分ごとに使用可能。
+}
+LightRepair {緊急修理}
+perkLightRepair
+{
+追加資材なしで船体HPの最大10%まで修復可能。 このスキルがないと、 船体HPが10%未満で徐々に損傷が進む。
+3分ごとに使用可能。
+}
+Builder {ダメージコントロール}
+perkBuilder {修理時の板材と帆布の消費が25％減少する。}
+SelfRepair {全修理}
+perkSelfRepair
+{
+乗組員の力で、 適した海岸ならどこでも船を完全修理できる能力。 船体とマストには板材、 帆にはキャンバスが必要。 船体・ 帆・ マストを完全に復元可能。
+
+修理オプションは沿岸の陸地でのみ利用可能。
+}
+WindCatcher {海の勘}
+perkWindCatcher
+{
+船の加速が10%速くなる。
+
+地図を持っていれば、 知った海域でワールドマップ上の速度が上昇する。
+}
+SailsMan {高速帆}
+perkSailsMan {最新のアメとムチ戦法により、 すべての帆操作が10%速く行われます。}
+Doctor1 {船医}
+perkDoctor1 {海戦中の負傷や散弾による乗組員の損失が5%減少する。}
+Doctor2 {熟練の船医}
+perkDoctor2 {海戦中の負傷や散弾による乗組員の損失が10%減少する。}
+TannedLeather {厚革}
+perkTannedLeather {軽装防具は防御力が50%上昇し、 後退時の消費エネルギーが30%減少する。}
+RatsWolf {ラットウルフ}
+perkRatsWolf {このキャラクターの船では、 ネズミなどによる貨物の損傷が防がれる。}
+Mimicry {擬態}
+perkMimicry {海上での隠密判定が50%効果的になる。}
+TreasureHunter {トレジャーハンター}
+perkTreasureHunter {財宝地図の商人がより頻繁に現れ、 宝もより高価になります。}
+Dragoon {竜騎兵}
+perkDragoon {中装武器のダメージが10%増加。}
+Bombardier {砲撃手}
+perkBombardier {大砲の耐久性が上昇する。}
+Sniper {スナイパー}
+perkSniper {火器の命中で敵のエネルギーを奪う。}
+perkTreeMusketer {銃士}
+perkTreeSoldier {兵士}
+perkTreeMastery {熟練}
+perkTreeBackground {背景}
+perkTreeFencing {剣士}
+perkTreePirat {海賊}
+perkTreeAdventurer {冒険者}
+perkTreeOfficer {士官}
+perkTreeFlags {ペナント}
+perkTreeCannoner {$key(Cannoner)}
+perkTreeBoatswain {$key(Boatswain)}
+perkTreeCarpenter {$key(Carpenter)}
+perkTreeNavigator {$key(Navigator)}
+perkTreeTreasurer {$key(Treasurer)}
+perkTreeDoctor {$key(Doctor)}
+FastHands {素早い手}
+perkFastHands {火器の抜き差し速度が$percent($perkBaseValue(FastHands|1))上昇する。}
+AmmoRig {装備}
+perkAmmoRig {火器のリロードが$percent($perkBaseValue(AmmoRig|1))速くなる。}
+Preaim {照準}
+perkPreaim {エイムモードが$percent($perkBaseValue(Preaim|1))速くなります。}
+KeenEye {鋭い眼}
+perkKeenEye {ヘッドショットは$percent($perkBaseValue(KeenEye|1))多くダメージを与える。}
+PowderFeel {火薬の勘}
+perkPowderFeel {錬金術で作成する弾薬の量が$percent($perkBaseValue(PowderFeel|1))増加する。}
+Drill {訓練}
+perkDrill {マスケット銃での移動速度と照準時の歩行速度が18%上昇。上級射撃スタンスを解放。}
+LeadRain {鉛の雨}
+perkLeadRain {散弾は敵を1体命中させるごとに5%ダメージが増加する。}
+ShootToKill {殺傷射撃}
+perkShootToKill {火器で敵に命中すると、 移動速度が25%低下する。効果時間：5秒。}
+Muscles {筋肉山}
+perkMuscles {重装武器の攻撃はエネルギー消費が$percent($perkBaseValue(Muscles|1))減少し、攻撃速度が$percent($perkBaseValue(Muscles|2))上昇。気絶からの回復が$percent($perkBaseValue(Muscles|3))速くなる。}
+Conquest {コンキスタ}
+perkConquest {長柄武器による斬撃および強攻撃は、 $percent($perkBaseValue(Conquest|1))多くのダメージを与える。}
+PalaceGuard {宮廷衛兵}
+perkPalaceGuard {重量曲刀は攻撃で$percent($perkBaseValue(PalaceGuard|1))多くのダメージを与え、 範囲攻撃ではさらに5%増加する。}
+CunningStrike {奸計の一撃}
+perkCunningStrike {軽装武器はクリティカル率が$percent($perkBaseValue(CunningStrike|1))上昇。背後攻撃はダメージが$percent($perkBaseValue(CunningStrike|2))増加。}
+Heartbreaker {ハートブレイカー}
+perkHeartbreaker {直剣武器による高速攻撃は、$percent($perkBaseValue(Heartbreaker|1))多くのダメージを与え、 攻撃速度が$percent($perkBaseValue(Heartbreaker|2))速くなる。}
+Dodgy {好機}
+perkDodgy {スプリント中の押し出しが$percent($perkBaseValue(Dodgy|1))強化され、 消費エネルギーが減少する。}
+Exhaustion {消耗}
+perkExhaustion {短い近接武器でのパリィは $percent($perkBaseValue(Exhaustion|1))多くエネルギーを消費させる。 敵の気絶回復が10%遅くなる。}
+Reaper {死神}
+perkReaper {クリティカルダメージが $percent($perkBaseValue(Reaper|1))増加し、 速攻でのクリティカル率が $percent($perkBaseValue(Reaper|2))上昇。}
+MarathonRunner {マラソンランナー}
+perkMarathonRunner {スプリントが$percent($perkBaseValue(MarathonRunner|2))速くなり、消費エネルギーが3分の1減少する。}
+PerfectBalance {完璧なバランス}
+perkPerfectBalance {中量武器を装備中、被ダメージが$percent($perkBaseValue(PerfectBalance|1))減少。}
+Flanking {側面攻撃}
+perkFlanking {曲刀の攻撃速度が$percent($perkBaseValue(Flanking|1))上昇。上級範囲攻撃を解放。}
+SabreHurricane {サーベル旋風}
+perkSabreHurricane {中量の曲刀による斬撃と速攻は攻撃範囲が広がり、 隣接する敵にも当たり、 ダメージが$percent($perkBaseValue(SabreHurricane|1))増加する。}
+Practice {実践の習得}
+perkPractice {装備中の作成可能アイテム1つごとに全スキルが2上昇する。}
+Strychnine {ストリキニーネ}
+perkStrychnine {攻撃と射撃は9%の確率で対象を毒状態にする。 護符の効果と重複。}
+DarkHorse {ダークホース}
+perkDarkHorse {装備中の日用護符とお守り1つごとに、体力と気力が2.5%増加。}
+Master {達人}
+perkMaster {工具セットを必要とする作成アイテムごとに与ダメージが0.1%増加。}
+Quiet {足音を消す}
+perkQuiet {盗み中は発見されません。}
+Looting {徹底捜索}
+perkLooting {白兵戦が終わると、 水夫たちが自動的に甲板を捜索し、 すべての戦利品を届けてくれます。}
+Collection {珍品}
+perkCollection {船に積んだエキゾチックアイテムごとに、 非敵対港で1日ごとに1,000ペソを得る。}
+Tiefit {特注}
+perkTiefit {日用と華麗なアイテムのスキルボーナスが3増加する。}
+Investor {投資家}
+perkInvestor {預金金利が1%上昇する。}
+Gossip {注目の的}
+perkGossip {エキゾチックアイテムによる艦隊力ボーナスが5%増加する。}
+Captain {船長}
+perkCaptain {キャラクターは、4等級以上の船を艦隊の一員として指揮できます。 ラガーやスループなら誰でも扱えますが、 本格的な船には度胸だけでは足りません。}
+Chance {一か八か}
+perkChance {単発火器はクリティカル時のダメージが15%増加。 片手火器のクリティカル率が2%上昇。}
+Bayonet {銃剣突撃}
+perkBayonet {両手近接攻撃は15%多くダメージを与え、 銃剣使用時はさらに30%増加する。}
+Kern {カーン}
+perkKern {連発火器は空弾ごとにダメージが8%、リロード速度が4%上昇する。}
+MeatGrinder {ミートグラインダー}
+perkMeatGrinder {短い武器のダメージが10%増加}
+NeckStrike {首斬り}
+perkNeckStrike {長い武器のダメージが10%増加。}
+Stabbing {ナイフファイト}
+perkStabbing {短い武器のダメージが8%増加}
+Virtuosity {技巧}
+perkVirtuosity {軽装武器のダメージが10%増加。}
+Puncher {穴あけ器}
+perkPuncher {直刀のダメージが10%増加}
+Reach {リーチ}
+perkReach {長い武器のダメージが8%増加。}
+Inertia {慣性}
+perkInertia {重装武器のダメージが10%増加。}
+OttomanGrip {オスマン・グリップ}
+perkOttomanGrip {曲刀のダメージが10%増加}
+Mule {ペルシュロン}
+perkMule {鍛錬の成果 ― 重装武器と重装防具による減速が50％ 軽減され、 ランクごとに所持重量が2ポンド増加する。}
+BeneathWaterline {喫水線下射撃}
+perkBeneathWaterline {船に命中すると、 喫水線下に穴を開けて浸水させ、 修理されるまで目標を減速させることがある。}
+CoordinatedBoarding {共同白兵戦}
+perkCoordinatedBoarding {艦隊の船が自艦の船長の指揮する白兵戦に、 十分近ければ参加できるようになる。}
+Involvement {甲冑師}
+perkInvolvement {甲板長は白兵戦中に甲板へ現れ、 味方として戦闘に参加する。 水夫の一人と交代し、 戦闘で倒されることはない。}
+BruteForce {腕力}
+perkBruteForce {斧と鎧で重武装した兵士が、 白兵戦中に一部の通常の水夫と交代する。}
+Ambuscade {待ち伏せ連隊}
+perkAmbuscade {レイピア使いと連発式ピストルの決闘士が、 白兵戦で一部の通常乗組員と入れ替わる。}
+LoneWolf {孤狼}
+perkLoneWolf {艦隊に1隻だけの時、 逃走成功率と艦隊力が$percent($perkBaseValue(LoneWolf|1))上昇する。}
+Thrift {倹約}
+perkThrift {帆の損傷による速度と機動性への影響を10%軽減する。}
+QuickGlance {クイックアイ}
+perkQuickGlance {望遠鏡で観測時に船の種類と特性を判別する}
+TrainedEye {鋭い眼}
+perkTrainedEye {望遠鏡で船を観察する際、 おおよその財宝の量を見積もれるようになる。}
+TradeConnections {交易の繋がり}
+perkTradeConnections {植民地を訪れると価格表が自動で更新されます。}
+Intendant {監督}
+perkIntendant {戦闘中や逃走時の積荷による速度と機動性のペナルティを軽減する。}
+Doctor {船医}
+perkDoctor {海戦中の負傷や散弾による乗組員の損失を5%軽減する。}
+BoardingPrepare {準備}
+perkBoardingPrepare {白兵戦中、 白兵戦要員が薬を受け取る。}
+Cook {コック}
+perkCook {糧食消費量が5%減少する。}
+ChiefCook {上級コック}
+perkChiefCook {食糧消費量が10%減少する。}
+Bartender {バーテンダー}
+perkBartender {ラムの消費量が5%減少する。}
+Moonshiner {蒸留者}
+perkMoonshiner {ラムの消費量が10％減少する。}
+Quartermaster {四分士}
+perkQuartermaster {最大乗員数が10%増加}
+InstantBoarding {即時白兵戦}
+Rush {オメトチトリのチンキ}
+perkRush
+{
+酩酊のチンキ。 瞬時に強大な力と耐久力を引き出し、 敏捷性と反応速度を大幅に高め、 激しい攻撃性と痛みへの鈍感さをもたらす。
+12秒間、 攻撃が大幅に強化され、 受けるダメージが減少する。
+~
+この効果の再使用には1分必要。
+}
+perkTrustworthy_alternate {士官として勤務中、 キャラクターの給与は$percent($perkBaseValue(Trustworthy|1))減額されます。}
+perkAlchemy_alternate {使用時にポーションを消費しない確率が$percent($perkBaseValue(Alchemy|1))上昇する。}
+perkPreaim_alternate {キャラクターは体力が満タンでない敵への射撃ダメージが$percent($perkBaseValue(Preaim|2))増加する。}
+perkKeenEye_alternate {キャラクターのクリティカルショット確率が$percent($perkBaseValue(KeenEye|2))上昇する。}
+perkPowderFeel_alternate {キャラクターは射撃時に弾薬を消費しない$percent($perkBaseValue(PowderFeel|2))の確率を得る。}
+perkMarathonRunner_alternate {キャラクターのエネルギー上限が$number($perkBaseValue(MarathonRunner|3))増加する。}
+perkQuiet_alternate {キャラクターは背後からの攻撃で$percent($perkBaseValue(Quiet|1))多くダメージを与える。}
+perkCollection_alternate {キャラクターが装備している異国アイテム1つごとに、与えるダメージが$percent($perkBaseValue(Collection|2))増加する。}
+perkInvestor_alternate {キャラクターの交易と統率力スキルが$number($perkBaseValue(Investor|2))上昇する。}
+perkGossip_alternate {コンパニオンとして、 キャラクターは艦隊力を$percent($perkBaseValue(Gossip|1))増加させる。}
+perkMaster_alternate {キャラクターがポーションを飲むたびに、 与えるダメージが$percent($perkBaseValue(Master|2))増加する。}
+perkLooting_alternate {所持重量が$perkBaseValue(Looting|1)ポンド増加する。}
+perkMaster_currentBonus {現在のボーナス：$percent($attr($context.ct.static.fast_Damage.perk_master))}

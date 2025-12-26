@@ -1,0 +1,67 @@
+Node0_title {En el puerto}
+Node0_a {Entras en un puerto hostil, esperando no ser descubierto.}
+Node0_b_a {El puerto está lleno de actividad: недавно llegó un gran buque mercante $rand(francés|español|holandés|inglés). Todos los trabajadores disponibles están ocupados descargando.}
+Node0_b_b {El puerto está vacío y en la orilla se ven señales de un combate reciente. $rand(Los adoquines de la ciudad están marcados por quemaduras y huellas de balas de cañón.|Algunas casas han sido dañadas por bombas, y mujeres enlutadas permanecen en la calle.)}
+Node0_b_c {El puerto está abarrotado de soldados. Un gran buque de guerra permanece fondeado: un $rand(galeón|fragata|corbeta). Está $rand(claram​ente dañado y en reparación, con señales de una batalla reciente en el casco|en plena disposición de combate y preparándose para zarpar).}
+Node0_c_a {Un administrador del puerto se acerca a ti de mala gana, visiblemente cansado y somnoliento.}
+Node0_c_b {Se te acerca el propio jefe del puerto, claramente dispuesto a prestarte una atención especial. En sus ojos se lee $rand(irritación — está haciendo un trabajo por debajo de su rango y sabe que los demás lo notan|avaricia — en ti ha visto una ganancia fácil y ya anticipa una noche de juerga).}
+Node0_c_c {La guardia del puerto se acerca, con las armas en alto y visiblemente tensos.}
+Node0_d {Reúnes fuerzas y te preparas para obrar maravillas con la elocuencia. O quizá abrirte paso por la fuerza.}
+Node0_b_a_reaction {Hacerse pasar por un buque de escolta}
+Node0_b_a_reaction_log {Consigues hacerte pasar por un buque mercante dentro de un convoy. Te unes a la descarga y ahora llamas mucho menos la atención.}
+Node0_b_a_reaction_factor {Barco de escolta}
+Node0_b_b_reaction {Hacerse pasar por un buque sanitario}
+Node0_b_b_reaction_log {Consigues hacerte pasar por un buque sanitario enviado para atender a los heridos. Un médico es algo raro en el Caribe, y bastan unas pocas palabras acertadas para que te crean.}
+Node0_b_b_reaction_factor {Barco sanitario}
+Node0_b_c_reaction {Fingir ser correo secreto}
+Node0_b_c_reaction_log {Has practicado durante mucho tiempo una actitud misteriosa y logras convencer a los soldados de que eres un agente secreto.}
+Node0_b_c_reaction_factor {Barco mensajero}
+Node0_c_a_reaction {Sugerir omitir formalidades}
+Node0_c_a_reaction_log_0 {Creen en tu compasión y logras ganarte el favor del administrador del puerto.}
+Node0_c_a_reaction_log_1 {Ven ironía en tus palabras. El administrador del puerto ahora te trata peor.}
+Node0_c_a_reaction_factor {Compasión}
+Node0_c_b_reaction {Mostrar disposición a pagar el doble del arancel}
+Node0_c_b_reaction_log {Encuentras fácilmente un punto débil en el sistema corrupto y aumentas mucho tus posibilidades a un precio razonable. Por desgracia, el jefe del puerto no es el único al que habrá que sobornar hoy.}
+Node0_c_b_reaction_factor {Soborno}
+Node0_c_c_reaction {Señalar al guardia más débil y presionarlo}
+Node0_c_c_reaction_log_0 {Logras identificar a un blanco fácil entre los guardias y, tras unas palabras bien dirigidas, se pone de tu lado.}
+Node0_c_c_reaction_log_1 {Te equivocas claramente de objetivo y los guardias se vuelven aún más agresivos.}
+Node0_c_c_reaction_factor {Eslabón débil}
+Node0_a_action {Intentar pasar}
+Node0_b_action {Abrirse paso por la fuerza}
+Node0_c_action {Mostrar la licencia comercial}
+Node0_success {$rand(Logras hacerte pasar por un barco neutral y te dejan entrar en la ciudad sin problemas. Conviene resolver tus asuntos cuanto antes, ya que podrías volver a despertar sospechas.|Estuviste a punto de delatarte, pero parece que todo salió bien. Si fue habilidad o intervención divina, el tiempo lo dirá.)}
+Node0_success_action {¡Excelente!}
+Node1_a {No logras hacerte pasar por un aliado y la situación empieza a tensarse. Aun así, estás seguro de que todavía se puede arreglar: solo hay que encontrar el enfoque adecuado.}
+Node1_b_a {Algo ha provocado que los guardias locales realicen una inspección reforzada. El barco está siendo rodeado.}
+Node1_b_b {Los marineros locales parecen haber reconocido tu barco como perteneciente a _$playerNationAbl. Claramente intentan desenmascararte.}
+Node1_b_c {Mientras la autoridad portuaria decidía sobre tu solicitud, un barco patrullero entró al puerto en el peor momento. Al notar la demora, exigieron inspeccionar tu nave.}
+Node1_c_a {Notas que la bandera sobre la residencia está a media asta: la ciudad está de luto.}
+Node1_c_b {Entre los curiosos reconoces a un capitán conocido, a quien una vez escoltaste en el mar.}
+Node1_c_c {Escuchas un repique de campanas inusual: en la iglesia local comienza un oficio festivo.}
+Node1_d {Es necesario tomar una decisión de inmediato.}
+Node1_b_a_reaction {Convencer soldados de carga valiosa}
+Node1_b_a_reaction_log {Intentas convencer a los soldados de que hay una carga importante a bordo. Ante los cálculos contables y términos complejos, los soldados flaquean, y la amenaza de perder el sueldo frena a los indecisos.}
+Node1_b_a_reaction_factor {Carga importante}
+Node1_b_b_reaction {Convencer marineros: en el mar no hay naciones}
+Node1_b_b_reaction_log {Intentas convencer a los marineros de que todos están en el mismo barco. Al ver tus manos fuertes, los callos del trabajo y el rostro castigado por el viento marino, se ablandan y te aceptan como uno de los suyos.}
+Node1_b_b_reaction_factor {Marineros solidarios}
+Node1_b_c_reaction {Invocar las leyes marítimas}
+Node1_b_c_reaction_log {Intentas impedir que los soldados del buque patrulla suban a bordo invocando leyes marítimas que prohíben explícitamente las inspecciones aleatorias e injustificadas de barcos en el puerto. Sacas a relucir todo lo que sabes de derecho marítimo, aderezándolo con invenciones, patrañas y jerga burocrática para arrastrar al patrullero a este torbellino. Nunca antes los improperios habían sido tan burocráticos.}
+Node1_b_c_reaction_factor {Pedantería legal}
+Node1_c_a_reaction {Intentar adivinar el motivo del luto}
+Node1_c_a_reaction_log {Intentas adivinar el motivo del luto y afirmas que has venido por esa razón. No estás del todo seguro de si la artimaña funcionó, pero el intento claramente no pasó desapercibido.}
+Node1_c_a_reaction_factor {Luto fortuito}
+Node1_c_b_reaction {Conseguir apoyo de un capitán conocido}
+Node1_c_b_reaction_log_0 {Llamas al capitán y le pides que responda por ti ante los guardias. Recuerda vuestras aventuras compartidas y con gusto habla bien de ti.}
+Node1_c_b_reaction_log_1 {Llamas al capitán y le pides que responda por ti ante los guardias. En el último momento dudas, recordando de dónde lo conoces: juntos cometieron un par de audaces asaltos a mercaderes pacíficos. Él, por supuesto, te defiende, pero él mismo no goza de buena reputación en la colonia.}
+Node1_c_b_reaction_factor {Capitán conocido}
+Node1_c_c_reaction {Decir que transportas reliquias eclesiásticas}
+Node1_c_c_reaction_log {Intentas convencer a la guardia de que llevas a bordo valiosos objetos litúrgicos necesarios para una festividad — $rand(un cáliz de plata|una custodia para la exposición del Santísimo|un relicario con reliquias|una cruz de altar|una mitra episcopal|ornamentos de brocado y estola|candelabros de altar|una campanilla de altar). Para tu sorpresa, la colonia realmente esperaba un barco con reliquias de la Iglesia, y ya va con considerable retraso. Te creen.}
+Node1_c_c_reaction_factor {Objetos litúrgicos}
+Node1_a_action {Intentar calmar la situación}
+Node1_b_action {Levar anclas y huir}
+Node1_success {$rand(Te deslizas hacia el puerto sintiendo sobre ti la larga mirada de la guardia. Un segundo más y todo se habría venido abajo, pero el destino quiso otra cosa.|Entras en el puerto con un peso en el pecho: tu barco claramente ha quedado bajo sospecha. Todo se resolvió en el último instante, pero mejor no quedarse en la ciudad.)}
+Node1_success_action {Esta vez estamos a salvo}
+Node1_fail {$rand(La guardia arma un alboroto: estás descubierto. Ya corren soldados por el muelle, y la noticia llegará al fuerte de un momento a otro.|La demora se alarga y la paciencia de la guardia se rompe. Todo el puerto se eriza de acero, y al fuerte se envía la señal de preparar los cañones.)}
+Node1_fail_action {¡Huyamos!}

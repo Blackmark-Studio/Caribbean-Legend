@@ -1,6 +1,5 @@
 //  boal 14.02.06 меню дебугера
 string totalInfo;
-int idLngFile = -1;
 int remInt = 0;
 
 void InitInterface(string iniName)
@@ -98,7 +97,7 @@ void CalculateInfoData()
 				"F19 - " + descF19 + NewStr() +
 				"F20 - " + descF20 + NewStr() +
                 "F21 - " + descF21;
-    // перевод строки (по другому у меня не вышло) +LanguageConvertString(idLngFile,"new_string");
+    // перевод строки (по другому у меня не вышло) +NewStr();
     // тут высчитываем нужную информацию и выводим в totalInfo <--
 }
 
@@ -409,7 +408,6 @@ string descF5 = "Добавить Тичингиту";
 int BOAL_debug_num = 1;
 void CalculateInfoDataF5()
 {
-    idLngFile = LanguageOpenFile("ItemsDescribe.txt");
     // -->
     totalInfo = descF5;
 
@@ -463,9 +461,8 @@ void CalculateInfoDataF5()
     SaveCurrentNpcQuestDateParam(sld, "HiredDate");
     AddItems(sld, "potion2", 7);
     AddItems(sld, "potion4", 3);
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
-    LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
 
     // Статистика по читам
@@ -542,7 +539,6 @@ string descF6 = "Бессмертие вкл/выкл";
 
 void CalculateInfoDataF6()
 {
-    idLngFile = LanguageOpenFile("ItemsDescribe.txt");
     // -->
     totalInfo = descF6;
     ref mc;
@@ -558,9 +554,8 @@ void CalculateInfoDataF6()
         Log_SetStringToLog("God mode ON");
     }
     // <--
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
-    LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
 
     // Статистика по читам
@@ -588,7 +583,6 @@ string descF11 = "+5 дней";
 
 void CalculateInfoDataF11()
 {
-    idLngFile = LanguageOpenFile("ItemsDescribe.txt");
     // -->
     totalInfo = descF11;
 
@@ -598,9 +592,8 @@ void CalculateInfoDataF11()
         AddDataToCurrent(0, 0, 1);
     }
     // <
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
-    LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
 
     // Статистика по читам

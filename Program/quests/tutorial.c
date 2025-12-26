@@ -387,3 +387,14 @@ void Tutorial_Trading(string qName)
 {
 	LaunchTutorial("Prologue_Trading", 0);
 }
+
+void Tutorial_MapEncounter(string qName)
+{
+	DoQuestFunctionDelay("Tutorial_MapEncounter2", 1.0);
+}
+
+void Tutorial_MapEncounter2(string qName)
+{
+	DeleteAttribute(pchar, "systeminfo.tutorial.MapEncounter");
+	LaunchTutorial("MapEncounter", 1);
+}

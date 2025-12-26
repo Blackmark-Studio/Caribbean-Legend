@@ -390,8 +390,7 @@ void GenerateGenerableItems()
 string GetGeneratedItem(string _itemId)
 {
 	int itemsQty = 0;
-	String generatedItems[2];
-	SetArraySize(&generatedItems, TOTAL_ITEMS);
+	string generatedItems[TOTAL_ITEMS];
 	if(!IsGenerableItem(_itemId)) // Генерящийся ли предмет
 	{
 		return _itemID;
@@ -418,9 +417,8 @@ string GetGeneratedItem(string _itemId)
 string GetBestGeneratedItem(string _itemId)
 {
 	int itemsQty = 0;
-	String generatedItems[2];
-	SetArraySize(&generatedItems, TOTAL_ITEMS);
-	String tmpItem;
+	string generatedItems[TOTAL_ITEMS];
+	string tmpItem;
 	bool bOk;
 	int itemIndex1, itemIndex2; 
 	ref rItem1, rItem2;
@@ -498,8 +496,7 @@ string GetBestGeneratedItem(string _itemId)
 string GetGeneratedItemNum(string _itemId, int Num)
 {
 	int itemsQty = 0;
-	String generatedItems[2];
-	SetArraySize(&generatedItems, TOTAL_ITEMS);
+	string generatedItems[TOTAL_ITEMS];
 	if(!IsGenerableItem(_itemId)) // Генерящийся ли предмет
 	{
 		return _itemID;
@@ -550,15 +547,14 @@ void SetItemPrice(String _itemId)
 */
 
 // Создадим предмет, вернет АйДи нового предмета
-String GenerateItem(String _itemId)
+string GenerateItem(string _itemId)
 {
 	int i, defItemIndex, priceMod;
 	int itemsQty = 0;
 	int itemIndex = FindFirstEmptyItem();
 	float MaxAttack = 0.0;
 	ref item, realItem;
-	String generatedItems[2];
-	SetArraySize(&generatedItems, TOTAL_ITEMS);
+	string generatedItems[TOTAL_ITEMS];
 	if(!IsGenerableItem(_itemId)) // Генерящийся ли предмет
 	{
 		return _itemID;
@@ -811,8 +807,7 @@ string SelectGeneratedItem(string TargetGroup, string Quality, string BladeType)
 {
 	ref item;
 	int itemsQty = 0;
-	string generatedItems[2];
-	SetArraySize(&generatedItems, TOTAL_ITEMS);
+	string generatedItems[TOTAL_ITEMS];
 	bool bOk1, bOk2, bOk3;
 	
 	if(TargetGroup == "" && Quality == "" && BladeType == "") return "";

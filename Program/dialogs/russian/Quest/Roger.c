@@ -1262,7 +1262,7 @@ void ProcessDialogEvent()
 		
 		case "Pelly_42":
             dialog.text = "Обычно он за кого-то действительно важного получает 500 монет. В дублонах, само собой.";
-			link.l1 = "СКОЛЬКО?!";
+			link.l1 = "Сколько-сколько?!";
 			link.l1.go = "Pelly_43";
 		break;
 		
@@ -3487,7 +3487,7 @@ void ProcessDialogEvent()
 		
 		case "carpenter_16":
 			worldMap.labels.islamona.icon = 5;
-			worldMap.labels.islamona.text = CheckingTranslate(LanguageOpenFile("LocLables.txt"),"Islamona");
+			worldMap.labels.islamona.text = GetIslandNameByID("IslaMona");
             dialog.text = "Я плотник, а эти двое - мои подручные. Мы кренговали и ремонтировали 'Фрейю' после походов. Мы сможем пригодиться в твоей команде.";
 			link.l1 = "Понятно. Вы приняты на службу, подробности обсудим позже. А сейчас убирайте эту пушку с прохода, Родгар, и никуда не уходите из посёлка. Я приступаю к поискам.";
 			link.l1.go = "exit";
@@ -5546,7 +5546,8 @@ void ProcessDialogEvent()
 			WaitDate("", 0, 0, 0, 2, 30);
 			SetLaunchFrameFormParam("", "", 0, 5.1);
 			SetLaunchFrameFormPic("loading\inside\censored1.tga");
-			PlayStereoSound("sex\sex2.wav");
+			if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+			else PlayStereoSound("sex\sex2.wav");
 			LaunchFrameForm();
 			if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
 			{
@@ -6125,6 +6126,45 @@ void ProcessDialogEvent()
 			link.l1 = "И тебе привет, Гаспар 'Златозубый'. Хотя, по большому счёту, мне тоже не больно-то важно, как тебя зовут. Слышал, тебе можно продать кое-какие побрякушки?";
 			link.l1.go = "GasparGold_meeting_01";
 		break;
+		
+		// ---> andre39966, Фриплейный Гаспарито
+		case "GasparGold_meeting_sandbox":
+			dialog.text = "Приветствую вас. Меня зовут Гаспар Парментье. Чем обязан вашему визиту?";
+			link.l1 = "И тебе привет, Гаспар. Я капитан " + GetFullName(pchar) + ". Я от здешнего трактирщика. Поговаривают, ты скупаешь всякие побрякушки?";
+			link.l1.go = "GasparGold_meeting_01";
+			link.l2 = "Здравствуй, Златозубый. Слышал, ты скупаешь всё, что блестит? Клянусь громом, мы с тобой сработаемся.";
+			link.l2.go = "GasparGold_meeting_wrong";
+		break;
+
+		case "GasparGold_meeting_wrong":
+			dialog.text = "Похоже, сударь, вы меня с кем-то путаете. Прошу вас покинуть это помещение, пока я не вызвал стражу.";
+			link.l1 = "Аргх... Ладно...";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Gaspar_sandbox_repeat";
+		break;
+
+		case "Gaspar_sandbox_repeat":
+			dialog.text = RandPhraseSimple("Кажется, я просил вас покинуть это помещение.", "У меня нет времени на пустые разговоры. Прошу оставить меня в покое.", "Я поражён вашей бестактностью. Вы так и будете мне досаждать?");
+			link.l1 = "Спокойнее, приятель. Я от трактирщика.";
+			link.l1.go = "Gaspar_Alternative";
+			link.l2 = "Хватит водить меня за нос! Я знаю, что ты занимаешься скупкой драгоценностей!";
+			link.l2.go = "Gaspar_Angry";
+		break;
+
+		case "Gaspar_Angry":
+			dialog.text = "Я же сказал, что не занимаюсь ничем подобным. Уходите, покуда вас не выставили.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Gaspar_sandbox_repeat";
+		break;
+
+		case "Gaspar_Alternative":
+			dialog.text = "Это же в корне меняет дело, капитан. Вы пришли по адресу. Итак, вы хотите продать кое-что из своих драгоценностей?";
+			link.l1 = "Ну, насчёт 'своих' - это ты поторопился. Хе-хе.";
+			link.l1.go = "GasparGold_01";
+			NextDiag.TempNode = "GasparGold";
+		break;
+		// <--- andre39966, Фриплейный Гаспарито
 		
 		case "GasparGold_meeting_01":
             dialog.text = "Всё верно. Цену лучше, чем у меня, вам никто не предложит. Ну, разве что ростовщики, но они много не покупают. А я готов купить всё, что предложите. Необязательно даже таскать ценности ко мне лично: у меня есть задняя дверь, ведущая к укромному пирсу - так что можете смело продавать мне все свои побрякушки, что лежат в сундуках на корабле.";

@@ -1,4 +1,5 @@
 // Маркус Тиракс, барон Ла Веги
+int iTerraxTotalTemp;
 void ProcessDialogEvent()
 {
 	ref NPChar, sld;
@@ -30,6 +31,11 @@ void ProcessDialogEvent()
                 case "repeat":
                     if (npchar.angry.name == "Firsttime") Dialog.CurrentNode = "AngryRepeat_1";
                     if (npchar.angry.name == "I_know_you_good") Dialog.CurrentNode = "AngryRepeat_2";
+					if (npchar.angry.name == "pirate_threat")
+                    {
+                        if (Dialog.CurrentNode == "I_know_you_good") Dialog.CurrentNode = "AngryRepeat_2";
+                        else Dialog.CurrentNode = "AngryRepeat_1";
+                    }
                 break;
             }
         }
@@ -88,6 +94,10 @@ void ProcessDialogEvent()
 				link.l1.go = "patria_x29";
 				break;
 			}
+			
+			link.l0 = ""+npchar.name+", je voudrais" + GetSexPhrase("","e") + " discuter de ma sécurité en mer. Les gars de la Fraternité de la Côte s'intéressent un peu trop à ma modeste personne. Tu pourrais les calmer un peu ?";
+			link.l0.go = "pirate_threat";
+			
             dialog.text = NPCStringReactionRepeat("Bonjour, monami."+GetSexPhrase("As-tu quelque chose à me dire ? Non ? Alors laisse-moi tranquille !","Ha, "+pchar.name+"Tu as affaire avec moi? Non? Alors ne me dérange pas.")+"Bonjour, monami.","Je croyais avoir été clair... Je t'ai dit de partir mais tu continues à m'agacer !","Bon, je commence à en avoir marre de cette impolitesse.","répéter",3,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Je pars déjà.","Bien sûr, Marcus...","Désolé, Marcus...","Oups...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
@@ -95,8 +105,8 @@ void ProcessDialogEvent()
 			
 			if (sti(pchar.GenQuest.Piratekill) > 20)
 			{
-				dialog.text = RandPhraseSimple("Es-tu fou ? Tu voulais jouer au boucher, hein ? Tous les pirates sont en colère contre toi, garçon, tu ferais mieux de quitter cet endroit...","Il semble que tu sois devenu un chien enragé, garçon. Tu voulais te dégourdir un peu les bras ? Sans vouloir t'offenser, mais il n'y a rien pour toi ici. Dégage !");
-				link.l1 = RandPhraseSimple("Ecoute, je veux arranger la situation.","Aidez-moi à résoudre ce problème, je vous prie...");
+				dialog.text = RandPhraseSimple("Es-tu fou ? Voulais-tu jouer au boucher ? Tous les pirates sont en colère contre toi, garçon, tu ferais mieux de quitter cet endroit...","Il semble que tu sois devenu fou, garçon. Tu voulais te dégourdir un peu les mains ? Sans vouloir t'offenser, mais tu n'as rien à faire ici. Dégage !");
+				link.l1 = RandPhraseSimple("Ecoute, je veux arranger la situation...","Aidez-moi à résoudre ce problème...");
 				link.l1.go = "pirate_town";
 				break;
 			}
@@ -146,8 +156,8 @@ void ProcessDialogEvent()
         case "I_know_you_good":
 			if (sti(pchar.GenQuest.Piratekill) > 20)
 			{
-				dialog.text = RandPhraseSimple("Es-tu fou ? Tu voulais jouer au boucher ? Tous les pirates sont en colère contre toi, garçon, tu ferais mieux de quitter cet endroit...","On dirait que t'es devenu un chien enragé, gamin. Tu voulais te dégourdir les mains ? Pas d'offense, mais y a pas de place pour toi ici. Dégage !");
-				link.l1 = RandPhraseSimple("Ecoute, je veux arranger la situation...","Aidez-moi à résoudre ce problème, s'il vous plaît...");
+				dialog.text = RandPhraseSimple("Es-tu fou ? Voulais-tu jouer au boucher ? Tous les pirates sont en colère contre toi, garçon, tu ferais mieux de quitter cet endroit...","Il semble que tu sois devenu fou, garçon. Tu voulais te dégourdir un peu les mains ? Sans vouloir t'offenser, mais tu n'as rien à faire ici. Dégage !");
+				link.l1 = RandPhraseSimple("Ecoute, je veux arranger la situation...","Aidez-moi à résoudre ce problème...");
 				link.l1.go = "pirate_town";
 				break;
 			}
@@ -237,6 +247,10 @@ void ProcessDialogEvent()
 				link.l2 = "J'ai de la soie à vendre.";
 				link.l2.go = "Mtraxx_silktrade";
 			}
+			
+			link.l0 = ""+npchar.name+", je voudrais" + GetSexPhrase("","e") + " discuter de ma sécurité en mer. Les gars de la Fraternité de la Côte s'intéressent un peu trop à ma modeste personne. Tu pourrais les calmer un peu ?";
+			link.l0.go = "pirate_threat";
+			
             dialog.text = NPCStringReactionRepeat(GetFullName(pchar)+", content de te voir ! Que veux-tu cette fois, mate ?","Que veux-tu ?","Encore ? Ne dérange pas les gens si tu n'as rien à faire !","Tu es un "+GetSexPhrase("bon corsaire","bonne fille")+", donc tu peux vivre pour l'instant. Mais je ne veux plus te parler.","répéter",10,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Je voulais juste te voir.","Rien.","D'accord, Marcus, je suis désolé.","Bon sang, je suis vraiment désolé, Marcus !",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
@@ -603,6 +617,55 @@ void ProcessDialogEvent()
 			pchar.GenQuest.Piratekill = 0;
 		break;
 		
+		case "pirate_threat":
+			if (GetNpcQuestPastDayWOInit(NPChar, "ThreatTalk") == 0)
+			{
+				dialog.text = NPCStringReactionRepeat("On a déjà parlé de ça aujourd'hui.",
+				                                      "Je n’ai pas été assez clair ?",
+				                                      "Ton insistance commence à m’agacer.",
+				                                      "Ça suffit maintenant. Dégage d’ici !",
+				                                      "repeat", 3, npchar, Dialog.CurrentNode);
+				link.l1 = HeroStringReactionRepeat("Une autre fois, peut-être...",
+				                                   "Bien sûr, "+npchar.name+"...",
+				                                   "Désolé, "+npchar.name+"...",
+				                                   "Aïe...", npchar, Dialog.CurrentNode);
+				link.l1.go = "exit";
+				break;
+			}
+			if (iGPThreat != 0)
+			{
+				iBarbazonTotalTemp = 10 * iGPThreatRate;
+				dialog.text = "Ha ! Les gars de notre fraternité te mettent la pression, hein, " + GetSexPhrase("pote", "ma fille") + " ? Je peux les calmer un moment. Mais ça va te coûter un joli paquet. " + FindRussianDublonString(iBarbazonTotalTemp) + " sur la table, et on est d'accord.";
+				if (PCharDublonsTotal() > iBarbazonTotalTemp)
+				{
+					if (iGPThreat < 5) link.l0 = "Évidemment, voilà ton argent.";
+					else link.l0 = "On dirait que je n’ai pas le choix. Voilà ton argent.";
+					link.l0.go = "pirate_threat_pay";
+				}
+				link.l1 = "Je repasserai plus tard...";
+				link.l1.go = "exit";
+			}
+			else
+			{
+				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
+				if (NextDiag.TempNode != "I_know_you_good")
+					dialog.text = "T’as perdu la tête" + GetSexPhrase("", " ma fille") + " ? Nos gars te fuient comme la peste. Alors fiche le camp et arrête de me casser les pieds.";
+				else
+					dialog.text = "De quoi tu parles, " + GetSexPhrase("pote", "ma fille") + " ? Tu es une vraie plaie — même les chiens le sentent. Personne ne veut avoir affaire à toi.";
+				link.l1 = "Je vois...";
+				link.l1.go = "exit";
+			}
+		break;
+
+		case "pirate_threat_pay":
+			iGPThreatRate = 0;
+			iGPThreat = 0;
+			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
+			RemoveDublonsFromPCharTotal(iBarbazonTotalTemp);
+			DialogExit();
+			PiratesDecreaseNotif("");
+		break;
+		
 		// Addon 2016-1 Jason ------------------------- пиратская линейка --------------------------
 		case "Mtraxx":
 			if (pchar.Ship.Type == SHIP_NOTUSED)
@@ -691,7 +754,7 @@ void ProcessDialogEvent()
 					{
 						sTemp = ". Wait a minute, take a 60-day trade license and a Spanish flag to land in Santo Domingo. From now on, I recommend getting your own, it will help to fool the simpleton in the trading pelvis. This one will be returned to me.";
 						GiveNationLicence(HOLLAND, 60);
-						SetCharacterPerk(pchar, "FlagSpa");
+						STH_SetJokerFlag(SPAIN, true);
 						log_info("You have received spanish flag");
 						pchar.questTemp.GiveMeSpaFlag = true;
 					}
@@ -701,14 +764,14 @@ void ProcessDialogEvent()
 						{
 							sTemp = ". Wait, how are you going to trade without having the right flag?! Here you go, a 60-day trading license, longer than yours. As well as the Spanish flag for landing in Santo Domingo. From now on, I recommend getting your own, it will help to fool the simpleton in the trading pelvis. This one will be returned to me.";
 							GiveNationLicence(HOLLAND, 60);
-							SetCharacterPerk(pchar, "FlagSpa");
+							STH_SetJokerFlag(SPAIN, true);
 							log_info("You have received spanish flag");
 							pchar.questTemp.GiveMeSpaFlag = true;
 						}
 						else 
 						{
 							sTemp = ". Wait, how are you going to trade without having the right flag?! Here, take the Spanish flag for the Santo Domingo landings. From now on, I recommend getting your own, it will help to fool the simpleton in the trading pelvis. This one will be returned to me.";
-							SetCharacterPerk(pchar, "FlagSpa");
+							STH_SetJokerFlag(SPAIN, true);
 							log_info("You have received spanish flag");
 							pchar.questTemp.GiveMeSpaFlag = true;
 						}
@@ -757,7 +820,7 @@ void ProcessDialogEvent()
 				if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 				{
 					DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
-					DeleteAttribute(pchar,"perks.list.FlagSpa"); 
+					STH_SetJokerFlag(SPAIN, false); 
 					log_info("You have given spanish flag");
 				}
 			}
@@ -781,7 +844,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
 				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
-				DeleteAttribute(pchar,"perks.list.FlagSpa"); 
+				STH_SetJokerFlag(SPAIN, false); 
 				log_info("You have given spanish flag");
 			}
             dialog.text = "Parlé comme un vrai pirate, ha-ha-ha ! La moitié du butin est à toi. Prends-le.";
@@ -952,7 +1015,7 @@ void ProcessDialogEvent()
 					{
 						sTemp = ", as well as a trade license for 40 days. Besides, how are you going to fool the bungler in the fort?! You will let me down one day with such sloppiness... Here you go... You will return it back upon arrival. The new generation, pah...";
 						GiveNationLicence(HOLLAND, 40);
-						SetCharacterPerk(pchar, "FlagSpa");
+						STH_SetJokerFlag(SPAIN, true);
 						log_info("You have received spanish flag");
 						pchar.questTemp.GiveMeSpaFlag = true;
 					}
@@ -962,14 +1025,14 @@ void ProcessDialogEvent()
 						{
 							sTemp = ". Tell me, how are you going to fool the bungler in the fort?! Your paper won't help you without the right flag. I feel that you will let me down one day with such sloppiness... Here, a trading license for 40 days, more than yours. As well as the Spanish flag for landing in Maracaibo. You will return it upon arrival. The new generation, pah...";
 							GiveNationLicence(HOLLAND, 40);
-							SetCharacterPerk(pchar, "FlagSpa");
+							STH_SetJokerFlag(SPAIN, true);
 							log_info("You have received spanish flag");
 							pchar.questTemp.GiveMeSpaFlag = true;
 						}
 						else 
 						{
 							sTemp = ". Tell me, how are you going to fool the bungler in the fort?! Your paper won't help you without the right flag. I feel that you will let me down one day with such sloppiness... Here you go... You will return it back upon arrival. The new generation, pah...";
-							SetCharacterPerk(pchar, "FlagSpa");
+							STH_SetJokerFlag(SPAIN, true);
 							log_info("You have received spanish flag");
 							pchar.questTemp.GiveMeSpaFlag = true;
 						}
@@ -1032,7 +1095,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
 				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
-				DeleteAttribute(pchar,"perks.list.FlagSpa"); 
+				STH_SetJokerFlag(SPAIN, false); 
 				log_info("You have given spanish flag");
 			}
 			CloseQuestHeader("Roger_3");
@@ -1595,7 +1658,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_85f":
-			SetCharacterPerk(pchar, "FlagSpa");
+			STH_SetJokerFlag(SPAIN, true);
 			log_info("You have received a spanish flag");
 			pchar.questTemp.GiveMeSpaFlag = true;
             dialog.text = "Mais qu'est-ce que c'est que ce bordel ? Je te briserais avec un tisonnier de la cheminée, Prince. Je ne pensais pas devoir parler de choses aussi élémentaires. Tiens le drapeau espagnol, sinon tu vas tout foirer avant même de commencer. Rends-le-moi. Maintenant, dégage d'ici !";
@@ -1645,7 +1708,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
 				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
-				DeleteAttribute(pchar,"perks.list.FlagSpa"); 
+				STH_SetJokerFlag(SPAIN, false); 
 				log_info("You have given a spanish flag");
 			}
 			npchar.dialog.currentnode = "First time";
@@ -1757,7 +1820,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
 				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
-				DeleteAttribute(pchar,"perks.list.FlagSpa"); 
+				STH_SetJokerFlag(SPAIN, false); 
 				log_info("You have given spanish flag");
 			}
 		break;

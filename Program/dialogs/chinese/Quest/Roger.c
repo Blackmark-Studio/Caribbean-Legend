@@ -3481,7 +3481,7 @@ void ProcessDialogEvent()
 		
 		case "carpenter_16":
 			worldMap.labels.islamona.icon = 5;
-			worldMap.labels.islamona.text = CheckingTranslate(LanguageOpenFile("LocLables.txt"),"Islamona");
+			worldMap.labels.islamona.text = GetIslandNameByID("IslaMona");
             dialog.text = "我是一名木匠, 这两位是我的助手。 我们以前经常修理和改装'芙蕾雅号'。 我们在你的船员中可能会有用。 ";
 			link.l1 = "我明白了。 很好, 你加入了, 我们稍后再谈细节。 从入口处拿那把枪。 还有, 罗德加, 在我寻找宝藏的时候不要离开村子。 ";
 			link.l1.go = "exit";
@@ -5518,7 +5518,8 @@ void ProcessDialogEvent()
 			WaitDate("", 0, 0, 0, 2, 30);
 			SetLaunchFrameFormParam("", "", 0, 5.1);
 			SetLaunchFrameFormPic("loading\inside\censored1.tga");
-			PlayStereoSound("sex\sex2.wav");
+			if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+			else PlayStereoSound("sex\sex2.wav");
 			LaunchFrameForm();
 			if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
 			{
@@ -6097,6 +6098,45 @@ void ProcessDialogEvent()
 			link.l1 = "你好, 加斯帕尔‘金牙’。 不过, 我也不在乎你叫什么。 听说你可能有兴趣买些小饰品? ";
 			link.l1.go = "GasparGold_meeting_01";
 		break;
+		
+		// ---> andre39966, Фриплейный Гаспарито
+		case "GasparGold_meeting_sandbox":
+			dialog.text = "欢迎你。 我叫加斯帕·帕尔芒捷。 请问找我有什么事?";
+			link.l1 = "你好, 加斯帕。 我是船长 " + GetFullName(pchar) + "。 我是本地酒馆老板推荐来的。 听说你收购一些小玩意儿?";
+			link.l1.go = "GasparGold_meeting_01";
+			link.l2 = "你好啊, 金牙。 听说你收一切闪闪发亮的东西? 雷神在上, 我们一定能合作愉快。";
+			link.l2.go = "GasparGold_meeting_wrong";
+		break;
+
+		case "GasparGold_meeting_wrong":
+			dialog.text = "先生, 您恐怕认错人了。 请马上离开这里, 否则我就叫守卫了。";
+			link.l1 = "呃…… 好吧…… ";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Gaspar_sandbox_repeat";
+		break;
+
+		case "Gaspar_sandbox_repeat":
+			dialog.text = RandPhraseSimple("我记得已经请你离开了。", "我没空闲和你闲聊。请让我安静一下。", "你真是没礼貌。还要继续烦我吗?");
+			link.l1 = "冷静点, 伙计。 我是酒馆老板派来的。";
+			link.l1.go = "Gaspar_Alternative";
+			link.l2 = "别装了! 我知道你在收珠宝!";
+			link.l2.go = "Gaspar_Angry";
+		break;
+
+		case "Gaspar_Angry":
+			dialog.text = "我说了我不做那种事。 快走, 不然我叫人把你赶出去。";
+			link.l1 = "…… ";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Gaspar_sandbox_repeat";
+		break;
+
+		case "Gaspar_Alternative":
+			dialog.text = "这可就另当别论了, 船长。 你来对地方了。 那么, 你是想卖些珠宝对吧?";
+			link.l1 = "嗯, 说是 '我的' 也太快了点。呵呵。";
+			link.l1.go = "GasparGold_01";
+			NextDiag.TempNode = "GasparGold";
+		break;
+		// <--- andre39966, Фриплейный Гаспарито
 		
 		case "GasparGold_meeting_01":
             dialog.text = "没错。 没人会给你比我更好的价格。 嗯, 也许当铺老板除外, 但他们买不了多少。 我准备买下你提供的所有东西。 你甚至不必亲自把贵重物品带来: 我有一扇后门通向一个隐蔽的码头。 随便把你船上箱子里的小饰品都卖给我吧。 ";

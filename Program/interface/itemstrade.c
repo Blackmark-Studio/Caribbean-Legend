@@ -316,7 +316,6 @@ bool FilterItems(ref Item)
 void AddToTable()
 {
 	int n, i, j, leftQty, rightQty;
-	int  idLngFile;
 	string row, row2, sItem; 
 	ref rItem;
 	string sList;
@@ -325,7 +324,6 @@ void AddToTable()
 
 	n = 1;
 	j = 1;
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 	Table_Clear("TABLE_LIST", false, true, false);
 	Table_Clear("TABLE_LIST2", false, true, false);	
 	HideItemInfo(); // прячем по умолчанию инфу по предметам
@@ -370,7 +368,7 @@ void AddToTable()
 			GameInterface.TABLE_LIST.(row).td1.icon.width = 50;
 			GameInterface.TABLE_LIST.(row).td1.icon.height = 50;
 			GameInterface.TABLE_LIST.(row).td1.textoffset = "50,0";
-			GameInterface.TABLE_LIST.(row).td1.str = LanguageConvertString(idLngFile, rItem.name);
+			GameInterface.TABLE_LIST.(row).td1.str = GetItemName(rItem);
 			GameInterface.TABLE_LIST.(row).td1.line_space_modifier = 0.9;
 			GameInterface.TABLE_LIST.(row).td2.str = leftQty;
 			GameInterface.TABLE_LIST.(row).td3.str = FloatToString(stf(rItem.Weight) * leftQty, 1);
@@ -379,13 +377,8 @@ void AddToTable()
 
 	
 			GameInterface.TABLE_LIST.(row).index = i;
-			ShowItemInfo();	
-			sList = "tr" + sti(GameInterface.TABLE_LIST.select);
-			if(CheckAttribute(&GameInterface, "TABLE_LIST." + sList + ".index"))
-			{
-				iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(sList).index);
-				ShowGoodsInfo(iCurGoodsIdx);
-			}
+			ShowItemInfo();
+
 			n++;
 		} 
 		
@@ -400,22 +393,31 @@ void AddToTable()
 			GameInterface.TABLE_LIST2.(row2).td1.icon.height = 50;
 			GameInterface.TABLE_LIST2.(row2).td1.textoffset = "50,0";
 			GameInterface.TABLE_LIST2.(row2).td1.line_space_modifier = 0.9;
-			GameInterface.TABLE_LIST2.(row2).td1.str = LanguageConvertString(idLngFile, rItem.name);            
+			GameInterface.TABLE_LIST2.(row2).td1.str = GetItemName(rItem);
 			GameInterface.TABLE_LIST2.(row2).td2.str = rightQty;
 			GameInterface.TABLE_LIST2.(row2).td3.str = FloatToString(stf(rItem.Weight), 1);
 			GameInterface.TABLE_LIST2.(row2).td4.str = GetTradeItemPrice(i, PRICE_TYPE_BUY, refStoreChar, &modifier);
 			GameInterface.TABLE_LIST2.(row2).index = i;
 			ShowItemInfo();	
-			sList = "tr" + sti(GameInterface.TABLE_LIST2.select);
-			if(CheckAttribute(&GameInterface, "TABLE_LIST2." + sList + ".index"))
-			{
-				iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(sList).index);
-				ShowGoodsInfo(iCurGoodsIdx);
-			}
+
 			j++;
 		} 
 	}
-	
+
+	sList = "tr" + sti(GameInterface.TABLE_LIST.select);
+	if(CheckAttribute(&GameInterface, "TABLE_LIST." + sList + ".index"))
+	{
+		iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(sList).index);
+		ShowGoodsInfo(iCurGoodsIdx);
+	}
+
+	sList = "tr" + sti(GameInterface.TABLE_LIST2.select);
+	if(CheckAttribute(&GameInterface, "TABLE_LIST2." + sList + ".index"))
+	{
+		iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(sList).index);
+		ShowGoodsInfo(iCurGoodsIdx);
+	}
+
 	for (i = 0; i < ITEMS_QUANTITY; i++)
 	{
 		row = "tr" + n;
@@ -463,7 +465,7 @@ void AddToTable()
 			GameInterface.TABLE_LIST.(row).td1.icon.width = 50;
 			GameInterface.TABLE_LIST.(row).td1.icon.height = 50;
 			GameInterface.TABLE_LIST.(row).td1.textoffset = "50,0";
-			GameInterface.TABLE_LIST.(row).td1.str = LanguageConvertString(idLngFile, rItem.name);
+			GameInterface.TABLE_LIST.(row).td1.str = GetItemName(rItem);
 			GameInterface.TABLE_LIST.(row).td1.line_space_modifier = 0.9;
 			GameInterface.TABLE_LIST.(row).td2.str = leftQty;
 			GameInterface.TABLE_LIST.(row).td3.str = FloatToString(stf(rItem.Weight) * leftQty, 1);
@@ -480,12 +482,7 @@ void AddToTable()
 				GameInterface.TABLE_LIST.(row).td4.str = GetTradeItemPriceDublon(i, PRICE_TYPE_SELL, refStoreChar);
 			}			
 			ShowItemInfo();	
-			sList = "tr" + sti(GameInterface.TABLE_LIST.select);
-			if(CheckAttribute(&GameInterface, "TABLE_LIST." + sList + ".index"))
-			{
-				iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(sList).index);
-				ShowGoodsInfo(iCurGoodsIdx);
-			}
+
 			n++;
 		} 
 		
@@ -499,7 +496,7 @@ void AddToTable()
 			GameInterface.TABLE_LIST2.(row2).td1.icon.height = 50;
 			GameInterface.TABLE_LIST2.(row2).td1.textoffset = "50,0";
 			GameInterface.TABLE_LIST2.(row2).td1.line_space_modifier = 0.9;
-			GameInterface.TABLE_LIST2.(row2).td1.str = LanguageConvertString(idLngFile, rItem.name);            
+			GameInterface.TABLE_LIST2.(row2).td1.str = GetItemName(rItem);
 			GameInterface.TABLE_LIST2.(row2).td2.str = rightQty;
 			GameInterface.TABLE_LIST2.(row2).td3.str = FloatToString(stf(rItem.Weight), 1);
 			GameInterface.TABLE_LIST2.(row2).td4.str = GetTradeItemPrice(i, PRICE_TYPE_BUY, refStoreChar, &modifier);
@@ -514,18 +511,26 @@ void AddToTable()
 				GameInterface.TABLE_LIST2.(row2).td4.str = GetTradeItemPriceDublon(i, PRICE_TYPE_BUY, refStoreChar);
 			}
 			ShowItemInfo();	
-			sList = "tr" + sti(GameInterface.TABLE_LIST2.select);
-			if(CheckAttribute(&GameInterface, "TABLE_LIST2." + sList + ".index"))
-			{
-				iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(sList).index);
-				ShowGoodsInfo(iCurGoodsIdx);
-			}
+
 			j++;
 		}
 	}
-	
+
+	sList = "tr" + sti(GameInterface.TABLE_LIST.select);
+	if(CheckAttribute(&GameInterface, "TABLE_LIST." + sList + ".index"))
+	{
+		iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(sList).index);
+		ShowGoodsInfo(iCurGoodsIdx);
+	}
+
+	sList = "tr" + sti(GameInterface.TABLE_LIST2.select);
+	if(CheckAttribute(&GameInterface, "TABLE_LIST2." + sList + ".index"))
+	{
+		iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(sList).index);
+		ShowGoodsInfo(iCurGoodsIdx);
+	}
+
 	NextFrameRefreshTable();
-	LanguageCloseFile(idLngFile);
 
 	RestoreTableSorting("TABLE_LIST");
 	RestoreTableSorting("TABLE_LIST2");
@@ -639,7 +644,7 @@ void CS_TableSelectChange()
 	ShowItemInfo();
 	sortedGoodIndex = sti(GameInterface.(CurTable).(sRow).index);
 	sortedRow = selectedRow;
-  ShowGoodsInfo(sortedGoodIndex);
+	ShowGoodsInfo(sortedGoodIndex);
 }
 
 void procTabChange()
@@ -853,18 +858,16 @@ void SetCharWeight()
 // инфа о предмете
 void ShowGoodsInfo(int iGoodIndex)
 {
-	string GoodName = Items[iGoodIndex].name;
 	ref    arItm = &Items[iGoodIndex];
 	currentItem = arItm;
-	int    lngFileID = LanguageOpenFile("ItemsDescribe.txt");
 	float modifier = 1;
-	string sHeader = LanguageConvertString(lngFileID, GoodName);
+	string sHeader = GetItemName(arItm);
 
     iCurGoodsIdx = iGoodIndex;
 
     string describeStr = "";
 
-	describeStr += GetItemDescribe(iGoodIndex);
+	describeStr += GetItemDescr(arItm);
 	AddRecipeKnownMarker(&arItm, &describeStr);
 	AddMapKnownMarker(&arItm, &describeStr);
 
@@ -880,7 +883,6 @@ void ShowGoodsInfo(int iGoodIndex)
 	SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"QTY_CAPTION", 5 );
     SetFormatedText("QTY_GOODS_INFO", describeStr);
 	SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"QTY_GOODS_INFO", 5 );
-	LanguageCloseFile(lngFileID);
 
 	if(CheckAttribute(refStoreChar, "Merchant.type") && refStoreChar.Merchant.type == "GasparGold")
 	{

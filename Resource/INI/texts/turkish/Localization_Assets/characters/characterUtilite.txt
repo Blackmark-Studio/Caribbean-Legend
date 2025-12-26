@@ -1,0 +1,15 @@
+characterUtilite_1 {Kazanılan @<_Money> Peso}
+characterUtilite_2 {@<abs(_Money)> Peso Harcandı}
+characterUtilite_3 {Yeni Eşya: ~}
+characterUtilite_4 {@<n> Dublon Kazanıldı}
+characterUtilite_5 {Eşya Kaybedildi: ~}
+characterUtilite_6 {~ @<LanguageConvertString(idLngFile, arItem.name)> gücünü kaybettiğini fark etti}
+characterUtilite_7 {Onur Arttı}
+characterUtilite_8 {Onur Azaldı}
+characterUtilite_9 {@<_Dublons> Harcanan Dublon}
+characterUtilite_10 {@<officer.Ship.Name> gemisinin çıkarma birliğinde @<compCrew> asker var}
+characterUtilite_11 {Kredinizin süresi doldu}
+characterUtilite_12 {Atlas Güncellendi: @<LanguageConvertString(idLngFile, arItem.name)>}
+characterUtilite_13 {Kızılderililer olumsuz bakıyor (}
+characterUtilite_14 {Kızılderililer onaylıyor (}
+characterUtilite_15 {Tüccarın tamamı yok. @<money> karşılığında satmak ister misiniz?}

@@ -5,17 +5,17 @@ newline
 BasicDefense {Basic Defense}
 perkBasicDefense {Reduces incoming damage by $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Advanced Defense}
-perkAdvancedDefense {Reduces incoming damage by $percent($perkBaseValue(AdvancedDefence|1)), and enemy critical damage by $percent($perkBaseValue(AdvancedDefence|2)).}
+perkAdvancedDefense {Reduces incoming damage by $percent($perkBaseValue(AdvancedDefense|1)), and enemy critical damage by $percent($perkBaseValue(AdvancedDefense|2)).}
 CriticalHit {Critical hit}
-perkCriticalHit {Increases base critical hit chance by 3.5%.}
+perkCriticalHit {Increases base critical hit chance by $percent($perkBaseValue(CriticalHit|1)).}
 Grus {Strong Backbone}
 perkGrus {Increases carry weight by 35 pounds.}
 Tireless {Tirelessness}
-perkTireless {Energy recovery speed increases by 15%.}
+perkTireless {Energy recovery speed increases by $percent($perkBaseValue(Tireless|1)).}
 HardHitter {Heavy Hand}
-perkHardHitter {Heavy attacks with Heavy Weapons deal 15% more damage. Unlocks advanced Heavy attack.}
+perkHardHitter {Heavy attacks with Heavy Weapons deal $percent($perkBaseValue(HardHitter|1)) more damage. Unlocks advanced Heavy attack.}
 BladeDancer {Dance with Sabres}
-perkBladeDancer {Group attack with Curved weapons deals 30% more damage.}
+perkBladeDancer {Group attack with Curved weapons deals $percent($perkBaseValue(BladeDancer|1)) more damage.}
 Sliding {Irresistible Blow}
 perkSliding {Slash or thrust attack with a Light weapon can break through Block with a $percent($perkBaseValue(Sliding|1)) chance using a unique advanced strike.}
 Gunman {Musketeer}
@@ -28,7 +28,7 @@ perkGunProfessional {Increases firearm damage and reload speed by $percent($perk
 IronWill {Iron Will}
 perkIronWill {Allows you to survive a fatal wound once every 3 minutes.}
 SharedExperience {Quick Learner}
-perkSharedExperience {Speeds up skill development by 5%.}
+perkSharedExperience {Speeds up skill development by 15%.}
 Medic {Healthy Habits}
 perkMedic {Increases health by 25 points. Doubles passive healing if health is below half of maximum.}
 HPPlus {Growing Health}
@@ -102,29 +102,18 @@ perkFlagPir
 Ability to change your flag to the Jolly Roger.~This skill is available to the player only.
 }
 FlagEng {Flag of England}
-perkFlagEng
-{
-The chance of being exposed depends on Stealth, your ship class and fleet size, enemy fleet size, and Threat level.~Skill available to player only
-}
+perkFlagEng {You can only use flags available for your ship’s rate. To obtain a flag, you must capture a ship of the corresponding rate or purchase a license.}
 FlagFra {Flag of France}
-perkFlagFra
-{
-The chance of being exposed depends on Stealth, your ship class and fleet size, enemy fleet size, and Threat level.~Skill available to player only
-}
+perkFlagFra {You can only use flags available for your ship’s rate. To obtain a flag, you must capture a ship of the corresponding rate or purchase a license.}
 FlagSpa {Flag of Spain}
-perkFlagSpa
-{
-The chance of being exposed depends on Stealth, your ship class and fleet size, enemy fleet size, and Threat level.~Skill available to player only
-}
+perkFlagSpa {You can only use flags available for your ship’s rate. To obtain a flag, you must capture a ship of the corresponding rate or purchase a license.}
 FlagHol {Flag of the Netherlands}
-perkFlagHol
-{
-The chance of being exposed depends on Stealth, your ship class and fleet size, enemy fleet size, and Threat level.~Skill available to player only
-}
+perkFlagHol {You can only use flags available for your ship’s rate. To obtain a flag, you must capture a ship of the corresponding rate or purchase a license.}
 Troopers {Siege Tactics}
 perkTroopers
 {
-Ability to combine the crews of your fleet before storming a fort in full force.Reduces the number of crew required to raid a settlement from land.
+Ability to combine the crews of your fleet before storming a fort in full force.
+Reduces the number of crew required to raid a settlement from land.
 }
 BasicCommerce {Basic Trading}
 perkBasicCommerce {Buying is 4% more profitable. Highlights items in demand in banks and markets.}
@@ -149,7 +138,9 @@ perkBuilder {The consumption of planks and sailcloth during repairs is reduced b
 SelfRepair {Full Repair}
 perkSelfRepair
 {
-The ability to fully repair your ship using your crew at any suitable shore. Requires planks for the hull and masts, and canvas for the sails. Complete restoration of the hull, sails, and masts is possible.Repair options are only available on land in coastal locations.
+The ability to fully repair your ship using your crew at any suitable shore. Requires planks for the hull and masts, and canvas for the sails. Complete restoration of the hull, sails, and masts is possible.
+
+Repair options are only available on land in coastal locations.
 }
 WindCatcher {Sea Sense}
 perkWindCatcher
@@ -192,11 +183,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Quick Hands}
-perkFastHands {Increases the speed of drawing and holstering firearms by 20%.}
+perkFastHands {Increases the speed of drawing and holstering firearms by $percent($perkBaseValue(FastHands|1)).}
 AmmoRig {Loadout}
-perkAmmoRig {Reloading of firearms is 5% faster.}
+perkAmmoRig {Reloading of firearms is $percent($perkBaseValue(AmmoRig|1)) faster.}
 Preaim {Sighting}
-perkPreaim {Aim mode is 15% faster.}
+perkPreaim {Aim mode is $percent($perkBaseValue(Preaim|1)) faster.}
 KeenEye {Keen Eye}
 perkKeenEye {Headshots deal $percent($perkBaseValue(KeenEye|1)) more damage.}
 PowderFeel {Sense of Gunpowder}
@@ -208,29 +199,29 @@ perkLeadRain {Grapeshot deals 5% more damage for each enemy hit.}
 ShootToKill {Shoot to Kill}
 perkShootToKill {Hitting an enemy with a firearm slows them, reducing their movement speed by 25%. Duration: 5 seconds.}
 Muscles {Muscle Mountain}
-perkMuscles {Any attacks with Heavy weapons use 10% less energy and 4% faster. Stun recovery is 15% faster.}
+perkMuscles {Any attacks with Heavy weapons use $percent($perkBaseValue(Muscles|1)) less energy and $percent($perkBaseValue(Muscles|2)) faster. Stun recovery is $percent($perkBaseValue(Muscles|3)) faster.}
 Conquest {Conquista}
-perkConquest {Slash attacks and heavy attacks with straight long weapons deal 15% more damage.}
+perkConquest {Slash attacks and heavy attacks with long weapons deal $percent($perkBaseValue(Conquest|1)) more damage.}
 PalaceGuard {Palace Guard}
-perkPalaceGuard {Heavy Curved weapons deal 15% more damage with attacks, and an additional 5% more damage with group attacks.}
+perkPalaceGuard {Heavy Curved weapons deal $percent($perkBaseValue(PalaceGuard|1)) more damage with attacks, and an additional 5% more damage with group attacks.}
 CunningStrike {Treacherous Strike}
-perkCunningStrike {Light weapons have a 3% increased critical chance. Back attacks deal 10% more damage.}
+perkCunningStrike {Light weapons have a $percent($perkBaseValue(CunningStrike|1)) increased critical chance. Back attacks deal $percent($perkBaseValue(CunningStrike|2)) more damage.}
 Heartbreaker {Heartbreaker}
-perkHeartbreaker {Fast attacks with Straight Long weapons deal 10% more damage and 3% faster.}
+perkHeartbreaker {Fast attacks with straight weapons deal $percent($perkBaseValue(Heartbreaker|1)) more damage and are $percent($perkBaseValue(Heartbreaker|2)) faster.}
 Dodgy {Opportunism}
-perkDodgy {Sprint Shoving is 30% stronger and uses less energy.}
+perkDodgy {Sprint Shoving is $percent($perkBaseValue(Dodgy|1)) stronger and uses less energy.}
 Exhaustion {Exhaustion}
-perkExhaustion {Parrying with Short weapons drains 20% more energy. Enemy Stun recovery is 10% longer.}
+perkExhaustion {Parrying with Short weapons drains  $percent($perkBaseValue(Exhaustion|1)) more energy. Enemy Stun recovery is 10% longer.}
 Reaper {Reaper}
-perkReaper {Critical damage increased by 30%, and critical chance with Fast Attacks increased by 3%.}
+perkReaper {Critical damage increased by  $percent($perkBaseValue(Reaper|1)), and critical chance with Fast Attacks increased by  $percent($perkBaseValue(Reaper|2)).}
 MarathonRunner {Marathoner}
-perkMarathonRunner {Sprint becomes 15% faster and uses one third less energy.}
+perkMarathonRunner {Sprint becomes $percent($perkBaseValue(MarathonRunner|2)) faster and uses one third less energy.}
 PerfectBalance {Perfect Balance}
-perkPerfectBalance {Medium weapons in hand reduce incoming damage by 10%.}
+perkPerfectBalance {Medium weapons in hand reduce incoming damage by $percent($perkBaseValue(PerfectBalance|1)).}
 Flanking {Flanking}
-perkFlanking {Curved weapons attacks are 5% faster. Unlocks advanced Group Attack.}
+perkFlanking {Curved weapons attacks are $percent($perkBaseValue(Flanking|1)) faster. Unlocks advanced Group Attack.}
 SabreHurricane {Saber Whirlwind}
-perkSabreHurricane {Slash and Fast Attacks with Medium Curved weapons have a wider arc, hitting adjacent enemies, and deal 10% more damage.}
+perkSabreHurricane {Slash and Fast Attacks with Medium Curved weapons have a wider arc, hitting adjacent enemies, and deal $percent($perkBaseValue(SabreHurricane|1)) more damage.}
 Practice {Practice Development}
 perkPractice {Each equipped craftable item increases all skills by 2.}
 Strychnine {Strychnine}

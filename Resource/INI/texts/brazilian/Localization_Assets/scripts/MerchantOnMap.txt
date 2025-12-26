@@ -1,0 +1,30 @@
+MerchantOnMap_1 {mercador}
+MerchantOnMap_2 {Diziam por aí que}
+MerchantOnMap_3 {pirata ousado}
+MerchantOnMap_4 {pirata ousada}
+MerchantOnMap_5 {, foi pego}
+MerchantOnMap_6 { }
+MerchantOnMap_7 { }
+MerchantOnMap_8 {~ numa armadilha, na qual ~}
+MerchantOnMap_9 {ele}
+MerchantOnMap_10 {ela}
+MerchantOnMap_11 {~ foi atraído pelas autoridades de @<NationNameSK(sti(MerPrm.ination))>. Eles enviaram para ~}
+MerchantOnMap_12 {ele}
+MerchantOnMap_13 {ela}
+MerchantOnMap_14 {~ navio ''mercante'' com soldados @<NationNameSK(sti(MerPrm.ination))> totalmente armados escondidos no porão. Mas @<pchar.name> não se intimidou ~}
+MerchantOnMap_15 { }
+MerchantOnMap_16 { }
+MerchantOnMap_17 {, ~}
+MerchantOnMap_18 {ele}
+MerchantOnMap_19 {ela}
+MerchantOnMap_20 {~ simplesmente matou todos!}
+MerchantOnMap_21 { }
+MerchantOnMap_22 { }
+MerchantOnMap_23 { }
+MerchantOnMap_24 { }
+MerchantOnMap_25 { }
+MerchantOnMap_26 { }
+MerchantOnMap_27 { }
+MerchantOnMap_28 { }
+MerchantOnMap_29 {~ Assim é o nosso ousado pirata @<GetFullName(pchar)>.}
+MerchantOnMap_30 {Dizem que o ousado pirata - @<GetFullName(pchar)> começou a atacar navios mercantes de @<NationNameSK(sti(MerPrm.ination))>. Então nosso Governador Geral decidiu dar um fim nisso. Ele preparou um navio disfarçado de mercante com várias dezenas de soldados bem treinados da Europa e o enviou atrás dele. Mas o sanguinário pirata matou todos e mais uma vez escapou da justiça!}

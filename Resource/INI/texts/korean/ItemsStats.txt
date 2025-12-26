@@ -1,0 +1,303 @@
+itm_stat_weight {무게}
+itm_stat_descr_weight {이 아이템의 무게(파운드)입니다. 너무 무거운 아이템은 버릴 수 있습니다.}
+itm_stat_rat_poison {쥐약}
+itm_stat_descr_rat_poison {쥐로 인한 상품 손상을 막아줍니다.}
+itm_stat_clock2 {유용한 도구}
+itm_stat_descr_clock2 {장착 시 항해술 성장 속도 증가.}
+itm_stat_duration {지속 시간}
+itm_stat_descr_duration {이 아이템 효과 지속 시간.}
+itm_stat_damageReduction {피해 감소}
+itm_stat_descr_damageReduction {이 수치는 모든 계산 전에 받는 피해에서 차감됩니다.}
+itm_stat_attack {피해}
+itm_stat_descr_attack
+{
+베기: #sattack.fast.min#–#sattack.fast.max# 피해
+찌르기: #sattack.force.min#–#sattack.force.max# 피해
+광역 공격: #sattack.round.min#–#sattack.round.max# 피해
+강공격: #sattack.break.min#–#sattack.break.max# 피해
+}
+itm_stat_gundamage {화기 피해}
+itm_stat_descr_gundamage {원거리 전투의 피해량은 기술, 무기 특성, 탄약에 따라 달라집니다.}
+itm_stat_healAmount {치유}
+itm_stat_descr_healAmount {사용 시 회복되는 생명력량.}
+itm_stat_worldMapBonus {관측 반경}
+itm_stat_descr_worldMapBonus {함대가 월드 맵에서 보이는 반경에 대한 % 보너스.}
+itm_stat_radius {항해 거리}
+itm_stat_descr_radius {선박과 만 사이의 빠른 이동 거리 증가 거리(야드)입니다.}
+itm_stat_mainEffect {주요}
+itm_stat_secondaryEffect {부가}
+itm_stat_hat9 {죽은 것은}
+itm_stat_descr_hat9 {선체 손상으로 인한 전력 페널티 30% 감소}
+itm_stat_secondary_hat9 {죽지 않음}
+itm_stat_descr_secondary_hat9 {10% 확률로 총격 피해를 피할 수 있음}
+itm_stat_durability {내구도}
+itm_stat_hat1 {꾸준한 연습}
+itm_stat_descr_hat1 {경무기, 중무기, 중화기 경험치 획득량 10% 증가}
+itm_stat_hat2 {연쇄 살인마}
+itm_stat_descr_hat2 {근접무기로 적을 처치하면 에너지가 25% 회복됩니다.}
+itm_stat_hat3 {항해술 기초}
+itm_stat_descr_hat3 {항해술, 정확도, 수리 경험치 획득량이 10% 증가합니다.}
+itm_stat_hat4 {바다와 함께한 삶}
+itm_stat_descr_hat4 {모든 해양 기술의 경험치 획득량이 15% 증가합니다.}
+itm_stat_hat5 {멘토}
+itm_stat_descr_hat5 {함대 내 모든 선박의 선장에게 당신의 해상 기술이 적용되어, 기함을 제외한 모든 선박의 선원 및 장교 급여가 15% 감소합니다.}
+itm_stat_hat6 {이익 감각}
+itm_stat_descr_hat6 {3일마다 항구에 도착하면 자동으로 소규모 거래가 이루어집니다.}
+itm_stat_hat7 {굴러다니는 탄환}
+itm_stat_descr_hat7 {사격 시 10% 확률로 탄약이 소모되지 않음}
+itm_stat_hat8 {취기}
+itm_stat_descr_hat8 {럼과 와인은 체력을 50% 더 회복합니다.}
+itm_stat_hat10 {병사의 기지}
+itm_stat_descr_hat10 {이 모자가 피해를 막을 때마다 내구도가 1 감소합니다.}
+itm_stat_secondary_hat10 {재활용}
+itm_stat_descr_secondary_hat10 {파괴되면 주요 재료를 돌려받아 다시 제작할 수 있습니다.}
+itm_stat_hat11 {포옹}
+itm_stat_descr_hat11
+{
+지구력 +2  
+근접무기로 적을 처치하면 에너지가 25% 회복됩니다.
+}
+itm_stat_potion6 {회복력}
+itm_stat_descr_potion6 {이 물약을 마시면 전투 중 기절을 막아줍니다.}
+itm_stat_berserker_potion {원시의 분노}
+itm_stat_descr_berserker_potion
+{
+즉각적으로 강한 힘과 지구력을 끌어올리고, 민첩성과 반응 속도를 크게 높이며, 통증을 둔화시키고 공격성을 증가시킵니다.
+효과는 최대 12초간 지속되며, 1분에 한 번만 사용할 수 있습니다.
+}
+itm_stat_mangarosafast {회오리}
+itm_stat_descr_mangarosafast {이 물약을 사용하면 모든 무기의 공격 속도가 5% 증가합니다.}
+itm_stat_mangarosapower {매의 눈}
+itm_stat_descr_mangarosapower {이 물약을 마시면 함포 재장전 속도가 빨라집니다.}
+itm_stat_mangarosatotal {승격}
+itm_stat_descr_mangarosatotal {이 물약을 사용하면 함대 전력이 15% 증가합니다.}
+itm_stat_vodka {난투전}
+itm_stat_descr_vodka {화기로 근접 공격 시 피해가 20% 증가하고, 총검 사용 시 추가로 20% 증가합니다. 화기 공격은 적의 체력을 소모시킵니다. 기절 지속 시간이 감소합니다.}
+itm_stat_amulet_1 {키틴}
+itm_stat_descr_amulet_1 {천갑과 가죽은 2배로 방어하며, 강화 갑옷은 적의 치명타 피해를 추가로 10% 감소시킵니다.}
+itm_stat_amulet_10 {두 번째 기회}
+itm_stat_descr_amulet_10 {적 함포로 인한 선원 피해 10% 감소.}
+itm_stat_amulet_11 {부족 보호}
+itm_stat_descr_amulet_11 {머스킷 일제사격으로 인한 선원 피해 10% 감소.}
+itm_stat_amulet_2 {은신처}
+itm_stat_descr_amulet_2 {활성화된 기독교 호신부와 부적마다(이 아이템 포함) 화기 피해가 5% 감소합니다.}
+itm_stat_amulet_3 {방어}
+itm_stat_descr_amulet_3 {치명타 피해 방어력이 15% 증가합니다.}
+itm_stat_amulet_4 {죽음의 춤}
+itm_stat_descr_amulet_4 {이 이교도 호신부와 부적 하나마다 무기 공격 속도가 2.5% 증가합니다.}
+itm_stat_amulet_5 {성급함}
+itm_stat_descr_amulet_5 {함포 재장전 시간이 15% 감소합니다.}
+itm_stat_amulet_6 {안수}
+itm_stat_descr_amulet_6 {치유 속도 15% 증가.}
+itm_stat_amulet_7 {활기찬 녀석}
+itm_stat_descr_amulet_7 {생명력이 15% 증가하고, 자연 회복 속도가 두 배가 됩니다.}
+itm_stat_amulet_8 {요새화}
+itm_stat_descr_amulet_8 {선체 피해 10% 감소}
+itm_stat_amulet_9 {패치}
+itm_stat_descr_amulet_9 {선박 돛 피해 10% 감소.}
+itm_stat_indian_1 {취약성}
+itm_stat_descr_indian_1 {헤드샷 피해 20% 증가.}
+itm_stat_indian_10 {독}
+itm_stat_descr_indian_10 {베기마다 15% 확률로 적을 중독시킵니다.}
+itm_stat_indian_11 {연막 작전}
+itm_stat_descr_indian_11 {화려한 아이템마다 기만 확률이 5% 증가합니다.}
+itm_stat_indian_2 {확인}
+itm_stat_descr_indian_2 {화약을 정확히 계량하는 기술로 탄환과 산탄 피해가 10% 증가하며, 과충전 및 철갑 탄약에는 추가로 5% 더 증가합니다.}
+itm_stat_indian_3 {피의 갈망}
+itm_stat_descr_indian_3 {치명타 피해량이 15% 증가합니다.}
+itm_stat_indian_4 {예비동작}
+itm_stat_descr_indian_4 {중화기는 강공격 시 15% 더 높은 피해를 줍니다.}
+itm_stat_indian_5 {균형자}
+itm_stat_descr_indian_5 {선원 차이가 접현에 미치는 영향이 30% 감소합니다.}
+itm_stat_indian_6 {체}
+itm_stat_descr_indian_6 {접현 전 머스킷 일제사격의 적 피해가 10% 증가합니다.}
+itm_stat_indian_9 {조준!}
+itm_stat_descr_indian_9 {선박 이동 속도와 함포 조준이 15% 증가합니다.}
+itm_stat_indian_8 {발사!}
+itm_stat_descr_indian_8 {함포 피해 10% 증가}
+itm_stat_obereg_1 {망치...}
+itm_stat_descr_obereg_1 {해상이나 전투 중 수리 시 목재와 돛감 소모가 15% 감소합니다. 효과는 중첩됩니다.}
+itm_stat_obereg_2 {...그리고 못}
+itm_stat_descr_obereg_2 {해상이나 전투 중 수리 시 목재와 돛감 소모량이 15% 감소합니다. 효과 중첩.}
+itm_stat_indian_7 {집중}
+itm_stat_descr_indian_7 {에너지와 회복 속도가 12% 증가합니다.}
+itm_stat_obereg_10 {손재주}
+itm_stat_descr_obereg_10 {선박 기동성이 15% 증가합니다.}
+itm_stat_obereg_11 {보레아스}
+itm_stat_descr_obereg_11 {선수각이 15% 변경되어 바람을 더 가까이 타고 항해할 수 있습니다.}
+itm_stat_obereg_3 {역기 들기}
+itm_stat_descr_obereg_3 {소지 중량이 15% 증가합니다.}
+itm_stat_obereg_4 {익명}
+itm_stat_descr_obereg_4 {캐릭터 은신이 #smodifiers.SkillSneak#만큼 증가합니다.}
+itm_stat_obereg_5 {부적}
+itm_stat_descr_obereg_5 {캐릭터의 기회주의가 #smodifiers.SkillFortune#만큼 증가합니다.}
+itm_stat_obereg_6 {설득}
+itm_stat_descr_obereg_6 {캐릭터 리더십이 #smodifiers.SkillLeadership#만큼 증가합니다.}
+itm_stat_obereg_7 {바다의 아이}
+itm_stat_descr_obereg_7 {캐릭터의 항해술이 #smodifiers.SkillSailing#만큼 증가합니다.}
+itm_stat_obereg_8 {이익}
+itm_stat_descr_obereg_8 {캐릭터의 교역이 #smodifiers.SkillCommerce#만큼 증가합니다.}
+itm_stat_obereg_9 {바람의 신}
+itm_stat_descr_obereg_9 {선박 속도가 10% 증가합니다.}
+itm_stat_totem_01 {강철 위장}
+itm_stat_descr_totem_01 {음침한 곳이나 소란스러운 무리에서 만취로 인한 기억 상실을 막아줍니다. 치유 물약 사용 시 체력이 감소하지 않습니다.}
+itm_stat_totem_02 {지배자}
+itm_stat_descr_totem_02 {노예 반란의 발생 확률과 손실이 감소하고, 항복 시 포로 수가 증가합니다.}
+itm_stat_totem_03 {플레이어}
+itm_stat_descr_totem_03 {정사로 인한 치유 효과가 두 배가 됩니다.}
+itm_stat_totem_04 {타고난 리더}
+itm_stat_descr_totem_04 {장교의 충성도가 전체 기간 동안 고정됩니다.}
+itm_stat_totem_05 {무적}
+itm_stat_descr_totem_05 {적의 치명타 피해가 $modifierPercent(CritIncomingDamageReduction) 감소합니다.}
+itm_stat_totem_06 {짐말}
+itm_stat_descr_totem_06 {소지 한도를 초과해도 캐릭터가 느려지거나 불이익을 받지 않습니다.}
+itm_stat_totem_07 {소환}
+itm_stat_descr_totem_07
+{
+새 지원자는 선원에게 빚이 있어도 더 낮은 가격에 합류합니다.
+주인공만 사용할 수 있습니다. 선술집의 모집 인원이 5% 증가합니다.
+}
+itm_stat_totem_08 {직접 참여}
+itm_stat_descr_totem_08 {조준 해상 사격 시 피해량 10% 증가.}
+itm_stat_totem_09 {훈련 경보}
+itm_stat_descr_totem_09 {승무원 훈련 속도 2배 증가.}
+itm_stat_totem_10 {태즈메이니아 데블}
+itm_stat_descr_totem_10 {중무기는 광역 공격 시 15% 추가 피해를 줍니다.}
+itm_stat_totem_11 {흡혈}
+itm_stat_descr_totem_11 {공격 시 적의 에너지를 흡수합니다.}
+itm_stat_totem_12 {송곳니}
+itm_stat_descr_totem_12 {경무기는 빠른 공격 시 15% 더 높은 피해를 줍니다.}
+itm_stat_totem_13 {카드 사기꾼}
+itm_stat_descr_totem_13
+{
+필요한 카드를 뽑고 원하는 숫자를 굴릴 확률이 크게 증가합니다.
+행운 +1.
+}
+itm_stat_knife_01 {비밀}
+itm_stat_descr_knife_01 {이 단검은 강력한 숨겨진 힘을 지녔습니다. 부적으로 가슴에 지니면 죽음을 이겨낼 수 있습니다.}
+itm_stat_knife_02 {수호자}
+itm_stat_descr_knife_02 {12% 확률로 총격을 회피합니다. 효과 중첩.}
+itm_stat_knife_03 {행운아}
+itm_stat_descr_knife_03 {기본 치명타 확률 3% 및 치명타 피해 10% 증가.}
+itm_stat_talisman1 {순서}
+itm_stat_descr_talisman1 {상품이 설치류로부터 상하지 않도록 보호합니다.}
+itm_stat_talisman2 {잔잔함}
+itm_stat_descr_talisman2 {폭풍 지역 진입을 피하거나, 폭풍 중 돛과 선체 피해를 줄여줍니다.}
+itm_stat_talisman3 {물로 식히기}
+itm_stat_descr_talisman3 {함포 폭발을 방지합니다.}
+itm_stat_talisman4 {독재}
+itm_stat_descr_talisman4 {과적 시 선원 사기 저하를 줄이고, 하루 럼 소모량을 감소시킵니다.}
+itm_stat_talisman6 {겸손}
+itm_stat_descr_talisman6 {선상 식량 소비량이 25% 감소합니다.}
+itm_stat_talisman7 {단단한 껍질}
+itm_stat_descr_talisman7
+{
+선박 수리 속도 2배, 자원 30% 절약.  
+돛과 선체 피해 5% 감소.
+}
+itm_stat_talisman8 {미트리다테}
+itm_stat_descr_talisman8 {적 무기로 인한 중독을 막아줍니다.}
+itm_stat_talisman9 {근속}
+itm_stat_descr_talisman9
+{
+프랑스 식민지에서 선원 모집이 +15% 증가합니다.  
+프랑스 매춘부 출입이 무료이며 리더십이 +1 증가합니다.
+}
+itm_stat_talisman10 {포세이돈}
+itm_stat_descr_talisman10 {물속에서 오랫동안 숨을 참을 수 있고, 끓는 물로부터 보호합니다.}
+itm_stat_talisman11 {항스트레스}
+itm_stat_descr_talisman11 {모든 개인 및 선박 기술이 2만큼 증가합니다.}
+itm_stat_talisman12 {면역}
+itm_stat_descr_talisman12 {현재 체력 수치를 고정합니다.}
+itm_stat_talisman13 {저장癖}
+itm_stat_descr_talisman13 {이상하게 무거운 짐을 더 잘 들 수 있게 해줍니다.}
+itm_stat_talisman14 {신호灯}
+itm_stat_descr_talisman14 {항해술이 15만큼 증가합니다.}
+itm_stat_talisman15 {공포의 명성}
+itm_stat_descr_talisman15 {함대 전력을 15% 증가시킵니다. 크롬웰 기병대 아이언사이드의 목수건으로 만들어졌습니다.}
+itm_stat_talisman16 {정글 전사}
+itm_stat_descr_talisman16 {이국적 무기는 15% 더 많은 피해를 줍니다}
+itm_stat_talisman17 {신앙의 방패}
+itm_stat_descr_talisman17 {선원 피해가 $ctxHasAttr(QBonus.max|15|5) % 감소하며, *Holy Mercy*에서는 방어 기술이 10 증가합니다. 정의로운 길을 완료하면 피해 감소 효과가 향상됩니다.}
+itm_stat_talisman18 {진실을 찾아서}
+itm_stat_descr_talisman18 {발견한 보물마다 선원 머스킷 일제사격 위력이 1% 증가하고 산탄 피해가 2% 증가합니다.}
+itm_stat_talisman19 {기억하라}
+itm_stat_descr_talisman19 {$GetYorickLoc(_descr)}
+itm_stat_talisman20 {차르를 위하여!}
+itm_stat_descr_talisman20 {화기 조준 속도 15% 증가, 최대 조준 피해 20% 증가, 재장전 속도 10% 증가, 헤드샷 피해 20% 증가.}
+itm_stat_talisman21 {상호 책임}
+itm_stat_descr_talisman21 {2등급까지의 선박에서 밀수업자와 거래할 수 있습니다.}
+itm_stat_secondary_hat1 {적응}
+itm_stat_descr_secondary_hat1 {직도 빠른 공격과 곡도 베기 공격이 5% 더 높은 피해를 줍니다.}
+itm_stat_secondary_hat2 {관성}
+itm_stat_descr_secondary_hat2 {짧은 무기의 광역 공격과 긴 무기의 강공격이 7% 더 빠르게 발동됩니다.}
+itm_stat_secondary_hat3 {언변가}
+itm_stat_descr_secondary_hat3 {선술집의 선원 수가 늘어나고 고용 비용이 5% 감소합니다.}
+itm_stat_secondary_hat4 {프로이센식 훈련}
+itm_stat_descr_secondary_hat4 {포격 정확도가 10% 증가합니다.}
+itm_stat_secondary_hat5 {프리미어 리그}
+itm_stat_descr_secondary_hat5 {해당 전열함에 대한 국가의 적대 행위를 중단합니다.}
+itm_stat_secondary_hat7 {보물 사냥꾼}
+itm_stat_descr_secondary_hat7 {보물 가치가 10% 증가합니다.}
+itm_stat_secondary_hat8 {카리브의 저주}
+itm_stat_descr_secondary_hat8 {위협 레벨마다 선박 유지비가 2% 감소하고 월드맵 이동 속도가 0.25% 증가합니다.}
+itm_stat_secondary_hat11 {정신동요}
+itm_stat_descr_secondary_hat11 {최근 2주 내에 친밀한 관계가 있었다면 공격 속도가 5% 증가합니다.}
+itm_stat_blade_SP_3low {잠재력 미개방}
+itm_stat_descr_blade_SP_3low {이 검은 아직 완전한 힘을 지니지 못했습니다—무언가가 부족합니다...}
+itm_stat_blade_SP_3 {사신}
+itm_stat_descr_blade_SP_3 {모든 원천의 치유가 차단됩니다. 잃은 생명력 2%마다 공격력이 1.5%, 에너지 재생이 1.75% 증가합니다.}
+itm_stat_blade_41 {유연성}
+itm_stat_descr_blade_41 {가장 높은 근접무기 숙련도에서 추가 피해를 얻습니다.}
+itm_stat_lacrima_patris {의로운 길}
+itm_stat_descr_lacrima_patris {도적과 악당 10명을 처치할 때마다 피해가 2 증가하고, Mercy 캐논의 사거리가 1% 증가합니다.}
+itm_stat_blade_WR {근면}
+itm_stat_descr_blade_WR {전투 중 체력 회복 속도가 5배 증가합니다.}
+itm_stat_suit5 {견장}
+itm_stat_descr_suit5 {프랑스 공로 보유 시 매춘굴 무료 이용 및 프랑스 식민지에서 모집 인원 15% 증가.}
+itm_stat_suit4 {악명}
+itm_stat_descr_suit4 {이 복장은 모두에게 위협을 의미하며, 주인의 부츠마다 칼이 숨겨져 있습니다. 함대 전력이 13% 증가합니다. 위협 계산 시 모든 선박이 전투로 간주됩니다.}
+itm_stat_cirass10 {장비 설정}
+itm_stat_descr_cirass10 {이 갑옷에는 실용적인 탄약 파우치가 달려 있습니다. 재장전 속도 15% 증가.}
+itm_stat_underwater {부피}
+itm_stat_descr_underwater {이 갑옷은 너무 무거워서 착용 시 걷는 속도로만 이동할 수 있습니다.}
+itm_stat_pistol11 {지옥의 자식}
+itm_stat_descr_pistol11 {이 무기는 성능보다 존재 자체가 더 놀랍다. 중화기 기술이 20 증가한다.}
+itm_stat_pistol12 {분해 가능}
+itm_stat_descr_pistol12 {이 화기는 조립과 분해가 가능해 한손 또는 양손으로 사용할 수 있습니다.}
+itm_stat_mushket8 {분해형}
+itm_stat_descr_mushket8 {이 화기는 조립과 분해가 가능해 한손 또는 양손으로 사용할 수 있습니다.}
+itm_stat_spyglassSP3 {징벌의 시선}
+itm_stat_descr_spyglassSP3 {이 망원경을 통해 적 선장의 두려움을 읽고, 항복할 준비가 되었는지 알 수 있습니다.}
+itm_stat_reloadTime {재장전 시간}
+itm_stat_descr_reloadTime {다음 탄환을 장전할 시간입니다.}
+itm_stat_kaleuche_amulet2 {공격 부적}
+itm_stat_descr_kaleuche_amulet2 {차비나비 신전 몬스터가 근접무기에 취약해지고, 그들의 공격에 대한 보호를 얻습니다. 모든 무기 종류의 기술이 25% 증가합니다.}
+itm_stat_kaleuche_amulet3 {방어 부적}
+itm_stat_descr_kaleuche_amulet3 {차비나비 신전 몬스터에게 무기 피해를 입힐 수 있고, 그들의 공격으로부터 보호를 받습니다. 모든 무기 유형의 피해를 25% 감소시키며 중독을 막아줍니다.}
+itm_stat_descr_lacrima_patris_bonus
+{
+~
+~
+현재 보너스: $number($attr($context.KillerBonus.appliedbonus)) 피해 및 $number($attr($context.KillerBonus.RangeBonus))% 사거리.
+}
+itm_stat_blade_WR_1 {근면}
+itm_stat_descr_blade_WR_1 {전투 중 체력 회복 속도가 5배 증가합니다.}
+itm_stat_secondary_hat6 {존경받는 교섭가}
+itm_stat_descr_secondary_hat6 {함대 내 상선의 전력을 40% 증가시키고, 상선으로부터 도주 시 페널티를 3 감소시킵니다.}
+itm_stat_KhaelRoa_item {재규어}
+itm_stat_descr_KhaelRoa_item {화기류로 주는 피해가 10배 증가합니다.}
+itm_stat_indian_poison {타이노}
+itm_stat_descr_indian_poison {가벼운 상처라도 100% 확률로 해독제로 치료할 수 없는 치명적 중독을 일으키며, 짧은 시간 내에 사망에 이르게 합니다.}
+itm_stat_PerksPotion {망각}
+itm_stat_descr_PerksPotion {캐릭터가 익힌 모든 특성을 초기화합니다. 사용 후에는 특성과 기술에 대한 기억이 사라지지만, 능력은 남아 있습니다 — 마치 몸은 이룬 것을 기억하지만, 마음은 잊은 듯합니다.}
+itm_stat_descr_talisman19_InSlot {선체가 2%씩 손실될 때마다 함포 속도와 피해가 각각 0.75%, 0.5% 증가합니다.}
+itm_stat_descr_talisman19_InInventory {인벤토리에 보관하면 모든 장교가 불사신이 됩니다.}
+itm_stat_piratesJournal_1 {습격선}
+itm_stat_descr_piratesJournal_1 {글로벌 맵 속도가 3% 증가합니다. 기함이 'Amsterdam'일 경우 보너스가 두 배가 됩니다. 최고의 해적 전통입니다.}
+itm_stat_piratesJournal_2 {장물아비}
+itm_stat_descr_piratesJournal_2 {도난품 페널티가 8% 감소합니다. 기함이 'Amsterdam'일 경우 보너스가 두 배가 됩니다.}
+itm_stat_piratesJournal_3 {자급자족}
+itm_stat_descr_piratesJournal_3 {해상 수리 효율이 30% 증가합니다. 기함이 'Amsterdam'일 경우 보너스가 두 배가 됩니다.}
+itm_stat_pistol15 {작지만 강력함}
+itm_stat_descr_pistol15 {이 권총을 뽑거나 집어넣는 속도가 15% 빨라집니다. 명중 시 적을 강하게 밀쳐냅니다.}

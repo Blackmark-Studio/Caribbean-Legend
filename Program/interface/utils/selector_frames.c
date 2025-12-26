@@ -8,7 +8,7 @@ void InitSelectors(string optionName, string selectorName, ref curValue)
 }
 
 // Заполняем тултип о правой кнопке мыши
-bool HandleSelectorDescription(string nodeName, string header, string bodyText, string optionName, string selectorName)
+bool HandleSelectorDescription(ref nodeName, ref header, ref bodyText, string optionName, string selectorName)
 {
 	if (!HasSubStr(&nodeName, selectorName)) return false; // нода должна содержать имя селектора
 	header = XI_ConvertString("Options_" + optionName);
@@ -49,9 +49,9 @@ void SetActionDirection(int actionIndex, ref direction)
 }
 
 // Устанавливаем селектор по умолчанию
-void SetSelectorDefault(string optionName, string selectorName, int defaultValue, int variableToUpdate)
+void SetSelectorDefault(string optionName, string selectorName, int defaultValue, ref variableToUpdate)
 {
 	InterfaceStates.(optionName) = defaultValue;
 	variableToUpdate = defaultValue;
-	SetSelectorNewTextValue(&optionName, &selectorName, &defaultValue);
+	SetSelectorNewTextValue(optionName, selectorName, defaultValue);
 }

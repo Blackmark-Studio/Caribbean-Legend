@@ -57,6 +57,7 @@ void ProcessDialogEvent()
 			ChangeCharacterAddressGroup(pchar, "shore67", "goto", LAi_FindFarFreeLocator("goto", locx, locy, locz));
 			LAi_ActorAnimation(Pchar, "Ground_sitting", "", 3.5);
 			DoQuestCheckDelay("Saga_JessikaFirstKick_2", 3.5);
+			SetCameraShake(4.0, 12.0, 0.1, 0.1, 0.05, true, false, -1);
 		break;
 		
 		case "stage_2":
@@ -77,6 +78,7 @@ void ProcessDialogEvent()
 			ChangeCharacterAddressGroup(pchar, "shore67", "goto", LAi_FindNearestFreeLocator("goto", locx, locy, locz));
 			LAi_ActorAnimation(Pchar, "Ground_sitting", "", 3.5);
 			DoQuestCheckDelay("Saga_JessikaSecondKick_2", 3.5);
+			SetCameraShake(4.0, 12.0, 0.1, 0.1, 0.05, true, false, -1);
 		break;
 		
 		case "stage_3":
@@ -99,6 +101,7 @@ void ProcessDialogEvent()
 			LAi_ActorTurnToLocator(pchar, "quest", "bridge1");
 			LAi_ActorAnimation(Pchar, "Ground_sitting", "", 3.5);
 			DoQuestCheckDelay("Saga_JessikaThirdKick_2", 3.5);
+			SetCameraShake(4.0, 12.0, 0.1, 0.1, 0.05, true, false, -1);
 		break;
 		
 		case "stage_4":

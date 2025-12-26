@@ -208,6 +208,13 @@ void ProcessDialogEvent()
 	//--> ----------------------------------- офицерский блок ------------------------------------------
 	case "tonzag_officer":
 		dialog.text = "Te escucho, capitán. ¿Qué tienes que decir?";
+		if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+		{
+			dialog.text = "Te ves bastante sombrío, capitán. ¿Ha pasado algo?";
+			Link.l1 = "Tengo que dejar el archipiélago. En dos semanas. En el barco de otro, como pasajero.";
+			Link.l1.go = "SharlieEpilog_Tonzag_1";
+			break;
+		}
 		if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 		{
 			Link.l4 = "Hercule, voy a la antigua ciudad india de Tayasal y, lo que es aún más inusual, mi camino pasa por una estatua de teletransportación. ¿Te unirás a mí?";
@@ -339,7 +346,7 @@ void ProcessDialogEvent()
 			sBullet = rItm.type.(sAttr).bullet;
 			rItem = ItemsFromID(sBullet);
 			attrL = "l" + i;
-			Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+			Link.(attrL) = GetItemName(rItem);
 			;
 			Link.(attrL).go = "SetGunBullets1_" + i;
 		}
@@ -355,7 +362,7 @@ void ProcessDialogEvent()
 		LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 		NextDiag.CurrentNode = NextDiag.TempNode;
 		rItem = ItemsFromID(sBullet);
-		notification(GetFullName(NPChar) + " " + XI_ConvertString("AmmoSelectNotif") + GetConvertStr(rItem.name, "ItemsDescribe.txt") + "", "AmmoSelect");
+		notification(GetFullName(NPChar) + " " + XI_ConvertString("AmmoSelectNotif") + GetItemName(rItem) + "", "AmmoSelect");
 		DeleteAttribute(NPChar, "SetGunBullets");
 		DialogExit();
 		break;
@@ -920,6 +927,41 @@ void ProcessDialogEvent()
 		link.l1.go = "exit";
 
 		AddDialogExitQuestFunction("Tonzag_ResetTonzag");
+		break;
+		
+	// Эпилог
+		case "SharlieEpilog_Tonzag_1":
+			dialog.text = "¡Ja! No esperaba escuchar eso de ti. ¿Y qué sigue, unirte a un monasterio?";
+			link.l1 = "Hablo en serio, "+npchar.name+". La salud de mi padre se deteriora cada día. Quiero verlo antes… de que sea demasiado tarde.";
+			link.l1.go = "SharlieEpilog_Tonzag_2";
+		break;
+
+		case "SharlieEpilog_Tonzag_2":
+			dialog.text = "¿Qué tiene de malo nuestro barco? ¿O de verdad piensas que el Atlántico ya es demasiado para nosotros?";
+			link.l1 = "He estado pensando en desembarcar y establecerme en tierra firme. Aún no puedo imaginar cómo sería vivir sin el mar. Pero si ese día realmente llega, quiero estar preparado. Quiero entender con qué tendré que luchar dentro de mí.";
+			link.l1.go = "SharlieEpilog_Tonzag_3";
+		break;
+
+		case "SharlieEpilog_Tonzag_3":
+			dialog.text = "Por segunda vez en esta conversación me has dejado sin palabras. ¿Realmente estás listo para cambiar el viento en tus velas por una chimenea y un tazón de gachas caliente?";
+			link.l1 = "El empeoramiento de la enfermedad de mi padre me recordó que ninguno de nosotros es eterno. Aún no he decidido qué vendrá después. Por ahora — solo el camino a casa. Y… quería proponerte que vinieras conmigo. Como amigo. Pero si dices que no — lo entenderé. No voy a convencerte.";
+			link.l1.go = "SharlieEpilog_Tonzag_4";
+		break;
+
+		case "SharlieEpilog_Tonzag_4":
+			dialog.text = "¿Rechazar? ¡Que una bala de cañón me rompa el cuello si te dejo ir solo! No me conoces bien, capitán.";
+			link.l1 = "Esa es exactamente la respuesta que esperaba. La vieja Francia ya no es lo que era. Está demasiado vacía, aburrida, extraña… Dudo que quede allí alguien a quien pueda llamar amigo. En dos semanas zarparemos, y no quiero perder tiempo. Organicemos una fiesta en la taberna para celebrar la partida. ¿Qué dices?";
+			link.l1.go = "SharlieEpilog_Tonzag_5";
+		break;
+
+		case "SharlieEpilog_Tonzag_5":
+			dialog.text = "¡Ja! ¡Si crees que diré que no — te vas a esperar mucho!";
+			link.l1 = "Entonces está decidido — nos vemos en la taberna una vez que termine con mis asuntos.";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Tonzag_officer";
+			npchar.quest.SharlieEpilog_FarewellOfficers = true;
+			pchar.questTemp.SharlieEpilog_Tonzag = true;
+			pchar.questTemp.SharlieEpilog_Friends = sti(pchar.questTemp.SharlieEpilog_Friends) + 1;
 		break;
 	}
 }

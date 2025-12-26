@@ -11,7 +11,10 @@ itm_stat_descr_damageReduction {Ten procent jest odejmowany od otrzymanych obra�
 itm_stat_attack {Obrażenia}
 itm_stat_descr_attack
 {
-Uderzenie: #sattack.fast.min#–#sattack.fast.max# obrażeńPchnięcie: #sattack.force.min#–#sattack.force.max# obrażeńAtak okrężny: #sattack.round.min#–#sattack.round.max# obrażeńUderzenie przebijające: #sattack.break.min#–#sattack.break.max# obrażeń
+Cięcie: #sattack.fast.min#–#sattack.fast.max# obrażeń
+Szybki atak: #sattack.force.min#–#sattack.force.max# obrażeń
+Atak grupowy: #sattack.round.min#–#sattack.round.max# obrażeń
+Ciężki atak: #sattack.break.min#–#sattack.break.max# obrażeń
 }
 itm_stat_gundamage {Obrażenia od broni palnej.}
 itm_stat_descr_gundamage {Obrażenia zadawane w walce dystansowej zależą od umiejętności, parametrów broni i amunicji.}
@@ -23,9 +26,9 @@ itm_stat_radius {Zasięg żeglugi}
 itm_stat_descr_radius {Liczba jardów, o którą zwiększa się zasięg szybkiej podróży między statkami a zatokami.}
 itm_stat_mainEffect {Główny}
 itm_stat_secondaryEffect {Poboczny}
-itm_stat_hat9 {Co martwe}
+itm_stat_hat9 {Co martwe...}
 itm_stat_descr_hat9 {Zmniejsza karę za uszkodzenia statku na siłę o 30%}
-itm_stat_secondary_hat9 {Nie może umrzeć}
+itm_stat_secondary_hat9 {...umrzeć nie może}
 itm_stat_descr_secondary_hat9 {Pozwala uniknąć obrażeń od strzału w 10% przypadków}
 itm_stat_durability {Wytrzymałość}
 itm_stat_hat1 {Ciągła praktyka}
@@ -51,14 +54,16 @@ itm_stat_descr_secondary_hat10 {Po zniszczeniu przedmiot zwraca swój podstawowy
 itm_stat_hat11 {Uścisk}
 itm_stat_descr_hat11
 {
-Wytrzymałość +2Zabicie wroga bronią białą przywraca 25% energii.
+Wytrzymałość +2
+Zabicie wroga bronią białą przywraca 25% energii.
 }
 itm_stat_potion6 {Wytrzymałość}
 itm_stat_descr_potion6 {Wypicie tej mikstury chroni przed ogłuszeniem w walce.}
 itm_stat_berserker_potion {Pierwotna furia}
 itm_stat_descr_berserker_potion
 {
-Powoduje natychmiastowy przypływ ogromnej siły i wytrzymałości, znacznie zwiększa zręczność i szybkość reakcji, tłumi ból i podnosi agresję.Działa maksymalnie dwanaście sekund i może być użyte tylko raz na minutę.
+Powoduje natychmiastowy przypływ ogromnej siły i wytrzymałości, znacznie zwiększa zręczność i szybkość reakcji, tłumi ból i podnosi agresję.
+Działa maksymalnie dwanaście sekund i może być użyte tylko raz na minutę.
 }
 itm_stat_mangarosafast {Trąba}
 itm_stat_descr_mangarosafast {Użycie tej mikstury zwiększa szybkość ataku dowolną bronią o 5%.}
@@ -149,7 +154,8 @@ itm_stat_descr_totem_06 {Przekroczenie limitu udźwigu nie spowalnia postaci ani
 itm_stat_totem_07 {Przyzwanie}
 itm_stat_descr_totem_07
 {
-Nowi ochotnicy dołączą za niższą cenę, nawet jeśli mają długi wobec załogi.Może użyć tylko główny bohater. Zwiększa liczbę rekrutów w tawernie o 5%.
+Nowi ochotnicy dołączą za niższą cenę, nawet jeśli mają długi wobec załogi.
+Może użyć tylko główny bohater. Zwiększa liczbę rekrutów w karczmie o 5%.
 }
 itm_stat_totem_08 {Osobiste zaangażowanie}
 itm_stat_descr_totem_08 {Zwiększa obrażenia przy celowanym ogniu morskim o 10%.}
@@ -164,7 +170,8 @@ itm_stat_descr_totem_12 {Broń Lekka zadaje 15% więcej obrażeń szybkimi ataka
 itm_stat_totem_13 {Szuler}
 itm_stat_descr_totem_13
 {
-Znacząco zwiększa szansę na dobranie właściwej karty i wyrzucenie potrzebnej liczby.Daje +1 do Sukcesu.
+Znacząco zwiększa szansę na dobranie właściwej karty i wyrzucenie potrzebnej liczby.
+Daje +1 do Sukcesu.
 }
 itm_stat_knife_01 {Tajemnica}
 itm_stat_descr_knife_01 {Ten sztylet skrywa wielką moc. Noszony na piersi jako talizman, potrafi pokonać śmierć.}
@@ -185,14 +192,16 @@ itm_stat_descr_talisman6 {Pomaga oszczędzać prowiant na statku, zmniejszając 
 itm_stat_talisman7 {Twardy Pancerz}
 itm_stat_descr_talisman7
 {
-Podwaja szybkość naprawy statku i oszczędza 30% zasobów.Zmniejsza uszkodzenia żagli i kadłuba o 5%.
+Podwaja szybkość naprawy statku i oszczędza 30% zasobów.
+Zmniejsza uszkodzenia żagli i kadłuba o 5%.
 }
 itm_stat_talisman8 {Mitridat}
 itm_stat_descr_talisman8 {Chroni przed zatruciem bronią wroga.}
 itm_stat_talisman9 {Służba}
 itm_stat_descr_talisman9
 {
-Daje +15% do rekrutacji marynarzy w francuskich koloniach.Umożliwia darmowy wstęp do francuskich burdeli i zwiększa Dowodzenie o +1.
+Daje +15% do rekrutacji marynarzy w francuskich koloniach.
+Umożliwia darmowy wstęp do francuskich burdeli i zwiększa Dowodzenie o +1.
 }
 itm_stat_talisman10 {Posejdon}
 itm_stat_descr_talisman10 {Pozwala długo wstrzymywać oddech pod wodą i chroni przed wrzątkiem.}
@@ -241,7 +250,7 @@ itm_stat_descr_blade_SP_3 {Blokuje leczenie ze wszystkich źródeł. Za każde 2
 itm_stat_blade_41 {Elastyczność}
 itm_stat_descr_blade_41 {Zyskuje premię do obrażeń z najwyżej rozwiniętej umiejętności broni białej.}
 itm_stat_lacrima_patris {Droga Sprawiedliwego}
-itm_stat_descr_lacrima_patris {Za każde 10 zabitych bandytów i łotrów obrażenia rosną o 2, a zasięg dział Mercy o 1%.}
+itm_stat_descr_lacrima_patris {Za każde 10 zabitych bandytów i łotrów obrażenia rosną o 2, a zasięg dział Miłosierdzia o 1%.}
 itm_stat_blade_WR {Pilność}
 itm_stat_descr_blade_WR {Pięciokrotnie zwiększa szybkość regeneracji zdrowia w walce.}
 itm_stat_suit5 {Epolety}
@@ -268,7 +277,9 @@ itm_stat_kaleuche_amulet3 {Zaklęcie obronne}
 itm_stat_descr_kaleuche_amulet3 {Czyni monstra świątynnego Chavinavi podatnym na obrażenia zadawane bronią i zapewnia ochronę przed ich atakami. Zmniejsza otrzymywane obrażenia od dowolnego rodzaju broni o 25% i zapobiega zatruciu.}
 itm_stat_descr_lacrima_patris_bonus
 {
-~ ~ Aktualny bonus: $number($attr($context.KillerBonus.appliedbonus)) obrażeń i $number($attr($context.KillerBonus.RangeBonus))% zasięgu.
+~
+ ~
+ Aktualny bonus: $number($attr($context.KillerBonus.appliedbonus)) obrażeń i $number($attr($context.KillerBonus.RangeBonus))% zasięgu.
 }
 itm_stat_blade_WR_1 {Pilność}
 itm_stat_descr_blade_WR_1 {Pięciokrotnie zwiększa szybkość regeneracji zdrowia w walce.}

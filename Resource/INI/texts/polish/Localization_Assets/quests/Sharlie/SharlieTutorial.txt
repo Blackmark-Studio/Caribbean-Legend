@@ -3,7 +3,7 @@ SharlieTutorial_2 {Marynarz}
 SharlieTutorial_3 {Bosman}
 SharlieTutorial_4 {Skarbnik}
 SharlieTutorial_5 {Pirat}
-SharlieTutorial_6 {Ulysse}
+SharlieTutorial_6 { }
 SharlieTutorial_7 {Paul}
 SharlieTutorial_8 {Henry}
 SharlieTutorial_9 {Mathieu}

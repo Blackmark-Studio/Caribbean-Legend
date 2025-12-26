@@ -1,0 +1,170 @@
+Node0_title {Infiltração secreta}
+Node0_a_a {Você se infiltra na cidade, atracando sem fazer ruído na escuridão. $rand(À noite o porto cheira a podridão, sal e madeira. Em algum lugar, cabos rangem, uma vela estala, e cada som parece alto demais. Você segue pelo píer, evitando as manchas de luz dos lampiões.|A água no cais noturno é preta como piche. As luzes ainda bruxuleantes dos lampiões quase não se refletem nela, e a profundidade parece infinita. Tábuas úmidas rangem surdas sob seus pés, e você se pega andando no ritmo das ondas para disfarçar o ruído.|O porto noturno não dorme — apenas finge. O silêncio vibrante que o recebe, na verdade, está cheio de vida. Em algum ponto do escuro, marinheiros murmuram, vidro tilinta, uma mulher ri de leve. Um carregamento cai com estrondo num armazém; ouvem-se xingamentos e o canto das cigarras. A cada passo, você avança com mais confiança.)}
+Node0_a_b
+{
+Você se infiltra na cidade, deslizando em silêncio pelas portas entreabertas.
+$rand(
+Você para à sombra do muro, deixando os olhos se acostumarem. Além dos portões, a cidade soa diferente: clara, oca e ressonante, com ecos cortando o silêncio da noite. Em algum lugar a água pinga, ouvem-se passos e sussurros — a cidade parece estranha, mas viva.|
+A rua noturna além do portão parece vazia, mas é engano. O ar está cheio de ruídos, vozes distantes, movimento e o cheiro de comida de ontem. Você congela, funde-se às paredes e escuta.|
+Você dá alguns passos para longe do portão e para, dissolvendo-se na escuridão. A luz da lua cai sobre a cidade, criando sombras curiosas. Em algum lugar uma janela bate, uma placa range, uma risada ecoa e logo se perde na noite. Você é um estranho aqui.
+)
+}
+Node0_b_a {$rand(Um dos becos segue entre as casas como uma faixa escura e reta. Quase não chega luz ali, e você também não ouve sons suspeitos — nem vozes, nem passos, apenas silêncio e escuridão.| À esquerda estende-se uma ruela estreita, bem apertada entre as paredes. As janelas ao nível do chão estão fechadas com venezianas, as portas trancadas com pesados cadeados, e o lampião que deveria iluminar o beco quase se apagou.| Um dos passagens entre as casas parece vazio e abandonado. A entrada é marcada por barris cobertos de teias de aranha e sacos apodrecidos. Você acha que até escuta ratos.)}
+Node0_b_b {$rand(O único beco que leva ao objetivo é iluminado de forma irregular: a luz intensa de um lampião balançando se quebra nas paredes e esquinas, deixando sombras duras. Na lama, veem-se pegadas recentes de botas, e do fundo chegam fragmentos de vozes. O espaço parece vivo e imprevisível.| A passagem mais próxima entre as casas é longa e sinuosa, com toda uma série de ramificações e curvas. Lá dentro há muitas luzes fracas — a claridade vaza por portas e venezianas mal fechadas.| O beco a caminho da taverna serpenteia e se estreita, e o espaço já reduzido está entulhado de caixotes e tábuas podres. Sombras irregulares percorrem as paredes, como se uma fonte de luz se movesse mais ao fundo.)}
+Node0_c_a {$rand(A rua larga à frente contorna uma praça deserta e leva na direção da taverna. As lojas estão fechadas, as portas trancadas, e os lampiões iluminam com força cada cantinho.| A rua larga segue reta e mais à frente dá para ver perfeitamente cada pedestre. À noite são poucos — apenas alguns bêbados cambaleiam em direção à taverna onde esta rua termina.| A rua larga atravessa a cidade inteira, cercada por casas ricas e lojas. A luz intensa e patrulhas ocasionais da guarda tornam a rua segura para uma caminhada noturna.)}
+Node0_c_b
+{
+$rand(
+A rua larga atravessa a cidade inteira e segue cheia de vida apesar da hora tardia. Você ouve burburinho e barulho, como se alguém estivesse discutindo em voz alta.| 
+A rua larga contorna uma praça onde neste exato momento ocorre a troca da guarda — um sargento caminha diante de uma fileira de guardas e os distribui pelos postos.| 
+A rua central está incomumente movimentada para esta hora: chegou ao porto algum importante navio mercante, e guardas e carregadores vão e vêm pela rua.
+)
+}
+Node0_d {Você precisa escolher por qual caminho seguir até um lugar seguro. Pelas vielas estreitas, escondendo-se nas sombras, ou pela rua larga, tentando não chamar atenção?}
+Node0_a_action {Seguir pelos becos}
+Node0_b_action {Seguir pelas ruas principais}
+Node0_c_action {Voltar enquanto ainda há tempo}
+Node1_a {Você entra no beco esperando chegar à taverna sem incidentes}
+Node1_b_a
+{
+De repente, mais adiante no beco, você nota um pequeno posto montado junto ao muro. No espaço apertado entre as casas estão três guardas: um segura uma lanterna, outro escuta o silêncio, o terceiro encara a escuridão como se aguardasse um sinal. A passagem claramente não está bloqueada por acaso.
+Um deles ergue a cabeça de repente, encara você por um longo momento e brada: “Quem vem lá?”
+}
+Node1_b_b
+{
+De repente, você percebe movimento e vozes abafadas mais adiante no beco. Duas figuras mantêm uma terceira contra a parede: uma o segura pelo colarinho, a outra revira seus bolsos com habilidade. A vítima se debate sem gritar, como se temesse atrair problemas ainda maiores.
+Um dos ladrões se vira bruscamente, como se tivesse sentido algo. Seu olhar varre a escuridão e se detém na sua direção.
+}
+Node1_b_c
+{
+De repente, um baque surdo ecoa mais adiante no beco, como um saco de carne batendo na pedra. À luz da lua, você vê um homem desabar contra o muro e deslizar lentamente para baixo. Perto dali, alguém se ajoelha e limpa apressadamente uma lâmina na manga. Você está tão absorvido pela cena que não percebe a bota tocando um pedregulho traiçoeiro.
+Nesse momento, o assassino congela e levanta a cabeça bruscamente. Seus olhos vasculham a escuridão e se fixam na fonte do som. Você ainda não foi visto, mas ele claramente sentiu uma presença estranha.
+}
+Node1_c {A situação se agrava rapidamente — você ainda não foi notado, mas isso pode mudar a qualquer momento. É preciso decidir.}
+Node1_b_a_reaction {Ficar imóvel e prender a respiração}
+Node1_b_a_reaction_log_0 {Você se pressiona contra a parede fria e para de respirar. As sombras quebram sua silhueta, e o olhar do guarda desliza pelo beco sem encontrar nada a que se prender. Passa um segundo agonizante, depois mais um, e a tensão começa a diminuir. Por fim, o guarda desiste, culpando ratos e o vento, e eles voltam à sua tarefa.}
+Node1_b_a_reaction_log_1 {Você permanece imóvel junto à parede, mas no pior momento o pé escorrega traiçoeiramente na pedra úmida. O som é quase inaudível, mas suficiente. O guarda para, ergue o lampião e começa a varrer lentamente a luz pelas paredes e pelo chão.}
+Node1_b_a_reaction_factor {Autocontrole}
+Node1_b_b_reaction {Procurar um desvio}
+Node1_b_b_reaction_log_0 {Você percebe uma passagem lateral estreita entre as casas, quase engolida pela sombra. Parece desconfortável, mas transitável. Você se esgueira em silêncio, colado à parede, e desaparece do campo de visão. Os ladrões ficam para trás, sem perceber que alguém esteve ali.}
+Node1_b_b_reaction_log_1 {Você encontra uma passagem parecida, mas ela é estreita demais e cheia de entulho. Ao tentar se espremer, algo se move sob seu pé com um ruído baixo, porém traiçoeiro. O ladrão se vira novamente e agora olha diretamente para onde você tenta se esconder. Há um desvio, mas usá-lo sem risco já não é possível.}
+Node1_b_b_reaction_factor {Trilhas secretas}
+Node1_b_c_reaction {Arremessar uma pedra e distrair o assassino}
+Node1_b_c_reaction_log_0 {No escuro, você tateia até encontrar uma pedrinha e a arremessa com cuidado para longe de si. A pedra bate na parede com um estalo seco. O assassino se vira bruscamente em direção ao som, e por um instante o beco se livra de sua atenção.}
+Node1_b_c_reaction_log_1 {Você joga a pedra, mas ela acerta o canto de um prédio e ricocheteia para um lugar completamente diferente. O som fica perto demais. O assassino encara a escuridão com ainda mais atenção. Parece até que ele prende a respiração para tentar ouvir você.}
+Node1_b_c_reaction_factor {Distração}
+Node1_a_action {Escorregar pelo caminho}
+Node1_b_action {Consigo me mover de forma absolutamente silenciosa}
+Node1_success
+{
+Você consegue passar despercebido, ziguezagueando pelos becos, e por fim chega a um lugar seguro — a taverna da cidade.
+$rand(
+A cidade noturna e tensa recua, dando lugar à luz acolhedora e ao burburinho das vozes. Aqui você está em segurança.|
+Os becos ficam para trás junto com os olhares cautelosos e os ruídos da noite. À porta da taverna, a cidade volta a ser barulhenta e indiferente — quem sai daqui já não será visto como inimigo.
+)
+}
+Node1_success_action {Excelente!}
+Node2_a {Você sai para uma rua ampla, esperando chegar à taverna sem atrair atenção desnecessária.}
+Node2_b_a {$rand(No início tudo corre bem|No começo tudo parece tranquilo), mas no meio do caminho você encontra uma patrulha da cidade. Dois guardas caminham sem pressa, conversando em voz baixa, enquanto um terceiro fica um pouco atrás, observando a rua com atenção. Eles não bloqueiam seu caminho nem fazem sinais, mas o olhar de um deles permanece em você por mais tempo do que o normal, como se estivesse avaliando se você se encaixa nessa cena noturna.}
+Node2_b_b
+{
+Você percorre quase todo o trajeto sem problemas, mas no final se depara com um obstáculo inesperado.
+No meio da rua há um grupo de $rand(marinheiros|trabalhadores) embriagados. Eles riem alto, cantam, alguém joga cartas.
+Um deles percebe você e estreita os olhos, como se decidisse se você é dos seus ou não, enquanto os outros se aproximam aos poucos, cercando-o. O grupo não demonstra intenção de se dispersar, e a tensão aumenta.
+}
+Node2_b_c
+{
+Você mal percorreu um terço do caminho quando de repente se vê frente a frente com uma pequena companhia variada: um nobre bem vestido, duas cortesãs do bordel local e seu criado segurando uma lanterna.
+Eles caminham lentamente e com despreocupação, rindo e conversando, e toda a rua parece se ajustar à presença deles.
+Ao se aproximar, o olhar avaliador do nobre percorre você. As cortesãs param de rir e o observam atentamente, enquanto o criado congela.
+Algo em você denuncia o estrangeiro.
+}
+Node2_c {Você precisa chegar à taverna sem chamar atenção desnecessária.}
+Node2_b_a_reaction {Pedir o caminho até a taverna}
+Node2_b_a_reaction_log_0
+{
+Você se aproxima apenas o suficiente para ser visto à luz da lanterna e, com um tom calmo, pergunta como chegar à taverna.
+Um dos guardas resmunga algo descontente, mas ainda assim aponta a direção e menciona um ponto de referência próximo.
+}
+Node2_b_a_reaction_log_1
+{
+Ao fazer a pergunta, a conversa entre os guardas é interrompida abruptamente. A tensão paira no ar enquanto a patrulha o examina em silêncio mortal.
+Após alguns segundos agonizantes, um dos guardas finalmente responde e indica o caminho. Você se afasta, e eles o observam por um longo tempo.
+}
+Node2_b_a_reaction_factor {Perdido}
+Node2_b_b_reaction {Cantar uma canção de marinheiro}
+Node2_b_b_reaction_log_0 {Você encontra o momento certo para se juntar à canção e entoa baixinho um refrão conhecido. A tensão se dissipa rapidamente: alguém bate em seu ombro, outro enfia uma caneca de bebida em sua mão. Depois de alguns versos, você segue adiante sob gritos de aprovação.}
+Node2_b_b_reaction_log_1 {Você tenta encontrar o momento certo para se juntar à canção, mas confunde as palavras e canta desafinado. O riso vira vaias; um bêbado até tenta começar uma briga, mas é contido a tempo. Você recua às pressas, e o barulho causado certamente atrairá atenção indesejada.}
+Node2_b_b_reaction_factor {Shanty}
+Node2_b_c_reaction {Oferecer vinho ao nobre}
+Node2_b_c_reaction_log_0
+{
+Você acompanha o clima geral do grupo: um sorriso, uma frase curta, um gesto, como se já fizesse parte desse passeio noturno e simplesmente não tivesse sido reconhecido de imediato. O nobre ri e acena para você, como se tivesse acabado de lembrar onde poderia tê-lo visto. As cortesãs entram no tom, e a conversa volta a fluir de forma leve e despreocupada.
+Você sugere beber vinho e ir descansar na taverna, mas fica claro que essa companhia tem outros planos. O criado desvia a lanterna, e eles seguem adiante sem demora.
+}
+Node2_b_c_reaction_log_1
+{
+Você tenta manter um tom animado, mas é recebido com grande hostilidade. O nobre lança uma farpa sobre sua roupa — em voz alta, com surpresa enfatizada, como se não pudesse acreditar que tais vestes sejam usadas em lugares respeitáveis. As cortesãs caem na gargalhada e se aproximam dele.
+Você oferece vinho, mas o nobre o dispensa com um gesto brusco. Ele declara em voz alta que não tem intenção de ser embriagado e roubado por qualquer malandro. Sua voz ecoa pela rua, o criado ergue a lanterna iluminando seu rosto, e isso atrai atenção demais e indesejada.
+}
+Node2_b_c_reaction_factor {Sociedade refinada}
+Node2_a_action {Tentar chegar à taverna}
+Node2_b_action {Sou muito bom em parecer alguém do lugar}
+Node2_c_action {Tenho uma licença comercial para o caso de problemas}
+Node2_success
+{
+Você chega à taverna seguindo as ruas iluminadas e sem se deter em lugar algum além do necessário. As portas se fecham atrás de você, isolando a cidade noturna.
+$rand(
+O burburinho da rua se dissolve no ruído do salão, nos cheiros de comida e bebida. Aqui ninguém se lembra de quem você é ou de onde veio — você é apenas mais um freguês.|
+As ruas largas ficam do lado de fora junto com os olhares estranhos e a atenção excessiva. Dentro da taverna, a cidade volta a ser indiferente, e a partir daqui você faz parte do pano de fundo.
+)
+}
+Node2_success_action {Excelente!}
+Node3_a
+{
+Você quase chega à taverna quando guardas bloqueiam o caminho à frente. Eles surgem de lados diferentes e formam um semicírculo, como se apertassem em torno de você uma morsa invisível. Algo o denunciou, e a sensação de estar sendo observado a cada passo finalmente se materializa.
+
+Eles avançam com calma e confiança, mantendo a mesma distância, como se evitassem pressionar demais. Alguns seguram armas, mas ainda não as erguem.
+
+A poucos passos de você, os guardas param e um sargento se adianta. Ele levanta a mão e, de forma seca, pede que você os acompanhe até a guarnição para verificação de identidade.
+}
+Node3_b_a {A voz do sargento soa sonolenta e insegura; ele lança olhares constantes ao guarda grisalho atrás dele — claramente um mentor. Provavelmente o sargento só está ansioso para se destacar.}
+Node3_b_b {Os guardas atrás do sargento bocejam e esfregam os olhos — é evidente que foram tirados dos quartéis há pouco, no meio da noite. O sono dá lugar à irritação.}
+Node3_b_c {Dois homens na formação trocam olhares quando o sargento diz “comandância”. Um balança a cabeça quase imperceptivelmente, o outro cerra o maxilar. É claro que eles querem que tudo termine rápido e em silêncio, sem longas averiguações ou cenas. Talvez a sua detenção seja ilegal.}
+Node3_c_a {Na entrada da taverna, você de repente vê rostos familiares — alguns habitués saíram para tomar ar, e você reconhece facilmente contrabandistas que conhece. No passado, você fez alguns negócios com eles, e agora isso pode jogar a seu favor.}
+Node3_c_b {De repente, uma janela da taverna se estilhaça e uma cadeira voa para fora. Você ouve gritos e xingamentos. Os guardas se viram instintivamente naquela direção e depois voltam a olhar para você. Uma pergunta muda paira no ar.}
+Node3_c_c {De repente, dois homens bem vestidos saem da taverna. Eles discutem em tom elevado e claramente pretendem resolver alguma questão com sangue. Após algumas farpas, um saca um florete, o outro uma pistola.}
+Node3_d {Você precisa agir enquanto ainda há uma janela de oportunidade.}
+Node3_b_a_reaction {Reforçar a autoridade do sargento}
+Node3_b_a_reaction_log
+{
+Você se dirige ao sargento com respeito deliberado e o agradece por sua vigilância. Diz que está pronto para cumprir qualquer ordem, mas pede que primeiro lhe seja permitido passar a noite.
+Ele claramente amolece.
+}
+Node3_b_a_reaction_factor {Respeito à lei}
+Node3_b_b_reaction {Aproveitar o cansaço}
+Node3_b_b_reaction_log {Você capta facilmente o humor da guarda e se adapta a ele. Diz calmamente que esse mal-entendido noturno pode ser resolvido ali mesmo, sem perder tempo com a guarnição e a burocracia. Um traço de alívio surge nos rostos dos guardas.}
+Node3_b_b_reaction_factor {Cata-vento}
+Node3_b_c_reaction {Invocar a lei}
+Node3_b_c_reaction_log {Em tom calmo, você aponta que uma detenção exige fundamentos e propõe agir estritamente de acordo com o regulamento, sem extrapolar os limites da lei.}
+Node3_b_c_reaction_factor {Formalismo}
+Node3_c_a_reaction {Chamar os contrabandistas}
+Node3_c_a_reaction_log_0 {Você chama os contrabandistas. Eles o observam e, após alguns segundos, abrem sorrisos. Essas pessoas sabem bem como pode terminar lidar com a guarda e o cumprimentam calorosamente. A guarda suaviza um pouco.}
+Node3_c_a_reaction_log_1 {Você chama os contrabandistas, mas eles não respondem. Um deles lança um olhar rápido para você, cospe no chão e entra na taverna. O outro o segue. Ou não o reconheceram, ou não quiseram ter nada a ver com você. De qualquer forma, aos olhos da guarda você parece ainda mais suspeito.}
+Node3_c_a_reaction_factor {Negócios obscuros}
+Node3_c_b_reaction {Desviar a atenção para a taverna}
+Node3_c_b_reaction_log {Você diz que um comerciante pacífico como você não representa perigo à ordem pública, enquanto a confusão dentro da taverna não vai se dissipar sozinha. Quanto mais se demorar, piores serão as consequências. Você sugere que os guardas cuidem primeiro da briga e deixem a guarnição para a manhã. O sargento fica pensativo.}
+Node3_c_b_reaction_factor {Confusão}
+Node3_c_c_reaction {Chamar à ordem}
+Node3_c_c_reaction_log {Você invoca a lei que proíbe duelos dentro da cidade e chama os duelistas à ordem. Durante sua repreensão, quase sem perceber, conquista o apoio dos guardas, que agora passam a tratá-lo de forma visivelmente mais favorável.}
+Node3_c_c_reaction_factor {Intervir no duelo}
+Node3_a_action {Tentar amenizar a situação}
+Node3_b_action {Dizer ao sargento que houve um erro monstruoso}
+Node3_success
+{
+O sargento hesita por mais um instante, depois assente bruscamente e dá uma ordem curta. Os guardas se viram e se afastam, dispersando-se para seus postos. O semicírculo se desfaz, os passos se afastam, as vozes se misturam ao ruído da noite.
+Você não hesita. Alguns passos rápidos — e a porta da taverna se fecha atrás de você. Lá dentro é quente, apertado e barulhento, e tudo o que ficou do lado de fora de repente deixa de importar.
+}
+Node3_success_action {Excelente!}
+Node3_fail {A paciência da guarda se esgota. O sargento interrompe a conversa abruptamente e faz um gesto com a mão. O semicírculo se fecha, alguém esbarra em você com o ombro, alguém puxa sua manga. Você percebe que foi pego e que não há mais volta. Será preciso sair da cidade derramando sangue.}
+Node3_fail_action {Ao combate!}

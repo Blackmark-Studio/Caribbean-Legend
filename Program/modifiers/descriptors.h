@@ -3,11 +3,11 @@ float DescriptorBaseValue(string descriptorName)
 {
 	switch (descriptorName)
 	{
-		case "Exotic":        return 0.07; break;
+		case "Exotic":        return 0.08; break;
 		case "HighQuality":   return 0.30; break;
 		case "Fancy":         return 7.0;  break;
 		case "Unremarkable":  return 7.0;  break;
-		case "GoodFit":       return 0.07; break;
+		case "GoodFit":       return 0.10; break;
 		case "HeartDefence":  return 0.16; break;
 		case "Bayonet":       return 0.25; break;
 

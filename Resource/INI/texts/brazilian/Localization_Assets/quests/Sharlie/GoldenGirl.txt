@@ -1,0 +1,18 @@
+GoldenGirl_1 {Você ouviu falar daquela cortesã caríssima das Colônias do Norte que agora comanda a casa da alegria em St. Pierre? Dizem que ela organiza festas privadas de vez em quando – só a nata da alta sociedade é convidada. O melhor vinho, mulheres deslumbrantes e jogo sem limites, tudo que um verdadeiro nobre aprecia. Conseguir um convite para lá vale uma fortuna.}
+GoldenGirl_2 {Dizem que a própria marquesa Botot agora é hóspede de St. Pierre. A mulher mais cara da Nova França. Às vezes, ela faz festas só para a nata da sociedade. Um verdadeiro ninho dos vícios mais requintados. Contam que um banqueiro perdeu o próprio banco ali, imagine só. Mas, sem convite, nem o mais rico é bem-vindo.}
+GoldenGirl_3 {O bordel de St. Pierre agora é comandado por uma cortesã de elite. O lugar em si mudou pouco, mas as festas privadas que ela faz ali... Dizem que é como na velha Paris – o melhor vinho, as melhores moças, a melhor companhia. E convidados bem peculiares – como almirantes espanhóis e barões piratas! Dá pra acreditar?}
+GoldenGirl_4 {Julianne}
+GoldenGirl_5 {Botot}
+GoldenGirl_6 {Angerran}
+GoldenGirl_7 {de Chievous}
+GoldenGirl_8 {William}
+GoldenGirl_9 {Cortney}
+GoldenGirl_10 {Bart}
+GoldenGirl_11 {Portugal}
+GoldenGirl_12 {Hernando}
+GoldenGirl_13 {Vasces}
+GoldenGirl_14 {Modo exploração: o cronômetro não está desativado. Cumpra o prazo!}
+GoldenGirl_15 {Nayade}
+GoldenGirl_16 {Dizem que madame Botot desapareceu e deixou sua casa luxuosa aos cuidados de sua gerente de confiança. Imagine a tristeza dos jovens nobres!}
+GoldenGirl_17 {Na manhã seguinte...}
+GoldenGirl_18 {Alguns dias se passaram...@<NewStr()>Você e o baronete Courtney chegaram a Guadalupe}

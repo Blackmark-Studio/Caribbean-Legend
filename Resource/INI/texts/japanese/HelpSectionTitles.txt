@@ -1,0 +1,9 @@
+sea_minimap {ナビゲーションミニマップ}
+ship_commands {自分の船と仲間の船を操作するコマンド。}
+fast_commands {クイックアクセス中の現在のコマンド。}
+sea_aim {船の大砲の照準}
+alarm_indicator {警報インジケーター。}
+land_commands {陸上行動コマンド}
+WorldMap_Date_Clock {地図の日付と時刻インジケーター。}
+WorldMap_Compas {地図上のコンパス。}
+Dialog_window {ダイアログウィンドウ}

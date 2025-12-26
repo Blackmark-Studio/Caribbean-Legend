@@ -224,7 +224,15 @@ Prologue_Inventory_controlsimg2 {Alchemy}
 Prologue_Amulet {Amulets}
 Prologue_Amulet_descr
 {
-Amulets are powerful boosters for your character and come in offensive, defensive, and support types. You can't equip an offensive and defensive amulet at the same time, so choose your sets wisely.~There are also two other types of boosters: talismans and charms.~Talismans last longer than amulets and have broader effects, while charms are extremely powerful, last forever, and have their own inventory slot.~Always keep a few sets in your inventory for tough skill checks and hard fights at sea and on land.~Caution: once activated, removing an amulet or talisman destroys it—choose carefully.
+Amulets and Talismans are powerful temporary character boosts and are placed in special inventory slots.
+~
+Talismans can be crafted by the player, while Amulets can only be found or purchased.
+~
+The game also features Wards — they possess immense power, last indefinitely, and use a separate inventory slot.
+~
+Always keep several sets in your inventory for especially difficult skill checks and hard battles at sea and on land.
+~
+Caution: once activated, removing an Amulet or Talisman destroys it. Choose carefully.
 }
 Prologue_Trading {Trading Basics}
 Prologue_Trading_descr
@@ -274,4 +282,10 @@ Prologue_DeadSearch {Looting}
 Prologue_DeadSearch_descr
 {
 After every fight, it's time to collect loot.You can search any fallen enemy by pressing the loot button.~Find the healing elixir Alonso needs!
+}
+MapEncounter {Ships with colored sails}
+MapEncounter_descr
+{
+Sometimes during a quest you will need to locate a special ship on the world map.~
+Look for a ship with colored sails at the location marked in the journal and interact with it.
 }

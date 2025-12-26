@@ -75,8 +75,7 @@ ref pchar;
 
 object TEV; // Temporary events
 object LTR; // Lottery
-object HTBL;// Hash Table
-int GlobalSeed; // Суточное зерно
+string GSeed; // Суточное зерно
 
 //--------------------------------------------------------------------
 // Bool section
@@ -110,17 +109,10 @@ object InterfaceBackScene;
 //--------------------------------------------------------------------
 int     GlobalCharacters = 0;  // номер, с которого идут фантомы
 int     MAX_CHARACTERS   = 10;
-#define TOTAL_CHARACTERS			1201
+#define TOTAL_CHARACTERS 1201 // ~!~ ???
 
-/* belamour legendary edition динамические массивы
-Очень важно!!! Во избежание ошибок компиляции
-при объявлении массива указываем его четкую размерность(константа).
-и только затем изменяем до нужного значения:
-int storeArray[2];
-SetArraySize(&storeArray, MAX_LOCATIONS);*/
-
-int MAX_LOCATIONS = 1108;
-int MAX_ISLANDS = 38;
+int MAX_LOCATIONS = 1110;
+int MAX_ISLANDS = 39;
 int MAX_COLONIES = 43;
 
 #define LSC_MAX_TAVERN		12
@@ -159,10 +151,11 @@ object Names;
 object NullCharacter;
 object NullObject; // заглушка, не записывайте сюда ничего
 object Characters[TOTAL_CHARACTERS];
-object Locations[1108];
-object Islands[38];
+object Locations[1110];
+object Islands[39];
 object Colonies[43];
 object Atlas;
+object StealthSystem;
 
 object  Environment;
 int		nMainCharacterIndex = 1;//-1;
@@ -186,6 +179,8 @@ int StealthLuck = 0;
 int StealthNat  = 4;
 int WarningTime = 0;
 bool StealthEnable = false;
+
+bool bAutoSaveStarted = false;
 
 ref GetCharacter(int iIndex) 
 { 

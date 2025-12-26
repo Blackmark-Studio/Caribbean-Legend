@@ -1,0 +1,2 @@
+LAi_fightparams_1 {銃撃回避}
+LAi_fightparams_2 {傭兵の帽子が壊れた}

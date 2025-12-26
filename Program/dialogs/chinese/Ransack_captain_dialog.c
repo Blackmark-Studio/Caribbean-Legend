@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 			attrLoc = Sea_FindNearColony();
 			if (attrLoc != "none") 
 			{
-                link.l3 = "我们离" + GetConvertStr(attrLoc +" Town", "LocLables.txt") + "不远。 我可以在这里放你走。 ";
+                link.l3 = "我们离" + GetCityName(attrLoc) + "不远。 我可以在这里放你走。 ";
 			    link.l3.go = "free_withoutFee";
 			}
 			else
@@ -170,7 +170,7 @@ void ProcessDialogEvent()
 				attrLoc = Sea_FindNearColony();
 				if (attrLoc != "none") 
 				{
-					link.l4 = "我们离" + GetConvertStr(attrLoc +" Town", "LocLables.txt") + "不远。 我可以在这里放你走。 ";
+					link.l4 = "我们离" + GetCityName(attrLoc) + "不远。 我可以在这里放你走。 ";
 					link.l4.go = "free_withoutFee";
 				}
 				else

@@ -430,7 +430,7 @@ void CalculateInfoDataF1()
         }
     }
     
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
     //LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
@@ -473,7 +473,7 @@ void CalculateInfoDataF3()
 		TakenItems(pchar, "cannabis"+j, 5);
 	}
 
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
     SetFormatedText("INFO_TEXT", totalInfo);
 
@@ -514,7 +514,7 @@ void CalculateInfoDataF5()
     
 	TakenItems(pchar, "talisman11", 100);
 	
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
     SetFormatedText("INFO_TEXT", totalInfo);
 
@@ -584,7 +584,7 @@ void CalculateInfoDataF7()
 	sBlade = GetBestGeneratedItem("blade_39");
 	GiveItem2Character(pchar, sBlade);
 
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
 	
     SetFormatedText("INFO_TEXT", totalInfo);
@@ -656,7 +656,7 @@ void CalculateInfoDataF10()
 		totalInfo = totalInfo + NewStr() + " God mode ON "+ NewStr();
         
     }
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
     SetFormatedText("INFO_TEXT", totalInfo);
 
@@ -729,7 +729,7 @@ void CalculateInfoDataF13()
 	GiveItem2Character(pchar, "rat_poison");
 	GiveItem2Character(pchar, "clock2");
 	
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
     SetFormatedText("INFO_TEXT", totalInfo);
 
@@ -749,7 +749,7 @@ void CalculateInfoDataF14()
 		GiveItem2Character(pchar, "talisman"+i);
 	}
 
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
 	
     SetFormatedText("INFO_TEXT", totalInfo);
@@ -777,7 +777,7 @@ void CalculateInfoDataF15()
 	TakenItems(pchar, "mangarosafast", 5);
 	TakenItems(pchar, "mangarosatotal", 5);
 
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
     
     SetFormatedText("INFO_TEXT", totalInfo);
@@ -799,7 +799,7 @@ void CalculateInfoDataF16()
 		TakenItems(pchar, "spyglass"+i, 1);
 	}
     
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
 	
     SetFormatedText("INFO_TEXT", totalInfo);
@@ -816,7 +816,7 @@ void CalculateInfoDataF17()
 	
 	TakenItems(pchar, "lantern_belt", 1);
    
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
     
     SetFormatedText("INFO_TEXT", totalInfo);
@@ -841,7 +841,7 @@ void CalculateInfoDataF18()
     TakenItems(pchar, "clock3", 1);
     TakenItems(pchar, "sextant2", 1);
 	
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
 	
     SetFormatedText("INFO_TEXT", totalInfo);

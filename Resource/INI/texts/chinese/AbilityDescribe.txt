@@ -5,30 +5,30 @@ newline
 BasicDefense {基础防御}
 perkBasicDefense {受到的伤害降低$percent($perkBaseValue(BasicDefense|1))。}
 AdvancedDefense {高级防御}
-perkAdvancedDefense {使受到的伤害降低$percent($perkBaseValue(AdvancedDefence|1)), 敌方暴击伤害降低$percent($perkBaseValue(AdvancedDefence|2))。}
+perkAdvancedDefense {使受到的伤害降低$percent($perkBaseValue(AdvancedDefense|1)), 敌方暴击伤害降低$percent($perkBaseValue(AdvancedDefense|2))。}
 CriticalHit {暴击}
-perkCriticalHit {基础暴击率提高3.5%。}
+perkCriticalHit {基础暴击率提高$percent($perkBaseValue(CriticalHit|1))。}
 Grus {强健脊梁}
 perkGrus {携带重量增加35磅。}
 Tireless {不知疲倦}
-perkTireless {能量恢复速度提高15%。}
+perkTireless {能量恢复速度提高$percent($perkBaseValue(Tireless|1))。}
 HardHitter {重手}
-perkHardHitter {重型武器的重击攻击造成15%更多伤害。解锁高级重击攻击。}
+perkHardHitter {重型武器的重击攻击造成$percent($perkBaseValue(HardHitter|1))更多伤害。解锁高级重击攻击。}
 BladeDancer {刀剑之舞}
-perkBladeDancer {弯曲武器的群体攻击造成30%更多伤害。}
+perkBladeDancer {弯曲武器的群体攻击造成$percent($perkBaseValue(BladeDancer|1))更多伤害。}
 Sliding {不可抗拒的打击}
 perkSliding {轻型武器的劈砍或刺击攻击有 $percent($perkBaseValue(Sliding|1)) 概率以独特的高级打击突破格挡。}
 Gunman {火枪手}
 perkGunman
 {
-将火器的伤害和装填速度提高 $percent($perkBaseValue(Gunman|1))。允许使用单发双手武器和多发单手武器。 ~ 军官只有在明确命令下才能使用 $key(descriptor_TwoHanded|ItemsDescriptors.txt)。
+将火器的伤害和装填速度提高 $percent($perkBaseValue(Gunman|1))。 允许使用单发双手武器和多发单手武器。 ~ 军官只有在明确命令下才能使用 $key(descriptor_TwoHanded|ItemsDescriptors.txt)。
 }
 GunProfessional {散兵}
 perkGunProfessional {将火器伤害和装填速度提高 $percent($perkBaseValue(GunProfessional|1))。解锁使用多发双手火器的能力。}
 IronWill {钢铁意志}
 perkIronWill {每3分钟可幸存一次致命伤。}
 SharedExperience {学得快}
-perkSharedExperience {技能发展速度提升5%。}
+perkSharedExperience {技能发展速度提升15%。}
 Medic {健康习惯}
 perkMedic {生命值增加25点。当生命值低于最大值一半时, 被动治疗速度翻倍。}
 HPPlus {增长生命}
@@ -71,7 +71,7 @@ perkLongRangeGrappling {登船距离提高15%。}
 MusketsShoot {火枪齐射}
 perkMusketsShoot {在登船前会进行一次火枪齐射。造 成的伤亡取决于船只类型和先锋人 数。}
 GrapplingProfessional {资深水手长}
-perkGrapplingProfessional {登船距离提高25%。可在任意接近角度和速度下进行。}
+perkGrapplingProfessional {登船距离提高25%。 可在任意接近角度和速度下进行。}
 BasicBattleState {基础船只防御}
 perkBasicBattleState {对船只造成的所有伤害减少10%。}
 AdvancedBattleState {高级船只防御}
@@ -99,25 +99,13 @@ perkFlagPir
 可以将你的旗帜更换为骷髅旗。~该技能仅玩家可用。
 }
 FlagEng {英格兰国旗}
-perkFlagEng
-{
-被发现的概率取决于潜行、你的船 只类型和舰队规模、敌方舰队规模 以及威胁等级。~该技能仅玩家可用
-}
+perkFlagEng {你只能使用与你的船只等级 (rate) 相符的旗帜。要获得旗帜, 必须俘获相应等级的船只, 或购买许可证。}
 FlagFra {法国国旗}
-perkFlagFra
-{
-被发现的概率取决于潜行、你的船 只类型和舰队规模、敌方舰队规模 以及威胁等级。~该技能仅玩家可用
-}
+perkFlagFra {你只能使用与你的船只等级 (rate) 相符的旗帜。要获得旗帜, 必须俘获相应等级的船只, 或购买许可证。}
 FlagSpa {西班牙国旗}
-perkFlagSpa
-{
-被发现的概率取决于潜行、你的舰 船类型和舰队规模、敌方舰队规模 以及威胁等级。~该技能仅玩家可用
-}
+perkFlagSpa {你只能使用与你的船只等级 (rate) 相符的旗帜。要获得旗帜, 必须俘获相应等级的船只, 或购买许可证。}
 FlagHol {荷兰国旗}
-perkFlagHol
-{
-被发现的概率取决于潜行、你的船 只类型和舰队规模、敌方舰队规模 以及威胁等级。~该技能仅玩家可用
-}
+perkFlagHol {你只能使用与你的船只等级 (rate) 相符的旗帜。要获得旗帜, 必须俘获相应等级的船只, 或购买许可证。}
 Troopers {攻城战术}
 perkTroopers
 {
@@ -189,11 +177,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {快手}
-perkFastHands {将火器的拔出和收回速度提高20%。}
+perkFastHands {将火器的拔出和收回速度提高$percent($perkBaseValue(FastHands|1))。}
 AmmoRig {装备}
-perkAmmoRig {火器的装填速度提高5%。}
+perkAmmoRig {火器的装填速度提高$percent($perkBaseValue(AmmoRig|1))。}
 Preaim {校准}
-perkPreaim {瞄准模式快15%。}
+perkPreaim {瞄准模式快$percent($perkBaseValue(Preaim|1))。}
 KeenEye {慧眼}
 perkKeenEye {爆头造成$percent($perkBaseValue(KeenEye|1))更多伤害。}
 PowderFeel {火药感知}
@@ -205,29 +193,29 @@ perkLeadRain {霰弹每击中一名敌人, 伤害提高5%。}
 ShootToKill {格杀射击}
 perkShootToKill {用火器命中敌人会使其减速, 移动速度降低25%。持续时间: 5秒。}
 Muscles {肌肉山}
-perkMuscles {使用重型武器的任何攻击消耗能量 减少10%, 速度提升4%。眩晕恢复速度提升15%。}
+perkMuscles {使用重型武器的任何攻击消耗能量 减少$percent($perkBaseValue(Muscles|1)), 速度提升$percent($perkBaseValue(Muscles|2))。眩晕恢复速度提升$percent($perkBaseValue(Muscles|3))。}
 Conquest {征服}
-perkConquest {使用直长冷兵器的劈砍攻击和重击 攻击造成15%额外伤害。}
+perkConquest {使用长兵器的斩击和重击造成的伤害提高 $percent($perkBaseValue(Conquest|1))。}
 PalaceGuard {宫廷卫兵}
-perkPalaceGuard {重型弯曲武器攻击时伤害提高15%, 群体攻击时额外提高5%。}
+perkPalaceGuard {重型弯曲武器攻击时伤害提高$percent($perkBaseValue(PalaceGuard|1)), 群体攻击时额外提高5%。}
 CunningStrike {阴险一击}
-perkCunningStrike {轻型武器暴击率提高3%。背后攻击造成10%更多伤害。}
+perkCunningStrike {轻型武器暴击率提高$percent($perkBaseValue(CunningStrike|1))。背后攻击造成$percent($perkBaseValue(CunningStrike|2))更多伤害。}
 Heartbreaker {心碎者}
-perkHeartbreaker {使用直长冷兵器的快速攻击造成的 伤害提高10%, 速度提升3%。}
+perkHeartbreaker {直刃武器的快速攻击造成的伤害提高 $percent($perkBaseValue(Heartbreaker|1)), 并且攻击速度提高 $percent($perkBaseValue(Heartbreaker|2))。}
 Dodgy {机会主义}
-perkDodgy {冲刺推搡效果提升30%, 且消耗更少能量。}
+perkDodgy {冲刺推搡效果提升$percent($perkBaseValue(Dodgy|1)), 且消耗更少能量。}
 Exhaustion {疲劳}
-perkExhaustion {用短冷兵器招架时多消耗20%体力。敌人眩晕恢复时间延长10%。}
+perkExhaustion {用短冷兵器招架时多消耗 $percent($perkBaseValue(Exhaustion|1))体力。敌人眩晕恢复时间延长10%。}
 Reaper {死神}
-perkReaper {暴击伤害提高30%, 快速攻击的暴击几率提高3%。}
+perkReaper {暴击伤害提高 $percent($perkBaseValue(Reaper|1)), 快速攻击的暴击几率提高 $percent($perkBaseValue(Reaper|2))。}
 MarathonRunner {马拉松选手}
-perkMarathonRunner {冲刺速度提升15%, 能量消耗减少三分之一。}
+perkMarathonRunner {冲刺速度提升$percent($perkBaseValue(MarathonRunner|2)), 能量消耗减少三分之一。}
 PerfectBalance {完美平衡}
-perkPerfectBalance {手持中型武器时, 所受伤害降低10%。}
+perkPerfectBalance {手持中型武器时, 所受伤害降低$percent($perkBaseValue(PerfectBalance|1))。}
 Flanking {侧翼进攻}
-perkFlanking {弯曲武器攻击速度提高5%。解锁高级群体攻击。}
+perkFlanking {弯曲武器攻击速度提高$percent($perkBaseValue(Flanking|1))。解锁高级群体攻击。}
 SabreHurricane {弯刀旋风}
-perkSabreHurricane {使用中型弯曲冷兵器进行劈砍攻击 和快速攻击时, 攻击范围更广, 可击中相邻敌人, 并造成10%额外伤害。}
+perkSabreHurricane {使用中型弯曲冷兵器进行劈砍攻击 和快速攻击时, 攻击范围更广, 可击中相邻敌人, 并造成$percent($perkBaseValue(SabreHurricane|1))额外伤害。}
 Practice {实践提升}
 perkPractice {每装备一件可制作物品, 所有技能提升2点。}
 Strychnine {士的宁}
@@ -328,4 +316,4 @@ perkInvestor_alternate {将角色的贸易和领导技能提高 $number($perkBas
 perkGossip_alternate {作为伙伴时, 角色将舰队的战力提升 $percent($perkBaseValue(Gossip|1)).}
 perkMaster_alternate {角色每饮用一瓶药剂, 外放伤害增加 $percent($perkBaseValue(Master|2)).}
 perkLooting_alternate {将可携带重量增加 $perkBaseValue(Looting|1) 磅。}
-perkMaster_currentBonus {当前加成：$percent($attr($context.ct.static.fast_Damage.perk_master))}
+perkMaster_currentBonus {当前加成: $percent($attr($context.ct.static.fast_Damage.perk_master))}

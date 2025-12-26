@@ -3499,7 +3499,7 @@ void ProcessDialogEvent()
 
 	case "carpenter_16":
 		worldMap.labels.islamona.icon = 5;
-		worldMap.labels.islamona.text = CheckingTranslate(LanguageOpenFile("LocLables.txt"), "Islamona");
+		worldMap.labels.islamona.text = GetIslandNameByID("IslaMona");
 		dialog.text = "Soy carpintero y estos dos son mis ayudantes. Solíamos reparar y acondicionar la 'Freyja' antes. Podríamos ser de utilidad en tu tripulación.";
 		link.l1 = "Entiendo. Muy bien, estás dentro, hablaremos de los detalles más tarde. Toma esta pistola de la entrada. Y Rodgar, no dejes el pueblo mientras busco el alijo.";
 		link.l1.go = "exit";
@@ -5536,7 +5536,8 @@ void ProcessDialogEvent()
 		WaitDate("", 0, 0, 0, 2, 30);
 		SetLaunchFrameFormParam("", "", 0, 5.1);
 		SetLaunchFrameFormPic("loading\inside\censored1.tga");
-		PlayStereoSound("sex\sex2.wav");
+		if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+		else PlayStereoSound("sex\sex2.wav");
 		LaunchFrameForm();
 		if (IsEquipCharacterByArtefact(pchar, "totem_03"))
 		{
@@ -6116,6 +6117,45 @@ void ProcessDialogEvent()
 		link.l1 = "Saludos a ti también, Gaspard 'Dientedeoro'. Aunque, pensándolo bien, tampoco me importa cómo te llames. ¿Escuché que podrías estar interesado en comprar algunas chucherías?";
 		link.l1.go = "GasparGold_meeting_01";
 		break;
+		
+	// ---> andre39966, Фриплейный Гаспарито
+		case "GasparGold_meeting_sandbox":
+			dialog.text = "Saludos. Me llamo Gaspar Parmentier. ¿A qué debo su visita?";
+			link.l1 = "Saludos, Gaspar. Soy el capitán " + GetFullName(pchar) + ". Vengo de parte del tabernero local. Dicen que compras baratijas, ¿es cierto?";
+			link.l1.go = "GasparGold_meeting_01";
+			link.l2 = "Hola, Dientedeoro. Escuché que compras todo lo que brilla. ¡Por todos los truenos, seguro que nos llevaremos bien!";
+			link.l2.go = "GasparGold_meeting_wrong";
+		break;
+
+		case "GasparGold_meeting_wrong":
+			dialog.text = "Me temo, señor, que me está confundiendo con otra persona. Le pido que abandone este lugar antes de que llame a la guardia.";
+			link.l1 = "Argh... Está bien...";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Gaspar_sandbox_repeat";
+		break;
+
+		case "Gaspar_sandbox_repeat":
+			dialog.text = RandPhraseSimple("Creo que le pedí que se marchara.", "No tengo tiempo para charlas vacías. Por favor, déjeme en paz.", "Su falta de educación es sorprendente. ¿Va a seguir molestándome?");
+			link.l1 = "Tranquilo, amigo. Vengo de parte del tabernero.";
+			link.l1.go = "Gaspar_Alternative";
+			link.l2 = "¡Deja de hacerte el tonto! ¡Sé que compras joyas!";
+			link.l2.go = "Gaspar_Angry";
+		break;
+
+		case "Gaspar_Angry":
+			dialog.text = "Ya le he dicho que no me dedico a eso. Márchese antes de que lo echen.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Gaspar_sandbox_repeat";
+		break;
+
+		case "Gaspar_Alternative":
+			dialog.text = "Eso cambia las cosas, capitán. Ha venido al lugar correcto. ¿Así que quiere vender algunas joyas?";
+			link.l1 = "Bueno, eso de 'mías' es un decir. Jeje.";
+			link.l1.go = "GasparGold_01";
+			NextDiag.TempNode = "GasparGold";
+		break;
+		// <--- andre39966, Фриплейный Гаспарито
 
 	case "GasparGold_meeting_01":
 		dialog.text = "Eso es correcto. Nadie te ofrecerá un mejor precio que yo. Bueno, tal vez los prestamistas, pero no compran mucho. Estoy listo para comprar todo lo que ofrezcas. Ni siquiera tienes que llevarme los objetos de valor personalmente: tengo una puerta trasera que lleva a un muelle apartado. No dudes en venderme todas las chucherías que tienes guardadas en los cofres de tu barco.";

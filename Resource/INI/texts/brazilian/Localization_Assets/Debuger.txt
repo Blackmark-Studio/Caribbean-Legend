@@ -1,0 +1,1 @@
+Debuger_1 {Nossa cidade @<GetCN(city)> está sob cerco!}

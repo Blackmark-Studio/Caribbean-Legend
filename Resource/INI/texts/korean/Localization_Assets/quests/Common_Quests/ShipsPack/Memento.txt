@@ -1,0 +1,10 @@
+Memento_1 { }
+Memento_2 {Mortimer}
+Memento_3 {Grim}
+Memento_4
+{
+선장님, 저게 바로 'Memento'입니다. 노예상들의 악몽이죠!
+우릴 적대하지 않으니, 보트를 보내도 되겠습니다.
+}
+Memento_5 {버림받은}
+Memento_6 {Alonso: 선장님! 선체를 부수기 전엔 산탄은 소용없어요!}

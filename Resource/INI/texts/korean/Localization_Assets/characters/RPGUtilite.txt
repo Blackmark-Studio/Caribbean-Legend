@@ -1,0 +1,23 @@
+RPGUtilite_1 {경험치 획득 ~}
+RPGUtilite_2 {끔찍한}
+RPGUtilite_3 {나쁨}
+RPGUtilite_4 {나쁨}
+RPGUtilite_5 {중간}
+RPGUtilite_6 {좋은}
+RPGUtilite_7 {우수함}
+RPGUtilite_8 {생명력 증가}
+RPGUtilite_9 {활력 감소}
+RPGUtilite_10 {국가 평판 하락!}
+RPGUtilite_11 {국가 평판 상승!}
+RPGUtilite_12 {국가 평판 상승!}
+RPGUtilite_13 {국가 평판 하락!}
+RPGUtilite_14 {증오}
+RPGUtilite_15 {적대감}
+RPGUtilite_16 {싫어함}
+RPGUtilite_17 {자극}
+RPGUtilite_18 {중립}
+RPGUtilite_19 {호감}
+RPGUtilite_20 {친화력}
+RPGUtilite_21 {감탄}
+RPGUtilite_22 {무지개}
+RPGUtilite_23 {질풍}

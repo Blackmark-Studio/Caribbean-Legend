@@ -7,7 +7,7 @@ RPGUtilite_6 {buono}
 RPGUtilite_7 {eccellente}
 RPGUtilite_8 {Vitalità aumentata}
 RPGUtilite_9 {Vitalità diminuita}
-RPGUtilite_10 {La taglia è aumentata!}
+RPGUtilite_10 {La Rep. Nazionale è diminuita!}
 RPGUtilite_11 {La Rep. Nazionale è aumentata!}
 RPGUtilite_12 {La Rep. Nazionale è aumentata!}
 RPGUtilite_13 {La Rep. Nazionale è diminuita!}

@@ -22,7 +22,7 @@ void ProcessDialogEvent()
 				link.l1.go = "Holl_start";	
 			break;
 			}
-			dialog.text = "Masz dla mnie jakąś robotę?";
+			dialog.text = "Masz do mnie jakąś sprawe?";
 			link.l1 = "Nie, przepraszam. Wychodzę.";
 			link.l1.go = "exit";			
 			NextDiag.TempNode = "First time";
@@ -45,7 +45,7 @@ void ProcessDialogEvent()
 			}
 			if (pchar.questTemp.HWIC.Holl == "BaltazarCom")
 			{
-				dialog.text = "Ach, kapitanie, oto jesteś! Nie zauważyłem cię, właśnie skończyłem czytać list od Ridderbrocka. Zrobiłeś niemałe wrażenie. Nazywa cię 'strażnikiem kupców i postrachem piratów. Bożym darem dla Kompanii!' Co o tym sądzisz?";
+				dialog.text = "Ach, kapitanie, oto jesteś! Nie zauważyłem cię, właśnie skończyłem czytać list od Ridderbrocka. Zrobiłeś niemałe wrażenie. Nazywa cię 'strażnikiem kupców i postrachem piratów. Boskim darem dla Kompanii!' Co o tym sądzisz?";
 				link.l1 = "Wolałbym pozostać zwykłym kapitanem. Zwykłym, ale bogatym kapitanem.";
 				link.l1.go = "SantiagoTrip";
 				DelLandQuestMark(npchar);
@@ -62,7 +62,7 @@ void ProcessDialogEvent()
 			{
 				sld = characterFromId("Santiago_usurer");
 				dialog.text = "Ah, kapitanie! Przyznaję, że zaczynałem się martwić. Jak poszło?";
-				link.l1 = "Nie obyło się bez kłopotów, ale opowiem ci o tym później. Najpierw interesy. Senor "+GetFullName(sld)+" kazał mi przekazać ci następujące słowa: 'ten człowiek musi umrzeć'. Wtedy Geraldi uzna incydent za zamknięty. Powiedział też, że ta decyzja jest wolą ich rodziny.";
+				link.l1 = "Nie obyło się bez kłopotów, ale opowiem ci o tym później. Najpierw interesy. Señor "+GetFullName(sld)+" kazał mi przekazać ci następujące słowa: 'ten człowiek musi umrzeć'. Wtedy Geraldi uzna incydent za zamknięty. Powiedział też, że ta decyzja jest wolą ich rodziny.";
 				link.l1.go = "SantiagoTrip_8";
 				DelLandQuestMark(npchar);
 				break;
@@ -169,15 +169,15 @@ void ProcessDialogEvent()
 				pchar.quest.ToAntiguaOver.over = "yes"; //снять таймер
 				if (iMir == 0)//потеряли Мираж
 				{
-					dialog.text = "Zostałem poinformowany o twoim przybyciu, kapitanie. Wiem również, że straciłeś mój Mirage w bitwie.";
+					dialog.text = "Zostałem poinformowany o twoim przybyciu, kapitanie. Wiem również, że straciłeś mój 'Miraż' w bitwie.";
 					link.l1 = "Jesteś dobrze poinformowany, Mynheer Rodenburg. Pomimo wszelkich moich starań, nie udało nam się jej uratować.";
 					link.l1.go = "Fleetwood_fail";
 					DelLandQuestMark(npchar);
 				}
 				else
 				{
-					dialog.text = "Zostałem poinformowany o twoim przybyciu, kapitanie. Widzę, że Mirage jest bezpiecznie zacumowany. To dobrze.";
-					link.l1 = "To wszystko według twoich instrukcji, mynheer. Kazałeś mi zabić Fleetwooda i jest martwy. Kazałeś mi przyprowadzić Mirage z powrotem do lokalnego portu i jest tutaj.";
+					dialog.text = "Zostałem poinformowany o twoim przybyciu, kapitanie. Widzę, że 'Miraż' jest bezpiecznie zacumowany. To dobrze.";
+					link.l1 = "To wszystko według twoich instrukcji, mynheer. Kazałeś mi zabić Fleetwooda i jest martwy. Kazałeś mi przyprowadzić 'Miraż' z powrotem do lokalnego portu i jest tutaj.";
 					link.l1.go = "Fleetwood_complete";
 					DelLandQuestMark(npchar);
 				}
@@ -254,7 +254,7 @@ void ProcessDialogEvent()
 			DelMapQuestMarkCity("Villemstad");
 			DelMapQuestMarkCity("SentJons");
 			dialog.text = "Być może. Kim jesteś? Mów szybko, czas to pieniądz.";
-			link.l1 = "Jestem kapitanem "+pchar.name+", mój statek i  mogą być dla ciebie użyteczne.";
+			link.l1 = "Jestem kapitanem "+pchar.name+", mój statek i umiejętności mogą być dla ciebie użyteczne.";
 			link.l1.go = "Holl_start_0";			
 		break;
 		
@@ -266,7 +266,7 @@ void ProcessDialogEvent()
 		
 		case "Holl_start_1":
 			pchar.questTemp.HWIC.Holl.PirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
-			dialog.text = "Bardzo dobrze, zobaczymy, jaką masz odwagę. W porządku, Kapitanie, cokolwiek masz na imię, czy znasz Balthazara Ridderbrocka? Nie? Jakież to szczęście. Tacy chciwi, zrzędliwi, porywczy idioci jak on to rzadki widok.\nAle wydaje się, że tak wybitne cechy nie wystarczyły temu człowiekowi, więc był na tyle sprytny, by obrazić filibustera o imieniu "+GetName(NAMETYPE_ORIG,pchar.questTemp.HWIC.Holl.PirateName,NAME_NOM)+"w lokalnej tawernie i natychmiast wezwał straż, gdy tylko obrażona strona sięgnęła po miecz...";
+			dialog.text = "Bardzo dobrze, zobaczymy, jaką masz odwagę. W porządku, Kapitanie, jakkolwiek masz na imię, czy znasz Balthazara Ridderbrocka? Nie? Jakież to szczęście. Tacy chciwi, zrzędliwi, porywczy idioci jak on to rzadki widok.\nAle wydaje się, że tak wybitne cechy nie wystarczyły temu człowiekowi, więc był na tyle sprytny, by obrazić korsarza o imieniu "+GetName(NAMETYPE_ORIG,pchar.questTemp.HWIC.Holl.PirateName,NAME_NOM)+" w lokalnej karczmie i natychmiast wezwał straż, gdy tylko obrażona strona sięgnęła po miecz...";
 			link.l1 = "...a oni powiesili pirata na pierwszej wolnej linie?";
 			link.l1.go = "Holl_start_2";			
 		break;
@@ -284,13 +284,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Holl_start_4":
-			dialog.text = "Niezwłocznie. Dobrzy ludzie z Philipsburga oczekują na dostawę cukru, którą nasz wspólny znajomy Ridderbrock obiecał dostarczyć. Nie uważam go za kogoś wartego skóry jego butów, lecz niestety pracuje dla nas, więc ruszajcie do biura portowego. Znajdźcie tam Ridderbrocka i powiedzcie mu, że nakazałem mu natychmiast wypłynąć.\nBędziecie go śledzić i...eskortować do Philipsburga w jednym kawałku. Nie chcę "+GetName(NAMETYPE_ORIG,pchar.questTemp.HWIC.Holl.PirateName,NAME_NOM)+"   wysłać reputację Kompanii na dno Karaibów wraz z jego ładunkiem.";
-			link.l1 = "Ugh, misja eskortowa. A co z zapłatą za to... nieprzyjemne zadanie?";
+			dialog.text = "Niezwłocznie. Dobrzy ludzie z Philipsburga oczekują na dostawę cukru, którą nasz wspólny znajomy Ridderbrock obiecał dostarczyć. Nie uważam go za kogoś wartego skóry jego butów, lecz niestety pracuje dla nas, więc ruszaj do biura portowego. Znajdź tam Ridderbrocka i powiedz mu, że nakazałem mu natychmiast wypłynąć.\nBędziesz go śledzić i...eskortować do Philipsburga w jednym kawałku. Nie chcę aby "+GetName(NAMETYPE_ORIG,pchar.questTemp.HWIC.Holl.PirateName,NAME_NOM)+" wysłał reputację Kompanii na dno Karaibów wraz z jego ładunkiem.";
+			link.l1 = "Ech, misja eskortowa. A co z zapłatą za to... nieprzyjemne zadanie?";
 			link.l1.go = "Holl_start_5";			
 		break;
 		
 		case "Holl_start_5":
-			dialog.text = "Kapitanie, najpierw wykonaj zadanie. Balthazar zapłaci ci, jak tylko dotrze do celu. W Philipsburgu! Nie w skrzyni Davy'ego Jonesa! Potem zgłoś się do mnie, gdy zadanie zostanie wykonane. Jeśli odniesiesz sukces, będziesz mógł liczyć na moją dalszą opiekę oraz na opiekę Kompanii. Wolny.";
+			dialog.text = "Kapitanie, najpierw wykonaj zadanie. Balthazar zapłaci ci, jak tylko dotrze do celu. W Philipsburgu! Nie w skrzyni Davy'ego Jonesa! Potem zgłoś się do mnie, gdy zadanie zostanie wykonane. Jeśli odniesiesz sukces, będziesz mógł liczyć na moją dalszą opiekę oraz na opiekę Kompanii. Spocznij.";
 			link.l1 = "Do zobaczenia, mynheer.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Create_Baltazar");
@@ -302,10 +302,10 @@ void ProcessDialogEvent()
 		
 //----------------------------------------------задание 1а--------------------------------------------	
 		case "SantiagoTrip":
-			dialog.text = "Tak, Ridderbrock to skąpy skurczybyk nawet jak na Holendra. Cóż, nie obchodzi mnie już on. Porozmawiajmy o tobie, Kapitanie Jak Ci Tam Na Imię. Podoba mi się twój styl, więc zamierzam zaoferować ci kolejną robotę. Tym razem zapłacę za nią sam.";
+			dialog.text = "Tak, Ridderbrock to skąpy skurczybyk nawet jak na Holendra. Cóż, już mnie nie obchodzi co z nim będzie. Porozmawiajmy o tobie, Kapitanie Jak-Ci-Tam-Na-Imię. Podoba mi się twój styl, więc zamierzam zaoferować ci kolejną robotę. Tym razem zapłacę za nią sam.";
 			link.l1 = "Słucham, mynheer.";
 			link.l1.go = "SantiagoTrip_1";			
-			AddSimpleRumourCity("Ah, so you are the brave kapitein who escorted that scoundrel Ridderbrock? We heard all about about it... He paid you only five thousand pesos! He's been boasting about it nonstop at the tavern in Philipsburg drunk as a swine. If I were you captain, I drag him out into the street and thrash him.", "Villemstad", 20, 3, "");//слух по 1 заданию
+			AddSimpleRumourCity("Ach, więc to ty jesteś tym dzielnym kapiteinem, który eskortował tego łajdaka Ridderbrocka? Słyszeliśmy o tym... Zapłacił ci tylko pięć tysięcy pesos! Chwalił się tym bez przerwy w karczmie w Philipsburgu pijany jak świnia. Gdybym był kapitanem, wywlekłbym go na ulicę i okładał.", "Villemstad", 20, 3, "");//слух по 1 заданию
 		break;
 		
 		case "SantiagoTrip_1":
@@ -322,7 +322,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SantiagoTrip_3":
-			if (pchar.BaseNation == ENGLAND || pchar.BaseNation == FRANCE) sTemp = " I am also giving you this short-term Company trade license in order to spare you from any diplomatic entanglements with the Spanish. This will allow you to dock at Spanish colonies for some time.";
+			if (pchar.BaseNation == ENGLAND || pchar.BaseNation == FRANCE) sTemp = " Udzielam ci również tej krótkoterminowej licencji handlowej, aby oszczędzić ci wszelkich dyplomatycznych uwikłań z Hiszpanami. Pozwoli ci to na pewien czas cumować w hiszpańskich koloniach.";
 			else sTemp = "";
 			dialog.text = "Na tę chwilę, nie wątpię w ciebie. Uwierz mi, nie rozmawiałbym z tobą o tej sprawie, gdybym miał wątpliwości. Wiedz, że straciliśmy dużo czasu na przygotowanie tej roboty, więc masz tylko piętnaście dni na dostarczenie."+sTemp+"\nMoja wiadomość i paczka muszą być dostarczone na czas. To jest kluczowe, chłopcze. Śpiesz się, ale bądź ostrożny, to nie będzie łatwe zadanie.";
 			link.l1 = "Czy coś jeszcze? Dlaczego mnie ostrzegasz, mynheer Rodenburg?";
@@ -420,12 +420,12 @@ void ProcessDialogEvent()
 		
 		case "JacobBerg_1":
 			dialog.text = " Mam dla ciebie bardzo poważną i ważną misję, i oczekuję, że wykonasz wszystko zgodnie z moimi instrukcjami. Jak wiesz, relacje między Zjednoczonymi Prowincjami a Anglią są... nieprzyjazne. Brytyjczycy są pewni, że to oni powinni rządzić światem. Problem w tym - nie wszyscy zgadzają się z takim twierdzeniem. Gdziekolwiek płyną, by robić interesy, możesz być pewny, że Holenderska Kompania Wschodnioindyjska dotarła tam pierwsza.\nMy, Holendrzy, mamy największą flotę handlową na świecie, a nasze eskadry wojskowe mogą bronić interesów Republiki zarówno tutaj, jak i za granicą. Anglicy zazdroszczą nam naszej potęgi handlowej i robią, co mogą, aby sabotować działalność Kompanii. Teraz jest pewien angielski kapitan marynarki o imieniu Richard Fleetwood. Pomimo bycia oficerem na etacie Wspólnoty, obecnie działa jako pirat. Atakuje i plądruje każdy statek, który ośmieli się płynąć pod holenderską banderą na Karaibach. Tłumaczy swoje działania jako środek zapobiegawczy przeciwko 'statkowi widmo', który zatapia angielskich handlarzy. Twierdzi, że ten 'statek widmo' to korsarz pływający pod holenderskim listem kaperskim.\nSłyszałeś o 'statku widmo', kapitanie?";
-			link.l1 = "Takie bzdury można usłyszeć w każdej tawernie. Wystarczy kupić trochę rumu staremu bosmanowi, a usłyszysz każdą opowieść, jaką tylko zechcesz...";
+			link.l1 = "Takie bzdury można usłyszeć w każdej karczmie. Wystarczy kupić trochę rumu staremu bosmanowi, a usłyszysz każdą opowieść, jaką tylko zechcesz...";
 			link.l1.go = "JacobBerg_2";
 		break;
 		
 		case "JacobBerg_2":
-			dialog.text = "Ta sprawa to nie jest pijacka fantazja. Zbadałem działania tego 'statku-ducha'. Dowiedziałem się, że to jest statek z drewna i płótna, załogowany przez zwykłych ludzi, kecz o nazwie 'Mirage'. Jest pod dowództwem człowieka o imieniu Jacob van Berg, który podaje ją za legendarnego 'Latającego Holendra'.";
+			dialog.text = "Ta sprawa to nie jest pijacka fantazja. Zbadałem działania tego 'statku-widmo'. Dowiedziałem się, że to jest statek z drewna i płótna, załogowany przez zwykłych ludzi, kecz o nazwie 'Miraż'. Jest pod dowództwem człowieka o imieniu Jacob van Berg, który podaje ją za legendarnego 'Latającego Holendra'.";
 			link.l1 = "Van Berg? To holenderskie nazwisko. Prawdziwy 'Latający Holender', co?";
 			link.l1.go = "JacobBerg_3";
 		break;
@@ -437,7 +437,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JacobBerg_4":
-			dialog.text = "To nie twoja sprawa. Masz wykonywać rozkazy, a potem dostaniesz zapłatę. Dzięki mojemu agentowi dowiedziałem się, gdzie Jacob van Berg ukrywa się ze swoją 'Mirage'. Operuje z miasta na południowym wybrzeżu Hiszpańskiej Głównej. Idź do niego i dowiedz się, gdzie zakotwiczył swój statek widmo\nPotem go zabij, znajdź jego 'Mirage', weź ją jako zdobycz i dostarcz ją tutaj. Musisz przejąć 'Mirage', nawet nie myśl o jej zatopieniu.";
+			dialog.text = "To nie twoja sprawa. Masz wykonywać rozkazy, a potem dostaniesz zapłatę. Dzięki mojemu agentowi dowiedziałem się, gdzie Jacob van Berg ukrywa się ze swoim 'Miraż'. Operuje z miasta na południowym wybrzeżu Hiszpańskiego kontynentu. Idź do niego i dowiedz się, gdzie zakotwiczył swój statek widmo\nPotem go zabij, znajdź jego 'Miraż', weź go jako zdobycz i dostarcz tutaj. Musisz przejąć 'Miraż', nawet nie myśl o jego zatopieniu.";
 			link.l1 = "Brzmi wystarczająco prosto. Gdzie powinienem szukać van Berga?";
 			link.l1.go = "JacobBerg_5";
 		break;
@@ -451,7 +451,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JacobBerg_6":
-			dialog.text = "Longway czeka na ciebie na zewnątrz. Pokaże ci twój nowy statek i przekaże informacje o miejscu pobytu van Berga. Powodzenia, kapitanie, i nie zawiedź mnie. Pamiętaj, że musisz przyprowadzić 'Meifeng' z powrotem do mnie, więc staraj się jej nie zatopić, przejmując 'Mirage'.";
+			dialog.text = "Longway czeka na ciebie na zewnątrz. Pokaże ci twój nowy statek i przekaże informacje o miejscu pobytu van Berga. Powodzenia, kapitanie, i nie zawiedź mnie. Pamiętaj, że musisz przyprowadzić 'Meifeng' z powrotem do mnie, więc staraj się jej nie zatopić, przejmując 'Miraż'.";
 			link.l1 = "W drodze!";
 			link.l1.go = "JacobBerg_7";	
 		break;
@@ -477,14 +477,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jacob_lostMef":
-			dialog.text = "Ty bezmyślny idioto. Straciłeś 'Meifeng'. To jest niedopuszczalne... Zabiorę ci 'Mirage' i wstrzymam twoją zapłatę jako rekompensatę za moją stratę. Wynoś się, już cię nie potrzebujemy.";
+			dialog.text = "Ty bezmyślny idioto. Straciłeś 'Meifeng'. To jest niedopuszczalne... Zabiorę ci 'Miraż' i wstrzymam twoją zapłatę jako rekompensatę za moją stratę. Wynoś się, już cię nie potrzebujemy.";
 			link.l1 = "Przykro mi. Żegnaj, Mynheer Rodenburg.";
 			link.l1.go = "Jacob_RemoveShip";
 			pchar.questTemp.HWIC.Holl.ShipType = SHIP_MIRAGE;
 		break;
 		
 		case "Jacob_failFull":
-			dialog.text = "Mój Boże, jesteś naprawdę rzadkim okazem. Niezdolny nieudacznik I idiota. Nie udało ci się schwytać Mirage i straciłeś Meifeng przy okazji. Wynoś się, do cholery, z mojego biura!";
+			dialog.text = "Mój Boże, jesteś naprawdę rzadkim okazem. Niezdolny nieudacznik i idiota. Nie udało ci się schwytać 'Miraż' i straciłeś 'Meifeng' przy okazji. Wynoś się, do cholery, z mojego biura!";
 			link.l1 = "Odchodzę.";
 			link.l1.go = "exit";
 			Pchar.questTemp.FiringOfficerIDX = GetCharacterIndex("Longway");
@@ -497,7 +497,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jacob_complete":
-			dialog.text = "Świetna robota. Wieść o twoim sukcesie już dotarła do moich uszu. Van Berg nie żyje, a ty zdobyłeś jego statek. Twoja zapłata to 50 000 pesos, weź je.\nPrzejmuję od ciebie 'Meifenga'. Teraz nadszedł czas, abyś objął dowództwo nad 'Mirage', która odegra ważną rolę w następnym etapie. Jesteś gotów?";
+			dialog.text = "Świetna robota. Wieść o twoim sukcesie już dotarła do moich uszu. Van Berg nie żyje, a ty zdobyłeś jego statek. Twoja zapłata to 50 000 pesos, weź je.\nPrzejmuję od ciebie 'Meifenga'. Teraz nadszedł czas, abyś objął dowództwo nad 'Miraż', która odegra ważną rolę w następnym etapie. Jesteś gotów?";
 			link.l1 = "Tak, Panie Rodenburg.";
 			link.l1.go = "Fleetwood";
 			pchar.questTemp.HWIC.Holl.ShipType = SHIP_MAYFANG;
@@ -522,20 +522,20 @@ void ProcessDialogEvent()
 		
 		case "Fleetwood":
 			AddMoneyToCharacter(pchar, 50000);
-			dialog.text = "Teraz zajmiemy się Fleetwoodem. Zamierzasz wywabić go za pomocą 'statku widmo' Mirage, który tak entuzjastycznie ścigał. Zastaw pułapkę blisko Dominiki, Mirage posłuży jako przynęta.\nNajpierw poinformujesz Fleetwooda, że Mirage widziano niedaleko Dominiki. Nasz dzielny Anglik rzuci wszystko, co robi, i natychmiast wyruszy do Dominiki w poszukiwaniu swojej zdobyczy. Nie rozmawiaj z Fleetwoodem bezpośrednio, bo nie wyjdziesz z tego żywy. Znajdź aptekę w St. John's. Aptekarz John Murdock to mój stary przyjaciel.\nPowiedz mu, że działasz na moje polecenie, a on pomoże ci znaleźć miejscowe uszy, które napełnisz soczystymi kłamstwami o 'statku widmo' atakującym angielskich kupców wokół Dominiki.";
+			dialog.text = "Teraz zajmiemy się Fleetwoodem. Zamierzasz wywabić go za pomocą 'statku widmo' 'Miraż', który tak entuzjastycznie ścigał. Zastaw pułapkę blisko Dominiki, 'Miraż' posłuży jako przynęta.\nNajpierw poinformujesz Fleetwooda, że 'Miraż' widziano niedaleko Dominiki. Nasz dzielny Anglik rzuci wszystko, co robi, i natychmiast wyruszy do Dominiki w poszukiwaniu swojej zdobyczy. Nie rozmawiaj z Fleetwoodem bezpośrednio, bo nie wyjdziesz z tego żywy. Znajdź aptekę w St. John's. Aptekarz John Murdock to mój stary przyjaciel.\nPowiedz mu, że działasz na moje polecenie, a on pomoże ci znaleźć miejscowe uszy, które napełnisz soczystymi kłamstwami o 'statku widmo' atakującym angielskich kupców wokół Dominiki.";
 			link.l1 = "Mogę to zrobić. Celem jest zasadzka na Fleetwooda na Dominice, prawda?";
 			link.l1.go = "Fleetwood_1";
 		break;
 		
 		case "Fleetwood_1":
-			dialog.text = "Dokładnie. Longway i 'Meifeng' będą czekać na ciebie w pobliżu Dominiki. We dwóch łatwo pokonacie angielskiego psa. Przejmijcie jego statek i przeszukajcie kajutę. Chcę jego dziennik pokładowy. Zapłacę za niego ekstra.\nAle twoim głównym celem jest zabicie tego drania Fleetwooda, więc jeśli abordaż jest niemożliwy - poślij go na dno. Przede wszystkim musisz zachować 'Mirage' za wszelką cenę. Ona ma kluczową rolę do odegrania w następnym etapie planu.";
+			dialog.text = "Dokładnie. Longway i 'Meifeng' będą czekać na ciebie w pobliżu Dominiki. We dwóch łatwo pokonacie angielskiego psa. Przejmijcie jego statek i przeszukajcie kajutę. Chcę jego dziennik pokładowy. Zapłacę za niego ekstra.\nAle twoim głównym celem jest zabicie tego drania Fleetwooda, więc jeśli abordaż jest niemożliwy - poślij go na dno. Przede wszystkim musisz zachować 'Miraż' za wszelką cenę. Ona ma kluczową rolę do odegrania w następnym etapie planu.";
 			link.l1 = "Zrozumiano.";
 			link.l1.go = "Fleetwood_2";
 		break;
 		
 		case "Fleetwood_2":
-			dialog.text = "Rada dla ciebie, kapitanie. Nie rzucaj kotwicy w St. John's. Zatrzymaj się w jednej z zatok wyspy i przejdź do miasta przez dżunglę, w przeciwnym razie John nie będzie z tobą rozmawiał. Jeśli zwrócisz na siebie zbyt dużą uwagę, będzie udawał, że cię nie zna. Uważaj również na morzu - 'Mirage' jest znany wśród angielskich kolonii, więc unikaj ich okrętów wojennych i osiedli, jeśli nie chcesz być zaatakowany przez watahę morskich wilków. To wszystko. Niech Bóg będzie z tobą.";
-			link.l1 = "Aj aj.";
+			dialog.text = "Rada dla ciebie, kapitanie. Nie rzucaj kotwicy w St. John's. Zatrzymaj się w jednej z zatok wyspy i przejdź do miasta przez dżunglę, w przeciwnym razie John nie będzie z tobą rozmawiał. Jeśli zwrócisz na siebie zbyt dużą uwagę, będzie udawał, że cię nie zna. Uważaj również na morzu - 'Miraż' jest znany wśród angielskich kolonii, więc unikaj ich okrętów wojennych i osiedli, jeśli nie chcesz być zaatakowany przez watahę morskich wilków. To wszystko. Niech Bóg będzie z tobą.";
+			link.l1 = "Aye aye.";
 			link.l1.go = "Fleetwood_3";
 		break;
 		
@@ -572,7 +572,7 @@ void ProcessDialogEvent()
 		
 		case "Fleetwood_complete_1":
 			AddMoneyToCharacter(pchar, 100000);
-			dialog.text = "To wielka szkoda, odpowiedziałoby to na wiele naszych pytań. Teraz to bez znaczenia. Zabiłeś tego bezczelnego angielskiego psa i to jest najważniejsze. Oto twoja nagroda - 100 000 pesos. Zabieram od ciebie 'Mirage', zamierzamy zwrócić ten statek do Anglii.";
+			dialog.text = "To wielka szkoda, odpowiedziałoby to na wiele naszych pytań. Teraz to bez znaczenia. Zabiłeś tego bezczelnego angielskiego psa i to jest najważniejsze. Oto twoja nagroda - 100 000 pesos. Zabieram od ciebie 'Miraż', zamierzamy zwrócić ten statek do Anglii.";
 			link.l1 = "Na litość boską?! To zacny statek, chciałem go zatrzymać!";
 			link.l1.go = "Fleetwood_complete_3";
 		break;
@@ -580,13 +580,13 @@ void ProcessDialogEvent()
 		case "Fleetwood_complete_2":
 			AddMoneyToCharacter(pchar, 150000);
 			RemoveItems(PChar, "FleetwoodJournal", 1);
-			dialog.text = "Znakomicie! Jesteś bardzo zdolnym człowiekiem. Gdyby wszyscy nasi kapitanowie byli tacy jak ty, Republika Holenderska byłaby pierwsza wśród największych morskich narodów w historii. Oto twoja nagroda - 100 000 pesos i dodatkowe 50 000 pesos za dziennik. Zabieram od ciebie 'Mirage', zamierzamy zwrócić ten statek Anglii.";
+			dialog.text = "Znakomicie! Jesteś bardzo zdolnym człowiekiem. Gdyby wszyscy nasi kapitanowie byli tacy jak ty, Republika Holenderska byłaby pierwsza wśród największych morskich narodów w historii. Oto twoja nagroda - 100 000 pesos i dodatkowe 50 000 pesos za dziennik. Zabieram od ciebie 'Miraż', zamierzamy zwrócić ten statek Anglii.";
 			link.l1 = "Co do diabła?! To piękny statek, chciałem go zatrzymać!";
 			link.l1.go = "Fleetwood_complete_3";
 		break;
 		
 		case "Fleetwood_complete_3":
-			dialog.text = "Mój chłopcze, jesteś doskonałym żołnierzem, ale zaufaj mi i mojemu doświadczeniu w sprawach polityki. Pamiętasz, co mówiłem o Fleetwoodzie? Zamierzam przybić jego imię i reputację do kamienia młyńskiego i wrzucić go w głębiny. A ci aroganccy szlachcice z Port Royal będą musieli to przełknąć i zadławić się.\nZrobimy z Richarda Fleetwooda kapitana 'statku widmo' Mirage, wilkołaka grającego przeciwko sobie Anglię i Niderlandy, plądrującego, grabieżnego i mordującego pokojowych obywateli obu krajów tylko po to, by się wzbogacić! Co za parodia! Już przygotowałem dowody i świadków, ale 'Mirage' będzie głównym wydarzeniem mojej doskonałej gry.";
+			dialog.text = "Mój chłopcze, jesteś doskonałym żołnierzem, ale zaufaj mi i mojemu doświadczeniu w sprawach polityki. Pamiętasz, co mówiłem o Fleetwoodzie? Zamierzam przybić jego imię i reputację do kamienia młyńskiego i wrzucić go w głębiny. A ci aroganccy szlachcice z Port Royal będą musieli to przełknąć i zadławić się.\nZrobimy z Richarda Fleetwooda kapitana 'statku widmo' Miraż, wilkołaka grającego przeciwko sobie Anglię i Niderlandy, plądrującego, grabieżnego i mordującego pokojowych obywateli obu krajów tylko po to, by się wzbogacić! Co za parodia! Już przygotowałem dowody i świadków, ale 'Miraż' będzie głównym wydarzeniem mojej doskonałej gry.";
 			link.l1 = "Więc do diabła ze mną. Zamierzasz poświęcić mój doskonały statek dla swojego planu!?";
 			link.l1.go = "Fleetwood_complete_4";
 			AddDialogExitQuestFunction("Lucas_ExangeShip");
@@ -599,14 +599,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Fleetwood_complete_5":
-			dialog.text = "Nie bądź tak zdenerwowany, kapitanie, mam też dobre wieści. Aby złagodzić twoje oburzenie, daję ci mój Piękny Wiatr, żebek 'Meifeng'. Możesz korzystać z tego statku w dowolny sposób, w granicach rozsądku. Dodatkowo, spotkaj się ze mną jutro w rezydencji gubernatora, zostałeś nominowany do nagrody państwowej z wdzięcznością Republiki Niderlandzkiej i Kompanii Zachodnioindyjskiej. Nie opuszczaj miasta, dopóki jej nie otrzymasz, kapitanie.";
+			dialog.text = "Nie bądź tak zdenerwowany, kapitanie, mam też dobre wieści. Aby złagodzić twoje oburzenie, daję ci mój Piękny Wiatr, szebeke 'Meifeng'. Możesz korzystać z tego statku w dowolny sposób, w granicach rozsądku. Dodatkowo, spotkaj się ze mną jutro w rezydencji gubernatora, zostałeś nominowany do nagrody państwowej z wdzięcznością Republiki Niderlandzkiej i Kompanii Zachodnioindyjskiej. Nie opuszczaj miasta, dopóki jej nie otrzymasz, kapitanie.";
 			link.l1 = "To trochę łagodzi gorycz moich strat. Jestem zaszczycony. A tak przy okazji, panie, gdzie się podział Longway?";
 			link.l1.go = "Fleetwood_complete_6";
 		break;
 		
 		case "Fleetwood_complete_6":
 			dialog.text = "Nagle Longway zniknął zaraz po tym, jak kazałem mu płynąć na Dominikę. Mam podejrzenia, że angielscy agenci się na niego zasadzili... a może nie. Prowadzę dochodzenie.";
-			link.l1 = "Rozumiem. Jego pomoc na Dominice byłaby bardzo mile widziana. Fleetwood i jego 'Valkerie' stanowili przerażający duet. Mam nadzieję, że Longway wciąż żyje... Tot zeins, mynheer!";
+			link.l1 = "Rozumiem. Jego pomoc na Dominice byłaby bardzo mile widziana. Fleetwood i jego 'Walkiria' stanowili przerażający duet. Mam nadzieję, że Longway wciąż żyje... Tot zeins, mynheer!";
 			link.l1.go = "Fleetwood_complete_7";
 			pchar.questTemp.HWIC.Holl = "Award";
 			AddQuestRecord("Holl_Gambit", "1-24");
@@ -641,7 +641,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LucasAward":
-			dialog.text = "Kapitanie "+GetFullName(pchar)+"! Za wyeliminowanie Richarda Fleetwooda, niebezpiecznego przestępcy stanu, za ujawnienie zdradzieckiego angielskiego spisku przeciwko Republice, za odwagę i męstwo, zostajesz nagrodzony tysiącem złotych dublonów w imieniu Republiki Niderlandzkiej!\nOtrzymujesz także to cenne narzędzie nawigacyjne - marzenie każdego wojskowego żeglarza.";
+			dialog.text = "Kapitanie "+GetFullName(pchar)+"! Za wyeliminowanie Richarda Fleetwooda, niebezpiecznego przestępcy, za ujawnienie zdradzieckiego angielskiego spisku przeciwko Republice, za odwagę i męstwo, zostajesz nagrodzony tysiącem złotych dublonów w imieniu Republiki Niderlandzkiej!\nOtrzymujesz także to cenne narzędzie nawigacyjne - marzenie każdego wojskowego żeglarza.";
 			link.l1 = "Jestem szczęśliwy, mogąc służyć Republice!";
 			link.l1.go = "LucasAward_1";			
 		break;
@@ -688,7 +688,7 @@ void ProcessDialogEvent()
 //--------------------------------------------------4 задание----------------------------------------------
 		
 		case "Abby":
-			dialog.text = "Pozwól, że opowiem ci historię. Pomoże ci to zrozumieć, jak delikatne jest twoje następne zadanie. Kilka miesięcy temu fluita pod angielską banderą, która płynęła do Willemstad, została zaatakowana przez nieżyjącego już Jacoba van Berga. Zabrał statek i zatopił go niedaleko wyspy, której nie ma na żadnej z naszych map. Przeżyło tylko dwoje pasażerów fluty. Żyd o imieniu Solomon Shneur i jego córka Abigail. Wszyscy inni pasażerowie zginęli, w tym reszta ich rodziny. Nasi dwaj Żydzi dotarli na wyspę, unosząc się na szczątkach. Solomonowi udało się nawet przetransportować skrzynię wypełnioną rodzinnym złotem. Bardzo oszczędny z niego człowiek. Innym bohaterem naszej opowieści, Richard Fleetwood, żeglował w pobliżu i usłyszał odgłosy walki. Przybył za późno, aby schwytać van Berga, a 'Mirage' uciekł. Fleetwood postanowił sprawdzić wyspę pod kątem ocalałych. Uratował Solomona i Abigail przed pewną śmiercią na tej bezludnej wyspie. Niestety dla starego Żyda, Solomon nie ma oka marynarza. Pomylił 'Valkerie' Richarda z 'Mirage' Jacoba i - przerażony, że pirat wraca, aby dokończyć dzieła - ukrył swoje złoto gdzieś na wyspie. W rezultacie, on i jego córka przybyli tutaj bez grosza, zostali przywiezieni przez Fleetwooda do Laguny Blanca, niedaleko Willemstad, ich pierwotnego celu podróży. Solomon opowiedział mi tę historię. Republika Holenderska wspiera swobodę praktykowania religii. W ramach tej polityki, Kompania wspiera społeczność żydowską tutaj. Dlatego zadbałem, aby mieli dach nad głową oraz co jeść i nosić. Często odwiedzałem ich miejsce. Abigail to... niezwykła młoda kobieta. Szczera i ufna. Nie będę cię okłamywał, kapitanie, chcę jej i zamierzam uczynić ją moją żoną. Ona również mnie kocha, ale coś stanęło między nami.";
+			dialog.text = "Pozwól, że opowiem ci historię. Pomoże ci to zrozumieć, jak delikatne jest twoje następne zadanie. Kilka miesięcy temu fluita pod angielską banderą, która płynęła do Willemstad, została zaatakowana przez nieżyjącego już Jacoba van Berga. Zabrał statek i zatopił go niedaleko wyspy, której nie ma na żadnej z naszych map. Przeżyło tylko dwoje pasażerów fluty. Żyd o imieniu Solomon Shneur i jego córka Abigail. Wszyscy inni pasażerowie zginęli, w tym reszta ich rodziny. Dwoje naszych żydów dotarło na wyspę, unosząc się na szczątkach. Solomonowi udało się nawet przetransportować skrzynię wypełnioną rodzinnym złotem. Bardzo oszczędny z niego człowiek. Innym bohaterem naszej opowieści, Richard Fleetwood, żeglował w pobliżu i usłyszał odgłosy walki. Przybył za późno, aby schwytać van Berga, a 'Miraż' uciekł. Fleetwood postanowił sprawdzić wyspę pod kątem ocalałych. Uratował Solomona i Abigail przed pewną śmiercią na tej bezludnej wyspie. Niestety dla starego Żyda, Solomon nie ma oka marynarza. Pomylił 'Valkerie' Richarda z 'Miraż' Jacoba i - przerażony, że pirat wraca, aby dokończyć dzieła - ukrył swoje złoto gdzieś na wyspie. W rezultacie, on i jego córka przybyli tutaj bez grosza, zostali przywiezieni przez Fleetwooda do Laguny Blanca, niedaleko Willemstad, ich pierwotnego celu podróży. Solomon opowiedział mi tę historię. Republika Holenderska wspiera swobodę praktykowania religii. W ramach tej polityki, Kompania wspiera społeczność żydowską tutaj. Dlatego zadbałem, aby mieli dach nad głową oraz co jeść i nosić. Często odwiedzałem ich miejsce. Abigail to... niezwykła młoda kobieta. Szczera i ufna. Nie będę cię okłamywał, kapitanie, chcę jej i zamierzam uczynić ją moją żoną. Ona również mnie kocha, ale coś stanęło między nami.";
 			link.l1 = "Jej ojciec niezbyt zachwycony gojem jako zięciem?";
 			link.l1.go = "Abby_0";			
 		break;
@@ -708,7 +708,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Abby_2":
-			dialog.text = "Czy naprawdę znalazłeś wyspę, gdzie Salomon ukrył swoje złoto? To jest wspaniałe! Już zaczynałem myśleć, że jesteś w stanie wykonać każde zadanie... Znalazłeś coś jeszcze w tej skrytce?";
+			dialog.text = "Czy naprawdę znalazłeś wyspę, gdzie Salomon ukrył swoje złoto? To wspaniale! Zaczynam myśleć, że jesteś w stanie wykonać każde zadanie... Znalazłeś coś jeszcze w tej skrytce?";
 			if (CheckAttribute(pchar, "questTemp.HWIC.Holl.ScullnotReturn"))
 			{
 				link.l1 = "Nie, nic więcej. Tylko pieniądze.";
@@ -745,11 +745,11 @@ void ProcessDialogEvent()
 			AddQuestRecord("Holl_Gambit", "1-34");
 			DelMapQuestMarkCity("Villemstad");
 			SetTimerFunction("GollandGambit_5_ZadanieStart", 0, 0, 10);
-			AddSimpleRumourCity("Have you heard the latest news? Mynheer Rodenburg is going to marry Abigail Shneur, the beautiful daughter of the old crazy Jew Solomon. What can I say, she is a lucky girl. God willing, she'll be baptized a true Christian before the wedding!", "Villemstad", 20, 3, "");
+			AddSimpleRumourCity("Słyszałeś najnowsze wieści? Mynheer Rodenburg poślubi Abigail Shneur, piękną córkę starego szalonego Żyda Salomona. Cóż mogę powiedzieć, to szczęściara. Jeśli Bóg pozwoli, przed ślubem zostanie ochrzczona jako prawdziwa chrześcijanka!", "Villemstad", 20, 3, "");
 		break;
 		
 		case "Abby_6":
-			dialog.text = "Ha, i to wszystko? Czysta absurdalność...jak bardzo kobiece. Posłuchaj mnie, mój chłopcze, ten problem można łatwo rozwiązać. Wiem, ile pieniędzy było w skarbcu Salomona: 200 000 pesos. Jestem gotów poświęcić tę sumę dla mojego i Abigail szczęścia. Dam ci pieniądze i opuścisz Curacao na tydzień lub dwa. Potem wrócisz do Salomona i dasz mu pieniądze. Udawaj, że znalazłeś skarbiec. Wilk będzie syty, a owca cała. Oto, weź wymaganą sumę.";
+			dialog.text = "Ha, i to wszystko? Czysta absurdalność... jak bardzo kobiece. Posłuchaj mnie, mój chłopcze, ten problem można łatwo rozwiązać. Wiem, ile pieniędzy było w skarbcu Salomona: 200 000 pesos. Jestem gotów poświęcić tę sumę dla mojego i Abigail szczęścia. Dam ci pieniądze i opuścisz Curacao na tydzień lub dwa. Potem wrócisz do Salomona i dasz mu pieniądze. Udawaj, że znalazłeś skarbiec. Wilk będzie syty, a owca cała. Oto, weź wymaganą sumę.";
 			link.l1 = "Dobry i prosty plan. Zróbmy to.";
 			link.l1.go = "Abby_7";
 		break;
@@ -775,7 +775,7 @@ void ProcessDialogEvent()
 //-------------------------------------------5 задание-------------------------------------------------
 		case "Merdok":
 			dialog.text = "Tak, dokładnie tak. Mój przyjacielu, czasami trudno dostrzec, kto jest twoim przyjacielem, a kto wrogiem. Czasami przegapiasz moment, gdy twój najbliższy współpracownik staje się twoim nemezis. Nasz wspólny znajomy z St John's, John Murdock - znany również jako Johan van Merden - to były agent Kompanii, który sprzedał się angielskiej flocie.\nJego najnowsza misja to eliminacja jednej z najjaśniejszych gwiazd Kompanii... ciebie.";
-			link.l1 = "Jestem pochlebiony. Cieszę się, że mi powiedziałeś, w przeciwnym razie bym się tego nie spodziewał.";
+			link.l1 = "Jestem zaszczycony. Cieszę się, że mi powiedziałeś, w przeciwnym razie bym się tego nie spodziewał.";
 			link.l1.go = "Merdok_1";
 		break;
 		
@@ -831,7 +831,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Merdok_book":
-			dialog.text = "Znakomicie! Teraz jest bezpiecznie tam, gdzie jego miejsce. Udowodniłeś, że jesteś najlepszy po raz kolejny... Daj mi książkę... Jest nagroda za archiwum - ten wyśmienity muszkiet. Służył mi z wielką wyróżnieniem, a teraz jest twój!";
+			dialog.text = "Znakomicie! Teraz jest tam, gdzie jego miejsce. Udowodniłeś, że jesteś najlepszy po raz kolejny... Daj mi książkę... za archiwum jest nagroda - ten wyśmienity muszkiet. Wiernie mi służył, a teraz jest twój!";
 			link.l1 = "";
 			if (CheckAttribute(pchar, "questTemp.PZ_RodenburgUkradenaStranitsa"))
 			{
@@ -895,7 +895,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Merdok_book_6":
-			dialog.text = "Jest nagroda za archiwum - ta doskonała muszkiet. Służył mi z wielkim wyróżnieniem, a teraz jest twój!";
+			dialog.text = "Za archiwum jest nagroda - ten doskonały muszkiet. Służył mi z wielkim wyróżnieniem, a teraz jest twój!";
 			link.l1 = "Dzięki!";
 			link.l1.go = "Merdok_6";
 			GiveItem2Character(PChar, "mushket2");
@@ -908,8 +908,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Merdok_7":
-			dialog.text = "To pożegnanie, "+pchar.name+"  Zrealizowałem wszystko, co chciałem tutaj, więc za tydzień wracam do domu, do Amsterdamu. Moja nowa żona Abigail i mój teść Solomon będą mi towarzyszyć. Peter Stuyvesant już znalazł nowego wice-dyrektora Kompanii, więc porozmawiaj z nim, jeśli czegoś potrzebujesz\nZa twoje usługi przekazuję ci Meifeng. Jest teraz twoja, kapitanie, zasłużyłeś na nią.";
-			link.l1 = "Dziękuję, Mynheer Rodenburg. Bardzo przywiązałem się do Meifeng i już zacząłem ją traktować jak swoją własność.";
+			dialog.text = "To pożegnanie, "+pchar.name+".  Zrealizowałem wszystko, co chciałem tutaj, więc za tydzień wracam do domu, do Amsterdamu. Moja nowa żona Abigail i mój teść Solomon będą mi towarzyszyć. Peter Stuyvesant już znalazł nowego wice-dyrektora Kompanii, więc porozmawiaj z nim, jeśli czegoś potrzebujesz\nZa twoje usługi przekazuję ci 'Meifeng'. Jest teraz twój, kapitanie, zasłużyłeś na niego.";
+			link.l1 = "Dziękuję, Mynheer Rodenburg. Bardzo przywiązałem się do 'Meifeng' i już zacząłem go traktować jak swoją własność.";
 			link.l1.go = "Merdok_8";
 		break;
 		
@@ -951,8 +951,8 @@ void ProcessDialogEvent()
 			DelMapQuestMarkCity("Villemstad");
 			AddMapQuestMarkCity("FortFrance", false);
 			AddLandQuestMark(characterFromId("Mishelle"), "questmarkmain");
-			AddSimpleRumourCity("Mynheer Rodenburg has sailed to Amsterdam with his young wife and father-in-law. Are you the new vice-director?", "Villemstad", 30, 3, "");
-			AddSimpleRumour("They say, kapitein, that you are well regarded by the governor-general. Mynheer Rodenburg supposedly appointed you as his successor in the Company, is that so?", HOLLAND, 30, 3);
+			AddSimpleRumourCity("Mynheer Rodenburg popłynął do Amsterdamu ze swoją młodą żoną i teściem. Czy jesteś nowym wicedyrektorem?", "Villemstad", 30, 3, "");
+			AddSimpleRumour("Mówią, kapitein, że cieszysz się uznaniem gubernatora generalnego. Mynheer Rodenburg podobno mianował cię swoim następcą w Kompanii, czy tak?", HOLLAND, 30, 3);
 		break;
 		
 		case "Merdok_9":
@@ -989,14 +989,14 @@ void ProcessDialogEvent()
 		
 //----------------------------------------------за Англию------------------------------------------------------
 		case "Lucas_abordage":
-			dialog.text = "Boże na Niebie! Pies Fleetwooda! Możesz wygrać dziś, ale Lucas Rodenburg sprzeda swoje życie drogo.";
+			dialog.text = "Boże na Niebie! Pies Fleetwooda! Może i dziś wygrałeś, ale Lucas Rodenburg tanio skóry nie sprzeda.";
 			link.l1 = "Nie sądzę. Oddasz mi swoje życie za darmo, ty holenderski skąpcze.";
 			link.l1.go = "Lucas_abordage_1";
 		break;
 		
 		case "Lucas_abordage_1":
 			PlaySound("Voice\English\hambit\Lucas Rodenburg-04.wav");
-			dialog.text = "Z głębokości piekła nasram ci do ust! Właśnie podpaliłem ładownię, a ogień wkrótce dotrze do składu prochowego! Nasze statki są związane w zwarciu, więc nie ma nadziei na ucieczkę! Spłoniesz albo nakarmisz rekiny!";
+			dialog.text = "Z głębokości piekła nasram ci do ust! Właśnie podpaliłem ładownię, a ogień wkrótce dotrze do prochowni! Nasze statki są związane w zwarciu, więc nie ma nadziei na ucieczkę! Spłoniesz albo nakarmisz rekiny!";
 			link.l1 = "Cholera! Cofnijcie się, ludzie, musimy się wycofać!";
 			link.l1.go = "Lucas_abordage_2";
 			// belamour legendary edition -->

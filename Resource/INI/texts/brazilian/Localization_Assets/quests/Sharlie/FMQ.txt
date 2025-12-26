@@ -1,0 +1,76 @@
+FMQ_1 {Bertrand}
+FMQ_2 {Pinette}
+FMQ_3 {Carlos}
+FMQ_4 {de Milyar}
+FMQ_5 {Jean}
+FMQ_6 {Deno}
+FMQ_7 {Sario}
+FMQ_8 {Juan}
+FMQ_9 {Deno}
+FMQ_10 {'Sario'}
+FMQ_11 {~ Quanto ao Pinette... Que se dane, o agiota canalha não vai ficar com ele.}
+FMQ_12 {~ O agiota canalha vai me ajudar a resolver isso sob ameaça de exposição – a carta de Pinette é um argumento de peso. Devo seguir para Guadalupe e entrar na cidade pelos portões durante a noite.}
+FMQ_13 {Benseсho}
+FMQ_14 {comboio comercial de San Jose}
+FMQ_15 {Modo exploração: tempo estendido. Complete a missão!}
+FMQ_16 {A noite caiu...@<NewStr()>A resina foi descarregada no estaleiro...}
+FMQ_17 {Topaz}
+FMQ_18 {Sons de alarme na tartana Topaz!}
+FMQ_19 {Você pode desembarcar na costa}
+FMQ_20 {Modo exploração: a missão não falha}
+FMQ_21 {Caspar}
+FMQ_22 {Gratton}
+FMQ_23 {Zeepard}
+FMQ_24 {Um grupo de invasores ingleses tentou infiltrar nossa prisão, mas caiu numa armadilha preparada pelo nosso atento comandante. Agora todo inglês está atrás das grades, ha ha!}
+FMQ_25 {Ouça só. Pegaram um grupo de invasores britânicos há pouco tempo. Eles tentaram libertar seus compatriotas da nossa prisão, mas acabaram presos lá também!}
+FMQ_26 {Filippe}
+FMQ_27 {Jaсobsen}
+FMQ_28 {Um grupo de invasores britânicos veio à nossa ilha, mas nosso atento comandante os encontrou e eliminou todos. Isso é grande!}
+FMQ_29 {Ficou sabendo? Teve uma escaramuça fora da cidade. Encontraram um grupo de invasores ingleses. Os britânicos se recusaram a se render e foram mortos em combate. Bom trabalho, comandante!}
+FMQ_30 {Seda naval +200}
+FMQ_31 {Ah, é você! Bravo, capitão! Teve coragem de enfrentar espiões ingleses armados até os dentes!}
+FMQ_32 {Nossas autoridades lhe elogiam muito, capitão. E com razão: ajudar a eliminar espiões ingleses é algo grandioso!}
+FMQ_33 {Os ingleses desembarcaram na nossa ilha, mas nosso comandante vigilante não vacilou, encontrou todos os canalhas e acabou com eles. É isso aí!}
+FMQ_34 {Ficou sabendo? Teve uma briga fora da cidade. Encontramos sabotadores ingleses. Eles se recusaram a se render e foram mortos pelos soldados. Nosso comandante está de parabéns!}
+FMQ_35 {Alarme na cidade!}
+FMQ_36 {Que ousadia! Os britânicos invadiram nossa cidade à noite! Mas nosso comandante os encontrou e eliminou. Grande coisa!}
+FMQ_37 {Ficou sabendo? Teve uma briga na cidade. Encontraram um grupo de invasores ingleses. Os britânicos se recusaram a se render e foram mortos em combate. Bom trabalho, comandante!}
+FMQ_38 {Você não ancorou seu navio na baía!}
+FMQ_39 {Hans}
+FMQ_40 {Shulte}
+FMQ_41 {A corveta Zeepard está sobre nós!}
+FMQ_42 {Você ouviu falar da confusão que está acontecendo aqui? O governador está furioso. Espiões ingleses libertaram seus compatriotas da nossa prisão! Dizem que alguns franceses também estão envolvidos nisso.}
+FMQ_43 {Ficou sabendo? O governador está furioso. Espiões ingleses libertaram seus compatriotas da nossa prisão! Dizem que alguns franceses também estavam envolvidos nisso.}
+FMQ_44 {Modo exploração: tempo estendido. Leve os passageiros ao destino!}
+FMQ_45 {Ora, é você! Bravo, capitão! Teve coragem de ajudar nossos fuzileiros bem no covil holandês!}
+FMQ_46 {O governador o elogia muito, capitão. E com razão: ajudar os homens de Fox a salvar os oficiais presos é um grande feito!}
+FMQ_47 {Marceline}
+FMQ_48 {Levasseur}
+FMQ_49 {Claude}
+FMQ_50 {Durand}
+FMQ_51 {Ugo}
+FMQ_52 { }
+FMQ_53 {interceptador}
+FMQ_54 {Domingo Albalate deixou seu navio}
+FMQ_55 {Você encontrou um grosso livro de contabilidade}
+FMQ_56 {Luis}
+FMQ_57 {Ortiz}
+FMQ_58 {Fudroyan}
+FMQ_59 {Gregoire}
+FMQ_60 {Valinnie}
+FMQ_61 {Prosper}
+FMQ_62 {Trubal}
+FMQ_63 {Johnny}
+FMQ_64 { }
+FMQ_65 {Você reservou 20 000 pesos para Selina Trubal}
+FMQ_66 {Felicien}
+FMQ_67 {Gronier}
+FMQ_68 {Modo exploração: duração da missão dobrada}
+FMQ_69 {Modo de exploração: temporizador removido}
+FMQ_70 {Hans}
+FMQ_71 {Shulte}
+FMQ_72 {Silvestre}
+FMQ_73 {McCoy}
+FMQ_74 {Domingo}
+FMQ_75 {Albalate}
+FMQ_76 {Algumas horas depois...@<NewStr()>As mercadorias foram entregues na costa}

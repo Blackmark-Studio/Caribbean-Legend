@@ -5,30 +5,32 @@ newline
 BasicDefense {Defensa básica}
 perkBasicDefense {Reduce el daño recibido en un $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Defensa avanzada}
-perkAdvancedDefense {Reduce el daño recibido en un $percent($perkBaseValue(AdvancedDefence|1)) y el daño crítico enemigo en un $percent($perkBaseValue(AdvancedDefence|2)).}
+perkAdvancedDefense {Reduce el daño recibido en un $percent($perkBaseValue(AdvancedDefense|1)) y el daño crítico enemigo en un $percent($perkBaseValue(AdvancedDefense|2)).}
 CriticalHit {Golpe crítico}
-perkCriticalHit {Aumenta la probabilidad base de golpe crítico en un 3,5%.}
+perkCriticalHit {Aumenta la probabilidad base de golpe crítico en un $percent($perkBaseValue(CriticalHit|1)).}
 Grus {Espina fuerte}
 perkGrus {Aumenta el peso de carga en 35 libras.}
 Tireless {Incansable}
-perkTireless {La velocidad de recuperación de energía aumenta un 15%.}
+perkTireless {La velocidad de recuperación de energía aumenta un $percent($perkBaseValue(Tireless|1)).}
 HardHitter {Mano pesada}
-perkHardHitter {Los ataques pesados con Armas pesadas infligen un 15% más de daño. Desbloquea ataque pesado avanzado.}
+perkHardHitter {Los ataques pesados con Armas pesadas infligen un $percent($perkBaseValue(HardHitter|1)) más de daño. Desbloquea ataque pesado avanzado.}
 BladeDancer {Danza con sables}
-perkBladeDancer {El ataque de grupo con armas curvadas inflige un 30% más de daño.}
+perkBladeDancer {El ataque de grupo con armas curvadas inflige un $percent($perkBaseValue(BladeDancer|1)) más de daño.}
 Sliding {Golpe irresistible}
 perkSliding {El ataque rápido o ataque cortante con un arma ligera puede romper Bloqueo con un 20% de probabilidad.}
 Gunman {Mosquetero}
 perkGunman
 {
-Aumenta el daño y la velocidad de recarga de las armas de fuego en $percent($perkBaseValue(Gunman|1)). Permite el uso de armas de dos manos de un solo disparo y de una mano de varios disparos. ~ Los oficiales solo pueden usar $key(descriptor_TwoHanded|ItemsDescriptors.txt) si se les ordena explícitamente hacerlo.
+Aumenta el daño y la velocidad de recarga de las armas de fuego en $percent($perkBaseValue(Gunman|1)). Permite el uso de armas de dos manos de un solo disparo y de una mano de varios disparos.
+ ~
+ Los oficiales solo pueden usar $key(descriptor_TwoHanded|ItemsDescriptors.txt) si se les ordena explícitamente hacerlo.
 }
 GunProfessional {Hostigador}
 perkGunProfessional {Aumenta el daño y la velocidad de recarga de las armas de fuego en $percent($perkBaseValue(GunProfessional|1)). Desbloquea el uso de armas de fuego de dos manos con múltiples disparos.}
 IronWill {Voluntad de hierro}
 perkIronWill {Te permite sobrevivir a una herida mortal una vez cada 3 minutos.}
 SharedExperience {Aprendiz rápido}
-perkSharedExperience {Acelera el desarrollo de habilidades un 5 %.}
+perkSharedExperience {Acelera el desarrollo de habilidades un 15 %.}
 Medic {Hábitos saludables}
 perkMedic {Aumenta la salud en 25 puntos. Duplica la curación pasiva si la salud está por debajo de la mitad del máximo.}
 HPPlus {Salud creciente}
@@ -46,7 +48,9 @@ perkTrustworthy {Desbloquea opciones alternativas de persuasión en diálogos pa
 ShipEscape {Segunda oportunidad}
 perkShipEscape
 {
-Rescate en bote salvavidas desde el barco hundiéndose del héroe a otro de los barcos de su flota.Permite, durante el combate, cuando el casco del barco esté por debajo del 15%, usar el menú de bodega para transferirse o moverse a otro barco de la flota.Si un compañero tiene esta habilidad, escapará de un barco hundiéndose o incendiado, regresando como pasajero al barco del héroe en un bote salvavidas.
+Rescate en bote salvavidas desde el barco hundiéndose del héroe a otro de los barcos de su flota.
+Permite, durante el combate, cuando el casco del barco esté por debajo del 15%, usar el menú de bodega para transferirse o moverse a otro barco de la flota.
+Si un compañero tiene esta habilidad, escapará de un barco hundiéndose o incendiado, regresando como pasajero al barco del héroe en un bote salvavidas.
 }
 Alchemy {Alquimia}
 perkAlchemy {Las recetas ya no requieren Herramienta. Otorga un 15% de probabilidad de conservar una poción al usarla.}
@@ -71,7 +75,8 @@ perkLongRangeGrappling {La distancia de abordaje aumenta un 15%.}
 MusketsShoot {Descarga de mosquetes}
 perkMusketsShoot
 {
-Se dispara una descarga de mosquetes antes del abordaje.Las bajas dependen de la clase del barco y del número de Vanguardias.
+Se dispara una descarga de mosquetes antes del abordaje.
+Las bajas dependen de la clase del barco y del número de Vanguardias.
 }
 GrapplingProfessional {Contramaestre experto}
 perkGrapplingProfessional {La distancia de abordaje aumenta un 25 %. Posible desde cualquier ángulo y velocidad.}
@@ -94,37 +99,30 @@ perkSailingProfessional {Velocidad y maniobrabilidad del barco aumentadas un 5%.
 SeaDogProfessional {Terror de los Mares}
 perkSeaDogProfessional
 {
-Al ver el estandarte del Terror del Mar, ni los aventureros ni los forajidos más audaces se atreven a tentar a la suerte. Aumenta el Poder de la Flota un $percent($PerkBaseValue(SeaDogProfessional|1)).~Habilidad disponible solo para el jugador; requiere rango $attr($context.rank).
+Al ver el estandarte del Terror del Mar, ni los aventureros ni los forajidos más audaces se atreven a tentar a la suerte. Aumenta el Poder de la Flota un $percent($PerkBaseValue(SeaDogProfessional|1)).
+~
+Habilidad disponible solo para el jugador; requiere rango $attr($context.rank).
 }
 FlagPir {Jolly Roger}
 perkFlagPir
 {
-Habilidad para cambiar tu bandera por la Jolly Roger.~Esta habilidad solo está disponible para el jugador.
+Habilidad para cambiar tu bandera por la Jolly Roger.
+~
+Esta habilidad solo está disponible para el jugador.
 }
 FlagEng {Bandera de Inglaterra}
-perkFlagEng
-{
-La probabilidad de ser detectado depende de Sigilo, la clase de tu barco y el tamaño de tu flota, el tamaño de la flota enemiga y el nivel de Amenaza.~Habilidad disponible solo para el jugador
-}
+perkFlagEng {Solo puedes usar las banderas disponibles para el rate de tu barco. Para obtener una bandera, debes capturar un barco del rate correspondiente o comprar una licencia.}
 FlagFra {Bandera de Francia}
-perkFlagFra
-{
-La probabilidad de ser detectado depende de Sigilo, clase y tamaño de tu flota, tamaño de la flota enemiga y nivel de Amenaza.~Habilidad disponible solo para el jugador
-}
+perkFlagFra {Solo puedes usar las banderas disponibles para el rate de tu barco. Para obtener una bandera, debes capturar un barco del rate correspondiente o comprar una licencia.}
 FlagSpa {Bandera de España}
-perkFlagSpa
-{
-La probabilidad de ser detectado depende de Sigilo, la clase y tamaño de tu flota, el tamaño de la flota enemiga y el nivel de Amenaza.~Habilidad disponible solo para el jugador
-}
+perkFlagSpa {Solo puedes usar las banderas disponibles para el rate de tu barco. Para obtener una bandera, debes capturar un barco del rate correspondiente o comprar una licencia.}
 FlagHol {Bandera de los Países Bajos}
-perkFlagHol
-{
-La probabilidad de ser detectado depende de Sigilo, clase de tu barco y tamaño de la flota, tamaño de la flota enemiga y nivel de Amenaza.~Habilidad disponible solo para el jugador
-}
+perkFlagHol {Solo puedes usar las banderas disponibles para el rate de tu barco. Para obtener una bandera, debes capturar un barco del rate correspondiente o comprar una licencia.}
 Troopers {Tácticas de asedio}
 perkTroopers
 {
-Permite combinar las tripulaciones de tu flota antes de asaltar un fuerte con toda la fuerza.Reduce la cantidad de tripulación necesaria para asaltar un asentamiento por tierra.
+Permite combinar las tripulaciones de tu flota antes de asaltar un fuerte con toda la fuerza.
+Reduce la cantidad de tripulación necesaria para asaltar un asentamiento por tierra.
 }
 BasicCommerce {Comercio básico}
 perkBasicCommerce {Comprar es un 5% más rentable. Destaca los artículos demandados en bancos y mercados.}
@@ -137,24 +135,30 @@ perkCarpenter {El casco y las velas se reparan lentamente durante el viaje. Se r
 InstantRepair {Reparación en combate}
 perkInstantRepair
 {
-Reparaciones rápidas en combate restauran hasta el 80% de la durabilidad disponible. Requiere tablones para el casco y lona para las velas.Se puede activar cada 1,5 minutos.
+Reparaciones rápidas en combate restauran hasta el 80% de la durabilidad disponible. Requiere tablones para el casco y lona para las velas.
+Se puede activar cada 1,5 minutos.
 }
 LightRepair {Reparación de emergencia}
 perkLightRepair
 {
-Permite reparar hasta el 10% del casco sin gastar recursos. Sin esta habilidad, el barco se deteriora si el casco baja del 10%. Se puede usar cada 3 minutos.
+Permite reparar hasta el 10% del casco sin gastar recursos. Sin esta habilidad, el barco se deteriora si el casco baja del 10%. 
+Se puede usar cada 3 minutos.
 }
 Builder {Control de daños}
 perkBuilder {El consumo de tablones y lonas durante las reparaciones se reduce un 25%.}
 SelfRepair {Reparación completa}
 perkSelfRepair
 {
-La habilidad de reparar completamente tu barco usando la tripulación en cualquier costa adecuada. Se requieren tablones para el casco y los mástiles, y lona para las velas. Es posible restaurar por completo el casco, las velas y los mástiles.Las opciones de reparación solo están disponibles en tierra, en ubicaciones costeras.
+La habilidad de reparar completamente tu barco usando la tripulación en cualquier costa adecuada. Se requieren tablones para el casco y los mástiles, y lona para las velas. Es posible restaurar por completo el casco, las velas y los mástiles.
+
+Las opciones de reparación solo están disponibles en tierra, en ubicaciones costeras.
 }
 WindCatcher {Sentido del mar}
 perkWindCatcher
 {
-El barco acelera un 10% más rápido.Aumenta la velocidad en el mapa global en aguas conocidas, si tienes un mapa.
+El barco acelera un 10% más rápido.
+
+Aumenta la velocidad en el mapa global en aguas conocidas, si tienes un mapa.
 }
 SailsMan {Velas rápidas}
 perkSailsMan {Gracias al uso de los últimos métodos de recompensa y castigo, todas las operaciones de velas se realizan un 10% más rápido.}
@@ -192,11 +196,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Manos rápidas}
-perkFastHands {Aumenta la velocidad de desenfundar y enfundar armas de fuego en un 20%.}
+perkFastHands {Aumenta la velocidad de desenfundar y enfundar armas de fuego en un $percent($perkBaseValue(FastHands|1)).}
 AmmoRig {Equipamiento}
-perkAmmoRig {La recarga de armas de fuego es un 5% más rápida.}
+perkAmmoRig {La recarga de armas de fuego es un $percent($perkBaseValue(AmmoRig|1)) más rápida.}
 Preaim {Ajuste de mira}
-perkPreaim {El modo de apuntado es un 15% más rápido.}
+perkPreaim {El modo de apuntado es un $percent($perkBaseValue(Preaim|1)) más rápido.}
 KeenEye {Ojo agudo}
 perkKeenEye {Los disparos a la cabeza infligen un 40% más de daño.}
 PowderFeel {Instinto de pólvora}
@@ -208,29 +212,29 @@ perkLeadRain {La metralla inflige un 5% más de daño por cada enemigo alcanzado
 ShootToKill {Dispara a matar}
 perkShootToKill {Al golpear a un enemigo con un arma de fuego lo ralentizas, reduciendo su velocidad de movimiento un 25%. Duración: 5 segundos.}
 Muscles {Montaña de Músculo}
-perkMuscles {Cualquier ataque con armas pesadas consume 10% menos energía y es 4% más rápido. La recuperación de aturdimiento es 15% más rápida.}
+perkMuscles {Cualquier ataque con armas pesadas consume $percent($perkBaseValue(Muscles|1)) menos energía y es $percent($perkBaseValue(Muscles|2)) más rápido. La recuperación de aturdimiento es $percent($perkBaseValue(Muscles|3)) más rápida.}
 Conquest {Conquista}
-perkConquest {Los ataques de corte y los ataques pesados con armas largas y rectas infligen un 15% más de daño.}
+perkConquest {Los ataques cortantes y los ataques pesados con armas largas infligen $percent($perkBaseValue(Conquest|1)) más daño.}
 PalaceGuard {Guardia del palacio}
-perkPalaceGuard {Las armas blancas pesadas y curvadas infligen un 15 % más de daño con ataques, y un 5 % adicional con ataques de grupo.}
+perkPalaceGuard {Las armas blancas pesadas y curvadas infligen un $percent($perkBaseValue(PalaceGuard|1)) más de daño con ataques, y un 5 % adicional con ataques de grupo.}
 CunningStrike {Golpe traicionero}
-perkCunningStrike {Las armas ligeras tienen un 3% más de probabilidad de crítico. Los ataques por la espalda infligen un 10% más de daño.}
+perkCunningStrike {Las armas ligeras tienen un $percent($perkBaseValue(CunningStrike|1)) más de probabilidad de crítico. Los ataques por la espalda infligen un $percent($perkBaseValue(CunningStrike|2)) más de daño.}
 Heartbreaker {Rompecorazones}
-perkHeartbreaker {Los ataques rápidos con armas largas rectas infligen un 10% más de daño y son un 3% más rápidos.}
+perkHeartbreaker {Los ataques rápidos con armas rectas infligen $percent($perkBaseValue(Heartbreaker|1)) más daño y son $percent($perkBaseValue(Heartbreaker|2)) más rápidos.}
 Dodgy {Fortuna}
-perkDodgy {El empuje en Sprint es un 30% más fuerte y consume menos energía.}
+perkDodgy {El empuje en Sprint es un $percent($perkBaseValue(Dodgy|1)) más fuerte y consume menos energía.}
 Exhaustion {Agotamiento}
-perkExhaustion {Parar con armas cortas consume 20% más de energía. La recuperación de aturdimiento del enemigo es 10% más lenta.}
+perkExhaustion {Parar con armas cortas consume  $percent($perkBaseValue(Exhaustion|1)) más de energía. La recuperación de aturdimiento del enemigo es 10% más lenta.}
 Reaper {Segador}
-perkReaper {El daño crítico aumenta un 30% y la probabilidad de crítico con Ataques rápidos aumenta un 3%.}
+perkReaper {El daño crítico aumenta un  $percent($perkBaseValue(Reaper|1)) y la probabilidad de crítico con Ataques rápidos aumenta un  $percent($perkBaseValue(Reaper|2)).}
 MarathonRunner {Maratonista}
-perkMarathonRunner {Sprint es un 15% más rápido y consume un tercio menos de energía.}
+perkMarathonRunner {Sprint es un $percent($perkBaseValue(MarathonRunner|2)) más rápido y consume un tercio menos de energía.}
 PerfectBalance {Equilibrio perfecto}
-perkPerfectBalance {Las armas medias en mano reducen el daño recibido un 10%.}
+perkPerfectBalance {Las armas medias en mano reducen el daño recibido un $percent($perkBaseValue(PerfectBalance|1)).}
 Flanking {Flanqueo}
-perkFlanking {Los ataques con armas curvadas son un 5 % más rápidos. Desbloquea Ataque de grupo avanzado.}
+perkFlanking {Los ataques con armas curvadas son un $percent($perkBaseValue(Flanking|1))  más rápidos. Desbloquea Ataque de grupo avanzado.}
 SabreHurricane {Torbellino de sables}
-perkSabreHurricane {Los ataques de corte y rápidos con armas blancas medias curvadas tienen un arco más amplio, golpean a enemigos adyacentes y causan un 10% más de daño.}
+perkSabreHurricane {Los ataques de corte y rápidos con armas blancas medias curvadas tienen un arco más amplio, golpean a enemigos adyacentes y causan un $percent($perkBaseValue(SabreHurricane|1)) más de daño.}
 Practice {Desarrollo de práctica}
 perkPractice {Cada objeto fabricable equipado aumenta todas las habilidades en 2.}
 Strychnine {Estricnina}
@@ -317,7 +321,10 @@ InstantBoarding {Abordaje instantáneo}
 Rush {Tintura Ometochtli}
 perkRush
 {
-Tintura embriagadora, que contribuye a la manifestación instantánea de una fuerza y resistencia tremendas, un aumento significativo de la destreza y de la rapidez de reacción, insensibilidad al dolor y aumento de la agresividad.~Durante 12 segundos los ataques del personaje se vuelven mucho más poderosos y el daño recibido se reduce.Es perjudicial para la salud. Tiempo de recarga: 1 minuto.
+Tintura embriagadora, que contribuye a la manifestación instantánea de una fuerza y resistencia tremendas, un aumento significativo de la destreza y de la rapidez de reacción, insensibilidad al dolor y aumento de la agresividad.
+~
+Durante 12 segundos los ataques del personaje se vuelven mucho más poderosos y el daño recibido se reduce.
+Es perjudicial para la salud. Tiempo de recarga: 1 minuto.
 }
 perkTrustworthy_alternate {Siendo oficial, el personaje cobra un salario reducido en $percent($perkBaseValue(Trustworthy|1)).}
 perkAlchemy_alternate {Otorga una probabilidad de $percent($perkBaseValue(Alchemy|1)) de no gastar la poción al usarla.}

@@ -1,0 +1,18 @@
+News {Patch 1.7 BETA disponível}
+News_descr
+{
+***************************   Ahoy!   ***************************
+-------------------------------------------------------------------------------------------------
+— A beta aberta do patch 1.7 começou
+— A quarta parte da série de DLC "Ship's Pack" foi lançada
+— Você pode alternar livremente entre as versões via Steam
+— Novo jogo não é necessário
+— Os salvamentos foram reformulados e melhorados
+— Novas mecânicas de infiltração urbana e furtividade
+— A IA de combate funciona melhor em terra
+— Epílogo, melhorias de qualidade de vida e muito mais
+— A lista detalhada de mudanças pode ser encontrada nas notícias através do botão abaixo
+}
+News_Attention { }
+[News]
+IsRead = false

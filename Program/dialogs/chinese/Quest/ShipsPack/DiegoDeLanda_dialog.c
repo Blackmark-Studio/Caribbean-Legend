@@ -345,7 +345,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DiegoDeLanda_Leaving_Fourth_2": // Четвёртое прощание
-			dialog.text = "\n太晚了,船长。你有机会开枪打我。多好的机会!数到三:一、二、三……什么都没发生。但别担心。数到六,我会给你行动。不用等太久了。\n"+
+			dialog.text = "\n太晚了,船长。你有机会开枪打我。多好的机会!数到三:一、二、三…… 什么都没发生。但别担心。数到六,我会给你行动。不用等太久了。\n"+
 			"日安,船长。";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_Leaving_End";

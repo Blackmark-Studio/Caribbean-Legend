@@ -1,0 +1,515 @@
+newline
+{
+
+}
+Key Layout {키 배열}
+Key Layout_descr
+{
+대체 키 배열은 일부 조작을 변경하고, 새로운 명령과 추가 기능을 제공합니다:
+~
+- 빠른 행동 및 루팅 명령이 업데이트됩니다
+- 물약 사용 방식이 달라집니다
+- 각 캐릭터 창마다 전용 단축키가 있습니다
+}
+OptKurs {선수각}
+OptKurs_descr
+{
+미니맵의 검은 화살표는 선박이 최고 속도에 도달할 수 있는 항로를 나타냅니다.
+~
+일부 선박은 바람을 거의 정면으로 맞서 항해할 수 있어, 상선을 추격하거나 군함을 따돌릴 때 유리합니다.
+~
+바람의 세기와 방향은 항상 변합니다. 목적지와 최적의 항해 각도를 균형 있게 조정해가며 항로를 잡으세요.
+}
+SeaTimeScaleUp {시간 가속}
+SeaTimeScaleUp_descr
+{
+시간 가속을 사용하면 시간을 절약할 수 있습니다. 특히 바다에서 유용합니다.
+~
+조작: + 및 -
+}
+SeaTimeScaleUp_controlsimg1 {TimeScaleFasterBA}
+SeaTimeScaleUp_controlsimg2 {TimeScaleSlowerBA}
+SeaFastTravel {빠른 이동}
+SeaFastTravel_descr
+{
+액션 메뉴를 통해 육지와 바다에서 다양한 유용한 기능을 사용할 수 있습니다.
+~
+'Sail To' 기능으로 아군 선박이나 랜드마크 근처로 즉시 이동할 수 있습니다. 더 희귀하고 값비싼 망원경을 사용하면 이동 범위가 늘어납니다.
+~
+액션 메뉴를 이용해 'Ghost'로 빠르게 이동하고 보트를 보낼 수 있습니다.
+}
+SeaFastTravel_controlsimg1 {BICommandsActivate}
+LandTimeScaleDown {시간 감속}
+LandTimeScaleDown_descr
+{
+힘든 전투에서는 시간을 느리게 하면 큰 도움이 됩니다. 부끄러워할 필요 없습니다—Caribbean Legend는 도전적인 게임이니까요.
+~
+조작: +와 -
+}
+LandTimeScaleDown_controlsimg1 {TimeScaleFasterBA}
+LandTimeScaleDown_controlsimg2 {TimeScaleSlowerBA}
+GuideFight {육상 전투}
+GuideFight_descr
+{
+이 게임의 전투를 익히려면 시간이 필요합니다. 힌트가 활성화되어 있으면 오른쪽 하단에서 단축키를 볼 수 있습니다.
+~
+먼저 '패리 - 베기' 콤보를 연습해 보세요. 적의 공격을 패리하면 적을 기절시키고 에너지를 소모시켜, 안전하게 반격할 기회를 얻습니다.
+~
+피해량은 캐릭터의 기술, 무기 품질, 부적, 그리고 공격 유형에 따라 달라집니다.
+}
+GuideFight_controlsimg1 {ChrAttackChoseBase}
+GuideFight_controlsimg2 {ChrAttackBase}
+OneToOneCave {환경 활용}
+OneToOneCave_descr
+{
+숫자가 밀릴 땐 지형을 활용해 우위를 점하세요.
+~
+적이 한두 명씩만 덤빌 수 있는 위치를 거의 항상 찾을 수 있습니다.
+}
+OneToOneBoarding {환경 활용}
+OneToOneBoarding_descr
+{
+숫자가 밀릴 땐 지형을 활용해 우위를 점하세요.
+~
+적이 한두 명씩만 덤빌 수 있는 위치를 거의 항상 찾을 수 있습니다.
+}
+Collision {위치 변경}
+Collision_descr
+{
+전투 중에는 위치를 바꿔야 할 때가 있습니다—적의 진형을 뚫거나 아군을 돌아가야 할 때죠.
+~
+영웅은 아군은 자동으로 밀치고 지나가지만, 적을 통과하려면 전력질주나 회피가 필요합니다.
+전투 중 전력질주는 에너지를 소모하니 신중하게 사용하세요.
+}
+Collision_controlsimg1 {ChrFightMode}
+Collision_controlsimg2 {ChrSprint}
+WorldMap {월드 맵}
+WorldMap_descr
+{
+월드 맵에서는 바다를 통해 게임 세계를 이동할 수 있습니다. 모든 도시나 만까지 직접 항해할 필요 없이, 목표 지점 근처에서 월드 맵을 나와 'Sail To'를 사용하세요.
+~
+'Sail To'를 잘 활용하면 실제 시간을 크게 절약할 수 있습니다. 예를 들어, 섬 한쪽에서 월드 맵을 나와 다른 쪽 만으로 빠르게 이동한 뒤, 그곳에서 다시 월드 맵으로 돌아갈 수 있습니다.
+~
+단축키로 지도를 확대하거나 아틀라스를 열 수 있습니다.
+}
+WorldMap_controlsimg1 {WMapCameraSwitch}
+WorldMap_controlsimg2 {지도 보기}
+LandMap {육상 항해}
+LandMap_descr
+{
+섬 지도를 사용하면 육로 이동이 더 쉬워집니다. 퀘스트, 은신, 보물 찾기에 특히 유용합니다.
+모든 사용 가능한 지도는 아틀라스에 있습니다.
+지도는 구매하거나 발견할 수 있습니다.
+}
+LandMap_controlsimg1 {지도 보기}
+Navigator {항해술}
+Navigator_descr
+{
+항해술이 높은 항해사를 배치하세요!
+~
+항해술은 캐릭터가 조종할 수 있는 선박의 크기를 결정합니다.
+~
+예를 들어, 5등급 선박은 25포인트, 4등급은 45포인트가 필요합니다. 이 한계를 넘기면 모든 능력치에 페널티가 적용됩니다.
+~
+각 등급의 요구치는 캐릭터 창에서 스킬 아이콘을 우클릭하면 확인할 수 있습니다.
+}
+Navigator_controlsimg1 {능력}
+Alchemy {연금술}
+Alchemy_descr
+{
+아이템 제작—특히 부적, 물약, 탄약—은 플레이를 훨씬 수월하게 해줍니다. 보스전에서 특히 유용하죠.
+~
+아이템을 제작하려면 레시피를 찾아 얻거나 구매해야 합니다. 재료는 꼭 소지할 필요 없이 선실의 상자에 보관해도 됩니다.
+~
+초반에는 연금술 특성을 선택해 레시피를 모으기 시작할 수도 있고, 도구 세트를 갖춘 중반 이후에 연금술에 귀중한 특성 포인트를 쓰지 않고 제작을 시작할 수도 있습니다.
+}
+Alchemy_controlsimg1 {연금술}
+LandMapAtSea { }
+LandMapAtSea_descr {목표는 섬 반대편에 있습니다. 오른쪽으로 만을 나가 해안을 따라가세요!}
+Salary {선박 유지비}
+Salary_descr
+{
+장교와 선원에게는 매달 급여를 지급해야 하며, 이는 선장에게 큰 부담이 될 수 있습니다.
+~
+총액은 Trading과 Leadership 스킬, 선박 등급, 난이도에 따라 달라집니다. 작은 배에도 Purser가 있으면 좋고, 대형 전함은 나라까지 파산시킬 수 있습니다.
+~
+전리품 분배가 활성화되어 있다면 지급액이 더 늘어날 수 있습니다.
+}
+Salary_controlsimg1 {ShipState}
+Dubloons {두블론}
+Dubloons_descr
+{
+금화 더블룬은 당신의 부와 돈으로 문제를 해결하는 능력을 보여줍니다. 보통 작은 상자에 보관되며, 행동 메뉴의 제작 패널에서 열 수 있습니다. 더블룬이 충분하다면 그곳에서 상자를 채울 수도 있습니다.
+~
+이 금화를 모으는 데 힘쓰세요—카리브에서 가장 강력한 이들은 더블룬으로만 도움을 줍니다.
+~
+더블룬을 얻는 좋은 방법은 보물, 은행 예치금, 전략 물자 거래, 그리고 대금업자입니다.
+~
+금화를 직접 들고 다닐 필요는 없습니다—선실의 상자에 넣어두면 됩니다.
+}
+Dubloons_controlsimg1 {LICommandsActivate}
+Box {아이템 보관}
+Box_descr
+{
+선장 선실의 상자에는 개인 소지품을 무제한으로 보관할 수 있습니다.
+~
+남는 물건은 팔고, 보석·무기·탄약·연금술 재료는 항상 선실에 비축해 두세요.
+~
+주요 장비 외에는 물약, 부적, 화기용 탄환만 챙기는 것이 현명합니다.
+~
+다른 선장들도 마찬가지이니, 점령한 배의 선실 상자는 꼭 약탈하세요.
+}
+Health {생명력 감소}
+Health_descr
+{
+활력'이 감소했습니다! 이 수치는 캐릭터의 전반적인 상태를 나타내며 모든 능력치에 영향을 줍니다.
+~
+'활력'은 기본 치유 사용, 스토리 이벤트, 음주, 과적 시 감소합니다.
+~
+특별한 물약, 연애, 선술집에서의 휴식, 또는 시간이 지나면 회복됩니다. 심한 경우 사제가 도와줄 수 있습니다.
+~
+특수 동료도 전투에서 중상을 입으면 '활력'을 잃지만, 다행히 스스로 회복합니다.
+}
+Amulet {호신부}
+Amulet_descr
+{
+아뮬렛은 캐릭터를 강화하는 강력한 부스터로, 공격형, 방어형, 보조형이 있습니다. 공격형과 방어형 아뮬렛은 동시에 착용할 수 없으니 세트 구성을 신중히 선택하세요.
+~
+또한 부스터에는 탈리스만과 참이 있습니다.
+~
+탈리스만은 아뮬렛보다 지속 시간이 길고 효과 범위도 넓으며, 참은 매우 강력하고 영구적으로 적용되며 전용 인벤토리 슬롯을 가집니다.
+~
+어려운 스킬 판정이나 바다와 육지의 힘든 전투에 대비해 여러 세트를 인벤토리에 항상 준비해 두세요.
+}
+Amulet_controlsimg1 {인벤토리}
+Perk {특성 포인트}
+Perk_descr
+{
+첫 특성 포인트(PP)를 획득했습니다! 특성 포인트는 캐릭터 성장의 핵심이며, 해상 특성과 개인 특성으로 나뉩니다.
+~
+해상 특성은 바다에서, 개인 특성은 육지와 대화에서 도움이 됩니다.
+~
+두 종류의 PP는 각각 개인 및 선박 기술이 오를 때마다 따로따로 상승합니다. 보통 한 기술 그룹에서 30포인트마다 PP 1개를 얻습니다.
+~
+해상 PP를 빠르게 얻으려면 선박 계약이나 용선 임무를 수행하세요. 다양한 무기로 싸우거나 선술집에서 시간을 보내면 개인 PP가 더 빨리 오릅니다.
+~
+개인 PP가 훨씬 더 중요합니다. 해상 특성은 대부분 장교로 대체할 수 있기 때문입니다.
+}
+Perk_controlsimg1 {기술}
+Fighter {선봉대}
+Fighter_descr
+{
+선봉대는 당신이 가장 신뢰하는 장교이자 경호원, 그리고 전투의 최전선입니다. 그들은 언제나 당신을 따라 전장 한가운데로 나아가며, 함께 보내는 시간이 많을 것입니다.
+~
+최대 세 명의 전투원을 동행할 수 있습니다. 선봉대는 육상에서 선장을 보호할 뿐 아니라, 접현 효율을 높이고 무거운 보물을 나르는 데도 도움을 줍니다.
+~
+특별한 장교는 일부 퀘스트에서만 만날 수 있습니다. 모두가 뛰어난 선봉대는 아니지만, 각자 스토리에 영향을 주며 일반 전투에서는 죽지 않습니다.
+~
+아군에게 부적, 치유제, 무기, 탄약을 꼭 장비시켜 주세요. 아이템은 행동 메뉴나 아무 상자에서 교체할 수 있습니다.
+~
+선봉대에게는 단축키나 대화를 통해 대기, 추종, 공격 명령을 내릴 수 있습니다.
+}
+Fighter_controlsimg1 {능력}
+Fighter_controlsimg2 {장교 따라오기}
+Fighter_controlsimg3 {장교 돌격}
+Fighter_controlsimg4 {OfficersHold}
+Rest {시간대}
+Rest_descr
+{
+시간대를 변경할 수 있습니다!
+~
+게임의 모든 요소는 시간에 따라 달라집니다. 밤에는 경비병이 부두와 성문을 비우고, 낮에만 선원을 선발할 수 있으며, 일부 인물은 시간에 특히 민감합니다. 특히 그들을 위해 일할 때는 더욱 그렇죠.
+~
+바다나 야외에서는 자유롭게 이 기능을 사용하세요. 하지만 도시에서는 여관에서 숙박하는 것이 좋습니다.
+}
+Rest_controlsimg1 {BICommandsActivate}
+Stealth {은신}
+Stealth_descr
+{
+카리브 해 대부분의 정착지에서 환영받지 못하는 것에 익숙해져야 합니다.
+~
+적대적인 도시로 잠입하는 방법은 두 가지입니다: 항구를 통해 들어가거나, 성문을 통과하는 것입니다.
+~
+적 항구에 안전하게 정박하려면 철저한 준비가 필요합니다. 비적대국의 깃발을 달고, 은신 기술이 충분히 높아야 합니다.
+~
+성문을 통과하려면 경비가 없는 밤이 가장 좋습니다. 병사를 피하고 선술집에서 쉬세요. 경보가 울리면 집을 찾아 몇 시간 머무르세요. 이 방법의 장점은 깃발 해제를 위해 귀중한 특성 포인트를 쓸 필요가 없다는 점입니다.
+~
+쿠라사오에서 무역 회사 면허를 사고, 해상 특성 포인트로 중립 깃발을 해제하면 이런 문제를 모두 건너뛸 수 있습니다.
+}
+SeaBattle {해전}
+SeaBattle_descr
+{
+해상 전투에 오신 것을 환영합니다, 선장님!
+주요 목표: 살아남고 적 함선을 격침시키십시오.
+~
+모든 배에는 세 가지 주요 능력치가 있습니다: 선체, 돛, 선원. 선체가 0이 되면 배가 침몰합니다. 돛이 손상되면 속도가 느려지고, 선원이 줄면 접현이 쉬워지며 모든 행동이 느려집니다.
+~
+각 능력치마다 효과적인 탄약이 다릅니다. 산탄은 선원, 체인 샷은 돛과 마스트, 폭탄은 선체에 가장 효과적입니다. 포탄은 범용이며 사거리가 가장 깁니다. 피해량은 탄약 종류와 발사하는 포의 크기에 따라 달라집니다—포가 클수록 피해가 큽니다.
+~
+발사 모드는 두 가지입니다. 빠른 사격은 적이 사격 각도에 들어왔을 때 사용할 수 있습니다. 초반에는 정확도와 효율이 낮지만, 역동적인 전투가 가능합니다. 조준 사격은 조준 버튼으로 활성화되며, 측면에서 매우 정확하게 쏠 수 있습니다. 익숙해지면 큰 도움이 됩니다.
+~
+적의 포격을 피하고, 먼저 돛과 마스트를 노리세요—적의 위협이 크게 줄어듭니다.
+~
+각 배는 삭구에 따라 바람에 대한 최적의 항로가 있습니다. 나침반의 검은 화살표로 표시됩니다. 배의 강점을 잘 활용하는 것이 해상 전투 승리의 열쇠입니다.
+}
+SeaBattle_controlsimg1 {hk_charge1}
+SeaBattle_controlsimg2 {hk_charge2}
+SeaBattle_controlsimg3 {hk_charge3}
+SeaBattle_controlsimg4 {hk_charge4}
+SeaBattle_controlsimg5 {Sea_CameraSwitch}
+SeaBattle_controlsimg6 {Ship_Fire}
+BoardingTactics {접현}
+BoardingTactics_descr
+{
+적선에 오르기 전, 산탄을 몇 차례 발사해 적 승무원을 약화시키세요—반격 없이 말입니다. 우위를 점했다면 최대한 가까이 접근해 속도를 맞추고, 바로 승선하세요!
+~
+'선봉대' 해상 기술이 높을수록 적선과의 접현이 쉬워집니다.
+~
+접현 성공은 선원의 수, 기술, 사기에 달려 있습니다. 숙련된 갑판장, 선봉대, 부적, 그리고 강한 전투 기술이 있다면 적의 수적 우위를 극복할 수 있습니다.
+}
+Mushket {머스킷}
+Mushket_descr
+{
+장총 화기는 전투에서 치명적입니다. "머스킷티어" 특성을 가진 주인공과 일부 특별한 장교만 사용할 수 있습니다. 대표적인 예가 Teachingitu이니, 첫 머스킷은 그에게 주세요.
+~
+근접무기와 달리 모든 화기는 매우 유연합니다. 캐릭터를 사수로 육성하고, 특정 부적과 장비를 착용하며, 다양한 탄약을 활용하면 어떤 전투도 뒤집을 수 있습니다.
+}
+Mushket_controlsimg1 {인벤토리}
+CameraControlFP {아호이!}
+CameraControlFP_descr
+{
+카리브 해에 오신 것을 환영합니다, 선장님!
+~
+Caribbean Legend는 도전적인 게임이지만, 조작은 간단합니다. 스토리 모드를 아직 해보지 않았다면, 기본을 익히기 위해 몇 시간 플레이해보시길 추천합니다.
+~
+이동 키와 마우스로 게임을 조작합니다. 캐릭터는 모든 방향으로 걷거나 달릴 수 있고, 전력질주로 더 빠르게 움직일 수 있습니다.
+액션 메뉴도 매우 유용하니 다양한 기능을 꼭 확인해보세요.
+~
+마우스로 자유롭게 시야를 돌릴 수 있습니다—숨겨진 아이템을 찾거나, 전투 상황을 살피거나, 경치를 감상해보세요.
+~
+플레이해 주셔서 감사합니다—바다에서 다시 만나요!
+}
+CameraControlFP_controlsimg1 {ChrForward}
+CameraControlFP_controlsimg2 {ChrStrafeLeft}
+CameraControlFP_controlsimg3 {ChrBackward}
+CameraControlFP_controlsimg4 {ChrStrafeRight}
+CameraControlFP_controlsimg5 {ShipCamera_Turn_H}
+CameraControlFP_controlsimg6 {LICommandsActivate}
+MarksmanMode {조준}
+MarksmanMode_descr
+{
+모든 화기에서 조준을 하면 정확도가 높아집니다. 조준 버튼을 길게 눌러 조준 모드에 들어가세요. 버튼을 놓으면 발사 없이 나옵니다.
+~
+조준 사격은 더 정확하고 치명적이지만, 시야가 줄고 이동 속도가 느려집니다.
+~
+조준을 오래 할수록 피해량이 증가합니다. 머리를 맞추면 더 큰 피해를 줍니다. 피해를 입으면 조준이 초기화되고 캐릭터가 비틀거립니다.
+}
+MarksmanMode_controlsimg1 {ChrAiming}
+Trading {교역 기초}
+Trading_descr
+{
+교역은 다양한 요소가 매매 가격에 영향을 미치는 깊고 복잡한 시스템입니다.
+~
+육지에서는 캐릭터의 교역 기술과 배경이 가장 중요합니다.
+~
+바다에서는 상품 종류, 원산지, 식민지 규모, 교역로, 그리고 재정관의 능력 등 더 많은 요소가 작용합니다.
+~
+이 모든 걸 곧 익히게 되겠지만, 우선 교역에 도움이 되는 부적부터 챙기세요.
+}
+Prologue_Navigation {선박 조종}
+Prologue_Navigation_descr
+{
+카리브 해에 오신 것을 환영합니다!
+~
+조타키로 배를 조종하세요. 배는 무겁고 관성이 커서 천천히 회전합니다. 감각을 익혀보세요.
+~
+돛 모드 키로 돛과 속도를 조절할 수 있습니다.
+~
+돛 모드는 세 가지입니다: 전개, 전투, 내림. 전개는 가장 빠르고, 전투는 회전이 잘 되며, 내리면 부드럽게 정지합니다.
+~
+폭풍이나 포격 중에는 돛을 내리세요. 회전과 조준에는 전투 모드, 추격에는 전개 돛이 최고입니다.
+~
+여러 돛 모드와 회전을 시도해보고, 배의 관성을 느끼며 석양을 감상해보세요!
+}
+Prologue_Navigation_controlsimg1 {Ship_SailUp}
+Prologue_Navigation_controlsimg2 {Ship_TurnLeft}
+Prologue_Navigation_controlsimg3 {Ship_SailDown}
+Prologue_Navigation_controlsimg4 {Ship_TurnRight}
+Prologue_TimeScale {시간 조절}
+Prologue_TimeScale_descr
+{
+게임에서 많은 일들이 천천히 일어납니다—예를 들어 돛 모드 변경이나 함포 재장전처럼요.
+~
+바다, 육지, 월드 맵 어디서든 시간을 빠르게 또는 느리게 조절할 수 있습니다.
+~
+시간을 다루는 힘을 즐긴 뒤, 갑판으로 가세요. 누군가 당신을 기다리고 있습니다.
+}
+Prologue_TimeScale_controlsimg1 {TimeScaleFasterBA}
+Prologue_TimeScale_controlsimg2 {시간 배율}
+Prologue_CameraControl {아호이!}
+Prologue_CameraControl_descr
+{
+"Ulysse"호에 오신 것을 환영합니다! 짧은 시작 모험을 준비했습니다.
+~
+"Ulysse"호에는 할 일이 많습니다. 다음 단계로 나아갈 준비가 되면 선장과의 대화에서 "업무 마치기"를 선택하세요.
+~
+플레이해 주셔서 감사합니다—바다에서 다시 만나요!
+}
+Prologue_CameraControl_controlsimg1 {ChrForward}
+Prologue_CameraControl_controlsimg2 {ChrStrafeLeft}
+Prologue_CameraControl_controlsimg3 {ChrBackward}
+Prologue_CameraControl_controlsimg4 {ChrStrafeRight}
+Prologue_CameraControl_controlsimg5 {ShipCamera_Turn_H}
+Prologue_CameraControl_controlsimg6 {LICommandsActivate}
+Prologue_Logbook {항해일지 및 문서}
+Prologue_Logbook_descr
+{
+모든 퀘스트는 "항해일지"에 기록됩니다. 대화와 일지 내용을 꼼꼼히 읽으세요—중요한 정보와 지시가 자주 담겨 있습니다.
+~
+"항해일지" 기록을 확인해 보세요. “Ulysse” 선상에서 받은 작은 임무들도 모두 거기에 표시됩니다.
+}
+Prologue_Logbook_controlsimg1 {퀘스트북}
+Prologue_Inventory {복잡한 퀘스트, 문서 및 제작}
+Prologue_Inventory_descr
+{
+퀘스트 외에도 "항해일지"에는 중요한 정보가 담겨 있습니다.
+~
+"문서" 탭에서 발견한 모든 쪽지를 읽을 수 있습니다.
+~
+지금은 선박 재정관의 쪽지를 읽고, 명단에 따라 선원들에게 두블룬을 나눠줘야 합니다.
+~
+상자에서 두블룬을 얻으려면 제작—연금술—기능으로 상자를 여세요.
+지금은 레시피가 몇 개 없지만, 앞으로 더 많이 얻게 될 것입니다.
+}
+Prologue_Inventory_controlsimg1 {퀘스트북}
+Prologue_Inventory_controlsimg2 {연금술}
+Prologue_Amulet {호신부}
+Prologue_Amulet_descr
+{
+아뮬렛과 탈리스만은 캐릭터를 일시적으로 강화하는 강력한 아이템이며 인벤토리의 전용 슬롯에 장착됩니다.
+~
+탈리스만은 플레이어가 직접 제작할 수 있지만, 아뮬렛은 발견하거나 구매해야 합니다.
+~
+게임에는 워드(Wards)도 존재하며, 매우 강력하고 지속 시간 제한이 없으며 별도의 인벤토리 슬롯을 차지합니다.
+~
+특히 어려운 능력 판정과 해상 및 육상 전투를 대비해 항상 여러 세트를 인벤토리에 보관하세요.
+~
+주의: 활성화 후 아뮬렛이나 탈리스만을 제거하면 파괴됩니다. 신중히 결정하세요.
+}
+Prologue_Trading {교역 기초}
+Prologue_Trading_descr
+{
+교역은 다양한 요소가 가격에 영향을 미치는 깊고 복잡한 시스템입니다. 그중에서도 ‘교역’ 기술이 가장 중요하죠.
+~
+바다 위에서는 상품 종류, 원산지, 식민지 규모, 교역로, 그리고 재정관의 능력 등 더 많은 요소가 작용합니다.
+~
+이 모든 걸 곧 익히게 될 테니, 우선은 쓸모 있는 부적부터 챙기세요.
+}
+Prologue_Overload {과부하}
+Prologue_Overload_descr
+{
+처음으로 소지 중량 한도에 도달했습니다.
+모든 캐릭터는 힘, 지구력, 기술, 그리고 부적에 따라 최대 소지 중량이 정해집니다.
+~
+최대 소지 중량을 늘릴 수 있는 무언가를 찾아보세요—선원실의 갑판장이 도움이 될지도 모릅니다.
+}
+Prologue_AutoFire {해전}
+Prologue_AutoFire_descr
+{
+당신의 첫 해전은 Charles de Maure의 상상 속에서 펼쳐집니다. 걱정 말고 마음껏 실험해 보세요!
+~
+모든 배에는 세 가지 주요 능력치가 있습니다: 선체, 돛, 선원. 선체가 0이 되면 배가 침몰합니다. 돛이 손상되면 속도가 느려지고, 선원이 줄면 접현, 재장전, 돛 조작에 영향을 줍니다.
+~
+탄약마다 용도가 다릅니다. 산탄은 선원, 체인샷은 돛과 돛대, 폭탄은 선체에 효과적입니다. 포탄은 범용이며 사거리가 가장 깁니다. 피해량은 탄약 종류와 발사하는 함포의 크기에 따라 달라집니다. 함포가 클수록 피해도 커집니다.
+~
+주요 사격 모드는 두 가지입니다. 빠른 사격은 적이 사격 각도에 들어왔을 때 사용할 수 있습니다. 초반에는 명중률과 효율이 낮지만, 역동적인 전투가 가능합니다.
+~
+전투가 느리게 느껴진다면 시간 조절 키로 속도를 높일 수 있습니다.
+}
+Prologue_AimingFire {조준 사격}
+Prologue_AimingFire_descr
+{
+조준 사격을 사용하면 측면에서 매우 정확하게 발사할 수 있습니다. 익숙해지는 데 시간이 걸리지만 그만한 가치가 있습니다.
+~
+포신 원은 현측 함포의 실제 위치와 탄도 궤적을 보여줍니다. 조준점(화면 중앙)에 맞추려면 시간이 필요합니다.
+~
+발사 시, 포는 원이 위치한 지점으로 쏘니 필요하다면 선행 사격을 하세요.
+~
+적 함선을 조준하면 목표로 설정됩니다. 일단 포착하면, 원하는 부위나 선행 위치를 조준할 수 있습니다.
+~
+선장과 Cannoneer 스킬이 오를수록 포 조준과 발사 속도가 향상됩니다.
+~
+조준을 빠르게 움직이면 포수들이 혼란스러워져 조준이 평소보다 느려집니다.
+~
+조준 사격은 먼 거리에서 중요한 부위, 특히 돛과 돛대를 맞히기에 탁월합니다.
+}
+Prologue_AimingFire_controlsimg1 {ChrAimingShot}
+Prologue_AimingFire_controlsimg2 {FireCamera_Set}
+Prologue_FightAttack {공격}
+Prologue_FightAttack_descr
+{
+카리브의 전설에서 전투는 빠르고 치열하지만, 지금은 안전합니다.
+~
+모든 캐릭터는 무기를 들고 전투 기술을 지닙니다. 무기가 좋고 영웅의 경험이 많을수록 더 큰 피해를 입힙니다.
+~
+여러 공격과 방어 동작을 사용할 수 있습니다.
+~
+세 가지 주요 공격부터 시작해봅시다.
+~
+베기. 빠르지만 피해가 적고, 중간 정도의 기력을 소모합니다.
+~
+찌르기. 베기보다 느리지만 중간 피해를 주며, 기력 소모가 적습니다.
+~
+강공격. 느리지만 강력하며, 큰 피해를 주고 방어를 깨뜨릴 수 있습니다.
+~
+이 모든 공격을 해적에게 시험해보세요.
+}
+Prologue_FightAttack_controlsimg1 {ChrAltAttackBase}
+Prologue_FightAttack_controlsimg2 {ChrAttackBase}
+Prologue_FightAttack_controlsimg3 {ChrAttackBreakBase}
+Prologue_FightDefence {전투 방어}
+Prologue_FightDefence_descr
+{
+좋아! 이제 방어를 해보자.
+~
+방어. 강공격을 제외한 모든 공격을 막을 수 있다. 방어 중에는 천천히 움직일 수 있고, 에너지가 소모되지 않는다. 강한 적은 일반 공격으로도 방어를 뚫을 수 있으니 주의하자.
+~
+패리. 모든 공격을 튕겨내며, 적의 균형과 에너지를 무너뜨린다.
+~
+회피. 위치를 바꾸거나 총알을 피할 수 있다.
+~
+해적의 공격을 패리와 방어로 막아보자.
+~
+그리고—마무리해라.
+}
+Prologue_FightDefence_controlsimg1 {ChrBlock}
+Prologue_FightDefence_controlsimg2 {ChrParry}
+Prologue_Marksmanship {사격}
+Prologue_Marksmanship_descr
+{
+화기류는 근접무기보다 드물지만, 카리브 해에서 총에 맞을 위험은 여전히 큽니다. 항상 경계하세요.
+~
+육지에서도 바다와 마찬가지로 두 가지 사격 모드가 있습니다: 빠른 사격과 조준 사격입니다.
+~
+빠른 사격은 버튼을 한 번 누르면 됩니다. 빠르지만 효과는 낮습니다.
+~
+조준 사격은 훨씬 더 큰 피해를 줄 수 있지만, 그만큼 노출됩니다. 오래 조준할수록 피해가 증가합니다. 헤드샷은 추가 피해를 줍니다.
+~
+조준 버튼을 누르고 있으면 조준 모드로 진입합니다. 공격 버튼을 눌러 사격하세요. 조준을 놓으면 발사하지 않고 나옵니다.
+}
+Prologue_Marksmanship_controlsimg1 {ChrAiming}
+Prologue_Marksmanship_controlsimg2 {ChrAimingShot}
+Prologue_DeadSearch {전리품 획득}
+Prologue_DeadSearch_descr
+{
+모든 전투가 끝나면 전리품을 챙길 시간입니다.
+쓰러진 적을 루팅 버튼으로 조사할 수 있습니다.
+~
+부상당한 Alonso에게 필요한 치유의 엘릭서를 찾으세요!
+}
+MapEncounter {색깔 있는 돛을 단 배}
+MapEncounter_descr
+{
+임무 중에는 세계 지도에서 특별한 배를 찾아야 할 때가 있습니다.~
+일지에 표시된 위치에서 색깔 있는 돛을 단 배를 찾아 상호작용하세요.
+}

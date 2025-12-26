@@ -523,6 +523,13 @@ void ProcessDialogEvent()
 		//--> --------------------------------- —军官模块 ------------------------------------------
 		case "Knippel_officer":
 			dialog.text = "啊哈船长, 链弹打我屁股! ";
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				dialog.text = "炮弹塞我肝里吧, 船长。 老子以后再也不上岸了。 上次在酒馆里掷骰子的时候, 有个杂种把我兜里的钱偷得一干二净。";
+				Link.l1 = "哈哈, 你确定不是自己输光的吗, "+npchar.name+"? 不过, 这不重要…… 我其实是想和你谈件事。 我决定去欧洲——搭别人的船, 当个乘客。 我不知道什么时候才能回来, 也不指望你在这儿等我, 更不会把你硬拖着一起走。 ";
+				Link.l1.go = "SharlieEpilog_Knippel_1";
+				break;
+			}
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
 				Link.l4 = "克尼佩尔先生, 我要去古老失落的印第安城市泰亚萨尔。 我直说, 这将是一次非常危险的旅行, 也很不寻常 - 我们需要通过这个... 魔法偶像到达那里。 你会加入我吗? ";
@@ -659,7 +666,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -674,7 +681,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;		
@@ -713,6 +720,29 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("Tieyasal", "22");
 			npchar.quest.Tieyasal = "teleport";
+		break;
+		
+		// Эпилог
+		case "SharlieEpilog_Knippel_1":
+			dialog.text = "那可真是白白浪费了, 炮弹砸我桅杆吧。我说不定还真想去欧洲看看。";
+			link.l1 = "真没想到你会这么说。 那好吧, 欢迎登上轻帆船‘"+GetShipName("Ulysse")+"’。 要是你愿意, 我们还能顺路去拜访一下那位老熟人 一 理查德·弗利特伍德。 我想, 你肯定有话想对他说。 ";
+			link.l1.go = "SharlieEpilog_Knippel_2";
+		break;
+
+		case "SharlieEpilog_Knippel_2":
+			dialog.text = "不了, 先生。理查德见鬼去吧。我既不想听到他的名字, 更不想见到他的人。";
+			link.l1 = "随你吧, "+npchar.name+", 随你吧。 我们两周后起航。 我打算办一场告别酒宴。 希望你也能来。";
+			link.l1.go = "SharlieEpilog_Knippel_3";
+		break;
+
+		case "SharlieEpilog_Knippel_3":
+			dialog.text = "要是我拒绝了, 就让炮弹把我脖子打断吧, 船长! ";
+			link.l1 = "太好了。 那等我把所有事情处理完, 我们就在酒馆见。";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Knippel_officer";
+			npchar.quest.SharlieEpilog_FarewellOfficers = true;
+			pchar.questTemp.SharlieEpilog_Knippel = true;
+			pchar.questTemp.SharlieEpilog_Friends = sti(pchar.questTemp.SharlieEpilog_Friends) + 1;
 		break;
 		
 		case "Exit":

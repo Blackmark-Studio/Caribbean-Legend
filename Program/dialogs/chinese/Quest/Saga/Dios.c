@@ -270,7 +270,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar,"questTemp.AdmiralAtlas") && pchar.questTemp.AdmiralAtlas == "complete")
 			{
 				dialog.text = "哦, 你来了, "+pchar.lastname+"先生? 我得告诉你一个好消息: 我已经完成了群岛的地图! 而且我敢保证, 它比你之前交给我的那张好得多。";
-				link.l1 = "我的朋友……这张地图真是令人惊叹! 这简直, 不怕说出口, 就是一件杰作! 我该如何感谢你为我所做的一切? ";
+				link.l1 = "我的朋友…… 这张地图真是令人惊叹! 这简直, 不怕说出口, 就是一件杰作! 我该如何感谢你为我所做的一切? ";
 				link.l1.go = "best_map_09";
 			}
 			else

@@ -1,7 +1,7 @@
 #include "interface\utils\modifiers.c"
 
-//JOKERTODO: выделение столбцов, скрытие незаполненных
-void SetItemStatsTooltip(ref chr, string sCurrentNode, string header, string text, string badText, string goodText)
+//JOKERBACKLOG: выделение столбцов, скрытие незаполненных
+void SetItemStatsTooltip(ref chr, string sCurrentNode, ref header, ref text, ref badText, ref goodText)
 {
 	if (sCurrentNode != "TABLE_ITEM_STATS") return;
 	CloseTooltipNew();
@@ -15,10 +15,8 @@ void SetItemStatsTooltip(ref chr, string sCurrentNode, string header, string tex
 
 	stat = GetAttributeN(itemStats, iColumn);
 	statName = GetAttributeName(stat);
-	if (statName == "mainEffect") statName = currentItem.id;
-	else if (statName == "secondaryEffect") statName = "secondary_" + currentItem.id;
-	header = GetConvertStrB("itm_stat_" + statName, "ItemsStats.txt");
-	text = DLG_Convert("itm_stat_descr_" + statName, "ItemsStats.txt", currentItem);
+	header = GetItemStat(currentItem, statName, false);
+	text = GetItemStatDescr(currentItem, statName);
 	badText = "";
 	goodText = "";
 	AddItemUICharacterModifiers(chr, &goodText, stat, currentItem);
@@ -55,18 +53,18 @@ void SetUIAttributesItem(ref ref_Id_Idx, ref result, ref chr)
 
 void SetUIAttributesEffects(ref item, ref result, bool withSecondary)
 {
-	bool showMain = GetConvertStr("itm_stat_" + item.id, "ItemsStats.txt") != "";
+	bool showMain = GetItemStat(item, "mainEffect", true) != "";
 	if (!showMain) return;
 	
 	result.mainEffect.iconGroup = "EQUIP_ICONS";
 	result.mainEffect.iconName = "mainEffect";
-	result.mainEffect.value = GetConvertStrB("itm_stat_mainEffect", "ItemsStats.txt");
+	result.mainEffect.value = GetSimpleItemStatKey("itm_stat_mainEffect");
 	
-	bool showSecondary = GetConvertStr("itm_stat_secondary_" + item.id, "ItemsStats.txt") != "";
+	bool showSecondary = GetItemStat(item, "secondaryEffect", true) != "";
 	if (!showSecondary) return;
 	result.secondaryEffect.iconGroup = "EQUIP_ICONS";
 	result.secondaryEffect.iconName = "secondaryEffect";
-	result.secondaryEffect.value = GetConvertStrB("itm_stat_secondaryEffect", "ItemsStats.txt");
+	result.secondaryEffect.value = GetSimpleItemStatKey("itm_stat_secondaryEffect");
 }
 
 void SetUIAttributesTool(ref item, ref result, ref chr)
@@ -155,7 +153,7 @@ void SetUIAttributesTalisman(ref item, ref result, ref chr)
 
 void SetUIAttributesAmmo(ref item, ref result, ref chr)
 {
-// JOKERTODO Усиление урона?
+// JOKERBACKLOG Усиление урона?
 }
 
 void SetUIAttributesGun(ref item, ref result, ref chr)
@@ -242,7 +240,7 @@ void FillUpStats(ref item, ref chr)
 	// CropTableColsFrameByElementsQty("TABLE_ITEM_STATS", statsQty, 100);
 }
 
-//JOKERTODO ещё попыхтеть над скрытием общего фрейма и мб сделать универсально
+//JOKERBACKLOG ещё попыхтеть над скрытием общего фрейма и мб сделать универсально
 void CropTableColsFrameByElementsQty(string tableName, int count, int width)
 {
 	int x1, x2, y1, y2;

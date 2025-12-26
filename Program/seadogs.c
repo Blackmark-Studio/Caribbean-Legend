@@ -44,7 +44,7 @@
 #include "migrations.c"
 #include "achievements.c"
 #include "ships\ships_generator.c"
-
+#include "story_frames\persistent.c"
 
 extern void InitBaseCannons();
 extern void InitCharacters();
@@ -75,6 +75,7 @@ native float Clampf(float fValue);
 native float Degree2Radian(float fDegree);
 native int RDTSC_B();
 native int RDTSC_E(int iRDTSC);
+native void SetGlobalSeed(string seed);
 
 native int SetTexturePath(int iLevel, string sPath);
 native int SetGlowParams(float fBlurBrushSize, int Intensivity, int BlurPasses);
@@ -109,7 +110,7 @@ native bool IsVirtualKeyboardShowing();
 native bool ShowSteamVirtualKeyboard(int iVKMode, int iTextFieldX, int iTextFieldY, int iTextFieldWidth, int iTextFieldHeight);
 // GetOverlaysInfo function usage example:
 // {
-//     object itemsInfo[2]; // MUST BE of size [2] !!!
+//     object itemsInfo[2];
 //     int itemsInfoSize = GetOverlaysInfo(&itemsInfo);
 //     for (int i = 0; i < itemsInfoSize; i++) {
 //         string itemId = itemsInfo[i].itemId;
@@ -452,7 +453,8 @@ void SaveGame()
 	SaveCurrentShipToCurrentProfile();
 	SaveCurrentCharactersToCurrentProfile();
 	SaveCurrentMoneyToCurrentProfile();
-	PostEvent("evntSaveGameAfter",2);// boal спец прерывание для автосейва
+	
+	PostEvent("Event_AfterSave", 2);
 }
 
 void LoadGame()
@@ -736,6 +738,8 @@ int actLoadFlag = 0;
 void OnLoad()
 {
 	actLoadFlag = 1;
+
+    SetGlobalSeed(GSeed);
 	
 	if(iHudScale < 50) iHudScale = BI_COMPARE_HEIGHT;
 
@@ -963,17 +967,13 @@ void NewGame_continue()
 }
 
 void InitGame()
-{	
+{
+    UpdateSeeds(); // Инит рандома
+
 	InitSound();
 	ReloadProgressUpdate();
 
 	DeleteSeaEnvironment();
-	if(LoadSegment("worldmap\worldmap_init.c"))
-	{
-		wdmInitWorldMap();
-		UnloadSegment("worldmap\worldmap_init.c");
-	}
-    ReloadProgressUpdate();
 
     InitPerks();
     ReloadProgressUpdate();
@@ -983,7 +983,14 @@ void InitGame()
 	
 	LocationInit();
 	ReloadProgressUpdate();
-	
+
+	if(LoadSegment("worldmap\worldmap_init.c"))
+	{
+		wdmInitWorldMap();
+		UnloadSegment("worldmap\worldmap_init.c");
+	}
+	ReloadProgressUpdate();
+
 	DialogsInit();
 	ReloadProgressUpdate();
 	
@@ -1105,7 +1112,6 @@ void GameOverMainMenu()
 		SendMessage(&AIBalls, "l", MSG_MODEL_RELEASE);
 	}
 	bMainMenu = true; // вышли в меню из игры
-	pchar.mainmenu = true; // вышли в меню из игры
 	GameOver("mainmenu");
 }
 // <===
@@ -1198,17 +1204,19 @@ void GameOver(string sName)
 		case "complete_bad": 
 			InterfaceStates.Death = true;	
 			InterfaceStates.MainMenu.InstantCredits = true;
+			pchar.mainmenu = true;
 			StartPictureAsVideo( "loading\Start_Loading.tga", 3.0 );
 		break;
 
 		case "complete":
 			// StartPostVideo("credits",1);
 			InterfaceStates.MainMenu.InstantCredits = true;
+			pchar.mainmenu = true;
 			StartPictureAsVideo( "loading\Start_Loading.tga", 3.0 );
 		break;
 
 		case "mainmenu":
-			// InterfaceStates.Death = true;										 
+			pchar.mainmenu = true;
 			StartPictureAsVideo( "loading\Start_Loading.tga", 3.0 );
 		break;
 	}

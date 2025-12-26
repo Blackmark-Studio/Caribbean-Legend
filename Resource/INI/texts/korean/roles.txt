@@ -1,0 +1,63 @@
+portman {항만장}
+drinker_0 {이 바다에서 가장 유명한 해적}
+drinker_1 {진짜 이야기를 들려주는 명인}
+drinker_2 {은퇴한 에스코리알 특수요원}
+drinker_3 {대단히 박식한 대화자}
+drinker_4 {어떤 분야든 능숙한 전문가}
+drinker_5 {쾌활하고 두려움 없는 영혼}
+drinker_6 {한창 때의 위풍당당한 남자}
+drinker_7 {잡동사니 책임자}
+drinker_8 {만취 갑판장}
+drinker_9 {DWIC에서 꽤나 중요한 인물의 이촌 조카}
+pofficer {후보}
+hovernor {총독}
+tavernkeeper {여관주인}
+waitress {여종업원}
+trader {상인}
+shipyarder {조선공}
+priest {사제}
+Ghovernor {총독}
+Phovernor {남작}
+usurer {은행가}
+poorman {거지}
+gipsy {집시 여자}
+captain {선장}
+sailor {선원}
+marginal_town {해적}
+noble {귀족}
+monk {수도사}
+chaplain {목사}
+potion_merchant {연금술사}
+veteran_merchant {철물장수}
+armourer_merchant {총기 장인}
+monk_merchant {성유물 상인}
+indian_merchant {점쟁이}
+lightman_merchant {등대지기}
+cemeteryman_merchant {묘지지기}
+legend {전설}
+soldier_town {경비}
+banditos {살인마}
+patrol {순찰}
+comandante {지휘관}
+prisonboss {사령관}
+whore {여자}
+hostess {여주인}
+enemy {적}
+wife {아내}
+kukulkan {Kukulkan}
+mercen {용병}
+monster {언데드}
+captain_trader {자유 상인}
+mtraxx_vanguard {티락스 선봉대}
+fgirl {정부}
+deadman {살아있는 시체}
+friend {친구}
+duelist {난투꾼}
+smuggler {밀수업자}
+AffairOfHonor_tavern {절박한 주정뱅이}
+hovernon_wife {총독의 아내}
+HeadSailor {상급 선원}
+HeadSailorPlus {선원의 목소리}
+Director {관리자}
+Deputy Director {부국장}
+Naval Registry Guard {해군 등록소 경비}

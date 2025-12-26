@@ -1,0 +1,193 @@
+newLine
+{
+
+}
+HelpChooser {도움말 항목 선택}
+MainInterface {인터페이스 조작}
+DialogControls {대화}
+WorldMapControls {세계 지도}
+BattleInterfaceControls {인터페이스 조작}
+Sailing1Pers {1인칭 바다}
+Sailing3Pers {3인칭 바다}
+FightModeControls {전투 모드}
+PrimaryLand {육상 조작}
+ChrCamTurnV {캐릭터를 따라가는 카메라의 수직 이동}
+ChrCamTurnH {캐릭터를 따라가는 카메라의 수평 이동}
+ChrCamCameraSwitch {카메라 모드}
+SwitchCameraOffset {카메라 시점}
+CharacterCamera_Forward {카메라 확대}
+CharacterCamera_Backward {카메라 축소}
+ChrAiming {저격 모드 (길게 누름)}
+ChrAimingShot {사격}
+ChrCamCameraRadius {카메라 확대/축소}
+ChrCamNormalize {카메라 중앙}
+ShipCamera_Turn_V {선박을 따라가는 카메라의 수직 이동}
+ShipCamera_Turn_H {선박을 따라가는 카메라의 수평 이동}
+ShipCamera_Forward {확대}
+ShipCamera_Backward {축소}
+DeckCamera_Turn_V {수직 카메라 회전 (갑판 시점)}
+DeckCamera_Turn_H {수평 카메라 회전 (갑판 시점)}
+DeckCamera_Forward {전방 (갑판 시점)}
+DeckCamera_Backward {뒤로 (갑판 시점)}
+DeckCamera_Left {왼쪽 스트레이프 (갑판 시점)}
+DeckCamera_Right {오른쪽 스트레이프 (갑판 시점)}
+ChrTurnH {캐릭터 회전}
+ChrTurnV {캐릭터 이동}
+ChrTurnHL {캐릭터 왼쪽 회전}
+ChrTurnHR {캐릭터 오른쪽 회전}
+ChrAction {행동 수행}
+ChrForward {전진}
+ChrForward1 {전진}
+ChrForward2 {전진 (대체)}
+ChrBackward {뒤로 이동}
+ChrBackward1 {뒤로 이동}
+ChrSwitchWalk {걷기/달리기}
+ChrSprint {전력질주}
+ChrRunStick {걷기/달리기}
+ChrBlock {방어}
+ChrRecoil {후퇴}
+ChrParry {패링 (대체)}
+ChrAttackForce {빠른 공격}
+ChrAttackFast {베기}
+ChrAttackRound {광역 공격}
+ChrAttackBreak {강공격}
+ChrAttackFient {페인트 (대체)}
+ChrAttackBreakBase {강공격}
+ChrAttackRoundBase {광역 공격}
+ChrAttackChoseBase {콤보 제어}
+ChrBlockBase {방어}
+ChrAttackBase {빠른 공격/패리}
+ChrAltAttackBase {베기 / 광역 공격}
+ChrFire {발사}
+ChrFightMode {전투 모드}
+ChrSwitchFightMode {전투 모드 변경}
+BulletChanger {탄약 변경}
+PotionChanger {치유 물약 변경}
+BOAL_UsePotion {치유 물약 사용}
+BOAL_ActivateRush {오메토치틀리 팅크제 사용}
+BOAL_DeadSearch {루팅}
+UseAntidote {해독제 사용}
+Alchemy {연금술}
+Inventory {인벤토리}
+ShipState {함대}
+QuestBook {항해일지}
+MapView {지도}
+Abilities {캐릭터}
+Nations {국가}
+Dolly {마야 우상 활성화}
+Ultimate_potion {인디언 물약 마시기}
+Ship_TurnLeft {선박 좌회전}
+Ship_TurnRight {선박 우회전}
+Ship_SailUp {돛 올리기}
+Ship_SailDown {돛 내리기}
+Ship_Fire {발사!}
+Sea_CameraSwitch {해상 카메라 모드}
+TelescopeMode {망원경 전환}
+TelescopeZoomIn {망원경 (확대)}
+TelescopeZoomOut {망원경 (축소)}
+BI_MapEnter {글로벌 맵}
+WMapTurnH {지도 모드에서 선박 주변 카메라 회전}
+WMapTurnV {카메라 높이 (지도 모드)}
+WMapCameraRotate {카메라 글라이드/회전 모드 켜짐}
+WMapForward {카메라 확대}
+WMapBackward {카메라 축소}
+WMapCameraSwitch {보기 모드 전환}
+WMapShipSailUp {전진}
+WMapShipSailDown {뒤로 항해}
+WMapShipTurnLeft {좌회전}
+WMapShipTurnRight {우회전}
+WMapCancel {지도에서 바다로 나가기}
+TimeScaleOn {시간 빠르게}
+TimeScaleOff {가속 비활성화}
+Interface {캐릭터 메뉴}
+MainMenu {메인 메뉴}
+MainMenuDouble {메인 메뉴}
+Help {게임 도움말}
+BICommandsActivate {행동 메뉴}
+LICommandsActivate {행동 메뉴}
+BICommandsConfirm {명령 선택}
+BICommandsCancel {명령 취소}
+BICommandsUp {동작 메뉴 - 위로 이동}
+BICommandsDown {동작 메뉴 - 아래로 이동}
+BICommandsLeft {액션 메뉴 - 왼쪽 이동}
+BICommandsRight {동작 메뉴 - 오른쪽 이동}
+MiniMapZoomIn {미니맵 확대}
+MiniMapZoomOut {미니맵 축소}
+BIFastCommand {빠른 행동}
+HelpChooser_Cancel {도움말 종료}
+HelpChooser_Action {현재 항목 도움말 표시}
+HelpChooser_Next {다음 도움말 항목}
+HelpChooser_Prev {이전 도움말 항목}
+HelpChooser_Left {왼쪽 (도움말 모드)}
+HelpChooser_Right {오른쪽 (도움말 모드)}
+HelpChooser_Up {위로 (도움말 모드)}
+HelpChooser_Down {아래 (도움말 모드)}
+DlgAction {대화 답변 선택}
+DlgAction1 {대화 답변 선택}
+DlgUp {대화의 이전 답변}
+DlgDown {다음 대화 답변}
+DlgScrollUp {대화 스크롤 내리기}
+DlgScrollDown {대화 스크롤 위로}
+hk_charge1 {일반탄 장전}
+hk_charge2 {산탄 장전}
+hk_charge3 {체인탄 장전}
+hk_charge4 {폭탄 장전}
+hk_Cure {치유 물약 사용}
+hk_Rush {분노' 능력 사용}
+hk_ImmediateReload {즉시 재장전}
+hk_LightRepair {긴급 수리}
+hk_InstantRepair {수리}
+hk_Turn180 {선회}
+hk_SandbankManeuver {모래톱 기동 활성화}
+ChrStrafeLeft {왼쪽으로 이동}
+ChrStrafeRight {오른쪽으로 이동}
+OfficersCharge {장교 명령 : 자유 교전}
+OfficersHold {장교 명령 : 대기}
+OfficersFollow {장교 명령: 따라와}
+FLT_LoadBalls {함대 명령: 함포에 철탄 장전}
+FLT_LoadGrapes {함대 명령: 산탄 장전}
+FLT_LoadChain {함대 명령: 체인샷 장전}
+FLT_LoadBombs {함대 명령: 포탄 장전}
+FLT_SailAway {함대 명령: 이탈}
+FLT_LowerSails {함대 명령: 돛 내리기}
+FLT_ProtFlagship {함대 명령: 기함 보호}
+Fast_store {빠른 이동: 상점}
+Fast_shipyard {빠른 이동: 조선소}
+Fast_tavern {빠른 이동: 선술집}
+Fast_townhall {빠른 이동: 관청}
+Fast_bank {빠른 이동: 고리대금업자}
+Fast_church {빠른 이동: 교회}
+Fast_brothel {빠른 이동: 사창가}
+Fast_portoffice {빠른 이동: 항만청}
+Fast_prison {빠른 이동: 감옥}
+Fast_port {빠른 이동: 항구}
+LI_Fast_store {상점}
+LI_Fast_shipyard {조선소}
+LI_Fast_tavern {선술집}
+LI_Fast_townhall {타운홀}
+LI_Fast_bank {은행}
+LI_Fast_church {교회}
+LI_Fast_brothel {매춘굴}
+LI_Fast_portoffice {항만청}
+LI_Fast_prison {감옥}
+LI_Fast_port {항구}
+HK_Musket {장총 장착}
+HK_FencingL {경무기 장착}
+HK_FencingS {중무기 장착}
+HK_FencingH {중화기 장착}
+HK_bullet {탄환 장전 (보정)}
+HK_cartridge {종이 탄약 장전 (보조)}
+HK_grapeshot {산탄 장전 (변경자)}
+HK_harpoon {화기에 화살 장전 (변경자)}
+HK_GunEchin {고슴도치 탄 장전 (변경자)}
+HK_grenade {수류탄 장전 (변경자)}
+hk_Cabin {선장의 선실}
+CannonsRange {사거리 표시}
+ChangeShowInterface {UI 표시/숨기기}
+FreeCam {자유 시점}
+TimeScale {시간 가속/감속}
+TimeScaleFasterBA {시간 가속}
+TimeScaleSlowerBA {시간 느려짐}
+FireCamera_Set {조준 시야}
+WMapDrawCircle {교전 지역}
+InterfaceTakeAll {모두 가져오기}

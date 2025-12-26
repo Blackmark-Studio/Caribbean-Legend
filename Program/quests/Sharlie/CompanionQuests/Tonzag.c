@@ -721,15 +721,9 @@ void Tonzag_SpawnGunDeck() {
 		sld.viper = true;
 		LAi_group_MoveCharacter(sld, "EnemyFight");
 	}
-	
-	string officers[6];
-	officers[0] = "navigator";
-	officers[1] = "boatswain";
-	officers[2] = "cannoner";
-	officers[3] = "doctor";
-	officers[4] = "treasurer";
-	officers[5] = "carpenter";
-	
+
+	string officers[6] = {"navigator", "boatswain", "cannoner", "doctor", "treasurer", "carpenter"};
+
 	for (i = 0; i < 6; i++) {
 		string off = officers[i];
 		
@@ -780,14 +774,8 @@ void Tonzag_GunDeckFightEnd(string qName) {
 		sld.location = "none";
 	}
 	
-	string officers[6];
-	officers[0] = "navigator";
-	officers[1] = "boatswain";
-	officers[2] = "cannoner";
-	officers[3] = "doctor";
-	officers[4] = "treasurer";
-	officers[5] = "carpenter";
-	
+	string officers[6] = {"navigator", "boatswain", "cannoner", "doctor", "treasurer", "carpenter"};
+
 	for (i = 0; i < 6; i++) {
 		string off = officers[i];
 		

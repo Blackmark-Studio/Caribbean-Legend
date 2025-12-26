@@ -1,0 +1,18 @@
+GoldenGirl_1 {Kuzey Kolonileri’nden o pahalı hayat kadınının artık St. Pierre’deki zevk evini yönettiğini duydun mu? Söylentiye göre zaman zaman özel partiler veriyormuş – sadece yüksek sosyetenin en iyileri davet ediliyor. En iyi şaraplar, göz alıcı kadınlar ve sınırsız kumar; gerçek bir soylunun değer verdiği her şey var. Oraya davetiye almak için canını verenler var.}
+GoldenGirl_2 {Söylentilere göre Marquise Botot bizzat St. Pierre’deymiş. Yeni Fransa’nın en pahalı kadını. Bazen sadece seçkinler için davetler verirmiş. Gerçek bir zarif günahlar yuvası. Rivayete göre bir bankacı orada kendi bankasını bile kumarda kaybetmiş, düşünün artık. Ne yazık ki, davetiyen yoksa en zenginler bile içeri alınmaz.}
+GoldenGirl_3 {Artık St. Pierre genelevini seçkin bir kurtizan yönetiyor. Mekân pek değişmedi ama onun verdiği özel davetler... Dilden dile anlatılıyor. Sanki eski Paris’teymişsin gibi – en iyi şaraplar, en güzel kadınlar, en seçkin topluluk. Ve en tuhaf misafirler – mesela İspanyol amiraller ve korsan baronlar! İnanılır gibi değil, değil mi?}
+GoldenGirl_4 {Julianne}
+GoldenGirl_5 {Botot}
+GoldenGirl_6 {Angerran}
+GoldenGirl_7 {de Chievous}
+GoldenGirl_8 {William}
+GoldenGirl_9 {Cortney}
+GoldenGirl_10 {Bart}
+GoldenGirl_11 {Portugal}
+GoldenGirl_12 {Hernando}
+GoldenGirl_13 {Vasces}
+GoldenGirl_14 {Keşif modu: zamanlayıcı devre dışı değil. Süreye dikkat et!}
+GoldenGirl_15 {Nayade}
+GoldenGirl_16 {Söylentilere göre Madam Botot ortadan kaybolmuş ve lüks evini güvenilir yöneticisine bırakmış. Tüm soylu gençlerin içine düştüğü kederi bir düşünün!}
+GoldenGirl_17 {Ertesi sabah...}
+GoldenGirl_18 {Birkaç gün geçti...@<NewStr()>Sen ve baronet Courtney Guadeloupe'a vardınız}

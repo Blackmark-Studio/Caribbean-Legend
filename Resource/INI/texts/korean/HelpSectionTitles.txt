@@ -1,0 +1,9 @@
+sea_minimap {항해 미니맵.}
+ship_commands {자신의 선박과 동료 선박을 조종하는 명령입니다.}
+fast_commands {빠른 접근의 현재 명령.}
+sea_aim {함포 조준선}
+alarm_indicator {경보 표시기.}
+land_commands {육상 행동 명령}
+WorldMap_Date_Clock {지도에서 날짜 및 시간 표시.}
+WorldMap_Compas {지도에 나침반.}
+Dialog_window {대화 창.}

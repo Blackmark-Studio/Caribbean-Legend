@@ -525,37 +525,33 @@ void WME_FixShipTypes(ref rEncounter, int iMaxShipNum)
                 case 0:
                     BitParams = ENC_MERCHANT_SLOT[iEType];
                     if (!BitParams) continue;
-                    sType = "Merchant";
                     sCurSpec = "0"; //SHIP_SPEC_MERCHANT;
                     break;
                 case 1:
                     BitParams = ENC_WAR_SLOT[iEType];
                     if (!BitParams) continue;
-                    sType = "War";
                     sCurSpec = "1"; //SHIP_SPEC_WAR;
                     break;
                 case 2:
                     BitParams = ENC_RAIDER_SLOT[iEType];
                     if (!BitParams) continue;
-                    sType = "War";
                     sCurSpec = "2"; //SHIP_SPEC_RAIDER;
                     break;
                 case 3:
                     BitParams = ENC_UNIVERSAL_SLOT[iEType];
                     if (!BitParams) continue;
-                    sType = "War";
                     sCurSpec = "3"; //SHIP_SPEC_UNIVERSAL;
                     break;
             }
             // rShip = GetAttributeN(rEncShips, i);
             qty_j = GetEncSlotQty(BitParams);
-            cMin = and(shr(BitParams, 8), 15);
-            cMax = and(shr(BitParams, 12),15);
+            cMin = and(shr(BitParams, 8), LBITS_4);
+            cMax = and(shr(BitParams, 12),LBITS_4);
             for(j = 0; j < qty_j; j++)
             {
                 if(count+1 > iMaxShipNum) break;
 
-                iShipType = WME_GetShipTypeExt(cMin, cMax, sType, sCurSpec, iNation, false); // ~!~ TO_DO: true
+                iShipType = WME_GetShipTypeExt(cMin, cMax, sCurSpec, iNation, false); // ~!~ TO_DO: true
                 if (iShipType == INVALID_SHIP_TYPE) continue;
 
                 count++;
@@ -564,7 +560,7 @@ void WME_FixShipTypes(ref rEncounter, int iMaxShipNum)
                 fPower += GetBaseShipPower(iShipType);
                 //             sCurSpec == SHIP_SPEC_UNIVERSAL
                 bool bTrade = (sCurSpec == "3") && (rEncounter.type == "trade");
-                if(sType == "Merchant" || bTrade)
+                if(sCurSpec == "0" || bTrade)
                 {
                     rEncounter.FixedShips.(sAttr).mode = "trade";
                     iNumMerchantShips++;
@@ -587,67 +583,42 @@ void WME_FixShipTypes(ref rEncounter, int iMaxShipNum)
     rEncounter.NumWarShips = iNumWarShips;
 }
 
-int WME_GetShipTypeExt(int iClassMin, int iClassMax, string sShipType, string sShipSpec, int iNation, bool bNationCheck)
+int WME_GetShipTypeExt(int iClassMin, int iClassMax, string sShipSpec, int iNation, bool bNationCheck)
 {
-	int iShips[60];
-	int i, j, q, iShipsNum;
-	iShipsNum = 0;
-	aref aNation;
-	string sAttr;
-	bool bOk;
+	int classFlags = 0;
+	int typeFlags = 0;
+	int nationFlags = 0;
 
-    // Энкаунтеры только до линкора, квестовые корабли отдельно
-	for (i = SHIP_TARTANE; i <= SHIP_LSHIP_ENG; i++) 
+	for (int i = iClassMin; i <= iClassMax; i++)
 	{
-		object rShip = GetShipByType(i);
-
-		if (sti(rShip.CanEncounter) != true)     continue;
-		if (sti(rShip.Type.(sShipType)) != true) continue;
-        if (rShip.Spec != sShipSpec)             continue;
-
-		int iClass = MakeInt(rShip.Class);
-        // Сравнение классов числовое, то есть iClassMin - это большие корабли
-		if (iClass < iClassMin || iClass > iClassMax) continue;
-
-        if(bNationCheck || iClass == 1)
-        {
-            bOk = false;
-            if(CheckAttribute(rShip, "nation"))
-            {
-                makearef(aNation, rShip.nation);
-                q = GetAttributesNum(aNation);
-                for(j = 0; j < q; j++)
-                {
-                    sAttr = GetAttributeName(GetAttributeN(aNation, j)); 
-                    if(GetNationTypeByName(sAttr) == iNation && rShip.nation.(sAttr) == true) {
-                        bOk = true;
-                        break;
-                    }
-                }
-            }	
-            if(!bOk) continue;
-        }
-
-		iShips[iShipsNum] = i;
-		iShipsNum++;
+		classFlags += GetClassFlag(i);
 	}
 
-	if (iShipsNum == 0)
+	int iType = sti(sShipSpec);
+	typeFlags = gShipTypeFlags[iType];
+
+	nationFlags = GetNationFlag(iNation);
+
+	int iShipType = GetRandomShipTypeEx(classFlags, typeFlags, nationFlags, !bNationCheck);
+
+	if (iShipType == SHIP_NOTUSED)
 	{
         Log_TestInfo("WARNING! CANT FIND SHIP IN WME_GetShipTypeExt!");
-		Trace("Can't find ship type '" + sShipType + "'" + " with spec " + wdmGetSpec(sti(sShipSpec)) + " and ClassMin = " + iClassMin + ", ClassMax = " + iClassMax);
+		Trace("Can't find ship with spec " + wdmGetSpec(sti(sShipSpec)) + " and ClassMin = " + iClassMin + ", ClassMax = " + iClassMax);
 		return INVALID_SHIP_TYPE;
 	}
 
-    iShipsNum = rand(iShipsNum - 1);
-    if(iShipsNum >= SHIP_LSHIP_FRA && iShipsNum <= SHIP_LSHIP_ENG)
-    {
-        // Доля линейников 10% от кораблей первого класса
-        // В ваниле ещё может выпасть только военник
-        if(rand(99) >= 20) iShipsNum = SHIP_LINESHIP;
-    }
+	ref refShip;
+	makeref(refShip, ShipsTypes[iShipType]);
 
-	return iShips[iShipsNum];
+	if (CheckAttribute(refShip, "NationalLineShip") && sti(refShip.NationalLineShip))
+	{
+		// Доля линейников 10% от кораблей первого класса
+		// В ваниле ещё может выпасть только военник
+		if(rand(99) >= 20) iShipType = SHIP_LINESHIP;
+	}
+
+	return iShipType;
 }
 
 string wdmGetSpec(int iSpec)

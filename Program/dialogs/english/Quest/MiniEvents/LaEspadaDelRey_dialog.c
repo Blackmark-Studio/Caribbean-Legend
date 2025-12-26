@@ -145,7 +145,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "LEDR_Gonsalo_16":
-			dialog.text = "Going back to the ship was far too dangerous. Anyone who dared to sneak in for loot could end up fighting over the spoils and put a bullet in whoever happened to be nearby… by accident. Or maybe—not by accident at all. By the sea, I spent a whole week holed up in the tavern, questioning everyone who’d been to the bay. But no one had heard a thing about my crew, or what became of them. In the end, I had to accept it: looks like I’m the only one who survived that damned storm. Maybe fate just favored me more than the others. Or maybe… it was all thanks to the charm that young Captain Eugenio de la Torre once gave me. I always kept it close. And, damn it, it seems it really did bring me luck.";
+			dialog.text = "Going back to the ship was far too dangerous. Anyone who dared to sneak in for loot could end up fighting over the spoils and put a bullet in whoever happened to be nearby... by accident. Or maybe—not by accident at all. By the sea, I spent a whole week holed up in the tavern, questioning everyone who’d been to the bay. But no one had heard a thing about my crew, or what became of them. In the end, I had to accept it: looks like I’m the only one who survived that damned storm. Maybe fate just favored me more than the others. Or maybe... it was all thanks to the charm that young Captain Eugenio de la Torre once gave me. I always kept it close. And, damn it, it seems it really did bring me luck.";
 			link.l1 = "And where is he now? Seems it doesn't protect him from skeletons, huh...";
 			link.l1.go = "LEDR_Gonsalo_17";
 		break;

@@ -1,0 +1,5 @@
+reaction_functions_1 {Mangarosa iksiri aşırı doz!}
+reaction_functions_2 {Zehirlenme aldın}
+reaction_functions_3 {Özel Mangarosa İksiri Kullanıldı!}
+reaction_functions_4 {Mangarosa iksirinin etkisi sona erdi}
+reaction_functions_5 {Bir anlaşma için şanslı bir gün, ambarlar mal dolu! +}

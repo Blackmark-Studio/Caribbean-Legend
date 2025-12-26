@@ -42,7 +42,7 @@ Tobago {Тобаго}
 MarieGalante {Мари-Галант}
 SentJons_town {Сент-Джонс}
 Pirates_town {Шарптаун}
-Bridge_town {Бриджтаун}
+Bridgetown_town {Бриджтаун}
 Beliz_town {Белиз}
 Santiago_town {Сантьяго}
 PuertoPrincipe_town {Пуэрто-Принсипе}
@@ -70,7 +70,8 @@ PortSpein_town {Сан-Хосе}
 Tenotchitlan_town {Тайясаль}
 FortOrange_town {Марун-Таун}
 Providence_town {Сан-Андрес}
-Estate {Имение Оглторпа, Англия}
+Oglethorpe_Estate {Имение Оглторпа}
+DeMonpe_Estate {Поместье де Монпе}
 DesMoines {Дес-Мойнес}
 LosTeques_town {рудник Лос-Текес}
 ExitMine {Выход к руднику}
@@ -314,7 +315,8 @@ Crypt {склеп}
 Exit {выход}
 The cavern {пещера}
 ????? {?????}
-Passage (мост)Beach {пляж}
+Passage {мост}
+Beach {пляж}
 Cave {пещера}
 Cave entrance {вход в пещеру}
 FloodedCave {Затопленная пещера}
@@ -396,3 +398,7 @@ Basement {Подвал}
 Ruins {Руины}
 Ulysse {Пинас 'Улисc'}
 La Espada Del Rey {Флейт 'La Espada del Rey'}
+Europe {Европа}
+England {Англия}
+France {Франция}
+Spain {Испания}

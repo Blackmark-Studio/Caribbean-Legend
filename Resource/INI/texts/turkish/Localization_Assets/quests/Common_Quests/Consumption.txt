@@ -1,0 +1,10 @@
+Consumption_1 { }
+Consumption_2 { }
+Consumption_3 {Sergio}
+Consumption_4 {Saldo}
+Consumption_5 {Juan}
+Consumption_6 {Consumption}
+Consumption_7 { }
+Consumption_8 { }
+Consumption_9 {Gemi birkaç dakika içinde patlayacak. Hemen ayrılmalısın!}
+Consumption_10 {Gemi birkaç dakika içinde patlayacak. Hemen ayrılmalısın!}

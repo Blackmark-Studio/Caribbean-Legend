@@ -1,0 +1,404 @@
+Antigua {Antigua}
+Barbados {Barbados}
+Bermudes {Isla del Tesoro}
+Beliz {Yucatan}
+Cuba {Cuba}
+Cuba1 {Cuba}
+Cuba2 {Cuba}
+Caiman {Cayman}
+Cumana {Principal}
+Caracas {Principal}
+Curacao {Curaçao}
+Cartahena {Principal}
+Dominica {Dominica}
+Guadeloupe {Guadalupe}
+Hispaniola {Hispaniola}
+Hispaniola1 {Hispaniola}
+Hispaniola2 {Hispaniola}
+Jamaica {Jamaica}
+Maracaibo {Principal}
+Martinique {Martinique}
+SentMartin {Saint-Martin}
+Nevis {São Cristóvão}
+PuertoRico {Puerto Rico}
+PortoBello {Principal}
+Pearl {Praia das Pérolas}
+Panama {Panama}
+SantaCatalina {Principal}
+Terks {Turcos}
+Tortuga {Tortuga}
+Trinidad {Trinidad}
+Tenotchitlan {Lago Peten}
+Mein {Principal}
+KhaelRoa {Khael Roa}
+Ksochitam {Ksocheatem}
+RockIsland {Recifes do Norte}
+Providence {Providence}
+SantaQuiteria {Santa Quiteria}
+IslaDeVieques {Isla de Vieques}
+IslaMona {Isla Mona}
+IslaDeCoche {[ERROR: APIConnectionError]}
+Tobago {Tobago}
+MarieGalante {Marie Galante}
+SentJons_town {St. John's}
+Pirates_town {Sharptown}
+Bridgetown_town {Bridgetown}
+Beliz_town {Belize}
+Santiago_town {Santiago}
+PuertoPrincipe_town {Puerto del Principe}
+Havana_town {Havana}
+Cumana_town {Cumana}
+Caracas_town {Caracas}
+Villemstad_town {Willemstad}
+Cartahena_town {Cartagena}
+BasTer_town {Basse-Terre}
+SantoDomingo_town {Santo Domingo}
+LaVega_town {La Vega}
+PortPax_town {Port-au-Prince}
+PortRoyal_town {Port Royal}
+Maracaibo_town {Maracaibo}
+FortFrance_town {Saint-Pierre}
+LeFransua_town {Le Francois}
+Marigo_town {Philipsburg}
+Charles_town {Capsterville}
+SanJuan_town {San Juan}
+PortoBello_town {Portobello}
+Panama_town {Panama}
+SantaCatalina_town {Blueweld}
+Tortuga_town {Tortuga}
+PortSpein_town {San Jose}
+Tenotchitlan_town {Tayasal}
+FortOrange_town {Maroon Town}
+Providence_town {San Andres}
+Oglethorpe_Estate {Propriedade Oglethorpe}
+DeMonpe_Estate {Propriedade de Monpe}
+DesMoines {Des Moines}
+LosTeques_town {mina Los-Teques}
+ExitMine {Passagem para a mina}
+Factoria {Feitoria}
+Shore1 {Cabo Boon}
+Shore2 {Falmouth Cove}
+Shore3 {Benures Bay}
+Shore4 {Cabo Harrison}
+Shore5 {Cabo Ragged Point}
+Shore6 {Cabo Catoche}
+Shore7 {Baía de Cozumel}
+Shore8 {Chetumal Cove}
+Shore9 {Enseada Amatique}
+Shore10 {Lagoa Caratasca}
+Shore11 {Cabo Camaguey}
+Shore12 {Anna Maria Bay}
+Shore13 {Baía de Batabano}
+Shore14 {Enseada Juventud}
+Shore15 {Cabo San Antonio}
+Shore16 {Costa Deserta}
+Shore17 {Baía Esmeralda}
+Shore18 {Costa Boca de la Serpienta}
+Shore19 {Enseada Carupano}
+Shore20 {Praia Los-Teques}
+Shore21 {Cabo Aruba}
+Shore22 {Costa Van Hato}
+Shore23 {Cabo Santa Maria}
+Shore24 {Lagoa Blanca}
+Shore25 {Enseada Covenas}
+Shore26 {Praia Castle Bruce}
+Shore27 {Cabo Scott's Head}
+Shore28 {Enseada Morne-a-l'Eau}
+Shore29 {Praia Capster}
+Shore30 {Enseada Grand-Bourg}
+Shore31 {Cabo Inacessível}
+Shore32 {Cabo Isabella}
+Shore33 {Enseada de Samana}
+Shore34 {Baía de Gonaives}
+Shore35 {Cabo Negril}
+Shore36 {Portland Bay}
+Shore37 {Baía Guajira}
+Shore38 {Baía Lamentin}
+Shore39 {Enseada Le Marin}
+Shore40 {Praia Grand Case}
+Shore41 {Simpson Bay}
+Shore42 {Sandy Bay}
+Shore43 {Baía Half Moon}
+Shore44 {Enseada de Aguadilla}
+Shore45 {Praia de Fajardo}
+Shore46 {Lagoa Chiriqui}
+Shore47 {[ERROR: APIConnectionError]}
+Shore48 {Golfo do Darién}
+Shore49 {Baía Papagayo}
+Shore50 {Baía de Nicoya}
+Shore51 {Baía Coronado}
+Shore52 {Golfo Dulce}
+Shore53 {Costa dos Mosquitos}
+Shore54 {Cabo Perlas}
+Shore55 {Baía de San Juan del Norte}
+Shore56 {Baía do Norte}
+Shore57 {Baía do Sul}
+Shore58 {Praia Olho de Peixe}
+Shore59 {Scarborough Cove}
+Shore60 {Ponta Galera}
+Shore61 {Tepeyakak}
+Shore62 {Iztapalapa}
+Shore63 {Baía San Miguel}
+Shore64 {Enseada do Recife}
+Shore65 {Enseada Rochosa}
+Shore66 {Praia dos Tubarões}
+Shore66_1 {Enseada Amaldiçoada}
+Shore67 {Recife do Esqueleto}
+Shore67_1 {Recife do Esqueleto - Oeste}
+Shore67_2 {Recife Esqueleto - Leste}
+Shore68 {Enseada Ingallado}
+Shore69 {Praia Santa Maria del Mar}
+Shore70 {Enseada dos Escravos}
+Shore71 {Cabo do Desprezo}
+Shore72 {Oriente Cove}
+Shore73 {Cabo Machete}
+Shore74 {Praia do Caranguejo}
+Shore75 {Enseada do Governador}
+Shore76 {Cabo do Afogado}
+Shore77 {Enseada Vieques}
+Shore78 {Baía dos Bucaneiros}
+Shore79 {Cabo Cabo Rojo}
+Shore_ship1 {Enseada Sabo-Matila}
+Shore_ship2 {Baía do Perigo}
+Shore_ship3 {Cabo das Esperanças Ilusórias}
+Shore_ship4 {Enseada Amaldiçoada}
+Shore_mask {Gruta do Guardião}
+Mayak1 {[ERROR: APIConnectionError]}
+Mayak2 {Farol de Barbados}
+Mayak3 {Farol de Port Royal}
+Mayak4 {Farol de Guadeloupe}
+Mayak5 {Farol de Saint Christopher}
+Mayak6 {Farol de Tortuga}
+Mayak7 {Farol de Port-au-Prince}
+Mayak8 {Farol de Santo Domingo}
+Mayak9 {Farol de Santiago}
+Mayak10 {Farol de Havana}
+Mayak11 {Farol de Cartagena}
+Bridgetown {Bridgetown}
+Bridgetown Town {Bridgetown}
+Bridgetown Fort {Forte de Bridgetown}
+Bridgetown Port {Porto de Bridgetown}
+SanJuan {San Juan}
+SanJuan Town {San Juan}
+SanJuan Fort {Forte de San Juan}
+SanJuan Port {Porto de San Juan}
+Santiago {Santiago}
+Santiago Town {Santiago}
+Santiago Fort {Forte Santiago}
+Santiago Port {Port Santiago}
+PuertoPrincipe {Puerto del Principe}
+PuertoPrincipe Town {Puerto del Principe}
+PuertoPrincipe Fort {Forte de Puerto del Principe}
+PuertoPrincipe Port {Porto de Puerto del Principe}
+SentJons {St. John's}
+SentJons Town {St. John's}
+SentJons Fort {Forte de St. John's}
+SentJons Port {Porto de St. John's}
+PortRoyal {Port Royal}
+PortRoyal Town {Port Royal}
+PortRoyal Fort {Forte de Port Royal}
+PortRoyal Port {[ERROR: APIConnectionError]}
+FortOrange {Maroon Town}
+FortOrange Town {Maroon Town}
+Villemstad {Willemstad}
+Villemstad Town {Willemstad}
+Villemstad Fort {Forte de Willemstad}
+Villemstad Port {Porto de Willemstad}
+BasTer {Basse-Terre}
+BasTer Town {Basse-Terre}
+BasTer Fort {Forte de Basse-Terre}
+BasTer Port {Porto de Basse-Terre}
+LaVega {La Vega}
+LaVega Town {La Vega}
+LaVega Fort {Forte de La Vega}
+LaVega Port {Porto de La Vega}
+SantoDomingo {Santo Domingo}
+SantoDomingo Town {Santo Domingo}
+SantoDomingo Fort {Forte Santo-Domingo}
+SantoDomingo Port {Porto de Santo-Domingo}
+PortPax {Port-au-Prince}
+PortPax Town {Port-au-Prince}
+PortPax Fort {Forte de Port-au-Prince}
+PortPax Port {Porto de Port-au-Prince}
+Pirates {Sharptown}
+Pirates Town {Sharptown}
+Pirates Port {Porto de Sharptown}
+FortFrance {Saint-Pierre}
+FortFrance Town {Saint-Pierre}
+FortFrance Fort {Forte de Saint-Pierre}
+FortFrance Port {Porto de Saint-Pierre}
+LeFransua {Le Francois}
+LeFransua Town {Le Francois}
+LeFransua Port {Porto de Le Francois}
+Havana {Havana}
+Havana Town {Havana}
+Havana Fort {Forte de Havana}
+Havana Port {Porto de Havana}
+Charles {Capsterville}
+Charles Town {[ERROR: APIConnectionError]}
+Charles Fort {Forte de Capsterville}
+Charles Port {Porto de Capsterville}
+PortoBello Town {Portobello}
+PortoBello Fort {Forte de Portobello}
+PortoBello Port {Porto de Portobello}
+PortSpein {[ERROR: APIConnectionError]}
+PortSpein Town {San Jose}
+PortSpein Fort {Forte de San Jose}
+PortSpein Port {Porto de San Jose}
+Tortuga Town {Tortuga}
+Tortuga Fort {Forte de Tortuga}
+Tortuga Port {Porto de Tortuga}
+Marigo {Philipsburg}
+Marigo Town {Philipsburg}
+Marigo Fort {Forte de Philipsburg}
+Marigo Port {Porto de Philipsburg}
+Panama Town {Panama}
+Panama Fort {Forte do Panamá}
+Panama Port {Porto do Panamá}
+Cartahena Town {Cartagena}
+Cartahena Fort {Forte de Cartagena}
+Cartahena Port {Porto de Cartagena}
+Maracaibo Town {Maracaibo}
+Maracaibo Fort {Forte de Maracaibo}
+Maracaibo Port {Porto de Maracaibo}
+Caracas Town {Caracas}
+Caracas Fort {Forte de Caracas}
+Caracas Port {Porto de Caracas}
+Cumana Town {[ERROR: APIConnectionError]}
+Cumana Fort {[ERROR: APIConnectionError]}
+Cumana Port {Porto de Cumana}
+SantaCatalina Town {Blueweld}
+SantaCatalina Fort {Forte de Blueweld}
+SantaCatalina Port {Porto de Blueweld}
+Beliz Town {Belize}
+Beliz Fort {Forte de Belize}
+Beliz Port {Porto de Belize}
+SanAndres {San Andres}
+SanAndres Town {San Andres}
+SanAndres Fort {Forte de San Andres}
+SanAndres Port {Porto de San Andres}
+IslaMona Town {Isla Mona}
+LosTeques {Mina Los-Teques}
+LosTeques Town {Mina Los-Teques}
+Duel Field {Campo de Duelo}
+Boarding deck {Convés superior}
+Orlop deck {Convés inferior}
+Fort inside {Forte}
+Sea {Mar}
+Jungle {Selva}
+Street {Ruas}
+ExitTown {Saída para a Selva}
+Graveyard {Cemitério}
+Port {Porto}
+Tavern {Taverna}
+Tavern upstairs {Quarto na Taverna}
+Store {Loja}
+Shipyard {Estaleiro}
+PackHouse {Depósito}
+Townhall {Mansão do Governador}
+TownhallRoom {Quarto da mansão}
+Residence {Residência}
+PortOffice {Administração Portuária}
+Church {Igreja}
+Incquisitio {Inquisição}
+Maltese Order {Ordem de Malta}
+Incas Temple {Templo Inca}
+Usurer House {Banco}
+House {Casa}
+ammo {Arsenal}
+shack {Cabana}
+Room {Quarto}
+Cabinet {[ERROR: APIConnectionError]}
+Bedroom {Quarto}
+Сhapel {Capela}
+Crypt {Cripta}
+Exit {Sair}
+The cavern {Caverna}
+????? {?????}
+Passage {Ponte}
+Beach {Praia}
+Cave {Caverna}
+Cave entrance {Entrada da Caverna}
+FloodedCave {Caverna Alagada}
+Grot {Gruta}
+Prison {Prisão}
+Lighthouse Inside {Farol (interior)}
+Mines {Minas}
+Dungeon {Masmorra}
+Gate {Portão da Cidade}
+Brothel {Bordel}
+Brothel Room {Sala de Privacidade}
+Village {Vila}
+Plantation {Plantação}
+UnderWater {[ERROR: APIConnectionError]}
+Grotto {Gruta}
+Dunes house {Casa nas Dunas}
+Torture room {Sala de tortura}
+Wine Cellar {Adega}
+cabine {Cabine}
+My_Campus {Sala de oficiais}
+My_Deck_Medium {Convés de canhões}
+My_Deck {Porão}
+My_Ship {[ERROR: APIConnectionError]}
+Drugstore {Farmácia}
+HWIC_flat {Sede da HWIC}
+Office of Naval Registry {Escritório de Registro Naval}
+Van Doorn's Cellar {[ERROR: APIConnectionError]}
+Comendant's House {Casa do Comandante de Havana}
+Tibo House {Casa de Henri Thibaut}
+Gaspard_Gold House {Casa de Gaspard Goldenteeth}
+Ascold House {Casa de Fadey}
+Abby_House {Casa de Abigail Shneur}
+Knippel_House {Casa de Charley Knippel}
+Fleetwood_House {Casa de Richard Fleetwood}
+Comendant_House {[ERROR: APIConnectionError]}
+Svensons_house {Casa de Jan Svenson}
+Gladis_house {Casa de Gladys McArthur}
+Gonsales_house {Casa de Enrique Gonzales}
+Loxly_house {Escritório de Albert Locksley}
+Kristian_house {Casa de Christian}
+LostShipsCity {Loco-Riferte}
+LostShipsCity Town {Loco-Riferte}
+LSC South {Ilha dos Navios Mortos - Sul}
+LSC North {Norte da Ilha dos Navios Mortos}
+LSC Town {Ruas de Loco-Riferte}
+Ava Cabin {Galeão 'Eva'}
+Caroline cabin {[ERROR: APIConnectionError]}
+CeresSmithy cabin {Fleut 'Ceres Smithy'}
+EsmeraldaStoreBig cabin {Galeão 'Esmeralda'}
+FenixPlatform cabin {Plataforma 'Phoenix'}
+FernandaDiffIndoor cabin {Fleut 'Fernanda'}
+FleuronTavern cabin {Caravela 'Fleron'}
+FurieShipInside2 cabin {Pinaça 'Fury'}
+GloriaChurch cabin {Galeão 'Gloria'}
+PlutoStoreSmall cabin {Fleut 'Pluto'}
+ProtectorFisher cabin {Corveta 'Protector'}
+SanAugustineResidence cabin {Nau de guerra 'San Augustine'}
+SanGabrielMechanic cabin {Barca 'San Gabriel'}
+SantaFlorentinaShipInside4 cabin {Brigue 'Santa Florentina'}
+TartarusPrison cabin {Couraçado 'Tartarus'}
+VelascoShipInside1 cabin {Galeão 'Velasco'}
+Tenochtitlan {Tayasal}
+Temple_1 {Templo de Tohil}
+Temple_2 {Templo de Kauil}
+Temple_3 {Templo de Chak}
+Temple_4 {Templo de Kinich Ahaw}
+Temple_5 {[ERROR: APIConnectionError]}
+Temple_6 {Templo de Ek Chuah}
+TempleTreasure {Tesouraria}
+TempleGreatInside {Grande Templo}
+TempleRoundInside {Templo de Kukulcan}
+TempleUnderwater {Labirinto Subaquático}
+Maze {Templo dos Chavins}
+Alcove {Santuário}
+Merrimancave {Covil de Merriman}
+River {Margem do rio}
+Jungle Fort {Forte na selva}
+Basement {Porão}
+Ruins {Ruínas}
+Ulysse {A bordo do Ulysse}
+La Espada Del Rey {Fluyt 'La Espada del Rey'}
+Europe {[ERROR: APIConnectionError]}
+England {Inglaterra}
+France {França}
+Spain {Espanha}

@@ -22,7 +22,7 @@ bool LAi_IsHitCritical(ref attacker, ref table, string weaponType, string strike
 	return false;
 }
 
-void ModifyDamageMtpByCrit(ref attacker, ref enemy, ref attackerLandTable, ref enemyLandTable, string weaponType, string strikeType, float damageMtp, bool isCrit)
+void ModifyDamageMtpByCrit(ref attacker, ref enemy, ref attackerLandTable, ref enemyLandTable, string weaponType, string strikeType, ref damageMtp, ref isCrit)
 {
 	if (!LAi_IsHitCritical(attacker, attackerLandTable, weaponType, strikeType)) return; // если крит
 	
@@ -76,11 +76,6 @@ void LAi_SetResultOfDeath(ref attack, ref enemy, bool isSetBalde)
 {
     if (sti(attack.index) == GetMainCharacterIndex())
     {
-		if (CheckCharacterItem(pchar, "HolTradeLicence") && CheckAttribute(enemy, "City") && sti(enemy.nation) == HOLLAND) // Jason: изъятие лицензии
-		{
-			TakeNationLicence(HOLLAND);
-			log_info(XI_ConvertString("LicenseCancel"));
-		}
 		if (CheckAttribute(enemy, "City") && sti(enemy.nation) == PIRATE) 
 		{
 			pchar.GenQuest.Piratekill = sti(pchar.GenQuest.Piratekill)+1;
@@ -266,6 +261,9 @@ float LAi_NPC_GetFireActive()
 {
 	aref chr = GetEventData();
 	if (!LAi_IsArmed(&chr)) return 0.0;
+	
+	if(CharUseMusket(chr))
+		return 1.0;
 
 	float level = LAi_GetCharacterGunLevel(chr);
 	npc_return_tmp = 0.001 + level*0.06;
@@ -582,7 +580,7 @@ float Lai_UpdateEnergyPerDltTime(aref chr, float curEnergy, float dltTime)
 	}
 	if(CheckCharacterPerk(chr, "Tireless")) 
 	{
-		fMultiplier = fMultiplier * 1.15;
+		fMultiplier = fMultiplier * (1 + PERK_VALUE_TIRELESS);
 	}
 	if(CheckCharacterPerk(chr, "HT3")) 
 	{
@@ -633,11 +631,13 @@ float LAi_GetAdditionalMeleeAng()
 	return GetAttributeFloatOrDefault(&attack, "ct.land." + sAttackType + "_" + M_STRIKE_ANGLE, 0.0);
 }
 
+// обновить параметры ИИ
 void UpdateNpcFightAI(ref chr)
 {
 	SendMessage(chr, "l", MSG_NPCHARACTER_FIGHTPROBABILITIES_UPDATE);
 }
 
+// установить максимальное отбрасывание выстрелом
 #event_handler("Event_GetFireRepulse","LAi_GetFireRepulse");
 float LAi_GetFireRepulse()
 {
@@ -646,4 +646,180 @@ float LAi_GetFireRepulse()
 	float result = 7.0;
 	if (!CharUseMusket(&attack) && IsEquipCharacterByItem(&attack, "pistol15")) result = 14.0;
 	return result;
+}
+
+// умеет ли нпс прерывать атаки
+#event_handler("NPC_Event_EnableCancel","NPC_Event_EnableCancel");
+int NPC_Event_EnableCancel()
+{
+	aref chr = GetEventData();
+	if(CheckAttributeEqualTo(chr, "personality.powerLvl", GEN_COMMONER))
+	{
+		int diff = GetNormalizedDifficultyLevel();
+		if(diff < 2)	// нпс разряда commoner не умеет прерывать атаки на первых двух сложностях
+			return 0;
+		float fSkill = LAi_GetCharacterFightLevel(chr);
+		if(diff == 2 && fSkill < 0.6)	// на третьей сложности требуется 60 навыка
+			return 0;
+		if(diff > 2 && fSkill < 0.4)	// на последних двух сложностях требуется 40 навыка
+			return 0;
+	}
+	return 1;
+}
+
+// вероятность прервать атаку, потому что противник находится слишком далеко
+#event_handler("NPC_Event_GetCancelDistProb","NPC_GetCancelDistProb");
+float NPC_GetCancelDistProb()
+{
+	aref chr = GetEventData();
+	float fSkillMin, fSkillMax, fProbMin, fProbMax;
+	float fSkill = LAi_GetCharacterFightLevel(chr);
+	fProbMin = 0.0;
+	if(CheckAttributeEqualTo(chr, "personality.powerLvl", GEN_COMMONER))
+	{
+		fSkillMax = 1.0;
+		if(GetNormalizedDifficultyLevel() > 2)
+		{
+			fSkillMin = 0.4;
+			fProbMax = 0.8;
+		}
+		else
+		{
+			fSkillMin = 0.6;
+			fProbMax = 0.6;
+		}
+	}
+	else
+	{
+		fSkillMin = 0.0;
+		fSkillMax = 0.75;
+		fProbMax = 1.0;
+	}
+	float prob = Bring2Range(fProbMin, fProbMax, fSkillMin, fSkillMax, fSkill);
+	return prob;
+}
+
+// вероятность прервать атаку, потому что противник парирует
+#event_handler("NPC_Event_GetCancelParryProb","NPC_GetCancelParryProb");
+float NPC_GetCancelParryProb()
+{
+	aref chr = GetEventData();
+	float fSkillMin, fSkillMax, fProbMin, fProbMax;
+	float fSkill = LAi_GetCharacterFightLevel(chr);
+	fProbMin = 0.0;
+	fSkillMax = 1.0;
+	if(CheckAttributeEqualTo(chr, "personality.powerLvl", GEN_COMMONER))
+	{
+		if(GetNormalizedDifficultyLevel() > 2)
+		{
+			fSkillMin = 0.4;
+			fProbMax = 0.6;
+		}
+		else
+		{
+			fSkillMin = 0.6;
+			fProbMax = 0.4;
+		}
+	}
+	else
+	{
+		fSkillMin = 0.0;
+		fProbMax = 0.85;
+	}
+	float prob = Bring2Range(fProbMin, fProbMax, fSkillMin, fSkillMax, fSkill);
+	return prob;
+}
+
+// прервёт ли нпс атаку (возврат в стойку), чтобы нанести быстрый рубящий удар по цели в стаггере (-1: нет энергии, проверка скипается; 0: энергия есть, но прерывания с дополнительной атакой не будет; 1: энергия есть, поэтому нпс прервёт атаку и нанесёт дополнительную)
+#event_handler("NPC_Event_GetCancelFast","NPC_Event_GetCancelFast");
+int NPC_Event_GetCancelFast()
+{
+	aref chr = GetEventData();
+	float curEnergy = Lai_CharacterGetEnergy(chr);
+	float needEnergy = LAi_CalcUseEnergyForBlade(chr, FAST_STRIKE);
+	if(needEnergy <= curEnergy)
+	{
+		float fSkillMin, fSkillMax, fProbMin, fProbMax;
+		float fSkill = LAi_GetCharacterFightLevel(chr);
+		fProbMin = 0.0;
+		fSkillMax = 1.0;
+		if(CheckAttributeEqualTo(chr, "personality.powerLvl", GEN_COMMONER))
+		{
+			if(GetNormalizedDifficultyLevel() > 2)
+			{
+				fSkillMin = 0.4;
+				fProbMax = 0.5;
+			}
+			else
+			{
+				fSkillMin = 0.6;
+				fProbMax = 0.3;
+			}
+		}
+		else
+		{
+			fSkillMin = 0.0;
+			fProbMax = 0.6;
+		}
+		float prob = Bring2Range(fProbMin, fProbMax, fSkillMin, fSkillMax, fSkill);
+		float r = frandSmall(1.0);
+		if (prob >= r)
+			return 1;
+		return 0;
+	}
+	return -1;
+}
+
+// минимальное время реакции для прерывания по дистанции
+#event_handler("NPC_Event_GetCancelDistReactionMin","NPC_GetCancelDistReactionMin");
+float NPC_GetCancelDistReactionMin()
+{
+	aref chr = GetEventData();
+	return 0.1;
+}
+
+// максимальное время реакции для прерывания по дистанции
+#event_handler("NPC_Event_GetCancelDistReactionMax","NPC_GetCancelDistReactionMax");
+float NPC_GetCancelDistReactionMax()
+{
+	aref chr = GetEventData();
+	return 0.3;
+}
+
+// минимальное время реакции для прерывания по парированию
+#event_handler("NPC_Event_GetCancelParryReactionMin","NPC_GetCancelParryReactionMin");
+float NPC_GetCancelParryReactionMin()
+{
+	aref chr = GetEventData();
+	return 0.1;
+}
+
+// максимальное время реакции для прерывания по парированию
+#event_handler("NPC_Event_GetCancelParryReactionMax","NPC_GetCancelParryReactionMax");
+float NPC_GetCancelParryReactionMax()
+{
+	aref chr = GetEventData();
+	return 0.3;
+}
+
+// кулдаун после использования прерывания по парированию (чтобы не спамить прерыванием)
+#event_handler("NPC_Event_GetCancelParryRefresh","NPC_GetCancelParryRefresh");
+float NPC_GetCancelParryRefresh()
+{
+	aref chr = GetEventData();
+	return 2.0;
+}
+
+#event_handler("NPC_Event_DoCancelAttack", "NPC_DoCancelAttack");
+void NPC_DoCancelAttack()
+{
+	aref chr = GetEventData();
+	string sTag = GetEventData();
+	if (ShowCharString())
+	{
+		if(sTag == "fast")
+			Log_Chr(chr, XI_ConvertString("CancelAttack_Repeat"));
+		else
+			Log_Chr(chr, XI_ConvertString("CancelAttack"));
+	}
 }

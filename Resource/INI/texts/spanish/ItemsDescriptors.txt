@@ -61,14 +61,16 @@ descriptor_descr_Herb {Don de la tierra. Se usa sobre todo en alquimia para prep
 descriptor_descr_Fancy {Este objeto destaca por su aspecto ceremonial, incrustaciones y materiales costosos. Llevarlo aumenta Liderazgo en $number($DescriptorBaseValue(Fancy)). Los efectos se acumulan.}
 descriptor_descr_Exotic
 {
-Este objeto no debería estar en manos de un buen cristiano, y pronto corren inquietantes rumores sobre quien lo porta.Aumenta el Poder de la Flota en $percent($DescriptorBaseValue(Exotic)); los efectos se acumulan.
+Este objeto no debería estar en manos de un buen cristiano, y pronto corren inquietantes rumores sobre quien lo porta.
+Aumenta el Poder de la Flota en $percent($DescriptorBaseValue(Exotic)); los efectos se acumulan.
 }
 descriptor_descr_HighQuality {Esta arma está tan bien fabricada que su daño crítico aumenta en $percent($DescriptorBaseValue(HighQuality)).}
 descriptor_descr_GoodFit {Esta armadura se ajusta de forma excepcional, aumentando la velocidad de ataque con cualquier arma un $percent($DescriptorBaseValue(GoodFit)).}
 descriptor_descr_HeartDefence {Esta armadura está reforzada en puntos vitales y reduce el daño crítico enemigo un $percent($DescriptorBaseValue(HeartDefence)).}
 descriptor_descr_Unremarkable
 {
-Todos tienen objetos como este. Con él, pasarás desapercibido.Aumenta Sigilo en $number($DescriptorBaseValue(Unremarkable)). Los efectos se acumulan.
+Todos tienen objetos como este. Con él, pasarás desapercibido.
+Aumenta Sigilo en $number($DescriptorBaseValue(Unremarkable)). Los efectos se acumulan.
 }
 descriptor_descr_WeaponType_0 {Las Armas ligeras son más livianas, ágiles y pensadas para duelos uno a uno. Los ataques con ellas son un 5% más rápidos.}
 descriptor_descr_WeaponType_1 {Las armas medias ofrecen un buen equilibrio entre peso y velocidad, siendo la opción más versátil. Ideales para peleas y combates de abordaje.}
@@ -85,7 +87,8 @@ descriptor_descr_ArmorMaterial_1 {La armadura de cuero puede salvarte en una pel
 descriptor_descr_ArmorMaterial_2 {Las placas ofrecen un gran equilibrio entre peso y protección. Pueden salvarte la vida. Reducen el daño recibido un 15%.}
 descriptor_descr_ArmorMaterial_3
 {
-La armadura estampada se fabrica en masa para equipar tropas y se usa en guerras europeas.Reduce el daño recibido un 22%.
+La armadura estampada se fabrica en masa para equipar tropas y se usa en guerras europeas.
+Reduce el daño recibido un 22%.
 }
 descriptor_descr_ArmorMaterial_4 {La fabricación de armaduras forjadas de alta calidad es un proceso complejo y costoso, lo que la convierte en una rareza en el Caribe. Reduce el daño recibido en un 35%.}
 descriptor_descr_AmuletType_0 {Se basa en presagios, supersticiones marinas y causas reales.}

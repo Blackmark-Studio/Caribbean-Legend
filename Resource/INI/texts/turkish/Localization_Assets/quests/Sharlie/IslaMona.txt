@@ -1,0 +1,12 @@
+IslaMona_1 {Rodrigo}
+IslaMona_2 {Jiménez}
+IslaMona_3 {Ertesi sabah...}
+IslaMona_4 {Rodrigo Jimenez, Isla Mona'da yeni bir demir ağacı partisi hazırladı}
+IslaMona_5 {@<sti(pchar.questTemp.IslaMona.Factory.Bottle)> şişe rom teslim ettin}
+IslaMona_6 {@<sti(pchar.questTemp.IslaMona.Factory.Bottle)> şişe şarap teslim ettin}
+IslaMona_7 {Depoya @<sti(pchar.questTemp.IslaMona.Factory.Goods)> demir ağacı eklendi}
+IslaMona_8 { }
+IslaMona_9 { }
+IslaMona_10 {Francisco}
+IslaMona_11 {de Alba}
+IslaMona_12 {Seslere bakılırsa tuzak işe yaradı! Köye dönme zamanı!}

@@ -413,29 +413,29 @@ itmdescr_talisman20 {A bandolier made of several straps, a powder flask, and num
 itmname_talisman20_part {Musketeer's Powder Flask}
 itmdescr_talisman20_part {A fanciful powder flask of unusual shape, stamped with images of exotic animals from a distant land. The edges are embroidered with an Eastern European pattern.}
 itmname_totem_01 {Talisman 'Throat of cast iron'}
-itmdescr_totem_01 {A mug enchanted against drunkenness with a silver bottom.}
+itmdescr_totem_01 {Mug enchanted against drunkenness with a silver bottom. Helps you stay sober even during the wildest binge.}
 itmname_totem_02 {Talisman 'Spinebiter'}
-itmdescr_totem_02 {A fearsome-looking scourge for executions.}
+itmdescr_totem_02 {A fearsome flog for punishments. Greatly improves discipline on the ship among both sailors and unwilling passengers.}
 itmname_totem_03 {Talisman 'Cupid's Balm'}
-itmdescr_totem_03 {A special ointment in an expensive boutonniere.}
+itmdescr_totem_03 {Special ointment in an expensive boutonniere case. Makes any trip to a brothel good for your health.}
 itmname_totem_04 {Talisman 'Myrmidon'}
-itmdescr_totem_04 {A hand-worn silver bracelet set with turquoise.}
+itmdescr_totem_04 {A handcrafted silver bracelet with turquoise. A symbol of loyalty and proper subordination.}
 itmname_totem_05 {Talisman 'Iron belly'}
-itmdescr_totem_05 {A leather belt adorned with protective plates.}
+itmdescr_totem_05 {A leather belt adorned with protective plates. It will stop a stray bullet two inches from your heart.}
 itmname_totem_06 {Talisman 'Strongman'}
-itmdescr_totem_06 {Fatigue-relieving boots.}
+itmdescr_totem_06 {Fatigue-relieving boots, the dream of any dock worker. They let you carry heavy loads farther and longer without dropping from exhaustion.}
 itmname_totem_07 {Talisman 'Minstrel'}
-itmdescr_totem_07 {A sweet-voiced lute that sings of sea romance and sets hearts aflame!}
+itmdescr_totem_07 {A sweet-voiced lute will sing of the romance of sea adventures and set hearts ablaze! Play it in a tavern, and more people will want to join your crew.}
 itmname_totem_08 {Talisman 'Lord of Fire'}
-itmdescr_totem_08 {Doubles the training speed of cannoneers..}
+itmdescr_totem_08 {An ever-burning gunner’s smoking pipe. Makes its owner look more respectable, especially if they command the ship’s artillery themselves.}
 itmname_totem_09 {Talisman 'Arguzin'}
-itmdescr_totem_09 {A horn whose signals are clearly heard even during a cannonade.}
+itmdescr_totem_09 {A horn whose signals can be clearly heard even amid cannon fire. With it, any landlubber will quickly become a sea wolf.}
 itmname_totem_10 {Talisman 'Widowmaker'}
-itmdescr_totem_10 {A merciless, unerring swift Catalan navaja.}
+itmdescr_totem_10 {A swift Catalan navaja that knows no mercy and never misses. Training with it greatly improves your skill with sabers and cutlasses, especially in a brawl.}
 itmname_totem_11 {Talisman 'Ghoul'}
-itmdescr_totem_11 {An enchanted copper ring on the right hand steals energy from an opponent through the blade during a duel.}
+itmdescr_totem_11 {An enchanted copper ring on the right hand steals an enemy’s energy through the blade during a duel.}
 itmname_totem_12 {Talisman 'Son of a Jaguar'}
-itmdescr_totem_12 {A jaguar's claw on a cord worn at the neck will enhance your night vision.}
+itmdescr_totem_12 {A jaguar claw worn on the neck sharpens sight, allowing for especially deadly thrusts.}
 itmname_totem_13 {Talisman 'Joker'}
 itmdescr_totem_13 {A handy card that's always at hand increases the chance of winning at games of chance.}
 itmname_indian_1 {Amulet 'Voodoo doll'}
@@ -1411,7 +1411,7 @@ itmdescr_recipe_potion1 {A recipe containing all the instructions needed to brew
 itmname_blade_WR {Reborn}
 itmdescr_blade_WR
 {
-Rupert Northwood’s Magnificent Sabre. A massive guard adorned with a golden phoenix bears witness to pain and rebirth. The blade gleams with a mirror shine, and along its fuller is engraved: VULNERATUS NON VICTUS — “Wounded but undefeated.” Only God knows how many souls this sword has claimed…
+Rupert Northwood’s Magnificent Sabre. A massive guard adorned with a golden phoenix bears witness to pain and rebirth. The blade gleams with a mirror shine, and along its fuller is engraved: VULNERATUS NON VICTUS — “Wounded but undefeated.” Only God knows how many souls this sword has claimed...
 }
 itmname_hat11 {Theresa’s Hat}
 itmdescr_hat11 {Mary’s mother’s headpiece, preserved by Aurélie Bertin. Despite its age, it still retains its former elegance and charm.}
@@ -1420,7 +1420,7 @@ itmdescr_talisman21 {A pouch of herbs and ash, a vial of dark liquid, and a skul
 itmname_blade_WR_1 {Reborn}
 itmdescr_blade_WR_1
 {
-Rupert Northwood’s Magnificent Sabre. A massive guard adorned with a golden phoenix bears witness to pain and rebirth. The blade gleams with a mirror shine, and along its fuller is engraved: VULNERATUS NON VICTUS — “Wounded but undefeated.” Only God knows how many souls this sword has claimed…
+Rupert Northwood’s Magnificent Sabre. A massive guard adorned with a golden phoenix bears witness to pain and rebirth. The blade gleams with a mirror shine, and along its fuller is engraved: VULNERATUS NON VICTUS — “Wounded but undefeated.” Only God knows how many souls this sword has claimed...
 }
 itmname_piratesJournal_1 {Pirate Diary}
 itmdescr_piratesJournal_1 {A battered document made of cheap materials, clearly passed through many hands. Contains records of raids and smuggling.}

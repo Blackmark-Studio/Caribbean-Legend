@@ -1,0 +1,13 @@
+license_violations_name {Violations}
+license_violation_tooltip_body {A violation is considered an attack on ships under allied or neutral flags, aggression against civilians, piracy at sea, and attacks on forts.}
+license_violation_1 {We have violated the contract terms. This will not go unpunished.}
+license_violation_2 {We have violated the contract twice. Our license will soon be revoked.}
+license_violation_3 {We have violated the contract three times and lost our trade license.}
+license_state
+{
+Expires: $attr($context.humanExpireDate)~
+Days left: $attr($context.humanDaysLeft)
+}
+flags_newFlagTaken {New flag captured}
+flags_allFlagsCollected {All national flags collected}
+license_expired {Trade license expired}

@@ -1,0 +1,21 @@
+NoLootCorpse0 {この若者のポケットは幽霊船のように空っぽだ。}
+NoLootCorpse1 {どうやら彼は貴重なものを持っていなかったようだ。}
+NoLootCorpse2 {こいつのポケットは空だ。}
+NoLootCorpse3 {何か見落としたか？ いや、 間違いなく空だ。}
+NoLootCorpse4 {またしても、文無しの死体だ。}
+NoLootCorpse5 {どうやら彼は借金暮らしだったようだ。}
+NoLootCorpse6 {この死体は渡し守に払う金すら持っていない。}
+NoLootCorpse7 {予備の弾も火薬もなし。 無駄足だったな。}
+NoLootCorpse8 {ポケットにもシャツにも一文なし。}
+NoLootCorpse9 {彼はまったくの貧乏で、 一文無しだった。}
+NoLootCorpse10 {なんでわざわざ調べたんだ？ 中身は空っぽだ。}
+NoLootCorpse11 {彼のポケットはぽっかりと空っぽだ。}
+NoLootCorpse12 {何もない。 隠しポケットがあるかも？}
+NoLootCorpse13 {金も鍵も遺言もない。}
+NoLootCorpse14 {一つの財産も持たずにあの世へ旅立った。}
+NoLootCorpse15 {明らかに裕福ではなかった――ポケットは空っぽだ。}
+NoLootCorpse16 {哀れな奴は明らかに身軽な装備で戦いに向かったようだ。}
+NoLootCorpse17 {彼は最後のコインで武装した。}
+NoLootCorpse18 {死体はただの死体だ。何もない。}
+NoLootCorpse19 {きっと彼は宝をすべて箱に残していったのだろう。}
+NoLootCorpse20 {戦いの最中に貴重品をすべて失ったようだ。}

@@ -1,0 +1,341 @@
+newline
+{
+
+}
+BasicDefense {Temel Savunma}
+perkBasicDefense {Gelen hasarı $percent($perkBaseValue(BasicDefense|1)) azaltır.}
+AdvancedDefense {Gelişmiş Savunma}
+perkAdvancedDefense {Gelen hasarı $percent($perkBaseValue(AdvancedDefense|1)) ve düşman kritik hasarını $percent($perkBaseValue(AdvancedDefense|2)) azaltır.}
+CriticalHit {Kritik vuruş}
+perkCriticalHit {Temel kritik vuruş şansını $percent($perkBaseValue(CriticalHit|1)) artırır.}
+Grus {Sağlam Belkemiği}
+perkGrus {Taşıma kapasitesini 35 pound artırır.}
+Tireless {Yorulmazlık}
+perkTireless {Enerji yenilenme hızı $percent($perkBaseValue(Tireless|1)) artar.}
+HardHitter {Ağır El}
+perkHardHitter {Ağır Silahlarla yapılan Ağır saldırılar $percent($perkBaseValue(HardHitter|1)) daha fazla hasar verir. Gelişmiş Ağır saldırının kilidini açar.}
+BladeDancer {Kılıçlarla Dans}
+perkBladeDancer {Eğri silahlarla yapılan grup saldırısı $percent($perkBaseValue(BladeDancer|1)) daha fazla hasar verir.}
+Sliding {Karşı Konulmaz Darbe}
+perkSliding {Hafif bir silahla yapılan Kesme veya Delici saldırı, özel bir gelişmiş vuruşla $percent($perkBaseValue(Sliding|1)) şansla Engeli aşabilir.}
+Gunman {Musketer}
+perkGunman
+{
+Ateşli silah hasarını ve yeniden doldurma hızını $percent($perkBaseValue(Gunman|1)) artırır. Tek atışlık çift elli ve çok atışlık tek elli silahların kullanımına izin verir.
+~
+Subaylar $key(descriptor_TwoHanded|ItemsDescriptors.txt) sadece açıkça emredildiğinde kullanabilir.
+}
+GunProfessional {Çatışmacı}
+perkGunProfessional {Ateşli silahların hasarını ve yeniden doldurma hızını $percent($perkBaseValue(GunProfessional|1)) artırır. Çift elli çok atışlı ateşli silahları kullanma yeteneği kazandırır.}
+IronWill {Demir İrade}
+perkIronWill {Her 3 dakikada bir ölümcül yaradan sağ çıkmanı sağlar.}
+SharedExperience {Çabuk Öğrenen}
+perkSharedExperience {Beceri gelişimini %15 hızlandırır.}
+Medic {Sağlıklı Alışkanlıklar}
+perkMedic {Sağlığı 25 puan artırır. Sağlık, maksimumun yarısının altındaysa pasif iyileşmeyi iki katına çıkarır.}
+HPPlus {Büyüyen Sağlık}
+perkHPPlus {Her yeni rütbede karakterin HP'si $perkBaseValue(HPPlus|1) artar. Yetenek geriye dönük işler.}
+EnergyPlus {Büyüyen Enerji}
+perkEnergyPlus {Her yeni rütbede karakterin enerji rezervini 1 artırır. Geriye dönük işler.}
+ByWorker {Yetenekli}
+perkByWorker {Bir karakter aynı anda iki subay pozisyonu alabilir}
+perkByWorkerShort {Bir karakter aynı anda iki subay pozisyonu alabilir}
+ByWorker2 {Dahi}
+perkByWorker2 {Karakter aynı anda üç subay pozisyonu alabilir.}
+perkByWorker2Short {Bir karakter aynı anda üç subay pozisyonu alabilir}
+Trustworthy {Güvenilir}
+perkTrustworthy {Bazı görevlerde diyaloglarda alternatif ikna seçeneklerinin kilidini açar. Ceza almaktan kaçınmayı ve düşman şehirlere girmeyi kolaylaştırır.}
+ShipEscape {İkinci Şans}
+perkShipEscape
+{
+Kahramanın batan gemisinden filodaki başka bir gemiye filika ile kurtuluş.
+Savaş sırasında, gemi gövdesi %15’in altına düştüğünde ambar menüsünden başka bir filo gemisine geçiş veya transfer yapmanı sağlar.
+Bir yoldaş bu yeteneğe sahipse, batan gemiden veya yangın gemisinden filika ile kaçar ve kahramanın gemisine yolcu olarak döner.
+}
+Alchemy {Simya}
+perkAlchemy {Artık tarifler için Alet gerekmez. Kullanımda %15 ihtimalle iksir harcanmaz.}
+FastReload {Atış Talimi}
+perkFastReload {Top yeniden doldurma hızı %10 artar.}
+ImmediateReload {Hazırlıklı Atış}
+perkImmediateReload {Sonraki yeniden doldurma %30 daha hızlı olacak. Her 5 dakikada bir etkinleştirilebilir.}
+HullDamageUp {Zayıf Noktalar}
+perkHullDamageUp {Düşman gemilerinin teknesine verilen hasar %10 artar.}
+SailsDamageUp {Arma Atışı}
+perkSailsDamageUp {Düşman gemilerinin yelkenlerine verilen hasar %10 artar.}
+CrewDamageUp {Güverte Süpürgesi}
+perkCrewDamageUp {Düşman gemisinin mürettebatına verilen hasar %10 artar.}
+CriticalShoot {Kritik Atış}
+perkCriticalShoot {Karakter, düşmana kritik bir salvo atma şansı kazanır. Şans: %5.}
+LongRangeShoot {Geniş Yaylı Menzil}
+perkLongRangeShoot {Top menzili %10 artar}
+CannonProfessional {Usta Topçu}
+perkCannonProfessional {Gemiye verilen hasarı, top nişan alma ve hedefleme hızını, ayrıca kritik atış şansını %10 artırır.}
+LongRangeGrappling {Kurt Pençesi}
+perkLongRangeGrappling {Aboardaj mesafesi %15 artar.}
+MusketsShoot {Tüfekli Yaylım}
+perkMusketsShoot
+{
+Ateşli silahlarla bir salvo, bordalamadan önce açılır.
+Verilen kayıplar, gemi sınıfına ve Öncü sayısına bağlıdır.
+}
+GrapplingProfessional {Usta Güverte Subayı}
+perkGrapplingProfessional {Abordaş mesafesi %25 artar. Her açıdan ve hızda mümkündür.}
+BasicBattleState {Temel Gemi Savunması}
+perkBasicBattleState {Gemiye verilen tüm hasar %10 azalır.}
+AdvancedBattleState {Gelişmiş Gemi Savunması}
+perkAdvancedBattleState {Geminin aldığı tüm hasar %10 daha azalır.}
+ShipDefenseProfessional {Usta Marangoz}
+perkShipDefenseProfessional {Gemiye verilen tüm hasar %5 daha azalır. Düşman kritik hasarını %35 azaltır.}
+ShipSpeedUp {Hızlı Yelken}
+perkShipSpeedUp {Geminin azami hızını %15 artırır.}
+ShipTurnRateUp {Gemi manevra kabiliyetini artır}
+perkShipTurnRateUp {Gemi manevra kabiliyeti %15 artar.}
+StormProfessional {Fırtına Geçirmez}
+perkStormProfessional {Fırtına hasarı %30 azalır.}
+Turn180 {Kaçınma Manevrası}
+perkTurn180 {Gemiler 1 dakika boyunca 4 kat daha hızlı döner. Her 3 dakikada bir etkinleştirilebilir.}
+SailingProfessional {Usta Seyir Subayı}
+perkSailingProfessional {Gemi hızı ve manevra kabiliyeti %5 artar. Kaçma şansı yükselir.}
+SeaDogProfessional {Denizlerin Korkusu}
+perkSeaDogProfessional
+{
+Deniz Dehşeti'nin sancağını gören en cesur maceracılar ve haydutlar bile kadere meydan okumaya cesaret edemez. Filo Gücü $percent($PerkBaseValue(SeaDogProfessional|1)) artar.
+~
+Yalnızca oyuncu için kullanılabilir; almak için $attr($context.rank) rütbe gerekir.
+}
+FlagPir {Jolly Roger}
+perkFlagPir
+{
+Siyah Bayrak çekme yeteneği.
+~
+Bu yetenek yalnızca oyuncuya açıktır.
+}
+FlagEng {İngiltere Bayrağı}
+perkFlagEng {Gemi rate’ine uygun olan bayrakları kullanabilirsin. Bir bayrak elde etmek için ilgili rate’deki bir gemiyi ele geçirmen ya da lisans satın alman gerekir.}
+FlagFra {Fransa Bayrağı}
+perkFlagFra {Gemi rate’ine uygun olan bayrakları kullanabilirsin. Bir bayrak elde etmek için ilgili rate’deki bir gemiyi ele geçirmen ya da lisans satın alman gerekir.}
+FlagSpa {İspanya Bayrağı}
+perkFlagSpa {Gemi rate’ine uygun olan bayrakları kullanabilirsin. Bir bayrak elde etmek için ilgili rate’deki bir gemiyi ele geçirmen ya da lisans satın alman gerekir.}
+FlagHol {Hollanda bayrağı}
+perkFlagHol {Gemi rate’ine uygun olan bayrakları kullanabilirsin. Bir bayrak elde etmek için ilgili rate’deki bir gemiyi ele geçirmen ya da lisans satın alman gerekir.}
+Troopers {Kuşatma Taktikleri}
+perkTroopers
+{
+Bir kaleye tam güçle saldırmadan önce filonuzun mürettebatlarını birleştirme yeteneği.
+Karadan yapılan baskınlarda gereken mürettebat sayısını azaltır.
+}
+BasicCommerce {Temel Ticaret}
+perkBasicCommerce {Alımlar %4 daha kârlı. Banka ve pazarda talep gören ürünler vurgulanır.}
+AdvancedCommerce {Gelişmiş Ticaret}
+perkAdvancedCommerce {Eşya satışı %4 daha kârlı.}
+ProfessionalCommerce {Usta Hazinedar}
+perkProfessionalCommerce {Mal alım satımı %8 daha kârlı.}
+Carpenter {Pasif Onarım}
+perkCarpenter {Seyir halindeyken gövde ve yelkenler yavaşça onarılır. Kereste ve yelken bezi gerekir.}
+InstantRepair {Savaş Onarımı}
+perkInstantRepair
+{
+Savaşta hızlı onarım: Mevcut dayanıklılığın %80’ine kadar onarır. Gövde için tahta, yelken için branda gerekir.
+Her 1,5 dakikada bir kullanılabilir.
+}
+LightRepair {Acil Onarım}
+perkLightRepair
+{
+Ekstra kaynak harcamadan gemi gövdesinin %10’una kadar onarım yapabilirsin. Bu yetenek olmadan, gövde HP’si %10’un altına inerse gemi yavaşça parçalanır.
+Her 3 dakikada bir kullanılabilir.
+}
+Builder {Hasar Kontrolü}
+perkBuilder {Onarım sırasında tahta ve yelken bezi tüketimi %25 azalır.}
+SelfRepair {Tamir Tamamlandı}
+perkSelfRepair
+{
+Mürettebatınla uygun bir kıyıda gemini tamamen onarabilme yeteneği. Gövde ve direkler için tahta, yelkenler için branda gerekir. Gövde, yelken ve direklerin tam olarak yenilenmesi mümkündür.
+
+Onarım seçenekleri yalnızca kıyıdaki kara bölgelerinde kullanılabilir.
+}
+WindCatcher {Deniz Sezgisi}
+perkWindCatcher
+{
+Gemi %10 daha hızlı hızlanır.
+
+Haritası olan tanıdık sularda, dünya haritasında hız artar.
+}
+SailsMan {Hızlı Yelkenler}
+perkSailsMan {En yeni ödül-ceza yöntemleri sayesinde tüm yelken işlemleri %10 daha hızlı yapılır.}
+Doctor1 {Cerrah}
+perkDoctor1 {Deniz savaşında yaralardan ve saçmadan kaynaklanan mürettebat kaybını %5 azaltır.}
+Doctor2 {Uzman Cerrah}
+perkDoctor2 {Deniz savaşında yaralardan ve saçmadan kaynaklanan mürettebat kaybını %10 azaltır.}
+TannedLeather {Kalın Deri}
+perkTannedLeather {Hafif zırh %50 daha iyi koruma sağlar ve Geri çekilmede %30 daha az enerji harcar.}
+RatsWolf {Sıçan Kurt}
+perkRatsWolf {Bu karakterin gemisinde, fareler ve diğer haşereler yükü zarar veremez.}
+Mimicry {Taklit}
+perkMimicry {Denizde gizlilik kontrolleri %50 daha etkili.}
+TreasureHunter {Hazine Avcısı}
+perkTreasureHunter {Hazine haritası tüccarları daha sık ortaya çıkar ve hazineler daha değerli olur.}
+Dragoon {Dragun}
+perkDragoon {Orta silahlar %10 daha fazla hasar verir.}
+Bombardier {Bombardımancı}
+perkBombardier {Topların dayanıklılığı artar.}
+Sniper {Keskin Nişancı}
+perkSniper {Ateşli silahla isabet, düşmanın enerjisini azaltır.}
+perkTreeMusketer {Musketer}
+perkTreeSoldier {Asker}
+perkTreeMastery {Ustalık}
+perkTreeBackground {Geçmiş}
+perkTreeFencing {Eskrimci}
+perkTreePirat {Korsan}
+perkTreeAdventurer {Maceracı}
+perkTreeOfficer {Subay}
+perkTreeFlags {Flamalar}
+perkTreeCannoner {$key(Cannoner)}
+perkTreeBoatswain {$key(Boatswain)}
+perkTreeCarpenter {$key(Carpenter)}
+perkTreeNavigator {$key(Navigator)}
+perkTreeTreasurer {$key(Treasurer)}
+perkTreeDoctor {$key(Doctor)}
+FastHands {Çabuk Eller}
+perkFastHands {Ateşli silahları çekme ve kılıfa koyma hızını $percent($perkBaseValue(FastHands|1)) artırır.}
+AmmoRig {Teçhizat}
+perkAmmoRig {Ateşli silahların yeniden doldurulması $percent($perkBaseValue(AmmoRig|1)) daha hızlı.}
+Preaim {Nişan Alma}
+perkPreaim {Nişan modu $percent($perkBaseValue(Preaim|1)) daha hızlı.}
+KeenEye {Keskin Göz}
+perkKeenEye {Kafa atışları $percent($perkBaseValue(KeenEye|1)) daha fazla hasar verir.}
+PowderFeel {Barut Sezgisi}
+perkPowderFeel {Simya ile üretilen mühimmat miktarı $percent($perkBaseValue(PowderFeel|1)) artar.}
+Drill {Talim}
+perkDrill {Tüfeklerle hareket hızı ve nişan alırken yürüme hızı %18 artar. Gelişmiş atış pozisyonlarının kilidini açar.}
+LeadRain {Kurşun Yağmuru}
+perkLeadRain {Saçma, her vurulan düşman için %5 daha fazla hasar verir.}
+ShootToKill {Öldürmek İçin Ateş Et}
+perkShootToKill {Bir düşmana ateşli silahla isabet etmek onu yavaşlatır, hareket hızını %25 azaltır. Süre: 5 saniye.}
+Muscles {Kas Dağı}
+perkMuscles {Ağır silahlarla yapılan tüm saldırılar $percent($perkBaseValue(Muscles|1)) daha az enerji harcar ve $percent($perkBaseValue(Muscles|2)) daha hızlıdır. Sersemlemeden kurtulma $percent($perkBaseValue(Muscles|3)) daha hızlıdır.}
+Conquest {Conquista}
+perkConquest {Uzun silahlarla yapılan kesme ve ağır saldırılar $percent($perkBaseValue(Conquest|1)) daha fazla hasar verir.}
+PalaceGuard {Saray Muhafızı}
+perkPalaceGuard {Ağır Eğri silahlar saldırılarda %15 daha fazla hasar, grup saldırılarında ise ek %5 daha fazla hasar verir.}
+CunningStrike {Hain Saldırı}
+perkCunningStrike {Hafif silahların kritik şansı $percent($perkBaseValue(CunningStrike|1)) artar. Sırt saldırıları $percent($perkBaseValue(CunningStrike|2)) daha fazla hasar verir.}
+Heartbreaker {Gönül Avcısı}
+perkHeartbreaker {Düz silahlarla yapılan hızlı saldırılar $percent($perkBaseValue(Heartbreaker|1)) daha fazla hasar verir ve $percent($perkBaseValue(Heartbreaker|2)) daha hızlıdır.}
+Dodgy {Fırsatçılık}
+perkDodgy {Sprint İtme $percent($perkBaseValue(Dodgy|1)) daha güçlüdür ve daha az enerji harcar.}
+Exhaustion {Yorgunluk}
+perkExhaustion {Kısa silahlarla savunma  $percent($perkBaseValue(Exhaustion|1)) daha fazla enerji tüketir. Düşmanın sersemlemeden kurtulma süresi %10 daha uzundur.}
+Reaper {Azrail}
+perkReaper {Kritik hasar  $percent($perkBaseValue(Reaper|1)) artar, Hızlı Saldırılarla kritik şansı  $percent($perkBaseValue(Reaper|2)) yükselir.}
+MarathonRunner {Maratoncu}
+perkMarathonRunner {Sprint $percent($perkBaseValue(MarathonRunner|2)) daha hızlı olur ve üçte bir daha az enerji harcar.}
+PerfectBalance {Mükemmel Denge}
+perkPerfectBalance {Orta silahlar eldeyken alınan hasar $percent($perkBaseValue(PerfectBalance|1)) azalır.}
+Flanking {Yanlama}
+perkFlanking {Eğri silah saldırıları $percent($perkBaseValue(Flanking|1)) daha hızlıdır. Gelişmiş Grup Saldırısı açılır.}
+SabreHurricane {Kılıç Kasırgası}
+perkSabreHurricane {Orta Eğri silahlarla yapılan Kesme ve Hızlı Saldırılar daha geniş bir yay çizer, yanındaki düşmanlara da isabet eder ve $percent($perkBaseValue(SabreHurricane|1)) daha fazla hasar verir.}
+Practice {Pratik Gelişimi}
+perkPractice {Her takılı üretilebilir eşya tüm becerileri 2 artırır.}
+Strychnine {Striknin}
+perkStrychnine {Saldırı ve atışların %9 zehirleme şansı vardır. Muska bonuslarıyla birleşir.}
+DarkHorse {Kara At}
+perkDarkHorse {Her takılı Sıradan Muska ve Tılsım, sağlık ve enerjiyi %2,5 artırır.}
+Master {Usta}
+perkMaster {Takım seti gerektiren her üretilen eşya, verilen hasarı %0,1 artırır.}
+Quiet {Hafif Ayaklı}
+perkQuiet {Hırsızlık yaparken tespit edilemezsin.}
+Looting {Ayrıntılı Arama}
+perkLooting {Aboardaj tamamlandıktan sonra tayfalar güverteyi otomatik olarak arar ve tüm ganimeti size getirir.}
+Collection {Merak}
+perkCollection {Gemide bulunan her egzotik eşya, dost limanda geçirilen her gün için 1.000 peso kazandırır.}
+Tiefit {Özel}
+perkTiefit {Sıradan ve süslü eşyalardan gelen yetenek bonusu 3 artar.}
+Investor {Yatırımcı}
+perkInvestor {Mevduat faiz oranı %1 artar.}
+Gossip {İlgi Odağı}
+perkGossip {Egzotik eşyalardan alınan Filo Gücü bonusu %5 artar.}
+Captain {Kaptan}
+perkCaptain {Karakter, bir filoda 4. sınıf ve üzeri bir gemiyi komuta edebilir. Bir lugger ya da sloop kullanmak için dahilik gerekmez, ama ciddi bir gemi için yalnızca cesaret yetmez.}
+Chance {Ya hep ya hiç}
+perkChance {Tek atışlı ateşli silahlar kritik vuruşlarda %15 daha fazla hasar verir. Tek el ateşli silahların kritik şansı %2 artar.}
+Bayonet {Süngü Hücumu}
+perkBayonet {İki elli yakın dövüş saldırıları %15 daha fazla hasar verir, süngü ile ise ek %30 hasar sağlar.}
+Kern {Kern}
+perkKern {Çok atışlı ateşli silahlar, her boş atış için %8 hasar ve %4 yeniden doldurma hızı bonusu kazanır.}
+MeatGrinder {Kıyma Makinesi}
+perkMeatGrinder {Kısa silahların hasarı %10 artar.}
+NeckStrike {Boyun Kesme}
+perkNeckStrike {Uzun silah hasarı %10 artar.}
+Stabbing {Bıçak Dövüşü}
+perkStabbing {Kısa silah hasarı %8 artar.}
+Virtuosity {Virtüözlük}
+perkVirtuosity {Hafif silahlar %10 daha fazla hasar verir.}
+Puncher {Delgeç}
+perkPuncher {Düz silah hasarı %10 artar.}
+Reach {Menzil}
+perkReach {Uzun silah hasarı %8 artar.}
+Inertia {Eylemsizlik}
+perkInertia {Ağır silahlar %10 daha fazla hasar verir.}
+OttomanGrip {Osmanlı Tutuşu}
+perkOttomanGrip {Eğri silah hasarı %10 artar.}
+Mule {Percheron}
+perkMule {Antrenman işe yarıyor – Ağır silahlar ve zırhlar %50 daha az yavaşlatır, taşıma kapasitesi her rütbede 2 lb artar.}
+BeneathWaterline {Su Hattının Altı}
+perkBeneathWaterline {Bir gemiye isabet ettiğinde, su hattı altında delik açma şansı vardır; bu, onarılana kadar hedefi su aldırıp yavaşlatır.}
+CoordinatedBoarding {Ortak Borda}
+perkCoordinatedBoarding {Filo içindeki bir geminin, kendi kaptanının liderliğindeki bordaya yeterince yakınsa katılmasını sağlar.}
+Involvement {Zırhçı}
+perkInvolvement {Açıkta çatışma sırasında Güverte subayı güverteye çıkar ve sizin tarafınızda dövüşe katılır. Bir denizcinin yerini alır ve öldürülemez.}
+BruteForce {Kaba Kuvvet}
+perkBruteForce {Bazı sıradan tayfaların yerine, borda sırasında baltalı ve zırhlı ağır silahlı askerler geçer.}
+Ambuscade {Pusu Alayı}
+perkAmbuscade {Rapierli ve çok atışlı tabancalı düellocular, borda sırasında bazı sıradan tayfaların yerini alır.}
+LoneWolf {Yalnız Kurt}
+perkLoneWolf {Filo sadece bir gemiden oluşuyorsa, Kaçma şansı ve Filo Gücü $percent($perkBaseValue(LoneWolf|1)) artar.}
+Thrift {Tutumluluk}
+perkThrift {Yelken hasarının hız ve manevra kabiliyeti üzerindeki etkisini %10 azaltır.}
+QuickGlance {Çabuk Göz}
+perkQuickGlance {Bir gemiyi dürbünle incelerken tipini ve özelliğini belirler.}
+TrainedEye {Keskin Göz}
+perkTrainedEye {Bir gemiyi dürbünle incelerken üzerindeki değerli eşyaları kabaca tahmin etmeni sağlar.}
+TradeConnections {Ticaret Bağlantıları}
+perkTradeConnections {Fiyat listeleri bir koloniyi ziyaret ettiğinizde otomatik olarak güncellenir.}
+Intendant {İaşeci}
+perkIntendant {Savaşta ve kaçış sırasında ambar yükünden gelen hız ve manevra cezasını azaltır.}
+Doctor {Cerrah}
+perkDoctor {Deniz savaşında mürettebatın yara ve saçmadan kaybını %5 azaltır.}
+BoardingPrepare {Hazırlık}
+perkBoardingPrepare {Alo ekibi, borda sırasında iksir alır.}
+Cook {Aşçı}
+perkCook {Erzak tüketimini %5 azaltır.}
+ChiefCook {Baş Aşçı}
+perkChiefCook {Erzak tüketimini %10 azaltır.}
+Bartender {Barmen}
+perkBartender {Rom tüketimini %5 azaltır.}
+Moonshiner {Damıtıcı}
+perkMoonshiner {Rom tüketimini %10 azaltır.}
+Quartermaster {Kamarotacı}
+perkQuartermaster {Maksimum mürettebatı %10 artırır.}
+InstantBoarding {Anında Borda}
+Rush {Ometochtli tentürü}
+perkRush
+{
+Sarhoş edici tentür, anında muazzam güç ve dayanıklılık, belirgin çeviklik ve hızlı tepkiyle birlikte yoğun saldırganlık ve acıya karşı duyarsızlık kazandırır.
+12 saniye boyunca karakterin saldırıları çok daha güçlü olur ve alınan hasar azalır.
+~
+Bu yeteneğin bekleme süresi 1 dakikadır.
+}
+perkTrustworthy_alternate {Subay olarak görev yaparken, karakter maaşını $percent($perkBaseValue(Trustworthy|1)) azaltılmış alır.}
+perkAlchemy_alternate {Kullanıldığında iksir harcamama şansı $percent($perkBaseValue(Alchemy|1)) verir.}
+perkPreaim_alternate {Karakter, tam sağlığı olmayan düşmanlara ateşli silah saldırılarında $percent($perkBaseValue(Preaim|2)) daha fazla hasar verir.}
+perkKeenEye_alternate {Karakterin kritik atış şansı $percent($perkBaseValue(KeenEye|2)) artar.}
+perkPowderFeel_alternate {Karakter, ateş ederken mühimmat harcamama şansına $percent($perkBaseValue(PowderFeel|2)) sahip olur.}
+perkMarathonRunner_alternate {Karakter Enerji havuzunu $number($perkBaseValue(MarathonRunner|3)) artırır.}
+perkQuiet_alternate {Karakter, arkadan yapılan saldırılarda $percent($perkBaseValue(Quiet|1)) daha fazla hasar verir.}
+perkCollection_alternate {Karakterin kuşandığı her egzotik eşya, verdiği hasarı $percent($perkBaseValue(Collection|2)) artırır.}
+perkInvestor_alternate {Karakterin Ticaret ve Liderlik becerilerini $number($perkBaseValue(Investor|2)) artırır.}
+perkGossip_alternate {Bir yoldaş olarak, karakter filonun gücünü $percent($perkBaseValue(Gossip|1)) artırır.}
+perkMaster_alternate {Karakterin içtiği her iksir, verdiği hasarı $percent($perkBaseValue(Master|2)) artırır.}
+perkLooting_alternate {Taşıma kapasitesini $perkBaseValue(Looting|1) pound artırır.}
+perkMaster_currentBonus {Mevcut bonus: $percent($attr($context.ct.static.fast_Damage.perk_master))}

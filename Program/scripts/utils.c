@@ -23,8 +23,10 @@
 #include "scripts\CompanionTravel.c" // Warship 17.07.08 Методы для свободного плавания компаньонов
 #include "scripts\GameModeCondition.c" // Warship. Обраобтка прерывания, выполняющегося в каждом фрейме
 #include "scripts\GenQuests_common.c" // Ugeen 12.01.10 общие функции для генераторов
+#include "scripts\stealth\main.c"
 #include "scripts\DialogDSL.c"
 #include "scripts\upgrade_ship.c"
+#include "scripts\timestamp.c"
 
 #define MAN 			0
 #define WOMAN 			1
@@ -318,7 +320,8 @@ void GiveItemToTrader(aref ch)
 	// boal зачем они в продаже?  ДЛЯ ОТЛАДКИ  -->
 	if(bBettaTestMode)
 	{
-    	for(i = 0; i < ITEMS_QUANTITY; i++)
+		int iTotalCount = GetArraySize(&Items);
+    	for(i = 0; i < iTotalCount; i++)
     	{
 			itemID = Items[i].ID;
             if(itemID == "treasure_note") continue; // Предметы с особой логикой
@@ -1461,17 +1464,60 @@ void RemoveGeometryFromLocation(string LocationID, string ModelName)
 			break;
 		}
 	}
-}	
+}
 
 
-void CreateModel(int iChar, string sType, int iSex)
+bool CreateModel(int iChar, string sType, int iSex, aref arLoc)
 {
 	int iNation = sti(characters[iChar].nation);
-	
+
+	if (arLoc != nullptr)
+	{
+		string sCallback = "";
+		if (CheckAttribute(arLoc, "CreateModelCallback"))
+		{
+			sCallback = arLoc.CreateModelCallback;
+		}
+		else
+		{
+			int iLinkedColonyNum = GiveColonyIndexByLocation(arLoc);
+			if (iLinkedColonyNum != -1)
+			{
+				ref rLinkedColony = &colonies[iLinkedColonyNum];
+				if (CheckAttribute(rLinkedColony, "CreateModelCallback"))
+				{
+					sCallback = rLinkedColony.CreateModelCallback;
+				}
+			}
+		}
+
+		if (sCallback != "")
+		{
+			bool bResult = call sCallback(iChar, sType, iSex, arLoc);
+			if (!bResult)
+			{
+				return bResult;
+			}
+			FaceMaker(&characters[iChar]);
+			CirassMaker(&characters[iChar]);
+			return bResult;
+		}
+	}
+
 	string sBody = "";
 	string sPrefix = "";
 	int iNumber = -1;
-		
+	string sAnim = "";
+	string sResultType = sType;
+	if(iSex == MAN)
+	{
+		sAnim = "man";
+	}
+	else
+	{
+		sAnim = "towngirl";
+	}
+
 	switch (sType)
 	{
 		case "pofficer":
@@ -1489,13 +1535,53 @@ void CreateModel(int iChar, string sType, int iSex)
 		break;
 
 		case "officer":
-			sBody = "off";
-			iNumber = rand(1)+1;
+			if(iNation == PIRATE)
+			{
+				sBody = "mercen";
+				if(rand(1) == 0) iNumber = rand(4) + 6;
+				else			 iNumber = rand(4) + 16;
+			}
+			else
+			{
+				sBody = "off";
+				iNumber = rand(1)+1;
+			}
 		break;
-		
+
 		case "soldier":
-			sBody = "sold";
-			iNumber = rand(7)+1;
+			if(iNation == PIRATE)
+			{
+				sBody = "citiz";
+				iNumber = rand(9)+41;
+				sResultType = "pirate";
+			}
+			else
+			{
+				sBody = "sold";
+				iNumber = rand(7)+1;
+			}
+
+		break;
+
+		case "mushketer":
+			if(iNation == PIRATE)
+			{
+				sBody = "mush_ctz";
+				iNumber = rand(2)+7;
+			}
+			else
+			{
+				sBody = "mush";
+				iNumber = rand(5)+1;
+			}
+
+			sResultType = "soldier";
+
+			sAnim = "mushketer";
+			if (iSex != MAN)
+			{
+				trace("Unable to counstruct woman mushketer");
+			}
 		break;
 		
 		case "pirate":
@@ -1510,6 +1596,7 @@ void CreateModel(int iChar, string sType, int iSex)
 		
 		case "monk":
 			sBody = "monk";
+			sAnim = "man_B";
 			iNumber = rand(5)+1;
 		break;	
 		
@@ -1517,18 +1604,57 @@ void CreateModel(int iChar, string sType, int iSex)
 			sBody = "mercen";
 			iNumber = rand(4) + 7;
 		break;
-				
+
 		case "citizen": //мещане-бюргеры
-			if(iSex == MAN)
+
+			if(iNation == PIRATE)
 			{
-				sBody = "citiz";
-				iNumber = rand(9)+11;
+				if(iSex == MAN)
+				{
+					sBody = "citiz";
+					iNumber = rand(9)+41;
+					sResultType = "pirate";
+				}
+				else
+				{
+					sBody = "citiz";
+					iNumber = rand(9)+41;
+					sResultType = "pirate";
+
+					// меняем пол, пока не появилось пираток
+					sAnim = "man";
+					characters[iChar].sex = "man";
+					characters[iChar].model.height = 1.80;
+				}
 			}
 			else
 			{
-					sBody = "women";
-					iNumber = rand(11)+7;
-				}	
+				if(iSex == MAN)
+				{
+					sBody = "citiz";
+					iNumber = rand(9)+11;
+				}
+				else
+				{
+					if(rand(1) == 0)
+					{
+						sBody = "girl";
+						iNumber = rand(7)+1;
+					}
+					else
+					{
+						sBody = "women";
+						iNumber = rand(11)+7;
+					}
+					sAnim = "woman";
+				}
+			}
+		break;
+
+		case "horse":
+			sBody = "women";
+			iNumber = rand(7) + 19;
+			sAnim = "woman";
 		break;
 
 		case "whore":
@@ -1538,21 +1664,39 @@ void CreateModel(int iChar, string sType, int iSex)
 		
 		//Jason --> новые типы горожан
 		case "marginal": //маргиналы
-			sBody = "citiz";
-			iNumber = rand(9)+21;
-		break;
-		
-		case "captain": //капитаны
-			if (rand(1) == 0)
+			if(iNation == PIRATE)
 			{
 				sBody = "citiz";
-				iNumber = rand(9)+51;
+				iNumber = rand(9)+41;
+				sResultType = "pirate";
 			}
 			else
+			{
+				sBody = "citiz";
+				iNumber = rand(9)+21;
+			}
+		break;
+
+		case "captain": //капитаны
+			if(iNation == PIRATE)
 			{
 				sBody = "mercen";
 				iNumber = rand(14)+16;
 			}
+			else
+			{
+				if (rand(1) == 0)
+				{
+					sBody = "citiz";
+					iNumber = rand(9)+51;
+				}
+				else
+				{
+					sBody = "mercen";
+					iNumber = rand(14)+16;
+				}
+			}
+
 		break;
 		
 		case "noble": //дворяне
@@ -1577,23 +1721,60 @@ void CreateModel(int iChar, string sType, int iSex)
 			sBody = "citiz";
 			iNumber = rand(9)+31;
 		break;
-		
+
 		case "indian": //индейцы
 			if(iSex == MAN)
 			{
-			sBody = "Miskito";
-			iNumber = rand(5)+1;
+				sBody = "Miskito";
+				iNumber = rand(5)+1;
 			}
 			else
 			{
-				sBody = "squaw"; 
+				sBody = "squaw";
 				iNumber = rand(2)+1;
+				sAnim = "woman_B";
 			}
 		break;
-		
+
 		case "convict": //каторжники
 			sBody = "prizon";
+			sAnim = "man_B";
 			iNumber = rand(3)+5;
+		break;
+
+		case "drinker": //пьяницы
+			sBody = "drinker";
+			iNumber = sti(rand(15)+1);
+		break;
+
+		case "flutist":
+			if(iSex == WOMAN)
+			{
+				sBody = "woman_flutist";
+				iNumber = sti(rand(7)+1);
+				sAnim =  "woman_musician";
+			}
+			else
+			{
+				sBody = "flutist";
+				iNumber = sti(rand(11)+1);
+				sAnim =  "musician";
+			}
+		break;
+
+		case "violinist":
+			if(iSex == WOMAN)
+			{
+				sBody = "woman_violinist";
+				iNumber = sti(rand(3)+1);
+				sAnim =  "woman_musician";
+			}
+			else
+			{
+				sBody = "violinist";
+				iNumber = sti(rand(16)+1);
+				sAnim =  "musician";
+			}
 		break;
 		//<-- новые типы горожан
 		
@@ -1614,16 +1795,25 @@ void CreateModel(int iChar, string sType, int iSex)
 			sBody = "citiz";
 			iNumber = rand(9)+51;
 		break;
-		
+
 		case "fisher":
 			sBody = "fisherman";
+			sAnim = "fisher";
+			sResultType = "sailor";
 			iNumber = rand(10)+1;
+		break;
+
+		case "blacksmith":
+			sBody = "blacksmith";
+			sAnim = "blacksmith";
+			sResultType = "sailor";
+			iNumber = sti(rand(17)+1);
 		break;
 	}
 
 	sPrefix = "_";
-	
-	if(sType == "officer" || sType == "soldier")
+
+	if(sType == "officer" || sType == "soldier" || sType == "mushketer")
 	{
 		switch (iNation)
 		{
@@ -1644,7 +1834,7 @@ void CreateModel(int iChar, string sType, int iSex)
 			break;
 			
 			case PIRATE:
-				sPrefix = "";
+				sPrefix = "_";
 			break;
 		}
 	}
@@ -1652,18 +1842,20 @@ void CreateModel(int iChar, string sType, int iSex)
 	string sResult = "";
 	
 	sResult = sBody+sPrefix+iNumber;
-	
+
 	characters[iChar].model = sResult;
+	characters[iChar].model.animation = sAnim;
+	characters[iChar].PhantomType = sResultType;
 
 	FaceMaker(&characters[iChar]);
 	CirassMaker(&characters[iChar]);
+	return true;
 }
 
 // метод вернет случайный дружественный iNation город, неравный  sBeginColony _checkPort - Проверка порта
 int FindNonEnemyColonyForAdventure(int iNation, string sBeginColony, bool _checkPort)
 {
-	int iArray[2];
-	SetArraySize(&iArray, MAX_COLONIES);
+	int iArray[MAX_COLONIES];
 	int m = 0;
 	
 	for (int i=0; i<MAX_COLONIES; i++)
@@ -1697,8 +1889,7 @@ int FindNonEnemyColonyForNation(int iNation, bool _checkPort)
 
 string FindAlliedColonyForNation(int iNation, bool _checkPort)
 {
-	int iArray[2];
-	SetArraySize(&iArray, MAX_COLONIES);
+	int iArray[MAX_COLONIES];
 	int m = 0;
 	string sColony = "";
 	
@@ -1729,8 +1920,7 @@ string FindAlliedColonyForNation(int iNation, bool _checkPort)
 
 string FindAlliedColonyForNationExceptColony(string sHomeColony)
 {
-	int iArray[2];
-	SetArraySize(&iArray, MAX_COLONIES);
+	int iArray[MAX_COLONIES];
 	int m = 0;
 	string sColony = "";
 
@@ -1762,8 +1952,7 @@ string FindAlliedColonyForNationExceptColony(string sHomeColony)
 
 string FindColonyWithMayakExceptIsland(string sIsland)
 {
-	int iArray[2];
-	SetArraySize(&iArray, MAX_COLONIES);
+	int iArray[MAX_COLONIES];
 	int m = 0;
 	string sColony = "";
 	
@@ -2332,6 +2521,11 @@ ref GetOurSailor(string _id) // моежт быть нужно нескольк�
 
 int NPC_GeneratePhantomCharacter(string sType, int iNation, int iSex, int _LifeDay)//, int CharacterType)
 {
+	return NPC_GeneratePhantomCharacterForLoc(sType, iNation, iSex, _LifeDay, nullptr);
+}
+
+int NPC_GeneratePhantomCharacterForLoc(string sType, int iNation, int iSex, int _LifeDay, aref arLoc)//, int CharacterType)
+{
     int iChar = FindFirstEmptyCharacter();
     ref ch;
 
@@ -2354,15 +2548,11 @@ int NPC_GeneratePhantomCharacter(string sType, int iNation, int iSex, int _LifeD
 	if(iSex == MAN)
 	{
 		ch.sex = "man";
-		if(sType == "monk" || sType == "convict") ch.model.animation = "man_B";
-		else 				ch.model.animation = "man";
 		ch.model.height = 1.80;
 	}
 	else
 	{
 		ch.sex = "woman";
-		if(sType == "indian") ch.model.animation = "woman_B";
-		else ch.model.animation = "towngirl";
 		ch.model.height = 1.70;
 	}
 
@@ -2371,8 +2561,13 @@ int NPC_GeneratePhantomCharacter(string sType, int iNation, int iSex, int _LifeD
 	SetRandomNameToCharacter(ch);
     ch.reputation = (1 + rand(44) + rand(44));// репа всем горожанам
 	ch.id = "GenChar_" + iChar;
-	
-    CreateModel(iChar, sType, iSex);
+
+	bool bSuccess = CreateModel(iChar, sType, iSex, arLoc);
+	if (!bSuccess)
+	{
+		ch.LifeDay = 0;
+		return -1;
+	}
     SetFantomParam(ch);
 	    
     if (sType == "citizen" || sType == "blade_trader" || sType == "monk")
@@ -2703,4 +2898,369 @@ bool IsInSeaNow()
 {
 	if (bAbordageStarted) return false;
 	return IsEntity(&worldMap) || bSeaActive;
+}
+
+
+int GiveColonyIndexByLocation(ref location)
+{
+	string sColonyName = "";
+
+	// Если есть fastreload, который проставляется в том числе при переходе в common-локацию - просто используем его, игнорируя остров и проч
+	// Если есть parent_colony - также игнорируем остров
+	if (CheckAttribute(location, "fastreload"))
+	{
+		sColonyName = location.fastreload;
+	}
+	else if (CheckAttribute(location, "parent_colony"))
+	{
+		sColonyName = location.parent_colony;
+	}
+
+	// Нашли имя колонии - находим номер и уходим
+	if (sColonyName != "")
+	{
+		return FindColony(sColonyName);
+	}
+
+	// Не нашли явное указание и id острова - сдаемся. Колонию мы не найдем.
+	if (!CheckAttribute(location, "islandId"))
+	{
+		trace("unable to determine colony for location "+location.id);
+		return -1;
+	}
+
+
+	// Если все-таки id острова есть:
+	// По-умолчанию считаем ареал - названием острова.
+	string sAreal = location.islandId;
+
+	// Если ареал указан - используем его.
+	if (CheckAttribute(location, "islandIdAreal"))
+	{
+		sAreal = location.islandIdAreal;
+	}
+
+	// Пытаемся найти главную колонию острова (ареала).
+	// В одном ареале может быть две колонии, например Cuba1 имеет Santiago и PuertoPrincipe
+	// Используем GetCityNameByIsland, однако это очень плохая функция, ее надо заменить на атрибут main_colony у острова
+	return FindColony(GetCityNameByIsland(sAreal));
+}
+
+
+string GetPortByCityName(string city) // имена портов по городов по аттрибуту char.city
+{
+	int iColID = FindColony(city);
+	if (iColID == -1)
+	{
+        CollectCallStack();
+        trace("GetPortByCityName unknown city '" + city + "'");
+		return "";
+	}
+	if (CheckAttribute(Colonies[iColID], "from_sea"))
+	{
+		return Colonies[iColID].from_sea;
+	}
+
+	return "";
+}
+
+string GetMayakByCityName(string city) // получить id маяка по названию города
+{
+	int iColID = FindColony(city);
+	if (iColID == -1)
+	{
+        CollectCallStack();
+        trace("GetMayakByCityName unknown city '" + city + "'");
+		return "";
+	}
+	if (CheckAttribute(Colonies[iColID], "lighthouse"))
+	{
+		return Colonies[iColID].lighthouse;
+	}
+
+	return "";
+}
+
+string GetCityNameByMayak(string mayak) // получить id города по маяку
+{
+	for (int i=0; i<MAX_COLONIES; i++)
+	{
+		if(CheckAttribute(Colonies[i], "lighthouse") && Colonies[i].lighthouse == mayak)
+		{
+			return Colonies[i].id;
+		}
+	}
+
+	return "";
+}
+
+string GetIslandByCityName(string city) // имена острова по городу по аттрибуту char.city
+{
+	int iColID = FindColony(city);
+    if (iColID == -1)
+    {
+        CollectCallStack();
+        trace("Colony '"+city+"' not found");
+        return "";
+    }
+	return GetIslandByColony(&Colonies[iColID]);
+}
+
+string GetIslandByColony(ref rColony)
+{
+	if (!CheckAttribute(rColony, "island"))
+	{
+		return "";
+	}
+	string sIslandName = rColony.island;
+	int iIslID = FindIsland(sIslandName);
+	if (iIslID == -1)
+	{
+		return "";
+	}
+	return Islands[iIslID].name;
+}
+
+string GetArealByCityName(string city) // ареал по городу по аттрибуту char.city
+{
+	int iColID = FindColony(city);
+	if (iColID == -1)
+	{
+        CollectCallStack();
+        trace("GetArealByCityName unknown city '" + city + "'");
+		return "";
+	}
+	if (!CheckAttribute(Colonies[iColID], "island"))
+	{
+		return "";
+	}
+	return Colonies[iColID].island;
+}
+
+string GiveArealByLocation(ref location)
+{
+	if (CheckAttribute(location, "MustSetReloadBack")) return "none";
+	int iColID = GiveColonyIndexByLocation(location);
+	if (iColID == -1)
+	{
+		return "none";
+	}
+
+	if (!CheckAttribute(Colonies[iColID], "island"))
+	{
+		return "none";
+	}
+	return Colonies[iColID].island;
+}
+
+string GetIslandByArealName(string areal)
+{
+	int iIslID = FindIsland(areal);
+	if (iIslID == -1)
+	{
+		// Если ареал не соответствует острову, значит это Panama, Tenotchitlan или еще что-то необычное на Мейне.
+		return "Mein";
+	}
+
+	return Islands[iIslID].name;
+}
+
+// выбор куда идти  по острову даем город (главный город острова с портом)
+string GetCityNameByIsland(string CurIslandId)
+{
+	int iIslID = FindIsland(CurIslandId);
+	if (iIslID == -1)
+	{
+		return "none";
+	}
+
+	if (!CheckAttribute(Islands[iIslID], "main_colony"))
+	{
+		return "none";
+	}
+
+	return Islands[iIslID].main_colony;
+}
+
+
+bool isCityHasFort(string _city)
+{
+	int iTest = FindColony(_city); // город
+	ref rColony;
+	if (iTest != -1)
+	{
+		rColony = GetColonyByIndex(iTest);
+		if (!CheckAttribute(rColony, "HasNoFort")) return true;
+	}
+	return false;
+}
+
+string GetCityFrom_Sea(string _city)
+{
+	int iTest = FindColony(_city); // город
+	ref rColony;
+	if (iTest != -1)
+	{
+		rColony = GetColonyByIndex(iTest);
+		return rColony.from_sea;
+	}
+	return "";
+}
+
+string GetCityName(string city)
+{
+    return GetCityNameSuffix(city, "Town");
+}
+
+string GetCityPort(string city)
+{
+	return GetCityNameSuffix(city, "Port");
+}
+
+string GetCityNameSuffix(string city, string sSuffix) // имена городов по аттрибуту char.city
+{
+	int iColID = FindColony(city);
+	if (iColID == -1)
+	{
+		return "<not found>: '"+city+"'";
+	}
+
+	ref rColony = &Colonies[iColID];
+
+	string sKeyFilePath = "LocLables.txt";
+
+	return GetConvertStr(city + " " + sSuffix, sKeyFilePath);
+}
+
+string GetIslandName(ref rColony)
+{
+	if (!CheckAttribute(rColony, "island"))
+	{
+		return "<error> "+rColony.id;
+	}
+	return GetIslandNameByID(rColony.island);
+}
+
+string GetIslandNameByID(string sIslandID)
+{
+	int iIslID = FindIsland(sIslandID);
+	if (iIslID == -1 && sIslandID != "")
+	{
+		for(int n = 0; n<MAX_ISLANDS; n++)
+		{
+			if (Islands[n].id == "")
+			{
+				continue;
+			}
+			if (!CheckAttribute(&Islands[n], "name"))
+			{
+				trace("Island with id '"+Islands[n].id+"' and index "+n+" has not name");
+				continue;
+			}
+			if(Islands[n].name == sIslandID)
+			{
+				iIslID = n;
+				break;
+			}
+		}
+	}
+
+	if (iIslID == -1)
+	{
+		return "<error island> "+sIslandID;
+	}
+
+	return GetIslandNameByRef(&Islands[iIslID]);
+}
+
+string GetIslandNameByRef(ref rIsland)
+{
+	string sIslandUserName = rIsland.name;
+	string sKeyFilePath = "LocLables.txt";
+
+	return GetConvertStr(sIslandUserName, sKeyFilePath);
+}
+
+
+string GetLocationNameByRef(ref rLoc)
+{
+	string sKeyFilePath = "LocLables.txt";
+
+	return GetConvertStr(rLoc.id, sKeyFilePath);
+}
+
+string GetLocationLabelByRef(ref rLoc)
+{
+	string sKeyFilePath = "LocLables.txt";
+
+	return GetConvertStr(rLoc.id.label, sKeyFilePath);
+}
+
+string GetLocationNameByID(string sLocID)
+{
+	int iLocID = FindLocation(sLocID);
+	if (iLocID == -1)
+	{
+		trace("Unable to find location "+sLocID);
+	    return "error -- "+sLocID;
+	}
+	return GetLocationNameByRef(&locations[iLocID]);
+}
+
+string GetBaseLocationName(string name)
+{
+	return GetConvertStr(name, "LocLables.txt");
+}
+
+
+string GetCharacterRole(ref rChar)
+{
+	return GetCharacterRoleSuffix(rChar, "role");
+}
+
+string GetCharacterSpecialRole(ref rChar)
+{
+	return GetCharacterRoleSuffix(rChar, "SpecialRole");
+}
+
+string GetCharacterRoleSuffix(ref rChar, string sSuffix)
+{
+	string sKeyFilePath = "roles.txt";
+
+	if (!CheckAttribute(rChar, sSuffix))
+	{
+		trace("no '"+sSuffix+"' attribute for character " + rChar.id);
+		return "";
+	}
+	return GetConvertStr(rChar.(sSuffix), sKeyFilePath);
+}
+
+aref GetAref(ref rObject, string attributeName)
+{
+	if (!CheckAttribute(rObject, attributeName)) return nullptr;
+
+	aref result;
+	makearef(result, rObject.(attributeName));
+	return result;
+}
+
+string GetLocatorName(aref arLoc) // имена городов по аттрибуту char.city
+{
+  if (!CheckAttribute(arLoc, "go") || !CheckAttribute(arLoc, "label"))
+  {
+    trace("GetLocatorName -- wrong locator");
+    DumpAttributes(arLoc);
+    return "<error loc>";
+  }
+  int iLocID = FindLocation(arLoc.go);
+  if (iLocID == -1)
+  {
+    return "<not found>: '"+arLoc.go+"'";
+  }
+
+  ref rLocation = &Locations[iLocID];
+
+  string sKeyFilePath = "LocLables.txt";
+
+  return GetConvertStr(arLoc.label, sKeyFilePath);
 }

@@ -1,0 +1,46 @@
+Patria_1 {Noel}
+Patria_2 {Forget}
+Patria_3 { }
+Patria_4 {Hubert}
+Patria_5 {Dassien}
+Patria_6 {Modo exploração: tempo estendido. Complete a missão!}
+Patria_7 {Os espanhóis receberam um aviso para enviar parlamentares ao farol de Trinidad para iniciar negociações!}
+Patria_8 {Um dia se passou...}
+Patria_9 {Modo exploração: o cronômetro não está desativado. Cumpra o prazo!}
+Patria_10 {Barão Noel Forget deixou seu navio!}
+Patria_11 {Outro navio inimigo está vindo na nossa direção!}
+Patria_12 {Frederick}
+Patria_13 {Peter}
+Patria_14 {Stuyvesant}
+Patria_15 {Comboio comercial da Companhia}
+Patria_16 {O Ost-Indian da Companhia foi capturado!}
+Patria_17 { }
+Patria_18 {Lenart}
+Patria_19 {Klap}
+Patria_20 {Edward}
+Patria_21 {Doily}
+Patria_22 { }
+Patria_23 {Kristian}
+Patria_24 {Beusson}
+Patria_25 {Comboio da Companhia da África}
+Patria_26 {Modo exploração: temporizador desativado.}
+Patria_27 {Precisamos destruir o esquadrão inimigo!}
+Patria_28 {O coronel Doily deu o sinal para desembarcar na lagoa Blanca!}
+Patria_29 {Após duas horas de bombardeio,@<NewStr()>os holandeses enviaram um grupo de parlamento}
+Patria_30 {Christian}
+Patria_31 {Tior}
+Patria_32 { }
+Patria_33 {Steven}
+Patria_34 {Dodson}
+Patria_35 { }
+Patria_36 {Marcus}
+Patria_37 {Tyrex}
+Patria_38 {Duas horas depois...@<NewStr()>}
+Patria_39 {Barão Noel Forget morreu de febre!}
+Patria_40 {Olivier}
+Patria_41 {Burden}
+Patria_42 {Mary}
+Patria_43 {Casper}
+Patria_44 {O governador da mina foi visto em uma das casas, capturado e preso}
+Patria_45 {Vinte e três horas depois...@<NewStr()>Peter Stuyvesant aparece nos portões}
+Patria_46 {Um dia depois...@<NewStr()>}

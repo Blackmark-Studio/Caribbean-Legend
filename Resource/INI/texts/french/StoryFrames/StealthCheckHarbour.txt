@@ -1,0 +1,67 @@
+Node0_title {Au port}
+Node0_a {Vous entrez dans un port hostile, en espérant ne pas être démasqué.}
+Node0_b_a {Le port est en pleine effervescence — un grand navire marchand $rand(français|espagnol|hollandais|anglais) est arrivé récemment. Tous les ouvriers disponibles sont occupés au déchargement.}
+Node0_b_b {Le port est désert, et des traces d’un récent affrontement sont visibles sur le rivage. $rand(Des brûlures et des impacts de boulets marquent les pavés.|Certaines maisons sont endommagées par des bombes, et des femmes en deuil se tiennent dans la rue.)}
+Node0_b_c {Le port est bondé de soldats. Un grand navire de guerre est à quai — un $rand(galion|frégate|corvette). Il est $rand(clairement endommagé et en cours de réparation, portant les traces d’une récente bataille|en état de préparation au combat et prêt à appareiller).}
+Node0_c_a {Un responsable du port s’approche de vous à contrecœur, manifestement fatigué et somnolent.}
+Node0_c_b {Le maître du port s’approche en personne, manifestement décidé à vous accorder une attention toute particulière. Dans son regard se lit $rand(l’agacement — il accomplit clairement un travail en dessous de son rang et sait que cela se voit|la cupidité — il vous perçoit comme une source de profit facile et anticipe déjà une soirée bien arrosée).}
+Node0_c_c {Des gardes du port s’approchent de vous, armes levées, visiblement très tendus.}
+Node0_d {Vous rassemblez vos forces et vous apprêtez à faire des miracles d’éloquence. Ou peut-être à vous frayer un chemin par la force.}
+Node0_b_a_reaction {Se faire passer pour un navire d’escorte}
+Node0_b_a_reaction_log {Vous parvenez à vous faire passer pour un navire marchand faisant partie d’un convoi. Vous participez au déchargement et attirez désormais beaucoup moins l’attention.}
+Node0_b_a_reaction_factor {Navire d’escorte}
+Node0_b_b_reaction {Se faire passer pour un navire sanitaire}
+Node0_b_b_reaction_log {Vous parvenez à vous faire passer pour un navire sanitaire envoyé pour soigner les blessés. Un médecin est une denrée rare dans les Caraïbes, et quelques mots bien choisis suffisent à convaincre.}
+Node0_b_b_reaction_factor {Navire sanitaire}
+Node0_b_c_reaction {Se faire passer pour un courrier secret}
+Node0_b_c_reaction_log {Vous vous êtes longtemps entraîné à adopter une allure mystérieuse et parvenez à convaincre les soldats que vous êtes un agent secret.}
+Node0_b_c_reaction_factor {Navire courrier}
+Node0_c_a_reaction {Proposer d’ignorer les formalités}
+Node0_c_a_reaction_log_0 {Votre compassion est crue, et vous parvenez à gagner la faveur du maître du port.}
+Node0_c_a_reaction_log_1 {Ils perçoivent de l’ironie dans vos paroles. Le maître du port vous traite désormais plus froidement.}
+Node0_c_a_reaction_factor {Compassion}
+Node0_c_b_reaction {Montrer sa volonté de payer un droit double}
+Node0_c_b_reaction_log {Vous trouvez facilement un point faible dans le système corrompu et améliorez considérablement vos chances à un coût raisonnable. Malheureusement, le maître du port n’est pas le seul à devoir être amadoué aujourd’hui.}
+Node0_c_b_reaction_factor {Pot-de-vin}
+Node0_c_c_reaction {Repérer le garde le plus faible et faire pression sur lui}
+Node0_c_c_reaction_log_0 {Vous parvenez à repérer une cible facile parmi les gardes, et après quelques paroles bien choisies, il se range de votre côté.}
+Node0_c_c_reaction_log_1 {Vous vous trompez manifestement de cible, et les gardes deviennent encore plus agressifs.}
+Node0_c_c_reaction_factor {Maillon faible}
+Node0_a_action {Tenter de passer}
+Node0_b_action {Forcer le passage par la force}
+Node0_c_action {Présenter la licence commerciale}
+Node0_success {$rand(Vous parvenez à vous faire passer pour un navire neutre et entrez en ville sans difficulté. Mieux vaut régler vos affaires rapidement, car les soupçons pourraient revenir.|Vous étiez sur le point de vous trahir, mais tout semble s’être arrangé. Était-ce le talent ou une intervention divine ? Le temps le dira.)}
+Node0_success_action {Parfait !}
+Node1_a {Vous ne parvenez pas à passer pour un allié et la situation commence à s’envenimer. Toutefois, vous êtes certain qu’il est encore possible de la rattraper, à condition de trouver la bonne approche.}
+Node1_b_a {Quelque chose a poussé les gardes locaux à procéder à une inspection renforcée. Le navire est encerclé.}
+Node1_b_b {Les marins locaux semblent avoir reconnu votre navire comme étant de _$playerNationAbl. Ils ont clairement l’intention de vous démasquer.}
+Node1_b_c {Pendant que l’administration portuaire examinait votre demande, un navire de patrouille est entré au port, comme par malchance. Voyant l’hésitation, ils ont exigé d’inspecter votre navire.}
+Node1_c_a {Vous remarquez que le drapeau au-dessus de la résidence est en berne : la ville est en deuil.}
+Node1_c_b {Vous apercevez parmi les badauds un capitaine que vous avez autrefois escorté en mer.}
+Node1_c_c {Vous entendez une sonnerie de cloches inhabituelle : un office festif commence dans l’église locale.}
+Node1_d {Il faut prendre une décision immédiatement.}
+Node1_b_a_reaction {Convaincre les soldats d’une cargaison clé}
+Node1_b_a_reaction_log {Vous tentez de convaincre les soldats qu’une cargaison importante se trouve à bord. Face aux calculs comptables et aux termes complexes, ils commencent clairement à céder, et la menace de perdre leur solde refroidit les hésitants.}
+Node1_b_a_reaction_factor {Cargaison importante}
+Node1_b_b_reaction {Convaincre les marins qu’en mer pas de nations}
+Node1_b_b_reaction_log {Vous tentez de convaincre les marins que vous êtes tous dans le même bateau. Voyant vos mains robustes, vos callosités de travail et votre visage battu par le vent marin, ils s’adoucissent et vous acceptent comme l’un des leurs.}
+Node1_b_b_reaction_factor {Marins solidaires}
+Node1_b_c_reaction {Invoquer le droit maritime}
+Node1_b_c_reaction_log {Vous tentez d’empêcher les soldats du navire de patrouille de monter à bord en invoquant les lois maritimes, qui interdisent explicitement les inspections aléatoires et injustifiées des navires au port. Vous ressortez tout ce que vous savez du droit maritime, en y mêlant inventions, affabulations et jargon administratif afin d’entraîner le patrouilleur dans ce tourbillon. Jamais les invectives n’ont été aussi bureaucratiques.}
+Node1_b_c_reaction_factor {Tatillon juridique}
+Node1_c_a_reaction {Tenter de deviner la raison du deuil}
+Node1_c_a_reaction_log {Vous essayez de deviner la raison du deuil et déclarez être venu pour cela. Vous n’êtes pas certain que votre manœuvre ait réussi, mais la tentative n’est manifestement pas passée inaperçue.}
+Node1_c_a_reaction_factor {Deuil fortuit}
+Node1_c_b_reaction {Obtenir l’appui d’un capitaine connu}
+Node1_c_b_reaction_log_0 {Vous interpellez le capitaine et lui demandez de se porter garant pour vous auprès des gardes. Il se souvient de vos aventures communes et parle volontiers en votre faveur.}
+Node1_c_b_reaction_log_1 {Vous interpellez le capitaine et lui demandez de se porter garant pour vous auprès des gardes. Au dernier moment, vous hésitez en vous rappelant d’où vous le connaissez : vous avez mené ensemble quelques raids audacieux contre de paisibles marchands. Il vous défend, certes, mais lui-même n’est pas apprécié dans la colonie.}
+Node1_c_b_reaction_factor {Capitaine connu}
+Node1_c_c_reaction {Dire que vous transportez des reliques de l’Église}
+Node1_c_c_reaction_log {Vous tentez de convaincre la garde que vous avez à bord de précieux objets liturgiques nécessaires pour une fête — $rand(un calice d’argent|une monstrance pour l’exposition des Saintes Espèces|un reliquaire contenant des reliques|une croix d’autel|une mitre d’évêque|des chasubles et une étole en brocart|des chandeliers d’autel|une petite cloche d’autel). À votre surprise, la colonie attendait réellement un navire chargé de reliques ecclésiastiques, et celui-ci a déjà beaucoup de retard. On vous croit.}
+Node1_c_c_reaction_factor {Objets liturgiques}
+Node1_a_action {Tenter d’apaiser la situation}
+Node1_b_action {Lever l’ancre et fuir}
+Node1_success {$rand(Vous vous faufilez dans le port en sentant sur vous le long regard des gardes. Une seconde de plus et tout se serait effondré, mais le destin en a décidé autrement.|Vous entrez dans le port le cœur lourd — votre navire est clairement resté sous suspicion. Tout s’est joué à la toute dernière seconde, mais mieux vaut ne pas s’attarder en ville.)}
+Node1_success_action {Cette fois, nous sommes sauvés}
+Node1_fail {$rand(Les gardes donnent l’alarme — vous êtes démasqué. Des soldats courent déjà le long du quai, et le fort sera au courant d’une seconde à l’autre.|L’hésitation s’éternise et la patience des gardes cède. Tout le port hérisse des lames, et un signal est envoyé au fort pour préparer les canons.)}
+Node1_fail_action {Fuyons !}

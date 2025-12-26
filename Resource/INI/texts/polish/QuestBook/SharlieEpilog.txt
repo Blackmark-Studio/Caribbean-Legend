@@ -1,0 +1,63 @@
+#QUEST SharlieEpilog
+Epilog
+#TEXT 1_1
+Odwiedziłem opata Benoît, który powiedział mi, że mój ojciec obawia się, iż choroba pokona go, zanim znów się zobaczymy. W swoim liście pisał to samo, choć przemilczał fakt, że z każdym dniem czuje się coraz słabszy.
+Musiałem podjąć trudną decyzję – wypłynąć tak szybko, jak to tylko możliwe.
+Jednak biorąc pod uwagę moją obecną sytuację, nie mogę po prostu zostawić wszystkiego i wrócić do Starego Świata. Najpierw muszę podjąć kilka decyzji, by móc opuścić archipelag z czystym sumieniem. Opat obiecał mi w tym pomóc – dzięki niemu przekażę niezbędne polecenia tym, do których są skierowane.
+Doradził mi również, bym spłacił wszelkie długi, jeśli takie posiadam. Lichwiarze mają długie ręce – i nie ulega wątpliwości, że dla odzyskania pieniędzy nie cofną się przed niczym.
+#TEXT 1_2
+Odwiedziłem opata Benoît, który powiedział mi, że mój ojciec obawia się, iż choroba pokona go, zanim znów się zobaczymy. W swoim liście pisał to samo, choć przemilczał fakt, że z każdym dniem czuje się coraz słabszy.
+Niestety, w tej chwili wyjazd do Starego Świata nie wchodzi w grę – mam do załatwienia kilka pilnych spraw, które wymagają natychmiastowego rozwiązania. Podróż w obie strony może zająć sporo czasu, a jestem pewien, że ojciec nalegałby, bym został w majątku co najmniej kilka miesięcy. Ta myśl raczej mnie nie pociąga.
+#TEXT 2
+Opat ma rację – nie można już dłużej zwlekać z wypłynięciem. Jednak biorąc pod uwagę moją obecną sytuację, nie mogę po prostu zostawić wszystkiego i wrócić do Starego Świata. Najpierw muszę podjąć kilka decyzji, by móc opuścić archipelag z czystym sumieniem. Sam kapłan obiecał mi pomoc – z jego wsparciem przekażę niezbędne polecenia tym, do których są skierowane.
+Poradził mi również, bym spłacił wszelkie długi, jeśli takie posiadam. Lichwiarze mają długie ręce – i nie ulega wątpliwości, że dla odzyskania pieniędzy nie cofną się przed niczym.
+#TEXT 3_1
+Postanowiłem oddać Isla Mona pod władzę Jego Królewskiej Mości. Tylko tak można zapewnić jej bezpieczeństwo. Kurierzy opata powiadomią obie strony o mojej decyzji. Mam nadzieję, że Rodgar znajdzie w sobie siłę, by podporządkować się nadciągającej cywilizacji.
+#TEXT 3_2
+Postanowiłem zostawić Isla Mona pod opieką Jana Swensona. Jestem pewien, że zdoła zapewnić zarówno bezpieczeństwo mieszkańców, jak i ciągłość pracy faktorii. Oczywiście zażądałem udziału w zyskach – nie oddałbym tak smakowitego kąska za darmo.
+#TEXT 4_1
+Opowiedziałem opatowi o moim baronacie w Le François i postanowiłem się go zrzec, o czym poinformowałem Marcusa w liście. Szczerze mówiąc, poczułem pewną ulgę. Z piractwem koniec. Choć wśród piratów mam przyjaciół – ja sam nie chcę mieć z tym już nic wspólnego.
+#TEXT 4_2
+Opat z pewnością nie zaakceptowałby mojego baronatu w Le François, więc nie musi o nim wiedzieć. Niemniej jednak wysłałem list do Marcusa z decyzją o zrzeczeniu się tytułu. Kto wie, co mogą wyprawiać piraci na archipelagu pod moją nieobecność, zasłaniając się moim imieniem. Kto zajmie moje miejsce, niespecjalnie mnie interesuje.
+#TEXT 5_1
+Po dłuższym namyśle postanowiłem zrzec się francuskiego patentu. Nie chciałbym dźwigać takiego zobowiązania, spotykając się z ojcem… i szczerze mówiąc, niemal zapomniałem, jak to jest – żyć bez nieustannej walki. Mam nadzieję, że nadchodzące miesiące nie okażą się nieznośnie nudne.
+#TEXT 5_2
+Po krótkim namyśle postanowiłem pozostać na służbie Francji i Jego Królewskiej Mości. Poinformowałem kancelarię w Capsterville o moim rychłym wypłynięciu do Starego Świata, choć przyznam, że mam nadzieję, iż nie będę musiał tam zbyt długo zostać. Życie z dala od statku i bitew stało się dla mnie… obce. Ale podczas podróży będę miał wystarczająco dużo czasu, by wsłuchać się w siebie.
+#TEXT 6
+Postanowiłem zabrać ze sobą @<sSum> peso. Sądzę, że zabranie większej sumy byłoby nierozsądne – w drodze może przydarzyć się wszystko. Zatroszczyłem się o to, by te pieniądze były „czyste”: opat, w zamian za darowiznę w wysokości @<tSum> peso, pobłogosławił je. Dla ojca są czyste – a to wszystko, czego mi potrzeba.
+#TEXT 7
+Postanowiłem powiadomić Jana Swensona o mojej decyzji wyjazdu do Starego Świata. Po wszystkim, co razem przeszliśmy, nie mogłem go zostawić bez słowa.
+#TEXT 8
+Gdybym miał więcej czasu, powiedziałbym o swoim wyjeździe Nathanowi i Danielle Houk osobiście. W końcu stali się dla mnie niemal rodziną. Ale niestety teraz zupełnie nie mam na to czasu. Myślę, że list nieco złagodzi skutki mojego nagłego odejścia.
+#TEXT 8_1
+Poinformowałem Gino Guineyli, że opuszczam archipelag na czas nieokreślony. Na ten okres, gdy nie będę mógł wspierać go finansowo, pozwoliłem mu wynajmować część domu, by zapewnił sobie środki na życie i eksperymenty.
+#TEXT 9
+No cóż, wygląda na to, że wszystko załatwione i jestem gotów do wypłynięcia. Muszę jeszcze porozmawiać z opatem.
+#TEXT 10
+Opat poinformował mnie, że pinasa *Ulysse*, na której przybyłem na te ziemie, będąc jeszcze beztroskim hulaką i utrapieniem każdego porządnego mężczyzny, została wystawiona na aukcję. Zabawa losu – daje mi szansę wrócić do domu na tym samym statku, od którego wszystko się zaczęło. Kuszące, cholera. Chyba warto zajrzeć do administracji portu i dowiedzieć się, kiedy odbędzie się licytacja.
+#TEXT 11_1
+No proszę! Aukcja już się odbyła, a zwycięzcą został nikt inny jak Jean Picard – ten sam, którego kiedyś wyciągnąłem z plantacji pod Maracaibo. Postanowił zerwać z piractwem i zająć się handlem, przy tej okazji kupując właśnie *Ulysse*. Co jeszcze ciekawsze – jego trasa prowadzi tam, dokąd i ja zmierzam: do Bordeaux.
+Uznałem, że dobrze mi zrobi podróż w roli pasażera i poprosiłem go o miejsce na pokładzie. Będzie czas, by pomyśleć… o życiu, o domu, o rodzinie. Może rzeczywiście pora osiąść na lądzie.
+A propos rodziny – nadal nie porozmawiałem z żoną. Powinienem był zrobić to wcześniej, ale – jak zwykle – byłem zbyt zajęty…
+Wypłynięcie za dwa tygodnie – Jean będzie czekał na mnie w tawernie.
+#TEXT 11_2
+No proszę! Aukcja już się odbyła, a zwycięzcą został nikt inny jak Jean Picard – ten sam, którego kiedyś wyciągnąłem z plantacji pod Maracaibo. Postanowił zerwać z piractwem i zająć się handlem, przy tej okazji kupując właśnie *Ulysse*. Co jeszcze ciekawsze – jego trasa prowadzi tam, dokąd i ja zmierzam: do Bordeaux.
+Uznałem, że dobrze mi zrobi podróż w roli pasażera i poprosiłem go o miejsce na pokładzie. Będzie czas, by pomyśleć… o życiu, o domu, o rodzinie. Może rzeczywiście pora osiąść na lądzie, znaleźć żonę – lub, jak nalega ojciec, przyjrzeć się Yvonne La Brignée.
+Wypłynięcie za dwa tygodnie – Jean będzie czekał na mnie w tawernie. A póki co muszę porozmawiać z oficerami. Kto wie, jak długo potrwa ta podróż… Chyba nadszedł czas pożegnania.
+#TEXT 11_3
+Spóźniłem się – aukcja już się odbyła, a zwycięzcą został niejaki @<sName>. Zdecydowanie odmówił sprzedaży pinasy, ale jak się okazało, mamy ten sam kurs – obaj wybieramy się do Bordeaux. Uznałem, że dobrze mi zrobi podróż w roli pasażera i poprosiłem go o miejsce na pokładzie. Będzie czas, by pomyśleć… o życiu, o domu, o rodzinie. Może rzeczywiście pora osiąść na lądzie.
+A propos rodziny – nadal nie porozmawiałem z żoną. Powinienem był zrobić to wcześniej, ale – jak zwykle – byłem zbyt zajęty…
+#TEXT 11_4
+Spóźniłem się – aukcja już się odbyła, a zwycięzcą został niejaki @<sName>. Zdecydowanie odmówił sprzedaży pinasy, ale jak się okazało, mamy ten sam kurs – obaj wybieramy się do Bordeaux. Uznałem, że dobrze mi zrobi podróż w roli pasażera i poprosiłem go o miejsce na pokładzie. Będzie czas, by pomyśleć… o życiu, o domu, o rodzinie. Może rzeczywiście pora osiąść na lądzie, znaleźć żonę – lub, jak nalega ojciec, przyjrzeć się Yvonne La Brignée.
+Wypłynięcie za dwa tygodnie – kapitan będzie czekał na mnie w tawernie. A póki co muszę porozmawiać z Alonso i oficerami. Kto wie, jak długo potrwa ta podróż… Chyba nadszedł czas pożegnania.
+#TEXT 11_5
+No proszę! Aukcja już się odbyła, a zwycięzcą został nikt inny jak Jean Picard – ten sam, którego kiedyś próbowałem wyrwać z plantacji pod Maracaibo. Okazało się, że ten spryciarz nie tylko przeżył, ale i przejął cały majątek wdowy po plantatorze. Teraz postanowił zerwać z piractwem i zająć się handlem, kupując przy tej okazji właśnie *Ulysse*. Co jeszcze ciekawsze – jego trasa prowadzi tam, dokąd i ja zmierzam: do Bordeaux.
+Uznałem, że dobrze mi zrobi podróż w roli pasażera i poprosiłem go o miejsce na pokładzie. Będzie czas, by pomyśleć… o życiu, o domu, o rodzinie. Może rzeczywiście pora osiąść na lądzie.
+A propos rodziny – nadal nie porozmawiałem z żoną. Powinienem był zrobić to wcześniej, ale – jak zwykle – byłem zbyt zajęty…
+Wypłynięcie za dwa tygodnie. Jean będzie czekał na mnie w tawernie – umówiliśmy się na porządną popijawę przed wypłynięciem.
+#TEXT 11_6
+No proszę! Aukcja już się odbyła, a zwycięzcą został nikt inny jak Jean Picard – ten sam, którego kiedyś próbowałem wyrwać z plantacji pod Maracaibo. Okazało się, że ten spryciarz nie tylko przeżył, ale i przejął cały majątek wdowy po plantatorze. Teraz postanowił zerwać z piractwem i zająć się handlem, kupując przy tej okazji właśnie *Ulysse*. Co jeszcze ciekawsze – jego trasa prowadzi tam, dokąd i ja zmierzam: do Bordeaux.
+Uznałem, że dobrze mi zrobi podróż w roli pasażera i poprosiłem go o miejsce na pokładzie. Będzie czas, by pomyśleć… o życiu, o domu, o rodzinie. Może rzeczywiście pora osiąść na lądzie, znaleźć żonę – lub, jak nalega ojciec, przyjrzeć się Yvonne La Brignée.
+Wypłynięcie za dwa tygodnie. Jean będzie czekał na mnie w tawernie – umówiliśmy się na porządną popijawę przed wypłynięciem. A póki co muszę porozmawiać z oficerami. Kto wie, jak długo potrwa ta podróż… Chyba nadszedł czas pożegnania.
+#TEXT 12
+Zostało już tylko najtrudniejsze – rozwiązać załogę i pożegnać oficerów. Z niektórymi będzie się szczególnie ciężko rozstać, biorąc pod uwagę, przez co razem przeszliśmy… Oficerami zajmę się sam, a rozmowę z załogą powierzę Alonso.

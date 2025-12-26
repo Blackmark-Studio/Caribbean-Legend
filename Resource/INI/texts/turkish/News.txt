@@ -1,0 +1,18 @@
+News {Yama 1.7 BETA Kullanılabilir}
+News_descr
+{
+***************************   Ahoy!   ***************************
+-------------------------------------------------------------------------------------------------
+— Yama 1.7 açık betası başladı
+— "Ship's Pack" DLC serisinin dördüncü bölümü yayınlandı
+— Steam üzerinden sürümler arasında serbestçe geçiş yapabilirsiniz
+— Yeni oyun gerekli değil
+— Kayıt sistemi yeniden çalışıldı ve iyileştirildi
+— Yeni gizlilik ve şehre sızma mekanikleri
+— Savaş yapay zekası karada daha iyi performans gösteriyor
+— Epilog, yaşam kalitesi iyileştirmeleri ve daha fazlası
+— Detaylı değişiklik listesini aşağıdaki düğme üzerinden haberlerde bulabilirsiniz
+}
+News_Attention { }
+[News]
+IsRead = false

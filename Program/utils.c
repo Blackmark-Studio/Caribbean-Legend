@@ -194,6 +194,35 @@ void ParseString()
 	aRes.Str = sDst;
 }
 
+bool GetNextSubStr(string inStr, ref outStr, ref lastStr, string separator)
+{
+	if(inStr=="")
+	{
+		outStr="";
+		lastStr="";
+		return false;
+	}
+	int strSize = strlen(inStr)-1;
+	if(strSize<=0)
+	{
+		outStr="";
+		lastStr="";
+		return false;
+	}
+	int sympos = findsubstr(inStr,separator,0);
+	if(sympos==-1)
+	{
+		outStr = inStr;
+		lastStr = "";
+		return true;
+	}
+	if(sympos>0)	outStr = strcut(inStr,0,sympos-1);
+	else	outStr = "";
+	if(strSize>sympos+1) lastStr = strcut(inStr,sympos+1,strSize);
+	else lastStr = "";
+	return true;
+}
+
 float GetDistance2D(float x1, float y1, float x2, float y2)
 {
 	return sqrt(sqr(x1 - x2) + sqr(y1 - y2));
@@ -294,12 +323,7 @@ void Log_QuestInfo(string _info)
 
 string NewStr()
 {
-    int idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-    string sTemp;
-    sTemp = LanguageConvertString(idLngFile,"new_string");
-    LanguageCloseFile(idLngFile);
-
-    return sTemp;
+	return GetSimpleItemKey("new_string");
 }
 
 Object objGrass;
@@ -516,6 +540,16 @@ string strright(string str, int num)
 	return strcut(str,start,len-1);
 }
 
+bool IsStrLeft(string str1, string str2)
+{
+	return (strleft(str1, strlen(str2)) == str2);
+}
+
+bool IsStrRight(string str1, string str2)
+{
+	return (strright(str1, strlen(str2)) == str2);
+}
+
 // mitrokosta просто CopyAttributes стирает старые атрибуты
 void CopyAttributesSafe(aref to, aref from) {
 	aref toRec, fromRec;
@@ -575,10 +609,7 @@ object DeserializeAttributes(string serialized) {
 
 float GetRealDeltaTime()
 {
-    float timeScale = 1 + TimeScaleCounter * 0.25;
-    if (timeScale != 0.0)
-        return GetDeltaTime() * 0.001 / timeScale;
-    return 0.0;
+    return GetRDeltaTime() * 0.001;
 }
 
 // Вернем обратно ссылку на объект/атрибут или найдем по id/индексу и вернем ссылку
@@ -639,47 +670,47 @@ string AttributesToString(ref rObject, string bySym)
 // Атрибут есть и он не пуст
 bool CheckAttributeHasValue(ref rObject, string atrName)
 {
-	if (!CheckAttribute(rObject, &atrName)) return false;
+	if (!CheckAttribute(rObject, atrName)) return false;
 	return rObject.(atrName) != "";
 }
 
 // Атрибут есть и равен строке
 bool CheckAttributeEqualTo(ref rObject, string atrName, string value)
 {
-	if (!CheckAttribute(rObject, &atrName)) return false;
+	if (!CheckAttribute(rObject, atrName)) return false;
 	return rObject.(atrName) == value;
 }
 
 // Атрибут есть и он true, иначе false
 bool AttributeIsTrue(ref rObject, string atrName)
 {
-	if (!CheckAttribute(rObject, &atrName)) return false;
+	if (!CheckAttribute(rObject, atrName)) return false;
 	return sti(rObject.(atrName)) == 1;
 }
 
 // Получить int из атрибута, либо 0, если атрибута нет
 int GetAttributeInt(ref rObject, string atrName)
 {
-	return GetAttributeIntOrDefault(rObject, &atrName, 0);
+	return GetAttributeIntOrDefault(rObject, atrName, 0);
 }
 
-// Получить int из атрибута, либо 0, если атрибута нет
-int GetAttributeIntOrDefault(ref rObject, string atrName, int default)
+// Получить int из атрибута, либо дефолт, если атрибута нет
+int GetAttributeIntOrDefault(ref rObject, string atrName, int defaultValue)
 {
-	if (!CheckAttribute(rObject, &atrName)) return default;
+	if (!CheckAttribute(rObject, atrName)) return defaultValue;
 	return sti(rObject.(atrName));
 }
 
 // Получить float из атрибута, либо 0, если атрибута нет
 float GetAttributeFloat(ref rObject, string atrName)
 {
-	return GetAttributeFloatOrDefault(rObject, &atrName, 0.0);
+	return GetAttributeFloatOrDefault(rObject, atrName, 0.0);
 }
 
 // Получить float из атрибута, либо дефолт, если атрибута нет
-float GetAttributeFloatOrDefault(ref rObject, string atrName, float default)
+float GetAttributeFloatOrDefault(ref rObject, string atrName, float defaultValue)
 {
-	if (!CheckAttribute(rObject, &atrName)) return default;
+	if (!CheckAttribute(rObject, atrName)) return defaultValue;
 	return stf(rObject.(atrName));
 }
 
@@ -690,24 +721,25 @@ void SetAttribute(ref rObject, string atrName, ref value)
 }
 
 // Получить строковый атрибут или заглушку
-string GetAttributeOrDefault(ref rObject, string atrName, string default)
+string GetAttributeOrDefault(ref rObject, string atrName, string defaultValue)
 {
-	if (!CheckAttribute(rObject, &atrName)) return default;
+	if (!CheckAttribute(rObject, atrName)) return defaultValue;
 	return rObject.(atrName);
 }
 
 // Увеличить значение int атрибута на value
 void AddToAttributeInt(ref rObject, string atrName, int value)
 {
-	rObject.(atrName) = GetAttributeInt(rObject, &atrName) + value;
+	rObject.(atrName) = GetAttributeInt(rObject, atrName) + value;
 }
 
 // Увеличить значение float атрибута на value
 void AddToAttributeFloat(ref rObject, string atrName, float value)
 {
-	rObject.(atrName) = GetAttributeFloat(rObject, &atrName) + value;
+	rObject.(atrName) = GetAttributeFloat(rObject, atrName) + value;
 }
 
+// Вывести все атрибуты объекта текстом для дебага
 string AtributesToText(ref rObject)
 {
 	string result;
@@ -721,6 +753,48 @@ string AtributesToText(ref rObject)
 	return result;
 }
 
+// Вывести атрибуты объекта текстом для дебага, исключая переданный массив имён
+// Исключения применяются к атрибутам самого объекта и рекурсивно к его атрибутам
+string AtributesToTextExclude(ref rObject, ref attributesList)
+{
+	string result;
+	int attributesQty = GetAttributesNum(rObject);
+	for (int i = 0; i < attributesQty; i++)
+	{
+		aref attribute = GetAttributeN(rObject, i);
+		string attributeName = GetAttributeName(attribute);
+		if (StringArrayInclude(attributesList, attributeName)) continue;
+
+		result += attributeName + ": " + GetAttributeValue(attribute) + "\n";
+		if (GetAttributesNum(attribute) > 0) result += AtributesToTextExclude(attribute, attributesList);
+	}
+
+	return result;
+}
+
+// Содержит ли массив строк конкретную строку
+bool StringArrayInclude(ref array, string text)
+{
+	int length = GetArraySize(array);
+	for (int i = 0; i < length; i++)
+	{
+		if (array[i] == text) return true;
+	}
+
+	return false;
+}
+
+// Проверить, что строка есть в массиве или показать ошибку и вернуть false
+// Спамит логи, использовать подразумевая, что ошибка здесь – критическая и таковой быть не должно
+bool ValueIsBad(ref validValues, string value)
+{
+	if (StringArrayInclude(validValues, value)) return false;
+
+	trace("Error: Key " + value + " is invalid");
+	CollectCallStack();
+	return true;
+}
+
 string AtributesToTextAref(ref rObject, string attributeName)
 {
 	aref attribute;
@@ -731,7 +805,7 @@ string AtributesToTextAref(ref rObject, string attributeName)
 // Суровое приведение к строке
 string VarTypeToString(ref something)
 {
-	switch (VarType(&something))
+	switch (VarType(something))
 	{
 		case "float": return fts(something, 4); break; // вряд ли кому-то в строковых приколах понадобятся разряды дальше
 		case "int": return its(something); break;
@@ -752,4 +826,30 @@ void DumpAttributesAref(ref rObject, string attributeName)
 		DumpAttributes(attribute);
 	}
 	trace("============== ↑ DUMP ATTRIBUTE: " + attributeName + " ↑ ===============");
+}
+
+void ShuffleArray(ref rArray)
+{
+    int j;
+    int size = GetArraySize(rArray);
+    SetArraySize(rArray, size + 1);
+    for (int i = size-1; i > 0; i--)
+    {
+        j = rand(i);
+        rArray[size] = rArray[i];
+        rArray[i] = rArray[j];
+        rArray[j] = rArray[size];
+    }
+    SetArraySize(rArray, size);
+}
+
+// Обрезаем строчку по длине и добавляем в конец многоточие или что-нибудь другое
+string Truncate(string text, int maxLength, string omnission)
+{
+	int textLength = strlen(text);
+	if (textLength <= maxLength) return text;
+
+	string truncated = strleft(text, maxLength) + omnission;
+	if (strlen(truncated) < textLength) return truncated;
+	return text;
 }

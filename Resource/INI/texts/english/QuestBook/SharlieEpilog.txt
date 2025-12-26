@@ -1,0 +1,63 @@
+#QUEST SharlieEpilog
+Epilogue
+#TEXT 1_1
+I visited Abbot Benoit, and he told me my father fears the illness will take him before we see each other again. He said the same in his letter, though he left out the fact that he feels weaker with each passing day.
+I had to make a hard decision – to set sail as soon as possible.
+However, given my current position, I can’t simply leave everything behind and return to the Old World. First, I must make several decisions to leave the archipelago with a clear conscience. The abbot promised to assist me – with his help, I’ll be able to pass on the necessary orders to those they concern.
+He also advised me to settle any debts, if I have any. Moneylenders have long arms – and there's no doubt they'll stop at nothing to get their money back.
+#TEXT 1_2
+I visited Abbot Benoit, and he told me my father fears the illness will take him before we see each other again. He said the same in his letter, though he left out the fact that he feels weaker with each passing day.
+Unfortunately, heading to the Old World right now isn't an option – I have several urgent matters that require immediate attention. The journey there and back might take quite some time, and I’m sure my father would insist I stay at the estate for at least a few months. That thought doesn’t exactly thrill me.
+#TEXT 2
+The abbot is right – I can’t delay my departure any longer. However, given my current position, I can’t simply leave everything behind and return to the Old World. First, I must make several decisions to leave the archipelago with a clear conscience. The priest himself promised to assist me – with his help, I’ll be able to pass on the necessary orders to those they concern.
+He also advised me to settle any debts, if I have any. Moneylenders have long arms – and there's no doubt they'll stop at nothing to get their money back.
+#TEXT 3_1
+I’ve decided to place Isla Mona under the rule of His Majesty. It's the only way to guarantee their safety. The abbot's couriers will notify both sides of my decision. I hope Rodgar finds the strength to accept the advancing civilization.
+#TEXT 3_2
+I’ve decided to leave Isla Mona in the care of Jan Swenson. I’m confident he can ensure both the safety of the locals and the uninterrupted operation of the trading post. Naturally, I demanded a share of the profits – no sense in giving away such a sweet piece of the pie for free.
+#TEXT 4_1
+I told the abbot about my barony in Le François and decided to renounce it, which I wrote to Marcus about in a letter. Honestly, it felt like a weight off my shoulders. My days of piracy are over. Though some of my friends are still pirates, I want nothing more to do with it myself.
+#TEXT 4_2
+The abbot would clearly disapprove of my barony in Le François, so there’s no need for him to know. Nevertheless, I sent a letter to Marcus stating my decision to renounce it. Who knows what the pirates might get up to on the archipelago in my absence, hiding behind my name. I’m not particularly interested in who takes my place.
+#TEXT 5_1
+After some serious thought, I’ve decided to renounce my French commission. I don’t want to carry that burden when I meet my father… and, frankly, I’ve almost forgotten what it’s like to live without constant battles. I hope the coming months won’t feel unbearably dull.
+#TEXT 5_2
+After brief deliberation, I’ve decided to remain in service to France and His Majesty. I’ve notified the Capsterville office of my upcoming departure to the Old World, though I must admit, I hope I won’t have to stay there for long. Life away from the ship and battles feels... alien to me. But I’ll have plenty of time on the journey to reflect.
+#TEXT 6
+I’ve decided to take @<sSum> pesos with me. Bringing more would be unwise – anything could happen to the ship en route. I made sure the money is “clean”: in exchange for a donation of @<tSum> pesos, the abbot gave it his blessing. Before my father, it’s clean – and that’s all I need.
+#TEXT 7
+I’ve decided to inform Jan Swenson of my plan to sail to the Old World. After all we've been through together, I couldn’t just leave him in the dark.
+#TEXT 8
+If I had more time, I’d tell Nathan and Danielle Houk about my departure in person. They’ve become almost like family to me. But alas, there’s simply no time right now. I hope a letter will soften the blow of my sudden departure.
+#TEXT 8_1
+I informed Gino Guineyli that I’m leaving the archipelago for an indefinite period. While I’m unable to support him financially, I gave him permission to rent out part of the house to support himself and continue his experiments.
+#TEXT 9
+Well, it seems everything is settled, and I'm ready to depart. I need to speak with the abbot.
+#TEXT 10
+The abbot told me that the pinnace *Willis*, the very ship I arrived on back when I was still a reckless scoundrel and a headache to every decent man, is now up for auction. Funny how fate offers a chance to go home aboard the same vessel where it all began. Damn tempting. I should probably head to the port authority and find out when the bidding takes place.
+#TEXT 11_1
+Well, would you look at that! The auction has already taken place, and the winner was none other than Jean Picard – the very same man I once rescued from a plantation near Maracaibo. He’s decided to leave piracy behind and turn to trade, and to mark the occasion, he bought the *Willis*. Even more curious – his route leads to the same place as mine: Bordeaux.
+I decided it would do me good to travel as a passenger for once, so I asked to join him aboard. It’ll give me time to think… about life, about home, about family. Maybe it really is time I settle down.
+Speaking of family – I still haven’t spoken to my wife. I should’ve done it sooner, but as usual, I was too busy...
+Departure’s in two weeks – Jean will be waiting for me at the tavern.
+#TEXT 11_2
+Well, would you look at that! The auction has already taken place, and the winner was none other than Jean Picard – the very same man I once rescued from a plantation near Maracaibo. He’s decided to leave piracy behind and turn to trade, and to mark the occasion, he bought the *Willis*. Even more curious – his route leads to the same place as mine: Bordeaux.
+I decided it would do me good to travel as a passenger for once, so I asked to join him aboard. It’ll give me time to think… about life, about home, about family. Maybe it really is time I settle down, find a wife – or, as my father insists, consider Yvonne La Brignée.
+Departure’s in two weeks – Jean will be waiting for me at the tavern. In the meantime, I need to speak with the officers. Who knows how long this journey might last… Seems it’s time to say goodbye.
+#TEXT 11_3
+I was too late – the auction’s over, and the winner turned out to be someone named @<sName>. He flat-out refused to sell the pinnace, but as it happens, we’re heading in the same direction – both bound for Bordeaux. I decided it would do me good to travel as a passenger for once, so I asked to join him aboard. It’ll give me time to think… about life, about home, about family. Maybe it really is time I settle down.
+Speaking of family – I still haven’t spoken to my wife. I should’ve done it sooner, but as usual, I was too busy...
+#TEXT 11_4
+I was too late – the auction’s over, and the winner turned out to be someone named @<sName>. He flat-out refused to sell the pinnace, but as it happens, we’re heading in the same direction – both bound for Bordeaux. I decided it would do me good to travel as a passenger for once, so I asked to join him aboard. It’ll give me time to think… about life, about home, about family. Maybe it really is time I settle down, find a wife – or, as my father insists, consider Yvonne La Brignée.
+Departure’s in two weeks – the captain will be waiting for me at the tavern. In the meantime, I need to speak with Alonso and the officers. Who knows how long this journey might last… Seems it’s time to say goodbye.
+#TEXT 11_5
+Well, would you look at that! The auction has already taken place, and the winner was none other than Jean Picard – the very same man I once tried to rescue from a plantation near Maracaibo. Turns out the rogue not only survived, but managed to swindle the planter’s widow out of all her riches. Now he’s decided to leave piracy behind and turn to trade, and to mark the occasion, he bought the *Ulysses*. Even more curious – his route leads to the same place as mine: Bordeaux.
+I decided it would do me good to travel as a passenger for once, so I asked to join him aboard. It’ll give me time to think… about life, about home, about family. Maybe it really is time I settle down.
+Speaking of family – I still haven’t spoken to my wife. I should’ve done it sooner, but as usual, I was too busy...
+Departure’s in two weeks. Jean will be waiting for me at the tavern – we agreed to have a proper send-off before we leave.
+#TEXT 11_6
+Well, would you look at that! The auction has already taken place, and the winner was none other than Jean Picard – the very same man I once tried to rescue from a plantation near Maracaibo. Turns out the rogue not only survived, but managed to swindle the planter’s widow out of all her riches. Now he’s decided to leave piracy behind and turn to trade, and to mark the occasion, he bought the *Ulysses*. Even more curious – his route leads to the same place as mine: Bordeaux.
+I decided it would do me good to travel as a passenger for once, so I asked to join him aboard. It’ll give me time to think… about life, about home, about family. Maybe it really is time I settle down, find a wife – or, as my father insists, consider Yvonne La Brignée.
+Departure’s in two weeks. Jean will be waiting for me at the tavern – we agreed to have a proper send-off before we leave. In the meantime, I need to speak with the officers. Who knows how long this journey might last… Seems it’s time to say goodbye.
+#TEXT 12
+Now comes the hardest part – disbanding the crew and the officers. Saying farewell to some of them will be especially difficult, considering all we’ve been through together... I’ll take care of the officers myself, and I’ll have Alonso speak to the crew.

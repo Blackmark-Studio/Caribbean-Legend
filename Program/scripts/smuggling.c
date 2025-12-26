@@ -243,7 +243,7 @@ int GetCharacterCurrentStore(ref _refCharacter)
 	if (CheckAttribute(&Locations[curLocNum], "fastreload")) // в таверне должно быть всегда
 	{
 		string locGroupId = Locations[curLocNum].fastreload;
-		for (i=0; i<STORE_QUANTITY; i++)
+		for (i=0; i<GetArraySize(&stores); i++)
 		{
 			if (Stores[i].group == locGroupId)
 			{

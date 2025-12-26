@@ -480,7 +480,7 @@ void Goods_Refactoring()
 		}
 	}
 	
-	for(i = 0; i < STORE_QUANTITY; i++)
+	for(i = 0; i < GetArraySize(&stores); i++)
     {
 		for (n = 0; n < GetArraySize(&Goods); n++)
 		{
@@ -531,7 +531,7 @@ void Goods_Refactoring()
     curGood.SmallNorm        = 1.0;
 
     
-    for(i=0; i<STORE_QUANTITY; i++)
+    for(i=0; i<GetArraySize(&stores); i++)
     {
        stores[i].Goods.Cannon_48.TradeType = T_TYPE_CANNONS;
        stores[i].Goods.Cannon_48.Type      = T_TYPE_CANNONS;
@@ -555,7 +555,7 @@ void Goods_Refactoring()
    Goods[GOOD_CULVERINE_36].Flags            = FLAG_GOODS_CROWN_CANNONS;
    Goods[GOOD_CANNON_48].Flags               = FLAG_GOODS_CROWN_CANNONS;
    
-   for(i=0; i<STORE_QUANTITY; i++)
+   for(i=0; i<GetArraySize(&stores); i++)
 	{
 		ref refStore = &stores[i];
 		DeleteAttribute(refStore, "Goods.Cannon_48");

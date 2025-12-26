@@ -1,0 +1,32 @@
+Tutorial_1 {Gemiyi döndürme}
+Tutorial_2 {Gemiyi döndürmek için @<key1> ve @<key2> tuşlarına basın}
+Tutorial_3 {Zaman kontrolü}
+Tutorial_4 {Zaman hızlandırmayı etkinleştir @<key>}
+Tutorial_5 {@<key> tuşuna tekrar basarak devre dışı bırakın}
+Tutorial_6 {@<key> tuşuna basarak x6'ya kadar hızlanın}
+Tutorial_7 {Yavaşlamak için @<key1> tuşuna basın veya @<key2>}
+Tutorial_8 {Yelken kontrolü}
+Tutorial_9 {Yelkenleri savaş moduna al @<key1>}
+Tutorial_10 {Yelkenleri tamamen indir @<key1>}
+Tutorial_11 {Gemi savaşı temelleri}
+Tutorial_12 {Hızlı bir yaylım için @<key1> tuşunu kullan}
+Tutorial_13 {Gelişmiş gemi savaşı}
+Tutorial_14 {@<key1> Nişan moduna gir}
+Tutorial_15 {Nişanlı borda ateşi için @<key1> tuşuna bas}
+Tutorial_16 {@<key1> Nişan modundan çık}
+Tutorial_17 {Zafer kazanın}
+Tutorial_18 {Kalan korsan gemilerini batır}
+Tutorial_19 {Düşmana saldır}
+Tutorial_20 {@<key1> Saldırı Yap}
+Tutorial_21 {@<key1> Hızlı saldırı yap}
+Tutorial_22 {@<key1> Ağır saldırı}
+Tutorial_23 {Kendini savun}
+Tutorial_24 {@<key1> Engelle saldırıları}
+Tutorial_25 {@<key1> Saldırıları savuştur}
+Tutorial_26 {Korsanı yen!}
+Tutorial_27 {Görevler}
+Tutorial_28 {Belgeyi oku @<key1>}
+Tutorial_29 {Dublon sandığını aç @<key1>}
+Tutorial_30 {Yağmalama}
+Tutorial_31 {Denizcileri yağmala}
+Tutorial_32 {Alonso'ya gizemli iksiri ver}

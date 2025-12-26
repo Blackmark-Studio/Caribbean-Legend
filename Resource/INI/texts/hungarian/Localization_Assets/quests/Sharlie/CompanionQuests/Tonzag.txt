@@ -1,8 +1,0 @@
-Tonzag_1 {bounty hunters}
-Tonzag_2 { }
-Tonzag_3 { }
-Tonzag_4 {6 hours have passed...}
-Tonzag_5 {Exploration mode: timer is disabled.}
-Tonzag_6 {Bronze Horseman Unlocked}
-Tonzag_7 {Alberto}
-Tonzag_8 {Gaodio}

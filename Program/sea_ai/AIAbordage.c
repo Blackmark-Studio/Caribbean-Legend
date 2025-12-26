@@ -214,8 +214,9 @@ void Sea_AbordageLoad(int _iAbordageMode, bool _bMCAbordageInitiator)
 					if(sti(InterfaceStates.EnabledAutoSaveMode) != 0)
 					{
 						//MakeAutoSaveAndGoOnAbord(); //eddy. чтобы глюков не було.
-						MakeAutoSave();
-						SetEventHandler("evntSave","Continue_Sea_AbordageLoadPre", 0);
+						bAutoSaveStarted = false;
+						NewAutoSave("BeforeBoarding");
+						SetEventHandler("Event_AfterSave", "Continue_Sea_AbordageLoad", 1);
 					}
 					else
 					{
@@ -252,18 +253,12 @@ void Sea_AbordageLoad_ActiveCount()
 	}
 }
 
-void Continue_Sea_AbordageLoadPre()
-{
-	DelEventHandler("evntSave","Continue_Sea_AbordageLoadPre");
-	SetEventHandler("frame","Continue_Sea_AbordageLoad",1);
-}
-
 void Continue_Sea_AbordageLoad()
 {
+	DelEventHandler("Event_AfterSave", "Continue_Sea_AbordageLoad");
+	
 	int _iAbordageMode = sti(pchar.boarding_info.mode);
 	int _bMCAbordageInitiator = sti(pchar.boarding_info.indicator);
-	
-	DelEventHandler("frame","Continue_Sea_AbordageLoad");
 
 	if (bSeaActive == false) 
 	{ 

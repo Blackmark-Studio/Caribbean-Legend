@@ -1849,7 +1849,7 @@ void ProcessDialogEvent()
 				if(sItem != "" && rItem.groupID == BLADE_ITEM_TYPE) 
 				{
 					attrL = "l" + i;
-					Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt") + ": 攻击力 - " + FloatToString(stf(rItem.attack),1) + ", 平衡性 - " + FloatToString(stf(rItem.Balance),1) + ", 重量 - " + FloatToString(stf(rItem.Weight),1);
+					Link.(attrL) = GetItemName(rItem) + ": 攻击力 - " + FloatToString(stf(rItem.attack),1) + ", 平衡性 - " + FloatToString(stf(rItem.Balance),1) + ", 重量 - " + FloatToString(stf(rItem.Weight),1);
 					Link.(attrL).go = "bladeindex_"+GetItemIndex(rItem.id);
 					i++;
 				}

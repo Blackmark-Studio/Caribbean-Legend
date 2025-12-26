@@ -1,0 +1,11 @@
+Regatta_1 {Henry}
+Regatta_2 {Stivenson}
+Regatta_3 {이미 경기가 시작되었습니다.}
+Regatta_4 {Saint Catherine}
+Regatta_5 {중위}
+Regatta_6 {Mahoiny}
+Regatta_7 {Vudro}
+Regatta_8 {Doggerty}
+Regatta_9 {항해사가 당신의 배를 떠났습니다!}
+Regatta_10 {승객이 탑승했습니다.}
+Regatta_11 {선박이 과적되었습니다. 속도와 기동성이 크게 저하됩니다.}

@@ -76,13 +76,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LEDR_Gonsalo_7":
-			dialog.text = "Non ! Non, que le diable m’emporte, il n’y a jamais eu rien de tel, tu comprends ?! Je n’ai aucune idée de pourquoi tout ça me hante dans mes rêves… mais je le jure sur tous les saints, ni moi, ni mon équipage n’avons jamais pris part à de telles atrocités !";
+			dialog.text = "Non ! Non, que le diable m’emporte, il n’y a jamais eu rien de tel, tu comprends ?! Je n’ai aucune idée de pourquoi tout ça me hante dans mes rêves... mais je le jure sur tous les saints, ni moi, ni mon équipage n’avons jamais pris part à de telles atrocités !";
 			link.l1 = "Il vaudrait mieux pour toi que ce soit vraiment le cas. Continue.";
 			link.l1.go = "LEDR_Gonsalo_8";
 		break;
 
 		case "LEDR_Gonsalo_8":
-			dialog.text = "Les Caraïbes ont demandé à négocier, et le capitaine a accepté. Il les a tous invités dans l’une de ces cabanes que ‘nous’ avions prises. Les chefs sont venus – une vingtaine, pas moins, menés par leur reine, Anacaona. Mais le capitaine lui-même n’est pas entré… aucun de nous n’est entré. Dès que le dernier chef est passé, la porte a été claquée et bloquée avec des poutres. Et puis… bon sang… ils y ont mis le feu. Seule la reine a été épargnée, mais pas pour longtemps. On l’a forcée à regarder son peuple brûler vif… Et ensuite, ils l’ont pendue à un arbre.";
+			dialog.text = "Les Caraïbes ont demandé à négocier, et le capitaine a accepté. Il les a tous invités dans l’une de ces cabanes que ‘nous’ avions prises. Les chefs sont venus – une vingtaine, pas moins, menés par leur reine, Anacaona. Mais le capitaine lui-même n’est pas entré... aucun de nous n’est entré. Dès que le dernier chef est passé, la porte a été claquée et bloquée avec des poutres. Et puis... bon sang... ils y ont mis le feu. Seule la reine a été épargnée, mais pas pour longtemps. On l’a forcée à regarder son peuple brûler vif... Et ensuite, ils l’ont pendue à un arbre.";
 			link.l1 = "Et ça se répète chaque nuit ? Toujours le même rêve, encore et encore ? Tu sais, je ne serais pas surpris si, après tout ça, ce squelette n’était qu’un fruit de ton esprit devenu fou...";
 			link.l1.go = "LEDR_Gonsalo_9";
 		break;
@@ -120,7 +120,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LEDR_Gonsalo_12":
-			dialog.text = "Nous sommes partis de Santiago, cap sur Séville. Il n’y avait pas beaucoup de cargaison, mais nous avions un passager — un personnage important, un évêque en personne. Pour l’équipage, je l’avoue, ce genre de traversée n’était pas du goût de tous… mais qui nous a jamais demandé notre avis ?\nNous n’avons jamais atteint l’océan. Près de Turks, une goélette pirate nous a attaqués — rapide, agile, armée jusqu’aux dents. Pas des miséreux, mais de vrais loups de mer. Le capitaine a d’abord voulu fuir — il ne tenait pas à risquer la vie de l’évêque. Mais avec ce vent, impossible de faire demi-tour, et la tempête arrivait déjà du sud. Alors il n’y avait plus le choix — le combat a commencé.";
+			dialog.text = "Nous sommes partis de Santiago, cap sur Séville. Il n’y avait pas beaucoup de cargaison, mais nous avions un passager — un personnage important, un évêque en personne. Pour l’équipage, je l’avoue, ce genre de traversée n’était pas du goût de tous... mais qui nous a jamais demandé notre avis ?\nNous n’avons jamais atteint l’océan. Près de Turks, une goélette pirate nous a attaqués — rapide, agile, armée jusqu’aux dents. Pas des miséreux, mais de vrais loups de mer. Le capitaine a d’abord voulu fuir — il ne tenait pas à risquer la vie de l’évêque. Mais avec ce vent, impossible de faire demi-tour, et la tempête arrivait déjà du sud. Alors il n’y avait plus le choix — le combat a commencé.";
 			link.l1 = "Se retrouver pris entre deux feux, ce n'est guère enviable. Et qu'est-il arrivé ensuite ?";
 			link.l1.go = "LEDR_Gonsalo_13";
 			AddCharacterExpToSkill(pchar, "Sailing", 200);
@@ -145,7 +145,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "LEDR_Gonsalo_16":
-			dialog.text = "Il était trop dangereux de retourner sur le navire. Ceux qui avaient osé s’y aventurer pour le butin pouvaient ne pas se partager le trésor et tirer sur quiconque se trouvait à côté… par accident. Ou peut-être — pas du tout par accident\nJe le jure sur la mer, je suis resté coincé à la taverne toute une semaine, à interroger chaque personne qui était passée par la baie. Mais personne n’avait entendu parler de mes gars, ni de ce qui leur était arrivé\nFinalement, j’ai fini par accepter l’idée : il semble bien que je sois le seul à avoir survécu à cette maudite tempête. Le destin m’a juste été plus clément qu’aux autres. Ou alors… c’est peut-être grâce à l’amulette que m’a offerte, il y a longtemps, le jeune capitaine Eugenio de la Torre. Je l’ai toujours gardée sur moi. Et, bon sang, il faut croire qu’elle portait vraiment chance.";
+			dialog.text = "Il était trop dangereux de retourner sur le navire. Ceux qui avaient osé s’y aventurer pour le butin pouvaient ne pas se partager le trésor et tirer sur quiconque se trouvait à côté... par accident. Ou peut-être — pas du tout par accident\nJe le jure sur la mer, je suis resté coincé à la taverne toute une semaine, à interroger chaque personne qui était passée par la baie. Mais personne n’avait entendu parler de mes gars, ni de ce qui leur était arrivé\nFinalement, j’ai fini par accepter l’idée : il semble bien que je sois le seul à avoir survécu à cette maudite tempête. Le destin m’a juste été plus clément qu’aux autres. Ou alors... c’est peut-être grâce à l’amulette que m’a offerte, il y a longtemps, le jeune capitaine Eugenio de la Torre. Je l’ai toujours gardée sur moi. Et, bon sang, il faut croire qu’elle portait vraiment chance.";
 			link.l1 = "Et où est-il maintenant ? On dirait qu’il ne protège pas des squelettes, hein...";
 			link.l1.go = "LEDR_Gonsalo_17";
 		break;
@@ -259,7 +259,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "LEDR_Gonsalo_30":
-			dialog.text = "Je le jure sur tous les saints, je ne plaisante pas ! Ce foutu journal me brûle presque les mains. Il faut le détruire ! Le déchirer, le brûler, le jeter à la mer – n’importe quoi ! Non, attends… Mieux vaut le brûler. Oui, le brûler, pour qu’il n’en reste même pas de cendres !";
+			dialog.text = "Je le jure sur tous les saints, je ne plaisante pas ! Ce foutu journal me brûle presque les mains. Il faut le détruire ! Le déchirer, le brûler, le jeter à la mer – n’importe quoi ! Non, attends... Mieux vaut le brûler. Oui, le brûler, pour qu’il n’en reste même pas de cendres !";
 			link.l1 = "Comme tu voudras. Alors allons à terre, faisons un feu et envoyons cette chronique de méfaits aux flammes.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LEDR_10");
@@ -298,7 +298,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LEDR_Gonsalo_34_silence":
-			dialog.text = "J’aimerais y croire… Mais, par la mer, j’en ai vu trop à qui le destin souriait, malgré toutes leurs mauvaises actions. Peut-être que la justice les rattrapera – mais ce sera là-bas, dans ce fichu chaudron. Et toi, merci, capitaine. Pour ne pas t’être détourné, pour m’avoir écouté et raccompagné. Tu sais, ça compte beaucoup.";
+			dialog.text = "J’aimerais y croire... Mais, par la mer, j’en ai vu trop à qui le destin souriait, malgré toutes leurs mauvaises actions. Peut-être que la justice les rattrapera – mais ce sera là-bas, dans ce fichu chaudron. Et toi, merci, capitaine. Pour ne pas t’être détourné, pour m’avoir écouté et raccompagné. Tu sais, ça compte beaucoup.";
 			link.l1 = "Je t'avoue, ton histoire m'a d'abord paru comme le délire d'un fou. Mais tu la racontais avec une telle conviction que, bon gré mal gré, on finit par y croire. Pourtant, l'apparition de ces morts-vivants indiens m'a pris au dépourvu.";
 			link.l1.go = "LEDR_Gonsalo_35_1";
 			link.l2 = "Je voulais juste vérifier si tu n’étais pas fou. Tu comprends, ce n’est pas facile de croire à de telles histoires.";

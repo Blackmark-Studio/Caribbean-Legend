@@ -1,0 +1,17 @@
+Notification_ReputationCheckPassed {İtibar Kontrolü Geçildi}
+Notification_ReputationCheckFailed {İtibar Çok Düşük}
+Notification_PerkCheckPassed {Yetenek Kontrolü Geçildi}
+Notification_PerkCheckFailed {Avantaj Kontrolü Başarısız}
+Notification_SkillCheckPassed {Yetenek Kontrolü Başarılı}
+Notification_SkillCheckFailed {Yetenek Kontrolü Başarısız}
+Notification_LevelCheckPassed {Seviye Kontrolü Geçildi}
+Notification_LevelCheckFailed {Gerekli Seviye}
+CanBeCaptain {$attr($context.name) açık denizde bir gemiyi yönetemez \('Kaptan' yeteneği gerekli\)}
+Notification_ApproveCheckPassed {onaylıyor}
+Notification_ApproveCheckFailed {onaylamıyor}
+Notification_ReputationCheckFailed_High {İtibar Çok Yüksek}
+Notification_ReputationNationCheckPassed {İlişki Kontrolü Geçildi}
+Notification_ReputationNationCheckFailed {İlişki Çok Düşük}
+Notification_MoneyCheckPassed {Kontrol geçti}
+Notification_MoneyCheckFailed_Peso {Yeterli peso yok}
+Notification_MoneyCheckFailed_Dublon {Yeterli dublon yok}

@@ -27,9 +27,8 @@ void EncountersInit()
 
 int FindEncounter(int type, int nat)
 {
-	int iTypes[2]; 
-	int i;
-	SetArraySize(&iTypes, MAX_ENCOUNTER_TYPES * 10);
+    int i;
+	int iTypes[MAX_ENCOUNTER_TYPES*10]; 
 	for(i = 0; i < MAX_ENCOUNTER_TYPES*10; i++) iTypes[i] = -1;
 	int iNumTypes = 0;
 
@@ -253,8 +252,8 @@ void SetEncSlot_Params(int iEncType, int iSpec, int qMin, int qMax, int cMin, in
 // Получить количество кораблей
 int GetEncSlotQty(int BitMask)
 {
-    int min = and(BitMask, 15);
-    int max = and(shr(BitMask, 4), 15);
+    int min = and(BitMask, LBITS_4);
+    int max = and(shr(BitMask, 4), LBITS_4);
     return min + rand(max - min);
 }
 
@@ -282,15 +281,15 @@ void SetEncSlot_SpecRandom(int iEncType, bool bM, bool bW, bool bR, bool bU)
 // Проверить, участвует ли конкретная специализация в рандоме
 bool CheckEncRand_Spec(int BitMask, int iSpec)
 {
-    return and(shr(BitMask, iSpec), 1);
+    return and(shr(BitMask, iSpec), LBITS_1);
 }
 
 // Выбрать специализацию из участвующих в рандоме
 int GetEncRandSpec(int BitMask)
 {
-    int qty = and(shr(BitMask, 4), 15);
+    int qty = and(shr(BitMask, 4), LBITS_4);
     int offset = rand(qty-1);
-    return and(shr(BitMask, 8 + offset*2), 3);
+    return and(shr(BitMask, 8 + offset*2), LBITS_2);
 }
 
 bool EncProgress[60];

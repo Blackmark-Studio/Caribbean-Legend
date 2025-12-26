@@ -92,7 +92,7 @@ descriptor_descr_AmuletType_0 {借助预兆、海上传说和真实因果。}
 descriptor_descr_AmuletType_1 {汲取异教神灵与土著仪式的力量。}
 descriptor_descr_AmuletType_2 {汲取基督圣徒与正信的力量。}
 descriptor_descr_SingleCharge {仅有一发备用—务必命中。}
-descriptor_descr_MultiCharge {配备多根枪管、弹膛或转轮, 可连续射击多发。需特殊技能操作。}
+descriptor_descr_MultiCharge {配备多根枪管、弹膛或转轮, 可连续射击多发。 需特殊技能操作。}
 descriptor_descr_OneHanded {随身携带的手用武器, 可挂在腰带或绶带上。单发类型无 需特殊操作技能。}
 descriptor_descr_TwoHanded {重型火器, 射击时需双手持握。需具备专门技 能方可使用。}
 descriptor_descr_Bayonet {这款长枪管火器配有刺刀, 快速攻击伤害提升25%。}
@@ -106,7 +106,7 @@ descriptor_descr_SpyGlass_Crew_2 {这只望远镜能准确显示敌方船员、 
 descriptor_descr_SpyGlass_Caliber_0 {这只望远镜的镜片足够清晰, 不仅能看清火炮数量, 还能分辨口径。}
 descriptor_descr_SpyGlass_Caliber_1 {这只望远镜的高品质光学镜片可让 你看清火炮口径和所装弹药类型。}
 descriptor_descr_Special {该物品具有特殊属性。}
-descriptor_descr_Tool {一套复杂的仪器, 对外行毫无价值。但你可不是外行。}
+descriptor_descr_Tool {一套复杂的仪器, 对外行毫无价值。 但你可不是外行。}
 descriptor_descr_Valuable {售价较高。}
 descriptor_descr_BulletNeedPower {没有火药无法发射。}
 descriptor_descr_GrapeAmmo {多枚小型弹丸。对群体敌人或近距 离单个目标最为有效。}

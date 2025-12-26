@@ -1,0 +1,30 @@
+MerchantOnMap_1 {상인}
+MerchantOnMap_2 {소문에 따르면}
+MerchantOnMap_3 {멋진 해적}
+MerchantOnMap_4 {대담한 해적}
+MerchantOnMap_5 {, 걸렸다}
+MerchantOnMap_6 { }
+MerchantOnMap_7 { }
+MerchantOnMap_8 {~ 함정에, 그 속에 ~}
+MerchantOnMap_9 {그}
+MerchantOnMap_10 {그녀}
+MerchantOnMap_11 {~는 @<NationNameSK(sti(MerPrm.ination))> 당국에 유인당했습니다. 그들은 ~에게 사람을 보냈습니다.}
+MerchantOnMap_12 {그에게}
+MerchantOnMap_13 {그녀}
+MerchantOnMap_14 {~ 무장한 @<NationNameSK(sti(MerPrm.ination))> 병사들이 화물창에 숨어 있는 ''상선''이었다. 하지만 @<pchar.name>은 당황하지 않았다 ~}
+MerchantOnMap_15 { }
+MerchantOnMap_16 { }
+MerchantOnMap_17 {, ~}
+MerchantOnMap_18 {그}
+MerchantOnMap_19 {그녀}
+MerchantOnMap_20 {~ 그냥 전부 죽여버렸다!}
+MerchantOnMap_21 { }
+MerchantOnMap_22 { }
+MerchantOnMap_23 { }
+MerchantOnMap_24 { }
+MerchantOnMap_25 { }
+MerchantOnMap_26 { }
+MerchantOnMap_27 { }
+MerchantOnMap_28 { }
+MerchantOnMap_29 {~ 이것이 바로 우리의 대담한 해적 @<GetFullName(pchar)>입니다.}
+MerchantOnMap_30 {사람들은 대담한 해적 @<GetFullName(pchar)>이 @<NationNameSK(sti(MerPrm.ination))> 상인선을 약탈하기 시작했다고 말합니다. 그러자 우리 총독은 그를 끝장내기로 결심했죠. 유럽에서 온 수십 명의 정예 병사들을 태우고 상선으로 위장한 배를 보냈지만, 그 피에 굶주린 해적은 모두를 죽이고 또다시 법망을 피해 달아났습니다!}

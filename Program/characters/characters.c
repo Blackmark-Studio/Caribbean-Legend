@@ -173,7 +173,7 @@ bool CreateCharacter(ref character)
 	//{
 	float fgtlevel = LAi_GetCharacterFightLevel(character); // boal fix
 
-	//Rosarak - Коллизии
+	// Коллизии
 	if(CheckAttribute(character, "col_modif.BonusPush"))
 		SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetBonusPush", true);
     if(CheckAttribute(character, "col_modif.Unpushable"))
@@ -781,7 +781,7 @@ bool CanEquipHatDirectly(ref chr)
 	if(chr.model == "Diego_6") return true;
 	if(chr.model == "Diego_8") return true;
 	if(chr.model == "protocusto") return true;
-	if(HasSubStr(chr.model, "Willy")) return true;
+	//if(HasSubStr(chr.model, "Willy")) return true;
 	
 	return false;
 }

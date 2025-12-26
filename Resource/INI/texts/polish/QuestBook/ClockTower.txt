@@ -1,0 +1,20 @@
+#QUEST ClockTower
+Wieża Zegarowa
+#TEXT	1
+Najwyraźniej ZKI handluje czymś więcej niż tylko bezużytecznymi licencjami i narzędziami. Jeśli okażę się dla nich przydatny, być może Kompania okaże się przydatna również dla mnie. Najbardziej oczywiste to podnieść swoją reputację wśród kolonii holenderskich do Podziwu.
+#TEXT	2
+Zrobiłem wystarczająco dużo dla Republiki Wolnych Prowincji. Czas porozmawiać z tym miłym facetem Johanem, strażnikiem przy Biurze Rejestru Statków.
+#TEXT	3
+Zdumiewające, że to biuro jeszcze się trzyma! Moje dublony im nie wystarczają, więc będę musiał upolować piratów i zebrać pięć dzienników okrętowych. Mógłbym zdobyć więcej, skoro dali mi jasno do zrozumienia, że biuro będzie gotowe hojnie za nie płacić w przyszłości. Gdybym tylko wiedział wcześniej…
+#TEXT	4
+Dzienniki zebrane. Czas porozmawiać z Johanem.
+#TEXT	5
+Cóż za długi dzień. Willemstad zapamięta przybycie Dyrektora na długo. I choć teraz jestem klientem, a van Doorn był wobec mnie niesamowicie uprzejmy… mam kolejną ofertę pracy. Muszę włamać się do wieży w nocy i ukraść oryginalny kontrakt van Doorna. Obiecali mi nagrodę w dublonach i nieograniczony dostęp do usług biura.
+#TEXT	6
+Mam kontrakt! Van Doorn naprawdę przesiedział się w tej wieży. Zastępca Visser będzie oszalały ze szczęścia. Mogę go znaleźć w ciągu dnia w centralnym skrzydle budynku.
+#TEXT	7
+Teraz pozostaje tylko czekać. Powinienem odwiedzić Vissera za kilka miesięcy i dowiedzieć się, jak poszedł jego zamach.
+#TEXT	8
+Myślę, że minęło wystarczająco dużo czasu. Pora sprawdzić, jak radzi sobie Visser na Curaçao.
+#TEXT	9
+I to wszystko. Zastępca… a raczej Dyrektor Maarten Visser dostał, czego chciał, i dotrzymał słowa: mogę korzystać z usług biura w dowolnym momencie bez tych absurdalnych zapisów. Van Doorn, oczywiście, dowiedział się o moim udziale w tej wątpliwej sprawie, ale nie mam się czego obawiać mocy jego legendarnej fregaty. Okręt flagowy ZKI przyjdzie po moją duszę tylko wtedy, gdy Holendrzy uznają mnie za wystarczające zagrożenie dla swoich interesów. Mówią, że ten statek to prawdziwy klejnot Morza Karaibskiego… kuszące, do diabła.

@@ -1,0 +1,22 @@
+colony_1 {Yaralardan dolayı ilaç eksikliğinden  @<iTemp>  denizci öldü}
+colony_2 {@<Pchar.Ship.Name> gemisinde az miktarda tıbbi malzeme kaldı}
+colony_3 {Kasaba Savaşı'na Hazırlan}
+colony_4 {HATA: Şehir ele geçirilirken dolaşma rotası belirtilmedi!}
+colony_5 {Düşman kuvvetleri bastırıldı! Yol açık.}
+colony_6 {Aldınız ~}
+colony_7 {Aldınız ~}
+colony_8 {Aldınız - Balta}
+colony_9 {Aldınız - Saxon Feather}
+colony_10 {Aldınız - Madonna}
+colony_11 {Chevalier Philippe}
+colony_12 {de Poincy}
+colony_13 {lord Thomas}
+colony_14 {Vindzor}
+colony_15 {don Juan}
+colony_16 {de Cordova}
+colony_17 {albay}
+colony_18 {Jonathan Fox}
+colony_19 {Şehrimiz @<GetCityName(city)> kuşatma altında!}
+colony_20 {Kuşatma kaldırıldı!}
+colony_21 {Şehrimiz @<GetCityName(city)> kuşatma altında!}
+colony_22 {Şehrimiz @<GetCityName(city)> ele geçirildi!}

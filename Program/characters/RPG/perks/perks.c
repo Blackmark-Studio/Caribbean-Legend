@@ -21,11 +21,14 @@ void InitPerks()
 
 bool CheckCharacterPerk(ref chref, ref perkEntity)
 {
-	switch (VarType(&perkEntity))
+	switch (VarType(perkEntity))
 	{
 		case "string": return HasPerk(chref, perkEntity); break;
 		case "aref":   return CheckAttribute(chref, "perks.list."+GetAttributeName(perkEntity)); break;
 	}
+
+	Log_Info("expected string or aref, but "+VarType(perkEntity)+" got");
+	return false;
 }
 
 bool HasPerk(ref chr, string perkName)
@@ -132,7 +135,8 @@ bool ApplyPerkEffects(ref chr, string perkName, bool fromOfficer)
 	aref modifiers;
 	makearef(modifiers, perk.modifiers);
 	aref table = CT_GetTable(chr, CT_STATIC);
-	for (int i = 0; i < GetAttributesNum(modifiers); i++)
+	int modifiersNum = GetAttributesNum(modifiers);
+	for (int i = 0; i < modifiersNum; i++)
 	{
 		aref modifier = GetAttributeN(modifiers, i);
 		string modifierName = GetAttributeName(modifier);
@@ -185,12 +189,13 @@ void DelCharacterPerkNoCash(ref chref, string perkName)
 	RemoveChrModifier(chref, perkName);
 	RemoveChrModifier(chref, "perk_" + perkName);
 	aref callbacks = GetPerkCallbacks(perkName);
-	makearef(callbacks, ChrPerksList.list.(perkName).modifiers.callbacks);
-	for (int i = 0; i < GetAttributesNum(callbacks); i++)
+	int callbacksNum = GetAttributesNum(callbacks);
+	for (int i = 0; i < callbacksNum; i++)
 	{
 		aref functionsList = GetAttributeN(callbacks, i);
 		string listName = GetAttributeName(functionsList);
-		for (int j = 0; j < GetAttributesNum(functionsList); j++)
+		int functionsNum = GetAttributesNum(functionsList);
+		for (int j = 0; j < functionsNum; j++)
 		{
 			aref function = GetAttributeN(functionsList, j);
 			string funcName = GetAttributeName(function);
@@ -476,6 +481,8 @@ void EnableUsingAbility(ref chref,string perkName)
 
 void PerkLoad()
 {
+	// evganat - постэвенты теперь грузятся из сейва
+	return;
 //	int iRDTSC = RDTSC_B();
 	string locName = pchar.location;
 	aref arPerksRoot,arPerk;

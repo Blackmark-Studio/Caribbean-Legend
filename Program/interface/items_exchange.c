@@ -1246,18 +1246,16 @@ void ShowItemInfo()
 	{
 		ref arItm = &Items[iCurGoodsIdx];
 		currentItem = arItm;
-		int lngFileID = LanguageOpenFile("ItemsDescribe.txt");
 
 		describeStr += GetItemDescr(iCurGoodsIdx);
 		AddRecipeKnownMarker(&Items[iCurGoodsIdx], &describeStr);
 		AddMapKnownMarker(&Items[iCurGoodsIdx], &describeStr);
 		SetNewGroupPicture("INFO_ITEMS_PICTURE", Items[iCurGoodsIdx].picTexture, "itm" + Items[iCurGoodsIdx].picIndex);
-		sCaption = LanguageConvertString(lngFileID, Items[iCurGoodsIdx].name);
+		sCaption = GetItemName(&Items[iCurGoodsIdx]);
 		SetFormatedText("INFO_CAPTION", sCaption);
 		SetFormatedText("INFO_ITEMS_TEXT", describeStr);
 		SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"INFO_ITEMS_TEXT", 5 );
 		SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"INFO_CAPTION", 5 );
-		LanguageCloseFile(lngFileID);
 		XI_WindowDisable("INFO_WINDOW", false);
 		XI_WindowShow("INFO_WINDOW", true);
 		validLineClicked = false;
@@ -1668,10 +1666,8 @@ void onTableRemoveBtnClick()
 // инфа о предмете
 void ShowGoodsInfo(int iGoodIndex)
 {
-	string GoodName = Items[iGoodIndex].name;
 	ref    arItm = &Items[iGoodIndex];
-	int    lngFileID = LanguageOpenFile("ItemsDescribe.txt");
-	string sHeader = LanguageConvertString(lngFileID, GoodName);
+	string sHeader = GetItemName(arItm);
 
 	iCurGoodsIdx = iGoodIndex;
 	string describeStr = "";
@@ -1694,7 +1690,6 @@ void ShowGoodsInfo(int iGoodIndex)
 	SetNewGroupPicture("QTY_GOODS_PICTURE", Items[iCurGoodsIdx].picTexture, "itm" + Items[iCurGoodsIdx].picIndex);
 	SetFormatedText("QTY_CAPTION", sHeader);
 	SetFormatedText("QTY_GOODS_INFO", describeStr);
-	LanguageCloseFile(lngFileID);
 
 	iCharQty 	= GetCharacterFreeItem(refCharacter, Items[iCurGoodsIdx].id);
 	iStoreQty 	= GetCharacterFreeItem(refToChar, Items[iCurGoodsIdx].id);

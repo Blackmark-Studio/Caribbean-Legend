@@ -1,0 +1,60 @@
+Ship_critical {Kritik Vuruş!}
+Ship_critical_notif {' - Kritik Vuruş!}
+Ship_sunk {%1 "%2" battı. +%3 deneyim kazanıldı.}
+Ship_sunk_other {%1 "%2" battı.}
+Ship_got_good {%1 kantar %2 gemiye alındı}
+Ship_cant_got_good {%1 için yer yok}
+Fort_destroy {Fort %1 yok edildi. +%2 deneyim kazanıldı.}
+Fort_destroy_notif {Fort Topçusu Bastırıldı!}
+Fort_cannon {Kalede top yok edildi!}
+seg_Balls {gülle}
+seg_Grapes {Saçma}
+seg_Knippels {zincir gülle}
+seg_Bombs {bombalar}
+seg_Sailcloth {Yelken bezi}
+seg_Planks {tahta}
+seg_Slaves {Köleler}
+seg_Wheat {buğday}
+seg_Ebony {Abanoz}
+seg_Chocolate {Kakao}
+seg_Sugar { }
+seg_Wine {Şarap}
+seg_ShipSilk {Gemi ipeği}
+seg_Rum {rom}
+seg_Tobacco {Tütün}
+seg_Coffee {Kahve}
+seg_Mahogany {maun}
+seg_Cinnamon {vanilya}
+seg_Copra {kopra}
+seg_Paprika {Paprika}
+seg_Fruits {Meyve}
+seg_Ale {Bira}
+seg_Ropes {Halatlar}
+seg_Clothes {Kıyafetler}
+seg_Cotton {Pamuk}
+seg_Sandal {demir ağacı}
+seg_Leather {Deri}
+seg_Oil {Reçine}
+seg_Food {erzak}
+seg_Weapon {Silahlar}
+seg_Gold {altın}
+seg_Silver {gümüş}
+seg_Powder {barut}
+seg_Brick {tuğla}
+seg_Medicament {ilaç}
+seg_Cannon_3 {3p. falconet}
+seg_Cannon_6 {6 librelik}
+seg_Cannon_8 {8 librelik}
+seg_Cannon_12 {12 librelik}
+seg_Cannon_16 {16 librelik}
+seg_Cannon_18 {18 librelik}
+seg_Cannon_20 {20 librelik}
+seg_Cannon_24 {24 librelik top}
+seg_Cannon_32 {32 librelik}
+seg_Cannon_36 {36 librelik toplar}
+seg_Cannon_42 {42 librelik}
+seg_Cannon_48 {48 librelik toplar}
+seg_Culverine_8 {Yarım kulevrin}
+seg_Culverine_18 {Kulevrin}
+seg_Culverine_36 {Tam kulevrinler}
+sea_exp_add {+%1 deneyim kazanıldı}

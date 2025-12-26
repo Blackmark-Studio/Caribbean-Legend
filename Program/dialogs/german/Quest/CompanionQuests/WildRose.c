@@ -2440,7 +2440,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Mary_101":
-			dialog.text = "Hier, "+pchar.name+", schau mal, ja, gell! Joshua und Teresa Casper! Ich kann’s kaum fassen – wir haben es geschafft, geschafft, ja, gell! Und der Name des Schiffs – ‚Wrangler‘! Jetzt können wir alles über meinen Vater herausfinden – wer er war, wie er hierher gekommen ist…";
+			dialog.text = "Hier, "+pchar.name+", schau mal, ja, gell! Joshua und Teresa Casper! Ich kann’s kaum fassen – wir haben es geschafft, geschafft, ja, gell! Und der Name des Schiffs – ‚Wrangler‘! Jetzt können wir alles über meinen Vater herausfinden – wer er war, wie er hierher gekommen ist...";
 			link.l1 = "Ich fürchte, "+npchar.name+", du bist zu voreilig...   Das könnte sich als schwieriger erweisen, als es scheint.   Ein Schiff Seiner Majestät...   Wir müssen überlegen, wer uns helfen könnte, an Informationen aus den Archiven der Königlichen Flotte zu kommen...";
 			link.l1.go = "WildRose_Mary_102";
 			DelLandQuestMark(npchar);

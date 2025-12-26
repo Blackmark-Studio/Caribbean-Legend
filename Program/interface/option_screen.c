@@ -236,6 +236,8 @@ void ProcessOkExit()
 	if(iEnabledShipMarks > 0) bDrawBars = true;
 	else bDrawBars = false;
 	
+	if(CheckAttribute(&InterfaceStates,"SFW")) bSFW = sti(InterfaceStates.SFW);
+	
 	if(iLocation != -1)
 		SetLocationCharacterMarksOptions(&Locations[iLocation]);
 	Camera_CheckPreset();
@@ -360,6 +362,12 @@ void IReadVariableAfterInit()
 		nClassicSoundScene = sti(InterfaceStates.ClassicSoundScene);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CLASSIC_SOUNDSCENE_CHECKBOX", 2, 1, nClassicSoundScene);
+
+	int nSFW = 0;
+	if(CheckAttribute(&InterfaceStates,"SFW")) {
+		nSFW = sti(InterfaceStates.SFW);
+	}
+	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"SFW_CHECKBOX", 2, 1, nSFW);
 
 	int nAdvancedChange = 0;
 	if(CheckAttribute(&InterfaceStates,"AdvancedChange")) {
@@ -772,6 +780,12 @@ void procCheckBoxChange()
 	{
 		{
 			InterfaceStates.ClassicSoundScene = bBtnState;
+		}
+	}	
+	if(sNodName == "SFW_CHECKBOX") 
+	{
+		{
+			InterfaceStates.SFW = bBtnState;
 		}
 	}	
 	if(sNodName == "AUTOSAVE_CHECKBOX") 
@@ -1512,7 +1526,7 @@ void ShowInfo()
 			sPicture = "interfaces\le\help\fov.tga";
 		break;
 // Controls
-		case "CONTROLS_LIST":
+		case "HELP":
 			sHeader = XI_ConvertString("Button Settings");
 			sText1 = XI_ConvertString("Button Settings_descr");
 			sText2 = XI_ConvertString("Button Settings_descr2");
@@ -1553,6 +1567,10 @@ void ShowInfo()
 		case "CLASSIC_SOUNDSCENE_CHECKBOX_FRAME":
 			sHeader = XI_ConvertString("Classic Soundscene");
 			sText1 = XI_ConvertString("Classic Soundscene_descr");
+		break;
+		case "SFW_CHECKBOX_FRAME":
+			sHeader = XI_ConvertString("SFW");
+			sText1 = XI_ConvertString("SFW_descr");
 		break;
 // Other
 		case "AUTOSAVE2_CHECKBOX_FRAME":
@@ -1734,6 +1752,9 @@ void RestoreDefaultSettings()
 
 	InterfaceStates.ClassicSoundScene =  1;
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CLASSIC_SOUNDSCENE_CHECKBOX", 2, 1, 1);
+
+	InterfaceStates.SFW =  0;
+	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"SFW_CHECKBOX", 2, 1, 0);
 
 	GameInterface.nodes.GAMMA_SLIDE.value = 0.5;
 	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "GAMMA_SLIDE", 0, 0.5);

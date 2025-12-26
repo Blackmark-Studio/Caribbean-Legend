@@ -1993,20 +1993,16 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 			{
 				if(n > 0)
 				{
-					idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-					if(pchar.chr_ai.type == "player" && !LAi_IsDead(pchar)) notification(StringFromKey("characterUtilite_3")+LanguageConvertString(idLngFile, arItm.name), "BoxPlus");
+					if(pchar.chr_ai.type == "player" && !LAi_IsDead(pchar)) notification(StringFromKey("characterUtilite_3")+GetItemName(arItm), "BoxPlus");
 					//Log_Info(XI_ConvertString("You take item"));
 					AddMsgToCharacter(_refCharacter, MSGICON_GETITEM);
-					LanguageCloseFile(idLngFile);
 				}
 				
 				if(n < 0)
 				{
-					idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-					//log_info("Отдано: "+LanguageConvertString(idLngFile, arItm.name))
-					if(dialogrun) notification(StringFromKey("characterUtilite_5")+LanguageConvertString(idLngFile, arItm.name), "BoxMinus");
+					//log_info("Отдано: "+GetItemName(arItm))
+					if(dialogrun) notification(StringFromKey("characterUtilite_5")+GetItemName(arItm), "BoxMinus");
 					//Log_Info(XI_ConvertString("You give item"));
-					LanguageCloseFile(idLngFile);
 				}
 			}
 		}
@@ -2526,6 +2522,7 @@ void SetEquipedItemToCharacter(ref chref, string groupID, string itemID)
 			SendMessage(chref, "lsl", MSG_CHARACTER_EX_MSG, "UntieItem", 10);
 			if(HasHatLocator(chref))
 			{
+				if(CheckAttribute(chref, "HatShow") && sti(chref.HatShow) == 0) return;
 				SendMessage(chref, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", 10, modelName, "hat", 1);
 			}
 		break;
@@ -3000,13 +2997,11 @@ void UpdateCharacterEquipItem(ref chref)
 				arEquip.(sAttr).time = sti(arEquip.(sAttr).time) - 1;
 				if(sti(arEquip.(sAttr).time) == 0) 
 				{
-					idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 					sItem = GetCharacterEquipBySlot(chref, sAttr);
 					ref arItem = ItemsFromID(sItem);
-					pchar.systemInfo.messages.Artefact = GetFullName(chref) + StringFromKey("characterUtilite_6", LanguageConvertString(idLngFile, arItem.name))+ LanguageConvertString(idLngFile, "new_string");
-					//Log_SetStringToLog(GetFullName(chref) + " заметил, что артефакт " + LanguageConvertString(idLngFile, arItem.name) + " утратил силу");
+					pchar.systemInfo.messages.Artefact = GetFullName(chref) + StringFromKey("characterUtilite_6", GetItemName(arItem.id))+ NewStr();
+					//Log_SetStringToLog(GetFullName(chref) + " заметил, что артефакт " + GetItemName(arItem.id)) + " утратил силу");
 					RemoveCharacterArtefactEquip(chref, sAttr);
-					LanguageCloseFile(idLngFile);
 					if(!IsMainCharacter(chref) && GetCharacterFreeItem(chref, sItem) > 0)
 					{
 						EquipCharacterByArtefact(chref, sItem);
@@ -4566,12 +4561,17 @@ string GetMessagePortrait(ref chr)
 }
 
 // Может ли персонаж прокачать себе этот перк
-bool CanTakePerk(ref chr, ref perkEntity, string reason)
+bool CanTakePerk(ref chr, ref perkEntity, ref reason)
 {
 	ref perk = FindPerk_VT(&perkEntity);
 	aref condtionPerks;
 	string perkName = GetAttributeName(perk);
 
+	if (!CheckAttribute(perk, "baseType"))
+	{
+		reason = "disabled";
+		return false;
+	}
 	string pointsAttribute = "FreePoints_" + perk.baseType;
 	if (HasPerkNatural(chr, perkName))                                       reason = "alreadyHave";     // уже есть
 	else if (!IsFellowOurCrew(chr))                                          reason = "notFellow";       // не можем качать навыки чужим
@@ -4600,6 +4600,7 @@ bool CheckPerkFilter(ref chr, ref perkEntity) {
 	if (IsMainCharacter(chr) && CheckAttribute(perk, "NPCOnly")) return true;
 	if (!IsMainCharacter(chr) && CheckAttribute(perk, "PlayerOnly")) return true;
 	if (perkName == "Captain" && CheckAttribute(chr, "CompanionDisable")) return true;
+	if (CheckAttribute(perk, "Hidden")) return true;
 	if (!CheckAttribute(perk, "HeroType")) return false;
 	if (!CheckCharacterPerk(chr, perk.HeroType)) return true;
 	return false;
@@ -4637,4 +4638,12 @@ bool CanEquipFireArmsNow(ref chr, ref item)
 	if (HasDescriptor(item, "Multicharge") || HasDescriptor(item, "TwoHanded")) return false;
 
 	return true;
+}
+
+// Есть ли государственный титул
+bool IsStateTitle()
+{
+	if (CheckAttribute(pchar, "questTemp.Patria.GenGovernor")) return true;
+	if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4) return true;
+	return false;
 }

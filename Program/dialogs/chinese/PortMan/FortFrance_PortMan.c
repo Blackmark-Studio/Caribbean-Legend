@@ -23,6 +23,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "有人告诉我你有一封给我的信。 我叫查尔斯.德.莫尔船长。 ";
 			link.l1.go = "LH_letter";
 		}
+		//--> Эпилог
+		if (CheckAttribute(pchar, "questTemp.SharlieEpilog_PU_Ulysse"))
+		{
+					link.l1 = "我听说, 名为‘"+GetShipName("Ulysse")+"’的轻型帆船最近被拿去拍卖了。 是真的吗? ";
+					link.l1.go = "SharlieEpilog_PU_Ulysse_1";
+		}
+		//<-- Эпилог
 		break;
 		
 		case "Sharlie":
@@ -71,6 +78,22 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddMoneyToCharacter(pchar, -12000);
 			LongHappy_RecibeLetter();
 		break;
+		
+		//--> Эпилог
+		case "SharlieEpilog_PU_Ulysse_1":
+			dialog.text = "没错。船主深陷保险债务, 只好把这艘船拿出来拍卖。 不过你来得稍微晚了一点——竞拍已经结束, 新船主正在办理手续。 ";
+			link.l1 = "能告诉我在哪里能找到他吗? 我需要和他谈谈。";
+			link.l1.go = "SharlieEpilog_PU_Ulysse_2";
+			DelLandQuestMark(npchar);
+			SharlieEpilog_SpawnPikar();
+		break;
+		
+		case "SharlieEpilog_PU_Ulysse_2":
+			dialog.text = "还用找吗? 转过身去——他就在你身后。";
+			link.l1 = "...";
+			link.l1.go = "exit";			
+		break;
+		//<-- Эпилог
 	}
 	UnloadSegment(NPChar.FileDialog2);  // 如果switch内部某处通过return退出, 别忘了进行卸载
 }

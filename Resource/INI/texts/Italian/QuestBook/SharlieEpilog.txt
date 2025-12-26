@@ -1,0 +1,63 @@
+#QUEST SharlieEpilog
+Epilogo
+#TEXT 1_1
+Ho fatto visita all’abate Benoît, e mi ha confidato che mio padre teme che la malattia lo porterà via prima che possiamo rivederci. Nella sua lettera mi diceva la stessa cosa, ma ha taciuto sul fatto che si sente sempre più debole ogni giorno.
+Ho dovuto prendere una decisione difficile: salpare il prima possibile.
+Tuttavia, considerando la mia situazione attuale, non posso semplicemente lasciare tutto e tornare nel Vecchio Mondo. Prima devo prendere alcune decisioni per poter lasciare l’arcipelago a cuor leggero. L’abate ha promesso di aiutarmi – con il suo aiuto potrò trasmettere le istruzioni necessarie a chi di dovere.
+Mi ha anche consigliato di saldare tutti i debiti, se ce ne sono. Gli usurai hanno le braccia lunghe – e non c’è dubbio che per i loro soldi non si fermeranno davanti a nulla.
+#TEXT 1_2
+Ho fatto visita all’abate Benoît, e mi ha confidato che mio padre teme che la malattia lo porterà via prima che possiamo rivederci. Nella sua lettera mi diceva la stessa cosa, ma ha taciuto sul fatto che si sente sempre più debole ogni giorno.
+Purtroppo, partire subito per il Vecchio Mondo non è possibile – ho diverse questioni importanti da risolvere immediatamente. Il viaggio di andata e ritorno potrebbe richiedere molto tempo, e sono certo che mio padre insisterà perché io rimanga nella tenuta per almeno qualche mese. L’idea non mi attira affatto.
+#TEXT 2
+L’abate ha ragione – non posso più rimandare la partenza. Tuttavia, considerando la mia situazione attuale, non posso semplicemente lasciare tutto e tornare nel Vecchio Mondo. Prima devo prendere alcune decisioni per poter lasciare l’arcipelago a cuor leggero. Il sacerdote stesso ha promesso il suo aiuto – con lui potrò trasmettere le istruzioni necessarie a chi di dovere.
+Mi ha anche consigliato di saldare tutti i debiti, se ce ne sono. Gli usurai hanno le braccia lunghe – e non c’è dubbio che per i loro soldi non si fermeranno davanti a nulla.
+#TEXT 3_1
+Ho deciso di mettere Isla Mona sotto il dominio di Sua Maestà. È l’unico modo per garantirne la sicurezza. I corrieri dell’abate informeranno entrambe le parti della mia decisione. Spero che Rodgar trovi la forza di sottomettersi alla civiltà che avanza.
+#TEXT 3_2
+Ho deciso di lasciare Isla Mona sotto la supervisione di Jan Swenson. Sono certo che saprà garantire sia la sicurezza degli abitanti che il buon funzionamento della fattoria. Naturalmente, ho chiesto una parte dei profitti – non si regala certo un boccone così prelibato.
+#TEXT 4_1
+Ho raccontato all’abate del mio baronato a Le François e ho deciso di rinunciarvi, come ho comunicato a Marcus in una lettera. A dire il vero, è stato come togliermi un peso dal cuore. La pirateria è finita. Anche se alcuni miei amici sono ancora pirati – io non voglio più averci niente a che fare.
+#TEXT 4_2
+L’abate non approverebbe mai il mio baronato a Le François, quindi è meglio che non lo sappia. Tuttavia, ho inviato una lettera a Marcus con la mia decisione di rinunciarvi. Chi sa cosa potrebbero fare i pirati nell’arcipelago in mia assenza, usando il mio nome. Non mi interessa particolarmente chi prenderà il mio posto.
+#TEXT 5_1
+Dopo averci riflettuto a fondo, ho deciso di rinunciare alla patente francese. Non voglio portare con me un tale impegno quando incontrerò mio padre… e, a dire il vero, ho quasi dimenticato com’è vivere senza combattere continuamente. Spero che i prossimi mesi non siano insopportabilmente noiosi.
+#TEXT 5_2
+Dopo una breve riflessione, ho deciso di rimanere al servizio della Francia e di Sua Maestà. Ho informato la cancelleria di Capsterville della mia prossima partenza per il Vecchio Mondo, anche se, a dire il vero, spero di non dovermi trattenere troppo a lungo. La vita lontano dalla nave e dalle battaglie mi è diventata… estranea. Ma durante il viaggio avrò abbastanza tempo per riflettere.
+#TEXT 6
+Ho deciso di portare con me @<sSum> pesos. Credo che portarne di più sarebbe imprudente – durante il viaggio potrebbe succedere di tutto alla nave. Ho fatto in modo che questo denaro fosse “pulito”: l’abate, in cambio di una donazione di @<tSum> pesos, gli ha dato la sua benedizione. Davanti a mio padre, è denaro pulito – e tanto mi basta.
+#TEXT 7
+Ho deciso di informare Jan Swenson della mia decisione di partire per il Vecchio Mondo. Dopo tutto quello che abbiamo vissuto insieme, non potevo lasciarlo all’oscuro.
+#TEXT 8
+Se avessi avuto più tempo, avrei detto di persona a Nathan e Danielle Houk della mia partenza. In fondo, sono diventati quasi una famiglia per me. Ma, ahimè, adesso proprio non c’è tempo. Penso che una lettera possa alleviare un po’ l’impatto della mia partenza improvvisa.
+#TEXT 8_1
+Ho informato Gino Guineyli che sto lasciando l’arcipelago per un periodo indefinito. Finché non potrò più aiutarlo economicamente, gli ho concesso di affittare parte della casa per mantenersi e continuare i suoi esperimenti.
+#TEXT 9
+Bene, sembra che abbia sistemato tutto, ed è tutto pronto per la partenza. Devo parlare con l’abate.
+#TEXT 10
+L’abate mi ha informato che la pinassa *Ulysse*, con cui ero giunto su queste coste quand’ero ancora un libertino ozioso e un tormento per ogni uomo onesto, è ora messa all’asta. Divertente – il destino mi offre l’occasione di tornare a casa sulla stessa nave da cui tutto è cominciato. Diavolo, è una tentazione. Forse dovrei andare all’amministrazione portuale e informarmi su quando si terrà la vendita.
+#TEXT 11_1
+Ma guarda un po’! L’asta è già avvenuta, e il vincitore non è altri che Jean Picard – proprio colui che una volta salvai da una piantagione vicino a Maracaibo. Ha deciso di abbandonare la pirateria e darsi al commercio, comprando per l’occasione proprio la *Ulysse*. E ancora più curioso – la sua rotta è la stessa della mia: Bordeaux.
+Ho deciso che mi farà bene essere passeggero in questo viaggio, così gli ho chiesto di prendermi a bordo. Sarà tempo per riflettere… sulla vita, sulla casa, sulla famiglia. Forse è davvero ora che mi stabilisca a terra.
+A proposito di famiglia – non ho ancora parlato con mia moglie. Avrei dovuto farlo prima, ma come al solito ero troppo occupato…
+La partenza è tra due settimane – Jean mi aspetterà alla taverna.
+#TEXT 11_2
+Ma guarda un po’! L’asta è già avvenuta, e il vincitore non è altri che Jean Picard – proprio colui che una volta salvai da una piantagione vicino a Maracaibo. Ha deciso di abbandonare la pirateria e darsi al commercio, comprando per l’occasione proprio la *Ulysse*. E ancora più curioso – la sua rotta è la stessa della mia: Bordeaux.
+Ho deciso che mi farà bene essere passeggero in questo viaggio, così gli ho chiesto di prendermi a bordo. Sarà tempo per riflettere… sulla vita, sulla casa, sulla famiglia. Forse è davvero ora che mi stabilisca a terra, trovi una moglie – o, come insiste mio padre, che prenda in considerazione Yvonne La Brignée.
+La partenza è tra due settimane – Jean mi aspetterà alla taverna. Nel frattempo devo parlare con gli ufficiali. Chissà quanto durerà il mio viaggio… Sembra proprio che sia tempo di dire addio.
+#TEXT 11_3
+Sono arrivato tardi – l’asta era già finita, e il vincitore è qualcuno chiamato @<sName>. Ha rifiutato categoricamente di vendere la pinassa, ma a quanto pare condividiamo la rotta – entrambi stiamo partendo per Bordeaux. Ho deciso che mi farà bene essere passeggero in questo viaggio, così gli ho chiesto di prendermi a bordo. Sarà tempo per riflettere… sulla vita, sulla casa, sulla famiglia. Forse è davvero ora che mi stabilisca a terra.
+A proposito di famiglia – non ho ancora parlato con mia moglie. Avrei dovuto farlo prima, ma come al solito ero troppo occupato…
+#TEXT 11_4
+Sono arrivato tardi – l’asta era già finita, e il vincitore è qualcuno chiamato @<sName>. Ha rifiutato categoricamente di vendere la pinassa, ma a quanto pare condividiamo la rotta – entrambi stiamo partendo per Bordeaux. Ho deciso che mi farà bene essere passeggero in questo viaggio, così gli ho chiesto di prendermi a bordo. Sarà tempo per riflettere… sulla vita, sulla casa, sulla famiglia. Forse è davvero ora che mi stabilisca a terra, trovi una moglie – o, come insiste mio padre, che prenda in considerazione Yvonne La Brignée.
+La partenza è tra due settimane – il capitano mi aspetterà alla taverna. Nel frattempo devo parlare con Alonso e gli ufficiali. Chissà quanto durerà il mio viaggio… Sembra proprio che sia tempo di dire addio.
+#TEXT 11_5
+Ma guarda un po’! L’asta è già avvenuta, e il vincitore non è altri che Jean Picard – proprio colui che una volta tentai di salvare da una piantagione vicino a Maracaibo. A quanto pare quel furfante non solo è sopravvissuto, ma è riuscito a prendere tutta la fortuna della vedova del piantatore. Ora ha deciso di abbandonare la pirateria e darsi al commercio, comprando per l’occasione proprio la *Ulysse*. E ancora più curioso – la sua rotta è la stessa della mia: Bordeaux.
+Ho deciso che mi farà bene essere passeggero in questo viaggio, così gli ho chiesto di prendermi a bordo. Sarà tempo per riflettere… sulla vita, sulla casa, sulla famiglia. Forse è davvero ora che mi stabilisca a terra.
+A proposito di famiglia – non ho ancora parlato con mia moglie. Avrei dovuto farlo prima, ma come al solito ero troppo occupato…
+La partenza è tra due settimane. Jean mi aspetterà alla taverna – abbiamo concordato di fare una bella festa prima di salpare.
+#TEXT 11_6
+Ma guarda un po’! L’asta è già avvenuta, e il vincitore non è altri che Jean Picard – proprio colui che una volta tentai di salvare da una piantagione vicino a Maracaibo. A quanto pare quel furfante non solo è sopravvissuto, ma è riuscito a prendere tutta la fortuna della vedova del piantatore. Ora ha deciso di abbandonare la pirateria e darsi al commercio, comprando per l’occasione proprio la *Ulysse*. E ancora più curioso – la sua rotta è la stessa della mia: Bordeaux.
+Ho deciso che mi farà bene essere passeggero in questo viaggio, così gli ho chiesto di prendermi a bordo. Sarà tempo per riflettere… sulla vita, sulla casa, sulla famiglia. Forse è davvero ora che mi stabilisca a terra, trovi una moglie – o, come insiste mio padre, che prenda in considerazione Yvonne La Brignée.
+La partenza è tra due settimane. Jean mi aspetterà alla taverna – abbiamo concordato di fare una bella festa prima di salpare. Nel frattempo devo parlare con gli ufficiali. Chissà quanto durerà il mio viaggio… Sembra proprio che sia tempo di dire addio.
+#TEXT 12
+Ora resta la parte più difficile – sciogliere l’equipaggio e gli ufficiali. Sarà particolarmente duro dire addio ad alcuni di loro, considerando tutto quello che abbiamo passato insieme… Mi occuperò personalmente degli ufficiali, e incaricherò Alonso di parlare con l’equipaggio.

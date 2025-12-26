@@ -53,6 +53,7 @@ seg_Cannon_24 {Canon de 24 livres}
 seg_Cannon_32 {Canon de 32 livres}
 seg_Cannon_36 {Canon de 36 livres}
 seg_Cannon_42 {Canon de 42 livres}
+seg_Cannon_48 {Canon de 48 livres}
 seg_Culverine_8 {Demi-couleuvrine}
 seg_Culverine_18 {Couleuvrine}
 seg_Culverine_36 {Couleuvrine complète}

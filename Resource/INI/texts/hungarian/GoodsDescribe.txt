@@ -1,246 +1,0 @@
-newline
-{
-
-}
-Balls {Körlövés}
-Balls_descr
-{
-A legolcsóbb, legkönnyebben használható és megbízható lôszertípus. A körlövedékeket általában arra használják, hogy nagy távolságból kárt okozzanak a hajótestben és megtámadják a part menti védelmi építményeket, de nem túl hatékonyak az ellenséges legénység megrongálásában.Alap sérülés: hajótest - #f.2DamageHull#, vitorlák-#f.2DamageRig#, legénység-#f.2DamageCrew.#
-}
-Grapes {Kartács}
-Grapes_descr
-{
-Egy vászonzsákkal összetartott, apró ólom- vagy vasból kovácsolt golyókból álló rakomány.Nagyon rövid hatásos hatótávolsággal rendelkezik. Becsapódáskor nem okoz nagy kárt a hajótestben, de pusztító sebzést okoz az ellenséges legénységben. Széles körben használják a tengeri harcokban, hogy megpuhítsák az ellenséges hajót a partraszállás elôtt.Alap sérülés: hajótest - #f.2DamageHull#, vitorlák-#f.2DamageRig#, legénység-#f.2DamageCrew.#
-}
-Knippels {Lánclövés}
-Knippels_descr
-{
-Két ágyúgolyóból álló lövedék, amelyet vaslánc vagy rúd köt össze. Ezt a lôszert az árbocok, a gerendák és a tákolmányok megrongálására használják.Általában a lánclövés közepes és nagy távolságon alacsony hatékonyságú, mivel a lánc hajlamos a knippelt pontatlanul bukfencezni. Ezek kiszámíthatatlan röppályával rendelkeznek, és nagyon kevés kárt okoznak a hajótestben. Azonban átszakítják a vitorlákat és a kötélzetet, és képesek az árbocokat ledönteni, mozgásképtelenné téve az ellenséges hajókat.Alap sérülés: hajótest - #f.2DamageHull#, vitorlák-#f.2DamageRig#, legénység-#f.2DamageCrew.#
-}
-Bombs {Bombák}
-Bombs_descr
-{
-A bombák a legdrágább és legpusztítóbb lôszertípus. Ezek a bombák lôporral töltött öntöttvas üreges golyóból készülnek, és fából készült gyújtózsinórral vannak ellátva. A gyújtás után a golyó a becsapódáskor felrobban, srapnelekkel sújtva a legénységet, lerombolva az árbocokat, felgyújtva a kötélzetet, és a lökéshullámmal összetörve a hajótesteket.Alap sérülés: hajótest - #f.2DamageHull#, vitorlák-#f.2DamageRig#, legénység-#f.2DamageCrew.#
-}
-Sailcloth {Vitorlavászon}
-Sailcloth_descr
-{
-Vastag, sûrû vászon, amelyet a vitorlák gyártásához használnak.Az angol észak-amerikai gyarmatokon kiváló minôségû pamutot és kendert termelnek, és a két különbözô szálból vásznat szônek. A keresztirányú szálak pamutból, a hosszirányú szálak (az alap) kenderbôl készülnek. A nem fehérített lenbôl készült hagyományos szürke tónusú európai vászonhoz képest törtfehér színû, könnyebb és gyorsabban szárad.
-}
-Planks {Deszkák}
-Planks_descr
-{
-Száraz deszkák válogatott, 2. minôségû fából, amelyet öreg rönkök ékekkel történô hasításával nyernek. Ezek a fûrészelt deszkákhoz képest szilárdabbak, kevésbé hajlamosak a kiszáradásra, és nem is vetemednek és repedeznek annyira.A legjobb anyag a hajótest vészhelyzeti javításához.
-}
-Wheat {Búza}
-Wheat_descr
-{
-A helyi búzafajtákat nagyra értékelik lisztjük miatt, amelyet a pékek finom, csodálatos kérgû kenyerek készítéséhez használnak.Figyelembe véve a magas terméshozamot és a szezonon kívüli érési idôt (január), jó pénzt lehet keresni a búza téli Európába történô importjával.
-}
-Ebony {Ébenfa}
-Ebony_descr
-{
-Az ébenfa (fekete) fa mindig is lenyûgözte az asztalosokat és a közembereket egyaránt szépségével és keménységével: ez a fa kétszer olyan kemény, mint a tölgy. A fa egyedi színével párosulva az európai elôkelôségek kedvence, akik igyekeztek lenyûgözni társaikat.Az ébenfa minden fajtájának megvan a maga egyedi hatalmas - a zöldesbarnától a bársonyos feketéig terjed. Idôvel a fa sötétebbé, keményebbé - és drágábbá válik.
-}
-Chocolate {Kakaó}
-Chocolate_descr
-{
-Az érett kakaógyümölcsöket leszedik és feltörik, hogy kivonják belôlük a babot. Ezek a kakaóbabok - miután megerjedtek és megszáradtak - hosszú ideig tárolhatók.A kakaó iránti nagy kereslet az indiánok és a gazdag helyiek körében már eleve magas árat diktál ennek az árunak, de a spanyolok és az olaszok aranyban hajlandóak fizetni érte, ami az árakat túlzóvá teszi.
-}
-Sugar {Cukor}
-Sugar_descr
-{
-A cukornád levének órákon át tartó forralása nagy rézkannákban az édes szirupot nagy barna nyerscukor-kristályokká redukálja, amelyek készen állnak a szárításra és az Európába való szállításra való elôkészítésre, ahol finomításra kerül.Az a szokás, hogy a vendégeket cukorral édesített teával vagy kávéval kínálják - örök divat és a jólét arisztokratikus jelképe -, biztos garancia arra, hogy a nyerscukor mindig nagy keresletnek örvend.
-}
-Wine {Bor}
-Wine_descr
-{
-Bár az Újvilágban számos sikertelen próbálkozás történt a szôlôtermesztéssel (legtöbbször sikertelen), a Franciaországból, Spanyolországból, Olaszországból és Portugáliából importált borokat még mindig nagyra értékelik mind szentségi, mind rekreációs célokra!A megfelelô európai borra minden településen nagy a kereslet, és a helyi kereskedôk nagy mennyiségben vásárolnak belôle.
-}
-ShipSilk {Hajóselyem}
-ShipSilk_descr
-{
-A lyoni textilgyárak remekmûve - sûrû selyem vitorlavászon.A selyem rendkívül szívós, a szálak erôsek, rugalmasak és egyenletes vastagságúak. Ez a szövet könnyû és légáteresztô; gyorsan felszívja a nedvességet, de még gyorsabban szárad. Megtartja az alakját és ellenáll a nyúlásnak.Minden elônye mellett a selyemszövetnek még mindig van egy jelentôs hátránya - a napfénynek való kitettség hajlamosítja az anyagot.
-}
-Rum {Rum}
-Rum_descr
-{
-Erjesztett cukornádlébôl desztillált, erôs alkoholos ital, enyhén funky ízzel és aromával. Értékes árucikk, amelyet mindig nyereségesen lehet eladni, de emeli a matrózok morálját is, amíg van belôle. A hajók friss vízkészletéhez is adnak rumot, hogy grogot készítsenek belôle, ami egyrészt fertôtleníti a vizet, másrészt javítja az ízét. A hajón lévô rum hiánya nyugtalanságot okozhat a matrózok körében, és akár lázadáshoz is vezethet.
-}
-Tobacco {Dohány}
-Tobacco_descr
-{
-A távoli Európában, a helyi településeken és a fedélzet alatti szûk legénységi szállásokon a dohány minden ember öröme. Számos betegség ellen is megbízható megelôzésre alkalmasnak tartják - legalábbis az emberek ezt hiszik.A fogyasztásra kész dohánynak három fajtája létezik - a fogyasztási dohány, a szippantási dohány és a rágódohány. A vászonzsákokba csomagolt dohánylevelek sok kereskedô számára kincset érô szállítmányt jelentenek.
-}
-Coffee {Kávé}
-Coffee_descr
-{
-A kávébabból, mézbôl és fahéjból készült illatos, élénkítô ital manapság nagyon népszerû az Újvilág lakói körében - nemcsak a nagyszámú kávéültetvény miatt, amely sok gazdag európai fô bevételi forrásává vált, hanem azért is, mert az Indiából és Kínából származó tea meglehetôsen nehezen beszerezhetô.A zöld, pörköletlen kávébabok, amelyek sokáig megôrzik értékesíthetôségüket és hasznos tulajdonságaikat, mindig nagy keresletnek örvendenek a kontinentális Európában, hiszen a kávé ma már minden gazdag háztartás elengedhetetlen kelléke.
-}
-Mahogany {Mahagóni}
-Mahogany_descr
-{
-E fák fája nagyon jellegzetes és gyönyörû mintázatú, emellett nagyon erôs, tûzálló és hosszú élettartamú. Nagyon könnyen csiszolható, és a fakártevôk sem ártanak neki. A spanyolok voltak az elsôk, akik értékelték - ma már a mahagónit széles körben használják hajók, templomok és paloták építésénél.A mahagóniból készült bútorok a klasszikus luxust, a jó ízlést és a tulajdonos jólétét példázzák.
-}
-Cinnamon {Vanília}
-Cinnamon_descr
-{
-Ennek a Mexikóból származó örökzöld szôlônek a szárított és erjesztett hüvelyei édes illatúak, de kesernyés ízûek.A vaníliát Európában kakaó és forró csokoládé készítéséhez használják. A dohány aromatizálójaként is használják; mások egyszerûen csak rágják, bár többnyire csak státuszuk kimutatására!
-}
-Copra {Kopra}
-Copra_descr
-{
-Szárított kókuszdióhús.A koprát kopraolaj és szappan készítésére használják. Ez a szappan jó illatú, és a hajat is festi, nemes szôke árnyalattal elfedve az ôsz hajat.
-}
-Paprika {Paprika}
-Paprika_descr
-{
-Ôrölt és szárított piros chilipaprika, édes és csípôs fûszer, amely a fôzésben ízesítôszerként rendkívül népszerû.A paprika nagyon népszerû a németek, a spanyolok és a mediterrán Európában, mivel gyakorlatilag mindenhez tökéletesen illik: húsokhoz, szárnyasokhoz, halakhoz, tenger gyümölcseihez, zöldségekhez és sajtokhoz.
-}
-Fruits {Gyümölcsök}
-Fruits_descr
-{
-A helyi növényvilágból szedett ehetô trópusi gyümölcs. Kiválóan alkalmas skorbut ellen vagy olcsó borok ízesítésére.A gyümölcsöket bármelyik településen el lehet adni - még a ritka csemegékre is akad vevô.
-}
-Ale {Sör}
-Ale_descr
-{
-Alacsony alkoholtartalmú, fôzött ital, amelyet felsô erjesztéssel készítenek. A sör a kenyérrel együtt alapélelmiszernek számít, és a helyi helyôrségek fejadagjában szerepel (különösen az angolok). A sör hosszú ideig tárolható; emellett antibiotikus tulajdonságokkal rendelkezik a komló )helyett használt gruit(fûszerek és fûszerek keverékének köszönhetôen.
-}
-Ropes {Kötél}
-Ropes_descr
-{
-Kenderbôl készült erôs kötelek. Ellenállnak a sós víznek, ezért ezek a legjobb kötelek a kötélzethez.A legjobb és leghíresebb köteleket az orosz cárságban gyártják.
-}
-Clothes {Ruhák}
-Clothes_descr
-{
-Praktikus, konzervatív ruhák sötét anyagból, egyszerû kambrik vászonból, lefordított gallérral és mandzsettával - minden becsületes, szorgalmas, szerény és takarékos ember kényelmes öltözéke.Olcsó áru, mindig keresett.
-}
-Cotton {Pamut}
-Cotton_descr
-{
-A pamut késôn érik, és a terméshozam meglehetôsen alacsony a karibi szigetek ültetvényein az észak-amerikai gyarmatokhoz képest, de rostjai még mindig nagyon értékesek, mivel szokatlanul hosszúak és vékonyak. Ezekbôl a selymes, krémszínû szálakból a legfinomabb minôségû, legvékonyabb szövetek fonalát készítik.Ez a fáradságos gyártás viszonylag nagy ültetvény létrehozását és legalább 20 rabszolgát igényel, akik ott dolgoznak.
-}
-Sandal {Vasfa}
-Sandal_descr
-{
-A vasfa más néven 'lignum vitae'. Ez a sûrû, kemény és erôs fa szinte lehetetlen repedezni. Nagyon nehéz, és a legtöbb fával ellentétben inkább süllyed, mint lebeg a vízben.Ahogy a neve is mutatja, nagyon erôs fa, bár nehéz vele dolgozni. Önkenô tulajdonságokkal is rendelkezik, különösen vízben.A szilárdság és a természetes kenés miatt a vasfából készült hajóelemek nem igényelnek sok karbantartást, még a legrosszabb tengeri körülmények között sem.
-}
-Oil {Kátrány}
-Oil_descr
-{
-Ez a természetes aszfaltkátrány bitumen, finoman eloszlatott agyag és sós víz ragacsos, szürkésfekete keveréke. Trinidad leghíresebb exportcikke - bár bizonyára nem a legszebb.Ezt a kátrányt a hajótestek illesztéseinek vízszigetelésére és tömítésére használják.Úgy tartják, hogy ez a kátrány sokkal jobb, mint az észak-európai országokban fenyôfából elôállított kátrány.
-}
-Leather {Bôr}
-Leather_descr
-{
-A szarvasmarhák szárított és kikészített bôre Európában mindig keresett egyetemes áru. Az eredeti kalózok is így éltek meg: a Hispaniolán élô vadszarvasmarhák bôrét és húsát árulták.Bár nem sok kereskedô rakodná meg hajóját kizárólag bôrrel, az üres rakterek kitöltésére kiválóan alkalmas, mivel nagyon szívós és bármilyen szállítási körülményt kibír.
-}
-Slaves {Rabszolgák}
-Slaves_descr {Férfiakat és nôket - fehéreket és feketéket - elvesztett csaták, elkövetett bûnökért járó büntetés vagy adósságok miatt adtak el rabszolgának. Az ültetvényes vagy bányatulajdonos szempontjából ez teljesen törvényes áru, hiszen az illetô már a vásárlás pillanatában rabszolga volt. A rabszolgák élete általában csúnya, brutális és rövid - legtöbbjük az eladását követô elsô hét év alatt meghal, hogy az ültetvényeken dolgozzon.}
-Powder {Puskapor}
-Powder_descr
-{
-Importált stratégiai áru, a piszkos, zajos, büdös és veszélyes lôporgyárak terméke. 'Tartsd szárazon a puskaport', mondják a tapasztalt ágyúsok. Ezt nem lehet elégszer hangsúlyozni: puskapor nélkül az ágyúk csak holtteher a hajó számára.Egy bölcs kapitány mindig sok lôport tart a raktér legszárazabb és legbiztonságosabb részében.
-}
-Food {Étel}
-Food_descr
-{
-Egy szabványos készlet tartósított fejadag és friss víz, amely a legénység és a rabszolgák élelmezéséhez szükséges az út során.Az élelem hiánya a fedélzeten éhínséghez, halálesetekhez és a morál csökkenéséhez vezet. Napi fogyasztás: matrózok - 0,1 egység, rabszolgák - 0,05 egység.
-}
-Weapon {Fegyver}
-Weapon_descr
-{
-Fegyverek gyûjteménye: a szablyáktól és kardoktól a pisztolyokig és muskétákig.A partraszállás során a csata minden résztvevôjének fel kell fegyverkeznie. A fegyverek hiánya a veszteségek növekedését okozza.Ahogy a tengerészek meghalnak a csatában, úgy csökken a fedélzeten lévô fegyverek mennyisége.
-}
-Gold {Arany}
-Gold_descr
-{
-A spanyol kincstár által megjelölt tömör aranyrudak.Egy arannyal megrakott kincses hajó elfoglalása minden kalóz és magánhajós álma.
-}
-Silver {Ezüst}
-Silver_descr
-{
-A spanyol kincstár által megjelölt tömör ezüstrudak.Kívánatos díj, mivel az ezüstnek tisztességes értéke van, mivel a spanyol kincstár második választása volt a vagyon tárolására és szállítására. Becslések szerint a 16. században a spanyol korona több mint 210 millió pezó értékû ezüstöt importált az Újvilágból Európába.
-}
-Brick {Téglák}
-Brick_descr
-{
-Terrakottából készült takaros tömbök és tetôcserepek. Ezeket széles körben használják a városok építésénél, mivel a fa a nedves Karib-térségben hajlamos gyorsan elrohadni.A gyakori tûzesetek miatt a hatóságok ösztönzik a téglák használatát az építkezésekben, ezért ez az áru mindig keresett.
-}
-Medicament {Gyógyszerek}
-Medicament_descr
-{
-A leggyakoribb betegségek kezelésére és a sebesültek és sérültek elsôsegélynyújtására szolgáló gyógyszerek és eszközök készlete.A fedélzeten lévô gyógyszerek segítik a sérültek megmentését, a fedélzeti veszteségek csökkentését és a betegek gyógyítását a tengeren.
-}
-Cannon_3 {Sólyomfélék}
-Cannon_3_descr
-{
-Toronnyal felszerelt fedélzeti ágyúk. Ezek rendelkeznek a legnagyobb mozgékonysággal, és kis méretük miatt a legkisebb teljesítményûek és hatótávolságúak.Gyakran cserélhetô zárócsôvel vannak felszerelve, ami lehetôvé teszi a gyors újratöltést.Hatótávolság - #dFireRange#, sebzés - x#f.1DamageMultiply#, újratöltés - #dReloadTime# sec.
-}
-Cannon_6 {6 kilós demi ágyúk}
-Cannon_6_descr
-{
-Kisméretû ágyúk, könnyû súlyuk, alacsony áruk és tartósságuk miatt nagyon népszerûek a futár- és kereskedôhajókon. Könnyen karbantarthatók, és nem igényelnek tapasztalt legénységet.Hatótávolság - #dFireRange#, sebzés - x#f.1DamageMultiply#, újratöltés - #dReloadTime# sec.
-}
-Cannon_8 {8 fontos demi ágyúk}
-Cannon_8_descr
-{
-Az egyik legnépszerûbb kaliber a kishajókon, kereskedelmi és járôrhajókon egyaránt megtalálható. A méret, a súly és a tûzerô kiváló kombinációja miatt értékelik.Hatótávolság - #dFireRange#, sebzés - x#f.1DamageMultiply#, újratöltés - #dReloadTime# sec.
-}
-Cannon_12 {12 fontos demi ágyúk}
-Cannon_12_descr
-{
-Gyakori kaliber a kis hadihajókon. Méretükhöz és súlyukhoz képest lenyûgözô tûzerôvel rendelkeznek, de teljes ágyúszemélyzetet igényelnek, ami növeli a hajón lévô legénység létszámát.Hatótávolság - #dFireRange#, sebzés - x#f.1DamageMultiply#, újratöltés - #dReloadTime# sec.
-}
-Cannon_16 {16 fontos demi ágyúk}
-Cannon_16_descr
-{
-Modern francia típusú ágyúk. Fejlett kialakításuknak köszönhetôen kiváló hatótávolsággal, megbízhatósággal és tûzerôvel rendelkeznek. Nagyon elterjedt kaliber a járôr- és felderítô hajók körében.Hatótávolság - #dFireRange#, sebzés - x#f.1DamageMultiply#, újratöltés - #dReloadTime# sec.
-}
-Cannon_18 {18 fontos demi ágyúk}
-Cannon_18_descr
-{
-Nagy teljesítményû univerzális ágyúk, amelyeket a múltban gyakran telepítettek hadihajókra. Elég gyakoriak a szigetvilágban, és egyszerûségük és megbízhatóságuk miatt nagyra értékelik ôket, bár elavult kialakításuk némileg korlátozza a hatótávolságukat.Hatótávolság - #dFireRange#, sebzés - x#f.1DamageMultiply#, újratöltés - #dReloadTime# sec.
-}
-Cannon_20 {20 fontos ágyúk}
-Cannon_20_descr
-{
-Hosszú csövû tüzérségi ágyúk, amelyeket a cirkálókon és a katonai konvojok segédhajóin használtak. A hatékony tüzeléshez az ágyúszemélyzet összehangolt munkája szükséges.Hatótávolság - #dFireRange#, sebzés - x#f.1DamageMultiply#, újratöltés - #dReloadTime# sec.
-}
-Cannon_24 {24 fontos ágyúk}
-Cannon_24_descr
-{
-A hadihajók fô kalibere, a haditengerészeti tüzérség fejlôdésének csúcsa. Tökéletes egyensúlyt biztosítanak a hatótávolság és a tûzerô között, és sikeres kialakításuk lehetôvé teszi, hogy kritikus sérülések nélkül kibírják a hosszú tengeri csatákat.Hatótávolság - #dFireRange#, sebzés - x#f.1DamageMultiply#, újratöltés - #dReloadTime# sec.
-}
-Cannon_32 {32 fontos ágyúk}
-Cannon_32_descr
-{
-Nagy kaliberû nehézágyúk, amelyek hatalmas károkat okoznak, és alkalmasak erôdök bombázására. Az anyagszilárdság korlátai miatt csökkentett lôportöltetet használnak, ami korlátozza a hatótávolságot.Hatótávolság - #dFireRange#, sebzés - x#f.1DamageMultiply#, újratöltés - #dReloadTime# sec.
-}
-Cannon_36 {36 fontos ágyúk}
-Cannon_36_descr
-{
-Hosszú csövû ágyúk, ritka vendégek a géppuskán. Lassú újratöltésüket és korlátozott hatótávolságukat ellensúlyozza a lassan repülô nehéz ágyúgolyók által okozott pusztító sebzés. Nagy létszámú ágyúszemélyzetet igényelnek.Hatótávolság - #dFireRange#, sebzés - x#f.1DamageMultiply#, újratöltés - #dReloadTime# sec.
-}
-Cannon_42 {42 fontos bombázók}
-Cannon_42_descr
-{
-Félelmetes ágyúk, a tengeri tûzerô csúcsa. Kizárólag vonalhajókon, erôdökben és a nagy európai csatákban használták. Hatalmas és jól képzett legénységet igényelnek a mûködtetéshez.Hatótávolság - #dFireRange#, sebzés - x#f.1DamageMultiply#, újratöltés - #dReloadTime# sec.
-}
-Culverine_8 {Demikulverinek}
-Culverine_8_descr
-{
-Hosszú csövû, 8 fontos ágyúk egy speciális lánctalpakon, erôteljes szerelékkel és tömör fakerekekkel.Megnövelt lôtávolsággal rendelkeznek. Általában gátlövésre használják.Hatótávolság - #dFireRange#, sebzés - x#f.1DamageMultiply#, újratöltés - #dReloadTime# sec.
-}
-Culverine_18 {Culverins}
-Culverine_18_descr
-{
-Közepes 18 fontos ágyúk megnövelt lôtávolsággal, viszonylag kis hajókon való használatra alkalmasak.Lenyûgözô lôtávolságuk ellenére rendkívül nehezek, és hosszú ideig tart a töltésük.Hatótávolság - #dFireRange#, sebzés - x#f.1DamageMultiply#, újratöltés - #dReloadTime# sec.
-}
-Culverine_36 {Teljes Culverins}
-Culverine_36_descr
-{
-Erôd 36 fontos ágyúk, amelyeket áttörô tüzelésre terveztek: az nyer, aki elôször lô!Nagy hosszúságuk miatt csak 42 fontos ágyúk számára kialakított kikötôkbe szerelhetôk be.Hatótávolság - #dFireRange#, sebzés - x#f.1DamageMultiply#, újratöltés - #dReloadTime# sec.
-}

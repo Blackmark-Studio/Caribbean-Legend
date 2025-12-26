@@ -1,0 +1,27 @@
+Siege_1 {Söylentilere göre, yerel balıkçılar bu bölgede güçlü bir @<NationNameSK(sti(aData.nation))> filosu görmüş.}
+Siege_2 {Şehrimizi yağmalayan @<NationNameSK(sti(aData.nation))> filosunun hâlâ buralarda olduğu söyleniyor. Keşke onlara karşı saldırmaya cesaret edecek yiğit bir kaptan çıksa.}
+Siege_3 {Savaş gemisi filosu}
+Siege_4 {Sağır mısın? @<NationNameSK(sti(aData.nation))> gemileri kalemizi bombalıyor. Her an düşebilir ve korkunç şeyler olmaya başlayacak.}
+Siege_5 {Bugün @<NationNameGenitive(sti(aData.nation))> için büyük bir gün – @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> gibi önemli bir koloniyi ele geçirdik! Tüm @<NationNameSK(sti(aData.conation))> garnizonu yok edildi, kale askerlerimiz tarafından işgal edildi ve yeniden güçlendirildi!}
+Siege_6 {Söylentilere göre @<NationNameSK(sti(aData.nation))> filosu, uzun bir kuşatmanın ardından @<NationNameSK(sti(aData.conation))> " kolonisi @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>'i ele geçirdi. Artık @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> bir @<NationNameSK(sti(aData.nation))> kolonisi!}
+Siege_7 {Söylentilere göre @<NationNamePeople(sti(aData.nation))> alçakça kolonimize, @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> saldırıp şehri ele geçirmiş!}
+Siege_8 {Haberleri duydunuz mu? Kahraman filomuz, @<NationNameGenitive(sti(aData.conation))>’dan zengin @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> kolonisini geri aldı. ~}
+Siege_9 {@<NationNameGenitive(sti(aData.conation))> için kara bir gün – kolonimizi koruyamadık. Kale @<NationNameSK(sti(aData.nation))> gemileri tarafından yıkıldı, şehir yağmalandı.}
+Siege_10 {Söylentilere göre @<NationNameSK(sti(aData.nation))>, @<NationNameSK(sti(aData.conation))> kolonisini @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>’da ele geçirdi. @<NationNameSK(sti(aData.nation))>ler şehri yağmalayıp uzaklaştı.}
+Siege_11 {Söylentilere göre @<NationNamePeople(sti(aData.nation))> aniden kolonimiz @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>'a saldırıp, takviye gelmeden önce şehri yağmalamış! Ardından @<NationNamePeople(sti(aData.nation))> utanç içinde ganimetle geri çekilmiş.}
+Siege_12 {Haberleri duydun mu? Askeri filomuz, @<NationNameSK(sti(aData.conation))> ulusuna ait @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> adlı şehri başarıyla kuşattı. Garnizonun direnci kırıldı ama tabii ki kuvvetlerimiz ayrılmak zorunda kaldı. Fakat ganimet...}
+Siege_13 {Bugün kutlama zamanı! @<NationNameSK(sti(aData.nation))> saldırganları yok edildi ve şehir güvende.}
+Siege_14 {Söylentilere göre @<NationNameSK(sti(aData.nation))> filosu, @<NationNameSK(sti(aData.conation))> kolonisi @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>’na yapılan saldırıda yenildi. Savunmacılar daha güçlü çıktı.}
+Siege_15 {Söylentilere göre @<NationNamePeople(sti(aData.nation))> aniden @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>'a saldırmış, ama takviye tam zamanında yetişmiş! Tüm @<NationNameSK(sti(aData.nation))> batırılmış.}
+Siege_16 {Duyduğuma göre filomuz @<NationNameSK(sti(aData.conation))> kolonisi @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>'nu kuşatmayı başaramamış. Kuşatma uzun sürmüş ama gemilerimiz batırılmış! Belki bir dahaki sefere.}
+Siege_17 {İngiliz}
+Siege_18 {Fransız}
+Siege_19 {İspanyol}
+Siege_20 {Hollanda}
+Siege_21 {gün}
+Siege_22 {gün}
+Siege_23 {birkaç saat}
+Siege_24 {Söylentilere göre @<NationNamePeople(sti(aData.nation))>, @<NationNameSK(sti(aData.conation))> kolonisi @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>'na saldırmış. Çatışmalar sürüyor, fakat savunmacıların erzağı azalmış. En fazla @<sDays> gün dayanabilirler.}
+Siege_25 {Söylentilere göre durdurulamaz filomuz @<NationNameSK(sti(aData.conation))> kolonisi @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>'na saldırıyor. Düşmanımız şiddetle direniyor, ancak büyük ihtimalle @<sDays> içinde kimin galip geleceğini öğreneceğiz.}
+Siege_26 {~ @<NationNamePeople(sti(aData.nation))> kolonimize @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> saldırdı. Cesur savunucularımızın erzakları tükenmeden önce sadece @<sDays> kaldı.}
+Siege_27 {~ kuşatıldı ~}

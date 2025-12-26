@@ -1,0 +1,8 @@
+Tonzag_1 {caçadores de recompensas}
+Tonzag_2 { }
+Tonzag_3 { }
+Tonzag_4 {Seis horas se passaram...}
+Tonzag_5 {Modo de exploração: temporizador desativado.}
+Tonzag_6 {Cavaleiro de Bronze desbloqueado}
+Tonzag_7 {Alberto}
+Tonzag_8 {Gaodio}

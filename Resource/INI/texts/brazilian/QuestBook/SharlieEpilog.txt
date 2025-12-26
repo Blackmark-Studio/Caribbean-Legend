@@ -1,0 +1,63 @@
+#QUEST SharlieEpilog
+Epílogo
+#TEXT 1_1
+Visitei o abade Benoît, e ele me contou que meu pai teme que a doença o leve antes que possamos nos ver novamente. Em sua carta, ele disse o mesmo, apenas omitiu que se sente mais fraco a cada dia.
+Tive que tomar uma decisão difícil – partir o mais breve possível.
+No entanto, considerando minha situação atual, não posso simplesmente largar tudo e retornar ao Velho Mundo. Primeiro, preciso tomar algumas decisões para poder deixar o arquipélago com a consciência tranquila. O abade me prometeu ajudar – com seu apoio, poderei enviar as instruções necessárias para quem de direito.
+Ele também me aconselhou a quitar todas as dívidas, caso haja alguma. Agiotas têm braços longos – e não há dúvidas de que fariam qualquer coisa por dinheiro.
+#TEXT 1_2
+Visitei o abade Benoît, e ele me contou que meu pai teme que a doença o leve antes que possamos nos ver novamente. Em sua carta, ele disse o mesmo, apenas omitiu que se sente mais fraco a cada dia.
+Infelizmente, não é possível partir para o Velho Mundo neste momento – tenho assuntos urgentes que exigem resolução imediata. A viagem de ida e volta pode levar muito tempo, e tenho certeza de que meu pai insistirá para que eu permaneça na propriedade por pelo menos alguns meses. A ideia, sinceramente, não me agrada.
+#TEXT 2
+O abade tem razão – não posso adiar mais minha partida. No entanto, considerando minha situação atual, não posso simplesmente largar tudo e retornar ao Velho Mundo. Primeiro, preciso tomar algumas decisões para poder deixar o arquipélago com a consciência tranquila. O próprio sacerdote prometeu ajudar – com seu apoio, poderei enviar as instruções necessárias para quem de direito.
+Ele também me aconselhou a quitar todas as dívidas, caso haja alguma. Agiotas têm braços longos – e não há dúvidas de que fariam qualquer coisa por dinheiro.
+#TEXT 3_1
+Decidi entregar Isla Mona ao domínio de Sua Majestade. É a única maneira de garantir sua segurança. Os mensageiros do abade informarão ambas as partes da minha decisão. Espero que Rodgar tenha forças para se submeter à civilização que se aproxima.
+#TEXT 3_2
+Decidi deixar Isla Mona sob a supervisão de Jan Swenson. Tenho certeza de que ele poderá garantir tanto a segurança dos moradores quanto o funcionamento contínuo da feitoria. Naturalmente, exigi uma parte dos lucros – não vou entregar um pedaço tão saboroso de graça.
+#TEXT 4_1
+Contei ao abade sobre meu baronato em Le François e decidi renunciar a ele, como informei a Marcus em uma carta. Para ser sincero, senti até certo alívio. A vida de pirata acabou. Embora ainda tenha amigos entre os piratas – não quero mais ter qualquer relação com isso.
+#TEXT 4_2
+O abade claramente não aprovaria meu baronato em Le François, então ele não precisa saber disso. Ainda assim, enviei uma carta a Marcus com minha decisão de renunciar ao título. Quem sabe o que os piratas fariam no arquipélago na minha ausência, usando meu nome. Quem ocupará meu lugar não me interessa muito.
+#TEXT 5_1
+Depois de pensar bem, decidi renunciar à patente francesa. Não quero carregar esse compromisso ao encontrar meu pai... e, para ser sincero, já quase me esqueci de como é viver sem combates constantes. Espero que os próximos meses não sejam insuportavelmente entediantes.
+#TEXT 5_2
+Após uma breve reflexão, decidi continuar servindo à França e a Sua Majestade. Notifiquei a chancelaria de Capsterville sobre minha partida iminente para o Velho Mundo, embora, sinceramente, espero não precisar ficar lá por muito tempo. A vida longe do navio e das batalhas se tornou... estranha para mim. Mas terei tempo suficiente na viagem para ouvir meus próprios pensamentos.
+#TEXT 6
+Decidi levar comigo @<sSum> pesos. Acredito que levar mais seria imprudente – qualquer coisa pode acontecer com o navio durante a viagem. Certifiquei-me de que esse dinheiro fosse “limpo”: o abade, em troca de uma doação de @<tSum> pesos, deu sua bênção. Diante do meu pai, é dinheiro limpo – e isso é tudo que preciso.
+#TEXT 7
+Decidi informar Jan Swenson sobre minha decisão de partir para o Velho Mundo. Depois de tudo o que passamos juntos, eu não poderia deixá-lo sem notícias.
+#TEXT 8
+Se houvesse mais tempo, teria contado pessoalmente a Nathan e Danielle Houk sobre minha partida. Afinal, tornaram-se quase como família para mim. Mas, infelizmente, agora não há tempo para isso. Acho que uma carta ajudará a suavizar os efeitos da minha partida repentina.
+#TEXT 8_1
+Informei a Gino Guineyli que estou deixando o arquipélago por tempo indeterminado. Enquanto eu não puder ajudá-lo financeiramente, autorizei-o a alugar parte da casa para se sustentar e continuar seus experimentos.
+#TEXT 9
+Pois bem, parece que resolvi todos os assuntos, e tudo está pronto para a partida. Preciso falar com o abade.
+#TEXT 10
+O abade me contou que a pinassa *Ulysse*, com a qual cheguei a estas terras quando ainda era um bon vivant ocioso e uma desgraça para todos os homens de bem, está agora sendo leiloada. Engraçado – o destino me dá a chance de voltar para casa no mesmo navio em que tudo começou. É tentador, por Deus. Acho que vale a pena ir até a administração portuária e descobrir quando será o leilão.
+#TEXT 11_1
+Mas veja só! O leilão já aconteceu, e o vencedor foi ninguém menos que Jean Picard – aquele mesmo que uma vez salvei de uma plantação perto de Maracaibo. Ele decidiu largar a pirataria e virar comerciante, comprando justamente a *Ulysse*. E ainda por cima, ele vai para o mesmo lugar que eu: Bordeaux.
+Achei que me faria bem ser apenas passageiro nessa viagem, então pedi para embarcar com ele. Terei tempo para pensar… sobre a vida, o lar, a família. Talvez esteja mesmo na hora de fincar os pés em terra firme.
+Falando em família – ainda não conversei com minha esposa. Deveria ter feito isso antes, mas como sempre, estava ocupado demais…
+A partida será em duas semanas – Jean vai me esperar na taverna.
+#TEXT 11_2
+Mas veja só! O leilão já aconteceu, e o vencedor foi ninguém menos que Jean Picard – aquele mesmo que uma vez salvei de uma plantação perto de Maracaibo. Ele decidiu largar a pirataria e virar comerciante, comprando justamente a *Ulysse*. E ainda por cima, ele vai para o mesmo lugar que eu: Bordeaux.
+Achei que me faria bem ser apenas passageiro nessa viagem, então pedi para embarcar com ele. Terei tempo para pensar… sobre a vida, o lar, a família. Talvez esteja mesmo na hora de fincar os pés em terra firme, procurar uma esposa ou, como insiste meu pai, considerar Yvonne La Brignée.
+A partida será em duas semanas – Jean vai me esperar na taverna. Mas antes, preciso conversar com os oficiais. Vai saber quanto tempo essa viagem vai durar… Parece que chegou a hora de me despedir.
+#TEXT 11_3
+Cheguei tarde demais – o leilão já tinha acontecido, e o vencedor foi alguém chamado @<sName>. Ele se recusou a vender a pinassa, mas acontece que nossos caminhos coincidem – ambos vamos para Bordeaux. Achei que me faria bem ser apenas passageiro nessa viagem, então pedi para embarcar com ele. Terei tempo para pensar… sobre a vida, o lar, a família. Talvez esteja mesmo na hora de fincar os pés em terra firme.
+Falando em família – ainda não conversei com minha esposa. Deveria ter feito isso antes, mas como sempre, estava ocupado demais…
+#TEXT 11_4
+Cheguei tarde demais – o leilão já tinha acontecido, e o vencedor foi alguém chamado @<sName>. Ele se recusou a vender a pinassa, mas acontece que nossos caminhos coincidem – ambos vamos para Bordeaux. Achei que me faria bem ser apenas passageiro nessa viagem, então pedi para embarcar com ele. Terei tempo para pensar… sobre a vida, o lar, a família. Talvez esteja mesmo na hora de fincar os pés em terra firme, procurar uma esposa ou, como insiste meu pai, considerar Yvonne La Brignée.
+A partida será em duas semanas – o capitão vai me esperar na taverna. Mas antes, preciso falar com Alonso e com os oficiais. Vai saber quanto tempo essa viagem vai durar… Parece que chegou a hora de me despedir.
+#TEXT 11_5
+Mas veja só! O leilão já aconteceu, e o vencedor foi ninguém menos que Jean Picard – aquele mesmo que eu tentei salvar de uma plantação perto de Maracaibo. Acontece que o danado não só sobreviveu como também ficou com toda a fortuna da viúva do plantador. Agora, ele decidiu largar a pirataria e virar comerciante, comprando justamente a *Ulysse*. E ainda por cima, ele vai para o mesmo lugar que eu: Bordeaux.
+Achei que me faria bem ser apenas passageiro nessa viagem, então pedi para embarcar com ele. Terei tempo para pensar… sobre a vida, o lar, a família. Talvez esteja mesmo na hora de fincar os pés em terra firme.
+Falando em família – ainda não conversei com minha esposa. Deveria ter feito isso antes, mas como sempre, estava ocupado demais…
+A partida será em duas semanas. Jean vai me esperar na taverna – combinamos fazer uma boa farra antes de zarpar.
+#TEXT 11_6
+Mas veja só! O leilão já aconteceu, e o vencedor foi ninguém menos que Jean Picard – aquele mesmo que eu tentei salvar de uma plantação perto de Maracaibo. Acontece que o danado não só sobreviveu como também ficou com toda a fortuna da viúva do plantador. Agora, ele decidiu largar a pirataria e virar comerciante, comprando justamente a *Ulysse*. E ainda por cima, ele vai para o mesmo lugar que eu: Bordeaux.
+Achei que me faria bem ser apenas passageiro nessa viagem, então pedi para embarcar com ele. Terei tempo para pensar… sobre a vida, o lar, a família. Talvez esteja mesmo na hora de fincar os pés em terra firme, procurar uma esposa ou, como insiste meu pai, considerar Yvonne La Brignée.
+A partida será em duas semanas. Jean vai me esperar na taverna – combinamos fazer uma boa farra antes de zarpar. Mas antes, preciso falar com os oficiais. Vai saber quanto tempo essa viagem vai durar… Parece que chegou a hora de me despedir.
+#TEXT 12
+Agora só falta a parte mais difícil – dispensar a tripulação e os oficiais. Vai ser especialmente difícil se despedir de alguns deles, considerando tudo o que passamos juntos… Eu mesmo vou cuidar dos oficiais, e pedirei a Alonso que fale com a tripulação.

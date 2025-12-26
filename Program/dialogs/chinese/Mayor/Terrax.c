@@ -1,4 +1,5 @@
 // 马库斯.蒂拉克斯, 拉维吉男爵
+int iTerraxTotalTemp;
 void ProcessDialogEvent()
 {
     ref NPChar, sld;
@@ -30,6 +31,11 @@ void ProcessDialogEvent()
                 case "repeat":
                     if (npchar.angry.name == "Firsttime") Dialog.CurrentNode = "AngryRepeat_1";
                     if (npchar.angry.name == "I_know_you_good") Dialog.CurrentNode = "AngryRepeat_2";
+					if (npchar.angry.name == "pirate_threat")
+                    {
+                        if (Dialog.CurrentNode == "I_know_you_good") Dialog.CurrentNode = "AngryRepeat_2";
+                        else Dialog.CurrentNode = "AngryRepeat_1";
+                    }
                 break;
             }
         }
@@ -88,6 +94,10 @@ void ProcessDialogEvent()
                 link.l1.go = "patria_x29";
                 break;
             }
+			
+			link.l0 = ""+npchar.name+", 我想和你谈谈我在海上的安全问题。 " + GetSexPhrase("兄弟们","姐妹们") + "对我这点微不足道的名声表现得过于热情。 你能不能帮我敲打敲打他们?";
+			link.l0.go = "pirate_threat";
+			
             dialog.text = NPCStringReactionRepeat("" + GetSexPhrase("你有什么要告诉我的吗? 没有? 那就别烦我! ", "哈, " +pchar.name+ "! 有什么事找我吗? 没有? 那就别打扰我。 ") + "",
                          "我以为我已经说清楚了... 我让你离开, 但你还在烦我! ",
                          "够了, 我受够这种无礼了。 ", "repeat", 3, npchar, Dialog.CurrentNode);
@@ -100,8 +110,8 @@ void ProcessDialogEvent()
 			
             if (sti(pchar.GenQuest.Piratekill) > 20)
             {
-                dialog.text = RandPhraseSimple("你疯了吗? 想当屠夫? 所有海盗都在生你的气, 小子, 你最好离开这里... ", "看来你变成疯狗了, 小子。 想伸展拳脚? 无意冒犯, 但这儿没你的事, 滚吧! ");
-                link.l1 = RandPhraseSimple("听着, 我想解决这个问题。 ", "请帮我解决这个麻烦... ");
+                dialog.text = RandPhraseSimple("你疯了吗? 想当屠夫? 所有海盗都在生你的气, 小子, 你最好离开这里... ", "看来你脑子坏了, 小子。 想活动下筋骨? 无意冒犯, 但你在这里无事可做, 滚吧! ");
+                link.l1 = RandPhraseSimple("听着, 我想解决这个问题... ", "帮我解决这个麻烦... ");
                 link.l1.go = "pirate_town";
                 break;
             }
@@ -151,8 +161,8 @@ void ProcessDialogEvent()
         case "I_know_you_good":
             if (sti(pchar.GenQuest.Piratekill) > 20)
             {
-                dialog.text = RandPhraseSimple("你疯了吗? 想当屠夫? 所有海盗都在生你的气, 小子, 你最好离开这里... ", "看来你变成疯狗了, 小子。 想伸展拳脚? 无意冒犯, 但这儿没你的位置, 滚吧! ");
-                link.l1 = RandPhraseSimple("听着, 我想解决这个问题... ", "请帮我解决这个麻烦... ");
+                dialog.text = RandPhraseSimple("你疯了吗? 想当屠夫? 所有海盗都在生你的气, 小子, 你最好离开这里... ", "看来你脑子坏了, 小子。 想活动下筋骨? 无意冒犯, 但你在这里无事可做, 滚吧! ");
+                link.l1 = RandPhraseSimple("听着, 我想解决这个问题... ", "帮我解决这个麻烦... ");
                 link.l1.go = "pirate_town";
                 break;
             }
@@ -242,6 +252,10 @@ void ProcessDialogEvent()
                 link.l2 = "我有丝绸要卖。 ";
                 link.l2.go = "Mtraxx_silktrade";
             }
+			
+			link.l0 = ""+npchar.name+", 我想和你谈谈我在海上的安全问题。 " + GetSexPhrase("兄弟们","姐妹们") + "对我这点微不足道的名声表现得过于热情。 你能不能帮我敲打敲打他们?";
+			link.l0.go = "pirate_threat";
+			
             dialog.text = NPCStringReactionRepeat(GetFullName(pchar) + ", 很高兴见到你! 伙计, 你这次需要什么? ",
                          "你想要什么? ", "又来? 没事就别打扰别人! ",
                          "你是个" + GetSexPhrase("不错的私掠者", "不错的姑娘") + ", 所以暂时还能活着。 但我不想再和你说话了。 ", "repeat", 10, npchar, Dialog.CurrentNode);
@@ -613,6 +627,55 @@ void ProcessDialogEvent()
 			pchar.GenQuest.Piratekill = 0;
 		break;
 		
+		case "pirate_threat":
+			if (GetNpcQuestPastDayWOInit(NPChar, "ThreatTalk") == 0)
+			{
+				dialog.text = NPCStringReactionRepeat("今天我们已经讨论过这个问题了。",
+													  "我说得还不够清楚吗?",
+													  "你这烦人的劲儿快把我逼疯了。",
+													  "我已经受够了。滚出去!",
+													  "repeat", 3, npchar, Dialog.CurrentNode);
+				link.l1 = HeroStringReactionRepeat("那就改天再说吧…… ",
+												   "当然, "+npchar.name+"…… ",
+												   "对不起, "+npchar.name+"…… ",
+												   "呃…… ", npchar, Dialog.CurrentNode);
+				link.l1.go = "exit";
+				break;
+			}
+			if (iGPThreat != 0)
+			{
+				iBarbazonTotalTemp = 10 * iGPThreatRate;
+				dialog.text = "哈! 看来咱们兄弟最近没少让你头疼, " + GetSexPhrase("伙计", "姑娘") + "? 我当然可以暂时让他们收敛点。 不过你得大出血一回。 " + FindRussianDublonString(iBarbazonTotalTemp) + "放在桌上, 我们就算谈妥了。";
+				if (PCharDublonsTotal() > iBarbazonTotalTemp)
+				{
+					if (iGPThreat < 5) link.l0 = "当然, 这是你的钱。";
+					else link.l0 = "看样子我没得选。这是你的钱。";
+					link.l0.go = "pirate_threat_pay";
+				}
+				link.l1 = "那我还是改天再来吧…… ";
+				link.l1.go = "exit";
+			}
+			else
+			{
+				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
+				if (NextDiag.TempNode != "I_know_you_good")
+					dialog.text = "你疯了" + GetSexPhrase("", "吗") + "? 兄弟们一看到你就像见了瘟疫一样闪得远远的。 别烦我, 赶紧走人。";
+				else
+					dialog.text = "你在说啥, " + GetSexPhrase("伙计", "姑娘") + "? 你这人惹人烦得很, 连狗都不乐意跟你扯上关系。 谁都不想搭理你。";
+				link.l1 = "明白了…… ";
+				link.l1.go = "exit";
+			}
+		break;
+
+		case "pirate_threat_pay":
+			iGPThreatRate = 0;
+			iGPThreat = 0;
+			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
+			RemoveDublonsFromPCharTotal(iBarbazonTotalTemp);
+			DialogExit();
+			PiratesDecreaseNotif("");
+		break;
+		
 		// Addon 2016-1 Jason ----------------------- —海盗线 --------------------------
 		case "Mtraxx":
 			if (pchar.Ship.Type == SHIP_NOTUSED)
@@ -701,7 +764,7 @@ void ProcessDialogEvent()
 					{
 						sTemp = "。 等一下, 拿一张60天的贸易许可证和一面西班牙国旗, 以便在圣多明戈靠岸。 从现在起, 我建议你自己弄一面, 这有助于在贸易中欺骗那些蠢货。 这面得还给我。 ";
 						GiveNationLicence(HOLLAND, 60);
-						SetCharacterPerk(pchar, "FlagSpa");
+						STH_SetJokerFlag(SPAIN, true);
 						log_info("你收到了西班牙国旗");
 						pchar.questTemp.GiveMeSpaFlag = true;
 					}
@@ -711,14 +774,14 @@ void ProcessDialogEvent()
 						{
 							sTemp = "。 等等, 没有合适的旗帜你怎么贸易? ! 给你, 这是比你的更长的60天贸易许可证, 还有在圣多明戈靠岸用的西班牙国旗。 从现在起, 我建议你自己弄一面, 这有助于在贸易中欺骗那些蠢货。 这面得还给我。 ";
 							GiveNationLicence(HOLLAND, 60);
-							SetCharacterPerk(pchar, "FlagSpa");
+							STH_SetJokerFlag(SPAIN, true);
 							log_info("你收到了西班牙国旗");
 							pchar.questTemp.GiveMeSpaFlag = true;
 						}
 						else 
 						{
 							sTemp = "。 等等, 没有合适的旗帜你怎么贸易? ! 拿着, 这是在圣多明戈靠岸用的西班牙国旗。 从现在起, 我建议你自己弄一面, 这有助于在贸易中欺骗那些蠢货。 这面得还给我。 ";
-							SetCharacterPerk(pchar, "FlagSpa");
+							STH_SetJokerFlag(SPAIN, true);
 							log_info("你收到了西班牙国旗");
 							pchar.questTemp.GiveMeSpaFlag = true;
 						}
@@ -767,7 +830,7 @@ void ProcessDialogEvent()
 				if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 				{
 					DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
-					DeleteAttribute(pchar,"perks.list.FlagSpa"); 
+					STH_SetJokerFlag(SPAIN, false); 
 					log_info("你归还了西班牙国旗");
 				}
 			}
@@ -791,7 +854,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
 				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
-				DeleteAttribute(pchar,"perks.list.FlagSpa"); 
+				STH_SetJokerFlag(SPAIN, false); 
 				log_info("你归还了西班牙国旗");
 			}
             dialog.text = "这才像个真正的海盗, 哈哈哈! 战利品分你一半, 拿着吧。 ";
@@ -962,7 +1025,7 @@ void ProcessDialogEvent()
 					{
 						sTemp = ", 还有40天的贸易许可证。 另外, 你打算怎么骗过堡垒里的蠢货? ! 你这么马虎早晚会让我失望... 拿着... 回来时还我。 新一代啊, 呸... ";
 						GiveNationLicence(HOLLAND, 40);
-						SetCharacterPerk(pchar, "FlagSpa");
+						STH_SetJokerFlag(SPAIN, true);
 						log_info("你获得了西班牙国旗");
 						pchar.questTemp.GiveMeSpaFlag = true;
 					}
@@ -972,14 +1035,14 @@ void ProcessDialogEvent()
 						{
 							sTemp = "。 告诉我, 你打算怎么骗过堡垒里的蠢货? ! 没有合适的旗帜, 你的文件没用。 我觉得你这么马虎早晚会让我失望... 给你, 40天的贸易许可证, 比你的长。 还有在马拉开波靠岸用的西班牙国旗。 回来时还我。 新一代啊, 呸... ";
 							GiveNationLicence(HOLLAND, 40);
-							SetCharacterPerk(pchar, "FlagSpa");
+							STH_SetJokerFlag(SPAIN, true);
 							log_info("你获得了西班牙国旗");
 							pchar.questTemp.GiveMeSpaFlag = true;
 						}
 						else 
 						{
 							sTemp = "。 告诉我, 你打算怎么骗过堡垒里的蠢货? ! 没有合适的旗帜, 你的文件没用。 我觉得你这么马虎早晚会让我失望... 拿着... 回来时还我。 新一代啊, 呸... ";
-							SetCharacterPerk(pchar, "FlagSpa");
+							STH_SetJokerFlag(SPAIN, true);
 							log_info("你获得了西班牙国旗");
 							pchar.questTemp.GiveMeSpaFlag = true;
 						}
@@ -1042,7 +1105,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
 				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
-				DeleteAttribute(pchar,"perks.list.FlagSpa"); 
+				STH_SetJokerFlag(SPAIN, false); 
 				log_info("你归还了西班牙国旗");
 			}
 			CloseQuestHeader("Roger_3");
@@ -1606,7 +1669,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_85f":
-			SetCharacterPerk(pchar, "FlagSpa");
+			STH_SetJokerFlag(SPAIN, true);
 			log_info("你获得了西班牙旗帜");
 			pchar.questTemp.GiveMeSpaFlag = true;
             dialog.text = "搞什么鬼? 王子, 这简直能用壁炉里的拨火棍把你敲醒。 我没想到还得跟你讲这些基本常识。 拿着西班牙旗帜, 否则你还没开始就会搞砸整件事。 把它还给我。 现在滚出去! ";
@@ -1656,7 +1719,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
 				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
-				DeleteAttribute(pchar,"perks.list.FlagSpa"); 
+				STH_SetJokerFlag(SPAIN, false); 
 				log_info("你已归还西班牙旗帜");
 			}
 			npchar.dialog.currentnode = "First time";
@@ -1768,7 +1831,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
 				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
-				DeleteAttribute(pchar,"perks.list.FlagSpa"); 
+				STH_SetJokerFlag(SPAIN, false); 
 				log_info("你已归还西班牙旗帜");
 			}
 		break;

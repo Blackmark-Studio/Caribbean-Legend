@@ -22,6 +22,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "Me dijeron que tenías una carta para mí. El nombre es Capitán Charles de Maure.";
 			link.l1.go = "LH_letter";
 		}
+		//--> Эпилог
+		if (CheckAttribute(pchar, "questTemp.SharlieEpilog_PU_Ulysse"))
+		{
+			link.l1 = "Escuché que la pinaza '"+GetShipName("Ulysse")+"' fue puesta recientemente en subasta. ¿Es cierto?";
+			link.l1.go = "SharlieEpilog_PU_Ulysse_1";
+		}
+		//<-- Эпилог
 		break;
 
 	case "Sharlie":
@@ -70,6 +77,22 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		AddMoneyToCharacter(pchar, -12000);
 		LongHappy_RecibeLetter();
 		break;
+		
+		//--> Эпилог
+		case "SharlieEpilog_PU_Ulysse_1":
+			dialog.text = "Así es. El dueño del barco quedó atrapado en deudas de seguros y lo puso en subasta. Pero llegaste un poco tarde — la subasta ya terminó y el nuevo propietario está firmando los papeles.";
+			link.l1 = "¿Sabe dónde puedo encontrarlo? Necesito hablar con él.";
+			link.l1.go = "SharlieEpilog_PU_Ulysse_2";
+			DelLandQuestMark(npchar);
+			SharlieEpilog_SpawnPikar();
+		break;
+		
+		case "SharlieEpilog_PU_Ulysse_2":
+			dialog.text = "¿Para qué buscarlo? Date la vuelta — está justo detrás de ti.";
+			link.l1 = "...";
+			link.l1.go = "exit";			
+		break;
+		//<-- Эпилог
 	}
 	UnloadSegment(NPChar.FileDialog2); // если где-то выход внутри switch  по return не забыть сделать анлод
 }

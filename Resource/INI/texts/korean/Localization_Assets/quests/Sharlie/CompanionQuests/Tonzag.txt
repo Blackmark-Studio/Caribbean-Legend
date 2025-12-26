@@ -1,0 +1,8 @@
+Tonzag_1 {현상금 사냥꾼}
+Tonzag_2 { }
+Tonzag_3 { }
+Tonzag_4 {6시간이 지났습니다...}
+Tonzag_5 {탐험 모드: 타이머 비활성화.}
+Tonzag_6 {청동 기사 해금됨}
+Tonzag_7 {Alberto}
+Tonzag_8 {Gaodio}

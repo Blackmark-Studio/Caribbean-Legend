@@ -1,0 +1,17 @@
+food_1 {쥐}
+food_2 {~ 상했다 ~}
+food_3 {~ 손상됨 ~}
+food_4 {~ 파괴됨 ~}
+food_5 {~ 개 ~}
+food_6 {선박 @<rChar.Ship.Name>에서 질병으로 @<FindRussianSailorString(cn, "No")>이(가) 사망했습니다}
+food_7 {@<rChar.Ship.Name>에 약품이 부족합니다}
+food_8 {선박 @<rChar.Ship.Name>에서 질병으로 @<FindRussianSlavesString(cn, "No")>명이 사망했습니다}
+food_9 {@<rChar.Ship.Name>의 선원들이 럼주를 갈망하고 있습니다.}
+food_10 {@<rChar.Ship.Name>에 식량이 @<FindRussianDaysString(cn)> 남음}
+food_11 {물자를 서둘러 보충해야 합니다!}
+food_12 {노예들이 반란을 일으켰습니다!}
+food_13 {@<rChar.Ship.Name>에서 선원들이 굶주리고 있습니다. 선원들의 사기가 떨어지고 있습니다!}
+food_14 {선원들이 굶주리고 있습니다}
+food_15 {노예들이 굶주리고 있습니다}
+food_16 {@<rChar.Ship.Name>에서 폭동 발생!!!! ~}
+food_17 {함선이 전대에서 이탈합니다}

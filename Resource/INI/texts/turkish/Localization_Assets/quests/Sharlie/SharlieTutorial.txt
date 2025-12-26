@@ -1,0 +1,10 @@
+SharlieTutorial_1 {Kaptan}
+SharlieTutorial_2 {Denizci}
+SharlieTutorial_3 {Güverte subayı}
+SharlieTutorial_4 {Hazinedar}
+SharlieTutorial_5 {Korsan}
+SharlieTutorial_6 {Ulysse}
+SharlieTutorial_7 {Paul}
+SharlieTutorial_8 {Henry}
+SharlieTutorial_9 {Mathieu}
+SharlieTutorial_10 {Pinchon}

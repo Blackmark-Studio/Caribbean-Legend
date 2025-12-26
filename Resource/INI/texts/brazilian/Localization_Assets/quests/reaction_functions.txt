@@ -1,0 +1,5 @@
+reaction_functions_1 {Overdose de poção de mangarosa!}
+reaction_functions_2 {Você foi envenenado}
+reaction_functions_3 {Poção Especial de Mangarosa Usada!}
+reaction_functions_4 {O efeito da poção de mangarosa acabou}
+reaction_functions_5 {Dia de sorte para negociar, os porões estão cheios de mercadorias! +}

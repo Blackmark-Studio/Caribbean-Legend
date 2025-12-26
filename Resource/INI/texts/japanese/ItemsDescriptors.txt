@@ -1,0 +1,149 @@
+descriptor_Fancy {華麗}
+descriptor_Exotic {異国}
+descriptor_HighQuality {上質}
+descriptor_GoodFit {素朴}
+descriptor_HeartDefence {強化}
+descriptor_Unremarkable {素朴}
+descriptor_WeaponType_0 {軽量}
+descriptor_WeaponType_1 {中量}
+descriptor_WeaponType_2 {重量}
+descriptor_WeaponLength_0 {短い}
+descriptor_WeaponLength_1 {長い}
+descriptor_WeaponCurvature_0 {直刀}
+descriptor_WeaponCurvature_1 {曲刀}
+descriptor_ArmorType_0 {軽量}
+descriptor_ArmorType_1 {中量}
+descriptor_ArmorType_2 {重量}
+descriptor_ArmorMaterial_0 {布製}
+descriptor_ArmorMaterial_1 {革製}
+descriptor_ArmorMaterial_2 {板金}
+descriptor_ArmorMaterial_3 {型押し}
+descriptor_ArmorMaterial_4 {鍛造}
+descriptor_AmuletType_0 {日用}
+descriptor_AmuletType_1 {異教}
+descriptor_AmuletType_2 {教会}
+descriptor_SingleCharge {単発}
+descriptor_MultiCharge {連発}
+descriptor_OneHanded {片手}
+descriptor_TwoHanded {両手}
+descriptor_Bayonet {銃剣}
+descriptor_PiercingAmmo {徹甲}
+descriptor_StunAmmo {気絶}
+descriptor_EmpoweredAmmo {過装填}
+descriptor_SpyGlass {観測}
+descriptor_SpyGlass_Crew_0 {乗員概算}
+descriptor_SpyGlass_Crew_1 {乗員予測}
+descriptor_SpyGlass_Crew_2 {乗員数}
+descriptor_SpyGlass_Caliber_0 {大砲}
+descriptor_SpyGlass_Caliber_1 {武装}
+descriptor_Special {特殊}
+descriptor_Tool {道具}
+descriptor_Valuable {高価}
+descriptor_BulletNeedPowder {火薬}
+descriptor_descr_BulletNeedPowder {この弾薬は火薬がなければ発射できない。}
+descriptor_GrapeAmmo {散弾}
+descriptor_BulletAmmo {弾丸}
+descriptor_BombAmmo {手榴弾}
+descriptor_HealPotion {回復}
+descriptor_Alcohol {酩酊}
+descriptor_EnhancingPotion {強化}
+descriptor_AntidotePotion {解毒剤}
+descriptor_Metal {金属}
+descriptor_Trinket {装飾品}
+descriptor_descr_Alcohol {舌を滑らかにし、 思考を軽くするが、 スキルにペナルティを与える。}
+descriptor_descr_EnhancingPotion {特別な強化効果を持つ。}
+descriptor_descr_AntidotePotion {毒を消し、毒状態を止める。}
+descriptor_descr_Metal {地中から採取され、 錬金術に使われる。}
+descriptor_descr_Trinket {洗練された品からそうでない品まで、 趣味人と田舎者を分ける逸品。 金貸しでドゥブロン銀貨と交換できる。}
+descriptor_Junk {ガラクタ}
+descriptor_Herb {薬草}
+descriptor_descr_Herb {大地の恵み。 主に錬金術で軟膏や薬の調合に使われる。}
+descriptor_descr_Fancy {このアイテムは華麗な外観、 インレイ、 そして高価な素材が際立っています。 装備するとリーダーシップが$number($DescriptorBaseValue(Fancy))上昇します。効果は重複します。}
+descriptor_descr_Exotic
+{
+この品は善良なキリスト教徒の手にあるべきではなく、 持ち主には不穏な噂が瞬く間に広まる。
+艦隊力が$percent($DescriptorBaseValue(Exotic))増加する。効果は累積。
+}
+descriptor_descr_HighQuality {この武器は精巧に作られているため、 クリティカルダメージが$percent($DescriptorBaseValue(HighQuality))増加する。}
+descriptor_descr_GoodFit {この防具は驚くほど体に馴染み、 全ての武器の攻撃速度が$percent($DescriptorBaseValue(GoodFit))上昇する。}
+descriptor_descr_HeartDefence {この防具は要所が強化されており、 敵のクリティカルダメージを$percent($DescriptorBaseValue(HeartDefence))軽減する。}
+descriptor_descr_Unremarkable
+{
+誰もが持っている品。 これでは目立たず、 記憶にも残らない。
+隠密が$number($DescriptorBaseValue(Unremarkable))上昇。効果は累積。
+}
+descriptor_descr_WeaponType_0 {軽装武器は軽くて素早く、 主に一対一の決闘向きです。 攻撃速度が5%上昇します。}
+descriptor_descr_WeaponType_1 {中装武器は重量と速度のバランスが良く、 最も万能な選択肢です。 乱戦や白兵戦に最適。}
+descriptor_descr_WeaponType_2 {重装武器は圧倒的な重量と同等の威力を誇るが、 攻撃速度が5%低下する。}
+descriptor_descr_WeaponLength_0 {この武器は敵に接近して使うもので、 近距離戦に適しています。}
+descriptor_descr_WeaponLength_1 {この武器はリーチが長く、 広い場所で真価を発揮します。}
+descriptor_descr_WeaponCurvature_0 {この武器は直刀またはわずかに曲がっており、 斬撃よりも速攻に適しています。}
+descriptor_descr_WeaponCurvature_1 {この武器は大きく湾曲し、 重心が前方にあるため、 速攻よりも斬撃に適しています。}
+descriptor_descr_ArmorType_0 {軽装はほとんど普段着と変わらず、 動きを一切妨げません。 その代わり、 防御力は低くなります。}
+descriptor_descr_ArmorType_1 {中装は動きをやや制限しますが、 重要な部位をしっかり守ります。 移動速度が5%低下します。}
+descriptor_descr_ArmorType_2 {重装はかさばり扱いづらいが、 要塞への突撃に最適。 移動速度が10%低下する。}
+descriptor_descr_ArmorMaterial_0 {布製は強い打撃には弱いが、 擦り傷や引っかき傷から守ってくれる。 被ダメージを4%軽減。}
+descriptor_descr_ArmorMaterial_1 {革製の防具は酔いどれの喧嘩には役立つが、 銃弾や達人の突きには無力だ。 被ダメージを8%軽減。}
+descriptor_descr_ArmorMaterial_2 {板金は重量と防御のバランスに優れています。 命を救うことも。 被ダメージを15%軽減。}
+descriptor_descr_ArmorMaterial_3
+{
+型押し防具は兵士の装備として大量生産され、 ヨーロッパの戦争で使われている。
+被ダメージを22%軽減。
+}
+descriptor_descr_ArmorMaterial_4 {高品質な鍛造防具の製造は複雑かつ高価であり、 カリブでは珍しい存在だ。 受けるダメージを35%軽減する。}
+descriptor_descr_AmuletType_0 {兆しや海の迷信、 そして現実の因果関係を利用する。}
+descriptor_descr_AmuletType_1 {異教の神々と先住民の儀式の力を引き出す。}
+descriptor_descr_AmuletType_2 {キリスト教の聖人と正しき信仰の力を引き出す。}
+descriptor_descr_SingleCharge {予備は一発だけ――無駄にするな。}
+descriptor_descr_MultiCharge {複数の銃身やシリンダー、 薬室を持ち、 連続で発射できる。 特殊な技能が必要。}
+descriptor_descr_OneHanded {ベルトやたすきに携帯する手持ち武器。 単発式は特別な扱い技術を必要としない。}
+descriptor_descr_TwoHanded {発射時に両手で構える必要がある重量級の火器。 使用には特別な技能が必要。}
+descriptor_descr_Bayonet {この長銃身の火器は銃剣付きで、 速攻のダメージが25%増加する。}
+descriptor_descr_PiercingAmmo {この弾薬は命中時に防具を無視する。}
+descriptor_descr_StunAmmo {この弾薬は命中時に敵にペナルティを与える。}
+descriptor_descr_EmpoweredAmmo {この弾薬は武器の性能を向上させます。}
+descriptor_descr_SpyGlass {どの望遠鏡でも、 船の種類、 名前、 状態、 速度、 大砲の数が判明する。}
+descriptor_descr_SpyGlass_Crew_0 {この望遠鏡では乗組員をはっきり確認できないため、 見積もりはおおよそになります。}
+descriptor_descr_SpyGlass_Crew_1 {この望遠鏡で船の乗員数を正確に把握し、 銃士の有無も見分けられる。}
+descriptor_descr_SpyGlass_Crew_2 {この望遠鏡は敵の乗員数と銃士数、 さらに船長のスキルまで正確に見抜く。}
+descriptor_descr_SpyGlass_Caliber_0 {この望遠鏡なら、 砲門の数だけでなく口径までも見分けられる。}
+descriptor_descr_SpyGlass_Caliber_1 {この高品質な望遠鏡なら、 搭載された大砲の口径や装填されている弾薬の種類まで見分けられる。}
+descriptor_descr_Special {このアイテムには特別な効果があります。}
+descriptor_descr_Tool {複雑な器具のセット。 素人には無用の長物だが、 あなたは違う。}
+descriptor_descr_Valuable {高値で売れる。}
+descriptor_descr_BulletNeedPower {火薬がないと発射できません。}
+descriptor_descr_GrapeAmmo {複数の小さな弾丸。 集団の敵や、 至近距離の単体に特に効果的。}
+descriptor_descr_BulletAmmo {一発ずつ装填・ 発射。 中距離や遠距離で特にヘッドショットが有効。}
+descriptor_descr_BombAmmo {爆発して周囲の敵全員に命中する。 集団戦で特に効果的。}
+descriptor_descr_HealPotion {この薬は体力を回復する。}
+descriptor_descr_Junk {カリブ中でよく見かけるさまざまな装飾品。 使い方を知る者にだけ価値があり、 そうでなければ暗い隅で埃をかぶるだけだ。}
+descriptor_Alchemy {錬金術}
+descriptor_descr_Alchemy {このアイテムは錬金術で作成または改造できます。}
+descriptor_Quest {クエスト}
+descriptor_descr_Quest {このアイテムはクエストに必要です。 捨てたり売ったりできません。}
+descriptor_Map {地図}
+descriptor_descr_Map {土地の印が記された紙切れ。 これらの品はすべて即座に地図帳へ写される。}
+descriptor_Fragile {脆い}
+descriptor_descr_Fragile {このアイテムは一定回数使用すると壊れます。}
+descriptor_Cannoner {$key(Cannoner)}
+descriptor_Boatswain {$key(Boatswain)}
+descriptor_Carpenter {$key(Carpenter)}
+descriptor_Navigator {$key(Navigator)}
+descriptor_Treasurer {$key(Treasurer)}
+descriptor_Doctor {$key(Doctor)}
+descriptor_descr_Cannoner {効果は砲手に適用されます。}
+descriptor_descr_Boatswain {効果は甲板長に適用されます。}
+descriptor_descr_Carpenter {効果は船大工に適用されます。}
+descriptor_descr_Navigator {効果は航海士に適用されます。}
+descriptor_descr_Treasurer {効果は経理長に適用されます。}
+descriptor_descr_Doctor {効果は船医に適用されます。}
+descriptor_Ingredient {素材}
+descriptor_Jewelery {宝石}
+descriptor_descr_Jewelery {宝石や半貴石。 売却や錬金術に使用可能。}
+descriptor_descr_Ingredient {このアイテムは錬金術で使用します。}
+descriptor_Alternate {調整}
+descriptor_descr_Alternate {この特典は主人公には一つの効果、 他のキャラクターには別の効果があります。}
+descriptor_IntoxicatingPotion {酩酊}
+descriptor_descr_IntoxicatingPotion {舌を滑らかにし、 思考を軽くするが、 スキルにペナルティがかかる。}
+descriptor_Fighter {$key(Fighter)}
+descriptor_descr_Fighter {効果は先鋒に有用です。}

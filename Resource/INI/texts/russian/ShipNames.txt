@@ -21,3 +21,4 @@ Oliphant {Олифант}
 Trafalgar {Трафальгар}
 Eclatant {Эклятон}
 Red Dragon {Красный дракон}
+Ulysse {Улисс}

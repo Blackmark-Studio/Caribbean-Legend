@@ -25,7 +25,7 @@ void Duel_Prepare_Fight()
 		PChar.Quest.Duel_Fight_Right_Now.win_condition.l1.Location = "Clone_location";
 		PChar.Quest.Duel_Fight_Right_Now.function = "Duel_Fight_Right_Now";
 
-		LocationMakeClone(pchar.location);
+		DuelMakeLocClone(pchar.location);
 		Locations[FindLocation("Clone_location")].image = "loading\tavern_fight.tga";
 //		DoQuestReloadToLocation("Clone_location", pchar.location.group, pchar.location.locator, "Duel_Fight_Right_Now");
 		DoReloadCharacterToLocation("Clone_location", pchar.location.group, pchar.location.locator);
@@ -220,6 +220,7 @@ void Duel_Kill_Enemy()
 	if (CheckAttribute(pchar, "questTemp.LocationClone") && sti(pchar.questTemp.LocationClone))
 	{
 		DoQuestCheckDelay("TalkSelf_Start", 0.2);
+        SetFunctionExitFromLocationCondition("SyncClonedLocBoxes", "Clone_location", false);
 	}
 
 	//убрать оружие, нефиг :)
@@ -425,33 +426,52 @@ void MakeRandomLinkOrderThree(aref link, string l1, string l1_go, string l2, str
 		break;
 	}
 }
-/*
-//не работает :(
-void CheckLinkFunction(ref Dialog)
-{
-	int i, iNum;
-	string func;
-	aref link, links; 
-	makearef(links, Dialog.Links);
 
-	iNum = GetAttributesNum(links);
-	trace(Dialog.CurrentNode);
-	for (i = 0; i < iNum; i++)
-	{
-		link = GetAttributeN(links, i);
-		DumpAttributes(link);
-		trace(link.go + " " + CheckAttribute(link, "go.function"));
-		trace("=================");
-		if (CheckAttribute(link, "go.function") && link.go == Dialog.CurrentNode)
-		{
-			func = link.go.function;
-			call func();
-		}
-	}
-}
-*/
-void TestFnc()
+void DuelMakeLocClone(string _locId)
 {
-	Log_TestInfo("TestFnc Works");
+	ref rOrg, rClone;
+	int iOrg, iClone;
+
+	iOrg = FindLocation(_locId);
+	iClone = FindLocation("Clone_location");
+
+	makeref(rOrg, Locations[iOrg]);
+	makeref(rClone, Locations[iClone]);
+
+	DeleteAttribute(rClone, "");
+	CopyAttributes(rClone, rOrg);
+	rClone.id = "Clone_location";
+	rClone.type = "clone";
+	rClone.index = iClone;
+	DeleteAttribute(rClone, "habitues");
+
+	pchar.questTemp.LocationClone = true;
+	pchar.questTemp.LocationClone.id = rOrg.id;
+
+    TEV.SyncClonedLocBoxes = rOrg.id;
 }
-/**/
+
+void SyncClonedLocBoxes(string qName)
+{
+    string BoxName;
+    aref arTo, arFrom;
+
+    int iOrig  = FindLocation(TEV.SyncClonedLocBoxes);
+    ref rOrig  = &Locations[iOrig];
+    int iClone = FindLocation("Clone_location");
+    ref rClone = &Locations[iClone];
+
+    for (int i = 0; i < MAX_HANDLED_BOXES; i++)
+    {
+        BoxName = "box" + i;
+        if (CheckAttribute(rClone, BoxName))
+        {
+            makearef(arTo, rOrig.(BoxName));
+            makearef(arFrom, rClone.(BoxName));
+            CopyAttributes(arTo, arFrom);
+        }
+        else if (i != 0) break;
+	}
+
+    DeleteAttribute(&TEV, "SyncClonedLocBoxes");
+}

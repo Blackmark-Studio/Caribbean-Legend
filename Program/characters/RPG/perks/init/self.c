@@ -101,7 +101,6 @@ void initSelfPerks(ref list)
 	perks.Conquest.cost = 2;
 	perks.Conquest.condition.Medic = true;
 	AddArefCallback(perks, "Conquest", CT_EQUIP, "Perk_Conquest");
-	SetAttribute(perks,"Conquest.descriptors." +M_WEAPON_CURVATURE + "_" +  WEAPON_STRAIGHT, true);	
 	SetAttribute(perks,"Conquest.descriptors." +M_WEAPON_LENGTH + "_" +  WEAPON_LONG, true);
 
 	perks.Muscles.cost = 2;
@@ -142,7 +141,6 @@ void initSelfPerks(ref list)
 	perks.Heartbreaker.condition.CunningStrike = true;
 	AddArefCallback(perks, "Heartbreaker", CT_EQUIP, "Perk_Heartbreaker");
 	SetAttribute(perks,"Heartbreaker.descriptors." +M_WEAPON_CURVATURE + "_" +  WEAPON_STRAIGHT, true);	
-	SetAttribute(perks,"Heartbreaker.descriptors." +M_WEAPON_LENGTH + "_" +  WEAPON_LONG, true);
 
 	perks.Dodgy.cost = 2;
 	perks.Dodgy.condition.CunningStrike = true;

@@ -1,0 +1,17 @@
+Net_ShipDieFromPlayer {%1 <%2>이(가) %3 <%4>을(를) 침몰시켰습니다.}
+Net_ShipDieFromCollisionLiveShip {%1 <%2>이(가) %3 <%4>을(를) 들이받았습니다.}
+Net_ShipDieFromCollisionDeadShip {%1 <%2> 상어 밥이 되었군! 이런 항해사는 화를 자초하지.}
+Net_ShipDieFromCollisionIsland {%1 <%2> 암초에 부딪혀 침몰했습니다! 이런 항해사는 부끄러운 일입니다!}
+Net_ShipDieFromLighting {주님께서 %1 <%2>에게 진노하시고 그를 벌하셨다!}
+Net_ShipDieFromCriticalHit {%1 <%2>가 %3 <%4>을 산산조각냈다!}
+Net_CriticalHit {%1 <%2>이(가) %3 <%4>의 갑판에 있는 화약통을 맞췄습니다!}
+Net_MastFallFromHit {%1 <%2>이(가) %3 <%4>의 돛대를 쓰러뜨렸습니다.}
+Net_MastFallFromCollision {%1 <%2> 충돌로 인해 돛대가 부러졌습니다.}
+Net_FireActivation {%1 <%2>이(가) %3 <%4>에 불을 질렀다}
+NetFG_ServerIsFull {서버가 가득 찼습니다. 다른 플레이어의 접속이 불가능합니다.}
+NetFG_NeedUserPassword {입력한 비밀번호가 서버에 저장된 비밀번호와 일치하지 않습니다. 다시 시도해 주세요.}
+NetFG_NeedServerPassword {서버에 연결할 때 비밀번호가 올바르지 않습니다. 다시 시도해 주세요.}
+NetFG_RejectedUnknown {알 수 없는 이유로 서버에 연결할 수 없습니다.}
+NetFG_Banned {이 서버에 접속이 금지되었습니다.}
+NetEG_DeathMatch {전투가 끝났습니다.\n \n%1이(가) 승리했습니다!}
+NetEG_Team {전투가 끝났습니다.\n \n"%1" 팀이 승리했습니다!}

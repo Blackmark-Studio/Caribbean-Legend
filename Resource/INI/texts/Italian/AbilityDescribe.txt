@@ -5,17 +5,17 @@ newline
 BasicDefense {Difesa base}
 perkBasicDefense {Riduce i danni subiti del $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Difesa avanzata}
-perkAdvancedDefense {Riduce i danni subiti del $percent($perkBaseValue(AdvancedDefence|1)) e i danni critici nemici del $percent($perkBaseValue(AdvancedDefence|2)).}
+perkAdvancedDefense {Riduce i danni subiti del $percent($perkBaseValue(AdvancedDefense|1)) e i danni critici nemici del $percent($perkBaseValue(AdvancedDefense|2)).}
 CriticalHit {Colpo critico}
-perkCriticalHit {Aumenta la probabilità base di colpo critico del 3,5%.}
+perkCriticalHit {Aumenta la probabilità base di colpo critico del $percent($perkBaseValue(CriticalHit|1)).}
 Grus {Schiena forte}
 perkGrus {Aumenta il peso trasportabile di 35 libbre.}
 Tireless {Instancabilità}
-perkTireless {La velocità di recupero energia aumenta del 15%.}
+perkTireless {La velocità di recupero energia aumenta del $percent($perkBaseValue(Tireless|1)).}
 HardHitter {Mano pesante}
-perkHardHitter {Gli attacchi pesanti con Arma pesante infliggono il 15% di danni in più. Sblocca attacco pesante avanzato.}
+perkHardHitter {Gli attacchi pesanti con Arma pesante infliggono il $percent($perkBaseValue(HardHitter|1)) di danni in più. Sblocca attacco pesante avanzato.}
 BladeDancer {Danza con le Sciabole}
-perkBladeDancer {L’attacco di gruppo con armi ricurve infligge il 30% di danni in più.}
+perkBladeDancer {L’attacco di gruppo con armi ricurve infligge il $percent($perkBaseValue(BladeDancer|1)) di danni in più.}
 Sliding {Colpo irresistibile}
 perkSliding {Cięcie lub pchnięcie lekką bronią może przebić blok z szansą $percent($perkBaseValue(Sliding|1)), wykorzystując unikalne zaawansowane uderzenie.}
 Gunman {Moschettiere}
@@ -28,7 +28,7 @@ perkGunProfessional {Aumenta i danni e la velocità di ricarica delle armi da fu
 IronWill {Volontà di ferro}
 perkIronWill {Permette di sopravvivere a una ferita mortale una volta ogni 3 minuti.}
 SharedExperience {Apprendista Rapido}
-perkSharedExperience {Accelera lo sviluppo delle abilità del 5%.}
+perkSharedExperience {Accelera lo sviluppo delle abilità del 15%.}
 Medic {Abitudini salutari}
 perkMedic {Aumenta la salute di 25 punti. Raddoppia la guarigione passiva se la salute è sotto la metà del massimo.}
 HPPlus {Salute crescente}
@@ -102,25 +102,13 @@ perkFlagPir
 Possibilità di cambiare la tua bandiera con il Jolly Roger.~Questa abilità è disponibile solo per il giocatore.
 }
 FlagEng {Bandiera d’Inghilterra}
-perkFlagEng
-{
-La probabilità di essere scoperti dipende da Furtività, classe e dimensione della nave e della flotta, dimensione della flotta nemica e livello di Minaccia.~Abilità disponibile solo per il giocatore
-}
+perkFlagEng {Puoi usare solo le bandiere disponibili per il rate della tua nave. Per ottenere una bandiera devi catturare una nave del rate corrispondente o acquistare una licenza.}
 FlagFra {Bandiera della Francia}
-perkFlagFra
-{
-La probabilità di essere scoperti dipende da Furtività, classe e dimensione della nave e della flotta, dimensione della flotta nemica e livello di Minaccia.~Abilità disponibile solo per il giocatore
-}
+perkFlagFra {Puoi usare solo le bandiere disponibili per il rate della tua nave. Per ottenere una bandiera devi catturare una nave del rate corrispondente o acquistare una licenza.}
 FlagSpa {Bandiera della Spagna}
-perkFlagSpa
-{
-La probabilità di essere scoperti dipende da Furtività, classe e dimensione della tua nave e flotta, dimensione della flotta nemica e livello di Minaccia.~Abilità disponibile solo per il giocatore
-}
+perkFlagSpa {Puoi usare solo le bandiere disponibili per il rate della tua nave. Per ottenere una bandiera devi catturare una nave del rate corrispondente o acquistare una licenza.}
 FlagHol {Bandiera dei Paesi Bassi}
-perkFlagHol
-{
-La probabilità di essere scoperti dipende da Furtività, classe della nave, dimensione della flotta, dimensione della flotta nemica e livello di Minaccia.~Abilità disponibile solo per il giocatore
-}
+perkFlagHol {Puoi usare solo le bandiere disponibili per il rate della tua nave. Per ottenere una bandiera devi catturare una nave del rate corrispondente o acquistare una licenza.}
 Troopers {Tattiche d’assedio}
 perkTroopers
 {
@@ -192,11 +180,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Mani rapide}
-perkFastHands {Aumenta la velocità di estrazione e riposizionamento delle armi da fuoco del 20%.}
+perkFastHands {Aumenta la velocità di estrazione e riposizionamento delle armi da fuoco del $percent($perkBaseValue(FastHands|1)).}
 AmmoRig {Equipaggiamento}
-perkAmmoRig {La ricarica delle armi da fuoco è più veloce del 5%.}
+perkAmmoRig {La ricarica delle armi da fuoco è più veloce del $percent($perkBaseValue(AmmoRig|1)).}
 Preaim {Puntamento}
-perkPreaim {La modalità mira è più veloce del 15%.}
+perkPreaim {La modalità mira è più veloce del $percent($perkBaseValue(Preaim|1)).}
 KeenEye {Occhio attento}
 perkKeenEye {I colpi alla testa infliggono il $percent($perkBaseValue(KeenEye|1)) di danni in più.}
 PowderFeel {Senso della polvere nera}
@@ -208,29 +196,29 @@ perkLeadRain {La Mitraglia infligge il 5% di danni in più per ogni nemico colpi
 ShootToKill {Spara per uccidere}
 perkShootToKill {Colpire un nemico con un'arma da fuoco lo rallenta, riducendo la sua velocità di movimento del 25%. Durata: 5 secondi.}
 Muscles {Montagna di muscoli}
-perkMuscles {Qualsiasi attacco con Arma pesante consuma il 10% in meno di energia e si esegue il 4% più velocemente. Recupero da Stordente più rapido del 15%.}
+perkMuscles {Qualsiasi attacco con Arma pesante consuma il $percent($perkBaseValue(Muscles|1)) in meno di energia e si esegue il $percent($perkBaseValue(Muscles|2)) più velocemente. Recupero da Stordente più rapido del $percent($perkBaseValue(Muscles|3)).}
 Conquest {Conquista}
-perkConquest {Gli attacchi con colpo duro e le armi bianche dritte lunghe infliggono il 15% di danni in più.}
+perkConquest {Gli attacchi taglienti e gli attacchi pesanti con armi lunghe infliggono $percent($perkBaseValue(Conquest|1)) danni aggiuntivi.}
 PalaceGuard {Guardia di Palazzo}
-perkPalaceGuard {Le armi bianche pesanti ricurve infliggono il 15% di danni in più con gli attacchi e un ulteriore 5% in più con gli attacchi di gruppo.}
+perkPalaceGuard {Le armi bianche pesanti ricurve infliggono il $percent($perkBaseValue(PalaceGuard|1)) di danni in più con gli attacchi e un ulteriore 5% in più con gli attacchi di gruppo.}
 CunningStrike {Colpo subdolo}
-perkCunningStrike {Le armi leggere hanno il 3% in più di probabilità di colpo critico. Gli attacchi alle spalle infliggono il 10% di danni in più.}
+perkCunningStrike {Le armi leggere hanno il $percent($perkBaseValue(CunningStrike|1)) in più di probabilità di colpo critico. Gli attacchi alle spalle infliggono il $percent($perkBaseValue(CunningStrike|2)) di danni in più.}
 Heartbreaker {Rubacuori}
-perkHeartbreaker {Gli affondi con armi bianche dritte e lunghe infliggono il 10% di danni in più e sono eseguiti il 3% più velocemente.}
+perkHeartbreaker {Gli attacchi rapidi con armi dritte infliggono $percent($perkBaseValue(Heartbreaker|1)) danni aggiuntivi e sono $percent($perkBaseValue(Heartbreaker|2)) più veloci.}
 Dodgy {Fortuna}
-perkDodgy {La spinta in Sprint è più forte del 30% e consuma meno energia.}
+perkDodgy {La spinta in Sprint è più forte del $percent($perkBaseValue(Dodgy|1)) e consuma meno energia.}
 Exhaustion {Sfinimento}
-perkExhaustion {Parare con armi corte consuma il 20% in più di energia. Il recupero da Stordimento del nemico è più lungo del 10%.}
+perkExhaustion {Parare con armi corte consuma il  $percent($perkBaseValue(Exhaustion|1)) in più di energia. Il recupero da Stordimento del nemico è più lungo del 10%.}
 Reaper {Mietitore}
-perkReaper {Danni critici aumentati del 30% e probabilità di critico con Affondo aumentata del 3%.}
+perkReaper {Danni critici aumentati del  $percent($perkBaseValue(Reaper|1)) e probabilità di critico con Affondo aumentata del  $percent($perkBaseValue(Reaper|2)).}
 MarathonRunner {Maratoneta}
-perkMarathonRunner {Sprint diventa il 15% più veloce e consuma un terzo di energia in meno.}
+perkMarathonRunner {Sprint diventa il $percent($perkBaseValue(MarathonRunner|2)) più veloce e consuma un terzo di energia in meno.}
 PerfectBalance {Equilibrio perfetto}
-perkPerfectBalance {Le armi medie in mano riducono i danni subiti del 10%.}
+perkPerfectBalance {Le armi medie in mano riducono i danni subiti del $percent($perkBaseValue(PerfectBalance|1)).}
 Flanking {Fiancheggiamento}
-perkFlanking {Gli attacchi con armi ricurve sono più veloci del 5%. Sblocca Attacco di gruppo avanzato.}
+perkFlanking {Gli attacchi con armi ricurve sono più veloci del $percent($perkBaseValue(Flanking|1)). Sblocca Attacco di gruppo avanzato.}
 SabreHurricane {Turbine di sciabole}
-perkSabreHurricane {I Colpi e gli Affondi con armi bianche Medie Ricurve hanno un arco più ampio, colpendo i nemici vicini, e infliggono il 10% di danni in più.}
+perkSabreHurricane {I Colpi e gli Affondi con armi bianche Medie Ricurve hanno un arco più ampio, colpendo i nemici vicini, e infliggono il $percent($perkBaseValue(SabreHurricane|1)) di danni in più.}
 Practice {Sviluppo della pratica}
 perkPractice {Ogni oggetto artigianale equipaggiato aumenta tutte le abilità di 2.}
 Strychnine {Stricnina}

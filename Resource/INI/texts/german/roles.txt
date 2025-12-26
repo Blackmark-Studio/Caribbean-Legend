@@ -56,6 +56,8 @@ duelist {Degenkämpfer}
 smuggler {Schmuggler}
 AffairOfHonor_tavern {Verzweifelter Säufer}
 hovernon_wife {Ehefrau des Gouverneurs}
+HeadSailor {Старший матрос}
+HeadSailorPlus {Голос команды}
 Director {Direktor}
 Deputy Director {Stellvertretender Direktor}
 Naval Registry Guard {Wache des Schiffsregisters}

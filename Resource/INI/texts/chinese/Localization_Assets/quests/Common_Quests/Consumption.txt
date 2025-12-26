@@ -3,7 +3,7 @@ Consumption_2 { }
 Consumption_3 {Sergio}
 Consumption_4 {Saldo}
 Consumption_5 {Juan}
-Consumption_6 {消耗}
+Consumption_6 {Consumption}
 Consumption_7 { }
 Consumption_8 { }
 Consumption_9 {这艘船将在一分钟内爆炸。 你应该立即离开!}

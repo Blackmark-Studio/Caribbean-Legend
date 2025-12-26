@@ -1,0 +1,65 @@
+Node0_title {Aux portes}
+Node0_a {Vous débouchez vers les portes de la ville depuis $rand(les arbres|les rochers|les fourrés épais). De hautes murailles de pierre dominent la jungle, couronnées de $rand(drapeaux|étendards|fanions) de $nationGen($attr($context.localization.iNation)). Vous avancez lentement vers les portes.}
+Node0_b_a {Sur le sentier, on distingue les traces d’un combat récent — du sang et une charrette brisée chargée de $rand(rhum|épices|canne à sucre). Les gardes aux portes paraissent tendus, scrutant nerveusement la jungle, tandis que la surveillance est renforcée sur les murs.}
+Node0_b_b {Près des portes se tient une charrette chargée de $rand(poudre pour le fort|boulets de canon|provisions). Les gardes de la ville et le détachement du fort se disputent vivement. À en juger par leurs bribes de conversation, une $rand(lenteur bureaucratique|erreur) est survenue, et la cargaison n’est pas autorisée à passer.}
+Node0_b_c {Sous le mur, un $rand(vieux garde|sentinelle aux cheveux gris) est assis sur un tonneau et raconte des histoires de $rand(raid pirate monstrueux|terrible épidémie dans la garnison|révolte sanglante dans une plantation). Les gardes aux portes l’écoutent attentivement, plus par respect que par réel intérêt.}
+Node0_b_d {Aux portes, ils maintiennent à genoux un $rand(voleur capturé|déserteur de la garnison|espion ennemi). Le sergent exige de trancher son sort sur-le-champ — le pendre contre le mur sans plus de formalités. Les gardes se disputent pour savoir qui devra s’en charger et répondre devant le commandant.}
+Node0_c_a {Un $rand(jeune messager|femme affolée|marin ivre) accourt aux portes en criant quelque chose à propos d’un $rand(incendie au port|combat au marché|évasion de prison). Les gardes échangent des regards nerveux : il faut aider, mais impossible d’abandonner le poste.}
+Node0_c_b {Au-dessus du mur est affiché un nouvel avis concernant $rand(la levée de la milice|le recrutement|l’extension de la garde). Si de telles affiches sont placardées même hors des murs, la ville manque clairement de soldats.}
+Node0_c_c {À l’ombre sous le mur, il n’y a personne, mais quelque chose gît dans la boue près du fossé. Les sentinelles et les passants ne remarquent rien, tandis que de votre point de vue vous distinguez nettement un éclat métallique.}
+Node0_d {Il faut trouver un moyen d’entrer en ville. Ou peut-être simplement forcer le passage ?}
+Node0_b_a_reaction {Raconter l’échauffourée avec les indigènes}
+Node0_b_a_reaction_log {Vous racontez aux gardes que vous avez affronté des indigènes agressifs dans la jungle et décrivez le combat avec force détails, faisant appel à toute votre expérience. Ils vous croient et $rand(envoient plusieurs gardes dans la jungle|partagent leurs provisions avec vous|promettent de régler le problème au plus vite).}
+Node0_b_a_reaction_factor {Allié inattendu}
+Node0_b_b_reaction {Proposer d’arbitrer le différend}
+Node0_b_b_reaction_log_0 {Vous parvenez à comprendre l’origine du problème lié à la cargaison. Comme toujours, il s’agissait d’une mauvaise interprétation des ordres. Après votre intervention, l’escorte s’éclipse rapidement avec sa cargaison, et les gardes vous regardent avec reconnaissance.}
+Node0_b_b_reaction_log_1 {Vous ne parvenez pas à comprendre l’origine du problème de la cargaison et ne faites qu’embrouiller davantage la situation. Les gardes et les sentinelles ne cachent pas leur irritation.}
+Node0_b_b_reaction_factor {Arbitre}
+Node0_b_c_reaction {Raconter votre histoire}
+Node0_b_c_reaction_log {Vous trouvez le bon moment et racontez votre histoire. Elle $rand(sonne de manière impressionnante, bien que vous ne soyez pas le meilleur conteur|était bien plus convaincante dans votre esprit, et les gardes sourient avec indulgence|est assez touchante et semble avoir fait fondre le cœur d’un vieux soldat).}
+Node0_b_c_reaction_factor {Bon conteur}
+Node0_b_d_reaction {Proposer de racheter le prisonnier}
+Node0_b_d_reaction_log {Vous proposez aux gardes de ne pas gaspiller leurs forces — ce criminel ferait un excellent esclave, robuste et docile, et leur éviterait bien des soucis. Le sergent hésite quelques secondes avant d’accepter avec soulagement.}
+Node0_b_d_reaction_factor {Négrier}
+Node0_c_a_reaction {Proposer de l’aide}
+Node0_c_a_reaction_log {Vous proposez votre aide aux gardes pour régler le problème. Ils vous croient et vous remercient de l’offre, mais refusent tout de même. Ce genre d’affaires doit être traité par la garde, pas par des civils.}
+Node0_c_a_reaction_factor {Citoyen digne de confiance}
+Node0_c_b_reaction {Dire que vous souhaitez vous engager}
+Node0_c_b_reaction_log_0 {Vous demandez qu’on fasse venir un recruteur et exprimez votre volonté de rejoindre les rangs. Vous démontrez votre maîtrise des armes à feu pour appuyer vos paroles, et les gardes sont impressionnés.}
+Node0_c_b_reaction_log_1 {Vous demandez qu’on appelle un recruteur, mais on vous le refuse. Pour tenter de convaincre les gardes, vous décidez de démontrer votre habileté avec les armes à feu, mais vous $rand(faites tomber votre pistolet|vous emmêlez comiquement dans votre ceinturon|trébuchez et chutez). Les gardes rient de vous et vous affublent d’un surnom militaire — $rand(Terreur de la Jungle|Œil de Lynx|Balle du Destin|Mèche Rapide|Œil d’Acier|Main Sûre). Le chef de la garde vous tape l’épaule d’un air paternel.}
+Node0_c_b_reaction_factor {Recrue}
+Node0_c_c_reaction {Inspecter les lieux}
+Node0_c_c_reaction_log_0 {Vous fouillez l’endroit où vous avez aperçu l’éclat et trouvez $rand(une boucle de ceinturon de soldat|une rapière d’officier|un bouton de manchette de garde). Par un heureux hasard, son propriétaire est en service et vous remercie chaleureusement d’avoir rendu l’objet perdu.}
+Node0_c_c_reaction_log_1 {Vous fouillez l’endroit où vous avez vu l’éclat, mais ne trouvez rien. Il vous semble que $rand(votre imagination vous joue un mauvais tour|la chance vous a tourné le dos aujourd’hui).}
+Node0_c_c_reaction_factor {Trouvaille utile}
+Node0_a_action {Essayer de passer}
+Node0_b_action {Forcer le passage}
+Node0_c_action {Montrer la licence}
+Node0_success {Vous parvenez à entrer en ville par les portes. Vous $rand(vous fondez rapidement dans la foule|zigzaguez dans les rues pour disparaître complètement|vous dirigez vers les étals et vous mêlez aux badauds). Peu après, vous êtes certain de ne pas être suivi et pouvez vaquer tranquillement à vos affaires.}
+Node0_success_action {Parfait !}
+Node1_a {Vous ne parvenez pas à passer pour un allié, et les gardes se tendent visiblement. Un demi-cercle se referme autour de vous. La situation dégénère rapidement.}
+Node1_b_a {L’un des gardes se déplace maladroitement et porte sans cesse la main à son flanc — un bandage fraîchement ensanglanté est visible sous son uniforme.}
+Node1_b_b {Un sergent s’approche de vous et exige que vous le suiviez au corps de garde pour vérifier votre identité. Il est mince et très jeune, manifestement désireux de faire ses preuves et de gagner le respect de ses subordonnés.}
+Node1_c_a {Dans l’entrebâillement des portes, la silhouette d’un $rand(fonctionnaire municipal|prêtre) apparaît un instant, et la garde se redresse instinctivement.}
+Node1_c_b {Derrière les portes retentit soudain un bref tintement de cloche — il est temps de relever la garde, et tout retard mettra les sentinelles épuisées à cran.}
+Node1_d {Il faut prendre une décision immédiatement.}
+Node1_b_a_reaction {Proposer de l’aide au garde blessé}
+Node1_b_a_reaction_log {Vous proposez au garde blessé un élixir curatif. Il vous remercie et raconte qu’il a été blessé par des $rand(Caribes|Guaranis|Taïnos|Arawaks) lors d’une patrouille. La blessure a mal guéri, mais il se sent nettement mieux maintenant.}
+Node1_b_a_reaction_factor {Aide médicale}
+Node1_b_b_reaction {Se soumettre ostensiblement au sergent}
+Node1_b_b_reaction_log_0 {Vous témoignez du respect au jeune sergent et acceptez ses conditions, à condition que tout se fasse dans les règles. Son ton s’adoucit nettement.}
+Node1_b_b_reaction_log_1 {Vous tentez de renforcer l’autorité du sergent, mais de façon très maladroite. Cela ressemble à une moquerie, et les ricanements gênés dans son dos le confirment. Il devient écarlate, les yeux injectés de sang.}
+Node1_b_b_reaction_factor {Respect exprimé}
+Node1_c_a_reaction {Dire que vous êtes en retard pour un rendez-vous important}
+Node1_c_a_reaction_log_0 {Vous annoncez que vous êtes en retard pour une réunion importante et que cet incident sera signalé aux personnes concernées. Vous paraissez suffisamment sérieux pour être cru. Les gardes sont déconcertés, ce qui ouvre une fenêtre d’opportunité.}
+Node1_c_a_reaction_log_1 {Vous tentez de convaincre les gardes que vous êtes là pour une affaire importante, mais cela sonne totalement faux. Cette tentative ratée ne fait que les irriter davantage.}
+Node1_c_a_reaction_factor {Personne importante}
+Node1_c_b_reaction {Proposer du rhum aux gardes}
+Node1_c_b_reaction_log {Vous suggérez aux gardes de laisser tomber les formalités afin de terminer la garde plus vite, et vous les invitez à boire du rhum. Ils s’adoucissent visiblement et semblent prêts à fermer les yeux sur leurs soupçons. Après tout, nous sommes tous humains.}
+Node1_c_b_reaction_factor {Du rhum pour le peuple}
+Node1_a_action {Essayer d’apaiser la situation}
+Node1_b_action {S’enfuir de nouveau dans la jungle}
+Node1_success {Vous parvenez à apaiser la situation au dernier moment. Vous $rand(vous glissez en ville sous le regard attentif des gardes|entrez en ville en tâchant de ne pas trahir votre nervosité). Mieux vaut ne pas s’attarder à $colonyVoc($attr($context.context.colonyId)).}
+Node1_success_action {Vite, en ville !}
+Node1_fail {La garde donne l’alerte — vous êtes démasqué. Les gardes accourent déjà vers les portes, et vous décidez de fuir avant que toute la colonie ne soit mobilisée.}
+Node1_fail_action {Fuyons !}

@@ -1,0 +1,46 @@
+HollandGambit_1 {Baltazar}
+HollandGambit_2 {Ridderbok}
+HollandGambit_3 {探索モード： タイマー延長。 クエストを完了せよ！}
+HollandGambit_4 {Miguel}
+HollandGambit_5 { }
+HollandGambit_6 { }
+HollandGambit_7 {探索モード：クエスト期間が2倍}
+HollandGambit_8 { }
+HollandGambit_9 {ヴァルキリーが地平線に現れた！}
+HollandGambit_10 {Hainrih}
+HollandGambit_11 {Claus}
+HollandGambit_12 { }
+HollandGambit_13 {ここが洞窟だ。 ソロモンの隠し場所を探そう。}
+HollandGambit_14 {Harry}
+HollandGambit_15 {Fletcher}
+HollandGambit_16 {銀の護送団}
+HollandGambit_17 {ボート}
+HollandGambit_18 {Fernando}
+HollandGambit_19 {Rodriges}
+HollandGambit_20 {Zeekalf}
+HollandGambit_21 {Charlie}
+HollandGambit_22 {Knippel}
+HollandGambit_23 { }
+HollandGambit_24 { }
+HollandGambit_25 {アビゲイルは熱病で亡くなった！}
+HollandGambit_26 {チャーリー・ クニッペルは傷がもとで亡くなった！}
+HollandGambit_27 {ロングウェイは熱病で亡くなった！}
+HollandGambit_28 {ロングウェイは傷がもとで亡くなった！}
+HollandGambit_29 {1時間が過ぎた…}
+HollandGambit_30 {Jack}
+HollandGambit_31 {Harrison}
+HollandGambit_32 {ブリガンティン「Hoop」}
+HollandGambit_33 {Hoop}
+HollandGambit_34 {Longway}
+HollandGambit_35 { }
+HollandGambit_36 {Peter}
+HollandGambit_37 {Stuyvesant}
+HollandGambit_38 {Frederic}
+HollandGambit_39 {Leiden}
+HollandGambit_40 {Toff}
+HollandGambit_41 {Keller}
+HollandGambit_42 {傷のため気を失った…}
+HollandGambit_43 {あなたはアビゲイルにお金を返さず、 彼女を物乞いにしてしまった}
+HollandGambit_44 {Chavinavy}
+HollandGambit_45 { }
+HollandGambit_46 { }

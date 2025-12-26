@@ -1,0 +1,299 @@
+newline
+{
+
+}
+Balls {Kütle top mermisi}
+Balls_descr
+{
+En ucuz, kullanımı en kolay ve güvenilir mühimmat türüdür. Yuvarlak toplar genellikle gemi gövdesine zarar vermek ve kıyı savunmalarını uzaktan vurmak için kullanılır, ancak düşman mürettebatına karşı pek etkili değildir.
+Temel hasar: gövde - #f.2DamageHull#, yelken - #f.2DamageRig#, mürettebat - #f.2DamageCrew#
+}
+Grapes {Saçma}
+Grapes_descr
+{
+Keten bir torbada tutulan küçük kurşun veya demir dövme bilyelerden oluşur.
+Etkili menzili çok kısadır. Çarpma anında gövdeye fazla zarar vermez, ancak düşman mürettebatına yıkıcı hasar verir. Deniz savaşlarında, gemiyi aborde etmeden önce düşman mürettebatını zayıflatmak için yaygın olarak kullanılır.
+Temel hasar: gövde - #f.2DamageHull#, yelkenler - #f.2DamageRig#, mürettebat - #f.2DamageCrew#
+}
+Knippels {Zincir gülle}
+Knippels_descr
+{
+İki gülleyi demir bir zincir veya çubukla birbirine bağlayan bir mermi türüdür. Bu mühimmat, direkleri, serenleri ve arma donanımını tahrip etmek için kullanılır.
+Zincirli gülle, zincirin atış sırasında dengesiz dönmesi nedeniyle orta ve uzun menzilde genellikle etkisizdir. Yörüngesi öngörülemez ve gemi gövdesine çok az zarar verir. Ancak yelkenleri ve arma donanımını parçalar, direkleri devirebilir ve düşman gemilerini hareketsiz bırakabilir.
+Temel hasar: gövde - #f.2DamageHull#, yelken - #f.2DamageRig#, mürettebat - #f.2DamageCrew#
+}
+Bombs {Bombalar}
+Bombs_descr
+{
+Bombalar, en pahalı ve en yıkıcı cephane türüdür. Bu bombalar, barutla doldurulmuş dökme demirden içi boş toplardır ve ahşap fitile sahiptir. Ateşlendikten sonra, top hedefe çarptığında patlar; mürettebatı şarapnelle vurur, direkleri yıkar, donanımı ateşe verir ve gövdeyi şok dalgasıyla parçalar.
+Temel hasar: gövde - #f.2DamageHull#, yelken - #f.2DamageRig#, mürettebat - #f.2DamageCrew#
+}
+Sailcloth {Yelken bezi}
+Sailcloth_descr
+{
+Yelken yapımında kullanılan kalın ve yoğun bir bezdir.
+İngiliz Kuzey Amerika kolonileri, yüksek kaliteli pamuk ve kenevir üretir ve bu iki farklı liften bez dokurlar. Enine iplikler pamuktan, boyuna iplikler (temel) ise kenevirden yapılır. Kırık beyaz renkte olup, geleneksel gri tonlu, beyazlatılmamış ketenden yapılan Avrupa bezine göre daha hafif ve daha hızlı kurur.
+}
+Planks {Tahta}
+Planks_descr
+{
+Kama ile yarılarak elde edilen, seçilmiş 2. sınıf kuru tahtalar. Biçilmiş tahtalara göre daha sağlamdır, kuruyup çatlamaya daha az eğilimlidir ve daha az eğrilir.
+Bir geminin gövdesini acil onarmak için en iyi malzemedir.
+}
+Wheat {Buğday}
+Wheat_descr
+{
+Yerel buğday çeşitleri, fırıncıların harika kabuklu, lezzetli ekmekler yapmasında kullanılan unu sayesinde oldukça değerlidir.
+Yüksek verim ve ocak ayındaki hasat zamanı sayesinde, buğdayı kışın Avrupa'ya ithal ederek iyi kazanç sağlanabilir.
+}
+Ebony {Abanoz}
+Ebony_descr
+{
+Abanoz (siyah) ağacı, hem marangozları hem de halkı güzelliği ve sertliğiyle her zaman büyülemiştir: bu ağaç meşeden iki kat daha serttir. Kendine özgü rengiyle birleştiğinde, Avrupalı soylular arasında hayranlık uyandırmak isteyenlerin gözdesidir.
+Her abanoz türünün kendine has bir tonu vardır – yeşilimsi kahverengiden kadifemsi siyaha kadar değişir. Zamanla abanoz daha koyu, daha sert ve daha değerli hale gelir.
+}
+Chocolate {Kakao}
+Chocolate_descr
+{
+Olgun kakao meyveleri toplanıp kırılarak çekirdekleri çıkarılır. Fermente edilip kurutulan bu kakao çekirdekleri uzun süre saklanabilir.
+Kakao, hem yerliler hem de zengin yerel halk arasında yüksek talep gördüğünden fiyatları zaten yüksektir; ancak İspanyollar ve İtalyanlar altınla ödeme yapmaya razı olduğundan fiyatlar fahiş seviyelere çıkar.
+}
+Sugar {Şeker}
+Sugar_descr {Büyük bakır kazanlarda saatlerce kaynatılan şeker kamışı suyu, tatlı şurubu iri kahverengi ham şeker kristallerine dönüştürür; bu kristaller kurutulup Avrupa’ya taşınmak üzere hazırlanır ve orada rafine edilir. Misafirlere şekerli çay veya kahve ikram etme geleneği – refahın aristokratik bir simgesi ve hiç bitmeyen bir moda – ham şekerin her zaman yüksek talep görmesini garanti eder.}
+Wine {Şarap}
+Wine_descr
+{
+Yeni Dünya’da bağcılık için yapılan sayısız deneme çoğunlukla başarısız olsa da, Fransa, İspanya, İtalya ve Portekiz’den ithal edilen şaraplar hem dini hem de keyfi amaçlarla hâlâ çok değerli!
+Gerçek Avrupa şarabı her yerleşimde büyük talep görür ve yerel tüccarlar bunu bol miktarda satın alır.
+}
+ShipSilk {Gemici İpeği}
+ShipSilk_descr
+{
+Lyon dokuma atölyelerinin bir başyapıtı: yoğun ipekten yelken bezi.
+İpek son derece dayanıklıdır; lifleri güçlü, esnek ve kalınlığı düzgündür. Bu kumaş hafif ve nefes alabilir; nemi hızla emer, daha da hızlı kurur. Şeklini korur ve esnemeye karşı dirençlidir.
+Tüm bu avantajlarına rağmen, ipek kumaşın önemli bir dezavantajı vardır: güneş ışığına maruz kalmak malzemeyi zayıflatır.
+}
+Rum {Rom}
+Rum_descr
+{
+Fermente şeker kamışı suyundan damıtılan, hafifçe farklı bir tada sahip güçlü bir alkollü içki. Değerli bir ticaret malıdır; her zaman kârlı satılır ve elinizde bulunduğu sürece tayfanın moralini yükseltir. Ayrıca, gemilerdeki tatlı suya eklenerek grog yapılır; bu hem suyu dezenfekte eder hem de tadını iyileştirir. 
+Gemide rom eksikliği, tayfanın huzursuz olmasına ve hatta isyana yol açabilir.
+}
+Tobacco {Tütün}
+Tobacco_descr
+{
+Uzak Avrupa’da, yerleşimlerde ve geminin dar mürettebat kamaralarında tütün herkesin keyfi sayılır. Ayrıca birçok hastalığa karşı güvenilir bir önlem olarak görülür – en azından insanlar böyle inanır.
+Tüketilmeye hazır üç çeşit tütün vardır: içmelik tütün, burun tütünü ve çiğnemelik tütün. Keten torbalardaki tütün yaprakları ise birçok tüccar için değerli bir yüktür.
+}
+Coffee {Kahve}
+Coffee_descr
+{
+Kahve çekirdekleri, bal ve tarçından yapılan aromatik, canlandırıcı bir içecek, Yeni Dünya’da bugünlerde oldukça popüler – sadece birçok zengin Avrupalı için ana gelir kaynağı haline gelen kahve plantasyonlarının fazlalığı nedeniyle değil, aynı zamanda Hindistan ve Çin’den gelen çayın bulmanın zor olması yüzünden de.
+Uzun süre tazeliğini ve ticari değerini koruyan yeşil, kavrulmamış kahve çekirdekleri, kahvenin artık her zengin evde olmazsa olmaz haline gelmesiyle, kıta Avrupası’nda daima yüksek talep görür.
+}
+Mahogany {Maun}
+Mahogany_descr
+{
+Bu ağaçların kerestesi kendine has, güzel desenlere sahip olmasının yanı sıra son derece sağlam, yangına dayanıklı ve uzun ömürlüdür. Kolayca cilalanabilir ve ahşap zararlılarından etkilenmez. İlk olarak İspanyollar tarafından değer verilen maun, artık gemi, kilise ve saray inşaatında yaygın olarak kullanılmaktadır.
+Maun mobilyalar, klasik lüksün, iyi zevkin ve sahibinin refahının bir göstergesidir.
+}
+Cinnamon {Vanilya}
+Cinnamon_descr
+{
+Meksika kökenli bu her daim yeşil asmanın kurutulup fermente edilmiş tohumları tatlı bir kokuya, fakat acı bir tada sahiptir.
+Vanilya, Avrupa’da kakao ve sıcak çikolata yapımında kullanılır. Ayrıca tütünü aromalandırmak için de tercih edilir; bazıları ise sadece statülerini göstermek için çiğner!
+}
+Copra {Kopra}
+Copra_descr
+{
+Kurutulmuş hindistancevizi eti.
+Kopra, kopra yağı ve sabun yapımında kullanılır. Bu sabun hoş kokar ve aynı zamanda saçı boyayarak beyazları asil bir sarı tonuyla gizler.
+}
+Paprika {Paprika}
+Paprika_descr
+{
+Öğütülmüş ve kurutulmuş kırmızı biber, tatlı ve acı aromasıyla yemeklere lezzet katan çok sevilen bir baharattır.
+Paprika, Almanlar, İspanyollar ve Akdeniz Avrupa’sında çok popülerdir; çünkü et, tavuk, balık, deniz ürünleri, sebze ve peynirle mükemmel uyum sağlar.
+}
+Fruits {Meyveler}
+Fruits_descr
+{
+Yenilebilir, tropikal meyve; yerel bitkilerden toplanır. İskorbütü önler, ucuz şaraba lezzet katar.
+Meyve her yerleşimde satılabilir – nadir lezzetlere bile alıcı bulunur.
+}
+Ale {Bira}
+Ale_descr
+{
+Düşük alkollü, üst fermantasyonla hazırlanan bir içecek. 
+Ekmekle birlikte temel gıda sayılan ale, özellikle İngiliz garnizonlarının erzakında yer alır. Uzun süre bozulmadan saklanabilir; ayrıca, şerbetçiotu yerine kullanılan ot ve baharat karışımı (gruit) sayesinde antibiyotik özellik taşır.
+}
+Ropes {Halatlar}
+Ropes_descr
+{
+Kenevirden yapılmış sağlam halatlar. Tuzlu suya dayanıklıdır, arma için en iyi halatlardır.
+En kaliteli ve ünlü halatlar Rusya Çarlığı’nda üretilir.
+}
+Clothes {Kıyafet}
+Clothes_descr
+{
+Koyu kumaştan yapılmış, sade keten gömlekli, klasik yakalı ve manşetli pratik muhafazakâr kıyafetler – dürüst, çalışkan, mütevazı ve tutumlu her erkeğin rahat giysisi.
+Her zaman talep gören, uygun fiyatlı bir ürün.
+}
+Cotton {Pamuk}
+Cotton_descr {Pamuk, Karayip adalarındaki plantasyonlarda Kuzey Amerika kolonilerine kıyasla geç olgunlaşır ve verimi düşüktür, ancak lifleri olağanüstü uzun ve incedir, bu yüzden hâlâ çok değerlidir. Bu ipeksi, krem rengi lifler en ince ve en kaliteli kumaşların ipliğini yapmak için kullanılır. Bu zahmetli üretim için nispeten büyük bir plantasyon ve en az 20 köle gereklidir.}
+Sandal {Demir Ağacı}
+Sandal_descr
+{
+Demir ağacı, "lignum vitae" olarak da bilinir. Yoğun, sert ve sağlam yapısıyla neredeyse çatlaması imkânsızdır. Çok ağırdır ve çoğu ağacın aksine suda batır.
+Adından da anlaşılacağı gibi son derece dayanıklıdır, ancak işlenmesi zordur. Özellikle suda olmak üzere kendiliğinden yağlayıcı özelliklere de sahiptir.
+Bu dayanıklılığı ve doğal yağlanması sayesinde, demir ağacından yapılan gemi parçaları en zorlu deniz koşullarında bile fazla bakım gerektirmez.
+}
+Oil {Zift}
+Oil_descr
+{
+Bu doğal asfalt zifti, bitüm, ince dağılmış kil ve tuzlu suyun yapışkan, gri-siyah karışımıdır. Trinidad’ın en ünlü ihracatı – ama kesinlikle en güzeli değil.
+Bu zift, gemi gövdelerinin birleşim yerlerini su geçirmez ve sızdırmaz hale getirmek için kullanılır.
+Kuzey Avrupa ülkelerinde çamdan üretilen ziftten çok daha üstün olduğuna inanılır.
+}
+Leather {Deri}
+Leather_descr
+{
+Sığırların kurutulmuş ve işlenmiş derileri, Avrupa’da her zaman talep gören evrensel bir ticaret malıdır. İlk bucaneer’lar geçimlerini Hispaniola’daki yabani sığırların derisini ve etini satarak kazanırlardı.
+Çoğu tüccar gemisini sadece deriyle doldurmasa da, boş kargo alanını doldurmak için idealdir; çünkü çok dayanıklıdır ve her türlü nakliye koşuluna uygundur.
+}
+Slaves {Köleler}
+Slaves_descr {Kadın ve erkekler – beyaz ya da siyah – kaybedilen savaşlar, işlenen suçlar ya da borçlar yüzünden köleliğe satılır. Bir plantasyon ya da maden sahibi için bu tamamen yasal bir ticarettir; çünkü kişi satın alındığı anda zaten köledir. Kölelerin hayatı genellikle acımasız, zor ve kısadır – çoğu, plantasyonlarda çalışmak üzere satıldıktan sonraki ilk yedi yıl içinde ölür.}
+Powder {Barut}
+Powder_descr {İthal stratejik bir mal, kirli, gürültülü, kötü kokulu ve tehlikeli barut değirmenlerinin ürünü. "Barutunu kuru tut," der tecrübeli topçular. Bu çok önemli: barut olmadan toplar gemide sadece birer yük olur. Akıllı bir kaptan, barutunu ambarın en kuru ve güvenli bölümünde bolca saklar.}
+Food {Erzak}
+Food_descr
+{
+Mürettebat ve kölelerin yolculuk sırasında beslenmesi için gereken standart kuru erzak ve tatlı su seti.
+Gemide yiyecek eksikliği açlığa, ölümlere ve moral kaybına yol açar.
+Günlük tüketim: denizciler - 0,1 birim, köleler - 0,05 birim.
+}
+Weapon {Silah}
+Weapon_descr
+{
+Silah koleksiyonu: kılıçlardan ve palalardan tabanca ve tüfeklere kadar.
+Gemi baskınlarında, çatışmaya katılan herkes silahlı olmalı. Silah eksikliği kayıpların artmasına yol açar.
+Çatışmada denizciler öldükçe gemideki silah sayısı azalır.
+}
+Gold {Altın}
+Gold_descr
+{
+İspanyol Hazinesi damgalı, saf altın külçeler.
+Altın yüklü bir hazine gemisini ele geçirmek, her korsan ve kapanın hayalidir.
+}
+Silver {Gümüş}
+Silver_descr
+{
+İspanyol Hazinesi tarafından damgalanmış saf gümüş külçeler.
+Gümüş, İspanyol hazinesinin servet taşımak için altından sonraki tercihi olduğundan, aranan bir ganimettir. 16. yüzyılda İspanyol Kraliyeti’nin Yeni Dünya’dan Avrupa’ya 210 milyon peso değerinde gümüş getirdiği tahmin edilmektedir.
+}
+Brick {Tuğlalar}
+Brick_descr
+{
+Düzenli bloklar ve kiremitler, pişmiş topraktan yapılır. Karayipler’in nemli ikliminde ahşap hızla çürüdüğü için kasaba inşaatlarında yaygın olarak kullanılırlar.
+Sık sık çıkan yangınlar nedeniyle yetkililer tuğla kullanımını teşvik eder; bu yüzden bu mal her zaman talep görür.
+}
+Medicament {İlaçlar}
+Medicament_descr
+{
+En yaygın hastalıkların tedavisi ve yaralılara ilk yardım için kullanılan ilaçlar ve tıbbi aletler seti.
+Gemide ilaç bulundurmak, yaralıları kurtarmaya, borda kayıplarını azaltmaya ve denizde hastaları iyileştirmeye yardımcı olur.
+}
+Cannon_3 {Falkonetler}
+Cannon_3_descr
+{
+Taretli güverte topları. En yüksek hareket kabiliyetine sahip olup, küçük boyutları nedeniyle en düşük güç ve menzile sahiptirler.
+Çoğunlukla hızlı doldurma sağlayan değiştirilebilir bir namluya sahiptirler.
+Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
+}
+Cannon_6 {6 librelik yarım toplar}
+Cannon_6_descr
+{
+Hafif, dayanıklı ve uygun fiyatlı oldukları için kurye ve ticaret gemilerinde sıkça kullanılan küçük toplar. Bakımı kolaydır ve deneyimli mürettebat gerektirmez.
+Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
+}
+Cannon_8 {8 librelik Yarım toplar}
+Cannon_8_descr
+{
+Küçük gemilerde en çok tercih edilen kalibrelerden biri; hem ticaret hem de devriye gemilerinde bulunur. Boyut, ağırlık ve ateş gücü açısından mükemmel bir denge sunar.
+Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
+}
+Cannon_12 {12 librelik yarım toplar}
+Cannon_12_descr
+{
+Küçük savaş gemilerinde yaygın bir kalibre. Boyutuna ve ağırlığına göre etkileyici bir ateş gücüne sahiptir, ancak tam topçu ekibi gerektirir ve gemideki mürettebat sayısını artırır.
+Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
+}
+Cannon_16 {16 librelik Yarım toplar}
+Cannon_16_descr
+{
+Modern Fransız tipi toplar. Gelişmiş tasarımları sayesinde menzili, güvenilirliği ve ateş gücü yüksektir. Devriye ve keşif gemilerinde çok yaygın bir kalibre.
+Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden yükleme - #dReloadTime# sn.
+}
+Cannon_18 {18 librelik Yarım toplar}
+Cannon_18_descr
+{
+Geçmişte savaş gemilerine sıkça takılan güçlü, çok amaçlı toplar. Takımadada oldukça yaygın olup, basitlikleri ve güvenilirlikleriyle değer görürler; ancak eski tasarımları menzillerini bir miktar sınırlar.
+Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
+}
+Cannon_20 {20 librelik Toplar}
+Cannon_20_descr
+{
+Askeri konvoylardaki kruvazörler ve yardımcı gemilerde kullanılan uzun namlulu topçu silahlarıdır. Etkili atış için topçu ekibinin uyumlu çalışması gerekir.
+Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
+}
+Cannon_24 {24 librelik Toplar}
+Cannon_24_descr
+{
+Savaş gemilerinin ana kalibresi, deniz topçuluğunun zirvesi. Menzil ve ateş gücünde kusursuz dengeye sahiptir; başarılı tasarımı sayesinde uzun deniz savaşlarında kritik hasar almadan dayanır.
+Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
+}
+Cannon_32 {32 librelik Toplar}
+Cannon_32_descr
+{
+Kaleleri bombalamaya uygun, büyük kalibreli ağır toplar; yüksek hasar verir. Malzeme dayanım sınırı nedeniyle barut yükü azaltılmıştır, bu da menzili sınırlar.
+Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
+}
+Cannon_36 {36 librelik Toplar}
+Cannon_36_descr
+{
+Uzun namlulu toplar, güverteye nadiren çıkar. Yavaş doldurulmaları ve sınırlı menzilleri, ağır ve yavaş giden güllelerinin yıkıcı hasarıyla telafi edilir. Büyük topçu ekipleri gerektirir.
+Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
+}
+Cannon_42 {42 librelik Bombardlar}
+Cannon_42_descr
+{
+Muhteşem toplar, deniz ateş gücünün zirvesi. Sadece hat gemilerinde, kalelerde ve büyük Avrupa savaşlarında kullanılır. Kullanımı için büyük ve eğitimli bir mürettebat gerekir.
+Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
+}
+Cannon_48 {48 librelik Bombardlar}
+Cannon_48_descr
+{
+Korkutucu toplar, deniz savaş gücünün zirvesi. Sadece hat gemilerinde, kalelerde ve büyük Avrupa muharebelerinde kullanılır. Kullanımı için büyük ve iyi eğitimli bir mürettebat gerekir.
+Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
+}
+Culverine_8 {Yarım kalyon topları}
+Culverine_8_descr
+{
+Özel bir kaideye, güçlü bir montaja ve tamamen ahşap tekerleklere sahip uzun namlulu 8 librelik toplar.
+Artırılmış menzile sahiptir. Genellikle baraj ateşi için kullanılır.
+Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
+}
+Culverine_18 {Kulevrinler}
+Culverine_18_descr
+{
+Artırılmış menzile sahip, nispeten küçük gemilerde kullanılabilen Orta 18 librelik toplar.
+Etkileyici atış mesafelerine rağmen son derece ağırdır ve doldurulmaları uzun sürer.
+Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
+}
+Culverine_36 {Tam Külverinler}
+Culverine_36_descr
+{
+Breach atışı için tasarlanmış kale tipi 36 librelik toplar: önce ateş eden kazanır!
+Uzunlukları nedeniyle yalnızca 42 librelik toplara uygun limanlara kurulabilirler.
+Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
+}

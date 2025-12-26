@@ -56,6 +56,8 @@ duelist {Bretteur}
 smuggler {Contrebandier}
 AffairOfHonor_tavern {Ivrogne désespéré}
 hovernon_wife {Épouse du gouverneur}
+HeadSailor {Старший матрос}
+HeadSailorPlus {Голос команды}
 Director {Directeur}
 Deputy Director {Directeur Adjoint}
 Naval Registry Guard {Garde du Bureau d'Enregistrement}

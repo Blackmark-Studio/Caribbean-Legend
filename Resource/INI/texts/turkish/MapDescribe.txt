@@ -1,0 +1,157 @@
+info
+{
+Hazine Oluşturucu
+    Betik ALexusB tarafından 05.11.04 tarihinde oluşturuldu
+}
+type_full_1 {Harita oldukça yeni, kağıdı henüz sararmamış. #sMapIslName# işaretleri aceleyle çizilmiş gibi, ama onlara inanırsak hazine #sMaplocName# gizli.}
+type_full_1_isl {ada}
+type_full_1_mein {Anakara}
+type_full_2 {Harita oldukça özensiz çizilmiş ve üzerinde #sMapIslName# zar zor seçilebiliyor. İşaretlere bakılırsa hazine #sMaplocName# gizlenmiş, ama kesin emin olmak için oraya gitmemiz gerek.}
+type_full_2_isl {ada}
+type_full_2_mein {anakarа}
+type_full_3 {Bu harita sahibi için değerli değildi – #sMapIslName#’in hatları su lekeleriyle bozulmuş. Hazine yeri ise muhtemelen #sMaplocName#.}
+type_full_3_isl {adalar}
+type_full_3_mein {anakarası}
+type_full_4 {Harita #sMapIslName#'yi gösteriyor. Hazinenin saklandığı yer #sMaplocName#. Haritacının yetenek eksikliğini emeği telafi etmiş – kenarları, çocuk elinden çıkmış gibi tuhaf hayvanlarla süslü.}
+type_full_4_isl {ada}
+type_full_4_mein {anakarа}
+type_full_5 {Harita, #sMapIslName#'nin hatlarını doğru şekilde gösteriyor. Hazinenin yeri: #sMaplocName#. Bulmak zor olmayacak, çünkü yazar oldukça net talimatlar bırakmış.}
+type_full_5_isl {ada}
+type_full_5_mein {anakarası}
+type_full_6 {Bu harita, kaliteli çizgili kağıda çizilmiş. Üzerinde #sMapIslName# kolayca tanınıyor. Arka taraftaki notta, hazinenin yeri #sMaplocName# olarak belirtilmiş.}
+type_full_6_isl {ada}
+type_full_6_mein {anakarа}
+type_full_7
+{
+Burası #sMapIslName#. Harita, gizli hazinenin yerini gösteriyor — orası #sMaplocName#. Ünlü bir korsan hazinesini oraya saklamış.  
+Haritanın gerçekliğini gösteren kahverengi kan lekeleri, bu kağıdın defalarca el değiştirdiğine de işaret ediyor.
+}
+type_full_7_isl {ada}
+type_full_7_mein {anakarа}
+type_full_8 {Bu harita birçok elden geçmiş belli — kağıdın bazı yerleri yanmış, #sMapIslName#’in hatları defalarca katlanmaktan izlerle dolu. Hazine yeri: #sMaplocName#. Görünüşe göre orada gerçekten değerli bir şey var.}
+type_full_8_isl {adalar}
+type_full_8_mein {anakarası}
+type_full_9 {Bu haritada oldukça doğru şekilde gösterilen #sMapIslName#, etrafı süslemeler ve deniz canavarları çizimleriyle çevrili. Haritanın yazarı kim olursa olsun, işini iyi biliyormuş; hazinede çok değerli bir şeyi gizlemiş. Geriye sadece hedefe, yani #sMaplocName#’a ulaşmak kaldı.}
+type_full_9_isl {ada}
+type_full_9_mein {anakarа}
+type_full_10 {Bu haritanın yarıları birbirine uymuyor, ancak el yazısı, mürekkep rengi ve kağıdın durumu aynı yazarı açıkça gösteriyor. #sMapIslName#’in hatları bulanık ve mürekkep lekeli, hazine ise anlaşılan #sMaplocName#’de.}
+type_full_10_isl {ada}
+type_full_10_mein {anakarа}
+type_full_11 {Bu harita özenle çapraz şekilde ikiye ayrılmış, bu yüzden sadece bir yarısı ile #sMapIslName#’i anlamak imkânsız. Notlar düzgün bir el yazısıyla yazılmış; bu da hazinenin yerini — #sMaplocName# — kolayca anlamanı sağlıyor. Kâğıdın durumuna bakılırsa, hazineler onlarca yıldır orada.}
+type_full_11_isl {ada}
+type_full_11_mein {anakarа}
+type_full_12 {İki parçadan oluşan bu harita son derece eski görünüyor. #sMapIslName#’nin sınırları onlarca yıl öncesine ait. Açıklamalar ve ipuçları eski bir dille ve bolca Latinceyle yazılmış. #sMaplocName#’da saklı hazinelerin büyüklüğünü kestirmek zor.}
+type_full_12_isl {adalar}
+type_full_12_mein {anakarası}
+type_quest_0
+{
+Burası #sMapIslName#. Gizli hazine burada işaretli – #sMaplocName#. Rivayete göre #sMapOwner# servetini tam buraya saklamış.
+    Haritadaki kahverengi kan lekeleri, onun gerçekliğini kanıtlıyor ve kanlı bir sahiplik geçmişine işaret ediyor.
+}
+type_quest_0_isl {ada}
+type_quest_0_mein {anakarа}
+type_part {Bu, büyük bir hazine haritasının bir parçası. Tek başına, hazinenin yerini göstermez. Haritayı tamamlayıp gizemi çözmek için diğer parçayı da bulmalısın.}
+type_fake
+{
+Bu harita, bir hazinenin yerini gösterdiğini iddia ediyor. Gerçek olup olmadığını araştırabilirsin, ama büyük ihtimalle sahte.
+Bunu atmak en iyisi olur.
+}
+Antigua_Grot {Falmouth Cove’un sağındaki mağarada}
+Antigua_Grot_box1 {büyük bir taşın üstünde bir sandık}
+SentJons_TownCave {St. Jones zindanında}
+SentJons_TownCave_box1 {çıkmazda tahtaların altında}
+SentJons_TownCave_box2 {madende çıkmazda}
+SentJons_TownCave_box3 {engebede}
+Barbados_Cave {Bridgetown yakınlarında bir mağarada}
+Barbados_Cave_box1 {çıkmazda tahtaların altında}
+Beliz_Cave {Belize çıkışının sağındaki bir mağarada}
+Beliz_Cave_box1 {taş köprünün yanında bir sandık}
+Beliz_Cave_box2 {büyük bir taşın üstünde bir sandık}
+Beliz_Cave_box3 {tavandan sarkan ipin yanında bir sandık}
+Beliz_Cave_2 {Belize çıkışının karşısındaki bir mağarada}
+Beliz_Cave_2_box1 {çıkmazda tahtaların altında}
+Bermudes_Dungeon {Sharptown tersanesinin altındaki zindanda}
+Bermudes_Dungeon_box1 {kapalı kapının ardında bir sandık}
+Bermudes_Dungeon_box2 {açık kapının arkasında bir sandık}
+Bermudes_Dungeon_box3 {bir çıkmazda sandık}
+Bermudes_Dungeon_box4 {fıçıların arkasında bir sandık}
+Caracas_Grot {Caracas çıkışının sağındaki bir mağarada}
+Caracas_Grot_box1 {büyük bir taşın üstünde bir sandık}
+Cartahena_Cave {Cartagena çıkışının karşısındaki bir mağarada}
+Cartahena_Cave_box1 {meşalenin altındaki sandık}
+Cartahena_Cave_box2 {çıkmazda bir sandık}
+Cartahena_Cave_box3 {[ERROR: APIConnectionError]}
+Caiman_Grot {Çöl Sahili'nin sağındaki bir mağarada}
+Caiman_Grot_box1 {büyük bir taşın üstünde bir sandık}
+Charles_Grot {Half Moon Bay’in sağındaki bir mağarada}
+Charles_Grot_box1 {sahilde bir sandık}
+Cuba_Grot {Cape Camaguey’in sağındaki bir mağarada}
+Cuba_Grot_box1 {kıyıda bir sandık}
+Cumana_Cave {Carupano Koyu’nun sağındaki bir mağarada}
+Cumana_Cave_box1 {taş köprünün yanında bir sandık}
+Cumana_Cave_box2 {büyük bir taşın üstünde bir sandık}
+Cumana_Cave_box3 {tavandan sarkan ipin yanında bir sandık}
+Curacao_Cave {Blanca Lagünü’nün sağındaki bir mağarada}
+Curacao_Cave_box1 {meşalenin altındaki sandık}
+Curacao_Cave_box2 {çıkmazda bir sandık}
+Curacao_Cave_box3 {meşalenin yanında bir sandık}
+Dominica_Grot {Scott's Head Bay'in solundaki bir mağarada}
+Dominica_Grot_box1 {kıyıda bir sandık}
+Guadeloupe_Cave {Guadeloupe deniz fenerinin solundaki bir mağarada}
+Guadeloupe_Cave_box1 {meşalenin arkasındaki nişte bir sandık}
+Guadeloupe_Cave_box2 {sütunun arkasındaki nişte bir sandık}
+Guadeloupe_Cave_box3 {duvarın yanındaki taşların arkasında bir sandık}
+Hispaniola_Cave {Port-au-Prince yakınlarında bir mağarada}
+Hispaniola_Cave_box1 {taş köprünün yanında bir sandık}
+Hispaniola_Cave_box2 {büyük bir taşın üstünde bir sandık}
+Hispaniola_Cave_box3 {tavandan sarkan ipin yanında bir sandık}
+Jamaica_Grot {Port-Royal deniz fenerinin sağındaki bir mağarada}
+Jamaica_Grot_box1 {büyük bir taşın üstünde bir sandık}
+Maracaibo_Cave {Maracaibo çıkışının karşısındaki bir mağarada}
+Maracaibo_Cave_box1 {meşalenin altındaki sandık}
+Maracaibo_Cave_box2 {çıkmazda bir sandık}
+Maracaibo_Cave_box3 {meşalenin yanında bir sandık}
+Marigo_Cave {Philipsburg çıkışının karşısındaki bir mağarada}
+Marigo_Cave_box1 {meşalenin altındaki sandık}
+Marigo_Cave_box2 {çıkmazda bir sandık}
+Marigo_Cave_box3 {meşalenin yanındaki sandık}
+Panama_Cave {Portobello çıkışının solundaki bir mağarada}
+Panama_Cave_box1 {çıkmazda tahtaların altında}
+Pearl_Grot {Belize ile Blueweld arasında, batı kıyısına yakın bir mağarada}
+Pearl_Grot_box1 {büyük bir taşın üstünde bir sandık}
+PortoBello_Cave {Mosquitos Körfezi'nin sağındaki bir mağarada}
+PortoBello_Cave_box1 {çıkmazda tahtaların altında}
+SanJuan_Cave {San Juan yakınlarında bir mağarada}
+SanJuan_Cave_box1 {taş köprünün yanında bir sandık}
+SanJuan_Cave_box2 {büyük bir taşın üstünde bir sandık}
+SanJuan_Cave_box3 {tavandan sarkan ipin yanında bir sandık}
+SantaCatalina_Cave {Cape Perlas’ın sağındaki bir mağarada}
+SantaCatalina_Cave_box1 {meşalenin altındaki sandık}
+SantaCatalina_Cave_box2 {bir çıkmazda sandık}
+SantaCatalina_Cave_box3 {meşalenin yanındaki sandık}
+SantaCatalina_Grot {San Juan del Norte Körfezi'nin sağındaki bir mağarada}
+SantaCatalina_Grot_box1 {sahilde bir sandık}
+SantaCatalina_PearlCave {San Juan del Norte Körfezi'nin solundaki bir mağarada}
+SantaCatalina_PearlCave_box1 {taş köprünün yanında bir sandık}
+SantaCatalina_PearlCave_box2 {büyük bir taşın üstünde bir sandık}
+SantaCatalina_PearlCave_box3 {tavandan sarkan ipin yanında bir sandık}
+Tenotchitlan_Cave {Aztek tapınağının kuzeyindeki bir mağarada}
+Tenotchitlan_Cave_box1 {taş köprünün yanında bir sandık}
+Tenotchitlan_Cave_box2 {büyük bir taşın üstünde bir sandık}
+Tenotchitlan_Cave_box3 {tavandan sarkan ipin yanında bir sandık}
+Terks_Grot {Kuzey Körfezi'nin sağındaki bir mağarada}
+Terks_Grot_box1 {büyük bir taşın üstünde bir sandık}
+Tortuga_Grot {Fisheye Plajı'nın karşısındaki bir mağarada}
+Tortuga_Grot_box1 {kıyıda bir sandık}
+Tortuga_Cave {Tortuga'nın altındaki zindanda}
+Tortuga_Cave_box1 {kapalı kapının ardında bir sandık}
+Trinidad_Grot {Trinidad deniz fenerinin karşısındaki bir mağarada}
+Trinidad_Grot_box1 {sahilde bir sandık}
+Martinique_Grot {Lamentin Plajı yakınındaki bir mağarada}
+Martinique_Grot_box1 {sahilde bir sandık}
+FortFrance_Dungeon {St. Pierre zindanında}
+FortFrance_Dungeon_box1 {yükseltide bir sandık}
+FortFrance_Dungeon_box2 {üst katta açık kapının arkasında bir sandık}
+FortFrance_Dungeon_box3 {asansörün yakınında bir sandık}
+FortFrance_Dungeon_box4 {alt katta açık kapının arkasında bir sandık}
+FortFrance_Dungeon_box5 {tahta sandıkların altında}

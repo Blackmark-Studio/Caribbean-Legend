@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 			}
 			if (!CheckAttribute(npchar, "quest.givelink_saga") && CheckAttribute(pchar, "questTemp.HWIC.Detector"))//признак, что Гамбит пройден или провален
 			{
-				dialog.text = "Rozumiem. Widzę, że masz dla mnie wieści, Charles! Cóż, co nowego? Mam nadzieję, że nic ponurego?";
+				dialog.text = "Widzę, że masz dla mnie wieści, Charles! Cóż, co nowego? Mam nadzieję, że nic ponurego?";
 				link.l1 = "Posłuchałem rady, którą mi ostatnio dałeś...";
 				link.l1.go = "saga";//переход на Сагу
 				DelLandQuestMark(npchar);
@@ -98,7 +98,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.Saga") && pchar.questTemp.Saga == "mishelle")//Сага готова к старту
 			{
-				dialog.text = "Miło cię widzieć, Charles! Czy widziałeś Chevaliera de Poincy? Jak poszło wasze spotkanie?";
+				dialog.text = "Miło cię widzieć, Charles! Czy widziałeś Kawalera de Poincy? Jak poszło wasze spotkanie?";
 				link.l1 = "Tak, drogi bracie. Spotkaliśmy się. I mam dla ciebie dwie wiadomości, dobrą i złą. Zacznę od dobrej. Uregulowałem twój dług wobec de Poincy. Zła wiadomość jest taka, że nie wypuści cię, dopóki nie spełnię twojej obietnicy uporządkowania spraw z jakimś heretykiem...";
 				link.l1.go = "saga_5";
 				DelLandQuestMark(npchar);
@@ -117,8 +117,8 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "fail" && CheckAttribute(pchar, "questTemp.Mtraxx.CharleePrince")) // пиратская линейка провалена или пройдена не полностью, но дальше 4 квеста
 			{
-				dialog.text = "Jak ci poszło w La Vega, bracie? Słyszałem plotki i szczerze mówiąc, nie czuję się z nimi dobrze... Charlie Prince.";
-				link.l1 = " Myślę, że wiem, o co chodziło w tych plotkach. Ale to już przeszłość. Nie pracuję już z Tyrexem, ta robota stała się zbyt brudna jak na mój gust.";
+				dialog.text = "Jak ci poszło w La Vega, bracie? Słyszałem plotki i szczerze mówiąc, nie czuję się z nimi dobrze... Charlie Książe.";
+				link.l1 = "Myślę, że wiem, o co chodziło w tych plotkach. Ale to już przeszłość. Nie pracuję już z Tyrexem, ta robota stała się zbyt brudna jak na mój gust.";
 				link.l1.go = "saga_17f";
 				DelLandQuestMark(npchar);
 				DelMapQuestMarkCity("FortFrance");
@@ -126,7 +126,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "full_complete") // пиратская линейка пройдена полностью
 			{
-				dialog.text = "Cóż, witaj... Korsarzu Charlie Prince. Powiedz mi, Charles, jak mogłeś tak nisko upaść? Nie mogę w to uwierzyć. Mój brat, który skrzywił się, gdy wspomniałem o plądrowaniu hiszpańskiego galeonu handlowego, jest teraz jednym z najbardziej poszukiwanych i niebezpiecznych piratów w tym regionie! Nawet ja, siedząc po uszy w gównie, czerwienię się za każdym razem, gdy słyszę o twojej niesławie. Przekląłem dzień, kiedy wysłałem cię do La Vega. Co za wstyd! Francuski szlachcic dołączył do piratów i w tak krótkim czasie stał się najgorszym z nich wszystkich! I co teraz, bracie? Szukasz wakatu na stanowisku barona piratów?";
+				dialog.text = "Cóż, witaj... Korsarzu Charlie Książe. Powiedz mi, Charles, jak mogłeś tak nisko upaść? Nie mogę w to uwierzyć. Mój brat, który skrzywił się, gdy wspomniałem o plądrowaniu hiszpańskiego galeonu handlowego, jest teraz jednym z najbardziej poszukiwanych i niebezpiecznych piratów w tym regionie! Nawet ja, siedząc po uszy w gównie, czerwienię się za każdym razem, gdy słyszę o twojej niesławie. Przekląłem dzień, kiedy wysłałem cię do La Vega. Co za wstyd! Francuski szlachcic dołączył do piratów i w tak krótkim czasie stał się najgorszym z nich wszystkich! I co teraz, bracie? Szukasz wakatu na stanowisku barona piratów?";
 				link.l1 = "Nie. Kończę z piractwem raz na zawsze.";
 				link.l1.go = "saga_17g";
 				DelLandQuestMark(npchar);
@@ -148,7 +148,7 @@ void ProcessDialogEvent()
 			QuestPointerDelLoc("FortFrance_Dungeon", "quest", "quest1");
 			SetCurrentTime(13, 30);
 			dialog.text = "Charles!.. Cieszę się, że cię widzę, bracie! Rozumiem oczywiście, że trudno ci będzie w to uwierzyć, ale jestem cholernie szczęśliwy, że tu jesteś...";
-			link.l1 = "Ha! Patrzcie na niego! Jest szczęśliwy! Podczas gdy ty siedziałeś na swoim wysokim koniu z 'Dumą', Charles był wstydem rodziny, marnym artystą, żyjącym z pieniędzy kurtyzan, i dworskim 'rycerzem', co? Ale teraz, gdy twoi własni towarzysze zamknęli cię za kratami, jesteś 'szczęśliwy jak diabli', widząc swojego nic niewartego brata!";
+			link.l1 = "Ha! Patrzcie na niego! Jest szczęśliwy! Podczas gdy ty siedziałeś na swoim wysokim koniu z 'Dumą', Charles był wstydem rodziny, marnym artystą, żyjącym z pieniędzy kurtyzan, i dworskim 'rycerzem', co? Ale teraz, gdy twoi towarzysze zamknęli cię za kratami, jesteś 'szczęśliwy jak diabli', widząc swojego nic niewartego brata!";
 			link.l1.go = "Mishelle_prisoner_1";			
 		break;
 		
@@ -160,18 +160,18 @@ void ProcessDialogEvent()
 		
 		case "Mishelle_prisoner_1a":
 			dialog.text = "Charles, w jakich słowach miałbym opowiedzieć ojcu, co się ze mną stało? Co miałbym mu napisać? Nie, bracie, niezależnie od tego, jak ciężko jest, lepiej, żeby nasz ojciec jeszcze niczego nie wiedział. I nie ma sensu pisać do ciebie - zawsze jesteś pod różnymi adresami w Paryżu... Jak mnie znalazłeś?..";
-			link.l1 = "Na prośbę ojca udałem się na Maltę. Tam otrzymałem pewne informacje od twojego przyjaciela, kawalera de La Brignais. Napisał mi o twoich problemach i że prawdopodobnie jesteś gdzieś na Martynice. Następnie wróciłem do Francji i odwiedziłem ojca. A po tym wszystkim udałem się do tej dziury piekielnej w skwarze, gdzie komary dosłownie gryzą cię na śmierć...";
+			link.l1 = "Na prośbę ojca udałem się na Maltę. Tam otrzymałem pewne informacje od twojego przyjaciela, chevaliera de La Brignais. Napisał mi o twoich problemach i że prawdopodobnie jesteś gdzieś na Martynice. Następnie wróciłem do Francji i odwiedziłem ojca. A po tym wszystkim udałem się do tej dziury piekielnej w skwarze, gdzie komary dosłownie gryzą cię na śmierć...";
 			link.l1.go = "Mishelle_prisoner_1b";
 		break;
 		
 		case "Mishelle_prisoner_1b":
 			dialog.text = "Czy opowiedziałeś ojcu o tym wszystkim?";
-			link.l1 = "Nie. A kawaler de La Brignais nie odpowiedział na jego listy, obawiając się smutnych konsekwencji... Ojciec wciąż nic nie wie o twoim losie. Postanowiłem cię odnaleźć i dotrzeć do sedna sprawy. Żebyś wiedział, przybyłem na Martynikę nie dla ciebie, lecz dla naszego biednego ojca!";
+			link.l1 = "Nie. A chevalier de La Brignais nie odpowiedział na jego listy, obawiając się smutnych konsekwencji... Ojciec wciąż nic nie wie o twoim losie. Postanowiłem cię odnaleźć i dotrzeć do sedna sprawy. Żebyś wiedział, przybyłem na Martynikę nie dla ciebie, lecz dla naszego biednego ojca!";
 			link.l1.go = "Mishelle_prisoner_2";
 		break;
 		
 		case "Mishelle_prisoner_2":
-			dialog.text = "Naprawdę? Charles, od kiedy troszczysz się o swoją rodzinę? Bądźmy szczerzy, bracie, każdy w Paryżu wie, kim jest twój ojciec. Możesz nosić nazwisko de Maure, bo nie chcesz, by nazwisko de Monper zostało zhańbione.\nBo w takim przypadku nie mógłbyś używać swojego rodowodu, by opowiadać wszystkim fikcyjne historie o swoich heroicznych czynach, prawda? Drzwi najlepszych domów w Paryżu będą dla ciebie zamknięte i nie pozwolą ci zbliżyć się na milę do Luwru.\nCzy naprawdę wierzysz, że twoje kurtyzany i kochanki, których mężów robisz rogaczami, gdy oni walczą na polu bitwy za naszą ojczyznę, będą szczęśliwe, zdradzając swoich panów i władców z bratem takiego państwowego przestępcy jak ja?\nDomyślam się, że przybyłeś tutaj prosto z łóżka jakiejś zamężnej panienki, mam rację? Charles, co jest nie tak z twoją twarzą? Czy trafiłem w czuły punkt?";
+			dialog.text = "Naprawdę? Charles, od kiedy troszczysz się o swoją rodzinę? Bądźmy szczerzy, bracie, każdy w Paryżu wie, kim jest twój ojciec. Możesz nosić nazwisko de Maure, bo nie chcesz, by nazwisko de Monper zostało zhańbione.\nBo w takim przypadku nie mógłbyś używać swojego rodowodu, by opowiadać wszystkim fikcyjne historie o swoich heroicznych czynach, prawda? Drzwi najlepszych domów w Paryżu będą dla ciebie zamknięte i nie pozwolą ci zbliżyć się na milę do Luwru.\nCzy naprawdę wierzysz, że twoje kurtyzany i kochanki, których mężów czynisz rogaczami, gdy oni walczą na polu bitwy za naszą ojczyznę, będą szczęśliwe, zdradzając swoich panów i władców z bratem takiego państwowego przestępcy jak ja?\nDomyślam się, że przybyłeś tutaj prosto z łóżka jakiejś zamężnej panienki, mam rację? Charles, co jest nie tak z twoją twarzą? Czy trafiłem w czuły punkt?";
 			link.l1 = "Ty... Ty!..";
 			link.l1.go = "Mishelle_prisoner_3";
 		break;
@@ -616,7 +616,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "Nie mogę zrozumieć, bracie, co z twoich słów wynika, czy to pochwały, czy obelgi. Ale powiem ci prawdę: nie interesuje mnie, co o mnie myślisz stamtąd. Mam morze, nie stertę, spraw do załatwienia i nie mam czasu na spory z tobą tutaj i na żonglowanie słowami. Masz coś istotnego do powiedzenia? Jeśli nie, to ruszam w drogę...";
+				link.l1 = "Nie mogę zrozumieć, bracie, co z twoich słów wynika, czy to pochwały, czy obelgi. Ale powiem ci prawdę: nie interesuje mnie, co o mnie myślisz będąc za kratami. Mam morze, nie stertę, spraw do załatwienia i nie mam czasu na spory z tobą tutaj i na żonglowanie słowami. Masz coś istotnego do powiedzenia? Jeśli nie, to ruszam w drogę...";
 				link.l1.go = "gambit_1";
 			}
 			DelLandQuestMark(npchar);
@@ -681,7 +681,7 @@ void ProcessDialogEvent()
 		
 		case "gambit_1_2":
 			dialog.text = "A teraz otworzyłeś sobie możliwość zarobienia znacznie większych pieniędzy i nie tylko to. Bracie, fakt, że zgromadziłeś kwotę wymaganą przez starego lisa, jest niesamowity, ale nie byłbym tak pewny siebie i spokojny... De Poincy to dość śliski węgorz, a wykazał niemałe zainteresowanie twoją skromną osobą, i...";
-			link.l1 = "A teraz boisz się, że milion nie wystarczy dla niego?! Czy może coś pominąłeś ostatnim razem?";
+			link.l1 = "I teraz boisz się, że milion może dla niego nie wystarczyć?! Czy może coś pominąłeś ostatnim razem?";
 			link.l1.go = "gambit_1_3";
 		break;
 		
@@ -801,7 +801,7 @@ void ProcessDialogEvent()
 				
 				case "eng_win": sTemp = "Odnalazłem prawdziwego angielskiego korsarza, Richarda Fleetwooda, i wykonałem kilka ważnych zadań w imieniu angielskiej marynarki wojennej. W szczególności zlikwidowałem piracki „statek widmo” i pozbyłem się samego Lucasa Rodenburga, wiceprezesa Kompanii. Poza tym mam teraz własny dom na Antigui, a moje kieszenie brzęczą od pieniędzy."; break;
 				
-				case "eng_win_half": sTemp = "Odnalazłem prawdziwego angielskiego korsarza, Richarda Fleetwooda, i wykonałem kilka ważnych zadań w imieniu angielskiej marynarki wojennej, w szczególności zlikwidowałem piracki „statek widmo”. Oczywiście Fleetwood odpłynął do Anglii, a moja służba u niego dobiegła końca, ale mimo to…"; break;
+				case "eng_win_half": sTemp = "Odnalazłem prawdziwego angielskiego korsarza, Richarda Fleetwooda, i wykonałem kilka ważnych zadań w imieniu angielskiej marynarki wojennej, w szczególności zlikwidowałem piracki „statek widmo”. Oczywiście Fleetwood odpłynął do Anglii, a moja służba u niego dobiegła końca, ale mimo to..."; break;
 				
 				case "eng_fail": sTemp = "Rozpocząłem służbę u angielskiego korsarza z Antigui, jednak sprawy potoczyły się niepomyślnie. Nie wykonałem ważnego zadania i zostałem zmuszony do hańbiącego zwolnienia ze służby bez niczego."; break;
 				
@@ -842,13 +842,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_3_1":
-			dialog.text = "Doskonale! W takim razie nie będę długo siedział w tej kazemacie... Udaj się do Capsterville, to na Saint Christopher, i poproś o audiencję u de Poincy. Powinien być w pałacu gubernatora, gdzie rezyduje. Poza tym, oceniaj na podstawie sytuacji i pamiętaj: Poincy jest przebiegły, bardzo przebiegły... Mam złe przeczucie, że ta cała heca nie pójdzie tak łatwo. Idź, bracie, i bądź ostrożny!";
+			dialog.text = "Doskonale! W takim razie nie będę długo siedział w tym kazamacie... Udaj się do Capsterville, to na Świętego Krzysztofa, i poproś o audiencję u de Poincy'ego. Powinien być w pałacu gubernatora, gdzie rezyduje. Poza tym, oceniaj na podstawie sytuacji i pamiętaj: Poincy jest przebiegły, bardzo przebiegły... Mam złe przeczucie, że ta cała heca nie pójdzie tak łatwo. Idź, bracie, i bądź ostrożny!";
 			link.l1 = "Zachowam twoje środki ostrożności w pamięci, Michale. Nie martw się, ja też nie urodziłem się wczoraj. Ruszam do starego lisa. Do zobaczenia później!";
 			link.l1.go = "saga_4";			
 		break;
 		
 		case "saga_3_2":
-			dialog.text = "Nie ma sensu rozmawiać z de Poincy. Nawet cię nie wpuszczą. Zdobądź pieniądze, bracie, masz już spore doświadczenie, więc to nie będzie problem. Płyń do Capsterville na Saint Christopher, jak tylko je zdobędziesz.\nChevalier musi być w swoim pałacu gubernatora. Poproś o audiencję, a wpuszczą cię. Potem przekonaj się sam i bądź ostrożny: Poincy jest przebiegły, bardzo przebiegły... Coś mi mówi, że ta historia tak po prostu się nie skończy.";
+			dialog.text = "Nie ma sensu rozmawiać z de Poincy. Nawet cię nie wpuszczą. Zdobądź pieniądze, bracie, masz już spore doświadczenie, więc to nie będzie problem. Płyń do Capsterville na Świętego Krzysztofa, jak tylko je zdobędziesz.\nKawaler musi być w swoim pałacu gubernatora. Poproś o audiencję, a wpuszczą cię. Potem przekonaj się sam i bądź ostrożny: Poincy jest przebiegły, bardzo przebiegły... Coś mi mówi, że ta historia tak po prostu się nie skończy.";
 			link.l1 = "Zapamiętam twoje przestrogi, Michel. Nie martw się, też nie urodziłem się wczoraj. Jak tylko zbiorę pieniądze, od razu pójdę do starego lisa. Do zobaczenia później!";
 			link.l1.go = "saga_4";			
 		break;
@@ -869,7 +869,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_6":
-			dialog.text = "Charles, nie szukaj tajemniczej wiadomości tam, gdzie jej nie ma. Gdybyś tylko dał Poincy pieniądze pierwszego dnia, kiedy tu przybyłeś... No cóż, powiedzmy, gdybyś je miał. Chevalier nie poprosiłby cię o nic więcej. Ale teraz, kiedy zainteresował się tobą i zobaczył, jak łatwo się tutaj osiedliłeś i co udało ci się osiągnąć, postanowił wykorzystać twoje talenty.";
+			dialog.text = "Charles, nie szukaj tajemniczej wiadomości tam, gdzie jej nie ma. Gdybyś tylko dał Poincy pieniądze pierwszego dnia, kiedy tu przybyłeś... No cóż, powiedzmy, gdybyś je miał. Kawaler nie poprosiłby cię o nic więcej. Ale teraz, kiedy zainteresował się tobą i zobaczył, jak łatwo się tutaj osiedliłeś i co udało ci się osiągnąć, postanowił wykorzystać twoje talenty.";
 			link.l1 = "Racja... bo twoje talenty już mu nie wystarczają, prawda? Merde! Dobrze. Widzę, że jestem tu w ślepej uliczce. Kim jest ten heretyk? Jak mogę go znaleźć?";
 			link.l1.go = "saga_7";
 		break;
@@ -887,7 +887,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_9":
-			dialog.text = "Wyobraź sobie to. Zakon wypowiada wojnę Ludwikowi. Nie bądź absurdalny! Taki skandal jest nie do przyjęcia. Tylko osoba prywatna może zdobyć Tortugę. Pirat albo katolicki awanturnik jak ty.\nNastępnie może przekazać wyspę pod kontrolę nowego gubernatora, którego de Poincy wyśle. Taki akt będzie wyglądał wspaniale z punktu widzenia wielkich decydentów politycznych.";
+			dialog.text = "Wyobraź sobie to. Zakon wypowiada wojnę królowi Ludwikowi. Nie bądź absurdalny! Taki skandal jest nie do przyjęcia. Tylko osoba prywatna może zdobyć Tortugę. Pirat albo katolicki awanturnik jak ty.\nNastępnie może przekazać wyspę pod kontrolę nowego gubernatora, którego de Poincy wyśle. Taki akt będzie wyglądał wspaniale z punktu widzenia wielkich decydentów politycznych.";
 			link.l1 = "Zatem jest sens w negocjacjach z piratami?";
 			link.l1.go = "saga_10";
 		break;
@@ -899,7 +899,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_11":
-			dialog.text = "Zawsze jest jakieś rozwiązanie, braciszku. Po prostu nie zawsze jest widoczne na powierzchni. Nie wszyscy piraci są przychylni hugenotom z Tortugi. Znam przynajmniej dwóch wpływowych piratów, którzy uważają Levasseura za zdrajcę i szumowinę. Mówię o Stevenie Dodsonie, znanym również jako Shark, oraz legendarnym baronie Zatoki Moskitów, Janie Svensonie.\nNie wiem, gdzie znaleźć Sharka, słyszałem plotki, że coś się stało i musiał opuścić swoją bazę na Isla Tesoro. Ale zawsze możesz znaleźć Svensona w Blueweld. Jest tam ważną postacią.";
+			dialog.text = "Zawsze jest jakieś rozwiązanie, braciszku. Po prostu nie zawsze jest widoczne na powierzchni. Nie wszyscy piraci są przychylni hugenotom z Tortugi. Znam przynajmniej dwóch wpływowych piratów, którzy uważają Levasseura za zdrajcę i szumowinę. Mówię o Stevenie Dodsonie, znanym również jako Rekin, oraz legendarnym baronie Zatoki Komarów, Janie Svensonie.\nNie wiem, gdzie znaleźć Rekina, słyszałem plotki, że coś się stało i musiał opuścić swoją bazę na Isla Tesoro. Ale zawsze możesz znaleźć Svensona w Blueweld. Jest tam ważną postacią.";
 			link.l1 = "Czy sądzisz, że ten... Svenson mi pomoże?";
 			link.l1.go = "saga_12";
 		break;
@@ -912,7 +912,7 @@ void ProcessDialogEvent()
 		
 		case "saga_13":
 			dialog.text = "Charles...";
-			link.l1 = "Nie przerywaj mi! Byłoby głupotą wrócić do ojca z pustymi rękami. Problem wciąż nie jest rozwiązany, siedzisz za kratkami i grozi ci oskarżenie o zdradę Towarzystwa. Poincy bez wahania splamiłby nazwisko de Monper, jeśli nie wykonam jego 'prośby'. Było to wypisane na jego twarzy. Wyruszam więc do Blueweld, by znaleźć sposób na podejście do Svensona. W międzyczasie pomyśl, co jeszcze 'zapomniałeś' mi powiedzieć. Na przykład, to pierwszy raz, gdy słyszę od ciebie o jakimś złocie Indian, które miałeś dostarczyć de Poincy.";
+			link.l1 = "Nie przerywaj mi! Byłoby głupotą wrócić do ojca z pustymi rękami. Problem wciąż nie jest rozwiązany, siedzisz za kratkami i grozi ci oskarżenie o zdradę Zakonu. Poincy bez wahania splamiłby nazwisko de Monper, jeśli nie wykonam jego 'prośby'. Było to wypisane na jego twarzy. Wyruszam więc do Blueweld, by znaleźć sposób na podejście do Svensona. W międzyczasie pomyśl, co jeszcze 'zapomniałeś' mi powiedzieć. Na przykład, to pierwszy raz, gdy słyszę od ciebie o jakimś złocie Indian, które miałeś dostarczyć de Poincy.";
 			link.l1.go = "saga_14";
 		break;
 		
@@ -937,13 +937,13 @@ void ProcessDialogEvent()
 		
 		// Addon 2016-1 Jason Пиратская линейка
 		case "saga_17a":
-            dialog.text = "Zaczekaj chwilę! Zanim udasz się do Jana Svensona, koniecznie odwiedź Marcusa Tyrexa - On jest Strażnikiem Pirackiego Kodu. Rządzi La Vegą na Hispanioli. Ma nieograniczoną władzę wśród piratów, a Hiszpanie boją się go na śmierć.";
+            dialog.text = "Zaczekaj chwilę! Zanim udasz się do Jana Svensona, koniecznie odwiedź Marcusa Tyrexa - On jest Strażnikiem Pirackiego Kodeksu. Rządzi La Vegą na Hispanioli. Ma nieograniczoną władzę wśród piratów, a Hiszpanie boją się go na śmierć.";
 			link.l1 = "Czy mógłby mi pomóc w naszej sprawie?";
 			link.l1.go = "saga_17b";
 		break;
 		
 		case "saga_17b":
-            dialog.text = "Wątpię. Nie potrafię naprawdę powiedzieć, po której jest stronie, najprawdopodobniej działa tylko dla siebie. Będziesz potrzebował Sharka i Svensona w każdym razie, ale w tej chwili - Tyrex jest najpotężniejszym piratem tutaj. Wybrali go na Strażnika Pirackiego Kodu nie bez powodu. Nie powinieneś ignorować tak ważnej postaci. Może okazać się przydatne lepiej poznać piratów, zanim spotkasz Svensona. Możesz nawet wyrobić sobie imię wśród nich...";
+            dialog.text = "Wątpię. Nie potrafię naprawdę powiedzieć, po której jest stronie, najprawdopodobniej działa tylko dla siebie. Będziesz potrzebował Rekina i Svensona w każdym razie, ale w tej chwili - Tyrex jest tu najpotężniejszym piratem. Wybrali go na Strażnika Pirackiego Kodeksu nie bez powodu. Nie powinieneś ignorować tak ważnej postaci. Może okazać się przydatne lepiej poznać piratów, zanim spotkasz Svensona. Możesz nawet wyrobić sobie imię wśród nich...";
 			link.l1 = "I znowu wracamy do pirackiej gadki. Nie ma mowy, żebym się od tego uwolnił, co? No dobrze. Złożę mu wizytę.";
 			link.l1.go = "saga_17c";
 		break;
@@ -972,7 +972,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_17f":
-            dialog.text = "Cieszę się, że się zatrzymałeś, bracie. Kiedyś ci powiedziałem, że to zupełnie inna gra - być piratem i robić z nimi interesy. I zgubiłeś swoją drogę. Mam nadzieję, że nie popełnisz tego samego błędu z Sharkiem i Svensonem. Wykonaj zadanie, ale trzymaj się od nich z daleka. Jesteś w końcu francuskim szlachcicem, więc bądź ponad nimi. Teraz idź do Jana Svensona, on jest w Blueweld. Spróbuj uczynić go swoim sojusznikiem, albo nasze interesy z Levasseurem przerodzą się w rzeź.";
+            dialog.text = "Cieszę się, że się zatrzymałeś, bracie. Kiedyś ci powiedziałem, że to zupełnie inna gra - być piratem i robić z nimi interesy. I zgubiłeś swoją drogę. Mam nadzieję, że nie popełnisz tego samego błędu z Rekinem i Svensonem. Wykonaj zadanie, ale trzymaj się od nich z daleka. Jesteś w końcu francuskim szlachcicem, więc bądź ponad nimi. Teraz idź do Jana Svensona, on jest w Blueweld. Spróbuj uczynić go swoim sojusznikiem, albo nasze interesy z Levasseurem przerodzą się w rzeź.";
 			link.l1 = "Dobrze. Jestem w drodze.";
 			link.l1.go = "saga_17";
 			pchar.questTemp.Mtraxx = "fail_end";
@@ -996,20 +996,20 @@ void ProcessDialogEvent()
 			}
 			else //заглушка
 			{
-				link.l1 = "Przestań... Naprawdę żałuję obrzydliwości, które popełniłem, pracując z Tyreksem. Widziałem piekło na własne oczy, bracie! .. Nie, moja piracka przeszłość to już koniec! Nie jestem już w La Vega. Zrobię wszystko, aby przywrócić moje dobre imię.";
+				link.l1 = "Przestań... Naprawdę żałuję obrzydliwości, które popełniłem, pracując z Tyrexem. Widziałem piekło na własne oczy, bracie! .. Nie, moja piracka przeszłość to już koniec! Nie jestem już w La Vega. Zrobię wszystko, aby przywrócić moje dobre imię.";
 				link.l1.go = "saga_17gx";
 			}
 		break;
 		
 		case "saga_17gxa":
-            dialog.text = "Och, bracie... Nie gniewaj Boga... Mam nadzieję, że to nie powtórzy się z Svensonem i Sharkiem. Rób, co musisz, ale trzymaj się z dala i pamiętaj, kim są ci ludzie. Nie przystoi francuskiemu szlachcicowi stać się takim jak oni. Bądź wyżej. Teraz idź do Jana Swensona w Blueweld i spróbuj znaleźć sposób, by zbliżyć się do starego korsarza. Bez niego nie uda się rozwiązać problemu z Levasseurem bez dużego rozlewu krwi.";
+            dialog.text = "Och, bracie... Nie gniewaj Boga... Mam nadzieję, że to nie powtórzy się ze Svensonem i Rekinem. Rób, co musisz, ale trzymaj się z dala i pamiętaj, kim są ci ludzie. Nie przystoi francuskiemu szlachcicowi stać się takim jak oni. Bądź wyżej. Teraz idź do Jana Swensona w Blueweld i spróbuj znaleźć sposób, by zbliżyć się do starego korsarza. Bez niego nie uda się rozwiązać problemu z Levasseurem bez dużego rozlewu krwi.";
 			link.l1 = "Dobrze. Nie będę zwlekać.";
 			link.l1.go = "saga_17";
 			pchar.questTemp.Mtraxx = "full_complete_end";
 		break;
 
 		case "saga_17gx":
-            dialog.text = "Musisz włożyć w to dużo wysiłku, bracie. Pamiętasz, co ci kiedyś powiedziałem? Że to zupełnie inna gra - być piratem i robić z nimi interesy. Ty... Zapomnij, mam nadzieję, że nie popełnisz tego samego błędu z Sharkiem i Svensonem. Wykonaj zadanie, ale trzymaj się od nich z daleka. W końcu jesteś francuskim szlachcicem, więc bądź ponad nimi. Teraz idź do Jana Svensona, on jest w Blueweld. Spróbuj uczynić go swoim sojusznikiem, bo inaczej nasze interesy z Levasseurem zamienią się w rozlew krwi.";
+            dialog.text = "Musisz włożyć w to dużo wysiłku, bracie. Pamiętasz, co ci kiedyś powiedziałem? Że to zupełnie inna gra - być piratem i robić z nimi interesy. Ty... Zapomnij, mam nadzieję, że nie popełnisz tego samego błędu z Rekinem i Svensonem. Wykonaj zadanie, ale trzymaj się od nich z daleka. W końcu jesteś francuskim szlachcicem, więc bądź ponad nimi. Teraz idź do Jana Svensona, on jest w Blueweld. Spróbuj uczynić go swoim sojusznikiem, bo inaczej nasze interesy z Levasseurem zamienią się w rozlew krwi.";
 			link.l1 = "Dobrze. Jestem w drodze.";
 			link.l1.go = "saga_17";
 			pchar.questTemp.Mtraxx = "full_complete_end";
@@ -1043,7 +1043,7 @@ void ProcessDialogEvent()
 			// belamour legendary edition фикс проверки мундира с мушкетом
 			if(IsUniformEquip()) sTemp = "Widzę też, że zostałeś kapitanem marynarki wojennej... Szczerze mówiąc, nie spodziewałem się tego. Naprawdę ci gratuluję!";
 			dialog.text = "Jesteś na czas, drogi bracie! Tak się cieszę, że cię widzę! Ci przeklęci Kastylijczycy już całkowicie przejęli Saint-Pierre. Myślałem, że jesteśmy zgubieni na pewno! "+sTemp+"";
-			link.l1 = "Jeszcze nie jesteśmy bezpieczni, miasto jest czyste, ale dranie siedzą z powrotem w fortecy, a tam jest ogromna eskadra prowadzona przez pancernik. Ale przynoszę ci całkiem wspaniałą wiadomość: Michel, jesteś wolny!";
+			link.l1 = "Jeszcze nie jesteśmy bezpieczni, miasto jest czyste, ale dranie siedzą w fortecy, a tam jest ogromna eskadra prowadzona przez pancernik. Ale przynoszę ci całkiem wspaniałą wiadomość: Michel, jesteś wolny!";
 			link.l1.go = "Base_afterfight_1";
 		break;
 		
@@ -1142,8 +1142,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Fort_attack_4":
-			dialog.text = "Charles, pamiętaj: najniebezpieczniejsza część eskadry to okręt wojenny! Spróbuj najpierw go unieszkodliwić. Skoncentrujemy również ogień na nim za pomocą pozostałości baterii fortu.";
-			link.l1 = "W porządku, bracie. Być może powinienem ją pojmać.";
+			dialog.text = "Charles, pamiętaj: najniebezpieczniejsza część eskadry to okręt wojenny! Spróbuj najpierw jego unieszkodliwić. Skoncentrujemy również ogień na nim za pomocą pozostałości baterii fortu.";
+			link.l1 = "W porządku, bracie. Być może powinienem go pochwycić.";
 			link.l1.go = "Fort_attack_5";			
 		break;
 		
@@ -1319,7 +1319,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "kukulkan_8":
-			dialog.text = "Dokładnie. Gdy zdałem sobie sprawę, że wiem wystarczająco dużo, zaaranżowałem, by wysłano mnie na Karaiby. Przekonałem Kawalera de Poincy, by stworzył bazę na Martynice. Następnie musiałem dotrzeć do Tayasal. Nie było to dla mnie proste zadanie, ponieważ to fizyczne naczynie pozostaje śmiertelne, a portale na Karaibach nie działały poprawnie.";
+			dialog.text = "Dokładnie. Gdy zdałem sobie sprawę, że wiem wystarczająco dużo, zaaranżowałem, by wysłano mnie na Karaiby. Przekonałem Chevaliera de Poincy, by stworzył bazę na Martynice. Następnie musiałem dotrzeć do Tayasal. Nie było to dla mnie proste zadanie, ponieważ to fizyczne naczynie pozostaje śmiertelne, a portale na Karaibach nie działały poprawnie.";
 			link.l1 = "I dlatego stałeś się Miguelem Dichoso...";
 			link.l1.go = "kukulkan_9";			
 		break;
@@ -1337,7 +1337,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "kukulkan_11":
-			dialog.text = "Masz na myśli bez żołnierzy Mendozy? Oczywiście. Wszyscy Hiszpanie zostali zabici tutaj, w Tayasal. Itzas sami przynieśli skarby na brzeg, a ja powiedziałem Mendozie, że żołnierze zostali zamordowani przez ludzi Miskito. Uwierzył mi, ponieważ interesowało go tylko złoto, a nie ludzie.\nPlanowałem ustawić statek ze skarbami pod działami 'Gryffondor', ale wszystko poszło znacznie lepiej: baron postanowił wysłać skarby do Hiszpanii pod moim nadzorem. To było najlepsze możliwe rozwiązanie, musiałem tylko czekać, aż statek przekroczy niewidzialną granicę Karaibów.\nJednak okazało się, że kapitan miał inne rozkazy. Dowiedziałem się, że specjalna jednostka abordażowa miała wzniecić bunt, jak tylko dotrzemy do Oceanu Atlantyckiego, zabijając załogę i wszystkich oficerów. Kapitan miał rozkaz zwrócić złoto Indii z powrotem do Mendozy.\nTaki wspaniały przykład białej rasy, prawda, bracie? Musiałem zaryzykować, nie wiedziałem, kiedy miało nastąpić powstanie. Ale wszystko poszło zgodnie z planem: burza uderzyła nas, gdy tylko 'Santa Quiteria' dotarła na wschodnią stronę wyspy Trynidad i Tobago. Fregata została zniesiona z powrotem na Karaiby w kierunku Ksocheatem.\nPotem poniosłem największą porażkę w moim życiu - fala zmyła mnie ze statku i znalazłem się w Le Marin Cove na Martynice kilka dni później. Rybacy mnie znaleźli i zabrali do Le Francois. Ale ludzie de Poincy'ego złapali mnie, gdy dochodziłem do siebie u Cesara Craiga. 'Gryffondor' nie znalazł 'Santa Quiteria' w miejscu, które określiłem. Chevalier de Poincy wpadł w furię, gdy tylko dowiedział się, że złoto Indii zniknęło razem z pieniędzmi zabranymi ze skarbca Zakonu i jego własnymi oszczędnościami.\nKazał mnie aresztować. Nie mógł mnie jednak zabić, nie chciał. Chciał złota. Złota! Tylko tego chcą i o to dbają twoi ludzie! Zrobisz wszystko, by je zdobyć... Byłem w strasznej sytuacji: nie miałem na sobie maski i pozostawiono mnie gnijącego w celi bez ani jednej monety w kieszeniach.\nWtedy wezwałem cię. Tak-tak, drogi bracie, miałeś mnie uwolnić, abym mógł zrobić to, do czego się urodziłem. I wykonałeś niezwykłą pracę. Wydaje się, że mleko Itza, które ssałeś, dobrze ci zrobiło.";
+			dialog.text = "Masz na myśli bez żołnierzy Mendozy? Oczywiście. Wszyscy Hiszpanie zostali zabici tutaj, w Tayasal. Itzas sami przynieśli skarby na brzeg, a ja powiedziałem Mendozie, że żołnierze zostali zamordowani przez ludzi Miskito. Uwierzył mi, ponieważ interesowało go tylko złoto, a nie ludzie.\nPlanowałem ustawić statek ze skarbami pod działami 'Gryffondor', ale wszystko poszło znacznie lepiej: baron postanowił wysłać skarby do Hiszpanii pod moim nadzorem. To było najlepsze możliwe rozwiązanie, musiałem tylko czekać, aż statek przekroczy niewidzialną granicę Karaibów.\nJednak okazało się, że kapitan miał inne rozkazy. Dowiedziałem się, że specjalna jednostka abordażowa miała wzniecić bunt, jak tylko dotrzemy do Oceanu Atlantyckiego, zabijając załogę i wszystkich oficerów. Kapitan miał rozkaz zwrócić złoto Indii z powrotem do Mendozy.\nTaki wspaniały przykład białej rasy, prawda, bracie? Musiałem zaryzykować, nie wiedziałem, kiedy miało nastąpić powstanie. Ale wszystko poszło zgodnie z planem: burza uderzyła nas, gdy tylko 'Santa Quiteria' dotarła na wschodnią stronę wyspy Trynidad i Tobago. Fregata została zniesiona z powrotem na Karaiby w kierunku Ksocheatem.\nPotem poniosłem największą porażkę w moim życiu - fala zmyła mnie ze statku i znalazłem się w Le Marin Cove na Martynice kilka dni później. Rybacy mnie znaleźli i zabrali do Le Francois. Ale ludzie de Poincy'ego złapali mnie, gdy dochodziłem do siebie u Cesara Craiga. 'Gryffondor' nie znalazł 'Santa Quiteria' w miejscu, które określiłem. Kawaler de Poincy wpadł w furię, gdy tylko dowiedział się, że złoto Indian zniknęło razem z pieniędzmi zabranymi ze skarbca Zakonu i jego własnymi oszczędnościami.\nKazał mnie aresztować. Nie mógł mnie jednak zabić, nie chciał. Chciał złota. Złota! Tylko tego chcą i o to dbają twoi ludzie! Zrobisz wszystko, by je zdobyć... Byłem w strasznej sytuacji: nie miałem na sobie maski i pozostawiono mnie gnijącego w celi bez ani jednej monety w kieszeniach.\nWtedy wezwałem cię. Tak-tak, drogi bracie, miałeś mnie uwolnić, abym mógł zrobić to, do czego się urodziłem. I wykonałeś niezwykłą pracę. Wydaje się, że mleko Itza, które ssałeś, dobrze ci zrobiło.";
 			link.l1 = "Czymże się kierowałeś, kiedy uciekłeś z Saint-Pierre? Jaki był twój plan?";
 			link.l1.go = "kukulkan_12";			
 		break;

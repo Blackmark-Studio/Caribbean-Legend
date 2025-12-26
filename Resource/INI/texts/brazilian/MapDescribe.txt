@@ -1,0 +1,153 @@
+info {[ERROR: APIConnectionError]}
+type_full_1 {O mapa está claramente novo e o papel ainda não amarelou. As marcações de #sMapIslName# parecem feitas às pressas, mas se acreditarmos nelas, o tesouro está escondido #sMaplocName#.}
+type_full_1_isl {Ilha}
+type_full_1_mein {continente}
+type_full_2 {O mapa foi desenhado de forma descuidada, e #sMapIslName# mal pode ser distinguido. Pelas marcas, o tesouro está escondido #sMaplocName#, mas só teremos certeza indo até lá.}
+type_full_2_isl {ilha}
+type_full_2_mein {continente}
+type_full_3 {Este mapa não tinha valor para seu dono – o contorno de #sMapIslName# está manchado de água. O local do tesouro parece ser #sMaplocName#.}
+type_full_3_isl {ilhas}
+type_full_3_mein {continente}
+type_full_4 {O mapa mostra #sMapIslName#. O local onde os tesouros estão guardados é #sMaplocName#. A falta de habilidade do autor foi compensada pelo esforço – animais fantasiosos, como desenhados por uma criança, enfeitam as margens.}
+type_full_4_isl {ilha}
+type_full_4_mein {continente}
+type_full_5 {O mapa retrata com precisão os contornos de #sMapIslName#. O local do tesouro é #sMaplocName#. Não será difícil encontrá-lo, pois o autor deixou instruções bastante precisas.}
+type_full_5_isl {ilha}
+type_full_5_mein {continente}
+type_full_6 {Este mapa foi desenhado em papel pautado de alta qualidade. O contorno de #sMapIslName# é facilmente reconhecível. Segundo a anotação no verso, o tesouro está em #sMaplocName#.}
+type_full_6_isl {ilha}
+type_full_6_mein {[ERROR: APIConnectionError]}
+type_full_7
+{
+Aqui é #sMapIslName#. O mapa mostra onde está o tesouro escondido — em #sMaplocName#. Um pirata famoso escondeu seu tesouro lá.  
+As manchas marrons de sangue sugerem a autenticidade do mapa e mostram que este pedaço de papel já passou por muitas mãos.
+}
+type_full_7_isl {ilha}
+type_full_7_mein {continente}
+type_full_8 {Este mapa já passou por muitas mãos — o papel está queimado em vários pontos, e o contorno de #sMapIslName# é marcado por múltiplas dobras. O local do tesouro é #sMaplocName#. Ao que tudo indica, algo realmente valioso está lá.}
+type_full_8_isl {ilhas}
+type_full_8_mein {[ERROR: APIConnectionError]}
+type_full_9 {#sMapIslName#, retratada com grande precisão neste mapa, está cercada por arabescos e desenhos de monstros marinhos. Seja quem for o autor, conhecia bem seu ofício e escondeu algo muito valioso no tesouro. Só resta chegar ao local — #sMaplocName#.}
+type_full_9_isl {Ilha}
+type_full_9_mein {Continente}
+type_full_10 {As metades deste mapa não se encaixam, embora a caligrafia, a cor da tinta e o estado do papel indiquem claramente o mesmo autor. Os contornos de #sMapIslName# estão borrados e manchados de tinta, e o tesouro, ao que parece, está em #sMaplocName#.}
+type_full_10_isl {ilha}
+type_full_10_mein {continente}
+type_full_11 {Este mapa foi cuidadosamente dividido na diagonal, tornando impossível identificar #sMapIslName# com apenas uma metade. As anotações estão em letra legível, facilitando descobrir onde está o tesouro — em #sMaplocName#. Pelo estado do papel, os tesouros estão lá há muitas décadas.}
+type_full_11_isl {ilha}
+type_full_11_mein {continente}
+type_full_12 {Este mapa, formado por duas partes, parece incrivelmente antigo. Os contornos de #sMapIslName# estão desatualizados há décadas. As descrições e pistas usam uma linguagem arcaica, repleta de latim. É difícil estimar o tamanho dos tesouros guardados #sMaplocName#.}
+type_full_12_isl {ilhas}
+type_full_12_mein {continente}
+type_quest_0
+{
+Este é #sMapIslName#. O tesouro escondido está marcado aqui – é #sMaplocName#. Dizem que #sMapOwner# escondeu sua fortuna neste local.
+As manchas marrons de sangue no mapa comprovam sua autenticidade e sugerem uma história sangrenta de posse.
+}
+type_quest_0_isl {ilha}
+type_quest_0_mein {continente}
+type_part {Esta é uma parte de um mapa do tesouro maior. Sozinha, não revela onde o tesouro está. Sua única chance é encontrar a outra parte para completar o mapa e desvendar o mistério.}
+type_fake
+{
+Este mapa afirma mostrar a localização de um tesouro. Você pode investigar para ver se é real, mas parece mais provável que seja uma falsificação.
+Provavelmente é melhor descartar este pedaço de papel.
+}
+Antigua_Grot {na caverna à direita de Falmouth Cove}
+Antigua_Grot_box1 {um baú sobre uma grande pedra}
+SentJons_TownCave {no calabouço de St. Jones}
+SentJons_TownCave_box1 {sob as tábuas em um beco sem saída}
+SentJons_TownCave_box2 {em um beco sem saída da mina}
+SentJons_TownCave_box3 {no bloqueio}
+Barbados_Cave {em uma caverna perto de Bridgetown}
+Barbados_Cave_box1 {sob as tábuas em um beco sem saída}
+Beliz_Cave {em uma caverna à direita da saída de Belize}
+Beliz_Cave_box1 {um baú perto da ponte de pedra}
+Beliz_Cave_box2 {um baú sobre uma grande pedra}
+Beliz_Cave_box3 {um baú perto da corda pendurada no teto}
+Beliz_Cave_2 {em uma caverna em frente à saída de Belize}
+Beliz_Cave_2_box1 {sob as tábuas em um beco sem saída}
+Bermudes_Dungeon {em uma masmorra sob o estaleiro de Sharptown}
+Bermudes_Dungeon_box1 {um baú atrás de uma porta trancada}
+Bermudes_Dungeon_box2 {um baú atrás de uma porta aberta}
+Bermudes_Dungeon_box3 {um baú em um beco sem saída}
+Bermudes_Dungeon_box4 {um baú atrás dos barris}
+Caracas_Grot {em uma caverna à direita da saída de Caracas}
+Caracas_Grot_box1 {[ERROR: APIConnectionError]}
+Cartahena_Cave {em uma caverna em frente à saída de Cartagena}
+Cartahena_Cave_box1 {um baú sob a tocha}
+Cartahena_Cave_box2 {um baú em um beco sem saída}
+Cartahena_Cave_box3 {um baú perto da tocha}
+Caiman_Grot {em uma caverna à direita da Costa do Deserto}
+Caiman_Grot_box1 {um baú sobre uma grande pedra}
+Charles_Grot {em uma caverna à direita de Half Moon Bay}
+Charles_Grot_box1 {um baú na praia}
+Cuba_Grot {em uma caverna à direita do Cabo Camaguey}
+Cuba_Grot_box1 {um baú na praia}
+Cumana_Cave {em uma caverna à direita de Carupano Cove}
+Cumana_Cave_box1 {um baú perto da ponte de pedra}
+Cumana_Cave_box2 {um baú sobre uma grande pedra}
+Cumana_Cave_box3 {um baú perto da corda pendurada no teto}
+Curacao_Cave {em uma caverna à direita da Lagoa Blanca}
+Curacao_Cave_box1 {um baú sob a tocha}
+Curacao_Cave_box2 {um baú em um beco sem saída}
+Curacao_Cave_box3 {um baú perto da tocha}
+Dominica_Grot {em uma caverna à esquerda da Baía Scott's Head}
+Dominica_Grot_box1 {um baú na praia}
+Guadeloupe_Cave {[ERROR: APIConnectionError]}
+Guadeloupe_Cave_box1 {um baú em uma nicho atrás da tocha}
+Guadeloupe_Cave_box2 {um baú em uma nicho atrás da coluna}
+Guadeloupe_Cave_box3 {um baú atrás das pedras perto da parede}
+Hispaniola_Cave {em uma caverna perto de Port-au-Prince}
+Hispaniola_Cave_box1 {um baú perto da ponte de pedra}
+Hispaniola_Cave_box2 {um baú sobre uma grande pedra}
+Hispaniola_Cave_box3 {um baú perto da corda pendurada no teto}
+Jamaica_Grot {em uma caverna à direita do farol de Port-Royal}
+Jamaica_Grot_box1 {um baú sobre uma grande pedra}
+Maracaibo_Cave {em uma caverna em frente à saída de Maracaibo}
+Maracaibo_Cave_box1 {um baú sob a tocha}
+Maracaibo_Cave_box2 {um baú em um beco sem saída}
+Maracaibo_Cave_box3 {um baú perto da tocha}
+Marigo_Cave {em uma caverna em frente à saída de Philipsburg}
+Marigo_Cave_box1 {um baú sob a tocha}
+Marigo_Cave_box2 {um baú em um beco sem saída}
+Marigo_Cave_box3 {um baú perto da tocha}
+Panama_Cave {em uma caverna à esquerda da saída de Portobello}
+Panama_Cave_box1 {sob as tábuas em um beco sem saída}
+Pearl_Grot {em uma caverna na costa oeste entre Belize e Blueweld}
+Pearl_Grot_box1 {um baú sobre uma grande pedra}
+PortoBello_Cave {em uma caverna à direita da Baía dos Mosquitos}
+PortoBello_Cave_box1 {sob as tábuas em um beco sem saída}
+SanJuan_Cave {em uma caverna perto de San Juan}
+SanJuan_Cave_box1 {um baú perto da ponte de pedra}
+SanJuan_Cave_box2 {um baú sobre uma grande pedra}
+SanJuan_Cave_box3 {um baú perto da corda pendurada no teto}
+SantaCatalina_Cave {em uma caverna à direita do Cabo Perlas}
+SantaCatalina_Cave_box1 {um baú sob a tocha}
+SantaCatalina_Cave_box2 {um baú em um beco sem saída}
+SantaCatalina_Cave_box3 {um baú perto da tocha}
+SantaCatalina_Grot {em uma caverna à direita da Baía San Juan del Norte}
+SantaCatalina_Grot_box1 {um baú na praia}
+SantaCatalina_PearlCave {em uma caverna à esquerda da Baía de San Juan del Norte}
+SantaCatalina_PearlCave_box1 {um baú perto da ponte de pedra}
+SantaCatalina_PearlCave_box2 {um baú sobre uma grande pedra}
+SantaCatalina_PearlCave_box3 {um baú perto da corda pendurada no teto}
+Tenotchitlan_Cave {em uma caverna ao norte do templo asteca}
+Tenotchitlan_Cave_box1 {um baú perto da ponte de pedra}
+Tenotchitlan_Cave_box2 {um baú sobre uma grande pedra}
+Tenotchitlan_Cave_box3 {um baú perto da corda pendurada no teto}
+Terks_Grot {em uma caverna à direita da Baía do Norte}
+Terks_Grot_box1 {um baú sobre uma grande pedra}
+Tortuga_Grot {em uma caverna em frente à Praia Olho de Peixe}
+Tortuga_Grot_box1 {um baú na praia}
+Tortuga_Cave {em uma masmorra sob Tortuga}
+Tortuga_Cave_box1 {um baú atrás de uma porta trancada}
+Trinidad_Grot {em uma caverna em frente ao farol de Trinidad}
+Trinidad_Grot_box1 {um baú na praia}
+Martinique_Grot {em uma caverna perto da Praia Lamentin}
+Martinique_Grot_box1 {um baú na praia}
+FortFrance_Dungeon {em uma masmorra de St. Pierre}
+FortFrance_Dungeon_box1 {um baú na elevação}
+FortFrance_Dungeon_box2 {um baú atrás de uma porta aberta no andar superior}
+FortFrance_Dungeon_box3 {um baú perto do elevador}
+FortFrance_Dungeon_box4 {um baú atrás de uma porta aberta no andar inferior}
+FortFrance_Dungeon_box5 {sob caixas de madeira}

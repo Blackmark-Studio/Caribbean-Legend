@@ -1,0 +1,32 @@
+Tutorial_1 {Virando o navio}
+Tutorial_2 {Pressione @<key1> e @<key2> para virar o navio}
+Tutorial_3 {Controle de tempo}
+Tutorial_4 {Ativar aceleração do tempo @<key>}
+Tutorial_5 {Pressione @<key> novamente para desativar}
+Tutorial_6 {Pressione @<key> para acelerar até x6}
+Tutorial_7 {Pressione @<key1> para desacelerar ou @<key2>}
+Tutorial_8 {Controle de velas}
+Tutorial_9 {Coloque as velas em modo de batalha @<key1>}
+Tutorial_10 {Abaixar totalmente as velas @<key1>}
+Tutorial_11 {Noções básicas de combate naval}
+Tutorial_12 {Use @<key1> para um disparo rápido}
+Tutorial_13 {Combate naval avançado}
+Tutorial_14 {@<key1> Entrar no modo de mira}
+Tutorial_15 {Pressione @<key1> para uma salva direcionada}
+Tutorial_16 {@<key1> Sair do modo de mira}
+Tutorial_17 {Conquiste a vitória}
+Tutorial_18 {Afunde os navios piratas restantes}
+Tutorial_19 {Ataque o inimigo}
+Tutorial_20 {@<key1> Golpe}
+Tutorial_21 {@<key1> Ataque rápido}
+Tutorial_22 {@<key1> Ataque pesado}
+Tutorial_23 {Defenda-se}
+Tutorial_24 {@<key1> Bloqueie ataques}
+Tutorial_25 {@<key1> Aparar ataques}
+Tutorial_26 {Derrote o pirata!}
+Tutorial_27 {Missões}
+Tutorial_28 {Leia o documento @<key1>}
+Tutorial_29 {Abra o baú de doblões @<key1>}
+Tutorial_30 {Saqueando}
+Tutorial_31 {Saquear os marinheiros}
+Tutorial_32 {Entregar a poção misteriosa para Alonso}

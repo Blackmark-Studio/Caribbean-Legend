@@ -8,5 +8,3 @@ incomingDamageReduction {Ochrona przed obrażeniami}
 RangeIncomingDamageReduction {Ochrona przed obrażeniami od broni palnej}
 Shot_Damage {Obrażenia od broni palnej}
 HeadshotDamage {Obrażenia od trafienia w głowę}
-Grapeshot_Damage {Zwiększone obrażenia przy strzelaniu kartaczem}
-Bullet_Damage {Zwiększone obrażenia przy strzelaniu kulami}

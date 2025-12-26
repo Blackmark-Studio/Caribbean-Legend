@@ -44,7 +44,7 @@ whore {女仆}
 hostess {女主人}
 enemy {敌人}
 wife {妻子}
-kukulkan {库库尔坎}
+kukulkan {Kukulkan}
 mercen {雇佣兵}
 monster {不死者}
 captain_trader {自由商人}
@@ -56,6 +56,8 @@ duelist {决斗者}
 smuggler {走私者}
 AffairOfHonor_tavern {绝望的醉汉}
 hovernon_wife {总督的妻子}
+HeadSailor {Старший матрос}
+HeadSailorPlus {Голос команды}
 Director {主管}
 Deputy Director {副主管}
 Naval Registry Guard {登记处卫兵}

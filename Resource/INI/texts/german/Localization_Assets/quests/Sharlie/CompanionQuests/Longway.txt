@@ -13,17 +13,17 @@ Longway_12 {Antoon}
 Longway_13 {van Diemen}
 Longway_14 {Joep}
 Longway_15 {van der Vink}
-Longway_16 {Ветте}
-Longway_17 {ван Хаан}
-Longway_18 {Люйтерс}
-Longway_19 {ван Хаан}
+Longway_16 {Vette}
+Longway_17 {van Haan}
+Longway_18 {Luiters}
+Longway_19 {van Haan}
 Longway_20 {Vitus}
 Longway_21 {Hengel}
 Longway_22 {Georges}
 Longway_23 {Gravel}
 Longway_24 {Das Treffen findet hinter@<NewStr()>den Stadttoren statt}
-Longway_25 {Гуго}
-Longway_26 {Марсо}
+Longway_25 {Hugo}
+Longway_26 {Marso}
 Longway_27 {Einen Tag später...@<NewStr()>Abends, vor den Toren der Stadt.}
 Longway_28 {Mathieu}
 Longway_29 {Terugny}

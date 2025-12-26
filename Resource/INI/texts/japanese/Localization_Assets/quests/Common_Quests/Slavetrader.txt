@@ -1,0 +1,33 @@
+Slavetrader_1 {探索モード： タイマー延長。 クエストを達成せよ！}
+Slavetrader_2 { }
+Slavetrader_3 { }
+Slavetrader_4 { }
+Slavetrader_5 { }
+Slavetrader_6 { }
+Slavetrader_7 { }
+Slavetrader_8 {Nabukee}
+Slavetrader_9 {Anaconda}
+Slavetrader_10 {カラカス出身}
+Slavetrader_11 {クマナより}
+Slavetrader_12 {Fransua}
+Slavetrader_13 {Gontier}
+Slavetrader_14 {考えた}
+Slavetrader_15 {考慮した}
+Slavetrader_16 {バルバドスの岸辺で}
+Slavetrader_17 {グアドループの岸辺で}
+Slavetrader_18 {サンティアゴの近く}
+Slavetrader_19 {ハバナの近く}
+Slavetrader_20 {トルトゥーガの岸辺で}
+Slavetrader_21 {トリニダードの岸辺で}
+Slavetrader_22 {セントクリストファーの岸辺で}
+Slavetrader_23 {サントドミンゴの近く}
+Slavetrader_24 {ポルトープランスの近く}
+Slavetrader_25 {カルタヘナの近く}
+Slavetrader_26 {Tamango}
+Slavetrader_27 { }
+Slavetrader_28 {Sven}
+Slavetrader_29 {Carlson}
+Slavetrader_30 {Janna}
+Slavetrader_31 {Mollery}
+Slavetrader_32 {Izaura}
+Slavetrader_33 { }

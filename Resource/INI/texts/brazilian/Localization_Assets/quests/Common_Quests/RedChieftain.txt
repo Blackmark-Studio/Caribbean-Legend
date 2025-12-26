@@ -1,0 +1,7 @@
+RedChieftain_1 {chefe}
+RedChieftain_2 {Kanauri}
+RedChieftain_3 {índios}
+RedChieftain_4 {da tribo Caiman}
+RedChieftain_5 {O chefe deixou sua embarcação!}
+RedChieftain_6 {indígena}
+RedChieftain_7 {da tribo Caiman}

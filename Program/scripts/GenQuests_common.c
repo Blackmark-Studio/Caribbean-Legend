@@ -168,7 +168,7 @@ string GenQuest_GetQuestTreasureMapDescription(ref itmRef) // надпись н�
 	i = FindLocation(itmRef.MapLocId);  // ищем ареал
 	if (i != -1 && locations[i].islandId != "Mein")
 	{
-		string MapLocation = GetConvertStr(locations[i].islandId, "LocLables.txt");
+		string MapLocation = GetIslandNameByID(locations[i].islandId);
 		MapDescription = GetConvertStr("type_quest_0_isl", "MapDescribe.txt") + " " + MapLocation;
 	}
 	else
@@ -188,4 +188,14 @@ string GenQuest_GetQuestTreasureMapDescription(ref itmRef) // надпись н�
 	
 	itmRef.MapDescription = MapDescription; 
 	return MapDescription;   	
+}
+
+int TreasureMapPesosCost()
+{
+	int TreasureQty = Statistic_AddValue(PChar, "Treasure", 0);
+	if(TreasureQty == 0) return 7000 + hrand(3000);
+	else if(TreasureQty == 1) return 10000 + hrand(5000);
+	else if(TreasureQty == 2) return 15000 + hrand(5000);
+	
+	return 100;
 }

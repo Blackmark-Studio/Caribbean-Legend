@@ -1,13 +1,13 @@
 // Text stuff
 
 // Lower and Upper register by keys "^" and "_" 
-void DLG_ModifyAllRegister(string input)
+void DLG_ModifyAllRegister(ref input)
 {
-  DLG_ModifyRegister(&input, "^", 0);
-  DLG_ModifyRegister(&input, "_", 0);
+  DLG_ModifyRegister(input, "^", 0);
+  DLG_ModifyRegister(input, "_", 0);
 }
 
-void DLG_ModifyRegister(string input, string key, int startPos)
+void DLG_ModifyRegister(ref input, string key, int startPos)
 {
   int markPos = FindSubStr(input, key, startPos);
   if (markPos < 0) return;
@@ -28,14 +28,14 @@ void DLG_ModifyRegister(string input, string key, int startPos)
   DLG_ModifyRegister(&input, &key, markPos); // looking for the next replacement
 }
 
-void DLG_EscapeAllChars(string input)
+void DLG_EscapeAllChars(ref input)
 {
-  DLG_ReplaceAllMatches(&input, "\(", "{{", 0);
-  DLG_ReplaceAllMatches(&input, "\)", "}}", 0);
+  DLG_ReplaceAllMatches(input, "\(", "{{", 0);
+  DLG_ReplaceAllMatches(input, "\)", "}}", 0);
 }
 
-void DLG_UnescapeAllChars(string input)
+void DLG_UnescapeAllChars(ref input)
 {
-  DLG_ReplaceAllMatches(&input, "{{", "(", 0);
-  DLG_ReplaceAllMatches(&input, "}}", ")", 0);
+  DLG_ReplaceAllMatches(input, "{{", "(", 0);
+  DLG_ReplaceAllMatches(input, "}}", ")", 0);
 }

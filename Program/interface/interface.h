@@ -1,4 +1,4 @@
-#define INTERFACE_QUANTITY				71
+#define INTERFACE_QUANTITY				72
 
 #define INTERFACE_STORE					0
 #define INTERFACE_SHIPYARD				1
@@ -76,8 +76,9 @@
 #define INTERFACE_BLACKMARK_CHEAT		66	// Интерфейс чит меню
 #define INTERFACE_CHEAT_CHARACTER		67	// Интерфейс чит меню (персонаж)
 #define INTERFACE_CHEAT_ITEMS		68	// Интерфейс чит меню (предметы)
-#define INTERFACE_ITEMS_EXCHANGE		69	// Интерфейс чит меню (предметы)
+#define INTERFACE_ITEMS_EXCHANGE		69 // Интерфейс обмена предметами
 #define INTERFACE_CHANGE_SHIP_TRAIT 70
+#define INTERFACE_STORY_FRAME		71   // Интерфейс сторей
 
 #define RC_INTERFACE_DO_NOTHING			-1
 

@@ -4,12 +4,10 @@ extern void initFastReloadTable();
 void InitBaseInterfaces()
 {
 	InterfaceStates.BackEnvironmentIsCreated = false;
-	SetEventHandler("GetQuestTextFileName","GetQuestTextFileName",0);
 	GameInterface.GameTime.sec = InterfaceStates.GameTime.sec;
 	GameInterface.GameTime.min = InterfaceStates.GameTime.min;
 	GameInterface.GameTime.hour = InterfaceStates.GameTime.hour;
 	CreateEntity(&GameInterface,"xinterface");
-	DelEventHandler("GetQuestTextFileName","GetQuestTextFileName");
 	LayerAddObject(INTERFACE_EXECUTE,&GameInterface,-100);
 	LayerAddObject(INTERFACE_REALIZE,&GameInterface,-100);
 	if(!IsEntity(&LanguageObject))
@@ -22,22 +20,8 @@ void InitBaseInterfaces()
 	{
 		Event("EvStoreDayUpdate");
 	}
-	LanguageCloseFile("LocLables.txt");
-	g_LocLngFileID = LanguageOpenFile("LocLables.txt");
 	InitTimerInterface();
 	InitShipHulls(); 
-}
-
-string questTextFileName[4];
-ref GetQuestTextFileName()
-{
-	// string QuestBookPath = "program\questbook\" + LanguageGetLanguage(); // старый путь в скриптах
-	string QuestBookPath = "resource\ini\texts\" + LanguageGetLanguage(); // перенес в ресурсы
-	questTextFileName[0] = QuestBookPath + "\QuestBook_Part1.txt"; //документ-квестбук - только записи в Документы
-	questTextFileName[1] = QuestBookPath + "\QuestBook_Part2.txt"; // квестбук на генераторы, мини- и мезоквесты
-	questTextFileName[2] = QuestBookPath + "\QuestBook_New.txt"; // Warship. Это наш квестбук
-	questTextFileName[3] = QuestBookPath + "\QuestBook_Part3.txt"; //отдельный квестбук на макроквесты
-	return &questTextFileName;
 }
 
 void InitBaseInterfaces_main()
@@ -285,6 +269,9 @@ void InitInterfaceTables()
 
 	Interfaces[INTERFACE_ITEMS_EXCHANGE].SectionName = "interface\items_exchange.c";
 	Interfaces[INTERFACE_ITEMS_EXCHANGE].IniFile = "RESOURCE\INI\INTERFACES\items_exchange.ini";
+
+	Interfaces[INTERFACE_STORY_FRAME].SectionName = "interface\story_frame.c";
+	Interfaces[INTERFACE_STORY_FRAME].IniFile = "RESOURCE\INI\INTERFACES\story_frame.ini";
 
 	Interfaces[INTERFACE_CHANGE_SHIP_TRAIT].SectionName = "interface\change_ship_trait.c";
 	Interfaces[INTERFACE_CHANGE_SHIP_TRAIT].IniFile = "RESOURCE\INI\INTERFACES\change_ship_trait.ini";

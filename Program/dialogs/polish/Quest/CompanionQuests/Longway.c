@@ -39,8 +39,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Alonso_3":
-			dialog.text = "„Sprzątamy twoje kajuty od czasu do czasu, gdy jesteś na zewnątrz – czy to w mieście, czy odpoczywasz na koje. Nigdy tego nie zauważyłeś? A może po prostu zapomniałeś?”";
-			link.l1 = "„Och, to prawda. Cóż, możesz już iść.”";
+			dialog.text = "Sprzątamy twoją kajute od czasu do czasu, gdy jesteś na zewnątrz – czy to w mieście, czy odpoczywasz na koje. Nigdy tego nie zauważyłeś? A może po prostu zapomniałeś?";
+			link.l1 = "Och, to prawda. Cóż, możesz już iść.";
 			link.l1.go = "PZ_OsmatrivaemKautu";
 		break;
 		
@@ -51,13 +51,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Tichingitu_2":
-			dialog.text = "Nie tak dawno, gdy przychodziłem, by Cię zobaczyć. Duchy milczą na temat, kim to może być.";
+			dialog.text = "Nie tak dawno, gdy przychodziłem, by Cię zobaczyć. Duchy milczą na temat, kto to może być.";
 			link.l1 = "To miły gest, Tichingitu. A teraz, jeśli pozwolisz, muszę sprawdzić, czy niczego nie brakuje.";
 			link.l1.go = "PZ_OsmatrivaemKautu";
 		break;
 		
 		case "PZ_Duran_1":
-			dialog.text = "„Hej, Kapitanie, na co patrzysz? Ktoś grzebał w twoich rzeczach. Nawet ja to zauważyłem.”";
+			dialog.text = "Hej, Kapitanie, na co patrzysz? Ktoś grzebał w twoich rzeczach. Nawet ja to zauważyłem.";
 			link.l1 = "To nie ty? W końcu nie płacę ci tak hojnie jak Francois.";
 			link.l1.go = "PZ_Duran_2";
 		break;
@@ -7139,7 +7139,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_TortureRoom_Levasser_16":
 			dialog.text = "Dla ciebie to Signor de René de Buaduflé de Lettre.";
-			link.l1 = "Signor de René- srelelele! Nie obchodzi mnie to. Wyciągnij swoją szablę i pokaż mi, ile jesteś wart w walce – z mężczyzną, a nie bezbronną dziewczyną.";
+			link.l1 = "Signor de René-srelelele! Nie obchodzi mnie to. Wyciągnij swoją szablę i pokaż mi, ile jesteś wart w walce – z mężczyzną, a nie bezbronną dziewczyną.";
 			link.l1.go = "PZ_TortureRoom_Levasser_17";
 		break;
 		

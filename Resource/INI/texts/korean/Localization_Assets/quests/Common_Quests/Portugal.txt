@@ -1,0 +1,16 @@
+Portugal_1 {Bartolomeo}
+Portugal_2 {포르투갈인}
+Portugal_3 {Piter}
+Portugal_4 {van Stahl}
+Portugal_5 {Leo}
+Portugal_6 {Cord}
+Portugal_7 {이틀 후@<NewStr()>적선이 보이지 않았다}
+Portugal_8 {Frants}
+Portugal_9 {Garke}
+Portugal_10 {Albatross}
+Portugal_11 {Bart the Portuguese가 당신의 배를 떠났습니다!}
+Portugal_12 {Ernando}
+Portugal_13 {Vaskez}
+Portugal_14 {한 시간이 지났다...@<NewStr()>포르투갈인은 집 안으로 옮겨졌다}
+Portugal_15 {두 시간이 흘렀다...}
+Portugal_16 {당신은 Bart the Portuguese의 보물을 발견했습니다!}

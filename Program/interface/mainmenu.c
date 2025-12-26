@@ -105,16 +105,26 @@ void InitInterface(string iniName)
 	
 	if(!CheckNews()) ShowNews(); // есть новости
 
-	// belamour ачивка за установленный мод
-	int itemsInfo[2];
-	if(!GetAchievement("ach_CL_153") && GetOverlaysInfo(&itemsInfo) > 0) Achievment_Set("ach_CL_153");
-	
     // при выходе в главное меню сбрасываем звуки
 	if(!bMainMenu)
     {
         PauseAllSounds();
         ResetSound(); 
     }
+
+	// запуск титров после прохождения игры
+	if(CheckAttribute(&InterfaceStates, "MainMenu.InstantCredits"))
+    {
+		DeleteAttribute(&InterfaceStates, "MainMenu.InstantCredits");
+		InterfaceStates.MainMenu.DoNotClearCharacters = true;
+		IDoExit(RC_INTERFACE_DO_CREDITS, false);
+		bMainMenu = true;
+        return;
+	}
+
+	// belamour ачивка за установленный мод
+	object itemsInfo[2];
+	if(!GetAchievement("ach_CL_153") && GetOverlaysInfo(&itemsInfo) > 0) Achievment_Set("ach_CL_153");
 
 	// ВВОД СВОИХ СХЕМ В ЗАВИСИМОСТИ ОТ ПОГОДЫ (BY LOKK)
 	if(Whr_IsRain())
@@ -145,14 +155,7 @@ void InitInterface(string iniName)
 	}
 
 	SetMusic("music_MainMenu");
-	// запуск титров после прохождения игры
-	if(CheckAttribute(&InterfaceStates, "MainMenu.InstantCredits")) {
-		DeleteAttribute(&InterfaceStates, "MainMenu.InstantCredits");
-		InterfaceStates.MainMenu.DoNotClearCharacters = true;
-		IDoExit( RC_INTERFACE_DO_CREDITS, false );
-		bMainMenu = true;
-	}
-	
+
 	// if("Условие") // условие на появление окна с предупреждением
 		// ShowAttention();
 }

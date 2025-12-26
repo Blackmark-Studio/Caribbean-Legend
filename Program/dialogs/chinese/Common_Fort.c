@@ -439,7 +439,6 @@ void ProcessDialogEvent()
 				dialog.text = "想想看! 如此无礼! 以商人的身份来到这里! 每个营房都贴着你的照片, 你这个混蛋! 这次你逃不掉了! 抓住他! ";
 				link.l1 = RandPhraseSimple("啊! ..", "好吧, 这是你们自找的... ");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (findsubstr(pchar.location.from_sea, "_town" , 0) == -1) // 如果停泊在非城市区域
@@ -447,7 +446,6 @@ void ProcessDialogEvent()
 				dialog.text = "你是来这里交易的? 请问怎么交易? 你的船在哪里? 你知道, 这一切看起来都很可疑, 我不得不拘留你, 直到我们弄清楚。 放下武器跟我走! ";
 				link.l1 = RandPhraseSimple("去你的! ", "当两个星期天在一周内到来时... ");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (iTemp == -1)
@@ -455,7 +453,6 @@ void ProcessDialogEvent()
 				dialog.text = "你的许可证必须被吊销, 因为它已经过期, 因此无效。 放下武器跟我来接受进一步调查! ";
 				link.l1 = RandPhraseSimple("去你的! ", "当两个星期天在一周内到来时... ");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (iTemp == 0)

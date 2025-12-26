@@ -23,3 +23,11 @@ Frame_DayPassed_4 {Прошло четыре дня...}
 Frame_DayPassed_5 {Прошло пять дней...}
 Frame_DayPassed_6 {Прошло шесть дней...}
 Frame_WeekPassed {Прошла неделя...}
+Frame_WeekPassed_2 {Прошло две недели...}
+Frame_WeekPassed_3 {Прошло три недели...}
+Frame_MonthPassed {Прошёл месяц...}
+Frame_MonthPassed_2 {Прошло два месяца...}
+Frame_MonthPassed_3 {Прошло три месяца...}
+Frame_YearPassed {Прошёл год...}
+Frame_YearPassed_2 {Прошло два года...}
+Frame_YearPassed_3 {Прошло три года...}

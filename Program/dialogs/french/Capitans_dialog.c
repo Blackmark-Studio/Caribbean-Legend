@@ -808,7 +808,7 @@ void ProcessDialogEvent()
 		
 		case "attack_fort":
                 dialog.text = "Et qu'est-ce que tu veux dire ?";
-                link.l1 = "Je peux vous aider à écraser le fort de la colonie de "+GetConvertStr(aData.Colony+" Ville","LocLables.txt")+" et capture la ville, et une proie, ce qui résulte dans le cas de notre succès, nous divisons parmi nous.";
+                link.l1 = "Je peux vous aider à écraser le fort de la colonie de "+GetCityName(aData.Colony)+" et capture la ville, et une proie, ce qui résulte dans le cas de notre succès, nous divisons parmi nous.";
                 link.l1.go = "Siegehelp_1";
                 link.l2 = "En fait, mes affaires ne valent guère votre temps. Adieu, "+GetAddress_FormToNPC(NPChar)+".";
                 link.l2.go = "exit";
@@ -969,7 +969,7 @@ void ProcessDialogEvent()
             aData.loot = sti(aData.loot) - ilt;
             if (CheckAttribute(PChar, "quest.LeaveTown")) Pchar.quest.LeaveTown.over = "yes";
             //--> слухи
-            SiegeRumour("I've been told that you had helped our squadron in the assault of the "+NationNameSK(sti(aData.conation))+" colony - "+GetConvertStr(aData.Colony+" Town", "LocLables.txt")+"! We're so thankfull to you, "+ GetAddress_Form(NPChar)+".", "", sti(aData.nation), -1, 30, 3);
+            SiegeRumour("I've been told that you had helped our squadron in the assault of the "+NationNameSK(sti(aData.conation))+" colony - "+GetCityName(aData.Colony)+"! We're so thankfull to you, "+ GetAddress_Form(NPChar)+".", "", sti(aData.nation), -1, 30, 3);
             //<-- слухи
 		break;
 

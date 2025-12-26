@@ -111,7 +111,8 @@ void ProcessDialogEvent()
 						if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 						{
 							RemoveItems(pchar, "map_sharp_full", 1);
-							dialog.text = "Monsieur, pourquoi avez-vous travaillé si lentement ?! C'en est fini pour votre principal. La période de validation du testament a expiré et Isla Tesoro appartient désormais à l'Angleterre. Elle deviendra bientôt une base militaire."link.l1 ="Ouah ! Il semble que tous mes efforts ont été vains...";
+							dialog.text = "Monsieur, pourquoi avez-vous travaillé si lentement ?! C'en est fini pour votre principal. La période de validation du testament a expiré et Isla Tesoro appartient désormais à l'Angleterre. Elle deviendra bientôt une base militaire.";
+							link.l1 ="Ouah ! Il semble que tous mes efforts ont été vains...";
 							link.l1.go = "saga_l3";
 						}
 						else
@@ -137,7 +138,8 @@ void ProcessDialogEvent()
 						// пятая проверка времени
 						if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 						{
-							dialog.text = "Monsieur, pourquoi avez-vous travaillé si lentement ?! Tout est fini pour votre principal. Le délai de validation du testament a expiré et Isla Tesoro appartient désormais à l'Angleterre. Cela deviendra bientôt une base militaire."link.l1 ="Ouah ! Il semble que tous mes efforts aient été vains...";
+							dialog.text = "Monsieur, pourquoi avez-vous travaillé si lentement ?! Tout est fini pour votre principal. Le délai de validation du testament a expiré et Isla Tesoro appartient désormais à l'Angleterre. Cela deviendra bientôt une base militaire.";
+							link.l1 ="Ouah ! Il semble que tous mes efforts aient été vains...";
 							link.l1.go = "saga_l3";
 						}
 						else
@@ -381,7 +383,8 @@ void ProcessDialogEvent()
 			// шестая проверка времени
 			if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 			{
-				dialog.text = "Monsieur, vous m'avez abasourdi ! Vous avez fait tant de choses, l'île était presque entre nos mains mais tout est fini maintenant à cause de votre retard avec mon paiement ! Le testament a expiré et Isla Tesoro appartient maintenant à la couronne anglaise. Ce sera une base militaire."link.l1 ="Ouah ! Il semble que tous mes efforts ont été vains...";
+				dialog.text = "Monsieur, vous m'avez abasourdi ! Vous avez fait tant de choses, l'île était presque entre nos mains mais tout est fini maintenant à cause de votre retard avec mon paiement ! Le testament a expiré et Isla Tesoro appartient maintenant à la couronne anglaise. Ce sera une base militaire.";
+				link.l1 ="Ouah ! Il semble que tous mes efforts ont été vains...";
 				link.l1.go = "saga_l3";
 			}
 			else

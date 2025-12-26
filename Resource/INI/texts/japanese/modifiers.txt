@@ -1,0 +1,10 @@
+blade_critDamage {近接武器クリティカルダメージ}
+gun_critDamage {ピストルクリティカルダメージ}
+musket_critDamage {マスケット クリティカルダメージ}
+blade_critChance {近接武器クリティカル率}
+gun_critChance {ピストルクリティカル率}
+musket_critChance {マスケット クリティカル率}
+incomingDamageReduction {ダメージ防御}
+RangeIncomingDamageReduction {火器ダメージ耐性}
+Shot_Damage {火器ダメージ}
+HeadshotDamage {ヘッドショットダメージ}

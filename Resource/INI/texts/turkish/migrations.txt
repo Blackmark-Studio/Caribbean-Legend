@@ -1,0 +1,11 @@
+new_string
+{
+
+}
+Uninstalled_Mods_Founded
+{
+Dikkat!
+   Bu kaydı oynamak için yeterli mod yüklü değil. Böyle oynamamalısın.
+   Modları yükle ya da mod yüklenmeden önce alınmış bir kaydı yükle. Modlar:
+   ~
+}

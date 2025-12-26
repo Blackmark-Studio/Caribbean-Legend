@@ -419,29 +419,29 @@ itmdescr_talisman20 {Une bandoulière composée de plusieurs lanières, d’une 
 itmname_talisman20_part {Flasque à poudre de mousquetaire}
 itmdescr_talisman20_part {Une poire à poudre originale, de forme singulière, ornée d’images d’animaux exotiques venus de contrées lointaines. Les bords sont brodés d’un motif d’Europe de l’Est.}
 itmname_totem_01 {Talisman "Gorge en fonte"}
-itmdescr_totem_01 {Une chope enchantée contre l'ivresse, au fond en argent.}
+itmdescr_totem_01 {Chope ensorcelée contre l’ivresse avec un fond en argent. Aide à rester sobre même lors de la pire beuverie.}
 itmname_totem_02 {Talisman "Spinogryz"}
-itmdescr_totem_02 {Un fouet d'apparence effrayante pour exécutions.}
+itmdescr_totem_02 {Fouet d’exécution à l’allure terrifiante. Augmente fortement la discipline à bord, chez les matelots comme chez les passagers involontaires.}
 itmname_totem_03 {Talisman "Baume de Cupidon"}
-itmdescr_totem_03 {Une pommade spéciale dans une boutonnière coûteuse.}
+itmdescr_totem_03 {Pommade spéciale dans une boutonnière luxueuse. Rend toute visite au bordel bénéfique pour la santé.}
 itmname_totem_04 {Talisman "Myrmidon"}
-itmdescr_totem_04 {Un bracelet en argent à porter à la main serti de turquoise.}
+itmdescr_totem_04 {Bracelet en argent serti de turquoise. Symbole de loyauté et de respect de la hiérarchie.}
 itmname_totem_05 {Talisman "ventre de fer"}
-itmdescr_totem_05 {Une ceinture en cuir ornée de plaques protectrices.}
+itmdescr_totem_05 {Ceinture de cuir ornée de plaques protectrices. Arrêtera une balle perdue à deux pouces du cœur.}
 itmname_totem_06 {Talisman "Homme fort"}
-itmdescr_totem_06 {Des bottes qui soulagent la fatigue.}
+itmdescr_totem_06 {Bottes anti‑fatigue, le rêve de tout docker. Elles permettent de porter des charges plus loin et plus longtemps sans s’effondrer d’épuisement.}
 itmname_totem_07 {Talisman "Ménestrel"}
-itmdescr_totem_07 {Une luth à la voix douce qui chantera la romance des aventures maritimes et enflammera les cœurs !}
+itmdescr_totem_07 {Une luth au timbre suave chantera la romance des aventures maritimes et enflammera les cœurs ! Jouez‑en dans une taverne et davantage de volontaires rejoindront votre équipage.}
 itmname_totem_08 {Talisman "Seigneur du feu"}
-itmdescr_totem_08 {Double la vitesse d'entraînement des canonniers.}
+itmdescr_totem_08 {Pipe de canonnier inextinguible. Donne plus de prestance à son propriétaire, surtout s’il commande lui‑même l’artillerie du navire.}
 itmname_totem_09 {Talisman "Argousin"}
-itmdescr_totem_09 {Un cor dont les signaux s'entendent clairement même pendant une canonnade.}
+itmdescr_totem_09 {Cor dont les signaux restent audibles même sous la canonnade. Avec lui, n’importe quel terrien deviendra vite un loup de mer.}
 itmname_totem_10 {Talisman "Faiseur de veuves"}
-itmdescr_totem_10 {Une navaja catalane, rapide, impitoyable et infaillible.}
+itmdescr_totem_10 {Navaja catalane rapide, sans pitié ni raté. S’entraîner avec elle améliore nettement la maîtrise des sabres et coutelas, surtout en mêlée.}
 itmname_totem_11 {Talisman "Goule"}
-itmdescr_totem_11 {Une bague en cuivre enchantée à la main droite qui, via la lame, vole l'énergie à l'adversaire lors d'un duel.}
+itmdescr_totem_11 {Bague de cuivre enchantée à la main droite qui vole l’énergie de l’adversaire à travers la lame lors d’un duel.}
 itmname_totem_12 {Talisman "fils du jaguar"}
-itmdescr_totem_12 {Une griffe de jaguar portée au cou améliorera votre vision nocturne.}
+itmdescr_totem_12 {Griffe de jaguar portée au cou, elle aiguise la vue et permet des estocs particulièrement dangereux.}
 itmname_totem_13 {Talisman "Joker"}
 itmdescr_totem_13 {Une carte utile toujours à portée de main qui augmente les chances de gagner aux jeux de hasard.}
 itmname_indian_1 {Amulette "Poupée vaudou"}

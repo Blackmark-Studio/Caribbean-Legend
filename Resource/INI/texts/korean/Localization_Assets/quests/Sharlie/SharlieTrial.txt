@@ -1,0 +1,56 @@
+SharlieTrial_1 {아베 브누아에게 받은 대출의 만기가 지났습니다!}
+SharlieTrial_2 {Gralam}
+SharlieTrial_3 {Lavua}
+SharlieTrial_4 {보트}
+SharlieTrial_5 {당신의 배가 준비되었습니다! 부두로 가서 바다로 나가세요!}
+SharlieTrial_6 {유령}
+SharlieTrial_7 {퀘스트를 완료하려면 섬 반대편으로 이동하세요. 만에서 오른쪽으로 나가 해안을 따라가세요!}
+SharlieTrial_8 {항해 조작은 게임 옵션에서 확인할 수 있습니다.}
+SharlieTrial_9 {회의에 늦으셨습니다!}
+SharlieTrial_10 {한 시간이 지났습니다...@<NewStr()>럼이 배에 실렸습니다}
+SharlieTrial_11 {액션 메뉴를 사용해 함선으로 돌아가세요 (enter).}
+SharlieTrial_12 {럼을 르 프랑수아에 운반하세요. 섬을 계속 항해하세요.}
+SharlieTrial_13 {Lutisse}
+SharlieTrial_14 {Montane}
+SharlieTrial_15 {앞에 전투가 기다립니다. (F6)로 빠른 저장.}
+SharlieTrial_16 {근처에서 누군가 살해당했습니다! 시신을 약탈하려면 행동 메뉴(ENTER)나 지정된 단축키를 사용하세요.}
+SharlieTrial_17 {Prosper}
+SharlieTrial_18 {Trubal}
+SharlieTrial_19 {Selina}
+SharlieTrial_20 {Trubal}
+SharlieTrial_21 {Gilbert}
+SharlieTrial_22 {Cursee}
+SharlieTrial_23 {Wolter}
+SharlieTrial_24 {Catcher}
+SharlieTrial_25 {폭탄으로 침몰시키거나, 바람이 허락한다면 즉시 접현하십시오.}
+SharlieTrial_26 {훌륭합니다! 액션 메뉴에서 글로벌 지도를 열고 북쪽의 과들루프로 출항하세요!}
+SharlieTrial_27 {Tichingitu}
+SharlieTrial_28 { }
+SharlieTrial_29 { }
+SharlieTrial_30 { }
+SharlieTrial_31 {Gerar}
+SharlieTrial_32 {Lecrua}
+SharlieTrial_33 {Warlike}
+SharlieTrial_34 {Florian}
+SharlieTrial_35 {Shoke}
+SharlieTrial_36 {세 시간이 흘렀다...@<NewStr()>대포가 프리깃에 실렸다}
+SharlieTrial_37 {Arthuro}
+SharlieTrial_38 {Cascos}
+SharlieTrial_39 {Puebla}
+SharlieTrial_40 {'Puebla'}
+SharlieTrial_41 {Jirarz}
+SharlieTrial_42 {Artua}
+SharlieTrial_43 {Gregoire}
+SharlieTrial_44 {Valinnie}
+SharlieTrial_45 {F3 키를 눌러 퀘스트 로그를 확인하세요.}
+SharlieTrial_46 {이제부터 이 잔혹한 세상에서 당신은 홀로 서야 합니다.}
+SharlieTrial_47 {Tichingitu가 마음을 바꿨다.}
+SharlieTrial_48 {Charles}
+SharlieTrial_49 {Barbier}
+SharlieTrial_50 {Henry}
+SharlieTrial_51 {바크 'Henry'}
+SharlieTrial_52 {죽은 자를 약탈해 귀중한 아이템을 챙길 기회!}
+SharlieTrial_53 {Guillaume}
+SharlieTrial_54 {Dubois}
+SharlieTrial_55 {Cocoa}
+SharlieTrial_56 {Leaf}

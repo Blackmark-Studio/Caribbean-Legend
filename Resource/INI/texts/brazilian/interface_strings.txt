@@ -1,0 +1,16 @@
+Delete profile confirm {Tem certeza de que deseja excluir este perfil e todos os seus salvamentos?}
+Delete savefile confirm {Tem certeza de que deseja excluir este salvamento?}
+Overwrite savefile confirm {Tem certeza de que deseja sobrescrever este salvamento?}
+Low storage and unable save create {Espaço livre insuficiente para salvar o jogo.}
+Load game confirm {Tem certeza de que deseja carregar este salvamento?}
+Unable to Load save game {Não foi possível carregar este salvamento.}
+Salary info
+{
+Sua tripulação exige o pagamento mensal.
+Vai pagar?
+}
+Officer info {Seus oficiais exigem o pagamento mensal:}
+All info {Valor líquido:}
+New game confirm {Tem certeza de que deseja iniciar um novo jogo?}
+Insert Disk Ok {Por favor, insira o Disco 1 "Pirates Of The Caribbean"}
+save game limit {Você excedeu o limite de jogos salvos. Exclua salvamentos antigos.}

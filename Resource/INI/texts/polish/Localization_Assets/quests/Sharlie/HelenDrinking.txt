@@ -2,7 +2,7 @@ HelenDrinking_1 {Francois}
 HelenDrinking_2 {de Tavann}
 HelenDrinking_3 {Vit}
 HelenDrinking_4 {Needles}
-HelenDrinking_5 {Rainbow}
+HelenDrinking_5 {Tęcza}
 HelenDrinking_6 {Czy ja śnię? Gdzie się wszyscy podziali?}
 HelenDrinking_7 {Powinienem widzieć się z Janem i przeprosić.}
 HelenDrinking_8 {Amelia}

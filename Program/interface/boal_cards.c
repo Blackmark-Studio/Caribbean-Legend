@@ -1,6 +1,6 @@
 // boal 13.05.05
 int scx, scy, spx, spy, sgxy, ssxy, smxy;
-int move_i, dir_i, dir_i_start;
+int move_i, dir_i, dir_i_start, x_rand, y_rand, r_delta;
 bool openExit;
 bool cardMove;
 int  money_i, moneyOp_i;
@@ -47,7 +47,7 @@ void InitInterface(string iniName)
 	
 	screen: -40..680 x -30..510  (720x540)
 	*/
-	
+	r_delta = makeint(Bring2Range(20.0, 5.0, 5.0, 20.0, GetRDeltaTime() * 1.0));
     sgxy = 120;
     ssxy = 120;
     
@@ -107,12 +107,17 @@ void InitInterface(string iniName)
     {
         smxy = ssxy;
     }
-    CreateImage("BLANK","","", 0, 0, 0, 0); // выше всех
-    
-	CreateImage("Pack","CARDS","pack", 310, 390, 550, 710);
+	
+    XI_MakeNode("resource\ini\interfaces\defaultnode.ini", "PICTURE", "Pack", 100);
+	SetNewGroupPicture("Pack", "CARDS", "pack");
+	SetNodePosition("Pack", 310, 390, 550, 710);
+	XI_MakeNode("resource\ini\interfaces\defaultnode.ini", "PICTURE", "Blank", 100);
+	SetNewGroupPicture("Blank", "CARDS", "blank");
+	SetNodePosition("Blank", 310, 390, 310+scx, 390+scy);
+	SetNodeUsing("Blank", false);
 	SetNewPicture("ICON_1", "interfaces\le\portraits\512\face_" + npchar.faceId+ ".tga");
     SetNewPicture("ICON_2", "interfaces\le\portraits\512\face_" + pchar.faceId+ ".tga");
-    
+    SetCardTip("");
     CreateString(true,"Money","",FONT_NORMAL,COLOR_MONEY, 1550,620,SCRIPT_ALIGN_CENTER,2.0);
     CreateString(true,"MoneyInChest","",FONT_NORMAL,COLOR_MONEY,1550,520,SCRIPT_ALIGN_CENTER,2.0);
     
@@ -307,6 +312,7 @@ void ProcessCommandExecute()
 						}
                         move_i = 0;
                         PlaySound("interface\took_item.wav");
+						SetCardTip("");
                         PostEvent("My_eventMoveImg", 100);
                         
                         PutNextCoin();
@@ -339,6 +345,7 @@ void ProcessCommandExecute()
     		{
                 if (dir_i == 1 && bStartGame != 100 && bStartGame > 1 && !openExit) // только передача хода или открываемся
                 {
+					SetCardTip("");
                     dir_i = -1; // смена хода
                     SetNextTip();
                     if (dir_i_start == -1)// комп начинал игру первый
@@ -383,16 +390,71 @@ void ProcessCommandExecute()
 
 void MoveImg()
 {
-    CreateImage("BLANK","CARDS","blank", 360+move_i*55, 390+ dir_i*move_i*40, 360 + scx+move_i*55, 390 + scy + dir_i*move_i*40);
-    move_i++;
-    if (move_i < 10)
+	int k = scx;
+	int n;
+	if(dir_i > 0)
+		n = howPchar;
+	else
+		n = howNpchar;
+    if (n > 6)
+        k = scx/2;
+	float t;
+    int x1 = 360;
+    int y1 = 390;
+    int x2 = 950 - n * k / 2 + (n - 1) * k;	// карта летит к следующему слоту
+    int y2 = 390 + dir_i * 345;
+    int i, x, y;
+
+    if (move_i == 0)
     {
-        PostEvent("My_eventMoveImg", 60);
+		SetNodeUsing("Blank", true);
+		// случайная промежуточная точка
+        x_rand = x1 + (x2 - x1) / 2 - 200 + rand(400);
+        y_rand = y1 + dir_i * 120 - 150 + rand(300);
+    }
+
+    t = move_i / 50.0;
+    t = t * t * (3.0 - 2.0 * t);	// ускорение в начале, замедление в конце
+    x = makeint((1.0 - t)*(1.0 - t)*x1 + 2.0*(1.0 - t)*t*x_rand + t*t*x2);
+    y = makeint((1.0 - t)*(1.0 - t)*y1 + 2.0*(1.0 - t)*t*y_rand + t*t*y2);
+	float scale = 1.0 + 0.1 * 4.0 * t * (1.0 - t);	// плавное увеличение карты к середине, уменьшение после середины
+	SetNodePosition("Blank", x, y, x + makeint(scx * scale), y + makeint(scy * scale));
+	
+	string sCard;
+	if(t > 0.5)	// карты в руке плавно сдвигаются влево
+	{
+		if(dir_i > 0)
+		{
+			for (i = 0; i < n - 1; i++)
+			{
+				x1 = 950 - (n - 1) * k / 2 + i * k;
+				x2 = 950 - n * k / 2 + i * k;
+				x = makeint(x1 + (x2 - x1) * (t - 0.5) * 2.0);
+				sCard = "c"+cardsP[i];
+				CreateImage("PCard"+i, "CARDS", NullCharacter.Cards.(sCard).pic, x, 740, x + scx, 740 + scy);
+			}
+		}
+		else
+		{
+			for (i = 0; i < n - 1; i++)
+			{
+				x1 = 950 - (n - 1) * k / 2 + i * k;
+				x2 = 950 - n * k / 2 + i * k;
+				x = makeint(x1 + (x2 - x1) * (t - 0.5) * 2.0);
+				CreateImage("PCard" + (18 + i), "CARDS", "blank", x, 50, x + scx, 50 + scy);
+			}
+		}
+	}
+
+    move_i++;
+    if (move_i < 50)
+    {
+        PostEvent("My_eventMoveImg", r_delta);
     }
     else
     {
 		cardMove = false; // закончили перемещение
-        CreateImage("BLANK","","", 0, 0, 0, 0);
+		SetNodeUsing("Blank", false);
         PlaySound("interface\button3.wav");
         // перерисуем все карты на руках
         RedrawCards();
@@ -408,6 +470,8 @@ void MoveImg()
         SetNextTip();
         BetaInfo();
         CheckGame();
+		if(bStartGame >= 2 && dir_i == 1)
+			SetCardTip("action");
     }
 }
 
@@ -488,7 +552,6 @@ void RedrawCards()
         }
         CreateImage("PCard"+(18+i),"CARDS", sTemp, 950 - howNpchar*k/2 + i*k , 50, 950 - howNpchar*k/2 + i*k + scx, 50 + scy);
 	}
-    
 }
 void RedrawDeck()
 {
@@ -624,6 +687,7 @@ void StartGame()
     move_i = 0;
 
     PlaySound("interface\took_item.wav");
+	SetCardTip("");
     PostEvent("My_eventMoveImg", 100);
 
     if (dir_i == 1)
@@ -797,6 +861,8 @@ bool CheckGame()
 		}
         SetFormatedText("INFO_TEXT", sTemp);
         ret = true;
+		SetCardTip("");
+		SetCardTip("restart");
     }
     else
     {
@@ -827,6 +893,7 @@ bool CheckGame()
             {
                 SetFormatedText("INFO_TEXT", XI_ConvertString("CardsPhrase25"));
                 bStartGame = 100;
+				SetCardTip("");
                 PostEvent("My_eOpenCards", 2000);
                 ret = true;
             }
@@ -844,6 +911,7 @@ bool CheckGame()
 				cardMove = true; // начинаем перемещение
                 move_i = 0;
                 PlaySound("interface\took_item.wav");
+				SetCardTip("");
                 PostEvent("My_eventMoveImg", 500);
 
                 PutNextCoinOp();
@@ -864,6 +932,7 @@ bool CheckGame()
 
 void NewGameBegin()
 {
+	SetCardTip("");
     RedrawDeck(); // новая игра
     bStartGame = 0;
     SetFormatedText("INFO_TEXT",XI_ConvertString("CardsPhrase28_1")+NewStr()+XI_ConvertString("CardsPhrase28_2"));
@@ -1023,6 +1092,7 @@ void OpenCards();
     }
     SetFormatedText("INFO_TEXT", sTemp);
     RedrawCards();
+	SetCardTip("restart");
 }
 bool CheckNextGame()
 {
@@ -1031,4 +1101,50 @@ bool CheckNextGame()
     if (iRate*3 > iMoneyP) ret = false;
     
     return ret;
+}
+
+/*
+restart - новый кон
+action - взять карту, передать ход, открыть карты
+*/
+void SetCardTip(string tag)
+{
+	switch(tag)
+	{
+		case "":	// убираем все подсказки
+			SetPictureBlind("Pack", false, argb(255, 128, 128, 128), argb(255, 155, 155, 155), 0.6, 0.6);
+			SetPictureBlind("ICON_1", false, argb(255, 128, 128, 128), argb(255, 155, 155, 155), 0.6, 0.6);
+			SetNodeUsing("TIP_RESTART", false);
+			SetNodeUsing("TIP_TURN", false);
+			SetNodeUsing("TIP_DRAW", false);
+			SetNodeUsing("TIP_SHOW", false);
+		break;
+		case "restart":
+			if(bStartGame >= 2 && bStartGame != 100)	// можно начать новую игру - колода
+			{
+				SetPictureBlind("Pack", true, argb(255, 95, 95, 95), argb(255, 155, 155, 155), 0.6, 0.6);
+				SetNodeUsing("TIP_RESTART", true);
+			}
+		break;
+		case "action":
+			if(dir_i == 1 && bStartGame >= 2 && !openExit && bStartGame != 100)
+			{
+				if(iMoneyP - iRate >= 0)	// хватает денег на ставку - колода
+				{
+					SetPictureBlind("Pack", true, argb(255, 95, 95, 95), argb(255, 155, 155, 155), 0.6, 0.6);
+					SetNodeUsing("TIP_DRAW", true);
+				}
+				if(dir_i_start == 1)	// передача хода - портрет
+				{
+					SetPictureBlind("ICON_1", true, argb(255, 95, 95, 95), argb(255, 155, 155, 155), 0.6, 0.6);
+					SetNodeUsing("TIP_TURN", true);
+				}
+				else	// вскрываемся - портрет
+				{
+					SetPictureBlind("ICON_1", true, argb(255, 95, 95, 95), argb(255, 155, 155, 155), 0.6, 0.6);
+					SetNodeUsing("TIP_SHOW", true);
+				}
+			}
+		break;
+	}
 }

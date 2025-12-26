@@ -1,0 +1,33 @@
+Slavetrader_1 {Modo exploração: tempo estendido. Complete a missão!}
+Slavetrader_2 { }
+Slavetrader_3 { }
+Slavetrader_4 { }
+Slavetrader_5 { }
+Slavetrader_6 { }
+Slavetrader_7 { }
+Slavetrader_8 {Nabukee}
+Slavetrader_9 {Anaconda}
+Slavetrader_10 {de Caracas}
+Slavetrader_11 {de Cumana}
+Slavetrader_12 {Fransua}
+Slavetrader_13 {Gontier}
+Slavetrader_14 {considerado}
+Slavetrader_15 {considerou}
+Slavetrader_16 {nas costas de Barbados}
+Slavetrader_17 {nas costas de Guadeloupe}
+Slavetrader_18 {perto de Santiago}
+Slavetrader_19 {perto de Havana}
+Slavetrader_20 {nas costas de Tortuga}
+Slavetrader_21 {nas costas de Trinidad}
+Slavetrader_22 {nas costas de St. Christopher}
+Slavetrader_23 {perto de Santo Domingo}
+Slavetrader_24 {perto de Port-au-Prince}
+Slavetrader_25 {perto de Cartagena}
+Slavetrader_26 {Tamango}
+Slavetrader_27 { }
+Slavetrader_28 {Sven}
+Slavetrader_29 {Carlson}
+Slavetrader_30 {Janna}
+Slavetrader_31 {Mollery}
+Slavetrader_32 {Izaura}
+Slavetrader_33 { }

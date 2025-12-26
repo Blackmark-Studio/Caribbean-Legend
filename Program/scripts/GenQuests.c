@@ -80,18 +80,9 @@ void ContraDeliverQuest_GeneratePatrolToRoom()
 	sGenLocation = PChar.GenQuest.ContraDeliver.ToColony;
 	int iNation = sti(characters[GetCharacterIndex(sGenLocation + " Fort Commander")].nation);
 	string sShortNation = NationShortName(iNation); // Для модельки
-	string sModel[3];
-	sModel[0] = "off_" + sShortNation + "_1";
-	sModel[1] = "sold_" + sShortNation + "_1";
-	sModel[2] = "sold_" + sShortNation + "_2";
-	string sGenGroup[3];
-	sGenGroup[0] = "reload";
-	sGenGroup[1] = "Quest";
-	sGenGroup[2] = "Quest";
-	string sGenLocatorArroy[3];
-	sGenLocatorArroy[0] = "reload1_back";
-	sGenLocatorArroy[1] = "Quest1";
-	sGenLocatorArroy[2] = "Quest2";
+	string sModel[3] = {"off_" + sShortNation + "_1", "sold_" + sShortNation + "_1", "sold_" + sShortNation + "_2"};
+	string sGenGroup[3] = {"reload", "Quest", "Quest"};
+	string sGenLocatorArroy[3] = {"reload1_back", "Quest1", "Quest2"};
 	for(int i=0; i<=2; i++)
 	{
 		rChar = GetCharacter(NPC_GenerateCharacter("ContraDeliverQuest_Soldier_" + i, sModel[i], "man", "man", sti(PChar.rank)*2, iNation, 0, true, "soldier"));
@@ -257,12 +248,8 @@ void ContraMeetManQuest_EnterToTavernRoom(string sQuest)
 void ContraMeetManQuest_ReloadConterToRoom(string sQuest)
 {
 	ref rChar;
-	string sGenGroup[2];
-	sGenGroup[0] = "reload";
-	sGenGroup[1] = "Quest";
-	string sGenLocatorArroy[2];
-	sGenLocatorArroy[0] = "reload1_back";
-	sGenLocatorArroy[1] = "Quest2";
+	string sGenGroup[2] = {"reload", "Quest"};
+	string sGenLocatorArroy[2] = {"reload1_back", "Quest2"};
 	for(int i=0; i<=1; i++)
 	{
 		rChar = GetCharacter(NPC_GenerateCharacter("ContraMeetManQuest_Contrick_" + i, "citiz_"+(rand(9)+41), "man", "man", sti(PChar.rank)*2, PIRATE, 0, true, "hunter"));
@@ -1373,6 +1360,97 @@ void BurntShipQuest_TimeIsOver(String _quest)
 	
 	character.Quest.BurntShip.TimeIsOver = true;
 }
+
+// Warship 25.07.09 Генер "A burnt vessel". Начальные иниты для портмана - тип разыскиваемого судна, выдающаяся характеристика и т.д.
+void BurntShipQuest_FillStartParams(ref _npchar)
+{
+	int rank = sti(PChar.rank);
+	int shipType, temp;
+	float neededValue;
+	String shipAttribute;
+	ref refShip;
+
+	int iClassFlags = FLAG_SHIP_CLASS_6;
+	int iTypeFlags = FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_RAIDER;
+
+	if(rank < 5)
+	{
+		iClassFlags = FLAG_SHIP_CLASS_6;
+	}
+
+	if(rank >= 5 && rank < 11)
+	{
+		iClassFlags = FLAG_SHIP_CLASS_6 + FLAG_SHIP_CLASS_5;
+	}
+
+	if(rank >= 11 && rank < 21)
+	{
+		iClassFlags = FLAG_SHIP_CLASS_5 + FLAG_SHIP_CLASS_4;
+	}
+
+	if(rank >= 21)
+	{
+		iClassFlags = FLAG_SHIP_CLASS_4 + FLAG_SHIP_CLASS_3;
+	}
+
+	shipType = GetRandomShipType(iClassFlags, iTypeFlags, FLAG_SHIP_NATION_ANY);
+	makeref(refShip, ShipsTypes[shipType]);
+
+	if(sti(refShip.Spec) == SHIP_SPEC_RAIDER)
+	{
+		shipAttribute = "speedrate";
+	}
+	else
+	{
+		if(sti(refShip.Spec) == SHIP_SPEC_WAR)
+		{
+			shipAttribute = "turnrate";
+		}
+		else
+		{
+			shipAttribute = "capacity";
+		}
+	}
+
+
+	neededValue = BurntShipQuest_GetMaxNeededValue(shipType, shipAttribute);
+
+	Log_TestInfo("shipType == " + shipType);
+	Log_TestInfo("ShipAttribute == " + shipAttribute);
+	Log_TestInfo("ShipNeededValue == " + neededValue);
+
+	_npchar.Quest.BurntShip.ShipType = shipType;
+	_npchar.Quest.BurntShip.ShipAttribute = shipAttribute;
+
+	if(shipAttribute != "capacity") // Чтобы трюм с десятичными не писался
+	{
+		_npchar.Quest.BurntShip.ShipNeededValue = FloatToString(neededValue, 2);
+	}
+	else
+	{
+		_npchar.Quest.BurntShip.ShipNeededValue = MakeInt(neededValue);
+	}
+}
+
+
+float BurntShipQuest_GetMaxNeededValue(int iShipType, string _param)
+{
+	float NeededValue = makefloat(GetBaseShipParamFromType(iShipType, _param));
+	switch (_param)
+	{
+		case "speedrate":
+			NeededValue += ((0.72 + frandSmall(0.30)) * (NeededValue/10.0));
+		break;
+		case "turnrate":
+			NeededValue += ((0.72 + frandSmall(0.30)) * (NeededValue/10.0));
+		break;
+		case "capacity":
+			NeededValue += ((0.72 + frandSmall(0.30)) * (NeededValue/8.0));
+		break;
+	}
+	return NeededValue;
+}
+
 //=====================================================================================================================================
 // <-- ГЕНЕРАТОР "СГОРЕВШЕЕ СУДНО"
 //=====================================================================================================================================
@@ -1460,10 +1538,10 @@ void PiratesOnUninhabited_InTreasureLoc(String _quest)
 {
 	ref location = &Locations[FindLocation(PChar.GenQuest.PiratesOnUninhabited.TreasureShore)];
 	ref character;
-	String boxId = PChar.GenQuest.PiratesOnUninhabited.TreasureBox;
+	string boxId = PChar.GenQuest.PiratesOnUninhabited.TreasureBox;
 	
-	String model[10];
-	String attribute;
+	string model[10];
+	string attribute;
 	aref boxItems;
 	int i = 0;
 	int count, temp, rank;
@@ -5476,7 +5554,7 @@ int Hold_GenQuest_GetVictimShipGoods()
             iGoodIdx = GOOD_RUM;
         break;
         case 6 :
-            iGoodIdx = GOOD_WEAPON;
+            iGoodIdx = GOOD_ALE;
         break;
         case 7 :
             iGoodIdx = GOOD_WINE;
@@ -8271,23 +8349,45 @@ void CreateCaravanNearIsland(string qName)//защита торговцев от
     Group_FindOrCreateGroup("CaravanShip");
 	Group_SetType("CaravanShip", "trade");
     int iShipType, hcrew;
-	for (int i=1; i<=3; i++)
+	int rank = sti(PChar.rank);
+	int iClassFlags = FLAG_SHIP_CLASS_5;
+
+	if(rank < 8)
+	{
+		iClassFlags = FLAG_SHIP_CLASS_5;
+	}
+
+	if(rank >= 8 && rank < 19)
+	{
+		iClassFlags = FLAG_SHIP_CLASS_5 + FLAG_SHIP_CLASS_4;
+	}
+
+	if(rank >= 19 && rank < 24)
+	{
+		iClassFlags = FLAG_SHIP_CLASS_4 + FLAG_SHIP_CLASS_3;
+	}
+
+	if(rank >= 24)
+	{
+		iClassFlags = FLAG_SHIP_CLASS_4 + FLAG_SHIP_CLASS_3 + FLAG_SHIP_CLASS_2;
+	}
+
+	int iTypeFlag = 0;
+	int count = 2 + rand(1);
+	for (int i = 1; i <= count; i++)
     {
-        switch (i)
-        {
-			case 1:
-				iShipType = SHIP_PINNACE;
-				iTemp = CANNON_TYPE_CANNON_LBS16;
-            break;
-            case 2:
-				iShipType = SHIP_FLEUT + hrand(2);
-				iTemp = CANNON_TYPE_CANNON_LBS12;
-            break;
-            case 3:
-				iShipType = SHIP_SCHOONER + hrand(3);
-				iTemp = CANNON_TYPE_CULVERINE_LBS8;
-            break;
+		if (i == 1)
+		{
+			iTypeFlag = FLAG_SHIP_TYPE_UNIVERSAL;
 		}
+		else
+		{
+			iTypeFlag = FLAG_SHIP_TYPE_MERCHANT;
+		}
+
+		iShipType = GetRandomShipType(iClassFlags, iTypeFlag, FLAG_SHIP_NATION_ANY);
+		iTemp = GetCannonByTypeAndCaliber("cannon", sti(ShipsTypes[iShipType].MaxCaliber));
+
 		sld = GetCharacter(NPC_GenerateCharacter("CaravanCaptain_"+i, "trader_"+(rand(9)+1), "man", "man", sti(pchar.rank), sti(pchar.nation), 3, true, "quest"));
 		FantomMakeSmallSailor(sld, iShipType, "", iTemp, 50, 25, 25, 30, 25);
 		SetFantomParamFromRank(sld, sti(pchar.rank), true); 
@@ -8304,27 +8404,22 @@ void CreateCaravanNearIsland(string qName)//защита торговцев от
 	//пиратусы
     Group_FindOrCreateGroup("Pir_Attack");
 	Group_SetType("Pir_Attack", "war");
-    for (i=1; i<=4; i++)
+
+	count = 2 + rand(1);
+    for (i = 1; i <= count; i++)
     {
-        switch (i)
-        {
-			case 1:
-				iShipType = SHIP_CORVETTE + hrand(1);
-				iTemp = CANNON_TYPE_CULVERINE_LBS18;
-            break;
-			case 2:
-				iShipType = SHIP_BRIG + hrand(1);
-				iTemp = CANNON_TYPE_CANNON_LBS16;
-            break;
-            case 3:
-				iShipType = SHIP_BRIGANTINE + hrand(1);
-				iTemp = CANNON_TYPE_CANNON_LBS16;
-            break;
-            case 4:
-				iShipType = SHIP_SLOOP + hrand(1);
-				iTemp = CANNON_TYPE_CULVERINE_LBS8;
-            break;
+		if (i == 1)
+		{
+			iTypeFlag = FLAG_SHIP_TYPE_WAR;
 		}
+		else
+		{
+			iTypeFlag = FLAG_SHIP_TYPE_RAIDER;
+		}
+
+		iShipType = GetRandomShipType(iClassFlags, iTypeFlag, FLAG_SHIP_NATION_ANY);
+		iTemp = GetCannonByTypeAndCaliber(RandPhraseSimple("cannon", "culverine"), sti(ShipsTypes[iShipType].MaxCaliber));
+
 	    sld = GetCharacter(NPC_GenerateCharacter("PirateAttack_"+i, "citiz_"+(i+40), "man", "man", sti(pchar.rank)+10, PIRATE, 3, true, "quest"));
 	    FantomMakeSmallSailor(sld, iShipType, "", iTemp, 50+rand(10), 25+rand(10), 30+rand(10), 35+rand(10), 40+rand(10));
 	    SetFantomParamFromRank(sld, sti(pchar.rank)+10, true); 
@@ -9399,3 +9494,5 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 	
 	return condition;
 }
+
+

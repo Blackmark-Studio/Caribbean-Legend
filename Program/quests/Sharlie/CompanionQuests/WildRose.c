@@ -590,9 +590,11 @@ void WildRose_Etap2_IslandOfJustice_5_sex_3(string qName)
 
 void WildRose_Etap2_IslandOfJustice_5_sex_4(string qName)
 {
+	ResetSound();
 	SetLaunchFrameFormParam("", "", 0, 15);
 	SetLaunchFrameFormPic("loading\inside\censored1.tga");
-	PlayStereoSound("sex\sex" + (rand(9) + 1) + ".wav");
+	if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+	else PlayStereoSound("sex\sex" + (rand(14) + 1) + ".wav");
 	LaunchFrameForm();
 	// SetLaunchFrameFormParam(GetConvertStr("Frame_NextMorning", "Frame.txt"), "Run_Function", 0, 4.0);
 	// SetLaunchFrameRunFunctionParam("WildRose_Etap2_IslandOfJustice_6_1", 0.0);
@@ -3034,6 +3036,7 @@ void WildRose_Test()
 	sld = characterFromId("Benua");
 	sld.quest.help = "true";
 	sld.quest.meet = true;
+	sld.quest.relation_info = "true";
 	pchar.questTemp.Saga.BaronReturn = "return_LSC";
 	i = FindIsland("LostShipsCity");
 	Islands[i].visible = true;

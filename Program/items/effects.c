@@ -94,5 +94,5 @@ string GetYorickLoc(string prefix)
 	object nullObj;
 	string postfix = "InSlot";
 	if (GetCharacterFreeItem(pchar, "talisman19")) postfix = "InInventory";
-	return DLG_Convert("itm_stat" + prefix + "_talisman19_" + postfix, "ItemsStats.txt", &nullObj);
+	return GetSimpleItemStatKey("itm_stat" + prefix + "_talisman19_" + postfix);
 }

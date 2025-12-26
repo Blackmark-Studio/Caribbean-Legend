@@ -1,0 +1,65 @@
+Node0_title {Alle porte}
+Node0_a {Emergi verso le porte della città da dietro $rand(alberi|rocce|fitti cespugli). Alte mura di pietra sovrastano la giungla, ornate da $rand(bandiere|stendardi|vessilli) di $nationGen($attr($context.localization.iNation)). Ti avvicini lentamente alle porte.}
+Node0_b_a {Sul sentiero si vedono i segni di uno scontro recente — sangue e un carro distrutto carico di $rand(rum|spezie|canna da zucchero). Le guardie al cancello appaiono tese e scrutano nervosamente la giungla, mentre sulle mura la sorveglianza è rafforzata.}
+Node0_b_b {Presso il cancello c’è un carro carico di $rand(polvere da sparo per il forte|palle di cannone|viveri). Le guardie cittadine e il presidio del forte discutono animatamente. Dai frammenti di dialogo sembra che ci sia stata una $rand(lungaggine burocratica|svista), e il carico non viene fatto passare.}
+Node0_b_c {Sotto il muro, un $rand(vecchio guardiano|sentinella dai capelli grigi) siede su una botte e racconta storie di un $rand(terribile assalto piratesco|spaventosa epidemia nella guarnigione|sanguinosa rivolta nella piantagione). Le guardie al cancello ascoltano con attenzione, più per rispetto che per vero interesse.}
+Node0_b_d {Alle porte tengono in ginocchio un $rand(ladro catturato|disertore della guarnigione|spia nemica). Il sergente pretende che il suo destino venga deciso subito — impiccarlo al muro senza altre storie. Le guardie litigano cercando di capire chi dovrà occuparsene e risponderne al comandante.}
+Node0_c_a {Un $rand(ragazzo messaggero|donna terrorizzata|marinaio ubriaco) corre al cancello gridando di un $rand(incendio al porto|rissa al mercato|evasione dal carcere). Le guardie si scambiano sguardi nervosi: bisogna aiutare, ma il posto non può essere abbandonato.}
+Node0_c_b {Sopra il muro è affisso un nuovo avviso su $rand(la chiamata della milizia|il reclutamento|l’ampliamento della guardia). Se simili avvisi sono esposti persino fuori dalla città, è chiaro che mancano soldati.}
+Node0_c_c {All’ombra sotto il muro non c’è anima viva, ma qualcosa giace nel fango vicino al fossato. Le sentinelle e i passanti non notano nulla, mentre tu scorgi chiaramente un bagliore metallico.}
+Node0_d {Bisogna trovare un modo per entrare in città. O forse semplicemente farsi strada con la forza?}
+Node0_b_a_reaction {Raccontare dello scontro con gli indigeni}
+Node0_b_a_reaction_log {Racconti alle guardie di aver incontrato indigeni aggressivi nella giungla e descrivi lo scontro in modo vivido, richiamando tutta la tua esperienza di combattimento. Ti credono e $rand(inviano alcune guardie nella giungla|condividono le provviste con te|promettono di risolvere il problema il prima possibile).}
+Node0_b_a_reaction_factor {Alleato inaspettato}
+Node0_b_b_reaction {Proporre di dirimere la disputa}
+Node0_b_b_reaction_log_0 {Riesci a comprendere l’origine del problema del carico. Come sempre, la colpa era di una cattiva interpretazione degli ordini. Dopo il tuo intervento, la scorta si allontana rapidamente con il carico, e le guardie ti guardano con gratitudine.}
+Node0_b_b_reaction_log_1 {Non riesci a capire l’origine del problema del carico e finisci solo per confondere tutti. Le guardie e le sentinelle non nascondono il loro fastidio.}
+Node0_b_b_reaction_factor {Arbitro}
+Node0_b_c_reaction {Raccontare la tua storia}
+Node0_b_c_reaction_log {Trovi il momento giusto e racconti la tua storia. Essa $rand(suona impressionante, anche se non sei il narratore più dotato|nella tua mente era molto migliore, e le guardie sorridono con indulgenza|è piuttosto toccante e sembra aver intenerito il cuore di un vecchio veterano).}
+Node0_b_c_reaction_factor {Bravo narratore}
+Node0_b_d_reaction {Proporre di riscattare il prigioniero}
+Node0_b_d_reaction_log {Proponi alle guardie di non sprecare energie — questo criminale diventerebbe uno schiavo eccellente, forte e docile, liberandoli dai problemi. Il sergente riflette per qualche secondo, poi accetta con sollievo.}
+Node0_b_d_reaction_factor {Mercante di schiavi}
+Node0_c_a_reaction {Offrire aiuto}
+Node0_c_a_reaction_log {Offri alle guardie il tuo aiuto per risolvere il problema. Ti credono e ti ringraziano per l’offerta, ma rifiutano comunque. Questioni simili spettano alla guardia, non ai civili.}
+Node0_c_a_reaction_factor {Cittadino affidabile}
+Node0_c_b_reaction {Dire di voler entrare in servizio}
+Node0_c_b_reaction_log_0 {Chiedi di chiamare un reclutatore ed esprimi la tua disponibilità a entrare nei ranghi dei soldati. Dimostri la tua abilità con le armi da fuoco a sostegno delle tue parole, e le guardie restano colpite.}
+Node0_c_b_reaction_log_1 {Chiedi di chiamare un reclutatore, ma ti viene rifiutato. Per cercare di cambiare idea alle guardie, decidi di dimostrare la tua abilità con le armi da fuoco, ma $rand(fai cadere la pistola|ti impigli goffamente nella cintura|inciampi e cadi). Le guardie ridono di te e ti affibbiano un soprannome militare — $rand(Terrore della Giungla|Occhio di Falco|Proiettile del Destino|Miccia Veloce|Occhio di Diamante|Mano Ferma). Il capo della guardia ti dà una pacca sulla spalla con aria paterna.}
+Node0_c_b_reaction_factor {Recluta}
+Node0_c_c_reaction {Ispezionare il luogo}
+Node0_c_c_reaction_log_0 {Perquisisci il punto in cui avevi notato il bagliore e trovi $rand(una fibbia della cintura di un soldato|una spada da ufficiale|un gemello della guardia). Per una felice coincidenza, il proprietario è attualmente in servizio ed è molto grato per la restituzione.}
+Node0_c_c_reaction_log_1 {Perquisisci il punto in cui avevi visto il bagliore, ma non trovi nulla. Ti sembra che $rand(la tua immaginazione ti stia giocando un brutto scherzo|la fortuna oggi ti abbia voltato le spalle).}
+Node0_c_c_reaction_factor {Scoperta utile}
+Node0_a_action {Provare a passare}
+Node0_b_action {Forzare il passaggio con la forza}
+Node0_c_action {Mostrare la licenza}
+Node0_success {Riesci a entrare in città attraverso il cancello. Tu $rand(ti confondi rapidamente tra la folla|ti infili tra le strade per sparire del tutto|ti dirigi verso le bancarelle e ti mescoli ai curiosi). Dopo poco sei certo di non essere seguito e puoi occuparti dei tuoi affari in tranquillità.}
+Node0_success_action {Ottimo!}
+Node1_a {Non riesci a passare per un alleato e le guardie si irrigidiscono visibilmente. Un semicerchio inizia a stringersi attorno a te. La situazione degenera rapidamente.}
+Node1_b_a {Uno dei soldati si muove goffamente e continua a portarsi la mano al fianco — sotto l’uniforme si intravede una fasciatura fresca e insanguinata.}
+Node1_b_b {Un sergente si avvicina e ti ordina di seguirlo alla caserma per accertare la tua identità. È magro e molto giovane, chiaramente intento a farsi valere e a guadagnarsi il rispetto dei suoi subordinati.}
+Node1_c_a {Nello spiraglio dei battenti balena per un attimo la figura di un $rand(funzionario cittadino|sacerdote), e la guardia si raddrizza istintivamente.}
+Node1_c_b {Oltre il cancello risuona all’improvviso un breve scampanio — è il momento del cambio della guardia, e ogni ritardo innervosirà le sentinelle stanche.}
+Node1_d {È necessario prendere una decisione immediata.}
+Node1_b_a_reaction {Offrire aiuto al soldato ferito}
+Node1_b_a_reaction_log {Offri al soldato ferito un elisir curativo. Ti ringrazia e racconta di essere stato ferito da $rand(Caraibi|Guaraní|Taíno|Arawak) durante una pattuglia. La ferita ha faticato a rimarginarsi, ma ora si sente decisamente meglio.}
+Node1_b_a_reaction_factor {Aiuto medico}
+Node1_b_b_reaction {Sottomettersi in modo plateale al sergente}
+Node1_b_b_reaction_log_0 {Mostri rispetto al giovane sergente e accetti le sue condizioni, purché tutto avvenga secondo le regole. Il suo tono si addolcisce visibilmente.}
+Node1_b_b_reaction_log_1 {Cerchi di rafforzare l’autorità del sergente, ma in modo molto goffo. Sembra una presa in giro, e le risatine imbarazzate alle sue spalle lo confermano. Arrossisce, con gli occhi iniettati di sangue.}
+Node1_b_b_reaction_factor {Rispetto dimostrato}
+Node1_c_a_reaction {Dire che siete in ritardo per un incontro importante}
+Node1_c_a_reaction_log_0 {Dite di essere in ritardo per un incontro importante e che questo incidente verrà riferito a chi di dovere. Riuscite ad apparire abbastanza seri da risultare credibili. Le guardie sono confuse, e questo apre una finestra di opportunità.}
+Node1_c_a_reaction_log_1 {Cerchi di convincere le guardie di essere lì per un affare importante, ma suoni del tutto poco credibile. Questo tentativo fallito non fa che irritarle ulteriormente.}
+Node1_c_a_reaction_factor {Persona importante}
+Node1_c_b_reaction {Offrire del rum alle guardie}
+Node1_c_b_reaction_log {Suggerisci alle guardie di tralasciare le formalità per finire prima il turno e offri loro del rum. Si ammorbidiscono visibilmente e sembrano pronti a chiudere un occhio sui loro sospetti. In fondo, siamo tutti umani.}
+Node1_c_b_reaction_factor {Rum per il popolo}
+Node1_a_action {Cercare di smorzare la situazione}
+Node1_b_action {Fuggire di nuovo nella giungla}
+Node1_success {Riesci ad appianare la situazione all’ultimo momento. Tu $rand(ti infili in città sotto lo sguardo attento delle guardie|entri in città cercando di non mostrare agitazione). È meglio non trattenersi a lungo a $colonyVoc($attr($context.context.colonyId)).}
+Node1_success_action {In città!}
+Node1_fail {La guardia dà l’allarme — sei stato scoperto. Le guardie stanno già accorrendo ai cancelli e decidi di fuggire prima che tutta la colonia sia in allerta.}
+Node1_fail_action {Scappa!}

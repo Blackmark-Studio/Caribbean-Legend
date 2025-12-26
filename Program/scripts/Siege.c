@@ -683,10 +683,10 @@ void  EndOfTheSiege(string tmp)
             {
                 SetCaptureTownByNation(aData.colony, sti(aData.nation))
                 
-                SiegeRumour(StringFromKey("Siege_5", NationNameGenitive(sti(aData.nation)), GetConvertStr(aData.Colony+" Town", "LocLables.txt"), NationNameSK(sti(aData.conation))), aData.Colony, sti(aData.nation), -1, 15, 3);
-                SiegeRumour(StringFromKey("Siege_6", NationNameSK(sti(aData.nation)), NationNameSK(sti(aData.conation)), GetConvertStr(aData.Colony+" Town", "LocLables.txt"), GetConvertStr(aData.Colony+" Town", "LocLables.txt"), NationNameSK(sti(aData.nation))), "", sti(aData.conation)+10, sti(aData.nation)+10, 30, 3);
-                SiegeRumour(StringFromKey("Siege_7", NationNamePeople(sti(aData.nation)), GetConvertStr(aData.Colony+" Town", "LocLables.txt")), "", sti(aData.conation), -1, 30, 3);
-                SiegeRumour(StringFromKey("Siege_8", NationNameGenitive(sti(aData.conation)), GetConvertStr(aData.Colony+" Town", "LocLables.txt")), ("!"+aData.Colony), sti(aData.nation), -1, 30, 3);
+                SiegeRumour(StringFromKey("Siege_5", NationNameGenitive(sti(aData.nation)), GetCityName(aData.Colony), NationNameSK(sti(aData.conation))), aData.Colony, sti(aData.nation), -1, 15, 3);
+                SiegeRumour(StringFromKey("Siege_6", NationNameSK(sti(aData.nation)), NationNameSK(sti(aData.conation)), GetCityName(aData.Colony), GetCityName(aData.Colony), NationNameSK(sti(aData.nation))), "", sti(aData.conation)+10, sti(aData.nation)+10, 30, 3);
+                SiegeRumour(StringFromKey("Siege_7", NationNamePeople(sti(aData.nation)), GetCityName(aData.Colony)), "", sti(aData.conation), -1, 30, 3);
+                SiegeRumour(StringFromKey("Siege_8", NationNameGenitive(sti(aData.conation)), GetCityName(aData.Colony)), ("!"+aData.Colony), sti(aData.nation), -1, 30, 3);
                 
             }
             else
@@ -696,9 +696,9 @@ void  EndOfTheSiege(string tmp)
 				SetNull2ShipInStockMan(aData.colony)
                 
                 SiegeRumourEx(StringFromKey("Siege_9", NationNameGenitive(sti(aData.conation)), NationNameSK(sti(aData.nation))), aData.Colony, sti(aData.conation), -1, 15, 3, "citizen,habitue,trader,tavern");
-                SiegeRumour(StringFromKey("Siege_10", NationNameSK(sti(aData.nation)), NationNameSK(sti(aData.conation)), GetConvertStr(aData.Colony+" Town", "LocLables.txt"), NationNameSK(sti(aData.nation))), "", sti(aData.conation)+10, sti(aData.nation)+10, 30, 3);
-                SiegeRumour(StringFromKey("Siege_11", NationNamePeople(sti(aData.nation)), GetConvertStr(aData.Colony+" Town", "LocLables.txt"), NationNamePeople(sti(aData.nation))), "!"+aData.Colony, sti(aData.conation), -1, 30, 3);
-                SiegeRumour(StringFromKey("Siege_12", NationNameSK(sti(aData.conation)), GetConvertStr(aData.Colony+" Town", "LocLables.txt")), "!"+aData.Colony, sti(aData.nation), -1, 30, 3);
+                SiegeRumour(StringFromKey("Siege_10", NationNameSK(sti(aData.nation)), NationNameSK(sti(aData.conation)), GetCityName(aData.Colony), NationNameSK(sti(aData.nation))), "", sti(aData.conation)+10, sti(aData.nation)+10, 30, 3);
+                SiegeRumour(StringFromKey("Siege_11", NationNamePeople(sti(aData.nation)), GetCityName(aData.Colony), NationNamePeople(sti(aData.nation))), "!"+aData.Colony, sti(aData.conation), -1, 30, 3);
+                SiegeRumour(StringFromKey("Siege_12", NationNameSK(sti(aData.conation)), GetCityName(aData.Colony)), "!"+aData.Colony, sti(aData.nation), -1, 30, 3);
             }
             FortDestroy();// уничтожаем форт
             Group_SetAddressNone(sGroup);
@@ -707,9 +707,9 @@ void  EndOfTheSiege(string tmp)
         else
         {
             SiegeRumourEx(StringFromKey("Siege_13", NationNameSK(sti(aData.nation))), aData.Colony, sti(aData.conation), -1, 15, 3, "citizen,habitue,trader,tavern");
-            SiegeRumour(StringFromKey("Siege_14", NationNameSK(sti(aData.nation)), NationNameSK(sti(aData.conation)), GetConvertStr(aData.Colony+" Town", "LocLables.txt")), "", sti(aData.conation)+10, sti(aData.nation)+10, 30, 3);
-            SiegeRumour(StringFromKey("Siege_15", NationNamePeople(sti(aData.nation)), GetConvertStr(aData.Colony+" Town", "LocLables.txt"), NationNameSK(sti(aData.nation))), "!"+aData.Colony, sti(aData.conation), -1, 30, 3);
-            SiegeRumour(StringFromKey("Siege_16", NationNameSK(sti(aData.conation)), GetConvertStr(aData.Colony+" Town", "LocLables.txt")), "!"+aData.Colony, sti(aData.nation), -1, 30, 3);
+            SiegeRumour(StringFromKey("Siege_14", NationNameSK(sti(aData.nation)), NationNameSK(sti(aData.conation)), GetCityName(aData.Colony)), "", sti(aData.conation)+10, sti(aData.nation)+10, 30, 3);
+            SiegeRumour(StringFromKey("Siege_15", NationNamePeople(sti(aData.nation)), GetCityName(aData.Colony), NationNameSK(sti(aData.nation))), "!"+aData.Colony, sti(aData.conation), -1, 30, 3);
+            SiegeRumour(StringFromKey("Siege_16", NationNameSK(sti(aData.conation)), GetCityName(aData.Colony)), "!"+aData.Colony, sti(aData.nation), -1, 30, 3);
             SiegeClear("");
             Log_TestInfo("Siege Finish - Squadron defeat!");
         }
@@ -859,15 +859,15 @@ string SiegeRumourText(int inum)
     switch (inum)
     {
         case 1:
-        	return StringFromKey("Siege_24", NationNamePeople(sti(aData.nation)), NationNameSK(sti(aData.conation)), GetConvertStr(aData.Colony+" Town", "LocLables.txt"), sDays);
+        	return StringFromKey("Siege_24", NationNamePeople(sti(aData.nation)), NationNameSK(sti(aData.conation)), GetCityName(aData.Colony), sDays);
         break;
 
         case 2:
-        	return StringFromKey("Siege_25", NationNameSK(sti(aData.conation)), GetConvertStr(aData.Colony+" Town", "LocLables.txt"), sDays);
+        	return StringFromKey("Siege_25", NationNameSK(sti(aData.conation)), GetCityName(aData.Colony), sDays);
         break;
         
         case 3:
-        	return StringFromKey("Siege_26", NationNamePeople(sti(aData.nation)), GetConvertStr(aData.Colony+" Town", "LocLables.txt"), sDays);
+        	return StringFromKey("Siege_26", NationNamePeople(sti(aData.nation)), GetCityName(aData.Colony), sDays);
         break;
     }
 }

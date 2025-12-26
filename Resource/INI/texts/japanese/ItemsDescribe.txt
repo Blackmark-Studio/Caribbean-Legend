@@ -1,0 +1,1524 @@
+info
+{
+KKSアイテム説明ファイル  
+バージョン0.0.1（2010年11月21日、編集：Metazot）、belamourによるキュイラスとアミュレット編集 2020年9月29日  
+belamourによるlegendary edition用更新 2021年9月20日  
+テキスト内での項目の配置順（ 参照しやすくするため） ：  
+1. 装備品  
+1.1 近接武器  
+1.2 火器  
+1.3 防具・衣服  
+1.4 光学機器  
+1.5 航海機器  
+1.6 お守り  
+1.7 タリスマン  
+1.8 アミュレット  
+2. コイン・宝石類  
+2.1 通貨・宝箱  
+2.2 石・金属  
+2.3 宝飾品  
+3. 書類  
+3.1 特許  
+3.2 許可証  
+3.3 地図  
+3.4 手紙  
+3.5 レシピ  
+4. インベントリ  
+4.1 道具  
+4.2 薬・ポーション・薬草  
+4.3 弾薬  
+4.4 一般アイテム  
+4.5 クエストアイテム  
+5. ジャンク
+}
+new_string
+{
+
+}
+Potion parameters {容量}
+health value {HP}
+weapon blade parameters {攻撃：#f.1WeightAttack# バランス：#f.1Balance#}
+weapon blade type {タイプ: #sFencingTypeName#}
+weapon gun parameters {ダメージ：#ddmg_min#～#ddmg_max#}
+weapon gun parameters equipped {ダメージ：#ddmg_min#～#ddmg_max#、リロード時間：#dchargespeed#秒}
+mushket parameters {ダメージ：#ddmg_min#-#ddmg_max#}
+mushket parameters equipped {ダメージ：#ddmgmin#～#ddmgmax#、リロード時間：#dchargespeed#秒}
+weapon grape parameters {ダメージ：#dbasedmg#x#dshards#、拡散：#sarea#}
+weapon grape parameters equipped {ダメージ：#dbasedmg#x#dshards#、拡散：#sarea#、リロード時間：#dchargespeed#秒}
+youve_got {アイテム発見 -}
+used_item {アイテム使用 -}
+youve_gotNotif {新しいアイテム：}
+used_itemNotif {アイテム消費：}
+flower_find {幸運な発見！}
+itmname_unarmed {素手}
+itmdescr_unarmed {武器がなくても、 相手の顔面に一発くらわせることはできる。 うまくいけば、 その隙に逃げられるかもしれない。}
+itmname_rabble {火かき棒}
+itmdescr_rabble {鍛造の暖炉用火かき棒。 敵が後ろから頭を叩かせてくれるなら、 武器と呼べるだろう。}
+itmname_slave_01 {銛}
+itmdescr_slave_01 {捕鯨用の銛だが、 人間なら一撃で貫き、 引き寄せることができる。 返しが体内に引っかかれば、 切り開いて取り出すしかない。}
+itmname_slave_02 {マチェーテ}
+itmdescr_slave_02 {土地の名物。 粗悪な鋼で作られた長い刃は、 サトウキビやツタ、 そして手足をも切り落とすために広く使われている。}
+itmname_blade_01 {ナーブ・テ}
+itmdescr_blade_01 {イッツァ族のインディアンが使う、 クロスガード付きで、 ヨーロッパ製ハルバードの破片から作られた鋼の穂先を持つ短い片手槍。}
+itmname_blade_02 {ウォークラブ}
+itmdescr_blade_02 {イツァ族の棍棒。 銃床のような形状で、 湾曲部に力が集中し、 鋼のキュイラスもスパイクで貫くことができる。}
+itmname_blade_03 {ストッコ}
+itmdescr_blade_03 {イタリアの都市民に人気のフルーレ。 三角断面でしならないストッコの刃は突き攻撃に最適で、 複雑なガードは熟練の決闘者が敵の刃を受け止めるのに役立つ。}
+itmname_blade_04 {メッサー}
+itmdescr_blade_04 {信頼性が高く製造も容易な片刃の剣。 ドイツでは都市民兵や質素な傭兵に広く使われている。 最高品質のものはケルン製。}
+itmname_blade_05 {カトラス}
+itmdescr_blade_05 {乗船戦や防御戦で水夫の頼れる相棒。 曲刀の刃と広いガードで突きも斬撃もこなせるが、 短いリーチと片刃ゆえ、 混み合う甲板以外では使い勝手が限られる。}
+itmname_blade_06 {スキアヴォーナ}
+itmdescr_blade_06 {ヴェネツィア総督のダルマチア衛兵が振るった伝説のレイピア。 その両刃の刃は突きにも斬撃にも優れ、 手を守る堅牢なガードは 「ゆりかご」 と呼ばれ親しまれている。}
+itmname_blade_07 {リッターシュヴェルト}
+itmdescr_blade_07 {重騎兵が前世紀に用いたブロードソード。 その重い刃はほとんどの防具を断ち切るが、 重量とバランスのせいで徒歩戦では扱いづらい。}
+itmname_blade_08 {ビルボ}
+itmdescr_blade_08 {幅広の斬撃用ブレードとカップ型ガードを持つ短めのスペイン製レイピア。 スペインの水兵たちに広く使われ、 その名は発祥の地ビルバオに由来する。}
+itmname_blade_09 {カルソレータ}
+itmdescr_blade_09 {カップ型のガードを持つ軽量のレイピア。 スペイン貴族の装いに欠かせない一振り。 これがなければ紳士は訴訟や証言すら許されない。}
+itmname_blade_10 {絞首刑}
+itmdescr_blade_10 {手元のフックが特徴的な海軍カトラス 「絞首人」。 帆柱を登る際、 武器を固定するために使われた。 絞首人を携え、 やがて絞首人となる――それが多くの海賊の運命だった。}
+itmname_blade_11 {カットラス}
+itmdescr_blade_11 {カトラスに似た短剣で、 兵士や斥候、 砲兵などが腰に吊るして使う補助武器。}
+itmname_blade_12 {ショートサーベル}
+itmdescr_blade_12 {カットラスよりやや長く、 サーベルより短いこの剣は、 銃士や砲兵にとって扱いやすくコンパクトな武器。 海上でも陸上でも戦いに適している。}
+itmname_blade_13 {ブロードソード}
+itmdescr_blade_13 {この種の剣は、 フランス海軍の士官たちの間で最近人気を集めています。 階級の象徴としてだけでなく、 信頼できる戦闘用の刃としても重宝されています。 強く熟練した者が扱えば、 ブロードソードは圧倒的な威力を発揮します。 ただし、 決闘にはやや重すぎるかもしれません。}
+itmname_blade_14 {ワロンソード}
+itmdescr_blade_14 {スペイン領ネーデルラントの兵士に人気のレイピア。 高度な技術よりも、 機動力や敏捷さ、 力が求められる。 この剣があれば、 優雅な剣術を誇る挑戦者の前腕もたやすく斬り裂けるだろう。}
+itmname_blade_15 {カポディモンテ}
+itmdescr_blade_15 {湾曲した刃を持つ海軍用レイピア。 突き攻撃にも斬撃にも優れた使い心地。 簡素なガードでも斬撃をしっかり防げる。}
+itmname_blade_16 {スモールソード}
+itmdescr_blade_16 {エレガントな平型ガードを持つ短めのレイピア。 正装に合わせて携えるための武器で、 フランス流の剣術の影響で近年登場した。 斬撃には軽すぎるが、 電光石火の突きを繰り出せる。}
+itmname_blade_17 {カップヒルトレイピア}
+itmdescr_blade_17 {スペインの決闘士に好まれるこのレイピアは、 短い柄で突きを得意としつつ、 斬撃にも適しています。 縁が下向きに曲がったカップ型のガードが、 敵の攻撃から手を守ります。}
+itmname_blade_18 {パッペンハイマー}
+itmdescr_blade_18 {特徴的なガードを持つこの騎兵用サーベルは、 三十年戦争でゴットフリート・ ハインリヒ・ グラーフ・ ツー・ パッペンハイムの胸甲騎兵によって名を馳せました。 その名声から、 騎兵としての出世を目指す若き貴族たちの間で人気となりました。}
+itmname_blade_19 {海軍サーベル}
+itmdescr_blade_19 {任官された海軍士官のためのサーベル。 式典にも、 絡まった索具を断つにも、 不意を突く致命の一撃にも優れる一振り。}
+itmname_blade_20 {マドンナ}
+itmdescr_blade_20 {恐れられたハンガリーのフサールのサーベル。 この刃は西ヨーロッパの戦場に現れたばかりだが、 すでにそのバランスと強さで高い評価を得ている。 間違いなく、 輝かしい未来が待っている。}
+itmname_blade_21 {ハイランド・バックスウォード}
+itmdescr_blade_21 {この伝統的なスコットランドのバスケットヒルト剣は、 ハイランド貴族に愛される武器だ。 手がしっかり守られ、 刃が正確に届くなら、 荒々しく衝動的なハイランダーのように戦うこともできる。}
+itmname_blade_22 {預言者の怒り}
+itmdescr_blade_22 {古びた、 ほぼ直刀の軽量サーベル。 湾曲した柄で、 斬撃にも突きにも適している。 剃刀のように鋭い刃は、 甲冑の隙間も肋骨の間も容易にすり抜ける。}
+itmname_blade_23 {シミター}
+itmdescr_blade_23 {華やかに装飾された曲刀。 素早い戦闘に適し、 その形状は強力な斬撃を可能にする。 柄頭には邪悪な精霊を退ける古代のお守りが埋め込まれている。}
+itmname_blade_24 {カンダ}
+itmdescr_blade_24 {遥かインドの不屈のシク教徒たちの聖なる武器。 高品質な鋼は敵の刃を断ち切ることができる。 柄はヨーロッパの剣士には珍しく、 ポメルで打撃を与えることも可能だ。}
+itmname_blade_25 {フランベルジュレイピア}
+itmdescr_blade_25 {このスペイン風のカップヒルトと波打つ刃を持つレイピアは、 使う者にも相手にも非常に危険な武器です。 この刃で負った軽い傷でさえ、 治りが遅いと噂されています。 こうした剣の持ち主は、 しばしば悪名高い評判を持っています。}
+itmname_blade_26 {Asoleda}
+itmdescr_blade_26 {ヴェルダン製の長い決闘用レイピア。 軽量で非常に細い刃は斬撃には向かないが、 その長さで敵を寄せ付けない。}
+itmname_blade_27 {スウェプトヒルトレイピア}
+itmdescr_blade_27 {このレイピアは、 その伝説的なバランスから 「ザクセンの羽根」 と名付けられました。 持ち主のわずかな手の動きにも従い、 斬撃も突きも自在に繰り出せます。 精巧なガードが手をしっかり守ります。}
+itmname_blade_28 {刀}
+itmdescr_blade_28
+{
+伝説の島ジパングから来た奇妙な剣。 高品質な鋼の刃と長い柄を持ち、 片手でも両手でも扱える。
+この剣が東洋の異国からカリブ海まで辿った旅路には、 どんな物語が秘められているのだろうか……なぜここにあるのか？
+}
+itmname_blade_29 {ストルタ}
+itmdescr_blade_29 {アゴスティーノ・ バルバリーゴのボーディングサーベル――無敗の伝説的ヴェネツィア提督の剣。 その勝利の陰には、 常に戦場を共にしたこの特別な剣の力があったのかもしれない。}
+itmname_blade_30 {海軍クレワン}
+itmdescr_blade_30 {東インド会社の船長のために誂えられたカトラス。 この刀身の製作者は、 さまざまな武器の長所を巧みに融合し、 ほとんどの短所を見事に避けている。}
+itmname_blade_31 {イッカク}
+itmdescr_blade_31 {貝殻型のガードとイッカクの角の柄を持つ、 名工の手による白兵戦用ブロードソード。 刃は最高級の鋼で作られ、 完璧なバランスを誇る。}
+itmname_blade_32 {タナトス}
+itmdescr_blade_32 {第三回十字軍時代の古のアーミングソード。 博物館に収まる剣ではない。 四百年近く経った今も、 刃はなお鋭く輝いている。}
+itmname_blade_33 {ガーディアンソード}
+itmdescr_blade_33 {老騎士の両手剣。}
+itmname_topor_01 {マクアウィトル}
+itmdescr_topor_01 {アステカやマヤの重い剣棍棒。 鉄木で作られ、 側面には鋭い黒曜石の刃が埋め込まれている。 コンキスタドールたちは、 この恐ろしい武器でインディオが一撃でスペイン馬の首を斬り落としたと証言している。}
+itmname_topor_02 {ウォーアックス}
+itmdescr_topor_02 {長い柄と“ビアード”型の刃が、 軽装の敵をも切り裂く恐るべき武器となる。 短く握れば、 刃の形が手をしっかり守る。}
+itmname_topor_03 {グーデンダーク}
+itmdescr_topor_03 {オランダのゲーズが使った、 素朴ながらも威圧的な武器。 金拍車の戦いでは、 何千ものこの武器を目にした貴族たちが逃げ出したという。}
+itmname_topor_04 {ホースマンアックス}
+itmdescr_topor_04 {この武器を扱うには大きな力が必要だが、 その価値は十分にある。 鋭い刃は恐るべき斬撃を繰り出し、 ビークはどんな鎧も貫き、 鋼鉄の柄は敵の武器を寄せ付けない。}
+itmname_topor_05 {トマホーク}
+itmdescr_topor_05 {背にくちばしを持つ細身の斧。 近接戦闘で致命的な威力を発揮し、 密林への遠征にも重宝される。 もともとは鉄を扱えない現地インディアンとの交易用に作られたが、 今では入植者たちの間でも高い人気を誇る。}
+itmname_topor_06 {ハゲタカ}
+itmdescr_topor_06 {豪華な 「ビアード」 と重厚な 「ビーク」 を備えたボーディングアックス。 些細なものを切り離したい者や、 どんな戦いにも終止符を打ちたい者に最適の一振り。}
+itmname_blade_36 {マルタの剣}
+itmdescr_blade_36 {マルタ騎士団の儀礼用の剣。 総督シュヴァリエ・ ド・ ポワンシー自らが、 卓越した功績を称えてシャルル・ ド・ モールに授けた。 刃には 「A.S.」の文字が刻まれている。}
+itmname_knife_01 {お守り「ダガー・酋長の爪」}
+itmdescr_knife_01
+{
+見た目はただの短剣だが……モスクワ人ファデイいわく、 この短剣はインディアンのシャーマンによって魔法がかけられ、 数々の秘密が隠されているという。
+だが、その秘密とは一体？
+}
+itmname_knife_02 {マリア}
+itmdescr_knife_02 {ディエゴ・ デ・ モントーヤの愛用した上質なダガー。 前の持ち主が大切に手入れしていたことから、 特別な思い入れがあったのだろう。}
+itmname_knife_03 {家伝の短剣}
+itmdescr_knife_03 {ド・ モンペ家の家宝、 通称 「つまようじ」。 いざという時は高く売れる価値ある一品――家紋なんて、 そのためにあるのだろう？}
+itmname_khopesh1 {コペシュ}
+itmdescr_khopesh1 {神々がまだ地上を歩いていた時代の儀式用武器。}
+itmname_khopesh2 {アルバのコーペシュ}
+itmdescr_khopesh2 {これは見てはいけません。}
+itmname_khopesh3 {焦げたカープシュ}
+itmdescr_khopesh3 {神々が地上を歩んでいた時代の儀式用武器。 血を求めるそれは、 啓蒙された船長にはふさわしくない。}
+itmname_machete2 {コンキスタドールのマチェーテ}
+itmdescr_machete2 {未知の合金で作られた上質なマチェーテ。 社交界にも古代のピラミッドにもふさわしい一振り。}
+itmname_topor_07 {軍用斧}
+itmdescr_topor_07 {訓練されていない民兵にも扱える基本的な斧。 ただし効果は限定的。 防御には不向き。}
+itmname_pirate_cutlass {ブレイズのサーベル}
+itmdescr_pirate_cutlass {まさに伝説。 新世界の海賊たちに崇められる至高のレガリアであり、 船長にふさわしい華麗な武器。}
+itmname_blade_38 {決闘用レイピア}
+itmdescr_blade_38 {ヨーロッパで広く愛用された優雅な決闘用武器。 その姿はジャングルでは少し場違いかもしれない。}
+itmname_blade_39 {喧嘩屋のレイピア}
+itmdescr_blade_39 {熟練の決闘者のために特注された見事なレイピア。 つまり、 合法的な殺しに最適な武器だ。}
+itmname_blade_40 {イタリアンレイピア}
+itmdescr_blade_40 {レイピアの重さと過度な装飾から、 これは戦闘用ではなく儀礼用の武器であることが明らかだ。}
+itmname_blade_41 {ジエン}
+itmdescr_blade_41 {異国の文明から運ばれ、 数奇な運命によりこの海へ辿り着いた武器。 その独特な造りは、 あらゆる剣術にも自在に応える。}
+itmname_blade_42 {軍用ブロードソード}
+itmdescr_blade_42 {兵士向けのシンプルな武器で、 最低限の軍事訓練だけで扱える。}
+itmname_saber {騎兵刀}
+itmdescr_saber {真の愛国者と士官にふさわしい武器。 幾多の栄光ある戦いをくぐり抜けてきたが、 こんな場所に辿り着く運命ではなかった。}
+itmname_q_blade_10 {ユルゲン・シュミットの近接武器}
+itmdescr_q_blade_10
+{
+ユルゲン・ シュミット作のボーディングカトラス。
+上質な鋼で鍛えられ、 抜群のバランスを誇る。
+}
+itmname_q_blade_13 {ユルゲン・ シュミットの士官用ブロードソード}
+itmdescr_q_blade_13
+{
+ユルゲン・ シュミット作の士官用サーベル。
+上質な鋼で鍛えられ、 完璧なバランスを誇る。
+}
+itmname_q_blade_16 {ユルゲン・ シュミットのスモールソード}
+itmdescr_q_blade_16
+{
+名匠ユルゲン・ シュミット作のスモールソード。
+上質な鋼で鍛えられた刃は、
+抜群のバランスを誇る。
+}
+itmname_q_blade_18 {ユルゲン・ シュミットのパッペンハイマー}
+itmdescr_q_blade_18
+{
+名匠ユルゲン・ シュミット作のパッペンハイマー。
+上質な鋼で鍛えられた刃は、
+見事なバランスを誇る。
+}
+itmname_q_blade_19 {ユルゲン・ シュミットの海軍サーベル}
+itmdescr_q_blade_19
+{
+名匠ユルゲン・ シュミット作の海軍サーベル。
+上質な鋼で鍛えられ、 見事なバランスを誇る。
+}
+itmname_q_blade_21 {ユルゲン・ シュミットのバックスウォード}
+itmdescr_q_blade_21
+{
+ユルゲン・ シュミット作のクレーブラットサーベル。
+上質な鋼で鍛えられた刃は、
+抜群のバランスを誇る。
+}
+itmname_shamshir {シャムシール}
+itmdescr_shamshir {騎乗戦用のペルシャ曲刀。 砂漠の苛烈な戦の象徴。 斬撃の鋭さと叩き切る手軽さを兼ね備える。 範囲攻撃を好む者に最適。}
+itmname_lacrima_patris {Lacrima Patris}
+itmdescr_lacrima_patris {華やかに装飾された剣。 儀礼用の見た目に反して、 戦闘でも優れた性能を誇る。 敬虔な船長が罪人や異端者を裁くとき、 その刃はさらに鋭くなる。}
+lacrima_patris_parameters {大砲の射程ボーナス：#f.1RangeBonus#%}
+itmname_blade_SP_3low {絞首人}
+itmdescr_blade_SP_3low {このカトラスはトルコのサーベルとヨーロッパのファルシオンの特徴を併せ持ち、 幅広の刃でどんな頑丈な鎧も切り裂くことができる。 Hangmanを手にすれば、 どんな白兵戦も素早く、 容赦なく終わる。}
+itmname_blade_SP_3 {絞首人}
+itmdescr_blade_SP_3 {柄頭に据えられたヨリックの頭蓋骨は、 死の恐怖を捨て、 死神を見据えることで真の武の力を解き放てと持ち主に促す。}
+itmname_pistol1 {制式ピストル}
+itmdescr_pistol1 {軍用のフリントロック式ピストル。 ベルトに掛けるためのフック付き。 手軽で安価なため広く使われている。}
+itmname_pistol2 {ショットガンリボルバー}
+itmdescr_pistol2 {三連装側面散弾銃。 製造が極めて難しく、 希少かつ高価。}
+itmname_pistol3 {トロンボーン}
+itmdescr_pistol3 {接舷用の散弾銃。 トロンボーンは素早い単独の敵や重装兵にはあまり役立たないが、 雑兵の群れに撃ち込めば十分な威力を発揮する。}
+itmname_pistol4 {四連装ピストル}
+itmdescr_pistol4 {四連装ピストル。 工学の粋を集めた逸品。 装填は遅いが、 四発の銃弾が戦局を一変させる。}
+itmname_pistol5 {決闘用ピストル}
+itmdescr_pistol5 {ホイールロック式の決闘用ピストルの希少な一丁。 精緻な職人技が敵にほとんど隙を与えないが、 遅い再装填がやや印象を損なう。}
+itmname_pistol6 {二連式ピストル}
+itmdescr_pistol6 {二連式ピストル――二発目の安心を求める者にうってつけ。}
+itmname_pistol7 {コルトリボルバー}
+itmdescr_pistol7 {19世紀前半のコルト製キャップロック式リボルバー。 発射時、 敵を一時的に混乱させる。 使用には特殊な弾薬が必要。}
+itmname_pistol8 {ブランダーバス}
+itmdescr_pistol8 {片手撃ちに適した特製の海軍用マスケットーン。 鋼鉄製の弾丸で、 どんな防具も容易に貫く。}
+itmname_pistol9 {二連発ピストル}
+itmdescr_pistol9 {極めて珍しいサクソン製単発ピストル。 2発の弾丸を連続で発射できるが、 再装填に時間がかかる。}
+itmname_pistol10 {ゴールデンイーグル}
+itmdescr_pistol10 {三度目の正直。 この上質なピストルがそれを証明している。 熟練の兵士や腕利きの射手にふさわしい信頼の一丁。}
+itmname_pistol11 {怪物}
+itmdescr_pistol11 {謎の武器職人が生み出したボーディング・ ピストルアックス。 銃としても斧としても頼りない。 しかし、 一瞬が勝負を分ける白兵戦の混乱では、 これこそが役に立つ。}
+itmname_pistol12 {ソードオフ・ライフル}
+itmdescr_pistol12 {分解された四連発カービン。 精度はやや落ちたが、 近接戦闘に適し、 素早いリロードも健在。 標準的な四連発ピストルの優れた代替品。}
+itmname_pistol13 {フリントロック式リボルバー}
+itmdescr_pistol13 {銃工芸の傑作。30年以上前、 欧州で著名な軍人のために特注された品。 現代最高峰の多連発式ピストルかもしれない。}
+itmname_pistol14 {二連装決闘用ピストル}
+itmdescr_pistol14 {極めて高価で、 致命的、 そしてまったく実用的でない芸術品。}
+itmname_mortairgun {手持ち臼砲}
+itmdescr_mortairgun {手持ち臼砲――小規模な敵集団への攻撃に最適な道具。 待ち伏せから使うと効果的。}
+itmname_mushket1 {マッチロック式マスケット}
+itmdescr_mushket1 {強力で重量感のある歩兵用マスケット銃。 信頼の火縄式ロック採用。}
+itmname_mushket2 {海軍カービン}
+itmdescr_mushket2 {最新型イギリス製火器の短縮版。 銃剣付き。 植民地軍や海軍歩兵の標準装備。}
+itmname_mushket3 {アーケバス}
+itmdescr_mushket3
+{
+ボーディング用マッチロック・ ブランダーバス  
+時代遅れでも、 銃口を向けられた敵は他のことを考えていられない。
+}
+itmname_mushket5 {スコープ付きライフル}
+itmdescr_mushket5 {特注のホイールロック式ライフル。 ライフリング銃身とダイオプター付きスパイグラスを備える。 裕福な猟師やスポーツマンの武器。}
+itmname_mushket6 {ドラムショットガン}
+itmdescr_mushket6 {着脱式の多室シリンダーを備えたポルトガル製マスケットーン。 ただし交換機構が故障しており、 再装填が遅くなっている。}
+itmname_mushket7 {良質なマスケット}
+itmdescr_mushket7 {兵士用の量産マスケットとは異なり、 この銃は銃工が上質な素材を惜しみなく使い、 際立った性能を実現している。}
+itmname_mushket8 {四連発ライフル}
+itmdescr_mushket8 {手作りの四連発ライフル。 革新的な分解システムで、 バレルとストックを外せば1分足らずでピストルに早変わり。 独自のリロード機構で敵に弾丸の雨を浴びせろ！}
+itmname_m8_barrel {銃床と銃身}
+itmdescr_m8_barrel {分解された四連発銃の銃床と銃身。}
+itmname_mushket9 {古いアーケブス}
+itmdescr_mushket9 {古びているが信頼できる火縄銃。 伝説によれば、 コルテス自身がこれでジャングルに散弾を浴びせ、 現地民に恐怖を与えたという。}
+UpgradeStageInfo_mushket9_1 {今はかなりみすぼらしいが、 手入れと良い道具があれば見違えるだろう。}
+UpgradeStageInfo_mushket9_2 {銃床を交換し、 しっかり手入れすれば、 もう錆びた鉄くずには見えません。 これなら背負って街を歩いても恥ずかしくありません。}
+UpgradeStageInfo_mushket9_3 {新しい錠前に交換され、 現代の武器のような姿になった。 骨油で磨かれた金属は、 まるで職人の手から今しがた渡されたかのように陽光に輝いている。}
+UpgradeStageInfo_mushket9_4
+{
+あなたの手でこの武器は極みに達した——もはや改良の余地はない。 最後の仕上げとして拡張された銃身が装填を簡単かつ迅速にし、 効率を大幅に高めた。  
+自分を誇りに思っていい。
+}
+itmname_FirearmStockPart_1 {銃床とラムロッド}
+itmdescr_FirearmStockPart_1 {古風な銃のための美しい彫刻が施された銃床と、 銃身を掃除するためのブラシ付きロッド。 これらはキャンバス地の布に包まれ、 他の財宝とは離れた隅に丁寧に置かれていた。 まるで後から目立つように加えられたかのようだった。}
+itmname_FirearmStockPart_2 {錠前と骨油}
+itmdescr_FirearmStockPart_2 {最新式のスプリングロック、 布切れ、 そして武器の手入れ用骨油の小瓶――いずれもブラックウッドで見つかったアルケブスに不自然なほどぴったりだ。 他の財宝とは別に、 同じように宝の中に置かれていた。}
+itmname_FirearmStockPart_3 {銃身と火薬入れ}
+itmdescr_FirearmStockPart_3 {この一式は、 どんな長銃でも装填を大幅に早めてくれるが、 なぜかあのアルケブスと一緒に使うのが一番だと感じる。 小さな紙包みに丁寧に包まれており、 他の宝物とは違い、 明らかに湿気から守るための工夫がされている。}
+itmname_grape_mushket {手砲}
+itmdescr_grape_mushket {手持ちモルチールは少人数の敵を攻撃するのに最適です。 待ち伏せから使うのが実用的です。 発射時にはペタルドや手榴弾を使用します。}
+itmname_Mushket2x2 {ダブルバレル・カービン}
+itmdescr_Mushket2x2 {貴族たちが愛する待ち伏せ猟に好まれる贈答用のダブルバレル・ ショットガン。 だが、 ライフル銃身はどんな獲物も確実に仕留める。}
+itmname_mushket10 {帝国製マスケット}
+itmdescr_mushket10 {三十年戦争時代の単発式貴族用マスケット。 銃剣付きで、 神聖ローマ帝国に見られる装飾が施されている。}
+itmname_howdah {ハウダ}
+itmdescr_howdah {大口径の二連式ピストル。 アフリカのブッシュやインドのジャングルで狩人の頼れる相棒。 イノシシやトラ、 敵対的な現地人も確実に仕留める。}
+itmname_nocirass {胸当てなし}
+itmdescr_nocirass {長時間防具を身につけていると、 すぐに疲れてしまうものだ。 防具を脱いで、 キャビンで足を伸ばし、 シナモン入りの熱いコーヒーか、 もっと強い酒でも飲もう。}
+itmname_cirass1 {歩兵用防具}
+itmdescr_cirass1 {要塞攻囲戦で使われた歩兵用キュイラス。 鋼鉄や鉛に優れた防御力を発揮するが、 動きを妨げ、 近接戦では着用者を不器用にする。 ヨーロッパとカリブの両方で広く普及した。}
+itmname_cirass2 {リイター胸甲}
+itmdescr_cirass2 {重騎兵用に鍛造された上質なキュイラス。 胸と背中をしっかり守るが、 歩兵隊形では重さとフィット感の悪さが機動力と敏捷性を損なう。}
+itmname_cirass3 {パレードキュイラス}
+itmdescr_cirass3 {上質な鋼で作られた軽量キュイラス。 ダブレットの下にも着用可能。 動きをほとんど妨げず、 流れ弾やかすり傷からのみ確実に守る。}
+itmname_cirass4 {ミラノキュイラス}
+itmdescr_cirass4 {最高級の希少な防具。 刃も弾も難なく防ぎながら、 驚くほど軽い。 その秘密は無数の溝が生み出すしなやかさと強さにある。}
+itmname_cirass5 {革製ベルト}
+itmdescr_cirass5 {厚手の革で作られたコルセット。 骨で守られにくい重要な臓器を覆う。 レイピアや銃弾にはほとんど役に立たないが、 無いよりはましだ。}
+itmname_cirass6 {レザージャケット}
+itmdescr_cirass6 {熟練の決闘者が身につける、 柔らかな煮革製のベスト。 目立たず着用でき、 近接武器による斬撃から胴体全体を守る。}
+itmname_cirass7 {ブリガンダイン}
+itmdescr_cirass7 {金属板で補強された革製ベスト――防御力はまずまずだが、 着用時の重さは否めない。}
+itmname_cirass8 {編み込み防具}
+itmdescr_cirass8 {革と金属で作られた特別なキュイラス。 胴体全体を側面や鎖骨まで守る。 多数の調整用バックルで衣服の下でも快適に着用できる。}
+itmname_cirass9 {強化ブリガンダイン}
+itmdescr_cirass9 {プロの傭兵が愛用する防具で、 決闘者にも最適。 キュイラス並みの防御力と重量を持ちながら、 優れた仕立てで動きを妨げない。}
+itmname_cirass10 {アイアンサイド胸甲}
+itmdescr_cirass10 {やや使い込まれ、 不完全な議会派騎兵の装備一式。 防御力は十分で、 豊富なポケットとカートリッジポーチにより射撃や再装填が格段に楽になる。}
+itmname_cirass11 {鏡胸甲}
+itmdescr_cirass11 {このような防具はロシア帝国やオスマン帝国で広く使われています。 この一品は、 あなたの手に渡るまで長い旅路を経てきました。}
+itmname_suit1 {フランス軍服}
+itmdescr_suit1 {英国海軍士官の制服。}
+itmname_suit2 {イギリス軍服}
+itmdescr_suit2 {ブラックガード士官の制服――スコットランド近衛隊の精鋭部隊より。}
+itmname_suit3 {スペイン軍服}
+itmdescr_suit3 {カタルーニャ衛兵士官の制服}
+itmname_suit4 {リーグスーツ}
+itmdescr_suit4
+{
+リーグ傭兵の装束  
+縫い付けられた金属板と調整可能なストラップ――素早く苛烈な戦いのための装い。 半面のマスクが素性を隠す。
+}
+itmname_suit5 {提督の制服}
+itmdescr_suit5 {フランス海軍上級士官の制服。 本物の芸術品だ。}
+itmname_underwater {潜水服}
+itmdescr_underwater {ヘンリク・ ヴェデカー特製の浅瀬用潜水スーツ。 最高級の防具以上の防御力を誇る！}
+itmname_lantern {ランタン}
+itmdescr_lantern {小さなランタンは暗闇で頼れる相棒です。 ベルトに装着すれば、 夜道や洞窟、 グロット、 ダンジョンでも足元を照らします。 キーボードの 「L」 キーで簡単に点灯・ 消灯できます。}
+itmname_hat1 {コンドッティエーレの帽子}
+itmdescr_hat1 {決闘士や剣士に愛されるこの帽子は、 身につける者に近接武器の腕を磨き続ける意欲を与える。}
+itmname_hat2 {カヴァリアの帽子}
+itmdescr_hat2 {かつて貴族に愛された豪華で色鮮やかな帽子も、 カリブでは悪名高い存在となった。 ここでこの帽子をかぶるのは、 甘やかされたヨーロッパの貴族ではなく、 どんな武器でも疲れ知らずに戦う歴戦の決闘者や冒険者たちだ。}
+itmname_hat3 {水夫の三角帽}
+itmdescr_hat3 {ごく普通の三角帽で、 船乗りたちに広く愛用されている。 古くからの航海の伝統では、 嵐の中を泳ぎ抜け、 初めての海戦を生き延び、 その後に船を修理した者に贈られる帽子だ。}
+itmname_hat4 {海軍士官の三角帽}
+itmdescr_hat4 {トリコーン帽は海軍士官に人気のある帽子。 その姿を見かけると、 普通の水夫たちは驚くほど素早く働き始める。 敬意からか、 それとも罰への恐れか――それは誰にもわからない。}
+itmname_hat5 {提督の帽子}
+itmdescr_hat5 {このような帽子を一生に一度でも目にする船乗りはほとんどいない。 その存在は周囲を鼓舞し、 士気を高める。 この帽子の持ち主と同じ艦隊で仕えることは大きな名誉であり、 乗組員も士官も皆、 地獄の果てまでついていくだろう。}
+itmname_hat6 {オランダ帽}
+itmdescr_hat6 {高価で洗練された帽子。 中堅商人に人気があり、 独特な形は遠くからでも交渉人だとすぐに分かり、 激しい駆け引きに備えられる。}
+itmname_hat7 {ラッキーハット}
+itmdescr_hat7 {この勇ましい帽子は幸運を呼ぶと言われている。 時に擦り切れても、 その気品は失われない。 もし手に入れたなら、 どんな窮地でも切り札を失うことはないだろう。}
+itmname_hat8 {チャーリー・プリンスの三角帽}
+itmdescr_hat8 {この帽子は、 スペイン商人をはじめとする商人たちをジョリー・ ロジャー以上に震え上がらせる。 その持ち主の名声は、 どんな荒くれ海の男でさえ青ざめさせ、 身をすくませる。 チャーリー・ プリンスが生まれたその日を呪わん。}
+itmname_hat9 {グリムの帽子}
+itmdescr_hat9 {この帽子はカリブの隅々まで知られ、 どこでもその名を聞けば身震いする。 持ち主の船を襲うのは狂人だけ。 本人に出会えば、 恐怖で剣もピストルも握れなくなるだろう。 そして忘れるな――あの世へ行くのは簡単だが、 戻るのは難しい。}
+itmname_hat10 {傭兵の帽子}
+itmdescr_hat10 {この即席の防具帽は見た目は冴えないが、 弾丸を防ぎ命を守る。}
+itmname_hat10_part {なめし革}
+itmdescr_hat10_part {上質ななめし牛革。 帽子作りに最適。}
+itmname_spyglass1 {安物の望遠鏡}
+itmdescr_spyglass1 {ほとんど使い物にならない望遠鏡。 自尊心のある船長なら、 こんなガラクタは持たないだろう。}
+itmname_spyglass2 {普通の望遠鏡}
+itmdescr_spyglass2 {標準的な望遠鏡。 レンズの質は悪くないが、 もっと優れたものもある。}
+itmname_spyglass3 {良質な望遠鏡}
+itmdescr_spyglass3 {見事に磨かれたレンズの望遠鏡。}
+itmname_spyglass4 {優れた望遠鏡}
+itmdescr_spyglass4 { 「ベリル」 レンズ付きの望遠鏡。 これより優れているのは限定版だけ。}
+itmname_spyglass5 {航海用望遠鏡}
+itmdescr_spyglass5 {独自の光学機器。 純度の高い水晶レンズと三脚の組み合わせで、 あらゆるものを見通せる。}
+itmname_spyglassSP3 {望遠鏡「死者の眼」}
+itmdescr_spyglassSP3 {骨で飾られたこの望遠鏡は、 意外にも高品質なレンズを備えている。}
+itmname_sand_clock {砂時計}
+itmdescr_sand_clock {砂時計があれば、 キャプテンはフォロ島やグリニッジの正確な時刻を 「持ち運び」、 もし船にクロノメーターがあれば調整できる。}
+itmname_astrolab {アストロラーベ}
+itmdescr_astrolab {この装置は航海士が天体の位置を測定するためのものです。}
+itmname_compass1 {船のコンパス}
+itmdescr_compass1 {この装置があれば、 天体が見えない時でも航海士は北を知ることができる。 地球そのものが巨大な磁石であるという発想は、 1600年にイギリスの医師で自然哲学者のウィリアム・ ギルバートによって初めて提唱された。}
+itmname_clock1 {クロノメーター}
+itmdescr_clock1 {船用クロノメーター。 経度を測定するための装置だが、 正確な時刻を保つには砂時計で定期的に調整する必要がある。 この正確な時刻は、 後にグリニッジ標準時として知られるようになる。}
+itmname_clock2 {作動中のクロノメーター}
+itmdescr_clock2 {フォロ島製の時限式船舶クロノメーター。 30日間、 最小限の誤差で船の経度を測定できる。}
+itmname_sextant1 {六分儀}
+itmdescr_sextant1 {地理座標を測定するための特別な器具。 その持ち主は時代を先取りしすぎたため、 この装置に必要な精密時計はまだ発明されていない。 したがって、 今はこのセクスタントを使うことができない。}
+itmname_sextant2 {作動中の六分儀}
+itmdescr_sextant2
+{
+地理座標を測定するための特別な装置。 未来のクロノグラフを手に入れた今、 常に緯度と経度を割り出せる。
+高精度のおかげで船の速度が5%上昇する。
+装備時、 航海術スキルの成長が速くなる。
+}
+itmname_bussol {ブッソル}
+itmdescr_bussol
+{
+アストロラーベと船用コンパスを組み合わせた航海計器。 常に地理的な緯度を測定できるほか、 さまざまな用途に使われる。
+装備中、 航海術スキルの成長が速くなる。
+}
+itmname_clock3 {アレクサスのクロノメーター}
+itmdescr_clock3 {マスター・ アレクサスのコレクションにある、 20世紀中頃の自動巻き精密マリンクロノメーター。}
+itmname_talisman1 {お守り「ネズミの神」}
+itmdescr_talisman1 {ネズミや犬、 気の弱い子どもたちも、 この仮面を見るや否や火事のように逃げ出す！}
+itmname_talisman2 {お守り「ジョナ」}
+itmdescr_talisman2 {予言者の名を冠したケルトの円形十字架。 荒れ狂う海に捧げられながらも生還したという。}
+itmname_talisman3 {お守り「トールの槌」}
+itmdescr_talisman3 {北欧の雷神トールの槌 「ミョルニル」 を模した黄金のペンダント。}
+itmname_talisman4 {お守り「イェニチェリ」}
+itmdescr_talisman4
+{
+イェニチェリ上官のオスマン製ブレイサー。
+乗組員の規律が上昇する。
+}
+itmname_talisman6 {お守り「女神」}
+itmdescr_talisman6 {穢れを喰らう女神トラソルテオトルの像}
+itmname_talisman7 {お守り「スカラベ」}
+itmdescr_talisman7 {勤勉なスカラベを模した巨大な古代エジプトの指輪。}
+itmname_talisman8 {お守り「サソリ」}
+itmdescr_talisman8 {メディチ家のサソリ型ブローチ。 強力な解毒剤が隠し収納に入っている。}
+itmname_talisman9 {聖ルイ勲章}
+itmdescr_talisman9 {フランスの船長なら誰もが欲しがる最高の戦利品。}
+itmname_talisman10 {護符「キャッチャー」}
+itmdescr_talisman10 {真珠採りの護符}
+itmname_talisman11 {お守り「アダー・ストーン」}
+itmdescr_talisman11 {ただの穴あき石。幸運のお守り！}
+itmname_talisman12 {耐久のお守り}
+itmdescr_talisman12 {病や邪視を払うとされるタイノ族の偶像。}
+itmname_talisman13 {タイノのお守り}
+itmdescr_talisman13 {富と蓄財を司るタイノの神像。}
+itmname_talisman14 {お守り「ランイ」}
+itmdescr_talisman14 {道教の僧侶が魔法をかけた、 蛇の頭を持つ魚の形のブローチ。 移動速度が大きく上昇する。}
+itmname_talisman15 {お守り「黒い印」}
+itmdescr_talisman15 {黒い印を持つ者は、 たちまち迷信や伝説、 噂に包まれる。}
+itmname_talisman16 {お守り「黄金の儀式用ナイフ」}
+itmdescr_talisman16 {スペインの炉で溶かされず奇跡的に残ったアステカの黄金の儀式用ナイフ。 古の名工による見事な細工が、 発見者の心をためらわせたのかもしれない。}
+itmname_talisman17 {お守り『Liber Misericordiae』}
+itmdescr_talisman17 {持ち主にとって非常に個人的で、 ほとんど日記のような聖書の一冊。 多くの人が聖書を道しるべや光として携えるが、 この本はまさに名誉の規範そのものだ。}
+talisman17_quests {教会クエスト：#dQBonus# / 5}
+talisman17_questsNoBonus {教会クエスト：0 / 5}
+itmname_talisman18 {お守り「ブラックウッドの憲章」}
+itmdescr_talisman18 {アルバート・ ブラックウッドの個人規範。 レディ・ ベスの構造、 射手の配置、 シー・ フォックスの戦術について詳述されている。 別章では財宝探しや、 腕利きの射手への戦利品報酬についても記載。}
+talisman18_Bonus {発見した財宝：#dQBonus# / 10}
+talisman18_NoBonus {発見した財宝 : 0 / 10}
+itmname_talisman19 {お守り「ヨリックの頭蓋骨」}
+itmdescr_talisman19
+{
+ 「メメント号」 のキャプテン、 モーティマー・ グリムの頭蓋骨。 彼は自分の死を最後まで受け入れなかった。 #sName#、君は彼を知っていた。
+死者は生者に教え、 このアーティファクトは持ち主の望みに応じて姿を変える。
+インベントリに所持している間、 全ての士官が不死となる。
+}
+talisman19_InSlot
+{
+船は同時にヴェールの両側に存在する。 木は生きていたが、 死して生者に仕える。 キャプテン 「メメント」 の頭蓋骨は、 死は存在せず、 最後まで戦うべきだと全ての船に思い出させる。
+~
+船体が2%失われるごとに、速度が0.75%、砲撃ダメージが0.5%上昇する。
+~
+ペナルティなし、 複数回発動可能。
+}
+itmname_talisman20 {ストレリツィのサッシュ}
+itmdescr_talisman20 {いくつもの革紐、 火薬入れ、 そして多数の紙製カートリッジで作られた弾帯。 ヨーロッパの戦場で様々な形と用途があるが、 これは遥か遠い地からの客人。 厳しいシベリアの森に棲む幻想的な獣たちの姿で飾られている。}
+itmname_talisman20_part {銃士の火薬入れ}
+itmdescr_talisman20_part {異国の動物が刻まれた、 風変わりな形の華麗な火薬入れ。 縁には東欧風の刺繍模様が施されている。}
+itmname_totem_01 {タリスマン「錫の喉」}
+itmdescr_totem_01 {酔い止めの魔法がかけられた銀底のマグカップ。 どんな宴でも酔わずにいられる。}
+itmname_totem_02 {お守り「スパインバイター」}
+itmdescr_totem_02 {処罰用の恐ろしい鞭。 乗組員も不本意な乗客も、 船内の規律が大きく向上する。}
+itmname_totem_03 {お守り『キューピッドの香油』}
+itmdescr_totem_03 {高価なブートニエールケースに入った特製軟膏。 どんな娼館通いも健康に良くなる。}
+itmname_totem_04 {お守り「ミュルミドン」}
+itmdescr_totem_04 {ターコイズをあしらった手作りの銀のブレスレット。 忠誠と従順の象徴。}
+itmname_totem_05 {お守り「鉄のへそ」}
+itmdescr_totem_05 {防護板が飾られた革のベルト。 心臓まであと二寸のところで流れ弾を止めてくれる。}
+itmname_totem_06 {お守り「ゴンテル」}
+itmdescr_totem_06 {疲れを癒すブーツは、 港の労働者の憧れ。 重い荷物も、 より遠く・ より長く、 倒れずに運べる。}
+itmname_totem_07 {タリスマン「ミンストレル」}
+itmdescr_totem_07 {甘美なリュートが海の冒険のロマンを奏で、 心を熱くする！ 酒場で演奏すれば、 仲間になりたい者が増えるだろう。}
+itmname_totem_08 {お守り「炎の主」}
+itmdescr_totem_08 {消えない砲手用パイプ。 持ち主の風格が増し、 とくに自ら艦砲を指揮する者にはふさわしい。}
+itmname_totem_09 {タリスマン「Arguzin」}
+itmdescr_totem_09 {大砲の轟音の中でもはっきりと響くホーン。 その音色があれば、 陸の者もすぐに海の狼となる。}
+itmname_totem_10 {お守り「ウィドウメーカー」}
+itmdescr_totem_10 {容赦なく、 決して外さない俊敏なカタルーニャのナイフ。 この刃で鍛錬すれば、 サーベルやカットラスの腕前が大きく向上し、 とくに乱戦で威力を発揮する。}
+itmname_totem_11 {お守り「グール」}
+itmdescr_totem_11 {右手の魔法がかかった銅の指輪は、 決闘中に刃を通して敵のエネルギーを奪う。}
+itmname_totem_12 {タリスマン『ジャガーの息子』}
+itmdescr_totem_12 {首にかけたジャガーの爪が視界を研ぎ澄まし、 特に致命的な突きを繰り出せる。}
+itmname_totem_13 {お守り「ジョーカー」}
+itmdescr_totem_13 {いつでも手元にある便利なカードは、 賭け事の勝率を高める。}
+itmname_indian_1 {アミュレット『ブードゥー人形』}
+itmdescr_indian_1
+{
+呪術人形 — 犠牲者の魂に結びつくと伝えられる、 戦慄の先住民の遺物。
+ ~弱点部位（ 例： 頭部） へのダメージを増加させることがある。
+}
+itmname_indian_2 {アミュレット「火薬テスター」}
+itmdescr_indian_2
+{
+火薬の品質を検査する装置。~
+高品質な火薬は燃焼が均一なため、 すべての弾薬の威力が上がる。 特に自作の弾薬を作る際に役立つ。
+}
+itmname_indian_3 {アミュレット『儀式用ナイフ』}
+itmdescr_indian_3
+{
+黒曜石の生贄用ナイフ。 異教のアステカ神の加護を求めて、 いくつの魂を刈り取ったのかは定かでないが、 その刃は今もなお鈍らない。
+ ~敵へのクリティカルダメージが増加する。
+}
+itmname_indian_4 {アミュレット「アックス」}
+itmdescr_indian_4
+{
+アサトルのルーンが刻まれたペンダント。 その由来はカリブに伝わっていないが、 不思議と斧への衝動を呼び覚ます。
+ ~腕に思わぬ力をもたらし、 重装武器の攻撃力を高める。
+}
+itmname_indian_5 {アミュレット「ツァンツァ」}
+itmdescr_indian_5
+{
+おぞましい儀式で干からびた頭部。 そのような護符を作るには邪悪な異教の儀礼が必要だ。
+ ~これを船長の腰で見かければ、 味方も敵も乗り込み部隊は皆、 恐れと警戒を抱く。
+}
+itmname_indian_6 {アミュレット「コーラルヘッド」}
+itmdescr_indian_6
+{
+珊瑚のかけらから彫られた偶像。 幸運を呼び、 手を安定させると言われている。
+ ~これを持って撃つマスケット銃の一斉射撃は、 格段に整然となる。
+}
+itmname_indian_7 {アミュレット『ゴルバン』}
+itmdescr_indian_7
+{
+せむし男のテラコッタ像――ノートルダムのあの人ではなく、 勤勉の守護者。
+ ~これを持てば、 過酷なジャングル行軍や白兵戦も耐えやすくなる。
+}
+itmname_indian_8 {アミュレット「シウテクトリ」}
+itmdescr_indian_8
+{
+アステカの火と火山を司る神のトーテム像。 もしアステカに火薬があったなら、 この神がその守護者になっただろうと誓える。
+ ~不思議な力で大砲の一撃がより致命的になる。
+}
+itmname_indian_9 {アミュレット「Baldo」}
+itmdescr_indian_9
+{
+カラスの形をしたケルトのブローチ。 島のケルト族で最も熟練した航海者が身につけていたという。
+ ~特に砲手たちに強い印象を与え、 砲の設置と照準が大幅に速くなる。
+}
+itmname_indian_10 {アミュレット「Cascavella」}
+itmdescr_indian_10 {魔法がかかったガラガラヘビの頭骨。 ~固まった牙にまだ毒が残っているのだろう、 でなければ一撃で毒を与える理由が説明できない。}
+itmname_indian_11 {アミュレット「ンゴンボの仮面」}
+itmdescr_indian_11
+{
+シボネイ族の儀式用仮面。 人に偽りの記憶を植え付ける力があるという噂も。
+~装飾品で印象を残したい時や、 逆に群衆に紛れたい時に役立つ。
+}
+itmname_amulet_1 {アミュレット「ンゴンボの盾」}
+itmdescr_amulet_1 {骨と珊瑚の首飾りにンゴンボの護符が力を与える。 ~これを身につければ、 最も軽い防具でも刃をはじき返すようになる。}
+itmname_amulet_2 {アミュレット『エウコロギオン』}
+itmdescr_amulet_2 {銀装丁の祈祷書。~キリストの敵から正しき者を守り、 とりわけ鉛から強く護る。}
+itmname_amulet_3 {アミュレット「十字架」}
+itmdescr_amulet_3 {祝福されたカトリックの十字架。~罪人なら死ぬ場面でも、 正しき者には奇跡の救いが訪れる。}
+itmname_amulet_4 {アミュレット「El trozo」}
+itmdescr_amulet_4 {死体から引き抜かれたレイピアの断片。 ~装備者に狂乱を与え、 異教のトランスへと誘う。}
+itmname_amulet_5 {アミュレット「Sogbo」}
+itmdescr_amulet_5 {ブードゥーの神々に属する雷の精霊。 ~砲手の動きを速め、 大砲の再装填を加速する。}
+itmname_amulet_6 {アミュレット『マドンナ』}
+itmdescr_amulet_6 {聖母マリアの肖像が刻まれた聖別された聖遺物。 ~死や重傷を避ける助けとなる。}
+itmname_amulet_7 {アミュレット『聖水』}
+itmdescr_amulet_7 {聖水が満たされた銀のフラスコ型ペンダント。 ~霊的・肉体的な病や傷から守る。}
+itmname_amulet_8 {アミュレット「アンカー」}
+itmdescr_amulet_8 {呪文が刻まれた銀のペンダント。~船乗りたちは、 これが喫水線下の流れ弾から船体を守ると信じている。}
+itmname_amulet_9 {アミュレット「エンコルピオン」}
+itmdescr_amulet_9 {聖クリストファーの聖遺物を収めた大型の銀の十字架。 ~巡礼者の旅を守り、 戦闘時に帆を守る助けとなる。}
+itmname_amulet_10 {アミュレット「奇跡の使い手」}
+itmdescr_amulet_10 {聖ニコラスのメダリオン、 船乗りの守護聖人。 ~これを持てば、 誰もが無事に故郷へ帰る望みが高まる。}
+itmname_amulet_11 {アミュレット「チマルータ」}
+itmdescr_amulet_11 {古の魔法が宿る護符。~乗組員に異界の幸運をもたらし、 白兵戦前の銃撃から守る。}
+itmname_obereg_1 {アミュレット「Teredo」}
+itmdescr_obereg_1 {フナクイムシを寄せ付けないヒノキのマスク。 ~船体修理がより経済的に。}
+itmname_obereg_2 {アミュレット「Xochipilli」}
+itmdescr_obereg_2 {織工の守護神ショチピリの儀式用土器。 船の修理費を節約できる。}
+itmname_obereg_3 {アミュレット「モンキー」}
+itmdescr_obereg_3 {土地の言い伝えでは、 このアラバスターの器は力を与えるという。 ~これがあれば重い荷もぐっと楽に運べる。}
+itmname_obereg_4 {アミュレット「ジプシーの扇」}
+itmdescr_obereg_4 {アンダルシアの特別な護符。 人目をそらし、 陸の衛兵や巡回を欺くことができる。 ~町や港への密かな侵入を助ける。}
+itmname_obereg_5 {アミュレット「翡翠の亀」}
+itmdescr_obereg_5 {最初のコンキスタドールたちの古い護符。 ~彼らは幸運を願って身につけていた。 それを持てば、 運があなたに微笑み始める。}
+itmname_obereg_6 {アミュレット「モンキーの拳」}
+itmdescr_obereg_6 {手首用ループ付きの頑丈な縄で結ばれた複雑な結び目。 ~熟練の船乗りが身につけることが多く、 あなたの言葉に重みを与える。}
+itmname_obereg_7 {アミュレット「漁師」}
+itmdescr_obereg_7 {船乗りが幸運を願って身につける魔法の釣り針。 ~特に未熟な航海士の操船スキルを高める。}
+itmname_obereg_8 {アミュレット「商人の数珠」}
+itmdescr_obereg_8 {修道院で使われる高貴な珊瑚の数珠。 ~取引時に集中力を高め、 計算ミスを防ぎ、 成功率が上がる。}
+itmname_obereg_9 {アミュレット「エエカトル」}
+itmdescr_obereg_9 {アステカの風の神の頭を模した古代の杯。 ~これを持てば常に順風となり、 船の速度が上がる。}
+itmname_obereg_10 {アミュレット「航海者の耳飾り」}
+itmdescr_obereg_10 {ケープホーンを越えた操舵手の耳飾り。 ~リーフや浅瀬での操船を助け、 船の機動性が上がる。}
+itmname_obereg_11 {アミュレット「ピルグリム」}
+itmdescr_obereg_11 {航海者ブレンダンの十字架 ～わずかな風の変化も捉え、 船の反応が良くなる}
+itmname_rat_poison {ヒ素}
+itmdescr_rat_poison {ヒ素――硫黄のような匂いとタルクに似た粉末で、 船内のネズミを一時的に駆除するために使われる。}
+itmname_gold {ペソ}
+itmdescr_gold {新大陸の銀山から鋳造されたスペイン・ ドル。 世界初の国際通貨として広く流通し、 とくに新大陸で重宝された。 歴史的にペソは8レアルに分割できたため、  「ピース・ オブ・ エイト（ 8分銀）」の名で親しまれている。}
+itmname_gold_dublon {金のドブロン}
+itmdescr_gold_dublon {新大陸の純金から鋳造されたスペインのダブル・ エスクード金貨。  「ダブロン」 や 「ダブル」 と呼ばれ、 ヨーロッパでは通常100ペソの価値があるが、 この世界の果てではそうとは限らない。 カリブではダブロンは希少で貴重な財宝とされている。 ダブロンの詰まった宝箱は、 すべての海賊の夢だ。}
+itmname_chest {宝箱}
+itmdescr_chest {150枚の金のスペインドブロンが入った施錠された宝箱。}
+itmname_chest_open {空の宝箱}
+itmdescr_chest_open {コインの運搬や保管用のごく普通の箱。 今は残念ながら中身は空っぽだ。}
+itmname_icollection {財宝}
+itmdescr_icollection {宝石をあしらった高価な金製品の多彩なセットは、 誰にとっても貴重な品。}
+itmname_purse1 {財布}
+itmdescr_purse1 {中に金貨が数枚入った財布。}
+itmname_purse2 {重い財布}
+itmdescr_purse2 {布製の財布にたっぷりのドゥブロンが入っている。}
+itmname_purse3 {ぎっしり詰まった財布}
+itmdescr_purse3 {金貨がぎっしり詰まった重みのある革の財布。}
+itmname_jewelry1 {アメジスト}
+itmdescr_jewelry1 {レシフェ鉱山の宝石。 古い船乗りたちは、 これが酒の飲み過ぎを防ぎ、 もし飲んでしまっても二日酔いから守ってくれると言う。}
+itmname_jewelry2 {ダイヤモンド}
+itmdescr_jewelry2 {南米ポルトガル沿岸の鉱山で採れたダイヤは、 誠実な者には商売の助けとなるが、 盗人や殺し屋、 悪党には災いしかもたらさない。}
+itmname_jewelry3 {ルビー}
+itmdescr_jewelry3 {ルビーはカリブ海ではめったに見つからない宝石だ。 ダイヤモンドと並ぶ希少さと硬さを誇る唯一の宝石である。}
+itmname_jewelry4 {エメラルド}
+itmdescr_jewelry4 {コロンビアの名高い鉱山から産出されたエメラルド。 その純度はヨーロッパやアフリカの宝石を凌駕する。}
+itmname_jewelry5 {金塊}
+itmdescr_jewelry5 {本物の金塊だ。 どうやって鉱山から持ち出したんだろう…いや、 深く考えないほうがいいな。}
+itmname_jewelry6 {銀の塊}
+itmdescr_jewelry6 {アンデス山脈のスペイン鉱山から盗み出された銀の塊。}
+itmname_jewelry7 {ブルーアンバー}
+itmdescr_jewelry7 {イスパニョーラ島でしか採れない、 極めて希少な琥珀。 ヨーロッパの宝石商たちは法外な値で買い求める。}
+itmname_jewelry8 {琥珀}
+itmdescr_jewelry8 {琥珀は化石化した樹脂とは思えないほど美しい。 そのうえ過去を研究する人々にも役立つが、 実験に夢中になりすぎないように。}
+itmname_jewelry9 {スモーキークォーツ}
+itmdescr_jewelry9 {錬金術師が賢者の石を求める際によく用いる品。 喪の石は異界との絆を結び、 持ち主の性格を—善悪問わず—際立たせる。}
+itmname_jewelry10 {プラチナインゴット}
+itmdescr_jewelry10 {純粋なペルー産プラチナのインゴット。 スペイン人はその高い融点のため、 この非常に貴重な金属を過小評価し、 金の採掘中に 「不純物」 として見つかることから 「小さな銀」 と呼んだ。}
+itmname_jewelry11 {隕石}
+itmdescr_jewelry11 {まれなる幸運！ 地球の厚い大気をくぐり抜けてきた宇宙からの来訪者。}
+itmname_jewelry12 {銅のインゴット}
+itmdescr_jewelry12 {西部スペイン領メインの鉱山で精錬された銅のインゴット。}
+itmname_jewelry13 {鉄のインゴット}
+itmdescr_jewelry13 {鉄のインゴット。 ナイフや蹄鉄の基本素材。}
+itmname_jewelry14 {ファイアオパール}
+itmdescr_jewelry14 {ニュー・ スペインで採掘されるファイアオパール。 新大陸でしか産出せず、 ヨーロッパでは非常に珍重されている。}
+itmname_jewelry15 {アクアマリン}
+itmdescr_jewelry15 {船乗りたちは、 この海の色をした宝石が嵐を鎮め、 海戦で勝利をもたらすと信じている。 金の装飾にもよく映える。}
+itmname_jewelry16 {オパール}
+itmdescr_jewelry16 {本物のオパールは非常に稀少で、 他の宝石より高価になることもあります。}
+itmname_jewelry17 {ジャシント}
+itmdescr_jewelry17 {血のように赤いジルコンは、 不幸な恋と失恋の石。 持ち主の演技力も高めると、 古くから言い伝えられている。}
+itmname_jewelry18 {クリソプレーズ}
+itmdescr_jewelry18 {十人中九人の医師が、 この石は人の耐久力を高めると主張している。}
+itmname_jewelry19 {サンゴ}
+itmdescr_jewelry19 {赤珊瑚は持ち主を暴力から守ると信じられています。 磨かれて装飾された珊瑚は、 地中海沿岸出身の人々に特に人気があります。}
+itmname_jewelry20 {ターコイズ}
+itmdescr_jewelry20 {ターコイズは忠誠と高貴さの石。 古代の戦士たちは剣の柄を飾り、 マヤやアステカでは翡翠と同じほど重んじられていた。}
+itmname_jewelry21 {アズライト}
+itmdescr_jewelry21 {ヌエバ・ エスパーニャの鉱山で採れるアズライト。 暗い青地にパイライトの金色のインクルージョンが星空のように輝くことから、  「天の石」 とも呼ばれる。 多くのインディアン部族がこの石を神聖視していた。}
+itmname_jewelry22 {翡翠}
+itmdescr_jewelry22 {翡翠は高貴な戦士の石。 ヨーロッパ人が来る前、 アステカやマヤでは銀や金よりも翡翠こそが本当の富の象徴とされていた。}
+itmname_jewelry23 {クリソベリル}
+itmdescr_jewelry23 {ポルトガルの鉱山で採れる貴重な黄色い石。 ギャンブラーに幸運をもたらす石とされている。}
+itmname_jewelry24 {カメオのペンダント}
+itmdescr_jewelry24 {カメオ、 真珠、 ダイヤモンドがあしらわれた、 非常に美しいペンダント。 その精巧な細工から、 著名なヨーロッパの宝飾職人によるものと思われる。 カリブには、 まだこれほどの名匠はいない。}
+itmname_jewelry25 {カメオ付きイヤリング}
+itmdescr_jewelry25 {カメオ、 真珠、 ダイヤモンドがあしらわれた美しいイヤリング。 その精巧な細工から、 著名なヨーロッパの宝飾職人による作と推測される。 カリブには、 まだこれほどの名匠はいない。}
+itmname_jewelry26 {カメオ付きブレスレット}
+itmdescr_jewelry26 {カメオ、 真珠、 ダイヤモンドがあしらわれた、 非常に美しいブレスレット。 その精巧な作りから、 著名なヨーロッパの宝飾職人によるものと思われる。 カリブには、 まだこれほどの名匠はいない。}
+itmname_jewelry27 {ルビーの指輪}
+itmdescr_jewelry27 {大きなルビーがあしらわれた重厚な銀の指輪。 往年の名工の作と思われる。 誰かの家宝かもしれない。}
+itmname_jewelry28 {サファイアの指輪}
+itmdescr_jewelry28 {大きなサファイアが飾られた重厚な銀の指輪。 古の名工の作と思われる。 誰かの家宝かもしれない。}
+itmname_jewelry29 {トルコ石の指輪}
+itmdescr_jewelry29 {大きなターコイズがあしらわれた重厚な銀の指輪。 古の名工の作かもしれない。 誰かの家宝だったのだろうか。}
+itmname_jewelry30 {金の儀式用ナイフ}
+itmdescr_jewelry30 {スペイン人による溶解を偶然逃れた、 黄金のアステカ儀式用ナイフ。 これを見つけたコンキスタドールも、 あなたと同じく古の名工の見事な技に心を奪われたのかもしれません。}
+itmname_jewelry31 {黄金の埋葬マスク}
+itmdescr_jewelry31 {幸運にも溶かされずに残った黄金のマヤの儀式用仮面。 これを見つけた征服者も、 あなたと同じくこの古代の名工の見事な技に心を奪われたのかもしれない。}
+itmname_jewelry32 {金のブレスレット}
+itmdescr_jewelry32 {羽毛のある蛇をかたどったアステカの黄金の腕輪。 幸運にも溶かされずに残った逸品だ。 これを見つけた征服者も、 あなたと同じく古の名工の見事な技に心を奪われたのかもしれない。}
+itmname_jewelry33 {金の聖杯}
+itmdescr_jewelry33 {見事な細工が施された黄金の聖杯。 聖体を納めるために作られた逸品で、 どの大聖堂でも誇りとなるだろう。}
+itmname_jewelry34 {アズライトの十字架}
+itmdescr_jewelry34 {中央に大きなアズライトがはめ込まれた重厚な黄金の十字架。 これほどの宝物は司教や大司教だけのものだ。}
+itmname_jewelry35 {金の香炉}
+itmdescr_jewelry35 {純金製の重厚な香炉。 植民地の教区では、 これほど美しい器は場違いに見えるだろう。}
+itmname_jewelry36 {貴重な指輪}
+itmdescr_jewelry36 {大きなアクアマリンが輝く金の指輪。 宝石で彩られた複雑な花模様が施されている。 唯一無二の逸品で、 きっと莫大な価値があるだろう。 王族への贈り物にもふさわしい。}
+itmname_jewelry37 {貴重なブローチ}
+itmdescr_jewelry37 {宝石で蔦を象った黄金のブローチ。 唯一無二の逸品で、 きっと莫大な価値がある。 王族への贈り物にもふさわしい。}
+itmname_jewelry38 {貴重な指輪}
+itmdescr_jewelry38 {大きなダイヤとエメラルドがあしらわれた金の指輪。 唯一無二の宝飾品で、 きっと莫大な価値がある。 王族への贈り物にもふさわしい。}
+itmname_jewelry39 {貴重なペンダント}
+itmdescr_jewelry39 {ダイヤモンドがあしらわれ、 アンティーク調の絵がエナメルに描かれた黄金のペンダント。 唯一無二のこのジュエリーは、 きっと莫大な価値があるだろう。 王族への贈り物にもふさわしい品だ。}
+itmname_jewelry40 {エメラルドの指輪}
+itmdescr_jewelry40 {大きな原石エメラルドがはめ込まれた重厚な金の指輪。 粗削りながらも高価な品で、 地元の職人が重要な頼みへの報酬として作ったものかもしれない。}
+itmname_jewelry41 {ルビーの指輪}
+itmdescr_jewelry41 {素朴な趣味の娘も喜ぶ、 美しい金のルビーリング。}
+itmname_jewelry42 {エメラルドのビーズ}
+itmdescr_jewelry42 {スペインへの出荷基準を満たさなかったカボションのビーズも、 裕福な貴婦人の胸元を飾ることができる。}
+itmname_jewelry43 {宝石付きペンダント}
+itmdescr_jewelry43 {大ぶりの原石があしらわれた金のペンダントは、 宝石の知識も趣味もない者には傑作に見えるかもしれない。}
+itmname_jewelry44 {コンキスタドールのブレスレット}
+itmdescr_jewelry44 {馬のたてがみを編んだ紐に、 金の端材を通して作られた腕輪。 このように金を身につける習慣は、 コンキスタドールたちの工夫から生まれたと言われている。}
+itmname_jewelry45 {金の十字架}
+itmdescr_jewelry45 {こんなターコイズ入りの金の十字架は、 金髪碧眼の良家の娘によく似合うだろう。}
+itmname_jewelry46 {金の指輪}
+itmdescr_jewelry46 {小さなソーダライトの結晶が付いた金の指輪。 控えめながら上品。}
+itmname_jewelry47 {珊瑚のブレスレット}
+itmdescr_jewelry47 {赤い珊瑚と銀の飾りが施されたブレスレットは、 誰かの日焼けした手首を彩るだろう。}
+itmname_jewelry48 {銀の指輪}
+itmdescr_jewelry48 {花模様のついたシンプルな銀の指輪。 ないよりはまし。}
+itmname_jewelry49 {翡翠の数珠}
+itmdescr_jewelry49 {翡翠のビーズは、 部族の男たちにあまり構われないインディアンの女性たちの憧れです。}
+itmname_jewelry50 {翡翠の指輪}
+itmdescr_jewelry50 {翡翠の原石から削り出された指輪。 その職人の忍耐は聖書のヨブにも匹敵するだろう。}
+itmname_jewelry51 {ペソのイヤリング}
+itmdescr_jewelry51 {穴を開けた銀ペソで作った即席のイヤリング。 身につければ海賊気分に。 いざとなれば酒場の勘定にも使える！}
+itmname_jewelry52 {大きな真珠}
+itmdescr_jewelry52 {完璧な形と輝きを持つ大粒の真珠。 海からの希少な贈り物。 その虹色の宝石は百年以上の時を経ているに違いない。}
+itmname_jewelry53 {小さな真珠}
+itmdescr_jewelry53 {可愛らしい小さな真珠。}
+itmname_meteorite {大きな隕石のかけら}
+itmdescr_meteorite {まれなる幸運！ 地球の厚い大気をくぐり抜けてきた宇宙からの来訪者。 その大きさと重さは圧倒的だ…}
+itmname_patent_england {イギリス特許}
+itmdescr_patent_england {護国卿の植民地局が発行した特許状で、 あなたがイングランドの任務にあることを証明するもの。 これにより、 国家の利益を守り、 規則に従って船を維持する義務が課される。}
+itmname_patent_holland {オランダ特許}
+itmdescr_patent_holland {オランダ西インド会社の取締役会が発行した特許状。 あなたがオランダ連合州の公的な任務にあることを証明するものです。 これにより、 祖国の利益を守り、 規定に従って船を維持する責務が課されます。}
+itmname_patent_france {フランス特許}
+itmdescr_patent_france {ルイ14世陛下の植民地局より発行された特許状は、 あなたがフランスの奉仕者であることを証明します。 これにより、 祖国の利益を守り、 規定に従って船を維持する義務が課されます。}
+itmname_patent_spain {スペインの特許}
+itmdescr_patent_spain {国王フェリペ4世の植民地事務局が発行した特許状は、 あなたがスペインの奉仕者であることを証明します。 これにより、 祖国の利益を守り、 規則に従って船を維持する義務が課せられます。}
+itmname_map_bad {安い地図}
+itmdescr_map_bad {新世界の初期探検家たちが作成し、 何十年も前にジェノヴァで印刷された地図。 時を経て黄ばんだ羊皮紙には島々の輪郭がぼんやりと描かれ、 正確な位置を特定することはできない。}
+itmname_EngTradeLicence {イングランドの交易許可証}
+itmdescr_EngTradeLicence {交易など平和的な目的でイングランドの町や港を訪問できます。 #sAction_date#に発行され、#sValidity#有効です。}
+itmname_FraTradeLicence {フランスの交易許可証}
+itmdescr_FraTradeLicence {フランスの町や港に交易など平和目的で立ち寄ることができます。 #sAction_date#に発行され、#sValidity#有効です。}
+itmname_SpaTradeLicence {スペインの交易許可証}
+itmdescr_SpaTradeLicence {新世界のスペイン領の町や港に、 交易など平和的な目的で訪問できます。 #sAction_date#に発行され、#sValidity#有効です。}
+itmname_HolTradeLicence {オランダ西インド会社の許可証}
+itmdescr_HolTradeLicence {すべての植民地の町や港に、 交易など平和的な目的で訪問できます。 #sAction_date# に発行され、#sValidity# 有効です。}
+itmname_MapsAtlas {地図帳}
+itmdescr_MapsAtlas {カリブ海やスペイン領本土の各地を描いた地図の詰め合わせ。 これら貴重な羊皮紙なしでは、 新世界を旅するのはほぼ不可能だ。}
+itmname_Map_Best {優れた地図}
+itmdescr_Map_Best {伝説のイングランド冒険家フランシス・ ドレーク卿が所有していた、 非常に精密な地図の写し。 海の男に必要なものがほとんど記されている。}
+itmname_map_normal {普通の地図}
+itmdescr_map_normal {この地図は商人たちによって作られたものだ。 主要都市の名前と島々の正確な座標が、 カリブで交易する船長に必要なすべてだ。}
+itmname_map_beliz {ベリーズの地図}
+itmdescr_map_beliz {ベリーズの町とその周辺を描いた地図。}
+itmname_map_santa {ブルーウェルドの地図}
+itmdescr_map_santa {ブルーワルドの町とその周辺を描いた地図。}
+itmname_map_bermudas {イスラ・デル・テソロの地図}
+itmdescr_map_bermudas {イスラ・ デル・ テソロの全ての航路と集落を示した地図。}
+itmname_map_jam {ジャマイカの地図}
+itmdescr_map_jam {ジャマイカ島の全ての航路と集落を描いた地図。}
+itmname_map_cuba {キューバの地図}
+itmdescr_map_cuba {キューバ島の全ての航路と集落を示す地図。}
+itmname_map_hisp {イスパニョーラ島の地図}
+itmdescr_map_hisp {バッカニアの島ヒスパニョーラの町や隠れた場所を示す地図。}
+itmname_map_antigua {アンティグアの地図}
+itmdescr_map_antigua {アンティグア島のおおまかな地図。 これでも十分使える。}
+itmname_map_barbados {バルバドスの地図}
+itmdescr_map_barbados {バルバドス島の地図。}
+itmname_map_cayman {カイマンの地図}
+itmdescr_map_cayman {無人のケイマン諸島の地図。}
+itmname_map_Curacao {キュラソーの地図}
+itmdescr_map_Curacao {キュラソー島のおおまかな地図。 旅には十分使える。}
+itmname_map_guad {グアドループの地図}
+itmdescr_map_guad {グアドループ島の詳細な地図。}
+itmname_map_TORTUGA {トルトゥーガの地図}
+itmdescr_map_TORTUGA {トルトゥーガの詳細な地図。}
+itmname_map_dominica {ドミニカの地図}
+itmdescr_map_dominica {ドミニカ無人島の地図。}
+itmname_map_martiniqua {マルティニークの地図}
+itmdescr_map_martiniqua {マルティニーク島の優れた地図。}
+itmname_map_trinidad {トリニダードの地図}
+itmdescr_map_trinidad {トリニダード双子島の地図。}
+itmname_map_nevis {セントクリストファーの地図}
+itmdescr_map_nevis {セントクリストファー島の地図}
+itmname_map_sm {セント・マーチンの地図}
+itmdescr_map_sm {セントマーチンの地図。}
+itmname_map_terks {タークスの地図}
+itmdescr_map_terks {無名の手によって描かれた、 荒れたタークス諸島の地図。}
+itmname_map_maine_1 {新グラナダ地図・中央}
+itmdescr_map_maine_1 {スペイン領メインの一部、 ガルタヘナとマラカイボの町が描かれた地図。}
+itmname_map_maine_2 {カラカスの地図}
+itmdescr_map_maine_2 {スペイン領本土の広範囲を描いた地図。}
+itmname_map_panama {新グラナダ地図・西部}
+itmdescr_map_panama {パナマ地峡の地図。}
+itmname_map_cumana {クマナの地図}
+itmdescr_map_cumana {カマナの町を中心に描かれたスペイン領メインの部分地図。}
+itmname_map_puerto {プエルトリコの地図}
+itmdescr_map_puerto {プエルトリコ島を描いた地図。}
+itmname_mapQuest {宝の地図}
+itmdescr_mapQuest {この地図は埋蔵財宝の場所を示している。 本当にここにあるのか？ 「X」 が示す場所を探し当てて初めて分かるだろう。}
+itmname_map_full {宝の地図}
+itmdescr_map_full {この地図は埋蔵財宝の場所を示している。 本当にあるのか？ 「X」 が示す場所を探し当てて初めてわかるだろう。}
+itmname_map_part1 {宝の地図の一部}
+itmdescr_map_part1 {宝の地図の一部。 他の断片を集めれば、 行き先がわかる。}
+itmname_map_part2 {宝の地図の一部}
+itmdescr_map_part2 {宝の地図の一部。 他の欠けた部分を集めれば、 行き先がわかる。}
+itmname_map_LSC {放棄された船の都市の地図}
+itmdescr_map_LSC {見捨てられた船の都に足を踏み入れる者は、 この地図なしでは迷うこと必至だ。}
+itmname_A_map_beliz {優れたベリーズ地図}
+itmdescr_A_map_beliz {ベリーズ周辺の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_santa {優れたBlueweldの地図}
+itmdescr_A_map_santa {ブルーワルド周辺を極めて正確に描いた地図。 裏面には地図製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_bermudas {優れたイスラ・ デル・ テソロの地図}
+itmdescr_A_map_bermudas {非常に精密なイスラ・ デル・ テソロの地図。 裏面には製図者ホセ・ ディオスの名が記されている。}
+itmname_A_map_jam {ジャマイカの優れた地図}
+itmdescr_A_map_jam {ジャマイカ島の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_cuba {キューバの優れた地図}
+itmdescr_A_map_cuba {キューバ島の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_hisp {優れたヒスパニョーラ地図}
+itmdescr_A_map_hisp {イスパニョーラ島の極めて精密な地図。 裏面には地図製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_antigua {優れたアンティグアの地図}
+itmdescr_A_map_antigua {アンティグア島の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_barbados {バルバドスの優れた地図}
+itmdescr_A_map_barbados {バルバドス島の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_cayman {カイマンの優れた地図}
+itmdescr_A_map_cayman {カイマン島の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_Curacao {[ERROR: RateLimitError]}
+itmdescr_A_map_Curacao {キュラソー島の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_guad {グアドループの優れた地図}
+itmdescr_A_map_guad {グアドループ島の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_TORTUGA {優れたトルトゥーガの地図}
+itmdescr_A_map_TORTUGA {トルトゥーガ島の極めて精密な地図。 裏面には製図者ホセ・ ディオスの名が記されている。}
+itmname_A_map_dominica {優れたドミニカ地図}
+itmdescr_A_map_dominica {ドミニカ島の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_martiniqua {[ERROR: RateLimitError]}
+itmdescr_A_map_martiniqua {マルティニーク島の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_trinidad {優れたトリニダードの地図}
+itmdescr_A_map_trinidad {トリニダード諸島の極めて精密な地図。 裏面には地図製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_nevis {セントクリストファーの優れた地図}
+itmdescr_A_map_nevis {セントクリストファー島の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_sm {優れたセント・マーチンの地図}
+itmdescr_A_map_sm {セント・ マーチン島の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_terks {トークスの優れた地図}
+itmdescr_A_map_terks {トークス島の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_maine_1 {優れたニューグラナダ地図・中央}
+itmdescr_A_map_maine_1 {ニューグラナダ中心部の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_maine_2 {カラカスの優れた地図}
+itmdescr_A_map_maine_2 {カラカス周辺の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_panama {優れたニューグラナダ西部の地図}
+itmdescr_A_map_panama {パナマ地峡の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_cumana {クマナの優れた地図}
+itmdescr_A_map_cumana {クマナ周辺の詳細な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_puerto {プエルトリコの優れた地図}
+itmdescr_A_map_puerto {プエルトリコ島の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_A_map_perl {優れたプロビデンスの地図}
+itmdescr_A_map_perl {プロビデンシア島の極めて精密な地図。 裏面には製作者ホセ・ ディオスの名が記されている。}
+itmname_map_half_beatriss {シャープの地図の半分}
+itmdescr_map_half_beatriss {ヘレン・ マッカーサーの母、 ビアトリスが持っていた伝説の地図の半分。}
+itmname_map_half_blaze {シャープの地図の半分}
+itmdescr_map_half_blaze {かつてBlaze Sharpが所有していた伝説の地図の半分。}
+itmname_map_sharp_full {ニコラス・シャープの地図}
+itmdescr_map_sharp_full {2つの断片を合わせて完成したイスラ・ デル・ テソロの全体地図。 所持者が島の所有権を証明できる。}
+itmname_LSC_navigation_map {見捨てられた船の都への航路案内}
+itmdescr_LSC_navigation_map
+{
+この海図がなければジャスティス島には辿り着けない。
+北緯24度21分、西経84度50分。
+}
+itmname_RingCapBook {『Santa Lucia』航海日誌}
+itmdescr_RingCapBook
+{
+ピナス船 「サンタ・ ルシア」 の航海日誌。
+読む価値あり――沈没の瞬間まで記録が続いている。
+}
+itmname_leather_bag {グリップサック}
+itmdescr_leather_bag {娼館から逃げ出した少女のトランク。 少しの金と書類、 まともなドレス、 その他身の回りの品が入っている。 哀れなことに、 中身よりもトランク自体の方が重い。}
+itmname_sicretLetter {秘密の密書。}
+itmdescr_sicretLetter {#sCity#の総督宛ての書類一式。#sMayor#ができるだけ早く受け取りを待っている。}
+itmname_letter_1 {封印された手紙}
+itmdescr_letter_1 {手紙は封印されています。 中身を知るには読む必要がありますが、 まず封を切らなければなりません。}
+itmdescr_letter_1_Fadey {モスクワ人ファデイによる、 インディアンの罪人ティチンギトゥの赦免嘆願}
+itmdescr_letter_SharkGoldFleet_1 {カラカス港湾局長からの封印された書簡。 ポルトベロ港湾局長に直接手渡しすること。}
+itmname_letter_2 {封印された手紙}
+itmdescr_letter_2 {手紙は封印されています。 中身を知るには読む必要がありますが、 まず封を切らなければなりません。}
+itmdescr_letter_SharkGoldFleet_2 {封印された返答――ポルトベロ港湾局長からの確認書。 カラカス港湾局長に直接手渡しすること。}
+itmdescr_letter_2_PortmanLevelUp1 {重要な政府の公文書。}
+itmdescr_letter_2_PortmanLevelUp2 {カリブ海全域の最新の店舗価格リスト。}
+itmdescr_letter_2_PortmanLevelUp3 {ビジネス文書。 通貨レートや株式情報が記載されている。}
+itmname_letter_open {開封された手紙}
+itmdescr_letter_open {手紙はすでに開封され、 読まれた形跡がある。 受取人が気づかなければいいが。}
+itmdescr_letter_open_usurer {フォルケ・デリュク宛の借用証書}
+itmname_Malyava {牢獄からの手紙}
+itmdescr_Malyava {盗賊のメモ}
+itmname_PostLetters {配達用の郵便}
+itmdescr_PostLetters {封印された手紙やその他の書類。}
+itmname_letter_consumption {サンホセ司令官宛の手紙}
+itmdescr_letter_consumption
+{
+作物の収穫はほぼ終わりました——これが契約の第二段階です。 第三段階は例によって最後に行います。 お取引できて光栄でした——これが最後でないことを願っています。
+J.
+}
+itmname_letter_church {封印された書簡}
+itmdescr_letter_church {教会の書簡。 できるだけ早く宛先に届けるべきものだ。}
+itmname_prayer_book {祈祷書}
+itmdescr_prayer_book {祈祷書の束。 できるだけ早く届ける必要がある。}
+itmname_ContraPostLetters {郵便通信}
+itmdescr_ContraPostLetters {封印された手紙や書類。 できるだけ早く閣下に届ける必要がある。}
+itmname_letter_svenson {ヤン・スヴェンソンの手紙}
+itmdescr_letter_svenson {ヤン・ スヴェンソンからスティーブ・ ドッドソン＝シャークへの封書}
+itmname_letter_chad {開封された手紙}
+itmdescr_letter_chad {腕利きの射手を確保しました。 あとは約束のライフル銃身と、 標的排除の許可を待っています。}
+itmdescr_letter_adolf
+{
+すべて約束どおりに済ませたら、 新しい船室に戻って待っていろ。 真夜中に鍵を受け取りに行く。
+M.
+}
+itmdescr_letter_adolf_1
+{
+マルチェロ、 君が渡した額の倍の金額で合意したはずだ。 カービン銃の価値はもっと高いことは分かっているだろう。 残りを払わなければ、 君とカッパーが 「エヴァ」 でやっていることをすぐに提督に知らせるぞ。
+アドルフ
+}
+itmdescr_letter_aeva
+{
+ 「エヴァ」 ほど居心地のいい場所はないな。 最近セシルは、 もう一人の年寄りオレリーか酒場に入り浸ってるから、 船倉は空っぽだ。 誰かが急に来たとしても、 ちょっと飲むくらい構わないだろ？
+マルチェロ
+}
+itmdescr_letter_valet {デイヴィッド・ ファックマン（ 通称“ナーヴ”）宛の愉快な手紙。}
+itmname_letter_chad_1 {開封された手紙}
+itmdescr_letter_chad_1 {チャド・ キャッパーからメアリー・ キャスパーへの手紙}
+itmdescr_letter_facio {ジュゼッペ・ファツィオの説明書}
+itmdescr_letter_axel
+{
+チャド、 ご依頼通り在庫を調べてみました。 アイリッシュウイスキーは 「ブッシュミルズ」 という古いモルトが樽で一本だけ見つかりました。 100ドゥブロンでよければ、 取りに来てください。
+アクセル
+}
+itmdescr_letter_vargant
+{
+もし計画が失敗したら、 君とデイビッドをサブ＝マティラの入り江、 『 センチュリオン』 号で待つ。 弟のことは命をかけて守れ。 彼の言うことは、 俺の命令だと思って従え。 タイレックス本人に挑もうなんて考えるな――あっという間に二人ともバラバラにされるぞ。
+ジャックマン
+}
+itmname_letter_parol {メモ}
+itmdescr_letter_parol {鉱山に入るためのパスワードが変更されました。 新しいパスワードは 「Neptune」です。}
+itmdescr_letter_ouster
+{
+もうあの場所は安全じゃない。 イギリス人に何か知られた。 12度1分北、60度11分西で一週間、 貨物と一緒に待っている。 今度こそ頼むぞ！
+M.R.
+}
+itmdescr_letter_parol_FMQP {ウーゴからドン・ ドミンゴ・ アルバラーテへの未完の手紙}
+itmname_letter_mine {鉱山の書類}
+itmdescr_letter_mine { 「サー・ ローレンス・ ベルトロップ」 という人物がポートロイヤル出身で、 廃鉱山の正式な所有者であることを示す書類。}
+itmname_letter_jess {破れたページ}
+itmdescr_letter_jess {ジェシカ・ローズの日記の一頁。}
+itmname_letter_beatriss {古い手紙}
+itmdescr_letter_beatriss {ベアトリス・ シャープから兄のブレイズへの手紙。}
+itmname_letter_baker {書面証言}
+itmdescr_letter_baker {セント・ ジョーンズの元死刑執行人、 レイモンド・ ベイカーの記録された証言。}
+itmdescr_letter_pinett {バートラン・ ピネットによるバステール銀行家の違法取引に関する証言。}
+itmname_Cromvel_depeshe {クロムウェルの書簡}
+itmdescr_Cromvel_depeshe
+{
+…船団と合流し、 増強してニュー・ ネーデルラントの海岸まで護衛せよ。
+木靴を履いたオランダ人どもに、 イングランド海軍の威力を思い知らせてやるのだ。
+艦隊は #sDay#.#sMonth#.#sYear# に北緯18度40分、西経72度10分の海域へ到着する。
+}
+itmname_specialletter {手紙}
+itmdescr_specialletter {封印された手紙。 読むには封を切る必要がある。}
+itmdescr_specialletter_mishelle {ミシェル・ ド・ モンペールからシャルル・ ド・ モールへの手紙}
+itmdescr_specialletter_vinsento {サンティアゴの異端審問官ヴィンチェント神父からシャルル・ ド・ モールへの手紙。}
+itmdescr_specialletter_dichoso {ミゲル・ ディチョソからアルトゥロ・ ロペスへの手紙。}
+itmname_recipe_powder_pellet {説明}
+itmdescr_recipe_powder_pellet {フラッシュバンペタルの作り方説明書}
+itmname_recipe_grenade {説明}
+itmdescr_recipe_grenade {手榴弾の作り方}
+itmname_recipe_harpoon {説明}
+itmdescr_recipe_harpoon {銛矢の作り方の手順。}
+itmname_recipe_GunEchin {説明}
+itmdescr_recipe_GunEchin {釘の頭や破片を使ったシュラプネル弾の作り方。}
+itmname_recipe_potion2 {エリクサーのレシピ}
+itmdescr_recipe_potion2 {治癒のエリクサーを作るための全情報が記されたレシピ。}
+itmname_recipe_potion3 {解毒剤のレシピ}
+itmdescr_recipe_potion3 {解毒剤の調合に必要な情報がすべて記されたレシピ。}
+itmname_recipe_potion4 {薬のレシピ}
+itmdescr_recipe_potion4 {調合に必要な情報がすべて記されたレシピ。}
+itmname_recipe_berserker_potion {オメトチリ薬のレシピ}
+itmdescr_recipe_berserker_potion {オメトチリの薬酒を作るための全情報が記されたレシピ。}
+itmname_recipe_PerksPotion {忘却の薬のレシピ}
+itmdescr_recipe_PerksPotion {複雑で高価、 時間のかかる薬のレシピ。 その説明によれば、 過去を捨てて運命を変える力があるようだ。}
+itmname_recipe_totem_01 {お守りのレシピ}
+itmdescr_recipe_totem_01 {タリスマン「Throat of cast iron」 の作成に必要な情報がすべて記されたレシピ。}
+itmname_recipe_totem_02 {お守りのレシピ}
+itmdescr_recipe_totem_02 {護符「Spinebiter」 の作成に必要な情報がすべて記されたレシピ。}
+itmname_recipe_totem_03 {お守りのレシピ}
+itmdescr_recipe_totem_03 {護符 「キューピッドのバーム」 を作るために必要な情報がすべて記されたレシピ。}
+itmname_recipe_totem_04 {お守りのレシピ}
+itmdescr_recipe_totem_04 {タリスマン「Myrmidon」 の作成に必要な情報がすべて記されたレシピ。}
+itmname_recipe_totem_05 {お守りのレシピ}
+itmdescr_recipe_totem_05 {護符 「鉄のへそ」 を作るために必要な情報がすべて記されたレシピ。}
+itmname_recipe_totem_06 {お守りのレシピ}
+itmdescr_recipe_totem_06 {護符「Stayer」 を作るために必要な情報がすべて記されたレシピ。}
+itmname_recipe_totem_07 {お守りのレシピ}
+itmdescr_recipe_totem_07 {護符 「ミンストレル」 を作るために必要な情報がすべて記されたレシピ。}
+itmname_recipe_totem_08 {お守りのレシピ}
+itmdescr_recipe_totem_08 {護符 「炎の王」 の作成に必要な情報がすべて記されたレシピ。}
+itmname_recipe_totem_09 {お守りのレシピ}
+itmdescr_recipe_totem_09 {護符「Arguzin」 の作成に必要な情報がすべて記されたレシピ。}
+itmname_recipe_totem_10 {お守りのレシピ}
+itmdescr_recipe_totem_10 {タリスマン「Widowmaker」 を作るために必要な情報がすべて記されたレシピ。}
+itmname_recipe_totem_11 {お守りのレシピ}
+itmdescr_recipe_totem_11 {護符 「グール」 を作るために必要な情報がすべて記されたレシピ。}
+itmname_recipe_totem_12 {お守りのレシピ}
+itmdescr_recipe_totem_12 {護符 「ジャガーの息子」 を作るために必要な情報がすべて記されたレシピ。}
+itmname_recipe_totem_13 {お守りのレシピ}
+itmdescr_recipe_totem_13 {護符 「ジョーカー」 を作るために必要な情報がすべて記されたレシピ。}
+itmname_alchemy_tool {錬金術師の箱}
+itmdescr_alchemy_tool {奇妙な器具や小瓶、 試薬が詰まった箱。 駆け出しの錬金術師にはかけがえのない宝だ。}
+itmname_Tool {大工道具箱}
+itmdescr_Tool {造船所から盗まれた船大工の道具。}
+itmname_Tailor_Tool {仕立て道具}
+itmdescr_Tailor_Tool
+{
+旅慣れた放浪者が困難を自力で乗り越えるための携帯裁縫セット。
+熟練の手にかかれば、 はさみや針、 フック、 指ぬきが本当に奇跡を起こす！
+}
+itmname_Mechanic_Tool {作業台＆工具箱}
+itmdescr_Mechanic_Tool {小規模な修理に必要な道具が便利なケースに収められており、 手先の作業が好きな人には頼もしい味方です。}
+itmname_Tigel {るつぼ}
+itmdescr_Tigel {非常に高温で金属を溶かすための容器。}
+itmname_potion1 {回復薬}
+itmdescr_potion1 {軽い傷を素早く癒す薬草の薬。}
+itmname_potion2 {エリクサー}
+itmdescr_potion2 {百種を超える希少な薬草から作られたこの霊薬は、 どんな重傷も癒すことができる。}
+itmname_potion3 {解毒剤}
+itmdescr_potion3 {この解毒剤は珍しい素材を煎じて作られている。 味はひどいが、 毒で苦しんで死ぬよりはずっとマシだと誰もが言うだろう。}
+itmname_potion4 {混合薬}
+itmdescr_potion4 {この薬は解毒と治癒を兼ね備え、 毒を治し傷も癒す。}
+itmname_potionrum {ラム酒の瓶}
+itmdescr_potionrum {頼れるラム酒がなければ、 船乗りとは言えない。 グロッグや楽しい思い出作りに欠かせない一本。 傷を負ったときは、 アルコールが痛みを和らげ、 癒しを促してくれる。}
+itmname_potionwine {上質なワイン}
+itmdescr_potionwine {極上のフランスワイン。 そのリラックス効果で体力を回復し、 感染を防ぎます。}
+itmname_potion5 {ショウガの根}
+itmdescr_potion5 {副作用のない強化薬草。}
+itmname_potion6 {インカの薬}
+itmdescr_potion6 {この薬はインカの神殿戦士が戦いで怒りを集中させるために作ったもの。 戦闘中に気絶しなくなるが、 体力が減少する。}
+itmname_potion7 {イシュチェルの涙}
+itmdescr_potion7 {マヤの司祭が月の女神への儀式のために調合した、 無臭無味で不自然に白濁した液体。 噂によれば（ 現地のインディオたちは秘密を守っている） 、 失われた体力を回復できるらしい。}
+itmname_Ultimate_potion {コマンチの薬}
+itmdescr_Ultimate_potion {どんな重い病も、 致命的な毒も癒す奇跡の薬。}
+itmname_berserker_potion {オメトチリの薬}
+itmdescr_berserker_potion
+{
+伝説の薬。 飲むと超人的な力と耐久力が解放され、 敏捷性と反応速度が上昇し、 痛みを感じなくなる。
+効果は1分ごとに最大12秒間持続。体力にダメージ。
+}
+itmname_mangarosapower {タイダルウェーブ薬}
+itmdescr_mangarosapower {マンガローザからアメリアのレシピで調合された薬。 黒色火薬と燻した木の香りに、 鋭い硫黄のアクセントが漂う。 その香りは、 雷鳴が轟き、 煙が空を覆う砲甲板へと誘う。}
+itmname_mangarosafast {スコール薬}
+itmdescr_mangarosafast
+{
+マンガローサを使い、 アメリアのレシピで調合された薬。
+折れた枝の苦い煙と熱した鉄の香りが、 夕暮れの鍛冶場を思わせる。 その香りは戦いの熱狂を呼び覚まし、 刃のぶつかり合いと戦闘の熱気を想起させる。
+}
+itmname_mangarosatotal {シー・ハグの薬}
+itmdescr_mangarosatotal {マンガローザを使い、 アメリアのレシピで調合された薬。 嵐の後の甲板のように、 塩風と濡れた木の香りが漂う。 海藻のほろ苦さを含んだ海の空気が、 胸の奥に海が広がるような軽やかさと自由をもたらす。}
+itmname_vodka {ツァーリ・ウォッカ}
+itmdescr_vodka {ジュニパーとセイヨウオトギリソウを漬け込んだ穀物スピリッツに、 ローズウォーターとガランガルの根を加えて蒸留・ 熟成した酒。 ロシア・ ツァーリ国のストレリツィが戦場で体を温め、 活力を得るために用いた。}
+itmname_PerksPotion {忘却の薬}
+itmdescr_PerksPotion {溶けた頭蓋骨を模した、 ねじれた首の小瓶。 粘り気のある油のような液体は、 内側で生きた炎が脈打つかのように金と深紅に輝く。 三つの供物――肉体、記憶、富――が込められている。}
+itmname_cannabis1 {ダチュラ}
+itmdescr_cannabis1 {治療薬に使われる。}
+itmname_cannabis2 {サバディラ}
+itmdescr_cannabis2 {回復薬に使用される。}
+itmname_cannabis3 {バーベナ}
+itmdescr_cannabis3 {神秘的な薬草。 さまざまな伝承がある。 薬に使われる。}
+itmname_cannabis4 {イペカ}
+itmdescr_cannabis4 {この薬草は味も匂いもひどいが、 薬の調合によく使われる。}
+itmname_cannabis5 {ガラナ}
+itmdescr_cannabis5 {薬に使われる。}
+itmname_cannabis6 {ジャマイカペッパー}
+itmdescr_cannabis6 {薬に使われる。}
+itmname_cannabis7 {マンガローザ}
+itmdescr_cannabis7
+{
+この低木の葉は、 現地の人々にとても高く評価されています。
+この植物には、 ごく少数の賢者だけが知る神秘的な力があるとも言われています。
+}
+itmname_GunPowder {火薬}
+itmdescr_GunPowder {硫黄、 木炭、 硝石（ 硝酸カリウム） の混合物。 すべての火器に必要。 武器の種類によって火薬の消費量が異なる。}
+itmname_bullet {鉛弾}
+itmdescr_bullet {マスケットやピストル用の標準的な弾丸。 ダメージは発射する武器によって変化する。}
+itmname_grapeshot {散弾}
+itmdescr_grapeshot
+{
+鉛製の散弾や大粒の弾丸。 散弾銃でのみ使用可能。 複数の標的に同時にダメージを与える。
+銃身に装填できる散弾の量は武器によって異なる。
+}
+itmname_cartridge {紙製カートリッジ}
+itmdescr_cartridge {火薬、 鉛玉、 ワッドを一体化したカートリッジ。 火薬を湿気から守るため油紙で包まれている。 使用すると装填が大幅に速くなり、 火薬の燃焼が均一になることで威力も増す。}
+itmname_powder_pellet {火薬壺}
+itmdescr_powder_pellet {手持ち火器から発射できるペタルダ。 爆発時に強い閃光を放ち、 複数の標的を同時に気絶させることがある。 味方にも効果あり。}
+itmname_grenade {手榴弾}
+itmdescr_grenade {手持ち臼砲から発射できるグレネード。 複数の敵に大きなダメージを与えることができる。 味方への誤爆に注意。}
+itmname_harpoon {矢}
+itmdescr_harpoon {ハープーンから作られた重く短い鉄製の矢。 ブランダーバスで発射可能。 その重量と強化された先端は、 装甲した敵にも致命的な一撃を与える。}
+itmname_GunPowder_colt {無煙火薬}
+itmdescr_GunPowder_colt {燃焼効率が高く、 煙の少ない改良火薬。 コルトリボルバー用カートリッジの製造に必要。}
+itmname_shotgun_bullet {鉛弾}
+itmdescr_shotgun_bullet {弾丸型でリボルバー用カートリッジに装填する弾。 専用の弾丸鋳型で作られる。}
+itmname_shotgun_cartridge {リボルバー用カートリッジ}
+itmdescr_shotgun_cartridge {防水の真鍮ケースに入った火薬と弾丸。}
+itmname_OxyHydSilver {雷銀}
+itmdescr_OxyHydSilver {雷銀。 非常に敏感で、 落とすと爆発しやすい。}
+itmname_GunCap_colt {雷管}
+itmdescr_GunCap_colt {銀酸化合物で作られた銅製雷管。 コルト式リボルバーの発射に必要。}
+itmname_GunEchin {釘弾}
+itmdescr_GunEchin
+{
+大型グレープショット砲用の粗く切られた釘。 人体や銃身に壊滅的な効果をもたらす。
+その形状により、 武器の拡散を抑える。
+}
+itmname_bullet_double {二重弾装填}
+itmdescr_bullet_double {火薬を二重に詰め、 弾丸と刻まれたドゥブロンを幸運のお守りとして装填。 銃身破裂を防ぐには火薬試験器が必要。}
+itmname_grapeshot_double {二重散弾装填}
+itmdescr_grapeshot_double
+{
+火薬を増量し、 グレープショットに刻んだドゥブロンを混ぜて運を祈る。 効果は使用する武器によって異なる。
+火薬試験器がないと、 銃身破裂の危険が高まる。
+}
+itmname_ArmoryPaper {銃器用紙}
+itmdescr_ArmoryPaper {この紙は、 紙の基材にパラフィンを染み込ませて作られています。 カリブでは非常に珍しく高価で、 主に食品の包装に使われますが、 腕の立つ者の手にかかれば他の用途にも役立ちます。}
+itmname_argbullet {銀の弾丸}
+itmdescr_argbullet {地元の二刀流の達人によれば、 銀の弾丸は怪物や姑、 そして邪悪なブードゥーで蘇った死者にも非常に効果的だそうだ。}
+itmname_Mineral1 {銅の水差し}
+itmdescr_Mineral1 {水やワインを注ぐのにとても便利な水差し。}
+itmname_Mineral2 {べっ甲の櫛}
+itmdescr_Mineral2 {贅沢な髪を持つ男女に欠かせない高価な身だしなみ用品。}
+itmname_Mineral3 {ろうそく}
+itmdescr_Mineral3 {蝋燭。}
+itmname_Mineral4 {ヘラクレスオオカブト}
+itmdescr_Mineral4 {人類が知る中で最大の甲虫、 ヘラクレスオオカブトの乾燥標本（ 全長最大約50cm） 。 体重比で地球上最強の生物であり、 自身の体重の100倍以上を持ち上げる力を持つ。}
+itmname_Mineral5 {ランプアイコン}
+itmdescr_Mineral5 {青銅のランプがあれば、 夜は読書に、 朝はコーヒーにと、 ゆったり過ごせます。}
+itmname_Mineral6 {鏡}
+itmdescr_Mineral6 {小さなポケットミラー。 鼻の先しか映らないほど小さい。}
+itmname_Mineral7 {磁器のパイプ}
+itmdescr_Mineral7 {オランダ製の逸品。 中国の技術を盗用して作られ、 安物の土管よりも上質なため、 地元の煙草愛好家に人気。}
+itmname_Mineral8 {靴}
+itmdescr_Mineral8 {片方だけの靴。不吉な兆し。}
+itmname_Mineral9 {古いマグカップ}
+itmdescr_Mineral9 {くすんだ古いピューター製のマグカップ。}
+itmname_Mineral10 {火打石}
+itmdescr_Mineral10 {鋼を打って火を起こす火打石。17世紀のライター。}
+itmname_Mineral11 {銀の水差し}
+itmdescr_Mineral11 {美しい銀の水差し。}
+itmname_Mineral12 {ジャガーの爪}
+itmdescr_Mineral12 {ジャガーの切り落とされた爪を首飾りにしたもの。 密林のインディアン戦士たちに人気。}
+itmname_Mineral13 {鞭}
+itmdescr_Mineral13 {革紐で作られた鞭。 甲板長の必需品。 野良犬を追い払ったり、 無礼者を叩くのにも使える。}
+itmname_Mineral14 {ヴァンパイアの翼}
+itmdescr_Mineral14 {この地の吸血コウモリ（Desmodus rotundus） の乾燥した翼。 魔女やインディアンのシャーマンが儀式に用いると囁かれている。}
+itmname_Mineral15 {折りたたみナイフ}
+itmdescr_Mineral15 {船乗りに欠かせない相棒。}
+itmname_Mineral16 {砥石}
+itmdescr_Mineral16 {刃を研ぐための砥石のかけら。}
+itmname_Mineral17 {空き瓶}
+itmdescr_Mineral17 {空のガラス瓶。}
+itmname_Mineral18 {タバコ}
+itmdescr_Mineral18 {パイプ用のキュアタバコが詰まった箱。 新世界の開拓者たちがインディアンから取り入れた流行の嗜み。 16世紀のスペイン人医師ニコラス・ モナルデスは、 タバコが便秘を和らげ、 筋肉をほぐし、 体の毛穴を開くと記している。}
+itmname_Mineral19 {銀のスプーン}
+itmdescr_Mineral19 {美しい銀のスプーン。 きっと屋敷の使用人がこっそり持ち出したものだろう。}
+itmname_Mineral20 {木のスプーン}
+itmdescr_Mineral20 {どの水夫も食事の前にこれを持っている。}
+itmname_Mineral21 {筆記用具}
+itmdescr_Mineral21 {ガチョウの羽根とインク壺は、 教養ある者のしるし。}
+itmname_Mineral22 {紐}
+itmdescr_Mineral22 {細い紐の束。}
+itmname_Mineral23 {釘}
+itmdescr_Mineral23 {鉄の釘。 靴にも屋根にも船にも修理に使える。}
+itmname_Mineral24 {ベルト}
+itmdescr_Mineral24 {ごく普通の革ベルト。 ズボンを支え、 小物も携帯できる。}
+itmname_Mineral25 {ボースンパイプ}
+itmdescr_Mineral25 {自尊心ある甲板長なら必ず持つ笛。 これで乗組員に指示を出す。}
+itmname_Mineral26 {トランプのデッキ}
+itmdescr_Mineral26 {ボロボロのトランプの束。}
+itmname_Mineral27 {乳鉢と乳棒}
+itmdescr_Mineral27 {薬草や他の材料を粉末にして様々な薬を調合できる道具。 クルミの殻より硬いものは砕けません。}
+itmname_Mineral28 {エチルアルコール}
+itmdescr_Mineral28 {一部の狂った錬金術師は、 この純粋なエチルアルコールを普通の人のように飲むのではなく、 雷銀の調合に使う。}
+itmname_Mineral29 {硝酸}
+itmdescr_Mineral29 {硝酸は8世紀から知られています。 耐火性かつ非金属のるつぼがあれば雷銀を作ることも可能です。 非常に反応性が高いので、 皮膚への接触は避け、 決して口にしないでください。}
+itmname_Mineral30 {奴隷の手枷}
+itmdescr_Mineral30 {奴隷商人が使う手錠。 逃亡防止用。}
+itmname_Mineral31 {魔法の骨}
+itmdescr_Mineral31 {銅の輪がはめられた人間の指の骨。 ブードゥーの魔女が呪術に使う。}
+itmname_Mineral32 {弾丸鋳型}
+itmdescr_Mineral32 {この器具を使えば、 コルトリボルバー用の正しい形と大きさの弾丸を鋳造できる。}
+itmname_Mineral33 {タトゥー用染料}
+itmdescr_Mineral33 {タトゥー用インク}
+itmname_Mineral34 {空の小瓶}
+itmdescr_Mineral34 {世界一きれいな小瓶とは言えないが、 液体はちゃんと入る。}
+itmname_Mineral35 {リュート}
+itmdescr_Mineral35 {現代ギターの祖先となる楽器。}
+itmname_crab_pincers {カニのハサミ}
+itmdescr_crab_pincers {巨大な敵カニのハサミ。}
+itmname_crab_jaw {クラブジョー}
+itmdescr_crab_jaw {有毒腺を含む巨大ガニの顎。}
+itmname_ShipyardsMap {設計図}
+itmdescr_ShipyardsMap {#sShipName#の設計図}
+itmdescr_ShipyardsMap_PortmanLevelUp4 {最新技術が盛り込まれた船の設計図。}
+itmname_MayorsRing {結婚指輪}
+itmdescr_MayorsRing {#sCityName#の総督の結婚指輪。 きっと返してほしがるだろう。}
+itmname_UsurersJew {宝石}
+itmdescr_UsurersJew {#sCityName#の高利貸しの見事な#sJevelType#}
+itmname_Key1 {シンプルな鍵}
+itmdescr_Key1 {単純な錠の鍵。}
+itmname_Key2 {普通の鍵}
+itmdescr_Key2 {中程度の複雑さを持つ一般的な錠前用の鍵。}
+itmname_Key3 {複雑な鍵}
+itmdescr_Key3 {複雑な錠用の鍵。}
+itmname_key_capper {「タルタロス」の鍵}
+itmdescr_key_capper { 「タルタロス号」 の扉や宝箱を開ける鍵。}
+itmname_key_gun {青銅の鍵}
+itmdescr_key_gun {アドルフ・ バルビエの遺体から見つかった鍵。 だが、 何の鍵だろうか？}
+itmname_keys_skel {ピッキングツールセット}
+itmdescr_keys_skel {このピックセットがあれば、 あらゆる錠前を開けられる。}
+itmname_sant_anna_key {華麗な鍵}
+itmdescr_sant_anna_key {複雑なギザギザを持つ精巧な鍵。 ヨーロッパの名工だけが作れる逸品だ。 あとは、 この鍵に合う錠前を探そう！}
+itmname_key_betancur {古い鍵}
+itmdescr_key_betancur {くすんだ真鍮の鍵。 何を開けるのかは不明だが、 この鍵が見つかった場所からして、 きっと貴重な何かの扉を開くのだろう。}
+itmname_key_mary {メアリー・キャスパーの鍵}
+itmdescr_key_mary {フリュート船「Ceres Smithy」のメアリーの船室の鍵。}
+itmname_key_facio {真鍮の鍵}
+itmdescr_key_facio {ジュゼッペ・ファツィオの鍵}
+itmdescr_key_facioQ {「Carolina」号の扉と、Giuseppe Fazioの船室にある宝箱のひとつを開ける鍵。}
+itmname_key_levasser {ルヴァスールの鍵}
+itmdescr_key_levasser {フランソワ・ ルヴァスールの遺体から手に入れた鍵だ。 これで開く宝箱を探そう。}
+itmname_key_candlestick_LeFransua {鍵}
+itmdescr_key_candlestick_LeFransua {古びた使い込まれた鍵。 何を開けるのかはまだ分からない。}
+itmname_PortmansBook {航海日誌}
+itmdescr_PortmansBook {うっかり者の船長が忘れた航海日誌。 彼に返してあげよう。}
+itmname_CaptainBook {船舶書類}
+itmdescr_CaptainBook {うっかり者の船長が忘れた船の書類。 彼に返すべきだ。}
+itmname_bible {聖書}
+itmdescr_bible {地元の言語で書かれ、 美しく装丁・ 印刷された旧約聖書と新約聖書の一冊。 カトリック教会は宗教改革期にプロテスタント訳の普及に対抗するため、 1500年代後半に現地語訳を認可した。}
+itmname_ChurchGenQuest1Bible {教会の写本}
+itmdescr_ChurchGenQuest1Bible {#sCity#の司祭に届けるべき重要な教会の写本。}
+itmname_ChurchGenQuest2Cup {聖餐杯}
+itmdescr_ChurchGenQuest2Cup {#sCity#の司祭に届ける聖餐用の聖杯。 聖餐を入れる聖杯は金か銀で作られるべきとされており、 かなり重い。}
+itmname_MerdokArchive {ジョン・マードックのアーカイブ}
+itmdescr_MerdokArchive {ファン・ メルデンの日記。 暗号で書き写されており、 バラバラな文字や数字が並ぶ判読不能な記録だ。 読むには暗号の鍵が必要だろう。}
+itmname_MineArchive {暗号化文書}
+itmdescr_MineArchive {文章は暗号化され、 書類は長い間放置されていた。 どうやら、 リーグの上級士官の個人的な保険のようだ。}
+itmname_Cipher {アーカイブの暗号}
+itmdescr_Cipher {この暗号でジョン・ マードックの記録を読むことができる。}
+itmname_JacobJournal {ヤーコブ・ ファン・ ベルグの航海日誌}
+itmdescr_JacobJournal {『 ミラージュ』 号船長ヤーコブ・ ファン・ ベルフの航海日誌}
+itmname_FleetwoodJournal {リチャード・ フリートウッドの航海日誌}
+itmdescr_FleetwoodJournal { 「ヴァルキリー」 号船長リチャード・ フリートウッドの航海日誌}
+itmname_ClementLebrunJournal {クレマン・ルブランの航海日誌}
+itmdescr_ClementLebrunJournal {トルトゥーガのあの荒くれ者の航海日誌。 ページはすべて引き裂かれている。}
+itmname_FernandoDeAlavidaJournal {Fernando de Alavida 船長日誌}
+itmdescr_FernandoDeAlavidaJournal {Fernando de Alavida の航海日誌}
+itmname_FernandoDeAlavidaPismo {くしゃくしゃの手紙}
+itmdescr_FernandoDeAlavidaPismo
+{
+怒りに任せてくしゃくしゃにされ、 船室の隅にぞんざいに投げ捨てられた紙切れ。 インクは滲み、 最後の数行だけがかろうじて読める。  
+「…それでもなお、 財宝を納骨堂に保管するのは控えるべきだと強く進言する。 最近、 島では異教徒の墓荒らしについての噂が増えており、 領主の安息の地が危険にさらされるのではと危惧している。 」
+}
+itmname_MC_Letter {封印された手紙}
+itmdescr_MC_Letter {アビゲイルの身代金の条件を記したリチャード・ フリートウッド宛の手紙。}
+itmdescr_MC_Letter1 {リチャード・ フリートウッドの返答。}
+itmdescr_MC_Letter2 {フリートウッドからルーカス・ ローデンブルクへの手紙}
+itmdescr_MC_Letter3 {ルーカス・ ローデンブルフからヴァン・ メルデンへの手紙}
+itmname_NPC_Letter {封印された手紙}
+itmdescr_NPC_Letter {リチャード・ フリートウッドからアビゲイルへの手紙}
+itmdescr_NPC_Letter1 {リチャード・ フリートウッドからの書簡。}
+itmdescr_NPC_Letter2 {エルキュール・ トンザグからの別れの手紙。}
+itmdescr_NPC_Letter3 {ある島の地図が入った封筒。 場所を示す 「X」 が描かれており、 どうやら洞窟のようだ。}
+itmdescr_NPC_Letter4 {ルーカス・ ローデンブルグからサンティアゴの銀行家への手紙}
+itmname_DTSG_letter1 {半焼けの手紙の切れ端}
+itmdescr_DTSG_letter1 {焼け焦げた跡からして、 この手紙は最近火をつけられたようだ。}
+itmdescr_DTSG_letter2 {チャーリー・ クニッペルの外見を記した手紙。}
+itmname_Drugstore_keys {薬局の鍵}
+itmdescr_Drugstore_keys {これらの鍵はジョン・ マードックの家のすべての扉を開ける。}
+itmname_MaltieBase_keys {地下牢の鍵}
+itmdescr_MaltieBase_keys {これらの鍵は、 サン・ ピエールにあるマルタ騎士団の地下牢の扉を開ける。}
+itmname_Finger {切断された指}
+itmdescr_Finger {指輪をはめた指。 フェルナンドの死の証。}
+itmdescr_finger_rober {指輪のついた指。 ロベール・ マルタンの死の証。}
+itmname_GastonHead {人間の頭}
+itmdescr_GastonHead {切断された人間の頭部。 不気味な品…}
+itmname_SkullAztec {翡翠の髑髏}
+itmdescr_SkullAztec {美しく神秘的な古代のアーティファクト。 一塊の翡翠から彫り出されたようだ。}
+itmname_suit_1 {高価な服}
+itmdescr_suit_1 {総督主催の晩餐会にもふさわしい上質な衣服。}
+itmname_crowbar {金属製バール}
+itmdescr_crowbar {小さなバール。 木箱や頭、 カニまでこじ開けられる。 『 G.F.』の刻印入り。}
+itmname_bucher_ring {巨大な指輪}
+itmdescr_bucher_ring {キャプテン・ブッチャーの指輪}
+itmname_cask_whisky {アイリッシュウイスキーの樽}
+itmdescr_cask_whisky {ダブリンで蒸留された上質な 「ブッシュミルズ」 アイリッシュウイスキーのボトルが数本入った木箱。}
+itmname_cask_gin {ジンの樽}
+itmdescr_cask_gin {極上のヨーロッパ産ジンの樽。 カリブでは、 ごく限られた者だけが味わえる贅沢な酒だ。}
+itmname_buben {シャーマンの太鼓}
+itmdescr_buben {シャーマンが精霊と語り合うために使うというインディアンのタンバリン。 少なくとも、 彼らはそう植民者に語っている……}
+itmname_smoking_tube {喫煙パイプ}
+itmdescr_smoking_tube {北アメリカ平原の先住民が使う精巧な喫煙パイプ。 どうしてここに？}
+itmname_chemistry {ラヴォアジエの化学入門}
+itmdescr_chemistry {『Traite Elementaire de Chimie』 という題名の印刷本。 素人には理解できない注釈や定義が記されている。 この本は 「ムッシュ・ ラヴォアジエ」 なる人物によって書かれ、 扉には 「パリ、 1789年印刷」 とある。 印刷所のミスに違いない。}
+itmname_shark_teeth {サメの歯}
+itmdescr_shark_teeth {S.D.のイニシャルが刻まれた大きなホホジロザメの歯}
+itmname_witches_hammer {『マレウス・マレフィカルム』}
+itmdescr_witches_hammer {英語で 「ハンマー・ オブ・ ウィッチズ」 として知られる魔女術に関する論考。 中世後期、 ドイツの聖職者ハインリヒ・ クラーマーとヤーコプ・ シュプレンガーによって執筆された。 カトリック教会からは極めて不正確だと非難されたが、 一般市民や世俗の法廷では非常に人気が高い。}
+itmname_calendar_maya {マヤ暦}
+itmdescr_calendar_maya {5つの断片から組み立てられたマヤのカレンダー。}
+itmname_splinter_js {装飾のかけら}
+itmdescr_splinter_js {美しいインディアン模様が施された石のかけら。 ヤン・ スヴェンソンの所持品。}
+itmname_splinter_nh {装飾の破片}
+itmdescr_splinter_nh {美しいインディアンの装飾が施された石のかけら。 Nathaniel Hawkの持ち物。}
+itmname_splinter_mt {装飾のかけら}
+itmdescr_splinter_mt {美しいインディアンの装飾が施された石のかけら。 マーカス・ タイレックスの持ち物。}
+itmname_splinter_zm {装飾の欠片}
+itmdescr_splinter_zm {美しいインディアン模様が施された石のかけら。 Zachary Marlowの持ち物。}
+itmname_splinter_jb {装飾のかけら}
+itmdescr_splinter_jb {美しいインディアン模様が施された石のかけら。 Jacques Barbazonの所持品。}
+itmname_Almanac {年鑑}
+itmdescr_Almanac {分厚い書物。}
+itmdescr_jinobook {ジーノ・ギネイリのアルマナック}
+itmdescr_Almanac_FMQP {ルイス・オルティスの帳簿}
+itmname_VerifyPaper {私掠許可状}
+itmdescr_VerifyPaper {私掠許可状}
+itmdescr_VincentoPaper {所持者はスペイン領サンティアゴへの自由な訪問が許可される。 異端審問官ヴィンチェント神父の直筆署名入り。}
+itmdescr_VincentoPaper_A {所持者はサンティアゴとサンホセのスペイン領植民地を自由に訪問できる。 異端審問官ヴィンチェント神父の直筆署名入り。}
+itmname_skinmap {「二つの顕現」の地図}
+itmdescr_skinmap {カリブ海のおぼろげな輪郭が浮かぶなめし革の一片。}
+itmname_arrowway {コンパス「道の矢」}
+itmdescr_arrowway {船のコンパス。 針は北以外のあらゆる方向を指して激しく回っている。}
+itmname_ArchyBook {日記}
+itmdescr_ArchyBook {アーチボルド・ コルホウンの日記。 読むと面白そうだ。}
+itmname_key_archy {鉄の鍵}
+itmdescr_key_archy {アーチボルド・ コルホウンの鍵。 どうやら宝箱の鍵のようだ。}
+itmdescr_key_mask { 「サンタ・ キテリア号」 の船長の骸骨から見つかった鍵。 どうやら宝箱の鍵らしい。}
+itmname_SQCapBook {航海日誌}
+itmdescr_SQCapBook {『 サンタ・ キテリア』 号の船長航海日誌。 読む価値がありそうだ。}
+itmname_mark_map {書き込み付き地図}
+itmdescr_mark_map {失われた島クソチェアテムの探索に使われる地図。}
+itmname_mask_false {古代インディアンの仮面}
+itmdescr_mask_false {不気味な古代インディアンの仮面。 クソチェアテム島で発見された。}
+itmname_mask_true {ククルカンの仮面}
+itmdescr_mask_true { 「羽蛇神」 マヤの神ククルカンの強力なアーティファクト。}
+itmname_stonekey {石の鍵}
+itmdescr_stonekey {イツァの司祭カネクの鍵}
+itmname_Tablet_1 {古代の石板}
+itmdescr_Tablet_1 {天空の神イツァムナーの石板}
+itmname_Tablet_2 {古代の石板}
+itmdescr_Tablet_2 {マヤの太陽神キニチ・ アハウの石板。}
+itmname_Tablet_3 {古代の石板}
+itmdescr_Tablet_3 {水と雨の神チャークの石板。}
+itmname_Tablet_4 {古代の石板}
+itmdescr_Tablet_4 {火と雷雨のマヤ神トヒルの石板。}
+itmname_Tablet_5 {古代の石板}
+itmdescr_Tablet_5 {マヤの戦の神カウィルの石板。}
+itmname_Tablet_6 {古代の石板}
+itmdescr_Tablet_6 {交易の神エク・チュアの石板。}
+itmname_alexs_chest {鋼鉄の箱}
+itmdescr_alexs_chest {名匠Alexusの金属製の箱。 堅牢に施錠されている。}
+itmname_treasure_note {宝のメモ}
+itmdescr_treasure_note {この書き付けは財宝の中から見つかった。 おそらく書き手はすでにこの世を去っているだろう。 その内容は船の航海日誌の特別な欄に丁寧に写しておくべきだ。}
+itmname_PR_Letter {誰かの置き手紙}
+itmdescr_PR_Letter {古びた紙に書かれたメモ。 その内容は明らかに他人に見せるものではない。}
+itmname_quest_potion {薬草の煎じ薬}
+itmdescr_quest_potion {この薬の本当の効能を知るのは、 それを調合した者だけだ。}
+itmname_GS_letters {傭兵が届けた書簡}
+itmdescr_GS_letters {港湾長自らが記した密告書。 彼の顧客たちの航路や出航時刻が記されており、 いずれも海賊の襲撃を受けている。}
+itmname_SM_necklace_Julie {ジュリー・ ダルマニャックのネックレス}
+itmdescr_SM_necklace_Julie {ジュリーの心に寄り添う宝石。 優雅で洗練されたその輝きは、 まるで彼女の記憶を自ら守っているかのよう。 もし秘密を抱くことのできる品があるなら、 このネックレスはきっとそのひとつだろう。}
+itmname_TBP_letter {開封された手紙}
+itmdescr_TBP_letter {私を脅して無事でいられると思ったのか？ それは間違いだ。 すぐに自分の無謀さを後悔することになる。 お前の死は長く苦しいものとなり、 誰も助けてはくれない。}
+itmdescr_letter_open_Regata {レガッタ参加者への招待状}
+itmname_kaleuche_amulet1 {奇妙な護符}
+itmdescr_kaleuche_amulet1 {滑らかな小石で作られ、 派手に彩られたインディアンのお守り。}
+itmname_kaleuche_amulet1_potion {トゥットゥアタパクの薬}
+itmdescr_kaleuche_amulet1_potion {カリブ族のシャーマン、 トゥットゥアタパクがマンガローザから調合した薬。 反応速度が恒久的に上昇し、 軽装武器スキルが向上する。}
+itmname_kaleuche_amulet2 {インディアンの護符}
+itmdescr_kaleuche_amulet2 {滑らかな小石で作られ、 派手に彩られた本物のインディアンのお守り。}
+itmdescr_kaleuche_amulet2_sword {カリブ族のシャーマン、 トゥットゥアタパクが呪術をかけた護符。 チャビナビ神殿への攻撃が通じるようになり、 敵の攻撃から身を守る。 全ての武器スキルが25%上昇する。}
+itmname_kaleuche_amulet2_potion {トゥットゥアタパクの薬}
+itmdescr_kaleuche_amulet2_potion {カリブ族のシャーマン、 トゥットゥアタパクがマンガローザから調合した薬。 恒久的に耐久力が上昇し、 中装武器スキルが向上する。}
+itmname_kaleuche_amulet3 {インディアンの護符}
+itmdescr_kaleuche_amulet3 {滑らかな小石で作られ、 派手に彩られた本物のインディアンのお守り。}
+itmdescr_kaleuche_amulet3_shield {カリブ族のシャーマン、 トゥットゥアタパクが魔術をかけた護符。 チャビナビ神殿への攻撃が通じるようになり、 敵の攻撃から身を守る。 受けるダメージを25%軽減し、毒を無効化する。}
+itmname_kaleuche_amulet3_potion {トゥットゥアタパクの薬}
+itmdescr_kaleuche_amulet31_potion {カリブ族のシャーマン、 トゥットゥアタパクがマンガローザから調合した薬。 力が恒久的に上昇し、 重装武器スキルが向上する。}
+itmdescr_kaleuche_amulet32_potion {カリブ族のシャーマン、 トゥットゥアタパクがマンガローザから調合した薬。 恒久的に洞察を高め、 銃器の技能を向上させる。}
+itmdescr_kaleuche_amulet33_potion {カリブ族のシャーマン、 トゥットゥアタパクがマンガローザから調合した薬。 知力が恒久的に上昇し、 隠密スキルも強化される。}
+itmdescr_kaleuche_amulet34_potion {カリブ族のシャーマン、 トゥットゥアタパクがマンガローザから調合した薬。 リーダーシップが恒久的に上昇し、 カリスマ性も高まる。}
+itmdescr_kaleuche_amulet35_potion {カリブ族のシャーマン、 トゥットゥアタパクがマンガローザから調合した薬。 永続的に運を高め、 幸運を増す。}
+itmname_kaleuche_letter {丸めたメモ}
+itmdescr_kaleuche_letter
+{
+受取人を探し、 真夜中に城門からジャングルへの小道を進め。
+…三日後、船はChetumalの入り江に到着する。 貨物は夜に二隻の救命艇へ積み替えられる。 二隻目の船は荷下ろしの翌日になって到着する…
+}
+itmname_kaleuche_key {鉄の鍵}
+itmdescr_kaleuche_key {バルバドス灯台のチェスト用、 レジナルド・ ジャクソンの鍵。}
+itmdescr_kaleuche_key_crypt {墓地の地下室の扉の鍵。}
+itmdescr_kaleuche_key_FMQT {ルヴァスールの箱の合鍵}
+itmname_MerrimanBook {金属箱}
+itmdescr_MerrimanBook {ジョアキム・ メリマンの隠れ家から見つかった金属箱。}
+itmname_KhaelRoa_item {ジャガーの毛皮}
+itmdescr_KhaelRoa_item
+{
+チャビナビ族の酋長からの壮麗な贈り物――神ユム・ シミル自らが魔法をかけた美しいジャガーの毛皮。
+火器による与ダメージが10倍に上昇。効果は最大2日間持続。
+}
+itmname_key_candlestick_PortRoyal {鍵}
+itmdescr_key_candlestick_PortRoyal {古びた使い込まれた鍵。 何を開けるのかはまだ分からない。}
+itmname_key_candlestick_FortFrance {鍵}
+itmdescr_key_candlestick_FortFrance {古びた使い込まれた鍵。 何を開けるのかはまだ分からない。}
+itmname_key_candlestick_Villemstad {秘密結社の指輪}
+itmdescr_key_candlestick_Villemstad {大きな古びたルビーの指輪。 どうやら私の鍵となるようだ。}
+itmname_LadyBeth_Book {ブラックウッドの日記}
+itmdescr_LadyBeth_Book {惨めな男の思考。}
+itmname_LadyBeth_Map {ブラックウッドの地図}
+itmdescr_LadyBeth_Map {偉大なる宝探しの達人が目指す、 最も貴重な財宝への道。}
+itmname_BoxOfBalls {砲弾の箱}
+itmdescr_BoxOfBalls {この箱には藁と砲弾が8発だけ入っている。}
+itmname_Tutorial_key {鍵}
+itmdescr_Tutorial_key {鉄の鍵。}
+itmname_Tutorial_journal {キャプテンの航海日誌 第IV巻}
+itmdescr_Tutorial_journal {キャプテン 「ユリス」 の航海日誌・ 第4巻。 書き始めたばかりで、 まだ記録は少ない。}
+itmname_Suspicious_Potion {怪しい薬}
+itmdescr_Suspicious_Potion {うまくいってくれよ。}
+itmname_LFD_letter {マリサ・カルデラへの手紙}
+itmdescr_LFD_letter {茶色く変色したインクと時を経て黄ばんだ紙が、 この手紙の年季を物語っている。 中身はしっかりと封蝋で隠されている。 こうした手紙は、 たいてい特別な価値を持つものだ。 宛先はポルトベロのマリサ・ カルデラという人物である。}
+itmname_OZ_book {鍛冶の書}
+itmdescr_OZ_book {セバスチャンの知識の宝庫。 なぜかカード勝負で失ってしまったという。 図面やメモで埋め尽くされた重厚な古書で、 鍛冶屋にとってはまさに宝物だ。}
+itmname_OZ_letter {メモ}
+itmdescr_OZ_letter {真夜中に洞窟で落ち合おう。 荷物を持ってガレラ岬へ向かうんだ。 そこで迎えが来て、 このみすぼらしい島ともついにおさらばさ。 こんな哀れな田舎者どもより、 もっと大物の魚をぶった切るのが待ちきれないぜ。}
+itmname_wolfreeks_book {航海日誌}
+itmdescr_wolfreeks_book {ウルフリック・ イオガンセンの航海日誌}
+itmdescr_ignasio_book {イグナシオ・マルコの航海日誌}
+itmname_Bunch {近接武器の束}
+itmdescr_Bunch {一般的な斧と剣が30本入った束。}
+itmname_Dove {伝書鳩}
+itmdescr_Dove {スパイクという名の伝書バト。 この勇敢な羽の友は、 カリブのどこからでもラ・ ベガへ戻ることができる。}
+itmname_key_scotland {錆びた鍵}
+itmdescr_key_scotland {長い間朽ち果てたスコット人の骸骨から見つかった古い鍵。}
+itmname_key_ruins {銀の鍵}
+itmdescr_key_ruins {廃墟で見つかったくすんだ銀の鍵。}
+itmname_indian_poison {タイノ族の毒}
+itmdescr_indian_poison
+{
+秘密の植物と毒ガエルの粘液から作られた致命的な毒。 わずかな傷でも致死性があり、 解毒剤では治せません。 刃や弾丸に塗ることができます。
+効果は2日間持続します。
+}
+itmname_mapEnrico {カミラの地図}
+itmdescr_mapEnrico {20年前に失われ、 放棄されたスペインの鉱山村の財宝へと導く。}
+itmname_Reserve_item_01 {封印された手紙}
+itmdescr_Reserve_item_01 {これはEclatant号の船長宛ての書簡です。}
+itmdescr_Reserve_item_01_1 {オランダ西インド会社ディレクター、 ピーター・ スタイフェサント宛てのシュヴァリエ・ フィリップ・ ド・ ポワンシーからの書簡}
+itmdescr_Reserve_item_01_2 {オランダ西インド会社ディレクター、 ピーター・ スタイフェサント宛てのシュヴァリエ・ フィリップ・ ド・ ポワンシーからの書簡}
+itmdescr_Reserve_item_01_3 {ジャマイカ総督エドワード・ ドイリー大佐宛、 シュヴァリエ・ フィリップ・ ド・ ポワンシーからの書簡}
+itmname_Reserve_item_01_1 {分厚い台帳}
+itmdescr_Reserve_item_01_4 {会計台帳。}
+itmname_blackpearl {黒真珠}
+itmdescr_blackpearl {伝説の黒真珠。 船の名にぴったりだ。}
+itmname_islamona_toolbox {工具箱}
+itmdescr_islamona_toolbox {ヨーロッパ製の高級建築用工具。 船や家の建造に使用。}
+itmname_Memento_Book {グリムの日記}
+itmdescr_Memento_Book {三幕の悲劇}
+itmname_Memento_letter {メメントの手紙}
+itmdescr_Memento_letter {メメントの手紙}
+itmname_LEDR_Book {ディエゴ・ ベラスケス・ デ・ クエリャルの日誌}
+itmdescr_LEDR_Book {スペインのコンキスタドールであり、 キューバ初代総督ディエゴ・ ベラスケス・ デ・ クエリャルの日誌。}
+itmtype_gun {火器}
+itmtype_blade {近接武器}
+itmtype_spyglass {望遠鏡}
+itmtype_patent {特許}
+itmtype_cirass {防具}
+itmtype_maps {地図}
+itmtype_tool {道具}
+itmtype_talisman {護符}
+itmtype_slot {護符}
+itmtype_special {特殊}
+itmtype_ammo {弾薬}
+itmtype_lantern {道具}
+itmtype_hat {帽子}
+itmtype_musket {火器}
+itmname_LEDR_key {鉄の鍵}
+itmdescr_LEDR_key {司教の遺体から見つかった鍵。 ゴンサロによれば、 彼は決して手放さなかったという。 好奇心旺盛な船乗りに隠し場所を嗅ぎつけられるのを恐れていたのだろう――でなければ、 なぜ鍵を持ち歩いていたのか？}
+itmname_recipe_potion1 {回復薬のレシピ}
+itmdescr_recipe_potion1 {治癒薬の作り方がすべて書かれたレシピ。}
+itmname_blade_WR {再誕}
+itmdescr_blade_WR
+{
+ルパート・ ノースウッドの壮麗なるサーベル。
+黄金の不死鳥が飾られた重厚なガードは、 痛みと再生の証人。 刃は鏡のように輝き、 フラーには 「VULNERATUS NON VICTUS ― 傷つけられても屈せず」 と刻まれている。 この剣が奪った魂の数は、 神のみぞ知る……
+}
+itmname_hat11 {テレサの帽子}
+itmdescr_hat11 {メアリーの母のヘッドピース。 オレリー・ ベルタンが大切に保管していた。 時を経ても、 かつての優雅さと魅力は色褪せていない。}
+itmname_talisman21 {密輸業者のお守り}
+itmdescr_talisman21 {ハーブと灰の小袋、 黒い液体の小瓶、 そして髑髏のメダリオン――外の者には奇妙な組み合わせだが、 闇取引の通には貴重な護符。 真の密輸人だけがこの護符を身につける。}
+itmname_blade_WR_1 {再誕}
+itmdescr_blade_WR_1
+{
+ルパート・ ノースウッドの壮麗なサーベル。  
+黄金の不死鳥が飾られた重厚なガードは、 痛みと再生の証。 刃は鏡のように輝き、 フラーには 「VULNERATUS NON VICTUS ― 傷つけられても屈せず」 と刻まれている。 この剣が奪った魂の数は、 神のみぞ知る……
+}
+itmname_piratesJournal_1 {海賊の日記}
+itmdescr_piratesJournal_1 {粗末な素材で作られ、 何度も持ち主が変わった形跡のある古びた書類。 襲撃や密輸の記録が記されている。}
+itmname_piratesJournal_2 {海賊の日誌}
+itmdescr_piratesJournal_2 {煮込んだ革で綴じられた海賊船の航海日誌。 中には、 商隊への襲撃や公海でのゆすりが丁寧な筆致で記されている。}
+itmname_piratesJournal_3 {海賊の掟}
+itmdescr_piratesJournal_3 {革と金属で装丁された分厚い船の書類。 エンボス加工と宝石で豪華に飾られた表紙だけでも莫大な価値がある。 中には冒険小説さながらの記録が並ぶ――植民地への襲撃、 王室船団の略奪、 大規模な海戦の数々。}
+itmname_pistol15 {記念ピストル}
+itmdescr_pistol15 {名誉あるオランダ西インド会社での五年間の功績を称え、 十七人評議会から贈られた特注品。}
+itmname_VD_Contract {ファン・ドールンの契約}
+itmdescr_VD_Contract {海軍登記局長の本契約書。7年前に失効済み。 こんな重要な書類が、 あなたの到着前に都合よく机に置かれていたのは怪しい。}
+itmname_BookSp4 {奇妙な本}
+itmdescr_BookSp4 {この本は表紙の色だけでなく、 その重さでも他と一線を画している。}
+itmname_Doc1Sp4 {ブラジル情勢報告}
+itmdescr_Doc1Sp4 { }
+itmname_Doc2Sp4 {アンティグアからの手紙}
+itmdescr_Doc2Sp4 { }
+itmname_VD_key {ヴァン・ドーンの鍵}
+itmdescr_VD_key {海軍登記所の地下室を解放する。}
+itmname_CatharinaLetter {カタリナからの手紙}
+itmdescr_CatharinaLetter {上質な紙に書かれた手紙。 今もなお、 愛しい美しい女性の香りが残る。 数週間前に届いたが、 まだ読まれていない。}
+itmname_Visser_Key {マールテン・フィッサーの鍵}
+itmdescr_Visser_Key {マールテン・ ヴィッサーがマイケル・ ローゼンクラフト船長から賄賂を受け取り、 海軍登録簿に記載した証拠。}

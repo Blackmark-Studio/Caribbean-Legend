@@ -5,17 +5,17 @@ newline
 BasicDefense {Grundverteidigung}
 perkBasicDefense {Reduziert erlittenen Schaden um $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Fortgeschrittene Verteidigung}
-perkAdvancedDefense {Verringert erlittenen Schaden um $percent($perkBaseValue(AdvancedDefence|1)) und gegnerischen kritischen Schaden um $percent($perkBaseValue(AdvancedDefence|2)).}
+perkAdvancedDefense {Verringert erlittenen Schaden um $percent($perkBaseValue(AdvancedDefense|1)) und gegnerischen kritischen Schaden um $percent($perkBaseValue(AdvancedDefense|2)).}
 CriticalHit {Kritischer Treffer}
-perkCriticalHit {Erhöht die Grundchance auf kritische Treffer um 3,5 %.}
+perkCriticalHit {Erhöht die Grundchance auf kritische Treffer um $percent($perkBaseValue(CriticalHit|1)) .}
 Grus {Starker Rückhalt}
 perkGrus {Erhöht das Traggewicht um 35 Pfund.}
 Tireless {Unermüdlichkeit}
-perkTireless {Energieerholungsgeschwindigkeit steigt um 15 %.}
+perkTireless {Energieerholungsgeschwindigkeit steigt um $percent($perkBaseValue(Tireless|1)) .}
 HardHitter {Schwere Hand}
-perkHardHitter {Schwere Angriffe mit Schweren Waffen verursachen 15 % mehr Schaden. Schaltet fortgeschrittenen Schweren Angriff frei.}
+perkHardHitter {Schwere Angriffe mit Schweren Waffen verursachen $percent($perkBaseValue(HardHitter|1))  mehr Schaden. Schaltet fortgeschrittenen Schweren Angriff frei.}
 BladeDancer {Tanz mit Säbeln}
-perkBladeDancer {Rundumschlag mit gekrümmten Waffen verursacht 30 % mehr Schaden.}
+perkBladeDancer {Rundumschlag mit gekrümmten Waffen verursacht $percent($perkBaseValue(BladeDancer|1))  mehr Schaden.}
 Sliding {Unwiderstehlicher Schlag}
 perkSliding {Hieb- oder Stichangriff mit einer leichten Waffe kann mit einer Chance von $percent($perkBaseValue(Sliding|1)) einen Block durchbrechen, indem ein einzigartiger fortgeschrittener Schlag eingesetzt wird.}
 Gunman {Musketier}
@@ -28,7 +28,7 @@ perkGunProfessional {Erhöht Schaden und Nachladegeschwindigkeit von Feuerwaffen
 IronWill {Eiserner Wille}
 perkIronWill {Ermöglicht es dir, alle 3 Minuten eine tödliche Wunde zu überleben.}
 SharedExperience {Schnelllerner}
-perkSharedExperience {Beschleunigt die Fähigkeitsentwicklung um 5 %.}
+perkSharedExperience {Beschleunigt die Fähigkeitsentwicklung um 15 %.}
 Medic {Gesunde Gewohnheiten}
 perkMedic {Erhöht die Gesundheit um 25 Punkte. Verdoppelt die passive Heilung, wenn die Gesundheit unter der Hälfte des Maximums liegt.}
 HPPlus {Wachsende Gesundheit}
@@ -102,25 +102,13 @@ perkFlagPir
 Fähigkeit, deine Flagge zur Jolly Roger zu wechseln.~Diese Fertigkeit ist nur für den Spieler verfügbar.
 }
 FlagEng {Flagge Englands}
-perkFlagEng
-{
-Die Entdeckungswahrscheinlichkeit hängt von Tarnung, Schiffsklasse und Flottengröße, gegnerischer Flottengröße und Bedrohungsstufe ab.~Fähigkeit nur für Spieler verfügbar
-}
+perkFlagEng {Sie können nur Flaggen verwenden, die dem Rate Ihres Schiffes entsprechen. Um eine Flagge zu erhalten, müssen Sie ein Schiff des entsprechenden Rates erobern oder eine Lizenz erwerben.}
 FlagFra {Flagge von Frankreich}
-perkFlagFra
-{
-Die Entdeckungswahrscheinlichkeit hängt von Tarnung, Schiffsklasse und Flottengröße, gegnerischer Flottengröße und Bedrohungsstufe ab.~Fähigkeit nur für Spieler verfügbar
-}
+perkFlagFra {Sie können nur Flaggen verwenden, die dem Rate Ihres Schiffes entsprechen. Um eine Flagge zu erhalten, müssen Sie ein Schiff des entsprechenden Rates erobern oder eine Lizenz erwerben.}
 FlagSpa {Flagge von Spanien}
-perkFlagSpa
-{
-Die Entdeckungswahrscheinlichkeit hängt von Tarnung, Schiffsklasse und Flottengröße, gegnerischer Flottengröße und Bedrohungsstufe ab.~Fähigkeit nur für Spieler verfügbar
-}
+perkFlagSpa {Sie können nur Flaggen verwenden, die dem Rate Ihres Schiffes entsprechen. Um eine Flagge zu erhalten, müssen Sie ein Schiff des entsprechenden Rates erobern oder eine Lizenz erwerben.}
 FlagHol {Flagge der Niederlande}
-perkFlagHol
-{
-Die Entdeckungswahrscheinlichkeit hängt von Tarnung, Schiffsklasse und Flottengröße, gegnerischer Flottengröße und Bedrohungsstufe ab.~Fähigkeit nur für Spieler verfügbar
-}
+perkFlagHol {Sie können nur Flaggen verwenden, die dem Rate Ihres Schiffes entsprechen. Um eine Flagge zu erhalten, müssen Sie ein Schiff des entsprechenden Rates erobern oder eine Lizenz erwerben.}
 Troopers {Belagerungstaktik}
 perkTroopers
 {
@@ -192,11 +180,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Schnelle Hände}
-perkFastHands {Erhöht die Zieh- und Holstergeschwindigkeit von Schusswaffen um 20 %.}
+perkFastHands {Erhöht die Zieh- und Holstergeschwindigkeit von Schusswaffen um $percent($perkBaseValue(FastHands|1)) .}
 AmmoRig {Ausrüstung}
-perkAmmoRig {Das Nachladen von Schusswaffen ist 5 % schneller.}
+perkAmmoRig {Das Nachladen von Schusswaffen ist $percent($perkBaseValue(AmmoRig|1))  schneller.}
 Preaim {Einschießen}
-perkPreaim {Zielmodus ist 15 % schneller.}
+perkPreaim {Zielmodus ist $percent($perkBaseValue(Preaim|1))  schneller.}
 KeenEye {Scharfes Auge}
 perkKeenEye {Kopfschüsse verursachen $percent($perkBaseValue(KeenEye|1)) mehr Schaden.}
 PowderFeel {Sinn für Schwarzpulver}
@@ -208,29 +196,29 @@ perkLeadRain {Kartätsche verursacht 5 % mehr Schaden für jeden getroffenen Fei
 ShootToKill {Schießbefehl}
 perkShootToKill {Ein Treffer mit einer Schusswaffe verlangsamt den Feind und reduziert seine Bewegungsgeschwindigkeit um 25 %. Dauer: 5 Sekunden.}
 Muscles {Berg aus Muskeln}
-perkMuscles {Alle Angriffe mit schweren Waffen verbrauchen 10 % weniger Energie und sind 4 % schneller. Betäubungserholung ist 15 % schneller.}
+perkMuscles {Alle Angriffe mit schweren Waffen verbrauchen $percent($perkBaseValue(Muscles|1))  weniger Energie und sind $percent($perkBaseValue(Muscles|2))  schneller. Betäubungserholung ist $percent($perkBaseValue(Muscles|3))  schneller.}
 Conquest {Conquista}
-perkConquest {Hieb-Angriffe und schwere Angriffe mit geraden langen Waffen verursachen 15 % mehr Schaden.}
+perkConquest {Hieb- und schwere Angriffe mit Langwaffen verursachen $percent($perkBaseValue(Conquest|1)) mehr Schaden.}
 PalaceGuard {Palastwache}
-perkPalaceGuard {Schwere gekrümmte Waffen verursachen 15 % mehr Schaden mit Angriffen und zusätzlich 5 % mehr Schaden mit Rundumschlägen.}
+perkPalaceGuard {Schwere gekrümmte Waffen verursachen $percent($perkBaseValue(PalaceGuard|1)) mehr Schaden mit Angriffen und zusätzlich 5 % mehr Schaden mit Rundumschlägen.}
 CunningStrike {Heimtückischer Schlag}
-perkCunningStrike {Leichte Waffen haben 3 % erhöhte Krit-Chance. Angriffe von hinten verursachen 10 % mehr Schaden.}
+perkCunningStrike {Leichte Waffen haben $percent($perkBaseValue(CunningStrike|1))  erhöhte Krit-Chance. Angriffe von hinten verursachen $percent($perkBaseValue(CunningStrike|2))  mehr Schaden.}
 Heartbreaker {Herzensbrecher}
-perkHeartbreaker {Schnelle Angriffe mit geraden langen Waffen verursachen 10 % mehr Schaden und sind 3 % schneller.}
+perkHeartbreaker {Schnelle Angriffe mit geraden Waffen verursachen $percent($perkBaseValue(Heartbreaker|1)) mehr Schaden und sind um $percent($perkBaseValue(Heartbreaker|2)) schneller.}
 Dodgy {Glück}
-perkDodgy {Sprint-Schub ist 30 % stärker und verbraucht weniger Energie.}
+perkDodgy {Sprint-Schub ist $percent($perkBaseValue(Dodgy|1))  stärker und verbraucht weniger Energie.}
 Exhaustion {Erschöpfung}
-perkExhaustion {Parieren mit kurzen Waffen entzieht 20 % mehr Energie. Gegnerische Betäubung hält 10 % länger an.}
+perkExhaustion {Parieren mit kurzen Waffen entzieht  $percent($perkBaseValue(Exhaustion|1)) mehr Energie. Gegnerische Betäubung hält 10 % länger an.}
 Reaper {Schnitter}
-perkReaper {Kritischer Schaden um 30 % erhöht, und kritische Chance bei schnellen Angriffen um 3 % erhöht.}
+perkReaper {Kritischer Schaden um  $percent($perkBaseValue(Reaper|1))  erhöht, und kritische Chance bei schnellen Angriffen um  $percent($perkBaseValue(Reaper|2))  erhöht.}
 MarathonRunner {Marathonläufer}
-perkMarathonRunner {Sprint wird 15 % schneller und verbraucht ein Drittel weniger Energie.}
+perkMarathonRunner {Sprint wird $percent($perkBaseValue(MarathonRunner|2))  schneller und verbraucht ein Drittel weniger Energie.}
 PerfectBalance {Perfektes Gleichgewicht}
-perkPerfectBalance {Mittlere Waffen in der Hand verringern erlittenen Schaden um 10 %.}
+perkPerfectBalance {Mittlere Waffen in der Hand verringern erlittenen Schaden um $percent($perkBaseValue(PerfectBalance|1)) .}
 Flanking {Flankieren}
-perkFlanking {Angriffe mit gekrümmten Waffen sind 5 % schneller. Schaltet fortgeschrittenen Rundumschlag frei.}
+perkFlanking {Angriffe mit gekrümmten Waffen sind $percent($perkBaseValue(Flanking|1))  schneller. Schaltet fortgeschrittenen Rundumschlag frei.}
 SabreHurricane {Säbelwirbel}
-perkSabreHurricane {Hieb- und schnelle Angriffe mit mittleren gekrümmten Waffen haben einen größeren Bogen, treffen benachbarte Feinde und verursachen 10 % mehr Schaden.}
+perkSabreHurricane {Hieb- und schnelle Angriffe mit mittleren gekrümmten Waffen haben einen größeren Bogen, treffen benachbarte Feinde und verursachen $percent($perkBaseValue(SabreHurricane|1))  mehr Schaden.}
 Practice {Praxisentwicklung}
 perkPractice {Jeder ausrüstbare herstellbare Gegenstand erhöht alle Fähigkeiten um 2.}
 Strychnine {Strychnin}

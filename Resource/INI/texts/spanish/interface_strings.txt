@@ -6,7 +6,8 @@ Load game confirm {¿Seguro que quieres cargar esta partida?}
 Unable to Load save game {No se ha podido cargar la partida.}
 Salary info
 {
-Tu tripulación te pide el salario del mes. ¿Se lo das?
+Tu tripulación te pide el salario del mes. 
+¿Se lo das?
 }
 Officer info {Tus oficiales demandan su salario mensual:}
 All info {Cantidad:}

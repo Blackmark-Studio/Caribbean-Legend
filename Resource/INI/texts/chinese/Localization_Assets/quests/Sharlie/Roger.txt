@@ -26,8 +26,8 @@ Roger_25 {一小时后... @<NewStr()> 丝绸已卸载给买家}
 Roger_26 {Moray}
 Roger_27 {Paul}
 Roger_28 {Chant}
-Roger_29 {Jean}
-Roger_30 {Picard}
+Roger_29 { }
+Roger_30 { }
 Roger_31 {从船的武器库中取出了30件冷兵器}
 Roger_32 {收集冷兵器 - 30件}
 Roger_33 {没有冷兵器}

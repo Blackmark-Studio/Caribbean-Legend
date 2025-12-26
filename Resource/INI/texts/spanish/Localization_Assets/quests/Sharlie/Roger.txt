@@ -26,8 +26,8 @@ Roger_25 {Una hora después...@<NewStr()>La seda fue descargada al comprador.}
 Roger_26 {Moray}
 Roger_27 {Paul}
 Roger_28 {Chant}
-Roger_29 {Jean}
-Roger_30 {Picard}
+Roger_29 { }
+Roger_30 { }
 Roger_31 {Se han extraído 30 piezas de armas blancas del arsenal del barco}
 Roger_32 {Armas blancas reunidas: 30 piezas}
 Roger_33 {Sin armas blancas}

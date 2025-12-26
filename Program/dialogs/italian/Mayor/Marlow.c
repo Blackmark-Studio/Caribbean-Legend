@@ -1,4 +1,5 @@
 // Захария Марлоу, Чёрный Пастор, Пуэрто-Принсипе, Куба
+int iMarlowTotalTemp;
 void ProcessDialogEvent()
 {
 	ref NPChar, sld;
@@ -28,6 +29,11 @@ void ProcessDialogEvent()
                 case "repeat":
                     if (npchar.angry.name == "Firsttime") Dialog.CurrentNode = "AngryRepeat_1";
                     if (npchar.angry.name == "I_know_you_good") Dialog.CurrentNode = "AngryRepeat_2";
+                    if (npchar.angry.name == "pirate_threat")
+                    {
+                        if (Dialog.CurrentNode == "I_know_you_good") Dialog.CurrentNode = "AngryRepeat_2";
+                        else Dialog.CurrentNode = "AngryRepeat_1";
+                    }
                 break;
             }
         }
@@ -36,18 +42,26 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-            dialog.text = NPCStringReactionRepeat("Hai qualche affare con me? Se non ne hai, allora vattene da qui!","Credo di essermi spiegato chiaramente.","Nonostante mi sia espresso chiaramente, continui a infastidirmi!","Bene, sto stancando di questa maleducanza.","ripeti",3,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("Me ne sto già andando.","Certo, Pastore.","Mi dispiace, Pastore.","Ops...",npchar,Dialog.CurrentNode);
-			link.l1.go = "exit";
-			NextDiag.TempNode = "First time";
-			
-			if (sti(pchar.GenQuest.Piratekill) > 20)
+            if (sti(pchar.GenQuest.Piratekill) > 20)
 			{
-				dialog.text = RandPhraseSimple("Sei pazzo? Volevi fare il macellaio? Tutti i pirati sono arrabbiati con te, ragazzo, sarebbe meglio che tu lasciassi questo posto.","Sembra che tu sia impazzito, ragazzo. Volevi allungare un po' le mani? Senza offesa, ma non hai nulla da fare qui. Sparisci!");
+				dialog.text = RandPhraseSimple("Sei impazzito? Volevi fare il macellaio? Tutti i pirati sono arrabbiati con te, ragazzo, faresti meglio a lasciare questo posto...","Sembra che tu sia impazzito, ragazzo. Volevi allungare un po' le mani? Senza offesa, ma qui non hai nulla da fare. Sparisci!");
 				link.l1 = RandPhraseSimple("Ascolta, voglio risolvere la situazione...","Aiutami a risolvere questo problema...");
 				link.l1.go = "pirate_town";
 				break;
 			}
+			
+			link.l0 = ""+npchar.name+", vorrei parlare della mia sicurezza in mare. I ragazzi della Fratellanza della Costa sembrano troppo interessati alla mia umile persona. Potresti calmarli un po'?";
+			link.l0.go = "pirate_threat";
+			
+			dialog.text = NPCStringReactionRepeat("Hai qualcosa da dirmi? No? Allora vattene da qui!",
+						"Credo di essermi spiegato chiaramente, smetti di infastidirmi.","Nonostante mi sia spiegato chiaramente, continui a infastidirmi!",
+						"Bene, sto perdendo la pazienza con questa maleducazione.","ripeti",3,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("Me ne sto già andando.",
+						"Certo, "+npchar.name+"...",
+						"Mi dispiace, "+npchar.name+"...",
+						"Ahi...",npchar,Dialog.CurrentNode);
+			link.l1.go = "exit";
+			NextDiag.TempNode = "First time";
 			
 			//--> Сага
 			if(CheckAttribute(pchar, "questTemp.Saga.SharkHunt") && !CheckAttribute(npchar, "quest.sharkbegin"))
@@ -184,18 +198,27 @@ void ProcessDialogEvent()
 		break;
 
         case "I_know_you_good":
-            dialog.text = NPCStringReactionRepeat(GetFullName(pchar)+", Sono lieto di vederti! Cosa vuoi?","Cosa altro vuoi?","Di nuovo? Non disturbare la gente se non hai nulla da fare!","Sei un "+GetSexPhrase("bravo corsaro","brava ragazza")+", quindi puoi vivere per ora. Ma non voglio più parlarti.","ripeti",10,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("Sono solo di passaggio.","Niente...","Bene, Pastore, mi dispiace...","Maledizione, colpa mia!",npchar,Dialog.CurrentNode);
-			link.l1.go = "exit";
-			NextDiag.TempNode = "I_know_you_good";
-			
-			if (sti(pchar.GenQuest.Piratekill) > 20)
+            if (sti(pchar.GenQuest.Piratekill) > 20)
 			{
-				dialog.text = RandPhraseSimple("Sei pazzo? Volevi fare il macellaio? Tutti i pirati sono arrabbiati con te, ragazzo, quindi sarebbe meglio per te lasciare questo posto...","Sembra che tu sia impazzito, ragazzo. Volevi allungare un po' le mani? Senza offesa, ma non hai nulla da fare qui. Sparisci!");
+				dialog.text = RandPhraseSimple("Sei impazzito? Volevi fare il macellaio? Tutti i pirati sono arrabbiati con te, ragazzo, faresti meglio a lasciare questo posto...","Sembra che tu sia impazzito, ragazzo. Volevi allungare un po' le mani? Senza offesa, ma qui non hai nulla da fare. Sparisci!");
 				link.l1 = RandPhraseSimple("Ascolta, voglio risolvere la situazione...","Aiutami a risolvere questo problema...");
 				link.l1.go = "pirate_town";
 				break;
 			}
+			
+			link.l0 = ""+npchar.name+", vorrei parlare della mia sicurezza in mare. I ragazzi della Fratellanza della Costa sembrano troppo interessati alla mia umile persona. Potresti calmarli un po'?";
+			link.l0.go = "pirate_threat";
+			
+			dialog.text = NPCStringReactionRepeat("Hai qualcosa da dirmi? No? Allora vattene da qui!",
+						"Credo di essermi spiegato chiaramente, smetti di infastidirmi.","Nonostante mi sia spiegato chiaramente, continui a infastidirmi!",
+						"Bene, sto perdendo la pazienza con questa maleducazione.","ripeti",3,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("Me ne sto già andando.",
+						"Certo, "+npchar.name+"...",
+						"Mi dispiace, "+npchar.name+"...",
+						"Ahi...",npchar,Dialog.CurrentNode);
+			link.l1.go = "exit";
+			NextDiag.TempNode = "First time";
+			
 			//поручение капитана - выкуп
 			if (CheckAttribute(pchar, "GenQuest.CaptainComission") && CheckAttribute(pchar,"GenQuest.CaptainComission.toMayor"))
 			{
@@ -657,6 +680,55 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			AddMoneyToCharacter(pchar, -1000000);
 			pchar.GenQuest.Piratekill = 0;
+		break;
+		
+		case "pirate_threat":
+			if (GetNpcQuestPastDayWOInit(NPChar, "ThreatTalk") == 0)
+			{
+				dialog.text = NPCStringReactionRepeat("Ne abbiamo già parlato oggi.",
+				                                      "Non sono stato abbastanza chiaro?",
+				                                      "La tua insistenza sta diventando fastidiosa.",
+				                                      "Mi hai davvero stancato. Fuori di qui!",
+				                                      "repeat", 3, npchar, Dialog.CurrentNode);
+				link.l1 = HeroStringReactionRepeat("Forse un’altra volta...",
+				                                   "Certo, "+npchar.name+"...",
+				                                   "Scusa, "+npchar.name+"...",
+				                                   "Ahi...", npchar, Dialog.CurrentNode);
+				link.l1.go = "exit";
+				break;
+			}
+			if (iGPThreat != 0)
+			{
+				iBarbazonTotalTemp = 10 * iGPThreatRate;
+				dialog.text = "Ah! I ragazzi della nostra fratellanza ti stanno dando del filo da torcere, eh, " + GetSexPhrase("amico", "amica") + "? Posso tenerli a bada per un po’. Ma ti costerà caro. " + FindRussianDublonString(iBarbazonTotalTemp) + " sul tavolo, e siamo d’accordo.";
+				if (PCharDublonsTotal() > iBarbazonTotalTemp)
+				{
+					if (iGPThreat < 5) link.l0 = "Certo, ecco i tuoi soldi.";
+					else link.l0 = "Sembra che non abbia scelta. Ecco i tuoi soldi.";
+					link.l0.go = "pirate_threat_pay";
+				}
+				link.l1 = "Tornerò un’altra volta...";
+				link.l1.go = "exit";
+			}
+			else
+			{
+				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
+				if (NextDiag.TempNode != "I_know_you_good")
+					dialog.text = "Sei impazzit" + GetSexPhrase("o", "a") + "? I nostri ragazzi ti evitano come la peste. Sparisci e smettila di scocciarmi.";
+				else
+					dialog.text = "Di cosa stai parlando, " + GetSexPhrase("amico", "amica") + "? Sei una vera seccatura — persino i cani lo sentono. Nessuno vuole avere a che fare con te.";
+				link.l1 = "Ho capito...";
+				link.l1.go = "exit";
+			}
+		break;
+
+		case "pirate_threat_pay":
+			iGPThreatRate = 0;
+			iGPThreat = 0;
+			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
+			RemoveDublonsFromPCharTotal(iBarbazonTotalTemp);
+			DialogExit();
+			PiratesDecreaseNotif("");
 		break;
 	}
 }

@@ -1,0 +1,2 @@
+LAi_fightparams_1 {Desvio do tiro}
+LAi_fightparams_2 {O Chapéu de Mercenário foi destruído.}

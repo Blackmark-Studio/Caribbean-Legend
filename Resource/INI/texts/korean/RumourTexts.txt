@@ -1,0 +1,46 @@
+Start_GoldFleet_t0 {스페인 국고로 금과 은을 운반하는 함대가 최근 포르토벨로 항을 떠나 아바나로 향했다는 소문이 돌고 있다.}
+Start_GoldFleet_t1 {최근 포르토벨로에서 잉카와 아즈텍의 은과 금으로 가득 찬 귀중한 화물을 실은 스페인 함대가 출항했습니다. 이 호위대는 하바나로 향하며, 그곳에서 보물은 스페인으로 운송될 예정입니다.}
+Start_GoldFleet_t2 {소문에 따르면 스페인 금 수송대가 포르토벨로에서 아바나로 은과 금을 싣고 항해했다고 해. 그 호위에는 거대한 마노워와 프리깃, 그리고 각각 두 개의 포갑판을 가진 갤리온들이 있었고, 내가 알아보지 못한 다른 군함들도 함께했다고 해.}
+End_GoldFleet_t0 {스페인 금 수송대가 쿠바에 무사히 도착했습니다. 이제 모아진 은과 금은 안전하게 스페인으로 운송됩니다.}
+End_GoldFleet_t1 {스페인 금 수송선단의 모든 선박이 무사히 아바나에 도착했습니다. 페루와 멕시코의 모든 금과 은이 곧 유럽으로 운송될 예정입니다.}
+End_GoldFleet_t2 {스페인 함대가 아바나에 도착했습니다. 은과 금 화물은 안전하게 곧 스페인으로 운송될 예정입니다.}
+Defeat_GoldFleet_t0 {포르토벨로에서 아바나로 향하던 스페인 금화 호송대가 목적지에 도착하지 못했다는 소문이 돌고 있습니다. 무슨 일이 있었는지, 끔찍한 폭풍이나 해적 때문인지 신만이 아시겠지요. 하지만 그토록 용감하거나, 아니면 미친 해적이 정말 있을지는 의문입니다.}
+Defeat_GoldFleet_t1 {포르토벨로에서 은과 금을 실어 나르던 스페인 금화 함대가 흔적도 없이 사라졌다. 아무도 진실을 알지 못하지만, 해적들의 소행이라는 소문이 돈다!}
+Defeat_GoldFleet_t2 {포르토벨로에서 보물을 실어 나르던 황금 함대가 아직도 아바나에 도착하지 않았다. 벌써 도착했어야 할 텐데, 무슨 일이 있었던 걸까? ... 이맘때쯤엔 거센 폭풍이 자주 몰아치니, 아무도 알 수 없다.}
+Attak_GoldFleet_t0 {스페인 금화 함대가 신세계의 은, 금, 보물을 운반하던 중 습격을 받아 여러 척의 배를 잃었다고 한다.}
+Attak_GoldFleet_t1 {바다는 이제 안전하지 않아! 포르토벨로에서 아바나로 향하던 스페인 금화 함대가 해적이나 영국 사략선, 아니면 어쩌면 프랑스 놈들에게까지 습격당했다지 뭐야! 정말 대담하기 짝이 없군! 저 자식들이 교수형 당하는 꼴을 꼭 보고 싶다!}
+Attak_GoldFleet_t2 {날이 갈수록 상황이 악화되고 있습니다! 포르토벨로에서 아바나로 신세계의 은, 금, 그리고 온갖 보물을 실어 나르던 스페인 금화 함대가 대담한 해적들의 공격을 받았습니다! 오, 성모 마리아여! 정말로 세상의 끝이 다가오고 있습니다!}
+Init_GoldFleet_t0 {소문에 따르면 포르토벨로에서 스페인 금화 함대가 출항 준비 중이라고 합니다. 출항일은 비밀에 부쳐졌지만, 초반 #sgold_month#에 함대가 쿠바로 향할 거라고들 합니다.}
+Init_GoldFleet_t1 {황금 함대의 배에 금과 은이 실리고 있다는 소문이 돌고 있습니다. 호위대는 #sgold_month# 상반기에 쿠바로 출항할 예정입니다.}
+Init_GoldFleet_t2 {포르토벨로에서 쿠바로 향하는 금 수송선이 #sgold_month# 상반기에 출항할 예정입니다. 그때까지 확보된 모든 금과 은이 화물창에 실릴 것입니다.}
+MerchantOnMapTo_t0 {소문에 따르면 "#sShipName#" 호가 #snation# 국기를 달고 #ssColony# 식민지에서 우리 쪽으로 오고 있는데, 화물창에는 #sQuestGoodsIdx#이(가) 가득 실려 있다고 합니다.}
+MerchantOnMapTo_t1 {현지 상인은 #ssColony# 식민지에서 #snation# 국기를 단 "#sShipName#" 선박이 #sQuestGoodsIdx# 화물을 싣고 도착하길 기다리고 있습니다.}
+MerchantOnMapTo_t2 {#sShipName#호에 탄 상인이 #snation# 국기 아래에서 #ssColony# 식민지에서 온 #sQuestGoodsIdx#을(를) 운반 중이라고 들었어.}
+MerchantOnMap_t0 {상인선 "#sShipName#"이 #snation# 국기를 달고 #sQuestGoodsIdx#을(를) 싣고 #ssNextColony#로 출항하기 위해 조수를 기다린다고 합니다.}
+MerchantOnMap_t1 {#snation#의 후원을 받는 부유한 상인이 "#sShipName#" 선박을 전세냈다고 합니다. 곧 #ssNextColony#로 #sQuestGoodsIdx#을(를) 싣고 출항할 예정입니다.}
+MerchantOnMap_t2 {현지 상인이 "#sShipName#" 선박에 #snation#을(를) 위한 #sQuestGoodsIdx# 화물을 실었으며, 곧 #ssNextColony#로 출항할 예정입니다.}
+MerchantRumour_t0 {#sShipName# 호가 #snation# 국기를 달고 #ssColony#에서 #ssNextColony#로 #sQuestGoodsIdx# 화물을 싣고 항해하다가 정체불명의 해적에게 침몰당했다는 소문을 들었어!}
+MerchantRumour_t1 {#sShipName#호가 #snation# 국기를 달고 #ssColony#에서 #sQuestGoodsIdx#을(를) 싣고 #ssNextColony#로 향하다가, 화물과 선원 모두와 함께 실종되었다는 소문을 들었어!}
+MerchantRumour_t2 {최근에 어떤 해적이 #ssColony# 식민지에서 출항한 #snation# 상선을 습격해 선원 전원을 죽이고 #sQuestGoodsIdx# 화물을 모두 빼앗았다는 끔찍한 소문이 돌고 있습니다. 혹시 그게 당신은 아니겠죠, 선장?}
+GetColonyPrices_t0 {최근 선술집에서 두 명의 선장이 #sColony# 마을 상점의 물가에 대해 이야기하는 것을 들었습니다. (가격 목록 입수)}
+WaitInTavern_t0 {#sPsHero_Name#이(가) 배를 잃고 지금은 #sTown_Name# 선술집에서 럼주로 시름을 달랜다고들 합니다.}
+WaitInTavern_t1 {어제 도둑질로 체포된 취한 선원이 술친구들에게 #sPsHero_Name#이 카드 게임에서 자신의 배를 잃고 지금 #sTown_Name#의 선술집에서 순풍을 기다리고 있다고 말하는 걸 들었어.}
+WaitInTavern_t2 {선술집의 선원들은 #sPsHero_Name#이 최근에 정말 운이 없었다고들 하네. 세관원들이 그의 배를 침몰시켰고, 그는 #sTown_Name#에서 간신히 교수형을 면했다고 해.}
+WorkOnMayor_t0 {오늘 #sPsHero_Name#이(가) 우리 총독과 함께 있는 걸 봤어. 각하께서 또 다른 "흥미로운" 임무를 내리신 모양이야.}
+WorkOnMayor_t1 {우리 주지사에게 새로운 총애를 받는 이가 생겼다는 소문이 돌고 있어. #sPsHero_Name# 선장은 관저에 자주 드나들며 은밀한 임무를 맡고, 그분의 따님과 연문까지 있다는군.}
+WorkOnMayor_t2 {요리사는 전하의 하녀에게서 #sPsHero_Name#이(가) 그와 가까운 사이라고 들었다고 내게 말했다. 오늘 아침 일찍 그는 분명 중요한 일이 있어 관저로 서둘러 갔다.}
+SailToIsland_t0 {#sPsHero_Name#이(가) #sTo# #sTown_Name#으로 간다고 했어. 뭔가 살 만한 게 있을지도 몰라.}
+SailToIsland_t1 {#sPsHero_Name#이(가) #sTo# #sTown_Name#으로 무역을 위해 항해 중이래. 그의 선원 중 한 명이 선술집에서 그러더군.}
+SailToIsland_t2 {어제 #sPsHero_Name#는 동네 선술집에서 만취해 큰 소리로 자신이 #sTo# #sTown_Name#에 볼일이 있어 간다고 떠들었어.}
+WorkOnStore_t0 {선술집의 한 선원이 #sPsHero_Name#이(가) #sGood#을(를) #sTown_Name#에 운반하기로 했다고 말했다.}
+WorkOnStore_t1 {우리 상인의 조수가 #sPsHero_Name#이(가) 그의 주인 가게에서 #sGood#을(를) #sTown_Name#까지 운송하기로 했다고 전했습니다.}
+WorkOnStore_t2 {우리 바텐더가 #sPsHero_Name#이(가) 선술집에서 선원들을 모집해 현지 상점의 #sGood#을(를) 싣고 #sTown_Name#으로 항해할 거라고 했어요.}
+WorkWithContra_t0 {#sPsHero_Name#이 수상한 인물과 얘기하는 걸 봤어. 밀수꾼이었다고 하더라.}
+WorkWithContra_t1 {#sPsHero_Name#이(가) 밀수품으로 가득 찬 화물창을 가져왔다고들 해. 벌써 팔았을 수도 있고, 아닐 수도 있지...}
+WorkWithContra_t2 {나는 #sPsHero_Name#이(가) 우리 밀수업자와 대화하는 걸 엿들었다. 그들은 #sContraPlace#라는 곳에서 만나기로 했다.}
+DuelCoward_t0 {이런 망신이군! #sName#이(가) 결투에 나타나지 않았습니다. 이제 모두가 그가 겁쟁이라고 말하네요!}
+DuelCoward_t1 {하하, #sName#이(가) 결투에 나오지 않았군! 이제 예전처럼 여자들에게 인기가 있진 못할 거야.}
+DuelCoward_t2 {들었어? #sName#이 결투에 안 나왔대! 어젯밤에 너무 취해서 일어나지도 못했다더라.}
+DuelHero_t0 {#sName#이(가) 노련한 결투가라는 걸 아시나요? 이미 #sKill#명을 쓰러뜨렸답니다. 그의 길을 막고 싶진 않을 거예요.}
+DuelHero_t1 {사람들은 #sName#이 악마에게 영혼을 팔았기 때문에 결투에서 절대 지지 않는다고 해! 그가 죽인 이들의 영혼, 이미 #sKill#명을 보냈다는데, 모두 지옥으로 곧장 떨어진다고 하지. 또 그가 살육을 멈추면, 악마가 그의 영혼을 거둬갈 거라는 소문도 있어.}
+DuelHero_t2 {저 건방진 #sName#은 정말 행운아야! 결투에서 이미 #sKill#명을 쓰러뜨렸는데, 상처 하나 없대! 정말 믿을 수 있겠어?}

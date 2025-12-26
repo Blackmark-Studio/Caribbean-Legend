@@ -39,7 +39,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			if(CheckAttribute(pchar, "questTemp.WildRose_Etap6_Beliz") && CheckAttribute(pchar, "questTemp.WildRose_Beliz_Citizen_3") && !CheckAttribute(npchar, "quest.WildRose_Vopros") && npchar.city == "Beliz")
 			{
-				link.l1 = "我正在寻找一个大约两个月前来到伯利兹的人。 他叫热罗姆·索韦涅。 他在找一位先生, 我想他一定和城里人谈过这件事……";
+				link.l1 = "我正在寻找一个大约两个月前来到伯利兹的人。 他叫热罗姆·索韦涅。 他在找一位先生, 我想他一定和城里人谈过这件事…… ";
 				link.l1.go = "WildRose_Beliz_Citizen_3";
 			}
 			//<-- Дикая Роза
@@ -116,7 +116,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
  		break;
 		
 		case "WildRose_Beliz_Citizen_2":
-    		dialog.text = "索韦涅? 法国人……对, 有这么一个。 他来找过我, 但我帮不上忙。 后来我就再也没见过他了, 抱歉。";
+    		dialog.text = "索韦涅? 法国人…… 对, 有这么一个。 他来找过我, 但我帮不上忙。 后来我就再也没见过他了, 抱歉。";
     		link.l1 = "多谢。 那么我再去打听打听。";
     		link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.WildRose_Beliz_Citizen_2");

@@ -1,0 +1,517 @@
+newline
+{
+
+}
+Key Layout {Tuş Düzeni}
+Key Layout_descr
+{
+Alternatif tuş düzeni bazı kontrolleri değiştirir, yeni komutlar ekler ve ek özelliklerin kilidini açar:
+~
+- hızlı eylem ve yağma komutları güncellendi
+- iksir kullanımı artık farklı
+- her karakter penceresinin kendi kısayolu var
+}
+OptKurs {Pruva açısı}
+OptKurs_descr
+{
+Mini haritadaki siyah oklar, geminizin en yüksek hıza ulaşacağı rotayı gösterir.
+~
+Bazı gemiler neredeyse rüzgara karşı gidebilir; bu, tüccarları kovalamak veya savaş gemilerinden kaçmak için işe yarar.
+~
+Rüzgarın yönü ve şiddeti sürekli değişir. Hedefinize giderken en iyi seyir açısını yakalamak için rotanızı ayarlayın.
+}
+SeaTimeScaleUp {Zaman Hızlandırma}
+SeaTimeScaleUp_descr
+{
+Zamanı hızlandırarak vakitten tasarruf edebilirsiniz, özellikle denizde.
+~
+Kontroller: + ve -
+}
+SeaTimeScaleUp_controlsimg1 {TimeScaleFasterBA}
+SeaTimeScaleUp_controlsimg2 {TimeScaleSlowerBA}
+SeaFastTravel {Hızlı Seyahat}
+SeaFastTravel_descr
+{
+Eylem menüsü, karada ve denizde birçok kullanışlı özelliğe erişim sağlar.
+~
+'Seyir Et' işlevi, dost bir gemiye veya işarete anında yaklaşmanıza olanak tanır. Daha nadir ve pahalı dürbünlerle menzili artırabilirsiniz.
+~
+Eylem menüsünü kullanarak hızlıca 'Hayalet'e ulaşabilir ve ona bir sandal gönderebilirsiniz.
+}
+SeaFastTravel_controlsimg1 {BICommandsActivate}
+LandTimeScaleDown {Zaman Yavaşlatma}
+LandTimeScaleDown_descr
+{
+Zorlu dövüşlerde zamanı yavaşlatmak gerçekten işe yarar. Bunda utanılacak bir şey yok—Caribbean Legend zorlu bir oyundur.
+~
+Kontroller: + ve -
+}
+LandTimeScaleDown_controlsimg1 {TimeScaleFasterBA}
+LandTimeScaleDown_controlsimg2 {TimeScaleSlowerBA}
+GuideFight {Kara Muharebesi}
+GuideFight_descr
+{
+Bu oyunda dövüşü ustalaşmak zaman alır. İpuçları açıksa, sağ alt köşede kısayol tuşlarını görebilirsin.
+~
+Önce 'Parry - Slash' kombinasyonunu öğrenerek başla. Düşmanın saldırısını savuşturmak onu sersemletir ve enerjisini düşürür, böylece güvenli bir şekilde saldırabilirsin.
+~
+Hasar, karakterinin becerilerine, silah kalitesine, muskalarına ve saldırı türlerine bağlıdır.
+}
+GuideFight_controlsimg1 {ChrAttackChoseBase}
+GuideFight_controlsimg2 {ChrAttackBase}
+OneToOneCave {Çevreyi Kullanma}
+OneToOneCave_descr
+{
+Sayıca azsan, çevreyi kendi lehine kullan.
+~
+Düşmanların sana bir ya da iki kişi halinde saldırmak zorunda kalacağı bir yer neredeyse her zaman bulunur.
+}
+OneToOneBoarding {Çevreyi Kullanma}
+OneToOneBoarding_descr
+{
+Sayıca azsan, çevreyi avantajına kullan.
+~
+Düşmanların sana birer ikişer saldırmak zorunda kalacağı bir yer neredeyse her zaman bulunur.
+}
+Collision {Pozisyon Değiştirme}
+Collision_descr
+{
+Bazen savaşta pozisyon değiştirmek gerekir—düşman hattını yarıp geçmek ya da müttefiklerin etrafından dolaşmak.
+~
+Kahramanın, müttefikleri otomatik olarak iter; düşmanları aşmak için ise koşu veya geri çekilme gerekir.
+Savaşta koşu enerji harcar, bu yüzden dikkatli kullanın.
+}
+Collision_controlsimg1 {ChrFightMode}
+Collision_controlsimg2 {ChrSprint}
+WorldMap {Dünya Haritası}
+WorldMap_descr
+{
+Dünya haritası, oyun dünyasında deniz yolculuğu yapmanı sağlar. Her şehre veya koya tek tek yelken açmana gerek yok—hedefine yakın bir yerde dünya haritasından çıkıp 'Seyahat Et' seçeneğini kullanabilirsin.
+~
+'Seyahat Et' özelliğini akıllıca kullanmak, gerçek zaman tasarrufu sağlar. Örneğin, bir adanın bir tarafından dünya haritasından çıkıp, diğer taraftaki bir koya hızlı seyahat edebilir, ardından tekrar dünya haritasına dönebilirsin.
+~
+Haritayı yakınlaştırmak ve atlası açmak için kısayol tuşlarını kullan.
+}
+WorldMap_controlsimg1 {WMapCameraSwitch}
+WorldMap_controlsimg2 {Harita Görünümü}
+LandMap {Kara Navigasyonu}
+LandMap_descr
+{
+Karada yolculuk yapmak, ada haritasını kullanırsan daha kolay olur. Bu, görevlerde, gizlilikte ve hazine avında özellikle işe yarar.
+Tüm mevcut haritalar Atlas'ta bulunur.
+Haritaları satın alabilir veya bulabilirsin.
+}
+LandMap_controlsimg1 {Harita Görünümü}
+Navigator {Navigasyon}
+Navigator_descr
+{
+Yüksek Navigasyon becerisine sahip bir seyir subayı atayın!
+~
+Navigasyon, bir karakterin komuta edebileceği gemilerin boyutunu belirler.
+~
+Örneğin, 5. Sınıf gemiler için 25 puan, 4. Sınıf için 45 puan gerekir. Bu sınırları aşmak tüm karakter özelliklerine ceza getirir.
+~
+Her Sınıfın gereksinimlerini karakter penceresinde beceri simgesine sağ tıklayarak görebilirsiniz.
+}
+Navigator_controlsimg1 {Beceriler}
+Alchemy {Simya}
+Alchemy_descr
+{
+Eşya üretmek—özellikle tılsım, iksir ve mühimmat—hayatınızı çok kolaylaştırabilir, özellikle de boss savaşlarında.
+~
+Bir eşya üretmek için tarif bulmanız veya satın almanız gerekir. Malzemeleri yanınızda taşımanıza gerek yok—kamaradaki sandığa koymanız yeterli.
+~
+Oyunun başında Simya yeteneğini alıp tarif toplamaya başlayabilir veya alet takımlarına sahip olacağınız orta oyuna kadar bekleyip değerli bir yetenek puanını Simya'ya harcamayabilirsiniz.
+}
+Alchemy_controlsimg1 {Simya}
+LandMapAtSea { }
+LandMapAtSea_descr {Hedefin adanın diğer tarafında. Koydan sağa çık ve kıyıyı takip et!}
+Salary {Gemi Bakımı}
+Salary_descr
+{
+Subaylarınıza ve mürettebatınıza her ay ödeme yaparsınız; bu, bir kaptan için gerçek bir sınav olabilir.
+~
+Toplam tutar, Ticaret ve Liderlik becerilerinize, geminin Sınıfına ve zorluk seviyesine bağlıdır. Küçük gemilerde bile bir Hazinedar bulundurmak önemlidir; büyük bir savaş gemisi ise bir ülkeyi iflasa sürükleyebilir.
+~
+Ganimet paylaşımı açıksa, ödemeler daha da yüksek olabilir.
+}
+Salary_controlsimg1 {GemiDurumu}
+Dubloons {Dublon}
+Dubloons_descr
+{
+Altın doblonlar, servetinizin ve parayla sorun çözme yeteneğinizin gerçek göstergesidir. Genellikle küçük sandıklarda saklanırlar; bu sandıkları, eylem menüsündeki üretim panelinden açabilirsiniz. Yeterli doblonunuz varsa, aynı panelden sandıkları doldurmanız da mümkün.
+~
+Bu altın paraları kazanmaya çalışın—Karayipler’de yalnızca en güçlü kişiler size doblon karşılığında yardım eder.
+~
+Doblona ulaşmanın iyi yolları arasında hazine bulmak, banka mevduatları, stratejik mallarla ticaret yapmak ve tefecilerden para almak bulunur.
+~
+Altını yanınızda taşımanıza gerek yok—kaptan kamarasındaki bir sandıkta saklamanız yeterlidir.
+}
+Dubloons_controlsimg1 {LICommandsActivate}
+Box {Eşya Deposu}
+Box_descr
+{
+Kaptan kamarasındaki sandıklarda sınırsız kişisel eşya saklayabilirsin.
+~
+Fazlalıkları sat, ama kamaranda her zaman bir miktar mücevher, silah, cephane ve simya malzemesi bulundur.
+~
+Ana teçhizatın dışında, yanında sadece bir set iksir, muska ve ateşli silahların için mermi taşımak akıllıca olur.
+~
+Diğer kaptanlar da böyle yapar; bu yüzden ele geçirdiğin gemilerin kamarasındaki sandıkları mutlaka yağmala.
+}
+Health {Can Düşüşü}
+Health_descr
+{
+'Canlılık' düştü! Bu değer, karakterinin genel durumunu gösterir ve tüm nitelikleri etkiler.
+~
+'Canlılık', temel iyileştirme kullanınca, hikaye olaylarında, içki içince ve aşırı yükte azalır.
+~
+Özel iksirlerle, romantizmle, handa dinlenerek ya da zamanla kendiliğinden geri gelir. Zor durumlarda rahipler yardımcı olabilir.
+~
+Benzersiz subaylar da savaşta ağır yaralanırsa 'Canlılık' kaybeder. Neyse ki, zamanla kendileri toparlarlar.
+}
+Amulet {Muska}
+Amulet_descr
+{
+Muskalar, karakteriniz için güçlü desteklerdir ve saldırı, savunma ve destek türlerinde bulunur. Saldırı ve savunma muskasını aynı anda takamazsınız, bu yüzden setlerinizi akıllıca seçin.
+~
+Ayrıca iki başka destek türü daha vardır: tılsımlar ve süsler.
+~
+Tılsımlar, muskalardan daha uzun süre etkili olur ve daha geniş faydalar sağlar; süsler ise son derece güçlüdür, kalıcıdır ve kendilerine ait bir envanter yuvası vardır.
+~
+Zorlu yetenek testleri ve denizde ya da karada çetin savaşlar için envanterinizde birkaç set bulundurmayı unutmayın.
+}
+Amulet_controlsimg1 {Envanter}
+Perk {Yetenek Puanı}
+Perk_descr
+{
+İlk Yetenek Puanını (YP) kazandın! Bunlar karakter gelişiminin en önemli parçasıdır ve deniz ile kişisel yetenekler olarak ikiye ayrılır.
+~
+Deniz yetenekleri denizde seni güçlendirir, kişisel yetenekler ise karada ve sohbetlerde yardımcı olur.
+~
+Her iki YP türü de, kişisel ve gemi becerilerin geliştikçe ayrı ayrı artar. Ortalama olarak, bir beceri grubunda her 30 puan bir YP kazandırır.
+~
+Deniz YP’si kazanmak için gemi sözleşmeleri ve kiralamalar yap. Kişisel YP ise farklı silahlarla dövüşüp tavernalarda vakit geçirirsen daha hızlı artar.
+~
+Kişisel YP çok daha değerlidir, çünkü deniz yeteneklerinin çoğu subaylar tarafından karşılanabilir.
+}
+Perk_controlsimg1 {Yetenekler}
+Fighter {Öncü}
+Fighter_descr
+{
+Öncüler en güvendiğiniz subaylarınız, korumalarınız ve ön saflarınızdır. Sizi en zorlu anlarda bile takip ederler ve en çok vakti onlarla geçirirsiniz.
+~
+Yanınızda en fazla üç savaşçı bulundurabilirsiniz. Karada kaptanı korumanın yanı sıra, öncüler borda verimini artırır ve ağır hazineleri taşımada yardımcı olur.
+~
+Bazı özel subaylar yalnızca görevlerde bulunur. Hepsi iyi bir öncü olmayabilir, fakat hepsi hikayeyi etkiler ve normal savaşta ölemezler.
+~
+Ekibinizi muska, iyileştirici, silah ve mühimmatla donatmayı unutmayın. Eşyaları eylem menüsünden veya herhangi bir sandıktan değiştirebilirsiniz.
+~
+Öncülere konumda kal, takip et veya saldır komutlarını kısayol tuşlarıyla ya da diyalogdan verebilirsiniz.
+}
+Fighter_controlsimg1 {Yetenekler}
+Fighter_controlsimg2 {SubaylarTakip Et}
+Fighter_controlsimg3 {SubayHücumu}
+Fighter_controlsimg4 {SubayAmbarı}
+Rest {Günün Saati}
+Rest_descr
+{
+Günün saatini değiştirebilirsin!
+~
+Oyunda her şey zamana bağlıdır: geceleri muhafızlar iskeleden ve şehir kapılarından ayrılır, tayfa sadece gündüzleri meyhanede tutulabilir ve bazı karakterler özellikle senin için çalışıyorsan zamana çok dikkat eder.
+~
+Bu özelliği denizde ve vahşi doğada dilediğin gibi kullanabilirsin, ama şehirdeysen en iyisi meyhanede uyumaktır.
+}
+Rest_controlsimg1 {BICommandsActivate}
+Stealth {Gizlilik}
+Stealth_descr
+{
+Karayipler’deki çoğu yerleşim yerinde hoş karşılanmamaya alışmalısın.
+~
+Düşman bir şehre gizlice girmek için iki yol var: limandan ya da kapıdan.
+~
+Düşman limanına güvenle yanaşmak ciddi hazırlık ister. Düşmanca olmayan bir bayrak çekmeli ve yeterli Gizlilik becerisine sahip olmalısın.
+~
+Kapıdan girmek için en iyi zaman, nöbetçi olmadığında gece saatleridir. Askerlerden uzak dur ve handa dinlen. Alarm olursa bir eve girip birkaç saat bekle. Avantajı, bayrak açmak için değerli bir yetenek puanı harcamana gerek olmamasıdır.
+~
+Tüm bu sorunları, Curaçao’da bir ticaret şirketi lisansı alıp deniz yeteneği puanını tarafsız bir bayrağa harcayarak aşabilirsin.
+}
+SeaBattle {Deniz Savaşı}
+SeaBattle_descr
+{
+Deniz savaşına hoş geldin, Kaptan!
+Ana hedefin: hayatta kal ve düşman gemilerini batır.
+~
+Her geminin üç ana özelliği vardır: gövde, yelkenler ve mürettebat. Gövde sıfıra inerse gemi batar. Hasarlı yelkenler hızını düşürür, azalan mürettebat ise gemiye çıkmayı kolaylaştırır ve tüm gemi işlemlerini yavaşlatır.
+~
+Her özellik için en uygun mühimmat farklıdır: mürettebat için saçma, yelken ve direkler için zincir gülle, gövde için bomba. Top gülleleri ise en uzun menzilli çok amaçlı mühimmattır. Hasar, hem mühimmat tipine hem de ateş eden topa bağlıdır—top ne kadar büyükse, hasarı da o kadar fazladır.
+~
+İki ana ateş modu vardır. Hızlı atış, düşman ateş menzilindeyken kullanılabilir. Başlarda çok isabetli veya etkili değildir ama dinamik savaşmanı sağlar. Nişanlı atış ise nişan tuşuyla etkinleşir ve yandan çok isabetli atış yapmanı sağlar. Alışmak zaman alır ama buna değer.
+~
+Düşman ateşinden kaçın ve önce yelken ve direkleri hedef al—böylece düşmanlar çok daha az tehlikeli olur.
+~
+Her geminin arma tipine göre rüzgara karşı en yüksek hızı alacağı ideal bir rotası vardır. Bu rota pusulada siyah oklarla gösterilir. Geminin güçlü yönlerini kullanmak deniz savaşlarını kazanmanın anahtarıdır.
+}
+SeaBattle_controlsimg1 {hk_charge1}
+SeaBattle_controlsimg2 {hk_charge2}
+SeaBattle_controlsimg3 {hk_charge3}
+SeaBattle_controlsimg4 {hk_charge4}
+SeaBattle_controlsimg5 {Sea_CameraSwitch}
+SeaBattle_controlsimg6 {Gemi_Ateşi}
+BoardingTactics {Borda}
+BoardingTactics_descr
+{
+Aboardaja başlamadan önce, düşman mürettebatını zayıflatmak için birkaç saçma atışı yap—karşı ateş almadan. Avantajı ele geçirdiğinde, olabildiğince yaklaş, hızı eşitle ve gemiye çık!
+~
+'Vanguard' deniz becerin ne kadar yüksekse, düşman gemilerine kanca atmak o kadar kolay olur.
+~
+Aboardaj başarısı, mürettebatının sayısına, becerilerine ve moraline bağlıdır. Deneyimli bir güverte subayı, öncüler, muskalar ve güçlü dövüş yetenekleri, düşmanın sayı üstünlüğünü dengeleyebilir.
+}
+Mushket {Misketler}
+Mushket_descr
+{
+Uzun namlulu ateşli silahlar savaşta ölümcüldür. Sadece "Musketeer" yeteneğine sahip ana karakter ve bazı özel subaylar bu silahları kullanabilir. En iyi örnek Teachingitu’dur—ilk tüfeğinizi ona verin.
+~
+Kesici silahlardan farklı olarak, tüm ateşli silahlar çok esnektir—karakterinizi nişancı olarak geliştirin, özel muskalar ve ekipmanlar kuşanın, farklı mühimmat türleriyle her savaşı lehinize çevirin.
+}
+Mushket_controlsimg1 {Envanter}
+CameraControlFP {Ahoy!}
+CameraControlFP_descr
+{
+Karayipler’e hoş geldin, Kaptan!
+~
+Caribbean Legend zorlu bir oyun, ama oynaması kolay. Hikaye modunu denemediysen, temel mekaniklere alışmak için birkaç saat ayırmanı öneririz.
+~
+Oyunu hareket tuşları ve fareyle kontrol ediyorsun. Karakterin her yöne yürüyüp koşabilir, ekstra hız için sprint yapabilir.
+Aksiyon menüsü de oldukça kullanışlı—pek çok pratik özelliği orada bulabilirsin.
+~
+Fareyle serbestçe etrafa bakabilirsin—gizli eşyaları bul, dövüşü takip et ya da manzaranın tadını çıkar.
+~
+Oynadığın için teşekkürler—denizde görüşmek üzere!
+}
+CameraControlFP_controlsimg1 {ChrForward}
+CameraControlFP_controlsimg2 {ChrStrafeLeft}
+CameraControlFP_controlsimg3 {ChrBackward}
+CameraControlFP_controlsimg4 {ChrStrafeRight}
+CameraControlFP_controlsimg5 {ShipCamera_Turn_H}
+CameraControlFP_controlsimg6 {LICommandsActivate}
+MarksmanMode {Nişan alma}
+MarksmanMode_descr
+{
+Herhangi bir ateşli silahla daha isabetli atış için nişan alabilirsin. Bu moda geçmek için nişan tuşunu basılı tut. Ateş etmeden çıkmak için bırak.
+
+~
+Nişanlı atışlar daha isabetli ve ölümcül olur, ancak görüşün azalır ve daha yavaş hareket edersin.
+
+~
+Ne kadar uzun nişan alırsan, verdiğin hasar o kadar artar. Kafadan vuruşlar ekstra hasar verir. Hasar alırsan nişanın sıfırlanır ve karakterin sendeleyerek geri çekilir.
+}
+MarksmanMode_controlsimg1 {ChrAiming}
+Trading {Ticaretin Temelleri}
+Trading_descr
+{
+Ticaret, alım ve satım fiyatlarını etkileyen birçok unsurun olduğu derin ve karmaşık bir sistemdir.
+~
+Karada, karakterinizin Ticaret becerisi ve geçmişi en önemli etkenlerdir.
+~
+Denizde ise mal türü, menşei, koloni büyüklüğü, ticaret yolları ve Hazinedarınızın becerileri gibi daha fazla faktör devreye girer.
+~
+Zamanla hepsini çözeceksiniz, ama şimdilik işe yarar bir Ticaret muskası edinin.
+}
+Prologue_Navigation {Gemi Kontrolü}
+Prologue_Navigation_descr
+{
+Karayip Denizi'ne hoş geldin!
+~
+Dümene yön tuşlarıyla kumanda et. Gemiler ağırdır ve büyük bir ataletleri vardır, bu yüzden yavaş dönerler. Alışmaya çalış.
+~
+Yelken ve hız kontrolünü yelken modu tuşlarıyla yapabilirsin.
+~
+Üç yelken modu vardır: tam, savaş ve indirilmiş. Tam yelken en hızlısıdır, savaş yelkeni en iyi döner, indirilmiş ise yumuşakça durmanı sağlar.
+~
+Fırtınada ve ateş altında yelkenleri indir. Dönüş ve nişan almak için savaş modunu kullan. Kovalamaca için tam yelkenden iyisi yoktur.
+~
+Farklı yelken modlarını ve dönüşleri dene, geminin ataletini hisset ve günbatımının tadını çıkar!
+}
+Prologue_Navigation_controlsimg1 {Ship_SailUp}
+Prologue_Navigation_controlsimg2 {Gemi_SolaDön}
+Prologue_Navigation_controlsimg3 {Ship_SailDown}
+Prologue_Navigation_controlsimg4 {Gemi_SağaDön}
+Prologue_TimeScale {Zaman Kontrolü}
+Prologue_TimeScale_descr
+{
+Oyunda birçok şey yavaş gerçekleşir—örneğin yelken modunu değiştirmek veya topları yeniden doldurmak gibi.
+~
+Denizde, karada ve dünya haritasında zamanı hızlandırabilir veya yavaşlatabilirsiniz.
+~
+Zamana hükmetmenin tadını çıkarın, sonra geminin güvertesine çıkın. Sizinle konuşmak isteyen biri var.
+}
+Prologue_TimeScale_controlsimg1 {TimeScaleFasterBA}
+Prologue_TimeScale_controlsimg2 {Zaman Ölçeği}
+Prologue_CameraControl {Selam!}
+Prologue_CameraControl_descr
+{
+"Ulysse"ye hoş geldin! Senin için kısa bir başlangıç macerası hazırladık.
+~
+"Ulysse"de yapacak çok şey var. Devam etmeye hazır olduğunda, kaptanla konuşup "İşleri bitir" seçeneğini seç.
+~
+Oynadığın için teşekkürler—denizde görüşmek üzere!
+}
+Prologue_CameraControl_controlsimg1 {ChrForward}
+Prologue_CameraControl_controlsimg2 {ChrStrafeLeft}
+Prologue_CameraControl_controlsimg3 {ChrBackward}
+Prologue_CameraControl_controlsimg4 {ChrStrafeRight}
+Prologue_CameraControl_controlsimg5 {ShipCamera_Turn_H}
+Prologue_CameraControl_controlsimg6 {LICommandsActivate}
+Prologue_Logbook {Gemi Günlüğü & Belgeler}
+Prologue_Logbook_descr
+{
+Aldığınız her görev "Günlük"te kaydedilir. Diyalogları ve günlük girişlerini dikkatlice okumak önemlidir—genellikle önemli ayrıntılar ve talimatlar bulunur.
+~
+"Günlük"teki kayıtlara göz atın. “Ulysse”de alınan tüm küçük görevler orada listelenir.
+}
+Prologue_Logbook_controlsimg1 {GörevKitabı}
+Prologue_Inventory {Karmaşık Görevler, Belgeler ve Zanaat}
+Prologue_Inventory_descr
+{
+Görevler dışında, "Günlük"te başka önemli bilgiler de bulunur.
+~
+"Belgeler" bölümünde bulduğunuz tüm notları okuyabilirsiniz.
+~
+Şimdi, geminin Hazinedarı'ndan gelen notu okuyup listede yazdığı gibi mürettebata dublon dağıtmalısınız.
+~
+Sandıktan dublon almak için onu üretim—Simya—mekaniğiyle açın.
+Şu anda az sayıda tarifiniz var, ama ileride daha fazlasını edineceksiniz.
+}
+Prologue_Inventory_controlsimg1 {GörevKitabı}
+Prologue_Inventory_controlsimg2 {Simya}
+Prologue_Amulet {Muska}
+Prologue_Amulet_descr
+{
+Tılsımlar ve Amuletler karakter için güçlü, geçici güçlendirmelerdir ve envanterdeki özel yuvalara takılır.
+~
+Tılsımlar oyuncu tarafından üretilebilirken, Amuletler yalnızca bulunabilir ya da satın alınabilir.
+~
+Oyunda ayrıca Wards bulunur — son derece güçlüdürler, süresiz etki ederler ve envanterde ayrı bir yuvaya sahiptirler.
+~
+Özellikle zor yetenek kontrolleri ile denizde ve karada yapılan çetin savaşlar için envanterinizde her zaman birkaç set bulundurun.
+~
+Dikkat: etkinleştirildikten sonra bir Amulet veya Tılsımı çıkarmak onu yok eder. Kararınızı dikkatle verin.
+}
+Prologue_Trading {Ticaretin Temelleri}
+Prologue_Trading_descr
+{
+Ticaret, birçok etkenin fiyatları etkilediği derin ve karmaşık bir sistemdir—özellikle de 'Ticaret' beceriniz.
+~
+Denizde ise daha fazla etken devreye girer—mal türü, menşei, koloni büyüklüğü, ticaret yolları ve Hazinedarınızın becerileri.
+~
+Zamanla hepsini öğrenirsiniz, ama şimdilik işe yarar bir muska edinin.
+}
+Prologue_Overload {Aşırı Yük}
+Prologue_Overload_descr
+{
+İlk kez taşıma ağırlığı sınırına ulaştınız.
+Her karakterin, güç, dayanıklılık, beceriler ve muskalarına göre belirlenen bir maksimum taşıma kapasitesi vardır.
+~
+Maksimum taşıma kapasitenizi artıracak bir şey bulmayı deneyin—belki mürettebat kamarasında güverte subayında vardır.
+}
+Prologue_AutoFire {Deniz Savaşı}
+Prologue_AutoFire_descr
+{
+İlk deniz savaşın Charles de Maure’un hayal gücünde geçiyor—yani endişelenme, dilediğince dene!
+~
+Her geminin üç ana özelliği vardır: gövde, yelkenler ve mürettebat. Gövde sıfıra inerse gemi batar. Hasarlı yelkenler hızını düşürür, mürettebat kaybı ise borda, yeniden doldurma ve yelken kontrolünü etkiler.
+~
+Her cephane türünün kendine özgü kullanımı vardır: saçma mürettebat için, zincirli gülle yelken ve direkler için, bombalar ise gövde için. Top gülleleri ise en uzun menzilli, çok amaçlıdır. Hasar miktarı hem cephane türüne hem de ateşleyen topa bağlıdır—top ne kadar büyükse, hasar da o kadar fazladır.
+~
+İki ana ateş modu bulunur. Hızlı atış, düşman ateş menzilindeyken kullanılabilir. Başlarda çok isabetli veya etkili değildir ama dinamik savaşmanı sağlar.
+~
+Savaş çok yavaş gelirse, zaman kontrol tuşlarıyla hızlandırabilirsin.
+}
+Prologue_AimingFire {Nişanlı Ateş}
+Prologue_AimingFire_descr
+{
+Nişanlı atış, bordadan çok isabetli ateş etmeni sağlar. Alışmak zaman alır ama değerdir.
+~
+Top daireleri, borda toplarının gerçek konumunu ve gidiş yolunu gösterir. Nişan aldığın noktaya hizalanmaları için zamana ihtiyaçları var.
+~
+Ateş ettiğinde toplar, o anda dairelerin olduğu yere ateş eder; gerekirse hedefin önüne nişan al.
+~
+Düşman gemisine nişan alarak onu hedefleyebilirsin. Ele geçirildiğinde, istediğin bir noktaya ya da önüne atış yapabilirsin.
+~
+Kaptan ve Topçu becerilerin arttıkça, top nişan alma ve ateş hızı gelişir.
+~
+Nişanı hızlı hareket ettirirsen, topçular şaşırır ve normalden daha yavaş nişan alır.
+~
+Nişanlı borda atışları, uzun menzilde kritik gemi parçalarını vurmak için idealdir—özellikle yelken ve direkleri.
+}
+Prologue_AimingFire_controlsimg1 {ChrAimingShot}
+Prologue_AimingFire_controlsimg2 {FireCamera_Set}
+Prologue_FightAttack {Saldırı}
+Prologue_FightAttack_descr
+{
+Caribbean Legend'de dövüşler acımasız ve hızlıdır, ama şimdilik güvendesin.
+~
+Her karakter silahlıdır ve dövüş becerilerine sahiptir. Silahın ne kadar iyi ve kahramanın ne kadar tecrübeli olursa, o kadar fazla hasar verirsin.
+~
+Birden fazla saldırı ve savunma hamlen var.
+~
+Önce üç ana saldırı ile başlayalım.
+~
+Kesme. Hızlıdır, az hasar verir, orta derecede enerji harcar.
+~
+Saplama. Kesmeye göre daha yavaştır, orta hasar verir, az enerji harcar.
+~
+Ağır saldırı. Yavaş ve güçlüdür, çok yüksek hasar verir ve blokları kırabilir.
+~
+Bu saldırıların hepsini korsanda dene.
+}
+Prologue_FightAttack_controlsimg1 {ChrAltAttackBase}
+Prologue_FightAttack_controlsimg2 {ChrAttackBase}
+Prologue_FightAttack_controlsimg3 {ChrAttackBreakBase}
+Prologue_FightDefence {Savaş Savunması}
+Prologue_FightDefence_descr
+{
+Güzel! Şimdi savunma zamanı.
+~
+Blok. Ağır saldırı hariç tüm saldırıları engeller. Blok yaparken yavaşça hareket edebilirsin ve enerji harcamaz. Güçlü düşmanlar normal saldırılarla blokunu kırabilir, dikkatli ol.
+~
+Savuşturma. Her saldırıyı savuşturur, düşmanın dengesini ve enerjisini kaybetmesini sağlar.
+~
+Geri çekilme. Pozisyonunu değiştirmeni veya bir atıştan kaçmanı sağlar.
+~
+Şimdi korsanın saldırılarını savuşturmayı ve bloklamayı dene.
+~
+Sonra—işini bitir.
+}
+Prologue_FightDefence_controlsimg1 {ChrBlock}
+Prologue_FightDefence_controlsimg2 {ChrParry}
+Prologue_Marksmanship {Nişancılık}
+Prologue_Marksmanship_descr
+{
+Ateşli silahlar, yakın dövüş silahlarına göre daha nadir bulunur, fakat Karayipler'de vurulma riski her zaman vardır. Dikkatli olun.
+~
+Karada da, denizde olduğu gibi iki ateş modu vardır: hızlı atış ve nişanlı atış.
+~
+Hızlı atış, tek tuşla yapılır. Hızlıdır ama pek etkili değildir.
+~
+Nişanlı atışlar çok daha fazla hasar verebilir, fakat sizi açıkta bırakır. Ne kadar uzun nişan alırsanız, o kadar çok hasar verirsiniz. Kafadan vuruşlar ekstra hasar sağlar.
+~
+Bu moda geçmek için nişan tuşunu basılı tutun. Ateş etmek için saldırı tuşuna basın. Ateş etmeden çıkmak için nişan tuşunu bırakın.
+}
+Prologue_Marksmanship_controlsimg1 {ChrAiming}
+Prologue_Marksmanship_controlsimg2 {ChrAimingShot}
+Prologue_DeadSearch {Yağmalama}
+Prologue_DeadSearch_descr
+{
+Her dövüşten sonra ganimet toplama zamanı.
+Düşen her düşmanı, ganimet tuşuna basarak arayabilirsin.
+~
+Alonso'nun ihtiyacı olan şifa iksirini bul!
+}
+MapEncounter {Renkli yelkenli gemiler}
+MapEncounter_descr
+{
+Bazen görev sırasında dünya haritasında özel bir gemi bulmanız gerekir.~
+Günlükte işaretlenen yerde renkli yelkenlere sahip bir gemi arayın ve onunla etkileşime geçin.
+}

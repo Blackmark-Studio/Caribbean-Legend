@@ -2028,6 +2028,8 @@ void InitShips()
 	refship.Type.Merchant				= false;
 	refship.Type.War					= true;
 	refship.Spec                        = SHIP_SPEC_WAR;
+	refship.NationExclusive             = FRANCE;
+	refship.NationalLineShip            = true;
 	
 	refShip.lowpolycrew 				= 24;
 	refship.Rocking.y 					= 0.5;
@@ -2106,6 +2108,8 @@ void InitShips()
 	refship.Type.Merchant				= false;
 	refship.Type.War					= true;
 	refship.Spec                        = SHIP_SPEC_WAR;
+	refship.NationExclusive             = HOLLAND;
+	refship.NationalLineShip            = true;
 	
 	refShip.lowpolycrew 				= 24;
 	refship.Rocking.y 					= 0.5;
@@ -2184,6 +2188,8 @@ void InitShips()
 	refship.Type.Merchant				= false;
 	refship.Type.War					= true;
 	refship.Spec                        = SHIP_SPEC_WAR;
+	refship.NationExclusive             = SPAIN;
+	refship.NationalLineShip            = true;
 	refShip.lowpolycrew 				= 28;
 
 	refship.Rocking.y 					= 0.3;
@@ -2261,6 +2267,8 @@ void InitShips()
 	refship.Type.Merchant				= false;
 	refship.Type.War					= true;
 	refship.Spec                        = SHIP_SPEC_WAR;
+	refship.NationExclusive             = ENGLAND;
+	refship.NationalLineShip            = true;
 	refShip.lowpolycrew 				= 28;
 
 	refship.Rocking.y 					= 0.3;
@@ -3251,8 +3259,8 @@ void InitShips()
 	refship.Track2.Width	= "4.0, 6.0";
 	refship.Track2.Speed	= "0.15, 0.25";
 
-	refship.icons.FirstIconPos = 0+2*16;
-	refship.icons.SecondIconPos = 0+2*16 + 1;
+	refship.icons.FirstIconPos = 10+5*16;
+	refship.icons.SecondIconPos = 10+5*16 + 1;
 	
 	///////////////////////////////////////////////////////////////////////////
 	//// Фрегат "Амстердам"
@@ -3328,8 +3336,8 @@ void InitShips()
 	refship.Track2.Width	= "8.0, 9.0";
 	refship.Track2.Speed	= "0.15, 0.25";	
 
-	refship.icons.FirstIconPos = 6+4*16;
-	refship.icons.SecondIconPos = 6+4*16 + 1;
+	refship.icons.FirstIconPos = 12+5*16;
+	refship.icons.SecondIconPos = 12+5*16 + 1;
 	
 	// --> квестовые корабли - заглушки
 	///////////////////////////////////////////////////////////////////////////

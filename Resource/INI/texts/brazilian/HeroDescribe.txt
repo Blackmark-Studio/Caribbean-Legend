@@ -1,0 +1,312 @@
+info
+{
+Criador universal de heróis do add-on SLiB  
+    Script criado por ALexusB em 09.10.04  
+    Caminho do arquivo: \RESOURCE\INI\TEXTS\RUSSIAN\HeroDescribe.txt  
+    
+    versão 02.07.06
+
+    hero_qty - quantidade de heróis
+    ps_hero_qty - quantidade de pseudo-heróis (podem aparecer como personagens de missão no jogo; em PGG, apenas personagens masculinos são usados)
+    heroName_X        - nome do herói
+    heroLastname_X    - sobrenome do herói
+    heroNameGen_ e heroLastnameGen_ - caso genitivo,   heroLastnameDat_  - caso dativo.
+    heroFace_X        - número do retrato
+    heroModel_X       - lista de modelos separados por vírgula, sem espaços; pode ser menor que a lista completa, nesse caso o primeiro será usado
+            (sem armadura, leve, média, avançada, dourada, roupa_1, roupa_2, roupa_3)
+    heroType_X        - tipo de herói (afeta os parâmetros iniciais)
+        valores apenas: Corsair, Merchant, Adventurer
+ou (para versão russa)
+Corsário,
+Mercador,
+Aventureiro
+    heroNation_X      - nação inicial do herói (relações neutras)
+        valores apenas: ENGLAND, FRANCE, SPAIN, HOLLAND
+            ou (para versão russa)
+Inglaterra
+            França
+            Espanha
+            Holanda
+    sex_X             - sexo (man, woman, skeleton)
+    animation_X       - animação (man, woman, towngirl)
+    hero_X            - biografia curta do herói (máx. 5-7 linhas para caber no campo de texto)
+    X - número de ordem do herói na lista
+
+    Onde encontrar:
+    Texturas de retratos: \RESOURCE\Textures\INTERFACES\PORTRAITS  (64, 128, 256)
+    Skins:                \RESOURCE\Textures\Characters
+    Modelos:              \RESOURCE\MODELS\Characters
+    Cabeças:              \RESOURCE\MODELS\Heads
+    Animação de cabeça:   \RESOURCE\animation\Heads e \RESOURCE\animation\Heads\AN
+
+    Salve o arquivo original antes de editar. Caso contrário, atualizações podem não funcionar.
+    Antes de instalar, retorne o arquivo ao local original e aplique a atualização. Depois, repita a configuração do(s) seu(s) herói(s).
+
+    _______________
+               Com consideração, ALexusB
+}
+Merchant {Aqueles que se aventurarem no comércio pelas águas do arquipélago do Caribe, repletas de corsários, piratas e todo tipo de bandido, precisarão não só acompanhar os preços nas ilhas para obter o máximo lucro, mas também aprender a empunhar a lâmina com firmeza para proteger seus ganhos.}
+Corsair {Corsário – fora-da-lei ou romântico? Isso vai depender de como você moldar seu personagem. Mas há qualidades essenciais para ser um corsário: coragem, determinação e rapidez nas decisões. Ouse.}
+Adventurer {Aventura é a verdadeira vida de um aventureiro livre. E se ainda render bons lucros, por que não aproveitar ao máximo?}
+hero_qty {5}
+ps_hero_qty {20}
+heroName_1 {Charles}
+heroNameGen_1 {Charles}
+heroNameDat_1 {Charles}
+heroLastname_1 {de Maure}
+heroLastnameGen_1 {de Maure}
+heroLastNameDat_1 {de Maure}
+heroFace_1 {201}
+heroModel_1 {Sharle_1,Sharle_2,Sharle_3,Sharle_4,Sharle_5,protocusto,Sharle_6,Sharle_8,Sharle_7,Sharle_9,Sharle_1,Sharle_11,Sharle_12,Sharle_13,Sharle_14}
+heroType_1 {Corsário}
+heroNation_1 {França}
+sex_1 {homem}
+animation_1 {homem}
+hero_1 {Filho de um nobre francês, artista despreocupado e notório conquistador, ele chega ao Caribe em busca do irmão desaparecido. Mas mais do que uma busca familiar, essa jornada irá transformá-lo. Aqui, enfrentará enganos e perigos, buscará conhecimento e amor, e por fim enfrentará os obstáculos entre ele e seu destino.}
+heroName_2 {Diego}
+heroLastname_2 {de Montoya}
+heroNameGen_2 {Diego}
+heroLastnameGen_2 {de Montoya}
+heroNameDat_2 {Diego}
+heroLastNameDat_2 {de Montoya}
+heroFace_2 {203}
+heroModel_2 {Diego_1,Diego_2,Diego_3,Diego_4,Diego_5,protocusto,Diego_6,Diego_8,Diego_1,Diego_9,Diego_1,Diego_11,Diego_12,Diego_13,Diego_14}
+heroType_2 {Aventureiro}
+heroNation_2 {Espanha}
+sex_2 {homem}
+animation_2 {homem}
+hero_2 {Um mercenário vindo da distante Aragão, quase perdeu a vida por excesso de confiança nas ruas noturnas de Madri. No Novo Mundo, terá uma segunda chance de conquistar o título de barão e, enfim, tomar as rédeas do próprio destino.}
+heroName_3 {William}
+heroLastname_3 {Paterson}
+heroNameGen_3 {William}
+heroLastnameGen_3 {Paterson}
+heroNameDat_3 {William}
+heroLastNameDat_3 {Paterson}
+heroFace_3 {202}
+heroModel_3 {Willy_1,Willy_2,Willy_3,Willy_4,Willy_5,protocusto,Willy_6,Willy_8,Willy_1,Willy_9,Willy_1,Willy_11,Willy_12,Willy_13,Willy_14}
+heroType_3 {Comerciante}
+heroNation_3 {Inglaterra}
+sex_3 {man}
+animation_3 {man}
+hero_3 {As nobres intenções deste jovem fidalgo de negociar honestamente pelo bem da nação e do próprio bolso foram esmagadas pela dura realidade. Restou-lhe obter uma carta de corso e buscar a prosperidade à força de canhões e lâminas, deixando para trás os modos arrogantes do Velho Mundo...}
+heroName_4 {Helen}
+heroLastname_4 {McArthur}
+heroNameGen_4 {Helen}
+heroLastnameGen_4 {McArthur}
+heroNameDat_4 {Helen}
+heroLastNameDat_4 {McArthur}
+heroFace_4 {250}
+heroModel_4 {Rumba}
+heroType_4 {Corsário}
+heroNation_4 {Irmandade Costeira}
+sex_4 {woman}
+animation_4 {rumba}
+hero_4 {Uma jovem pirata, protegida pelo Diabo da Floresta – Barão da Irmandade da Costa. No entanto, o Barão a poupa das duras realidades do que são os verdadeiros piratas e das atrocidades que podem cometer. Para Helen, ser pirata é pura aventura, contrabando de pouca monta, liberdade... e o convés de sua amada escuna de guerra, a Rainbow.}
+heroName_5 {Jessica}
+heroLastname_5 {Bradford}
+heroNameGen_5 {Jessica}
+heroLastnameGen_5 {Bradford}
+heroNameDat_5 {Jessica}
+heroLastNameDat_5 {Bradford}
+heroFace_5 {244}
+heroModel_5 {jessika}
+heroType_5 {Corsário}
+heroNation_5 {Inglaterra}
+sex_5 {mulher}
+animation_5 {Jessika}
+hero_5 {Após a traição de Beltrop, ela jurou que nunca mais cederia aos homens e se tornaria uma capitã corsária de sucesso. É preciso admitir que está conseguindo, e governos de vários países já colocaram uma recompensa por sua bela cabeça.}
+heroName_6 {Ingasio}
+heroLastname_6 {Marco}
+heroNameGen_6 {Ingasio}
+heroLastnameGen_6 {Marco}
+heroNameDat_6 {Ingasio}
+heroLastNameDat_6 {Marco}
+heroFace_6 {212}
+heroModel_6 {Chard2}
+heroType_6 {Aventureiro}
+heroNation_6 {Espanha}
+sex_6 {homem}
+animation_6 {homem}
+hero_6 {PGG}
+heroName_7 {Horácio}
+heroLastname_7 {Hornblower}
+heroNameGen_7 {Horácio}
+heroLastnameGen_7 {Hornblower}
+heroNameDat_7 {Horácio}
+heroLastNameDat_7 {Hornblower}
+heroFace_7 {220}
+heroModel_7 {Jovem}
+heroType_7 {Aventureiro}
+heroNation_7 {Inglaterra}
+sex_7 {homem}
+animation_7 {homem}
+hero_7 {PGG}
+heroName_8 {John}
+heroLastname_8 {Easterling}
+heroNameGen_8 {Jhona}
+heroLastnameGen_8 {Esterlina}
+heroNameDat_8 {Para John}
+heroLastNameDat_8 {Isterling}
+heroFace_8 {216}
+heroModel_8 {Isterling}
+heroType_8 {Aventureiro}
+heroNation_8 {Inglaterra}
+sex_8 {homem}
+animation_8 {homem}
+hero_8 {PGG}
+heroName_9 {Sanchos}
+heroLastname_9 {Esteban}
+heroNameGen_9 {Sanchosa}
+heroLastnameGen_9 {Estebana}
+heroNameDat_9 {Sanchosu}
+heroLastnameDat_9 {Estebanu}
+heroFace_9 {30}
+heroModel_9 {officer_13}
+heroType_9 {Aventureiro}
+heroNation_9 {Espanha}
+sex_9 {homem}
+animation_9 {homem}
+hero_9 {PGG}
+heroName_10 {Kerk}
+heroLastname_10 {Zander}
+heroNameGen_10 {Kerca}
+heroLastnameGen_10 {Zandera}
+heroNameDat_10 {Kerkou}
+heroLastnameDat_10 {Zanderu}
+heroFace_10 {31}
+heroModel_10 {officer_14}
+heroType_10 {Aventureiro}
+heroNation_10 {Holanda}
+sex_10 {homem}
+animation_10 {homem}
+hero_10 {PGG}
+heroName_11 {Alfonso}
+heroLastname_11 {Salvatore}
+heroNameGen_11 {Alfonso}
+heroLastnameGen_11 {Salvatore}
+heroNameDat_11 {Alfonso}
+heroLastnameDat_11 {Salvatore}
+heroFace_11 {32}
+heroModel_11 {officer_15}
+heroType_11 {Aventureiro}
+heroNation_11 {Espanha}
+sex_11 {homem}
+animation_11 {homem}
+hero_11 {PGG}
+heroName_12 {Delvin}
+heroNameGen_12 {Delvina}
+heroNameDat_12 {Delvin}
+heroLastname_12 {Blaze}
+heroLastnameGen_12 {Blaise}
+heroLastNameDat_12 {Para Blaze}
+heroFace_12 {1}
+heroModel_12 {Devlin}
+heroType_12 {Mercador}
+heroNation_12 {Holanda}
+sex_12 {homem}
+animation_12 {homem}
+hero_12 {PGG}
+heroName_13 {John}
+heroLastname_13 {Silver}
+heroNameGen_13 {Jhona}
+heroLastnameGen_13 {Silvera}
+heroNameDat_13 {Para John}
+heroLastNameDat_13 {Silver}
+heroFace_13 {22}
+heroModel_13 {oficial_5}
+heroType_13 {Corsário}
+heroNation_13 {Inglaterra}
+sex_13 {homem}
+animation_13 {homem}
+hero_13 {PGG}
+heroName_14 {Francisco}
+heroLastname_14 {Dubuá}
+heroNameGen_14 {Francisca}
+heroLastnameGen_14 {Dubuá}
+heroNameDat_14 {Francisco}
+heroLastNameDat_14 {Dubuá}
+heroFace_14 {24}
+heroModel_14 {oficial_7}
+heroType_14 {Aventureiro}
+heroNation_14 {França}
+sex_14 {homem}
+animation_14 {homem}
+hero_14 {PGG}
+heroName_15 {Arthur}
+heroLastname_15 {Cornel}
+heroNameGen_15 {Artura}
+heroLastnameGen_15 {Cornela}
+heroNameDat_15 {Para Artur}
+heroLastNameDat_15 {Cornelu}
+heroFace_15 {25}
+heroModel_15 {oficial_8}
+heroType_15 {Aventureiro}
+heroNation_15 {Inglaterra}
+sex_15 {homem}
+animation_15 {homem}
+hero_15 {PGG}
+heroName_16 {Mark}
+heroLastname_16 {Vanderborg}
+heroNameGen_16 {Marca}
+heroLastnameGen_16 {Vanderborga}
+heroNameDat_16 {Marcu}
+heroLastNameDat_16 {Vanderborg}
+heroFace_16 {27}
+heroModel_16 {oficial_10}
+heroType_16 {Aventureiro}
+heroNation_16 {Holanda}
+sex_16 {homem}
+animation_16 {homem}
+hero_16 {PGG}
+heroName_17 {Cecil}
+heroLastname_17 {Forasteiro}
+heroNameGen_17 {Сесила}
+heroLastnameGen_17 {Forrester}
+heroNameDat_17 {Cecil}
+heroLastNameDat_17 {Para Forrester}
+heroFace_17 {28}
+heroModel_17 {officer_11}
+heroType_17 {Aventureiro}
+heroNation_17 {Inglaterra}
+sex_17 {homem}
+animation_17 {homem}
+hero_17 {PGG}
+heroName_18 {José}
+heroLastname_18 {Dasko}
+heroNameGen_18 {José}
+heroLastnameGen_18 {Dasko}
+heroNameDat_18 {José}
+heroLastNameDat_18 {Dasko}
+heroFace_18 {26}
+heroModel_18 {oficial_9}
+heroType_18 {Aventureiro}
+heroNation_18 {Espanha}
+sex_18 {homem}
+animation_18 {homem}
+hero_18 {PGG}
+heroName_19 {Johan}
+heroLastname_19 {Ousadia}
+heroNameGen_19 {Yohana}
+heroLastnameGen_19 {Daringa}
+heroNameDat_19 {Para Johan}
+heroLastNameDat_19 {Daringu}
+heroFace_19 {213}
+heroModel_19 {Chard3}
+heroType_19 {Aventureiro}
+heroNation_19 {Holanda}
+sex_19 {homem}
+animation_19 {homem}
+hero_19 {PGG}
+heroName_20 {Michael}
+heroLastname_20 {Chard}
+heroNameGen_20 {Michaela}
+heroLastnameGen_20 {Charda}
+heroNameDat_20 {Michael}
+heroLastNameDat_20 {Chardu}
+heroFace_20 {211}
+heroModel_20 {Chard}
+heroType_20 {Aventureiro}
+heroNation_20 {Inglaterra}
+sex_20 {homem}
+animation_20 {homem}
+hero_20 {PGG}

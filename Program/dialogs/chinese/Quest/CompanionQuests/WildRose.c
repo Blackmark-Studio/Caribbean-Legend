@@ -42,20 +42,20 @@ void ProcessDialogEvent()
 		
 		case "Mary_3":
 			dialog.text = "看来这还真不是白忙一场, 对吧! 这里发生了什么? ";
-			link.l1 = "要是我早知道, "+npchar.name+", 要是我早知道就好了……";
+			link.l1 = "要是我早知道, "+npchar.name+", 要是我早知道就好了…… ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap1_EscapeSlaves_3");
 		break;
 		
 		case "Mary_4":
-			dialog.text = "我的天啊……";
-			link.l1 = "是啊, 可怜的人, 看起来她死前受了不少苦。谁都不该有这样的结局……";
+			dialog.text = "我的天啊…… ";
+			link.l1 = "是啊, 可怜的人, 看起来她死前受了不少苦。谁都不该有这样的结局…… ";
 			link.l1.go = "Mary_5";
 		break;
 		
 		case "Mary_5":
 			dialog.text = "那是谁啊, 她丈夫吗? 他们到底在丛林里干什么? ! 难道没听说过逃跑的奴隶吗? ";
-			link.l1 = "恐怕他们已经无法再回答那个问题了……";
+			link.l1 = "恐怕他们已经无法再回答那个问题了…… ";
 			link.l1.go = "Mary_6";
 		break;
 		
@@ -73,7 +73,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_1":
-			dialog.text = "哟哟, 伙计们, 看看这个。简直就是情人窝, 对吧, 嘿嘿。两只小情人刚撒手人寰, 马上又有一对来接替他们的位置了……";
+			dialog.text = "哟哟, 伙计们, 看看这个。简直就是情人窝, 对吧, 嘿嘿。两只小情人刚撒手人寰, 马上又有一对来接替他们的位置了…… ";
 			if (GetOfficersQuantity(pchar) >= 2)
 			{
 				link.l1 = "很聪明嘛。不过你算术好像不怎么样, 对吧? 和那些可怜虫不同, 我们可一点都不孤单。";
@@ -81,32 +81,32 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "嗯, 咱们这边可没那么简单, 你最好信我, 对吧……";
+				link.l1 = "嗯, 咱们这边可没那么简单, 你最好信我, 对吧…… ";
 				link.l1.go = "Naemnik_4";
 			}
 		break;
 		
 		case "Naemnik_2":
-			dialog.text = "我本来想说你比他们聪明——但那纯粹是胡说八道。就算你们人多, 也打不过那些混蛋。你身边的漂亮姑娘, 下场也会和倒在你脚下的那位一样……";
+			dialog.text = "我本来想说你比他们聪明——但那纯粹是胡说八道。就算你们人多, 也打不过那些混蛋。你身边的漂亮姑娘, 下场也会和倒在你脚下的那位一样…… ";
 			link.l1 = "你说的是那些逃跑的奴隶吗? 这是其中一个? 所以, 你们是Bishop的人? ";
 			link.l1.go = "Naemnik_3";
 		break;
 		
 		case "Naemnik_3":
-			dialog.text = "你问的所有问题答案都是肯定的。我们和士兵们追了他们整整两天多, 几乎把整个岛都翻遍了。后来那些混蛋分头逃跑, 一部分往洞穴方向撤退——守卫们追了上去——剩下的则冲向了海湾。就在离这里西边半英里处, 他们设下埋伏, 我们损失了几个人, 等我们回过神来重新集结时, 他们已经在那个蠢丫头身上得逞了……";
+			dialog.text = "你问的所有问题答案都是肯定的。我们和士兵们追了他们整整两天多, 几乎把整个岛都翻遍了。后来那些混蛋分头逃跑, 一部分往洞穴方向撤退——守卫们追了上去——剩下的则冲向了海湾。就在离这里西边半英里处, 他们设下埋伏, 我们损失了几个人, 等我们回过神来重新集结时, 他们已经在那个蠢丫头身上得逞了…… ";
 			link.l1 = "...";
 			link.l1.go = "Naemnik_6_add";
 		break;
 		
 		case "Naemnik_4":
-			dialog.text = "把你的牙签自己留着吧, 花花公子——别来烦我, 也别惹我的伙计们。我要看看, 要是你被我们在海湾干掉的那帮混蛋围上一打, 你还能有多大本事。只有一个家伙走了狗屎运——不过也蹦跶不了多久……等那混蛋落到Bishop手里……";
+			dialog.text = "把你的牙签自己留着吧, 花花公子——别来烦我, 也别惹我的伙计们。我要看看, 要是你被我们在海湾干掉的那帮混蛋围上一打, 你还能有多大本事。只有一个家伙走了狗屎运——不过也蹦跶不了多久…… 等那混蛋落到Bishop手里…… ";
 			link.l1 = "所以你们是他雇来的雇佣兵? ";
 			link.l1.go = "Naemnik_5";
 		break;
 		
 		case "Naemnik_5":
-			dialog.text = "嗯, 他们显然不是驻军士兵。 如果不是那些游手好闲的家伙, 我们昨天就能抓住那些恶棍了——那个傻瓜和他老婆现在还会活着…… ";
-			link.l1 = "所以, 这不是你的手笔吧…… ";
+			dialog.text = "嗯, 他们显然不是驻军士兵。 如果不是那些游手好闲的家伙, 我们昨天就能抓住那些恶棍了——那个傻瓜和他老婆现在还会活着……  ";
+			link.l1 = "所以, 这不是你的手笔吧……  ";
 			link.l1.go = "Naemnik_6";
 		break;
 		
@@ -128,14 +128,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_8":
-			dialog.text = "拜托, 你自己想想吧! 我们可是被那个恶魔主教追着跑, 在丛林里转悠了两天, 还得掩盖行踪——结果呢? 就为了现在去侵犯一个可怜的女人, 还让那些吸血鬼追上我们? ! 我的朋友们几乎是拖着脚才上了那片海滩, "+GetAddress_Form(NPChar)+"! 我们连开火的力气都没有了, 不然绝不会让那些混蛋为所欲为…… 全都是他们干的, 我们都看见了! ...";
+			dialog.text = "拜托, 你自己想想吧! 我们可是被那个恶魔主教追着跑, 在丛林里转悠了两天, 还得掩盖行踪——结果呢? 就为了现在去侵犯一个可怜的女人, 还让那些吸血鬼追上我们? ! 我的朋友们几乎是拖着脚才上了那片海滩, "+GetAddress_Form(NPChar)+"! 我们连开火的力气都没有了, 不然绝不会让那些混蛋为所欲为……  全都是他们干的, 我们都看见了! ...";
 			link.l1 = "...";
 			link.l1.go = "Naemnik_9_add";
 			ChangeCharacterComplexReputation(pchar, "nobility", 2);
 		break;
 		
 		case "Naemnik_9":
-			dialog.text = "拜托, 你自己想想吧! 我们可是被那个恶魔主教追着跑, 在丛林里躲了两天, 拼命掩盖行踪——为了什么? 难道就是为了现在去羞辱一个可怜的女士, 还让那些吸血鬼追上我们? ! 我的朋友们几乎是拖着脚才上了那片海滩, "+GetAddress_Form(NPChar)+"! 我们连开火的力气都没有了, 不然绝不会让那些混蛋得逞…… 全都是他们干的, 我们亲眼所见! ..";
+			dialog.text = "拜托, 你自己想想吧! 我们可是被那个恶魔主教追着跑, 在丛林里躲了两天, 拼命掩盖行踪——为了什么? 难道就是为了现在去羞辱一个可怜的女士, 还让那些吸血鬼追上我们? ! 我的朋友们几乎是拖着脚才上了那片海滩, "+GetAddress_Form(NPChar)+"! 我们连开火的力气都没有了, 不然绝不会让那些混蛋得逞……  全都是他们干的, 我们亲眼所见! ..";
 			link.l1 = "...";
 			link.l1.go = "Naemnik_9_add";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
@@ -175,7 +175,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_13":
-			dialog.text = "但是…… 你刚才叫他Casper, 对吧…… ";
+			dialog.text = "但是……  你刚才叫他Casper, 对吧……  ";
 			link.l1 = "...";
 			link.l1.go = "Naemnik_13_add";
 			CharacterTurnByChr(npchar, CharacterFromID("WildRose_Naemnik_1"));
@@ -185,7 +185,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_14":
-			dialog.text = "听着, 小子, 去告诉你女朋友, 人嘛, 就算是像这家伙这么小的, 也不光有名字, 还有姓氏。 我是听说过不少次, 漂亮女人有时候脑袋跟稻草一样空, 但见过像她这样的, 还真是头一回…… ";
+			dialog.text = "听着, 小子, 去告诉你女朋友, 人嘛, 就算是像这家伙这么小的, 也不光有名字, 还有姓氏。 我是听说过不少次, 漂亮女人有时候脑袋跟稻草一样空, 但见过像她这样的, 还真是头一回……  ";
 			link.l1 = "...";
 			link.l1.go = "Naemnik_14_add";
 			CharacterTurnByChr(npchar, pchar);
@@ -208,7 +208,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_16":
-			dialog.text = "哦, 所以我们这儿有位真正的绅士, 对吧? 嗯, 你的举止可比那个小虫子的尖叫体面多了。 他叫得比他那可怜的老婆还大声——隔着那座小山都能听见,  对吧? 说真的, 他其实还帮了我们一点忙——我们就是靠着他的叫声才追踪到那帮混蛋的…… ";
+			dialog.text = "哦, 所以我们这儿有位真正的绅士, 对吧? 嗯, 你的举止可比那个小虫子的尖叫体面多了。 他叫得比他那可怜的老婆还大声——隔着那座小山都能听见,  对吧? 说真的, 他其实还帮了我们一点忙——我们就是靠着他的叫声才追踪到那帮混蛋的……  ";
 			link.l1 = "在加勒比这地方, 贵族可稀罕得很。 现在大家深呼吸一下——在这儿立刻见阎王, 可一点都不高贵。";
 			link.l1.go = "Naemnik_17";
 			link.l2 = "这里唯一的恶棍就是你们这帮家伙。 现在就向Mary道歉, 也许我们还能避免流血。";
@@ -216,7 +216,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_17":
-			dialog.text = "这还真让人无话可说。 不过, 先冷静一下你的…… ";
+			dialog.text = "这还真让人无话可说。 不过, 先冷静一下你的……  ";
 			link.l1 = "她叫Mary Casper。 我觉得这已经说明了很多。";
 			link.l1.go = "Naemnik_18";
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
@@ -229,14 +229,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_19":
-			dialog.text = "回来了? 还是怎么的? 你要跟我决斗吗? 来啊…… 如果你不怕把你的宝贝一个人丢在丛林中央的话, 嘿嘿。 要真那样, 我和兄弟们可会——非——常——高兴呢。";
+			dialog.text = "回来了? 还是怎么的? 你要跟我决斗吗? 来啊……  如果你不怕把你的宝贝一个人丢在丛林中央的话, 嘿嘿。 要真那样, 我和兄弟们可会——非——常——高兴呢。";
 			link.l1 = "所以, 你终于露出真面目了。 你的演技也就那样, 对吧。";
 			link.l1.go = "Naemnik_bitva";
 		break;
 		
 		case "Naemnik_22":
 			dialog.text = "你啊, 先生, 真是个矛盾体——一方面那么温和, 另一方面却又这么粗鲁。 对吧? 不过我倒想知道, 你会去向那个红发疯丫头求原谅吗? ";
-			link.l1 = "她叫Mary Casper, 要是你现在不…… ";
+			link.l1 = "她叫Mary Casper, 要是你现在不……  ";
 			link.l1.go = "Naemnik_23";
 		break;
 		
@@ -247,7 +247,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_24":
-			dialog.text = "哟哟…… 多么放肆的小家伙啊。 告诉我, 伙计, 你那姑娘在吊床上本事怎么样? 不过, 我敢肯定她不怎么样——我倒是很乐意亲自试试…… ";
+			dialog.text = "哟哟……  多么放肆的小家伙啊。 告诉我, 伙计, 你那姑娘在吊床上本事怎么样? 不过, 我敢肯定她不怎么样——我倒是很乐意亲自试试……  ";
 			link.l1 = "所以你还是露馅了。 没撑多久, 对吧。 准备战斗吧! ";
 			link.l1.go = "Naemnik_bitva";
 		break;
@@ -270,14 +270,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Djerry_3_1":
-			dialog.text = "我也不太确定为什么, 呃, "+GetAddress_Form(NPChar)+"…… ";
-			link.l1 = "嗯, 你看…… 司令肯定会逼他招供, 这样你的清白就能洗清了——还有你那些牺牲朋友的名声。";
+			dialog.text = "我也不太确定为什么, 呃, "+GetAddress_Form(NPChar)+"……  ";
+			link.l1 = "嗯, 你看……  司令肯定会逼他招供, 这样你的清白就能洗清了——还有你那些牺牲朋友的名声。";
 			link.l1.go = "Djerry_4";
 		break;
 		
 		case "Djerry_4":
-			dialog.text = "哈哈, 当然啦。 然后 William Bishop 会把我活剥了皮——这可是我在种植园听一个黑哥们说的…… Bishop 对逃跑的人可不手软——不管你是黑的还是白的。";
-			link.l1 = "恐怕你无论如何都得回种植园…… ";
+			dialog.text = "哈哈, 当然啦。 然后 William Bishop 会把我活剥了皮——这可是我在种植园听一个黑哥们说的……  Bishop 对逃跑的人可不手软——不管你是黑的还是白的。";
+			link.l1 = "恐怕你无论如何都得回种植园……  ";
 			link.l1.go = "Djerry_5";
 			link.l2 = "所以, 你不是心甘情愿回种植园的, 对吧? ";
 			link.l2.go = "Djerry_6";
@@ -299,7 +299,7 @@ void ProcessDialogEvent()
 		
 		case "Djerry_8":
 			dialog.text = "这样反而更好, 天知道, "+GetAddress_Form(NPChar)+"——要我说, 这比死在Bishop准备的那些酷刑下可强多了。 其实也没那么糟——在Ragged Point附近藏着一艘带帆的小船。";
-			link.l1 = "离巴巴多斯最近的陆地是多米尼克, 那儿有土著, 还有托巴哥, 那儿有西班牙人。 我都说不清哪个对你来说更糟…… ";
+			link.l1 = "离巴巴多斯最近的陆地是多米尼克, 那儿有土著, 还有托巴哥, 那儿有西班牙人。 我都说不清哪个对你来说更糟……  ";
 			link.l1.go = "Djerry_9";
 		break;
 		
@@ -310,7 +310,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Djerry_10":
-			dialog.text = "谢谢您, "+GetAddress_Form(NPChar)+"。 还有你, 小姑娘, 呃, Mary。 (鞠躬) 当然, 我们并没有什么亲戚关系, 不过在这种, 呃, 情形下遇到同姓的人…… 实在是太意外了, 而且…… ";
+			dialog.text = "谢谢您, "+GetAddress_Form(NPChar)+"。 还有你, 小姑娘, 呃, Mary。 (鞠躬) 当然, 我们并没有什么亲戚关系, 不过在这种, 呃, 情形下遇到同姓的人……  实在是太意外了, 而且……  ";
 			link.l1 = "...";
 			link.l1.go = "Djerry_10_add";
 		break;
@@ -337,26 +337,26 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_12":
-			dialog.text = "我只是想尽快摆脱那家伙的纠缠…… 他的话漏洞百出, 对吧。";
+			dialog.text = "我只是想尽快摆脱那家伙的纠缠……  他的话漏洞百出, 对吧。";
 			link.l1 = "你在说什么呢, 亲爱的? ";
 			link.l1.go = "Mary_13";
 		break;
 		
 		case "Mary_13":
-			dialog.text = "在听了主教手下那家伙说的话后, 我毫不怀疑那些可怜的人都是死在他手里的。 但在那之前…… Casper——你刚才真的有在听他说什么吗? ";
+			dialog.text = "在听了主教手下那家伙说的话后, 我毫不怀疑那些可怜的人都是死在他手里的。 但在那之前……  Casper——你刚才真的有在听他说什么吗? ";
 			link.l1 = "那你到底哪里觉得不对劲呀, 亲爱的? ";
 			link.l1.go = "Mary_14";
 		break;
 		
 		case "Mary_14":
-			dialog.text = "他说海滩上藏着一艘船。 但是有二十多人从种植园逃出来, 所以那船肯定挺大的, 对吧? Jerry是个海军逃兵, 他很清楚一个人操控那么大的船可不容易, 对吧…… ";
+			dialog.text = "他说海滩上藏着一艘船。 但是有二十多人从种植园逃出来, 所以那船肯定挺大的, 对吧? Jerry是个海军逃兵, 他很清楚一个人操控那么大的船可不容易, 对吧……  ";
 			link.l1 = "他只需要扬帆并保持航向——剩下的就交给风了。 好吧, 他确实是在冒很大的险, 但也许死在大海上, 真的比死在种植园主的刽子手手里要好。";
 			link.l1.go = "Mary_15";
 		break;
 		
 		case "Mary_15":
-			dialog.text = "好吧。 但是现在我发现还有别的地方说不通…… 据他说, 他和他的朋友们在远处看着那些雇佣兵欺负那个可怜的女孩…… ";
-			link.l1 = "没有直接跑向我的船…… 好吧, 我明白你的意思了, "+npchar.name+"。 也许我该再问Casper先生几个问题…… ";
+			dialog.text = "好吧。 但是现在我发现还有别的地方说不通……  据他说, 他和他的朋友们在远处看着那些雇佣兵欺负那个可怜的女孩……  ";
+			link.l1 = "没有直接跑向我的船……  好吧, 我明白你的意思了, "+npchar.name+"。 也许我该再问Casper先生几个问题……  ";
 			link.l1.go = "Mary_15_add";
 		break;
 		case "Mary_15_add":
@@ -365,7 +365,7 @@ void ProcessDialogEvent()
 		
 		case "Mary_16":
 			dialog.text = "...";
-			link.l1 = "嘿, "+npchar.name+", 老朋友! 等一下…… ";
+			link.l1 = "嘿, "+npchar.name+", 老朋友! 等一下……  ";
 			link.l1.go = "Mary_17";
 		break;
 		
@@ -377,14 +377,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_21":
-			dialog.text = "卑鄙的家伙! 我们救了他的命, 可他却这样! 那我们算什么呢, "+pchar.name+"? 所以说, 结果就是…… ";
-			link.l1 = "好了, "+npchar.name+", 现在已经没有活人知道事情的真相了…… ";
+			dialog.text = "卑鄙的家伙! 我们救了他的命, 可他却这样! 那我们算什么呢, "+pchar.name+"? 所以说, 结果就是……  ";
+			link.l1 = "好了, "+npchar.name+", 现在已经没有活人知道事情的真相了……  ";
 			link.l1.go = "Mary_22";
 		break;
 		
 		case "Mary_22":
 			dialog.text = "我们得离开这里, "+pchar.name+"。 要是士兵们在这儿发现我们, 可就麻烦了, 对吧。";
-			link.l1 = "你说得对, Mary。 我们走吧…… ";
+			link.l1 = "你说得对, Mary。 我们走吧……  ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap1_EscapeSlaves_15");
 		break;
@@ -397,7 +397,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Barmen_1":
-			dialog.text = "抱歉吵醒您了, 船长…… ";
+			dialog.text = "抱歉吵醒您了, 船长……  ";
 			if (sti(pchar.reputation.nobility) >= 40)
 			{
 				link.l1 = "被打倒了, 这也算点事儿, 对吧。 现在说吧——你到底想从我这里得到什么? ";
@@ -412,7 +412,7 @@ void ProcessDialogEvent()
 		
 		case "Barmen_2":
 			dialog.text = "有个镇上的人想见你——Lewis Gernon。 他说有重要的事情要和你谈。";
-			link.l1 = "这个名字我从没听说过。 我希望他真有重要的事, 不然就这样把我从…… 这种工作中叫走。 让他进来吧…… ";
+			link.l1 = "这个名字我从没听说过。 我希望他真有重要的事, 不然就这样把我从……  这种工作中叫走。 让他进来吧……  ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap1_City_5");
 		break;
@@ -424,7 +424,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Lewis_2":
-			dialog.text = "不记得了吗? 啊, 我明白了…… 我的脸上沾满了血和灰尘, 几个小时前我照镜子时自己都被吓了一跳…… ";
+			dialog.text = "不记得了吗? 啊, 我明白了……  我的脸上沾满了血和灰尘, 几个小时前我照镜子时自己都被吓了一跳……  ";
 			link.l1 = "...";
 			link.l1.go = "Lewis_2_add";
 		break;
@@ -433,7 +433,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Lewis_3":
-			dialog.text = "你…… 你就是那个人, 没错, 我们找到你了, 然后…… ";
+			dialog.text = "你……  你就是那个人, 没错, 我们找到你了, 然后……  ";
 			link.l1 = "...";
 			link.l1.go = "Lewis_3_add";
 			CharacterTurnByChr(CharacterFromID("WildRose_Lewis"), CharacterFromID("Mary"));
@@ -444,7 +444,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Lewis_4":
-			dialog.text = "还有我的Susan。 可怜的Suzie…… ";
+			dialog.text = "还有我的Susan。 可怜的Suzie……  ";
 			link.l1 = "...";
 			link.l1.go = "Lewis_4_add";
 			CharacterTurnByChr(CharacterFromID("WildRose_Lewis"), CharacterFromID("Mary"));
@@ -455,7 +455,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Lewis_5":
-			dialog.text = "我们还以为你死了呢。 而且…… 她是你妻子, 对吧? ";
+			dialog.text = "我们还以为你死了呢。 而且……  她是你妻子, 对吧? ";
 			link.l1 = "...";
 			link.l1.go = "Lewis_5_add";
 			CharacterTurnByChr(CharacterFromID("WildRose_Lewis"), CharacterFromID("Mary"));
@@ -466,7 +466,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Lewis_6":
-			dialog.text = "是的, 女士。 她是我的妻子, 而我当时吓得动弹不得…… 我什么都做不了。 天啊, 天啊…… ";
+			dialog.text = "是的, 女士。 她是我的妻子, 而我当时吓得动弹不得……  我什么都做不了。 天啊, 天啊……  ";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap1_City_8");
@@ -475,14 +475,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Lewis_7":
-			dialog.text = "(抽泣) 他们打了我, 还强迫我看…… ";
+			dialog.text = "(抽泣) 他们打了我, 还强迫我看……  ";
 			link.l1 = "站起来, "+GetAddress_Form(NPChar)+"。 这不是你的错。 面对那么多恶棍, 谁都撑不住。";
 			link.l1.go = "Lewis_8";
 		break;
 		
 		case "Lewis_8":
-			dialog.text = "他们实在是太多了, 太多了…… 但是, 我还是…… ";
-			link.l1 = "不过你还是活下来了, 你妻子的凶手也在地狱里受苦。 这虽然聊胜于无, 但总算有点安慰, "+npchar.lastname+"先生。 不过, 我还有件事想问你…… ";
+			dialog.text = "他们实在是太多了, 太多了……  但是, 我还是……  ";
+			link.l1 = "不过你还是活下来了, 你妻子的凶手也在地狱里受苦。 这虽然聊胜于无, 但总算有点安慰, "+npchar.lastname+"先生。 不过, 我还有件事想问你……  ";
 			link.l1.go = "Lewis_9";
 			LAi_ActorAnimation(npchar, "ground_standup", "WildRose_Etap1_City_8_1", 7);
 		break;
@@ -501,7 +501,7 @@ void ProcessDialogEvent()
 		
 		case "Lewis_11":
 			dialog.text = "好吧。 Bruce确实是个无赖, 也为Bishop干了不少脏活——但他从来不是强奸犯。";
-			link.l1 = "在我看来可不是这样。 不过我不跟你争, "+npchar.name+"。 不过既然你当时是清醒的, 也看到了全部, 你本可以站起来然后…… ";
+			link.l1 = "在我看来可不是这样。 不过我不跟你争, "+npchar.name+"。 不过既然你当时是清醒的, 也看到了全部, 你本可以站起来然后……  ";
 			link.l1.go = "Lewis_12";
 		break;
 		
@@ -512,30 +512,30 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Lewis_13":
-			dialog.text = "Jerry用他的火枪枪托狠狠砸了我一下, 然后还说要当着Susan的面把我剁成碎片。 我…… 我都不好意思承认了, 对吧? 但我真的因为太害怕, 好像还晕了几秒钟。 就在那时候…… ";
+			dialog.text = "Jerry用他的火枪枪托狠狠砸了我一下, 然后还说要当着Susan的面把我剁成碎片。 我……  我都不好意思承认了, 对吧? 但我真的因为太害怕, 好像还晕了几秒钟。 就在那时候……  ";
 			link.l1 = "我理解你, "+npchar.lastname+"先生。 你的行为并不丢人。 不是每个人都能承受你经历的那些事。 可惜你没有出手——不过事已至此。 至少我们成功送了你妻子的一个凶手下地狱, 这点我还是很高兴的——哪怕他差点骗过了我们。";
 			link.l1.go = "Lewis_14";
-			link.l2 = "所以我们差点被主教的雇佣兵杀了——就因为你害怕, 是这样吗? 真是个好借口, "+npchar.name+"。 还好最后我们总算把事情弄清楚了, 虽然有点晚…… ";
+			link.l2 = "所以我们差点被主教的雇佣兵杀了——就因为你害怕, 是这样吗? 真是个好借口, "+npchar.name+"。 还好最后我们总算把事情弄清楚了, 虽然有点晚……  ";
 			link.l2.go = "Lewis_15";
 		break;
 		
 		case "Lewis_14":
-			dialog.text = "好吧, "+GetAddress_Form(NPChar)+"。 我来是为了感谢你这件事。 即使一开始你相信了他…… ";
-			link.l1 = "Bruce Primer为此付出了很多努力。 他真的该注意自己的言辞…… ";
+			dialog.text = "好吧, "+GetAddress_Form(NPChar)+"。 我来是为了感谢你这件事。 即使一开始你相信了他……  ";
+			link.l1 = "Bruce Primer为此付出了很多努力。 他真的该注意自己的言辞……  ";
 			link.l1.go = "Lewis_16";
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
 		break;
 		
 		case "Lewis_15":
-			dialog.text = "好吧, "+GetAddress_Form(NPChar)+"。 我来就是为了感谢你这件事。 即使一开始你相信了他…… ";
-			link.l1 = "Bruce Primer为此可是下了不少功夫。 他真的该注意自己的言辞了…… ";
+			dialog.text = "好吧, "+GetAddress_Form(NPChar)+"。 我来就是为了感谢你这件事。 即使一开始你相信了他……  ";
+			link.l1 = "Bruce Primer为此可是下了不少功夫。 他真的该注意自己的言辞了……  ";
 			link.l1.go = "Lewis_16";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
 		break;
 		
 		case "Lewis_16":
-			dialog.text = "唉, 那天我们都犯了错…… Susan和我本不该去Ragged Point散步, Bruce本该管住自己的嘴…… 而你也不该相信Jeremy。 不过, 多亏了Casper小姐, 正义才得以伸张。";
+			dialog.text = "唉, 那天我们都犯了错……  Susan和我本不该去Ragged Point散步, Bruce本该管住自己的嘴……  而你也不该相信Jeremy。 不过, 多亏了Casper小姐, 正义才得以伸张。";
 			link.l1 = "...";
 			link.l1.go = "Lewis_16_add";
 		break;
@@ -556,7 +556,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Lewis_18":
-			dialog.text = "我知道, 小姐。 我一走进这个房间就明白了。 你和他之间一点都不像。 可是, Susan…… 她一直坚信, 这世上没有什么是偶然发生的。";
+			dialog.text = "我知道, 小姐。 我一走进这个房间就明白了。 你和他之间一点都不像。 可是, Susan……  她一直坚信, 这世上没有什么是偶然发生的。";
 			link.l1 = "...";
 			link.l1.go = "Lewis_18_add";
 			CharacterTurnByChr(CharacterFromID("WildRose_Lewis"), CharacterFromID("Mary"));
@@ -593,53 +593,53 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_31":
-			dialog.text = ""+pchar.name+"…… ";
-			link.l1 = "我知道, 亲爱的, 我差点让那个混蛋逍遥法外了…… ";
+			dialog.text = ""+pchar.name+"……  ";
+			link.l1 = "我知道, 亲爱的, 我差点让那个混蛋逍遥法外了……  ";
 			link.l1.go = "Mary_32";
 		break;
 		
 		case "Mary_32":
 			dialog.text = "一个叫Jerry Casper的杂种。";
-			link.l1 = "没错…… 等等…… 你不会是说, 你觉得他…… ";
+			link.l1 = "没错……  等等……  你不会是说, 你觉得他……  ";
 			link.l1.go = "Mary_33";
 		break;
 		
 		case "Mary_33":
-			dialog.text = "我知道这真的很蠢…… ";
-			link.l1 = "当然啦! 要是你的姓是Smith或者Jones呢? 大街上有成千上万这样姓的人——其中有些人肯定会干坏事…… 还有那个Jerry, 让他下地狱吧——说不定他根本就不是Casper呢…… ";
+			dialog.text = "我知道这真的很蠢……  ";
+			link.l1 = "当然啦! 要是你的姓是Smith或者Jones呢? 大街上有成千上万这样姓的人——其中有些人肯定会干坏事……  还有那个Jerry, 让他下地狱吧——说不定他根本就不是Casper呢……  ";
 			link.l1.go = "Mary_34";
 			link.l2 = "没错, 亲爱的。 那个该死的Jerry完全可能用了个假姓, 对吧? ";
 			link.l2.go = "Mary_35";
 		break;
 		
 		case "Mary_34":
-			dialog.text = "可即便如此…… 我知道你不懂我的意思, 但你想象一下, 如果他也姓"+pchar.lastname+", 你会怎么想。";
-			link.l1 = "这可不是一回事, Mary。"+pchar.lastname+"——那可是贵族的姓氏, 而且…… ";
+			dialog.text = "可即便如此……  我知道你不懂我的意思, 但你想象一下, 如果他也姓"+pchar.lastname+", 你会怎么想。";
+			link.l1 = "这可不是一回事, Mary。"+pchar.lastname+"——那可是贵族的姓氏, 而且……  ";
 			link.l1.go = "Mary_36";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
 		break;
 		
 		case "Mary_35":
-			dialog.text = "不过…… 我知道你不懂我的意思, 但你想象一下, 如果他也姓"+pchar.lastname+", 你会怎么想。";
-			link.l1 = "这可不是一回事, Mary。"+pchar.lastname+"——这是个贵族姓氏, 而且…… ";
+			dialog.text = "不过……  我知道你不懂我的意思, 但你想象一下, 如果他也姓"+pchar.lastname+", 你会怎么想。";
+			link.l1 = "这可不是一回事, Mary。"+pchar.lastname+"——这是个贵族姓氏, 而且……  ";
 			link.l1.go = "Mary_36";
 			AddCharacterExpToSkill(pchar, "Sneak", 100);
 		break;
 		
 		case "Mary_36":
-			dialog.text = "至于Casper家嘛, 说到底, 我们就是些无名无姓、无依无靠的人, 对吧? 我想我应该每天都感谢上帝, 你竟然会注意到我, 而不是那些自以为是的家伙…… ";
-			link.l1 = ""+npchar.name+", 我完全不是那个意思——你明白的。 贵族家庭的成员是血脉相连的, 这可不是仅仅和别人同姓那么简单。 就像我说过的, 有些人只是随便给自己取了个姓氏而已…… ";
+			dialog.text = "至于Casper家嘛, 说到底, 我们就是些无名无姓、无依无靠的人, 对吧? 我想我应该每天都感谢上帝, 你竟然会注意到我, 而不是那些自以为是的家伙……  ";
+			link.l1 = ""+npchar.name+", 我完全不是那个意思——你明白的。 贵族家庭的成员是血脉相连的, 这可不是仅仅和别人同姓那么简单。 就像我说过的, 有些人只是随便给自己取了个姓氏而已……  ";
 			link.l1.go = "Mary_37";
 		break;
 		
 		case "Mary_37":
-			dialog.text = "这可不仅仅是因为那个, "+pchar.name+"…… ";
-			link.l1 = "亲爱的, 咱们今天可真是够累的了。 咱们在丛林里走了好几英里, 差点就死在那里…… 结果几乎一夜没怎么睡觉。 你脑子里有点奇奇怪怪的想法也不奇怪, 对吧? 咱们俩都该好好睡一觉了。";
+			dialog.text = "这可不仅仅是因为那个, "+pchar.name+"……  ";
+			link.l1 = "亲爱的, 咱们今天可真是够累的了。 咱们在丛林里走了好几英里, 差点就死在那里……  结果几乎一夜没怎么睡觉。 你脑子里有点奇奇怪怪的想法也不奇怪, 对吧? 咱们俩都该好好睡一觉了。";
 			link.l1.go = "Mary_38";
 		break;
 		
 		case "Mary_38":
-			dialog.text = "我一点也不觉得奇怪, 不过好吧…… 我们明天再谈。";
+			dialog.text = "我一点也不觉得奇怪, 不过好吧……  我们明天再谈。";
 			link.l1 = "头脑清醒的话, 我们会更快把一切理顺。 躺下吧, 亲爱的, 我们得把这一天抛在身后。";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap1_Morning_1");
@@ -647,32 +647,32 @@ void ProcessDialogEvent()
 		
 		case "Waitress_1":
 			dialog.text = "你还好吗, "+GetAddress_Form(NPChar)+"? 你看起来怪怪的, 好像见到鬼了一样。 要不要来点朗姆酒? 或者葡萄酒? 我们这里有很棒的选择, 你也该放松一下了。";
-			link.l1 = "去他的酒。 我在找一个姑娘…… ";
+			link.l1 = "去他的酒。 我在找一个姑娘……  ";
 			link.l1.go = "Waitress_2";
 		break;
 		
 		case "Waitress_2":
-			dialog.text = "那你可来错地方了, 船长。 这是酒馆, 不是青楼。 你出去看看, 就在街对面…… ";
+			dialog.text = "那你可来错地方了, 船长。 这是酒馆, 不是青楼。 你出去看看, 就在街对面……  ";
 			link.l1 = "听着, 我现在没心情开玩笑。 我在找一个穿红色短上衣、留着红头发的女孩, 她带着武器。 她叫Mary Casper。";
 			link.l1.go = "Waitress_3";
 		break;
 		
 		case "Waitress_3":
 			dialog.text = "如果咱们不是在开玩笑, 那我就没什么好说的了。 我的班一个小时前就开始了, 我可没见过穿红外套的红发姑娘在这儿。";
-			link.l1 = "所以她是夜里离开的…… 可是她能去哪儿呢? ! ";
+			link.l1 = "所以她是夜里离开的……  可是她能去哪儿呢? ! ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap1_Morning_4");
 		break;
 		
 		case "Mary_41":
-			dialog.text = "早安, 我的爱人! 你睡了好久呢…… ";
-			link.l2 = "你刚才真让我担心了, "+npchar.name+"。 以后别再这样突然消失了, 行吗…… ";
+			dialog.text = "早安, 我的爱人! 你睡了好久呢……  ";
+			link.l2 = "你刚才真让我担心了, "+npchar.name+"。 以后别再这样突然消失了, 行吗……  ";
 			link.l2.go = "Mary_43";
 			DelLandQuestMark(npchar);
 		break;
 		
 		case "Mary_43":
-			dialog.text = "我不想吵醒你。 而且, 你有时候也会这样突然消失, 一句话都不说…… ";
+			dialog.text = "我不想吵醒你。 而且, 你有时候也会这样突然消失, 一句话都不说……  ";
 			link.l1 = "你决定回应我的感情了吗? ";
 			link.l1.go = "Mary_44";
 			AddCharacterExpToSkill(pchar, "Defence", 100);
@@ -685,13 +685,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_46":
-			dialog.text = "我们昨天的谈话。 关于姓氏, 血缘关系…… ";
-			link.l1 = "所以, 你果然还是在生我的气, 对吧…… ";
+			dialog.text = "我们昨天的谈话。 关于姓氏, 血缘关系……  ";
+			link.l1 = "所以, 你果然还是在生我的气, 对吧……  ";
 			link.l1.go = "Mary_47";
 		break;
 		
 		case "Mary_47":
-			dialog.text = "才不是呢, 亲爱的, 我不是那个意思。 只是我突然意识到, 我对自己的家人一无所知, 对吧? 比如你——你可是贵族世家的子弟。 船上的伙计们, 时不时都会聊聊自己的家人。 而我——我什么都说不出来。 我从没见过我的父母, 见鬼, 我甚至都不知道自己是在哪出生的…… ";
+			dialog.text = "才不是呢, 亲爱的, 我不是那个意思。 只是我突然意识到, 我对自己的家人一无所知, 对吧? 比如你——你可是贵族世家的子弟。 船上的伙计们, 时不时都会聊聊自己的家人。 而我——我什么都说不出来。 我从没见过我的父母, 见鬼, 我甚至都不知道自己是在哪出生的……  ";
 			link.l1 = "不是在Isle of Justice上吗? ";
 			link.l1.go = "Mary_48";
 		break;
@@ -703,7 +703,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_49":
-			dialog.text = "看到了吧? 我也是这么想的, 对吧。 你知道吗, 我以前一直都是糊里糊涂地过日子, 也没怎么想过这些。 可昨天我们碰上那个混蛋Jerry的时候…… 我就在想——我父亲是谁? 我母亲是谁? 为什么从来没人跟我说起他们, 好像他们根本不存在一样? 要是我父亲其实也和Jerry那种混蛋一样呢? ";
+			dialog.text = "看到了吧? 我也是这么想的, 对吧。 你知道吗, 我以前一直都是糊里糊涂地过日子, 也没怎么想过这些。 可昨天我们碰上那个混蛋Jerry的时候……  我就在想——我父亲是谁? 我母亲是谁? 为什么从来没人跟我说起他们, 好像他们根本不存在一样? 要是我父亲其实也和Jerry那种混蛋一样呢? ";
 			link.l1 = "一点都不重要, "+npchar.name+"。 你是被别人养大的——而且他们做得很好。";
 			link.l1.go = "Mary_50";
 			link.l1 = "我怀疑是不是这样。 而且我真看不出这有什么重要的, 毕竟你以前好像从没在意过, 对吧? ";
@@ -738,8 +738,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_54":
-			dialog.text = "不知怎么的, 我居然活了将近二十年, 却对他们一无所知…… ";
-			// dialog.text = "最终, 二十多年里, 我根本毫不在意…… ";
+			dialog.text = "不知怎么的, 我居然活了将近二十年, 却对他们一无所知……  ";
+			// dialog.text = "最终, 二十多年里, 我根本毫不在意……  ";
 			link.l1 = "...";
 			link.l1.go = "Mary_55";
 		break;
@@ -755,7 +755,7 @@ void ProcessDialogEvent()
 		// ================== ЭТАП 2. «ДИТЯ ОСТРОВА» ==================
 		// ============================================================
 		case "Mary_61":
-			dialog.text = "故乡的海岸…… 你知道吗, "+pchar.name+", 我觉得就算我们十年后再回来, 这里看起来还是会和现在一模一样, 对吧。";
+			dialog.text = "故乡的海岸……  你知道吗, "+pchar.name+", 我觉得就算我们十年后再回来, 这里看起来还是会和现在一模一样, 对吧。";
 			link.l1 = "也许吧, "+npchar.name+", 也许吧。 内环的船还会漂在水面上, 但这里生活的人会变得不一样。";
 			link.l1.go = "Mary_62";
 			link.l2 = "我严重怀疑——这里的一切全靠一个承诺维系着。 还有机械师的天才。";
@@ -763,21 +763,21 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_62":
-			dialog.text = "我几乎已经记不清十年、十五年前住在这些沉船上的人了。 只有那些最亲近我的人——Alan, Eric…… ";
+			dialog.text = "我几乎已经记不清十年、十五年前住在这些沉船上的人了。 只有那些最亲近我的人——Alan, Eric……  ";
 			link.l1 = "我想事情就是这样吧。 你不可能记住所有的人和事。 名字和面孔也会从我的记忆中淡去——从我在巴黎的日子开始, 更别说加斯科涅了。 我还以为只有老人家才会这样呢。";
 			link.l1.go = "Mary_64";
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
 		break;
 		
 		case "Mary_63":
-			dialog.text = "而且我几乎记不起十年、十五年前住在这些残骸上的人了。 只有对我最重要的人——艾伦, 埃里克…… ";
+			dialog.text = "而且我几乎记不起十年、十五年前住在这些残骸上的人了。 只有对我最重要的人——艾伦, 埃里克……  ";
 			link.l1 = "我想这就是人生吧。 你不可能记住所有的事和所有的人。 连我自己都常常忘了在巴黎时的名字和面孔——更别说加斯科涅了。 我还以为只有老人才会这样呢。";
 			link.l1.go = "Mary_64";
 			AddCharacterExpToSkill(pchar, "Repair", 100);
 		break;
 		
 		case "Mary_64":
-			dialog.text = "但是这个地方…… 就像另一个世界, 对吧? 你能想象吗, 有些不久前才到这里的人说, 这里的时间流逝速度几乎是大陆的三倍…… ";
+			dialog.text = "但是这个地方……  就像另一个世界, 对吧? 你能想象吗, 有些不久前才到这里的人说, 这里的时间流逝速度几乎是大陆的三倍……  ";
 			link.l1 = "哈哈, 那你今年多大了? ";
 			link.l1.go = "Mary_65";
 		break;
@@ -796,7 +796,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Schmidt_1":
-			dialog.text = "啊, "+pchar.name+"和Mary, 真是难得一见啊! 很高兴看到你们…… 还活得好好的, 呵呵。 过去一个月里, 外环附近已经有两三艘船失事了——最近这海可真不安分。 好了, 别再硬闯锁着的门了——你们要是把锁弄坏了, 修的可是我。 你们是来找Donald的, 对吧? ";
+			dialog.text = "啊, "+pchar.name+"和Mary, 真是难得一见啊! 很高兴看到你们……  还活得好好的, 呵呵。 过去一个月里, 外环附近已经有两三艘船失事了——最近这海可真不安分。 好了, 别再硬闯锁着的门了——你们要是把锁弄坏了, 修的可是我。 你们是来找Donald的, 对吧? ";
 			link.l1 = "也祝你今天愉快, 朋友。 自言自语。 不过看那扇锁着的门, 他要么是换到别的船上去了, 要么就是不想见老朋友了。";
 			link.l1.go = "Schmidt_2";
 			DelLandQuestMark(npchar);
@@ -809,13 +809,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Schmidt_3":
-			dialog.text = "其实从来没真正消停过, "+pchar.name+"。 只是最近打架的次数没以前那么多了。 不过嘛, 在Sancho的酒馆, 时不时还是有人挨上一拳…… 有时候还会有人拔刀呢。";
+			dialog.text = "其实从来没真正消停过, "+pchar.name+"。 只是最近打架的次数没以前那么多了。 不过嘛, 在Sancho的酒馆, 时不时还是有人挨上一拳……  有时候还会有人拔刀呢。";
 			link.l1 = "嗯, 看起来以前族里的人可不会在酒馆露面。";
 			link.l1.go = "Schmidt_4";
 		break;
 		
 		case "Schmidt_4":
-			dialog.text = "嗯, 自从你离开岛上以后, 有些事情变了。 Donald和Eddie现在还能管住大家, 暂时还行。 可谁知道明天会发生什么呢? 这就是老Donny为什么要搞这一切的原因…… ";
+			dialog.text = "嗯, 自从你离开岛上以后, 有些事情变了。 Donald和Eddie现在还能管住大家, 暂时还行。 可谁知道明天会发生什么呢? 这就是老Donny为什么要搞这一切的原因……  ";
 			link.l1 = "我费尽心思阻止了岛上的大屠杀, 就只是为了让你又在这里玩当兵的游戏吗? 他在外圈晃荡了多久了? ";
 			link.l1.go = "Schmidt_5";
 			link.l2 = "演练当然没错, 不过这样不会让本就脆弱的停战变得更危险吗? 还有, Greenspy已经让那些小伙子们操练多久了? ";
@@ -873,7 +873,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_71":
-			dialog.text = "真的, 一切都和以前一样。 我的东西都还在原来的地方——就像我从未离开过一样…… 这里就是你我第一次见面的地方, "+pchar.name+"。 还记得吗? ";
+			dialog.text = "真的, 一切都和以前一样。 我的东西都还在原来的地方——就像我从未离开过一样……  这里就是你我第一次见面的地方, "+pchar.name+"。 还记得吗? ";
 			link.l1 = "当然啦! 你对付那两个人那么厉害, 我还以为——说不定我自己都会变成他们那样呢! ";
 			link.l1.go = "Mary_72";
 			DelLandQuestMark(npchar);
@@ -892,14 +892,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_74":
-			dialog.text = ""+pchar.name+"…… 告诉我, 你第一次见到我时是怎么想的? ";
-			link.l1 = "嗯…… 我只记得那时候, 我感觉心脏都要跳出来了。 你当时真的…… ";
+			dialog.text = ""+pchar.name+"……  告诉我, 你第一次见到我时是怎么想的? ";
+			link.l1 = "嗯……  我只记得那时候, 我感觉心脏都要跳出来了。 你当时真的……  ";
 			link.l1.go = "Mary_75";
 		break;
 		
 		case "Mary_75":
 			dialog.text = "哪一个? ";
-			link.l1 = "你和我以前认识的任何人都不一样。 你的优雅, 你的声音…… 还有那件红色紧身上衣。 我根本无法抗拒你。 我得承认, 我一直很好奇: 为什么偏偏是那个? 为什么是红色紧身上衣, 而不是裙子、衬衫或者束身衣? ";
+			link.l1 = "你和我以前认识的任何人都不一样。 你的优雅, 你的声音……  还有那件红色紧身上衣。 我根本无法抗拒你。 我得承认, 我一直很好奇: 为什么偏偏是那个? 为什么是红色紧身上衣, 而不是裙子、衬衫或者束身衣? ";
 			link.l1.go = "Mary_76";
 		break;
 		
@@ -910,8 +910,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_77":
-			dialog.text = "几年前, 我在竞技场附近闲逛时, 偶然发现了一本讲述一位身穿红色外套的英勇船长的书。 他无所畏惧, 为了挚爱与数百敌人奋战, 从不知什么叫害怕。 那时候我第一次尝试成为他。 他给了我自信…… ";
-			link.l1 = "还有你那让人无法抗拒的魅力, 亲爱的! 但你知道吗? 现在我只想要一件事…… 把它从你身上脱下来…… ";
+			dialog.text = "几年前, 我在竞技场附近闲逛时, 偶然发现了一本讲述一位身穿红色外套的英勇船长的书。 他无所畏惧, 为了挚爱与数百敌人奋战, 从不知什么叫害怕。 那时候我第一次尝试成为他。 他给了我自信……  ";
+			link.l1 = "还有你那让人无法抗拒的魅力, 亲爱的! 但你知道吗? 现在我只想要一件事……  把它从你身上脱下来……  ";
 			link.l1.go = "Mary_78";
 		break;
 		
@@ -924,32 +924,32 @@ void ProcessDialogEvent()
 		
 		case "Mary_81":
 			dialog.text = "早安, 亲爱的。 独角鲸号的人刚刚回到了 '埃斯梅拉达号' 和 '圣加布里埃尔号' , 唐纳德也在他们当中。 我在一只小艇里看到他了, 没错。";
-			link.l1 = "早安, 早安…… 说真的, 昨晚那样折腾一夜, 我本来想睡到中午的, 可你已经起床到处转悠了。";
+			link.l1 = "早安, 早安……  说真的, 昨晚那样折腾一夜, 我本来想睡到中午的, 可你已经起床到处转悠了。";
 			link.l1.go = "Mary_82";
 		break;
 		
 		case "Mary_82":
-			dialog.text = "昨天我们聊到了那件短上衣和瞭望台, 对吧? 我以前总是把它藏在那里…… 突然间, 我就特别怀念那些日子。 那时候我会躲到上面, 远离所有人, 只为了安静地看那些讲述广阔世界的书, 对吧? 我实在忍不住, 就又跑去了那里。 我以前能在上面待上好几个小时, 可今天…… 我只是看着日出。 然后我明白了: 这个世界上, 我最想做的事情, 就是陪在你身边, 对吧? ";
+			dialog.text = "昨天我们聊到了那件短上衣和瞭望台, 对吧? 我以前总是把它藏在那里……  突然间, 我就特别怀念那些日子。 那时候我会躲到上面, 远离所有人, 只为了安静地看那些讲述广阔世界的书, 对吧? 我实在忍不住, 就又跑去了那里。 我以前能在上面待上好几个小时, 可今天……  我只是看着日出。 然后我明白了: 这个世界上, 我最想做的事情, 就是陪在你身边, 对吧? ";
 			link.l1 = "我也和你在一起, "+npchar.name+"。 那么, 我们去找Donald吧? 我们有好多话要聊, 对吧。";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap2_IslandOfJustice_7");
 		break;
 		
 		case "Grinspy_1":
-			dialog.text = ""+pchar.name+", Mary, 见到你真高兴! 我已经听说你昨天来过了。 我本来还想着自己去 'Ceres铁匠铺' 看看, 结果被你这丫头抢先了。 唉, 要是我还有你这么年轻就好了…… ";
+			dialog.text = ""+pchar.name+", Mary, 见到你真高兴! 我已经听说你昨天来过了。 我本来还想着自己去 'Ceres铁匠铺' 看看, 结果被你这丫头抢先了。 唉, 要是我还有你这么年轻就好了……  ";
 			link.l1 = "嗯, 你自己的精力也很充沛, 这我们都见识过了。 训练怎么样了? ";
 			link.l1.go = "Grinspy_2";
 			DelLandQuestMark(npchar);
 		break;
 		
 		case "Grinspy_2":
-			dialog.text = "比我预想的还要好。 我们练习了跳帮登船, 冲进船舱…… 总的来说, 表现很不错。 确实, 我把伙计们操练得挺狠的, 不过这对他们有好处。 他们已经很久没活动筋骨了, 哎呀, 确实有段时间了, 哈哈。";
+			dialog.text = "比我预想的还要好。 我们练习了跳帮登船, 冲进船舱……  总的来说, 表现很不错。 确实, 我把伙计们操练得挺狠的, 不过这对他们有好处。 他们已经很久没活动筋骨了, 哎呀, 确实有段时间了, 哈哈。";
 			link.l1 = "那我能问问, 是啥激发你干出这种事的? 在岛上待腻了, 对吧? ";
 			link.l1.go = "Grinspy_3";
 		break;
 		
 		case "Grinspy_3":
-			dialog.text = "嗯, 我能听出你语气里有点不高兴, "+pchar.name+"。 当然, 我能理解他的理由…… ";
+			dialog.text = "嗯, 我能听出你语气里有点不高兴, "+pchar.name+"。 当然, 我能理解他的理由……  ";
 			link.l1 = "真的吗, "+npchar.name+"? ";
 			link.l1.go = "Grinspy_4";
 		break;
@@ -963,27 +963,27 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Grinspy_5":
-			dialog.text = "让我说完。 好吧, 我们总算维持住了和平——但我们的分歧可一点没消失, 尤其是和那些黑皮肤的异教徒。 上周, 一名独角鲸成员在酒馆斗殴中被杀。 不过我们也没就这么算了…… ";
+			dialog.text = "让我说完。 好吧, 我们总算维持住了和平——但我们的分歧可一点没消失, 尤其是和那些黑皮肤的异教徒。 上周, 一名独角鲸成员在酒馆斗殴中被杀。 不过我们也没就这么算了……  ";
 			link.l1 = "是啊是啊, 每次都是这么开始的, 对吧。";
 			link.l1.go = "Grinspy_7";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
 		break;
 		
 		case "Grinspy_6":
-			dialog.text = "让我说完。 好吧, 我们总算维持住了和平——但我们的分歧可一点没少。 至少, 对那些黑皮肤的异教徒来说是这样。 上周, 有个独角鲸成员在酒馆斗殴中被杀了。 不过我们也没就这么算了…… ";
+			dialog.text = "让我说完。 好吧, 我们总算维持住了和平——但我们的分歧可一点没少。 至少, 对那些黑皮肤的异教徒来说是这样。 上周, 有个独角鲸成员在酒馆斗殴中被杀了。 不过我们也没就这么算了……  ";
 			link.l1 = "好吧, 事情总是这样开始的。";
 			link.l1.go = "Grinspy_7";
 			AddCharacterExpToSkill(pchar, "Sneak", 100);
 		break;
 		
 		case "Grinspy_7":
-			dialog.text = "你错了, 两点, "+pchar.name+"。 首先, 这不是开始, 而是延续。 如果你天真地以为你能结束这一切, 那你就错了。 其次, 我可不是那种会逆来顺受的圣人。 黑人们又闹起来了, 我可不喜欢这样。 顺便说一句, Dexter也不喜欢, 但他觉得自己是什么了不起的政客, 宁愿置身事外。 所以, 经过一番思考, 我选择了我认为最…… 无痛的方式来维持这脆弱的和平。";
+			dialog.text = "你错了, 两点, "+pchar.name+"。 首先, 这不是开始, 而是延续。 如果你天真地以为你能结束这一切, 那你就错了。 其次, 我可不是那种会逆来顺受的圣人。 黑人们又闹起来了, 我可不喜欢这样。 顺便说一句, Dexter也不喜欢, 但他觉得自己是什么了不起的政客, 宁愿置身事外。 所以, 经过一番思考, 我选择了我认为最……  无痛的方式来维持这脆弱的和平。";
 			link.l1 = "你是打算用你的教义吓唬Rivadans吗? ";
 			link.l1.go = "Grinspy_8";
 		break;
 		
 		case "Grinspy_8":
-			dialog.text = "几周前, 一艘载着军用货物的英国大帆船被冲到了外环——你绝对想不到船上装了些什么…… 不过最重要的是有五十支全新的火枪, 还有上好的火药。 还有那些小艇…… 油漆都还没干呢! 旧的小艇都快散架了, 风暴过后, 能完好无损留下来的小艇可没几艘了, 跟你说啊…… ";
+			dialog.text = "几周前, 一艘载着军用货物的英国大帆船被冲到了外环——你绝对想不到船上装了些什么……  不过最重要的是有五十支全新的火枪, 还有上好的火药。 还有那些小艇……  油漆都还没干呢! 旧的小艇都快散架了, 风暴过后, 能完好无损留下来的小艇可没几艘了, 跟你说啊……  ";
 			link.l1 = "这一切都成了独角鲸的财产? ";
 			link.l1.go = "Grinspy_9";
 		break;
@@ -1037,7 +1037,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Grinspy_15":
-			dialog.text = "跟我说说他们吧, 拜托, 对吧。 你认识他们! 我以前问过你他们的事, 可你那时候没回答我的问题…… ";
+			dialog.text = "跟我说说他们吧, 拜托, 对吧。 你认识他们! 我以前问过你他们的事, 可你那时候没回答我的问题……  ";
 			link.l1 = "...";
 			link.l1.go = "Grinspy_15_add";
 		break;
@@ -1055,7 +1055,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Grinspy_17":
-			dialog.text = "但是你可是我们家族里最年长的成员, 对吧! 我记事起你就在这里了…… ";
+			dialog.text = "但是你可是我们家族里最年长的成员, 对吧! 我记事起你就在这里了……  ";
 			link.l1 = "...";
 			link.l1.go = "Grinspy_17_add";
 		break;
@@ -1064,7 +1064,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Grinspy_18":
-			dialog.text = "我是在差不多二十年前来到这座岛上的, 那时候你已经出生了。 你那会儿还只是个小家伙, 跑来爬去, 在桌子和凳子底下钻, 把可怜的Eric Udette折腾得不得安宁…… 当然啦, 我问过他, 怎么会有这么个停不下来的小家伙——他跟我说你是几年前在岛上出生的。 他从没提过你的父亲或者母亲。 如果他提过——那要么是我当时没记住, 要么就是现在已经忘了…… ";
+			dialog.text = "我是在差不多二十年前来到这座岛上的, 那时候你已经出生了。 你那会儿还只是个小家伙, 跑来爬去, 在桌子和凳子底下钻, 把可怜的Eric Udette折腾得不得安宁……  当然啦, 我问过他, 怎么会有这么个停不下来的小家伙——他跟我说你是几年前在岛上出生的。 他从没提过你的父亲或者母亲。 如果他提过——那要么是我当时没记住, 要么就是现在已经忘了……  ";
 			link.l1 = "...";
 			link.l1.go = "Grinspy_18_add";
 		break;
@@ -1073,7 +1073,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Grinspy_19":
-			dialog.text = "这么多年过去了…… 我明白了, Donald, 行吧。";
+			dialog.text = "这么多年过去了……  我明白了, Donald, 行吧。";
 			link.l1 = "...";
 			link.l1.go = "Grinspy_19_add";
 		break;
@@ -1082,7 +1082,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Grinspy_20":
-			dialog.text = "真可惜Erik没和我们在一起——他比我早很久就到了这个地方。 对吧? 对了, 他以前总是说起你最近的那些疯狂举动, 还经常提到Aurelie Bertin。 那位老太太可真是特别喜欢你, 这我记得很清楚…… 我以前从没想过为什么, 但我觉得你出生的时候她就已经在岛上了。 也许她能帮你, 对吧? ";
+			dialog.text = "真可惜Erik没和我们在一起——他比我早很久就到了这个地方。 对吧? 对了, 他以前总是说起你最近的那些疯狂举动, 还经常提到Aurelie Bertin。 那位老太太可真是特别喜欢你, 这我记得很清楚……  我以前从没想过为什么, 但我觉得你出生的时候她就已经在岛上了。 也许她能帮你, 对吧? ";
 			link.l1 = "...";
 			link.l1.go = "Grinspy_20_add";
 		break;
@@ -1100,7 +1100,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Grinspy_22":
-			dialog.text = "我觉得她并没有生你的气。 但是别太逼她——我听说她身体不太好。 可别让事情变得更糟了…… ";
+			dialog.text = "我觉得她并没有生你的气。 但是别太逼她——我听说她身体不太好。 可别让事情变得更糟了……  ";
 			link.l1 = "...";
 			link.l1.go = "Grinspy_22_add";
 		break;
@@ -1155,7 +1155,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jillian_3":
-			dialog.text = "你们好啊, Mary, 还有你, "+pchar.name+"。 Aurelie病了, 你不知道吗? 我是应Julian修士的请求照看她。 他给我送来药剂, 我就喂她喝, 可是…… 好像没什么用。 现在她在船尾的船舱里睡觉。 我把她带到那儿, 这样我就能在这里收拾一下。";
+			dialog.text = "你们好啊, Mary, 还有你, "+pchar.name+"。 Aurelie病了, 你不知道吗? 我是应Julian修士的请求照看她。 他给我送来药剂, 我就喂她喝, 可是……  好像没什么用。 现在她在船尾的船舱里睡觉。 我把她带到那儿, 这样我就能在这里收拾一下。";
 			link.l1 = "...";
 			link.l1.go = "Jillian_3_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Jillian_clone"), CharacterFromID("Mary"));
@@ -1177,7 +1177,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jillian_5":
-			dialog.text = "不好。 她总说自己很虚弱, 几乎下不了床。 有时候还会含糊地嘟囔些听不懂的话, 胡言乱语…… 我都听了太多关于过去的故事, 已经数不过来了。";
+			dialog.text = "不好。 她总说自己很虚弱, 几乎下不了床。 有时候还会含糊地嘟囔些听不懂的话, 胡言乱语……  我都听了太多关于过去的故事, 已经数不过来了。";
 			link.l1 = "...";
 			link.l1.go = "Jillian_5_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Jillian_clone"), CharacterFromID("Mary"));
@@ -1188,7 +1188,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jillian_6":
-			dialog.text = "嗯, 这正是我们来听的故事。 我希望她不会拒绝和我们谈谈…… ";
+			dialog.text = "嗯, 这正是我们来听的故事。 我希望她不会拒绝和我们谈谈……  ";
 			link.l1 = "...";
 			link.l1.go = "Jillian_6_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Jillian_clone"), CharacterFromID("Mary"));
@@ -1227,7 +1227,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jillian_10":
-			dialog.text = "Julian兄弟给她配药剂。 但是那些药只能暂时缓解。 即便如此, 她还是不肯喝, 我几乎得强行把药灌进她嘴里。 有时候我真怕她会被呛到——我甚至得逼着她把药全咽下去…… ";
+			dialog.text = "Julian兄弟给她配药剂。 但是那些药只能暂时缓解。 即便如此, 她还是不肯喝, 我几乎得强行把药灌进她嘴里。 有时候我真怕她会被呛到——我甚至得逼着她把药全咽下去……  ";
 			link.l1 = "...";
 			link.l1.go = "Jillian_10_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Jillian_clone"), CharacterFromID("Mary"));
@@ -1247,7 +1247,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jillian_12":
-			dialog.text = "你自己也知道这里根本没有真正的医生。 你又能做什么呢, 对吧? 人们常说, 岁月不饶人…… ";
+			dialog.text = "你自己也知道这里根本没有真正的医生。 你又能做什么呢, 对吧? 人们常说, 岁月不饶人……  ";
 			link.l1 = "...";
 			link.l1.go = "Jillian_12_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Jillian_clone"), CharacterFromID("Mary"));
@@ -1265,7 +1265,7 @@ void ProcessDialogEvent()
 		
 		case "Jillian_14":
 			dialog.text = "现在只要能帮上忙, 魔法我都愿意相信, 对吧。";
-			link.l1 = "嗯…… 魔法? 也许我该去找Chimiset聊聊…… ";
+			link.l1 = "嗯……  魔法? 也许我该去找Chimiset聊聊……  ";
 			link.l1.go = "Jillian_14_add";
 		break;
 		case "Jillian_14_add":
@@ -1281,7 +1281,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jillian_16":
-			dialog.text = "我简直不敢相信自己的耳朵! 但那家伙…… 简直是个无神论者! ";
+			dialog.text = "我简直不敢相信自己的耳朵! 但那家伙……  简直是个无神论者! ";
 			link.l1 = "而这可是个快要死去的女人, 离忘记自己名字只差一步。 好吧, 他是个巫师, 对吧? 但我听说他们能做到很多事情, 真的很多。 如果他能让她恢复神志——现在他信仰什么真的还有关系吗? ";
 			link.l1.go = "Jillian_18";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
@@ -1290,47 +1290,47 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jillian_17":
-			dialog.text = "我简直不敢相信自己的耳朵! 但那是…… 个无神论者! ";
+			dialog.text = "我简直不敢相信自己的耳朵! 但那是……  个无神论者! ";
 			link.l1 = "而这就是一个快要死去的女人, 已经快要连自己的名字都记不住了。 好吧, 他是个巫师, 但我听说他们什么都能做到, 什么都行, 对吧。 如果他能让她恢复神志——现在他信什么教, 真的还有关系吗? ";
 			link.l1.go = "Jillian_18";
 			AddCharacterExpToSkill(pchar, "Repair", 100);
 		break;
 		
 		case "Jillian_18":
-			dialog.text = " + pchar.name+ , 听我说, 我也很关心Aurelie…… 上帝作证——我正在尽全力减轻她的痛苦! 可是你真的要让那个黑皮异教徒在这间船舱里做他的仪式吗? 要是他把船点着了, 或者在仪式中决定拿某个人祭祀怎么办? ";
+			dialog.text = " + pchar.name+ , 听我说, 我也很关心Aurelie……  上帝作证——我正在尽全力减轻她的痛苦! 可是你真的要让那个黑皮异教徒在这间船舱里做他的仪式吗? 要是他把船点着了, 或者在仪式中决定拿某个人祭祀怎么办? ";
 			link.l1 = "我们不会让那种事发生的, "+npchar.name+", 我向你保证。";
 			link.l1.go = "Jillian_19";
 		break;
 		
 		case "Jillian_19":
-			dialog.text = "我向你们俩保证, 如果有人发现了这件事…… 你们知道这里会发生什么吗? 其他镇上的人肯定不会喜欢, 独角鲸们更是如此! ";
+			dialog.text = "我向你们俩保证, 如果有人发现了这件事……  你们知道这里会发生什么吗? 其他镇上的人肯定不会喜欢, 独角鲸们更是如此! ";
 			link.l1 = "你说得对。 我们不该把Chimiseta拖过来, 应该把Aurelie带去找他。";
 			link.l1.go = "Jillian_20";
 		break;
 		
 		case "Jillian_20":
 			dialog.text = "你还没见过她——那老太太都快站不住了。 要是不掉进海里, 那可真是奇迹! ";
-			link.l1 = "有时候我们也只能寄希望于奇迹了, 对吧。 还有, Jillian…… ";
+			link.l1 = "有时候我们也只能寄希望于奇迹了, 对吧。 还有, Jillian……  ";
 			link.l1.go = "Jillian_21";
 		break;
 		
 		case "Jillian_21":
 			dialog.text = "还有什么? ";
-			link.l1 = "我希望你能保密。 你是个聪明的女人, 你判断得很对…… 岛上的骚乱很容易演变成流血事件, 没人希望那样, 对吧? ";
+			link.l1 = "我希望你能保密。 你是个聪明的女人, 你判断得很对……  岛上的骚乱很容易演变成流血事件, 没人希望那样, 对吧? ";
 			link.l1.go = "Jillian_22";
 			link.l2 = "一句话都别透露, 明白了吗? 我们已经信任你了——别让我们后悔。 我想你明白, 如果我们的计划不再是秘密, 这座岛上会爆发前所未有的血腥屠杀。";
 			link.l2.go = "Jillian_23";
 		break;
 		
 		case "Jillian_22":
-			dialog.text = "好吧。 但你得确保没人看到你把她拖上 'Protector' 号…… 否则我可得回答一些尴尬的问题了。";
+			dialog.text = "好吧。 但你得确保没人看到你把她拖上 'Protector' 号……  否则我可得回答一些尴尬的问题了。";
 			link.l1 = "我们就不让你为难地回答了。 今晚我们来解决, 对吧? ";
 			link.l1.go = "Jillian_24";
 			AddCharacterExpToSkill(pchar, "Sneak", 100);
 		break;
 		
 		case "Jillian_23":
-			dialog.text = "好吧。 不过你得确保没人看到你把她拖上 'Protector' 号…… 否则我可得回答一些尴尬的问题了。";
+			dialog.text = "好吧。 不过你得确保没人看到你把她拖上 'Protector' 号……  否则我可得回答一些尴尬的问题了。";
 			link.l1 = "我们不会让那种事发生。 我们会在晚上动手。";
 			link.l1.go = "Jillian_24";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
@@ -1352,7 +1352,7 @@ void ProcessDialogEvent()
 		case "Jillian_26":
 			if (GetHour() >= 3 && GetHour() <= 24)
 			{
-				dialog.text = "午夜过后再来。 她会在这儿的…… ";
+				dialog.text = "午夜过后再来。 她会在这儿的……  ";
 				link.l1 = "好吧。";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "Jillian_26";
@@ -1368,7 +1368,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_1":
-			dialog.text = "年轻人, 咱们…… 咱们要去哪儿? ! 这是Rivadose的船! Eric在哪儿? ! ";
+			dialog.text = "年轻人, 咱们……  咱们要去哪儿? ! 这是Rivadose的船! Eric在哪儿? ! ";
 			link.l1 = "Eric和Eddie Black成了朋友, 你不知道吗? ";
 			link.l1.go = "Oreli_2";
 		break;
@@ -1412,21 +1412,21 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Eddy_5":
-			dialog.text = "所以是真的咯…… 我的人跟我说这家伙脑袋有点问题。 现在我算是信了, 他们没骗我。 可我还是不太明白你到底想从Rivadose那里得到什么…… ";
-			link.l1 = "让我和Chimiset谈谈, 你就会明白一切了…… ";
+			dialog.text = "所以是真的咯……  我的人跟我说这家伙脑袋有点问题。 现在我算是信了, 他们没骗我。 可我还是不太明白你到底想从Rivadose那里得到什么……  ";
+			link.l1 = "让我和Chimiset谈谈, 你就会明白一切了……  ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap2_IslandOfJustice_12");
 		break;
 		
 		case "Chimset_1":
 			dialog.text = "说吧, 亲爱的朋友。 我会认真听你说的。";
-			link.l1 = "我长话短说, Chimisette。 Aurélie掌握着Mary和我需要的信息。 但是由于她的身体状况, 如果我没理解错的话, 主要就是年纪大了, 对吧, 我们…… 既无法从她那里得到这些知识, 也无法确定她说的是否准确。 我听说过印第安和非洲萨满都能做出奇迹——这就是我来找你帮忙的原因, Chimisette。";
+			link.l1 = "我长话短说, Chimisette。 Aurélie掌握着Mary和我需要的信息。 但是由于她的身体状况, 如果我没理解错的话, 主要就是年纪大了, 对吧, 我们……  既无法从她那里得到这些知识, 也无法确定她说的是否准确。 我听说过印第安和非洲萨满都能做出奇迹——这就是我来找你帮忙的原因, Chimisette。";
 			link.l1.go = "Chimset_2";
 			DelLandQuestMark(npchar);
 		break;
 		
 		case "Chimset_2":
-			dialog.text = "我明白你的意思, 我的朋友。 萨满拥有神秘莫测的力量, 常常超出外人, 甚至他们自己族人的理解, 更别说白人了。 有些人称之为巫术, 有些人则说是奇迹。 我们确实能做到许多事情——但没有人能让河水倒流…… 也没有人能让它停下来。";
+			dialog.text = "我明白你的意思, 我的朋友。 萨满拥有神秘莫测的力量, 常常超出外人, 甚至他们自己族人的理解, 更别说白人了。 有些人称之为巫术, 有些人则说是奇迹。 我们确实能做到许多事情——但没有人能让河水倒流……  也没有人能让它停下来。";
 			link.l1 = "你什么意思, Chimiset? ";
 			link.l1.go = "Chimset_3";
 		break;
@@ -1444,13 +1444,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Chimset_5":
-			dialog.text = "要彻底驱除疾病——不行。 这超出了我的能力。 但我还能做点别的…… ";
+			dialog.text = "要彻底驱除疾病——不行。 这超出了我的能力。 但我还能做点别的……  ";
 			link.l1 = "到底是什么? ";
 			link.l1.go = "Chimset_6";
 		break;
 		
 		case "Chimset_6":
-			dialog.text = "等这个女人醒过来, 我就会立刻施行我事先准备好的仪式…… ";
+			dialog.text = "等这个女人醒过来, 我就会立刻施行我事先准备好的仪式……  ";
 			link.l1 = "就算不能彻底治愈, 至少能让病情减缓一点吗? ";
 			link.l1.go = "Chimset_7";
 		break;
@@ -1462,14 +1462,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Chimset_8":
-			dialog.text = "这不是取决于仪式, 而是取决于人。 有的人能撑上一周, 有的人能撑一个月…… 我听说有个男人, 他几乎保持清醒和记忆将近一年, 甚至可能更久…… 就在大家都以为他已经痊愈的时候, 病症又回来了——就在那天夜里带走了他。";
+			dialog.text = "这不是取决于仪式, 而是取决于人。 有的人能撑上一周, 有的人能撑一个月……  我听说有个男人, 他几乎保持清醒和记忆将近一年, 甚至可能更久……  就在大家都以为他已经痊愈的时候, 病症又回来了——就在那天夜里带走了他。";
 			link.l1 = "一个小时足够我们了解所需的信息了。 你什么时候能进行仪式, Chimiset? ";
 			link.l1.go = "Chimset_9";
 		break;
 		
 		case "Chimset_9":
-			dialog.text = "我现在就把那个女人带走, 带她下到船舱——那里已经设好了一个避难所…… 就是专门为这种事准备的。 之后, 就看她什么时候恢复神智了…… 不过我觉得, 等到天亮我们就能搞定。";
-			link.l1 = "那我就不打扰你了。 愿你的…… 神, Chimiset, 保佑你。";
+			dialog.text = "我现在就把那个女人带走, 带她下到船舱——那里已经设好了一个避难所……  就是专门为这种事准备的。 之后, 就看她什么时候恢复神智了……  不过我觉得, 等到天亮我们就能搞定。";
+			link.l1 = "那我就不打扰你了。 愿你的……  神, Chimiset, 保佑你。";
 			link.l1.go = "Chimset_10";
 		break;
 		
@@ -1481,7 +1481,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Chimset_11":
-			dialog.text = "成功了, 白人兄弟。 我们设法…… ";
+			dialog.text = "成功了, 白人兄弟。 我们设法……  ";
 			link.l1 = "...";
 			link.l1.go = "Chimset_11_add";
 			DelLandQuestMark(npchar);
@@ -1499,22 +1499,22 @@ void ProcessDialogEvent()
 		
 		case "Chimset_13":
 			dialog.text = "...";
-			link.l1 = "Chimiset, 谢谢你! 我都不知道该怎么感谢你…… ";
+			link.l1 = "Chimiset, 谢谢你! 我都不知道该怎么感谢你……  ";
 			link.l1.go = "Chimset_14";
-			link.l2 = "哟, 你看看, Chimiset还真做到了! 我可从没怀疑过你哪怕一秒…… ";
+			link.l2 = "哟, 你看看, Chimiset还真做到了! 我可从没怀疑过你哪怕一秒……  ";
 			link.l2.go = "Chimset_15";
 		break;
 		
 		case "Chimset_14":
 			dialog.text = "所有Rivados人都永远欠你一个人情, 我的朋友! 'Protector'的大门永远为你敞开。";
-			link.l1 = "我希望以后不会再麻烦你了…… Mary, Aurelie, 我们得回 'Pluto' 号去了。";
+			link.l1 = "我希望以后不会再麻烦你了……  Mary, Aurelie, 我们得回 'Pluto' 号去了。";
 			link.l1.go = "Chimset_15_add";
 			ChangeCharacterComplexReputation(pchar, "nobility", 2);
 		break;
 		
 		case "Chimset_15":
 			dialog.text = "所有Rivados人都永远欠你一个人情, 我的朋友! 'Protector'的大门永远为你敞开。";
-			link.l1 = "我希望不会再麻烦你了…… Mary, Aurelie, 我们得回 'Pluto' 号了。";
+			link.l1 = "我希望不会再麻烦你了……  Mary, Aurelie, 我们得回 'Pluto' 号了。";
 			link.l1.go = "Chimset_15_add";
 			AddCharacterExpToSkill(pchar, "Fortune", 100);
 		break;
@@ -1523,7 +1523,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Chimset_16":
-			dialog.text = "我甚至都记不得我是怎么离开船舱的了…… 唉, 这年纪大了, 记性真是一塌糊涂。";
+			dialog.text = "我甚至都记不得我是怎么离开船舱的了……  唉, 这年纪大了, 记性真是一塌糊涂。";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap2_IslandOfJustice_15");
@@ -1541,7 +1541,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_12":
-			dialog.text = " Aurélie, 我…… ";
+			dialog.text = " Aurélie, 我……  ";
 			link.l1 = "...";
 			link.l1.go = "Oreli_12_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("LSC_Jillian_clone"));
@@ -1552,7 +1552,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_13":
-			dialog.text = "Aurelie, 我让她在你不在的时候把这里收拾一下。 你就不用再为这些活累坏了你的膝盖和腰了…… ";
+			dialog.text = "Aurelie, 我让她在你不在的时候把这里收拾一下。 你就不用再为这些活累坏了你的膝盖和腰了……  ";
 			link.l1 = "...";
 			link.l1.go = "Oreli_13_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1564,13 +1564,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_14":
-			dialog.text = "打扫? ! 你…… ";
+			dialog.text = "打扫? ! 你……  ";
 			link.l1 = "Jillian, 谢谢你的努力。 (低声) 我们成功了。 Chimiset办成了。";
 			link.l1.go = "Oreli_15";
 		break;
 		
 		case "Oreli_15":
-			dialog.text = "不可能吧…… ";
+			dialog.text = "不可能吧……  ";
 			link.l1 = "如你所见。 现在, 请让我们谈谈吧。";
 			link.l1.go = "Oreli_15_add";
 		break;
@@ -1579,7 +1579,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_16":
-			dialog.text = "嗯, 年轻人们, 谢谢你们护送一位老太太。 我恐怕很快就完全不能出门了。 我的可怜的腿啊, 我的腿…… ";
+			dialog.text = "嗯, 年轻人们, 谢谢你们护送一位老太太。 我恐怕很快就完全不能出门了。 我的可怜的腿啊, 我的腿……  ";
 			link.l1 = "如果你不介意的话, "+npchar.name+", 我们会再陪你一会儿。 Mary和我有非常重要的事情要和你谈。";
 			link.l1.go = "Oreli_17";
 		break;
@@ -1605,7 +1605,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_19":
-			dialog.text = "慢点, 慢点, 姑娘, 别说那么快, 拜托了! 我都跟不上你了…… ";
+			dialog.text = "慢点, 慢点, 姑娘, 别说那么快, 拜托了! 我都跟不上你了……  ";
 			link.l1 = "...";
 			link.l1.go = "Oreli_19_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1616,7 +1616,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_20":
-			dialog.text = "好吧, 我明白了。 行, 我们再过一遍吧…… ";
+			dialog.text = "好吧, 我明白了。 行, 我们再过一遍吧……  ";
 			link.l1 = "...";
 			link.l1.go = "Oreli_20_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1627,7 +1627,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_21":
-			dialog.text = "别担心, Mary, 我还没老到那个地步呢, 哈哈…… 我听到你说的话了。 不过既然我确实在岛上待的时间比谁都长, 我还是希望你能对我的年纪多点尊重和理解…… ";
+			dialog.text = "别担心, Mary, 我还没老到那个地步呢, 哈哈……  我听到你说的话了。 不过既然我确实在岛上待的时间比谁都长, 我还是希望你能对我的年纪多点尊重和理解……  ";
 			link.l1 = "...";
 			link.l1.go = "Oreli_21_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1649,7 +1649,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_23":
-			dialog.text = "唉, 我看看现在的年轻人, 然后…… 不不, 我们那时候可不会那样对待长辈。 当然, 这不包括你。 我只是想说, 如果我一个一个回答你的问题, 而不是一下子全说完, 会轻松些…… ";
+			dialog.text = "唉, 我看看现在的年轻人, 然后……  不不, 我们那时候可不会那样对待长辈。 当然, 这不包括你。 我只是想说, 如果我一个一个回答你的问题, 而不是一下子全说完, 会轻松些……  ";
 			link.l1 = "...";
 			link.l1.go = "Oreli_23_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1660,7 +1660,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_24":
-			dialog.text = "我明白了, Aurélie。 你想怎样都可以, 对吧。 那你在我出生的时候就在岛上吗? 如果真的是在这里发生的, 当然…… ";
+			dialog.text = "我明白了, Aurélie。 你想怎样都可以, 对吧。 那你在我出生的时候就在岛上吗? 如果真的是在这里发生的, 当然……  ";
 			link.l1 = "...";
 			link.l1.go = "Oreli_24_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1671,7 +1671,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_25":
-			dialog.text = "我是在1633年来到这个岛上的, 有时候那一天到现在还会出现在我的噩梦里。 那场风暴, 我们的 '复仇号' ——我和丈夫一起驶往佛罗里达的那艘弗吕特帆船——被巨浪翻搅着, 随时都可能翻船, 我们把会的祷告全都念了一遍, 甚至还现编新的…… 然后, 突然一声巨响, 然后…… ";
+			dialog.text = "我是在1633年来到这个岛上的, 有时候那一天到现在还会出现在我的噩梦里。 那场风暴, 我们的 '复仇号' ——我和丈夫一起驶往佛罗里达的那艘弗吕特帆船——被巨浪翻搅着, 随时都可能翻船, 我们把会的祷告全都念了一遍, 甚至还现编新的……  然后, 突然一声巨响, 然后……  ";
 			link.l1 = "...";
 			link.l1.go = "Oreli_25_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1693,7 +1693,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_27":
-			dialog.text = "差不多吧。 那时候, 这里的情况有点不一样——圣赫罗尼莫号还没沉, 外圈的船只数量也许只有现在的一半, 甚至更少…… 而且这还远远不是所有还漂在水面上的船! 我跟你们说啊, 年轻人, 要是哪天你们在晴天往下看, 一定会被底下那些沉船的数量吓一跳…… ";
+			dialog.text = "差不多吧。 那时候, 这里的情况有点不一样——圣赫罗尼莫号还没沉, 外圈的船只数量也许只有现在的一半, 甚至更少……  而且这还远远不是所有还漂在水面上的船! 我跟你们说啊, 年轻人, 要是哪天你们在晴天往下看, 一定会被底下那些沉船的数量吓一跳……  ";
 			link.l1 = "...";
 			link.l1.go = "Oreli_27_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1704,7 +1704,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_28":
-			dialog.text = "我们对我父母当年来到这里时乘坐的那艘船感兴趣。 是带着我…… 还是没有我? ";
+			dialog.text = "我们对我父母当年来到这里时乘坐的那艘船感兴趣。 是带着我……  还是没有我? ";
 			link.l1 = "...";
 			link.l1.go = "Oreli_28_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1778,7 +1778,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_35":
-			dialog.text = "之后? 哎呀, 亲爱的, 他们俩能活到那时候简直就是奇迹! 那年六月的夜里, 暴风雨有多可怕你知道吗? 等到天亮, 小船把你母亲带到了内环, 起初几乎没人敢相信自己的眼睛——一个即将分娩的女人竟然能在那样可怕的海难中活下来。 可怜的特蕾莎, 我到现在还记得那一幕, 就像昨天发生的一样…… ";
+			dialog.text = "之后? 哎呀, 亲爱的, 他们俩能活到那时候简直就是奇迹! 那年六月的夜里, 暴风雨有多可怕你知道吗? 等到天亮, 小船把你母亲带到了内环, 起初几乎没人敢相信自己的眼睛——一个即将分娩的女人竟然能在那样可怕的海难中活下来。 可怜的特蕾莎, 我到现在还记得那一幕, 就像昨天发生的一样……  ";
 			link.l1 = "...";
 			link.l1.go = "Oreli_35_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1800,7 +1800,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_37":
-			dialog.text = "是的, 她就是这么介绍自己的——而这几乎是她说过的全部话。 到了那天结束时, 她就开始发烧, 一直到分娩都没有退烧。 没人确定她能挺过去, 更别说孩子能不能活着出生——毕竟她经历了那么多。 但特蕾莎挺过来了。 她挺过来了——然后她就去世了。 愿上帝安息她的灵魂…… ";
+			dialog.text = "是的, 她就是这么介绍自己的——而这几乎是她说过的全部话。 到了那天结束时, 她就开始发烧, 一直到分娩都没有退烧。 没人确定她能挺过去, 更别说孩子能不能活着出生——毕竟她经历了那么多。 但特蕾莎挺过来了。 她挺过来了——然后她就去世了。 愿上帝安息她的灵魂……  ";
 			link.l1 = "...";
 			link.l1.go = "Oreli_37_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1811,7 +1811,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_38":
-			dialog.text = "母亲去世了, 只剩下我和父亲? 可为什么大家都说我是被Eric Udett养大的? 还有…… ";
+			dialog.text = "母亲去世了, 只剩下我和父亲? 可为什么大家都说我是被Eric Udett养大的? 还有……  ";
 			link.l1 = "...";
 			link.l1.go = "Oreli_38_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1822,7 +1822,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_39":
-			dialog.text = "Mary, 亲爱的, 我不是说过了吗…… 别一下子问我这么多问题…… ";
+			dialog.text = "Mary, 亲爱的, 我不是说过了吗……  别一下子问我这么多问题……  ";
 			link.l1 = "...";
 			link.l1.go = "Oreli_39_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1844,7 +1844,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_41":
-			dialog.text = "你父亲…… 你知道吗, 其实我对你父亲没什么好说的——除了我真不希望谁有那样的老爸。 你刚出生没几天, 他就消失了, 把你一个人丢下自生自灭。 还好Eric心肠那么好, 温柔善良——就像泡在朗姆酒里的饼干一样软…… ";
+			dialog.text = "你父亲……  你知道吗, 其实我对你父亲没什么好说的——除了我真不希望谁有那样的老爸。 你刚出生没几天, 他就消失了, 把你一个人丢下自生自灭。 还好Eric心肠那么好, 温柔善良——就像泡在朗姆酒里的饼干一样软……  ";
 			link.l1 = "...";
 			link.l1.go = "Oreli_41_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1866,7 +1866,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_43":
-			dialog.text = "哦…… 到底是Jeffrey还是John呢, 要是我能记起来就好了…… ";
+			dialog.text = "哦……  到底是Jeffrey还是John呢, 要是我能记起来就好了……  ";
 			link.l1 = "所以, 你不记得了? 好吧, "+npchar.name+"? ";
 			link.l1.go = "Oreli_44";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1898,19 +1898,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_47":
-			dialog.text = "很少见到。 他大部分时间都不在——那时候岛上药品和药剂很紧缺, 他总是在外面寻找…… ";
+			dialog.text = "很少见到。 他大部分时间都不在——那时候岛上药品和药剂很紧缺, 他总是在外面寻找……  ";
 			link.l1 = "所以, 他一定是个好丈夫——如果他曾试图帮助自己的妻子的话。";
 			link.l1.go = "Oreli_48";
 		break;
 		
 		case "Oreli_48":
 			dialog.text = "他也许是个好丈夫, 对吧。 我可从没说过不是, 我得说明白这一点。 别想歪曲我的话, 小子! ";
-			link.l1 = "我从来没想过这种事, 我发誓, "+npchar.name+"。 很明显你对他评价不高。 而且你甚至连他的名字都记不住…… ";
+			link.l1 = "我从来没想过这种事, 我发誓, "+npchar.name+"。 很明显你对他评价不高。 而且你甚至连他的名字都记不住……  ";
 			link.l1.go = "Oreli_49";
 		break;
 		
 		case "Oreli_49":
-			dialog.text = "我在 'Ceres Smithy' 船舱的黑暗中, 瞥见过那个人一眼, 几乎只是个影子——那里现在是Jürgen先生住的地方。 他只在夜里来, 我几乎记不清他的脸。 至于他的名字——没人叫过他的名字, 只用姓氏。 不是 'Casper这个' , 就是 'Casper那个' …… ";
+			dialog.text = "我在 'Ceres Smithy' 船舱的黑暗中, 瞥见过那个人一眼, 几乎只是个影子——那里现在是Jürgen先生住的地方。 他只在夜里来, 我几乎记不清他的脸。 至于他的名字——没人叫过他的名字, 只用姓氏。 不是 'Casper这个' , 就是 'Casper那个' ……  ";
 			link.l1 = "我明白你的意思, "+npchar.name+"。 所以Mary出生后, 没过几天他就消失得无影无踪。 他是被杀了吗? ";
 			link.l1.go = "Oreli_50";
 		break;
@@ -1928,20 +1928,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_52":
-			dialog.text = "当然不是! 我的意思是那些东西只是引人注意——比如戒指、带雕刻的手枪、仪式用的军刀…… 这些东西很少有人会追问。 人都已经回不来了, 谁也不想再惹更多麻烦, 对吧? ";
+			dialog.text = "当然不是! 我的意思是那些东西只是引人注意——比如戒指、带雕刻的手枪、仪式用的军刀……  这些东西很少有人会追问。 人都已经回不来了, 谁也不想再惹更多麻烦, 对吧? ";
 			link.l1 = "Geoffrey 或 John Casper 有什么特别的随身物品吗? ";
 			link.l1.go = "Oreli_53";
 		break;
 		
 		case "Oreli_53":
 			dialog.text = ""+pchar.name+", 愿上帝保佑你——我连他的名字都记不清了, 你还问我这种问题! 如果真的发生了什么事, 我可从没听说那东西落到岛上其他人手里。 那时候我在酒馆当女侍, 几乎没有什么八卦能逃过我的耳朵, 对吧? 但这也不代表我什么都知道。";
-			link.l1 = "当人们说某人消失得无影无踪时, 通常是指他们已经被杀了。 但是在Casper先生的情况里, 你显然并不那么确定…… ";
+			link.l1 = "当人们说某人消失得无影无踪时, 通常是指他们已经被杀了。 但是在Casper先生的情况里, 你显然并不那么确定……  ";
 			link.l1.go = "Oreli_54";
 		break;
 		
 		case "Oreli_54":
-			dialog.text = "我只是说, “失踪”不一定就等于“死了”, 对吧? 尤其是在那个年代, 满载走私犯和销赃者的塔塔纳帆船经常在这座岛和古巴之间来回航行…… 你知道吗, 我记不清他的脸了, 但他的眼睛…… 那是个无论在哪儿都不会迷路的男人的眼神。 或者至少, 他自己是真这么相信的。";
-			link.l1 = "塔塔纳斯, 塔塔纳斯…… 没有什么是不可能的。 如果我们知道他的名字, 就可以查查那些年殖民地的档案。 不过如果我们知道他“抵达”时乘坐的船型和船名, 那就容易多了。";
+			dialog.text = "我只是说, “失踪”不一定就等于“死了”, 对吧? 尤其是在那个年代, 满载走私犯和销赃者的塔塔纳帆船经常在这座岛和古巴之间来回航行……  你知道吗, 我记不清他的脸了, 但他的眼睛……  那是个无论在哪儿都不会迷路的男人的眼神。 或者至少, 他自己是真这么相信的。";
+			link.l1 = "塔塔纳斯, 塔塔纳斯……  没有什么是不可能的。 如果我们知道他的名字, 就可以查查那些年殖民地的档案。 不过如果我们知道他“抵达”时乘坐的船型和船名, 那就容易多了。";
 			link.l1.go = "Oreli_55";
 		break;
 		
@@ -1949,20 +1949,20 @@ void ProcessDialogEvent()
 			dialog.text = "你干嘛这么看着我, 小伙子? 你以为我会记得那事吗? ";
 			link.l1 = "我们也希望如此, "+npchar.name+"——毕竟你已经告诉了我们这么多。";
 			link.l1.go = "Oreli_56";
-			link.l2 = "嗯…… 我对此很怀疑。";
+			link.l2 = "嗯……  我对此很怀疑。";
 			link.l2.go = "Oreli_57";
 		break;
 		
 		case "Oreli_56":
-			dialog.text = "也许你想问她有多少门大炮, 口径是多少, 对吧? 亲爱的, 你知道这些年来有多少船在这里沉没了吗? 你觉得我还能都记得清楚吗, 对吧? 再说了, 那艘船幸存下来的人屈指可数——她在海面上撑了一天都不到, 你懂的…… ";
-			link.l1 = "我明白了…… 嗯, 这也说得通, 毕竟已经过去二十年了。 谢谢你至少还记得我们当时被告知的事情。";
+			dialog.text = "也许你想问她有多少门大炮, 口径是多少, 对吧? 亲爱的, 你知道这些年来有多少船在这里沉没了吗? 你觉得我还能都记得清楚吗, 对吧? 再说了, 那艘船幸存下来的人屈指可数——她在海面上撑了一天都不到, 你懂的……  ";
+			link.l1 = "我明白了……  嗯, 这也说得通, 毕竟已经过去二十年了。 谢谢你至少还记得我们当时被告知的事情。";
 			link.l1.go = "Oreli_58";
 			ChangeCharacterComplexReputation(pchar, "nobility", 2);
 		break;
 		
 		case "Oreli_57":
-			dialog.text = "也许你想问她有多少门炮, 口径是多少, 对吧? 亲爱的, 你知道这些年有多少船在这里沉没了吗? 你觉得我还能都记得清楚吗, 对吧? 再说了, 那艘船只有少数人活了下来——它在水上撑了一天都算不错了, 对吧…… ";
-			link.l1 = "我明白了…… 嗯, 这也说得通, 毕竟已经二十年了。 谢谢你至少还记得我们当时被告知的那些话。";
+			dialog.text = "也许你想问她有多少门炮, 口径是多少, 对吧? 亲爱的, 你知道这些年有多少船在这里沉没了吗? 你觉得我还能都记得清楚吗, 对吧? 再说了, 那艘船只有少数人活了下来——它在水上撑了一天都算不错了, 对吧……  ";
+			link.l1 = "我明白了……  嗯, 这也说得通, 毕竟已经二十年了。 谢谢你至少还记得我们当时被告知的那些话。";
 			link.l1.go = "Oreli_58";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
 		break;
@@ -1975,32 +1975,32 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_91":
-			dialog.text = "所以, Teresa…… 她就是这个名字。 可怜的妈妈, 对吧…… ";
-			link.l1 = "嗯, 至少现在我们知道你那股劲儿和倔脾气是从哪来的了。 怀孕的女人还在下沉的船上…… 光是想想就让我起鸡皮疙瘩。";
+			dialog.text = "所以, Teresa……  她就是这个名字。 可怜的妈妈, 对吧……  ";
+			link.l1 = "嗯, 至少现在我们知道你那股劲儿和倔脾气是从哪来的了。 怀孕的女人还在下沉的船上……  光是想想就让我起鸡皮疙瘩。";
 			link.l1.go = "Mary_92";
 		break;
 		
 		case "Mary_92":
 			dialog.text = "可她怎么会那副样子待在这艘船上, "+pchar.name+"? ! 光是想那么做都得疯了吧! ";
-			link.l1 = "只有你的父亲能回答这个问题——John、Jack、Jacob、Jasper、Jordan…… ";
+			link.l1 = "只有你的父亲能回答这个问题——John、Jack、Jacob、Jasper、Jordan……  ";
 			link.l1.go = "Mary_94";
 		break;
 		
 		case "Mary_94":
 			dialog.text = "你是在努力回忆所有以 'J' 开头的英文名字吗? Aurélie只提到了Geoffrey和John, 知道了吗。";
-			link.l1 = "也许她只是忘了剩下的部分, 就像我一样, 对吧? 你懂的, 年纪大了什么的…… ";
+			link.l1 = "也许她只是忘了剩下的部分, 就像我一样, 对吧? 你懂的, 年纪大了什么的……  ";
 			link.l1.go = "Mary_95";
 		break;
 		
 		case "Mary_95":
-			dialog.text = ""+pchar.name+", 你觉得…… ";
+			dialog.text = ""+pchar.name+", 你觉得……  ";
 			link.l1 = "我现在可不太信得过她的记忆。 不过即便如此, 我们还得查的不只是殖民地的档案, 还要查1638年的海军档案, 这可难多了: 那些记录是机密的, 尤其涉及军官的时候。 而且我非常怀疑有哪个普通水手能偷偷把自己老婆带上船。";
 			link.l1.go = "Mary_96";
 		break;
 		
 		case "Mary_96":
 			dialog.text = "另一方面, 想查到一名军官的信息比查一个普通水手要容易得多。";
-			link.l1 = "如果你知道那艘船的名字。 或者它的全名。 而不是只有 'Geoffrey 或 John, 或者最糟糕的, Jack…… ' 。 那还是我们运气好, 船是海军的船。 商船的船员名单可比这还要糟糕得多。";
+			link.l1 = "如果你知道那艘船的名字。 或者它的全名。 而不是只有 'Geoffrey 或 John, 或者最糟糕的, Jack……  ' 。 那还是我们运气好, 船是海军的船。 商船的船员名单可比这还要糟糕得多。";
 			link.l1.go = "Mary_97";
 		break;
 		
@@ -2027,21 +2027,21 @@ void ProcessDialogEvent()
 			dialog.text = "哦, 又是你啊! 怎么样, 你的搜寻进展得如何? ";
 			link.l1 = "你好, "+npchar.name+"。 情况还能更好点——现在我们就像在这个充满秘密和谜团的洞穴里乱转。 不过我觉得出口已经很近了, 对吧。";
 			link.l1.go = "Grinspy_32";
-			link.l2 = "也向你问好, "+npchar.name+"一开始我可没想到会这么好。 看来…… 情况其实没那么绝望。";
+			link.l2 = "也向你问好, "+npchar.name+"一开始我可没想到会这么好。 看来……  情况其实没那么绝望。";
 			link.l2.go = "Grinspy_33";
 			DelLandQuestMark(npchar);
 		break;
 		
 		case "Grinspy_32":
 			dialog.text = "听到这个我很高兴, 真的。 可你们俩又需要我帮忙了, 对吧? 你们查到什么了? ";
-			link.l1 = "Mary是在这个岛上出生的, 时间是1638年6月。 她的母亲Teresa在生下她后不久就去世了。 她的父亲——一个叫Casper的男人——在Mary出生几天后就神秘失踪了, 杳无音信。 我们只知道, 他的名字是以 'J' 开头的。 有人说, 他并没有在本地浅滩里变成螃蟹的食物, 而是乘走私贩的塔尔坦船离开了这个岛…… ";
+			link.l1 = "Mary是在这个岛上出生的, 时间是1638年6月。 她的母亲Teresa在生下她后不久就去世了。 她的父亲——一个叫Casper的男人——在Mary出生几天后就神秘失踪了, 杳无音信。 我们只知道, 他的名字是以 'J' 开头的。 有人说, 他并没有在本地浅滩里变成螃蟹的食物, 而是乘走私贩的塔尔坦船离开了这个岛……  ";
 			link.l1.go = "Grinspy_34";
 			AddCharacterExpToSkill(pchar, "Sneak", 100);
 		break;
 		
 		case "Grinspy_33":
 			dialog.text = "听到这个我很高兴, 真的。 可你们俩又有事要找我, 对吧? 那你们发现了什么? ";
-			link.l1 = "Mary是在岛上出生的, 时间是1638年6月。 她的母亲Teresa在分娩后不久就去世了。 她的父亲——一个名叫Casper的男人——在Mary出生后几天内就神秘失踪了, 毫无踪迹。 关于他, 我们一无所知, 只知道他的名字是以 'J' 开头的。 有人说, 他并没有在本地浅滩变成螃蟹的食物, 而是乘走私贩的塔尔坦船离开了岛上…… ";
+			link.l1 = "Mary是在岛上出生的, 时间是1638年6月。 她的母亲Teresa在分娩后不久就去世了。 她的父亲——一个名叫Casper的男人——在Mary出生后几天内就神秘失踪了, 毫无踪迹。 关于他, 我们一无所知, 只知道他的名字是以 'J' 开头的。 有人说, 他并没有在本地浅滩变成螃蟹的食物, 而是乘走私贩的塔尔坦船离开了岛上……  ";
 			link.l1.go = "Grinspy_34";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
 		break;
@@ -2059,21 +2059,21 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Grinspy_36":
-			dialog.text = "嗯, 我明白了。 很抱歉我真的帮不上你…… ";
+			dialog.text = "嗯, 我明白了。 很抱歉我真的帮不上你……  ";
 			link.l1 = "其实, 你可以的。 告诉我, 独角鲸们确实有记录在那个岛上失踪的船只, 对吧? ";
 			link.l1.go = "Grinspy_37";
 		break;
 		
 		case "Grinspy_37":
 			dialog.text = "我不太明白你的意思, "+pchar.name+"。";
-			link.l1 = "Greenspy, Greenspy…… 别忘了你现在还能坐在那个位置, 全都是因为我。 给我个面子——别考验我的耐心。";
+			link.l1 = "Greenspy, Greenspy……  别忘了你现在还能坐在那个位置, 全都是因为我。 给我个面子——别考验我的耐心。";
 			link.l1.go = "Grinspy_38";
 			link.l2 = "我相信你明白的, Donald。 看在我们的友谊份上, 你不会试图回避这个问题。";
 			link.l2.go = "Grinspy_39";
 		break;
 		
 		case "Grinspy_38":
-			dialog.text = "嗯…… ";
+			dialog.text = "嗯……  ";
 			link.l1 = "船只时不时会被冲到外环。 有些马上就沉了, 另一些还能漂一阵——这些船会被搜查, 把值钱的东西都拿走。 我不太清楚Rivados的情况, 但我怀疑Narwhals不会为了船上的每一件小玩意儿争来争去——更可能是所有东西都归入一个公共池子, 然后把所有战利品统计一遍, 只有在那之后才分赃。";
 			link.l1.go = "Grinspy_40";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
@@ -2081,14 +2081,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Grinspy_39":
-			dialog.text = "嗯…… ";
+			dialog.text = "嗯……  ";
 			link.l1 = "有时候船会漂到外环。 有些船马上就沉了, 有些还能漂一阵子——这些船会被搜查, 所有值钱的东西都会被拿走。 我不太清楚Rivadans的情况, 但我觉得Narwhals应该不会为了船上的每一件小玩意儿争来抢去——更可能是所有东西都先集中到一起, 然后他们会做个详细清单, 只有在那之后才会分赃。";
 			link.l1.go = "Grinspy_40";
 			AddCharacterExpToSkill(pchar, "Commerce", 100);
 		break;
 		
 		case "Grinspy_40":
-			dialog.text = "你可不傻, "+pchar.name+"。 不像这里的很多人, 对吧? 好了, 大致就是这么回事。 我个人真受不了这些文书工作, 但这规矩早在Alan Milrow那会儿就有了, 甚至在他之前的Narwhal家族首领也都是这么做的。 我们一直保留这些记录——而且不止如此: 连Rivados或者海盗们最先登上的船只我们也会登记。 不过这种情况下, 我们当然就不知道船上到底是谁或者装了什么了…… ";
+			dialog.text = "你可不傻, "+pchar.name+"。 不像这里的很多人, 对吧? 好了, 大致就是这么回事。 我个人真受不了这些文书工作, 但这规矩早在Alan Milrow那会儿就有了, 甚至在他之前的Narwhal家族首领也都是这么做的。 我们一直保留这些记录——而且不止如此: 连Rivados或者海盗们最先登上的船只我们也会登记。 不过这种情况下, 我们当然就不知道船上到底是谁或者装了什么了……  ";
 			link.l1 = "从Mary的父母在船难后被带到Ceres铁匠铺这一事实来看, 应该是Narwhals发现了他们的船。 也就是说, 应该会有相关的记录。";
 			link.l1.go = "Grinspy_41";
 		break;
@@ -2106,7 +2106,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Grinspy_43":
-			dialog.text = "首先吧, 他还算有礼貌。 其次, 他答应很快就会还回来。 第三嘛…… 我干嘛要在乎那些破文件啊? ";
+			dialog.text = "首先吧, 他还算有礼貌。 其次, 他答应很快就会还回来。 第三嘛……  我干嘛要在乎那些破文件啊? ";
 			link.l1 = "还不算是最没用的笔记, 对吧。";
 			link.l1.go = "Grinspy_44";
 		break;
@@ -2154,8 +2154,8 @@ void ProcessDialogEvent()
         break;
 
         case "WildRose_Dexter_5":
-            dialog.text = "咳咳…… "+pchar.name+", 我有点没听明白你说的, 对吧? ";
-            link.l1 = "不久前你从独角鲸那里拿走了那些在岛上搁浅船只的航海日志…… ";
+            dialog.text = "咳咳……  "+pchar.name+", 我有点没听明白你说的, 对吧? ";
+            link.l1 = "不久前你从独角鲸那里拿走了那些在岛上搁浅船只的航海日志……  ";
             link.l1.go = "WildRose_Dexter_6";
         break;
 
@@ -2166,7 +2166,7 @@ void ProcessDialogEvent()
         break;
 
         case "WildRose_Dexter_7":
-            dialog.text = "那你为什么不告诉我呢? 你应该已经猜到了吧, 我对那些船本身一点兴趣都没有, 对吧? 说实话, 我对他们船舱里装的宝藏也没多大兴趣。 这里的东西够大家分了, 只要你别太贪心——我是这么想的, 对吧? 我真正感兴趣的是武器: 火枪、军刀…… 还有大炮, 最后还是大炮。 好吧, 那些聪明的家伙有时候连大炮都带走。 那些脑袋空空的黑鬼可没那脑子, 不过独角鲸们…… ";
+            dialog.text = "那你为什么不告诉我呢? 你应该已经猜到了吧, 我对那些船本身一点兴趣都没有, 对吧? 说实话, 我对他们船舱里装的宝藏也没多大兴趣。 这里的东西够大家分了, 只要你别太贪心——我是这么想的, 对吧? 我真正感兴趣的是武器: 火枪、军刀……  还有大炮, 最后还是大炮。 好吧, 那些聪明的家伙有时候连大炮都带走。 那些脑袋空空的黑鬼可没那脑子, 不过独角鲸们……  ";
             link.l1 = "所以你决定看看Greenspy的人们到底有多准备好迎接新一轮的冲突? ";
             link.l1.go = "WildRose_Dexter_8";
         break;
@@ -2178,32 +2178,32 @@ void ProcessDialogEvent()
         break;
 
         case "WildRose_Dexter_9":
-            dialog.text = "Rivados, Eddie…… 那些卑鄙的黑人——难怪Shark那么恨他们。";
+            dialog.text = "Rivados, Eddie……  那些卑鄙的黑人——难怪Shark那么恨他们。";
             link.l1 = "所以这让你感到愉快。";
             link.l1.go = "WildRose_Dexter_10";
         break;
 
         case "WildRose_Dexter_10":
-            dialog.text = "就是这样, 不, 骗你我就天打雷劈! 那些黑皮肤的家伙都安静下来了, 缩在他们的船上…… ";
+            dialog.text = "就是这样, 不, 骗你我就天打雷劈! 那些黑皮肤的家伙都安静下来了, 缩在他们的船上……  ";
             link.l1 = "那你到底在烦什么啊, "+npchar.name+"? ";
             link.l1.go = "WildRose_Dexter_11";
         break;
 
         case "WildRose_Dexter_11":
-            dialog.text = "我该怎么跟你解释呢, "+pchar.name+"…… 你看, 这就像大海上的风。 有时候很温柔, 有时候很猛烈, 有时候甚至会变成真正的风暴。 但无论如何, 风总会推动船前进, 而好船长懂得如何驾驭它。";
+            dialog.text = "我该怎么跟你解释呢, "+pchar.name+"……  你看, 这就像大海上的风。 有时候很温柔, 有时候很猛烈, 有时候甚至会变成真正的风暴。 但无论如何, 风总会推动船前进, 而好船长懂得如何驾驭它。";
             link.l1 = "温和的微风总比狂暴的风暴要好。";
             link.l1.go = "WildRose_Dexter_12";
         break;
 
         case "WildRose_Dexter_12":
             dialog.text = "好吧。 不过有时候, 真的一点风都没有。 死一般的平静——任何船长都无能为力。 你只能坐在后甲板上, 盯着海面发呆, 琢磨接下来到底会发生什么鬼事。 Eddie和他那哥们Chimiset也是一样——他们肯定在搞什么鬼, 我全身都能感觉到, 绝对没好事, 我敢对天发誓! ";
-            link.l1 = "也许你该动动屁股, 和Edward当面谈谈, 对吧? 或者更好, 把你们三个都叫上, 再带上Donald, 大家开诚布公地聊一聊。 这总比让岛上再次血流成河要强得多, 对吧? 好了…… 咱们回到我来这儿的正题吧。";
+            link.l1 = "也许你该动动屁股, 和Edward当面谈谈, 对吧? 或者更好, 把你们三个都叫上, 再带上Donald, 大家开诚布公地聊一聊。 这总比让岛上再次血流成河要强得多, 对吧? 好了……  咱们回到我来这儿的正题吧。";
             link.l1.go = "WildRose_Dexter_13";
         break;
 
         case "WildRose_Dexter_13":
             dialog.text = "所以你对独角鲸的宝藏感兴趣, 对吧? 你希望在那里找到什么呢? ";
-            link.l1 = "我对这里失事船只的名单很感兴趣, 特别是1638年的。 事情是这样的, 我们正在寻找关于Mary父母的信息。 她母亲的情况还算清楚, 但她父亲就说不准了。 关于他的细节非常模糊——我们甚至连名字都不知道, 唯一的线索就是1638年六月在外环触礁的那艘船的名字…… ";
+            link.l1 = "我对这里失事船只的名单很感兴趣, 特别是1638年的。 事情是这样的, 我们正在寻找关于Mary父母的信息。 她母亲的情况还算清楚, 但她父亲就说不准了。 关于他的细节非常模糊——我们甚至连名字都不知道, 唯一的线索就是1638年六月在外环触礁的那艘船的名字……  ";
             link.l1.go = "WildRose_Dexter_14";
         break;
 
@@ -2220,7 +2220,7 @@ void ProcessDialogEvent()
         break;
 
         case "WildRose_Dexter_16":
-            dialog.text = "我也这么觉得, 朋友。 毕竟他把新账本交给我时, 连一个问题都没问。 其实, 我觉得他甚至还有点高兴能甩掉那些破烂…… 谁知道呢, 也许Milrow只是把几十年前的文件处理掉了…… 烧了, 或者也许…… ";
+            dialog.text = "我也这么觉得, 朋友。 毕竟他把新账本交给我时, 连一个问题都没问。 其实, 我觉得他甚至还有点高兴能甩掉那些破烂……  谁知道呢, 也许Milrow只是把几十年前的文件处理掉了……  烧了, 或者也许……  ";
             link.l1 = "不, 这不可能。";
             link.l1.go = "WildRose_Dexter_16_Add";
         break;
@@ -2238,19 +2238,19 @@ void ProcessDialogEvent()
         break;
 
         case "WildRose_Dexter_17_1":
-            dialog.text = "他对关于这座岛的每一份记录都非常用心, 对吧? 他把它们当作岛屿故事的一部分。 而历史——不仅仅是这个地方的历史——才是Alan真正的热爱, 对吧? 他能找到的每一份史料和书籍都要研究一遍…… 有时候我觉得, 他其实更适合当学者而不是战士——我还真有一次这么跟他说过, 对吧? ";
+            dialog.text = "他对关于这座岛的每一份记录都非常用心, 对吧? 他把它们当作岛屿故事的一部分。 而历史——不仅仅是这个地方的历史——才是Alan真正的热爱, 对吧? 他能找到的每一份史料和书籍都要研究一遍……  有时候我觉得, 他其实更适合当学者而不是战士——我还真有一次这么跟他说过, 对吧? ";
             link.l1 = "...";
             link.l1.go = "WildRose_Dexter_18";
         break;
 
         case "WildRose_Dexter_17_2":
-            dialog.text = "他对关于这座岛的每一份记录都格外用心。 他把它们当作岛屿历史的一部分。 而历史——不仅仅是这里的历史——才是Alan真正的热情所在, 对吧。 他能找到的每一份史料、每一本书都要研究…… 有时候我觉得, 他当学者比当战士更合适——有一次, 我还真这么跟他说过。";
+            dialog.text = "他对关于这座岛的每一份记录都格外用心。 他把它们当作岛屿历史的一部分。 而历史——不仅仅是这里的历史——才是Alan真正的热情所在, 对吧。 他能找到的每一份史料、每一本书都要研究……  有时候我觉得, 他当学者比当战士更合适——有一次, 我还真这么跟他说过。";
             link.l1 = "也许他当初真的该选眼镜、纸和羽毛笔, 而不是剑和手枪——谁知道呢, 说不定他现在还在这些破烂船甲板上踱步呢。 可如果Milrow真的那么喜欢档案, 那他把那些记录放哪儿了? 就算他偶尔不小心把墨水洒在一张纸上——可那些可有几十张, 甚至上百张, 对吧? ";
             link.l1.go = "WildRose_Dexter_18";
         break;
 
         case "WildRose_Dexter_18":
-            dialog.text = "我只知道他比自己的命还要看重那些文件。 也许是被人偷走了, 或者也可能是他自己交给了别人…… ";
+            dialog.text = "我只知道他比自己的命还要看重那些文件。 也许是被人偷走了, 或者也可能是他自己交给了别人……  ";
             link.l1 = "被偷了? 谁会需要那些早就从舰桥到龙骨都被拆得干干净净的船只的信息? 送出去——这倒更有可能, 可是送给谁了, 为了什么呢? ";
             link.l1.go = "WildRose_Dexter_19_Add";
         break;
@@ -2306,7 +2306,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Betancur_5":
-			dialog.text = "我的父母, Antonio。 Charles和我正试图查明他们到底是谁, 还有他们身上发生了什么。 我母亲是在生我的时候去世的, 这点我们已经查清楚了。 但我父亲的事情可没那么简单…… ";
+			dialog.text = "我的父母, Antonio。 Charles和我正试图查明他们到底是谁, 还有他们身上发生了什么。 我母亲是在生我的时候去世的, 这点我们已经查清楚了。 但我父亲的事情可没那么简单……  ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Betancur_5_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Betancur"), CharacterFromID("Mary"));
@@ -2318,7 +2318,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Betancur_6":
-			dialog.text = "你是哪一年出生的, 提醒我一下…… ";
+			dialog.text = "你是哪一年出生的, 提醒我一下……  ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Betancur_6_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Betancur"), CharacterFromID("Mary"));
@@ -2342,7 +2342,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Betancur_8":
-			dialog.text = "那时候我才十二岁, Mary。 那些日子我其实记得不是很清楚。 当然, 现在偶尔也会有一些回忆闪现脑海, 但说实话, 要把它们拼凑起来真的有点难。 很抱歉, 我恐怕帮不上你…… ";
+			dialog.text = "那时候我才十二岁, Mary。 那些日子我其实记得不是很清楚。 当然, 现在偶尔也会有一些回忆闪现脑海, 但说实话, 要把它们拼凑起来真的有点难。 很抱歉, 我恐怕帮不上你……  ";
 			link.l1 = "我们并不太需要你做这个, Antonio。 但是如果你还记得Mary出生那天的任何事情, 我们会非常感激。";
 			link.l1.go = "WildRose_Betancur_9";
 			CharacterTurnByChr(CharacterFromID("LSC_Betancur"), CharacterFromID("Mary"));
@@ -2357,14 +2357,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Betancur_10":
-			dialog.text = "这是真的。 我把能找到的书都读了, 能拿到的手稿也都研究过了…… ";
-			link.l1 = "我们说的是那些手稿。 除了你之外, 岛上只有另一个人对历史和你一样充满热情…… ";
+			dialog.text = "这是真的。 我把能找到的书都读了, 能拿到的手稿也都研究过了……  ";
+			link.l1 = "我们说的是那些手稿。 除了你之外, 岛上只有另一个人对历史和你一样充满热情……  ";
 			link.l1.go = "WildRose_Betancur_12";
 		break;
 
 		case "WildRose_Betancur_12":
 			dialog.text = "Alan Milrow。 好吧, 我们早在他还没忙着制定消灭Rivadan人、后来又要对付海盗的计划时就谈过这事了。 他是个聪明的人, 确实有些了不起的本事。";
-			link.l1 = "毫无疑问, 那小子确实与众不同。 他手上有些东西, 或许对咱们有用。 而在正义岛上, 这东西对别人都没什么实际用处, 只有你们俩例外。 那些在岛附近失事船只的航海日志, 上面有打捞出来的货物和贵重物品的描述, 甚至可能还有乘客的名字…… ";
+			link.l1 = "毫无疑问, 那小子确实与众不同。 他手上有些东西, 或许对咱们有用。 而在正义岛上, 这东西对别人都没什么实际用处, 只有你们俩例外。 那些在岛附近失事船只的航海日志, 上面有打捞出来的货物和贵重物品的描述, 甚至可能还有乘客的名字……  ";
 			link.l1.go = "WildRose_Betancur_13";
 		break;
 
@@ -2431,7 +2431,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Betancur_19":
-			dialog.text = "请随意。 看看四周吧…… ";
+			dialog.text = "请随意。 看看四周吧……  ";
 			link.l1 = "我们就这么做。";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap2_IslandOfJustice_20");
@@ -2440,8 +2440,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Mary_101":
-			dialog.text = "喏, "+pchar.name+", 你看, 对吧! Joshua和Teresa Casper! 简直不敢相信——我们成功了, 真的成功了, 对吧! 而且船的名字叫 'Wrangler' ! 现在我们可以查清楚我父亲的一切了——他是谁, 他怎么会来到这里…… ";
-			link.l1 = "我担心, "+npchar.name+", 你太着急了…… 事情可能没你想的那么简单。 陛下的军舰…… 我们得好好想想, 谁能帮我们从皇家海军档案馆弄到情报…… ";
+			dialog.text = "喏, "+pchar.name+", 你看, 对吧! Joshua和Teresa Casper! 简直不敢相信——我们成功了, 真的成功了, 对吧! 而且船的名字叫 'Wrangler' ! 现在我们可以查清楚我父亲的一切了——他是谁, 他怎么会来到这里……  ";
+			link.l1 = "我担心, "+npchar.name+", 你太着急了……  事情可能没你想的那么简单。 陛下的军舰……  我们得好好想想, 谁能帮我们从皇家海军档案馆弄到情报……  ";
 			link.l1.go = "WildRose_Mary_102";
 			DelLandQuestMark(npchar);
 		break;
@@ -2458,12 +2458,12 @@ void ProcessDialogEvent()
 		
 		case "WildRose_Betancur_21":
 			dialog.text = "因为他们不在这里, "+pchar.name+"。 那两个人在和Casper一家一起获救后的第二天夜里就死了。";
-			link.l1 = "真奇怪。 那个孕妇又活了一周, 而皇家海军的两个水手却突然死了…… ";
+			link.l1 = "真奇怪。 那个孕妇又活了一周, 而皇家海军的两个水手却突然死了……  ";
 			link.l1.go = "WildRose_Betancur_22";
 		break;
 
 		case "WildRose_Betancur_22":
-			dialog.text = "他们当时就已经很糟了, 我记得。 现在我想起来了, "+pchar.name+"——其实当时我就在 '刻瑞斯铁匠铺' 附近, 他们被带上船的时候…… 好吧, 我是在 '埃斯梅拉达' 号上——我记得是和奥雷莉·贝尔坦一起。 奇米塞特也在场——就是那些黑皮异教徒的萨满, 不知怎么他也来了铁匠铺。 起初我还以为那两个水手已经死了——但他们其实是一天后才死的…… ";
+			dialog.text = "他们当时就已经很糟了, 我记得。 现在我想起来了, "+pchar.name+"——其实当时我就在 '刻瑞斯铁匠铺' 附近, 他们被带上船的时候……  好吧, 我是在 '埃斯梅拉达' 号上——我记得是和奥雷莉·贝尔坦一起。 奇米塞特也在场——就是那些黑皮异教徒的萨满, 不知怎么他也来了铁匠铺。 起初我还以为那两个水手已经死了——但他们其实是一天后才死的……  ";
 			link.l1 = "嗯, 这也没办法。 不过我们已经学到了不少。 谢谢你的帮助, Antonio。";
 			link.l1.go = "WildRose_Betancur_23";
 		break;
@@ -2477,13 +2477,13 @@ void ProcessDialogEvent()
 		
 		case "WildRose_Betancur_21":
 			dialog.text = "因为他们不在这里, "+pchar.name+"。 那两个人在被和Casper一家一起救出来的第二天夜里就死了。";
-			link.l1 = "真奇怪。 那个孕妇又撑过了一周, 但皇家海军的两个水手却突然死了…… ";
+			link.l1 = "真奇怪。 那个孕妇又撑过了一周, 但皇家海军的两个水手却突然死了……  ";
 			link.l1.go = "WildRose_Betancur_22";
 		break;
 		
 		case "WildRose_Chimiset_21":
 			dialog.text = "很高兴又见到你, 朋友。 你来这里有什么事吗? ";
-			link.l1 = "带着一个请求, "+npchar.name+"…… 或者说, 是个问题。";
+			link.l1 = "带着一个请求, "+npchar.name+"……  或者说, 是个问题。";
 			link.l1.go = "WildRose_Chimiset_22";
 			DelLandQuestMark(npchar);
 		break;
@@ -2495,8 +2495,8 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Chimiset_23":
-			dialog.text = "几十年又几十年了, 朋友。 我小时候就被带到这里了, 不过那时我已经很机灵——是在一艘奴隶船上。 我的故事和你在这里听到的许多其他人并没有太大不同。 一场暴风雨, 一次船难…… 我被关押的那艘英国大帆船甚至没能驶出外环, 就被海浪推到礁石上, 撞成了两截。";
-			link.l1 = "你是怎么活下来的? 那些暗礁离外环很远啊, 说实话, 能在狂风巨浪中闯到这里, 可不是件容易的事…… ";
+			dialog.text = "几十年又几十年了, 朋友。 我小时候就被带到这里了, 不过那时我已经很机灵——是在一艘奴隶船上。 我的故事和你在这里听到的许多其他人并没有太大不同。 一场暴风雨, 一次船难……  我被关押的那艘英国大帆船甚至没能驶出外环, 就被海浪推到礁石上, 撞成了两截。";
+			link.l1 = "你是怎么活下来的? 那些暗礁离外环很远啊, 说实话, 能在狂风巨浪中闯到这里, 可不是件容易的事……  ";
 			link.l1.go = "WildRose_Chimiset_24";
 		break;
 
@@ -2507,7 +2507,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Chimiset_25":
-			dialog.text = "是啊, 我们钻进了货舱里的一个洞…… 我又晕过去了, 实在太虚弱了, 对吧? 等我醒来的时候, 阿萨纳已经开始尖叫——一只巨大的螃蟹爬上了我们搁浅的那艘船, 正把他撕成碎片。 我就那样站着看着, 明知道下一个就是我——被恐惧和无助冻住了, 连动一下都做不到, 对吧? ";
+			dialog.text = "是啊, 我们钻进了货舱里的一个洞……  我又晕过去了, 实在太虚弱了, 对吧? 等我醒来的时候, 阿萨纳已经开始尖叫——一只巨大的螃蟹爬上了我们搁浅的那艘船, 正把他撕成碎片。 我就那样站着看着, 明知道下一个就是我——被恐惧和无助冻住了, 连动一下都做不到, 对吧? ";
 			link.l1 = "你本来可以试着帮你的朋友的。 但是那样的话, 我们现在就不会在这儿聊天了, 对吧? 所以你是怎么逃出来的? ";
 			link.l1.go = "WildRose_Chimiset_26_1";
 			link.l2 = "你运气不错, 他没先拿你开刀, "+npchar.name+"。 那你是怎么逃出来的——你是跳回水里游走的吗? ";
@@ -2529,7 +2529,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Chimiset_27":
-			dialog.text = "嗯, 按照你们的历法, 那是在1623年, 夏末——我也只能说得这么具体了…… ";
+			dialog.text = "嗯, 按照你们的历法, 那是在1623年, 夏末——我也只能说得这么具体了……  ";
 			link.l1 = "没那个必要。 那么, 1638年时, 你已经在岛上待了十五年了。";
 			link.l1.go = "WildRose_Chimiset_28";
 		break;
@@ -2541,7 +2541,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Chimiset_29":
-			dialog.text = "好吧, 我记得这事, 朋友。 虽然有点模糊, 就像隔着一层雾, 但我确实记得…… ";
+			dialog.text = "好吧, 我记得这事, 朋友。 虽然有点模糊, 就像隔着一层雾, 但我确实记得……  ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Chimiset_29_add";
 		break;
@@ -2562,14 +2562,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Chimiset_31":
-			dialog.text = "我不能多说。 四个人: 一名军官, 他的妻子, 还有两个水手。 那女人当时怀孕了, 救她的人都以为她撑不到天亮——但她却像母狮一样坚强, 而那两个水手不到一天就离开了人世…… 我见过他们: 虽然很虚弱, 但身上还是有点生气的…… ";
+			dialog.text = "我不能多说。 四个人: 一名军官, 他的妻子, 还有两个水手。 那女人当时怀孕了, 救她的人都以为她撑不到天亮——但她却像母狮一样坚强, 而那两个水手不到一天就离开了人世……  我见过他们: 虽然很虚弱, 但身上还是有点生气的……  ";
 			link.l1 = "你是说他们被杀了吗? ";
 			link.l1.go = "WildRose_Chimiset_32";
 			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("Chimiset"));
 		break;
 		
 		case "WildRose_Chimiset_32":
-			dialog.text = "如果是这样的话, 那就既没有目击者, 他们身上也没有伤口, 我的朋友…… ";
+			dialog.text = "如果是这样的话, 那就既没有目击者, 他们身上也没有伤口, 我的朋友……  ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Chimiset_32_add";
 		break;
@@ -2579,7 +2579,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Chimiset_33":
-			dialog.text = "你说 '军官' , 好吧…… 我父亲真的曾是军官吗? ";
+			dialog.text = "你说 '军官' , 好吧……  我父亲真的曾是军官吗? ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Chimiset_33_add";
 			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("Chimiset"));
@@ -2591,12 +2591,12 @@ void ProcessDialogEvent()
 		
 		case "WildRose_Chimiset_34":
 			dialog.text = "他穿着军官制服——每当我试图回忆他的样子时, 这大概是我唯一记得的。";
-			link.l1 = "如果他是个军官, 那他肯定也穿不了别的衣服——我怀疑他的衣柜能有多丰富…… 也许你还记得其他细节, "+npchar.name+"? 有什么特别的特征…… 比如说, 脸上有疤, 或者其他伤痕之类的…… ";
+			link.l1 = "如果他是个军官, 那他肯定也穿不了别的衣服——我怀疑他的衣柜能有多丰富……  也许你还记得其他细节, "+npchar.name+"? 有什么特别的特征……  比如说, 脸上有疤, 或者其他伤痕之类的……  ";
 			link.l1.go = "WildRose_Chimiset_35";
 		break;
 		
 		case "WildRose_Chimiset_35":
-			dialog.text = "我记得的不多, 朋友。 他的面容几乎已经从我的记忆中消失了——毕竟已经过去二十年了…… 但他的目光——我却记得太清楚了。 我只和这个人说过一次话, 但他那双灰色的眼睛——和Mary的一样——我永远都不会忘记。 那里面有绝望, 有像被逼入绝境的羚羊一样的恐惧, 同时——还有堪比雄狮的愤怒与决心…… ";
+			dialog.text = "我记得的不多, 朋友。 他的面容几乎已经从我的记忆中消失了——毕竟已经过去二十年了……  但他的目光——我却记得太清楚了。 我只和这个人说过一次话, 但他那双灰色的眼睛——和Mary的一样——我永远都不会忘记。 那里面有绝望, 有像被逼入绝境的羚羊一样的恐惧, 同时——还有堪比雄狮的愤怒与决心……  ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Chimiset_35_add";
 		break;
@@ -2617,7 +2617,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Chimiset_37":
-			dialog.text = "这事发生在你出生前几个小时。 他来了这里, 来到 'Protector' , 坚持要见我。 Rivados的首领Mogedi被他的大胆惊呆了——但我却突然对这个男人产生了兴趣。 当他站在我面前时, 他跪倒在地, 求我救救他的妻子…… 在他们短暂逗留期间, 有人设法把我的事告诉了他。 我答应了, 尽管Mogedi反对…… ";
+			dialog.text = "这事发生在你出生前几个小时。 他来了这里, 来到 'Protector' , 坚持要见我。 Rivados的首领Mogedi被他的大胆惊呆了——但我却突然对这个男人产生了兴趣。 当他站在我面前时, 他跪倒在地, 求我救救他的妻子……  在他们短暂逗留期间, 有人设法把我的事告诉了他。 我答应了, 尽管Mogedi反对……  ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Chimiset_37_add";
 			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("Chimiset"));
@@ -2639,7 +2639,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Chimiset_39":
-			dialog.text = "没有必要撒谎——我们确实找到了你母亲, 但已经太晚了: 独角鲸号的人不让我上 'Ceres Smithy' 。 你父亲设法…… 说服了他们, 但我见到可怜的Teresa时, 她已经在咽下最后一口气。 她生下了你, 如果我能早点赶到, 也许还能救她, 但是…… ";
+			dialog.text = "没有必要撒谎——我们确实找到了你母亲, 但已经太晚了: 独角鲸号的人不让我上 'Ceres Smithy' 。 你父亲设法……  说服了他们, 但我见到可怜的Teresa时, 她已经在咽下最后一口气。 她生下了你, 如果我能早点赶到, 也许还能救她, 但是……  ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Chimiset_39_add";
 			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("Chimiset"));
@@ -2711,7 +2711,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Chimiset_46":
-			dialog.text = "一听说Teresa快不行了, Joshua就勃然大怒——我发誓, 就算是草原上的狮子猎食时都没有你父亲追那些不让我上长笛号的独角鲸时那么疯狂…… 得有六个人才能把他按住——而且那还是在他把两个穿着盔甲的族里战士扔进水里之后。";
+			dialog.text = "一听说Teresa快不行了, Joshua就勃然大怒——我发誓, 就算是草原上的狮子猎食时都没有你父亲追那些不让我上长笛号的独角鲸时那么疯狂……  得有六个人才能把他按住——而且那还是在他把两个穿着盔甲的族里战士扔进水里之后。";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Chimiset_46_add";
 			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("Chimiset"));
@@ -2733,7 +2733,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Chimiset_48":
-			dialog.text = "他们把他扔进了 'Tartarus' 号上的一个牢房。 没有人敢审判他——他们想让这件事先平息下来…… 几乎所有人都为他感到惋惜, 但很少有人愿意和这样的人一起生活。 几天后, Joshua就消失了——差不多就在那时, 有几艘走私船离开了岛上。 没有人看到他在那些船上, 这也就成了他死讯流传的开端。";
+			dialog.text = "他们把他扔进了 'Tartarus' 号上的一个牢房。 没有人敢审判他——他们想让这件事先平息下来……  几乎所有人都为他感到惋惜, 但很少有人愿意和这样的人一起生活。 几天后, Joshua就消失了——差不多就在那时, 有几艘走私船离开了岛上。 没有人看到他在那些船上, 这也就成了他死讯流传的开端。";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Chimiset_48_add";
 			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("Chimiset"));
@@ -2755,20 +2755,20 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Chimiset_50":
-			dialog.text = "我只说一句别人肯定也会告诉你的话——从来没人找到过他的尸体。 也许他真的藏在某条小船底下了, 或者他们在牢房里割了他的喉咙, 把他喂给了螃蟹…… ";
-			link.l1 = "他消失的时间正好和那些商人起航的时间一致, 这更倾向于第一种可能——世上哪有这么巧的事。 也许他曾向某人透露过自己的计划? 如果他真是逃跑了, 那他就真的跑了, 把刚出生的女儿留在这里, 这么做也有他的道理——一个婴儿很可能撑不到坐那种破船去古巴…… 但他肯定是打算回来接她的。";
+			dialog.text = "我只说一句别人肯定也会告诉你的话——从来没人找到过他的尸体。 也许他真的藏在某条小船底下了, 或者他们在牢房里割了他的喉咙, 把他喂给了螃蟹……  ";
+			link.l1 = "他消失的时间正好和那些商人起航的时间一致, 这更倾向于第一种可能——世上哪有这么巧的事。 也许他曾向某人透露过自己的计划? 如果他真是逃跑了, 那他就真的跑了, 把刚出生的女儿留在这里, 这么做也有他的道理——一个婴儿很可能撑不到坐那种破船去古巴……  但他肯定是打算回来接她的。";
 			link.l1.go = "WildRose_Chimiset_51";
 		break;
 		
 		case "WildRose_Chimiset_51":
-			dialog.text = "我可不清楚, 朋友。 那时候如果Joshua Casper和谁说过话, 也只能是他的狱卒——不过他们早就离开了这个罪恶的世界。 哦, 对了, 有一天Domingo神父来看过他——在Julian修士之前, 他是白人的神父…… ";
+			dialog.text = "我可不清楚, 朋友。 那时候如果Joshua Casper和谁说过话, 也只能是他的狱卒——不过他们早就离开了这个罪恶的世界。 哦, 对了, 有一天Domingo神父来看过他——在Julian修士之前, 他是白人的神父……  ";
 			link.l1 = "他是打算忏悔什么吗? 估计是怕逃跑的时候死掉, 对吧? ";
 			link.l1.go = "WildRose_Chimiset_52";
 		break;
 
 		case "WildRose_Chimiset_52":
-			dialog.text = "我不知道的事, 我可没法给你解释, 对吧, 朋友。 Domingo也不会告诉你什么——他大概十五年前就死了, 对吧。 也许是被人敲了脑袋, 也许就是喝酒喝死的——他可是挺爱喝的…… ";
-			link.l1 = "不过也许Domingo记了日记…… 或者他把和Joshua的那次谈话告诉了他哥哥Julian? ";
+			dialog.text = "我不知道的事, 我可没法给你解释, 对吧, 朋友。 Domingo也不会告诉你什么——他大概十五年前就死了, 对吧。 也许是被人敲了脑袋, 也许就是喝酒喝死的——他可是挺爱喝的……  ";
+			link.l1 = "不过也许Domingo记了日记……  或者他把和Joshua的那次谈话告诉了他哥哥Julian? ";
 			link.l1.go = "WildRose_Chimiset_52_add";
 		break;
 		
@@ -2809,14 +2809,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Julian_2_1":
-			dialog.text = "虔诚的天主教徒, 未婚却同居一屋檐下…… 这简直是亵渎啊, 孩子。 让我提醒你, 这可是死罪! ";
+			dialog.text = "虔诚的天主教徒, 未婚却同居一屋檐下……  这简直是亵渎啊, 孩子。 让我提醒你, 这可是死罪! ";
 			link.l1 = "难道《圣经》不是说, 爱能遮盖一切罪吗? ";
 			link.l1.go = "WildRose_Julian_3";
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
 		break;
 
 		case "WildRose_Julian_2_2":
-			dialog.text = "虔诚的天主教徒却未婚同居在一个屋檐下…… 这简直就是亵渎啊, 孩子。 让我提醒你, 这可是死罪! ";
+			dialog.text = "虔诚的天主教徒却未婚同居在一个屋檐下……  这简直就是亵渎啊, 孩子。 让我提醒你, 这可是死罪! ";
 			link.l1 = "难道《圣经》不是说, 爱能遮盖一切罪吗? ";
 			link.l1.go = "WildRose_Julian_3";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
@@ -2829,14 +2829,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Julian_4":
-			dialog.text = "迷途的灵魂永远不嫌晚回归正道…… 不过我在听你们说话, 孩子们。";
+			dialog.text = "迷途的灵魂永远不嫌晚回归正道……  不过我在听你们说话, 孩子们。";
 			link.l1 = "我们确实有点迷路了, Julian兄弟。 迷失在过去的荆棘中。 我们希望你能帮我们找到回到光明的路。";
 			link.l1.go = "WildRose_Julian_5";
 		break;
 
 		case "WildRose_Julian_5":
 			dialog.text = "很机智, 孩子。 你要记住, 引领人走向光明的不是人, 而是主——当你跟随祂时, 要记得祂的道路是神秘莫测的。";
-			link.l1 = "我长话短说, Julian兄弟。 我们正在尽力查明Mary父母的所有情况。 关于她母亲Teresa, 基本上已经清楚了——她和丈夫一起抵达这座岛, 不久后一周因难产去世。 但她父亲…… Mary出生几天后就消失了, 从 'Tartarus' 逃了出来。 传言说, 他在这里最后见过的人是Domingo神父——也就是你的前任。";
+			link.l1 = "我长话短说, Julian兄弟。 我们正在尽力查明Mary父母的所有情况。 关于她母亲Teresa, 基本上已经清楚了——她和丈夫一起抵达这座岛, 不久后一周因难产去世。 但她父亲……  Mary出生几天后就消失了, 从 'Tartarus' 逃了出来。 传言说, 他在这里最后见过的人是Domingo神父——也就是你的前任。";
 			link.l1.go = "WildRose_Julian_6";
 		break;
 
@@ -2854,13 +2854,13 @@ void ProcessDialogEvent()
 
 		case "WildRose_Julian_8":
 			dialog.text = "你是指什么特别的事情吗, 孩子? ";
-			link.l1 = "我们正在找日记或者某种航海日志…… 希望能有奇迹出现的可能性很小, 不过神父也许在他的笔记里记录下了那次谈话的内容。 我们认为Mary的父亲是乘走私船离开岛上的——也许他曾暗示过神父, 他要去哪里, 以及什么时候会回来接他的女儿? ";
+			link.l1 = "我们正在找日记或者某种航海日志……  希望能有奇迹出现的可能性很小, 不过神父也许在他的笔记里记录下了那次谈话的内容。 我们认为Mary的父亲是乘走私船离开岛上的——也许他曾暗示过神父, 他要去哪里, 以及什么时候会回来接他的女儿? ";
 			link.l1.go = "WildRose_Julian_9";
 		break;
 
 		case "WildRose_Julian_9":
-			dialog.text = "我从来没找到过什么日记之类的东西, 这点可以肯定, 不过倒是有各种各样的记录…… 说到教会的事, 他可真是一丝不苟——不是每个主的仆人都这么较真。 他的文件里只有干巴巴的数字和名字——就这些。";
-			link.l1 = "据我们所知, Joshua Casper——他就是这个名字——在妻子去世后, 一时愤怒之下, 杀了两名拒绝让rivados巫师Chimiseta见Mary母亲的Narwhal家族成员…… ";
+			dialog.text = "我从来没找到过什么日记之类的东西, 这点可以肯定, 不过倒是有各种各样的记录……  说到教会的事, 他可真是一丝不苟——不是每个主的仆人都这么较真。 他的文件里只有干巴巴的数字和名字——就这些。";
+			link.l1 = "据我们所知, Joshua Casper——他就是这个名字——在妻子去世后, 一时愤怒之下, 杀了两名拒绝让rivados巫师Chimiseta见Mary母亲的Narwhal家族成员……  ";
 			link.l1.go = "WildRose_Julian_10";
 		break;
 
@@ -2958,8 +2958,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Julian_18":
-			dialog.text = "哎呀哎呀……  (吹掉灰尘) 。 看来就是这个了。 1638年主历的账本。";
-			link.l1 = "请允许我, Julian修士…… ";
+			dialog.text = "哎呀哎呀……   (吹掉灰尘) 。 看来就是这个了。 1638年主历的账本。";
+			link.l1 = "请允许我, Julian修士……  ";
 			link.l1.go = "exit";
 			AddQuestRecordInfo("WildRose_Records_2", "1");
 			AddDialogExitQuestFunction("WildRose_Etap2_IslandOfJustice_23");
@@ -3034,7 +3034,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Sesil_3":
-			dialog.text = "这是关于我父母的事, Cécile。 关于我母亲, 我们已经能查到的都查清楚了…… 她在我出生后就去世了。 可我父亲…… 他在几天后就神秘消失了, 连一点线索都没有。 我们一直觉得他没死, 对吧。";
+			dialog.text = "这是关于我父母的事, Cécile。 关于我母亲, 我们已经能查到的都查清楚了……  她在我出生后就去世了。 可我父亲……  他在几天后就神秘消失了, 连一点线索都没有。 我们一直觉得他没死, 对吧。";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Sesil_3_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Sesil"), CharacterFromID("Mary"));
@@ -3046,7 +3046,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Sesil_4":
-			dialog.text = "嗯, 把那样的人送去见阎王, 可真不是件容易事, 对吧…… ";
+			dialog.text = "嗯, 把那样的人送去见阎王, 可真不是件容易事, 对吧……  ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Sesil_4_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Sesil"), CharacterFromID("Mary"));
@@ -3070,7 +3070,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Sesil_6":
-			dialog.text = "我的姑娘, 我亲眼看见他徒手干掉了两头独角鲸, 差点儿…… ";
+			dialog.text = "我的姑娘, 我亲眼看见他徒手干掉了两头独角鲸, 差点儿……  ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Sesil_6_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Sesil"), CharacterFromID("Mary"));
@@ -3118,60 +3118,60 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Sesil_10":
-			dialog.text = "那还能怎么继续? 他把那两个人扔下了海, 他们像石头一样沉了下去, 然后他们就把他绑起来拖到 'Tartarus' 号去了。 这样做才对——谁知道那个恶棍还会想淹死谁呢…… ";
-			link.l1 = "杀人犯? 这说得有点过分了吧, Gallard夫人? 我们说的是一个男人啊, 一个刚刚失去妻子的军官, 对吧…… ";
+			dialog.text = "那还能怎么继续? 他把那两个人扔下了海, 他们像石头一样沉了下去, 然后他们就把他绑起来拖到 'Tartarus' 号去了。 这样做才对——谁知道那个恶棍还会想淹死谁呢……  ";
+			link.l1 = "杀人犯? 这说得有点过分了吧, Gallard夫人? 我们说的是一个男人啊, 一个刚刚失去妻子的军官, 对吧……  ";
 			link.l1.go = "WildRose_Sesil_11_1";
 			link.l2 = "我看你对他评价不高——可不是每个军官都会被这样议论的。";
 			link.l2.go = "WildRose_Sesil_11_2";
 		break;
 
 		case "WildRose_Sesil_11_1":
-			dialog.text = "军官啊, 呵呵。 我还记得他的制服, 确实挺特别的, 几乎是全新的。 不过啊, 年轻人, 我这辈子见过的军官可不少。 每一个都比那位…… 先生要体面得多。";
+			dialog.text = "军官啊, 呵呵。 我还记得他的制服, 确实挺特别的, 几乎是全新的。 不过啊, 年轻人, 我这辈子见过的军官可不少。 每一个都比那位……  先生要体面得多。";
 			link.l1 = "他还有做别的事吗? 除了杀了那两个人? ";
 			link.l1.go = "WildRose_Sesil_12";
 			ChangeCharacterComplexReputation(pchar, "honor", 1);
 		break;
 
 		case "WildRose_Sesil_11_2":
-			dialog.text = "军官啊, 呵呵。 我还记得他的制服, 真是特别, 几乎全新, 像是刚从裁缝手里做出来的。 不过啊, 年轻人, 我这辈子见过的军官可不少。 他们全都比这位…… 先生要体面得多。";
+			dialog.text = "军官啊, 呵呵。 我还记得他的制服, 真是特别, 几乎全新, 像是刚从裁缝手里做出来的。 不过啊, 年轻人, 我这辈子见过的军官可不少。 他们全都比这位……  先生要体面得多。";
 			link.l1 = "他还做了什么吗? 除了杀了那两个人? ";
 			link.l1.go = "WildRose_Sesil_12";
 			AddCharacterExpToSkill(pchar, "sneak", 100);
 		break;
 
 		case "WildRose_Sesil_12":
-			dialog.text = "他在牢房里要求见一位神父——De la Cruz神父…… ";
+			dialog.text = "他在牢房里要求见一位神父——De la Cruz神父……  ";
 			link.l1 = "哟, 你看看! 这正是我们想和你谈的事, 对吧? 你知道那次谈话的细节吗? ";
 			link.l1.go = "WildRose_Sesil_13";
 		break;
 
 		case "WildRose_Sesil_13":
 			dialog.text = "当然啦, 小伙子! 那个新教徒混蛋竟然要求神父不要给他女儿施洗——尽管她母亲是爱尔兰人, 所以是天主教徒。";
-			link.l1 = "我几乎是第一次听到一位英国女士这样谈论新教徒…… 咳, 打扰了, "+npchar.lastname+"夫人。";
+			link.l1 = "我几乎是第一次听到一位英国女士这样谈论新教徒……  咳, 打扰了, "+npchar.lastname+"夫人。";
 			link.l1.go = "WildRose_Sesil_14";
 		break;
 
 		case "WildRose_Sesil_14":
 			dialog.text = "我以前也是新教徒, 没什么好隐瞒的。 不过Julian修士还是把我带回了正道。";
-			link.l1 = "原来如此…… 真是上主的忠实仆人。 不过我们有点跑题了。 所以, Casper希望他的女儿在新教信仰中长大。";
+			link.l1 = "原来如此……  真是上主的忠实仆人。 不过我们有点跑题了。 所以, Casper希望他的女儿在新教信仰中长大。";
 			link.l1.go = "WildRose_Sesil_15";
 		break;
 
 		case "WildRose_Sesil_15":
-			dialog.text = "这正是他对我们的De la Cruz神父说的话。 而且他还命令他们给那个女孩取名叫Julia…… ";
-			link.l1 = "原来'J.'代表的是这个。 Mary Julia Casper…… 可那他们为什么叫她Mary呢? ";
+			dialog.text = "这正是他对我们的De la Cruz神父说的话。 而且他还命令他们给那个女孩取名叫Julia……  ";
+			link.l1 = "原来'J.'代表的是这个。 Mary Julia Casper……  可那他们为什么叫她Mary呢? ";
 			link.l1.go = "WildRose_Sesil_16";
 		break;
 
 		case "WildRose_Sesil_16":
-			dialog.text = "因为那是她母亲的心愿, 就是这样。 当女孩从她母亲腹中被取出时, 她轻声说了一个名字——Mary。 我当时没能亲眼见证, 不过Aurélie Bertin在场。 你要是想知道, 可以去问她…… ";
+			dialog.text = "因为那是她母亲的心愿, 就是这样。 当女孩从她母亲腹中被取出时, 她轻声说了一个名字——Mary。 我当时没能亲眼见证, 不过Aurélie Bertin在场。 你要是想知道, 可以去问她……  ";
 			link.l1 = "所以你还是听了你母亲的意思, 对吧? ";
 			link.l1.go = "WildRose_Sesil_17";
 		break;
 
 		case "WildRose_Sesil_17":
 			dialog.text = "那还能怎么样呢, 对吧——所谓的父亲就这么凭空消失了, 对吧? ";
-			link.l1 = "考虑到…… De la Cruz神父的本事, 就算他一直待在Tartarus号上, 我也怀疑他的意见会有多大用处。 Domingo没告诉你——他根本不知道Casper打算逃跑, 或许还会回来找那个女孩? ";
+			link.l1 = "考虑到……  De la Cruz神父的本事, 就算他一直待在Tartarus号上, 我也怀疑他的意见会有多大用处。 Domingo没告诉你——他根本不知道Casper打算逃跑, 或许还会回来找那个女孩? ";
 			link.l1.go = "WildRose_Sesil_18_1";
 			link.l2 = "也许你说得对。 不过, 说回多明戈神父和Casper先生的谈话——神父有没有提到Joshua是否和他谈过逃跑的事, 或者他什么时候可能会回来找他女儿? ";
 			link.l2.go = "WildRose_Sesil_18_2";
@@ -3203,14 +3203,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_122":
-			dialog.text = "也许是兄弟, 或者…… 一个亲密的朋友? ";
-			link.l1 = "朋友, 你说的啊…… 我倒想知道Joshua是不是早就知道他了…… ";
+			dialog.text = "也许是兄弟, 或者……  一个亲密的朋友? ";
+			link.l1 = "朋友, 你说的啊……  我倒想知道Joshua是不是早就知道他了……  ";
 			link.l1.go = "WildRose_Mary_123";
 		break;
 
 		case "WildRose_Mary_123":
 			dialog.text = "你想说什么, "+pchar.name+"? ";
-			link.l1 = "我们得好好把这一切想清楚, 对吧? 幸好我们还有大把时间, 一边找能帮我们的人一边慢慢想。 我们已经做了不少了, 对吧? 但还没完全结束呢。 我们自己进不了皇家海军办公室, 而且那地方远在伦敦的另一头…… 你觉得有谁能帮我们吗, 对吧? ";
+			link.l1 = "我们得好好把这一切想清楚, 对吧? 幸好我们还有大把时间, 一边找能帮我们的人一边慢慢想。 我们已经做了不少了, 对吧? 但还没完全结束呢。 我们自己进不了皇家海军办公室, 而且那地方远在伦敦的另一头……  你觉得有谁能帮我们吗, 对吧? ";
 			link.l1.go = "WildRose_Mary_127";
 		break;
 		
@@ -3256,7 +3256,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_135":
-			dialog.text = "我父亲可是个有名的军官, 你能想象吗! 可惜我们从未见过面, 对吧…… 而且我们甚至都不知道他有没有抵达大陆, 唉…… ";
+			dialog.text = "我父亲可是个有名的军官, 你能想象吗! 可惜我们从未见过面, 对吧……  而且我们甚至都不知道他有没有抵达大陆, 唉……  ";
 			link.l1 = "如果真那样, 他肯定会重新服役, 对吧? 总会有人在某个地方听到他的消息。 那样的人绝不会安分坐着——不然你又是从哪儿听说的呢? ";
 			link.l1.go = "WildRose_Mary_136";
 		break;
@@ -3274,7 +3274,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_138":
-			dialog.text = "我这辈子从没听过比这更荒唐的事, 对吧! "+pchar.name+", 你真是太棒了, 太厉害了! 谢谢你这么努力帮我把这一切理清楚。 这对我来说真的很重要, 对吧! 不过我们还是看看这些文件吧——也许能发现我们那位朋友没告诉我们的东西…… ";
+			dialog.text = "我这辈子从没听过比这更荒唐的事, 对吧! "+pchar.name+", 你真是太棒了, 太厉害了! 谢谢你这么努力帮我把这一切理清楚。 这对我来说真的很重要, 对吧! 不过我们还是看看这些文件吧——也许能发现我们那位朋友没告诉我们的东西……  ";
 			link.l1 = "好主意。 我们现在就开始吧。";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap3_Paperwork_7");
@@ -3282,7 +3282,7 @@ void ProcessDialogEvent()
 		
 		case "WildRose_Mary_139":
 			dialog.text = "那么, "+pchar.name+", 你有没有发现什么有趣的事情? ";
-			link.l1 = "好吧, "+npchar.name+"。 有件事…… ";
+			link.l1 = "好吧, "+npchar.name+"。 有件事……  ";
 			link.l1.go = "WildRose_Mary_140";
 		break;
 
@@ -3294,13 +3294,13 @@ void ProcessDialogEvent()
 
 		case "WildRose_Mary_141":
 			dialog.text = "Rupert Northwood? ! 真的是他吗? ";
-			link.l1 = "安静点, "+npchar.name+", 别这么大声嚷嚷。 嗯…… 我觉得是的, 就是Chimiset说的那个人。 不会有错——哪有这么巧的事。";
+			link.l1 = "安静点, "+npchar.name+", 别这么大声嚷嚷。 嗯……  我觉得是的, 就是Chimiset说的那个人。 不会有错——哪有这么巧的事。";
 			link.l1.go = "WildRose_Mary_142";
 		break;
 
 		case "WildRose_Mary_142":
 			dialog.text = "那你怎么看这一切, "+pchar.name+"? ";
-			link.l1 = "这故事越来越复杂了, 对吧? 所以……  '康沃尔号' 从普利茅斯起航,  '康沃尔号' 也抵达了安提瓜, 但却是 '斗士号' 在正义岛的礁石上触礁——掌舵的还是同一个约书亚·卡斯帕, 他居然瞒着海军部偷偷娶了个女人, 而那个女人在临终时还在呼唤一个叫鲁珀特的人。";
+			link.l1 = "这故事越来越复杂了, 对吧? 所以……   '康沃尔号' 从普利茅斯起航,  '康沃尔号' 也抵达了安提瓜, 但却是 '斗士号' 在正义岛的礁石上触礁——掌舵的还是同一个约书亚·卡斯帕, 他居然瞒着海军部偷偷娶了个女人, 而那个女人在临终时还在呼唤一个叫鲁珀特的人。";
 			link.l1.go = "WildRose_Mary_143";
 		break;
 
@@ -3312,7 +3312,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Mary_144":
 			dialog.text = "Northwood? 可他已经死了, 对吧。 你不会真的以为 'Cornwall' 号抵达圣约翰时递交的报告全是谎言吧? ";
-			link.l1 = "哎呀, 你这天真劲儿, "+npchar.name+"…… 我都开始觉得这整个故事里全是谎言了。 你想想看: Joshua Casper可是模范军官——奖章一大堆, 连个处分都没有。 这跟我们在公正岛上了解到的他可完全对不上号, 对吧? 他在那儿连眨眼都不带就把两个人送进了坟墓, 你不觉得奇怪吗? ";
+			link.l1 = "哎呀, 你这天真劲儿, "+npchar.name+"……  我都开始觉得这整个故事里全是谎言了。 你想想看: Joshua Casper可是模范军官——奖章一大堆, 连个处分都没有。 这跟我们在公正岛上了解到的他可完全对不上号, 对吧? 他在那儿连眨眼都不带就把两个人送进了坟墓, 你不觉得奇怪吗? ";
 			link.l1.go = "WildRose_Mary_145";
 		break;
 
@@ -3348,18 +3348,18 @@ void ProcessDialogEvent()
 
 		case "WildRose_Mary_150":
 			dialog.text = "但是你还想从她那里打听什么呢? 她知道的好像都已经告诉我们了。";
-			link.l1 = "她只是把我们问的都告诉了我们, 其实很可能漏掉了什么重要的细节。 也许你父亲脸上有疤, 或者手上少了一根手指…… 我很怀疑, 能想出那么多花招——比如改船名, 甚至可能连自己的名字都换了——的人, 会就这么无声无息地死在某个岛上, 或者卡斯蒂利亚人的地牢里。";
+			link.l1 = "她只是把我们问的都告诉了我们, 其实很可能漏掉了什么重要的细节。 也许你父亲脸上有疤, 或者手上少了一根手指……  我很怀疑, 能想出那么多花招——比如改船名, 甚至可能连自己的名字都换了——的人, 会就这么无声无息地死在某个岛上, 或者卡斯蒂利亚人的地牢里。";
 			link.l1.go = "WildRose_Mary_151";
 		break;
 
 		case "WildRose_Mary_151":
-			dialog.text = "也许你说得对…… ";
+			dialog.text = "也许你说得对……  ";
 			link.l1 = "如果我们决定继续寻找——不是在海军部那些落满灰尘的书架上, 而是在这片群岛里——我们可不能只靠一个名字, 还是个假名字, 对吧。";
 			link.l1.go = "WildRose_Mary_152";
 		break;
 
 		case "WildRose_Mary_152":
-			dialog.text = "你知道吗, 这一切让我起鸡皮疙瘩了, 对吧。 也许是因为太…… 刺激了, 或者也许是想到我父亲可能和Bishop庄园里的那个混蛋其实没什么两样, 对吧。";
+			dialog.text = "你知道吗, 这一切让我起鸡皮疙瘩了, 对吧。 也许是因为太……  刺激了, 或者也许是想到我父亲可能和Bishop庄园里的那个混蛋其实没什么两样, 对吧。";
 			link.l1 = "总之, 我保证我们会尽全力查明真相。 别再浪费时间了, 走吧! ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap3_Paperwork_9");
@@ -3370,20 +3370,20 @@ void ProcessDialogEvent()
 		// =================================================================
 		case "WildRose_Mary_161":
 			dialog.text = "走吧, "+pchar.name+", 我们别再浪费时间了, 对吧。";
-			link.l1 = "我希望Aurélie在她的船舱里, 这样我们就不用在整个岛上到处找她了…… ";
+			link.l1 = "我希望Aurélie在她的船舱里, 这样我们就不用在整个岛上到处找她了……  ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap4_PathToLight_2");
 		break;
 		
 		case "WildRose_Mary_162":
 			dialog.text = "看来我们又没运气了, 对吧。 这次她会去哪儿呢? ";
-			link.l1 = "我希望她的脑子没有又被病魔侵蚀…… ";
+			link.l1 = "我希望她的脑子没有又被病魔侵蚀……  ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap4_PathToLight_4");
 		break;
 		
 		case "WildRose_Jillian_31":
-			dialog.text = "哦, 你又来了。 嗯, 你好…… 怎么了, 又需要Aurelie了吗? ";
+			dialog.text = "哦, 你又来了。 嗯, 你好……  怎么了, 又需要Aurelie了吗? ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Jillian_31_add";
 			DelLandQuestMark(npchar);
@@ -3430,7 +3430,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Jillian_35":
-			dialog.text = "很难说…… 这三天来, 她一直不太对劲, 怎么都安不下来。 你知道吗, 不知为什么, 她看到你们船的桅杆出现在外圈之外时, 突然变得特别激动。";
+			dialog.text = "很难说……  这三天来, 她一直不太对劲, 怎么都安不下来。 你知道吗, 不知为什么, 她看到你们船的桅杆出现在外圈之外时, 突然变得特别激动。";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Jillian_35_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Jillian_clone"), CharacterFromID("Mary"));
@@ -3466,7 +3466,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Jillian_38":
-			dialog.text = "别敢那样跟我说话, Jillian。 这次老子就饶了你, 但要是你再敢说出类似的话…… ";
+			dialog.text = "别敢那样跟我说话, Jillian。 这次老子就饶了你, 但要是你再敢说出类似的话……  ";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap4_PathToLight_5");
@@ -3488,7 +3488,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Mary_163":
-			dialog.text = "你大概想问我什么吧, "+pchar.name+", 对吧…… ";
+			dialog.text = "你大概想问我什么吧, "+pchar.name+", 对吧……  ";
 			link.l1 = "说实话, 我并不在乎你们俩之间发生了什么, 不过我大概能猜到她叫什么名字。 或者说, 她以前叫什么名字。 你真的想谈谈这事吗? ";
 			link.l1.go = "WildRose_Mary_164_1";
 			link.l2 = "你和Jillian闹矛盾了吗? 或者说, 是为了某个人, 对吧? ";
@@ -3503,7 +3503,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_164_2":
-			dialog.text = "那个小吸血鬼永远不会原谅Alan选择了我而不是她。 其实她本可以释怀的, 毕竟他现在已经不在了…… 说实话, "+pchar.name+", 我还是不想谈这个, 好吗。";
+			dialog.text = "那个小吸血鬼永远不会原谅Alan选择了我而不是她。 其实她本可以释怀的, 毕竟他现在已经不在了……  说实话, "+pchar.name+", 我还是不想谈这个, 好吗。";
 			link.l1 = "如你所说, 亲爱的。 那我们去找Aurelie吧。";
 			link.l1.go = "WildRose_Mary_165";
 			AddCharacterExpToSkill(pchar, "sneak", 100);
@@ -3543,13 +3543,13 @@ void ProcessDialogEvent()
 
 		case "WildRose_Oreli_64":
 			dialog.text = "我已经把我记得的都告诉你了。 我真不知道你还想从我这儿榨出什么来。";
-			link.l1 = "我们有几个问题要问你, "+npchar.name+"。 请你尽量回忆一下——任何细节, 哪怕是一点点都好。 我们不会强迫你的…… ";
+			link.l1 = "我们有几个问题要问你, "+npchar.name+"。 请你尽量回忆一下——任何细节, 哪怕是一点点都好。 我们不会强迫你的……  ";
 			link.l1.go = "WildRose_Oreli_65";
 		break;
 
 		case "WildRose_Oreli_65":
 			dialog.text = "这不正是你现在正在做的事吗? ";
-			link.l1 = "你已经为我们做了这么多, "+npchar.name+"…… 我们只希望在你记忆的迷宫深处, 还能找到什么能大大帮助我们的东西。";
+			link.l1 = "你已经为我们做了这么多, "+npchar.name+"……  我们只希望在你记忆的迷宫深处, 还能找到什么能大大帮助我们的东西。";
 			link.l1.go = "WildRose_Oreli_66_1";
 			link.l2 = "我们已经走了很长一段路, "+npchar.name+"。 你根本无法想象我们付出了多少努力和时间。 但是我们迷失了方向, 只有你和你的记忆才能带我们回到真理的道路上。";
 			link.l2.go = "WildRose_Oreli_66_2";
@@ -3557,34 +3557,34 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Oreli_66_1":
-			dialog.text = "回忆…… 其实还能剩下什么呢。 有些早晨我连自己的名字都记不清, 你还想让我回忆二十年前的细节。 好吧, 你问吧。";
-			link.l1 = "我们对Casper先生, 也就是Mary的父亲感兴趣。 你还记得他外貌上有什么特别的特征吗? 也许他脸上有疤, 或者走路一瘸一拐的…… ";
+			dialog.text = "回忆……  其实还能剩下什么呢。 有些早晨我连自己的名字都记不清, 你还想让我回忆二十年前的细节。 好吧, 你问吧。";
+			link.l1 = "我们对Casper先生, 也就是Mary的父亲感兴趣。 你还记得他外貌上有什么特别的特征吗? 也许他脸上有疤, 或者走路一瘸一拐的……  ";
 			link.l1.go = "WildRose_Oreli_67";
 			ChangeCharacterComplexReputation(pchar, "nobility", 2);
 		break;
 
 		case "WildRose_Oreli_66_2":
-			dialog.text = "记忆啊…… 其实还能剩下些什么呢。 有些早晨我连茅房怎么走都记不清了, 你还想让我回忆二十年前这些沉船上发生的细节。 好吧, 行吧, 问吧, 随你问。";
-			link.l1 = "我们对Casper先生, 也就是Mary的父亲感兴趣。 你还记得他外貌上有什么特别的特征吗? 也许他脸上有疤, 或者走路一瘸一拐的…… ";
+			dialog.text = "记忆啊……  其实还能剩下些什么呢。 有些早晨我连茅房怎么走都记不清了, 你还想让我回忆二十年前这些沉船上发生的细节。 好吧, 行吧, 问吧, 随你问。";
+			link.l1 = "我们对Casper先生, 也就是Mary的父亲感兴趣。 你还记得他外貌上有什么特别的特征吗? 也许他脸上有疤, 或者走路一瘸一拐的……  ";
 			link.l1.go = "WildRose_Oreli_67";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
 		break;
 
 		case "WildRose_Oreli_67":
-			dialog.text = "哦…… 我想我已经说过了, 我只是在 'Ceres Smitty' 号船的货舱里、漆黑一片的时候见过他, 那时他们给可怜的Teresa铺了张床。 他绝对没有跛脚——相反, 他还挺敏捷的。";
+			dialog.text = "哦……  我想我已经说过了, 我只是在 'Ceres Smitty' 号船的货舱里、漆黑一片的时候见过他, 那时他们给可怜的Teresa铺了张床。 他绝对没有跛脚——相反, 他还挺敏捷的。";
 			link.l1 = "他的年纪呢? 他是年轻, 还是已经上了年纪? ";
 			link.l1.go = "WildRose_Oreli_68";
 		break;
 
 		case "WildRose_Oreli_68":
-			dialog.text = "我倒不觉得他算是个老头, 对吧…… 不过我其实没怎么注意他——我更担心Teresa。 他看起来挺憔悴的, 像个鬼似的。 可你得记住, 这一周他几乎都没怎么睡觉, 因为他老婆快要生了…… 他整个岛上跑来跑去, 一刻都没停下。";
+			dialog.text = "我倒不觉得他算是个老头, 对吧……  不过我其实没怎么注意他——我更担心Teresa。 他看起来挺憔悴的, 像个鬼似的。 可你得记住, 这一周他几乎都没怎么睡觉, 因为他老婆快要生了……  他整个岛上跑来跑去, 一刻都没停下。";
 			link.l1 = "所以, 他一定很爱他的妻子吧。 你和她相处了很长时间, 对吧? 她有没有提起过她的丈夫? ";
 			link.l1.go = "WildRose_Oreli_69";
 		break;
 
 		case "WildRose_Oreli_69":
 			dialog.text = "特蕾莎一直在问他。 她经常睡觉, 有时候会说胡话, 但每当她清醒过来, 第一件事就是问他在哪里。 可怜的她真的等了他很久很久。 可是在最关键的时刻——他却始终没有出现。";
-			link.l1 = "我明白了。 很明显, 他们是两情相悦…… 嗯, 谢谢你, Aurélie。 你帮了我们大忙。";
+			link.l1 = "我明白了。 很明显, 他们是两情相悦……  嗯, 谢谢你, Aurélie。 你帮了我们大忙。";
 			link.l1.go = "WildRose_Oreli_70";
 		break;
 
@@ -3595,14 +3595,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Oreli_71":
-			dialog.text = "等等, 年轻人们! 我还有别的东西要给你们…… 或者说, 是给你, Mary。";
+			dialog.text = "等等, 年轻人们! 我还有别的东西要给你们……  或者说, 是给你, Mary。";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Oreli_72_a";
 			NPCsLookEachOther("LSC_Oreli", "Mary");
 		break;
 		
 		case "WildRose_Oreli_72_a": //
-			dialog.text = "给你, 姑娘, 拿着吧……  我一看到你船上的风帆, 就把这顶帽子带在身边, 好让我不忘记它。 不过要走到码头上…… 我却没敢。";
+			dialog.text = "给你, 姑娘, 拿着吧……   我一看到你船上的风帆, 就把这顶帽子带在身边, 好让我不忘记它。 不过要走到码头上……  我却没敢。";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Oreli_72_add";
 		break;
@@ -3622,7 +3622,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Oreli_74":
-			dialog.text = "你母亲的帽子, 是Teresa的。 那次船难幸存者被带到 'Ceres Smithy' 时, 她还戴着呢。 Teresa去世后, 我从她床边的地上捡起了那顶帽子——好吧, 然后我就把这事忘了…… 直到今天和你聊天时才想起来。";
+			dialog.text = "你母亲的帽子, 是Teresa的。 那次船难幸存者被带到 'Ceres Smithy' 时, 她还戴着呢。 Teresa去世后, 我从她床边的地上捡起了那顶帽子——好吧, 然后我就把这事忘了……  直到今天和你聊天时才想起来。";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Oreli_74_add";
 		break;
@@ -3632,7 +3632,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Oreli_75":
-			dialog.text = "奥蕾莉…… 你这些年一直都保留着! 而且…… 你没有扔掉, 也没有卖掉…… 谢谢你, 谢谢你! 你根本不知道这对我有多重要, 对吧! ";
+			dialog.text = "奥蕾莉……  你这些年一直都保留着! 而且……  你没有扔掉, 也没有卖掉……  谢谢你, 谢谢你! 你根本不知道这对我有多重要, 对吧! ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Oreli_75_add";
 		break;
@@ -3642,7 +3642,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Oreli_76":
-			dialog.text = "对不起, Mary——我早就该把它给你了…… 可我现在的记性就像个破筛子——所以…… ";
+			dialog.text = "对不起, Mary——我早就该把它给你了……  可我现在的记性就像个破筛子——所以……  ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Oreli_76_add";
 		break;
@@ -3660,7 +3660,7 @@ void ProcessDialogEvent()
 		
 		case "WildRose_Mary_166":
 			dialog.text = "亲爱的, 你觉得我怎么样呀? ..";
-			link.l1 = "你真漂亮。 还有这顶帽子…… 现在还没过时, 对吧, 所以看起来也很棒。";
+			link.l1 = "你真漂亮。 还有这顶帽子……  现在还没过时, 对吧, 所以看起来也很棒。";
 			link.l1.go = "WildRose_Mary_167";
 		break;
 		
@@ -3683,7 +3683,7 @@ void ProcessDialogEvent()
 		
 		case "WildRose_Mary_171":
 			dialog.text = "所以真的是鲁珀特。 鲁珀特·诺斯伍德, 对吧。";
-			link.l1 = "很明显啦, 亲爱的。 为了救他的妻子…… 或者是心上人, 他已经尽了全力, 对吧? 我也不确定啦, 其实也没那么重要。 重要的是, 现在我们知道要找谁了。";
+			link.l1 = "很明显啦, 亲爱的。 为了救他的妻子……  或者是心上人, 他已经尽了全力, 对吧? 我也不确定啦, 其实也没那么重要。 重要的是, 现在我们知道要找谁了。";
 			link.l1.go = "WildRose_Mary_172";
 		break;
 
@@ -3700,7 +3700,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_175":
-			dialog.text = "我甚至都不想去想那个…… ";
+			dialog.text = "我甚至都不想去想那个……  ";
 			link.l1 = "现在我们得考虑别的事——去哪儿找他。 他可能加入了海盗或者走私贩。 也许他在某个城镇安顿下来, 低调行事。 什么都有可能。";
 			link.l1.go = "WildRose_Mary_176";
 		break;
@@ -3737,7 +3737,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Mary_181":
 			dialog.text = "但是那我们该找谁呢? 谁有钱有关系能办这种事? ";
-			link.l1 = "嗯, 这搜查肯定得我们自己出钱了, 对吧? 至于人脉…… 我想Fadey Moskovit也许能帮我们。 他肯定认识一些能在殖民地跑腿的能人对吧? 或者他会给我们指个路也说不定。";
+			link.l1 = "嗯, 这搜查肯定得我们自己出钱了, 对吧? 至于人脉……  我想Fadey Moskovit也许能帮我们。 他肯定认识一些能在殖民地跑腿的能人对吧? 或者他会给我们指个路也说不定。";
 			link.l1.go = "WildRose_Mary_182";
 		break;
 
@@ -3762,7 +3762,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Jillian_52":
-			dialog.text = "哦, 原来你还没听说。 我明白了…… Aurélie Bertin昨晚去世了。";
+			dialog.text = "哦, 原来你还没听说。 我明白了……  Aurélie Bertin昨晚去世了。";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Jillian_52_add";
 		break;
@@ -3772,7 +3772,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Jillian_53":
-			dialog.text = "什么? ! 这不可能——我们昨天才刚和她说过话, 她当时还好好的。 还是说有人…… ";
+			dialog.text = "什么? ! 这不可能——我们昨天才刚和她说过话, 她当时还好好的。 还是说有人……  ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Jillian_53_add";
 			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("LSC_Jillian_clone"));
@@ -3815,7 +3815,7 @@ void ProcessDialogEvent()
 		
 		case "WildRose_Jillian_57":
 			dialog.text = "没人会反对。 这样更方便, 而且最终比爬过残骸要安全。";
-			link.l1 = "那你就去安排葬礼吧, Mary会帮你的。 至于我, 我得和某人谈谈…… ";
+			link.l1 = "那你就去安排葬礼吧, Mary会帮你的。 至于我, 我得和某人谈谈……  ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap4_PathToLight_14");
 		break;
@@ -3835,7 +3835,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Chimiset_63":
 			dialog.text = "一个人能感觉到自己生命之河快要干涸的时候。 有些人会让身边所有人都看出来, 有些人则把它藏在心里, 但每个人都会以某种方式察觉到——尤其是那些懂得倾听自己内心的人。";
-			link.l1 = "我觉得她身体很健康, 几乎像只小鹿一样, "+npchar.name+"。 可这里总觉得哪里不对劲…… ";
+			link.l1 = "我觉得她身体很健康, 几乎像只小鹿一样, "+npchar.name+"。 可这里总觉得哪里不对劲……  ";
 			link.l1.go = "WildRose_Chimiset_64_1";
 			link.l2 = "可她显然还没到山穷水尽的地步, "+npchar.name+"。";
 			link.l2.go = "WildRose_Chimiset_64_2";
@@ -3857,13 +3857,13 @@ void ProcessDialogEvent()
 
 		case "WildRose_Chimiset_65":
 			dialog.text = "你很聪明, 我的朋友, 真的很聪明。 如果你觉得真相就在眼前, 你就会像狮子追斑马一样追过去——而且在抓到它之前绝不会停下。 我第一次见到你时就意识到了这一点。";
-			link.l1 = "我没有…… 等等。 你在 'Protector' 号船舱里做的那个仪式…… 其实并没有减缓Aurelie的病情, 对吧? 那你到底做了什么? ";
+			link.l1 = "我没有……  等等。 你在 'Protector' 号船舱里做的那个仪式……  其实并没有减缓Aurelie的病情, 对吧? 那你到底做了什么? ";
 			link.l1.go = "WildRose_Chimiset_66";
 		break;
 
 		case "WildRose_Chimiset_66":
-			dialog.text = "你可以用石头填满一条河, 但那并不能阻止它的流动。 我知道你需要从Aurelie那里得到一些重要的东西——而且你不会立刻得到它。 但你的旅程会花多长时间, 我无法预料。 所以我筑起了一道堤坝, 召集了她全部的生命力来抵挡病痛, 直到她完成自己的使命。 而就在那一刻, 屏障崩塌了…… ";
-			link.l1 = "所以说, Aurelie…… 在她死的那一刻, 她根本就不是她自己, 她没有自我意识——就像我们想的那样? ";
+			dialog.text = "你可以用石头填满一条河, 但那并不能阻止它的流动。 我知道你需要从Aurelie那里得到一些重要的东西——而且你不会立刻得到它。 但你的旅程会花多长时间, 我无法预料。 所以我筑起了一道堤坝, 召集了她全部的生命力来抵挡病痛, 直到她完成自己的使命。 而就在那一刻, 屏障崩塌了……  ";
+			link.l1 = "所以说, Aurelie……  在她死的那一刻, 她根本就不是她自己, 她没有自我意识——就像我们想的那样? ";
 			link.l1.go = "WildRose_Chimiset_67";
 		break;
 
@@ -3877,21 +3877,21 @@ void ProcessDialogEvent()
 
 		case "WildRose_Chimiset_68_1":
 			dialog.text = "因为我决定帮助你, 我的朋友, 帮你了解你需要知道的事情, 也让她完成她的命运。 如果我提前告诉你她将面临什么, 你也许就不会继续下去了——而Aurélie就会把她的秘密带进坟墓。 那又有什么意义呢? 她会白白死去。 就像一只被狮子扑倒却没被吃掉、最后被秃鹫啄食的羚羊一样。";
-			link.l1 = "目的、价值…… 你还真是个掌控命运的大师, "+npchar.name+"。 人间的上帝。";
+			link.l1 = "目的、价值……  你还真是个掌控命运的大师, "+npchar.name+"。 人间的上帝。";
 			link.l1.go = "WildRose_Chimiset_69";
 			AddComplexSelfExpToScill(100, 100, 100, 100);
 		break;
 
 		case "WildRose_Chimiset_68_2":
 			dialog.text = "因为我决定帮助你, 我的朋友, 帮你了解你需要知道的事情, 也让她完成她的命运。 如果我提前告诉你她将面临什么, 你也许就不会继续下去了——而Aurélie就会把她的秘密带进坟墓。 那又有什么意义呢? 她会白白死去。 就像一只被狮子扑倒却没被吃掉、最后被秃鹫啄食的羚羊一样。";
-			link.l1 = "目的、价值…… 你还真是个掌控命运的大师, "+npchar.name+"。 人间的上帝。";
+			link.l1 = "目的、价值……  你还真是个掌控命运的大师, "+npchar.name+"。 人间的上帝。";
 			link.l1.go = "WildRose_Chimiset_69";
 			AddCharacterExpToSkill(pchar, "Defence", 100);
 		break;
 
 		case "WildRose_Chimiset_69":
 			dialog.text = "我听出你声音里有些不满, 我的朋友。 不过不, 我可从没把自己当成神——相信我, 就连神也不是全能的。 无论是你信仰的那位, 还是我们崇拜的那些。 神明无法赋予一个人超越天生的力量。 我们萨满只能引导那股力量朝某个方向流动——仅此而已。";
-			link.l1 = "而你让他们走上了一条注定让她送命的道路…… ";
+			link.l1 = "而你让他们走上了一条注定让她送命的道路……  ";
 			link.l1.go = "WildRose_Chimiset_70";
 		break;
 
@@ -3902,13 +3902,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Chimiset_71":
-			dialog.text = "唉, 我没想到我们的最后一次见面会是这样, 朋友…… ";
+			dialog.text = "唉, 我没想到我们的最后一次见面会是这样, 朋友……  ";
 			link.l1 = "你凭什么觉得她是最后一个? ";
 			link.l1.go = "WildRose_Chimiset_72";
 		break;
 
 		case "WildRose_Chimiset_72":
-			dialog.text = "有些河流汇入其他河流, 成为它们的一部分, 有些则干涸了, 而有些——就像我们的——最终在壮观的瀑布中迎来终结…… ";
+			dialog.text = "有些河流汇入其他河流, 成为它们的一部分, 有些则干涸了, 而有些——就像我们的——最终在壮观的瀑布中迎来终结……  ";
 			link.l1 = "又来谜语了, Chimiset? 我觉得今天已经够多了。 相信我们还会再见的。";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap4_PathToLight_15");
@@ -3943,7 +3943,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Mary_202":
 			dialog.text = "嗯, Kurana和Rivadose可没人请来。 Abbott那个自以为是、恶心的家伙, 说他有更重要的事要做, 没空埋葬一个天主教女人, Lauderdale和Musket也嘟囔了类似的话。 Cassel那个粗人, 直接说他不会来。 不过其他人都到了。";
-			link.l1 = "有些事情我永远都无法理解。 好吧, 就让上帝来评判他们吧。 朱利安修士来了…… 现在一切都开始了。";
+			link.l1 = "有些事情我永远都无法理解。 好吧, 就让上帝来评判他们吧。 朱利安修士来了……  现在一切都开始了。";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap4_PathToLight_18_funeral_2");
 		break;
@@ -3982,7 +3982,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_funeral_3":
-			dialog.text = ""+pchar.name+", 咱们快点去船舱吧, 对吧。 我快要哭出来了…… 我不想让别人看到我这个样子。";
+			dialog.text = ""+pchar.name+", 咱们快点去船舱吧, 对吧。 我快要哭出来了……  我不想让别人看到我这个样子。";
 			link.l1 = "当然, "+npchar.name+"。 我们走吧。";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap4_PathToLight_18_funeral_13");
@@ -4004,20 +4004,20 @@ void ProcessDialogEvent()
 			dialog.text = "也许吧, 对吧。 Eric常说——Aurelie也同意他——任何地方, 最重要的首先是那里的人, 不是房子, 不是树木, 不是道路, 而是人。 你想到地图上的某个地方时, 首先记住的总是住在那里的人, 或者曾经住过的人。";
 			link.l1 = "我从没认真想过这个问题。 不过也许Eric说得对——毕竟, 如果你一走进家门, 就再也见不到你的父亲和兄弟了, 那家还有什么意义呢? ";
 			link.l1.go = "WildRose_Mary_214_1";
-			link.l2 = "我可不这么认为。 每当我回想起, 比如说巴黎——脑海里浮现的都是街头的景象、空气里的气味…… 至于那些人, 我只记得寥寥几位——剩下的人几乎都淡出了我的记忆, 明明才过去几年而已。";
+			link.l2 = "我可不这么认为。 每当我回想起, 比如说巴黎——脑海里浮现的都是街头的景象、空气里的气味……  至于那些人, 我只记得寥寥几位——剩下的人几乎都淡出了我的记忆, 明明才过去几年而已。";
 			link.l2.go = "WildRose_Mary_214_2";
 		break;
 
 		case "WildRose_Mary_214_1":
-			dialog.text = "我记得Erik和Aurelie确实聊过那个岛, 对吧。 还有那些很久很久以前住在这里的人。 我那时候还只是个孩子, 什么都不懂, 但现在——我全都看明白了。 毕竟, Antonio、Cecile…… 还有像Chimisette这样的Rivadan人, 他们在这里待的时间都比我长——可我从没和他们亲近过。 至于其他人: Erik、Aurelie、Alan, 还有很多很多人——他们都已经死了。";
-			link.l1 = "我明白了。 世界变得…… 是不是小了一点? ";
+			dialog.text = "我记得Erik和Aurelie确实聊过那个岛, 对吧。 还有那些很久很久以前住在这里的人。 我那时候还只是个孩子, 什么都不懂, 但现在——我全都看明白了。 毕竟, Antonio、Cecile……  还有像Chimisette这样的Rivadan人, 他们在这里待的时间都比我长——可我从没和他们亲近过。 至于其他人: Erik、Aurelie、Alan, 还有很多很多人——他们都已经死了。";
+			link.l1 = "我明白了。 世界变得……  是不是小了一点? ";
 			link.l1.go = "WildRose_Mary_215";
 			AddCharacterExpToSkill(pchar, "Sneak", 100);
 		break;
 
 		case "WildRose_Mary_214_2":
-			dialog.text = "我记得Erik和Aurelie确实谈过那个岛, 对吧。 还有那些很久很久以前住在这里的人。 我那时候还只是个孩子, 什么都不懂, 但现在一切都看得很清楚了。 毕竟, Antonio、Cecile…… 还有一些Rivados, 比如Chimiseta, 他们在这里的时间都比我长——不过我和他们谁都不亲近。 至于其他人: Erik、Aurelie、Alan, 还有很多很多人——他们都已经不在了。";
-			link.l1 = "我明白了。 世界好像…… 变得小了一点, 对吧? ";
+			dialog.text = "我记得Erik和Aurelie确实谈过那个岛, 对吧。 还有那些很久很久以前住在这里的人。 我那时候还只是个孩子, 什么都不懂, 但现在一切都看得很清楚了。 毕竟, Antonio、Cecile……  还有一些Rivados, 比如Chimiseta, 他们在这里的时间都比我长——不过我和他们谁都不亲近。 至于其他人: Erik、Aurelie、Alan, 还有很多很多人——他们都已经不在了。";
+			link.l1 = "我明白了。 世界好像……  变得小了一点, 对吧? ";
 			link.l1.go = "WildRose_Mary_215";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
 		break;
@@ -4035,22 +4035,22 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_217":
-			dialog.text = "我不知道该怎么解释, 对吧? 你知道暴风雨来临前空气的味道吗? 还记得吗——你刚到这里的时候, 到处都是那种紧张的气氛…… 每个人都像要撕碎对方的喉咙, 很多人甚至觉得能闻到火药和血的味道。 你杀了Chad之后, 一切都变了——呼吸都变得轻松了…… 可现在——那种感觉又回来了。";
-			link.l1 = "好吧, 我也有类似的感觉。 可也许只是气氛影响吧? 毕竟, 这可是葬礼啊…… ";
+			dialog.text = "我不知道该怎么解释, 对吧? 你知道暴风雨来临前空气的味道吗? 还记得吗——你刚到这里的时候, 到处都是那种紧张的气氛……  每个人都像要撕碎对方的喉咙, 很多人甚至觉得能闻到火药和血的味道。 你杀了Chad之后, 一切都变了——呼吸都变得轻松了……  可现在——那种感觉又回来了。";
+			link.l1 = "好吧, 我也有类似的感觉。 可也许只是气氛影响吧? 毕竟, 这可是葬礼啊……  ";
 			link.l1.go = "WildRose_Mary_218_1";
 			link.l2 = "你累坏了, "+npchar.name+"。 休息一下吧——这样会轻松些。 说真的, 谁在葬礼上能有别的感觉呢, 对吧? ";
 			link.l2.go = "WildRose_Mary_218_2";
 		break;
 
 		case "WildRose_Mary_218_1":
-			dialog.text = "当我们把Eric和岛上那么多人交给大海的时候, 可不是这样的, 我跟你说。 那时候有种…… 团结的感觉。 可今天——有些人看彼此的眼神像狼一样, 虽然我们嘴上都在念同一个祷词。";
+			dialog.text = "当我们把Eric和岛上那么多人交给大海的时候, 可不是这样的, 我跟你说。 那时候有种……  团结的感觉。 可今天——有些人看彼此的眼神像狼一样, 虽然我们嘴上都在念同一个祷词。";
 			link.l1 = "你是说Leighton和Donald? ";
 			link.l1.go = "WildRose_Mary_219";
 			AddCharacterExpToSkill(pchar, "Commerce", 100);
 		break;
 
 		case "WildRose_Mary_218_2":
-			dialog.text = "当我们把Eric还有那么多岛上的人交给大海时, 可不是这样的, 我跟你说。 那时候有种…… 团结的感觉。 可今天——他们当中有些人看彼此的眼神像狼一样, 虽然嘴上都在念同一段祷词。";
+			dialog.text = "当我们把Eric还有那么多岛上的人交给大海时, 可不是这样的, 我跟你说。 那时候有种……  团结的感觉。 可今天——他们当中有些人看彼此的眼神像狼一样, 虽然嘴上都在念同一段祷词。";
 			link.l1 = "你是说Leighton和Donald? ";
 			link.l1.go = "WildRose_Mary_219";
 			AddCharacterExpToSkill(pchar, "Defence", 100);
@@ -4064,7 +4064,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Mary_220":
 			dialog.text = "这可不会有好结果, 对吧。";
-			link.l1 = "如果是这样的话, 那么今天不仅是Aurélie Bertin的葬礼, 也是这座…… 被遗弃之城的葬礼。";
+			link.l1 = "如果是这样的话, 那么今天不仅是Aurélie Bertin的葬礼, 也是这座……  被遗弃之城的葬礼。";
 			link.l1.go = "WildRose_Mary_221";
 		break;
 
@@ -4075,19 +4075,19 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_222":
-			dialog.text = "现在我见识了外面的世界, 才发现世界有多大, 这地方感觉就像…… 监狱一样, 对吧。 真难相信我是在这里长大的。";
+			dialog.text = "现在我见识了外面的世界, 才发现世界有多大, 这地方感觉就像……  监狱一样, 对吧。 真难相信我是在这里长大的。";
 			link.l1 = "我简直难以相信, 在这些破败的船只之间, 竟能绽放出像你这样野性又美丽的玫瑰。";
 			link.l1.go = "WildRose_Mary_223";
 		break;
 
 		case "WildRose_Mary_223":
-			dialog.text = "我想和这个地方说再见, "+pchar.name+"…… 我猜我们再也不会回来了, 对吧。 我不想回来。 我也不想亲眼看到这里可能发生的事。";
+			dialog.text = "我想和这个地方说再见, "+pchar.name+"……  我猜我们再也不会回来了, 对吧。 我不想回来。 我也不想亲眼看到这里可能发生的事。";
 			link.l1 = "我去跟Eddie和Donald聊聊。 也许我能让他们冷静点。";
 			link.l1.go = "WildRose_Mary_224";
 		break;
 
 		case "WildRose_Mary_224":
-			dialog.text = "你不明白…… 这只会拖延不可避免的结局, 所以你不用费心了。 总有一天我们会回来的——而在这里\n这样其实更好, "+pchar.name+", 对吧…… 这里已经没有什么能留住我了。";
+			dialog.text = "你不明白……  这只会拖延不可避免的结局, 所以你不用费心了。 总有一天我们会回来的——而在这里\n这样其实更好, "+pchar.name+", 对吧……  这里已经没有什么能留住我了。";
 			link.l1 = "如你所说, 亲爱的。 我们会把该做的事都做完——然后就永远离开这个地方。";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap4_PathToLight_20");
@@ -4126,14 +4126,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_242":
-			dialog.text = "考虑到Fadey给了他那么多钱…… 我觉得他肯定选了第二个选项。";
+			dialog.text = "考虑到Fadey给了他那么多钱……  我觉得他肯定选了第二个选项。";
 			link.l1 = "同意。 我们可以去问问 '玻璃眼' 的老板关于他的事, 或者就在镇上的人群中打听一下。 走吧, 时间很宝贵。";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_2");
 		break;
 		
 		case "WildRose_BanditBeliz_1":
-			dialog.text = "哟哟哟…… 我们的情侣在这儿呢。 好了, 伙计们, 干完这事就回去向他汇报。";
+			dialog.text = "哟哟哟……  我们的情侣在这儿呢。 好了, 伙计们, 干完这事就回去向他汇报。";
 			link.l1 = "Jerome Sauvernier? 这里到底发生了什么鬼事? ! ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_5");
@@ -4142,8 +4142,8 @@ void ProcessDialogEvent()
 		case "WildRose_BanditBeliz_2":
 			if (!CharacterIsAlive("WildRose_Bandit_1") && !CharacterIsAlive("WildRose_Bandit_2"))
 			{
-				dialog.text = "啊, 你们这些混蛋, 咳咳。 嗯, 没关系…… ";
-				link.l1 = "要是你还想保住小命, 最好管好你的嘴巴…… ";
+				dialog.text = "啊, 你们这些混蛋, 咳咳。 嗯, 没关系……  ";
+				link.l1 = "要是你还想保住小命, 最好管好你的嘴巴……  ";
 				link.l1.go = "WildRose_BanditBeliz_2_1";
 				DelLandQuestMark(npchar);
 			}
@@ -4157,18 +4157,18 @@ void ProcessDialogEvent()
 		
 		case "WildRose_BanditBeliz_2_1":
 			dialog.text = "...";
-			link.l1 = "这个也是。 现在说吧: 到底是什么鬼让你袭击我们——而且还和Sovereignet一起, 真是不可思议…… ";
+			link.l1 = "这个也是。 现在说吧: 到底是什么鬼让你袭击我们——而且还和Sovereignet一起, 真是不可思议……  ";
 			link.l1.go = "WildRose_BanditBeliz_3";
 		break;
 
 		case "WildRose_BanditBeliz_3":
-			dialog.text = "你的国王就是个贪婪又胆小的混蛋。 Casper只需要好好教训他一顿, 再许诺给他点钱——他立马就像个乖孩子一样, 唰唰地写好了那封信, 咳咳…… ";
+			dialog.text = "你的国王就是个贪婪又胆小的混蛋。 Casper只需要好好教训他一顿, 再许诺给他点钱——他立马就像个乖孩子一样, 唰唰地写好了那封信, 咳咳……  ";
 			link.l1 = "所以他真的找到了。";
 			link.l1.go = "WildRose_BanditBeliz_4";
 		break;
 
 		case "WildRose_BanditBeliz_4":
-			dialog.text = "找到你了, 找到你了。 所以你很快就要死了。 你那小女朋友也是一样。 Casper会把你们俩剁成碎片, 嘿嘿。 我反正也活不成了, 不过我会送你们一程。 可惜等他抓到你时, 我就听不到你求饶的声音了…… ";
+			dialog.text = "找到你了, 找到你了。 所以你很快就要死了。 你那小女朋友也是一样。 Casper会把你们俩剁成碎片, 嘿嘿。 我反正也活不成了, 不过我会送你们一程。 可惜等他抓到你时, 我就听不到你求饶的声音了……  ";
 			link.l1 = "好吧, 我活不了多久了, 这是真的。 快说吧, 趁我还没咽下最后一口气。";
 			link.l1.go = "WildRose_BanditBeliz_6";
 		break;
@@ -4192,8 +4192,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Mary_251":
-			dialog.text = "天啊, "+pchar.name+"…… 我简直不敢相信, 真的不敢相信, 对吧! 我爸爸竟然做了这种事? ";
-			link.l1 = "看起来确实是这样, 对吧。"+npchar.name+"。 我完全不知道是什么驱使了他, 也不知道他到底是谁, 对吧…… 但我很怀疑还会有别的鲁珀特·卡斯帕。 哪有那么巧的事啊。";
+			dialog.text = "天啊, "+pchar.name+"……  我简直不敢相信, 真的不敢相信, 对吧! 我爸爸竟然做了这种事? ";
+			link.l1 = "看起来确实是这样, 对吧。"+npchar.name+"。 我完全不知道是什么驱使了他, 也不知道他到底是谁, 对吧……  但我很怀疑还会有别的鲁珀特·卡斯帕。 哪有那么巧的事啊。";
 			link.l1.go = "WildRose_Mary_252";
 		break;
 
@@ -4210,7 +4210,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_254":
-			dialog.text = "那现在怎么办? 我们要去切图马尔湾吗? 可是如果他在这儿给我们设了陷阱…… 谁知道那边等着我们的又是什么? ";
+			dialog.text = "那现在怎么办? 我们要去切图马尔湾吗? 可是如果他在这儿给我们设了陷阱……  谁知道那边等着我们的又是什么? ";
 			link.l1 = "在他发现这里发生了什么之前, 我们有时间优势。 我们得好好利用, 对吧? 我们会驶向海湾, 然后派一支由一名军官带队的小队陆路支援我们。";
 			link.l1.go = "WildRose_Mary_255";
 		break;
@@ -4344,7 +4344,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Irons_2":
-			dialog.text = "我连个玩笑都开不了…… ";
+			dialog.text = "我连个玩笑都开不了……  ";
 			link.l1 = "凡事都有时机, Tommy。 你还有很多要学的。 现在仔细听我说: 带上你的船员, 从丛林穿过去, 前往Chetumal Bay。 到了那儿, 等我的信号。";
 			link.l1.go = "WildRose_Irons_3";
 		break;
@@ -4434,13 +4434,13 @@ void ProcessDialogEvent()
 			sld = CharacterFromID("Mary");
 			if (CheckCharacterItem(sld, "hat11")) // У Мэри есть своя шляпа
 			{
-				dialog.text = "好吧, 我这漫长又艰难的一生里, 什么没见过。 每次我以为再也没有什么能让我吃惊了——结果每次都被打脸。 所以, 你居然真的在外面活下来了…… 而且你还把Teresa的帽子带回来了。 我真没想到还能再见到它。";
+				dialog.text = "好吧, 我这漫长又艰难的一生里, 什么没见过。 每次我以为再也没有什么能让我吃惊了——结果每次都被打脸。 所以, 你居然真的在外面活下来了……  而且你还把Teresa的帽子带回来了。 我真没想到还能再见到它。";
 				link.l1 = "...";
 				link.l1.go = "WildRose_Rupert_3_1_add";
 			}
 			else
 			{
-				dialog.text = "好吧, 我这漫长又艰难的一生见过太多事了。 每次我以为再也没有什么能让我吃惊的时候——每次我都错了。 所以, 你最终还是在那里活下来了, Julia…… ";
+				dialog.text = "好吧, 我这漫长又艰难的一生见过太多事了。 每次我以为再也没有什么能让我吃惊的时候——每次我都错了。 所以, 你最终还是在那里活下来了, Julia……  ";
 				link.l1 = "...";
 				link.l1.go = "WildRose_Rupert_3_add";
 			}
@@ -4453,7 +4453,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Rupert_3_2":
-			dialog.text = "是Aurelie在她…… 去世前给我的。";
+			dialog.text = "是Aurelie在她……  去世前给我的。";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Rupert_3_2_add";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), CharacterFromID("Mary"));
@@ -4465,7 +4465,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Rupert_3_3":
-			dialog.text = "真感人啊…… 我都快哭了。 本来我还以为他们把Teresa和它一起埋了。 自从我把它送给她后, 她可是一秒都没离身过。 你母亲, 虽然只是个女仆, 但她骨子里全是冒险精神, 简直都要从耳朵里溢出来了。 我在攻下Fleur-de-Lys时找到她, 一眼就知道Teresa会为她疯狂。 她戴那顶帽子看起来很滑稽, 但她一点都不在乎: 只有睡觉才会摘下来。 可你啊, Julia, 这帽子真的很适合你。";
+			dialog.text = "真感人啊……  我都快哭了。 本来我还以为他们把Teresa和它一起埋了。 自从我把它送给她后, 她可是一秒都没离身过。 你母亲, 虽然只是个女仆, 但她骨子里全是冒险精神, 简直都要从耳朵里溢出来了。 我在攻下Fleur-de-Lys时找到她, 一眼就知道Teresa会为她疯狂。 她戴那顶帽子看起来很滑稽, 但她一点都不在乎: 只有睡觉才会摘下来。 可你啊, Julia, 这帽子真的很适合你。";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Rupert_3_add";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), CharacterFromID("Mary"));
@@ -4477,7 +4477,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_4":
-			dialog.text = "Julia? 不, 你搞错了, 我叫Mary…… ";
+			dialog.text = "Julia? 不, 你搞错了, 我叫Mary……  ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Rupert_4_add";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), CharacterFromID("Mary"));
@@ -4501,7 +4501,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_6":
-			dialog.text = "你…… 你…… 你真的是我父亲吗? ";
+			dialog.text = "你……  你……  你真的是我父亲吗? ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Rupert_6_add";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), CharacterFromID("Mary"));
@@ -4525,7 +4525,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_8":
-			dialog.text = "爸爸…… 我…… 我不明白, 对吧…… ";
+			dialog.text = "爸爸……  我……  我不明白, 对吧……  ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Rupert_8_add";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), CharacterFromID("Mary"));
@@ -4537,7 +4537,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_9":
-			dialog.text = "你才不会懂呢, 对吧…… ";
+			dialog.text = "你才不会懂呢, 对吧……  ";
 			link.l1 = "看起来你并不高兴见到你的女儿, Casper先生。 尤其是你自己都承认她是你的了。";
 			link.l1.go = "WildRose_Rupert_10";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), CharacterFromID("Mary"));
@@ -4545,7 +4545,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Rupert_10":
-			dialog.text = "你还挺机灵的嘛, 花花公子…… 你叫什么来着? ";
+			dialog.text = "你还挺机灵的嘛, 花花公子……  你叫什么来着? ";
 			link.l1 = ""+GetFullName(pchar)+"。 在我们寻找你的这段时间里, 我们一直在想, 你这段时间都是怎么过的, 你是不是还活着。 不过我看你在这里过得挺不错的, Northwood先生。";
 			link.l1.go = "WildRose_Rupert_11";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), pchar);
@@ -4559,7 +4559,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Rupert_12":
 			dialog.text = "好极了 (鼓掌) 。 我很佩服你。 你是自己全都想明白的, 还是我的宝贝孩子也帮了你? ";
-			link.l1 = "要不是有Mary帮忙, 我可做不到。 她下定决心要查清自己父母的一切。 Theresa的事不难查明, 可是找到你, 我们可花了不少时间…… ";
+			link.l1 = "要不是有Mary帮忙, 我可做不到。 她下定决心要查清自己父母的一切。 Theresa的事不难查明, 可是找到你, 我们可花了不少时间……  ";
 			link.l1.go = "WildRose_Rupert_13";
 		break;
 		
@@ -4576,7 +4576,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_14":
-			dialog.text = "我不明白, 神父…… 你为什么要折磨我? 为了什么? !  (喊叫) 是你把我丢在那里——那些沉船上! 之后你甚至从没想过要回来, 对吧! 为什么? 你到底是谁, 那些站在你身后的人又是谁? ";
+			dialog.text = "我不明白, 神父……  你为什么要折磨我? 为了什么? !  (喊叫) 是你把我丢在那里——那些沉船上! 之后你甚至从没想过要回来, 对吧! 为什么? 你到底是谁, 那些站在你身后的人又是谁? ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Rupert_14_add";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), CharacterFromID("Mary"));
@@ -4588,7 +4588,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_15":
-			dialog.text = "跟我说说, "+pchar.lastname+", 她总是这么闹脾气吗? 她这是随了她妈妈。 Teresa是个很棒的姑娘, 我遇到过最好的。 但她确实爱哭闹, 爱闹腾, 没错…… 还能说啥呢…… 爱尔兰人嘛。";
+			dialog.text = "跟我说说, "+pchar.lastname+", 她总是这么闹脾气吗? 她这是随了她妈妈。 Teresa是个很棒的姑娘, 我遇到过最好的。 但她确实爱哭闹, 爱闹腾, 没错……  还能说啥呢……  爱尔兰人嘛。";
 			link.l1 = "你敢侮辱她试试! Mary又没害你倒霉, 对吧? 你根本不该这样对她。";
 			link.l1.go = "WildRose_Rupert_16";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), pchar);
@@ -4611,7 +4611,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_18":
-			dialog.text = "你怪我害死了妈妈? ! 你…… 那我到底有什么罪? 是因为我出生, 对吧? 好啊, 父亲, "+pchar.name+", 对吧——你把一切都说出来, 然后我们就转身离开。 我再也不会出现在你面前了, 既然你……  (开始抽泣) 。";
+			dialog.text = "你怪我害死了妈妈? ! 你……  那我到底有什么罪? 是因为我出生, 对吧? 好啊, 父亲, "+pchar.name+", 对吧——你把一切都说出来, 然后我们就转身离开。 我再也不会出现在你面前了, 既然你……   (开始抽泣) 。";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Rupert_18_add";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), CharacterFromID("Mary"));
@@ -4623,7 +4623,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_19":
-			dialog.text = "好吧, 你简直和Teresa一模一样。 我感觉自己年轻了二十岁, 哈哈。 该死的你。 我根本不想回忆起这些…… 所以啊, 亲爱的, 如果等这个故事讲完我决定往你额头上来一颗子弹——那你只能怪你自己了。";
+			dialog.text = "好吧, 你简直和Teresa一模一样。 我感觉自己年轻了二十岁, 哈哈。 该死的你。 我根本不想回忆起这些……  所以啊, 亲爱的, 如果等这个故事讲完我决定往你额头上来一颗子弹——那你只能怪你自己了。";
 			link.l1 = "那你也会中弹的, Rupert。 我可不觉得这是你的计划——你看起来挺惜命的。";
 			link.l1.go = "WildRose_Rupert_20";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), CharacterFromID("Mary"));
@@ -4660,7 +4660,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_23":
-			dialog.text = "那时候我才学会了恨饥饿, 你这家伙。 你大概从没真正体会过那种滋味吧, 但我可体会过——真真切切地感受在自己身上, 没错。 我往北去了首都, 报名进了海军——在那里, 鞭子比饭还常见, 不过挨上几十下也就明白了。 之后我也习惯了——还爱上了海上的生活。 尤其是因为永远不会无聊嘛…… ";
+			dialog.text = "那时候我才学会了恨饥饿, 你这家伙。 你大概从没真正体会过那种滋味吧, 但我可体会过——真真切切地感受在自己身上, 没错。 我往北去了首都, 报名进了海军——在那里, 鞭子比饭还常见, 不过挨上几十下也就明白了。 之后我也习惯了——还爱上了海上的生活。 尤其是因为永远不会无聊嘛……  ";
 			link.l1 = "是啊, 我信了。 英格兰舰队的名声总是比他们自己跑得还快。";
 			link.l1.go = "WildRose_Rupert_24";
 		break;
@@ -4673,7 +4673,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_26":
-			dialog.text = "哦, 对了…… Joshua Casper…… 整个该死的舰队里都找不到比他更混账的家伙了, 对吧。 都过了这么多年了, 那个无赖还是会出现在我的梦里。";
+			dialog.text = "哦, 对了……  Joshua Casper……  整个该死的舰队里都找不到比他更混账的家伙了, 对吧。 都过了这么多年了, 那个无赖还是会出现在我的梦里。";
 			link.l1 = "那他后来怎么做的? 是不是因为你太积极就让你多值班了? 还是他其实是个天主教徒, 偷偷藏着身份? ";
 			link.l1.go = "WildRose_Rupert_27";
 		break;
@@ -4737,7 +4737,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_38":
-			dialog.text = "正是如此。 Casper已经给自己倒了满满一杯威士忌, 所以对任何求情都充耳不闻, 直接下令把那女孩扔下海。 不管我怎么求他, 他只是笑得喘不过气来——该死, 我现在跟你说这些的时候, 脑子里还能听见他的笑声…… ";
+			dialog.text = "正是如此。 Casper已经给自己倒了满满一杯威士忌, 所以对任何求情都充耳不闻, 直接下令把那女孩扔下海。 不管我怎么求他, 他只是笑得喘不过气来——该死, 我现在跟你说这些的时候, 脑子里还能听见他的笑声……  ";
 			link.l1 = "所以你就是在那时候决定发动叛变的, 对吧? ";
 			link.l1.go = "WildRose_Rupert_39";
 		break;
@@ -4767,7 +4767,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_47":
-			dialog.text = "等到 '康沃尔号' 上的情况彻底失控时, 我们已经顺风航行了一半路程, 那时候已经无法改道去圣克里斯托弗了…… ";
+			dialog.text = "等到 '康沃尔号' 上的情况彻底失控时, 我们已经顺风航行了一半路程, 那时候已经无法改道去圣克里斯托弗了……  ";
 			link.l1 = "你把托尔图加选作你的目的地? ";
 			link.l1.go = "WildRose_Rupert_48";
 		break;
@@ -4779,7 +4779,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_49":
-			dialog.text = "跟你说啊, 我可是个有经验的领航员——比大多数人都强, 对吧? 绝对没出错, 我们一直沿着正北方向航行。 可一进风海道, 就遇上了可怕的暴风雨。 我到现在都想不明白, 咱们怎么没被拍到古巴岸上, 反而被风暴沿着岸拖着走了…… ";
+			dialog.text = "跟你说啊, 我可是个有经验的领航员——比大多数人都强, 对吧? 绝对没出错, 我们一直沿着正北方向航行。 可一进风海道, 就遇上了可怕的暴风雨。 我到现在都想不明白, 咱们怎么没被拍到古巴岸上, 反而被风暴沿着岸拖着走了……  ";
 			link.l1 = "简直就是个奇迹, 毫无夸张。";
 			link.l1.go = "WildRose_Rupert_50";
 		break;
@@ -4797,7 +4797,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_63":
-			dialog.text = "要是他们当时就把我崩了就好了…… 要是我早知道后面等着我的是什么, 我肯定会把自己锁在牢栏上, 一步都不挪。";
+			dialog.text = "要是他们当时就把我崩了就好了……  要是我早知道后面等着我的是什么, 我肯定会把自己锁在牢栏上, 一步都不挪。";
 			link.l1 = "在塔塔纳船上真的比在双桅帆船上还不舒服, 对吧? "+npchar.name+"? ";
 			link.l1.go = "WildRose_Rupert_64_1";
 			link.l2 = "可别告诉我你也是在一艘塔尔坦帆船上遇到风暴的。";
@@ -4805,22 +4805,22 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_64_1":
-			dialog.text = "塔塔纳船? 哈哈哈…… 好吧, 那确实是我的计划。 我当时还以为自己走运了呢。 狱警头子原来是英格兰海军的前军官, 他对我起了恻隐之心。 他把古巴走私贩的塔塔纳船都告诉了我, 还说他们正打算处决我。 你可以说他是个有荣誉感的人——正是他主动提出放我走, 让我把命运交给机会。";
-			link.l1 = "我不明白…… 如果不是乘坐tartans, 那你们是怎么离开岛上的? ";
+			dialog.text = "塔塔纳船? 哈哈哈……  好吧, 那确实是我的计划。 我当时还以为自己走运了呢。 狱警头子原来是英格兰海军的前军官, 他对我起了恻隐之心。 他把古巴走私贩的塔塔纳船都告诉了我, 还说他们正打算处决我。 你可以说他是个有荣誉感的人——正是他主动提出放我走, 让我把命运交给机会。";
+			link.l1 = "我不明白……  如果不是乘坐tartans, 那你们是怎么离开岛上的? ";
 			link.l1.go = "WildRose_Rupert_68";
 			AddCharacterExpToSkill(pchar, "leadership", 100);
 		break;
 
 		case "WildRose_Rupert_64_2":
-			dialog.text = "塔尔坦船? 哈哈哈…… 好吧, 那确实是我的计划。 我还以为自己走运了呢。 狱卒头子原来是英格兰海军的前军官, 他对我的不幸产生了同情。 是他告诉我古巴走私贩的塔尔坦船的事, 还说他们打算处决我。 也许你可以说他是个有荣誉感的人——他亲自提出要放我走, 让我把命运交给机会。";
-			link.l1 = "我不明白…… 如果不是乘坐tartans, 那你们是怎么离开岛上的? ";
+			dialog.text = "塔尔坦船? 哈哈哈……  好吧, 那确实是我的计划。 我还以为自己走运了呢。 狱卒头子原来是英格兰海军的前军官, 他对我的不幸产生了同情。 是他告诉我古巴走私贩的塔尔坦船的事, 还说他们打算处决我。 也许你可以说他是个有荣誉感的人——他亲自提出要放我走, 让我把命运交给机会。";
+			link.l1 = "我不明白……  如果不是乘坐tartans, 那你们是怎么离开岛上的? ";
 			link.l1.go = "WildRose_Rupert_68";
 			AddCharacterExpToSkill(pchar, "sneak", 100);
 		break;
 		
 		case "WildRose_Rupert_68":
-			dialog.text = "你要是闭嘴听我说, 就能明白了, 对吧? 我当时一直在朝那些塔塔纳船游过去, 游了好久——直到我在雨幕之外看到一道光。 那真是不可思议, 见鬼了。 它像太阳一样照亮了一艘半沉的盖伦船甲板, 我就直奔那道光去了。 那时候我还不知道, 这其实是我这辈子犯下的最大错误。 我用舷梯爬上了船——结果就和那道光面对面了。 它在一尊金像上方闪闪发亮, 然后…… ";
-			link.l1 = "库库尔坎的神像。 好吧, 那时候 'San Jeronimo' 号还没沉呢…… ";
+			dialog.text = "你要是闭嘴听我说, 就能明白了, 对吧? 我当时一直在朝那些塔塔纳船游过去, 游了好久——直到我在雨幕之外看到一道光。 那真是不可思议, 见鬼了。 它像太阳一样照亮了一艘半沉的盖伦船甲板, 我就直奔那道光去了。 那时候我还不知道, 这其实是我这辈子犯下的最大错误。 我用舷梯爬上了船——结果就和那道光面对面了。 它在一尊金像上方闪闪发亮, 然后……  ";
+			link.l1 = "库库尔坎的神像。 好吧, 那时候 'San Jeronimo' 号还没沉呢……  ";
 			link.l1.go = "WildRose_Rupert_69";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), pchar);
 		break;
@@ -4851,12 +4851,12 @@ void ProcessDialogEvent()
 
 		case "WildRose_Rupert_76":
 			dialog.text = "就是他们。 他们把我拖进了一间小屋, 里面有个奇怪的土著——看起来和其他人不一样——直接往我嘴里灌了点什么。 疼痛稍微缓解了一些, 但还是没完全消失。 到了傍晚, 他们又把我拖到火堆旁, 那个涂满颜料的混蛋开始搞什么仪式。 可怜的家伙。";
-			link.l1 = "蛇眼…… 你本该感激他救了你一命。";
+			link.l1 = "蛇眼……  你本该感激他救了你一命。";
 			link.l1.go = "WildRose_Rupert_77";
 		break;
 
 		case "WildRose_Rupert_77":
-			dialog.text = "救我? …… 三年啊, "+pchar.lastname+"。 整整三年我几乎一动不动地躺着, 拉屎撒尿在床上, 醒来时满身都是自己的呕吐物——因为我实在受不了他们硬灌给我的那些恶臭的药汤和药酒! 后来我又花了将近一年才重新学会走路。";
+			dialog.text = "救我? ……  三年啊, "+pchar.lastname+"。 整整三年我几乎一动不动地躺着, 拉屎撒尿在床上, 醒来时满身都是自己的呕吐物——因为我实在受不了他们硬灌给我的那些恶臭的药汤和药酒! 后来我又花了将近一年才重新学会走路。";
 			link.l1 = "真让人心碎。 不过说实话, 我差点都要同情你了。";
 			link.l1.go = "WildRose_Rupert_78";
 		break;
@@ -4869,9 +4869,9 @@ void ProcessDialogEvent()
 
 		case "WildRose_Rupert_79":
 			dialog.text = "我好不容易才重新站起来, 离开了那个被诅咒的村子, 前往海岸, 去了阿马蒂克湾。 在那里, 我遇到了一些走私贩, 他们的船就停在附近, 于是我加入了他们, 自称鲁珀特·卡斯帕——我不想放弃我的名字, 但我还是保留了那个毁了我人生的人的姓氏。 这样我就永远不会忘记自己为什么会落到这步田地。";
-			link.l1 = "其他人都该被责怪, Northwood…… 除了你。 话说回来, 我能理解——多年的屈辱和折磨, 现在你还困在这片森林里。 很难不疯掉, 对吧? ";
+			link.l1 = "其他人都该被责怪, Northwood……  除了你。 话说回来, 我能理解——多年的屈辱和折磨, 现在你还困在这片森林里。 很难不疯掉, 对吧? ";
 			link.l1.go = "WildRose_Rupert_80_1";
-			link.l2 = "你经历了很多, Northwood——这点毫无疑问。 现在看看你自己…… 在树林里, 文明的边缘。 你不会在这里失去理智的…… ";
+			link.l2 = "你经历了很多, Northwood——这点毫无疑问。 现在看看你自己……  在树林里, 文明的边缘。 你不会在这里失去理智的……  ";
 			link.l2.go = "WildRose_Rupert_80_2";
 		break;
 
@@ -4890,7 +4890,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Rupert_81":
-			dialog.text = "有人说这里是森林恶魔的地盘…… 真是厚颜无耻的谎言——这片土地是我的。 Swenson心里清楚, 哈哈哈。 他不止一次派人来, 想查出我的身份——可没有一个人活着回去见他。 呵呵。 能数得过来的人才知道我当初以什么名字开始走私生涯, 或者我藏在这片林子里的哪个角落。";
+			dialog.text = "有人说这里是森林恶魔的地盘……  真是厚颜无耻的谎言——这片土地是我的。 Swenson心里清楚, 哈哈哈。 他不止一次派人来, 想查出我的身份——可没有一个人活着回去见他。 呵呵。 能数得过来的人才知道我当初以什么名字开始走私生涯, 或者我藏在这片林子里的哪个角落。";
 			link.l1 = "所以, 你现在用的是别的名字。 难怪一听说有人在找 Rupert Casper, 你就慌了。";
 			link.l1.go = "WildRose_Rupert_82";
 		break;
@@ -4906,7 +4906,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_83":
-			dialog.text = "你疯了, 真的彻底疯了, 没错。 我可不知道有什么药或者医生能治好你, Rupert Northwood! 你确实经历了地狱般的苦难, 但是…… 你怎么能把一切都怪到我头上? !";
+			dialog.text = "你疯了, 真的彻底疯了, 没错。 我可不知道有什么药或者医生能治好你, Rupert Northwood! 你确实经历了地狱般的苦难, 但是……  你怎么能把一切都怪到我头上? !";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Rupert_83_add";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), CharacterFromID("Mary"));
@@ -4947,7 +4947,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Rupert_87":
-			dialog.text = "怎么了, 新手? 丢了谁吗? 哈哈哈…… 哈哈哈。 哈哈哈哈哈哈哈! ! ! 哎呀, 你现在的表情真有意思, 傻瓜! 嘿, Mason, 把我给客人的礼物拿过来。";
+			dialog.text = "怎么了, 新手? 丢了谁吗? 哈哈哈……  哈哈哈。 哈哈哈哈哈哈哈! ! ! 哎呀, 你现在的表情真有意思, 傻瓜! 嘿, Mason, 把我给客人的礼物拿过来。";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_22");
@@ -4960,7 +4960,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Rupert_89":
-			dialog.text = "你是说那几个以为能埋伏我的蠢货吗? 我的朋友, 酒馆老板, 及时告诉我你要来镇上的消息, 所以我好好 '招待' 了他们一番…… 有几个还是侥幸逃掉了。 可别担心——我活捉了其中一个。 这样你就能亲眼看看, 今天等着你的会是什么下场了。";
+			dialog.text = "你是说那几个以为能埋伏我的蠢货吗? 我的朋友, 酒馆老板, 及时告诉我你要来镇上的消息, 所以我好好 '招待' 了他们一番……  有几个还是侥幸逃掉了。 可别担心——我活捉了其中一个。 这样你就能亲眼看看, 今天等着你的会是什么下场了。";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_25");
@@ -4998,7 +4998,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Mary_261":
-			dialog.text = "天啊, "+pchar.name+"…… 我还是不能, 我真的不能相信。 我的父亲…… 他是个怪物…… 他为什么要这样对我? 他真的疯了吗? ";
+			dialog.text = "天啊, "+pchar.name+"……  我还是不能, 我真的不能相信。 我的父亲……  他是个怪物……  他为什么要这样对我? 他真的疯了吗? ";
 			link.l1 = "他不得不忍受可怕的苦难。 '康沃尔号'上的叛变、横渡大西洋的逃亡、风暴, 还有你母亲的死。 我无法想象没有科曼奇药剂, 他是怎么靠着那些偶像的传送门活下来的——但正是那毁了他的心智。";
 			link.l1.go = "WildRose_Mary_262";
 			locCameraFromToPos(-3.80, 1.10, 52.00, false, 0.61, 0.27, 49.69);
@@ -5009,7 +5009,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_262":
-			dialog.text = "那如果他一直都是那样呢? 或者说, 他其实也是个混蛋, 只是稍微温和点, 但真的爱过我妈妈? 要是这些事只是释放了他本来就有的东西呢? 如果真是这样…… 那我身上是不是也有他的影子? 这也有可能, "+pchar.name+", 对吧? ";
+			dialog.text = "那如果他一直都是那样呢? 或者说, 他其实也是个混蛋, 只是稍微温和点, 但真的爱过我妈妈? 要是这些事只是释放了他本来就有的东西呢? 如果真是这样……  那我身上是不是也有他的影子? 这也有可能, "+pchar.name+", 对吧? ";
 			link.l1 = "你确实从他身上学到了一些东西, "+npchar.name+"。 今天的战斗里我注意到了——你战斗时有着和他一样的决心, 眼里燃烧着同样的火焰, 还有那股和他一模一样的狂怒。 但你没有他的疯狂。 你完全是另一种人。 你那么鲜活、坦率, 心里想什么都写在脸上。 正因为这样, 我才会爱上你。 而且看来Northwood说得没错: 你彻彻底底继承了你母亲的精神。";
 			link.l1.go = "WildRose_Mary_263";
 		break;
@@ -5021,7 +5021,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_264":
-			dialog.text = "你知道吗, 在正义岛上其实没什么娱乐, 对吧? 我从小就喜欢击剑——一开始是拿木棍跟男孩子们打, 后来就和大人们用真剑了, 对吧。 我一直想和他们平起平坐…… 可不知怎么的, 即使赢了, 我还是觉得自己比他们弱。 所以我就回家继续练, 练上好几个小时, 直到手都开始发抖, 对吧。 这就是你说的那种火吗? 你说的那种愤怒, 是这个意思吗? ";
+			dialog.text = "你知道吗, 在正义岛上其实没什么娱乐, 对吧? 我从小就喜欢击剑——一开始是拿木棍跟男孩子们打, 后来就和大人们用真剑了, 对吧。 我一直想和他们平起平坐……  可不知怎么的, 即使赢了, 我还是觉得自己比他们弱。 所以我就回家继续练, 练上好几个小时, 直到手都开始发抖, 对吧。 这就是你说的那种火吗? 你说的那种愤怒, 是这个意思吗? ";
 			link.l1 = "某种程度上——是的。 我觉得那股火焰给了你比你自己看到的还要多的力量。 不管你愿不愿意, 那都是你父亲留给你的礼物。 即使他从未打算给你任何东西。";
 			link.l1.go = "WildRose_Mary_265";
 			locCameraSleep(false);
@@ -5030,12 +5030,12 @@ void ProcessDialogEvent()
 
 		case "WildRose_Mary_265":
 			dialog.text = "你觉得我们挖掘过去的事情是对的吗? ";
-			link.l1 = "现在我们都知道了一切…… 这主意好像也没那么好了。 不过, 如果你想知道真相, 就得做好可能不喜欢它的准备。";
+			link.l1 = "现在我们都知道了一切……  这主意好像也没那么好了。 不过, 如果你想知道真相, 就得做好可能不喜欢它的准备。";
 			link.l1.go = "WildRose_Mary_266";
 		break;
 
 		case "WildRose_Mary_266":
-			dialog.text = "你说得对, "+pchar.name+", 好吧…… 咱们再待一会儿, 对吧? 我现在还不想回船上。 我只想…… 坐在这儿, 享受这份安静。";
+			dialog.text = "你说得对, "+pchar.name+", 好吧……  咱们再待一会儿, 对吧? 我现在还不想回船上。 我只想……  坐在这儿, 享受这份安静。";
 			link.l1 = "当然了, 亲爱的。 我正想提一样的建议呢。";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_38");
@@ -5057,7 +5057,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Tichingitu_Final_3":
 			dialog.text = "船长"+pchar.name+"接下来打算做什么? ";
-			link.l1 = "我和玛丽需要独处一会儿。 你把所有伤员集合起来, 带回船上。 阵亡者也一起带回去——我们会将他们葬于海中。 还有, "+npchar.name+"…… 告诉阿隆索, 要按照新教仪式安葬玛丽的父亲, 就在附近。 埋葬地点只有你和他知道, 别告诉任何人, 包括玛丽。 她不该再为此伤心。";
+			link.l1 = "我和玛丽需要独处一会儿。 你把所有伤员集合起来, 带回船上。 阵亡者也一起带回去——我们会将他们葬于海中。 还有, "+npchar.name+"……  告诉阿隆索, 要按照新教仪式安葬玛丽的父亲, 就在附近。 埋葬地点只有你和他知道, 别告诉任何人, 包括玛丽。 她不该再为此伤心。";
 			link.l1.go = "WildRose_Tichingitu_Final_4";
 		break;
 
@@ -5070,20 +5070,20 @@ void ProcessDialogEvent()
 		
 		// Дюран
 		case "WildRose_Duran_Final_1":   
-			dialog.text = "这些杂碎真顽强…… 不过我们还是耍了他们, 哈哈。 就让他们在这儿烂掉, 好好反省一下是不是值得和我们作对。";
-			link.l1 = "谢谢你, "+npchar.name+", 你们干得漂亮。 真不敢想象如果我没让你们守后路, 玛丽…… 还有我…… 会怎么样。";
+			dialog.text = "这些杂碎真顽强……  不过我们还是耍了他们, 哈哈。 就让他们在这儿烂掉, 好好反省一下是不是值得和我们作对。";
+			link.l1 = "谢谢你, "+npchar.name+", 你们干得漂亮。 真不敢想象如果我没让你们守后路, 玛丽……  还有我……  会怎么样。";
 			link.l1.go = "WildRose_Duran_Final_2";
 			DelLandQuestMark(npchar);
 		break;
 
 		case "WildRose_Duran_Final_2":
 			dialog.text = "哈, 老大, 我了解你, 你肯定能应付得来。 看到那帮头头手上的砍刀了吗? 我可一直盯着他。 要是你不喜欢它, 送给我我也不会介意。";
-			link.l1 = "哼…… 再说吧, 伙计。 现在先把活着的人集合好带回船上。 死者也一起带走——我们会把他们葬在海里。 还有…… 那个头头是玛丽的父亲。 带上阿隆索, 按照新教礼仪把他安葬在附近。 墓地的事别告诉任何人, 尤其是玛丽。 她不该再为这件事痛苦。";
+			link.l1 = "哼……  再说吧, 伙计。 现在先把活着的人集合好带回船上。 死者也一起带走——我们会把他们葬在海里。 还有……  那个头头是玛丽的父亲。 带上阿隆索, 按照新教礼仪把他安葬在附近。 墓地的事别告诉任何人, 尤其是玛丽。 她不该再为这件事痛苦。";
 			link.l1.go = "WildRose_Duran_Final_3";
 		break;
 
 		case "WildRose_Duran_Final_3":
-			dialog.text = "明白了, 老大。 等等…… 算了, 不现在说了…… 我这就去。";
+			dialog.text = "明白了, 老大。 等等……  算了, 不现在说了……  我这就去。";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_31");
@@ -5119,7 +5119,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Irons_Final_2":
-			dialog.text = "呃…… 我可是军官啊, 我…… ";
+			dialog.text = "呃……  我可是军官啊, 我……  ";
 			link.l1 = "那是现在。 今天是军官, 明天可能就是水手, 后天就要饭去了。";
 			link.l1.go = "WildRose_Irons_Final_3";
 		break;
@@ -5131,7 +5131,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Irons_Final_4":
-			dialog.text = "好吧, 知道了…… 我会去做的。 你放心, 我嘴巴严得很。";
+			dialog.text = "好吧, 知道了……  我会去做的。 你放心, 我嘴巴严得很。";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_31");
@@ -5147,7 +5147,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Longway_Final_2":
 			dialog.text = "我们该如何处理战死者的遗体? ";
-			link.l1 = "我们会将他们交给大海。 告诉阿隆索, 让他负责安排葬礼。 另外, 让他按照新教传统在丛林里安葬玛丽的父亲, 最好选个偏僻的地方。 不能让任何人知道墓地位置, 尤其是玛丽。 她那性子, 肯定会想回来…… 这对她没好处。";
+			link.l1 = "我们会将他们交给大海。 告诉阿隆索, 让他负责安排葬礼。 另外, 让他按照新教传统在丛林里安葬玛丽的父亲, 最好选个偏僻的地方。 不能让任何人知道墓地位置, 尤其是玛丽。 她那性子, 肯定会想回来……  这对她没好处。";
 			link.l1.go = "WildRose_Longway_Final_3";
 		break;
 
@@ -5160,14 +5160,14 @@ void ProcessDialogEvent()
 		
 		// Алонсо
 		case "WildRose_Alonso_Final_1":
-			dialog.text = "真是一场屠杀…… 你还好吧, 老大? ";
-			link.l1 = "还行吧, 只不过…… 我和玛丽亲手杀了她的父亲…… ";
+			dialog.text = "真是一场屠杀……  你还好吧, 老大? ";
+			link.l1 = "还行吧, 只不过……  我和玛丽亲手杀了她的父亲……  ";
 			link.l1.go = "WildRose_Alonso_Final_2";
 			DelLandQuestMark(npchar);
 		break;
 
 		case "WildRose_Alonso_Final_2":
-			dialog.text = "看样子, 那家伙真不是个东西…… ";
+			dialog.text = "看样子, 那家伙真不是个东西……  ";
 			link.l1 = "说得对, "+npchar.name+", 你说得没错。 但不管怎么说, 我们得为他举行一场像样的葬礼——按新教的方式。 你亲自处理这事。 不能让任何人知道墓地在哪里, 尤其是玛丽。";
 			link.l1.go = "WildRose_Alonso_Final_3";
 		break;

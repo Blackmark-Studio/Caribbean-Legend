@@ -334,22 +334,22 @@ void CreatUnderwater(aref loc) // под водой
 			{
 				if(IsEquipCharacterByArtefact(pchar, "talisman10"))
 				{
-					SetShowTimer(120.0); // belamour legendary edition оберег ловца
+					SetShowTimer(150.0); // belamour legendary edition оберег ловца
 				}
 				else 
 				{
-					SetShowTimer(80.0); // 010912
+					SetShowTimer(100.0); // 010912
 				}
 			}
 			else 
 			{
 				if(IsEquipCharacterByArtefact(pchar, "talisman10"))
 				{
-					SetShowTimer(90.0);
+					SetShowTimer(120.0);
 				}
 				else
 				{
-					SetShowTimer(60.0); //таймер
+					SetShowTimer(80.0); //таймер
 				}
 			}
 			// <-- legendary edition
@@ -511,18 +511,18 @@ void CreatePlantation(aref loc)
 			if (loc.id == "IslaMona_factoria") iCitizensQuantity = 10;
 			for (i=0; i<iCitizensQuantity; i++)
 			{
-	            if(iNation != PIRATE && LAi_IsCapturedLocation == 0)
+	            if(LAi_IsCapturedLocation == 0)
 				{
 	                sType = "soldier";
-					iChar = NPC_GeneratePhantomCharacter("soldier", iNation, MAN, 2);
+					iChar = NPC_GeneratePhantomCharacterForLoc("soldier", iNation, MAN, 2, loc);
 				}
 				else
 				{
 	                sType = "pirate";
-					iChar = NPC_GeneratePhantomCharacter("pirate", iNation, MAN, 2);
+					iChar = NPC_GeneratePhantomCharacterForLoc("pirate", iNation, MAN, 2, loc);
 				}
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, MAN);
+				SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 				chr.City = Colonies[iColony].id;
 	            chr.CityType = "soldier";
 				chr.plantation = "patrol";

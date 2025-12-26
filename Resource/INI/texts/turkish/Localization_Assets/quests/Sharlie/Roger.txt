@@ -1,0 +1,143 @@
+Roger_1 {İspanyol bayrağını verdin}
+Roger_2 {Gabriela}
+Roger_3 {Chapada}
+Roger_4 {Keşif modu: sayaç uzatıldı. Görevi tamamla!}
+Roger_5 {Lope}
+Roger_6 {Montoro}
+Roger_7 {Rosario}
+Roger_8 {Gusman}
+Roger_9 {Cantavro}
+Roger_10 {Esberdo}
+Roger_11 {Cabanas}
+Roger_12 {Mavna­lara yakından yaklaşın ve ganimetlerini alın. Ancak geminizin teknesiyle ezmemeye dikkat edin.}
+Roger_13 {Kehribar toplandı @<sti(pchar.questTemp.Mtraxx_SobralVsyo)> / 5}
+Roger_14 {Snake}
+Roger_15 {Geffrey}
+Roger_16 {Brooke}
+Roger_17 {Fly Fish}
+Roger_18 {Billy}
+Roger_19 {Pert}
+Roger_20 {Utrecht}
+Roger_21 {Joachim}
+Roger_22 {Gusen}
+Roger_23 {brigantin 'Utrecht'}
+Roger_24 {Keşif modu: zamanlayıcı devre dışı değil. Süre dolmadan bitirin!}
+Roger_25 {Bir saat sonra...@<NewStr()>İpek alıcıya teslim edildi}
+Roger_26 {Moray}
+Roger_27 {Paul}
+Roger_28 {Chant}
+Roger_29 { }
+Roger_30 { }
+Roger_31 {Geminin cephaneliğinden 30 adet kesici silah alındı}
+Roger_32 {Toplanan kesici silah - 30 adet}
+Roger_33 {Kesici silah yok}
+Roger_34 {Toplanan tabancalar - @<FindRussianQtyString(iGun)>}
+Roger_35 {Toplanan tüfekler - @<FindRussianQtyString(iMushket)>}
+Roger_36 {Toplanan iyileştirici iksir - @<FindRussianQtyString(iPotion)>}
+Roger_37 {@<iShot> atışlık mühimmat toplandı}
+Roger_38 {Toplanan kesici silah - 30 adet}
+Roger_39 {Toplanan tabanca - 50 adet}
+Roger_40 {Toplanan iyileştirici iksir - 90 adet}
+Roger_41 {70 atışlık mühimmat toplandı}
+Roger_42 {Ertesi akşam oldu...}
+Roger_43 {Bir süre sonra...}
+Roger_44 {Plantasyonda alarm var!}
+Roger_45 {300 saniye içinde İspanyollara kaleden takviye gelecek}
+Roger_46 {İspanyollar amiral gemisini kaybetti! Kaçmayı deneyebiliriz!}
+Roger_47 {Hollanda konvoyu ufukta!}
+Roger_48 {Rosbohom}
+Roger_49 {Gryphon}
+Roger_50 {Gece oldu...}
+Roger_51 {Mirabelle}
+Roger_52 { }
+Roger_53 {Mirabelle ateşten öldü!}
+Roger_54 {Luka}
+Roger_55 {Bayard}
+Roger_56 {Kumwana}
+Roger_57 { }
+Roger_58 {Hayami}
+Roger_59 { }
+Roger_60 {Tagofa}
+Roger_61 { }
+Roger_62 {İki gün sonra...@<NewStr()>Altı sandal inşa edildi...}
+Roger_63 {Demetrio}
+Roger_64 {Rojas}
+Roger_65 {Kitty}
+Roger_66 { }
+Roger_67 {Ignacio}
+Roger_68 {Marco}
+Roger_69 {Keşif modu: zamanlayıcı devre dışı.}
+Roger_70 {Eduardo}
+Roger_71 {de Losada}
+Roger_72 {El Casador}
+Roger_73 {Gemi günlüğünü incelemek için kamarana git}
+Roger_74 {Gaspard}
+Roger_75 {Goldenteeth}
+Roger_76 {Alo ekip hazır!}
+Roger_77 {Cuttlefish}
+Roger_78 {Vagrant}
+Roger_79 { }
+Roger_80 {Merciless}
+Roger_81 {Vampire}
+Roger_82 { }
+Roger_83 {Torero, Le Francois açıklarında demirli!}
+Roger_84 {Saklandığın yerden gizlice bekliyorsun...}
+Roger_85 {'Torero'}
+Roger_86 {Keşif modu: görev süresi iki katına çıkar}
+Roger_87 {Eagle-Owl}
+Roger_88 {Joker}
+Roger_89 {Jim}
+Roger_90 {Keşif modu: Corrida - koordinatlar doğru}
+Roger_91 {Keşif modu: Corrida - koordinatlar doğru değil}
+Roger_92 {Ufukta İspanyol konvoyu!}
+Roger_93 {Toro de Oro}
+Roger_94 { }
+Roger_95 {@<pchar.ship.name> üzerinde büyük bir patlama!}
+Roger_96 {Cartagena'ya vardık! Tyrex, Covenas Körfezi'ne yelken açmamızı emrediyor}
+Roger_97 {Çıkarma birlikleri Cartagena'ya hücuma hazır!}
+Roger_98 {'@<pchar.ship.name>' gemisinin çıkarma birliği @<iCrew1> adamdan oluşuyor}
+Roger_99 {Red Dragon çıkarma ekibinde @<iCrew2> adam var}
+Roger_100 {Snake gemisinin çıkarma birliği @<iCrew3> kişiden oluşuyor}
+Roger_101 {Moray çıkarma birliğinde @<iCrew4> adam var}
+Roger_102 {Bir gün sonra...@<NewStr()>Barut varilleri enkaza teslim edildi.}
+Roger_103 {Tonneur}
+Roger_104 {Libre}
+Roger_105 {Myutin}
+Roger_106 {Inconnu}
+Roger_107 { }
+Roger_108 { }
+Roger_109 {Üç saat sonra...}
+Roger_110 {Rodgar}
+Roger_111 {Janssen}
+Roger_112 {Ignacio Marco iskeleye çıktı!}
+Roger_113 {2 saat geçti...@<NewStr()>}
+Roger_114 {Ignacio Marco konuttan ayrıldı}
+Roger_115 {iki kaptanla birlikte}
+Roger_116 {Separator}
+Roger_117 {Bernar}
+Roger_118 {Vensan}
+Roger_119 {Dionisio}
+Roger_120 {Peres}
+Roger_121 {Bir gün sonra...@<NewStr()>Cartagena için fidye toplandı}
+Roger_122 {İki gün hızla geçti@<NewStr()>eğlence ve aşk dolu zevklerle...}
+Roger_123 {Camilla}
+Roger_124 { }
+Roger_125 {don Enrico}
+Roger_126 { }
+Roger_127 {Michel}
+Roger_128 {de Monper}
+Roger_129 {Marcus}
+Roger_130 {Tyrex}
+Roger_131 {Ben, Fransız asilzadesi ve kaptan Charles de Maure, yemin ederim:}
+Roger_132 {... korsan geçmişimle sonsuza dek vedalaşıyorum ...}
+Roger_133 {... Artık hiçbir masum sivil benim elimden ölmeyecek ...}
+Roger_134 {... kadınları, statüleri ve milliyetleri ne olursa olsun koruyacağıma yemin ederim ...}
+Roger_135 {... yemin ederim ki altının cazibesi artık gözümü kör etmeyecek ...}
+Roger_136 {... Yoluma çıkan her kötülüğe karşı duracağıma yemin ederim ...}
+Roger_137 {... şeref ile zenginlik arasında her zaman şerefi seçeceğime yemin ederim ...}
+Roger_138 {... Her durumda ve her insanla, onurlu ve değerli bir adam olarak kalacağıma yemin ederim ...}
+Roger_139 {Nedense aklım sürekli Mirabelle’de. Orada nasıl acaba? Beni özlüyor mu? Genç bir kızı yalnız bırakmak zalimce olmuş olmalı. Bunu telafi edeceğim! Onu yakında görmeliyim.}
+Roger_140 {Knippel}
+Roger_141 {Longway}
+Roger_142 {Tichingitu}
+Roger_143 {Tommy}

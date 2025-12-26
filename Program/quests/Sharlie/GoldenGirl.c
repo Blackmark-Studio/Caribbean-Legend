@@ -1270,9 +1270,11 @@ bool GoldenGirl_QuestComplete(string sQuestName, string qname)
 		locCameraFollow();
 		
 		pchar.GenQuest.FrameLockEsc = true;
+		ResetSound();
 		SetLaunchFrameFormParam("", "", 0, 14);
 		SetLaunchFrameFormPic("loading\inside\censored1.tga");
-		PlayStereoSound("sex\sex6.wav");
+		if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+		else PlayStereoSound("sex\sex6.wav");
 		LaunchFrameForm();
 		DoQuestCheckDelay("GoldenGirl_AfterSexJulianna", 14.0);
 		if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	

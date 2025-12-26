@@ -1,6 +1,7 @@
 info
 {
-Генератор кладов    Скрипт создан ALexusB 05.11.04
+Генератор кладов
+    Скрипт создан ALexusB 05.11.04
 }
 type_full_1 {Mapa jest wyraźnie świeża, a papier jeszcze nie zżółkł. Oznaczenia wydają się narysowane w pośpiechu, ale jeśli mamy im wierzyć, skarb jest ukryty na #sMaplocName#, #sMapIslName#.}
 type_full_1_isl {wyspie}
@@ -22,7 +23,8 @@ type_full_6_isl {wyspy}
 type_full_6_mein {kontynentu}
 type_full_7
 {
-To jest #sMapIslName#. Mapa wskazuje miejsce ukrytego skarbu — to #sMaplocName#. Tam ukrył swój skarb notoryczny pirat.  Autentyczność mapy sugerują brązowe plamy krwi, co również wskazuje, że ten kawałek papieru zmieniał właścicieli wielokrotnie.
+To jest #sMapIslName#. Mapa wskazuje miejsce ukrytego skarbu — to #sMaplocName#. Tam ukrył swój skarb notoryczny pirat.  
+Autentyczność mapy sugerują brązowe plamy krwi, co również wskazuje, że ten kawałek papieru zmieniał właścicieli wielokrotnie.
 }
 type_full_7_isl {wyspa}
 type_full_7_mein {kontynent}
@@ -43,17 +45,20 @@ type_full_12_isl {wyspy}
 type_full_12_mein {kontynentu}
 type_quest_0
 {
-To jest #sMapIslName#. Miejsce, gdzie zakopany został skarb, zostało oznaczone - to #sMaplocName#. #sMapOwner# ukrył tutaj swój skarb.Sądząc po brązowych plamach wysuszonej krwi, mapa jest autentyczna, co również wskazuje na to, że dość często zmieniała właścicieli.
+To jest #sMapIslName#. Miejsce, gdzie zakopany został skarb, zostało oznaczone - to #sMaplocName#. #sMapOwner# ukrył tutaj swój skarb.
+Sądząc po brązowych plamach wysuszonej krwi, mapa jest autentyczna, co również wskazuje na to, że dość często zmieniała właścicieli.
 }
 type_quest_0_isl {wyspa}
 type_quest_0_mein {kontynent}
 type_part
 {
-To jedna z części mapy, która najwyraźniej prowadzi do skarbu. Obecnie nie ma wystarczających informacji i nie można określić lokalizacji skarbu na podstawie samego fragmentu. Możesz mieć tylko nadzieje, że w końcu zdobędziesz druga część tej mapy, która powinna gdzieś się znajdować.I wtedy wszystko bedzie jasne jak słońce.
+To jedna z części mapy, która najwyraźniej prowadzi do skarbu. Obecnie nie ma wystarczających informacji i nie można określić lokalizacji skarbu na podstawie samego fragmentu. Możesz mieć tylko nadzieje, że w końcu zdobędziesz druga część tej mapy, która powinna gdzieś się znajdować.
+I wtedy wszystko bedzie jasne jak słońce.
 }
 type_fake
 {
-Ta mapa wskazuje lokalizacje pewnego skarbu. Oczywiście możesz sprawdzić, czy skarb ten jest, czy nie, ale z całą pewnością jest to fałszywka.Powinieneś rzucić tym papierkiem w człowieka, który ci to sprzedał i odbyć z nim poważną rozmowę.
+Ta mapa wskazuje lokalizacje pewnego skarbu. Oczywiście możesz sprawdzić, czy skarb ten jest, czy nie, ale z całą pewnością jest to fałszywka.
+Powinieneś rzucić tym papierkiem w człowieka, który ci to sprzedał i odbyć z nim poważną rozmowę.
 }
 Antigua_Grot {w jaskini na prawo od Zatoczki Falmouth}
 Antigua_Grot_box1 {w skrzyni nad wielką skałą}

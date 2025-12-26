@@ -1,0 +1,7 @@
+RedChieftain_1 {reis}
+RedChieftain_2 {Kanauri}
+RedChieftain_3 {yerliler}
+RedChieftain_4 {Caiman kabilesinden}
+RedChieftain_5 {Reis geminizi terk etti!}
+RedChieftain_6 {yerli}
+RedChieftain_7 {Caiman kabilesinden}

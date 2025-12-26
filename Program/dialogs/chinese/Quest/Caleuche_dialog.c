@@ -491,7 +491,7 @@ void ProcessDialogEvent()
 		
 		case "Tuttuat_48":
 			dialog.text = "从传说中我明白, 他是小岛, 在这村子所在的岛往被白人称为‘北方’的方向, 位于三个岛的中间, 而第四面是大水——大海。";
-			link.l1 = "嗯……在多米尼加以北的岛屿三角之间, 紧邻大海? 该死, 这可是一大片海域! 在那儿怎么找一座没人听说过的小岛?";
+			link.l1 = "嗯…… 在多米尼加以北的岛屿三角之间, 紧邻大海? 该死, 这可是一大片海域! 在那儿怎么找一座没人听说过的小岛?";
 			link.l1.go = "Tuttuat_49";
 		break;
 
@@ -1017,7 +1017,7 @@ void ProcessDialogEvent()
 		
 		// Наш Алонсо после финального абордажа на Калеуче
 		case "Caleuche_Alonso_1":
-			dialog.text = "船壳上的妖孽已经清除了, 船长。这次那些死鬼没再爬起来。可这艘破船……简直不可思议, 它竟然还没沉。";
+			dialog.text = "船壳上的妖孽已经清除了, 船长。这次那些死鬼没再爬起来。可这艘破船…… 简直不可思议, 它竟然还没沉。";
 			link.l1 = "是诅咒让它漂着, 阿隆索。不过现在, 诅咒已破。";
 			link.l1.go = "Caleuche_Alonso_2";
 		break;
@@ -1029,22 +1029,22 @@ void ProcessDialogEvent()
 		break;
 
 		case "Caleuche_Alonso_3":
-			dialog.text = "这破玩意儿的火力确实猛得很, 真他娘的见鬼……我来找您, 是想说咱们船上有个水手, 叫雅克……";
+			dialog.text = "这破玩意儿的火力确实猛得很, 真他娘的见鬼…… 我来找您, 是想说咱们船上有个水手, 叫雅克…… ";
 			link.l1 = "雅克·特吕多? 我记得他。是最近才加入咱们的吧? ";
 			link.l1.go = "Caleuche_Alonso_4";
 		break;
 
 		case "Caleuche_Alonso_4":
 			dialog.text = "正是, 船长。那小子嗅觉灵得很, 一见尸潮平息了, 就蹿到一张床边, 钻到底下, 扛出一个箱子。里面——五千枚达布隆金币!";
-			link.l1 = "五千? 哼……看来巴尔塔萨·德·科尔德斯和他的伙计们真是想解除诅咒。他们把口袋塞满金币, 希望一切结束后能快活过日子……";
+			link.l1 = "五千? 哼…… 看来巴尔塔萨·德·科尔德斯和他的伙计们真是想解除诅咒。他们把口袋塞满金币, 希望一切结束后能快活过日子…… ";
 			link.l1.go = "Caleuche_Alonso_5";
 		break;
 		
 		case "Caleuche_Alonso_5":
-			dialog.text = "咱们的伙计也想过快活日子, 船长……您要是愿意分一杯羹, 他们可一辈子都不会忘了这份恩情。 可要是不分……他们也会记住的。";
+			dialog.text = "咱们的伙计也想过快活日子, 船长…… 您要是愿意分一杯羹, 他们可一辈子都不会忘了这份恩情。 可要是不分…… 他们也会记住的。";
 			link.l1 = "你说得对, 阿隆索。该奖赏兄弟们——他们确实干得漂亮。 把一半分给大家, 特吕多这一周不用上岗。今天的酒水不发朗姆酒就说不过去了。 但也不能松懈——你知道, 大海从不原谅错误。";
 			link.l1.go = "Caleuche_Alonso_6";
-			link.l2 = "嗯……你说得有理, 阿隆索。兄弟们也该发泄一下。给他们四分之一的分红。记住, 别让这帮醉鬼在咱们进港前就开喝。";
+			link.l2 = "嗯…… 你说得有理, 阿隆索。兄弟们也该发泄一下。给他们四分之一的分红。记住, 别让这帮醉鬼在咱们进港前就开喝。";
 			link.l2.go = "Caleuche_Alonso_7";
 			link.l3 = "让这帮懒鬼一进港就跑光, 泡酒馆泡窑子?我可不想再花一个月把他们挨个捞回来。 他们拿着薪水就够了。把金币都带来, 谁敢私藏, 别怪我不客气。";
 			link.l3.go = "Caleuche_Alonso_8";
@@ -1065,7 +1065,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Caleuche_Alonso_8":
-			dialog.text = "如您所愿, 船长。伙计们原本指望更多……不过您是船长, 您说了算。";
+			dialog.text = "如您所愿, 船长。伙计们原本指望更多…… 不过您是船长, 您说了算。";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Caleuche_AlonsoAfterWinOnShip_4");
@@ -1533,28 +1533,28 @@ void ProcessDialogEvent()
 		break;
 
 		case "Caleuche_Reginald_23":
-			dialog.text = "该死的……我没带在身上。 那东西在巴巴多斯岛。";
+			dialog.text = "该死的…… 我没带在身上。 那东西在巴巴多斯岛。";
 			link.l1 = "那你这条破船现在就得下水喂鱼, 而你就老老实实跟我回去关进货舱。咱们路上有的是时间聊聊它在哪儿。相信我, 我船上有人能让最顽固的家伙开口——不废话, 也不用折腾太久。";
 			link.l1.go = "Caleuche_Reginald_24";
 		break;
 
 		case "Caleuche_Reginald_24":
 			dialog.text = "没那个必要。它在灯塔的一个箱子里, 锁着。这是钥匙。";
-			link.l1 = "明智的选择, 伙计。可惜其他人没你这么有脑子……不然我也不用老是弄脏自己的手。";
+			link.l1 = "明智的选择, 伙计。可惜其他人没你这么有脑子…… 不然我也不用老是弄脏自己的手。";
 			link.l1.go = "Caleuche_Reginald_24_1";
-			link.l2 = "你确实做了个明智的决定。但问题是……我不能留你活口。 你一有机会就会跑去找那帮荷兰商人告状, 而我可不想惹他们注意。";
+			link.l2 = "你确实做了个明智的决定。但问题是…… 我不能留你活口。 你一有机会就会跑去找那帮荷兰商人告状, 而我可不想惹他们注意。";
 			link.l2.go = "Caleuche_Reginald_24_2";
 		break;
 		
 		case "Caleuche_Reginald_24_1":
-			dialog.text = "那箱子里, 是我这些年替荷兰人卖命挣下的全部……";
-			link.l1 = "那就算我们达成交易了: 箱子归我, 你的小命归你。公平得很……";
+			dialog.text = "那箱子里, 是我这些年替荷兰人卖命挣下的全部…… ";
+			link.l1 = "那就算我们达成交易了: 箱子归我, 你的小命归你。公平得很…… ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Caleuche_EndFightWithReginald");
 		break;
 		
 		case "Caleuche_Reginald_24_2":
-			dialog.text = "呃啊……";
+			dialog.text = "呃啊…… ";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Caleuche_KillToReginald");

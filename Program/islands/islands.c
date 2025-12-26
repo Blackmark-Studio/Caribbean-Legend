@@ -207,8 +207,7 @@ string Island_GetLocationReloadLocator(string _island, string _location)
 string GetRandIslandId()
 {
 	int n;
-    int islandsArray[2];
-	SetArraySize(&islandsArray, MAX_ISLANDS);
+    int islandsArray[MAX_ISLANDS];
 	int iNum = 0;
 	
 	for (n=0;n<MAX_ISLANDS;n++)

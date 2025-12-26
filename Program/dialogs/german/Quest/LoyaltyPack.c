@@ -27,6 +27,16 @@ void ProcessDialogEvent()
 		case "Alonso":
 			NextDiag.TempNode = "Alonso";
 			
+			// --> Эпилог
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				dialog.text = "...";
+				Link.l1 = "Alonso, je dois te parler.";
+				Link.l1.go = "SharlieEpilog_Alonso_1";
+				break;
+			}
+			// эпилог <--
+			
 			if (GetDLCenabled(DLC_APPID_1))
 			{
 				if(CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.FirstStage", "ready"))
@@ -95,7 +105,7 @@ void ProcessDialogEvent()
 			
             if (!SandBoxMode)
             {
-                link.l4 = "Du weißt doch Bescheid. Nach unserem denkwürdigen Gespräch auf der Ulysses wurde alles nur noch komplizierter…";
+                link.l4 = "Du weißt doch Bescheid. Nach unserem denkwürdigen Gespräch auf der Ulysses wurde alles nur noch komplizierter...";
                 link.l4.go = "Alonso_Choice_4";
             }
         break;
@@ -104,7 +114,7 @@ void ProcessDialogEvent()
             dialog.text = "Das nenne ich Freiheit! Hauptsache, es reicht für den Unterhalt des Schiffes und etwas bleibt für schlechte Zeiten in der Kiste.\n"+
                           "Wohin auch immer Laune, Auftrag oder Schatzkarte Euch führen - nehmt Passagiere mit, Frachtaufträge, jeden kleinen Job, der sich anbietet.\n"+
                           "Ein bisschen Kleinhandel schadet auch nicht - billig kaufen, wo es sich lohnt, verkaufen, wo man kann.\n"+
-                          "Und wenn Ihr unterwegs einen einsamen Händler seht… Hehe. Ihr habt recht, Käpt'n. Das Abenteuer findet uns tatsächlich von selbst.";
+                          "Und wenn Ihr unterwegs einen einsamen Händler seht... Hehe. Ihr habt recht, Käpt'n. Das Abenteuer findet uns tatsächlich von selbst.";
             
             AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 50);
             AddCharacterExpToSkill(pchar, SKILL_GRAPPLING, 50);
@@ -144,8 +154,8 @@ void ProcessDialogEvent()
         
         case "Alonso_Choice_4":
             dialog.text = "Ich seh das anders, Käpt'n. Auf der Ulysses wart Ihr nur Passagier - diese armen Seelen haben keine Kontrolle über ihr Schicksal. Jetzt seid Ihr Kapitän, der sich seinen Hut verdient hat, also könnt Ihr jedes Problem lösen. Ich hab's Euch schon mal gesagt - es gibt keinen höheren Stand in unserer Welt.\n"+
-                          "Mein Bauch sagt mir, diese Geschichte mit Eurem Bruder wird noch Jahre dauern, also kümmert Euch erstmal um Euch selbst. Monsieur Michel läuft nicht weg, hehe…\n"+
-                          "Ihr seid nicht der Einzige mit Problemen in der Karibik. Perfekte Zeit, anderen zu helfen und dabei Geld, Ausrüstung und Verbindungen zu verdienen. Ihr lernt unterwegs alles, was Ihr für diese Familienangelegenheit braucht…";
+                          "Mein Bauch sagt mir, diese Geschichte mit Eurem Bruder wird noch Jahre dauern, also kümmert Euch erstmal um Euch selbst. Monsieur Michel läuft nicht weg, hehe...\n"+
+                          "Ihr seid nicht der Einzige mit Problemen in der Karibik. Perfekte Zeit, anderen zu helfen und dabei Geld, Ausrüstung und Verbindungen zu verdienen. Ihr lernt unterwegs alles, was Ihr für diese Familienangelegenheit braucht...";
             
             AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 100);
             ChangeCharacterComplexReputation(pchar, "nobility", 1);
@@ -175,14 +185,14 @@ void ProcessDialogEvent()
         
         // История Алонсо
         case "Alonso_Story_1":
-            dialog.text = "Also in Klöstern war ich nicht, da lüg ich nicht. Allerdings hab ich mal bei der Heiligen Inquisition gedient…";
+            dialog.text = "Also in Klöstern war ich nicht, da lüg ich nicht. Allerdings hab ich mal bei der Heiligen Inquisition gedient...";
             link.l1 = "Wie zum Teufel kam das denn?";
             link.l1.go = "Alonso_Story_2";
         break;
         
         case "Alonso_Story_2":
             dialog.text = "Oh! Das war so. Ich hab als Söldner im europäischen Krieg gedient. Der Teufel weiß, wie's angefangen hat oder wer gegen wen kämpfte. Wir wussten nur, der Krieg lief schon dreißig Jahre und welcher Kommandant halbwegs regelmäßig zahlte. Das war vielleicht ein Abenteuer!\n"+
-                          "Das war '42… oder war's '41? Egal. Zwei Kompanien, beide im Dienst des Kaisers, trafen sich im Wald. Im Nebel. Und hackten sich gegenseitig in Stücke! Drei Tage Gemetzel!";
+                          "Das war '42... oder war's '41? Egal. Zwei Kompanien, beide im Dienst des Kaisers, trafen sich im Wald. Im Nebel. Und hackten sich gegenseitig in Stücke! Drei Tage Gemetzel!";
             link.l1 = "Wie ist das möglich?";
             link.l1.go = "Alonso_Story_3";
         break;
@@ -227,7 +237,7 @@ void ProcessDialogEvent()
         
         case "Alonso_Escape":
             PlaySound("ambient\SEA\Ship_bell_Two.wav");
-            dialog.text = "Äh…\n"+
+            dialog.text = "Äh...\n"+
                           "Die Glocken läuten, Käpt'n! Zeit, an die Arbeit zu gehen. Ein andermal weiter.";
             link.l1 = "Wir werden dieses Gespräch definitiv fortsetzen. Danke für das Geschenk!";
             link.l1.go = "exit";
@@ -302,7 +312,7 @@ void ProcessDialogEvent()
             SetAlchemyRecipeKnown("vodka");
 
             dialog.text = "Das ist das Gebräu, von dem ich erzählt hab. Und das Rezept. Falls es Euch gefällt, hehe.";
-            link.l1 = "Tut mir leid, mein Freund, aber Gekritzel und irgendein trübes Gebräu sind nicht…";
+            link.l1 = "Tut mir leid, mein Freund, aber Gekritzel und irgendein trübes Gebräu sind nicht...";
             link.l1.go = "Alonso_Lvl_8_Gift_3";
         break;
 
@@ -438,5 +448,71 @@ void ProcessDialogEvent()
             link.l1.go = "exit";
 			AddDialogExitQuestFunction("LoyaltyPack_FourthStage_DlgExit");
         break;
+		
+		// --> Эпилог
+		case "SharlieEpilog_Alonso_1":
+			dialog.text = "Geht es um Floran? Ich habe ihm schon gesagt, dass...";
+			link.l1 = "Nein, Kumpel, es geht um etwas ganz anderes. Ich habe beschlossen, nach Europa zu segeln. Für unbestimmte Zeit.";
+			link.l1.go = "SharlieEpilog_Alonso_2";
+		break;
+
+		case "SharlieEpilog_Alonso_2":
+			if (GetCompanionQuantity(pchar) <= 1) sStr = "unser Schiff";
+			else sStr = "unsere Schiffe";
+			dialog.text = "Kein Problem, Käpt’n. Das Schiff ist robust, die Crew erfahren, wir brauchen nur noch Proviant...";
+			link.l1 = "Ich werde mit einem fremden Schiff fahren. Als Passagier. Du musst "+sStr+" beim Hafenamt abstellen und die Mannschaft entlassen. Und dann entscheiden: bleibst du hier und heuerst woanders an, oder kommst du mit mir nach Frankreich – als Freund.";
+			link.l1.go = "SharlieEpilog_Alonso_3";
+		break;
+
+		case "SharlieEpilog_Alonso_3":
+			dialog.text = "...";
+			link.l1 = "Übrigens, völlig unabhängig davon: (flüstert) ich kenne ein paar Mädels in Bordeaux... Solche Zauberinnen findest du in der Karibik nicht. Auf Typen wie dich stehen sie total – vor allem, wenn du von unseren Schlachten erzählst...";
+			link.l1.go = "SharlieEpilog_Alonso_4";
+		break;
+
+		case "SharlieEpilog_Alonso_4":
+			dialog.text = "Wenn’s um Mädels geht... bin ich dabei. Hehe. Aber warum nicht mit unserem Schiff? Und warum als Passagier? Die Jungs würden vielleicht ein bisschen meckern – aber sie würden dir überallhin folgen, in den Himmel oder die Hölle.";
+			link.l1 = "Als ich zum ersten Mal hier ankam, hätte ich nie gedacht, dass ich mal Seemann werde. Und jetzt kann ich mir nichts anderes mehr vorstellen. Ich will herausfinden, ob ich es ertragen kann, kein Kapitän mehr zu sein... und vielleicht das Leben auf See und die Überfälle hinter mir zu lassen.";
+			link.l1.go = "SharlieEpilog_Alonso_nothing";
+			link.l2 = "Lange Geschichte. Ich erzähl sie dir in der Taverne – bei einem Becher Rum. Und lad die Crew ein. Wir machen eine richtige Abschiedssause. Hier, nimm das – gib ihnen einen Monatslohn als Abfindung.";
+			link.l2.go = "SharlieEpilog_Alonso_salary";
+		break;
+
+		case "SharlieEpilog_Alonso_nothing":
+			dialog.text = "Dem Schicksal entkommt man nicht, Käpt’n. Wenn du dazu bestimmt bist, bis zum Ende Kapitän zu sein – dann ist es eben so.";
+			link.l1 = "Wir werden sehen, "+npchar.name+", wir werden sehen. Aber jetzt ist es Zeit, sich um die Dinge zu kümmern. Wir stechen in zwei Wochen in See. Du wirst nie erraten, auf welchem Schiff...";
+			link.l1.go = "SharlieEpilog_Alonso_5";
+		break;
+
+		case "SharlieEpilog_Alonso_salary":
+			dialog.text = "So gefällt mir das! Das macht es leichter, ihnen die Nachricht zu überbringen.";
+			link.l1 = "Du wirst nie erraten, auf welchem Schiff...";
+			link.l1.go = "SharlieEpilog_Alonso_5";
+			salary = GetSalaryForShip(PChar);
+			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+		break;
+
+		case "SharlieEpilog_Alonso_5":
+			dialog.text = "Spann mich nicht auf die Folter, Käpt’n.";
+			link.l1 = "Auf der Pinasse '"+GetShipName("Ulysse")+"'.";
+			link.l1.go = "SharlieEpilog_Alonso_6";
+		break;
+
+		case "SharlieEpilog_Alonso_6":
+			dialog.text = "Das kann nicht sein... Wir segeln auf demselben Schiff, mit dem wir damals ankamen? Ich kann’s kaum glauben...";
+			link.l1 = "Genau dieses, "+npchar.name+". Wie ich davon erfahren habe, erzähl ich dir später – in der Taverne, bei einem Becher Rum. Jetzt haben wir zu tun.";
+			link.l1.go = "SharlieEpilog_Alonso_7";
+		break;
+
+		case "SharlieEpilog_Alonso_7":
+			dialog.text = "Jawohl, Käpt’n... Hach... Es wird schwer, sich von den Jungs zu verabschieden. Sie sind wie eine Familie für mich. Aber was soll man machen...";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Alonso";
+			npchar.quest.SharlieEpilog_FarewellOfficers = true;
+			AddDialogExitQuestFunction("SharlieEpilog_Alonso_exit");
+		break;
+
+		// эпилог <--
 	}
 } 

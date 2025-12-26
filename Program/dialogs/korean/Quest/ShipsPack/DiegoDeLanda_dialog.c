@@ -19,8 +19,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "First time":
-			dialog.text = "What do you want?";
-			link.l1 = "Nothing.";
+			dialog.text = "뭘 원하지?";
+			link.l1 = "아무것도 아니다.";
 			link.l1.go = "exit";
 		break;
 
@@ -28,26 +28,26 @@ void ProcessDialogEvent()
 		case "DiegoDeLanda_Meeting":
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 1)
 			{
-				dialog.text = "Sad story, isn’t it?";
-				link.l1 = "Who are you?";
+				dialog.text = "슬픈 이야기지, 그렇지 않아?";
+				link.l1 = "너 누구야?";
 				link.l1.go = "DiegoDeLanda_Meeting_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 2)
 			{
-				dialog.text = "Greetings, captain.";
-				link.l1 = "Wait! We’ve met before!";
+				dialog.text = "안녕하시오, 선장.";
+				link.l1 = "잠깐! 우리 전에 만난 적 있잖아!";
 				link.l1.go = "DiegoDeLanda_Meeting_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 3)
 			{
-				dialog.text = "One. Two. Three.";
-				link.l1 = "Let’s stop this performance. Who are you?";
+				dialog.text = "하나. 둘. 셋.";
+				link.l1 = "이 연극은 그만두자. 너 누구야?";
 				link.l1.go = "DiegoDeLanda_Meeting_Third_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 4)
 			{
-				dialog.text = "Four.";
-				link.l1 = "Two left?";
+				dialog.text = "넷.";
+				link.l1 = "두 명 남았어?";
 				link.l1.go = "DiegoDeLanda_Meeting_Fourth_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 5)
@@ -60,50 +60,50 @@ void ProcessDialogEvent()
 		case "DiegoDeLanda_Meeting_2":
 			if (CheckAttribute(pchar, "questTemp.DiegoDeLanda_SantaMisericordia"))
 			{
-				dialog.text = "You know what’s special about this crypt? Here lie two souls connected by blood. Father and son de Alameda. One fell to the hands of sinners, the other... hmm, found his way to the Lord.";
-				link.l1 = "Don Fernando’s diary brought me here.";
+				dialog.text = "이 무덤이 왜 특별한지 아나? 여기에는 피로 이어진 두 영혼이 누워 있지. 알라메다 가문의 부자(父子)야. 한 명은 죄인들의 손에 쓰러졌고, 다른 한 명은... 흠, 주님의 곁으로 갔지.";
+				link.l1 = "돈 페르난도 일기가 나를 여기로 이끌었어.";
 				link.l1.go = "DiegoDeLanda_SantaMisericordia_2";
 			}
 			if (CheckAttribute(pchar, "questTemp.DiegoDeLanda_LadyBeth"))
 			{
-				dialog.text = "Did you see Lady Bishop? Sad fate, isn’t it? But I’m afraid it was deserved.";
-				link.l1 = "You know Elizabeth?";
+				dialog.text = "레이디 비숍을 봤어? 안타까운 운명이지, 그렇지 않아? 하지만 어쩌면 당연한 결과였을지도 몰라.";
+				link.l1 = "엘리자베스를 알아?";
 				link.l1.go = "DiegoDeLanda_LadyBeth_2";
 			}
 			if (CheckAttribute(pchar, "questTemp.DiegoDeLanda_Memento"))
 			{
-				dialog.text = "Mortimer Grim.";
-				link.l1 = "You knew him, of course?";
+				dialog.text = "모티머 그림.";
+				link.l1 = "당연히 그를 알았겠지?";
 				link.l1.go = "DiegoDeLanda_Memento_2";
 			}
 			if (CheckAttribute(pchar, "questTemp.DiegoDeLanda_ClockTower"))
 			{
 				dialog.text = ""+GetCharacterName("Hendrik")+" "+GetCharacterName("van Doorn")+".";
-				link.l1 = "Your client?";
+				link.l1 = "네 의뢰인?";
 				link.l1.go = "DiegoDeLanda_ClockTower_2";
 			}
 		break;
 
 		case "DiegoDeLanda_Meeting_Third_2":
-			dialog.text = "\nThree more. At the count of six you’ll know everything.";
-			link.l1 = " If I don’t get clear answers from you right now, then I...";
+			dialog.text = "\n세 명 더. 여섯이 되면 모든 걸 알게 될 거야.";
+			link.l1 = " 지금 당장 분명한 대답을 듣지 못하면, 그때는 내가...";
 			link.l1.go = "DiegoDeLanda_Meeting_Third_3";
 		break;
 
 		case "DiegoDeLanda_Meeting_Third_3":
-			dialog.text = "\nYou’re doing well, captain. You deserve to know my name. It’s Diego de Landa.";
-			link.l1 = " Are you truly a priest?";
+			dialog.text = "\n잘하고 있군, 선장. 내 이름을 알 자격이 있지. 나는 디에고 데 란다다.";
+			link.l1 = " 정말 신부 맞소?";
 			link.l1.go = "DiegoDeLanda_Meeting_Third_4";
 		break;
 
 		case "DiegoDeLanda_Meeting_Third_4":
-			dialog.text = "First and foremost, I’m an artist. But let’s not rush...";
+			dialog.text = "무엇보다도, 나는 예술가야. 하지만 서두르지 말자...";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_Meeting_2";
 		break;
 		
 		case "DiegoDeLanda_Meeting_Fourth_2":
-			dialog.text = "\nQuite right, Captain. The third act begins.";
+			dialog.text = "\n맞아요, 선장. 이제 3막이 시작되네.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_Meeting_2";
 		break;
@@ -111,8 +111,8 @@ void ProcessDialogEvent()
 		
 		//--> Святое Милосердие
 		case "DiegoDeLanda_SantaMisericordia_2":
-			dialog.text = "Ah... The diary. A remarkable thing — the written word. It’s like... a path in the dark. Leads you to where revelation awaits. Don Fernando often visited our parish. Especially in the last year.";
-			link.l1 = "You serve in the local parish? You knew Don Fernando?";
+			dialog.text = "아... 일기 말이오. 참으로 놀라운 것이지 — 글이라는 건. 마치... 어둠 속의 길과 같소. 그 길이 계시가 기다리는 곳으로 이끌지. 돈 페르난도는 우리 본당에 자주 들렀소. 특히 지난 1년 동안은 더 그랬지.";
+			link.l1 = "이 지역 본당에서 일하시오? 돈 페르난도를 알았소?";
 			link.l1.go = "DiegoDeLanda_SantaMisericordia_3";
 		break;
 
@@ -123,13 +123,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "DiegoDeLanda_SantaMisericordia_4":
-			dialog.text = "I... observed his path. And that book you took. Do you know what’s special about it?";
-			link.l1 = "It looks old.";
+			dialog.text = "나... 그의 길을 지켜봤어. 그리고 네가 가져간 그 책 말이야. 그게 뭐가 특별한지 알고 있나?";
+			link.l1 = "오래돼 보여.";
 			link.l1.go = "DiegoDeLanda_SantaMisericordia_5";
 		break;
 
 		case "DiegoDeLanda_SantaMisericordia_5":
-			dialog.text = "Old? Oh no. It’s... enlightened. The Bible of Don de Alameda Sr. Every word in it is like a beacon in the dark. Take it. Help your brothers in Christ and then, perhaps... it will lead you to something... greater.";
+			dialog.text = "늙었다고? 아니야. 이건... 깨우침이야. 도네 알라메다 시니어의 성경이지. 그 안의 모든 말씀이 어둠 속의 등불 같아. 가져가. 그리스도의 형제들을 도와주고, 그러면 어쩌면... 이 책이 너를 더 위대한 무언가로 이끌지도 몰라.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_leaving";
 		break;
@@ -137,20 +137,20 @@ void ProcessDialogEvent()
 		
 		//--> Леди Бет
 		case "DiegoDeLanda_LadyBeth_2":
-			dialog.text = "Oh, yes. Poor woman. Her husband... not the kindest man. They say his plantations are the most productive on Barbados. And the cruelest. Do you know how many slaves die there each month? Recently, he beat to death a real doctor from England — a man of great mind and talent. But her fate isn’t much better, believe me.";
-			link.l1 = "You seem very well informed.";
+			dialog.text = "아, 그래. 불쌍한 여자지. 남편이... 그리 친절한 사람은 아니야. 그의 플랜테이션이 바베이도스에서 가장 생산적이라고들 하지. 그리고 가장 잔인하다고도. 거기서 한 달에 노예가 몇 명이나 죽는지 알아? 얼마 전엔 영국에서 온 진짜 의사를 때려죽였어 — 머리도 좋고 재능도 뛰어난 사람이었지. 하지만 그녀의 운명도 별반 다르지 않아, 내 말 믿어.";
+			link.l1 = "꽤 잘 알고 있는 것 같군.";
 			link.l1.go = "DiegoDeLanda_LadyBeth_3";
 		break;
 
 		case "DiegoDeLanda_LadyBeth_3":
-			dialog.text = "People come to me for confession, Captain. I hear things they’re afraid to tell even their loved ones. Their fears, their sins... their pain.";
-			link.l1 = "Aren’t you afraid of persecution? It’s not easy for a Catholic priest on English soil.";
+			dialog.text = "사람들이 고해성사를 하러 내게 옵니다, 선장. 그들은 사랑하는 이에게조차 말하지 못하는 것들을 내게 털어놓지요. 그들의 두려움, 죄악... 그리고 고통까지.";
+			link.l1 = "박해가 두렵지 않소? 영국 땅에서 가톨릭 신부로 산다는 건 쉽지 않으니.";
 			link.l1.go = "DiegoDeLanda_LadyBeth_4";
 		break;
 
 		case "DiegoDeLanda_LadyBeth_4":
-			dialog.text = "My fears are nothing compared to what you just left behind that door. And that little book you took from that unfortunate woman... If fear had a form, it would be exactly like that.\n"+
-		"Good day, Captain.";
+			dialog.text = "내 두려움은 자네가 방금 저 문 뒤에 두고 온 것에 비하면 아무것도 아니지. 그리고 자네가 그 불쌍한 여자에게서 가져간 그 작은 책... 만약 두려움에 형태가 있다면, 바로 그것과 똑같을 거야.\n"+
+		"좋은 하루입니다, 선장님.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_leaving";
 		break;
@@ -159,25 +159,25 @@ void ProcessDialogEvent()
 		
 		//--> Мементо
 		case "DiegoDeLanda_Memento_2":
-			dialog.text = "Tiger, tiger, burning bright\n"+
-			"In the forests of the night,\n"+
-			"What immortal hand or eye\n"+
-			"Could frame thy fearful symmetry?\n"+
-			"Of course I knew him, Captain. But did you?";
-			link.l1 = "I’ve never met a man with a more tragic fate.";
+			dialog.text = "호랑이여, 호랑이여, 불타오르는 그 빛이여\n"+
+			"밤의 숲 속에서,\n"+
+			"어떤 불멸의 손이나 눈이\n"+
+			"그대의 두려운 균형을 누가 만들 수 있을까?\n"+
+			"물론 그를 알았지, 선장. 하지만 자네는 알았나?";
+			link.l1 = "나는 저보다 더 비극적인 운명을 가진 남자를 본 적이 없어.";
 			link.l1.go = "DiegoDeLanda_Memento_3";
 		break;
 
 		case "DiegoDeLanda_Memento_3":
-			dialog.text = "You have, but haven’t realized it yet.\n"+
-			"Then you didn’t know Grim. Even as you hold his skull in your hands.";
-			link.l1 = "What?!";
+			dialog.text = "너는 이미 가지고 있지만, 아직 깨닫지 못했지.\n"+
+			"그럼 너는 그림을 몰랐던 거야. 네가 그의 해골을 손에 쥐고 있으면서도.";
+			link.l1 = "뭐라고?!";
 			link.l1.go = "DiegoDeLanda_Memento_4";
 		break;
 
 		case "DiegoDeLanda_Memento_4":
-			dialog.text = "That’s no Christian way to treat the dead. Here, take this little post mortem instruction. A gift from me to you.\n"+
-			"Good day, Captain.";
+			dialog.text = "죽은 자를 그렇게 대하는 건 기독교답지 않지. 자, 이 작은 사후 지침을 받아라. 내가 너에게 주는 선물이야.\n"+
+			"좋은 하루입니다, 선장님.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_leaving";
 			SetAlchemyRecipeKnown("blade_SP_3low");	// рецепты от Катласа
@@ -188,15 +188,15 @@ void ProcessDialogEvent()
 		
 		//--> Башня с часами
 		case "DiegoDeLanda_ClockTower_2":
-			dialog.text = "Witty, Captain. You were his client, and he was mine.\n"+
-			"How alike you are.\n"+
-			"You haven't forgotten how you got into the registry, have you? First you helped the glorious city of Willemstad. Only to later drown many of its sons in blood.";
+			dialog.text = "재치 있군, 선장. 자네는 그의 의뢰인이었고, 그는 내 의뢰인이었지.\n"+
+			"너희 정말 닮았구나.\n"+
+			"네가 어떻게 명부에 오르게 됐는지 잊지 않았겠지? 처음엔 윌렘스타드의 영광스러운 도시에 도움을 줬지. 그런데 나중엔 그 도시의 많은 아들들을 피로 물들였잖아.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_ClockTower_3";
 		break;
 		
 		case "DiegoDeLanda_ClockTower_3":
-			dialog.text = "Though Hendrick didn't manage to do the latter. Difficult client, very difficult. Here, for instance. Read it at your leisure — a complete mystery.";
+			dialog.text = "하지만 헨드릭은 그걸 해내지 못했지. 까다로운 손님이야, 아주 까다로워. 여기, 예를 들어. 시간 날 때 읽어봐 — 완전히 수수께끼야.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_ClockTower_4";
 			// получаем документы Маартена
@@ -205,33 +205,33 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DiegoDeLanda_ClockTower_4":
-			dialog.text = "Every person is a building. Want to know what truly drives them? Look into their cellar.";
+			dialog.text = "모든 사람은 하나의 건물이지. 그들을 진짜로 움직이게 하는 게 뭔지 알고 싶어? 지하실을 들여다봐.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_ClockTower_5";
 		break;
 		
 		case "DiegoDeLanda_ClockTower_5":
-			dialog.text = "Here.";
+			dialog.text = "여기.";
 			if (CheckAttribute(pchar, "questTemp.ClockTower_GotHint"))
 			{
-				link.l1 = "Key to the cellar? I've already been there.";
+				link.l1 = "지하실 열쇠? 난 이미 거기 다녀왔어.";
 				link.l1.go = "DiegoDeLanda_ClockTower_6";
 			}
 			else
 			{
-				link.l2 = "What's in your cellar?";
+				link.l2 = "네 지하실에 뭐가 있지?";
 				link.l2.go = "DiegoDeLanda_ClockTower_7";
 			}
 		break;
 		
 		case "DiegoDeLanda_ClockTower_6":
-			dialog.text = "\nThen we have nothing more to discuss, Captain.";
-			link.l1 = "Offended? I wonder, what's in your cellar?";
+			dialog.text = "\n그렇다면 더 이상 논의할 것이 없군, 선장.";
+			link.l1 = "기분 상했나? 네 지하실엔 뭐가 있길래?";
 			link.l1.go = "DiegoDeLanda_leaving";
 		break;
 		
 		case "DiegoDeLanda_ClockTower_7":
-			dialog.text = "\nEvery conversation we have is a step down there, Captain.";
+			dialog.text = "\n우리가 나누는 대화 하나하나가 그곳으로 내려가는 발걸음이오, 선장.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_leaving";
 			ClockTower_AddBook_FromDiegoDeLanda(); // получаем ключ от подвала
@@ -248,27 +248,27 @@ void ProcessDialogEvent()
 		case "DiegoDeLanda_Leaving_1":
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 1)
 			{
-				dialog.text = "Tell me... Why? That was dangerous and foolish. What drives you, Captain? What is your fire?";
-				link.l1 = "It’s none of your business.";
+				dialog.text = "말해 봐... 왜지? 그건 위험하고 어리석은 짓이었어. 대체 무엇이 널 움직이게 하지, 선장? 네 안의 불꽃은 뭐야?";
+				link.l1 = "네가 신경 쓸 일 아니야.";
 				link.l1.go = "DiegoDeLanda_leaving_First_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 2)
 			{
-				dialog.text = "Second.";
-				link.l1 = "Last time you spoke in riddles. Will you do it again?";
+				dialog.text = "둘째.";
+				link.l1 = "지난번엔 수수께끼만 늘어놨지. 또 그럴 거야?";
 				link.l1.go = "DiegoDeLanda_leaving_Second_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 3)
 			{
 				dialog.text = "...";
-				link.l1 = "Wait, de Landa. I can't just let you take and leave like that.";
+				link.l1 = "잠깐, de Landa. 그냥 가져가고 떠나게 둘 수는 없어.";
 				link.l1.go = "DiegoDeLanda_Leaving_Third_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 4)
 			{
-				dialog.text = "Nothing but hints, theatrics, and no action\n"+
-				"On my part, at least. You've had plenty of action.";
-				link.l1 = "I have an idea how to fix that.";
+				dialog.text = "힌트만 있고, 요란하기만 하며, 행동은 없군\n"+
+				"적어도 나는 그렇지. 너는 이미 충분히 싸웠잖아.";
+				link.l1 = "그걸 해결할 방법이 있어.";
 				link.l1.go = "DiegoDeLanda_Leaving_Fourth_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 5)
@@ -278,81 +278,81 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DiegoDeLanda_Leaving_First_2": // Первое прощание
-			dialog.text = "I don’t understand. The others — yes. But not you. Not yet.";
-			link.l1 = "The others?";
+			dialog.text = "이해가 안 돼. 다른 놈들은 그렇다 쳐. 하지만 너는 아니야. 아직은.";
+			link.l1 = "나머지 놈들은?";
 			link.l1.go = "DiegoDeLanda_Leaving_First_3";
 		break;
 
 		case "DiegoDeLanda_Leaving_First_3":
-			dialog.text = "One, for example, seeks justice. Another... obsessed with the dark waters of death. People so easily lose themselves in their desires. Don’t you think?";
-			link.l1 = "You’re a strange priest, Father.";
+			dialog.text = "예를 들어, 한 명은 정의를 추구하지. 또 다른 놈은... 죽음의 어두운 바다에 집착하고 있어. 사람들은 욕망에 너무 쉽게 자신을 잃어버리지. 그렇지 않나?";
+			link.l1 = "이상한 신부군요, 신부님.";
 			link.l1.go = "DiegoDeLanda_Leaving_First_4";
 		break;
 
 		case "DiegoDeLanda_Leaving_First_4":
 			dialog.text = "...";
-			link.l1 = "I should go.";
+			link.l1 = "가야겠다.";
 			link.l1.go = "DiegoDeLanda_Leaving_First_5";
 		break;
 
 		case "DiegoDeLanda_Leaving_First_5":
-			dialog.text = "Of course. Your work is only beginning, Captain.";
+			dialog.text = "물론이지. 네 일은 이제 시작일 뿐이야, 선장.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_Leaving_End";
 		break;
 
 		case "DiegoDeLanda_leaving_Second_2": // Второе прощание
-			dialog.text = "\nThe true riddle stands before me. You’ve already gathered two... relics. You like collecting such things? Are you a collector?";
-			link.l1 = "How do you know?";
+			dialog.text = "\n진짜 수수께끼가 내 앞에 있군. 이미 유물 두 개를 모았지... 이런 것들 모으는 걸 좋아하나? 수집가라도 되는 거야?";
+			link.l1 = "어떻게 알았지?";
 			link.l1.go = "DiegoDeLanda_leaving_Second_3";
 		break;
 
 		case "DiegoDeLanda_leaving_Second_3":
-			dialog.text = "A trophy hunter?";
-			link.l1 = "I repeat my question: how do you know?";
+			dialog.text = "전리품 사냥꾼인가?";
+			link.l1 = "내 질문을 다시 묻지. 어떻게 알고 있는 거지?";
 			link.l1.go = "DiegoDeLanda_leaving_Second_4";
 		break;
 		
 		case "DiegoDeLanda_leaving_Second_4":
-			dialog.text = "A thrill seeker?";
+			dialog.text = "스릴을 좇는 자인가?";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_leaving_Second_5";
 		break;
 
 		case "DiegoDeLanda_leaving_Second_5":
-			dialog.text = "\nAh. Of course. Naturally. Well then, Captain, I won’t keep you.";
-			link.l1 = "Hold on, Father. You still haven’t answered my question.";
+			dialog.text = "\n아. 물론이지. 당연하지. 그럼, 선장, 더 이상 붙잡지 않겠네.";
+			link.l1 = "잠깐만요, 신부님. 아직 제 질문에 답하지 않으셨습니다.";
 			link.l1.go = "DiegoDeLanda_leaving_Second_6";
 		break;
 
 		case "DiegoDeLanda_leaving_Second_6":
-			dialog.text = "Oh, Captain. I can’t. Sometimes answers wound more than ignorance. Go in peace. And take care of your collection... of trophies. They might come in handy for the journey ahead.";
+			dialog.text = "아, 선장님. 나는 못 하겠소. 때로는 답이 무지보다 더 상처가 되오. 평안히 가시오. 그리고 당신의 전리품... 그 수집품들도 잘 챙기시오. 앞으로의 여정에 쓸모가 있을지도 모르니.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_Leaving_End";
 		break;
 
 		case "DiegoDeLanda_Leaving_Third_2": // Третье прощание
-			dialog.text = "Come now, Captain. Isn’t it interesting to you? Aren’t you having fun? Do you have enough trophies?\n"+
-			"That’s your fire, Captain. You’re curious about what comes next. You love beautiful ships and fascinating trinkets.\n"+
-			"You simply can’t help but collect them all.\n"+
+			dialog.text = "자, 이제 오시오, 선장. 흥미롭지 않소? 재미없소? 전리품은 충분하오?\n"+
+			"그게 바로 당신의 불꽃이오, 선장. 다음에 무슨 일이 일어날지 궁금해하지. 아름다운 배와 신기한 장신구를 사랑하잖소.\n"+
+			"그냥 전부 모으지 않을 수가 없지.\n"+
 			"\n"+
-			"You can shoot me right now.";
-			link.l1 = "What?!";
+			"지금 당장 나를 쏴도 돼.";
+			link.l1 = "뭐?!";
 			link.l1.go = "DiegoDeLanda_Leaving_Third_3";
 		break;
 
 		case "DiegoDeLanda_Leaving_Third_3":
-			dialog.text = "Go ahead. But then you won’t learn everything and won’t get the complete set of trophies. Though you’ll get all the ships anyway...\n"+
-			"Good day, Captain.";
-			link.l1 = "(Let him go)";
+			dialog.text = "가 봐라. 하지만 그러면 모든 걸 알 수 없고, 전리품도 전부 얻지 못할 거다. 그래도 배는 전부 얻게 되겠지...\n"+
+			"좋은 하루입니다, 선장님.";
+			link.l1 = "(놔둬)";
 			link.l1.go = "DiegoDeLanda_Leaving_End";
-			link.l2 = "(Shoot him)";
+			link.l2 = "(쏴라)";
 			link.l2.go = "DiegoDeLanda_Leaving_Shoot";
 		break;
 		
 		case "DiegoDeLanda_Leaving_Fourth_2": // Четвёртое прощание
-			dialog.text = "\nToo late, Captain. You had your chance to shoot me. And what a chance! On the count of three: one, two, three... and nothing. But don't worry. On six, I'll give you action. Not much longer now.\n"+
-			"Good day, Captain.";
+			dialog.text = "\n이미 늦었소, 선장. 날 쏠 기회가 있었지. 그것도 대단한 기회였는데! 셋을 세자: 하나, 둘, 셋... 그리고 아무 일도 없었지. 하지만 걱정 마. 여섯이 되면 제대로 보여주지. 이제 얼마 안 남았어.\n"+
+			"좋은 하루입니다, 선장님.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_Leaving_End";
 		break;

@@ -808,7 +808,7 @@ void ProcessDialogEvent()
 		
 		case "attack_fort":
                 dialog.text = "And what do you mean?";
-                link.l1 = "I can assist you in crushing the fort of the colony of "+GetConvertStr(aData.Colony+" Town","LocLables.txt")+" and capture the city, and the spoils, which, if we succeed, we shall divide among ourselves.";
+                link.l1 = "I can assist you in crushing the fort of the colony of "+GetCityName(aData.Colony)+" and capture the city, and the spoils, which, if we succeed, we shall divide among ourselves.";
                 link.l1.go = "Siegehelp_1";
                 link.l2 = "Actually, my business is hardly worth your time. Farewell, "+GetAddress_FormToNPC(NPChar)+".";
                 link.l2.go = "exit";
@@ -969,7 +969,7 @@ void ProcessDialogEvent()
             aData.loot = sti(aData.loot) - ilt;
             if (CheckAttribute(PChar, "quest.LeaveTown")) Pchar.quest.LeaveTown.over = "yes";
             //--> слухи
-            SiegeRumour("I've been told that you had helped our squadron in the assault of the "+NationNameSK(sti(aData.conation))+" colony - "+GetConvertStr(aData.Colony+" Town", "LocLables.txt")+"! We're so thankfull to you, "+ GetAddress_Form(NPChar)+".", "", sti(aData.nation), -1, 30, 3);
+            SiegeRumour("I've been told that you had helped our squadron in the assault of the "+NationNameSK(sti(aData.conation))+" colony - "+GetCityName(aData.Colony)+"! We're so thankfull to you, "+ GetAddress_Form(NPChar)+".", "", sti(aData.nation), -1, 30, 3);
             //<-- слухи
 		break;
 
@@ -1693,7 +1693,7 @@ void ProcessDialogEvent()
 					case 31: sTemp = "obereg_10"; break;	
 				}
 				pchar.GenQuest.FishingBoatSTemp = sTemp;
-				dialog.text = "It's "+GetConvertStr("itmname_"+sTemp,"ItemsDescribe.txt")+". Managed to get it ... well, never mind where. Thought I'd sell it to some connoisseur. I'll let you have it for only 10,000 pesos! Will you take it?";
+				dialog.text = "It's "+GetItemName(sTemp)+". Managed to get it ... well, never mind where. Thought I'd sell it to some connoisseur. I'll let you have it for only 10,000 pesos! Will you take it?";
 				if(sti(pchar.money) > 9999)
 				{
 					link.l1 = "I'll take it, of course! The thing is standing. ";

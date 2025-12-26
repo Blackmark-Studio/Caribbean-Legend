@@ -1,0 +1,67 @@
+Node0_title {In the harbor}
+Node0_a {You enter a hostile port, hoping you will not be exposed.}
+Node0_b_a {The harbor is bustling — a large $rand(French|Spanish|Dutch|English) merchant ship has arrived recently. All available workers are busy unloading.}
+Node0_b_b {The harbor is deserted, and signs of a recent battle are visible along the shore. $rand(Scorch marks and cannonball impacts mar the cobblestones.|Some houses are damaged by bombs, and grieving women stand in the streets.)}
+Node0_b_c {The harbor is crowded with soldiers. A large warship lies at anchor — a $rand(Galleon|Frigate|Corvette). It is $rand(clearly damaged and undergoing repairs, with scars of a recent battle on its hull|in full combat readiness, preparing to set sail).}
+Node0_c_a {A port overseer approaches you reluctantly, looking clearly tired and drowsy.}
+Node0_c_b {The port master himself approaches you, clearly intending to give you his undivided attention. In his eyes you can read $rand(irritation — he is plainly doing work beneath his station and knows others see it|greed — he has spotted easy money in you and is already anticipating an evening spree).}
+Node0_c_c {Port guards approach you. Their weapons are raised, and they look extremely tense.}
+Node0_d {You gather your strength and prepare to work wonders with words. Or perhaps simply carve your way into the city?}
+Node0_b_a_reaction {Pose as an escort vessel}
+Node0_b_a_reaction_log {You manage to pass yourself off as a merchant ship within a convoy. You join the unloading process and now attract far less attention.}
+Node0_b_a_reaction_factor {Escort Ship}
+Node0_b_b_reaction {Pose as a medical vessel}
+Node0_b_b_reaction_log {You successfully pose as a medical ship sent to tend to the wounded. A doctor is a rare sight in the Caribbean, and a few well-chosen words are enough to make them believe you.}
+Node0_b_b_reaction_factor {Hospital Ship}
+Node0_b_c_reaction {Pose as a secret courier ship}
+Node0_b_c_reaction_log {You have long practiced adopting a mysterious air, and manage to convince the soldiers that you are a secret agent.}
+Node0_b_c_reaction_factor {Courier Ship}
+Node0_c_a_reaction {Suggest dropping formalities}
+Node0_c_a_reaction_log_0 {Your sympathy is believed, and you manage to win the harbor master’s favor.}
+Node0_c_a_reaction_log_1 {They hear irony in your words. The harbor master now treats you worse.}
+Node0_c_a_reaction_factor {Compassion}
+Node0_c_b_reaction {Show willingness to pay double duty}
+Node0_c_b_reaction_log {You quickly find a weak spot in the corrupt system and greatly improve your chances for a reasonable price. Unfortunately, the harbor master is not the only one who needs to be appeased today.}
+Node0_c_b_reaction_factor {Bribe}
+Node0_c_c_reaction {Single out the weakest guard and lean on him}
+Node0_c_c_reaction_log_0 {You manage to single out an easy target among the guards, and after a few well-aimed words he takes your side.}
+Node0_c_c_reaction_log_1 {You clearly choose the wrong target, and the guards become even more aggressive.}
+Node0_c_c_reaction_factor {Weak Link}
+Node0_a_action {Try to pass}
+Node0_b_action {Break through by force}
+Node0_c_action {Show the trade license}
+Node0_success {$rand(You manage to pass as a neutral ship and are let into the city without trouble. You should settle your business quickly, as suspicion may arise again.|You were close to giving yourself away, but it seems everything worked out. Whether it was skill or divine intervention will be seen in time.)}
+Node0_success_action {Excellent!}
+Node1_a {You fail to pass as a friend, and the situation begins to heat up. Still, you are sure it can be salvaged—you just need the right approach.}
+Node1_b_a {Something has prompted the local guards to carry out a reinforced inspection. The ship is being surrounded.}
+Node1_b_b {Local sailors seem to have recognized your ship as belonging to _$playerNationAbl. They clearly intend to expose you.}
+Node1_b_c {While the port authority was considering your request, a patrol ship inconveniently entered the harbor. Seeing the delay, they demanded to inspect your vessel.}
+Node1_c_a {You notice that the flag over the residence is lowered—the city is in mourning.}
+Node1_c_b {You notice among the onlookers a familiar captain whom you once escorted at sea.}
+Node1_c_c {You hear an unusual ringing of bells—a festive service is beginning in the local church.}
+Node1_d {A decision must be made immediately.}
+Node1_b_a_reaction {Convince soldiers of valuable cargo}
+Node1_b_a_reaction_log {You try to convince the soldiers that there is valuable cargo aboard. Faced with accounting figures and complex terms, the soldiers clearly waver, and the threat of losing pay humbles the hesitant.}
+Node1_b_a_reaction_factor {Important Cargo}
+Node1_b_b_reaction {Convince sailors the sea has no nations}
+Node1_b_b_reaction_log {You try to convince the sailors that you are all in the same boat. Seeing your strong hands, work-worn calluses, and sea-battered face, the sailors soften and accept you as one of their own.}
+Node1_b_b_reaction_factor {Solidary Sailors}
+Node1_b_c_reaction {Invoke maritime law}
+Node1_b_c_reaction_log {You try to prevent the soldiers from the patrol ship from boarding by citing maritime laws that explicitly forbid random, unfounded inspections of vessels in port. You dredge up everything you know about naval law, seasoning it with fabrications, tall tales, and bureaucratic jargon to drag the patrol ship into this whirlpool. Never before has cursing been so bureaucratic.}
+Node1_b_c_reaction_factor {Legal Pedantry}
+Node1_c_a_reaction {Try to guess the reason for the mourning}
+Node1_c_a_reaction_log {You try to guess the reason for the mourning and state that you have arrived because of it. You are not entirely sure whether your ruse worked, but the attempt clearly did not go unnoticed.}
+Node1_c_a_reaction_factor {Coincidental Mourning}
+Node1_c_b_reaction {Seek support from a familiar captain}
+Node1_c_b_reaction_log_0 {You call over the captain and ask him to vouch for you before the guards. He remembers your shared adventures and readily puts in a good word.}
+Node1_c_b_reaction_log_1 {You call the captain over and ask him to vouch for you before the guards. At the last moment you hesitate, remembering how you know him—you carried out a couple of bold raids on peaceful merchants together. He does stand up for you, but he himself is not well regarded in the colony.}
+Node1_c_b_reaction_factor {Familiar Captain}
+Node1_c_c_reaction {Say that you are carrying church relics}
+Node1_c_c_reaction_log {You try to convince the guards that you are transporting valuable church items needed for a feast — $rand(a silver chalice|a monstrance for displaying the Host|a reliquary containing holy relics|an altar cross|a bishop’s mitre|brocade chasubles and stole|altar candlesticks|a small altar bell). To your surprise, the colony was indeed expecting a ship with church relics, and it is already badly overdue. They believe you.}
+Node1_c_c_reaction_factor {Church Items}
+Node1_a_action {Try to smooth things over}
+Node1_b_action {Weigh anchor and flee}
+Node1_success {$rand(You slip into the port, feeling the guards’ long gaze on you. One more second and it would all have fallen apart, but fate decided otherwise.|You enter the port with a heavy feeling—your ship clearly remains under suspicion. Everything worked out at the very last moment, but it’s better not to linger in the city.)}
+Node1_success_action {This time, we’re safe}
+Node1_fail {$rand(The guards raise the alarm—you’re exposed. Soldiers are already running along the pier, and the fort will know any minute.|The delay drags on, and the guards lose their patience. The entire port bristles with blades, and a signal is sent to the fort to ready the guns.)}
+Node1_fail_action {Run!}

@@ -1,0 +1,2096 @@
+#QUEST Gen_CityCapture
+Événement : Colonies assiégées
+#TEXT t1
+<@sCity> a été prise pour la gloire de @<sNation>.
+#TEXT t2
+J'ai pillé @<sCity>.
+#TEXT t3
+J'ai capturé @<sCity> pour moi-même.
+#TEXT t3_1
+@<sName> a été nommé pour diriger @<sCity>.
+#TEXT t3_2
+@<sName> de @<sCity> a été relevé de ses fonctions.
+#TEXT t4
+@<sCity> appartient désormais à @<sNation>.
+#TEXT t5
+@<sNation> a assiégé @<sCity>. Je n'ai que @<sDay> pour la sauver.
+#TEXT t5_1
+Les marines de @<sNation> ont débarqué près de @<sCity>. Je n'ai que @<sDay> pour m'occuper d'eux.
+#TEXT t6
+La flotte de @<sNation> est éliminée. @<sCity> est sauvée.
+#TEXT t6_1
+Les forces de @<sNation> sont détruites. @<sCity> est sauvée.
+#TEXT t7
+Maintenant, je possède @<sCity>.
+#TEXT t8
+J'ai passé un accord avec le gouverneur général de @<sNation>. @<sCity> est à moi.
+#TEXT dum
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#QUEST Gen_Contraband 
+Événement : Affaires de contrebande
+#TEXT t1
+Ils m'attendront sur @<sIsland> à un endroit appelé @<sLoc>.
+#TEXT t1_1
+Ils m'attendront sur le continent, à un endroit appelé @<sLoc>.
+#TEXT dum
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#QUEST Gen_ContrabandTravel 
+Événement : Naviguer avec les contrebandiers
+#TEXT 1
+Il est possible de se rendre à @<sLocTo>, qui n'est pas loin de @<sPlaceTo>. Leur navire m'attendra à @<sLoc> dans @<sDays>.
+Je dois trouver @<sPrice> pesos.
+#TEXT 2
+J'ai payé le voyage.
+#TEXT 3
+J'étais en retard. Je dois maintenant attendre un autre navire.
+#TEXT 4
+C'est fait. Je suis à @<sLocTo>. Il est temps de débarquer.
+#TEXT 5
+Nous sommes arrivés à destination, mais j'ai préféré profiter de l'occasion. Leur bateau est maintenant le mien. J'ai encore la tête hors de l'eau.
+#TEXT dum
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#QUEST Gen_StrangeInfo
+Travail secondaire : Ragots bizarres
+#TEXT 1
+On dit que @<sName> va rencontrer des contrebandiers à un endroit appelé @<sLoc>. Cela ressemble à du commerce illégal. Peut-être devrais-je le signaler ?
+#TEXT dum
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#QUEST Gen_PGGQuest1
+Travail secondaire : Offre de pirate
+#TEXT q1_Taverne
+J'ai rencontré un étrange pirate à la taverne. Il m'a dit qu'il avait une proposition intéressante à me faire. Son navire s'appelle "@<sShipName>". Il m'attend. Peut-être devrais-je lui rendre visite ?
+#TEXT q1_Taverne_1
+J'ai rencontré un étrange pirate à la taverne. Il m'a dit qu'il avait une proposition intéressante à me faire. Son navire s'appelle "@<sShipName>". Il m'attend. Peut-être devrais-je lui rendre visite ?
+#TEXT q1_Fermer
+Sa proposition ne me paraissait pas correcte, je l'ai donc rejetée.
+#TEXT q1_Detail_A
+Une caravane de @<sNation> chargée de @<sGoods> se trouve non loin de @<sColony>. Nous pouvons essayer de saisir quelques marchandises intéressantes.
+#TEXT q1_Detail_B
+Une caravane de @<sNation> chargée de @<sGoods> a souffert d'une tempête et a coulé près de @<sColony>. L'équipage a réussi à sauver quelques marchandises et a accosté dans la baie de @<sShore>.
+#TEXT q1_RefuseFight
+J'ai refusé de me battre contre @<sNation> et @<sPsName> pensait que j'allais faire le travail tout seul. Ses officiers m'ont attaqué et son navire a ouvert le feu dès que j'ai atteint mon vaisseau.
+#TEXT q1_Accepter
+J'ai apprécié son offre. Nous n'avons que @<nDays> pour intercepter.
+#TEXT q1_Accept_1
+J'ai apprécié son offre. Nous n'avons que @<nDays> pour intercepter.
+#TEXT q1_PGGGeadNoShips
+Malheureusement, @<sPsName> est mort pendant notre voyage. Je ne sais pas où chercher la caravane. Dommage, cette proie m'a échappé.
+#TEXT q1_PGGGeadNoShips_1
+Malheureusement, @<sPsName> est mort pendant notre voyage. Je ne peux pas faire ça tout seul. Dommage, cette proie m'a échappé.
+#TEXT q1_PGGGeadShips
+Malheureusement, @<sPsName> est mort dans un combat avec la caravane. Tout le butin est donc à moi.
+#TEXT q1_PGGDead
+Malheureusement, @<sPsName> est mort pendant notre voyage. Tout le butin est donc à moi.
+#TEXT q1_Time2Late
+Nous étions en retard, la proie s'est échappée.
+#TEXT q1_Echec
+Notre butin n'était pas à la hauteur de nos espérances.
+#TEXT q1_FailPay
+@<sPsName> a dit que tout était de ma faute et que je lui étais redevable. Je suppose qu'il a raison. Je l'ai payé pour éviter toute complication.
+#TEXT q1_FailNotPay
+@<sPsName> a dit que tout était de ma faute et que je lui étais redevable. Je lui ai dit d'aller se faire voir.
+#TEXT q1_OkPartager
+Le butin a été partagé selon les lois des Frères de la côte. Espérons que ce ne soit pas notre dernière affaire ensemble.
+#TEXT q1_OkNotShare
+Partager le butin ? Je préfère trancher quelques gorges et tout prendre.
+#TEXT dum
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#QUEST Rumour_GoldFleet
+Événement : Flotte d'or espagnole
+#TEXT 1
+On murmure que la flotte d'or espagnole a récemment quitté Portobelo et qu'elle navigue vers La Havane. Peut-être ne l'a-t-elle pas encore atteinte. Je pourrais essayer de l'intercepter.
+#TEXT 2
+On murmure que la flotte d'or espagnole a récemment quitté Portobelo et qu'elle navigue vers La Havane. Peut-être ne l'a-t-elle pas encore atteinte. Je pourrais essayer de l'intercepter.
+#TEXT 3
+On murmure que la flotte d'or espagnole a récemment quitté Portobelo et qu'elle navigue vers La Havane. Peut-être ne l'a-t-elle pas encore atteinte. Peut-être devrais-je l'intercepter ?
+#TEXT 4
+Le convoi d'or espagnol a été coulé. C'était dur, mais le prix en valait la peine.
+#TEXT 5
+Grâce à mes efforts, la flotte d'or espagnole, qui naviguait de Portobelo à La Havane, n'est pas arrivée à destination. Sa cargaison se trouve maintenant dans ma cale.
+#TEXT 6
+J'ai réussi à détruire et à piller la flotte d'or qui transportait les trésors depuis Portobelo.
+#TEXT 7
+On dit que la flotte espagnole a atteint Cuba. L'or et l'argent seront transférés en Espagne sous bonne garde.
+#TEXT 8
+On dit que la flotte espagnole a atteint Cuba. L'or et l'argent seront transférés en Espagne sous bonne garde.
+#TEXT 9
+On dit que la flotte espagnole a atteint Cuba. L'or et l'argent seront transférés en Espagne sous bonne garde.
+#TEXT 10
+J'ai appris que la flotte d'or espagnole se prépare dans le port de Portobelo pour un voyage . Elle sera envoyée à Cuba au début de @<sMonth>.
+#TEXT 11
+J'ai appris que la flotte d'or espagnole se prépare dans le port de Portobelo pour un voyage . Elle sera envoyée à Cuba au cours de la première moitié de @<sMonth>.
+#TEXT 12
+J'ai appris que la flotte d'or espagnole se prépare dans le port de Portobelo pour un voyage . Elle sera envoyée à Cuba au cours de la première moitié de @<sMonth>.
+#TEXT 13
+Nous nous sommes bien battus avec les Espagnols - quelques-uns de leurs navires n'atteindront jamais La Havane. Le butin pourrait être meilleur, mais nous avons dû battre en retraite.
+#TEXT 14
+Nous nous sommes bien battus avec les Espagnols - quelques-uns de leurs navires n'atteindront jamais La Havane. Le butin pourrait être meilleur, mais nous avons dû battre en retraite.
+#TEXT 15
+Nous nous sommes bien battus avec les Espagnols - quelques-uns de leurs navires n'atteindront jamais La Havane. Le butin pourrait être meilleur, mais nous avons dû battre en retraite.
+#TEXT 15_none
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#QUEST MerchantOnMap
+Événement : Piste solide
+#TEXT 1
+J'ai reçu des informations sur un navire de commerce "@<sShipName>" sous le pavillon de @<sNation>, naviguant de @<sColony> à @<sNextColony> chargé de @<sQuestGoodsIdx>. Je suppose que je devrais l'en libérer.
+#TEXT 2
+J'ai reçu des informations sur un navire de commerce "@<sShipName>" sous le pavillon de @<sNation>, naviguant de @<sColony> à @<sNextColony> chargé de @<sQuestGoodsIdx>. Je suppose que je devrais l'en libérer.
+#TEXT 3
+J'ai reçu des informations sur un navire de commerce "@<sShipName>" sous le pavillon de @<sNation>, naviguant de @<sColony> à @<sNextColony> chargé de @<sQuestGoodsIdx>. Je suppose que je devrais l'en libérer.
+#TEXT 4
+J'ai réussi à capturer "@<sShipName>" qui contient @<sQuestGoodsIdx>.
+#TEXT 5
+"@<sShipName>" a coulé avec toute sa cargaison !
+#TEXT 6
+Des soldats bien entraînés de @<sNation> m'attendaient à l'intérieur de "@<sShipName>". C'était un piège !
+#TEXT  7_NONE
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#QUEST ShipTuning
+Événement : Amélioration du navire
+#TEXT t1
+@<sText>
+#TEXT End
+L'amélioration a été effectuée avec succès.
+#TEXT Lose
+J'ai changé de navire et l'accord est annulé.
+#TEXT dum
+/////////////////////////////////////////////////////////
+#QUEST ShipRepair
+Événement : Réparations urgentes
+#TEXT t1
+@<sText>
+#TEXT End
+La réparation est faite.
+#TEXT Lose
+J'ai changé de navire et l'accord est annulé.
+#TEXT dum
+#QUEST	DELIVERY_TRADE_QUEST
+Travail secondaire : Livraison de marchandises
+#TEXT 1
+Je dois livrer @<sGoodQty> de @<sGoodGen> du magasin de @<sBaseColony> à @<sTargetColony>@<island>. J'ai @<sTermsDelivery>. La récompense est de @<sMoney>.
+#TEXT 2
+Le travail a été fait dans les délais.
+#TEXT 3
+Je n'ai pas livré la marchandise à temps. Je dois maintenant retourner chez mon employeur et m'expliquer.
+#TEXT 4
+Un marchand de @<sTargetColony> m'a trompé. Il a refusé de prendre la cargaison et m'a suggéré de la garder pour moi.
+#TEXT 5
+J'ai dû payer une amende de @<sMoney> pour ne pas avoir livré à temps.
+Au moins, je peux trouver un autre travail et ma réputation auprès des commerçants n'est pas ruinée.
+#TEXT 6
+Le propriétaire du magasin de @<sTargetColony> a accepté le retour de @<sGoodQty> de @<sGoodGen>. Ça marche pour moi.
+#TEXT 7
+Le propriétaire du magasin de @<sTargetColony> exige que je lui verse @<sMoney> à titre d'amende pour avoir perdu des bénéfices commerciaux.
+Je ne pourrai pas livrer de marchandises tant que je n'aurai pas payé l'amende.
+#TEXT 8
+Je n'ai pas assez de @<sGoodGen>. Il me faut @<sHaveNotQty> de plus pour conclure l'affaire.
+Je dois trouver davantage de marchandises, sinon je ne pourrai plus jamais obtenir de travail comme celui-ci.
+#QUEST convoy_quest
+Travail secondaire : Escorte
+#TEXT 1
+J'ai été chargé d'escorter un marchand jusqu'à @<sCity> en @<sDay>. Ma récompense est de @<sMoney>.
+#TEXT 2
+Le marchand en a eu assez de naviguer avec moi et d'attendre mon escorte. Il a quitté ma flotte.
+#TEXT 3
+Le marchand est mort. Ma mission est un échec total.
+#TEXT 4
+J'ai terminé le travail.
+#TEXT 5
+Le marchand a quitté ma flotte. Eh bien, c'est de ma faute. Je n'aurais pas dû essayer de l'attaquer.
+#QUEST Gen_convoy_passenger
+Travail secondaire : Passager @<sName>. Transport jusqu'à @<sCity>.
+#TEXT 1
+J'ai été chargé d'emmener à bon port @<sName> à la taverne de @<sCity> d'ici @<sDay>. Il me paiera @<sMoney>.
+#TEXT 2
+Le passager en a eu assez de naviguer avec moi et d'attendre mon transport. Il a quitté mon navire.
+#TEXT 3
+Le passager est mort et, étonnamment, il n'a pas été transporté. La mission est un échec.
+#TEXT 4
+J'ai terminé le travail.
+#TEXT 5
+Je ne peux pas arriver à temps. Le passager m'a donné une semaine de plus pour faire le travail et a réduit la récompense promise. Elle est de @<sMoney> maintenant
+#TEXT 6
+J'ai trompé mon passager. Il est maintenant mon esclave.
+#QUEST MayorsQuestsList
+Travail secondaire : Missions des gouverneurs
+#TEXT 1
+@<MayorName>, le gouverneur de @<ColonyName>, m'a ordonné de rechercher et de détruire un gang dans les jungles. Le gang est dirigé par @<GangName>.
+Cela doit être fait dans @<sDay>, et ma récompense est de @<sMoney>.
+#TEXT 2
+Le travail est fait, @<GangName> est mort, et son gang aussi. Je suppose que @<MayorName> sera satisfait. Il est temps d'aller réclamer ma récompense.
+#TEXT 3
+@<MayorName>, le gouverneur de @<ColonyName>, m'a ordonné de trouver et aborder un navire de messagerie "@<sShipName>" sous le pavillon de @<sNation>. Il passera par @<sCity> dans @<sDay>. Je devrais trouver du courrier dans la cabine du capitaine et le remettre au gouverneur. Ma récompense est de @<sMoney>.
+#TEXT 4
+J'ai trouvé le navire et j'ai abordé le navire. J'ai le paquet. Je peux revenir et réclamer ma récompense.
+#TEXT 4-1
+J'ai trouvé le navire, mais je n'ai pas réussi à récupérer le paquet. Je dois rentrer les mains vides.
+#TEXT 5
+J'ai trouvé le navire, mais son capitaine était trop fort pour moi, et j'ai dû battre en retraite. Je dois revenir les mains vides.
+#TEXT 6
+@<MayorName>, le gouverneur de @<ColonyName>, m'a ordonné de me faufiler dans @<sCity> sur @<sIsland>, de trouver un @<sWho> local appelé @<SpyName>, et de récupérer un paquet auprès de lui.
+Ce paquet doit être remis entre les mains du gouverneur. Ma récompense est de @<sMoney>.
+Une note importante - je dois le faire en douceur et discrètement sans aucune alarme, ou l'agent ne me contactera pas.
+#TEXT 7
+Le travail pour le gouverneur de @<ColonyName> est terminé. J'ai trouvé @<SpyName> dans @<sCity> et j'ai obtenu le paquet. Ne perdons pas de temps. @<MayorName> est impatient de voir ces documents.
+#TEXT 8
+@<MayorName>, le gouverneur de @<ColonyName>, m'a ordonné de rechercher et de détruire un navire de transport ennemi "@<sShipName>" sous le pavillon de @<sNation>, chargé de munitions. Il atteindra @<sCity> dans @<sDay>. Ma récompense est de @<sMoney>.
+#TEXT 8-1
+J'ai été victorieux - la cargaison n'arrivera jamais à destination. Je peux revenir pour ma récompense.
+#TEXT 9
+@<MayorName>, le gouverneur de @<ColonyName>, m'a ordonné de trouver et d'éliminer un dangereux pirate nommé @<sName>. D'après mes informations, la racaille effectuera un raid à bord de son navire "@<sShipName>" non loin de @<sCity> dans @<sDay>. Ma récompense est de @<sMoney>.
+#TEXT 9-1
+Le travail est terminé. Il a été tué avec tout son équipage. Je peux revenir pour ma récompense.
+#TEXT 10
+@<MayorName>, le gouverneur de @<ColonyName>, m'a ordonné de trouver et de lui livrer un criminel nommé @<sName>. Pour autant que je sache, l'homme en question se trouve sur un navire "@<sShipName>" qui quittera @<sCity> le @<sDay1> et naviguera jusqu'à @<sCityA>. Il semble que je ne puisse compter que sur @<sDay2> pour les intercepter. Ma récompense est de @<sMoney>.
+#TEXT 10-1
+Le navire dont j'avais besoin a été trouvé et abordé. Le criminel se trouve maintenant dans ma cale. Je peux réclamer mes pièces.
+#TEXT 10-2
+J'ai trouvé le navire, mais j'ai été assez stupide pour le couler avec tout son équipage et l'homme dont j'avais besoin. Je ne pense pas que son Excellence sera satisfaite.
+#TEXT 11
+@<MayorName>, le gouverneur de @<ColonyName>, m'a ordonné de traquer et de tuer les contrebandiers qui prévoient de faire du commerce d'esclaves dans les trois prochains jours. C'est tout ce que je sais. Je vais donc patrouiller dans les eaux locales et contrôler tous les navires que je verrai. Ma récompense est de @<sMoney> et des esclaves comme trophée de guerre.
+#TEXT 11-1
+Les contrebandiers ont été retrouvés et éliminés. Je peux revenir et réclamer mon argent.
+#TEXT 12
+@<MayorName>, le gouverneur de @<ColonyName>, m'a ordonné de trouver et de livrer un déserteur nommé @<sName>. Ma récompense est de @<sMoney>. D'après mes informations, il se cache dans l'un des repaires de pirates. Lequel... Il est temps de partir. Je n'ai que 30 jours.
+#TEXT 12-1
+J'ai presque trouvé ma cible. Le barman m'a dit de chercher l'homme dans les rues pendant la journée.
+#TEXT 12-2
+J'ai presque trouvé ma cible. Le marchand m'a dit de chercher l'homme à la taverne dans la soirée.
+#TEXT 12-3
+J'ai presque trouvé ma cible. Un ivrogne local m'a dit que je devais chercher l'homme à @<sShore> au petit matin.
+#TEXT 12-4
+J'ai discuté avec le déserteur. Il m'a persuadé de le laisser tranquille. Il semble que cet homme en ait déjà eu assez et qu'il serait injuste de le livrer au tribunal. D'ailleurs, il m'a accordé une indemnité. Bon, je vais mentir à mon employeur...
+#TEXT 20
+Je ne l'ai pas fait à temps. @<MayorName> ne sera pas content.
+#TEXT 21
+J'ai échoué à une mission pour le gouverneur de @<ColonyName>. J'ai trouvé ma cible, mais je n'ai pas réussi à accomplir ma tâche. @<MayorName> est tellement en colère...
+#QUEST GivePrisonFree
+Travail secondaire : Évasion de Prison
+#TEXT 1
+J'ai eu l'occasion de libérer un prisonnier appelé @<sName> de la prison de @<sCity>. Je dois essayer de le ramener vivant à l'intérieur de la grotte sur @<sIsland>. Si j'ai de la chance, nous partagerons ses trésors.
+#TEXT 2
+Un échec ! @<sName> est mort. Je ne trouverai pas son trésor moi-même...
+#TEXT 3_1
+Nous avons trouvé le trésor et nous l'avons partagé. Cela faisait longtemps que je n'avais pas vu autant de bijoux !
+#TEXT 3_2
+Nous avons trouvé le trésor et nous l'avons partagé. Il ne couvrira même pas mes frais. Nous avons obtenu aussi un artefact indien, qui est à moi maintenant.
+#TEXT 3_3
+@<sName> m'a trompé pour gagner sa liberté. Il n'y avait pas de trésor. Seulement quelques munitions, qui étaient un paiement pour mes efforts. C'est mieux que rien.
+#TEXT 3_4
+Il n'y avait pas de trésor. @<sName> n'avait qu'un morceau de carte, et bien sûr, cela ne nous a pas beaucoup aidés. Je l'ai pris pour moi. Je devrais essayer de trouver la seconde partie et d'atteindre le trésor.
+#TEXT 4
+Il semble que j'ai été piégé par @<sName>. Il n'y avait pas de trésor. Je ferais mieux d'être plus malin avec les gens la prochaine fois.
+#TEXT 5
+Je devais aider un prisonnier nommé @<sName> de la prison @<sCity>. Je devrais discuter avec le commandant local.
+#TEXT 6
+Je n'ai pas pu libérer le prisonnier avant deux jours. Tant pis, je suppose qu'il devra rester là. Quel dommage.
+#TEXT 7
+Je n'ai pas réussi à libérer le prisonnier. Peu importe, au diable son trésor.
+#TEXT 8
+Un prisonnier nommé @<sName> m'a demandé de transmettre un message à ses compagnons en ville. Ils se cachent dans l'une des maisons. J'ai accepté. Le message est entre mes mains et je n'ai que deux jours pour le transmettre.
+#TEXT 9
+Je n'ai pas transmis le message à temps.
+#TEXT 10
+J'ai transmis le message aux amis du prisonnier. Je ne m'attendais pas à ce qu'ils essaient de me tuer au lieu de me récompenser. La prochaine fois, je ne devrais pas faire confiance à ces salauds. Je devais tous les tuer.
+#TEXT 11
+C'est fait. Les gars ont été trop gentils et m'ont donné @<iMoney>. J'en suis sacrément fier.
+#TEXT 13
+Les potes du prisonnier m'ont dit que deux navires de commerce "@<sShipName1>" et "@<sShipName2>" navigueront près de @<sShoreName> dans les prochains @<sDay>, chargés de @<sGoods>. Je devrais envisager de les intercepter.
+#TEXT 13_1
+J'arrive à temps ! Je les vois. Il est temps de se battre.
+#TEXT 13_2
+Je suis arrivé trop tard, et il n'y avait aucun signe des navires. Peut-être la prochaine fois...
+#TEXT 14
+Les potes du prisonnier m'ont dit qu'un navire de messagerie "@<sShipName>" naviguerait non loin de @<sShoreName> dans les prochains @<sDay>, chargé d'un grand nombre de bijoux. Je devrais envisager de l'intercepter.
+#TEXT 14_1
+J'arrive à temps ! Je les vois. Il est temps de se battre.
+#TEXT 14_2
+Je suis en retard, et le navire de messagerie "@<sShipName>" est déjà parti pour on ne sait où. Eh bien, j'aurai plus de chance la prochaine fois...
+#TEXT 15
+Je n'ai trouvé aucun navire de commerce là-bas. Ces salauds m'ont trompé. Je n'aurais pas dû faire confiance à des hommes de leur espèce...
+#TEXT 16
+J'ai transmis le message aux potes du prisonnier. Ils m'ont proposé de me vendre des informations pour beaucoup d'argent. J'ai refusé, leurs visages ne me semblaient pas assez honnêtes.
+#TEXT 17
+J'ai transmis le message et j'ai été volé par les compagnons du prisonnier. Je ne ferai plus jamais confiance à ces salauds...
+#QUEST  SeekMayorsRing
+Travail secondaire : Anneau Perdu
+#TEXT 1
+@<sName>, le gouverneur de @<sCity>, m'a ordonné de trouver son alliance dans la maison close. Je n'ai aucune idée de l'endroit où elle se trouve. Notre bon gouverneur s'est bien reposé la nuit dernière, il ne se souvient donc de rien.
+Je dois trouver et rapporter l'anneau avant la fin de la journée.
+#TEXT 2
+Il s'avère qu'il a donné l'anneau à une pute appelée @<sName> ! L'alcool, c'est mal. J'ai réussi à le lui acheter pour cinq mille pesos. Maintenant, je peux le lui rendre.
+#TEXT 3
+Il s'avère qu'il a donné l'anneau à une pute appelée @<sName> ! Je le lui ai pris, et maintenant je peux le lui rendre.
+#TEXT 4
+Je n'ai pas réussi à trouver l'anneau à temps. Échec.
+#TEXT 5
+Je n'ai pas trouvé l'anneau. Échec.
+#TEXT 6
+J'ai trouvé l'anneau. Maintenant, je dois le ramener.
+#TEXT 7
+L'anneau a été livré.
+#QUEST  PortmansBook_Delivery
+Travail secondaire : @<sCity>, le capitaine du port veut que le journal perdu soit restitué à @<sCapName>.
+#TEXT 1
+Le capitaine du port de @<sCity> m'a demandé de trouver le capitaine de @<sShipTypeName> "@<sShipName>", qui a oublié son journal. Je dois poursuivre ce capitaine distrait nommé @<sCapName> et lui rendre son journal.
+Le capitaine du port m'a dit que le capitaine se dirigeait vers @<sTargetCity>@<sAreal>.
+#TEXT 2
+J'ai réussi à trouver l'homme qui navigue vers @<sTargetCity>. La mission est terminée.
+#TEXT 3
+J'ai réussi à trouver l'homme à @<sCity>, dans le bureau du capitaine du port. La mission est terminée.
+#TEXT 4
+On dit que le capitaine @<sCapName> navigue vers @<sTargetCity>@<sAreal>.
+#TEXT 5
+Le capitaine du port m'a dit que le capitaine @<sCapName> de @<sShipTypeName> "@<sShipName>" s'était rendu à @<sTargetCity>@<sAreal>.
+#QUEST  Portmans_SeekShip
+Travail secondaire : @<sCity>, le capitaine du port veut récupérer le navire volé
+#TEXT 1
+Le capitaine du port de @<sCity> a une mission importante à me confier. Quelqu'un a volé le @<sShipTypeName> "@<sShipName>", et on m'a demandé de le restituer.
+Je n'ai aucun indice. Je dois être attentif en mer et interroger les gens dans les villes.
+#TEXT 2
+Le capitaine du port de @<sCity> m'a dit que le capitaine @<sCapName> de @<sShipTypeName> "@<sShipName>" naviguait vers @<sTargetCity>@<sAreal> le @<sDate>.
+#TEXT 3
+On dit que @<sShipTypeName> "@<s ShipName>" naviguait de @<sCity> à @<sTargetCity>@<sAreal>.
+#TEXT 4
+Il semble que j'aie enfin trouvé le navire volé. J'ai essayé de parler à son capitaine, mais il m'a forcé à partir. Je dois aborder son navire.
+#TEXT 5
+Le navire volé a été abordé. Je peux revenir et réclamer ma récompense.
+#TEXT 6
+Le travail est fait. J'ai été payé.
+#TEXT 7
+J'ai dû refuser de faire cette mission.
+#TEXT 8
+Bon sang ! Je n'ai pas réussi à garder le navire intact, il a coulé ! Et qu'est-ce que je vais rendre à mon employeur ?
+#TEXT 9
+J'ai abordé le navire, mais il a coulé. C'est un échec total. Et que vais-je rendre à mon employeur ?
+#QUEST  SCQ_NM_battle
+Travail secondaire : @<sCity>, le noble @<sName>
+#TEXT 1
+Un citoyen de @<sCity>,  @<sName>, veut s'occuper du capitaine @<sCapName>, qui l'a insulté une fois. Je dois trouver et éliminer ce capitaine. Il y a un indice : il navigue sur @<sShipTypeName> "@<sShipName>", et le navire a été vu récemment à @<sQCity>.
+#TEXT 2
+Le capitaine du port de @<sCity> m'a dit que le capitaine @<sCapName> se rendait à @<sTargetCity>@<sAreal> le @<sDate>.
+#TEXT 3
+On dit que le capitaine @<sCapName> navigue de @<sCity> à @<sTargetCity>@<sAreal>.
+#TEXT 4
+@<sCapName> a été trouvé et éliminé. Mon travail est terminé. Je peux maintenant retourner chez mon employeur à @<sCity> et réclamer mon argent. Je peux trouver l'homme dans l'église locale de 08H00 à 10H00.
+#TEXT 5
+J'ai trouvé le capitaine que je cherche et j'ai visité son navire. @<sName> a l'air alerte et m'a forcé à quitter son navire. Mon objectif est parfaitement clair : je dois couler son @<sShipTypeName>.
+#QUEST  SCQ_NM_prisoner
+Travail secondaire : @<sCity>, le noble @<sName>
+#TEXT 1
+Un citoyen de @<sCity>, le noble @<sName>, veut s'occuper d'un homme nommé @<sName1>, qui l'a insulté une fois. Je dois trouver cet homme et le remettre à mon employeur. Il y a un indice : il sert sur @<sShipTypeName> "@<sShipName>" sous le commandement du capitaine @<sCapName>. Ce navire a récemment été vu à @<sQCity>.
+#TEXT 2
+Le capitaine du port de @<sCity> m'a dit que le capitaine @<sCapName> se rendait à @<sTargetCity>@<sAreal> le @<sDate>.
+#TEXT 3
+On dit que le capitaine @<sCapName> navigue de @<sCity> à @<sTargetCity>@<sAreal>.
+#TEXT 4
+Le capitaine que je cherche est mort. Je ne pourrai plus trouver son officier.
+#TEXT 5
+@<sName> a été retrouvé, et il est maintenant en état d'arrestation. Le travail est terminé. Je peux retourner chez mon employeur à @<sCity> et réclamer mes pièces. Je peux le trouver dans l'église locale de 08H00 à 10H00.
+#TEXT 6
+J'ai rencontré le capitaine. Il a refusé d'abandonner sa racaille d'officier. Eh bien, c'est pire pour lui alors. Je n'ai plus qu'une seule option : je dois aborder son navire.
+#QUEST  SCQ_NM_peace
+Travail secondaire : @<sCity>, le noble @<sName>
+#TEXT 1
+Un citoyen de @<sCity>, le noble @<sName>, veut rencontrer son vieil ami nommé @<sCapName>. Je dois trouver cet homme et lui faire part de la requête du noble. Il y a un indice : l'homme que je cherche est un capitaine de @<sShipTypeName> "@<sShipName>", et le navire a été vu récemment à @<sQCity>.
+#TEXT 2
+Le capitaine du port de @<sCity> m'a dit que le capitaine @<sCapName> se rendait à @<sTargetCity>@<sAreal> le @<sDate>.
+#TEXT 3
+On dit que le capitaine @<sCapName> navigue de @<sCity> à @<sTargetCity>@<sAreal>.
+#TEXT 4
+Le capitaine @<sCapName> est mort. Ma mission a échoué.
+#TEXT 5
+J'ai pu trouver le capitaine et lui faire part de la demande du noble. Mon travail est terminé. Je peux retourner à @<sCity> pour récupérer mes pièces. Mon employeur se trouve dans l'église locale de 18H00 à 20H00.
+#QUEST  SCQ_manSlave
+Travail secondaire : Demande de vengeance de @<sName> de @<sCity>
+#TEXT 1
+Un citoyen @<sName> de @<sCity> a eu des ennuis il y a un an. Un capitaine de @<sShipTypeName> "@<sShipName>" nommé @<sCapName> a vendu son passager comme esclave.
+Aujourd'hui, @<sName2> veut se venger. Je dois rechercher et tuer ce capitaine perfide.
+#TEXT 2
+Le capitaine du port de @<sCity> m'a dit que le capitaine @<sCapName> se rendait à @<sTargetCity>@<sAreal> le @<sDate>.
+#TEXT 3
+On dit que le capitaine @<sCapName> navigue de @<sCity> à @<sTargetCity>@<sAreal>.
+#TEXT 4
+Le capitaine @<sCapName> est mort. Mon travail est terminé. Je peux maintenant retourner chez mon employeur à @<sCity> et réclamer mes pièces.
+#TEXT 5
+Voilà le capitaine que je cherche. J'ai réussi à lui parler. Ma question concernant ses passagers l'a mis en colère. Il semble que @<sName> gagne bien sa vie avec cette affaire.
+Tout est clair maintenant. Je dois couler le @<sShipTypeName>.
+#TEXT 10
+Le navire a disparu. Je ne pourrai pas obtenir vengeance sur cet homme.
+#QUEST  SCQ_womanHasband
+Travail secondaire : Mari Disparu
+#TEXT 1
+@<sName> de @<sCity> m'a demandé de retrouver son mari, un marchand, qui navigue depuis trop longtemps.
+J'espère qu'il va bien.
+#TEXT 2
+Le capitaine du port de @<sCity> m'a dit que le capitaine @<sCapName> se rendait à @<sTargetCity>@<sAreal> le @<sDate>.
+#TEXT 3
+On dit que le capitaine @<sCapName> navigue de @<sCity> à @<sTargetCity>@<sAreal>.
+#TEXT 4
+@<sCapName> est mort. Bon sang. Ma mission a échoué.
+#TEXT 5
+J'ai trouvé le capitaine que je cherchais. Il s'est avéré qu'il était trop occupé et incapable de refuser tant d'affaires rentables.
+Eh bien, le travail est fait. Je peux maintenant réclamer mes pièces.
+#TEXT 10
+Le navire a disparu. Je ne pourrai pas trouver l'homme.
+#QUEST  SCQ_manRapeWife
+Travail secondaire : @<sCity>, Sauver l'épouse captive
+#TEXT 1
+Un citoyen de @<sCity> nommé @<sName> a perdu sa femme. Elle a été kidnappée par un pirate. Je me suis engagé à la sauver. Elle s'appelle @<sName2>. Le pirate s'appelle @<sCapName>, et il navigue sur @<sShipTypeName> "@<sShipName>".
+J'espère que je parviendrai à trouver le navire assez rapidement.
+#TEXT 2
+Le capitaine du port de @<sCity> m'a dit que le capitaine @<sCapName> naviguait vers @<sTargetCity>@<sAreal> a @<sDate>.
+#TEXT 3
+On dit que le capitaine @<sCapName> navigue de @<sCity> à @<sTargetCity>@<sAreal>.
+#TEXT 4
+Le capitaine @<sCapName> est mort, et apparemment la pauvre femme aussi. La mission a échoué.
+#TEXT 5
+Le capitaine @<sCapName> est retrouvé. La femme kidnappée est gardée dans sa cabine. Je dois maintenant aborder le navire. Je ne pourrai sans doute pas m'occuper du pirate d'une bonne manière...
+#TEXT 6
+J'ai réussi à sauver une femme nommée @<sName>. C'est ma cliente. Je peux maintenant la ramener à son mari à @<sCity>.
+#TEXT 10
+Le navire a disparu. Je ne pourrai pas aider ce pauvre homme à retrouver sa femme.
+#QUEST  SCQ_manFriend
+Travail secondaire : @<sCity>, Retrouver un vieil ami
+#TEXT 1
+J'ai accepté d'aider un citoyen de @<sCity> nommé @<sName>. Je dois trouver son compatriote, un marchand nommé @<sCapName>. Il navigue sur @<sShipTypeName> "@<sShipName>".
+Je suppose que je le trouverai facilement.
+#TEXT 2
+Le capitaine du port de @<sCity> m'a dit que le capitaine @<sCapName> naviguait vers @<sTargetCity>@<sAreal> a @<sDate>.
+#TEXT 3
+On dit que le capitaine @<sCapName> navigue de @<sCity> à @<sTargetCity>@<sAreal>.
+#TEXT 4
+@<sCapName> est mort. Bon sang. Ma mission a échoué.
+#TEXT 5
+J'ai réussi à trouver le capitaine dont j'avais besoin et à l'informer que son collègue le cherchait. Mon travail est terminé. Il est temps de retourner à @<sCity> et de réclamer mes pièces.
+#TEXT 10
+Le navire a disparu. Je ne pourrai plus aider mon employeur.
+#QUEST  SCQ_womanRevenge
+Travail secondaire : @<sCity>, Femme Rejetée
+#TEXT 1
+J'ai accepté de répondre à une demande assez inhabituelle de la part d'une femme. Son nom est @<sName>, et elle est citoyenne de @<sCity>. Je dois trouver le capitaine @<sCapName>. Il navigue sur @<sShipTypeName> "@<sShipName>".
+Je dois le trouver, aborder son navire et éliminer cet homme. Avant cela, je dois l'informer de qui paye pour sa vie.
+Eh bien, seules les femmes rejetées cherchent à se venger aussi durement...
+#TEXT 2
+Le capitaine du port de @<sCity> m'a dit que le capitaine @<sCapName> naviguait vers @<sTargetCity>@<sAreal> a @<sDate>.
+#TEXT 3
+On dit que le capitaine @<sCapName> navigue de @<sCity> à @<sTargetCity>@<sAreal>.
+#TEXT 4
+Le capitaine est mort. Je n'ai pas pu lui parler, donc le terme principal est rompu. Il n'a pas été informé de la raison de sa mort. La mission a échoué.
+#TEXT 5
+Le capitaine @<sCapName> est mort. J'ai réussi à faire ce que mon employeur m'a demandé.
+La mission de la Furie est terminée. Je peux maintenant retourner à @<sCity> et réclamer mes pièces.
+#TEXT 10
+Le navire que je cherche a disparu. La vengeance a échoué.
+#QUEST  SCQ_womanPirates
+Travail secondaire : @<sCity>, sauver le mari captif
+#TEXT 1
+J'ai accepté d'aider une citoyenne de @<sCity> nommée @<sName>. Son mari est retenu captif par le capitaine @<sCapName>. Il navigue sur le @<sShipTypeName> "@<sShipName>".
+Je dois trouver le capitaine, aborder son @<sShipTypeName2> et libérer le mari de la pauvre femme, qui s'appelle @<sName2>.
+#TEXT 2
+Le capitaine du port de @<sCity> m'a dit que le capitaine @<sCapName> naviguait vers @<sTargetCity>@<sAreal> a @<sDate>.
+#TEXT 3
+On dit que le capitaine @<sCapName> navigue de @<sCity> à @<sTargetCity>@<sAreal>.
+#TEXT 4
+Le capitaine @<sCapName> est mort, ainsi que, apparemment, le mari de la femme. La mission a échoué.
+#TEXT 5
+Le capitaine @<sName> est trouvé. Je dois maintenant aborder son @<sShipTypeName>.
+#TEXT 6
+J'ai réussi à libérer le prisonnier. Le travail est terminé. Il est temps de retourner à @<sCity>.
+#TEXT 10
+Le navire a disparu. Je ne pourrai pas sauver l'homme.
+#QUEST Slavetrader
+Marchand d'Esclaves
+#TEXT   1
+Un usurier de @<sCity> appelé @<sName> m'offre @<sSum> pesos pour @<sQty> esclaves. L'argent est bon et le travail est facile. J'accepte. Je ferais mieux de ne pas perdre de temps. Il semble que @<sName> ait des affaires sérieuses, et je pourrais gagner beaucoup d'argent.
+#TEXT   2
+Les esclaves ont été livrés et l'argent a été reçu. De plus, @<sName> m'a proposé une autre mission dans trois semaines. Je devrais l'accepter.
+#TEXT   3
+@<sName> m'a ordonné de détruire le marché de son concurrent. Je dois capturer "@<sShipName>", qui navigue vers @<sShoreName> à @<sShoreType>. J'ai deux semaines pour le faire.
+#TEXT   3_1
+Je suis arrivé juste à temps ! Le capitaine de "@<sShipName>" est en train de charger des esclaves sur le navire d'un contrebandier. Je dois les aborder tous les deux et récupérer leur cargaison.
+#TEXT	4
+Le travail est terminé. Il est temps de voir mon employeur.
+#TEXT	5
+Mes adversaires étaient trop forts pour moi et j'ai dû battre en retraite. Je crains que ce soit un échec.
+#TEXT	5_5
+J'ai échoué dans ma mission, donc @<sName> ne fera plus jamais affaire avec moi. Quel dommage...
+#TEXT	6
+@<sName> a été satisfait de mon travail. Il m'a payé @<sMoney> pesos pour @<sQty> esclaves. Je devrais également le revoir dans un mois.
+#TEXT	7
+Je suis arrivé trop tard, et "@<sShipName>" était déjà parti. Je dois rentrer les mains vides.
+#TEXT	7_1
+J'ai été trop lent, et la pinasse "@<sShipName>" était déjà partie. Je n'ai aucune idée de l'endroit où la trouver. Je dois rentrer bredouille.
+#TEXT	7_2
+Malgré tous mes efforts, je n'ai pas réussi à trouver "@<sShipName>". Je dois donc rentrer bredouille.
+#TEXT	8
+J'ai refusé de faire le travail. Je ne suis pas un chasseur de primes.
+#TEXT	9
+J'ai été idiot de travailler avec cette ordure ! Maintenant, je dois faire face à des chasseurs de primes...
+#TEXT	10
+@<sName> m'a confié une tâche assez risquée cette fois-ci. Je dois monter à bord de la pinasse @<sShipName>, qui navigue non loin d'ici. Je dois être prudent et éviter de me faire tirer dessus par le fort.
+#TEXT	11
+L'ennemi était trop fort. Je n'ai pas réussi à aborder le "@<sShipName>". Je suppose que je ne devrais même pas parler à mon employeur...
+#TEXT	12
+La pinasse "@<sShipName>" est au fond de l'eau. Pas besoin de voir mon employeur alors...
+#TEXT	13
+Bon sang ! La pinasse "@<sShipName>" s'est avérée être un piège - il n'y avait pas d'esclaves à l'intérieur. Seulement des soldats armés. Je devrais aller mettre quelques mèches brûlantes entre les orteils de mon employeur...
+#TEXT	14
+Il semble que @<sName> ait été trahi pour de bon. Les derniers mots du capitaine de la pinasse le prouvent. La preuve navigue maintenant avec le brigantin "@<sShipName>" en direction de @<sIsland> vers le gouverneur général. Je dois aborder le navire et emporter le paquet avec les documents qu'il contient, sinon je risque d'avoir des ennuis.
+#TEXT	15
+Bon sang ! Je n'ai pas réussi à capturer le brigantin "@<sShipName>". Bon, maintenant c'est le moment d'aller voir un avocat.
+#TEXT	16
+J'ai réussi à poursuivre et à capturer "@<sShipName>". J'ai également trouvé les documents dont j'avais besoin. Maintenant, je peux respirer librement.
+#TEXT	17
+J'ai réussi à poursuivre et à capturer "@<sShipName>", mais il n'y avait pas de papiers. Peut-être s'agit-il de faux ? Je dois voir l'usurier.
+#TEXT	18
+Je dois trouver et capturer un galion lourd "@<sShipName>" qui navigue @<sAreal> vers Santiago. Je dois être attentif. Il y a trois mille esclaves, un vrai trésor !
+#TEXT	19
+C'était inattendu. Ce n'était pas un galion, c'était un putain de navire de guerre avec un capitaine terriblement compétent, et pourtant je l'ai vaincu.
+#TEXT	20
+@<sName> m'a demandé d'attendre cinq jours avant de réunir la somme nécessaire pour me payer et m'a donné quinze coffres de crédit en avance. J'ai du mal à faire confiance à cette ordure, mais je doute qu'il essaie de m'escroquer.
+#TEXT	21
+@<sName> m'a demandé de rechercher et d'éliminer un traître à l'origine de nos troubles. Ce sera avec plaisir. Il s'appelle François Gontier et a été vu pour la dernière fois à Panama. Je suis sur le coup.
+#TEXT	21_1
+Le barman à Panama m'a dit que Gontier était probablement parti à Portobelo.
+#TEXT	21_2
+Gontier y a acheté une corvette. Je dois trouver où il est allé.
+#TEXT	21_3
+D'après mes informations, Gontier s'est rendu en Jamaïque. Sa corvette s'appelle "@<sShip>".
+#TEXT	21_4
+Gontier était à Maroon Town, où il louait une chambre, mais il a disparu. Je n'ai aucune idée de l'endroit où le chercher.
+#TEXT	21_5
+Une serveuse m'a dit qu'elle savait où était Gontier, mais elle demande un pendentif avec des pierres précieuses en échange. Je dois trouver cette chose pour atteindre Gontier.
+#TEXT	21_6
+Gontier est allé à La Havane. Splendide. Je pense que je le reverrai bientôt.
+#TEXT	21_7
+Intéressant ! Gontier a essayé d'obtenir une licence de corsaire espagnole, mais n'y est pas parvenu. Le barman a dit qu'il avait choisi la France. Il est donc temps de visiter Tortuga !
+#TEXT	21_8
+Quelque chose ne va pas ! Aucune trace d'une corvette, pourtant Gontier et ses hommes se promènent dans les rues. Je dois fouiller la ville et ses environs.
+#TEXT	21_9
+Le rat se cachait dans l'une des maisons. J'ai été attaqué par ses congénères dès que je suis entré dans la pièce. J'ai dû les tuer, mais je doute qu'ils soient regrettés. Gontier s'est échappé. Son amante m'a dit que sa corvette se trouvait près du phare de Tortuga. Il faut que j'y aille avant qu'il ne disparaisse à nouveau !
+#TEXT	21_10
+J'ai été trop lent, et Gontier a réussi à s'enfuir. Il ne reste aucun indice. Je peux retourner auprès de mon employeur et signaler l'échec de la mission.
+#TEXT	21_11
+Ce Gontier était trop dur pour moi, j'ai donc décidé de battre en retraite. Je peux retourner auprès de mon employeur et signaler l'échec de la mission.
+#TEXT	21_12
+C'est fait ! Cette ordure de Gontier nourrit les requins.
+#TEXT	21_13
+Pour avoir éliminé le traître, j'ai reçu une excellente longue-vue. L'usurier m'a également versé 100 000 pesos et 50 000 à titre de dédommagement pour mes frais. Il semble que mon employeur se soit remis à flot. Je dois revenir dans un mois avec une flotte bien préparée. La prochaine mission sera sérieuse.
+#TEXT	21_14
+@<sName> était contrarié, mais il m'a proposé de lui rendre visite dans un mois avec une flotte bien préparée. La prochaine mission sera sérieuse.
+#TEXT	22
+J'avais raison. La barque a fait naufrage et tous les esclaves ont dû se cacher au phare. Tamango et ses guerriers nous ont attaqués, mais nous les avons vaincus. Les autres fuyards ont accepté leur sort et se sont rendus. Au total, j'ai capturé @<sQty> esclaves.
+#TEXT	22_1
+@<sName> m'a ordonné de naviguer vers Curaçao, qui a subi une grande évasion d'esclaves. Je dois en savoir plus sur cet incident.
+#TEXT	22_2
+J'ai eu une conversation intéressante avec un barman. Maintenant, je connais tous les détails de l'émeute. Je sais aussi que quelqu'un a volé une barque. Le barman est sûr que ce sont les esclaves qui l'ont fait.
+#TEXT	22_3
+Le capitaine du port ne m'a donné que le nom de la barque - "@<sShipName>". C'est tout ce que j'ai, malheureusement. Je n'arrive même pas à imaginer où chercher ensuite...
+#TEXT	22_4
+Étonnamment, j'ai appris ce dont j'avais besoin d'un marin ivre. La barque a été vue à @<sAreal>. D'après son histoire, le navire a fait naufrage. Je devrais y aller et fouiller toutes les baies du coin.
+#TEXT 22_5
+@<sName> était satisfait. Il m'a payé 330 000 pesos pour les esclaves de Curaçao et @<sMoney> pour le reste. Je dois le revoir dans un mois comme d'habitude.
+#TEXT 22_6
+@<sName> a été satisfait. Il m'a payé @<sMoney> pour @<sQty> esclaves. Je devrais le revoir dans un mois, comme d'habitude.
+#TEXT 24
+Bon sang, je n'aurais jamais cru que @<sName> était aussi sérieux ! Maintenant, je dois prendre le fort de La Havane. D'après les informations que j'ai reçues, il y a 5 000 esclaves. Je suis en route.
+#TEXT 25
+L'usurier avait raison. Deux navires de guerre croisent près des côtes de La Havane. Ils n'ont pas l'air amicaux. Je dois m'en débarrasser avant de prendre le fort d'assaut.
+#TEXT 26
+Les navires de guerre de l'ennemi ont été éliminés. C'est maintenant au tour du fort.
+#TEXT 26_1
+Les navires de guerre de l'ennemi ont été éliminés, mais je n'ai plus les moyens d'attaquer La Havane. Je dois battre en retraite. Je suppose qu'il n'est pas nécessaire de retourner auprès de mon employeur...
+#TEXT 27
+La Havane a été prise. Le travail est fait. @<sQty> esclaves ont été mis dans les cales. Il est temps de rentrer.
+#TEXT 27_1
+J'ai échoué la mission en attaquant La Havane par la terre. Les esclaves ont été gardés à l'intérieur du fort, et les défenseurs ont pu se préparer. Je suppose qu'il n'est pas nécessaire de retourner auprès de mon employeur...
+#TEXT 28
+Je suis arrivé trop tard, et tous les esclaves ont été emmenés dans les plantations de Cuba. Je suppose qu'il n'est pas nécessaire de retourner chez mon employeur...
+#TEXT 29
+Bon sang ! Tous les esclaves n'ont pas survécu au voyage, et l'usurier en veut 5 000, pas un esclave de moins ! Je dois trouver le reste dans une semaine, sinon j'aurai des ennuis.
+#TEXT 30
+Je ne suis pas parvenu à livrer les esclaves à temps. Maintenant, il n'y a plus à se presser - je dois vendre les esclaves, rendre visite aux agents, et traiter avec les chasseurs de primes...
+#TEXT 31
+Je n'ai pas réussi à rassembler 5 000 esclaves à temps. Je dois maintenant faire face à des chasseurs de primes...
+#TEXT 32
+Les esclaves ont été livrés à mon employeur. Je dois lui rendre visite dans une semaine pour toucher mon argent. Je recevrai plus d'un million pour ce travail ! Voilà pourquoi je fais ce travail ! Je ne peux même pas imaginer ce que la prochaine mission m'apportera. Oui, cette affaire me rendra riche !
+#TEXT 33
+Ce salaud s'est foutu de moi ! Lorsque je suis arrivé pour mes pièces, il s'est avéré que mon cher " partenaire " s'était enfui, emportant mon million et l'argent de son investisseur. C'est la première fois que je me faisais avoir à ce point ! Mais il aura ce qu'il mérite. C'est le cas de tous. Le monde est petit, nous nous reverrons peut-être. Et le rat paiera pour tout !
+
+#QUEST PrisonGun
+Travail secondaire : Armes de Fort
+#TEXT 1
+Le commandant du fort de @<sCity> m'a proposé de collecter @<sQty> de @<sText>. Ses conditions - je dois livrer le lot entier un mois plus tard. Pas plus tôt. J'ai accepté, compte tenu du prix de l'affaire - @<sSum> pesos.
+#TEXT 2
+Les canons ont été livrés, le paiement a été reçu, mais pas en pièces, mais en coffres de crédit. Ça marche pour moi. Pour le commandant aussi, je suppose.
+#TEXT 3
+Quel dommage ! Le commandant a refusé d'acheter les canons. Et que vais-je faire de cette cargaison de fer ? Je ne peux que les vendre au chantier naval pour quelques pièces...
+#TEXT 4
+J'ai passé trop de temps à trouver des canons, et @<sName> les a achetés à un autre vendeur. C'est ma faute...
+
+#QUEST Fraht
+Travail secondaire : Fret
+#TEXT 1
+J'ai mis mon navire à disposition pour des services de fret dans @<sStartCity>. Je dois livrer @<sGoodQty> de @<sGoods> à @<sTargetColony> d'ici @<sDay>. Ma récompense est de @<sMoney>.
+#TEXT 2
+Le travail est fait, la cargaison est livrée à temps et en un seul morceau, les pièces sont à moi.
+#TEXT 3
+Le temps de livraison est écoulé et je dois me dépêcher, sinon mon client va me soupçonner de quelque chose de mauvais...
+#TEXT 3_1
+J'ai été trop lent. Il n'y a pas lieu de se presser maintenant...
+#TEXT 4
+Je suis en retard de @<sDay>. Mon paiement a été réduit de 5% par jour, ce qui m'a valu @<sMoney>. Je devrais faire mieux la prochaine fois...
+#TEXT 5
+Toutes les conditions sont désormais caduques. Si je veux traiter à nouveau avec eux, je devrais rendre visite au client et essayer de régler la situation...
+#TEXT 6
+J'ai dû payer une amende - @<sMoney>. Mais je peux retrouver un emploi. Je ferais mieux de consulter mon journal de commerce pour trouver le meilleur prix pour la cargaison...
+#TEXT 7
+Ces bureaucrates sont vraiment trop insolents ! Ils voulaient me dépouiller jusqu'à mes vêtements. Je ferais mieux d'embrasser l'ennemi plutôt que de payer une telle somme à ces escrocs.
+#TEXT 8
+Le capitaine du port de @<sStartCity> m'a proposé d'obtenir et de livrer @<sGoodQty> de @<sGoods> pour sa colonie. Il a promis de payer au prix de @<sText>. Au total, je recevrai @<sMoney>.
+#TEXT 9
+J'ai été trop lent, un mois s'est écoulé. Pas besoin de se presser maintenant...
+
+#QUEST Postcureer
+Travail secondaire : Livraison de Courrier
+#TEXT 1
+J'ai accepté de livrer un courrier à @<sTargetColony> d'ici @<sDay>. Ma récompense est de @<sMoney>.
+#TEXT 2
+Le travail est fait, le courrier est livré, le paiement est reçu.
+#TEXT 3
+Je manque de temps et le courrier n'a toujours pas été livré. Je devrais me dépêcher...
+#TEXT 4
+J'ai échoué à livrer le courrier au plus tard le @<sDay>. Mon paiement a été réduit de 10 % pour chaque jour. Au total, j'ai reçu @<sMoney>. Je devrais faire mieux la prochaine fois.
+#TEXT 5
+Tous les termes sont désormais caducs. Je devrais peut-être livrer le colis après tout - il y a peut-être encore une chance.
+#TEXT 6
+J'ai reçu une mission spéciale du capitaine du port de @<sStartCity>. Je dois livrer @<sText> à @<sTargetColony> d'ici @<sDay>. Ma récompense est de @<sMoney>.
+#TEXT 7
+Tous les termes sont désormais caducs. Je devrais peut-être livrer le courrier après tout - il y a peut-être encore une chance.
+#TEXT 8
+J'ai échoué à livrer le courrier au plus tard le @<sDay>. Mon paiement a été réduit de 10 % pour chaque jour. Au total, j'ai reçu @<sMoney>. Je devrais faire mieux la prochaine fois.
+#TEXT 9
+J'ai livré un colis. Bien que je n'aie reçu aucune pièces, ma réputation est intacte.
+#TEXT 10
+Le travail est fait, le courrier est livré, le paiement est reçu.
+#TEXT 11
+Je n'ai pas eu de chance, j'ai été obligé de donner un paquet à des voyous. Je dois voir mon client et lui dire la vérité...
+#TEXT 12
+Dès que j'ai quitté le bureau du capitaine du port, j'ai été arrêté par deux hommes masqués. Ils avaient l'air de mercenaires sérieux et professionnels, je suppose. J'ai préféré échouer ma mission pour rester en vie. Je devrais aller voir le capitaine du port et lui expliquer la situation.
+#TEXT 13
+Dès que j'ai quitté la capitainerie, j'ai rencontré un homme qui m'a proposé de le suivre dans une taverne pour discuter du paquet. J'ai refusé, ça sentait mauvais.
+#TEXT 14
+J'ai été attaqué par une frégate juste dans le port ; il semble que ce soit le navire de ce satané agent qui a essayé de " faire affaire " avec moi.
+#TEXT 15
+J'ai eu une belle occasion de me faire de l'argent - j'ai laissé l'homme copier ces documents pour @<sMoney>. Joli...
+#TEXT 16
+L'agent a essayé de me corrompre mais n'y est pas parvenu. Je ne suis pas Judas !
+#TEXT 17
+Alors... Mon client a remarqué que le paquet était ouvert, il semble que l'agent n'ait pas été très professionnel. Je n'ai pas reçu de pièces pour la livraison, et ma réputation en a souffert...
+
+#QUEST Escort
+Travail secondaire : Escorte de Caravane
+#TEXT 1
+Je dois escorter une caravane commerciale jusqu'à @<sTargetColony> d'ici @<sDay>. Ma récompense est de @<sMoney>.
+#TEXT 2
+La mission est terminée, les navires sont en sécurité, je suis payé.
+#TEXT 3
+Je n'ai plus le temps et je n'ai pas encore atteint ma destination. Je devrais me dépêcher...
+#TEXT 4
+J'étais en retard et mon paiement a été réduit de 10 % par jour. Ma récompense est de @<sMoney>. Je devrais faire plus d'efforts la prochaine fois.
+#TEXT 5
+Tous les termes sont caducs. Les navires se sont séparés de ma flotte. La mission a échoué.
+#TEXT 6
+Je dois escorter une caravane commerciale jusqu'à @<sTargetColony> d'ici @<sDay>. Ma récompense est de @<sMoney>. Je dois également livrer @<sGoodQty> de @<sGoods> pour un supplément de @<sMoney1>.
+#TEXT 7
+Tous les termes sont caducs. Les navires ont quitté ma flotte. La mission a échoué. Si je veux retrouver ce travail, je dois voir le client et essayer d'arranger la situation, au moins pour livrer la cargaison...
+#TEXT 8
+J'ai dû payer une amende - @<sMoney>. Mais je peux à nouveau obtenir un travail. Je ferais mieux de consulter mon journal de commerce pour trouver le meilleur prix pour la cargaison...
+#TEXT 9
+Ces bureaucrates sont vraiment trop insolents ! Ils voulaient me dépouiller jusqu'à mes vêtements. Je ferais mieux d'embrasser l'ennemi plutôt que de payer une telle somme à ces escrocs.
+#TEXT 10
+Je n'ai pas pu assurer la sécurité des navires. La mission a échoué.
+#TEXT 11
+Malheureusement, l'un des navires a été coulé alors qu'il combattait un ennemi. J'ai réussi à en sauver un autre, mais je n'ai reçu aucune récompense. Je devrais en apprendre davantage sur la tactique pour éviter d'autres erreurs...
+#TEXT 12
+Malheureusement, l'un des navires a été coulé alors qu'il combattait un ennemi. J'ai réussi à en sauver un autre, mais je n'ai reçu aucune récompense. Je devrais en apprendre davantage sur la tactique pour éviter d'autres erreurs... Ils n'ont payé que pour la livraison du fret - @<sMoney>.
+#TEXT 13
+Le voyage a été extrêmement malheureux - l'un des navires a été coulé alors qu'il combattait un ennemi. En outre, j'ai perdu une quantité importante de marchandises. Mon client a refusé de payer, et il a également exigé une compensation pour la cargaison perdue - @<sMoney>. J'ai décidé d'accepter ses conditions ; je ne veux pas me faire d'ennemis. Je ferais mieux de consulter mon journal de commerce pour trouver le meilleur prix pour la cargaison...
+#TEXT 14
+Ces bureaucrates sont vraiment trop insolents ! Ils voulaient me dépouiller jusqu'à mes vêtements. Je ferais mieux d'embrasser l'ennemi plutôt que de payer une telle somme à ces escrocs.
+#TEXT 15
+Je n'ai pas pu assurer la sécurité des navires. La mission a échoué. Si je veux retrouver ce travail, je dois voir le client et essayer d'arranger la situation, au moins pour livrer la cargaison...
+#TEXT 16
+Tous les termes sont caducs. La situation est critique. Je dois voir le client et essayer de résoudre le problème.
+#TEXT 17
+Bien que j'aie perdu tous les navires que j'escortais, j'ai quand même reçu mon paiement pour la cargaison livrée, seulement la moitié des pièces - @<sMoney>. C'est suffisant, surtout pour un voyage aussi horrible...
+#TEXT 18
+J'ai perdu les navires que j'étais censé protéger, et mon paiement a été divisé par deux ; j'ai également reçu une amende pour mon retard - 10 % par jour. Au total, ma récompense est de @<sMoney>. C'est suffisant, surtout pour un voyage aussi horrible...
+#TEXT 19
+Je dois rencontrer un navire chargé d'armes à @<sTargetColony> et l'escorter jusqu'à @<sStartCity>. Ma récompense est de @<sMoney>. Il est temps de prendre la mer ; je n'ai pas beaucoup de temps - seulement @<sDay>.
+#TEXT 20
+"@<sSName>" - le navire avec les armes est dans ma flotte maintenant. Nous devrions repartir.
+#TEXT 21
+J'ai été trop lent, et tous les termes sont désormais caducs. La mission a échoué.
+#TEXT 22
+J'étais trop occupé par mes problèmes, et "@<sSName>" a quitté ma flotte. Ma récompense est perdue...
+#TEXT 23
+J'ai échoué à protéger le navire. La mission a échoué.
+#TEXT 24
+Le travail est fait. Le navire a été escorté et j'ai reçu mon paiement.
+#TEXT 25
+Je dois rechercher un navire perdu "@<sSName>", le convoyer jusqu'à @<sStartCity>, ou apporter une preuve de sa destruction. Le navire a disparu près de @<sIsland>.
+#TEXT 26
+J'ai perdu trop de temps à régler mes problèmes. Inutile de naviguer vers @<sIsland>. La mission a échoué.
+#TEXT 27
+J'ai réussi à trouver "@<sSName>" près de l'île. Il tient à peine à flot ; il a perdu son mât et la plus grande partie de son équipage. Il ne pourra pas naviguer sans de sérieuses réparations. Je dois acheter des matériaux dans la colonie la plus proche et les livrer ici. J'ai besoin de planches - @<sQty1>, de toile à voile - @<sQty2>, de coton - @<sQty3>.
+#TEXT 28
+J'ai perdu trop de temps, et le capitaine de "@<sSName>" a déjà fait voile sur son navire endommagé. La mission a échoué.
+#TEXT 29
+J'ai apporté tout le matériel nécessaire. Je dois les livrer à @<sShore>.
+#TEXT 30
+Les réparations sont terminées. Nous pouvons nous rendre à @<sStartCity>.
+#TEXT 31
+J'ai escorté "@<sSName>" jusqu'à @<sStartCity>. Le capitaine m'a dédommagé de mes frais et m'a offert une amulette indienne pour mon aide.
+#TEXT 32
+Je me suis présenté au capitaine du port et j'ai reçu @<sMoney> pesos.
+#TEXT 33
+J'ai réussi à trouver "@<sSName>" près de l'île. Il se battait contre des pirates et j'ai participé à la bataille. Il y a eu un assaut, mais nous avons réussi à détruire notre ennemi. Maintenant, je dois parler au capitaine.
+#TEXT 33_1
+J'ai préféré éviter de perdre mon temps et de discuter avec le capitaine du navire perdu. Je les ai sauvés des pirates, c'est suffisant.
+#TEXT 34
+J'ai réussi à trouver "@<sSName>" près de l'île. Il se battait contre des pirates et j'ai participé à la bataille. Cependant, je n'ai pas pu empêcher une tempête de couler le navire perdu. Eh bien, j'ai fait ce que j'ai pu, et je sais ce qui s'est réellement passé. Je devrais retourner à @<sStartCity> et faire un rapport sur ce triste événement.
+#TEXT 35
+J'ai réussi à trouver "@<sSName>" près de l'île. Il se battait contre des pirates et j'ai participé à la bataille. Il y a eu un assaut, et l'ennemi était trop fort, j'ai donc dû battre en retraite. Je n'en parlerai pas, c'est ma honte.
+#TEXT 36
+"@<sSName>" est dans ma flotte. Il est temps de rentrer.
+#TEXT 37
+J'ai escorté "@<sSName>" jusqu'à @<sStartCity>. Le capitaine et son équipage m'ont offert @<sMoney> et une amulette indienne pour mon aide.
+#TEXT 38
+Je n'ai pas trouvé "@<sSName>" près des côtes de @<sIsland>, mais j'ai réussi à trouver son capitaine et son équipage dans la baie appelée @<sShore>. Je les ai immédiatement embarqués ; ces Indiens semblaient avoir des intentions claires.
+#TEXT 39
+Dès que nous avons atteint la mer, nous avons été attaqués par une corvette pirate ; ce doit être la corvette dont parlait le capitaine. J'ai vaincu les pirates.
+#TEXT 40
+J'ai atteint @<sStartCity>. L'ex-capitaine m'a offert @<sMoney> et une amulette pour mon aide. Son équipage restera avec moi.
+#TEXT 41
+Le capitaine du port de @<sStartCity> m'a demandé d'intervenir dans le combat qui se déroule non loin d'ici - des marchands sont attaqués par des pirates. J'ai accepté de l'aider. Je dois éliminer les pirates et ne pas les laisser couler les navires de commerce.
+#TEXT 42
+J'ai perdu trop de temps sur la côte - le combat s'est terminé sans moi. La mission a échoué.
+#TEXT 43
+Le combat a été couronné de succès - tous les navires pirates ont été détruits, sans aucune perte de notre côté. Je peux revenir et réclamer ma récompense.
+#TEXT 44
+Le combat s'est bien passé, mais nous avons perdu un navire de commerce. Je dois faire un rapport à ce sujet.
+#TEXT 45
+Le combat n'a pas été très favorable pour nous ; tous les pirates ont été éliminés, mais il ne restait qu'un seul navire de commerce. Je devrais faire un rapport à ce sujet.
+#TEXT 46
+Le combat a été vraiment défavorable pour nous ; tous les navires de commerce ont été perdus. C'est un échec.
+#TEXT 47
+L'ennemi était trop coriace, j'ai dû battre en retraite. C'est une honte pour moi.
+
+#QUEST Shadowtrader
+Concurrence Déloyale
+#TEXT 1
+Un marchand de @<sCity> a des ennuis - il ne peut pas quitter son magasin une seconde. Je dois remettre sa lettre au commandant avant la fin de la journée. Je serai payé 300 pesos.
+#TEXT 2
+On dirait que quelqu'un essaie de détruire les affaires du commerçant en vendant des marchandises illégalement et à bas prix. Je me suis engagé à aider. Je pense que je devrais commencer par les contrebandiers locaux ; ils doivent bien être impliqués dans cette affaire...
+#TEXT 3
+Ma discussion avec les contrebandiers n'a servi à rien. Je suppose que c'est une erreur de ma part. Aucun indice n'a été laissé ; je suppose que le marchand devra s'en occuper lui-même.
+#TEXT 4
+J'ai été trop lent. La mission a échoué.
+#TEXT 5
+J'ai réussi à tromper les contrebandiers - ils m'ont donné rendez-vous. Je dois me rendre de nuit à la capitainerie du port local ; ils m'y retrouveront et m'indiqueront le chemin de ce magasin clandestin. Je peux soit parler au commandant et le laisser s'occuper d'eux, soit tout faire moi-même...
+#TEXT 6
+J'ai manqué la rencontre. La mission a échoué.
+#TEXT 7
+J'ai décidé de donner toutes les informations au commandant. Il m'a assuré que les voyous seraient arrêtés ce soir. Je devrais rendre visite au marchand dans quelques jours et recevoir ma récompense.
+#TEXT 8
+On m'a conduit au repaire où j'ai rencontré le concurrent. J'ai réussi à l'effrayer, il s'est enfui et m'a bien payé. Je peux maintenant retourner chez le marchand et réclamer ma récompense.
+#TEXT 9
+On m'a conduit au repaire où j'ai rencontré le concurrent. Les négociations se sont terminées par un combat. J'ai tué deux de ses hommes et il m'a supplié de lui laisser la vie sauve. Je l'ai laissé partir et j'ai confisqué toutes ses affaires et ses pièces. Je doute qu'il prenne à nouveau le risque de commercer dans cette ville. Je peux maintenant retourner voir le marchand et réclamer ma récompense.
+#TEXT 10
+On m'a conduit au repaire où j'ai rencontré le concurrent. La négociation s'est terminée par un combat. J'ai tué l'homme et deux de ses congénères. Je suppose que c'est la meilleure solution, il ne pourra plus faire de mal aux gens. Je peux maintenant retourner chez le marchand et réclamer ma récompense.
+#TEXT 11
+J'ai reçu 15 000 pesos pour avoir réglé le problème du concurrent. Joli...
+
+#QUEST Wine
+Denrées Embouteillées
+#TEXT 0
+Les soldats se lâchent ! Maintenant, ils commandent du vin aux gens du peuple. Dois-je lui en acheter ou en parler à son commandant ? Le commandant se trouve généralement dans les cachots du fort.
+#TEXT 1
+Le soldat @<sName> m'a demandé de lui acheter un lot de bon vin français. De dix à soixante bouteilles. J'ai accepté de faire ce qu'il me demandait ; je pourrais me faire un peu d'argent avec ça.
+#TEXT 1_1
+J'ai obtenu le vin. Au cours de notre discussion, le soldat m'a dit qu'il m'attendrait au sommet du fort le lendemain.
+#TEXT 2
+Une semaine s'est écoulée, et mon ami soldat est probablement parti en mer comme il me l'a dit. Inutile de s'inquiéter maintenant de sa demande...
+#TEXT 3
+J'ai payé 1 000 pièces, et maintenant je sais qui vend du vin en grande quantité. C'est @<sName>, il possède le magasin local. Je devrais aller le voir.
+#TEXT 4
+Ces marchands sont bien trop avares. Ils ne vous diront pas un seul mot gratuitement. Et je ne paierai pas cette ordure.
+#TEXT 5
+Surprise. @<sName> ne fait pas de commerce de vin. On dirait que ce bonimenteur m'a menti. Nous devrions avoir une discussion.
+#TEXT 6
+2 000 pièces, et le bonimenteur a écrit un mot pour le propriétaire de la boutique. Maintenant, il va faire du commerce avec moi. Ce n'est pas grave, je ferai mon profit de toute façon.
+#TEXT 6_1
+Le bonimenteur a écrit une note pour le propriétaire du magasin. Maintenant, il va faire du commerce avec moi.
+#TEXT 7
+Ce salaud m'a trompé, a refusé de me rendre l'argent et a appelé les gardes ! Et puis merde...
+#TEXT 8
+J'ai acheté assez de vin. Je peux maintenant retourner auprès du soldat.
+
+#QUEST Findship
+Travail secondaire : Navire Recherché
+#TEXT 1
+Le maître du chantier naval de @<sCity> m'a proposé de trouver @<sShip> et de le lui amener. Les caractéristiques et l'état du navire n'ont pas d'importance ; seul le type de navire compte. J'ai deux mois pour faire le travail. Ma récompense sera égale à une fois et demie la valeur du navire.
+#TEXT 2
+J'ai été trop lent. La mission a échoué.
+#TEXT 3
+J'ai trouvé le navire et je l'ai livré à mon client. J'ai reçu @<sMoney>.
+
+#QUEST Device
+Travail secondaire : Voleur Malchanceux
+#TEXT 1
+Un mystérieux voleur a dérobé un outil précieux au maître du chantier naval de @<sCity>. C'est @<sName>. Je devrais essayer de demander aux locaux ; peut-être ont-ils vu quelqu'un. J'ai une description complète de l'objet que je cherche - @<sDesc>.
+#TEXT 2
+J'ai perdu trop de temps. La mission a échoué.
+#TEXT 3
+J'ai trouvé le voleur. Il était désespéré et a jeté l'objet à l'extérieur de la ville, près des portes.
+#TEXT 4
+J'ai réussi à retrouver le voleur. Il m'a remis l'objet volé. Simple et facile. Je peux retourner auprès de mon client.
+#TEXT 5
+J'ai trouvé le voleur. Il m'a demandé des pièces pour @<sName>. Comme je n'avais pas besoin de complications, j'ai payé l'homme. Maintenant, j'ai l'outil.
+#TEXT 6
+J'ai trouvé le voleur. Il a essayé de faire l'idiot, mais je l'ai effrayé et il a lâché l'outil volé.
+#TEXT 7
+J'ai trouvé le voleur. Il a refusé de se séparer pacifiquement de l'objet volé. Je l'ai effrayé et il s'est enfui. Maintenant, l'outil volé est à jamais perdu pour moi...
+#TEXT 8
+J'ai trouvé le voleur. Il a refusé de se séparer pacifiquement de l'objet volé et a fait de la résistance armée.
+#TEXT 9
+Les gens du coin m'ont dit qu'il y avait un clochard qui possédait l'outil que je cherche. C'est tout ce que j'ai, malheureusement. Je doute que le voleur ait pu s'enfuir bien loin. Je devrais fouiller la ville et ses environs.
+#TEXT 10
+J'ai été payé @<sMoney>. Pas mal.
+
+#QUEST Sunplace
+Travail secondaire : Assassinat
+#TEXT 1
+@<sName>, propriétaire du magasin de @<sCity>, m'a demandé d'effectuer un travail peu commun. Je dois apporter quelques problèmes à son concurrent - capturer son navire avec sa cargaison ou le couler. J'ai accepté, normalement je dois payer pour des informations sur des marchandises de valeur. Et maintenant, je vais être payé. L'homme a promis @<sMoney>, le navire et @<sGoods> dans ses cales. Je dois chercher @<sType> "@<sSName>" non loin de @<sShore> dans @<sDay>.
+#TEXT 2
+Je suis arrivé trop tard. Le navire est parti et je n'obtiendrai aucune cargaison. Peut-être devrais-je résoudre le problème moi-même d'une manière plus radicale ? Tuer son concurrent une fois pour toutes. Le résultat sera le même... Ma cible vit quelque part dans @<sCity>.
+#TEXT 3
+J'arrive à temps ! Je vois la cible. Aux armes !
+#TEXT 4
+C'était un bon combat. Je peux retourner chez mon employeur.
+#TEXT 5
+Bon sang ! Le capitaine de ce vieux rafiot était trop doué pour moi. Peut-être devrais-je résoudre le problème moi-même d'une manière plus radicale ? Tuer son concurrent une fois pour toutes. Le résultat sera le même... Ma cible vit quelque part dans @<sCity>.
+#TEXT 6
+Le barman m'a dit que @<sName> est actuellement dans le magasin local. Il est temps de lui rendre visite.
+#TEXT 7
+Le barman m'a dit que @<sName> est en train de faire une excursion en mer. Je devrais chercher son lougre.
+#TEXT 8
+@<sName> est éliminé. Je suppose que mon client sera satisfait. Pas d'homme - pas de problème.
+#TEXT 9
+J'ai changé d'avis. Tuer un homme désarmé n'est pas mon genre.
+#TEXT 10
+J'ai décidé de laisser le lougre du marchand tranquille. Tuer un homme pacifique n'est pas mon genre.
+#TEXT 11
+J'ai changé d'avis et je ne participerai pas à leur combat.
+#TEXT 12
+Le client était satisfait et m'a bien payé.
+#TEXT 13
+Vraiment ? J'en ai trop fait pour mon travail, et il n'est pas content ! Je ne me fie pas à ses paroles sur les "lourds péchés " - cet homme n'a vraiment pas de conscience. On dirait qu'il avait ses plans. Qu'il aille au diable, il m'a quand même payé.
+#TEXT 14
+J'arrive juste à temps. Étonnamment, "@<sSName>" n'est pas un @<sType>, c'est un galion lourd. Il semble que le client se soit trompé. Mais peut-être n'y a-t-il pas de @<sGoods> dans ses cales ? Quoi qu'il en soit, je dois me battre.
+
+#QUEST TraderEscort
+Travail secondaire : Escorte
+#TEXT 1
+Je dois escorter un marchand de @<sStartCity> @<sAdd> d'ici @<sDay>. Ma récompense est de @<sMoney>.
+#TEXT 2
+J'ai été trop lent, et le marchand m'a quitté. La mission a échoué.
+#TEXT 3
+Le navire du marchand a été coulé. La mission a échoué.
+#TEXT 4
+J'ai escorté un marchand, mais il a refusé de payer pour mes services parce que je n'avais pas fait grand-chose pour le protéger. Eh bien, si nous nous rencontrons à nouveau...
+#TEXT 5
+J'ai escorté un marchand, mais il n'a payé que la moitié de la somme en raison du peu d'efforts que j'ai déployés pour le protéger.
+#TEXT 6
+J'ai escorté mon client et obtenu une récompense - @<sMoney>.
+#TEXT 7
+J'ai escorté mon client, mais il n'a pas pu me payer. Il m'a dit où je pouvais trouver la flotte de son collègue marchand chargée de @<sAdd>. Je devrais naviguer jusqu'à l'île inhabitée @<sIsland> - ma cible y sera dans deux semaines.
+#TEXT 8
+J'ai été trop lent, et le marchand a déjà quitté les lieux. Quel dommage...
+#TEXT 9
+J'ai réussi à aborder la flûte d'un marchand. Il y avait vraiment beaucoup de @<sAdd>. Ça marche pour moi.
+#TEXT 10
+Mon adversaire était trop fort, et j'ai préféré battre en retraite. Au diable la cargaison.
+#TEXT 11
+Cette maudite ordure m'a fait tomber dans une embuscade - il y avait une flotte de pirates. J'ai dû me battre avec eux et mon ancien compagnon de voyage.
+#TEXT 12
+Nous avons été attaqués par des pirates dès que nous avons atteint l'île. La victoire fut mienne.
+#TEXT 13
+Nous avons été attaqués par des pirates dès que nous avons atteint l'île. Nous étions en infériorité numérique, j'ai donc battu en retraite et j'ai laissé mon compagnon de voyage. La mission a échoué.
+#TEXT 14
+Ce bâtard imprudent a hissé le drapeau noir dès que nous avons atteint l'île. J'ai dû me battre.
+#TEXT 15
+J'ai coulé la flûte. Dommage, je n'aurai pas la cargaison.
+
+#QUEST Racing
+Travail secondaire : Marathon Maritime
+#TEXT 1
+J'ai discuté avec un marchand insolent dans @<sStartCity>. L'homme prétend qu'il atteindra @<sCity> d'ici @<sDay>. Je recevrai @<sMoney> si j'atteins @<sCity> plus vite que lui. Il est temps d'appareiller.
+#TEXT 2
+Ha ! J'ai battu ce marchand - il n'y a pas de flûte dans le port de @<sCity>. Je vais rester dans une taverne et attendre mon concurrent malchanceux.
+#TEXT 3
+Sérieusement... J'étais en pleine navigation, et ce marchand m'a battu ; il y a sa flûte dans le port. Je dois le voir dans une taverne.
+#TEXT 4
+J'ai reçu mon prix du barman. Bien. Peut-être y a-t-il d'autres marchands sûrs d'eux ?
+#TEXT 5
+J'ai perdu cette fois, mais il doit y avoir d'autres marchands comme lui. Et nous verrons bien !
+#TEXT 6
+J'ai changé d'avis : je ne participerai pas à cette course absurde. Je laisserai l'homme avoir son prix et je serai heureux.
+#TEXT 7
+J'étais trop en colère à cause de mon échec, alors j'ai attaqué le marchand en plein port. Quel idiot je fais ! La fureur aveugle, dit-on...
+
+#QUEST RedChieftain
+Chef Indien
+#TEXT 1
+Kanauri, le chef indien, m'a demandé de l'aide. Les membres de sa tribu ont été réduits en esclavage par le navire @<sText1>. Le chef m'a demandé de libérer son peuple qui est forcé de plonger pour trouver des perles. J'ai accepté ; j'obtiendrai toutes leurs prises après tout. Deux goélettes surveillent les Indiens, et il y a un camp bien défendu sur le rivage. Détail important, je dois les approcher à bord d'un petit navire comme un lougre ou un sloop pour rester caché suffisamment longtemps. Je n'ai qu'un mois pour le faire. Il vaut donc mieux que je ne perde pas de temps.
+#TEXT 2
+J'ai été trop lent, et les Indiens ont déjà dû être emmenés. Eh, c'est ma faute... J'ai été trop lent, et les Indiens ont déjà dû être emmenés. Eh, c'est ma faute... Je vais débarquer Kanauri dans le port le plus proche, je l'ai laissé tomber.
+#TEXT 3
+J'ai réussi à rester caché assez longtemps pour engager l'ennemi. Ces salauds tirent sur des pêcheurs désarmés. Je dois les détruire au plus vite avant que les Indiens ne meurent.
+#TEXT 4
+Le chef m'a averti de n'utiliser qu'un seul petit navire ! Aucune trace de tartanes indiennes, il semble que les Indiens aient été chassés dans la jungle. Bon sang ! Je peux partir maintenant...
+#TEXT 5
+Les goélettes ennemies sont détruites. Je dois maintenant débarquer et libérer la baie de ses soldats pour permettre aux Indiens de s'enfuir dans la jungle. De plus, j'ai bon espoir de trouver du butin dans le camp des pêcheurs...
+#TEXT 6
+Les goélettes étaient trop fortes pour moi. Bien sûr ! Je n'avais qu'un seul navire, plus faible que tous les autres... J'en ai eu assez ; Kanauri sera débarqué dans le port le plus proche. Il ferait mieux de trouver un autre "sauveur"...
+#TEXT 7
+Le combat a été terrible ; toutes les tartanes indiennes ont été détruites. Il n'y a plus personne à sauver. Je vais débarquer Kanauri dans le port le plus proche ; je l'ai laissé tomber.
+#TEXT 8
+Tous les ennemis sont morts. Les Indiens m'ont bien payé et sont partis dans la jungle. Je respecte les gens comme Kanauri, c'est un vrai chef de tribu.
+#TEXT 9
+Tous les ennemis sont morts. Les Indiens m'ont entièrement payé avec les perles qu'ils ont récupérées et ont traversé la jungle jusqu'à leur village. Le chef m'a même donné en récompense une amulette enchantée avec laquelle il est soi-disant impossible de se noyer. Je respecte sincèrement les gens comme Kanauri - c'est un chef digne de sa tribu.
+
+#QUEST FalseTrace
+Fausse Piste
+#TEXT 1
+J'ai fait une rencontre intéressante dans la taverne de @<sCity1>. Un homme appelé Adam Rayner m'a proposé un marché. Il m'a parlé d'un flûte "@<sShip>" chargé d'argent. Il navigue de Carthagène à @<sCity2>. Il m'a demandé un dixième du butin. J'ai accepté ses conditions, considérant qu'il naviguerait avec moi, et il a même demandé à participer à I'abordage. Adam ne m'a pas donné de délai, mais je suppose que je n'ai que deux ou trois semaines.
+#TEXT 2
+Malgré mes efforts, je n'ai pas réussi à aborder le flûte. Peu importe, au diable l'argent.
+#TEXT 3
+J'ai coulé le flûte avec tout son argent. Comment ai-je pu être aussi inattentif...
+#TEXT 4
+Ce n'est pas banal ! Il n'y avait pas d'argent dans le flûte. Le capitaine dit que ce n'est qu'un navire de transport censé livrer des provisions. Mais il y avait aussi une femme ; c'est manifestement la compagne du capitaine. Bon, je devrais appeler Adam dans ma cabine et lui parler. Voyons ce que ce salaud va me dire en guise d'excuse. Et il a intérêt à faire de gros efforts pour sauver son cou d'une corde...
+#TEXT 5
+Adam Rayner a admis que son plan était de capturer le flûte avec mon aide et de récupérer sa femme, qui s'est enfuie. Elle s'appelle Katerine Rayner. Il me propose de me parler de l'or d'un certain Solly aux yeux bridés en récompense de mes "services". Mais je dois d'abord les livrer, lui et sa femme, à @<sCity>. Dois-je faire confiance à ce voyou ? Peut-être devrais-je d'abord parler à sa femme ; elle pourrait savoir quelque chose d'important...
+#TEXT 6
+Cela devient de plus en plus intéressant. Katerine déteste Adam comme un chat déteste un chien... C'est pour cela qu'elle l'a fui. Mais ce ne sont que leurs affaires de famille et leurs problèmes. Je n'ai pas aimé Katerine et sa proposition, alors je prendrais le risque de faire à nouveau confiance à Adam. À @<sCity> donc.
+#TEXT 7
+Cela devient de plus en plus intéressant. Katerine déteste Adam comme un chat déteste un chien... C'est pour cela qu'elle l'a fui. Katerine veut se venger de son mari qui a organisé l'attentat ayant entraîné la mort de son amant. Elle m'a proposé de tuer son mari et, en échange, elle me révélera sa cachette. Comme je ne fais plus confiance à Adam, j'ai accepté ses conditions. Je vais naviguer jusqu'à @<sCity>, mais je débarquerai sur le rivage le plus proche, pas dans la ville. C'est là que je m'occuperai d'Adam.
+#TEXT 8
+Cela devient de plus en plus intéressant. Katerine déteste Adam comme un chat déteste un chien... C'est pour cela qu'elle l'a fui. Katerine prétend que son capitaine peut offrir davantage pour leur liberté. Je devrais aller parler au prisonnier.
+#TEXT 9
+L'offre du capitaine était beaucoup plus suspecte que celle d'Adam. On dirait qu'il essaie de me tendre un piège. Aucune chance ! Je ferais mieux de faire confiance à Adam une fois de plus. Je me dirige vers @<sCity>.
+#TEXT 10
+L'offre du capitaine semblait beaucoup plus rentable et intéressante que celle d'Adam. Qui a menti une fois, le fera encore. Je vais arrêter Rayner et le mettre dans la cale.
+#TEXT 11
+Adam Rayner est arrêté, bien qu'il ait résisté. Il est maintenant enchaîné, et je me dirige vers @<sShore>.
+#TEXT 12
+J'ai été trop lent, et Adam Rayner a volé un bateau, pris sa femme et s'est échappé de mon navire. Je ne pense pas les revoir...
+#TEXT 13
+J'ai été trop lent, et Solly aux yeux bridés a déjà pris ses trésors. J'aurais dû faire mieux...
+#TEXT 14
+J'ai transporté Adam et sa femme à @<sCity>. Adam m'a dit que Solly avait laissé son butin dans la grotte de la baie de San Juan del Norte. Je m'y rends, il ne reste plus que cinq jours.
+#TEXT 15
+J'ai été trop lent, et Solly aux yeux bridés a déjà pris ses trésors. J'aurais dû faire mieux...
+#TEXT 16
+C'était un sacré combat ! Les bandits de Solly ont été éliminés. Il y a tellement de trésors qu'il faudra plusieurs voyages pour les transporter.
+#TEXT 17
+Dès que je suis monté à bord, j'ai vu le bateau de Solly. Eh bien, tant pis pour lui.
+#TEXT 18
+Dès que je suis monté à bord, j'ai vu le navire de Solly. Il était trop fort pour moi, j'ai donc dû battre en retraite et laisser tout le butin sur le rivage...
+#TEXT 19
+Mon ancien prisonnier a tenu parole et m'a donné des informations : dans deux semaines, un galion chargé de minerai d'or partira de @<sCity> pour l'Europe. Je suis dessus. Pas besoin de s'inquiéter pour Adam, je suppose...
+#TEXT 20
+Malgré tous mes efforts, je n'ai pas réussi à capturer le galion. Très bien, au diable l'or.
+#TEXT 21
+J'ai coulé le galion avec tout son or. Quel idiot...
+#TEXT 22
+Le lourd galion est capturé. Le capitaine avait raison : il y avait beaucoup d'or !
+#TEXT 23
+Adam Rayner a été tué sous les yeux de sa femme, comme elle le souhaitait. C'est étrange, mais la scène de sa mort lui a fait plaisir. Elle m'a parlé de la cachette d'Adam - Port-au-Prince, le phare.
+#TEXT 24
+J'ai trouvé la cachette d'Adam. Sa bande m'a attaqué alors que je regagnais mon bateau. Katerine avait préparé l'embuscade, elle voulait se venger de la mort de son amant. Ce n'était pas facile, mais j'ai réussi à tuer les quatre bandits. Katerine était trop confiante et a décidé d'assister à mon exécution. Et elle a reçu une balle dans le crâne pour sa traîtrise. Finies les surprises.
+#TEXT 25
+J'ai trouvé la cachette d'Adam. Sa bande m'a attaqué alors que je regagnais mon navire. Katerine avait préparé l'embuscade, elle voulait se venger de la mort de son amant. Ce n'était pas facile, mais j'ai réussi à tuer les quatre bandits. Katerine était trop confiante et a décidé d'assister à mon exécution. Je ne lui ai pas fait de mal et je l'ai laissée rester sur l'île.
+#TEXT 26
+J'ai été attaqué dès que je suis monté à bord. La menace de Katerine s'est avérée vraie. J'ai engagé le combat avec l'ennemi et je l'ai détruit.
+#TEXT 27
+J'ai été attaqué dès que je suis monté à bord. La menace de Katerine s'est avérée vraie. J'ai préféré rester à l'écart et j'ai battu en retraite.
+
+#QUEST Portugal
+Long chemin vers la potence
+#TEXT 1
+J'ai entendu une histoire intéressante de la part d'un chasseur de primes ivre ! Il semble qu'un célèbre pirate, Bartolomeo le Portugais, se trouve quelque part à Philipsburg ; il est à la recherche d'un médecin. La Compagnie néerlandaise des Indes occidentales paiera cher sa tête. Hugo a raison, je ne veux pas perdre une telle occasion. Je dois fouiller la ville et trouver le rat avant qu'il ne disparaisse !
+#TEXT 2
+Je n'ai pas réussi à trouver le pirate, et je ne verrai pas de récompense. Qui sait, c'est peut-être mieux ainsi...
+#TEXT 3
+Hugo Avendell m'a persuadé d'éviter les autorités locales et de livrer les Portugais directement à la Compagnie. Il pense que le gouverneur local s'emparera de notre proie et trouvera le moyen de nous tromper. Je dois changer les vêtements du Portugais, ses hommes sont peut-être encore en ville. Je dois lui trouver des vêtements appropriés.
+#TEXT 4
+Bon sang ! J'ai été trop lent, le Portugais a réussi à nous échapper. Il y a une odeur de poudre dans la chambre, pauvre docteur. Je peux oublier toute récompense maintenant.
+#TEXT 5
+Le médecin a dit que le portugais est trop faible et qu'il ne survivra probablement pas à un voyage à Curaçao. Ma dernière chance est de l'emmener chez Gino Gvineili. Si le génie ne peut pas l'aider, personne ne pourra le faire. Mais nous manquons de temps, nous n'avons que trois jours.
+#TEXT 6
+Il est trop tard, la fièvre a fait son oeuvre. Dommage que le pirate n'ait pas vécu assez longtemps pour la potence...
+#TEXT 7
+Nous sommes arrivés à Antigua, et le Portugais est toujours en vie. Je ne laisserai pas mon prisonnier mourir avant d'avoir reçu les doublons promis. Mais tout dépend maintenant de Gino et de ses compétences.
+#TEXT 8
+Je savais que nous avions passé trop de temps ici ! Ils ont fini par nous retrouver, mais ce ne sont pas les hommes du Portugais, ce sont des mercenaires. J'ai dû les calmer. Il ne nous reste plus que cinq jours pour atteindre la Martinique. Mon prisonnier pourra se reposer à la taverne de Saint-Pierre et vivre assez longtemps pour atteindre Curaçao. Hugo se doute qu'il y a d'autres égorgeurs autour de nous, peut-être que je serai obligé de les combattre.
+#TEXT 9
+On m'a demandé de rendre visite à Sa Grâce le gouverneur pour une affaire importante. Intéressant. Quoi qu'il en soit, le Portugais se reposera à la taverne pendant quelques jours. J'ai donc le temps de m'entretenir avec monsieur Jacques Dyel du Parquet.
+#TEXT 10
+Sa Grâce me demande de patrouiller dans les eaux de sa colonie pendant deux jours ; ils ont vu une frégate pirate récemment. Eh bien, la peur a de grands yeux, et j'ai toujours besoin de 10 000 pesos de plus. J'ai accepté ; je dois de toute façon rester ici quelques jours, le temps que le Portugais se repose...
+#TEXT 11
+Deux jours ont passé, et il n'y a toujours aucun signe de la frégate pirate. Il est temps d'aller voir Sa Grâce.
+#TEXT 12
+Hugo est un idiot ! Non, je me trompe... c'est un lâche ! C'est le meilleur mot pour le décrire. Et pourquoi ne l'ai-je pas jeté par-dessus bord plus tôt ? Il n'a rien fait pour aider notre action. Bien, cela lui coûtera dans notre partage. Maintenant, je devrais aller à la taverne et parler au barman. Il a dû voir quelque chose !
+#TEXT 13
+J'ai pu découvrir que notre client a été arraché à nos bras aimants par un certain Franz Garcke et un certain Hernando Vazquez. Hugo les connaît. Il a pris peur et s'est enfui dès que nos égorgeurs se sont présentés. Sa participation à nos affaires devient de plus en plus douteuse. Mais cela attendra, je suis sûr qu'ils ont emmené notre homme à Le François. Où d'autres hommes comme eux pourraient-ils se cacher ? Uniquement sous la protection de Jacques le Bonhomme. Je dois essayer de les intercepter là-bas. Je dois naviguer jusqu'au port de Le François et les empêcher d'emmener mon prisonnier sur leur navire !
+#TEXT 14
+J'ai rencontré les hommes de Garcke, comme je m'y attendais. Dommage pour eux... Il est temps de parler à leur chef - il doit être à l'étage avec mon prisonnier !
+#TEXT 15
+Le Portugais a été placé dans la chambre ; notre médecin veille sur lui. Je suis tellement fatigué de tout cela... Je ferais mieux de me promener dans la ville ; j'ai deux jours de repos.
+#TEXT 16
+Je n'ai pas trouvé le portugais, et je ne le trouverai probablement pas. C'est dommage.
+#TEXT 17
+J'ai pu attraper Bartolomeo le Portugais, mais j'ai dû faire face à ses anciens compagnons qui n'étaient pas vraiment désireux de le laisser en vie. Je devrais parler à mon prisonnier lorsque nous serons sortis d'ici ; il y a quelque chose qui ne va pas chez lui.
+#TEXT 18
+Comme je m'y attendais, j'ai été attaqué par la frégate de Vazquez - "Albatros". Hugo le craint. Je suis victorieux, mais il n'y a aucun signe de Vazquez à bord... Je ferais mieux de parler à mon prisonnier.
+#TEXT 19
+Comme je m'y attendais, j'ai été attaqué par la frégate de Vazquez - "Albatros". J'ai préféré éviter le combat et ai donc fui la frégate. Je devrais livrer le prisonnier à Curaçao, mais avant, je ferais mieux de parler avec lui.
+#TEXT 20
+Eh, je suis trop gentil ! J'ai si souvent sauvé le Portugais que je ne peux pas le laisser se faire pendre. Qu'il aille au diable, il me quittera au premier port...
+#TEXT 21
+Assez de sentimentalisme avec cette ordure. J'en ai assez de lui... Direction Curaçao, vers Matthias Beck.
+#TEXT 22
+C'est fait. Le Portugais a été remis à ses juges, et les pièces sont à moi. Je dois admettre que cette histoire ne me satisfait pas. Gino avait sacrément raison ; sauver la vie d'un homme pour le pendre plus tard... ce n'est pas juste.
+#TEXT 23
+J'ai décidé de laisser partir Bartolomeo ; de plus, il a offert un bon prix pour sa liberté. Il a une cachette sur les Turques remplie de pierres précieuses, qu'il a prises à la Compagnie, et c'est aussi la raison pour laquelle ils sont tous à sa recherche. J'espère qu'il n'a pas menti pour sauver sa vie... Il m'a également mis en garde contre Vazquez, qui pourrait devenir un problème à l'avenir. Maintenant, je dois chercher le trésor avant que les sauvages ne le trouvent. Qu'est-ce qu'il a dit ? Sur la colline, sous l'arbre ?
+#TEXT 24
+J'ai assisté à un combat entre des Indiens et des marines hollandais. Qu'est-ce qu'ils font ici ? Les deux camps ne m'appréciaient pas vraiment, alors j'ai dû me battre contre tous. C'était rude, mais ils sont tous morts et je suis debout. Maintenant, je peux chercher le trésor.
+#TEXT 25
+Le Portugais n'a pas menti ! J'ai trouvé les joyaux dont il parlait. Une fin digne de ce nom pour une histoire aussi folle.
+#TEXT 26
+J'ai été engagé par une frégate hollandaise près des côtes des Turques. Je les ai combattus et détruits. Je ne pense pas qu'ils soient venus ici juste pour se promener sur cette île confortable ; il doit y avoir quelque chose à propos du trésor de Bartolomeo. Peut-être trouverai-je quelque chose dans la colonie hollandaise la plus proche ? Je devrais en parler aux gens de la taverne.
+#TEXT 27
+J'ai été engagé par une frégate hollandaise près des côtes des Turques. J'ai préféré me retirer. Je ne pense pas qu'ils soient venus ici juste pour se promener sur cette île confortable ; il doit y avoir quelque chose à propos du trésor de Bartolomeo. Peut-être trouverai-je quelque chose dans la colonie hollandaise la plus proche ? Je devrais parler avec les gens de la taverne.
+#TEXT 28
+Pourquoi devrais-je me soucier des intrigues de la Compagnie ? Après tout, j'ai les pierres précieuses, c'est tout ce qui compte...
+#TEXT 29
+Il semble que j'ai découvert ce qui se passe. Hernando Vazquez. Il n'a pas pris le risque de se battre contre moi à la Martinique - je suis sûr qu'il a bien vu le dernier combat de sa frégate. Il voulait sauver sa vie ; c'est pourquoi il a parlé des pierres précieuses à la Compagnie. Et il ne voulait pas me rencontrer à Curaçao ; c'est pourquoi il est venu ici, à Philipsburg. Il a envoyé l'expédition hollandaise sur les Turques.
+Eh bien, Don Sanglant a assez vécu ; il est temps d'en finir avec lui avant qu'il ne soit au courant de ma présence ici. Je devrais aller directement voir le gouverneur ; je ferais mieux de demander à ses serviteurs.
+#TEXT 30
+J'ai changé d'avis. Vazquez n'est pas une menace pour moi - les Hollandais ne le laisseront pas vivre ; ils n'ont pas trouvé de perles sur les Turques. Je peux respirer librement, je suis confiant...
+#TEXT 31
+Ce n'est pas rien ! Ils ont capturé le Portugais ! Ils disent que lui et Vazquez seront exécutés dans un mois. Il est évident que la Compagnie va d'abord les interroger. Je dois décider quoi faire. Le Portugais pourrait leur parler de mon rôle dans cette histoire...
+#TEXT 32
+Bartolomeo est détenu avec son compagnon Vazquez dans les cachots de Willemstad. Ha ! Dois-je prendre un risque ? Ou au diable toute cette histoire ?
+#TEXT 33
+J'ai décidé de rester à l'écart de ce risque et, ce qui est plus important, de ce pari sans intérêt. Même si le Portugais ouvre la bouche, il ne pourra pas dire grand-chose. Il y a des centaines de capitaines comme moi. Il ne connaît même pas mon nom.
+#TEXT 34
+J'ai libéré Bartolomeo de la prison. J'ai réussi de justesse, mais Vazquez m'a attaqué par derrière. Dieu merci, Bartolomeo m'a prévenu et le coup n'a pas été mortel. Maintenant, il n'y a plus rien à craindre. Je dois admettre que je l'ai fait pour une autre raison. Qu'on le veuille ou non, Gino avait raison : nous sommes responsables de ceux que nous avons apprivoisés.
+#TEXT 35
+Le Portugais n'a pas survécu au combat avec les chasseurs de primes...
+#TEXT 36
+Le Portugais n'a pas survécu au combat avec les hommes de Franz Garcke...
+
+#QUEST Consumption
+Prix de Consomption
+#TEXT 1
+La serveuse de la taverne San José est désespérée - elle est persuadée que son frère, qui a été enfermé dans les cachots locaux pour contrebande, n'est pas mort de maladie comme on le lui a dit. Il a peut-être des ennuis, et je ne pouvais pas rester indifférent aux larmes d'une si belle fille, alors j'ai promis de l'aider. Il est étrange que son frère soit mort deux semaines après avoir été enfermé dans les cachots. Il est probable que le Señor Comandante cache quelque chose. Je devrais aussi interroger les gens du peuple sur cette étrange épidémie ; parfois, les ragots sont la meilleure source d'information.
+#TEXT 2
+Je n'ai pas obtenu grand-chose du tavernier. Pourtant, il a confirmé mes soupçons. Il semble que la consomption tue des hommes depuis un an, sans que personne ne s'en soucie. Ou alors, ils font semblant ?  J'ai également obtenu un autre indice : un contrebandier a séjourné dans les cachots et a survécu. Il est mort après tout, mais cela s'est passé en dehors de la prison. Je devrais peut-être parler à ses compagnons, ils me donneront peut-être des détails.
+#TEXT 3
+Señor Comandante n'a pas apprécié mon intérêt. Plus encore, il a essayé de me montrer la porte. Bon, je l'admets, l'homme était extrêmement poli et patient. J'essaierai d'en savoir plus sur le Señor Comandante.
+#TEXT 4
+Le tavernier a confirmé mes soupçons. Il semble que la consomption tue des hommes depuis un an, sans que personne ne s'en préoccupe. Ou alors, ils font semblant ? À propos du Señor Comandante... Il a été envoyé ici à cause de certaines de ses machinations en Europe. Il a fortifié sa maison et ne l'a jamais laissée sans gardes. Cet homme cache certainement quelque chose. Quelque chose à propos de la consomption dans ses cachots. Je devrais aller voir chez lui.  J'ai également obtenu un autre indice : un contrebandier a séjourné dans les cachots et a survécu. Il est mort après tout, mais cela s'est passé en dehors de la prison. Je devrais peut-être parler à ses compagnons, ils me donneront peut-être des détails.
+#TEXT 5
+Mes soupçons concernant le Señor Comandante se renforcent. On dit qu'il a été envoyé ici à cause de certaines de ses machinations en Europe. Il a fortifié sa maison et ne la quitte jamais sans gardes. L'homme cache certainement quelque chose. Quelque chose à propos de la consomption dans ses cachots. Je devrais aller voir chez lui.  J'ai également obtenu un autre indice : un contrebandier a séjourné dans les cachots et a survécu. Il est mort après tout, mais cela s'est passé en dehors de la prison. Je devrais peut-être parler à ses compagnons, ils me donneront peut-être des détails.
+#TEXT 6
+Il semble que notre consomption ait un nom. Juan. Quoi qu'il en soit, il ne s'agit pas d'une maladie de plus qui tue les gens dans les prisons. Je devrais demander aux gens du coin ce qu'ils pensent de ce Juan.
+#TEXT 7
+J'ai trouvé une lettre intéressante dans la maison du commandant. Il semble que notre colonel traite avec un homme dont le nom commence par " J ". J'ai aussi trouvé des pièces de monnaie, sa part de la dernière transaction.
+Je commence à comprendre le type de marchandises qu'ils échangent.
+#TEXT 8
+Un officier espagnol m'a abordé dans la rue. Il avait l'air troublé et m'a supplié d'arrêter d'interroger les gens sur Juan et la consomption. Il a organisé une rencontre devant les portes de la ville ce soir. Je sens que je suis sur la bonne voie.
+#TEXT 9
+J'étais en retard et le médecin espagnol est parti. Il semble qu'il ait été pris lui aussi par la " consomption ". Dommage.
+#TEXT 10
+L'officier qui m'avait promis de dire la vérité sur la consomption est mort. Le seul moyen d'atteindre Juan est terminé. C'est dommage.
+#TEXT 11
+Donc, l'officier Sergio Saldo m'a tout raconté. Le Señor Comandante vend vraiment ses prisonniers, officialisant leurs disparitions comme des décès dus à la consomption. C'est drôle, son partenaire commercial s'appelle Consomption. Juan "Consomption". Ses hommes ont essayé de nous tuer tous les deux lors de notre rencontre ; il semble que j'ai alerté leur gang. Il est temps de trouver les autres et de les tuer tous. Sergio m'a dit que le bateau de Juan naviguerait non loin du point Galera jusqu'à midi. Il semble qu'Angelo ait encore une chance de rentrer chez lui...
+#TEXT 12
+Le combat est terminé, le navire a été coulé. Je dois maintenant retourner voir la serveuse.
+#TEXT 13
+J'ai coulé le bateau de Juan avec tous les prisonniers qu'il transportait. Quel dommage ! Il faudra que je sois plus prudent la prochaine fois...
+#TEXT 14
+Juan était trop fort pour moi, j'ai préféré battre en retraite ; je tiens à ma vie...
+#TEXT 15
+J'étais en retard au Point Galera, et le bateau de Juan est parti... Bon sang.
+#TEXT 16
+Juan, le marchand d'esclaves, m'a bien payé pour sa vie. Le jeune et noble officier Sergio arrêtera probablement le Señor Comandante, mais Juan trouvera un moyen de poursuivre son activité. Quant à la jeune fille, il vaut mieux qu'elle ignore le sort de son frère.
+#TEXT 17
+Juan a échappé au sort qu'il méritait, j'ai dû le laisser pour sauver les esclaves. Angelo retournera auprès de sa soeur, et Consomption... peut-être nous reverrons-nous un jour, et je pourrai terminer ce que j'ai commencé...
+#TEXT 18
+Fin de l'histoire. Consomption est mort, et il ne continuera jamais sa sale chasse aux gens. Angelo retournera auprès de sa soeur, comme beaucoup d'autres personnes retourneront auprès de leur famille aujourd'hui. Je ne suis pas sûr que le Señor Comandante sera puni, mais ce n'est pas mon problème...
+
+#QUEST Citizpassenger
+Travail secondaire : Transport de @<sType> @<sName> à @<sCity>.
+#TEXT 1
+Je dois transporter un passager nommé @<sName> jusqu'à @<sCity> en @<sDays>. Ma récompense est de @<sMoney>.
+#TEXT 2
+Le passager en avait assez de naviguer avec moi et d'attendre que je veuille bien faire mon travail. Il m'a quitté dans le dernier port.
+#TEXT 3
+Le travail est fait.
+
+#QUEST Monkletter
+Travail secondaire : Courrier de L'Église
+#TEXT 1
+Un moine de @<sStartCity> m'a demandé de transmettre un message urgent à un prêtre de @<sCity>. J'ai accepté, c'est bien d'aider les personnes religieuses, et c'est sur ma route. J'ai deux semaines.
+#TEXT 2
+Le padre était contrarié parce que je suis arrivé tard, mais il a accepté les documents.
+#TEXT 3
+Le message a été délivré à temps. J'ai reçu une bénédiction et quelques doublons d'or.
+#TEXT 4
+Deux semaines se sont écoulées et j'ai encore un travail à faire. Je devrais me dépêcher...
+
+#QUEST Churchbooks
+Travail secondaire : Livraison de livres de prières
+#TEXT 1
+Un moine de @<sStartCity> m'a demandé de lui procurer des livres de prières pour sa paroisse locale. Je peux les obtenir dans n'importe quelle colonie de @<sNation>. J'ai un mois pour le faire.
+#TEXT 2
+Les livres de prières ont été collectés. Il est temps de les rapporter.
+#TEXT 3
+Malgré mon retard, le père m'a remercié pour mon travail.
+#TEXT 4
+Le père m'a remis une amulette sanctifiée pour mon travail.
+#TEXT 5
+Un mois s'est écoulé, et j'ai encore un travail à faire. Je devrais me dépêcher...
+
+#QUEST Nobleslaves
+Travail secondaire : Livraison d'esclaves pour un noble de @<sCity>
+#TEXT 1
+Un noble de @<sCity> m'a demandé @<sQty> esclaves. J'ai accepté. Je serai payé @<sMoney> doublons d'or.
+#TEXT 2
+Les esclaves ont été livrés, le paiement a été reçu.
+#TEXT 3
+J'ai été trop lent avec l'affaire des esclaves, et mon client avait déjà résolu son problème sans mon aide. Je devrais trouver un autre acheteur.
+
+#QUEST Noblelombard
+Travail secondaire : Relique Familiale
+#TEXT 1
+Un noble de @<sCity> nommé @<sName> m'a demandé de négocier avec l'usurier local au sujet d'une relique familiale. @<sName> a promis de payer deux fois plus que tous mes coûts trois mois plus tard. Je suppose que je pourrais faire quelques investissements. Voyons voir combien l'usurier exigera.
+#TEXT 2
+J'ai changé d'avis. Les gens doivent résoudre leurs problèmes par eux-mêmes.
+#TEXT 3
+J'ai réussi à passer un accord avec l'usurier. La somme était ridicule, et je n'irai même pas voir le noble pour discuter de ma récompense. Qu'il garde ces pièces, il en a plus besoin.
+#TEXT 4
+Je n'ai pas réussi à négocier avec l'usurier. @<sName> est contrarié, mais je ne peux rien y faire.
+#TEXT 5
+@<sName> était vraiment heureux que j'aie conclu un accord avec l'usurier. Il versera un acompte à mon nom dans trois mois.
+#TEXT 6
+@<sName> m'a trompé. Il n'allait pas payer ses dettes et est parti en Europe. Une parole donnée par le noble...
+#TEXT 7
+@<sName> a versé un acompte comme il l'avait promis. C'est très bien.
+
+#QUEST Marginpassenger
+Travail secondaire : Kidnapper
+#TEXT 1
+@<sCity>. J'ai acheté des informations intéressantes à un homme appelé @<sName>. Il s'agit d'un passager "rentable" qui peut être rançonné pour une bonne somme d'argent. Ma future proie s'appelle @<sName1>, elle naviguera sur @<sShipType> "@<sShipName>" dans @<sDay> à destination de @<sTargetCity>. @<sName> m'a dit que je pouvais essayer d'effrayer le capitaine, et qu'il donnerait probablement le passager sans se battre. Je devrais aller à @<sTargetCity> et parler avec @<sName2>, il a ses propres intérêts ; je recevrai mes pièces et je ne me ferai pas d'ennemis. Peut-être devrais-je parler au commandant local ? @<sName> sera arrêté, et je recevrai une récompense...
+#TEXT 2
+Je n'ai pas réussi à capturer "@<sShipName>". Mes doublons ont été gaspillés.
+#TEXT 3
+J'ai coulé "@<sShipName>" avec toutes les personnes à bord. Mes doublons ont été gaspillés.
+#TEXT 4
+J'ai retrouvé @<sShipType> "@<sShipName>"et j'ai parlé à son capitaine. Il m'a donné son passager, et je dois maintenant demander une rançon à @<sName1>.
+#TEXT 5
+J'ai retrouvé @<sShipType> "@<sShipName>" et j'ai parlé à son capitaine. Il a refusé de me donner son passager pacifiquement. Eh bien, tant pis pour lui. Je n'ai pas d'autre choix que d'aborder son @<sShipType>.
+#TEXT 6
+J'ai abordé "@<sShipName>" et capturé le passager que je cherchais. Je dois maintenant demander une rançon à @<sName1>.
+#TEXT 7
+Vous êtes sérieux ? Il s'avère que @<sName2> est mort. Et que dois-je faire de ma "proie" ? Il est trop dangereux de la ramener à @<sCity> ; je ne m'y risquerai pas. Je ferais mieux d'aller à Le François ; on dit que Jacques le Bonhomme fait chanter les parents de ses prisonniers. J'essaierai peut-être de lui vendre mon passager.
+#TEXT 8
+Le tavernier m'a dit que je devais chercher mon homme dans les rues, mais que je ne devais pas essayer de le trouver avant midi et après 21H00.
+#TEXT 9
+La rançon est reçue. @<sSum> doublons. Je ferais mieux de quitter cet endroit ; qui sait ce que mon ancienne "proie" dira de moi...
+#TEXT 10
+La rançon est reçue. @<sSum>. Je ferais mieux de quitter cet endroit ; qui sait ce que mon ancienne "proie" dira de moi...
+#TEXT 11
+@<sName2> a refusé de payer. Et que dois-je faire de ma "proie" ? Il est trop dangereux de la ramener à @<sCity>, je ne m'y risquerai pas. Je ferais mieux d'aller à Le François ; on dit que Jacques le Bonhomme fait chanter les parents de ses prisonniers. J'essaierai peut-être de lui vendre mon passager.
+#TEXT 12
+La rançon est à moi. @<sSum>. C'est ridicule, mais c'est mieux que rien.
+#TEXT 13
+Jacques m'a donné des informations intéressantes. Je dois me rendre immédiatement à @<sShore>. Je n'ai qu'une semaine devant moi.
+#TEXT 14
+J'arrive trop tard. Une autre proie m'a échappé. Nouvel échec...
+#TEXT 15
+Je suis arrivé à @<sShore> à temps et j'ai massacré les troupes espagnoles. Le butin était bon.
+#TEXT 16
+Jacques m'a donné des informations intéressantes. Le barquentin "@<sShipName>" chargé de bois précieux naviguera de @<sCity> à @<sCity1>. Je devrais essayer de l'intercepter.
+#TEXT 17
+Je n'ai pas réussi à capturer le barquentin. Encore un échec...
+#TEXT 18
+J'ai coulé le barquentin avec toute sa cargaison. Encore un échec...
+#TEXT 19
+Le barquentin "@<sShipName>" a été abordé. Sa cargaison compensera largement tous mes frais.
+#TEXT 20
+J'ai parlé au commandant de @<sName>. Il a promis de s'en occuper, m'a félicité et... c'est tout. Oh, non, le gouverneur sera mis au courant de ma bonne action. Et, bien sûr, tout le monde se fout de mes doublons perdus...
+
+#QUEST MarchCap
+Travail secondaire : Raid Éclair
+#TEXT 1
+Le capitaine @<sName> m'a proposé de piller une caravane commerciale chargée de @<sGoods>. Elle passera non loin de @<sShore> à @<sIsland> dans @<sDays>. J'ai accepté, je pense qu'il y aura assez de butin pour nous deux ; de plus, il est toujours plus facile de se battre à deux.
+#TEXT 2
+Nous avons perdu notre proie. @<sName> était sacrément en colère, mais c'était aussi sa faute. Ah, qu'il aille au diable...
+#TEXT 3
+Malheureusement, @<sName> est mort avant que nous n'atteignions notre proie. Je dois faire demi-tour. Dommage...
+#TEXT 3-1
+Malheureusement, @<sName> est mort avant que nous ayons atteint notre proie. Je vais devoir retrouver la caravane moi-même et me battre seul ou abandonner.
+#TEXT 4
+@<sName> est mort dans un combat avec la caravane. Je dois terminer le combat seul et prendre tout le butin.
+#TEXT 5
+Nous n'avons rien capturé de ce malheureux combat. @<sName> a essayé de me faire porter le chapeau, et je lui ai montré la porte. Que cet idiot aille se faire voir...
+#TEXT 6
+Notre butin était trop maigre. @<sName> était vraiment mécontent, et moi aussi. Nous avons partagé le butin et nous nous sommes séparés. J'espère que nous ne nous reverrons jamais.
+#TEXT 7
+Nous avons partagé le butin. @<sName> était très satisfait, et moi aussi. J'aimerais qu'il y ait plus de raids comme celui-ci...
+#TEXT 8
+Notre butin était riche. Nous avons partagé le butin. @<sName> était extrêmement satisfait, et moi aussi. J'aimerais qu'il y ait plus de raids comme celui-ci...
+#TEXT 9
+J'ai décidé de ne pas partager le butin avec mon partenaire. Tout est à moi !
+#TEXT 10
+Le capitaine @<sName> m'a proposé de piller une caravane commerciale chargée de @<sGoods>. Elle partira de @<sCity1> vers @<sCity2> dans @<sDays>. J'ai accepté, je pense qu'il y aura assez de butin pour nous deux ; de plus, il est toujours plus facile de se battre à deux.
+#TEXT 11
+Le capitaine @<sName> m'a proposé de trouver et de capturer un navire pirate chargé de @<sGoods>. Le pirate nommé @<sName1> est en train de réparer son rafiot non loin de @<sShore> à @<sIsland>. J'ai accepté, je pense qu'il y aura assez de butin pour nous deux ; de plus, il est toujours plus facile de se battre ensemble. Nous avons @<sDays> pour notre opération.
+
+#QUEST Bakaut
+Événement : Marchandises à Valeur Stratégique
+#TEXT 1
+Je pourrai trouver le galion de Michael Rozenkraft près de @<sIsland> pendant @<sDays>. Je dois lui fournir suffisamment de bois de fer, pas moins de @<sQty>.
+#TEXT 2
+Le marché est conclu - j'ai vendu @<sQty> de bois de fer pour @<sDublon> doublons. Mon bénéfice total est de @<sDublon1> pièces. Pas mal...
+#TEXT 3
+C'était pas terrible... Je n'ai pas apporté assez de bois de fer, et Michael a refusé de l'acheter. Je dois être plus attentif la prochaine fois si je ne veux pas perdre un si bon acheteur.
+#TEXT 4
+J'ai laissé tomber Rosenkraft pour la troisième fois, et il ne travaillera plus avec moi. Quel dommage...
+
+#QUEST Mangarosa
+Manga Rosa
+#TEXT 1
+J'ai trouvé une plante très inhabituelle. Elle est grande, a des feuilles divisées et dégage une odeur agréable et enivrante. Je n'ai jamais rien vu de tel auparavant. J'ai l'impression que cette plante est utile, alors je l'ai prise. Je dois trouver quelqu'un qui connaît cette plante.
+#TEXT 2
+Cette plante s'appelle Manga Rosa ; une commerçante m'a dit que les Indiens et les Gitans me paieraient bien pour cette plante.
+#TEXT 3
+Les Gitans paient cinquante doublons pour chaque Manga Rosa. Je ne peux même pas imaginer qu'une plante puisse coûter aussi cher. Si je trouve d'autres Manga Rosa, je les vendrai peut-être aux Gitans, mais une seule à la fois.
+#TEXT 4
+Les Gitans utilisent la Manga Rosa pour faire un ajout au tabac. La sorcière a refusé de me révéler le secret de cet ajout, mais elle m'a parlé d'une ensorceleuse nommée Amelia qui connaît les secrets de la plante. Elle vit dans une maison quelque part au sud-ouest du Continent.
+
+#QUEST Amulet_Mayak4_Lighthouseroom
+Événement : Phare de la Guadeloupe
+#TEXT 1
+Un gardien du phare de la Guadeloupe m'a promis d'obtenir @<sAml> dans deux mois pour 15 000 pesos.
+#TEXT 2
+L'amulette a été livrée. Je peux maintenant passer une autre commande.
+
+#QUEST Amulet_Mayak9_Lighthouseroom
+Événement : Phare de Santiago
+#TEXT 1
+Un gardien du phare de Santiago m'a promis d'obtenir @<sAml> dans deux mois pour 15 000 pesos.
+#TEXT 2
+L'amulette a été livrée. Je peux maintenant passer une autre commande.
+
+#QUEST Amulet_Mayak11_Lighthouseroom
+Événement : Phare de Carthagène
+#TEXT 1
+Un gardien du phare de Carthagène m'a promis d'obtenir @<sAml> dans deux mois pour 15 000 pesos.
+#TEXT 2
+L'amulette a été livrée. Je peux maintenant passer une autre commande.
+
+#QUEST Unique_Goods
+Événement : Marchandises à Valeur Stratégique
+#TEXT 1
+Jan Svenson a 25 pièces de bois de fer à vendre tous les 14 et 28 du mois. 750 doublons pour un seul lot.
+#TEXT 1_1
+J'ai réussi à négocier avec Jan Svenson pour augmenter l'approvisionnement en bois de fer. Désormais, le 14 et le 28 de chaque mois, je peux lui acheter 125 rondins de bois de fer pour 3 150 doublons.
+#TEXT 2
+Fadey le Moscovite me vendra 50 rouleaux de cordes chaque 20ème jour du mois. 500 doublons pour un seul lot.
+#TEXT 2_1
+J'ai réussi à négocier avec Fadey le Moscovite pour augmenter l'approvisionnement en cordes de chanvre. Désormais, le 20 de chaque mois, je peux acheter 250 rouleaux de corde à Fadey pour 2 125 doublons.
+#TEXT 3
+Désormais, je suis autorisé à acheter 30 pièces de soie de navire chaque premier et quinzième jour du mois auprès du nouveau vice-directeur de la Compagnie néerlandaise des Indes occidentales. Le prix d'un seul lot est de 600 doublons.
+#TEXT 3_1
+J'ai réussi à négocier avec le vice-directeur de la Compagnie néerlandaise des Indes occidentales à Willemstad pour augmenter l'approvisionnement en soie. Désormais, le 1er et le 15 de chaque mois, je peux lui acheter 150 pièces de soie à 17 doublons chacune, soit un total de 2 550 doublons pour l'ensemble du lot.
+#TEXT 4
+Sergio Saldo m'a proposé d'acheter 60 barils de résine tous les cinquièmes jours du mois. Le prix d'un seul lot est de 600 doublons.
+#TEXT 4_1
+J'ai réussi à négocier avec Sergio Saldo pour augmenter l'approvisionnement en résine. Désormais, le 5 de chaque mois, je peux acheter 300 barils de résine au phare de la Trinité pour 2 550 doublons.
+#TEXT 5
+Un lot de 20 rondins de bois de fer tous les 15 du mois de la part de Rodrigo Jimenez, le directeur de mon exploitation. La fabrique peut stocker jusqu'à 6 lots au total avant d'arrêter tout le travail. Le paiement est effectué immédiatement pour tous les lots en stock. Le coût de chaque lot : 200 doublons, 5 bouteilles de rhum, 5 bouteilles de vin. Total : 10 doublons par bûche. Pas mal...
+
+#QUEST Useful_Acquaintances
+Ficelles à Tirer
+#TEXT   1
+************************************************************
+Je peux toujours acheter de la mangarosa à la gitane de Saint John's - trois tiges pour trois cent cinquante doublons d’or.
+#TEXT   2
+************************************************************
+À la taverne de Willemstad, repos et plaisir m’attendent toujours. La charmante Betsy Price s’occupera de tout.
+#TEXT   3
+************************************************************
+Le chef du port de Belize m’a accordé une réduction de cinquante pour cent sur l’accostage d’un navire jusqu’à la deuxième classe incluse, pour toute durée. Le navire sera placé sous sa surveillance personnelle et ne subira aucun dommage en cas de siège de la ville.
+#TEXT   4
+************************************************************
+Je peux désormais acheter du vin et du rhum le 15 de chaque mois chez Christian Deluce, à Basse-Terre. Sa maison se trouve à droite de la résidence du gouverneur. Le prix est de 26 doublons pour un lot de 20 bouteilles de vin et autant de rhum.
+************************************************************
+#TEXT   4_1
+J’ai réussi à négocier une augmentation des livraisons avec Christian. Il mettra désormais de côté cent bouteilles de vin et de rhum pour moi chaque 15 du mois. Le prix reste inchangé — cent trente doublons pour tout le lot.
+#TEXT   6
+************************************************************
+À la taverne de Puerto Principe, j’ai droit à un logement gratuit, des boissons offertes par l’établissement, et l’aubergiste m’a promis que, grâce à lui, davantage de marins voudront servir sous mes ordres.
+#TEXT   7
+************************************************************
+Chez le forgeron de San José, je pourrai acheter les matériaux et objets dont j’ai besoin. Ses livraisons ont lieu une fois par mois.
+#TEXT   8
+Chez un certain Gaspar Parmentier de Tortuga, je pourrai vendre toutes sortes de bijoux - en grande quantité.
+
+#QUEST FMQ_Guadeloupe
+Prix de la Discrétion
+#TEXT 1
+J'ai été abordé par un certain Bertrand Pinette dans les rues de Basse-Terre. Il m'a proposé de le transporter, lui et deux de ses amis, dans la Baie des Moustiques sur le continent espagnol en dix jours. J'ai accepté. Je dois retrouver mes passagers sur la plage de Capster ce soir à 22H00.
+#TEXT 2
+Il est déjà minuit et je suis trop en retard pour récupérer mes passagers.
+#TEXT 3
+Tous les passagers sont à bord, il est temps de prendre la mer. C'est un drôle de groupe. Un officier espagnol et un officier français. Tous deux sont très secrets et ne parlent pas du tout. Qu'est-ce qu'un militaire espagnol fait sur une île française ? J'ai un mauvais pressentiment.
+#TEXT 4
+Le délai de dix jours a expiré et je n'ai toujours pas atteint ma destination. Je dois me dépêcher.
+#TEXT 5
+Mon voyage vers le continent a duré beaucoup trop longtemps, et les passagers indésirables ont déclenché une mutinerie. Ils sont tous morts maintenant. Bon débarras.
+#TEXT 6
+Les passagers ont été débarqués. Je devrais m'éloigner le plus possible des côtes espagnoles.
+#TEXT 7
+Mon intuition était bonne, ce transport de Bertrand Pinette et de ses filles s'est avéré plus profitable en termes d'ennuis qu'en termes d'argent. Un captif de guerre en fuite, un déserteur et un escroc, quelle compagnie ! Je suis sûr que Pinette a fait fortune sur ce voyage. Quant à moi, je suis obligé de retrouver Pinette et de le ramener en Guadeloupe. Je n'y peux rien, je suis victime du chantage de ce salaud de banquier. Je devrais naviguer jusqu'à Panama puisque c'était la destination finale de mes passagers. Je devrais aussi penser à me taire à l'avenir !
+#TEXT 8
+Je n'ai trouvé ni Pinette ni ses dames au Panama. Il a dû me mentir par prudence. Je devrais me rendre à Portobelo maintenant.
+#TEXT 9
+Un barman m'a donné le beau conseil de m'adresser directement à Don Carlos de Milyar au sujet de Pinette. Super. Ce serait la meilleure façon de finir dans une prison locale. Le visage suffisant du barman me dit qu'il en sait beaucoup plus qu'il ne me l'a dit. Je devrais le persuader de me faire part de ce qu'il sait.
+#TEXT 10
+Donc, pas de trace de Pinette ici, mais j'ai réussi à trouver une trace du troisième passager - le déserteur français. C'est un Don espagnol maintenant, un commandant du "Sario". Sa récompense pour trahison, j'imagine. Je n'ai pas d'autre choix que de monter à bord de son rafiot et de capturer "Don Juan". Même s'il ne pourra pas m'indiquer où se trouve Bertrand, je pourrai l'utiliser pour apaiser la colère du gouverneur de la Guadeloupe.
+#TEXT 11
+Il semble que j'aie eu de la chance : une sloop "Sario" est amarrée à Portobello. L'aborder devant un fort ne serait pas ma meilleure idée. Je devrais attendre qu'elle quitte le port et prenne le large.
+#TEXT 12
+Le Sario est en pleine mer. Je dois le poursuivre !
+#TEXT 13
+J'ai fait une erreur et j'ai attaqué le Sario dans le port de Portobelo. Jean-Juan est mort. Toutes les pistes sont épuisées et je n'ai aucune idée de l'endroit où trouver Pinette. Je dois m'attendre à avoir des ennuis avec les autorités françaises.
+#TEXT 14
+Don Juan est capturé et mis dans ma cale. Je devrais lui parler de Pinette.
+#TEXT 15
+Je n'ai pas réussi à aborder le Sario et à capturer Jean-Juan. Toutes les pistes sont épuisées et je n'ai aucune idée de l'endroit où trouver Pinette. Je dois m'attendre à avoir des ennuis avec les autorités françaises.
+#TEXT 16
+Mon prisonnier est prêt à partager des informations sur Bertrand Pinette. En route pour la Baie des Moustiques.
+#TEXT 17
+Bertrand Pinette a décidé de poursuivre son sale boulot à la Barbade. Je devrais le chercher dans la plus grande plantation de l'île.
+#TEXT 18
+Ce salaud de Pinette a refusé de me suivre jusqu'à mon navire. J'ai dû lui donner une leçon. Il se peut que j'aie des problèmes avec les autorités françaises, mais cette saloperie est désormais hors d'état de nuire.
+#TEXT 19
+Ce salaud de Pinette a refusé de me suivre jusqu'à mon navire. C'était stupide de s'attendre à autre chose de sa part. Leçon apprise. Maintenant, je dois faire le tour de la plantation et élaborer un plan pour capturer monsieur Bertrand par la force.
+#TEXT 20
+J'ai un plan : il y a une route qui va de la plantation au phare de la Barbade. Je devrais mouiller mon navire près du phare et tendre une embuscade à Pinette près d'un carrefour entre la ville et la plantation. Je dois trouver un endroit où je peux rester hors de vue suffisamment longtemps. Bertrand se rend constamment à Bridgetown pour des affaires, je ne pense donc pas qu'il faille l'attendre plus de quelques jours.
+#TEXT 21
+Je n'ai pas osé attaquer Pinette, il avait une garde très impressionnante. Maintenant je devrais m'enfuir, il a vu mon embuscade et va sans doute en informer le commandant. Dommage, il faut s'attendre à avoir des ennuis avec les autorités françaises...
+#TEXT 22
+Bertrand Pinette est maintenant mon prisonnier. Je dois retourner à Basse-Terre pour voir le banquier.
+#TEXT 23
+C'est fait. J'ai récupéré mon argent et ma réputation. Ces 150 doublons ne compenseront pas tous mes ennuis, mais c'est déjà ça. C'est le prix de mon indiscrétion.
+#TEXT 24
+Pinette m'a proposé une solution intéressante : une lettre compromettante pour le banquier de Basse-Terre. Don Juan avait raison sur les atouts dans la main de cet homme. Ce serait un plaisir de voir le visage de mon maître chanteur. Sans parler de la cache de Bertrand qui m'attend dans une grotte de la Guadeloupe.
+#TEXT 25
+La lettre de Pinette a fait forte impression sur le banquier. Il ne dira rien, c'est certain. Je devrais vérifier la cache de Bertrand maintenant, c'est trop risqué de la laisser là trop longtemps.
+#TEXT 26
+J'ai été attaqué par plusieurs mercenaires engagés par mon bon banquier de Basse-Terre. Il semble qu'il me considère comme un témoin dangereux et qu'il veuille ma mort. Très bien, je devrais lui rendre visite à nouveau.
+#TEXT 27
+Ce bâtard a eu une peur bleue. Je suis sûr qu'il n'essaiera plus jamais de me faire du mal.
+#TEXT 28
+Le délai de deux mois qui m'a été accordé pour retrouver Bertrand Pinette a expiré. Je dois maintenant m'occuper de mes problèmes de réputation dans les colonies françaises... @<sAdd>@<sAdd1>
+#TEXT 29
+La lettre de Pinette a fait forte impression sur le banquier. Il ne dira rien, c'est certain. Je devrais vérifier la cache de Bertrand maintenant, c'est trop risqué de la laisser là trop longtemps.
+
+#QUEST FMQ_Martinique
+Chien de Résine
+#TEXT 1
+J'ai rencontré aujourd'hui un charpentier du chantier naval de Saint-Pierre. Il m'a dit que le constructeur de navires me demandait de lui rendre visite. Je pense que cela en vaudra la peine, car il a manifestement besoin de mes services.
+#TEXT 2
+J'ai changé d'avis et décidé de ne pas rendre visite au constructeur naval.
+#TEXT 3
+La demande du constructeur naval d'attaquer un convoi commercial espagnol ne m'a pas intéressé, j'ai donc refusé.
+#TEXT 4
+Le constructeur naval m'a proposé de retrouver un convoi espagnol qui part de San José, à la Trinité, pour se rendre à San Juan, à Porto Rico. Je dois aborder le Bensecho, chargé de résine rare et précieuse. Si je réussis, mon gain sera d'environ 1500 doublons !
+#TEXT 5
+Le Bensecho a été coulé dans le feu de l'action. Quel dommage.
+#TEXT 6
+J'ai laissé filer le convoi commercial et le Bensecho. Quel dommage...
+#TEXT 7
+J'ai abordé le Bensecho mais je n'ai pas trouvé assez de barils de résine pour satisfaire mon client. Quel dommage.
+#TEXT 8
+Le Bensecho a été pillé et j'ai la résine dans ma cale. Il est temps de voir mon client.
+#TEXT 9
+Cela fait plus d'un mois que j'ai obtenu ce travail. Le constructeur naval de Saint-Pierre doit m'avoir complètement oublié.
+#TEXT 10
+Je me suis fait avoir de la manière la plus insolente qui soit : le constructeur de navires et son collègue lieutenant, Félicien Gronier, m'ont roulé dans la farine en jouant une excellente pièce intitulée "Arrestation du contrebandier au grand coeur". Pas question de les laisser s'en tirer à si bon compte. Grégoire Valinnie avait raison, la patience est de mise. Je devrais rester un peu à Saint-Pierre et voir quand le chantier naval se remettra à travailler.
+#TEXT 11
+Cela n'a pas pris trop de temps. Deux jours, et le chantier naval a repris ses activités comme d'habitude. Je devrais rendre visite au constructeur naval et le regarder dans ses yeux fourbes.
+#TEXT 12
+Cet escroc m'a raconté l'histoire la plus triste de son "terrible séjour en prison" sans broncher. C'est un salaud accompli, inutile de faire pression sur lui. Il a aussi un lieutenant colonial comme ami très cher et complice. J'ai besoin d'un plan...
+#TEXT 13
+Il semble qu'il n'y ait pas que des hordes de salauds et d'ordures autour de moi. J'ai aussi des amis ! Grégoire Valinnie, ma bonne vieille connaissance noble, a découvert de sa propre initiative les dernières activités de Félicien Gronier. Le lieutenant s'est rendu en Guadeloupe à bord d'une tartane fraîchement construite, la "Topaze". Je devrais le suivre et découvrir ce qu'il fait.
+#TEXT 14
+J'ai trop pris mon temps et j'ai laissé filer Félicien Gronier. Je ne peux plus compenser mes pertes aujourd'hui.
+#TEXT 15
+J'ai trouvé la tartane dans les environs de la Guadeloupe, ou plus précisément près des côtes désertes de l'anse du Morne-à-l'Eau. On dirait qu'ils déchargent des marchandises sur le rivage. Je devrais attendre qu'ils aient fini, débarquer et "confisquer" la résine qu'ils me doivent. Ils ne peuvent pas m'échapper à cet endroit.
+#TEXT 16
+Je me suis approché trop près du Topaz et j'ai alerté son équipage : la tartane s'éloigne vers le large et il y a de l'activité sur les côtes. J'ai gâché mon propre plan, inutile de débarquer là maintenant. Je suis sûr que ces salauds se débrouilleront pour cacher la marchandise dans la jungle.
+#TEXT 17
+Le Topaz a fini de décharger et s'éloigne en ce moment. Je devrais attendre quelques heures avant de débarquer sur le rivage. Il est temps de récupérer ma résine.
+#TEXT 18
+Nous avons massacré la racaille sur le rivage, mais ce n'est pas encore une victoire. Le lieutenant Félicien Gronier est là, en chair et en os. On dirait qu'il a eu un pressentiment et qu'il a décidé de revenir. Ça tombe bien, chien de résine ! Il a également cinq combattants expérimentés à ses côtés. Ils sont là, comme des statues, à attendre...
+#TEXT 19
+Je n'ai pas tenté ma chance contre l'équipe de Félicien Gronier - ils avaient un de ces regards. Je préfère rester avec moins de butin mais en vie. La moitié de la résine est un résultat très satisfaisant de toute façon.
+#TEXT 20
+Félicien Gronier a essayé de me menacer, mais cela n'a pas bien tourné pour lui et ses amis - ils resteront pour toujours sur ce rivage. J'ai fait quelques calculs : même s'il n'y avait que la moitié de ma résine, j'ai reçu en plus de la soie de navire, des cordes de chanvre et du bois de fer. Mes pertes sont compensées par des profits !
+#TEXT 21
+Le Topaz m'a attaqué alors que je quittais l'anse. Ce qui a poussé cette petite tartane à s'engager dans son dernier combat est un mystère pour moi.
+#TEXT 22
+J'ai trop tardé à débarquer sur le rivage, et les hommes de Félicien Gronier sont partis. Quel dommage, quel dommage...
+
+#QUEST FMQ_Nevis
+Évasion de Prison
+#TEXT 1
+Un lieutenant des Royal Marines nommé Caspar Gratton me demande de le conduire, lui et sa petite escouade, sur la plage de Grand Case à Saint-Martin. Ce ne sont certainement pas des touristes, et c'est une île hollandaise. Mais ce n'est pas mon affaire ; dix mille pesos pour un travail de deux jours, c'est très bien.
+#TEXT 2
+J'ai trop pris mon temps pendant le voyage, et les Britanniques ont déclenché une mutinerie. J'ai dû les tuer.
+#TEXT 3
+Le lieutenant Caspar Gratton a décidé que je devais l'aider dans son opération militaire contre la Hollande. Il n'en est pas question. S'échapper de Saint-Martin est son problème maintenant.
+#TEXT 4
+Le lieutenant Kaspar Gratton et ses soldats ont été déposés à Saint-Martin, mais aucun paiement n’a suivi. À la place, le lieutenant m’a demandé d’attendre deux ou trois jours, puis de les conduire à Antigua, où son commandant, le colonel Fox, me paierait généreusement. Mouais… J’espère juste que ça ne me causera pas d’ennuis avec les Hollandais. Je me rends au port de Philipsburg : d’abord pour détourner les soupçons potentiels des Hollandais, ensuite pour essayer de savoir pourquoi ces marines britanniques sont venus ici.
+#TEXT   4_1
+Le lieutenant Kaspar Gratton et ses soldats ont été amenés à Saint-Martin, mais aucun paiement n’a suivi. À la place, il m’a demandé d’attendre deux ou trois jours, puis de les emmener à Antigua, où son commandant, le colonel Fox, me paierait généreusement. Hmmm... Espérons que cela ne m’attire pas d’ennuis avec les Hollandais. Je me rends au port de Philipsburg : d’abord pour détourner les soupçons hollandais, ensuite pour enquêter sur la raison de la présence des marines britanniques ici — alors que l’Angleterre et les Pays-Bas sont en paix.
+#TEXT 5
+Trois jours ont passé et je n'ai rien appris. Je devrais retourner à la plage de Grand Case - peut-être que le lieutenant y est déjà ?
+#TEXT 6
+Le lieutenant Caspar Gratton n'est finalement pas venu. J'ai l'impression qu'il ne se montrera jamais. Je devrais me tirer d'ici avant qu'il ne soit trop tard.
+#TEXT 7
+C'est de mieux en mieux... J'ai amené un commando anglais à Saint-Martin avec pour mission d'infiltrer une prison à Philipsburg et de libérer des officiers anglais captifs ! Si les Hollandais l'apprennent, ils vont me faire la peau. Dois-je essayer de retrouver mes passagers dans la jungle et les avertir de l'embuscade ? Ou peut-être vaut-il mieux s'enfuir d'ici le plus vite possible ?
+#TEXT 8
+Ce gars du gouverneur m'a fait une peur bleue ! J'ai cru que les Hollandais avaient découvert mon rôle dans l'opération militaire anglaise... Mais c'est bon, le gouverneur m'a proposé de participer à une chasse aux espions anglais et a promis une forte récompense pour toute information solide. S'il avait su à qui il parlait... Il faut que je trouve les Anglais et que je les prévienne, ou s'il est trop tard, que je m'enfuie de cette île.
+#TEXT 9
+Ce gars du gouverneur m'a fait une peur bleue ! J'ai cru que les Hollandais avaient découvert mon rôle dans l'opération militaire anglaise... Mais c'est bon, le gouverneur m'a proposé de participer à une chasse aux espions anglais et a promis une récompense pour toute information solide. S'il avait su à qui il parlait... J'ai accepté de l'aider. Maintenant, je dois retrouver les Anglais et les avertir du danger imminent, ou alors je peux aider les Hollandais à la place. Sérieusement, je ne dois rien au lieutenant, il m'a menti, il ne m'a pas payé, pourquoi devrais-je m'en préoccuper ? Quoi qu'il en soit, je dois maintenant aller voir le commandant.
+#TEXT 10
+Le commandant est à bout de nerfs pour une raison ou pour une autre. Il m'a cependant dit quelque chose d'intéressant : la patrouille hollandaise a disparu. Ce doit être le travail de mes amis. En route pour la jungle.
+#TEXT 11
+Ce travail de "passager" me coûte cher ! Maintenant, le lieutenant veut que je les aide à libérer les officiers captifs. Bien joué, lieutenant... Je me dirige vers la ville. Les Britanniques ont un agent dans l'église locale ; il s'appelle Filippe Jacobsen. Je peux le trouver là-bas de 6H00 à 10H00. Je pourrais aussi dénoncer le commando au commandant de Philipsburg.
+#TEXT 12
+Ce travail de "passager" me coûte cher ! Maintenant, le lieutenant veut que je les aide à libérer les officiers captifs. Bien joué, lieutenant... Je me dirige vers la ville. Les Britanniques ont un agent dans l'église locale ; il s'appelle Filippe Jacobsen. Je peux le trouver là-bas de 6H00 à 10H00.
+#TEXT 13
+J'ai décidé de ne pas participer aux jeux de Caspar Gratton et je l'ai dénoncé, lui et son escouade, au commandant de Philipsburg sans lui parler de mon rôle dans tout cela. Tout dépend maintenant des Hollandais.
+#TEXT 14
+C'est fait, j'avais raison - les Britanniques ont résisté et ont été éliminés. Personne n'apprendra jamais que j'ai joué un rôle dans ce gâchis. J'ai également reçu ma récompense de dix mille pesos.
+#TEXT 15
+J'ai décidé de ne pas participer aux jeux de Caspar Gratton et je l'ai dénoncé, lui et son escouade, au commandant de Philipsburg sans lui parler de mon rôle dans tout cela. Je me suis également porté volontaire pour rejoindre l'escouade punitive hollandaise.
+#TEXT 16
+C'est fait. Le commando britannique a été éliminé, non sans mon aide. Aucune hésitation - ce n'est pas moi qui ai commencé. Je devrais rendre visite au gouverneur demain et réclamer ma récompense.
+#TEXT 17
+Dix mille pesos et une licence de trois ans de la Compagnie néerlandaise des Indes occidentales ! Une belle récompense, même si je crains que les Britanniques ne découvrent le rôle que j'ai joué dans cette affaire.
+#TEXT 18
+Jacobsen a trouvé un plan astucieux : il veut mélanger le vin des soldats avec une potion de rêve gitane. Mais j'ai dû payer de ma poche... La facture de Caspar Gratton ne cesse de s'alourdir. Je devrais venir à l'église à la même heure demain.
+#TEXT 19
+J'ai gâché le plan astucieux de Jacobsen en arrivant en retard à notre rendez-vous. Génial. A-t-il réussi à faire entrer du vin empoisonné dans la prison ? Je n'ai aucune idée de ce qu'il faut faire ensuite. Non, il y en a une - je devrais m'enfuir d'ici !
+#TEXT 20
+Jacobsen a tout prévu : ce soir, les gardiens de prison goûteront notre vin de rêve. Nous devrions libérer les prisonniers avant minuit. La prudence est de mise ; je dois éviter les patrouilles dans les rues.
+#TEXT 21
+Donc, Caspar Gratton et ses hommes viennent sauver leurs compatriotes ce soir, et je vais les escorter jusqu'à la porte de la prison... Je doute qu'un uniforme hollandais soit d'une grande utilité dans les rues, il faut absolument éviter les patrouilles. J'espère que nous aurons de la chance...
+#TEXT 22
+Mon excellent timing a tout gâché. C'est une honte. Je devrais partir d'ici.
+#TEXT 23
+J'étais en retard au rendez-vous fixé aux portes de la ville. Je crains que les Britanniques ne soient allés seuls en ville et ne se soient fait prendre par les patrouilles. C'est la fin. Je dois partir d'ici.
+#TEXT 24
+Nous avons été démasqués par les patrouilles. J'ai réussi à m'échapper, ce qui n'est pas le cas de mes amis anglais. Quel dommage...
+#TEXT 25
+C'est fait ! Il faut maintenant se dépêcher de rejoindre la plage de Grand Case et de quitter Saint-Martin le plus rapidement possible.
+#TEXT 26
+Il semble que nous ayons été démasqués par les Hollandais - il y a eu une embuscade sur la plage. Le combat a été rude, mais nous l'avons emporté.
+#TEXT 27
+J'ai affronté un navire de patrouille Hollandais. J'ai remporté la victoire, mais ce n'est pas fini - la corvette "Zeepard" est sur nous. Je ne devrais pas m'engager dans cette bataille ; il est temps de naviguer vers Antigua.
+#TEXT 28
+Enfin, j'ai amené les Britanniques à Antigua. Je devrais rendre visite au colonel Fox des Royal Marines demain. J'espère qu'il sera généreux avec moi.
+#TEXT 29
+30 000 pesos, une arquebuse et une bonne lame. C'est une belle récompense pour mes efforts, mais ce travail n'est pas quelque chose que je referais.
+#TEXT 30
+J'ai trop pris mon temps pour amener les Britanniques à Antigua, et ils ont quitté mon navire sans faire leurs adieux. Très anglais de leur part...
+
+#QUEST FMQ_Tortuga
+Comme à la maison
+#TEXT 1
+Tortuga m'a accueilli avec une invitation de la femme du gouverneur à assister à une soirée au palais du gouverneur après 18H00.. Il serait curieux d'observer la noblesse locale. J'espère que je n'y verrai pas de maris énervés cocus à cause de moi. Cela arrivait tout le temps à la maison.
+#TEXT 2
+Tortuga est intéressante. Ici, les femmes savent ce qu'elles veulent. J'ai rempli les oreilles d'une jeune fille un peu idiote avec mes histoires à la con, et voilà que je suis invité à la voir avec ses amis dans le boudoir du palais du gouverneur, ce soir à partir de 18H00. En Europe, les femmes aiment les artistes nobles des familles célèbres. Ici, il suffit d'avoir un navire. Mon frère avait raison, l'argent a été bien dépensé.
+#TEXT 3
+J'ai changé d'avis. Pas de temps pour les affaires de femmes.
+#TEXT 4
+Je ne m'attendais pas à cela. Ou bien si ? La femme du gouverneur local voulait que je vole ce fanatique fou. Bien sûr, j'ai besoin d'argent, mais pas à ce point. La dame n'était pas contente, mais je suis sorti de cette histoire, propre et vivant. Dois-je en avertir Levasseur ? C'est à moi de décider maintenant.
+#TEXT 5
+J'ai décidé de ne pas le faire. Les affaires familiales sont un véritable bourbier.
+#TEXT 6
+La soirée a rapidement perdu son parfum de romance. La femme du gouverneur local veut voler son mari. Par mes mains, bien sûr. Les bijoux sont dans un coffre. Un double de la clé est déjà fait, et en ce moment, il est entre les mains d'un pirate qui s'enfonce dans la bouteille d'une taverne. Comment en est-on arrivé là, je me le demande ? La dame se moque-t-elle de moi ? Ou bien est-elle stupide ? En tout cas, j'ai besoin d'argent, Michel ne sortira pas de sa cellule tout seul.
+#TEXT 7
+J'ai parlé à Levasseur des projets de sa femme ; il n'a pas vraiment apprécié la nouvelle, est devenu fou, m'a donné une somme d'argent dérisoire et m'a montré la porte. Je crois que je commence à plaindre sa femme...
+#TEXT 8
+Trop tard pour chercher le pirate avec une clé dans une taverne. Quoi qu'il en soit, moins d'intrigues, moins d'ennuis.
+#TEXT 9
+Et puis merde. Tout est clair maintenant, grâce à ma nouvelle connaissance. On lui a promis la même chose, mais il a eu l'intelligence de laisser tomber. Je ne suis pas idiote non plus. Dois-je prévenir le mari ? C'est à moi de décider.
+#TEXT 10
+Ma rencontre avec le pirate a été fructueuse. Cinquante doublons pour le double de la clé et de bons conseils. Je devrais me méfier de la salope de Levasseur. Elle essaie clairement de se jouer de moi.
+#TEXT 11
+La femme du gouverneur voulait que je lui remette le double de la clé et que je la voie le lendemain pour ma part. Je ne me sentais pas très à l'aise avec cette idée et j'ai refusé. Il est temps de trouver le coffre et de s'emparer du butin.
+#TEXT 12
+J'ai changé d'avis et décidé de ne pas aider la femme dans son entreprise. C'est trop risqué. Je vais me débarrasser du double de la clé et oublier cette histoire.
+#TEXT 13
+J'ai ouvert la serrure du coffre de Levasseur, mais je ne suis pas retourné auprès de sa femme. Adieu, salope sournoise, ha-ha.
+#TEXT 14
+J'ai changé d'avis et décidé de ne pas aider la femme dans son entreprise. C'est trop risqué. La toute première étape de son plan s'est terminée dans un bain de sang. Je n'ai même pas pris le double de la clé sur le corps du pirate - je ferais mieux d'oublier ce gâchis.
+#TEXT 15
+Ma rencontre avec le pirate a été productive. Un barman et ses filles s'apprêtent à faire un grand ménage. J'ai le double de la clé ; il est temps de voir la femme.
+#TEXT 16
+C'est fait. Je devrais voir la femme du gouverneur demain soir et recevoir ma part. Pourtant, j'écris ces lignes et je me sens... bizarre ? Naïf ? Stupide ?
+#TEXT 17
+Ce n'est pas drôle du tout. Un mercenaire a essayé de me tuer il y a une minute, et j'ai même une idée de qui l'a engagé. J'ai le butin et j'ai maintenant un combattant convenable de plus dans mon équipage. Il est temps de voir la... cliente.
+#TEXT 18
+Ce n'est pas drôle du tout. Un mercenaire a essayé de me tuer il y a une minute, et j'ai même une idée de qui l'a engagé. Cependant, cela s'est plutôt bien passé pour moi - j'ai même laissé ce malheureux s'en sortir vivant. Il est temps de voir la... cliente.
+#TEXT 19
+Ce n'est pas drôle du tout. Un mercenaire a essayé de me tuer il y a une minute, et j'ai même une idée de qui l'a engagé. Cependant, cela s'est plutôt bien passé pour moi - la racaille est éliminée. Il est temps de voir la... cliente.
+#TEXT 20
+Imaginez, cette salope avait l'illusion que je lui donnerais une part après qu'elle ait engagé un assassin pour me tuer ? Ha ! Plutôt mourrir.
+#TEXT 21
+C'est fait. J'ai eu ma part, mais j'ai toujours l'impression d'avoir été utilisée comme une pute. Je serai plus intelligent la prochaine fois. On dirait que c'est toujours comme ça ici. On se sent presque à la maison.
+#TEXT 22
+C'est quoi ce bordel ! Cette foutue fille m'a volé alors que nous nous amusions au lit. Il est hors de question que j'en parle à qui que ce soit, alors supposons que c'était la pute la plus chère de ma vie. Leçon apprise. Je l'espère.
+#TEXT 23
+Bon sang ! Cette putain de salope m'a bien eu ! C'est juste ma faute. Rien à faire ici. C'était une expérience très instructive.
+#TEXT 24
+C'est fait. Je suis en vie, j'ai eu ma part de pièces et ma part de sexe. Quelle fille ! Je commence à aimer mon nouveau mode de vie. J'ai quelque chose à raconter quand je rentrerai à la maison.
+
+#QUEST FMQ_Portpax
+Grandee Albalate
+#TEXT 1
+J'ai aidé un homme appelé Don Domingo Albalate ce soir en le sortant d'un sale pétrin. C'est un jeune "Grandee" d'Espagne qui m'a demandé de lui rendre visite à Saint-Domingue. Sa maison se trouve juste à côté des portes de la ville.
+#TEXT 2
+J'ai décidé de ne pas aller à Saint-Domingue. C'est une ville espagnole, après tout.
+#TEXT 3
+Je n'ai pas été accueilli par Don Domingo. Au lieu de cela, il y avait des personnages étranges et agressifs. Ils devaient attendre Albalate. Je devrais fouiller l'endroit et enquêter.
+#TEXT 4
+J'ai trouvé le cadavre du vrai Ugo, le serviteur de Don Domingo. Il y avait également une curieuse note inachevée sur une table : "Jeune señor, je ne comprends pas encore ce qui se passe réellement, mais vous êtes en grand danger. Je sais que ces mots ne vous disent rien, mais je vous en prie, pour le bien de votre père, quittez la ville dès que vous le pourrez ! J'ai trouvé des documents de votre oncle..." De toute évidence, quelqu'un en a après le jeune Don. Son ancien serviteur a essayé d'avertir son maître, mais ils ne l'ont pas laissé faire.
+#TEXT 5
+J'ai écouté l'histoire de Don Albalate et j'ai accepté de l'emmener dans sa plantation à Portobelo. Il m'a bien payé d'avance, et c'est une bonne action que d'aider un jeune señor en difficulté. Direction le sud en toute hâte avant que l'oncle du jeune Grandee ne revienne de Carthagène.
+#TEXT 6
+J'ai mis trop de temps à atteindre Portobelo, et Don Albalate a perdu patience et m'a quitté.
+#TEXT 7
+Nous voici à la plantation de Portobelo. Nous devons trouver la maison de Luis Ortiz et chercher des indices à l'intérieur.
+#TEXT 8
+J'ai retrouvé le livre de comptes d'Ortiz. Domingo est tombé dans une grande agitation après avoir lu les notes - il s'avère que son oncle l'a trompé pendant des années en diminuant le revenu réel à plusieurs reprises. Grandee Albalate se rend à Portobelo pour s'adresser à la cour de justice.
+#TEXT 9
+C'était inattendu. Face à l'apparition soudaine de Don Luis Ortiz et de ses hommes de main, j'ai décidé de les laisser régler eux-mêmes leurs problèmes familiaux. D'ailleurs, J'ai été bien payé...
+#TEXT 10
+Don Diego et moi avons finalement rencontré Luis Ortiz face à face dès que nous avons quitté sa maison. Ce salaud a essayé de me corrompre, mais il n'y est pas parvenu, et maintenant il est mort. Hélas, on peut en dire autant du pauvre Grandee Albalate. Quel dommage... Je devrais m'enfuir d'ici avant que les autorités ne me considèrent comme un complice.
+#TEXT 11
+Don Diego et moi avons finalement rencontré Luis Ortiz face à face dès que nous avons quitté sa maison. Ce salaud a essayé de me corrompre, mais il n'y est pas parvenu, et maintenant lui et ses sbires nourrissent les asticots. Don Domingo a l'intention de s'occuper immédiatement de sa propriété. Je devrais le voir demain et réclamer ma récompense.
+#TEXT 12
+C'est la fin de la curieuse affaire de Don Albalate. Le jeune Grandee a décidé de se ressaisir et de prendre le contrôle des affaires familiales, et quant à moi... J'ai reçu une excellente récompense pour mes actes.
+#TEXT 13
+Nous sommes arrivés en retard à Portobelo, et Luis Ortiz s'était chargé de toutes les preuves. Don Domingo va régler sa situation au tribunal. Je lui souhaite bonne chance. Je ne pars pas les mains vides, cependant - Grandee Albalate m'a offert sa rapière.
+#TEXT 14
+Je n'ai pas trouvé le jeune Don dans la maison du marquis Albalate, mais son serviteur, Ugo. Il est devenu extrêmement nerveux lorsqu'il a entendu la nouvelle de l'attaque contre son maître et a couru directement vers un commandant. On m'a littéralement chassé de l'endroit. Très bien, je peux vivre sans leur fameuse "hospitalité" espagnole.
+
+#QUEST FMQ_Lesson
+La Leçon Finale
+#TEXT 1
+Aujourd'hui, j'ai rencontré Grégoire Valinnie, le noble qui m'a si gentiment accueilli lors de mon premier jour dans cette région. J'ai l'impression que c'était il y a longtemps. Il m'a proposé de le rejoindre dans une affaire très prometteuse, et j'ai accepté. Nous devrions atteindre la côte de la Bouche du serpent en une semaine, y débarquer avec une escouade de combattants, trouver l'expédition, réprimer la résistance indienne et nous emparer des marchandises de la Compagnie. Cela semble à la fois risqué et rentable.
+#TEXT 2
+Bon sang ! Grégoire Valinnie a été tué au combat. Inutile de continuer sans mon partenaire. Repose en paix, mon ami.
+#TEXT 3
+Nous n'avons pas pris le risque de donner une escarmouche décisive aux Caribes - nous avons trop peu d'hommes pour cela. Mieux vaut rester sans butin, mais en vie. Nous partons.
+#TEXT 4
+Merde ! Quelle stupidité... Ils ont déjà dû emporter toutes les marchandises. Grégoire Valinnie, furieux, a quitté ma flotte...
+#TEXT 5
+Nous avons réussi à récupérer une partie de la cargaison dans le repaire des Caribes avant d'être interrompus par des avant-gardes anglaises et hollandaises. Nous devrions partir d'ici. Notre butin total : @<sSanl> de bois de fer, @<sSilk> de soie de navire, @<sRope> de cordes et @<sOil> de résine. Nous retournons à Saint-Pierre, en Martinique.
+#TEXT 6
+Victoire. Sanglante et inutile comme elle l'est. Pas question de s'emparer du pactole avec de telles pertes. Bon sang !
+#TEXT 7
+Nous sommes sur le point de conclure un marché ce soir à la baie du Lamentin. Bientôt, nous aurons l'argent, et les autres auront la cargaison illégale. Mon partenaire est un homme prévoyant, cela ne fait aucun doute.
+#TEXT 8
+Je suis sans voix. Personne n'est digne de confiance dans cette putain de région. J'ai eu un peu d'argent, mais... Leçon pleinement retenue. Je suppose que je devrais en être reconnaissant, mais cette ordure ferait mieux de ne plus jamais me croiser.
+#TEXT 9
+Je ne peux pas dire avec certitude que ce fut le combat le plus difficile de ma vie. Mais je suis en vie, et j'ai à la fois l'argent et la cargaison. Une autre plage baignée de sang. Je ne sais pas comment j'ai survécu, mais j'ai le sentiment que ce n'est que le début et que je viens de franchir le point de non-retour. En tout cas, merci pour la leçon, monsieur Grégoire. Je l'ai pleinement retenue.
+#TEXT 10
+Je ne peux pas dire avec certitude que ce fut le combat le plus difficile de ma vie. Mais je suis en vie, et j'ai à la fois l'argent et la cargaison. Une autre plage baignée de sang. Je doute que j'y serais parvenu sans Prosper. Tout ce que je sais, c'est que personne ne serait venu m'aider comme cela en France. Leçon apprise. Repose en paix, mon ami. J'ai gardé un peu d'argent pour ta fille, je suis désolé de ne pas pouvoir faire plus pour elle.
+#TEXT 11
+Quel dommage - le navire de Grégoire a été coulé au cours de la bataille. C'est un échec.
+#TEXT 12
+Quel dommage - le navire de Grégoire a été coulé lors d'une bataille au cours de notre voyage de retour vers la Martinique. Toute la cargaison a également disparu.
+#TEXT 13
+J'ai mis trop de temps à rejoindre la Martinique et Grégoire m'a quitté avec toute la cargaison pillée.
+#TEXT 14
+Je ne suis pas arrivé à temps à la baie du Lamentin et l'accord a été conclu sans moi. Le navire de Grégoire a disparu, tout comme ma part.
+#TEXT 15
+Je ne peux pas dire avec certitude que ce fut le combat le plus difficile de ma vie. Mais je suis en vie, et j'ai à la fois l'argent et la cargaison. Une autre plage baignée de sang. Je doute que j'y serais parvenu sans Prosper. Tout ce que je sais, c'est que personne ne serait venu m'aider comme cela en France. Leçon apprise.
+
+#QUEST Roger_1
+Arborer le Jolly Roger : La Ruée vers l'Ambre
+#TEXT 1
+Le chef de la colonie de pirates La Vega, un célèbre baron des Frères de la côte , le Gardien du Code Marcus Tyrex m'a chargé d'enquêter sur une histoire de mystérieux gisements d'ambre bleu racontée par un capitaine espagnol. Je dois soit trouver et acquérir l'ambre, soit prouver que cette histoire n'est qu'une vantardise d'ivrogne. Je parie sur la seconde hypothèse. Je dois aller à Saint-Domingue et trouver une pute du nom de Gabriela Chapada. Il ne me reste que trois jours avant que l'information ne perde toute valeur.
+#TEXT 2
+J'ai mis trop de temps à arriver à Saint-Domingue. Je ne peux plus retrouver ce capitaine espagnol. Quel dommage de perdre la chance de travailler pour un pirate aussi célèbre....
+#TEXT 3
+Gabriela m'a donné le nom de mon brave militaire - Esberdo Cabanas. Il a navigué jusqu'à La Havane pour acquérir les moyens de prospecter l'ambre. Peut-être disait-il la vérité... Je devrais faire voile vers Cuba maintenant.
+#TEXT 4
+J'ai mis trop de temps à enquêter à La Havane. Quel dommage de perdre la chance de travailler pour un pirate aussi célèbre....
+#TEXT 5
+Dans un bureau du port, on m'a dit que le Cantavro était en patrouille, mais que sa position était confidentielle. Je ne suis pas assez stupide pour m'adresser à un commandant sur de tels sujets. Je devrais chercher un autre moyen d'obtenir les informations dont j'ai besoin.
+#TEXT 6
+Je suis arrivé à Cuba. Aucun signe du Cantavro. Il faut que j'aille en ville pour enquêter.
+#TEXT 7
+On dirait que je connais un moyen de trouver le capitaine Esberdo Cabanas ! L'ennemi de mon ennemi est un ami potentiel pour moi. Je doute que l'officier emprisonné ait des sentiments chaleureux pour son ancien capitaine. Je devrais rendre visite à cet amateur de vin et de femmes.
+#TEXT 8
+Ha ! C'est un début ! Il ne me reste plus qu'à aider mon ami Lope... Je devrais voir le gouverneur.
+#TEXT 9
+Il est trop tard pour aider le prisonnier. Impossible de poursuivre le Cantavro maintenant. Quel dommage.
+#TEXT 10
+Pour libérer Don Lope, je dois réunir 250 doublons ou trente mille pesos. Le temps presse...
+#TEXT 11
+C'est fait. Cela m'a coûté pas mal d'argent, mais je pense que la récompense finale couvrira mes frais. Je devrais voir mon ami Lope demain dans sa cellule. Je devrais aussi me préparer à prendre la mer immédiatement.
+#TEXT 12
+L'opération d'Esberdo Cabanas se trouve sur la Côte des Moustiques. Je dois me dépêcher ; je n'ai que sept jours environ !
+#TEXT 13
+Je ne suis pas arrivé à temps à la Côte des Moustiques. C'est un désastre. Quel dommage, il n'y a plus d'intérêt à voir Tyrex maintenant.
+#TEXT 14
+J'ai réussi à poursuivre le Cantavro et ses chaloupes, mais je n'ai pas réussi à piller un seul morceau d'ambre bleu. Quel dommage !
+#TEXT 15
+J'ai réussi à piller plusieurs chaloupes, mais le gain total est trop misérable @<sQty> pièces. Pas la peine de voir Tyrex avec un tel butin.
+#TEXT 16
+Un pillage s'est avéré heureux, j'ai réussi à rassembler @<sQty> morceaux d'ambre bleu, sans parler de l'ambre ordinaire. Je devrais aller voir Tyrex pour m'en vanter.
+#TEXT 17
+Je dois trouver un certain Rosario Gusman. Selon le gouverneur, ce caballero a déjà essayé d'aider Don Lope Montoro à s'en sortir. Ne perdons pas de temps. Don Rosario fait la tournée des postes de garde de la ville tous les jours de 16H00 à 20H00.
+
+#QUEST Roger_2
+Arborer le Jolly Roger : La Route de la Soie
+#TEXT 1
+Tyrex doit tester les limites de ma patience. Au lieu de traquer des caravanes marchandes, je dois trouver un acheteur régulier pour une denrée rare : la soie de navire. Je ne sais pas du tout par où commencer. Quoi qu'il en soit, je dois d'abord rencontrer Geffrey le Chauve, capitaine d'un galion appelé Serpent, à Capsterville de Saint-Christophe.
+#TEXT 2
+J'ai perdu trop de temps, et Geffrey le Chauve a déjà dû décider d'agir de son propre chef sans attendre les instructions de Tyrex. Quel dommage...
+#TEXT 3
+Eh bien, merci, Tyrex ! Les contrebandiers proposent un prix que Marcus n'acceptera pas. Les magasins ne sont pas une option. Quelqu'un doit en avoir besoin puisque les contrebandiers la revendent manifestement à quelqu'un d'autre. Il faut que je me creuse les méninges : qui sont les principaux consommateurs de soie de navire ? Cela m'aidera à trouver un acheteur.
+#TEXT 4
+J'ai discuté avec un constructeur naval de Capsterville, sans résultat, mais je pense être sur la bonne voie. Ce constructeur naval avait besoin de cordages en provenance de Russie, mais qui aurait besoin de soie en provenance de Lyon ?
+#TEXT 5
+J'ai trouvé mon potentiel acheteur de soie. Hélas, nous ne nous sommes pas entendus. Soit il me prend pour un mouchard, soit il ne veut tout simplement pas faire affaire avec des inconnus. Il y avait une étincelle dans ses yeux quand j'ai parlé de la soie... Je parie que ce chien rusé a déjà une source régulière de soie, et ce n'est pas un gouverneur. Faire pression sur le maître ne servira à rien ici ; je devrais chercher ses fournisseurs. Il y a un repaire de pirates en Jamaïque - Maroon Town. Je devrais y aller et enquêter.
+#TEXT 6
+Un barman de Maroon Town peut m'indiquer un homme qui sait tout ce qui se passe dans ces eaux. Je dois trouver 50 doublons pour ce salaud cupide.
+#TEXT 7
+Il semblerait que j'aie besoin d'un certain Husky Billy, un ancien pirate qui pêche maintenant autour de la Jamaïque sur sa vieille chaloupe. Je devrais l'attendre non loin de Cap Negril. Son bateau s'appelle le Fly Fish.
+#TEXT 8
+Billy peut m'indiquer le fournisseur de soie, mais il me demande en échange une nouvelle chaloupe et un rouleau de soie de navire. J'ai trois jours pour lui livrer tout cela avant qu'il ne prenne le large.
+#TEXT 9
+Selon Husky Billy, chaque mois, entre le 10 et le 15, un brigantin appelé Utrecht passe en contrebande de la soie de navire au maître d'oeuvre du chantier naval de Port Royal. Je dois me débarrasser de mon concurrent. Je suppose que je pourrais en informer le gouverneur... laisser les Britanniques faire le sale boulot et me faire des amis en même temps. Ou alors, je pourrais tenter d'intercepter moi-même l'Utrecht en mer. Il devrait s'approcher de la Jamaïque depuis Curaçao ou Saint-Martin. Quoi qu'il en soit, le fait de s'en débarrasser rendra le client beaucoup plus agréable.
+#TEXT 10
+Je n'ai pas livré à temps une chaloupe et une soie à Husky Billy. Le pirate doit être loin maintenant. Inutile de parler de mon échec à Tyrex.
+#TEXT 10-1
+Cela fait une semaine et il n'y a aucun signe du Flying Fish. J'ai dû manquer son apparition. Dommage, inutile de déranger Tyrex maintenant.
+#TEXT 11
+L'Utrecht est donc au fond de la mer, tout comme mes concurrents. Je devrais débarquer à la Baie de Portland pour discuter avec les acheteurs.
+#TEXT 12
+Bon sang ! La baie est vide ; quelqu'un est venu ici il y a peu, mais ils sont tous partis maintenant. J'ai dû me battre trop près des côtes. Je doute que le constructeur puisse être persuadé à la lumière des récents événements. Inutile d'aller voir Tyrex maintenant. C'est un échec total.
+#TEXT 13
+J'ai raté l'Utrecht. J'étais si près du but, mais je n'ai pas réussi à le localiser en mer. 
+#TEXT 14
+Un échec ! J'ai gâché ma chance de conclure un marché avec l'ouvrier ; il m'a pris pour un officier de patrouille, a pris peur et m'a bêtement attaqué. Imbécile. J'ai dû tous les tuer. C'est dommage, mais c'est fini.
+#TEXT 15
+C'est fait. J'ai réussi à trouver un accord avec l'ouvrier. 5 doublons pour un rouleau. Maintenant, je devrais naviguer jusqu'à Saint-Christophe et voir Geffrey le Chauve.
+#TEXT 16
+Cela fait déjà deux mois. Geffrey le Chauve a déjà dû vendre sa soie à quelqu'un d'autre. Dommage... mais je pense que je peux encore transmettre les informations sur l'acheteur à Tyrex. Je devrais arriver à La Vega dans dix jours pour donner à Tyrex le temps de rassembler suffisamment de soie. J'espère que cela apaisera sa colère éventuelle.
+#TEXT 17
+Tous les délais sont échus depuis longtemps. Inutile de rendre Tyrex nerveux par ma seule présence.
+#TEXT 18
+Cela fait déjà deux mois et je n'ai toujours pas d'acheteurs potentiels. C'est un échec total ; il n'est pas nécessaire de s'adresser à Tyrex à ce stade.
+#TEXT 19
+J'ai transmis les informations que j'ai obtenues de Husky Billy aux autorités locales. Maintenant, j'attends qu'elles s'occupent de mes concurrents. Je devrais voir le gouverneur le 16e jour du mois de @<sTemp>.
+#TEXT 20
+C'est fait. Mon concurrent a été éliminé par une patrouille militaire. J'ai même été récompensé par 10 000 pesos, ce qui est bien. Il faudrait que je voie le constructeur, il doit être plus influençable à l'heure qu'il est.
+#TEXT 21
+C'est fait. J'ai réussi à conclure un marché avec le constructeur de navires. 5 doublons pour un rouleau. Maintenant, je devrais naviguer jusqu'à Saint-Christophe et voir Geffrey le Chauve.
+#TEXT 22
+Geffrey le Chauve a reçu des instructions - il est sur le point de partir pour la Jamaïque avec le premier lot de soie de navire de Marcus Tyrex. Je devrais aller à La Vega.
+#TEXT 23
+J'ai fait mon rapport à Marcus. Je devrais le voir dans trente jours pour recevoir ma pauvre récompense. Et une nouvelle mission.
+#TEXT 24
+J'ai fait mon rapport à Marcus. Je devrais le voir dans vingt jours pour recevoir ma récompense. Et une nouvelle mission.
+
+#QUEST Roger_3
+Arborer le Jolly Roger : Le soleil brûlant de Maracaibo
+#TEXT 1
+Cette fois, ma mission consiste à libérer de l'esclavage un ancien corsaire nommé Jean Picard. Il est retenu en captivité dans une plantation de Maracaibo. On m'a confié le commandement d'un autre pirate, le peu futé Pelly le Coutelas, et de son barquentin, le Moray, pour qu'ils m'assistent. Pelly attendra mon arrivée au Cap de la Pointe Raguée, à la Barbade. Pour entrer dans la plantation, il faut user d'une ruse astucieuse. Comme ils ont sans doute besoin de plus d'esclaves, je me ferai passer pour un marchand d'esclaves. L'acquisition de cinquante individus devrait suffire - je peux soit les capturer en mer, soit rendre visite à Fadey en Guadeloupe. Il a prouvé qu'il était capable d'acquérir tout ce que l'on voulait. Mais ces détails peuvent attendre, il est temps de mettre le cap sur la Barbade.
+#TEXT 2
+J'ai été assez stupide pour perdre beaucoup de temps en allant à la Barbade, c'est un échec. Dommage de gâcher le travail et de planter Marcus...
+#TEXT 3
+Pelly le Coutelas a reçu l'ordre de se rendre à Maracaibo, de jeter l'ancre dans la baie de Guajira et d'attendre mon arrivée. Le Moray mettra une semaine à y arriver. Quant à moi, je devrais aller directement au coeur de la bête : une plantation de Maracaibo. Jean Picard doit s'y trouver quelque part. Je suppose que je devrais me faire passer pour un marchand d'esclaves afin de ne pas éveiller les soupçons. Cinquante têtes d'esclaves suffiront à me rendre digne de confiance.
+#TEXT 4
+J'ai été assez stupide pour perdre beaucoup de temps, c'est un échec. Dommage de gâcher le travail et de planter Marcus...
+#TEXT 4-1
+J'ai entendu des rumeurs selon lesquelles le capitaine pirate Jean Picard aurait été tué par un garde dans une plantation. C'est totalement ma faute.
+#TEXT 5
+Me voilà sur la plantation, à me faire passer pour un marchand. Je devrais me concentrer sur la recherche de Jean Picard maintenant.
+#TEXT 6
+J'ai trouvé Jean, mais il n'est pas prudent de parler de son évasion en présence de gardes. Je devrais attendre la nuit et retrouver Picard dans une des cabanes.
+#TEXT 7
+Le plan est simple et direct. Les hommes de Picard provoqueront une émeute de l'intérieur, tandis que Pelly le Coutelas et moi lancerons notre attaque de l'extérieur. Cependant, avant l'assaut, je dois m'assurer que les pirates de Jean soient correctement armés. Nous pouvons facilement nous procurer 30 sabres et haches ordinaires dans l'arsenal du navire, mais le reste doit être acheté ailleurs. J'aurai besoin de 30 pistolets avec suffisamment de munitions, jusqu'à 90 potions pour nos besoins médicaux, et il ne serait pas inutile d'avoir 2 mousquets avec 20 charges chacun. Je m'entretiendrai avec Pelly au sujet de notre stratégie, puis je me rendrai en Guadeloupe pour rendre visite à Fadey. Le Moscovite est sans doute capable de nous procurer tous les matériaux dont nous avons besoin.
+#TEXT 8
+Les armes ont été rassemblées. Je dois réfléchir à la façon de les livrer secrètement à la plantation. Je suppose qu'il est temps que j'en parle à Picard.
+#TEXT 9
+Picard n'est pas un idiot, ce qui le différencie des autres pions de Tyrex. Les armes arriveront à la plantation dans des caisses contenant des marchandises à échanger. Je devrais leur proposer 500 caisses de café, de coprah ou de vanille.
+#TEXT 10
+L'accord d'échange de marchandises a été passé, le marché sera conclu demain soir. Je devrais trouver Picard et le mettre au courant.
+#TEXT 11
+J'ai fait capoter l'affaire en n'apportant pas assez de marchandises pour l'échange. Dommage que ma stupidité ait tout gâché...
+#TEXT 12
+Je suis donc censé amener mon navire à la baie de Guajira et me préparer à prendre d'assaut la plantation avec Pelly à mes côtés avant minuit.
+#TEXT 13
+J'avais tout gâché en ne me présentant pas à temps au point de rendez-vous.
+#TEXT 14
+Mon escouade s'est approchée trop près de l'entrée de la plantation et a donné l'alerte. Notre plan de sauvetage est complètement ruiné.
+#TEXT 15
+Je ne suis pas arrivé à temps à la plantation. Notre plan de sauvetage est complètement ruiné...
+#TEXT 16
+J'ai dû être trop lent à rassembler des armes pour le sauvetage. Jean Picard et ses hommes ont disparu de la plantation - soit ils ont été vendus ailleurs, soit ils ont été torturés à mort. C'est terminé.
+#TEXT 17
+Nous avons réussi à organiser une émeute, mais Jean Picard est mort au combat. C'est terminé.
+#TEXT 18
+C'est fait ! Trop tôt pour une célébration - nous avons une flotte espagnole sur nous. J'ai ordonné à Picard et Coutelas de fuir sur le Moray, quant à moi, je suis sur le point d'engager le combat avec les Espagnols.
+#TEXT 19
+L'ennemi dispose d'une force importante. Je dois éliminer son navire amiral, semer la confusion, puis fuir.
+#TEXT 20
+Un combat bien mené. Je me dirige vers La Vega pour voir Tyrex immédiatement.
+#TEXT 21
+C'est fait, nous avons fui dans la jungle. Maintenant, nous devrions nous diriger vers la baie de Guajira avant que d'autres Espagnols n'arrivent.
+#TEXT 22
+J'ai décidé de refuser les services du respectable Fadey et de me présenter à la plantation de Maracaibo sans les marchandises appropriées, ils n'inspecteront pas ma cale. C'est risqué, bien sûr, mais il n'y a pas de retour en arrière possible. Advienne que pourra.
+#TEXT 23
+L'avance a été payée et demain à 22H00 je recevrai la cargaison d'esclaves dont j'ai besoin sur la plage de Capster. Nous ne devons pas être en retard pour ne pas décevoir Fadey.
+#TEXT 24
+Voilà, mon argent a pleuré avec les esclaves car j'étais en retard à un rendez-vous, un clochard. J'essaierai de me présenter à la plantation de Maracaibo sans le bon produit.
+#TEXT 25
+L'affaire a été conclue et j'ai reçu cinquante têtes d'or noir. Vraiment de l'or, cette opération m'a coûté cher, je crains de ne pas pouvoir couvrir toutes mes dépenses. Désormais, il faut penser par soi-même et ne pas enrichir les autres. Quoi qu'il en soit, je continue l'opération de sauvetage d'un certain Jean Picard...
+#TEXT 26
+J'ai décidé de ne pas m'emmerder avec les esclaves ; ils sont définitivement au-dessus de mes moyens maintenant. Je vais essayer de me présenter à la plantation de Maracaibo sans les marchandises appropriées, ils n'inspecteront pas ma cale.
+#TEXT 27
+Ma naïveté m'a joué un tour cruel, et je ne pouvais pas me présenter comme un marchand d'esclaves. Je suis désolée d'avoir tout gâché si stupidement et d'avoir laissé tomber Marcus...
+#TEXT	28
+Je suis confronté à une décision difficile : pour acquérir rapidement la cargaison nécessaire, Coutelas m'a donné une piste qu'il gardait pour lui - celle d'une grande caravane transportant du café et d'autres épices. Dans deux semaines, une flotte commerciale sous... drapeau français passera près de la Guadeloupe. Je me demande si Coutelas a vraiment fait ça pour que notre mission se termine rapidement et avec succès, ou si c'est un test pour voir si j'ai le courage d'agir comme un vrai pirate et d'attaquer mes propres compatriotes. Quoi qu'il en soit, je garderai cela à l'esprit, mais je ne me sentirai pas obligé : il y a toujours d'autres caravanes à voler ou même des moyens légaux d'acheter les marchandises dont j'ai besoin.
+#TEXT	29
+Je n'en reviens pas de mon audace et de ma réussite ! Après avoir amassé suffisamment d'or, je suis entré ouvertement dans la plantation et j'ai acheté Picard. Le propriétaire de la plantation aurait pu deviner qui je suis puisque j'ai clairement indiqué que j'étais intéressé par Jean et qu'il n'a pas été dupe de mon histoire à propos du besoin d'un charmant valet pour verser le vin lors des fêtes. Mais je m'en fiche, l'important c'est que Picard soit libre, sans effusion de sang et sans risque pour sa vie. Nous pouvons retourner à Marcus Terrax.
+#TEXT	30
+Ce qui est drôle, c'est qu'au début, Cleaver a essayé de me faire dépenser une fortune pour une affaire, et quand j'ai refusé, il m'a convaincu de la dépenser pour quelque chose de tout à fait différent. Paul semble très préoccupé par le bien-être de Picard - non pas par gentillesse, mais par crainte de la punition sévère de Marcus si nous échouons. Ainsi, lorsque j'ai refusé l'idée d'acheter Jean, Cleaver a insisté pour que nous fournissions d'urgence des armes et des médicaments à tout le monde. Pour être plus précis, il s'est chargé lui-même de cette tâche, pour la même somme que celle qu'aurait coûté l'achat de Picard. C'était peut-être une dépense impulsive, mais je commençais à en avoir assez de choisir à la main tous les pistolets de haute qualité pour nos évadés ! En parlant d'eux, il est temps de rendre visite à Handsome et de lui faire savoir que les armes sont prêtes.
+
+#QUEST Roger_4
+Arborer le Jolly Roger : Le Commerce Pirate pour les Nuls
+#TEXT 1
+Marcus Tyrex m'a envoyé aux Bermudes pour voir le marchand local. Enfin un vrai boulot de pirate.
+#TEXT 2
+J'ai mis trop de temps à arriver aux Bermudes, et maintenant il est trop tard. Dommage, pas de travail pour moi alors. Je dois aller voir Tyrex, comme convenu.
+#TEXT 3
+Pascal Lavoisier m'a chargé d'attaquer un convoi commercial hollandais chargé de bois de fer. Le bois est transporté par le Rosbohom, @<sShip>. Je devrais les engager à @<sdegN> @<sminN> Nord, @<sdegW> @<sminW> Ouest dans cinq jours. Le bois doit être livré aux Bermudes, à Pascal. Tyrex avait raison pour cette mission.
+#TEXT 4
+Je n'ai pas trouvé le convoi, même si j'ai essayé. Dommage... Je devrais aller voir Tyrex comme nous l'avions convenu.
+#TEXT 5
+Dans le feu de l'action, j'ai accidentellement coulé le vaisseau cible. Idiot... Inutile de le dire au marchand. Je dois aller voir Tyrex comme convenu.
+#TEXT 6
+L'ennemi s'est avéré bien trop coriace pour moi. Inutile de me couvrir de honte devant le marchand. Je dois aller voir Tyrex comme convenu.
+#TEXT 7
+Le convoi hollandais a été trouvé et capturé. Je devrais aller aux Bermudes.
+#TEXT 8
+Le commerçant n'était pas satisfait de ma prestation. J'emmerde ce profiteur. Je devrais aller voir Tyrex comme nous l'avions convenu.
+#TEXT 9
+Le marchand a eu son bois de fer, et moi mon argent. En vérité, ce fichu grippe-sou a payé des piécettes pour un tel travail. Je ne traiterai plus jamais avec lui.
+#TEXT 10
+J'ai rencontré Geffrey le Chauve aux Bermudes. Il m'a dit que Pascal est en affaires avec Tyrex. Maintenant, je comprends. C'est dommage qu'il n'y ait aucun moyen de punir ce foutu commerçant. Avec un patron comme ça...
+#TEXT 11
+J'ai rencontré ma vieille connaissance Jean Picard qui s'apprêtait à montrer à Marcus la cupidité de Pascal Lavoisier. Pas la meilleure idée, donc je l'ai mis en garde. Picard m'a proposé de récupérer ce que Pascal me doit. C'est prometteur. Je devrais le voir dans deux semaines à la baie des Gonaïves. On dirait que Jean a une idée de la façon de baiser le grippe-sou à quatre yeux.
+#TEXT 12
+Jean Picard a un plan pour s'introduire dans la maison de Pascal Lavoisier et de Tyrex sur La Vega. Nous devons tout faire avant l'aube.
+#TEXT 13
+J'étais en retard pour un rendez-vous avec Jean. C'est dommage.
+#TEXT 14
+Je suis arrivé à la baie des Gonaïves à pied, ce qui a mis Picard en colère. Jean est parti sans me parler de son plan. Quel dommage...
+#TEXT 15
+Vol rondement mené. Ma part doit dépasser les 100 000 pesos, ce qui couvre la dette de Lavoisier à mon égard.
+Nous nous sommes séparés avec Jean Picard dans la baie des Gonaïves. Il m'a dit qu'il démissionnait et m'a suggéré de faire de même. Ses paroles concernant Tyrex sont un peu vraies, mais pas maintenant. Je dois maintenant voir Marcus et lui faire un rapport sur Ignacio Marco.
+#TEXT 16
+Vol rondement mené. Ma part doit dépasser les 100 000 pesos, ce qui couvre la dette de Lavoisier à mon égard. De plus, je n'ai pas permis à Jean de tuer un témoin - une pute appartenant à Tyrex. Je me ramollis sans doute, mais une femme sur Isla Mona peut être un avantage, hé hé. Elle ne s'enfuira pas de là de toute façon.
+Nous nous sommes séparés avec Jean Picard dans la baie des Gonaïves. Il m'a dit qu'il démissionnait et m'a suggéré de faire de même. Ses paroles concernant Tyrex sont un peu vraies, mais pas maintenant. Je dois maintenant voir Marcus et lui faire un rapport sur Ignacio Marco.
+#TEXT 18
+Nous avons perdu trop de temps dans la jungle sur la route vers La Vega et nous n'avons pas pris le risque de faire un vol. Jean était très contrarié. Je dois voir Marcus et lui parler d'Ignacio Marco.
+#TEXT 19
+J'ai complètement oublié l'offre de Jean Picard ! Dommage.
+
+#QUEST Roger_5
+Arborer le Jolly Roger : Pierres de Sang et de Forêt
+#TEXT 1
+Ma prochaine mission est de localiser et de piller un village minier espagnol appelé Mérida. Jean Picard m'accompagnera dans cette mission. Tyrex m'a également fourni l'un de ses boucaniers, Luke Bayard, également connu sous le nom du Leprechaun. Je devrais le rencontrer avec ses hommes dans le port de La Vega.
+#TEXT 2
+J'étais pris par d'autres affaires, et voilà que Picard et le Leprechaun ont quitté mon navire. Quel dommage...
+#TEXT 3
+Notre objectif est le Cap des Espoirs Illusoires, au sud du lac de Maracaibo. Pas de temps à perdre !
+#TEXT 4
+Nous voici sur le Continent Espagnol. Nous devrions trouver un village indien et discuter avec leur chef au sujet d'un guide pour Mérida.
+#TEXT 5
+Le chef n'est pas du genre bavard. le Leprechaun avait raison - il est hors de question que je fasse cela sans cadeaux.
+#TEXT 6
+Un chef indien du nom de Kumwana m'a promis de rassembler ses guerriers et de leur parler. Je dois le voir demain matin pour obtenir une réponse.
+#TEXT 7
+Des poulets à peau rouge ! Pas une seule âme n'a voulu me guider jusqu'à Mérida - ils craignent des Capongas dans les jungles... C'est un problème ; je devrais parler au Leprechaun.
+#TEXT 8
+Le plan ne semble pas très prometteur, mais je vais tenter ma chance : Je vais essayer de les convaincre avec des cadeaux et des promesses aux femmes indiennes. Peut-être que l'une d'entre elles convaincra son mari de nous donner un coup de main... Il y a aussi une autre option : faire pression sur le chef. Je lui proposerai une alternative si désagréable qu'il cédera pour me trouver un guide dans la journée. Et avant de quitter le village, il faudra que j'apporte au Leprechaun d'autres fioles d'antidote.
+#TEXT 8a
+J'ai fait comprendre au chef des indigènes ce qui l'attend, lui et tout le village, s'ils ne me trouvent pas un guide dans les 24 heures. Il m'a parlé d'un Tagofa qui pourrait nous conduire à Mérida. Nous verrons bien... Je serai de retour dans un jour. Voyons si ce sauvage est vraiment raisonnable.
+#TEXT 9
+Une fille indienne nommée Hayami m'a promis de parler à son mari, Tagofa. Je devrais les voir tous les deux après le coucher du soleil.
+#TEXT 10
+Tagofa accepte de nous guider jusqu'à Mérida. Mais sa sournoise de femme exigea un paiement préalable : deux armes de poing - un pistolet de duel et un pistolet 'Trombone' - ainsi que trente charges pour chacune d'elles. Ainsi qu'une longue-vue, un collier d'émeraudes et un anneau d'or orné d'un rubis.
+#TEXT 11
+Tagofa a rejoint mon unité. Pour atteindre Mérida, nous avons besoin de six chaloupes. Comme les Lokonos ne possèdent pas de longues barques décentes, nous allons les construire. Pour cela, il faut vingt lots de planches, dix ballots de cuir et un officier pour diriger la construction - un charpentier attitré.
+#TEXT 12
+Il n'a pas fallu longtemps pour persuader le gouverneur de Mérida de se séparer de toutes les pierres extraites. Picard avait raison : c'est un gros butin. Il n'y a plus rien à faire ici. Il est temps de retourner à nos chaloupes.
+#TEXT 13
+Des Capongas téméraires nous ont tendu une embuscade à l'intérieur de la grotte. Nous avons dû nous débarrasser d'un autre de leurs groupes.
+#TEXT 14
+Les chaloupes sont prêtes. Je devrais en dire un mot à Tagofa.
+#TEXT 15
+Nous avons été attaqués par ces mêmes Capongas dont j'ai tant entendu parler récemment. Ils sont tous morts maintenant, et Mérida est proche de nous.
+#TEXT 16
+Les Espagnols se sont révélés beaucoup trop méfiants et agressifs - ils n'ont pas réfléchi à deux fois avant de charger mon unité. La dernière erreur de leur vie... La garnison de Mérida est éliminée et tous ses protecteurs sont morts. Il est temps de franchir les portes.
+#TEXT 17
+Les derniers Espagnols désireux de connaître une mort glorieuse sont morts. Il est temps de rendre visite au gouverneur.
+#TEXT 18
+Le butin a été partagé équitablement. Mes efforts pour libérer Jean de l'esclavage ont également été récompensés. Je suis chanceux. Il est temps d'aller à La Vega et de faire un rapport à Tyrex.
+#TEXT 19
+J'ai mis trop de temps à rassembler les cadeaux pour le couple à la peau rouge. Le Leprechaun, ainsi que Jean, ont décidé qu'ils se débrouilleraient mieux sans moi. C'est sans doute mieux ainsi !
+#TEXT 20
+J'étais trop lent, alors le Leprechaun et Jean ont décidé qu'ils feraient mieux sans moi. C'est sans doute mieux ainsi !
+#TEXT 21
+J'étais trop lent, alors le Leprechaun et Jean ont décidé qu'ils feraient mieux sans moi. C'est sans doute mieux ainsi !
+
+#QUEST Roger_6
+Arborer le Jolly Roger : Maître de la Supercherie
+#TEXT 1
+Hélas, Marcus n'a pas d'autre travail rentable pour moi. Cependant, le maître du Codex a une tâche personnelle à me confier : je dois escorter le Kitty jusqu'à Bridgetown, à la Barbade. Je suis obligé de faire plaisir à mon patron... Le navire se trouve actuellement dans les eaux de La Vega.
+#TEXT 2
+On dirait que j'ai bu trop de rhum puisque la Kitty est partie toute seule à Bridgetown. Quel dommage...
+#TEXT 3
+Le Kitty a été coulé lors d'un combat naval. Quel dommage... Pas question pour moi d'aller voir Marcus maintenant.
+#TEXT 4
+Tiens, tiens ! J'ai été approché par Ignacio Marco à Bridgetown ! Il m'a proposé de l'accompagner dans l'attaque d'une caravane d'argent hollandaise. Le Marco qui a piégé Jean Picard. J'ai accepté son offre ; le prix est trop prometteur, mais je dois être prudent avec cet homme. C'est drôle, la caravane s'est arrêtée sur une île qui m'est déjà familière...
+#TEXT 5
+Tiens, tiens ! J'ai été approché par Ignacio Marco à Bridgetown ! Il m'a proposé de l'accompagner dans l'attaque d'une caravane d'argent hollandaise. Le Marco qui a piégé Jean Picard. J'ai accepté son offre ; le prix est trop prometteur, mais je dois être prudent avec cet homme. La caravane s'est arrêtée près de l'île dont les coordonnées sont les suivantes : 12 48' Nord, 64 41' Ouest.
+#TEXT 6
+La caravane est bien là. Ignasio Marco n'a pas menti. Très bien, il est temps de libérer les Hollandais de leur cargaison.
+#TEXT 7
+Les combats avec les Hollandais sont terminés. Ignasio Marco me fait signe depuis son polacre ; on dirait qu'il veut que j'aille à terre pour partager le butin, évidemment. Je m'apprête à y aller, mais je vais aussi placer un guetteur sur la colline la plus proche, armé d'une longue-vue... Je dois m'assurer que l'horizon reste dégagé.
+#TEXT 8
+Ma précaution m'a bien servi - ce salaud d'Ignasio Marco travaille en coopération avec les Castillans. C'est le même scénario que celui qui est arrivé à Picard. Un travail avec un partenaire près du Continent Sud, puis le partage du butin, et enfin la flotte espagnole. Sans mon gardien, ils m'auraient eu comme ils ont eu Picard. J'ai encore le temps de fuir... Enfin, je pense.
+#TEXT 9
+Je ne suis pas sûr de devoir engager cette flotte espagnole. Je pense que la fuite est la meilleure option possible dans une telle situation. Il ne faudra pas moins de 3 000 mètres entre nous pour que j'aie une chance de fuir.
+#TEXT 10
+J'ai engagé une bataille acharnée contre la flotte lourde espagnole et je l'ai éliminée. Maintenant, ils savent ce que c'est que de combattre un vrai corsaire... Je dois me dépêcher d'aller voir Tyrex dès que possible.
+#TEXT 11
+J'ai réussi à fuir la flotte espagnole. Je dois me dépêcher d'aller voir Tyrex dès que possible.
+#TEXT 12
+Le puissant navire amiral, est éliminé. Nous pouvons maintenant essayer de fuir - tout ce dont nous avons besoin, c'est d'une distance de 1000 mètres.
+
+#QUEST Roger_7
+Arborer le Jolly Roger : Trésors du Jarl
+#TEXT 1
+Et encore une énième quête de Tyrex : Je dois aller à Dieu sait où et trouver les trésors d'un pirate récemment décédé du nom de Wulfric Jogansen. Je n'ai que son journal de bord. Je dois aller dans ma cabine et prendre mon temps pour essayer de tirer le meilleur parti de ce journal.
+#TEXT 2
+J'ai trouvé une piste dans le journal de bord de Wulfric - la baie des Moustiques. Il semble qu'il l'ait visitée très souvent. Cette baie mène à deux grottes situées dans les profondeurs du continent. Je devrais les explorer.
+#TEXT 3
+J'ai été attaqué par des Caribes enragés dans une grotte de la baie des Moustiques. On dirait que j'ai interrompu un rite qu'ils pratiquaient autour d'un foyer. Ce n'est jamais facile. Maintenant, je peux chercher le trésor en paix.
+#TEXT 4
+Hélas, aucune trace de trésors à l'intérieur de la grotte de la baie des Moustiques.
+#TEXT 5
+J'ai trouvé un coffre au contenu intéressant, mais je suis sûr qu'il ne s'agit pas du trésor de Wulf le Rouge.
+#TEXT 6
+J'ai rencontré des mendiants à la sortie de la grotte. On dirait que c'est leur cache que j'ai trouvée plus tôt.
+#TEXT 7
+Cette piste était fausse. J'aurais dû m'attendre à mieux de la part du Loup Rouge. Il n'était pas comme les autres malheureux qui cachent leurs affaires dans des grottes en bordure de chemin. Je devrais aller dans ma cabine et réessayer.
+#TEXT 8
+Bon, j'ai une autre piste. Wulfric rendait régulièrement visite à un certain Gaspard Parmentier à Tortuga... Il pourrait être le banquier personnel du Viking. Je devrais enquêter.
+#TEXT 9
+On m'a dit comment trouver la maison de Gaspard. Je dois m'y rendre et m'informer prudemment sur le Loup Rouge. Il est préférable de faire une visite pendant la journée. Les banquiers n'aiment pas les invités nocturnes, hé hé.
+#TEXT 10
+La maison de Gaspard Parmentier est fermée. J'ai frappé plusieurs fois à la porte, mais rien ne s'est passé. Pourtant, j'ai entendu quelqu'un marcher à l'intérieur de la maison. Ce banquier se cache manifestement des hommes comme moi. Des hommes qu'il ne connaît pas. Je dois me placer près de la trappe des cachots et observer l'entrée.
+#TEXT 11
+Mince alors ! Mon vieil ami Pelly le Coutelas est arrivé chez Gaspard, et la porte s'est ouverte pour lui comme par magie. C'est insultant. Je devrais attendre le départ de Coutelas et lui demander des nouvelles de Gaspard. Pelly est un idiot, il me dira tout ce que j'ai besoin de savoir.
+#TEXT 12
+Encore une mauvaise piste ! Gaspard Parmentier, aussi connu sous le nom de Dents d'or, est un acheteur ordinaire de gemmes et de joyaux volés. Je devrais aller dans ma cabine et réessayer.
+#TEXT 13
+Le mot "gord" est souvent écrit ici et là. Qu'est-ce que c'est que ce "gord" ? Je devrais le découvrir puisque je n'ai pas d'autres pistes solides à explorer. Mon ami Gino peut m'aider dans ce domaine scientifique. En route pour Antigua.
+#TEXT 14
+Le mot "gord" est souvent écrit ici et là. Qu'est-ce que c'est que ce "gord" ? Je devrais le découvrir puisque je n'ai pas d'autres pistes solides à explorer. En route pour La Vega, je dois demander de l'aide à Tyrex.
+#TEXT 15
+Donc, notre Wulfric le Viking avait une base secrète personnelle dans l'Archipel ! Je parie que c'est là que se trouve son trésor. Je devrais aller dans ma cabine et essayer de calculer son emplacement à l'aide du journal de bord de l'homme.
+#TEXT 16
+Je pense avoir localisé le gord que je recherche. Il se trouve sur une île qui n'est indiquée sur aucune carte. Je devrais l'explorer.
+#TEXT 17
+J'ai été soudainement attaqué dans la jungle par une horde de pirates. Il doit s'agir des hommes de Wulfric qui ignorent son sort. Je devrais rassembler une équipe d'abordage et aller de l'avant.
+#TEXT 18
+Ça y est, j'ai trouvé le gord de Wulfric. Seuls trois de ses hommes ont survécu, et ils font maintenant partie de mon équipage. Un charpentier nommé Rodgar et deux de ses assistants. Il est temps de chercher le trésor. Il doit être caché ici. Et bien caché.
+#TEXT 19
+J'ai trouvé les trésors du Loup Rouge. Une sacrée somme d'argent : 750 000 pesos et 900 doublons. Un tiers revient à Tyrex, le reste m'appartient de droit. Je garderai pour moi le secret de cette île. C'est maintenant ma base, mon gord. Je peux y réparer des navires et y stocker des marchandises. Un jour, je pourrai construire et agrandir ici.
+#TEXT 20
+J'ai désormais ma propre base ! Ses coordonnées sont : 18 42' Nord, 72 9' Ouest. L'île s'appelle Isla Mona. Rodgar Janssen restera ici pour superviser le village et réparer mes navires. Il est temps d'aller voir Tyrex et de lui faire un rapport.
+
+#QUEST Roger_8
+Arborer le Jolly Roger : Corrida
+#TEXT 1
+Marcus m'a ordonné d'enquêter sur la situation en Martinique. On dit qu'Ignacio Marco y a été vu. Je devrais y aller et surveiller ce salaud. Mais il m'est interdit de l'attaquer - Marcus a ses propres projets à son égard.
+#TEXT 2
+Le Torero effectue un raid sur Le François accompagné d'une frégate et d'une corvette. Mon ami doit donc être ici. Je dois me rendre à Le Francois et éviter de poser des questions à qui que ce soit sur Marco et son équipage. Ma tâche est de surveiller et d'observer.
+#TEXT 3
+Ignacio Marco a passé près de deux heures dans la résidence de Jacques Barbason - le chef de Le Francois. Puis il s'est dirigé vers le port en compagnie de deux messieurs importants qui sont probablement les capitaines des deux autres navires. Je dois me dépêcher d'aller à Saint-Pierre et d'essayer de les poursuivre.
+#TEXT 4
+Ignacio Marco était déjà parti quand j'ai rejoint mon navire. Quoi qu'il en soit. J'ai obtenu des informations précieuses, je devrais en parler à Marcus.
+#TEXT 5
+Je n'ai pas réussi à arriver chez Marcus en trois semaines, et son plan a été ruiné. Quel dommage. Néanmoins, je suis toujours dans le coup - je devrais revenir dans un mois à bord d'un seul navire puissant. Et ne plus jamais être en retard.
+#TEXT 6
+Je dois donc exécuter un plan complexe de Marcus. Première étape : je dois intercepter le Torero, qui se dirige vers Philipsburg depuis Cuba. Il vaut mieux que je l'attaque près de Saint-Martin, mais pas trop près de l'île, sinon les pirates de Barbason risquent de remarquer le combat.
+#TEXT 7
+J'ai coulé le Torero dans le feu de l'action. Quel dommage. Je devrais aller voir Marcus.
+#TEXT 8
+J'ai réussi à aborder le Torero, mais je n'ai pas réussi à trouver son journal de bord. Je ne peux pas obtenir les informations dont nous avons besoin. Quel dommage. Je devrais aller voir Marcus.
+#TEXT 9
+J'ai lancé un combat avec le Torero trop près de Saint-Martin et j'ai été repéré par d'autres pirates. C'est dommage. Il faut que j'aille voir Marcus.
+#TEXT 10
+J'ai réussi à aborder le Torero. Ignacio Marco ne s'est pas rendu, mais j'ai récupéré son journal de bord. Je devrais aller dans ma cabine et l'examiner.
+#TEXT 11
+J'ai maintenant toutes les informations dont j'avais besoin. Le Pigeon Spyke est en route pour Tyrex. Il est temps de signaler à la flotte de Barbason près de Saint-Martin qu'elle doit se rendre à Porto Rico. Je dois cependant garder mes distances. 1500 mètres du fort de Philipsburg suffiront.
+#TEXT 12
+Quel dommage. J'ai donné un mauvais signal aux pirates de Barbason. Je devrais retourner voir Marcus.
+#TEXT 13
+Quel dommage. Je me suis trop rapproché des pirates de Barbason et j'ai compromis la véritable nature du Torero. Je devrais retourner voir Marcus.
+#TEXT 14
+Le signal a été envoyé ! Les pirates naviguent droit vers Porto-Rico, où l'embuscade espagnole a été tendue. Je dois me dépêcher d'intercepter la caravane d'or. J'espère que les renforts de Marcus arriveront à temps.
+#TEXT 15
+Quel dommage ! J'ai perdu trop de temps et je n'ai pas réussi à localiser la caravane espagnole d'or. Il faut que je retourne voir Marcus.
+#TEXT 16
+Quel dommage ! J'ai totalement oublié les instructions de Marcus de ne pas ajouter d'autres navires que le Torero à ma flotte. Maintenant, le pirate va me poursuivre pendant un moment. Il faut que je retourne voir Marcus.
+#TEXT 17
+Les renforts promis ne m'ont pas déçu - Marcus lui-même est arrivé pour m'aider sur le Red Dragon, son navire de guerre ! Les Espagnols sont partis. Je devrais prendre une chaloupe !
+#TEXT 18
+Malheureusement, nous n'avons pas obtenu d'or. Je devrais voir Marcus dans trois semaines sur un seul navire de guerre. Quelque chose d'important se profile à l'horizon.
+#TEXT 19
+Malheureusement, nous n'avons pas obtenu autant d'or que nous l'espérions. Je devrais voir Marcus dans trois semaines sur un seul navire de guerre. Quelque chose d'important se profile à l'horizon.
+#TEXT 20
+Le butin était bon, mais Tyrex espérait plus. Je devrais voir Marcus dans trois semaines sur un seul navire de guerre. Quelque chose d'important se profile à l'horizon ; j'espère que ce sera plus important que ce raid.
+#TEXT 21
+Tyrex et moi sommes satisfaits de la taille de notre butin. Je devrais voir Marcus dans trois semaines sur un seul vaisseau de guerre. Quelque chose d'important se profile à l'horizon ; j'espère que ce sera plus important que ce raid.
+#TEXT 22
+Malgré mon échec, Tyrex n'était pas vraiment en colère contre moi. Je verrai Marcus dans trois semaines sur un seul navire de guerre. Quelque chose d'important se profile à l'horizon ; j'espère que ce sera plus grand que ce raid.
+#TEXT 23
+J'arrive trop tard, Tyrex est déjà parti pour le raid. Quel dommage !
+#TEXT 24
+Je n'ai pas réussi à trouver le Torero en haute mer. Tout est perdu... Je devrais retourner voir Marcus.
+#TEXT 25
+J'ai complètement oublié les instructions de Markus - ne pas perdre une minute et me précipiter de toutes mes forces vers Saint-Martin. Au lieu de cela, j'ai vaqué à mes occupations. De toute évidence, je ne trouverai aucun Torero. Je retourne voir Marcus pour lui faire des excuses.
+
+#QUEST Roger_9
+Arborer le Jolly Roger : Moisson de la Cité du Sang
+#TEXT 1
+Oh, oh, oh ! Moi, Marcus, Geffrey le Chauve, Pelly le Coutelas, Luke le Leprechaun et Bernard Vensan, un ami de Tyrex, sommes sur le point de faire un raid sur Carthagène ! Un tas d'or nous attend dans le fort de la ville, sans parler de la rançon que nous obtiendrons des habitants. C'est la belle vie, excepté la gueule de bois, ha-ha ! La Vega a beaucoup à offrir au Prince Charlie. Je suis respecté dans cet endroit ! J'aime cette vie !
+#TEXT 2
+Je suis un idiot sans égal ! Mon sens exceptionnel de la navigation a poussé les autres à m'abandonner !
+#TEXT 3
+Voici la ville de Carthagène. Ma première tâche est d'éliminer les navires de garde.
+#TEXT 4
+La flotte espagnole a été éliminée. Je devrais monter à bord du Red Dragon.
+#TEXT 5
+Tyrex et moi allons bombarder le fort de Carthagène. Cela me préoccupe un peu, mais le Red Dragon est un fort à lui tout seul.
+#TEXT 6
+La résistance a été éliminée. Carthagène est à nous ! Marcus se dirige vers le fort pour l'or, et j'ai reçu l'ordre d'obtenir une rançon du gouverneur.
+#TEXT 7
+J'ai fait payer aux Espagnols encore plus que ce que Marcus voulait - la rançon de 350 000 pesos est acquittée. Je me dirige vers le fort.
+#TEXT 8
+L'or de Carthagène a été chargé sur nos navires. Ma part est de @<sGold> pièces d'or et @<sMoney> pesos. C'est une prise considérable, et c'est un partage équitable... pour l'essentiel. Je n'ai pas vraiment apprécié que Marcus partage l'or sans moi, et en plus il en a pris une putain de moitié ! Je suis d'accord, le commandement était le sien, et il avait le plus gros navire... Peu importe, j'ai un nouvel ordre. Je devrais me rendre à Tortuga et y mettre à profit mon argent. Putes et rhum, je ne vous décevrai pas !
+
+#QUEST Roger_10
+Arborer le Jolly Roger : Némésis
+#TEXT 1
+La vie est belle ! Le bordel de Janette se souviendra de moi pendant un putain de long moment, ha-ha ! Ça m'a coûté pas mal d'argent, mais j'ai déjà une nouvelle piste : ma nouvelle copine, Camilla, m'offre une carte au trésor d'une cité perdue de mineurs d'or. Je suis sûr qu'il ne s'agit pas d'une arnaque, puisque la jeune fille avait l'intention de la vendre à Marcus. Elle m'attendra dans l'église de 10H00 à 13H00. Je dois préparer 200 doublons pour elle.
+#TEXT 2
+J'ai la carte de Camilla. Je devrais l'étudier et me tenir prêt à toute éventualité. Je dois préparer des munitions, des potions de soin et des antidotes au cas où les choses tourneraient mal.
+#TEXT 3
+Le voici - le lagon de Caratasca. Un rivage sauvage et désert. C'est ici que commence mon voyage vers les ruines.
+#TEXT 4
+Un obstacle ! Je vais me frayer un chemin à l'aide d'explosifs, c'est certain. Quelqu'un est déjà venu ici il n'y a pas si longtemps. Je retourne à mon navire pour chercher de la poudre à canon.
+#TEXT 5
+Les barils remplis de poudre sont prêts. Je devrais allumer une mèche et me mettre à l'abri.
+#TEXT 5-1
+Mon plan a fonctionné à la perfection ! La voie est libre !
+#TEXT 6
+J'ai trouvé les ruines. Quelque part, il doit y avoir un chemin vers les cachots où le trésor est enterré.
+#TEXT 7
+Camilla, cette salope ! Elle a vendu la carte non seulement à moi, mais aussi à Coutelas ! Je n'aurais jamais pensé que la cupidité puisse aveugler un homme comme lui. Nous étions de bons partenaires... On dirait que ce pauvre bougre m'a toujours envié.
+J'ai trouvé les trésors, mais ils sont protégés par des barres de métal. Je devrais prendre des outils sur le navire.
+#TEXT 8
+Putain !... Ça fait mal ! Geffrey m'avait piégé ! Bâtard cupide ! Un deuxième "ami" des Frères de la côte qui a essayé de me tuer aujourd'hui à cause de l'or. Je devrais me tirer d'ici tout de suite. C'est vraiment une erreur. Qui d'autre va me rejoindre ici ? Picard ? Nous avions un accord, mais rien n'est plus sûr. Les hommes de Geffrey sont toujours dans les parages, j'ai entendu la racaille parler d'une unité de mousquetaires qu'il a amenée ici.
+#TEXT 9
+Malheureusement, au lieu de Jean, c'est Luke le Leprechaun que j'ai rencontré ici. Lui et ses flibustiers avaient tendu une embuscade à l'étage. Il s'avère que le vieux forestier a toujours eu une dent contre moi. Tant pis pour les bandits et les pirates qui deviennent des amis !
+Je ne vois pas tout cela comme un jeu de hasard. Il y a quelque chose dans l'air, je dois me tirer d'ici !
+#TEXT 10
+Tout cela avait été orchestré... Un putain de vengeur du peuple m'a tendu un piège. Cet homme s'appelle Don Henrico, et le pire, c'est que ses accusations sont toutes justes et vraies.
+Je suis seul ici, dans ce cachot sombre, glauque et silencieux. Je suis entouré de morts ; même les rats sont absents. J'ai encore le temps de trouver un moyen de sortir avant que la faim ne me tue.
+#TEXT 11
+J'ai trouvé une clé rouillée sur un squelette, et elle ouvre une porte qui mène en bas. Peut-être s'agit-il d'une sortie ?
+#TEXT 12
+Je me suis réveillée avec des sueurs froides. Combien de temps avais-je dormi ? J'ai fait des cauchemars terribles où j'ai vu Mérida en flammes et ses citoyens morts. Mon frère Michel était là aussi. Il a parlé d'une clé... près de moi ? Dans l'escalier ?
+#TEXT 13
+C'est un miracle ! J'ai trouvé une vieille clé en argent dans les escaliers !
+#TEXT 14
+J'ai trouvé un autre cachot. Il est inondé et ressemble beaucoup à l'entrée de l'enfer. Il y fait chaud et il y a une forte odeur de soufre. Je n'ai aucune idée de la direction à prendre, et je dois m'inquiéter des geysers brûlants qui jaillissent des failles.
+#TEXT 15
+J'ai atteint une grotte, et il y a de l'eau fraîche pour soulager la douleur causée par l'air sulfureux et les brûlures. L'air est différent ici, ce doit être la sortie toute proche !
+#TEXT 16
+Je reconnais cet endroit ! Je suis passé par là en allant aux ruines ! Bientôt, je verrai la mer !
+#TEXT 17
+J'ai réussi ! C'est une seconde naissance, rien de moins... Je crois que j'ai mérité une telle punition. Je suis un monstre.
+Il est temps de me séparer de Marcus Tyrex et de la piraterie. Je me mêlerai encore de leurs affaires, j'en suis sûr, mais je ne serai plus jamais l'un d'entre eux. Le Prince pirate Charlie est mort dans les cachots de la ville morte.
+Moi, Charles de Maure, capitaine et noble français, je le jure devant moi-même et devant ma conscience :
+... Je jure qu'aucun autre civil ne souffrira de ma main ou de celle de mes subordonnés
+... Je jure de protéger les femmes, quels que soient leur statut et leur nationalité
+... Je jure que l'éclat de l'or n'éclipsera plus jamais mon esprit
+... Je jure de mettre un terme aux agissements de tous les scélérats que je rencontrerai sur mon chemin
+... Je jure qu'entre la richesse et l'honneur, je choisirai l'honneur
+... Je jure qu'en toutes circonstances et avec toutes les personnes, je resterai une personne digne.
+J'ai beaucoup à faire pour retrouver ma réputation. Mais j'y parviendrai. Et maintenant, je dois aller à Saint-Pierre, voir Michel. La vie continue !
+@<sText>
+#TEXT 18
+J'ai réussi à m'échapper des ténèbres des cachots sombres et de l'enfer bouillant. Un véritable baptême du feu. Après cela, il n'est pas très convenable d'être l'homme de main de Marcus. Je cesse de travailler pour lui et retourne auprès de mon frère. La vie continue, de nouveaux défis et de nouveaux sommets m'attendent ! Il faut juste laisser l'odeur de soufre se dissiper avant...
+#TEXT	19
+Lorsque j'ai réussi à sortir et à revenir sur le rivage, toujours en équilibre entre la folie, la peur, l'incertitude et l'espoir, mon fidèle ami et camarade, @<sText>, m'a rejoint sur le rivage. Dieu merci, il a lui aussi survécu à cette journée. Au cours d'une longue conversation, il m'a aidé à comprendre beaucoup de choses. Et à prendre la bonne décision. Le Prince Charlie, le pirate tenu en laisse par Tyrex, est mort aujourd'hui pour le monde au milieu de ces geysers. Et Charles de Maure, le noble français, et non un misérable pirate, a continué à vivre. Et personne, plus jamais, ne lui dira ce qu'il doit faire. Personne ne se mettra en travers de son chemin pour l'empêcher d'atteindre son but. Je déciderai quels sont mes objectifs et comment les atteindre. Je rendrai visite à mon frère et lui dirai que son cher Tyrex n'a rien donné de bon. Qu'il dise ce qu'il veut, je trouverai un autre moyen.
+#TEXT	20
+Dans les catacombes, j'ai affronté un théâtre de folie et un tourbillon d'émotions. J'ai été traqué par le célèbre chasseur de pirates espagnol, Don Enrico de la Vega, connu sous le nom de Zorro. Il était impeccablement vêtu et portait sous ses vêtements une cuirasse légère mais solide. Mon officier et ami, Hercule Tonzag, a déjoué le plan du noble. En le voyant, ce chasseur de primes chevronné a presque tremblé de peur, ce qui m'a surpris, mais m'a aussi ramené à la raison. Finalement, nous avons mis en place une chasse au chasseur. Don Enrico, acculé, s'est révélé un adversaire habile et dangereux, mais déshonorant, bien que doté d'une certaine dignité. Mais ensemble, nous avons vaincu ce renard - que je qualifierais plutôt de serpent. Même avec l'aide d'Hercule, ce ne fut pas facile. Il m'a fait emprunter un passage secret qu'il a découvert, car celui par lequel j'étais arrivé était bloqué par des rochers. Il est temps pour moi de voir mon frère - J'ai décidé de rompre tout lien avec Tyrex car cela ne m'a pas permis de sauver Michel, contrairement à ce qu'il espérait. Si je recommence un jour, ce sera à mes conditions. Et seulement en tant que Charles de Maure - un homme fier, noble et digne, pas un simple pion d'un Prince. Au revoir, Charlie, je continuerai sans toi.

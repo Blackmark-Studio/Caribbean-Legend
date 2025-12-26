@@ -7,7 +7,7 @@ RPGUtilite_6 {хорошее}
 RPGUtilite_7 {отличное}
 RPGUtilite_8 {Здоровье улучшилось}
 RPGUtilite_9 {Здоровье ухудшилось}
-RPGUtilite_10 {Награда за голову выросла}
+RPGUtilite_10 {Отношение ухудшилось}
 RPGUtilite_11 {Отношение улучшилось}
 RPGUtilite_12 {Отношение улучшилось}
 RPGUtilite_13 {Отношение ухудшилось}

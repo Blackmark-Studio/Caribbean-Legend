@@ -76,6 +76,22 @@ void ProcessDialogEvent()
 			}
 			// только наняли <--
    			dialog.text = "Что вы хотите, капитан?";
+			// эпилог -->
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers") && npchar.id == "Folke")
+			{
+				dialog.text = "Не по душе мне эта погодка, кэп. Я заметил первые предвестники шторма.";
+				Link.l1 = ""+npchar.name+", мне нужно с тобой поговорить. Скажу прямо: я отплываю в Европу на неопределённое время. Заставлять тебя торчать здесь в ожидании моего возвращения - глупо, но и взять всех с собой я не могу. Я ухожу на чужом корабле, пассажиром.";
+				Link.l1.go = "SharlieEpilog_Folke_1";
+				break;
+			}
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers") && npchar.id == "Duran")
+			{
+				dialog.text = "(зевает) Скукотища...";
+				Link.l1 = "Давно не развеивался, а, "+npchar.name+"?";
+				Link.l1.go = "SharlieEpilog_Duran_1";
+				break;
+			}
+			// эпилог <--
 			// диалог компаньона на корабле.
 			if (CheckAttribute(NPChar, "IsCompanionClone"))
 			{
@@ -671,7 +687,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -686,7 +702,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			Diag.CurrentNode = Diag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;
@@ -702,7 +718,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetMusketBullets1_" + i;
 			}
 		break;
@@ -1624,5 +1640,111 @@ void ProcessDialogEvent()
 			
 			AddDialogExitQuestFunction("Tonzag_AlonsoBoardingDialog");
 		break;
+		
+		// --> Эпилог
+		case "SharlieEpilog_Folke_1": // Фульк
+			dialog.text = "Значит... пришло время прощаться?";
+			link.l1 = "Похоже на то. И, признаюсь, думал, что это решение дастся мне легче.";
+			link.l1.go = "SharlieEpilog_Folke_2";
+		break;
+		
+		case "SharlieEpilog_Folke_2":
+			dialog.text = "Тогда... спасибо вам, кэп, за всё. Много капитанов я видел, но, клянусь, вы - лучший из них. Мне было честью ходить с вами под одним флагом.";
+			link.l1 = "Ты был верным офицером, "+npchar.name+". Спасибо за службу. Надеюсь, судьба ещё сведёт нас... и не по разные стороны баррикад.";
+			link.l1.go = "SharlieEpilog_Folke_nothing";
+			link.l2 = "Рад это слышать, друг. Приятно. Я распоряжусь, чтобы тебе выдали увольнительные в размере одного жалованья. Благодарю за годы службы и за твою преданность. И знаешь... думаю, тебе уже самому пора становиться капитаном. Подумай об этом.";
+			link.l2.go = "SharlieEpilog_Folke_salary";
+			link.l3 = "И тебе спасибо, дружище. Ты прекрасный и умелый офицер. В знак благодарности за твою преданность я распоряжусь, чтобы тебе выдали увольнительные в размере трёх месячных окладов. И, "+npchar.name+", если я узнаю, что ты снова угодил в казематы из-за долгов... клянусь, брошу всё, вернусь, вытащу тебя - и лично высажу на необитаемом острове.";
+			link.l3.go = "SharlieEpilog_Folke_salary_X3";
+		break;
+		
+		case "SharlieEpilog_Folke_nothing":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Folke_exit");
+		break;
+		
+		case "SharlieEpilog_Folke_salary":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Folke_exit");
+			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+		break;
+		
+		case "SharlieEpilog_Folke_salary_X3":
+			dialog.text = "Ха-ха, нет, кэп, к ростовщикам я больше ни ногой. А вот податься в кэпы - мысль интересная. Чего уж греха таить, я и сам не раз об этом подумывал. Возможно, так и сделаю.";
+			link.l1 = "И ещё одно. Я хочу устроить в таверне прощальную пирушку. Надеюсь, и ты заглянешь. Как раз будет хорошая возможность наших парней к себе в команду завербовать.";
+			link.l1.go = "SharlieEpilog_Folke_salary_X3_2";
+			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+		break;
+		
+		case "SharlieEpilog_Folke_salary_X3_2":
+			dialog.text = "Я обязательно приду, капитан.";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Folke_salary_X3_3";
+		break;
+		
+		case "SharlieEpilog_Folke_salary_X3_3":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Folke_exit");
+		break;
+		
+		case "SharlieEpilog_Duran_1":
+			dialog.text = "Да-а-а, давненько - это мягко сказано. Это было настолько давно, что я уж и не помню как это делается, ха-ха.";
+			link.l1 = "Тогда, возможно, тебе понравится то, что я хочу тебе сообщить. Видишь ли, мне предстоит отплыть в Старый Свет. Я очень давно не видел отца, он этим обеспокоен - да и я, честно говоря, тоже. Но отправлюсь я туда пассажиром. На чужом корабле.";
+			link.l1.go = "SharlieEpilog_Duran_2";
+		break;
+
+		case "SharlieEpilog_Duran_2":
+			dialog.text = "Пассажиром? Ну и дела.";
+			link.l1 = "Я хочу понять, стоит ли мне продолжать в том же духе. Кто знает, может, удача покинет меня раньше, чем я буду к этому готов.";
+			link.l1.go = "SharlieEpilog_Duran_3";
+		break;
+
+		case "SharlieEpilog_Duran_3":
+			dialog.text = "Вон оно что. Ха-ха-ха. Не верю я, что ты сможешь бросить море. Помяни моё слово - настоящий морской волк на берегу либо сопьётся от тоски, либо в петлю полезет.";
+			link.l1 = "Вот для того я и плыву пассажиром - чтобы разобраться, смогу ли я так жить, когда придёт время. Но главное не в этом: я не могу взять вас с собой - и не могу заставить ждать. Сам ведь не знаю, когда вернусь. Уверен, отец захочет, чтобы я остался и занялся делами семьи.";
+			link.l1.go = "SharlieEpilog_Duran_4";
+		break;
+
+		case "SharlieEpilog_Duran_4":
+			dialog.text = "Хочешь сказать, что дальше каждый сам по себе? Ну что ж... Рано или поздно это бы всё равно случилось. Только прощаний я не люблю, так что слёз и объятий от меня не жди.";
+			link.l1 = "Спасибо за службу. Уверен, ты не пропадёшь, но всё же постарайся не сложить голову раньше, чем мы снова увидимся.";
+			link.l1.go = "SharlieEpilog_Duran_nothing";
+			link.l2 = "Тогда послушай мой совет - держись подальше от старого ремесла. Ничего хорошего оно тебе не принесёт. Вот, возьми немного серебра - на первое время хватит. В солдаты я бы тебе, разумеется, идти не стал бы рекомендовать, а вот в личную охрану к какому-нибудь капперу - неплохой вариант. Подумай об этом.";
+			link.l2.go = "SharlieEpilog_Duran_salary";
+			link.l3 = "Вместо слёз будет серебро. Ха-ха, смотрю, глазки-то заблестели. На, держи. Три месячных выплаты - хватит, чтобы неделю поить всех пиратов в Ле Франсуа. Или, если по-простому, можно жить с полгода. Надеюсь, ты найдёшь, чем заняться и как зарабатывать на жизнь.";
+			link.l3.go = "SharlieEpilog_Duran_salary_X3";
+		break;
+		
+		case "SharlieEpilog_Duran_nothing":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Duran_exit");
+		break;
+		
+		case "SharlieEpilog_Duran_salary":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Duran_exit");
+			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+		break;
+		
+		case "SharlieEpilog_Duran_salary_X3":
+			dialog.text = "Я уже решил. Пойду в кладоискатели. Есть в этом что-то...";
+			link.l1 = "Ха-ха! Отличный выбор! И ещё одно: я собираюсь как следует повеселиться напоследок. Так что, если захочешь присоединиться - приходи в таверну.";
+			link.l1.go = "SharlieEpilog_Duran_salary_X3_2";
+			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+		break;
+		
+		case "SharlieEpilog_Duran_salary_X3_2":
+			dialog.text = "Шутишь, кэп? Ха-ха! Я это ни за что не пропущу!";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Duran_salary_X3_3";
+		break;
+		
+		case "SharlieEpilog_Duran_salary_X3_3":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Duran_exit");
+		break;
+		
+		
+		// <-- Эпилог
 	}
 }

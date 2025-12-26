@@ -20,6 +20,7 @@ void PrepareDefaultOption(ref optref)
 	optref.volume.music = 0.25;
 	optref.volume.sound = 0.25;
 	optref.volume.dialog = 0.25;
+	optref.cameramode.SFW = false;
 	optref.cameramode.follow_on = true;
 	/*
 	optref.arcademode.bArcadeSails = true;
@@ -164,6 +165,12 @@ void GetRealOptions(ref optref)
 		optref.cameramode.ClassicSoundScene = sti(InterfaceStates.ClassicSoundScene);
 	} else {
 		optref.cameramode.ClassicSoundScene = true;
+	}
+
+	if( CheckAttribute(&InterfaceStates,"SFW") ) {
+		optref.cameramode.SFW = sti(InterfaceStates.SFW);
+	} else {
+		optref.cameramode.SFW = false;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"InvertCameras") ) {
@@ -329,6 +336,13 @@ void SetCurentOptions(ref optref)
 		InterfaceStates.ClassicSoundScene = optref.cameramode.ClassicSoundScene;
 	} else {
 		InterfaceStates.ClassicSoundScene = true;
+	}
+
+	if( CheckAttribute(optref,"cameramode.SFW") ) {
+		bSFW = sti(optref.cameramode.SFW);
+		InterfaceStates.SFW = bSFW;
+	} else {
+		InterfaceStates.SFW = false;
 	}
 
 	if( CheckAttribute(optref,"cameramode.ShowBattleMode") ) {

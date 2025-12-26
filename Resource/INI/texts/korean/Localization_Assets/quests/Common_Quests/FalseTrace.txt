@@ -1,0 +1,9 @@
+FalseTrace_1 {Adam}
+FalseTrace_2 {Rayner}
+FalseTrace_3 {플루트 '@<pchar.questTemp.FalseTrace.ShipName>'}
+FalseTrace_4 {Adam Rayner가 노젓는 보트를 훔쳐 아내와 함께 도망쳤습니다!}
+FalseTrace_5 {Cockeyed}
+FalseTrace_6 {Solly}
+FalseTrace_7 {금광석을 실은 플루트}
+FalseTrace_8 {Katerine}
+FalseTrace_9 {Rayner}

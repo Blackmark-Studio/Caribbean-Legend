@@ -1,0 +1,10 @@
+SharlieTutorial_1 {船長}
+SharlieTutorial_2 {水夫}
+SharlieTutorial_3 {甲板長}
+SharlieTutorial_4 {経理長}
+SharlieTutorial_5 {海賊}
+SharlieTutorial_6 {ユリス}
+SharlieTutorial_7 {Paul}
+SharlieTutorial_8 {Henry}
+SharlieTutorial_9 {Mathieu}
+SharlieTutorial_10 {Pinchon}

@@ -130,6 +130,13 @@ void ProcessDialogEvent()
 			dialog.text = "Yes, captain?";
 			Link.l1 = "Listen to my orders!";
             Link.l1.go = "stay_follow";
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				dialog.text = "Captain, you look a bit troubled. And your face is quite pale... In any other case, I’d offer you one of my tonics, but...";
+				Link.l1 = "I see you’ve picked up some medical skills, "+npchar.name+". Thanks, I’m fine. It’s just that I’m about to take a step I might not have dared under different circumstances.";
+				Link.l1.go = "SharlieEpilog_Baker_1";
+				break;
+			}
 			
 			////////////////////////казначей///////////////////////////////////////////////////////////
            	// boal отчёт о корабле
@@ -190,7 +197,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -205,7 +212,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;		
@@ -227,6 +234,63 @@ void ProcessDialogEvent()
         break;
 	//<-- ----------------------------------- офицерский блок ----------------------------------------
 		
+		// Эпилог
+		case "SharlieEpilog_Baker_1":
+			dialog.text = "Hm... Seems like I’m missing something. I thought the news would cheer you up.";
+			link.l1 = "What are you talking about?";
+			link.l1.go = "SharlieEpilog_Baker_2";
+		break;
+
+		case "SharlieEpilog_Baker_2":
+			dialog.text = "Ahem... Forgive me. I don’t know what came over me. Must be the heat getting to my head. In fact, I wanted to talk to you, captain.";
+			link.l1 = "Oh really? About what?";
+			link.l1.go = "SharlieEpilog_Baker_3";
+		break;
+		
+		case "SharlieEpilog_Baker_3":
+			dialog.text = "I’m getting too old for these endless sea battles, even if I only take part indirectly. I’ve got some savings and I’d like to go ashore. Start a private practice. I hope you won’t mind?";
+			link.l1 = "Of course not, "+npchar.name+". I’ll certainly miss having such a capable officer around. But I understand and respect your decision. Good luck. I’m sure you’ll quickly become a renowned and respected doctor.";
+			link.l1.go = "SharlieEpilog_Baker_nothing";
+			link.l2 = "You’re making a wise choice, and of course I don’t mind. I’ll arrange for you to get an extra month’s pay — I’m sure it’ll come in handy. Well... what else can I say? Good luck in your new life.";
+			link.l2.go = "SharlieEpilog_Baker_salary";
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") || CheckAttribute(pchar, "questTemp.LSC.Mary_officer")) // только если есть жена
+			{
+				link.l3 = "Ha-ha, of course I won’t object, dear "+npchar.name+". In fact, I understand you now better than ever. Here, take this. It’s three months’ pay. I hope everything goes well for you.";
+				link.l3.go = "SharlieEpilog_Baker_salary_X3";
+			}
+		break;
+		
+		case "SharlieEpilog_Baker_nothing":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Baker_exit");
+		break;
+		
+		case "SharlieEpilog_Baker_salary":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Baker_exit");
+			//
+			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+		break;
+		
+		case "SharlieEpilog_Baker_salary_X3":
+			dialog.text = "Thank you, captain. I think you, too, should start looking for a cozy little house for you and your wife. After all, the rocking of the sea isn’t exactly ideal for certain processes in the womb...";
+			link.l1 = "In the womb? I don’t get it. No one’s seasick on board, as far as I know.";
+			link.l1.go = "SharlieEpilog_Baker_salary_X3_2";
+			//
+			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+		break;
+		
+		case "SharlieEpilog_Baker_salary_X3_2":
+			dialog.text = "Just thinking out loud, captain, don’t mind me. Take care of your wife — and yourself.";
+			link.l1 = "You take care too, "+npchar.name+". Once you’re settled, send word through Abbot Benoît. You’ll find him at Saint-Pierre church.";
+			link.l1.go = "SharlieEpilog_Baker_salary_X3_3";
+		break;
+		
+		case "SharlieEpilog_Baker_salary_X3_3":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Baker_exit");
+		break;
+			
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();

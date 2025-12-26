@@ -1,0 +1,16 @@
+Delete profile confirm {このプロフィールとすべてのセーブデータを削除してもよろしいですか？}
+Delete savefile confirm {このセーブデータを削除してもよろしいですか？}
+Overwrite savefile confirm {このセーブデータを上書きしてもよろしいですか？}
+Low storage and unable save create {セーブする空き容量が足りません。}
+Load game confirm {このセーブデータをロードしてもよろしいですか？}
+Unable to Load save game {このセーブデータを読み込めません。}
+Salary info
+{
+乗組員が月給を要求しています。
+支払いますか？
+}
+Officer info {士官たちが月給を要求しています:}
+All info {合計金額：}
+New game confirm {新しいゲームを始めてもよろしいですか？}
+Insert Disk Ok {ディスク1「Pirates Of The Caribbean」を挿入してください}
+save game limit {セーブデータの上限を超えました。 古いセーブを削除してください。}

@@ -111,7 +111,8 @@ void ProcessDialogEvent()
 						if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 						{
 							RemoveItems(pchar, "map_sharp_full", 1);
-							dialog.text = "Signore, perché avete lavorato con tanta lentezza?! Ormai è finita per i tuoi protetti. Il termine di validità del testamento è scaduto e Isla Tesoro appartiene ora all’Inghilterra. Presto diventerà una base militare."link.l1 ="Accidenti! Pare che tutti i miei sforzi siano andati in malora...";
+							dialog.text = "Signore, perché avete lavorato con tanta lentezza?! Ormai è finita per i tuoi protetti. Il termine di validità del testamento è scaduto e Isla Tesoro appartiene ora all’Inghilterra. Presto diventerà una base militare.";
+							link.l1 ="Accidenti! Pare che tutti i miei sforzi siano andati in malora...";
 							link.l1.go = "saga_l3";
 						}
 						else
@@ -137,7 +138,8 @@ void ProcessDialogEvent()
 						// пятая проверка времени
 						if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 						{
-							dialog.text = "Monsieur, perché vi state muovendo come una lumaca?! È finita per il vostro principale. Il termine di validità del testamento è scaduto e Isla Tesoro ora appartiene all’Inghilterra. Presto diventerà una base militare."link.l1 ="Accidenti! Pare che tutti i miei sforzi siano andati in fumo...";
+							dialog.text = "Monsieur, perché vi state muovendo come una lumaca?! È finita per il vostro principale. Il termine di validità del testamento è scaduto e Isla Tesoro ora appartiene all’Inghilterra. Presto diventerà una base militare.";
+							link.l1 ="Accidenti! Pare che tutti i miei sforzi siano andati in fumo...";
 							link.l1.go = "saga_l3";
 						}
 						else
@@ -195,7 +197,8 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 			{
 				RemoveItems(pchar, "map_sharp_full", 1);
-				dialog.text = "Signore, dovete aver passato troppo tempo in mare. Isla Tesoro ormai è una base militare della Marina Inglese! Sì, il testamento di Sharp esiste, ma ormai è scaduto e Isla Tesoro è diventata proprietà della Corona inglese. Ahimè!"link.l1 ="Accidenti! Pare che tutte le mie fatiche siano state vane...";
+				dialog.text = "Signore, dovete aver passato troppo tempo in mare. Isla Tesoro ormai è una base militare della Marina Inglese! Sì, il testamento di Sharp esiste, ma ormai è scaduto e Isla Tesoro è diventata proprietà della Corona inglese. Ahimè!";
+				link.l1 ="Accidenti! Pare che tutte le mie fatiche siano state vane...";
 				link.l1.go = "saga_l3";
 			}
 			else
@@ -381,7 +384,8 @@ void ProcessDialogEvent()
 			// шестая проверка времени
 			if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 			{
-				dialog.text = "Signore, mi avete lasciato di stucco! Avete fatto così tanto, l’isola stava quasi per cadere nelle nostre mani, ma ormai è finita per colpa del vostro ritardo col mio compenso! Il testamento è scaduto e Isla Tesoro appartiene ora alla corona inglese. Diventerà una base militare."link.l1 ="Perdinci! Pare proprio che tutti i miei sforzi siano andati in fumo...";
+				dialog.text = "Signore, mi avete lasciato di stucco! Avete fatto così tanto, l’isola stava quasi per cadere nelle nostre mani, ma ormai è finita per colpa del vostro ritardo col mio compenso! Il testamento è scaduto e Isla Tesoro appartiene ora alla corona inglese. Diventerà una base militare.";
+				link.l1 ="Perdinci! Pare proprio che tutti i miei sforzi siano andati in fumo...";
 				link.l1.go = "saga_l3";
 			}
 			else

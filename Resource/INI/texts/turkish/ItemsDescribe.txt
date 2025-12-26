@@ -1,0 +1,1524 @@
+info
+{
+KKS için eşya açıklama dosyası  
+Sürüm 0.0.1, 21.11.2010 (haz. Metazot), belamour zırh ve tılsım düzenlemesi 29.09.2020  
+belamour tarafından 20.09.2021 tarihinde legendary edition için güncellendi  
+Metinde daha iyi gezinmek için kayıt sıralaması:  
+1. Mühimmat  
+1.1 Kesici silahlar  
+1.2 Ateşli silahlar  
+1.3 Zırh, giysi  
+1.4 Optik aletler  
+1.5 Navigasyon aletleri  
+1.6 Muska  
+1.7 Tılsım  
+1.8 Amulet  
+2. PARA, MÜCEVHER  
+2.1 Para birimi, sandıklar  
+2.2 Taşlar, metaller  
+2.3 Mücevherat  
+3. BELGELER  
+3.1 Patentler  
+3.2 Lisanslar  
+3.3 Haritalar  
+3.4 Mektuplar  
+3.5 Tarifler  
+4. ENVANTER  
+4.1 Aletler  
+4.2 İksirler, şifalı otlar  
+4.3 Cephane  
+4.4 Sıradan eşyalar  
+4.5 Görev eşyaları  
+5. HURDA
+}
+new_string
+{
+
+}
+Potion parameters {Kapasite}
+health value {hp}
+weapon blade parameters {Saldırı: #f.1WeightAttack# Denge: #f.1Balance#}
+weapon blade type {Türü: #sFencingTypeName#}
+weapon gun parameters {Hasar: #ddmg_min#-#ddmg_max#}
+weapon gun parameters equipped {Hasar: #ddmg_min#-#ddmg_max#, yeniden doldurma süresi: #dchargespeed# sn.}
+mushket parameters {Hasar: #ddmg_min#-#ddmg_max#}
+mushket parameters equipped {Hasar: #ddmgmin#-#ddmgmax#, yeniden doldurma süresi: #dchargespeed# sn.}
+weapon grape parameters {Hasar: #dbasedmg#x#dshards#, Yayılma: #sarea#}
+weapon grape parameters equipped {Hasar: #dbasedmg#x#dshards#, Saçılma: #sarea#, Yeniden doldurma süresi: #dchargespeed# sn.}
+youve_got {Eşya bulundu -}
+used_item {Öğe kullanıldı -}
+youve_gotNotif {Yeni Eşya:}
+used_itemNotif {Eşya Kaybedildi:}
+flower_find {Şanslı buluntu!}
+itmname_unarmed {Silahsız}
+itmdescr_unarmed {Silahın yoksa rakibine bir yumruk atabilirsin. Belki şaşırır da kaçmana fırsat olur.}
+itmname_rabble {Şömine maşası}
+itmdescr_rabble {Dövme demirden bir şömine maşası. Düşmanın arkasından kafasına vurmanıza izin verirse, bu alet silah sayılır.}
+itmname_slave_01 {Zıpkın}
+itmdescr_slave_01 {Bir balinacının zıpkını; bir kişiyi saplamak ve çekmek için tek darbe yeterlidir. Zıpkının çengelleri takılırsa, ancak vücuttan kesilerek çıkarılabilir.}
+itmname_slave_02 {Machete}
+itmdescr_slave_02 {Yerel bir özelik. Düşük kaliteli çelikten yapılmış, şeker kamışı, sarmaşıklar... ve uzuvlar kesmekte yaygın olarak kullanılan uzun bir doğrama bıçağı.}
+itmname_blade_01 {Naab'Te}
+itmdescr_blade_01 {Itza kabilesi yerlilerinin kullandığı, çapraz korumalı ve ucu kırık bir Avrupa halberdinden yapılmış kısa, tek elle kullanılan bir sapandır.}
+itmname_blade_02 {Savaş Topuzu}
+itmdescr_blade_02 {Bir Itza topuzu, neredeyse bir tüfek dipçiğine benziyor. Dışbükey şekli, darbede gücün uca toplanmasını sağlar ve çelik bir zırhı sivri ucu ile delebilir.}
+itmname_blade_03 {Stocco}
+itmdescr_blade_03 {İtalyan şehirlerinde popüler bir kılıç. Üç kenarlı, sert stocco namlusu saplamaya çok uygundur; karmaşık el koruması ise usta düellocunun rakibinin kılıcını yakalamasını sağlar.}
+itmname_blade_04 {Messer}
+itmdescr_blade_04 {Üretimi kolay ve güvenilir tek ağızlı bir kılıç; Almanya’da şehir milisleri ve mütevazı gelirli paralı askerler arasında oldukça yaygındır. En iyileri Köln’de yapılır.}
+itmname_blade_05 {Pala}
+itmdescr_blade_05 {Gemiye çıkarken ya da savunurken denizcinin en iyi dostu. Eğri bıçağı ve geniş el koruması, hem saplama hem de kesme saldırılarına olanak tanır; ancak kısa menzili ve tek taraflı ağzı, kalabalık gemi savaşları dışında kullanımını sınırlar.}
+itmname_blade_06 {Schiavona}
+itmdescr_blade_06 {Venedik Doçu’nun Dalmaçyalı Muhafızları tarafından kullanılan efsanevi bir rapier. Çift ağızlı bıçağı hem delici hem de kesici saldırılar için mükemmeldir; el koruması ise sunduğu güvenlik sayesinde halk arasında “beşik” olarak anılır.}
+itmname_blade_07 {Ritterschwert}
+itmdescr_blade_07 {Geçen yüzyılda ağır süvari tarafından kullanılan bir pala. Ağır namlusu neredeyse her zırhı yarabilir. Ancak ağırlığı ve dengesi, yaya dövüşünde onu pek kullanışsız kılar.}
+itmname_blade_08 {Bilbo}
+itmdescr_blade_08 {Geniş keskin bıçağa ve kupa şeklinde kabzaya sahip kısa bir İspanyol rapieri; İspanyol denizcileri arasında yaygın olarak kullanılırdı. Adını çıktığı şehir olan Bilbao’dan alır.}
+itmname_blade_09 {Cazoleta}
+itmdescr_blade_09 {Kupa şeklinde kabzalı hafif bir folyo, İspanyol soylularının vazgeçilmez aksesuarı. Onsuz bir centilmen mahkemede dava açamaz veya tanıklık edemez.}
+itmname_blade_10 {İptekisi}
+itmdescr_blade_10 {Elde taşıma kancası sayesinde "asılmış adam" adını alan bir deniz palası. Güvertede tırmanırken silahı sabitlemek için kullanılırdı. Bir asılmış adam taşımak ve bir asılmış adama dönüşmek—çoğu korsanın kaderi buydu.}
+itmname_blade_11 {Abordaç Palası}
+itmdescr_blade_11 {Kılıca benzeyen, askerlerin, izcilerin, topçuların ve diğer kara birliklerinin kemerinde taşıdığı kısa bir yan silah türü.}
+itmname_blade_12 {Kısa Kılıç}
+itmdescr_blade_12 {Bir pala’dan biraz uzun, bir kılıçtan ise kısa olan bu kılıç, süvariler ve topçular için pratik ve kompakt bir silahtır. Deniz ve kara çarpışmalarında kullanıma uygundur.}
+itmname_blade_13 {Subay Palası}
+itmdescr_blade_13 {Bu tür kılıç, son zamanlarda Fransız Donanması subayları arasında yalnızca rütbe göstergesi olarak değil, aynı zamanda güvenilir bir savaş silahı olarak da popüler hale geldi. Geniş ağızlı kılıç, güçlü ve yetenekli bir elde yıkıcı olabilir. Yine de düello için biraz ağırdır.}
+itmname_blade_14 {Vallon Kılıcı}
+itmdescr_blade_14 {İspanyol Hollanda’sında askerler arasında popüler bir rapier. Ustalıktan çok çeviklik, atiklik ve güç ister. Onunla, zarif eskrim meraklılarının ön kolunu kolayca kesip geçebilirsiniz.}
+itmname_blade_15 {Capodimonte}
+itmdescr_blade_15 {Bükülebilir namlulu bir deniz rapiri; hem delici hem de kesici saldırılar için uygundur. Basit kabzası, çoğu kesme saldırısını engellemeye yeter.}
+itmname_blade_16 {Küçük Kılıç}
+itmdescr_blade_16 {Şık, düz kabzalı, kısaltılmış bir rapier; resmi kıyafetlerle taşımak için tasarlandı. Fransız eskrim okulunun etkisiyle yakın zamanda ortaya çıktı. Kesmek için fazla hafif, ama yıldırım hızında saplamalara olanak tanır.}
+itmname_blade_17 {Kupa Kabzalı Rapier}
+itmdescr_blade_17 {İspanyol düellocuların tercih ettiği bu folyonun kısaltılmış kabzası batışları öne çıkarır, ancak bıçağı kesme için de uygundur. Aşağı kıvrımlı kenarlara sahip çan biçimli kabza, eli düşman saldırılarına karşı korur.}
+itmname_blade_18 {Pappenheimer}
+itmdescr_blade_18 {Kendine özgü kabzasıyla bu süvari kılıcı, Gottfried Heinrich Graf zu Pappenheim’in zırhlı süvarileriyle Otuz Yıl Savaşları’nda ün kazandı. Şöhreti, süvarilikte kariyer hedefleyen genç soylular arasında popüler olmasını sağladı.}
+itmname_blade_19 {Denizci Kılıcı}
+itmdescr_blade_19 {Bir deniz subayı için özel yapılmış bir pala. Hem törenlerde hem de karışık halatları kesmekte ve en beklenmedik yerden ölümcül bir darbe indirmekte ustadır.}
+itmname_blade_20 {Madonna}
+itmdescr_blade_20 {Korkulan Macar hussarlarının kılıcı. Bu kılıç, Batı Avrupa savaş alanlarında yeni ortaya çıktı ama dengesi ve gücüyle şimdiden büyük saygı kazandı. Belli ki parlak bir geleceği var.}
+itmname_blade_21 {Highland Backsword}
+itmdescr_blade_21 {Bu geleneksel İskoç sepet kabzalı kılıç, Highland soylularının gözde silahıdır. Elin güvenle korunuyorsa ve kılıcın isabetliyse, vahşi ve atılgan bir Highlander gibi dövüşebilirsin.}
+itmname_blade_22 {Peygamberin Gazabı}
+itmdescr_blade_22 {Eski ve neredeyse düz, hafif bir pala; eğimli sapı sayesinde hem kesme hem de saplama darbeleri için uygundur. Jilet gibi keskin bıçağı, zırh plakalarıyla kaburgalar arasından kolayca kayar.}
+itmname_blade_23 {Semitar}
+itmdescr_blade_23 {Zengin süslemeli eğri bir kılıç, hızlı çatışmalar için tasarlanmıştır. Bıçağın şekli, son derece güçlü kesme darbelerine olanak tanır. Kabzasında, düşman cinleri uzaklaştırmak için eski tılsımlar gömülüdür.}
+itmname_blade_24 {Patissa Khanda}
+itmdescr_blade_24 {Uzak Hindistan’ın yenilmez Sihlerinin kutsal silahı. Yüksek kaliteli çeliğiyle düşman kılıçlarını kolayca keser. Kabzası Avrupalı savaşçılara alışılmadık gelebilir, ancak topuzuyla darbe indirmeye de olanak tanır.}
+itmname_blade_25 {Flamberge Rapier}
+itmdescr_blade_25 {Dalgalı namlulu bu İspanyol tarzı kupa kabzalı rapier, hem rakip hem de kullanan için son derece tehlikeli bir silahtır. Bu kılıcın açtığı hafif yaraların bile çok yavaş iyileştiği söylenir. Böyle bir kılıcın sahipleri genellikle... kötü bir üne sahiptir.}
+itmname_blade_26 {Asoleda}
+itmdescr_blade_26 {Verdun’da yapılmış, hafif ve çok ince uzun bir düello kılıcı. Bıçağıyla kesme saldırıları yapılamaz, ancak uzunluğu düşmanı uzakta tutar.}
+itmname_blade_27 {Sepet kabzalı Rapier}
+itmdescr_blade_27 {Bu rapier, efsanevi dengesi sayesinde sahibinin kolayca kesici ve delici darbeler indirmesine olanak tanıdığı için 'Sakson Tüyü' adını almıştır. Kılıç, en ufak el hareketine bile itaat eder. Karmaşık kabzası ise ele iyi bir koruma sağlar.}
+itmname_blade_28 {Katana}
+itmdescr_blade_28
+{
+Cipangu’nun efsanevi adasından gelen, yüksek kaliteli çelikten yapılmış bıçağı ve uzun sapı sayesinde tek ya da iki elle kullanılabilen tuhaf bir kılıç.
+Bu kılıç, egzotik Doğu’dan Karayiplere uzanan yolculuğunu anlatsa kim bilir neler söylerdi... Buraya nasıl geldi acaba?
+}
+itmname_blade_29 {Storta}
+itmdescr_blade_29 {Agostino Barbarigo’nun aborataj kılıcı — hiç yenilgi görmemiş efsanevi Venedikli amiralin kılıcı. Belki de her savaşta yanında olan bu eşsiz kılıç sayesinde.}
+itmname_blade_30 {Donanma Klewangı}
+itmdescr_blade_30 {Doğu Hindistan Şirketi kaptanına özel olarak yaptırılmış bir pala. Bu kılıcın ustası, farklı silahların avantajlarını bir araya getirirken çoğu dezavantajdan da kaçınmayı başarmış.}
+itmname_blade_31 {Narval}
+itmdescr_blade_31 {Midye biçimli kabzalı, narval boynuzundan saplı usta işi bir borda palası. Kılıcı üstün kaliteli çelikten yapılmış ve kusursuz dengelenmiştir.}
+itmname_blade_32 {Thanatos}
+itmdescr_blade_32 {Üçüncü Haçlı Seferi’nden kalma eski bir şövalye kılıcı. Bu kılıç bir müzeye ait değil. Neredeyse 400 yıl geçmiş olmasına rağmen hâlâ ustura gibi keskin.}
+itmname_blade_33 {Muhafızın Kılıcı}
+itmdescr_blade_33 {Yaşlı bir şövalyenin iki elli kılıcı.}
+itmname_topor_01 {Macuahuitl}
+itmdescr_topor_01 {Aztek ve Maya'ların kullandığı ağır bir kılıç-topuz; demir ağacından yapılmış, kenarlarına yapıştırılmış jilet gibi keskin obsidyen parçalarıyla donatılmıştır. Conquistadorlar, yerlilerin bu korkunç silahla İspanyol atlarının kafasını tek darbede kopardığını anlatır.}
+itmname_topor_02 {Savaş Baltası}
+itmdescr_topor_02 {Uzun sapı ve beşli ağzı, hafif zırhlı rakipleri kolayca parçalayabilen korkutucu bir silah oluşturur. Kısa tutuşta ağız, kullananın elini güvenle korur.}
+itmname_topor_03 {Goedendag}
+itmdescr_topor_03 {Hollandalı Geuzen’in basit ama korkutucu silahı. Altın Mahmuzlar Savaşı’nda binlercesinin görünüşü bile soylu düşmanları kaçırmaya yetti.}
+itmname_topor_04 {Savaş Baltası}
+itmdescr_topor_04 {Bu silahı kullanmak büyük güç ister, ama buna değer. Keskin bıçağı yıkıcı kesme darbeleri indirir, gagası her zırhı deler ve çelik sapı düşman silahlarına karşı dayanıklıdır.}
+itmname_topor_05 {Tomahawk}
+itmdescr_topor_05 {Arkası gagalı dar bir balta; yakın dövüşte ölümcül, orman yolculuklarında ise çok kullanışlıdır. Kolonistler arasında çok rağbet görür, ancak aslında demir işlemeyi bilmeyen yerli halkla ticaret için özel olarak tasarlanmıştır.}
+itmname_topor_06 {Akbaba}
+itmdescr_topor_06 {Gösterişli “sakalı” ve ağır “gagası” olan bir aborataj baltası. Önemsizi ayırmayı ya da kavgaya son noktayı koymayı sevenler için kusursuz bir seçim.}
+itmname_blade_36 {Malta Kılıcı}
+itmdescr_blade_36 {Malta Şövalyeleri'nin törensel kılıcı; Charles de Maure’a, üstün hizmetleri için doğrudan Genel Vali Şövalye de Poincy tarafından verilmiştir. Kabzasında A.S harfleri kazılıdır.}
+itmname_knife_01 {Tılsım 'Reis pençesi hançeri'}
+itmdescr_knife_01
+{
+Bu sıradan bir hançere benziyor... Ancak Moskof Fadey, bu hançerin Kızılderili şamanlar tarafından büyülendiğini ve pek çok gizli sırrı olduğunu söylüyor. 
+Peki, hangileri?
+}
+itmname_knife_02 {Maria}
+itmdescr_knife_02 {Diego de Montoya'ya ait zarif bir daga. Silahın özenle korunduğu belli — sanki eski sahibi için duygusal bir değeri varmış gibi.}
+itmname_knife_03 {Aile Hançeri}
+itmdescr_knife_03 {de Monpe ailesinin silahı, nam-ı diğer 'kürdan'. Değerli bir parça, ihtiyaç anında kolayca satılır — sonuçta aile armasının başka ne faydası var ki?}
+itmname_khopesh1 {Khopesh}
+itmdescr_khopesh1 {Tanrıların hâlâ yeryüzünde dolaştığı zamanlardan kalma bir ritüel silah.}
+itmname_khopesh2 {Aruba Khopesh'i}
+itmdescr_khopesh2 {Bunu görmemen gerekiyor.}
+itmname_khopesh3 {Yanmış Khopesh}
+itmdescr_khopesh3 {Tanrıların hâlâ yeryüzünde dolaştığı çağlardan kalma bir ritüel silahı. Kan ister; aydın bir kaptana yakışmaz.}
+itmname_machete2 {Conquistador Maçetesi}
+itmdescr_machete2 {Bilinmeyen bir alaşımdan ustalıkla yapılmış bir pala—hem zarif ortamlara hem de antik piramitlere yakışır.}
+itmname_topor_07 {Ordu Baltası}
+itmdescr_topor_07 {Eğitimsiz milisler için uygun, basit bir balta. Etkisi sınırlı, savunma için uygun değil.}
+itmname_pirate_cutlass {Blaze'ın Kılıcı}
+itmdescr_pirate_cutlass {Gerçek bir efsane, Yeni Dünya korsanları arasında en saygıdeğer nişanlardan biri—ve bir kaptanın göz alıcı silahı.}
+itmname_blade_38 {Düello Kılıcı}
+itmdescr_blade_38 {Avrupa’da yaygın, zarif bir düello silahı örneği. Ama ormanda biraz tuhaf kaçabilir.}
+itmname_blade_39 {Kabadayı Rapieri}
+itmdescr_blade_39 {Usta bir düellocuya özel olarak yapılmış mükemmel bir rapier. Yani, yasal cinayet için kusursuz bir silah.}
+itmname_blade_40 {İtalyan Rapier}
+itmdescr_blade_40 {Rapierin ağırlığı ve aşırı süslemeleri, bunun tören için yapılmış bir silah olduğunu açıkça gösteriyor; savaşta kullanılmaz.}
+itmname_blade_41 {Jian}
+itmdescr_blade_41 {Uzak bir uygarlıktan gelen, trajik bir kaderle yabancı denizlere ulaşmış bir silah. Eşsiz tasarımı, her türlü eskrim stilini güvenle kullanmanı sağlar.}
+itmname_blade_42 {Ordu Palası}
+itmdescr_blade_42 {Basit bir asker silahı, sahibinden yalnızca temel askeri eğitim gerektirir.}
+itmname_saber {Süvari Kılıcı}
+itmdescr_saber {Gerçek bir vatansever ve subaya layık, nice şanlı savaşlarda dövülmüş bir silah. Asla böyle bir yerde son bulması için yapılmamıştı.}
+itmname_q_blade_10 {Jurgen Schmidt'in Kılıcı}
+itmdescr_q_blade_10
+{
+Jürgen Schmidt yapımı bir aborda pala.
+İnce çelikten üretilmiş namlusu mükemmel dengeye sahip.
+}
+itmname_q_blade_13 {Jurgen Schmidt'in Subay Palası}
+itmdescr_q_blade_13
+{
+Jürgen Schmidt yapımı subay kılıcı.
+İnce çelikten yapılmış, kusursuz dengede bir bıçak.
+}
+itmname_q_blade_16 {Jurgen Schmidt'in Küçük Kılıcı}
+itmdescr_q_blade_16
+{
+Usta Jürgen Schmidt’in işçiliğiyle yapılmış küçük kılıç.
+İnce çelikten üretilmiş namlusu
+mükemmel bir dengeye sahip.
+}
+itmname_q_blade_18 {Jurgen Schmidt'in Pappenheimer'ı}
+itmdescr_q_blade_18
+{
+Usta Jürgen Schmidt yapımı Pappenheimer.
+İnce çelikten üretilmiş namlu
+ve mükemmel dengede.
+}
+itmname_q_blade_19 {Jurgen Schmidt'in Kılıcı}
+itmdescr_q_blade_19
+{
+Usta Jürgen Schmidt’in elinden çıkma bir deniz kılıcı.
+İnce çelikten yapılmış namlusu kusursuz dengededir.
+}
+itmname_q_blade_21 {Jurgen Schmidt’in Backsword’u}
+itmdescr_q_blade_21
+{
+Usta Jürgen Schmidt tarafından yapılmış Kleeblattsäbel.
+İnce çelikten üretilmiş namlusu
+mükemmel dengeye sahiptir.
+}
+itmname_shamshir {Şemşir}
+itmdescr_shamshir {Atlı savaşlar için tasarlanmış bir Pers şemşiri; çöl savaşlarının acımasızlığını yansıtır. Kesme verimliliğiyle doğramanın sadeliğini birleştirir. Dairesel savuruşları sevenler için en iyi seçim.}
+itmname_lacrima_patris {Lacrima Patris}
+itmdescr_lacrima_patris {Gösterişli süslemelere sahip bu kılıç, törensel görünümüne rağmen üstün savaş özellikleri taşır. Suçluları ve sapkınları cezalandıran dindar bir kaptanın elinde daha da keskinleşir.}
+lacrima_patris_parameters {Top atış menzili artışı: #f.1RangeBonus#%}
+itmname_blade_SP_3low {Cellat}
+itmdescr_blade_SP_3low {Bu pala, Türk kılıçlarıyla Avrupa palalarının özelliklerini birleştirir — genişleyen namlusu en sağlam zırhı bile yarabilir. Cellat ile her türlü borda dövüşü hızlı ve acımasızca sona erer.}
+itmname_blade_SP_3 {Cellat}
+itmdescr_blade_SP_3 {Yorick’in kabzasına yerleştirilen kafatası, sahibini ölüm korkusunu bırakıp Azrail’in gözlerinin içine bakmaya çağırır ve gerçek savaş gücünü açığa çıkarır.}
+itmname_pistol1 {Sıradan Tabanca}
+itmdescr_pistol1 {Sıradan çakmaklı, kemerli askeri tabanca. Ucuz, kullanımı kolay ve bu yüzden yaygın olarak tercih edilir.}
+itmname_pistol2 {Pompalı Tabanca}
+itmdescr_pistol2 {Üç namlulu yan saçma atar. Yapımı son derece karmaşık, nadir ve pahalı.}
+itmname_pistol3 {Trombon}
+itmdescr_pistol3 {Bir gemi baskını saçmalı tüfeği. Trombon, çevik tek rakiplere veya zırhlı askerlere karşı pek işe yaramaz, ama bir grup serseriye ateş açıldığında gereken etkiyi yaratır.}
+itmname_pistol4 {Dört namlulu tabanca}
+itmdescr_pistol4 {Dört namlulu tabanca, mühendislik harikası. Yavaş doldurulur, ama dört atış her çatışmanın seyrini değiştirebilir.}
+itmname_pistol5 {Düello Tabancası}
+itmdescr_pistol5 {Tekerlekli mekanizmaya sahip nadir bir düello tabancası örneği. Usta işçiliği düşmana pek şans tanımaz, ancak yavaş doldurma etkileyiciliğini biraz gölgeler.}
+itmname_pistol6 {Çift namlulu Tabanca}
+itmdescr_pistol6 {Çift namlulu tabanca – ikinci atışın güvenini sevenler için ideal.}
+itmname_pistol7 {Colt Revolver}
+itmdescr_pistol7 {19. yüzyılın ilk yarısından Colt damgalı kapaklı revolver. Ateşlendiğinde rakipleri kısa süreli şaşırtır. Kullanmak için özel mühimmat gerekir.}
+itmname_pistol8 {Tüfek}
+itmdescr_pistol8 {Tek elle atışa uygun, eşsiz bir donanma misket tüfeği. Her türlü zırhı kolayca delen çelik saçma kullanır.}
+itmname_pistol9 {Çift atışlı Tabanca}
+itmdescr_pistol9 {Olağanüstü nadirlikte, ardışık iki mermi atan tek namlulu Sakson tabancası. Uzun doldurma süresiyle bilinir.}
+itmname_pistol10 {Altın Kartal}
+itmdescr_pistol10 {Üçüncüde işler yolunda gider; bu üstün kaliteli tabanca da bunun kanıtı. Deneyimli askerler ve usta nişancılar için güvenilir bir seçim.}
+itmname_pistol11 {Canavar}
+itmdescr_pistol11 {Bilinmeyen bir silah ustasının eseri: Aborda tabancalı balta. Ne tabanca olarak iyi, ne de balta olarak. Ama hızlı bir aborda çatışmasının kaosunda, her saniyenin önemli olduğu yerde, tam ihtiyacınız olan şey.}
+itmname_pistol12 {Kısa namlulu tüfek}
+itmdescr_pistol12 {Sökülmüş dört atışlık karabina. Artık isabeti daha düşük olabilir, ama yakın dövüşe uygun ve hâlâ hızlı dolduruluyor. Standart dört atışlık tabancaya mükemmel bir alternatif.}
+itmname_pistol13 {Çakmaklı revolver}
+itmdescr_pistol13 {Silah ustalığının bir şaheseri. Otuz yılı aşkın süre önce, Avrupa’da seçkin bir askeri lider için özel olarak üretildi. Muhtemelen çağımızın en iyi çok atışlı tabancası.}
+itmname_pistol14 {Çift namlulu düello tabancası}
+itmdescr_pistol14 {Aşırı pahalı, ölümcül ve tamamen kullanışsız bir sanat eseri.}
+itmname_mortairgun {El havanı}
+itmdescr_mortairgun {El Havanı – küçük düşman gruplarına saldırmak için mükemmel bir araç. Pusu kurarak kullanıldığında en etkilidir.}
+itmname_mushket1 {Fitilli Tüfek}
+itmdescr_mushket1 {Zamanla denenmiş fitilli mekanizmaya sahip güçlü, ağır bir piyade tüfeği.}
+itmname_mushket2 {Donanma Karabinası}
+itmdescr_mushket2 {En yeni İngiliz fitilinin kısaltılmış modeli, süngülü. Sömürge ve deniz piyadeleri için standart teçhizat.}
+itmname_mushket3 {Arkabüz}
+itmdescr_mushket3
+{
+Gemi Baskını Fitilli Tüfek  
+Artık eski günlerinde olmayabilir, ama namlusuna bakan düşmanların aklında başka şeyler olur.
+}
+itmname_mushket5 {Dürbünlü Tüfek}
+itmdescr_mushket5 {Özel yapım, yivli namlulu ve diyoptrik dürbünlü bir çarklı tüfek. Varlıklı bir avcıya ya da sporcunun silahı.}
+itmname_mushket6 {Tamburlu Pompalı}
+itmdescr_mushket6 {Çıkarılabilir çok hazneli silindire sahip Portekiz yapımı bir musketo. Ne yazık ki değiştirilebilir mekanizma hasarlı, bu da yeniden doldurmayı yavaşlatıyor.}
+itmname_mushket7 {İyi misket tüfeği}
+itmdescr_mushket7 {Asker tüfeklerinin ucuz ve seri üretim için yapıldığına karşın, bu silah usta silahçılar tarafından en kaliteli malzemelerle özenle üretilmiştir—ve bu da özelliklerine açıkça yansımıştır.}
+itmname_mushket8 {Dört namlulu tüfek}
+itmdescr_mushket8 {El yapımı dört atışlık tüfek. Namlu ve dipçiği bir dakikadan kısa sürede sökülüp tabancaya dönüşebilen devrim niteliğinde bir sisteme sahip. Yenilikçi doldurma mekanizmasıyla düşmanlarınıza kurşun yağdırın!}
+itmname_m8_barrel {Dipçik ve Namlu}
+itmdescr_m8_barrel {Sökülmüş dört atışlık tüfeğin dipçiği ve namlusu.}
+itmname_mushket9 {Eski arkebüz}
+itmdescr_mushket9 {Eski ama güvenilir bir arkebüz. Rivayetlere göre, Cortés bizzat bu silahla ormanları saçma yağmuruna tutup yerlilere korku salmış.}
+UpgradeStageInfo_mushket9_1 {Şu anda oldukça kötü görünüyor, ama doğru bakım ve iyi aletlerle değişebilir.}
+UpgradeStageInfo_mushket9_2 {Dipçiği değiştirip güzelce temizleyince artık paslı bir demir parçası gibi görünmüyor. Böyle bir silahla sırtında sokakta yürümeye utanmazsın.}
+UpgradeStageInfo_mushket9_3 {Değiştirilen kilidiyle, modern silahları andırmaya başladı. Kemik yağıyla yağlanmış metal, sanki ustanın elinden yeni çıkmış gibi güneşte parlıyor.}
+UpgradeStageInfo_mushket9_4
+{
+Bu silah senin ellerinde zirveye ulaştı – artık geliştirilecek bir yanı kalmadı. Son dokunuş, genişletilmiş namlu, doldurmayı kolaylaştırıp hızlandırdı ve verimliliği büyük ölçüde artırdı. Kendinle gurur duyabilirsin.  
+Bununla gurur duymak için her hakkın var.
+}
+itmname_FirearmStockPart_1 {Dipçik ve temizleme çubuğu}
+itmdescr_FirearmStockPart_1 {Eski tarz tüfekler için zarif oyma bir dipçik ve namlu temizliği için bir fırça-ramrod. Bir keten beze sarılmış ve hazinenin diğer eşyalarından uzakta bir köşeye özenle yerleştirilmişlerdi; sanki oraya çok daha sonra konmuş gibiydiler.}
+itmname_FirearmStockPart_2 {Kilit ve kemik yağı}
+itmdescr_FirearmStockPart_2 {Modern bir yaylı kilit, paçavra ve silah bakımı için kemik yağı şişesi—Blackwood'da bulunan arkebüz için şüphe uyandıracak kadar uygun. Diğer değerli eşyalardan ayrı olarak hazinede benzer şekilde yerleştirilmişlerdi.}
+itmname_FirearmStockPart_3 {Namlü ve barut matarası}
+itmdescr_FirearmStockPart_3 {[ERROR: APIConnectionError]}
+itmname_grape_mushket {El Havanı}
+itmdescr_grape_mushket {Elde taşınan havan, küçük düşman gruplarına saldırmak için mükemmel bir yardımcıdır. Pusu kurarak kullanmak daha pratiktir. Ateşlerken fitilli bombalar veya el bombaları kullanılır.}
+itmname_Mushket2x2 {Çift Namlulu Karabina}
+itmdescr_Mushket2x2 {Asil avcıların pusulu geyik avlarında tercih ettiği, hediye çift namlulu bir av tüfeği. Yine de kabul etmek gerekir ki, yivli namluları her hedefi güvenle indirir.}
+itmname_mushket10 {İmparatorluk Misketi}
+itmdescr_mushket10 {Otuz Yıl Savaşları döneminden, Tek atışlık soylu bir tüfek. Süngülü ve Kutsal Roma İmparatorluğu’na özgü motiflerle süslenmiş.}
+itmname_howdah {Howdah}
+itmdescr_howdah {Çift namlulu, büyük kalibreli tabanca; Afrika çalısında ya da Hint ormanında avcıya en iyi yoldaş. Domuzları, kaplanları ve saldırgan yerlileri güvenle indirir.}
+itmname_nocirass {Zırh yok}
+itmdescr_nocirass {Zırhı uzun süre giymek insanı yorar. Biraz dinlen, ayaklarını uzat ve tarçınlı sıcak bir kahve ya da daha sert bir şey iç.}
+itmname_cirass1 {Piyade Zırhı}
+itmdescr_cirass1 {Kale kuşatmalarında kullanılan bir piyade zırhı. Çeliğe ve kurşuna karşı mükemmel koruma sağlar, ancak hareket kabiliyetini kısıtlar ve yakın dövüşte giyeni hantal yapar. Hem Avrupa’da hem de Karayipler’de yaygınlaşmıştır.}
+itmname_cirass2 {Reiter Göğüslüğü}
+itmdescr_cirass2 {Ağır süvari için iyi dövülmüş bir göğüslük. Göğüs ve sırtı mükemmel korur, ancak piyade düzeninde ağırlığı ve kötü oturuşu kullanıcının hızını ve çevikliğini azaltır.}
+itmname_cirass3 {Tören Göğüslüğü}
+itmdescr_cirass3 {İnce kaliteli çelikten hafif bir göğüslük. Ceket altına giyilebilir. Hareketi çok az kısıtlar, yalnızca sekmiş kurşunlara ve sıyıran darbelere karşı güvenilir koruma sağlar.}
+itmname_cirass4 {Milano Göğüslük}
+itmdescr_cirass4 {En yüksek kalitede nadir bir zırh. Hem kılıcı hem de kurşunu kolayca durdurur, üstelik şaşırtıcı derecede hafiftir. Dayanıklılığının sırrı, ona esneklik ve güç kazandıran çok sayıdaki yivde gizli.}
+itmname_cirass5 {Deri Kemer}
+itmdescr_cirass5 {Kalın deriden yapılmış, iskeletin en az koruduğu hayati organları örten bir korse. Rapier ya da mermiye karşı zayıf bir savunma sağlar, ama yine de hiç yoktan iyidir.}
+itmname_cirass6 {Deri Ceket}
+itmdescr_cirass6 {Yumuşak, kaynatılmış deriden yapılmış, usta bir düellocunun yeleği. Gizlice giyilir ve tüm gövdeyi kesici silah darbelerine karşı korur.}
+itmname_cirass7 {Brigandine}
+itmdescr_cirass7 {Metal plakalarla güçlendirilmiş deri yelek — iyi koruma sağlar, ancak ağırlığı mutlaka hissedilir.}
+itmname_cirass8 {Hasır Zırh}
+itmdescr_cirass8 {Tüm gövdeyi, yanları ve köprücük kemiklerini koruyan, deri ve metalden eşsiz bir zırh. Çok sayıda ayar tokası, giysi altında taşırken rahatsızlığı azaltır.}
+itmname_cirass9 {Takviyeli Brigandine}
+itmdescr_cirass9 {Profesyonel bir paralı askerin zırhı ve düellocuların bir numaralı tercihi. Koruması ve ağırlığı neredeyse bir göğüslük kadar, ancak üstün dikimi sayesinde hareket özgürlüğü sunar.}
+itmname_cirass10 {Demir Yanlı Göğüslük}
+itmdescr_cirass10 {Oldukça yıpranmış ve eksik bir parlamenter süvari teçhizatı seti. Yine de iyi koruma sağlar; bolca cep ve fişeklik, ateş etmeyi ve yeniden doldurmayı çok daha kolaylaştırır.}
+itmname_cirass11 {Ayna Göğüslük}
+itmdescr_cirass11 {Bu tür zırhlar Rus Çarlığı ve Osmanlı İmparatorluğu'nda yaygındır. Bu parça, elinize geçmeden önce uzun bir yol kat etti.}
+itmname_suit1 {Fransız Üniforması}
+itmdescr_suit1 {Kraliyet Donanması subay üniforması.}
+itmname_suit2 {İngiliz Üniforması}
+itmdescr_suit2 {Siyah Muhafız subayının üniforması — seçkin İskoç Muhafız birliğinden.}
+itmname_suit3 {İspanyol Üniforması}
+itmdescr_suit3 {Bir Katalan Muhafız subayının üniforması.}
+itmname_suit4 {Lonca Takımı}
+itmdescr_suit4
+{
+Ligi Paralı Asker Kıyafeti
+Dikilmiş metal plakalar ve ayarlanabilir kayışlar—hızlı ve acımasız dövüşler için her şey. Yarım maske kimliğini gizlemene yardımcı olur.
+}
+itmname_suit5 {Amiral Üniforması}
+itmdescr_suit5 {Kıdemli bir Fransız deniz subayının üniforması. Gerçek bir sanat eseri.}
+itmname_underwater {Dalgıç Elbisesi}
+itmdescr_underwater {Henrik Wedeker’in sığ sularda deniz tabanında ilerlemek için tasarladığı eşsiz kıyafet. En iyi zırhlardan bile daha iyi koruma sağlar!}
+itmname_lantern {Fener}
+itmdescr_lantern {Küçük bir fener, karanlıkta vazgeçilmez bir yol arkadaşıdır. Kemerinize takarak gece, mağara, oyuk ve zindanlarda yolunuzu aydınlatın. Klavyeden 'L' tuşuna basarak kolayca açıp kapatabilirsiniz.}
+itmname_hat1 {Condottiere Şapkası}
+itmdescr_hat1 {Düellocuların ve eskrimcilerin gözdesi olan bu şapka, sahibini kesici silah ustalığını sürekli geliştirmeye teşvik eder.}
+itmname_hat2 {Kavalye Şapkası}
+itmdescr_hat2 {Bir zamanlar soyluların gözdesi olan, zengin süslemeli ve rengârenk bir şapka, Karayipler’de kötü bir üne kavuştu. Burada onu takanlar şımartılmış Avrupalı aristokratlar değil, eline geçen her silahla yorulmadan dövüşebilen usta düellocular ve maceracılar.}
+itmname_hat3 {Denizci Üçgen Şapka}
+itmdescr_hat3 {Oldukça sıradan bir üç köşe şapka, denizciler arasında yaygın olarak kullanılır. Eski denizcilik geleneğine göre, bu şapka fırtınada yüzmek, ilk deniz savaşını atlatmak ve ardından gemiyi onarmak gibi üç zorlu sınavı geçen mürettebat üyesine verilir.}
+itmname_hat4 {Deniz Subayı Üçgen Şapkası}
+itmdescr_hat4 {Üç köşeli şapka, deniz subayları arasında yaygın. Onu gören sıradan denizciler bir anda olağanüstü bir hızla çalışmaya başlar. Saygıdan mı yoksa cezadan korktukları için mi—retorik bir soru.}
+itmname_hat5 {Amiral Şapkası}
+itmdescr_hat5 {Böyle bir şapkayı denizcilerin çoğu hayatında bir kez bile göremez. Etrafındakilere ilham verir, motive eder. Sahibiyle aynı filoda hizmet etmek büyük bir onurdur—her tayfa ve subay, onun peşinden cehenneme bile gider.}
+itmname_hat6 {Hollanda Şapkası}
+itmdescr_hat6 {Pahalı ve şık bir şapka, orta halli tüccarların gözdesi. Sıradışı şekliyle bir pazarlıkçıyı uzaktan tanıyıp çetin pazarlığa hazırlanmak kolaydır.}
+itmname_hat7 {Şanslı Şapka}
+itmdescr_hat7 {Derler ki bu cesur şapka sahibine şans getirir. Zamanla yıpranmış ve eskimiş olsa da hâlâ asil durur. Eğer böyle bir şapkan varsa bil ki en zor anda bile elinde gizli bir kozun olur.}
+itmname_hat8 {Charlie Prince’in Üçgen Şapkası}
+itmdescr_hat8 {Bu şapka, tüccarları—özellikle de İspanyolları—Jolly Roger’dan bile daha çok korkutur. Onu takanın ünü, en sert deniz kurdunu bile beti benzi atmış halde titretebilir. Charlie Prince’in doğduğu gün lanetli olsun.}
+itmname_hat9 {Grim’in Şapkası}
+itmdescr_hat9 {Bu şapka Karayipler’in her köşesinde bilinir ve her yerde ürpertiyle anılır. Onun sahibinin gemisine saldırmaya yalnızca bir deli cesaret edebilir; kendisiyle karşılaşınca ise korkudan kılıcı ya da tabancayı nasıl tutacağını unutursun. Unutma: Öte tarafa geçmek kolaydır. Zor olan geri dönmektir.}
+itmname_hat10 {Paralı Asker Şapkası}
+itmdescr_hat10 {Bu sahada yapılmış zırhlı şapka pek gösterişli görünmese de bir mermiyi durdurup hayat kurtarabilir.}
+itmname_hat10_part {Tabaklanmış Deri}
+itmdescr_hat10_part {İyi tabaklanmış boğa derisi parçası. Şapka yapımı için ideal.}
+itmname_spyglass1 {Ucuz Dürbün}
+itmdescr_spyglass1 {Neredeyse işe yaramaz bir dürbün. Kendine saygısı olan bir kaptan böyle bir çöp taşımaz.}
+itmname_spyglass2 {Sıradan Dürbün}
+itmdescr_spyglass2 {Standart bir dürbün. Mercekleri iyi, ama daha iyileri de var.}
+itmname_spyglass3 {İyi Dürbün}
+itmdescr_spyglass3 {Parlakça cilalanmış merceklere sahip dürbün.}
+itmname_spyglass4 {Mükemmel Dürbün}
+itmdescr_spyglass4 {"Beryl" mercekli dürbün. Sadece özel versiyonu daha iyidir.}
+itmname_spyglass5 {Denizci Teleskopu}
+itmdescr_spyglass5 {Eşsiz bir optik aygıt. En saf dağ kristalinden kusursuzca işlenmiş mercekler ve üçayak sayesinde her şeyi görebilirsiniz.}
+itmname_spyglassSP3 {Dürbün 'Ölü Adamın Gözü'}
+itmdescr_spyglassSP3 {Kemiklerle süslenmiş bu dürbün, şaşırtıcı derecede kaliteli merceklere sahip.}
+itmname_sand_clock {Kum saati}
+itmdescr_sand_clock {Bir kum saati, kaptanın Forro ve Greenwich’in kesin saatini “taşımasına” ve varsa geminin kronometresini ayarlamasına olanak tanır.}
+itmname_astrolab {Astrolab}
+itmdescr_astrolab {Bu cihaz, bir navigatörün gök cisimlerinin konumunu belirlemesini sağlar.}
+itmname_compass1 {Gemi pusulası}
+itmdescr_compass1 {Bu cihaz, gök cisimleri görünmediğinde bile bir seyir subayının kuzeyi bulmasını sağlar. Dünyanın dev bir mıknatıs gibi davrandığı fikri ilk kez 1600 yılında İngiliz hekim ve doğa filozofu William Gilbert tarafından öne sürülmüştür.}
+itmname_clock1 {Kronometre}
+itmdescr_clock1 {Bir gemi kronometresi. Bu cihaz, boylamı belirlemek için kullanılır; ancak kesin zamanı gösterebilmesi için düzenli olarak bir kum saatiyle ayarlanmalıdır. Bu hassas zaman daha sonra Greenwich Ortalama Zamanı olarak bilinecektir.}
+itmname_clock2 {Çalışan Kronometre}
+itmdescr_clock2 {Zaman ayarlı Forro Adası gemi kronometresi. 30 gün boyunca geminin boylamını minimum hata ile belirlemenizi sağlar.}
+itmname_sextant1 {Sextant}
+itmdescr_sextant1 {Coğrafi koordinatları belirlemek için kullanılan eşsiz bir aygıt. Sekstantın ilk sahibi, bu cihazın çalışması için gereken hassas saat henüz icat edilmediğinden, kendi çağının çok ötesine geçmiş. Bu yüzden sekstant şu anda kullanılamaz.}
+itmname_sextant2 {Çalışan Sektan}
+itmdescr_sextant2
+{
+Coğrafi koordinatları belirlemek için eşsiz bir cihaz. Artık gelecekten gelen bir kronografın sahibi olarak enlem ve boylamı sürekli ölçebilirsin.
+Yüksek hassasiyeti sayesinde gemi hızında %5 artış sağlar.
+Takılıyken Navigasyon beceri gelişimini artırır.
+}
+itmname_bussol {Bussol}
+itmdescr_bussol
+{
+Bir gemi astrolabı ile pusulayı birleştiren bir denizcilik aleti. Coğrafi enlemi sürekli belirlemeye olanak tanır.
+Takılıyken Navigasyon beceri gelişimini artırır.
+}
+itmname_clock3 {Alexus'un kronometresi}
+itmdescr_clock3 {Usta Alexus’un koleksiyonundan, 20. yüzyıl ortalarına ait otomatik kurmalı hassas bir deniz kronometresi.}
+itmname_talisman1 {Tılsım "Sıçan Tanrısı"}
+itmdescr_talisman1 {Fareler, köpekler ve ürkek çocuklar bu maskeden ateşten kaçar gibi kaçar!}
+itmname_talisman2 {Tılsım 'Jonah'}
+itmdescr_talisman2 {Öfkeli denize kurban edilen ve hayatta kalan peygamberin adını taşıyan Kelt yuvarlak haçı.}
+itmname_talisman3 {Tılsım 'Thor’un Çekici'}
+itmdescr_talisman3 {Thor’un, İskandinav gök gürültüsü ve yıldırım tanrısının çekici Mjölnir şeklinde altın bir kolye.}
+itmname_talisman4 {Tılsım 'Yeniçeri'}
+itmdescr_talisman4
+{
+Yeniçeri Başçavuşu Osmanlı Bilekliği.
+Mürettebat disiplinini artırır.
+}
+itmname_talisman6 {Tılsım 'Tanrıça'}
+itmdescr_talisman6 {Pislik yiyici tanrıça Tlazolteotl’un heykelciği.}
+itmname_talisman7 {Tılsım 'Scarab'}
+itmdescr_talisman7 {Çalışkan bir bokböceği şeklinde, büyük antik Mısır yüzüğü.}
+itmname_talisman8 {Tılsım 'Akrep'}
+itmdescr_talisman8
+{
+Akrep şeklinde Medici ailesi broşu.
+Gizli bölmesinde güçlü bir panzehir bulunur.
+}
+itmname_talisman9 {Aziz Louis Nişanı}
+itmdescr_talisman9 {Her Fransız kaptanının en çok arzuladığı ödül.}
+itmname_talisman10 {Tılsım 'Yakalayıcı'}
+itmdescr_talisman10 {İnci Dalgıçlarının Muskası.}
+itmname_talisman11 {Tılsım 'Tavuk Tanrısı'}
+itmdescr_talisman11 {Sadece delikli bir taş. Şans getirsin!}
+itmname_talisman12 {Dayanıklılık Tılsımı}
+itmdescr_talisman12 {Hastalığı ve nazarı uzak tuttuğuna inanılan bir Taíno putu.}
+itmname_talisman13 {Taino Figürü Tılsımı}
+itmdescr_talisman13 {Zenginlik ve birikimin koruyucusu Taíno tanrısının bir figürü.}
+itmname_talisman14 {Tılsım 'Ranyi'}
+itmdescr_talisman14 {Taoist rahiplerce büyülenmiş, yılan başlı balık şeklinde bir broş yolculukta çok daha hızlı olmanı sağlar.}
+itmname_talisman15 {Tılsım 'Kara İşaret'}
+itmdescr_talisman15 {Kara Leke taşıyıcısı anında batıl inançlar, efsaneler ve söylentilerle çevrelenir.}
+itmname_talisman16 {Tılsım 'Altın ritüel bıçağı'}
+itmdescr_talisman16 {Bir şekilde İspanyol fırınında eritilmekten kurtulmuş bir Aztek altın ritüel bıçağı. Belki de eski bir ustanın eşsiz işçiliği, bu hazineyi bulanı duraksatmıştır.}
+itmname_talisman17 {Tılsım 'Liber Misericordiae'}
+itmdescr_talisman17 {Sahibine neredeyse bir günlük kadar kişisel olmuş bir Kutsal Kitap nüshası. Birçok kişi İncil’i bir rehber ve ışık olarak taşır, ama bu kitap kelimenin tam anlamıyla bir onur yasasıdır.}
+talisman17_quests {Kilise Görevleri: #dQBonus# / 5}
+talisman17_questsNoBonus {Kilise Görevleri: 0 / 5}
+itmname_talisman18 {Tılsım 'Blackwood'un Tüzüğü'}
+itmdescr_talisman18 {Albert Blackwood’un Kişisel Kural Kitabı. Lady Beth’in yapısını, nişancıların konumunu ve Deniz Tilkileri’nin savaş taktiklerini ayrıntılarıyla anlatır. Ayrı bir bölümde define avcılığı ve yetenekli atıcıların ganimetle ödüllendirilmesi ele alınır.}
+talisman18_Bonus {Bulunan Hazine : #dQBonus# / 10}
+talisman18_NoBonus {Bulunan Hazineler : 0 / 10}
+itmname_talisman19 {Tılsım 'Yorick’in Kafatası'}
+itmdescr_talisman19
+{
+'Memento'nun kaptanı Mortimer Grim'in kafatası; kendi ölümünü asla tam olarak kavrayamadı. Onu tanıyordun, #sName#.
+Ölüler, yaşayanlara ders verir ve bu eser sahibinin arzularına uyum sağlar.
+Envanterinde olduğunda tüm subayları ölümsüz kılar.
+}
+talisman19_InSlot
+{
+Bir gemi aynı anda perdenin iki tarafında da var olur. Ahşap, canlıyken öldü ve yaşayanlara hizmet ediyor. Kaptan 'Memento'nun kafatası, ölümün olmadığını ve sonuna kadar savaşman gerektiğini her gemiye hatırlatır.
+~
+Her %2 gövde kaybında, gemi hızı %0,75 ve top hasarı %0,5 artar.
+~
+Ceza yoktur, birden fazla kez etkinleştirilebilir.
+}
+itmname_talisman20 {Streltsy Kuşağı}
+itmdescr_talisman20 {Birkaç kayıştan, bir barut matarası ve çok sayıda kâğıt kartuştan oluşan bir bandolyer. Avrupa savaş alanlarında pek çok biçimi ve işlevi vardır, fakat bu özel parça uzak bir diyardan gelmiş bir misafir; sert Sibirya ormanlarının hayali yaratıklarıyla süslenmiş.}
+itmname_talisman20_part {Musketeerin Barutluk}
+itmdescr_talisman20_part {Sıradışı biçimli, uzak bir diyardan egzotik hayvan figürleriyle damgalanmış süslü bir barutluk. Kenarları Doğu Avrupa motifleriyle işlenmiş.}
+itmname_totem_01 {Tılsım 'Dökme Demir Boğaz'}
+itmdescr_totem_01 {Sarhoşluğa karşı büyülenmiş, gümüş tabanlı kupa. En çılgın alemde bile ayık kalmana yardımcı olur.}
+itmname_totem_02 {Tılsım 'Spinebiter'}
+itmdescr_totem_02 {Cezalar için korkutucu bir kırbaç. Hem tayfalar hem de isteksiz yolcular arasında gemide disiplini büyük ölçüde artırır.}
+itmname_totem_03 {Tılsım 'Cupid’in Merhemi'}
+itmdescr_totem_03 {Pahalı bir yaka çiçeği kutusunda özel merhem. Geneleve her ziyaretinizi sağlığınıza faydalı kılar.}
+itmname_totem_04 {Tılsım 'Myrmidon'}
+itmdescr_totem_04 {Turkuaz taşlı el yapımı gümüş bilezik. Sadakat ve itaatin simgesi.}
+itmname_totem_05 {Tılsım 'Demir karın'}
+itmdescr_totem_05 {Koruyucu plakalarla süslenmiş deri kemer. Yoldan çıkan bir mermiyi kalbine iki parmak kala durdurur.}
+itmname_totem_06 {Tılsım 'Strongman'}
+itmdescr_totem_06 {Yorgunluğu azaltan botlar, her liman işçisinin hayali. Ağır yükleri daha uzağa ve daha uzun süre taşımana yardımcı olur, yorgunluktan düşmezsin.}
+itmname_totem_07 {Tılsım 'Minstrel'}
+itmdescr_totem_07 {Tatlı sesli bir lavta, deniz maceralarının romantizmini dile getirir ve yürekleri ateşe verir! Bir handa çalarsan, tayfana katılmak isteyenler artar.}
+itmname_totem_08 {Tılsım 'Ateşin Efendisi'}
+itmdescr_totem_08 {Sönmeyen bir topçunun pipo. Sahibini daha saygın gösterir, özellikle de geminin toplarını bizzat yönetiyorsa.}
+itmname_totem_09 {Tılsım 'Arguzin'}
+itmdescr_totem_09 {Top atışları arasında bile sesi net duyulan bir boru. Onunla, kara fareleri bile kısa sürede deniz kurdu olur.}
+itmname_totem_10 {Tılsım 'Dul Bırakan'}
+itmdescr_totem_10 {Merhamet tanımayan, asla hedefi şaşmayan çevik bir Katalan navaja. Onunla yapılan antrenmanlar, özellikle kargaşada, pala ve kılıç ustalığını büyük ölçüde artırır.}
+itmname_totem_11 {Tılsım 'Ghoul'}
+itmdescr_totem_11 {Sağ eldeki büyülü bakır yüzük, düello sırasında kılıç aracılığıyla düşmanın enerjisini çalar.}
+itmname_totem_12 {Tılsım 'Jaguarın Oğlu'}
+itmdescr_totem_12 {Boyunda taşınan bir jaguar pençesi, görüşü keskinleştirir ve ölümcül hamlelere olanak tanır.}
+itmname_totem_13 {Tılsım 'Joker'}
+itmdescr_totem_13 {Her zaman elinizin altında olan bir kart, şans oyunlarında kazanma ihtimalini artırır.}
+itmname_indian_1 {Muska 'Voodoo bebeği'}
+itmdescr_indian_1
+{
+Ritüel bebek — kurbana ruhunu bağladığı söylenen korkunç bir yerli eseri.
+ ~Savunmasız noktalara, örneğin kafaya, verilen hasarı artırabilir.
+}
+itmname_indian_2 {Muska 'Barut testçisi'}
+itmdescr_indian_2
+{
+Barutun kalitesini test etmek için cihaz. ~
+Yüksek kaliteli barut, daha düzgün yanma sayesinde tüm mermilerin hasarını artırır; kendi cephaneni üretirken ise özellikle faydalıdır.
+}
+itmname_indian_3 {Muska 'Ritüel Bıçağı'}
+itmdescr_indian_3
+{
+Bir obsidyen kurban bıçağı. Sapkın Aztek tanrılarını memnun etmek için kaç can aldığı bilinmiyor, ama obsidyen ağzı hâlâ körelmedi.
+ ~Düşmanlara verilen kritik hasarı artırır; Tanrı ruhlarını bağışlasın.
+}
+itmname_indian_4 {Muska 'Balta'}
+itmdescr_indian_4
+{
+Asatru rünleriyle kaplı bir kolye ucu. Karayiplere nasıl geldiği bilinmiyor, ama baltalara karşı tuhaf bir istek uyandırıyor.
+ ~Kollarda beklenmedik bir güç artışı sağlar, ağır silah darbelerinin gücünü artırır.
+}
+itmname_indian_5 {Muska 'Tsantsa'}
+itmdescr_indian_5
+{
+Korkunç ritüellerle kurutulmuş bir kafa. Böyle bir muska yapmak için uğursuz bir pagan ayini gerekir.
+ ~Bir kaptanın kemerinde gören her çıkarma ekibi — dost ya da düşman — temkinli ve tedirgin olur.
+}
+itmname_indian_6 {Muska 'Mercan kafa'}
+itmdescr_indian_6
+{
+Mercan parçasından oyulmuş bir put. Söylentiye göre şans getirir ve eli sağlamlaştırır.
+ ~Her halükarda, onunla atılan bir tüfek salvosu çok daha disiplinli olur.
+}
+itmname_indian_7 {Muska 'Kambur'}
+itmdescr_indian_7
+{
+Bir kamburun pişmiş topraktan heykelciği — Notre Dame’daki değil, çalışkanlığın koruyucusu.
+ ~Onunla zorlu orman yürüyüşleri ve borda çarpışmaları daha kolay geçer.
+}
+itmname_indian_8 {Muska 'Xiuhtecuhtli'}
+itmdescr_indian_8
+{
+Ateşin ve volkanların efendisi Aztek tanrısının totem figürü. Azteklerin barutu olsaydı, onun koruyucusu olurdu diye yemin edersin.
+ ~Gizemli şekilde top atışlarını daha ölümcül kılar.
+}
+itmname_indian_9 {Muska 'Baldo'}
+itmdescr_indian_9
+{
+Kuzgun şeklinde Kelt broşu. Böylelerini, adalı Kelt klanlarının en usta denizcilerinin taktığı söylenir.
+ ~En çok topçu ekibini etkiler, topları çok daha hızlı kurup nişan almalarını sağlar.
+}
+itmname_indian_10 {Tılsım 'Cascavella'}
+itmdescr_indian_10 {Büyülü çıngıraklı yılan kafatası. ~Muhtemelen sabit dişlerinde hâlâ zehir var; yoksa vuruşta zehirleme yeteneği zor açıklanır.}
+itmname_indian_11 {Muska 'Ngombo maskesi'}
+itmdescr_indian_11
+{
+Sibonei halkının ritüel maskesi. Söylentiye göre, birine sahte anılar aşılayabiliyor.
+~Süs eşyalarıyla iz bırakmak ya da kalabalıkta kaybolmak için birebir.
+}
+itmname_amulet_1 {Muska 'Ngombo kalkanı'}
+itmdescr_amulet_1 {Ngombo tılsımıyla güçlendirilmiş kemik ve mercan kolye. ~Onunla en hafif zırh bile kılıç darbelerini saptırmaya başlar.}
+itmname_amulet_2 {Muska 'Euchologion'}
+itmdescr_amulet_2 {Gümüş kaplamalı dua kitabı. ~Doğru olanları Mesih’in düşmanlarından, özellikle de kurşundan korur.}
+itmname_amulet_3 {Muska 'Haç'}
+itmdescr_amulet_3 {Kutsanmış Katolik haçı. ~Mucizevi kurtuluş getirir — günahkârın öleceği yerde, doğru olan sadece yaralanır.}
+itmname_amulet_4 {Muska 'El trozo'}
+itmdescr_amulet_4 {Bir cesetten çıkarılmış bir rapier parçası. ~Sahibine öfke verir ve onu pagan transına sokar.}
+itmname_amulet_5 {Muska 'Sogbo'}
+itmdescr_amulet_5 {Voodoo panteonundan yıldırım ruhu. ~Topçuları çok daha çevik yapar, topların yeniden yüklenmesini hızlandırır.}
+itmname_amulet_6 {Muska 'Madonna'}
+itmdescr_amulet_6 {Meryem Ana'nın tasvirini taşıyan kutsanmış bir kutsal emanet. ~Ölümden ve sakatlayıcı yaralardan korur.}
+itmname_amulet_7 {Tılsım 'Kutsal su'}
+itmdescr_amulet_7 {Kutsal suyla dolu gümüş matara kolye. ~Ruhsal ve fiziksel hastalıklara ve yaralara karşı korur.}
+itmname_amulet_8 {Muska 'Çapa'}
+itmdescr_amulet_8 {Büyülü gümüş kolye. ~Denizciler, su hattı altında geminin gövdesini rastgele top güllerinden koruduğuna inanır.}
+itmname_amulet_9 {Muska 'Enkolpion'}
+itmdescr_amulet_9 {Aziz Christopher'ın kalıntılarını içeren büyük gümüş haç. ~Yolculukta hacıları korur, çatışmada yelkenleri muhafaza etmeye yardımcı olur.}
+itmname_amulet_10 {Muskası 'Mucizeci'}
+itmdescr_amulet_10 {Aziz Nikola'nın madalyonu, denizcilerin koruyucusu. ~Onunla her denizcinin sağ salim eve dönme şansı artar.}
+itmname_amulet_11 {Muska 'Cimaruta'}
+itmdescr_amulet_11 {Kadim büyüyle dolu muska. ~Alem dışı bir şans getirir, mürettebatı aborda öncesi tüfek ateşinden korur.}
+itmname_obereg_1 {Muska 'Teredo'}
+itmdescr_obereg_1 {Gemi kurtlarının uzak durduğu selvi maskesi. ~Daha ekonomik gövde onarımı sağlar.}
+itmname_obereg_2 {Muska 'Xochipilli'}
+itmdescr_obereg_2 {Dokumacıların koruyucusu Xochipilli’ye adanmış ritüel kil kap. Gemi onarımında tasarruf sağlar.}
+itmname_obereg_3 {Muska 'Maymun'}
+itmdescr_obereg_3 {Yerel inanca göre, bu alçıtaşı kap güç verir. ~Onunla ağır yük taşımak belirgin şekilde kolaylaşır.}
+itmname_obereg_4 {Muska 'Çingene Yelpazesi'}
+itmdescr_obereg_4 {Meraklı bakışları uzaklaştıran özel bir Endülüs tılsımı; karadaki muhafızları ve devriyeleri kandırmanı sağlar. ~Şehirlere ve limanlara gizlice girmeye yardımcı olur.}
+itmname_obereg_5 {Muska 'Yeşim kaplumbağa'}
+itmdescr_obereg_5 {İlk konkistadorlardan kalma eski bir muska. ~Onu takanlara şans getirirdi; senin de talihin dönmeye başlıyor.}
+itmname_obereg_6 {Muska 'Maymun Yumruğu'}
+itmdescr_obereg_6 {Bilek halkalı sağlam bir ipten karmaşık bir düğüm. ~Genellikle tecrübeli denizciler takar; bu da sözlerinize çok daha fazla ağırlık katar.}
+itmname_obereg_7 {Muska 'Balıkçı'}
+itmdescr_obereg_7 {Şans getirsin diye denizcilerin taktığı büyülü olta iğnesi. ~Özellikle acemi seyir subaylarında gemi kullanma becerisini artırır.}
+itmname_obereg_8 {Tılsım 'Tüccarın tespihi'}
+itmdescr_obereg_8 {Saymak için asil mercandan yapılmış manastır tespihi. ~Ticarette odaklanmanı ve hesabını düzgün tutmanı sağlar, başarı şansını artırır.}
+itmname_obereg_9 {Muska 'Ehecatl'}
+itmdescr_obereg_9 {Aztek rüzgar tanrısının başı şeklinde eski bir kase. ~Onunla rüzgar hep elverişli, geminin hızını artırır.}
+itmname_obereg_10 {Muska 'Denizcinin küpesi'}
+itmdescr_obereg_10 {Horn Burnu’nu dönen dümencinin küpesi. ~Resifler arasında yol bulmayı ve sığda manevra yapmayı kolaylaştırır, geminin manevra kabiliyetini artırır.}
+itmname_obereg_11 {Muska 'Pilgrim'}
+itmdescr_obereg_11 {Brendan the Navigator’ın haçı. ~En ufak rüzgar değişimini yakalamanı sağlar, gemiyi daha çevik kılar.}
+itmname_rat_poison {Arsenik}
+itmdescr_rat_poison {Arsenik — kükürt kokulu, talkı andıran bir toz; gemideki fareleri geçici olarak yok etmek için kullanılır.}
+itmname_gold {Peso}
+itmdescr_gold {Yeni Dünya'nın gümüş madenlerinden basılan ve dünyanın ilk evrensel para birimi olan İspanyol doları, her yerde geçerliydi—özellikle de Yeni Dünya'da. Tarihsel olarak, peso sekiz real'e bölünebildiği için halk arasında "sekizlik" olarak bilinir.}
+itmname_gold_dublon {Altın doblon}
+itmdescr_gold_dublon {Yeni Dünya’dan çıkarılan saf altından basılmış İspanyol çift escudo sikkeleri. “Double” ya da “dublon” olarak bilinen bu paralar Avrupa’da genellikle 100 peso eder, fakat dünyanın bu ucunda işler değişir. Karayipler’de dublonlar nadir ve çok değerli bir meta sayılır. Dublon dolu bir sandık, her korsanın hayalidir.}
+itmname_chest {Sandık}
+itmdescr_chest {İçinde 150 altın İspanyol dublonu olan kilitli sandık.}
+itmname_chest_open {Boş sandık}
+itmdescr_chest_open {Sikkelerin taşınması ve saklanması için kullanılan sıradan bir sandık. Ne yazık ki şu anda tamamen boş.}
+itmname_icollection {Hazineler}
+itmdescr_icollection {Her erkeğin gözünde değerli, mücevherli pahalı altın eşyalardan oluşan çeşitli bir set.}
+itmname_purse1 {Kese}
+itmdescr_purse1 {İçinde birkaç altın sikke olan bir kese.}
+itmname_purse2 {Ağır kese}
+itmdescr_purse2 {İçinde yüklüce doblon bulunan kumaş kese.}
+itmname_purse3 {Ağzına kadar dolu kese}
+itmdescr_purse3 {Altın paralarla dolu, cömert bir deri kese.}
+itmname_jewelry1 {Ametist}
+itmdescr_jewelry1 {Recife madenlerinden bir mücevher. Eski denizciler, adamı içkiden koruduğunu, eğer kadeh kaldırdıysa da sarhoşluktan kurtardığını söyler.}
+itmname_jewelry2 {Elmas}
+itmdescr_jewelry2 {Güney Amerika'nın Portekiz kıyısındaki madenlerden bir elmas, dürüst bir adama işlerinde yardımcı olur; ama hırsızlara, katillere ve düzenbazlara sadece felaket getirir.}
+itmname_jewelry3 {Yakut}
+itmdescr_jewelry3 {Karayipler'de yakut nadir bulunur. Hem nadirliği hem de sertliğiyle elmasla boy ölçüşebilen tek değerli taştır.}
+itmname_jewelry4 {Zümrüt}
+itmdescr_jewelry4 {Kolombiya'nın ünlü madenlerinden bir zümrüt. Ne Avrupa ne de Afrika taşları onun saflığıyla yarışamaz.}
+itmname_jewelry5 {Altın külçesi}
+itmdescr_jewelry5 {Gerçek bir altın külçesi. Madenden nasıl kaçırılmış acaba?! Aslında... en iyisi fazla kurcalamamak.}
+itmname_jewelry6 {Gümüş külçe}
+itmdescr_jewelry6 {And Dağları’ndaki bir İspanyol madeninden çalınmış bir gümüş külçe.}
+itmname_jewelry7 {Mavi kehribar}
+itmdescr_jewelry7 {Sadece Hispaniola Adası'nda bulunan son derece nadir bir kehribar türü. Avrupalı kuyumcular bunun için fahiş fiyatlar ödemeye razı.}
+itmname_jewelry8 {Kehribar}
+itmdescr_jewelry8 {Kehribar, fosilleşmiş ağaç reçinesi için oldukça güzeldir. Geçmişi inceleyenler için de faydalıdır, tabii deneylerinde fazla ileri gitmezlerse.}
+itmname_jewelry9 {Dumanlı Kuvars}
+itmdescr_jewelry9 {Simyacıların felsefe taşını ararken sıkça kullandığı bir nesne. Bu yas taşı, öteki dünya ile bağı kurar ve karakterin hem iyi hem de kötü özelliklerini belirgin şekilde öne çıkarır.}
+itmname_jewelry10 {Platin külçesi}
+itmdescr_jewelry10 {Saf Peru platini külçesi. İspanyollar, yüksek erime noktası ve altın madenlerinde 'katışık' olarak bulunması nedeniyle bu son derece değerli metali küçümsedi; bu yüzden adına 'küçük gümüş' dediler.}
+itmname_jewelry11 {Göktaşı}
+itmdescr_jewelry11 {Nadir bir şans! Yoğun Dünya atmosferinden sağ çıkmayı başaran uzaydan bir misafir.}
+itmname_jewelry12 {Bakır külçe}
+itmdescr_jewelry12 {Batı İspanyol Main madenlerinden eritilmiş bir bakır külçesi.}
+itmname_jewelry13 {Demir külçe}
+itmdescr_jewelry13 {Bir demir külçesi. Bıçak ya da nal dövmek için sıradan bir başlangıç.}
+itmname_jewelry14 {Ateş opali}
+itmdescr_jewelry14 {Yeni İspanya’da çıkarılan bir ateş opali. Sadece Yeni Dünya’da bulunur ve bu yüzden Avrupa’da çok değerlidir.}
+itmname_jewelry15 {Akuamarin}
+itmdescr_jewelry15 {Denizciler, deniz suyu rengindeki bu değerli taşın fırtınaları dindirdiğine ve deniz savaşlarında zafer getirdiğine inanır. Altın bir çerçevede de çok güzel durur.}
+itmname_jewelry16 {Opal}
+itmdescr_jewelry16 {Gerçek opaller çok nadir bulunur, bu yüzden diğer mücevherlere göre daha pahalı olabilirler.}
+itmname_jewelry17 {Yakut}
+itmdescr_jewelry17 {Kan kırmızısı zirkon, kalp kıran mutsuz aşkların taşıdır. Rivayete göre, sahibine oyunculuk yeteneği de kazandırır.}
+itmname_jewelry18 {Krizopraz}
+itmdescr_jewelry18 {On doktordan dokuzu bu taşın insanın dayanıklılığını artırabileceğini söylüyor.}
+itmname_jewelry19 {Mercan}
+itmdescr_jewelry19 {Kırmızı mercanın sahibini olası şiddetten koruduğuna inanılır. Parlatılıp işlendiğinde, mercan Akdeniz kıyısından gelenler arasında oldukça popülerdir.}
+itmname_jewelry20 {Turkuaz}
+itmdescr_jewelry20 {Turkuaz, sadakatin ve soyluluğun taşıdır. Eski savaşçılar kılıçlarının kabzalarını onunla süslerdi; Maya ve Aztekler ise onu yeşim kadar değerli bulurdu.}
+itmname_jewelry21 {Lazurit}
+itmdescr_jewelry21 {Yeni İspanya madenlerinden çıkarılan Azurit. Koyu mavi zemininde piritin altın rengi damarlarının yıldızlı geceyi andıran parıltısı nedeniyle 'göksel taş' olarak da bilinir. Birçok yerli kabile bu taşı kutsal sayardı.}
+itmname_jewelry22 {Yeşim}
+itmdescr_jewelry22 {Yeşim, soylu bir savaşçı taşır. Avrupalılar gelmeden önce Aztekler ve Mayalar için gerçek zenginlik simgesi altın ya da gümüş değil, yeşimdi.}
+itmname_jewelry23 {Krizoberil}
+itmdescr_jewelry23 {Portekiz madenlerinden değerli sarı bir taş. Kumarbazların taşı olarak bilinir ve onlara şans getirdiğine inanılır.}
+itmname_jewelry24 {Kameo kolye}
+itmdescr_jewelry24 {Kameo, inci ve elmaslarla süslenmiş son derece güzel bir kolye. İşçiliğin inceliği, bunun ünlü bir Avrupalı kuyumcu tarafından yapıldığını düşündürüyor. Karayipler'de henüz bu kadar usta bir zanaatkâr yok.}
+itmname_jewelry25 {Kameo işlemeli küpe}
+itmdescr_jewelry25 {Kameo, inci ve elmasla süslenmiş zarif küpeler. İşçiliğin inceliği, bunların ünlü bir Avrupalı kuyumcu tarafından yapıldığını düşündürüyor. Karayipler'de henüz bu kadar usta bir zanaatkâr yok.}
+itmname_jewelry26 {Kameolu bilezik}
+itmdescr_jewelry26 {Kame, inci ve elmaslarla süslenmiş son derece güzel bir bilezik. İşçiliğin inceliği, bunun ünlü bir Avrupalı kuyumcuya ait olduğunu düşündürüyor. Karayipler'de henüz bu kadar usta bir zanaatkâr yok.}
+itmname_jewelry27 {Yakut yüzük}
+itmdescr_jewelry27 {Büyük bir yakutla süslenmiş ağır bir gümüş yüzük. Eski ustaların işi gibi görünüyor. Belki de bir aile yadigârı.}
+itmname_jewelry28 {Safir yüzük}
+itmdescr_jewelry28 {Büyük bir safirle süslenmiş, iri bir gümüş yüzük. Eski ustaların işi gibi görünüyor. Belki de bir aile yadigârı.}
+itmname_jewelry29 {Turkuaz yüzük}
+itmdescr_jewelry29 {Büyük bir turkuazla süslenmiş ağır bir gümüş yüzük. Eski ustaların işi gibi görünüyor. Belki de bir aile yadigârı.}
+itmname_jewelry30 {Altın ritüel bıçağı}
+itmdescr_jewelry30 {İspanyolların elinden tesadüfen kurtulmuş altın bir Aztek ritüel bıçağı. Belki de onu bulan konkistador, bu eski ustanın hayranlık uyandıran işçiliğinden senin kadar etkilenmiştir.}
+itmname_jewelry31 {Altın mezar maskesi}
+itmdescr_jewelry31 {Altın bir Maya ritüel maskesi; şans eseri eritilmekten kurtulmuş. Belki de onu bulan fatih, bu eski ustanın hayranlık uyandıran işçiliğinden senin kadar etkilenmiştir.}
+itmname_jewelry32 {Altın bilezik}
+itmdescr_jewelry32 {Tüylerle süslenmiş bir yılan şeklinde, tesadüfen eritilmekten kurtulmuş altın bir Aztek bileziği. Belki de onu bulan konkistador, bu eski ustanın hayranlık uyandıran işçiliğinden senin kadar etkilenmiştir.}
+itmname_jewelry33 {Altın sunak kâsesi}
+itmdescr_jewelry33 {Kusursuz işçilikle yapılmış altın bir ayin kadehi. Her katedral böyle bir esere sahip olmaktan gurur duyar.}
+itmname_jewelry34 {Lazurit haçı}
+itmdescr_jewelry34 {Ortada büyük bir azurit taşı olan devasa altın bir haç. Böyle değerli bir eşya ancak bir piskoposa ya da başpiskoposa ait olabilir.}
+itmname_jewelry35 {Altın buhurdan}
+itmdescr_jewelry35 {Saf altından yapılmış ağır bir buhurdan. Sömürge kilisesinde böylesi gösterişli bir nesne tuhaf dururdu.}
+itmname_jewelry36 {Değerli yüzük}
+itmdescr_jewelry36 {Büyük bir akuamarinle süslenmiş, değerli taşlardan çiçek motifleriyle bezeli altın yüzük. Bu eşsiz mücevher servet değerinde olmalı. Krallara layık bir hediye olurdu.}
+itmname_jewelry37 {Değerli broş}
+itmdescr_jewelry37 {Bir asmayı simgeleyen taşlarla süslü altın bir broş. Eşsiz bir mücevher, servet değerinde olmalı. Krallara layık bir hediye olurdu.}
+itmname_jewelry38 {Değerli bir yüzük.}
+itmdescr_jewelry38 {Büyük bir elmas ve zümrütlerle süslenmiş altın bir yüzük. Bu eşsiz takı servet değerinde olmalı. Krallara layık bir hediye olurdu.}
+itmname_jewelry39 {Değerli kolye}
+itmdescr_jewelry39 {Elmaslarla süslenmiş, antik temalı mine işlemeli altın bir kolye. Bu eşsiz mücevher servet değerindedir. Krallara layık bir hediye olurdu.}
+itmname_jewelry40 {Zümrüt yüzük}
+itmdescr_jewelry40 {Büyük, ham bir zümrütle süslenmiş ağır bir altın yüzük. Biraz kaba ama yine de değerli bir parça. Yerel kuyumcular, önemli bir iyilik karşılığında ağır bir ödeme olarak yapmış olabilir.}
+itmname_jewelry41 {Yakut yüzük}
+itmdescr_jewelry41 {Gösterişsiz zevklere sahip bir kızı mutlu edebilecek güzel, yakutlu altın bir yüzük.}
+itmname_jewelry42 {Zümrüt boncuklar}
+itmdescr_jewelry42 {İspanya'ya gönderilmek için kalite kontrolünden geçemeyen kabuşonlardan yapılan boncuklar, zengin bir hanımefendinin göğsünü bile süsleyebilir.}
+itmname_jewelry43 {Taşlı kolye}
+itmdescr_jewelry43 {Büyük işlenmemiş taşlarla süslü altın bir kolye, mücevherden anlamayan birine başyapıt gibi görünebilir.}
+itmname_jewelry44 {Conquistador bileziği}
+itmdescr_jewelry44 {At kılından örülmüş bir ipe dizilmiş hurda altın parçalarından yapılmış bir bilezik. Altını bu şekilde taşımak âdetinin, pratiklik için konquistadorlar tarafından bulunduğu söylenir.}
+itmname_jewelry45 {Altın haç}
+itmdescr_jewelry45 {Böyle bir turkuazlı altın haç, güzel, sarışın ve mavi gözlü, iyi bir aileden bir kıza yakışır.}
+itmname_jewelry46 {Altın halka}
+itmdescr_jewelry46 {Küçük bir sodalit kristalli altın yüzük. Gösterişsiz ama zevkli.}
+itmname_jewelry47 {Mercan bilezik}
+itmdescr_jewelry47 {Kırmızı mercanlardan ve gümüş kakmalardan yapılmış bir bilezik, esmer bir bileği süsleyebilir.}
+itmname_jewelry48 {Gümüş yüzük}
+itmdescr_jewelry48 {Çiçek motifli sade bir gümüş yüzük. Hiç yoktan iyidir.}
+itmname_jewelry49 {Yeşim boncuklar}
+itmdescr_jewelry49 {Yeşim boncuklar, kabile erkeklerinden ilgi görmeyen Kızılderili kadınlarının hayalini süsler.}
+itmname_jewelry50 {Yeşim yüzük}
+itmdescr_jewelry50 {Tek parça yeşimden oyulmuş bir yüzük. Bunu yapan ustanın sabrı, adeta Eyyub sabrı gibi.}
+itmname_jewelry51 {Peso küpesi}
+itmdescr_jewelry51 {Delik bir gümüş peso ile yapılmış, doğaçlama bir küpe. Takana korsan havası katar. Üstelik meyhanede hesabı ödemek için de kullanabilirsin!}
+itmname_jewelry52 {Büyük inci}
+itmdescr_jewelry52 {Mükemmel şekle ve parlaklığa sahip büyük bir inci; denizin nadir armağanı. Bu ışıltılı mücevherin yüz yaşından fazla olduğu söylenir.}
+itmname_jewelry53 {Küçük inci}
+itmdescr_jewelry53 {Sevimli bir inci.}
+itmname_meteorite {Büyük göktaşı parçası}
+itmdescr_meteorite {Nadir bir şans! Yoğun Dünya atmosferinden sağ çıkmayı başaran uzaydan bir misafir. Hem de büyük ve çok ağır...}
+itmname_patent_england {İngiliz patenti}
+itmdescr_patent_england {Lord-Protector'un sömürge ofisi tarafından verilen ve İngiltere hizmetinde olduğunuzu onaylayan bir patenttir. Bu belge, ülkenizin çıkarlarını koruma ve geminizi yönetmeliklere uygun şekilde tutma yükümlülüğü getirir.}
+itmname_patent_holland {Hollanda patenti}
+itmdescr_patent_holland {Hollanda Batı Hint Şirketi Direktörler Kurulu tarafından verilen ve Hollanda Birleşik Eyaletleri hizmetinde olduğunuzu onaylayan bir patenttir. Bu belge, ülkenizin çıkarlarını koruma ve geminizi yönetmeliklere uygun şekilde idame ettirme yükümlülükleri getirir.}
+itmname_patent_france {Fransız patenti}
+itmdescr_patent_france {Majesteleri XIV. Louis’in sömürge ofisi tarafından verilen bir patent, Fransa hizmetinde olduğunuzu onaylar. Bu, ülkenizin çıkarlarını koruma ve geminizi yönetmeliklere uygun şekilde muhafaza etme yükümlülükleri getirir.}
+itmname_patent_spain {İspanyol patenti}
+itmdescr_patent_spain {Majesteleri IV. Felipe'nin sömürge ofisi tarafından verilen bir patent, İspanya hizmetinde olduğunuzu onaylar. Bu, ülkenizin çıkarlarını koruma ve geminizi yönetmeliklere uygun şekilde muhafaza etme sorumluluğu getirir.}
+itmname_map_bad {Ucuz harita}
+itmdescr_map_bad {Yeni Dünya'nın ilk kâşifleri tarafından hazırlanmış, onlarca yıl önce Cenova'da basılmış bir harita. Zamanla sararmış parşömendeki belirsiz ada hatları, konumlarını kesin olarak belirlemeye imkân vermez.}
+itmname_EngTradeLicence {İngiliz ticaret lisansı}
+itmdescr_EngTradeLicence {İngiliz kasaba ve limanlarını ticaret ve diğer barışçıl amaçlarla ziyaret etmenizi sağlar. #sAction_date# tarihinde verilmiştir ve #sValidity# süreyle geçerlidir.}
+itmname_FraTradeLicence {Fransız ticaret lisansı}
+itmdescr_FraTradeLicence {Fransız kasaba ve limanlarını ticaret ve barışçıl amaçlarla ziyaret etmenizi sağlar. #sAction_date# tarihinde verilmiştir ve #sValidity# süreyle geçerlidir.}
+itmname_SpaTradeLicence {İspanyol ticaret lisansı}
+itmdescr_SpaTradeLicence {Yeni Dünya’daki İspanyol kasaba ve limanlarını ticaret ve barışçıl amaçlarla ziyaret etmenizi sağlar. #sAction_date# tarihinde verilmiştir ve #sValidity# süreyle geçerlidir.}
+itmname_HolTradeLicence {Hollanda Batı Hindistan Şirketi lisansı}
+itmdescr_HolTradeLicence {Tüm kolonilerin kasaba ve limanlarını ticaret ve diğer barışçıl amaçlarla ziyaret etmenizi sağlar. #sAction_date# tarihinde verilmiştir ve #sValidity# süreyle geçerlidir.}
+itmname_MapsAtlas {Kartografik atlas}
+itmdescr_MapsAtlas {Karayipler ve İspanyol Ana Karası’ndaki farklı bölgelerin haritalarından oluşan bir koleksiyon. Bu değerli parşömenler olmadan Yeni Dünya’da yolculuk neredeyse imkânsızdır.}
+itmname_Map_Best {Mükemmel harita}
+itmdescr_Map_Best {Efsanevi İngiliz maceraperest Sir Francis Drake’e ait son derece ayrıntılı bir haritanın kopyası. Bir deniz kurdunun ihtiyaç duyacağı neredeyse her şey üzerinde işaretli.}
+itmname_map_normal {Sıradan harita}
+itmdescr_map_normal {Bu harita, bir grup tüccar tarafından hazırlandı. Büyük şehirlerin adları ve adaların kesin koordinatları, Karayipler'de ticaret yapan sıradan bir kaptanın ihtiyacı olan her şey.}
+itmname_map_beliz {Beliz Haritası}
+itmdescr_map_beliz {Beliz kasabasını ve çevresini gösteren bir harita.}
+itmname_map_santa {Blueweld Haritası}
+itmdescr_map_santa {Blueweld kasabasını ve çevresini gösteren bir harita.}
+itmname_map_bermudas {Isla del Tesoro Haritası}
+itmdescr_map_bermudas {Isla del Tesoro’daki tüm rotaları ve yerleşimleri gösteren bir harita.}
+itmname_map_jam {Jamaika Haritası}
+itmdescr_map_jam {Jamaika adasındaki tüm rotaları ve yerleşimleri gösteren bir harita.}
+itmname_map_cuba {Küba Haritası}
+itmdescr_map_cuba {Küba adasındaki tüm rotaları ve yerleşimleri gösteren bir harita.}
+itmname_map_hisp {Hispaniola Haritası}
+itmdescr_map_hisp {Hispaniola korsan adasındaki kasabaları ve tenha yerleri gösteren bu harita.}
+itmname_map_antigua {Antigua Haritası}
+itmdescr_map_antigua {Antigua adasının kaba bir haritası, kullanmak için yeterli.}
+itmname_map_barbados {Barbados Haritası}
+itmdescr_map_barbados {Barbados adasının yerleşimini gösteren bir harita.}
+itmname_map_cayman {Cayman Haritası}
+itmdescr_map_cayman {Issız Cayman adalarının haritası.}
+itmname_map_Curacao {Curaçao Haritası}
+itmdescr_map_Curacao {Curacao adasının kaba bir haritası, yine de yolculuk için uygun.}
+itmname_map_guad {Guadeloupe Haritası}
+itmdescr_map_guad {Guadeloupe'un ayrıntılı haritası.}
+itmname_map_TORTUGA {Tortuga Haritası}
+itmdescr_map_TORTUGA {Tortuga'nın ayrıntılı haritası.}
+itmname_map_dominica {Dominica Haritası}
+itmdescr_map_dominica {Dominica'nın ıssız adasının haritası.}
+itmname_map_martiniqua {Martinique Haritası}
+itmdescr_map_martiniqua {Martinique adasının mükemmel bir haritası.}
+itmname_map_trinidad {Trinidad Haritası}
+itmdescr_map_trinidad {Trinidad'ın ikiz adalarının haritası.}
+itmname_map_nevis {St. Christopher Haritası}
+itmdescr_map_nevis {St. Christopher adasının haritası.}
+itmname_map_sm {St. Martin Haritası}
+itmdescr_map_sm {St. Martin haritası.}
+itmname_map_terks {Turks Haritası}
+itmdescr_map_terks {Bilinmeyen biri tarafından çizilmiş vahşi Turks adalarının haritası.}
+itmname_map_maine_1 {Yeni Granada Haritası, Merkez}
+itmdescr_map_maine_1 {İspanyol Ana Karası’nda, Gartagena ve Maracaibo şehirlerinin öne çıktığı Yeni Granada’nın bir bölümünün haritası.}
+itmname_map_maine_2 {Caracas Haritası}
+itmdescr_map_maine_2 {İspanyol Ana Karası'nın büyük bir bölümünü gösteren bir harita.}
+itmname_map_panama {Yeni Granada, Batı Haritası}
+itmdescr_map_panama {Panama Kıstağı haritası.}
+itmname_map_cumana {Cumana Haritası}
+itmdescr_map_cumana {Ortada Cumana kasabası bulunan İspanyol Main’inin kısmî haritası.}
+itmname_map_puerto {Porto Riko Haritası}
+itmdescr_map_puerto {Porto Riko adasını gösteren bir harita.}
+itmname_mapQuest {Hazine haritası}
+itmdescr_mapQuest {Bu harita gömülü hazinenin yerini gösteriyor. Gerçekten orada mı? Bunu ancak 'X'in işaretlediği yeri bularak öğrenebilirsin.}
+itmname_map_full {Hazine haritası}
+itmdescr_map_full {Bu harita, gömülü hazinenin yerini gösteriyor. Gerçekten orada mı? Bunu ancak 'X'in işaretlediği yeri bulunca öğrenebilirsin.}
+itmname_map_part1 {Bir hazine haritası parçası}
+itmdescr_map_part1 {Bir hazine haritasının parçası. Nereye götürdüğünü anlamak için haritanın kalan parçalarını bulmak gerekir.}
+itmname_map_part2 {Bir hazine haritası parçası}
+itmdescr_map_part2 {Bir hazine haritasının parçası. Nereye götürdüğünü anlamak için haritanın kalan parçalarını bulmak gerekir.}
+itmname_map_LSC {Terkedilmiş Gemiler Şehri Haritası}
+itmdescr_map_LSC {Terkedilmiş Gemiler Şehri'ne yeni gelen biri, böyle bir harita olmadan tamamen kaybolur.}
+itmname_A_map_beliz {Mükemmel Belize haritası}
+itmdescr_A_map_beliz {Beliz çevresinin son derece hassas bir haritası. Arka yüzünde haritacının adı yazıyor: Jose Dios.}
+itmname_A_map_santa {Mükemmel Blueweld haritası}
+itmdescr_A_map_santa {Blueweld çevresinin son derece hassas bir haritası. Arka yüzünde haritacının adı yazıyor: Jose Dios.}
+itmname_A_map_bermudas {Mükemmel Isla del Tesoro haritası}
+itmdescr_A_map_bermudas {Isla del Tesoro'nun son derece hassas bir haritası. Arka yüzünde haritacının adı yazıyor: Jose Dios.}
+itmname_A_map_jam {Jamaika'nın mükemmel haritası}
+itmdescr_A_map_jam {Jamaika adasının son derece hassas bir haritası. Arka yüzünde haritacının adı yazılı: Jose Dios.}
+itmname_A_map_cuba {Küba'nın mükemmel haritası}
+itmdescr_A_map_cuba {Küba adasının son derece hassas bir haritası. Arka yüzünde haritacının adı yazıyor: Jose Dios.}
+itmname_A_map_hisp {Mükemmel Hispaniola haritası}
+itmdescr_A_map_hisp {Hispaniola adasının son derece hassas bir haritası. Arka yüzünde haritacının adı yazıyor: Jose Dios.}
+itmname_A_map_antigua {Mükemmel Antigua haritası}
+itmdescr_A_map_antigua {Antigua adasının son derece hassas bir haritası. Arka yüzünde haritacının adı yazıyor: Jose Dios.}
+itmname_A_map_barbados {Barbados’un mükemmel haritası}
+itmdescr_A_map_barbados {Barbados adasının son derece hassas bir haritası. Arka yüzünde haritacının adı yazıyor: Jose Dios.}
+itmname_A_map_cayman {Mükemmel Cayman haritası}
+itmdescr_A_map_cayman {Cayman Adası'nın son derece hassas bir haritası. Arka yüzünde haritacının adı yazıyor: Jose Dios.}
+itmname_A_map_Curacao {Mükemmel Curacao haritası}
+itmdescr_A_map_Curacao {Curacao adasının son derece hassas bir haritası. Arka yüzünde haritacının adı yazılı: Jose Dios.}
+itmname_A_map_guad {Guadeloupe’un mükemmel haritası}
+itmdescr_A_map_guad {Guadeloupe adasının son derece hassas bir haritası. Arka yüzünde haritacının adı yazılı: Jose Dios.}
+itmname_A_map_TORTUGA {Mükemmel Tortuga haritası}
+itmdescr_A_map_TORTUGA {Tortuga adasının son derece hassas bir haritası. Arka yüzünde haritacının adı yazılı: Jose Dios.}
+itmname_A_map_dominica {Dominica'nın mükemmel haritası}
+itmdescr_A_map_dominica {Dominica adasının son derece hassas bir haritası. Arka yüzünde haritacının adı yazıyor: Jose Dios.}
+itmname_A_map_martiniqua {Mükemmel Martinique haritası}
+itmdescr_A_map_martiniqua {Martinique adasının son derece hassas bir haritası. Arka yüzünde haritacının adı yazıyor: Jose Dios.}
+itmname_A_map_trinidad {Trinidad'ın mükemmel haritası}
+itmdescr_A_map_trinidad {Trinidad adalarının son derece hassas bir haritası. Arka yüzünde haritacının adı yazılı: Jose Dios.}
+itmname_A_map_nevis {Mükemmel St. Christopher haritası}
+itmdescr_A_map_nevis {St. Christopher Adası'nın son derece hassas bir haritası. Arka yüzünde haritacının adı yazıyor: Jose Dios.}
+itmname_A_map_sm {Mükemmel St. Martin haritası}
+itmdescr_A_map_sm {St. Martin adasının son derece hassas bir haritası. Arka yüzünde haritacının adı yazıyor: Jose Dios.}
+itmname_A_map_terks {Mükemmel Turks haritası}
+itmdescr_A_map_terks {Turks Adası'nın son derece hassas bir haritası. Arka yüzünde haritacının adı yazıyor: Jose Dios.}
+itmname_A_map_maine_1 {Yeni Granada'nın mükemmel haritası, Merkez}
+itmdescr_A_map_maine_1 {Yeni Granada'nın merkezinin son derece hassas bir haritası. Arka yüzünde haritacının adı yazıyor: Jose Dios.}
+itmname_A_map_maine_2 {Caracas'ın mükemmel haritası}
+itmdescr_A_map_maine_2 {Caracas çevresinin son derece hassas bir haritası. Arka yüzünde haritacının adı yazılı: Jose Dios.}
+itmname_A_map_panama {Yeni Granada, Batı için mükemmel harita}
+itmdescr_A_map_panama {Panama Kıstağı'nın son derece hassas bir haritası. Arka yüzünde haritacının adı yazıyor: Jose Dios.}
+itmname_A_map_cumana {Mükemmel Cumana haritası}
+itmdescr_A_map_cumana {Cumana çevresinin son derece hassas bir haritası. Arka yüzünde haritacının adı yazıyor: Jose Dios.}
+itmname_A_map_puerto {Mükemmel Puerto Rico haritası}
+itmdescr_A_map_puerto {Porto Riko adasının son derece hassas bir haritası. Arka yüzünde haritacının adı yazılı: Jose Dios.}
+itmname_A_map_perl {Mükemmel Providence haritası}
+itmdescr_A_map_perl {Providence Adası'nın son derece hassas bir haritası. Arka yüzünde haritacının adı yazılı: Jose Dios.}
+itmname_map_half_beatriss {Sharp’ın Haritasının Yarısı}
+itmdescr_map_half_beatriss {Helen McArthur’ın annesi Beatrice’e ait efsanevi haritanın yarısı.}
+itmname_map_half_blaze {Sharp'ın Haritasının Yarısı}
+itmdescr_map_half_blaze {Bir zamanlar Blaze Sharp’a ait olan efsanevi haritanın yarısı.}
+itmname_map_sharp_full {Nicholas Sharp'ın Haritası}
+itmdescr_map_sharp_full {İki parçanın birleşmesiyle tamamlanan Isla del Tesoro’nun tam haritası. Sahibi, ada üzerindeki mülkiyet hakkının kanıtını elinde tutar.}
+itmname_LSC_navigation_map {Terkedilmiş Gemiler Şehri Seyir Talimatları}
+itmdescr_LSC_navigation_map
+{
+Bu haritalar olmadan Adalet Adası'na ulaşmak imkânsız.
+24°21 Kuzey ve 84°50 Batı.
+}
+itmname_RingCapBook {'Santa Lucia' gemi günlüğü}
+itmdescr_RingCapBook
+{
+Pinnace 'Santa Lucia'nın seyir defteri.
+Okumaya değer – kayıtlar geminin batışına kadar sürüyor.
+}
+itmname_leather_bag {El çantası}
+itmdescr_leather_bag {Bir genelevden kaçan genç kızın bavulu. Biraz para, belgeler, düzgün bir elbise ve birkaç kişisel eşya içeriyor. Zavallıca, bavulun kendisi içindekilerden daha ağır.}
+itmname_sicretLetter {Gizli mesaj.}
+itmdescr_sicretLetter {#sCity# valisi için bir belge paketi. #sMayor# bunu en kısa sürede bekliyor.}
+itmname_letter_1 {Mühürlü mektup}
+itmdescr_letter_1 {Mektup mühürlü. İçeriğini öğrenmek için okumak gerekir, ama önce mührü açmalısın.}
+itmdescr_letter_1_Fadey {Moskof Fadey’in, Hintli suçlu Tichingitu’nun affı için yaptığı başvuru.}
+itmdescr_letter_SharkGoldFleet_1 {Caracas Liman İdaresi başkanından mühürlü yazışma. Porto Bello Liman İdaresi başkanına şahsen teslim edilmeli.}
+itmname_letter_2 {Mühürlü mektup}
+itmdescr_letter_2 {Mektup mühürlü. İçeriğini öğrenmek için okumak gerekir, ama önce mührü bozmalısın.}
+itmdescr_letter_SharkGoldFleet_2 {Mühürlü yanıt - Porto Bello Liman İdaresi başkanından onay. Caracas Liman İdaresi başkanına şahsen teslim edilmeli.}
+itmdescr_letter_2_PortmanLevelUp1 {Önemli bir devlet telgrafı.}
+itmdescr_letter_2_PortmanLevelUp2 {Karayipler'deki tüm mağazalar için güncel fiyat listesi.}
+itmdescr_letter_2_PortmanLevelUp3 {İş belgeleri, güncel döviz kurları ve hisse senetleri hakkında bilgiler içerir.}
+itmname_letter_open {Açılmış mektup}
+itmdescr_letter_open {Mektup sanki daha önce açılıp okunmuş gibi görünüyor. Umarım alıcı fark etmez.}
+itmdescr_letter_open_usurer {Folke Deluc için zorunlu senet.}
+itmname_Malyava {Hapishane mektubu}
+itmdescr_Malyava {Hırsızın notu.}
+itmname_PostLetters {Teslimat için posta}
+itmdescr_PostLetters {Mühürlü mektuplar ve diğer belgeler.}
+itmname_letter_consumption {San Jose komutanına mektup}
+itmdescr_letter_consumption
+{
+Mahsulün çoğu toplandı – bu, anlaşmamızın ikinci kısmı. Üçüncü kısmı ise her zamanki gibi en sonunda halledeceğim. Sizinle iş yapmak güzeldi – umarım son kez değildir.
+J.
+}
+itmname_letter_church {Mühürlü mesaj}
+itmdescr_letter_church {Bir kilise mesajı. Bu, alıcısına en kısa sürede ulaştırılmalı.}
+itmname_prayer_book {Dua kitapları}
+itmdescr_prayer_book {Bir yığın dua kitabı. En kısa sürede alıcıya teslim edilmeli.}
+itmname_ContraPostLetters {Posta yazışması}
+itmdescr_ContraPostLetters {Mühürlü mektuplar ve diğer belgeler. En kısa sürede Ekselanslarına teslim edilmeleri gerekiyor.}
+itmname_letter_svenson {Jan Svenson'ın Mektubu}
+itmdescr_letter_svenson {Steve Dodson-Shark için Jan Svenson’dan mühürlü bir mektup.}
+itmname_letter_chad {Açılmış mektup}
+itmdescr_letter_chad {Güvenilir bir nişancı bulduk. Şimdi söz verdiğin yivli namluyu ve hedefi ortadan kaldırmak için izni bekliyoruz.}
+itmdescr_letter_adolf
+{
+Her şeyi anlaştığımız gibi bitirdikten sonra yeni kamarana dön ve bizi bekle. Anahtar için gece yarısı geleceğiz.
+M.
+}
+itmdescr_letter_adolf_1 {Marcello, bana verdiğin miktarın iki katı üzerinde anlaşmıştık. Karabina çok daha değerli, sen de bunu biliyorsun. Kalanı ödemezsen, amiral hemen Kapper ile 'Eva'daki işlerini öğrenecek. Adolf.}
+itmdescr_letter_aeva
+{
+'Eva'dan daha iyi bir yer yok. Son zamanlarda Cecille ya diğer yaşlı Orelie'yle takılıyor ya da meyhanede, bu yüzden ambar bomboş. Biri aniden çıksa bile, biraz içki içmenin ne zararı var ki?
+Marcello.
+}
+itmdescr_letter_valet {David Fackman’a, namıdiğer 'Knave'a hitaben yazılmış eğlenceli bir mektup.}
+itmname_letter_chad_1 {Açılmış mektup}
+itmdescr_letter_chad_1 {Mary Casper’a Chad Kapper’dan mektup.}
+itmdescr_letter_facio {Giuseppe Fazio'nun açıklama mektubu.}
+itmdescr_letter_axel
+{
+Chad, istediğin gibi stoklarımı kontrol ettim. Sadece bir fıçı İrlanda viskisi bulabildim. Eski bir malt, adı 'Bushmills'. Fiyatı 100 dublon uygunsa, gel al.
+Axel.
+}
+itmdescr_letter_vargant
+{
+Plan işe yaramazsa, seni ve David’i Sabu-Matila koyunda, 'Centurion'un güvertesinde bekleyeceğim. Kardeşimden sen sorumlusun, aklında olsun. O ne derse, bana demiş gibi yap. Sakın Tyrex’e meydan okumayı düşünme bile – ikinizi de göz açıp kapayıncaya kadar parçalar.
+Jackman.
+}
+itmname_letter_parol {Not}
+itmdescr_letter_parol {Madene girmek için şifrenin değiştiğini bil. Yeni şifre 'Neptün'.}
+itmdescr_letter_ouster
+{
+Eski yer artık güvenli değil. İngilizler bir şeyler öğrendi. Bir hafta boyunca 12 derece 1 dakika Kuzey ve 60 derece 11 dakika Batı’da yükle seni bekliyor olacağım. Bu sefer beni hayal kırıklığına uğratma!
+M.R.
+}
+itmdescr_letter_parol_FMQP {Ugo’dan Don Domingo Albalate’ye yazılmış yarım kalmış bir mektup.}
+itmname_letter_mine {Maden için belgeler}
+itmdescr_letter_mine {Port Royal'dan 'Sir Lawrence Beltrop' adında birinin terk edilmiş madenin resmi sahibi olduğunu belirten belgeler.}
+itmname_letter_jess {Yırtık sayfa}
+itmdescr_letter_jess {Jessica Rose’un günlüğünden bir sayfa.}
+itmname_letter_beatriss {Eski mektup}
+itmdescr_letter_beatriss {Beatrice Sharp'tan kardeşi Blaze'e bir mektup.}
+itmname_letter_baker {Yazılı ifade}
+itmdescr_letter_baker {St. Jones’un eski celladı Raymond Baker’ın belgelenmiş ifadesi.}
+itmdescr_letter_pinett {Basse-Terre bankacısının yasa dışı işlerine dair Bertrand Pinette’in ifadesi.}
+itmname_Cromvel_depeshe {Cromwell’in mesajı}
+itmdescr_Cromvel_depeshe
+{
+...konvoyu karşılamak, güçlendirmek ve Yeni Hollanda kıyılarına kadar eşlik etmek üzere.
+Takunyalarını giyen Hollandalılar, İngiliz Donanması'nın kudretini bizzat görecekler.
+Filotilla #sDay#.#sMonth#.#sYear# tarihinde 18° 40' Kuzey ve 72° 10' Batı'ya varacaktır.
+}
+itmname_specialletter {Mektup}
+itmdescr_specialletter {Mühürlü bir mektup. Okumak için önce mührü açmak gerekir.}
+itmdescr_specialletter_mishelle {Michel de Monper'den Charles de Maure'a bir mektup.}
+itmdescr_specialletter_vinsento {Santiago engizitörü Peder Vincento’dan Charles de Maure’a bir mektup.}
+itmdescr_specialletter_dichoso {Miguel Dichoso'dan Arturo Lopez'e bir mektup.}
+itmname_recipe_powder_pellet {Talimat}
+itmdescr_recipe_powder_pellet {Flaş bombası yapma talimatları.}
+itmname_recipe_grenade {Talimat}
+itmdescr_recipe_grenade {El bombası yapımı talimatları.}
+itmname_recipe_harpoon {Talimat}
+itmdescr_recipe_harpoon {Zıpkın oku yapma talimatı.}
+itmname_recipe_GunEchin {Talimat}
+itmdescr_recipe_GunEchin {Çivi başları ve parçalarıyla çivi benzeri şarapnel yükü yapma talimatı.}
+itmname_recipe_potion2 {İksir tarifi}
+itmdescr_recipe_potion2 {Şifa iksiri hazırlamak için gereken tüm bilgileri içeren bir tarif.}
+itmname_recipe_potion3 {Panzehir tarifi}
+itmdescr_recipe_potion3 {Bir panzehir hazırlamak için gereken tüm bilgileri içeren tarif.}
+itmname_recipe_potion4 {Karışım tarifi}
+itmdescr_recipe_potion4 {Bir karışım hazırlamak için gereken tüm bilgileri içeren tarif.}
+itmname_recipe_berserker_potion {Ometochli Tentürü tarifi}
+itmdescr_recipe_berserker_potion {Ometochli tentürünü hazırlamak için gereken tüm bilgileri içeren bir tarif.}
+itmname_recipe_PerksPotion {Unutuş İksiri Tarifi}
+itmdescr_recipe_PerksPotion {Karmaşık, pahalı ve uzun bir iksir tarifi. Açıklamasına göre, geçmişi geride bırakıp kaderi değiştirmeye yarıyor.}
+itmname_recipe_totem_01 {Tılsım tarifi}
+itmdescr_recipe_totem_01 {Dökme demir boğazı tılsımını yapmak için gereken tüm bilgileri içeren bir tarif.}
+itmname_recipe_totem_02 {Tılsım tarifi}
+itmdescr_recipe_totem_02 {'Tılsım: Omurgakıran'ı yapmak için gereken tüm bilgileri içeren bir tarif.}
+itmname_recipe_totem_03 {Tılsım tarifi}
+itmdescr_recipe_totem_03 {‘Cupid's Balm’ tılsımını yapmak için gereken tüm bilgileri içeren bir tarif.}
+itmname_recipe_totem_04 {Tılsım tarifi}
+itmdescr_recipe_totem_04 {'Myrmidon' tılsımını yapmak için gereken tüm bilgileri içeren bir tarif.}
+itmname_recipe_totem_05 {Tılsım tarifi}
+itmdescr_recipe_totem_05 {Tılsım 'Demir göbek' yapımı için gereken tüm bilgileri içeren bir tarif.}
+itmname_recipe_totem_06 {Tılsım tarifi}
+itmdescr_recipe_totem_06 {'Stayer' tılsımını yapmak için gereken tüm bilgileri içeren bir tarif.}
+itmname_recipe_totem_07 {Tılsım tarifi}
+itmdescr_recipe_totem_07 {Minstrel tılsımını yapmak için gereken tüm bilgileri içeren bir tarif.}
+itmname_recipe_totem_08 {Tılsım tarifi}
+itmdescr_recipe_totem_08 {Ateşin Efendisi tılsımını yapmak için gereken tüm bilgileri içeren bir tarif.}
+itmname_recipe_totem_09 {Tılsım tarifi}
+itmdescr_recipe_totem_09 {'Arguzin' tılsımını yapmak için gereken tüm bilgileri içeren bir tarif.}
+itmname_recipe_totem_10 {Tılsım tarifi}
+itmdescr_recipe_totem_10 {'Widowmaker' tılsımını yapmak için gereken tüm bilgileri içeren bir tarif.}
+itmname_recipe_totem_11 {Tılsım tarifi}
+itmdescr_recipe_totem_11 {'Ghoul' tılsımını yapmak için gereken tüm bilgileri içeren bir tarif.}
+itmname_recipe_totem_12 {Tılsım tarifi}
+itmdescr_recipe_totem_12 {'Jaguarın Oğlu' tılsımını yapmak için gereken tüm bilgileri içeren bir tarif.}
+itmname_recipe_totem_13 {Tılsım tarifi}
+itmdescr_recipe_totem_13 {'Joker' tılsımını yapmak için gereken tüm bilgileri içeren bir tarif.}
+itmname_alchemy_tool {Simyacının sandığı}
+itmdescr_alchemy_tool {Garip düzenekler, şişeler ve reaktiflerle dolu bir sandık. Yeni başlayan bir simyacı için paha biçilmez bir ganimet.}
+itmname_Tool {Marangoz alet kutusu}
+itmdescr_Tool {Tersaneden çalınmış gemici aletleri.}
+itmname_Tailor_Tool {Terzilik Aletleri}
+itmdescr_Tailor_Tool
+{
+Tecrübeli bir gezginin, her zorluğun üstesinden kendi başına gelmek için kullandığı seyahat dikiş seti.
+Usta ellerde makas, iğne, kanca ve yüksük gerçekten harikalar yaratabilir!
+}
+itmname_Mechanic_Tool {Tezgâh & Takım Kutusu}
+itmdescr_Mechanic_Tool {Küçük onarımlar için gereken tüm ekipmanlar pratik bir çantada – boş zamanlarında tamirle uğraşmayı sevenler için ideal yardımcı.}
+itmname_Tigel {Cüruf}
+itmdescr_Tigel {Çok yüksek sıcaklıklarda metal eritmek için yapılmış bir pota.}
+itmname_potion1 {Şifa iksiri}
+itmdescr_potion1 {Hafif yaraları hızla iyileştiren şifalı otlardan yapılmış iksir.}
+itmname_potion2 {İksir}
+itmdescr_potion2 {Yüzden fazla nadir ottan yapılan bu iksir, en ağır yaraları bile iyileştirir.}
+itmname_potion3 {Panzehir}
+itmdescr_potion3 {Bu panzehir, nadir malzemelerden hazırlanmış bir karışımdır. Tadı berbattır ama zehirden acı çekerek ölmekten iyidir, herkes böyle der.}
+itmname_potion4 {Karışım}
+itmdescr_potion4 {Bu karışım, zehri giderirken yaraları da iyileştiren bir şifa iksiri ve panzehir birleşimidir.}
+itmname_potionrum {Bir şişe rom}
+itmdescr_potionrum {Hiçbir denizci güvenilir bir rom şişesi olmadan tam sayılmaz. Grog yapmak ve güzel anılar biriktirmek için vazgeçilmezdir. Yaralıysanız, içindeki alkol acıyı hafifletir ve iyileşmeyi destekler.}
+itmname_potionwine {Mükemmel şarap}
+itmdescr_potionwine {Mükemmel Fransız şarabı. Rahatlatıcı etkisiyle gücünü toplamana ve enfeksiyonu önlemene yardımcı olur.}
+itmname_potion5 {Zencefil kökü}
+itmdescr_potion5 {Yan etkisi olmayan güçlendirici bir bitki.}
+itmname_potion6 {İnka iksiri}
+itmdescr_potion6 {Bu iksir, İnka tapınak savaşçıları tarafından savaşta öfkelerini keskinleştirmek için icat edildi. Savaşta sersemlemeyi önler. Sağlığına zarar verir.}
+itmname_potion7 {İxchel’in Gözyaşları}
+itmdescr_potion7 {Maya rahipleri tarafından Ay Tanrıçalarına tapınma ritüeli için hazırlanan, kokusuz ve tatsız, şüpheli derecede yoğun sütlü bir sıvı. Rivayete göre (yerli halk hâlâ sırrını saklıyor), kaybedilen sağlığı geri kazandırabiliyor.}
+itmname_Ultimate_potion {Komançi iksiri}
+itmdescr_Ultimate_potion {En kötü hastalıkları ve en ölümcül zehirleri bile iyileştirebilen mucizevi iksir.}
+itmname_berserker_potion {Ometochli Tentürü}
+itmdescr_berserker_potion
+{
+İçene insanüstü güç, dayanıklılık, çeviklik ve tepki hızı kazandıran efsanevi iksir; acıya karşı da bağışıklık sağlar.
+Etkisi yalnızca dakikada bir, en fazla 12 saniye sürer. Sağlığınıza zarar verir.
+}
+itmname_mangarosapower {Gelgit Dalgası iksiri}
+itmdescr_mangarosapower {Amelia’nın tarifine göre mangarosa ile hazırlanmış iksir. Kara barut ve tütsülenmiş odun kokusu, keskin kükürt notalarıyla birleşiyor. Bu aroma seni top güvertelerine çağırıyor—gök gürlerken duman gökyüzünü örtüyor.}
+itmname_mangarosafast {Fırtına iksiri}
+itmdescr_mangarosafast
+{
+Amelia’nın tarifine göre mangarosa ile hazırlanmış bir iksir.
+Taze kırılmış dalların acı dumanı ve kızgın demir gibi, gün batımındaki bir dökümhaneyi andıran bir kokuya sahip. Bu koku, çarpışan kılıçları ve savaşın ateşini hatırlatan bir savaş coşkusunu uyandırır.
+}
+itmname_mangarosatotal {Deniz Sarılması iksiri}
+itmdescr_mangarosatotal {Amelia’nın tarifine göre mangarosa ile hazırlanmış bir iksir. Fırtına sonrası güverte gibi tuzlu rüzgar ve ıslak ahşap kokusu taşır. Deniz havasının aroması ve hafif yosun acılığı, göğsünde denizin kendisi açılmış gibi bir hafiflik ve özgürlük hissi verir.}
+itmname_vodka {Çar Votkası}
+itmdescr_vodka {Arpa ruhu, ardıç ve kantaronla hazırlanıp, gül suyu ve galangal köküyle damıtılıp dinlendirilmiş bir içki. Rus Çarlığı'nın streltsi askerleri tarafından savaş alanında ısıtıcı ve canlandırıcı içecek olarak kullanılırdı.}
+itmname_PerksPotion {Unutuş İksiri}
+itmdescr_PerksPotion {Bükülmüş boyunlu, erimiş bir kafatası şeklinde şişe. Yoğun ve yağlı sıvı, içinde canlı bir alev atıyormuş gibi altın ve kızıl parlıyor. Üç kurban içerir: Beden, Hafıza ve Servet.}
+itmname_cannabis1 {Şeytan otu (datura)}
+itmdescr_cannabis1 {Şifa iksirlerinde kullanılır.}
+itmname_cannabis2 {Sabadilla}
+itmdescr_cannabis2 {Şifa iksirlerinde kullanılır.}
+itmname_cannabis3 {Mine çiçeği}
+itmdescr_cannabis3 {Gizemli bir ot. Pek çok farklı inançla ilişkilendirilir. İksirlerde kullanılır.}
+itmname_cannabis4 {İpekakuana}
+itmdescr_cannabis4 {Bu bitkinin tadı ve kokusu berbat olsa da iksir yapımında sıkça kullanılır.}
+itmname_cannabis5 {Guarana}
+itmdescr_cannabis5 {İksirlerde kullanılır.}
+itmname_cannabis6 {Jamaika Biberi}
+itmdescr_cannabis6 {İksirlerde kullanılır.}
+itmname_cannabis7 {Manga Rosa}
+itmdescr_cannabis7
+{
+Bu çalının yaprakları, yerli halk arasında çok değerli sayılır.
+Bazıları, bu bitkinin yalnızca az sayıda bilge tarafından anlaşılan gizemli özelliklere sahip olduğunu söyler.
+}
+itmname_GunPowder {Barut}
+itmdescr_GunPowder {Kükürt, kömür ve potasyum nitrat karışımıdır. Her ateşli silah için gereklidir. Barut tüketimi silah türüne göre değişir.}
+itmname_bullet {Kurşun Mermi}
+itmdescr_bullet {Tüfek ve tabanca için evrensel mermi. Merminin verdiği hasar, ateşleyen silaha bağlıdır.}
+itmname_grapeshot {Saçma}
+itmdescr_grapeshot
+{
+Kurşun saçma veya iri bilye. Yalnızca saçma atan silahlarda kullanılır. Birden fazla hedefe aynı anda zarar verir.
+Namluya doldurulabilen saçma miktarı kullanılan silaha bağlıdır.
+}
+itmname_cartridge {Kağıt Kartuş}
+itmdescr_cartridge {Barut, kurşun ve tapa içeren bir kartuş. Barutu kuru tutmak için yağlı kağıda sarılmıştır. Kullanımı, barutun daha eşit yanması sayesinde yeniden doldurmayı hızlandırır ve hasarı artırır.}
+itmname_powder_pellet {Petard}
+itmdescr_powder_pellet {El havanından atılabilen bir petard. Patladığında parlak bir ışık saçar ve birden fazla hedefi sersemletebilir. Dost ateşi mümkündür.}
+itmname_grenade {Bomba}
+itmdescr_grenade {El havanından atılabilen bomba. Patladığında birden fazla hedefe yüksek hasar verebilir. Dost ateşi mümkündür.}
+itmname_harpoon {Ok Bolt}
+itmdescr_harpoon {Blunderbuss’tan atılabilen, zıpkından yapılmış kısa ve ağır demir ok. Ağırlığı ve güçlendirilmiş ucu, zırhlı düşmanlar için ölümcül olabilir.}
+itmname_GunPowder_colt {Dumansız Barut}
+itmdescr_GunPowder_colt {Daha hızlı ve temiz yanan geliştirilmiş barut. Colt tabanca fişeği üretiminde gereklidir.}
+itmname_shotgun_bullet {Kurşun Mermi}
+itmdescr_shotgun_bullet {Revolver fişekleri için mermi. Özel bir kalıpla dökülür.}
+itmname_shotgun_cartridge {Revolver Kartuşu}
+itmdescr_shotgun_cartridge {Su geçirmez pirinç kutuda bir barut ve bir mermi.}
+itmname_OxyHydSilver {Gümüş fulminat}
+itmdescr_OxyHydSilver {Gümüş fulminat. Çok hassas. Düşerse patlayabilir.}
+itmname_GunCap_colt {Vurmalı Kapak}
+itmdescr_GunCap_colt {Gümüş fulminatlı bakır kapsül. Colt tabancasının fişeklerini ateşlemek için gereklidir.}
+itmname_GunEchin {Çivili Şarapnel}
+itmdescr_GunEchin
+{
+Büyük kalibre kartuş topları için kaba doğranmış çiviler. İnsan vücudu ve namlular üzerinde yıkıcı etkiye sahiptir.
+Şekilleri sayesinde silahın saçılımını azaltır.
+}
+itmname_bullet_double {Çifte mermi doldurma}
+itmdescr_bullet_double {Barutun iki katı ve bir mermi, şans getirsin diye doğranmış bir doblonla birlikte. Namlu patlamasını önlemek için barut test cihazı gerekir.}
+itmname_grapeshot_double {Çifte saçma yükü}
+itmdescr_grapeshot_double
+{
+Artırılmış barut yükü ve şans için doğranmış dublonlu saçma. Etkinliği, kullanıldığı silaha bağlıdır.
+Barut test cihazı olmadan namlu patlama riski artar.
+}
+itmname_ArmoryPaper {Silah kağıdı}
+itmdescr_ArmoryPaper {Bu kağıt, kağıt tabanının parafinle emdirilmesiyle yapılır. Karayipler’de nadir ve pahalıdır, genellikle yiyecek sarmak için kullanılır; ancak ustaların elinde başka amaçlara da hizmet edebilir.}
+itmname_argbullet {Gümüş Mermi}
+itmdescr_argbullet {Yerel iki kılıç ustalarına göre, gümüş mermiler canavarlara, kaynanalara ve voodoo büyüsüyle diriltilmiş ölülere karşı son derece etkilidir.}
+itmname_Mineral1 {Bakır Sürahi}
+itmdescr_Mineral1 {Su veya şarap dökmek için çok kullanışlı bir sürahi.}
+itmname_Mineral2 {Kaplumbağa Kabuğu Tarak}
+itmdescr_Mineral2 {Gür saçlı kadın ve erkekler için pahalı ama vazgeçilmez bir bakım ürünü.}
+itmname_Mineral3 {Mum}
+itmdescr_Mineral3 {Bir mum.}
+itmname_Mineral4 {Herkül Böceği}
+itmdescr_Mineral4 {İnsanoğlunun bildiği en büyük böcek türünün kurutulmuş bir örneği (boyu 50 cm’ye kadar ulaşabilir). Herkül böcekleri, ağırlıklarına oranla dünyanın en güçlü canlılarıdır ve kendi ağırlıklarının 100 katından fazlasını taşıyabilirler.}
+itmname_Mineral5 {İkon Lambası}
+itmdescr_Mineral5 {Bronz ikon lamba, geceyi sevdiğin kitabı okuyarak geçirmene veya sabah kahveni demlemene olanak tanır.}
+itmname_Mineral6 {Ayna}
+itmdescr_Mineral6 {Küçük bir cep aynası. İçinde burnunun ucunu bile zor görürsün.}
+itmname_Mineral7 {Porselen Pipo}
+itmdescr_Mineral7 {Çinlilerden alınan tekniklerle yapılmış Hollanda işi. Ucuz kil pipolardan daha ince olduğu için yerel tütün tiryakileri arasında popüler.}
+itmname_Mineral8 {Ayakkabı}
+itmdescr_Mineral8 {Eşi olmayan bir ayakkabı. Kötü bir alamet.}
+itmname_Mineral9 {Eski Kupa}
+itmdescr_Mineral9 {Eskimiş, mat bir kalay kupa.}
+itmname_Mineral10 {Çakmaktaşı}
+itmdescr_Mineral10 {Çelikle çakılarak ateş yakmaya yarayan bir çakmaktaşı. 17. yüzyılın çakmağı.}
+itmname_Mineral11 {Gümüş Sürahi}
+itmdescr_Mineral11 {Güzel bir gümüş sürahi.}
+itmname_Mineral12 {Jaguar Pençesi}
+itmdescr_Mineral12 {Bir jaguarın koparılmış pençesinden yapılmış kolye. Orman savaşçıları arasında yaygın.}
+itmname_Mineral13 {Kırbaç}
+itmdescr_Mineral13 {Deri kayışlardan yapılmış bir kırbaç. Bir güverte subayının vazgeçilmez parçası. Ayrıca başıboş köpekleri uzaklaştırmak veya sana ters bakanı dövmek için de kullanılabilir.}
+itmname_Mineral14 {Vampir Kanadı}
+itmdescr_Mineral14 {Yerel kan emici Desmodus rotundus’un, yani vampir yarasanın kurutulmuş kanadı. Cadıların ve yerli şamanların bunu şeytani ayinlerinde kullandığı fısıldanır.}
+itmname_Mineral15 {Çakı}
+itmdescr_Mineral15 {Bir denizcinin vazgeçilmez yoldaşı.}
+itmname_Mineral16 {Biletaşı}
+itmdescr_Mineral16 {Bir bıçak bilemek için kullanılan bir miktar biletaşı.}
+itmname_Mineral17 {Boş Şişe}
+itmdescr_Mineral17 {Boş cam şişe.}
+itmname_Mineral18 {Tütün}
+itmdescr_Mineral18 {Bir kutu kurutulmuş pipo tütünü. Yeni Dünya kolonistlerinin Kızılderililerden aldığı, dönemin gözde alışkanlığı. 16. yüzyılda İspanyol doktor Nicolas Monardes, tütünün kabızlığı giderdiğini, kasları gevşettiğini ve vücudun gözeneklerini açtığını yazmıştır.}
+itmname_Mineral19 {Gümüş Kaşık}
+itmdescr_Mineral19 {Güzel bir gümüş kaşık, muhtemelen hizmetliler tarafından şık bir evden çalınmış.}
+itmname_Mineral20 {Tahta Kaşık}
+itmdescr_Mineral20 {Her denizcinin yemekte oturmadan önce bundan bir tane olması gerekir.}
+itmname_Mineral21 {Yazı Gereçleri}
+itmdescr_Mineral21 {Bir kaz tüyü ve mürekkep hokkası, iyi eğitimli birinin ayırt edici işaretleridir.}
+itmname_Mineral22 {İp}
+itmdescr_Mineral22 {İnce ip demeti.}
+itmname_Mineral23 {Çivi}
+itmdescr_Mineral23 {Bir demir çivi. Ayakkabıdan çatıya, gemiye kadar her şeyi tamir etmekte kullanılabilir.}
+itmname_Mineral24 {Kemer}
+itmdescr_Mineral24 {Sıradan bir deri kemer. Pantolonu tutar ve eşyaları taşımaya yarar.}
+itmname_Mineral25 {Güverte Subayı Düdüğü}
+itmdescr_Mineral25 {Kendine saygısı olan her güverte subayı, mürettebata komut vermek için bunları kullanır.}
+itmname_Mineral26 {Deste kart}
+itmdescr_Mineral26 {Yıpranmış bir iskambil destesi.}
+itmname_Mineral27 {Havan ve Tokmak}
+itmdescr_Mineral27 {[ERROR: APIConnectionError]}
+itmname_Mineral28 {Etil alkol}
+itmdescr_Mineral28 {Bazı çılgın simyacılar bu saf etil alkolü normal insanlar gibi içmek yerine gümüş fulminat hazırlamak için kullanır.}
+itmname_Mineral29 {Nitrik asit}
+itmdescr_Mineral29 {Nitrik asit 8. yüzyıldan beri biliniyor. Ateşe dayanıklı ve metal olmayan bir potanız varsa gümüş fulminat yapımında kullanılabilir. Son derece reaktiftir. Cildinize temas ettirmeyin ve Allah aşkına tadına bakmayın.}
+itmname_Mineral30 {Köle Kelepçesi}
+itmdescr_Mineral30 {Köle tacirlerinin mallarının kaçmasını önlemek için kullandığı el kelepçeleri.}
+itmname_Mineral31 {Büyülü Kemik}
+itmdescr_Mineral31 {Bakır halkalı bir insan parmak kemiği. Voodoo cadıları tarafından büyülerde kullanılır.}
+itmname_Mineral32 {Mermi Kalıbı}
+itmdescr_Mineral32 {Bu düzenek, Colt tabancası için doğru şekil ve boyutta mermi dökmenizi sağlar.}
+itmname_Mineral33 {Dövme Boyası}
+itmdescr_Mineral33 {Dövme boyası.}
+itmname_Mineral34 {Boş Şişe}
+itmdescr_Mineral34 {Dünyanın en temiz şişesi olmasa da hâlâ sıvı tutabilir.}
+itmname_Mineral35 {Lut}
+itmdescr_Mineral35 {Modern gitarın atası olan bir müzik aleti.}
+itmname_crab_pincers {Yengeç Kıskacı}
+itmdescr_crab_pincers {Dev bir düşman yengecin kıskacı.}
+itmname_crab_jaw {Yengeç Çenesi}
+itmdescr_crab_jaw {Zehirli bez içeren dev bir yengeç çenesi.}
+itmname_ShipyardsMap {Çizim}
+itmdescr_ShipyardsMap {#sShipName# için plan.}
+itmdescr_ShipyardsMap_PortmanLevelUp4 {En yeni teknik yenilikleri içeren bir gemi planı.}
+itmname_MayorsRing {Alyans}
+itmdescr_MayorsRing {#sCityName# valisinin alyansıdır. Bunu geri isteyecektir.}
+itmname_UsurersJew {Değerli taş}
+itmdescr_UsurersJew {#sCityName# tefecisinin muhteşem #sJevelType#}
+itmname_Key1 {Basit anahtar}
+itmdescr_Key1 {Basit bir kilidin anahtarı.}
+itmname_Key2 {Sıradan anahtar}
+itmdescr_Key2 {Orta karmaşıklıktaki sıradan kilitler için anahtar.}
+itmname_Key3 {Karmaşık anahtar}
+itmdescr_Key3 {Karmaşık kilitler için anahtar.}
+itmname_key_capper {'Tartarus'un Anahtarı}
+itmdescr_key_capper {'Tartarus' gemisindeki kapılar ve sandıklar için anahtar.}
+itmname_key_gun {Bronz anahtar}
+itmdescr_key_gun {Adolf Barbier’in üzerinde bulunan bir anahtar. Peki neyi açıyor?}
+itmname_keys_skel {Maymuncuk seti}
+itmdescr_keys_skel {Bu maymuncuk setiyle her türlü kilidi açabilirsin.}
+itmname_sant_anna_key {Süslü anahtar}
+itmdescr_sant_anna_key {Karmaşık dişlere sahip zarif bir anahtar. Bunu ancak Avrupalı bir usta yapmış olabilir. Şimdi buna uygun bir kilit bulalım!}
+itmname_key_betancur {Eski anahtar}
+itmdescr_key_betancur {Kararmış pirinç bir anahtar. Neyi açtığı belirsiz. Yine de bulunduğu yere bakılırsa, muhtemelen çok değerli bir şeyi açıyor.}
+itmname_key_mary {Mary Casper'ın anahtarı}
+itmdescr_key_mary {Fluyt 'Ceres Smithy'deki Mary'nin kamarasının anahtarı.}
+itmname_key_facio {Pirinç anahtar}
+itmdescr_key_facio {Giuseppe Fazio'nun Anahtarı.}
+itmdescr_key_facioQ {'Carolina' gemisindeki kapıyı ve Giuseppe Fazio'nun kamarasındaki sandıklardan birini açan anahtar.}
+itmname_key_levasser {Levasseur'un anahtarı}
+itmdescr_key_levasser {Francois Levasseur'un bedeninden alınan bir anahtar. Şimdi açtığı sandığı bulalım.}
+itmname_key_candlestick_LeFransua {Anahtar}
+itmdescr_key_candlestick_LeFransua {Eski, yıpranmış bir anahtar. Henüz neyi açtığı belli değil.}
+itmname_PortmansBook {Gemi günlüğü}
+itmdescr_PortmansBook {Dalgın bir kaptanın unuttuğu bir gemi günlüğü. Ona geri verilmesi gerekiyor.}
+itmname_CaptainBook {Gemi Belgeleri}
+itmdescr_CaptainBook {Dalgın bir kaptanın unuttuğu gemi belgeleri. Ona geri verilmeli.}
+itmname_bible {İncil}
+itmdescr_bible {Yerel dilde yazılmış, özenle ciltlenmiş ve basılmış Eski ve Yeni Ahit’in bir nüshası. Katolik Kilisesi, Reform sırasında Protestan çevirilerinin yaygınlaşmasına karşı koymak için 1500’lerin sonlarında yerel dillere çevirilere izin verdi.}
+itmname_ChurchGenQuest1Bible {Kilise el yazması}
+itmdescr_ChurchGenQuest1Bible {#sCity#'deki rahibe teslim edilecek önemli kilise el yazmaları.}
+itmname_ChurchGenQuest2Cup {Ayin Kadehi}
+itmdescr_ChurchGenQuest2Cup {#sCity#'deki rahibe teslim edilecek bir ayin kadehi. Kilise, kutsal kadehlerin Kutsal Sakrament için mutlaka altın ya da gümüşten yapılmasını şart koşar. Bu yüzden oldukça ağırdır.}
+itmname_MerdokArchive {John Murdock'un arşivi}
+itmdescr_MerdokArchive {Van Merden’in günlüğü, şifreyle kopyalanmış. Anlamsız harf ve rakam yığınından ibaret. Okuyabilmek için şifreyi bulmalısın.}
+itmname_MineArchive {Şifreli belge}
+itmdescr_MineArchive {Metin şifreli ve belge uzun süredir kullanılmamış. Belli ki bu, üst düzey bir Lig subayının kişisel güvencesi.}
+itmname_Cipher {Arşiv için şifre}
+itmdescr_Cipher {Bu şifreyle John Murdock'un arşivi okunabilir.}
+itmname_JacobJournal {Jacob van Berg'in Seyir Defteri}
+itmdescr_JacobJournal {Mirage'ın kaptanı Jacob van Berg'in seyir defteri.}
+itmname_FleetwoodJournal {Richard Fleetwood'un gemi günlüğü}
+itmdescr_FleetwoodJournal {Richard Fleetwood'un, 'Valkyrie' kaptanının seyir defteri.}
+itmname_ClementLebrunJournal {Clement Lebran'ın gemi günlüğü}
+itmdescr_ClementLebrunJournal {Tortuga’dan o gözü pek tipin gemi günlüğü. Bütün sayfalar tamamen koparılmış.}
+itmname_FernandoDeAlavidaJournal {Fernando de Alavida'nın seyir defteri}
+itmdescr_FernandoDeAlavidaJournal {Fernando de Alavida'nın seyir defteri.}
+itmname_FernandoDeAlavidaPismo {Buruşmuş mektup}
+itmdescr_FernandoDeAlavidaPismo
+{
+Öfkeyle buruşturulmuş ve kabinin uzak bir köşesine gelişigüzel fırlatılmış bir kağıt parçası. Mürekkep dağılmış, yalnızca son satırlar okunabiliyor:  
+'... yine de hazinelerin mahzende saklanmasını kesinlikle önermem. Son zamanlarda adada putperest mezar soyguncuları hakkında giderek artan söylentiler var ve efendinin mezarının tehlikeye gireceğinden korkuyorum.'
+}
+itmname_MC_Letter {Mühürlü mektup}
+itmdescr_MC_Letter {Abigail’in fidye şartlarını içeren, Richard Fleetwood’a yazılmış bir mektup.}
+itmdescr_MC_Letter1 {Richard Fleetwood'un cevabı.}
+itmdescr_MC_Letter2 {Fleetwood'dan Lucas Rodenburg'a bir mektup.}
+itmdescr_MC_Letter3 {Lucas Rodenburg’dan van Merden’a bir mektup.}
+itmname_NPC_Letter {Mühürlü mektup}
+itmdescr_NPC_Letter {Richard Fleetwood’dan Abigail’e bir mektup.}
+itmdescr_NPC_Letter1 {Richard Fleetwood'dan bir mesaj.}
+itmdescr_NPC_Letter2 {Hercule Tonzag'dan bir veda mektubu.}
+itmdescr_NPC_Letter3 {Bir adanın haritası ve üzerinde bir 'X' işaretiyle bir yeri gösteren bir zarf – sanırım bir mağara.}
+itmdescr_NPC_Letter4 {Lucas Rodenburg'dan Santiago bankacısına bir mektup.}
+itmname_DTSG_letter1 {Yarı yanmış bir mektup parçası}
+itmdescr_DTSG_letter1 {Yanık izlerine bakılırsa, mektup yakın zamanda ateşe verilmiş.}
+itmdescr_DTSG_letter2 {Charlie Knippel’in fiziksel görünümünü anlatan bir mektup.}
+itmname_Drugstore_keys {Eczane anahtarları}
+itmdescr_Drugstore_keys {Bu anahtarlar John Murdock'un evindeki tüm kapıları açar.}
+itmname_MaltieBase_keys {Zindan anahtarları}
+itmdescr_MaltieBase_keys {Bu anahtarlar, St. Pierre'deki Malta Şövalyeleri'nin yeraltı mahzenlerindeki hücreleri açar.}
+itmname_Finger {Kesilmiş parmak}
+itmdescr_Finger {Yüzüklü bir parmak. Fernando’nun öldüğünün kanıtı.}
+itmdescr_finger_rober {Yüzüklü bir parmak. Robert Martene'nin ölümünün kanıtı.}
+itmname_GastonHead {İnsan kafası}
+itmdescr_GastonHead {Kesik bir insan kafası. Dehşet verici bir eşya.}
+itmname_SkullAztec {Yeşim Kafatası}
+itmdescr_SkullAztec {Tek parça yeşimden oyulmuş, güzel ve gizemli bir antik eser.}
+itmname_suit_1 {Değerli giysi}
+itmdescr_suit_1 {Bizzat genel valinin verdiği resmi bir davete yakışacak kadar şık giysiler.}
+itmname_crowbar {Metal levye}
+itmdescr_crowbar {Kasalı, kafaları ya da yengeçleri açmak için kullanılabilen küçük bir levye. Üzerinde 'G.F.' işareti var.}
+itmname_bucher_ring {Kütük yüzük}
+itmdescr_bucher_ring {Kaptan Butcher'ın yüzüğü.}
+itmname_cask_whisky {İrlanda Viskisi Fıçısı}
+itmdescr_cask_whisky {Dublin Town’da damıtılmış, birkaç şişe seçkin 'Bushmills' İrlanda viskisi içeren ahşap bir sandık.}
+itmname_cask_gin {Cin Fıçısı}
+itmdescr_cask_gin {Avrupa'nın enfes cininden bir fıçı. Karayipler'de böyle bir içki yalnızca ayrıcalıklı azınlığa sunulur.}
+itmname_buben {Şamanın Tef'i}
+itmdescr_buben {Şamanlarının ruhlarla konuşmak için kullandığı bir Kızılderili tefi. En azından, sömürgecilere böyle anlatıyorlar...}
+itmname_smoking_tube {Tütün piposu}
+itmdescr_smoking_tube {Kuzey Amerika Ovası Kızılderililerine ait zarif bir tütün piposu. Buraya nasıl gelmiş olabilir?}
+itmname_chemistry {Lavoisier'nin Kimya El Kitabı}
+itmdescr_chemistry {'Traite Elementaire de Chimie' başlıklı, sıradan birinin anlayamayacağı notlar ve tanımlar içeren basılı bir kitap. Kitabın yazarı 'Monsieur Lavoisier' olarak belirtilmiş ve ön sayfasında 'Paris'te basıldı, MS 1789' yazıyor. Herhalde matbaa hatası olmalı.}
+itmname_shark_teeth {Köpekbalığı dişi}
+itmdescr_shark_teeth {S.D. baş harfleri oyulmuş büyük bir beyaz köpekbalığı dişi.}
+itmname_witches_hammer {'Malleus Maleficarum'}
+itmdescr_witches_hammer {Geç Orta Çağ’da Alman din adamları Heinrich Kramer ve Jacob Sprenger tarafından yazılan, İngilizcede 'Cadıların Çekici' olarak bilinen bir cadılık risalesi. Katolik Kilisesi tarafından güvenilmez bulunup kınanmasına rağmen, halk ve laik mahkemeler arasında oldukça popülerdir.}
+itmname_calendar_maya {Maya Takvimi}
+itmdescr_calendar_maya {Beş parçadan birleştirilmiş bir Maya takvimi.}
+itmname_splinter_js {Süslü parça}
+itmdescr_splinter_js {Jan Svenson’a ait, güzel bir Kızılderili motifli taş parçası.}
+itmname_splinter_nh {Süslü parça}
+itmdescr_splinter_nh {Nathaniel Hawk'a ait, güzel bir Kızılderili motifli taş parça.}
+itmname_splinter_mt {Süslü parça}
+itmdescr_splinter_mt {Marcus Tyrex’e ait, güzel bir Kızılderili motifli taş parça.}
+itmname_splinter_zm {Süslü parça}
+itmdescr_splinter_zm {Zachary Marlow'a ait, güzel bir Kızılderili motifli taş parçası.}
+itmname_splinter_jb {Süslü parça}
+itmdescr_splinter_jb {Jacques Barbazon’a ait, güzel bir Kızılderili motifli taş parça.}
+itmname_Almanac {Almanak}
+itmdescr_Almanac {Kalın bir cilt.}
+itmdescr_jinobook {Gino Guineily'ye ait almanak.}
+itmdescr_Almanac_FMQP {Luis Ortiz’in muhasebe defteri.}
+itmname_VerifyPaper {Mektup-i Hümayun}
+itmdescr_VerifyPaper {Mektup-i Hümayun.}
+itmdescr_VincentoPaper {Taşıyana Santiago İspanyol kolonisini serbestçe ziyaret etme hakkı verir. Engizitör Peder Vincento tarafından şahsen imzalanmıştır.}
+itmdescr_VincentoPaper_A {Taşıyana Santiago ve San Jose İspanyol kolonilerine serbestçe giriş hakkı tanır. Engizitör Baba Vincento tarafından şahsen imzalanmıştır.}
+itmname_skinmap {'İki Tezahür' Haritası}
+itmdescr_skinmap {Karayip Denizi'nin belirsiz hatlarına sahip tabaklanmış bir deri parçası.}
+itmname_arrowway {Pusula 'Yolun Oku'}
+itmdescr_arrowway {Bir gemi pusulası. İbre kuzey hariç her yeri göstererek deli gibi döner.}
+itmname_ArchyBook {Günlük}
+itmdescr_ArchyBook {Archibald Colhoun’un günlüğü. Okuması ilginç olabilir.}
+itmname_key_archy {Demir anahtar}
+itmdescr_key_archy {Archibald Colhoun’un anahtarı. Görünüşe göre bir sandığı açıyor.}
+itmdescr_key_mask {'Santa Quiteria' kaptanının iskeletinde bulunan bir anahtar. Görünüşe göre bir sandığı açıyor.}
+itmname_SQCapBook {Gemi günlüğü}
+itmdescr_SQCapBook {'Santa Quiteria' kaptanının seyir defteri. Okuması ilginç olabilir.}
+itmname_mark_map {Notlu harita}
+itmdescr_mark_map {Ksocheatem adasını aramak için kullanılan bir harita.}
+itmname_mask_false {Antik Kızılderili Maskesi}
+itmdescr_mask_false {Ksocheatem Adası’nda bulunan, uğursuz görünümlü eski bir Kızılderili maskesi.}
+itmname_mask_true {Kukulcan’ın Maskesi}
+itmdescr_mask_true {'Kanatlı Yılan' - Maya tanrısı Kukulcan'ın güçlü bir eseri.}
+itmname_stonekey {Taş anahtar}
+itmdescr_stonekey {Itza rahibi Kanek’in anahtarı.}
+itmname_Tablet_1 {Antik tablet}
+itmdescr_Tablet_1 {Gökyüzü tanrısı Itzamna'ya ait taş bir tablet.}
+itmname_Tablet_2 {Antik tablet}
+itmdescr_Tablet_2 {Kinich Ahaw’a, Maya güneş tanrısına ait taş tablet.}
+itmname_Tablet_3 {Antik tablet}
+itmdescr_Tablet_3 {Su ve yağmur tanrısı Maya Chaac’ın taş tableti.}
+itmname_Tablet_4 {Antik tablet}
+itmdescr_Tablet_4 {Ateş ve fırtına tanrısı Tohil’in taş tableti.}
+itmname_Tablet_5 {Antik tablet}
+itmdescr_Tablet_5 {Kauil, Maya savaş tanrısının taş tableti.}
+itmname_Tablet_6 {Antik tablet}
+itmdescr_Tablet_6 {Ek Chuah’ın, Maya ticaret tanrısının taş tableti.}
+itmname_alexs_chest {Çelik kutu}
+itmdescr_alexs_chest {Usta Alexus’un metal kutusu, güvenli şekilde kilitli.}
+itmname_treasure_note {Hazine notu}
+itmdescr_treasure_note {Bu not bir hazinenin içinde bulundu. Muhtemelen yazarı çoktan bu fani dünyadan göçmüş. İçeriği, gemi günlüğünün özel bölümüne dikkatlice kopyalanmalı.}
+itmname_PR_Letter {Birinin Bıraktığı Not}
+itmdescr_PR_Letter {Eski, yıpranmış bir kağıda yazılmış bir not. İçeriği açıkça meraklı gözler için değil.}
+itmname_quest_potion {Bitki kaynatması}
+itmdescr_quest_potion {Bu iksirin gerçek özelliklerini yalnızca onu hazırlayan bilir.}
+itmname_GS_letters {Paralı asker tarafından iletilen notlar}
+itmdescr_GS_letters {Liman yetkilisi tarafından yazılmış ipuçları. Her biri korsanlar tarafından saldırıya uğrayan müşterilerinin rotaları ve kalkış saatleri hakkında bilgiler içerir.}
+itmname_SM_necklace_Julie {Julie d'Armagnac'ın Kolyesi}
+itmdescr_SM_necklace_Julie {Julie’nin kalbine yakın bir mücevher. Zarif ve ince, adeta anılarını koruyor. Sırlar saklayabilen eşyalar varsa, bu kolye kesinlikle onlardan biri.}
+itmname_TBP_letter {Açılmış Mektup}
+itmdescr_TBP_letter {Beni şantajla tehdit edip cezasız kalacağını mı sandın? Yanıldın. Çok yakında cüretinin bedelini ağır ödeyeceksin. Ölümün uzun ve acılı olacak, seni kimse kurtaramayacak.}
+itmdescr_letter_open_Regata {Regata katılımcısına davet mektubu.}
+itmname_kaleuche_amulet1 {Tuhaf muska}
+itmdescr_kaleuche_amulet1 {Düzgün bir çakıl taşından yapılmış, gösterişli boyalı bir Kızılderili muskası.}
+itmname_kaleuche_amulet1_potion {Tuttuathapak’ın iksiri}
+itmdescr_kaleuche_amulet1_potion {Karayipli şaman Tuttuathapak’ın Manga Rosa’dan demlediği iksir. Kalıcı tepki hızı artışı ve Hafif silahlar yeteneğinde gelişme sağlar.}
+itmname_kaleuche_amulet2 {Kızılderili muska}
+itmdescr_kaleuche_amulet2 {Düzgün bir çakıl taşından yapılmış, gösterişli boyalı özgün bir Kızılderili muska.}
+itmdescr_kaleuche_amulet2_sword {Karib yerlilerinin şamanı Tuttuathapak tarafından büyülenmiş bir muska. Chavinavi tapınağını silahlarına karşı savunmasız kılar ve onların saldırılarına karşı koruma sağlar. Tüm silah becerilerini %25 artırır.}
+itmname_kaleuche_amulet2_potion {Tuttuathapak'ın iksiri}
+itmdescr_kaleuche_amulet2_potion {Karayipli şaman Tuttuathapak’ın Manga Rosa’dan demlediği iksir. Kalıcı dayanıklılık artışı sağlar ve Orta Silahlar becerisini geliştirir.}
+itmname_kaleuche_amulet3 {Kızılderili muska}
+itmdescr_kaleuche_amulet3 {Düzgün bir çakıldan yapılmış, gösterişli boyalı özgün bir Kızılderili muska.}
+itmdescr_kaleuche_amulet3_shield {Kariplerin şamanı Tuttuathapak tarafından büyülenmiş muska. Chavinavi tapınağını silahlarına karşı savunmasız kılar ve onların saldırılarına karşı koruma sağlar. Gelen hasarı %25 azaltır ve zehirlenmeyi engeller.}
+itmname_kaleuche_amulet3_potion {Tuttuathapak'ın iksiri}
+itmdescr_kaleuche_amulet31_potion {Karaipli şaman Tuttuathapak tarafından Manga Rosa'dan hazırlanmış iksir. Kalıcı güç artışı sağlar ve Ağır Silahlar yeteneğini geliştirir.}
+itmdescr_kaleuche_amulet32_potion {Karayipli şaman Tuttuathapak’ın Manga Rosa’dan demlediği iksir. Kalıcı sezgi artışı sağlar, tabanca ve tüfek becerisini geliştirir.}
+itmdescr_kaleuche_amulet33_potion {Karayipli şaman Tuttuathapak tarafından Manga Rosa'dan hazırlanmış iksir. Kalıcı olarak yetenek kazandırır ve gizlilik becerisini artırır.}
+itmdescr_kaleuche_amulet34_potion {Karayipli şaman Tuttuathapak’ın Manga Rosa’dan demlediği iksir. Kalıcı liderlik artışı sağlar ve karizmayı yükseltir.}
+itmdescr_kaleuche_amulet35_potion {Karayipli şaman Tuttuathapak’ın Manga Rosa’dan demlediği iksir. Kalıcı şans artışı ve başarı sağlar.}
+itmname_kaleuche_letter {Rulo not}
+itmdescr_kaleuche_letter
+{
+Alıcıyı bulmak için gece yarısı şehir kapılarından başlayıp ormandaki patikayı takip et.
+...üç gün sonra gemi Chetumal koyuna varacak. Yük gece iki filikaya aktarılacak. İkinci gemi ise boşaltmadan ancak bir gün sonra gelecek...
+}
+itmname_kaleuche_key {Çelik anahtar}
+itmdescr_kaleuche_key {Barbados deniz fenerindeki sandığın Reginald Jackson'a ait anahtarı.}
+itmdescr_kaleuche_key_crypt {Mezarlık mahzenindeki kapının anahtarı.}
+itmdescr_kaleuche_key_FMQT {Levasseur’un sandığının yedek anahtarı.}
+itmname_MerrimanBook {Metal kutu}
+itmdescr_MerrimanBook {Joachim Merriman’ın sığınağından metal kutu.}
+itmname_KhaelRoa_item {Jaguar Postu}
+itmdescr_KhaelRoa_item
+{
+Chavinavi reisinin muhteşem hediyesi – bizzat tanrı Yum Cimil tarafından büyülenmiş güzel bir jaguar postu.
+Ateşli silahlarla verilen hasarı 10 kat artırır. Etki 2 güne kadar sürer.
+}
+itmname_key_candlestick_PortRoyal {Anahtar}
+itmdescr_key_candlestick_PortRoyal {Eski, yıpranmış bir anahtar. Henüz neyi açtığı belli değil.}
+itmname_key_candlestick_FortFrance {Anahtar}
+itmdescr_key_candlestick_FortFrance {Eski, yıpranmış bir anahtar. Henüz neyi açtığı belli değil.}
+itmname_key_candlestick_Villemstad {Gizli Tarikat Yüzüğü}
+itmdescr_key_candlestick_Villemstad {Yakutlu büyük bir antika yüzük. Bana bir anahtar görevi görecek gibi duruyor.}
+itmname_LadyBeth_Book {Blackwood'un Günlüğü}
+itmdescr_LadyBeth_Book {Zavallı bir adamın düşünceleri.}
+itmname_LadyBeth_Map {Blackwood'un Haritası}
+itmdescr_LadyBeth_Map {En büyük define avcısının en değerli hazinesine giden yol.}
+itmname_BoxOfBalls {Gülle Kutusu}
+itmdescr_BoxOfBalls {Bu sandıkta sadece saman ve sekiz top mermisi var.}
+itmname_Tutorial_key {Anahtar}
+itmdescr_Tutorial_key {Demir anahtar.}
+itmname_Tutorial_journal {Kaptanın Günlüğü. Cilt IV.}
+itmdescr_Tutorial_journal {Kaptan "Ulysse"in günlüğünün dördüncü cildi. Henüz yeni başlandı, bu yüzden az sayıda kayıt var.}
+itmname_Suspicious_Potion {Şüpheli İksir}
+itmdescr_Suspicious_Potion {İşe yarasa iyi olur.}
+itmname_LFD_letter {Marisa Caldera için mektup}
+itmdescr_LFD_letter {Mürekkebin kararması ve kağıdın zamana yenik düşüp sararması, bu mektubun mektuplar arasında hatırı sayılır bir yaşa sahip olduğunu gösteriyor. İçeriği, mum mühür altında güvenle gizlenmiş. Bu tür mektuplar genellikle özel bir değere sahiptir. Alıcı, Porto Bello’dan Marisa Caldera adında biri.}
+itmname_OZ_book {Demircilik Kitabı}
+itmdescr_OZ_book {Sebastian’ın bir şekilde kart oyununda kaybettiği bilgi hazinesi. Çizimler ve notlarla dolu, ağır, eski bir kitap – her demirci için gerçek bir hazine.}
+itmname_OZ_letter {Not}
+itmdescr_OZ_letter {Gece yarısı mağarada buluşuyoruz. Eşyalarımızı alıp Galera Burnu’na gideceğiz. Oradan alınacağız ve sonunda bu sefil adadan ayrılacağız. Şu zavallı ahmaklardan çok daha büyük bir balığı temizlemek için sabırsızlanıyorum.}
+itmname_wolfreeks_book {Gemi günlüğü}
+itmdescr_wolfreeks_book {Wulfric Iogansen'in gemi günlüğü.}
+itmdescr_ignasio_book {Ignacio Marco'nun gemi günlüğü.}
+itmname_Bunch {Kesici silah demeti}
+itmdescr_Bunch {30 sıradan balta ve kılıçtan oluşan bir paket.}
+itmname_Dove {Haberci güvercin}
+itmdescr_Dove {Spike adında bir posta güvercini. Bu cesur kanatlı dost, Karayipler’in neresinde olursa olsun La Vega’ya geri döner.}
+itmname_key_scotland {Paslı anahtar}
+itmdescr_key_scotland {Uzun zaman önce ölmüş bir İskoç'un çürümüş iskeletinde bulunan eski anahtar.}
+itmname_key_ruins {Gümüş anahtar}
+itmdescr_key_ruins {Harap bir gümüş anahtar, harabelerde bulundu.}
+itmname_indian_poison {Taino halkının zehri}
+itmdescr_indian_poison
+{
+Gizli bitkiler ve zehirli kurbağa salgısından yapılan ölümcül bir zehir. En ufak bir çizik bile ölümcül olabilir ve panzehir işe yaramaz. Bu zehir, bıçak ve mermi yağı olarak kullanılabilir.
+Etkisi iki gün sürer.
+}
+itmname_mapEnrico {Camilla'nın haritası}
+itmdescr_mapEnrico {Yirmi yıl önce terk edilmiş bir İspanyol maden köyündeki hazinelere götürür.}
+itmname_Reserve_item_01 {Mühürlü mektup}
+itmdescr_Reserve_item_01 {Bu mektup Eclatant'ın kaptanına hitaben yazılmıştır.}
+itmdescr_Reserve_item_01_1 {Hollanda Batı Hindistan Şirketi direktörü Peter Stuyvesant’a, Şövalye Philippe de Poincy’den bir mektup}
+itmdescr_Reserve_item_01_2 {Hollanda Batı Hindistan Şirketi direktörü Peter Stuyvesant’a, Şövalye Philippe de Poincy’den bir mektup}
+itmdescr_Reserve_item_01_3 {Jamaika valisi Albay Edward Doily'ye, Şövalye Philippe de Poincy'den bir mektup}
+itmname_Reserve_item_01_1 {Kalın muhasebe defteri}
+itmdescr_Reserve_item_01_4 {Hesap defteri.}
+itmname_blackpearl {Siyah inci}
+itmdescr_blackpearl {Efsanevi siyah inci. Bir gemiye ad vermek için harika olurdu.}
+itmname_islamona_toolbox {Alet kutusu}
+itmdescr_islamona_toolbox {Avrupa yapımı, gemi ve ev inşasında kullanılan üst sınıf aletler.}
+itmname_Memento_Book {Grim'in Günlüğü}
+itmdescr_Memento_Book {Üç perdede bir trajedi}
+itmname_Memento_letter {Memento Mektubu}
+itmdescr_Memento_letter {Memento Mektubu}
+itmname_LEDR_Book {Diego Velázquez de Cuéllar'ın Günlüğü}
+itmdescr_LEDR_Book {İspanyol fatihi ve Küba'nın ilk valisi Diego Velázquez de Cuéllar'ın günlüğü.}
+itmtype_gun {Ateşli silah}
+itmtype_blade {Kesici silah}
+itmtype_spyglass {Dürbün}
+itmtype_patent {Patent}
+itmtype_cirass {Zırh}
+itmtype_maps {Harita}
+itmtype_tool {Alet}
+itmtype_talisman {Muska}
+itmtype_slot {Muska}
+itmtype_special {Özel}
+itmtype_ammo {Mühimmat}
+itmtype_lantern {Alet}
+itmtype_hat {Şapka}
+itmtype_musket {Ateşli silah}
+itmname_LEDR_key {Demir Anahtar}
+itmdescr_LEDR_key {Piskoposun kalıntılarında bulunan bir anahtar. Gonsalo’ya göre, ondan hiç ayrılmazmış. Demek ki bir meraklı denizcinin gizli eşyalarını bulmasından korkuyordu — yoksa anahtarı neden yanında taşısın?}
+itmname_recipe_potion1 {Şifa İksiri Tarifi}
+itmdescr_recipe_potion1 {Şifa iksiri hazırlamak için gereken tüm talimatları içeren bir tarif.}
+itmname_blade_WR {Yeniden Doğan}
+itmdescr_blade_WR
+{
+Rupert Northwood’un Muhteşem Kılıcı.
+Altın bir anka kuşuyla süslü devasa kabza, acının ve yeniden doğuşun tanığıdır. Ayna gibi parlayan namlunun sırtında şu yazılı: VULNERATUS NON VICTUS — “Yaralı ama yenilmedi.” Bu kılıcın kaç can aldığını yalnız Tanrı bilir...
+}
+itmname_hat11 {Theresa’nın Şapkası}
+itmdescr_hat11 {Mary’nin annesinin başlığı, Aurélie Bertin tarafından korunmuş. Yaşına rağmen eski zarafetini ve çekiciliğini hâlâ koruyor.}
+itmname_talisman21 {Kaçakçının Tılsımı}
+itmdescr_talisman21 {Bir tutam ot ve kül, koyu renkli bir şişe ve kafatası madalyonu—yabancılar için tuhaf bir set, ama gölge ticaretini bilenler için değerli bir tılsım. Böyle bir tılsımı yalnızca gerçek kaçakçılar taşır.}
+itmname_blade_WR_1 {Yeniden Doğan}
+itmdescr_blade_WR_1
+{
+Rupert Northwood’un Muhteşem Kılıcı. 
+Altın bir anka kuşuyla süslü devasa kabza, acının ve yeniden doğuşun tanığıdır. Ayna gibi parlayan namlunun kanalında şu yazılıdır: VULNERATUS NON VICTUS — “Yaralı ama yenilmedi.” Bu kılıcın kaç can aldığını yalnızca Tanrı bilir...
+}
+itmname_piratesJournal_1 {Korsan Günlüğü}
+itmdescr_piratesJournal_1 {Ucuz malzemelerden yapılmış, yıpranmış bir belge; birçok elden geçtiği belli. Baskınlar ve kaçakçılıkla ilgili kayıtlar içerir.}
+itmname_piratesJournal_2 {Korsan Günlüğü}
+itmdescr_piratesJournal_2 {Haşlanmış deriyle ciltlenmiş bir korsan gemisi günlüğü. İçinde, tüccar kervanlarına yapılan baskınlar ve açık denizdeki zorbalıklar düzgün bir el yazısıyla kaydedilmiş.}
+itmname_piratesJournal_3 {Korsan Yasası}
+itmdescr_piratesJournal_3 {Deri ve metal kaplı kalın bir gemi belgesi. Kabartmalı ve değerli taşlarla süslü kapağı servet değerinde. İçinde ise bir macera romanına yakışır kayıtlar var: kolonilere baskınlar, kraliyet konvoylarının yağmalanması, büyük deniz savaşları.}
+itmname_pistol15 {Sunum Tabancası}
+itmdescr_pistol15 {Onurlu Hollanda Batı Hint Şirketi’ndeki beş yıl hizmeti anısına On Yediler Konseyi tarafından özel olarak hediye edildi.}
+itmname_VD_Contract {Van Doorn'un Kontratı}
+itmdescr_VD_Contract {Donanma Sicil Müdürü’nün orijinal sözleşmesi. Yedi yıl önce süresi dolmuş. Bu kadar önemli bir belgenin gelişinizden hemen önce masada bırakılmış olması şüpheli.}
+itmname_BookSp4 {Tuhaf Kitap}
+itmdescr_BookSp4 {Bu kitap, yalnızca kapak rengiyle değil, ağırlığıyla da diğerlerinden ayrılıyor.}
+itmname_Doc1Sp4 {Brezilya İşleri Raporu}
+itmdescr_Doc1Sp4 { }
+itmname_Doc2Sp4 {Antigua'dan Mektup}
+itmdescr_Doc2Sp4 { }
+itmname_VD_key {Van Doorn Anahtarı}
+itmdescr_VD_key {Donanma Sicil Dairesi'nde bodrumu açar.}
+itmname_CatharinaLetter {Catharina'dan Mektup}
+itmdescr_CatharinaLetter {İnce kağıda yazılmış, hâlâ sevgi dolu, güzel bir kadının kokusunu taşıyan bir mektup. Haftalar önce getirilmiş, ama hiç okunmamış.}
+itmname_Visser_Key {Maarten Visser Anahtarı}
+itmdescr_Visser_Key {Maarten Visser’in, Kaptan Michael Rosenkraft’tan Donanma Siciline kaydetmek için rüşvet aldığının kanıtı.}

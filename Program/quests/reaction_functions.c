@@ -192,7 +192,7 @@ void MangarosaEffect(string sEff)
 		case "Total":
 		{
 			pchar.quest.(questAttr).function = "Mangarosa_DeleteEffect" + sEff;
-			SetChrModifier(pchar, M_SQUADRON_POWER, 0.15, "MangarosaTotal");
+			SetChrModifier(pchar, M_SQUADRON_POWER, 0.65, "MangarosaTotal");
 		}
 		break;
 		case "Fast":
@@ -998,6 +998,11 @@ void SetAnimationInDialog(ref character, string animation, bool atribute)
 void AutoSaveDelay(string qName)
 {
 	AutoSave();
+}
+
+void CameraSleep()
+{
+	locCameraSleep(true);
 }
 
 void Notification_Reputation(bool check, int number, string quality)

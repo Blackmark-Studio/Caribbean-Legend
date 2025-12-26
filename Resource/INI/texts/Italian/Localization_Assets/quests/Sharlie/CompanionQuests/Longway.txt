@@ -13,17 +13,17 @@ Longway_12 {Antoon}
 Longway_13 {van Diemen}
 Longway_14 {Joep}
 Longway_15 {van der Vink}
-Longway_16 {Ветте}
-Longway_17 {ван Хаан}
-Longway_18 {Люйтерс}
-Longway_19 {ван Хаан}
+Longway_16 {Vette}
+Longway_17 {van Haan}
+Longway_18 {Luiters}
+Longway_19 {van Haan}
 Longway_20 {Vitus}
 Longway_21 {Hengel}
 Longway_22 {Georges}
 Longway_23 {Gravel}
 Longway_24 {L'incontro è alle spalle@<NewStr()>le porte della città}
-Longway_25 {Гуго}
-Longway_26 {Марсо}
+Longway_25 {Hugo}
+Longway_26 {Marso}
 Longway_27 {Un giorno dopo...@<NewStr()>Di sera, fuori dalle porte della città.}
 Longway_28 {Mathieu}
 Longway_29 {Terugny}
@@ -44,8 +44,8 @@ Longway_43 {Longway è morto!!! Andiamo! Non abbiamo più motivo di stare qui!}
 Longway_44 {Annabel}
 Longway_45 {Latter}
 Longway_46 {Certe merci dalla Star sono state rapidamente trasferite nella nostra stiva}
-Longway_47 {Abramo}
-Longway_48 {Normanno}
+Longway_47 {Abraham}
+Longway_48 {Norman}
 Longway_49 {Mary}
 Longway_50 {Helen}
 Longway_51 {Rober}

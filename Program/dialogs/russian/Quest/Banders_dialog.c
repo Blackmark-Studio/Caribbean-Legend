@@ -251,7 +251,7 @@ void GetBandersTradeShore()//выберем остров для торгашей
 	pchar.questTemp.jailCanMove.Deliver.Island.Town = FindTownOnIsland(pchar.questTemp.jailCanMove.Deliver.Island);
 	if (pchar.questTemp.jailCanMove.Deliver.Island.Town == "" || pchar.questTemp.jailCanMove.Deliver.Island.Town == "Caiman" || pchar.questTemp.jailCanMove.Deliver.Island.Town == "Terks" || pchar.questTemp.jailCanMove.Deliver.Island.Town == "Dominica")
 	{
-		pchar.questTemp.jailCanMove.Deliver.Island.Areal = GetConvertStr(pchar.questTemp.jailCanMove.Deliver.Island, "LocLables.txt") + "");
+		pchar.questTemp.jailCanMove.Deliver.Island.Areal = GetIslandNameByID(pchar.questTemp.jailCanMove.Deliver.Island);
 	}
 	else
 	{
@@ -261,7 +261,7 @@ void GetBandersTradeShore()//выберем остров для торгашей
 
 void GetBandersTradeGoods()//выберем товар для торгашей
 {
-	switch (rand(6))
+	switch (rand(5))
 	{
 		case 0:
 			pchar.questTemp.jailCanMove.Deliver.Goods = GOOD_EBONY;
@@ -291,11 +291,6 @@ void GetBandersTradeGoods()//выберем товар для торгашей
 		case 5:
 			pchar.questTemp.jailCanMove.Deliver.Goods = GOOD_FOOD;
 			pchar.questTemp.jailCanMove.Deliver.add = "провианта";
-		break;
-		
-		case 6:
-			pchar.questTemp.jailCanMove.Deliver.Goods = GOOD_WEAPON;
-			pchar.questTemp.jailCanMove.Deliver.add = "оружия";
 		break;
 	}
 }

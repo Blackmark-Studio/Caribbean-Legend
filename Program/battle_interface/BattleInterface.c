@@ -782,7 +782,7 @@ void BI_LaunchCommand()
 			{
 				if (GetRelation(sti(pchar.index), targetNum) == RELATION_ENEMY && !CheckAttribute(&Characters[targetNum], "CanBeSailTo"))
 				{
-                  	if (sti(Characters[targetNum].Fort.Mode) == FORT_NORMAL)
+					if (sti(Characters[targetNum].Fort.Mode) == FORT_NORMAL || sti(Characters[targetNum].Fort.Mode) == FORT_HOLD_FIRE)
 					{
 						bOk = false;
 					}
@@ -1121,7 +1121,7 @@ void BI_SetPossibleCommands()
 		//BattleInterface.Commands.CCommand.enable		= GetCompanionQuantity(pchar)>1;
 		//BattleInterface.Commands.Ability.enable			= true;
 		//  проверка на 7 класс
-		if (sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE) // pchar.Ship.Type != SHIP_NOTUSED
+		if (!IsSmallShip(sti(RealShips[sti(pchar.Ship.Type)].BaseType))) // pchar.Ship.Type != SHIP_NOTUSED
         {
             BattleInterface.Commands.Cabin.enable		= true;
         }
@@ -2987,20 +2987,21 @@ ref procGetSmallFlagData()
 	int chrIdx = GetEventData();
 	BI_intNRetValue[0] = 3;
 	BI_intNRetValue[1] = 0;
-	if( chrIdx >= 0 ) {
+	if (chrIdx >= 0)
+    {
 		int iNation = sti(Characters[chrIdx].nation);
-		switch( iNation )
+		switch (iNation)
 		{
-		case ENGLAND: BI_intNRetValue[1]=3; break;
-		case FRANCE: BI_intNRetValue[1]=2; break;
-		case SPAIN: BI_intNRetValue[1]=0; break;
-		case HOLLAND: BI_intNRetValue[1]=4; break;
-		case PIRATE: BI_intNRetValue[1]=5; break;
-		//case SMUGGLER: BI_intNRetValue[1]=1; break;
+            case ENGLAND: BI_intNRetValue[1] = 3; break;
+            case FRANCE:  BI_intNRetValue[1] = 2; break;
+            case SPAIN:   BI_intNRetValue[1] = 0; break;
+            case HOLLAND: BI_intNRetValue[1] = 4; break;
+            case PIRATE:  BI_intNRetValue[1] = 5; break;
+            //case SMUGGLER: BI_intNRetValue[1]=1; break;
 		}
 
 		BI_intNRetValue[2] = 7;
-		switch( SeaAI_GetRelation(chrIdx,nMainCharacterIndex) )
+		switch (SeaAI_GetRelation(chrIdx, nMainCharacterIndex))
 		{
 			case RELATION_FRIEND:	BI_intNRetValue[2] = 7; break;
 			case RELATION_NEUTRAL:	BI_intNRetValue[2] = 7; break;
@@ -3429,7 +3430,7 @@ void BI_ProcessControlPress()
 		break;
 		
 		case "hk_Cabin":
-			if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE && !bSeaReloadStarted) // pchar.Ship.Type != SHIP_NOTUSED
+			if(!IsSmallShip(sti(RealShips[sti(pchar.Ship.Type)].BaseType)) && !bSeaReloadStarted) // pchar.Ship.Type != SHIP_NOTUSED
 			{
 				Sea_CabinStartNow();
 			}
@@ -3613,14 +3614,12 @@ ref BI_GetLandData()
 		}
 	}*/
 
-	int g_LocLngFileID = LanguageOpenFile("LocLables.txt");
 	if( CheckAttribute(arLoc,"label") ) {
-		arLoc.labelLoc = LanguageConvertString(g_LocLngFileID,arLoc.label);
+		arLoc.labelLoc = GetLocatorName(arLoc);
 		if( arLoc.labelLoc == "" ) {
 			Trace("Warning! Language: string <"+arLoc.label+"> hav`t translation into file <LocLables.txt>");
 		}
 	}
-	LanguageCloseFile(g_LocLngFileID);
 
 	if( BI_intNRetValue[2]<0 || BI_intNRetValue[3]<0 )
 	{
@@ -3880,7 +3879,7 @@ void ControlsDesc()
 			sAttrDes = "Con"+numLine+"desc";
 			sAttrB = "Con"+numLine+"Back";
 			
-			if(!bGlobalTutor && sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE) // pchar.Ship.Type != SHIP_NOTUSED
+			if(!bGlobalTutor && !IsSmallShip(sti(RealShips[sti(pchar.Ship.Type)].BaseType))) // pchar.Ship.Type != SHIP_NOTUSED
 			{
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_Cabin");
 				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("hk_Cabin","ControlsNames.txt");

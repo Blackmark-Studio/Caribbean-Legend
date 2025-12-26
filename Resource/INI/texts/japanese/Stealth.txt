@@ -1,0 +1,13 @@
+license_violations_name {違反}
+license_violation_tooltip_body {同盟国または中立国の旗を掲げる船への攻撃、 民間人への加害、 海上略奪、 要塞への攻撃は違反とみなされる。}
+license_violation_1 {我々は契約条件に違反した。 これは無罰では済まない。}
+license_violation_2 {我々は契約に二度違反した。 まもなく許可証を失うだろう。}
+license_violation_3 {我々は契約に三度違反し、 交易許可証を失った。}
+license_state
+{
+期限切れ: $attr($context.humanExpireDate)
+~残り日数: $attr($context.humanDaysLeft)
+}
+flags_newFlagTaken {新しい旗を獲得した}
+flags_allFlagsCollected {国家のすべての旗を集めた}
+license_expired {交易許可証の有効期限が切れた}

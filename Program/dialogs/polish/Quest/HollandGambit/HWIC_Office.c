@@ -63,7 +63,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "HWIC_officer_1":
-			dialog.text = "Wtedy idź na górę do biura pana Rodenburga.";
+			dialog.text = "W takim razie idź na górę do biura pana Rodenburga.";
 			link.l1 = "Dzięki, już idę.";
 			link.l1.go = "HWIC_officer_exit";
 			// belamour legendary edition переехали по другому адресу
@@ -138,7 +138,7 @@ void ProcessDialogEvent()
 			}
 			if (ChangeCharacterHunterScore(Pchar, "holhunter", 0) > 12)
 			{
-				dialog.text = " Hm... coś mi w tobie nie pasuje… Oczywiście! Jesteś poszukiwany za zbrodnie przeciwko Holandii! Żołnierze, brać go!";
+				dialog.text = " Hm... coś mi w tobie nie pasuje... Oczywiście! Jesteś poszukiwany za zbrodnie przeciwko Holandii! Żołnierze, brać go!";
 				link.l1 = "Cholera!";
 				link.l1.go = "fight";
 				break;
@@ -315,7 +315,6 @@ void ProcessDialogEvent()
 		break;
 		
 		case "depeshe_licence":
-			if (CheckCharacterItem(pchar, "HolTradeLicence")) TakeNationLicence(HOLLAND);
 			GiveNationLicence(HOLLAND, 180);
 			dialog.text = "Dobrze. Oto twoja licencja na pół roku.";
 			link.l1 = "Dzięki! W takim razie weź depesze.";

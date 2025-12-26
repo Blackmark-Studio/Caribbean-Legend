@@ -1,0 +1,23 @@
+HelenDrinking_1 {Francois}
+HelenDrinking_2 {de Tavann}
+HelenDrinking_3 {Vit}
+HelenDrinking_4 {Needles}
+HelenDrinking_5 {Rainbow}
+HelenDrinking_6 {これは夢なのか？ みんなどこにいるんだ？}
+HelenDrinking_7 {ヤンに会って謝らないと。}
+HelenDrinking_8 {Amelia}
+HelenDrinking_9 { }
+HelenDrinking_10 {Dane}
+HelenDrinking_11 { }
+HelenDrinking_12 {Lucky}
+HelenDrinking_13 { }
+HelenDrinking_14 {家が二つあるなんて、 なんてやりきれない気持ちだろう。 メアリー……あんなことがあった後、 これから私たち三人はどうすればいいんだ？}
+HelenDrinking_15 { }
+HelenDrinking_16 { }
+HelenDrinking_17 {Richard}
+HelenDrinking_18 {Small}
+HelenDrinking_19 { }
+HelenDrinking_20 { }
+HelenDrinking_21 {アイアンウッドが船倉に運び込まれた！}
+HelenDrinking_22 {~ がスキル+1を獲得 ~}
+HelenDrinking_23 {~ がスキル+1を獲得 ~}

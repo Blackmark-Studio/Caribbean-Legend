@@ -29,7 +29,7 @@ float LAi_CalcUseEnergyForBlade(aref character, string actionType)
 		break;
 		case "hit_parry":  // boal fix эту энергию тратит не атакующий, а атакуемый в анимации fgt_hit_parry
 			energy = 20.0;
-			if (HasPerk(&character, "Exaustion") && HasLightWeapon(&character)) energy = PERK_VALUE_EXHAUSION;
+			if (HasPerk(&character, "Exhaustion") && HasLightWeapon(&character)) energy *= (1+PERK_VALUE_EXHAUSTION);
 			else if (CheckAttribute(character, "animal")) energy = 0.0;
 		break;
 		case "feintc":
@@ -115,7 +115,7 @@ void LAi_ApplyCharacterAttackDamage(ref attacker, ref enemy, string strikeType, 
 
 // Это можно было бы сделать модификаторами персонажей, но нужны уведомления
 // С появлением событий-на-персонаже можно будет убрать туда
-void ModifyBladeDamageByQuestSituations(ref attacker, ref enemy, float damageMtp)
+void ModifyBladeDamageByQuestSituations(ref attacker, ref enemy, ref damageMtp)
 {
 	// Jason: трехкратный урон дагой Коготь Вождя для нежити. Ставить атрибут .monster нужным НПС, если группа не monsters
 	bool bMonster = (CheckAttribute(enemy, "monster")) || (enemy.chr_ai.group == LAI_GROUP_MONSTERS);

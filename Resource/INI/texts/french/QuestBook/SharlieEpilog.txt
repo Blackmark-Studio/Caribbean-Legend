@@ -1,0 +1,63 @@
+#QUEST SharlieEpilog
+Épilogue
+#TEXT 1_1
+J’ai rendu visite à l’abbé Benoît, et il m’a appris que mon père craint que la maladie ne le gagne avant que nous nous revoyions. Dans sa lettre, il disait la même chose, mais omettait de préciser qu’il se sent de plus en plus faible chaque jour.
+J’ai dû prendre une décision difficile : lever l’ancre dès que possible.
+Cependant, compte tenu de ma situation actuelle, je ne peux pas simplement tout abandonner et retourner dans le Vieux Monde. D’abord, je dois prendre plusieurs décisions afin de quitter l’archipel l’esprit tranquille. L’abbé m’a promis son aide – grâce à lui, je pourrai transmettre les ordres nécessaires à ceux à qui ils sont destinés.
+Il m’a aussi conseillé de régler toutes les dettes, s’il y en a. Les prêteurs sur gages ont de longs bras – et il ne fait aucun doute que pour récupérer leur argent, ils n’épargneront rien.
+#TEXT 1_2
+J’ai rendu visite à l’abbé Benoît, et il m’a appris que mon père craint que la maladie ne le gagne avant que nous nous revoyions. Dans sa lettre, il disait la même chose, mais omettait de préciser qu’il se sent de plus en plus faible chaque jour.
+Malheureusement, partir pour le Vieux Monde maintenant ne semble pas possible – j’ai une série de choses importantes qui exigent une résolution immédiate. Le voyage aller‑retour peut prendre beaucoup de temps, et je suis sûr que mon père insistera pour que je reste au domaine au moins quelques mois. Cette perspective ne m’enchante guère.
+#TEXT 2
+L’abbé a raison – je ne peux plus retarder mon départ. Cependant, compte tenu de ma situation actuelle, je ne peux pas simplement tout abandonner et retourner dans le Vieux Monde. D’abord, je dois prendre plusieurs décisions afin de quitter l’archipel l’esprit tranquille. Lui‑même m’a promis son aide – grâce à lui, je pourrai transmettre les ordres nécessaires à ceux à qui ils sont destinés.
+Il m’a aussi conseillé de régler toutes les dettes, s’il y en a. Les prêteurs sur gages ont de longs bras – et il ne fait aucun doute que pour récupérer leur argent, ils n’épargneront rien.
+#TEXT 3_1
+J’ai décidé de placer Isla Mona sous l’autorité de Sa Majesté. Ce n’est que de cette façon qu’on peut assurer leur sécurité. Les coursiers de l’abbé aviseront les deux parties de ma décision. J’espère que Rodgar trouvera la force de se soumettre à la civilisation qui approche.
+#TEXT 3_2
+J’ai décidé de laisser Isla Mona sous la surveillance de Jan Swenson. Je suis sûr qu’il pourra garantir à la fois la sécurité des habitants et le bon fonctionnement de la factorerie. Bien entendu, j’ai exigé une part des bénéfices – il serait fou de donner une part aussi alléchante gratuitement.
+#TEXT 4_1
+J’ai informé l’abbé de ma baronnie à Le François et décidé de l’abandonner, ce que j’ai annoncé à Marcus dans une lettre. Honnêtement, cela m’a légèrement soulagé l’âme. La piraterie est terminée. Même si certains de mes amis sont encore des pirates, moi‑même je ne veux plus y avoir affaire.
+#TEXT 4_2
+L’abbé n’aurait clairement pas approuvé ma baronnie à Le François, donc il n’a pas besoin de le savoir. Néanmoins, j’ai envoyé une lettre à Marcus avec ma décision de l’abandonner. Qui sait ce que les pirates pourraient faire dans l’archipel en mon absence, se couvrant de mon nom. Qui prendra ma place ne m’intéresse guère.
+#TEXT 5_1
+Après mûre réflexion, j’ai décidé de renoncer à mon brevet de France. Je ne voudrais pas porter cette charge avant de rencontrer mon père… et, à vrai dire, j’ai presque oublié ce que c’est que de vivre sans combats constants. J’espère que les prochains mois ne me sembleront pas insupportablement ennuyeux.
+#TEXT 5_2
+Après une brève réflexion, j’ai décidé de rester au service de la France et de Sa Majesté. J’ai informé la chancellerie de Capsterville de mon prochain départ pour le Vieux Monde, bien que, à vrai dire, j’espère ne pas y rester longtemps. La vie loin du navire et des combats m’est devenue… étrangère. Mais j’aurai amplement le temps, pendant le voyage, de m’écouter.
+#TEXT 6
+J’ai décidé d’emporter @<sSum> pesos avec moi. Je pense qu’en transporter davantage serait imprudent – en chemin, avec le navire, n’importe quoi pourrait arriver. Je me suis assuré que cet argent soit “propre” : en échange d’un don de @<tSum> pesos, l’abbé lui a donné sa bénédiction. Devant mon père, il est propre – et c’est tout ce dont j’ai besoin.
+#TEXT 7
+J’ai décidé d’informer Jan Swenson de ma décision de partir pour le Vieux Monde. Après tout ce que nous avons vécu ensemble, je ne pouvais pas le laisser dans l’ignorance.
+#TEXT 8
+Si j’avais eu plus de temps, j’aurais annoncé mon départ à Nathan et Danielle Houk en personne. Après tout, ils sont devenus presque une famille pour moi. Mais hélas, il n’y a tout simplement pas de temps maintenant. Je pense qu’une lettre adoucira un peu les conséquences de mon départ soudain.
+#TEXT 8_1
+J’ai informé Gino Guineyli que je quittais l’archipel pour une durée indéterminée. Tant que je ne peux pas l’aider financièrement, je lui ai permis de louer une partie de la maison pour subvenir à ses besoins et à ses expériences.
+#TEXT 9
+Eh bien, il semble que j’ai réglé toutes les affaires, et tout est prêt pour le départ. Il faut que je parle à l’abbé.
+#TEXT 10
+L’abbé m’a informé que le pinasse *Ulysse*, à bord duquel j’étais arrivé en ces terres à l’époque où je n’étais encore qu’un bon à rien frivole et la plaie de tout homme respectable, est désormais mis aux enchères. C’est amusant – le destin m’offre une chance de rentrer chez moi sur le même navire où tout a commencé. Diablement tentant. Je devrais sans doute me rendre à l’administration portuaire pour savoir quand la vente aura lieu.
+#TEXT 11_1
+Eh bien, ça alors ! Les enchères ont déjà eu lieu, et le vainqueur n’est autre que Jean Picard – celui-là même que j’avais autrefois sauvé d’une plantation près de Maracaibo. Il a décidé de tourner le dos à la piraterie et s’est lancé dans le commerce, achetant à cette occasion le fameux *Ulysse*. Encore plus curieux – sa route mène exactement là où je vais : Bordeaux.
+J’ai décidé qu’il me ferait du bien d’être simple passager pour une fois, et j’ai demandé à embarquer à ses côtés. Ce sera l’occasion de réfléchir… à la vie, à la maison, à la famille. Peut-être est-il enfin temps pour moi de poser l’ancre à terre.
+En parlant de famille – je n’ai toujours pas parlé à ma femme. J’aurais dû le faire plus tôt, mais comme toujours, j’étais trop occupé…
+Le départ est prévu dans deux semaines – Jean m’attendra à la taverne.
+#TEXT 11_2
+Eh bien, ça alors ! Les enchères ont déjà eu lieu, et le vainqueur n’est autre que Jean Picard – celui-là même que j’avais autrefois sauvé d’une plantation près de Maracaibo. Il a décidé de tourner le dos à la piraterie et s’est lancé dans le commerce, achetant à cette occasion le fameux *Ulysse*. Encore plus curieux – sa route mène exactement là où je vais : Bordeaux.
+J’ai décidé qu’il me ferait du bien d’être simple passager pour une fois, et j’ai demandé à embarquer à ses côtés. Ce sera l’occasion de réfléchir… à la vie, à la maison, à la famille. Peut-être est-il enfin temps pour moi de poser l’ancre à terre, trouver une épouse – ou, comme insiste mon père, envisager Yvonne La Brignée.
+Le départ est prévu dans deux semaines – Jean m’attendra à la taverne. En attendant, je dois parler aux officiers. Qui sait combien de temps ce voyage va durer… Il semble que le moment soit venu de dire adieu.
+#TEXT 11_3
+Je suis arrivé trop tard – les enchères ont déjà eu lieu, et le gagnant est quelqu’un nommé @<sName>. Il a catégoriquement refusé de vendre le pinasse, mais il se trouve que nous allons tous deux à Bordeaux. J’ai décidé qu’il me ferait du bien d’être simple passager pour une fois, et j’ai demandé à embarquer à ses côtés. Ce sera l’occasion de réfléchir… à la vie, à la maison, à la famille. Peut-être est-il enfin temps pour moi de poser l’ancre à terre.
+En parlant de famille – je n’ai toujours pas parlé à ma femme. J’aurais dû le faire plus tôt, mais comme toujours, j’étais trop occupé…
+#TEXT 11_4
+Je suis arrivé trop tard – les enchères ont déjà eu lieu, et le gagnant est quelqu’un nommé @<sName>. Il a catégoriquement refusé de vendre le pinasse, mais il se trouve que nous allons tous deux à Bordeaux. J’ai décidé qu’il me ferait du bien d’être simple passager pour une fois, et j’ai demandé à embarquer à ses côtés. Ce sera l’occasion de réfléchir… à la vie, à la maison, à la famille. Peut-être est-il enfin temps pour moi de poser l’ancre à terre, trouver une épouse – ou, comme insiste mon père, envisager Yvonne La Brignée.
+Le départ est prévu dans deux semaines – le capitaine m’attendra à la taverne. En attendant, je dois parler à Alonso et aux officiers. Qui sait combien de temps ce voyage va durer… Il semble que le moment soit venu de dire adieu.
+#TEXT 11_5
+Eh bien, ça alors ! Les enchères ont déjà eu lieu, et le vainqueur n’est autre que Jean Picard – celui que j’avais autrefois tenté de libérer d’une plantation près de Maracaibo. Il s’avère que ce filou n’a pas seulement survécu, mais a aussi mis la main sur toute la fortune de la veuve du planteur. Il a désormais décidé de tourner le dos à la piraterie et s’est lancé dans le commerce, achetant à cette occasion le fameux *Ulysse*. Encore plus curieux – sa route mène exactement là où je vais : Bordeaux.
+J’ai décidé qu’il me ferait du bien d’être simple passager pour une fois, et j’ai demandé à embarquer à ses côtés. Ce sera l’occasion de réfléchir… à la vie, à la maison, à la famille. Peut-être est-il enfin temps pour moi de poser l’ancre à terre.
+En parlant de famille – je n’ai toujours pas parlé à ma femme. J’aurais dû le faire plus tôt, mais comme toujours, j’étais trop occupé…
+Le départ est prévu dans deux semaines. Jean m’attendra à la taverne – nous avons convenu de faire un festin avant de partir.
+#TEXT 11_6
+Eh bien, ça alors ! Les enchères ont déjà eu lieu, et le vainqueur n’est autre que Jean Picard – celui que j’avais autrefois tenté de libérer d’une plantation près de Maracaibo. Il s’avère que ce filou n’a pas seulement survécu, mais a aussi mis la main sur toute la fortune de la veuve du planteur. Il a désormais décidé de tourner le dos à la piraterie et s’est lancé dans le commerce, achetant à cette occasion le fameux *Ulysse*. Encore plus curieux – sa route mène exactement là où je vais : Bordeaux.
+J’ai décidé qu’il me ferait du bien d’être simple passager pour une fois, et j’ai demandé à embarquer à ses côtés. Ce sera l’occasion de réfléchir… à la vie, à la maison, à la famille. Peut-être est-il enfin temps pour moi de poser l’ancre à terre, trouver une épouse – ou, comme insiste mon père, envisager Yvonne La Brignée.
+Le départ est prévu dans deux semaines. Jean m’attendra à la taverne – nous avons convenu de faire un festin avant de partir. En attendant, je dois parler aux officiers. Qui sait combien de temps ce voyage va durer… Il semble que le moment soit venu de dire adieu.
+#TEXT 12
+Il ne reste plus que le plus difficile : dissoudre l’équipage et les officiers. Dire adieu à certains d’entre eux sera particulièrement douloureux, compte tenu de tout ce que nous avons vécu ensemble… Je m’occuperai moi-même des officiers, et je laisserai Alonso parler à l’équipage.

@@ -1,0 +1,16 @@
+Portugal_1 {Bartolomeo}
+Portugal_2 {ポルトガル人}
+Portugal_3 {Piter}
+Portugal_4 {van Stahl}
+Portugal_5 {Leo}
+Portugal_6 {Cord}
+Portugal_7 {二日後@<NewStr()>敵船は見当たらなかった}
+Portugal_8 {Frants}
+Portugal_9 {Garke}
+Portugal_10 {Albatross}
+Portugal_11 {バート・ ザ・ ポルトガルがあなたの船を去りました！}
+Portugal_12 {Ernando}
+Portugal_13 {Vaskez}
+Portugal_14 {1時間が経過した…@<NewStr()>ポルトガル人は家の中へ運ばれた}
+Portugal_15 {2時間が過ぎた…}
+Portugal_16 {バート・ ザ・ ポルトガル人の財宝を発見した！}

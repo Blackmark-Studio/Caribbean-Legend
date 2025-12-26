@@ -65,14 +65,11 @@ void WorldSituationsUpdate()
 
 	switch(iStep)
 	{
-		case 0:		
-			DailyEatCrewUpdate();
-
-			Log_QuestInfo("WorldSituationsUpdate DailyEatCrewUpdate");
-
-			UpdateSeeds();
-
-			CheckCharactersUpdateItems();
+		case 0:
+            UpdateSeeds();
+            DailyEatCrewUpdate();
+            Log_QuestInfo("WorldSituationsUpdate DailyEatCrewUpdate");
+            CheckCharactersUpdateItems();
 
 			if (CheckAttribute(pchar, "questTemp.LSC")) 
 			{ //Jason: еженедельное обновление паролей кланов LSC и ежедневное вытирание
@@ -157,6 +154,18 @@ void WorldSituationsUpdate()
 			}
 			// Дикая Роза - без НИ
 			if (!CheckAttribute(pchar, "questTemp.WildRose_Start") && CheckAttributeEqualTo(pchar, "questTemp.Sharlie", "escape") && CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CharacterIsAlive("Mary") && ChangeCharacterNationReputation(pchar, ENGLAND, 0) >= 0 && !CheckAttribute(pchar, "questTemp.Tieyasal_final")) SetFunctionTimerCondition("WildRose_Start", 0, 0, 1, false);
+			// Эпилог - без НИ
+			if (!CheckAttribute(pchar, "questTemp.SharlieEpilog_Start"))
+			{
+				if (CheckAttributeEqualTo(pchar, "questTemp.LongHappy", "end"))
+				{
+					SetFunctionTimerCondition("SharlieEpilog_Start", 0, 0, 30, false); //есть жена
+				}
+				if (CheckAttribute(pchar, "questTemp.Tieyasal_final") && !CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && !CheckAttribute(pchar, "questTemp.LSC.Mary_officer"))
+				{
+					SetFunctionTimerCondition("SharlieEpilog_Start", 0, 0, 30, false); //нет жены
+				}
+			}
 			CheckAchievments();
 		break;
 		

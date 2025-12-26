@@ -2045,6 +2045,8 @@ bool LongHappy_QuestComplete(string sQuestName, string qname)
 		RefreshLandTime();
 		CloseQuestHeader("LongHappy");
 		pchar.questTemp.LongHappy = "end";
+		// Таймер на Эпилог
+		SetFunctionTimerCondition("SharlieEpilog_Start", 0, 0, 30, false);
 	}
 	//<-- блок празднования в таверне Сен-Пьер
 	else if (sQuestName == "LongHappy_IslaTesoroTavern") //
@@ -2550,6 +2552,8 @@ bool LongHappy_QuestComplete(string sQuestName, string qname)
 		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer")) sld.CompanionDisable = true; // fix 25-03-20 блок компаньона у Мэри
 		CloseQuestHeader("LongHappy");
 		pchar.questTemp.LongHappy = "end";
+		// Таймер на Эпилог
+		SetFunctionTimerCondition("SharlieEpilog_Start", 0, 0, 30, false);
 	}
 	else
 	{

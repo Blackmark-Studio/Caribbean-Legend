@@ -385,6 +385,7 @@ void Dolly_TeleportStart()
 		CreateLocationParticles("shadowstar", "item", "torch"+i, 1.15, 0, 0, "");
 	}
 	CreateLocationParticles("shadowstar", "camera", "dolly", 1.15, 0, 0, "");
+	SetCameraShake(8.0, 2.0, 4.0, 0.005, 0.003, true, false, -1);
 	DoQuestFunctionDelay("Dolly_TeleportContinue_1", 7.0);
 	if (sGlobalTemp == "dolly2") PlayStereoOGG("music_teleport");
 	else SetMusic("music_teleport");
@@ -420,6 +421,7 @@ void Dolly_TeleportContinue_1(string qName)
 		}
 	}
 	DoQuestFunctionDelay("Dolly_TeleportContinue_2", 7.0);
+	SetCameraShake(8.0, 5.0, 12.0, 0.015, 0.01, true, false, -1);
 }
 
 void Dolly_TeleportContinue_2(string qName)
@@ -444,10 +446,18 @@ void Dolly_TeleportContinue_2(string qName)
 		break;
 	}
 	DoQuestFunctionDelay("Dolly_TeleportContinue_3", 6.0);
+	SetCameraShake(14.0, 8.0, 25.0, 0.04, 0.03, true, false, CAM_EASING_CUBE);
 }
 
 void Dolly_TeleportContinue_3(string qName)
 {
+	ref tempchar = GetCharacter(NPC_GenerateCharacter("tempchar", "off_eng_2", "man", "man", 25, ENGLAND, 0, true, "quest"));
+	ChangeCharacterAddressGroup(tempchar, pchar.location, "reload", "reload1");
+	locCameraTarget(tempchar);
+	float x, y, z;
+	GetCharacterPos(PChar,&x,&y,&z);
+	locCameraFromToPos(stf(Camera.Pos.x), stf(Camera.Pos.y), stf(Camera.Pos.z), true, x, y, z);
+	
 	switch (sGlobalTemp)
 	{
 		case "dolly1": LAi_ActorGoToLocation(pchar, "item", "dolly1", "none", "", "", "", 1.0); break;
@@ -460,7 +470,7 @@ void Dolly_TeleportContinue_3(string qName)
 		break;
 	}
 	PlaySound("Ambient\Teno_inside\teleporter.wav");
-	DoQuestFunctionDelay("Dolly_TeleportContinue_4", 8.0);
+	DoQuestFunctionDelay("Dolly_TeleportContinue_4", 3.5);
 	if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal")) // 210812
 	{
 		// офицеры
@@ -1478,7 +1488,8 @@ void LSC_MaryLove() // провести ночь с Мэри в LSC
 	SetMusic("music_romantic");
 	SetLaunchFrameFormParam("", "", 0, 28);
 	SetLaunchFrameFormPic("loading\inside\censored1.tga");
-	PlayStereoSound("sex\sex"+(rand(9)+1)+".wav");
+	if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+	else PlayStereoSound("sex\sex" + (rand(14) + 1) + ".wav");
     LaunchFrameForm();
 	if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
 	{
@@ -1545,9 +1556,11 @@ void LSC_MaryLoveStart(string qName) // к функции выше
 	ChangeCharacterAddressGroup(sld, "CeresSmithy", "goto", "goto11");
 	ChangeCharacterAddressGroup(pchar, "CeresSmithy", "goto", "goto10"); // на обрыв эскейпом
 	LSC_MaryLoveWaitTime();
+	ResetSound();
 	SetLaunchFrameFormParam("", "", 0, 14);
 	SetLaunchFrameFormPic("loading\inside\censored1.tga");
-	PlayStereoSound("sex\sex"+(rand(9)+1)+".wav");
+	if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+	else PlayStereoSound("sex\sex" + (rand(14) + 1) + ".wav");
     LaunchFrameForm();
 	if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
 	{
@@ -5155,6 +5168,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 	{
 		float ftime = 1.5;
 		CreateLocationParticles("Ship_cannon_fire", "goto", "fire", 1.0, 40, 40, "cannon_fire_1");
+		SetCameraShake(1.0, 12.0, 0.1, 0.1, 0.05, true, false, -1);
 		sld = characterFromId("Svensons_off_1");
 		if (sld.quest.canonada == "1" || sld.quest.canonada == "2") ftime = 2.5;
 		DoQuestCheckDelay("Saga_Gunexplode_0" + sld.quest.canonada, ftime);
@@ -5290,6 +5304,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Saga_GunfireGrape") // выстрел
 	{
 		CreateLocationParticles("Bombard", "goto", "fire", 1.0, 90, 90, "cannon_fire_2");
+		SetCameraShake(1.0, 12.0, 0.1, 0.1, 0.05, true, false, -1);
 		CreateLocationParticles("blast_dirt", "goto", "fire", 1.0, 90, 90, "");
 		CreateLocationParticles("blast_dirt", "goto", "fire", 1.0, 90, 90, "");
 		DoQuestCheckDelay("Saga_Gunexplode_06", 0.5);
@@ -5315,6 +5330,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		if (iTotalTemp <= 10)
 		{
 			CreateLocationParticles("Ship_cannon_fire", "goto", "fire", 1.0, 90, 90, "cannon_fire_1");
+			SetCameraShake(1.0, 12.0, 0.1, 0.1, 0.05, true, false, -1);
 			DoQuestCheckDelay("Saga_GunAutoExplode", 2.5);
 			iTotalTemp++;
 		}
@@ -7412,9 +7428,11 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Saga_HelenaRomantic_3") // третий... теперь ГГ как честный человек обязан жениться
 	{
 		pchar.GenQuest.FrameLockEsc = true;
+		ResetSound();
 		SetLaunchFrameFormParam("", "", 0, 16);
 		SetLaunchFrameFormPic("loading\inside\censored1.tga");
-		PlayStereoSound("sex\sex7.wav");
+		if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+		else PlayStereoSound("sex\sex7.wav");
 		LaunchFrameForm();
 		DoQuestCheckDelay("Saga_HelenaRomantic_4", 16.0);
 		if (IsEquipCharacterByArtefact(pchar, "totem_03"))     
@@ -7616,10 +7634,12 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		sld.lifeday = 0;
 		ChangeCharacterAddressGroup(sld, PChar.location, "quest", "quest3");
 		sld.dialog.currentnode = "MarunFuckGirl_3";
-		
+
+		ResetSound();		
 		SetLaunchFrameFormParam("", "", 0, 15);
 		SetLaunchFrameFormPic("loading\inside\censored1.tga");
-		PlayStereoSound("sex\sex"+(rand(9)+1)+".wav");
+		if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+		else PlayStereoSound("sex\sex" + (rand(14) + 1) + ".wav");
 		LaunchFrameForm();
 		WaitDate("", 0, 0, 0, 3, 10); //крутим время
 		RecalculateJumpTable();

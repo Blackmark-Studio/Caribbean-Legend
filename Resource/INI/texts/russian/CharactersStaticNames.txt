@@ -145,6 +145,11 @@ d'Aubuisson {д'Обюссон}
 Alicia {Алисия}
 Chardon {Шардон}
 de Maldonado {де Мальдонадо}
+Jean {Жан}
+Picard {Пикар}
+Gustave {Гюстав}
+Gachet {Гаше}
+de Monper {де Монпе}
 Maarten {Маартен}
 Visser {Виссер}
 Hendrik {Хендрик}
@@ -158,3 +163,6 @@ Ferguson {Фергюсон}
 Willebrord {Виллеброрд}
 Snellius {Снеллиус}
 Stieltjes {Стилтьес}
+Moko {Моко}
+Bernard {Бернард}
+Throckmorton {Трокмортон}

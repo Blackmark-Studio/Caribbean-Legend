@@ -1,0 +1,22 @@
+colony_1 {Por falta de remédios para ferimentos,  @<iTemp>  marinheiros morreram}
+colony_2 {No navio  @<Pchar.Ship.Name>  restam poucos suprimentos médicos}
+colony_3 {Prepare-se para a Batalha na Cidade}
+colony_4 {ERRO: Rota de cerco da cidade não definida!!!}
+colony_5 {As forças inimigas foram suprimidas! O caminho está livre.}
+colony_6 {Você recebeu ~}
+colony_7 {Você recebeu ~}
+colony_8 {Você recebeu - Machado}
+colony_9 {Você recebeu - Saxon Feather}
+colony_10 {Você recebeu - Madonna}
+colony_11 {Chevalier Philippe}
+colony_12 {de Poincy}
+colony_13 {lord Thomas}
+colony_14 {Vindzor}
+colony_15 {don Juan}
+colony_16 {de Cordova}
+colony_17 {coronel}
+colony_18 {Jonathan Fox}
+colony_19 {Nossa cidade @<GetCityName(city)> está sob cerco!}
+colony_20 {Cerco encerrado!}
+colony_21 {Nossa cidade @<GetCityName(city)> está sob cerco!}
+colony_22 {Nossa cidade @<GetCityName(city)> foi capturada!}

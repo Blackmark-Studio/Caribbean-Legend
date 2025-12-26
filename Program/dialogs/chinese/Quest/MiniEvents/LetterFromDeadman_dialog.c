@@ -38,14 +38,14 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "船长? 呵呵……咳咳……我是安东尼奥·维伦塔。没错, 我是‘鹰号’上的人。我们的船吸引了你的注意吗, 船长? ";
+				dialog.text = "船长? 呵呵…… 咳咳…… 我是安东尼奥·维伦塔。没错, 我是‘鹰号’上的人。我们的船吸引了你的注意吗, 船长? ";
 			}
 			link.l1 = "船就是船。你最好赶紧上船, 别在镇上闲逛——你们船长已经气得冒烟了。他打算在退潮前离港, 俺敢打赌, 小子, 他可不会等你。";
 			link.l1.go = "Sailor_3";
 		break;
 		
 		case "Sailor_3":
-			dialog.text = "该死……我知道, 我知道……可我在这座城市还有些事没办完。想赚点杜布隆金币吗, 船长? ";
+			dialog.text = "该死…… 我知道, 我知道…… 可我在这座城市还有些事没办完。想赚点杜布隆金币吗, 船长? ";
 			link.l1 = "达布隆金币从不嫌多。不过, 赚金币是一回事, 惹麻烦又是另一回事。什么活儿? 快说吧。";
 			link.l1.go = "Sailor_4";
 		break;
@@ -57,7 +57,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sailor_5":
-			dialog.text = "这封信是写给来自波多贝罗的玛丽莎·卡尔德拉的。封口还用蜡封着……俺有种预感, 这事儿可不简单。也许是船长写的, 也许是商人写的……但绝对不是像俺这样的普通水手能收到的! 只是, 俺可没时间去找收信人——咱们的船长可不是爱开玩笑的人。你不想把它从俺手里买下吗? 一千比索就卖给你。你可是船长, 找这个小姐对你来说应该不难。谁知道呢, 说不定她会用黄金或者别的什么来报答你……你懂俺的意思吧? ";
+			dialog.text = "这封信是写给来自波多贝罗的玛丽莎·卡尔德拉的。封口还用蜡封着…… 俺有种预感, 这事儿可不简单。也许是船长写的, 也许是商人写的…… 但绝对不是像俺这样的普通水手能收到的! 只是, 俺可没时间去找收信人——咱们的船长可不是爱开玩笑的人。你不想把它从俺手里买下吗? 一千比索就卖给你。你可是船长, 找这个小姐对你来说应该不难。谁知道呢, 说不定她会用黄金或者别的什么来报答你…… 你懂俺的意思吧? ";
 			if (sti(pchar.Money) >= 1000)
 			{
 				link.l1 = "那好吧, 也许我会找到你的Marisa。反正我也没什么可失去的。 除了一千比索 把信交出来。";
@@ -105,7 +105,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Dolores_3":
-			dialog.text = "唉, 神父……他对所有人都太好了, 但很少看错人。你可以把信留给我。我会确保她能收到。";
+			dialog.text = "唉, 神父…… 他对所有人都太好了, 但很少看错人。你可以把信留给我。我会确保她能收到。";
 			link.l1 = "请原谅, 小姐, 但我更愿意亲自送去。她可能会问我是如何得到它的, 以及为什么花了这么久才送到。";
 			link.l1.go = "Dolores_4";
 		break;
@@ -133,7 +133,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_2":
-			dialog.text = "多洛雷斯……这是他的笔迹……拉米罗的笔迹! ";
+			dialog.text = "多洛雷斯…… 这是他的笔迹…… 拉米罗的笔迹! ";
 			link.l1 = "...";
 			link.l1.go = "Marisa_2_1";
 			CharacterTurnByChr(CharacterFromID("LFD_Marisa"), CharacterFromID("LFD_Dolores"));
@@ -157,14 +157,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_4":
-			dialog.text = "" + UpperFirst(GetAddress_Form(NPChar))+"船长……你是怎么得到它的? 你是在哪找到的? 我必须知道一切! 请把你知道的全部都告诉我。";
-			link.l1 = "这封信是一个水手交给我的。他在自己船舱的黑暗角落里发现了它, 本想亲自交给你, 但因急事不得不匆忙返回自己的船。所以他让我来找你, 我这不就来了。我知道的就这些……";
+			dialog.text = "" + UpperFirst(GetAddress_Form(NPChar))+"船长…… 你是怎么得到它的? 你是在哪找到的? 我必须知道一切! 请把你知道的全部都告诉我。";
+			link.l1 = "这封信是一个水手交给我的。他在自己船舱的黑暗角落里发现了它, 本想亲自交给你, 但因急事不得不匆忙返回自己的船。所以他让我来找你, 我这不就来了。我知道的就这些…… ";
 			link.l1.go = "Marisa_5";
 			CharacterTurnByChr(npchar, pchar);
 		break;
 		
 		case "Marisa_5":
-			dialog.text = "谢谢您, "+GetAddress_Form(NPChar)+"! 太感谢了! 请别走。我还想再和你聊聊, 不过首先……我得读这封信。";
+			dialog.text = "谢谢您, "+GetAddress_Form(NPChar)+"! 太感谢了! 请别走。我还想再和你聊聊, 不过首先…… 我得读这封信。";
 			link.l1 = "当然, Caldera女士。我会在这里。";
 			link.l1.go = "Marisa_6";
 		break;
@@ -177,7 +177,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_11":
-			dialog.text = "Dolores……他是在最后一次航行前写的这封信。他想告诉我, 他有机会从伯利兹的一位商人那里购买一大批黑檀木, 但他的钱不够。于是他才借了这笔钱……两百枚达布隆金币……也正因为如此, 我现在无法安宁。";
+			dialog.text = "Dolores…… 他是在最后一次航行前写的这封信。他想告诉我, 他有机会从伯利兹的一位商人那里购买一大批黑檀木, 但他的钱不够。于是他才借了这笔钱…… 两百枚达布隆金币…… 也正因为如此, 我现在无法安宁。";
 			link.l1 = "...";
 			link.l1.go = "Marisa_11_1";
 			CharacterTurnByChr(CharacterFromID("LFD_Marisa"), CharacterFromID("LFD_Dolores"));
@@ -188,7 +188,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_12":
-			dialog.text = "这就说得通了……但可惜, 这并不能减轻你的负担。坚强点, Marisa。黑暗不会永远持续, 这笔债也不会一直缠着你。";
+			dialog.text = "这就说得通了…… 但可惜, 这并不能减轻你的负担。坚强点, Marisa。黑暗不会永远持续, 这笔债也不会一直缠着你。";
 			link.l1 = "...";
 			link.l1.go = "Marisa_12_1";
 			CharacterTurnByChr(CharacterFromID("LFD_Marisa"), CharacterFromID("LFD_Dolores"));
@@ -199,7 +199,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_13":
-			dialog.text = "不, Dolores, 不会有的! Ramiro写信说他有一笔私藏……就在我们的老地方。如果还没人动过, 也许我能还清债务, 终于逃离这个噩梦。";
+			dialog.text = "不, Dolores, 不会有的! Ramiro写信说他有一笔私藏…… 就在我们的老地方。如果还没人动过, 也许我能还清债务, 终于逃离这个噩梦。";
 			link.l1 = "...";
 			link.l1.go = "Marisa_13_1";
 			CharacterTurnByChr(CharacterFromID("LFD_Marisa"), CharacterFromID("LFD_Dolores"));
@@ -210,7 +210,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_14":
-			dialog.text = "上主对你施予了仁慈! 祂听见了我们的祈祷……";
+			dialog.text = "上主对你施予了仁慈! 祂听见了我们的祈祷…… ";
 			link.l1 = "...";
 			link.l1.go = "Marisa_14_1";
 			CharacterTurnByChr(CharacterFromID("LFD_Marisa"), CharacterFromID("LFD_Dolores"));
@@ -221,7 +221,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_15":
-			dialog.text = "船长, 再次感谢您把这封信带给我。这对我意义重大……但我还得再请求您帮我一个忙。您看, 我的丈夫拉米罗曾是我的一切, 我从未寻求过其他男人的庇护。如今他离世, 我已无依无靠, 也没有自己的家人。\n我必须去到他的藏身之处——就在城外。但我太害怕独自前往, 亡夫的债主们正在追我。您能找到我并把信交给我, 已经表现得很有荣誉感……请, 再帮我一次吧。";
+			dialog.text = "船长, 再次感谢您把这封信带给我。这对我意义重大…… 但我还得再请求您帮我一个忙。您看, 我的丈夫拉米罗曾是我的一切, 我从未寻求过其他男人的庇护。如今他离世, 我已无依无靠, 也没有自己的家人。\n我必须去到他的藏身之处——就在城外。但我太害怕独自前往, 亡夫的债主们正在追我。您能找到我并把信交给我, 已经表现得很有荣誉感…… 请, 再帮我一次吧。";
 			link.l1 = "当然, Marisa, 我会护送你。你想什么时候出发? ";
 			link.l1.go = "Marisa_16";
 			link.l2 = "很抱歉, 女士, 但我在你们城市逗留的时间已经太长了。乡间散步并不在我的计划之内。";
@@ -230,7 +230,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_end_1":
-			dialog.text = "我明白了……你已经为我做的, 比我所期望的还要多。谢谢你, 船长, 祝你一路顺风。";
+			dialog.text = "我明白了…… 你已经为我做的, 比我所期望的还要多。谢谢你, 船长, 祝你一路顺风。";
 			link.l1 = "再见。";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LFD_Marisa_end");
@@ -248,11 +248,11 @@ void ProcessDialogEvent()
 			{
 				if (pchar.sex == "man")
 				{
-					dialog.text = "先生, 你来了……你真是个有荣誉感的人! 我们出发吧。我们的路要穿过丛林, 前往离蚊子湾不远的洞穴。";
+					dialog.text = "先生, 你来了…… 你真是个有荣誉感的人! 我们出发吧。我们的路要穿过丛林, 前往离蚊子湾不远的洞穴。";
 				}
 				else
 				{
-					dialog.text = "船长, 你来了……我就知道你会来。你知道吗, 这是我第一次见到一位指挥自己船只的女人。而且我已经看出来, 你无论荣誉还是高贵, 都丝毫不逊于任何男人! ";
+					dialog.text = "船长, 你来了…… 我就知道你会来。你知道吗, 这是我第一次见到一位指挥自己船只的女人。而且我已经看出来, 你无论荣誉还是高贵, 都丝毫不逊于任何男人! ";
 				}
 				link.l1 = "很好, 女士。那我们就别浪费时间了。紧跟着, 千万别走开。";
 				link.l1.go = "Marisa_go_cove";
@@ -278,7 +278,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_23":
-			dialog.text = "很遗憾你失去了亲人, "+pchar.name+"。主总是带走我们中最优秀的人……虽然我们未必总能明白原因, 但这都是祂的旨意。我们所能做的, 就是为他们不朽的灵魂安息祈祷。";
+			dialog.text = "很遗憾你失去了亲人, "+pchar.name+"。主总是带走我们中最优秀的人…… 虽然我们未必总能明白原因, 但这都是祂的旨意。我们所能做的, 就是为他们不朽的灵魂安息祈祷。";
 			link.l1 = "...";
 			link.l1.go = "Marisa_24";
 		break;
@@ -295,14 +295,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_31":
-			dialog.text = "我们到了……以前下雨的时候, Ramiro和我曾在这里避雨, 那时我们还年轻, 他还不是我的丈夫。就在那时, 他告诉我, 无论付出什么代价, 他都要赢得我的心。";
+			dialog.text = "我们到了…… 以前下雨的时候, Ramiro和我曾在这里避雨, 那时我们还年轻, 他还不是我的丈夫。就在那时, 他告诉我, 无论付出什么代价, 他都要赢得我的心。";
 			link.l1 = "很抱歉您得独自一人来到这里, 没有您的丈夫, 夫人。这种地方承载着许多回忆。我们四处看看吧——也许, 除了回忆之外, 还能找到拉米罗为最艰难时刻留下的东西。";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LFD_Marisa_4");
 		break;
 		
 		case "Marisa_32":
-			dialog.text = "" + GetSexPhrase("+pchar.lastname+","+pchar.name+")+"……你找到什么了吗? 那是拉米罗留下的吗? 我都不知道哪种情况更让我害怕——是空的, 还是不够还债……";
+			dialog.text = "" + GetSexPhrase("+pchar.lastname+","+pchar.name+")+"…… 你找到什么了吗? 那是拉米罗留下的吗? 我都不知道哪种情况更让我害怕——是空的, 还是不够还债…… ";
 			if (PCharDublonsTotal() >= 400 && GetCharacterItem(pchar, "jewelry2") >= 10 && GetCharacterItem(pchar, "jewelry3") >= 10 && CheckCharacterItem(PChar, "mushket1"))
 			{
 				link.l1 = "(shows) 给你, 这就是箱子里所有的东西。希望这些足以让你的命运变得更好。";
@@ -318,7 +318,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_33":
-			dialog.text = "啊, 船长! 当然! 这就足够了! 但我不能让您的帮助没有回报。拿上一百枚达布隆金币吧。如果不是您, 我根本不会知道这个藏匿点, 还会一直躲着拉米罗债主派来的人……";
+			dialog.text = "啊, 船长! 当然! 这就足够了! 但我不能让您的帮助没有回报。拿上一百枚达布隆金币吧。如果不是您, 我根本不会知道这个藏匿点, 还会一直躲着拉米罗债主派来的人…… ";
 			link.l1 = "您真慷慨, 女士, 谢谢您。在我们这行, 黄金从不浪费。";
 			link.l1.go = "Marisa_34";
 			link.l2 = "不, 女士。你比我更需要这笔钱。重要的是你现在可以抛开烦恼, 安稳生活。对我来说, 这就足够了。";
@@ -344,7 +344,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_35":
-			dialog.text = "船长, 请……我丈夫一直保留这把武器是为了保护我们的家, 我相信——在您手中, 它一定会用于正义之事。拉米罗若知道它交到了在我绝望时救了我的人手里, 他一定会感到欣慰。";
+			dialog.text = "船长, 请…… 我丈夫一直保留这把武器是为了保护我们的家, 我相信——在您手中, 它一定会用于正义之事。拉米罗若知道它交到了在我绝望时救了我的人手里, 他一定会感到欣慰。";
 			link.l1 = "好吧, Marisa, 谢谢你。你是个善良而正直的女人, 我真的很遗憾命运如此残酷地对待了你。";
 			link.l1.go = "Marisa_36";
 			ChangeCharacterComplexReputation(pchar, "nobility", 2);
@@ -376,7 +376,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_2":
-			dialog.text = "你……";
+			dialog.text = "你…… ";
 			link.l1 = "...";
 			link.l1.go = "Naemnik_2_1";
 			CharacterTurnByChr(CharacterFromID("LFD_Marisa"), CharacterFromID("LFD_Naemnik"));
@@ -455,7 +455,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_37":
-			dialog.text = "船长, 真的, 我不明白……这是什么意思? ";
+			dialog.text = "船长, 真的, 我不明白…… 这是什么意思? ";
 			link.l1 = "这意味着你现在不再欠债。你自由了。";
 			link.l1.go = "Marisa_38";
 			CharacterTurnByChr(npchar, pchar);
@@ -467,19 +467,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_38":
-			dialog.text = "但是……我现在还凑不齐全部的钱还你。如果你能再等等……";
+			dialog.text = "但是…… 我现在还凑不齐全部的钱还你。如果你能再等等…… ";
 			link.l1 = "你不明白, Marisa。你不欠我什么。你也不再欠任何人什么了。你找到的钱对你会很有用。回到你以前的生活吧——教堂在等着你。";
 			link.l1.go = "Marisa_39";
 		break;
 		
 		case "Marisa_39":
-			dialog.text = "我……我简直不敢相信。这样的事怎么可能发生, "+GetSexPhrase("先生","小姐")+"! 你为我花了那么多钱……就这么简单? 现在一切都结束了? 没有债务, 没有追捕? 告诉我, 这是真的吗? ";
+			dialog.text = "我…… 我简直不敢相信。这样的事怎么可能发生, "+GetSexPhrase("先生","小姐")+"! 你为我花了那么多钱…… 就这么简单? 现在一切都结束了? 没有债务, 没有追捕? 告诉我, 这是真的吗? ";
 			link.l1 = "的确如此, 女士。一切都结束了。你再也不欠任何人什么了。";
 			link.l1.go = "Marisa_40";
 		break;
 		
 		case "Marisa_40":
-			dialog.text = "哦, 船长, 您真是高尚! 我觉得您仿佛是上帝派来的! 可我都不知道该怎么感谢您。您……彻底改变了我的人生, 而我……我还能为您做些什么呢? ";
+			dialog.text = "哦, 船长, 您真是高尚! 我觉得您仿佛是上帝派来的! 可我都不知道该怎么感谢您。您…… 彻底改变了我的人生, 而我…… 我还能为您做些什么呢? ";
 			link.l1 = "你什么都不用做, Marisa。只要好好活着。不要害怕, 不要被过去的枷锁束缚。回到你的旧生活, 在其中寻找幸福——那才是对我最好的感谢。来吧, 我送你去镇上。";
 			link.l1.go = "Naemnik_mir";
 		break;
@@ -496,12 +496,12 @@ void ProcessDialogEvent()
 		
 		case "Marisa_41":
 			dialog.text = "你做了什么, 船长, 你把他杀了! ";
-			link.l1 = "没错, 女士。我必须保护你和你的名誉……";
+			link.l1 = "没错, 女士。我必须保护你和你的名誉…… ";
 			link.l1.go = "Marisa_42";
 		break;
 		
 		case "Marisa_42":
-			dialog.text = "哎呀, 船长, 哪怕是像他那样的人, 夺取一条性命也是极其可怕且沉重的罪孽! 你得日夜祈祷, 才能稍稍洗净你那不朽灵魂上的污点。以上帝为证, 我本可以把我所有的东西都给他, 他就会离开……可现在……现在他的鲜血沾在你的手上, 只有天国才能决定你是否能被宽恕! ";
+			dialog.text = "哎呀, 船长, 哪怕是像他那样的人, 夺取一条性命也是极其可怕且沉重的罪孽! 你得日夜祈祷, 才能稍稍洗净你那不朽灵魂上的污点。以上帝为证, 我本可以把我所有的东西都给他, 他就会离开…… 可现在…… 现在他的鲜血沾在你的手上, 只有天国才能决定你是否能被宽恕! ";
 			link.l1 = "也许这是上帝的旨意。但咱们别再纠结这个了, 还是赶紧离开这个洞穴吧。";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LFD_Naemnik_bitva_3");
@@ -514,7 +514,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_52":
-			dialog.text = "啊, "+GetAddress_Form(NPChar)+"……你对我真好。我真的很期待在我们的城镇再次见到你。不过现在, 请原谅我, 我迫不及待想整理好自己的生活, 并把这个好消息告诉多洛雷斯。";
+			dialog.text = "啊, "+GetAddress_Form(NPChar)+"…… 你对我真好。我真的很期待在我们的城镇再次见到你。不过现在, 请原谅我, 我迫不及待想整理好自己的生活, 并把这个好消息告诉多洛雷斯。";
 			link.l1 = "当然, Marisa。再见。保重。";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LFD_Marisa_In_Church");
@@ -541,7 +541,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_57":
-			dialog.text = "啊, 船长……您对我真好。不过现在, 请原谅, 我迫不及待想整理好自己的生活, 把这个好消息告诉多洛雷斯。";
+			dialog.text = "啊, 船长…… 您对我真好。不过现在, 请原谅, 我迫不及待想整理好自己的生活, 把这个好消息告诉多洛雷斯。";
 			link.l1 = "当然, Marisa。再见。保重自己。";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LFD_Marisa_In_Church");
@@ -563,7 +563,7 @@ void ProcessDialogEvent()
 					break;
 
 					case 1:
-						dialog.text = "船长, 又是你! 总是很高兴见到你。看来上主不让你忘记去教堂的路……也许你最终还是会抽空祈祷吧? ";
+						dialog.text = "船长, 又是你! 总是很高兴见到你。看来上主不让你忘记去教堂的路…… 也许你最终还是会抽空祈祷吧? ";
 						link.l1 = "Marisa, 见到你真好。但是我不能久留——我的事情刻不容缓。我相信主即使没有祷告也知晓我的心思。";
 						link.l1.go = "Marisa_63";
 					break;

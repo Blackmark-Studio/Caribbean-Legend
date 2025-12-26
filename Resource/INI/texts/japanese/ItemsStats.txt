@@ -1,0 +1,299 @@
+itm_stat_weight {重量}
+itm_stat_descr_weight {このアイテムの重さ（ ポンド） 。 重すぎる場合は捨てられます。}
+itm_stat_rat_poison {毒薬}
+itm_stat_descr_rat_poison {ネズミによる商品の劣化を防ぐ。}
+itm_stat_clock2 {便利な道具}
+itm_stat_descr_clock2 {装備中、 航海術の成長が早くなる。}
+itm_stat_duration {持続時間}
+itm_stat_descr_duration {このアイテムの効果時間}
+itm_stat_damageReduction {ダメージ軽減}
+itm_stat_descr_damageReduction {この割合は、 他の計算より前に受けるダメージから差し引かれます。}
+itm_stat_attack {ダメージ}
+itm_stat_descr_attack
+{
+斬撃：#sattack.fast.min#～#sattack.fast.max# ダメージ
+速攻：#sattack.force.min#～#sattack.force.max# ダメージ
+範囲攻撃：#sattack.round.min#～#sattack.round.max# ダメージ
+強攻撃：#sattack.break.min#～#sattack.break.max# ダメージ
+}
+itm_stat_gundamage {火器ダメージ}
+itm_stat_descr_gundamage {遠距離戦のダメージはスキル、 武器の特性、 弾薬によって決まります。}
+itm_stat_healAmount {回復}
+itm_stat_descr_healAmount {使用時に回復する体力量}
+itm_stat_worldMapBonus {観測範囲}
+itm_stat_descr_worldMapBonus {艦隊がワールドマップで視認できる範囲の半径に対するパーセンテージボーナス。}
+itm_stat_radius {航続距離}
+itm_stat_descr_radius {船や入り江間の高速移動距離が増加するヤード数。}
+itm_stat_mainEffect {メイン}
+itm_stat_secondaryEffect {サイド}
+itm_stat_hat9 {死せるもの}
+itm_stat_descr_hat9 {船体損傷による船力ペナルティを30%軽減}
+itm_stat_secondary_hat9 {死亡しない}
+itm_stat_descr_secondary_hat9 {10%の確率で銃撃のダメージを回避できる}
+itm_stat_durability {耐久度}
+itm_stat_hat1 {絶え間ない鍛錬}
+itm_stat_descr_hat1 {軽装武器・ 中装武器・ 重装武器の経験値獲得量が10%増加}
+itm_stat_hat2 {連続殺人鬼}
+itm_stat_descr_hat2 {近接武器で敵を倒すとエネルギーが25%回復する。}
+itm_stat_hat3 {航海術の基礎}
+itm_stat_descr_hat3 {航海術、 命中精度、 修理の経験値獲得量が10%増加する。}
+itm_stat_hat4 {海と生きる}
+itm_stat_descr_hat4 {全ての海洋スキルの獲得経験値が15%増加}
+itm_stat_hat5 {師匠}
+itm_stat_descr_hat5 {艦隊内の全ての船長にあなたの航海スキルを共有し、 旗艦以外の全艦で乗組員と士官の給与が15%減少する。}
+itm_stat_hat6 {利益感覚}
+itm_stat_descr_hat6 {3日に1度、 港に到着すると自動で小さな取引を行う。}
+itm_stat_hat7 {迷い弾}
+itm_stat_descr_hat7 {発射時に10%の確率で弾薬を消費しない}
+itm_stat_hat8 {ほろ酔い}
+itm_stat_descr_hat8 {ラム酒とワインは回復量が50%増加}
+itm_stat_hat10 {兵士の機転}
+itm_stat_descr_hat10 {この帽子がダメージを防ぐたびに、 耐久値が1減少する。}
+itm_stat_secondary_hat10 {リサイクル}
+itm_stat_descr_secondary_hat10 {破壊されると主要な素材が戻り、 再び作成できます。}
+itm_stat_hat11 {抱擁}
+itm_stat_descr_hat11
+{
+耐久力 +2
+近接武器で敵を倒すとエネルギーが25%回復する。
+}
+itm_stat_potion6 {不屈}
+itm_stat_descr_potion6 {この薬を飲むと戦闘中に気絶しなくなる。}
+itm_stat_berserker_potion {原初の激怒}
+itm_stat_descr_berserker_potion
+{
+瞬時に強大な力と耐久力を引き出し、 敏捷性と反応速度を大幅に高め、 痛みを鈍らせ、 攻撃性を増加させる。
+効果は最大12秒間で、1分に1回のみ使用可能。
+}
+itm_stat_mangarosafast {旋風}
+itm_stat_descr_mangarosafast {この薬を使うと全ての武器の攻撃速度が5%上昇する。}
+itm_stat_mangarosapower {イーグルアイ}
+itm_stat_descr_mangarosapower {この薬を飲むと大砲の再装填が速くなる。}
+itm_stat_mangarosatotal {高揚}
+itm_stat_descr_mangarosatotal {この薬を使うと艦隊力が15%上昇する。}
+itm_stat_vodka {乱戦}
+itm_stat_descr_vodka {火器での近接ダメージが20%増加し、銃剣ではさらに20%増加。 火器攻撃で敵のスタミナを奪う。 気絶時間を短縮。}
+itm_stat_amulet_1 {キチン}
+itm_stat_descr_amulet_1 {布製と革製は防御力が2倍になり、 強化防具はさらに敵のクリティカルダメージを10%軽減する。}
+itm_stat_amulet_10 {セカンドチャンス}
+itm_stat_descr_amulet_10 {敵の砲撃による自船の乗組員への被害が10%減少する。}
+itm_stat_amulet_11 {部族の防御}
+itm_stat_descr_amulet_11 {乗組員がマスケット銃の一斉射撃で受けるダメージが10%減少。}
+itm_stat_amulet_2 {隠れ家}
+itm_stat_descr_amulet_2 {このクリスチャンのアミュレットやタリスマン（ 本品含む） を装備するごとに、 受ける火器ダメージが5%減少する。}
+itm_stat_amulet_3 {防御}
+itm_stat_descr_amulet_3 {クリティカルダメージへの防御力が15%上昇。}
+itm_stat_amulet_4 {死の舞踏}
+itm_stat_descr_amulet_4 {この異教のアミュレットやお守りは、 これを含めて武器の攻撃速度を2.5%上昇させる。}
+itm_stat_amulet_5 {迅速}
+itm_stat_descr_amulet_5 {船の大砲のリロード時間が15%短縮される。}
+itm_stat_amulet_6 {手当て}
+itm_stat_descr_amulet_6 {治癒速度が15%上昇}
+itm_stat_amulet_7 {元気者}
+itm_stat_descr_amulet_7 {体力が15%増加し、パッシブ回復が2倍になる。}
+itm_stat_amulet_8 {要塞化}
+itm_stat_descr_amulet_8 {船体へのダメージを10%軽減}
+itm_stat_amulet_9 {パッチ}
+itm_stat_descr_amulet_9 {船の帆へのダメージを10%軽減する。}
+itm_stat_indian_1 {脆弱}
+itm_stat_descr_indian_1 {ヘッドショットのダメージが20%増加する。}
+itm_stat_indian_10 {毒}
+itm_stat_descr_indian_10 {斬撃ごとに15%の確率で敵を毒状態にする。}
+itm_stat_indian_11 {煙に巻く}
+itm_stat_descr_indian_11 {華麗なアイテムごとに欺きの確率が5%上昇する。}
+itm_stat_indian_2 {判定}
+itm_stat_descr_indian_2 {適切な火薬量を量る技術により、 弾丸と散弾のダメージが10%上昇し、 過装填と徹甲弾薬ではさらに5%上昇する。}
+itm_stat_indian_3 {血への渇望}
+itm_stat_descr_indian_3 {与ダメージのクリティカル倍率が15%上昇。}
+itm_stat_indian_4 {溜め}
+itm_stat_descr_indian_4 {重装武器は強攻撃で15%多くダメージを与える。}
+itm_stat_indian_5 {イコライザー}
+itm_stat_descr_indian_5 {乗員差による白兵戦への影響が30％減少する。}
+itm_stat_indian_6 {ふるい}
+itm_stat_descr_indian_6 {白兵戦前のマスケット一斉射撃による敵へのダメージが10%増加する。}
+itm_stat_indian_9 {狙え！}
+itm_stat_descr_indian_9 {船の移動速度と砲の照準が15%上昇する。}
+itm_stat_indian_8 {撃て！}
+itm_stat_descr_indian_8 {大砲のダメージが10%増加}
+itm_stat_obereg_1 {ハンマー…}
+itm_stat_descr_obereg_1 {海上や戦闘中の修理時、 板材と帆布の消費が15%減少。効果は重複する。}
+itm_stat_obereg_2 {…と釘}
+itm_stat_descr_obereg_2 {海上や戦闘中の修理時、 板材と帆布の消費量が15%減少。効果は累積。}
+itm_stat_indian_7 {集中}
+itm_stat_descr_indian_7 {エネルギーと回復速度が12%上昇する。}
+itm_stat_obereg_10 {スリ}
+itm_stat_descr_obereg_10 {船の機動性が15%上昇する。}
+itm_stat_obereg_11 {ボレアス}
+itm_stat_descr_obereg_11 {船首角を15%変化させ、 より風上に近い航行が可能になる。}
+itm_stat_obereg_3 {重量挙げ}
+itm_stat_descr_obereg_3 {所持重量が15%増加する}
+itm_stat_obereg_4 {インコグニート}
+itm_stat_descr_obereg_4 {キャラクターの隠密が#smodifiers.SkillSneak#上昇。}
+itm_stat_obereg_5 {お守り}
+itm_stat_descr_obereg_5 {キャラクターのオポチュニズムが#smodifiers.SkillFortune#増加する。}
+itm_stat_obereg_6 {説得}
+itm_stat_descr_obereg_6 {キャラクターのリーダーシップが#smodifiers.SkillLeadership#ポイント増加。}
+itm_stat_obereg_7 {海生まれ}
+itm_stat_descr_obereg_7 {キャラクターの航海術が #smodifiers.SkillSailing# 上昇する。}
+itm_stat_obereg_8 {利益}
+itm_stat_descr_obereg_8 {キャラクターの交易が#smodifiers.SkillCommerce#ポイント増加。}
+itm_stat_obereg_9 {風の神}
+itm_stat_descr_obereg_9 {船の速度が10%上昇する。}
+itm_stat_totem_01 {鉄の胃}
+itm_stat_descr_totem_01 {怪しい場所や騒がしい仲間といても酩酊による記憶喪失を防ぐ。 回復薬を使っても体力は減少しない。}
+itm_stat_totem_02 {オーバーロード}
+itm_stat_descr_totem_02 {奴隷反乱の発生率と損失を減少させ、 降伏時の捕虜数が増加する。}
+itm_stat_totem_03 {プレイヤー}
+itm_stat_descr_totem_03 {愛の悦びによる回復効果が2倍になる。}
+itm_stat_totem_04 {生まれながらのリーダー}
+itm_stat_descr_totem_04 {期間中、 士官の忠誠心が固定される。}
+itm_stat_totem_05 {無敵}
+itm_stat_descr_totem_05 {敵から受けるクリティカルダメージが$modifierPercent(CritIncomingDamageReduction)減少する。}
+itm_stat_totem_06 {荷馬}
+itm_stat_descr_totem_06 {所持重量超過でもキャラクターは遅くならず、 ペナルティも受けません。}
+itm_stat_totem_07 {召喚}
+itm_stat_descr_totem_07
+{
+新たな志願者が、 借金があっても安く雇える。
+主人公のみ使用可能。 酒場の新規募集人数が5%増加。
+}
+itm_stat_totem_08 {個人的関与}
+itm_stat_descr_totem_08 {狙い撃ちの艦砲ダメージが10%増加。}
+itm_stat_totem_09 {訓練警報}
+itm_stat_descr_totem_09 {乗組員の訓練速度が2倍になる。}
+itm_stat_totem_10 {タスマニアンデビル}
+itm_stat_descr_totem_10 {中装武器は範囲攻撃で15%多くダメージを与える。}
+itm_stat_totem_11 {吸血}
+itm_stat_descr_totem_11 {攻撃が敵のエネルギーを吸収する。}
+itm_stat_totem_12 {牙}
+itm_stat_descr_totem_12 {軽装武器は速攻で15%多くダメージを与える。}
+itm_stat_totem_13 {イカサマ師}
+itm_stat_descr_totem_13
+{
+必要なカードやサイコロの目を引く確率が大幅に上昇する。
+成功値+1。
+}
+itm_stat_knife_01 {秘密}
+itm_stat_descr_knife_01 {この短剣は強大な秘めた力を持つ。 胸にお守りとして身につければ、 死をも打ち破る。}
+itm_stat_knife_02 {守護者}
+itm_stat_descr_knife_02 {12%の確率で銃撃を回避。 効果は重複する。}
+itm_stat_knife_03 {強運の持ち主}
+itm_stat_descr_knife_03 {クリティカル発生率が3%、クリティカルダメージが10%上昇。}
+itm_stat_talisman1 {秩序}
+itm_stat_descr_talisman1 {商品がネズミに傷められるのを防ぐ。}
+itm_stat_talisman2 {凪}
+itm_stat_descr_talisman2 {嵐域への突入を回避、 または嵐中の帆と船体の損傷を軽減する。}
+itm_stat_talisman3 {水冷}
+itm_stat_descr_talisman3 {大砲の爆発を防ぐ。}
+itm_stat_talisman4 {独裁政権}
+itm_stat_descr_talisman4 {過積載時の乗組員士気低下を抑え、 乗組員の1日あたりのラム酒消費量を減らす。}
+itm_stat_talisman6 {謙虚}
+itm_stat_descr_talisman6 {船の食料消費量を4分の1減らす。}
+itm_stat_talisman7 {硬殻}
+itm_stat_descr_talisman7 {船の修理速度が2倍になり、資源を30％節約。帆と船体の損傷を5％軽減。}
+itm_stat_talisman8 {ミトリダート}
+itm_stat_descr_talisman8 {敵の武器による毒を防ぐ。}
+itm_stat_talisman9 {功績}
+itm_stat_descr_talisman9
+{
+フランス領植民地での水夫募集が+15%増加。
+フランスの売春宿に無料で入場でき、 統率力が+1される。
+}
+itm_stat_talisman10 {ポセイドン}
+itm_stat_descr_talisman10 {長時間水中で息を止められ、 熱湯から身を守る。}
+itm_stat_talisman11 {アンチストレス}
+itm_stat_descr_talisman11 {全ての個人スキルと船スキルが2ポイント上昇する。}
+itm_stat_talisman12 {免疫}
+itm_stat_descr_talisman12 {現在の体力値を固定する。}
+itm_stat_talisman13 {溜め込み}
+itm_stat_descr_talisman13 {不思議と重い物を運ぶ力が増す。}
+itm_stat_talisman14 {ビーコン}
+itm_stat_descr_talisman14 {航海術スキルが15ポイント上昇する。}
+itm_stat_talisman15 {恐れられた評判}
+itm_stat_descr_talisman15 {艦隊力が15%上昇する。 クロムウェルの鉄騎兵のスカーフから作られた。}
+itm_stat_talisman16 {ジャングルの戦士}
+itm_stat_descr_talisman16 {異国武器は与えるダメージが15%増加}
+itm_stat_talisman17 {信仰の盾}
+itm_stat_descr_talisman17 {乗組員へのダメージを$ctxHasAttr(QBonus.max|15|5) %軽減し、*Holy Mercy*乗船時は防御スキルが10上昇。 義人の道を完了するとダメージ軽減がさらに強化される。}
+itm_stat_talisman18 {真実の探求}
+itm_stat_descr_talisman18 {発見した財宝ごとに、 乗組員のマスケット一斉射撃の威力が1%増加し、散弾のダメージが2%上昇する。}
+itm_stat_talisman19 {覚えておけ}
+itm_stat_descr_talisman19 {$GetYorickLoc(_descr)}
+itm_stat_talisman20 {皇帝陛下のために！}
+itm_stat_descr_talisman20 {火器の照準速度が15%上昇し、最大照準ダメージが20%増加、リロード速度が10%上昇、ヘッドショットダメージが20%増加する。}
+itm_stat_talisman21 {相互責任}
+itm_stat_descr_talisman21 {ランク2までの船で密輸業者と取引できる。}
+itm_stat_secondary_hat1 {適応}
+itm_stat_descr_secondary_hat1 {直刀の速攻と曲刀の斬撃はダメージが5%増加する。}
+itm_stat_secondary_hat2 {慣性}
+itm_stat_descr_secondary_hat2 {短い武器の範囲攻撃と長い武器の強攻撃が7%速くなる。}
+itm_stat_secondary_hat3 {銀の舌}
+itm_stat_descr_secondary_hat3 {酒場の水夫の人数が増え、 雇用費用が5%安くなる。}
+itm_stat_secondary_hat4 {プロイセン式訓練}
+itm_stat_descr_secondary_hat4 {砲撃の命中精度が10%上昇する。}
+itm_stat_secondary_hat5 {プレミアリーグ}
+itm_stat_descr_secondary_hat5 {対応する戦列艦への各国の敵対行動を終了する。}
+itm_stat_secondary_hat7 {トレジャーハンター}
+itm_stat_descr_secondary_hat7 {財宝の価値が10%上昇する。}
+itm_stat_secondary_hat8 {カリブの呪い}
+itm_stat_descr_secondary_hat8 {各レベルの脅威ごとに船の維持費が2%減少し、 ワールドマップ上の速度が0.25%上昇する。}
+itm_stat_secondary_hat11 {感情高揚}
+itm_stat_descr_secondary_hat11 {過去2週間以内に親密な関係があった場合、 攻撃速度が5%上昇する。}
+itm_stat_blade_SP_3low {秘めたる可能性}
+itm_stat_descr_blade_SP_3low {この刃はまだ真の力を発揮していない――何かが足りないようだ……}
+itm_stat_blade_SP_3 {死神}
+itm_stat_descr_blade_SP_3 {あらゆる回復を無効化する。 失われた体力2%ごとに与ダメージが1.5%、エネルギー回復が1.75%増加。}
+itm_stat_blade_41 {柔軟性}
+itm_stat_descr_blade_41 {最も高い近接武器スキルからダメージボーナスを得る。}
+itm_stat_lacrima_patris {義人の道}
+itm_stat_descr_lacrima_patris {山賊や悪党を10人倒すごとに、ダメージが2増加し、Mercy砲の射程が1%伸びる。}
+itm_stat_blade_WR {勤勉}
+itm_stat_descr_blade_WR {戦闘中の体力回復速度が5倍になる。}
+itm_stat_suit5 {エポレット}
+itm_stat_descr_suit5 {フランスの功績により、 売春宿が無料で利用でき、 フランス領植民地での新兵数が15%増加する。}
+itm_stat_suit4 {悪評}
+itm_stat_descr_suit4 {この装いは厄介者の証、 そして持ち主のブーツには必ずナイフが隠されている。 艦隊力が13%上昇する。 威嚇時の艦隊力計算では、 どの船も戦闘艦として扱われる。}
+itm_stat_cirass10 {装備}
+itm_stat_descr_cirass10 {この防具は便利な弾薬ポーチ付き。 リロード速度が15%上昇。}
+itm_stat_underwater {かさばり}
+itm_stat_descr_underwater {この防具は非常に重いため、 装備中は歩くことしかできない。}
+itm_stat_pistol11 {地獄の落とし子}
+itm_stat_descr_pistol11 {この武器は性能よりも、 その存在自体が驚きだ。 重装武器スキルが20上昇する。}
+itm_stat_pistol12 {分解可能}
+itm_stat_descr_pistol12 {この火器は分解・ 組立が可能で、 片手用と両手用を切り替えられる。}
+itm_stat_mushket8 {分解式}
+itm_stat_descr_mushket8 {この火器は組み立て・ 分解ができ、 片手用と両手用を切り替えられる。}
+itm_stat_spyglassSP3 {罰する眼差し}
+itm_stat_descr_spyglassSP3 {この望遠鏡があれば、 敵船長の目に宿る恐怖も、 降伏の気配も見抜ける。}
+itm_stat_reloadTime {リロード時間}
+itm_stat_descr_reloadTime {次の弾を装填する時間だ。}
+itm_stat_kaleuche_amulet2 {攻撃の護符}
+itm_stat_descr_kaleuche_amulet2 {チャビナビ寺院のモンスターに武器ダメージが通るようになり、 彼らの攻撃から守られる。 全ての武器スキルが25%上昇。}
+itm_stat_kaleuche_amulet3 {防御のお守り}
+itm_stat_descr_kaleuche_amulet3 {チャビナビ寺院のモンスターに武器ダメージが通るようになり、 彼らの攻撃から身を守る。 すべての武器による被ダメージを25%軽減し、毒を無効化する。}
+itm_stat_descr_lacrima_patris_bonus
+{
+~
+~
+現在のボーナス：$number($attr($context.KillerBonus.appliedbonus))ダメージ、$number($attr($context.KillerBonus.RangeBonus))%射程。
+}
+itm_stat_blade_WR_1 {勤勉}
+itm_stat_descr_blade_WR_1 {戦闘中の体力回復速度が5倍になる。}
+itm_stat_secondary_hat6 {高名なネゴシアン}
+itm_stat_descr_secondary_hat6 {艦隊内の商船の船力が40%上昇し、 商船からの離脱成功率のペナルティが3減少する。}
+itm_stat_KhaelRoa_item {ジャガー}
+itm_stat_descr_KhaelRoa_item {火器の与ダメージが10倍になる。}
+itm_stat_indian_poison {タイノ}
+itm_stat_descr_indian_poison {軽傷でも必ず強力な中毒を引き起こし、 解毒剤では治せず短時間で死に至る。}
+itm_stat_PerksPotion {忘却}
+itm_stat_descr_PerksPotion {キャラクターが習得したすべての特性をリセットする。 使用後は特性や技の記憶が消えるが、 能力自体は残る——かつての達成を体が覚えていても、 心はもう覚えていないかのように。}
+itm_stat_descr_talisman19_InSlot {船体が2%失われるごとに、砲の速度が0.75%、ダメージが0.5%増加する。}
+itm_stat_descr_talisman19_InInventory {所持していると、 全ての士官が不死になります。}
+itm_stat_piratesJournal_1 {襲撃船}
+itm_stat_descr_piratesJournal_1 {グローバルマップの速度が3%上昇。旗艦が「Amsterdam」なら効果2倍。これぞ海賊の伝統。}
+itm_stat_piratesJournal_2 {盗品商}
+itm_stat_descr_piratesJournal_2 {盗品のペナルティが8%減少。 旗艦が 「アムステルダム」 の場合、 効果が2倍になる。}
+itm_stat_piratesJournal_3 {自給自足}
+itm_stat_descr_piratesJournal_3 {海上での修理効率が30%上昇。旗艦が「Amsterdam」の場合、効果が2倍になる。}
+itm_stat_pistol15 {小さくても強い}
+itm_stat_descr_pistol15 {このピストルの抜き差しが15%速くなる。 命中時、 敵を大きく吹き飛ばす。}

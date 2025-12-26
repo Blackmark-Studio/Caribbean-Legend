@@ -1,0 +1,67 @@
+Node0_title {Liman’da}
+Node0_a {Düşmanca bir limana girersin ve açığa çıkmamayı umarsın.}
+Node0_b_a {Liman hareketli — kısa süre önce büyük bir $rand(Fransız|İspanyol|Hollandalı|İngiliz) ticaret gemisi gelmiştir. Tüm boş işçiler yük boşaltmakla meşguldür.}
+Node0_b_b {Liman bomboştur ve kıyıda yakın zamandaki bir çatışmanın izleri görülür. $rand(Şehir sokaklarının taş döşemelerinde yanık izleri ve top gülleleri vardır.|Bazı evler bombalarla hasar görmüş, sokaklarda yas tutan kadınlar durmaktadır.)}
+Node0_b_c {Liman askerlerle doludur. Demirde büyük bir savaş gemisi durmaktadır — bir $rand(galyon|fırkateyn|korvet). Gemi $rand(açıkça hasar görmüş ve onarımdadır, bordalarında yakın bir çatışmanın izleri vardır|tam savaş hazırlığında olup seyre çıkmaya hazırlanıyordur).}
+Node0_c_a {Liman yöneticisi isteksizce yanına yaklaşır, açıkça yorgun ve uykuludur.}
+Node0_c_b {Limanın başındaki kişi bizzat yanına gelir ve sana özellikle dikkat kesilmeye niyetlidir. Gözlerinde $rand(tahammülsüzlük — kendi mevkiinin altındaki bir işi yaptığını biliyor ve bunun başkalarınca da görüldüğünün farkında|açgözlülük — sende kolay para görmüş ve şimdiden akşamki eğlenceyi düşlemeye başlamıştır) okunur.}
+Node0_c_c {Liman muhafızları silahlarını kaldırmış halde yanına yaklaşır, son derece gergindirler.}
+Node0_d {Gücünü toplar ve hitabet harikaları yaratmaya hazırlanırsın. Ya da şehre giden yolu zorla açarsın.}
+Node0_b_a_reaction {Eskort gemisi gibi davranmak}
+Node0_b_a_reaction_log {Bir konvoydaki ticaret gemisi gibi davranmayı başarırsın. Boşaltma işlemlerine katılırsın ve artık çok daha az dikkat çekersin.}
+Node0_b_a_reaction_factor {Eskort Gemisi}
+Node0_b_b_reaction {Sıhhi gemi gibi davranmak}
+Node0_b_b_reaction_log {Yaralılarla ilgilenmek üzere gönderilmiş bir sıhhi gemi gibi davranmayı başarırsın. Karayipler'de doktor nadir bulunur ve birkaç akıllıca söz inanılman için yeterlidir.}
+Node0_b_b_reaction_factor {Sağlık Gemisi}
+Node0_b_c_reaction {Gizli kurye gibi davranmak}
+Node0_b_c_reaction_log {Uzun süre gizemli bir hava takınmayı çalıştın ve askerleri gizli bir ajan olduğuna ikna edersin.}
+Node0_b_c_reaction_factor {Kurye Gemisi}
+Node0_c_a_reaction {Resmiyeti bir kenara bırakmak}
+Node0_c_a_reaction_log_0 {Empatinize inanılır ve liman yöneticisinin desteğini kazanırsın.}
+Node0_c_a_reaction_log_1 {Sözlerinde alay sezilir. Liman yöneticisi artık sana daha kötü davranır.}
+Node0_c_a_reaction_factor {Şefkat}
+Node0_c_b_reaction {Çifte vergi ödemeye hazır olduğunu göstermek}
+Node0_c_b_reaction_log {Yolsuz sistemde zayıf bir noktayı kolayca bulur ve makul bir bedelle şansını büyük ölçüde artırırsın. Ne yazık ki bugün gönlü alınması gereken tek kişi liman şefi değil.}
+Node0_c_b_reaction_factor {Rüşvet}
+Node0_c_c_reaction {En zayıf muhafızı seçip üzerine baskı kurmak}
+Node0_c_c_reaction_log_0 {Nöbetçiler arasında kolay bir hedef seçer ve birkaç yerinde sözden sonra onu yanına çekersin.}
+Node0_c_c_reaction_log_1 {Yanlış hedefi seçtiğin açıktır ve muhafızlar daha da saldırganlaşır.}
+Node0_c_c_reaction_factor {Zayıf halka}
+Node0_a_action {Geçmeye çalışmak}
+Node0_b_action {Güç kullanarak geçmek}
+Node0_c_action {Ticaret lisansını göstermek}
+Node0_success {$rand(Tarafsız bir gemi gibi davranmayı başarırsın ve sorunsuzca şehre girersin. Yeniden şüphe çekmemek için işlerini çabucak halletmek en iyisi.|Neredeyse açığa çıkıyordun ama her şey yolunda gitmiş gibi görünüyor. Bunun beceri mi yoksa ilahi bir müdahale mi olduğunu zaman gösterecek.)}
+Node0_success_action {Mükemmel!}
+Node1_a {Bir dost gibi görünmeyi başaramazsın ve durum giderek gerilir. Yine de doğru yaklaşımı bulursan her şeyin hâlâ düzeltilebileceğinden eminsin.}
+Node1_b_a {Bir şey yerel muhafızları sıkı bir denetim yapmaya sevk etti. Gemi kuşatılıyor.}
+Node1_b_b {Yerel denizciler geminizi _$playerNationAbl ülkesine ait olarak tanımış gibi görünüyor. Sizi açığa çıkarmaya niyetliler.}
+Node1_b_c {Liman idaresi talebinizi değerlendirirken tam aksine bir devriye gemisi limana girdi. Gecikmeyi fark edince geminizi denetlemek istediler.}
+Node1_c_a {Rezidansta bayrağın yarıya indirildiğini fark edersin. Şehir yas içindedir.}
+Node1_c_b {Kalabalık arasında bir zamanlar denizde eşlik ettiğin tanıdık bir kaptanı fark edersin.}
+Node1_c_c {Alışılmadık bir çan sesi duyarsın; yerel kilisede bayram ayini başlıyor.}
+Node1_d {Derhal bir karar vermek gerekiyor.}
+Node1_b_a_reaction {Askerleri değerli yükle ikna etmek}
+Node1_b_a_reaction_log {Askerleri gemide önemli bir yük olduğuna ikna etmeye çalışırsın. Muhasebe hesapları ve karmaşık terimler karşısında açıkça geri adım atarlar ve maaşlarını kaybetme tehdidi tereddüt edenlerin gururunu kırar.}
+Node1_b_a_reaction_factor {Önemli yük}
+Node1_b_b_reaction {Denizde ulus yok diye denizcileri ikna}
+Node1_b_b_reaction_log {Denizcilere aynı gemide olduğunuzu anlatmaya çalışırsın. Güçlü ellerini, emek nasırlarını ve deniz rüzgârıyla yıpranmış yüzünü gören denizciler yumuşar ve seni kendilerinden biri olarak kabul eder.}
+Node1_b_b_reaction_factor {Dayanışmacı denizciler}
+Node1_b_c_reaction {Denizcilik yasalarına dayanmak}
+Node1_b_c_reaction_log {Limanda gemilerin rastgele ve gerekçesiz denetlenmesini açıkça yasaklayan denizcilik yasalarına dayanarak devriye gemisindeki askerlerin gemiye çıkmasını engellemeye çalışırsın. Deniz hukukuna dair bildiğin her şeyi uydurmalar, palavralar ve bürokratik jargonla süsleyerek devriye gemisini bu girdaba çekersin. Küfür hiç bu kadar bürokratik olmamıştı.}
+Node1_b_c_reaction_factor {Hukukçuluk}
+Node1_c_a_reaction {Yasın sebebini tahmin etmeye çalışmak}
+Node1_c_a_reaction_log {Yasın sebebini tahmin etmeye çalışır ve bu nedenle geldiğini söylersin. Planının işe yarayıp yaramadığından emin değilsin, ancak bu girişimin fark edilmediği söylenemez.}
+Node1_c_a_reaction_factor {Tesadüfi yas}
+Node1_c_b_reaction {Tanıdık bir kaptanın desteğini almak}
+Node1_c_b_reaction_log_0 {Kaptanı çağırır ve muhafızların önünde senin için kefil olmasını istersin. Ortak maceralarınızı hatırlar ve isteyerek lehine konuşur.}
+Node1_c_b_reaction_log_1 {Kaptanı çağırır ve muhafızların önünde senin için kefil olmasını istersin. Son anda duraksar ve onu nereden tanıdığını hatırlarsın: birlikte barışçıl tüccarlara birkaç cüretkâr baskın düzenlemiştiniz. O seni savunur elbette, ancak kendisi kolonide pek sevilmez.}
+Node1_c_b_reaction_factor {Tanıdık kaptan}
+Node1_c_c_reaction {Kilise kutsal emanetleri taşıdığını söylemek}
+Node1_c_c_reaction_log {Bayram için gerekli olan değerli kilise eşyalarını taşıdığını söyleyerek muhafızları ikna etmeye çalışırsın — $rand(gümüş bir kadeh|Kutsal Ayin’in sergilenmesi için bir monstrans|kutsal emanetler içeren bir relikyer|sunak haçı|bir piskopos mitrası|brokar ayin giysileri ve stole|sunak şamdanları|küçük bir sunak zili). Şaşırtıcı bir şekilde, koloni gerçekten de kilise kutsal emanetlerini taşıyan bir gemi bekliyordur ve bu gemi oldukça gecikmiştir. Sana inanırlar.}
+Node1_c_c_reaction_factor {Kilise eşyaları}
+Node1_a_action {Durumu yumuşatmaya çalışmak}
+Node1_b_action {Demir alıp kaçmak}
+Node1_success {$rand(Limana süzülerek girersin; muhafızların uzun bakışı üstündedir. Bir saniye daha geciksen her şey çökecekti, ama kader başka türlü karar verdi.|Ağır bir hisle limana girersin — gemin açıkça hâlâ şüphe altında. Her şey tam son anda yoluna girdi, ama şehirde oyalanmamak en iyisi.)}
+Node1_success_action {Bu sefer kurtulduk}
+Node1_fail {$rand(Muhafızlar yaygara koparır — açığa çıktın. İskele boyunca askerler şimdiden koşuyor; haber kaleye an meselesi.|Aksilik uzar, muhafızların sabrı taşar. Tüm liman kılıçlarla diken diken olur; kaleye topların hazırlanması için işaret gönderilir.)}
+Node1_fail_action {Kaçalım!}

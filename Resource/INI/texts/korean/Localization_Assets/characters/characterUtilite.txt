@@ -1,0 +1,15 @@
+characterUtilite_1 {@<_Money> 페소 획득}
+characterUtilite_2 {@<abs(_Money)> 페소 사용}
+characterUtilite_3 {새 아이템: ~}
+characterUtilite_4 {@<n> 더블룬 획득}
+characterUtilite_5 {아이템 분실: ~}
+characterUtilite_6 {~ @<LanguageConvertString(idLngFile, arItem.name)>의 힘이 사라진 것을 알아챘다}
+characterUtilite_7 {명예 상승}
+characterUtilite_8 {명예 감소}
+characterUtilite_9 {@<_Dublons> 더블룬 사용}
+characterUtilite_10 {@<officer.Ship.Name>의 상륙조에 @<compCrew>명의 병사가 있습니다}
+characterUtilite_11 {대출 기간이 만료되었습니다}
+characterUtilite_12 {아틀라스 업데이트: @<LanguageConvertString(idLngFile, arItem.name)>}
+characterUtilite_13 {인디언 호감도 하락 (}
+characterUtilite_14 {인디언 호감도 상승 (}
+characterUtilite_15 {상인에게 전액이 없습니다. @<money>에 판매하시겠습니까?}

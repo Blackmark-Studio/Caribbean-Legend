@@ -1,0 +1,8 @@
+Tonzag_1 {賞金稼ぎ}
+Tonzag_2 { }
+Tonzag_3 { }
+Tonzag_4 {6時間が経過した…}
+Tonzag_5 {探索モード：タイマー無効。}
+Tonzag_6 {ブロンズホースマン解除}
+Tonzag_7 {Alberto}
+Tonzag_8 {Gaodio}

@@ -1,0 +1,16 @@
+quests_reaction_1 {Oficial @<GetFullName(npchar)> está a bordo.}
+quests_reaction_2 {@<GetFullName(npchar)> se rendeu.}
+quests_reaction_3 {Os corpos dos rebeldes foram lançados ao mar em sua última viagem}
+quests_reaction_4 {O motim foi contido}
+quests_reaction_5 {@<GetCityName(sld.City)> é nosso!}
+quests_reaction_6 {Alguém mexeu nos seus bolsos.}
+quests_reaction_7 {Teve uma briga perto do farol há pouco tempo. Um capitão tentou contrabandear umas mercadorias, mas nossa patrulha pegou ele no flagra. ~}
+quests_reaction_8 {Que tiroteio foi aquele, até o telhado da loja levou bala de canhão! Mas não adiantou nada. Os contrabandistas locais se esconderam na selva e o capitão já zarpou. Enganaram nossos soldados fácil, viu! E que piloto, saiu da baía como um rei!}
+quests_reaction_9 { }
+quests_reaction_10 { }
+quests_reaction_11 {, que está em ~}
+quests_reaction_12 {O prazo de entrega expirou.}
+quests_reaction_13 {Algumas horas se passaram...}
+quests_reaction_14 {Passou uma hora...}
+quests_reaction_15 {Um dia se passou...}
+quests_reaction_16 {Alguns dias se passaram...}

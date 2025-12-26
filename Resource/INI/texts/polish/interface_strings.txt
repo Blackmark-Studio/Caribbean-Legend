@@ -6,7 +6,8 @@ Load game confirm {Czy na pewno chcesz wczytać ten zapis gry?}
 Unable to Load save game {Nie udało się wczytać tego zapisu gry.}
 Salary info
 {
-Twoja załoga żąda swej miesięcznej pensji.Czy zapłacisz?
+Twoja załoga żąda swej miesięcznej pensji.
+Czy zapłacisz?
 }
 Officer info {Twoi oficerowie żądają swej miesięcznej pensji:}
 All info {Kwota netto:}

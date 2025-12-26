@@ -974,7 +974,7 @@ void HKE_Button(string sHKB) // мушкет и клинки
 			{
 				SetMainCharacterToMushketer(sGun, true);
 				GunCharging(pchar, MUSKET_ITEM_TYPE, sGun);
-				log_info("Gun selected: "+GetConvertStr("itmname_"+sGun, "ItemsDescribe.txt")+"");
+				log_info("Gun selected: "+GetItemName(sGun)+"");
 				/* DoQuestCheckDelay("pchar_fast_mushket_fade", 0.0);
 				DoQuestCheckDelay("pchar_fast_mushket", 3.5); */
 			}
@@ -1000,7 +1000,7 @@ void HKE_Button(string sHKB) // мушкет и клинки
 					PChar.IsMushketer.MushketID = sGun;
 					EquipCharacterByItem(PChar, sGun); 
 					SendMessage(&ILogAndActions,"l",LI_CLEAR_STRINGS);
-					Log_info(XI_ConvertString("GunSelect")+GetConvertStr(aGun.name, "ItemsDescribe.txt"));
+					Log_info(XI_ConvertString("GunSelect")+GetItemName(aGun));
 					GunCharging(pchar, MUSKET_ITEM_TYPE, sGun);
 				}
 			}
@@ -1046,7 +1046,7 @@ void HKE_Button(string sHKB) // мушкет и клинки
 				EquipCharacterbyItem(pchar, sBlade); 
 				PlaySound("PEOPLE FIGHT\Blade_Take_In_0"+(rand(2)+1) +".wav"); 
 				SendMessage(&ILogAndActions,"l",LI_CLEAR_STRINGS);
-				Log_info(XI_ConvertString("BladeSelect")+GetConvertStr(BladeInfo, "ItemsDescribe.txt"));
+				Log_info(XI_ConvertString("BladeSelect")+GetItemName(sBlade));
 				GetWeaponQty();
 			}
 			else

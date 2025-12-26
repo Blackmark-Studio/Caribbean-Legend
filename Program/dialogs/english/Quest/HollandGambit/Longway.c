@@ -429,6 +429,14 @@ void ProcessDialogEvent()
 		//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "Longway_officer":
 			dialog.text = "Listening closely, captain.";
+			// Эпилог
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				dialog.text = "What are your orders, Captain?";
+				Link.l1 = ""+npchar.name+", I've decided to go to Europe — to my father. The journey won't be easy, and I have no idea when I’ll return. It seems the time has come for us to part ways. I doubt you'll wait for me here — and it wouldn't be safe, either.";
+				Link.l1.go = "SharlieEpilog_Longway_1";
+				break;
+			}
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
 				Link.l4 = "Longway, I am going to the ancient Indian city of Tayasal. I'll be clear, this is going to be a truly dangerous journey, and a mystical one as well – we will get there through the teleport idol. Will you... join me?";
@@ -574,7 +582,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -589,7 +597,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;
@@ -605,7 +613,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -620,7 +628,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, MUSKET_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetMusketBullets");
 			DialogExit();
 		break;
@@ -722,6 +730,35 @@ void ProcessDialogEvent()
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
+		break;
+		
+		// Эпилог
+		case "SharlieEpilog_Longway_1":
+			dialog.text = ""+npchar.name+" thinks he is friend of the honorable Captain. I ready to follow you anywhere — even to Europe, if necessary.";
+			link.l1 = "But do you remember how they treat foreigners like you here? In Europe, it’s even worse. I won’t let anyone hurt you — but I can’t protect you from stares and mockery. That’s why I can’t order you — you must choose for yourself: come with me, or...";
+			link.l1.go = "SharlieEpilog_Longway_2";
+		break;
+
+		case "SharlieEpilog_Longway_2":
+			dialog.text = ""+npchar.name+" used to such treatment. After death of Chang Shin, Captain became only one Longway care about. I follow you and guard your back.";
+			link.l1 = "Well... I value your loyalty, my friend, and I’m truly glad you’ll be with me. You know, I even envy you a little. You’ve seen China, the Caribbean — and now you’ll see Europe. Not many get to walk such a long road... The name Van Marden gave you turned out to be prophetic.";
+			link.l1.go = "SharlieEpilog_Longway_3";
+		break;
+
+		case "SharlieEpilog_Longway_3":
+			dialog.text = "...";
+			link.l1 = "We sail in two weeks. Before that, I intend to mark the occasion properly at the tavern. You're invited. And don’t even think about refusing.";
+			link.l1.go = "SharlieEpilog_Longway_4";
+		break;
+
+		case "SharlieEpilog_Longway_4":
+			dialog.text = ""+npchar.name+" not planning to refuse. I come, Captain.";
+			link.l1 = "That’s the answer I expected. I’ll let you know when the drinking starts. First, I need to handle everything else.";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Longway_officer";
+			npchar.quest.SharlieEpilog_FarewellOfficers = true;
+			pchar.questTemp.SharlieEpilog_Longway = true;
+			pchar.questTemp.SharlieEpilog_Friends = sti(pchar.questTemp.SharlieEpilog_Friends) + 1;
 		break;
 	}
 }

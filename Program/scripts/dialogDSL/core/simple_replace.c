@@ -2,7 +2,7 @@
 // $shortcut → result
 
 // Looking for a specific key
-void DLG_Replace(string input, ref context, string key)
+void DLG_Replace(ref input, ref context, string key)
 {
   int iPos = FindSubStr(input, key, 0);
   if (iPos == -1) return;

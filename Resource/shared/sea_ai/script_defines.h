@@ -68,6 +68,7 @@
 #define FORT_NORMAL 0
 #define FORT_ABORDAGE 1
 #define FORT_DEAD 2
+#define FORT_HOLD_FIRE 3
 
 #define SHIP_ABORDAGE 3
 

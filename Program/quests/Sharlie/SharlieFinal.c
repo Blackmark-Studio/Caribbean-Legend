@@ -2716,6 +2716,7 @@ void GuardOT_ArchyChestBoom() // ба-бах!!
 	CreateLocationParticles("smoke", "box", "box1", 1.0, 0, 0, "");
 	CreateLocationParticles("blood_big", "box", "box1", 1.3, 0, 0, "");
 	LAi_SetActorType(Pchar);
+	SetCameraShake(1.2, 2.5, 5.0, 0.13, 0.5, true, false, CAM_EASING_SMOOTH_STEP);
 	LAi_ActorAnimation(Pchar, "jump", "GuardOT_SitInHouse", 0.5);
 	ChangeCharacterAddressGroup(Pchar, "IslaDeVieques_House", "goto", "goto5");
 	Pchar.chr_ai.hp = stf(Pchar.chr_ai.hp)/4;
@@ -4639,6 +4640,11 @@ void Tieyasal_InSeaShore(string qName) // победный финал
 	pchar.questTemp.Tieyasal_final = "true";
 	if (CheckAttribute(pchar, "questTemp.Tieyasal.Teleport")) DoQuestFunctionDelay("Tieyasal_InSeaShoreTime", 1.2);
 	else DoQuestFunctionDelay("Tieyasal_InSeaShore_Continue", 0.5);
+	// Таймер на Эпилог (если жены нет)
+	if (!CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && !CheckAttribute(pchar, "questTemp.LSC.Mary_officer"))
+	{
+		SetFunctionTimerCondition("SharlieEpilog_Start", 0, 0, 30, false);
+	}
 }
 
 void Tieyasal_InSeaShoreTime(string qName)
@@ -6932,9 +6938,9 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 	{
 		EndQuestMovie();
 		Achievment_Set("ach_48");
-		pchar.GenQuest.VideoAVI = "Outro_home";
-		pchar.GenQuest.VideoAfterQuest = "Final_Credits";
-		DoQuestCheckDelay("PostVideo_Start", 0.2);
+		//pchar.GenQuest.VideoAVI = "Outro_home";
+		//pchar.GenQuest.VideoAfterQuest = "Final_Credits";
+		DoQuestCheckDelay("Final_Credits", 0.2);
 	}
 	else if (sQuestName == "Final_StayInCarribean") // финал - остаемся
 	{
@@ -6947,9 +6953,9 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		AddQuestRecord("Sharlie", "43");
 		CloseQuestHeader("Sharlie");
 		Achievment_Set("ach_48");
-		pchar.GenQuest.VideoAVI = "Outro_stay";
-		PChar.GenQuest.VideoAfterQuest = "Final_ReloadShore";
-		DoQuestCheckDelay("PostVideo_Start", 0.2);
+		//pchar.GenQuest.VideoAVI = "Outro_stay";
+		//PChar.GenQuest.VideoAfterQuest = "Final_ReloadShore";
+		DoQuestCheckDelay("Final_ReloadShore", 0.2);
 		pchar.questTemp.Tieyasal_WinEnd = "true"; // patch-9
 		Achievment_Set("ach_48");
 		SetFunctionTimerCondition("LongHappy_Prepare", 0, 0, 1, false); // belamour legendary edition

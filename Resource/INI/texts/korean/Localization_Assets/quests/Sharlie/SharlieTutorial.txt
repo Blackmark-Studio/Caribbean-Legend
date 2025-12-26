@@ -1,0 +1,10 @@
+SharlieTutorial_1 {선장}
+SharlieTutorial_2 {선원}
+SharlieTutorial_3 {갑판장}
+SharlieTutorial_4 {재정관}
+SharlieTutorial_5 {해적}
+SharlieTutorial_6 {Ulysse}
+SharlieTutorial_7 {Paul}
+SharlieTutorial_8 {Henry}
+SharlieTutorial_9 {Mathieu}
+SharlieTutorial_10 {Pinchon}

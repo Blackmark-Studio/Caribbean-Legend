@@ -1,0 +1,16 @@
+quests_reaction_1 {@<GetFullName(npchar)> subay gemide.}
+quests_reaction_2 {@<GetFullName(npchar)> teslim oldu.}
+quests_reaction_3 {İsyancıların cesetleri son yolculuklarına denize atıldı}
+quests_reaction_4 {İsyan bastırıldı}
+quests_reaction_5 {@<GetCityName(sld.City)> artık bizim!}
+quests_reaction_6 {Birisi ceplerini kurcalamış.}
+quests_reaction_7 {Geçenlerde fenerin orada bir çatışma çıktı. Bir kaptan kaçak mal sokmaya kalkışmış, ama devriye ekibimiz onu tam iş üstünde yakaladı. ~}
+quests_reaction_8 {Ne çatışmaydı ama, dükkânın çatısı rastgele bir top güllesiyle delindi! Ama hepsi boşunaydı. Yerel kaçakçılar ormanda saklandı, kaptan da denize açılıp gitti. Askerlerimizi kolayca kandırdılar, söyleyeyim! Kaptan da tam bir usta, körfezden kral gibi çıktı!}
+quests_reaction_9 { }
+quests_reaction_10 { }
+quests_reaction_11 {, ~ üzerinde bulunan}
+quests_reaction_12 {Teslimat süresi doldu.}
+quests_reaction_13 {Birkaç saat geçti...}
+quests_reaction_14 {Bir saat geçti...}
+quests_reaction_15 {Bir gün geçti...}
+quests_reaction_16 {Birkaç gün geçti...}

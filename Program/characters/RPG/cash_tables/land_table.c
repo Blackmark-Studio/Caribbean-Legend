@@ -236,7 +236,7 @@ void CT_SetMusketDamageCoeff(ref table, ref equipTable, ref chr)
 	if (shotBonus > 0)  SetAttribute(table, MUSKET_ITEM_TYPE + "_" + SHOT_STRIKE  + "_" + M_DAMAGE, shotBonus);
 }
 
-void CT_AddEquipCoeffBonuses(ref equipTable, string weaponType, float fastBonus, float forceBonus, float roundBonus, float breakBonus, float shotBonus)
+void CT_AddEquipCoeffBonuses(ref equipTable, string weaponType, ref fastBonus, ref forceBonus, ref roundBonus, ref breakBonus, ref shotBonus)
 {
 	if (weaponType != "") weaponType += "_";
 	fastBonus  += GetAttributeFloat(equipTable, weaponType + FAST_STRIKE  + "_" + M_DAMAGE);

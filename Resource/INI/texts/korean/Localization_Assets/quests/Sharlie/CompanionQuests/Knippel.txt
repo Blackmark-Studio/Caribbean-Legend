@@ -1,0 +1,30 @@
+Knippel_1 {열쇠를 사용했습니다}
+Knippel_2 {Peter}
+Knippel_3 {Adams}
+Knippel_4 {Jane}
+Knippel_5 {Adams}
+Knippel_6 {찰리가 구하러 왔다!}
+Knippel_7 {Frederick}
+Knippel_8 {Stokes}
+Knippel_9 {Ralph}
+Knippel_10 {Faggle}
+Knippel_11 {1654년 7월 21일@<NewStr()>세인트존스, 앤티가}
+Knippel_12 {Thomas}
+Knippel_13 {린치}
+Knippel_14 {서식스가 수평선에 나타났다!}
+Knippel_15 {Edmund}
+Knippel_16 {Sheffield}
+Knippel_17 {Michael}
+Knippel_18 {Whitney}
+Knippel_19 {폭격수 해금}
+Knippel_20 {잠시 후...@<NewStr()>Fleetwood 저택에서}
+Knippel_21 {Frederick}
+Knippel_22 {Stokes}
+Knippel_23 {Ralph}
+Knippel_24 {Faggle}
+Knippel_25 {2시간 후...@<NewStr()>‘Sussex’ 접현}
+Knippel_26 {Thomas}
+Knippel_27 {Lynch}
+Knippel_28 {Сhimera}
+Knippel_29 {현재 시간}
+Knippel_30 {1654년 8월 17일@<NewStr()>도미니카 남동쪽}

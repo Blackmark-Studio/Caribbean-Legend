@@ -65,13 +65,13 @@ void InitColonies()
 		Colonies[n].smuggling_nation = ENGLAND;
 		Colonies[n].nation = ENGLAND;
 		Colonies[n].island = "Barbados";
-		Colonies[n].islandLable = "Barbados";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1812;
 		colonies[n].map.y = 1655;
 		colonies[n].StoreNum   = Bridgetown_STORE;
 		colonies[n].from_sea   = "Bridgetown_town";
 		colonies[n].Default.BoardLocation = "Bridgetown_ExitTown";
+		colonies[n].lighthouse = "Mayak2";
 		colonies[n].FortValue = 60; // homo
 		colonies[n].mayak = 2;
 				
@@ -84,7 +84,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = SPAIN;
 		Colonies[n].nation = SPAIN;
 		Colonies[n].island = "PuertoRico";
-		Colonies[n].islandLable = "PuertoRico";
 		colonies[n].num = 1;
 		colonies[n].map.x = 933;
 		colonies[n].map.y = 312;
@@ -102,7 +101,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = ENGLAND;
 		Colonies[n].nation = ENGLAND;
 		Colonies[n].island = "Jamaica";
-		Colonies[n].islandLable = "Jamaica";
 		colonies[n].ismaincolony = 1;
 		colonies[n].num = 1;
 		colonies[n].map.x = 933;
@@ -110,6 +108,7 @@ void InitColonies()
 		colonies[n].StoreNum   = PortRoyal_STORE;
 		colonies[n].from_sea   = "PortRoyal_town";
 		colonies[n].Default.BoardLocation = "PortRoyal_ExitTown";
+		colonies[n].lighthouse = "Mayak3";
 		colonies[n].FortValue = 95; // homo	
 		colonies[n].mayak = 3;
 		
@@ -122,7 +121,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = PIRATE;
 		Colonies[n].nation = PIRATE;
 		Colonies[n].island = "Jamaica";
-		Colonies[n].islandLable = "Jamaica";
 		Colonies[n].num = "1";
 		colonies[n].map.x = 450;
 		colonies[n].map.y = 325;
@@ -140,13 +138,13 @@ void InitColonies()
 		Colonies[n].smuggling_nation = SPAIN;
 		Colonies[n].nation = SPAIN;
 		Colonies[n].island = "Cuba1";
-		Colonies[n].islandLable = "Cuba";
 		colonies[n].num = 1;
 		colonies[n].map.x = 206;
 		colonies[n].map.y = 440;
 		colonies[n].StoreNum   = Santiago_STORE;
 		colonies[n].from_sea   = "Santiago_town";
 		colonies[n].Default.BoardLocation = "Santiago_ExitTown";
+		colonies[n].lighthouse = "Mayak9";
 		colonies[n].FortValue = 70; // homo
 		colonies[n].mayak = 9;
 				
@@ -159,7 +157,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = PIRATE;
 		Colonies[n].nation = PIRATE;
 		Colonies[n].island = "Cuba1";
-		Colonies[n].islandLable = "Cuba";
 		colonies[n].num = 1;
 		colonies[n].map.x = 206;
 		colonies[n].map.y = 440;
@@ -176,7 +173,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = SPAIN;
 		Colonies[n].nation = SPAIN;
 		Colonies[n].island = "Cuba2";
-		Colonies[n].islandLable = "Cuba";
 		colonies[n].ismaincolony = 1;
 		colonies[n].num = 1;
 		colonies[n].map.x = 1450;
@@ -184,6 +180,7 @@ void InitColonies()
 		colonies[n].StoreNum   = Havana_STORE;
 		colonies[n].from_sea   = "Havana_town";
 		colonies[n].Default.BoardLocation = "Havana_ExitTown";
+		colonies[n].lighthouse = "Mayak10";
 		colonies[n].FortValue = 95; // homo
 		colonies[n].mayak = 10;
 				
@@ -196,7 +193,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = HOLLAND;
 		Colonies[n].nation = HOLLAND;
 		Colonies[n].island = "Curacao";
-		Colonies[n].islandLable = "Curacao";
 		colonies[n].ismaincolony = 1;
 		colonies[n].num = 1;
 		colonies[n].map.x = 625;
@@ -216,13 +212,13 @@ void InitColonies()
 		Colonies[n].smuggling_nation = FRANCE;
 		Colonies[n].nation = FRANCE;
 		Colonies[n].island = "Tortuga";
-		Colonies[n].islandLable = "Tortuga";
 		colonies[n].num = 1;
 		colonies[n].map.x = 450;
 		colonies[n].map.y = 195;
 		colonies[n].StoreNum   = Tortuga_STORE;
 		colonies[n].from_sea   = "Tortuga_town";
 		colonies[n].Default.BoardLocation = "Tortuga_ExitTown";
+		colonies[n].lighthouse = "Mayak6";
 		colonies[n].FortValue = 95; // homo
 		colonies[n].mayak = 6;
 				
@@ -235,7 +231,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = HOLLAND;
 		Colonies[n].nation = HOLLAND;
 		Colonies[n].island = "SentMartin";
-		Colonies[n].islandLable = "SentMartin";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1320;
 		colonies[n].map.y = 371;
@@ -253,13 +248,13 @@ void InitColonies()
 		Colonies[n].smuggling_nation = SPAIN;
 		Colonies[n].nation = SPAIN;
 		Colonies[n].island = "Trinidad";
-		Colonies[n].islandLable = "Trinidad";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1315;
 		colonies[n].map.y = 648;
 		colonies[n].StoreNum   = PortSpein_STORE;
 		colonies[n].from_sea   = "PortSpein_town";
 		colonies[n].Default.BoardLocation = "PortSpein_ExitTown";
+		colonies[n].lighthouse = "Mayak1";
 		colonies[n].FortValue = 40; // homo
 		colonies[n].mayak = 1;
 		
@@ -272,7 +267,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = FRANCE;
 		Colonies[n].nation = FRANCE;
 		Colonies[n].island = "Nevis";
-		Colonies[n].islandLable = "Nevis";
 		colonies[n].ismaincolony = 1;
 		colonies[n].num = 1;
 		colonies[n].map.x = 1381;
@@ -280,6 +274,7 @@ void InitColonies()
 		colonies[n].StoreNum   = Charles_STORE;
 		colonies[n].from_sea   = "Charles_town";
 		colonies[n].Default.BoardLocation = "Charles_ExitTown";
+		colonies[n].lighthouse = "Mayak5";
 		colonies[n].FortValue = 55; // homo
 		colonies[n].mayak = 5;
 				
@@ -292,7 +287,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = ENGLAND;
 		Colonies[n].nation = ENGLAND;
 		Colonies[n].island = "Antigua";
-		Colonies[n].islandLable = "Antigua";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1495;
 		colonies[n].map.y = 635;
@@ -311,13 +305,13 @@ void InitColonies()
 		Colonies[n].smuggling_nation = FRANCE;
 		Colonies[n].nation = FRANCE;
 		Colonies[n].island = "Guadeloupe";
-		Colonies[n].islandLable = "Guadeloupe";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1560;
 		colonies[n].map.y = 1010;
 		colonies[n].StoreNum   = BasTer_STORE;
 		colonies[n].from_sea   = "BasTer_town";
 		colonies[n].Default.BoardLocation = "BasTer_ExitTown";
+		colonies[n].lighthouse = "Mayak4";
 		colonies[n].FortValue = 85; // homo
 		colonies[n].mayak = 4;
 		
@@ -330,7 +324,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = FRANCE;
 		Colonies[n].nation = FRANCE;
 		Colonies[n].island = "Martinique";
-		Colonies[n].islandLable = "Martinique";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1648;
 		colonies[n].map.y = 1432;
@@ -349,7 +342,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = PIRATE;
 		Colonies[n].nation = PIRATE;
 		Colonies[n].island = "Martinique";
-		Colonies[n].islandLable = "Martinique";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1648;
 		colonies[n].map.y = 1432;
@@ -366,7 +358,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = PIRATE;
 		Colonies[n].nation = PIRATE;
 		Colonies[n].island = "Hispaniola1";
-		Colonies[n].islandLable = "Hispaniola";
 		Colonies[n].num = "1";
 		colonies[n].map.x = 535;
 		colonies[n].map.y = 265;
@@ -383,13 +374,13 @@ void InitColonies()
 		Colonies[n].smuggling_nation = SPAIN;
 		Colonies[n].nation = SPAIN;
 		Colonies[n].island = "Hispaniola1";
-		Colonies[n].islandLable = "Hispaniola";
 		Colonies[n].num = "1";
 		colonies[n].map.x = 568;
 		colonies[n].map.y = 322;
 		colonies[n].StoreNum   = SantoDomingo_STORE;
 		colonies[n].from_sea   = "SantoDomingo_town";
 		colonies[n].Default.BoardLocation = "SantoDomingo_ExitTown";
+		colonies[n].lighthouse = "Mayak8";
 		colonies[n].FortValue = 45; // homo
 		colonies[n].mayak = 8;
 		
@@ -402,7 +393,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = PIRATE;
 		Colonies[n].nation = PIRATE;
 		Colonies[n].island = "Bermudes";
-		Colonies[n].islandLable = "Bermudes";
 		Colonies[n].num = "1";
 		colonies[n].map.x = 720;
 		colonies[n].map.y = 395;
@@ -420,13 +410,13 @@ void InitColonies()
 		Colonies[n].smuggling_nation = FRANCE;
 		Colonies[n].nation = FRANCE;
 		Colonies[n].island = "Hispaniola2";
-		Colonies[n].islandLable = "Hispaniola";
 		Colonies[n].num = "1";
 		colonies[n].map.x = 450;
 		colonies[n].map.y = 325;
 		colonies[n].StoreNum   = PortPax_STORE;
 		colonies[n].from_sea   = "PortPax_town";
 		colonies[n].Default.BoardLocation = "PortPax_ExitTown";
+		colonies[n].lighthouse = "Mayak7";
 		colonies[n].FortValue = 55; // homo
 		colonies[n].mayak = 7;
 		
@@ -438,8 +428,7 @@ void InitColonies()
 		Colonies[n].visible = true;
 		Colonies[n].smuggling_nation = SPAIN;
 		Colonies[n].nation = SPAIN;
-		Colonies[n].island = "Panama";  // острова панама нет
-		Colonies[n].islandLable = "Mein";
+		Colonies[n].island = "Panama";
 		Colonies[n].num = "1";
 		colonies[n].map.x = 450;
 		colonies[n].map.y = 325;
@@ -458,7 +447,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = SPAIN;
 		Colonies[n].nation = SPAIN;
 		Colonies[n].island = "PortoBello";
-		Colonies[n].islandLable = "Mein";
 		colonies[n].ismaincolony = 1;
 		colonies[n].num = 1;
 		colonies[n].map.x = 1370;
@@ -478,13 +466,13 @@ void InitColonies()
 		Colonies[n].smuggling_nation = SPAIN;
 		Colonies[n].nation = SPAIN;
 		Colonies[n].island = "Cartahena";
-		Colonies[n].islandLable = "Mein";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1370;
 		colonies[n].map.y = 505;
 		colonies[n].StoreNum   = Cartahena_STORE;
 		colonies[n].from_sea   = "Cartahena_town";
 		colonies[n].Default.BoardLocation = "Cartahena_ExitTown";
+		colonies[n].lighthouse = "Mayak11";
 		colonies[n].FortValue = 45; // homo
 		colonies[n].mayak = 11;
 				
@@ -497,7 +485,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = SPAIN;
 		Colonies[n].nation = SPAIN;
 		Colonies[n].island = "Maracaibo";
-		Colonies[n].islandLable = "Mein";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1370;
 		colonies[n].map.y = 505;
@@ -515,7 +502,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = SPAIN;
 		Colonies[n].nation = SPAIN;
 		Colonies[n].island = "Caracas";
-		Colonies[n].islandLable = "Mein";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1370;
 		colonies[n].map.y = 505;
@@ -533,7 +519,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = SPAIN;
 		Colonies[n].nation = SPAIN;
 		Colonies[n].island = "Cumana";
-		Colonies[n].islandLable = "Mein";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1370;
 		colonies[n].map.y = 505;
@@ -551,7 +536,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = ENGLAND;
 		Colonies[n].nation = ENGLAND;
 		Colonies[n].island = "SantaCatalina";
-		Colonies[n].islandLable = "Mein";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1370;
 		colonies[n].map.y = 505;
@@ -569,7 +553,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = ENGLAND;
 		Colonies[n].nation = ENGLAND;
 		Colonies[n].island = "Beliz";
-		Colonies[n].islandLable = "Mein";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1370;
 		colonies[n].map.y = 505;
@@ -587,7 +570,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = "none";
 		Colonies[n].nation = "none";
 		Colonies[n].island = "Pearl";
-		Colonies[n].islandLable = "Pearl";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1370;
 		colonies[n].map.y = 505;
@@ -604,7 +586,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = "none";
 		Colonies[n].nation = "none";
 		Colonies[n].island = "Tenotchitlan";
-		Colonies[n].islandLable = "Tenotchitlan";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1370;
 		colonies[n].map.y = 505;
@@ -621,7 +602,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = "none";
 		Colonies[n].nation = SPAIN;
 		Colonies[n].island = "LosTeques";
-		Colonies[n].islandLable = "Mein";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1370;
 		colonies[n].map.y = 505;
@@ -691,7 +671,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = "none";
 		Colonies[n].nation = "none";
 		Colonies[n].island = "LostShipsCity";
-		Colonies[n].islandLable = "LostShipsCity";
 		Colonies[n].num = "1";
 		colonies[n].map.x = 1605;
 		colonies[n].map.y = 1852;
@@ -708,7 +687,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = "none";
 		Colonies[n].nation = "none";
 		Colonies[n].island = "KhaelRoa";
-		Colonies[n].islandLable = "KhaelRoa";
 		Colonies[n].num = "1";
 		colonies[n].map.x = 1698;
 		colonies[n].map.y = 1598;
@@ -726,7 +704,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = "none";
 		Colonies[n].nation = "none";
 		Colonies[n].island = "Ksochitam";
-		Colonies[n].islandLable = "Ksochitam";
 		Colonies[n].num = "1";
 		colonies[n].map.x = 1698;
 		colonies[n].map.y = 1598;
@@ -744,7 +721,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = "none";
 		Colonies[n].nation = "none";
 		Colonies[n].island = "RockIsland";
-		Colonies[n].islandLable = "RockIsland";
 		Colonies[n].num = "1";
 		colonies[n].map.x = 1698;
 		colonies[n].map.y = 1598;
@@ -762,7 +738,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = "none";
 		Colonies[n].nation = "none";
 		Colonies[n].island = "SantaQuiteria";
-		Colonies[n].islandLable = "SantaQuiteria";
 		Colonies[n].num = "1";
 		colonies[n].map.x = 1698;
 		colonies[n].map.y = 1598;
@@ -780,7 +755,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = "none";
 		Colonies[n].nation = "none";
 		Colonies[n].island = "IslaDeVieques";
-		Colonies[n].islandLable = "IslaDeVieques";
 		Colonies[n].num = "1";
 		colonies[n].map.x = 1698;
 		colonies[n].map.y = 1598;
@@ -798,7 +772,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = "none";
 		Colonies[n].nation = PIRATE;
 		Colonies[n].island = "IslaMona";
-		Colonies[n].islandLable = "IslaMona";
 		Colonies[n].num = "1";
 		colonies[n].map.x = 1698;
 		colonies[n].map.y = 1598;
@@ -817,7 +790,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = "none";
 		Colonies[n].nation = "none";
 		Colonies[n].island = "IslaDeCoche";
-		Colonies[n].islandLable = "IslaDeCoche";
 		Colonies[n].num = "1";
 		colonies[n].map.x = 1698;
 		colonies[n].map.y = 1598;
@@ -835,7 +807,6 @@ void InitColonies()
 		Colonies[n].smuggling_nation = SPAIN;
 		Colonies[n].nation = SPAIN;
 		Colonies[n].island = "Providence";
-		Colonies[n].islandLable = "Providence";
 		Colonies[n].num = "1";
 		colonies[n].map.x = 1605;
 		colonies[n].map.y = 1852;

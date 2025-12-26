@@ -53,6 +53,7 @@ seg_Cannon_24 {24-pounders}
 seg_Cannon_32 {32-pounders}
 seg_Cannon_36 {36-pounders}
 seg_Cannon_42 {42-pounders}
+seg_Cannon_48 {48-pounders}
 seg_Culverine_8 {Semi-couleuvrines}
 seg_Culverine_18 {Couleuvrines}
 seg_Culverine_36 {Full couleuvrines}

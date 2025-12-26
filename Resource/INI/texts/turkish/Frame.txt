@@ -1,0 +1,33 @@
+Frame_HourPassed {Bir saat geçti...}
+Frame_HourPassed_2 {İki saat geçti...}
+Frame_HourPassed_3 {Üç saat geçti...}
+Frame_HourPassed_4 {Dört saat geçti...}
+Frame_HourPassed_5 {Beş saat geçti...}
+Frame_HourPassed_? {Birkaç saat geçti...}
+Frame_BeenWhile {Biraz zaman geçti...}
+Frame_MinutePassed {Bir dakika geçti...}
+Frame_MinutePassed_2 {İki dakika geçti...}
+Frame_MinutePassed_3 {Üç dakika geçti...}
+Frame_MinutePassed_5 {Beş dakika geçti...}
+Frame_MinutePassed_10 {On dakika geçti...}
+Frame_MinutePassed_20 {Yirmi dakika geçti...}
+Frame_MinutePassed_? {Birkaç dakika geçti...}
+Frame_NextMorning {Ertesi sabah...}
+Frame_NextDay {Ertesi gün...}
+Frame_NextEvening {Ertesi akşam...}
+Frame_NextNight {Ertesi gece...}
+Frame_DayPassed {Bir gün geçti...}
+Frame_DayPassed_2 {İki gün geçti...}
+Frame_DayPassed_3 {Üç gün geçti...}
+Frame_DayPassed_4 {Dört gün geçti...}
+Frame_DayPassed_5 {Beş gün geçti...}
+Frame_DayPassed_6 {Altı gün geçti...}
+Frame_WeekPassed {Bir hafta geçti...}
+Frame_WeekPassed_2 {İki hafta geçti...}
+Frame_WeekPassed_3 {Üç hafta geçti...}
+Frame_MonthPassed {Bir ay geçti...}
+Frame_MonthPassed_2 {İki ay geçti...}
+Frame_MonthPassed_3 {Üç ay geçti...}
+Frame_YearPassed {Bir yıl geçti...}
+Frame_YearPassed_2 {İki yıl geçti...}
+Frame_YearPassed_3 {Üç yıl geçti...}

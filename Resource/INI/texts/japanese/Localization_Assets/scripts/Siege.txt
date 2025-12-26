@@ -1,0 +1,27 @@
+Siege_1 {地元の漁師たちが、 この海域で強大な@<NationNameSK(sti(aData.nation))>艦隊を目撃したそうだ。}
+Siege_2 {@<NationNameSK(sti(aData.nation))>の艦隊がまだこの街の近くにいるそうです。 あの連中に立ち向かう勇敢な船長が現れればいいのですが。}
+Siege_3 {軍艦の艦隊}
+Siege_4 {聞こえないのか？@<NationNameSK(sti(aData.nation))>の艦隊が砦を砲撃している。 いつ落ちてもおかしくない、 恐ろしいことが始まるぞ。}
+Siege_5 {今日は@<NationNameGenitive(sti(aData.nation))>にとって素晴らしい日だ。@<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>のような重要な植民地を手に入れた！ @<NationNameSK(sti(aData.conation))>の守備隊は全滅し、 要塞は我が軍が占拠してすでに再び強化されている！}
+Siege_6 {@<NationNameSK(sti(aData.nation))>の艦隊が長い包囲の末、@<NationNameSK(sti(aData.conation))>の植民地@<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>を占領したそうだ。これで@<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>は@<NationNameSK(sti(aData.nation))>の植民地になった！}
+Siege_7 {@<NationNamePeople(sti(aData.nation))>が卑劣にも我々の植民地@<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>を襲撃し、町を占領したそうだ！}
+Siege_8 {ご存知ですか？ 我らが勇敢な艦隊が@<NationNameGenitive(sti(aData.conation))>から豊かな植民地@<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>を奪還しました。~}
+Siege_9 {@<NationNameGenitive(sti(aData.conation))>にとって悲しい日です――我々は植民地を守れませんでした。 砦は@<NationNameSK(sti(aData.nation))>の艦隊に破壊され、 町は略奪されました。}
+Siege_10 {@<NationNameSK(sti(aData.nation))>が@<NationNameSK(sti(aData.conation))>の植民地@<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>を占領したという噂がある。@<NationNameSK(sti(aData.nation))>の艦隊は町を略奪し、 去っていった。}
+Siege_11 {噂によれば、@<NationNamePeople(sti(aData.nation))>が突然わたしたちの植民地@<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>を襲撃し、 援軍が到着する前に街を略奪したそうだ。 その後、 @<NationNamePeople(sti(aData.nation))>は戦利品を持って恥ずかしげに退却したという。}
+Siege_12 {ニュースを聞いたか？ 我が軍の艦隊が@<NationNameSK(sti(aData.conation))>の都市@<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>を見事に包囲したんだ。 守備隊の抵抗は打ち砕かれたが、 もちろん我々の軍も撤退せざるを得なかった。 だが、 戦利品は…}
+Siege_13 {今日は祝杯をあげよう！@<NationNameSK(sti(aData.nation))>の襲撃者を撃退し、街は安全だ。}
+Siege_14 {@<NationNameSK(sti(aData.nation))>の艦隊が@<NationNameSK(sti(aData.conation))>の植民地@<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>への攻撃で敗れたそうだ。 守備側が予想以上に強かったらしい。}
+Siege_15 {@<NationNamePeople(sti(aData.nation))>が突如@<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>を襲撃したらしいが、 援軍が間一髪で到着した！ @<NationNameSK(sti(aData.nation))>の艦はすべて沈められた。}
+Siege_16 {我々の艦隊が@<NationNameSK(sti(aData.conation))>の植民地@<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>の包囲に失敗したと聞いた。 長い包囲戦だったが、 我々の船は沈められてしまった！ 次こそはうまくいくだろう。}
+Siege_17 {イギリス}
+Siege_18 {フランス}
+Siege_19 {スペイン}
+Siege_20 {オランダ}
+Siege_21 {日}
+Siege_22 {日}
+Siege_23 {数時間}
+Siege_24 {@<NationNamePeople(sti(aData.nation))>が@<NationNameSK(sti(aData.conation))>の植民地@<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>を攻撃したそうだ。 まだ戦闘中だが、 防衛側は物資が不足している。 あと@<sDays>日が限界だろう。}
+Siege_25 {我々の無敵艦隊が@<NationNameSK(sti(aData.conation))>の植民地@<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>を攻撃しているという噂が流れている。 敵は激しく抵抗しているが、 勝者が誰かは@<sDays>以内に明らかになるだろう。}
+Siege_26 {~ @<NationNamePeople(sti(aData.nation))>が我々の植民地@<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>を襲撃しました。 勇敢な守備隊の食糧はあと@<sDays>しか持ちません。}
+Siege_27 {~ 包囲中 ~}

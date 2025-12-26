@@ -1,0 +1,170 @@
+Node0_title {Covert entry}
+Node0_a_a {You slip into the city, mooring silently in the darkness. $rand(At night the port smells of rot, salt, and wood. Somewhere rigging creaks, a sail snaps, and every sound feels too loud. You move along the pier, avoiding pools of lantern light.|The water by the night pier is black as pitch. Lantern lights barely reflect in it, and the depth seems endless. Damp planks creak hollowly underfoot, and you catch yourself walking in rhythm with the waves to mask the noise.|The night port is not asleep, only pretending to be. The ringing silence is full of life. Somewhere sailors mutter, glass clinks, a woman laughs softly. Cargo thuds in a warehouse, curses and cicadas fill the air. With every step, you grow more confident.)}
+Node0_a_b
+{
+You slip into the city, silently gliding through the half-open gates.
+$rand(
+You pause in the shadow of the wall, letting your eyes adjust. Beyond the gates the city sounds different: bright, hollow, and rolling, its echoes cutting through the night. Somewhere water drips, footsteps and whispers carry — the city feels alien, yet alive.|
+The night street beyond the gates seems empty, but it is a lie. The air is thick with rustling, distant voices, bustle, and the smell of yesterday’s food. You freeze, blending into the walls, and listen.|
+You take a few steps away from the gates and stop, dissolving into the darkness. Moonlight falls over the city, casting strange shadows. Somewhere a shutter slams, a sign creaks, laughter rings out and immediately drowns in the night. You are чужой here.
+)
+}
+Node0_b_a {$rand(One of the alleys runs between the houses as a straight dark strip. Almost no light reaches it, and you hear no suspicious sounds from there either — no voices, no footsteps, only silence and darkness.| To the left stretches a narrow side street, neatly squeezed between the walls. Windows at ground level are shuttered, doors locked with heavy padlocks, and the lantern meant to light the passage is almost dead.| One of the passages between the houses looks empty and abandoned. Its entrance is marked by barrels overgrown with cobwebs and rotting sacks. You think you can even hear rats.)}
+Node0_b_b {$rand(The only alley leading to the goal is lit unevenly: the bright light of a swaying lantern breaks against walls and corners, leaving sharp shadows. Fresh boot prints are visible in the dirt, and fragments of voices carry from deeper within. The space feels alive and unpredictable.| The nearest passage between the houses is long and winding, with a whole array of branches and turns. Inside, many dim lights glow — light seeps from unshut doors and shutters.| The alley on the way to the tavern twists and narrows, and the already limited space is cluttered with crates and rotting boards. Uneven shadows crawl along the walls, as if a light source is moving deeper inside.)}
+Node0_c_a {$rand(The wide street ahead curves around a deserted square and leads toward the tavern. Shops are shuttered, doors are barred, and lanterns brightly light every nook and corner.| The wide street runs straight, and up ahead you can clearly see every passerby. There are few at night — just a handful of drunks staggering toward the tavern where the street ends.| The wide street cuts across the whole city, lined with rich houses and shops. Bright light and the occasional guard patrol make it safe for an evening stroll.)}
+Node0_c_b
+{
+$rand(
+The wide street stretches across the whole city and stays lively despite the late hour. You hear a din and commotion, as if someone is arguing in raised voices.| 
+The wide street skirts a square where the watch is changing right now — a sergeant paces before a line of guardsmen, placing them on their posts.| 
+The central street is unusually crowded for this hour: some important merchant ship has arrived in the port, and guards and dockhands bustle back and forth.
+)
+}
+Node0_d {You must choose which route to take to reach safety. Slip through narrow back alleys, hiding in the shadows, or take the wide street and try not to draw attention?}
+Node0_a_action {Take the alleys}
+Node0_b_action {Take the main streets}
+Node0_c_action {Turn back while there is still time}
+Node1_a {You step into the alley, hoping to reach the tavern without incident}
+Node1_b_a
+{
+Suddenly, deeper in the alley, you spot a small post set against the wall. In the cramped space between the buildings stand three guards: one holding a lantern, another listening to the silence, the third peering into the darkness as if awaiting a signal. The passage is clearly blocked for a reason.
+One of them snaps his head up, stares in your direction for a long moment, and bellows: “Who goes there?”
+}
+Node1_b_b
+{
+Suddenly, you make out movement and muffled voices deeper in the alley. Two figures have a third pinned to the wall: one grips him by the collar, the other deftly searches his pockets. The victim struggles but does so without crying out, as if afraid to draw even worse trouble.
+One of the robbers suddenly turns, as though sensing something. His gaze sweeps the darkness and lingers in your direction.
+}
+Node1_b_c
+{
+Suddenly, a dull thud echoes from deeper in the alley, like a sack of meat striking stone. In the moonlight, you see a man slump against the wall, slowly sliding down. Nearby, someone kneels and hastily wipes a blade on his sleeve. You are so absorbed by the scene that you fail to notice your boot nudging a treacherous little stone underfoot.
+At that moment, the killer freezes and sharply lifts his head. His eyes sweep the darkness, fixing on the source of the sound. You have not been spotted yet, but he has clearly sensed another presence.
+}
+Node1_c {The situation escalates rapidly — you have not been spotted yet, but that could change at any moment. A decision must be made.}
+Node1_b_a_reaction {Freeze and hold your breath}
+Node1_b_a_reaction_log_0 {You press yourself against the cold wall and stop breathing. Shadows break up your outline, and the guard’s gaze slides along the alley without finding anything to latch onto. One agonizing second passes, then another, and the tension slowly ebbs away. At last, the guardsman gives it up, blaming rats and the wind, and they refocus on their task.}
+Node1_b_a_reaction_log_1 {You freeze by the wall, but at the worst possible moment your foot treacherously slips on the damp stone. The sound is barely audible, yet it is enough. The guard stops, raises his lantern, and slowly sweeps the light across the walls and the ground.}
+Node1_b_a_reaction_factor {Self-control}
+Node1_b_b_reaction {Look for a way around}
+Node1_b_b_reaction_log_0 {You spot a narrow side passage between the houses, almost swallowed by shadow. It looks awkward, but passable. You slip into it quietly, pressing close to the wall, and vanish from sight. The robbers remain behind, never realizing someone was there.}
+Node1_b_b_reaction_log_1 {You find a similar passage, but it turns out to be too narrow and cluttered. As you try to squeeze through, something shifts underfoot with a soft but treacherous scrape. The robber turns again and now looks not off to the side, but straight at where you are trying to hide. There is a way around, but using it without risk is no longer possible.}
+Node1_b_b_reaction_factor {Hidden paths}
+Node1_b_c_reaction {Throw a stone and distract the killer}
+Node1_b_c_reaction_log_0 {You feel around in the dark, find a small stone, and carefully toss it aside, away from yourself. The stone strikes the wall with a dry click. The killer snaps around, shifting toward the sound, and for a brief moment the alley is freed from his attention.}
+Node1_b_c_reaction_log_1 {You throw the stone, but it strikes the corner of a building and ricochets in a completely different direction. The sound ends up far too close. The killer peers into the darkness even more intently. It seems he has even held his breath to hear you.}
+Node1_b_c_reaction_factor {Distraction}
+Node1_a_action {Slip past}
+Node1_b_action {I can move absolutely silently}
+Node1_success
+{
+You manage to slip through unnoticed, weaving through the alleys, and eventually reach a safe place — the city tavern.
+$rand(
+The tense night city recedes, giving way to warm light and the hum of voices. Here, you are safe.|
+The alleys are left behind along with wary glances and nocturnal rustles. By the tavern door, the city becomes noisy and indifferent once more — anyone leaving here will no longer be taken for an enemy.
+)
+}
+Node1_success_action {Excellent!}
+Node2_a {You step out onto a main street, hoping to reach the tavern without drawing unnecessary attention.}
+Node2_b_a {$rand(At first everything goes smoothly|At first everything seems calm), but halfway along you encounter a city patrol. Two guards walk at an easy pace, speaking in low voices, while a third lingers slightly behind, carefully watching the street. They do not block your way or signal you, but one of them studies you longer than usual, as if judging whether you fit into this nocturnal scene.}
+Node2_b_b
+{
+You make it almost all the way without trouble, but right at the end you run into an unexpected obstacle.
+In the middle of the street stands a group of tipsy $rand(sailors|laborers). They laugh loudly, sing, someone plays cards.
+One of them notices you and squints, as if deciding whether you are one of them or not, while the others slowly close in around you. The group shows no sign of dispersing, and the tension rises.
+}
+Node2_b_c
+{
+You barely manage to cover a third of the distance when you suddenly come face to face with a small, colorful company: a well-dressed nobleman, a pair of courtesans from a local brothel, and their attendant carrying a lantern.
+They stroll slowly and languidly, laughing and chatting, and the whole street seems to bend around their presence.
+As you draw closer, the nobleman’s gaze slides over you appraisingly. The courtesans stop laughing and study you closely, and the servant freezes.
+Something about you marks you as an outsider.
+}
+Node2_c {You need to reach the tavern without drawing unnecessary attention.}
+Node2_b_a_reaction {Ask for directions to the tavern}
+Node2_b_a_reaction_log_0
+{
+You step just close enough to be visible in the lantern light and calmly ask how to get to the tavern.
+One of the guards grumbles something displeased, but still points the way and names a nearby landmark.
+}
+Node2_b_a_reaction_log_1
+{
+You ask your question, and the guards’ conversation cuts off mid-sentence. Tension hangs in the air as the patrol scrutinizes you in dead silence.
+After several agonizing seconds, one of the guards finally answers and points the way. You leave, and they watch you for a long time.
+}
+Node2_b_a_reaction_factor {Lost traveler}
+Node2_b_b_reaction {Sing a sea shanty}
+Node2_b_b_reaction_log_0 {You find the right moment to slip into the song and quietly take up a familiar refrain. The tension quickly fades: someone claps you on the shoulder, another presses a mug of drink into your hand. After a couple of verses, you continue on amid approving shouts.}
+Node2_b_b_reaction_log_1 {You try to find the right moment to join the song, but you mix up the words and sing off-key. Laughter turns into whistles; one drunk even tries to start a fight, but he is pulled back in time. You retreat hastily, and the noise you caused will clearly attract unwanted attention.}
+Node2_b_b_reaction_factor {Shanty}
+Node2_b_c_reaction {Treat the nobleman to wine}
+Node2_b_c_reaction_log_0
+{
+You pick up on the group’s overall mood: a smile, a brief remark, a gesture as if you were already part of this nighttime stroll and simply not recognized at first. The nobleman laughs and nods to you, as though he has just remembered where he might have seen you. The courtesans follow his lead, and the conversation once again flows easily and carefree.
+You suggest sharing some wine and heading to the tavern, but this company clearly has other plans. The servant turns the lantern aside, and they move on without lingering.
+}
+Node2_b_c_reaction_log_1
+{
+You try to keep the cheerful tone, but are met with sharp hostility. The nobleman makes a loud, pointed remark about your attire, with emphasized surprise, as if unable to believe such clothes are worn in respectable places. The courtesans burst into laughter and draw closer to him.
+You offer wine, but the nobleman brusquely waves you off. He loudly declares that he has no intention of being plied with drink and robbed by some vagabonds. His voice echoes down the street, the servant raises the lantern higher, brightly illuminating your face, and it draws far too much unwanted attention.
+}
+Node2_b_c_reaction_factor {High society}
+Node2_a_action {Try to make it to the tavern}
+Node2_b_action {I'm very good at passing as one of the locals}
+Node2_c_action {I have a trade license in case of trouble}
+Node2_success
+{
+You reach the tavern by sticking to the lit streets and never lingering longer than necessary. The doors slam shut behind you, cutting off the night city.
+$rand(
+The street’s din dissolves into the noise of the hall, the smells of food and drink. Here, no one recalls who you are or where you came from — you are just another patron.|
+The broad streets remain outside along with чужие взгляды and unwanted attention. Inside the tavern, the city becomes indifferent once more, and from here on you are part of the background.
+)
+}
+Node2_success_action {Excellent!}
+Node3_a
+{
+You nearly reach the tavern when guards suddenly block the way ahead. They emerge from different sides and form a semicircle, as if tightening invisible pincers around you. Something has given you away, and the sense of being watched that followed every step finally takes shape.
+
+They advance calmly and confidently, keeping equal distance, as if careful not to apply too much pressure. Some hold weapons in their hands, but none have raised them yet.
+
+A few steps away, the guards stop, and a sergeant steps forward. He raises his hand and curtly asks you to accompany them to the command post for identification.
+}
+Node3_b_a {The sergeant’s voice sounds sleepy and uncertain; he keeps glancing back at the gray-haired guard standing behind him — clearly a mentor. Most likely, the sergeant is simply eager to prove himself.}
+Node3_b_b {The guards behind the sergeant yawn and rub their eyes — they were clearly pulled from the barracks only recently, in the middle of the night. Sleep fades, giving way to irritation.}
+Node3_b_c {Two men in the line exchange glances when the sergeant says “command post.” One gives a barely perceptible shake of his head, the other clenches his jaw. It is clearly important to them that this ends quietly and quickly, without prolonged proceedings or scenes. Your detention may be unlawful.}
+Node3_c_a {Near the tavern entrance you suddenly spot familiar faces — a couple of regulars have stepped outside for some air, and you easily recognize them as smugglers you know. You have done several deals with them in the past, and now this might work in your favor.}
+Node3_c_b {Suddenly, a tavern window shatters and a chair flies out of it. You hear shouting and curses. The guards instinctively turn in that direction, then back to you. A silent question hangs in the air.}
+Node3_c_c {All of a sudden, two well-dressed men emerge from the tavern. They are arguing loudly and clearly intend to settle some matter with blood. After a few barbed remarks, one draws a rapier, the other a pistol.}
+Node3_d {You need to act while there is still a window of opportunity.}
+Node3_b_a_reaction {Reinforce the sergeant’s authority}
+Node3_b_a_reaction_log
+{
+You address the sergeant with deliberate respect and thank him for his vigilance. You say that you are ready to follow any orders, but ask to be allowed to stay the night first.
+He visibly softens.
+}
+Node3_b_a_reaction_factor {Respect for the law}
+Node3_b_b_reaction {Take advantage of their fatigue}
+Node3_b_b_reaction_log {You quickly pick up on the guards’ mood and adjust to it. Calmly, you say that this nighttime misunderstanding can be settled here and now, without wasting time on the command post and paperwork. A hint of relief appears on the guards’ faces.}
+Node3_b_b_reaction_factor {Weather vane}
+Node3_b_c_reaction {Invoke the law}
+Node3_b_c_reaction_log {You calmly point out that a detention requires proper grounds and suggest acting strictly by the regulations, without overstepping the bounds of the law.}
+Node3_b_c_reaction_factor {Pedantry}
+Node3_c_a_reaction {Call out to the smugglers}
+Node3_c_a_reaction_log_0 {You call out to the smugglers. They look you over and, after a couple of seconds, break into smiles. These people clearly know how dealings with the guard can end and greet you warmly. The guards soften a little.}
+Node3_c_a_reaction_log_1 {You call out to the smugglers, but they do not respond. One of them spits on the ground after casting you a brief glance and heads into the tavern. The other follows. Either they did not recognize you or chose not to have anything to do with you. Either way, you now look even more suspicious in the eyes of the guards.}
+Node3_c_a_reaction_factor {Shady business}
+Node3_c_b_reaction {Shift attention to the tavern}
+Node3_c_b_reaction_log {You say that a peaceful merchant like yourself poses no threat to public order, whereas the commotion inside the tavern will not resolve itself. The longer it drags on, the graver the consequences will be. You suggest that the guards deal with the brawl first and postpone the command post until morning. The sergeant falls into deep thought.}
+Node3_c_b_reaction_factor {Commotion}
+Node3_c_c_reaction {Call for order}
+Node3_c_c_reaction_log {You cite the law forbidding duels within the city and call on the duelists to stand down. In the course of your reprimand, you subtly enlist the guards’ support, and they now treat you noticeably more warmly.}
+Node3_c_c_reaction_factor {Intervene in the duel}
+Node3_a_action {Try to smooth things over}
+Node3_b_action {Tell the sergeant that a monstrous mistake has been made}
+Node3_success
+{
+The sergeant hesitates for another moment, then gives a sharp nod and issues a brief order. The guards turn and step aside, dispersing to their posts. The semicircle breaks apart, footsteps fade, voices dissolve into the night noise.
+You do not hesitate. A couple of quick steps — and the tavern door slams shut behind you. Inside it is warm, cramped, and loud, and everything left outside suddenly ceases to matter.
+}
+Node3_success_action {Excellent!}
+Node3_fail {The guards’ patience runs out. The sergeant abruptly cuts the conversation short and gestures with his hand. The semicircle tightens, someone bumps you with a shoulder, someone grabs your sleeve. You realize you are caught, and there is no way back. You will have to fight your way out of the city, spilling blood.}
+Node3_fail_action {To battle!}

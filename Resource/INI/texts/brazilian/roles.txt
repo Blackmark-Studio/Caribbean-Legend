@@ -1,0 +1,63 @@
+portman {Mestre do Porto}
+drinker_0 {O pirata mais famoso destas águas}
+drinker_1 {Um mestre em contar histórias reais}
+drinker_2 {Agente Especial de Escorial Aposentado}
+drinker_3 {Conversador extremamente erudito}
+drinker_4 {Especialista competente em qualquer área}
+drinker_5 {Alma alegre, destemida e leal}
+drinker_6 {Um homem magnífico em seu auge}
+drinker_7 {Chefe das miudezas}
+drinker_8 {Veterano da Patrulha Bêbada}
+drinker_9 {O primo distante de uma pessoa influente na DWIC}
+pofficer {Candidato}
+hovernor {Governador}
+tavernkeeper {Estalajadeiro}
+waitress {Garçonete}
+trader {Mercante}
+shipyarder {Construtor naval}
+priest {Padre}
+Ghovernor {Governador-Geral}
+Phovernor {Barão}
+usurer {Agiota}
+poorman {Mendigo}
+gipsy {Cigana}
+captain {Capitão}
+sailor {Marinheiro}
+marginal_town {Pirata}
+noble {Nobre}
+monk {Monge}
+chaplain {Capelão}
+potion_merchant {Alquimista}
+veteran_merchant {Ferreiro}
+armourer_merchant {Armeiro}
+monk_merchant {Vendedor de Relíquias Sagradas}
+indian_merchant {Vidente}
+lightman_merchant {Guarda do Farol}
+cemeteryman_merchant {Coveiro}
+legend {Lenda}
+soldier_town {Guarda}
+banditos {Corta-garganta}
+patrol {Patrulha}
+comandante {Comandante}
+prisonboss {Comandante}
+whore {Moça}
+hostess {Anfitriã}
+enemy {Inimigo}
+wife {Esposa}
+kukulkan {Kukulkan}
+mercen {Mercenário}
+monster {Morto-vivo}
+captain_trader {Comerciante Livre}
+mtraxx_vanguard {Vanguarda de Tirax}
+fgirl {Amante}
+deadman {Morto-vivo}
+friend {Amigo}
+duelist {Espadachim}
+smuggler {Contrabandista}
+AffairOfHonor_tavern {Bêbado Desesperado}
+hovernon_wife {Esposa do Governador}
+HeadSailor {Marinheiro Sênior}
+HeadSailorPlus {Voz da tripulação}
+Director {Diretor}
+Deputy Director {Vice-diretor}
+Naval Registry Guard {Guarda da Capitania}

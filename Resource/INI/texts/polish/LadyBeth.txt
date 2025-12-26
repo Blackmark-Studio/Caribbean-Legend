@@ -5,7 +5,7 @@ LadyBeth_Pop_Name {Diego}
 LadyBeth_Pop_lastname {de Landa}
 LadyBeth_Elizabeth_Name {Elizabeth}
 LadyBeth_Elizabeth_lastname {Bishop}
-LadyBeth_WorldMap {Kapitanie, widzę 'Panienke Beth'. Co za piękność! Ale nie możemy jej przechwycić - jej kapitan jest zbyt dobry!}
+LadyBeth_WorldMap {Kapitanie, widzę 'Panienkę Beth'. Co za piękność! Ale nie możemy jej przechwycić - jej kapitan jest zbyt dobry!}
 LadyBeth_Rum1 {Słyszałeś o kapitanie Albercie Blackwoodzie? Były oficer Królewskiej Marynarki, a teraz najbardziej udany poszukiwacz skarbów w całym archipelagu! Jego snow 'Panienka Beth' to prawdziwe dzieło sztuki. Jego załoga żyje jak lordowie, a on sam chodzi w jedwabiach. Francuskie władze zdejmują przed nim kapelusze, mimo że jest Anglikiem. Mówią, że w ostatnim roku znalazł tyle złota, że mógłby kupić tytuł i kilka plantacji na Barbadosie.}
 LadyBeth_Rum2 {Słyszałeś? Blackwooda już nie ma! Mówią, że to była prawdziwa rzeź - jego obóz został całkowicie zniszczony. Nikt nie wie, kto to zrobił, ale jeden rybak przysięga, że widział bitwę na brzegu. Profesjonalistę takiego jak Blackwood nie jest łatwo pokonać... Co teraz stanie się z jego skarbami? Morze zabrało kolejną legendę...}
 LadyBeth_Rum3 {Widziałeś? Sam Blackwood jest w mieście! Jest jednak dziwny. Tym razem zgromadził tyle zapasów, jakby szedł na wojnę. Ciągle jeździ na Kajmany, coś tam kopie. Myślałbyś, że z takimi pieniędzmi mógłby żyć i cieszyć się życiem, ale on wciąż kopie i kopie. Marynarze mówią, że ostatnio wrócili stamtąd ze stratami. To pierwszy raz.}

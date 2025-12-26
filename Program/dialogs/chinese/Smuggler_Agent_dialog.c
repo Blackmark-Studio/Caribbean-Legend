@@ -77,7 +77,7 @@ void ProcessDialogEvent()
 				}
 				AddQuestUserData("Gen_Contraband", "sIsland", XI_ConvertString(GetIslandByCityName(npchar.city)));
 			}
-			AddQuestUserData("Gen_Contraband", "sLoc", GetConvertStr(Pchar.quest.contraband.CurrentPlace, "LocLables.txt"));
+			AddQuestUserData("Gen_Contraband", "sLoc", GetLocationNameByID(Pchar.quest.contraband.CurrentPlace));
 				
 			DialogExit();
 		break;
@@ -606,11 +606,11 @@ void ProcessDialogEvent()
                         {
                             if (ChangeContrabandRelation(pchar, 0) >= 70)
                             {
-                                Dialog.Text = "我知道我们可以和你做生意。 我们将在" + GetConvertStr(Pchar.quest.contraband.CurrentPlace, "LocLables.txt") + "等你。 ";
+                                Dialog.Text = "我知道我们可以和你做生意。 我们将在" + GetLocationNameByID(Pchar.quest.contraband.CurrentPlace) + "等你。 ";
                             }
                             else
                             {
-            				    Dialog.Text = "嗯... 也许我们可以帮你找个买家。 我们将在" + GetConvertStr(Pchar.quest.contraband.CurrentPlace, "LocLables.txt") + "等你。 ";
+            				    Dialog.Text = "嗯... 也许我们可以帮你找个买家。 我们将在" + GetLocationNameByID(Pchar.quest.contraband.CurrentPlace) + "等你。 ";
             				}
             				Link.l1 = "好的。 在那里见。 ";
             				Link.l1.go = "Smuggling_exit";
@@ -717,10 +717,10 @@ void ProcessDialogEvent()
 							SetNPCQuestDate(npchar, "Travel_Talk");
 							SaveCurrentQuestDateParam("contraTravel");
 
-							Dialog.Text = "好吧, 我们可以把你送到" + GetConvertStr(locations[FindLocation(pchar.GenQuest.contraTravel.destination.loc)].id, "LocLables.txt") + "附近的" +
+							Dialog.Text = "好吧, 我们可以把你送到" + GetLocationNameByRef(&locations[FindLocation(pchar.GenQuest.contraTravel.destination.loc)]) + "附近的" +
 								XI_ConvertString("Colony" + pchar.GenQuest.contraTravel.destination + "Gen") + ", 费用为" + pchar.GenQuest.contraTravel.price + "金币。 请在" +
 								FindRussianDaysString(nDay) + "内带钱来。 船将在24小时后准时在" +
-								GetConvertStr(locations[FindLocation(Pchar.GenQuest.contraTravel.CurrentPlace)].id, "LocLables.txt") + "等你。 ";
+								GetLocationNameByRef(&locations[FindLocation(Pchar.GenQuest.contraTravel.CurrentPlace)]) + "等你。 ";
 
 							pchar.GenQuest.contraTravel.days = nDay;
 							Link.l1 = "对我来说可行。 ";
@@ -774,8 +774,8 @@ void ProcessDialogEvent()
 			ReOpenQuestHeader("Gen_ContrabandTravel");
 			AddQuestRecord("Gen_ContrabandTravel", "1");
 			AddQuestUserData("Gen_ContrabandTravel", "sSex", GetSexPhrase("",""));
-			AddQuestUserData("Gen_ContrabandTravel", "sLoc", GetConvertStr(pchar.GenQuest.contraTravel.CurrentPlace, "LocLables.txt"));
-			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetConvertStr(pchar.GenQuest.contraTravel.destination.loc, "LocLables.txt"));
+			AddQuestUserData("Gen_ContrabandTravel", "sLoc", GetLocationNameByID(pchar.GenQuest.contraTravel.CurrentPlace));
+			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc));
 			AddQuestUserData("Gen_ContrabandTravel", "sPlaceTo", XI_ConvertString("Colony" + pchar.GenQuest.contraTravel.destination + "Gen"));
 			AddQuestUserData("Gen_ContrabandTravel", "sDays", FindRussianDaysString(sti(pchar.GenQuest.contraTravel.days)));
 			AddQuestUserData("Gen_ContrabandTravel", "sPrice", pchar.GenQuest.contraTravel.price);

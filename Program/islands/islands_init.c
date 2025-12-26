@@ -29,6 +29,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = 0;
 		Islands[n].id = "Barbados";
+		Islands[n].name = "Barbados";
+		Islands[n].main_colony = "Bridgetown";
 		Islands[n].model = "barbados";
 		Islands[n].filespath.models = "islands\barbados";
 		Islands[n].refl_model = "barbados_refl";
@@ -118,6 +120,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Jamaica";
+		Islands[n].name = "Jamaica";
+		Islands[n].main_colony = "PortRoyal";
 		Islands[n].model = "Jamaica";
 		Islands[n].filespath.models = "islands\Jamaica";
 		Islands[n].refl_model = "jamaica_refl";
@@ -219,6 +223,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "PuertoRico";
+		Islands[n].name = "PuertoRico";
+		Islands[n].main_colony = "SanJuan";
 		Islands[n].model = "PuertoRico";
 		Islands[n].filespath.models = "islands\PuertoRico";
 		Islands[n].refl_model = "PuertoRico_refl";
@@ -300,6 +306,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Cuba1";
+		Islands[n].name = "Cuba";
+		Islands[n].main_colony = "Santiago";
 		Islands[n].model = "Cuba1";
 		Islands[n].filespath.models = "islands\Cuba1";
 		Islands[n].refl_model = "Cuba1_refl";
@@ -397,6 +405,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Cuba2";
+		Islands[n].name = "Cuba";
+		Islands[n].main_colony = "Havana";
 		Islands[n].model = "Cuba2";
 		Islands[n].filespath.models = "islands\Cuba2";
 		Islands[n].refl_model = "Cuba2_refl";
@@ -505,6 +515,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Curacao";
+		Islands[n].name = "Curacao";
+		Islands[n].main_colony = "Villemstad";
 		Islands[n].model = "Curacao";
 		Islands[n].filespath.models = "islands\Curacao";
 		Islands[n].refl_model = "Curacao_refl";
@@ -603,6 +615,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Tortuga";
+		Islands[n].name = "Tortuga";
+		Islands[n].main_colony = "Tortuga";
 		Islands[n].model = "Tortuga";
 		Islands[n].filespath.models = "islands\Tortuga";
 		Islands[n].refl_model = "Tortuga_refl";
@@ -684,6 +698,8 @@ void InitIslands()
 		/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "SentMartin";
+		Islands[n].name = "SentMartin";
+		Islands[n].main_colony = "Marigo";
 		Islands[n].model = "SentMartin"; // меняем название модели на новое
 		Islands[n].filespath.models = "islands\SentMartin"; // меняем путь к модели на новый
 		Islands[n].refl_model = "SentMartin_refl"; // меняем название модели на новое
@@ -768,6 +784,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Trinidad";
+		Islands[n].name = "Trinidad";
+		Islands[n].main_colony = "PortSpein";
 		Islands[n].model = "Trinidad";
 		Islands[n].filespath.models = "islands\Trinidad";
 		Islands[n].refl_model = "Trinidad_refl";
@@ -857,6 +875,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Nevis";
+		Islands[n].name = "Nevis";
+		Islands[n].main_colony = "Charles";
 		Islands[n].model = "Nevis";
 		Islands[n].filespath.models = "islands\Nevis";
 		Islands[n].refl_model = "Nevis_refl";
@@ -955,6 +975,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Antigua";
+		Islands[n].name = "Antigua";
+		Islands[n].main_colony = "SentJons";
 		Islands[n].model = "Antigua";
 		Islands[n].filespath.models = "islands\Antigua";
 		Islands[n].refl_model = "Antigua_refl";
@@ -1035,6 +1057,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Guadeloupe";
+		Islands[n].name = "Guadeloupe";
+		Islands[n].main_colony = "BasTer";
 		Islands[n].model = "Guadeloupe";
 		Islands[n].filespath.models = "islands\Guadeloupe";
 		Islands[n].refl_model = "Guadeloupe_refl";
@@ -1140,6 +1164,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Martinique";
+		Islands[n].name = "Martinique";
+		Islands[n].main_colony = "FortFrance";
 		Islands[n].model = "Martinique";
 		Islands[n].filespath.models = "islands\Martinique";
 		Islands[n].refl_model = "Martinique_refl";
@@ -1230,6 +1256,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Hispaniola1";
+		Islands[n].name = "Hispaniola";
+		Islands[n].main_colony = "SantoDomingo";
 		Islands[n].model = "Hispaniola1";
 		Islands[n].filespath.models = "islands\Hispaniola1";
 		Islands[n].refl_model = "Hispaniola1_refl";
@@ -1330,6 +1358,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Hispaniola2";
+		Islands[n].name = "Hispaniola";
+		Islands[n].main_colony = "PortPax";
 		Islands[n].model = "Hispaniola2";
 		Islands[n].filespath.models = "islands\Hispaniola2";
 		Islands[n].refl_model = "Hispaniola2_refl";
@@ -1411,6 +1441,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Bermudes";
+		Islands[n].name = "Bermudes";
+		Islands[n].main_colony = "Pirates";
 		Islands[n].model = "Bermudes";
 		Islands[n].filespath.models = "islands\Bermudes";
 		Islands[n].refl_model = "Bermudes_refl";
@@ -1484,6 +1516,7 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Dominica";
+		Islands[n].name = "Dominica";
 		Islands[n].model = "Dominica";
 		Islands[n].filespath.models = "islands\Dominica";
 		Islands[n].refl_model = "Dominica_refl";
@@ -1525,6 +1558,7 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Terks";
+		Islands[n].name = "Terks";
 		Islands[n].model = "Terks";
 		Islands[n].filespath.models = "islands\Terks";
 		Islands[n].refl_model = "Terks_refl";
@@ -1567,6 +1601,7 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Caiman";
+		Islands[n].name = "Caiman";
 		Islands[n].model = "Caiman";
 		Islands[n].filespath.models = "islands\Caiman";
 		Islands[n].refl_model = "Caiman_refl";
@@ -1609,6 +1644,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "PortoBello";
+		Islands[n].name = "Mein";
+		Islands[n].main_colony = "PortoBello";
 		Islands[n].model = "PortoBello";
 		Islands[n].filespath.models = "islands\PortoBello";
 		Islands[n].refl_model = "PortoBello_refl";
@@ -1709,6 +1746,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Cartahena";
+		Islands[n].name = "Mein";
+		Islands[n].main_colony = "Cartahena";
 		Islands[n].model = "Cartahena";
 		Islands[n].filespath.models = "islands\Cartahena";
 		Islands[n].refl_model = "Cartahena_refl";
@@ -1792,6 +1831,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Maracaibo";
+		Islands[n].name = "Mein";
+		Islands[n].main_colony = "Maracaibo";
 		Islands[n].model = "Maracaibo";
 		Islands[n].filespath.models = "islands\Maracaibo";
 		Islands[n].refl_model = "Maracaibo_refl";
@@ -1872,6 +1913,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Caracas";
+		Islands[n].name = "Mein";
+		Islands[n].main_colony = "Caracas";
 		Islands[n].model = "Caracas";
 		Islands[n].filespath.models = "islands\Caracas";
 		Islands[n].refl_model = "Caracas_refl";
@@ -1945,6 +1988,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Cumana";
+		Islands[n].name = "Mein";
+		Islands[n].main_colony = "Cumana";
 		Islands[n].model = "Cumana";
 		Islands[n].filespath.models = "islands\Cumana";
 		Islands[n].refl_model = "Cumana_refl";
@@ -2034,6 +2079,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "SantaCatalina";
+		Islands[n].name = "Mein";
+		Islands[n].main_colony = "SantaCatalina";
 		Islands[n].model = "SantaCatalina";
 		Islands[n].filespath.models = "islands\SantaCatalina";
 		Islands[n].refl_model = "SantaCatalina_refl";
@@ -2123,6 +2170,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Beliz";
+		Islands[n].name = "Mein";
+		Islands[n].main_colony = "Beliz";
 		Islands[n].model = "Beliz";
 		Islands[n].filespath.models = "islands\Beliz";
 		Islands[n].refl_model = "Beliz_refl";
@@ -2238,6 +2287,8 @@ void InitIslands()
 
 		n = n + 1;
 		Islands[n].id = "LostShipsCity";
+		Islands[n].name = "LostShipsCity";
+		Islands[n].main_colony = "LostShipsCity";
 		Islands[n].model = "LostShipsCity";
 		Islands[n].filespath.models = "islands\LostShipsCity";
 		Islands[n].refl_model = "LostShipsCity_refl";
@@ -2299,6 +2350,7 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "KhaelRoa";
+		Islands[n].name = "KhaelRoa";
 		Islands[n].model = "KhaelRoa";
 		Islands[n].filespath.models = "islands\KhaelRoa";
 		Islands[n].refl_model = "KhaelRoa_refl";
@@ -2327,6 +2379,7 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Ksochitam";
+		Islands[n].name = "Ksochitam";
 		Islands[n].model = "Ksochitam";
 		Islands[n].filespath.models = "islands\Ksochitam";
 		Islands[n].refl_model = "Ksochitam_refl";
@@ -2369,6 +2422,7 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "RockIsland";
+		Islands[n].name = "RockIsland";
 		Islands[n].model = "RockIsland";
 		Islands[n].filespath.models = "islands\RockIsland";
 		Islands[n].refl_model = "RockIsland_refl";
@@ -2407,6 +2461,8 @@ void InitIslands()
 	/////////////////////////////////////////////////////////////////////////
 		n = n + 1;
 		Islands[n].id = "Providence";
+		Islands[n].name = "Providence";
+		Islands[n].main_colony = "SanAndres";
 		Islands[n].model = "Providence";
 		Islands[n].filespath.models = "islands\Providence";
 		Islands[n].refl_model = "Providence_refl";
@@ -2489,6 +2545,7 @@ void InitIslands()
 	
 		n = n + 1;
 		Islands[n].id = "SantaQuiteria";
+		Islands[n].name = "SantaQuiteria";
 		Islands[n].model = "SantaQuiteria";
 		Islands[n].filespath.models = "islands\SantaQuiteria";
 		Islands[n].refl_model = "SantaQuiteria_refl";
@@ -2538,6 +2595,7 @@ void InitIslands()
 	
 		n = n + 1;
 		Islands[n].id = "IslaDeVieques";
+		Islands[n].name = "IslaDeVieques";
 		Islands[n].model = "IslaDeVieques";
 		Islands[n].filespath.models = "islands\IslaDeVieques";
 		Islands[n].refl_model = "IslaDeVieques_refl";
@@ -2571,6 +2629,7 @@ void InitIslands()
 	
 		n = n + 1;
 		Islands[n].id = "IslaMona";
+		Islands[n].name = "IslaMona";
 		Islands[n].model = "IslaMona";
 		Islands[n].filespath.models = "islands\IslaMona";
 		Islands[n].refl_model = "IslaMona_refl";
@@ -2620,6 +2679,7 @@ void InitIslands()
 	
 		n = n + 1;
 		Islands[n].id = "IslaDeCoche";
+		Islands[n].name = "IslaDeCoche";
 		Islands[n].model = "IslaDeCoche";
 		Islands[n].filespath.models = "islands\IslaDeCoche";
 		Islands[n].refl_model = "IslaDeCoche_refl";
@@ -2653,9 +2713,119 @@ void InitIslands()
 		Islands[n].InterfaceTextures.t1.h = 4;
 		Islands[n].InterfaceTextures.t1.v = 1;
 
-		SendMessage(&locator,"le",LM_LOCATE_I,&Islands[n]);		
-       
-		iNumIslands = n;
+		SendMessage(&locator,"le",LM_LOCATE_I,&Islands[n]);
+
+	/////////////////////////////////////////////////////////////////////////
+	/// Panama
+	/////////////////////////////////////////////////////////////////////////
+
+	n = n + 1;
+	Islands[n].id = "Panama";
+	Islands[n].name = "Main";
+	Islands[n].main_colony = "Panama";
+	Islands[n].model = "IslaMona";
+	Islands[n].filespath.models = "islands\IslaMona";
+	Islands[n].refl_model = "IslaMona_refl";
+	Islands[n].locators = "IslaMona_locators";
+	Islands[n].visible = false;
+	Islands[n].reload_enable = false;
+	Islands[n].hidden = true;
+	Islands[n].colonyquantity = 0;
+	Islands[n].jungle.patch = "IslaMona_jungles";
+	Islands[n].jungle.texture = "junglesprites";
+	Islands[n].jungle.scale = 12.5;
+	Islands[n].TexturePath = "IslaMona";
+
+	Islands[n].InterfaceTextures.t1 = "battle_interface\moor_7.tga";
+	Islands[n].InterfaceTextures.t1.h = 4;
+	Islands[n].InterfaceTextures.t1.v = 1;
+
+	//Виртуальный остров
+	//SendMessage(&locator,"le",LM_LOCATE_I,&Islands[n]);
+
+	/////////////////////////////////////////////////////////////////////////
+	/// Tenotchitlan
+	/////////////////////////////////////////////////////////////////////////
+
+	n = n + 1;
+	Islands[n].id = "Tenotchitlan";
+	Islands[n].name = "Main";
+	Islands[n].main_colony = "Tenotchitlan";
+	Islands[n].model = "IslaMona";
+	Islands[n].filespath.models = "islands\IslaMona";
+	Islands[n].refl_model = "IslaMona_refl";
+	Islands[n].locators = "IslaMona_locators";
+	Islands[n].visible = false;
+	Islands[n].reload_enable = false;
+	Islands[n].hidden = true;
+	Islands[n].colonyquantity = 0;
+	Islands[n].jungle.patch = "IslaMona_jungles";
+	Islands[n].jungle.texture = "junglesprites";
+	Islands[n].jungle.scale = 12.5;
+	Islands[n].TexturePath = "IslaMona";
+
+	Islands[n].InterfaceTextures.t1 = "battle_interface\moor_7.tga";
+	Islands[n].InterfaceTextures.t1.h = 4;
+	Islands[n].InterfaceTextures.t1.v = 1;
+
+	//Виртуальный остров
+	//SendMessage(&locator,"le",LM_LOCATE_I,&Islands[n]);
+
+	/////////////////////////////////////////////////////////////////////////
+	/// MarieGalante
+	/////////////////////////////////////////////////////////////////////////
+
+	n = n + 1;
+	Islands[n].id = "MarieGalante";
+	Islands[n].name = "MarieGalante";
+	Islands[n].model = "IslaMona";
+	Islands[n].filespath.models = "islands\IslaMona";
+	Islands[n].refl_model = "IslaMona_refl";
+	Islands[n].locators = "IslaMona_locators";
+	Islands[n].visible = false;
+	Islands[n].reload_enable = false;
+	Islands[n].hidden = true;
+	Islands[n].colonyquantity = 0;
+	Islands[n].jungle.patch = "IslaMona_jungles";
+	Islands[n].jungle.texture = "junglesprites";
+	Islands[n].jungle.scale = 12.5;
+	Islands[n].TexturePath = "IslaMona";
+
+	Islands[n].InterfaceTextures.t1 = "battle_interface\moor_7.tga";
+	Islands[n].InterfaceTextures.t1.h = 4;
+	Islands[n].InterfaceTextures.t1.v = 1;
+
+	//Виртуальный остров
+	//SendMessage(&locator,"le",LM_LOCATE_I,&Islands[n]);
+
+	/////////////////////////////////////////////////////////////////////////
+	/// Tobago
+	/////////////////////////////////////////////////////////////////////////
+
+	n = n + 1;
+	Islands[n].id = "Tobago";
+	Islands[n].name = "Tobago";
+	Islands[n].model = "IslaMona";
+	Islands[n].filespath.models = "islands\IslaMona";
+	Islands[n].refl_model = "IslaMona_refl";
+	Islands[n].locators = "IslaMona_locators";
+	Islands[n].visible = false;
+	Islands[n].reload_enable = false;
+	Islands[n].hidden = true;
+	Islands[n].colonyquantity = 0;
+	Islands[n].jungle.patch = "IslaMona_jungles";
+	Islands[n].jungle.texture = "junglesprites";
+	Islands[n].jungle.scale = 12.5;
+	Islands[n].TexturePath = "IslaMona";
+
+	Islands[n].InterfaceTextures.t1 = "battle_interface\moor_7.tga";
+	Islands[n].InterfaceTextures.t1.h = 4;
+	Islands[n].InterfaceTextures.t1.v = 1;
+
+	//Виртуальный остров
+	//SendMessage(&locator,"le",LM_LOCATE_I,&Islands[n]);
+
+	iNumIslands = n;
 		Trace("How islands = " + iNumIslands);
 		/////////////////////////////////////////////////////////////////////////////////////////
 		/////////////////////////////////////////////////////////////////////////////////////////

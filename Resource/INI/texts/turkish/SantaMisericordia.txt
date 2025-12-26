@@ -1,0 +1,39 @@
+new_string
+{
+
+}
+Ship_Name {Kutsal Merhamet}
+Cap_Name {Fernando}
+Cap_lastname {de Alamida}
+City_Rum1 {Bütün şehir diken üstünde – kraliyet müfettişi don Fernando de Alamida geldi. Bilirsiniz, burada çok şey gördüm ama bu... İnsanları değiştiren yas değil, onunla nasıl başa çıktıklarıdır. Söylenene göre, babasının ölümünden sonra bambaşka biri olmuş. Artık tüm Takımadalar’da ondan daha dürüst ve... acımasız bir Kraliyet hizmetkârı bulamazsınız.}
+City_Rum2 {Şu "Kutsal Merhamet"e bir bak! Duyduğuma göre kralın kendisi özel tasarımlarla yaptırmış. Hem bakın, tek bir çizik bile yok. Sanki Meryem Ana bizzat koruyor. Ama söylentiler de var... Belki de koruyan Meryem değildir.}
+City_Rum3 {Don Fernando’yu öldürmeye kaç kez çalıştıklarını biliyor musun? Açık denizde on iki saldırı – hem de sadece geçen yıl! Ama böylesine sadık ve eğitimli bir mürettebatla, bir de Tanrı’nın korumasıyla, on üçüncüsünden de sağ çıkar!}
+City_Rum4 {Duydun mu? Don Fernando de Alamida şehrimize gelmiş, şu anda sokaklarda dolaşıyormuş diyorlar. Onu kendi gözlerimle görmeyi çok isterdim...}
+City_Rum5 {Zor bir adamdır bu don Fernando. Kimileri onu Anavatan’ı pislikten arındıran bir kurtarıcı olarak görür. Kimileri ise babasının ölümünden sonra içinde bir şeylerin kırıldığını ve yakında hepimizin ağlayacağını fısıldar. Ama sana şunu söyleyeyim: Ondan korkma. Onu böyle yapanlardan kork.}
+City_Rum6 {Ne yakışıklı adam şu don Fernando! Ama biliyor musun, tuhaf olan ne? Sanki kimseyi fark etmiyor. Hep görev, hep hizmet. Bir kız varmış diye duydum... ama bir rahiple görüştükten sonra dünyevi zevkleri tamamen reddetmiş. Sanki yemin etmiş gibi.}
+City_Rum7 {Lanet müfettiş! O buradayken şehir ölü gibi. Ne ticaret var ne eğlence. Hatta nefes almak bile sessiz olmalı sanki. Ve en korkuncu ne biliyor musun? Her limanda aynı. Saat gibi işler. Majesteleri hepimize bu işkenceyi bilerek icat etmiş olamaz ya!}
+City_Rum8 {Don Fernando yine yetimhaneyi ziyaret etti. Cömertçe bağış yapıyor, saatlerce dua ediyor. Böyle değerli bir adam o lanetli zimmetçilere örnek olmalı!}
+City_Rum9 {Ha! "Aziz" Fernando gene bütün genelevleri kapattı. Neyse, yakında denize açılır, onlar da hemen tekrar açılır.}
+City_Rum10 {Müf... müfettiş geldi, işte olan bu! Don Fernando de Almeyda, ya da adı neydi, Alamida! O kadar önemli ki vali bile yanında parmak ucunda yürüyor. Söylentilere göre gözlerinin içine bakıp tüm günahlarını anında görüyor. Korkunç!}
+Pop_Name {Diego}
+Pop_lastname {de Landa}
+Took_LiberMisericordiae {Alındı: Liber Misericordiae}
+SM_WorldMap
+{
+Herkes güverteye! Holy Mercy yaklaşıyor!
+Çetin bir rakip, gerçekten hazır mıyız karşılaşmaya?
+Belki de kolonilerden uzakta, açık denizde karşılamalıyız?
+}
+City_Rum11 {Kulağıma gelenlere göre bu kez Kutsal Merhamet’in hedefi ~}
+City_Rum12 {. Yine hepimiz Escorial’ın boyunduruğu altında eğileceğiz. Gerçekten bunu mu hak ettik?}
+City_Rum13 {~'ya yeni bir müfettiş geldi}
+City_Rum14 {~  - Holy Mercy demirde bekliyor. Yine Alamida sıradan insanların hayatını zehir ediyor – ne keyifli içki var, ne de genelev! Bunu başımıza hangi şeytan sardı?}
+City_Rum15 {~ valisine imrenilmez}
+City_Rum16 {~ - Señor Alamida limana yanaştı ve denetimine başladı. Geçen sefer, diyorlar ki, ~}
+City_Rum17 {~ neredeyse unvanını kaybediyordu. Ah... Kutsal Merhamet’in buraya bir daha uğramamasını dilerim...}
+City_Rum18 {İspanya tacının elçisinin artık bizzat takımadada dolaştığını duydun mu? Kolonistler Escorial’ın gözünde ne gibi günahlar işledi acaba? Bir arkadaşım, Kutsal Merhamet’in şu anda ~ limanında demirli olduğunu söyledi.}
+City_Rum19 {. Acaba bunda bir gerçek payı var mı?}
+City_Rum20 {Görünüşe göre Avrupa'dan gönderilen bir müfettiş, İspanyol yöneticilerin başına bela olmuş! Kralın gücünün Karayipler'de bile mutlak olduğunu sanırdım. Yönetimde bir değişiklik olup olmayacağını ~}
+City_Rum21 {~ önümüzdeki aylarda değişebilir, zira Holy Mercy şu anda orada demirli.}
+City_Rum22 {İspanyol kolonilerinden ilginç haberler geliyor. Diyorlar ki Señor Alamide şehre geldiğinde herkesi bir korku sarıyor, kimse yüksek sesle yürüyemiyor. ~’den birinden dinlemek isterdim.}
+City_Rum23 {, çünkü söylentiye göre Kutsal Merhamet şu anda orada.}

@@ -912,7 +912,7 @@ void TWN_Back_Mayor_Type()
 void TWN_ExitForPay() // мэр даёт откуп - табличка прибыли
 {
     ref sld, Builder;
-    
+    string sTmp;
     sld = GetCharacter(sti(Pchar.GenQuestFort.fortCharacterIdx));
     Builder = characterFromID(sld.City + "_Mayor");
     LAi_SetImmortal(Builder, false);
@@ -1000,18 +1000,19 @@ void TWN_ExitForPay() // мэр даёт откуп - табличка приб�
 						if(sti(1+hrand(7, "&TaPrize" + Builder.id)) == 5)
 						{
 							GiveItem2Character(pchar, "Talisman8");
-							log_info(StringFromKey("colony_6")+GetConvertStr("itmname_Talisman8", "ItemsDescribe.txt"));
+							log_info(StringFromKey("colony_6")+GetItemName("talisman8"));
 						}
 						else
 						{
-							GiveItem2Character(pchar, "Talisman"+sti(1+hrand(7, "&TaPrize" + Builder.id)));
-							log_info(StringFromKey("colony_6")+GetConvertStr("itmname_Talisman"+sti(1+hrand(7, "&TaPrize" + Builder.id)), "ItemsDescribe.txt"));
+							sTmp = "Talisman"+sti(1+hrand(7, "&TaPrize" + Builder.id));
+							GiveItem2Character(pchar, sTmp);
+							log_info(StringFromKey("colony_6")+GetItemName(sTmp));
 						}
 					}
 					else
 					{
 						GiveItem2Character(pchar, "Talisman8");
-						log_info(StringFromKey("colony_6")+GetConvertStr("itmname_Talisman8", "ItemsDescribe.txt"));
+						log_info(StringFromKey("colony_6")+GetItemName("talisman8"));
 					}
 				break;
 				case 3:
@@ -1031,23 +1032,23 @@ void TWN_ExitForPay() // мэр даёт откуп - табличка приб�
 						break;
 						case 3:
 							GiveItem2Character(pchar, "mushket1");
-							log_info(StringFromKey("colony_6")+GetConvertStr("itmname_mushket1", "ItemsDescribe.txt"));
+							log_info(StringFromKey("colony_6")+GetItemName("mushket1"));
 						break;
 						case 4:
 							GiveItem2Character(pchar, "mushket2");
-							log_info(StringFromKey("colony_6")+GetConvertStr("itmname_mushket2", "ItemsDescribe.txt"));
+							log_info(StringFromKey("colony_6")+GetItemName("mushket2"));
 						break;
 						case 5:
 							GiveItem2Character(pchar, "grape_mushket");
-							log_info(StringFromKey("colony_7")+GetConvertStr("itmname_grape_mushket", "ItemsDescribe.txt"));
+							log_info(StringFromKey("colony_7")+GetItemName("grape_mushket"));
 						break;
 						case 6:
 							GiveItem2Character(pchar, "hat4");
-							log_info(StringFromKey("colony_7")+GetConvertStr("itmname_hat4", "ItemsDescribe.txt"));
+							log_info(StringFromKey("colony_7")+GetItemName("hat4"));
 						break;
 						case 7:
 							GiveItem2Character(pchar, "hat6");
-							log_info(StringFromKey("colony_7")+GetConvertStr("itmname_hat6", "ItemsDescribe.txt"));
+							log_info(StringFromKey("colony_7")+GetItemName("hat6"));
 						break;
 					}
 				break;
@@ -1069,7 +1070,7 @@ void TWN_ExitForPay() // мэр даёт откуп - табличка приб�
 					else
 					{
 						GiveItem2Character(pchar, "spyglass4");
-						log_info(StringFromKey("colony_7")+GetConvertStr("itmname_spyglass4", "ItemsDescribe.txt"));
+						log_info(StringFromKey("colony_7")+GetItemName("spyglass4"));
 					}
 				break; 
 			}
@@ -1633,8 +1634,8 @@ void SetShipSquadron(ref rChar)
 {
     int SiegeShips, hcrew;
 
-	SiegeShips = SHIP_FRIGATE + rand(makeint(SHIP_LINESHIP - SHIP_FRIGATE));
-	
+	SiegeShips = GetRandomShipTypeEx(FLAG_SHIP_CLASS_1 + FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_WAR, GetNationFlag(sti(rChar.nation)), true);
+
 	if(rand(2) == 1)
 	{
 		switch( sti(rChar.nation) )

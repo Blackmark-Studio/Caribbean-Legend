@@ -1,6 +1,6 @@
 // Здесь разруливаем всплывашки по характеристикам персонажа и предметов в разрезе персонажа
 
-void SetCharacterStatsTooltip(ref chr, string statName, string header, string text, string badText, string goodText)
+void SetCharacterStatsTooltip(ref chr, string statName, ref header, ref text, ref badText, ref goodText)
 {
 	float base;
 	aref equipTable = CT_GetTable(chr, CT_EQUIP);
@@ -12,16 +12,16 @@ void SetCharacterStatsTooltip(ref chr, string statName, string header, string te
 			base = GetCharacterBaseHPValue(chr);
 			base += GetAttributeFloat(&equipTable, M_HP_PER_RANK) * (sti(chr.rank) - 1);
 			text += GetConvertStr("SourceBase", "RPGDescribe.txt") + ": " + fts(base, 0);
-			SetCharacterStat(chr, &equipTable, M_HP_MAX, &goodText, "ToHumanNumber", 0)
-			SetCharacterStat(chr, &equipTable, M_MTP_HP_MAX, &goodText, "ToHumanPercent", 0);
+			SetCharacterStat(chr, &equipTable, M_HP_MAX, &goodText, "ToHumanModifier", 0)
+			SetCharacterStat(chr, &equipTable, M_MTP_HP_MAX, &goodText, "ToHumanModifierPercent", 0);
 		break;
 		case "energy":
 			text += newStr() + " " + newStr() + " ";
 			base = GetCharacterBaseEnergy(chr);
 			base += GetAttributeFloat(&equipTable, M_ENERGY_PER_RANK) * (sti(chr.rank) - 1);
 			text += GetConvertStr("SourceBase", "RPGDescribe.txt") + ": " + fts(base, 0);
-			SetCharacterStat(chr, &equipTable, M_ENERGY_MAX, &goodText, "ToHumanNumber", 0)
-			SetCharacterStat(chr, &equipTable, M_MTP_ENERGY_MAX, &goodText, "ToHumanPercent", 0);
+			SetCharacterStat(chr, &equipTable, M_ENERGY_MAX, &goodText, "ToHumanModifier", 0)
+			SetCharacterStat(chr, &equipTable, M_MTP_ENERGY_MAX, &goodText, "ToHumanModifierPercent", 0);
 		break;
 		case "critDamage":
 			SetCharacterStatGroup(chr, &equipTable, BLADE_ITEM_TYPE + "_" + M_CRIT_DAMAGE, &text, &goodText, 1+CRIT_MTP);
@@ -41,10 +41,10 @@ void SetCharacterStatsTooltip(ref chr, string statName, string header, string te
 			SetCharacterStatGroup(chr, &equipTable, MUSKET_ITEM_TYPE + "_" + M_CRIT_CHANCE, &text, &goodText, base);
 		break;
 		case "critCharDefence":
-			SetCharacterStat(chr, &equipTable, M_REDUCE_CRIT_DAMAGE, &goodText, "ToHumanPercent", 0)
+			SetCharacterStat(chr, &equipTable, M_REDUCE_CRIT_DAMAGE, &goodText, "ToHumanModifierPercent", 0)
 		break;
 		case "CharDefence":
-			SetCharacterStat(chr, &equipTable, M_REDUCE_DAMAGE, &goodText, "ToHumanPercent", 0);
+			SetCharacterStat(chr, &equipTable, M_REDUCE_DAMAGE, &goodText, "ToHumanModifierPercent", 0);
 			if (GetAttributeFloat(&equipTable, RANGE + M_REDUCE_DAMAGE) > 0) goodText += newStr() + " " + newStr() + " ";
 			SetCharacterStatGroup(chr, &equipTable, RANGE + M_REDUCE_DAMAGE, &text, &goodText, 0);
 		break;
@@ -52,7 +52,7 @@ void SetCharacterStatsTooltip(ref chr, string statName, string header, string te
 }
 
 // Добавляем в статы предмета модификаторы персонажа
-void AddItemUICharacterModifiers(ref chr, string result, ref stat, ref item)
+void AddItemUICharacterModifiers(ref chr, ref result, ref stat, ref item)
 {
 	// используем куклу, чтобы обсчитать статы предмета так, будто он надет
 	aref dummy;
@@ -78,7 +78,7 @@ void AddItemUICharacterModifiers(ref chr, string result, ref stat, ref item)
 			value *= 1.0 - (GetReloadSpeed(&landTable, item.groupId) - 1.0);
 			result += xiStr("itemStatsModifiersTitle") + ": " + ToHumanNumber(makeint(value + 0.5)) + " " + xiStr("sec.");
 			result += newStr() + " " +  newStr();
-			SetCharacterStat(chr, &equipTable, modifier, result, "ToHumanPercent", 0.0);
+			SetCharacterStat(chr, &equipTable, modifier, result, "ToHumanModifierPercent", 0.0);
 		}
 		break;
 		case "attack":
@@ -91,7 +91,7 @@ void AddItemUICharacterModifiers(ref chr, string result, ref stat, ref item)
 			SetUIAttackDamge(&dummy, item, result, &landTable, ROUND_STRIKE);
 			SetUIAttackDamge(&dummy, item, result, &landTable, BREAK_STRIKE);
 
-			// JOKERTODO подумать тут над выводом источников, пока что так сойдёт
+			// JOKERBACKLOG подумать тут над выводом источников, пока что так сойдёт
 		}
 		break;
 		case "gunDamage":
@@ -106,7 +106,7 @@ void AddItemUICharacterModifiers(ref chr, string result, ref stat, ref item)
 	DeleteAttribute(&TEV, "dummy");
 }
 
-void SetUIAttackDamge(ref chr, ref item, string result, ref landTable, string strikeType)
+void SetUIAttackDamge(ref chr, ref item, ref result, ref landTable, string strikeType)
 {
 	float mtp = 1+GetDamageMtp(&landTable, strikeType, item.groupId);
 	string skillType = "melee";
@@ -115,7 +115,7 @@ void SetUIAttackDamge(ref chr, ref item, string result, ref landTable, string st
 	result += GetConvertStr("ChrAttack"+strikeType, "ControlsNames.txt") + ": " + makeint(stf(item.attack.(strikeType).min) * mtp * skillMtp) + "-" + makeint(stf(item.attack.(strikeType).max) * mtp * skillMtp) + NewStr();
 }
 
-void SetCharacterStatGroup(ref chr, ref equipTable, string modifier, string text, string goodText, float base)
+void SetCharacterStatGroup(ref chr, ref equipTable, string modifier, ref text, ref goodText, float base)
 {
 	float modifierBonus = GetAttributeFloat(&equipTable, modifier);
 	float overallValue = modifierBonus + base;
@@ -125,10 +125,10 @@ void SetCharacterStatGroup(ref chr, ref equipTable, string modifier, string text
 	if (modifierBonus == 0) return;
 
 	goodText += newStr() + " ";
-	SetCharacterStat(chr, &equipTable, modifier, &goodText, "ToHumanPercent", 0);
+	SetCharacterStat(chr, &equipTable, modifier, goodText, "ToHumanModifierPercent", 0);
 }
 
-void SetCharacterStat(ref chr, ref equipTable, string modifier, string result, string formatter, float base)
+void SetCharacterStat(ref chr, ref equipTable, string modifier, ref result, string formatter, float base)
 {
 	aref sources, source;
 	makearef(sources, equipTable.(modifier));

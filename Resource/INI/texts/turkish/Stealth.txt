@@ -1,0 +1,13 @@
+license_violations_name {İhlaller}
+license_violation_tooltip_body {Müttefik veya tarafsız bayraklı gemilere saldırı, sivillere karşı saldırganlık, deniz yağması ve kalelere saldırı ihlal sayılır.}
+license_violation_1 {Sözleşme şartlarını ihlal ettik. Bunun bedeli olacak.}
+license_violation_2 {Sözleşmeyi iki kez ihlal ettik. Lisansımız yakında iptal edilecek.}
+license_violation_3 {Sözleşmeyi üç kez ihlal ettik ve ticaret lisansımızı kaybettik.}
+license_state
+{
+Sona eriyor: $attr($context.humanExpireDate)~
+Kalan gün: $attr($context.humanDaysLeft)
+}
+flags_newFlagTaken {Yeni bayrak ele geçirildi}
+flags_allFlagsCollected {Ulusun tüm bayrakları toplandı}
+license_expired {Ticaret lisansının süresi doldu}

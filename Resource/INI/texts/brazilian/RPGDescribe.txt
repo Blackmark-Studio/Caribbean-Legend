@@ -1,0 +1,394 @@
+_info
+{
+Arquivo - descrição do sistema de RPG  
+Criado por: ALexusB 17.08.05  // alterado por Tymofei 12.12.2012
+}
+newline
+{
+
+}
+Strength
+{
+Piratas fortes costumam ser ótimos Vanguarda e Artilheiros.
+Afeta habilidades que exigem força física, especialmente 'Armas Médias', 'Armas Pesadas' e 'Canhões'.
+~
+Determina o HP por nível e a capacidade máxima de inventário.
+}
+Perception
+{
+Piratas atentos podem ser atiradores, espiões e Artilheiros.
+~
+Afeta as habilidades 'Precisão' e 'Furtividade'.
+}
+Agility {Coordenação de movimentos e destreza das mãos. ~ Afeta: 'Abordagem', 'Armas leves', 'Armas médias', 'Armas de fogo' e a quantidade de energia ganha por nível.}
+Charisma
+{
+Piratas carismáticos são líderes natos, negociadores e Tesoureiros.
+Um verdadeiro líder não precisa de violência para tomar mercadorias de um comerciante — ele entrega tudo sem resistência. Os melhores marinheiros o seguem, e as mulheres mais belas o aguardam em cada porto.
+~
+Afeta 'Liderança' e 'Comércio'.
+Determina quantos oficiais você pode contratar (A*2).
+}
+Intellect {Tendências e aptidões inatas, inteligência e capacidade de se adaptar rapidamente. ~ Afeta 'Comércio', 'Artilharia', 'Navegação' e a quantidade de energia ganha por nível.}
+Endurance
+{
+Piratas resistentes se destacam como Carpinteiros e Médicos.
+~
+Afeta 'Reparo' e 'Defesa'.
+Assim como (P), determina o HP máximo e a capacidade máxima de inventário.
+}
+Luck
+{
+Piratas sortudos são atiradores, apostadores e aventureiros natos.
+~
+'Firearms', 'Opportunism' e 'Stealth' dependem deste atributo.
+Afeta o resultado de certos eventos do jogo e tem grande impacto na chance de acerto crítico.
+}
+Crit
+{
+Chance base de causar um acerto crítico no inimigo.
+~
+Depende de Poder e Insight.
+~
+Perks e equipamentos podem aumentar essa chance.
+}
+CharDefence
+{
+Estatísticas básicas de Proteção contra Dano. Reduzem todo o dano recebido em uma porcentagem específica.
+ ~
+ Esses valores são afetados por Vantagens pessoais e equipamentos.
+}
+FencingL
+{
+Habilidade com lâminas leves, floretes e similares.
+ (R*0.9+I*0.1)
+ ~
+ Afeta o dano das armas e o custo de Energia dos ataques.
+}
+FencingS
+{
+Habilidade no uso de lâminas médias e equilibradas, como sabres, que exigem força e agilidade.
+(P*0.6+R*0.4)
+~
+Afeta o dano das armas e o custo de Energia dos ataques.
+}
+FencingH
+{
+Habilidade no uso de Armas pesadas como espadões e machados. Exige muita força física.
+ (P*0.9+E*0.1)
+ ~
+ Afeta o dano das armas e o custo de Energia dos ataques.
+}
+Pistol
+{
+Habilidade no uso de todos os tipos de armas de fogo.
+(R*0.4+S*0.6)
+~
+Afeta o dano e a velocidade de recarga.
+}
+Fortune
+{
+Um pouco de sorte antecipada ajuda nos jogos e nos saques.
+Depende de Sorte.(S)
+}
+Leadership
+{
+Afeta os resultados de certos eventos e diálogos. Também é a principal habilidade ao recrutar novos tripulantes.
+(A*0,8+T*0,2)
+}
+Commerce
+{
+Desempenha papel essencial em negociações de comércio, influenciando preços de compra e venda e o custo total de gestão do navio.
+(T*0.8+A*0.2)
+}
+Accuracy
+{
+Uma das habilidades mais valiosas para quem navega em alto-mar. Um bom capitão não desperdiça pólvora nem balas de canhão só para assustar os peixes: cada disparo acerta o alvo! E quando o vento salgado dissipa a fumaça sobre a ponte, não restarão navios inimigos no horizonte!
+(I*0.8+S*0.2)
+}
+Cannons
+{
+Carregue o canhão rápido, puxe para a posição e, enquanto o eco do disparo ainda ressoa entre os compartimentos, limpe, recarregue, mire, jogue água no canhão para não superaquecer... No calor da batalha, nada de excessos: carregar, posicionar, disparar!
+(T*0.6+P*0.4)
+}
+Sailing
+{
+A habilidade de conduzir um navio em qualquer condição, usar instrumentos e comandar uma esquadra. Até o mais caprichoso e difícil dos navios obedece à mão firme de um comandante experiente.
+Depende de 'Insight' e 'Talent' (I0.2 + T0.8)
+~
+Para comandar um navio de determinada classe, é necessário o nível mínimo correspondente de Navegação:
+classe 1 exige 90
+classe 2 exige 70
+classe 3 exige 55
+classe 4 exige 40
+classe 5 exige 20
+classe 6 exige 01
+~
+A falta de Navegação resulta em penalidades para todas as habilidades e atributos do herói. Quanto maior a diferença entre o valor atual e o exigido de Navegação, mais severas as penalidades.
+}
+Repair
+{
+Quando o inimigo ataca seu navio com uma chuva de projéteis, estilhaçando os costados e transformando as velas em peneiras; quando o casco racha na tempestade e o vento desfaz o cordame fio por fio, o reparo se torna uma das habilidades navais mais essenciais.
+(E*0.8+I*0.2)
+}
+Grappling
+{
+Alinhar o navio com o inimigo, lançar os ganchos para abordar o adversário trêmulo, varrer os conveses e tomar o navio como prêmio merecido — tudo isso exige muita agilidade e experiência, mas o saque certamente compensa o esforço.
+ (R*0.7+T*0.3)
+ ~
+ Afeta a distância de abordagem.
+}
+Defence
+{
+Dia após dia, a tripulação se torna parte do navio. Um marinheiro experiente vale por muitos novatos de taverna. Todo bom capitão deve proteger seus homens e não deixá-los morrer à toa. 
+(E*0.5+A*0.5)
+}
+Sneak
+{
+Passar despercebido pelo inimigo, escapar de perseguidores em mar aberto ou surgir do nada para atacar um adversário desatento — todo capitão precisa dominar a furtividade.
+(S*0.5+I*0.5)
+}
+Loyality
+{
+Suas ações afetam a lealdade dos oficiais. Cavaleiros honrados se recusam a servir um canalha, enquanto bandidos não permanecem honestos por muito tempo.
+~
+Um alto nível de Autoridade pode reduzir significativamente o impacto das decisões na queda da lealdade dos oficiais, caso essas ações entrem em conflito com a visão de mundo deles.
+}
+Authority
+{
+Autoridade, Fama e Honra distinguem o protagonista
+de todos os outros personagens do jogo.
+~
+Autoridade é a avaliação do herói por quem o cerca (principalmente a tripulação dos navios sob seu comando). Se a Autoridade do capitão cair criticamente, ele recebe uma marca negra e é convidado a renunciar, de forma voluntária ou forçada. Se a Autoridade for alta, a tripulação se une ao comandante e enfrenta qualquer desafio com confiança em seu líder!
+~
+Honra cresce quando o herói salva o mundo e seus habitantes. Ou afunda aos níveis mais baixos, por promessas quebradas, violência e vilania. Honra depende das ações do personagem e, por sua vez, influencia como os outros o enxergam.
+~
+Porém, se o herói leva uma vida monótona e previsível, escolhe sempre o caminho mais seguro, viaja sozinho pelos mares vazios, sua Honra e Fama escoam como areia entre os dedos, caindo para um nível neutro e sem destaque. No jogo, a memória da comunidade é curta e não passa de meio ano no tempo do jogo.
+}
+Attention_abilities
+{
+Atenção!
+Algumas habilidades podem não estar disponíveis para certos tipos de protagonistas ou oficiais.
+}
+Personal_abilities
+{
+Vantagens que ampliam as habilidades pessoais do personagem. Você ganha progresso ao subir de nível em habilidades pessoais.
+ ~
+ Ao atingir um limite, você recebe um novo ponto de Vantagem pessoal. Vantagens diferentes exigem quantidades diferentes de pontos. Normalmente, as mais poderosas estão no final da árvore de vantagens.
+}
+Ship_abilities
+{
+Vantagens que afetam a gestão do navio. Você ganha progresso ao subir de nível nas habilidades do navio.
+ ~
+ Ao atingir um marco, você recebe um novo ponto de Vantagem de navio. Cada Vantagem exige uma quantidade diferente de pontos. Normalmente, as mais poderosas ficam no final da árvore de vantagens.
+ ~
+ Podem ser herdadas pelo personagem principal de oficiais designados a funções no navio que dominam sua especialidade.
+}
+Abilities_available {O número indica a quantidade de pontos de vantagem não atribuídos.}
+Abilities_active {O número indica as vantagens ativadas pelo personagem.}
+Rank
+{
+O Rank indica o progresso do personagem no jogo. Você avança ao subir o nível das habilidades.
+ ~
+ Conforme o Rank aumenta, a Vida e a Energia crescem, e inimigos mais fortes e novos itens passam a aparecer com mais frequência.
+}
+Life
+{
+HP — mede a resistência do personagem a dano físico. Zero é morte, um é um mar de possibilidades.
+ ~
+ O valor depende de P e E e aumenta com o nível.
+}
+Health {Vitalidade indica o estado físico do personagem. Diminui ao sofrer ferimentos graves em pouco tempo. Recupera-se se evitar combates por um tempo, permitindo a cura adequada. Ignorar pode causar penalidades severas em atributos e habilidades.}
+Energy
+{
+Energia – representa a resistência física do personagem.
+
+~
+
+Todas as ações de ataque e o sprint no corpo a corpo consomem Energia; durante o combate, o personagem se cansa e precisa de uma pausa para se recuperar.
+
+~
+
+O valor de Energia depende de R e T e aumenta com o ranque.
+}
+Money {O dinheiro manda em tudo. Piastres, táleres, guinéus... Que importa o nome, se tudo é moeda viva!}
+Reputation
+{
+Honra reflete como a sociedade vê o personagem.
+~
+Ela é moldada pela forma como você resolve problemas.
+~
+A honra sempre tende a voltar ao estado neutro.
+}
+Weight
+{
+Peso é a massa máxima de carga que um personagem pode carregar.
+ Depende de Poder, Resistência, Vantagens pessoais e amuletos ativos.
+ ~
+ Um personagem sobrecarregado se move mais devagar, sofre penalidades e não pode usar viagem rápida.
+}
+Title {O título indica o quanto o personagem é útil para o estado ao qual serve.}
+NextExp
+{
+O limite de experiência indica quantos pontos foram atribuídos à habilidade, ao posto e à aptidão atual, e quanto de experiência é necessário para ganhar mais um ponto.
+~
+As habilidades evoluem conforme você executa as ações correspondentes. Por exemplo, a cada disparo certeiro de pistola, você ganha pontos de experiência na habilidade 'Armas de fogo'. Esses pontos de habilidade contam para o progresso do posto e para as aptidões pessoais ou do navio (dependendo do tipo de habilidade).
+~
+Ao ultrapassar o limite de experiência do posto, o herói sobe de posto e recebe mais vida e pontos de aptidão, que o jogador pode distribuir como preferir.
+}
+TABLE_PERKS {Habilidades do herói}
+TABLE_PERKS_desc
+{
+Habilidades são parâmetros adicionais do personagem que permitem obter novas vantagens ou desbloquear recursos do jogo antes inacessíveis. Elas podem tornar o personagem um especialista em uma área específica ou um generalista que entende um pouco de tudo.
+~
+Clique duas vezes na habilidade selecionada para ler sua descrição e ver os pré-requisitos (se houver).
+~
+Algumas habilidades não podem ser escolhidas imediatamente devido a pré-requisitos. Aprenda primeiro as habilidades iniciais da árvore para liberar novas opções.
+}
+PERK_TABLE_NEED {Habilidades necessárias}
+PERK_TABLE_NEED_desc {Para escolher esta habilidade, o herói deve ativar todas as outras habilidades desta árvore primeiro.}
+Nation_hint
+{
+A nação do herói é aquela escolhida no início do jogo ou a do patente atual (quando em serviço). A nação pode ser vista na janela "Personagem". Na janela "Nação" você vê a bandeira atual do seu navio – ela só pode ser trocada em alto-mar, para ocultar sua verdadeira identidade. Lembre-se: navios no mar aberto e guardas nos portos podem perceber seu disfarce. A furtividade do herói afeta a chance do disfarce funcionar. Se houver uma recompensa pela cabeça do herói em sua própria nação, ele será considerado inimigo dela também.
+~
+O reconhecimento de inimigos leva em conta as relações oficiais entre os estados e as recompensas oferecidas por eles.
+~
+Viagem rápida não funciona em cidades inimigas.
+}
+Drunk_hint {O álcool afeta suas habilidades. Se estiver bêbado, sentirá menos dor, mas não conseguirá realizar tarefas delicadas.}
+England_descr {Inglaterra. Ainda falta um século para que a Britânia realmente “domine os mares”, mas, se há uma potência naval em ascensão capaz de desafiar a Espanha, é a Inglaterra. Enquanto a França ataca o poder espanhol na Europa, corsários e patrulhas navais inglesas se aproveitam dos navios espanhóis desprotegidos a caminho de dominar o Caribe.}
+France_descr
+{
+As desastrosas guerras religiosas entre católicos e huguenotes que assolaram a França desde o início da Reforma, há mais de cem anos, em grande parte cessaram com a ascensão do jovem Luís XIV de Bourbon ao trono, aos quinze anos. Ainda distante do futuro “Rei Sol” que levará a França à sua Era de Ouro, o rei Luís deseja seguir os passos do grande cardeal Richelieu, fortalecendo o Estado por meio de reformas vigorosas. Embora a Europa permaneça em conflito, o maior rival aos olhos de Luís são os Habsburgo — que governam a Espanha e o Sacro Império Romano. Para competir com os espanhóis em casa e no exterior, Luís ordenou a Jean-Baptiste Colbert que revitalizasse a Marinha Francesa. Um novo regime fiscal eficiente permite à França não só quitar as dívidas de quase cinquenta anos de guerra, mas também investir em reformas navais e militares. Embora o Exército Francês ainda não seja tão moderno ou experiente quanto o Novo Exército Modelo inglês de Oliver Cromwell, rapidamente se torna um dos mais bem equipados e treinados do continente, adotando o novo estilo linear de combate. Novos navios de última geração estão sendo construídos em Toulon e Saint-Nazaire, e canhões modernos são fundidos em fábricas no interior.
+~
+Ao contrário dos ingleses, as principais preocupações da França estão no continente europeu, e as questões coloniais frequentemente ficam em segundo plano diante da necessidade de defender as fronteiras contra os Habsburgo na Áustria, Itália e Espanha.
+~
+Por conta desse descaso, a Companhia Francesa das Américas decidiu vender parte de suas possessões coloniais nas Antilhas caribenhas aos Cavaleiros de Malta, em um acordo articulado pelo cavaleiro francês e governador-geral Philippe de Poincy. De Poincy e o Grão-Mestre da Ordem, Jean de Lascaris-Castellar, esperam, com essa compra, compensar as receitas perdidas pela Ordem perseguindo corsários bárbaros no Mediterrâneo, recorrendo a métodos... criativos, pouco aprovados pela Santa Sé. Um jovem cavaleiro promissor da Ordem, Michel de Monper, chega até a propor o corso contra navios espanhóis!
+~
+Assim, cabe à nata da nobreza francesa embarcar no próximo navio rumo às colônias do Caribe, em busca de fama, fortuna, aventura — e quem sabe expandir o Império Francês pelo caminho.
+~
+}
+Holland_descr {Holanda. As Províncias Unidas dos Países Baixos formam uma jovem nação, recém-liberta após oitenta anos de guerra contra a Espanha. Os holandeses são um povo trabalhador e econômico, movido pelo desejo de dominar o comércio. Atualmente, ajudam discretamente a França em sua luta contra o inimigo comum — a Espanha —, mas, no geral, buscam ser uma potência neutra, pronta para negociar (ou enganar) qualquer cliente!}
+Spain_descr {Espanha. Uma grande, porém decadente potência colonial. Atualmente controla a maior parte das ilhas do Caribe e o continente espanhol, mas enfrenta pressão constante da Inglaterra e da França, que buscam conquistar as infinitas riquezas do Novo Mundo para si.}
+Pirate_descr
+{
+Piratas. Esses homens navegam sob qualquer bandeira e seguem o Código dos Piratas (embora seja mais um guia) da Irmandade da Costa. Isso não os impede de vender seus saques em colônias inglesas ou francesas como Port Royal e Tortuga, onde o governador faz vista grossa. Dependendo da situação, podem lutar “legalmente” por qualquer potência que lhes conceda uma carta de corso, mas no fim o objetivo é o mesmo dos corsários ingleses e franceses: um belo navio espanhol carregado de tesouros.
+~
+Para qualquer patrulha naval, avistar uma bandeira pirata no horizonte é como jogar bacon para um lobo faminto. Para a maioria dos piratas, só há dois destinos: o cadafalso ou a forca.
+}
+Hunter_hint
+{
+A atitude de uma nação, seus cidadãos e soldados em relação a você. Boas ações para o país aumentam sua reputação; más ações podem até resultar em uma recompensa pela sua cabeça. Isso significa perseguição constante em terra e no mar.
+~
+O preço pela sua cabeça pode ser reduzido com boas ações em favor do país ou até mesmo suborno. Com esforço suficiente, é possível restaurar uma relação neutra.
+}
+LevelComplexity {Dificuldade}
+LevelComplexity_desc
+{
+Este parâmetro afeta a taxa de ganho de experiência do herói, velocidade de progressão, força dos inimigos, renda e muitos outros fatores.
+~
+O nível de dificuldade varia de 'Fácil' a 'Impossível'.
+}
+RechargePistolOnLine {Recarregando pistola}
+RechargePistolOnLine_desc
+{
+Neste modo, pistolas não podem ser recarregadas em combate; apenas com a espada embainhada.
+~
+Este modo afeta todos os personagens do jogo.
+}
+HardcoreGame {Modo Hardcore}
+HardcoreGame_desc {Faltando adrenalina? Quer sentir-se um verdadeiro corsário e perceber o impacto real de suas ações no mundo? Neste modo, só é possível salvar o jogo em solo sagrado – na igreja. Você terá que acertar de primeira, sem chance de recarregar o salvamento várias vezes. Não há espaço para erro.}
+ArcadeSailMode_desc {Velocidade e dinâmica do combate naval. Manobras rápidas, alta velocidade e recarga ágil dos canhões — exige pensar bem no próximo movimento tático.}
+EncountersRate_desc {Frequência dos eventos do jogo, especialmente o número de navios no mapa mundial.}
+WorldAlivePause {Missões de nação}
+WorldAlivePause_desc
+{
+Este modo permite jogar uma das linhas de missão de cenário das Nações, mas até que ela termine, o "mundo vivo" do jogo pausa as trocas de governador-geral entre cidades, a conquista de cidades por outras nações e impede que o herói capture cidades.
+~
+O mundo vivo só será ativado após a conclusão da história do cenário.
+}
+Prisoner {Prisioneiro}
+Prisoner_desc
+{
+Um prisioneiro é um personagem capturado e mantido em seu navio contra a vontade dele. Qualquer prisioneiro pode ser interrogado no porão do navio. Na maioria das vezes, você pode receber um resgate por ele e, se for um pirata, recrutá-lo para a tripulação do herói. Você pode aprisionar o passageiro que está transportando, caso ele comece a reclamar da longa viagem até o destino. Capitães tornam-se prisioneiros ao se renderem durante o abordo ou quando são resgatados por você em botes no mar aberto. O maior valor de resgate costuma ser pago pelo governador da mesma nação do prisioneiro, mas isso varia, assim como a opinião dos governadores sobre o valor do cativo.
+Capitães cativos podem fazer vários pedidos ao seu herói. Não deixe de conversar com os prisioneiros: isso pode trazer benefícios inesperados.
+}
+shipChoose_hint
+{
+Clique duas vezes com o mouse (ou pressione 'Enter') na imagem do navio do companheiro para iniciar uma troca fora de combate.
+~
+Você pode iniciar uma troca ao se aproximar do navio do companheiro e pressionar o comando rápido 'Trocar'.
+Pode ser feito dentro ou fora de combate.
+}
+GoodsCargo_hint
+{
+Carga a bordo do navio: munição, mercadorias e ferramentas no porão.
+~
+Para ver os itens que não cabem na janela, use a barra de rolagem à direita da lista.
+~
+Pressione 'Enter' ou dê um clique duplo no item da lista para ver a descrição do produto, jogar fora uma quantidade indesejada ou largar uma mina.
+}
+EXP_SLIDE {Taxa de ganho de experiência}
+EXP_SLIDE_desc {Esta configuração ajusta a taxa em que o personagem principal e seus oficiais ganham experiência. Quanto maior a taxa, mais rápido eles adquirem novos pontos de habilidade, níveis e habilidades.}
+Partition_hint
+{
+As cotas da tripulação devem ser pagas até o dia 1º de cada mês. Os seguintes pagamentos são realizados:
+~
+Manutenção mensal – salários dos marinheiros e oficiais, compensação para feridos e manutenção do navio e equipamentos.
+~
+Divisão do saque – repartição dos bens saqueados e distribuição das cotas entre os membros da tripulação.
+~
+Todos os navios e mercadorias capturados são sujeitos à divisão. Segundo as leis dos Irmãos da Costa, a cota de um marinheiro ou oficial falecido vai para seus parentes e amigos.
+~
+As cotas para os membros da tripulação são as seguintes:
+- marinheiro – 1 cota
+- oficial – 10 cotas
+- companheiro – 30 cotas
+- capitão – 200-650 cotas
+Além disso, o capitão, como proprietário dos navios de sua esquadra, recebe mais 20-120 cotas de cada navio (dependendo da categoria da embarcação), e também arca com todos os custos de manutenção e possíveis perdas dos navios.
+Se o capitão possuir uma patente, 10% do saque é pago ao tesouro da Nação.
+~
+Atrasar o pagamento do mês atual causará descontentamento na tripulação até o fim do mês, enquanto o pagamento antecipado aumentará a moral.
+~
+Atrasar o pagamento do mês anterior reduzirá significativamente a moral da tripulação e a lealdade dos seus oficiais e companheiros.
+~
+}
+SeaBattleSave_desc
+{
+Salvar em combate naval.
+Desativar esta opção impede salvar o jogo durante batalhas no mar!
+}
+Rains_desc {Ativar/desativar chuva e tempestades. Esta opção afeta a estabilidade do jogo.}
+CasualMode_desc
+{
+O modo Clássico é indicado para quem quer focar na história do protagonista. Ele é um pouco mais difícil que o modo Exploração e exige mais atenção e esforço, mas permite uma imersão total na atmosfera criada pelos autores do jogo.
+~
+O modo Exploração é ideal para iniciantes e para quem prefere ter mais tempo livre para cumprir missões secundárias e jogar livremente. Neste modo, as restrições de ranking para iniciar as missões principais são removidas, os cronômetros são desativados em situações sem muitas opções e o tempo no mapa global passa mais devagar, conforme a dificuldade escolhida. Os inimigos das missões principais ficam menos poderosos e a velocidade do navio do protagonista no mapa global aumenta em 5%.
+}
+SourceBase {Valor base}
+SourceAdmiral {Almirante}
+SourceOfficer {Bônus de Oficial}
+SourceAccountant {Tesoureiro}
+SourceMangarosa {Poção de mangarosa}
+SourceHealth {Estado de Vitalidade}
+SourceEquip {Equipamento}
+SourceQuest {Situação única}
+SourceAlco {Embriagante}
+SourceOverload {Sobrecarregado}
+SourceNavyPenalty {Teste de Habilidade de Navegação falhou}
+CritDamage
+{
+Multiplicador de dano crítico. Aplicado após todos os modificadores.
+~
+Pode ser aumentado por Perks pessoais e equipamentos.
+}
+CritCharDefence
+{
+Redução total do dano crítico inimigo.
+~
+Pode ser aumentada por Vantagens pessoais e equipamentos.
+}
+SourceSkill {Habilidade}
+SourceChickenGod {Bênção de Aruba}
+SourceSpecialityUpgrade {Aprimoramento de subclasse}
+SourceAudit {Auditoria}

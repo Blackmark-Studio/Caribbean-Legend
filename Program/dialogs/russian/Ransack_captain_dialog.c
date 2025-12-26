@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 			attrLoc = Sea_FindNearColony();
 			if (attrLoc != "none") 
 			{
-                link.l3 = "Мы сейчас близ города " + GetConvertStr(attrLoc +" Town", "LocLables.txt") + ". Я "+ GetSexPhrase("мог","могла") +" бы вас тут высадить.";
+                link.l3 = "Мы сейчас близ города " + GetCityName(attrLoc) + ". Я "+ GetSexPhrase("мог","могла") +" бы вас тут высадить.";
 			    link.l3.go = "free_withoutFee";
 			}
 			else
@@ -170,7 +170,7 @@ void ProcessDialogEvent()
 				attrLoc = Sea_FindNearColony();
 				if (attrLoc != "none") 
 				{
-					link.l4 = "Мы сейчас близ города " + GetConvertStr(attrLoc +" Town", "LocLables.txt") + ". Я "+ GetSexPhrase("мог","могла") +" бы вас тут высадить.";
+					link.l4 = "Мы сейчас близ города " + GetCityName(attrLoc) + ". Я "+ GetSexPhrase("мог","могла") +" бы вас тут высадить.";
 					link.l4.go = "free_withoutFee";
 				}
 				else

@@ -82,4 +82,5 @@ SharlieFinal_81 {Gobart}
 SharlieFinal_82 {colonel}
 SharlieFinal_83 {Kirk}
 SharlieFinal_84 {The world has changed and so did your hero@<NewStr()> But  that's another story...}
-SharlieFinal_85 { }
+SharlieFinal_85 {The letter is written.}
+SharlieFinal_86 { }

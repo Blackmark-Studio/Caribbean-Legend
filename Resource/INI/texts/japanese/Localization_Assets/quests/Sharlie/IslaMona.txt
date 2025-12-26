@@ -1,0 +1,12 @@
+IslaMona_1 {Rodrigo}
+IslaMona_2 {Jiménez}
+IslaMona_3 {翌朝…}
+IslaMona_4 {ロドリゴ・ ヒメネスがイスラ・ モナで新たな鉄木の材を用意した}
+IslaMona_5 {@<sti(pchar.questTemp.IslaMona.Factory.Bottle)>本のラム酒を渡した}
+IslaMona_6 {@<sti(pchar.questTemp.IslaMona.Factory.Bottle)>本のワインを渡した}
+IslaMona_7 {倉庫にアイアンウッド@<sti(pchar.questTemp.IslaMona.Factory.Goods)>を追加しました}
+IslaMona_8 { }
+IslaMona_9 { }
+IslaMona_10 {Francisco}
+IslaMona_11 {de Alba}
+IslaMona_12 {音からして、 罠はうまくいったようだ！ 村に戻ろう！}

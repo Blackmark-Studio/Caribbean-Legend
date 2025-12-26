@@ -1,0 +1,63 @@
+#QUEST SharlieEpilog
+Epilog
+#TEXT 1_1
+Ich besuchte Abt Benoît, und er erzählte mir, dass mein Vater befürchtet, die Krankheit werde ihn überwältigen, bevor wir uns wiedersehen können. Auch in seinem Brief an mich schrieb er dasselbe, verschwieg jedoch, dass er sich mit jedem Tag schwächer fühlt.
+Ich musste eine schwere Entscheidung treffen – so bald wie möglich in See zu stechen.
+Allerdings kann ich angesichts meiner derzeitigen Lage nicht einfach alles hinter mir lassen und in die Alte Welt zurückkehren. Zuerst muss ich einige Entscheidungen treffen, um das Archipel mit reinem Gewissen verlassen zu können. Der Abt versprach mir seine Hilfe – mit seiner Unterstützung kann ich die nötigen Anweisungen an die entsprechenden Personen weitergeben.
+Außerdem riet mir der Abt, alle Schulden zu begleichen, falls es welche gibt. Geldverleiher haben lange Arme – und es steht außer Zweifel, dass sie für ihr Geld vor nichts zurückschrecken würden.
+#TEXT 1_2
+Ich besuchte Abt Benoît, und er erzählte mir, dass mein Vater befürchtet, die Krankheit werde ihn überwältigen, bevor wir uns wiedersehen können. Auch in seinem Brief an mich schrieb er dasselbe, verschwieg jedoch, dass er sich mit jedem Tag schwächer fühlt.
+Leider ist es im Moment unmöglich, in die Alte Welt zu reisen – es gibt mehrere wichtige Angelegenheiten, die sofortige Klärung erfordern. Die Hin- und Rückreise könnte viel Zeit in Anspruch nehmen, und ich bin sicher, mein Vater würde darauf bestehen, dass ich wenigstens ein paar Monate im Anwesen bleibe. Allein der Gedanke daran ist wenig reizvoll.
+#TEXT 2
+Der Abt hat recht – ich darf die Abreise nicht länger hinauszögern. Allerdings kann ich angesichts meiner derzeitigen Lage nicht einfach alles hinter mir lassen und in die Alte Welt zurückkehren. Zuerst muss ich einige Entscheidungen treffen, um das Archipel mit reinem Gewissen verlassen zu können. Der Priester selbst versprach mir seine Hilfe – mit seiner Unterstützung kann ich die nötigen Anweisungen an die entsprechenden Personen weitergeben.
+Er riet mir außerdem, alle Schulden zu begleichen, falls es welche gibt. Geldverleiher haben lange Arme – und es steht außer Zweifel, dass sie für ihr Geld vor nichts zurückschrecken würden.
+#TEXT 3_1
+Ich habe beschlossen, Isla Mona unter die Herrschaft Seiner Majestät zu stellen. Nur so lässt sich ihre Sicherheit gewährleisten. Die Kuriere des Abts werden beide Seiten über meine Entscheidung informieren. Ich hoffe, Rodgar findet die Kraft, sich der herannahenden Zivilisation zu fügen.
+#TEXT 3_2
+Ich habe beschlossen, Isla Mona unter die Aufsicht von Jan Swenson zu stellen. Ich bin sicher, dass er sowohl die Sicherheit der Bewohner gewährleisten als auch den reibungslosen Betrieb der Faktorei sichern kann. Natürlich habe ich einen Anteil am Gewinn gefordert – so ein köstliches Stück gibt man nicht einfach her.
+#TEXT 4_1
+Ich erzählte dem Abt von meiner Baronie in Le François und entschied mich, darauf zu verzichten, worüber ich Marcus in einem Brief informierte. Ehrlich gesagt fiel mir damit ein Stein vom Herzen. Das Kapitel Piraterie ist abgeschlossen. Auch wenn einige meiner Freunde noch Piraten sind – ich selbst will nichts mehr damit zu tun haben.
+#TEXT 4_2
+Der Abt hätte meine Baronie in Le François ganz sicher nicht gutgeheißen, also muss er nichts davon wissen. Dennoch habe ich Marcus einen Brief geschickt, in dem ich ihm meine Entscheidung mitteilte. Wer weiß, was die Piraten während meiner Abwesenheit im Archipel anstellen, wenn sie sich auf meinen Namen berufen. Wer meinen Platz einnimmt, interessiert mich nicht besonders.
+#TEXT 5_1
+Nach gründlichem Nachdenken habe ich beschlossen, auf das französische Kaperpatent zu verzichten. Ich möchte keine Verpflichtungen mit mir herumtragen, wenn ich meinem Vater begegne… und, ehrlich gesagt, ich habe fast vergessen, wie es ist, ohne ständige Kämpfe zu leben. Ich hoffe, die kommenden Monate werden nicht unerträglich langweilig.
+#TEXT 5_2
+Nach kurzer Überlegung habe ich beschlossen, im Dienst Frankreichs und Seiner Majestät zu bleiben. Ich habe die Kanzlei in Capsterville über meine baldige Abreise in die Alte Welt informiert, obwohl ich ehrlich gesagt hoffe, dass ich dort nicht lange bleiben muss. Das Leben fernab von Schiff und Gefechten ist mir fremd geworden. Aber unterwegs werde ich genug Zeit haben, um in mich zu gehen.
+#TEXT 6
+Ich habe beschlossen, @<sSum> Pesos mitzunehmen. Ich denke, mehr zu transportieren wäre unklug – unterwegs kann dem Schiff alles Mögliche zustoßen. Ich habe dafür gesorgt, dass dieses Geld „sauber“ ist: Der Abt hat es, gegen eine Spende von @<tSum> Pesos, gesegnet. Vor meinem Vater ist es rein – und mehr brauche ich nicht.
+#TEXT 7
+Ich habe beschlossen, Jan Swenson über meine Entscheidung zu informieren, in die Alte Welt aufzubrechen. Nach allem, was wir gemeinsam durchgemacht haben, konnte ich ihn nicht im Unklaren lassen.
+#TEXT 8
+Wenn ich mehr Zeit gehabt hätte, hätte ich Nathan und Danielle Houk persönlich von meiner Abreise erzählt. Immerhin sind sie für mich beinahe wie Familie geworden. Doch leider fehlt mir jetzt völlig die Zeit dafür. Ich denke, ein Brief wird die Folgen meines plötzlichen Aufbruchs etwas abmildern.
+#TEXT 8_1
+Ich habe Gino Guineyli mitgeteilt, dass ich das Archipel auf unbestimmte Zeit verlasse. Für die Zeit, in der ich ihn nicht finanziell unterstützen kann, habe ich ihm erlaubt, einen Teil des Hauses zu vermieten, um seinen Lebensunterhalt und seine Experimente zu sichern.
+#TEXT 9
+Nun gut, es scheint, als hätte ich alle Angelegenheiten geregelt, und alles ist bereit für die Abreise. Ich muss mit dem Abt sprechen.
+#TEXT 10
+Der Abt berichtete mir, dass die Pinasse *Ulysse*, mit der ich einst als nichtsnutziger Lebemann und Plage aller rechtschaffenen Männer an diese Küste gelangte, nun zur Versteigerung steht. Wie ironisch – das Schicksal gibt mir die Chance, auf demselben Schiff heimzukehren, auf dem alles begann. Verdammt verlockend. Ich sollte wohl beim Hafenamt vorbeischauen und herausfinden, wann die Auktion stattfindet.
+#TEXT 11_1
+Na sowas! Die Auktion hat bereits stattgefunden, und der Gewinner ist niemand Geringeres als Jean Picard – derselbe Mann, den ich einst von einer Plantage bei Maracaibo befreit habe. Er hat beschlossen, der Piraterie abzuschwören und ins Handelsgeschäft einzusteigen, und zu diesem Anlass kaufte er eben jene *Ulysse*. Noch interessanter – sein Kurs führt, wie meiner, nach Bordeaux.
+Ich beschloss, dass es mir guttun würde, diese Reise als Passagier zu erleben, und bat darum, mit an Bord zu kommen. Eine Gelegenheit, über das Leben, das Zuhause und die Familie nachzudenken. Vielleicht ist es wirklich an der Zeit, sesshaft zu werden.
+Apropos Familie – ich habe immer noch nicht mit meiner Frau gesprochen. Ich hätte es früher tun sollen, aber wie immer war ich zu beschäftigt…
+Die Abreise ist in zwei Wochen – Jean wird in der Taverne auf mich warten.
+#TEXT 11_2
+Na sowas! Die Auktion hat bereits stattgefunden, und der Gewinner ist niemand Geringeres als Jean Picard – derselbe Mann, den ich einst von einer Plantage bei Maracaibo befreit habe. Er hat beschlossen, der Piraterie abzuschwören und ins Handelsgeschäft einzusteigen, und zu diesem Anlass kaufte er eben jene *Ulysse*. Noch interessanter – sein Kurs führt, wie meiner, nach Bordeaux.
+Ich beschloss, dass es mir guttun würde, diese Reise als Passagier zu erleben, und bat darum, mit an Bord zu kommen. Eine Gelegenheit, über das Leben, das Zuhause und die Familie nachzudenken. Vielleicht ist es wirklich an der Zeit, sesshaft zu werden, eine Frau zu finden – oder, wie mein Vater es will, Yvonne La Brignée näher kennenzulernen.
+Die Abreise ist in zwei Wochen – Jean wird in der Taverne auf mich warten. Bis dahin muss ich noch mit den Offizieren sprechen. Wer weiß, wie lange meine Reise dauern wird… Es scheint, als sei es Zeit, Lebewohl zu sagen.
+#TEXT 11_3
+Ich war zu spät – die Auktion hat bereits stattgefunden, und der Gewinner ist jemand namens @<sName>. Den Verkauf der Pinasse lehnte er strikt ab, doch wie sich herausstellte, haben wir denselben Kurs – wir beide wollen nach Bordeaux. Ich beschloss, dass es mir guttun würde, diese Reise als Passagier zu erleben, und bat darum, mit an Bord zu kommen. Eine Gelegenheit, über das Leben, das Zuhause und die Familie nachzudenken. Vielleicht ist es wirklich an der Zeit, sesshaft zu werden.
+Apropos Familie – ich habe immer noch nicht mit meiner Frau gesprochen. Ich hätte es früher tun sollen, aber wie immer war ich zu beschäftigt…
+#TEXT 11_4
+Ich war zu spät – die Auktion hat bereits stattgefunden, und der Gewinner ist jemand namens @<sName>. Den Verkauf der Pinasse lehnte er strikt ab, doch wie sich herausstellte, haben wir denselben Kurs – wir beide wollen nach Bordeaux. Ich beschloss, dass es mir guttun würde, diese Reise als Passagier zu erleben, und bat darum, mit an Bord zu kommen. Eine Gelegenheit, über das Leben, das Zuhause und die Familie nachzudenken. Vielleicht ist es wirklich an der Zeit, sesshaft zu werden, eine Frau zu finden – oder, wie mein Vater es will, Yvonne La Brignée näher kennenzulernen.
+Die Abreise ist in zwei Wochen – der Kapitän wird in der Taverne auf mich warten. Bis dahin muss ich noch mit Alonso und den Offizieren sprechen. Wer weiß, wie lange meine Reise dauern wird… Es scheint, als sei es Zeit, Lebewohl zu sagen.
+#TEXT 11_5
+Na sowas! Die Auktion hat bereits stattgefunden, und der Gewinner ist niemand Geringeres als Jean Picard – derselbe, den ich einst aus einer Plantage bei Maracaibo zu befreien versuchte. Wie sich herausstellte, hat dieser Gauner nicht nur überlebt, sondern auch der Witwe des Plantagenbesitzers all ihren Reichtum abgenommen. Jetzt hat er beschlossen, der Piraterie abzuschwören und ins Handelsgeschäft einzusteigen, und zu diesem Anlass kaufte er eben jene *Ulysse*. Noch interessanter – sein Kurs führt, wie meiner, nach Bordeaux.
+Ich beschloss, dass es mir guttun würde, diese Reise als Passagier zu erleben, und bat darum, mit an Bord zu kommen. Eine Gelegenheit, über das Leben, das Zuhause und die Familie nachzudenken. Vielleicht ist es wirklich an der Zeit, sesshaft zu werden.
+Apropos Familie – ich habe immer noch nicht mit meiner Frau gesprochen. Ich hätte es früher tun sollen, aber wie immer war ich zu beschäftigt…
+Die Abreise ist in zwei Wochen. Jean wird in der Taverne auf mich warten – wir haben vereinbart, vor dem Auslaufen ein kleines Fest zu feiern.
+#TEXT 11_6
+Na sowas! Die Auktion hat bereits stattgefunden, und der Gewinner ist niemand Geringeres als Jean Picard – derselbe, den ich einst aus einer Plantage bei Maracaibo zu befreien versuchte. Wie sich herausstellte, hat dieser Gauner nicht nur überlebt, sondern auch der Witwe des Plantagenbesitzers all ihren Reichtum abgenommen. Jetzt hat er beschlossen, der Piraterie abzuschwören und ins Handelsgeschäft einzusteigen, und zu diesem Anlass kaufte er eben jene *Ulysse*. Noch interessanter – sein Kurs führt, wie meiner, nach Bordeaux.
+Ich beschloss, dass es mir guttun würde, diese Reise als Passagier zu erleben, und bat darum, mit an Bord zu kommen. Eine Gelegenheit, über das Leben, das Zuhause und die Familie nachzudenken. Vielleicht ist es wirklich an der Zeit, sesshaft zu werden, eine Frau zu finden – oder, wie mein Vater es will, Yvonne La Brignée näher kennenzulernen.
+Die Abreise ist in zwei Wochen. Jean wird in der Taverne auf mich warten – wir haben vereinbart, vor dem Auslaufen ein kleines Fest zu feiern. Bis dahin muss ich noch mit den Offizieren sprechen. Wer weiß, wie lange meine Reise dauern wird… Es scheint, als sei es Zeit, Lebewohl zu sagen.
+#TEXT 12
+Nun bleibt nur noch das Schwerste – die Mannschaft und die Offiziere zu entlassen. Von einigen von ihnen Abschied zu nehmen, wird besonders schwer sein, wenn man bedenkt, was wir gemeinsam durchgemacht haben… Um die Offiziere kümmere ich mich selbst, Alonso wird mit der Mannschaft sprechen.

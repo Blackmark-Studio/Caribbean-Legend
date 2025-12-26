@@ -1,0 +1,23 @@
+RPGUtilite_1 {Experiência obtida ~}
+RPGUtilite_2 {horrível}
+RPGUtilite_3 {ruim}
+RPGUtilite_4 {ruim}
+RPGUtilite_5 {médio}
+RPGUtilite_6 {bom}
+RPGUtilite_7 {excelente}
+RPGUtilite_8 {Vitalidade aumentada}
+RPGUtilite_9 {Vitalidade Reduzida}
+RPGUtilite_10 {Reputação nacional diminuída!}
+RPGUtilite_11 {Reputação Nacional Aumentou!}
+RPGUtilite_12 {Reputação Nacional Aumentou!}
+RPGUtilite_13 {Reputação nacional diminuída!}
+RPGUtilite_14 {Ódio}
+RPGUtilite_15 {Hostilidade}
+RPGUtilite_16 {Antipatia}
+RPGUtilite_17 {Irritação}
+RPGUtilite_18 {Neutralidade}
+RPGUtilite_19 {Simpatia}
+RPGUtilite_20 {Amabilidade}
+RPGUtilite_21 {Admiração}
+RPGUtilite_22 {Arco-íris}
+RPGUtilite_23 {Quicksilver}

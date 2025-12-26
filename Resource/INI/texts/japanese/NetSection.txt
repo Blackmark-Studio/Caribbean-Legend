@@ -1,0 +1,17 @@
+Net_ShipDieFromPlayer {%1 <%2>は%3 <%4>を沈めた。}
+Net_ShipDieFromCollisionLiveShip {%1 <%2> が %3 <%4> を体当たりした。}
+Net_ShipDieFromCollisionDeadShip {%1 <%2>はサメの餌になった！ こんな航海士には災いあれ！}
+Net_ShipDieFromCollisionIsland {%1 <%2> が岩に激突した！ こんな航海士は恥だ！}
+Net_ShipDieFromLighting {主は%1 <%2>に怒り、彼を罰した！}
+Net_ShipDieFromCriticalHit {%1 <%2> が %3 <%4> を木っ端みじんにした！}
+Net_CriticalHit {%1 <%2> が %3 <%4> の甲板の火薬樽を撃ち抜いた！}
+Net_MastFallFromHit {%1 <%2> が %3 <%4> のマストを倒した。}
+Net_MastFallFromCollision {%1 <%2> は衝突によりマストを失った。}
+Net_FireActivation {%1 <%2> が %3 <%4> に火をつけた}
+NetFG_ServerIsFull {サーバーが満員です。 これ以上プレイヤーは参加できません。}
+NetFG_NeedUserPassword {入力したパスワードがサーバーに保存されているパスワードと一致しません。 もう一度お試しください。}
+NetFG_NeedServerPassword {サーバーへの接続パスワードが正しくありません。 もう一度お試しください。}
+NetFG_RejectedUnknown {不明な理由によりサーバーへの接続に失敗しました。}
+NetFG_Banned {このサーバーへのアクセスは禁止されています。}
+NetEG_DeathMatch {戦闘終了。\n \n%1の勝利！}
+NetEG_Team {戦闘終了。\n \n「%1」チームの勝利！}

@@ -26,6 +26,17 @@ void ProcessDialogEvent()
 		
 		case "Alonso":
 			NextDiag.TempNode = "Alonso";
+			
+			// --> Эпилог
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				dialog.text = "...";
+				Link.l1 = "阿隆索, 我需要和你谈谈。";
+				Link.l1.go = "SharlieEpilog_Alonso_1";
+				break;
+			}
+			// эпилог <--
+			
 			if (GetDLCenabled(DLC_APPID_1))
 			{
 				if(CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.FirstStage", "ready"))
@@ -301,7 +312,7 @@ void ProcessDialogEvent()
             SetAlchemyRecipeKnown("vodka");
 
             dialog.text = "这就是我跟您说的那种酒。还有配方。万一您喜欢呢, 嘿嘿。";
-            link.l1 = "抱歉, 朋友, 但这些涂鸦和浑浊的液体不……";
+            link.l1 = "抱歉, 朋友, 但这些涂鸦和浑浊的液体不…… ";
             link.l1.go = "Alonso_Lvl_8_Gift_3";
         break;
 
@@ -437,5 +448,73 @@ void ProcessDialogEvent()
             link.l1.go = "exit";
 			AddDialogExitQuestFunction("LoyaltyPack_FourthStage_DlgExit");
         break;
+		
+		// --> Эпилог
+		case "SharlieEpilog_Alonso_1":
+			dialog.text = "这是关于弗洛朗的事吗? 我已经跟他说过了, 说…… ";
+			link.l1 = "不, 老兄, 这次完全不是为了那个。 我已经决定启程前往欧洲了。 时间不定。";
+			link.l1.go = "SharlieEpilog_Alonso_2";
+		break;
+
+		case "SharlieEpilog_Alonso_2":
+			if (GetCompanionQuantity(pchar) <= 1) sStr = "我们的船";
+			else sStr = "我们的船队";
+			dialog.text = "没问题, 船长。 我们的船很结实, 船员也经验丰富, 只需要再补给一些口粮…… ";
+			link.l1 = "我会搭别人的船走, 当乘客。 你需要把"+sStr+"交给港务管理处停泊, 并解散船员。 同时也该做个决定: 是留在这里, 去别的船上服役, 还是作为朋友, 跟我一起去法国。";
+			link.l1.go = "SharlieEpilog_Alonso_3";
+		break;
+
+		case "SharlieEpilog_Alonso_3":
+			dialog.text = "...";
+			link.l1 = "顺便说一句, 完全无关紧要的一点消息: (低声) 我在波尔多认识几个姑娘…… 加勒比可找不到那样的尤物。 她们就喜欢你这种人, 要是你再讲讲我们那些战斗的故事……";
+			link.l1.go = "SharlieEpilog_Alonso_4";
+		break;
+
+		case "SharlieEpilog_Alonso_4":
+			dialog.text = "要只是为了姑娘的话……那我跟你走, 嘿嘿。不过, 为什么不坐我们的船？为什么要当乘客? 兄弟们当然会装模作样地抱怨几句, 但只要是跟着你, 上天堂下地狱他们都愿意。";
+			link.l1 = "我第一次来到这里时, 根本没想过自己会当水手。 可现在, 却无法想象别的生活。我想弄清楚, 当我不再是船长时, 是否还能接受…… 是否真的要把劫掠船队和海上的生活留在身后。";
+			link.l1.go = "SharlieEpilog_Alonso_nothing";
+			link.l2 = "说来话长。我会在酒馆里, 一杯朗姆酒下肚的时候跟你说清楚。 把船员也叫上。 我们来一场盛大的告别狂欢。 这是给你的——给他们发一个月的薪水, 作为遣散费。";
+			link.l2.go = "SharlieEpilog_Alonso_salary";
+		break;
+		
+		case "SharlieEpilog_Alonso_nothing":
+			dialog.text = "命运躲不开, 船长。要是你注定一辈子都是船长, 那事情自然会如此。";
+			link.l1 = "走着瞧吧, "+npchar.name+", 走着瞧。眼下——该去忙正事了。两周后起航。你绝对猜不到, 是哪艘船…… ";
+			link.l1.go = "SharlieEpilog_Alonso_5";
+		break;
+		
+		case "SharlieEpilog_Alonso_salary":
+			dialog.text = "这才像我们的人! 现在跟他们说这消息, 我也好开口多了。";
+			link.l1 = "你绝对猜不到, 是哪艘船……";
+			link.l1.go = "SharlieEpilog_Alonso_5";
+			salary = GetSalaryForShip (PChar);
+			AddMoneyToCharacter (pchar, -salary);
+		break;
+
+		case "SharlieEpilog_Alonso_5":
+			dialog.text = "别卖关子了, 船长。";
+			link.l1 = "那艘名叫‘"+GetShipName ("Ulysse")+"’的轻型帆船。";
+			link.l1.go = "SharlieEpilog_Alonso_6";
+		break;
+
+		case "SharlieEpilog_Alonso_6":
+			dialog.text = "不可能…… 我们要坐的, 竟然是当初抵达这里的那艘船? 我简直不敢相信自己的耳朵…… ";
+			link.l1 = "正是它, "+npchar.name+"。 我是怎么知道的——等会儿在酒馆里, 一杯朗姆酒的时候再告诉你。现在, 我们还有正事要办。";
+			link.l1.go = "SharlieEpilog_Alonso_7";
+		break;
+
+		case "SharlieEpilog_Alonso_7":
+			dialog.text = "明白了, 船长…… 唉…… 真舍不得跟兄弟们分别。他们对我来说就像家人一样。 不过, 也只能如此了…… ";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Alonso";
+			npchar.quest.SharlieEpilog_FarewellOfficers = true;
+			AddDialogExitQuestFunction ("SharlieEpilog_Alonso_exit");
+		break;
+		
+		
+		
+		// эпилог <--
 	}
 } 

@@ -140,6 +140,13 @@ void ProcessDialogEvent()
 	//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "Tichingitu_officer":
 			dialog.text = "Тичингиту слушать вас, капитан "+pchar.name+"!";
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				dialog.text = ""+npchar.name+" видеть замешательство в глаза капитан "+pchar.name+".";
+				Link.l1 = "Ты, как всегда, смотришь прямо в душу, друг мой. Видишь ли, я должен вернуться домой, в Европу. Я принял тяжёлое решение - плыть на чужом корабле, пассажиром.";
+				Link.l1.go = "SharlieEpilog_Tichingitu_1";
+				break;
+			}
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
 				Link.l4 = "Тичингиту, я собираюсь отправиться в старый индейский город Тайясаль. Не буду скрывать: это крайне опасное путешествие, и более того - необычное: через телепортационный истукан. Ты... пойдёшь со мной?";
@@ -218,7 +225,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -233,7 +240,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;
@@ -249,7 +256,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetMusketBullets1_" + i;
 			}
 		break;
@@ -450,6 +457,35 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("FolkeDeluc", "2");
 			ReturnOfficer_Tichingitu();
+		break;
+		
+	// Эпилог
+		case "SharlieEpilog_Tichingitu_1":
+			dialog.text = "Капитан "+pchar.name+" не брать "+npchar.name+" с собой?";
+			link.l1 = "Ты мой друг, "+npchar.name+", и, конечно же, я приглашаю тебя отправиться в это путешествие со мной. Но ты должен понимать, что люди в Старом Свете не привыкли видеть индейцев. Они будут тыкать в тебя пальцами и считать тебя моим рабом, а значит - и относиться соответственно.";
+			link.l1.go = "SharlieEpilog_Tichingitu_2";
+		break;
+
+		case "SharlieEpilog_Tichingitu_2":
+			dialog.text = ""+npchar.name+" это не волновать. "+npchar.name+" знать, что бледнолицый презирать индеец, и следовать за капитан "+pchar.name+", как и обещать - до последнего вздоха.";
+			link.l1 = "Не все презирают индейцев. Но всё же большинство относится с настороженностью - так они пытаются защитить свою веру от всего чуждого. Как бы то ни было, я не позволю никому унижать тебя или принимать за раба. Уверен, никому из твоего племени не довелось побывать в Европе - даже тому проклятому шаману в самых откровенных его снах такое бы не привиделось.";
+			link.l1.go = "SharlieEpilog_Tichingitu_3";
+		break;
+
+		case "SharlieEpilog_Tichingitu_3":
+			dialog.text = "Индеец-маског не мореплаватель. Им никогда не добраться до Европа. Я слышать: большой каноэ идти туда две полных луны.";
+			link.l1 = "Да, "+npchar.name+", и это - если ветер благоволит. Лёгкой эту дорогу не назвать. Мы отчаливаем через две недели... и я рад, что ты плывёшь с нами. В честь отплытия я собираюсь устроить в таверне небольшое торжество. Знаю, ты не любишь огненную воду, но всё же я буду рад, если ты присоеденишься к нам.";
+			link.l1.go = "SharlieEpilog_Tichingitu_4";
+		break;
+		
+		case "SharlieEpilog_Tichingitu_4":
+			dialog.text = ""+npchar.name+" прийти. Но, может, лучше праздничный абордаж?";
+			link.l1 = "Ха-ха. Ну уж нет, друг мой, не тот случай. Я дам тебе знать, когда мы начнём. А сейчас мне пора - дела.";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Tichingitu_officer";
+			npchar.quest.SharlieEpilog_FarewellOfficers = true;
+			pchar.questTemp.SharlieEpilog_Tichingitu = true;
+			pchar.questTemp.SharlieEpilog_Friends = sti(pchar.questTemp.SharlieEpilog_Friends) + 1;
 		break;
 		
 		case "Exit":

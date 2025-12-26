@@ -2704,8 +2704,8 @@ void ProcessDialogEvent()
 		case "BurntShip5":
 			sCapitainId = GenerateRandomName(sti(NPChar.nation), "man");
 			
-			dialog.text = "Nie! Oczywiście, że nie! Panie, zbaw moją duszę, inaczej straciłbym głowę. Ładownia była całkowicie pusta, dzięki Ci Panie, Najświętsza Panno Maryjo!\n"+"I problem polega na tym, że statek należy do... a raczej, należał do pana "+sCapitainId+", znany we wszystkich Karaibach. A została zbudowana w Europie na specjalne zamówienie, z niezwykłymi cechami. "+"I ten armator był zbyt dumny i chełpił się na prawo i lewo, taki głupiec, Boże wybacz mi... Co mu teraz powiem? Lepiej się zabiję, przysięgam...";
-			link.l1 = "Och, teraz widzę, w czym tkwi problem, rzeczywiście. A co było takiego wyjątkowego w tym statku? Jakie niezwykłe cechy miała, że jej właściciel był z niej tak dumny?";
+			dialog.text = "Nie! Oczywiście, że nie! Panie, zbaw moją duszę, inaczej straciłbym głowę. Ładownia była całkowicie pusta, dzięki Ci Panie, Najświętsza Panno Maryjo!\n"+"I problem polega na tym, że statek należy do... a raczej, należał do pana "+sCapitainId+", znany na całych Karaibach. A został zbudowany w Europie na specjalne zamówienie, z niezwykłymi cechami. "+"I ten armator był zbyt dumny i chełpił się na prawo i lewo, taki głupiec, Boże wybacz mi... Co mu teraz powiem? Lepiej się zabiję, przysięgam...";
+			link.l1 = "Och, teraz widzę, w czym tkwi problem, rzeczywiście. A co było takiego wyjątkowego w tym statku? Jakie cechy były tak niezwykłe, że jego właściciel był z niego tak dumny?";
 			link.l1.go = "BurntShip6";
 			
 			NPChar.Quest.BurntShip.ShipOwnerName = sCapitainId;
@@ -2720,15 +2720,15 @@ void ProcessDialogEvent()
 			switch(attrL)
 			{
 				case "speedrate":
-					attrL = "His " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + "'s wind speed was more than " + NPChar.Quest.BurntShip.ShipNeededValue + " knots. That was the privateer's pride... And now he'd just tell his boys to hang me in the yard. What devil has brought him to our harbor together with that pirate tub...";
+					attrL = "Prędkość jego " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + " wynosiła więcej niż " + NPChar.Quest.BurntShip.ShipNeededValue + " węzłów. To była duma korsarza... A teraz kazałby swoim chłopakom powiesić mnie na dziedzińcu. Jaki diabeł sprowadził go do naszego portu razem z tą piracką łajbą...";
 				break;
 				
 				case "turnrate":
-					attrL = "His " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + "'s maneuverability was more than " + NPChar.Quest.BurntShip.ShipNeededValue + " units. That was the soldier's pride... And now he'd just have me flogged to death. What devil advised him to leave his tub there...";
+					attrL = "Manewrowość jego " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + " wynosiła więcej niż " + NPChar.Quest.BurntShip.ShipNeededValue + " cali. To była duma żołnierza... A teraz będzie kazał mnie wychłostać na śmierć. Jaki diabeł mu doradził, żeby zostawił tu swoją łajbe...";
 				break;
 				
 				case "capacity":
-					attrL = "His " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + "' had a deadweight of over " + NPChar.Quest.BurntShip.ShipNeededValue + " units. Greed is bad, I'll tell ya. And now he'd just have me quartered in court. What devil advised him to leave his tub there...";
+					attrL = "Ładownia na jego " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + "' mogła pomieścić ładunek, oscylujący aż do " + NPChar.Quest.BurntShip.ShipNeededValue + " jednostek. Chciwość jest zła, mówię ci. A teraz kazałby mnie poćwiartować w sądzie. Jaki diabeł mu doradził, żeby zostawił tam swoją łajbe...";
 				break;
 			}
 			
@@ -3788,216 +3788,6 @@ void ProcessDialogEvent()
 	}
 }
 
-float BurntShipQuest_GetMaxNeededValue(int iShipType, string _param)
-{
-	float NeededValue = makefloat(GetBaseShipParamFromType(iShipType, _param));
-	switch (_param)
-	{
-		case "speedrate":
-			NeededValue += ((0.72 + frandSmall(0.30)) * (NeededValue/10.0)); 
-		break;
-		case "turnrate":
-			NeededValue += ((0.72 + frandSmall(0.30)) * (NeededValue/10.0)); 
-		break;
-		case "capacity":
-			NeededValue += ((0.72 + frandSmall(0.30)) * (NeededValue/8.0)); 
-		break;
-	}
-	return NeededValue;
-}
-
-// Warship 25.07.09 Генер "A burnt vessel". Начальные иниты для портмана - тип разыскиваемого судна, выдающаяся характеристика и т.д.
-void BurntShipQuest_FillStartParams(ref _npchar)
-{
-	int rank = sti(PChar.rank);
-	int shipType, temp;
-	float neededValue;
-	String shipAttribute;
-	
-	// TODO Пересмотреть зависимость от ранга
-	if(rank <= 5)
-	{
-		shipType = SHIP_LUGGER + rand(1);
-		
-		switch(shipType)
-		{
-			case SHIP_LUGGER:
-				shipAttribute = "speedrate";
-			break;
-			
-			case SHIP_SLOOP:
-				temp = rand(2);
-				
-				if(temp == 2)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					if(temp == 1)
-					{
-						shipAttribute = "turnrate";
-					}
-					else
-					{
-						shipAttribute = "capacity";
-					}
-				}
-			break;
-		}
-	}
-	
-	if(rank > 5 && rank <= 15)
-	{
-		shipType = SHIP_SCHOONER + rand(2);
-		
-		switch(shipType)
-		{
-			case SHIP_SCHOONER:
-				if(rand(1) == 0)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					shipAttribute = "turnrate";
-				}
-			break;
-			
-			case SHIP_BARKENTINE:
-				shipAttribute = "capacity";
-			break;
-			
-			case SHIP_SHNYAVA:
-				shipAttribute = "capacity";
-			break;
-		}
-	}
-	
-	if(rank > 15 && rank <= 25)
-	{
-		shipType = SHIP_FLEUT + rand(3);
-		
-		switch(shipType)
-		{
-			case SHIP_FLEUT:
-				shipAttribute = "turnrate";
-			break;
-			
-			case SHIP_CARAVEL:
-				if(rand(1) == 1)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					shipAttribute = "turnrate";
-				}
-			break;
-			
-			case SHIP_PINNACE:
-				shipAttribute = "capacity";
-			break;
-			
-			case SHIP_BRIGANTINE:
-				if(rand(1) == 1)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					shipAttribute = "turnrate";
-				}
-			break;
-			
-		}
-	}
-	
-	if(rank > 25 && rank <= 35)
-	{
-		shipType = SHIP_SCHOONER_W + rand(2);
-		
-		switch(shipType)
-		{
-			case SHIP_SCHOONER_W:
-				if(rand(1) == 1)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					shipAttribute = "turnrate";
-				}
-			break;
-			
-			case SHIP_GALEON_L:
-				shipAttribute = "capacity";
-			break;
-			
-			case SHIP_CORVETTE:
-				if(rand(1) == 1)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					shipAttribute = "capacity";
-				}
-			break;
-		}
-	}
-	
-	if(rank > 35)
-	{
-		shipType = SHIP_GALEON_H + rand(1);
-		
-		switch(shipType)
-		{
-			case SHIP_GALEON_H:
-				temp = rand(2);
-				
-				if(temp == 0)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					if(temp == 1)
-					{
-						shipAttribute = "turnrate";
-					}
-					else
-					{
-						shipAttribute = "capacity";
-					}
-				}
-			break;
-			
-			case SHIP_FRIGATE:
-				shipAttribute = "turnrate";
-			break;
-		}
-	}
-	
-	neededValue = BurntShipQuest_GetMaxNeededValue(shipType, shipAttribute);
-	
-	Log_TestInfo("shipType == " + shipType);
-	Log_TestInfo("ShipAttribute == " + shipAttribute);
-	Log_TestInfo("ShipNeededValue == " + neededValue);
-	
-	_npchar.Quest.BurntShip.ShipType = shipType;
-	_npchar.Quest.BurntShip.ShipAttribute = shipAttribute;
-	
-	if(shipAttribute != "capacity") // Чтобы трюм с десятичными не писался
-	{
-		_npchar.Quest.BurntShip.ShipNeededValue = FloatToString(neededValue, 2);
-	}
-	else
-	{
-		_npchar.Quest.BurntShip.ShipNeededValue = MakeInt(neededValue);
-	}
-}
-
 void SetJornalCapParam(ref npchar)
 {
 	//созадем рассеянного кэпа
@@ -4218,7 +4008,7 @@ string findCurrentCity1(ref NPChar)//выбираем целевой город 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
+		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -4239,7 +4029,7 @@ string findCurrentCity2(ref NPChar)//выбираем целевой город 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
+		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -4260,7 +4050,7 @@ string findCurrentCity3(ref NPChar)//выбираем целевой город 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
+		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;

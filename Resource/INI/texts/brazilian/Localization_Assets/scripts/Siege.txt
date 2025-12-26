@@ -1,0 +1,27 @@
+Siege_1 {Dizem que pescadores locais viram uma poderosa esquadra @<NationNameSK(sti(aData.nation))> nesta região.}
+Siege_2 {Dizem que a esquadra @<NationNameSK(sti(aData.nation))> responsável por saquear nossa cidade ainda não está longe. Quem dera houvesse um capitão corajoso disposto a atacá-los de volta.}
+Siege_3 {A esquadra de navios de guerra}
+Siege_4 {Está surdo? Os navios de @<NationNameSK(sti(aData.nation))> estão bombardeando nosso forte. Ele pode cair a qualquer momento e coisas terríveis vão começar a acontecer.}
+Siege_5 {Hoje é um grande dia para @<NationNameGenitive(sti(aData.nation))> – conseguimos capturar uma colônia tão importante quanto @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>! Todo o guarnição @<NationNameSK(sti(aData.conation))> foi eliminado, e o forte está ocupado por nossas tropas e já foi reforçado novamente!}
+Siege_6 {Dizem que o esquadrão @<NationNameSK(sti(aData.nation))>, após um longo cerco, capturou a colônia @<NationNameSK(sti(aData.conation))> @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>. Agora @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> é uma colônia @<NationNameSK(sti(aData.nation))>!}
+Siege_7 {Dizem que os @<NationNamePeople(sti(aData.nation))> atacaram covardemente nossa colônia @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> e tomaram a cidade!}
+Siege_8 {Você ouviu as notícias? Nossa valente frota retomou de @<NationNameGenitive(sti(aData.conation))> a rica colônia @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>. ~}
+Siege_9 {Dia triste para @<NationNameGenitive(sti(aData.conation))> – não conseguimos proteger nossa colônia. O forte foi destruído por navios de @<NationNameSK(sti(aData.nation))> e a cidade saqueada.}
+Siege_10 {Dizem que @<NationNameSK(sti(aData.nation))> capturou a colônia @<NationNameSK(sti(aData.conation))> de @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>. Os @<NationNameSK(sti(aData.nation))> saquearam a cidade e partiram.}
+Siege_11 {Dizem que @<NationNamePeople(sti(aData.nation))> atacaram de surpresa nossa colônia @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> e saquearam a cidade antes da chegada dos reforços! Depois, @<NationNamePeople(sti(aData.nation))> fugiram vergonhosamente com o saque.}
+Siege_12 {Ouviu as novidades? Nossa esquadra militar sitiou com sucesso a cidade @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> dos @<NationNameSK(sti(aData.conation))>. A resistência da guarnição foi vencida, mas, claro, nossas forças tiveram que partir. Mas o prêmio...}
+Siege_13 {Hoje é dia de comemorar! Os atacantes de @<NationNameSK(sti(aData.nation))> foram eliminados e a cidade está segura.}
+Siege_14 {Dizem que o esquadrão @<NationNameSK(sti(aData.nation))> foi derrotado durante o ataque à colônia @<NationNameSK(sti(aData.conation))> @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>. Os defensores foram mais fortes.}
+Siege_15 {Dizem que @<NationNamePeople(sti(aData.nation))> atacaram de surpresa @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>, mas reforços chegaram a tempo! Todos os navios @<NationNameSK(sti(aData.nation))> foram afundados.}
+Siege_16 {Ouvi dizer que nossa esquadra falhou ao sitiar a colônia @<NationNameSK(sti(aData.conation))> em @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>. Foi um cerco longo, mas nossos navios afundaram! Quem sabe na próxima vez.}
+Siege_17 {britânico}
+Siege_18 {francês}
+Siege_19 {espanhol}
+Siege_20 {holandês}
+Siege_21 {dias}
+Siege_22 {dia}
+Siege_23 {várias horas}
+Siege_24 {Dizem que @<NationNamePeople(sti(aData.nation))> atacaram a colônia @<NationNameSK(sti(aData.conation))> de @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>. Ainda estão lutando, mas os defensores estão com poucos suprimentos. Eles aguentam no máximo por @<sDays>.}
+Siege_25 {Há rumores de que nossa frota imparável está atacando a colônia @<NationNameSK(sti(aData.conation))> em @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>. Nossos inimigos resistem bravamente, mas provavelmente saberemos quem será o vencedor em @<sDays>.}
+Siege_26 {~ Dizem que @<NationNamePeople(sti(aData.nation))> atacaram nossa colônia @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>. Nossos bravos defensores têm apenas @<sDays> antes que acabem os mantimentos.}
+Siege_27 {~ sitiou ~}

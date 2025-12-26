@@ -132,7 +132,39 @@ void Log_SetActiveAction(string actionName)
 		if (actionName != "Moor") pchar.MoorName = " ";
 		RefreshBattleInterface();
 	}
-	
+
+	string sColony;
+	int iColony;
+	// меняем иконку проникновения для скрытного причаливания
+	if (actionName == "Moor")
+	{
+		sColony = Sea_FindNearColony();
+		iColony = FindColony(sColony);
+
+		if (iColony > 0 && !STH_CanEnterTown(sColony))
+		{
+			BattleInterface.Commands.Moor.selPicNum = 80;
+			BattleInterface.Commands.Moor.picNum = 81;
+			ILogAndActions.ActiveActions.moor.iconnum = 80;
+		}
+	}
+
+	// меняем иконку проникновения для скрытного проникновения через джунгли
+	if (actionName == "Reload")
+	{
+		sColony = loadedLocation.townsack;
+		iColony = FindColony(sColony);
+		if (iColony > 0 && !STH_CanEnterTown(sColony))
+		{
+			objLandInterface.Commands.Outdoor.selPicNum = 40;
+			objLandInterface.Commands.Outdoor.picNum = 56;
+			// objLandInterface.Commands.Outdoor.note = xiStr("for_quick_action_SneakEnter");
+			ILogAndActions.ActiveActions.Reload.iconnum = 31;
+			// ILogAndActions.ActiveActions.Reload.text = xiStr("for_quick_action_SneakEnter");
+			// ILogAndActions.ActiveActions.text1.text = "";
+			// ILogAndActions.ActiveActions.text2.text = "";
+		}
+	}
 	g_ActiveActionName = actionName;
 	// change text
 	if(CheckAttribute(&ILogAndActions,"ActiveActions."+actionName+".Text") && actionName != "Map" && actionName != "EnterToSea" && !dialogRun)

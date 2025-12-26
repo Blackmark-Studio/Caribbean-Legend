@@ -1,0 +1,7 @@
+RedChieftain_1 {족장}
+RedChieftain_2 {Kanauri}
+RedChieftain_3 {인디언}
+RedChieftain_4 {카이만 부족의}
+RedChieftain_5 {족장이 당신의 배를 떠났습니다!}
+RedChieftain_6 {인디언}
+RedChieftain_7 {카이만 부족의}

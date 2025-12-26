@@ -260,7 +260,6 @@ void DoPostExit()
 
 void ShowHelpHint()
 {
-	int    lngFileID;
 	string sCurrentNode = GetEventData();
 	string sHeader;
 	string sText1, sText2, sText3, sPicture, sGroup, sGroupPicture;
@@ -272,11 +271,9 @@ void ShowHelpHint()
 	if(sCurrentNode == "ITEMS_SCROLL")
 	{
 		ref    arItm = ItemsFromID(sCurItem);
-		lngFileID = LanguageOpenFile("ItemsDescribe.txt");
-		sHeader = LanguageConvertString(lngFileID, arItm.name);
-		sText1 =  GetItemDescribe(sti(arItm.index));
+		sHeader = GetItemName(arItm);
+		sText1 =  GetItemDescr(arItm);
 		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false);
-		LanguageCloseFile(lngFileID);
 	}
 	else
 	{
@@ -366,7 +363,7 @@ string SetItemsName()
 	string sAttr = "pic" + (nCurScrollNum + 1);
 	string itemId = GameInterface.ITEMS_SCROLL.(sAttr).itemId;	
 	ref rItem = ItemsFromID(itemId);	
-	string sItemName = GetConvertStr(rItem.name, "ItemsDescribe.txt");	
+	string sItemName = GetItemName(rItem);
 	GameInterface.strings.ItemName = sItemName;
 	
 	return itemId;
@@ -458,7 +455,7 @@ void AddToTable(ref rItem)
 		GameInterface.TABLE_LIST.(sList).td3.icon.width = 55;
 		GameInterface.TABLE_LIST.(sList).td3.icon.height = 55;
 		GameInterface.TABLE_LIST.(sList).td3.textoffset = "60, 0";
-		GameInterface.TABLE_LIST.(sList).td3.str = GetConvertStr(itm.name, "ItemsDescribe.txt");
+		GameInterface.TABLE_LIST.(sList).td3.str = GetItemName(itm);
 		GameInterface.TABLE_LIST.(sList).index = itm.index;
 		GameInterface.TABLE_LIST.(sList).td4.str = sItmReq;
 		GameInterface.TABLE_LIST.(sList).td5.str = iRightQty;
@@ -805,10 +802,8 @@ void onTableRemoveBtnClick()
 // инфа о предмете
 void ShowGoodsInfo(int iGoodIndex)
 {
-	string GoodName = Items[iGoodIndex].name;
 	ref    arItm = &Items[iGoodIndex];
-	int    lngFileID = LanguageOpenFile("ItemsDescribe.txt");
-	string sHeader = LanguageConvertString(lngFileID, GoodName);
+	string sHeader = GetItemName(arItm);
 
 	string describeStr = "";
 
@@ -816,7 +811,7 @@ void ShowGoodsInfo(int iGoodIndex)
 	{
 		describeStr += "id = " + Items[iGoodIndex].id + NewStr();
 	}
-	describeStr += GetItemDescribe(iGoodIndex);
+	describeStr += GetItemDescr(arItm);
 
 	BuyOrSell = 0;
 	SetFormatedText("QTY_TypeOperation", "");
@@ -826,7 +821,6 @@ void ShowGoodsInfo(int iGoodIndex)
 	SetNewGroupPicture("QTY_GOODS_PICTURE", Items[iGoodIndex].picTexture, "itm" + Items[iGoodIndex].picIndex);
 	SetFormatedText("QTY_CAPTION", sHeader);
 	SetFormatedText("QTY_GOODS_INFO", describeStr);
-	LanguageCloseFile(lngFileID);
 	// belamour
 	if(iCurrentTabMode == 1)iCharQty = GetCharacterFreeItem(refCharacter, Items[iGoodIndex].id);
 	else iCharQty = CheckItemMyBox("box"+sti(iCurrentTabMode-1), Items[iGoodIndex].id); 

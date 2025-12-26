@@ -1,0 +1,149 @@
+descriptor_Fancy {Süslü}
+descriptor_Exotic {Egzotik}
+descriptor_HighQuality {Üstün}
+descriptor_GoodFit {Sade}
+descriptor_HeartDefence {Takviyeli}
+descriptor_Unremarkable {Sade}
+descriptor_WeaponType_0 {Hafif}
+descriptor_WeaponType_1 {Orta}
+descriptor_WeaponType_2 {Ağır}
+descriptor_WeaponLength_0 {Kısa}
+descriptor_WeaponLength_1 {Uzun}
+descriptor_WeaponCurvature_0 {Düz}
+descriptor_WeaponCurvature_1 {Eğri}
+descriptor_ArmorType_0 {Hafif}
+descriptor_ArmorType_1 {Orta}
+descriptor_ArmorType_2 {Ağır}
+descriptor_ArmorMaterial_0 {Kumaş}
+descriptor_ArmorMaterial_1 {Deri}
+descriptor_ArmorMaterial_2 {Plaka}
+descriptor_ArmorMaterial_3 {Kalıp}
+descriptor_ArmorMaterial_4 {Dövme}
+descriptor_AmuletType_0 {Sıradan}
+descriptor_AmuletType_1 {Pagan}
+descriptor_AmuletType_2 {Hristiyan}
+descriptor_SingleCharge {Tek atış}
+descriptor_MultiCharge {Çok atış}
+descriptor_OneHanded {Tek el}
+descriptor_TwoHanded {Çift el}
+descriptor_Bayonet {Süngü}
+descriptor_PiercingAmmo {Zırh delici}
+descriptor_StunAmmo {Sersemletici}
+descriptor_EmpoweredAmmo {Aşırı dolu}
+descriptor_SpyGlass {Gözlem}
+descriptor_SpyGlass_Crew_0 {Mürettebat tahmini}
+descriptor_SpyGlass_Crew_1 {Mürettebat hesabı}
+descriptor_SpyGlass_Crew_2 {Mürettebat sayısı}
+descriptor_SpyGlass_Caliber_0 {Toplar}
+descriptor_SpyGlass_Caliber_1 {Silahlanma}
+descriptor_Special {Özel}
+descriptor_Tool {Alet}
+descriptor_Valuable {Değerli}
+descriptor_BulletNeedPowder {Barut}
+descriptor_descr_BulletNeedPowder {Bu mühimmat, bir miktar barut olmadan namludan ateşlenmez.}
+descriptor_GrapeAmmo {Saçma}
+descriptor_BulletAmmo {Mermi}
+descriptor_BombAmmo {Bomba}
+descriptor_HealPotion {Şifa}
+descriptor_Alcohol {Sarhoş edici}
+descriptor_EnhancingPotion {Güçlendirme}
+descriptor_AntidotePotion {Panzehir}
+descriptor_Metal {Metal}
+descriptor_Trinket {Süs}
+descriptor_descr_Alcohol {Dilleri çözer, düşünceleri hafifletir, fakat becerilere ceza verir.}
+descriptor_descr_EnhancingPotion {Özel bir güçlendirme etkisi vardır.}
+descriptor_descr_AntidotePotion {Zehirleri giderir, zehirlenmeyi durdurur.}
+descriptor_descr_Metal {Yerden çıkarılır ve simyada kullanılır.}
+descriptor_descr_Trinket {Zarif ve o kadar da zarif olmayan eşyalar; zevk sahiplerini köylülerden ayırır. Sarraflarda doblon karşılığında takas edilebilir.}
+descriptor_Junk {Çöp}
+descriptor_Herb {Bitki}
+descriptor_descr_Herb {Toprağın armağanı. Genellikle simyada merhem ve iksir yapmak için kullanılır.}
+descriptor_descr_Fancy {Bu eşya gösterişli görünümü, kakmaları ve pahalı malzemeleriyle öne çıkar. Takıldığında Liderlik $number($DescriptorBaseValue(Fancy)) artar. Etkiler birikir.}
+descriptor_descr_Exotic
+{
+Bu eşya iyi bir Hristiyanın eline yakışmaz; taşıyıcısı hakkında hemen ürkütücü söylentiler yayılır.
+Filo gücünü $percent($DescriptorBaseValue(Exotic)) artırır; etkiler birikir.
+}
+descriptor_descr_HighQuality {Bu silah o kadar ustaca yapılmış ki kritik hasarı $percent($DescriptorBaseValue(HighQuality)) artar.}
+descriptor_descr_GoodFit {Bu zırh olağanüstü iyi oturur, tüm silahlarla saldırı hızını $percent($DescriptorBaseValue(GoodFit)) artırır.}
+descriptor_descr_HeartDefence {Bu zırh, hayati noktalarda takviyelidir ve düşman kritik hasarını $percent($DescriptorBaseValue(HeartDefence)) azaltır.}
+descriptor_descr_Unremarkable
+{
+Herkeste böyle eşyalar var. Bununla ne dikkat çekersin ne de akılda kalırsın.
+Gizliliği $number($DescriptorBaseValue(Unremarkable)) artırır. Etkiler birikir.
+}
+descriptor_descr_WeaponType_0 {Hafif silahlar daha hafif, daha çeviktir ve genellikle bire bir düellolar için tasarlanmıştır. Bu silahlarla yapılan saldırılar %5 daha hızlıdır.}
+descriptor_descr_WeaponType_1 {Orta silahlar, ağırlık ve hız arasında iyi bir denge sunar ve en çok yönlü seçenektir. Kavga ve borda çatışmaları için idealdir.}
+descriptor_descr_WeaponType_2 {Ağır silahlar büyük bir ağırlığa ve aynı oranda yüksek hasara sahiptir. Ancak saldırı hızı %5 azalır.}
+descriptor_descr_WeaponLength_0 {Bu silah, düşmana yaklaşmayı gerektirir ve yakın mesafe çatışmalar için daha uygundur.}
+descriptor_descr_WeaponLength_1 {Bu silahın menzili iyidir ve etkili olması için açık alana ihtiyaç duyar.}
+descriptor_descr_WeaponCurvature_0 {Bu silah düz ya da hafif eğimli olup, hızlı saldırılar için kesme saldırılarına göre daha uygundur.}
+descriptor_descr_WeaponCurvature_1 {Bu silah, belirgin bir eğriye ve öne kaymış bir ağırlık merkezine sahiptir; bu da onu hızlı saldırılardan çok kesme saldırılarına uygun kılar.}
+descriptor_descr_ArmorType_0 {Hafif zırh neredeyse sıradan kıyafetten ayırt edilemez ve hareketi hiç kısıtlamaz. Karşılığında ise daha az koruma sağlar.}
+descriptor_descr_ArmorType_1 {Orta zırh hareketi bir miktar kısıtlar, ancak hayati organlar için mükemmel koruma sağlar. Karakterin hareket hızını %5 azaltır.}
+descriptor_descr_ArmorType_2 {Ağır zırh hantal ve kullanışsızdır, ama kale basmaya yarar. Hareket hızını %10 azaltır.}
+descriptor_descr_ArmorMaterial_0 {Kumaş ağır darbelere dayanamaz, ancak sıyrık ve çiziklere karşı korur. Gelen hasarı %4 azaltır.}
+descriptor_descr_ArmorMaterial_1 {Deri zırh sarhoş bir kavgada işinize yarar, ama ne bir kurşunu ne de ustaca bir hamleyi durdurur. Gelen hasarı %8 azaltır.}
+descriptor_descr_ArmorMaterial_2 {Plaka, ağırlık ve koruma arasında mükemmel bir dengedir. Hayatınızı kurtarabilir. Gelen hasarı %15 azaltır.}
+descriptor_descr_ArmorMaterial_3
+{
+Kalıp zırh, askerleri donatmak için seri üretilir ve Avrupa savaşlarında kullanılır.
+Gelen hasarı %22 azaltır.
+}
+descriptor_descr_ArmorMaterial_4 {Yüksek kaliteli dövme zırh üretimi karmaşık ve maliyetli bir iştir, bu yüzden Karayipler'de nadir bulunur. Gelen hasarı %35 azaltır.}
+descriptor_descr_AmuletType_0 {Kehanetlere, deniz batıl inançlarına ve gerçek neden-sonuç ilişkilerine dayanır.}
+descriptor_descr_AmuletType_1 {Pagan tanrıların ve yerli ritüellerin gücünü çağırır.}
+descriptor_descr_AmuletType_2 {Hristiyan azizlerinin ve doğru inancın gücünü kullanır.}
+descriptor_descr_SingleCharge {Yedekte sadece bir atış var – iyi kullan.}
+descriptor_descr_MultiCharge {Birden fazla namluya, silindire veya hazneye sahip olup ardışık atışlara olanak tanır. Özel beceriler gerektirir.}
+descriptor_descr_OneHanded {Kemerde veya kuşakta taşınan el silahı. Tek atışlık modeller özel kullanım becerisi gerektirmez.}
+descriptor_descr_TwoHanded {Ateş ederken iki elle tutulması gereken ağır ateşli silah. Kullanmak için özel beceri gerekir.}
+descriptor_descr_Bayonet {Bu uzun namlulu ateşli silah süngüyle donatılmıştır, Hızlı saldırı hasarını %25 artırır.}
+descriptor_descr_PiercingAmmo {Bu mühimmat isabet ettiğinde zırhı yok sayar.}
+descriptor_descr_StunAmmo {Bu mühimmat isabet ettiğinde düşmanlara ceza uygular.}
+descriptor_descr_EmpoweredAmmo {Bu mühimmat silah özelliklerini olumlu etkiler.}
+descriptor_descr_SpyGlass {Her dürbün, bir geminin türünü, adını, durumunu, hızını ve top sayısını gösterir.}
+descriptor_descr_SpyGlass_Crew_0 {Bu dürbünle mürettebatı net göremezsiniz, bu yüzden tahmin yalnızca yaklaşık olur.}
+descriptor_descr_SpyGlass_Crew_1 {Bu dürbün, gemideki mürettebatı tam olarak saymanı ve tüfekçileri tespit etmeni sağlar.}
+descriptor_descr_SpyGlass_Crew_2 {Bu dürbün, düşman mürettebatı ve tüfekçilerin tam sayısını, ayrıca kaptanın yeteneklerini gösterir.}
+descriptor_descr_SpyGlass_Caliber_0 {Bu dürbünün mercekleri, sadece top sayısını değil, kalibrelerini de gösterecek kadar iyidir.}
+descriptor_descr_SpyGlass_Caliber_1 {Bu dürbünün yüksek kaliteli optiğiyle topların kalibresini ve yüklü mühimmat türünü görebilirsin.}
+descriptor_descr_Special {Bu eşya özel bir özelliğe sahip.}
+descriptor_descr_Tool {Karmaşık aletlerden oluşan bir set, anlamayana değersizdir. Ama sen onlardan değilsin.}
+descriptor_descr_Valuable {Yüksek satış değeri vardır.}
+descriptor_descr_BulletNeedPower {Barut olmadan ateşlenemez.}
+descriptor_descr_GrapeAmmo {Birden fazla küçük mermi. Özellikle grup halindeki düşmanlara veya yakın mesafedeki tek hedefe karşı etkilidir.}
+descriptor_descr_BulletAmmo {Tek tek doldurulup ateşlenir. Orta ve uzun menzilde, özellikle kafa atışlarında etkilidir.}
+descriptor_descr_BombAmmo {Patlar ve yakındaki tüm hedefleri vurur. Özellikle düşman gruplarına karşı etkilidir.}
+descriptor_descr_HealPotion {Bu iksir sağlığı yeniler.}
+descriptor_descr_Junk {Karayipler’de bolca bulunan çeşitli süs eşyaları. Sadece nasıl kullanılacağını bilenler için değerli; yoksa karanlık köşelerde tozlanır.}
+descriptor_Alchemy {Simya}
+descriptor_descr_Alchemy {Bu eşya Simya ile üretilebilir veya değiştirilebilir.}
+descriptor_Quest {Görev}
+descriptor_descr_Quest {Bu eşya bir görev için gereklidir. Atılamaz veya satılamaz.}
+descriptor_Map {Harita}
+descriptor_descr_Map {Bir yerin işaretlerini taşıyan bir kağıt parçası. Bu tür eşyalar hemen atlasa kopyalanır.}
+descriptor_Fragile {Kırılgan}
+descriptor_descr_Fragile {Bu eşya belirli sayıda kullanımdan sonra kırılır.}
+descriptor_Cannoner {$key(Cannoner)}
+descriptor_Boatswain {$key(Boatswain)}
+descriptor_Carpenter {$key(Carpenter)}
+descriptor_Navigator {$key(Navigator)}
+descriptor_Treasurer {$key(Treasurer)}
+descriptor_Doctor {$key(Doctor)}
+descriptor_descr_Cannoner {Etki Topçu için geçerlidir.}
+descriptor_descr_Boatswain {Etki Güverte subayı için geçerli.}
+descriptor_descr_Carpenter {Etki Marangoz için geçerlidir.}
+descriptor_descr_Navigator {Etki Seyir subayı için geçerli.}
+descriptor_descr_Treasurer {Etki Hazinedar için geçerlidir.}
+descriptor_descr_Doctor {Etki Doktor için geçerlidir.}
+descriptor_Ingredient {Malzeme}
+descriptor_Jewelery {Mücevher}
+descriptor_descr_Jewelery {Değerli ve yarı değerli taşlar. Satılabilir veya simyada kullanılabilir.}
+descriptor_descr_Ingredient {Bu eşya simyada kullanılır.}
+descriptor_Alternate {Ayarlama}
+descriptor_descr_Alternate {Yetenek ana kahraman için bir, diğer karakterler için farklı bir etki sağlar.}
+descriptor_IntoxicatingPotion {Sarhoş edici}
+descriptor_descr_IntoxicatingPotion {Dilleri çözer, düşünceleri hafifletir, fakat becerilere ceza uygular.}
+descriptor_Fighter {$key(Fighter)}
+descriptor_descr_Fighter {Etki Öncüler için faydalıdır.}

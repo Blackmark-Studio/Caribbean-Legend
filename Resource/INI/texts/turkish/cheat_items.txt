@@ -1,0 +1,30 @@
+new_string
+{
+
+}
+Cheat_success {Hile başarıyla çalıştı!}
+Cheat_on {Hile açık}
+Cheat_off {Hile kapalı}
+Cheat_Comming_soon {Çok yakında!}
+f1 {Tüm üretim tariflerini aç}
+f2 {Zanaat malzemesi ekle}
+f3 {Bitki ekle}
+f4 {Mücevher ekle}
+f5 {Tavuk taşı +100}
+f6 {Mühimmat +50}
+f7 {Kılıçları Al}
+f8 {Silah Al}
+f9 {Tüfekleri Al}
+f10 {Tanrı modu açık/kapalı}
+f11 {Küraseleri Al}
+f12 {Tılsımları Al}
+f13 {Muska Al}
+f14 {Tılsım Al}
+f15 {İksirleri Al}
+f16 {Dürbünleri Al}
+f17 {Fener Al}
+f18 {Navigasyon cihazlarını al}
+f19 {Aletleri Al}
+f20 {Sıradan haritaları al}
+f21 {Amiral haritalarını al}
+descF21No {Oyunun bu aşamasında kullanılamaz}

@@ -1,0 +1,132 @@
+new_string
+{
+
+}
+special0 {Ticaret}
+special0_desc {Bir ticaret gemisi genellikle büyük bir ambar uğruna kalibre, hız ve top sayısından feragat eder. Böyle bir gemiyle tek başına sefere çıkmak ancak çok yetenekli bir kaptanın işidir.}
+special0_desc2 {Filo gücü bonusu: düşük}
+special1 {Savaş}
+special1_desc {Savaş gemileri deniz muharebeleri için özel olarak tasarlanmıştır. En güçlü gövdeye ve en büyük kalibre toplara sahiptirler, ancak bu ateş gücü hız özelliklerinde kısıtlamalara yol açar.}
+special1_desc2 {Filo gücü bonusu: çok yüksek.}
+special2 {Akıncı}
+special2_desc {Akıncı gemileri baskın ve korsanlık için idealdir — çevik, manevra kabiliyeti yüksek ve iyi silahlanmışlardır; ancak küçük ambarları ve zayıf gövdeleriyle bu gücün bedelini öderler.}
+special2_desc2 {Filo gücü bonusu: yüksek.}
+special3 {Çok amaçlı}
+special3_desc {Çok amaçlı gemiler, her işi bir arada yapmak isteyen kaptanların tercihidir. Ticaret, korsanlık ve savaş için eşit derecede uygundurlar; ancak bu esneklik, onları uzmanlaşmış gemilere göre daha zayıf kılar. Tabii ki, usta bir gemicinin eline geçene kadar.}
+special3_desc2
+{
+Filo gücü bonusu: orta  
+Özellik geliştirme bonusu: %15
+}
+trait01 {Akım Haritası}
+trait01_desc {Avrupalı ustaların siparişiyle yapılmış karmaşık navigasyon aletleri ve takımadadaki sualtı akıntılarını gösteren hassas bir harita, yolculuk süresinden ciddi tasarruf sağlar.}
+trait01_desc2
+{
+Küresel haritada seyir hızını %5 artırır.
+Diğer tüm bonuslarla birikir.
+}
+trait02 {Kaliteli Paketleme}
+trait02_desc {Ambarın, bölme kalınlığının ve yük depolama sisteminin kapsamlı yenilenmesi, daha fazla yük taşımanı ve gemi içinde dengeli şekilde dağıtmanı sağlar.}
+trait02_desc2 {Ambar yükünden gelen hız cezasını %15 azaltır.}
+trait03 {Kalite İşareti}
+trait03_desc {Bu geminin yükünü tanınır kılan bir dizi sembol, mühür ve patent, limana varışını yerel tüccarlar için iyi bir işaret haline getirir. Başarılı ticaret anlaşmaları liman ulusuyla ilişkileri geliştirir, iyi ilişkiler ise ticareti daha kârlı yapar.}
+trait03_desc2
+{
+Satış cezası azalır: ilişki seviyesi başına %3.
+Ulusla ilişki artırmak için kâr eşiği: 50000.
+}
+trait04 {Acil Yan Yelkenler}
+trait04_desc {Gemi için kritik bir tehlike durumunda, denizciler serenlere özel hızlı kurulan ek yelkenler takar ve kaldırır, bu da geminin hızını geçici olarak artırır.}
+trait04_desc2
+{
+Etkinleşme için gövde dayanıklılık eşiği: %40  
+Hız artışı: %20  
+Eşik üzeri onarımda etki gecikmesi: 20 saniye
+}
+trait05 {Sahte Belgeler}
+trait05_desc {Etkileyici bir dizi patent, belge ve isim levhası bu geminin neredeyse her limana gizlice girmesini sağlar; göze çarpmayan gövdesi ise kaçakçılık sırasında devriyelere yakalanma riskini azaltır.}
+trait05_desc2
+{
+Aldatma şansını artırır: %15.
+Devriye ile karşılaşma olasılığını azaltır: %50.
+}
+trait11 {Döner Arabalar}
+trait11_desc {Top mazgalları ve arabaları özel olarak yeniden yapıldı, topların atış sektörünü artırıyor.}
+trait11_desc2 {Atış sektörü artar: 7 derece.}
+trait12 {Gelişmiş Geri Tepme Sistemi}
+trait12_desc {Geliştirilmiş blok ve dengeleyici sistemi, aynı bordadan hızlı atış yapmayı sağlar; geri tepme ataletini yeniden doldurma ve nişan alma sürecini hızlandırmak için kullanır.}
+trait12_desc2
+{
+Hasar ve yeniden doldurma hızı artar: salvo başına %6.
+Maksimum bonus: %35.
+Başka bir bordadan ateş edildiğinde bonus kaybolur.
+}
+trait13 {Hızlı Çıkartma}
+trait13_desc {Geminin tasarımı ve vinç sistemi, hareket halindeyken çıkarma yapılmasına olanak tanır; böylece mürettebatı riske atmadan saldırı çok daha erken başlatılabilir.}
+trait13_desc2 {Kale saldırısı için yok edilen top eşiğini %15 azaltır.}
+trait14 {Savaş Boyası}
+trait14_desc {Gövde üzerindeki parlak baskın izleri ve doğru kişilere verilen düzenli rüşvetler, gemiyi korkutucu bir efsaneye dönüştürerek haraç almayı çok daha kolay hale getirir. Valiler parayı ve malları daha istekli paylaşır, uluslar kaptanlar için daha yüksek fidyeler belirler.}
+trait14_desc2
+{
+Fidye değeri bonusu: %35.
+Koloni baskınlarında depo değeri bonusu: %15.
+}
+trait21 {Vur Kaç}
+trait21_desc {Kaydırılmış ağırlık merkezi, keskin gövde hatları ve özel top portu düzenlemesi, geminin dalga geçişini ve top geri tepmesinde dengesini artırır; bu da savaş sırasında izin verilen hız sınırlarını yükseltir.}
+trait21_desc2
+{
+Boş borda için gemi hız bonusu: %5.
+Yükleme sırasında bonus kademeli olarak azalır.
+}
+trait22 {Yağmalama}
+trait22_desc {Gemi, ele geçirilen gemilerden malzeme çıkarmak için özel kurallara tabidir. Bir gemiyi bordalayarak batırmak, gövde ve yelken dayanıklılığını yeniler. Yenilenen miktar; malzeme miktarı ve kalitesi, hasar düzeyi ve sınıf farkına bağlıdır.}
+trait22_desc2
+{
+Gövde onarımı: %5–15.
+Yelken onarımı: %12 (direkler onarılmaz).
+}
+trait23 {Hızlı ve Ölü}
+trait23_desc {Mürettebat, izleri gizleme ve gizlilik eğitimi almak zorundadır. Korsanlığın uluslarla ilişkilere etkisini azaltır, itibar kazanımı daha etkili olur.}
+trait23_desc2
+{
+İlişki cezalarını %50 azaltır.
+Avukat etkinliğini %50 artırır.
+}
+trait24 {Yangın topu}
+trait24_desc
+{
+Kovalama ve geri çekilme topları, yüksek sıcaklıklara dayanacak şekilde özel olarak sertleştirilir ve toplukları yangına karşı özel bir bileşikle kaplanır.
+Bu sayede, her türlü evrensel mühimmatla yangın çıkarıcı karışımlar kullanılabilir ve düşman gemilerine periyodik hasar verilir.
+}
+trait24_desc2
+{
+Gövde ve yelkenlere ek hasar: %200.
+Etki süresi: 15 saniye.
+Yangın çıkma şansı artışı: %200
+}
+sp1 {Fanatik}
+sp1_desc {Donatılmış bir güverte şapeli ve Meryem Ana ikonları, kilise muskalarının etkisini ve süresini gizemli şekilde artırır.}
+sp1_desc2
+{
+Her muskanın güçlendirmesi: bireysel.
+Süre artışı: 15 gün.
+}
+sp2 {Hoş geldin misafir}
+sp2_desc {Bu efsanevi gemi, Karayip takımadalarının her köşesinde tanınır ve her yerde saygı ve hayranlıkla karşılanır. Lady Beth’in konumu harita satıcıları tarafından hemen öğrenilir, yerel tüccarlar ise değerli eşyaları almak için tüm sermayelerini toplamaya çalışır.}
+sp2_desc2
+{
+Harita tüccarı çıkma şansı bonusu: %5–12.
+Peso stoğu artışı: %100.
+Doubloon stoğu artışı: ~%30.
+}
+sp3 {Cehennem}
+sp3_desc {Bu gemide insan hayatı, gerçek gücün ortaya çıkmasından önceki kısa bir durak olarak görülür. Az kişi Peçe’yi aşıp geri döner, ama dönenler artık ölümden korkmaz.}
+sp3_desc2 {Düşen denizciler, mürettebatın deneyimini ve moralini artırır.}
+sp3_SailorsBoardingBonus_desc {Gemiye çıkma deneyim bonusu: #dSailorsBoardingBonus#%}
+sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 ölen denizci)}
+sp3_SurrenderChanceBonus_desc {Teslim olma şansı artışı: #dSurrenderChanceBonus#%}
+sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 ölen denizci)}
+sp4 {Korsan Avcısı}
+sp4_desc {Bu gemi, denizleri korsanlardan arındırmak için özel olarak inşa edildi. Her batırılan gemiyle mürettebat daha da kenetlenir, toplar daha isabetli olur ve kaptanın fanatizmi daha da belirginleşir.}
+sp4_desc2 {Her yok edilen korsan gemisi, manevra kabiliyetini, menzili, harita hızını ve top doldurma hızını kalıcı olarak artırır. Mevcut bonus: $percent($attr($context.tuning.modifiers.shipSpeed.trait_SP4)) / 15. ~ Korsan tehdidi azaldıkça, gemi bakım maliyeti de azalır. Mevcut bonus: $percent($GetAmsterdamMtp( )) / 40.}
+SpecialityUpgrade {HWIC tarafından yükseltildi}

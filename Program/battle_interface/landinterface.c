@@ -1,5 +1,3 @@
-int g_LocLngFileID = -1;
-
 object objLandInterface;
 object objFastReloadTable;
 object objTownStateTable;
@@ -209,9 +207,10 @@ void BLI_ExecuteCommand()
 	aref arFader;
 	if( GetEntity(arFader,"fader") ) {return;}
 
-	aref	uiref;
-	int		curLocIdx;
-	int		tmpi;
+	aref uiref;
+	int curLocIdx;
+	int tmpi;
+    ref rChar;
 
 	if( commName=="cancel" || evntName=="cancel" ) {
 		SendMessage(&objLandInterface,"ls",MSG_BATTLE_LAND_MAKE_COMMAND,"cancel");
@@ -264,27 +263,26 @@ void BLI_ExecuteCommand()
 	break;
 	case "BI_ItemsChange":
 		tmpi = SendMessage(pchar,"ls",MSG_CHARACTER_EX_MSG,"FindDialogCharacter");
-		if(tmpi>=0 && isOfficerInShip(GetCharacter(tmpi), true))//fix вот дыра для обмена с матросом
+        rChar = GetCharacter(tmpi);
+		if (tmpi>=0 && isOfficerInShip(rChar, true)) // fix вот дыра для обмена с матросом
         {
+            LaunchCharacterItemChange(rChar);
+        }
+		else if (tmpi>=0 && CheckAttribute(rChar, "IsCompanionClone")) // 1.2.4
+        {
+            tmpi = rChar.RealCompanionIdx;
             LaunchCharacterItemChange(GetCharacter(tmpi));
         }
-        // boal 22.01.2004 -->
-		else
-		{
-			if (tmpi>=0 && CheckAttribute(GetCharacter(tmpi), "IsCompanionClone")) // 1.2.4
-			{
-			    LaunchCharacterItemChange(GetCharacter(tmpi));
-			}
-			else
-			{
-				// обмен с офицером всегда и везде (в абордаже нет диалога!)
-			    tmpi = LAi_FindNearestVisCharacter(GetMainCharacter(), 1);
-			    if( tmpi>0 && IsOfficer(GetCharacter(tmpi)))
-				{
-				    LaunchCharacterItemChange(GetCharacter(tmpi));
-				}
-			}
-		}
+        else
+        {
+            // обмен с офицером всегда и везде (в абордаже нет диалога!)
+            tmpi = LAi_FindNearestVisCharacter(GetMainCharacter(), 1);
+            rChar = GetCharacter(tmpi);
+            if (tmpi>0 && IsOfficer(rChar))
+            {
+                LaunchCharacterItemChange(rChar);
+            }
+        }
 	break;
 	case "BI_TakeItem":
 		Item_OnPickItem();
@@ -950,56 +948,59 @@ void BLI_SetObjectData()
 
 	int nLoc = FindLoadedLocation();
 	if(nLoc >= 0) {
-		int nFile = LanguageOpenFile("LocLables.txt");
-		if(nFile >= 0) {
-			objLandInterface.textinfo.islandname.font = "interface_normal_bold";
-			objLandInterface.textinfo.islandname.scale = 0.7 * fHtRatio;
+		objLandInterface.textinfo.islandname.font = "interface_normal_bold";
+		objLandInterface.textinfo.islandname.scale = 0.7 * fHtRatio;
 
-			objLandInterface.textinfo.islandname.pos.x = sti(showWindow.right) - RecalculateHIcon(124 * fHtRatio );
-			objLandInterface.textinfo.islandname.pos.y = RecalculateVIcon(24 * fHtRatio);
-			if (CheckAttribute(&locations[nLoc],"islandId"))
+		objLandInterface.textinfo.islandname.pos.x = sti(showWindow.right) - RecalculateHIcon(124 * fHtRatio );
+		objLandInterface.textinfo.islandname.pos.y = RecalculateVIcon(24 * fHtRatio);
+		if (CheckAttribute(&locations[nLoc],"islandId"))
+		{
+			if (locations[nLoc].islandId != "Mein" && locations[nLoc].islandId != "Europe")
 			{
-				if (locations[nLoc].islandId != "Mein")
+				objLandInterface.textinfo.islandname.text = XI_convertString("Island:") + GetIslandNameByID(locations[nLoc].islandId);
+			}
+			else
+			{
+				if (CheckAttribute(&locations[nLoc],"countryId"))
 				{
-					objLandInterface.textinfo.islandname.text = XI_convertString("Island:") + LanguageConvertString(nFile, locations[nLoc].islandId);
+					objLandInterface.textinfo.islandname.text = GetBaseLocationName(locations[nLoc].countryId);
 				}
 				else
 				{
-					objLandInterface.textinfo.islandname.text = LanguageConvertString(nFile, locations[nLoc].islandId);
+					objLandInterface.textinfo.islandname.text = GetIslandNameByID(locations[nLoc].islandId);
 				}
 			}
-			else
-			{
-				objLandInterface.textinfo.islandname.text = "";//XI_convertString("Open Sea");
-			}
-			//
-			objLandInterface.textinfo.villagename.font = "interface_normal_bold";
-			objLandInterface.textinfo.villagename.scale = 0.7 * fHtRatio; 
-
-			objLandInterface.textinfo.villagename.pos.x = sti(showWindow.right) - RecalculateHIcon(124 * fHtRatio);
-			objLandInterface.textinfo.villagename.pos.y = RecalculateVIcon(48 * fHtRatio);
-
-			objLandInterface.textinfo.locationname.font = "interface_normal_bold";
-			objLandInterface.textinfo.locationname.scale = 0.7 * fHtRatio;
-
-			objLandInterface.textinfo.locationname.pos.x = sti(showWindow.right) - RecalculateHIcon(124 * fHtRatio);
-			objLandInterface.textinfo.locationname.pos.y = RecalculateVIcon(72 * fHtRatio);
-			
-            if (!CheckAttribute(&locations[nLoc],"fastreload"))
-			{
-			    objLandInterface.textinfo.villagename.text = "";
-				if(bGlobalTutor)
-				{
-					objLandInterface.textinfo.villagename.text = LanguageConvertString(nFile, "Ulysse");
-				}
-			}
-			else
-			{
-				objLandInterface.textinfo.villagename.text = XI_ConvertString("Colony:") + LanguageConvertString(nFile, locations[nLoc].fastreload + " Town");
-			}
-			objLandInterface.textinfo.locationname.text = LanguageConvertString(nFile, locations[nLoc].id.label);
-			LanguageCloseFile( nFile );
 		}
+		else
+		{
+			objLandInterface.textinfo.islandname.text = "";//XI_convertString("Open Sea");
+		}
+		//
+		objLandInterface.textinfo.villagename.font = "interface_normal_bold";
+		objLandInterface.textinfo.villagename.scale = 0.7 * fHtRatio;
+
+		objLandInterface.textinfo.villagename.pos.x = sti(showWindow.right) - RecalculateHIcon(124 * fHtRatio);
+		objLandInterface.textinfo.villagename.pos.y = RecalculateVIcon(48 * fHtRatio);
+
+		objLandInterface.textinfo.locationname.font = "interface_normal_bold";
+		objLandInterface.textinfo.locationname.scale = 0.7 * fHtRatio;
+
+		objLandInterface.textinfo.locationname.pos.x = sti(showWindow.right) - RecalculateHIcon(124 * fHtRatio);
+		objLandInterface.textinfo.locationname.pos.y = RecalculateVIcon(72 * fHtRatio);
+
+		if (!CheckAttribute(&locations[nLoc],"fastreload"))
+		{
+			objLandInterface.textinfo.villagename.text = "";
+			if(bGlobalTutor)
+			{
+				objLandInterface.textinfo.villagename.text = GetBaseLocationName("Ulysse");
+			}
+		}
+		else
+		{
+			objLandInterface.textinfo.villagename.text = XI_ConvertString("Colony:") + GetCityName(locations[nLoc].fastreload);
+		}
+		objLandInterface.textinfo.locationname.text = GetLocationLabelByRef(&locations[nLoc]);
 	}
 	objLandInterface.textinfo.datatext.font = "interface_normal_bold";
 	objLandInterface.textinfo.datatext.scale = 0.7 * fHtRatio;
@@ -1150,7 +1151,7 @@ bool bFastEnable() // belamour возможен ли переход
 	if(!IsEnableFastTravel()) return false;
 	if(chrDisableReloadToLocation) return false;
 	if (!CheckAttribute(loadedLocation, "fastreload")) return false;
-	if(CheckNationLicence(HOLLAND)) return true;
+	if (STH_IsEnableFastReload(loadedLocation.fastreload)) return true;
 	if(CheckAttribute(pchar, "questTemp.Guardoftruth") && CheckCharacterItem(pchar, "VerifyPaper") && loadedLocation.fastreload == "santiago" && GetNationRelation2MainCharacter(StealthNat) != RELATION_ENEMY) return true;
 	if(CheckAttribute(pchar, "questTemp.Guardoftruth.Trinidad") && CheckCharacterItem(pchar, "VerifyPaper") && loadedLocation.fastreload == "portspein" && GetNationRelation2MainCharacter(StealthNat) != RELATION_ENEMY) return true;
 	if(!bBettaTestMode && !CheckAttribute(pchar, "Cheats.LocTeleport"))
@@ -1321,7 +1322,7 @@ void BLI_SetPossibleCommands()
 		    		bTmpBool = true;
 				}
 			}
-			if(CheckNationLicence(HOLLAND)) bTmpBool = true;
+			if(STH_IsEnableFastReload(loadedLocation.fastreload)) bTmpBool = true;
 			if(CheckAttribute(pchar, "questTemp.Guardoftruth") && CheckCharacterItem(pchar, "VerifyPaper") && loadedLocation.fastreload == "santiago" && GetNationRelation2MainCharacter(i) != RELATION_ENEMY) bTmpBool = true;
 			if(CheckAttribute(pchar, "questTemp.Guardoftruth.Trinidad") && CheckCharacterItem(pchar, "VerifyPaper") && loadedLocation.fastreload == "portspein" && GetNationRelation2MainCharacter(i) != RELATION_ENEMY) bTmpBool = true;
 		}
@@ -1540,7 +1541,7 @@ void BLI_ChrEnterToLocation()
 			{
 				if(CheckAttribute(&locations[i],"id.label"))
 				{
-					Log_SetStringToLog( LanguageConvertString(g_LocLngFileID,locations[i].id.label) );
+					Log_SetStringToLog( GetLocationLabelByRef(locations[i]) );
 				}
 			}
 		}
@@ -1818,7 +1819,8 @@ void SetCharacterIconData(int chrindex, aref arData)
 	
 	arData.shootMax = LAi_GetCharacterChargeQuant(chref, sType);
 	arData.shootCur = LAi_GetCharacterChargeCur(chref, sType);
-	arData.rankrate = makefloat(makefloat(GetCharacterRankRateCur(chref))/makefloat(GetCharacterRankRate(chref)));
+	float rankPoints = makefloat(makefloat(GetCharacterRankRateCur(chref))/makefloat(GetCharacterRankRate(chref)));
+	arData.rankrate = Bring2Range(0.2, 0.8, 0.0, 1.0, rankPoints);
 	arData.currank = sti(chref.rank);
 	if(CheckAttribute(chref,"chr_ai.energyMax"))
 		arData.energyvalue = ""+sti(chref.chr_ai.energy)+"/"+sti(chref.chr_ai.energyMax)+"";
@@ -2265,9 +2267,9 @@ string GetItemVis(string type)
 				objLandInterface.equipment.PotionQty = GetCharacterFreeItem(pchar, Itm.id);
 				if(CheckAttribute(Itm,"potion.drunk") && GetCharacterEquipByGroup(pchar, HAT_ITEM_TYPE) == "hat8")
 				{
-					return GetConvertStr(Itm.name, "ItemsDescribe.txt")+ " + "+sti(Itm.potion.health) * 15 / 10);
+					return GetItemName(Itm)+ " + "+sti(Itm.potion.health) * 15 / 10);
 				}
-				return GetConvertStr(Itm.name, "ItemsDescribe.txt")+ " + "+sti(Itm.potion.health));
+				return GetItemName(Itm)+ " + "+sti(Itm.potion.health));
 			}	
 			else 
 			{

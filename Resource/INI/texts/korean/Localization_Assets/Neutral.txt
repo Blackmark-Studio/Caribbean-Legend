@@ -1,0 +1,36 @@
+Neutral_1 {도적}
+Neutral_2 {당신이 쪽지를 남겼습니다}
+Neutral_3 {Jack}
+Neutral_4 {베일스}
+Neutral_5 {바다 괴수}
+Neutral_6 { }
+Neutral_7 { }
+Neutral_8 {황금 갈매기}
+Neutral_9 {Tristan}
+Neutral_10 {Renier}
+Neutral_11 {수평선에 해적선이다! 우리 항로를 가로막으려 하고 있어.}
+Neutral_12 {문 너머에서 들려오는 목소리}
+Neutral_13 {Betsy}
+Neutral_14 {Price}
+Neutral_15 {아이템 획득: Betsy Price의 문서}
+Neutral_16 {전달됨: Betsy Price의 문서}
+Neutral_17 {레아}
+Neutral_18 {카르노}
+Neutral_19 {Pierre}
+Neutral_20 {수평선에 해적선이다! 우리 항로를 가로지르고 있어.}
+Neutral_21 {갑판}
+Neutral_22 {동굴 입구가 거미줄로 뒤덮여 있다. 오랫동안 아무도 드나들지 않은 듯하다.}
+Neutral_23 {집이 완전히 엉망이군. 제대로 찾아온 것 같아.}
+Neutral_24 {The Ghost}
+Neutral_25 {Dolores}
+Neutral_26 {Moño}
+Neutral_27 {Marisa}
+Neutral_28 {Caldera}
+Neutral_29 {Felipe}
+Neutral_30 {Alarcón}
+Neutral_31 {Sebastián}
+Neutral_32 {Córdoba}
+Neutral_33 {Javier}
+Neutral_34 {Castillo}
+Neutral_35 {Gonzalo}
+Neutral_36 {Peralta}

@@ -1,0 +1,20 @@
+#QUEST ClockTower
+Saat Kulesi
+#TEXT	1
+Görünüşe göre WIC, işe yaramaz ruhsatlar ve aletlerden fazlasıyla ticaret yapıyor. Eğer onlara kendimi faydalı kılarsam, Şirket de bana karşılık olarak faydalı olabilir. En bariz yol, Hollanda kolonlarındaki itibarımı Hayranlık seviyesine çıkarmak.
+#TEXT	2
+Özgür Eyaletler Cumhuriyeti için yeterince şey yaptım. Artık Gemi Sicil Dairesi'nin kapısındaki o hoş adam, Johan ile konuşmanın vakti geldi.
+#TEXT	3
+Bu tayfanın hâlâ ayakta olması gerçekten şaşırtıcı! Onlara verdiğim doblonlar yetmedi, bu yüzden birkaç korsan avlayıp beş gemi günlüğü toplamam gerekecek. Daha fazlasını da toplayabilirim; çünkü ofisin gelecekte bunlar için yüklüce ödeme yapmaya hazır olacağını açıkça belirttiler. Keşke bunu daha önce bilseydim...
+#TEXT	4
+Kayıtlar toplandı. Şimdi Johan ile konuşma vakti.
+#TEXT	5
+Ne uzun bir gündü. Willemstad, Direktör’ün gelişini uzun süre unutmayacak. Artık bir müşteri olsam da ve van Doorn bana karşı son derece nazik davransa da… önümde yeni bir iş var. Gece kuleye gizlice girip van Doorn’un orijinal sözleşmesini çalmam gerekiyor. Bana ödül olarak doblonlar ve ofisin hizmetlerine sınırsız erişim vaat ettiler.
+#TEXT	6
+Kontratı aldım! Van Doorn o kulede gerçekten fazlasıyla kaldı. Deputy Visser sevinçten havalara uçacak. Onu gündüzleri binanın merkezi kanadında bulabilirim.
+#TEXT	7
+Artık geriye sadece beklemek kaldı. Birkaç ay sonra Visser’i ziyaret edip darbesinin nasıl sonuçlandığını öğrenmeliyim.
+#TEXT	8
+Sanırım yeterince zaman geçti. Artık Curaçao’daki Visser’a göz atmanın vakti geldi.
+#TEXT	9
+İşte bu kadar. Vekil... ya da artık Müdür Maarten Visser istediğini aldı ve sözünü tuttu: Artık ofisin hizmetlerinden saçma randevular olmadan istediğim zaman yararlanabilirim. Van Doorn elbette bu şüpheli işe karıştığımı öğrendi, ama onun efsanevi firkateyninin gücünden korkacak bir şeyim yok. WIC amiral gemisi, ancak Hollandalılar beni çıkarlarına ciddi bir tehdit olarak görürse ruhumun peşine düşer. Söylentilere göre bu gemi Karayip Denizi'nin gerçek bir mücevheriymiş... insanın aklını çeliyor, kahretsin.

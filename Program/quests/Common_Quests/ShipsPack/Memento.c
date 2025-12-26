@@ -864,6 +864,7 @@ void Memento_OnUpdeck()
 		ChangeCharacterAddressGroup(sld, "Deck_Near_Ship", "quest", "quest2");
 		LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "tutorial_4", "", -1.0);
+        sld.chr_ai.tmpl.ignorecol = "";
 	}
 	else
 	{
@@ -889,6 +890,7 @@ void Memento_OnUpdeck()
 		ChangeCharacterAddressGroup(sld, "Deck_Near_Ship", "quest", "quest2");
 		LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "tutorial_4", "", -1.0);
+        sld.chr_ai.tmpl.ignorecol = "";
 	}
 	DoQuestFunctionDelay("Memento_BrushProps", 2.0);
 }

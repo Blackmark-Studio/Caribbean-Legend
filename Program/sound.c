@@ -136,40 +136,19 @@ void SetWeatherScheme(string scheme)
 {
 	if (Whr_IsStorm())
 	{
-		if (Whr_IsNight())
-		{
-			SetSoundScheme(scheme+"_night_storm");
-		}
-		else
-		{
-			SetSoundScheme(scheme+"_day_storm");
-		}
+		if (Whr_IsNight()) SetSoundScheme(scheme+"_night_storm");
+		else SetSoundScheme(scheme+"_day_storm");
 	}
-	else 
-	{ 
-		if (Whr_IsRain())
-		{
-			if (Whr_IsNight())
-			{
-					SetSoundScheme(scheme+"_night_rain");
-			}
-			else
-			{
-					SetSoundScheme(scheme+"_day_rain");
-			}					
-		}
-		else
-		{
-			if (Whr_IsNight())
-			{
-					SetSoundScheme(scheme+"_night");
-			}
-			else
-			{
-					SetSoundScheme(scheme+"_day");
-			}
-		}
-	}
+	else if (Whr_IsRain())
+    {
+        if (Whr_IsNight()) SetSoundScheme(scheme+"_night_rain");
+        else SetSoundScheme(scheme+"_day_rain");					
+    }
+    else
+    {
+        if (Whr_IsNight()) SetSoundScheme(scheme+"_night");
+        else SetSoundScheme(scheme+"_day");
+    }
 }
 
 /* void SetTimeScheme(string scheme)
@@ -184,16 +163,22 @@ void SetWeatherScheme(string scheme)
 	}
 }
 */
-void SetSchemeForLocation (ref loc)
+void SetSchemeForLocation(ref loc)
 {
 	if(CheckAttribute(pchar, "questTemp.TrackNonStop")) return;
-	if(CheckAttribute(pchar,"systeminfo.stopsound")) return;
+	if(CheckAttribute(pchar, "systeminfo.stopsound")) return;
+
     int iColony = -1; //boal music
+    if (loc.type == "fort" && CheckAttribute(loc, "parent_colony"))
+        iColony = FindColony(loc.parent_colony);
+    else if (CheckAttribute(loc,"fastreload"))
+        iColony = FindColony(loc.fastreload);
+
     // belamour legendary edition 
 	string ClassicSoundScene = "";
 	if(CheckAttribute(&InterfaceStates,"ClassicSoundScene") && sti(InterfaceStates.ClassicSoundScene) > 0) ClassicSoundScene = "classic_";
 	
-    if(CheckAttribute(loc,"type"))
+    if(CheckAttribute(loc, "type"))
 	{
 		ResetSoundScheme();
 		SetMusicAlarm(""); // музыка не играла, если переходили меж локациями одной схемы - багфиx boal 28.06.06
@@ -205,26 +190,14 @@ void SetSchemeForLocation (ref loc)
 				{
 					SetMusicAlarm(ClassicSoundScene+"music_military");
 				}
-				if (CheckAttribute(loc,"fastreload"))
+				else if (iColony != -1)
 				{
-					iColony = FindColony(loc.fastreload);
+                    if (Whr_IsDay()) 
+                        SetMusicAlarm(ClassicSoundScene+NationShortName(sti(Colonies[iColony].nation))+"_music_day");
+                    else
+                        SetMusicAlarm(ClassicSoundScene+"music_night");
 				}
-				if (iColony != -1)
-				{
-					if (CheckAttribute(loc,"QuestCapture")) SetMusicAlarm(ClassicSoundScene+"music_military");
-					else 
-					{
-						if (Whr_IsDay()) 
-						{
-							SetMusicAlarm(ClassicSoundScene+NationShortName(sti(Colonies[iColony].nation))+"_music_day");
-						}
-						else SetMusicAlarm(ClassicSoundScene+"music_night");
-					}
-				}
-				else
-				{
-					SetMusicAlarm(ClassicSoundScene+"music_gorod");
-				}
+				else SetMusicAlarm(ClassicSoundScene+"music_gorod");
 			break;
 			
 			case "land": // дуэльное поле, лэндфорт и так далее
@@ -329,34 +302,21 @@ void SetSchemeForLocation (ref loc)
 			
 			case "house":
 				SetSoundScheme("house");
-				if (CheckAttribute(loc,"brothel") && sti(loc.brothel) == true)
+                if (loc.id == "Villemstad_ClockCellar")
+                    SetMusicAlarm("silence");
+				else if (CheckAttribute(loc,"brothel") && sti(loc.brothel) == true)
 				{
-					if (CheckAttribute(loc,"fastreload"))
-					{
-						iColony = FindColony(loc.fastreload);
-					}
 					if(ClassicSoundScene != "") 
-					{
 						SetMusicAlarm(ClassicSoundScene+"music_brothel");
-					}
-					else
-					{
-						if (iColony != -1) 
-						{
-							SetMusicAlarm(NationShortName(sti(Colonies[iColony].nation)) + "_music_brothel") ;
-						}
-						else
-						{
-							SetMusicAlarm("pir_music_brothel");
-						}
-					}
+					else if (iColony != -1) 
+                        SetMusicAlarm(NationShortName(sti(Colonies[iColony].nation)) + "_music_brothel") ;
+                    else
+                        SetMusicAlarm("pir_music_brothel");
 				}
 				else
 				{
 					if (CheckAttribute(loc,"id.label") && loc.id.label == "portoffice")
-					{
 						SetMusicAlarm(ClassicSoundScene+"music_portoffice");
-					}
 					else
 					{
 						if(HasSubStr(loc.id, "Common")) SetMusicAlarm(ClassicSoundScene+"music_gorod");
@@ -367,57 +327,40 @@ void SetSchemeForLocation (ref loc)
 			
 			case "tavern":
 				SetSoundScheme("tavern");
-				if (CheckAttribute(loc,"fastreload"))
-				{
-					iColony = FindColony(loc.fastreload);
-				}
 				if (iColony != -1)
-				{
 			    	SetMusicAlarm(ClassicSoundScene+NationShortName(sti(Colonies[iColony].nation)) + "_music_tavern");
-				}
 				else
-				{
 					SetMusicAlarm(ClassicSoundScene+"music_tavern");
-				}
 			break;
 			
 			case "shop":
 				SetSoundScheme("shop");
 				if (CheckAttribute(loc,"id.label") && loc.id.label == "Usurer House")
-				{
 					SetMusicAlarm(ClassicSoundScene+"music_bank");
-				}
 				else
-				{
 					SetMusicAlarm(ClassicSoundScene+"music_shop");
-				}
 			break;
 			
 			case "residence":
 				SetSoundScheme("residence");
-				if (CheckAttribute(loc,"fastreload"))   // boal
+				if (loc.id == "SantaCatalina_houseS1_residence")
+                    SetMusicAlarm(ClassicSoundScene+"pir_music_gubernator");
+                else if (loc.id == "Villemstad_ClockTower")
+                    SetMusicAlarm("silence");
+				else if (iColony != -1)
 				{
-					iColony = FindColony(loc.fastreload);
-				}
-				if (iColony != -1)
-				{
-					if(ClassicSoundScene != "")
-					{
+					if (ClassicSoundScene != "")
 						SetMusicAlarm(ClassicSoundScene+NationShortName(sti(Colonies[iColony].nation)) + "_music_gubernator");
-					}
+					else if (NationShortName(sti(Colonies[iColony].nation)) == "pir")
+                        SetMusicAlarm(ClassicSoundScene+"pir_music_gubernator");
 					else
-					{
-						if(NationShortName(sti(Colonies[iColony].nation)) == "pir")
-							SetMusicAlarm(ClassicSoundScene+"pir_music_gubernator");
-						else SetMusicAlarm(ClassicSoundScene+"music_gubernator");
-					}
+                        SetMusicAlarm(ClassicSoundScene+"music_gubernator");
 				}
 				else
 				{
 					if (Whr_IsDay()) SetMusic(ClassicSoundScene+"music_sea_day");
 					else SetMusic(ClassicSoundScene+"music_sea_night");
 				}
-				if (loadedLocation.id == "SantaCatalina_houseS1_residence") SetMusicAlarm(ClassicSoundScene+"pir_music_gubernator");
 			break;
 			
 			case "church":
@@ -437,19 +380,12 @@ void SetSchemeForLocation (ref loc)
 			
 			case "fort": // форт для мирных прогулок
 				SetWeatherScheme("seashore");
-				if (CheckAttribute(loc, "parent_colony"))
-				{
-					iColony = FindColony(loc.parent_colony);
-				}
 				if (iColony != -1)
 				{
 					if (CheckAttribute(loc,"QuestCapture")) SetMusicAlarm("music_military");
 					else SetMusicAlarm(ClassicSoundScene+"music_fort");
 				}
-				else
-				{
-					SetMusicAlarm(ClassicSoundScene+"music_gorod");
-				}
+				else SetMusicAlarm(ClassicSoundScene+"music_gorod");
 			break;
 			
 			case "deck": // мирная палуба
@@ -764,6 +700,7 @@ void SetSchemeForSea()
 		{
 			AddSoundScheme("sea_day_storm");
 			SetMusic(ClassicSoundScene+"music_storm");
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_ChooseCaribbean")) SetMusic("music_q_battle");
 		}
 		else 
 		{ 
@@ -1156,7 +1093,7 @@ bool bChangeScheme(int i, int j)
             }
         }
 	}
-	
+
 	return false;
 }
 

@@ -72,7 +72,7 @@ Saga_71 {Mikhael}
 Saga_72 {Rozencraft}
 Saga_73 {Jim}
 Saga_74 {Benson}
-Saga_75 {秃头Maggy}
+Saga_75 {Bald Maggy}
 Saga_76 {Raymond Baker 上船了}
 Saga_77 {Raymond}
 Saga_78 {Baсker}

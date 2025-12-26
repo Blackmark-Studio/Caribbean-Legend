@@ -1,0 +1,170 @@
+Node0_title {Tajne przeniknięcie}
+Node0_a_a {Wkradasz się do miasta, przybijając bezszelestnie w ciemności. $rand(Nocą port pachnie zgnilizną, solą i drewnem. Gdzieś skrzypią liny, trzepocze żagiel, a każdy taki dźwięk wydaje się zbyt głośny. Idziesz wzdłuż nabrzeża, omijając plamy światła latarni.|Woda przy nocnym pomoście jest czarna jak smoła. Ledwie odbija tlące się światełka latarni, a głębia wydaje się bez dna. Mokre deski głucho skrzypią pod stopami i łapiesz się na tym, że kroczysz w rytm fali, by choć trochę ukryć ten hałas.|Nocny port nie śpi — tylko udaje. Dźwięcząca cisza, która cię wita, w rzeczywistości tętni życiem. W mroku mamroczą marynarze, brzęczy szkło, krótko śmieje się kobieta. W magazynie z głuchym łomotem spada czyjś ładunek, słychać przekleństwa i cykanie cykad. Z każdym krokiem idziesz pewniej.)}
+Node0_a_b
+{
+Przenikasz do miasta, bezszelestnie przemykając przez uchylone bramy.
+$rand(
+Zatrzymujesz się w cieniu muru, pozwalając oczom przywyknąć. Za bramą miasto brzmi inaczej: jasno, głucho i donośnie, a echa rozcinają nocną ciszę. Gdzieś kapie woda, słychać kroki i szepty — miasto wydaje się obce, lecz żywe.|
+Nocna ulica za bramą wygląda na pustą, ale to złudzenie. Powietrze wypełniają szmery, odległe głosy, ruch i zapachy wczorajszego jedzenia. Zastygasz, stapiasz się ze ścianami i nasłuchujesz.|
+Robisz kilka kroków od bramy i zatrzymujesz się, znikając w ciemności. Blask księżyca spada na miasto, tworząc osobliwe cienie. Gdzieś trzaska okiennica, skrzypi szyld, rozlega się śmiech, który natychmiast tonie w nocy. Jesteś tu obcy.
+)
+}
+Node0_b_a {$rand(Jedna z alejek biegnie między domami prostym, ciemnym pasem. Prawie nie dociera tam światło i nie słychać żadnych podejrzanych dźwięków — ani głosów, ani kroków, tylko cisza i mrok.| Po lewej ciągnie się wąska uliczka, ciasno ściśnięta między murami. Okna na poziomie ziemi są zamknięte okiennicami, drzwi zaryglowane ciężkimi kłódkami, a latarnia, która powinna oświetlać przejście, niemal dogasa.| Jedno z przejść między domami wygląda na puste i opuszczone. Wejścia strzegą beczki obrośnięte pajęczyną i zgniłe worki. Zdaje ci się nawet, że słyszysz szczury.)}
+Node0_b_b {$rand(Jedyna alejka prowadząca do celu jest oświetlona nierówno: jasne światło kołyszącej się latarni rozbija się o ściany i zakręty, zostawiając ostre cienie. W błocie widać świeże ślady butów, a z głębi dochodzą strzępy głosów. Przestrzeń wydaje się żywa i nieprzewidywalna.| Najbliższe przejście między domami jest długie i kręte, z całą plątaniną odnóg i zakrętów. W środku migocze wiele przytłumionych świateł — światło sączy się z niedomkniętych drzwi i okiennic.| Zaułek w drodze do tawerny kluczy i zwęża się, a i tak niewielka przestrzeń jest zawalona skrzyniami i spróchniałymi deskami. Po ścianach pełzają nierówne cienie, jakby w głębi zaułka poruszało się źródło światła.)}
+Node0_c_a {$rand(Szeroka ulica przed tobą omija opustoszały plac i prowadzi w stronę tawerny. Kramy są pozamykane, drzwi na zasuwach, a latarnie jasno oświetlają każdy zakątek.| Szeroka ulica ciągnie się prosto i z daleka świetnie widać każdego przechodnia. W nocy jest ich niewielu — tylko kilku pijaczków chwieje się w stronę tawerny, gdzie ulica się kończy.| Szeroka ulica przecina całe miasto i otaczają ją bogate domy oraz sklepy. Jasne światło i rzadkie patrole straży czynią ją bezpieczną na wieczorny spacer.)}
+Node0_c_b
+{
+$rand(
+Szeroka ulica ciągnie się przez całe miasto i tętni życiem mimo późnej pory. Słyszysz gwar i hałas, jakby ktoś kłócił się na podniesionych głosach.| 
+Szeroka ulica omija plac, na którym właśnie trwa zmiana warty — sierżant chodzi przed szeregiem gwardzistów i rozstawia ich na posterunkach.| 
+Na głównej ulicy jest jak na tę porę niezwykle tłoczno: do portu przypłynął jakiś ważny statek handlowy, a po ulicy kręcą się strażnicy i tragarze.
+)
+}
+Node0_d {Musisz wybrać, którą drogą dotrzeć do bezpiecznego miejsca. Wąskimi zaułkami, kryjąc się w cieniu, czy szeroką ulicą, starając się nie zwracać na siebie uwagi?}
+Node0_a_action {Iść zaułkami}
+Node0_b_action {Przejść głównymi ulicami}
+Node0_c_action {Zawrócić, póki jeszcze nie jest za późno}
+Node1_a {Wchodzisz w zaułek, licząc, że dotrzesz do tawerny bez incydentów}
+Node1_b_a
+{
+Nagle, głębiej w zaułku, dostrzegasz mały posterunek przy ścianie. W ciasnej przestrzeni między domami stoi trzech strażników: jeden trzyma latarnię, drugi nasłuchuje ciszy, trzeci wpatruje się w mrok, jakby czekał na sygnał. Przejście nie jest zablokowane przypadkiem.
+Jeden z nich gwałtownie podnosi głowę, długo patrzy w twoją stronę i głośno woła: „Kto idzie?”
+}
+Node1_b_b
+{
+Nagle w głębi zaułka dostrzegasz ruch i stłumione głosy. Dwóch ludzi przyciska trzeciego do ściany: jeden trzyma go za kołnierz, drugi sprawnie przeszukuje kieszenie. Ofiara szarpie się, ale bez krzyku, jakby bała się ściągnąć jeszcze większe kłopoty.
+Jeden z rabusiów nagle się odwraca, jakby coś wyczuł. Jego wzrok sunie po mroku i zatrzymuje się w twoją stronę.
+}
+Node1_b_c
+{
+Nagle w głębi zaułka rozlega się głuchy łomot, jakby worek mięsa uderzył o kamień. W świetle księżyca widzisz, jak człowiek osuwa się przy ścianie, powoli zsuwając się w dół. Obok ktoś klęczy i pospiesznie wyciera ostrze o rękaw. Jesteś tak pochłonięty sceną, że nie zauważasz, jak but trąca zdradliwy kamyk.
+W tej chwili zabójca zastyga i gwałtownie podnosi głowę. Jego spojrzenie przeszukuje mrok i zatrzymuje się na źródle dźwięku. Jeszcze cię nie zauważył, ale wyraźnie wyczuł obcą obecność.
+}
+Node1_c {Sytuacja szybko się zaostrza — jeszcze cię nie zauważono, ale w każdej chwili może się to zmienić. Trzeba podjąć decyzję.}
+Node1_b_a_reaction {Zastygąć i wstrzymać oddech}
+Node1_b_a_reaction_log_0 {Przyciskasz się do zimnej ściany i przestajesz oddychać. Cienie łamią twoją sylwetkę, a wzrok strażnika sunie po zaułku, nie znajdując punktu zaczepienia. Mija bolesna sekunda, potem kolejna, aż napięcie powoli opada. W końcu strażnik rezygnuje, zrzucając winę na szczury i wiatr, i wracają do swoich zajęć.}
+Node1_b_a_reaction_log_1 {Zastygasz przy ścianie, lecz w najgorszym momencie stopa zdradliwie ślizga się po wilgotnym kamieniu. Dźwięk jest ledwie słyszalny, ale wystarcza. Strażnik zatrzymuje się, podnosi latarnię i zaczyna powoli omiatać światłem ściany i ziemię.}
+Node1_b_a_reaction_factor {Samokontrola}
+Node1_b_b_reaction {Znaleźć obejście}
+Node1_b_b_reaction_log_0 {Dostrzegasz wąskie boczne przejście między domami, niemal całkowicie ukryte w cieniu. Niewygodne, ale możliwe do przejścia. Cicho wsuwasz się do środka, trzymając się ściany, i znikasz z pola widzenia. Rabusie zostają z tyłu, nie zdając sobie sprawy, że ktoś był w pobliżu.}
+Node1_b_b_reaction_log_1 {Znajdujesz podobne przejście, lecz okazuje się zbyt wąskie i zagracone. Gdy próbujesz się przecisnąć, coś porusza się pod stopą z cichym, lecz zdradliwym szelestem. Rabuś znów się odwraca i tym razem patrzy dokładnie tam, gdzie próbujesz się ukryć. Obejście istnieje, ale skorzystanie z niego bez ryzyka nie jest już możliwe.}
+Node1_b_b_reaction_factor {Tajne ścieżki}
+Node1_b_c_reaction {Rzucić kamień i odwrócić uwagę zabójcy}
+Node1_b_c_reaction_log_0 {Po omacku znajdujesz w ciemności mały kamień i ostrożnie rzucasz go w bok, z dala od siebie. Kamień uderza o ścianę suchym trzaskiem. Zabójca gwałtownie się odwraca, przesuwając się w stronę dźwięku, a zaułek na moment znika z jego uwagi.}
+Node1_b_c_reaction_log_1 {Rzucasz kamień, ale ten uderza w róg budynku i odbija się w zupełnie inną stronę. Dźwięk okazuje się zbyt bliski. Zabójca jeszcze uważniej wpatruje się w ciemność. Wygląda, jakby nawet wstrzymał oddech, próbując cię usłyszeć.}
+Node1_b_c_reaction_factor {Odwrócenie uwagi}
+Node1_a_action {Przemknąć obok}
+Node1_b_action {Potrafię poruszać się całkowicie bezszelestnie}
+Node1_success
+{
+Udaje ci się przemknąć niezauważonym, klucząc zaułkami, aż w końcu docierasz do bezpiecznego miejsca — miejskiej tawerny.
+$rand(
+Niespokojne nocne miasto ustępuje miejsca ciepłemu światłu i gwarowi głosów. Tutaj jesteś bezpieczny.|
+Zaułki zostają za tobą wraz z czujnymi spojrzeniami i nocnymi szmerami. Przy drzwiach tawerny miasto znów staje się głośne i obojętne — wychodzącego stąd nie uzna się już za wroga.
+)
+}
+Node1_success_action {Świetnie!}
+Node2_a {Wychodzisz na szeroką ulicę, licząc na to, że dotrzesz do tawerny bez zwracania na siebie zbędnej uwagi.}
+Node2_b_a {$rand(Początkowo wszystko idzie dobrze|Na początku wszystko wydaje się spokojne), lecz w połowie drogi napotykasz miejski patrol. Dwóch strażników idzie niespiesznie, rozmawiając półgłosem, trzeci trzyma się nieco z tyłu i uważnie obserwuje ulicę. Nie blokują drogi ani nie dają znaków, lecz spojrzenie jednego z nich zatrzymuje się na tobie dłużej niż zwykle, jakby oceniał, czy pasujesz do tej nocnej scenerii.}
+Node2_b_b
+{
+Prawie cały dystans pokonujesz bez problemów, lecz na samym końcu natrafiasz na nieoczekiwaną przeszkodę.
+Pośrodku ulicy stoi grupa podpitych $rand(marynarzy|robotników). Głośno się śmieją, śpiewają, ktoś gra w karty.
+Jeden z nich zauważa cię i mruży oczy, jakby rozstrzygał, czy jesteś swój czy obcy, a pozostali stopniowo się zbliżają, otaczając cię. Grupa nie zamierza się rozejść, a napięcie narasta.
+}
+Node2_b_c
+{
+Ledwie jedną trzecią drogi masz za sobą, gdy nagle stajesz twarzą w twarz z niewielką, barwną kompanią: dobrze ubranym szlachcicem, dwiema kurtyzanami z miejscowego burdelu oraz ich służącym niosącym latarnię.
+Idą powoli i swobodnie, śmiejąc się i rozmawiając, a cała ulica zdaje się dostosowywać do ich obecności.
+Gdy się zbliżasz, oceniające spojrzenie szlachcica sunie po tobie. Kurtyzany przestają się śmiać i uważnie cię obserwują, a służący zamiera.
+Coś w tobie zdradza obcego.
+}
+Node2_c {Musisz dotrzeć do tawerny, nie zwracając na siebie zbędnej uwagi.}
+Node2_b_a_reaction {Zapytać o drogę do tawerny}
+Node2_b_a_reaction_log_0
+{
+Podchodzisz na tyle blisko, by być widocznym w świetle latarni, i spokojnym tonem pytasz, jak dotrzeć do tawerny.
+Jeden ze strażników mruczy coś niezadowolony, ale mimo to wskazuje kierunek i podaje pobliski punkt orientacyjny.
+}
+Node2_b_a_reaction_log_1
+{
+Zadajesz pytanie, a rozmowa między strażnikami urywa się w pół słowa. W powietrzu zawisa napięcie, patrol mierzy cię spojrzeniem w grobowej ciszy.
+Po kilku męczących sekundach jeden ze strażników w końcu odpowiada i wskazuje drogę. Odchodzisz, a oni długo wodzą za tobą wzrokiem.
+}
+Node2_b_a_reaction_factor {Zagubiony}
+Node2_b_b_reaction {Zaśpiewać szantę}
+Node2_b_b_reaction_log_0 {Znajdujesz moment, by włączyć się do pieśni, i półgłosem podejmujesz znajomy refren. Napięcie szybko opada: ktoś klepie cię po ramieniu, ktoś inny wciska ci do ręki kufel. Po kilku zwrotkach ruszasz dalej wśród aprobujących okrzyków.}
+Node2_b_b_reaction_log_1 {Próbujesz znaleźć odpowiedni moment, by włączyć się do pieśni, ale mylisz słowa i fałszujesz. Śmiech zamienia się w gwizdy, jeden z pijaków nawet próbuje wszcząć bójkę, lecz zostaje w porę powstrzymany. Wycofujesz się w pośpiechu, a wywołany hałas z pewnością przyciągnie niepożądaną uwagę.}
+Node2_b_b_reaction_factor {Szanta}
+Node2_b_c_reaction {Poczęstować szlachcica winem}
+Node2_b_c_reaction_log_0
+{
+Podchwytujesz ogólny nastrój towarzystwa: uśmiech, krótka uwaga, gest — jakbyś był już częścią tego nocnego spaceru i po prostu nie został od razu rozpoznany. Szlachcic śmieje się i kiwa głową, jakby właśnie przypomniał sobie, gdzie mógł cię widzieć. Kurtyzany podchwytują ton, a rozmowa znów płynie lekko i beztrosko.
+Proponujesz wypić wino i pójść odpocząć do tawerny, lecz towarzystwo wyraźnie ma inne plany. Sługa odwraca latarnię, a oni odchodzą bez zwłoki.
+}
+Node2_b_c_reaction_log_1
+{
+Próbujesz zachować wesoły ton, lecz spotykasz się z bardzo ostrą reakcją. Szlachcic rzuca głośną uszczypliwość na temat twojego stroju, z wyraźnym zdziwieniem, jakby nie mógł uwierzyć, że takie rzeczy nosi się w porządnych miejscach. Kurtyzany wybuchają śmiechem i cofają się bliżej niego.
+Proponujesz wino, lecz szlachcic gwałtownie odmawia. Głośno oznajmia, że nie zamierza dać się upić i obrabować przez jakichś włóczęgów. Jego głos niesie się po ulicy, sługa podnosi latarnię wyżej, jasno oświetlając twoją twarz, co przyciąga zdecydowanie zbyt wiele niechcianej uwagi.
+}
+Node2_b_c_reaction_factor {Towarzystwo salonowe}
+Node2_a_action {Spróbować dotrzeć do tawerny}
+Node2_b_action {Świetnie potrafię uchodzić za swojego}
+Node2_c_action {Mam licencję handlową na wypadek kłopotów}
+Node2_success
+{
+Docierasz do tawerny, idąc oświetlonymi ulicami i nie zatrzymując się nigdzie dłużej niż trzeba. Drzwi zatrzaskują się za tobą, odcinając nocne miasto.
+$rand(
+Zgiełk ulicy rozpływa się w hałasie sali, zapachach jedzenia i trunków. Tutaj nikt nie pamięta, kim jesteś ani skąd przyszedłeś — jesteś po prostu kolejnym gościem.|
+Szerokie ulice zostają na zewnątrz wraz z obcymi spojrzeniami i zbędną uwagą. W tawernie miasto znów staje się obojętne, a ty stajesz się częścią tła.
+)
+}
+Node2_success_action {Świetnie!}
+Node3_a
+{
+Gdy jesteś już prawie przy tawernie, drogę zagradza ci straż. Wychodzą z różnych stron i ustawiają się w półokręgu, jakby zaciskali wokół ciebie niewidzialne imadło. Coś cię zdradziło, a towarzyszące każdemu krokowi poczucie bycia śledzonym wreszcie się urzeczywistnia.
+
+Idą spokojnie i pewnie, zachowując równy dystans, jakby nie chcieli wywierać zbyt dużej presji. Niektórzy trzymają broń w rękach, ale jeszcze jej nie unoszą.
+
+Kilka kroków przed tobą strażnicy zatrzymują się, a naprzód wychodzi sierżant. Podnosi dłoń i oschle proponuje udać się do komendantury w celu ustalenia tożsamości.
+}
+Node3_b_a {Głos sierżanta brzmi sennie i niepewnie; co chwilę zerka on na stojącego za nim siwowłosego strażnika — wyraźnie mentora. Najpewniej sierżant po prostu chce się wykazać.}
+Node3_b_b {Strażnicy za plecami sierżanta ziewają i pocierają oczy — wyraźnie zostali niedawno poderwani z koszar, w środku nocy. Sen ustępuje miejsca irytacji.}
+Node3_b_c {Dwaj ludzie w szeregu wymieniają spojrzenia, gdy sierżant mówi „komendantura”. Jeden ledwo zauważalnie kręci głową, drugi zaciska szczęki. Wyraźnie zależy im, by wszystko skończyło się cicho i szybko, bez długich wyjaśnień i scen. Być może twoje zatrzymanie jest nielegalne.}
+Node3_c_a {Przy wejściu do tawerny nagle dostrzegasz znajome twarze — kilku bywalców wyszło zaczerpnąć powietrza i bez trudu rozpoznajesz w nich znanych ci przemytników. W przeszłości zawarłeś z nimi kilka interesów i teraz może to zadziałać na twoją korzyść.}
+Node3_c_b {Nagle okno tawerny roztrzaskuje się, a z wnętrza wylatuje krzesło. Słyszysz krzyki i przekleństwa. Strażnicy odruchowo odwracają się w tamtą stronę, po czym znów patrzą na ciebie. W powietrzu wisi nieme pytanie.}
+Node3_c_c {Nagle z tawerny wychodzi dwóch dobrze ubranych mężczyzn. Rozmawiają podniesionymi głosami i wyraźnie zamierzają rozwiązać jakąś sprawę z użyciem krwi. Po kilku kąśliwych uwagach jeden dobywa rapiera, drugi pistoletu.}
+Node3_d {Musisz działać, póki wciąż istnieje okno możliwości.}
+Node3_b_a_reaction {Wzmocnić autorytet sierżanta}
+Node3_b_a_reaction_log
+{
+Zwracasz się do sierżanta z wyraźnym szacunkiem i dziękujesz mu za czujność. Mówisz, że jesteś gotów wykonać wszelkie polecenia, ale prosisz najpierw o pozwolenie na przenocowanie.
+Wyraźnie łagodnieje.
+}
+Node3_b_a_reaction_factor {Szacunek dla prawa}
+Node3_b_b_reaction {Wykorzystać zmęczenie}
+Node3_b_b_reaction_log {Szybko wyczuwasz nastroje straży i dostosowujesz się do nich. Spokojnie mówisz, że to nocne nieporozumienie można załatwić tu i teraz, bez tracenia czasu na komendanturę i papierkową robotę. Na twarzach strażników pojawia się cień ulgi.}
+Node3_b_b_reaction_factor {Wiatrowskaz}
+Node3_b_c_reaction {Powołać się na prawo}
+Node3_b_c_reaction_log {Spokojnym tonem wskazujesz, że zatrzymanie wymaga podstaw, i proponujesz działać ściśle według przepisów, nie wykraczając poza ramy prawa.}
+Node3_b_c_reaction_factor {Drobiazgowość}
+Node3_c_a_reaction {Zawołać przemytników}
+Node3_c_a_reaction_log_0 {Wołasz przemytników. Oglądają cię i po kilku sekundach rozpromieniają się uśmiechami. Ci ludzie wyraźnie wiedzą, jak może się skończyć kontakt ze strażą, i witają cię serdecznie. Strażnicy nieco łagodnieją.}
+Node3_c_a_reaction_log_1 {Wołasz przemytników, ale nie reagują. Jeden z nich, rzuciwszy na ciebie przelotne spojrzenie, spluwa na ziemię i wchodzi do tawerny. Drugi podąża za nim. Albo cię nie rozpoznali, albo nie chcieli mieć z tobą nic wspólnego. W każdym razie w oczach straży wyglądasz teraz jeszcze bardziej podejrzanie.}
+Node3_c_a_reaction_factor {Ciemne interesy}
+Node3_c_b_reaction {Skierować uwagę na tawernę}
+Node3_c_b_reaction_log {Mówisz, że spokojny kupiec taki jak ty nie stanowi zagrożenia dla porządku publicznego, natomiast zamieszanie w tawernie samo nie ucichnie. Im dłużej to potrwa, tym gorsze będą konsekwencje. Proponujesz strażnikom, by najpierw zajęli się bójką, a komendanturę odłożyli do rana. Sierżant głęboko się nad tym zastanawia.}
+Node3_c_b_reaction_factor {Zamieszanie}
+Node3_c_c_reaction {Przywołać do porządku}
+Node3_c_c_reaction_log {Powołujesz się na prawo zakazujące pojedynków w granicach miasta i wzywasz pojedynkujących się do zachowania porządku. W trakcie swojej reprymendy niejako mimochodem zyskujesz poparcie strażników, którzy teraz odnoszą się do ciebie znacznie cieplej.}
+Node3_c_c_reaction_factor {Wtrącić się do pojedynku}
+Node3_a_action {Spróbować załagodzić sytuację}
+Node3_b_action {Powiedzieć sierżantowi, że doszło do potwornej pomyłki}
+Node3_success
+{
+Sierżant waha się jeszcze przez chwilę, po czym gwałtownie kiwa głową i wydaje krótki rozkaz. Strażnicy odwracają się i rozchodzą na posterunki. Półokrąg się rozpada, kroki oddalają się, głosy giną w nocnym zgiełku.
+Nie zwlekasz. Kilka szybkich kroków — i drzwi tawerny zatrzaskują się za tobą. W środku jest ciepło, ciasno i głośno, a wszystko, co zostało na zewnątrz, nagle przestaje mieć znaczenie.
+}
+Node3_success_action {Świetnie!}
+Node3_fail {Cierpliwość straży się kończy. Sierżant gwałtownie urywa rozmowę i daje znak ręką. Półokrąg się zaciska, ktoś popycha cię ramieniem, ktoś chwyta za rękaw. Rozumiesz, że wpadłeś i nie ma już odwrotu. Będziesz musiał wydostać się z miasta, przelewając krew.}
+Node3_fail_action {Do walki!}

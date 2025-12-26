@@ -2157,7 +2157,8 @@ bool IslaMona_QuestComplete(string sQuestName, string qname)
 		WaitDate("", 0, 0, 0, 2, 30);
 		SetLaunchFrameFormParam("", "", 0, 12);
 		SetLaunchFrameFormPic("loading\inside\censored1.tga");
-		PlayStereoSound("sex\sex10.wav");
+		if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+		else PlayStereoSound("sex\sex10.wav");
 		LaunchFrameForm();
 		if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
 		{

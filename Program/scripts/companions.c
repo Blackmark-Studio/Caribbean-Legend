@@ -434,20 +434,18 @@ bool CheckEnemyCompanionDistance2GoAway(bool _loadForm)
 				if (LAi_IsDead(rFortCharacter)) { continue; }
 				iFortMode = sti(rFortCharacter.Fort.Mode);
 
-				switch (iFortMode)
+				if (iFortMode == FORT_NORMAL || iFortMode == FORT_HOLD_FIRE)
 				{
-					case FORT_NORMAL:
-						if (iRelation == RELATION_ENEMY)
+					if (iRelation == RELATION_ENEMY)
+					{
+						fDistance = Ship_GetDistance2D(rCharacter, rFortCharacter);
+						if (fDistance < MIN_ENEMY_DISTANCE_TO_DISABLE_MAP_ENTER_FORT)
 						{
-		                    fDistance = Ship_GetDistance2D(rCharacter, rFortCharacter);
-							if (fDistance < MIN_ENEMY_DISTANCE_TO_DISABLE_MAP_ENTER_FORT)
-							{
-							    if (!_loadForm) return false; // все, кто-то есть
-								// пишем кто, в форму
-           						pchar.CheckEnemyCompanionDistance.(attr)) = cn;
-							}
+							if (!_loadForm) return false; // все, кто-то есть
+							// пишем кто, в форму
+							pchar.CheckEnemyCompanionDistance.(attr) = cn;
 						}
-					break;
+					}
 				}
 			}
 			// check ships for abordage

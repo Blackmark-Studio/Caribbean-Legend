@@ -1528,6 +1528,7 @@ void VsD_Vzriv_5(string qName)
 	PlaySound("Sea Battles\vzriv_pogreb_002.wav");
 	PlaySound("Sea Battles\vzriv_pogreb_002.wav");
 	DoQuestFunctionDelay("VsD_Vzriv_6", 0.3);
+	SetCameraShake(1.0, 12.0, 0.1, 0.1, 0.05, true, false, -1);
 }
 void VsD_Vzriv_6(string qName)
 {
@@ -1578,6 +1579,7 @@ void VsD_Vzriv_7(string qName)
 	PlaySound("Sea Battles\vzriv_pogreb_002.wav");
 	PlaySound("Sea Battles\vzriv_pogreb_002.wav");
 	DoQuestFunctionDelay("VsD_Vzriv_8", 1.5);
+	SetCameraShake(1.0, 12.0, 0.1, 0.1, 0.05, true, false, -1);
 }
 void VsD_Vzriv_8(string qName)
 {
@@ -2003,7 +2005,7 @@ void Trial_CreatHabitue(string qName)// создадим пьяницу со с�
 {
 	FreeSitLocator("PortoBello_tavern", "sit_base3");
 	FreeSitLocator("PortoBello_tavern", "sit_front3");
-	iTemp = NPC_GeneratePhantomCharacter("citizen", SPAIN, MAN, 10);
+	iTemp = NPC_GeneratePhantomCharacterForLoc("citizen", SPAIN, MAN, 10, loadedLocation);
 	sld = &characters[iTemp];
 	sld.City = Colonies[FindColony(loadedLocation.fastreload)].id;
 	//sld.CityType = "citizen";
@@ -2301,8 +2303,8 @@ void Trial_NewPoormanInPortoBello() //новый нищий в Порто Бел
 
 void Trial_CreatePueblaBarqueInWorld()//запускаем барк 'Пуэбла' на карте
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
-	int iScl = MOD_SKILL_ENEMY_RATE+3*sti(pchar.rank);
+	int iRank = sti(pchar.rank);
+	int iScl = MOD_SKILL_ENEMY_RATE+sti(pchar.rank);
     string sCapId = "PueblaCap";
     string sGroup = "Sea_" + sCapId + "1";
 	Group_DeleteGroup(sGroup);
@@ -3212,10 +3214,12 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "GigoloGirl_Sex1")
 	{
+			ResetSound();
 			SetLaunchFrameFormParam("", "Reload_To_Location", 0, 15);
 			SetLaunchFrameFormPic("loading\inside\censored1.tga");
 			SetLaunchFrameReloadLocationParam("FortFrance_Brothel_room", "goto", "goto1", "GigoloGirl_Sex2");
-			PlayStereoSound("sex\sex"+(rand(9)+1)+".wav");
+			if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+			else PlayStereoSound("sex\sex" + (rand(14) + 1) + ".wav");
 			LaunchFrameForm();
 			WaitDate("", 0, 0, 0, 8, 0); //крутим время
 			RecalculateJumpTable();

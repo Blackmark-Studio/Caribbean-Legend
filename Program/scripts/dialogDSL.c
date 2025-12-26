@@ -32,3 +32,17 @@ string DLG_Convert(string key, string filename, ref context)
   if (HasSubStr(result, "#")) result = GetAssembledString(result, &tempContext);
   return DLGO(result, &tempContext);
 }
+
+// Universal translate function with empty result
+string DLG_ConvertE(string key, string filename, ref context)
+{
+  string result;
+  object tempContext;
+  CopyAttributes(&tempContext, context);
+  tempContext.filename = filename;
+  if (filename != "") result = GetConvertStr(key, filename);
+  else result = xiStr(key); // empty filename so we looking in common.ini
+
+  if (HasSubStr(result, "#")) result = GetAssembledString(result, &tempContext);
+  return DLGO(result, &tempContext);
+}

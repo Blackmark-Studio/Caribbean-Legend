@@ -1,0 +1,46 @@
+Patria_1 {Noel}
+Patria_2 {Forget}
+Patria_3 { }
+Patria_4 {Hubert}
+Patria_5 {Dassien}
+Patria_6 {탐험 모드: 타이머 연장됨. 퀘스트를 완료하세요!}
+Patria_7 {스페인 측에 트리니다드 등대로 협상 사절을 보내라는 신호가 전달되었습니다!}
+Patria_8 {하루가 지났습니다...}
+Patria_9 {탐험 모드: 타이머가 비활성화되지 않습니다. 기한을 지키세요!}
+Patria_10 {Baron Noel Forget가 당신의 배를 떠났습니다!}
+Patria_11 {또 다른 적 함선이 접근합니다!}
+Patria_12 {Frederick}
+Patria_13 {Peter}
+Patria_14 {Stuyvesant}
+Patria_15 {회사 무역 호위대}
+Patria_16 {회사 소속 동인도선이 나포되었습니다!}
+Patria_17 { }
+Patria_18 {Lenart}
+Patria_19 {Klap}
+Patria_20 {Edward}
+Patria_21 {Doily}
+Patria_22 { }
+Patria_23 {Kristian}
+Patria_24 {Beusson}
+Patria_25 {회사 아프리카 호송대}
+Patria_26 {탐험 모드: 타이머 비활성화.}
+Patria_27 {적 함대를 반드시 격파해야 한다!}
+Patria_28 {도일리 대령이 블랑카 석호에 상륙 신호를 내렸습니다!}
+Patria_29 {두 시간 동안의 포격 후@<NewStr()>네덜란드가 협상 사절단을 보냈다}
+Patria_30 {Christian}
+Patria_31 {Tior}
+Patria_32 { }
+Patria_33 {Steven}
+Patria_34 {Dodson}
+Patria_35 { }
+Patria_36 {Marcus}
+Patria_37 {Tyrex}
+Patria_38 {두 시간이 흘렀다...@<NewStr()>}
+Patria_39 {Baron Noel Forget가 열병으로 사망했습니다!}
+Patria_40 {Olivier}
+Patria_41 {Burden}
+Patria_42 {Mary}
+Patria_43 {Casper}
+Patria_44 {광산 관리가 한 집에서 발견되어 붙잡혀 감금되었습니다}
+Patria_45 {이십삼 시간이 흐른 뒤...@<NewStr()>Peter Stuyvesant가 성문에 모습을 드러냈다}
+Patria_46 {하루가 지났다...@<NewStr()>}

@@ -1,0 +1,65 @@
+Node0_title {At the gates}
+Node0_a {You emerge from behind $rand(trees|rocks|dense bushes) toward the city gates. Tall stone walls rise above the jungle, crowned with $rand(flags|banners|pennants) of $nationGen($attr($context.localization.iNation)). You slowly approach the gates.}
+Node0_b_a {On the path lie traces of a recent fight — blood, a smashed cart loaded with $rand(rum|spices|sugarcane). The guards at the gate look tense, nervously peering into the jungle, while the walls are manned with reinforced patrols.}
+Node0_b_b {By the gate stands a wagon loaded with $rand(fort gunpowder|cannonballs|provisions). City guards and the fort patrol are arguing heatedly. From their clipped remarks, some $rand(bureaucratic delay|mistake) seems to have occurred, and the cargo is not being allowed through the gate.}
+Node0_b_c {Under the wall, a $rand(old guardsman|grey-haired watchman) sits on a barrel, spinning tales of a $rand(gruesome pirate raid|terrible epidemic in the garrison|bloody revolt on the plantation). The gate guards listen closely, more out of respect than genuine interest.}
+Node0_b_d {At the gate, they hold a $rand(captured thief|deserter from the garrison|enemy spy) on his knees. The sergeant demands his fate be decided immediately — hang him by the wall without further fuss. The guards argue, trying to figure out who will deal with it and answer to the commandant.}
+Node0_c_a {A $rand(boy messenger|terrified woman|drunken sailor) runs up to the gate, shouting about a $rand(fire in the port|brawl at the market|prison escape). The guards exchange nervous glances: help is needed, but they cannot abandon their post.}
+Node0_c_b {Above the wall hangs a fresh notice about $rand(militia mustering|recruitment|expanding the guard). There is a clear shortage of soldiers in the city if such notices are posted even outside the walls.}
+Node0_c_c {In the shadow beneath the wall there is no one around, but something lies in the mud by the ditch. The guards and passersby notice nothing, yet from where you stand you clearly see a metallic glint.}
+Node0_d {You need to find a way to get into the city. Or perhaps simply force your way inside?}
+Node0_b_a_reaction {Tell about the skirmish with the natives}
+Node0_b_a_reaction_log {You tell the guards that you encountered aggressive natives in the jungle and vividly describe the fight, drawing on all your combat experience. They believe you and $rand(send several guards into the jungle|share their supplies with you|promise to deal with the threat as quickly as possible).}
+Node0_b_a_reaction_factor {Unexpected ally}
+Node0_b_b_reaction {Offer to arbitrate the dispute}
+Node0_b_b_reaction_log_0 {You manage to grasp the core of the cargo problem and uncover its cause. As usual, it was a misinterpretation of orders. After your intervention, the patrol quickly leaves with its cargo, and the guards look at you with gratitude.}
+Node0_b_b_reaction_log_1 {You fail to understand the source of the cargo problem and only confuse everyone further. The guards and sentries do not hide their irritation.}
+Node0_b_b_reaction_factor {Arbiter}
+Node0_b_c_reaction {Tell your story}
+Node0_b_c_reaction_log {You seize the moment and tell your story. It $rand(sounds impressive, though you are not the most gifted storyteller|sounded much better in your head, and the guards smile indulgently|is quite touching and seems to have melted the heart of an old veteran).}
+Node0_b_c_reaction_factor {Good storyteller}
+Node0_b_d_reaction {Offer to ransom the captive}
+Node0_b_d_reaction_log {You suggest the guards not waste their effort — this criminal would make an excellent slave, strong and obedient, and spare them further trouble. The sergeant hesitates for a moment, then agrees with visible relief.}
+Node0_b_d_reaction_factor {Slave trader}
+Node0_c_a_reaction {Offer help}
+Node0_c_a_reaction_log {You offer the guards your help in dealing with the trouble. They believe you and thank you for the offer, but still refuse. Such matters should be handled by the guard, not civilians.}
+Node0_c_a_reaction_factor {Law-abiding citizen}
+Node0_c_b_reaction {Say you wish to enlist}
+Node0_c_b_reaction_log_0 {You ask to summon a recruiter and declare your readiness to join the ranks. You demonstrate your skill with firearms to back up your words, and the guards are impressed.}
+Node0_c_b_reaction_log_1 {You ask to summon a recruiter, but are refused. Trying to change the guards’ minds, you decide to demonstrate your skill with firearms, but you $rand(drop your pistol|get comically tangled in your belt|trip and fall). The guards laugh at you and coin an army nickname — $rand(Terror of the Jungle|Sharp Eye|Bullet of Fate|Quick Fuse|Eagle Eye|Steady Hand). The watch commander gives you a fatherly pat on the shoulder.}
+Node0_c_b_reaction_factor {Recruit}
+Node0_c_c_reaction {Inspect the area}
+Node0_c_c_reaction_log_0 {You search the spot where you noticed the glint and find a $rand(soldier’s belt buckle|officer’s rapier|guard’s cufflink). By a fortunate coincidence, its owner is currently on duty and is very grateful to you for returning the lost item.}
+Node0_c_c_reaction_log_1 {You search the spot where you noticed the glint, but find nothing. It seems that $rand(your imagination is playing tricks on you|luck has turned its back on you today).}
+Node0_c_c_reaction_factor {Useful find}
+Node0_a_action {Try to pass}
+Node0_b_action {Fight your way through}
+Node0_c_action {Show your license}
+Node0_success {You manage to enter the city through the gate. You $rand(quickly dissolve into the crowd|wind through the streets to lose yourself completely|head toward the market stalls and blend in with the onlookers). After a short while, you are sure there is no tail and can go about your business in peace.}
+Node0_success_action {Excellent!}
+Node1_a {You fail to pass for a friend, and the guards visibly tense up. A semicircle begins to close around you. The situation escalates rapidly.}
+Node1_b_a {One of the guards awkwardly shifts his feet and keeps clutching his side — a fresh blood‑stained bandage is visible beneath his uniform.}
+Node1_b_b {You are approached by a sergeant who demands that you come with him to the guardhouse to establish your identity. He is lean and very young, clearly trying to prove himself and earn the respect of his subordinates.}
+Node1_c_a {In the gap between the gate leaves, the figure of a $rand(city official|priest) flashes for a moment, and the guard instinctively straightens up.}
+Node1_c_b {Beyond the gate, a brief ringing of a bell suddenly sounds — it is time to change the guard, and any delay will grate on the nerves of the weary sentries.}
+Node1_d {A decision must be made immediately.}
+Node1_b_a_reaction {Offer help to the wounded guard}
+Node1_b_a_reaction_log {You offer the wounded guard a healing elixir. He thanks you and tells you that he was wounded by $rand(Caribs|Guarani|Taino|Arawaks) during a patrol. The wound healed poorly, but he feels much better now.}
+Node1_b_a_reaction_factor {Medical aid}
+Node1_b_b_reaction {Demonstratively submit to the sergeant}
+Node1_b_b_reaction_log_0 {You show the young sergeant respect and agree to his terms, insisting everything be done by the book. His tone noticeably softens.}
+Node1_b_b_reaction_log_1 {You try to bolster the sergeant’s authority, but do so very clumsily. It comes off as mockery, and awkward chuckles behind his back confirm it. He flushes red, his eyes filling with blood.}
+Node1_b_b_reaction_factor {Shown respect}
+Node1_c_a_reaction {Say that you are late for an important meeting}
+Node1_c_a_reaction_log_0 {You say that you are late for an important meeting and that this incident will be reported to the appropriate authorities. You manage to look serious enough to be believed. The guards are unsettled, and this opens a window of opportunity.}
+Node1_c_a_reaction_log_1 {You try to convince the guards that you are here on important business, but sound completely unconvincing. The failed attempt only angers them further.}
+Node1_c_a_reaction_factor {Important person}
+Node1_c_b_reaction {Offer rum to the guards}
+Node1_c_b_reaction_log {You suggest the guards skip the formalities so they can finish their watch sooner, and treat them to rum. They visibly soften and seem ready to overlook their suspicions. After all, we are all human.}
+Node1_c_b_reaction_factor {Rum for the people}
+Node1_a_action {Try to smooth things over}
+Node1_b_action {Flee back into the jungle}
+Node1_success {You manage to smooth things over at the last moment. You $rand(slide into the city under the watchful eyes of the guards|enter the city, trying not to show your unease). It would be best not to linger in $colonyVoc($attr($context.context.colonyId)).}
+Node1_success_action {Into the city!}
+Node1_fail {The guards raise an alarm — you have been exposed. Guards are already rushing to the gates, and you decide to run before the entire colony is alerted.}
+Node1_fail_action {Run!}

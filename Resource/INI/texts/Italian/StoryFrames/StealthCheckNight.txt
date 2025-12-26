@@ -1,0 +1,170 @@
+Node0_title {Infiltrazione segreta}
+Node0_a_a {Ti introduci in città, attraccando in silenzio nel buio. $rand(Di notte il porto odora di marcio, sale e legno. Da qualche parte scricchiolano le manovre, uno strappo di vela schiocca, e ogni suono sembra troppo forte. Ti muovi lungo il molo evitando le chiazze di luce delle lanterne.|L’acqua al pontile notturno è nera come la pece. Le luci delle lanterne vi si riflettono appena, e la profondità pare infinita. Le assi umide scricchiolano sorde sotto i piedi e ti accorgi di camminare a ritmo d’onda per mascherare il rumore.|Il porto notturno non dorme: finge soltanto. Il silenzio che ti accoglie, quasi squillante, in realtà è pieno di vita. Nel buio borbottano marinai, tintinna il vetro, una donna ride piano. Un carico cade sordo in un magazzino; si sentono imprecazioni e il frinire delle cicale. A ogni passo ti senti più sicuro.)}
+Node0_a_b
+{
+Vi infiltrate in città, scivolando silenziosamente attraverso le porte socchiuse.
+$rand(
+Vi fermate all’ombra del muro, lasciando che gli occhi si abituino. Oltre le porte la città suona diversa: chiara, vuota e risonante, con echi che fendono la notte. Da qualche parte l’acqua gocciola, si sentono passi e sussurri — la città appare estranea, ma viva.|
+La strada notturna oltre il portone sembra deserta, ma è un inganno. L’aria è colma di fruscii, voci lontane, movimento e odori del cibo di ieri. Vi immobilizzate, fusi con i muri, e ascoltate.|
+Fate qualche passo lontano dalla porta e vi fermate, dissolvendovi nell’oscurità. La luce della luna cade sulla città creando ombre bizzarre. Da qualche parte una persiana sbatte, un’insegna cigola, una risata risuona e subito si perde nella notte. Qui siete stranieri.
+)
+}
+Node0_b_a {$rand(Uno dei vicoli corre tra le case come una striscia scura e diritta. Quasi nessuna luce vi penetra e non sentite nemmeno suoni sospetti — niente voci, niente passi, solo silenzio e oscurità.| A sinistra si allunga una stradina stretta, ordinatamente schiacciata tra i muri. Le finestre a livello del suolo sono chiuse da imposte, le porte sbarrate con pesanti lucchetti, e la lanterna che dovrebbe illuminare il passaggio è quasi spenta.| Uno dei passaggi tra le case appare vuoto e abbandonato. L’ingresso è preceduto da botti coperte di ragnatele e sacchi marci. Vi sembra persino di sentire dei topi.)}
+Node0_b_b {$rand(L’unico vicolo che conduce alla meta è illuminato in modo irregolare: la luce intensa di una lanterna oscillante si infrange su muri e angoli, lasciando molte ombre nette. Nel fango si vedono fresche impronte di stivali, e dal fondo arrivano frammenti di voci. Lo spazio appare vivo e imprevedibile.| Il passaggio più vicino tra le case è lungo e tortuoso, con una vera costellazione di diramazioni e svolte. All’interno brillano molte luci fioche — la luce filtra da porte e imposte non chiuse.| Il vicolo sulla strada verso la taverna serpeggia e si restringe, e lo spazio già ridotto è ingombro di casse e assi marce. Ombre irregolari si muovono lungo i muri, come se una fonte di luce si stesse spostando più in profondità.)}
+Node0_c_a {$rand(La strada ampia davanti aggira una piazza deserta e porta verso la taverna. Le botteghe sono chiuse, le porte sprangate, e le lanterne illuminano a giorno ogni angolo.| La strada ampia prosegue dritta e più avanti si vede chiaramente ogni passante. Di notte sono pochi — solo qualche ubriacone barcolla verso la taverna dove la strada termina.| La strada ampia attraversa tutta la città ed è circondata da case ricche e negozi. La luce intensa e le rare pattuglie di guardia la rendono sicura per una passeggiata serale.)}
+Node0_c_b
+{
+$rand(
+La strada ampia attraversa tutta la città ed è piena di vita nonostante l’ora tarda. Sentite chiasso e rumore, come se qualcuno stesse litigando a voce alta.| 
+La strada ampia costeggia una piazza dove in questo momento avviene il cambio della guardia — un sergente cammina davanti a una fila di guardie e le assegna ai posti.| 
+La via centrale è insolitamente affollata per quest’ora: in porto è arrivata una nave mercantile importante e per la strada vanno e vengono guardie e facchini.
+)
+}
+Node0_d {Devi scegliere quale strada prendere per arrivare al sicuro. Vicoli stretti, nascosto tra le ombre, o la via larga, cercando di non attirare l’attenzione?}
+Node0_a_action {Passare per i vicoli}
+Node0_b_action {Percorrere le strade principali}
+Node0_c_action {Tornare indietro finché si è in tempo}
+Node1_a {Entrate nel vicolo sperando di raggiungere la taverna senza incidenti}
+Node1_b_a
+{
+All’improvviso, più avanti nel vicolo, notate un piccolo posto contro il muro. Nello spazio angusto tra le case ci sono tre guardie: una con una lanterna, una in ascolto, la terza che scruta il buio come in attesa di un segnale. Il passaggio è bloccato non a caso.
+Una di loro scatta con la testa, vi fissa a lungo e grida: «Chi va là?»
+}
+Node1_b_b
+{
+All’improvviso distinguete movimenti e voci soffocate più avanti nel vicolo. Due figure tengono un terzo contro il muro: uno lo afferra per il colletto, l’altro gli fruga abilmente nelle tasche. La vittima si dibatte senza urlare, come se temesse guai peggiori.
+Uno dei ladri si volta di scatto, come se avesse percepito qualcosa. Il suo sguardo scorre nel buio e si ferma nella vostra direzione.
+}
+Node1_b_c
+{
+All’improvviso, un tonfo sordo risuona più avanti nel vicolo, come un sacco di carne contro la pietra. Alla luce della luna vedete un uomo accasciarsi al muro e scivolare lentamente a terra. Poco distante qualcuno è in ginocchio e pulisce in fretta una lama sulla manica. Siete così assorti nella scena da non accorgervi del piede che urta un sassolino traditore.
+In quell’istante l’assassino si immobilizza e solleva bruscamente la testa. Il suo sguardo setaccia il buio e si posa sulla fonte del rumore. Non vi ha ancora visto, ma ha chiaramente avvertito una presenza.
+}
+Node1_c {La situazione si aggrava rapidamente: non siete ancora stati notati, ma potrebbe cambiare da un momento all’altro. Bisogna decidere.}
+Node1_b_a_reaction {Fermarsi e trattenere il respiro}
+Node1_b_a_reaction_log_0 {Vi premete contro il muro freddo e smettete di respirare. Le ombre spezzano la vostra sagoma e lo sguardo della guardia scivola lungo il vicolo senza trovare nulla a cui aggrapparsi. Passa un secondo interminabile, poi un altro, e la tensione lentamente si allenta. Alla fine la guardia rinuncia, dando la colpa ai ratti e al vento, e tornano a occuparsi dei loro affari.}
+Node1_b_a_reaction_log_1 {Restate immobili contro il muro, ma nel momento peggiore il piede scivola traditore sulla pietra umida. Il rumore è appena percettibile, ma basta. La guardia si ferma, solleva la lanterna e inizia a muovere lentamente la luce sulle pareti e sul terreno.}
+Node1_b_a_reaction_factor {Autocontrollo}
+Node1_b_b_reaction {Cercare un percorso alternativo}
+Node1_b_b_reaction_log_0 {Notate uno stretto passaggio laterale tra le case, quasi inghiottito dall’ombra. Scomodo, ma praticabile. Vi infilate silenziosamente, aderendo al muro, e sparite dalla vista. I briganti restano indietro, senza capire che qualcuno era lì vicino.}
+Node1_b_b_reaction_log_1 {Trovate un passaggio simile, ma è troppo stretto e ingombro. Quando cercate di infilarvi, qualcosa si sposta sotto il piede con un fruscio lieve ma traditore. Il brigante si gira di nuovo e questa volta guarda proprio nel punto in cui state cercando di nascondervi. Un passaggio c’è, ma usarlo senza rischi non è più possibile.}
+Node1_b_b_reaction_factor {Sentieri segreti}
+Node1_b_c_reaction {Lanciare una pietra per distrarre l’assassino}
+Node1_b_c_reaction_log_0 {Nel buio tasti il terreno, trovi un sassolino e lo lanci con cautela lontano da te. La pietra colpisce il muro con un secco schiocco. L’assassino si volta di scatto verso il rumore e per un istante il vicolo si libera della sua attenzione.}
+Node1_b_c_reaction_log_1 {Lanci la pietra, ma colpisce l’angolo di un edificio e rimbalza in tutt’altra direzione. Il rumore risulta fin troppo vicino. L’assassino scruta l’oscurità con ancora maggiore attenzione. Sembra persino trattenere il respiro per sentirti.}
+Node1_b_c_reaction_factor {Distrazione}
+Node1_a_action {Sgattaiolare oltre}
+Node1_b_action {So muovermi in modo assolutamente silenzioso}
+Node1_success
+{
+Riesci a sgusciare via senza farti notare, zigzagando tra i vicoli, e alla fine raggiungi un luogo sicuro — la taverna della città.
+$rand(
+La città notturna e inquieta si ritira, lasciando spazio a una luce calda e al brusio delle voci. Qui sei al sicuro.|
+I vicoli restano alle spalle insieme agli sguardi guardinghi e ai fruscii notturni. Davanti alla porta della taverna la città torna rumorosa e indifferente — chi esce di qui non viene più scambiato per un nemico.
+)
+}
+Node1_success_action {Ottimo!}
+Node2_a {Vi immettete su una strada principale, sperando di raggiungere la taverna senza attirare attenzioni indesiderate.}
+Node2_b_a {$rand(All’inizio tutto procede bene|All’inizio sembra tutto tranquillo), ma a metà strada incontrate una pattuglia cittadina. Due guardie avanzano con calma, parlando a bassa voce, mentre una terza resta leggermente indietro e osserva attentamente la strada. Non vi sbarrano il passo né fanno segni, ma lo sguardo di uno di loro indugia su di voi più del normale, come a valutare se fate parte di questo quadro notturno.}
+Node2_b_b
+{
+Percorrete quasi tutto il tragitto senza problemi, ma proprio alla fine vi imbattete in un ostacolo inatteso.
+Al centro della strada si trova un gruppo di $rand(marinai|lavoratori) alticci. Ridono rumorosamente, cantano, qualcuno gioca a carte.
+Uno di loro vi nota e socchiude gli occhi, come a decidere se siete dei loro o no, mentre gli altri si avvicinano lentamente, circondandovi. Il gruppo non ha intenzione di disperdersi e la tensione cresce.
+}
+Node2_b_c
+{
+Avete percorso a malapena un terzo del cammino quando vi trovate improvvisamente faccia a faccia con una piccola compagnia variopinta: un nobile ben vestito, due cortigiane del bordello locale e il loro servitore con una lanterna.
+Camminano lentamente e con fare disinvolto, ridono e conversano, e tutta la strada sembra adattarsi alla loro presenza.
+Quando vi avvicinate, lo sguardo del nobile scivola su di voi in modo valutativo. Le cortigiane smettono di ridere e vi osservano con attenzione, mentre il servitore si immobilizza.
+Qualcosa in voi tradisce lo straniero.
+}
+Node2_c {Dovete raggiungere la taverna senza attirare attenzioni indesiderate.}
+Node2_b_a_reaction {Chiedere indicazioni per la taverna}
+Node2_b_a_reaction_log_0
+{
+Vi avvicinate quanto basta per essere visibili alla luce della lanterna e, con tono tranquillo, chiedete come raggiungere la taverna.
+Una delle guardie borbotta qualcosa di infastidito, ma alla fine indica la direzione e cita un punto di riferimento vicino.
+}
+Node2_b_a_reaction_log_1
+{
+Ponete la domanda e la conversazione tra le guardie si interrompe di colpo. Nell’aria aleggia la tensione mentre la pattuglia vi squadra in un silenzio tombale.
+Dopo alcuni secondi interminabili, una delle guardie risponde finalmente e indica la direzione. Vi allontanate e loro vi seguono a lungo con lo sguardo.
+}
+Node2_b_a_reaction_factor {Smarrito}
+Node2_b_b_reaction {Cantare una canzone marinaresca}
+Node2_b_b_reaction_log_0 {Trovate il momento giusto per inserirvi nel canto e riprendete sottovoce un ritornello familiare. La tensione svanisce rapidamente: qualcuno vi dà una pacca sulla spalla, qualcun altro vi infila in mano una pinta. Dopo un paio di strofe, proseguite tra grida di approvazione.}
+Node2_b_b_reaction_log_1 {Cerchi il momento giusto per unirti al canto, ma confondi le parole e canti stonato. Le risate si trasformano in fischi; un ubriaco prova persino ad attaccare briga, ma viene trattenuto in tempo. Ti ritiri in fretta, e il rumore provocato attirerà sicuramente attenzioni indesiderate.}
+Node2_b_b_reaction_factor {Shanty}
+Node2_b_c_reaction {Offrire del vino al nobile}
+Node2_b_c_reaction_log_0
+{
+Assecondi l’umore generale del gruppo: un sorriso, una breve battuta, un gesto, come se fossi già parte di quella passeggiata notturna e semplicemente non fossi stato riconosciuto subito. Il nobile ride e ti fa un cenno, come se avesse appena ricordato dove avrebbe potuto vederti. Le cortigiane seguono il tono e la conversazione torna a scorrere leggera e spensierata.
+Proponi di bere del vino e di andare a riposare in taverna, ma questa compagnia ha chiaramente altri piani. Il servitore distoglie la lanterna e se ne vanno senza indugiare.
+}
+Node2_b_c_reaction_log_1
+{
+Cerchi di mantenere un tono allegro, ma vieni accolto con grande durezza. Il nobile lancia una frecciata sul tuo abbigliamento — ad alta voce, con sorpresa accentuata, come se non riuscisse a credere che simili vestiti si indossino in luoghi rispettabili. Le cortigiane scoppiano a ridere e si stringono a lui.
+Offri del vino, ma il nobile ti respinge bruscamente. Dichiara ad alta voce di non avere alcuna intenzione di farsi ubriacare e derubare da dei vagabondi. La sua voce risuona per la strada, il servitore solleva la lanterna più in alto illuminando il tuo volto, attirando fin troppa attenzione indesiderata.
+}
+Node2_b_c_reaction_factor {Società mondana}
+Node2_a_action {Tentare di raggiungere la taverna}
+Node2_b_action {So passare perfettamente per uno del posto}
+Node2_c_action {Ho una licenza commerciale in caso di problemi}
+Node2_success
+{
+Raggiungi la taverna seguendo le strade illuminate e senza fermarti più del necessario. Le porte si chiudono alle tue spalle, tagliando fuori la città notturna.
+$rand(
+Il frastuono della strada si dissolve nel rumore della sala, negli odori di cibo e bevande. Qui nessuno ricorda chi sei o da dove vieni — sei solo un altro avventore.|
+Le strade ampie restano fuori insieme agli sguardi estranei e all’attenzione superflua. All’interno della taverna la città torna indifferente, e d’ora in poi fai parte dello sfondo.
+)
+}
+Node2_success_action {Ottimo!}
+Node3_a
+{
+Sei quasi arrivato alla taverna quando delle guardie ti sbarrano la strada. Sbucano da direzioni diverse e si dispongono a semicerchio, come stringendo attorno a te una morsa invisibile. Qualcosa ti ha tradito, e la sensazione di essere seguito a ogni passo prende finalmente forma.
+
+Avanzano con calma e sicurezza, mantenendo una distanza uniforme, come per non esercitare troppa pressione. Alcuni tengono le armi in mano, ma non le hanno ancora alzate.
+
+A pochi passi da te le guardie si fermano, e un sergente fa un passo avanti. Alza la mano e ti chiede seccamente di seguirli in caserma per l’identificazione.
+}
+Node3_b_a {La voce del sergente suona assonnata e incerta; continua a voltarsi verso la guardia dai capelli grigi alle sue spalle — chiaramente un mentore. Probabilmente il sergente sta solo cercando di mettersi in mostra.}
+Node3_b_b {Le guardie dietro il sergente sbadigliano e si strofinano gli occhi — è evidente che sono state tirate fuori dalle caserme solo di recente, nel cuore della notte. Il sonno svanisce, lasciando spazio all’irritazione.}
+Node3_b_c {Due uomini nella formazione si scambiano uno sguardo quando il sergente pronuncia «caserma». Uno scuote impercettibilmente la testa, l’altro serra la mascella. È chiaro che per loro è importante che tutto finisca in fretta e senza clamore, senza lunghe dispute o scene. Forse la vostra detenzione è illegale.}
+Node3_c_a {All’ingresso della taverna scorgete improvvisamente volti familiari — un paio di avventori abituali sono usciti a prendere aria, e li riconoscete facilmente come contrabbandieri che conoscete. In passato avete concluso diversi affari con loro, e ora questo potrebbe giocarvi a favore.}
+Node3_c_b {All’improvviso una finestra della taverna va in frantumi e una sedia viene scagliata fuori. Sentite urla e imprecazioni. Le guardie si voltano istintivamente in quella direzione, poi di nuovo verso di voi. Una domanda muta resta sospesa nell’aria.}
+Node3_c_c {Improvvisamente due uomini ben vestiti escono dalla taverna. Stanno discutendo animatamente e hanno chiaramente intenzione di risolvere una questione con il sangue. Dopo alcune frecciate pungenti, uno estrae una spada, l’altro una pistola.}
+Node3_d {Dovete agire finché c’è ancora una finestra di opportunità.}
+Node3_b_a_reaction {Rafforzare l’autorità del sergente}
+Node3_b_a_reaction_log
+{
+Vi rivolgete al sergente con rispetto marcato e lo ringraziate per la sua vigilanza. Dite di essere pronti a seguire qualsiasi ordine, ma chiedete prima il permesso di passare la notte.
+Si ammorbidisce visibilmente.
+}
+Node3_b_a_reaction_factor {Rispetto della legge}
+Node3_b_b_reaction {Sfruttare la stanchezza}
+Node3_b_b_reaction_log {Cogliete facilmente l’umore delle guardie e vi adeguate. Dite con calma che questo malinteso notturno può essere risolto qui e ora, senza perdere tempo con la caserma e la burocrazia. Un’ombra di sollievo appare sui volti delle guardie.}
+Node3_b_b_reaction_factor {Banderuola}
+Node3_b_c_reaction {Fare appello alla legge}
+Node3_b_c_reaction_log {Con tono pacato fate notare che una detenzione richiede fondati motivi e proponete di agire rigorosamente secondo il regolamento, senza uscire dai limiti della legge.}
+Node3_b_c_reaction_factor {Pignoleria}
+Node3_c_a_reaction {Chiamare i contrabbandieri}
+Node3_c_a_reaction_log_0 {Chiamate i contrabbandieri. Vi osservano e dopo qualche secondo si aprono in sorrisi. Queste persone sanno bene come può finire avere a che fare con la guardia e vi salutano calorosamente. Le guardie si ammorbidiscono un poco.}
+Node3_c_a_reaction_log_1 {Chiamate i contrabbandieri, ma non rispondono. Uno di loro, dopo avervi lanciato uno sguardo fugace, sputa a terra ed entra nella taverna. Il secondo lo segue. O non vi hanno riconosciuto, oppure hanno scelto di non avere nulla a che fare con voi. In ogni caso, agli occhi della guardia apparite ancora più sospetti.}
+Node3_c_a_reaction_factor {Affari loschi}
+Node3_c_b_reaction {Spingere l’attenzione sulla taverna}
+Node3_c_b_reaction_log {Dite che un mercante pacifico come voi non rappresenta una minaccia per l’ordine pubblico, mentre il trambusto all’interno della taverna non si calmerà da solo. Più si aspetta, peggiori saranno le conseguenze. Proponete alle guardie di occuparsi prima della rissa e di rimandare la caserma al mattino. Il sergente riflette a lungo.}
+Node3_c_b_reaction_factor {Trambusto}
+Node3_c_c_reaction {Richiamare all’ordine}
+Node3_c_c_reaction_log {Fate riferimento alla legge che vieta i duelli entro i confini della città e invitate i duellanti a darsi una calmata. Nel corso della vostra reprimenda vi assicurate quasi per caso il sostegno delle guardie, che ora vi trattano con evidente maggiore cordialità.}
+Node3_c_c_reaction_factor {Intervenire nel duello}
+Node3_a_action {Tentare di smorzare la situazione}
+Node3_b_action {Dire al sergente che c’è stato un errore mostruoso}
+Node3_success
+{
+Il sergente esita ancora un istante, poi annuisce bruscamente e impartisce un ordine secco. Le guardie si voltano e si scostano, tornando ai loro posti. Il semicerchio si dissolve, i passi si allontanano, le voci si confondono con il rumore della notte.
+Non perdi tempo. Un paio di passi rapidi — e la porta della taverna si chiude alle tue spalle. Dentro è caldo, affollato e rumoroso, e tutto ciò che è rimasto fuori smette improvvisamente di avere importanza.
+}
+Node3_success_action {Ottimo!}
+Node3_fail {La pazienza delle guardie è finita. Il sergente tronca bruscamente la conversazione e fa un cenno con la mano. Il semicerchio si stringe, qualcuno ti urta con la spalla, qualcuno ti afferra per la manica. Capisci di essere stato preso e che non c’è via di ritorno. Dovrai uscire dalla città spargendo sangue.}
+Node3_fail_action {Alla battaglia!}

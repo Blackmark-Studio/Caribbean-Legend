@@ -1,0 +1,10 @@
+blade_critDamage {근접 치명타 피해}
+gun_critDamage {권총 치명타 피해}
+musket_critDamage {머스킷 치명타 피해}
+blade_critChance {근접무기 치명타 확률}
+gun_critChance {권총 치명타 확률}
+musket_critChance {머스킷 치명타 확률}
+incomingDamageReduction {피해 보호}
+RangeIncomingDamageReduction {화기 피해 방어}
+Shot_Damage {화기 피해}
+HeadshotDamage {헤드샷 피해}

@@ -1,0 +1,13 @@
+license_violations_name {Naruszenia}
+license_violation_tooltip_body {Za naruszenie uznaje się ataki na statki pod banderą sojuszniczą lub neutralną, agresję wobec cywilów, rabunek na morzu oraz ataki na forty.}
+license_violation_1 {Złamaliśmy warunki kontraktu. To nie pozostanie bez konsekwencji.}
+license_violation_2 {Dwukrotnie złamaliśmy kontrakt. Wkrótce stracimy licencję.}
+license_violation_3 {Trzykrotnie złamaliśmy kontrakt i straciliśmy licencję handlową.}
+license_state
+{
+Wygasa: $attr($context.humanExpireDate)~
+Pozostałe dni: $attr($context.humanDaysLeft)
+}
+flags_newFlagTaken {Nowa flaga zdobyta}
+flags_allFlagsCollected {Wszystkie flagi narodu zostały zebrane}
+license_expired {Licencja handlowa wygasła}

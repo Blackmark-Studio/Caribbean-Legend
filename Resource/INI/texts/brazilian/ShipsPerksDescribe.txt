@@ -1,0 +1,132 @@
+new_string
+{
+
+}
+special0 {Mercante}
+special0_desc {Um navio mercante geralmente sacrifica calibre, velocidade e número de canhões para ter um grande porão. Só um capitão muito habilidoso pode se arriscar em uma viagem solo com esse tipo de navio.}
+special0_desc2 {Bônus de Poder da frota: baixo}
+special1 {De guerra}
+special1_desc {Navios de guerra são projetados especialmente para batalhas navais. Possuem os cascos mais resistentes e os maiores calibres de canhões, mas esse poder de fogo limita a velocidade.}
+special1_desc2 {Bônus de Poder da frota: muito alto.}
+special2 {Corsário}
+special2_desc {Navios Raider são ideais para ataques e pirataria — ágeis, manobráveis e bem armados, formam uma força temível, mas têm por isso porão pequeno e casco modesto.}
+special2_desc2 {Bônus de Poder da Frota: alto.}
+special3 {Multiuso}
+special3_desc {Navios multiuso são a escolha dos capitães que querem fazer de tudo. Servem tanto para o comércio, pirataria ou guerra, mas essa versatilidade os torna inferiores a embarcações especializadas. Pelo menos até caírem nas mãos de um construtor habilidoso.}
+special3_desc2
+{
+Bônus ao Poder da frota: médio
+Bônus à melhoria de atributo: 15%
+}
+trait01 {Mapa de Correntes}
+trait01_desc {Ferramentas de navegação complexas feitas sob medida por artesãos europeus e um mapa preciso das correntes submarinas do arquipélago permitem economizar bastante tempo de viagem.}
+trait01_desc2
+{
+Aumenta a velocidade de navegação no mapa global em 5%.
+Acumula com todos os outros bônus.
+}
+trait02 {Embalagem de qualidade}
+trait02_desc {Uma reforma completa no porão, reforço das anteparas e padronização do sistema de carga permitem transportar mais mercadorias e distribuí-las melhor pelo navio sem causar desequilíbrio.}
+trait02_desc2 {Reduz a penalidade de velocidade por carga no porão: 15%.}
+trait03 {Selo de Qualidade}
+trait03_desc {Um conjunto de glifos, selos e patentes torna a carga deste navio reconhecível, e sua chegada ao porto é um bom presságio para os mercadores locais. Negócios bem-sucedidos melhoram as relações com a nação do porto, e boas relações tornam o comércio mais lucrativo.}
+trait03_desc2
+{
+Reduz penalidade de venda: 3% por nível de relação.
+Limite de lucro para aumentar relações com a nação: 50000.
+}
+trait04 {Liselas de Emergência}
+trait04_desc {Em caso de perigo crítico para o navio, os marinheiros montam velas de estai especiais de montagem rápida nos mastros e as içam, aumentando temporariamente a velocidade da embarcação.}
+trait04_desc2
+{
+Limite de integridade do casco para ativação: 40%.
+Aumento de velocidade: 20%.
+Atraso do efeito ao reparar acima do limite: 20 segundos.
+}
+trait05 {Documentos falsos}
+trait05_desc {Um impressionante conjunto de patentes, documentos e placas de identificação permite que este navio entre incognito em quase qualquer porto, e o casco discreto reduz o risco de encontrar patrulhas durante operações de contrabando.}
+trait05_desc2
+{
+Aumenta a chance de enganar: 15%.
+Reduz a chance de encontrar uma patrulha: 50%.
+}
+trait11 {Carriolas Giratórias}
+trait11_desc {Os portais e os reparos dos canhões foram especialmente reconstruídos, ampliando o setor de disparo das armas.}
+trait11_desc2 {Aumenta o setor de tiro: 7 graus.}
+trait12 {Sistema de Recuo Aprimorado}
+trait12_desc {Um sistema aprimorado de blocos e compensadores permite fogo rápido com o mesmo bordo, usando a inércia do recuo para acelerar recarga e mira.}
+trait12_desc2
+{
+Aumenta o dano e a velocidade de recarga: 6% por salva.
+Bônus máximo: 35%.
+O bônus é perdido ao disparar de outro bordo.
+}
+trait13 {Desembarque Rápido}
+trait13_desc {O design do navio e o sistema de guincho permitem desembarcar tropas em movimento, iniciando o assalto mais cedo sem colocar a tripulação em risco.}
+trait13_desc2 {Reduz o limite de canhões destruídos para assalto ao forte: 15%.}
+trait14 {Pintura de Guerra}
+trait14_desc {Marcas vistosas de saques bem-sucedidos no casco e subornos regulares às pessoas certas tornam a extorsão muito mais fácil, transformando o navio em uma lenda temida. Governadores ficam mais dispostos a compartilhar dinheiro e mercadorias, e as nações oferecem resgates maiores por capitães.}
+trait14_desc2
+{
+Bônus no valor do resgate: 35%.
+Bônus no valor do armazém em saques de colônias: 15%.
+}
+trait21 {Bate e corre}
+trait21_desc {Centro de gravidade deslocado, linhas de casco afiadas e um rearranjo especial dos portos de canhão aumentam a capacidade de cortar ondas e a estabilidade durante o recuo dos canhões, elevando os limites de velocidade permitidos em combate.}
+trait21_desc2
+{
+Bônus de velocidade do navio com o bordo descarregado: 5%.
+O bônus diminui gradualmente ao carregar.
+}
+trait22 {Pilhagem}
+trait22_desc {O navio segue regras especiais para extrair materiais de embarcações abordadas. Afundar um navio por abordagem restaura a integridade do casco e das velas. A quantidade restaurada depende da quantidade e qualidade dos materiais, do nível de dano e da diferença de classe.}
+trait22_desc2
+{
+Restauração do casco: 5–15%.
+Restauração das velas: 12% (mastros não são restaurados).
+}
+trait23 {Os Rápidos e os Mortos}
+trait23_desc {A tripulação deve passar por treinamento em furtividade e disfarce. Reduz o impacto da pirataria nas relações com as nações e torna a recuperação de reputação mais eficaz.}
+trait23_desc2
+{
+Reduz penalidades nas relações: 50%.  
+Aumenta a eficácia do advogado: 50%.
+}
+trait24 {Bala incendiária}
+trait24_desc
+{
+Os canhões de perseguição e retirada são especialmente temperados para suportar altas temperaturas, e seus portos recebem um composto especial contra incêndios.  
+Isso permite usar misturas incendiárias com qualquer munição universal, causando dano periódico aos navios inimigos.
+}
+trait24_desc2
+{
+Dano extra ao casco e velas: 200%.
+Duração do efeito: 15 segundos.
+Aumenta a chance de incêndio: 200%
+}
+sp1 {Fanático}
+sp1_desc {Uma capela de convés equipada, junto com ícones da Virgem Maria, misteriosamente aumenta os efeitos e a duração dos amuletos cristãos.}
+sp1_desc2
+{
+Aprimoramento de cada amuleto: individual.
+Duração aumentada: 15 dias.
+}
+sp2 {Bem-vindo, convidado}
+sp2_desc {Este navio lendário é conhecido em todos os cantos do arquipélago do Caribe e é recebido por todos com respeito e admiração. A localização de Lady Beth logo é divulgada aos vendedores de mapas, e os comerciantes locais tentam reunir todo o capital possível para comprar valiosos.}
+sp2_desc2
+{
+Bônus na chance de aparecer um comerciante de mapas: 5–12%.
+Aumento da reserva de pesos: 100%.
+Aumento da reserva de dobrões: ~30%.
+}
+sp3 {Crisol}
+sp3_desc {Neste navio, a vida humana é vista apenas como uma breve etapa antes que o verdadeiro poder se revele. Poucos cruzam o Véu e retornam, mas quem retorna já não teme a morte.}
+sp3_desc2 {Marinheiros caídos aumentam a experiência e a moral da tripulação.}
+sp3_SailorsBoardingBonus_desc {Bônus de experiência em abordagem: #dSailorsBoardingBonus#%}
+sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 marinheiros caídos)}
+sp3_SurrenderChanceBonus_desc {Aumento da chance de rendição: #dSurrenderChanceBonus#%}
+sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 marinheiros mortos)}
+sp4 {Caçador de Piratas}
+sp4_desc {Este navio foi construído para purgar os mares de piratas. A cada inimigo afundado, a tripulação se une mais, os canhões ficam mais precisos e o fanatismo do capitão se revela ainda mais.}
+sp4_desc2 {Cada navio pirata destruído aumenta permanentemente a manobrabilidade, o alcance dos canhões, a velocidade no mapa global e a recarga dos canhões. Bônus atual: $percent($attr($context.tuning.modifiers.shipSpeed.trait_SP4)) de 15. ~ Quanto menor a ameaça pirata, menor o custo de manutenção do navio. Bônus atual: $percent($GetAmsterdamMtp( )) de 40.}
+SpecialityUpgrade {Aprimorado pela HWIC}

@@ -34,7 +34,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Longway_friend";
 			link.l2 = "Dobrze cię widzieć, Longway. Nazywam się Charles de Maure. Nie ma czasu do stracenia - mynheer Rodenburg docenia szybką i wysokiej jakości pracę. Gdzie teraz ukrywa się Jacob van Berg?";
 			link.l2.go = "Longway_neutral";
-			link.l3 = "Cóż, a moje to Charles de Maure! Miejmy nadzieję, że nasze będą dobrze współpracować! Więc, mynheer Longway, powiedz mi, proszę, gdzie nasze powinny szukać Jacoba van Berga?";
+			link.l3 = "Cóż, a moje to Charles de Maure! Miejmy nadzieję, że nasze statki będą dobrze współpracować! Więc, mynheer Longway, powiedz mi, proszę, gdzie nasze okręty powinny szukać Jacoba van Berga?";
 			link.l3.go = "Longway_enemy";
 			NextDiag.TempNode = "First time";
 			pchar.questTemp.HWIC.Holl.JacobCity = SelectJacobCity();
@@ -42,22 +42,22 @@ void ProcessDialogEvent()
 		
 //-----------------------------------------------за Голландию-----------------------------------------------
 		case "Longway_neutral":
-			dialog.text = "Longway jest pewien, że będziemy dobrze współpracować, chuanzhang. Jacob van Berg obecnie w "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Generał")+"Zaaranżowałem spotkanie z nim w lokalnej tawernie. Będzie tam.";
+			dialog.text = "Longway jest pewien, że będziemy dobrze współpracować, chuanzhang. Jacob van Berg obecnie w "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Gen")+". Zaaranżowałem spotkanie z nim w lokalnej karczmie. Będzie tam.";
 			link.l1 = "Wypłyńmy w morze!";
 			link.l1.go = "Longway_JacobGo";	
 			pchar.questTemp.HWIC.Holl.LongwayNeutral = "true";//признак враждебности китайца
 		break;
 		
 		case "Longway_enemy":
-			dialog.text = "Rozkaz prawa mynheera Rodenburga dla Longway... Jacob van Berg obecnie w "+XI_ConvertString("Kolonia"+pchar.questTemp.HWIC.Holl.JacobCity+"Gen")+"Zaaranżowałem spotkanie z nim w lokalnej tawernie. Będzie tam.";
-			link.l1 = "Wypływamy w morze!";
+			dialog.text = "Rozkaz prawa mynheera Rodenburga dla Longway... Jacob van Berg obecnie w "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Gen")+". Zaaranżowałem spotkanie z nim w lokalnej karczmie. Będzie tam.";
+			link.l1 = "Wypływamy w morze zatem!";
 			link.l1.go = "Longway_JacobGo";	
 			pchar.questTemp.HWIC.Holl.LongwayEnemy = "true";//признак враждебности китайца
 			Notification_Approve(false, "Longway");
 		break;
 		
 		case "Longway_friend":
-			dialog.text = "Longway zrobi wszystko, co w jego mocy, chuanzhang. A Jacob van Berg obecnie w "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Dat")+"Umówiłem się z nim na spotkanie w lokalnej tawernie. Będzie tam.";
+			dialog.text = "Longway zrobi wszystko, co w jego mocy, chuanzhang. A Jacob van Berg obecnie w "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Dat")+". Umówiłem się z nim na spotkanie w lokalnej karczmie. Będzie tam.";
 			link.l1 = "Wyruszajmy w morze!";
 			link.l1.go = "Longway_JacobGo";	
 			pchar.questTemp.HWIC.Holl.LongwayFriend = "true";//признак враждебности китайца
@@ -85,7 +85,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.HWIC.Holl = "JacobOnMain";
 			if(bImCasual)
 			{
-				NewGameTip("Exploration mode: quest duration doubled");
+				NewGameTip("Tryb eksploracji: podwojony czas trwania zadania");
 				SetFunctionTimerCondition("JacobOnMainOver", 0, 0, 30, false);
 			}
 			else SetFunctionTimerCondition("JacobOnMainOver", 0, 0, 15, false);
@@ -102,14 +102,14 @@ void ProcessDialogEvent()
 			PlaySound("Voice\English\hambit\Longway-02.wav");
 			if (pchar.questTemp.HWIC.Holl == "MirageFail")
 			{
-				dialog.text = "Ty głupcze, mongolski bałwanie, chuanzhang! Mieliśmy łatwe zadanie - zdobyć 'Mirage' bez straty 'Meifeng'. Była łatwym celem bez swojego chuanzhang, a jednak nie udało ci się wykonać zadania\nLongway ani nie będzie ci służył, ani cię więcej nie zobaczy. Longway jest pewien, że Mynheer Rodenburg zatwierdzi jego decyzję.";
+				dialog.text = "Ty głupcze, mongolski bałwanie, chuanzhang! Mieliśmy łatwe zadanie - zdobyć 'Miraż' bez straty 'Meifeng'. Był łatwym celem bez swojego chuanzhang, a jednak nie udało ci się wykonać zadania\nLongway ani nie będzie ci służył, ani cię więcej nie zobaczy. Longway jest pewien, że Mynheer Rodenburg zatwierdzi jego decyzję.";
 				link.l1 = "Do diabła z tobą i twoim panem!";
 				link.l1.go = "exit";
 				AddQuestRecord("Holl_Gambit", "1-10");
 			}
 			if (pchar.questTemp.HWIC.Holl == "JacobOnMain" || pchar.questTemp.HWIC.Holl == "JacobInRoom")
 			{
-				dialog.text = "Ty idioto Mongoł, chuanzhang! Zmarnowaliśmy zbyt wiele czasu na rozwiązywanie twoich spraw zamiast spotkać się z Jacobem van Bergiem. On już odszedł z "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Dat")+"\nNie udało ci się wykonać zadania. Longway nie chce ci ani służyć, ani cię więcej widzieć. Longway jest pewien, że Mynheer Rodenburg zatwierdzi jego decyzję.";
+				dialog.text = "Ty idioto mongolski bałwanie, chuanzhang! Zmarnowaliśmy zbyt wiele czasu na rozwiązywanie twoich spraw zamiast spotkać się z Jacobem van Bergiem. On już odszedł z "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Dat")+"\nNie udało ci się wykonać zadania. Longway nie chce ci ani służyć, ani cię więcej widzieć. Longway jest pewien, że Mynheer Rodenburg zatwierdzi jego decyzję.";
 				link.l1 = "Do diabła z tobą i twoim panem!";
 				link.l1.go = "exit";
 				AddQuestRecord("Holl_Gambit", "1-9");
@@ -429,6 +429,14 @@ void ProcessDialogEvent()
 		//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "Longway_officer":
 			dialog.text = "Longway słucha, chuanzhang.";
+			// Эпилог
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				dialog.text = "Jakie są rozkazy, panie kapitanie?";
+				Link.l1 = ""+npchar.name+", postanowiłem wrócić do Europy — do mojego ojca. Droga nie będzie łatwa, i nie mam pojęcia, kiedy będę mógł wrócić. Wygląda na to, że nadszedł czas, by się pożegnać. Wątpię, żebyś miał tu na mnie czekać — i nie byłoby to bezpieczne.";
+				Link.l1.go = "SharlieEpilog_Longway_1";
+				break;
+			}
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
 				Link.l4 = "Longway, wybieram się do starożytnego indiańskiego miasta Tayasal. Powiem wprost, to będzie naprawdę niebezpieczna wyprawa, a przy tym mistyczna - dotrzemy tam przez teleportujący idol. Czy... dołączysz do mnie?";
@@ -574,7 +582,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -589,7 +597,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;
@@ -605,7 +613,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -620,7 +628,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, MUSKET_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetMusketBullets");
 			DialogExit();
 		break;
@@ -722,6 +730,35 @@ void ProcessDialogEvent()
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
+		break;
+		
+		// Эпилог
+		case "SharlieEpilog_Longway_1":
+			dialog.text = ""+npchar.name+" myśleć, że on jest przyjacielem wielkiego kapitana. Ja gotowy podążać za tobą wszędzie — nawet do Europy, jeśli trzeba.";
+			link.l1 = "Ale pamiętasz, jak traktują tu obcych takich jak ty? W Europie jest jeszcze trudniej. Oczywiście, nie pozwolę nikomu cię skrzywdzić — ale przed spojrzeniami i drwinami nie będę w stanie cię obronić. Dlatego nie mogę ci rozkazywać — sam musisz zdecydować: pójdziesz ze mną, czy...";
+			link.l1.go = "SharlieEpilog_Longway_2";
+		break;
+
+		case "SharlieEpilog_Longway_2":
+			dialog.text = ""+npchar.name+" przyzwyczajony do takiego traktowania. Po śmierci Chang Shina, pan kapitan był jedynym, na kim Longway zależało. Ja pójdę za tobą i będę chronił twoje plecy.";
+			link.l1 = "Cóż... Doceniam twoją lojalność, przyjacielu, i szczerze się cieszę, że będziesz ze mną. Wiesz, trochę ci zazdroszczę. Widziałeś Chiny, Karaiby — a teraz zobaczysz Europę. Niewielu dane jest odbyć tak długą podróż... Imię, które dał ci Van Marden — było prorocze.";
+			link.l1.go = "SharlieEpilog_Longway_3";
+		break;
+
+		case "SharlieEpilog_Longway_3":
+			dialog.text = "...";
+			link.l1 = "Wypływamy za dwa tygodnie. Przedtem zamierzam godnie to uczcić w tawernie. Jesteś zaproszony. I pamiętaj — odmowy nie wchodzą w grę.";
+			link.l1.go = "SharlieEpilog_Longway_4";
+		break;
+
+		case "SharlieEpilog_Longway_4":
+			dialog.text = ""+npchar.name+" nie zamierzać odmawiać. Ja przyjść, panie kapitanie.";
+			link.l1 = "Na inną odpowiedź nawet nie liczyłem. Dam ci znać, kiedy zacznie się biesiada. Najpierw muszę zająć się resztą spraw.";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Longway_officer";
+			npchar.quest.SharlieEpilog_FarewellOfficers = true;
+			pchar.questTemp.SharlieEpilog_Longway = true;
+			pchar.questTemp.SharlieEpilog_Friends = sti(pchar.questTemp.SharlieEpilog_Friends) + 1;
 		break;
 	}
 }

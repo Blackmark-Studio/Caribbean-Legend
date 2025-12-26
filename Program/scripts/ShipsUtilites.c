@@ -5,18 +5,13 @@ object	RealShips[REAL_SHIPS_QUANTITY];
 #define SAILSCOLOR_PRICE_RATE    0.1 
 #define SAILSGERALD_PRICE_RATE   0.2 
 
-#define SAIL_COST_PERCENT 10
-#define HULL_COST_PERCENT 20
+#define SAIL_COST_PERCENT 18
+#define HULL_COST_PERCENT 25
 
 string GetShipDescr(ref refRealShip)
 {
 	ref refShip;
 	makeref(refShip, ShipsTypes[sti(refRealShip.basetype)]);
-
-	if (CheckAttribute(refShip, "modname"))
-	{
-		return GetConvertStr(refRealShip.BaseName, "mods\"+refShip.modname+"\ShipsDescribe.txt");
-	}
 	return GetConvertStr(refRealShip.BaseName, "ShipsDescribe.txt");
 }
 
@@ -1203,7 +1198,7 @@ int GetShipBuyPrice(int iType, ref _shipyard)
 
 int GetSailRepairCost(int shipType, int repairPercent, ref _shipyard)
 {
-	int SailRepairCoeff = makeint(3.0 + MOD_SKILL_ENEMY_RATE/10.0);
+	int SailRepairCoeff = makeint(2.0 + MOD_SKILL_ENEMY_RATE/2.0);
 	int shipPrice = GetShipPriceByType(shipType, _shipyard);
 	if(shipPrice<=0) return 0;
 	ref shref = GetRealShip(shipType);
@@ -1214,7 +1209,7 @@ int GetSailRepairCost(int shipType, int repairPercent, ref _shipyard)
 
 int GetHullRepairCost(int shipType,int repairPercent, ref _shipyard)
 {
-	int HullRepairCoeff = makeint(3.0 + MOD_SKILL_ENEMY_RATE/10.0);
+	int HullRepairCoeff = makeint(2.0 + MOD_SKILL_ENEMY_RATE/2.0);
 	int shipPrice = GetShipPriceByType(shipType, _shipyard);
 	if(shipPrice<=0) return 0;
 	ref shref = GetRealShip(shipType);

@@ -764,7 +764,7 @@ int TraderShipType(ref iShipCoef)//корабль торговца
 
 void GetEnemyTraderGoods()//выберем товар
 {
-switch (rand(7))
+switch (rand(6))
 	{
 		case 0:
 			pchar.GenQuest.Escort.Trader.Goods = GOOD_EBONY;
@@ -791,10 +791,6 @@ switch (rand(7))
 			pchar.GenQuest.Escort.Trader.add = "provision";
 			break;
 		case 6:
-			pchar.GenQuest.Escort.Trader.Goods = GOOD_WEAPON;
-			pchar.GenQuest.Escort.Trader.add = "weapon";
-			break;
-		case 7:
 			pchar.GenQuest.Escort.Trader.Goods = GOOD_CHOCOLATE;
 			pchar.GenQuest.Escort.Trader.add = "cacao";
 			break;

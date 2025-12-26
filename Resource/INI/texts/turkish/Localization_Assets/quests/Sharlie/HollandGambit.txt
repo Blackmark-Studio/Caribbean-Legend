@@ -1,0 +1,46 @@
+HollandGambit_1 {Baltazar}
+HollandGambit_2 {Ridderbok}
+HollandGambit_3 {Keşif modu: sayaç uzatıldı. Görevi tamamla!}
+HollandGambit_4 {Miguel}
+HollandGambit_5 { }
+HollandGambit_6 { }
+HollandGambit_7 {Keşif modu: görev süresi iki katına çıkar}
+HollandGambit_8 { }
+HollandGambit_9 {Valkyrie ufukta!}
+HollandGambit_10 {Hainrih}
+HollandGambit_11 {Claus}
+HollandGambit_12 { }
+HollandGambit_13 {Burası mağara. Solomon’un gizli eşyasını burada aramalıyım.}
+HollandGambit_14 {Harry}
+HollandGambit_15 {Fletcher}
+HollandGambit_16 {gümüş konvoy}
+HollandGambit_17 {Sandal}
+HollandGambit_18 {Fernando}
+HollandGambit_19 {Rodriges}
+HollandGambit_20 {Zeekalf}
+HollandGambit_21 {Charlie}
+HollandGambit_22 {Knippel}
+HollandGambit_23 { }
+HollandGambit_24 { }
+HollandGambit_25 {Abigail kalentürden öldü!}
+HollandGambit_26 {Charlie Knippel aldığı yaralardan öldü!}
+HollandGambit_27 {Longway kalentürden öldü!}
+HollandGambit_28 {Longway aldığı yaralardan öldü!}
+HollandGambit_29 {Bir saat geçti...}
+HollandGambit_30 {Jack}
+HollandGambit_31 {Harrison}
+HollandGambit_32 {brigantin 'Hoop'}
+HollandGambit_33 {Hoop}
+HollandGambit_34 {Longway}
+HollandGambit_35 { }
+HollandGambit_36 {Peter}
+HollandGambit_37 {Stuyvesant}
+HollandGambit_38 {Frederic}
+HollandGambit_39 {Leiden}
+HollandGambit_40 {Toff}
+HollandGambit_41 {Keller}
+HollandGambit_42 {Yaralarından bayıldın...}
+HollandGambit_43 {Abigail’e parayı geri vermedin ve onu dilenci yaptın}
+HollandGambit_44 {Chavinavy}
+HollandGambit_45 { }
+HollandGambit_46 { }

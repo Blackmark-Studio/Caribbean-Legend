@@ -1,0 +1,1 @@
+#include "story_frames\StealthCheck\OnClose.c"

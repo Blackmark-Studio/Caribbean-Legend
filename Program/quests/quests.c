@@ -330,6 +330,8 @@ void AddQuestUserData(string idQuest, string strID, string strData)
 		tmpStr = arCur.UserData;
 	}
 	arCur.UserData = tmpStr + "@<"+strID+">" + strData;
+	
+	pchar.last_quest_record.(idQuest).UserData = pchar.QuestInfo.(idQuest).UserData;
 }
 string usrQuestData;
 ref GetQuestUserData()
@@ -416,6 +418,10 @@ void AddQuestRecordEx(string idQuest,string idReferenceQuest,string idText)
 		DoQuestFunctionDelay("Tutorial_Logbook", 1.0);
 		DeleteAttribute(&TEV, "Tutor.PopUpLogbook");
 	}
+	pchar.last_quest_record.uniqueID = idQuest;
+	pchar.last_quest_record.ID = idReferenceQuest;
+	pchar.last_quest_record.closed = false;
+	NewAutoSave("QuestRecord");
 }
 
 // boal метод для инфы  -->
@@ -485,6 +491,7 @@ void CloseQuestHeader(string idQuest)
 	DeleteAttribute(pchar,"QuestInfo."+idQuest);
 	aref newAttr; makearef(newAttr,pchar.QuestInfo.(idQuest));
 	CopyAttributes(newAttr,questRef);
+	pchar.last_quest_record.closed = true;
 }
 bool CheckActiveQuest(string idQuest)
 {

@@ -410,29 +410,29 @@ itmdescr_talisman20 {Ein Bandelier aus mehreren Riemen, einer Pulverflasche und 
 itmname_talisman20_part {Musketiers Pulverflasche}
 itmdescr_talisman20_part {Eine fantasievolle Pulverflasche in ungewöhnlicher Form, geprägt mit exotischen Tieren aus fernen Ländern. Die Ränder sind mit einem osteuropäischen Muster bestickt.}
 itmname_totem_01 {Talisman 'Blechkehle'}
-itmdescr_totem_01 {Ein gegen Trunkenheit verzauberter Krug mit silbernem Boden.}
+itmdescr_totem_01 {Ein Krug mit einem Zauber gegen Trunkenheit und silbernem Boden. Hilft, selbst bei der schlimmsten Zecherei nüchtern zu bleiben.}
 itmname_totem_02 {Talisman 'Rückenbeißer'}
-itmdescr_totem_02 {Eine furchterregend aussehende Geißel für Exekutionen.}
+itmdescr_totem_02 {Eine furchteinflößende Peitsche für Exekutionen. Erhöht die Disziplin an Bord stark, sowohl bei Matrosen als auch bei unfreiwilligen Passagieren.}
 itmname_totem_03 {Talisman 'Amors Balsam'}
-itmdescr_totem_03 {Eine spezielle Salbe in einer teuren Boutonnière.}
+itmdescr_totem_03 {Spezielle Salbe in einer teuren Boutonnière‑Dose. Macht jeden Bordellbesuch gesundheitsfördernd.}
 itmname_totem_04 {Talisman 'Myrmidon'}
-itmdescr_totem_04 {Ein handgetragenes Silberarmband mit Türkis.}
+itmdescr_totem_04 {Handgefertigtes silbernes Armband mit Türkis. Ein Symbol für Treue und die Einhaltung der Rangordnung.}
 itmname_totem_05 {Talisman 'Eisenbauch'}
-itmdescr_totem_05 {Ein mit Schutzplatten geschmückter Ledergürtel.}
+itmdescr_totem_05 {Ein lederner Gürtel mit schützenden Platten. Hält eine verirrte Kugel zwei Zoll vor deinem Herzen auf.}
 itmname_totem_06 {Talisman 'Kraftprotz'}
-itmdescr_totem_06 {Müdigkeit lindernde Stiefel.}
+itmdescr_totem_06 {Ermüdungshemmende Stiefel, der Traum jedes Hafenarbeiters. Sie lassen dich schwere Lasten weiter und länger tragen, ohne vor Erschöpfung umzufallen.}
 itmname_totem_07 {Talisman 'Minstrel'}
-itmdescr_totem_07 {Eine wohlklingende Laute, die die Romantik der Seeabenteuer besingt und Herzen entflammt!}
+itmdescr_totem_07 {Eine süß klingende Laute besingt die Romantik der Seeabenteuer und entfacht das Herz! Spielst du sie in einer Taverne, wollen mehr Leute deine Crew verstärken.}
 itmname_totem_08 {Talisman 'Herr des Feuers'}
-itmdescr_totem_08 {Verdoppelt die Trainingsgeschwindigkeit von Kanonieren.}
+itmdescr_totem_08 {Eine unvergängliche Kanonierpfeife. Sie lässt ihren Besitzer solider wirken, besonders wenn er selbst die Schiffsartillerie kommandiert.}
 itmname_totem_09 {Talisman 'Arguzin'}
-itmdescr_totem_09 {Ein Horn, dessen Signale selbst während einer Kanonade deutlich zu hören sind.}
+itmdescr_totem_09 {Ein Horn, dessen Signale selbst im Kanonendonner klar zu hören sind. Damit wird jede Landratte schnell zum Seewolf.}
 itmname_totem_10 {Talisman 'Witwenmacher'}
-itmdescr_totem_10 {Ein erbarmungsloses, unfehlbares, schnelles katalanisches Navaja-Messer.}
+itmdescr_totem_10 {Ein schneller katalanischer Navaja‑Dolch, der keine Gnade kennt und nie verfehlt. Das Training damit verbessert den Umgang mit Säbeln und Entermessern, besonders in Massenschlägereien.}
 itmname_totem_11 {Talisman 'Ghul'}
-itmdescr_totem_11 {Ein verzauberter Kupferring an der rechten Hand, der in einem Duell über die Klinge Energie vom Gegner stiehlt.}
+itmdescr_totem_11 {Ein verzauberter Kupferring an der rechten Hand raubt dem Gegner im Duell durch die Klinge Energie.}
 itmname_totem_12 {Talisman 'Sohn eines Jaguars'}
-itmdescr_totem_12 {Eine Jaguar-Klaue am Hals verstärkt dein Nachtsehen.}
+itmdescr_totem_12 {Eine Jaguar‑Kralle am Hals schärft die Sicht und ermöglicht besonders gefährliche Stiche.}
 itmname_totem_13 {Talisman 'Joker'}
 itmdescr_totem_13 {Eine nützliche Karte, die stets zur Hand ist und die Gewinnchancen bei Glücksspielen erhöht.}
 itmname_indian_1 {Amulett "Voodoopuppe"}
@@ -1405,7 +1405,7 @@ itmdescr_recipe_potion1 {Ein Rezept mit allen Anweisungen zur Herstellung eines 
 itmname_blade_WR {Wiedergeboren}
 itmdescr_blade_WR
 {
-Rupert Northwoods Prächtiger Säbel. Ein wuchtiger Handschutz mit goldenem Phönix zeugt von Schmerz und Wiedergeburt. Die Klinge glänzt wie ein Spiegel, und im Hohlschliff steht eingraviert: VULNERATUS NON VICTUS – „Verwundet, doch unbesiegt.“ Wie viele Seelen dieses Schwert forderte, weiß nur Gott…
+Rupert Northwoods Prächtiger Säbel. Ein wuchtiger Handschutz mit goldenem Phönix zeugt von Schmerz und Wiedergeburt. Die Klinge glänzt wie ein Spiegel, und im Hohlschliff steht eingraviert: VULNERATUS NON VICTUS – „Verwundet, doch unbesiegt.“ Wie viele Seelen dieses Schwert forderte, weiß nur Gott...
 }
 itmname_hat11 {Theresas Hut}
 itmdescr_hat11 {Marys Mutters Kopfschmuck, bewahrt von Aurélie Bertin. Trotz seines Alters hat er seine einstige Eleganz und Anmut bewahrt.}
@@ -1414,7 +1414,7 @@ itmdescr_talisman21 {Ein Beutel mit Kräutern und Asche, ein Fläschchen dunkler
 itmname_blade_WR_1 {Wiedergeboren}
 itmdescr_blade_WR_1
 {
-Rupert Northwoods Prächtiger Säbel. Ein wuchtiger Handschutz mit goldenem Phönix zeugt von Schmerz und Wiedergeburt. Die Klinge glänzt wie ein Spiegel, und im Hohlschliff steht eingraviert: VULNERATUS NON VICTUS – „Verwundet, doch unbesiegt.“ Wie viele Seelen dieses Schwert forderte, weiß nur Gott…
+Rupert Northwoods Prächtiger Säbel. Ein wuchtiger Handschutz mit goldenem Phönix zeugt von Schmerz und Wiedergeburt. Die Klinge glänzt wie ein Spiegel, und im Hohlschliff steht eingraviert: VULNERATUS NON VICTUS – „Verwundet, doch unbesiegt.“ Wie viele Seelen dieses Schwert forderte, weiß nur Gott...
 }
 itmname_piratesJournal_1 {Piraten-Tagebuch}
 itmdescr_piratesJournal_1 {Ein abgenutztes Dokument aus billigen Materialien, das offensichtlich viele Besitzer hatte. Enthält Aufzeichnungen über Überfälle und Schmuggel.}

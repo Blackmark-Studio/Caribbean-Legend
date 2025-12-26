@@ -1001,7 +1001,7 @@ void LAi_FadeToBlackEnd()
 	SendMessage(&LAi_QuestFader, "lfl", FADER_IN, 1.0, true);
 }
 
-void LAi_FadeEx(int f_start, int f_duration, int f_end, string questFadeOut, string questFadeDuration, string questFadeIn)
+void LAi_FadeEx(float f_start, float f_duration, float f_end, string questFadeOut, string questFadeDuration, string questFadeIn)
 {
 	if(questFadeOut != "") DoQuestFunctionDelay(questFadeOut, f_start);
 	if(questFadeDuration != "") DoQuestFunctionDelay(questFadeDuration, f_start + f_duration);
@@ -1021,8 +1021,7 @@ void LAi_FadeEx(int f_start, int f_duration, int f_end, string questFadeOut, str
 
 void LAi_FadeEx_end(string qName)
 {
-	int f_end = pchar.FadeEx.End;
-	DelEventHandler("FaderEvent_EndFade", "LAi_FadeToBlackEnd");
+	float f_end = pchar.FadeEx.End;
 	SendMessage(&LAi_QuestFader, "lfl", FADER_IN, f_end, true);
 }
 
@@ -1716,7 +1715,7 @@ void SetSurrenderedAnimation(aref chr)
 	EndChangeCharacterActions(chr);
 }
 
-ref LAi_GetCurrentWeapon(ref chr, string sWeapon, string attackType)
+ref LAi_GetCurrentWeapon(ref chr, ref sWeapon, string attackType)
 {
 	if (CharUseMusket(chr)) sWeapon = MUSKET_ITEM_TYPE;
 	else if (attackType == "range") sWeapon = GUN_ITEM_TYPE;

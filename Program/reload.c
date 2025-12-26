@@ -201,7 +201,20 @@ int Reload(aref reload_group, string locator_name, string current_location)
 			return 0;
 		}
 	}
-	
+
+	// Стори-фреймовский блок причаливания
+	if (reload_location_index >= 0)
+	{
+		ref location = &locations[reload_location_index];
+		bool canEnter = !CheckAttributeEqualTo(location, "type", "town") || STH_CanEnterTown(location.townsack);
+		if (!canEnter)
+		{
+			if (IsDay()) Event("StoryFrameLaunch", "ssss", "ssss", "StealthCheckGates", "colonyId", location.townsack);
+			else Event("StoryFrameLaunch", "ssssss", "ssssss", "StealthCheckNight", "colonyId", location.townsack, "entryPoint", "gates");
+			return 0;
+		};
+	}
+
 	//Main character
 	ref mc = GetMainCharacter();
 	Trace("reload_cur_island_index = " + reload_cur_island_index);
@@ -222,16 +235,8 @@ int Reload(aref reload_group, string locator_name, string current_location)
 			}
 		}
 	}
-	// boal 12/04/24 MakeAutoSave -->
-	// нужно поймать критерий ReloadToSea, т.к. между локациями не сейвим	
-	if (!bHardcoreGame && reload_island_index >= 0 && MakeAutoSave2())
-	{
-		SetEventHandler("evntSave","Reload_Pre", 0);
-	}
-	else
-	{
-		ReloadStart();
-	}	
+
+	ReloadStart();
 	
 	return 1;
 }

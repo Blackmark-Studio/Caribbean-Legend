@@ -1,0 +1,89 @@
+sea_Cancel {İptal Et}
+sea_Moor {Demirle}
+sea_Cabin {Kabin}
+sea_SailTo {Yelken Aç}
+sea_Board {Borda}
+sea_LandTroops {Çıkarma Birlikleri}
+sea_Map {Harita}
+sea_Attack {Saldırı}
+sea_Abordage {Grappling}
+sea_Defend {Savunma}
+sea_SailAway {Ayrıl}
+sea_HeaveToDrift {Yelkenleri indir}
+sea_Reload {Ticaret}
+sea_Charge {Yeniden Doldur}
+sea_Speed {Yelkenler}
+sea_CCommand {Emirler}
+sea_Ability {Yetenek}
+sea_ImmediateDeath {Yok et!}
+sea_InstantBoarding {Anında Borda}
+sea_Speak {Konuş}
+sea_Sneak {Kasabaya gizlice gir}
+sea_Repair {Onarım}
+sea_SailDir {Yelken aç ..}
+sea_SailNW {Kuzeybatı}
+sea_SailN {Kuzey}
+sea_SailNE {Kuzeydoğu}
+sea_SailE {Doğu}
+sea_SailSE {Güneydoğu}
+sea_SailS {Güney}
+sea_SailSW {Güneybatı}
+sea_SailW {Batı}
+sea_Boat {Sandal gönder}
+sea_Bomb {Mayın bırak}
+sea_Brander {Brander}
+sea_ImmediateReload {Yeniden Doldurma}
+sea_LightRepair {Acil onarım}
+sea_InstantRepair {Savaş onarımı}
+sea_SandbankManeuver {Sığ sularda manevra}
+sea_Turn180 {Geri Dön}
+land_TalkSelf {Sesli düşünmek}
+land_ItemsDead {Yağmala}
+land_FastReload {Git}
+land_ItemsUse {Kullan}
+land_DialogStart {Diyalog}
+land_ItemsChange {Takas}
+land_TakeItem {Al}
+land_PlaceItem {Koy}
+land_OutDoor {Aç}
+land_UseBox {Aç}
+land_ActivateRush {Ometochtli tentürü kullan}
+land_ActivateCabine {Kaptan Kabini}
+land_DeActivateCabine {Kara}
+land_Look {Bak}
+land_Exit {Deniz}
+land_SelfRepair {Onarım}
+land_Alchemy {Simya}
+land_MapAtlas {Haritalar}
+land_Rest {Dinlen}
+go_store {Mağaza}
+go_shipyard {Tersane}
+go_tavern {Meyhane}
+go_residence {Konut}
+go_port {Liman}
+go_loanshark {Tefeci}
+go_church {Kilise}
+go_prison {Hapishane}
+go_brothel {Genelev}
+go_usurer {Tefeci}
+go_portman {Liman yetkilisi}
+go_duel {Düello}
+go_exittown {Şehir kapısı}
+go_Caroline {Fırkateyn 'Carolina'}
+go_CeresSmithy_Mary {Mary Casper}
+go_CeresSmithy_Jurgen {Jurgen Schmidt}
+go_EsmeraldaStoreBig {Galyon 'Esmeralda'}
+go_EsmeraldaStoreBig_Donald {Donald Greenspen}
+go_FenixPlatform {Fenix Platformu}
+go_FleuronTavern {Karavel 'Fleron'}
+go_GloriaChurch {Galyon 'Gloria'}
+go_ProtectorFisher {Eduard Black}
+go_SanAugustineResidence {Steven Dodson}
+go_SanGabrielMechanic {Henrick Vedecker}
+go_TartarusPrison {Zırhlı 'Tartarus'}
+worldmap_toisland {Denize açıl}
+worldmap_tosea {Denize açıl}
+worldmap_toship {Saldır}
+worldmap_tostorm {Fırtına}
+worldmap_toattack {Savaşa katıl}
+worldmap_toenemy {Savaş}

@@ -1,6 +1,35 @@
 info
 {
-Файл описания предметов в ККСВерсия 0.0.1 от 21.11.2010 (ред. Metazot), belamour ред. кирас и амулетов 29.09.2020belamour обновлено 20.09.2021 для legendary editionПорядок размещения записей для лучшего ориентирования по тексту:1. Амуниция1.1 Холодное оружие1.2 Огнестрельное оружие1.3 Доспехи, одежда1.4 Оптические приборы1.5 Навигационные приборы1.6 Обереги1.7 Талисманы1.8 Амулеты2. МОНЕТЫ, ДРАГОЦЕННОСТИ2.1 Валюта, сундуки2.2 Камни, металлы2.3 Ювелирные изделия3. БУМАГИ3.1 Патенты3.2 Лицензии3.3 Карты3.4 Письма3.5 Рецепты4. ИНВЕНТАРЬ4.1 Инструменты4.2 Снадобья, зелья, травы4.3 Боекомплект4.4 Обычные предметы4.5 Квестовые предметы5. УТИЛЬ
+Файл описания предметов в ККС
+Версия 0.0.1 от 21.11.2010 (ред. Metazot), belamour ред. кирас и амулетов 29.09.2020
+belamour обновлено 20.09.2021 для legendary edition
+Порядок размещения записей для лучшего ориентирования по тексту:
+1. Амуниция
+1.1 Холодное оружие
+1.2 Огнестрельное оружие
+1.3 Доспехи, одежда
+1.4 Оптические приборы
+1.5 Навигационные приборы
+1.6 Обереги
+1.7 Талисманы
+1.8 Амулеты
+2. МОНЕТЫ, ДРАГОЦЕННОСТИ
+2.1 Валюта, сундуки
+2.2 Камни, металлы
+2.3 Ювелирные изделия
+3. БУМАГИ
+3.1 Патенты
+3.2 Лицензии
+3.3 Карты
+3.4 Письма
+3.5 Рецепты
+4. ИНВЕНТАРЬ
+4.1 Инструменты
+4.2 Снадобья, зелья, травы
+4.3 Боекомплект
+4.4 Обычные предметы
+4.5 Квестовые предметы
+5. УТИЛЬ
 }
 new_string
 {
@@ -86,7 +115,8 @@ itmdescr_blade_27 {Rapier ten został nazwany „Saskim Piórem” ze względu n
 itmname_blade_28 {Katana}
 itmdescr_blade_28
 {
-Dziwny miecz pochodzący z legendarnej wyspy Cipangu z ostrzem wykonanym z wysokiej jakości stali i długą rękojeścią, umożliwiającą trzymanie go jedną ręką lub oburącz.Jaka historię mógłby opowiedzieć ten miecz o swojej podróży z egzotycznego Orientu na Karaiby... jak się tu znalazł?
+Dziwny miecz pochodzący z legendarnej wyspy Cipangu z ostrzem wykonanym z wysokiej jakości stali i długą rękojeścią, umożliwiającą trzymanie go jedną ręką lub oburącz.
+Jaka historię mógłby opowiedzieć ten miecz o swojej podróży z egzotycznego Orientu na Karaiby... jak się tu znalazł?
 }
 itmname_blade_29 {Krzywiec}
 itmdescr_blade_29 {Szabla abordażowa Agostina Barbariga — ostrze legendarnego weneckiego admirała, który nie zaznał porażki. Być może to właśnie ten wyjątkowy oręż był jego wiernym towarzyszem w każdej bitwie.}
@@ -115,7 +145,8 @@ itmdescr_blade_36 {Uroczysty miecz Rycerzy Maltańskich, podarowany Charlesowi d
 itmname_knife_01 {Sztylet 'Szpon Wodza'}
 itmdescr_knife_01
 {
-Wygląda jak zwykły sztylet... moskal Fadey twierdzi, że sztylet ten został zaczarowany przez indiańskich szamanów i kryje w sobie wiele ukrytych tajemnic.Ale jakich dokładnie?
+Wygląda jak zwykły sztylet... moskal Fadey twierdzi, że sztylet ten został zaczarowany przez indiańskich szamanów i kryje w sobie wiele ukrytych tajemnic.
+Ale jakich dokładnie?
 }
 itmname_knife_02 {Maria}
 itmdescr_knife_02 {Piękna daga należąca do Diego de Montoya. Broń była starannie pielęgnowana — jakby miała dla byłego właściciela wartość sentymentalną.}
@@ -148,29 +179,37 @@ itmdescr_saber {Broń godna prawdziwego patrioty i oficera, zahartowana w wielu 
 itmname_q_blade_10 {Wieszak Jurgena Schmidt'a}
 itmdescr_q_blade_10
 {
-Abordażowa szabla wykonana przez Jürgena Schmidta.Ostrze z doskonałej stali, znakomicie wyważone.
+Abordażowa szabla wykonana przez Jürgena Schmidta.
+Ostrze z doskonałej stali, znakomicie wyważone.
 }
 itmname_q_blade_13 {Pałasz Jurgena Schmidt'a}
 itmdescr_q_blade_13 {Oficerska szabla wykonana przez Jürgena Schmidta. Ostrze z doskonałej stali, idealnie wyważone.}
 itmname_q_blade_16 {Mieczyk Jurgena Schmidt'a}
 itmdescr_q_blade_16
 {
-Szpada wykonana przez mistrza Jürgena Schmidta.Ostrze z doskonałej stali,o znakomitej równowadze.
+Szpada wykonana przez mistrza Jürgena Schmidta.
+Ostrze z doskonałej stali,
+o znakomitej równowadze.
 }
 itmname_q_blade_18 {Pappenheimer Jurgena Schmidt'a}
 itmdescr_q_blade_18
 {
-Pappenheimer wykonany przez mistrza Jürgena Schmidta.Ostrze z doskonałej stali,znakomicie wyważone.
+Pappenheimer wykonany przez mistrza Jürgena Schmidta.
+Ostrze z doskonałej stali,
+znakomicie wyważone.
 }
 itmname_q_blade_19 {Szabla Jurgena Schmidt'a}
 itmdescr_q_blade_19
 {
-Morska szabla mistrza Jürgena Schmidta.Głownia z doskonałej stali, idealnie wyważona.
+Morska szabla mistrza Jürgena Schmidta.
+Głownia z doskonałej stali, idealnie wyważona.
 }
 itmname_q_blade_21 {Palcat Jurgena Schmidt'a}
 itmdescr_q_blade_21
 {
-Szabla Kleeblatta wykonana przez mistrza Jürgena Schmidta.Ostrze z doskonałej stali,o wyjątkowej równowadze.
+Szabla Kleeblatta wykonana przez mistrza Jürgena Schmidta.
+Ostrze z doskonałej stali,
+o wyjątkowej równowadze.
 }
 itmname_shamshir {Szamszir}
 itmdescr_shamshir {Perski szamszir przeznaczony do walki konnej, prawdziwe uosobienie trudnych wojen na pustyni. Łączy w sobie wydajność cięcia i prostotę siekania. Najlepszy wybór dla tych, którzy lubią okrągłe cięcia.}
@@ -218,7 +257,8 @@ itmdescr_mushket2 {Skrócona wersja najnowszego angielskiego muszkietu z bagnete
 itmname_mushket3 {Arkebuz}
 itmdescr_mushket3
 {
-Abordażowy lontowy garłaczCzasy świetności ma za sobą, ale przeciwnicy patrzący w lufę myślą o czymś zupełnie innym.
+Abordażowy lontowy garłacz
+Czasy świetności ma za sobą, ale przeciwnicy patrzący w lufę myślą o czymś zupełnie innym.
 }
 itmname_mushket5 {Karabin z lunetą}
 itmdescr_mushket5 {Ręcznie wykonana rusznica kołowa z gwintowaną lufą i lunetą dioptryczną. Broń zamożnego myśliwego lub sportowca.}
@@ -283,7 +323,8 @@ itmdescr_suit3 {Mundur oficera katalońskiej gwardii.}
 itmname_suit4 {Ubranie najemnika Ligi}
 itmdescr_suit4
 {
-Strój Najemnika Ligi Naszyte metalowe płyty i regulowane paski – wszystko do szybkiej, brutalnej walki. Półmaska pomaga ukryć tożsamość.
+Strój Najemnika Ligi 
+Naszyte metalowe płyty i regulowane paski – wszystko do szybkiej, brutalnej walki. Półmaska pomaga ukryć tożsamość.
 }
 itmname_suit5 {Mundur admirała}
 itmdescr_suit5 {Mundur starszego oficera marynarki Francji. Prawdziwe dzieło sztuki, bez dwóch zdań.}
@@ -340,12 +381,15 @@ itmdescr_sextant1 {Unikalne urządzenie służące do ustalania współrzędnych
 itmname_sextant2 {Działający sekstant}
 itmdescr_sextant2
 {
-Unikalne urządzenie do określania współrzędnych geograficznych. Teraz, gdy posiadasz chronograf z przyszłości, może on stale określać szerokość i długość geograficzną.Dzięki wysokiej precyzji można uzyskać 5% wzrost prędkości statku.Zwiększa tempo rozwoju umiejętności Nawigacja, gdy jest wyposażony.
+Unikalne urządzenie do określania współrzędnych geograficznych. Teraz, gdy posiadasz chronograf z przyszłości, może on stale określać szerokość i długość geograficzną.
+Dzięki wysokiej precyzji można uzyskać 5% wzrost prędkości statku.
+Zwiększa tempo rozwoju umiejętności Nawigacja, gdy jest wyposażony.
 }
 itmname_bussol {Busola}
 itmdescr_bussol
 {
-Przyrząd okrętowy łączący astrolabium i kompas. Umożliwia m.in. stałe określanie szerokości geograficznej.Zwiększa tempo rozwoju umiejętności Nawigacja, gdy jest wyposażony.
+Przyrząd okrętowy łączący astrolabium i kompas. Umożliwia m.in. stałe określanie szerokości geograficznej.
+Zwiększa tempo rozwoju umiejętności Nawigacja, gdy jest wyposażony.
 }
 itmname_clock3 {Chronometr Alexusa}
 itmdescr_clock3 {Precyzyjny chronometr morski z połowy XX wieku z mechanizmem automatycznego naciągu, pochodzący z kolekcji Mistrza Alexusa.}
@@ -358,7 +402,8 @@ itmdescr_talisman3 {Złoty wisiorek w kształcie Mjölnira – młota Thora, nor
 itmname_talisman4 {Artefakt 'Janczar'}
 itmdescr_talisman4
 {
-Osmański karwasz starszego janczara.Zwiększa dyscyplinę załogi.
+Osmański karwasz starszego janczara.
+Zwiększa dyscyplinę załogi.
 }
 itmname_talisman6 {Artefakt 'Bogini'}
 itmdescr_talisman6 {Figurka bogini Tlazolteotl, pożeraczki brudu.}
@@ -367,7 +412,8 @@ itmdescr_talisman7 {Masyny staroegipski pierścień w kształcie pracowitego ska
 itmname_talisman8 {Artefakt 'Skorpion'}
 itmdescr_talisman8
 {
-Brosza rodu Medyceuszy w kształcie skorpiona. Zawiera ukryty schowek z silnym antidotum.
+Brosza rodu Medyceuszy w kształcie skorpiona. 
+Zawiera ukryty schowek z silnym antidotum.
 }
 itmname_talisman9 {Order Św. Ludwika}
 itmdescr_talisman9 {Najbardziej pożądana nagroda każdego francuskiego kapitana.}
@@ -396,96 +442,113 @@ talisman18_NoBonus {Znalezione Skarby : 0 / 10}
 itmname_talisman19 {Talizman „Czaszka Yoricka”}
 itmdescr_talisman19
 {
-Czaszka kapitana Mortimera Grima z „Memento”, który nigdy w pełni nie zrozumiał własnej śmierci. Znałeś go, #sName#.Umarli uczą żywych, a ten artefakt dostosowuje się do pragnień właściciela.W ekwipunku czyni wszystkich oficerów nieśmiertelnymi.
+Czaszka kapitana Mortimera Grima z „Memento”, który nigdy w pełni nie zrozumiał własnej śmierci. Znałeś go, #sName#.
+Umarli uczą żywych, a ten artefakt dostosowuje się do pragnień właściciela.
+W ekwipunku czyni wszystkich oficerów nieśmiertelnymi.
 }
 talisman19_InSlot
 {
-Statek istnieje po obu stronach zasłony jednocześnie. Drewno było żywe, stało się martwe, by służyć żywym. Czaszka kapitana „Memento” przypomina każdej załodze, że śmierci nie ma i trzeba walczyć do końca.~Każde 2% utraconego kadłuba zwiększa szybkość i obrażenia dział o 0,75% i 0,5%.~Brak kar, można używać wielokrotnie.
+Statek istnieje po obu stronach zasłony jednocześnie. Drewno było żywe, stało się martwe, by służyć żywym. Czaszka kapitana „Memento” przypomina każdej załodze, że śmierci nie ma i trzeba walczyć do końca.
+~
+Każde 2% utraconego kadłuba zwiększa szybkość i obrażenia dział o 0,75% i 0,5%.
+~
+Brak kar, można używać wielokrotnie.
 }
 itmname_talisman20 {Przepaska strzelca}
 itmdescr_talisman20 {Bandolier z kilku pasów, prochownicy i licznych papierowych ładunków. Spotykany w różnych formach na europejskich polach bitew, lecz ten egzemplarz przybył z dalekich stron, ozdobiony wizerunkami fantastycznych bestii z surowych syberyjskich lasów.}
 itmname_talisman20_part {Prochownica muszkietera}
 itmdescr_talisman20_part {Fantazyjna prochownica o nietypowym kształcie, ozdobiona wizerunkami egzotycznych zwierząt z odległych krain. Krawędzie haftowane wschodnioeuropejskim wzorem.}
 itmname_totem_01 {Talizman 'Żeliwne Gardło'}
-itmdescr_totem_01 {Kubek z zaklęciem przeciw upiciu i srebrnym denkiem.}
+itmdescr_totem_01 {Kufel z zaklęciem przeciw upojeniu i srebrnym dnem. Pomaga zachować trzeźwość nawet w najgorszej popijawie.}
 itmname_totem_02 {Talizman 'Gryzak'}
-itmdescr_totem_02 {Przerażająco wyglądający bicz do egzekucji.}
+itmdescr_totem_02 {Groźnie wyglądający bicz do egzekucji. Znacznie zwiększa dyscyplinę na statku zarówno wśród marynarzy, jak i przymusowych pasażerów.}
 itmname_totem_03 {Talizman 'Balsam Kupidyna'}
-itmdescr_totem_03 {Specjalna maść w drogiej butonierce.}
+itmdescr_totem_03 {Specjalna maść w drogiej butonierce. Sprawi, że każda wizyta w burdelu będzie korzystna dla zdrowia.}
 itmname_totem_04 {Talizman 'Myrmidon'}
-itmdescr_totem_04 {Srebrna bransoleta na rękę z turkusem.}
+itmdescr_totem_04 {Ręcznie wykonana srebrna bransoleta z turkusem. Symbol lojalności i podporządkowania.}
 itmname_totem_05 {Talizman 'Żelazne Ciało'}
-itmdescr_totem_05 {Skórzany pas ozdobiony ochronnymi blachami.}
+itmdescr_totem_05 {Skórzany pas ozdobiony ochronnymi blaszkami. Zatrzyma zbłąkaną kulę dwa cale od serca.}
 itmname_totem_06 {Talizman 'Siłacz'}
-itmdescr_totem_06 {Buty zmniejszające zmęczenie.}
+itmdescr_totem_06 {Buty zdejmujące zmęczenie, marzenie każdego portowego robotnika. Pomagają nosić ciężary dalej i dłużej, nie padając z wycieńczenia.}
 itmname_totem_07 {Talizman 'Minstrel'}
-itmdescr_totem_07 {Słodkogłosna lutnia, która zaśpiewa o romansie morskich przygód i rozpali serca!}
+itmdescr_totem_07 {Słodko brzmiąca lutnia wyśpiewa romantykę morskich przygód i rozpali serce! Zagraj na niej w tawernie, a więcej chętnych zasili twoją załogę.}
 itmname_totem_08 {Talizman 'Władca Ognia'}
-itmdescr_totem_08 {Kanonierzy zyskują doświadczenie dwa razy szybciej.}
+itmdescr_totem_08 {Niezgaszalna fajka komendora artylerii. Dodaje właścicielowi powagi, zwłaszcza jeśli sam dowodzi działami okrętowymi.}
 itmname_totem_09 {Talizman 'Arguzin'}
-itmdescr_totem_09 {Róg, którego sygnały słychać wyraźnie nawet podczas kanonady.}
+itmdescr_totem_09 {Róg, którego sygnały słychać wyraźnie nawet podczas kanonady. Z nim każda szczur lądowy szybko stanie się wilkiem morskim.}
 itmname_totem_10 {Talizman 'Wdowiec'}
-itmdescr_totem_10 {Bezlitosna, nieomylnie szybka katalońska navaja.}
+itmdescr_totem_10 {Błyskawiczna katalońska naważa, nieznająca litości ani pudła. Trening z nią znacznie poprawia władanie szablami i tasakami, zwłaszcza w zbiorowej bójce.}
 itmname_totem_11 {Talizman 'Upiór'}
-itmdescr_totem_11 {Zaczarowany miedziany pierścień na prawej ręce, który przez klingę kradnie energię przeciwnika podczas pojedynku.}
+itmdescr_totem_11 {Zaklęty miedziany pierścień na prawej dłoni kradnie energię przeciwnika przez klingę podczas pojedynku.}
 itmname_totem_12 {Talizman 'Syn Jaguara'}
-itmdescr_totem_12 {Pazur jaguara na szyi wzmocni twoje widzenie w nocy.}
+itmdescr_totem_12 {Pazur jaguara na szyi wyostrza wzrok, pozwalając zadawać wyjątkowo groźne pchnięcia.}
 itmname_totem_13 {Talizman 'Joker'}
 itmdescr_totem_13 {Przydatna karta, która zawsze jest pod ręką i zwiększa prawdopodobieństwo wygranej w grach hazardowych.}
 itmname_indian_1 {Amulet 'Laleczka Voodoo'}
 itmdescr_indian_1
 {
-Lalka rytualna — przerażający artefakt indiański, który według podań wiąże się z duszą ofiary. ~Może zwiększać obrażenia zadawane przy trafieniach w wrażliwe miejsca — na przykład w głowę.
+Lalka rytualna — przerażający artefakt indiański, który według podań wiąże się z duszą ofiary.
+ ~Może zwiększać obrażenia zadawane przy trafieniach w wrażliwe miejsca — na przykład w głowę.
 }
 itmname_indian_2 {Amulet 'Tester prochu'}
 itmdescr_indian_2
 {
-Narzędzie, służące do odmierzania właściwej ilości prochu, gwarantując maksymalną efektywność wystrzału, i bezpieczeńswo użytkownika. ~Zwiększa zadawane wrogom obrażenia
+Narzędzie, służące do odmierzania właściwej ilości prochu, gwarantując maksymalną efektywność wystrzału, i bezpieczeńswo użytkownika.
+ ~Zwiększa zadawane wrogom obrażenia
 }
 itmname_indian_3 {Amulet 'Nóż ceremonialny'}
 itmdescr_indian_3
 {
-Nóż z obsydianu do ofiar. Nie wiadomo, ile dusz zebrał w próbach uzyskania błogosławieństw herezjańskich bogów Azteków, ale krawędź obsydianu nie stępiła się do dziś. ~Zwiększa obrażenia krytyczne zadawane wrogom; niech Bóg spocznie nad ich duszami.
+Nóż z obsydianu do ofiar. Nie wiadomo, ile dusz zebrał w próbach uzyskania błogosławieństw herezjańskich bogów Azteków, ale krawędź obsydianu nie stępiła się do dziś.
+ ~Zwiększa obrażenia krytyczne zadawane wrogom; niech Bóg spocznie nad ich duszami.
 }
 itmname_indian_4 {Amulet 'Głowica'}
 itmdescr_indian_4
 {
-Wisiorek pokryty runami asatru. Nie wiadomo, jak trafił na Karaiby, ale wzbudza osobliwą skłonność do toporów. ~Sprzyja pojawieniu się niespodziewanej siły w ramionach, zwiększając moc ciosów ciężką bronią.
+Wisiorek pokryty runami asatru. Nie wiadomo, jak trafił na Karaiby, ale wzbudza osobliwą skłonność do toporów.
+ ~Sprzyja pojawieniu się niespodziewanej siły w ramionach, zwiększając moc ciosów ciężką bronią.
 }
 itmname_indian_5 {Amulet 'Tsantsa'}
 itmdescr_indian_5
 {
-Głowa wysuszona w szczególny sposób. Wykonanie takiego amuletu wymaga obrzydliwego pogańskiego rytuału. ~Widząc taki przy pasie kapitana, każda załoga abordażowa zaczyna się bać i zachowywać ostrożnie — zarówno własna, jak i obca.
+Głowa wysuszona w szczególny sposób. Wykonanie takiego amuletu wymaga obrzydliwego pogańskiego rytuału.
+ ~Widząc taki przy pasie kapitana, każda załoga abordażowa zaczyna się bać i zachowywać ostrożnie — zarówno własna, jak i obca.
 }
 itmname_indian_6 {Amulet 'Koralowa głowa'}
 itmdescr_indian_6
 {
-Wyciosany idolek z fragmentu korala. Mówi się, że przynosi szczęście i zwiększa pewność ręki. ~Tak czy inaczej, salwa muszkietowa z jego udziałem staje się znacznie bardziej zgrana.
+Wyciosany idolek z fragmentu korala. Mówi się, że przynosi szczęście i zwiększa pewność ręki.
+ ~Tak czy inaczej, salwa muszkietowa z jego udziałem staje się znacznie bardziej zgrana.
 }
 itmname_indian_7 {Amulet 'Garbus'}
 itmdescr_indian_7
 {
-Figurka z terakoty przedstawiająca garbusa. Nie tego z Notre‑Dame, lecz patrona pracowitości. ~Z nim łatwiej znosić wyczerpujące biegi przez dżunglę i walki abordażowe.
+Figurka z terakoty przedstawiająca garbusa. Nie tego z Notre‑Dame, lecz patrona pracowitości.
+ ~Z nim łatwiej znosić wyczerpujące biegi przez dżunglę i walki abordażowe.
 }
 itmname_indian_8 {Amulet 'Xiuhtecuhtli'}
 itmdescr_indian_8
 {
-Figurka-totem azteckiego boga, władcy ognia i pana wulkanów. ~Tajemniczo czyni wystrzały z dział bardziej śmiercionośnymi.
+Figurka-totem azteckiego boga, władcy ognia i pana wulkanów.
+ ~Tajemniczo czyni wystrzały z dział bardziej śmiercionośnymi.
 }
 itmname_indian_9 {Amulet 'Baldo'}
 itmdescr_indian_9
 {
-Celtycka fibula w kształcie kruka. Mówi się, że nosili je najzręczniejsi żeglarze wśród wyspiarskich Celtów. ~Najbardziej imponuje obsadzie działa, przez co zaczynają szybciej ładować i celować armaty.
+Celtycka fibula w kształcie kruka. Mówi się, że nosili je najzręczniejsi żeglarze wśród wyspiarskich Celtów.
+ ~Najbardziej imponuje obsadzie działa, przez co zaczynają szybciej ładować i celować armaty.
 }
 itmname_indian_10 {Amulet 'Kaskawela'}
 itmdescr_indian_10
 {
-Zaczarowana czaszka grzechotnika. ~Prawdopodobnie w zastygłych kłach pozostała trucizna; w przeciwnym razie trudno wytłumaczyć jej zdolność do zatruwania przy trafieniu.
+Zaczarowana czaszka grzechotnika.
+ ~Prawdopodobnie w zastygłych kłach pozostała trucizna; w przeciwnym razie trudno wytłumaczyć jej zdolność do zatruwania przy trafieniu.
 }
 itmname_indian_11 {Amulet 'Maska Ngombo'}
 itmdescr_indian_11
 {
-Rytualna maska ludu Sibonei. Plotka głosi, że potrafi zaszczepić fałszywe wspomnienia w człowieku. ~Przydatna do zrobienia wrażenia drobiazgami albo — przeciwnie — do zniknięcia w tłumie.
+Rytualna maska ludu Sibonei. Plotka głosi, że potrafi zaszczepić fałszywe wspomnienia w człowieku.
+ ~Przydatna do zrobienia wrażenia drobiazgami albo — przeciwnie — do zniknięcia w tłumie.
 }
 itmname_amulet_1 {Amulet 'Tarcza Ngombo'}
 itmdescr_amulet_1 {Naszyjnik z kości i korali wzmocniony zaklęciem ngombo. ~Z nim nawet najlżejszy pancerz zaczyna odchylać ostrza.}
@@ -794,12 +857,15 @@ itmdescr_map_sharp_full {Mapa Isla del Tesoro ułożona poprzez połączenie dw�
 itmname_LSC_navigation_map {Wskazówki nawigacyjne do Miasta Porzuconych Statków}
 itmdescr_LSC_navigation_map
 {
-Bez tego dokumentu niemożliwe jest dotarcie do Miasta Porzuconych Statków drogą morską.Najpierw należy wypłynąć na 24°21' N i 84°50' W.Następnie należy płynąć zgodnie z precyzyjnymi wskazówkami.
+Bez tego dokumentu niemożliwe jest dotarcie do Miasta Porzuconych Statków drogą morską.
+Najpierw należy wypłynąć na 24°21' N i 84°50' W.
+Następnie należy płynąć zgodnie z precyzyjnymi wskazówkami.
 }
 itmname_RingCapBook {Dziennik pokładowy 'Santa Lucia'}
 itmdescr_RingCapBook
 {
-Dziennik pokładowy Pinasy 'Santa Lucia'.Warto przeczytać – wpisy trwają aż do samej śmierci załogi statku.
+Dziennik pokładowy Pinasy 'Santa Lucia'.
+Warto przeczytać – wpisy trwają aż do samej śmierci załogi statku.
 }
 itmname_leather_bag {Walizeczka}
 itmdescr_leather_bag {Walizeczka dziewczyny, która uciekła z domu publicznego. Zawiera trochę pieniędzy, dokumenty, porządną sukienkę i kilka innych osobistych rzeczy. Sama walizeczka jest dość żałośnie cięższa od jej zawartości.}
@@ -825,7 +891,8 @@ itmdescr_PostLetters {Zapieczętowane listy i inne dokumenty.}
 itmname_letter_consumption {List dla komendanta San Jose}
 itmdescr_letter_consumption
 {
-Plony zostały w większości zebrane – to druga część naszej umowy. Trzecia część zostanie załatwiona na końcu, jak zwykle. Miło było współpracować – mam nadzieję, że nie była to ostatnia transakcja.J.
+Plony zostały w większości zebrane – to druga część naszej umowy. Trzecia część zostanie załatwiona na końcu, jak zwykle. Miło było współpracować – mam nadzieję, że nie była to ostatnia transakcja.
+J.
 }
 itmname_letter_church {Zapieczętowana korespondencja}
 itmdescr_letter_church {Depesza kościelna. Powinna zostać dostarczona do adresata jak najszybciej.}
@@ -836,18 +903,21 @@ itmdescr_ContraPostLetters {Zapieczętowane listy i inne dokumenty. Muszą zosta
 itmname_letter_svenson {List Jana Svensona}
 itmdescr_letter_svenson {Zapieczętowany list od Jana Svensona dla Steve'a Dodsona-Sharka.}
 itmname_letter_chad {Otwarty list}
-itmdescr_letter_chad {'Znaleźliśmy niezawodnego strzelca. Teraz czekamy na gwintowaną lufę, którą obiecałeś, i na pozwolenie na eliminację celu.'}
+itmdescr_letter_chad {Znaleźliśmy niezawodnego strzelca. Teraz czekamy na gwintowaną lufę, którą obiecałeś, i na pozwolenie na eliminację celu.'}
 itmdescr_letter_adolf
 {
-'Po zakończeniu wszystkiego, co uzgodniliśmy, wróć do swojej nowej kabiny i czekaj na nas. Przyjdziemy po klucz o północy.M.'
+Po zakończeniu wszystkiego, co uzgodniliśmy, wróć do swojej nowej kabiny i czekaj na nas. Przyjdziemy po klucz o północy.
+M.'
 }
 itmdescr_letter_adolf_1
 {
-'Marcello, uzgodniliśmy sumę dwa razy wyższą niż ta, którą mi podałeś. Karabin jest wart znacznie więcej, a ty o tym wiesz. Jeśli nie zapłacisz mi reszty, admirał natychmiast dowie się o twoich powiązaniach z Kaperem na "Eva".Adolf.'
+Marcello, uzgodniliśmy sumę dwa razy wyższą niż ta, którą mi podałeś. Karabin jest wart znacznie więcej, a ty o tym wiesz. Jeśli nie zapłacisz mi reszty, admirał natychmiast dowie się o twoich powiązaniach z Kaperem na "Eva".
+Adolf.'
 }
 itmdescr_letter_aeva
 {
-Nie ma lepszego miejsca niż "Eva". Ostatnio Cecille ciągle kręci się z tym drugim staruszkiem, Orelie, albo w karczmie, więc ładownia jest pusta. A na wypadek, gdyby ktoś nagle się pojawił, nie zaszkodzi trochę się napić, prawda?Marcello.
+Nie ma lepszego miejsca niż "Eva". Ostatnio Cecille ciągle kręci się z tym drugim staruszkiem, Orelie, albo w karczmie, więc ładownia jest pusta. A na wypadek, gdyby ktoś nagle się pojawił, nie zaszkodzi trochę się napić, prawda?
+Marcello.
 }
 itmdescr_letter_valet {Zabawny list skierowany do Davida Fackmana, znanego jako 'Kanalia'.}
 itmname_letter_chad_1 {Otwarty list}
@@ -855,17 +925,20 @@ itmdescr_letter_chad_1 {List od Chad'a Kapera skierowany do Mary Casper.}
 itmdescr_letter_facio {List z wyjaśnieniami od Giuseppe Fazio.}
 itmdescr_letter_axel
 {
-Chad, sprawdziłem mój zapas, jak prosiłeś. Znalazłem tylko jedną beczkę irlandzkiej whiskey. To stary malt zwany 'Bushmills'. Jeśli cena 100 dublonów ci odpowiada, przyjdź i odbierz ją.Axel.
+Chad, sprawdziłem mój zapas, jak prosiłeś. Znalazłem tylko jedną beczkę irlandzkiej whiskey. To stary malt zwany 'Bushmills'. Jeśli cena 100 dublonów ci odpowiada, przyjdź i odbierz ją.
+Axel.
 }
 itmdescr_letter_vargant
 {
-Jeśli plan nie wypali, będę czekał na ciebie i Davida w zatoce Sabu-Matila na pokładzie "Centuriona". Odpowiadasz za mojego brata głową. Rób, co on powie, jakby to byłbym ja. Nie myśl nawet o wyzwaniu Tyrexa – w mgnieniu oka połamie was na kawałki.Jackman.
+Jeśli plan nie wypali, będę czekał na ciebie i Davida w zatoce Sabu-Matila na pokładzie "Centuriona". Odpowiadasz za mojego brata głową. Rób, co on powie, jakby to byłbym ja. Nie myśl nawet o wyzwaniu Tyrexa – w mgnieniu oka połamie was na kawałki.
+Jackman.
 }
 itmname_letter_parol {Notatka}
 itmdescr_letter_parol {Informujemy, że właściciel zmienił hasło do wejścia do kopalni. Nowe hasło to 'Neptun'.}
 itmdescr_letter_ouster
 {
-Stare miejsce już nie jest bezpieczne. Anglicy się czegoś dowiedzieli. Będę czekał na ciebie z ładunkiem przez tydzień na 12°1' N i 60°11' W. Nie zawiedź mnie tym razem!M.R.
+Stare miejsce już nie jest bezpieczne. Anglicy się czegoś dowiedzieli. Będę czekał na ciebie z ładunkiem przez tydzień na 12°1' N i 60°11' W. Nie zawiedź mnie tym razem!
+M.R.
 }
 itmdescr_letter_parol_FMQP {Nieukończony list od Ugo do Dona Domingo Albalate.}
 itmname_letter_mine {Dokumenty dla kopalni}
@@ -880,7 +953,9 @@ itmdescr_letter_pinett {Testament Bertranda Pinette'a dotyczący nielegalnych dz
 itmname_Cromvel_depeshe {Depesza Cromwella}
 itmdescr_Cromvel_depeshe
 {
-...rozkaz spotkania z konwojem, wzmocnienia go i eskortowania na brzegi Nowych Niderlandów.Holendrzy w drewniakach zobaczą na własne oczy potęgę Angielskiej Marynarki Wojennej.Eskadra przybędzie dnia #sDay#.#sMonth#.#sYear# na 18°40' N i 72°10' W.
+...rozkaz spotkania z konwojem, wzmocnienia go i eskortowania na brzegi Nowych Niderlandów.
+Holendrzy w drewniakach zobaczą na własne oczy potęgę Angielskiej Marynarki Wojennej.
+Eskadra przybędzie dnia #sDay#.#sMonth#.#sYear# na 18°40' N i 72°10' W.
 }
 itmname_specialletter {List}
 itmdescr_specialletter {Zapieczętowany list. Aby go przeczytać, trzeba najpierw złamać pieczęć.}
@@ -938,7 +1013,8 @@ itmdescr_Tool {Narzędzia stoczniowe skradzione ze stoczni.}
 itmname_Tailor_Tool {Narzedzia krawieckie}
 itmdescr_Tailor_Tool
 {
-Podróżny zestaw do szycia wytrawnego wędrowca, któremu przychodzi samodzielnie pokonywać wszelkie trudności.W wprawnych rękach nożyczki, igły, haczyki i naparstki mogą zdziałać prawdziwe cuda.
+Podróżny zestaw do szycia wytrawnego wędrowca, któremu przychodzi samodzielnie pokonywać wszelkie trudności.
+W wprawnych rękach nożyczki, igły, haczyki i naparstki mogą zdziałać prawdziwe cuda.
 }
 itmname_Mechanic_Tool {Skrzynka z narzędziami}
 itmdescr_Mechanic_Tool {Sprzęt potrzebny do drobnych napraw zamknięty w wygodnej walizce - świetna rzecz dla każdego, kto lubi majsterkować w wolnym czasie.}
@@ -967,14 +1043,16 @@ itmdescr_Ultimate_potion {Cudowny eliksir zdolny wyleczyć nawet najgorsze choro
 itmname_berserker_potion {Nalewka Ometochli}
 itmdescr_berserker_potion
 {
-Legendarna mikstura, która uwalnia nadludzką siłę i wytrzymałość, zwiększa zwinność i czas reakcji, a także sprawia, że jej konsument jest niewrażliwy na ból.Efekt ten trwa nie dłużej niż 12 sekund raz na minutę. Uszkadza zdrowie.
+Legendarna mikstura, która uwalnia nadludzką siłę i wytrzymałość, zwiększa zwinność i czas reakcji, a także sprawia, że jej konsument jest niewrażliwy na ból.
+Efekt ten trwa nie dłużej niż 12 sekund raz na minutę. Uszkadza zdrowie.
 }
 itmname_mangarosapower {Mikstura Fali Pływowej}
 itmdescr_mangarosapower {Mikstura z mangarosy według przepisu Amelii. Pachnie prochem i wędzonym drewnem, z ostrą nutą siarki. Ten aromat przywołuje na pokład działowy—tam, gdzie grzmią salwy, a dym zasnuwa niebo.}
 itmname_mangarosafast {Mikstura Squalla}
 itmdescr_mangarosafast
 {
-Mikstura z mangarosy według przepisu Amelii.Pachnie gorzkim dymem świeżo złamanych gałęzi i rozgrzanym żelazem, jak kuźnia o zmierzchu. Ten zapach budzi bitewny szał, przywodząc na myśl szczęk broni i żar walki.
+Mikstura z mangarosy według przepisu Amelii.
+Pachnie gorzkim dymem świeżo złamanych gałęzi i rozgrzanym żelazem, jak kuźnia o zmierzchu. Ten zapach budzi bitewny szał, przywodząc na myśl szczęk broni i żar walki.
 }
 itmname_mangarosatotal {Mikstura Mrskiego Uścisku}
 itmdescr_mangarosatotal {Mikstura z mangarosy według przepisu Amelii. Pachnie słonym wiatrem i mokrym drewnem, jak pokład po burzy. Aromat morskiego powietrza z lekką nutą goryczy wodorostów daje poczucie lekkości i wolności, jakby samo morze otworzyło się w twojej piersi.}
@@ -997,7 +1075,8 @@ itmdescr_cannabis6 {Roślina używana do warzenia mikstur.}
 itmname_cannabis7 {Manga Rosa}
 itmdescr_cannabis7
 {
-Liście tego krzewu są bardzo cenione przez miejscowych tubylców.Niektórzy mówią, że roślina ta posiada mistyczne właściwości, zrozumiałe tylko dla kilku oświeconych osób.
+Liście tego krzewu są bardzo cenione przez miejscowych tubylców.
+Niektórzy mówią, że roślina ta posiada mistyczne właściwości, zrozumiałe tylko dla kilku oświeconych osób.
 }
 itmname_GunPowder {Proch Strzelniczy}
 itmdescr_GunPowder {Mieszanka siarki, węgla drzewnego i saletry (azotanu potasu). Proch jest wymagany, aby każda broń palna działała. Zużycie prochu różni się w zależności od rodzaju broni.}
@@ -1006,7 +1085,8 @@ itmdescr_bullet {Uniwersalny pocisk muszkietowy i pistoletowy. Obrażenia zadawa
 itmname_grapeshot {Śrut}
 itmdescr_grapeshot
 {
-Ołowiana kartacz lub grube śruciny. Używane wyłącznie przy strzelaniu z broni kartaczowej. Zadają obrażenia kilku celom jednocześnie.Ilość kartaczy, jaką można ubić w lufie, zależy od użytej broni.
+Ołowiana kartacz lub grube śruciny. Używane wyłącznie przy strzelaniu z broni kartaczowej. Zadają obrażenia kilku celom jednocześnie.
+Ilość kartaczy, jaką można ubić w lufie, zależy od użytej broni.
 }
 itmname_cartridge {Nabój papierowy}
 itmdescr_cartridge {Nabój łączący porcję prochu, ołowianą kulę i przybitkę. Zawinięty w natłuszczony papier, by chronić proch przed wilgocią. Użycie znacznie przyspiesza przeładowanie i zwiększa obrażenia dzięki równomiernemu spalaniu prochu.}
@@ -1029,14 +1109,16 @@ itmdescr_GunCap_colt {Kapiszon miedziany wykonany z piorunianu srebra. Wymagany,
 itmname_GunEchin {Odłamki gwoździ}
 itmdescr_GunEchin
 {
-Grubo posiekane gwoździe do strzelania z wielkokalibrowych broni kartaczowych. Mają niszczący wpływ na ludzkie ciała i lufy broni.Ze względu na swój kształt zmniejszają rozrzut broni.
+Grubo posiekane gwoździe do strzelania z wielkokalibrowych broni kartaczowych. Mają niszczący wpływ na ludzkie ciała i lufy broni.
+Ze względu na swój kształt zmniejszają rozrzut broni.
 }
 itmname_bullet_double {Podwójny ładunek pocisku}
 itmdescr_bullet_double {Podwójny ładunek prochu i kula, któremu towarzyszy posiekany dublon na szczęście. Tester prochu wymagany, aby zapobiec wzrostowi pęknięcia lufy.}
 itmname_grapeshot_double {Podwójny ładunek śrutowy}
 itmdescr_grapeshot_double
 {
-Zwiększona dawka prochu i kartaczy z posiekanym dublonem na szczęście. Skuteczność zależy od broni, z którą jest używana.Bez testera prochu rośnie ryzyko rozerwania lufy.
+Zwiększona dawka prochu i kartaczy z posiekanym dublonem na szczęście. Skuteczność zależy od broni, z którą jest używana.
+Bez testera prochu rośnie ryzyko rozerwania lufy.
 }
 itmname_ArmoryPaper {Papier strzelniczy}
 itmdescr_ArmoryPaper {Ten papier powstaje przez nasączenie bazy parafiną. Na Karaibach jest rzadki i drogi, zwykle służy do pakowania żywności, lecz w zręcznych rękach znajdzie też inne zastosowania.}
@@ -1105,7 +1187,8 @@ itmdescr_Mineral30 {Kajdany ręczne używane przez handlarzy niewolników, aby c
 itmname_Mineral31 {Zaklęta Kość}
 itmdescr_Mineral31
 {
-Ludzka kość palca z miedzianym pierścieniem. Używana przez czarownice voodoo do czarów.(-10 do Charyzmy, -10 do Oportunizmu).
+Ludzka kość palca z miedzianym pierścieniem. Używana przez czarownice voodoo do czarów.
+(-10 do Charyzmy, -10 do Oportunizmu).
 }
 itmname_Mineral32 {Forma na Pociski}
 itmdescr_Mineral32 {To urządzenie umożliwia odlewanie pocisków o odpowiednim kształcie i rozmiarze dla rewolweru Colt.}
@@ -1178,7 +1261,8 @@ itmdescr_FernandoDeAlavidaJournal {Dziennik statku Fernando de Alavida.}
 itmname_FernandoDeAlavidaPismo {Zgnieciony list}
 itmdescr_FernandoDeAlavidaPismo
 {
-Zgnieciony kawałek papieru, wyraźnie porzucony w gniewie i niechlujnie rzucony w odległy kąt kabiny. Atrament rozmazał się, zostawiając tylko ostatnie linie czytelne:'... a mimo to mocno radzę przeciwko przechowywaniu skarbów w krypcie. Ostatnio krążą rosnące plotki na wyspie o poganach rabujących groby, i obawiam się, że miejsce spoczynku pana może zostać skradzione.'
+Zgnieciony kawałek papieru, wyraźnie porzucony w gniewie i niechlujnie rzucony w odległy kąt kabiny. Atrament rozmazał się, zostawiając tylko ostatnie linie czytelne:
+'... a mimo to mocno radzę przeciwko przechowywaniu skarbów w krypcie. Ostatnio krążą rosnące plotki na wyspie o poganach rabujących groby, i obawiam się, że miejsce spoczynku pana może zostać skradzione.'
 }
 itmname_MC_Letter {Zamknięty list}
 itmdescr_MC_Letter {List do Richarda Fleetwooda z warunkami i zasadami wykupu Abigail.}
@@ -1223,7 +1307,7 @@ itmname_chemistry {Podręcznik chemii Lavoisiera}
 itmdescr_chemistry {Wydrukowana książka zatytułowana 'Traite Elementaire de Chimie', zawierająca notatki i definicje nieczytelne dla laików. Książka została napisana przez 'Monsieur Lavoisier', a strona tytułowa głosi 'Wydrukowane w Paryżu, 1789 AD'. Być może drukarz się pomylił. . .}
 itmname_shark_teeth {Ząb rekina}
 itmdescr_shark_teeth {Ząb dużego rekina białego z wyrytymi inicjałami S.D.}
-itmname_witches_hammer {'Malleus Maleficarum'}
+itmname_witches_hammer {Malleus Maleficarum'}
 itmdescr_witches_hammer {Traktat o czarownicach, znany jako 'Młot na czarownice' po angielsku, napisany przez niemieckich duchownych Heinricha Kramera i Jakuba Sprengera w późnym średniowieczu. Pomimo potępienia przez Kościół katolicki jako całkowicie błędny, jest bardzo popularny wśród ludzi świeckich i sądów cywilnych.}
 itmname_calendar_maya {Kalendarz Majów}
 itmdescr_calendar_maya {Kalendarz Majów, złożony z pięciu fragmentów.}
@@ -1289,7 +1373,7 @@ itmdescr_GS_letters {Wskazówki napisane ręką szefa zarządu portu. Zawierają
 itmname_SM_necklace_Julie {Naszyjnik Julii d’Armagnac}
 itmdescr_SM_necklace_Julie {Klejnot bliski sercu Julii. Elegancki i wyrafinowany, jakby sam przechowywał jej wspomnienia. Jeśli są rzeczy zdolne strzec tajemnic, ten naszyjnik z pewnością do nich należy.}
 itmname_TBP_letter {Otwarty list}
-itmdescr_TBP_letter {"Myślałaś, że możesz mnie szantażować i ujść bezkarnie? Myliłaś się. Wkrótce pożałujesz swojej zuchwałości. Twoja śmierć będzie długa i bolesna, i nikt cię nie uratuje.​"}
+itmdescr_TBP_letter {Myślałaś, że możesz mnie szantażować i ujść bezkarnie? Myliłaś się. Wkrótce pożałujesz swojej zuchwałości. Twoja śmierć będzie długa i bolesna, i nikt cię nie uratuje.​}
 itmdescr_letter_open_Regata {List z zaproszeniem dla uczestnika regat.}
 itmname_kaleuche_amulet1 {Dziwny amulet}
 itmdescr_kaleuche_amulet1 {Indyjski amulet wykonany z gładkiego kamienia i jaskrawo pomalowany.}
@@ -1312,7 +1396,8 @@ itmdescr_kaleuche_amulet35_potion {Eliksir przygotowany z Manga Rosa przez Tuttu
 itmname_kaleuche_letter {Zwinięta notatka}
 itmdescr_kaleuche_letter
 {
-Szukaj odbiorcy, podążając o północy ścieżką od bram miasta w stronę dżungli....Za trzy dni statek przybędzie do zatoki Chetumal. Ładunek zostanie załadowany na dwie łodzie ratunkowe w nocy. Drugi statek przybędzie dopiero dzień po rozładunku...
+Szukaj odbiorcy, podążając o północy ścieżką od bram miasta w stronę dżungli.
+...Za trzy dni statek przybędzie do zatoki Chetumal. Ładunek zostanie załadowany na dwie łodzie ratunkowe w nocy. Drugi statek przybędzie dopiero dzień po rozładunku...
 }
 itmname_kaleuche_key {Stalowy klucz}
 itmdescr_kaleuche_key {Klucz Reginalda Jacksona do skrzyni w latarni morskiej Barbados.}
@@ -1323,7 +1408,8 @@ itmdescr_MerrimanBook {Metalowe pudełko z legowiska Joachima Merrimana.}
 itmname_KhaelRoa_item {Skóra jaguara}
 itmdescr_KhaelRoa_item
 {
-Wspaniały prezent wodza Chavinavi - piękna skóra jaguara, zaczarowana przez samego boga Yum Cimil.Zwiększa obrażenia zadawane bronią palną dziesięciokrotnie. Efekt utrzymuje się do 2 dni.
+Wspaniały prezent wodza Chavinavi - piękna skóra jaguara, zaczarowana przez samego boga Yum Cimil.
+Zwiększa obrażenia zadawane bronią palną dziesięciokrotnie. Efekt utrzymuje się do 2 dni.
 }
 itmname_key_candlestick_PortRoyal {Klucz}
 itmdescr_key_candlestick_PortRoyal {Stary, zużyty klucz. Na razie nie wiadomo, co otwiera.}
@@ -1363,7 +1449,8 @@ itmdescr_key_ruins {Zmatowiały srebrny klucz znaleziony w ruinach.}
 itmname_indian_poison {Trucizna Taino}
 itmdescr_indian_poison
 {
-Śmiercionośna trucizna stworzona z tajemniczych roślin i śluzu jadowitych żab. Nawet najmniejsze zadrapanie może być śmiertelne i nie można jej wyleczyć antidotami. Ta trucizna może być używana jako olej do ostrzy i kul.Efekt trwa przez dwa dni.
+Śmiercionośna trucizna stworzona z tajemniczych roślin i śluzu jadowitych żab. Nawet najmniejsze zadrapanie może być śmiertelne i nie można jej wyleczyć antidotami. Ta trucizna może być używana jako olej do ostrzy i kul.
+Efekt trwa przez dwa dni.
 }
 itmname_mapEnrico {Mapa Camilli}
 itmdescr_mapEnrico {Prowadzi do skarbów w hiszpańskiej wiosce górniczej, zaginionej i opuszczonej 20 lat temu.}

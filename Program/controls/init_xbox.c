@@ -114,7 +114,7 @@ void ExternControlsInit(bool bFirst)
 	CI_CreateAndSetControls( "Sailing1Pers", "Sea_CameraSwitch", CI_GetKeyCode("RIGHT_THUMB"), 0, true );
 	MapControlToGroup("Sea_CameraSwitch","Sailing3Pers");
 
-    // Rosarak Зум подзорки (TODO)
+    // Зум подзорки (TODO)
 /*	
     CI_CreateAndSetControls("Sailing1Pers", "TelescopeMode",    CI_GetKeyCode("VK_CONTROL"),     0, true);
 	CI_CreateAndSetControls("Sailing1Pers", "TelescopeZoomIn",  CI_GetKeyCode("VK_MWHEEL_UP"),   0, true);

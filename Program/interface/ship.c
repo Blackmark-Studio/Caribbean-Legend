@@ -1,6 +1,7 @@
 #include "interface\utils\common_header.c"
 #include "interface\utils\ship_perks.c"
 #include "interface\utils\modifiers.c"
+#include "interface\utils\stealth.c"
 
 /// BOAL меню корабль
 /// Sith новое меню
@@ -87,7 +88,7 @@ void InitInterface_R(string iniName, ref _chr) // _chr нужно для чит�
 	sMessageMode = "";
 	ref chref = GetMainCharacter();
 	curNationIdx = sti(chref.nation);
-    SetNewNation(0);
+    SetNewNation(0, &curNationIdx);
 }
 
 // гуляем по меню кнопками Q и E
@@ -193,7 +194,7 @@ void ProcessCommandExecute()
     		{
 				if (!CheckAttribute(pchar, "DisableChangeFlagMode"))
 				{
-					SetNewNation(-1);
+					SetNewNation(-1, &curNationIdx);
 				}
     		}
     	break;
@@ -203,7 +204,7 @@ void ProcessCommandExecute()
     		{
                 if (!CheckAttribute(pchar, "DisableChangeFlagMode"))
                 {
-					SetNewNation(1);
+					SetNewNation(1, &curNationIdx);
 				}
     		}
     	break;
@@ -728,7 +729,7 @@ void ShowInfoWindow()
 			}
 		break;
 		
-		case "TABLE_LIST":
+		case "HELP":
 			sHeader = XI_Convertstring("Goods");
 			sText1  = GetRPGText("GoodsCargo_hint");	
 		break; 
@@ -814,11 +815,11 @@ void ShowInfoWindow()
 		//<--- sith
 		case "FOOD_SHIP":
 			sHeader = XI_Convertstring("FoodShipInfoShort");
-			sText1 = GetConvertStr("Food_descr", "GoodsDescribe.txt");
+			sText1 = GetGoodDescr("Food");
 		break;
 		case "RUM_SHIP":
 			sHeader = XI_Convertstring("RumShipInfoShort");
-			sText1 = GetConvertStr("Rum_descr", "GoodsDescribe.txt");
+			sText1 = GetGoodDescr("Rum");
 		break;
 		case "MONEY_SHIP":
 			sHeader = XI_Convertstring("CostPerMonth");
@@ -826,7 +827,7 @@ void ShowInfoWindow()
 		break;
 		case "FOOD":
 			sHeader = XI_Convertstring("FoodSquadronInfoShort");
-			sText1 = GetConvertStr("Food_descr", "GoodsDescribe.txt");
+			sText1 = GetGoodDescr("Food");
 		break;
 	}
 	SetShipPerksTooltip(xi_refCharacter, &sCurrentNode, &sHeader, &sText1, &sText2, &sText3, &sPicture, &sGroup, &sGroupPicture);
@@ -979,11 +980,10 @@ void ShowGoodsInfo(int iGoodIndex)
 {
 	string GoodName = goods[iGoodIndex].name;
 
-	int lngFileID = LanguageOpenFile("GoodsDescribe.txt");
 	string sHeader = XI_ConvertString(GoodName);
 
     iCurGoodsIdx = iGoodIndex;
-	string goodsDescr = GetAssembledString( LanguageConvertString(lngFileID,goodName+"_descr"), &Goods[iGoodIndex]);
+	string goodsDescr = GetAssembledString( GetGoodDescr(&Goods[iGoodIndex]), &Goods[iGoodIndex]);
     goodsDescr += newStr() + XI_ConvertString("weight") + " " + Goods[iGoodIndex].weight + " " + XI_ConvertString("cwt") +
 	              ", " + XI_ConvertString("PackHolds") + " " + Goods[iGoodIndex].Units + " " + XI_ConvertString("units");
 
@@ -999,7 +999,6 @@ void ShowGoodsInfo(int iGoodIndex)
 	SetNewGroupPicture("QTY_GOODS_PICTURE", "GOODS", GoodName);
     SetFormatedText("QTY_CAPTION", sHeader);
     SetFormatedText("QTY_GOODS_INFO", goodsDescr);
-	LanguageCloseFile(lngFileID);
 	
 	iShipQty = GetCargoGoods(xi_refCharacter, iGoodIndex);
     SetFormatedText("QTY_INFO_SHIP_QTY", its(iShipQty))
@@ -1782,50 +1781,6 @@ void FlagsProcess()
 	}
 }
 
-void SetNewNation(int add)
-{
-    ref   mchar = GetMainCharacter();
-    bool  ok, ok2, ok3;
-    
-    curNationIdx = curNationIdx + add;
-    if (curNationIdx < 0) curNationIdx = 4;
-    if (curNationIdx > 4) curNationIdx = 0;
-    SetNewGroupPicture("FLAGPIC", "NATIONS", GetNationNameByType(curNationIdx));
-    
-    if (IsCharacterPerkOn(mchar,"FlagPir")  ||
-	    IsCharacterPerkOn(mchar,"FlagEng")  ||
-		IsCharacterPerkOn(mchar,"FlagFra")  ||
-		IsCharacterPerkOn(mchar,"FlagSpa")  ||
-		IsCharacterPerkOn(mchar,"FlagHol"))
-    {
-		SetNodeUsing("FLAG_BTN",true);
-		if (!bBettaTestMode)
-		{
-			ok3 = bSeaActive && !CheckEnemyCompanionDistance2GoAway(false);
-			if (bDisableMapEnter || bLandInterfaceStart || ok3) SetSelectable("FLAG_BTN",false);
-		}
-        ok  = !IsCharacterPerkOn(mchar,"Flag" + NationShortName(curNationIdx)) && (sti(mchar.nation) != curNationIdx);
-        ok2 =  true;
-        if (isMainCharacterPatented())
-        {
-            ok2 = (sti(Items[sti(mchar.EquipedPatentId)].Nation) != curNationIdx);
-        }
-        if (ok && ok2)
-        {
-            SetNewNation(add);
-        }
-        if (sti(mchar.nation) == curNationIdx)
-        {
-			SetNodeUsing("FLAG_BTN",false);
-        }
-    }
-    else
-    {
-        SetNodeUsing("FLAG_BTN",false);
-	    SetNodeUsing("RIGHTCHANGE_NATION",false);
-	    SetNodeUsing("LEFTCHANGE_NATION",false);
-    }
-}
 void PirateProcess()
 {
     PChar.GenQuest.VideoAVI        = "Pirate";

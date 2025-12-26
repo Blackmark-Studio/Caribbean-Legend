@@ -185,7 +185,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_14":
-			dialog.text = "Écoute, gamin, explique à ta copine que les gens, même des avortons comme celui-là, ont non seulement un prénom, mais aussi un nom de famille. J'ai souvent entendu dire que les jolies nanas pouvaient être aussi bêtes qu'un sac de paille, mais alors là, que je crève…";
+			dialog.text = "Écoute, gamin, explique à ta copine que les gens, même des avortons comme celui-là, ont non seulement un prénom, mais aussi un nom de famille. J'ai souvent entendu dire que les jolies nanas pouvaient être aussi bêtes qu'un sac de paille, mais alors là, que je crève...";
 			link.l1 = "...";
 			link.l1.go = "Naemnik_14_add";
 			CharacterTurnByChr(npchar, pchar);
@@ -229,7 +229,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_19":
-			dialog.text = "Retourner en arrière ? Et quoi d'autre ? Tu veux me défier en duel ? Vas-y… À moins que tu n'aies peur de laisser ta précieuse toute seule, au milieu de la jungle, hé-hé. Mes gars et moi, on serait trèèès contents de ce retournement.";
+			dialog.text = "Retourner en arrière ? Et quoi d'autre ? Tu veux me défier en duel ? Vas-y... À moins que tu n'aies peur de laisser ta précieuse toute seule, au milieu de la jungle, hé-hé. Mes gars et moi, on serait trèèès contents de ce retournement.";
 			link.l1 = "Eh bien, voilà votre vrai visage. Vous n'étiez pas si doué pour faire semblant, ouais, hein ?";
 			link.l1.go = "Naemnik_bitva";
 			break;
@@ -247,7 +247,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_24":
-			dialog.text = "Tiens donc... Quel ver insolent. Dis-moi, l'ami, ta nana est douée dans un hamac ? Quoique… j'en doute fort — et je me ferai un plaisir de le vérifier moi-même...";
+			dialog.text = "Tiens donc... Quel ver insolent. Dis-moi, l'ami, ta nana est douée dans un hamac ? Quoique... j'en doute fort — et je me ferai un plaisir de le vérifier moi-même...";
 			link.l1 = "Voilà, vous vous êtes trahi. Vous n'avez pas tenu longtemps. Au combat !";
 			link.l1.go = "Naemnik_bitva";
 		break;
@@ -299,7 +299,7 @@ void ProcessDialogEvent()
 		
 		case "Djerry_8":
 			dialog.text = "Mieux vaut comme ça, foi de Dieu, "+GetAddress_Form(NPChar)+" - à mon avis, c'est bien mieux que de crever des tourments que Bishop m'a réservés. Mais en vrai, ce n'est pas si terrible – près du cap Ragged Point, il y a une barque à voile planquée.";
-			link.l1 = "Les terres les plus proches de la Barbade, c'est la Dominique avec ses indigènes, et Tobago avec ses Espagnols. Je ne sais même pas ce qui est… pire pour toi.";
+			link.l1 = "Les terres les plus proches de la Barbade, c'est la Dominique avec ses indigènes, et Tobago avec ses Espagnols. Je ne sais même pas ce qui est... pire pour toi.";
 			link.l1.go = "Djerry_9";
 		break;
 		
@@ -343,7 +343,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_13":
-			dialog.text = "Après ce que j'ai entendu de la bouche de ce sbire de Bishop, je n'ai aucun doute que ces pauvres gens sont morts de sa main. Mais avant ça… Casper, tu as bien écouté ce qu'il disait ?";
+			dialog.text = "Après ce que j'ai entendu de la bouche de ce sbire de Bishop, je n'ai aucun doute que ces pauvres gens sont morts de sa main. Mais avant ça... Casper, tu as bien écouté ce qu'il disait ?";
 			link.l1 = "Et qu'est-ce qui ne t'a pas plu, ma belle ?";
 			link.l1.go = "Mary_14";
 		break;
@@ -412,7 +412,7 @@ void ProcessDialogEvent()
 		
 		case "Barmen_2":
 			dialog.text = "Un des habitants souhaite vous voir – Lewis Gernon. Il dit qu'il a une conversation importante à avoir avec vous.";
-			link.l1 = "C'est la première fois que j'entends ce nom. J'espère qu'il a vraiment quelque chose d'important, pour me déranger comme ça au beau milieu de… mes affaires. Qu'il entre…";
+			link.l1 = "C'est la première fois que j'entends ce nom. J'espère qu'il a vraiment quelque chose d'important, pour me déranger comme ça au beau milieu de... mes affaires. Qu'il entre...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap1_City_5");
 		break;
@@ -455,7 +455,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Lewis_5":
-			dialog.text = "On pensait que vous étiez mort. Comme… Elle était votre femme, ouais, hein ?";
+			dialog.text = "On pensait que vous étiez mort. Comme... Elle était votre femme, ouais, hein ?";
 			link.l1 = "...";
 			link.l1.go = "Lewis_5_add";
 			CharacterTurnByChr(CharacterFromID("WildRose_Lewis"), CharacterFromID("Mary"));
@@ -627,14 +627,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_36":
-			dialog.text = "Et les Casper, c'est quoi, des gens sans nom, sans famille, ouais, hein ? Je devrais sans doute remercier le Seigneur chaque jour que tu m'aies remarquée, moi, et pas quelque pimbêche prétentieuse…";
-			link.l1 = ""+npchar.name+", je ne voulais pas du tout dire ça – tu comprends bien. Les membres d'une famille noble sont liés par le sang – et ce n'est pas du tout la même chose que de simplement porter le même nom de famille que quelqu'un. D'ailleurs, comme je l'ai déjà dit, ce quelqu'un a très bien pu se l'approprier…";
+			dialog.text = "Et les Casper, c'est quoi, des gens sans nom, sans famille, ouais, hein ? Je devrais sans doute remercier le Seigneur chaque jour que tu m'aies remarquée, moi, et pas quelque pimbêche prétentieuse...";
+			link.l1 = ""+npchar.name+", je ne voulais pas du tout dire ça – tu comprends bien. Les membres d'une famille noble sont liés par le sang – et ce n'est pas du tout la même chose que de simplement porter le même nom de famille que quelqu'un. D'ailleurs, comme je l'ai déjà dit, ce quelqu'un a très bien pu se l'approprier...";
 			link.l1.go = "Mary_37";
 		break;
 		
 		case "Mary_37":
 			dialog.text = "Ce n'est pas seulement ça, "+pchar.name+"...";
-			link.l1 = "Chérie, on a eu une longue et dure journée. On a marché des kilomètres dans la jungle, on aurait pu y rester… et après ça, on n'a même pas pu dormir correctement. Rien d'étonnant à ce que des idées bizarres te passent par la tête. On a juste besoin de bien dormir, tous les deux.";
+			link.l1 = "Chérie, on a eu une longue et dure journée. On a marché des kilomètres dans la jungle, on aurait pu y rester... et après ça, on n'a même pas pu dormir correctement. Rien d'étonnant à ce que des idées bizarres te passent par la tête. On a juste besoin de bien dormir, tous les deux.";
 			link.l1.go = "Mary_38";
 		break;
 		
@@ -691,7 +691,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_47":
-			dialog.text = "Pas du tout, mon cher, ce n'est pas ça. C'est juste que j'ai soudain réalisé que je ne sais absolument rien sur ma famille. Toi, tu es le fils d'une famille noble. Les gars du navire, de temps en temps, racontent des choses sur leurs proches. Et moi, je n'ai rien à raconter – je n'ai jamais connu mes parents. Merde, je ne sais même pas où je suis née…";
+			dialog.text = "Pas du tout, mon cher, ce n'est pas ça. C'est juste que j'ai soudain réalisé que je ne sais absolument rien sur ma famille. Toi, tu es le fils d'une famille noble. Les gars du navire, de temps en temps, racontent des choses sur leurs proches. Et moi, je n'ai rien à raconter – je n'ai jamais connu mes parents. Merde, je ne sais même pas où je suis née...";
 			link.l1 = "N'est-ce pas sur l'Île de la Justice ?";
 			link.l1.go = "Mary_48";
 		break;
@@ -815,7 +815,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Schmidt_4":
-			dialog.text = "Eh bien, certaines choses ont changé depuis votre départ de l'Île. Donald et Eddie arrivent à tenir les gens en main. Pour l'instant. Mais qui sait ce qui arrivera demain ? C'est le vieux Donnie qui a lancé tout ça…";
+			dialog.text = "Eh bien, certaines choses ont changé depuis votre départ de l'Île. Donald et Eddie arrivent à tenir les gens en main. Pour l'instant. Mais qui sait ce qui arrivera demain ? C'est le vieux Donnie qui a lancé tout ça...";
 			link.l1 = "J'ai eu tant de mal à empêcher un massacre sur l'Île, et c'est pour que vous jouiez encore aux petits soldats ici ? Et ça fait longtemps qu'il traîne sur l'anneau extérieur ?";
 			link.l1.go = "Schmidt_5";
 			link.l2 = "Les exercices, c'est bien, mais est-ce que ça ne risque pas de fragiliser encore plus la trêve déjà bancale ? Et ça fait combien de temps que Grinspie fait marcher les gars au pas ?";
@@ -875,7 +875,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mary_71":
-			dialog.text = "Tout est vraiment resté comme avant. Toutes les choses sont à leur place – comme si je n'étais jamais partie d'ici… C'est ici qu'on s'est rencontrés pour la première fois, "+pchar.name+". Tu te souviens ?";
+			dialog.text = "Tout est vraiment resté comme avant. Toutes les choses sont à leur place – comme si je n'étais jamais partie d'ici... C'est ici qu'on s'est rencontrés pour la première fois, "+pchar.name+". Tu te souviens ?";
 			link.l1 = "Bien sûr ! Tu leur as tellement mis la raclée que je me suis dit – faudrait pas que je me retrouve à leur place !";
 			link.l1.go = "Mary_72";
 			DelLandQuestMark(npchar);
@@ -901,7 +901,7 @@ void ProcessDialogEvent()
 		
 		case "Mary_75":
 			dialog.text = "Laquelle ?";
-			link.l1 = "Aucune femme ne t'arrive à la cheville. Ta grâce, ta voix… et ce pourpoint rouge. Je n'ai pas eu la moindre chance de te résister. J'avoue, je me suis toujours demandé : pourquoi lui ? Pourquoi un pourpoint rouge, et pas une robe, une chemise ou un corset ?";
+			link.l1 = "Aucune femme ne t'arrive à la cheville. Ta grâce, ta voix... et ce pourpoint rouge. Je n'ai pas eu la moindre chance de te résister. J'avoue, je me suis toujours demandé : pourquoi lui ? Pourquoi un pourpoint rouge, et pas une robe, une chemise ou un corset ?";
 			link.l1.go = "Mary_76";
 		break;
 		
@@ -945,7 +945,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Grinspy_2":
-			dialog.text = "Mieux que ce que j'attendais. On a répété l'embarquement sur les navires ennemis, l'assaut des cabines… Bref, on a bossé comme il faut. J'ai peut-être un peu trop poussé les gars, mais ça ne leur a fait que du bien. Ça faisait longtemps qu'ils ne s'étaient pas dégourdi les jambes, oh, ça faisait longtemps, ha ha.";
+			dialog.text = "Mieux que ce que j'attendais. On a répété l'embarquement sur les navires ennemis, l'assaut des cabines... Bref, on a bossé comme il faut. J'ai peut-être un peu trop poussé les gars, mais ça ne leur a fait que du bien. Ça faisait longtemps qu'ils ne s'étaient pas dégourdi les jambes, oh, ça faisait longtemps, ha ha.";
 			link.l1 = "Et alors, si je peux me permettre, qu'est-ce qui t'a poussé à de tels exploits ? Tu t'ennuyais sur l'Île, ouais, hein ?";
 			link.l1.go = "Grinspy_3";
 		break;
@@ -1066,7 +1066,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Grinspy_18":
-			dialog.text = "Je suis arrivé sur l'Île il y a un peu moins de vingt ans, déjà après ta naissance. Tu étais encore une toute petite, tu courais et tu rampais sous les tables et les tabourets, ne laissant aucun répit à Éric Udette… Bien sûr, je lui ai demandé d'où venait cette petite tornade, et il m'a répondu que tu étais née sur l'Île quelques années plus tôt. Il n'a rien dit à propos de ton père ou de ta mère. Et s'il l'a fait – soit je ne m'en souviens pas, soit je l'ai oublié…";
+			dialog.text = "Je suis arrivé sur l'Île il y a un peu moins de vingt ans, déjà après ta naissance. Tu étais encore une toute petite, tu courais et tu rampais sous les tables et les tabourets, ne laissant aucun répit à Éric Udette... Bien sûr, je lui ai demandé d'où venait cette petite tornade, et il m'a répondu que tu étais née sur l'Île quelques années plus tôt. Il n'a rien dit à propos de ton père ou de ta mère. Et s'il l'a fait – soit je ne m'en souviens pas, soit je l'ai oublié...";
 			link.l1 = "...";
 			link.l1.go = "Grinspy_18_add";
 		break;
@@ -1102,7 +1102,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Grinspy_22":
-			dialog.text = "Je ne pense pas qu'elle t'en veuille. Mais ne la bousculez pas trop – j'ai entendu dire qu'elle était souffrante. On ne sait jamais, hein…";
+			dialog.text = "Je ne pense pas qu'elle t'en veuille. Mais ne la bousculez pas trop – j'ai entendu dire qu'elle était souffrante. On ne sait jamais, hein...";
 			link.l1 = "...";
 			link.l1.go = "Grinspy_22_add";
 		break;
@@ -1157,7 +1157,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jillian_3":
-			dialog.text = "Salut à toi aussi, Mary. Et à vous, "+pchar.name+". Aurélie est malade, tu ne le savais pas ? Je veille sur elle à la demande de frère Julian. Il me donne des potions que je lui fais boire, mais… on dirait que ça ne marche pas vraiment. En ce moment, elle est dans la cabine, à la poupe, elle dort. Je l'y ai emmenée pour pouvoir ranger ici.";
+			dialog.text = "Salut à toi aussi, Mary. Et à vous, "+pchar.name+". Aurélie est malade, tu ne le savais pas ? Je veille sur elle à la demande de frère Julian. Il me donne des potions que je lui fais boire, mais... on dirait que ça ne marche pas vraiment. En ce moment, elle est dans la cabine, à la poupe, elle dort. Je l'y ai emmenée pour pouvoir ranger ici.";
 			link.l1 = "...";
 			link.l1.go = "Jillian_3_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Jillian_clone"), CharacterFromID("Mary"));
@@ -1283,7 +1283,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jillian_16":
-			dialog.text = "Je n'en crois pas mes oreilles ! Mais c'est… un impie !";
+			dialog.text = "Je n'en crois pas mes oreilles ! Mais c'est... un impie !";
 			link.l1 = "Et ça, c'est une femme mourante, à deux doigts d'oublier jusqu'à son propre nom. Ouais, c'est un sorcier, mais j'ai entendu dire qu'ils sont capables de beaucoup, vraiment beaucoup. Et s'il arrive à lui rendre la raison — est-ce que ça compte vraiment, sa foi, maintenant ?";
 			link.l1.go = "Jillian_18";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
@@ -1292,7 +1292,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jillian_17":
-			dialog.text = "Je n'en crois pas mes oreilles ! Mais c'est… un impie !";
+			dialog.text = "Je n'en crois pas mes oreilles ! Mais c'est... un impie !";
 			link.l1 = "Et ça, c'est une femme mourante, à deux doigts d'oublier jusqu'à son propre nom. Oui, c'est un sorcier, mais j'ai entendu dire qu'ils sont capables de beaucoup, vraiment beaucoup. Et s'il peut lui rendre la raison — est-ce que sa foi a encore la moindre importance ?";
 			link.l1.go = "Jillian_18";
 			AddCharacterExpToSkill(pchar, "Repair", 100);
@@ -1305,7 +1305,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jillian_19":
-			dialog.text = "Et moi, je vous assure à tous les deux que si jamais quelqu'un apprend ça… Vous imaginez seulement ce qui va se passer ici ? Les autres habitants n'aimeront pas ça, et alors les narvals — encore moins !";
+			dialog.text = "Et moi, je vous assure à tous les deux que si jamais quelqu'un apprend ça... Vous imaginez seulement ce qui va se passer ici ? Les autres habitants n'aimeront pas ça, et alors les narvals — encore moins !";
 			link.l1 = "Vous avez raison. Ce n'est pas Chimisetu qu'il faut amener ici, mais Aurélie qu'il faut conduire à lui.";
 			link.l1.go = "Jillian_20";
 		break;
@@ -1504,20 +1504,20 @@ void ProcessDialogEvent()
 			dialog.text = "...";
 			link.l1 = "Merci, Chimiset ! Je ne sais même pas comment te remercier...";
 			link.l1.go = "Chimset_14";
-			link.l2 = "Eh ben ça alors, Chimiset – t'as réussi ! J'en doutais pas une seconde, ouais, hein…";
+			link.l2 = "Eh ben ça alors, Chimiset – t'as réussi ! J'en doutais pas une seconde, ouais, hein...";
 			link.l2.go = "Chimset_15";
 		break;
 		
 		case "Chimset_14":
 			dialog.text = "Tous les Rivadans te seront à jamais redevables, mon ami ! Les portes du 'Protecteur' te seront toujours ouvertes.";
-			link.l1 = "J'espère que je n'aurai plus à vous déranger… Mary, Aurélie, il faut qu'on retourne sur le 'Pluton’.";
+			link.l1 = "J'espère que je n'aurai plus à vous déranger... Mary, Aurélie, il faut qu'on retourne sur le 'Pluton’.";
 			link.l1.go = "Chimset_15_add";
 			ChangeCharacterComplexReputation(pchar, "nobility", 2);
 		break;
 		
 		case "Chimset_15":
 			dialog.text = "Tous les Rivadans te seront à jamais redevables, mon ami ! Les portes du 'Protecteur' te seront toujours ouvertes.";
-			link.l1 = "J'espère que je n'aurai plus à vous déranger… Mary, Aurélie, il faut qu'on retourne sur le 'Pluton’.";
+			link.l1 = "J'espère que je n'aurai plus à vous déranger... Mary, Aurélie, il faut qu'on retourne sur le 'Pluton’.";
 			link.l1.go = "Chimset_15_add";
 			AddCharacterExpToSkill(pchar, "Fortune", 100);
 		break;
@@ -1630,7 +1630,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_21":
-			dialog.text = "Ne t'en fais pas, Mary, je ne suis pas si mal en point pour l'instant, ha ha… J'ai bien entendu ce que tu m'as dit. Mais, puisque je vis vraiment sur l'Île depuis plus longtemps que tout le monde, j'espère que tu respecteras mon âge et que tu feras preuve de compréhension…";
+			dialog.text = "Ne t'en fais pas, Mary, je ne suis pas si mal en point pour l'instant, ha ha... J'ai bien entendu ce que tu m'as dit. Mais, puisque je vis vraiment sur l'Île depuis plus longtemps que tout le monde, j'espère que tu respecteras mon âge et que tu feras preuve de compréhension...";
 			link.l1 = "...";
 			link.l1.go = "Oreli_21_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1652,7 +1652,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_23":
-			dialog.text = "Ah, je regarde les jeunes d'aujourd'hui et… non, non, on ne se comportait pas comme ça avec les aînés à notre époque. Mais toi, tu n'es pas concerné, bien sûr. Je voulais juste dire qu'on s'en sortira mieux si je réponds à tes questions une par une, plutôt que toutes en même temps...";
+			dialog.text = "Ah, je regarde les jeunes d'aujourd'hui et... non, non, on ne se comportait pas comme ça avec les aînés à notre époque. Mais toi, tu n'es pas concerné, bien sûr. Je voulais juste dire qu'on s'en sortira mieux si je réponds à tes questions une par une, plutôt que toutes en même temps...";
 			link.l1 = "...";
 			link.l1.go = "Oreli_23_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1707,7 +1707,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_28":
-			dialog.text = "Ce qui nous intéresse, c'est le navire sur lequel mes parents sont arrivés ici. Avec moi… ou sans moi ?";
+			dialog.text = "Ce qui nous intéresse, c'est le navire sur lequel mes parents sont arrivés ici. Avec moi... ou sans moi ?";
 			link.l1 = "...";
 			link.l1.go = "Oreli_28_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1825,7 +1825,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_39":
-			dialog.text = "Mary, chérie, je t'en prie… Ne m'assaille pas avec autant de questions…";
+			dialog.text = "Mary, chérie, je t'en prie... Ne m'assaille pas avec autant de questions...";
 			link.l1 = "...";
 			link.l1.go = "Oreli_39_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
@@ -1931,7 +1931,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Oreli_52":
-			dialog.text = "Bien sûr que non ! Je voulais dire qu'on tombe parfois sur des objets – une bague, un pistolet gravé, un sabre de récompense… On ne pose pas souvent de questions à ce sujet. On ne ramènera pas la personne, et des conflits en plus, ça ne sert à rien.";
+			dialog.text = "Bien sûr que non ! Je voulais dire qu'on tombe parfois sur des objets – une bague, un pistolet gravé, un sabre de récompense... On ne pose pas souvent de questions à ce sujet. On ne ramènera pas la personne, et des conflits en plus, ça ne sert à rien.";
 			link.l1 = "Est-ce que Geoffrey ou John Casper avaient des objets reconnaissables ?";
 			link.l1.go = "Oreli_53";
 		break;
@@ -1965,7 +1965,7 @@ void ProcessDialogEvent()
 		
 		case "Oreli_57":
 			dialog.text = "Peut-être que vous voulez aussi savoir combien de canons il avait et de quel calibre ils étaient ? Mon cher, savez-vous combien de navires ont sombré ici au fil des ans ? Et vous pensez que je me souviens de chacun d'eux ? En plus, il n'y a eu que quelques survivants de ce navire-là – il n'a même pas tenu une journée à flot, vous savez...";
-			link.l1 = "C'est clair… Je comprends, vingt ans se sont écoulés. Merci de ne pas avoir oublié au moins ce qu'on nous avait raconté.";
+			link.l1 = "C'est clair... Je comprends, vingt ans se sont écoulés. Merci de ne pas avoir oublié au moins ce qu'on nous avait raconté.";
 			link.l1.go = "Oreli_58";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
 		break;
@@ -2037,14 +2037,14 @@ void ProcessDialogEvent()
 		
 		case "Grinspy_32":
 			dialog.text = "Content de l'entendre. Vraiment. Mais vous avez encore besoin de quelque chose, tous les deux, n'est-ce pas ? Alors, qu'est-ce que vous avez découvert ?";
-			link.l1 = "Mary est née ici, sur l'Île, en juin 1638. Sa mère, Teresa, est morte juste après l'accouchement. Son père – un certain Casper – a disparu sans laisser de traces quelques jours après la naissance de Mary. On ne sait rien de lui, à part que son prénom commence par un 'J’. Certains pensent qu'il n'a pas fini en nourriture pour crabes dans les bas-fonds du coin, mais qu'il a quitté l'Île à bord d'une des tartanes des contrebandiers…";
+			link.l1 = "Mary est née ici, sur l'Île, en juin 1638. Sa mère, Teresa, est morte juste après l'accouchement. Son père – un certain Casper – a disparu sans laisser de traces quelques jours après la naissance de Mary. On ne sait rien de lui, à part que son prénom commence par un 'J’. Certains pensent qu'il n'a pas fini en nourriture pour crabes dans les bas-fonds du coin, mais qu'il a quitté l'Île à bord d'une des tartanes des contrebandiers...";
 			link.l1.go = "Grinspy_34";
 			AddCharacterExpToSkill(pchar, "Sneak", 100);
 		break;
 
 		case "Grinspy_33":
 			dialog.text = "Content de l'entendre. Vraiment. Mais vous avez encore besoin de quelque chose, tous les deux, n'est-ce pas ? Alors, qu'est-ce que vous avez découvert ?";
-			link.l1 = "Mary est née ici, sur l'Île, en juin 1638. Sa mère, Teresa, est morte juste après l'accouchement. Son père – un certain Casper – a disparu comme par magie quelques jours après la naissance de Mary. On ne sait rien de lui, à part que son prénom commence par un 'J’. Certains pensent qu'il n'a pas fini en nourriture pour crabes dans les bas-fonds du coin, mais qu'il a quitté l'Île à bord d'une des tartanes des contrebandiers…";
+			link.l1 = "Mary est née ici, sur l'Île, en juin 1638. Sa mère, Teresa, est morte juste après l'accouchement. Son père – un certain Casper – a disparu comme par magie quelques jours après la naissance de Mary. On ne sait rien de lui, à part que son prénom commence par un 'J’. Certains pensent qu'il n'a pas fini en nourriture pour crabes dans les bas-fonds du coin, mais qu'il a quitté l'Île à bord d'une des tartanes des contrebandiers...";
 			link.l1.go = "Grinspy_34";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
 		break;
@@ -2091,7 +2091,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Grinspy_40":
-			dialog.text = "Tu n'es pas bête, "+pchar.name+"Contrairement à beaucoup ici. Ouais, c'est à peu près comme ça que ça se passe. Personnellement, cette paperasse me sort par les yeux, mais on le faisait déjà à l'époque d'Alan Milroe et de ceux qui dirigeaient le clan 'Narval' avant lui. On tient ce genre de registres – et même plus : on note aussi les navires que les Rivadans ou les pirates ont atteints avant nous. Mais dans ces cas-là, évidemment, on n'a aucune idée de qui était à bord, ni de ce qu'il y avait…";
+			dialog.text = "Tu n'es pas bête, "+pchar.name+"Contrairement à beaucoup ici. Ouais, c'est à peu près comme ça que ça se passe. Personnellement, cette paperasse me sort par les yeux, mais on le faisait déjà à l'époque d'Alan Milroe et de ceux qui dirigeaient le clan 'Narval' avant lui. On tient ce genre de registres – et même plus : on note aussi les navires que les Rivadans ou les pirates ont atteints avant nous. Mais dans ces cas-là, évidemment, on n'a aucune idée de qui était à bord, ni de ce qu'il y avait...";
 			link.l1 = "D'après le fait que les parents de Mary ont été amenés après le naufrage sur le 'Cérès Smithy', c'est donc les Narvals qui ont trouvé leur navire. Donc, il doit y avoir un registre correspondant.";
 			link.l1.go = "Grinspy_41";
 		break;
@@ -2123,7 +2123,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Dexter_1":
 			dialog.text = "Ah, "+pchar.name+" Entre, entre. Tu viens me voir pour une raison, mon ami, ou c'est juste une visite de courtoisie ?";
-			link.l1 = "Cette fois, c'est du sérieux. Disons que c'est… personnel.";
+			link.l1 = "Cette fois, c'est du sérieux. Disons que c'est... personnel.";
 			link.l1.go = "WildRose_Dexter_2";
 			DelLandQuestMark(npchar);
 		break;
@@ -2200,7 +2200,7 @@ void ProcessDialogEvent()
 
        case "WildRose_Dexter_12":
 			dialog.text = "Oui. Mais parfois, il n'y a tout simplement pas de vent. Mer d'huile — et là, aucun skipper ne peut y faire quoi que ce soit. Tu restes juste assis sur le gaillard arrière, tu regardes l'eau immobile, et tu te demandes ce que le diable va bien pouvoir se passer ensuite. C'est pareil avec Eddie et son pote Chimisetu — ils préparent quelque chose, je le sens dans mes tripes, et ça ne présage rien de bon, par le tonnerre !";
-			link.l1 = "Tu devrais peut-être te bouger un peu et aller parler à Edward en face. Ou mieux encore, vous réunir tous les trois, avec Donald aussi, et mettre les choses à plat franchement. Ce serait toujours mieux que de plonger à nouveau l'Île dans un bain de sang. Enfin bon… Revenons à ce qui m'amène.";
+			link.l1 = "Tu devrais peut-être te bouger un peu et aller parler à Edward en face. Ou mieux encore, vous réunir tous les trois, avec Donald aussi, et mettre les choses à plat franchement. Ce serait toujours mieux que de plonger à nouveau l'Île dans un bain de sang. Enfin bon... Revenons à ce qui m'amène.";
 			link.l1.go = "WildRose_Dexter_13";
 		break;
 
@@ -2223,7 +2223,7 @@ void ProcessDialogEvent()
         break;
 
         case "WildRose_Dexter_16":
-            dialog.text = "Je pense pareil, mon ami. Vu qu'il m'a donné les nouveaux registres sans poser de questions. En plus, j'ai eu l'impression qu'il était même, d'une certaine façon, content de se débarrasser de ces vieilleries… Qui sait, peut-être que Milroe s'est tout simplement débarrassé des papiers des décennies passées… Il les a brûlés, ou alors peut-être…";
+            dialog.text = "Je pense pareil, mon ami. Vu qu'il m'a donné les nouveaux registres sans poser de questions. En plus, j'ai eu l'impression qu'il était même, d'une certaine façon, content de se débarrasser de ces vieilleries... Qui sait, peut-être que Milroe s'est tout simplement débarrassé des papiers des décennies passées... Il les a brûlés, ou alors peut-être...";
             link.l1 = "Non, c'est pas possible.";
             link.l1.go = "WildRose_Dexter_16_Add";
         break;
@@ -2241,13 +2241,13 @@ void ProcessDialogEvent()
         break;
 
         case "WildRose_Dexter_17_1":
-			dialog.text = "Il accordait beaucoup d'importance à tout ce qui concernait les archives de l'Île. Il les considérait comme une part de son histoire. Et l'histoire — pas seulement celle de ce lieu — c'était une véritable passion pour Alan, oui. Il étudiait tous les documents historiques à sa portée, les livres… Parfois, je me disais qu'il aurait fait un bien meilleur érudit qu'un bretteur — je le lui ai même dit une fois.";
+			dialog.text = "Il accordait beaucoup d'importance à tout ce qui concernait les archives de l'Île. Il les considérait comme une part de son histoire. Et l'histoire — pas seulement celle de ce lieu — c'était une véritable passion pour Alan, oui. Il étudiait tous les documents historiques à sa portée, les livres... Parfois, je me disais qu'il aurait fait un bien meilleur érudit qu'un bretteur — je le lui ai même dit une fois.";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Dexter_18";
 		break;
 
        case "WildRose_Dexter_17_2":
-			dialog.text = "Il traitait avec beaucoup de soin tous les écrits concernant l'Île. Il les considérait comme une partie de son histoire. Et l'histoire, pas seulement celle de cet endroit d'ailleurs, était une vraie passion pour Alan, ouais, hein ? Il étudiait tous les documents historiques et livres auxquels il avait accès… Parfois, je me disais qu'il aurait fait un bien meilleur savant qu'un bagarreur — une fois, je le lui ai même dit.";
+			dialog.text = "Il traitait avec beaucoup de soin tous les écrits concernant l'Île. Il les considérait comme une partie de son histoire. Et l'histoire, pas seulement celle de cet endroit d'ailleurs, était une vraie passion pour Alan, ouais, hein ? Il étudiait tous les documents historiques et livres auxquels il avait accès... Parfois, je me disais qu'il aurait fait un bien meilleur savant qu'un bagarreur — une fois, je le lui ai même dit.";
 			link.l1 = "Peut-être qu'il aurait vraiment dû préférer les lunettes, le papier et la plume à l'épée et au pistolet — il foulerait peut-être encore les planches pourries des navires d'ici. Mais si Milroe tenait tant aux archives, qu'est-ce qu'il a fait de tous ces documents ? Je veux bien croire qu'il ait pu ruiner un papier avec de l'encre par accident — mais il y en avait des dizaines, voire des centaines, non ?";
 			link.l1.go = "WildRose_Dexter_18";
 		break;
@@ -2499,7 +2499,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Chimiset_23":
 			dialog.text = "Des dizaines et des dizaines d'années, mon ami. Je suis arrivé ici enfant, mais déjà assez malin — à bord d'un navire négrier. Mon histoire ne diffère guère de beaucoup d'autres que tu as pu entendre ici. Une tempête, un naufrage... Le galion anglais dont la cale me servait de prison n'a même pas atteint l'anneau extérieur : il s'est brisé en deux en heurtant un des récifs, où la vague l'avait projeté.";
-			link.l1 = "Comment as-tu survécu ? Les récifs sont quand même assez loin de l'anneau extérieur, et rejoindre la côte depuis là-bas, avec des vagues de tempête… c'est, disons-le franchement, pas une mince affaire…";
+			link.l1 = "Comment as-tu survécu ? Les récifs sont quand même assez loin de l'anneau extérieur, et rejoindre la côte depuis là-bas, avec des vagues de tempête... c'est, disons-le franchement, pas une mince affaire...";
 			link.l1.go = "WildRose_Chimiset_24";
 		break;
 
@@ -2599,7 +2599,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Chimiset_35":
-			dialog.text = "Je ne me souviens de rien de particulier, mon ami. Son visage s'est presque effacé de ma mémoire – vingt ans ont passé… Mais son regard – ça, je m'en souviens très bien. Je n'ai parlé à cet homme qu'une seule fois, mais le regard de ses yeux gris – les mêmes que ceux de Mary – je ne l'oublierai jamais. Il y avait là un mélange de désespoir, de peur, comme une antilope traquée, et en même temps – une rage et une détermination dignes d'un lion…";
+			dialog.text = "Je ne me souviens de rien de particulier, mon ami. Son visage s'est presque effacé de ma mémoire – vingt ans ont passé... Mais son regard – ça, je m'en souviens très bien. Je n'ai parlé à cet homme qu'une seule fois, mais le regard de ses yeux gris – les mêmes que ceux de Mary – je ne l'oublierai jamais. Il y avait là un mélange de désespoir, de peur, comme une antilope traquée, et en même temps – une rage et une détermination dignes d'un lion...";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Chimiset_35_add";
 		break;
@@ -2759,7 +2759,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Chimiset_50":
 			dialog.text = "Je dirai seulement ce que d'autres ne manqueront pas de vous dire aussi : on n'a jamais retrouvé son corps. Peut-être qu'il s'est caché au fond d'une barque, ou alors on lui a tranché la gorge dans cette cellule et on a donné son cadavre aux crabes...";
-			link.l1 = "Le fait qu'il ait disparu en même temps que le départ de ces trafiquants plaide plutôt pour la première option — ce genre de coïncidence n'existe pas. Et peut-être qu'il a laissé échapper quelque chose sur ses projets ? S'il s'est enfui, il l'a fait en laissant ici sa fille nouveau-née — ce qui, d'un certain point de vue, est plutôt sensé : un nourrisson n'aurait sans doute pas survécu à une traversée vers Cuba dans une barcasse… Mais il comptait sûrement revenir la chercher.";
+			link.l1 = "Le fait qu'il ait disparu en même temps que le départ de ces trafiquants plaide plutôt pour la première option — ce genre de coïncidence n'existe pas. Et peut-être qu'il a laissé échapper quelque chose sur ses projets ? S'il s'est enfui, il l'a fait en laissant ici sa fille nouveau-née — ce qui, d'un certain point de vue, est plutôt sensé : un nourrisson n'aurait sans doute pas survécu à une traversée vers Cuba dans une barcasse... Mais il comptait sûrement revenir la chercher.";
 			link.l1.go = "WildRose_Chimiset_51";
 		break;
 
@@ -2770,7 +2770,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Chimiset_52":
-			dialog.text = "Je ne peux pas éclairer ce que j'ignore, mon ami. Et Domingo non plus ne vous racontera plus rien – il s'est noyé il y a bien quinze ans. On ne sait pas si on lui a fendu le crâne ou s'il était juste saoul – il aimait bien ça, lui…";
+			dialog.text = "Je ne peux pas éclairer ce que j'ignore, mon ami. Et Domingo non plus ne vous racontera plus rien – il s'est noyé il y a bien quinze ans. On ne sait pas si on lui a fendu le crâne ou s'il était juste saoul – il aimait bien ça, lui...";
 			link.l1 = "Mais peut-être que Domingo tenait un journal... ou qu'il a raconté cette conversation avec Joshua à son frère Julian ?";
 			link.l1.go = "WildRose_Chimiset_52_add";
 		break;
@@ -2839,7 +2839,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Julian_5":
 			dialog.text = "Très spirituel, mon fils. Tu dois te rappeler que ce n'est pas l'homme qui mène à la lumière, mais le Seigneur – et, en Le suivant, souviens-toi que Ses voies sont impénétrables.";
-			link.l1 = "Je vais faire court, frère Julian. Nous essayons de découvrir tout ce que nous pouvons sur les parents de Mary. Pour sa mère, Teresa, c'est à peu près clair — elle est arrivée sur l'Île avec son mari et est morte en couches une semaine plus tard. Mais le père… Il a disparu quelques jours après la naissance de Mary, en s'évadant du 'Tartarus'. D'après les rumeurs, le dernier à lui avoir parlé ici serait le padre Domingo — votre prédécesseur.";
+			link.l1 = "Je vais faire court, frère Julian. Nous essayons de découvrir tout ce que nous pouvons sur les parents de Mary. Pour sa mère, Teresa, c'est à peu près clair — elle est arrivée sur l'Île avec son mari et est morte en couches une semaine plus tard. Mais le père... Il a disparu quelques jours après la naissance de Mary, en s'évadant du 'Tartarus'. D'après les rumeurs, le dernier à lui avoir parlé ici serait le padre Domingo — votre prédécesseur.";
 			link.l1.go = "WildRose_Julian_6";
 		break;
 
@@ -3037,7 +3037,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Sesil_3":
-			dialog.text = "Il s'agit de mes parents, Cécile. Pour ma mère, on a déjà découvert tout ce qu'on pouvait… Elle est morte juste après ma naissance. Mais mon père… il a disparu sans laisser de trace quelques jours plus tard. On pense plutôt qu'il n'est pas mort, ouais, hein ?";
+			dialog.text = "Il s'agit de mes parents, Cécile. Pour ma mère, on a déjà découvert tout ce qu'on pouvait... Elle est morte juste après ma naissance. Mais mon père... il a disparu sans laisser de trace quelques jours plus tard. On pense plutôt qu'il n'est pas mort, ouais, hein ?";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Sesil_3_add";
 			CharacterTurnByChr(CharacterFromID("LSC_Sesil"), CharacterFromID("Mary"));
@@ -3121,7 +3121,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Sesil_10":
-			dialog.text = "Et alors, qu'est-ce qu'il y a à raconter ? Il a balancé ces deux-là à l'eau, ils ont coulé comme des pierres, et lui, on l'a maîtrisé et emmené sur le 'Tartarus’. Et ils ont bien fait — qui sait encore qui ce bandit aurait voulu noyer…";
+			dialog.text = "Et alors, qu'est-ce qu'il y a à raconter ? Il a balancé ces deux-là à l'eau, ils ont coulé comme des pierres, et lui, on l'a maîtrisé et emmené sur le 'Tartarus’. Et ils ont bien fait — qui sait encore qui ce bandit aurait voulu noyer...";
 			link.l1 = "Un tueur ? C'est un peu rude, vous ne trouvez pas, madame Gallard ? On parle d'un homme, d'un officier, qui vient tout juste de perdre sa femme...";
 			link.l1.go = "WildRose_Sesil_11_1";
 			link.l2 = "Je vois que vous n'avez pas la meilleure opinion de lui – on ne dirait pas ça de n'importe quel officier.";
@@ -3162,7 +3162,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Sesil_15":
 			dialog.text = "C'est exactement ce qu'il a dit à notre padre De la Cruz. Et puis, il a aussi ordonné d'appeler la petite Julia...";
-			link.l1 = "Alors c'est ça, ce que veut dire ce 'J.’. Mary Julia Casper… Mais pourquoi alors l'ont-ils appelée Mary ?";
+			link.l1 = "Alors c'est ça, ce que veut dire ce 'J.’. Mary Julia Casper... Mais pourquoi alors l'ont-ils appelée Mary ?";
 			link.l1.go = "WildRose_Sesil_16";
 		break;
 
@@ -3259,7 +3259,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_135":
-			dialog.text = "Mon père était un officier renommé, tu te rends compte ! Mais c'est tellement triste, on n'a jamais eu la chance de se rencontrer. Et on ne saura jamais s'il a réussi à rejoindre le continent, ouais, hein…";
+			dialog.text = "Mon père était un officier renommé, tu te rends compte ! Mais c'est tellement triste, on n'a jamais eu la chance de se rencontrer. Et on ne saura jamais s'il a réussi à rejoindre le continent, ouais, hein...";
 			link.l1 = "S'il était arrivé quelque chose, il serait sûrement retourné au service, et on aurait entendu parler de lui quelque part, non ? Un homme comme lui n'aurait jamais pu rester en place tranquillement – sinon, de qui tu tiendrais ça, hein ?";
 			link.l1.go = "WildRose_Mary_136";
 		break;
@@ -3277,7 +3277,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_138":
-			dialog.text = "Jamais entendu une plus grande bêtise de ma vie, ouais, hein ! "+pchar.name+", t'es le meilleur, t'es vraiment génial ! Merci d'avoir fait tant d'efforts pour m'aider à tout découvrir. C'est tellement important pour moi, ouais, hein ! Mais viens, on va étudier les documents – peut-être qu'on y trouvera quelque chose que notre ami ne nous a pas dit…";
+			dialog.text = "Jamais entendu une plus grande bêtise de ma vie, ouais, hein ! "+pchar.name+", t'es le meilleur, t'es vraiment génial ! Merci d'avoir fait tant d'efforts pour m'aider à tout découvrir. C'est tellement important pour moi, ouais, hein ! Mais viens, on va étudier les documents – peut-être qu'on y trouvera quelque chose que notre ami ne nous a pas dit...";
 			link.l1 = "Bonne idée. On commence tout de suite.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap3_Paperwork_7");
@@ -3351,7 +3351,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Mary_150":
 			dialog.text = "Mais qu'est-ce que tu veux lui demander de plus ? Il me semble qu'elle nous a déjà tout dit, non ?";
-			link.l1 = "Elle a parlé de ce qu'on lui a demandé, et elle a très bien pu oublier un détail important. Peut-être que ton père avait une cicatrice sur le visage, ou qu'il lui manquait un doigt à la main… J'ai du mal à croire qu'un homme capable d'inventer tous ces tours avec le changement de nom du navire, et peut-être même de son propre nom, ait pu disparaître misérablement sur une île ou dans les cachots des Castillans.";
+			link.l1 = "Elle a parlé de ce qu'on lui a demandé, et elle a très bien pu oublier un détail important. Peut-être que ton père avait une cicatrice sur le visage, ou qu'il lui manquait un doigt à la main... J'ai du mal à croire qu'un homme capable d'inventer tous ces tours avec le changement de nom du navire, et peut-être même de son propre nom, ait pu disparaître misérablement sur une île ou dans les cachots des Castillans.";
 			link.l1.go = "WildRose_Mary_151";
 		break;
 
@@ -3362,7 +3362,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_152":
-			dialog.text = "Tu sais, tout ça me donne la chair de poule, ouais, hein ? Je ne sais pas si c'est parce que tout ça est… grisant, ou parce que je me dis que mon père n'était peut-être pas si différent de ce salaud de la plantation Bishop.";
+			dialog.text = "Tu sais, tout ça me donne la chair de poule, ouais, hein ? Je ne sais pas si c'est parce que tout ça est... grisant, ou parce que je me dis que mon père n'était peut-être pas si différent de ce salaud de la plantation Bishop.";
 			link.l1 = "Quoi qu'il en soit, je te promets qu'on fera tout notre possible pour comprendre ce qui se passe. Alors, ne perdons pas de temps. En route !";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap3_Paperwork_9");
@@ -3506,7 +3506,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_164_2":
-			dialog.text = "Cette fouine ne me pardonnera jamais qu'Alan m'ait préférée à elle. Pourtant, elle pourrait bien — vu qu'il n'est plus là… À vrai dire, "+pchar.name+", je préférerais ne pas en parler, ouais, hein.";
+			dialog.text = "Cette fouine ne me pardonnera jamais qu'Alan m'ait préférée à elle. Pourtant, elle pourrait bien — vu qu'il n'est plus là... À vrai dire, "+pchar.name+", je préférerais ne pas en parler, ouais, hein.";
 			link.l1 = "Comme tu veux, ma belle. Alors, on va chercher Aurélie.";
 			link.l1.go = "WildRose_Mary_165";
 			AddCharacterExpToSkill(pchar, "sneak", 100);
@@ -3580,7 +3580,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Oreli_68":
-			dialog.text = "Je ne l'aurais pas vraiment appelé un vieillard… Mais je ne faisais pas trop attention à lui – c'est plutôt Teresa qui m'inquiétait. Il avait l'air mal en point, c'est vrai – on aurait dit un fantôme. Mais il faut dire que toute la semaine où sa femme était sur le point d'accoucher, il n'a presque pas dormi… Il courait partout sur l'Île, sans s'arrêter.";
+			dialog.text = "Je ne l'aurais pas vraiment appelé un vieillard... Mais je ne faisais pas trop attention à lui – c'est plutôt Teresa qui m'inquiétait. Il avait l'air mal en point, c'est vrai – on aurait dit un fantôme. Mais il faut dire que toute la semaine où sa femme était sur le point d'accoucher, il n'a presque pas dormi... Il courait partout sur l'Île, sans s'arrêter.";
 			link.l1 = "Il aimait donc beaucoup sa femme. Et vous, vous passiez beaucoup de temps avec elle, non ? Elle ne parlait jamais de son mari ?";
 			link.l1.go = "WildRose_Oreli_69";
 		break;
@@ -3598,7 +3598,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Oreli_71":
-			dialog.text = "Attendez, les jeunes gens ! J'ai encore quelque chose pour vous… Enfin, plutôt pour toi, Mary.";
+			dialog.text = "Attendez, les jeunes gens ! J'ai encore quelque chose pour vous... Enfin, plutôt pour toi, Mary.";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Oreli_72_a";
 			NPCsLookEachOther("LSC_Oreli", "Mary");
@@ -3625,7 +3625,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Oreli_74":
-			dialog.text = "Le chapeau de ta mère, Thérèse. Elle l'avait avec elle quand les survivants du naufrage ont été amenés sur le 'Cérès Smitty'. Quand Thérèse est morte, j'ai ramassé ce chapeau par terre, près de son lit – puis je l'ai oublié… Je ne m'en suis souvenue qu'aujourd'hui, pendant notre conversation.";
+			dialog.text = "Le chapeau de ta mère, Thérèse. Elle l'avait avec elle quand les survivants du naufrage ont été amenés sur le 'Cérès Smitty'. Quand Thérèse est morte, j'ai ramassé ce chapeau par terre, près de son lit – puis je l'ai oublié... Je ne m'en suis souvenue qu'aujourd'hui, pendant notre conversation.";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Oreli_74_add";
 		break;
@@ -3645,7 +3645,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Oreli_76":
-			dialog.text = "Pardon, Mary – j'aurais dû te la rendre depuis belle lurette… Mais ma mémoire, c'est un vieux tamis percé, tu vois… ";
+			dialog.text = "Pardon, Mary – j'aurais dû te la rendre depuis belle lurette... Mais ma mémoire, c'est un vieux tamis percé, tu vois... ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Oreli_76_add";
 		break;
@@ -3740,7 +3740,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Mary_181":
 			dialog.text = "Mais alors, vers qui devons-nous nous tourner ? Qui a l'argent et les relations pour organiser une telle chose ?";
-			link.l1 = "Eh bien, c'est sûr que le financement des recherches devra venir de nous. Quant aux contacts… Je pense que Fadey le Moscovite pourrait nous aider. Il doit forcément connaître des gens compétents qu'on pourrait envoyer dans les colonies. Ou alors, il saura à qui s'adresser.";
+			link.l1 = "Eh bien, c'est sûr que le financement des recherches devra venir de nous. Quant aux contacts... Je pense que Fadey le Moscovite pourrait nous aider. Il doit forcément connaître des gens compétents qu'on pourrait envoyer dans les colonies. Ou alors, il saura à qui s'adresser.";
 			link.l1.go = "WildRose_Mary_182";
 		break;
 
@@ -3765,7 +3765,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Jillian_52":
-			dialog.text = "Ah, donc vous n'êtes pas au courant. Je vois… Aurélie Bertin est morte cette nuit.";
+			dialog.text = "Ah, donc vous n'êtes pas au courant. Je vois... Aurélie Bertin est morte cette nuit.";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Jillian_52_add";
 		break;
@@ -3775,7 +3775,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Jillian_53":
-			dialog.text = "Quoi ?! C'est pas possible – on lui a parlé juste hier, elle allait très bien. À moins que quelqu'un…";
+			dialog.text = "Quoi ?! C'est pas possible – on lui a parlé juste hier, elle allait très bien. À moins que quelqu'un...";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Jillian_53_add";
 			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("LSC_Jillian_clone"));
@@ -3818,7 +3818,7 @@ void ProcessDialogEvent()
 		
 		case "WildRose_Jillian_57":
 			dialog.text = "Personne ne s'y opposera. C'est plus pratique, et au final plus sûr que de grimper sur des épaves.";
-			link.l1 = "Alors occupez-vous d'organiser les funérailles – Mary va vous aider. Quant à moi, il faut que je parle à quelqu'un…";
+			link.l1 = "Alors occupez-vous d'organiser les funérailles – Mary va vous aider. Quant à moi, il faut que je parle à quelqu'un...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap4_PathToLight_14");
 		break;
@@ -4007,7 +4007,7 @@ void ProcessDialogEvent()
 			dialog.text = "Peut-être bien, ouais. Et puis, Éric disait souvent – et Aurélie était d'accord avec lui – que n'importe quel endroit, c'est d'abord les gens. Pas les maisons, pas les arbres, pas les routes – mais les gens. Quand tu penses à un point sur la carte, tu te souviens d'abord de ceux qui y vivent. Ou qui y ont vécu.";
 			link.l1 = "Je n'y avais jamais pensé. Mais sans doute qu'Érik avait raison – au fond, que vaut une maison où, en y entrant, on ne retrouve plus ni son père ni son frère ?";
 			link.l1.go = "WildRose_Mary_214_1";
-			link.l2 = "Je ne serais pas d'accord. Quand je repense, par exemple, à Paris, ce sont les images des ruelles, les odeurs qui me reviennent… Des gens, je n'en retiens que quelques-uns – les autres ont presque disparu de ma mémoire, alors que ça ne fait que quelques années.";
+			link.l2 = "Je ne serais pas d'accord. Quand je repense, par exemple, à Paris, ce sont les images des ruelles, les odeurs qui me reviennent... Des gens, je n'en retiens que quelques-uns – les autres ont presque disparu de ma mémoire, alors que ça ne fait que quelques années.";
 			link.l2.go = "WildRose_Mary_214_2";
 		break;
 
@@ -4038,7 +4038,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_217":
-			dialog.text = "Je ne sais pas comment l'expliquer. Tu sais, cette odeur de l'air juste avant l'orage ? Rappelle-toi — la première fois que tu es arrivé ici, cette tension qui flottait partout… Tout le monde était prêt à s'arracher la gorge, beaucoup croyaient sentir la poudre et le sang. Après que tu as tué Chad, tout a changé — c'était comme si on pouvait enfin respirer… Mais maintenant, cette sensation est revenue.";
+			dialog.text = "Je ne sais pas comment l'expliquer. Tu sais, cette odeur de l'air juste avant l'orage ? Rappelle-toi — la première fois que tu es arrivé ici, cette tension qui flottait partout... Tout le monde était prêt à s'arracher la gorge, beaucoup croyaient sentir la poudre et le sang. Après que tu as tué Chad, tout a changé — c'était comme si on pouvait enfin respirer... Mais maintenant, cette sensation est revenue.";
 			link.l1 = "Ouais, j'ai ressenti quelque chose comme ça. Mais peut-être que c'est juste l'ambiance ? Après tout, c'est un enterrement...";
 			link.l1.go = "WildRose_Mary_218_1";
 			link.l2 = "Tu es épuisée, "+npchar.name+". Repose-toi – ça ira mieux. Ouais, hein ? Et puis, qui peut se sentir autrement à des funérailles ?";
@@ -4067,7 +4067,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Mary_220":
 			dialog.text = "Ça ne finira pas bien, ouais, hein ?";
-			link.l1 = "Si c'est le cas, alors aujourd'hui ce n'étaient pas seulement les funérailles d'Aurélie Bertin, mais aussi de cette… cité des navires abandonnés.";
+			link.l1 = "Si c'est le cas, alors aujourd'hui ce n'étaient pas seulement les funérailles d'Aurélie Bertin, mais aussi de cette... cité des navires abandonnés.";
 			link.l1.go = "WildRose_Mary_221";
 		break;
 
@@ -4078,7 +4078,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_222":
-			dialog.text = "Maintenant que j'ai vu le monde et compris à quel point il est vaste, cet endroit me paraît… une prison, ouais, hein ? C'est difficile à croire que j'ai grandi ici.";
+			dialog.text = "Maintenant que j'ai vu le monde et compris à quel point il est vaste, cet endroit me paraît... une prison, ouais, hein ? C'est difficile à croire que j'ai grandi ici.";
 			link.l1 = "Et j'ai du mal à croire qu'au milieu de toutes ces épaves ait pu éclore une rose aussi sauvage et magnifique que toi.";
 			link.l1.go = "WildRose_Mary_223";
 		break;
@@ -4196,7 +4196,7 @@ void ProcessDialogEvent()
 		
 		case "WildRose_Mary_251":
 			dialog.text = "Mon Dieu, "+pchar.name+"... Je n'arrive pas à y croire, vraiment pas, ouais, hein ! C'est mon père qui a fait ça ?!";
-			link.l1 = "Apparemment, ouais, "+npchar.name+". Je ne sais pas ce qui l'a poussé à faire ça, ni qui il est, bon sang… Mais il y a peu de chances que ce soit un autre Rupert Casper. Des coïncidences pareilles, ça n'existe pas.";
+			link.l1 = "Apparemment, ouais, "+npchar.name+". Je ne sais pas ce qui l'a poussé à faire ça, ni qui il est, bon sang... Mais il y a peu de chances que ce soit un autre Rupert Casper. Des coïncidences pareilles, ça n'existe pas.";
 			link.l1.go = "WildRose_Mary_252";
 		break;
 
@@ -4213,7 +4213,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_254":
-			dialog.text = "Et maintenant ? On part pour la baie de Chetumal ? Mais s'il nous a tendu un piège ici… qui sait ce qui nous attend là-bas ?";
+			dialog.text = "Et maintenant ? On part pour la baie de Chetumal ? Mais s'il nous a tendu un piège ici... qui sait ce qui nous attend là-bas ?";
 			link.l1 = "Nous avons l'avantage du temps, tant qu'il n'est pas au courant de ce qui s'est passé ici. Profitons-en. Nous partirons en bateau vers la baie, et pour nous aider, nous enverrons un détachement par la terre, mené par l'un des officiers.";
 			link.l1.go = "WildRose_Mary_255";
 		break;
@@ -4876,7 +4876,7 @@ void ProcessDialogEvent()
 			dialog.text = "Je me suis relevé tant bien que mal, j'ai quitté ce village maudit et j'ai atteint la côte, jusqu'à la baie d'Amatique. Là, j'ai croisé des contrebandiers dont le navire avait jeté l'ancre non loin, et je me suis joint à eux en me faisant appeler Rupert Casper — je n'ai pas renoncé à mon prénom, mais j'ai gardé aussi le nom de l'un des responsables de tous mes malheurs. Pour ne jamais oublier pourquoi je me suis retrouvé là.";
 			link.l1 = "Tout le monde est coupable à part vous, Northwood... Sauf vous-même, bien sûr. Enfin, on peut comprendre — des années d'humiliations et de souffrances, et maintenant vous voilà coincé dans ces bois. Comment ne pas perdre la tête, hein ?";
 			link.l1.go = "WildRose_Rupert_80_1";
-			link.l2 = "Vous en avez vu, des choses, Northwood – c'est indéniable. Et vous voilà… Dans les bois, au bout du monde. On ne devient pas fou, ici…";
+			link.l2 = "Vous en avez vu, des choses, Northwood – c'est indéniable. Et vous voilà... Dans les bois, au bout du monde. On ne devient pas fou, ici...";
 			link.l2.go = "WildRose_Rupert_80_2";
 		break;
 
@@ -4911,7 +4911,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_83":
-			dialog.text = "Tu es fou, complètement fou, ouais. Je ne connais ni remède ni médecin qui pourrait te guérir, Rupert Northwood ! Tu as traversé des épreuves terribles, mais… comment peux-tu tout me reprocher à moi ?!";
+			dialog.text = "Tu es fou, complètement fou, ouais. Je ne connais ni remède ni médecin qui pourrait te guérir, Rupert Northwood ! Tu as traversé des épreuves terribles, mais... comment peux-tu tout me reprocher à moi ?!";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Rupert_83_add";
 			CharacterTurnByChr(CharacterFromID("WildRose_Rupert"), CharacterFromID("Mary"));
@@ -4952,7 +4952,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Rupert_87":
-			dialog.text = "Qu'est-ce qu'il y a, bleu ? T'as perdu quelqu'un ? Ha-ha-ha… Ha-ha-ha. HA-HA-HA-HA-HA-HA !!! Oh là là, si tu voyais ta tête, idiot ! Hé, Mason, amène ici mon cadeau pour nos invités.";
+			dialog.text = "Qu'est-ce qu'il y a, bleu ? T'as perdu quelqu'un ? Ha-ha-ha... Ha-ha-ha. HA-HA-HA-HA-HA-HA !!! Oh là là, si tu voyais ta tête, idiot ! Hé, Mason, amène ici mon cadeau pour nos invités.";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_22");
@@ -5014,7 +5014,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_262":
-			dialog.text = "Et si c'était déjà comme ça avant ? Ou bien, s'il était un vaurien, mais un peu moins, et qu'il aimait vraiment ma mère ? Peut-être que tout ça n'a fait que libérer ce qu'il avait au fond de lui ? Et si c'est le cas… et si moi aussi, j'ai quelque chose de lui ? C'est possible, non ? "+pchar.name+", ouais, hein ?";
+			dialog.text = "Et si c'était déjà comme ça avant ? Ou bien, s'il était un vaurien, mais un peu moins, et qu'il aimait vraiment ma mère ? Peut-être que tout ça n'a fait que libérer ce qu'il avait au fond de lui ? Et si c'est le cas... et si moi aussi, j'ai quelque chose de lui ? C'est possible, non ? "+pchar.name+", ouais, hein ?";
 			link.l1 = "Tu as clairement hérité de quelque chose de lui, "+npchar.name+". Dans le combat d’aujourd’hui, je l’ai vu — tu te bats avec la même détermination, le même feu dans les yeux, la même fureur que lui. Mais tu n’as pas sa folie. Tu es différente. Vivante, ouverte, le cœur à nu. C’est pour ça que je t’aime. Et il semble bien que Northwood avait raison : tu tiens de ta mère, pour ce qui est du caractère.";
 			link.l1.go = "WildRose_Mary_263";
 		break;
@@ -5026,7 +5026,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Mary_264":
-			dialog.text = "Tu sais, sur l'Île de la Justice, il n'y a pas tant de distractions que ça. Depuis toute petite, j'ai adoré l'escrime – au début, je me battais avec des garçons, avec des bâtons en bois, et puis après, avec des hommes, avec de vraies lames, ouais, hein ? J'ai toujours voulu être leur égale… mais j'avais l'impression d'être plus faible, même quand je gagnais.\nAlors je rentrais simplement chez moi – et je recommençais à m'exercer. Je m'entraînais pendant des heures, jusqu'à ce que mes bras se mettent à trembler, ouais, hein ? C'est ça, ce fameux feu ? Cette rage dont tu parles ?";
+			dialog.text = "Tu sais, sur l'Île de la Justice, il n'y a pas tant de distractions que ça. Depuis toute petite, j'ai adoré l'escrime – au début, je me battais avec des garçons, avec des bâtons en bois, et puis après, avec des hommes, avec de vraies lames, ouais, hein ? J'ai toujours voulu être leur égale... mais j'avais l'impression d'être plus faible, même quand je gagnais.\nAlors je rentrais simplement chez moi – et je recommençais à m'exercer. Je m'entraînais pendant des heures, jusqu'à ce que mes bras se mettent à trembler, ouais, hein ? C'est ça, ce fameux feu ? Cette rage dont tu parles ?";
 			link.l1 = "D'une certaine façon, ouais. J'ai l'impression que ce feu te donne bien plus de force que tu ne le crois toi-même. Et, que tu le veuilles ou non, c'est un don de ton père. Même s'il n'avait pas l'intention de t'offrir quoi que ce soit.";
 			link.l1.go = "WildRose_Mary_265";
 			locCameraSleep(false);
@@ -5035,7 +5035,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Mary_265":
 			dialog.text = "Tu crois qu'on a bien fait de remuer le passé, ouais, hein ?";
-			link.l1 = "Maintenant qu'on sait tout… ça n'a plus vraiment l'air d'une si bonne idée. Mais si tu veux connaître la vérité, faut être prêt à ce qu'elle ne te plaise pas, ouais, hein ?";
+			link.l1 = "Maintenant qu'on sait tout... ça n'a plus vraiment l'air d'une si bonne idée. Mais si tu veux connaître la vérité, faut être prêt à ce qu'elle ne te plaise pas, ouais, hein ?";
 			link.l1.go = "WildRose_Mary_266";
 		break;
 

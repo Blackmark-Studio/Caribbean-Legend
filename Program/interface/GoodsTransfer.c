@@ -227,7 +227,7 @@ void ShowTransferGoods(int iGood)
 	SetFormatedText("TG_GOODS_CAPTION", sHeader);
 	
 	SendMessage(&GameInterface, "lslss", MSG_INTERFACE_MSG_TO_NODE, "TG_GOODS_PICTURE", 6, "GOODS", sGood); // Ставим картинку
-	sText = GetAssembledString(GetConvertStr(sGood + "_descr", "GoodsDescribe.txt"), &Goods[iGood]);
+	sText = GetAssembledString(GetGoodDescr(&Goods[iGood]), &Goods[iGood]);
 	SetFormatedText("TG_GOODS_INFO", sText);
 	
 }

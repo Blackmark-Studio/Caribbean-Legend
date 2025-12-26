@@ -306,8 +306,7 @@ string IslandGetLocationFromType(string _island, string _type)
 {
 	ref rLoc;
 	int i;
-	int iMaxLoc[2];
-	SetArraySize(&iMaxLoc, MAX_LOCATIONS);
+	int iMaxLoc[MAX_LOCATIONS];
 	int iRandLoc = 0;
 	for(i=1; i<MAX_LOCATIONS; i++)
 	{
@@ -346,8 +345,7 @@ string QuestGetGangLocation(string _areal)	// Получить локацию д
 	int n;
 	string island = GetArealByCityName(_areal);
 	string LocationId, sAreal;
-	int storeArray[2];
-	SetArraySize(&storeArray, MAX_LOCATIONS);
+	int storeArray[MAX_LOCATIONS];
 	int howStore = 0;
 
 	for(n=0; n<MAX_LOCATIONS; n++)
@@ -371,8 +369,7 @@ string QuestGetGangLocation(string _areal)	// Получить локацию д
 
 string QuestGetColony(string _city) // Получить рандомную колонию по аттрибуту NPChar.city, не равную _city
 {
-    int storeArray[2];
-	SetArraySize(&storeArray, MAX_COLONIES);
+    int storeArray[MAX_COLONIES];
     int howStore = 0;
 	string sChrId;
 
@@ -390,8 +387,7 @@ string QuestGetColony(string _city) // Получить рандомную ко�
 
 string GetColonyExpect2Colonies(string _city1, string _city2) // Исключая две колонии
 {
-	int storeArray[2];
-	SetArraySize(&storeArray, MAX_COLONIES);
+	int storeArray[MAX_COLONIES];
 	int howStore = 0;
 	string sChrId;
 	ref rColony;
@@ -658,15 +654,7 @@ void QuestActions()
 	ref sld;
 	int i;
 	CompanionTravel_ProcessAllTravellers(); // Warship. Процессирование компаньонов-путешественников
-	// забираем просроченные лицензии
-	for (i=0; i<4; i++)
-	{
-		if (CheckCharacterItem(pchar, NationShortName(i)+"TradeLicence") && GetDaysContinueNationLicence(i) == -1)
-		{
-			TakeNationLicence(i);
-		}		
-	}
-
+	LICENSE_CheckExpired(); // чекаем просроченную лицензию
 	//************** генератор "Продажный патруль" *********************************
 	if(CheckAttribute(pchar, "questTemp.ReasonToFast"))
 	{
@@ -1141,8 +1129,7 @@ void PoormansInit()
 string GetQuestNationsCity(int _nation)
 {
 	int n, iRes;
-    int storeArray[2];
-	SetArraySize(&storeArray, MAX_COLONIES);
+    int storeArray[MAX_COLONIES];
     int howStore = 0;
 
 	for(n=0; n<MAX_COLONIES; n++)
@@ -1171,14 +1158,13 @@ string GetQuestNationsCity(int _nation)
 string SelectNotEnemyColony(ref NPChar)
 {
 	int n, nation;
-    int storeArray[2];
-	SetArraySize(&storeArray, MAX_COLONIES);
+    int storeArray[MAX_COLONIES];
     int howStore = 0;
 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(npchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "FortOrange" && colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //не на свой остров
+		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "FortOrange" && colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //не на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -1193,13 +1179,13 @@ string SelectNotEnemyColony(ref NPChar)
 string SelectAnyColony(string _City)
 {
 	int n, idx;
-    int storeArray[2];
-	SetArraySize(&storeArray, MAX_COLONIES);
+    int storeArray[MAX_COLONIES];
     int howStore = 0;
 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
-		if (colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "FortOrange" && colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && GetIslandByCityName(_City) != colonies[n].islandLable) //не на свой остров
+		bool bIsSameCity = _City != "" && GetIslandByCityName(_City) == GetIslandByColony(&colonies[n]);
+		if (colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "FortOrange" && colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && !bIsSameCity) //не на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -1213,13 +1199,14 @@ string SelectAnyColony(string _City)
 string SelectAnyColony2(string _City1, string _City2)
 {
 	int n, nation;
-    int storeArray[2];
-	SetArraySize(&storeArray, MAX_COLONIES);
+    int storeArray[MAX_COLONIES];
     int howStore = 0;
 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
-		if (colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "FortOrange" && colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && GetIslandByCityName(_City1) != colonies[n].islandLable && GetIslandByCityName(_City2) != colonies[n].islandLable) //не на свой остров
+		bool bIsSameCity1 = _City1 != "" && GetIslandByCityName(_City1) == GetIslandByColony(&colonies[n]);
+		bool bIsSameCity2 = _City2 != "" && GetIslandByCityName(_City2) == GetIslandByColony(&colonies[n]);
+		if (colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "FortOrange" && colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && !bIsSameCity1 && !bIsSameCity2) //не на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -1482,31 +1469,12 @@ void MaryCelesteInit()
 	String capID = "MaryCelesteCapitan";
 	String seaGroup = "MaryCelesteGroup";
 	int good;
-	
-	// Сцуко.. В функции низя делать как generableGoods[15] = { GOOD_FOOD, GOOD_WEAPON, ... }; - даёт ошибку
-	// Если вынести из функции, то все норм
-	/*int generableGoods[15] = { GOOD_FOOD, GOOD_WEAPON, GOOD_MAHOGANY, GOOD_MEDICAMENT, GOOD_ROPES,
-		GOOD_SANDAL, GOOD_COFFEE, GOOD_CLOTHES, GOOD_EBONY, GOOD_TOBACCO,
-		GOOD_CHOCOLATE, GOOD_WINE, GOOD_RUM, GOOD_CINNAMON, GOOD_LEATHER };*/
-	
-	int generableGoods[15];
-	
-	generableGoods[0] = GOOD_FOOD;
-	generableGoods[1] = GOOD_WEAPON;
-	generableGoods[2] = GOOD_MAHOGANY;
-	generableGoods[3] = GOOD_MEDICAMENT;
-	generableGoods[4] = GOOD_PAPRIKA;
-	generableGoods[5] = GOOD_COPRA;
-	generableGoods[6] = GOOD_COFFEE;
-	generableGoods[7] = GOOD_CLOTHES;
-	generableGoods[8] = GOOD_EBONY;
-	generableGoods[9] = GOOD_TOBACCO;
-	generableGoods[10] = GOOD_CHOCOLATE;
-	generableGoods[11] = GOOD_WINE;
-	generableGoods[12] = GOOD_RUM;
-	generableGoods[13] = GOOD_CINNAMON;
-	generableGoods[14] = GOOD_LEATHER;
-	
+
+	// 2009 -> Сцуко.. В функции низя делать как generableGoods[15] = { GOOD_FOOD, GOOD_WEAPON, ... }; - даёт ошибку
+	// 2026 -> Дождались, теперь можно :)
+
+	int generableGoods[] = {GOOD_FOOD, GOOD_WEAPON, GOOD_MAHOGANY, GOOD_MEDICAMENT, GOOD_PAPRIKA, GOOD_COPRA, GOOD_COFFEE, GOOD_CLOTHES, GOOD_EBONY, GOOD_TOBACCO, GOOD_CHOCOLATE, GOOD_WINE, GOOD_RUM, GOOD_CINNAMON, GOOD_LEATHER};
+
 	character = GetCharacter(NPC_GenerateCharacter(capID , "citiz_45", "man", "man", 50, ENGLAND, -1, true, "citizen"));
 	FantomMakeCoolSailor(character, SHIP_BRIGANTINE, StringFromKey("LSC_Q2Utilite_18"), CANNON_TYPE_CANNON_LBS12, 50, 50, 50);
 	character.name = StringFromKey("LSC_Q2Utilite_19");
@@ -1541,7 +1509,7 @@ void MaryCelesteInit()
 	AddCharacterGoodsSimple(character, GOOD_SAILCLOTH,  50  + rand(50));
 	AddCharacterGoodsSimple(character, GOOD_PLANKS,     20  + rand(30));
 	
-	good = generableGoods[rand(14)];
+	good = generableGoods[rand(GetArraySize(&generableGoods) - 1)];
 	// GetCharacterFreeSpace(ref _refCharacter,int _Goods) - вернет сколько можно положить данного товара в трюм персонажу
 	AddCharacterGoodsSimple(character, good, GetCharacterFreeSpace(character, good) - 1);
 	

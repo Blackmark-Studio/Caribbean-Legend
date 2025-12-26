@@ -37,7 +37,7 @@ void InitPsHeros()
 		{
 			PsHeroQty++;
 			ch = GetCharacter(NPC_GenerateCharacter("PsHero_" + PsHeroQty, "mercen_" + (rand(14)+14), "man", "man", 5, PIRATE, -1, true, "pofficer"));
-			SetNPCModelUniq(ch, "pofficer", "man");
+			SetNPCModelUniqForLoc(ch, "pofficer", "man", nullptr);
 			SetRandomNameToCharacter_Generator(ch);
 			ch.Nation = rand(4); // случайная нация
 			FaceMaker(ch);
@@ -938,8 +938,7 @@ string PGG_FindTargetTown(ref chr)
 string PGG_FindRandomTownByNation(int _nation)
 {
 	int i, n;
-	string sTowns[2];
-	SetArraySize(&sTowns, MAX_COLONIES);
+	string sTowns[MAX_COLONIES];
 	n = 0;
 	for (i = 0; i < MAX_COLONIES; i++)
 	{
@@ -1243,11 +1242,11 @@ string PGG_Event_WorkWithContra(ref rRum)
 		ReOpenQuestHeader("Gen_StrangeInfo");
 		AddQuestRecord("Gen_StrangeInfo", "1");
 		AddQuestUserData("Gen_StrangeInfo", "sName", GetFullName(chr));
-		AddQuestUserData("Gen_StrangeInfo", "sLoc", GetConvertStr(sSmugglersLocation, "LocLables.txt"));
+		AddQuestUserData("Gen_StrangeInfo", "sLoc", GetLocationNameByID(sSmugglersLocation));
 	}
 
 	oPrm.PsHero_Name = GetFullName(chr);
-	oPrm.ContraPlace = GetConvertStr(sSmugglersLocation, "LocLables.txt");
+	oPrm.ContraPlace = GetLocationNameByID(sSmugglersLocation);
 
 	return GetAssembledString(rRum.text, &oPrm);
 }

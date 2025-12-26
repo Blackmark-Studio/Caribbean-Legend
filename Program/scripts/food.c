@@ -142,7 +142,6 @@ void DailyRatsEatGoodsUpdate(ref chref)
     int iGoods = GetRandomGood(FLAG_GOODS_TYPE_EXPORT + FLAG_GOODS_TYPE_IMPORT + FLAG_GOODS_TYPE_UNIQUE, FLAG_GOODS_NONE);
 	if(iGoods == GOOD_BRICK) return;
     int iQuantity = GetCargoGoods(chref, iGoods);
-    int iSeaGoods = LanguageOpenFile("ShipEatGood.txt");
     if (iQuantity > 60 && rand(4) != 2) // шанс не жрать, если весь спектр
     {
         float fSkill = GetSummonSkillFromNameToOld(chref, SKILL_REPAIR) + GetSummonSkillFromNameToOld(chref,SKILL_FORTUNE);
@@ -155,7 +154,7 @@ void DailyRatsEatGoodsUpdate(ref chref)
         //if(LanguageGetLanguage() == "russian") Log_SetStringToLog(RandSwear());
         notification(StringFromKey("food_1") +
                            LinkRandPhrase(StringFromKey("food_2"), StringFromKey("food_3"), StringFromKey("food_4")) +
-                           iQuantity + StringFromKey("food_5") + LanguageConvertString(iSeaGoods, "seg_" + Goods[iGoods].Name), "Rats");
+                           iQuantity + StringFromKey("food_5") + GetGoodsNameSeaSection(&Goods[iGoods]), "Rats");
 
         Statistic_AddValue(pchar, "RatsEatGoods", iQuantity);
                 
@@ -164,7 +163,6 @@ void DailyRatsEatGoodsUpdate(ref chref)
 		AddCharacterExpToSkill(chref, SKILL_REPAIR, iQuantity);
         AddCharacterExpToSkill(chref, SKILL_FORTUNE, iQuantity/10);
     }
-    LanguageCloseFile(iSeaGoods);
 }
 
 // boal food for crew 20.01.2004 -->

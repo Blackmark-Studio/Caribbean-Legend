@@ -198,6 +198,7 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	SendMessage(sld, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", FindItem("Brush_Props"), "Brush_Props", "Saber_hand", 1);
 	LAi_SetActorType(sld);
 	LAi_ActorAnimation(sld, "tutorial_4", "", -1.0);
+    sld.chr_ai.tmpl.ignorecol = "";
 	SetFunctionLocationCondition("SharlieTutorial_SailorCleansFloors", "Quest_Ship_deck_Medium_trade", false);
 	
 	// матрос, который разговаривал с Шарлем, отходит в сторону
@@ -276,7 +277,7 @@ void SharlieTutorial_StartKino()
 	//LAi_SetStayType(pchar);
 	TeleportCharacterToPos(pchar, -11.64, 4.51, 6.28);
 	LAi_SetActorType(pchar);
-	LAi_ActorAnimation(pchar, "tutorial_4", "", -1);
+	LAi_ActorAnimation(pchar, "tutorial_4", "", -1.0);
 	
 	DoQuestFunctionDelay("SharlieTutorial_StartKino_2", 5.0);
 }
@@ -570,7 +571,7 @@ void SharlieTutorial_StartShip(string qName)//начинается морско�
 {	
 	// Корабль
 	pchar.Ship.Type = GenerateShipExt(SHIP_PINNACE, true, pchar);
-	pchar.Ship.name = StringFromKey("SharlieTutorial_6");
+	pchar.Ship.name = GetShipName("Ulysse");
 	SetBaseShipData(pchar);
 	RealShips[sti(pchar.Ship.Type)].ship.upgrades.hull = 2;
 	SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
@@ -1436,7 +1437,7 @@ void SharlieTutorial_windlass_2(string qName)
 	locCameraFromToPos(-10.44, 4.86, -7.03, true, -8.82, 2.37, -9.96);
 	//TeleportCharacterToPosAy(pchar, -8.30, 2.94, -10.69, 3.00);
 	TeleportCharacterToPosAy(pchar, -7.30, 2.94, -10.69, 3.00);
-	LAi_ActorAnimation(pchar, "tutorial_3", "1", 15);
+	LAi_ActorAnimation(pchar, "Breaks the windlass", "1", 15);
 	
 	sld = CharacterFromID("SharlieTutorial_Sailor_2");
 	ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto5");
@@ -1631,6 +1632,7 @@ void SharlieTutorial_cannon_8(string qName)
 	CreateLocationParticles("Ship_cannon_fire", "effect", "effect2", 0, 10, 0, "");
 	DoQuestFunctionDelay("SharlieTutorial_cannon_9", 2.5);
 	AddCharacterSkillPoints(pchar, "Cannons", 1);
+	SetCameraShake(0.5, 5.0, 0.1, 0.1, 0.05, true, false, -1);
 }
 
 void SharlieTutorial_cannon_9(string qName)
@@ -1854,10 +1856,11 @@ void SharlieTutorial_BoxOfBallsFind(string qName)
 
 void SharlieTutorial_SailorCleansFloors(string qName)
 {
-	sld = CharacterFromID("SharlieTutorial_Sailor_11");
+	ref sld = CharacterFromID("SharlieTutorial_Sailor_11");
 	SendMessage(sld, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", FindItem("Brush_Props"), "Brush_Props", "Saber_hand", 1);
 	LAi_SetActorType(sld);
 	LAi_ActorAnimation(sld, "tutorial_4", "", -1.0);
+    sld.chr_ai.tmpl.ignorecol = "";
 	SetFunctionExitFromLocationCondition("SharlieTutorial_SailorCleansFloors_cancel", PChar.location, false);
 }
 
@@ -1911,7 +1914,7 @@ void SharlieTutorial_SeaNearMartinique()
 	SeaCameras_SetShipCameraAy(180.0);
 	
 	pchar.Ship.Type = GenerateShipExt(SHIP_PINNACE, true, pchar);
-	pchar.Ship.name = StringFromKey("SharlieTutorial_6");
+	pchar.Ship.name = GetShipName("Ulysse");
 	SetBaseShipData(pchar);
 	RealShips[sti(pchar.Ship.Type)].ship.upgrades.hull = 2;
 	SetShipSailsFromFile(pchar, "ships/parus_silk.tga");

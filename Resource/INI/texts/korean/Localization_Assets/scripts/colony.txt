@@ -1,0 +1,22 @@
+colony_1 {약품 부족으로 부상당한 @<iTemp> 선원이 사망했습니다}
+colony_2 {@<Pchar.Ship.Name> 에 의료 물자가 거의 남지 않았습니다}
+colony_3 {마을 전투 준비}
+colony_4 {ERROR: 점령 시 도시 우회 경로가 지정되지 않았습니다!!!}
+colony_5 {적군이 제압되었습니다! 길이 열렸습니다.}
+colony_6 {획득 ~}
+colony_7 {획득 ~}
+colony_8 {획득 - 도끼}
+colony_9 {획득함 - Saxon Feather}
+colony_10 {획득함 - Madonna}
+colony_11 {Chevalier Philippe}
+colony_12 {de Poincy}
+colony_13 {lord Thomas}
+colony_14 {Vindzor}
+colony_15 {don Juan}
+colony_16 {de Cordova}
+colony_17 {대령}
+colony_18 {Jonathan Fox}
+colony_19 {우리 도시 @<GetCityName(city)>가 포위당했습니다!}
+colony_20 {포위 해제!}
+colony_21 {우리 도시 @<GetCityName(city)>가 포위당했습니다!}
+colony_22 {우리 도시 @<GetCityName(city)>가 점령당했습니다!}

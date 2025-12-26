@@ -1,1 +1,45 @@
-SourceLeadership { }
+Reaction {Reaktion}
+Action {Entscheidung}
+FactorRelationship0 {Beziehungen zu $key(englandAbl)}
+FactorRelationship1 {Beziehungen zu $key(franceAbl)}
+FactorRelationship2 {Beziehungen zu $key(spainAbl)}
+FactorRelationship3 {Beziehungen zu $key(hollandAbl)}
+FactorRelationshipSmugglers {Beziehungen zu $key(SmugglerAbl)}
+FactorBase {Grundchance}
+FactorShipRank {Schiffsrang}
+FactorShipQty {Staffelgröße}
+FactorFencingL {$key(FencingL)}
+FactorFencingS {$key(FencingS)}
+FactorFencingH {$key(FencingH)}
+FactorPistol {$key(Pistol)}
+FactorFortune {$key(Fortune)}
+FactorLeadership {$key(Leadership)}
+FactorSailing {$key(Sailing)}
+FactorAccuracy {$key(Accuracy)}
+FactorGrappling {$key(Grappling)}
+FactorRepair {$key(Repair)}
+FactorDefence {$key(Defence)}
+FactorCommerce {$key(Commerce)}
+FactorSneak {$key(Sneak)}
+FactorStrength {$key(Strength)}
+FactorPerception {$key(Perception)}
+FactorEndurance {$key(Endurance)}
+FactorCharisma {$key(Charisma)}
+FactorIntellect {$key(Intellect)}
+FactorAgility {$key(Agility)}
+FactorLuck {$key(Luck)}
+DisabledAction {Für diese Aktion fehlt etwas...}
+FactorGun {$key(itmtype_gun|ItemsDescribe.txt)}
+FactorBlade {$key(itmtype_blade|ItemsDescribe.txt)}
+FactorSpyglass {$key(itmtype_spyglass|ItemsDescribe.txt)}
+FactorPatent {$key(itmtype_patent|ItemsDescribe.txt)}
+FactorCirass {$key(itmtype_cirass|ItemsDescribe.txt)}
+FactorMaps {$key(itmtype_maps|ItemsDescribe.txt)}
+FactorTool {$key(itmtype_tool|ItemsDescribe.txt)}
+FactorTalisman {$key(itmtype_talisman|ItemsDescribe.txt)}
+FactorSlot {$key(itmtype_slot|ItemsDescribe.txt)}
+FactorSpecial {$key(itmtype_special|ItemsDescribe.txt)}
+FactorAmmo {$key(itmtype_ammo|ItemsDescribe.txt)}
+FactorLantern {$key(itmtype_lantern|ItemsDescribe.txt)}
+FactorHat {$key(itmtype_hat|ItemsDescribe.txt)}
+FactorMusket {$key(itmtype_musket|ItemsDescribe.txt)}

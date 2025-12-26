@@ -16,7 +16,8 @@ EastIndiaMan {Los barcos de la Compañía de las Indias Orientales reunieron las
 LuggerQuest {El lugre de mensajería fue construido especialmente para las necesidades del servicio de mensajería. Excelentes cualidades de navegación, gran rendimiento contra el viento y un armamento bastante fuerte garantizan la entrega fiable de despachos importantes y pequeñas cargas valiosas.}
 Lugger
 {
-El lugre es un pequeño velero que muchos marineros, especialmente contrabandistas, valoran por su maniobrabilidad y versatilidad. Los lugres compensan su falta de velocidad a toda vela con excelentes ángulos de ceñida.A pesar de su pequeño tamaño, los lugres tienen buena navegabilidad y pueden realizar largos viajes.
+El lugre es un pequeño velero que muchos marineros, especialmente contrabandistas, valoran por su maniobrabilidad y versatilidad. Los lugres compensan su falta de velocidad a toda vela con excelentes ángulos de ceñida.
+A pesar de su pequeño tamaño, los lugres tienen buena navegabilidad y pueden realizar largos viajes.
 }
 Sloop {Con buena velocidad y maniobrabilidad y un armamento sólido para su tamaño, la balandra es un barco patrullero fiable, también adecuado para el reconocimiento.}
 Brigantine {Un tipo legendario de velero. Rápida y maniobrable como una golondrina, la bergantina es especialmente valorada por piratas y aventureros de todo tipo. Su exitoso diseño la hace adecuada para cualquier tarea, desde el combate hasta el comercio.}
@@ -26,7 +27,8 @@ Galeon_l {El galeón fue creado a principios del siglo XVI sobre la base de la c
 Galeon_sm {Un símbolo del poder y la ambición españoles. Las cubiertas brillan con adornos dorados y en la popa se alza la imagen de la Virgen de la Misericordia, patrona del barco. Para algunos, 'Santa Misericordia' es la encarnación del orden, para otros, un temido símbolo de la opresión real. Y algunos incluso ven en ella la verdadera Providencia Divina.}
 LadyBeth
 {
-Un magnífico ejemplo de la construcción naval inglesa, creado para el servicio de patrulla independiente en aguas peligrosas. Esta shniava tiene excelentes cualidades de navegación y un armamento impresionante para su tamaño, lo que le permite competir con barcos de clases superiores.Sus años de servicio militar quedaron atrás, y la gloria de su antiguo dueño ahora atrae más a comerciantes de antigüedades y mapas del tesoro que a lobos de mar.
+Un magnífico ejemplo de la construcción naval inglesa, creado para el servicio de patrulla independiente en aguas peligrosas. Esta shniava tiene excelentes cualidades de navegación y un armamento impresionante para su tamaño, lo que le permite competir con barcos de clases superiores.
+Sus años de servicio militar quedaron atrás, y la gloria de su antiguo dueño ahora atrae más a comerciantes de antigüedades y mapas del tesoro que a lobos de mar.
 }
 Memento {En este barco, es difícil reconocer el antiguo diseño de una goleta inglesa, que compensa su escasa capacidad de navegación con una potente artillería y un casco pesado y duradero. Cubierto de amuletos nativos y empapado de muerte, asusta no solo a los enemigos, sino también a su propia tripulación.}
 Amsterdam {El Amsterdam — buque insignia de la Compañía Neerlandesa de las Indias Occidentales y la nave más espléndida que jamás haya salido de un astillero europeo. Calendarios de inspección y firmas de maestros artesanos marcan cada cañón y pieza vital — nada a bordo del Amsterdam escapa a la documentación y el control. Sus capitanes se eligen tradicionalmente no entre lobos de mar curtidos, sino entre los directores civiles de la Compañía. Y aun así, funciona — presagio de la nueva era que está por llegar.}
@@ -46,7 +48,8 @@ Manowar {Los barcos de línea de segunda clase son la columna vertebral del pode
 Manowar_e {Un barco de línea de primera clase es una verdadera fortaleza flotante. Gracias a su aterradora potencia de fuego, puede enviar al fondo a cualquier oponente con solo unos pocos disparos precisos. Pero incluso las mayores potencias navales no tienen muchos de estos barcos, y se utilizan como buques insignia en las grandes batallas navales.}
 MayFang
 {
-Este xebec tiene un casco aligerado a costa de la resistencia, pero eso lo convierte en un navegante inigualable: ¡en todo el Caribe no hay otro barco capaz de navegar casi contra el viento!Y veinte cañones de calibre medio son un argumento de peso en la competencia marítima.
+Este xebec tiene un casco aligerado a costa de la resistencia, pero eso lo convierte en un navegante inigualable: ¡en todo el Caribe no hay otro barco capaz de navegar casi contra el viento!
+Y veinte cañones de calibre medio son un argumento de peso en la competencia marítima.
 }
 Mirage {A diferencia de los queches bombarderos, los queches corsarios no llevan morteros gigantes diseñados para bombardear fortalezas, sino que tienen un casco más ligero y aerodinámico, lo que mejora sus cualidades de navegación. Incluso los yates de los príncipes envidiarían la velocidad de este queche corsario.}
 Himera {Un barco obra maestra, creado especialmente para las necesidades de la inteligencia naval británica. Por sus características es comparable a los barcos de guerra de tercera clase, manteniendo la facilidad de manejo de los de cuarta clase.}
@@ -65,11 +68,13 @@ Speed {Velocidad: muestra la velocidad máxima actual del barco, teniendo en cue
 Maneuver {Maniobrabilidad: muestra la maniobrabilidad del barco en este momento, teniendo en cuenta todos los factores (carga, habilidades del capitán, daños al barco) y la maniobrabilidad máxima alcanzable.}
 AgainstWind
 {
-El mejor rumbo del barco respecto al viento, en el que puede alcanzar la velocidad máxima. Los valores se expresan en grados.El segundo valor muestra la diferencia entre la dirección actual del viento y el mejor ángulo de rumbo para este barco.
+El mejor rumbo del barco respecto al viento, en el que puede alcanzar la velocidad máxima. Los valores se expresan en grados.
+El segundo valor muestra la diferencia entre la dirección actual del viento y el mejor ángulo de rumbo para este barco.
 }
 Capacity
 {
-Porte: muestra la capacidad actual y máxima del barco. Cuanto más cargado esté el barco, más lento y torpe será.Los cañones instalados en el barco también se tienen en cuenta al calcular el porte. Se pueden quitar del barco para liberar espacio adicional para la carga. Para ello, seleccione los cañones actuales en la lista de parámetros del barco en la interfaz "Barco".
+Porte: muestra la capacidad actual y máxima del barco. Cuanto más cargado esté el barco, más lento y torpe será.
+Los cañones instalados en el barco también se tienen en cuenta al calcular el porte. Se pueden quitar del barco para liberar espacio adicional para la carga. Para ello, seleccione los cañones actuales en la lista de parámetros del barco en la interfaz "Barco".
 }
 Crew {Tripulación: muestra el número actual de tripulantes, así como el mínimo y máximo para este barco.}
 CannonType {Tipo de cañón: muestra el tipo (cañones o culebrinas), el calibre actual y el número de cañones instalados}
@@ -77,15 +82,21 @@ sCannons {Muestra el calibre máximo permitido y el número máximo posible de c
 Crew_Exp {Experiencia de la tripulación}
 Crew_Exp_hint
 {
-La experiencia de la tripulación se divide en tres categorías: marinería (afecta el manejo del barco), artillería (velocidad de recarga y precisión de puntería) y abordaje (eficacia de la tripulación en combate cuerpo a cuerpo).Una tripulación experimentada en menor número puede ser más eficaz que un barco sobrecargado de novatos.La experiencia en las tres categorías se adquiere durante la realización de las acciones correspondientes (maniobras, disparos, abordajes), pero también se pierde si las habilidades adquiridas no se practican durante mucho tiempo.
+La experiencia de la tripulación se divide en tres categorías: marinería (afecta el manejo del barco), artillería (velocidad de recarga y precisión de puntería) y abordaje (eficacia de la tripulación en combate cuerpo a cuerpo).
+Una tripulación experimentada en menor número puede ser más eficaz que un barco sobrecargado de novatos.
+La experiencia en las tres categorías se adquiere durante la realización de las acciones correspondientes (maniobras, disparos, abordajes), pero también se pierde si las habilidades adquiridas no se practican durante mucho tiempo.
 }
 TakeAllGoods_hint {El botón "Transferir todas las mercancías" transfiere mercancías al barco del personaje según su valor específico promedio. Primero se transfieren las mercancías más valiosas, luego las menos valiosas, y así sucesivamente hasta que no quede espacio libre en la bodega.}
 GoodsKeys_hint
 {
-Las teclas de flecha "Izquierda" y "Derecha" en el teclado mueven las mercancías en la fila seleccionada de la tabla por un lote. Si mantiene presionada la tecla Shift, las mercancías se moverán por completo.Al hacer clic derecho en las flechas de la fila con la mercancía en la interfaz, se transfieren diez lotes a la vez.
+Las teclas de flecha "Izquierda" y "Derecha" en el teclado mueven las mercancías en la fila seleccionada de la tabla por un lote. Si mantiene presionada la tecla Shift, las mercancías se moverán por completo.
+Al hacer clic derecho en las flechas de la fila con la mercancía en la interfaz, se transfieren diez lotes a la vez.
 }
 Shipyard_hint
 {
-En el astillero puedes comprar, reparar o vender barcos.El héroe no puede vender su barco si tiene compañeros. Tampoco puedes comprar un barco para un compañero si el héroe no tiene su propio barco.Para cambiar el barco del héroe o del compañero, manteniendo todo el contenido de la bodega y la tripulación, seleccione en la lista de barcos del escuadrón del héroe (en la parte izquierda de la interfaz) el barco que se va a reemplazar por uno nuevo, y en la lista de barcos a la venta en el astillero (en la parte derecha de la interfaz) el deseado, luego haga clic en el botón "Comprar".Para comprar un barco nuevo (asignar un nuevo compañero), primero seleccione una ranura vacía en la lista de la izquierda antes de comprar.
+En el astillero puedes comprar, reparar o vender barcos.
+El héroe no puede vender su barco si tiene compañeros. Tampoco puedes comprar un barco para un compañero si el héroe no tiene su propio barco.
+Para cambiar el barco del héroe o del compañero, manteniendo todo el contenido de la bodega y la tripulación, seleccione en la lista de barcos del escuadrón del héroe (en la parte izquierda de la interfaz) el barco que se va a reemplazar por uno nuevo, y en la lista de barcos a la venta en el astillero (en la parte derecha de la interfaz) el deseado, luego haga clic en el botón "Comprar".
+Para comprar un barco nuevo (asignar un nuevo compañero), primero seleccione una ranura vacía en la lista de la izquierda antes de comprar.
 }
 NoneBoat2 {Sin barco.}

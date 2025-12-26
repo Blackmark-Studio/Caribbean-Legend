@@ -81,10 +81,14 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "Вот, капитан, теперь вы хоть на себя стали похожи. Как себя чувствуете?";
-				// link.l2 = "BetaTest - SP4 Услуги конторы";
-				// link.l2.go = "ClockTower_OfficeServices";
 				if (bBettaTestMode)
 				{
+					link.l2 = "BetaTest - Начать тест квеста ЭПИЛОГ";
+					link.l2.go = "Epilog_Test_Start_1";
+					link.l3 = "BetaTest - КАТСЦЕНА на пинасе";
+					link.l3.go = "Epilog_Test_Start_Kino";
+					link.l4 = "BetaTest - КАТСЦЕНА в поместье де Монпе";
+					link.l4.go = "SharlieEpilog_InEstateDeMonpe";
 					// link.l3 = "BetaTest - Начать тест массовой битвы на Каймане";
 					// link.l3.go = "LadyBeth_Test_Start_CaimanBitvaStrong";
 					// link.l4 = "BetaTest - Начать тест квеста Мэри";	// НЕ ЗАБЫТЬ на релизе это ВЫКЛЮЧИТЬ
@@ -458,14 +462,83 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("LadyBeth_Test_Start_CaimanBitvaStrong");
 		break;
 		
-		case "ClockTower_OfficeServices":
+		case "Epilog_Test_Start_1":
+			dialog.text = "Какое ваше звание?";
+			link.l1     = "Капитан";
+			link.l1.go  = "Epilog_Test_Start_Captain";
+			link.l2     = "Вице-адмирал";
+			link.l2.go  = "Epilog_Test_Start_Admiral";
+			link.l3     = "Генерал-губернатор";
+			link.l3.go  = "Epilog_Test_Start_Guber";
+		break;
+		
+		case "Epilog_Test_Start_Captain":
+			dialog.text = "Так точно, "+GetTitle(NPChar, false)+".";
+			link.l1     = "...";
+			link.l1.go  = "Epilog_Test_Start_2";
+		break;
+		
+		case "Epilog_Test_Start_Admiral":
+			GiveItem2Character(pchar, "patent_fra");
+			EquipCharacterbyItem(pchar, "patent_fra");
+            Items[sti(pchar.EquipedPatentId)].TitulCur = 5; 
+			Items[sti(pchar.EquipedPatentId)].TitulCurNext = 0;
+			ChangeCharacterNationReputation(pchar, FRANCE, 100);
+			dialog.text = "Так точно, "+GetTitle(NPChar, false)+".";
+			link.l1     = "...";
+			link.l1.go  = "Epilog_Test_Start_2";
+		break;
+		
+		case "Epilog_Test_Start_Guber":
+			pchar.questTemp.Patria.GenGovernor = "true";
+			ChangeCharacterNationReputation(pchar, FRANCE, 100);
+			dialog.text = "Так точно, "+GetTitle(NPChar, false)+".";
+			link.l1     = "...";
+			link.l1.go  = "Epilog_Test_Start_2";
+		break;
+		
+		case "Epilog_Test_Start_2":
+			dialog.text = "Кто ваша любимая вайфу, "+GetTitle(NPChar, false)+"?";
+			link.l1     = "Мэри";
+			link.l1.go  = "Epilog_Test_Start_Mary";
+			link.l2     = "Элен";
+			link.l2.go  = "Epilog_Test_Start_Helena";
+			link.l3     = "Тичингиту";
+			link.l3.go  = "Epilog_Test_Start_Tichingitu";
+		break;
+		
+		case "Epilog_Test_Start_Mary":
 			DialogExit();
 			//Телепорт
-			LAi_SetPlayerType(pchar);
-			// InterfaceStates.Buttons.Save.enable = true;
-			// DoQuestFunctionDelay("Tutorial_CameraControlFP", 2.5);
-			bGameMenuStart = false;
-			DoFunctionReloadToLocation("Villemstad_ClockTower", "goto", "goto2", "ClockTower_TEST_OfficeServices");
+			DoFunctionReloadToLocation("FortFrance_church", "barmen", "bar2", "SharlieEpilog_TEST_Mary");
+		break;
+		
+		case "Epilog_Test_Start_Helena":
+			DialogExit();
+			//Телепорт
+			DoFunctionReloadToLocation("FortFrance_church", "barmen", "bar2", "SharlieEpilog_TEST_Helena");
+		break;
+		
+		case "Epilog_Test_Start_Tichingitu":
+			DialogExit();
+			//Телепорт
+			DoFunctionReloadToLocation("FortFrance_church", "barmen", "bar2", "SharlieEpilog_Test_Tichingitu");
+		break;
+		
+		case "Epilog_Test_Start_Kino":
+			DialogExit();
+			pchar.questTemp.SharlieEpilog_gold_L = true;
+			sld = GetCharacter(NPC_GenerateCharacter("SharlieEpilog_Pikar", "Jan_Pikar", "man", "man", sti(pchar.rank), FRANCE, -1, true, "quest"));
+			sld.name = GetCharacterName("Jean");
+			sld.lastname = GetCharacterName("Picard");
+			//Телепорт
+			SharlieEpilog_UlysseInSea();
+		break;
+		
+		case "SharlieEpilog_InEstateDeMonpe":
+			DialogExit();
+			//Телепорт
+			SharlieEpilog_InEstateDeMonpe();
 		break;
 	}
 }

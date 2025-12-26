@@ -19,8 +19,7 @@ void Perk_PerfectBalance(ref chr, ref table, ref function, ref context, string f
 void Perk_Heartbreaker(ref chr, ref table, ref function, ref context, string funcName)
 {
 	int curve = GetAttributeInt(table, HAS + M_WEAPON_CURVATURE);
-	int length = GetAttributeInt(table, HAS + M_WEAPON_LENGTH);
-	if (curve != WEAPON_STRAIGHT || length != WEAPON_LONG) return;
+	if (curve != WEAPON_STRAIGHT) return;
 
 	SetModifierFromSourceDirect(table, FORCE_STRIKE + "_" + M_DAMAGE, PERK_VALUE_HEARTBREAKER, funcName);
 	SetModifierFromSourceDirect(table, FORCE_STRIKE + "_" + M_ACTION_SPEED, PERK_VALUE2_HEARTBREAKER, funcName);
@@ -99,9 +98,8 @@ void Perk_NeckStrike(ref chr, ref table, ref function, ref context, string funcN
 
 void Perk_Conquest(ref chr, ref table, ref function, ref context, string funcName)
 {
-	int curve = GetAttributeInt(table, HAS + M_WEAPON_CURVATURE);
 	int length = GetAttributeInt(table, HAS + M_WEAPON_LENGTH);
-	if (curve != WEAPON_STRAIGHT || length != WEAPON_LONG) return;
+	if (length != WEAPON_LONG) return;
 
 	SetModifierFromSourceDirect(table, FAST_STRIKE  + "_" + M_DAMAGE, PERK_VALUE_CONQUEST, funcName);
 	SetModifierFromSourceDirect(table, BREAK_STRIKE + "_" + M_DAMAGE, PERK_VALUE_CONQUEST, funcName);

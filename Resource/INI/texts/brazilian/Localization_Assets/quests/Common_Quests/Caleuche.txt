@@ -1,0 +1,40 @@
+Caleuche_1 {Tuttuathapak}
+Caleuche_2 { }
+Caleuche_3 {capitão-morto-vivo}
+Caleuche_4 { }
+Caleuche_5 {Nau fantasma}
+Caleuche_6 {Fergus}
+Caleuche_7 {Hooper}
+Caleuche_8 {Você escapou do navio fantasma!}
+Caleuche_9 {Reginald}
+Caleuche_10 {Jackson}
+Caleuche_11 {Harpy}
+Caleuche_12 {xebec 'Harpy'}
+Caleuche_13 {anfitriã morta}
+Caleuche_14 { }
+Caleuche_15 {Chavinavy}
+Caleuche_16 { }
+Caleuche_17 {Esberto}
+Caleuche_18 {Salinas}
+Caleuche_19 {Os Amuletos de Tuttuathapak perderam seu poder!}
+Caleuche_20 {Pressione 'T' para usar}
+Caleuche_21 {O portal está bloqueado!}
+Caleuche_22 {Chavinavy-chefe}
+Caleuche_23 { }
+Caleuche_24 {morto-vivo do templo}
+Caleuche_25 { }
+Caleuche_26 {Nau fantasma no horizonte!}
+Caleuche_27 {Baltazar}
+Caleuche_28 {de Cordes}
+Caleuche_29 { }
+Caleuche_30 {Você se sente mais ágil}
+Caleuche_31 {Você se sente mais resistente}
+Caleuche_32 {Você se sente mais forte}
+Caleuche_33 {Sua intuição se aguça}
+Caleuche_34 {Você se sente mais perspicaz}
+Caleuche_35 {Você se sente mais confiante}
+Caleuche_36 {Você se sente inspirado}
+Caleuche_37 {O navio fantasma está no horizonte!}
+Caleuche_38 {Você desmaiou devido aos ferimentos...}
+Caleuche_39 { }
+Caleuche_40 { }

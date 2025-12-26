@@ -1,0 +1,20 @@
+#QUEST ClockTower
+A Torre do Relógio
+#TEXT	1
+Pelo visto, a WIC negocia mais do que licenças inúteis e ferramentas. Se eu me mostrar valioso para eles, talvez a Companhia também me seja útil. O caminho mais direto é aumentar minha reputação com as colônias holandesas até o nível de Admiração.
+#TEXT	2
+Já fiz o suficiente pela República das Províncias Livres. Hora de conversar com aquele sujeito simpático, Johan, o guarda do Registro Naval.
+#TEXT	3
+É impressionante que essa companhia ainda esteja de pé! Meus dobrões não bastaram para eles, então vou ter que caçar alguns piratas e juntar cinco diários de bordo. Posso conseguir mais, já que deixaram bem claro que o escritório vai pagar muito bem por eles no futuro. Se eu soubesse disso antes...
+#TEXT	4
+Registros coletados. Hora de conversar com Johan.
+#TEXT	5
+Que dia longo. Willemstad vai se lembrar da chegada do Diretor por muito tempo. E embora agora eu seja um cliente e van Doorn tenha sido incrivelmente cortês comigo... apareceu outra proposta de trabalho. Preciso invadir a torre à noite e roubar o contrato original de van Doorn. Me prometeram uma recompensa em dobrões e acesso ilimitado aos serviços do escritório.
+#TEXT	6
+Consegui o contrato! Van Doorn já passou do tempo naquela torre. O vice Visser vai ficar radiante de felicidade. Posso encontrá-lo durante o dia, no ala central do prédio.
+#TEXT	7
+Agora só resta esperar. Daqui a alguns meses, devo visitar Visser para saber como foi o golpe dele.
+#TEXT	8
+Acho que já passou tempo suficiente. Hora de ver como está Visser em Curaçao.
+#TEXT	9
+É isso. O Vice... ou melhor, Diretor Maarten Visser conseguiu o que queria e cumpriu sua palavra: agora posso usar os serviços do escritório a qualquer momento, sem aquelas marcações ridículas. Van Doorn, claro, já descobriu meu envolvimento nesse negócio duvidoso, mas não tenho nada a temer diante do poder de sua fragata lendária. A nau capitânia da WIC só virá atrás da minha alma se os holandeses me considerarem uma ameaça séria aos seus interesses. Dizem que esse navio é uma verdadeira joia do mar do Caribe... tentador, maldição.

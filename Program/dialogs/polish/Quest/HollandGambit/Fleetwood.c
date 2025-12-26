@@ -373,7 +373,7 @@ void ProcessDialogEvent()
 		case "InTerksShore":
 			DelLandQuestMark(npchar);
 			pchar.quest.Fleetwood_ShoreOver.over = "yes";//снять таймер
-			dialog.text = "Domyślam się, że to ty jesteś łajdakiem, który porwał moją Abigail. Charlie nie wrócił… więc to też twoja robota, prawda?";
+			dialog.text = "Domyślam się, że to ty jesteś łajdakiem, który porwał moją Abigail. Charlie nie wrócił... więc to też twoja robota, prawda?";
 			link.l1 = "Masz rację, panie Fleetwood. To byłem ja. Charlie pomógł mi zdobyć zaufanie Abigail, wykorzystując list, który sam jej napisałeś. Ale darujmy sobie gadki - przejdźmy do interesów. Przyniosłeś pieniądze?";
 			link.l1.go = "InTerksShore_1";
 		break;

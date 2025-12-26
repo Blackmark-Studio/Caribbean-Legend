@@ -7,7 +7,8 @@
 #define FLAG_SHIP_TYPE_ANY 15
 
 #define SHIP_TYPE_COUNT 4
-int gShipTypeFlags[SHIP_TYPE_COUNT] = {1, 2, 4, 8}
+//int gShipTypeFlags[SHIP_TYPE_COUNT] = {BIT_1, BIT_2, BIT_3, BIT_4};
+int gShipTypeFlags[SHIP_TYPE_COUNT] = {1, 2, 4, 8};
 string gTypeFields[SHIP_TYPE_COUNT] = {"Merchant", "War", "Raider", "Universal"};
 
 #define FLAG_SHIP_CLASS_1  1
@@ -18,7 +19,8 @@ string gTypeFields[SHIP_TYPE_COUNT] = {"Merchant", "War", "Raider", "Universal"}
 #define FLAG_SHIP_CLASS_6 32
 #define FLAG_SHIP_CLASS_7 64
 
-int gShipClassFlags[8] = {0, 1, 2, 4, 8, 16, 32, 64}
+//int gShipClassFlags[8] = {0, BIT_1, BIT_2, BIT_3, BIT_4, BIT_5, BIT_6, BIT_7};
+int gShipClassFlags[8] = {0, 1, 2, 4, 8, 16, 32, 64};
 
 #define FLAG_SHIP_NATION_ENGLAND   1
 #define FLAG_SHIP_NATION_FRANCE    2
@@ -28,7 +30,8 @@ int gShipClassFlags[8] = {0, 1, 2, 4, 8, 16, 32, 64}
 #define FLAG_SHIP_NATION_ANY      31
 
 string gNationFields[MAX_NATIONS] = {"england", "france", "spain", "holland", "pirate"};
-int gShipNationFlags[MAX_NATIONS] = {1, 2, 4, 8, 16}
+//int gShipNationFlags[MAX_NATIONS] = {BIT_1, BIT_2, BIT_3, BIT_4, BIT_5};
+int gShipNationFlags[MAX_NATIONS] = {1, 2, 4, 8, 16};
 
 int GetClassFlag(int class) {
 	if (class > 7)
@@ -50,52 +53,28 @@ int GetNationFlag(int nation) {
 
 // Usage: GetRandomShipType(FLAG_SHIP_CLASS_2 + FLAG_SHIP_CLASS_3 + FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ENGLAND + FLAG_SHIP_NATION_PIRATE)
 // Gives random war or merchant, english or pirate ship with class 2 or 3 or 4
-int GetRandomShipType(int classFlags, int typeFlags, int nationFlags) 
+int GetRandomShipType(int classFlags, int typeFlags, int nationFlags)
 {
-	int shipArr[2];
-	SetArraySize(&shipArr, GetArraySize(&ShipsTypes));
-	int shipArrScore[2];
-	SetArraySize(&shipArrScore, GetArraySize(&ShipsTypes));
-	
+    return GetRandomShipTypeEx(classFlags, typeFlags, nationFlags, false);
+}
+
+int GetRandomShipTypeEx(int classFlags, int typeFlags, int nationFlags, bool bNationsOnlyForExclusive)
+{
+    int size = GetArraySize(&ShipsTypes);
+	int shipArr[size];
+	int shipArrScore[size];
+
 	int shipCount = 0;
 	int shipTotalScore = 0;
-	string sShipFlag;
-	for (int i = 0; i < GetArraySize(&ShipsTypes); i++)
+	for (int i = 0; i < size; i++)
 	{
 		ref refShip;
 		makeref(refShip,ShipsTypes[i]);
-		if (CheckAttribute(refShip, "QuestShip"))
-		{
-			sShipFlag = refShip.QuestShip;
-			if (sti(sShipFlag) == 1)
-			{
-				continue;
-			}
-		}
-		
-		if (CheckAttribute(refShip, "ShipHolder"))
-		{
-			sShipFlag = refShip.ShipHolder;
-			if (sti(sShipFlag) == 1)
-			{
-				continue;
-			}
-		}
-		
-		if (CheckAttribute(refShip, "CanEncounter"))
-		{
-			sShipFlag = refShip.CanEncounter;
-			if (sti(sShipFlag) == 0)
-			{
-				continue;
-			}
-		}
 
-		
-		if (!CheckAttribute(refShip, "Class"))
-		{
-			continue;
-		}
+        if (!CheckAttribute(refShip, "Class")) continue;
+		if (CheckAttribute(refShip, "QuestShip")  && sti(refShip.QuestShip)  == 1) continue;
+		if (CheckAttribute(refShip, "ShipHolder") && sti(refShip.ShipHolder) == 1) continue;
+		if (CheckAttribute(refShip, "CanEncounter") && sti(refShip.CanEncounter) == 0) continue;
 
 		int class = sti(refShip.Class);
 
@@ -115,28 +94,43 @@ int GetRandomShipType(int classFlags, int typeFlags, int nationFlags)
 		{
 			continue;
 		}
-		
-		bool match = false;
-		for (int k = 0; k < MAX_NATIONS; k++)
+
+		if (!bNationsOnlyForExclusive)
 		{
-			
-			string sNation = gNationFields[k];
-			if (!CheckAttribute(refShip, "nation."+sNation))
+			bool match = false;
+			for (int k = 0; k < MAX_NATIONS; k++)
+			{
+
+				string sNation = gNationFields[k];
+				if (!CheckAttribute(refShip, "nation."+sNation))
+				{
+					continue;
+				}
+				string sNationFlag = refShip.nation.(sNation);
+				if (sti(sNationFlag) == 1 && and(nationFlags, gShipNationFlags[k]) != 0)
+				{
+					match = true;
+					break;
+				}
+			}
+
+			if (!match)
 			{
 				continue;
 			}
-			string sNationFlag = refShip.nation.(sNation);
-			if (sti(sNationFlag) == 1 && and(nationFlags, gShipNationFlags[k]) != 0)
+		}
+
+		if (CheckAttribute(refShip, "NationExclusive"))
+		{
+		    int iNationExclusive = sti(refShip.NationExclusive);
+			int iNationFlag = gShipNationFlags[iNationExclusive];
+			if (!and(nationFlags, iNationFlag))
 			{
-				match = true;
-				break;
+				continue;
 			}
 		}
-		
-		if (!match) 
-		{
-			continue;
-		}
+
+
 
 		shipArr[shipCount] = i;
 		

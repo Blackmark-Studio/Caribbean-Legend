@@ -1,6 +1,5 @@
 //  boal 14.02.06 меню дебугера
 string totalInfo;
-int idLngFile = -1;
 int remInt = 0;
 
 void InitInterface(string iniName)
@@ -112,7 +111,7 @@ void CalculateInfoData()
 							"F31 - " + descF31 + NewStr() +
 	                        "F32 - " + descF32 + NewStr() +
 							"F33 - " + descF33;
-	// перевод строки (по другому у меня не вышло) +LanguageConvertString(idLngFile,"new_string");
+	// перевод строки (по другому у меня не вышло) +NewStr();
     // тут высчитываем нужную информацию и выводим в totalInfo <--
 }
 void ProcCommand()
@@ -770,9 +769,9 @@ void CalculateInfoDataF9()
 	for (i = 0; i <iCitizensQuantity; i++)
 	{
 		string sType = "pirate";
-		int iChar = NPC_GeneratePhantomCharacter(sType, iNation, MAN, 1);
+		int iChar = NPC_GeneratePhantomCharacterForLoc(sType, iNation, MAN, 1, loc);
 		ref chr = &characters[iChar];
-		SetNPCModelUniq(chr, sType, MAN);
+		SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 		chr.City = Colonies[iColony].id;
 		chr.CityType = "citizen";
 		sTemp = PlaceCharacter(chr, "sit", "random_free"); // может не быть вовсе, если все места заняты
@@ -796,7 +795,6 @@ string descF10 = "Бессмертие вкл/выкл";
 
 void CalculateInfoDataF10()
 {
-    idLngFile = LanguageOpenFile("ItemsDescribe.txt");
     // -->
     totalInfo = descF10;
     ref mc;
@@ -814,9 +812,8 @@ void CalculateInfoDataF10()
         Log_SetStringToLog("God mode ON");
     }
  // <--
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
-    LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
 
     // Статистика по читам
@@ -895,17 +892,15 @@ void CalculateInfoDataF12() {
 
 void CalculateInfoDataF13()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 	// -->
 	totalInfo = descF13;
 
 	bEncOffGlobal = !bEncOffGlobal;
-	if (bEncOffGlobal) totalInfo = totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_off") + NewStr();
-	else totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_on") + NewStr();
+	if (bEncOffGlobal) totalInfo = totalInfo + NewStr() + GetSimpleItemKey("StrF27_off") + NewStr();
+	else totalInfo + NewStr() + GetSimpleItemKey("StrF27_on") + NewStr();
     // <--
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
-    LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT",totalInfo);
     
 	// Статистика по читам
@@ -915,7 +910,6 @@ void CalculateInfoDataF13()
 string descF13 = "Начать квест 'На пару с Акулой'";
 void CalculateInfoDataF13()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 	// -->
 	totalInfo = descF13;
 	
@@ -1110,9 +1104,8 @@ void CalculateInfoDataF13()
     setWDMPointXZ("pirates_town");
 	DoQuestReloadToLocation("Pirates_townhall", "reload", "reload1", "");
     
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
-    LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT",totalInfo);
     
 	// Статистика по читам
@@ -1123,7 +1116,6 @@ string descF14 = "Начать тест пиратской линейки";
 
 void CalculateInfoDataF14()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 	// -->
 	totalInfo = descF14;
 	
@@ -1361,9 +1353,8 @@ void CalculateInfoDataF14()
 	
 	DoQuestReloadToLocation("Lavega_port", "reload", "sea", "");
 	
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
-    LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT",totalInfo);
     ProcessCancelExit();
     
@@ -1375,7 +1366,6 @@ string descF15 = "Начать тест квеста Долго и счастл�
 
 void CalculateInfoDataF15()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 	// -->
 	totalInfo = descF15;
 
@@ -1698,9 +1688,8 @@ void CalculateInfoDataF15()
 	
 	LongHappy_Start();
 	
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
-    LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT",totalInfo);
     ProcessCancelExit();
     
@@ -1712,7 +1701,6 @@ string descF16 = "+5 дней";
 
 void CalculateInfoDataF16()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 	// -->
 	totalInfo = descF16;
 	
@@ -1722,9 +1710,8 @@ void CalculateInfoDataF16()
 		AddDataToCurrent(0, 0, 1);
 	}
     // <
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
-    LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT",totalInfo);
     
 	// Статистика по читам
@@ -1735,7 +1722,6 @@ string descF17 = "Список квестов в pchar";
 
 void CalculateInfoDataF17()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 	// -->
 	totalInfo = descF17;
 
@@ -1760,15 +1746,14 @@ void CalculateInfoDataF17()
 
         curItem = GetAttributeN(rootItems, i);
 		j = sti(GetAttributeValue(curItem));
-		totalInfo = totalInfo+"   "+i+"= "+//LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
+		totalInfo = totalInfo+"   "+i+"= "+//NewStr() + NewStr() +
         GetAttributeName(curItem);// + " : " + GetAttributeValue(curItem);
 
     }
     if (i <= remInt*60) remInt = 0;
     // <
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
-    LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT",totalInfo);
     
 	// Статистика по читам
@@ -1779,15 +1764,13 @@ string descF18 = "ChangeShowIntarface - для скринов без надпи�
 
 void CalculateInfoDataF18()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 	// -->
 	totalInfo = descF18;
 
 	ChangeShowIntarface();
     // <
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
-    LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT",totalInfo);
     
 	// Статистика по читам

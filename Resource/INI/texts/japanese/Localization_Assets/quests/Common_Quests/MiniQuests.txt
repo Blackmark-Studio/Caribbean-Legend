@@ -1,0 +1,24 @@
+MiniQuests_1 { }
+MiniQuests_2 { }
+MiniQuests_3 { }
+MiniQuests_4 { }
+MiniQuests_5 { }
+MiniQuests_6 { }
+MiniQuests_7 { }
+MiniQuests_8 { }
+MiniQuests_9 {商船が黒旗を掲げて襲いかかってきた！}
+MiniQuests_10 {甲板長}
+MiniQuests_11 {乗客@<GetFullName(sld)>があなたの船を離れました！}
+MiniQuests_12 {チャプレン@<GetFullName(sld)>があなたの船を離れました！}
+MiniQuests_13 {バーケンティン『@<pchar.GenQuest.Marginpassenger.ShipName1>』}
+MiniQuests_14 {交易船団}
+MiniQuests_15 { }
+MiniQuests_16 { }
+MiniQuests_17 {敵船が水平線に現れた！}
+MiniQuests_18 {敵の船団が水平線に現れた！}
+MiniQuests_19 {海賊船が水平線に現れた！}
+MiniQuests_20 {@<pchar.GenQuest.FindFugitive.Name> は熱病で急死した！}
+MiniQuests_21 {@<sld.name>はあなたの船で拘束されています}
+MiniQuests_22 {1時間が過ぎた…}
+MiniQuests_23 {、それは~}
+MiniQuests_24 { }

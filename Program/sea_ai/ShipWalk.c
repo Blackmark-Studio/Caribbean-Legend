@@ -18,14 +18,14 @@ void Ship_Walk_Delete()
 	DeleteClass(&Sailors);
 }
 
-	string sModelGroup[8] = {"LowCharacters/sold_eng_",	// солдаты англичане [0]
-							 "LowCharacters/sold_fra_",	// солдаты французы [1]
-							 "LowCharacters/sold_spa_",	// солдаты испанцы [2]
-							 "LowCharacters/sold_hol_",	// солдаты голландцы [3]
-							 "LowCharacters/pirate_",	// пираты [4]
-							 "LowCharacters/trader_",	// торговцы [5]
-							 "LowCharacters/skeleton_",	// скелеты [6]
-							 "LowCharacters/man_"};		// обычные моряки [7]
+string sModelGroup[8] = {"LowCharacters/sold_eng_",	// солдаты англичане [0]
+                         "LowCharacters/sold_fra_",	// солдаты французы [1]
+                         "LowCharacters/sold_spa_",	// солдаты испанцы [2]
+                         "LowCharacters/sold_hol_",	// солдаты голландцы [3]
+                         "LowCharacters/pirate_",	// пираты [4]
+                         "LowCharacters/trader_",	// торговцы [5]
+                         "LowCharacters/skeleton_",	// скелеты [6]
+                         "LowCharacters/man_"};		// обычные моряки [7]
 	
 void Ship_Walk_Create()
 {

@@ -49,7 +49,7 @@ void UPGRD_UpgradeShipAudit(ref realShip)
 {
 	string sourceName = "Audit";
 	realShip.tuning.Audit = true;
-	// realShip.tuning.Audit.offset = -10 + rand(20); // JOKERTODO мб позже вкрутить случайный поворот/офсет
+	// realShip.tuning.Audit.offset = -10 + rand(20); // JOKERBACKLOG мб позже вкрутить случайный поворот/офсет
 	// realShip.tuning.Audit.offset = rand(10);
 	UPGRD_SetShipModifier(realShip, M_SHIP_CAPACITY, 0.10, sourceName);
 	UPGRD_SetShipModifier(realShip, M_SHIP_SPEED, 0.05, sourceName);

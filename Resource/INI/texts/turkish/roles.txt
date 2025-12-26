@@ -1,0 +1,63 @@
+portman {Liman Şefi}
+drinker_0 {Bu sulardaki en ünlü korsan}
+drinker_1 {Gerçek hikayelerin usta anlatıcısı}
+drinker_2 {Emekli Escorial Özel Ajanı}
+drinker_3 {Son derece bilgili bir sohbetçi}
+drinker_4 {Her işte yetkin uzman}
+drinker_5 {Neşeli, korkusuz ve dürüst bir ruh}
+drinker_6 {Başarısının doruğunda muhteşem bir adam}
+drinker_7 {Ufak tefek işlerin başı}
+drinker_8 {Sarhoş Nöbetin Kıdemlisi}
+drinker_9 {DWIC’te hatırı sayılır birinin ikinci dereceden kuzeni}
+pofficer {Aday}
+hovernor {Vali}
+tavernkeeper {Meyhaneci}
+waitress {Garson Kız}
+trader {Tüccar}
+shipyarder {Gemi Ustası}
+priest {Rahip}
+Ghovernor {Genel Vali}
+Phovernor {Baron}
+usurer {Bankacı}
+poorman {Dilenci}
+gipsy {Çingene Kadın}
+captain {Kaptan}
+sailor {Denizci}
+marginal_town {Korsan}
+noble {Asil}
+monk {Keşiş}
+chaplain {Papaz}
+potion_merchant {Simyacı}
+veteran_merchant {Demirci}
+armourer_merchant {Silahçı}
+monk_merchant {Kutsal Emanetler Satıcısı}
+indian_merchant {Falcı}
+lightman_merchant {Fenerci}
+cemeteryman_merchant {Mezarlık Bekçisi}
+legend {Efsane}
+soldier_town {Muhafız}
+banditos {Cellat}
+patrol {Devriye}
+comandante {Komutan}
+prisonboss {Komutan}
+whore {Kız}
+hostess {Ev Sahibi}
+enemy {Düşman}
+wife {Eş}
+kukulkan {Kukulkan}
+mercen {Paralı asker}
+monster {Ölümsüz}
+captain_trader {Serbest Tüccar}
+mtraxx_vanguard {Tirax'ın Öncüsü}
+fgirl {Metres}
+deadman {Yaşayan Ölü}
+friend {Arkadaş}
+duelist {Kabadayı}
+smuggler {Kaçakçı}
+AffairOfHonor_tavern {Umutsuz Sarhoş}
+hovernon_wife {Valinin Karısı}
+HeadSailor {Kıdemli denizci}
+HeadSailorPlus {Mürettebatın Sesi}
+Director {Yönetici}
+Deputy Director {Müdür Yardımcısı}
+Naval Registry Guard {Donanma Sicil Muhafızı}

@@ -40,6 +40,21 @@ void ProcessDialogEvent()
 				break;
 			}
 			dialog.text = "Czy czegoś potrzebujesz, mój synu?";
+			//--> Эпилог
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_Benua"))
+			{
+				dialog.text = "Witaj, moje dziecko. Cieszę się, że przyszedłeś. Chciałem z tobą porozmawiać.";
+				link.l1 = ""+TimeGreeting()+", ojcze. Słucham.";
+				link.l1.go = "SharlieEpilog_Benua_1";
+				DelLandQuestMark(npchar);
+				break;
+			}
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_Benua_back"))
+			{
+				link.l99 = "Chciałbym porozmawiać o moim ojcu.";
+				link.l99.go = "SharlieEpilog_Benua_3";
+			}
+			//<-- Эпилог
 			if (CheckAttribute(pchar, "questTemp.Sharlie.FastStart") && !CheckAttribute(npchar, "quest.FastStart") && !CheckAttribute(npchar, "quest.meet")) // ещё не виделись
 			{
 				link.l1 = "Tak, ojcze. Potrzebuję twojej pomocy. Nazywam się "+GetFullName(pchar)+". Michel de Monper doradził mi, bym z tobą porozmawiał.";
@@ -259,6 +274,18 @@ void ProcessDialogEvent()
 		
 		case "help":
 			dialog.text = "Jak mogę ci pomóc, mój synu?";
+			//--> Эпилог
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_Benua_DublonsLater"))
+			{
+				link.l1 = "Wróćmy do kwestii zapłaty za dostarczenie rozkazów.";
+				link.l1.go = "SharlieEpilog_Benua_DublonsLater_2";
+			}
+			if (CheckAttribute(npchar, "SharlieEpilog_BenuaRazgovor_2"))
+			{
+				link.l1 = "Chcę wysłać rozkaz...";
+				link.l1.go = "SharlieEpilog_Benua_Delivery";
+			}
+			//<-- Эпилог
 			if (ChangeCharacterNationReputation(pchar, SPAIN, 0) < 0 && !CheckAttribute(npchar, "quest.relation"))
 			{
 				link.l1 = "Mam kłopoty z hiszpańskimi władzami.";
@@ -974,6 +1001,491 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("WildRose_Etap3_Paperwork_5");
 		break;
 		//<-- Дикая Роза
+		
+		//--> Эпилог
+		case "SharlieEpilog_Benua_1":
+			dialog.text = "Głęboko niepokoi mnie stan twojego ojca. Nie wiem, czy wspomniał ci o tym w liście, ale w swoim posłaniu do mnie przyznał, że opuszczają go siły fizyczne i przypuszcza, że nie pożyje już długo.";
+			link.l1 = "Wspominał, że choroba nie ustępuje... Ale o swoich obawach chyba milczał.";
+			link.l1.go = "SharlieEpilog_Benua_2";
+			DeleteAttribute(pchar, "questTemp.SharlieEpilog_Benua");
+		break;
+
+		case "SharlieEpilog_Benua_2":
+			dialog.text = "Więcej powiedzieć ci nie mogę – to wszystko, co mi przekazał, ale jedno jest jasne: boi się stanąć przed Panem, nie zobaczywszy cię ponownie.";
+			link.l1 = "Mówił o tym. Przyznam, sam myślałem, by go odwiedzić... Ale...";
+			link.l1.go = "SharlieEpilog_Benua_3";
+		break;
+
+		case "SharlieEpilog_Benua_3":
+			if (!CheckAttribute(npchar, "SharlieEpilog_BenuaRazgovor_1"))
+			{
+				dialog.text = "Synu mój, tylko Panu wiadomo, ile każdemu z nas zostało. Nie zwlekaj ze spotkaniem: czasem jeden uścisk potrafi przynieść duszy spokój, którego nie da tysiąc modlitw.";
+				npchar.SharlieEpilog_BenuaRazgovor_1 = true;
+			}
+			else
+			{
+				dialog.text = ""+pchar.name+", mam nadzieję, że nie będziesz dłużej odkładać wizyty u niego? Pamiętaj, że czas działa na twoją niekorzyść...";
+			}
+			link.l1 = "Ma ojciec rację, ojcze. Natychmiast rozpocznę przygotowania do wyprawy. Zważywszy na moje obecne stanowisko – mogę potrzebować sporo czasu, by wszystko uporządkować...";
+			link.l1.go = "SharlieEpilog_Benua_5";
+			link.l2 = "Rozumiem obawy ojca, święty ojcze, i obiecuję się nad tym zastanowić. Ale teraz mam pilne sprawy, które nie mogą czekać. Wrócimy do tej rozmowy później.";
+			link.l2.go = "SharlieEpilog_Benua_4_exit";
+		break;
+		
+		case "SharlieEpilog_Benua_4_exit":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Benua_DlgExit_2");
+		break;
+		
+		case "SharlieEpilog_Benua_5":
+			dialog.text = "Jeśli masz długi, synu mój, radziłbym zacząć od ich spłaty. Lichwiarze to ludzie bardzo pamiętliwi: mogą poważnie zaszkodzić twojej reputacji, a wraz z nią – dobremu imieniu całej rodziny, nawet w Starym Świecie\n"+
+			"Co do reszty – w imię mojej przyjaźni z twoim ojcem i na chwałę Pana – udzielę ci wszelkiej możliwej pomocy. Możesz przekazać pisemne instrukcje, a ja dopilnuję, by dotarły do adresatów na czas. Będziesz musiał jedynie opłacić usługi kurierskie. Myślę, że dwieście doblonów wystarczy na pokrycie kosztów przesyłek.";
+			if (PCharDublonsTotal() >= 200)
+			{
+				link.l1 = "Dziękuję, święty ojcze. Pańska pomoc bardzo się przyda. Proszę, oto one.";
+				link.l1.go = "SharlieEpilog_Benua_6";
+			}
+			link.l2 = "Dziękuję za troskę, święty ojcze. Niestety, w tej chwili nie mam przy sobie wymaganej kwoty. Wrócimy do tej sprawy później.";
+			link.l2.go = "SharlieEpilog_Benua_DublonsLater";
+			SharlieEpilog_Benua_Dlg_1();
+		break;
+		
+		case "SharlieEpilog_Benua_DublonsLater":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Benua_DlgExit_3");
+		break;
+		
+		case "SharlieEpilog_Benua_DublonsLater_2":
+			dialog.text = "Oczywiście, "+pchar.name+". Rozumiem, że przyniosłeś dwieście doblonów?";
+			if (PCharDublonsTotal() >= 200)
+			{
+				link.l1 = "Oczywiście. Proszę, oto one.";
+				link.l1.go = "SharlieEpilog_Benua_6";
+			}
+			link.l2 = "Niestety, nadal nie mam potrzebnej sumy.";
+			link.l2.go = "exit";
+		break;
+		
+		case "SharlieEpilog_Benua_6":
+			dialog.text = "Wspaniale, synu mój.";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Benua_Delivery";
+			RemoveDublonsFromPCharTotal(200);
+			DeleteAttribute(pchar, "questTemp.SharlieEpilog_Benua_DublonsLater");
+		break;
+		
+		case "SharlieEpilog_Benua_Delivery":
+			if (!CheckAttribute(npchar, "SharlieEpilog_BenuaRazgovor_2"))
+			{
+				dialog.text = "A więc, od czego wolisz zacząć?";
+				npchar.SharlieEpilog_BenuaRazgovor_2 = true;
+			}
+			else
+			{
+				dialog.text = "Kogo i o czym chcesz powiadomić?";
+			}
+			if (CheckAttribute(pchar, "questTemp.IslaMona.Plantation") && !CheckAttribute(pchar, "questTemp.SharlieEpilog_IslaMona"))
+			{
+				link.l1 = "Pewnego razu udało mi się odnaleźć wyspę, której nie ma na mapach. Było tam już kilku osadników, nad którymi objąłem opiekę. Po moim odpłynięciu będą potrzebowali nowego 'gubernatora'.";
+				link.l1.go = "SharlieEpilog_Benua_IslaMona";
+			}
+			if (CheckAttribute(pchar, "questTemp.LongHappy.Baron") && !CheckAttribute(pchar, "questTemp.SharlieEpilog_Baron"))
+			{
+				link.l2 = "Chciałbym wysłać list do Marcusa Tiraxa z La Vegi. Sprawa nie jest pilna, ale list musi dotrzeć na czas.";
+				link.l2.go = "SharlieEpilog_Benua_Baron";
+			}
+			if (CheckCharacterItem(PChar, "patent_fra") && !CheckAttribute(pchar, "questTemp.SharlieEpilog_Patent"))
+			{
+				link.l3 = "Mam ważny patent francuski – chcę powiadomić kancelarię w Capsterville o swojej decyzji.";
+				link.l3.go = "SharlieEpilog_Benua_Patent";
+			}
+			if (!CheckAttribute(pchar, "questTemp.SharlieEpilog_Money"))
+			{
+				link.l4 = "Święty ojcze, przez lata spędzone na tych ziemiach udało mi się zgromadzić niemały majątek. Ale zanim stanie się on własnością mojej rodziny, chciałbym go oczyścić. Zmyć krew, z którą być może jest związany. Pragnę opuścić ten kraj nie jako zbój z łupem, lecz jako człowiek o czystym sumieniu i dobrej reputacji w oczach społeczeństwa.";
+				link.l4.go = "SharlieEpilog_Benua_Money";
+			}
+			if (!CheckAttribute(pchar, "questTemp.SharlieEpilog_Svenson") && CheckAttribute(pchar, "questTemp.SharlieEpilog_IslaMona_France"))
+			{
+				link.l5 = "Chciałbym powiadomić Jana Svensona z Blueveldu o swoim wyjeździe. Byłoby niegrzecznie opuścić archipelag bez słowa.";
+				link.l5.go = "SharlieEpilog_Benua_Svenson";
+			}
+			if (!CheckAttribute(pchar, "questTemp.SharlieEpilog_Houk"))
+			{
+				link.l6 = "Chcę poinformować rodzinę Houków z Maroon Town o mojej podróży.";
+				link.l6.go = "SharlieEpilog_Benua_Houk";
+			}
+			if (!CheckAttribute(pchar, "questTemp.SharlieEpilog_Jino"))
+			{
+				link.l7 = "Chcę powiadomić Gino Guinelego z Saint John's o wyjeździe do Starego Świata.";
+				link.l7.go = "SharlieEpilog_Benua_Jino";
+			}
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_gold_S") || CheckAttribute(pchar, "questTemp.SharlieEpilog_gold_M") || CheckAttribute(pchar, "questTemp.SharlieEpilog_gold_L"))
+			{
+				link.l85 = "To wszystko, ojcze... Wygląda na to, że jestem gotów wyruszyć w drogę.";
+				link.l85.go = "SharlieEpilog_Benua_TimeToGoHome";
+			}
+			link.l99 = "Przepraszam, święty ojcze, muszę już iść.";
+			link.l99.go = "SharlieEpilog_exit";
+		break;
+		
+		case "SharlieEpilog_exit":
+			DialogExit();
+			LAi_SetStayType(npchar);
+			NextDiag.CurrentNode = "First time";
+		break;
+		
+		case "SharlieEpilog_Benua_Jino":
+			dialog.text = "Oczywiście, synu mój.";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Benua_Jino_2";
+			pchar.questTemp.SharlieEpilog_Jino = true;
+		break;
+		
+		case "SharlieEpilog_Benua_Jino_2":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Benua_TimeLater_1");
+			NextDiag.CurrentNode = "SharlieEpilog_Benua_Jino_3";
+			AddQuestRecord("SharlieEpilog", "8_1");
+		break;
+		
+		case "SharlieEpilog_Benua_Jino_3":
+			dialog.text = "...";
+			link.l1 = "Gotowe. Można wysyłać.";
+			link.l1.go = "SharlieEpilog_Benua_Delivery";
+		break;
+		
+		case "SharlieEpilog_Benua_Houk":
+			dialog.text = "Oczywiście, synu mój.";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Benua_Houk_2";
+			pchar.questTemp.SharlieEpilog_Houk = true;
+		break;
+		
+		case "SharlieEpilog_Benua_Houk_2":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Benua_TimeLater_1");
+			NextDiag.CurrentNode = "SharlieEpilog_Benua_Houk_3";
+			AddQuestRecord("SharlieEpilog", "8");
+		break;
+		
+		case "SharlieEpilog_Benua_Houk_3":
+			dialog.text = "...";
+			link.l1 = "Gotowe. Można wysyłać.";
+			link.l1.go = "SharlieEpilog_Benua_Delivery";
+		break;
+		
+		case "SharlieEpilog_Benua_Svenson":
+			dialog.text = "Jan Svenson z Blueveldu... Zapamiętam. Daj list – i dziś jeszcze ruszy w drogę.";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Benua_Svenson_2";
+			pchar.questTemp.SharlieEpilog_Svenson = true;
+		break;
+		
+		case "SharlieEpilog_Benua_Svenson_2":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Benua_TimeLater_1");
+			NextDiag.CurrentNode = "SharlieEpilog_Benua_Svenson_3";
+			AddQuestRecord("SharlieEpilog", "7");
+		break;
+		
+		case "SharlieEpilog_Benua_Svenson_3":
+			dialog.text = "...";
+			link.l1 = "Dom Jana znaleźć nietrudno. Wystarczy zapytać kogokolwiek – trudno o osobę w całym Blueveldzie, która nie wiedziałaby, kim jest i gdzie mieszka.";
+			link.l1.go = "SharlieEpilog_Benua_Svenson_4";
+		break;
+		
+		case "SharlieEpilog_Benua_Svenson_4":
+			dialog.text = "Nie martw się, synu mój, nasi ludzie znają się na swoim fachu. List trafi tam, gdzie trzeba – i na czas.";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Benua_Delivery";
+		break;
+		
+		case "SharlieEpilog_Benua_Money":
+			dialog.text = "Chcesz, żeby Kościół pobłogosławił złoto zdobyte nieuczciwie?";
+			link.l1 = "Raczej zdobyte na służbie Francji i Jego Królewskiej Mości.";
+			link.l1.go = "SharlieEpilog_Benua_Money_2";
+		break;
+		
+		case "SharlieEpilog_Benua_Money_2":
+			dialog.text = "Rozumiem cię, synu mój. Mógłbym powiedzieć, że Kościół nie oczyszcza pieniędzy i nie anuluje sposobu, w jaki zostały zdobyte. Ale czy byłby z tego pożytek, jeśli głodni nadal będą głodować, bezdomni spać pod gołym niebem, a chorzy umierać bez pomocy? Jestem gotów udzielić błogosławieństwa – w zamian za to, że niewielka część tych środków posłuży nie tobie, lecz tym, którzy potrzebują pomocy.";
+			link.l1 = "Oczywiście, święty ojcze, jestem gotów ofiarować tyle, ile uznacie za stosowne.";
+			link.l1.go = "SharlieEpilog_Benua_Money_3";
+		break;
+		
+		case "SharlieEpilog_Benua_Money_3":
+			dialog.text = "A więc – jaką kwotę chcesz zabrać ze sobą?";
+			link.l1 = "Dziesięć milionów peso.";
+			link.l1.go = "SharlieEpilog_Benua_Money_4";
+			if (sti(pchar.Money) >= 250000)
+			{
+				link.l2 = "Dwadzieścia pięć milionów peso.";
+				link.l2.go = "SharlieEpilog_Benua_Money_5";
+			}
+			if (sti(pchar.Money) >= 500000)
+			{
+				link.l3 = "Pięćdziesiąt milionów peso.";
+				link.l3.go = "SharlieEpilog_Benua_Money_6";
+			}
+		break;
+		
+		case "SharlieEpilog_Benua_Money_4":
+			dialog.text = "W takim razie darowizna w wysokości stu tysięcy peso będzie wystarczająca. Dzięki tym środkom będziemy mogli organizować posiłki dla potrzebujących jeszcze przez wiele miesięcy. Czy jesteś gotów przekazać tę kwotę już teraz, synu mój?";
+			link.l1 = "Oczywiście. Proszę, oto one. Cieszę się, że mogę pomóc tym, którzy naprawdę tego potrzebują, i jestem pewien, że pod waszym nadzorem te pieniądze posłużą sprawie mądrze i uczciwie.";
+			link.l1.go = "SharlieEpilog_Benua_Money_4_1";
+			link.l2 = "Wybaczcie, muszę to jeszcze raz dokładnie przemyśleć.";
+			link.l2.go = "SharlieEpilog_Benua_Delivery";
+		break;
+		
+		case "SharlieEpilog_Benua_Money_5":
+			dialog.text = "W takim razie twoja darowizna powinna wynieść dwieście pięćdziesiąt tysięcy peso. Środki te pozwolą nam zbudować sierociniec, który będzie rozsławiał twoje imię i przynajmniej przez pewien czas zapewni jego utrzymanie. Czy jesteś gotów przekazać tę kwotę już teraz, synu mój?";
+			link.l1 = "Oczywiście. Proszę, oto one. Cieszę się, że mogę pomóc tym, którzy naprawdę tego potrzebują, i jestem pewien, że pod waszym nadzorem te pieniądze posłużą sprawie mądrze i uczciwie.";
+			link.l1.go = "SharlieEpilog_Benua_Money_5_1";
+			link.l2 = "Wybaczcie, muszę to jeszcze raz dokładnie przemyśleć.";
+			link.l2.go = "SharlieEpilog_Benua_Delivery";
+		break;
+		
+		case "SharlieEpilog_Benua_Money_6":
+			dialog.text = "Cóż, wygląda na to, że nie traciłeś czasu, "+pchar.name+". Myślę, że darowizna w wysokości pięciuset tysięcy peso będzie w pełni wystarczająca. Dzięki takiemu wkładowi będziemy mogli zbudować szpital i zapewnić mu wszystko, co potrzebne, na długie lata. Czy jesteś gotów przekazać tę kwotę już teraz, synu mój?";
+			link.l1 = "Oczywiście. Proszę, oto one. Cieszę się, że mogę pomóc tym, którzy naprawdę tego potrzebują, i jestem pewien, że pod waszym nadzorem te pieniądze posłużą sprawie mądrze i uczciwie.";
+			link.l1.go = "SharlieEpilog_Benua_Money_6_1";
+			link.l2 = "Wybaczcie, muszę to jeszcze raz dokładnie przemyśleć.";
+			link.l2.go = "SharlieEpilog_Benua_Delivery";
+		break;
+		
+		case "SharlieEpilog_Benua_Money_4_1":
+			dialog.text = "Doskonale, synu mój.";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Benua_Delivery";
+			AddMoneyToCharacter(pchar, -100000);
+			AddQuestRecord("SharlieEpilog", "6");
+			AddQuestUserData("SharlieEpilog", "sSum", "10000000");
+			AddQuestUserData("SharlieEpilog", "tSum", "100000");
+			pchar.questTemp.SharlieEpilog_gold_S = true;
+			pchar.questTemp.SharlieEpilog_Money = true;
+		break;
+		
+		case "SharlieEpilog_Benua_Money_5_1":
+			dialog.text = "Doskonale, synu mój.";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Benua_Delivery";
+			AddMoneyToCharacter(pchar, -250000);
+			AddQuestRecord("SharlieEpilog", "6");
+			AddQuestUserData("SharlieEpilog", "sSum", "25000000");
+			AddQuestUserData("SharlieEpilog", "tSum", "250000");
+			pchar.questTemp.SharlieEpilog_gold_M = true;
+			pchar.questTemp.SharlieEpilog_Money = true;
+		break;
+		
+		case "SharlieEpilog_Benua_Money_6_1":
+			dialog.text = "Doskonale, synu mój.";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Benua_Delivery";
+			AddMoneyToCharacter(pchar, -500000);
+			AddQuestRecord("SharlieEpilog", "6");
+			AddQuestUserData("SharlieEpilog", "sSum", "50000000");
+			AddQuestUserData("SharlieEpilog", "tSum", "500000");
+			pchar.questTemp.SharlieEpilog_gold_L = true;
+			pchar.questTemp.SharlieEpilog_Money = true;
+			Achievment_Set("ach_CL_205");
+		break;
+		
+		case "SharlieEpilog_Benua_Patent":
+			dialog.text = "Jaką więc podejmiesz decyzję, synu mój?";
+			link.l1 = "Mimo że czeka mnie długa podróż, chciałbym zachować patent – podobnie jak moją lojalność wobec Francji i Króla.";
+			link.l1.go = "SharlieEpilog_Benua_Patent_2";
+			link.l2 = "Postanowiłem zrzec się patentu. Przede mną długa droga i nie wiem, kiedy powrócę. Sądzę, że rozsądniej będzie nie dźwigać ciężaru obowiązków służbowych i zasad, których być może nie zdołam wypełniać.";
+			link.l2.go = "SharlieEpilog_Benua_Patent_6";
+			pchar.questTemp.SharlieEpilog_Patent = true;
+		break;
+		
+		case "SharlieEpilog_Benua_Patent_2":
+			dialog.text = "Cieszę się, że doszedłeś do takiej decyzji, synu mój. Nasze państwo potrzebuje dziś silnych i odważnych rycerzy bardziej niż kiedykolwiek. Powiedz jednak, "+pchar.name+", czy nie przyszło ci na myśl, by się ustatkować, odnaleźć dom i przestać narażać życie co godzinę? Albowiem nie na wieczność człowiek ma wystawiać się na próbę w ogniu.";
+			link.l1 = "Nie jestem pewien, czy potrafiłbym po prostu siedzieć z założonymi rękami, święty ojcze. Lecz jak powiedziano w Piśmie: 'nawet wojownikom Pana dany jest odpoczynek, gdy ich trud dobiegnie końca'. Choć wciąż daleko mi do końca tej drogi, mam nadzieję sam wybrać dzień, w którym na zawsze włożę klingę do pochwy.";
+			link.l1.go = "SharlieEpilog_Benua_Patent_3";
+		break;
+		
+		case "SharlieEpilog_Benua_Patent_3":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Benua_TimeLater_1");
+			NextDiag.CurrentNode = "SharlieEpilog_Benua_Patent_4";
+			AddQuestRecord("SharlieEpilog", "5_2");
+		break;
+
+		case "SharlieEpilog_Benua_Patent_4":
+			dialog.text = "Doskonale, synu mój. Myślę, że Jego Królewska Mość nie pozostawi bez uwagi twojej lojalności i oddania.";
+			link.l1 = "Obecnie moje myśli są zupełnie gdzie indziej... Mam nadzieję, że ojciec nie będzie nalegał, abym zamieszkał w naszym majątku. Nie sądzę, bym był na to gotów. Na szczęście będę miał dość czasu, by to przemyśleć.";
+			link.l1.go = "SharlieEpilog_Benua_Patent_5";
+		break;
+
+		case "SharlieEpilog_Benua_Patent_5":
+			dialog.text = "...";
+			link.l1 = "Zatem wróćmy teraz do spraw doczesnych.";
+			link.l1.go = "SharlieEpilog_Benua_Delivery";
+		break;
+		
+		case "SharlieEpilog_Benua_Patent_6":
+			dialog.text = "To rozsądna decyzja. Muszę jednak zauważyć, że twoje odejście znacznie osłabi potęgę Francji na tych wodach.";
+			link.l1 = "Jestem pewien, że pod wodzą Jego Królewskiej Mości nie brakuje godnych kapitanów, by wielkość Francji pozostała niezachwiana.";
+			link.l1.go = "SharlieEpilog_Benua_Patent_7";
+		break;
+		
+		case "SharlieEpilog_Benua_Patent_7":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Benua_TimeLater_1");
+			NextDiag.CurrentNode = "SharlieEpilog_Benua_Patent_8";
+			AddQuestRecord("SharlieEpilog", "5_1");
+		break;
+
+		case "SharlieEpilog_Benua_Patent_8":
+			dialog.text = "...";
+			link.l1 = "To wszystko. Jakby ciężar spadł z ramion. Szczerze mówiąc, zapomniałem już, kim byłem, kiedy przybyłem tu, na Karaiby... Tyle rzeczy się wydarzyło.";
+			link.l1.go = "SharlieEpilog_Benua_Patent_9";
+		break;
+
+		case "SharlieEpilog_Benua_Patent_9":
+			dialog.text = "Możliwe, że słyszałeś to już nieraz, synu mój: ścieżki Pana są niezbadane. Wszystko, co zostało ci przeznaczone z góry, przeszedłeś z godnością. Wierzę jednak, że twoje próby jeszcze się nie skończyły, a być może twoja chwała dopiero zmierza ku swemu zenitowi.";
+			link.l1 = "Chwała ciąży, święty ojcze. Nie każdy, kto do niej dąży, potrafi unieść jej ciężar... i zatrzymać się w porę.";
+			link.l1.go = "SharlieEpilog_Benua_Patent_10";
+		break;
+
+		case "SharlieEpilog_Benua_Patent_10":
+			dialog.text = "...";
+			link.l1 = "Zatem wróćmy teraz do spraw doczesnych.";
+			link.l1.go = "SharlieEpilog_Benua_Delivery";
+		break;
+		
+		case "SharlieEpilog_Benua_Baron":
+			dialog.text = "Synu mój, masz sprawy z głową piratów?";
+			link.l1 = "Zna ojciec Strażnika Kodeksu?";
+			link.l1.go = "SharlieEpilog_Benua_Baron_2";
+			pchar.questTemp.SharlieEpilog_Baron = true;
+		break;
+		
+		case "SharlieEpilog_Benua_Baron_2":
+			dialog.text = "Ze Strażnikiem Kodeksu? Nie, jego nie znam. Znam Marcusa Tiraxa – kata, za którym ciągnie się tyle krwi, że nawet setki lat spędzonych na modlitwach nie wystarczą, by uzyskać przebaczenie Pana. A jednak... naprawdę masz z nim interesy?";
+			link.l1 = "Musiałem zdobyć jego zaufanie... żeby wyciągnąć Michela z więzienia. Tak czy inaczej, zrozumiałem swój błąd i nie zamierzam już utrzymywać kontaktu. Tym listem zrywam ostatnią nić, która nas łączy.";
+			link.l1.go = "SharlieEpilog_Benua_Baron_3";
+			link.l2 = "Teraz to już nieważne. Opuszczam archipelag, i nasze drogi same się rozejdą, święty ojcze.";
+			link.l2.go = "SharlieEpilog_Benua_Baron_7";
+		break;
+		
+		case "SharlieEpilog_Benua_Baron_3":
+			dialog.text = "A co to za nić, synu mój? Mam nadzieję, że nie splamiona krwią niewinnych?";
+			link.l1 = "Formalnie byłem uznawany za przywódcę pirackiej osady Le-François. W rzeczywistości wszystkim kierował ktoś inny. Dziś wyrzekam się tytułu barona piratów – definitywnie i bez powrotu.";
+			link.l1.go = "SharlieEpilog_Benua_Baron_4";
+		break;
+		
+		case "SharlieEpilog_Benua_Baron_4":
+			dialog.text = "Cieszę się, że wkroczyłeś na właściwą drogę, synu mój, i będę się modlił o zbawienie twojej duszy. Każdy może się potknąć, lecz Pan wybacza tylko tym, których skrucha jest szczera.";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Benua_Baron_5";
+		break;
+		
+		case "SharlieEpilog_Benua_Baron_5":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Benua_TimeLater_1");
+			NextDiag.CurrentNode = "SharlieEpilog_Benua_Baron_6";
+			AddQuestRecord("SharlieEpilog", "4_1");
+		break;
+		
+		case "SharlieEpilog_Benua_Baron_6":
+			dialog.text = "Doskonale, "+pchar.name+". Przekaż mi list – dopilnuję, by dotarł do adresata. I nie zapominaj się modlić, synu mój. Tylko skrucha i modlitwa mogą obmyć duszę nawet z najcięższych grzechów.";
+			link.l1 = "Dziękuję, święty ojcze. Może nie wszystko jeszcze stracone.";
+			link.l1.go = "SharlieEpilog_Benua_Delivery";
+		break;
+		
+		case "SharlieEpilog_Benua_Baron_7":
+			dialog.text = "Niezależnie od tego, jak wielki jest grzech, synu mój, drzwi przebaczenia zawsze pozostają otwarte. Skrucha, modlitwa i dobre uczynki oczyszczają duszę tak, jak deszcz zmywa kurz z kamienia.";
+			link.l1 = "Wszystko w swoim czasie, święty ojcze. Teraz muszę zająć się sprawami doczesnymi.";
+			link.l1.go = "SharlieEpilog_Benua_Baron_8";
+		break;
+		
+		case "SharlieEpilog_Benua_Baron_8":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Benua_TimeLater_1");
+			NextDiag.CurrentNode = "SharlieEpilog_Benua_Baron_9";
+			AddQuestRecord("SharlieEpilog", "4_2");
+		break;
+		
+		case "SharlieEpilog_Benua_Baron_9":
+			dialog.text = "...";
+			link.l1 = "Proszę, oto on.";
+			link.l1.go = "SharlieEpilog_Benua_Delivery";
+		break;
+		
+		case "SharlieEpilog_Benua_IslaMona":
+			dialog.text = "Dobrze, synu mój, że postanowiłeś zadbać o tych ludzi i nie zapomniałeś o nich. Komu chciałbyś przekazać tę wyspę?";
+			link.l1 = "Myślę, że powinien nad nią powiewać francuski sztandar. Prędzej czy później ktoś ją odkryje, a inne państwa mogą zechcieć ją przejąć. Nie mogę do tego dopuścić.";
+			link.l1.go = "SharlieEpilog_Benua_IslaMona_France";
+			link.l2 = "Ta wyspa i jej mieszkańcy zasługują na to, by żyć wolni, a nie pod królewską władzą. Chcę wysłać list do mojego przyjaciela, Jana Svensona z Blueveldu. Wierzę, że zgodzi się objąć ją swoją opieką. Proszę jednak, święty ojcze – zachowaj tę rozmowę w tajemnicy, dla dobra i bezpieczeństwa tych ludzi.";
+			link.l2.go = "SharlieEpilog_Benua_IslaMona_Pirate";
+			pchar.questTemp.SharlieEpilog_IslaMona = true;
+		break;
+		
+		case "SharlieEpilog_Benua_IslaMona_France":
+			dialog.text = "Postępujesz mądrze, "+pchar.name+". Pod opieką Króla ta wyspa zazna porządku i bezpieczeństwa.";
+			link.l1 = "Wyślę stosowny list do kancelarii w Capsterville oraz do ludzi na wyspie. Wspomnę o współrzędnych na kopercie.";
+			link.l1.go = "SharlieEpilog_Benua_IslaMona_France_2";
+		break;
+		
+		case "SharlieEpilog_Benua_IslaMona_France_2":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Benua_TimeLater_1");
+			NextDiag.CurrentNode = "SharlieEpilog_Benua_IslaMona_France_3";
+			pchar.questTemp.SharlieEpilog_IslaMona_France = true;
+			AddQuestRecord("SharlieEpilog", "3_1");
+		break;
+		
+		case "SharlieEpilog_Benua_IslaMona_France_3":
+			dialog.text = "...";
+			link.l1 = "Proszę, oto on. Mam nadzieję, że wasi ludzie zdołają odnaleźć wyspę, zanim przybędzie tam flota Jego Królewskiej Mości.";
+			link.l1.go = "SharlieEpilog_Benua_IslaMona_France_4";
+		break;
+		
+		case "SharlieEpilog_Benua_IslaMona_France_4":
+			dialog.text = "Nie martw się, synu mój. Powierzę dostarczenie tych listów najlepszym kurierom.";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Benua_Delivery";
+		break;
+		
+		case "SharlieEpilog_Benua_IslaMona_Pirate":
+			dialog.text = "Nie mnie oceniać, czy twoja droga jest słuszna, synu mój. Prędzej czy później ktoś odkryje tę wyspę, a jedna z potęg zechce ją sobie przywłaszczyć. To tylko kwestia czasu. Ale skoro podjąłeś taką decyzję – widocznie taka była wola Boża. Nie obawiaj się – nie narażę tych ludzi na niebezpieczeństwo i odmówię za nich modlitwę.";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Benua_IslaMona_Pirate_2";
+		break;
+		
+		case "SharlieEpilog_Benua_IslaMona_Pirate_2":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Benua_TimeLater_1");
+			NextDiag.CurrentNode = "SharlieEpilog_Benua_IslaMona_Pirate_3";
+			pchar.questTemp.SharlieEpilog_IslaMona_Pirate = true;
+			AddQuestRecord("SharlieEpilog", "3_2");
+		break;
+		
+		case "SharlieEpilog_Benua_IslaMona_Pirate_3":
+			dialog.text = "Jan Svenson z Blueveldu, prawda?";
+			link.l1 = "Dokładnie tak, święty ojcze. A drugi list należy dostarczyć bezpośrednio na wyspę. Współrzędne są zapisane na kopercie.";
+			link.l1.go = "SharlieEpilog_Benua_Delivery";
+		break;
+		
+		case "SharlieEpilog_Benua_TimeToGoHome":
+			dialog.text = "Doskonale, synu mój. O ile się nie mylę, przybyłeś tu na pinasie '"+GetShipName("Ulysse")+"'?";
+			link.l1 = "Zgadza się. Ale dlaczego ojciec pyta?";
+			link.l1.go = "SharlieEpilog_Benua_TimeToGoHome_2";
+		break;
+		
+		case "SharlieEpilog_Benua_TimeToGoHome_2":
+			dialog.text = "Ponieważ ten okręt został niedawno wystawiony na aukcji. A ty, Charles, masz szansę wrócić do domu na tym samym statku – tylko już jako jego kapitan.";
+			link.l1 = "Hm... Muszę przyznać, że to kusząca propozycja. Chyba zajrzę do administracji portu. Dziękuję, święty ojcze.";
+			link.l1.go = "SharlieEpilog_Benua_TimeToGoHome_3";
+		break;
+		
+		case "SharlieEpilog_Benua_TimeToGoHome_3":
+			DialogExit();
+			NextDiag.CurrentNode = "First Time";
+			AddDialogExitQuestFunction("SharlieEpilog_PU_Ulysse_1");
+		break;
+		//<-- Эпилог
 		
 		case "LH_abbat_38":
 			DialogExit();

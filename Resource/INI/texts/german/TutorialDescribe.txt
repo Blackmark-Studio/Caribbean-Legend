@@ -224,7 +224,15 @@ Prologue_Inventory_controlsimg2 {Alchemy}
 Prologue_Amulet {Amulette}
 Prologue_Amulet_descr
 {
-Amulette sind mächtige Verstärker für deinen Charakter und werden in Angriffs-, Verteidigungs- und Unterstützungstypen unterteilt. Du kannst nicht gleichzeitig ein Angriffs- und ein Verteidigungsamulett tragen – wähle deine Sets also mit Bedacht.~Es gibt außerdem zwei weitere Verstärker: Talismane und Schutzamulette.~Talismane wirken länger als Amulette und haben umfassendere Effekte, Schutzamulette sind extrem stark, wirken unbegrenzt und haben einen eigenen Inventarplatz.~Halte immer mehrere Sets bereit – für besonders schwere Skill-Checks und harte Kämpfe auf See und an Land.~Achtung: Nach der Aktivierung wird ein Amulett oder Talisman beim Ablegen zerstört – entscheide mit Bedacht.
+Amulette und Talismane sind mächtige temporäre Verstärkungen für den Charakter und werden in speziellen Inventarplätzen eingesetzt.
+~
+Talismane können vom Spieler selbst hergestellt werden, während Amulette nur gefunden oder gekauft werden können.
+~
+Im Spiel gibt es außerdem Wards — sie besitzen enorme Kraft, wirken unbegrenzt lange und haben einen eigenen Inventarplatz.
+~
+Haltet stets mehrere Sets im Inventar bereit, um besonders schwierige Fertigkeitsproben sowie harte Kämpfe zu Land und zu Wasser zu bestehen.
+~
+Achtung: Nach der Aktivierung wird ein Amulett oder Talisman beim Entfernen zerstört. Trefft eure Entscheidung mit Bedacht.
 }
 Prologue_Trading {Handelsgrundlagen}
 Prologue_Trading_descr
@@ -274,4 +282,10 @@ Prologue_DeadSearch {Plündern}
 Prologue_DeadSearch_descr
 {
 Nach jedem Kampf ist Zeit für Beute.Jeden gefallenen Gegner kannst du mit der Plündern-Taste durchsuchen.~Finde das Heil-Elixier für Alonso!
+}
+MapEncounter {Schiffe mit farbigen Segeln}
+MapEncounter_descr
+{
+Manchmal müsst ihr während einer Aufgabe ein besonderes Schiff auf der Weltkarte ausfindig machen.~
+Sucht an der im Journal markierten Stelle nach einem Schiff mit farbigen Segeln und interagiert mit ihm.
 }

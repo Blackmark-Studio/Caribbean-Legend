@@ -21,7 +21,7 @@
 #define FLAG_GOODS_TYPE_CANNONS 		64		// орудия
 #define FLAG_GOODS_TYPE_ALL 	        63		// все
 
-//int gGoodsTypeFlags[MAX_GOODS_TYPES] = {1, 2, 4, 8, 16, 32, 64}
+//int gGoodsTypeFlags[MAX_GOODS_TYPES] = {BIT_1, BIT_2, BIT_3, BIT_4, BIT_5, BIT_6, BIT_7}
 int GetGoodTypeFlag(int idx)
 {
      return shl(1, idx);
@@ -152,12 +152,11 @@ int GetGoodQuantityByWeight(int iGoodType,int weight)
 
 int GetRandomGood(int typeFlags, int goodsFlags) 
 {
-	int goodsArr[2];
-	SetArraySize(&goodsArr, GetArraySize(&Goods));
-	
+    int size = GetArraySize(&Goods);
+	int goodsArr[size];
 	int goodsCount = 0;
-	
-	for (int i = 0; i < GetArraySize(&Goods); i++)
+
+	for (int i = 0; i < size; i++)
 	{
 		ref refGood;
 		makeref(refGood, Goods[i]);

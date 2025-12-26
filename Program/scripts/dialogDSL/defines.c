@@ -39,6 +39,8 @@ string DLG_RunKnownFunction(string functionName, ref context, ref args, int args
     case "modifierPercent": return ToHumanPercent(stf(HumanModifierValue(&args, &context)));    break;
     case "number":          return ToHumanNumber(DLG_A0(&args));                                break;
     case "percent":         return ToHumanPercent(stf(DLG_A0(&args)));                          break;
+    case "nationGen":       return DLG_NationGen(sti(DLG_A0(&args)));                           break;
+    case "colonyVoc":       return DLG_ColonyVoc(DLG_A0(&args))                                 break;
   }
 
   return "$custom";
@@ -61,23 +63,25 @@ string DLG_RunReplace(string key, ref context)
     case "$shipName":    return pchar.ship.name;                     break; // → Adelina
     case "$npcShipName": return CharacterRef.ship.name;              break; // → Adelina
     case "$ctxShipName": return context.ship.name;                   break; // → Adelina
+    case "$playerNationAbl": return xiStr("adjective_" + GetNationNameByType(GetBaseHeroNation())); break;
   }
 
   return "Error: missing replacement for " + key;
 }
 
 // Predefined DSL-shortcuts keys
-void DLG_ReplaceSimpleKeys(string input, ref context)
+void DLG_ReplaceSimpleKeys(ref input, ref context)
 {
-  DLG_Replace(&input, &context, "$sir");
-  DLG_Replace(&input, &context, "$npcSir");
-  DLG_Replace(&input, &context, "$name");
-  DLG_Replace(&input, &context, "$npcName");
-  DLG_Replace(&input, &context, "$swear");
-  DLG_Replace(&input, &context, "$bye");
-  DLG_Replace(&input, &context, "$hello");
-  DLG_Replace(&input, &context, "$city");
-  DLG_Replace(&input, &context, "$shipName");
-  DLG_Replace(&input, &context, "$npcShipName");
-  DLG_Replace(&input, &context, "$ctxShipName");
+  DLG_Replace(&input, context, "$sir");
+  DLG_Replace(&input, context, "$npcSir");
+  DLG_Replace(&input, context, "$name");
+  DLG_Replace(&input, context, "$npcName");
+  DLG_Replace(&input, context, "$swear");
+  DLG_Replace(&input, context, "$bye");
+  DLG_Replace(&input, context, "$hello");
+  DLG_Replace(&input, context, "$city");
+  DLG_Replace(&input, context, "$shipName");
+  DLG_Replace(&input, context, "$npcShipName");
+  DLG_Replace(&input, context, "$ctxShipName");
+  DLG_Replace(&input, context, "$playerNationAbl");
 }

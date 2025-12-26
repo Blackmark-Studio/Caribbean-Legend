@@ -59,12 +59,12 @@ heroNation_4 {Береговое братство}
 sex_4 {woman}
 animation_4 {rumba}
 hero_4 {Una giovane pirata, pupilla del Diavolo della Foresta - Barone dei Fratelli della Costa. Tuttavia, il Barone la protegge dalla dura realtà di ciò che sono i veri pirati e delle atrocità che possono commettere. Per Helen, la pirateria è solo romanticismo, piccolo contrabbando, libertà... e il ponte della sua amata goletta da guerra, la Rainbow.}
-heroName_5 {Джессика}
-heroLastname_5 {Брэдфорд}
-heroNameGen_5 {Джессики}
-heroLastnameGen_5 {Брэдфорд}
-heroNameDat_5 {Джессике}
-heroLastNameDat_5 {Брэдфорд}
+heroName_5 {Jessica}
+heroLastname_5 {Bradford}
+heroNameGen_5 {Jessica}
+heroLastnameGen_5 {Bradford}
+heroNameDat_5 {Jessica}
+heroLastNameDat_5 {Bradford}
 heroFace_5 {244}
 heroModel_5 {jessika}
 heroType_5 {Корсар}

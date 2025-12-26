@@ -1,0 +1,303 @@
+itm_stat_weight {Ağırlık}
+itm_stat_descr_weight {Bu eşyanın kaç pound ağırlığında olduğunu gösterir. Çok ağır eşyalar atılabilir.}
+itm_stat_rat_poison {Zehir}
+itm_stat_descr_rat_poison {Malları farelerin bozmasından korur.}
+itm_stat_clock2 {Kullanışlı alet}
+itm_stat_descr_clock2 {Takılıyken Navigasyon beceri gelişimini hızlandırır.}
+itm_stat_duration {Süre}
+itm_stat_descr_duration {Bu eşyanın etki süresi.}
+itm_stat_damageReduction {Hasar Azaltma}
+itm_stat_descr_damageReduction {Bu yüzde, diğer tüm hesaplamalardan önce gelen hasardan düşülür.}
+itm_stat_attack {Hasar}
+itm_stat_descr_attack
+{
+Kesme saldırısı: #sattack.fast.min#–#sattack.fast.max# hasar 
+Hızlı saldırı: #sattack.force.min#–#sattack.force.max# hasar 
+Grup saldırısı: #sattack.round.min#–#sattack.round.max# hasar 
+Ağır saldırı: #sattack.break.min#–#sattack.break.max# hasar
+}
+itm_stat_gundamage {Ateşli silah hasarı.}
+itm_stat_descr_gundamage {Menzilli savaşta verilen hasar, becerilere, silah özelliklerine ve mühimmata bağlıdır.}
+itm_stat_healAmount {Şifa}
+itm_stat_descr_healAmount {Kullanıldığında yenilenen Can miktarı.}
+itm_stat_worldMapBonus {Gözlem Yarıçapı}
+itm_stat_descr_worldMapBonus {Filo görünürlüğü yarıçapına dünya haritasında yüzde bonusu.}
+itm_stat_radius {Seyir Menzili}
+itm_stat_descr_radius {Gemiler ve koylar arasındaki hızlı seyahat menzilinin arttığı yarda sayısı.}
+itm_stat_mainEffect {Ana}
+itm_stat_secondaryEffect {Yan}
+itm_stat_hat9 {Ölü Olan}
+itm_stat_descr_hat9 {Gemi hasarının güç üzerindeki cezasını %30 azaltır}
+itm_stat_secondary_hat9 {Ölemez}
+itm_stat_descr_secondary_hat9 {Atışlardan %10 oranında hasarı önler}
+itm_stat_durability {Dayanıklılık}
+itm_stat_hat1 {Sürekli Pratik}
+itm_stat_descr_hat1 {Hafif, Orta ve Ağır Silahlarla deneyim kazanımını %10 artırır}
+itm_stat_hat2 {Seri Katil}
+itm_stat_descr_hat2 {Bir düşmanı kesici silahla öldürmek %25 enerji yeniler.}
+itm_stat_hat3 {Denizcilik Temelleri}
+itm_stat_descr_hat3 {Navigasyon, İsabet ve Onarımda deneyim kazanımını %10 artırır.}
+itm_stat_hat4 {Denizle Yaşam}
+itm_stat_descr_hat4 {Tüm denizcilik becerilerinde deneyim kazanımını %15 artırır}
+itm_stat_hat5 {Mentor}
+itm_stat_descr_hat5 {Donanmandaki tüm gemi kaptanlarıyla denizcilik becerilerini paylaşırsın, amiral gemisi hariç tüm gemilerde mürettebat ve subay maaşlarını %15 azaltırsın.}
+itm_stat_hat6 {Kâr Duygusu}
+itm_stat_descr_hat6 {Her 3 günde bir, bir limana vardığınızda otomatik olarak küçük bir ticaret anlaşması yaparsınız.}
+itm_stat_hat7 {Kayıp Mermi}
+itm_stat_descr_hat7 {Ateş ederken %10 ihtimalle cephane harcanmaz}
+itm_stat_hat8 {Çakırkeyf}
+itm_stat_descr_hat8 {Rom ve şarap %50 daha fazla sağlık yeniler}
+itm_stat_hat10 {Asker Kurnazlığı}
+itm_stat_descr_hat10 {Bu şapka her hasarı engellediğinde bir dayanıklılık puanı kaybeder.}
+itm_stat_secondary_hat10 {Geri Dönüşüm}
+itm_stat_descr_secondary_hat10 {Yok edildiğinde, bu eşya ana bileşenini geri verir ve tekrar üretilebilir.}
+itm_stat_hat11 {Kucakla}
+itm_stat_descr_hat11
+{
+Dayanıklılık +2
+Bir düşmanı kesici silahla öldürmek %25 enerji yeniler.
+}
+itm_stat_potion6 {Dayanıklılık}
+itm_stat_descr_potion6 {Bu iksiri içmek, savaşta sersemletilmeyi önler.}
+itm_stat_berserker_potion {İlkel Öfke}
+itm_stat_descr_berserker_potion
+{
+Ani bir güç ve dayanıklılık patlaması sağlar, çevikliği ve tepki hızını büyük ölçüde artırır, acıyı azaltır ve saldırganlığı yükseltir.
+En fazla on iki saniye sürer ve dakikada yalnızca bir kez kullanılabilir.
+}
+itm_stat_mangarosafast {Kasırga}
+itm_stat_descr_mangarosafast {Bu iksiri kullanmak, herhangi bir silahla saldırı hızını %5 artırır.}
+itm_stat_mangarosapower {Kartal Gözü}
+itm_stat_descr_mangarosapower {Bu iksiri içmek topların yeniden yüklenmesini hızlandırır.}
+itm_stat_mangarosatotal {Yücelme}
+itm_stat_descr_mangarosatotal {Bu iksiri kullanmak Filo gücünü %15 artırır.}
+itm_stat_vodka {Yakın Dövüş Çarpışması}
+itm_stat_descr_vodka {Ateşli silahlarla yakın dövüş hasarı %20 artar, süngülerle ek %20 artar. Ateşli silah saldırıları düşmanın dayanıklılığını azaltır. Sersemletme süresi kısalır.}
+itm_stat_amulet_1 {Kitin}
+itm_stat_descr_amulet_1 {Kumaş ve deri iki kat daha iyi korur, Takviyeli zırh ise düşman kritik hasarını %10 daha azaltır.}
+itm_stat_amulet_10 {İkinci Şans}
+itm_stat_descr_amulet_10 {Düşman toplarından geminizdeki mürettebata gelen hasarı %10 azaltır.}
+itm_stat_amulet_11 {Kabile Koruması}
+itm_stat_descr_amulet_11 {Mürettebatın tüfek yaylımından aldığı hasarı %10 azaltır.}
+itm_stat_amulet_2 {Sığınak}
+itm_stat_descr_amulet_2 {Her aktif Hristiyan muska ve tılsım, bu dahil, ateşli silahlardan alınan hasarı %5 azaltır.}
+itm_stat_amulet_3 {Savunma}
+itm_stat_descr_amulet_3 {Kritik hasara karşı savunmayı %15 artırır.}
+itm_stat_amulet_4 {Ölüm Dansı}
+itm_stat_descr_amulet_4 {Her Pagan amulet ve tılsım, buna dahil, silah saldırı hızını %2,5 artırır.}
+itm_stat_amulet_5 {Acelecilik}
+itm_stat_descr_amulet_5 {Gemi toplarının yeniden doldurma süresini %15 azaltır.}
+itm_stat_amulet_6 {El Koyma}
+itm_stat_descr_amulet_6 {İyileşmeyi %15 hızlandırır.}
+itm_stat_amulet_7 {Haylaz}
+itm_stat_descr_amulet_7 {Sağlığı %15 artırır ve pasif yenilenmesini iki katına çıkarır.}
+itm_stat_amulet_8 {Tahkimat}
+itm_stat_descr_amulet_8 {Gövde hasarını %10 azaltır.}
+itm_stat_amulet_9 {Yama}
+itm_stat_descr_amulet_9 {Gemi yelkenlerine gelen hasarı %10 azaltır.}
+itm_stat_indian_1 {Zayıflık}
+itm_stat_descr_indian_1 {Kafa vuruşu hasarını %20 artırır.}
+itm_stat_indian_10 {Zehir}
+itm_stat_descr_indian_10 {Her kesme saldırısının %15 zehirleme şansı vardır.}
+itm_stat_indian_11 {Duman ve Aynalar}
+itm_stat_descr_indian_11 {Her Süslü eşya, Aldatma şansını %5 artırır.}
+itm_stat_indian_2 {Kontrol}
+itm_stat_descr_indian_2 {Barutun doğru miktarını ayarlama becerisi, Mermi ve Saçma hasarını %10 artırır; Aşırı dolu ve Zırh delici mühimmat için ek %5 artış sağlar.}
+itm_stat_indian_3 {Kan Arzusu}
+itm_stat_descr_indian_3 {Giden kritik hasarı %15 artırır.}
+itm_stat_indian_4 {Hazırlanış}
+itm_stat_descr_indian_4 {Ağır silahlar, ağır saldırılarda %15 daha fazla hasar verir.}
+itm_stat_indian_5 {Dengeleyici}
+itm_stat_descr_indian_5 {Mürettebat farkı bordaya %30 daha az etki eder.}
+itm_stat_indian_6 {Elek}
+itm_stat_descr_indian_6 {Ateşli silahlarla yapılan yaylım ateşiyle abordan önce düşmana verilen hasar %10 artar.}
+itm_stat_indian_9 {Nişan al!}
+itm_stat_descr_indian_9 {Gemi hareket hızını ve top nişanını %15 artırır.}
+itm_stat_indian_8 {Ateş!}
+itm_stat_descr_indian_8 {Top hasarını %10 artırır}
+itm_stat_obereg_1 {Çekiç...}
+itm_stat_descr_obereg_1 {Denizde veya savaşta tamir yaparken tahta ve yelken bezi tüketimini %15 azaltır. Etkiler birikir.}
+itm_stat_obereg_2 {...ve çiviler}
+itm_stat_descr_obereg_2 {Denizde veya savaşta onarım yaparken tahta ve yelken bezi tüketimini %15 azaltır. Etki birikir.}
+itm_stat_indian_7 {Odak}
+itm_stat_descr_indian_7 {Enerjiyi ve yenilenme hızını %12 artırır.}
+itm_stat_obereg_10 {El Çabukluğu}
+itm_stat_descr_obereg_10 {Gemi manevra kabiliyetini %15 artırır.}
+itm_stat_obereg_11 {Boreas}
+itm_stat_descr_obereg_11 {Gemi pruva açısını %15 değiştirir, rüzgâra daha yakın seyretmenizi sağlar.}
+itm_stat_obereg_3 {Ağırlık Kaldırma}
+itm_stat_descr_obereg_3 {Taşıma kapasitesini %15 artırır.}
+itm_stat_obereg_4 {Gizli}
+itm_stat_descr_obereg_4 {Karakter Gizliliği #smodifiers.SkillSneak# artar.}
+itm_stat_obereg_5 {Tılsım}
+itm_stat_descr_obereg_5 {Karakterin Fırsatçılığı #smodifiers.SkillFortune# artar.}
+itm_stat_obereg_6 {İkna}
+itm_stat_descr_obereg_6 {Karakter Liderliği #smodifiers.SkillLeadership# puan artar.}
+itm_stat_obereg_7 {Denizdoğumlu}
+itm_stat_descr_obereg_7 {Karakterin Navigasyon'u #smodifiers.SkillSailing# puan artar.}
+itm_stat_obereg_8 {Yarar}
+itm_stat_descr_obereg_8 {Karakterin Ticaret yeteneği #smodifiers.SkillCommerce# puan artar.}
+itm_stat_obereg_9 {Rüzgar Tanrısı}
+itm_stat_descr_obereg_9 {Gemi hızı %10 artar.}
+itm_stat_totem_01 {Demir Mide}
+itm_stat_descr_totem_01 {Karanlık yerlerde veya gürültülü ortamlarda sarhoş olup bayılmayı engeller. Şifa iksirleri kullanmak Sağlık azaltmaz.}
+itm_stat_totem_02 {Hükümdar}
+itm_stat_descr_totem_02 {Köle isyanı olasılığını ve kayıpları azaltır, teslim olurken esir sayısını artırır.}
+itm_stat_totem_03 {Oyuncu}
+itm_stat_descr_totem_03 {Aşk zevklerinden gelen iyileştirme etkisini iki katına çıkarır.}
+itm_stat_totem_04 {Doğuştan Lider}
+itm_stat_descr_totem_04 {Subayın sadakatini tüm süre boyunca sabitler.}
+itm_stat_totem_05 {Yenilmezlik}
+itm_stat_descr_totem_05 {Düşman kritik hasarını $modifierPercent(CritIncomingDamageReduction) azaltır.}
+itm_stat_totem_06 {Yük Atı}
+itm_stat_descr_totem_06 {Taşıma ağırlığını aşmak karakteri yavaşlatmaz veya ceza vermez.}
+itm_stat_totem_07 {Çağırma}
+itm_stat_descr_totem_07
+{
+Yeni gönüllüler, ekibe borçları olsa bile daha düşük bir ücretle katılır.
+Sadece ana karakter kullanabilir. Hanedeki asker sayısını %5 artırır.
+}
+itm_stat_totem_08 {Kişisel katılım}
+itm_stat_descr_totem_08 {Nişanlı deniz ateşiyle verilen hasarı %10 artırır.}
+itm_stat_totem_09 {Eğitim Alarmları}
+itm_stat_descr_totem_09 {Mürettebat eğitim hızını iki katına çıkarır.}
+itm_stat_totem_10 {Tazmanya Canavarı}
+itm_stat_descr_totem_10 {Orta silahlar grup saldırılarında %15 daha fazla hasar verir.}
+itm_stat_totem_11 {Vampirizm}
+itm_stat_descr_totem_11 {Saldırılar düşmanın enerjisini emer.}
+itm_stat_totem_12 {Dişler}
+itm_stat_descr_totem_12 {Hafif silahlar hızlı saldırılarda %15 daha fazla hasar verir.}
+itm_stat_totem_13 {Hileci}
+itm_stat_descr_totem_13
+{
+Doğru kartı çekme ve gereken zar sayısını atma şansını önemli ölçüde artırır.
++1 Başarı sağlar.
+}
+itm_stat_knife_01 {Gizli}
+itm_stat_descr_knife_01 {Bu hançer büyük bir gizli güce sahiptir. Göğüste tılsım olarak taşındığında ölümü yenebilir.}
+itm_stat_knife_02 {Muhafız}
+itm_stat_descr_knife_02 {%12 şansla atıştan kaçınma sağlar. Etki birikir.}
+itm_stat_knife_03 {Şanslı Herif}
+itm_stat_descr_knife_03 {Temel kritik vuruş şansını %3, kritik hasarı %10 artırır.}
+itm_stat_talisman1 {Düzen}
+itm_stat_descr_talisman1 {Malları kemirgenlerden korur.}
+itm_stat_talisman2 {Durgun}
+itm_stat_descr_talisman2 {Fırtına bölgesine girmeyi önler veya fırtına sırasında yelken ve tekneye gelen hasarı azaltır.}
+itm_stat_talisman3 {Su ile Soğutma}
+itm_stat_descr_talisman3 {Topların patlamasını önler.}
+itm_stat_talisman4 {Diktatörlük}
+itm_stat_descr_talisman4 {Aşırı yükte mürettebat moral kaybını azaltır ve günlük rom tüketimini düşürür.}
+itm_stat_talisman6 {Alçakgönüllülük}
+itm_stat_descr_talisman6 {Gemide erzak tasarrufu sağlar, tüketim oranını dörtte bir azaltır.}
+itm_stat_talisman7 {Sert Kabuk}
+itm_stat_descr_talisman7
+{
+Gemi onarım hızını iki katına çıkarır ve kaynaklardan %30 tasarruf sağlar.
+Yelken ve gövde hasarını %5 azaltır.
+}
+itm_stat_talisman8 {Mithridate}
+itm_stat_descr_talisman8 {Düşman silahlarından zehirlenmeyi önler.}
+itm_stat_talisman9 {Hizmet}
+itm_stat_descr_talisman9
+{
+Fransız kolonilerinde denizci alımına %15 bonus sağlar.
+Fransız genelevlerine ücretsiz giriş hakkı verir ve Liderlik +1 artırır.
+}
+itm_stat_talisman10 {Poseidon}
+itm_stat_descr_talisman10 {Suyun altında uzun süre nefesini tutmanı sağlar ve kaynar sudan korur.}
+itm_stat_talisman11 {Antistres}
+itm_stat_descr_talisman11 {Tüm kişisel ve gemi becerilerini 2 puan artırır.}
+itm_stat_talisman12 {Bağışıklık}
+itm_stat_descr_talisman12 {Mevcut sağlık değerini sabitler.}
+itm_stat_talisman13 {İstifçilik}
+itm_stat_descr_talisman13 {Garip şekilde ağır yük taşıma yeteneğini artırır.}
+itm_stat_talisman14 {Fener}
+itm_stat_descr_talisman14 {Navigasyon becerisini 15 puan artırır.}
+itm_stat_talisman15 {Korkulan İtibar}
+itm_stat_descr_talisman15 {Filo gücünü %15 artırır. Cromwell’in demir yanlı süvarilerinin boyun fularından yapılmıştır.}
+itm_stat_talisman16 {Orman Savaşçısı}
+itm_stat_descr_talisman16 {Egzotik silahlar %15 daha fazla hasar verir}
+itm_stat_talisman17 {İnanç Kalkanı}
+itm_stat_descr_talisman17 {Mürettebat hasarını $ctxHasAttr(QBonus.max|15|5) % azaltır, *Holy Mercy* gemisinde ise Savunma yeteneğini 10 artırır. Hasar azaltma, Doğrular Yolunu tamamladıktan sonra artar.}
+itm_stat_talisman18 {Gerçeğin Peşinde}
+itm_stat_descr_talisman18 {Her bulunan hazine, mürettebatın tüfek yaylım ateşi gücünü %1 ve saçma hasarını %2 artırır.}
+itm_stat_talisman19 {Unutma}
+itm_stat_descr_talisman19 {$GetYorickLoc(_descr)}
+itm_stat_talisman20 {Çar için!}
+itm_stat_descr_talisman20 {Ateşli silahlarla nişan alma hızı %15 artar, maksimum nişanlı hasar %20 artar, yeniden doldurma hızı %10 artar ve kafa vuruşu hasarı %20 artar.}
+itm_stat_talisman21 {Karşılıklı Sorumluluk}
+itm_stat_descr_talisman21 {Rütbe 2 ve altındaki gemilerde kaçakçılarla ticaret yapmanı sağlar.}
+itm_stat_secondary_hat1 {Uyum}
+itm_stat_descr_secondary_hat1 {Düz silahlarla hızlı saldırılar ve eğri silahlarla kesme saldırıları %5 daha fazla hasar verir.}
+itm_stat_secondary_hat2 {Eylemsizlik}
+itm_stat_descr_secondary_hat2 {Kısa silahlarla grup saldırıları ve uzun silahlarla ağır saldırılar %7 daha hızlı yapılır.}
+itm_stat_secondary_hat3 {Gümüş Dil}
+itm_stat_descr_secondary_hat3 {Meyhanelerdeki denizci sayısını artırır ve işe alma maliyetlerini %5 azaltır.}
+itm_stat_secondary_hat4 {Prusya Disiplini}
+itm_stat_descr_secondary_hat4 {Topçu ateşi isabeti %10 artar.}
+itm_stat_secondary_hat5 {Premier Lig}
+itm_stat_descr_secondary_hat5 {İlgili hat gemilerine karşı ulusların düşmanlığını sona erdirir.}
+itm_stat_secondary_hat7 {Hazine Avcısı}
+itm_stat_descr_secondary_hat7 {Hazine değerini %10 artırır.}
+itm_stat_secondary_hat8 {Kariblerin Laneti}
+itm_stat_descr_secondary_hat8 {Her Tehdit seviyesi, gemi bakımını %2 azaltır ve dünya haritasında hızı %0,25 artırır.}
+itm_stat_secondary_hat11 {Afekt}
+itm_stat_descr_secondary_hat11 {Karakter son iki hafta içinde yakınlık yaşadıysa saldırı hızı %5 artar.}
+itm_stat_blade_SP_3low {Ortaya Çıkmamış Potansiyel}
+itm_stat_descr_blade_SP_3low {Bu kılıç gücünün zirvesinde değil—bir şey eksik...}
+itm_stat_blade_SP_3 {Azrail}
+itm_stat_descr_blade_SP_3 {Her kaynaktan iyileşmeyi engeller. Eksik Canın her %2’si için, verilen hasar %1,5 ve enerji yenilenmesi %1,75 artar.}
+itm_stat_blade_41 {Esneklik}
+itm_stat_descr_blade_41 {En yüksek Kesici silah yeteneğinden hasar bonusu alır.}
+itm_stat_lacrima_patris {Doğru Yol}
+itm_stat_descr_lacrima_patris {Öldürülen her 10 haydut ve düzenbaz, hasarı 2 artırır, Mercy toplarının menzilini %1 yükseltir.}
+itm_stat_blade_WR {Çalışkanlık}
+itm_stat_descr_blade_WR {Savaşta sağlık yenilenme hızını beş kat artırır.}
+itm_stat_suit5 {Epolett}
+itm_stat_descr_suit5 {Fransa için kazanılan başarılar genelevlere ücretsiz giriş sağlar ve Fransız kolonilerinde asker sayısını %15 artırır.}
+itm_stat_suit4 {Kötü Şöhret}
+itm_stat_descr_suit4 {Herkes bu kıyafetin bela getirdiğini bilir, sahibinin her çizmesinde bir bıçak gizlidir. Filo gücünü %13 artırır. Korkutma için güç hesaplanırken her gemi Savaş olarak sayılır.}
+itm_stat_cirass10 {Teçhizat}
+itm_stat_descr_cirass10 {Bu zırh kullanışlı mühimmat cepleriyle donatılmıştır. Yeniden doldurma hızı %15 artar.}
+itm_stat_underwater {Hacim}
+itm_stat_descr_underwater {Bu zırh o kadar ağır ki, giyerken sadece yürüyerek hareket edebilirsin.}
+itm_stat_pistol11 {Cehennem Yaratığı}
+itm_stat_descr_pistol11 {Bu silah, özelliklerinden çok varlığıyla dikkat çekiyor. Ağır silahlar becerisini 20 artırır.}
+itm_stat_pistol12 {Sökülebilir}
+itm_stat_descr_pistol12 {Bu ateşli silah, tek elle veya çift elle kullanılmak üzere monte edilip sökülebilir.}
+itm_stat_mushket8 {Sökülebilir}
+itm_stat_descr_mushket8 {Bu ateşli silah, tek elle veya çift elle kullanılmak üzere monte edilip sökülebilir.}
+itm_stat_spyglassSP3 {Cezalandırıcı Bakış}
+itm_stat_descr_spyglassSP3 {Bu dürbünle düşman kaptanın gözlerindeki korkuyu görebilir, teslim olmaya hazır mı anlarsın.}
+itm_stat_reloadTime {Yeniden doldurma süresi}
+itm_stat_descr_reloadTime {Sıradaki mermiyi sürme zamanı.}
+itm_stat_kaleuche_amulet2 {Saldırı Tılsımı}
+itm_stat_descr_kaleuche_amulet2 {Chavinavi tapınağı canavarlarını silah hasarına karşı savunmasız yapar ve saldırılarına karşı koruma sağlar. Tüm silah türlerinde becerileri %25 artırır.}
+itm_stat_kaleuche_amulet3 {Savunma Tılsımı}
+itm_stat_descr_kaleuche_amulet3 {Chavinavi tapınağı canavarlarını silah hasarına karşı savunmasız yapar ve saldırılarına karşı koruma sağlar. Tüm silah türlerinden alınan hasarı %25 azaltır ve zehirlenmeyi engeller.}
+itm_stat_descr_lacrima_patris_bonus
+{
+~
+~
+Mevcut bonus: $number($attr($context.KillerBonus.appliedbonus)) hasar ve $number($attr($context.KillerBonus.RangeBonus))% menzil.
+}
+itm_stat_blade_WR_1 {Çalışkanlık}
+itm_stat_descr_blade_WR_1 {Savaşta sağlık yenilenme hızını beş kat artırır.}
+itm_stat_secondary_hat6 {Saygın Müzakereci}
+itm_stat_descr_secondary_hat6 {Filodaki ticaret gemilerinin gücünü %40 artırır ve ticaret gemilerinden kaçma şansı cezasını 3 azaltır.}
+itm_stat_KhaelRoa_item {Jaguar}
+itm_stat_descr_KhaelRoa_item {Ateşli silahların verdiği hasarı on kat artırır.}
+itm_stat_indian_poison {Taíno}
+itm_stat_descr_indian_poison {Hafif bir yaradan bile %100 ihtimalle panzehirle tedavi edilemeyen ve kısa sürede ölüme yol açan ağır zehirlenmeye neden olur.}
+itm_stat_PerksPotion {Unutuluş}
+itm_stat_descr_PerksPotion {Karakterin öğrendiği tüm yetenekleri sıfırlar. Kullanıldıktan sonra yetenek ve tekniklerin hafızası silinir, ancak beceri kalır — sanki beden başardıklarını hatırlarken, zihin artık hatırlamaz.}
+itm_stat_descr_talisman19_InSlot {Geminin gövdesinden kaybedilen her %2, top hızını %0,75 ve hasarını %0,5 artırır.}
+itm_stat_descr_talisman19_InInventory {Envanterde tutulduğunda tüm subayları ölümsüz yapar.}
+itm_stat_piratesJournal_1 {Akıncı}
+itm_stat_descr_piratesJournal_1 {Küresel harita hızını %3 artırır. Amiral gemisi 'Amsterdam' ise bonus iki katına çıkar. Korsanların en iyi geleneği.}
+itm_stat_piratesJournal_2 {Çalıntı Eşya Tüccarı}
+itm_stat_descr_piratesJournal_2 {Çalınan mallardaki ceza %8 azalır. Amiral gemisi 'Amsterdam' ise bonus iki katına çıkar.}
+itm_stat_piratesJournal_3 {Kendi Kendine Yeterlilik}
+itm_stat_descr_piratesJournal_3 {Denizde onarım verimliliğini %30 artırır. Amiral gemisi 'Amsterdam' ise bonus iki katına çıkar.}
+itm_stat_pistol15 {Küçük ama Tehlikeli}
+itm_stat_descr_pistol15 {Bu tabancayı çekmek ve kılıfa koymak %15 daha hızlıdır. İsabetler düşmanları güçlüce geri savurur.}

@@ -1,7 +1,7 @@
 // Здесь геймплейные функции абордажа
 
 // Мушкетный залп
-void BRD_FireMusketsShoot(ref pchar, ref echr, int mclass, int eclass, int realmcrew, int realecrew)
+void BRD_FireMusketsShoot(ref pchar, ref echr, int mclass, int eclass, ref realmcrew, ref realecrew)
 {
 	if (BRD_IsCrewGiveUpCaptain(echr, 1)) return;
 
@@ -345,9 +345,9 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 	BRD_StartFight(locIndex, boarding_enemy, isCabin);
 }
 
-bool BRD_ExitToInterface(ref chr, int leftCrew, bool IsFort, bool surrender)
+bool BRD_ExitToInterface(ref chr, int leftCrew, bool IsFort, ref surrender)
 {
-	trace("BRD_ExitToInterface sur: " + surrender + " leftCrew: " + leftCrew)
+	trace("BRD_ExitToInterface sur: " + surrender + " leftCrew: " + leftCrew);
 	LAi_boarding_process = false;
 	if (CheckAttribute(pchar, "GenQuest.QuestAboardCaptanSurrender")) // квестовая сдача в плен кэпа
 	{
@@ -460,7 +460,7 @@ bool BRD_FallbackNoLocation(string deckID, ref echr, bool isFort)
 	return true;
 }
 
-void BRD_ApplyMedicine(int deadCrewWOMedic, int deadCrew)
+void BRD_ApplyMedicine(int deadCrewWOMedic, ref deadCrew)
 {
 	int iTemp = deadCrewWOMedic - deadCrew;
 	if (iTemp <= 0) return;

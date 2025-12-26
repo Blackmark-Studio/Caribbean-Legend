@@ -1,6 +1,7 @@
 /// Sith, EvgAnat меню наций
 #event_handler("Control Activation","ProcessInterfaceControls");// гуляем по меню кнопками Q и E
 #include "interface\utils\common_header.c"
+#include "interface\utils\stealth.c"
 ref xi_refCharacter
 int curNationIdx;
 
@@ -28,20 +29,8 @@ void InitInterface(string iniName)
     /////////////	
     CalculateHunter();
 
-	string descr = XI_ConvertString("Mechanics_descr");
-	SetFormatedText("INFO_MECH", descr);
-	// SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"INFO_MECH",5);
-
-	int nStrings = GetNumberOfStringsInFormatedText("INFO_MECH", descr); // считаем сколько строк в форме
-	// Log_TestInfo("Всего строк " + nStrings);
-	if(nStrings <8)// Запрет на скроллинг
-	{
-		SetNodeUsing("SCROLL_MECH",false);
-		SendMessage( &GameInterface,"lsll",MSG_INTERFACE_MSG_TO_NODE,"INFO_MECH", 13, 1 ); //1 - запрет, 0 - нет
-	}
-
     curNationIdx = sti(chref.nation);
-    SetNewNation(0);
+    SetNewNation(0, &curNationIdx);
     XI_RegistryExitKey("IExit_F2");
 	
 	SetNationWars();
@@ -49,6 +38,39 @@ void InitInterface(string iniName)
 	SetPiratesThreatLevel();
 	SetSquadronTable();
 	SetThreatLevel();
+	SetTradeLicenseInfo();
+}
+
+void SetTradeLicenseInfo()
+{
+	int daysLeft = LICENSE_GetDaysLeft();
+	string descr;
+	object context;
+	context.humanExpireDate = LICENSE_GetExpireDateString();
+	if (daysLeft < 1) 
+	{
+		context.humanDaysLeft  = "";
+	}
+	else
+	{
+		context.humanDaysLeft = its(daysLeft);
+	}
+
+	int violationsQty = LICENSE_GetViolations();
+	bool showViolations = daysLeft > 0;
+
+	for (int i = 1; i <= 3; i++)
+	{
+		if (!showViolations) SetNodeUsing("LICENSE_VIOLATION_" + i, false);
+		else SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"LICENSE_VIOLATION_" + i, 2, 1, i <= violationsQty);
+	}
+
+	string violationsTitle = " ";
+	if (showViolations) violationsTitle = GetConvertStrB("license_violations_name", "Stealth.txt");
+	SendMessage(&GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE, "STR_TITLES", 1, 8, "#" + violationsTitle);
+	descr = DLG_Convert("license_state", "Stealth.txt", &context);
+	descr += "\n\n" + XI_ConvertString("TradeLicenseInfo");
+	SetFormatedText("LICENSE_TEXT", descr);
 }
 
 // гуляем по меню кнопками Q и E
@@ -114,7 +136,7 @@ void ProcessCommandExecute()
     		{
 				if (!CheckAttribute(pchar, "DisableChangeFlagMode"))
 				{
-					SetNewNation(-1);
+					SetNewNation(-1, &curNationIdx);
 				}
     		}
     	break;
@@ -124,7 +146,7 @@ void ProcessCommandExecute()
     		{
                 if (!CheckAttribute(pchar, "DisableChangeFlagMode"))
                 {
-					SetNewNation(1);
+					SetNewNation(1, &curNationIdx);
 				}
     		}
     	break;
@@ -213,7 +235,15 @@ void ShowInfoWindow()
 			sHeader = XI_ConvertString("Nation");
 			sText1 = GetRPGText("Nation_hint");
 		break;
-		case "INFO_CLICK":
+		case "HELP_POWER":
+			sHeader = XI_Convertstring("SquadPower");
+			sText1 = XI_Convertstring("Mechanics_descr");
+		break;
+		case "LICENSE_VIOLATION_1":
+			sHeader = GetConvertStrB("license_violations_name", "Stealth.txt");
+			sText1 = GetConvertStrB("license_violation_tooltip_body", "Stealth.txt");
+		break;
+		case "HELP_NATIONS":
 			sHeader = XI_ConvertString("Hunter_type");
 			sText1 = GetRPGText("Hunter_hint");
 		break;
@@ -323,50 +353,6 @@ void FlagsProcess()
 	}
 }
 
-void SetNewNation(int add)
-{
-    ref   mchar = GetMainCharacter();
-    bool  ok, ok2, ok3;
-    
-    curNationIdx = curNationIdx + add;
-    if (curNationIdx < 0) curNationIdx = 4;
-    if (curNationIdx > 4) curNationIdx = 0;
-    SetNewGroupPicture("FLAGPIC", "NATIONS", GetNationNameByType(curNationIdx));
-    
-    if (IsCharacterPerkOn(mchar,"FlagPir")  ||
-	    IsCharacterPerkOn(mchar,"FlagEng")  ||
-		IsCharacterPerkOn(mchar,"FlagFra")  ||
-		IsCharacterPerkOn(mchar,"FlagSpa")  ||
-		IsCharacterPerkOn(mchar,"FlagHol"))
-    {
-		SetNodeUsing("CHANGEFLAG",true);
-		if (!bBettaTestMode)
-		{
-			ok3 = bSeaActive && !CheckEnemyCompanionDistance2GoAway(false);
-			if (bDisableMapEnter || bLandInterfaceStart || ok3) SetSelectable("CHANGEFLAG",false);
-		}
-        ok  = !IsCharacterPerkOn(mchar,"Flag" + NationShortName(curNationIdx)) && (sti(mchar.nation) != curNationIdx);
-        ok2 =  true;
-        if (isMainCharacterPatented())
-        {
-            ok2 = (sti(Items[sti(mchar.EquipedPatentId)].Nation) != curNationIdx);
-        }
-        if (ok && ok2)
-        {
-            SetNewNation(add);
-        }
-        if (sti(mchar.nation) == curNationIdx)
-        {
-			SetNodeUsing("CHANGEFLAG",false);
-        }
-    }
-    else
-    {
-        SetNodeUsing("CHANGEFLAG",false);
-	    SetNodeUsing("RIGHTCHANGE_NATION",false);
-	    SetNodeUsing("LEFTCHANGE_NATION",false);
-    }
-}
 void PirateProcess()
 {
     //DoQuestCheckDelay("pir_flag_rise", 1.0);
@@ -468,20 +454,8 @@ void SetNationThreatLevel()
 {
 	GameInterface.StatusLine.BAR_THREAT.Max   = 100.0;
 	GameInterface.StatusLine.BAR_THREAT.Min   = 0.0;
-	float fBarLevel[6];
-	fBarLevel[0] = 0.0;
-	fBarLevel[1] = 8.0;
-	fBarLevel[2] = 20.0;
-	fBarLevel[3] = 38.0;
-	fBarLevel[4] = 64.0;
-	fBarLevel[5] = 100.0;
-	float fRealLevel[6];
-	fRealLevel[0] = 0.0;
-	fRealLevel[1] = 10.0;
-	fRealLevel[2] = 15.0;
-	fRealLevel[3] = 20.0;
-	fRealLevel[4] = 30.0;
-	fRealLevel[5] = 50.0;
+	float fBarLevel[6]  = {0.0, 8.0, 20.0, 38.0, 64.0, 100.0};
+	float fRealLevel[6] = {0.0, 10.0, 15.0, 20.0, 30.0, 50.0};
 	float fHunterScore[4];
 	fHunterScore[ENGLAND] = stf(pchar.reputation.enghunter);
 	fHunterScore[FRANCE]  = stf(pchar.reputation.frahunter);
@@ -695,23 +669,11 @@ void SetSquadronTable()
 	// Механика мощи
 	PChar.Squadron.RawPower = fSquadronMight; // Кэш
 	PChar.Squadron.ModPower = SquadronPowerWithMods(fSquadronMight); // Кэш
-	
-	float fBarLevel[6];
-	fBarLevel[0] = 0.0;
-	fBarLevel[1] = 0.08;
-	fBarLevel[2] = 0.2;
-	fBarLevel[3] = 0.38;
-	fBarLevel[4] = 0.64;
-	fBarLevel[5] = 1.0;
+
     // see wdmGetPowerThreshold
-	float fRealLevel[6];
-	fRealLevel[0] = 0.0;
-	fRealLevel[1] = 200.0;
-	fRealLevel[2] = 325.0;
-	fRealLevel[3] = 475.0;
-	fRealLevel[4] = 675.0;
-	fRealLevel[5] = 925.0;
-	
+	float fBarLevel[6]  = {0.0, 0.08, 0.2, 0.38, 0.64, 1.0};
+	float fRealLevel[6] = {0.0, 200.0, 325.0, 475.0, 675.0, 925.0};
+
 	float fBarPower = stf(PChar.Squadron.ModPower);
 	for(int iLevel = 1; iLevel <= 5; iLevel++)
 	{

@@ -1,0 +1,3 @@
+locations_loader_1 {初訪問 ~}
+locations_loader_2 {すべての植民地を訪問済み！}
+locations_loader_3 {謎の場所を訪れた！}

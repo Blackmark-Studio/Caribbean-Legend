@@ -1,4 +1,19 @@
 
+// Универсальная функция сортировки массивов и таблиц атрибутов.
+// rObject - ссылка на объект / aref или массив
+// sAttr - атрибут, по которому ведется сортировка. Для массивов примитивных типов не имеет значения.
+// sType - тип сортировки:
+//             "string"   - регистронезависимая строковая сортировка
+//             "int"      - сортировка целых чисел
+//             "float"    - сортировка чисел с плавающей точкой
+//             "date"     - сортировка дат
+// bAscend - true если по возрастанию, false - по убвыванию
+// iOffset - пропустить заданное число знаков с начала строки. Игнорируется для примитивных типов
+// sPrefix - префикс сортируемых строк. Применимо только если rObject - ссылка на объект или aref.
+// extern void SmartSort(ref rObject, string sAttr, string sType, bool bAscend, int iOffset, string sPrefix);
+
+
+
 // Сортировка любых интерфейсных таблиц
 // column номер столбца
 // datatype тип данных в столбце для сравнения
@@ -6,12 +21,10 @@
 // offset –  отступ, нужен для сравнений иконок по цифре в названии, типа в "ico_n" ищем n
 void QoLSortTable(string tableName, int column, string datatype, bool preserveState, int offset)
 {
-	string curLanguage = BackUpLanguage();
-
-	aref table, upRow, downRow, backup, hr;
+	aref table, backup, hr;
 	bool isAscend = false;
-	object tempRow;
 	makearef(table, GameInterface.(tableName));
+
 	makearef(hr, GameInterface.(tableName).hr);
 	makearef(backup, hr.backUp);
 
@@ -25,77 +38,34 @@ void QoLSortTable(string tableName, int column, string datatype, bool preserveSt
 	}
 	if (isAscend)	hr.(sAscend) = true;
 
-	// Запасаем алфавит для строковых сравнений
-	string alphabet; 
-	if (datatype == "string") alphabet = GetAlphabet(LanguageGetLanguage(), false);
-	if (datatype == "sIcon") alphabet = GetAlphabet("english", false);
-
 	string cellName = "td" + column;
-	string lLetter, rLetter;
-	int lInt = 0;
-	int rInt = 0;
-	int i, j;
-	int tableSize = GetAttributesNum(&table);
-	bool compare = false;
 
-	// Запускаем пузырёк
-	for (i=0; i < tableSize - 1; i++){
-		for (j=0; j < tableSize - 1 - i; j++){
-
-		upRow = GetAttributeN(&table, j);
-		downRow = GetAttributeN(&table, j+1);
-
-		// скипаем заголовки и селекторы
-		if (strcut(GetAttributeName(&upRow), 0, 1) != "tr") continue; 
-		if (strcut(GetAttributeName(&downRow), 0, 1) != "tr") continue; 
-
-		// Сравниваем значения в зависимости от типа данных
-		switch (datatype)
-		{
-			case "index": // дефолтная сортировка по индексу из строки
-				compare = sti(upRow.index) > sti(downRow.index);
-			break;
-			case "string": 
-				lLetter = GetStrSmallRegister(GetSymbol(upRow.(cellName).str, &offset)); 
-				rLetter = GetStrSmallRegister(GetSymbol(downRow.(cellName).str, &offset));
-				compare = !CompareStringsByABC(&alphabet, &lLetter, &rLetter);
-			break;
-			case "floatEnd": // преобразуем в число с точкой, отрезав от строки offset символов с начала
-				string lNum = upRow.(cellName).str;
-				string rNum = downRow.(cellName).str;
-				lNum = strcut(lNum, offset, strlen(&lNum) - 1);
-				rNum = strcut(rNum, offset, strlen(&rNum) - 1);
-				compare = stf(lNum) > stf(rNum);
-			break;
-			case "integer":
-				compare = sti(upRow.(cellName).str) > sti(downRow.(cellName).str);
-			break;
-			case "float":
-				compare = stf(upRow.(cellName).str) > stf(downRow.(cellName).str);
-			break;
-			case "date": 
-				compare = DateStringToInt(upRow.(cellName).str) > DateStringToInt(downRow.(cellName).str);
-			break;
-			case "intIcon": // ищем цифру в названии иконки на позиции offset, типа portrait_32 → 3
-				if (CheckAttribute(&upRow, cellName + ".icon.image")) lInt = sti(GetSymbol(upRow.(cellName).icon.image, &offset)); 
-				if (CheckAttribute(&downRow, cellName + ".icon.image")) rInt = sti(GetSymbol(downRow.(cellName).icon.image, &offset)); 
-				compare = lInt > rInt;
-			break;
-			case "sIcon": // сравниваем по первой букве id иконки типа france.tga → f
-				if (CheckAttribute(&upRow, cellName + ".icon.image")) lLetter = GetStrSmallRegister(GetSymbol(upRow.(cellName).icon.image, &offset)); 
-				if (CheckAttribute(&downRow, cellName + ".icon.image")) rLetter = GetStrSmallRegister(GetSymbol(downRow.(cellName).icon.image, &offset)); 
-				compare = !CompareStringsByABC(&alphabet, &lLetter, &rLetter);
-			break;
-		}
-
-		if (isAscend) compare = !compare;
-		if (!compare) continue;
-
-		// Меняем строки местами
-		CopyAttributes(&tempRow, upRow);
-		CopyAttributes(&upRow, downRow);
-		CopyAttributes(&downRow, tempRow);
-		}
+	switch (datatype)
+	{
+		case "index": // дефолтная сортировка по индексу из строки
+			SmartSort(table, "index", "int", isAscend, 0, "tr");
+		break;
+		case "string":
+			SmartSort(table, cellName+".str", "string", isAscend, offset, "tr");
+		break;
+		case "floatEnd": // преобразуем в число с точкой, отрезав от строки offset символов с начала
+			SmartSort(table, cellName+".str", "float", isAscend, offset, "tr");
+		break;
+		case "integer":
+			SmartSort(table, cellName+".str", "int", isAscend, offset, "tr");
+		break;
+		case "float":
+			SmartSort(table, cellName+".str", "float", isAscend, offset, "tr");
+		break;
+		case "date":
+			SmartSort(table, cellName+".str", "date", isAscend, offset, "tr");
+		break;
+		case "intIcon":
+			SmartSort(table, cellName+".icon.image", "int", isAscend, offset, "tr");
+		break;
+		case "sIcon":
+			SmartSort(table, cellName+".icon.image", "string", isAscend, offset, "tr");
+		break;
 	}
 
 	makearef(backup, table.hr.backup);
@@ -103,7 +73,6 @@ void QoLSortTable(string tableName, int column, string datatype, bool preserveSt
 	backup.offset = offset;
 	backup.column = column;
 	Table_UpdateWindow(tableName);
-	LanguageSetLanguage(curLanguage);
 }
 
 
@@ -167,55 +136,5 @@ bool RestoreAllSelectionsAfterSort(string tableName, int sortedGoodIndex, int so
 // Сортируем карты по алфавиту на базе названия острова
 void SortMapsIdsByABC(ref array)
 {
-	string curLanguage = BackUpLanguage();
-	string alphabet = GetAlphabet(LanguageGetLanguage(), true);
-
-	int arraySize = GetArraySize(array);
-	int j, i;
-	for (i=0; i < arraySize - 1; i++) {
-		for (j=0; j < arraySize - 1 - i; j++) {
-			string lMapId = array[j];
-			string rMapId = array[j+1];
-
-			// map_cumana → Cumana
-			string lkey = GetMapArea(&lMapId);
-			string rkey = GetMapArea(&rMapId);
-
-			// Cumana → К
-			string lLetter = GetSymbol(XI_ConvertString(lkey), 0); 
-			string rLetter = GetSymbol(XI_ConvertString(rkey), 0);
-
-			if (lMapId == "map_normal" || lMapId == "Map_Best" || lMapId == "map_bad") continue; // выносим общие карты в начало
-			if (!CompareStringsByABC(alphabet, lLetter, rLetter)) continue;               // или сравниваем по первой букве
-
-			string q = array[j];
-			array[j] = "" + array[j+1];
-			array[j+1] = q;
-		}
-	}
-	LanguageSetLanguage(curLanguage);
-}
-
-string GetAlphabet(string language, bool uppercase)
-{
-	if (language == "russian" && uppercase) return "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
-	if (language == "russian") return "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-	if (language == "polish" && uppercase) return "AĄBСĆDЕĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ";
-	if (language == "polish") return "aąbсćdеęfghijklłmnńoóprsśtuwyzźż";
-	if (language == "german" && uppercase) return "ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜẞ";
-	if (language == "german") return "abcdefghijklmnopqrstuvwxyzäöüß";
-	if (language == "spanish" && uppercase) return "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
-	if (language == "spanish") return "abcdefghijklmnñopqrstuvwxyz";
-	if (language == "french" && uppercase) return "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	if (language == "french") return "abcdefghijklmnopqrstuvwxyz";
-	if (uppercase) return "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	return "abcdefghijklmnopqrstuvwxyz";
-}
-
-// Сравниваем две строчки по расположению символа в алфавите
-bool CompareStringsByABC(string alphabet, string left, string right)
-{
-	int lPos = findSubStr(alphabet, left, 0);
-	int rPos = findSubStr(alphabet, right, 0);
-	return lPos > rPos;
+	SmartSort(array, "", "string", true, 0, "");
 }

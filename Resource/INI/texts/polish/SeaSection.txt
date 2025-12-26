@@ -1,5 +1,5 @@
 Ship_critical {Trafienie Krytyczne!}
-Ship_critical_notif {' - Trafienie Krytyczne!}
+Ship_critical_notif {'' - Trafienie Krytyczne!}
 Ship_sunk {%1 "%2" zatonął. Zdobyto +%3 doświadczenia.}
 Ship_sunk_other {%1 "%2" zatonął.}
 Ship_got_good {%1 centnerów z %2 zostały zabrane na pokład}
@@ -53,6 +53,7 @@ seg_Cannon_24 {24-funtowe}
 seg_Cannon_32 {32-funtowe}
 seg_Cannon_36 {36-funtowe}
 seg_Cannon_42 {42-funtowe}
+seg_Cannon_48 {48-funtowe}
 seg_Culverine_8 {Półkolubryny}
 seg_Culverine_18 {Kolubryny}
 seg_Culverine_36 {Pełne kolubryny}

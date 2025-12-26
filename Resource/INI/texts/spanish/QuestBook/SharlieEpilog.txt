@@ -1,0 +1,63 @@
+#QUEST SharlieEpilog
+Epílogo
+#TEXT 1_1
+Visité al abad Benoît, y me contó que mi padre teme que la enfermedad lo venza antes de que podamos volver a vernos. En su carta me decía lo mismo, aunque omitió mencionar que cada día se siente más débil.
+Tuve que tomar una decisión difícil: zarpar tan pronto como sea posible.
+Sin embargo, dada mi situación actual, no puedo simplemente dejarlo todo y regresar al Viejo Mundo. Primero debo tomar ciertas decisiones para poder dejar el archipiélago con la conciencia tranquila. El abad me prometió su ayuda – con su apoyo podré hacer llegar las órdenes necesarias a quienes corresponda.
+También me aconsejó saldar cualquier deuda que tenga. Los prestamistas tienen brazos largos – y no hay duda de que por su dinero son capaces de todo.
+#TEXT 1_2
+Visité al abad Benoît, y me contó que mi padre teme que la enfermedad lo venza antes de que podamos volver a vernos. En su carta me decía lo mismo, aunque omitió mencionar que cada día se siente más débil.
+Lamentablemente, partir hacia el Viejo Mundo ahora mismo no es una opción – tengo varios asuntos urgentes que necesitan resolverse de inmediato. El viaje de ida y vuelta podría tomar bastante tiempo, y estoy seguro de que mi padre insistiría en que me quedara en la hacienda al menos unos meses. Esa idea no me resulta muy atractiva.
+#TEXT 2
+El abad tiene razón – no puedo seguir retrasando mi partida. Sin embargo, dada mi situación actual, no puedo simplemente dejarlo todo y regresar al Viejo Mundo. Primero debo tomar ciertas decisiones para poder dejar el archipiélago con la conciencia tranquila. El sacerdote mismo me ofreció su ayuda – con su apoyo podré hacer llegar las órdenes necesarias a quienes corresponda.
+También me aconsejó saldar cualquier deuda que tenga. Los prestamistas tienen brazos largos – y no hay duda de que por su dinero son capaces de todo.
+#TEXT 3_1
+He decidido entregar Isla Mona al dominio de Su Majestad. Es la única manera de garantizar su seguridad. Los mensajeros del abad informarán a ambas partes de mi decisión. Espero que Rodgar encuentre la fuerza para someterse a la civilización que se avecina.
+#TEXT 3_2
+He decidido dejar Isla Mona bajo la supervisión de Jan Swenson. Estoy seguro de que podrá garantizar tanto la seguridad de los habitantes como el funcionamiento ininterrumpido de la factoría. Por supuesto, exigí una parte de las ganancias – no voy a regalar un bocado tan suculento.
+#TEXT 4_1
+Le conté al abad sobre mi baronía en Le François y decidí renunciar a ella, como informé a Marcus en una carta. Sinceramente, sentí cierto alivio. Se acabó la piratería. Aunque aún tengo amigos entre los piratas – yo ya no quiero tener nada que ver con eso.
+#TEXT 4_2
+El abad claramente no aprobaría mi baronía en Le François, así que no necesita saberlo. Sin embargo, envié una carta a Marcus con mi decisión de renunciar a ella. Quién sabe qué podrían hacer los piratas en el archipiélago en mi ausencia, usando mi nombre. No me importa mucho quién ocupará mi lugar.
+#TEXT 5_1
+Después de pensarlo bien, decidí renunciar al patente de Francia. No quiero cargar con esa obligación cuando vea a mi padre… y, la verdad, ya casi he olvidado cómo es vivir sin combates constantes. Espero que los próximos meses no me parezcan insoportablemente aburridos.
+#TEXT 5_2
+Tras una breve reflexión, decidí seguir al servicio de Francia y de Su Majestad. Notifiqué a la cancillería de Capsterville sobre mi próxima partida hacia el Viejo Mundo, aunque, sinceramente, espero no tener que quedarme mucho tiempo allí. La vida lejos del barco y de las batallas me resulta… ajena. Pero tendré tiempo suficiente en el viaje para escucharme a mí mismo.
+#TEXT 6
+He decidido llevar conmigo @<sSum> pesos. Creo que llevar más sería imprudente – cualquier cosa podría pasarle al barco en el camino. Me aseguré de que este dinero fuera “limpio”: el abad le dio su bendición a cambio de una donación de @<tSum> pesos. Ante mi padre, está limpio – y eso es todo lo que necesito.
+#TEXT 7
+He decidido informar a Jan Swenson de mi decisión de partir hacia el Viejo Mundo. Después de todo lo que hemos pasado juntos, no podía dejarlo sin decir nada.
+#TEXT 8
+Si tuviera más tiempo, le diría personalmente a Nathan y Danielle Houk sobre mi partida. Al fin y al cabo, se han vuelto casi como una familia para mí. Pero, lamentablemente, ahora no tengo tiempo para eso. Creo que una carta aliviará un poco el golpe de mi salida repentina.
+#TEXT 8_1
+Le informé a Gino Guineyli que dejaré el archipiélago por tiempo indefinido. Mientras no pueda seguir apoyándolo económicamente, le di permiso para alquilar parte de la casa y así mantenerse y continuar sus experimentos.
+#TEXT 9
+Bueno, parece que ya he resuelto todos los asuntos, y todo está listo para zarpar. Debo hablar con el abad.
+#TEXT 10
+El abad me informó que el pinaza *Ulysse*, en la que llegué a estas costas cuando aún era un juerguista ocioso y una desgracia para todo buen hombre, ahora está en subasta. Curioso — el destino me da la oportunidad de volver a casa en la misma nave con la que todo comenzó. Maldita sea, suena tentador. Creo que debería pasar por la administración portuaria y averiguar cuándo será la subasta.
+#TEXT 11_1
+¡Vaya cosa! La subasta ya se celebró, y el ganador no fue otro que Jean Picard — el mismo a quien una vez salvé de la plantación cerca de Maracaibo. Decidió dejar la piratería y dedicarse al comercio, y con esa ocasión adquirió nada menos que el *Ulysse*. Lo más curioso es que su destino es el mismo que el mío: Burdeos.
+Pensé que me vendría bien ser pasajero en este viaje, así que le pedí embarcarme con él. Tendré tiempo para reflexionar... sobre la vida, el hogar, la familia. Tal vez de verdad ha llegado el momento de establecerme en tierra firme.
+Hablando de familia — aún no he hablado con mi esposa. Debí hacerlo antes, pero como siempre, estaba demasiado ocupado...
+La partida es dentro de dos semanas — Jean me estará esperando en la taberna.
+#TEXT 11_2
+¡Vaya cosa! La subasta ya se celebró, y el ganador no fue otro que Jean Picard — el mismo a quien una vez salvé de la plantación cerca de Maracaibo. Decidió dejar la piratería y dedicarse al comercio, y con esa ocasión adquirió nada menos que el *Ulysse*. Lo más curioso es que su destino es el mismo que el mío: Burdeos.
+Pensé que me vendría bien ser pasajero en este viaje, así que le pedí embarcarme con él. Tendré tiempo para reflexionar... sobre la vida, el hogar, la familia. Tal vez de verdad ha llegado el momento de establecerme en tierra firme, buscar una esposa o, como insiste mi padre, considerar a Yvonne La Brignée.
+La partida es dentro de dos semanas — Jean me estará esperando en la taberna. Pero antes tengo que hablar con los oficiales. Quién sabe cuánto durará mi viaje... Parece que ha llegado la hora de despedirse.
+#TEXT 11_3
+Llegué tarde — la subasta ya se celebró, y el ganador fue @<sName>. Rechazó vender el pinaza rotundamente, pero resultó que nuestros destinos coinciden — ambos vamos a Burdeos. Pensé que me vendría bien ser pasajero en este viaje, así que le pedí embarcarme con él. Tendré tiempo para reflexionar... sobre la vida, el hogar, la familia. Tal vez de verdad ha llegado el momento de establecerme en tierra firme.
+Hablando de familia — aún no he hablado con mi esposa. Debí hacerlo antes, pero como siempre, estaba demasiado ocupado...
+#TEXT 11_4
+Llegué tarde — la subasta ya se celebró, y el ganador fue @<sName>. Rechazó vender el pinaza rotundamente, pero resultó que nuestros destinos coinciden — ambos vamos a Burdeos. Pensé que me vendría bien ser pasajero en este viaje, así que le pedí embarcarme con él. Tendré tiempo para reflexionar... sobre la vida, el hogar, la familia. Tal vez de verdad ha llegado el momento de establecerme en tierra firme, buscar una esposa o, como insiste mi padre, considerar a Yvonne La Brignée.
+La partida es dentro de dos semanas — el capitán me estará esperando en la taberna. Pero antes tengo que hablar con Alonso y con los oficiales. Quién sabe cuánto durará mi viaje... Parece que ha llegado la hora de despedirse.
+#TEXT 11_5
+¡Vaya cosa! La subasta ya se celebró, y el ganador no fue otro que Jean Picard — el mismo a quien una vez intenté salvar de la plantación cerca de Maracaibo. Resulta que ese pícaro no solo sobrevivió, sino que también se apoderó de todas las riquezas de la viuda del plantador. Ahora ha decidido dejar la piratería y dedicarse al comercio, y con esa ocasión adquirió nada menos que el *Ulysse*. Lo más curioso es que su destino es el mismo que el mío: Burdeos.
+Pensé que me vendría bien ser pasajero en este viaje, así que le pedí embarcarme con él. Tendré tiempo para reflexionar... sobre la vida, el hogar, la familia. Tal vez de verdad ha llegado el momento de establecerme en tierra firme.
+Hablando de familia — aún no he hablado con mi esposa. Debí hacerlo antes, pero como siempre, estaba demasiado ocupado...
+La partida es dentro de dos semanas. Jean me estará esperando en la taberna — acordamos organizar una buena fiesta antes de zarpar.
+#TEXT 11_6
+¡Vaya cosa! La subasta ya se celebró, y el ganador no fue otro que Jean Picard — el mismo a quien una vez intenté salvar de la plantación cerca de Maracaibo. Resulta que ese pícaro no solo sobrevivió, sino que también se apoderó de todas las riquezas de la viuda del plantador. Ahora ha decidido dejar la piratería y dedicarse al comercio, y con esa ocasión adquirió nada menos que el *Ulysse*. Lo más curioso es que su destino es el mismo que el mío: Burdeos.
+Pensé que me vendría bien ser pasajero en este viaje, así que le pedí embarcarme con él. Tendré tiempo para reflexionar... sobre la vida, el hogar, la familia. Tal vez de verdad ha llegado el momento de establecerme en tierra firme, buscar una esposa o, como insiste mi padre, considerar a Yvonne La Brignée.
+La partida es dentro de dos semanas. Jean me estará esperando en la taberna — acordamos organizar una buena fiesta antes de zarpar. Pero antes tengo que hablar con los oficiales. Quién sabe cuánto durará mi viaje... Parece que ha llegado la hora de despedirse.
+#TEXT 12
+Solo queda lo más difícil — disolver la tripulación y despedirme de los oficiales. Con algunos será especialmente duro, considerando todo lo que hemos vivido juntos… Yo mismo me encargaré de los oficiales, y le pediré a Alonso que hable con la tripulación.

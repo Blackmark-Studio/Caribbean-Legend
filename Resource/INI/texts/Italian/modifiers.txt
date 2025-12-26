@@ -8,5 +8,3 @@ incomingDamageReduction {Protezione dai danni}
 RangeIncomingDamageReduction {Protezione dai danni da fuoco}
 Shot_Damage {Danno da fuoco}
 HeadshotDamage {Danno da colpo alla testa}
-Grapeshot_Damage {Danni aumentati quando si spara a mitraglia}
-Bullet_Damage {Danni aumentati quando si spara con proiettili}

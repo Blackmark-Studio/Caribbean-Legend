@@ -1,0 +1,157 @@
+info
+{
+보물 생성기
+    스크립트 제작: ALexusB 05.11.04
+}
+type_full_1 {지도는 아직 새것이고 종이도 누렇게 변하지 않았습니다. #sMapIslName#의 표시는 급하게 그려진 듯하지만, 믿는다면 보물은 #sMaplocName#에 숨겨져 있습니다.}
+type_full_1_isl {섬}
+type_full_1_mein {본토}
+type_full_2 {지도는 꽤 조잡하게 그려져 있어 #sMapIslName#이 거의 알아보기 힘듭니다. 표시를 보면 보물은 #sMaplocName#에 숨겨진 듯하지만, 직접 가봐야 확실히 알 수 있습니다.}
+type_full_2_isl {섬}
+type_full_2_mein {본토}
+type_full_3 {이 지도는 주인에게 별 가치가 없었습니다. #sMapIslName#의 윤곽이 물 얼룩으로 번졌고, 보물 위치는 #sMaplocName#로 보입니다.}
+type_full_3_isl {섬}
+type_full_3_mein {본토}
+type_full_4 {지도에는 #sMapIslName#이(가) 그려져 있습니다. 보물이 숨겨진 곳은 #sMaplocName#입니다. 서투른 솜씨를 정성으로 메운 듯, 가장자리에는 아이가 그린 듯한 기묘한 동물들이 장식되어 있습니다.}
+type_full_4_isl {섬}
+type_full_4_mein {본토}
+type_full_5 {지도에는 #sMapIslName#의 윤곽이 정확하게 그려져 있습니다. 보물 위치는 #sMaplocName#입니다. 작성자가 꽤 정확한 지침을 남겨두어 찾기 어렵지 않을 것입니다.}
+type_full_5_isl {섬}
+type_full_5_mein {본토}
+type_full_6 {이 지도는 고급 줄무늬 종이에 그려져 있습니다. #sMapIslName#의 윤곽이 쉽게 알아볼 수 있습니다. 뒷면의 메모에 따르면 보물의 위치는 #sMaplocName#입니다.}
+type_full_6_isl {섬}
+type_full_6_mein {본토}
+type_full_7
+{
+여기가 #sMapIslName#입니다. 지도에는 숨겨진 보물의 위치가 표시되어 있는데, 바로 #sMaplocName#입니다. 악명 높은 해적이 그곳에 보물을 숨겼습니다.  
+지도에 묻은 갈색 핏자국은 이 종이가 여러 번 주인을 바꿨음을 보여주며, 진짜 보물지도임을 암시합니다.
+}
+type_full_7_isl {섬}
+type_full_7_mein {본토}
+type_full_8 {이 지도는 여러 사람의 손을 거친 듯합니다 — 종이 여기저기 불에 그을렸고, #sMapIslName#의 윤곽선에는 여러 번 접힌 자국이 남아 있습니다. 보물의 위치는 #sMaplocName#입니다. 분명 그곳에는 정말 귀중한 것이 숨겨져 있을 것입니다.}
+type_full_8_isl {섬}
+type_full_8_mein {본토}
+type_full_9 {이 지도에 정밀하게 그려진 #sMapIslName#는 두루마리 장식과 바다 괴물 그림으로 둘러싸여 있습니다. 지도의 제작자는 분명 뛰어난 솜씨로 보물을 숨겼으며, 그 안에는 매우 귀중한 것이 담겨 있습니다. 이제 남은 것은 #sMaplocName#에 도달하는 것뿐입니다.}
+type_full_9_isl {섬}
+type_full_9_mein {본토}
+type_full_10 {이 지도 조각들은 서로 맞지 않지만, 필체와 잉크 색, 종이 상태로 보아 같은 사람이 그린 것이 분명하다. #sMapIslName#의 윤곽은 번지고 잉크 얼룩이 남아 있으며, 보물은 아마도 #sMaplocName#에 숨겨져 있는 듯하다.}
+type_full_10_isl {섬}
+type_full_10_mein {본토}
+type_full_11 {이 지도는 대각선으로 정교하게 나뉘어 있어 한 쪽만으로는 #sMapIslName#을 알 수 없습니다. 메모는 또박또박 적혀 있어 보물의 위치, 즉 #sMaplocName#을 쉽게 파악할 수 있습니다. 종이의 상태로 보아 보물은 수십 년간 그곳에 있었던 듯합니다.}
+type_full_11_isl {섬}
+type_full_11_mein {본토}
+type_full_12 {두 조각으로 이어진 이 지도는 매우 오래되어 보입니다. #sMapIslName#의 윤곽은 수십 년 전 모습입니다. 설명과 단서는 고풍스러운 언어와 라틴어로 가득합니다. #sMaplocName#에 숨겨진 보물의 규모를 가늠하기 어렵습니다.}
+type_full_12_isl {섬}
+type_full_12_mein {본토}
+type_quest_0
+{
+여기가 #sMapIslName#야. 숨겨진 보물은 여기, #sMaplocName#에 표시되어 있어. 전해지기로는 #sMapOwner#가 이곳에 자신의 재산을 감췄다고 해.
+지도에 남은 갈색 핏자국은 진품임을 증명하며, 이 보물의 피비린내 나는 주인 역사를 암시하지.
+}
+type_quest_0_isl {섬}
+type_quest_0_mein {본토}
+type_part {이것은 보물 지도의 한 조각입니다. 이 조각만으로는 보물의 위치를 알 수 없습니다. 지도를 완성하려면 나머지 조각을 찾아야만 비밀이 드러날 것입니다.}
+type_fake
+{
+이 지도는 보물의 위치를 알려준다고 주장합니다. 진짜인지 조사해볼 수도 있지만, 가짜일 가능성이 더 높아 보입니다.
+이 종이쪼가리는 버리는 게 나을 것 같습니다.
+}
+Antigua_Grot {Falmouth Cove 오른쪽 동굴에}
+Antigua_Grot_box1 {큰 바위 위에 있는 상자}
+SentJons_TownCave {세인트존스의 던전에서}
+SentJons_TownCave_box1 {막다른 곳의 판자 밑에}
+SentJons_TownCave_box2 {광산 막다른 곳에서}
+SentJons_TownCave_box3 {막힌 곳에서}
+Barbados_Cave {브리지타운 근처의 동굴에서}
+Barbados_Cave_box1 {막다른 곳의 판자 밑에}
+Beliz_Cave {벨리즈 출구 오른쪽 동굴에}
+Beliz_Cave_box1 {돌다리 근처의 상자}
+Beliz_Cave_box2 {큰 바위 위의 상자}
+Beliz_Cave_box3 {천장에 매달린 밧줄 옆 상자}
+Beliz_Cave_2 {벨리즈 출구 맞은편 동굴에}
+Beliz_Cave_2_box1 {막다른 곳의 널빤지 아래에}
+Bermudes_Dungeon {샤프타운 조선소 아래의 던전에서}
+Bermudes_Dungeon_box1 {닫힌 문 뒤의 상자}
+Bermudes_Dungeon_box2 {열린 문 뒤에 있는 상자}
+Bermudes_Dungeon_box3 {막다른 곳의 상자}
+Bermudes_Dungeon_box4 {통 뒤에 있는 상자}
+Caracas_Grot {카라카스 출구 오른쪽 동굴에}
+Caracas_Grot_box1 {큰 바위 위에 상자}
+Cartahena_Cave {카르타헤나 출구 맞은편 동굴에}
+Cartahena_Cave_box1 {횃불 아래 상자}
+Cartahena_Cave_box2 {막다른 곳의 상자}
+Cartahena_Cave_box3 {횃불 옆 상자}
+Caiman_Grot {사막 해안 오른쪽의 동굴에}
+Caiman_Grot_box1 {큰 바위 위의 상자}
+Charles_Grot {하프 문 만 오른쪽에 있는 동굴에서}
+Charles_Grot_box1 {해변의 상자}
+Cuba_Grot {카마구에이 곶 오른쪽의 동굴에}
+Cuba_Grot_box1 {해변의 상자}
+Cumana_Cave {카루파노 만 오른쪽에 있는 동굴에서}
+Cumana_Cave_box1 {돌다리 근처에 있는 상자}
+Cumana_Cave_box2 {큰 바위 위의 상자}
+Cumana_Cave_box3 {천장에 매달린 밧줄 옆 상자}
+Curacao_Cave {블랑카 석호 오른쪽 동굴에}
+Curacao_Cave_box1 {횃불 아래 상자}
+Curacao_Cave_box2 {막다른 곳의 상자}
+Curacao_Cave_box3 {횃불 옆 상자}
+Dominica_Grot {스콧스 헤드 만 왼쪽에 있는 동굴에서}
+Dominica_Grot_box1 {해변의 상자}
+Guadeloupe_Cave {과달루페 등대 왼쪽 동굴 안에}
+Guadeloupe_Cave_box1 {횃불 뒤 벽감에 있는 상자}
+Guadeloupe_Cave_box2 {기둥 뒤 벽감에 있는 상자}
+Guadeloupe_Cave_box3 {벽 근처 돌 뒤에 있는 상자}
+Hispaniola_Cave {포르토프랭스 근처 동굴에서}
+Hispaniola_Cave_box1 {돌다리 근처에 있는 상자}
+Hispaniola_Cave_box2 {큰 바위 위의 상자}
+Hispaniola_Cave_box3 {천장에 매달린 밧줄 옆 상자}
+Jamaica_Grot {포트 로열 등대 오른쪽 동굴에}
+Jamaica_Grot_box1 {큰 바위 위의 상자}
+Maracaibo_Cave {마라카이보 출구 맞은편 동굴에}
+Maracaibo_Cave_box1 {횃불 아래 상자}
+Maracaibo_Cave_box2 {막다른 곳의 상자}
+Maracaibo_Cave_box3 {횃불 옆 상자}
+Marigo_Cave {필립스버그 출구 맞은편 동굴에}
+Marigo_Cave_box1 {횃불 아래 상자}
+Marigo_Cave_box2 {막다른 곳의 상자}
+Marigo_Cave_box3 {횃불 옆 상자}
+Panama_Cave {포르토벨로 출구 왼쪽에 있는 동굴에서}
+Panama_Cave_box1 {막다른 곳의 판자 밑에}
+Pearl_Grot {벨리즈와 블루웰드 사이 서해안 근처의 동굴에서}
+Pearl_Grot_box1 {큰 돌 위에 상자}
+PortoBello_Cave {모스키토스 만 오른쪽의 동굴에}
+PortoBello_Cave_box1 {막다른 곳의 판자 밑에}
+SanJuan_Cave {산후안 근처의 동굴에서}
+SanJuan_Cave_box1 {돌다리 근처에 있는 상자}
+SanJuan_Cave_box2 {큰 바위 위의 상자}
+SanJuan_Cave_box3 {천장에 매달린 밧줄 옆 상자}
+SantaCatalina_Cave {케이프 페를라스 오른쪽 동굴에}
+SantaCatalina_Cave_box1 {횃불 아래 상자}
+SantaCatalina_Cave_box2 {막다른 곳에 있는 상자}
+SantaCatalina_Cave_box3 {횃불 옆 상자}
+SantaCatalina_Grot {산후안델노르테 만 오른쪽에 있는 동굴에서}
+SantaCatalina_Grot_box1 {해변의 상자}
+SantaCatalina_PearlCave {산후안델노르테 만 왼쪽에 있는 동굴에서}
+SantaCatalina_PearlCave_box1 {돌다리 근처에 있는 상자}
+SantaCatalina_PearlCave_box2 {큰 바위 위에 있는 상자}
+SantaCatalina_PearlCave_box3 {천장에 매달린 밧줄 옆 상자}
+Tenotchitlan_Cave {아즈텍 신전 북쪽의 동굴에서}
+Tenotchitlan_Cave_box1 {돌다리 근처의 상자}
+Tenotchitlan_Cave_box2 {큰 바위 위의 상자}
+Tenotchitlan_Cave_box3 {천장에 매달린 밧줄 옆 상자}
+Terks_Grot {Northern Bay 오른쪽 동굴에}
+Terks_Grot_box1 {큰 바위 위에 상자}
+Tortuga_Grot {피쉬아이 비치 맞은편 동굴에서}
+Tortuga_Grot_box1 {해변의 상자}
+Tortuga_Cave {토르투가 지하 감옥에서}
+Tortuga_Cave_box1 {닫힌 문 뒤 상자}
+Trinidad_Grot {트리니다드 등대 맞은편 동굴에서}
+Trinidad_Grot_box1 {해변의 상자}
+Martinique_Grot {라망탱 해변 근처 동굴에서}
+Martinique_Grot_box1 {해변의 상자}
+FortFrance_Dungeon {생피에르의 지하감옥에서}
+FortFrance_Dungeon_box1 {언덕 위의 상자}
+FortFrance_Dungeon_box2 {상층의 열린 문 뒤에 있는 상자}
+FortFrance_Dungeon_box3 {리프트 근처의 상자}
+FortFrance_Dungeon_box4 {아래층 열린 문 뒤에 있는 상자}
+FortFrance_Dungeon_box5 {나무 상자 아래에서}

@@ -816,7 +816,7 @@ void ProcessDialogEvent()
 		
 		case "attack_fort":
                 dialog.text = "И о чём же идёт речь?";
-                link.l1 = "Я могу помочь вам разгромить форт колонии " +GetConvertStr(aData.Colony+" Town", "LocLables.txt")+ " и захватить город, а добычу, полученную в случае нашего успеха, мы поделим между собой.";
+                link.l1 = "Я могу помочь вам разгромить форт колонии " +GetCityName(aData.Colony)+ " и захватить город, а добычу, полученную в случае нашего успеха, мы поделим между собой.";
                 link.l1.go = "Siegehelp_1";
                 link.l2 = "Собственно, моё дело вряд ли заслуживает вашего внимания. Прощайте, "+ GetAddress_FormToNPC(NPChar) + ".";
                 link.l2.go = "exit";
@@ -981,7 +981,7 @@ void ProcessDialogEvent()
             aData.loot = sti(aData.loot) - ilt;
             if (CheckAttribute(PChar, "quest.LeaveTown")) Pchar.quest.LeaveTown.over = "yes";
             //--> слухи
-            SiegeRumour("Прошёл слух, что вы помогли нашей эскадре при штурме "+NationNameSK(sti(aData.conation))+"ой колонии - "+GetConvertStr(aData.Colony+" Town", "LocLables.txt")+"! Мы так благодарны вам, "+ GetAddress_Form(NPChar)+".", "", sti(aData.nation), -1, 30, 3);
+            SiegeRumour("Прошёл слух, что вы помогли нашей эскадре при штурме "+NationNameSK(sti(aData.conation))+"ой колонии - "+GetCityName(aData.Colony)+"! Мы так благодарны вам, "+ GetAddress_Form(NPChar)+".", "", sti(aData.nation), -1, 30, 3);
             //<-- слухи
 		break;
 
@@ -1508,7 +1508,6 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Количество вбитых гарпунов":
-   
 			iQty = sti(dialogEditStrings[3]);
 			iTemp = makeint(pchar.GenQuest.FishingBoatITemp);
 			pchar.GenQuest.FishingBoatIQty = iQty;
@@ -1706,7 +1705,7 @@ void ProcessDialogEvent()
 					case 31: sTemp = "obereg_10"; break;	
 				}
 				pchar.GenQuest.FishingBoatSTemp = sTemp;
-				dialog.text = "Это "+GetConvertStr("itmname_"+sTemp, "ItemsDescribe.txt")+". Сумел достать... ну, неважно, где. Думал продать какому-нибудь ценителю. Вам отдам только за 10 000 песо! Возьмёте?";
+				dialog.text = "Это "+GetItemName(sTemp)+". Сумел достать... ну, неважно, где. Думал продать какому-нибудь ценителю. Вам отдам только за 10 000 песо! Возьмёте?";
 				if(sti(pchar.money) > 9999)
 				{
 					link.l1 = "Возьму, конечно! Вещица стоящая. ";

@@ -1,0 +1,982 @@
+#QUEST JusticeOnSale
+Yan Görev: Zor Durumda Kaçakçı
+#TEXT 1
+@<cityName>’deki hapishanede kilitli tutulan kaptanlarını kurtarmak için bir grup kaçakçıya yardım etmeyi kabul ettim. Doğrusunu söylemek gerekirse, bu işe bulaşmasam daha iyiydi, ama vaat ettikleri ödül oldukça cazip. Komutanla konuşmalıyım... ya da belki de bu haydutları yetkililere teslim etmek daha akıllıca olur?
+#TEXT 2
+Daha acil meselelerle meşgul olurken, hapisten kurtardığım kaptanın ve mürettebatıyla yaptığım anlaşmanın izini kaybettim. O alçak fırsatı bulup sıvışmış olmalı. Olsun, kendi yoluna gitsin.
+#TEXT 3
+Kaçakçıların kaptanını serbest bıraktım ve ödülümü aldım. Paranın kokusu yoktur.
+#TEXT 4
+Kaçakçıların kaptanını zindandan kurtardım, ama o alçaklar beni kandırmaya kalktı! Pekâlâ—şimdi şeytanla pazarlıklarını kendileri yapsınlar!
+#TEXT 5
+Kasaba yetkililerine kaçakçıların planlarını bildirdim. Bundan sonrası onların işi, artık kendileri halledebilirler.
+#TEXT 6
+Kaçakçılardan bazıları kaçmayı başardı. Valinin, yeterince hızlı davranmamamdan hoşnut kalmayacağı kesin.
+#TEXT 7
+Tüm kaçakçılar hak ettiklerini buldu. Şimdi valiye rapor vermeliyim, böylece iş tamamlanacak.
+
+#QUEST AffairOfHonor
+Yan Görev: Onur Meselesi
+#TEXT 1
+Tesadüfen son derece kaba bir subayla karşılaştım. Ona haddini bildirmem ve hanımefendinin onurunu savunmam gerekecek. İki saat sonra deniz fenerinde buluşacağız.
+#TEXT 2
+Alçak cezasını buldu, onurum geri kazanıldı! Bu güzel haberi genç hanıma iletmeliyim. Hemen kasabaya dönmeliyim!
+#TEXT 2_1
+Lanet olsun. Düelloyu kaçırdım. Ne aptalım.
+#TEXT 3
+Zavallı bir baba, değersiz bir oğul ve bir hanımefendinin onuru tehlikede... Pekâlâ, bakalım bu iş nereye varacak. Önce meyhaneye ve geneleve uğrayacağım.
+#TEXT 3_1
+Harika! Şimdi geriye tek bir şey kaldı—o alçağı haklamak.
+#TEXT 4
+İş tamamlandı, baba ve oğul en azından bir süreliğine huzur buldu—ta ki yeni bir bela çıkana dek. Şimdi, hak ettiğim ödülümü alma vakti.
+#TEXT 4_1
+Eh, kaçırdım—ne olmuş yani? Büyük bir kayıp sayılmaz.
+#TEXT 5
+Durum gerçekten bu kadar vahim mi ki, yetkililer her serseriye ya da ayyaşa korsanlık yetkisi dağıtıyor? Bir tavernaya uğrayıp, buralarda halkı kimin korkuttuğunu öğrenmeliyim.
+#TEXT 6
+Dünyada bir haydut daha eksildi. Doğru bir iş yapmak insana iyi hissettiriyor.
+#TEXT 6_1
+Fikrimi değiştirdim—savaşmayacağım. Bugün canım hiç istemiyor. Hem, o kız bir meyhanede hizmetçilik yapacağına bir korsanın cariyesi olmanın zevkini tatsın.
+#TEXT 7
+Bir düello! Hem de bundan daha ciddi bir sebep olamazdı.
+#TEXT 8
+O küstah adam hak ettiğini buldu.
+#TEXT 8_1
+Belki de cesaretimi kaybettim... Emin olamıyorum.
+#TEXT 9
+Bir yerli, para kazanmanın alışılmadık bir yolundan bahsetti: Ortaklarını kart oyununda kandırıp, onları sahtekârlıkla suçladıktan sonra düelloya davet etmek—ve sonra da dedikodular yayılmasın diye onları öldürmek. Bunun doğruluğunu araştırmalıyım.
+#TEXT 10
+Vatandaş haklıymış. Zavallı Tom da diğerleri gibi o alçağın kurbanı olmuş. Ama bu işe bir son verdim.
+#TEXT 10_1
+Kartlar, hileler, düellolar... Böyle saçmalıklara ayıracak vaktim yok!
+#TEXT 11
+Bir düellodan korkan bir eskrim hocası—kim inanır buna! Vali'nin yeğeni böyle bir öğretmenden pek bir şey öğrenemez. Yine de bu benim meselem değil. En iyisi tüccarı ziyaret edeyim.
+#TEXT 12
+Paralı asker öldü. Bu iyi haberi öğretmene bildirmeliyim.
+#TEXT 12_1
+O paralı asker tam bir belalıya benziyordu. Onunla dalaşmamın akıllıca olmayacağına karar verdim.
+#TEXT 13
+Şimdilerde subaylar eskisi gibi değil. Yine de, bugün bile, bir düelloda ölmeyi savaşın hararetinde can vermeye tercih ediyorlar. Benim görevim, en layık olanların hayatta kalmasını sağlamak. En fazla iki günüm var. En iyisi işe hanımefendiyi arayarak başlamak.
+#TEXT 14
+Görünüşe göre tanıdığım subay şanslıymış, tanımadığım ise artık ölü. İkinci kaptanların tavsiyesini dinleyip bir süreliğine şehirden ayrılmalıyım.
+#TEXT 14_1
+Başkalarının işlerine karışmamaya karar verdim. Kendi dertleriyle kendileri uğraşsınlar.
+#TEXT 15
+"İlahi Adalet"—ne güzel bir isim bu işe! Müdahale etmeli ve plantasyon sahibinin onurunu düelloda savunmalıyım.
+#TEXT 16
+Bir pusu! Bunu önceden sezmeliydim. Artık plantasyon sahibi, komşusuna karşı güçlü kanıtlara sahip. Ödülümü alma vakti—bunu fazlasıyla hak ettim.
+#TEXT 16_1
+Acaba artık yerel kaçakçılardan indirim bekleyebilir miyim?
+
+#QUEST BurntShipQuest
+Yan Görev: @<cityName>'de Gemi Değişimi
+#TEXT 1
+@<cityName> limanının liman şefi @<portmanName>, benden belirli bir özelliğe sahip olağanüstü bir gemi bulmamı istedi: @<text>. Bu zahmetim karşılığında cömert bir ödül teklif etti. Görevi tamamlamak için altı ayım var.
+#TEXT 2
+Görünüşe göre liman başı @<portmanName> sorunlarını kendi başına çözmeyi başardı. Her halükarda, başarısız biri gibi görünmüyordu.
+#TEXT 3
+Liman müdürü kurnaz çıktı ve sigorta parasını tefeciye teslim etti. En azından gemim hâlâ elimde. Bakalım bu işin sonu nereye varacak.
+#TEXT 4
+Benzersiz bir gemi için @<money> peso ödül aldım. Bu parayla aynı türden iki gemi satın alabilirdim. Kabul etmeliyim ki, liman müdürü işini ve sigorta ofisiyle nasıl pazarlık yapılacağını gerçekten iyi biliyor.
+#TEXT 5
+Bu gemiyi kendime saklamaya karar verdim. @<money> peso, böylesine muhteşem bir tekne için fazlasıyla az.
+
+#QUEST GiveShipLetters
+Yan Görev: Kayıp ve Bulunan
+#TEXT 1
+İlginç bir bulgu! Biri ya aceleyle ya da dalgınlığından dolayı, tam bir gemi evrakı setini kaybetmiş. Eminim sahibi kısa zamanda kaybını bildirecektir.
+#TEXT 2
+Eh, bazı iyi insanlara bir iyilik yaptım ve bana hiçbir zahmeti olmadı.
+#TEXT 3
+Dünyada hâlâ iyi insanlar var. Sahibinin kaybını yakında telafi edeceğini bilmek içimi rahatlattı!
+#TEXT 4
+Dünyada iyi insanlar da varmış. Tersaneye uğradığım için şanslıyım.
+#TEXT 5
+Ödül küçüktü, ama neredeyse parmağımı bile oynatmama gerek kalmadı.
+#TEXT 6
+Belki de en iyisi budur. Bundan pek bir kazancım olmadı, ama en azından artık o evraklarla uğraşmak zorunda değilim.
+#TEXT 7
+Tüccarın mallarıyla böylesine şanslı bir şekilde buluşması her zaman güzel bir şey!
+#TEXT 8
+Sadakatin hak ettiği şekilde ödüllendirilmesi her zaman insanın içini ferahlatıyor!
+#TEXT 9
+Herkese yaptıklarının karşılığı! Belgeler yakında gerçek sahibine geri dönecek—ve altınlar çoktan cebimde.
+#TEXT 10
+Bu belgeleri daha önce teslim etmeliydim; o zaman sahibi yeni bir takım çıkarmak zorunda kalmazdı.
+
+#QUEST ReasonToFast
+Yan Görev: Acele Etmek İçin Bir Sebep
+#TEXT 1
+Cazibeli bir genç kadın, bir garnizon subayının belirli bir koya ulaşmak için öyle acele ettiğini, eğlencesini tamamen yarıda bıraktığını ağzından kaçırdı. Belki de araştırmaya değer?
+#TEXT 2
+Etrafta bolca geveze var. Belki de her şeyi kafamda kuruyorumdur?
+#TEXT 3
+Belki de kızın incinmiş gururuna boyun eğdim. Olmayan şeyleri hayal etmemeliydim...
+#TEXT 4
+Ne talihsizlik! O adam en kötü anda ortaya çıktı. Şimdi onların ne planladığını anlamak için çok geç...
+#TEXT 5
+Görünüşe göre bir korsan ulak tarafından takip ediliyormuşum ve devriye subayı da burada onu bekliyormuş. Ama sanırım kendimi ulak @<sName> olarak tanıtmayı başardım.
+#TEXT 6
+Rüşvetçi devriye subayının izini sürdüm ve korsanlarla olan işbirliğini doğruladım. Onu tutuklamayı başaramasam da hak ettiği cezayı buldu.
+#TEXT 7
+Devriye subayıyla konuşmayı başaramadım. Eh, zaten canı cehenneme!
+#TEXT 8
+Ne talihsizlik! Devriye subayı öldü ve sırrı da onunla birlikte mezara gitti...
+#TEXT 9
+Askerde bir Yahuda, otuz gümüş parayı hak edecek bir iş peşinde. Böylesine yüklü bir @<sText> için ne tür bir iyilik istenir, merak ediyorum.
+#TEXT 10
+Gerçekten de şüpheli bir pazarlık! Yine de, @<sName> bu haritanın peşindeyse mutlaka iyi bir nedeni vardır.
+#TEXT 11
+@<sGoodsName> yüklü '@<sShipName>' adlı @<sShipType>, hiçbir refakat olmadan seyrediyor. Bu önemli bir bilgi...
+#TEXT 12
+Vali, değerli eşyalarını kendi özel odasında mı saklıyor? Ne kadar da dikkatsiz...
+#TEXT 13
+Tanrıya şükür, sonunda bitti!
+#TEXT 14
+İyi bir kılıç, değerli bir ödül demektir! Şimdi de bu haritanın birkaç mücevhere değip değmediğini öğrenmeliyim.
+#TEXT 15
+Bir korsan haritası edindim. Paraya değip değmediğini bir an önce öğrenmem lazım!
+#TEXT 16
+Hıh... Adalete güvenmek de bir yere kadar—şimdi bana karşı döndü. Devriye birliğine saldırmakla suçlanıyorum.
+#TEXT 17
+Bu iş nihayet sona erdi ve görünen o ki kaybeden ben olmadım!
+#TEXT 18
+Devriyenin verdiği ipucu doğruymuş! Bu büyük ganimet, tüm masraflarımı fazlasıyla karşılayacak.
+#TEXT 19
+Ne yazık ki, yüklü bir bedel karşılığında satın aldığım bilgiden hiçbir şekilde faydalanamadım.
+#TEXT 20
+@<sText>'i teslim etmek zorunda kaldım, yoksa @<sName>'in sıcak nefesini ensemde hissedecektim. Bir dahaki sefere, böyle işlere kalkışırken daha temkinli olacağım.
+#TEXT 21
+@<sName>, @<sText>'i savaşmadan teslim etmeyecek. Buradan hemen çıkmam lazım—hem de çabucak.
+#TEXT 22
+Görünüşe göre korsanlar devriye subayının gafını fark etti. Muhtemelen çoktan sonunu buldu—cenaze onun, benim değil. Hâlâ fırsatım varken kaçsam iyi olur. Hayatta kimse kalmadığına göre, yaptıklarımı @<sName>'e anlatacak kimse de yok...
+#TEXT 23
+Korsanlar, @<sName>'in haritasının bende olduğunu ve hazinelerini sakladığı adayı bildiklerini öğrendiler. Neyse ki açgözlülükleri akıllarının önüne geçti ve hazineyi benden önce bulamadılar.
+#TEXT 24
+Şansım pek yaver gitmediği için, hazineyi @<sName>’den gelen define avcılarına teslim etmekten başka çarem kalmadı. Bir dahaki sefere, böyle maceralara atılmadan önce daha temkinli olacağım.
+#TEXT 25
+Devriye subayıyla birlikte bu operasyonun merkezindeki korsan gemisini batırmayı başardım. Muhtemelen devriye subayının kendisi de şimdiye kadar ölmüştür—korsanlar böyle hataları asla affetmez. Görünen o ki, yaptıklarımı @<sName>'e anlatacak kimse kalmadı...
+#TEXT 26
+Bu işten devriye subayıyla birlikte sağ salim çıkmayı başardım. Korsanların beni sonsuza dek takip edeceğinden şüpheliyim—kesinlikle ilgilenmeleri gereken başka meseleler de vardır.
+
+#QUEST PiratesOnUninhabited
+Yan Görev: @<shoreName>’den Kurtarılan
+#TEXT 1
+@<shoreName>'da, batık korsan @<shipTypeName>'dan @<count> denizciyi gemime aldım. Benden onları herhangi bir yerleşim koyuna bırakmamı istediler. Onlara kızamıyorum—sonuçta aranıyorlar...
+#TEXT 2
+Gemi enkazından kurtulan korsanları @<toShore>'a teslim ettim ve küçük bir ödül bile aldım. Pek bir şey değildi ama elde ne varsa iyidir.
+#TEXT 3
+Issız adadan kurtardığım korsanları @<toShore>'a getirdim. Fakat bu alçaklar, benden borç isteme cüretini gösterdiler. Onlara, benim gibilerin böylelerine para vermeyeceğini açıkça belirttim.
+#TEXT 4
+Issız adadan kurtardığım korsanları @<toShore>’a getirdim, hatta onlara biraz borç da verdim. Onların yerinde olsam, böylesine zor durumda nasıl başa çıkardım, hayal bile edemiyorum.
+#TEXT 5
+@<shoreName>'da, batmış korsan @<shipTypeName>'dan @<count> denizciyi gemime aldım. Karşılığında bana bir hazine haritası vermek şartıyla, onları herhangi bir yerleşim koyuna bırakmamı istediler. O harita işine bakarız... Belki de onları yetkililere teslim etmeliyim. O zaman kesinlikle bir ödül alırım.
+#TEXT 6
+O alçak beni kandırmaya çalıştı, ama sonunda bedelini ödedi.
+#TEXT 7
+Herifin üzerinde harita yoktu, ama bana Captain @<capName>'in ganimetini nereye sakladığını söyledi. @<toShore>'da arama yapmam gerekecek.
+#TEXT 8
+Hazinenin gerçekten @<shore>'da gizlenip gizlenmediğinden emin olamıyorum—onu bulamadım. En azından masraflarım fazla olmadı.
+#TEXT 9
+Korsan haklıymış. @<shore>'da gerçekten büyük bir hazine buldum...
+#TEXT 10
+O korsan sıradan biri değildi. Görünüşe göre o hazineyi sadece bana değil, başkalarına da vaat etmiş. Yine de sonunda hazineyi ele geçiren ben oldum.
+#TEXT 11
+@<shoreName>'da, batmış korsan @<shipTypeName>'dan @<count> denizciyi gemime aldım. Onları herhangi bir yerleşim koyuna bırakabilirim ya da yetkililere teslim edebilirim.
+#TEXT 12
+Eldeki bir kuş, daldaki ikiden iyidir diyerek korsanları Governor @<mayorName>'e teslim ettim. Doğru karar verdiğime inanıyorum—en azından ödül çoktan cebimde şıkırdıyor.
+#TEXT 13
+@<shoreName>'da, Kaptan @<badCapName> tarafından karaya bırakılan @<count> denizciyi gemime aldım. Anlattıklarına göre, o kaptan @<ship> ile köle ticareti yapıyormuş. Onu bulmak için anlaştık. Her şey yolunda giderse, ambarındaki ne varsa ben alacağım, onlar ise gemiyi alacaklar.
+#TEXT 14
+@<ship>'e çıktım ve gerçekten de ambarında köleler buldum. Görünen o ki, korsanlar arasında dostlar edinmek bazen işe yarıyor...
+#TEXT 15
+@<ship>'i batırmam ve içindeki korsanlarla ilgilenmem istendi. Kimsenin onların kaybına üzüleceğini sanmıyorum.
+#TEXT 16
+Çarpışmanın hararetinde @<ship>'i batırdım. Onun kaybı için korsanlara ödeme yapmak zorunda kaldım—sonuçta onları hayatta kalacak bir şeyleri olmadan ortada bırakamazdım, değil mi?
+
+#QUEST ShipWrecked
+Yan Görev: Enkazdaki
+#TEXT 1
+@<shoreName>'da, batmış olan @<shipTypeName> "@<ShipName>"'dan @<count> denizciyi gemime aldım. Onları @<sNation>'a ait herhangi bir yerleşime götürmem gerekiyor.
+#TEXT 2
+@<shoreName>’da, Kaptan @<badCapName> tarafından karaya bırakılan @<count> denizciyi gemime aldım. Şimdi onları @<sNation>’a ait herhangi bir yerleşime götürmem gerekiyor.
+#TEXT 3
+@<shoreName>'da, batmış olan @<shipTypeName> '@<ShipName>'dan @<count> denizciyi gemime aldım. Onları en yakın yerleşime götürmem gerekiyor.
+#TEXT 4
+@<shoreName>'da, Kaptan @<badCapName> tarafından karaya bırakılan @<count> denizciyi gemime aldım. Onları en yakın yerleşime götürmem gerekiyor.
+#TEXT 5
+@<shoreName>'da, batmış olan @<shipTypeName> '@<ShipName>'dan @<count> denizciyle karşılaştım. Kaptanları kafasına bir darbe fazla almış olmalı—ısrarla Dunkirk'e götürülmek istiyor. Onlarla ne yapacağımı henüz bilmiyorum. Şimdilik onları gemime aldım; bu ıssız yerde bırakmaya gönlüm elvermedi.
+#TEXT 6
+Kaptan @<sName> ve tayfasını @<sCity>'ye sağ salim ulaştırdım, üstüne bir de küçük bir ödül aldım. Az ama olsun, her kuruş işime yarar.
+#TEXT 7
+Bu deli kaptan, illa ki Dunkirk'e götürülmek istiyor ve gemimden ayrılmayı reddediyor. Davranışları artık tamamen çekilmez hale geldi. Bu durumla nasıl başa çıkacağımı hiç bilmiyorum!
+#TEXT 8
+O deli sonunda hak ettiğini buldu. Onu öldürmekten başka çarem yoktu. Akıl almaz hazinelerden bahsedip durdu ama bir kaşığı bile yoktu. Ne alçak herif...
+#TEXT 8_1
+Ne tür insanlar karşıma çıktı böyle!? Şartlar değişmiş olabilir, ama bu tür bir davranışa asla bahane olamaz. Bu terbiyesiz adama, denizcinin nasıl edepli olacağını göstermek zorunda kaldım.
+#TEXT 9
+Sonunda, o gemi enkazından kurtulan adamdan kurtulmayı başardım—üstelik bana bir harita parçası da verdi. O, onu kandırdığımı fark etmeden yelken açmalıyım. Heh-heh... Dunki-irk... Dunki-iiirk...
+#TEXT 10
+@<shoreName>'da, bazı gemi kazazedeleriyle karşılaştım. En yakın @<sNation> yerleşimindeki valiye durumlarını bildirmeliyim. Bıraktığım erzaklar, bir kurtarma gemisi gelene kadar onlara yetecektir diye düşünüyorum.
+#TEXT 11
+@<shoreName>'da, korsan @<sBadName> tarafından terk edilmiş birkaç denizciyle karşılaştım. Onların durumunu en yakın @<sNation> yerleşimindeki valiye bildirmeliyim. Bıraktığım erzak, bir kurtarma gemisi gelene kadar onları idare edecektir.
+#TEXT 12
+O uğursuz koya dönmeye vaktim olmadı. Umarım o zavallı ruhları başka bir kaptan bulup kurtarmıştır...
+#TEXT 13
+@sCity valisinin @<ShoreName>’de mahsur kalan denizcilerden haberi oldu, fakat sanırım çok geç kaldım. Artık tek yapabileceğimiz, Tanrı’ya onların zamanında kurtarılması için dua etmek...
+#TEXT 14
+@<sCity> valisine, @<ShoreName>’de mahsur kalan denizciler hakkında bilgi verdim ve zahmetim karşılığında mütevazı bir ödül aldım. Batık geminin kaptanının hayatta olduğunu öğrenince vali memnun oldu. Hemen bir kurtarma seferi düzenleyecek.
+#TEXT 15
+Kaptan @<sName> ve mürettebatını en yakın yerleşim yerine götürdüm ve hiç talep etmemiş olmama rağmen oldukça cömertçe ödüllendirildim...
+#TEXT 16
+@<shoreName>'da, Kaptan @<sName> ve @<count> denizcisini gemime aldım. Kaptan, korsan @<sBadName>'in mürettebatını isyana teşvik ettiğini, gemisini çaldığını ve onları karada terk ettiğini iddia ediyor. Gemisi '@<ShipName>'i bulup ona geri getireceğime söz verdim. Karşılığında ise geminin ambarındaki tüm yük bana kalacak.
+#TEXT 17
+Anlaştığımız gibi, kaptanı ve tayfasını yerleşkeye teslim ettim. Tek ödülüm onların minnettarlığı oldu, ama sonunda bana bir zararı dokunmadı.
+#TEXT 18
+@<ShipType> '@<ShipName>' gemisine bindim ve anlaştığımız gibi onu @<sName>'e geri teslim ettim. Ambarındaki malları ise kendime sakladım. Adalet yerini buldu.
+#TEXT 19
+Çarpışmanın hararetinde, @<ShipType> '@<ShipName>' battı ve elbette ambarındaki her şey de kayboldu. Captain @<sName> için üzgünüm, ama olan oldu.
+
+#QUEST JungleGirl
+Yan Görev: Ormandaki Hanımefendi
+#TEXT 1
+@<sCity> yerleşiminden @<sName>'a, hanımefendisinin kolyesi için @<sText1> büyük inci ve @<sText2> küçük inci getireceğime söz verdim. Sadece 10 günüm var—daha fazla gecikirsem, tüm çabalarım boşa gidebilir.
+#TEXT 2
+İnciler karşılığında @<sName> bana güzel bir muska verdi. Gerçekten de, ne zaman bir şey kaybedeceğini ya da talihin ne zaman yüzüne güleceğini asla bilemezsin.
+#TEXT 3
+@<sName> için yeterince inci toplayamadım. Kız için üzülüyorum ama nihayetinde bu onun kendi seçimi—böylesine huysuz bir hanımefendinin hizmetine girmemeliydi.
+#TEXT 4
+@<sName>, ünlü korsan @<sPirateName>'in hazinesini nereye sakladığını bildiğini iddia ediyor. Hazine @<sTreasureLoc>'da. Karaya çıkmamız gereken yer @<sShore>. Hazinenin yerini bulduktan sonra onu @<sCity> yerleşimine geri götürmem gerekecek.
+#TEXT 5
+@<sName> öldü ve sandıkların nerede saklandığı hakkında hiçbir fikrim yok. Ne yazık—bu sefer şans benden yana değildi.
+#TEXT 5_1
+@<sName>'in babasının hazinesini aramakla kendimi yormamaya karar verdim. İsterse kendi başına halledebilir.
+#TEXT 6
+@<sPirateName> hazinesi gerçekten de muazzamdı. Payıma düşeni aldım. Şimdi @<sName>'i güvenli bir şekilde @<sCity> yerleşkesine geri götürmeliyim.
+#TEXT 7
+@<sName> öldü. Kız için üzülüyorum—daha yeni servetine kavuşmuştu, şimdi ise bu. Ne kadar anlamsız bir ölüm...
+#TEXT 8
+@<sName>'i hazinesiyle birlikte evine getirdim. Minnettarlık göstergesi olarak bana güzel bir hediye verdi. Başkalarını mutlu etmek güzel bir duygu.
+#TEXT 9
+@<sCity>’deki @<sText>’in kızı evden kaçmış. Tefecinin oğluyla evlenmeye dayanamıyor ve beni, onu gerçek aşkı @<sLover>’a götürmem için yalvardı. Onunla ne yapmalıyım? Hayatını mahvetmek istemem, ama ailesinin bakış açısını da anlıyorum...
+#TEXT 10
+@<sName> öldü... Anne babalarının uyarılarını kulak ardı eden genç ruhların kaderi bu ne yazık ki...
+#TEXT 11
+Kaçağı muhafızlara teslim ettim. Kaderini onlar belirlesin...
+#TEXT 12
+@<sCity> yerleşiminde, kız benden de kaçtı. Artık yapabileceğim tek şey, her şeyi göze aldığı o mutluluğu bulmasını dilemek. Ah, gençlik...
+#TEXT 13
+Kaçak kızı babasına geri teslim ettim ve bunun doğru bir karar olduğundan eminim. Tek evladını kaybetmiş anne babanın acısından daha beter ne olabilir ki? Babası bana cömertçe ödül verdi.
+#TEXT 14
+Kızı sevgilisine teslim ettim. Bundan sonrası onlara kalmış—ben bakıcı değilim.
+#TEXT 15
+Genç çifti @<sCity>'ye kadar korumayı kabul ettim; gelin, yeni kocasının ailesiyle orada tanışacak. Bunun doğru bir karar olduğuna inanıyorum.
+#TEXT 16
+Aşık çifti söz verdiğim gibi teslim ettim. Şimdi @<sText>'e gidip damadın babasından ödülümü almalıyım. Beni görünce ne kadar memnun olacak, merak ediyorum.
+#TEXT 17
+Damadın ailesini rahatsız etmemeye karar verdim—zaten başka dertleri vardır. Kaldı ki, bu meselede benim masraflarım da pek azdı.
+#TEXT 18
+Damadın babası bana teşekkür etti ve cömert bir hediye verdi. Şu iki genç aşığa neredeyse imreneceğim...
+#TEXT 19
+Görünüşe göre çabalarım boşa gitmiş. Damatın babası tam anlamıyla cimrinin teki çıktı. Genç çifte neredeyse acıyacağım—ikisi de ailelerinden yana şanssız. Bu lanet olası köşedeki insanlar altından başka hiçbir şeyi umursamıyor. Yine de gençlere yardım edebildiğim için memnunum. Daha iyi bir hayatı hak ediyorlar.
+#TEXT 20
+@<sBrothelCity>’deki genelevden kaçan @<sName> adlı kızı ailesinin yaşadığı @<sCity>’ye götürmeyi kabul ettim.
+#TEXT 21
+@<sName>'in genelevden kaçarken bıraktığı torbayı geri götürmeyi kabul ettim. Onu bulmak için özel odayı aramam gerekecek. Torbanın içinde biraz para, belgeler, düzgün bir elbise ve zavallı kızın diğer şahsi eşyaları olmalı.
+#TEXT 22
+Çok meşguldüm ve kızı meyhanede bırakmak zorunda kaldım. Yine de, işlerin üstesinden kendi başına gelebilecek kadar akıllı olduğunu umuyorum.
+#TEXT 23
+Elimden gelen her şeyi yaptım. Şimdi sadece @<sName>'in evine sağ salim ulaşmasını umabilirim.
+#TEXT 24
+@<sName>'i @<sCity> yerleşimine teslim ettim. Onu ailesine götürmedim—şüphesiz onların başka işleri vardır.
+#TEXT 25
+@<sName>'i sağ salim eve getirdim. Çabalarımın karşılığında güzel bir kılıç aldım—ve doğru olanı yaptığımı bilmenin huzurunu yaşadım.
+#TEXT 26
+@<sName>'i sağ salim eve getirdim. Karşılığında bana mükemmel bir tüfek verdiler—ve doğru olanı yapmanın verdiği derin huzuru hissettim.
+#TEXT 27
+@<sName>'i sağ salim eve getirdim. Kardeşi, korsanlara karşı bir baskına katılmam için davet etti ama reddetmek zorunda kaldım.
+
+#QUEST ShipEpidemy
+Etkinlik: Salgın
+#TEXT 1
+'@<sShipName>' gemisinin kaptanı, salgın konusunda kesinlikle abartmıyordu. Mürettebatla temasımı sınırlamalı ve bundan sonra çok daha dikkatli olmalıyım.
+#TEXT 2
+Salgın etkisini yitiriyor. İştahım geri geldi, bu da iyileşmekte olduğum anlamına geliyor—Tanrı’ya şükürler olsun.
+#TEXT 3
+Gemide bir salgın başladı. Tayfalar hastalıktan kırılıyor. Ele geçirdiğimiz '@<sShipName>'in kaptanı—cehennemde yansın—abartmıyormuş. Şimdi ne yapacağız? Kutsal Meryem Ana hepimizi korusun.
+#TEXT 4
+Hastalık hafifliyor. En Kutsal Tanrı Anası’na şükürler olsun! Gelecekte daha dikkatli olmalıyım...
+
+#QUEST ChurchGenQuest1
+Yan Görev: @<sCity>'deki Rahip İçin Elyazmaları
+#TEXT 1
+Baba @<sName> bana bir görev verdi: Üstlerinin emriyle ve aydınlanma uğruna, @<sOwnerCity>’deki rahibe ödünç verdiği kıymetli teosofik el yazmalarını geri almamı istedi. Rahip, söz verdiği halde yazmaları iade etmemiş. Baba @<sName>’in bu hassas meseleyi çözmesine yardımcı olmayı kabul ettim.
+#TEXT 2
+Koca adamlar, Tanrı'nın hizmetkârları, çocuk gibi davranıyor! Neyse ki, önemli olan el yazmalarının bende olması. Şimdi onları @<sColony>'ye geri götürmeliyim.
+#TEXT 3_1
+Bazı insanların tembelliğini ve sorumsuzluğunu yüce ideallerle haklı çıkarması gerçekten şaşırtıcı. Kim, hiçbir teminat olmadan bu kadar değerli eşyaları bir yabancıya emanet eder ki? O rahip fazlasıyla dikkatsizdi... Şimdi tüm takımadada "@<sShipName>" adlı geminin kaptanı @<sCapName>'in peşine düşmem gerekiyor.
+#TEXT 3_2
+Bu iş hiç de kolay olmayacak—adını bile bilmediğim bir gemiyi aramak. O dindar kaptan, o kıymetli kitaplardan kurtulmadan önce acele etmeliyim. İlk adımım, @<sCapName>’in eski teknesinin kıçına yazdığı KUTSAL ismi öğrenmek olacak.
+#TEXT 4
+Neden başkasının dini coşkusunun faturasını ben ödüyorum? Kahretsin! Umarım @<sColony> kolonisi civarında, sonunda o eski döküntü "@<sShipName>" ve Tanrı korkusu taşıyan kaptanına yetişirim. O evrakları elime geçirdiğimde, belki de Rabbim bu uğurda işlediğim bir iki günahı affeder.
+#TEXT 5
+Yine şansım yaver gitmedi. Şu @<sName> tam bir karakter—rahip ona son derece değerli bir yük emanet etmiş, ama liman görevlileri adını duyunca bile titriyor. Neyse, @<sColony>'de nihayet karşılaştığımızda neler olacağını göreceğiz...
+#TEXT 6
+O kaptan kesinlikle ilginç bir karakter. Şimdi onunla yüz yüze tanışma, uzun zamandır beklenen kitapları teslim alma ve onları @<sColony>'deki gerçek sahibine ulaştırma zamanı.
+#TEXT 7
+Bugün @<sColony>’deki rahibe değerli el yazmalarını teslim ettim. Ödülümü aldım, fakat açgözlülüğün ölümcül bir günahı olduğu konusunda da uyarıldım.
+#TEXT 7_2
+Yaşlı ahmak @<sCapName>, meyhanede borca batmış ve değerli kitaplarıyla el yazmalarını rehin bırakmış. Hep harcar, hiç ders almaz... Borcunu ödeyip el yazmalarını geri alacağım ve sonunda onları @<sColony>'ye teslim edeceğim.
+#TEXT 8
+Defterime bir kayıt daha: Yaşlı kaşalot @<sName>'in meyhanedeki borcunu ödedim. @<sColony> kolonisindeki rahibin el yazmalarını da kurtardım. Şimdi, uzun zamandır beklediği el yazmalarını ona teslim edip, masraf defterimi de sunmanın vakti geldi!
+#TEXT 9
+Görünüşe göre bu dünyada hâlâ fedakâr meyhaneciler kalmış. Theosophical el yazmalarını geri vermek ve paha biçilmez kitaplardan yalnızca verdiği sözü tutmak için vazgeçen bir meyhanecinin hikâyesini paylaşmak üzere @<sColony>'ye aceleyle yelken açacağım.
+#TEXT 10
+Aman Tanrım... Böylesine basit bir işin bu kadar zaman alıcı ve zahmetli olacağını asla tahmin etmezdim. Neyse ki, Tanrı’dan korkan Kaptan @<sCapName> bana hiç zorluk çıkarmadı—kıymetli el yazmalarını teslim etti ve yoluma devam etmemi söyledi, ben de memnuniyetle ayrıldım. Şimdi @<sColony>’ye dönme vakti.
+
+#QUEST ChurchGenQuest2
+Yan Görev: @<sCity>'de Kilisede Soygun
+#TEXT 1
+Kiliseyi soymak ha! Dünya nereye gidiyor? Papaz @<sName> bu kafirlere lanet yağdırırken, işi kendi ellerimle halletsem iyi olacak. Tanrı bana bir ödül vermezse, belki Padre verir... Hırsızlar çok uzaklaşmış olamaz.
+#TEXT 2
+Kasaba halkı, paranın yerel haydutlar tarafından çalındığını söylüyor; öyle kurnazlarmış ki izlerini kaybettirmişler. Belki de onların avlandığı yerlere göz atmalıyım.
+#TEXT 3
+Gerçekten de, Tanrı herkese hak ettiğini verir—haydutlar layık olduklarını buldu, ben de kilisenin parasını geri aldım. Şimdi, Rahip’in yanına dönmeliyim.
+#TEXT 4
+Bu da bir şey doğrusu! Hem Tanrı’ya bir iyilik yaptım, hem de kendi çıkarımı gözetmiş oldum. Gerçekten büyük bir nimet!
+#TEXT 5
+Beklediğimden de fazlası! Kilise için çalışmak bazen gerçekten işe yarıyor.
+#TEXT 6
+Artık zenginim—ve lanetliyim. Fark etmez. Bu kadar parayla, ne Tanrı’yı ne de Şeytan’ı umursuyorum.
+#TEXT 7
+Ormanda her türlü serseri kol geziyor, ama peşinde olduğum kişileri hâlâ bulamadım. Onların nerede olduklarına dair daha kesin bilgiler toplamak için şehre geri dönmem gerekecek.
+#TEXT 8
+Kilise mallarını çalan hırsızlar beklediğimden daha kurnaz çıktı—yerleşimden çoktan kaçmışlar. Tüm ganimetlerini içki ve kadınlara harcamadan önce @<sIsland>’daki @<sCity>’ye aceleyle gitmeliyim!
+#TEXT 9
+Kaçakçılarla anlaşmak pek de zor olmadı. Parayı görünce alçaklara yardım ettiler, aynı hızla yine para için onları sırtlarından bıçakladılar. Şimdi rotamızı @<sShore>'a çevirmeliyim.
+#TEXT 10_1
+Bu da ne hikaye ama... Acaba Father @<sName> gerçekten bu kadar hain olabilir mi? Her halükarda, önce onunla konuşmalıyım—belki de tamamen masum bir adamdan şüpheleniyorumdur...
+#TEXT 10_2
+Bu gerçekten de ilginç bir hikaye... Acaba Father @<sName> gerçekten bu kadar hain olabilir mi? Tüm o alçaklarla işimi bitirdiğime göre, artık onların iddialarını doğrulayacak ya da yalanlayacak tek kişi bizzat padre'nin kendisi...
+#TEXT 11_1
+Sonunda o alçakları buldum. Kutsal Kase olmasa da, yine de... Artık geri dönme vakti.
+#TEXT 11_2
+Umarım bu dünyada biraz iyilik yapmışımdır ve Kıyamet Günü geldiğinde Yüce Allah bunu hatırlar—mülkümü muhtaçlarla paylaştım, onlara doğru yolu gösterebilmek umuduyla. Ayrıca Babaya, kilise mallarının da muhtemelen aynı amaçla kullanıldığını bildirmeliyim...
+#TEXT 11_3
+Kim derdi ki kilise malı bu kadar pahalı olur... Yine de, en azından paramın karşılığında bir şey aldım. Kutsal kadehi papaza götüreceğim—belki çalınan paralar için duyduğu üzüntüyü biraz hafifletir.
+#TEXT 11_4
+Fakir olmak günah değil... ama yalancı olmak öyle! Tanrı da bu erdemi ödüllendirdi: Ona karşı gelen alçaklar hak ettiklerini bulacak, kilisenin malları kurtulacak ve ben de hak ettiğim ödülü alacağım!
+#TEXT 12_1
+@<sCity>’nin rahibinin gerçekten tövbe ettiğine inanmak isterim. Maddi olarak bir şey kaybetmiş olabilirim, ama manevi huzur bunun fazlasıyla karşılığını veriyor.
+#TEXT 12_2
+Ne olaylar yaşadım! Görünen o ki, rahipler bile açgözlülükten muaf değil. Yine de, sonu iyi biten her şey iyidir. Father @<sName> sonunda nefsine yenik düşmedi ve masraflarımı da karşıladı.
+#TEXT 12_3
+Ne olaylar yaşadım! Görünen o ki, rahipler bile açgözlülükten muaf değil. Yine de, her şey yoluna girdi sonunda. Father @<sName> arzularına yenik düşmedi, fakat heyecanına kapılıp masraflarımı ödemeyi unuttu. Hatırlatmak bana düştü.
+#TEXT 12_4
+Bu devirde, açgözlülük her şeye hükmederken, din adamları bile Şeytan’ın ayartmalarına kapılabiliyor—sıradan insanlar zaten kolayca yoldan çıkıyor. Aptalca görünebilir, ama cüppeli o alçaktan kirli parayı almayı reddettim.
+#TEXT 12_5
+Gerçekten de, Rabbimiz günahkârlara, tıpkı Father @<sName> gibi, güvenen cemaatini kandırma fırsatı veriyorsa merhametlidir. Ben o kadar affedici değilim; o alçağı yetkililere seve seve teslim ederdim—ama ne yazık ki entrikalarını kanıtlayacak sağlam bir delilim yok. Şimdilik Rabbimizin adıyla yeterince iyilik yaptım. En azından o düzenbazdan masraflarımı geri almayı başardım.
+#TEXT 12_6
+Gerçekten de, Rabbimiz günahkârlara, tıpkı Father @<sName> gibi, kendisine güvenen cemaatini kandırmasına izin veriyorsa merhametlidir. Ben o kadar bağışlayıcı değilim; elimde onun suçlarını kanıtlayacak sağlam delil olsaydı, o alçağı yetkililere seve seve teslim ederdim. Şimdilik, Rabbimizin adıyla yaptığım iyilikler bu kadar—elde ettiğim tek şey masraflar ve hayal kırıklığı oldu.
+#TEXT 12_7
+@<sCity>’nin rahibi hakkındaki şüphelerimi hâlâ üzerimden atamıyorum. Doğrudur, bir rahibin sözü bir haydudunkinden daha muteberdir, fakat bu işin tamamı baştan sona bela kokuyor. Şimdilik Rabbin adıyla yapılan iyilikler bana sadece masraf ve hayal kırıklığı getirdi.
+#TEXT 12_8
+Babam, kilisenin tüm paralarının sonunda haydutlara içki olarak harcandığını duyunca sakin kaldı. Benim harcamalarım da pek işe yaramadı—ona bir teselli olacaksa tabii.
+#TEXT 12_9
+Bu pek iyi bir Hristiyan işi sayılmazdı, ama cemaat bundan fakirleşmeyecek ve en azından bazı masraflarım karşılanmış oldu. En önemlisi, hırsızlar kilisenin kasasına ulaşamadı.
+#TEXT 12_10
+Kiliseye ait parayı alıp bunun için ödül talep etmek pek erdemli bir davranış sayılmaz, ama... donanımı yenilemezsem, tayfamdan biri güverteden düşüp ölebilir ve o günah sonsuza dek ruhuma yük olur. Babaya gelince, ondan aldığımın üç katını kilisesine bağışlayacağıma yemin ediyorum!
+#TEXT 12_11
+Tanrı beni affedecek mi? Sadece O bilir, neden o açık yürekli rahibi aldattığımı. Bu başlı başına bir günahtı, ama bana teselli olsun diye sonsuz cömertliğiyle verdiği parayı kabul etmek daha da büyük bir günahtı.
+#TEXT 12_12
+Ne para var, ne şan—sadece iğrenç ithamlar! Bu iki yüzlülerle bir daha asla işim olmaz.
+#TEXT 13
+İncil, her sınavın Rabbimiz tarafından gücümüze göre verildiğini ve Tanrı'nın rüzgarı kırkılmış kuzuya göre hafiflettiğini öğretir. Yine de gücümü kaybetmiş gibiyim ve bu yük artık bana fazla ağır geliyor. Görevinde başarısız olduğumu söylediğimde, umarım Father @<sName> beni anlayacaktır.
+
+#QUEST CaptainComission1
+Yan Görev: Son Dilek
+#TEXT 1
+Ölmeden önce, @<sShipName> gemisinin kaptanı @<sCapName>, bana @<sCity>'den @<sCharName>'e emanetini yerine getiremediğini söylememi istedi. Bu adamı bulmalıyım—ölmekte olan kaptanın son arzusunu yerine getirmek boynumun borcu.
+#TEXT 2
+Zamanımı önemsiz işlerle harcamamaya karar verdim. O adamın işini çoktan unuttuğuna eminim.
+#TEXT 3
+@<sCharName>, esir aldığı @<sCharType>'i fidye karşılığında bana bırakmayı teklif etti. Ancak, çok meşgul olduğumu söyleyerek teklifi reddettim.
+#TEXT 4
+@<sCity>'den @<sCharName>, benden 150.000 peso alıp @<sPirateCity>'deki @<sPirateName>'e teslim etmemi istedi. Bu para, korsanların fidye karşılığında elinde tuttuğu @<sFamilyType> @<sSlaveName>'in serbest bırakılması için ödenecek. Görevi başarıyla tamamlayıp geri döndüğümde, bana 40.000 peso ödül verilecek.
+#TEXT 5
+Kendimi zor bir durumda buldum. Görünüşe göre @<sCapName>, @<sSlaveName>’in esareti için @<sPirateCity>’deki @<sPirateName>’e üç sandık altın fidye götürüyormuş. O alçak @<sCharName>, talebinin hâlâ geçerli olduğunu açıkça belirtti. Eğer @<sSlaveName>’i 30 gün içinde @<sCity>’deki meyhaneye getirmezsem, peşime ödül avcılarını salacak. Ama o sandıkları merhum kaptanın kamarasında nasıl gözden kaçırdım?
+#TEXT 6
+@<sCharName>'ın görevini tamamlayamadım, ama beni affetmesi gerekir. Sonuçta, ben de tıpkı Kaptan @<sCapName> gibi ölebilirdim.
+#TEXT 7
+Esiri teslim etmek için sürem doldu. Bakalım bu tehditkâr Mister @<sCharName> şimdi ne yapacak.
+#TEXT 8
+@<sCharName>'ın teklif ettiği görevi reddetmeye karar verdim. Belki gücenmiştir, ama sonuçta parasını geri verdim.
+#TEXT 9
+Tutsak olanı serbest bıraktım. Şimdi onu @<sCity>'deki @<sCharName>'e teslim etmeliyim.
+#TEXT 10
+@<sName>, fidyenin ödenmesini beklemekten sıkıldı ve esirini Barbados'taki bir plantasyona sattı. Belki de böylesi daha iyidir—bir köle, bir rehineden daha az eder. Barbados’a aceleyle gitmeli ve Colonel Bishop ile konuşmalıyım.
+#TEXT 11
+@<sName> için @<sSum> peso ödedim. Şimdi aceleyle @<sCity>'ye gidip @<sCharName>'i bulmam gerek. Zavallı adam, kesin endişelenmiştir. Bir de ödül alırsam fena olmaz doğrusu.
+#TEXT 12
+Sandıklarla yaptığım bir hata bana pahalıya patladı. @<sName>'e tam @<sSum> peso ödedim. Fakat tutsak sıradan biri değildi—onu @<sCity>'ye götürmem karşılığında bana değerli bilgiler sundu. Kabul ettim, zira müşteri bana ödeme yapmaya hiç niyetli görünmüyordu.
+#TEXT 13
+Sandıklarla ilgili yaptığım bir hata bana pahalıya patladı. @<sName>'e tam @<sSum> peso ödedim. Görünen o ki, özgürlüğüne kavuşan adam müşterimle buluşmaya hiç niyetli değil, ama bu artık beni ilgilendirmez. Bu serseriyle ilgili daha fazla başımı belaya sokmak istemiyorum.
+#TEXT 14
+Eski rehine, artık özgür bir vatandaş olan @<sName>'i akrabasına teslim ettim ve söz verilen 40.000 peso değerindeki kredi sandıklarımı aldım.
+#TEXT 15
+Eski rehine @<sName>'i akrabasına teslim ettim, fakat ek masraflarım için bana ödeme yapmayı reddetti. İnsanlar yardıma ihtiyaçları kalmadığında gerçekten nankör oluyorlar.
+#TEXT 16
+Eski tutsağı müşteriye teslim ettim. Meğerse bu kişi, @<sNation> tarafından aranan bir @<sSpeciality> uzmanıymış. Karşılığında hükümetten değerli bir hediye aldım.
+#TEXT 17
+Kaçış girişimi sırasında @<sName> öldü. Belki de onu tehlikeye atmamalıydım. Şimdi müşteriye ne söyleyeceğim?
+#TEXT 17_1
+@<sName> ormanda hayatını kaybetti. Belki de onu böyle bir tehlikeye atmamalıydım. Şimdi müşteriye ne söyleyeceğim?
+#TEXT 18
+@<sName>'in plantasyondan kaçışını ayarladım. Şimdi onu bulup müşteriye teslim etmem gerekiyor.
+#TEXT 19
+O esir sıradan bir mahkum değildi—onu @<sCity>'e götürmem karşılığında bana değerli bilgiler sundu. Kabul ettim, zira müşteri bana ödeme yapmaya hiç niyetli görünmüyordu.
+#TEXT 20
+Görünüşe göre özgürlüğüne kavuşan adam, müvekkilimle görüşmeye hiç niyetli değil, ama bu beni ilgilendirmez. Bu serseri yüzünden daha fazla başımın ağrımasını istemem.
+#TEXT 21
+O esir mühendis oldukça faydalı çıktı. Ondan aldığım bilgiler, tecrübeli bir savaşçı için bile paha biçilmez olurdu.
+#TEXT 22
+@<sCharName>'ya akrabası @<sName>'in ölümünü bildirdim. Masraflarımı karşılamak için fidye parasını kendime sakladım.
+#TEXT 23
+@<sCharName>'ya akrabası @<sName>'in ölümünü bildirdim ve fidye parasını—150.000 peso—geri verdim. Elbette masraflarım için bir karşılık isteyebilirdim, fakat bu durumda pek uygun olmazdı.
+#TEXT 24
+@<sName>, bana iki korsan gemisini batırma görevi verdi—'@<sShipName1>' ve '@<sShipName2>'—bu gemiler @<sShoreType> üzerindeki @<sShoreName>'e demirlemişler. Bu görevi tamamlamak için 15 günüm var; yoksa ganimeti boşaltacaklar.
+#TEXT 25
+@<sName>'ın görevi tamamlandı—hem '@<sShipName1>' hem de '@<sShipName2>' yok edildi. Şimdi, @<sNameNom> esiri köle tacirlerine satmadan önce aceleyle @<sCity>'ye gitmeliyim.
+#TEXT 26
+Korsanlara yetişemedim. Şüphesiz şimdiye kadar ganimeti çoktan boşaltmışlardır. @<sName>'e eli boş dönmek zorundayım.
+#TEXT 27
+@<sName> ile anlaşmaya varamadım. Şimdi @<sCity>’ye dönüp @<sCharName> ile buluşmalı mıyım, emin değilim. Ona ne söyleyeceğim?
+#TEXT 28
+Görevdeki hatamdan sonra, @<sName> fidyeyi 200.000 peso'ya çıkardı. Bu parayı kendi cebimden ödemedim. Şimdi @<sCity>'ye dönüp @<sCharName> ile buluşmalı mıyım, emin değilim. Ona ne söyleyeceğim ki?
+#TEXT 29
+Görevde yaptığım hatadan sonra, @<sName> fidyeyi 200.000 peso’ya çıkardı. Bu parayı cebimden ödemek zorunda kaldım. Şimdi vakit kaybetmeden @<sCity>’ye gidip @<sCharName> ile buluşmalıyım. Belki de müşteri bu fazladan masraflarımı karşılar, kim bilir?
+#TEXT 30
+Böylesine fahiş bir meblağı ödemeyi reddettim. Bir rehinenin fidyesini ödemek başka, bir plantasyon kölesi satın almak bambaşka bir şey... Olaydan sonra Bishop muhafız sayısını artırdı mı acaba, yoksa hâlâ tasarruf etmeye mi çalışıyor?
+#TEXT 31
+@<sName>, fidyeyi almadan esirini bırakmaya yanaşmıyor. Ya parayı bulmam gerekecek ya da bu işten tamamen vazgeçmeliyim.
+#TEXT 32
+Tutsak hakkında @<sName>'e ölüm haberini verdim. Şimdi, bir zamanlar beni içine sürüklediği o umutsuz durumda kendisi kaldı gibi görünüyor.
+#TEXT 33
+@<sShipName1> ve @<sShipName2> adlı korsan gemilerini batıramadım. Şimdi @<sName>'e eli boş dönmek zorundayım.
+#TEXT 34
+Sonunda, @<sName> gemimde. Şimdi aceleyle @<sCity>'ye gidip @<sCharName> ile buluşmalıyım, yoksa adamcağız kalpten gidecek.
+#TEXT 35
+Eh... O yolu seçmemeliydim. @<sName> ile tartışmaya hiç gerek yoktu. Şimdi başımızda gerçekten çözmemiz gereken dertler var...
+#TEXT 36
+Eh... O seçeneği seçmemeliydim. @<sName> görevini bırakmama hiç gerek yoktu. Şimdi mahkumu kurtarmak için 250.000 peso fidye ödemem gerekiyor.
+
+#QUEST CaptainComission2
+Yan Görev: Son Dilek
+#TEXT 1
+Ölmeden önce, Kaptan @<sName> benden, @<sShipType> '@<sShipName>'un kaptanı @<sCapName>'i @<sCity1>'de tutuklanmak üzere olduğu konusunda uyarmamı istedi. Yetkililer onunla ilgili bir şeylerden şüphelenmişler. @<sShipTypeNom>, @<sCity2>'den yola çıkıyor ve 10 ila 15 gün içinde @<sCity1> limanına varacak. Onu limanda karşılamalıyım. Ölmekte olan bir adamın son dileği mutlaka yerine getirilmeli.
+#TEXT 2
+@<sCapName>'i yaklaşan tehlike konusunda uyarmaya vaktim olmadı. Eğer yeterince akıllıysa, bu işin içinden kendi başına sıyrılır.
+#TEXT 3
+@<sName> için işi tamamladım, fakat arkadaşına yardım etmedim; çok meşgul olduğumu söyledim. Akıllı bir adam, kendi başının çaresine bakar.
+#TEXT 4
+Kaptan @<sName>, benden gizlice @<sShoreName>’dan bir miktar @<sGoods> kaçırmasına yardım etmemi istedi. Reddettiğimde ise gemime el koyup beni ıssız bir kıyıda terk etti. Şimdi her şeye en baştan başlamak zorundayım... Başkalarına yardım etmek de bu kadarmış.
+#TEXT 5
+Kaptan @<sName>, benden gizlice @<sShoreName>’dan bir miktar @<sGoods> kaçırmasına yardım etmemi istedi. Reddettiğimde ise gemime el koymaya kalkıştı. Böyle bir hata yapmamalıydı—onu köpekbalıklarına yem ettim. Ne yazık ki, malzeme gizli yerinin nerede olduğunu hâlâ bilmiyorum.
+#TEXT 6
+Kaptan @<sName>, benden @<sShoreName>’dan gizlice bir miktar @<sGoods> kaçırmasına yardım etmemi istedi. Reddettiğimde ise gemime el koymaya kalkıştı. Tam yol kaçmak zorunda kaldım.
+#TEXT 7
+Kaptan @<sName>, benden gizlice @<sGoods> yükünü @<sShoreName>’dan taşımama yardım etmemi istedi. Ambarına sığmayan her şey bana kalacak. Gece yarısından hemen sonra @<sShoreNameDat> demirlemem gerekiyor.
+#TEXT 8
+Fikrimi değiştirdim, artık @<sName> ile uğraşmayacağım. Kendi başının çaresine baksın, sonuçlarına katlansın.
+#TEXT 9
+Görünüşe göre @<sShoreName>’de bir pusu kurulmuş—devriye fazlasıyla çabuk geldi. Kaptan @<sName> çatışmada öldü. Mürettebatım koyu didik didik aradı ama hazine hâlâ kayıp. Belki de yetkililer çoktan el koydu.
+#TEXT 10
+Yük ambarlara yerleştirildi. Bana düşen pay @<sGoodsQuantity> adet @<sGoods>. Artık yollarımızı ayırmanın vakti geldi. Taç peşimize avcı göndermeden acele etsek iyi olur.
+#TEXT 11
+Yük ambarlara yerleştirildi. Bana düşen pay @<sGoodsQuantity> birim @<sGoods>. Kaptan @<sName>, peşimize düşülmesinden endişe ediyor ve gemisini @<sShoreType> üzerindeki @<sShoreName>'e kadar korumamı istedi. Yardım etmeyi kabul ettim—özellikle de bana @<sSum> peso adil bir ödül vadettiği için.
+#TEXT 12
+Koyun ağzında bizi zaten bir devriye filosu bekliyordu. Savaşa girmekten başka çaremiz yoktu. Ambarı @<sGoods> ile dolu olan @<sShipType> '@<sShipName>' batırıldı—Kaptan @<sName> ile birlikte.
+#TEXT 13
+Çatışmaya girdik ve "@<sShipName>" adlı @<sShipType>, ambarı @<sGoods> ile dolu halde sulara gömüldü... Görünen o ki, bu Tanrı'nın takdiriydi. Cesur Kaptan @<sName>, yeni bulduğu servetin keyfini sürecek vakit bulamadı.
+#TEXT 14
+Kaptan @<sName> ile yollarımızı ayırmanın en iyisi olacağına karar verdik; böylece birbirimize karşı bir borcumuz kalmazdı. O, rotasını @<sShoreName>’a çevirdi, ben ise kendi işlerime döndüm.
+#TEXT 15
+@<sShipType> "@<sShipName>" gemisini zamanında koruyamadım ve Kaptan @<sName> ödülümü ödemeyi reddetti. Yine de kendimi tam anlamıyla bir kaybeden gibi hissetmiyorum.
+#TEXT 16
+Kaptan @<sName> beni bir tuzağa çekti ve yükü geri vermemi ya da altın olarak fidye ödememi istedi. @<sShoreName>’de, tayfasının bir kısmı bizi zaten bekliyordu. Başka çarem yoktu; savaşı kabul ettim.
+#TEXT 17
+Kaptan @<sName> beni bir tuzağa çekti ve yükü geri vermemi ya da fidye olarak altın ödememi istedi. @<sShoreName>’de adamlarının bir kısmı zaten bizi bekliyordu. Ona @<sSum> peso ödemek zorunda kaldım.
+#TEXT 18
+Görünüşe göre devriye @<sShipType> gemisinin kaptanı, @<sName>, kaçakçılarla bağlantılıymış. Belki de kalenin zindanlarında ona bir ziyaret gerçekleştirmeliyim.
+#TEXT 19
+Görünüşe göre devriye @<sShipType> gemisinin kaptanı @<sName>, kayıp bir yükle ilgili karanlık bir işe bulaşmış. Belki de kalenin zindanlarında ona bir ziyaret gerçekleştirmeliyim.
+#TEXT 20
+Kaptan @<sName>'in gizli hazinesini bulamadım. Bu konuda @<sCity> valisini rahatsız etmeye değmez diye düşünüyorum.
+#TEXT 21
+Kaptan @<sName>, bana hazinenin yerini göstermeyi kabul etti; karşılığında içindekilerin yarısını alacak. Önce kaçak yolcuyu gemime gizlemem gerekiyor, sonra gerisini hallederim.
+#TEXT 22
+Kaptan @<sName> öldü—ve onunla birlikte, hazineyi bulma umutlarım da suya düştü.
+#TEXT 23
+Valinin görevini tamamen yüzüme gözüme bulaştırdım. Ne büyük bir utanç...
+#TEXT 24
+Kaptan @<sName>'in gizli hazinesi @<sShoreName>'da saklı. Ambarı, @<sGoodsQuantity> birim @<sGoods> almak için hazırlamalıyım. Bir başkası ganimeti bulmadan önce acele etmemiz gerek.
+#TEXT 25
+Kaptan @<sName>'in elimden kaçmasına izin vererek aptallık ettim. Güzel bir kazanç elde edebilirdim.
+#TEXT 26
+Gizli yeri bulduk—@<sGoodsQuantity> birim @<sGoods> artık ambarımızda. Bunların @<sSum1> kadarı Kaptan @<sName>'e ait. @<sDays> gün içinde, bunları @<sShoreType> üzerindeki @<sShoreName>'e teslim etmem gerekiyor. Vali'nin köpekleri Kaptan @<sName> ve onun kıymetli yükünün peşine düşsün—ve benim adımı da listelerine eklesinler.
+#TEXT 27
+Sonunda, Kaptan @<sName> bana hazinesinin yerini açıkladı. Onunla paylaşmamaya karar verdim. Tartışmaya kalktı, ama bedelini ödedi. Artık @<sGoodsQuantity> birim @<sGoods> bana ait.
+#TEXT 28
+Sonunda, Kaptan @<sName> sakladığı ganimetin yerini açıkladı. Ancak, tüm yükü yetkililere teslim etmeye niyetli olduğumu öğrenince bu haberi kaldıramadı. Kararlı davranmak zorunda kaldım ve kaptan bu karşılaşmadan sağ çıkamadı. Şimdi ganimetin yerini @<sCity> valisine bildirmeliyim.
+#TEXT 29
+Kaptan @<sName>'in gizli hazinesi hakkında yetkililere bilgi vermemeyi seçtim. Sanırım benim yardımım olmadan da er geç ortaya çıkaracaklardır.
+#TEXT 30
+@<sCity> valisinin verdiği görevi tamamladım. Para ödülü yerine, oldukça cömert bir hediye aldım.
+#TEXT 31
+Çok geç vardık—@<sShoreName>'da alıcı kalmamıştı. Kaptan @<sName> bana kendi payını satmayı teklif etti, ama zaten ambarımda olan bir yük için para harcamak istemedim. Sonunda, aramızdaki anlaşmazlık bir düelloyla çözüldü.
+#TEXT 32
+Çok geç vardık—@<sShoreName>'da alıcı kalmamıştı. Kaptan @<sName>, payını bana @<sSum> peso karşılığında satmayı teklif etti. Kabul ettim ve karşılığında kaptan bana güzel bir hediye verdi. Dostça yollarımızı ayırdık.
+#TEXT 33
+Görünüşe göre Kaptan @<sName> ganimeti tayfasıyla paylaşamadı. Kendi payını isteyenlerle ben ilgilenmek zorunda kaldım. Kaptan da fazla dayanamadı. Ortaklardan biri öldüğüne göre, anlaşmamız artık geçersiz. Tüm yük artık bana kaldı.
+#TEXT 34
+Görünüşe göre Kaptan @<sName>, ganimeti tayfası arasında adil şekilde paylaştıramadı. Payına göz diken birkaç adamla uğraşmak zorunda kaldım. Sonrasında kaptan, kendi hissesini bana @<sSum> peso karşılığında satmayı teklif etti. Kabul ettim ve karşılığında bana güzel bir hediye verdi. İyi şartlarda ayrıldık.
+#TEXT 35
+Görünüşe göre Kaptan @<sName>, ganimeti tayfasıyla paylaşamamış. Daha büyük bir pay isteyen birkaç kişiyle ben ilgilenmek zorunda kaldım. Sonra kaptan, kendi payını bana @<sSum> peso karşılığında satmayı teklif etti. Ayrıca tayfama katılmak istediğini de söyledi ama reddettim—fazlasıyla başına buyruk biri, bana göre değil.
+#TEXT 36
+Görünüşe göre Kaptan @<sName>, ganimeti tayfasıyla paylaşmayı ihmal etmiş. Paylarını isteyenlerle ben ilgilenmek zorunda kaldım. Sonunda kaptan, ganimeti @<sSum> peso karşılığında satın almayı teklif etti, ben de kabul ettim. Ayrıca onu kendi emrimde subay olarak işe aldım—onun gibi dövüşçülere her zaman ihtiyaç vardır.
+#TEXT 37
+Çok geç geldim—devriye @<sShipType> gemisinin kaptanı @<sName> ve tüm mürettebatı idam edilmiş. Neler olduğunu öğrenmem gerekiyor.
+#TEXT 38
+Çok geç kaldım—devriye gemisi @<sShipType>'nin kaptanı @<sName> ve tüm mürettebatı idam edilmiş. Yine de, @<sShipTypeQuest>'in ambarındaki yükü karaya çıkarmak için yeterli zamanı olmuş olabilir.
+#TEXT 39
+Görünüşe göre işler göründüğü kadar basit değil. Devriye @<sShipType>'unun kaptanı @<sName> ve mürettebatının bir kısmı idam edilmiş, fakat hiçbir suçun izine rastlanmamış. @<sShipType> '@<sShipName>'un yaralı eski topçusu @<sCharName> ile görüşmeliyim.
+#TEXT 40
+@<sShipType> '@<sShipName>' gemisinin eski topçusu @<sName>, @<sShipTypeQuest> '@<sShipNameQuest>'un batışının ardındaki tüm hikayeyi bana anlattı. Ancak zavallı ahmak, hazineyle ilgili bilgi için akıl almaz bir meblağ istedi. Ödemeyi reddettim.
+#TEXT 41
+@<sShipType> "@<sShipName>" gemisinin eski topçusuyla yaptığım konuşma oldukça verimli geçti. Şimdi, ganaj hakkındaki bilgi için @<sName>'nin istediği miktar olan @<sSum> peso toplamam gerekiyor.
+#TEXT 42
+Kaptan @<sName>'in hazinesiyle ilgili tüm işi bırakmaya karar verdim. Eski topçumuz @<sCharName> beni affetsin, ama bu iş için fazlasıyla fazla şey istiyordu ve benim halletmem gereken daha acil işlerim var.
+#TEXT 43
+@<sShipType> '@<sShipName>' gemisinin eski topçusu @<sName>, @<sShipTypeQuest> '@<sShipNameQuest>'un batışının ardındaki tüm hikayeyi bana anlattı. Meğerse hazine gerçekten varmış ve @<sShipTypeQuest>'un tüm yükü orada saklanıyormuş—@<sSum> adet @<sGoods> orada gizli. Ambarımı hazırlamalı ve gece yarısından sonra @<sShoreName>'e doğru yola çıkmalıyım—@<sName> beni orada bekliyor olacak.
+#TEXT 44
+Aptalca bir şekilde, Kaptan @<sName>'in gizli hazinesini yağmalama fırsatını kaçırdım! Belki de @<sCharName> beni beklemedi ya da sadece benimle oyun oynuyordu. Her halükarda, zamanım ve param boşa gitti...
+#TEXT 45
+Kaçakçılar, Kaptan @<sName>'ın gizli deposunu boşaltmış. Belki de @<sCharName> en başından beri beni oyuna getirdi, iki tarafa da çalışıyordu. Her halükarda, zamanım ve param boşa gitti...
+#TEXT 46
+Kaçakçılar, ben gelmeden önce Kaptan @<sName>'in gizli malzemesini bulmuşlar, bu yüzden yükü zorla geri almak zorunda kaldım. Ne yazık ki, topçu @<sCharName> çatışmada hayatını kaybetti. Ironik bir şekilde, o talihsiz @<sShipType> '@<sShipName>' gemisinin tüm mürettebatı şimdi ölü; hiçbiri cesur çabalarının meyvesini göremedi. Ambarıma sığdırabildiğim tüm malları aldım—@<sSum> birim @<sGoods>.
+#TEXT 47
+Kaçakçılar, ben gelmeden önce Kaptan @<sName>'in gizli malını bulmuşlar. Bu yüzden yükü zorla geri almak zorunda kaldım. Ambarıma sığan tüm malları aldım—@<sSum> birim @<sGoods>. Şimdi topçu @<sCharName>'i @<sCity> yerleşkesine götürmeliyim.
+#TEXT 48
+@<sShipType> '@<sShipName>' eski topçusu @<sCharName> ile @<sCity> limanında yollarımızı ayırdık. Bana minnettarlık göstergesi olarak değerli bir hediye verdi. En azından @<sShipType> tayfasından biri, bu tehlikeli maceradan bir şey kazanmayı başardı.
+#TEXT 49
+Görünüşe göre devriye @<sShipType> gemisinin kaptanı @<sName>, deniz eşkıyalığı suçlamasıyla tutuklanmış. Belki de kalenin zindanlarında ona bir ziyaret gerçekleştirmeliyim.
+#TEXT 50
+Görünüşe göre devriye @<sShipType> gemisinin kaptanı @<sName>, deniz eşkıyalığı suçundan tutuklanmış ve şimdi @<sCity> valisi onun sakladığı ganimeti arıyor. Bu işe yardım etmeyi kabul ettim ve mahkumu ziyaret etmek için izin aldım.
+#TEXT 51
+Kaptanla ve yüküyle yaptığım sözleşmeyi tamamen unuttum... Canı cehenneme. Bir şekilde hallederim. İlk vardığım limanda kaptanı bırakacağım.
+#TEXT 52
+Valiye yaptığım hileden pek zarar göreceğini sanmıyorum. Kaptana gelince... Ne derler bilirsin, ormanı kesersen talaşı da uçuşur.
+#TEXT 53
+Bir hazine bulduk—@<sGoodsQuantity> adet @<sGoods> artık ambarımızda güvende. Bunun @<sSum1> kadarı ortağıma ait. @<sDays> gün içinde, bunu @<sShoreType> yakınlarındaki @<sShoreName>’e teslim etmem gerekiyor. Kaptanı yetkililere teslim etmek yerine onunla saklanmayı seçtim. Vali’nin av köpekleri bizi arayadursun—onlara bol şans!
+#TEXT 54
+Görünüşe göre Kaptan @<sName>, ganimeti tayfasıyla paylaşamamış. Payını kendilerine isteyenlerle ben uğraşmak zorunda kaldım. Sonrasında, payını benden geri almak için bana para teklif etti ama kabul etmedim. Sonunda, meseleyi bir düelloyla çözdük ve galip gelen ben oldum.
+#TEXT 55
+Kaptan @<sName>, hapishaneden gemime transfer edilirken beklenmedik bir şekilde öldü. Yazık oldu—artık hazine benim için kayıp.
+
+#QUEST Convict
+Yan Görev: Firariler
+#TEXT 1
+@<sIslandType> ormanında @<sConvictNum> firari mahkûmla karşılaştım. Onları tayfama katmaya karar verdim. Gece yarısına doğru @<sShoreName>'de demirlemem gerekecek.
+#TEXT 2
+@<sIslandType>'da karşılaştığım firari mahkumlar, onlara bir tartane ya da sandal bulmamı istediler; üstelik normal ücretin iki katını ödeyeceklerine söz verdiler. Yeni gemilerini yarın sabah @<sShoreName>'e teslim etmem gerekiyor.
+#TEXT 3
+Fikrimi değiştirdim—mahkumlara yardım etmeyeceğim. Kendi başlarının çaresine bakmak zorundalar.
+#TEXT 4
+Gemiyi @<sShoreName>'e getirdim. Kaçak mahkûmlar bana borçlarını tamamen ödedi.
+#TEXT 5
+Gemiyi @<sShoreName>'a getirdim. Ödeme yapmak yerine, mahkumlar bana oldukça cömert bir hediye verdiler. Buna itiraz edecek halim yok.
+#TEXT 6
+Gemiyi @<sShoreName>'a getirdim. Fakat şu lanet mahkûmlar bana kazık atmaya kalkıştı. Onlara bir adamın sözünü tutması gerektiğini hatırlatmak zorunda kaldım. Ne yazık ki, bu ders artık onlara fayda etmeyecek.
+#TEXT 7
+Mahkûmlar dün gece @<sShipName> adlı geminin @<sGoodName> ile yüklendiğini fark etmişler. Kim olduklarını bilmiyorum ama çok uzağa gitmiş olamazlar.
+#TEXT 8
+@<sIslandType> ormanında @<sConvictNum> firari mahkûmla karşılaştım. Benden, onları @<sCity>'deki deniz fenerine götürmemi istediler. Bunu @<sSum> peso karşılığında yapmayı kabul ettim. Gece yarısına doğru, onları almak için @<sShoreName>'e bir filika göndermem gerekecek.
+#TEXT 9
+Mahkumları gemiye almayı reddettim, bu da aralarında tehlikeli bir öfkeye yol açtı. Kendi yöntemlerimle onları sakinleştirmek zorunda kaldım.
+#TEXT 10
+Mahkûmlar gemide. Şimdi bir devriye gelmeden önce demir alıp açılmam gerek.
+#TEXT 11
+Mahkûmları @<sMayak>'a teslim ettim ve ödülümü aldım—@<sSum> peso değerinde altın külçeleri. Derler ya, paranın kokusu olmaz...
+#TEXT 12
+Mahkumları @<sMayak>'a teslim ettim. Ödeme yerine, mahkumlar bana oldukça cömert bir hediye verdiler. Buna itiraz edemem doğrusu.
+#TEXT 13
+Mahkûmları @<sMayak>'a teslim ettim. Ama alçaklar beni kandırmaya kalktı. Onlara bir adamın sözünde durması gerektiğini hatırlatmak zorunda kaldım. Ne yazık ki, bu ders artık onlara bir fayda sağlamaz.
+
+#QUEST HoldQuest
+Yan Görev: Esir Kaptandan Alınan Bilgi
+#TEXT 1
+Kaptan @<sName>, zengin bir tüccarın @<sGoods> yükünü @<sCityFrom>’dan @<sCityTo>’ya taşıdığını açıkladı. Bazen koruma tutuyormuş. Gemisi '@<sShipName>' limanlardan birine yaklaşırken pusuya yatabilirim. Kaptanın söyledikleri doğruysa, bu ganimet riske değer. Bu arada, esiri serbest bıraktım.
+#TEXT 2
+Saldırıya hazırlanamadan önce, '@<sShipName>' demir aldı ve yelken açıp uzaklaştı. Onu tekrar izleme şansım kalmadı.
+#TEXT 3
+@<sGoods> taşıyan '@<sShipName>' gemisini ele geçirmeyi başaramadım. Onu bir daha bulmam imkânsız.
+#TEXT 4
+'@<sShipName>' adlı gemiyi ele geçirmeyi başardım; gemi @<sGoods> ile yüklüydü.
+#TEXT 5
+Çarpışmanın hararetinde '@<sShipName>' gemisi battı ve tüm @<sGoods> yükü şimdi denizin dibinde yatıyor!
+#TEXT 6
+Kaptan @<sName>, @<sCity>’de bir dostu olduğunu söyledi; adı @<sNameChar> ve görünüşe göre onun özgürlüğü için yüklü bir fidye ödeyebilirmiş. Sanırım bu 'dostunu' bulup konuşmam gerekecek.
+#TEXT 7
+O esir kaptan @<sName> beni aptal yerine koymaya kalktı! Ama buna asla izin vermem. Onu derhal astıracağım!
+#TEXT 8
+@<sCity>’deki meyhaneci, @<sFoundChar>’ı ziyaret etmemi önerdi; şansım yaver giderse, @<sName>’i orada bulabilirim.
+#TEXT 9
+Aptalca bir hata yaptım, @<sName>'in kaçmasına izin verdim! Esir için güzel bir fidye alabilirdim.
+#TEXT 10
+O esir kaptan @<sName> beni kandırmaya kalktı! Ama bu işin içinden sıyrılamayacak. Hemen onu astıracağım!
+#TEXT 11
+Kaptan @<sName> beni kandırmaya çalışmadı. Yardımcısı @<sNameChar>, hemen @<sSum> peso ödedi. Artık lostromoya esirimizi karaya çıkarmasını emretmeliyim.
+#TEXT 12
+Esir kaptan @<sName>, bana @<sCity> şehrinde @<sNameChar> adında birinin yaşadığını ve @<sPirateName>'in hazinesinin haritasını satmaya istekli olduğunu söyledi. Bu doğru mu değil mi bilmiyorum, ama mahkumu serbest bırakmaktan başka çarem yoktu. Hazinenin peşine düşmeden önce @<sNameChar>'ı bulmalıyım.
+#TEXT 13
+Tutsak kaptan @<sName> beni kandırdı mı yoksa sadece şanssızlık mıydı, bilemiyorum. Ama haritanın sahibi @<sNameChar>'ı asla bulamadım. Ve sanırım bir daha da bulamayacağım...
+#TEXT 14
+Aptalca bir şekilde @<sName>'i elimden kaçırdım!
+#TEXT 15
+@<sPirateName>'den @<sSum> peso karşılığında bir harita satın aldım. Umarım hazine hâlâ bırakıldığı yerdedir.
+#TEXT 16
+@<sName>'den haritayı almamaya karar verdim. @<sSum>—bu fiyata değmez, hele ki hazinenin çoktan gitmiş olma ihtimali varken.
+#TEXT 17
+Sandıkta değerli hiçbir şey yoktu. Belki hazinenin sahibi benden önce gelmiştir—ya da o düzenbaz @<sName>, benim gibi ahmaklardan kâr etmek için kurnazca bir yol bulmuştur.
+#TEXT 18
+Kaptan @<sCapName> yalan söylememiş—tüm hazine oradaydı. Şansım yaver gitti!
+
+#QUEST zpq
+Tehlikeli Yük
+#TEXT 0
+Kaçakçılar, Main'deki İspanyol kolonilerinden birinin yerel kalesinde barut sıkıntısı yaşadığını fısıldıyor. Fırsat bulursam komutanlarla konuşmalıyım—belki biri bu tehlikeli yükü benden almak ister. Ancak iki sorun var: Birincisi, komutanın haydutlarla iş yapmayacağı söyleniyor; ikincisi, sevkiyat oldukça büyük olacak, bu yüzden gemimin yeterli kapasitesi olduğundan ve iyi korunduğundan emin olmalıyım. Ama bunlar sonra düşünülür—şimdilik, bir alıcı bulmam gerek.
+#TEXT 1
+Cumana kalesinin komutanı benden 15.000 varil barut teslim etmemi istedi. Ödül—100.000 peso—kesinlikle cazip. Bu görevi üstlenmeye karar verdim, ancak ambarımda bu kadar çok barut taşımak oldukça tehlikeli bir iş.
+#TEXT 2
+Yük teslim edildi. Komutanın zayıf hafızasına rağmen, hak ettiğim ödülü almayı başardım.
+#TEXT 3
+Kim derdi ki kalenin komutanı da sıradan bir haydut çıkacak? Yetkisini kullanıp bana anlaştığımız paranın ancak yarısını ödedi. Yine de hiç yoktan iyidir diye düşündüm—adamın koruması çok sıkıydı, daha fazlasını zorlamak akıl karı değildi.
+#TEXT 4
+O subay üniforması giymiş alçak, ödülümün yarısını çalmaya kalktı! Böyle bir hainlik asla affedilemez. Hakkım olanı onun soğuk ve cansız ellerinden almak zorunda kaldım.
+#TEXT 5
+O düzenbaz bana vaat edilen paranın sadece yarısını ödemeye kalktı. Kimin haklı olduğunu ona açıkça göstermem gerekti. Sözlerim oldukça ikna ediciydi; sonunda komutan, anlaştığımızdan çeyrek daha fazla ödedi. Yine de, bu işten gerçekten zararlı çıktığına pek inanmıyorum.
+#TEXT 6
+Bu görevi reddetmeye karar verdim. 100.000 peso büyük bir servet, ama kendi hayatımı daha çok önemsiyorum.
+#TEXT 7
+Şehirden ayrılırken, bir grup serseri önüme çıktı—belli ki pusuya yatmışlar. Oldukça kibar bir şekilde bütün paramı istediler. Şüphe yok ki, o pis sıçan tarafından gönderilmişlerdi. Yine de onu bir kez daha hayal kırıklığına uğratmak zorunda kaldım...
+#TEXT 8
+Kaleden ayrılırken, bir grup haydut önüme çıktı—belli ki pusuya yatmışlardı. Oldukça kibar bir şekilde tüm paramı istediler. Hiç şüphem yok, o hain sıçan tarafından gönderilmişlerdi. Onlara karşı gelmemeyi seçtim; silahları oldukça fazlaydı. Elimdeki son kuruşu bile vermek zorunda kaldım...
+
+#QUEST NoiseCemetery
+Uğursuz Mezarlık
+#TEXT 1
+@<sCity> adasındaki mezarlık bekçisi dehşet içinde. Son birkaç gecedir mezarlıktan tuhaf sesler ve hayaletin iniltisini andıran ürkütücü uğultular geldiğini söylüyor. Böyle hikâyelere pek inanmasam da, zavallı yaşlı adama yardım etmeye karar verdim; gerçekte neler olup bittiğini göreceğim. En kötü ihtimalle birkaç mezar soyguncusuyla uğraşırım—ya da gerçekten bir hayalet varsa, çabucak oradan kaçarım. Geriye sadece geceyi beklemek kaldı.
+#TEXT 2
+Hem eğlenceli hem de biraz hüzünlü. Tüm o sesler ve inlemeler aslında bir hayaletin çığlıkları değilmiş; sadece iki genç âşığın gizli buluşmalarıymış. Aileleri birbirlerini görmelerini yasaklamış, onlar da tenha bir yer aramışlar. Şimdi nöbetçinin içini rahatlatabilirim. Ona giderken ne söyleyeceğime karar vermem gerekecek.
+#TEXT 3
+Talihsiz çifti mahvetmemeye karar verdim ve sırlarını muhafızdan gizledim. Genç aşıklar... Umarım her şey onlar için iyi olur.
+#TEXT 4
+Muhafıza gerçeği söyledim. İlk başta öfkelendi tabii, ama sonunda sakinleşti. Hepimizin kendi günahları var. O çiftin buluşacak başka yeri yokmuş. Genç aşk... Umarım işleri yolunda gider.
+#TEXT 5
+Gözcünün garip sesler ve korkunç inlemeler hakkındaki hikâyelerine kafamı takmamaya karar verdim. Zamanım böyle saçmalıklarla harcanamayacak kadar değerli.
+
+#QUEST SixCaptains
+Altı Kaptan
+#TEXT	1
+Belki de ilk kez, bana ne iş ne de görev veren biriyle kısa bir karşılaşma, bu günlüğe bir not düşmeme sebep oldu. Bu rahibin üzerimde neden böyle bir etki bıraktığını anlayamıyorum. Adını bile bilmiyorum, bazen saçma sapan konuşuyordu ama kendini unutulmaz kıldı. Şimdiye dek iki kez karşılaştık; belki de tesadüftür. Ama bir kez daha karşılaşırsak...
+İtiraf etmeliyim ki, onun ilgisi biraz gurur okşayıcı. Gözlerindeki o bakış... sanki beni tartıyor. Sanki başarılarıma hayran kalmış gibi. Kim kalmaz ki? İki efsanevi gemi, hikâyeleri tüm Takımadalar’da dilden dile dolaşan iki kaptan—ikisi de benim elimden düştü.
+Gelecekteki maceralarımı öğrendiğinde ne diyecek acaba? Takımadalar engin, ama şöhretim, anlaşılan, sandığımdan daha hızlı yayılıyor.
+#TEXT	2
+Diego de Landa - demek adın buymuş. Yollarımız tekrar kesişecek. Devamı gelecek.
+
+#QUEST SharlieTutorial
+Prolog
+#TEXT	0
+Bütün bunlardan nasıl da bıktım! Beş gün... ve sonunda karaya ayak basacağım. Son iki ay tam bir kâbustu; aklı başında birinin hayatını denize bağlamasını anlamak mümkün değil!
+Şimdilik - kaptan beni bekliyor. Son zamanlarda ondan pek hoşlanmıyorum. Buradaki hiçbir şeyden artık hoşlanmıyorum.
+#TEXT	0.1
+Görünüşe bakılırsa, beni ilginç bir akşam bekliyor. Şimdilik kaptan bana gemide serbestlik tanıdı... tabii geminin sınırları içinde, ha-ha! İstediğim an ona dönebilir ve bu yorucu günü sonlandırabilirim.
+#TEXT	1
+500 peso karşılığında üst güvertedeki denizci Henry’ye 3 şişe rom satabilirim. Kamaradaki lostromosun çeşitli mallarla ticaret yaptığını duydum. Gemiyi iyice araştırıp diğer denizcilerle de konuşmamda fayda var.
+#TEXT	2
+Neyse ki rom içmiyorum ve Henry ile iyi bir anlaşma yapabildim. Mürettebat çabalarımı takdir etmişe benziyor.
+#TEXT	3
+Topçu Paul, topları taşırken belini incitti ve benden yardım istedi. Top gülleleri ambarın bir yerinde, muhtemelen o bitmek bilmeyen sandıkların birinde duruyor olmalı.
+#TEXT	4
+Lanet top güllerini zar zor Paul’a taşıdım. O denizci biraz şüpheli davranıyor, ama ödül olarak bir şişe rom aldım. Buralarda bu zehre olan talep düşünülünce, değerli bir ganimet.
+#TEXT	5
+Kaptanın anahtarını buldum! Acaba hangi hazinelerin kapısını açıyor...
+
+#QUEST DWH
+Şifanın Karanlık Suları
+#TEXT	1
+St. John's'ta, yerel çingenenin Thomas Morrison'ın ağır hasta kızının son umudu olduğu fısıldanıyor. Fakat inatla yardım etmeyi reddediyor. Zavallı kıza gerçekten hiç acımıyor mu?
+#TEXT	2
+Çingene kadın, kıza yardım etmeye istekli olduğunu söyledi, fakat Thomas onu evine kesinlikle almak istemiyor. Thomas’ı ziyaret edip, kızın kurtuluşu için son umudu neden reddettiğini öğrenmek istiyorum. Evi, şehrin kuzey kısmında, surun yanında, sütunlu lüks bir malikanenin hemen yanında.
+#TEXT	3
+Yerel kilisenin rahibi, Thomas Morrison’ı, ağır hasta kızını kurtarmak için çingenenin yardımını kabul ederse aforoz etmekle tehdit etti. Şimdi Thomas, kilisenin gözünden düşme korkusuyla kızının hastalığı karşısındaki çaresizliği arasında sıkışıp kalmış durumda. Rahibi, bu günaha göz yumması için ikna etmeye çalışacağım; sonuçta kızın hayatını kurtarmak daha büyük bir iyilik!
+#TEXT	4
+Başka yollar bulmam gerekecek. Rahip kesinlikle inatçı, üstelik birçok konuda da haklı. Yine de ona katılamıyorum. Kızı tekrar hayata döndürme şansımız varsa, bunu değerlendirmeliyiz.
+#TEXT	5
+Rahibi ikna etmeyi başardım. Eğer Thomas Tanrı huzurunda samimi bir tövbe ve iyi işler ile kendini affettirirse, rahip çingenenin tedaviye katılımına göz yummayı kabul etti.
+Şimdi çingenenin iksiri için ana malzeme olan mangarosayı bulmam gerekiyor. Bu bitki hoş kokusu, uzun sapı ve kendine has tırtıklı yapraklarıyla ayırt edilir. Mangalosayı kasaba dışında bir mağarada, bazı 'serseri tiplerden' – muhtemelen serseriler ya da haydutlardan – temin edebilirim. Eh, bu daha da iyi. Belki de onlara hiç para ödemem gerekmeyecek.
+#TEXT	6
+Elimden gelen her şeyi yaptım. Artık tek umudum çingenenin yeteneklerinde. Küçük kızı kurtarma işine o kadar daldım ki, kendi meselelerimi tamamen unuttum. Bir ay sonra Antigua'ya uğrayacağım. O zamana kadar Esther'in tamamen iyileşmiş olması gerek.
+#TEXT	7
+Çingene, kilisenin gazabını Thomas’a çekmeden kıza gizlice yardım etmeye hazır. Şimdi asıl mesele, onun bize güvenmesini sağlamak.
+#TEXT	8
+Thomas bana Esther’ın kişisel eşyasını – yeşim boncukları – verdi. Şimdi iki adet datura sapı, bir ipecac sapı ve bir verbena sapı bulmam gerekiyor. Bunları topladıktan sonra çingeneye geri dönebilirim.
+#TEXT	9
+Çingene ile birlikte gösterdiğimiz çabalar sayesinde Esther'in hastalığını yendik! Bunca uğraşın boşa gitmediğini bilmek güzel; artık kız sağlığına kavuştu.
+#TEXT	10
+Çingene kadınla birlikte gösterdiğimiz çabalar, Esther’in hastalığını yenmemizi sağladı! Tüm uğraşlarımızın boşa gitmediğini bilmek içimi ferahlattı; kız artık sağlığına kavuştu. Saint John's’taki çingene kadından her zaman mangarosa satın alabilirim—üç dalı için üç yüz elli altın dublon ister.
+#TEXT	11
+Artık çingenenin şifa iksirini hazırlaması için gereken her şey elinde. Yarın sabah ilacı ondan alıp Thomas’a götürmem gerekecek.
+
+#QUEST TPZ
+Kanunla Ticaret
+#TEXT 1
+Bas-Ter halkı, meyhanede içki kıtlığından şikayet ediyor. Meyhane sahibi sorunu çözeceğine dair sürekli söz veriyor, ama henüz hiçbir şey değişmedi. Görünen o ki başı gerçekten dertte—ve dert varsa, orada para kazanmak için bir fırsat da vardır.
+#TEXT 2
+Meyhaneci, Antigua’daki tedarikçisinin korsan saldırısında damıtımevini kaybettiğini ve en az iki ay boyunca hiçbir şey teslim edemeyeceğini söyledi. Şimdilik, tüccarın itibarı iyi olduğu sürece her türlü şarap ya da romu kabul etmeye razı. Bu sefer evrak gerekmiyor, ama gelecekte sadece dürüst ve güvenilir tüccarlarla çalışacak. Belki de malları gayriresmî yollardan temin etmeyi denemeliyim... Bu işi dikkatlice yürütürsem, güzel bir kazanç elde edebilirim.
+#TEXT 3
+Kaçakçıların şu anda sunacak içkisi yok. Ancak, valinin konutu yakınlarında yaşayan bir tüccar, sessizce az miktarda içki ticareti yapıyormuş. Onu ziyaret etmeye değer olabilir.
+#TEXT 4
+Yeraltı içki satıcısının izini sürdüm. Başta beni yetkililerin bir ajanı sandı, fakat onu aksine ikna etmeyi başardım. Eğer ticaretini yasallaştırmasına yardım edersem, gelecekte şarap ve romu ondan çok uygun şartlarda satın alabileceğim. Şimdilik meyhaneciye uğramam iyi olur—bu anlaşmadan birkaç doblon daha kazanma fırsatı doğabilir.
+#TEXT 5
+Meyhaneciyle kendi şartlarımda bir anlaşma yaptım. 100 şişe şarap ve 100 şişe rom için hem şimdi hem de gelecekteki sevkiyatlarda 240 dublon ödeyecek. Artık Christian’ın işini resmileştirmenin vakti geldi.
+#TEXT 6
+Meyhaneciyle bir anlaşma yaptım. 100 şişe şarap ve 100 şişe rom karşılığında, hem şimdi hem de ilerideki teslimatlar için 200 dublon ödemeye razı. Artık Christian’ın işini resmiyete dökmenin vakti geldi.
+#TEXT 7
+Meyhaneci memnun—taverna yeniden romla dolup taşıyor. Christian da memnun; değerli bir müşteri kazandı ve işi artık yasal. Şimdi bu anlaşmadan kendi payıma düşeni düşünmenin zamanı geldi. Christian’a!
+#TEXT 8
+Bütün bu işlerin ortasında arabulucu olarak buldum kendimi—garip bir his. Yine de herkes memnun: meyhane yeniden cıvıl cıvıl, Christian muhtemelen kasasına akan doblonları sayıyor ve artık Karayipler’de güvenilir bir rom tedarikçim var. Üstelik bir kez bile kılıcımı çekmek zorunda kalmadım. İnanılmaz.
+#TEXT 9
+Nadiren rastladığım sakin bir seyir anının tadını çıkarıyordum ki, bir korsan gemisi limanın tam ortasında bana saldırdı. Meğer erzak sıkıntıları tesadüf değilmiş—o geminin kaptanının Bas-Ter meyhanesinin tedarik hattını ele geçirmek için kurduğu bir tuzakmış. Bu sefer başaramadı. Hırsının bedelini canıyla ödedi.
+#TEXT 10
+Denizde bir korsan gemisi tarafından saldırıya uğradım. Kim olduklarını ve ne istediklerini asla öğrenemeyeceğim. Gemileri denizin dibini boyladı, tüm cevapları da beraberinde götürdü.
+#TEXT 11
+Adadaki ticaret düzenlemeleri oldukça basit: Şehir hazinesine her ay yüz dublon vergi ve zamanında raporlar. Christian’ın bu işleri sorunsuz halledeceğine güvenim tam. Şimdi sıra hayduta iyi haberi vermekte—her şey yolunda gitti.
+
+#QUEST GS
+Adaletin Sınırları
+#TEXT	1
+Belize'deki Liman İdaresi Şefi'ne cesur bir suikast girişimi yapıldı. Saldırgan kaçmayı başardı ve şimdi av durumuna düştü. Söylentilere göre, yetkili onun başına ödül koymuş. Düşman dişli görünüyor—peşine düşmeden önce iki kere düşünmem gerekecek.
+#TEXT	2
+Limanın başındaki adam, kendisine kimin saldırdığını ya da neden saldırıldığını bilmediğini iddia ediyor. Saldırganı sıradan bir deli olarak nitelendiriyor – Karayipler’de her köşe başında rastlanabilecek türden biriymiş. Pek inandırıcı gelmese de umurumda değil. Bu ‘deli’nin başı için iki yüz dublonluk bir ödül var. Asıl önemli olan da bu. Aramaya yakınlardaki koylarda ve mağaralarda başlayacağım. Kaçak adaletin elinden en çok buralarda saklanıyor olmalı.
+#TEXT	3
+İş tamam. Şimdi Port Chief’e dönüp hak ettiğim ödülümü alma vakti. Yine de, belki de paralı askerin söylediklerini dinlemeliydim. Oldukça ikna edici konuşuyordu. Ama sonuçta, kim hayatı için pazarlık etmeye çalışmaz ki, en ufak bir umuda bile tutunarak? Büyük ihtimalle, bu da başka bir numaraydı.
+#TEXT	4
+Liman Şefi bana anlaştığımızdan da cömert bir ödeme yaptı. Ayrıca, herhangi bir süre boyunca bir gemimi limana yanaştırmak için kalıcı olarak yüzde elli indirim teklif etti. Fakat bu cömertlik, şüphelerimi daha da artırıyor. Ya paralı asker doğruyu söylüyorsa? Gerçekten korsanlarla karşılaştıysa, neden muhafızları çağırmadı? Neden beni 'katilin' peşine gönderirken bundan hiç bahsetmedi? Yine de bunlar sadece varsayım. Olan oldu, belki de gerçeği ancak zaman gösterecek. Yoluma devam etmeliyim.
+#TEXT	5
+Liman Şefi tam bir alçak! Yoldaşlarımı denize uğurlarken yüzünde sahte bir gülümseme, ardından gemi rotalarını korsanlara satıyor. Onun gibiler cezasız kalmamalı. Geceyi bekleyeceğim ve onunla ilgileneceğim. Pis işlerinin üstü açığa çıkacak. Paralı askerin bana verdiği notlar, evinde, herkesin görebileceği bir yerde kalacak. Bütün kasaba onun gerçek yüzünü görsün. Hapishanenin yanında oturması da ayrı bir ironi—aslında orada mahkûm olmalıydı.
+#TEXT	6
+O piç öldü! Şimdi sadece notları bırakıp tüm garnizon alarma geçmeden ortadan kaybolmam gerek.
+#TEXT	7
+Liman Şefi artık yok. Artık kimseyi korsanların eline göndermeyecek. Bugün dünya biraz daha iyi bir yer oldu.
+
+#QUEST OS
+Eski Hesaplar
+#TEXT 1
+Puerto Principe’deki meyhaneci, nasıl olduysa Avrupa’dan ithal edilen nadir bir cin fıçısını kaybetmiş. Kayıp mal bulunmazsa, zavallı adam başını büyük belaya sokabilir. Panik haline bakılırsa, bu sevkiyat önemli birine gidiyordu—yoksa bu kadar telaşa ne gerek olurdu?
+#TEXT 2
+Cin, meyhanecinin burnunun dibinden çalındı. Şimdi hayatı pamuk ipliğine bağlı—gizemli müşteri, hataları affedecek biri değil belli ki. Fıçıyı geri getiren olursa yüz elli dublon ödül veriyor. Aklımda birkaç fikir var. İlk adım: denizcileri sorgulamak. Belki biri bir şeyler görmüştür.
+#TEXT 3
+Bütün bu hikaye kulağa şüpheli geliyor. Ama gerçekte ne olduğunu dair bir teorim var. Artık garsonla konuşmanın zamanı geldi.
+#TEXT 4
+Baskı altında, garson itiraf etti ki tüm bu sahne Jack Wales adında biri tarafından kurgulanmış. 'Sea Beast' gemisinin kaptanıyla birlikte, fıçıyı çalmak için tam bir tiyatro sergilemişler. Cin için bu kadar zahmete girmek! Demek ki sadece içici değil, gerçek birer gurmeler. Hırsızın evi ise birkaç adım ötede—tam meyhanenin karşısında.
+#TEXT 5
+Fıçıyı tam zamanında meyhaneciye geri götürmeyi başardım, onu büyük bir beladan kurtardım. Hakkını vermek gerekirse, bana iyi bir ödül verdi: doblonların yanı sıra, meyhanesinde ömür boyu ücretsiz içki ve konaklama hakkı tanıdı. Garsona gelince, akıllıca ortadan kayboldu—meyhaneci onun bu işteki payını çabucak ortaya çıkardı.
+#TEXT 6
+'Sea Beast' tayfası, kaptanlarını sonuna kadar takip etti. Böyle bir sonu hak ettiler mi? Kim bilir... Ama bir şey kesin—bana karşı gelmeden önce iki kere düşünmeliydiler.
+
+#QUEST UV
+Çalınan Hatıra
+
+
+#TEXT 1
+Söylentilere göre, vali'nin öz yeğeni Julie d’Armagnac, Port-au-Prince'te her zamankinden daha kederliymiş. Eskiden ışıl ışıl ve neşeliyken, şimdi fırtına bulutundan bile daha kasvetli dolaşıyor. Onu böylesine değiştiren şeyin ne olduğu tam olarak bilinmiyor, ama ortada ciddi bir mesele olduğu açık.
+#TEXT 2
+Julie zor bir durumda kaldı. Kalbinde özel bir yeri olan bir kolyesi çalınmış. Muhafızlara başvuramıyor—Fransız Hispaniola'sının valisi olan amcası, ona bu hediyeyi veren kişiyle iletişim kurmasını kesinlikle yasaklamış. Julie, hırsızın kendi hizmetkârı olmasından şüpheleniyor. Onu bu talihsizlikle baş başa bırakamam; yardım etmeye karar verdim. Başlamak için yerel tüccarlarla konuşmalıyım—hırsız mücevheri büyük ihtimalle hemen elden çıkarmaya çalışmıştır.
+#TEXT 3
+'Golden Seagull' gemisinin kaptanı Tristan Renier adında biri, yakın zamanda bir tüccardan Julie'ye ait olabilecek bir kolye satın almış. Gemisi hâlâ limanda demirli. Şüphelerimde haklıysam, hırsız Giselle olabilir—tüccarın ağzından yanlışlıkla çıkan isim buydu.
+#TEXT 4
+Tristan gemide değildi. Onu kasabada aramalıyım.
+#TEXT 5
+Julie’nin kolyesini geri aldım. Şimdi onu Julie’ye geri mi vereceğim, yoksa valiye gidip her şeyi anlatacak mıyım, buna karar vermeliyim.
+#TEXT 6
+Kolye, sevimli sahibine geri verildi. Hırsız ise bizzat onun hizmetçisiymiş—Giselle’in ta kendisi. Julie şimdi tüm kurnazlığını kullanarak bu düzenbazı cezalandırmanın yollarını arıyor. Onun yerinde olmak istemezdim.
+
+#QUEST VPVL
+Büyük Avda Yakalandım
+#TEXT   1
+Saint Pierre’de, yerel balıkçı Pierre Carno’nun kayboluşuyla ilgili söylentiler dolaşıyor. İki tam gelgittir, teknesi limana dönmedi. Karısı Lea, korkuyla baş başa, iskelede yalnız bekleyişini sürdürüyor; gözleri, kocasından bir iz arayarak huzursuz suları tarıyor. Onun sağ salim dönmesi, Lea’nın acısını dindirecek tek şey. Fakat acımasız deniz sırlarını sıkı saklar; her çan vuruşunda umut azalıyor, hayatta kalma şansı giderek tükeniyor.
+#TEXT   2
+Lea, kocasının adanın güney kıyısındaki Le Marin Bay’e doğru yelken açtığını söyledi. İki gün geçmiş, hâlâ geri dönmemiş. Bu zavallı kadının yüzündeki endişe beni ona yardım etmeye itti. Öncelikle Le Marin Bay’in sularını arayacağım—belki Pierre hâlâ denizdedir, bir talihsizlik yüzünden gecikmiştir. Orada bir iz bulamazsam, kıyıyı adam ya da gemi işareti için didik didik arayacağım.
+#TEXT   3
+O sahil kenarında yaşayan kaçakçılar, beni valinin köpeklerinden biri sandılar ve beni denizin dibine göndermeye kalktılar. Ancak talih onlardan yana değildi—şimdi kendi kanları kumu lekeliyor, benimkini değil. Bahsettikleri deniz mağarasını araştırmalıyım. Belki de Pierre, o nemli zindanda zincirli tuttukları kişidir.
+#TEXT   4
+Pierre artık özgürlüğün tatlı havasını soluyor ve onu sadık eşinin kollarına geri götürmenin zamanı geldi. Kader ona acımasız davrandı—kayığı resife çarptı, karaya çıktığında ise onu vali ajanı sanan şaşkın kaçakçıların eline düştü. Zavallı adam, asla sahip olmadığı sırları söylemesi için işkenceye ve açlığa maruz kaldı. O lanetli mağaraya tam zamanında adım atmasaydım, Tanrı'nın inayetiyle, başına ne korkunç bir son geleceğini düşünmek bile insanın tüylerini ürpertiyor.
+#TEXT   5
+Pierre, sadık eşinin yanına sağ salim döndü. Gücünü topladığında minnettarlığını göstereceğine söz verdi ve yarın altıncı çan vurduktan sonra meyhanede bir içki paylaşmamızda ısrarcı oldu. Yine de içimi kemiren bir soru var—Le Marin kıyısında o talihsiz kaçakçıların asıl beklediği kimdi? Konuşmalarından yakında karaya çıkacak bir gemi olduğu anlaşılıyordu. Valinin adamları, böyle bir kaçak yükle dolu gemiden önceden haberdar olmak için yüklüce ödeme yapardı. Ya da belki...
+#TEXT   6
+Valiye, bir gemi bekleyen kaçakçılar hakkında rapor verdim. Soruşturma başlatacağına söz verdi ve üç gün sonra tekrar yanına gitmemi istedi. Eğer raporum doğru çıkarsa, ödül benim olabilir.
+
+#QUEST TBP
+Betsy Price'ın Gizemi
+#TEXT	1
+Willemstad’da ilginç bir hikaye duydum – yerel meyhaneye yakın zamanda olağanüstü güzellikte bir garson kız alınmış, fakat üç gün önce aniden ortadan kaybolmuş. Meyhane sahibi endişeli ve onu bulana ödül vermeye hazır.
+#TEXT	2
+Söylentiler doğruymuş; garson kız gerçekten de ortadan kaybolmuş. Meyhane sahibi açıkça endişeli... kayboluşu için mi yoksa azalan kazancı için mi, kim bilir. Onu geri getiren herkese yüz dublon ödemeye hazır. Ona yardım etmeyi kabul ettim. Yüz dublon iyi bir teşvik, ama beni asıl cezbeden Betsy'nin kendisi. Ne tür bir kadın, erkekleri her işini bırakıp saatlerce sırf onu izlemek için meyhanede oturmaya razı edebiliyor? Öncelikle, evini incelemeliyiz. Meyhane sahibine göre, evi meyhaneden pek uzak değil, tepenin üzerinde—mavi balkonlu gösterişli evin tam karşısında.
+#TEXT	3
+Betsy'nin karanlık işlere bulaştığı açıkça ortada. Bulduğum mektup, hayatına yönelik doğrudan bir tehdit içeriyor; bu da kaybolmasının basit bir kaçıştan çok daha ciddi bir nedeni olduğunu gösteriyor. Saklanmayı başarmış olabilir, ama daha kötü bir sonu da göz ardı edemem. Bu mesajı kimin bıraktığını öğrenmeliyim. İlk olarak meyhaneciyle konuşacağım – belki çevresinde şüpheli birilerini görmüştür.
+#TEXT	4
+Serseriden aldığım kolye Betsy'ye aitmiş. Onu, fenerli evin yanındaki çiçeklikte bulmuş. Orada dikkatlice etrafa bakmamız gerekecek.
+#TEXT	5
+Vay canına, bu Betsy ne kadınmış... Yoksa adı Miranda mıydı? Yok, Betsy diyelim – geçmişini kurcalamaya gerek yok. Her neyse, o alçakların elinden kurtarıldı... Artık hak ettiğim ödülü alma zamanı.
+#TEXT	6
+Meyhaneci, değerli garsonunu geri getirdiğim için bana tam ödeme yaptı. Doğrusu, Betsy hakkındaki düşüncelerim hâlâ aklımdan çıkmıyor... Belki bir ara onu ziyaret etmeliyim.
+
+#QUEST OZ
+Kumarın Pençesinde
+#TEXT	1
+San Jose’de demirci, kartlara olan tutkusu yüzünden ağır bir bedel ödedi – Javier Castillo ile oynadığı bir elde çok değerli bir şeyini kaybetmiş. Söylentilere bakılırsa tamamen yıkılmış durumda: işi durmuş, geleceği ise kara bulutlarla kaplı, çünkü siparişi zamanında yetiştiremezse amiral öfkeden deliye dönecek. Bir adamı böylesine umutsuzluğa sürükleyecek kadar değerli ne kaybetmiş olabilir?
+#TEXT	2
+Artık Sebastian Cordoba’nın moralinin neden bozulduğunu anlıyorum. İşinde çok önemli bir kitabı – demircilik kitabını – kaybetmiş. Durumunu daha da kötüleştiren şey ise, Javier’in vakit kaybetmeden kitabı bir Fransız usta silahçıya satmaya karar vermesi. Her zamanki gibi, bela tek başına gelmez. Bir gün önce, demirci Amiral Eugenio de la Torre’dan ciddi bir sipariş almış... Amiral buraya geldiğinde, siparişinin neden yerine getirilmediğini mutlaka öğrenecek. Kitabın Fransızların eline geçtiğini duyarsa, demircinin dediğine göre ona çok sert davranacak. Zavallı adama yardım etmeyi kabul ettim. Eğer kitabı ona geri getirmeyi başarırsam, ikinci bir şansı olacak; umarım hatalarını tekrarlamaz ve ben de her zaman iyi bir demircinin hizmetine güvenebilirim. İlk olarak Javier’i aramaya başlayacağım, muhtemelen şu anda başka birini kandırmaya çalışıyordur.
+#TEXT	3
+Javier’i alt etmeyi başardım! Kitap artık benim. Onun numaraları saf denizcilerde işe yarayabilir, ama gerçek bir oyuncuya sökmez. Yenilgiyi hazmedemedi – beni hile yapmakla suçladı. Eh, kibirini burnundan getirmek bana düştü.
+#TEXT	4
+Lanet olsun! Javier gerçekten kart oyununda usta çıktı. Şimdi sadece kitabı değil, paramı da geri almanın bir yolunu bulmam gerekiyor! Öncelikle onun hakkında daha fazla bilgi edinmeliyim.
+#TEXT	5
+Lanet olsun! Javier borcun ertelenmesini dinlemeye bile yanaşmıyor. Bu işi burada bırakmam. Ona baskı yapmanın bir yolunu bulmam gerek. Ama önce hakkında daha fazla bilgi edinmeliyim.
+#TEXT	6
+Javier’in, Felipe Alarcon adında birine yüklü bir borcu olduğunu öğrendim. Belki onunla konuşarak, borçluya baskı yapmanın bir yolunu bulabilirim. Felipe’nin evi bankanın tam karşısında – girişinde sütunlar olan lüks bir konak.
+#TEXT	7
+Felipe’nin adına hareket etmem için iznini aldım. Artık Javier’den borcunu derhal ödemesini talep edebilirim; eğer parası yoksa, önce kitabı alacağım.
+#TEXT	8
+Javier’ı kışkırtmak o kadar da zor olmadı. Anlaşmayı tam kapatacakken, baskıya dayanamadı – her şeyin bir anda çökebileceğini fark edince, tereddüt etmeden kavgaya tutuştu. Kitap için gelen Fransız bana seksen bin peso teklif etti – ama Sebastian’ın kaderi üzerinden pazarlık yapmaya niyetim yoktu. Javier’in ceplerinde sadece bir not buldum. Görünüşe göre, bu işten sonra Javier biriyle birlikte adadan ayrılmayı planlıyordu. O mağarada ne sakladıklarına bakmam gerek. Orada para varsa çok işime gelir, çünkü Felipe meselesi hâlâ çözülmedi.
+#TEXT	8_1
+Javier’i alt etmeyi başardım! Onun numaraları saf denizcilerde işe yarayabilir, ama ciddi bir oyuncunun karşısında hiçbir anlamı yok. Yenilgiyi hazmedemedi ve beni hile yapmakla suçladı. Ona haddini bildirmek zorunda kaldım. Kitap için gelen Fransız bana seksen bin peso teklif etti – ama Sebastian’ın kaderi için pazarlık yapacak değildim.
+Javier’in ceplerinde sadece bir not buldum. Görünüşe göre bu işten sonra Javier, biriyle birlikte adadan ayrılmayı planlamış. O mağarada ne sakladıklarına bakmam lazım.
+#TEXT	9
+Javier’i kışkırtmak o kadar da zor olmadı. Anlaşmayı tam kapatacakken baskıya dayanamadı – her şeyin bir anda çöpe gidebileceğini fark edince tereddütsüz kavgaya girişti. Kitap için gelen Fransız bana seksen bin peso teklif etti – ama ben fiyatı yüz elli bine çıkardım! Şimdi Sebastian’la karşılaşmasam iyi olur. Javier’in ceplerinden sadece bir not çıktı. Görünüşe göre bu işten sonra Javier birisiyle adadan ayrılmayı planlıyordu. O mağarada ne sakladıklarına bakmam gerek. Orada para varsa çok işime gelir, çünkü Felipe meselesi hâlâ çözülmedi. Kitabı sattığım paradan da kolay kolay vazgeçmek istemem.
+#TEXT	9_1
+Javier’i alt etmeyi başardım! Onun numaraları saf denizcilerde işe yarayabilir, ama ciddi bir oyuncuya karşı hiçbir şansı yok. Yenilgiyi hazmedemedi ve beni hile yapmakla suçladı. Eh, haddini bildirmek bana düştü. Kitap için gelen Fransız bana seksen bin peso teklif etti – ama pazarlıkla bunu yüz elli bine çıkardım! Sanırım şu anda Sebastian’la karşılaşmasam iyi olur.
+Javier’in ceplerinde bir nottan başka hiçbir şey yoktu. Görünüşe göre bu işten sonra Javier, biriyle birlikte adadan ayrılmayı planlamış. O mağarada ne sakladıklarına bakmam gerekiyor.
+#TEXT	10
+Kitap sahibinin ellerine geri döndü. Umarım Sebastian bu sefer dersini almıştır ve çabalarım boşa gitmez.
+#TEXT	11
+Felipe Alarcon’a parayı geri vermedim. Görünüşe bakılırsa bu hareketim pek hoşuna gitmedi – şimdi bütün İspanyol kuvvetleri beni meydanda asmak için can atıyor.
+#TEXT	12
+Felipe Alarcon’a parayı geri vermedim. Bu jestimi takdir etmedi – hemen saldırıya geçti. Onunla kolayca başa çıktım, ama şimdi şehirden çıkmak için kılıçla yolumu açmam gerekecek gibi görünüyor.
+
+#QUEST LFD
+Ölüden Mektup
+#TEXT	1
+Porto Bello'da, "Águila" adlı flüt gemisinin kaptanının, tayfasının karaya çıkmasına izin verdiği için çarkçısını azarladığına dair söylentiler dolaşıyor. Genellikle, tayfa gemide tutuluyorsa ya konuşacak önemli bir şeyleri vardır ya da gemi limanda uzun süre kalmayı düşünmüyordur. Denizcilerle konuşmalıyım; belki para kazanmanın bir yolunu bulabilirim.
+#TEXT	2
+Porto Bello sokaklarında, tam da o flütten bir denizciyle karşılaştım. Bir süredir Marisa Caldera adında birini aradığı için gemisini kaçırma riskiyle karşı karşıyaydı. Gemisinin ambarında, hurda eşyalar arasında ona hitaben yazılmış eski bir mektup bulmuş ve bir ödül umuduyla teslim etmeye karar vermiş. Artık vakti kalmadığından, bu önemli mektubu küçük bir ücret karşılığında bana satmayı teklif etti, ben de kabul ettim. Sonuçta, bu hikaye epey kârlı çıkabilir.
+#TEXT	3
+Meyhaneci, Marisa'nın son iki yıldır kasabada neredeyse hiç görülmediğini söyledi. Kocasının ölüm haberinden sonra adeta ortadan kaybolmuş, insanların gözlerinden kaçarmış. Yine de adı hâlâ biliniyor ve bazı adamlar ona hâlâ ilgi gösteriyor. İnsan, onun ahlaka aykırı bir işe bulaşıp bu yüzden saklandığını düşünebilir, fakat meyhaneci Marisa'nın dindar biri olduğunu ve vaktinin çoğunu kilisede geçirdiğini, böyle işlere bulaşmasının pek mümkün olmadığını ısrarla belirtti. Aramaya devam etmem gerek. Ama onu nerede aramalıyım? Onun hakkında bana daha fazla kim bilgi verebilir?
+#TEXT	4
+Papaz, Marisa Caldera'nın uzun zaman önce kasabadan ayrıldığını ve sadece ara sıra göründüğünü doğruladı. Başka bir şey bilmiyor. Ancak, onun arkadaşı Dolores Monjo hâlâ kasabada yaşıyor ve muhtemelen ondan daha fazlasını biliyordur. Evinin, liman idaresinin sol tarafında olduğunu öğrendim.
+#TEXT	5
+Görünüşe göre Marisa’nın durumu oldukça zor, çünkü onun arkadaşı, kimi aradığımı duyar duymaz bana büyük bir şüpheyle yaklaştı. Yine de Dolores’i iyi niyetim konusunda ikna etmeyi başardım. Buluşma yarın gece saat on birden sonra olacak. Dolores, Marisa’nın kesinlikle geleceğine dair bir garanti vermiyor ama konuştuğumuz her şeyi ona ileteceğine söz verdi.
+#TEXT	6
+Marisa, merhum kocasının kasabanın dışında bir yere bir hazine sakladığını söyledi. Oraya tek başına gitmekten korkuyor ve bana eşlik etmem için ricada bulundu. Yarın sabah saat yedide onu ziyaret etmem gerekiyor, böylece birlikte yola çıkabiliriz.
+#TEXT	7
+Marisa'nın kocasına ait olan gizli sandığı bulduk. Tam ayrılmak üzereyken, alacaklısı Ramiro'nun gönderdiği bir paralı asker tarafından yakalandık. Ona ölümcül bir ders vermek zorunda kaldım. Ancak Marisa, hafifçe söylemek gerekirse, bu davranışımdan hiç memnun kalmadı. Her şeyin ne pahasına olursa olsun barışçıl bir şekilde çözülmesi gerektiğine inanıyor. Bu konuda onunla aynı fikirde değilim. Şimdi geriye sadece onu sağ salim kasabaya götürmek kaldı; orada nihayet yeni ve huzurlu bir hayata başlayabilir.
+#TEXT	8
+Marisa'nın kocasına ait olan gizli sandığı bulduk. Fakat tam ayrılmak üzereyken, alacaklısı Ramiro'nun gönderdiği bir paralı asker tarafından yakalandık. Her şey bana mal oldu: borcu da ödedim, faizini de. Artık zavallı dul için korku ve gölgeler içinde yaşamak geçmişte kaldı. Umarım yaşadıklarını unutup yeni bir başlangıç yapabilir.
+
+#QUEST WildRose
+Vahşi Gül
+#TEXT 1
+İlginç bir hikaye... Bishop’un plantasyonundan köleler kaçmış — sıradan köleler değil, donanmadan firar eden beyaz adamlar. Bir askerin dediğine göre, Bishop başlarına ödül koymuş ve şimdi silahlı talih avcıları ormana akın ediyor, kolay para peşindeler. Belki ben de bu avın bir parçası olmalıyım? Öte yandan, kurşunu mideye yeme ihtimali epey yüksek — hem kaçaklardan hem de peşlerine düşenlerden.
+#TEXT 2
+Mary bir yerlere kaybolmuş... tek kelime etmeden. Umarım dün yaptığımız konuşmadan dolayı değildir... Belki de salona inmiştir. Orada onu aramalıyım.
+#TEXT 3
+Tesadüflerin bir insanı nasıl şekillendirebileceği gerçekten şaşırtıcı. Hele ki elleri kana bulanmış bir cellatla karşılaştıysan. Kaçak köleler, köşeye sıkıştırılıp katledilmeden önce, birkaç muhafız ile Bishop’ın paralı adamlarını vurmuşlar. Daha da kötüsü — genç bir koloni kadınına tecavüz edip öldürmüşler, kocasına da neredeyse aynısını yapacaklarmış. Kaçakların elebaşı ise Jerry Casper’dı.
+Sevgili Mary’me herhangi bir akrabalığı olduğunu sanmıyorum. Ama bu hikâye onun kafasında bir soru uyandırdı: Onun anne babası kimdi? Ne isimlerini biliyor, ne de nerede doğduğunu.
+Her halükarda, yirmi yıl önce kaybolan izlerini arayacaksak, bunu ancak Justice Island’da yapabiliriz. Belki de adanın eski sakinlerinden bazıları bize yardımcı olabilir...
+Mary bana bu gizemin peşine düşerken diğer her şeyi göz ardı etmememi söyledi. Ama gözlerinden okuyorum – gerçeği bir an önce ortaya çıkarmak için yanıp tutuşuyor.
+Bana gelince... Ona yardım etmeye kararlıyım.
+Yine de çok iyi biliyorum ki, bazı sırlar en iyisi gömülü kalmalı. Belki de bu da onlardan biri. Sonuçta, bugüne dek kimse Mary'ye ailesi hakkında tek kelime etmemiş.
+#TEXT 4
+Yine bu gemi mezarlığındayız... Bu sefer burada oyalanmaya hiç niyetim yok, o yüzden doğrudan işe koyulmalıyız – yirmi yıl önce burada yaşayanlara sorular sormalıyız. Donald’dan başlamamız gerektiğini düşünüyorum. Mary’nin dediğine göre, geçen sefer ona sorduğunda ya cevap verememiş ya da vermek istememiş, ama Narwhal klanının liderinden daha iyi kim bize yardımcı olabilir ki?
+Mary’nin planı hakkında hâlâ kötü bir his taşıyorum, ama artık geri dönmek için çok geç.
+#TEXT 5
+Donald ile konuşma fırsatımız olmadı — dış halkada kendi tayfasıyla talim yapıyor. Justice Island’da yine çalkantılı günler kapıda gibi görünüyor. Umarım Leyton Dexter işleri kontrol altında tutacak iradeye ve güce sahiptir. Her halükarda, buraya gelme sebebimiz olan bilgiyi alıp gitmemiz gerek. Son isteyeceğim şey, boş yere kavga edenlerin arasında kalmak.
+Greenspen yarın dönecek — bu süreyi 'Ceres Smithy'de Mary'nin kamarasında bekleyerek geçirebiliriz.
+#TEXT 6
+Greenspen ile yaptığımız konuşmadan pek bir sonuç çıkmadı. Mary doğduktan birkaç yıl sonra adaya geldiğini ve ailesini hiç tanımadığını söylüyor. Sözlerini doğrulayacak ya da yalanlayacak kimse kalmadı, ama yalan söylemesi için bir sebep de göremiyorum – bundan bir çıkarı olmazdı.
+Yine de birkaç şey öğrenmeyi başardık. Öncelikle, Mary gerçekten de burada, Adada doğmuş. Donald bunu, onu büyüten yaşlı denizci Eric Udet’ten duymuş; ne yazık ki Eric artık hayatta değil. İkinci olarak, Orelie Bertine de Mary’nin yetişmesinde rol oynamış. Orelie uzun yıllardır Adada yaşıyor ve Mary doğduğunda buradaysa, mutlaka ailesini de tanımıştır.
+Donald, sağlığının kötüye gittiğini söyledi – yaş ilerledikçe insanı zorluyor. Umarım hafızası hâlâ yerindedir.
+#TEXT 14
+İstediğimiz her şeyi öğrenemedik ama insan elindekilere şükretmeli. Orelie epey şey hatırladı ve bunun için minnettarız. Şimdi bildiklerimizi gözden geçirelim. Mary’nin Isle of Justice’te doğduğu bilgisi kesinleşti. Fakat ailesi adalı değilmiş – onlar, şiddetli bir fırtınadan sağ çıkmayı başaran bir gemi kazasından kurtulanlarmış.
+Mary’nin annesinin adı Theresa’ydı. Adaya vardıktan yaklaşık bir hafta sonra doğum yaptı ve kısa süre sonra hayatını kaybetti; yaşadıklarından sonra bu pek de şaşırtıcı değil. Hamileliğinin son ayında neden bir gemide (ister donanma ister ticaret gemisi olsun) olduğu sorusunun cevabını ise yalnızca kocası, yani Mary’nin babası verebilir.
+Ama işte işler tam da burada iyice karmaşıklaşıyor. Orelie yalnızca adının “J” harfiyle başladığını hatırlayabildi. Ne geminin adını ne de türünü biliyor. Başka hiçbir şey yok.
+Bertine, bu gizemli “J.”nin kızının doğumundan sadece birkaç gün sonra ortadan kaybolduğunu söylüyor. Yine de adamın öldüğünden şüphe ediyor – o zamanlar kaçakçı tartaneleri ada ile Cuba arasında sık sık gidip gelirdi. Ayrıca, gemi mezarlığında öldüğüne dair hiçbir kanıt yok.
+
+Mary’nin babasının hâlâ hayatta olup olmadığını ya da eğer hayattaysa neden yeni doğan kızını terk ettiğini söylemek zor. Öte yandan, belki de Mary için onun kim olduğunu öğrenmek yeterli olacaktır...
+Ama bu zorlu meselede ilerleyebilmek için, 1638 yılının Haziran aylarından birinde, dış halkada batan geminin adını en azından bilmemiz gerekiyor. Bunun için de, Donald Greenspen’e başvurmaktan başka çaremiz yok.
+#TEXT 15
+Şüphelerim doğrulandı: Narwhals gerçekten de Justice Island’ın dış halkasına sürüklenen gemilerin, onlardan alınan değerli eşyaların ve yolcuların kaydını tutuyor. Bu, Narwhal klanının her yeni liderinin — Greenspen de dahil — sürdürdüğü bir gelenekmiş. Ancak Donald bu kayıtları bize veremedi; kısa süre önce Leighton Dexter onları ondan almış.
+#TEXT 16
+Bu sözde soruşturma boyunca, şanssızlığımızın doğaüstü bir şekilde peşimizi bırakmadığı hissinden kurtulamıyorum. Bir aksilik bitmeden diğeri başlıyor. Kimse hiçbir şey bilmiyor, bize yardım edebilecek birkaç kişi ise ya can çekişiyor ya da çoktan ölmüş. Gemi kayıtlarına gelince, Leighton Dexter’ın elimizdeki yıl için—1638—hiçbir kaydı yoktu. Hepsi Ailan Milroe’nun kamarasından kaybolmuş. Yine de Mary, Narwhal klanının eski liderinin bu belgeleri çok değerli gördüğünü ve asla yok etmeyeceğini söylüyor. Peki öyleyse, bu gemi mezarlığında, yalnızca bir tarihçinin ilgisini çekebilecek evraklara kim göz dikmiş olabilir?
+#TEXT 17
+Sonunda bu cehalet ve bilmece mağarasından bir çıkış yolu buldum. Mary’nin annesi ve babası — Joshua Casper — İngiliz Donanması’na ait 'Wrangler' adlı brig ile Justice Island’a ulaşmışlar. Onlarla birlikte iki denizci daha hayatta kalmış ama ertesi gece ruhlarını teslim etmişler. İçimdeki ses bunun bir kaza olmadığını söylüyor; yirmi yıl sonra ise kanıt kalmamış. Yine de, o günleri görenlerden ihtiyacımız olanı öğrendik ve artık Justice Island’ı poyrazda bırakıp yolumuza devam edebiliriz.
+Geriye, Joshua Casper hakkında daha fazla bilgi edinmemize kimlerin yardımcı olabileceğini düşünmek kaldı. Kraliyet Donanması'nın arşivlerine kendi başımıza ulaşmamız imkânsız...
+Ama denize açılmadan önce, hiçbir ayrıntının gözümden kaçmadığına emin olmalıyım. Başka kim bir şeyler biliyor olabilir? O günlerin olaylarını hatırlayacak kadar uzun süredir bu adada kimler var?
+#TEXT 18
+Az kalsın Chimiset’i unutuyordum – muhtemelen Justice Adası’nın en eski sakini o. 1623’te buraya gelmiş, Mary’nin doğumuna, annesinin ölümüne ve babasının ortadan kaybolmasına tanıklık etmiş. Joshua Kasper, doğum yapan kadının yanına şamanı yaklaştırmak istemeyen iki Narval’ı öldürdüğü için hapse atılmış.
+Chimiset’in anlattıklarından anlaşılıyor ki Joshua kaçmayı başarmış ve kaçakçıların mavnalarından birine gizlice binmiş. Adadan başka türlü ayrılmak mümkün değil. Yeni doğan kızını geride bırakmış ve muhtemelen ona sonra dönmeyi planlamış. Ama bu planlarını biriyle paylaştıysa bile, artık o kişiler çoktan yengeçlere yem oldu, öğrenmemiz imkânsız. Tek ipucu, Kasper’le Tartarus’ta konuşmuş olan eski rahip Padre Domingo olabilir. O da vefat etmiş, fakat belki bu konuşmanın izlerini taşıyan bir günlüğü vardır. Brother Julian’dan bunun doğru olup olmadığını öğrenebiliriz.
+Not: Bir de ilginç bir detay var. Teresa Kasper ölmeden önce, kocası ve çocuğunun babası Joshua’nın adını değil, Rupert’ın adını haykırmış. Joshua onu kurtarmak için elinden geleni yapmıştı, ama Teresa’nın son sözü Rupert olmuş. Chimiset böyle söylüyor ve ona güvenmemek için bir sebebim yok.
+#TEXT 19
+Brother Julian’a yaptığımız ziyaret boşa gitmedi. Padre Domingo De la Cruz’un notlarından, Mary’nin doğum tarihini öğrendiler — 22 Haziran 1638. 3 Mayıs’ta vaftiz edilmiş, Fabian Galard ile birlikte; Fabian, Cecil Galard’ın oğluydu ve kısa süre sonra hayatını kaybetmiş. Mary’yi emziren de Cecille’di ve şimdi, Padre Domingo ile Joshua Casper arasında, Joshua’nın kaybolmasından önce geçen konuşmanın ayrıntılarını ortaya çıkarmak için elimizdeki son umut Cecille.
+#TEXT 20
+Mary’nin ailesi hakkında ne kadar çok şey öğrenirsek, yirmi yıl önce Justice Adası’nda gerçekte neler yaşandığına dair o kadar derin bir muamma ve karmaşanın içine batıyoruz. Rupert’ın Teresa için kim olduğu çok merak uyandırıcı... bir kardeş mi, bir dost mu, yoksa... kocası mıydı?
+Cecille Halard ile yaptığım konuşma, Joshua Casper’ın bana tamamen dürüst davranmamış olabileceği düşüncesini aklıma getirdi. Görünüşe göre, bir sebepten dolayı başka birinin adını ya da tamamen uydurma bir ismi kullanmış olabilir.
+Ama bu sadece bir düşünce, fazlası değil. Donanma arşivlerinde bir araştırma başlatacaksak, kesinlikle Joshua Casper adıyla yapılmalı. Şimdilik diğer her şey sadece tahminden ibaret.
+Saint-Pierre’deki Abbot Benoît’ye gitmeliyiz.
+#TEXT 22
+Abbot Benoît kesinlikle göründüğü kadar basit biri değil. Ondan Amirallik arşivlerinden bilgi bulmasını istediğim anda gözlerinde bir heyecan kıvılcımı gördüm; bu bilgi askeri bir sır bile olabilir. Yoksa bunu ben mi hayal ettim? Ama eğer abbot’un geçmişinde karanlık sırlar varsa, bunları benimle paylaşacak gibi görünmüyor. Mr. Casper’ın geçmişine gelince — Tanrı dilerse, gerekli kayıtların temini için geçecek iki ay sonunda onun hakkında bir şeyler öğrenebiliriz.
+#TEXT 23
+Ve bu hikaye başta ne kadar da basit görünüyordu! Peki elimizde ne var... Joshua Casper, lekesiz bir şöhrete sahip bir subaydı, Cornwell adlı brigantin kaptanıydı. Emir gereği, İngiltere'den yola çıkıp, o zamanlar hâlâ İngilizlere ait olan Antigua ve Providence garnizonlarına maaş götürmek üzere Karayipler'e açılmıştı. Azorlar yakınlarında, bir İspanyol kalyonu ile çarpışma yaşandı; mürettebatın üçte biri ve bir subay (Rupert Northwood) bu çatışmada öldü. Saint John’s liman idaresinde saklanan resmi rapor da bunu doğruluyor. Antigua’dan ayrıldıktan sonra Cornwell, rotasını Providence’a çevirdi, fakat yolculuğu Justice Island’ın kayalıklarında, artık Ranger adıyla, sona erdi.
+Gemi kazasından dört kişi sağ kurtuldu: kaptan, bir kadın ve iki denizci. Denizciler ise bir gün bile geçmeden öldü. Cinayete mi kurban gittiler? Neredeyse kesin, çünkü fazla şey biliyor olabilirlerdi. Ya gerçek Joshua Casper’dı bu, ki birinci subayının karısına delicesine âşıktı ve Teresa’yı kurtaracak birini bulmak için enkazı çaresizce aradı; ya da Teresa’nın ölmeden önce adını haykırdığı Rupert Northwood’du, ki kendisine gizemli bir şekilde kaptanının adını vermişti. İkinci ihtimal akla hiç yatkın değil. Tıpkı bu adamın, ne bir ay, ne bir yıl, ne de yirmi yıl sonra Justice Island’a kızını almaya asla dönmemiş olması gibi.
+Belki de gerçekten öldü... Bazen tecrübe, cesaret ve kurnazlık bile insanı kaderden kurtaramaz. Ama o zaman nasıl haddini aştıysa, şimdi de biz bu gizemin karmaşık ağına kadar battık. Geri dönmek ya da durmak gibi bir niyetimiz yok.
+Orélie Bertine’i bir kez daha rahatsız etmeye değer, ardından da tam olarak kimi aradığımıza karar vermeliyim: Rupert Northwood mu, yoksa Joshua Casper mı?
+#TEXT 27
+Sonunda başardık. 'Cornwall'un başına ne geldi ve nasıl 'Wrangler'a dönüştü, henüz ortaya çıkaramadık — fakat Justice Island'ın kayalıklarına Rupert Northwood'un komutası altında oturdu. Yirmi yıl sonra hâlâ hayatta mı, bilmiyorum — eğer öyleyse, onu nerede bulacağımızı da. Bu işte bize yardım etmesi için, böyle bir arayışın gerektirdiği bağlantılara ve imkânlara sahip eski bir tanıdığımıza başvurmalıyız. Ona giderken, adamlarını kimin peşine göndermemiz gerektiğini düşünmeliyim: Joshua Casper mı, yoksa Rupert Northwood mu? Öte yandan... o kadar kurnaz ki aynı ismi iki kez kullanmaz. Tabii, bir kaçak kendi adını kullanırsa, başka bir isme cevap veremeyip kendini ele vermekten kurtulmuş olur. Ama 'Cornwall'un birinci zabiti gerçekten bu kadar basit biri miydi?
+#TEXT 28
+Justice Island’dan ayrılışımızı ertelemek zorundayız. Orelie Bertine dün gece vefat etti. Yaşlı kadın uykusunda, dudaklarında bir tebessümle göçüp gitti. Buraya tam yol gelerek şanslıydık—bir gün daha gecikseydik, Mary’nin babası hakkında kiminle konuşacaktık?
+Yine de, Orelie’nin... bizi bekliyormuş gibi tuhaf bir his içimden gitmiyor.
+Bu düşünce kafamdan çıkmıyor. Mary adalıların cenaze hazırlıklarına yardım ederken, ben de Chimiset’i ziyaret edeceğim – bu meseleyi onunla konuşmam gerek.
+#TEXT 29
+Her şeyin bir bedeli vardır. Bunu her zaman bilirdim ve kararlarımı verirken aklımda tutmaya çalışırdım. O zamanlar Chimiset’in Orélie’yi neye mahkûm ettiğini bilseydim, o gece onu yine de götürür müydüm? Bunu kendime itiraf etmek zor, ama muhtemelen götürürdüm – çünkü Orelie’nin hastalığın gölgesinde kaybolmuş hafızasındaki bilgi olmadan, Mary’nin babasını bulmakta hiçbir ilerleme kaydedemezdik.
+Zalimce mi? Kesinlikle. Alaycı mı? Hiç şüphe yok. Chimiset ile yaptığım konuşmadan beri, onun zamanın nehri dediği şey üzerine saatlerce düşündüm. Gerçekten de, bu nehir geri çevrilemez. Zaten mantıklı da olmazdı—çünkü genellikle o nehrin kritik dönemeçlerinde bilinçli olarak bazı kararlar veririz ve işte o seçimler bizi biz yapan şeylerdir.
+Orelie Bertine, huzur içinde yat. Uğruna hayatını verdiğin görevi, farkında olmasan da, biz tamamlayacağız.
+#TEXT 30
+Beklendiği gibi Fadey, altına olan düşkünlüğüne rağmen, isteyebileceğinden daha az ama yine de hatırı sayılır bir miktar talep etti. Bir ay içinde ona geri dönmemiz gerekiyor — o zamana kadar Mary’nin babasıyla ilgili bir şeyler netleşmiş olmalı.
+#TEXT 32
+Neredeyse vardık. Hedefimizle aramızda sadece Base-Terre’den Belize’ye olan mesafe kaldı. Jerome Souvernier adında bir adam orada ve Rupert Casper’ı bulduğunu iddia ediyor. Tüm yelkenleri açıp batıya doğru yol alıyoruz. Mary’nin babasını görmek için yirmi yıldır süren bekleyişi neredeyse sona eriyor.
+#TEXT 33
+Demek Belize’deyiz. Jerome Souvernier’i bulmak zor olmayacak gibi görünüyor. Eminim meyhaneci onun nerede kaldığını biliyordur. Yine de, Jerome’un ‘Glass Eye’daki o kavgaya karışması aklımı kurcalıyor. Önemli ve iyi ödenen bir görevdeydi — peki neden böyle bir işe bulaştı? Belki de Rupert Casper’ı arayışıyla bir bağlantısı vardır. Fazla dikkat çekmemek ve meyhanede soru sormadan önce iyice düşünmek en iyisi.
+#TEXT 35
+Uzun ve dolambaçlı bir yoldan yürüdük — sonunda acı bir gerçekle karşılaştık: ne dilediğine dikkat et. Bu hikâyenin bize öğrettiği ders bu. Zavallı Mary, kesinlikle Rupert Northwood’dan daha iyi bir babayı hak ediyor... ama insan ebeveynini seçemez. Sonuç ne kadar korkunç, hayal kırıklığı ne kadar kemirici olursa olsun — hayat devam ediyor. Bütün geceyi sahilde geçirdik, arada bir yaşananları konuşarak sessizliği bozan sadece bizdik. Mary bu darbeye metanetle dayandı. Babasının kim olduğu ve hangi ‘işleri’ yaptığı hakkında kendini üzmeyecek. Ve ben... Ben de onun bunu mümkün olduğunca az düşünmesi için elimden geleni yapacağım.
+
+#QUEST LEDR
+Kralın Kılıcı
+#TEXT	1
+Söylentilere göre, şu anda Sabu-Matilla Körfezi kıyısında yatan o meşhur gemi enkazından kurtulan bir adam Sharptown'da dolaşıyormuş. Kazadan sağ çıkan tek kişi olduğunu iddia ediyor. Şimdi oraya geri dönmek istiyor ama tek başına gitmeye cesaret edemiyor — bunu da bir Kızılderili iskeletiyle ilgili hikâyeler uydurarak açıklamaya çalışıyor. Bakalım... Belki ona eşlik etmeye değer. Bunca zaman sonra ne aradığını merak ediyorum doğrusu.
+#TEXT	2
+Yaşlı adam Gonsalo Peralta'ya yardım etmeyi kabul ettim. Tuhaf hikayeleri dışında akli dengesi yerinde gibi görünüyor. Sanırım bu iş uzun sürmez — koy zaten uzak değil.
+#TEXT	3
+Yaşlı adamı korumayı kabul ettiğimde, iskeletlerle savaşacağımı asla hayal etmemiştim. İskeletler! Neyse ki şans bizden yanaydı ve yaşadığımız şoka rağmen onları püskürtmeyi başardık. Kaptan kamarasında, mücevherlerle dolu piskoposun sandığını ve Diego Velázquez de Cuéllar’a — ünlü fatih ve Küba’nın ilk valisi — ait eski bir günlüğü bulduk. O anıların üzerinden şöyle bir geçmek bile tüylerimi diken diken etti. Belki de bu günlükte, Gonsalo’yu lanetleyen sırrın anahtarı saklıdır.
+#TEXT	4
+Günlük işi halledildi. Gonsalo’yu bulduğum yere — Sharptown’a — geri götürdüm. Eğer kâbusları gerçekten sona erdiyse, bırak huzur içinde yaşasın. Bana gelince, en iyisi dilimi tutmak; böyle hikâyeler anlatanı kolayca vurur.

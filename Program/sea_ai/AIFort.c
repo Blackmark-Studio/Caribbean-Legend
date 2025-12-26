@@ -151,10 +151,10 @@ void Fort_Login(int iIslandIndex)
 			switch (iFortMode)
 			{
 				case FORT_NORMAL:
-				   // boal -->
-				   SetSeaFantomParam(rCharacter, "war"); // генератор!!
-				   			   
-				   // boal <--
+					SetSeaFantomParam(rCharacter, "war"); // генератор!!
+				break;
+				case FORT_HOLD_FIRE:
+					SetSeaFantomParam(rCharacter, "war"); // генератор!!
 				break;
 				case FORT_ABORDAGE:
 					iDeadDays = Fort_GetDeadDays(rCharacter);
@@ -194,7 +194,7 @@ void Fort_Login(int iIslandIndex)
 			//trace("Fort Login rCharacter.Ship.Type is " + rCharacter.Ship.Type);
 			//rCharacter.Ship.Type = SHIP_FORT;
 			rCharacter.Ship.Crew.Morale = 70;
-	        if (iFortMode == FORT_NORMAL)
+	        if (iFortMode == FORT_NORMAL || iFortMode == FORT_HOLD_FIRE)
 			{
 			    SetCharacterGoods(rCharacter, GOOD_BOMBS,  30000  + rand(200));
 			    SetCharacterGoods(rCharacter, GOOD_POWDER, 300000 + rand(200));
@@ -252,7 +252,7 @@ void Fort_Login(int iIslandIndex)
 			// create fort blot
 			CreateEntity(&FortsBlots[iNumForts - 1], "blots");
 			SendMessage(&FortsBlots[iNumForts - 1], "lia", MSG_BLOTS_SETMODEL, &Forts[iNumForts - 1], rCharacter);
-			LayerAddObject(SEA_EXECUTE, &Forts[iNumForts], 10001);
+			LayerAddObject(SEA_EXECUTE, &Forts[iNumForts - 1], 10001);
 			//LayerAddObject(SEA_REALIZE, &Forts[iNumForts], 10001);
 			
 			SendMessage(&AIFort, "laaaii", AI_MESSAGE_ADD_FORT, rIsland, arLocator, rCharacter, &Forts[iNumForts-1], &FortsBlots[iNumForts-1]);
@@ -333,9 +333,11 @@ int Fort_Damage()
 
 			if (fCurPlayerDamage >= 100.0)
 			{
+				if (!LAi_group_IsEnemy(pchar, rFortCharacter)) LICENSE_CheckViolationAgainstGroup_Sea(rFortCharacter);
 				SetCharacterRelationBoth(iBallCharacterIndex, iFortCharacterIndex, RELATION_ENEMY);
 				SetNationRelation2MainCharacter(sti(rFortCharacter.Nation), RELATION_ENEMY);
 				UpdateRelations();
+				STH_SetColonyEnemy(rFortCharacter.city, 1);
 				
 				/*int iIslandGroupIndex = Group_FindGroup("IslandGroup");
 				if (iIslandGroupIndex >= 0)
@@ -493,7 +495,7 @@ void Fort_CannonDestroy()
 	if (iBallCharacterIndex == GetMainCharacterIndex())
 	{
 		object oRes;
-		string sCannonString = LanguageConvertString(iSeaSectionLang, "Fort_cannon");
+		string sCannonString = GetSimpleSeaSectionKey("Fort_cannon");
 		Log_SetStringToLog(sCannonString);
 	}
 
@@ -531,7 +533,7 @@ void Fort_SetAbordageMode(ref rKillerCharacter, ref rFortCharacter)
 		// Fort destroy log
 		object oRes;
 		string sFortName = rFortCharacter.Ship.Name;
-		string sFortString = LanguageConvertString(iSeaSectionLang, "Fort_destroy_notif");
+		string sFortString = GetSimpleSeaSectionKey("Fort_destroy_notif");
 		string sExp = "600";
 
 		/* Event(PARSE_STRING, "aslss", &oRes, sFortString, 2, sFortName, sExp);
@@ -549,6 +551,8 @@ void Fort_SetAbordageMode(ref rKillerCharacter, ref rFortCharacter)
 	// Jason НСО
 	if (CheckAttribute(pchar, "questTemp.Patria.SanJoseAttack") && rFortCharacter.id == "PortSpein Fort Commander") Patria_SanJoseFortDestroyed();
 	if (CheckAttribute(pchar, "questTemp.Patria.CuracaoAttack") && rFortCharacter.id == "Villemstad Fort Commander") Patria_CuracaoFortDestroyed();
+	
+	NewAutoSave("Fort");
 }
 // нигде не используется
 void Fort_SetCharacter(ref rCharacter, string sIslandID, string sLocationGroup, string sLocationLocator)

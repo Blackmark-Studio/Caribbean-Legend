@@ -287,7 +287,7 @@ void Ship_NationAgressivePatent(ref rCharacter)
     		{
 				HunterScore = GetIntByCondition(HasShipTrait(rMainCharacter, "trait23"), 1 + rand(2), 1);
 				rCharacter.CheckNationBounty = true;
-				ChangeCharacterHunterScore(rMainCharacter, NationShortName(sti(rCharacter.nation)) + "hunter", HunterScore);
+				// ChangeCharacterHunterScore(rMainCharacter, NationShortName(sti(rCharacter.nation)) + "hunter", HunterScore);
 			}
     	}
     }
@@ -321,20 +321,16 @@ void Ship_NationAgressive(ref rMainGroupCharacter, ref rCharacter)// ком гр
 			ChangeCharacterComplexReputation(rMainCharacter,"authority", -2);
 			ChangeCharacterComplexReputation(rMainCharacter,"fame", 0.5);
 	    }
+			// ещё не враждебный, нарушаем лицензию и ухудшаем отношения
+			if (GetRelation(sti(rCharacter.index), nMainCharacterIndex) != RELATION_ENEMY)
+			{
+				LICENSE_CheckViolationAgainstGroup_Sea(rMainGroupCharacter);
+				if (sti(rMainGroupCharacter.nation) != PIRATE) ChangeCharacterHunterScore(rMainCharacter, NationShortName(sti(rMainGroupCharacter.nation)) + "hunter", GetIntByCondition(HasShipTrait(rMainCharacter, "trait23"), 5, 3));
+			}
 	    Ship_NationAgressivePatent(rCharacter); // патент отнимаем всегда, когда палим по другу патента
-		
-	    // clear group temporary task status
-		// for (int i=0; i<MAX_SHIP_GROUPS; i++) { AIGroups[i].TempTask = false; } // новая хрень к3
-
 	    SetNationRelation2MainCharacter(sti(rMainGroupCharacter.nation), RELATION_ENEMY);
 	    SetCharacterRelationBoth(sti(rMainGroupCharacter.index), GetMainCharacterIndex(), RELATION_ENEMY);
-	    // boal 04.04.04 -->
-	    if (sti(rMainGroupCharacter.nation) != PIRATE)
-	    {
-	    	ChangeCharacterHunterScore(rMainCharacter, NationShortName(sti(rMainGroupCharacter.nation)) + "hunter", GetIntByCondition(HasShipTrait(rMainCharacter, "trait23"), 5, 3));
-	    }
     }
-    // boal 04.04.04 <--
 }
 // boal 030804 <--
 void Ship_FireAction()
@@ -1938,7 +1934,6 @@ void Ship_CheckFlagEnemy(ref rCharacter)
 	ref     chref;
 	bool    bViewFlag = false;
 	int     iNationToChange = sti(mChar.nation);  // было
-
 	if (sti(rCharacter.nation) == PIRATE) return;
     iCompan = GetCompanionQuantity(mChar);
     iClass  = 7;
@@ -1966,43 +1961,45 @@ void Ship_CheckFlagEnemy(ref rCharacter)
             iNationToChange = PIRATE;
         }
     }
-    if (bViewFlag)
-    {  // смотрим флаг у ГГ и узнаем в нём...
-		if(CheckAttribute(pchar, "questTemp.Guardoftruth") && CheckCharacterItem(pchar, "VerifyPaper") && pchar.location == "cuba1") return; // грамота отца Винсенто
-		if(CheckAttribute(pchar, "questTemp.Guardoftruth.Trinidad") && CheckCharacterItem(pchar, "VerifyPaper") && pchar.location == "Trinidad") return; // грамота отца Винсенто
 
-		fSneak  = stf(mChar.TmpSkill.Sneak); // 0.01..1.0
-		int rep = sti(abs(REPUTATION_NEUTRAL - sti(mChar.reputation.nobility)) * 0.75);
-		if(CheckCharacterPerk(mChar, "HT2")) fPerkInfl = 2.0;
-		if ((rand(100) + rand(20) + rand(rep)) > (fPerkInfl*fSneak * 12 * (iClass + iClass/4) * (6-iCompan) * GetBonusDeceptionChance(mChar)) * GetFloatByCondition(HasShipTrait(mChar, "trait05"), 1.0, 1.15))
-		{
+		STH_CheckShip(rCharacter);
+  //   if (bViewFlag)
+  //   {  // смотрим флаг у ГГ и узнаем в нём...
+	// 	if(CheckAttribute(pchar, "questTemp.Guardoftruth") && CheckCharacterItem(pchar, "VerifyPaper") && pchar.location == "cuba1") return; // грамота отца Винсенто
+	// 	if(CheckAttribute(pchar, "questTemp.Guardoftruth.Trinidad") && CheckCharacterItem(pchar, "VerifyPaper") && pchar.location == "Trinidad") return; // грамота отца Винсенто
+
+	// 	fSneak  = stf(mChar.TmpSkill.Sneak); // 0.01..1.0
+	// 	int rep = sti(abs(REPUTATION_NEUTRAL - sti(mChar.reputation.nobility)) * 0.75);
+	// 	if(CheckCharacterPerk(mChar, "HT2")) fPerkInfl = 2.0;
+	// 	if ((rand(100) + rand(20) + rand(rep)) > (fPerkInfl*fSneak * 12 * (iClass + iClass/4) * (6-iCompan) * GetBonusDeceptionChance(mChar)) * GetFloatByCondition(HasShipTrait(mChar, "trait05"), 1.0, 1.15))
+	// 	{
 			/*mChar.nation = iNationToChange;  // to_do ролик флага сделать
 			Ship_FlagRefresh(PChar); //флаг на лету
 	        SetNationToOfficers(iNationToChange);
 	        SetNationRelation2MainCharacter(sti(rCharacter.nation), RELATION_ENEMY);
 	        */
-			pchar.MoorName = " ";	// LDH 12Feb17 - don't display MoorName in battle
-            //Log_Info(XI_ConvertString("FriendFail1")+ NationNamePeople(sti(rCharacter.nation)) + XI_ConvertString("FriendFail2"));
-            notification(XI_ConvertString("FriendFailNotif"), "SneakFail");
-			SetCharacterRelationBoth(sti(rCharacter.index), GetMainCharacterIndex(), RELATION_ENEMY);
-			DoQuestCheckDelay(NationShortName(iNationToChange) + "_flag_rise", 0.1); // применение нац отношений флага
-			if (sti(pchar.questTemp.stels.sea) != GetDataDay())
-			{
-				AddCharacterExpToSkill(mChar, SKILL_SNEAK, 50);
-				pchar.questTemp.stels.sea = GetDataDay();
-			}
-		}
-		else
-		{ // не узнал
-			notification(XI_ConvertString("FriendsuccessNotif"), "Sneak");
-			if (sti(pchar.questTemp.stels.sea) != GetDataDay())
-			{
-				AddCharacterExpToSkill(mChar, SKILL_SNEAK, (iCompan * 200 / iClass));
-				ChangeCrewExp(mChar, "Sailors", 0.5);
-				pchar.questTemp.stels.sea = GetDataDay();
-			}
-		}
-	}
+			// pchar.MoorName = " ";	// LDH 12Feb17 - don't display MoorName in battle
+      //       //Log_Info(XI_ConvertString("FriendFail1")+ NationNamePeople(sti(rCharacter.nation)) + XI_ConvertString("FriendFail2"));
+      //       notification(XI_ConvertString("FriendFailNotif"), "SneakFail");
+			// SetCharacterRelationBoth(sti(rCharacter.index), GetMainCharacterIndex(), RELATION_ENEMY);
+			// DoQuestCheckDelay(NationShortName(iNationToChange) + "_flag_rise", 0.1); // применение нац отношений флага
+			// if (sti(pchar.questTemp.stels.sea) != GetDataDay())
+			// {
+			// 	AddCharacterExpToSkill(mChar, SKILL_SNEAK, 50);
+			// 	pchar.questTemp.stels.sea = GetDataDay();
+			// }
+	// 	}
+	// 	else
+	// 	{ // не узнал
+	// 		notification(XI_ConvertString("FriendsuccessNotif"), "Sneak");
+	// 		if (sti(pchar.questTemp.stels.sea) != GetDataDay())
+	// 		{
+	// 			AddCharacterExpToSkill(mChar, SKILL_SNEAK, (iCompan * 200 / iClass));
+	// 			ChangeCrewExp(mChar, "Sailors", 0.5);
+	// 			pchar.questTemp.stels.sea = GetDataDay();
+	// 		}
+	// 	}
+	// }
 	if (!bBettaTestMode || !SandBoxMode)
 	{
 		if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_MIRAGE && sti(rCharacter.nation) == ENGLAND && CheckAttribute(pchar, "questTemp.HWIC.Holl"))//Мираж для англичан враг
@@ -2549,6 +2546,7 @@ void ShipDead(int iDeadCharacterIndex, int iKillStatus, int iKillerCharacterInde
 					Achievment_SetStat(2, 1);
 					Achievment_Set("ach_01");
 	                // boal statistic info 17.12.2003 <--
+					if (IsMainCharacter(rKillerCharacter)) STH_StealShipFlag(iDeadNation, sti(rBaseShip.Class));
 					if(HasShipTrait(rKillerCharacter, "trait22"))
 					{
 						float fTraitRepair = (stf(rKillerBaseShip.Class) / stf(rBaseShip.Class)) * ((100.0 - GetHullPercent(rKillerCharacter)) / 5.0);
@@ -2944,17 +2942,17 @@ void Ship_HullHitEvent()
 		Ship_ApplyHullHitpoints(rOurCharacter, fHP, KILL_BY_BALL, iBallCharacterIndex);
 
         if (iBallCharacterIndex == nMainCharacterIndex) PlayShipSoundEvent(PChar, "sounds of sailors/SailorJubilation_Battle", true);
-		notification("'"+rOurCharacter.Ship.Name+LanguageConvertString(iSeaSectionLang, "Ship_critical_notif"), "Brander");
+		notification("'"+rOurCharacter.Ship.Name+GetSimpleSeaSectionKey("Ship_critical_notif"), "Brander");
 		/* if (iBallCharacterIndex == nMainCharacterIndex)
 		{
-			Log_SetStringToLog(LanguageConvertString(iSeaSectionLang, "Ship_critical"));
+			Log_SetStringToLog(GetSimpleSeaSectionKey("Ship_critical"));
 		} */
 		/*int iFlow = rand(100);  // to_do
 		if(iFlow < 10)
 		{
 			if(sti(rOurCharacter.index) == nMainCharacterIndex)
 			{
-				Log_SetStringToLog(LanguageConvertString(iSeaSectionLang, "Ship_flow"));
+				Log_SetStringToLog(GetSimpleSeaSectionKey("Ship_flow"));
 			}
 			rOurCharacter.ship.flow = iFlow;
 		}
@@ -3043,17 +3041,6 @@ void Ship_HullHitEvent()
             DoQuestCheckDelay("NationUpdate", 0.7);
         }
     }
-	// Jason: изъятие лицензии
-	bool btrade = (sti(rOurCharacter.Ship.LastBallCharacter) == GetMainCharacterIndex()) && (CheckAttribute(rOurCharacter, "Ship.Mode")) && (rOurCharacter.Ship.Mode == "trade");
-	bool bhol = (sti(rOurCharacter.Ship.LastBallCharacter) == GetMainCharacterIndex()) && (sti(rOurCharacter.nation) == HOLLAND)
-	if (CheckCharacterItem(pchar, "HolTradeLicence"))
-	{
-		if (btrade || bhol)
-		{
-			TakeNationLicence(HOLLAND);
-			log_info(XI_ConvertString("LicenseCancel"));
-		}
-	}
 	/* if (rOurCharacter.id == "TortugaBranderCap_2" || rOurCharacter.id == "TortugaBranderCap_3") //Jason: атака брандеров у Тортуги 2015
 	{
 		if (sti(rOurCharacter.Ship.LastBallCharacter) == GetMainCharacterIndex() && CheckAttribute(rOurCharacter, "checkattack")) Tortuga_ShipGuardAttack();
@@ -3278,7 +3265,7 @@ void Ship_CheckEnemiesAroundMainCharacter()
 
 void Ship_CheckMainCharacter()
 {
-	aref	arUpdate;
+	aref	arUpdate, arMoorLoc;
 	ref		rIsland;
 	int		i, iRelation;
 	float	x, z, fBestDistance, fDistance;
@@ -3383,6 +3370,7 @@ void Ship_CheckMainCharacter()
 		if (!CheckAttribute(aRLoc, "Radius")) { continue; }  // fix
 		float fRadius = stf(aRLoc.Radius);
 		fDistance = stf(aFort.Distance);
+		if (iFortMode == FORT_HOLD_FIRE) iFortMode = FORT_NORMAL; // в контексте данной проверки одно и то же
 		switch (iFortMode)
 		{
 			case FORT_NORMAL:
@@ -3620,9 +3608,8 @@ void Ship_CheckMainCharacter()
 					sIslandLocator = rIsland.reload.(sLocatorName).name;
 
 					// LDH 24Jan17 - display mooring location name -->
-                    int nFile = LanguageOpenFile("LocLables.txt");
-					string MoorName = LanguageConvertString(nFile, rIsland.reload.(sLocatorName).label);
-                    LanguageCloseFile(nFile);
+					makearef(arMoorLoc, rIsland.reload.(sLocatorName));
+					string MoorName = GetLocatorName(arMoorLoc);
 					if (!CheckAttribute(pchar, "MoorName")) pchar.MoorName = " ";
 					if (MoorName != pchar.MoorName)
                     {
@@ -4464,7 +4451,7 @@ void Ship_PrintExp(int iExp)
 
 	object oRes;
 	string sExpQuantity = iExp;
-	string sExpString = LanguageConvertString(iSeaSectionLang, "sea_exp_add");
+	string sExpString = GetSimpleSeaSectionKey("sea_exp_add");
 
 	Event(PARSE_STRING, "asls", &oRes, sExpString, 1, sExpQuantity);
 
@@ -4884,7 +4871,7 @@ void EmptyFantom_DropGoodsToSea(ref rChar, int iFantomType)
 					}	
 				}
 			}
-            TEV.Last_Treasure_Barrel_ID = rChar.id + rChar.name + rChar.location; // Rosarak: Запоминаем инфу о текущей бочке
+            TEV.Last_Treasure_Barrel_ID = rChar.id + rChar.name + rChar.location; // Запоминаем инфу о текущей бочке
 			AISeaGoods_AddGood_Special(rChar, "barrel_treasure", "barrel_treasure", 1500.0, 1);			
 		}	
 	}

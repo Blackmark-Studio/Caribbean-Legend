@@ -1,6 +1,7 @@
 info
 {
-Генератор кладов    Скрипт создан ALexusB 05.11.04
+Генератор кладов
+    Скрипт создан ALexusB 05.11.04
 }
 type_full_1 {El mapa es reciente y el papel no amarillea. Las marcas parecen estar dibujadas con prisa. Si les creemos, el tesoro está oculto en #sMaplocName# en #sMapIslName#.}
 type_full_1_isl {isla}
@@ -22,7 +23,8 @@ type_full_6_isl {isla}
 type_full_6_mein {continente}
 type_full_7
 {
-Esto es #sMapIslName#. El mapa indica la ubicación del tesoro escondido — está en #sMaplocName#. Un pirata notorio escondió su tesoro allí.  La autenticidad del mapa está sugerida por las manchas marrones de sangre, que también indican que este trozo de papel ha cambiado de manos múltiples veces.
+Esto es #sMapIslName#. El mapa indica la ubicación del tesoro escondido — está en #sMaplocName#. Un pirata notorio escondió su tesoro allí.  
+La autenticidad del mapa está sugerida por las manchas marrones de sangre, que también indican que este trozo de papel ha cambiado de manos múltiples veces.
 }
 type_full_7_isl {isla}
 type_full_7_mein {continente}
@@ -43,17 +45,20 @@ type_full_12_isl {islas}
 type_full_12_mein {continente}
 type_quest_0
 {
-Es de #sMapIslName#. El tesoro escondido se muestra en la siguiente ubicación: #sMaplocName#. #sMapOwner#, ahí es donde se supone que está escondido.A juzgar por las manchas de sangre, el mapa es genuino, también indica que ha cambiado de dueño con bastante frecuencia.
+Es de #sMapIslName#. El tesoro escondido se muestra en la siguiente ubicación: #sMaplocName#. #sMapOwner#, ahí es donde se supone que está escondido.
+A juzgar por las manchas de sangre, el mapa es genuino, también indica que ha cambiado de dueño con bastante frecuencia.
 }
 type_quest_0_isl { }
 type_quest_0_mein {Tierra Firme}
 type_part
 {
-Al parecer es la mitad de un mapa que definitivamente lleva a un tesoro. No me es posible saber dónde está con la poca información que contiene este trozo, pero espero que la otra mitad esté en algún sitio del Caribe y un día de estos termine en mis manos. ¡Entonces todo se aclarará!
+Al parecer es la mitad de un mapa que definitivamente lleva a un tesoro. No me es posible saber dónde está con la poca información que contiene este trozo, pero espero que la otra mitad esté en algún sitio del Caribe y un día de estos termine en mis manos. 
+¡Entonces todo se aclarará!
 }
 type_fake
 {
-Se supone que este mapa lleva a un tesoro. Por supuesto que no pasa nada por ir a comprobarlo, pero se nota que es un mapa falso.Será mejor tirarlo.
+Se supone que este mapa lleva a un tesoro. Por supuesto que no pasa nada por ir a comprobarlo, pero se nota que es un mapa falso.
+Será mejor tirarlo.
 }
 Antigua_Grot {en la cueva a la derecha de la costa de Falmouth}
 Antigua_Grot_box1 {en un cofre, encima de una roca grande}

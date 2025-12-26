@@ -1112,7 +1112,7 @@ void Caleuche_MerrimanCallMonster(string qName) // вызов Мерримано
 {
 	sld = characterFromId("Joakim");
 	if (LAi_GetCharacterHP(sld) < 1) return;
-	PlaySound("VOICE\Russian\hambit\Joakim Merriman-03.wav");
+	if (LanguageGetLanguage() == "russian") {PlaySound("VOICE\Russian\hambit\Joakim Merriman-03.wav");}
 	sld = GetCharacter(NPC_GenerateCharacter("MerrimanChavinavi"+iGlobalTemp, "Chavinavi_1", "man", "skeleton", 20+MOD_SKILL_ENEMY_RATE*3, PIRATE, -1, false, "quest"));
 	FantomMakeCoolFighter(sld, 20+MOD_SKILL_ENEMY_RATE*3, 70, 70, "topor_01", "pistol6", "bullet", MOD_SKILL_ENEMY_RATE*60);
 	sld.name = StringFromKey("Caleuche_15");
@@ -2353,6 +2353,7 @@ bool Caleuche_QuestComplete(string sQuestName, string qname)
 		LAi_SetActorType(pchar);
 		LAi_ActorTurnToLocator(pchar, "randitem", "randitem1");
 		DoQuestFunctionDelay("Caleuche_CubaGrotChavinavy", 3.0);
+		SetCameraShake(4.0, 8.0, 25.0, 0.04, 0.03, true, false, CAM_EASING_CUBE);
 	}
 	else if (sQuestName == "Caleuche_MonsterStandUp") // чавинави
 	{

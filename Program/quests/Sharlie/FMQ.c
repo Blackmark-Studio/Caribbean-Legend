@@ -893,7 +893,7 @@ void FMQM_ArriveGuadeloupe(string qName) //
 	sld = GetCharacter(NPC_GenerateCharacter("FMQM_Tartane_Cap", "mercen_7", "man", "man", 15, FRANCE, 5, true, "soldier"));
 	FantomMakeCoolSailor(sld, SHIP_WAR_TARTANE, StringFromKey("FMQ_17"), CANNON_TYPE_CANNON_LBS3, 30, 30, 30);// Addon 2016-1 Jason пиратская линейка
 	FantomMakeCoolFighter(sld, 15, 30, 30, "blade_06", "pistol1", "bullet", 50);
-	realships[sti(sld.ship.type)].SpeedRate = 35.0;
+	realships[sti(sld.ship.type)].SpeedRate = 4.0;
 	sld.DontRansackCaptain = true;
 	sld.AnalizeShips = true;
 	sld.Ship.Mode = "pirate";
@@ -1922,7 +1922,8 @@ void FMQN_EnglandSeaAttack(string qName) // атака в море
 	DeleteAttribute(sld, "SaveItemsForDead");
 	DeleteAttribute(sld, "DontClearDead");
 	sld.DontRansackCaptain = true;
-	sld.AnalizeShips = true;
+	//sld.AnalizeShips = true;
+	DeleteAttribute(sld, "AnalizeShips");
 	sld.Ship.Mode = "war";
 	sld.AlwaysEnemy = true;
 	sld.Coastal_Captain = true;
@@ -2666,7 +2667,8 @@ void FMQP_SetRaiders(string qName) //
 	DeleteAttribute(sld, "SaveItemsForDead");
 	DeleteAttribute(sld, "DontClearDead");
 	sld.AlwaysSandbankManeuver = true;
-	sld.AnalizeShips = true;
+	//sld.AnalizeShips = true;
+	DeleteAttribute(sld, "AnalizeShips");
 	sld.DontRansackCaptain = true;
 	sld.WatchFort = true;
 	sld.AlwaysEnemy = true;
@@ -2918,7 +2920,7 @@ void FMQL_Start() // накручиваем гида и выдаем ему шн
 	EquipCharacterbyItem(sld, "blade_30");
 	GiveItem2Character(sld, "pistol6");
 	EquipCharacterbyItem(sld, "pistol6");
-	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Валинье на острове
+	ForceAdaptiveLevel(sld, 15, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Валинье на острове
 	GiveCaptainOfficers(sld, true);
 	sld.cirassId = Items_FindItemIdx("cirass4");
 	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
@@ -3811,7 +3813,7 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 		RemoveAllCharacterItems(sld, true);
 		GiveItem2Character(sld, "blade_12");
 		EquipCharacterbyItem(sld, "blade_12");
-		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Валинье на острове
+		ForceAdaptiveLevel(sld, 15, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Валинье на острове
 		sld.name = StringFromKey("FMQ_59");
 		sld.lastname = StringFromKey("FMQ_60");
 		sld.dialog.FileName = "Quest\LineMiniQuests\FMQ_Martinique.c";

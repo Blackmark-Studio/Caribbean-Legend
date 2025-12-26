@@ -20,7 +20,9 @@ Pop_lastname {de Landa}
 Took_LiberMisericordiae {Otrzymano: Liber Misericordiae}
 SM_WorldMap
 {
-Wszystkie ręce na pokład! 'Święte Miłosierdzie' zostało zauważone! Czy naprawdę jesteśmy gotowi stawić jej czoła? Nie mamy tu do czynienia z typowym okrętem...Może powinniśmy przechwycić ją na otwartym morzu, z dala od kolonii?
+Wszystkie ręce na pokład! 'Święte Miłosierdzie' zostało zauważone! 
+Czy naprawdę jesteśmy gotowi stawić jej czoła? Nie mamy tu do czynienia z typowym okrętem...
+Może powinniśmy przechwycić ją na otwartym morzu, z dala od kolonii?
 }
 City_Rum11 {Dotarła do mnie wieść, że tym razem celem Świętego Miłosierdzia jest  ~}
 City_Rum12 {. Raz jeszcze wszyscy pochylimy głowy pod jarzmem Escorialu. Czy naprawdę zasłużyliśmy na ten los?}

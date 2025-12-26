@@ -26,29 +26,29 @@ Swear_8 {啊—! !!}
 Swear_9 {一千条鲨鱼!}
 Swear_10 {魔鬼!}
 TimeGreeting {下午好}
-Antigua {安提瓜}
-Barbados {巴巴多斯}
-Curacao {库拉索}
-Dominica {多米尼加}
-Grenada {格林纳达}
-Guadeloupe {瓜德罗普}
-Hispaniola {伊斯帕尼奥拉}
-IslaMona {莫纳岛}
-Jamaica {牙买加}
-MarieGalante {玛丽加朗特}
-Martinique {马提尼克}
-Montserrat {蒙特塞拉特}
-Nevis {尼维斯}
-PuertoRico {波多黎各}
-StEustatius {圣尤斯特歇斯}
-StKitts {圣基茨}
-StMartin {圣马丁}
-Tortuga {托尔图加}
-LaVega {拉维加}
-SantoDomingo {圣多明各}
-PetitGoave {佩蒂戈夫}
-Bridgetown {布里奇顿}
-SanJuan {圣胡安}
+Antigua {Antigua}
+Barbados {Barbados}
+Curacao {Curacao}
+Dominica {Dominica}
+Grenada {Grenada}
+Guadeloupe {Guadeloupe}
+Hispaniola {Hispaniola}
+IslaMona {Isla Mona}
+Jamaica {Jamaica}
+MarieGalante {Marie Galante}
+Martinique {Martinique}
+Montserrat {Montserrat}
+Nevis {Nevis}
+PuertoRico {Puerto Rico}
+StEustatius {St. Eustatius}
+StKitts {St. Kitts}
+StMartin {St. Martin}
+Tortuga {Tortuga}
+LaVega {La Vega}
+SantoDomingo {Santo Domingo}
+PetitGoave {Petit Goave}
+Bridgetown {Bridgetown}
+SanJuan {San Juan}
 SantiagoVega {圣地亚哥 维加}
 OFFIC_TYPE_BOATSWAIN {水手长}
 OFFIC_TYPE_CANNONEER {炮手}

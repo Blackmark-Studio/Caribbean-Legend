@@ -1,10 +1,29 @@
-
 #define PI 3.14159265
 #define PIm2 6.28318530
 #define PId2 1.57079632
 
 #define INT_MIN −2147483648
 #define INT_MAX  2147483647
+
+// Bit number n
+#define BIT_1 1
+#define BIT_2 2
+#define BIT_3 4
+#define BIT_4 8
+#define BIT_5 16
+#define BIT_6 32
+#define BIT_7 64
+#define BIT_8 128
+
+// Last n bits
+#define LBITS_1 1
+#define LBITS_2 3
+#define LBITS_3 7
+#define LBITS_4 15
+#define LBITS_5 31
+#define LBITS_6 63
+#define LBITS_7 127
+#define LBITS_8 255
 
 float Radian2Degree(float _rad) 
 {

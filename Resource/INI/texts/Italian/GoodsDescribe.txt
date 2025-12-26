@@ -229,6 +229,11 @@ Cannon_42_descr
 {
 Cannoni formidabili, il culmine della potenza di fuoco navale. Utilizzati esclusivamente su navi di linea, nelle fortezze e nelle grandi battaglie europee. Richiedono un grande equipaggio ben addestrato.Gittata - #dFireRange#, danno - x#f.1DamageMultiply#, ricarica - #dReloadTime# sec.
 }
+Cannon_48 {Bombarde da 48 libbre}
+Cannon_48_descr
+{
+Cannoni formidabili, il culmine della potenza di fuoco navale. Utilizzati esclusivamente su navi di linea, nelle fortezze e nelle grandi battaglie europee. Richiedono un grande equipaggio ben addestrato.Gittata - #dFireRange#, danno - x#f.1DamageMultiply#, ricarica - #dReloadTime# sec.
+}
 Culverine_8 {Mezze colubrine}
 Culverine_8_descr
 {

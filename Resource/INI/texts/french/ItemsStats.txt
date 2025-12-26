@@ -11,10 +11,7 @@ itm_stat_descr_damageReduction {Ce pourcentage est soustrait des dégâts entran
 itm_stat_attack {Dégâts}
 itm_stat_descr_attack
 {
-Attaque tranchante : #sattack.fast.min#–#sattack.fast.max# pts de dégâts
-Attaque d'estoc : #sattack.force.min#–#sattack.force.max# pts de dégâts
-Attaque circulaire : #sattack.round.min#–#sattack.round.max# pts de dégâts
-Attaque lourde : #sattack.break.min#–#sattack.break.max# pts de dégâts
+Attaque tranchante : #sattack.fast.min#–#sattack.fast.max# pts de dégâtsAttaque d'estoc : #sattack.force.min#–#sattack.force.max# pts de dégâtsAttaque circulaire : #sattack.round.min#–#sattack.round.max# pts de dégâtsAttaque lourde : #sattack.break.min#–#sattack.break.max# pts de dégâts
 }
 itm_stat_gundamage {Dégâts d'armes à feu.}
 itm_stat_descr_gundamage {Les dégâts infligés au combat à distance dépendent des compétences, des caractéristiques de l'arme et des munitions.}
@@ -54,16 +51,14 @@ itm_stat_descr_secondary_hat10 {Lors de la destruction, cet objet restitue son i
 itm_stat_hat11 {Étreinte}
 itm_stat_descr_hat11
 {
-Endurance +2
-Tuer un ennemi avec une arme blanche restaure 25 % d’énergie.
+Endurance +2Tuer un ennemi avec une arme blanche restaure 25 % d’énergie.
 }
 itm_stat_potion6 {Résilience}
 itm_stat_descr_potion6 {Boire cette potion empêche l’étourdissement en combat.}
 itm_stat_berserker_potion {Fureur primale}
 itm_stat_descr_berserker_potion
 {
-Provoque une montée immédiate de puissance et d’endurance, améliore fortement l’agilité et la vitesse de réaction, atténue la douleur et accroît l’agressivité.
-Effet de douze secondes maximum, utilisable une fois par minute.
+Provoque une montée immédiate de puissance et d’endurance, améliore fortement l’agilité et la vitesse de réaction, atténue la douleur et accroît l’agressivité.Effet de douze secondes maximum, utilisable une fois par minute.
 }
 itm_stat_mangarosafast {Tourbillon}
 itm_stat_descr_mangarosafast {Utiliser cette potion augmente la vitesse d’attaque de n’importe quelle arme de 5 %.}
@@ -154,8 +149,7 @@ itm_stat_descr_totem_06 {Le dépassement du poids transportable n’affecte ni l
 itm_stat_totem_07 {Invocation}
 itm_stat_descr_totem_07
 {
-De nouveaux volontaires rejoindront l’équipage à moindre coût, même s’ils ont des dettes envers l’équipage.
-Utilisable uniquement par le personnage principal. Augmente de 5 % le nombre de recrues disponibles à la taverne.
+De nouveaux volontaires rejoindront l’équipage à moindre coût, même s’ils ont des dettes envers l’équipage.Utilisable uniquement par le personnage principal. Augmente de 5 % le nombre de recrues disponibles à la taverne.
 }
 itm_stat_totem_08 {Implication personnelle}
 itm_stat_descr_totem_08 {Augmente les dégâts des tirs navals ciblés de 10 %.}
@@ -170,8 +164,7 @@ itm_stat_descr_totem_12 {Les armes légères infligent 15 % de dégâts en plus 
 itm_stat_totem_13 {Tricheur}
 itm_stat_descr_totem_13
 {
-Augmente nettement vos chances de tirer la bonne carte et d’obtenir le résultat voulu au dé.
-Accorde +1 Succès.
+Augmente nettement vos chances de tirer la bonne carte et d’obtenir le résultat voulu au dé.Accorde +1 Succès.
 }
 itm_stat_knife_01 {Secret}
 itm_stat_descr_knife_01 {Ce poignard recèle un grand pouvoir caché. Porté sur la poitrine comme talisman, il peut vaincre la mort.}
@@ -192,16 +185,14 @@ itm_stat_descr_talisman6 {Permet d’économiser les vivres à bord, réduisant 
 itm_stat_talisman7 {Carapace}
 itm_stat_descr_talisman7
 {
-Double la vitesse de réparation du navire et économise 30 % de ressources.
-Réduit les dégâts aux voiles et à la coque de 5 %.
+Double la vitesse de réparation du navire et économise 30 % de ressources.Réduit les dégâts aux voiles et à la coque de 5 %.
 }
 itm_stat_talisman8 {Mithridate}
 itm_stat_descr_talisman8 {Empêche l’empoisonnement par les armes ennemies.}
 itm_stat_talisman9 {Ancienneté}
 itm_stat_descr_talisman9
 {
-Accorde +15 % au recrutement de marins dans les colonies françaises.
-Permet l’entrée gratuite dans les bordels français et augmente le Leadership de +1.
+Accorde +15 % au recrutement de marins dans les colonies françaises.Permet l’entrée gratuite dans les bordels français et augmente le Leadership de +1.
 }
 itm_stat_talisman10 {Poséidon}
 itm_stat_descr_talisman10 {Permet de retenir son souffle longtemps sous l’eau et protège de l’eau bouillante.}
@@ -277,9 +268,7 @@ itm_stat_kaleuche_amulet3 {Sort de protection}
 itm_stat_descr_kaleuche_amulet3 {Rend les monstres du temple Chavinavi vulnérables aux armes et offre une protection contre leurs attaques. Réduit les dégâts subis par tout type d'arme de 25 % et prévient l'empoisonnement.}
 itm_stat_descr_lacrima_patris_bonus
 {
-~
-~
-Bonus actuel : $number($attr($context.KillerBonus.appliedbonus)) de dégâts et $number($attr($context.KillerBonus.RangeBonus)) % de portée.
+~~Bonus actuel : $number($attr($context.KillerBonus.appliedbonus)) de dégâts et $number($attr($context.KillerBonus.RangeBonus)) % de portée.
 }
 itm_stat_blade_WR_1 {Diligence}
 itm_stat_descr_blade_WR_1 {Augmente la régénération de santé en combat par cinq.}
@@ -293,3 +282,11 @@ itm_stat_PerksPotion {Oubli}
 itm_stat_descr_PerksPotion {Réinitialise tous les Perks appris du personnage. Après consommation, la mémoire des Perks et des techniques est effacée, mais la capacité demeure — comme si le corps se souvenait de ce qu'il avait accompli, tandis que l'esprit ne s'en souvenait plus.}
 itm_stat_descr_talisman19_InSlot {Chaque perte de 2% de la coque du navire augmente la vitesse et les dégâts des canons de 0.75% et 0.5% respectivement.}
 itm_stat_descr_talisman19_InInventory {Lorsqu’il est conservé dans l’inventaire, il rend tous les officiers immortels.}
+itm_stat_piratesJournal_1 {Pilleur}
+itm_stat_descr_piratesJournal_1 {Augmente la vitesse sur la carte du monde de 3 %. Le bonus est doublé si le navire amiral est l’« Amsterdam ». La meilleure des traditions pirates.}
+itm_stat_piratesJournal_2 {Receleur}
+itm_stat_descr_piratesJournal_2 {Réduit la pénalité des marchandises volées de 8 %. Le bonus est doublé si le navire amiral est l’« Amsterdam ».}
+itm_stat_piratesJournal_3 {Autonomie}
+itm_stat_descr_piratesJournal_3 {Augmente l’efficacité des réparations en mer de 30 %. Le bonus est doublé si le navire amiral est l’« Amsterdam ».}
+itm_stat_pistol15 {Petit mais redoutable}
+itm_stat_descr_pistol15 {Sortir et rengainer ce pistolet est 15 % plus rapide. Les impacts repoussent fortement les ennemis.}

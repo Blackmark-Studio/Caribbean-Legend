@@ -637,3 +637,13 @@ void UpdateNpcFightAI(ref chr)
 {
 	SendMessage(chr, "l", MSG_NPCHARACTER_FIGHTPROBABILITIES_UPDATE);
 }
+
+#event_handler("Event_GetFireRepulse","LAi_GetFireRepulse");
+float LAi_GetFireRepulse()
+{
+	aref attack = GetEventData();
+	aref enemy = GetEventData();
+	float result = 7.0;
+	if (!CharUseMusket(&attack) && IsEquipCharacterByItem(&attack, "pistol15")) result = 14.0;
+	return result;
+}

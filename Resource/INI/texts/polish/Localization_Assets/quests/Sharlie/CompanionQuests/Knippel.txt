@@ -16,15 +16,15 @@ Knippel_15 {Edmund}
 Knippel_16 {Sheffield}
 Knippel_17 {Michael}
 Knippel_18 {Whitney}
-Knippel_19 {Bombardier został odblokowany}
+Knippel_19 {Bombardier Unlocked}
 Knippel_20 {Jakiś czas później...@<NewStr()>W domu Fleetwooda}
 Knippel_21 {Frederick}
 Knippel_22 {Stokes}
 Knippel_23 {Ralph}
 Knippel_24 {Faggle}
-Knippel_25 {2 godziny później...@<NewStr()>Abordaż 'Sussex'}
+Knippel_25 {2 hours later...@<NewStr()>Boarding the 'Sussex'}
 Knippel_26 {Thomas}
 Knippel_27 {Lynch}
 Knippel_28 {Сhimera}
-Knippel_29 {Obecny czas}
-Knippel_30 {17 Sierpnia, 1654@<NewStr()>, Poł-Wsch przy Dominice"}
+Knippel_29 {Present time}
+Knippel_30 {August 17th, 1654@<NewStr()>, SE of Dominica"}

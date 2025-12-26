@@ -340,6 +340,8 @@ My_Deck {Bodega}
 My_Ship {Barco}
 Drugstore {Botica}
 HWIC_flat {Compañía Holandesa de las Indias Occidentales}
+Office of Naval Registry {Oficina de Registro Naval}
+Van Doorn's Cellar {Sótano de Van Doorn}
 Comendant's House {Casa del comandante de La Habana}
 Tibo House {Casa de Henri Thibaut}
 Gaspard_Gold House {Casa de Gaspard Goldenteeth}

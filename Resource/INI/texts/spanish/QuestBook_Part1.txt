@@ -396,12 +396,13 @@ Cartucho de papel
 *****************
 ¡Es una notable innovación inventada por los regimientos de mosqueteros suecos para poder hacer la recarga en la mitad de tiempo!
 
-Se necesita una bala y un poco de pólvora.
-Se coge una hoja de papel y se hace un tubo, se coloca un poco de pólvora y la bala en el interior.
+Toma una hoja de papel de armas y con una navaja corta un pedazo uniforme del tamaño de media palma. 
+Enróllalo en tubo y echa pólvora, encima coloca una bala.
 El cartucho debe tener el tamaño adecuado para que encaje en el cañón del arma.
 Antes de cargar, no olvides morder la parte inferior del cartucho para abrir el acceso a la pólvora.
 
 Componentes: Pólvora, bala de plomo.
+Herramientas: Navaja.
 
 #TEXT powder_pellet
 Petardo
@@ -965,7 +966,7 @@ Una carta de Henri de Monper
 Hola, Charles.
 No sé si esta carta llegará a ti, o si las anteriores lo hicieron, y aunque lleguen, quizás no recuerdes de quién se trata, pero lo intentaré.
 Entiendo que cambiar pinceles y pinturas por una espada no es fácil, pero nunca imaginé que lo más difícil sería cambiarlos por una pluma. Desde que partiste a buscar a tu hermano, no he recibido ni una sola noticia tuya ni de él. Con el tiempo, me he resignado a aceptar que la línea de los de Monper se extinguirá. Pero imagina mi sorpresa cuando recibí una carta de un viejo conocido de nuestras colonias en el Nuevo Mundo.
-Incluso mi enfermedad se detuvo un instante ante estas noticias. Lloré la suerte de mi pobre Michel, pero me alegré sinceramente por tus éxitos. Ver que te has convertido en un oficial naval, un capitán, que ha dirigido su fortuna hacia un rumbo adecuado, es tan sorprendente como gratificante para mí. Sin embargo, temo que no me quede mucho tiempo para felicitarte o reprocharte tu reticencia a escribir: la vejez puede dar una prórroga, pero no retrocede ni se va por sí sola.
+Lloré la suerte de mi pobre Michel, pero me alegré sinceramente por tus éxitos. Ver que te has convertido en un oficial naval, un capitán, que ha dirigido su fortuna hacia un rumbo adecuado, es tan sorprendente como gratificante para mí. Sin embargo, temo que no me quede mucho tiempo para felicitarte o reprocharte tu reticencia a escribir: la enfermedad puede dar una prórroga, pero no retrocede ni se va por sí sola.
 Así que, hijo mío, tenemos que resolver un asunto muy importante. Con esta carta, que te envío a través de mi viejo amigo Benoit, adjunto las copias de los documentos que confirman que tú, Charles de Maure, ahora eres el Chevalier de Monper, el heredero de nuestra gloriosa familia... Tengo que pedirte una vez más que regreses a la finca familiar. Todos los papeles están legalizados y tu presencia no es necesaria para recibir la herencia y el título, pero para que pueda partir en paz, necesito saber que nuestra familia no desaparecerá conmigo.
 No sé si recuerdas a la familia La Brigne, pero Yvonne, su hija menor, ha crecido y es apropiada para el matrimonio. Su padre y su hermano han dado su consentimiento, pero necesitamos celebrar la boda como es debido. Es un apellido digno, y como dote, Guillaume La Brigne está dispuesto a ofrecer un pequeño viñedo a solo un par de millas de nuestra finca.
 Charles, ya debes entender lo que significa el deber y la responsabilidad. Una persona sin ese conocimiento no puede mantenerse en la cubierta de un barco de guerra. Ahora tienes la responsabilidad de toda la familia de Monper. De ahora en adelante, eres mi último hijo y mi heredero. Vuelve para cumplir con tu deber familiar y acepta mi bendición paterna en el altar, para que tu padre pueda partir en paz.
@@ -1196,6 +1197,10 @@ Si no transportas mercancía humana, Grim no te tocará. Es raro, pero tiene sus
 El 'Memento' navega entre asentamientos piratas, pero rara vez atraca. La tripulación vive a bordo durante meses, como si temiera pisar tierra firme. También se rumorea que el barco sobrevivió a una epidemia monstruosa — por eso es tan difícil matar a la tripulación.
 Si piensas atacarlos — lleva muchos cañones. Abordar al 'Memento' es casi imposible — la tripulación lucha como poseída, como si no temiera a la muerte. La única forma de vencerlos es destrozar el barco para quitarles el refugio. Las astillas no los asustan, pero los impactos directos con metralla — eso ya es otra cosa.
 Buena suerte. Y recuerda la muerte.
+#TEXT	4
+"Amsterdam"
+***********************
+El buque insignia de la estimada Compañía Neerlandesa de las Indias Occidentales. Todo lo relacionado con este navío se mantiene en el más absoluto secreto. Está bajo el mando de Hendrik van Doorn, jefe del departamento de registro naval en Curazao, un hombre increíblemente eficiente que presta valiosos servicios a los capitanes más ricos e influyentes. Intenta formar parte de su círculo, y quizás descubras más.
 
 #QUEST StoriesTreasures
 Cuentos de tesoros
@@ -1713,4 +1718,24 @@ Fragmentos del diario de Diego Velázquez de Cuéllar
 
 "Tras aquella ejecución comencé a notar cosas extrañas. De día, los monjes proclamaban la gracia de Dios, pero de noche las sombras alrededor cobraban vida. Me parecía oír los lamentos de mujeres, los gritos de los niños y las maldiciones de los salvajes resonar en mis oídos. Anoche murió uno de los marineros. Su cuerpo fue encontrado destrozado, como si bestias salvajes lo hubieran atacado. Ordené que todos rezaran, pero las oraciones fueron inútiles. Ahora estoy seguro: es Atuéy. Él nos ha lanzado una maldición. Estos bárbaros no perdonan. Nunca."
 
-"La maldición… No me abandona. Anida dentro de mí como una serpiente que envuelve el corazón. Cada noche veo chozas ardiendo, escucho gritos y gemidos de los muertos que me llaman a responder. Sus esqueletos calcinados se alzan de las cenizas, sus órbitas vacías me miran con odio. Incluso ahora, en esta habitación, oigo sus pasos. La puerta chirría lentamente, como si alguien entrara, pero no veo a nadie. Las manos tiemblan tanto que la pluma apenas obedece. No hay salvación. El Señor me ha abandonado, así como yo abandoné la misericordia. Ya están cerca. Pronto vendrán a buscarme..."
+"La maldición... No me abandona. Anida dentro de mí como una serpiente que envuelve el corazón. Cada noche veo chozas ardiendo, escucho gritos y gemidos de los muertos que me llaman a responder. Sus esqueletos calcinados se alzan de las cenizas, sus órbitas vacías me miran con odio. Incluso ahora, en esta habitación, oigo sus pasos. La puerta chirría lentamente, como si alguien entrara, pero no veo a nadie. Las manos tiemblan tanto que la pluma apenas obedece. No hay salvación. El Señor me ha abandonado, así como yo abandoné la misericordia. Ya están cerca. Pronto vendrán a buscarme..."
+
+#QUEST Doc1Sp4
+Informe sobre Asuntos Brasileños
+
+#TEXT 1
+INFORME CONFIDENCIAL PARA EL DIRECTORADO Curazao, mayo de 1654 ASUNTO: Situación en el Brasil Portugués
+SITUACIÓN MILITAR Nuestras pérdidas en Brasil continúan aumentando. El coronel Sebastião Tavora infligió una serie de golpes dolorosos contra nuestras posiciones costeras el año pasado. Tres de nuestros barcos hundidos, fortificaciones costeras destruidas.
+SITUACIÓN POLÍTICA La inteligencia informa de noticias curiosas desde Lisboa. A pesar de sus éxitos militares, el capitán Tavora ha caído en desgracia en la corte. La razón: su abierta oposición a círculos comerciales influyentes que negocian en secreto con nosotros para restablecer lazos comerciales.
+ESTADO ACTUAL Según la última información, Tavora y su hija han sido enviados a un exilio honorable. Su paradero actual es desconocido por el momento.
+RECOMENDACIONES Se instruye a todos los agentes para que determinen la ubicación actual del coronel Tavora. La presencia incluso de un patriota caído en desgracia e idealista con brillante formación militar cerca de las esferas de operación de la Compañía es indeseable.
+CONCLUSIÓN La guerra continúa, pero el equilibrio se desplaza a nuestro favor, gracias a las conexiones y solidaridad en los círculos comerciales.
+Director en Funciones, Lucas Rodenburg
+
+#QUEST Doc2Sp4
+List z Antiguy
+
+#TEXT 1
+D. He reflexionado bien sobre tu propuesta y mi respuesta es no. Y la lealtad a la oficina no tiene nada que ver. En Curazao se sientan bastardos igual de codiciosos que todos nosotros. Sabes perfectamente que los habría destripado a todos hasta el último después de que ese pavo nos arrojara a mí y a mis hombres a los lobos ingleses. 
+Di lo que quieras, pero nuestro Leviatán es lo único que mantiene esta frontera salvaje en un orden relativo. Las letras de cambio y el registro naval son lo mejor que ha traído a este mundo. Sé que dirás que lo harías mejor, pero ¿y si no? ¿Entonces qué? A las cabezas coronadas de Europa les importamos un carajo, y la naturaleza aborrece el vacío. ¿Crees que estaremos mejor cuando esa escoria de barones piratas tome el poder? 
+Me cubriste las espaldas entonces, así que no te delataré. Mejor vuelve con tu familia, amigo. M.

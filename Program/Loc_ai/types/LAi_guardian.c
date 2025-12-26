@@ -154,16 +154,25 @@ void LAi_type_guardian_CharacterUpdate(aref chr, float dltTime)
 			else
 			{
 				//eddy. активация диалога у гарда c атрибутом протектора если не враг и если это не колония базовой нации.
-				if (CheckAttribute(chr, "protector") && !LAi_grp_alarmactive)
+				if (or(CheckAttribute(chr, "protector") && !LAi_grp_alarmactive, CheckAttribute(chr, "talker")))
 				{
 					time = stf(chr.chr_ai.type.dlgwas) - dltTime;
 					chr.chr_ai.type.dlgwas = time;					
 					//Анализируем окружающих персонажей
 					int num = FindNearCharacters(chr, 4.0, -1.0, 180.0, 0.1, true, true);
+					int idx;
 					if(num > 0)
 					{
 						for(int i = 0; i < num; i++)
 						{
+							idx = sti(chrFindNearCharacters[i].index);
+							if(LAi_group_IsEnemy(chr, &Characters[idx])) break;
+							if (CheckAttribute(chr, "talker") && idx == nMainCharacterIndex && LAi_Character_CanDialog(chr, pchar)) 
+							{	
+								LAi_tmpl_SetDialog(chr, pchar, 1.0); 
+								DeleteAttribute(chr, "talker");
+								return;
+							}
 							if(nMainCharacterIndex == sti(chrFindNearCharacters[i].index))
 							{
 								break;

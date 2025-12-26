@@ -7,7 +7,7 @@ Portugal_6 {Cord}
 Portugal_7 {Po dwóch dniach@<NewStr()>wrogiego statku już nie było}
 Portugal_8 {Frants}
 Portugal_9 {Garke}
-Portugal_10 {Albatros}
+Portugal_10 {Albatross}
 Portugal_11 {Bart Portugalczyk opuścił twój statek!}
 Portugal_12 {Ernando}
 Portugal_13 {Vaskez}

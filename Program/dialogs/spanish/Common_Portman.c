@@ -3721,18 +3721,23 @@ void ProcessDialogEvent()
 			dialog.text = "En efecto, eso sería aceptable. ¿En qué embarcación específica estás interesado?";
 			if (GetDLCenabled(DLC_APPID_4) && !CheckAttribute(pchar, "questTemp.SantaMisericordia_InfoPU") && CharacterIsAlive("SantaMisericordia_cap"))
 			{
-				link.l1 = "Galeón 'Santa Misericordia'.";
+				link.l1 = "Galeón '"+GetShipName("Holy Mercy")+"'.";
 				link.l1.go = "UniqueShips_SantaMisericordia";
 			}
 			if (GetDLCenabled(DLC_APPID_5) && !CheckAttribute(pchar, "questTemp.LadyBeth_InfoPU") && CharacterIsAlive("LadyBeth_cap"))
 			{
-				link.l2 = "Galeota de patrulla 'Lady Beth'.";
+				link.l2 = "Galeota de patrulla '"+GetShipName("Lady Beth")+"'.";
 				link.l2.go = "UniqueShips_LadyBeth";
 			}
 			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Memento_InfoPU") && CharacterIsAlive("Memento_cap"))
 			{
-				link.l3 = "Bergantín 'Memento'.";
+				link.l3 = "Bergantín '"+GetShipName("Memento")+"'.";
 				link.l3.go = "UniqueShips_Memento";
+			}
+			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Amsterdam_InfoPU"))
+			{
+				link.l4 = "Buque Insignia de la Compañía '"+GetShipName("Amsterdam")+"'.";
+				link.l4.go = "UniqueShips_Amsterdam";
 			}
 			link.l99 = "Creo que sé lo suficiente.";
 			link.l99.go = "node_2";
@@ -3766,6 +3771,15 @@ void ProcessDialogEvent()
 			"El 'Memento' navega entre asentamientos piratas, pero rara vez atraca. La tripulación vive a bordo durante meses, como si temiera pisar tierra firme. También se rumorea que el barco sobrevivió a una epidemia monstruosa — por eso es tan difícil matar a la tripulación.\n"+
 			"Si piensas atacarlos — lleva muchos cañones. Abordar al 'Memento' es casi imposible — la tripulación lucha como poseída, como si no temiera a la muerte. La única forma de vencerlos es destrozar el barco para quitarles el refugio. Las astillas no los asustan, pero los impactos directos con metralla — eso ya es otra cosa.\n"+
 			"Buena suerte. Y recuerda la muerte.";
+			link.l1 = "Muchas gracias.";
+			link.l1.go = "node_2";
+		break;
+		
+		case "UniqueShips_Amsterdam":
+			AddMoneyToCharacter(pchar, -25000);
+			AddQuestRecordInfo("LegendaryShips", "4");
+			pchar.questTemp.Amsterdam_InfoPU = true;
+			dialog.text = "El buque insignia de la estimada Compañía Neerlandesa de las Indias Occidentales. Todo lo relacionado con este navío se mantiene en el más absoluto secreto. Está bajo el mando de Hendrik van Doorn, jefe del departamento de registro naval en Curazao, un hombre increíblemente eficiente que presta valiosos servicios a los capitanes más ricos e influyentes. Intenta formar parte de su círculo, y quizás descubras más.";
 			link.l1 = "Muchas gracias.";
 			link.l1.go = "node_2";
 		break;

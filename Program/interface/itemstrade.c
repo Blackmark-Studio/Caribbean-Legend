@@ -283,6 +283,8 @@ bool FilterItems(ref Item)
 			if(items4) return false;
 			if(items5) return false;
 		}
+
+		if (refStoreChar.Merchant.type == "jeweller" && TradeMode == 0 && CheckAttribute(Item, "PriceDublon")) return false;
 	}
 	
 	if(currentTab == 2)
@@ -1451,6 +1453,7 @@ float GetPriceModify(int itmIdx, int itmTradeType, ref _chr)
 				{
 					fModify = 0.7;
 				}
+				if (CheckAttribute(&Items[itmIdx], "PriceDublon")) fModify = 1.0;
 			break;
 			case "indian"	:
 				if(itmTradeType != ITEM_TRADE_NORMAL && itmTradeType != ITEM_TRADE_ARTEFACT) 

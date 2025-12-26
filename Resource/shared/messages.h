@@ -227,7 +227,13 @@
 #define MSG_NPCHARACTER_GETTASK 30403
 #define MSG_NPCHARACTER_FIGHTPROBABILITIES_UPDATE 30404
 
+// Blots on the ship
+#define MSG_BLOTS_SETMODEL 30600 // "li" set the model, model_id
+#define MSG_BLOTS_HIT 30601      // "lffffff" set point x, y, z, nx, ny, nz
+
+// ===========================================================================================
 // Camera
+//============================================================================================
 #define MSG_CAMERA_SETTARGET 30500 // "li" set the model to follow
 #define MSG_CAMERA_FOLLOW 30510    // "l" set camera mode - chase character
 #define MSG_CAMERA_LOOK 30511      // "l" set camera mode - eye view
@@ -235,19 +241,11 @@
 // "lffff" set the camera mode - move to a point with a given speed and follow the character
 #define MSG_CAMERA_MOVE 30513
 #define MSG_CAMERA_FREE 30514 // "l" free flight of the camera
-
 #define MSG_CAMERA_SLEEP 30520 // "ll" stop the camera (1) or resume (0)
 #define MSG_CAMERA_SET_RADIUS 30521 // "lf" set radius
-
 #define MSG_CAMERA_SET_PERSPECTIVE 30530 // "lf" set perspective
-
 #define MSG_CAMERA_SPECIALMODE	30531	// "ll" evganat - спецрежим камеры вкл/выкл
-
 #define MSG_CAMERA_GET_AY 30532 // "le"
-
-// Blots on the ship
-#define MSG_BLOTS_SETMODEL 30600 // "li" set the model, model_id
-#define MSG_BLOTS_HIT 30601      // "lffffff" set point x, y, z, nx, ny, nz
 
 //============================================================================================
 // World map messages
@@ -285,7 +283,7 @@
 #define MSG_GET_PLAYERSHIP_IDX 31155 // ""
 #define MSG_WORLDMAP_SET_SPEED 31156 // "lf"
 
-// ============================================================================================
+// ===========================================================================================
 // Effects
 //============================================================================================
 
@@ -347,7 +345,7 @@
 #define MSG_SOUND_IS_PLAYING 77009   //"l"         id
 #define MSG_SOUND_GET_POSITION 77010 //"l"         id
 #define MSG_SOUND_RESTART 77011      //"l"         id(0=all)
-#define MSG_SOUND_RESUME 77012       //"ll"        id(0=all), fade_in_time
+#define MSG_SOUND_PAUSE 77012        //"ll"        id(0=all), bPaused
 // Sound schemes
 #define MSG_SOUND_SCHEME_RESET 77013 //""
 #define MSG_SOUND_SCHEME_SET 77014   //"s"         scheme_name
@@ -359,9 +357,12 @@
 #define MSG_SOUND_EVENT_PLAY 77018
 #define MSG_SOUND_EVENT_STOP 77019       //"ll"
 #define MSG_SOUND_EVENT_SET_VOLUME 77020 //"lf"
+#define MSG_SOUND_EVENT_PAUSE 77026      //"ll"
 #define MSG_SOUND_BANK_ADD   77023       //"sl"
 #define MSG_SOUND_UPDATE_POS 77024       //"lfffl"
 #define MSG_SOUND_EVENT_SET_PARAM 77025  //"lsfl"
+#define MSG_SOUND_EVENT_RELEASE 77027    //"s" event describe name
+#define MSG_SOUND_EVENT_FIND 77028       //"s" return first finded id by describe name
 //============================================================================================
 
 //============================================================================================

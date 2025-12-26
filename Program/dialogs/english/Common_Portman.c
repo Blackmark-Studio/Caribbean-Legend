@@ -3682,18 +3682,23 @@ void ProcessDialogEvent()
 			dialog.text = "Indeed, that would be acceptable. Which specific vessel are you interested in?";
 			if (GetDLCenabled(DLC_APPID_4) && !CheckAttribute(pchar, "questTemp.SantaMisericordia_InfoPU") && CharacterIsAlive("SantaMisericordia_cap"))
 			{
-				link.l1 = "Galleon 'Holy Mercy'.";
+				link.l1 = "Galleon '"+GetShipName("Holy Mercy")+"'.";
 				link.l1.go = "UniqueShips_SantaMisericordia";
 			}
 			if (GetDLCenabled(DLC_APPID_5) && !CheckAttribute(pchar, "questTemp.LadyBeth_InfoPU") && CharacterIsAlive("LadyBeth_cap"))
 			{
-				link.l2 = "Patrol Snow 'Lady Beth'.";
+				link.l2 = "Patrol Snow '"+GetShipName("Lady Beth")+"'.";
 				link.l2.go = "UniqueShips_LadyBeth";
 			}
 			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Memento_InfoPU") && CharacterIsAlive("Memento_cap"))
 			{
-				link.l3 = "Brig 'Memento'.";
+				link.l3 = "Brig '"+GetShipName("Memento")+"'.";
 				link.l3.go = "UniqueShips_Memento";
+			}
+			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Amsterdam_InfoPU"))
+			{
+				link.l4 = "Company Flagship '"+GetShipName("Amsterdam")+"'.";
+				link.l4.go = "UniqueShips_Amsterdam";
 			}
 			link.l99 = "I think I know enough.";
 			link.l99.go = "node_2";
@@ -3722,6 +3727,15 @@ void ProcessDialogEvent()
 			AddQuestRecordInfo("LegendaryShips", "3");
 			pchar.questTemp.Memento_InfoPU = true;
 			dialog.text = "The 'Memento' — a true pirate legend. A black brig captained by Mortimer Grim.\n"+"Grim preys exclusively on slavers. They say he frees the slaves and buys out the condemned with hard gold. A noble cause — if you don’t know the rest.\n"+"If you’re not hauling human cargo, Grim won’t touch you. He’s odd, but he’s got his principles. But if you’ve got slaves in your hold... pray you don’t spot black sails on the horizon.\n"+"The 'Memento' sails between pirate havens but rarely docks. The crew lives on board for months, as if afraid to set foot on solid ground. Rumour has it the ship once survived a monstrous epidemic — that’s why the crew is so hard to kill.\n"+"If you plan to take them on, pack more cannons. Boarding the 'Memento' is nearly impossible — the crew fights like they’re possessed, as if they don’t fear death. The only way to beat them is to blast the ship to splinters and take away their shelter. Splinters don’t scare them, but direct grapeshot hits — that’s another matter.\n"+"Good luck. And remember death.";
+			link.l1 = "Thank you very much.";
+			link.l1.go = "node_2";
+		break;
+		
+		case "UniqueShips_Amsterdam":
+			AddMoneyToCharacter(pchar, -25000);
+			AddQuestRecordInfo("LegendaryShips", "4");
+			pchar.questTemp.Amsterdam_InfoPU = true;
+			dialog.text = "The flagship of the esteemed Dutch West India Company. Everything about this vessel is shrouded in secrecy. She's commanded by Hendrik van Doorn, head of the naval registry department on Curaçao — an exceptionally efficient man who provides invaluable services to the wealthiest and most influential captains. Try to earn a place among them, and you may learn more.";
 			link.l1 = "Thank you very much.";
 			link.l1.go = "node_2";
 		break;

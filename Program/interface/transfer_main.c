@@ -1,4 +1,5 @@
 #include "interface\utils\popup_confirmation.c"
+#include "interface\utils\ship_perks.c"
 /// BOAL 01.08.06 форма обмена-грабежа корабля
 /// Sith переделка
 #define FOOD_BY_ENEMY_CREW 			10
@@ -772,10 +773,7 @@ void ShowShipInfo(ref chr, string sAdd)
 	if (LAi_IsDead(chr)) SetNewPicture("MAIN_CHARACTER_PICTURE" + sAdd, "interfaces\le\portraits\empty\empty_face.tga");
 	else SetNewPicture("MAIN_CHARACTER_PICTURE" + sAdd, "interfaces\le\portraits\512\face_" + chr.FaceId + ".tga");
 	
-	string pictureGroup = "PERKS_SHIPS";
-	string perkName1, perkName2;
-	SetNodeUsing("SHIP_PERK1" + sAdd,false);
-	SetNodeUsing("SHIP_PERK2" + sAdd,false);	
+	SetShipPerks(chr, sAdd);
 	int iShip = sti(chr.ship.type);
 	if (iShip != SHIP_NOTUSED)
 	{
@@ -788,13 +786,6 @@ void ShowShipInfo(ref chr, string sAdd)
 		SetFormatedText("SHIP_TYPE" + sAdd, XI_ConvertString(refBaseShip.BaseName));
 		SetFormatedText("SHIP_RANK" + sAdd, refBaseShip.Class);
 		SetShipOTHERTable2("TABLE_OTHER", chr);
-
-		perkName1 = GetShipSpecDesc(chr);
-		perkName2 = GetShipTraitDesc(chr);
-		SetNewGroupPicture("SHIP_PERK1" + sAdd, pictureGroup, perkName1);
-		SetNewGroupPicture("SHIP_PERK2" + sAdd, pictureGroup, perkName2);
-		if(perkName1 != "") SetNodeUsing("SHIP_PERK1" + sAdd,true);
-		if(perkName2 != "") SetNodeUsing("SHIP_PERK2" + sAdd,true);
 	}
 }
 
@@ -856,63 +847,6 @@ void ShowInfoWindow()
 		    refBaseShip = GetRealShip(iShip);
 			sHeader = XI_ConvertString(refBaseShip.BaseName);
 			sText1 = GetShipDescr(refBaseShip);
-		break;
-
-		case "SHIP_PERK1":
-			sPerkName1 = GetShipSpecDesc(pchar);
-			sGroup = "PERKS_SHIPS";
-			sGroupPicture = sPerkName1;
-			sHeader = GetConvertStr(sPerkName1, "ShipsPerksDescribe.txt");
-			sText1 = GetConvertStr(sPerkName1 + "_desc", "ShipsPerksDescribe.txt");
-			sText3 = GetConvertStr(sPerkName1 + "_desc2", "ShipsPerksDescribe.txt");
-		break;
-
-		case "SHIP_PERK2":
-			sPerkName2 = GetShipTraitDesc(pchar);
-			sGroup = "PERKS_SHIPS";
-			sGroupPicture = sPerkName2;
-			sHeader = GetConvertStr(sPerkName2, "ShipsPerksDescribe.txt");
-			sText1 = GetConvertStr(sPerkName2 + "_desc", "ShipsPerksDescribe.txt");
-			sText3 = GetConvertStr(sPerkName2 + "_desc2", "ShipsPerksDescribe.txt");
-			iShip = sti(pchar.ship.type);
-			refBaseShip = GetRealShip(iShip);
-			if(CheckAttribute(refBaseShip, "DeadSailors"))
-			{
-				makearef(arShipBonus, refBaseShip.DeadSailors);
-				sText3 += newStr() + GetAssembledString(GetConvertStr("sp3_SailorsBoardingBonus_desc","ShipsPerksDescribe.txt"), arShipBonus)
-									 + GetAssembledString(GetConvertStr("sp3_SailorsBoardingBonus1_desc","ShipsPerksDescribe.txt"), refBaseShip);
-				sText3 += newStr() + GetAssembledString(GetConvertStr("sp3_SurrenderChanceBonus_desc","ShipsPerksDescribe.txt"), arShipBonus)
-								   + GetAssembledString(GetConvertStr("sp3_SurrenderChanceBonus1_desc","ShipsPerksDescribe.txt"), refBaseShip);
-			}
-		break;
-
-		case "SHIP_PERK12":
-			sPerkName1 = GetShipSpecDesc(xi_refCharacter);
-			sGroup = "PERKS_SHIPS";
-			sGroupPicture = sPerkName1;
-			sHeader = GetConvertStr(sPerkName1, "ShipsPerksDescribe.txt");
-			sText1 = GetConvertStr(sPerkName1 + "_desc", "ShipsPerksDescribe.txt");
-			sText3 = GetConvertStr(sPerkName1 + "_desc2", "ShipsPerksDescribe.txt");
-		break;
-
-		case "SHIP_PERK22":
-			sPerkName2 = GetShipTraitDesc(xi_refCharacter);
-			sGroup = "PERKS_SHIPS";
-			sGroupPicture = sPerkName2;
-			sHeader = GetConvertStr(sPerkName2, "ShipsPerksDescribe.txt");
-			sText1 = GetConvertStr(sPerkName2 + "_desc", "ShipsPerksDescribe.txt");
-			sText3 = GetConvertStr(sPerkName2 + "_desc2", "ShipsPerksDescribe.txt");
-			iShip = sti(xi_refCharacter.ship.type);
-			refBaseShip = GetRealShip(iShip);
-			if(CheckAttribute(refBaseShip, "DeadSailors"))
-			{
-				
-				makearef(arShipBonus, refBaseShip.DeadSailors);
-				sText3 += newStr() + GetAssembledString(GetConvertStr("sp3_SailorsBoardingBonus_desc","ShipsPerksDescribe.txt"), arShipBonus)
-									 + GetAssembledString(GetConvertStr("sp3_SailorsBoardingBonus1_desc","ShipsPerksDescribe.txt"), refBaseShip);
-				sText3 += newStr() + GetAssembledString(GetConvertStr("sp3_SurrenderChanceBonus_desc","ShipsPerksDescribe.txt"), arShipBonus)
-								   + GetAssembledString(GetConvertStr("sp3_SurrenderChanceBonus1_desc","ShipsPerksDescribe.txt"), refBaseShip);
-			}
 		break;
 
 		case "TABLE_LIST":
@@ -1043,6 +977,11 @@ void ShowInfoWindow()
 			sText1 = GetConvertStr("Rum_descr", "GoodsDescribe.txt");
 		break;
 	}
+
+	if (sCurrentNode == "SHIP_PERK1" || sCurrentNode == "SHIP_PERK2") chr = pchar;
+	else chr = xi_refCharacter;
+
+	SetShipPerksTooltip(chr, &sCurrentNode, &sHeader, &sText1, &sText2, &sText3, &sPicture, &sGroup, &sGroupPicture);
 
 	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false);
 }
@@ -2053,6 +1992,14 @@ void ShowHireCrewWindow()
 	SetSelectable("TAKE_GOODS", false);
 	SetSelectable("DROP_GOODS", false);
 	sMessageMode = "";
+	SetEventHandler("delayedDisableMainWindow", "delayedDisableMainWindow", 1);
+	PostEvent("delayedDisableMainWindow", 10);
+}
+
+void delayedDisableMainWindow()
+{
+	DelEventHandler("delayedDisableMainWindow", "delayedDisableMainWindow");
+	XI_WindowDisable("MAIN_WINDOW", true);
 }
 
 void ExitHireCrewWindow()
@@ -2548,9 +2495,9 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr3.td1.str = XI_ConvertString("Speed");
 
 	if (IsCompanion(pchar))
-		GameInterface.(_tabName).tr3.td2.str = FloatToString(FindShipSpeed(pchar),2) + " / " + FloatToString(stf(refBaseShip1.SpeedRate),2);
+		GameInterface.(_tabName).tr3.td2.str = FloatToString(FindShipSpeed(pchar),2) + " / " + FloatToString(FindShipSpeedMax(pchar),2);
 	else
-	    GameInterface.(_tabName).tr3.td2.str = FloatToString(stf(refBaseShip1.SpeedRate),2);
+	    GameInterface.(_tabName).tr3.td2.str = FloatToString(FindShipSpeedMax(pchar),2);
 
 	if (!CheckAttribute(&RealShips[iShip1], "Tuning.SpeedRate")) 
 		GameInterface.(_tabName).tr3.td2.color = argb(255,255,255,255);
@@ -2558,9 +2505,9 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 		GameInterface.(_tabName).tr3.td2.color = argb(255,128,255,255);
 
 	if (IsCompanion(_chr))
-		GameInterface.(_tabName).tr3.td3.str = FloatToString(FindShipSpeed(_chr),2) + " / " + FloatToString(stf(refBaseShip2.SpeedRate),2);
+		GameInterface.(_tabName).tr3.td3.str = FloatToString(FindShipSpeed(_chr),2) + " / " + FloatToString(FindShipSpeedMax(_chr),2);
 	else
-	    GameInterface.(_tabName).tr3.td3.str = FloatToString(stf(refBaseShip2.SpeedRate),2);
+	    GameInterface.(_tabName).tr3.td3.str = FloatToString(FindShipSpeedMax(_chr),2);
 
 	if (!CheckAttribute(&RealShips[iShip2], "Tuning.SpeedRate")) 
 		GameInterface.(_tabName).tr3.td3.color = argb(255,255,255,255);
@@ -2573,9 +2520,9 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr4.td1.str = XI_ConvertString("Maneuver");
 
 	if (IsCompanion(pchar))
-  		GameInterface.(_tabName).tr4.td2.str = FloatToString((stf(refBaseShip1.turnrate) * FindShipTurnRate(pchar)), 2) + " / " + FloatToString(stf(refBaseShip1.TurnRate),2);
+  		GameInterface.(_tabName).tr4.td2.str = FloatToString((stf(refBaseShip1.turnrate) * FindShipTurnRate(pchar)), 2) + " / " + FloatToString(FindShipTurnrateMax(pchar),2);
 	else
-	    GameInterface.(_tabName).tr4.td2.str = FloatToString(stf(refBaseShip1.TurnRate),2);
+	    GameInterface.(_tabName).tr4.td2.str = FloatToString(FindShipTurnrateMax(pchar),2);
 
 	if (!CheckAttribute(&RealShips[iShip1], "Tuning.TurnRate")) 
 		GameInterface.(_tabName).tr4.td2.color = argb(255,255,255,255);
@@ -2583,9 +2530,9 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 		GameInterface.(_tabName).tr4.td2.color = argb(255,128,255,255);
 
 	if (IsCompanion(_chr))
-  		GameInterface.(_tabName).tr4.td3.str = FloatToString((stf(refBaseShip2.turnrate) * FindShipTurnRate(_chr)), 2) + " / " + FloatToString(stf(refBaseShip2.TurnRate),2);
+  		GameInterface.(_tabName).tr4.td3.str = FloatToString((stf(refBaseShip2.turnrate) * FindShipTurnRate(_chr)), 2) + " / " + FloatToString(FindShipTurnrateMax(_chr),2);
 	else
-	    GameInterface.(_tabName).tr4.td3.str = FloatToString(stf(refBaseShip2.TurnRate),2);
+	    GameInterface.(_tabName).tr4.td3.str = FloatToString(FindShipTurnrateMax(_chr),2);
 
 	if (!CheckAttribute(&RealShips[iShip2], "Tuning.TurnRate")) 
 		GameInterface.(_tabName).tr4.td3.color = argb(255,255,255,255);

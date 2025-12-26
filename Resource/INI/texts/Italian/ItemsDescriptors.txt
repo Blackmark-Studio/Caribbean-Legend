@@ -61,16 +61,14 @@ descriptor_descr_Herb {Dono della terra. Usato soprattutto in alchimia per prepa
 descriptor_descr_Fancy {Questo oggetto si distingue per l’aspetto cerimoniale, le decorazioni e i materiali pregiati. Indossarlo aumenta il Carisma di $number($DescriptorBaseValue(Fancy)). Gli effetti si sommano.}
 descriptor_descr_Exotic
 {
-Questo oggetto non appartiene a un buon cristiano, e inquietanti voci sul suo possessore si diffondono subito.
-Aumenta la Potenza della Flotta di $percent($DescriptorBaseValue(Exotic)); gli effetti si sommano.
+Questo oggetto non appartiene a un buon cristiano, e inquietanti voci sul suo possessore si diffondono subito.Aumenta la Potenza della Flotta di $percent($DescriptorBaseValue(Exotic)); gli effetti si sommano.
 }
 descriptor_descr_HighQuality {Quest’arma è realizzata con tale maestria che i suoi danni critici aumentano di $percent($DescriptorBaseValue(HighQuality)).}
 descriptor_descr_GoodFit {Questa armatura calza alla perfezione, aumentando la velocità d’attacco con qualsiasi arma del $percent($DescriptorBaseValue(GoodFit)).}
 descriptor_descr_HeartDefence {Questa armatura è rinforzata nei punti vitali, riduce i danni critici nemici del $percent($DescriptorBaseValue(HeartDefence)).}
 descriptor_descr_Unremarkable
 {
-Tutti possiedono oggetti simili. Con questo non attirerai l’attenzione né verrai ricordato.
-Aumenta Furtività di $number($DescriptorBaseValue(Unremarkable)). Gli effetti si sommano.
+Tutti possiedono oggetti simili. Con questo non attirerai l’attenzione né verrai ricordato.Aumenta Furtività di $number($DescriptorBaseValue(Unremarkable)). Gli effetti si sommano.
 }
 descriptor_descr_WeaponType_0 {Le armi leggere sono più maneggevoli, agili e pensate per i duelli uno contro uno. Gli attacchi con queste armi sono più rapidi del 5%.}
 descriptor_descr_WeaponType_1 {Le armi medie offrono un buon equilibrio tra peso e velocità, rendendole la scelta più versatile. Ideali per risse e combattimenti d’abbordaggio.}
@@ -87,8 +85,7 @@ descriptor_descr_ArmorMaterial_1 {L’armatura in cuoio può salvarti in una ris
 descriptor_descr_ArmorMaterial_2 {Le piastre offrono un ottimo equilibrio tra peso e protezione. Possono salvarti la vita. Riduce i danni subiti del 15%.}
 descriptor_descr_ArmorMaterial_3
 {
-L’armatura stampata è prodotta in serie per equipaggiare le truppe ed è usata nelle guerre europee.
-Riduce i danni subiti del 22%.
+L’armatura stampata è prodotta in serie per equipaggiare le truppe ed è usata nelle guerre europee.Riduce i danni subiti del 22%.
 }
 descriptor_descr_ArmorMaterial_4 {La produzione di armature forgiata di alta qualità è un processo complesso e costoso, che le rende una rarità nei Caraibi. Riduce i danni subiti del 35%.}
 descriptor_descr_AmuletType_0 {Si basa su presagi, superstizioni marinare e reali rapporti di causa-effetto.}

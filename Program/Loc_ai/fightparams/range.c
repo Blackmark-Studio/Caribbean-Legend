@@ -101,7 +101,6 @@ void LAi_ApplyCharacterFireDamage(ref attacker, ref enemy, int nEnemies, float f
 	}
 
 	float damageMtp = 1 + GetDamageMtp(&aTable, SHOT_STRIKE, weaponType); // множитель урона
-	damageMtp += GetDamageAmmoMtp(&aTable, sBullet);                      // множитель урона боеприпаса
 
 	GunpowderTester(attacker, &damageMtp, rAmmo);
 	ModifyGunDamageByPerks(attacker, enemy, &damageMtp, nEnemies);                    // перки, не вынесенные в модификаторы

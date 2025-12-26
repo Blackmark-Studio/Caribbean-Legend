@@ -74,7 +74,7 @@ void ProcessDialogEvent()
 		
 		case "First time":
 			dialog.text = "Cieszę się, że znowu cię widzę.";
-			link.l1 = "Znowu potrzebuje twoich usług.";
+			link.l1 = "Potrzebuję twoich usług ponownie.";
 			link.l1.go = "relation";
 			link.l2 = "Powinienem iść.";
 			link.l2.go = "exit";
@@ -82,7 +82,7 @@ void ProcessDialogEvent()
 			// генератор  "Найденные документы"
 			if ((pchar.questTemp.different == "GiveShipLetters") && !CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakAgent"))			
 			{
-				link.l4 = "Chcę ci zaproponować umowę."link.l4.go ="D_ShipLetters_1"; 
+				link.l4 = "Chcę ci zaproponować umowę."link.l4.go ="D_ListyStatku_1"; 
 				pchar.questTemp.different.GiveShipLetters.speakAgent = true;
 			}			
 
@@ -99,17 +99,17 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "First time";
 		break;
 
-		//*************************** Генератор - "Znalazłeś dokumenty wysyłkowe." **************		
+		//*************************** Генератор - "You've found shipping papers." **************		
 		case "D_ShipLetters_1":
 			dialog.text = "Jakie są twoje warunki?";
-			s1 = "Szczęśliwym trafem znalazłem legalny pakiet dokumentów okrętowych. Czy ktoś ich szuka?";
-			s1 = s1 + "Statek nadal pływa i jest w rejestrze, więc nie martw się. Ten głupi właściciel właśnie go zgubił.";
+			s1 = "By a lucky chance, I've found a legit package of the ship documents. Is anyone looking for them?";
+			s1 = s1 + "The vessel is still sailing and in the register so don't worry. That stupid owner has just lost it";
 			link.l1 = s1;
 			link.l1.go = "D_ShipLetters_2";
 		break;
 		case "D_ShipLetters_2":
-			s1 = "Daj mi to zobaczyć! Tak, te znaczniki są prawdziwe. Masz szczęście, "+ GetSexPhrase("panie","panienko") +"! ";
-			s1 = s1 + "Potrzebuję takiego pakietu i mogę Ci za to zaoferować " + sti(pchar.questTemp.different.GiveShipLetters.price5) + " pesos. Co powiesz?";
+			s1 = "Let me see it! Yes, the markers here are actual. You are a lucky "+ GetSexPhrase("man","woman") +"! ";
+			s1 = s1 + "I just need a package like this and I can offer you " + sti(pchar.questTemp.different.GiveShipLetters.price5) + " pesos. What would you say?";
 			dialog.text = s1;
 			link.l1 = "Taka królewska hojność! Oczywiście, że się zgadzam!";
 			link.l1.go = "D_ShipLetters_3";
@@ -155,7 +155,7 @@ void ProcessDialogEvent()
 			}
 			if (ChangeContrabandRelation(pchar, 0) <= 5)
             {
-                Link.l5 = "Chcę się pogodzić z przemytnikami.";
+                Link.l5 = "Chcę się pogodzić ze szmuglerami.";
 				Link.l5.go = "Contraband";
             }
             Link.l8 = "Potrzebuję listu kaperskiego.";
@@ -175,7 +175,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Licence":
-			dialog.text = "Zawsze je mam i na różne okresy. Licencja którego kraju cię interesuje?";
+			dialog.text = "Zawsze je mam i z różnych okresów. Licencja którego kraju cię interesuje?";
 		    link.l1 = "Anglii";
 			link.l1.go = "SetNationLicence_0";
 		    link.l2 = "Francji";
@@ -202,8 +202,8 @@ void ProcessDialogEvent()
 		
 		case "NationLicenceType2":
 			iSumm = sti(npchar.LicenceType) * (3000 + MOD_SKILL_ENEMY_RATE*500);
-        	dialog.text = "Czyli, licencja handlowa"+XI_ConvertString(Nations[sti(npchar.LicenceNation)].Name+"Gen")+" na "+sti(npchar.LicenceType)+" dni, cena wynosi "+FindRussianMoneyString(iSumm)+".";
-		    link.l1 = "Może być.";
+        	dialog.text = "Czyli, licencja handlowa"+XI_ConvertString(Nations[sti(npchar.LicenceNation)].Name+"Gen")+" za "+sti(npchar.LicenceType)+" dni, cena wynosi "+FindRussianMoneyString(iSumm)+".";
+		    link.l1 = "Zgadzam się.";
 		    if(makeint(Pchar.money) < iSumm)
             {
 				Link.l1.go = "No_money";
@@ -279,7 +279,7 @@ void ProcessDialogEvent()
 			}
 			if (GetPatentNation() != HOLLAND)
 			{
-			    link.l4 = "Holandii";
+			    link.l4 = "Z Holandii";
 				link.l4.go = "SetNationPatent_3";
 			}
 			link.l9 = "Wiesz, że lepiej poradzę sobie z tym sam.";
@@ -292,11 +292,11 @@ void ProcessDialogEvent()
             switch (sti(NPChar.nation))
             {
 			    case PIRATE :
-                    dialog.text = "To jest błąd, jeśli go zauważysz, skontaktuj się z deweloperami";
+                    dialog.text = "To jest błąd, jeśli go zauważysz, skontaktuj się z ALexusB";
                     link.l1 = "Wygląda dobrze dla mnie. Zgadzam się na twoje warunki!";
                     break;
                 case HOLLAND :
-                    dialog.text = "Holandia to prawie pokojowy naród. Zdobędziesz wielu przyjaciół i kilku wrogów. A sama licencja będzie cię kosztować "+pchar.PatentPrice+" pesos.";
+                    dialog.text = "Holandia to prawie pokojowe naród. Zdobędziesz wielu przyjaciół i kilku wrogów. A sama licencja będzie cię kosztować "+pchar.PatentPrice+" pesos.";
                     link.l1 = "Wygląda dobrze dla mnie. Zgadzam się na twoje warunki!";
                     break;
                 case FRANCE :
@@ -361,10 +361,10 @@ void ProcessDialogEvent()
 		case "RelationAny_Done":
 			i = sti(npchar.quest.relation);
 			iDiplomatPseudoGlobal = CalculateRelationSum(i, false);
-			dialog.text = "Hm... Nawet nie wiem, co powiedzieć. Oczywiście mogę spełnić twoją prośbę o nawiązanie pokoju z narodem "+XI_ConvertString(Nations[i].Name+"Abl")+", to będzie kosztować "+FindRussianMoneyString(iDiplomatPseudoGlobal)+".";
+			dialog.text = "Hm... Nawet nie wiem, co powiedzieć. Oczywiście mogę spełnić twoją prośbę o nawiązanie pokoju z "+XI_ConvertString(Nations[i].Name+"Abl")+", to będzie kosztować "+FindRussianMoneyString(iDiplomatPseudoGlobal)+".";
 			if(sti(pchar.money) >= iDiplomatPseudoGlobal)
 			{
-				link.l1 = "Nie sądzę, żebym miał wybór. Weź moje pieniądze.";
+				link.l1 = "Nie sądzę, że mam wybór. Weź moje pieniądze.";
 				link.l1.go = "relation3";
 			}
 			link.l2 = "Nie, to za dużo. Do widzenia.";
@@ -407,7 +407,7 @@ void ProcessDialogEvent()
             i = sti(NPChar.quest.CityIdx);
             sld = GetFortCommander(colonies[i].id);
             iSumm = TWN_CityCost(colonies[i].id);
-			dialog.Text = "Kolonia "+GetCityName(colonies[i].id)+", należała do "+XI_ConvertString(GetNationNameByType(sti(sld.Default.nation))+"Gen")+", okup za zaniechanie prób odzyskania to "+FindRussianMoneyString(iSumm)+".";
+			dialog.Text = "Kolonia "+GetCityName(colonies[i].id)+", należało do "+XI_ConvertString(GetNationNameByType(sti(sld.Default.nation))+"Gen")+", okup za zaniechanie prób odzyskania to "+FindRussianMoneyString(iSumm)+".";
    			if(sti(pchar.money) >= iSumm)
 			{
 			    Link.l1 = "Tak, dokładnie tego potrzebuję.";
@@ -420,7 +420,7 @@ void ProcessDialogEvent()
 		case "City_Buy_End":
             i = sti(NPChar.quest.CityIdx);
             TWN_RealeseForMoney(colonies[i].id, true);
-			dialog.Text = "Dobrze, umowa jest w trakcie realizacji. Nie będzie żadnych nowych prób schwytania "+GetCityName(colonies[i].id)+".";
+			dialog.Text = "Dobrze, umowa jest w trakcie realizacji. Nie będzie żadnych prób schwytania "+GetCityName(colonies[i].id)+" znowu.";
 			Link.l2 = "Dzięki. Miłego dnia.";
 			Link.l2.go = "exit";
 			Link.l3 = "Jeszcze jedno pytanie.";

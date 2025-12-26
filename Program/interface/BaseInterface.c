@@ -285,4 +285,7 @@ void InitInterfaceTables()
 
 	Interfaces[INTERFACE_ITEMS_EXCHANGE].SectionName = "interface\items_exchange.c";
 	Interfaces[INTERFACE_ITEMS_EXCHANGE].IniFile = "RESOURCE\INI\INTERFACES\items_exchange.ini";
+
+	Interfaces[INTERFACE_CHANGE_SHIP_TRAIT].SectionName = "interface\change_ship_trait.c";
+	Interfaces[INTERFACE_CHANGE_SHIP_TRAIT].IniFile = "RESOURCE\INI\INTERFACES\change_ship_trait.ini";
 }

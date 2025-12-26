@@ -88,16 +88,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "shipyard_dlg":			
-			if((shipBaseHP - shipCurHP > 0) && (shipClass < 7))
-			{
-				dialog.Text = "Je peux vous proposer une réparation capitale de la charpente de votre coque. Les gens ici ne savent pas construire de bons navires, ils tombent tous en morceaux après un seul tir...";						
-				Link.l1 = "Super ! J'ai justement un navire qui a besoin de réparations. Peut-être pourriez-vous jeter un œil à ce que vous pouvez faire ?";
-				Link.l1.go = "ship_repair_start";		
-			}
-			else
-			{
-				dialog.Text = "Allez, qu'est-ce que tu veux ? Ne harcèle pas un vieil homme...";
-			}	
+			dialog.Text = "Allez, qu'est-ce que tu veux ? Ne harcèle pas un vieil homme...";
 			link.l2 = "Je veux juste utiliser les services du chantier naval.";
 			link.l2.go = "shipyard";
 			link.l3 = "J'ai besoin d'armes pour le navire.";

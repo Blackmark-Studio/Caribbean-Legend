@@ -171,9 +171,3 @@ void KaleucheAmuletAttack(ref chr, ref table, ref function, ref context, string 
 	context.fencingh = base + bonus;
 	context.fencingh.talisman = bonus;
 }
-
-void BlackwoodsCharter(ref chr, ref table, ref function, ref context, string funcName)
-{
-	float value = ArticlesBonus(chr) * 2;
-	SetModifierFromSourceDirect(table, GRAPESHOT + "_" + M_DAMAGE, value, TALISMAN_ITEM_TYPE);
-}

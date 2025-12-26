@@ -34,6 +34,24 @@ void DialogsInit()
 	Set_inDialog_Attributes(); // boal
 }
 
+#event_handler("DialogControls_Lock","DialogControls_Lock");
+void DialogControls_Lock()
+{
+    LockControl("DlgAction", true);
+    LockControl("DlgAction1", true); 
+    LockControl("DlgAction2", true); 
+    PostEvent("DialogControls_Unlock", 250);
+}
+
+#event_handler("DialogControls_Unlock","DialogControls_Unlock");
+void DialogControls_Unlock()
+{
+    if(!dialogRun) return;
+    LockControl("DlgAction", false);
+    LockControl("DlgAction1", false);
+    LockControl("DlgAction2", false);
+}
+
 //Начать диалог
 bool DialogMain(ref Character)
 {
@@ -68,6 +86,7 @@ bool DialogMain(ref Character)
 	//Можем начинать диалог
 	dialogRun = true;
 	dialogSelf = false;
+    if (!bBettaTestMode) PostEvent("DialogControls_Lock", 0);
 	LAi_Character_StartDialog(mainChr, Character);
 	LAi_Character_StartDialog(Character, mainChr);
 	SendMessage(mainChr, "lsl", MSG_CHARACTER_EX_MSG, "InDialog", 1);
@@ -487,6 +506,14 @@ void UpdateDynamicRole(ref Dialog, ref chr)
 	else if(HasSubStr(chr.id, "_Poorman")) chr.role = "poorman";
 	else if(HasSubStr(chr.id, "_Hostess")) chr.role = "hostess";
 	else if(HasSubStr(chr.id, "_smuggler")) chr.role = "smuggler";
+	
+	if(chr.model == "Alonso")
+	{
+		Dialog.role = GetConvertStr("HeadSailor", "roles.txt");
+		if(CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.FourthStage", "completed"))
+			Dialog.role = GetConvertStr("HeadSailorPlus", "roles.txt");
+		return;
+	}
 	
 	// belamour return только в особых ситуациях
 	if(RoleFromID(chr))

@@ -970,7 +970,6 @@ Eccoci a Belize. Credo che trovare Jerome Sovernie non sarà difficile. Sono cer
 Abbiamo percorso un cammino lungo e tortuoso — e siamo giunti a una conclusione amara: fai attenzione a ciò che desideri. È questa la lezione che ci ha lasciato questa storia. La povera Marie, certo, merita un padre migliore di Rupert Northwood… ma i genitori non si scelgono.
 Beh, per quanto orribile sia stato l’esito, e per quanto il disincanto sia profondo — la vita continua. Abbiamo passato tutta la notte sulla riva, in silenzio, rotto solo di tanto in tanto da parole su quanto accaduto. Marie ha sopportato bene il colpo. Non si tormenterà pensando a chi fosse suo padre e quali 'imprese' abbia compiuto. E io… farò tutto ciò che posso per farle pensare a tutto ciò il meno possibile.
 
-
 #QUEST LEDR
 La Espada Del Rey
 #TEXT	1
@@ -981,3 +980,24 @@ Ho accettato di aiutare il vecchio, Gonsalo Peralta. Non sembra pazzo, a parte i
 Quando ho accettato di accompagnare il vecchio, non immaginavo certo che avrei dovuto combattere contro degli scheletri. Scheletri! Per fortuna la sorte era dalla nostra parte, e nonostante lo shock siamo riusciti a respingerli. Nella cabina del capitano abbiamo trovato il baule del vescovo, pieno di gioielli e un vecchio diario appartenente a Diego Velázquez de Cuéllar — il famoso conquistador e primo governatore di Cuba. Anche solo sfogliando quelle memorie ti viene la pelle d’oca. Forse è lui la chiave per spezzare la maledizione che tormenta Gonsalo.
 #TEXT	4
 Il diario è sistemato. Ho riportato Gonsalo là dove l’ho incontrato — a Sharptown. Che viva in pace, se davvero gli incubi l’hanno lasciato. E io farò meglio a stare zitto — storie così si rivoltano facilmente contro chi le racconta.
+
+#QUEST ClockTower
+Torre dell'Orologio
+#TEXT	1
+A quanto pare, la CIO commercia in qualcosa di più che semplici licenze e strumenti inutili. Se mi rendo utile per loro, forse la Compagnia si rivelerà utile anche per me. Il modo più ovvio è aumentare la mia reputazione con le colonie olandesi fino all'Ammirazione.
+#TEXT	2
+Ho fatto abbastanza per la Repubblica delle Province Libere. È ora di parlare con quel simpatico ragazzo Johan, la guardia dell'Ufficio del Registro Navale.
+#TEXT	3
+Notevole che questo ufficio sia ancora a galla! I miei dobloni non bastano, quindi dovrò cacciare qualche pirata e raccogliere cinque diari di bordo. Potrei procurarmene di più, visto che hanno chiarito che l'ufficio sarà disposto a pagare generosamente per questi in futuro. Se solo l'avessi saputo prima…
+#TEXT	4
+Diari raccolti. È ora di parlare con Johan.
+#TEXT	5
+Che giornata lunga. Willemstad ricorderà a lungo l'arrivo del Direttore. E sebbene ora sia un cliente e van Doorn sia stato incredibilmente cortese con me… ho un'altra offerta di lavoro. Devo introdurmi nella torre di notte e rubare il contratto originale di van Doorn. Mi hanno promesso una ricompensa in dobloni e accesso illimitato ai servizi dell'ufficio.
+#TEXT	6
+Ho il contratto! Van Doorn si è davvero trattenuto troppo a lungo in quella torre. Il vice Visser sarà fuori di sé dalla gioia. Posso trovarlo durante il giorno nell'ala centrale dell'edificio.
+#TEXT	7
+Ora non resta che aspettare. Dovrei visitare Visser tra un paio di mesi e scoprire come è andato il suo colpo di stato.
+#TEXT	8
+Penso sia passato abbastanza tempo. È ora di controllare come sta Visser a Curaçao.
+#TEXT	9
+Ecco fatto. Il Vice… o meglio, il Direttore Maarten Visser ha ottenuto ciò che voleva e ha mantenuto la parola: posso usare i servizi dell'ufficio in qualsiasi momento senza quegli appuntamenti ridicoli. Van Doorn, naturalmente, ha scoperto il mio coinvolgimento in questa faccenda dubbia, ma non ho nulla da temere dalla potenza della sua fregata leggendaria. La nave ammiraglia della CIO verrà per la mia anima solo se gli olandesi mi considereranno una minaccia sufficiente per i loro interessi. Dicono che questa nave sia un vero gioiello del Mar dei Caraibi… allettante, dannazione.

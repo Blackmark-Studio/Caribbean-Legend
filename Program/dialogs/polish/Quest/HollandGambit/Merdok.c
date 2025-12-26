@@ -109,7 +109,7 @@ void ProcessDialogEvent()
 				}
 				if (pchar.questTemp.HWIC.Self == "AbigileOnShip")
 				{
-					dialog.text = "Witaj z powrotem, "+pchar.name+"! Nic dla ciebie teraz. Nie ma żadnych wiadomości o Fleetwoodzie, a Charlie Knippel jeszcze nie wrócił z Kurakao...";
+					dialog.text = "Witaj z powrotem, "+pchar.name+"! Nic dla ciebie teraz. Nie ma żadnych wiadomości o Fleetwoodzie, a Charlie Knippel jeszcze nie wrócił z Curacao...";
 					link.l1 = "I nigdy nie będzie. Ani on, ani jego brygantyna.";
 					link.l1.go = "Abigile";
 					break;
@@ -124,7 +124,7 @@ void ProcessDialogEvent()
 				if (pchar.questTemp.HWIC.Self == "AbigileInRoom")
 				{
 					dialog.text = "Ścisz głos... Co zamierzasz zrobić dalej?";
-					link.l1 = "Dalej? Wolałbym się trochę przespać, ale niestety nie ma na to czasu. Zamierzam wyciągnąć Fleetwooda z dziury, w której się ukrywa, i dokończyć robotę Hercule'a.";
+					link.l1 = "Następny? Wolałbym się trochę przespać, ale niestety nie ma na to czasu. Zamierzam wyciągnąć Fleetwooda z dziury, w której się ukrywa, i dokończyć robotę Hercule'a.";
 					link.l1.go = "Abigile_9";
 					break;
 				}
@@ -152,7 +152,7 @@ void ProcessDialogEvent()
 				if (pchar.questTemp.HWIC.Self == "MeetTonzag")
 				{
 					dialog.text = "Dobrze "+pchar.name+", Mam dla Ciebie poważną ofertę. Sprawa, którą zamierzam omówić, jest bardzo niebezpieczna, ale biorąc pod uwagę sposób, w jaki pozbyłeś się Fleetwooda, jestem pewien, że sobie poradzisz. Masz...rzadką umiejętność rozwiązywania trudnych problemów.";
-					link.l1 = "Jestem zaszczycony. Mów dalej.";
+					link.l1 = "Jestem pochlebiony. Mów dalej.";
 					link.l1.go = "Lucas";
 					break;
 				}
@@ -200,12 +200,12 @@ void ProcessDialogEvent()
 
 		case "Knippel":
 			dialog.text = "Cóż, cóż... Jesteś od pana Rodenburga? Dobrze. Słucham cię.";
-			link.l1 = "Muszę zorganizować spotkanie z kapitanem Fleetwoodem w ustronnym miejscu. Pożyczyłem 'Miraż' od Jacoba van Berga, holenderskiego kapra, którego pan Fleetwood tak bardzo chce pojmać. Chciałbym go poinformować, że 'Mirage' będzie wkrótce wygodnie zakotwiczony u wybrzeży Dominiki.";
+			link.l1 = "Muszę zorganizować spotkanie z kapitanem Fleetwoodem w ustronnym miejscu. Pożyczyłem 'Mirage' od Jacoba van Berga, holenderskiego kaper, którego pan Fleetwood tak bardzo chce pojmać. Chciałbym go poinformować, że 'Mirage' będzie wkrótce wygodnie zakotwiczony u wybrzeży Dominiki.";
 			link.l1.go = "Knippel_1";
 		break;
 		
 		case "Knippel_1":
-			dialog.text = "Czy Jacob dał ci swój statek? Hm, więc teraz potrzebujesz kogoś, kto powie panu Fleetwoodowi, że 'Miraż' wkrótce będzie u wybrzeży Dominiki, ponieważ z pewnych powodów nie możesz sam o tym powiedzieć Richardowi...";
+			dialog.text = "Czy Jacob dał ci swój statek? Hm, więc teraz potrzebujesz kogoś, kto powie panu Fleetwoodowi, że 'Mirage' wkrótce będzie u wybrzeży Dominiki, ponieważ z pewnych powodów nie możesz sam o tym powiedzieć Richardowi...";
 			link.l1 = "Dokładnie. Pan Rodenburg zalecił, abym zwrócił się do ciebie z tą sprawą.";
 			link.l1.go = "Knippel_2";
 		break;
@@ -261,7 +261,7 @@ void ProcessDialogEvent()
 //-------------------------------------------------за Англию-----------------------------------------------------
 		case "Merdok_talk":
 			dialog.text = "Naprawdę? Myślałem, że biedny Gaston już od jakiegoś czasu płonie w piekle.";
-			link.l1 = "Mogło tak być, ale nie ma nikogo takiego jak Gaston. Znalazłem jego głowę w skarbcu starego Żyda na tajemniczej wyspie. Ale mimo to udało mu się przesłać ci pozdrowienia. Wspomniał też, że mamy wspólnego wroga: pana Rodenburga. Tonzag powiedział, że możesz mieć dokumenty ważne dla Lucasa, które mogą go wywabić z jego kryjówki na Kurakao.";
+			link.l1 = "Mogło tak być, ale nie ma nikogo takiego jak Gaston. Znalazłem jego głowę w skarbcu starego Żyda na tajemniczej wyspie. Ale mimo to udało mu się przesłać ci pozdrowienia. Wspomniał też, że mamy wspólnego wroga: pana Rodenburga. Tonzag powiedział, że możesz mieć dokumenty ważne dla Lucasa, które mogą go wywabić z jego kryjówki na Curaçao.";
 			link.l1.go = "Merdok_talk_1";			
 		break;
 		
@@ -330,7 +330,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "Jest w porcie, na swoim zwykłym miejscu.";
-				link.l1 = "Uff...dobrze to słyszeć. Myślałem, że go straciłem.";
+				link.l1 = "Uff...dobrze to słyszeć. Myślałem, że ją straciłem.";
 			}
 			link.l1.go = "MC_InHouse_4";			
 		break;
@@ -371,7 +371,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "About_Fleetwood_1":
-			dialog.text = "Bardzo dobrze. Kapitan Richard Fleetwood z Królewskiej- to znaczy Marynarki Wspólnoty... cholera, ciągle zapominam, że ten fanatyk Cromwell jest u władzy i zmienił nazwę. Niezależnie od tego, Fleetwood to dobry wojownik i doświadczony żeglarz. Dowodzi brygiem o nazwie 'Walkiria' - doskonałym statkiem, chciałbym zaznaczyć, z załogą elitarnych żeglarzy i marines. Prowadzi prywatną wojnę przeciwko Zjednoczonym Prowincjom ogólnie, a w szczególności z Holenderską Kompanią Zachodnioindyjską. Splądrował niezliczone holenderskie statki handlowe i wywindował koszty ubezpieczeń do niebotycznych wysokości. Gubernator Curaçao wyznaczył rekordową nagrodę za jego głowę.";
+			dialog.text = "Bardzo dobrze. Kapitan Richard Fleetwood z Królewskiej- to znaczy Marynarki Wspólnoty... cholera, ciągle zapominam, że ten fanatyk Cromwell jest u władzy i zmienił nazwę. Niezależnie od tego, Fleetwood to dobry wojownik i doświadczony żeglarz. Dowodzi brygiem o nazwie 'Valkyrie' - doskonałym statkiem, chciałbym zaznaczyć, z załogą elitarnych żeglarzy i marines. Prowadzi prywatną wojnę przeciwko Zjednoczonym Prowincjom ogólnie, a w szczególności z Holenderską Kompanią Zachodnioindyjską. Splądrował niezliczone holenderskie statki handlowe i wywindował koszty ubezpieczeń do niebotycznych wysokości. Gubernator Curaçao wyznaczył rekordową nagrodę za jego głowę.";
 			link.l1 = "Hmm...  Wydaje się to nieco nietypowe, by oficer 'Marynarki Wspólnoty' zajmował się piractwem...";
 			link.l1.go = "About_Fleetwood_2";
 		break;

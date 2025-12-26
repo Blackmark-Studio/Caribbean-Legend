@@ -108,3 +108,7 @@ sp3_SailorsBoardingBonus_desc {Bonus esperienza all’abbordaggio: #dSailorsBoar
 sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 marinai caduti)}
 sp3_SurrenderChanceBonus_desc {Aumento probabilità di resa: #dSurrenderChanceBonus#%}
 sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 marinai caduti)}
+sp4 {Cacciatore di pirati}
+sp4_desc {Questa nave è stata costruita appositamente per ripulire i mari dai pirati. Con ogni nave affondata, l’equipaggio diventa più unito, i cannoni più precisi e il fanatismo del capitano sempre più evidente.}
+sp4_desc2 {Ogni nave pirata distrutta aumenta permanentemente la manovrabilità, la gittata di tiro, la velocità sulla mappa globale e la velocità di ricarica dei cannoni. Bonus attuale: $percent($attr($context.tuning.modifiers.shipSpeed.trait_SP4)) su 15. ~ Più bassa è la minaccia pirata, minori sono i costi di mantenimento della nave. Bonus attuale: $percent($GetAmsterdamMtp( )) su 40.}
+SpecialityUpgrade {Migliorato dalla HWIC}

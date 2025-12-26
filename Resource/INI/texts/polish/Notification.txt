@@ -1,11 +1,11 @@
-Notification_ReputationCheckPassed {Posiadasz Wymaganą Reputacje}
-Notification_ReputationCheckFailed {Zbyt Niska Reputacja}
-Notification_PerkCheckPassed {Posiadasz Wymaganą Zdolność}
-Notification_PerkCheckFailed {Nie Posiadasz Zdolności}
-Notification_SkillCheckPassed {Sukces!}
-Notification_SkillCheckFailed {Zbyt Niska Umiejętność}
-Notification_LevelCheckPassed {Posiadasz Wymagany Poziom}
-Notification_LevelCheckFailed {Wymagany Poziom}
+Notification_ReputationCheckPassed {Reputation Check Passed}
+Notification_ReputationCheckFailed {Reputation Too Low}
+Notification_PerkCheckPassed {Perk Check Passed}
+Notification_PerkCheckFailed {Perk Check Failed}
+Notification_SkillCheckPassed {Skill Check Passed}
+Notification_SkillCheckFailed {Skill Check Failed}
+Notification_LevelCheckPassed {Level Check Passed}
+Notification_LevelCheckFailed {Level Required}
 CanBeCaptain {$attr($context.name) nie poradzi sobie z okrętem na otwartym morzu (wymagana cecha 'Kapitan')}
 Notification_ApproveCheckPassed {approves}
 Notification_ApproveCheckFailed {disapproves}

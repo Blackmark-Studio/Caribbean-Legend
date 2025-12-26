@@ -2704,8 +2704,8 @@ void ProcessDialogEvent()
 		case "BurntShip5":
 			sCapitainId = GenerateRandomName(sti(NPChar.nation), "man");
 			
-			dialog.text = "Nie! Oczywiście, że nie! Panie, zbaw moją duszę, inaczej straciłbym głowę. Ładownia była całkowicie pusta, dzięki Ci Panie, Najświętsza Panno Maryjo!\n"+"I problem polega na tym, że statek należy do... a raczej, należał do pana "+sCapitainId+", znany na całych Karaibach. A został zbudowany w Europie na specjalne zamówienie, z niezwykłymi cechami. "+"I ten armator był zbyt dumny i chełpił się na prawo i lewo, taki głupiec, Boże wybacz mi... Co mu teraz powiem? Lepiej się zabiję, przysięgam...";
-			link.l1 = "Och, teraz widzę, w czym tkwi problem, rzeczywiście. A co było takiego wyjątkowego w tym statku? Jakie cechy były tak niezwykłe, że jego właściciel był z niego tak dumny?";
+			dialog.text = "Nie! Oczywiście, że nie! Panie, zbaw moją duszę, inaczej straciłbym głowę. Ładownia była całkowicie pusta, dzięki Ci Panie, Najświętsza Panno Maryjo!\n"+"I problem polega na tym, że statek należy do... a raczej, należał do pana "+sCapitainId+", znany we wszystkich Karaibach. A została zbudowana w Europie na specjalne zamówienie, z niezwykłymi cechami. "+"I ten armator był zbyt dumny i chełpił się na prawo i lewo, taki głupiec, Boże wybacz mi... Co mu teraz powiem? Lepiej się zabiję, przysięgam...";
+			link.l1 = "Och, teraz widzę, w czym tkwi problem, rzeczywiście. A co było takiego wyjątkowego w tym statku? Jakie niezwykłe cechy miała, że jej właściciel był z niej tak dumny?";
 			link.l1.go = "BurntShip6";
 			
 			NPChar.Quest.BurntShip.ShipOwnerName = sCapitainId;
@@ -2720,15 +2720,15 @@ void ProcessDialogEvent()
 			switch(attrL)
 			{
 				case "speedrate":
-					attrL = "Prędkość jego " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + " wynosiła więcej niż " + NPChar.Quest.BurntShip.ShipNeededValue + " węzłów. To była duma korsarza... A teraz kazałby swoim chłopakom powiesić mnie na dziedzińcu. Jaki diabeł sprowadził go do naszego portu razem z tą piracką łajbą...";
+					attrL = "His " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + "'s wind speed was more than " + NPChar.Quest.BurntShip.ShipNeededValue + " knots. That was the privateer's pride... And now he'd just tell his boys to hang me in the yard. What devil has brought him to our harbor together with that pirate tub...";
 				break;
 				
 				case "turnrate":
-					attrL = "Manewrowość jego " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + " wynosiła więcej niż " + NPChar.Quest.BurntShip.ShipNeededValue + " cali. To była duma żołnierza... A teraz będzie kazał mnie wychłostać na śmierć. Jaki diabeł mu doradził, żeby zostawił tu swoją łajbe...";
+					attrL = "His " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + "'s maneuverability was more than " + NPChar.Quest.BurntShip.ShipNeededValue + " units. That was the soldier's pride... And now he'd just have me flogged to death. What devil advised him to leave his tub there...";
 				break;
 				
 				case "capacity":
-					attrL = "Ładownia na jego " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + "' mogła pomieścić ładunek, oscylujący aż do " + NPChar.Quest.BurntShip.ShipNeededValue + " jednostek. Chciwość jest zła, mówię ci. A teraz kazałby mnie poćwiartować w sądzie. Jaki diabeł mu doradził, żeby zostawił tam swoją łajbe...";
+					attrL = "His " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + "' had a deadweight of over " + NPChar.Quest.BurntShip.ShipNeededValue + " units. Greed is bad, I'll tell ya. And now he'd just have me quartered in court. What devil advised him to leave his tub there...";
 				break;
 			}
 			
@@ -3721,18 +3721,23 @@ void ProcessDialogEvent()
 			dialog.text = "Rzeczywiście, to byłoby do przyjęcia. Którym konkretnie statkiem jesteś zainteresowany?";
 			if (GetDLCenabled(DLC_APPID_4) && !CheckAttribute(pchar, "questTemp.SantaMisericordia_InfoPU") && CharacterIsAlive("SantaMisericordia_cap"))
 			{
-				link.l1 = "Galera 'Święta Łaska'.";
+				link.l1 = "Galera '"+GetShipName("Holy Mercy")+"'.";
 				link.l1.go = "UniqueShips_SantaMisericordia";
 			}
 			if (GetDLCenabled(DLC_APPID_5) && !CheckAttribute(pchar, "questTemp.LadyBeth_InfoPU") && CharacterIsAlive("LadyBeth_cap"))
 			{
-				link.l2 = "Szniawa patrolowa 'Lady Beth'.";
+				link.l2 = "Szniawa patrolowa '"+GetShipName("Lady Beth")+"'.";
 				link.l2.go = "UniqueShips_LadyBeth";
 			}
 			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Memento_InfoPU") && CharacterIsAlive("Memento_cap"))
 			{
-				link.l3 = "Bryg 'Memento'.";
+				link.l3 = "Bryg '"+GetShipName("Memento")+"'.";
 				link.l3.go = "UniqueShips_Memento";
+			}
+			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Amsterdam_InfoPU"))
+			{
+				link.l4 = "Okręt Flagowy Kompanii '"+GetShipName("Amsterdam")+"'.";
+				link.l4.go = "UniqueShips_Amsterdam";
 			}
 			link.l99 = "Myślę, że wiem wystarczająco.";
 			link.l99.go = "node_2";
@@ -3766,6 +3771,15 @@ void ProcessDialogEvent()
 			"'Memento' krąży między pirackimi osadami, ale prawie nigdy nie cumuje. Załoga żyje na statku miesiącami, jakby bała się postawić stopę na lądzie. Mówi się też, że statek przetrwał kiedyś potworną epidemię — dlatego tak trudno zabić załogę.\n"+
 			"Jeśli planujesz ich zaatakować — zabierz dużo dział. Zdobycie 'Memento' abordażem jest prawie niemożliwe — załoga walczy jak opętana, jakby nie bała się śmierci. Jedyny sposób, by ich pokonać, to rozstrzelać statek na kawałki, by pozbawić ich schronienia. Odłamki ich nie ruszają, ale bezpośrednie trafienia kartaczami — to już co innego.\n"+
 			"Powodzenia. I pamiętaj o śmierci.";
+			link.l1 = "Dziękuję bardzo.";
+			link.l1.go = "node_2";
+		break;
+		
+		case "UniqueShips_Amsterdam":
+			AddMoneyToCharacter(pchar, -25000);
+			AddQuestRecordInfo("LegendaryShips", "4");
+			pchar.questTemp.Amsterdam_InfoPU = true;
+			dialog.text = "Okręt flagowy szanownej Holenderskiej Kompanii Zachodnioindyjskiej. Wszystko, co dotyczy tego statku, owiane jest tajemnicą. Dowodzi nim Hendrik van Doorn, szef działu rejestru okrętów na Curaçao – niezwykle skuteczny człowiek, który świadczy bezcenne usługi najbogatszym i najbardziej wpływowym kapitanom. Spróbuj znaleźć się w ich gronie, a dowiesz się więcej.";
 			link.l1 = "Dziękuję bardzo.";
 			link.l1.go = "node_2";
 		break;

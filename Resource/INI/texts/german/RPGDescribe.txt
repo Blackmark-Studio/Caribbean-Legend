@@ -30,45 +30,27 @@ Glückspiraten sind perfekte Schützen, Glücksspieler und Abenteurer.~'Feuerw
 }
 Crit
 {
-Grundwahrscheinlichkeit, dem Feind einen kritischen Treffer oder Schuss zuzufügen.
-~
-Hängt von S und P ab.
-~
-Perks und Ausrüstung können diese Chance erhöhen.
+Grundwahrscheinlichkeit, dem Feind einen kritischen Treffer oder Schuss zuzufügen.~Hängt von S und P ab.~Perks und Ausrüstung können diese Chance erhöhen.
 }
 CharDefence
 {
-Grundwerte der Schadensabwehr. Verringern den gesamten eingehenden Schaden um einen bestimmten Prozentsatz.
- ~
- Diese Werte werden von persönlichen Perks und Ausrüstung beeinflusst.
+Grundwerte der Schadensabwehr. Verringern den gesamten eingehenden Schaden um einen bestimmten Prozentsatz. ~ Diese Werte werden von persönlichen Perks und Ausrüstung beeinflusst.
 }
 FencingL
 {
-Fertigkeit im Umgang mit leichten Klingen, Floretten und ähnlichen Waffen.
- (R*0.9+I*0.1)
- ~
- Beeinflusst den Waffenschaden und den Energieverbrauch bei Angriffen.
+Fertigkeit im Umgang mit leichten Klingen, Floretten und ähnlichen Waffen. (R*0.9+I*0.1) ~ Beeinflusst den Waffenschaden und den Energieverbrauch bei Angriffen.
 }
 FencingS
 {
-Fertigkeit im Umgang mit mittelgroßen, ausgewogenen Klingen wie Säbeln, die Kraft und Geschicklichkeit erfordern.
- (P*0.6+R*0.4)
- ~
- Beeinflusst den Waffenschaden und den Energieverbrauch bei Angriffen.
+Fertigkeit im Umgang mit mittelgroßen, ausgewogenen Klingen wie Säbeln, die Kraft und Geschicklichkeit erfordern. (P*0.6+R*0.4) ~ Beeinflusst den Waffenschaden und den Energieverbrauch bei Angriffen.
 }
 FencingH
 {
-Fertigkeit im Umgang mit schweren Waffen wie Breitschwertern und Äxten. Erfordert große körperliche Stärke.
- (P*0.9+E*0.1)
- ~
- Beeinflusst den Waffenschaden und den Energieverbrauch bei Angriffen.
+Fertigkeit im Umgang mit schweren Waffen wie Breitschwertern und Äxten. Erfordert große körperliche Stärke. (P*0.9+E*0.1) ~ Beeinflusst den Waffenschaden und den Energieverbrauch bei Angriffen.
 }
 Pistol
 {
-Fertigkeit im Umgang mit allen Arten von Schusswaffen.
- (R*0.4+S*0.6)
- ~
- Beeinflusst Schaden und Nachladegeschwindigkeit.
+Fertigkeit im Umgang mit allen Arten von Schusswaffen. (R*0.4+S*0.6) ~ Beeinflusst Schaden und Nachladegeschwindigkeit.
 }
 Fortune
 {
@@ -92,18 +74,7 @@ Ladet die Kanone schnell, rollt sie auf und während das Echo der Salve noch zwi
 }
 Sailing
 {
-Fähigkeit, ein Schiff unter allen Bedingungen zu führen, Instrumente zu bedienen und eine Eskadron zu kommandieren. Selbst das launischste und unbeweglichste Schiff gehorcht der ruhigen Hand eines erfahrenen Skippers.
- Hängt von 'Wahrnehmung' und 'Talent' ab (I0.2 + T0.8)
- ~
- Um ein Schiff einer bestimmten Klasse zu führen, ist ein entsprechendes Mindestniveau der Navigation erforderlich:
- Klasse 1 erfordert 90
- Klasse 2 erfordert 70
- Klasse 3 erfordert 55
- Klasse 4 erfordert 40
- Klasse 5 erfordert 20
- Klasse 6 erfordert 01
- ~
- Ein Mangel an Navigation führt zu Strafen auf alle Fertigkeiten und Attribute des Helden. Je größer die Differenz zwischen aktuellem und erforderlichem Navigationswert ist, desto stärker die Strafen.
+Fähigkeit, ein Schiff unter allen Bedingungen zu führen, Instrumente zu bedienen und eine Eskadron zu kommandieren. Selbst das launischste und unbeweglichste Schiff gehorcht der ruhigen Hand eines erfahrenen Skippers. Hängt von 'Wahrnehmung' und 'Talent' ab (I0.2 + T0.8) ~ Um ein Schiff einer bestimmten Klasse zu führen, ist ein entsprechendes Mindestniveau der Navigation erforderlich: Klasse 1 erfordert 90 Klasse 2 erfordert 70 Klasse 3 erfordert 55 Klasse 4 erfordert 40 Klasse 5 erfordert 20 Klasse 6 erfordert 01 ~ Ein Mangel an Navigation führt zu Strafen auf alle Fertigkeiten und Attribute des Helden. Je größer die Differenz zwischen aktuellem und erforderlichem Navigationswert ist, desto stärker die Strafen.
 }
 Repair
 {
@@ -111,10 +82,7 @@ Wenn der Feind Ihr Schiff mit einer Salve von Kanonenkugeln stürmt, die Seitenw
 }
 Grappling
 {
-Das eigene Schiff mit dem feindlichen ausrichten, die Enterhaken werfen, den zitternden Gegner entern, die Decks säubern und das Schiff als wohlverdiente Beute nehmen – das erfordert große Beweglichkeit und Erfahrung, aber die Beute wird die Mühe sicher wettmachen.
- (R*0.7+T*0.3)
- ~
- Beeinflusst die Enterdistanz.
+Das eigene Schiff mit dem feindlichen ausrichten, die Enterhaken werfen, den zitternden Gegner entern, die Decks säubern und das Schiff als wohlverdiente Beute nehmen – das erfordert große Beweglichkeit und Erfahrung, aber die Beute wird die Mühe sicher wettmachen. (R*0.7+T*0.3) ~ Beeinflusst die Enterdistanz.
 }
 Defence
 {
@@ -138,60 +106,35 @@ Achtung!Einige Fähigkeiten sind möglicherweise nicht verfügbar für bestimm
 }
 Personal_abilities
 {
-Perks, die die persönlichen Fähigkeiten des Charakters erweitern. Fortschritt wird erzielt, wenn persönliche Fertigkeiten verbessert werden.
- ~
- Beim Erreichen eines Schwellenwerts erhältst du einen neuen Punkt für persönliche Perks. Verschiedene Perks kosten unterschiedlich viele Punkte. In der Regel befinden sich die stärksten am Ende des Entwicklungsbaums.
+Perks, die die persönlichen Fähigkeiten des Charakters erweitern. Fortschritt wird erzielt, wenn persönliche Fertigkeiten verbessert werden. ~ Beim Erreichen eines Schwellenwerts erhältst du einen neuen Punkt für persönliche Perks. Verschiedene Perks kosten unterschiedlich viele Punkte. In der Regel befinden sich die stärksten am Ende des Entwicklungsbaums.
 }
 Ship_abilities
 {
-Perks, die die Schiffsführung beeinflussen. Fortschritt wird erzielt, wenn Schiffsfertigkeiten verbessert werden.
- ~
- Beim Erreichen eines Schwellenwerts erhältst du einen neuen Punkt für Schiffs-Perks. Verschiedene Perks kosten unterschiedlich viele Punkte. In der Regel befinden sich die stärksten am Ende des Entwicklungsbaums.
- ~
- Sie können vom Hauptcharakter von Offizieren geerbt werden, die auf Schiffsposten eingesetzt sind und ihr Handwerk verstehen.
+Perks, die die Schiffsführung beeinflussen. Fortschritt wird erzielt, wenn Schiffsfertigkeiten verbessert werden. ~ Beim Erreichen eines Schwellenwerts erhältst du einen neuen Punkt für Schiffs-Perks. Verschiedene Perks kosten unterschiedlich viele Punkte. In der Regel befinden sich die stärksten am Ende des Entwicklungsbaums. ~ Sie können vom Hauptcharakter von Offizieren geerbt werden, die auf Schiffsposten eingesetzt sind und ihr Handwerk verstehen.
 }
 Abilities_available {Die Zahl gibt die Anzahl der nicht zugewiesenen Vorteilspunkte an.}
 Abilities_active {Die Zahl gibt an, welche Vorteile ein Charakter aktiviert hat.}
 Rank
 {
-Der Rang ist ein Maß für das Entwicklungsniveau einer Figur im Spiel. Fortschritt wird erzielt, wenn Fertigkeiten verbessert werden.
- ~
- Mit steigendem Rang des Charakters erhöhen sich seine Lebenspunkte und Energie, und stärkere Gegner sowie neue Gegenstände treten häufiger auf.
+Der Rang ist ein Maß für das Entwicklungsniveau einer Figur im Spiel. Fortschritt wird erzielt, wenn Fertigkeiten verbessert werden. ~ Mit steigendem Rang des Charakters erhöhen sich seine Lebenspunkte und Energie, und stärkere Gegner sowie neue Gegenstände treten häufiger auf.
 }
 Life
 {
-HP — ein Maß für die Widerstandsfähigkeit eines Charakters gegen physische Schäden. Null bedeutet Tod, eins bedeutet eine Welt voller Möglichkeiten.
- ~
- Der Wert hängt von P und E ab und wächst mit dem Rang.
+HP — ein Maß für die Widerstandsfähigkeit eines Charakters gegen physische Schäden. Null bedeutet Tod, eins bedeutet eine Welt voller Möglichkeiten. ~ Der Wert hängt von P und E ab und wächst mit dem Rang.
 }
 Health {Die Vitalität ist der Indikator für den körperlichen Zustand des Charakters. Sie sinkt jedes Mal, wenn du in kurzer Zeit schwer verwundet wirst. Sie erholt sich wieder, wenn du den Kampf für einige Zeit meidest, damit die Wunden richtig heilen können. Sie kann die Werte und Fertigkeiten stark beeinträchtigen, wenn sie nicht beachtet wird.}
 Energy
 {
-Energie - der Vorrat an körperlicher Ausdauer eines Charakters.
- 
-  ~
- 
-  Alle Angriffsaktionen und das Sprinten im Nahkampf verbrauchen Energie; im Kampf ermüdet der Charakter und benötigt eine Pause zur Erholung.
- 
-  ~
- 
-  Der Energie-Wert hängt von R und T ab und steigt mit dem Rang.
+Energie - der Vorrat an körperlicher Ausdauer eines Charakters.   ~   Alle Angriffsaktionen und das Sprinten im Nahkampf verbrauchen Energie; im Kampf ermüdet der Charakter und benötigt eine Pause zur Erholung.   ~   Der Energie-Wert hängt von R und T ab und steigt mit dem Rang.
 }
 Money {Geld ist der König aller Menschen. Piaster, Taler, Guineen... Wo ist der Unterschied, wenn es sich um flüssiges Geld handelt!}
 Reputation
 {
-Ehre zeigt, wie die Gesellschaft den Charakter sieht.
-~
-Sie verändert sich je nach deinen Lösungswegen.
-~
-Ehre strebt immer zu einem neutralen Zustand.
+Ehre zeigt, wie die Gesellschaft den Charakter sieht.~Sie verändert sich je nach deinen Lösungswegen.~Ehre strebt immer zu einem neutralen Zustand.
 }
 Weight
 {
-Das Gewicht ist die maximale Gesamtmasse an Fracht, die eine Figur tragen kann.
- Hängt von Stärke, Ausdauer, persönlichen Perks und aktiven Amuletten ab.
- ~
- Ein überladener Charakter bewegt sich langsamer, erleidet Strafen und kann kein Schnellreisen verwenden.
+Das Gewicht ist die maximale Gesamtmasse an Fracht, die eine Figur tragen kann. Hängt von Stärke, Ausdauer, persönlichen Perks und aktiven Amuletten ab. ~ Ein überladener Charakter bewegt sich langsamer, erleidet Strafen und kann kein Schnellreisen verwenden.
 }
 Title {Der Titel gibt an, wie nützlich die Figur für den Staat ist, dem sie dient.}
 NextExp
@@ -285,15 +228,13 @@ SourceOverload {Überladen}
 SourceNavyPenalty {Navigationsfertigkeit unzureichend}
 CritDamage
 {
-Höhe des kritischen Schadens. Wird nach allen Modifikatoren angewendet.
- ~
- Kann durch persönliche Perks und Ausrüstung erhöht werden.
+Höhe des kritischen Schadens. Wird nach allen Modifikatoren angewendet. ~ Kann durch persönliche Perks und Ausrüstung erhöht werden.
 }
 CritCharDefence
 {
-Gesamtreduktion des gegnerischen kritischen Schadens.
- ~
- Kann durch persönliche Perks und Ausrüstung erhöht werden.
+Gesamtreduktion des gegnerischen kritischen Schadens. ~ Kann durch persönliche Perks und Ausrüstung erhöht werden.
 }
 SourceSkill {Fähigkeit}
 SourceChickenGod {Segen von Aruba}
+SourceSpecialityUpgrade {Unterklassen-Upgrade}
+SourceAudit {Prüfung}

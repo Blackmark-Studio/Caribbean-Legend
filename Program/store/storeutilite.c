@@ -383,6 +383,14 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 		if(skillModify > 0.96) skillModify = 0.96;
 	}
 
+	
+	if (costCoeff < 1.0 && IsEquipCharacterByItem(chref, "piratesJournal_2"))
+	{
+		if (ShipBonus2Artefact(chref, SHIP_AMSTERDAM)) costCoeff = costCoeff += 0.16;
+		else costCoeff = costCoeff += 0.08;
+		if (costCoeff > 1.0) costCoeff = 1.0;
+	}
+
 	// boal 23.01.2004 -->
 	if (MakeInt(basePrice * tradeModify * skillModify * costCoeff + 0.5) < 1) return 1;
 	// boal 23.01.2004 <--

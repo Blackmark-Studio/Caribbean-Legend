@@ -46,8 +46,8 @@ void SetAlertMarks(ref chr)
 	
 	if(CheckAttribute(chr,"perks.FreePoints_self") || CheckAttribute(chr,"perks.FreePoints_ship"))
 	{
+		// if(!HaveAllPerks(chr, "any")) SetNodeUsing("A_ABILITIES",true);
 		if (!CheckAttribute(&InterfaceStates, "markers." + chr.id)) SetNodeUsing("A_ABILITIES",true);
-		if (HaveAllPerks(chr, "any")) SetNodeUsing("A_ABILITIES", false);
 	}
 	if(CheckQuestInfo() || CheckNewDocs()) SetNodeUsing("A_QUESTBOOK",true);
 	if(CheckQuestInfo()) SetNodeUsing("A_QUEST",true);

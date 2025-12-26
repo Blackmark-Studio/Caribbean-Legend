@@ -108,3 +108,7 @@ sp3_SailorsBoardingBonus_desc {Bónusz a fedélzeti tapasztalatért: #dSailorsBo
 sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 elesett tengerészek)}
 sp3_SurrenderChanceBonus_desc {A megadás esélyének növekedése: #dSurrenderChanceBonus#%}
 sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 elesett tengerészek)}
+sp4 {Pirate Hunter}
+sp4_desc {This ship was purpose-built to cleanse the seas of pirates. With every ship sent to the bottom, the crew grows more united, the guns more accurate, and the captain’s fanaticism ever clearer.}
+sp4_desc2 {Each destroyed pirate ship permanently increases maneuverability, firing range, global map speed, and gun reload speed. Current bonus: $percent($attr($context.tuning.modifiers.shipSpeed.trait_SP4)) of 15. ~ The lower the pirate threat, the lower the ship’s upkeep. Current bonus: $percent($GetAmsterdamMtp( )) of 40.}
+SpecialityUpgrade {Upgraded by HWIC}

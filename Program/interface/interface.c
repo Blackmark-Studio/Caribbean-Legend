@@ -517,6 +517,17 @@ void LaunchSailsGeraldScreen(ref chref)
 	}
 }
 
+
+void LaunchChangeShipTraitScreen(ref chref)
+{
+	if(procInterfacePrepare(INTERFACE_CHANGE_SHIP_TRAIT))
+	{
+		nPrevInterface = -1;
+		CurrentInterface = INTERFACE_CHANGE_SHIP_TRAIT;
+		InitInterface_R(Interfaces[CurrentInterface].IniFile, chref);
+	}
+}
+
 void LaunchForTest()
 {
 	if(procInterfacePrepare(INTERFACE_FOR_TEST))

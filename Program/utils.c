@@ -664,9 +664,9 @@ int GetAttributeInt(ref rObject, string atrName)
 }
 
 // Получить int из атрибута, либо 0, если атрибута нет
-int GetAttributeIntOrDefault(ref rObject, string atrName, int defaultValue)
+int GetAttributeIntOrDefault(ref rObject, string atrName, int default)
 {
-	if (!CheckAttribute(rObject, &atrName)) return defaultValue;
+	if (!CheckAttribute(rObject, &atrName)) return default;
 	return sti(rObject.(atrName));
 }
 
@@ -677,9 +677,9 @@ float GetAttributeFloat(ref rObject, string atrName)
 }
 
 // Получить float из атрибута, либо дефолт, если атрибута нет
-float GetAttributeFloatOrDefault(ref rObject, string atrName, float defaultValue)
+float GetAttributeFloatOrDefault(ref rObject, string atrName, float default)
 {
-	if (!CheckAttribute(rObject, &atrName)) return defaultValue;
+	if (!CheckAttribute(rObject, &atrName)) return default;
 	return stf(rObject.(atrName));
 }
 
@@ -690,9 +690,9 @@ void SetAttribute(ref rObject, string atrName, ref value)
 }
 
 // Получить строковый атрибут или заглушку
-string GetAttributeOrDefault(ref rObject, string atrName, string defaultValue)
+string GetAttributeOrDefault(ref rObject, string atrName, string default)
 {
-	if (!CheckAttribute(rObject, &atrName)) return defaultValue;
+	if (!CheckAttribute(rObject, &atrName)) return default;
 	return rObject.(atrName);
 }
 
@@ -744,7 +744,12 @@ string VarTypeToString(ref something)
 
 void DumpAttributesAref(ref rObject, string attributeName)
 {
+	trace("============== ↓ DUMP ATTRIBUTE: " + attributeName + " ↓ ===============");
 	aref attribute;
-	makearef(attribute, rObject.(attributeName));
-	DumpAttributes(attribute);
+	if (CheckAttribute(rObject, attributeName))
+	{
+		makearef(attribute, rObject.(attributeName));
+		DumpAttributes(attribute);
+	}
+	trace("============== ↑ DUMP ATTRIBUTE: " + attributeName + " ↑ ===============");
 }

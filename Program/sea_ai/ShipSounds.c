@@ -38,13 +38,13 @@ void SetPlayerShipSounds()
     // Sailors Chatter
     int id = PlayShipSoundEvent(PChar, "sounds of sailors/SailorChatter_BP", true);
     TEV.PSS.SailorsChatter = id;
-    SendMessage(Sound, "llsfl",  MSG_SOUND_EVENT_SET_PARAM, id, "Blend", GetFloatByCondition(seaAlarmed, 0.0, 1.0), true);
+    SendMessage(Sound, "llsfl", MSG_SOUND_EVENT_SET_PARAM, id, "Blend", GetFloatByCondition(seaAlarmed, 0.0, 1.0), true);
 }
 
 void UpdateSailorsChatter()
 {
     if (!bPSSload) return;
-    SendMessage(Sound, "llsfl",  MSG_SOUND_EVENT_SET_PARAM, sti(TEV.PSS.SailorsChatter), "Blend", GetFloatByCondition(seaAlarmed, 0.0, 1.0), false);
+    SendMessage(Sound, "llsfl", MSG_SOUND_EVENT_SET_PARAM, sti(TEV.PSS.SailorsChatter), "Blend", GetFloatByCondition(seaAlarmed, 0.0, 1.0), false);
 }
 
 void Ship_RecreateStaticSounds(bool bWeather)

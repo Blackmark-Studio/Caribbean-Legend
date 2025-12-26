@@ -61,6 +61,7 @@ bool chrCheckReload(ref loc, string reloadLocatorName)
 		if(at.name == reloadLocatorName)
 		{
 			if(CheckAttribute(at, "disable")) disableVal = sti(at.disable);
+			if(CheckAttribute(at, "close_for_alarm") && alarmed == 1) disableVal++;
    			if(CheckAttribute(at, "close_for_night") && sti(at.close_for_night)>0 && !IsLocationCaptured(loc.id))//boal fix
 			{
 				if(GetTime()>21.0 || GetTime()<6.0) disableVal++;

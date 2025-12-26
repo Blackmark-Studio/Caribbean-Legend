@@ -976,3 +976,23 @@ Cuando acepté acompañar al anciano, nunca imaginé que tendría que luchar con
 #TEXT	4
 El diario ya es cosa del pasado. He llevado a Gonsalo de vuelta al lugar donde lo encontré — Sharptown. Que viva en paz, si sus pesadillas realmente lo han dejado. Y yo mejor me guardo la lengua — historias así pueden volverse fácilmente contra quien las cuenta.
 
+#QUEST ClockTower
+The Clock Tower
+#TEXT	1
+Apparently, the WIC trades in more than just useless licenses and tools. If I make myself useful to them, perhaps the Company will prove useful to me in turn. The most obvious way is to raise my reputation with the Dutch colonies to Admiration.
+#TEXT	2
+I've done enough for the Republic of the Free Provinces. Time to have a chat with that pleasant fellow Johan, the guard at the Ship Registry Office.
+#TEXT	3
+Remarkable that this outfit is still afloat! My doubloons aren't enough for them, so I'll have to hunt some pirates and collect five ship's logs. I could get more, since they made it quite clear the office will be willing to pay handsomely for them in the future. If only I'd known sooner…
+#TEXT	4
+Logs collected. Time to talk to Johan.
+#TEXT	5
+What a long day. Willemstad will remember the arrival of the Director for a long time. And though I'm now a client and van Doorn was incredibly courteous with me… I have another job offer. I need to break into the tower at night and steal van Doorn's original contract. They've promised me a reward in doubloons and unlimited access to the office's services.
+#TEXT	6
+I've got the contract! Van Doorn has truly overstayed his welcome in that tower. Deputy Visser will be beside himself with joy. I can find him during the day in the central wing of the building.
+#TEXT	7
+Now all that's left is to wait. I should visit Visser in a couple of months and find out how his coup went.
+#TEXT	8
+I think enough time has passed. Time to check on Visser in Curaçao.
+#TEXT	9
+That's that. The Deputy… or rather, Director Maarten Visser got what he wanted and kept his word: I can use the office's services at any time without those ridiculous appointments. Van Doorn, of course, found out about my involvement in this dubious affair, but I have nothing to fear from the might of his legendary frigate. The WIC flagship will only come for my soul if the Dutch consider me a sufficient threat to their interests. They say this ship is a true jewel of the Caribbean Sea… tempting, damn it.

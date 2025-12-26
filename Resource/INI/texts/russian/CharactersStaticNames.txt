@@ -90,6 +90,7 @@ de Kuencka {де Куэнка}
 Lolita {Лолита}
 Martin {Мартин}
 Thomas {Томас}
+Johan {Йохан}
 Johanna {Йоханна}
 Francois {Франсуа}
 Levasseur {Левассер}
@@ -144,3 +145,16 @@ d'Aubuisson {д'Обюссон}
 Alicia {Алисия}
 Chardon {Шардон}
 de Maldonado {де Мальдонадо}
+Maarten {Маартен}
+Visser {Виссер}
+Hendrik {Хендрик}
+van Doorn {ван Дорн}
+Jan {Ян}
+Brouwer {Брауэр}
+Bartel {Бартел}
+van der Waerden {ван дер Верден}
+Niels {Нильс}
+Ferguson {Фергюсон}
+Willebrord {Виллеброрд}
+Snellius {Снеллиус}
+Stieltjes {Стилтьес}

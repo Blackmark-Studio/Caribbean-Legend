@@ -280,7 +280,6 @@ void LAi_NPC_MushketerEquip(ref chr)
 	chr.isMusketer = true;
 	chr.isMusketer.weapon = true; // Jason: а пули с порохом кто удалять будет? И вообще, что за муть - менять мушкет при каждой установке типа?
 	if (!CheckAttribute(chr, "MusketerDistance")) chr.MusketerDistance = 10.0 + frand(10.0);
-	UpdateNpcFightAI(chr);
 }
 
 string LAi_NPC_EquipBladeSelection(ref chr)

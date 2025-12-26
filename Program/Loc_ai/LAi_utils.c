@@ -1001,6 +1001,32 @@ void LAi_FadeToBlackEnd()
 	SendMessage(&LAi_QuestFader, "lfl", FADER_IN, 1.0, true);
 }
 
+void LAi_FadeEx(int f_start, int f_duration, int f_end, string questFadeOut, string questFadeDuration, string questFadeIn)
+{
+	if(questFadeOut != "") DoQuestFunctionDelay(questFadeOut, f_start);
+	if(questFadeDuration != "") DoQuestFunctionDelay(questFadeDuration, f_start + f_duration);
+	if(questFadeIn != "") DoQuestFunctionDelay(questFadeIn, f_start + f_duration + f_end);
+	
+	if(IsEntity(&LAi_QuestFader))
+	{
+		Trace("LAi_Fade -> previous fade operation not ended!");
+		return;
+	}
+	//Fader
+	pchar.FadeEx.End = f_end;
+	CreateEntity(&LAi_QuestFader, "fader");
+	SendMessage(&LAi_QuestFader, "lfl", FADER_OUT, f_start, false);
+	DoQuestFunctionDelay("LAi_FadeEx_end", f_start + f_duration);
+}
+
+void LAi_FadeEx_end(string qName)
+{
+	int f_end = pchar.FadeEx.End;
+	DelEventHandler("FaderEvent_EndFade", "LAi_FadeToBlackEnd");
+	SendMessage(&LAi_QuestFader, "lfl", FADER_IN, f_end, true);
+}
+
+
 //Вывести экран в темноту, через указанное время вернуть
 void LAi_FadeDelay(float _delayTime, string sPath)
 {

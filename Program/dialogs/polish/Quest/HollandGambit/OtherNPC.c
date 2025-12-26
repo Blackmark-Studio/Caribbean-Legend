@@ -37,7 +37,7 @@ void ProcessDialogEvent()
 		
 		case "Baltazar_1":
 			dialog.text = "Co do diabła, jestem już bardziej znany niż wicekról! Kim jesteś? Czego chcesz?";
-			link.l1 = "Jestem Kapitanem "+GetFullName(pchar)+". Zostałem wysłany do ciebie przez Lukasa Rodenburga. Mam upoważnienie, aby wziąć ciebie i twój statek pod moją ochronę.";
+			link.l1 = "Jestem Kapitanem "+GetFullName(pchar)+"Zostałem wysłany do ciebie przez Lukasa Rodenburga. Mam upoważnienie, aby wziąć ciebie i twój statek pod moją ochronę.";
 			link.l1.go = "Baltazar_2";			
 		break;
 		
@@ -118,7 +118,7 @@ void ProcessDialogEvent()
 		
 		//командировка в Сантьяго
 		case "Santiago_Trip":
-			dialog.text = "Kolego! Czekaj... wygląda na to, że coś upuściłeś...";
+			dialog.text = "Sznor! Czekaj... wygląda na to, że coś upuściłeś...";
 			link.l1 = "Co? Ah?!";
 			link.l1.go = "Santiago_Trip_1";
 		break;
@@ -127,7 +127,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			PlaySound("People Fight\Death_NPC_08.wav");
 			pchar.GenQuest.FrameLockEsc = true;
-			SetLaunchFrameFormParam("Straciłeś przytomność od uderzenia w tył głowy...", "", 0, 4);
+			SetLaunchFrameFormParam("You were knocked unconscious from behind", "", 0, 4);
 			LaunchFrameForm();
 			WaitDate("", 0, 0, 0, 15, 10); //крутим время
 			RecalculateJumpTable();
@@ -142,44 +142,44 @@ void ProcessDialogEvent()
 		
 		case "Santiago_Trip_3":
 			dialog.text = "Spokojnie, spokojnie, przyjacielu - inaczej będę musiał cię znów uspokoić. Nie chcemy, aby te marionetki wpadły tutaj, brzęcząc swoimi zardzewiałymi mieczami, prawda? Musimy porozmawiać na spokojnie.";
-			link.l1 = "Oddaj mi mój miecz, ty jebany skurwysynie, i WTEDY sobie spokojnie porozmawiamy, przysięgam!";
+			link.l1 = "Oddaj mi mój miecz, skurwysynie, a pogadamy sobie miło, przysięgam!";
 			link.l1.go = "Santiago_Trip_4";
 		break;
 		
 		case "Santiago_Trip_4":
-			dialog.text = "Cóż za temperament, nieprawdaż? Na razie nie ma potrzeby używać stali. Powiedz mi, co chcę wiedzieć, a może wyjdziesz stąd w jednym kawałku. Wyraziłem się jasno? Porozmawiajmy więc trochę.\nMilczysz? Dobrze, mamy więc umowę. Co przyniosłeś od Rodenburga do bankiera?";
-			link.l1 = "List. To wszystko?";
+			dialog.text = "Jesteś szybkim małym człowieczkiem, prawda? Na razie nie ma potrzeby używać stali. Powiedz mi, co chcę wiedzieć, a może wyjdziesz stąd w jednym kawałku. Czy jestem jasny? Porozmawiajmy więc trochę.\nMilczysz? Dobrze, mamy więc umowę. Co przyniosłeś od Rodenburga do bankiera?";
+			link.l1 = "List.";
 			link.l1.go = "Santiago_Trip_5";
 		break;
 		
 		case "Santiago_Trip_5":
 			dialog.text = "Sprytnie. Wiem, że to nie był bukiet stokrotek. Co było w tym liście, chłopcze?";
-			link.l1 = "Skąd mam to wiedzieć? Nie mam w zwyczaju czytać powierzonej mi korespondencji. Może to była wiadomość miłosna. Wiesz, co mówią o ludziach u władzy... Brat brata w dupe harata i takie tam.";
+			link.l1 = "Skąd mam wiedzieć? Nie mam zwyczaju czytać korespondencji powierzonej mi. Może to była wiadomość miłosna. Wiesz, co mówią o ludziach u władzy...";
 			link.l1.go = "Santiago_Trip_6";
 		break;
 		
 		case "Santiago_Trip_6":
 			dialog.text = "...Uczciwy kapitan to dość rzadki widok w tych nędznych czasach. Cóż, to zła wiadomość dla ciebie. Co powiedział ten cholerny bankier, kiedy otrzymał paczkę? Jakie ma interesy z Holendrami?";
-			link.l1 = "Handlują przemycanym perfumem z Francji... albo bawarskim  krowim gównem, tak myślę.";
+			link.l1 = "Handlują przemycanym perfumem z Francji... albo bawarskim gównem krowim, tak myślę.";
 			link.l1.go = "Santiago_Trip_7";
 			link.l2 = "Chodziło o rekompensatę za coś. To wszystko, co wiem.";
 			link.l2.go = "Santiago_Trip_8";
 		break;
 		
 		case "Santiago_Trip_7":
-			dialog.text = "Jesteś odważnym gościem... I masz też poczucie humoru. Szkoda byłoby cię zabić. Gaston by cię polubił. Chociaż... zostań tu na razie. Powinienem coś sprawdzić, a Miguel będzie się tobą opiekował, gdy mnie nie będzie.";
+			dialog.text = "Jesteś odważnym gościem... I masz też poczucie humoru. Byłoby szkoda cię zabić. Gaston by cię polubił. Chociaż... zostań tu na razie. Powinienem coś sprawdzić, a Miguel będzie się tobą opiekował, gdy mnie nie będzie.";
 			link.l1 = "Przysięgam, 'mój przyjacielu' - pożałujesz tego! ";
 			link.l1.go = "Santiago_Trip_9";
 		break;
 		
 		case "Santiago_Trip_8":
-			dialog.text = "Wszystko jasne... Gdy sytuacja wygląda ponuro, nasz dzielny kapitan wykazuje rozsądek. Mogłeś to zrobić dużo wcześniej i zaoszczędziłbyś nam czasu oraz kłopotów. Cóż, muszę iść coś sprawdzić, ale potem wrócę i porozmawiamy, o ile będzie jeszcze taka potrzeba. Zostań tutaj na razie. Miguel będzie się tobą opiekował, gdy mnie nie będzie.";
+			dialog.text = "Wszystko minęło... Gdy sytuacja wygląda ponuro, nasz dzielny kapitan wykazuje rozsądek. Mogłeś to zrobić dużo wcześniej i zaoszczędziłbyś nam czasu oraz kłopotów. Cóż, muszę iść coś sprawdzić, ale potem wrócę i porozmawiamy, o ile będzie jeszcze taka potrzeba. Zostań tutaj na razie. Miguel będzie się tobą opiekował, gdy mnie nie będzie.";
 			link.l1 = "Przysięgam, 'mój przyjacielu' - pożałujesz tego! ";
 			link.l1.go = "Santiago_Trip_11";
 		break;
 		
 		case "Santiago_Trip_9":
-			dialog.text = "Ależ oczywiście. Zachowaj spokój, 'bohaterze' - być może, wszystko jeszcze będzie dobrze.";
+			dialog.text = "Ale oczywiście. Zachowaj spokój, 'bohaterze' - być może, wszystko jeszcze będzie dobrze.";
 			link.l1 = "... ";
 			link.l1.go = "Santiago_Trip_11";
 		break;
@@ -217,8 +217,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Santiago_Trip_14":
-			dialog.text = "Co za bałagan! Zastanawiałem się, o co chodzi z tym hałasem. Moje gratulacje - jesteś całkiem porywczy i w dodatku skuteczny!";
-			link.l1 = "Mądrzejszy i śmielszy, niż myślisz... Zobaczmy teraz, jak poradzisz sobie przeciw uzbrojonemu przeciwnikowi!";
+			dialog.text = "Co za bałagan! Zastanawiałem się, o co chodzi z tym hałasem. Moje gratulacje - jesteś bystrym facetem!";
+			link.l1 = "Mądrzejszy, niż myślisz... Zobaczmy teraz, co potrafisz przeciw uzbrojonemu przeciwnikowi!";
 			link.l1.go = "Santiago_Trip_15";
 		break;
 		
@@ -252,7 +252,7 @@ void ProcessDialogEvent()
 		//убрать испанского идальго
 		case "Fernando":
 			dialog.text = "Czego ode mnie chcesz?";
-			link.l1 = "Twojej głowy!";
+			link.l1 = "Twoja głowa!";
 			link.l1.go = "Fernando_fight";
 			link.l2 = "Nieważne, zapomnij.";
 			link.l2.go = "exit";	
@@ -261,7 +261,7 @@ void ProcessDialogEvent()
 		
 		case "Fernando_repeat":
 			dialog.text = "„To znowu ty? Czego ode mnie chcesz?! Wytłumacz się!”";
-			link.l1 = "Twojej głowy!";
+			link.l1 = "Twoja głowa!";
 			link.l1.go = "Fernando_fight";
 			link.l2 = "Nic, nieważne.";
 			link.l2.go = "exit";	
@@ -285,7 +285,7 @@ void ProcessDialogEvent()
 		case "Fleetwood_soldier"://для любителей сунуть нос куда не надо
 			if (CheckAttribute(npchar, "quest.talked"))
 			{
-			dialog.text = "To znowu ty? Dlaczego się tu kręcisz? Wcale mi się to nie podoba. Dobra, aresztuję cię i wyślę do biura komendanta na przesłuchanie. Chłopcy, łapcie tego gościa!";
+			dialog.text = "To znowu ty? Dlaczego się tu kręcisz? Wcale mi się to nie podoba. Dobra, aresztuję cię i wyślę do biura komendanta na przesłuchanie. Chłopcy, złapcie tego gościa!";
 			link.l1 = "Ale ja tylko chciałem...";
 			link.l1.go = "Fleetwood_soldier_4";	
 			}
@@ -327,7 +327,7 @@ void ProcessDialogEvent()
 		
 		case "Theft_soldier":
 			dialog.text = "Ah! Złodzieje? Szpiedzy? Trzymaj się teraz kapelusza!";
-			link.l1 = "Szlag!";
+			link.l1 = "Hup!";
 			link.l1.go = "Attack_Theft_soldier";			
 		break;
 		
@@ -344,7 +344,7 @@ void ProcessDialogEvent()
 		
 		case "Attack_soldier":
 			dialog.text = "Ach! Co ten gość tu robi? Chłopcy, mamy tu szpiega! Do broni!";
-			link.l1 = "Szlag!";
+			link.l1 = "Hup!";
 			link.l1.go = "Attack_soldier_fight";			
 		break;
 		
@@ -367,7 +367,7 @@ void ProcessDialogEvent()
 		//Книппель-пленник в трюме
 		case "Sailor_deck":
 			chrDisableReloadToLocation = true;
-			dialog.text = "Kapitanie, przesłuchaliśmy tego łotra, jak nam kazałeś. Musieliśmy go trochę przypiec... Miał przy sobie ten list. Próbował go zjeść, ale mu nie pozwoliliśmy. Tak jak się spodziewaliśmy, miał zabrać jakąś dziewczynę w Willemstad i przyprowadzić ją do swojego szefa.";
+			dialog.text = "Kapitánie, przesłuchaliśmy tego łotra, jak nam kazałeś. Musieliśmy go trochę przypiec... Miał przy sobie ten list. Próbował go zjeść, ale mu nie pozwoliliśmy. Tak jak się spodziewaliśmy, miał zabrać jakąś dziewczynę w Willemstad i przyprowadzić ją do swojego szefa.";
 			link.l1 = "List? Daj no, zerknę na niego. Potem sam z nim pogadam.";
 			link.l1.go = "Sailor_deck_1";			
 		break;

@@ -220,7 +220,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "meeting_4":
-			dialog.text = "Jasne kapitanie. Będę do ciebie mówił „kapitanie” jeśli Ci to nie przeszkadza, "+GetAddress_Form(NPChar)+"? Zostawię wszystkie moje badania na wypadek, gdybyś potrzebował moich praktycznych umiejętności lub teoretycznej wiedzy.";
+			dialog.text = "Jasne, Kapitanie. Nazwę cię Kapitanem, "+GetAddress_Form(NPChar)+", jeśli nie masz nic przeciwko? Zostawię wszystkie moje badania na wypadek, gdybyś potrzebował moich praktycznych umiejętności lub teoretycznej wiedzy.";
 			link.l1 = "Wspaniale. Cieszę się, że tak szybko się zrozumieliśmy. Nie martw się o swoje wydatki, ja lub mój kwatermistrz zostawimy ci od czasu do czasu rozsądne sumy.";
 			link.l1.go = "meeting_5";
 		break;
@@ -636,7 +636,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_4":
-			dialog.text = "Był wśród Indian z ludu Itza, którzy podróżowali z Tayasal w poszukiwaniu Maski Kukulkana - artefaktu prastarego boga Majów o tym właśnie imieniu. Niestety, w trakcie wędrówki Indianie napotkali grupkę białych awanturników prowadzoną przez niejakiego Archibalda Calhouna - łowcę skarbów ze Szkocji. Przeżył tylko jeden Indianin, nazywał się Ksatl Cha. Miał przy sobie trzy zadziwiające przedmioty, ale opowiem ci o nich później. \nCalhoun próbował zmusić więźnia, by wyśpiewał wszystko o skarbach, ale ten milczał. Dlatego właśnie Szkot dostarczył go do Santiago, prosto w łapy ojca Vincento, a w zamian za to dostał roczne pozwolenie na odwiedzanie hiszpańskich kolonii. Wiedział, że inkwizytor bardzo interesuje się wszelkiego rodzaju lokalnymi tajemnicami i legendami. Vincento zmusił Indianina do mówienia. Zaczął mówić dużo, opowiedział nam wszystko, co wiedział, a informacje, które od niego uzyskaliśmy, zszokowały samego inkwizytora.";
+			dialog.text = "Był wśród Indianin z ludu Itza, którzy podróżowali z Tayasal w poszukiwaniu Maski Kukulkana - artefaktu prastarego boga Majów o tym właśnie imieniu. Niestety, w trakcie wędrówki Indianie napotkali grupkę białych awanturników prowadzoną przez niejakiego Archibalda Calhouna - łowcę skarbów ze Szkocji. Przeżył tylko jeden Indianin, nazywał się Ksatl Cha. Miał przy sobie trzy zadziwiające przedmioty, ale opowiem ci o nich później. \nCalhoun próbował zmusić więźnia, by wyśpiewał wszystko o skarbach, ale ten milczał. Dlatego właśnie  Szkot dostarczył go do Santiago, prosto w łapy ojca Vincento, a w zamian za to dostał roczne pozwolenie na odwiedzanie hiszpańskich kolonii. Wiedział, że inkwizytor bardzo interesuje się wszelkiego rodzaju lokalnymi tajemnicami i legendami. Vincento zmusił Indianina do mówienia. Zaczął mówić dużo, opowiedział nam wszystko, co wiedział, a informacje, które od niego uzyskaliśmy, zszokowały samego inkwizytora.";
 			link.l1 = "Na Boga, nie mów! Co takiego mogłoby sprawić, że Jego Świątobliwość zadrży?";
 			link.l1.go = "guardoftruth_5";
 		break;
@@ -649,7 +649,7 @@ void ProcessDialogEvent()
 		
 		case "guardoftruth_6":
 			dialog.text = "Och, "+pchar.name+", błagam cię - zachowaj te kpiny dla siebie! Choć tak właściwie, to wcale nie jesteś tak daleko od prawdy. Nasz przypadek jest jednak znacznie bardziej niebezpieczny. Wiemy dobrze, że nawet Potop nie powstrzymałby Europy przed ekspansją w Nowy Świat. Tak to jest, że jednego zabitego od razu zastępuje dziesięciu innych. Kanek nie chciał nas po prostu wyrżnąć. On chciał, by europejska kolonizacja nigdy się nie wydarzyła.";
-			link.l1 = "Hmmm... Nigdy nie wydarzyła? Dosłownie, tak?";
+			link.l1 = "Hmmm... Nigdy nie wydarzyła? Dosłownie, tak?.";
 			link.l1.go = "guardoftruth_7";
 		break;
 		
@@ -672,7 +672,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_10":
-			dialog.text = "Dokładnie! Pewno byłoby wręcz na odwrót - zgaduję, że jakiś indiański 'Kolumb' odkryłby Europę, a my zostalibyśmy niewolnikami, których składanoby w ofierze.";
+			dialog.text = "Dokładnie! Pewno byłoby wręcz na odwrót - zgaduję, że  jakiś indiański 'Kolumb' odkryłby Europę, a my zostalibyśmy niewolnikami, których składanoby w ofierze.";
 			link.l1 = "Możliwe. Tylko że kogo Kanek zamierza wysłać w przeszłość? Jednego z tych swoich nagich wojowników? Hah, wątpię, by był w stanie nauczyć czegokolwiek swoich przodków...";
 			link.l1.go = "guardoftruth_11";
 		break;
@@ -736,7 +736,7 @@ void ProcessDialogEvent()
 		
 		case "guardoftruth_18":
 			dialog.text = "Jakiś czas po rytuale grupa hiszpańskich konkwistadorów prawie dotarła do Tayasal i prawie dostała się do skarbca. Itza udało się zabić wszystkich z wyjątkiem jednego - silnego olbrzyma o wzroście siedmiu stóp.\nKanek obawiał się, że Maskę może skraść każdy obcy, więc postanowił chronić relikwię. Wymyślił własny rytuał, wykorzystując starożytną wiedzę Majów. Wziął trzy przedmioty, które, jak wierzył, posiadały moc białego człowieka. Sztylet, który niegdyś należał do samego Corteza, oraz kompas. Użył również tego sztyletu, by wyciąć kawałek skóry z pleców schwytanego hiszpańskiego olbrzyma jako trzeci przedmiot. Sam człowiek został złożony w ofierze na ołtarzu Kukulkana. Trzy przedmioty zostały użyte w rytuale.\nI z tego rytuału narodziła się nowa wyspa, na otwartym morzu, niedaleko Jukatanu. Nikt nie zna jej lokalizacji, ale Maska jest tam ukryta. Aby ją znaleźć, trzeba użyć sztyletu, kompasu i kawałka skóry. Poza tym, wszystkie przedmioty ze skarbca są przeklęte, żaden z nich nie może opuścić archipelagu.\nPróba ich wywiezienia spowoduje sztorm, który skieruje statek prosto na skały wyspy, gdzie ukryta jest maska. Nazywa się Ksocheatem. Sprytne, prawda?";
-			link.l1 = "Może i zbyt bardzo sprytne. Nie ma co do tego wątpliwości. Ale jakim cudem Ksatl Cha był tak dobrze poinformowany? Wątpię, by Kanek dzielił się taką wiedzą ze zwykłymi wojownikami...";
+			link.l1 = "Może zbyt sprytny. Nie ma co do tego wątpliwości. Ale jakim cudem Ksatl Cha był tak dobrze poinformowany? Wątpię, by Kanek dzielił się taką wiedzą ze zwykłymi wojownikami...";
 			link.l1.go = "guardoftruth_19";
 		break;
 		
@@ -753,8 +753,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_21":
-			dialog.text = "Sztylet 'Szpon Wodza' i kompas 'Strzała Drogi' zostały przekazane Calhounowi, a mapa skórzana 'O dwóch manifestacjach' wciąż jest gdzieś u inkwizycji. Calhoun użył jej jako knebla, by zamknąć usta więźniowi. Nie miał pojęcia, do czego służą te przedmioty.";
-			link.l1 = "Coś ty właśnie powiedział? 'Szpon Wodza'? Do diabła, ten sztylet jest teraz przy mnie! Fadiej dał mi go w ramach spłaty długu wobec mojego brata! Spójrz!";
+			dialog.text = "Sztylet 'Szpon Wodza' i kompas 'Strzała Drogi' zostały przekazane Calhounowi, a mapa skórzana 'O dwóch obliczach' wciąż jest gdzieś u inkwizycji. Calhoun użył jej jako knebla, by zamknąć usta więźniowi. Nie miał pojęcia, do czego służą te przedmioty.";
+			link.l1 = "Coś ty właśnie powiedział? 'Szpon Naczelnika'? Do diabła, ten sztylet jest teraz przy mnie! Fadey dał mi go w ramach spłaty długu wobec mojego brata! Spójrz!";
 			link.l1.go = "guardoftruth_22";
 		break;
 		
@@ -765,7 +765,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_23":
-			dialog.text = "Wszystko, oprócz informacji dotyczących Strażnika Prawdy i sposobu, aby pokazał lokalizację tajemniczej wyspy, na której ukryta jest Maska Kukulkana. Ksatl Cha powiedział mi o tym, kiedy byliśmy sami tuż przed tym, jak podałem mu mieszankę trucizn, by zakończyć jego cierpienie. Zmarł z uśmiechem na twarzy.\nZ pewnością nie mogłem zostać w Santiago po tym, co zrobiłem. Miałem poważne podejrzenia, że stałem się ważnym i niebezpiecznym świadkiem dla inkwizytora. Ojciec Vincento zawsze dostaje to, czego chce, bez względu na koszt. Ksatl Cha powiedział mu o skarbu w Tayasal.";
+			dialog.text = "Wszystko, oprócz informacji dotyczących Strażnika Prawdy i sposobu, aby pokazał lokalizację tajemniczej wyspy, na której ukryta jest Maska Kukulkana. Ksatl Cha powiedział mi o tym, kiedy byliśmy sami tuż przed tym, jak podałem mu mieszankę trucizn, by zakończyć jego cierpienie. Zmarł z uśmiechem na twarzy.\nZ pewnością nie mogłem zostać w Santiago po tym, co zrobiłem. Miałem poważne podejrzenia, że stałem się ważnym i niebezpiecznym świadkiem dla inkwizytora. Ojciec Vincento zawsze dostaje, czego chce, bez względu na koszt. Ksatl Cha powiedział mu o skarbu w Tayasal.";
 			link.l1 = "Te skarby już zostały odnalezione przez pewnego awanturnika imieniem Miguel Dichoso. Czy słyszałeś o nim?";
 			link.l1.go = "guardoftruth_24";
 		break;
@@ -848,7 +848,7 @@ void ProcessDialogEvent()
 		
 		case "guardoftruth_36":
 			dialog.text = "Bądź ostrożny, "+pchar.name+" Ojciec Vincento ma setki oczu i rąk. Bardzo długie ręce...";
-			link.l1 = "Przeszedłem wiele w ciągu ostatnich miesięcy i w tym momencie z pewnością się nie boję, ani ojca Vincento, ani jego oczu i rąk. Czas, abyśmy znaleźli Ksocheatem używając komponentów Strażnika. Czy wiesz, jak to zrobić?";
+			link.l1 = "Przeszedłem wiele w ciągu ostatnich miesięcy i w tym momencie z pewnością się nie boję, ani ojca Vincento, ani jego oczu i rąk. Cokolwiek. Czas, abyśmy znaleźli Ksocheatem używając komponentów Strażnika. Czy wiesz, jak to zrobić?";
 			link.l1.go = "guardoftruth_37";
 		break;
 		
@@ -889,7 +889,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ksochitam_2":
-			dialog.text = "Zgadłem, jak sprawić, by mapa się 'ujawniła'. Czy spojrzałeś na mapę Dwóch Manifestacji?";
+			dialog.text = "Zgadłem, jak sprawić, by mapa się 'ujawniła'. Czy spojrzałeś na mapę Dwóch Wizerunków?";
 			link.l1 = "Hm.  A czy było coś szczególnego?  Jakieś ukryte kontury archipelagu...";
 			link.l1.go = "ksochitam_3";
 		break;
@@ -917,7 +917,7 @@ void ProcessDialogEvent()
 		
 		case "ksochitam_5":
 			dialog.text = "";
-			link.l1 = "Dobra. Nie widziałem nic nowego. Tylko jakieś zamazane kształty wysp i lądu. Co tam mam zobaczyć?";
+			link.l1 = "Mam. Nie widziałem nic nowego. Tylko jakieś zamazane kształty wysp i lądu. Co tam mam zobaczyć?";
 			link.l1.go = "ksochitam_6";
 		break;
 		
@@ -943,7 +943,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ksochitam_9":
-			dialog.text = "W DWÓCH tych samych miejscach, "+pchar.name+"! Dlatego nazywano to mapą Dwóch Manifestacji!";
+			dialog.text = "Na DWÓCH tych samych miejscach, "+pchar.name+"! Dlatego nazywano to mapą Dwóch Wizerunków!";
 			link.l1 = "Co to znaczy?";
 			link.l1.go = "ksochitam_10";
 		break;
@@ -992,7 +992,7 @@ void ProcessDialogEvent()
 		
 		case "ksochitam_17":
 			chrDisableReloadToLocation = false;//открыть локацию
-			dialog.text = ""+pchar.name+" , zróbmy tak: Przynieś mi papierową mapę archipelagu, połącz ją z mapą Dwóch Manifestacji i zaznacz je krzyżykami. Może to da Ci jakieś przypuszczenia?";
+			dialog.text = ""+pchar.name+" , zróbmy tak: Przynieś mi papierową mapę archipelagu, połącz ją z mapą Dwóch Objawień i zaznacz objawienia krzyżykami. Może to da Ci jakieś przypuszczenia?";
 			if (CheckCharacterItem(pchar, "map_bad"))
 			{
 				link.l1 = "Mam tę starą mapę archipelagu.";
@@ -1000,7 +1000,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckCharacterItem(pchar, "map_normal"))
 			{
-				link.l2 = "Posiadam tę mapę archipelagu.";
+				link.l2 = "Posiadam tę wspaniałą mapę archipelagu.";
 				link.l2.go = "ksochitam_17_2";
 			}
 			if (CheckCharacterItem(pchar, "Map_Best"))
@@ -1026,7 +1026,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ksochitam_17_3":
-			dialog.text = "Nie ma mowy, byśmy zniszczyli tak wspaniałą mapę naszymi oznaczeniami. Sam będziesz jej potrzebować, "+pchar.name+". Przynieś mi inną mapę, trochę skromniejszą!";
+			dialog.text = "„Nie ma mowy, byśmy zniszczyli tak wspaniałą mapę naszymi oznaczeniami. Sam będziesz jej potrzebować, "+pchar.name+". Przynieś mi inną mapę, trochę skromniejszą!";
 			link.l1 = "Dobrze...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "ksochitam_map_wait";
@@ -1046,12 +1046,12 @@ void ProcessDialogEvent()
 			}
 			if (CheckCharacterItem(pchar, "map_normal"))
 			{
-				link.l2 = "Mam tę mapę archipelagu.";
+				link.l2 = "Mam tę wspaniałą mapę archipelagu.";
 				link.l2.go = "ksochitam_17_2";
 			}
 			if (CheckCharacterItem(pchar, "Map_Best"))
 			{
-				link.l3 = "Mam tę wspaniałą mapę archipelagu.";
+				link.l3 = "Mam tę wyśmienitą mapę archipelagu.";
 				link.l3.go = "ksochitam_17_3";
 			}
 			link.l4 = "Jeszcze nie, ale już to zamówiłem. Wkrótce to będę miał i będziemy kontynuować...";

@@ -634,11 +634,11 @@ void SetShipOTHERTable(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr3.td2.str = XI_ConvertString("Speed");
 	if (IsCompanion(_chr))
 	{
-		GameInterface.(_tabName).tr3.td3.str = FloatToString(FindShipSpeed(_chr),2) + " / " + FloatToString(stf(refBaseShip.SpeedRate),2);
+		GameInterface.(_tabName).tr3.td3.str = FloatToString(FindShipSpeed(_chr),2) + " / " + FloatToString(FindShipSpeedMax(_chr),2);
 	}
 	else
 	{
-	    GameInterface.(_tabName).tr3.td3.str = FloatToString(stf(refBaseShip.SpeedRate),2);
+	    GameInterface.(_tabName).tr3.td3.str = FloatToString(FindShipSpeedMax(_chr),2);
 	}
 	if (!CheckAttribute(&RealShips[iShip], "Tuning.SpeedRate")) 
 	{
@@ -656,11 +656,11 @@ void SetShipOTHERTable(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr4.td2.str = XI_ConvertString("Maneuver");
 	if (IsCompanion(_chr))
 	{
-  		GameInterface.(_tabName).tr4.td3.str = FloatToString((stf(refBaseShip.turnrate) * FindShipTurnRate(_chr)), 2) + " / " + FloatToString(stf(refBaseShip.TurnRate),2);
+  		GameInterface.(_tabName).tr4.td3.str = FloatToString((stf(refBaseShip.turnrate) * FindShipTurnRate(_chr)), 2) + " / " + FloatToString(FindShipTurnrateMax(_chr),2);
 	}
 	else
 	{
-	    GameInterface.(_tabName).tr4.td3.str = FloatToString(stf(refBaseShip.TurnRate),2);
+	    GameInterface.(_tabName).tr4.td3.str = FloatToString(FindShipTurnrateMax(_chr),2);
 	}
 	if (!CheckAttribute(&RealShips[iShip], "Tuning.TurnRate")) 
 	{

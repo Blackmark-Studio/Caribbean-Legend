@@ -46,7 +46,9 @@ void ProcessDialogEvent()
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 4)
 			{
-				
+				dialog.text = "Cztery.";
+				link.l1 = "Zostały dwa?";
+				link.l1.go = "DiegoDeLanda_Meeting_Fourth_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 5)
 			{
@@ -73,6 +75,12 @@ void ProcessDialogEvent()
 				dialog.text = "Mortimer Grim.";
 				link.l1 = "Znał go pan, rzecz jasna?";
 				link.l1.go = "DiegoDeLanda_Memento_2";
+			}
+			if (CheckAttribute(pchar, "questTemp.DiegoDeLanda_ClockTower"))
+			{
+				dialog.text = ""+GetCharacterName("Hendrik")+" "+GetCharacterName("van Doorn")+".";
+				link.l1 = "Pana klient?";
+				link.l1.go = "DiegoDeLanda_ClockTower_2";
 			}
 		break;
 
@@ -170,6 +178,59 @@ void ProcessDialogEvent()
 		break;
 
 		//<-- Мементо
+		
+		//--> Башня с часами
+		case "DiegoDeLanda_ClockTower_2":
+			dialog.text = "Dowcipnie, Kapitanie. Pan był jego klientem, a on był moim.\n"+
+			"Jak bardzo jesteście do siebie podobni.\n"+
+			"Nie zapomniał pan, jak dostał się do rejestru, prawda? Najpierw pomógł pan chwalebnej Willemstad. By potem utopić we krwi wielu jej synów.";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_ClockTower_3";
+		break;
+		
+		case "DiegoDeLanda_ClockTower_3":
+			dialog.text = "Choć Hendrick nie zdążył tego ostatniego zrobić. Trudny klient, bardzo trudny. Proszę, na przykład. Poczytaj pan w wolnej chwili — kompletna zagadka.";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_ClockTower_4";
+			// получаем документы Маартена
+			ClockTower_AddVisserKey();
+			
+		break;
+		
+		case "DiegoDeLanda_ClockTower_4":
+			dialog.text = "Każdy człowiek to budynek. Chcesz wiedzieć, co naprawdę nim kieruje? Zajrzyj do jego piwnicy.";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_ClockTower_5";
+		break;
+		
+		case "DiegoDeLanda_ClockTower_5":
+			dialog.text = "Proszę.";
+			if (CheckAttribute(pchar, "questTemp.ClockTower_GotHint"))
+			{
+				link.l1 = "Klucz do piwnicy? Już tam byłem.";
+				link.l1.go = "DiegoDeLanda_ClockTower_6";
+			}
+			else
+			{
+				link.l2 = "Co jest w pana piwnicy?";
+				link.l2.go = "DiegoDeLanda_ClockTower_7";
+			}
+		break;
+		
+		case "DiegoDeLanda_ClockTower_6":
+			dialog.text = "\nW takim razie nie mamy już o czym rozmawiać, Kapitanie.";
+			link.l1 = "Obrażony? Ciekawe, co jest w pana piwnicy?";
+			link.l1.go = "DiegoDeLanda_leaving";
+		break;
+		
+		case "DiegoDeLanda_ClockTower_7":
+			dialog.text = "\nKażda nasza rozmowa to krok w dół, Kapitanie.";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_leaving";
+			ClockTower_AddBook_FromDiegoDeLanda(); // получаем ключ от подвала
+		break;
+		
+		//<-- Башня с часами
 
 		//--> Прощание
 		case "DiegoDeLanda_Leaving":
@@ -198,7 +259,10 @@ void ProcessDialogEvent()
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 4)
 			{
-
+				dialog.text = "Same aluzje, patos i żadnego działania\n"+
+				"Przynajmniej z mojej strony. Pan miał działania pod dostatkiem.";
+				link.l1 = "Mam pomysł, jak to naprawić.";
+				link.l1.go = "DiegoDeLanda_Leaving_Fourth_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 5)
 			{
@@ -277,6 +341,13 @@ void ProcessDialogEvent()
 			link.l1.go = "DiegoDeLanda_Leaving_End";
 			link.l2 = "(Zastrzel go)";
 			link.l2.go = "DiegoDeLanda_Leaving_Shoot";
+		break;
+		
+		case "DiegoDeLanda_Leaving_Fourth_2": // Четвёртое прощание
+			dialog.text = "\nZa późno, Kapitanie. Miał pan szansę mnie zastrzelić. I to jaką szansę! Do trzech: raz, dwa, trzy... i nic. Ale nie martw się pan. Na sześć dam panu działanie. Już niedługo.\n"+
+			"Miłego dnia, Kapitanie.";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_Leaving_End";
 		break;
 		
 		case "DiegoDeLanda_Leaving_End":

@@ -11,10 +11,7 @@ itm_stat_descr_damageReduction {Ez a százalék a bejövő sebzésből kerül le
 itm_stat_attack {Damage}
 itm_stat_descr_attack
 {
-Slash attack: #sattack.fast.min#–#sattack.fast.max# dmg 
-Thrust attack: #sattack.force.min#–#sattack.force.max# dmg 
-Group attack: #sattack.round.min#–#sattack.round.max# dmg 
-Heavy attack: #sattack.break.min#–#sattack.break.max# dmg
+Slash attack: #sattack.fast.min#–#sattack.fast.max# dmg Thrust attack: #sattack.force.min#–#sattack.force.max# dmg Group attack: #sattack.round.min#–#sattack.round.max# dmg Heavy attack: #sattack.break.min#–#sattack.break.max# dmg
 }
 itm_stat_gundamage {Firearm damage.}
 itm_stat_descr_gundamage {Damage dealt in ranged combat depends on skills, weapon characteristics, and ammunition.}
@@ -54,16 +51,14 @@ itm_stat_descr_secondary_hat10 {When destroyed, this item returns its primary in
 itm_stat_hat11 {Embrace}
 itm_stat_descr_hat11
 {
-Endurance +2 
-Killing an enemy with a coldarm restores 25% energy.
+Endurance +2 Killing an enemy with a coldarm restores 25% energy.
 }
 itm_stat_potion6 {Resilience}
 itm_stat_descr_potion6 {Drinking this potion prevents stun in combat.}
 itm_stat_berserker_potion {Primal Fury}
 itm_stat_descr_berserker_potion
 {
-Promotes an instant surge of immense power and endurance, greatly boosts agility and reaction speed, dulls pain, and increases aggression.
-Lasts no more than twelve seconds and can be used only once per minute.
+Promotes an instant surge of immense power and endurance, greatly boosts agility and reaction speed, dulls pain, and increases aggression.Lasts no more than twelve seconds and can be used only once per minute.
 }
 itm_stat_mangarosafast {Whirlwind}
 itm_stat_descr_mangarosafast {Using this potion increases attack speed with any weapon by 5%.}
@@ -154,8 +149,7 @@ itm_stat_descr_totem_06 {Exceeding carry weight does not slow the character or a
 itm_stat_totem_07 {Summon}
 itm_stat_descr_totem_07
 {
-New volunteers will join for a lower price, even if they owe debts to the crew.
-Can only be used by the main character. Increases the number of recruits in the tavern by 5%.
+New volunteers will join for a lower price, even if they owe debts to the crew.Can only be used by the main character. Increases the number of recruits in the tavern by 5%.
 }
 itm_stat_totem_08 {Personal involvement}
 itm_stat_descr_totem_08 {Increases damage with aimed naval fire by 10%.}
@@ -170,8 +164,7 @@ itm_stat_descr_totem_12 {Light Weapons deal 15% more damage with fast attacks.}
 itm_stat_totem_13 {Cardsharp}
 itm_stat_descr_totem_13
 {
-Significantly increases your chance to draw the right card and roll the number you need.
-Grants +1 Success.
+Significantly increases your chance to draw the right card and roll the number you need.Grants +1 Success.
 }
 itm_stat_knife_01 {Secret}
 itm_stat_descr_knife_01 {This dagger holds great hidden power. Worn on the chest as a talisman, it can defeat the death.}
@@ -192,16 +185,14 @@ itm_stat_descr_talisman6 {Helps save provisions on the ship, reducing their cons
 itm_stat_talisman7 {Hard Shell}
 itm_stat_descr_talisman7
 {
-Doubles ship repair speed and saves 30% on resources. 
-Reduces sail and hull damage by 5%.
+Doubles ship repair speed and saves 30% on resources. Reduces sail and hull damage by 5%.
 }
 itm_stat_talisman8 {Mithridate}
 itm_stat_descr_talisman8 {Prevents poisoning from enemy weapons.}
 itm_stat_talisman9 {Service}
 itm_stat_descr_talisman9
 {
-Grants +15% to sailor recruitment in French colonies.
-Allows free entry to French brothels and increases Leadership by +1.
+Grants +15% to sailor recruitment in French colonies.Allows free entry to French brothels and increases Leadership by +1.
 }
 itm_stat_talisman10 {Poseidon}
 itm_stat_descr_talisman10 {Allows you to hold your breath underwater for a long time and protects against boiling water.}
@@ -277,9 +268,7 @@ itm_stat_kaleuche_amulet3 {Defense Charm}
 itm_stat_descr_kaleuche_amulet3 {Makes temple Chavinavi monsters vulnerable to weapon damage and grants protection from their attacks. Reduces damage taken from any weapon type by 25% and prevents poisoning.}
 itm_stat_descr_lacrima_patris_bonus
 {
-~
-~
-Current bonus: $number($attr($context.KillerBonus.appliedbonus)) damage and $number($attr($context.KillerBonus.RangeBonus))% range.
+~~Current bonus: $number($attr($context.KillerBonus.appliedbonus)) damage and $number($attr($context.KillerBonus.RangeBonus))% range.
 }
 itm_stat_blade_WR_1 {Diligence}
 itm_stat_descr_blade_WR_1 {Increases health regeneration speed in combat fivefold.}
@@ -293,3 +282,11 @@ itm_stat_PerksPotion {Oblivion}
 itm_stat_descr_PerksPotion {Resets all the character's learned perks. After consumption, the memory of perks and techniques is erased, but the ability remains — as if the body remembers what it once achieved, while the mind no longer does.}
 itm_stat_descr_talisman19_InSlot {Every 2% of the ship’s hull lost increases cannon speed and damage by 0.75% and 0.5%, respectively.}
 itm_stat_descr_talisman19_InInventory {When kept in the inventory, it makes all officers immortal.}
+itm_stat_piratesJournal_1 {Raider}
+itm_stat_descr_piratesJournal_1 {Increases global map speed by 3%. The bonus is doubled if the flagship is 'Amsterdam'. A finest pirate tradition.}
+itm_stat_piratesJournal_2 {Fence}
+itm_stat_descr_piratesJournal_2 {Reduces the penalty on stolen goods by 8%. The bonus is doubled if the flagship is 'Amsterdam'.}
+itm_stat_piratesJournal_3 {Self-Sufficiency}
+itm_stat_descr_piratesJournal_3 {Increases at-sea repair efficiency by 30%. The bonus is doubled if the flagship is 'Amsterdam'.}
+itm_stat_pistol15 {Small but Deadly}
+itm_stat_descr_pistol15 {Drawing and holstering this pistol is 15% faster. Hits strongly knock enemies back.}

@@ -35,7 +35,7 @@ void ProcessDialogEvent()
 			dialog.text = "Chcę wynająć twój statek do przewozu z Gwadelupy na Hiszpański Kontynent.";
 			link.l1 = "Chcesz tam płynąć jako pasażer?";
 			link.l1.go = "citizen_2";
-			link.l2 = "Hiszpański Kontynent? Podziękuję. Nie jesteśmy przyjaciółmi z Hiszpanami. Sugeruję, żebyś znalazł innego głupca.";
+			link.l2 = "Hiszpańska Kontynent? Podziękuję. Nie jesteśmy naprawdę przyjaciółmi z Hiszpanami. Sugeruję, żebyś znalazł innego głupca.";
 			link.l2.go = "citizen_no";
 		break;
 		
@@ -316,7 +316,7 @@ void ProcessDialogEvent()
 			LAi_Fade("", "");
 			GiveItem2Character(pchar, "letter_baker");
 			ChangeItemDescribe("letter_baker", "itmdescr_letter_pinett");
-			dialog.text = "(pisze) Proszę, weź to. W tym pakiecie są dwa podobne listy. Jeden daj bankierowi, niech się nacieszy. Drugi zatrzymaj dla siebie i trzymaj w ukryciu.";
+			dialog.text = "(pisanie) Proszę, weź to. W tym pakiecie są dwa podobne listy. Jeden daj bankierowi, niech się nacieszy. Drugi zatrzymaj dla siebie i trzymaj w ukryciu.";
 			link.l1 = " Czy informacje są godne zaufania?";
 			link.l1.go = "citizen_29";
 		break;
@@ -407,7 +407,7 @@ void ProcessDialogEvent()
 		// Жан Дено
 		case "Juan":
 			dialog.text = "Argh! Ty szumowino! Nie ma mowy, że to przypadkowe spotkanie...";
-			link.l1 = "Prawda to, Jean... wybacz, miałem na myśli Juan. Wytropiłem cię. Teraz bądź łaskaw ruszyć się do mojej ładowni. Odpocznij i porozmawiamy.";
+			link.l1 = "Prawda to, Jean... wybacz, miałem na myśli Juan. Wytropiłem cię. Teraz bądź łaskaw ruszyć się do mojej ładowni? Odpocznij i porozmawiamy.";
 			link.l1.go = "Juan_1";			
 		break;
 		

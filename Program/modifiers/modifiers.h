@@ -32,8 +32,6 @@
 
 #define MELEE "Melee"
 #define RANGE "Range"
-#define BULLET "bulet"
-#define GRAPESHOT "grapeshot"
 
 #define WEAPON_LIGHT 0
 #define WEAPON_MEDIUM 1
@@ -62,3 +60,15 @@
 
 #define SET "has."   // для консистентности нейминга
 #define HAS "has."   // модификатор установки состояния, такие модификаторы складываются в атрибут has и тупо копируются
+
+// Корабельные
+
+#define M_SHIP_HP "shipHP"
+#define M_SHIP_CAPACITY "shipCapacity"
+#define M_SHIP_SPEED "shipSpeed"
+#define M_SHIP_TURNRATE "shipTurnrate"
+#define M_SHIP_WINDAGAINST "shipWindagainst"
+#define M_SHIP_MAXCREW "shipMaxcrew"
+#define M_SHIP_MINCREW "shipMincrew"
+#define M_SHIP_FIRE_DISTANCE "shipFireDistance"
+#define M_SHIP_RELOAD_SPEED "shipReloadSpeed"

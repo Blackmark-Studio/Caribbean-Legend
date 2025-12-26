@@ -108,3 +108,7 @@ sp3_SailorsBoardingBonus_desc {Entermesserfahrung-Bonus: #dSailorsBoardingBonus#
 sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 gefallene Matrosen)}
 sp3_SurrenderChanceBonus_desc {Kapitulationschance erhöht: #dSurrenderChanceBonus#%}
 sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 gefallene Matrosen)}
+sp4 {Piratenjäger}
+sp4_desc {Dieses Schiff wurde speziell dafür gebaut, die Meere von Piraten zu säubern. Mit jedem versenkten Schiff wächst der Zusammenhalt der Crew, die Geschütze werden präziser und der Fanatismus des Kapitäns deutlicher.}
+sp4_desc2 {Jedes zerstörte Piratenschiff erhöht dauerhaft Wendigkeit, Schussreichweite, Geschwindigkeit auf der Weltkarte und die Nachladegeschwindigkeit der Geschütze. Aktueller Bonus: $percent($attr($context.tuning.modifiers.shipSpeed.trait_SP4)) von 15. ~ Je niedriger die Piratenbedrohung, desto geringer die Unterhaltskosten des Schiffs. Aktueller Bonus: $percent($attr($context.tuning.modifiers.shipSpeed.trait_SP4)) von 40.}
+SpecialityUpgrade {Von der HWIC verbessert}

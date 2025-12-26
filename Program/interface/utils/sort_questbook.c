@@ -9,7 +9,7 @@ void SortQuests(ref sortedIdxs, ref original)
 	object monthNameToIndex;
 	for (i = 1; i < 13; i++)
 	{
-		string temp = "target_month_" + i;
+		string temp = "MonthGen_" + i;
 		string locName = xiStr(temp);
 		monthNameToIndex.(locName) = i;
 	}

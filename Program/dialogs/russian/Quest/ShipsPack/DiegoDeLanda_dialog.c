@@ -46,7 +46,9 @@ void ProcessDialogEvent()
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 4)
 			{
-				
+				dialog.text = "Четыре.";
+				link.l1 = "Осталось два?";
+				link.l1.go = "DiegoDeLanda_Meeting_Fourth_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 5)
 			{
@@ -74,11 +76,17 @@ void ProcessDialogEvent()
 				link.l1 = "Вы его, разумеется, знали?";
 				link.l1.go = "DiegoDeLanda_Memento_2";
 			}
+			if (CheckAttribute(pchar, "questTemp.DiegoDeLanda_ClockTower"))
+			{
+				dialog.text = ""+GetCharacterName("Hendrik")+" "+GetCharacterName("van Doorn")+".";
+				link.l1 = "Ваш клиент?";
+				link.l1.go = "DiegoDeLanda_ClockTower_2";
+			}
 		break;
 		
 		case "DiegoDeLanda_Meeting_Third_2":
 			dialog.text = "\nЕщё три. На счёт шесть вы всё узнаете.";
-			link.l1 = " Если я не получу от вас внятных ответов прямо сейчас, то я...";
+			link.l1 = "Если я не получу от вас внятных ответов прямо сейчас, то я...";
 			link.l1.go = "DiegoDeLanda_Meeting_Third_3";
 		break;
 		
@@ -90,6 +98,12 @@ void ProcessDialogEvent()
 		
 		case "DiegoDeLanda_Meeting_Third_4":
 			dialog.text = "Прежде всего, я художник. Но давайте не будем торопиться...";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_Meeting_2";
+		break;
+		
+		case "DiegoDeLanda_Meeting_Fourth_2":
+			dialog.text = "\nВсё верно, капитан. Начинается третий акт.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_Meeting_2";
 		break;
@@ -171,6 +185,59 @@ void ProcessDialogEvent()
 		
 		//<-- Мементо
 		
+		//--> Башня с часами
+		case "DiegoDeLanda_ClockTower_2":
+			dialog.text = "Остроумно, капитан. Вы были его клиентом, а он — моим.\n"+
+			"Как же вы похожи.\n"+
+			"Вы же не забыли, как вы попали в реестр? Сначала вы помогли славному городу Виллемстаду. Чтобы потом утопить в крови немало его сыновей.";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_ClockTower_3";
+		break;
+		
+		case "DiegoDeLanda_ClockTower_3":
+			dialog.text = "Впрочем, как раз последнее Хендрик сделать не успел. Сложный клиент, сложный. Вот, например. Почитайте на досуге — сплошная загадка.";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_ClockTower_4";
+			// получаем документы Маартена
+			ClockTower_AddVisserKey();
+			
+		break;
+		
+		case "DiegoDeLanda_ClockTower_4":
+			dialog.text = "Каждый человек есть здание. Хотите узнать, что им истинно движет? Загляните к нему в подвал.";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_ClockTower_5";
+		break;
+		
+		case "DiegoDeLanda_ClockTower_5":
+			dialog.text = "Держите.";
+			if (CheckAttribute(pchar, "questTemp.ClockTower_GotHint"))
+			{
+				link.l1 = "Ключ от подвала? А я уже там был.";
+				link.l1.go = "DiegoDeLanda_ClockTower_6";
+			}
+			else
+			{
+				link.l2 = "А что в вашем подвале?";
+				link.l2.go = "DiegoDeLanda_ClockTower_7";
+			}
+		break;
+		
+		case "DiegoDeLanda_ClockTower_6":
+			dialog.text = "\nТогда нам нечего больше обсуждать, капитан.";
+			link.l1 = "Обиделись? Интересно, а что в вашем подвале?";
+			link.l1.go = "DiegoDeLanda_leaving";
+		break;
+		
+		case "DiegoDeLanda_ClockTower_7":
+			dialog.text = "\nКаждый наш разговор — ступенька туда, капитан.";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_leaving";
+			ClockTower_AddBook_FromDiegoDeLanda(); // получаем ключ от подвала
+		break;
+		
+		//<-- Башня с часами
+		
 		//--> Прощание
 		case "DiegoDeLanda_Leaving":
 			DialogExit();
@@ -198,7 +265,10 @@ void ProcessDialogEvent()
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 4)
 			{
-				
+				dialog.text = "Сплошные намёки, пафос и никакого действия\n"+
+				"С моей стороны, по крайней мере. У вас-то действия было предостаточно.";
+				link.l1 = "У меня есть идея, как это исправить.";
+				link.l1.go = "DiegoDeLanda_Leaving_Fourth_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 5)
 			{
@@ -277,6 +347,13 @@ void ProcessDialogEvent()
 			link.l1.go = "DiegoDeLanda_Leaving_End";
 			link.l2 = "(Пристрелить)";
 			link.l2.go = "DiegoDeLanda_Leaving_Shoot";
+		break;
+		
+		case "DiegoDeLanda_Leaving_Fourth_2": // Четвёртое прощание
+			dialog.text = "\nПоздно, капитан. У вас был шанс застрелить меня. И какой шанс! На счёт три: раз, два, три... и ничего. Но не волнуйтесь. На счёт шесть я дам вам действия. Осталось немного\n"+
+			"Доброго дня, капитан.";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_Leaving_End";
 		break;
 		
 		case "DiegoDeLanda_Leaving_End":

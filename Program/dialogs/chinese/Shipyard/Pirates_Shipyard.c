@@ -762,7 +762,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "好吧, 我们来算算…… 要彻底重建船体, 我需要各150单位的bakaut、绳索、船用丝绸和树脂——以及10000枚金质双倍金币。 别那样看我; 大部分钱都用在材料上。 这活等同于把船拆散再从头重建。";
 			link.l1 = "不, 我不这么认为。 我还没准备好带那么多资源, 也不想为了重建交出一大堆金币。 我会用我现有的东西。";
 			link.l1.go = "FDM_hull_thinking";
-			link.l2 = "唉, 为了我的船还有什么不能做的... 好吧, 成交。";
+			link.l2 = "唉, 为了我的船还有什么不能做的... 好吧, 成交。 ";
 			link.l2.go = "FDM_hull_02";
 		break;
 

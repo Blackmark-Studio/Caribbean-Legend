@@ -5,6 +5,8 @@ void ApplyMigration(ref migrationState)
 	int i;
 	makeref(refShip,ShipsTypes[SHIP_MEMENTO]);
 	refShip.Type.Merchant = false;
+	refship.icons.FirstIconPos = 10+5*16;
+	refship.icons.SecondIconPos = 10+5*16 + 1;
 
 	// Сгенерированные корабли
 	for (i = 0; i < REAL_SHIPS_QUANTITY; i++)
@@ -16,28 +18,4 @@ void ApplyMigration(ref migrationState)
 			RealShips[i].Type.Merchant = false;
 		}
 	}
-
-	ReapplyPerksItems0036();
-}
-
-// Обновляем перки/дескрипторы
-void ReapplyPerksItems0036()
-{
-	InitPerks();
-
-	if(LoadSegment("items\modifiers\init\init.c"))
-	{
-		InitModifiers();
-		UnloadSegment("items\modifiers\init\init.c");
-	}
-
-	object fellows = GetAllFellows(pchar, true);
-	for (int i=0; i < GetAttributesNum(&fellows); i++)
-	{
-		int idx = sti(GetAttributeValue(GetAttributeN(&fellows, i)));
-		ref chr = GetCharacter(idx);
-		if (!CheckAttribute(chr, "perks.list")) continue;
-		ReapplyAllPerks(chr);
-	}
-	trace("Применили фикс перков/предметов");
 }

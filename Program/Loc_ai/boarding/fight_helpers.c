@@ -391,6 +391,13 @@ bool BRD_ExitToInterface(ref chr, int leftCrew, bool IsFort, bool surrender)
 // Все участники на местах, начинаем драку или?..
 void BRD_StartFight(int locIndex, ref boarding_enemy, bool isCabin)
 {
+	if (CheckAttribute(boarding_enemy, "replaceFightWithFunc"))
+	{
+		RunCallbacks(boarding_enemy, "replaceFightWithFunc");
+		DeleteAttribute(boarding_enemy, "replaceFightWithFunc");
+		return;
+	}
+
 	ref location = &Locations[locIndex];
 	if (!isCabin && BRD_IsCrewGiveUpCaptain(boarding_enemy, 1))
 	{

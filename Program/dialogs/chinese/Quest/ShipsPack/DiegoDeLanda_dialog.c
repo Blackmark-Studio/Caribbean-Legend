@@ -46,7 +46,9 @@ void ProcessDialogEvent()
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 4)
 			{
-				
+				dialog.text = "四。";
+				link.l1 = "还剩两个?";
+				link.l1.go = "DiegoDeLanda_Meeting_Fourth_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 5)
 			{
@@ -73,6 +75,12 @@ void ProcessDialogEvent()
 				dialog.text = "莫蒂默.格林。 ";
 				link.l1 = "你当然认识他? ";
 				link.l1.go = "DiegoDeLanda_Memento_2";
+			}
+			if (CheckAttribute(pchar, "questTemp.DiegoDeLanda_ClockTower"))
+			{
+				dialog.text = ""+GetCharacterName("Hendrik")+" "+GetCharacterName("van Doorn")+".";
+				link.l1 = "你的客户?";
+				link.l1.go = "DiegoDeLanda_ClockTower_2";
 			}
 		break;
 
@@ -172,6 +180,59 @@ void ProcessDialogEvent()
 		
 		//< —纪念号
 		
+		//--> Башня с часами
+		case "DiegoDeLanda_ClockTower_2":
+			dialog.text = "真机智,船长。你是他的客户,而他是我的。\n"+
+			"你们多么相似。\n"+
+			"你没忘记自己是怎么进入登记册的吧?先是帮助了光荣的威廉斯塔德城。然后让它许多儿女血流成河。";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_ClockTower_3";
+		break;
+		
+		case "DiegoDeLanda_ClockTower_3":
+			dialog.text = "不过Hendrick没来得及做后面那件事。难缠的客户,非常难缠。比如这个。闲暇时读读看——完全是个谜。";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_ClockTower_4";
+			// получаем документы Маартена
+			ClockTower_AddVisserKey();
+			
+		break;
+		
+		case "DiegoDeLanda_ClockTower_4":
+			dialog.text = "每个人都是一座建筑。想知道什么真正驱使着他们?去看看他们的地窖。";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_ClockTower_5";
+		break;
+		
+		case "DiegoDeLanda_ClockTower_5":
+			dialog.text = "拿着。";
+			if (CheckAttribute(pchar, "questTemp.ClockTower_GotHint"))
+			{
+				link.l1 = "地窖的钥匙?我已经去过了。";
+				link.l1.go = "DiegoDeLanda_ClockTower_6";
+			}
+			else
+			{
+				link.l2 = "你的地窖里有什么?";
+				link.l2.go = "DiegoDeLanda_ClockTower_7";
+			}
+		break;
+		
+		case "DiegoDeLanda_ClockTower_6":
+			dialog.text = "\n那我们就没什么好谈的了,船长。";
+			link.l1 = "生气了?真好奇,你的地窖里有什么?";
+			link.l1.go = "DiegoDeLanda_leaving";
+		break;
+		
+		case "DiegoDeLanda_ClockTower_7":
+			dialog.text = "\n我们的每次对话都是通往那里的一级台阶,船长。";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_leaving";
+			ClockTower_AddBook_FromDiegoDeLanda(); // получаем ключ от подвала
+		break;
+		
+		//<-- Башня с часами
+		
 		//--> 告别
 		case "DiegoDeLanda_Leaving":
 			DialogExit();
@@ -199,7 +260,10 @@ void ProcessDialogEvent()
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 4)
 			{
-				
+				dialog.text = "全是暗示、做作,却没有行动…\n"+
+				"至少我这边是这样。你倒是行动充足。";
+				link.l1 = "我有个主意怎么解决这个问题。";
+				link.l1.go = "DiegoDeLanda_Leaving_Fourth_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 5)
 			{
@@ -278,6 +342,13 @@ void ProcessDialogEvent()
 			link.l1.go = "DiegoDeLanda_Leaving_End";
 			link.l2 = "(开枪打他)";
 			link.l2.go = "DiegoDeLanda_Leaving_Shoot";
+		break;
+		
+		case "DiegoDeLanda_Leaving_Fourth_2": // Четвёртое прощание
+			dialog.text = "\n太晚了,船长。你有机会开枪打我。多好的机会!数到三:一、二、三……什么都没发生。但别担心。数到六,我会给你行动。不用等太久了。\n"+
+			"日安,船长。";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_Leaving_End";
 		break;
 		
 		case "DiegoDeLanda_Leaving_End":

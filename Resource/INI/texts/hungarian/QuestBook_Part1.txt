@@ -1081,6 +1081,10 @@ Ha nem emberi rakományt szállítasz, Grim nem nyúl hozzád. Furcsa, de megvan
 A 'Memento' kalózparadicsomok között hajózik, de ritkán köt ki. A legénység hónapokig a fedélzeten él, mintha félne szilárd talajra lépni. A pletykák szerint a hajó egyszer túlélt egy szörnyû járványt - ezért olyan nehéz megölni a legénységet.
 Ha azt tervezed, hogy felveszed velük a harcot, pakolj több ágyút. A 'Memento' fedélzetre lépése szinte lehetetlen - a legénység úgy harcol, mintha megszállottak lennének, mintha nem félnének a haláltól. Az egyetlen módja, hogy legyôzzük ôket, ha szilánkokra robbantjuk a hajót, és elvisszük a menedéküket. A szilánkok nem ijesztik meg ôket, de a közvetlen grapeshot találatok - az már más kérdés.
 Sok szerencsét. És ne feledjétek a halált.
+#TEXT	4
+"Amsterdam"
+***********************
+The flagship of the esteemed Dutch West India Company. Everything about this vessel is shrouded in secrecy. She's commanded by Hendrik van Doorn, head of the naval registry department on Curaçao — an exceptionally efficient man who provides invaluable services to the wealthiest and most influential captains. Try to earn a place among them, and you may learn more.
 
 #QUEST StoriesTreasures
 Kincses mesék
@@ -1601,3 +1605,25 @@ Excerpts from the diary of Diego Velázquez de Cuéllar
 "After that execution I began to notice strange things. By day the monks intoned of God’s grace, but at night shadows would seem to come alive around us. It felt as if the women’s weeping, the children’s screams, and the savages’ curses echoed in my very ears. Last night one of the sailors died. His body was found torn to pieces, as if wild beasts had fallen upon him. I ordered all to pray, but the prayers were useless. Now I am convinced: it is Atuay. He has laid a curse upon us."
 
 "The curse… It will not leave me. It nests within like a serpent coiling round the heart. Each night I see the burning huts, hear the cries and moans of the dead, calling me to answer. Their charred skeletons rise from the ashes, their hollow sockets stare at me with hatred. Even now, in this room, I hear their steps. The doors creak slowly, as if someone enters, yet I see no one. My hands shake so badly the quill scarcely obeys. There is no salvation. The Lord has forsaken me, as I forsook mercy. They are near. Soon they will take me..."
+
+#QUEST Doc1Sp4
+Report on Brazilian Affairs
+
+#TEXT 1
+CONFIDENTIAL REPORT FOR THE DIRECTORATE Curaçao, May 1654 REGARDING: Situation in Portuguese Brazil
+MILITARY SITUATION Our losses in Brazil continue to mount. Colonel Sebastião Tavora inflicted a series of painful blows against our coastal positions last year. Three of our ships sunk, shore fortifications destroyed.
+POLITICAL SITUATION Intelligence reports curious news from Lisbon. Despite his military successes, Colonel Tavora has fallen from grace at court. The reason - his open opposition to influential trading circles who are secretly negotiating with us to restore commercial ties.
+CURRENT STATUS According to latest intelligence, Tavora and his daughter have been sent into honorable exile. His current whereabouts are presently unknown.
+RECOMMENDATIONS All agents are instructed to determine Colonel Tavora's current location. The presence of even a disgraced patriot and idealist with brilliant military training near the Company's spheres of operation is undesirable.
+CONCLUSION The war continues, but the balance is shifting in our favor, thanks to connections and solidarity within business circles.
+Acting Director, Lucas Rodenburg
+
+#QUEST Doc2Sp4
+Letter from Antigua
+
+#TEXT 1
+D. I've given your proposal serious thought, and my answer is no. And loyalty to the office has nothing to do with it. The bastards sitting on Curaçao are just as greedy as the rest of us. You know damn well I'd gut every last one of them after that cunt threw me and my men under the redcoat boots.
+
+Say what you will, but our Leviathan is the only thing keeping this wild frontier in some semblance of order. Bills of exchange and ship registries are the best thing he's brought to this world. I know you'll say you'd do better, but what if you don't? What then? The crowned heads of Europe don't give a damn about us, and nature abhors a vacuum. You think we'll all be better off when those pirate baron scum seize power?
+
+You had my back then, so I won't report you. Better go home to your family, friend. M.

@@ -86,7 +86,13 @@ void ProcessDialogEvent()
 			}
 		break;
 		
-			case "Naemnik_3":
+		case "Naemnik_2":
+			dialog.text = "J'aimerais dire que tu es plus intelligent qu'eux – mais ce serait un mensonge impie. Même avec tes chiffres, tu n'aurais pas battu ces salauds. Et ta jolie fille aurait fini comme celle couchée à tes pieds...";
+			link.l1 = "Tu parles des esclaves en fuite? Est-ce l'un d'eux? Alors, vous êtes des gens de Bishop?";
+			link.l1.go = "Naemnik_3";
+		break;
+		
+		case "Naemnik_3":
 			dialog.text = "À toutes tes questions — oui. Ça fait plus de deux jours qu'on les pourchasse sur toute l'île avec les troufions. Puis ces salopards se sont divisés. Une partie a fui vers la grotte — la garde les a suivis. Les autres ont filé vers la crique. Dans leur embuscade à un demi-mille à l'ouest d'ici, on a perdu plusieurs gars. Et pendant qu'on se reprenait et se regroupait, ils se sont bien amusés avec cette idiote...";
 			link.l1 = "...";
 			link.l1.go = "Naemnik_6_add";

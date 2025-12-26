@@ -61,16 +61,14 @@ descriptor_descr_Herb {大地的馈赠。主要用于炼金术中制 作膏剂�
 descriptor_descr_Fancy {此物以其典雅外观、镶嵌和昂贵材 质而出众。 佩戴可使领导力提升$number($DescriptorBaseValue(Fancy))。效果可叠加。}
 descriptor_descr_Exotic
 {
-此物不应落入虔诚基督徒之手, 持有者立刻便流言四起, 令人不寒而栗。
-舰队力量提升$percent($DescriptorBaseValue(Exotic)), 效果可叠加。
+此物不应落入虔诚基督徒之手, 持有者立刻便流言四起, 令人不寒而栗。舰队力量提升$percent($DescriptorBaseValue(Exotic)), 效果可叠加。
 }
 descriptor_descr_HighQuality {这把武器工艺精湛, 暴击伤害提升$percent($DescriptorBaseValue(HighQuality))。}
 descriptor_descr_GoodFit {这件护甲贴合度极高, 使任意武器的攻击速度提升$percent($DescriptorBaseValue(GoodFit))。}
 descriptor_descr_HeartDefence {这件护甲在要害部位进行了强化, 可使敌人的暴击伤害降低$percent($DescriptorBaseValue(HeartDefence))。}
 descriptor_descr_Unremarkable
 {
-这种物品人手一件。有了它, 你不会引人注意, 也不会被记住。
-潜行提高$number($DescriptorBaseValue(Unremarkable)), 效果可叠加。
+这种物品人手一件。有了它, 你不会引人注意, 也不会被记住。潜行提高$number($DescriptorBaseValue(Unremarkable)), 效果可叠加。
 }
 descriptor_descr_WeaponType_0 {轻型武器更轻巧灵活, 主要用于单挑。使用此类武器攻击 速度提升5%。}
 descriptor_descr_WeaponType_1 {中型武器兼具重量与速度, 是最灵活多用的选择。非常适合混 战和登船战斗。}
@@ -87,8 +85,7 @@ descriptor_descr_ArmorMaterial_1 {皮甲或许能在醉酒斗殴中保你无恙,
 descriptor_descr_ArmorMaterial_2 {板甲兼顾重量与防护, 关键时刻能救你一命。可减少15%所受伤害。}
 descriptor_descr_ArmorMaterial_3
 {
-冲压护甲为部队批量生产, 广泛用于欧洲战争。 
-可减少22%所受伤害。
+冲压护甲为部队批量生产, 广泛用于欧洲战争。 可减少22%所受伤害。
 }
 descriptor_descr_ArmorMaterial_4 {制造高质量的锻造盔甲是一个复杂 且昂贵的过程, 这使得它在加勒比地区极为罕见。 将所受伤害降低35%。}
 descriptor_descr_AmuletType_0 {借助预兆、海上传说和真实因果。}

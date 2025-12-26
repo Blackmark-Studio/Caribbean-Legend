@@ -345,6 +345,8 @@ int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 	
 	rRealShip.Stolen = isLock;  // ворованность
 
+	if (iBaseType == SHIP_MAYFANG) UPGRD_UpgradeShipAudit(rRealShip);
+
 	return iShip;
 }
 // -> ugeen
@@ -740,10 +742,29 @@ float FindShipSpeed(aref refCharacter)
 		
 		fMaxSpeedZ *= 1.0 + 0.05 * makefloat(rcc);
 	}
-	 
+
 	fMaxSpeedZ = fMaxSpeedZ * fTRFromWeight * fTRFromSkill * fTRFromShipState * fTRFromPeople * fTRFomBreaches;
+	fMaxSpeedZ *= 1.0 + GetAttributeFloat(rShip, "tuning.modifiers." + M_SHIP_SPEED);
 
 	return fMaxSpeedZ;
+}
+
+// Макс скорость для интерфейса, тут сток + бонусы от апгрейдов
+float FindShipSpeedMax(ref chr)
+{
+	ref realShip = GetRealShip(GetCharacterShipType(chr));
+	float base = stf(realShip.SpeedRate);
+	base *= 1.0 + GetAttributeFloat(realShip, "tuning.modifiers." + M_SHIP_SPEED);
+	return base;
+}
+
+// Макс маневр для интерфейса, тут сток + бонусы от апгрейдов
+float FindShipTurnrateMax(ref chr)
+{
+	ref realShip = GetRealShip(GetCharacterShipType(chr));
+	float base = stf(realShip.TurnRate);
+	base *= 1.0 + GetAttributeFloat(realShip, "tuning.modifiers." + M_SHIP_TURNRATE);
+	return base;
 }
 
 float SpeedBySkill(aref refCharacter)
@@ -840,6 +861,7 @@ float FindShipTurnRate(aref refCharacter)
 	float fTurn = fTRFromWeight * fTRFromSkill * fTRFromPeople * fSpeedFromHp * isEquippedArtefactUse(refCharacter, "obereg_10", 1.0, 1.15);
 
 	fTurn = fTurn * isEquippedArtefactUse(refCharacter, "amulet_5", 1.0, 0.9); // гаденыш Согбо belamour 
+	fTurn *= 1.0 + GetAttributeFloat(rShip, "tuning.modifiers." + M_SHIP_TURNRATE);
 	
 	if(CheckAttribute(refCharacter, "Ship.hulls.baller_destroyed")) fTurn *= 0.3; // потеряли руль - уменьшаем манёвренность
 	//Log_info(refCharacter.id + "  " + fTurn);
@@ -1419,6 +1441,7 @@ string GetShipTraitDesc(ref chr)
 		if(GetShipTypeName(chr) == "Galeon_sm")  return "sp1"; 
 		if(GetShipTypeName(chr)  == "LadyBeth")  return "sp2"; 
 		if(GetShipTypeName(chr)  == "Memento")   return "sp3"; 
+		if(GetShipTypeName(chr)  == "Amsterdam") return "sp4"; 
 	}
 	if(!CheckAttribute(&RealShips[nShipType],"Traits")) return "";
 	
@@ -1468,10 +1491,15 @@ float GetModifiedBaseShipPower(ref chr, int baseType)
 {
 	float fMaxPower = GetBaseShipPower(baseType);
 	if (!IsCompanion(chr)) return fMaxPower;
-	if (GetCharacterEquipByGroup(pchar, HAT_ITEM_TYPE) != "hat6") return fMaxPower;
+
+	float mtp = 1.0;
+	if (GetCharacterEquipByGroup(pchar, HAT_ITEM_TYPE) == "hat6")
+	{
+		if (sti(rBaseShip.Spec) == SHIP_SPEC_MERCHANT) mtp += 0.4;
+	}
+
 	ref rBaseShip = &ShipsTypes[baseType];
-	if (sti(rBaseShip.Spec) == SHIP_SPEC_MERCHANT) fMaxPower *= 1.2;
-	return fMaxPower;
+	return fMaxPower * mtp;
 }
 
 float GetRealShipPower(ref rChar)
@@ -1495,6 +1523,7 @@ float GetRealShipPower(ref rChar)
 		kCannons = kCannons + (1.0 - kCannons) * 0.3;
 	}
 
+	fPower *= 1 + GetAttributeFloat(rShip, "tuning.modifiers." + M_SQUADRON_POWER);
 	fPower *= pow(kCrew, 2.25) * 0.45 + pow(kSails, 2.25) * 0.25 + pow(kHull, 2.25) * 0.2 + pow(kCannons, 2.25) * 0.1;
 	return fPower;
 }
@@ -1641,4 +1670,65 @@ void SetCannonsToBort(ref chr, string sBort, int iQty)
 		}	
 	}
 	RecalculateCargoLoad(chr);  // пересчет, тк пушки снялись
+}
+
+float GetAmsterdamMtp(string _temp)
+{
+	return 0.08 * 5-wdmGetNationThreat(PIRATE);
+}
+
+bool ShipTraitCanBeChanged(ref chr, string reason)
+{
+	int nShipType = GetCharacterShipType(chr);
+	if (nShipType == SHIP_NOTUSED) reason = "EmptyShip";
+	else if (!IsFellowOurCrew(chr)) reason = "QuestCompanion";                            // не наш чел
+	else if (CheckAttribute(&RealShips[nShipType], "QuestSP")) reason = "QuestSP";        // шипспаковый
+	else if (sti(RealShips[nShipType].Spec) == SHIP_SPEC_UNIVERSAL) reason = "Universal"; // универсал
+
+	return reason == "";
+}
+
+int GetChangeShipTraitCost(ref chr)
+{
+	int shipClass = GetCharacterShipClass(chr);
+	switch (shipClass)
+	{
+		case 1: return 2000; break;
+		case 2: return 1400; break;
+		case 3: return 1000; break;
+		case 4: return 700; break;
+		case 5: return 350; break;
+		case 6: return 150; break;
+		case 7: return 50; break;
+	}
+}
+
+int GetAuditShipCost(ref chr)
+{
+	int shipClass = GetCharacterShipClass(chr);
+	switch (shipClass)
+	{
+		case 1: return 2500; break;
+		case 2: return 1600; break;
+		case 3: return 1000; break;
+		case 4: return 625; break;
+		case 5: return 350; break;
+		case 6: return 200; break;
+		case 7: return 75; break;
+	}
+}
+
+int GetSpecialityUpgradeShipCost(ref chr)
+{
+	int shipClass = GetCharacterShipClass(chr);
+	switch (shipClass)
+	{
+		case 1: return 3000; break;
+		case 2: return 1800; break;
+		case 3: return 1000; break;
+		case 4: return 550; break;
+		case 5: return 350; break;
+		case 6: return 250; break;
+		case 7: return 100; break;
+	}
 }

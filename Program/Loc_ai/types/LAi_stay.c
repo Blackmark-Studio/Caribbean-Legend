@@ -131,7 +131,10 @@ void LAi_type_stay_StartDialog(aref chr, aref by)
 	}
 	//Если мы пасивны, запускаем шаблон без времени завершения
 	LAi_CharacterSaveAy(chr); 
-	CharacterTurnByChr(chr, by);
+	if(!CheckAttribute(chr, "QuestDiag"))
+	{
+		CharacterTurnByChr(chr, by);
+	}
 	LAi_tmpl_SetActivatedDialog(chr, by);
 }
 

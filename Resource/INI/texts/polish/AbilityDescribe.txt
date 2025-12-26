@@ -5,7 +5,7 @@ newline
 BasicDefense {Podstawowa obrona}
 perkBasicDefense {Odpowiednie trzymanie gardy to podstawa - Zmniejsza otrzymywane obrażenia o $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Zaawansowana obrona}
-perkAdvancedDefense {Obierając odpowiednią pozycje, jesteś w stanie zminimalizować ryzyko bycia trafionym w najbardziej newralgiczne punkty ciała - Zmniejsza otrzymywane obrażenia o $percent($perkBaseValue(AdvancedDefense|1)) oraz obrażenia krytyczne od wroga o $percent($perkBaseValue(AdvancedDefense|2)).}
+perkAdvancedDefense {Obierając odpowiednią pozycje, jesteś w stanie zminimalizować ryzyko bycia trafionym w najbardziej newralgiczne punkty ciała - Zmniejsza otrzymywane obrażenia o $percent($perkBaseValue(AdvancedDefence|1)) oraz obrażenia krytyczne od wroga o $percent($perkBaseValue(AdvancedDefence|2)).}
 CriticalHit {Cios krytyczny}
 perkCriticalHit {Odpowiednio wymierzony cios może odmienić niemal każdą walke - Zwiększa bazową szansę na cios krytyczny o 3,5%.}
 Grus {Mocny kręgosłup}
@@ -21,12 +21,10 @@ perkSliding {Gdy wróg zasłania się przed tobą swym ostrzem, ty wiesz jak trz
 Gunman {Muszkieter}
 perkGunman
 {
-Zwiększa obrażenia i szybkość przeładowania broni palnej o $percent($perkBaseValue(Gunman|1)). Pozwala używać dwuręcznej broni jednostrzałowej oraz jednoręcznej wielostrzałowej.
- ~
- Oficerowie mogą używać $key(descriptor_TwoHanded|ItemsDescriptors.txt) tylko wtedy, gdy zostanie to im wyraźnie polecone.
+Zwiększa obrażenia i szybkość przeładowania broni palnej o $percent($perkBaseValue(Gunman|1)). Pozwala używać dwuręcznej broni jednostrzałowej oraz jednoręcznej wielostrzałowej. ~ Oficerowie mogą używać $key(descriptor_TwoHanded|ItemsDescriptors.txt) tylko wtedy, gdy zostanie to im wyraźnie polecone.
 }
 GunProfessional {Strzelec}
-perkGunProfessional {Zwiększa obrażenia i szybkość przeładowania broni palnej o $percent($perkBaseValue(GunProfessional|1)). Odblokowuje możliwość używania dwuręcznej broni palnej wielostrzałowej.}
+perkGunProfessional {Zwiększa obrażenia i szybkość przeładowania broni palnej o $percent($perkBaseValue(GunProfessional|1)). Odblokowuje możliwość używania wielostrzałowej broni palnej oburęcznej.}
 IronWill {Żelazna wola}
 perkIronWill {Czasami wiara w siebie samego potrafi przenosić góry - Pozwala przetrwać śmiertelną ranę raz na 3 minuty.}
 SharedExperience {Bystry uczeń}
@@ -48,9 +46,7 @@ perkTrustworthy {Odblokowuje alternatywne opcje perswazji w dialogach dla niekt�
 ShipEscape {Druga szansa}
 perkShipEscape
 {
-Ratunek szalupą z tonącego okrętu bohatera na jeden ze statków floty.
-Pozwala podczas bitwy, gdy kadłub statku ma poniżej 15%, użyć menu ładowni, by przenieść się lub przesiąść na inny okręt floty.
-Jeśli towarzysz ma tę umiejętność, ucieknie z tonącego statku lub brandera i wróci jako pasażer na okręt bohatera, spuszczając szalupę.
+Ratunek szalupą z tonącego okrętu bohatera na jeden ze statków floty.Pozwala podczas bitwy, gdy kadłub statku ma poniżej 15%, użyć menu ładowni, by przenieść się lub przesiąść na inny okręt floty.Jeśli towarzysz ma tę umiejętność, ucieknie z tonącego statku lub brandera i wróci jako pasażer na okręt bohatera, spuszczając szalupę.
 }
 Alchemy {Alchemia}
 perkAlchemy {Przepisy nie wymagają Narzędzi. Daje 15% szans na zachowanie mikstury przy użyciu.}
@@ -75,9 +71,7 @@ perkLongRangeGrappling {Dystans abordażu zwiększa się o 15%.}
 MusketsShoot {Salwa muszkietowa}
 perkMusketsShoot
 {
-Salwa z muszkietów zostaje oddana przed abordażem.
-Sojuszniczy muszkieteczy pojawiają się podczas abordażu.
-Liczba ofiar zależy od klasy statku i liczby Gwardzistów.
+Salwa z muszkietów zostaje oddana przed abordażem.Sojuszniczy muszkieteczy pojawiają się podczas abordażu.Liczba ofiar zależy od klasy statku i liczby Gwardzistów.
 }
 GrapplingProfessional {Doświadczony bosman}
 perkGrapplingProfessional {Dystans abordażu zwiększony o 25%. Możliwy pod każdym kątem i przy dowolnej prędkości.}
@@ -100,50 +94,37 @@ perkSailingProfessional {Prędkość i zwrotność statku zwiększone o 5%. Leps
 SeaDogProfessional {Postrach Mórz}
 perkSeaDogProfessional
 {
-Na widok bandery Postrachu Mórz nawet najodważniejsi awanturnicy i banici nie kuszą losu. Zwiększa Siłę Floty o $percent($PerkBaseValue(SeaDogProfessional|1)).
-~
-Umiejętność dostępna tylko dla gracza; wymaga rangi $attr($context.rank).
+Na widok bandery Postrachu Mórz nawet najodważniejsi awanturnicy i banici nie kuszą losu. Zwiększa Siłę Floty o $percent($PerkBaseValue(SeaDogProfessional|1)).~Umiejętność dostępna tylko dla gracza; wymaga rangi $attr($context.rank).
 }
 FlagPir {Wesoły Roger}
 perkFlagPir
 {
-Możliwość zmiany flagi na Wesołego Rogera.
-~
-Umiejętność dostępna tylko dla gracza.
+Możliwość zmiany flagi na Wesołego Rogera.~Umiejętność dostępna tylko dla gracza.
 }
 FlagEng {Flaga Anglii}
 perkFlagEng
 {
-Możliwość zmiany flagi na angielską. Szansa wykrycia zależy od Składania, klasy i liczebności twojej floty, liczebności floty wroga oraz poziomu Zagrożenia.
-~
-Umiejętność dostępna tylko dla gracza
+Możliwość zmiany flagi na angielską. Szansa wykrycia zależy od Składania, klasy i liczebności twojej floty, liczebności floty wroga oraz poziomu Zagrożenia.~Umiejętność dostępna tylko dla gracza
 }
 FlagFra {Flaga Francji}
 perkFlagFra
 {
-Możliwość zmiany flagi na francuską. Szansa wykrycia zależy od Składania, klasy i liczebności twojej floty, liczebności floty wroga oraz poziomu Zagrożenia.
-~
-Umiejętność dostępna tylko dla gracza
+Możliwość zmiany flagi na francuską. Szansa wykrycia zależy od Składania, klasy i liczebności twojej floty, liczebności floty wroga oraz poziomu Zagrożenia.~Umiejętność dostępna tylko dla gracza
 }
 FlagSpa {Flaga Hiszpanii}
 perkFlagSpa
 {
-Możliwość zmiany flagi na hiszpańską. Szansa wykrycia zależy od Składania, klasy i liczebności twojej floty, liczebności floty wroga oraz poziomu Zagrożenia.
-~
-Umiejętność dostępna tylko dla gracza
+Możliwość zmiany flagi na hiszpańską. Szansa wykrycia zależy od Składania, klasy i liczebności twojej floty, liczebności floty wroga oraz poziomu Zagrożenia.~Umiejętność dostępna tylko dla gracza
 }
 FlagHol {Flaga Niderlandów}
 perkFlagHol
 {
-Możliwość zmiany flagi na holenderską. Szansa wykrycia zależy od Składania, klasy i liczebności twojej floty, liczebności floty wroga oraz poziomu Zagrożenia.
-~
-Umiejętność dostępna tylko dla gracza
+Możliwość zmiany flagi na holenderską. Szansa wykrycia zależy od Składania, klasy i liczebności twojej floty, liczebności floty wroga oraz poziomu Zagrożenia.~Umiejętność dostępna tylko dla gracza
 }
 Troopers {Taktyka oblężnicza}
 perkTroopers
 {
-Możliwość połączenia załóg floty przed szturmem fortu.
-Zmniejsza liczbę załogi potrzebnej do rajdu na osadę z lądu.
+Możliwość połączenia załóg floty przed szturmem fortu.Zmniejsza liczbę załogi potrzebnej do rajdu na osadę z lądu.
 }
 BasicCommerce {Podstawowy handel}
 perkBasicCommerce {Zakupy są o 5% bardziej opłacalne. Wyróżnia towary poszukiwane w bankach i na rynku.}
@@ -156,30 +137,24 @@ perkCarpenter {Kadłub i żagle są powoli naprawiane podczas podróży. Wymagan
 InstantRepair {Naprawa w walce}
 perkInstantRepair
 {
-Szybka naprawa w walce do 80% dostępnej wytrzymałości. Wymaga desek do kadłuba i płótna do żagli.
-Można użyć co 1,5 minuty.
+Szybka naprawa w walce do 80% dostępnej wytrzymałości. Wymaga desek do kadłuba i płótna do żagli.Można użyć co 1,5 minuty.
 }
 LightRepair {Awaryjna naprawa}
 perkLightRepair
 {
-Możliwość naprawy 10% kadłuba statku bez zużycia dodatkowych zasobów. Bez tej umiejętności statek powoli się rozpada, gdy HP kadłuba spadnie poniżej 10%. 
-Można użyć co 3 minuty.
+Możliwość naprawy 10% kadłuba statku bez zużycia dodatkowych zasobów. Bez tej umiejętności statek powoli się rozpada, gdy HP kadłuba spadnie poniżej 10%. Można użyć co 3 minuty.
 }
 Builder {Kontrola uszkodzeń}
 perkBuilder {Zużycie desek i płótna żaglowego podczas napraw jest zmniejszone o 25%.}
 SelfRepair {Pełna naprawa}
 perkSelfRepair
 {
-Możliwość całkowitej naprawy statku przez załogę na dowolnym odpowiednim brzegu. Wymagane są deski do kadłuba i masztów oraz płótno do żagli. Możliwa pełna odbudowa kadłuba, żagli i masztów.
-
-Opcje naprawy dostępne tylko na lądzie w lokalizacjach przybrzeżnych.
+Możliwość całkowitej naprawy statku przez załogę na dowolnym odpowiednim brzegu. Wymagane są deski do kadłuba i masztów oraz płótno do żagli. Możliwa pełna odbudowa kadłuba, żagli i masztów.Opcje naprawy dostępne tylko na lądzie w lokalizacjach przybrzeżnych.
 }
 WindCatcher {Morski Instynkt}
 perkWindCatcher
 {
-Statek przyspiesza o 10% szybciej.
-
-Zwiększa prędkość na mapie globalnej na znanych wodach — jeśli masz mapę.
+Statek przyspiesza o 10% szybciej.Zwiększa prędkość na mapie globalnej na znanych wodach — jeśli masz mapę.
 }
 SailsMan {Szybkie żagle}
 perkSailsMan {Dzięki najnowszym metodom kija i marchewki wszystkie operacje na żaglach wykonywane są o 10% szybciej.}
@@ -217,11 +192,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Szybkie ręce}
-perkFastHands {Zwiększa szybkość dobywania i chowania broni palnej o $percent($perkBaseValue(FastHands|1)).}
+perkFastHands {Zwiększa szybkość dobywania i chowania broni palnej o 20%.}
 AmmoRig {Ekwipunek}
-perkAmmoRig {Przeładowanie broni palnej jest o $percent($perkBaseValue(AmmoRig|1)) szybsze.}
+perkAmmoRig {Przeładowanie broni palnej jest o 5% szybsze.}
 Preaim {Przystrzelanie}
-perkPreaim {Tryb celowania szybszy o $percent($perkBaseValue(Preaim|1)).}
+perkPreaim {Tryb celowania szybszy o 15%.}
 KeenEye {Bystre oko}
 perkKeenEye {Strzały w głowę zadają o 40% więcej obrażeń.}
 PowderFeel {Wyczucie prochu}

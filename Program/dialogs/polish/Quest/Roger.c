@@ -59,7 +59,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mtr_officer_2":
-            dialog.text = "Ha-ha! Mówiłem temu żałosnemu durniowi, żeby trzymał gębę na kłódkę! Niebieski bursztyn, prawda?";
+            dialog.text = "Ha-ha! Mówiłem temu żałosnemu durniowi, żeby trzymał gębę na kłódkę! Niebieska ambra, prawda?";
 			link.l1 = "Idziesz we właściwym kierunku, mój dobry panie.";
 			link.l1.go = "Mtr_officer_3";
 		break;
@@ -5180,7 +5180,7 @@ void ProcessDialogEvent()
 			{
 				if (!CheckAttribute(npchar, "sex_date") || GetNpcQuestPastDayParam(npchar, "sex_date") >= 1)
 				{
-					link.l2 = "Mirabelle, już zaczynam za tobą tęsknić. Czy pocałujesz swojego morskiego wilka?";
+					link.l2 = "Mirabelle, już zaczynam tęsknić za tobą i twoim łasicowatym. Czy pocałujesz swojego morskiego wilka?";
 					link.l2.go = "mirabelle_43";
 				}
 			}
@@ -5192,14 +5192,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mirabelle_43":
-            dialog.text = "Ach, mój słodki kapitanie, też tęskniłam za tobą! Chodź, jestem na krawędzi!";
+            dialog.text = "Ach, mój słodki kapitanie, też tęskniłem za tobą! Chodź, jestem na krawędzi!";
 			link.l1 = "...";
 			link.l1.go = "mirabelle_39";
 		break;
 		
 		// Jason Исла Мона
 		case "mirabelle_44":
-			dialog.text = "Señor Kapitan! Kapitan "+pchar.name+"! Jestem taka szczęśliwa! Uratujesz nas?";
+			dialog.text = "Señor Kapitan! Kapitan "+pchar.name+"! Jestem tak szczęśliwy! Uratujesz nas!";
 			link.l1 = "Cieszę się, że cię widzę, Mirabelle. Więc, jakie są straty?";
 			link.l1.go = "mirabelle_45";
 		break;
@@ -5250,7 +5250,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mirabelle_48":
-			dialog.text = "Señor Kapitan!";
+			dialog.text = "Senor Kapitan!";
 			link.l1 = "Witaj i tobie, piękności. Nie nudzisz się, prawda?";
 			link.l1.go = "mirabelle_49";
 		break;
@@ -5306,7 +5306,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mirabelle_57":
-			dialog.text = "Ha-ha! Mój panie! Dziękuję, Señor Kapitanie. Nie wiem, co o tobie mówią w wielkim świecie, ale zawsze widziałem w tobie najżyczliwszą i najjaśniejszą osobę.";
+			dialog.text = "Ha-ha! Mój panie! Dziękuję, Senor Kapitanie. Nie wiem, co o tobie mówią w wielkim świecie, ale zawsze widziałem w tobie najżyczliwszą i najjaśniejszą osobę.";
 			link.l1 = "Powodzenia, Mirabelle.";
 			link.l1.go = "mirabelle_58";
 		break;
@@ -5319,26 +5319,26 @@ void ProcessDialogEvent()
 		
 		// губернатор Картахены
 		case "CartahenaMayor":
-            dialog.text = "Cholerne ladrony! Nieważne, nasz kurier już jest w drodze do Portobelo. Wkrótce nasza eskadra przybędzie i...";
-			link.l1 = TimeGreeting()+" , Wasza Wysokość. Przyjemność zobaczyć cię w tak pięknej rezydencji. Mam nadzieję, że utrzymasz ją po naszym odejściu. Na twoim miejscu nie liczyłbym na eskadrę, poza tym nie zostajemy tu dłużej niż trzy dni. Założę się, że rozumiesz, iż szlachetni donowie z Portobelo nie przybędą tutaj, by wam pomóc, tak szybko. Więc przejdźmy od razu do interesów, dobrze?";
+            dialog.text = "Cholerne ladrony! Nieważne, nasz kurier już jest w drodze do Porto Bello. Wkrótce nasza eskadra przybędzie i...";
+			link.l1 = TimeGreeting()+" , Wasza Wysokość. Przyjemność zobaczyć Was w tak pięknej rezydencji. Mam nadzieję, że utrzymacie ją po naszym odejściu. Na Waszym miejscu nie liczyłbym na eskadrę, poza tym nie zostajemy tu dłużej niż trzy dni. Założę się, że rozumiecie, iż szlachetni donowie z Porto Bello nie przybędą tutaj, by wam pomóc, tak szybko. Więc przejdźmy od razu do interesów, dobrze?";
 			link.l1.go = "CartahenaMayor_1";
 		break;
 		
 		case "CartahenaMayor_1":
             dialog.text = "Już o interesach mówimy? Spójrz przez okno! Spójrz, co twoi rzezimieszkowie robią na ulicach i w domach!";
-			link.l1 = "O, Wasza Wysokość, to nic w porównaniu z tym, co zrobią, jeśli nie będziesz wystarczająco współpracować. Mam nadzieję, że rozumiesz, kim są ci ludzie...";
+			link.l1 = "O, Wasza Wysokość, to nic w porównaniu z tym, co zrobią, jeśli nie będziecie wystarczająco współpracować. Mam nadzieję, że rozumiecie, kim są ci ludzie...";
 			link.l1.go = "CartahenaMayor_2";
 		break;
 		
 		case "CartahenaMayor_2":
-            dialog.text = "Wiem, do czego zdolny jest nikczemny pirat Charlie Książe! Wiem, kto jest jego szefem! Z czasem wypalimy waszą bandycką norę na Hispanioli! Ile?";
+            dialog.text = "Wiem, do czego zdolny jest nikczemny pirat Charlie Prince! Wiem, kto jest jego szefem! Z czasem wypalimy waszą bandycką norę na Hispanioli! Ile?";
 			link.l1 = "Nie trać słów, mój drogi gubernatorze. Lepiej dostarcz mi 250 000 pesos.";
 			link.l1.go = "CartahenaMayor_3";
 		break;
 		
 		case "CartahenaMayor_3":
             dialog.text = "Co?! Twoja bezczelność nie zna granic! To jest rabunek!";
-			link.l1 = "Oczywiście, że to rabunek. Czymże innym mogłoby to być? Zbierzcie swoje elity, kupców i handlarzy, zgromadźcie złoto w wielkiej skrzyni, bo inaczej... zgotuje tobie i twym ludziom znacznie gorszy los.";
+			link.l1 = "Oczywiście, że to rabunek. Czymże innym mogłoby to być? Zbierzcie swoich elit, kupców i handlarzy, zgromadźcie złoto w wielkiej skrzyni, bo inaczej... zrobię wam i waszym ludziom znacznie gorzej.";
 			link.l1.go = "CartahenaMayor_4";
 		break;
 		
@@ -5349,45 +5349,45 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CartahenaMayor_5":
-            dialog.text = "OBYŚ SPŁONĄŁ W PIEKLE, SKURWYSYNIE!!!";
+            dialog.text = "PŁOŃ W PIEKLE, SUKINSONIE!!!";
 			link.l1 = "350 000. Chcesz kontynuować?";
 			link.l1.go = "CartahenaMayor_6";
 		break;
 		
 		case "CartahenaMayor_6":
-            dialog.text = "W mieście nie ma takich pieniędzy!";
+            dialog.text = "Nie ma takich pieniędzy w mieście!";
 			link.l1 = "Kłamiesz. To po prostu niemożliwe. Jesteśmy w stanie zebrać tu przynajmniej milion, ale obawiam się, że nie mamy na to wystarczająco czasu. Dlatego będę miły i hojny. Znasz sumę. Idź i zdobądź ją.";
 			link.l1.go = "CartahenaMayor_7";
 		break;
 		
 		case "CartahenaMayor_7":
-            dialog.text = "Mówię ci jeszcze raz, Charlie Książe: w Kartagenie nie ma takich pieniędzy!";
-			link.l1 = "Och... jak możesz być tak nudny. Tasak! Przeszukaj okolicę i przyprowadź tutaj każdego, kogo znajdziesz. Szukaj dobrze! A my tutaj poczekamy, wasza łaskawość...";
+            dialog.text = "Mówię ci jeszcze raz, Charlie Prince: w Kartagenie nie ma takich pieniędzy!";
+			link.l1 = "Och... jak możesz być tak nudny. Szabla! Przeszukaj okolicę i przyprowadź tutaj każdego, kogo znajdziesz. Szukaj dobrze! A my tutaj poczekamy, wasza łaskawość...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_CartahenaInResidence");
 		break;
 		
 		case "CartahenaMayor_8":
             dialog.text = "";
-			link.l1 = "Ej, señor 'Uparty'! Czyżbyś zmienił zdanie co do zbierania pieniędzy w dobrym mieście Kartagena?... Co się stało, dlaczego nagle jesteś taki poważny?! Wszystko w porządku? Przynieść ci wody?";
+			link.l1 = "Ej, señor 'Uparty'! Czyżbyś zmienił zdanie co do zbierania pieniędzy w dobrym mieście Cartagena?... Co się stało, dlaczego nagle jesteś taki poważny?! Wszystko w porządku? Przynieść ci wody?";
 			link.l1.go = "CartahenaMayor_9";
 		break;
 		
 		case "CartahenaMayor_9":
             dialog.text = "";
-			link.l1 = "Z tego co rozumiem, te dwie damy to twoja żona i córka, mam rację? Trzecia dziewczyna wygląda na służącą, wydaje się, że masz ją gdzieś, więc jej nie zrobimy krzywdy, ale te dwie piękności mogą przyciągnąć uwagę mojego towarzysza, señor Tasak. Wydaje się, że mu się podobają, señor. I co teraz? Zamierzasz zapłacić okup?";
+			link.l1 = "Z tego co rozumiem, te dwie damy to twoja żona i córka, mam rację? Trzecia dziewczyna wygląda na służącą, wydaje się, że masz ją gdzieś, więc jej nie zrobimy krzywdy, ale te dwie piękności mogą przyciągnąć uwagę mojego towarzysza, señor Cutlass. Wydaje się, że mu się podobają, señor. I co teraz? Zamierzasz zapłacić okup?";
 			link.l1.go = "CartahenaMayor_10";
 		break;
 		
 		case "CartahenaMayor_10":
             dialog.text = "Ja... Będę potrzebował czasu.";
-			link.l1 = "Aha! Teraz gadasz! Więc kto tu jest bastardo? Nie obchodziło cię, że moi ludzie terroryzują twoich obywateli, ale te dwie kobiety to już zupełnie inna sprawa, prawda? Odważyłeś się ze mną pieprzyć, draniu? Pokażę ci, co znaczy zadrzeć z Charliem Księciem!";
+			link.l1 = "Aha! Teraz gadasz! Więc kto tu jest bastardo? Nie obchodziło cię, że moi ludzie terroryzują twoich obywateli, ale te dwie kobiety to już zupełnie inna sprawa, prawda? Odważyłeś się ze mną pieprzyć, draniu? Pokażę ci, co znaczy zadrzeć z Charliem Princem!";
 			link.l1.go = "CartahenaMayor_10x";
 		break;
 		
 		case "CartahenaMayor_10x":
             dialog.text = "";
-			link.l1 = "Idź i zbierz, kurwa, okup. 350 000 i ani peso mniej. Masz jeden dzień. My zostaniemy tutaj, by napić się wina i pobawić z tymi słodkimi kobietami... Bądź szybki, amigo, bo ja i mój przyjaciel tutaj, señor Tasak, możemy się zakochać w waszych pięknościach, a wtedy będziesz musiał wykupić także i je. Naprzód! Marsz!";
+			link.l1 = "Idź i zbierz, kurwa, okup. 350 000 i ani peso mniej. Masz jeden dzień. My zostaniemy tutaj, by napić się wina i pobawić z tymi słodkimi kobietami... Bądź szybki, amigo, bo ja i mój przyjaciel tutaj, señor Cutlass, możemy się zakochać w waszych pięknościach, a wtedy będziesz musiał wykupić także i je. Naprzód! Marsz!";
 			link.l1.go = "CartahenaMayor_11";
 		break;
 		
@@ -5399,14 +5399,14 @@ void ProcessDialogEvent()
 		
 		case "CartahenaMayor_12":
 			AddMoneyToCharacter(pchar, 350000);
-            dialog.text = "Weź swoje krwawe pieniądze, Charlie Książe!";
-			link.l1 = "Czy zebrałeś okup? Wspaniale! Ale spóźniłeś się o godzinę, mój drogi gubernatorze. Ta dodatkowa godzina dała mi i Tasakowi zrozumienie, że nasze życie będzie zbyt nudne bez tych piękności, które były tak miłe i rozmowne z nami...";
+            dialog.text = "Weź swoje krwawe pieniądze, Charlie Prince!";
+			link.l1 = "Czy zebrałeś okup? Wspaniale! Ale spóźniłeś się o godzinę, mój drogi gubernatorze. Ta dodatkowa godzina dała mi i Cutlassowi zrozumienie, że nasze życie będzie zbyt nudne bez tych piękności, które były tak miłe i rozmowne z nami...";
 			link.l1.go = "CartahenaMayor_13";
 		break;
 		
 		case "CartahenaMayor_13":
             dialog.text = "Ty... ty!";
-			link.l1 = "Ach, jesteś zbyt nerwowy przez swoją robotę, mój przyjacielu. Żartowałem... Tasak! Chodźmy, wychodzimy!";
+			link.l1 = "Ach, jesteś zbyt nerwowy przez swoją robotę, mój przyjacielu. Żartowałem... Szabla! Chodźmy, wychodzimy!";
 			link.l1.go = "CartahenaMayor_14";
 		break;
 		
@@ -5535,14 +5535,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "camilla_15":
-            dialog.text = "Muszę dotrzeć do La Vega, aby zobaczyć Tyrexa. Boję się go, ale robicie interesy razem. Proszę, zaprowadź mnie do niego.";
+            dialog.text = "Muszę dotrzeć do La Vega, aby zobaczyć Tyreksa. Boję się go, ale robicie interesy razem. Proszę, zaprowadź mnie do niego.";
 			link.l1 = "Spójrz na to! I dlaczego taka słodka, krucha dziewczyna chciałaby zobaczyć Strażnika Kodeksu?";
 			link.l1.go = "camilla_16";
 		break;
 		
 		case "camilla_16":
             dialog.text = "Ta słodka, delikatna dziewczyna chciałaby zarobić trochę grosza. Mój zmarły ojciec i bracia nie zostawili mi wiele pieniędzy. Tyrex może to naprawić.";
-			link.l1 = "O, naprawdę? I jak? Chcesz trop na hiszpański galeon? Ha-ha!";
+			link.l1 = "O, naprawdę? I jak? Chcesz trop na hiszpańską galeonę? Ha-ha!";
 			link.l1.go = "camilla_17";
 		break;
 		
@@ -5565,7 +5565,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "camilla_20":
-            dialog.text = "... Mój tata był kapitanem na kupieckim szkunerze. Pewnego dnia dowiedział się o starym hiszpańskim osiedlu górniczym leżącym głęboko w dżunglach kontynentu. Dwadzieścia lat temu zostało zniszczone przez trzęsienie ziemi. Górnicy je opuścili, a tajne przejścia zostały zapomniane. Z wyjątkiem jednego. Mój ojciec je znalazł\nZabrał tam moich braci i przewodnika, a oni znaleźli miejsce wypełnione złotem wydobytym i wytopionym lata temu. Dużo złota. Co najmniej milion pesos. Ojciec wrócił na statek, aby przyprowadzić ludzi do transportu złota, ale był zszokowany, gdy dowiedział się, że statek zniknął. Wygląda na to, że jego pierwszy oficer rozpoczął bunt i zostawili go oraz moich braci na opuszczonym brzegu\nZbudowali szalupę i popłynęli wzdłuż brzegu, desperacko szukając zamieszkanego miejsca, ale... (szlocha) uderzyła ich burza i moi (szlocha) bracia zginęli. Ojciec przeżył, ale nie żył długo po powrocie do domu - śmierć moich braci powoli go zabijała dzień po dniu. Przed śmiercią sporządził mapę i dał mi ją\nPowiedział mi, że kiedy wyjdę za mąż, mój mąż powinien tam pojechać, zdobyć złoto i będziemy żyć jak królowie. Z pewnością, ale nie pozwolę mojemu mężczyźnie wejść do tych przeklętych dżungli. Nigdy więcej! Milion pesos, mówił mój ojciec, ale to nie moja liga. Taka nagroda, tylko najlepsi i najtwardsi mężczyźni mogą ją zdobyć - mężczyźni jak Marcus Tyrex. Dlatego zamierzam się z nim spotkać.";
+            dialog.text = "... Mój tata był kapitanem na kupieckiej szkunerze. Pewnego dnia dowiedział się o starym hiszpańskim osiedlu górniczym leżącym głęboko w dżunglach Main. Dwadzieścia lat temu zostało zniszczone przez trzęsienie ziemi. Górnicy je opuścili, a tajne przejścia zostały zapomniane. Z wyjątkiem jednego. Mój ojciec je znalazł\nZabrał tam moich braci i przewodnika, a oni znaleźli miejsce wypełnione złotem wydobytym i wytopionym lata temu. Dużo złota. Co najmniej milion pesos. Ojciec wrócił na statek, aby przyprowadzić ludzi do transportu złota, ale był zszokowany, gdy dowiedział się, że statek zniknął. Wygląda na to, że jego pierwszy oficer rozpoczął bunt i zostawili go oraz moich braci na opuszczonym brzegu\nZbudowali szalupę i popłynęli wzdłuż brzegu, desperacko szukając zamieszkanego miejsca, ale... (szlocha) uderzyła ich burza i moi (szlocha) bracia zginęli. Ojciec przeżył, ale nie żył długo po powrocie do domu - śmierć moich braci powoli go zabijała dzień po dniu. Przed śmiercią sporządził mapę i dał mi ją\nPowiedział mi, że kiedy wyjdę za mąż, mój mąż powinien tam pojechać, zdobyć złoto i będziemy żyć jak królowie. Z pewnością, ale nie pozwolę mojemu mężczyźnie wejść do tych przeklętych dżungli. Nigdy więcej! Milion pesos, mówił mój ojciec, ale to nie moja liga. Taka nagroda, tylko najlepsi i najtwardsi mężczyźni mogą ją zdobyć - mężczyźni jak Marcus Tyrex. Dlatego zamierzam się z nim spotkać.";
 			link.l1 = "Ile chcesz za tę mapę?";
 			link.l1.go = "camilla_21";
 		break;
@@ -5583,7 +5583,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "camilla_23":
-            dialog.text = "Mój ksiądz trzyma to w bezpiecznym miejscu. Pokażę ci to za 200 dublonów.";
+            dialog.text = "Mój ksiądz trzyma to w bezpiecznym miejscu. Pokażę ci to za 200 doublonów.";
 			link.l1 = "Bardzo dobrze! Kupuję to. Nieznajomi w tawernach czasem żądają dużo więcej za śmieci.";
 			link.l1.go = "camilla_24";
 		break;

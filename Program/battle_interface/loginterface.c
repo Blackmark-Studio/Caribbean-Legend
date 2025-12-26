@@ -299,6 +299,8 @@ void Notification(string strLog, string ability)
 		case "Folke": IconIndex = 171; break;
 		case "Duran": IconIndex = 172; break;
 		case "Irons": IconIndex = 174; break;
+		case "Baker": IconIndex = 238; break;
+		case "Hugo": IconIndex = 237; break;
 		case "Threat1": IconIndex = 177; break;
 		case "Threat2": IconIndex = 178; break;
 		case "Threat3": IconIndex = 179; break;

@@ -10,6 +10,7 @@ int	wRain = 0;
 #include "weather\WhrSun.c"
 #include "weather\WhrTornado.c"
 #include "weather\WhrAstronomy.c"
+#include "weather\WhrSnow.c"
 
 #define WIND_NORMAL_POWER		20.0
 #define WIND_MAX_POWER			18.0
@@ -963,7 +964,7 @@ void Whr_TimeUpdate()
 		Weather.Time.time = GetTime();
 	}
 
-    if (bSeaActive && nOldHour != nNewHour)
+    if (nOldHour != nNewHour)
         Event("NextHour", "l", nNewHour);
 
 	if(iBlendWeatherNum < 0) return;
@@ -1672,18 +1673,26 @@ void CreateWind(int WindSide, int WindSpeed)
 	Whr_UpdateWeather();
 }
 
-void CreateFogMorning()
+void CreateFog()
 {
+	// Туман работает с 5-8 и 20-23 часов
 	WeatherParams.Fog 			= true;
 	WeatherParams.Fog.ThisDay 	= true;
-	WeatherParams.Fog.Type		= 0;
+	if (GetHour() >= 5 && GetHour() < 9)   WeatherParams.Fog.Type	= 0;
+	if (GetHour() >= 20 && GetHour() < 24) WeatherParams.Fog.Type	= 1;
 	Whr_UpdateWeather();
 }
 
-void CreateFogEvening()
+void StopRain()
 {
-	WeatherParams.Fog 			= true;
-	WeatherParams.Fog.ThisDay 	= true;
-	WeatherParams.Fog.Type		= 1;
+	WeatherParams.Rain 			= false;
+	WeatherParams.Rain.ThisDay 	= false;
+	Whr_UpdateWeather();
+}
+
+void StopFog()
+{
+	WeatherParams.Fog 			= false;
+	WeatherParams.Fog.ThisDay 	= false;
 	Whr_UpdateWeather();
 }

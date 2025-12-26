@@ -340,6 +340,8 @@ My_Deck {Cale}
 My_Ship {Navire}
 Drugstore {Pharmacie}
 HWIC_flat {Quartier général de la CNIO}
+Office of Naval Registry {Bureau de l'Enregistrement Naval}
+Van Doorn's Cellar {Cave de Van Doorn}
 Comendant's House {Maison du Commandant de La Havane}
 Tibo House {Maison d'Henri Thibaut}
 Gaspard_Gold House {Maison de Gaspard Dents-en-Or}

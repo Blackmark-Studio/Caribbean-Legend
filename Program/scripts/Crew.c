@@ -189,6 +189,11 @@ int GetSalaryForShip(ref chref)
 		nPaymentQ = makeint(nPaymentQ * (1 - 0.02 * iThreat));
 	}
 
+	if (ShipBonus2Artefact(chref, SHIP_AMSTERDAM))
+	{
+		nPaymentQ = makeint(makefloat(nPaymentQ) * (1 - GetAmsterdamMtp("")));
+	}
+
 	return nPaymentQ;
 }
 // boal новый учёт зп <--

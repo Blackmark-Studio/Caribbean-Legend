@@ -340,6 +340,8 @@ My_Deck {货舱}
 My_Ship {船只}
 Drugstore {药店}
 HWIC_flat {HWIC总部}
+Office of Naval Registry {船舶登记处}
+Van Doorn's Cellar {Van Doorn的地窖}
 Comendant's House {哈瓦那指挥官宅邸}
 Tibo House {Henri Thibaut宅邸}
 Gaspard_Gold House {Gaspard Goldenteeth宅邸}

@@ -76,7 +76,7 @@ void BRD_InjectPerks(ref chr, int curIdx, ref perkChars, ref location, bool give
 	}
 
 	// затем все остальные
-	if (!replaced && GetAttributesNum(perkChars > 0))
+	if (!replaced && GetAttributesNum(perkChars) > 0)
 	{
 		string charType = GetAttributeName(GetAttributeN(perkChars, 0));
 

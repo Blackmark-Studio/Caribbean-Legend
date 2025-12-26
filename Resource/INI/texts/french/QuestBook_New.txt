@@ -949,3 +949,24 @@ J’ai accepté d’aider le vieil homme, Gonsalo Peralta. Il n’a pas l’air 
 Quand j’ai accepté d’accompagner le vieil homme, je ne pensais pas que je devrais me battre contre des squelettes. Des squelettes ! Heureusement, la chance était de notre côté et, malgré le choc, on a réussi à les repousser. Dans la cabine du capitaine, on a trouvé le coffre de l’évêque, rempli de bijoux et d’un vieux journal appartenant à Diego Velázquez de Cuéllar — le célèbre conquistador et premier gouverneur de Cuba. Même une lecture rapide de ces mémoires donne des frissons. Peut-être que c’est lui, la clé pour lever la malédiction qui tourmente Gonsalo.
 #TEXT	4
 L’histoire du journal est close. J’ai ramené Gonsalo là où je l’ai trouvé — à Sharptown. Qu’il vive en paix, si ses cauchemars l’ont enfin quitté. Quant à moi, mieux vaut que je garde le silence — ce genre d’histoires peut facilement se retourner contre celui qui les raconte.
+
+#QUEST ClockTower
+Tour de l'Horloge
+#TEXT	1
+Apparemment, la CIO fait commerce de bien plus que de simples licences et outils inutiles. Si je me rends utile à leurs yeux, peut-être la Compagnie me sera-t-elle utile en retour. Le plus évident serait d'élever ma réputation auprès des colonies néerlandaises jusqu'à l'Admiration.
+#TEXT	2
+J'en ai assez fait pour la République des Provinces Libres. Il est temps d'avoir une conversation avec ce charmant garçon Johan, le garde du Bureau d'Enregistrement des Navires.
+#TEXT	3
+Remarquable que ce bureau tienne encore debout ! Mes doublons ne leur suffisent pas, je vais donc devoir chasser quelques pirates et récupérer cinq journaux de bord. Je pourrais en obtenir plus, puisqu'ils ont clairement indiqué que le bureau sera prêt à payer généreusement pour ceux-ci à l'avenir. Si seulement j'avais su plus tôt…
+#TEXT	4
+Journaux récupérés. Il est temps de parler à Johan.
+#TEXT	5
+Quelle longue journée. Willemstad se souviendra longtemps de l'arrivée du Directeur. Et bien que je sois maintenant un client et que van Doorn ait été incroyablement courtois avec moi… j'ai une autre offre d'emploi. Je dois m'introduire dans la tour la nuit et voler le contrat original de van Doorn. Ils m'ont promis une récompense en doublons et un accès illimité aux services du bureau.
+#TEXT	6
+J'ai le contrat ! Van Doorn a vraiment trop prolongé son séjour dans cette tour. Le directeur adjoint Visser sera fou de joie. Je peux le trouver pendant la journée dans l'aile centrale du bâtiment.
+#TEXT	7
+Il ne reste plus qu'à attendre. Je devrais rendre visite à Visser dans quelques mois et découvrir comment son coup s'est déroulé.
+#TEXT	8
+Je pense qu'assez de temps s'est écoulé. Il est temps de vérifier comment va Visser à Curaçao.
+#TEXT	9
+Et voilà. Le Directeur adjoint… ou plutôt, le Directeur Maarten Visser a obtenu ce qu'il voulait et a tenu parole : je peux utiliser les services du bureau à tout moment sans ces rendez-vous ridicules. Van Doorn, bien sûr, a découvert mon implication dans cette affaire douteuse, mais je n'ai rien à craindre de la puissance de sa frégate légendaire. Le navire amiral de la CIO ne viendra chercher mon âme que si les Hollandais me considèrent comme une menace suffisante pour leurs intérêts. On dit que ce navire est un véritable joyau de la mer des Caraïbes… tentant, bon sang.

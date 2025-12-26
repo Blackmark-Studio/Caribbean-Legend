@@ -9,5 +9,5 @@ WildRose_8 {Jerome}
 WildRose_9 {Souvernier}
 WildRose_10 {Rupert}
 WildRose_11 {Casper}
-WildRose_12 {Heretyk}
+WildRose_12 {Heretic}
 WildRose_13 {Oddział powinien już być na miejscu...}

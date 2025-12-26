@@ -1184,12 +1184,13 @@ void CalculateInfoDataF25()
     Statistic_AddValue(PChar, "Cheats.F25", 1);
 }
 
-string descF26 = "";
+string descF26 = "DLC 'Башня с часами' - Получить Восхищение у Голландии";
 void CalculateInfoDataF26()
 {
     totalInfo = descF26;
     
 	// пусто
+	ChangeCharacterNationReputation(pchar, HOLLAND, 200);
 	
     totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
@@ -1199,12 +1200,14 @@ void CalculateInfoDataF26()
     Statistic_AddValue(PChar, "Cheats.26", 1);
 }
 
-string descF27 = "";
+string descF27 = "DLC 'Башня с часами' - Получить 5 пиратских журналов";
 void CalculateInfoDataF27()
 {
     totalInfo = descF27;
    
     // пусто
+	pchar.questTemp.ClockTower_CheatJournal = true;
+	ClockTower_FoundJournal_cheat();
 	
     totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";

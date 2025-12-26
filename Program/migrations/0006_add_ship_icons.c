@@ -314,7 +314,7 @@ void ApplyMigration(ref migrationState) {
 	///////////////////////////////////////////////////////////////////////////
 	//// квестовый корабль №0 - 6-ый класс
 	///////////////////////////////////////////////////////////////////////////
-	makeref(refShip,ShipsTypes[SHIP_QUEST0]);
+	makeref(refShip,ShipsTypes[SHIP_AMSTERDAM]);
 	refship.icons.FirstIconPos = 12+1*16;
 	refship.icons.SecondIconPos = 12+1*16 + 1;
 

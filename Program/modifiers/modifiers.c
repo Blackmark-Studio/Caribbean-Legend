@@ -94,6 +94,20 @@ void RunTableCallbacks(ref chr, string callbackName, ref table, ref context)
 	}
 }
 
+// Запустить на объекте коллбэки из его атрибута
+void RunCallbacks(ref rObject, string attributeName)
+{
+	aref callbacksObject;
+	makearef(callbacksObject, rObject.(attributeName));
+
+	for (int i = 0; i < GetAttributesNum(callbacksObject); i++)
+	{
+		aref functionObject = GetAttributeN(callbacksObject, i);
+		string sFunction = GetAttributeName(functionObject);
+		call sFunction(rObject, &functionObject);
+	}
+}
+
 // Удалить личный коллбэк с персонажа, например, от перков
 void RemoveChrCallback(ref chr, string callbackPath)
 {
@@ -129,16 +143,4 @@ void CopyModifier(ref rTo, ref rFrom, string modifier)
 {
 	if (!CheckAttribute(rFrom, modifier)) return;
 	rTo.(modifier) = rFrom.(modifier);
-}
-
-// Складываем бонусы от одного модификатора в другой
-void MergeModifiers(ref rTo, ref rFrom, string modifierNameTo, string modifierNameFrom)
-{
-	if (!CheckAttribute(rFrom, modifierNameFrom)) return;
-
-	aref modifierTo, modifierFrom;
-	makearef(modifierTo, rTo.(modifierNameTo));
-	makearef(modifierFrom, rFrom.(modifierNameFrom));
-	CopyAttributesSafe(modifierTo, modifierFrom);
-	AddToAttributeFloat(rTo, modifierNameTo, GetAttributeFloat(rFrom, modifierNameFrom));
 }

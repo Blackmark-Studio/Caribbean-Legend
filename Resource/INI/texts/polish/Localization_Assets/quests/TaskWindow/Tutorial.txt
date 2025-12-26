@@ -18,7 +18,7 @@ Tutorial_17 {Wygraj bitwę!}
 Tutorial_18 {Zatop pozostałe statki piratów}
 Tutorial_19 {Atakuj wroga}
 Tutorial_20 {@<key1> Cięcie}
-Tutorial_21 {@<key1> Szybki atak}
+Tutorial_21 {@<key1> Wypad}
 Tutorial_22 {@<key1> Przebijający atak}
 Tutorial_23 {Broń się}
 Tutorial_24 {@<key1> Blokuj ataki}

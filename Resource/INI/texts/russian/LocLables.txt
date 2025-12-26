@@ -340,6 +340,8 @@ My_Deck {Трюм}
 My_Ship {Корабль}
 Drugstore {Аптека}
 HWIC_flat {Штаб-квартира ГВИК}
+Office of Naval Registry {Контора корабельного учёта}
+Van Doorn's Cellar {Подвал ван Дорна}
 Comendant's House {Дом коменданта Гаваны}
 Tibo House {Дом Анри Тибо}
 Gaspard_Gold House {Дом Гаспара Златозубого}

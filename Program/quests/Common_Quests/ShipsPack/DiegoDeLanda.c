@@ -15,6 +15,11 @@ void DiegoDeLanda_Leaving()
 		DiegoDeLanda_Leaving_Memento();
 		DeleteAttribute(pchar, "questTemp.DiegoDeLanda_Memento");
 	}
+	if (CheckAttribute(pchar, "questTemp.DiegoDeLanda_ClockTower"))
+	{
+		DiegoDeLanda_Leaving_ClockTower();
+		DeleteAttribute(pchar, "questTemp.DiegoDeLanda_ClockTower");
+	}
 }
 
 void DiegoDeLanda_Leaving_2(string qName)
@@ -58,6 +63,18 @@ void DiegoDeLanda_Leaving_Memento()
 	DoQuestFunctionDelay("DiegoDeLanda_Leaving_2", 2.0);
 }
 //<-- Мементо
+
+//--> Башня с часами
+void DiegoDeLanda_Leaving_ClockTower()
+{
+	LAi_SetStayType(pchar);
+	sld = CharacterFromID("DiegoDeLanda");
+	ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto2");
+	LAi_SetActorType(sld);
+	LAi_ActorGoToLocator(sld, "goto", "goto6", "", -1);
+	DoQuestFunctionDelay("DiegoDeLanda_Leaving_2", 2.5);
+}
+//<-- Башня с часами
 
 // Универсальное Прощание
 void DiegoDeLanda_Leaving_End()

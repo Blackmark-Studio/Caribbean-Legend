@@ -5,7 +5,7 @@ newline
 BasicDefense {Defensa básica}
 perkBasicDefense {Reduce el daño recibido en un $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Defensa avanzada}
-perkAdvancedDefense {Reduce el daño recibido en un $percent($perkBaseValue(AdvancedDefense|1)) y el daño crítico enemigo en un $percent($perkBaseValue(AdvancedDefense|2)).}
+perkAdvancedDefense {Reduce el daño recibido en un $percent($perkBaseValue(AdvancedDefence|1)) y el daño crítico enemigo en un $percent($perkBaseValue(AdvancedDefence|2)).}
 CriticalHit {Golpe crítico}
 perkCriticalHit {Aumenta la probabilidad base de golpe crítico en un 3,5%.}
 Grus {Espina fuerte}
@@ -21,12 +21,10 @@ perkSliding {El ataque rápido o ataque cortante con un arma ligera puede romper
 Gunman {Mosquetero}
 perkGunman
 {
-Aumenta el daño y la velocidad de recarga de las armas de fuego en $percent($perkBaseValue(Gunman|1)). Permite el uso de armas de dos manos de un solo disparo y de una mano de varios disparos.
- ~
- Los oficiales solo pueden usar $key(descriptor_TwoHanded|ItemsDescriptors.txt) si se les ordena explícitamente hacerlo.
+Aumenta el daño y la velocidad de recarga de las armas de fuego en $percent($perkBaseValue(Gunman|1)). Permite el uso de armas de dos manos de un solo disparo y de una mano de varios disparos. ~ Los oficiales solo pueden usar $key(descriptor_TwoHanded|ItemsDescriptors.txt) si se les ordena explícitamente hacerlo.
 }
 GunProfessional {Hostigador}
-perkGunProfessional {Aumenta el daño y la velocidad de recarga de armas de fuego en un $percent($perkBaseValue(GunProfessional|1)). Permite usar armas de fuego de dos manos multidisparo.}
+perkGunProfessional {Aumenta el daño y la velocidad de recarga de las armas de fuego en $percent($perkBaseValue(GunProfessional|1)). Desbloquea el uso de armas de fuego de dos manos con múltiples disparos.}
 IronWill {Voluntad de hierro}
 perkIronWill {Te permite sobrevivir a una herida mortal una vez cada 3 minutos.}
 SharedExperience {Aprendiz rápido}
@@ -48,9 +46,7 @@ perkTrustworthy {Desbloquea opciones alternativas de persuasión en diálogos pa
 ShipEscape {Segunda oportunidad}
 perkShipEscape
 {
-Rescate en bote salvavidas desde el barco hundiéndose del héroe a otro de los barcos de su flota.
-Permite, durante el combate, cuando el casco del barco esté por debajo del 15%, usar el menú de bodega para transferirse o moverse a otro barco de la flota.
-Si un compañero tiene esta habilidad, escapará de un barco hundiéndose o incendiado, regresando como pasajero al barco del héroe en un bote salvavidas.
+Rescate en bote salvavidas desde el barco hundiéndose del héroe a otro de los barcos de su flota.Permite, durante el combate, cuando el casco del barco esté por debajo del 15%, usar el menú de bodega para transferirse o moverse a otro barco de la flota.Si un compañero tiene esta habilidad, escapará de un barco hundiéndose o incendiado, regresando como pasajero al barco del héroe en un bote salvavidas.
 }
 Alchemy {Alquimia}
 perkAlchemy {Las recetas ya no requieren Herramienta. Otorga un 15% de probabilidad de conservar una poción al usarla.}
@@ -75,8 +71,7 @@ perkLongRangeGrappling {La distancia de abordaje aumenta un 15%.}
 MusketsShoot {Descarga de mosquetes}
 perkMusketsShoot
 {
-Se dispara una descarga de mosquetes antes del abordaje.
-Las bajas dependen de la clase del barco y del número de Vanguardias.
+Se dispara una descarga de mosquetes antes del abordaje.Las bajas dependen de la clase del barco y del número de Vanguardias.
 }
 GrapplingProfessional {Contramaestre experto}
 perkGrapplingProfessional {La distancia de abordaje aumenta un 25 %. Posible desde cualquier ángulo y velocidad.}
@@ -99,50 +94,37 @@ perkSailingProfessional {Velocidad y maniobrabilidad del barco aumentadas un 5%.
 SeaDogProfessional {Terror de los Mares}
 perkSeaDogProfessional
 {
-Al ver el estandarte del Terror del Mar, ni los aventureros ni los forajidos más audaces se atreven a tentar a la suerte. Aumenta el Poder de la Flota un $percent($PerkBaseValue(SeaDogProfessional|1)).
-~
-Habilidad disponible solo para el jugador; requiere rango $attr($context.rank).
+Al ver el estandarte del Terror del Mar, ni los aventureros ni los forajidos más audaces se atreven a tentar a la suerte. Aumenta el Poder de la Flota un $percent($PerkBaseValue(SeaDogProfessional|1)).~Habilidad disponible solo para el jugador; requiere rango $attr($context.rank).
 }
 FlagPir {Jolly Roger}
 perkFlagPir
 {
-Habilidad para cambiar tu bandera por la Jolly Roger.
-~
-Esta habilidad solo está disponible para el jugador.
+Habilidad para cambiar tu bandera por la Jolly Roger.~Esta habilidad solo está disponible para el jugador.
 }
 FlagEng {Bandera de Inglaterra}
 perkFlagEng
 {
-La probabilidad de ser detectado depende de Sigilo, la clase de tu barco y el tamaño de tu flota, el tamaño de la flota enemiga y el nivel de Amenaza.
-~
-Habilidad disponible solo para el jugador
+La probabilidad de ser detectado depende de Sigilo, la clase de tu barco y el tamaño de tu flota, el tamaño de la flota enemiga y el nivel de Amenaza.~Habilidad disponible solo para el jugador
 }
 FlagFra {Bandera de Francia}
 perkFlagFra
 {
-La probabilidad de ser detectado depende de Sigilo, clase y tamaño de tu flota, tamaño de la flota enemiga y nivel de Amenaza.
-~
-Habilidad disponible solo para el jugador
+La probabilidad de ser detectado depende de Sigilo, clase y tamaño de tu flota, tamaño de la flota enemiga y nivel de Amenaza.~Habilidad disponible solo para el jugador
 }
 FlagSpa {Bandera de España}
 perkFlagSpa
 {
-La probabilidad de ser detectado depende de Sigilo, la clase y tamaño de tu flota, el tamaño de la flota enemiga y el nivel de Amenaza.
-~
-Habilidad disponible solo para el jugador
+La probabilidad de ser detectado depende de Sigilo, la clase y tamaño de tu flota, el tamaño de la flota enemiga y el nivel de Amenaza.~Habilidad disponible solo para el jugador
 }
 FlagHol {Bandera de los Países Bajos}
 perkFlagHol
 {
-La probabilidad de ser detectado depende de Sigilo, clase de tu barco y tamaño de la flota, tamaño de la flota enemiga y nivel de Amenaza.
-~
-Habilidad disponible solo para el jugador
+La probabilidad de ser detectado depende de Sigilo, clase de tu barco y tamaño de la flota, tamaño de la flota enemiga y nivel de Amenaza.~Habilidad disponible solo para el jugador
 }
 Troopers {Tácticas de asedio}
 perkTroopers
 {
-Permite combinar las tripulaciones de tu flota antes de asaltar un fuerte con toda la fuerza.
-Reduce la cantidad de tripulación necesaria para asaltar un asentamiento por tierra.
+Permite combinar las tripulaciones de tu flota antes de asaltar un fuerte con toda la fuerza.Reduce la cantidad de tripulación necesaria para asaltar un asentamiento por tierra.
 }
 BasicCommerce {Comercio básico}
 perkBasicCommerce {Comprar es un 5% más rentable. Destaca los artículos demandados en bancos y mercados.}
@@ -155,30 +137,24 @@ perkCarpenter {El casco y las velas se reparan lentamente durante el viaje. Se r
 InstantRepair {Reparación en combate}
 perkInstantRepair
 {
-Reparaciones rápidas en combate restauran hasta el 80% de la durabilidad disponible. Requiere tablones para el casco y lona para las velas.
-Se puede activar cada 1,5 minutos.
+Reparaciones rápidas en combate restauran hasta el 80% de la durabilidad disponible. Requiere tablones para el casco y lona para las velas.Se puede activar cada 1,5 minutos.
 }
 LightRepair {Reparación de emergencia}
 perkLightRepair
 {
-Permite reparar hasta el 10% del casco sin gastar recursos. Sin esta habilidad, el barco se deteriora si el casco baja del 10%. 
-Se puede usar cada 3 minutos.
+Permite reparar hasta el 10% del casco sin gastar recursos. Sin esta habilidad, el barco se deteriora si el casco baja del 10%. Se puede usar cada 3 minutos.
 }
 Builder {Control de daños}
 perkBuilder {El consumo de tablones y lonas durante las reparaciones se reduce un 25%.}
 SelfRepair {Reparación completa}
 perkSelfRepair
 {
-La habilidad de reparar completamente tu barco usando la tripulación en cualquier costa adecuada. Se requieren tablones para el casco y los mástiles, y lona para las velas. Es posible restaurar por completo el casco, las velas y los mástiles.
-
-Las opciones de reparación solo están disponibles en tierra, en ubicaciones costeras.
+La habilidad de reparar completamente tu barco usando la tripulación en cualquier costa adecuada. Se requieren tablones para el casco y los mástiles, y lona para las velas. Es posible restaurar por completo el casco, las velas y los mástiles.Las opciones de reparación solo están disponibles en tierra, en ubicaciones costeras.
 }
 WindCatcher {Sentido del mar}
 perkWindCatcher
 {
-El barco acelera un 10% más rápido.
-
-Aumenta la velocidad en el mapa global en aguas conocidas, si tienes un mapa.
+El barco acelera un 10% más rápido.Aumenta la velocidad en el mapa global en aguas conocidas, si tienes un mapa.
 }
 SailsMan {Velas rápidas}
 perkSailsMan {Gracias al uso de los últimos métodos de recompensa y castigo, todas las operaciones de velas se realizan un 10% más rápido.}
@@ -216,9 +192,9 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Manos rápidas}
-perkFastHands {Aumenta la velocidad de desenfundar y enfundar armas de fuego en un $percent($perkBaseValue(FastHands|1)).}
+perkFastHands {Aumenta la velocidad de desenfundar y enfundar armas de fuego en un 20%.}
 AmmoRig {Equipamiento}
-perkAmmoRig {La recarga de armas de fuego es un $percent($perkBaseValue(AmmoRig|1)) más rápida.}
+perkAmmoRig {La recarga de armas de fuego es un 5% más rápida.}
 Preaim {Ajuste de mira}
 perkPreaim {El modo de apuntado es un 15% más rápido.}
 KeenEye {Ojo agudo}

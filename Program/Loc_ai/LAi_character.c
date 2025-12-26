@@ -64,14 +64,9 @@ void LAi_RebirthOldName(aref chr)
 //Разрешить/запретить персонажу загружаться в захваченную локацию
 void LAi_LoginInCaptureTown(aref chr, bool isEnable)
 {
-	aref loc;
-	makearef(loc, chr.location);
-	if(isEnable)
-	{
-		loc.loadcapture = "1";
-	}else{
-		DeleteAttribute(loc, "loadcapture");
-	}
+
+	if (isEnable) chr.location.loadcapture = "1";
+	else DeleteAttribute(chr, "location.loadcapture");
 }
 
 //------------------------------------------------------------------------------------------
@@ -271,6 +266,15 @@ void LAi_SetCheckMinHP(aref chr, float min, bool immortal, string quest)
 	if(min < 0.9999999) min = 0.9999999;
 	chr.chr_ai.hpchecker = min;
 	chr.chr_ai.hpchecker.quest = quest;
+	chr.chr_ai.hpchecker.immortal = immortal;
+}
+
+//Установить проверяльщик хп с коллбэком
+void LAi_SetCheckMinHPCallback(aref chr, float min, bool immortal, string funcName)
+{
+	if(min < 0.9999999) min = 0.9999999;
+	chr.chr_ai.hpchecker = min;
+	chr.chr_ai.hpchecker.callbacks.(funcName) = true;
 	chr.chr_ai.hpchecker.immortal = immortal;
 }
 
@@ -1046,6 +1050,7 @@ void LAi_AllCharactersUpdate(float dltTime)
 				else if(!IsInvulnerable(chr))
 				{
 					hp = hp - dltTime*2.0;
+					if(hp < 1.0) DeleteAttribute(chr_ai, "poison");
 					if (!CheckAttribute(chr, "poison.hp") || hp < sti(chr.poison.hp)-1.0)
 					{
 						chr.poison.hp = hp;
@@ -1243,7 +1248,12 @@ void LAi_ProcessCheckMinHP(aref chr)
 				LAi_SetImmortal(chr, true);
 				chr.chr_ai.hp = minhp;
 			}
-			if(chr.chr_ai.hpchecker.quest != "")
+
+			if (CheckAttribute(chr, "chr_ai.hpchecker.callbacks"))
+			{
+				RunCallbacks(&chr, "chr_ai.hpchecker.callbacks");
+			}
+			else if(chr.chr_ai.hpchecker.quest != "")
 			{
 				LAi_QuestDelay(chr.chr_ai.hpchecker.quest, 0.0);
 			}
@@ -1286,4 +1296,16 @@ float GetCharacterActionSpeed(ref chr, string sActionName)
 void SetCharacterAnimationSpeed(ref chr, string sAnimation, float fSpeed)
 {
 	chr.anim_speed.animation.(sAnimation) = fSpeed;
+}
+
+// Бахнуть тинктуру на персонаже, в callback можно передать &NullObject
+void LAi_UseBerserkPotion(ref chr, ref _callback)
+{
+	if (GetCharacterFreeItem(chr, "berserker_potion") < 1) return;
+
+	ActivateCharacterPerk(chr, "Rush");
+	RemoveItems(chr, "berserker_potion", 1);
+	PlaySound("Ambient\Tavern\glotok_001.wav");
+	PlaySound("Types\" + LanguageGetLanguage() + "\warrior03.wav");
+	SendMessage(chr, "lfffsfff", MSG_CHARACTER_VIEWSTRPOS, 0.0, 0.0, 0.1, XI_ConvertString("Rampage"), 255.0, 30.0, 30.0);
 }

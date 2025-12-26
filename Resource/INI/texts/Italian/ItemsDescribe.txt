@@ -148,41 +148,32 @@ itmdescr_saber {Un’arma degna di un vero patriota e ufficiale, temprata in mol
 itmname_q_blade_10 {Jurgen Schmidt's Hanger}
 itmdescr_q_blade_10
 {
-Sciabola d’abbordaggio forgiata da Jürgen Schmidt.
-Lama in ottimo acciaio, perfettamente bilanciata.
+Sciabola d’abbordaggio forgiata da Jürgen Schmidt.Lama in ottimo acciaio, perfettamente bilanciata.
 }
 itmname_q_blade_13 {Jurgen Schmidt's Broadsword}
 itmdescr_q_blade_13
 {
-Sciabola da ufficiale forgiata da Jürgen Schmidt.
-Lama in ottimo acciaio, perfettamente bilanciata.
+Sciabola da ufficiale forgiata da Jürgen Schmidt.Lama in ottimo acciaio, perfettamente bilanciata.
 }
 itmname_q_blade_16 {Jurgen Schmidt's Small Sword}
 itmdescr_q_blade_16
 {
-Spada corta forgiata dal maestro Jürgen Schmidt.
-La lama è in acciaio pregiato
-e vanta un equilibrio eccellente.
+Spada corta forgiata dal maestro Jürgen Schmidt.La lama è in acciaio pregiatoe vanta un equilibrio eccellente.
 }
 itmname_q_blade_18 {Jurgen Schmidt's Pappenheimer}
 itmdescr_q_blade_18
 {
-Pappenheimer forgiata dal maestro Jürgen Schmidt.
-Lama in acciaio pregiato,
-equilibrio perfetto.
+Pappenheimer forgiata dal maestro Jürgen Schmidt.Lama in acciaio pregiato,equilibrio perfetto.
 }
 itmname_q_blade_19 {Jurgen Schmidt's Saber}
 itmdescr_q_blade_19
 {
-Sciabola navale forgiata dal maestro Jürgen Schmidt.
-Lama in acciaio pregiato, perfettamente bilanciata.
+Sciabola navale forgiata dal maestro Jürgen Schmidt.Lama in acciaio pregiato, perfettamente bilanciata.
 }
 itmname_q_blade_21 {Jurgen Schmidt's Backsword}
 itmdescr_q_blade_21
 {
-Sciabola Kleeblatt forgiata dal maestro Jürgen Schmidt.
-Lama in acciaio pregiato,
-equilibrio eccellente.
+Sciabola Kleeblatt forgiata dal maestro Jürgen Schmidt.Lama in acciaio pregiato,equilibrio eccellente.
 }
 itmname_shamshir {Shamshir}
 itmdescr_shamshir {Uno Shamshir persiano destinato alla battaglia a cavallo, vera incarnazione delle aspre guerre nel deserto. Combina l'efficienza del taglio e la semplicità del taglio. La scelta migliore per i fendenti circolari.}
@@ -230,8 +221,7 @@ itmdescr_mushket2 {Versione corta dell’ultimo fucile inglese, dotato di baione
 itmname_mushket3 {Arquebus}
 itmdescr_mushket3
 {
-Archibugio a pietra d’abbordaggio 
-Non sarà più all’apice, ma chi si trova davanti alla sua canna ha ben altro a cui pensare.
+Archibugio a pietra d’abbordaggio Non sarà più all’apice, ma chi si trova davanti alla sua canna ha ben altro a cui pensare.
 }
 itmname_mushket5 {Fucile con cannocchiale}
 itmdescr_mushket5 {Fucile a ruota su misura con canna rigata e cannocchiale diottrico. L’arma di un cacciatore o sportivo benestante.}
@@ -299,8 +289,7 @@ itmdescr_suit3 {Uniforme da ufficiale della Guardia catalana.}
 itmname_suit4 {Abito della Lega}
 itmdescr_suit4
 {
-Completo da Mercenario della Lega 
-Piastre metalliche cucite e cinghie regolabili: tutto per un combattimento rapido e brutale. La mezza maschera aiuta a celare la tua identità.
+Completo da Mercenario della Lega Piastre metalliche cucite e cinghie regolabili: tutto per un combattimento rapido e brutale. La mezza maschera aiuta a celare la tua identità.
 }
 itmname_suit5 {Uniforme da ammiraglio}
 itmdescr_suit5 {Uniforme di alto ufficiale della marina francese. Un vero capolavoro, senza dubbio.}
@@ -369,8 +358,7 @@ itmdescr_talisman3 {Un pendente d’oro a forma di Mjölnir, il martello di Thor
 itmname_talisman4 {Talismano 'Giannizzero'}
 itmdescr_talisman4
 {
-Bracciale ottomano del caposquadra giannizzero.
-Aumenta la disciplina dell’equipaggio.
+Bracciale ottomano del caposquadra giannizzero.Aumenta la disciplina dell’equipaggio.
 }
 itmname_talisman6 {Talismano 'Dea'}
 itmdescr_talisman6 {Statuetta della dea Tlazolteotl, divoratrice d’impurità.}
@@ -379,8 +367,7 @@ itmdescr_talisman7 {Un massiccio anello egizio antico a forma di scarabeo labori
 itmname_talisman8 {Talismano 'Scorpione'}
 itmdescr_talisman8
 {
-Spilla di famiglia Medici a forma di scorpione.
-Contiene un vano segreto con un potente antidoto.
+Spilla di famiglia Medici a forma di scorpione.Contiene un vano segreto con un potente antidoto.
 }
 itmname_talisman9 {Ordine di St. Louis}
 itmdescr_talisman9 {Il trofeo più ambito da ogni capitano francese.}
@@ -409,9 +396,7 @@ talisman18_NoBonus {Treasures Found : 0 / 10}
 itmname_talisman19 {Talismano "Teschio di Yorick"}
 itmdescr_talisman19
 {
-Il teschio del capitano Mortimer Grim della "Memento", che non ha mai compreso del tutto la propria morte. Lo conoscevi, #sName#.
-I morti insegnano ai vivi, e questo artefatto si adatta ai desideri del suo proprietario.
-Nell’inventario rende immortali tutti gli ufficiali.
+Il teschio del capitano Mortimer Grim della "Memento", che non ha mai compreso del tutto la propria morte. Lo conoscevi, #sName#.I morti insegnano ai vivi, e questo artefatto si adatta ai desideri del suo proprietario.Nell’inventario rende immortali tutti gli ufficiali.
 }
 talisman19_InSlot
 {
@@ -450,68 +435,57 @@ itmdescr_totem_13 {Una carta utile sempre a portata di mano che aumenta le proba
 itmname_indian_1 {Amuleto 'Bambola Voodoo'}
 itmdescr_indian_1
 {
-Bambola rituale — un artefatto indigeno raccapricciante che secondo la leggenda si lega all’anima della vittima.
- ~Può aumentare il danno inflitto nei punti vulnerabili — ad esempio la testa.
+Bambola rituale — un artefatto indigeno raccapricciante che secondo la leggenda si lega all’anima della vittima. ~Può aumentare il danno inflitto nei punti vulnerabili — ad esempio la testa.
 }
 itmname_indian_2 {Amuleto 'Sperimentatore di polvere nera'}
 itmdescr_indian_2
 {
-Dispositivo per verificare la qualità della polvere da sparo. ~
- La polvere di buona qualità aumenta i danni di qualsiasi proiettile grazie a una combustione più uniforme, ma è particolarmente utile nella creazione delle proprie munizioni.
+Dispositivo per verificare la qualità della polvere da sparo. ~ La polvere di buona qualità aumenta i danni di qualsiasi proiettile grazie a una combustione più uniforme, ma è particolarmente utile nella creazione delle proprie munizioni.
 }
 itmname_indian_3 {Amuleto 'Coltello rituale'}
 itmdescr_indian_3
 {
-Coltello di ossidiana per sacrifici. Non si sa quante anime abbia mietuto nel tentativo di ottenere le benedizioni degli dèi aztechi eretici, ma la lama d’ossidiana non si è ancora smussata.
- ~Aumenta i danni critici contro i nemici; possa Dio riposare le loro anime.
+Coltello di ossidiana per sacrifici. Non si sa quante anime abbia mietuto nel tentativo di ottenere le benedizioni degli dèi aztechi eretici, ma la lama d’ossidiana non si è ancora smussata. ~Aumenta i danni critici contro i nemici; possa Dio riposare le loro anime.
 }
 itmname_indian_4 {Amuleto 'Poleaxe'}
 itmdescr_indian_4
 {
-Ciondolo coperto di rune asatrú. Nessuno sa come sia arrivato ai Caraibi, ma suscita uno strano impulso verso le asce.
- ~Favorisce l’apparire di una forza inattesa nelle braccia, aumentando la potenza dei colpi con armi pesanti.
+Ciondolo coperto di rune asatrú. Nessuno sa come sia arrivato ai Caraibi, ma suscita uno strano impulso verso le asce. ~Favorisce l’apparire di una forza inattesa nelle braccia, aumentando la potenza dei colpi con armi pesanti.
 }
 itmname_indian_5 {Amuleto 'Zanza'}
 itmdescr_indian_5
 {
-Testa essiccata in modo particolare. La creazione di un tale amuleto richiede un rito pagano ripugnante.
- ~Vedendone uno alla cintura del capitano, qualsiasi squadra d’abbordaggio diventa timorosa e prudente — amica o nemica.
+Testa essiccata in modo particolare. La creazione di un tale amuleto richiede un rito pagano ripugnante. ~Vedendone uno alla cintura del capitano, qualsiasi squadra d’abbordaggio diventa timorosa e prudente — amica o nemica.
 }
 itmname_indian_6 {Amuleto 'Testa di corallo'}
 itmdescr_indian_6
 {
-Idolo intagliato in un frammento di corallo. Si dice porti fortuna e renda la mano più ferma.
- ~In ogni caso, una salva di moschetti eseguita con esso risulta molto più ordinata.
+Idolo intagliato in un frammento di corallo. Si dice porti fortuna e renda la mano più ferma. ~In ogni caso, una salva di moschetti eseguita con esso risulta molto più ordinata.
 }
 itmname_indian_7 {Amuleto 'Gobbo'}
 itmdescr_indian_7
 {
-Statuetta in terracotta di un gobbo. Non quello di Notre‑Dame, ma il protettore dell’impegno.
- ~Con essa sopporti meglio le corse estenuanti nella giungla e gli scontri d’abbordaggio.
+Statuetta in terracotta di un gobbo. Non quello di Notre‑Dame, ma il protettore dell’impegno. ~Con essa sopporti meglio le corse estenuanti nella giungla e gli scontri d’abbordaggio.
 }
 itmname_indian_8 {Amuleto 'Xiuhtecuhtli'}
 itmdescr_indian_8
 {
-Figurina-totem di un dio azteco, signore del fuoco e padrone dei vulcani.
- ~Rende misteriosamente più letali i colpi delle bocche da fuoco.
+Figurina-totem di un dio azteco, signore del fuoco e padrone dei vulcani. ~Rende misteriosamente più letali i colpi delle bocche da fuoco.
 }
 itmname_indian_9 {Amuleto 'Baldo'}
 itmdescr_indian_9
 {
-Fibula celtica a forma di corvo. Si dice che i marinai insulari più abili tra i Celti la portassero.
- ~Impressiona soprattutto l’equipaggio d’artiglieria, che comincia a caricare e mirare i cannoni molto più rapidamente.
+Fibula celtica a forma di corvo. Si dice che i marinai insulari più abili tra i Celti la portassero. ~Impressiona soprattutto l’equipaggio d’artiglieria, che comincia a caricare e mirare i cannoni molto più rapidamente.
 }
 itmname_indian_10 {Amuleto 'Cascavella'}
 itmdescr_indian_10
 {
-Teschio incantato di serpente a sonagli.
- ~Probabilmente nei denti induriti è rimasto del veleno; altrimenti la sua capacità di avvelenare al colpo sarebbe difficile da spiegare.
+Teschio incantato di serpente a sonagli. ~Probabilmente nei denti induriti è rimasto del veleno; altrimenti la sua capacità di avvelenare al colpo sarebbe difficile da spiegare.
 }
 itmname_indian_11 {Amuleto 'Maschera Ngombo'}
 itmdescr_indian_11
 {
-Maschera rituale del popolo Sibonei. Si dice sia in grado di instillare falsi ricordi in una persona.
- ~Utile per fare colpo con gingilli o, al contrario, per scomparire nella folla.
+Maschera rituale del popolo Sibonei. Si dice sia in grado di instillare falsi ricordi in una persona. ~Utile per fare colpo con gingilli o, al contrario, per scomparire nella folla.
 }
 itmname_amulet_1 {Amuleto 'Scudo Ngombo'}
 itmdescr_amulet_1 {Collana di ossa e coralli rinforzata da un incantesimo ngombo. ~Persino l’armatura più leggera inizia a deviare le lame.}
@@ -1003,8 +977,7 @@ itmdescr_mangarosapower {Pozione a base di mangarosa, preparata secondo la ricet
 itmname_mangarosafast {Pozione Squall}
 itmdescr_mangarosafast
 {
-Una pozione preparata con mangarosa secondo la ricetta di Amelia.
-Ha l’odore acre del fumo di rami spezzati e ferro arroventato, come una forgia al tramonto. Questo profumo accende la furia della battaglia, evocando il clangore delle lame e il calore dello scontro.
+Una pozione preparata con mangarosa secondo la ricetta di Amelia.Ha l’odore acre del fumo di rami spezzati e ferro arroventato, come una forgia al tramonto. Questo profumo accende la furia della battaglia, evocando il clangore delle lame e il calore dello scontro.
 }
 itmname_mangarosatotal {Pozione abbraccio di mare}
 itmdescr_mangarosatotal {Una pozione preparata con mangarosa secondo la ricetta di Amelia. Profuma di vento salmastro e legno bagnato, come un ponte dopo la tempesta. L’aroma di mare, con una lieve amarezza d’alga, dona leggerezza e libertà, come se il mare stesso si aprisse nel petto.}
@@ -1423,8 +1396,7 @@ itmdescr_recipe_potion1 {Una ricetta con tutte le istruzioni per preparare una p
 itmname_blade_WR {Rinato}
 itmdescr_blade_WR
 {
-Magnifica sciabola di Rupert Northwood.
-L’imponente guardia con un fenice dorato racconta dolore e rinascita. La lama brilla come uno specchio, e lungo il solco reca inciso: VULNERATUS NON VICTUS — “Ferito ma mai sconfitto.” Solo Dio sa quante anime abbia reclamato questa spada…
+Magnifica sciabola di Rupert Northwood.L’imponente guardia con un fenice dorato racconta dolore e rinascita. La lama brilla come uno specchio, e lungo il solco reca inciso: VULNERATUS NON VICTUS — “Ferito ma mai sconfitto.” Solo Dio sa quante anime abbia reclamato questa spada…
 }
 itmname_hat11 {Cappello di Teresa}
 itmdescr_hat11 {Copricapo della madre di Mary, conservato da Aurélie Bertin. Nonostante l’età, mantiene ancora la sua antica eleganza e fascino.}
@@ -1433,6 +1405,27 @@ itmdescr_talisman21 {Un sacchetto di erbe e cenere, una fiala di liquido scuro e
 itmname_blade_WR_1 {Rinato}
 itmdescr_blade_WR_1
 {
-Magnifica sciabola di Rupert Northwood.
-L’imponente guardia con un fenice dorato racconta dolore e rinascita. La lama brilla come uno specchio, e lungo il solco reca inciso: VULNERATUS NON VICTUS — “Ferito ma mai sconfitto.” Solo Dio sa quante anime abbia reclamato questa spada…
+Magnifica sciabola di Rupert Northwood.L’imponente guardia con un fenice dorato racconta dolore e rinascita. La lama brilla come uno specchio, e lungo il solco reca inciso: VULNERATUS NON VICTUS — “Ferito ma mai sconfitto.” Solo Dio sa quante anime abbia reclamato questa spada…
 }
+itmname_piratesJournal_1 {Diario dei pirati}
+itmdescr_piratesJournal_1 {Un documento logoro, realizzato con materiali economici, chiaramente passato di mano molte volte. Contiene resoconti di razzie e contrabbando.}
+itmname_piratesJournal_2 {Giornale di bordo dei pirati}
+itmdescr_piratesJournal_2 {Un giornale di bordo pirata rivestito in cuoio bollito. All’interno, con calligrafia ordinata, sono descritti saccheggi di carovane mercantili ed estorsioni in mare aperto.}
+itmname_piratesJournal_3 {Codice dei pirati}
+itmdescr_piratesJournal_3 {Un spesso documento di bordo rinforzato con cuoio e metallo. La copertina riccamente decorata con incisioni e pietre preziose vale una fortuna. All’interno si trovano resoconti degni di un romanzo d’avventura: assalti alle colonie, saccheggi di convogli reali, grandi battaglie navali.}
+itmname_pistol15 {Pistola d'Onore}
+itmdescr_pistol15 {Realizzata su commissione, dono del Consiglio dei Diciassette per commemorare cinque anni di servizio presso l'onorevole Compagnia Olandese delle Indie Occidentali.}
+itmname_VD_Contract {Contratto di Van Doorn}
+itmdescr_VD_Contract {Il contratto originale del Direttore del Registro Navale. Scaduto sette anni fa. È sospetto che un documento così importante fosse così opportunamente lasciato sulla scrivania prima del tuo arrivo.}
+itmname_BookSp4 {Libro Strano}
+itmdescr_BookSp4 {Questo libro si distingue dagli altri non solo per il colore della copertina, ma anche per il suo peso.}
+itmname_Doc1Sp4 {Rapporto sugli Affari Brasiliani}
+itmdescr_Doc1Sp4 { }
+itmname_Doc2Sp4 {Lettera da Antigua}
+itmdescr_Doc2Sp4 { }
+itmname_VD_key {Chiave di Van Doorn}
+itmdescr_VD_key {Apre la cantina dell'Ufficio del Registro Navale.}
+itmname_CatharinaLetter {Lettera di Catharina}
+itmdescr_CatharinaLetter {Una lettera su carta pregiata, che conserva ancora il profumo di una donna bella e amorevole. Consegnata settimane fa, ma mai letta.}
+itmname_Visser_Key {Chiave contro Maarten Visser}
+itmdescr_Visser_Key {Prova che Maarten Visser ha accettato una tangente dal capitano Michael Rosenkraft per iscriverlo al Registro Navale.}

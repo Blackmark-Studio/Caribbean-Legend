@@ -271,7 +271,7 @@ void ProcessDialogEvent()
 			{
 				if (pchar.questTemp.WPU.Postcureer.TargetPortmanID == npchar.id)
 				{
-					link.l12 = "Przyniosłem ci cennik z miasta "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.StartCity+"Gen")+".";
+					link.l12 = "Przyniosłem ci cennik z miasta "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.StartCity+"Generał")+".";
 					link.l12.go = "Postcureer_LevelUp_ForAll";
 				}
 			}

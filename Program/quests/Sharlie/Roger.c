@@ -4444,7 +4444,7 @@ void Mtraxx_WolfreekReadLogbook() // чтение судового журнал�
 				AddQuestRecord("Roger_8", "11");
 				AddQuestRecordInfo("Ignasio_Journal", "1");
 				AddQuestUserData("Ignasio_Journal", "sDay", sti(pchar.questTemp.Mtraxx.Corrida.Day));
-				AddQuestUserData("Ignasio_Journal", "sMonth", XI_ConvertString("target_month_" + sti(pchar.questTemp.Mtraxx.Corrida.Month)));
+				AddQuestUserData("Ignasio_Journal", "sMonth", XI_ConvertString("MonthGen_" + sti(pchar.questTemp.Mtraxx.Corrida.Month)));
 				AddQuestUserData("Ignasio_Journal", "sYear", sti(pchar.questTemp.Mtraxx.Corrida.Year));
 				DeleteAttribute(pchar, "questTemp.Mtraxx.Ignasio.Journal");
 				pchar.questTemp.Mtraxx.Ignasio.Signal = "true";

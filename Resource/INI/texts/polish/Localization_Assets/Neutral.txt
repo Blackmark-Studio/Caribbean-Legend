@@ -2,10 +2,10 @@ Neutral_1 {Bandyta}
 Neutral_2 {Zostawiłeś notatki}
 Neutral_3 {Jack}
 Neutral_4 {Veils}
-Neutral_5 {Morska Bestia}
+Neutral_5 {Sea Beast}
 Neutral_6 { }
 Neutral_7 { }
-Neutral_8 {Złota Mewa}
+Neutral_8 {Golden Seagull}
 Neutral_9 {Tristan}
 Neutral_10 {Renier}
 Neutral_11 {Piracki statek na horyzoncie! Płyną, by przeciąć nasz kurs.}
@@ -21,7 +21,7 @@ Neutral_20 {Statek piracki na horyzoncie! Przecinają nasz kurs.}
 Neutral_21 {Pokład}
 Neutral_22 {Wejście do jaskini pokryte jest pajęczynami. Wygląda na to, że nikogo tu dawno nie było.}
 Neutral_23 {W domu panuje totalny bałagan. Wygląda na to, że trafiłem pod właściwy adres.}
-Neutral_24 {Duch}
+Neutral_24 {The Ghost}
 Neutral_25 {Dolores}
 Neutral_26 {Moño}
 Neutral_27 {Marisa}

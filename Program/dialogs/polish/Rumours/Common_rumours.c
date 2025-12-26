@@ -18,7 +18,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
 		if (bOk1 || bOk2)
         {
-			dialog.text = "Słyszałeś to? Mówią, że córka Thomasa Morrisona od pół roku nie wstaje z łóżka. Lekarze są całkowicie bezradni wobec jej choroby. Jedyną osobą, która mogłaby jej pomóc, jest cyganka słynąca z mikstur, które stawiają na nogi nawet ciężko chorych. Ale stanowczo odmówiła zrobienia czegokolwiek dla biedaczki.";
+			dialog.text = "Słyszeliście? Mówią, że córka Thomasa Morrisona od pół roku nie wstaje z łóżka. Lekarze są całkowicie bezradni wobec jej choroby. Jedyną osobą, która mogłaby jej pomóc, jest cyganka słynąca z mikstur, które stawiają na nogi nawet ciężko chorych. Ale stanowczo odmówiła zrobienia czegokolwiek dla biedaczki.";
 			link.l1 = "Interesujące, dziękuje za informacje.";
 			link.l1.go = "exit";
 			DWH_Start();
@@ -44,7 +44,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
 		if (bOk1 || bOk2)
         {
-			dialog.text = "Słyszałeś te wieści?! To istne bezprawie! Ani kropli rumu czy wina w karczmie - jak człowiek ma znaleźć ulgę w ten przeklęty upał? Karczmarz już tydzień karmi nas pustymi obietnicami, że trunek znów popłynie, ale jak dotąd nic! Czy mamy chodzić z wysuszonymi gardłami aż do Sądu Ostatecznego?";
+			dialog.text = "Słyszeliście te wieści?! To istne bezprawie! Ani kropli rumu czy wina w tawernie - jak człowiek ma znaleźć ulgę w ten przeklęty upał? Karczmarz już tydzień karmi nas pustymi obietnicami, że trunek znów popłynie, ale jak dotąd nic! Czy mamy chodzić z wysuszonymi gardłami aż do Sądu Ostatecznego?";
 			link.l1 = "Myślałem, że każdy trzyma jakieś ukryte zapasy na czarną godzine. Wasz problem najwyraźniej.";
 			link.l1.go = "exit";
 			TPZ_Start();
@@ -95,7 +95,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein";
 		if (bOk1 || bOk2)
         {
-			dialog.text = "Słyszałeś? Nasz kowal przegrał w karty z Javierem Castillo, i to tak, że ten obedrzał go do nitki, zmuszając go postawić coś bardzo cennego. Od tego czasu kowal nie może dojść do siebie i nie przyjmuje nowych zamówień - wciąż się zamartwia, że admirał obedrze go ze skóry. Szkoda tego prostaka, wszyscy miejscowi wiedzą, że z tym szulerem Castillo nie wolno grać!";
+			dialog.text = "Słyszeliście? Nasz kowal przegrał w karty z Javierem Castillo, i to tak, że ten obedrzał go do nitki, zmuszając go postawić coś bardzo cennego. Od tego czasu kowal nie może dojść do siebie i nie przyjmuje nowych zamówień - wciąż się zamartwia, że admirał obedrze go ze skóry. Szkoda tego prostaka, wszyscy miejscowi wiedzą, że z tym szulerem Castillo nie wolno grać!";
 			link.l1 = "Dziękuję, powinien"+ GetSexPhrase("em","am") +" się pożegnać.";
 			link.l1.go = "exit";
 			OZ_Start();
@@ -107,7 +107,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
 		if (bOk1 || bOk2)
         {
-			dialog.text = "Słyszałeś? Kapitan fregaty 'Águila' urządził w karczmie taką reprymendę swojemu kwatermistrzowi, że aż ściany drżały! Okazuje się, że kapitan zamierzał wyjść w morze z przypływem, a kwatermistrz puścił całą załogę na ląd. Teraz marynarze rozeszli się po mieście i jeśli nie wrócą na czas, statek odpłynie bez nich - kapitan czekać nie zamierza! Ciekawe, skąd ten pośpiech? Korzystny fracht, udany targ, pilne zlecenie od gubernatora?";
+			dialog.text = "Słyszeliście? Kapitan fregaty 'Águila' urządził w tawernie taką reprymendę swojemu kwatermistrzowi, że aż ściany drżały! Okazuje się, że kapitan zamierzał wyjść w morze z przypływem, a kwatermistrz puścił całą załogę na ląd. Teraz marynarze rozeszli się po mieście i jeśli nie wrócą na czas, statek odpłynie bez nich - kapitan czekać nie zamierza! Ciekawe, skąd ten pośpiech? Korzystny fracht, udany targ, pilne zlecenie od gubernatora?";
 			link.l1 = "Dziękuję, powinien"+ GetSexPhrase("em","am") +" się pożegnać.";
 			link.l1.go = "exit";
 			LFD_Start();
@@ -864,7 +864,7 @@ pcharrepphrase(RandSwear() +" Jeszcze jedno i pójdę.","Masz rację, czas to pi
 			{
 				DelLandQuestMark(npchar);
 				AddMoneyToCharacter(pchar, -1000);
-				Dialog.Text =  "W pałacu gubernatora odbyło się wielkie przyjęcie. Przyjaciel Jego Ekscelencji, Don Carlos de Milyar powrócił. Został pojmany w bitwie morskiej, ale udało mu się uciec z pomocą francuskiego porucznika. Don Carlos jest nie tylko mądry, ale także bardzo hojny. Dzięki jego wsparciu ten porucznik, Jean Deno, został teraz kapitanem 'Sario'. O ile słyszałem, został również obdarowany małą plantacją. Teraz żabojad każe nazywać się Juan! Cóż za historia!";
+				Dialog.Text =  "W pałacu gubernatora odbyło się wielkie przyjęcie. Przyjaciel Jego Ekscelencji, Don Carlos de Milyar powrócił. Został pojmany w bitwie morskiej, ale udało mu się uciec z pomocą francuskiego porucznika. Don Carlos jest nie tylko mądry, ale także bardzo hojny. Dzięki jego wsparciu ten porucznik, Jean Deno, został teraz kapitanem „Sario”. O ile słyszałem, został również obdarowany przez małą plantację. Teraz frogeater nazywa się Juan! Cóż za historia!";
 				link.l1 = "Intrygujące... Dobra, pieniądze są twoje. Weź je. Masz mi coś jeszcze do powiedzenia?";
 				link.l1.go = "rumours_tavern";
 				pchar.questTemp.FMQG = "headhunter_juan";
@@ -887,7 +887,7 @@ pcharrepphrase(RandSwear() +" Jeszcze jedno i pójdę.","Masz rację, czas to pi
 			if (CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "jewelry_3" && npchar.location == "Havana_tavern")
 			{
 				AddMoneyToCharacter(pchar, -1000);
-				Dialog.Text =  "Pewnego dnia całe miasto było wzburzone jak gniazdo szerszeni. Oficer z wojskowego skupu upił się do nieprzytomności w mojej karczmie i prawie zgwałcił mężatkę. Następnie pobił jej męża, który próbował bronić żony, a nawet groził mu mieczem. Wyobraź sobie to wszystko na oczach straży miejskiej! Jak mawiają, prawo szanuje moc. Żołnierze po prostu się odwrócili, podczas gdy ten drań szalał\nAle łobuza rozbroili, kto by pomyślał, marynarze ze statku kupieckiego. Prawie owinęli go w kokardę, chociaż skurwiel uciekł i ukrył się na swoim statku. Komendant i Alcalde próbowali zamieść sprawę pod dywan, ale oburzony mąż jest szanowanym obywatelem, który zwrócił się do Jego Ekscelencji Don Diego de Toledo i narobił trochę hałasu wśród miejscowej szlachty\nWydali nakaz aresztowania oficera. Krążyły pogłoski, że jego kapitanowi zasugerowano opuszczenie portu z nim i przeniesienie łajdaka w inne miejsce. Jednak kapitan szkunera, Esberdo Cabanas, jest człowiekiem honoru. Gdy tylko dowiedział się, co zrobił jego oficer, natychmiast go aresztował i odesłał na brzeg. Ten drań gnije w więzieniu w przewidywalnej przyszłości, gdzie jego miejsce, jeśli mnie pytasz. A potem, być może, zostanie zdemobilizowany i wychłostany, po prostu jako przykład dla innych.";
+				Dialog.Text =  "Pewnego dnia całe miasto było wzburzone jak gniazdo szerszeni. Oficer z wojskowego skupu upił się do nieprzytomności w mojej tawernie i prawie zgwałcił mężatkę. Następnie pobił jej męża, który próbował bronić żony, a nawet groził mu mieczem. Wyobraź sobie to wszystko na oczach straży miejskiej! Jak mawiają, prawo szanuje moc. Żołnierze po prostu się odwrócili, podczas gdy ten drań szalał\nAle łobuza rozbroili, kto by pomyślał, marynarze ze statku kupieckiego. Prawie owinęli go w kokardę, chociaż skurwiel uciekł i ukrył się na swoim statku. Komendant i Alcalde próbowali zamieść sprawę pod dywan, ale oburzony mąż jest szanowanym obywatelem, który zwrócił się do Jego Ekscelencji Don Diego de Toledo i narobił trochę hałasu wśród miejscowej szlachty\nWydali nakaz aresztowania oficera. Krążyły pogłoski, że jego kapitanowi zasugerowano opuszczenie portu z nim i przeniesienie łajdaka w inne miejsce. Jednak kapitan szkunera, Esberdo Cabanas, jest człowiekiem honoru. Gdy tylko dowiedział się, co zrobił jego oficer, natychmiast go aresztował i odesłał na brzeg. Ten drań gnije w więzieniu w przewidywalnej przyszłości, gdzie jego miejsce, jeśli mnie pytasz. A potem, być może, zostanie zdemobilizowany i wychłostany, po prostu jako przykład dla innych.";
 				link.l1 = "Czekaj, powiedziałeś Kapitan Esberdo Cabanas? Huh... ekscytująca historia, rzeczywiście! Dobra, zarobiłeś swoje pieniądze, proszę bardzo. Czy mógłbyś mi jeszcze coś powiedzieć?";
 				link.l1.go = "rumours_tavern";
 				Mtraxx_CreateOfficer(); // ставим офицера-негодяя

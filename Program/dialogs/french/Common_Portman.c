@@ -3722,18 +3722,23 @@ void ProcessDialogEvent()
 			dialog.text = "En effet, cela serait acceptable. Quel navire précis vous intéresse-t-il?";
 			if (GetDLCenabled(DLC_APPID_4) && !CheckAttribute(pchar, "questTemp.SantaMisericordia_InfoPU") && CharacterIsAlive("SantaMisericordia_cap"))
 			{
-				link.l1 = "Galion 'Sainte Miséricorde'.";
+				link.l1 = "Galion '"+GetShipName("Holy Mercy")+"'.";
 				link.l1.go = "UniqueShips_SantaMisericordia";
 			}
 			if (GetDLCenabled(DLC_APPID_5) && !CheckAttribute(pchar, "questTemp.LadyBeth_InfoPU") && CharacterIsAlive("LadyBeth_cap"))
 			{
-				link.l2 = "Senau de patrouille 'Lady Beth'.";
+				link.l2 = "Senau de patrouille '"+GetShipName("Lady Beth")+"'.";
 				link.l2.go = "UniqueShips_LadyBeth";
 			}
 			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Memento_InfoPU") && CharacterIsAlive("Memento_cap"))
 			{
-				link.l3 = "Brick 'Memento'.";
+				link.l3 = "Brick '"+GetShipName("Memento")+"'.";
 				link.l3.go = "UniqueShips_Memento";
+			}
+			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Amsterdam_InfoPU"))
+			{
+				link.l4 = "Navire Amiral de la Compagnie '"+GetShipName("Amsterdam")+"'.";
+				link.l4.go = "UniqueShips_Amsterdam";
 			}
 			link.l99 = "Je pense que j'en sais assez.";
 			link.l99.go = "node_2";
@@ -3758,18 +3763,27 @@ void ProcessDialogEvent()
 		break;
 		
 		case "UniqueShips_Memento":
-		AddMoneyToCharacter(pchar, -25000);
-		AddQuestRecordInfo("LegendaryShips", "3");
-		pchar.questTemp.Memento_InfoPU = true;
-		dialog.text = "Le 'Memento' - une vraie légende pirate. Une brig noir sous le commandement du capitaine Mortimer Grim.\n"+
-		"Grim chasse exclusivement les négriers. On dit qu’il libère les esclaves et sauve les condamnés à mort en les rachetant avec de l’or. Une noble cause — si l’on ignore le reste.\n"+
-		"Si vous ne faites pas de commerce humain, Grim ne vous touchera pas. Il est étrange, mais il a ses principes. Mais si vous avez des esclaves à bord... priez pour ne pas voir ses voiles noires à l’horizon.\n"+
-		"Le 'Memento' navigue entre les repaires pirates, mais accoste rarement. Son équipage vit à bord pendant des mois, comme s’il craignait de poser le pied à terre. On raconte aussi que le navire a survécu à une terrible épidémie — c’est pour cela que l’équipage est si difficile à tuer.\n"+
-		"Si vous voulez l’affronter, prenez beaucoup de canons. Aborder le 'Memento' est presque impossible — l’équipage se bat comme des possédés, comme s’ils ne craignaient pas la mort. La seule façon de les vaincre est de réduire le navire en miettes pour leur ôter tout abri. Les échardes ne les effraient pas, mais un tir direct à la mitraille, c’est une autre affaire.\n"+
-		"Bonne chance. Et souvenez-vous de la mort.";
-		link.l1 = "Merci beaucoup.";
-		link.l1.go = "node_2";
-	break;
+			AddMoneyToCharacter(pchar, -25000);
+			AddQuestRecordInfo("LegendaryShips", "3");
+			pchar.questTemp.Memento_InfoPU = true;
+			dialog.text = "Le 'Memento' - une vraie légende pirate. Une brig noir sous le commandement du capitaine Mortimer Grim.\n"+
+			"Grim chasse exclusivement les négriers. On dit qu’il libère les esclaves et sauve les condamnés à mort en les rachetant avec de l’or. Une noble cause — si l’on ignore le reste.\n"+
+			"Si vous ne faites pas de commerce humain, Grim ne vous touchera pas. Il est étrange, mais il a ses principes. Mais si vous avez des esclaves à bord... priez pour ne pas voir ses voiles noires à l’horizon.\n"+
+			"Le 'Memento' navigue entre les repaires pirates, mais accoste rarement. Son équipage vit à bord pendant des mois, comme s’il craignait de poser le pied à terre. On raconte aussi que le navire a survécu à une terrible épidémie — c’est pour cela que l’équipage est si difficile à tuer.\n"+
+			"Si vous voulez l’affronter, prenez beaucoup de canons. Aborder le 'Memento' est presque impossible — l’équipage se bat comme des possédés, comme s’ils ne craignaient pas la mort. La seule façon de les vaincre est de réduire le navire en miettes pour leur ôter tout abri. Les échardes ne les effraient pas, mais un tir direct à la mitraille, c’est une autre affaire.\n"+
+			"Bonne chance. Et souvenez-vous de la mort.";
+			link.l1 = "Merci beaucoup.";
+			link.l1.go = "node_2";
+		break;
+		
+		case "UniqueShips_Amsterdam":
+			AddMoneyToCharacter(pchar, -25000);
+			AddQuestRecordInfo("LegendaryShips", "4");
+			pchar.questTemp.Amsterdam_InfoPU = true;
+			dialog.text = "Le navire amiral de la prestigieuse Compagnie néerlandaise des Indes occidentales. Tout ce qui concerne ce bâtiment est entouré de mystère. Il est commandé par Hendrik van Doorn, chef du département d'enregistrement des navires à Curaçao – un homme d'une efficacité remarquable, rendant d'inestimables services aux capitaines les plus riches et influents. Essayez de rejoindre leurs rangs, et vous en apprendrez davantage.";
+			link.l1 = "Merci beaucoup.";
+			link.l1.go = "node_2";
+		break;
 		
 		// уникальные корабли и легендарные капитаны <--
 	}

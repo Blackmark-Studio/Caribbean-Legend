@@ -270,8 +270,6 @@ void ProcessDialogEvent()
 			link.l1 = "Do you think it's all over now?";
 			link.l1.go = "LEDR_Gonsalo_32";
 			TakeItemFromCharacter(pchar, "LEDR_book");
-			CharacterTurnToLoc(npchar, "goto", "fire");
-			CharacterTurnToLoc(pchar, "goto", "fire");
 		break;
 
 		case "LEDR_Gonsalo_32":

@@ -11,10 +11,7 @@ itm_stat_descr_damageReduction {Questa percentuale viene sottratta dal danno in 
 itm_stat_attack {Danno}
 itm_stat_descr_attack
 {
-Colpo tagliente: #sattack.fast.min#–#sattack.fast.max# danno
-Colpo di punta: #sattack.force.min#–#sattack.force.max# danno
-Colpo circolare: #sattack.round.min#–#sattack.round.max# danno
-Colpo pesante: #sattack.break.min#–#sattack.break.max# danno
+Colpo tagliente: #sattack.fast.min#–#sattack.fast.max# dannoColpo di punta: #sattack.force.min#–#sattack.force.max# dannoColpo circolare: #sattack.round.min#–#sattack.round.max# dannoColpo pesante: #sattack.break.min#–#sattack.break.max# danno
 }
 itm_stat_gundamage {Danno da arma da fuoco.}
 itm_stat_descr_gundamage {Il danno inflitto nel combattimento a distanza dipende dalle abilità, dalle caratteristiche dell'arma e dalle munizioni.}
@@ -54,16 +51,14 @@ itm_stat_descr_secondary_hat10 {Quando viene distrutto, questo oggetto restituis
 itm_stat_hat11 {Abbraccio}
 itm_stat_descr_hat11
 {
-Resistenza +2
-Uccidere un nemico con un’arma bianca ripristina il 25% di energia.
+Resistenza +2Uccidere un nemico con un’arma bianca ripristina il 25% di energia.
 }
 itm_stat_potion6 {Resilienza}
 itm_stat_descr_potion6 {Bere questa pozione impedisce lo stordimento in combattimento.}
 itm_stat_berserker_potion {Furia primordiale}
 itm_stat_descr_berserker_potion
 {
-Favorisce un’immediata ondata di grande potenza e resistenza, aumenta notevolmente agilità e reattività, attenua il dolore e accresce l’aggressività.
-Dura al massimo dodici secondi e può essere usato solo una volta al minuto.
+Favorisce un’immediata ondata di grande potenza e resistenza, aumenta notevolmente agilità e reattività, attenua il dolore e accresce l’aggressività.Dura al massimo dodici secondi e può essere usato solo una volta al minuto.
 }
 itm_stat_mangarosafast {Turbine}
 itm_stat_descr_mangarosafast {Usare questa pozione aumenta la velocità d’attacco con qualsiasi arma del 5%.}
@@ -154,8 +149,7 @@ itm_stat_descr_totem_06 {Superare il peso trasportabile non rallenta il personag
 itm_stat_totem_07 {Evocazione}
 itm_stat_descr_totem_07
 {
-I nuovi volontari si uniranno per un prezzo inferiore, anche se hanno debiti con l’equipaggio.
-Utilizzabile solo dal personaggio principale. Aumenta del 5% il numero di reclute in taverna.
+I nuovi volontari si uniranno per un prezzo inferiore, anche se hanno debiti con l’equipaggio.Utilizzabile solo dal personaggio principale. Aumenta del 5% il numero di reclute in taverna.
 }
 itm_stat_totem_08 {Coinvolgimento personale}
 itm_stat_descr_totem_08 {Aumenta del 10% i danni con il fuoco navale mirato.}
@@ -170,8 +164,7 @@ itm_stat_descr_totem_12 {Le armi leggere infliggono il 15% di danni in più con 
 itm_stat_totem_13 {Baro}
 itm_stat_descr_totem_13
 {
-Aumenta notevolmente la probabilità di pescare la carta giusta e ottenere il numero desiderato.
-Fornisce +1 Successo.
+Aumenta notevolmente la probabilità di pescare la carta giusta e ottenere il numero desiderato.Fornisce +1 Successo.
 }
 itm_stat_knife_01 {Segreto}
 itm_stat_descr_knife_01 {Questo pugnale racchiude un grande potere nascosto. Indossato al petto come talismano, può sconfiggere la morte.}
@@ -192,16 +185,14 @@ itm_stat_descr_talisman6 {Aiuta a risparmiare provviste a bordo, riducendo il co
 itm_stat_talisman7 {Guscio duro}
 itm_stat_descr_talisman7
 {
-Raddoppia la velocità di riparazione della nave e risparmia il 30% delle risorse.
-Riduce del 5% i danni a vele e scafo.
+Raddoppia la velocità di riparazione della nave e risparmia il 30% delle risorse.Riduce del 5% i danni a vele e scafo.
 }
 itm_stat_talisman8 {Mitridato}
 itm_stat_descr_talisman8 {Impedisce l’avvelenamento dalle armi nemiche.}
 itm_stat_talisman9 {Servizio}
 itm_stat_descr_talisman9
 {
-Concede +15% al reclutamento di marinai nelle colonie francesi.
-Permette l’ingresso gratuito nei bordelli francesi e aumenta Autorità di +1.
+Concede +15% al reclutamento di marinai nelle colonie francesi.Permette l’ingresso gratuito nei bordelli francesi e aumenta Autorità di +1.
 }
 itm_stat_talisman10 {Poseidone}
 itm_stat_descr_talisman10 {Permette di trattenere il respiro a lungo sott’acqua e protegge dall’acqua bollente.}
@@ -277,9 +268,7 @@ itm_stat_kaleuche_amulet3 {Incantesimo di protezione}
 itm_stat_descr_kaleuche_amulet3 {Rende i mostri del tempio Chavinavi vulnerabili alle armi e conferisce protezione dai loro attacchi. Riduce i danni subiti da qualsiasi tipo di arma del 25% e previene l'avvelenamento.}
 itm_stat_descr_lacrima_patris_bonus
 {
-~
-~
-Bonus attuale: $number($attr($context.KillerBonus.appliedbonus)) danni e $number($attr($context.KillerBonus.RangeBonus))% di gittata.
+~~Bonus attuale: $number($attr($context.KillerBonus.appliedbonus)) danni e $number($attr($context.KillerBonus.RangeBonus))% di gittata.
 }
 itm_stat_blade_WR_1 {Diligenza}
 itm_stat_descr_blade_WR_1 {Aumenta di cinque volte la rigenerazione della salute in combattimento.}
@@ -293,3 +282,11 @@ itm_stat_PerksPotion {Oblio}
 itm_stat_descr_PerksPotion {Reimposta tutti i Perk appresi del personaggio. Dopo il consumo, la memoria dei Perk e delle tecniche viene cancellata, ma l'abilità rimane — come se il corpo ricordasse ciò che aveva raggiunto, mentre la mente non lo fa più.}
 itm_stat_descr_talisman19_InSlot {Ogni 2% di scafo perso aumenta la velocità e i danni dei cannoni rispettivamente dello 0.75% e dello 0.5%.}
 itm_stat_descr_talisman19_InInventory {Se tenuto nell’inventario, rende immortali tutti gli ufficiali.}
+itm_stat_piratesJournal_1 {Razzieur}
+itm_stat_descr_piratesJournal_1 {Aumenta la velocità sulla mappa globale del 3%. Il bonus raddoppia se la nave ammiraglia è l’“Amsterdam”. La migliore delle tradizioni piratesche.}
+itm_stat_piratesJournal_2 {Ricettatore}
+itm_stat_descr_piratesJournal_2 {Riduce la penalità delle merci rubate dell’8%. Il bonus raddoppia se la nave ammiraglia è l’“Amsterdam”.}
+itm_stat_piratesJournal_3 {Autosufficienza}
+itm_stat_descr_piratesJournal_3 {Aumenta l’efficienza delle riparazioni in mare del 30%. Il bonus raddoppia se la nave ammiraglia è l’“Amsterdam”.}
+itm_stat_pistol15 {Piccolo ma letale}
+itm_stat_descr_pistol15 {L’estrazione e il rinfodero di questa pistola sono più rapidi del 15%. I colpi respingono con forza i nemici.}

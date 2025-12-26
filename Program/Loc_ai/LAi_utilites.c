@@ -879,11 +879,13 @@ void CreateCitizens(aref loc)
 			LAi_CharacterReincarnation(chr, true, true);
 			LAi_SetReincarnationRankStep(chr, MOD_SKILL_ENEMY_RATE+2); //задаем шаг на увеличение ранга фантомам на реинкарнацию
 			LAi_SetLoginTime(chr, 0.0, 24.0);
+			ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);  // RB Стража
+			
 			chr.dialog.filename = "Common_Soldier.c";
 			chr.dialog.currentnode = "first time";
 
 			LAi_SetPatrolType(chr);
-			ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);  // RB Стража
+			
             if (sti(Colonies[iColony].HeroOwn) == true)
 			{
 				LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
@@ -927,13 +929,14 @@ void CreateCitizens(aref loc)
 			LAi_SetReincarnationRankStep(chr, MOD_SKILL_ENEMY_RATE+2); //задаем шаг на увеличение ранга фантомам на реинкарнацию
             SetFantomParamFromRank(chr, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true); // бравые орлы
 			LAi_SetLoginTime(chr, 0.0, 24.0); //а ночью будет беготня от патруля :)
+			ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Стража
+
 			PlaceCharacter(chr, "patrol", "random_free");
 
 			chr.dialog.filename = "Common_Soldier.c";
 			chr.dialog.currentnode = "first time";				
 
 			LAi_SetPatrolType(chr);
-			ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Стража
 			
             if (sti(Colonies[iColony].HeroOwn) == true)
 			{
@@ -1503,7 +1506,6 @@ void CreateIslatesoroEng(aref loc)//Jason, Исла Тесоро при пров
 			sld.city = "Pirates";
 			sld.citytype = "soldier";
 			LAi_SetPatrolType(sld);
-			ForceOldGenerateToNew(sld, iRank);
 			LAi_group_MoveCharacter(sld, "ENGLAND_CITIZENS");
 		}
 	}
@@ -2130,7 +2132,6 @@ void CreateMaltains(aref loc)//Jason, заполнение базы мальти
 				LAi_LoginInCaptureTown(sld, true);
 				LAi_SetLoginTime(sld, 0.0, 24.0);
 				LAi_SetPatrolType(sld);
-				ForceOldGenerateToNew(sld, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+10);
 				sld.city = "FortFrance";
 				sld.citytype = "soldier";
 				PlaceCharacter(sld, "goto", "random_free");
@@ -2792,7 +2793,6 @@ void CreateMayak(aref loc)
 					SetFantomParamFromRank(chr, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true); // бравые орлы
 					LAi_SetLoginTime(chr, 0.0, 24.0);
 					LAi_SetPatrolType(chr);
-					ForceOldGenerateToNew(chr, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE);
 					LAi_group_MoveCharacter(chr, slai_group);
 					chr.greeting = "soldier";
 					PlaceCharacter(chr, "patrol", "random_free");
@@ -3898,7 +3898,6 @@ void CreateFortsNPC(aref loc)
 				LAi_SetReincarnationRankStep(chr, MOD_SKILL_ENEMY_RATE+2); //задаем шаг на увеличение ранга фантомам на реинкарнацию
 				LAi_SetLoginTime(chr, 0.0, 24.0);
 				LAi_SetPatrolType(chr);
-				ForceOldGenerateToNew(chr, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE);
 
 				if (sti(Colonies[iColony].HeroOwn) == true)
 				{

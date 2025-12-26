@@ -1316,6 +1316,12 @@ void QuestCheckUseButton(aref _location, string _locator, string _itemId) /// <<
     {
 		GS_PolozhilZapiski();
 	}
+	if (_location.id == "Villemstad_ClockCellar" && _locator == "button01")
+    {
+		PlaySound("Ambient\Teno_inside\big_ring.wav");
+		PlaySound("interface\key.wav");
+		Open_Villemstad_ClockCellar();
+	}
 }
 //проверка взятия предметов из локатора item
 void QuestCheckTakeItem(aref _location, string _itemId)

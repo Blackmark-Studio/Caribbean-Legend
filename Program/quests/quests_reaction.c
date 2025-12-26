@@ -446,7 +446,6 @@ void QuestComplete(string sQuestName, string qname)
             if (IsEntity(&worldMap) && GetCrewQuantity(pchar) > 0 && !IsCharacterEquippedArtefact(pchar, "totem_02"))
         	{
                 MunityOnShip("ShipMunity");
-				ChangeCharacterComplexReputation(pchar,"authority", 25);
             }
         break;
 
@@ -1618,6 +1617,7 @@ void QuestComplete(string sQuestName, string qname)
 		if(MiniQuests_QuestComplete(sQuestName, qname)) return;
 		if(LadyBeth_QuestComplete(sQuestName, qname)) return;
 		if(Memento_QuestComplete(sQuestName, qname)) return;
+		if(ClockTower_QuestComplete(sQuestName, qname)) return;
 		if(DiegoDeLanda_QuestComplete(sQuestName, qname)) return;
 		if(SharlieTutorial_QuestComplete(sQuestName, qname)) return;
 		if(DarkWatersOfHealing_QuestComplete(sQuestName, qname)) return;

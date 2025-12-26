@@ -34,7 +34,7 @@ void ProcessDialogEvent()
 		
 		case "carpenter_1":
 			sTemp = "lugier 'Adeline'";
-			if (pchar.questTemp.Sharlie.Ship == "sloop") sTemp = "slupa 'Black Dog'";
+			if (pchar.questTemp.Sharlie.Ship == "sloop") sTemp = "sloop 'Black Dog'";
 			dialog.text = "W naszej stoczni. Zakupiłeś "+sTemp+"  Pamiętasz teraz? Jestem tam cieślą.";
 			link.l1 = "Tak, rzeczywiście kupiłem tam statek. Więc czego chcesz, monsieur "+GetFullName(npchar)+"?";
 			link.l1.go = "carpenter_2";
@@ -211,7 +211,7 @@ void ProcessDialogEvent()
 			LAi_Fade("", "");
 			WaitDate("",0,0,0,1,20);
 			RecalculateJumpTable();
-			dialog.text = "Uch... Teraz proszę, powiedz mi, co się stało? Wyglądasz jak ten facet, którego powiesili w zeszłym tygodniu. Miał dokładnie tę samą minę, stojąc na szubienicy.";
+			dialog.text = "Wooh... Teraz proszę, powiedz mi, co się stało? Wyglądasz jak ten facet, którego powiesili w zeszłym tygodniu. Miał dokładnie tę samą minę, stojąc na szubienicy.";
 			link.l1 = "Widzisz, monsieur Gregoire... Powiedzmy, że mam problemy z pracą.";
 			link.l1.go = "greguar_7";
 		break;
@@ -291,7 +291,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "greguar_19":
-			dialog.text = "Tak. Po naszej rozmowie w karczmie zrobiłem rozeznanie w sprawie porucznika Feliciena Groniera. Okazało się, że niedawno poprosił o dziesięciodniowy urlop. Jego prośba została zatwierdzona. Widziałem go dzisiaj, wsiadł do łodzi i popłynął do tartany, która wkrótce odpłynęła na Gwadelupę. Nazywa się 'Topaz'.\nPowiedziałem ci wszystko, teraz to twoja decyzja. Jestem pewien, że dostrzegasz schemat nagłej prośby Groniera o urlop i odpłynięcia z wyspy na świeżo zbudowanej tartanie.";
+			dialog.text = "Tak. Po naszej rozmowie w karczmie zrobiłem rozeznanie w sprawie porucznika Feliciena Groniera. Okazało się, że niedawno poprosił o dziesięciodniowy urlop. Jego prośba została zatwierdzona. Widziałem go dzisiaj, wsiadł do łodzi i popłynął do tartany, która wkrótce odpłynęła na Gwadelupę. Nazywa się 'Topaz'.\nPowiedziałem ci wszystko, teraz to twoja decyzja. Jestem pewien, że dostrzegasz schemat nagłego wezwania Groniera do wzięcia urlopu i odpłynięcia z wyspy na świeżo zbudowanej tartanie.";
 			link.l1 = "Cholera, teraz to dla mnie jasne jak słońce, to na pewno! Ta tartana ma moją żywicę w ładowni! Monseniour Gregoire, dziękuję, naprawdę się spisałeś! Czy jest coś, co mógłbym dla ciebie zrobić w zamian?";
 			link.l1.go = "greguar_20";
 		break;

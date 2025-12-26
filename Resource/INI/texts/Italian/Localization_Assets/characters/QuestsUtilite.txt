@@ -328,3 +328,4 @@ QuestsUtilite_327 {Héphaisztosz}
 QuestsUtilite_328 {Centurio}
 QuestsUtilite_329 {I pirati sono stati sconfitti, le acque sono diventate più sicure.}
 QuestsUtilite_330 {I pirati si sono rafforzati, il mare è diventato più pericoloso.}
+QuestsUtilite_331 {Capitano, l'Amsterdam! Complimenti — la Compagnia ora la considera una vera minaccia.}

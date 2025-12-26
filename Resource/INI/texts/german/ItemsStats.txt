@@ -11,10 +11,7 @@ itm_stat_descr_damageReduction {Dieser Prozentsatz wird vom eingehenden Schaden 
 itm_stat_attack {Schaden}
 itm_stat_descr_attack
 {
-Hieb: #sattack.fast.min#–#sattack.fast.max# Schaden
-Stich: #sattack.force.min#–#sattack.force.max# Schaden
-Rundumschlag: #sattack.round.min#–#sattack.round.max# Schaden
-Durchschlagender Schlag: #sattack.break.min#–#sattack.break.max# Schaden
+Hieb: #sattack.fast.min#–#sattack.fast.max# SchadenStich: #sattack.force.min#–#sattack.force.max# SchadenRundumschlag: #sattack.round.min#–#sattack.round.max# SchadenDurchschlagender Schlag: #sattack.break.min#–#sattack.break.max# Schaden
 }
 itm_stat_gundamage {Schusswaffenschaden.}
 itm_stat_descr_gundamage {Der im Fernkampf verursachte Schaden hängt von den Fertigkeiten, den Eigenschaften der Waffe und der Munition ab.}
@@ -54,16 +51,14 @@ itm_stat_descr_secondary_hat10 {Beim Zerstören gibt dieses Objekt seine Hauptzu
 itm_stat_hat11 {Umarmung}
 itm_stat_descr_hat11
 {
-Ausdauer +2
-Das Töten eines Feindes mit einer Hiebwaffe stellt 25 % Energie wieder her.
+Ausdauer +2Das Töten eines Feindes mit einer Hiebwaffe stellt 25 % Energie wieder her.
 }
 itm_stat_potion6 {Widerstandskraft}
 itm_stat_descr_potion6 {Das Trinken dieses Tranks verhindert Betäubung im Kampf.}
 itm_stat_berserker_potion {Urwut}
 itm_stat_descr_berserker_potion
 {
-Erzeugt augenblicklich enorme Kraft und Ausdauer, steigert Beweglichkeit und Reaktionsgeschwindigkeit deutlich, betäubt Schmerz und fördert Aggression.
-Wirkt maximal zwölf Sekunden und kann nur einmal pro Minute eingesetzt werden.
+Erzeugt augenblicklich enorme Kraft und Ausdauer, steigert Beweglichkeit und Reaktionsgeschwindigkeit deutlich, betäubt Schmerz und fördert Aggression.Wirkt maximal zwölf Sekunden und kann nur einmal pro Minute eingesetzt werden.
 }
 itm_stat_mangarosafast {Wirbelwind}
 itm_stat_descr_mangarosafast {Mit diesem Trank erhöhst du die Angriffsgeschwindigkeit mit jeder Waffe um 5 %.}
@@ -154,8 +149,7 @@ itm_stat_descr_totem_06 {Überschreitet das Traggewicht, wird der Charakter wede
 itm_stat_totem_07 {Beschwören}
 itm_stat_descr_totem_07
 {
-Neue Freiwillige schließen sich günstiger an, selbst wenn sie der Crew Schulden haben.
-Nur vom Hauptcharakter nutzbar. Erhöht die Zahl der Rekruten in der Taverne um 5 %.
+Neue Freiwillige schließen sich günstiger an, selbst wenn sie der Crew Schulden haben.Nur vom Hauptcharakter nutzbar. Erhöht die Zahl der Rekruten in der Taverne um 5 %.
 }
 itm_stat_totem_08 {Persönliches Engagement}
 itm_stat_descr_totem_08 {Erhöht den Schaden bei gezieltem Schiffsbeschuss um 10 %.}
@@ -170,8 +164,7 @@ itm_stat_descr_totem_12 {Leichte Waffen verursachen 15 % mehr Schaden mit schnel
 itm_stat_totem_13 {Falschspieler}
 itm_stat_descr_totem_13
 {
-Erhöht deutlich die Chance, die richtige Karte zu ziehen und die gewünschte Zahl zu würfeln.
-Gewährt +1 Glück.
+Erhöht deutlich die Chance, die richtige Karte zu ziehen und die gewünschte Zahl zu würfeln.Gewährt +1 Glück.
 }
 itm_stat_knife_01 {Geheimnis}
 itm_stat_descr_knife_01 {Dieser Dolch birgt große verborgene Macht. Als Talisman auf der Brust getragen, kann er den Tod besiegen.}
@@ -192,16 +185,14 @@ itm_stat_descr_talisman6 {Hilft, Vorräte an Bord zu sparen und senkt ihren Verb
 itm_stat_talisman7 {Harte Schale}
 itm_stat_descr_talisman7
 {
-Verdoppelt die Reparaturgeschwindigkeit des Schiffs und spart 30 % Ressourcen. 
-Verringert Segel- und Rumpfschaden um 5 %.
+Verdoppelt die Reparaturgeschwindigkeit des Schiffs und spart 30 % Ressourcen. Verringert Segel- und Rumpfschaden um 5 %.
 }
 itm_stat_talisman8 {Mithridat}
 itm_stat_descr_talisman8 {Schützt vor Vergiftung durch feindliche Waffen.}
 itm_stat_talisman9 {Dienstzeit}
 itm_stat_descr_talisman9
 {
-Gewährt +15 % auf Matrosenrekrutierung in französischen Kolonien.
-Erlaubt freien Eintritt in französische Bordelle und erhöht Charisma um +1.
+Gewährt +15 % auf Matrosenrekrutierung in französischen Kolonien.Erlaubt freien Eintritt in französische Bordelle und erhöht Charisma um +1.
 }
 itm_stat_talisman10 {Poseidon}
 itm_stat_descr_talisman10 {Ermöglicht langes Luftanhalten unter Wasser und schützt vor kochendem Wasser.}
@@ -277,9 +268,7 @@ itm_stat_kaleuche_amulet3 {Schutzzauber}
 itm_stat_descr_kaleuche_amulet3 {Macht Tempel-Monster Chavinavi verwundbar gegenüber Waffen und gewährt Schutz vor ihren Angriffen. Reduziert den erlittenen Schaden durch alle Waffentypen um 25 % und verhindert Vergiftung.}
 itm_stat_descr_lacrima_patris_bonus
 {
-~
-~
-Aktueller Bonus: $number($attr($context.KillerBonus.appliedbonus)) Schaden und $number($attr($context.KillerBonus.RangeBonus) % Reichweite.
+~~Aktueller Bonus: $number($attr($context.KillerBonus.appliedbonus)) Schaden und $number($attr($context.KillerBonus.RangeBonus) % Reichweite.
 }
 itm_stat_blade_WR_1 {Fleiß}
 itm_stat_descr_blade_WR_1 {Erhöht die Regeneration im Kampf auf das Fünffache.}
@@ -293,3 +282,11 @@ itm_stat_PerksPotion {Vergessenheit}
 itm_stat_descr_PerksPotion {Setzt alle erlernten Perks des Charakters zurück. Nach der Einnahme werden die Erinnerungen an Perks und Techniken gelöscht, doch die Fähigkeit bleibt — als erinnere sich der Körper daran, was er erreicht hat, während der Verstand es nicht mehr tut.}
 itm_stat_descr_talisman19_InSlot {Alle 2% verlorene Schiffshülle erhöhen die Geschwindigkeit und den Schaden der Kanonen um 0.75% bzw. 0.5%.}
 itm_stat_descr_talisman19_InInventory {Befindet sich dieser Gegenstand im Inventar, macht er alle Offiziere unsterblich.}
+itm_stat_piratesJournal_1 {Plünderer}
+itm_stat_descr_piratesJournal_1 {Erhöht die Geschwindigkeit auf der Weltkarte um 3 %. Der Bonus wird verdoppelt, wenn das Flaggschiff die „Amsterdam“ ist. Eine der besten Piratentraditionen.}
+itm_stat_piratesJournal_2 {Hehler}
+itm_stat_descr_piratesJournal_2 {Verringert den Malus für gestohlene Waren um 8 %. Der Bonus wird verdoppelt, wenn das Flaggschiff die „Amsterdam“ ist.}
+itm_stat_piratesJournal_3 {Selbstversorgung}
+itm_stat_descr_piratesJournal_3 {Erhöht die Effizienz von Reparaturen auf See um 30 %. Der Bonus wird verdoppelt, wenn das Flaggschiff die „Amsterdam“ ist.}
+itm_stat_pistol15 {Klein, aber tödlich}
+itm_stat_descr_pistol15 {Das Ziehen und Wegstecken dieser Pistole ist um 15 % schneller. Treffer stoßen Gegner stark zurück.}

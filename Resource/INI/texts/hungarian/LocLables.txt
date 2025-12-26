@@ -340,6 +340,8 @@ My_Deck {Raktér}
 My_Ship {Kiszállítás}
 Drugstore {Gyógyszertár}
 HWIC_flat {HWIC fôhadiszállás}
+Office of Naval Registry {Haditengerészeti Hivatal}
+Van Doorn's Cellar {Van Doorn pincéje}
 Comendant's House {Havannai Parancsnoki Ház}
 Tibo House {Henri Thibaut háza}
 Gaspard_Gold House {Gaspard Goldenteeth háza}

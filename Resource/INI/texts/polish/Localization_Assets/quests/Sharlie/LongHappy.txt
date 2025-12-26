@@ -1,16 +1,16 @@
 LongHappy_1 {Aby podjąć decyzję dotyczącą ślubu, WYKORZYSTAJ OPCJĘ GŁOŚNEGO MYŚLENIA}
 LongHappy_2 {Opat Benoit przybył na brzeg!}
 LongHappy_3 {@<sti(pchar.questTemp.LongHappy.MarryRum)> beczek rumu, i @<sti(pchar.questTemp.LongHappy.MarryMoney)> pesos.}
-LongHappy_4 {50 beczek rumu, 20 beczek rumu i 300 000 pesos.}
-LongHappy_5 {100 beczek rumu, 50 beczek rumu i 500 000 pesos.}
-LongHappy_6 {Ale przedtem muszę zorganizować przyjęcie w karczmie Saint-Pierre. Pospiesz się!}
+LongHappy_4 {50 beczek rumu, 20 beczek wina i 300 000 pesos.}
+LongHappy_5 {100 beczek rumu, 50 beczek wina i 500 000 pesos.}
+LongHappy_6 {Ale przedtem muszę zorganizować przyjęcie w tawernie Saint-Pierre. Pospiesz się!}
 LongHappy_7 {Ale przedtem muszę zorganizować uroczystość na Isla Tesoro. Pospiesz się!}
-LongHappy_8 {Ale przedtem muszę zorganizować przyjęcie w karczmie Saint-Pierre!}
+LongHappy_8 {Ale przedtem muszę zorganizować przyjęcie w tawernie Saint-Pierre!}
 LongHappy_9 {Ale przedtem muszę zorganizować uroczystość na Isla Tesoro!}
-LongHappy_10 {Diabeł Morski}
+LongHappy_10 {Sea Devil}
 LongHappy_11 {Jan}
 LongHappy_12 {Svensson}
-LongHappy_13 {Kaszalot}
+LongHappy_13 {Sperm Whale}
 LongHappy_14 {Marcus}
 LongHappy_15 {Tyrex}
 LongHappy_16 { }
@@ -23,7 +23,7 @@ LongHappy_22 {Mauritz}
 LongHappy_23 {Dussak}
 LongHappy_24 {Jacques}
 LongHappy_25 {Barbazon}
-LongHappy_26 {Czarny Smok}
+LongHappy_26 {Black Dragon}
 LongHappy_27 {Jan Svensson uciekł łodzią!}
 LongHappy_28 {Steven Dodson uciekł łodzią!}
 LongHappy_29 {Marcus Tyrex uciekł łodzią!}

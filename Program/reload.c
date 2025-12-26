@@ -614,11 +614,6 @@ int ReloadToLocation(int location_index, aref reload_data)
 	//меняем радиусы детекторов энкаунтеров
 	Locations[location_index].locators_radius.encdetector = 8 + rand(10);
     // <-- eddy
-	// Sinistra. Убираем интерфейс в катсценах
-	if (questMovieIsLockPlayerCtrl == true)
-	{
-		DoQuestFunctionDelay("HideInterface", 0.1);
-	}
 	return LoadLocation(&Locations[location_index]);
 }
 

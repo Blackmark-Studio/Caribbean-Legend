@@ -108,3 +108,7 @@ sp3_SailorsBoardingBonus_desc {Bonus d’expérience à l’abordage : #dSailors
 sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 marins tombés)}
 sp3_SurrenderChanceBonus_desc {Augmentation de la chance de reddition : #dSurrenderChanceBonus#%}
 sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 marins tombés)}
+sp4 {Chasseur de pirates}
+sp4_desc {Ce navire a été conçu spécialement pour purger les mers de la piraterie. À chaque bâtiment envoyé par le fond, l’équipage se soude davantage, les canons gagnent en précision et le fanatisme du capitaine s’affirme.}
+sp4_desc2 {Chaque navire pirate détruit augmente définitivement la manœuvrabilité, la portée de tir, la vitesse sur la carte du monde et la vitesse de rechargement des canons. Bonus actuel : $percent($attr($context.tuning.modifiers.shipSpeed.trait_SP4)) sur 15. ~ Plus la menace pirate est faible, plus l’entretien du navire est réduit. Bonus actuel : $percent($GetAmsterdamMtp( )) sur 40.}
+SpecialityUpgrade {Amélioré par la CNIO}

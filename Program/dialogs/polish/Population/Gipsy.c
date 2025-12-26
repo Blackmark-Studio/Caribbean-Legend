@@ -29,7 +29,7 @@ void ProcessDialogEvent()
 	{
 		case "First time":
 			dialog.text = "Ach, witaj, kochaniutki. Czego ci trzeba?";
-			link.l1 = "Niczego, jak sądzę.";
+			link.l1 = "Nic, jak sądzę.";
 			link.l1.go = "exit";
 			link.l2 = RandPhraseSimple("Chciałbym o coś zapytać.", "Potrzebuję pewnych informacji.");
 			link.l2.go = "quests";//(перессылка в файл города)
@@ -199,7 +199,7 @@ void ProcessDialogEvent()
 				dialog.text = LinkRandPhrase(
 					"Och, nie jestem pewna, kochaniutki. Niedawno przyszedł tu facet, który szukał pomocy w zabijaniu szczurów... a tydzień później ktoś zatruł garnizon w forcie. Moi ludzie mieli potem niezłą przeprawę z żołnierzami... Przesłuchiwali nas przez dwa tygodnie, zanim znaleźli winnego. Okazało się, że to był szpieg.",
 					"A skąd pewność, że to nie trucizna dla jakiegoś szlachcica? Może jesteś zbyt tchórzliwy, by stanąć z nim w pojedynku jak mężczyzna?",
-					"Słyszałam, że ktoś otruł kupca w karczmie. Umarł w męczarniach — piana na ustach, siny jak bakłażan. Podobno zabrano mu cały towar. To nie była twoja sprawka... prawda?"
+					"Słyszałam, że ktoś otruł kupca w tawernie. Umarł w męczarniach — piana na ustach, siny jak bakłażan. Podobno zabrano mu cały towar. To nie była twoja sprawka... prawda?"
 				);				
 				link.l1 = "Ej, nie przesadzaj, cygańska dziewko! Nie zamierzam truć ludzi — to kobiecy sposób zabijania, nie w moim stylu. Na mężczyzn mam swój miecz, ale z tymi przeklętymi szczurami za cholerę nie mogę sobie poradzić!";
 				link.l1.go = "get_poison_2";
@@ -267,7 +267,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = LinkRandPhrase(
 					"Złoto to jedno, ale sekrety to zupełnie inna cena, przyjacielu.",
-					"Możemy kupować, ale nie zdradzamy, co z tym robimy. To nasza tajemnica.",
+					"Możemsz kupować, ale nie zdradzamy, co z tym robimy. To nasza tajemnica.",
 					"Nie, młody wilku morski. Tego nie opowiadamy obcym. Albo pieniądze albo nie."
 				) + " Pięćdziesiąt dublonów – to nasza oferta. Nikt ci nie zapłaci więcej";
 				link.l1 = "Och, dobrze... Tak czy inaczej, mi to pasuje. Pięćdziesiąt dublonów. Weź to";
@@ -331,7 +331,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mangarosa_4":
-			dialog.text = "Młody sokole, zaufaj mi, nie potrzebujesz tego. Nie mieszaj się, ta roślina cię zrujnuje. Otępia umysł i powoduje, że tyjesz. Nawet nie pytaj. Ale... widzę przed sobą odważnego człowieka, z mieczem, człowieka morza... może nawet kapitana?";
+			dialog.text = "Młody sole, zaufaj mi, nie potrzebujesz tego. Nie mieszaj się, ta roślina cię zrujnuje. Otępia umysł i powoduje, że tyjesz. Nawet nie pytaj. Ale... widzę przed sobą odważnego człowieka, z mieczem, człowieka morza... może nawet kapitana?";
 			link.l1 = "Masz rację.";
 			link.l1.go = "mangarosa_5";
 		break;

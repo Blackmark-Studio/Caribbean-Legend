@@ -899,7 +899,7 @@ void SetPrisonerInHold()
             }
         }
     }
-	if(GetDLCenabled(DLC_APPID_1) && !RemoveAlonsoFromHold())
+	if(!RemoveAlonsoFromHold())
 	{
 		offref = GetCharacter(NPC_GenerateCharacter("Alonso_LP", "Alonso", "man", "man", 1, FRANCE, 0, true, "pirate"));
 		offref.name = GetCharacterName("Alonso");

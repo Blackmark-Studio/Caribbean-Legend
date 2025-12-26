@@ -158,7 +158,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "amap_1":
-			RemoveAllAdmiralMap()
+			RemoveAllAdmiralMap();
 			Log_Info("Sie haben den vollständigen Satz von Admiralskarten gegeben");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Unglaublich! Das ist einfach zu unglaublich! Um ehrlich zu sein, habe ich nie geglaubt, dass dieser Moment eintreten würde.";
@@ -185,6 +185,7 @@ void ProcessDialogEvent()
 			dialog.text = "Nehmen Sie es, Senor Kapitän. Ich hoffe, dass mein Teleskop Ihnen gut dienen wird.";
 			link.l1 = "Kein Zweifel! Ich freue mich darauf, es auf dem Deck meines Schiffes zu platzieren und hindurch zu schauen.";
 			link.l1.go = "amapcopy_01";
+		break;
 			
 		case "amapcopy_01":
 			AddCharacterExpToSkill(pchar, "Fortune", 1000);//везение

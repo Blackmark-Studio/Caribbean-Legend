@@ -319,12 +319,12 @@ void LEDR_11_kino_2(string qName)
 void LEDR_11_kino_3(string qName)
 {
 	sld = CharacterFromID("LEDR_Gonsalo");
+	SetAnimationInDialog(pchar, "", true);
+	SetAnimationInDialog(sld, "", true);
 	sld.dialog.filename = "Quest\MiniEvents\LaEspadaDelRey_dialog.c";
 	sld.dialog.currentnode = "LEDR_Gonsalo_31";
 	LAi_SetActorType(sld);
 	LAi_ActorDialogNow(sld, Pchar, "", -1);
-	
-	DoQuestFunctionDelay("LEDR_11_kino_3", 1.0);
 }
 
 void LEDR_12()
@@ -332,8 +332,10 @@ void LEDR_12()
 	EndQuestMovie();
 	locCameraFollowEx(true);
 	LAi_SetPlayerType(pchar);
+	SetAnimationInDialog(pchar, "", false);
 	
 	sld = CharacterFromID("LEDR_Gonsalo");
+	SetAnimationInDialog(sld, "", false);
 	LAi_SetActorType(sld);
 	LAi_ActorRunToLocation(sld, "officers", "sea_3", "none", "", "", "OpenTheDoors", 5);
 	
@@ -380,7 +382,7 @@ void LEDR_14()
 	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
 	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 	Achievment_Set("ach_CL_179"); // ачивка за LaEspadaDelRey
-	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
+	if (sti(pchar.questTemp.MiniEvents) > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }
 
 bool LaEspadaDelRey_QuestComplete(string sQuestName, string qname)

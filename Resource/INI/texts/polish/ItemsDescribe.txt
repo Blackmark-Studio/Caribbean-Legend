@@ -148,37 +148,29 @@ itmdescr_saber {Broń godna prawdziwego patrioty i oficera, zahartowana w wielu 
 itmname_q_blade_10 {Wieszak Jurgena Schmidt'a}
 itmdescr_q_blade_10
 {
-Abordażowa szabla wykonana przez Jürgena Schmidta.
-Ostrze z doskonałej stali, znakomicie wyważone.
+Abordażowa szabla wykonana przez Jürgena Schmidta.Ostrze z doskonałej stali, znakomicie wyważone.
 }
 itmname_q_blade_13 {Pałasz Jurgena Schmidt'a}
 itmdescr_q_blade_13 {Oficerska szabla wykonana przez Jürgena Schmidta. Ostrze z doskonałej stali, idealnie wyważone.}
 itmname_q_blade_16 {Mieczyk Jurgena Schmidt'a}
 itmdescr_q_blade_16
 {
-Szpada wykonana przez mistrza Jürgena Schmidta.
-Ostrze z doskonałej stali,
-o znakomitej równowadze.
+Szpada wykonana przez mistrza Jürgena Schmidta.Ostrze z doskonałej stali,o znakomitej równowadze.
 }
 itmname_q_blade_18 {Pappenheimer Jurgena Schmidt'a}
 itmdescr_q_blade_18
 {
-Pappenheimer wykonany przez mistrza Jürgena Schmidta.
-Ostrze z doskonałej stali,
-znakomicie wyważone.
+Pappenheimer wykonany przez mistrza Jürgena Schmidta.Ostrze z doskonałej stali,znakomicie wyważone.
 }
 itmname_q_blade_19 {Szabla Jurgena Schmidt'a}
 itmdescr_q_blade_19
 {
-Morska szabla mistrza Jürgena Schmidta.
-Głownia z doskonałej stali, idealnie wyważona.
+Morska szabla mistrza Jürgena Schmidta.Głownia z doskonałej stali, idealnie wyważona.
 }
 itmname_q_blade_21 {Palcat Jurgena Schmidt'a}
 itmdescr_q_blade_21
 {
-Szabla Kleeblatta wykonana przez mistrza Jürgena Schmidta.
-Ostrze z doskonałej stali,
-o wyjątkowej równowadze.
+Szabla Kleeblatta wykonana przez mistrza Jürgena Schmidta.Ostrze z doskonałej stali,o wyjątkowej równowadze.
 }
 itmname_shamshir {Szamszir}
 itmdescr_shamshir {Perski szamszir przeznaczony do walki konnej, prawdziwe uosobienie trudnych wojen na pustyni. Łączy w sobie wydajność cięcia i prostotę siekania. Najlepszy wybór dla tych, którzy lubią okrągłe cięcia.}
@@ -226,8 +218,7 @@ itmdescr_mushket2 {Skrócona wersja najnowszego angielskiego muszkietu z bagnete
 itmname_mushket3 {Arkebuz}
 itmdescr_mushket3
 {
-Abordażowy lontowy garłacz
-Czasy świetności ma za sobą, ale przeciwnicy patrzący w lufę myślą o czymś zupełnie innym.
+Abordażowy lontowy garłaczCzasy świetności ma za sobą, ale przeciwnicy patrzący w lufę myślą o czymś zupełnie innym.
 }
 itmname_mushket5 {Karabin z lunetą}
 itmdescr_mushket5 {Ręcznie wykonana rusznica kołowa z gwintowaną lufą i lunetą dioptryczną. Broń zamożnego myśliwego lub sportowca.}
@@ -292,8 +283,7 @@ itmdescr_suit3 {Mundur oficera katalońskiej gwardii.}
 itmname_suit4 {Ubranie najemnika Ligi}
 itmdescr_suit4
 {
-Strój Najemnika Ligi 
-Naszyte metalowe płyty i regulowane paski – wszystko do szybkiej, brutalnej walki. Półmaska pomaga ukryć tożsamość.
+Strój Najemnika Ligi Naszyte metalowe płyty i regulowane paski – wszystko do szybkiej, brutalnej walki. Półmaska pomaga ukryć tożsamość.
 }
 itmname_suit5 {Mundur admirała}
 itmdescr_suit5 {Mundur starszego oficera marynarki Francji. Prawdziwe dzieło sztuki, bez dwóch zdań.}
@@ -368,8 +358,7 @@ itmdescr_talisman3 {Złoty wisiorek w kształcie Mjölnira – młota Thora, nor
 itmname_talisman4 {Artefakt 'Janczar'}
 itmdescr_talisman4
 {
-Osmański karwasz starszego janczara.
-Zwiększa dyscyplinę załogi.
+Osmański karwasz starszego janczara.Zwiększa dyscyplinę załogi.
 }
 itmname_talisman6 {Artefakt 'Bogini'}
 itmdescr_talisman6 {Figurka bogini Tlazolteotl, pożeraczki brudu.}
@@ -378,8 +367,7 @@ itmdescr_talisman7 {Masyny staroegipski pierścień w kształcie pracowitego ska
 itmname_talisman8 {Artefakt 'Skorpion'}
 itmdescr_talisman8
 {
-Brosza rodu Medyceuszy w kształcie skorpiona. 
-Zawiera ukryty schowek z silnym antidotum.
+Brosza rodu Medyceuszy w kształcie skorpiona. Zawiera ukryty schowek z silnym antidotum.
 }
 itmname_talisman9 {Order Św. Ludwika}
 itmdescr_talisman9 {Najbardziej pożądana nagroda każdego francuskiego kapitana.}
@@ -408,9 +396,7 @@ talisman18_NoBonus {Znalezione Skarby : 0 / 10}
 itmname_talisman19 {Talizman „Czaszka Yoricka”}
 itmdescr_talisman19
 {
-Czaszka kapitana Mortimera Grima z „Memento”, który nigdy w pełni nie zrozumiał własnej śmierci. Znałeś go, #sName#.
-Umarli uczą żywych, a ten artefakt dostosowuje się do pragnień właściciela.
-W ekwipunku czyni wszystkich oficerów nieśmiertelnymi.
+Czaszka kapitana Mortimera Grima z „Memento”, który nigdy w pełni nie zrozumiał własnej śmierci. Znałeś go, #sName#.Umarli uczą żywych, a ten artefakt dostosowuje się do pragnień właściciela.W ekwipunku czyni wszystkich oficerów nieśmiertelnymi.
 }
 talisman19_InSlot
 {
@@ -449,68 +435,57 @@ itmdescr_totem_13 {Przydatna karta, która zawsze jest pod ręką i zwiększa pr
 itmname_indian_1 {Amulet 'Laleczka Voodoo'}
 itmdescr_indian_1
 {
-Lalka rytualna — przerażający artefakt indiański, który według podań wiąże się z duszą ofiary.
- ~Może zwiększać obrażenia zadawane przy trafieniach w wrażliwe miejsca — na przykład w głowę.
+Lalka rytualna — przerażający artefakt indiański, który według podań wiąże się z duszą ofiary. ~Może zwiększać obrażenia zadawane przy trafieniach w wrażliwe miejsca — na przykład w głowę.
 }
 itmname_indian_2 {Amulet 'Tester prochu'}
 itmdescr_indian_2
 {
-Narzędzie, służące do odmierzania właściwej ilości prochu, gwarantując maksymalną efektywność wystrzału, i bezpieczeńswo użytkownika.
- ~Zwiększa zadawane wrogom obrażenia
+Narzędzie, służące do odmierzania właściwej ilości prochu, gwarantując maksymalną efektywność wystrzału, i bezpieczeńswo użytkownika. ~Zwiększa zadawane wrogom obrażenia
 }
 itmname_indian_3 {Amulet 'Nóż ceremonialny'}
 itmdescr_indian_3
 {
-Nóż z obsydianu do ofiar. Nie wiadomo, ile dusz zebrał w próbach uzyskania błogosławieństw herezjańskich bogów Azteków, ale krawędź obsydianu nie stępiła się do dziś.
- ~Zwiększa obrażenia krytyczne zadawane wrogom; niech Bóg spocznie nad ich duszami.
+Nóż z obsydianu do ofiar. Nie wiadomo, ile dusz zebrał w próbach uzyskania błogosławieństw herezjańskich bogów Azteków, ale krawędź obsydianu nie stępiła się do dziś. ~Zwiększa obrażenia krytyczne zadawane wrogom; niech Bóg spocznie nad ich duszami.
 }
 itmname_indian_4 {Amulet 'Głowica'}
 itmdescr_indian_4
 {
-Wisiorek pokryty runami asatru. Nie wiadomo, jak trafił na Karaiby, ale wzbudza osobliwą skłonność do toporów.
- ~Sprzyja pojawieniu się niespodziewanej siły w ramionach, zwiększając moc ciosów ciężką bronią.
+Wisiorek pokryty runami asatru. Nie wiadomo, jak trafił na Karaiby, ale wzbudza osobliwą skłonność do toporów. ~Sprzyja pojawieniu się niespodziewanej siły w ramionach, zwiększając moc ciosów ciężką bronią.
 }
 itmname_indian_5 {Amulet 'Tsantsa'}
 itmdescr_indian_5
 {
-Głowa wysuszona w szczególny sposób. Wykonanie takiego amuletu wymaga obrzydliwego pogańskiego rytuału.
- ~Widząc taki przy pasie kapitana, każda załoga abordażowa zaczyna się bać i zachowywać ostrożnie — zarówno własna, jak i obca.
+Głowa wysuszona w szczególny sposób. Wykonanie takiego amuletu wymaga obrzydliwego pogańskiego rytuału. ~Widząc taki przy pasie kapitana, każda załoga abordażowa zaczyna się bać i zachowywać ostrożnie — zarówno własna, jak i obca.
 }
 itmname_indian_6 {Amulet 'Koralowa głowa'}
 itmdescr_indian_6
 {
-Wyciosany idolek z fragmentu korala. Mówi się, że przynosi szczęście i zwiększa pewność ręki.
- ~Tak czy inaczej, salwa muszkietowa z jego udziałem staje się znacznie bardziej zgrana.
+Wyciosany idolek z fragmentu korala. Mówi się, że przynosi szczęście i zwiększa pewność ręki. ~Tak czy inaczej, salwa muszkietowa z jego udziałem staje się znacznie bardziej zgrana.
 }
 itmname_indian_7 {Amulet 'Garbus'}
 itmdescr_indian_7
 {
-Figurka z terakoty przedstawiająca garbusa. Nie tego z Notre‑Dame, lecz patrona pracowitości.
- ~Z nim łatwiej znosić wyczerpujące biegi przez dżunglę i walki abordażowe.
+Figurka z terakoty przedstawiająca garbusa. Nie tego z Notre‑Dame, lecz patrona pracowitości. ~Z nim łatwiej znosić wyczerpujące biegi przez dżunglę i walki abordażowe.
 }
 itmname_indian_8 {Amulet 'Xiuhtecuhtli'}
 itmdescr_indian_8
 {
-Figurka-totem azteckiego boga, władcy ognia i pana wulkanów.
- ~Tajemniczo czyni wystrzały z dział bardziej śmiercionośnymi.
+Figurka-totem azteckiego boga, władcy ognia i pana wulkanów. ~Tajemniczo czyni wystrzały z dział bardziej śmiercionośnymi.
 }
 itmname_indian_9 {Amulet 'Baldo'}
 itmdescr_indian_9
 {
-Celtycka fibula w kształcie kruka. Mówi się, że nosili je najzręczniejsi żeglarze wśród wyspiarskich Celtów.
- ~Najbardziej imponuje obsadzie działa, przez co zaczynają szybciej ładować i celować armaty.
+Celtycka fibula w kształcie kruka. Mówi się, że nosili je najzręczniejsi żeglarze wśród wyspiarskich Celtów. ~Najbardziej imponuje obsadzie działa, przez co zaczynają szybciej ładować i celować armaty.
 }
 itmname_indian_10 {Amulet 'Kaskawela'}
 itmdescr_indian_10
 {
-Zaczarowana czaszka grzechotnika.
- ~Prawdopodobnie w zastygłych kłach pozostała trucizna; w przeciwnym razie trudno wytłumaczyć jej zdolność do zatruwania przy trafieniu.
+Zaczarowana czaszka grzechotnika. ~Prawdopodobnie w zastygłych kłach pozostała trucizna; w przeciwnym razie trudno wytłumaczyć jej zdolność do zatruwania przy trafieniu.
 }
 itmname_indian_11 {Amulet 'Maska Ngombo'}
 itmdescr_indian_11
 {
-Rytualna maska ludu Sibonei. Plotka głosi, że potrafi zaszczepić fałszywe wspomnienia w człowieku.
- ~Przydatna do zrobienia wrażenia drobiazgami albo — przeciwnie — do zniknięcia w tłumie.
+Rytualna maska ludu Sibonei. Plotka głosi, że potrafi zaszczepić fałszywe wspomnienia w człowieku. ~Przydatna do zrobienia wrażenia drobiazgami albo — przeciwnie — do zniknięcia w tłumie.
 }
 itmname_amulet_1 {Amulet 'Tarcza Ngombo'}
 itmdescr_amulet_1 {Naszyjnik z kości i korali wzmocniony zaklęciem ngombo. ~Z nim nawet najlżejszy pancerz zaczyna odchylać ostrza.}
@@ -819,9 +794,7 @@ itmdescr_map_sharp_full {Mapa Isla del Tesoro ułożona poprzez połączenie dw�
 itmname_LSC_navigation_map {Wskazówki nawigacyjne do Miasta Porzuconych Statków}
 itmdescr_LSC_navigation_map
 {
-Bez tego dokumentu niemożliwe jest dotarcie do Miasta Porzuconych Statków drogą morską.
-Najpierw należy wypłynąć na 24°21' N i 84°50' W.
-Następnie należy płynąć zgodnie z precyzyjnymi wskazówkami.
+Bez tego dokumentu niemożliwe jest dotarcie do Miasta Porzuconych Statków drogą morską.Najpierw należy wypłynąć na 24°21' N i 84°50' W.Następnie należy płynąć zgodnie z precyzyjnymi wskazówkami.
 }
 itmname_RingCapBook {Dziennik pokładowy 'Santa Lucia'}
 itmdescr_RingCapBook
@@ -1001,8 +974,7 @@ itmdescr_mangarosapower {Mikstura z mangarosy według przepisu Amelii. Pachnie p
 itmname_mangarosafast {Mikstura Squalla}
 itmdescr_mangarosafast
 {
-Mikstura z mangarosy według przepisu Amelii.
-Pachnie gorzkim dymem świeżo złamanych gałęzi i rozgrzanym żelazem, jak kuźnia o zmierzchu. Ten zapach budzi bitewny szał, przywodząc na myśl szczęk broni i żar walki.
+Mikstura z mangarosy według przepisu Amelii.Pachnie gorzkim dymem świeżo złamanych gałęzi i rozgrzanym żelazem, jak kuźnia o zmierzchu. Ten zapach budzi bitewny szał, przywodząc na myśl szczęk broni i żar walki.
 }
 itmname_mangarosatotal {Mikstura Mrskiego Uścisku}
 itmdescr_mangarosatotal {Mikstura z mangarosy według przepisu Amelii. Pachnie słonym wiatrem i mokrym drewnem, jak pokład po burzy. Aromat morskiego powietrza z lekką nutą goryczy wodorostów daje poczucie lekkości i wolności, jakby samo morze otworzyło się w twojej piersi.}
@@ -1133,8 +1105,7 @@ itmdescr_Mineral30 {Kajdany ręczne używane przez handlarzy niewolników, aby c
 itmname_Mineral31 {Zaklęta Kość}
 itmdescr_Mineral31
 {
-Ludzka kość palca z miedzianym pierścieniem. Używana przez czarownice voodoo do czarów.
-(-10 do Charyzmy, -10 do Oportunizmu).
+Ludzka kość palca z miedzianym pierścieniem. Używana przez czarownice voodoo do czarów.(-10 do Charyzmy, -10 do Oportunizmu).
 }
 itmname_Mineral32 {Forma na Pociski}
 itmdescr_Mineral32 {To urządzenie umożliwia odlewanie pocisków o odpowiednim kształcie i rozmiarze dla rewolweru Colt.}
@@ -1432,10 +1403,32 @@ itmdescr_LEDR_key {Klucz znaleziony przy szczątkach biskupa. Według Gonsalo ni
 itmname_recipe_potion1 {Przepis na miksturę leczenia}
 itmdescr_recipe_potion1 {Przepis zawierający wszystkie instrukcje potrzebne do uwarzenia mikstury leczenia.}
 itmname_blade_WR {Odrodzony}
-itmdescr_blade_WR {Wspaniała szabla Ruperta Northwooda. Potężna rękojeść ze złotym feniksem świadczy o bólu i odrodzeniu. Ostrze lśni jak lustro, a na głowni wyryto: VULNERATUS NON VICTUS — „Ranny, lecz niepokonany”. Tylko Bóg wie, ile dusz pochłonął ten miecz…}
+itmdescr_blade_WR {Wspaniała szabla Ruperta Northwooda. Potężna rękojeść ze złotym feniksem świadczy o bólu i odrodzeniu. Ostrze lśni jak lustro, a na głowni wyryto: VULNERATUS NON VICTUS — „Ranny, lecz niepokonany”. Tylko Bóg wie, ile dusz pochłonął ten miecz...}
 itmname_hat11 {Kapelusz Teresy}
 itmdescr_hat11 {Nakrycie głowy matki Mary, zachowane przez Aurélie Bertin. Mimo upływu lat wciąż emanuje dawnym wdziękiem i elegancją.}
 itmname_talisman21 {Talizman przemytnika}
 itmdescr_talisman21 {Sakiewka z ziołami i popiołem, fiolka ciemnego płynu i medalion z czaszką — dziwny zestaw dla obcych, lecz cenny talizman dla wtajemniczonych w szemranych interesach. Taki artefakt noszą tylko prawdziwi przemytnicy.}
 itmname_blade_WR_1 {Odrodzony}
-itmdescr_blade_WR_1 {Wspaniała szabla Ruperta Northwooda. Potężna rękojeść ze złotym feniksem świadczy o bólu i odrodzeniu. Ostrze lśni jak lustro, a na głowni wyryto: VULNERATUS NON VICTUS — „Ranny, lecz niepokonany”. Tylko Bóg wie, ile dusz pochłonął ten miecz…}
+itmdescr_blade_WR_1 {Wspaniała szabla Ruperta Northwooda. Potężna rękojeść ze złotym feniksem świadczy o bólu i odrodzeniu. Ostrze lśni jak lustro, a na głowni wyryto: VULNERATUS NON VICTUS — „Ranny, lecz niepokonany”. Tylko Bóg wie, ile dusz pochłonął ten miecz...}
+itmname_piratesJournal_1 {Dziennik piracki}
+itmdescr_piratesJournal_1 {Zniszczony dokument z tanich materiałów, wyraźnie mający wielu właścicieli. Zawiera zapiski o najazdach i przemycie.}
+itmname_piratesJournal_2 {Dziennik pokładowy piratów}
+itmdescr_piratesJournal_2 {Piracki dziennik okrętowy obszyty gotowaną skórą. Wewnątrz starannym pismem opisano grabieże karawan handlowych oraz wymuszenia na otwartym morzu.}
+itmname_piratesJournal_3 {Kodeks piracki}
+itmdescr_piratesJournal_3 {Gruby dokument okrętowy obity skórą i metalem. Bogato zdobiona okładka z tłoczeniami i kamieniami szlachetnymi warta jest fortunę. W środku znajdują się zapisy godne powieści przygodowej: najazdy na kolonie, grabieże królewskich konwojów, wielkie bitwy morskie.}
+itmname_pistol15 {Pistolet Honorowy}
+itmdescr_pistol15 {Wykonany na zamówienie, dar od Rady Siedemnastu z okazji pięciolecia służby w dostojnej Holenderskiej Kompanii Zachodnioindyjskiej.}
+itmname_VD_Contract {Kontrakt Van Doorna}
+itmdescr_VD_Contract {Oryginalny kontrakt Dyrektora Rejestru Okrętowego. Wygasł siedem lat temu. Podejrzane, że tak ważny dokument tak wygodnie leżał na biurku przed twoim przybyciem.}
+itmname_BookSp4 {Dziwna Książka}
+itmdescr_BookSp4 {Ta książka wyróżnia się spośród pozostałych nie tylko kolorem okładki, ale i wagą.}
+itmname_Doc1Sp4 {Raport o Sprawach Brazylijskich}
+itmdescr_Doc1Sp4 { }
+itmname_Doc2Sp4 {List z Antiguy}
+itmdescr_Doc2Sp4 { }
+itmname_VD_key {Klucz Van Doorna}
+itmdescr_VD_key {Otwiera piwnicę w Biurze Rejestru Okrętowego.}
+itmname_CatharinaLetter {List od Cathariny}
+itmdescr_CatharinaLetter {List na drogim papierze, wciąż noszący zapach kochającej, pięknej kobiety. Dostarczony kilka tygodni temu, lecz nigdy nie przeczytany.}
+itmname_Visser_Key {Klucz do Maartena Vissera}
+itmdescr_Visser_Key {Dowód, że Maarten Visser przyjął łapówkę od kapitana Michaela Rosenkrafta w zamian za wpisanie go do rejestru okrętowego.}

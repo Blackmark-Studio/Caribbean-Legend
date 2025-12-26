@@ -13,7 +13,6 @@ ref xi_refCharacter;
 int iSelected = 1;
 int colonyindex = -1;
 int  iGoodIndex;
-bool colonyIsShown = false;
 ///espkk. utils -->
 //cuz the game doesn't use built-in language mechanism
 #define LANG_FILE "activemap"
@@ -196,7 +195,6 @@ void ProcessCommandExecute()
 {
 	string comName = GetEventData();
 	string nodName = GetEventData();
-	if (comName == "click" && colonyIsShown) HideRColony();
 	switch(nodName)
 	{
 		/////////////////////// menu ///////////////
@@ -243,8 +241,6 @@ void ProcessCommandExecute()
 			}
 		break;
 		case "MAPS":
-			if (colonyIsShown) break;
-
 			if (CheckAttribute(&GameInterface, "TABLE_MAPS." + CurRow + ".index")){
 				iGoodIndex = sti(GameInterface.TABLE_MAPS.(CurRow).index);
 			}
@@ -322,6 +318,23 @@ void FillMapsTable()
 		n++;
 	}
 
+	// // Затем какие-то остальные карты
+	// aref restMaps, restMap;
+	// makearef(restMaps, Atlas.rest);
+
+	// for(i=0;i<GetAttributesNum(&restMaps);i++)
+	// {
+	// 	restMap = GetAttributeN(&restMaps, i);
+	// 	Items_FindItem(GetAttributeName(&restMap), &arItem)
+	// 	row = "tr" + n;
+	// 	sGood = arItem.id;
+
+	// 	if (selectedId == sGood) { iSelected = n; }
+	// 	mapsTable.(row).index = arItem.index;
+	// 	mapsTable.(row).td1.str = LanguageConvertString(idLngFile, "itmname_"+arItem.id);
+	// 	n++;
+	// }
+
 	// Теперь карты акваторий
 	string areaMapsIds[2];
 	int mapsQty = FillAreaMapsIds(&areaMapsIds);
@@ -391,7 +404,6 @@ void SetNewMapPicture(ref itmRef)
 
 	ref switchMap = GetMapSwitch(itmRef);
 	SetNodeUsing("SWITCH_MAP_BUTTON", switchMap.id != itmRef.id);
-	HideRColony();
 }
 
 void ShowInfoWindow()
@@ -434,6 +446,7 @@ void ShowInfoWindow()
 void HideInfoWindow()
 {
 	CloseTooltipNew();
+	HideRColony();
 }
 
 /// bestmap section ===>
@@ -951,7 +964,6 @@ void HideRColony()
 	XI_WindowDisable("MAINBESTMAP_WINDOW", true);
 	XI_WindowDisable("INFO_WINDOW", true);
 	XI_WindowShow("INFO_WINDOW", false);
-	colonyIsShown = false;	
 	// телепорт на правую кнопку
 	// if (bBettaTestMode && colonyindex != -1)
 	// {
@@ -968,7 +980,6 @@ void ShowColonyInfo(int iColony)
 	rColony = &colonies[iColony];
 	string sColony = colonies[iColony].id;
 	int iColor;
-	colonyIsShown = true;
 
 	//Clean up -->
 	sText = XI_ConvertString("Colony" + sColony);

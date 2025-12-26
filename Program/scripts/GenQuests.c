@@ -6986,7 +6986,6 @@ void mOfficer_fc(string qName)
 				{
 					AddCharacterExpToSkill(PChar, "Leadership", 200);
 					MunityOnShip("ShipMunity");
-					ChangeCharacterComplexReputation(pchar,"authority", 25);
 				}
 				else DeleteAttribute(pchar, "questTemp.MutinyOfficerIDX");
 			}
@@ -7034,7 +7033,6 @@ void mOfficer_fc2(string qName)
 			{
 				AddCharacterExpToSkill(PChar, "Leadership", 200);
 				MunityOnShip("ShipMunity");
-				ChangeCharacterComplexReputation(pchar,"authority", 25);
 			}
 			else DeleteAttribute(pchar, "questTemp.MutinyOfficerIDX");
 		}

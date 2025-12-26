@@ -3720,18 +3720,23 @@ void ProcessDialogEvent()
 			dialog.text = "Tatsächlich wäre das akzeptabel. An welchem speziellen Schiff sind Sie interessiert?";
 			if (GetDLCenabled(DLC_APPID_4) && !CheckAttribute(pchar, "questTemp.SantaMisericordia_InfoPU") && CharacterIsAlive("SantaMisericordia_cap"))
 			{
-				link.l1 = "Galeone 'Heilige Barmherzigkeit'.";
+				link.l1 = "Galeone '"+GetShipName("Holy Mercy")+"'.";
 				link.l1.go = "UniqueShips_SantaMisericordia";
 			}
 			if (GetDLCenabled(DLC_APPID_5) && !CheckAttribute(pchar, "questTemp.LadyBeth_InfoPU") && CharacterIsAlive("LadyBeth_cap"))
 			{
-				link.l2 = "Patrouillenschnau 'Lady Beth'.";
+				link.l2 = "Patrouillenschnau '"+GetShipName("Lady Beth")+"'.";
 				link.l2.go = "UniqueShips_LadyBeth";
 			}
 			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Memento_InfoPU") && CharacterIsAlive("Memento_cap"))
 			{
-				link.l3 = "Brigg 'Memento'.";
+				link.l3 = "Brigg '"+GetShipName("Memento")+"'.";
 				link.l3.go = "UniqueShips_Memento";
+			}
+			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Amsterdam_InfoPU"))
+			{
+				link.l4 = "Flaggschiff der Kompanie '"+GetShipName("Amsterdam")+"'.";
+				link.l4.go = "UniqueShips_Amsterdam";
 			}
 			link.l99 = "Ich glaube, ich weiß genug.";
 			link.l99.go = "node_2";
@@ -3765,6 +3770,15 @@ void ProcessDialogEvent()
 			"Die 'Memento' kreuzt zwischen Piratensiedlungen, legt jedoch fast nie an. Die Mannschaft lebt monatelang an Bord, als fürchte sie, festen Boden zu betreten. Man munkelt, das Schiff habe einst eine schreckliche Seuche überstanden – deshalb ist die Crew so schwer zu töten.\n"+
 			"Wenn ihr angreifen wollt – nehmt viele Kanonen mit. Die 'Memento' zu entern ist nahezu unmöglich – die Mannschaft kämpft wie von Dämonen besessen, als hätte sie keine Angst vor dem Tod. Der einzige Weg, sie zu besiegen, ist, das Schiff in Stücke zu schießen und ihnen so das Versteck zu nehmen. Splitter schrecken sie nicht, aber gezielte Kartätschentreffer – das ist etwas anderes.\n"+
 			"Viel Glück. Und denkt an den Tod.";
+			link.l1 = "Vielen Dank.";
+			link.l1.go = "node_2";
+		break;
+		
+		case "UniqueShips_Amsterdam":
+			AddMoneyToCharacter(pchar, -25000);
+			AddQuestRecordInfo("LegendaryShips", "4");
+			pchar.questTemp.Amsterdam_InfoPU = true;
+			dialog.text = "Das Flaggschiff der angesehenen Niederländischen Westindien-Kompanie. Alles, was dieses Schiff betrifft, ist streng geheim. Kommandiert wird es von Hendrik van Doorn, dem Leiter der Schiffsregistrierungsabteilung auf Curaçao – ein außergewöhnlich effizienter Mann, der den wohlhabendsten und einflussreichsten Kapitänen unschätzbare Dienste erweist. Versuchen Sie, zu ihnen zu gehören – dann erfahren Sie vielleicht mehr.";
 			link.l1 = "Vielen Dank.";
 			link.l1.go = "node_2";
 		break;

@@ -56,3 +56,6 @@ duelist {决斗者}
 smuggler {走私者}
 AffairOfHonor_tavern {绝望的醉汉}
 hovernon_wife {总督的妻子}
+Director {主管}
+Deputy Director {副主管}
+Naval Registry Guard {登记处卫兵}

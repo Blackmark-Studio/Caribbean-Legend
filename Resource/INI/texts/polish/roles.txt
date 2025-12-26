@@ -1,4 +1,4 @@
-portman {Nadzorca Portu}
+portman {Mistrz portu}
 drinker_0 {Najsłynniejszy pirat na tych wodach}
 drinker_1 {Mistrz opowieści prawdziwych historii}
 drinker_2 {Emerytowany agent specjalny Escorialu}
@@ -8,16 +8,16 @@ drinker_5 {Wesołek, nieustraszony i prawy}
 drinker_6 {Wspaniały mężczyzna w pełni sił}
 drinker_7 {Szef od drobiazgów}
 drinker_8 {Starszy Pijanego Pokładu}
-drinker_9 {Drugi kuzyn nie byle kogo w HKW.}
+drinker_9 {Drugi kuzyn nie byle kogo w GIVK.}
 pofficer {Kandydat}
 hovernor {Gubernator}
 tavernkeeper {Karczmarz}
 waitress {Kelnerka}
 trader {Kupiec}
-shipyarder {Szkutnik}
+shipyarder {Stoczniowiec}
 priest {Kapłan}
 Ghovernor {Gubernator Generalny}
-Phovernor {Piracki Baron}
+Phovernor {Baron}
 usurer {Bankier}
 poorman {Żebrak}
 gipsy {Cyganka}
@@ -28,12 +28,12 @@ noble {Szlachcic}
 monk {Mnich}
 chaplain {Kapelan}
 potion_merchant {Alchemik}
-veteran_merchant {Sprzedawca Rupieci}
-armourer_merchant {Sprzedawca Wyposażenia}
+veteran_merchant {Kowal żelaza}
+armourer_merchant {Ruszkownik}
 monk_merchant {Sprzedawca Relikwii Świętych}
 indian_merchant {Wróżka}
 lightman_merchant {Latarnik}
-cemeteryman_merchant {Strażnik Cmentarza}
+cemeteryman_merchant {Strażnik cmentarza}
 legend {Legenda}
 soldier_town {Strażnik}
 banditos {Łotr}
@@ -56,3 +56,6 @@ duelist {Szermierz}
 smuggler {Przemytnik}
 AffairOfHonor_tavern {Zdesperowany pijak}
 hovernon_wife {Żona gubernatora}
+Director {Dyrektor}
+Deputy Director {Zastępca Dyrektora}
+Naval Registry Guard {Strażnik Rejestru Okrętowego}

@@ -1033,7 +1033,11 @@ void ProcessDialogEvent()
 			SetCharacterRemovable(npchar, true);
 			npchar.quest.OfficerPrice = sti(pchar.rank)*1000;
 			Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(npchar.id);
-			npchar.loyality = 25;
+			npchar.loyality = MAX_LOYALITY;
+			npchar.OfficerWantToGo.DontGo = true;
+			npchar.OfficerImmortal = true;
+			npchar.Health.HP       = 60.0; 
+			npchar.Health.maxHP    = 60.0;
 			npchar.dialog.FileName = "Enc_Officer_dialog.c";
 			AddDialogExitQuestFunction("LandEnc_OfficerHired");
 			NextDiag.CurrentNode = NextDiag.TempNode;

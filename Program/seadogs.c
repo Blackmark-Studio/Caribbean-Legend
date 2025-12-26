@@ -81,6 +81,7 @@ native int SetGlowParams(float fBlurBrushSize, int Intensivity, int BlurPasses);
 native int RPrint(int x, int y, string sPrint);
 native int GetTexture(string fileName);
 native void ReleaseTexture(int texId);
+native void SetCameraShake(float time, float i1, float i2, float r1, float r2, bool sc, bool ev, int fd);
 
 native int GetSteamEnabled();
 native int GetDLCenabled(int enable);

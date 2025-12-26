@@ -45,7 +45,7 @@ void ProcessDialogEvent()
 			{
 				if (pchar.questTemp.Mtraxx == "full_complete_end" || pchar.questTemp.Mtraxx == "full_complete")
 				{
-					dialog.text = "Ach Książę, wreszcie jesteś. Przynajmniej jeden z was raczył się pojawić! Robota czeka, a wy wszyscy zniknęliście! Gdzie do diabła wszyscy się podziali?";
+					dialog.text = "Ach książę, wreszcie jesteś. Przynajmniej jeden z was raczył się pojawić! Robota czeka, a wy wszyscy zniknęliście! Gdzie do diabła wszyscy się podziali?";
 					link.l1 = "Nie mam pojęcia... Marcus, koniec z tym. Mam dość. Martwi mężczyźni przychodzą do mnie w snach, a sam Lucyfer dmucha mi w kark. Ostatnio przelano zbyt wiele krwi.";
 					link.l1.go = "mtraxx_113";
 					break;
@@ -63,7 +63,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar, "questTemp.Patria.Condotier.NeedMoney") && pchar.questTemp.Patria == "epizode_12_pirates" && sti(pchar.money) >= 100000)
 			{
 				dialog.text = "Przyniosłeś pieniądze?";
-				link.l1 = "Tak.";
+				link.l1 = "Zrobiłem to.";
 				link.l1.go = "patria_x8";
 				break;
 			}
@@ -88,14 +88,14 @@ void ProcessDialogEvent()
 				link.l1.go = "patria_x29";
 				break;
 			}
-            dialog.text = NPCStringReactionRepeat(""+GetSexPhrase("Chcesz coś ode mnie, gnoju?!","Ha, "+pchar.name+"! Masz do mnie interes? Nie? To nie zawracaj mi głowy.")+"","Myślałem, że wyraziłem się jasno... Kazałem ci odejść, ale ty wciąż mnie irytujesz!","Racja, zaczynam mieć dość tej nieuprzejmości.","repeat",3,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("W sumie to niczego, wychodze.","Jasne, Marcus...","Przepraszam, Marcus...","Ojej...",npchar,Dialog.CurrentNode);
+            dialog.text = NPCStringReactionRepeat(""+GetSexPhrase("Czy masz mi coś do powiedzenia? Nie? To zostaw mnie w spokoju!","Ha, "+pchar.name+"! Masz do mnie interes? Nie? To nie zawracaj mi głowy.")+"","Myślałem, że wyraziłem się jasno... Kazałem ci odejść, ale ty wciąż mnie irytujesz!","Racja, zaczynam mieć dość tej nieuprzejmości.","repeat",3,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("Już odchodzę.","Jasne, Marcus...","Przepraszam, Marcus...","Ojej...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
 			
 			if (sti(pchar.GenQuest.Piratekill) > 20)
 			{
-				dialog.text = RandPhraseSimple("Czyś ty oszalał, czy po prostu cie pojebało? Chciałeś się bawić w rzeźnika, co? Wszyscy piraci są na ciebie wściekli, chłopcze, lepiej opuść to miejsce...","Wydaje się, że zamieniłeś się w wściekłego psa, chłopcze. Chciałeś trochę rozprostować ręce? Bez obrazy, ale nie ma tu dla ciebie nic. Zjeżdżaj!");
+				dialog.text = RandPhraseSimple("Czyś ty oszalał? Chciałeś się bawić w rzeźnika, co? Wszyscy piraci są na ciebie wściekli, chłopcze, lepiej opuść to miejsce...","Wydaje się, że zamieniłeś się w wściekłego psa, chłopcze. Chciałeś trochę rozprostować ręce? Bez obrazy, ale nie ma tu dla ciebie nic. Zjeżdżaj!");
 				link.l1 = RandPhraseSimple("Słuchaj, chcę naprawić tę sytuację.","Pomóż mi rozwiązać ten problem, proszę...");
 				link.l1.go = "pirate_town";
 				break;
@@ -106,7 +106,7 @@ void ProcessDialogEvent()
 				// Addon 2016-1 Jason пиратская линейка патч 17/1
 				if (CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "full_complete_end")
 				{
-					link.l1 = "Marcusie, czy kiedykolwiek przestaniesz się na mnie gniewać? Uratowałem twojego przyjaciela, Vincenta, który z nami najeżdżał Kartagenę, a także uratowałem twoją skórę! Czyżby Bernard ci nawet o tym nie powiedział?";
+					link.l1 = "Marku, czy kiedykolwiek przestaniesz się na mnie gniewać? Uratowałem twojego przyjaciela, Vincenta, który z nami najeżdżał Cartagenę, a także uratowałem twoją skórę! Czyżby Bernard ci nawet o tym nie powiedział?";
 					link.l1.go = "Temptation_13";
 				}
 				else
@@ -133,7 +133,7 @@ void ProcessDialogEvent()
 			}
 			if (pchar.questTemp.Mtraxx == "silk_15")
 			{
-				link.l1 = "Znalazłem ci kupca. To szkutnik z Port Royal. Potrzebuje jedwabiu okrętowego do swoich produkcji i będzie mógł kupować partie po sto beli co miesiąc za 25 dublonów za bele. Jego ludzie będą odbierać towar od 10 do 15, w nocy, miejsce to Przylądek Negril. Hasło - 'Kupiec z Lyonu'. Zajęło mi to ponad dwa miesiące, aby znaleźć takiego kupca, Geffrey musiał już sprzedać jedwab przemytnikom. Przykro mi, Marcus.";
+				link.l1 = "Znalazłem ci kupca. To budowniczy statków z Port Royal. Potrzebuje jedwabiu do swoich produkcji i będzie mógł kupować partie po sto sztuk co miesiąc za 5 dublonów za sztukę. Jego ludzie będą odbierać towary od 10 do 15, w nocy, miejsce to Negril Cape. Hasło - 'Kupiec z Lyonu'. Zajęło mi to ponad dwa miesiące, aby znaleźć takiego kupca, Geffrey musiał już sprzedać jedwab przemytnikom. Przykro mi, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 		break;
@@ -169,7 +169,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar, "questTemp.Patria.Saga.Terrax") && pchar.questTemp.Patria == "epizode_12_pirates")
 			{
 				dialog.text = "Cieszę się, że cię widzę, chłopcze! Jak mogę ci pomóc?";
-				link.l1 = "Mam dla ciebie propozycję. Godną pirata, wiesz!";
+				link.l1 = "Mam dla ciebie propozycję. Godna pirata, wiesz!";
 				link.l1.go = "patria";
 				break;
 			}
@@ -191,7 +191,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar, "questTemp.Patria.Condotier.NeedMoney") && pchar.questTemp.Patria == "epizode_12_pirates" && sti(pchar.money) >= 100000)
 			{
 				dialog.text = "Czy przyniosłeś pieniądze?";
-				link.l1 = "Tak.";
+				link.l1 = "Zrobiłem to.";
 				link.l1.go = "patria_x8";
 				break;
 			}
@@ -205,7 +205,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar, "questTemp.Patria.Pirate.Terrax") && CheckAttribute(pchar, "questTemp.Patria.DodsonFail"))
 			{
 				dialog.text = "Charles, co do diabła?!";
-				link.l1 = "Marcusie, wszystko poszło nie tak. Nie mogłem ani przyjść, ani cię poinformować...";
+				link.l1 = "Marku, wszystko poszło nie tak. Nie mogłem ani przyjść, ani cię poinformować...";
 				link.l1.go = "patria_x33";
 				break;
 			}
@@ -237,8 +237,8 @@ void ProcessDialogEvent()
 				link.l2 = "Mam jedwab na sprzedaż.";
 				link.l2.go = "Mtraxx_silktrade";
 			}
-            dialog.text = NPCStringReactionRepeat(GetFullName(pchar)+", cieszę się, że cię widzę! Czego potrzebujesz tym razem, kumplu?","Czego chcesz?","Znowu ty? Nie zawracaj ludziom głowy, jeśli nie masz nic do roboty!","Jesteś "+GetSexPhrase("dobrym korsarzem","dobrą dziewczynką")+", więc możesz żyć na razie. Ale nie chcę już z tobą rozmawiać.","repeat",10,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("Chciałem cię tylko zobaczyć.","Niczego."," Dobrze, Marcus, przepraszam.","Do diabła, naprawdę mi przykro, Marcus!",npchar,Dialog.CurrentNode);
+            dialog.text = NPCStringReactionRepeat(GetFullName(pchar)+", cieszę się, że cię widzę! Czego potrzebujesz tym razem, kumplu?","Czego chcesz?","Znowu? Nie zawracaj ludziom głowy, jeśli nie masz nic do roboty!","Ty jesteś "+GetSexPhrase("dobry korsarz","dobra dziewczynka")+", więc możesz żyć na razie. Ale nie chcę już z tobą rozmawiać.","powtórz",10,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("Chciałem cię tylko zobaczyć.","Nic."," Dobrze, Marcus, przepraszam.","Do diabła, naprawdę mi przykro, Marcus!",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			NextDiag.TempNode = "I_know_you_good";
 		break;
@@ -246,7 +246,7 @@ void ProcessDialogEvent()
 		// ============== Грабеж среди бела дня, попытка залезть в сундуки =========================
 		case "Man_FackYou":
 			dialog.text = LinkRandPhrase("Napad!!! To jest nie do przyjęcia! Przygotuj się na śmierć, szczurze...","Hej, co ty tam robisz?! Myślałeś, że możesz mnie okraść? Jesteś skończony...","Zaraz, co u diabła?! Okazuje się, że jesteś złodziejem! To już koniec, łajdaku...");
-			link.l1 = LinkRandPhrase("Cholera!","Karamba!","Ah, do diabła!");
+			link.l1 = LinkRandPhrase("Gówno!","Carramba!","Ah, do diabła!");
 			link.l1.go = "PL_Q3_fight";
 		break;
 					
@@ -274,7 +274,7 @@ void ProcessDialogEvent()
             {
                 if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
                 {
-         			dialog.text = "Mam nadzieję, że nie będziesz mnie już męczyć swoimi pustymi gadkami, bo będę musiał cię zabić. Wiedz, że nie będzie mi to sprawiać przyjemności.";
+         			dialog.text = "Mam nadzieję, że nie będziesz mnie już męczyć swoimi pustymi gadkami, bo będę musiał cię zabić. Mówię, że nie będzie mi to sprawiać przyjemności.";
         			link.l1 = "Możesz być tego pewien, Marcus, nie będę...";
         			link.l1.go = NextDiag.TempNode;
         			CharacterDelAngry(npchar);
@@ -320,7 +320,7 @@ void ProcessDialogEvent()
 		
 		case "Temptation_4":
 			dialog.text = "Heh! Ale na ciele Blaze'a znaleziono ząb rekina z jego inicjałami - S.D. - ta rzecz należy do Stevena, wszyscy to wiedzą...";
-			link.l1 = "To było sfabrykowane. Jackman postawił wszystko na jedną kartę. Pozbył się Nathaniela Hawka i zajął jego miejsce w Bordowym miasteczku, potem zamordował Sharpa i obwinił Rekina za morderstwo. Mam wystarczające dowody na jego zbrodnie. Znalazłem je w skrzyni Jacoba. Tam była druga część mapy Sharpa i odłamek Hawk'a.";
+			link.l1 = "To było sfabrykowane. Jackman postawił wszystko na jedną kartę. Pozbył się Nathaniela Hawka i zajął jego miejsce w Maroon Town, potem zamordował Sharpa i obwinił Rekina za morderstwo. Mam wystarczające dowody na jego zbrodnie. Znalazłem je w skrzyni Jakuba. Tam była druga część mapy Sharpa i odłamek Hawka.";
 			link.l1.go = "Temptation_5";
 		break;
 		
@@ -345,7 +345,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Temptation_7":
-			dialog.text = "Jasne, że zagłosuję! Zawsze uważałem Rekina za najgodniejszego z nas po Błysku. I prawie uwierzyłem w jego winę. Wszyscy uwierzyliśmy! Prosze, weź mój odłamek.";
+			dialog.text = "Jasne, że zagłosuję! Zawsze uważałem Rekina za najgodniejszego z nas po Błysku. I prawie uwierzyłem w jego winę. Wszyscy uwierzyliśmy! Oto, weź mój odłamek.";
 			link.l1 = "Bardzo dobrze! Teraz możesz swobodnie oddychać.";
 			link.l1.go = "Temptation_8";
 		break;
@@ -385,7 +385,7 @@ void ProcessDialogEvent()
 		case "Temptation_exit":
 			DialogExit();
 			TakeNItems(pchar, "gold_dublon", 300);
-			Log_Info("Otrzymałeś 300 dublonów");
+			Log_Info("You have received 300 doubloons");
 			PlaySound("interface\important_item.wav");
 			NextDiag.CurrentNode = "I_know_you_good";
 			AddQuestRecord("BarbTemptation", "25");
@@ -395,20 +395,20 @@ void ProcessDialogEvent()
 		
 		// Addon 2016-1 Jason пиратская линейка патч 17/1
 		case "Temptation_13":
-			dialog.text = "Tak, opowiedział mi o wspaniałym przybyciu Charlie'ego Księcia na Turków... Mówisz, że uratował mi skórę? Jak? Bernard wspomniał coś o pułapce...";
+			dialog.text = "Tak, opowiedział mi o wspaniałym przybyciu Charlie'ego Prince'a na Turków... Mówisz, że uratował mi skórę? Jak? Bernard wspomniał coś o pułapce...";
 			link.l1 = "Tak, to była pułapka. To ty byłeś celem, a Bernard był tylko przynętą...";
 			link.l1.go = "Temptation_1";
 		break;
 		
 		case "Temptation_14":
-			dialog.text = "Ha-ha-ha, pracujesz dla Leśnego Diabła, co Księciuniu? Więc zarabiasz lepiej z nim niż ze mną? Powiedz mi szczerze!";
-			link.l1 = "Marcus, odłóżmy przeszłość na bok raz na zawsze. Mamy teraz wspólny cel i jest ważniejszy niż łupienie karawan. Cholera! To teraz najważniejsza rzecz! Przyszłość Bractwa jest zagrożona!";
+			dialog.text = "Ha-ha-ha, pracujesz dla Diabła Lasu, co książę? Więc zarabiasz lepiej z nim niż ze mną? Powiedz mi szczerze!";
+			link.l1 = "Marcus, odłóżmy przeszłość na bok raz na zawsze. Mamy teraz wspólny cel i jest ważniejszy niż łupienie karawan. Cholera! To teraz najważniejsza rzecz! Przyszłość Braci jest zagrożona!";
 			link.l1.go = "Temptation_15";
 		break;
 		
 		case "Temptation_15":
-			dialog.text = "Dobrze, Książę, zrozumiałem! W końcu jesteś wolnym kaprem, praca dla Leśnego Diabła była twoim wyborem i podjąłeś dobrą decyzję... Steven więc... Mówiłeś, że został oczerniony, prawda?";
-			link.l1 = "Absolutnie.";
+			dialog.text = "Dobrze, książę, zrozumiałem! W końcu jesteś wolnym kaprem, praca dla Leśnego Diabła była twoim wyborem i podjąłeś dobrą decyzję... Steven więc... Mówiłeś, że został oczerniony, prawda?";
+			link.l1 = "Absolutnie słusznie.";
 			link.l1.go = "Temptation_4";
 		break;
 		
@@ -439,14 +439,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shadows_4":
-			dialog.text = "Wiem, że nigdy nie marnujesz czasu. Słuchaj zatem. Joshua Leadbeater był angielskim kapitanem marynarki, a legendarny 'Neptun' był pod jego dowództwem...";
+			dialog.text = "Wiem, że nigdy nie marnujesz czasu. Słuchaj zatem. Joshua Leadbeater był angielskim kapitanem marynarki, a legendarny 'Neptune' był pod jego dowództwem...";
 			link.l1 = "...";
 			link.l1.go = "shadows_5";
 		break;
 		
 		case "shadows_5":
 			DialogExit();
-			SetLaunchFrameFormParam("Godzinę później...", "Saga_FinalLedbitterStory", 0, 4);
+			SetLaunchFrameFormParam("One hour later", "Saga_FinalLedbitterStory", 0, 4);
 			LaunchFrameForm();
 			WaitDate("", 0, 0, 0, 1, 10); //крутим время
 			RecalculateJumpTable();
@@ -455,12 +455,12 @@ void ProcessDialogEvent()
 		case "shadows_6":
 			AddQuestRecordInfo("Mask", "1");
 			dialog.text = "... ale Leadbeater przeżył i został podjęty przez jakiś statek. Jego rana oszpeciła go i odtąd nosił maskę. Po pewnym czasie ludzie zaczęli go nazywać Maską. Zemsta na człowieku, który oszpecił go na całe życie, stała się jego życiowym celem.";
-			link.l1 = "Rozumiem... Zapisałem to wszystko. Myślę, że muszę to przeczytać jeszcze raz i porównać z informacjami, które już mam. Smutna historia, rzeczywiście. Czy widziałeś kiedyś Jess?";
+			link.l1 = "Widzę... Zapisałem to wszystko. Myślę, że muszę to przeczytać jeszcze raz i porównać z informacjami, które już mam. Smutna historia, rzeczywiście. Czy widziałeś kiedyś Jessikę?";
 			link.l1.go = "shadows_7";
 		break;
 		
 		case "shadows_7":
-			dialog.text = "Jasne! Towarzyszyła Rzeźnikowi we wszystkich jego podróżach, dopóki nie porzucił jej dla Beatrice. Jess nie mogła mu tego wybaczyć. Ludzie nazywali ją talizmanem Rzeźnika, bo zawsze miał szczęście, gdy była przy nim.\nWierz lub nie, ale jak tylko pozbył się jej na Barbadosie, jego interesy poszły źle, łupy stały się marne, a 'Neptun' stał się częstym gościem w stoczni Isla Tesoro. Ale można to wytłumaczyć tym, że Rzeźnik większość czasu spędzał z Beatrice w kajucie, a nie na rufie.\nBeatrice nie była jak Jessica, nie była uzależniona od przygód i wojny, chociaż Nicholas nauczył ją szermierki i żeglugi. Tak, uwielbiała morskie romanse, ale brakowało jej twardości. 'Neptun' Rzeźnika nie był dla niej odpowiednim miejscem. W końcu, to ją zabiło.";
+			dialog.text = "Jasne! Towarzyszyła Rzeźnikowi we wszystkich jego podróżach, dopóki nie porzucił jej dla Beatrycze. Jess nie mogła mu tego wybaczyć. Ludzie nazywali ją talizmanem Rzeźnika, bo zawsze miał szczęście, gdy była przy nim.\nWierzcie lub nie, ale jak tylko pozbył się jej na Barbadosie, jego interesy poszły źle, łupy stały się marne, a 'Neptune' stał się częstym gościem w stoczni Isla Tesoro. Ale można to wytłumaczyć tym, że Rzeźnik większość czasu spędzał z Beatrycze w kabinie, a nie na rufie.\nBeatrycze nie była jak Jessica, nie była uzależniona od przygód i wojny, chociaż Nicholas nauczył ją szermierki i żeglugi. Tak, uwielbiała morskie romanse, ale brakowało jej twardości. 'Neptune' Rzeźnika nie był dla niej odpowiednim miejscem. W końcu, to ją zabiło.";
 			link.l1 = "A co z Jessicą?";
 			link.l1.go = "shadows_8";
 		break;
@@ -472,7 +472,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shadows_9":
-			dialog.text = "Jan Svenson. Leśny Diabeł nigdy się do tego nie przyzna, ale miał plany z Jess. To był czas, kiedy już przejął Zachodni kontynent i jego sława była czymś godnym zazdrości, więc tygrysica była dla niego dobra. \nGdy Rzeźnik pozbył się Jess, Jan zaczął podejrzanie często odwiedzać Barbados, sprawiając, że garnizon trząsł się ze strachu, ha. Jak wiesz, Jessica była córką plantatora z Bridgetown. \nW sumie jego plany były dobrze znane w prywatnych kręgach, ale nikt nie odważył się wyrazić swojej opinii na ten temat. Może Jan teraz siedzi na tyłku w Blueweld, ale wtedy każde złe słowo pod jego adresem mogło źle się skończyć. \nW końcu im się nie udało. Jess nie mogła żyć z bólem spowodowanym zdradą Rzeźnika i zemściła się rok później z pomocą Maski. Ta zemsta skończyła się tragicznie dla wszystkich: dla Rzeźnika, dla Beatrice, dla Maski i dla niej samej. Wszyscy zginęli.";
+			dialog.text = "Jan Svenson. Diabeł Lasu nigdy się do tego nie przyzna, ale miał plany z Jessiką. To był czas, kiedy już przejął Zachodnią Główną i jego sława była czymś godnym zazdrości, więc tygrysica była dla niego dobra. \nGdy Rzeźnik pozbył się Jess, Jan zaczął podejrzanie często odwiedzać Barbados, sprawiając, że garnizon trząsł się ze strachu, ha. Jak wiesz, Jessica była córką plantatora z Bridgetown. \nW sumie jego plany były dobrze znane w prywatnych kręgach, ale nikt nie odważył się wyrazić swojej opinii na ten temat. Może Jan teraz siedzi na tyłku w Blueweld, ale wtedy każde złe słowo pod jego adresem mogło źle się skończyć. \nW końcu im się nie udało. Jess nie mogła żyć z bólem spowodowanym zdradą Rzeźnika i zemściła się rok później z pomocą Maski. Ta zemsta skończyła się tragicznie dla wszystkich: dla Rzeźnika, dla Beatrice, dla Maski i dla niej samej. Wszyscy zginęli.";
 			link.l1 = "Nie. Rzeźnik wciąż żyje.";
 			link.l1.go = "shadows_10";
 		break;
@@ -485,7 +485,7 @@ void ProcessDialogEvent()
 		
 		case "shadows_11":
 			dialog.text = "Niesamowite! A gdzie on teraz jest?";
-			link.l1 = "Znany jest jako Lawrence Beltrop i mieszka w Port Royal. Ale wygląda na to, że się nie zmienił i wciąż jest niebezpieczny. Jackman, który narobił sporo zamieszania w Bractwie, wykonywał jego rozkazy.";
+			link.l1 = "Znany jest jako Lawrence Beltrop i mieszka w Port-Royal. Ale wygląda na to, że się nie zmienił i wciąż jest niebezpieczny. Jackman, który narobił sporo zamieszania w Bractwie, wykonywał jego rozkazy.";
 			link.l1.go = "shadows_12";
 		break;
 		
@@ -503,19 +503,19 @@ void ProcessDialogEvent()
 		
 		case "shadows_14":
 			dialog.text = "Wydaje się, że tak... Powiedz mi, przyjacielu, dlaczego tak interesujesz się przeszłością ludzi, którzy już dawno nie żyją? O co tu chodzi?";
-			link.l1 = "Potrzebuję dokumentów, które mogłyby udowodnić, że Helen McArthur jest córką Beatrice Sharp i wnuczką Nicolasa Sharpa, i ma pełne prawo nosić to nazwisko. Nie obchodzi mnie, że jej nazwisko mogło być Beltrop.";
+			link.l1 = "Potrzebuję dokumentów, które mogłyby udowodnić, że Ellen McArthur jest córką Beatrice Sharp i wnuczką Nicolasa Sharpa, i ma pełne prawo nosić to nazwisko. Nie obchodzi mnie, że jej nazwisko mogło być Beltrop.";
 			link.l1.go = "shadows_15";
 		break;
 		
 		case "shadows_15":
-			dialog.text = "Nie znalazłem nic o Helen McArthur w archiwach Blaze'a. Dziwne, że Beatrice nie powiedziała Blaze'owi o narodzinach jego siostrzenicy. To do niej niepodobne.";
+			dialog.text = "Nie znalazłem nic o Ellen McArthur w archiwach Blaze'a. Dziwne, że Beatrice nie powiedziała Blaze'owi o narodzinach jego siostrzenicy. To do niej niepodobne.";
 			link.l1 = "Słuchaj, może jest coś więcej w papierach Sharpa o tej historii? Potrzebuję każdego szczegółu, jaki mogę zdobyć!";
 			link.l1.go = "shadows_16";
 		break;
 		
 		case "shadows_16":
 			dialog.text = "Hm... Może. Według notatek Blaze'a, próbował znaleźć wyspę, gdzie zginęła jego siostra. Są kopie archiwalnych dokumentów dotyczących ekspedycji karnej Leadbeatera. Nic ciekawego, poza kilkoma liczbami szerokości geograficznej.\nTen równoleżnik przecina Morze Karaibskie na północy. Ale nie ma śladu długości geograficznej. Oczywiście, poszukiwania Blaze'a nie powiodły się, nawet nie możesz sobie wyobrazić, ile małych wysp znajduje się na tej szerokości geograficznej.";
-			link.l1 = "A jaka jest szerokość geograficzna?";
+			link.l1 = "A jaki jest szerokość geograficzna?";
 			link.l1.go = "shadows_17";
 		break;
 		
@@ -608,7 +608,7 @@ void ProcessDialogEvent()
 			if (pchar.Ship.Type == SHIP_NOTUSED)
 			{
 				dialog.text = "Najpierw zdobądź sobie statek, a potem pytaj o robotę. Lądowy szczur nie ma tu czego szukać. Zjeżdżaj!";
-				link.l1 = "Hmm... Rozumiem.";
+				link.l1 = "Hmm... Widzę.";
 				link.l1.go = "exit";
 				break;
 			}
@@ -622,7 +622,7 @@ void ProcessDialogEvent()
             dialog.text = "Chcesz trochę akcji, co? Ha-ha! Dobrze... Ale ostrzegam cię, chłopcze, nie znajdziesz ze mną spokoju. Jeśli boisz się zapachu prochu albo nie potrafisz przelać krwi - drzwi są za tobą. Nie znoszę mięczaków. Również nie wytrzymasz ze mną długo, jeśli jesteś kapusiem albo szczurem, który lubi kraść partnerowi udział w łupach. Więc jak? Wchodzisz w to?";
 			link.l1 = "Jestem z tobą, Marcus. Nie boję się walczyć i żaden pies nie może mi zarzucić, że jestem tchórzem czy zdrajcą.";
 			link.l1.go = "Mtraxx_1";
-			link.l2 = "Ojej, to dla mnie za trudne! Przepraszam, Marcusie, ale lepiej już się oddalę...";
+			link.l2 = "Whoa, to dla mnie za trudne! Przepraszam, Marcusie, ale lepiej już się oddalę...";
 			link.l2.go = "Mtraxx_exit";
 			DelLandQuestMark(npchar);
 			DelMapQuestMarkCity("LaVega");
@@ -649,13 +649,13 @@ void ProcessDialogEvent()
 		
 		case "Mtraxx_1":
             dialog.text = "Ha-ha, no cóż, mój dzielny mały piracie, porozmawiajmy więc o interesach. Moje źródło w Santo Domingo poinformowało mnie o jakimś hiszpańskim kapitanie, który jest tak bogaty w niebieski bursztyn, że rozdaje go dziwkom. Słyszałeś o niebieskim bursztynie?";
-			link.l1 = "Tak. Rzadki i cenny kamień.";
+			link.l1 = "Mam. Rzadki i cenny kamień.";
 			link.l1.go = "mtraxx_2";
 		break;
 		
 		case "mtraxx_2":
-            dialog.text = "Dokładnie. Nawet tutaj, bankierzy i jubilerzy płacą za to dobre pieniądze, a w starej, dobrej Europie można dostać dziesięć razy więcej. Bursztyn nie jest rzadkim kamieniem na Karaibach, ale niebieski jest rzadkością. A teraz mamy jakiegoś kastylijskiego chytrusa, który przechwala się, że ma więcej niebieskiego bursztynu niż bankierzy z Kuby i Hispanioli razem wzięci.";
-			link.l1 = "Czy można ufać opowieściom jakiegoś pijanego Hiszpana? Znalazł trzy dublony i wszystkim opowiada, że odnalazł El Dorado.";
+            dialog.text = "Dokładnie. Nawet tutaj, bankierzy i jubilerzy płacą za to dobre pieniądze, a w starej, dobrej Europie można dostać dziesięć razy więcej. Bursztyn nie jest rzadkim kamieniem na Karaibach, ale niebieski jest rzadkością. A teraz mamy jakiegoś kastylijskiego chytrusa, który przechwala się, że ma więcej niebieskiego bursztynu niż bankierzy z Kuby i Hispanioli mają żółtego razem.";
+			link.l1 = "Czy można ufać opowieściom jakiegoś pijanego Hiszpana? Znalazł trzy doubloony i wszystkim opowiada, że odnalazł El Dorado.";
 			link.l1.go = "mtraxx_3";
 		break;
 		
@@ -681,7 +681,7 @@ void ProcessDialogEvent()
 				{
 					if(!CheckCharacterItem(pchar, "HolTradeLicence") || GetDaysContinueNationLicence(HOLLAND) < 60) 
 					{
-						sTemp = " Poczekaj chwilę, weź te licencję handlową na 60 dni."; 
+						sTemp = ". Wait a minute, take a trading license for 60 days."; 
 						GiveNationLicence(HOLLAND, 60);
 					}
 				}
@@ -689,27 +689,27 @@ void ProcessDialogEvent()
 				{
 					if(!CheckCharacterItem(pchar, "HolTradeLicence")) 
 					{
-						sTemp = " Poczekaj chwilę, weź te 60-dniową licencję handlową i hiszpańską flagę, żeby wylądować w Santo Domingo. Od teraz polecam zaopatrzyć się we własną, to pomoże oszukać naiwniaka w handlu. Ten zostanie mi zwrócony.";
+						sTemp = ". Wait a minute, take a 60-day trade license and a Spanish flag to land in Santo Domingo. From now on, I recommend getting your own, it will help to fool the simpleton in the trading pelvis. This one will be returned to me.";
 						GiveNationLicence(HOLLAND, 60);
 						SetCharacterPerk(pchar, "FlagSpa");
-						log_info("Otrzymałeś flagę hiszpańską");
+						log_info("You have received spanish flag");
 						pchar.questTemp.GiveMeSpaFlag = true;
 					}
 					else // есть лицензия
 					{	
 						if(GetDaysContinueNationLicence(HOLLAND) < 60) 
 						{
-							sTemp = " Czekaj, jak zamierzasz handlować bez odpowiedniej flagi?! Proszę bardzo, 60-dniowa licencja handlowa, dłuższa niż twoja. Oraz flaga hiszpańska do lądowania w Santo Domingo. Od teraz polecam zaopatrzyć się we własną, to pomoże oszukać naiwniaka w miednicy handlowej. Ta zostanie mi zwrócona.";
+							sTemp = ". Wait, how are you going to trade without having the right flag?! Here you go, a 60-day trading license, longer than yours. As well as the Spanish flag for landing in Santo Domingo. From now on, I recommend getting your own, it will help to fool the simpleton in the trading pelvis. This one will be returned to me.";
 							GiveNationLicence(HOLLAND, 60);
 							SetCharacterPerk(pchar, "FlagSpa");
-							log_info("Otrzymałeś flagę hiszpańską");
+							log_info("You have received spanish flag");
 							pchar.questTemp.GiveMeSpaFlag = true;
 						}
 						else 
 						{
-							sTemp = " Czekaj, jak zamierzasz handlować bez odpowiedniej flagi?! Weź flagę Hiszpanii z lądowania w Santo Domingo. Od teraz polecam zaopatrzyć się we własną, to pomoże oszukać prostaka w handlu. Ta zostanie mi zwrócona.";
+							sTemp = ". Wait, how are you going to trade without having the right flag?! Here, take the Spanish flag for the Santo Domingo landings. From now on, I recommend getting your own, it will help to fool the simpleton in the trading pelvis. This one will be returned to me.";
 							SetCharacterPerk(pchar, "FlagSpa");
-							log_info("Otrzymałeś flagę hiszpańską");
+							log_info("You have received spanish flag");
 							pchar.questTemp.GiveMeSpaFlag = true;
 						}
 					}
@@ -735,7 +735,7 @@ void ProcessDialogEvent()
 		case "mtraxx_7":
 			i = GetCharacterItem(pchar, "jewelry7");
             dialog.text = "Już zostałem poinformowany o twoim przybyciu. Zdaj mi raport!";
-			link.l1 = "Zająłem się tym miłośnikiem niebieskiego bursztynu, chociaż to nie było łatwe. Udało mi się znaleźć jego złoża i je splądrować. Przyniosłem ci "+FindRussianQtyString(i)+" kawałki błękitnego bursztynu.";
+			link.l1 = "Zajęłam się tym miłośnikiem niebieskiego bursztynu, chociaż to nie było łatwe. Udało mi się znaleźć jego złoża i je splądrować. Przyniosłam ci "+FindRussianQtyString(i)+" kawałki błękitnego bursztynu.";
 			link.l1.go = "mtraxx_8";
 			DelLandQuestMark(characterFromId("Terrax"));
 			DelMapQuestMarkCity("LaVega");
@@ -745,7 +745,7 @@ void ProcessDialogEvent()
 			if (sti(pchar.questTemp.Mtraxx.JewQty) > GetCharacterItem(pchar, "jewelry7"))
 			{
 				PlaySound("interface\important_item.wav");
-				Log_Info("Przekazałeś "+FindRussianQtyString(GetCharacterItem(pchar, "jewelry7"))+" kawałki błękitnego bursztynu");
+				Log_Info("You have given "+FindRussianQtyString(GetCharacterItem(pchar, "jewelry7"))+" pieces of blue amber");
 				RemoveItems(pchar, "jewelry7", GetCharacterItem(pchar, "jewelry7"));
 				dialog.text = "Cóż to... Synu, pamiętasz moje ostrzeżenie o niebezpieczeństwach bycia szczurem? Co mi wtedy powiedziałeś? Żaden pies nie może cię za to winić? Myślisz, że jestem głupi, dzieciaku? Doskonale wiem, że splądrowałeś "+FindRussianQtyString(sti(pchar.questTemp.Mtraxx.JewQty))+" kawałki niebieskiego bursztynu na Wybrzeżu Komarów. Teraz biegnij, mała szczuro, biegnij, i módl się, byśmy się nigdy więcej nie spotkali!";
 				link.l1 = "Cholera!";
@@ -758,13 +758,13 @@ void ProcessDialogEvent()
 				{
 					DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
 					DeleteAttribute(pchar,"perks.list.FlagSpa"); 
-					log_info("Oddałeś hiszpańską flage");
+					log_info("You have given spanish flag");
 				}
 			}
 			else
 			{
 				PlaySound("interface\important_item.wav");
-				Log_Info("Przekazałeś "+FindRussianQtyString(GetCharacterItem(pchar, "jewelry7"))+" kawałki błękitnego bursztynu");
+				Log_Info("You have given "+FindRussianQtyString(GetCharacterItem(pchar, "jewelry7"))+" pieces of blue amber");
 				RemoveItems(pchar, "jewelry7", sti(pchar.questTemp.Mtraxx.JewQty));
 				dialog.text = "Świetna robota, chłopcze! Pokazałeś się z najlepszej strony: poradziłeś sobie z trudną sprawą i przyniosłeś wszystko, co zrabowałeś. Dobra robota! Cieszę się, że się na tobie nie pomyliłem.";
 				link.l1 = "A co z moim udziałem, Marcus?";
@@ -775,14 +775,14 @@ void ProcessDialogEvent()
 		case "mtraxx_9":
 			i = sti(pchar.questTemp.Mtraxx.JewQty)/2;
 			PlaySound("interface\important_item.wav");
-			Log_Info("Otrzymałeś "+FindRussianQtyString(i)+" kawałków błękitnego bursztynu");
+			Log_Info("You have received "+FindRussianQtyString(i)+" pieces of blue amber");
 			TakeNItems(pchar, "jewelry7", i);
 			// belamour legendary edition забрать флаг обратно
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
 				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
 				DeleteAttribute(pchar,"perks.list.FlagSpa"); 
-				log_info("Oddałeś hiszpańską flage");
+				log_info("You have given spanish flag");
 			}
             dialog.text = "Mówisz jak prawdziwy pirat, ha-ha-ha! Połowa łupu jest twoja. Weź to.";
 			link.l1 = "Dzięki, kapitanie. Masz coś jeszcze dla mnie?";
@@ -793,7 +793,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_10":
-            dialog.text = "Zawsze mam zadania dla zdolnych chłopców. Jest pewna delikatna sprawa, którą chcę, abyś się zajął. W Capsterville stoi statek o nazwie 'Wąż', pod dowództwem Geffreya Brooke'a, znanego również jako Łysy Geffrey. Pracuje dla mnie. Doskonały wojownik, wie wszystko o broni palnej i mieczach, ale kompletny idiota w każdej innej dziedzinie życia. Ale nie bądźmy zbyt surowi dla Łysego, nikt nie jest doskonały, ha-ha!\nWięc. Ten twardziel zaatakował konwój holenderski na północ od Św. Marcina i zdobył barkę wypełnioną workami z pszenicą. Rzecz w tym, że udało mu się znaleźć ukryty jedwab okrętowy wśród worków. Naprawdę duży ładunek. Ten towar jest niezwykle cenny i rzadki, Holendrzy przywożą go z Europy wyłącznie dla potrzeb swojego wojska. Ten jedwab jest używany do specjalnych żagli, które zwiększają prędkość statku i zdolność żeglowania pod wiatr.\nKupno jest prawie niemożliwe, sprzedaż nie stanowi problemu, ale trudno jest znaleźć odpowiednią cenę. Ci przeklęci handlarze zawsze obniżają cenę! Wiem, że są na Karaibach ludzie gotowi zapłacić dobrą cenę w dublonach za zakup tego jedwabiu, a twoim celem jest znalezienie takich ludzi.\nCo? Jakikolwiek głupiec może splądrować karawany, ale handel to tylko dla ludzi, którzy mają choćby oznakę istnienia mózgu w czaszce. Planuję sprzedawać jedwab okrętowy co miesiąc, więc twoim celem jest znalezienie stałego kupca, który zapłaci co najmniej dwadzieścia złotych dublonów za belkę. Masz na to dwa miesiące, nie mogę trzymać Łysego Geffreya w Capsterville na zawsze.\nTo wszystko. Wypłyń do Capsterville i porozmawiaj z Geffreyem, zanim sprzeda ładunek przemytnikom za grosze. Już ci mówiłem, że jest trochę 'prostoduszny'.";
+            dialog.text = "Zawsze mam zadania dla zdolnych chłopców. Jest pewna delikatna sprawa, którą chcę, abyś się zajął. W Capsterville stoi statek o nazwie 'Wąż', pod dowództwem Geffreya Brooke'a, znanego również jako Łysy Geffrey. Pracuje dla mnie. Doskonały wojownik, wie wszystko o broni palnej i mieczach, ale kompletny idiota w każdej innej dziedzinie życia. Ale nie bądźmy zbyt surowi dla Łysego, nikt nie jest doskonały, ha-ha!\nWięc. Ten twardziel zaatakował konwój holenderski na północ od Saint Martin i zdobył barkę wypełnioną workami z pszenicą. Rzecz w tym, że udało mu się znaleźć ukryty jedwab okrętowy wśród worków. Naprawdę duży ładunek. Ten towar jest niezwykle cenny i rzadki, Holendrzy przywożą go z Europy wyłącznie dla potrzeb swojego wojska. Ten jedwab jest używany do specjalnych żagli, które zwiększają prędkość statku i zdolność żeglowania pod wiatr.\nKupno jest prawie niemożliwe, sprzedaż nie stanowi problemu, ale trudno jest znaleźć odpowiednią cenę. Ci przeklęci handlarze zawsze obniżają cenę! Wiem, że są na Karaibach ludzie gotowi zapłacić dobrą cenę w dublonach za zakup tego jedwabiu, a twoim celem jest znalezienie takich ludzi.\nCo? Jakikolwiek głupiec może splądrować karawany, ale handel to tylko dla ludzi, którzy mają choćby oznakę istnienia mózgu w czaszce. Planuję sprzedawać jedwab okrętowy co miesiąc, więc twoim celem jest znalezienie stałego kupca, który zapłaci co najmniej 4 złotych dublonów za belkę. Masz na to dwa miesiące, nie mogę trzymać Łysego Geffreya w Capsterville na zawsze.\nTo wszystko. Wypłyń do Capsterville i porozmawiaj z Geffreyem, zanim sprzeda ładunek przemytnikom za grosze. Już ci mówiłem, że jest trochę 'prostoduszny'.";
 			link.l1 = "Hm... Rozumiem. Już jestem w drodze.";
 			link.l1.go = "mtraxx_11";
 		break;
@@ -810,12 +810,12 @@ void ProcessDialogEvent()
             dialog.text = "Ha! Oto odważny kapitan "+GetFullName(pchar)+"! A co z kupcem?";
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.SilkLate"))
 			{
-				link.l1 = "Znalazłem ci kupca. To szkutnik z Port Royal. Potrzebuje jedwabiu okrętowego do swojej produkcji i będzie mógł kupować partie po sto bel co miesiąc za 25 dublonów za belę. Jego ludzie będą odbierać towar od 10 do 15, w nocy, miejsce to Negril Cape. Hasło - 'Kupiec z Lyonu'. Zajęło mi ponad dwa miesiące, by znaleźć takiego kupca, Geffrey musiał już sprzedać jedwab przemytnikom. Przykro mi, Marcus.";
+				link.l1 = "Znalazłem ci kupca. To szkutnik z Port Royal. Potrzebuje jedwabiu okrętowego do swojej produkcji i będzie mógł kupować partie po sto bel co miesiąc za 5 dublonów za belę. Jego ludzie będą odbierać towar od 10 do 15, w nocy, miejsce to Negril Cape. Hasło - 'Kupiec z Lyonu'. Zajęło mi ponad dwa miesiące, by znaleźć takiego kupca, Geffrey musiał już sprzedać jedwab przemytnikom. Przykro mi, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 			else
 			{
-				link.l1 = "Znalazłem dla ciebie kupca. To szkutnik z Port Royal. Potrzebuje jedwabiu do produkcji statków i będzie mógł kupować partie po sto zwojów co miesiąc za 25 дублонов за zwój. Jego ludzie będą odbierać towary od 10 do 15, w nocy, lokalizacja to Przylądek Negril. Hasło - 'Kupiec z Lyonu'. Łysy Geffrey już dostarczył pierwszą partię na Jamajkę.";
+				link.l1 = "Znalazłem dla ciebie kupca. To szkutnik z Port Royal. Potrzebuje jedwabiu do produkcji statków i będzie mógł kupować partie po sto zwojów co miesiąc za 5 дублонов за zwój. Jego ludzie będą odbierać towary od 10 do 15, w nocy, lokalizacja to Przylądek Negril. Hasło - 'Kupiec z Lyonu'. Łysy Geffrey już dostarczył pierwszą partię na Jamajkę.";
 				link.l1.go = "mtraxx_13";
 			}
 		break;

@@ -328,3 +328,4 @@ QuestsUtilite_327 {Hefajstos}
 QuestsUtilite_328 {Centurion}
 QuestsUtilite_329 {Piraci zostali pokonani, wody stały się bezpieczniejsze.}
 QuestsUtilite_330 {Piraci się wzmocnili, morze stało się bardziej niebezpieczne.}
+QuestsUtilite_331 {Kapitanie, Amsterdam! Gratulacje — Kompania wreszcie uznała pana za prawdziwe zagrożenie.}

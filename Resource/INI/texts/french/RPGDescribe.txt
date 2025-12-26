@@ -30,45 +30,27 @@ Les pirates chanceux sont de parfaits tireurs, joueurs et aventuriers.~"Armes 
 }
 Crit
 {
-Chance de base d’infliger un coup ou tir critique à l’ennemi.
-~
-Dépend de S et P.
-~
-Les Perks et l’équipement peuvent augmenter cette probabilité.
+Chance de base d’infliger un coup ou tir critique à l’ennemi.~Dépend de S et P.~Les Perks et l’équipement peuvent augmenter cette probabilité.
 }
 CharDefence
 {
-Statistiques de Protection contre les dégâts de base. Réduisent tous les dégâts entrants d’un certain pourcentage.
- ~
- Ces valeurs sont influencées par les Perks personnels et l’équipement.
+Statistiques de Protection contre les dégâts de base. Réduisent tous les dégâts entrants d’un certain pourcentage. ~ Ces valeurs sont influencées par les Perks personnels et l’équipement.
 }
 FencingL
 {
-Habilité à manier les lames légères, les fleurets et similaires.
- (R*0.9+I*0.1)
- ~
- Influence les dégâts des armes et le coût en Énergie des attaques.
+Habilité à manier les lames légères, les fleurets et similaires. (R*0.9+I*0.1) ~ Influence les dégâts des armes et le coût en Énergie des attaques.
 }
 FencingS
 {
-Habilité à manier les lames moyennes et équilibrées, comme les sabres, nécessitant force et agilité.
- (P*0.6+R*0.4)
- ~
- Influence les dégâts des armes et le coût en Énergie des attaques.
+Habilité à manier les lames moyennes et équilibrées, comme les sabres, nécessitant force et agilité. (P*0.6+R*0.4) ~ Influence les dégâts des armes et le coût en Énergie des attaques.
 }
 FencingH
 {
-Habilité à manier les armes lourdes comme les épées larges et les haches. Nécessite une grande force physique.
- (P*0.9+E*0.1)
- ~
- Influence les dégâts des armes et le coût en Énergie des attaques.
+Habilité à manier les armes lourdes comme les épées larges et les haches. Nécessite une grande force physique. (P*0.9+E*0.1) ~ Influence les dégâts des armes et le coût en Énergie des attaques.
 }
 Pistol
 {
-Compétence à utiliser toutes sortes d’armes à feu.
- (R*0.4+S*0.6)
- ~
- Influence les dégâts et la vitesse de rechargement.
+Compétence à utiliser toutes sortes d’armes à feu. (R*0.4+S*0.6) ~ Influence les dégâts et la vitesse de rechargement.
 }
 Fortune
 {
@@ -92,18 +74,7 @@ Chargez le canon rapidement, roulez-le et pendant que l'écho de la salve gronde
 }
 Sailing
 {
-Capacité à conduire un navire en toutes circonstances, à utiliser les instruments et à commander une escadre. Même le navire le plus capricieux et peu manœuvrant obéira à la main ferme d'un skipper expérimenté.
- Dépend de 'Perception' et 'Talent' (I0.2 + T0.8)
- ~
- Pour commander un navire d'un certain rang, un niveau minimum de Navigation est requis :
- rang 1 requiert 90
- rang 2 requiert 70
- rang 3 requiert 55
- rang 4 requiert 40
- rang 5 requiert 20
- rang 6 requiert 01
- ~
- Un déficit de Navigation entraîne des pénalités sur toutes les compétences et caractéristiques du héros. Plus l'écart entre la valeur actuelle et la valeur requise de Navigation est grand, plus les pénalités sont fortes.
+Capacité à conduire un navire en toutes circonstances, à utiliser les instruments et à commander une escadre. Même le navire le plus capricieux et peu manœuvrant obéira à la main ferme d'un skipper expérimenté. Dépend de 'Perception' et 'Talent' (I0.2 + T0.8) ~ Pour commander un navire d'un certain rang, un niveau minimum de Navigation est requis : rang 1 requiert 90 rang 2 requiert 70 rang 3 requiert 55 rang 4 requiert 40 rang 5 requiert 20 rang 6 requiert 01 ~ Un déficit de Navigation entraîne des pénalités sur toutes les compétences et caractéristiques du héros. Plus l'écart entre la valeur actuelle et la valeur requise de Navigation est grand, plus les pénalités sont fortes.
 }
 Repair
 {
@@ -111,10 +82,7 @@ Lorsque l'ennemi bombarde votre navire d'une volée de projectiles, faisant écl
 }
 Grappling
 {
-Aligner son navire avec celui de l’ennemi, lancer les grappins pour aborder l’adversaire tremblant, balayer les ponts et s’emparer du navire comme d’un prix bien mérité — tout cela exige agilité et expérience, mais le butin compensera sûrement tous les efforts.
- (R*0.7+T*0.3)
- ~
- Influence la distance d’abordage.
+Aligner son navire avec celui de l’ennemi, lancer les grappins pour aborder l’adversaire tremblant, balayer les ponts et s’emparer du navire comme d’un prix bien mérité — tout cela exige agilité et expérience, mais le butin compensera sûrement tous les efforts. (R*0.7+T*0.3) ~ Influence la distance d’abordage.
 }
 Defence
 {
@@ -138,60 +106,35 @@ Attention !Certains avantages peuvent ne pas être disponibles pourcertains ty
 }
 Personal_abilities
 {
-Perks élargissant les capacités personnelles du personnage. Vous progressez en améliorant vos compétences personnelles.
- ~
- En atteignant un palier, vous obtenez un nouveau point de Perk personnel. Les différents Perks coûtent un nombre variable de points. En général, les plus puissants se trouvent à la fin de l’arbre de progression.
+Perks élargissant les capacités personnelles du personnage. Vous progressez en améliorant vos compétences personnelles. ~ En atteignant un palier, vous obtenez un nouveau point de Perk personnel. Les différents Perks coûtent un nombre variable de points. En général, les plus puissants se trouvent à la fin de l’arbre de progression.
 }
 Ship_abilities
 {
-Perks influençant la gestion du navire. Vous progressez en améliorant vos compétences navales.
- ~
- En atteignant un palier, vous obtenez un nouveau point de Perk naval. Les différents Perks coûtent un nombre variable de points. En général, les plus puissants se trouvent à la fin de l’arbre de progression.
- ~
- Ils peuvent être hérités par le héros principal des officiers occupant des postes à bord, experts dans leur domaine.
+Perks influençant la gestion du navire. Vous progressez en améliorant vos compétences navales. ~ En atteignant un palier, vous obtenez un nouveau point de Perk naval. Les différents Perks coûtent un nombre variable de points. En général, les plus puissants se trouvent à la fin de l’arbre de progression. ~ Ils peuvent être hérités par le héros principal des officiers occupant des postes à bord, experts dans leur domaine.
 }
 Abilities_available {Le chiffre indique le nombre de points d'avantages non attribués.}
 Abilities_active {Le nombre indique les avantages activés par le personnage.}
 Rank
 {
-Le rang est un indicateur du niveau de développement du personnage dans le jeu. Vous progressez en améliorant vos compétences.
- ~
- À mesure que le rang du personnage augmente, sa santé et son énergie s’accroissent, et des ennemis plus puissants ainsi que de nouveaux objets apparaissent plus souvent.
+Le rang est un indicateur du niveau de développement du personnage dans le jeu. Vous progressez en améliorant vos compétences. ~ À mesure que le rang du personnage augmente, sa santé et son énergie s’accroissent, et des ennemis plus puissants ainsi que de nouveaux objets apparaissent plus souvent.
 }
 Life
 {
-HP — mesure de la résistance d'un personnage aux dégâts physiques. Zéro signifie la mort, un signifie un monde de possibilités.
- ~
- La valeur dépend de P et E et augmente avec le rang.
+HP — mesure de la résistance d'un personnage aux dégâts physiques. Zéro signifie la mort, un signifie un monde de possibilités. ~ La valeur dépend de P et E et augmente avec le rang.
 }
 Health {La vitalité est l'indicateur de l'état physique du personnage. Elle diminue chaque fois que vous êtes gravement blessé dans un court laps de temps. Elle se rétablit si vous évitez le combat pendant un certain temps pour permettre aux blessures de guérir correctement. Les blessures peuvent gravement affecter les statistiques et les compétences si elles ne sont pas soignées.}
 Energy
 {
-Énergie - la réserve d'endurance physique du personnage.
- 
-  ~
- 
-  Toutes les actions d'attaque et la course rapide en mêlée consomment de l'Énergie ; pendant le combat, le personnage se fatigue et a besoin d'une pause pour récupérer.
- 
-  ~
- 
-  La valeur d'Énergie dépend de R et T et augmente avec le rang.
+Énergie - la réserve d'endurance physique du personnage.   ~   Toutes les actions d'attaque et la course rapide en mêlée consomment de l'Énergie ; pendant le combat, le personnage se fatigue et a besoin d'une pause pour récupérer.   ~   La valeur d'Énergie dépend de R et T et augmente avec le rang.
 }
 Money {L'argent fait le bonheur. Piastres, thalers, guinées... Quelle différence, s'il s'agit d'argent liquide !}
 Reputation
 {
-L’Honneur reflète la façon dont la société perçoit le personnage.
-~
-Il évolue selon votre manière de résoudre les problèmes.
-~
-L’Honneur revient toujours vers un état neutre.
+L’Honneur reflète la façon dont la société perçoit le personnage.~Il évolue selon votre manière de résoudre les problèmes.~L’Honneur revient toujours vers un état neutre.
 }
 Weight
 {
-Le poids représente la masse totale maximale de marchandises qu’un personnage peut porter.
- Dépend de la Force, de l’Endurance, des Perks personnels et des amulettes actives.
- ~
- Un personnage surchargé se déplace plus lentement, subit des pénalités et ne peut pas utiliser le voyage rapide.
+Le poids représente la masse totale maximale de marchandises qu’un personnage peut porter. Dépend de la Force, de l’Endurance, des Perks personnels et des amulettes actives. ~ Un personnage surchargé se déplace plus lentement, subit des pénalités et ne peut pas utiliser le voyage rapide.
 }
 Title {Le titre indique l'utilité du personnage pour l'État qu'il sert.}
 NextExp
@@ -285,15 +228,13 @@ SourceOverload {Surchargé}
 SourceNavyPenalty {Échec de compétence Navigation}
 CritDamage
 {
-Valeur des dégâts critiques. S’applique après tous les modificateurs.
- ~
- Peut être augmentée grâce aux Perks personnels et à l’équipement.
+Valeur des dégâts critiques. S’applique après tous les modificateurs. ~ Peut être augmentée grâce aux Perks personnels et à l’équipement.
 }
 CritCharDefence
 {
-Réduction totale des dégâts critiques ennemis.
- ~
- Peut être augmentée grâce aux Perks personnels et à l’équipement.
+Réduction totale des dégâts critiques ennemis. ~ Peut être augmentée grâce aux Perks personnels et à l’équipement.
 }
 SourceSkill {Compétence}
 SourceChickenGod {Bénédiction d’Aruba}
+SourceSpecialityUpgrade {Amélioration de sous-classe}
+SourceAudit {Audit}

@@ -39,6 +39,7 @@
 #include "quests\Common_Quests\ShipsPack\Santa_Misericordia.c"
 #include "quests\Common_Quests\ShipsPack\LadyBeth.c"
 #include "quests\Common_Quests\ShipsPack\Memento.c"
+#include "quests\Common_Quests\ShipsPack\ClockTower.c"
 #include "quests\Common_Quests\ShipsPack\DiegoDeLanda.c"
 #include "quests\Common_Quests\MiniEvents\DarkWatersOfHealing.c"
 #include "quests\Common_Quests\MiniEvents\TradingByLaw.c"

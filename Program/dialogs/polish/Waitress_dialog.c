@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 				bOk1 = (pchar.questTemp.HWIC.Detector == "holl_win") || (pchar.questTemp.HWIC.Detector == "eng_win") || (pchar.questTemp.HWIC.Detector == "self_win") || SandBoxMode;
 				if (sti(pchar.rank) > 6 && npchar.location == "PortSpein_tavern" && !CheckAttribute(npchar, "quest.Consumption")  && bOk1)
 				{
-					dialog.text = "Co Señor sobie życzy? Przepraszam, ja tylko...'szlocha'... oh... Prosze wybaczyć.";
+					dialog.text = "Co Senor sobie życzy? Przepraszam, ja tylko...'szlocha'... oh... Prosze wybaczyć.";
 					link.l1 = "Dlaczego jesteś tak zmartwiona, droga Pani? Łzy na tak pięknej twarzy? Co się stało?";
 					link.l1.go = "Consumption";
 					break;
@@ -248,20 +248,20 @@ void ProcessDialogEvent()
 		//--> Jason Цена чахотки
 		case "Consumption":
 			npchar.quest.Consumption = "true";
-			dialog.text = "Nie, to nic takiego, Señor... dziękuję za twoją życzliwość, ale ja... (płacze)";
+			dialog.text = "Nie, to nic takiego, Senor... dziękuję za twoją życzliwość, ale ja... (płacze)";
 			link.l1 = "Ktoś cię obraził? Uspokój się, piękna, opowiedz mi wszystko.";
 			link.l1.go = "Consumption_1";
 		break;
 		
 		case "Consumption_1":
-			dialog.text = "Nie, nie, Señor to naprawde nic. Przepraszam za brak opanowania, tylko... Chodzi o mojego brata, mówią, że nie żyje, ale ja w to nie wierzę. Nie wiem, w co wierzyć, ale czuję własnym sercem, że jest w wielkich tarapatach. A poza Angelo, po śmierci naszych rodziców, nie mam nikogo... (płacze)";
+			dialog.text = "Nie, nie, Senor to naprawde nic. Przepraszam za brak opanowania, tylko... Chodzi o mojego brata, mówią, że nie żyje, ale ja w to nie wierzę. Nie wiem, w co wierzyć, ale czuję własnym sercem, że jest w wielkich tarapatach. A poza Angelo, po śmierci naszych rodziców, nie mam nikogo... (płacze)";
 			link.l1 = "Rozumiem, ale proszę cię, uspokój się. Co się stało z twoim bratem?";
 			link.l1.go = "Consumption_2";
 		break;
 		
 		case "Consumption_2":
-			dialog.text = "Señor... proszę mnie nie zrozumieć źle, ale dlaczego taki kapitan miałby się troszczyć o zwykłą i skromną dziewczynę z karczmy? Nawet nie mam nic, co mogłabym Ci obiecać za twoją pomoc...";
-			link.l1 = "Właściwie, masz rację. Altruizm nie jest dla mnie, więc bądź silna, gdyż wszyscy tracimy naszych krewnych...";
+			dialog.text = "Senor... proszę mnie nie zrozumieć źle, ale dlaczego taki kapitan miałby się troszczyć o zwykłą i skromną dziewczynę z karczmy? Nawet nie mam nic, co mogłabym Ci obiecać za twoją pomoc...";
+			link.l1 = "Właściwie, masz rację. Altruizm nie jest dla mnie, więc bądź silna, gdyż wszyscy tracimy naszych krewnych. C'est la vie jak mówimy we Francji...";
 			link.l1.go = "exit";
 			link.l2 = "Kobieta zawsze znajdzie sposób, aby podziękować mężczyźnie... Ha-ha. Teraz przestań już płakać i opowiedz mi o swoim problemie.";
 			link.l2.go = "Consumption_3_1";
@@ -281,20 +281,20 @@ void ProcessDialogEvent()
 			{
 				Notification_Reputation(true, 36, "high");
 				dialog.text = "Cóż... Przynajmniej jesteś szczery w swoich pragnieniach. Obiecuję, że jeśli znajdziesz Angelo lub powiesz mi, co naprawdę się z nim stało, to dostaniesz to, o co prosiłeś...";
-				link.l1 = "Droga señorito, to przyjemność robić z tobą interesy... Teraz przejdźmy od razu do rzeczy. Co się stało z twoim bratem?";
+				link.l1 = "Droga senorito, to przyjemność robić z tobą interesy... Teraz przejdźmy od razu do rzeczy. Co się stało z twoim bratem?";
 				link.l1.go = "Consumption_4";
 				npchar.quest.Consumption.sex = "true";
 			}
 		break;
 		
 		case "Consumption_3_2":
-			dialog.text = "Żartujesz sobie, Señor? Naprawdę chcesz mi pomóc za darmo?";
+			dialog.text = "Żartujesz sobie, Senor? Naprawdę chcesz mi pomóc za darmo?";
 			link.l1 = "Tylko okrutny człowiek nie pomógłby płaczącej dziewczynie. Nie martw się, naprawdę chcę ci pomóc. Co dokładnie stało się z Angelo?";
 			link.l1.go = "Consumption_4";
 		break;
 		
 		case "Consumption_4":
-			dialog.text = "Dobrze, Señor. Mój brat, on... och, nie jest mi łatwo powstrzymać łzy, jest mi tak przykro... Byliśmy naprawdę biedni z powodu mojej... skromności w pracy, być może... A Angelo zaczął pracować z lokalnymi przemytnikami. Myślał, że jego łódź rybacka przyniesie więcej pieniędzy, jeśli będzie coś przewozić, unikając przy tym cła.";
+			dialog.text = "Bardzo dobrze, Senor. Mój brat, on... och, nie jest mi łatwo powstrzymać łzy, jest mi tak przykro... Byliśmy naprawdę biedni z powodu mojej... skromności w pracy, być może... A Angelo zaczął pracować z lokalnymi przemytnikami. Myślał, że jego łódź rybacka przyniesie więcej pieniędzy, jeśli będzie coś przewozić, unikając przy tym cła.";
 			link.l1 = "Aby to ująć prościej, twój brat stał się przestępcą, prawda?";
 			link.l1.go = "Consumption_5";
 		break;
@@ -318,7 +318,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Consumption_8":
-			dialog.text = "Nawet prosta obietnica to o wiele więcej, niż liczyłam! Jesteś taki uprzejmy, Señor! Będę tu czekać!";
+			dialog.text = "Nawet prosta obietnica to o wiele więcej, niż liczyłam! Jesteś taki uprzejmy, Senor! Będę tu czekać!";
 			link.l1 = "Och, młodość! Tak niekonsekwentna w uczuciach... czy mógłabyś mi uprzejmie oddać moją rękę, skarbie, nadal jej potrzebuję ha-ha... Dobrze więc, pójdę i poszukam dookoła.";
 			link.l1.go = "Consumption_9";
 		break;

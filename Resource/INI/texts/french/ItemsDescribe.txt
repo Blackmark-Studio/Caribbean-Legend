@@ -154,41 +154,32 @@ itmdescr_saber {Une arme digne d’un vrai patriote et officier, forgée au fil 
 itmname_q_blade_10 {"Crochet" de Jurgen Schmidt}
 itmdescr_q_blade_10
 {
-Sabre d’abordage forgé par Jürgen Schmidt.
-Lame en acier de qualité, parfaitement équilibrée.
+Sabre d’abordage forgé par Jürgen Schmidt.Lame en acier de qualité, parfaitement équilibrée.
 }
 itmname_q_blade_13 {Epée large de Jurgen Schmidt}
 itmdescr_q_blade_13
 {
-Sabre d’officier forgé par Jürgen Schmidt.
-Lame en acier de qualité, parfaitement équilibrée.
+Sabre d’officier forgé par Jürgen Schmidt.Lame en acier de qualité, parfaitement équilibrée.
 }
 itmname_q_blade_16 {Petite épée de Jurgen Schmidt}
 itmdescr_q_blade_16
 {
-Épée courte forgée par le maître Jürgen Schmidt.
-Lame en acier de qualité,
-équilibre exceptionnel.
+Épée courte forgée par le maître Jürgen Schmidt.Lame en acier de qualité,équilibre exceptionnel.
 }
 itmname_q_blade_18 {Pappenheimer de Jurgen Schmidt}
 itmdescr_q_blade_18
 {
-Pappenheimer forgé par le maître Jürgen Schmidt.
-La lame est en acier de qualité
-et offre un équilibre exceptionnel.
+Pappenheimer forgé par le maître Jürgen Schmidt.La lame est en acier de qualitéet offre un équilibre exceptionnel.
 }
 itmname_q_blade_19 {Sabre de Jurgen Schmidt}
 itmdescr_q_blade_19
 {
-Sabre naval forgé par le maître Jürgen Schmidt.
-Lame en acier fin, parfaitement équilibrée.
+Sabre naval forgé par le maître Jürgen Schmidt.Lame en acier fin, parfaitement équilibrée.
 }
 itmname_q_blade_21 {Epée à un seul tranchant de Jurgen Schmidt}
 itmdescr_q_blade_21
 {
-Sabre Kleeblatt forgé par le maître Jürgen Schmidt.
-La lame est en acier fin
-et offre un équilibre remarquable.
+Sabre Kleeblatt forgé par le maître Jürgen Schmidt.La lame est en acier finet offre un équilibre remarquable.
 }
 itmname_shamshir {Shamshir}
 itmdescr_shamshir {Un shamshir persan destiné à la cavalerie, véritable incarnation des dures guerres dans le désert. Combine l'efficacité de la coupe et la simplicité du débitage. Le meilleur choix pour ceux qui aiment les entailles circulaires.}
@@ -236,8 +227,7 @@ itmdescr_mushket2 {Version raccourcie du dernier fusil anglais, équipé d'une b
 itmname_mushket3 {Arquebuse}
 itmdescr_mushket3
 {
-Blunderbuss d’abordage à mèche 
-Il a beau avoir fait son temps, ceux qui font face à son canon ont d’autres préoccupations.
+Blunderbuss d’abordage à mèche Il a beau avoir fait son temps, ceux qui font face à son canon ont d’autres préoccupations.
 }
 itmname_mushket5 {Fusil à lunette}
 itmdescr_mushket5 {Fusil à rouet sur mesure, canon rayé et longue-vue à dioptre. L’arme d’un chasseur ou tireur fortuné.}
@@ -305,8 +295,7 @@ itmdescr_suit3 {Uniforme d’officier de la garde catalane.}
 itmname_suit4 {Costume de la Ligue}
 itmdescr_suit4
 {
-Tenue de mercenaire de la Ligue 
-Plaques de métal cousues et sangles ajustables : tout pour un combat rapide et brutal. Le demi-masque préserve votre anonymat.
+Tenue de mercenaire de la Ligue Plaques de métal cousues et sangles ajustables : tout pour un combat rapide et brutal. Le demi-masque préserve votre anonymat.
 }
 itmname_suit5 {Uniforme d'amiral}
 itmdescr_suit5 {Uniforme d’un haut officier de la marine française. Une véritable œuvre d’art, rien de moins.}
@@ -381,8 +370,7 @@ itmdescr_talisman3 {Un pendentif en or en forme de Mjölnir, le marteau de Thor,
 itmname_talisman4 {Protection "Janissaire"}
 itmdescr_talisman4
 {
-Brassard ottoman de janissaire senior.
-Augmente la discipline de l’équipage.
+Brassard ottoman de janissaire senior.Augmente la discipline de l’équipage.
 }
 itmname_talisman6 {Protection "Déesse"}
 itmdescr_talisman6 {Statuette de la déesse Tlazolteotl, dévoreuse d’impuretés.}
@@ -391,8 +379,7 @@ itmdescr_talisman7 {Une lourde bague égyptienne antique en forme de scarabée i
 itmname_talisman8 {Protection "Scorpion"}
 itmdescr_talisman8
 {
-Broche de la famille Médicis en forme de scorpion. 
-Contient un compartiment secret avec un puissant antidote.
+Broche de la famille Médicis en forme de scorpion. Contient un compartiment secret avec un puissant antidote.
 }
 itmname_talisman9 {Ordre de Saint-Louis}
 itmdescr_talisman9 {Le prix le plus convoité de tout capitaine français.}
@@ -421,9 +408,7 @@ talisman18_NoBonus {Trésors trouvés : 0 / 10}
 itmname_talisman19 {Talisman "Crâne de Yorick"}
 itmdescr_talisman19
 {
-Le crâne du capitaine Mortimer Grim du « Memento », qui n’a jamais vraiment compris sa propre mort. Tu le connaissais, #sName#.
-Les morts enseignent aux vivants, et cet artefact s’adapte aux désirs de son propriétaire.
-Dans l’inventaire, il rend tous les officiers immortels.
+Le crâne du capitaine Mortimer Grim du « Memento », qui n’a jamais vraiment compris sa propre mort. Tu le connaissais, #sName#.Les morts enseignent aux vivants, et cet artefact s’adapte aux désirs de son propriétaire.Dans l’inventaire, il rend tous les officiers immortels.
 }
 talisman19_InSlot
 {
@@ -462,68 +447,57 @@ itmdescr_totem_13 {Une carte utile toujours à portée de main qui augmente les 
 itmname_indian_1 {Amulette "Poupée vaudou"}
 itmdescr_indian_1
 {
-Poupée rituelle — artefact indigène sinistre, dit se lier à l’âme de la victime.
- ~Peut accroître les dégâts infligés aux endroits vulnérables — par exemple, la tête.
+Poupée rituelle — artefact indigène sinistre, dit se lier à l’âme de la victime. ~Peut accroître les dégâts infligés aux endroits vulnérables — par exemple, la tête.
 }
 itmname_indian_2 {Amulette "Testeur de poudre"}
 itmdescr_indian_2
 {
-Dispositif de contrôle de la qualité de la poudre. ~
- Une poudre de bonne qualité augmente les dégâts de tout projectile grâce à une combustion plus homogène, mais elle est particulièrement utile lors de la fabrication de vos propres munitions.
+Dispositif de contrôle de la qualité de la poudre. ~ Une poudre de bonne qualité augmente les dégâts de tout projectile grâce à une combustion plus homogène, mais elle est particulièrement utile lors de la fabrication de vos propres munitions.
 }
 itmname_indian_3 {Amulette 'Couteau rituel'}
 itmdescr_indian_3
 {
-Couteau sacrificiel en obsidienne. On ignore combien d’âmes il a fauché en quête des bénédictions des dieux aztèques hérétiques, mais la lame reste intacte.
- ~Augmente les dégâts critiques; que Dieu repose leurs âmes.
+Couteau sacrificiel en obsidienne. On ignore combien d’âmes il a fauché en quête des bénédictions des dieux aztèques hérétiques, mais la lame reste intacte. ~Augmente les dégâts critiques; que Dieu repose leurs âmes.
 }
 itmname_indian_4 {Amulette 'Hache'}
 itmdescr_indian_4
 {
-Pendentif couvert de runes ásatrú. Nul ne sait comment il a atteint les Caraïbes, mais il éveille un étrange penchant pour les haches.
- ~Favorise une force inattendue dans les bras, augmentant la puissance des coups portés avec les armes lourdes.
+Pendentif couvert de runes ásatrú. Nul ne sait comment il a atteint les Caraïbes, mais il éveille un étrange penchant pour les haches. ~Favorise une force inattendue dans les bras, augmentant la puissance des coups portés avec les armes lourdes.
 }
 itmname_indian_5 {Amulette "Tête réduite"}
 itmdescr_indian_5
 {
-Tête séchée suivant un rituel abominable. La fabrication d’un tel amulette exige un rite païen répugnant.
- ~Voir un tel objet à la ceinture d’un capitaine rend toute équipe d’abordage craintive et prudente — amie ou ennemie.
+Tête séchée suivant un rituel abominable. La fabrication d’un tel amulette exige un rite païen répugnant. ~Voir un tel objet à la ceinture d’un capitaine rend toute équipe d’abordage craintive et prudente — amie ou ennemie.
 }
 itmname_indian_6 {Amulette "Tête de corail"}
 itmdescr_indian_6
 {
-Idole taillé dans un fragment de corail. On dit qu’il porte chance et rend la main plus ferme.
- ~Quoi qu’il en soit, une volée de mousquets exécutée avec lui devient plus ordonnée.
+Idole taillé dans un fragment de corail. On dit qu’il porte chance et rend la main plus ferme. ~Quoi qu’il en soit, une volée de mousquets exécutée avec lui devient plus ordonnée.
 }
 itmname_indian_7 {Amulette "Bossu"}
 itmdescr_indian_7
 {
-Statuette en terre cuite d’un bossu — pas celui de Notre‑Dame, mais le patron du labeur.
- ~Avec elle, on supporte mieux les courses épuisantes à travers la jungle et les mêlées d’abordage.
+Statuette en terre cuite d’un bossu — pas celui de Notre‑Dame, mais le patron du labeur. ~Avec elle, on supporte mieux les courses épuisantes à travers la jungle et les mêlées d’abordage.
 }
 itmname_indian_8 {Amulette "Xiuhtecuhtli"}
 itmdescr_indian_8
 {
-Figurine-totem d’un dieu aztèque, seigneur du feu et maître des volcans.
- ~Rend mystérieusement les tirs de canons plus meurtriers.
+Figurine-totem d’un dieu aztèque, seigneur du feu et maître des volcans. ~Rend mystérieusement les tirs de canons plus meurtriers.
 }
 itmname_indian_9 {Amulette "Chauve"}
 itmdescr_indian_9
 {
-Fibule celtique en forme de corbeau. On dit que les marins insulaires celtes les plus habiles la portaient.
- ~Elle impressionne surtout l’équipe de canonniers, qui se met alors à charger et viser plus rapidement.
+Fibule celtique en forme de corbeau. On dit que les marins insulaires celtes les plus habiles la portaient. ~Elle impressionne surtout l’équipe de canonniers, qui se met alors à charger et viser plus rapidement.
 }
 itmname_indian_10 {Amulette "Cascabelle"}
 itmdescr_indian_10
 {
-Crâne enchanté de serpent à sonnette.
- ~Il reste probablement du venin dans les crocs figés ; autrement, sa capacité à empoisonner au coup serait difficile à expliquer.
+Crâne enchanté de serpent à sonnette. ~Il reste probablement du venin dans les crocs figés ; autrement, sa capacité à empoisonner au coup serait difficile à expliquer.
 }
 itmname_indian_11 {Amulette "Masque Ngombo"}
 itmdescr_indian_11
 {
-Masque rituel du peuple Sibonei. La rumeur veut qu’il puisse inspirer de faux souvenirs.
- ~Utile pour faire impression avec babioles ou, au contraire, pour se fondre dans la foule.
+Masque rituel du peuple Sibonei. La rumeur veut qu’il puisse inspirer de faux souvenirs. ~Utile pour faire impression avec babioles ou, au contraire, pour se fondre dans la foule.
 }
 itmname_amulet_1 {Amulette "Bouclier Ngombo"}
 itmdescr_amulet_1 {Collier d’os et de corail renforcé par un charme ngombo. ~Même la plus légère armure commence à détourner les lames.}
@@ -1012,8 +986,7 @@ itmdescr_mangarosapower {Potion préparée à partir de mangarosa selon la recet
 itmname_mangarosafast {Potion de Grain}
 itmdescr_mangarosafast
 {
-Une potion à base de mangarosa, préparée selon la recette d’Amelia.
-Elle exhale une odeur de fumée amère, de branches fraîchement brisées et de fer chauffé, comme une forge au crépuscule. Ce parfum éveille la frénésie du combat, rappelant le choc des lames et la chaleur de la mêlée.
+Une potion à base de mangarosa, préparée selon la recette d’Amelia.Elle exhale une odeur de fumée amère, de branches fraîchement brisées et de fer chauffé, comme une forge au crépuscule. Ce parfum éveille la frénésie du combat, rappelant le choc des lames et la chaleur de la mêlée.
 }
 itmname_mangarosatotal {Potion de Câlin de Mer}
 itmdescr_mangarosatotal {Une potion préparée à partir de mangarosa, selon la recette d’Amelia. Elle exhale un parfum de vent salé et de bois mouillé, comme un pont après la tempête. L’arôme d’air marin, mêlé à une légère amertume d’algues, inspire légèreté et liberté, comme si la mer elle-même s’ouvrait dans votre poitrine.}
@@ -1439,10 +1412,32 @@ itmdescr_LEDR_key {Une clé trouvée sur les restes de l’évêque. D’après 
 itmname_recipe_potion1 {Recette de potion de soin}
 itmdescr_recipe_potion1 {Une recette contenant toutes les instructions pour préparer une potion de soin.}
 itmname_blade_WR {Renaissant}
-itmdescr_blade_WR {Magnifique sabre de Rupert Northwood. Une garde massive ornée d’un phénix doré témoigne de la douleur et de la renaissance. La lame brille d’un éclat miroir, et sur sa gouttière est gravé : VULNERATUS NON VICTUS — « Blessé mais invaincu ». Dieu seul sait combien d’âmes cette épée a fauchées…}
+itmdescr_blade_WR {Magnifique sabre de Rupert Northwood. Une garde massive ornée d’un phénix doré témoigne de la douleur et de la renaissance. La lame brille d’un éclat miroir, et sur sa gouttière est gravé : VULNERATUS NON VICTUS — « Blessé mais invaincu ». Dieu seul sait combien d’âmes cette épée a fauchées...}
 itmname_hat11 {Chapeau de Theresa}
 itmdescr_hat11 {Coiffe de la mère de Mary, préservée par Aurélie Bertin. Malgré son âge, elle conserve toute son élégance et son charme d’antan.}
 itmname_talisman21 {Talisman de contrebandier}
 itmdescr_talisman21 {Une bourse d’herbes et de cendre, une fiole de liquide sombre, un médaillon en forme de crâne—étrange attirail pour les profanes, mais talisman précieux pour les initiés du commerce de l’ombre. Seuls les vrais contrebandiers portent un tel talisman.}
 itmname_blade_WR_1 {Renaissant}
-itmdescr_blade_WR_1 {Magnifique sabre de Rupert Northwood. Une garde massive ornée d’un phénix doré témoigne de la douleur et de la renaissance. La lame brille d’un éclat miroir, et sur sa gouttière est gravé : VULNERATUS NON VICTUS — « Blessé mais invaincu ». Dieu seul sait combien d’âmes cette épée a fauchées…}
+itmdescr_blade_WR_1 {Magnifique sabre de Rupert Northwood. Une garde massive ornée d’un phénix doré témoigne de la douleur et de la renaissance. La lame brille d’un éclat miroir, et sur sa gouttière est gravé : VULNERATUS NON VICTUS — « Blessé mais invaincu ». Dieu seul sait combien d’âmes cette épée a fauchées...}
+itmname_piratesJournal_1 {Journal de pirate}
+itmdescr_piratesJournal_1 {Un document usé, fait de matériaux bon marché, ayant clairement changé de mains à plusieurs reprises. Il contient des récits de raids et de contrebande.}
+itmname_piratesJournal_2 {Journal de bord pirate}
+itmdescr_piratesJournal_2 {Un journal de bord pirate relié en cuir bouilli. À l’intérieur, des pillages de caravanes marchandes et des extorsions en pleine mer sont consignés d’une écriture soignée.}
+itmname_piratesJournal_3 {Codex pirate}
+itmdescr_piratesJournal_3 {Un épais document de bord renforcé de cuir et de métal. Sa couverture richement décorée de gravures et de pierres précieuses vaut une fortune. À l’intérieur, des récits dignes d’un roman d’aventures : raids contre des colonies, pillages de convois royaux, grandes batailles navales.}
+itmname_pistol15 {Pistolet d'Honneur}
+itmdescr_pistol15 {Fabriqué sur commande, cadeau du Conseil des Dix-Sept pour célébrer cinq années de service au sein de l'honorable Compagnie néerlandaise des Indes occidentales.}
+itmname_VD_Contract {Contrat de Van Doorn}
+itmdescr_VD_Contract {Le contrat original du Directeur de l'Enregistrement Naval. Expiré il y a sept ans. Il est suspect qu'un document aussi important ait été si commodément laissé sur le bureau avant votre arrivée.}
+itmname_BookSp4 {Livre Étrange}
+itmdescr_BookSp4 {Ce livre se distingue des autres non seulement par la couleur de sa couverture, mais aussi par son poids.}
+itmname_Doc1Sp4 {Rapport sur les Affaires Brésiliennes}
+itmdescr_Doc1Sp4 { }
+itmname_Doc2Sp4 {Lettre d'Antigua}
+itmdescr_Doc2Sp4 { }
+itmname_VD_key {Clé de Van Doorn}
+itmdescr_VD_key {Ouvre la cave du Bureau de l'Enregistrement Naval.}
+itmname_CatharinaLetter {Lettre de Catharina}
+itmdescr_CatharinaLetter {Une lettre sur papier fin, portant encore le parfum d'une femme belle et aimante. Livrée il y a plusieurs semaines, mais jamais lue.}
+itmname_Visser_Key {Clé contre Maarten Visser}
+itmdescr_Visser_Key {Preuve que Maarten Visser a accepté un pot-de-vin du capitaine Michael Rosenkraft pour l'inscrire au registre naval.}

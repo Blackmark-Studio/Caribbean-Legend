@@ -99,7 +99,7 @@ void ProcessDialogEvent()
 			{
 				if (pchar.questTemp.zpq != "begin" && pchar.questTemp.zpq != "failed" && pchar.questTemp.zpq != "completed")
 				{
-					link.l2 = "Wyglądasz na zmartwionego, komendancie. Jak mogę ci pomóc?";
+					link.l2 = "Wyglądasz zmartwiony, oficerze. Jak mogę ci pomóc?";
 					link.l2.go = "zpq_prs1";
 				}
 				if (pchar.questTemp.zpq == "begin" && GetSquadronGoods(pchar, GOOD_POWDER) >= 15000 && GetQuestPastDayParam("pchar.questTemp.zpq") >= 7)
@@ -132,7 +132,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.PrisonGun.Luck = rand(4);
 			pchar.questTemp.PrisonGun.Id = npchar.location;
 			dialog.Text = "Potrzebuję "+pchar.questTemp.PrisonGun.Text+", w ilości "+sti(pchar.questTemp.PrisonGun.Qty)+"  dokładnie jednostek. Będę płacił w złotych dublonach, "+sti(pchar.questTemp.PrisonGun.Price)+" za sztukę. To wyniesie "+FindRussianDublonString(sti(pchar.questTemp.PrisonGun.Sum))+" w sumie. Co odpowiesz? Ach, i jeszcze jedno - przyjmę całą partię, ale nie wcześniej niż za miesiąc - pieniądze jeszcze nie dotarły.";
-			Link.l1 = RandPhraseSimple("Nie, komendancie, twoja oferta w ogóle mnie nie interesowała... Przykro mi.","To kuszące, ale chyba rezygnuję. Pozwól mi zachować swoje powody dla siebie.");
+			Link.l1 = RandPhraseSimple("Nie, oficerze, twoja oferta w ogóle mnie nie interesowała... Przykro mi.","To kuszące, ale chyba rezygnuję. Pozwól mi zachować swoje powody dla siebie.");
 			Link.l1.go = "exit_gun";
 			Link.l2 = RandPhraseSimple("Cóż, ta oferta jest na pewno interesująca. Uważaj to za umowę.","Chyba to wezmę. To nie jest takie trudne i wyraźnie opłacalne.");
 			Link.l2.go = "GiveTaskGun_2";
@@ -148,7 +148,7 @@ void ProcessDialogEvent()
 			
 		case "GiveTaskGun_2":
 			dialog.Text = "Cóż, to umowa! Nie ograniczam cię do pewnych warunków, ale proszę, staraj się nie przedłużać tego ponad pół roku. I mam nadzieję, że rozumiesz, że to jest ściśle poufne?";
-			Link.l1 = "Oczywiście, że tak. Do zobaczenia, komendancie.";
+			Link.l1 = "Oczywiście, że tak. Do zobaczenia, komendant.";
 			Link.l1.go = "exit";
 			ReOpenQuestHeader("PrisonGun");
 			AddQuestRecord("PrisonGun", "1");
@@ -165,7 +165,7 @@ void ProcessDialogEvent()
 			if (GetQuestPastDayParam("pchar.questTemp.PrisonGun") < 30)
 			{
 				dialog.Text = "Powiedziałem ci, żebyś nie przychodził wcześniej niż za miesiąc!";
-				Link.l1 = "Cholera! Byłem tak zajęty"+GetSexPhrase("","")+", że straciłem poczucie czasu... Przepraszam, przyjdę później, zgodnie z umową.";
+				Link.l1 = "Cholera! Byłem tak zajęty"+GetSexPhrase("","")+", że zgubiłem a"+GetSexPhrase("","")+" straciłem poczucie czasu ... Przepraszam, przyjdę później, zgodnie z umową.";
 				Link.l1.go = "exit";
 				NextDiag.TempNode = "First time";
 				break;
@@ -226,7 +226,7 @@ void ProcessDialogEvent()
 		
 		case "TakeGun_no":
 			dialog.Text = "Nie wiem. Sprzedaj je w stoczni, wyposaż handlowy statek, zatop je... Naprawdę nie mam pojęcia. I proszę, nie mów nikomu o tej transakcji.";
-			Link.l1 = "Nie wierze w to! Po prostu nie mam słów!";
+			Link.l1 = "O, mówisz! Po prostu nie mam słów!";
             Link.l1.go = "exit";
 			AddQuestRecord("PrisonGun", "3");
 			CloseQuestHeader("PrisonGun");
@@ -254,7 +254,7 @@ void ProcessDialogEvent()
 			Link.l1 = "Dzięki! To była przyjemność robić z tobą interesy!";
             Link.l1.go = "TakeGun_2";
 			TakeNItems(pchar, "gold_dublon", iTemp);
-			Log_Info("Otrzymałeś "+FindRussianDublonString(sti(pchar.questTemp.WPU.Escort.Money))+"");
+			Log_Info("You have received "+FindRussianDublonString(sti(pchar.questTemp.WPU.Escort.Money))+"");
 			PlaySound("interface\important_item.wav");
 			RemoveCharacterGoods(Pchar, iGunGoods, amount);
 		break;
@@ -310,7 +310,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					dialog.text = "Czyli jesteś naszym kurierem? Dobrze. Uporządkujmy sprawy z ładunkiem, a potem otrzymasz dalsze instrukcje.";
+					dialog.text = "Więc jesteś naszym kurierem? Dobrze. Uporządkujmy sprawy z ładunkiem, a potem otrzymasz dalsze instrukcje.";
 					link.l1 = "Dobrze.";
 					link.l1.go = "trial_1";
 				}
@@ -318,14 +318,14 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "Nie widzę twojego statku w porcie. Czy sugerujesz ciągnięcie ładunku przez dżunglę? Pośpiesz się do naszego portu i wróć.";
-				link.l1 = "Mój statek jest po drugiej stronie wyspy. Zaprowadze go do portu.";
+				link.l1 = "Mój statek jest po drugiej stronie wyspy. Zawiozę go do portu.";
 				link.l1.go = "exit";
 			}
 		break;
 		
 		case "trial_1":
 			if(!bImCasual) pchar.quest.Trial_FrahtFail.over = "yes"; // belamour legendary edition если был - снять таймер
-			dialog.text = "Dobrze, bomby i proch strzelniczy, 2500 jednostek każdego... Dobrze. Żołnierze rozładują ładunek, twoi ludzie mogą zrobić sobie przerwę. Oto twoja zapłata za fracht - pięć tysięcy peso.";
+			dialog.text = "Dobrze, bomby i proch strzelniczy, 2500 jednostek każdego... Dobrze. Żołnierze rozładują ładunek, twoi ludzie mogą zrobić przerwę. Oto twoja zapłata za fracht - pięć tysięcy peso.";
 			link.l1 = "Dzięki! Co powinienem zrobić dalej? Monsieur LeCroix powiedział...";
 			link.l1.go = "trial_2";
 			DelLandQuestMark(npchar);
@@ -341,8 +341,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trial_3":
-			dialog.text = "Więc nasz okręt wojenny „Wojowniczy” pływa w pobliżu hiszpańskiej kolonii Portobelo, w południowej części hiszpańskiego kontynentu. Statek ten jest pod dowództwem Floriana Shoke, który przygotowuje zasadzkę na hiszpański ciężki galeon, który ma opuścić Portobelo za dwa tygodnie.\nProblem polega na tym, że działa naszej fregaty cierpią z powodu wady odlewu i musimy wymienić piętnaście dział, aby uratować misję; w przeciwnym razie galeon przewyższy liczebnie „Wojowniczego” zarówno pod względem dział, jak i ludzi. \nBez wymiany Florian Shoke będzie zmuszony odpłynąć bez rezultatu. Taka sekwencja zdarzeń jest wysoce niepożądana. Twoim zadaniem jest uratowanie misji poprzez dostarczenie piętnastu dział w ciągu czternastu dni.";
-			link.l1 = "Czyli, muszę wziąć na pokład piętnaście dział, udać się do Portobelo, poszukać fregaty 'Wojowniczy' i przekazać działa kapitanowi Florianowi Shoke?";
+			dialog.text = "Więc nasz okręt wojenny „Warlike” pływa w pobliżu hiszpańskiej kolonii Portobelo, w południowej części hiszpańskiego kontynentu. Statek ten jest pod dowództwem Floriana Shoke, który przygotowuje zasadzkę na hiszpański ciężki galeon, który ma opuścić Porto Bello za dwa tygodnie.\nProblem polega na tym, że działa naszej fregaty cierpią z powodu wady odlewu i musimy wymienić piętnaście dział, aby uratować misję; w przeciwnym razie galeon przewyższy liczebnie „Warlike” zarówno pod względem dział, jak i ludzi. \nBez wymiany Florian Shoke będzie zmuszony odpłynąć bez rezultatu. Taka sekwencja zdarzeń jest wysoce niepożądana. Twoim zadaniem jest uratowanie misji poprzez dostarczenie piętnastu dział w ciągu czternastu dni.";
+			link.l1 = "Czyli, muszę wziąć na pokład piętnaście dział, udać się do Portobello, poszukać fregaty 'Militant' i przekazać działa kapitanowi Florianowi Shoke?";
 			link.l1.go = "trial_4";
 		break;
 		
@@ -369,7 +369,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trial_5":
-			dialog.text = "Nie martw się o to. Florian Shoke zapłaci ci dwieście złotych dublonów ze skarbca statku. Poza tym, jestem pewien, że chciałby wykorzystać ciebie i twój statek do swoich celów - oczywiście za twoją zgodą.";
+			dialog.text = "Nie martw się o to. Florian Shoke zapłaci ci dwieście złotych dublonów z skarbca statku. Poza tym, jestem pewien, że chciałby wykorzystać ciebie i twój statek do swoich celów - oczywiście za twoją zgodą.";
 			link.l1 = "Dobrze, jestem na tej misji! Gdzie są działa?";
 			link.l1.go = "trial_6";
 		break;
@@ -386,7 +386,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Trial = "cannon";
 			// belamour legendary edition
 			if(!bImCasual) SetFunctionTimerCondition("Trial_CannonFail", 0, 0, 21, false); 
-			else NewGameTip("Tryb eksploracji: timer jest wyłączony.");
+			else NewGameTip("Exploration mode: timer is disabled.");
 			SetCharacterGoods(pchar, GOOD_CANNON_24, GetCargoGoods(pchar, GOOD_CANNON_24)+15);
 			if (MOD_SKILL_ENEMY_RATE >= 6)
 			{
@@ -408,15 +408,15 @@ void ProcessDialogEvent()
 			if(!isBadReputation(pchar, 70))
 			{
 				dialog.text = "Hm, być może. No cóż, z powodu twojej dobrej reputacji, zaryzykuję i zaufam ci. W innym przypadku, nawet bym o tym z tobą nie rozmawiał. Chodzi o to, że potrzebujemy dość dużej partii specjalnego ładunku, więc potrzebny ci będzie duży statek i gotowość do ryzyka. Musisz mi też dać słowo, że nie powiesz o tym nikomu.\nJeśli to ci przeszkadza, powiedz mi o tym teraz. Myślę, że jasno wyraziłem swoje stanowisko...";
-				link.l1 = "Brzmi intrygująco. Wchodze w to, jeśli zapłata jest dobra, chociaż nie mam pojęcia, o jakim ładunku mówisz. Masz moje słowo tak czy inaczej.";
+				link.l1 = "Dźwięki intrygująco. Jestem w środku, jeśli zapłata jest dobra, chociaż nie mam pojęcia, o jakim ładunku mówisz. Masz moje słowo tak czy inaczej.";
 				link.l1.go = "zpq_prs2";
-				link.l2 = "Powiedziałbym nie. Przypuszczam, że gdybym dał ci słowo, musiałbym wykonywać pracę, która wydaje się dość kłopotliwa. Nie zrobię tego.";
+				link.l2 = "Powiedziałbym nie, przypuszczam... gdybym dał ci słowo, musiałbym wykonywać pracę, która wydaje się dość kłopotliwa. Nie zrobię tego.";
 				link.l2.go = "zpq_fld";
 				Notification_Reputation(true, 71, "low");
 			}
 			else
 			{
-				dialog.text = "Twoja reputacja jest dla mnie nie do przyjęcia. Proszę cię, opuść ten pokój. Sami potrafimy rozwiązać nasze problemy.";
+				dialog.text = "Twoja reputacja jest dla mnie nie do przyjęcia. Proszę cię, opuść ten pokój. Potrafimy sami rozwiązać nasze problemy.";
 				link.l1 = "Cokolwiek, rozwiąż je potem...";
 				link.l1.go = "exit";
 				Notification_Reputation(false, 71, "low");
@@ -447,7 +447,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "zpq_prs2":
-			dialog.text = "Wspaniale. Wspaniale. Problem polega na tym, że niedawna burza uszkodziła nasze zapasy prochu w arsenałach fortu. Mam nadzieję, że nie muszę tłumaczyć ci, że mamy tutaj delikatny kłopot. W razie długiego oblężenia fort nie będzie w stanie nic zrobić. Nie wytrzymamy długo.";
+			dialog.text = "Wspaniale. Wspaniale. Problem polega na tym, że niedawna burza uszkodziła nasze zapasy prochu do strzelby w arsenałach fortu. Mam nadzieję, że nie muszę tłumaczyć ci, że mamy tutaj delikatny kłopot. W razie długiego oblężenia fort nie będzie w stanie nic zrobić. Nie wytrzymamy długo.";
 			link.l1 = "Teraz rozumiem. Jakiego ładunku potrzebujesz - i w jakiej ilości?";
 			link.l1.go = "zpq_prs3";
 			DelLandQuestMark(npchar);
@@ -470,7 +470,7 @@ void ProcessDialogEvent()
 		
 		case "zpq_prs5":
 			dialog.text = "Dobrze, bardzo się cieszę, że doszliśmy do porozumienia. Zapłacę Ci, jak tylko przyniesiesz mi ładunek.\nBędę miał pieniądze za tydzień, nie wcześniej, więc nie spiesz się, ale prosiłbym Cię, abyś starał się nie zbytnio zwlekać.";
-			link.l1 = "Rozumiem, señor. Zajme się tym.";
+			link.l1 = "Rozumiem, senor. Zajmuję się tym.";
 			link.l1.go = "zpq_prs5_ok";
 		break;
 		
@@ -486,7 +486,7 @@ void ProcessDialogEvent()
 		
 		case "zpq_ex":
 			dialog.text = "Wreszcie! Myślałem, że już zapomniałeś o naszej umowie. Natychmiast kazałem moim żołnierzom rozpocząć rozładunek twojego statku. Praca z prochem to bardzo delikatne zajęcie, ha-ha!";
-			link.l1 = "To wspaniale, señor, ale muszę przypomnieć Ci o zapłacie.";
+			link.l1 = "To wspaniałe, senorze, ale muszę przypomnieć Ci o zapłacie.";
 			link.l1.go = "zpq_ex2";
 			RemoveCharacterGoods(pchar, GOOD_POWDER, 15000);
 			AddCharacterExpToSkill(pchar, "Sailing", 500);
@@ -499,12 +499,12 @@ void ProcessDialogEvent()
 		
 		case "zpq_ex2":
 			dialog.text = "Tak, oczywiście. Zapłacisz 50 000 pesos, jak się umówiliśmy.";
-			link.l1 = "Żartujesz ze mnie, senor?! Mieliśmy umowę na 100 000 pesos!";
+			link.l1 = "Pewnie żartujesz ze mnie, senor?! Mieliśmy umowę na 100 000 pesos!";
 			link.l1.go = "zpq_ex3";
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
 				Notification_Perk(true, "Trustworthy");
-				link.l2 = "(Godny zaufania) Zaczynam myśleć, że chcesz mnie oszukać, więc nie wyjdę stąd bez moich 125 000 pesos!";
+				link.l2 = "(Zaufany) Zaczynam myśleć, że chcesz mnie oszukać, więc nie wyjdę stąd bez moich 125 000 pesos!";
 				link.l2.go = "zpq_ex4";
 			}
 			link.l3 = "Hm.. Widzę, że okoliczności się zmieniły. No cóż, lepiej wezmę pieniądze i odejdę...";
@@ -516,7 +516,7 @@ void ProcessDialogEvent()
 			{
 				Notification_Skill(true, 36, SKILL_LEADERSHIP);
 				dialog.text = "Ach, tak... Dokładnie! 100 000 pesos. Zapomniałem, przepraszam. To moja starość jest winna, skleroza wiesz... Oczywiście, oto twoje monety. Było mi miło z tobą robić interesy, kapitanie. Teraz przepraszam, ale mam dużo pracy do zrobienia...";
-				link.l1 = "Podobnie tobie, señor. Do zobaczenia.";
+				link.l1 = "Podobnie tobie, senorze. Do zobaczenia.";
 				link.l1.go = "exit";
 				pchar.questTemp.zpq = "completed";
 				AddQuestRecord("zpq", "2");
@@ -537,14 +537,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "zpq_ex4":
-				dialog.text = "Cóż za niegrzeczność! Nie jestem psychicznie chory i dokładnie pamiętam, że oferowałem 100 000 pesos.\n Do diabła! Nie zamierzam grać w twoje gry!";
+				dialog.text = "Takie niegrzeczność! Nie jestem psychicznie chory i dokładnie pamiętam, że oferowałem 100 000 pesos.\n Do diabła! Nie zamierzam grać w twoje gry!";
 				link.l1 = "Uspokój się. Pomyśl o gotowym palniku wypełnionym prochem tuż przed twoją twierdzą. Jeśli powiem tylko słowo, twoja twierdza zamieni się w ruinę.";
 				link.l1.go = "zpq_ex6";
 		break;
 		
 		case "zpq_ex6":
 			dialog.text = "Hm-Hm... mocny argument. Mówisz o 125 000 pesos? Proszę, weź je, a teraz wybacz, ale mam robotę do wykonania...";
-			link.l1 = "Do widzenia, señor. Do zobaczenia.";
+			link.l1 = "Do widzenia, senorze. Do zobaczenia.";
 			link.l1.go = "exit";
 			pchar.questTemp.zpq = "completed";
             AddQuestRecord("zpq", "5");
@@ -553,8 +553,8 @@ void ProcessDialogEvent()
 			AddMoneyToCharacter(pchar, makeint(pchar.questTemp.zpq.sum));
 			/*else
 			{
-				dialog.text = "Co?! Jestem wojskowym oficerem! Myślisz, że możesz mnie przestraszyć, dziecino?! Strażnicy, bierzcie "+GetSexPhrase("go","ją")+"!";
-				link.l1 = "Powodzenia w próbach, szczure z kazamatu...";
+				dialog.text = "Co?! Jestem wojskowym oficerem! Myślisz, że możesz mnie przestraszyć, dziecino?! Strażnicy, bierzcie "+GetSexPhrase("on","jej")+"!";
+				link.l1 = "Powodzenia w próbach, szczury z kazamat...";
 				link.l1.go = "zpq_ex_war";
 			}*/
 		break;
@@ -572,8 +572,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "zpq_ex_agry":
-			dialog.text = "Ach ty łajdaku! Strażnicy, bierzcie "+GetSexPhrase("go","ją")+"!";
-			link.l1 = "Argh! Wygląda na to, że muszę wziąć moje pieniądze z twojego martwego ciała...";
+			dialog.text = "Ach ty łajdaku! Strażnicy, weźcie "+GetSexPhrase("on","ona")+"!";
+			link.l1 = "Argh! Wygląda na to, że muszę wziąć moje pieniądze z twojego bezdechowego ciała...";
 			link.l1.go = "zpq_ex_war";
 		break;
 		
@@ -595,7 +595,7 @@ void ProcessDialogEvent()
 			string slai_group = GetNationNameByType(sti(npchar.nation))  + "_citizens";
 			LAi_group_AttackGroup(slai_group, LAI_GROUP_PLAYER);
 			LAi_group_SetCheck(slai_group, "OpenTheDoors");
-			AddSimpleRumour("Jakież straszne rzeczy się tu dzieją! Podobno jakiś więzień uciekł z kazamatów! Wymordował wszystkich strażników, wykradł pieniądze ze skarbca i po prostu sobie poszedł! Wow!", SPAIN, 5, 1);
+			AddSimpleRumour("Such terrible things happen here! They say that some prisoner has escaped from the casemates! He slaughtered all the guards, stole the treasury, and just went away! Wow!", SPAIN, 5, 1);
 		break;
 		// <-- Опасный груз
 	}
@@ -616,37 +616,37 @@ void GetGunType()
 			pchar.questTemp.PrisonGun.Goods = GOOD_CANNON_24;     					
 			pchar.questTemp.PrisonGun.Price = 28 + iAdd;
 			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)*5+25+rand(sti(pchar.rank));
-			pchar.questTemp.PrisonGun.Text = "24 - funtowe armaty";
+			pchar.questTemp.PrisonGun.Text = "24 calibre cannons";
 		break; 
 		case 1:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CULVERINE_18;     					
 			pchar.questTemp.PrisonGun.Price = 25 + iAdd;
 			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)*5+25+rand(sti(pchar.rank));
-			pchar.questTemp.PrisonGun.Text = "kulweryny";
+			pchar.questTemp.PrisonGun.Text = "couleuvrines";
 		break; 
 		case 2:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CANNON_32;     					
 			pchar.questTemp.PrisonGun.Price = 32 + iAdd;
 			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)*3+15+rand(sti(pchar.rank));
-			pchar.questTemp.PrisonGun.Text = "32 - funtowe armaty";
+			pchar.questTemp.PrisonGun.Text = "32 calibre cannons";
 		break; 
 		case 3:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CANNON_36;     					
 			pchar.questTemp.PrisonGun.Price = 36 + iAdd;
 			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)*3+15+rand(sti(pchar.rank));
-			pchar.questTemp.PrisonGun.Text = "36 - funtowe armaty";
+			pchar.questTemp.PrisonGun.Text = "36 calibre cannons";
 		break;
 		case 4:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CULVERINE_36;     					
 			pchar.questTemp.PrisonGun.Price = 49 + iAdd;
 			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)+15+rand(sti(pchar.rank));
-			pchar.questTemp.PrisonGun.Text = "pełne kulweryny";
+			pchar.questTemp.PrisonGun.Text = "full couleuvrines";
 		break; 
 		case 5:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CANNON_42;     					
 			pchar.questTemp.PrisonGun.Price = 40 + iAdd;
 			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)+20+rand(sti(pchar.rank));
-			pchar.questTemp.PrisonGun.Text = "42 - funtowe armaty";
+			pchar.questTemp.PrisonGun.Text = "42 calibre cannons";
 		break; 
 	}
 }

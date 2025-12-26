@@ -21,7 +21,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace":
 			DelMapQuestMarkCity(pchar.questTemp.FalseTrace.StartCity);
-			dialog.text = "Dobry popołudniu, kapitanie... ehm... kha-hahrm! Cholera jasna z tymi kopalniami... Pozwól, że się przedstawię. Adam Rayner. Jestem prostym człowiekiem i nie lubię długich wstępów, więc od razu przechodzę do rzeczy. Chcesz dobrze zarobić? Oferuję ci mały interes, któremu sami nie podołamy.";
+			dialog.text = "Dobry popołudniu, kapitanie... ehm... kha-hahrm! Cholera jasna te kopalnie... Pozwól, że się przedstawię. Adam Rayner. Jestem prostym człowiekiem i nie lubię długich wstępów, więc od razu przechodzę do rzeczy. Chcesz dobrze zarobić? Oferuję ci mały interes, któremu sami nie podołamy.";
 			link.l1 = "Heh! Dobre pieniądze? Interesujące. Słucham cię, Adamie.";
 			link.l1.go = "FalseTrace_1";
 			link.l2 = "Wiesz, przykro mi, ale nie wyglądasz na godnego zaufania. Więc nie będę miał z tobą żadnych interesów.";
@@ -48,23 +48,23 @@ void ProcessDialogEvent()
 			{
 				case 0: 
 					pchar.questTemp.FalseTrace.DayQty = 18;
-					pchar.questTemp.FalseTrace.TargetCity = "Belize";
+					pchar.questTemp.FalseTrace.TargetCity = "Beliz";
 					pchar.questTemp.FalseTrace.TargetShore = "Shore8";
 				break;
 				case 1: 
 					pchar.questTemp.FalseTrace.DayQty = 22;
-					pchar.questTemp.FalseTrace.TargetCity = "Philipsburga";
+					pchar.questTemp.FalseTrace.TargetCity = "Marigo";
 					pchar.questTemp.FalseTrace.TargetShore = "Shore41";
 				break;
 				case 2: 
 					pchar.questTemp.FalseTrace.DayQty = 20;
-					pchar.questTemp.FalseTrace.TargetCity = "Santo Domingo";
+					pchar.questTemp.FalseTrace.TargetCity = "Santodomingo";
 					pchar.questTemp.FalseTrace.TargetShore = "Mayak8";
 				break;
 			}
 			pchar.questTemp.FalseTrace.ShipName = GenerateRandomNameToShip(sti(npchar.nation));
 			pchar.questTemp.FalseTrace.Mation = sti(npchar.nation);
-			dialog.text = "Kha! Przyjemność robić interesy z kimś tak bystrym jak ty, Kapitanie. Zadanie jest proste: fluita wypełniona niemałą ilością srebra i wkrótce odpłynie z jednego z lokalnych portów. Jedna jednostka, bez eskorty. Głupie, prawda? K-kha\n Łatwizna. Powiem ci gdzie i kiedy, ty zdobywasz łup, a ja dostaję swoją część.";
+			dialog.text = "Kha! Przyjemność robić interesy z kimś tak bystrym jak ty, Kapitanie. Zadanie jest proste: jest fluita wypełniona niemałą ilością srebra i wkrótce odpłynie z jednego z lokalnych portów. Jedna jednostka, bez eskorty. Głupie, prawda? K-kha\n Łatwizna. Powiem ci gdzie i kiedy, ty zdobywasz łup, a ja dostaję swoją część.";
 			link.l1 = "I oczywiście, chcesz otrzymać to teraz w gotówce?";
 			link.l1.go = "FalseTrace_2";
 		break;
@@ -90,7 +90,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_5":
-			dialog.text = "Nazwa fluity to "+pchar.questTemp.FalseTrace.ShipName+", wypływa z Kartageny i żegluje w kierunku "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+". Nie mamy jednak zbyt wiele czasu. Dwa tygodnie, trzy najwyżej. Jeśli nie znajdziemy jej w ciągu trzech tygodni, wszystko przepadnie.";
+			dialog.text = "Nazwa fluity to "+pchar.questTemp.FalseTrace.ShipName+", wypływa z Kartageny i żegluje "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+". Nie mamy jednak zbyt wiele czasu. Dwa tygodnie, trzy najwyżej. Jeśli nie znajdziemy jej w ciągu trzech tygodni, wszystko przepadnie.";
 			link.l1 = "Nie traćmy zatem czasu! Przygoda wzywa!";
 			link.l1.go = "FalseTrace_6";
 		break;
@@ -133,7 +133,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_8":
 			dialog.text = "Spokojnie, Kapitanie. Spróbuję wszystko wyjaśnić.";
-			link.l1 = "Ja ci się zaraz kurwa uspokoję, ty krętaczu! Nie wisisz teraz na rei tylko dlatego, że wciąż nie mogę pojąć twoich motywów. Ścigałeś tę fluite ze mną, wiedząc wcześniej, że nie było tam srebra. Więc proszę, wyjaśnij się.";
+			link.l1 = "Oczywiście, że tak! Już się uspokoiłem! Nie wisisz teraz na rei tylko dlatego, że wciąż nie mogę pojąć twoich motywów. Ścigałeś tę fluite ze mną, wiedząc wcześniej, że nie było tam srebra. Więc proszę, wyjaśnij się.";
 			link.l1.go = "FalseTrace_9";
 		break;
 		
@@ -158,12 +158,12 @@ void ProcessDialogEvent()
 		case "FalseTrace_12":
 			if (pchar.basenation == SPAIN || pchar.basenation == HOLLAND)
 			{
-				pchar.questTemp.FalseTrace.QuestCity = "Portobelo";
+				pchar.questTemp.FalseTrace.QuestCity = "Portobello";
 				pchar.questTemp.FalseTrace.QuestShore = "Shore48";
 			}
 			else
 			{
-				pchar.questTemp.FalseTrace.QuestCity = "Blueweld";
+				pchar.questTemp.FalseTrace.QuestCity = "SantaCatalina";
 				pchar.questTemp.FalseTrace.QuestShore = "Shore54";
 			}
 			dialog.text = "Tak, dobrze mnie słyszałeś, kapitanie. Przysługa za przysługę. Nie mam teraz pieniędzy, ale jeśli przyprowadzisz Katerinę i mnie do "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.QuestCity)+", Powiem ci całkowicie wiarygodną informację, gdzie możesz zdobyć trochę złota bez żadnego wysiłku.";
@@ -172,7 +172,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_13":
-			dialog.text = "Ponieważ, nie mam jeszcze tych informacji. Pozwól, że wyjaśnię szczegóły. Pewien dżentelmen fortuny o imieniu Zezowaty Solly - słyszałeś o nim kiedyś? - zamierza splądrować jakieś złote kopalnie niedaleko Blueweld\nZ powodu pewnych wydarzeń, będzie musiał zostawić całe swoje złoto w jakimś ukrytym miejscu i zostawić kilku strażników, by je chronili. Sam pójdzie pieszo do Belize lub do Blueweld, aby zdobyć statek\nMam agenta wśród załogi Solly'ego, będzie czekał na mnie w "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.QuestCity)+" Jak już zarzucimy tam kotwicę, powie mi, gdzie Solly ukrywa swoje skarby\nTy pójdziesz, wyeliminujesz strażników i zabierzesz całe złoto dla siebie. Zamierzałem to zrobić sam, ale biorąc pod uwagę obecną sytuację, zostawiam wszystko tobie. Bez opłat.";
+			dialog.text = "Ponieważ, nie mam jeszcze tych informacji. Pozwól, że wyjaśnię szczegóły. Pewien dżentelmen fortuny o imieniu Zezowaty Solly - słyszałeś o nim kiedyś? - zamierza splądrować jakieś złote kopalnie niedaleko Blueweld\nZ powodu pewnych wydarzeń, będzie musiał zostawić całe swoje złoto w jakimś ukrytym miejscu i zostawić kilku strażników, by je chronili. Sam pójdzie pieszo do Belize lub do Blueweld, aby zdobyć statek\nMam agenta wśród załogi Solly'ego, będzie czekał na mnie w "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.QuestCity)+" Jak już zarzucimy kotwicę tam, powie mi, gdzie Solly ukrywa swoje skarby\nTy pójdziesz tam, wyeliminujesz strażników i zabierzesz całe złoto dla siebie. Zamierzałem to zrobić sam, ale biorąc pod uwagę obecną sytuację, zostawiam wszystko tobie. Bez opłat.";
 			link.l1 = "Twoja opowieść brzmi dość podobnie do twej poprzedniej bajki o fluicie załadowanej srebrem. Już raz mnie oszukałeś. Jak możesz zagwarantować, że tym razem nie kłamiesz?";
 			link.l1.go = "FalseTrace_14";
 		break;
@@ -207,13 +207,13 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_18":
 			dialog.text = "Naprawdę? Spodziewałem się, że tak zrobisz, Kapitanie. Zwłaszcza po tym, jak przyszedłeś do ładowni i porozmawiałeś z tym plugawym porywaczem cudzych żon. Zdecydowałeś, że jesteś po jego stronie, czyż nie, Kapitanie?";
-			link.l1 = "To nie twój interes. Wykorzystałeś i oszukałeś mnie, a teraz próbujesz zwieść absurdalnymi opowieściami o skarbach! Bosmanie, zabierz go!";
+			link.l1 = "To nie twój interes. Wykorzystałeś mnie, oszukałeś mnie, a teraz próbujesz mnie znowu zwieść absurdalnymi opowieściami o skarbach! Bosmanie, zabierz go!";
 			link.l1.go = "FalseTrace_19";
 		break;
 		
 		case "FalseTrace_19":
 			dialog.text = "Kha, nie tak szybko, kapitanie... Bosman i reszta twoich ludzi nie będą mogli tu szybko wejść. Nie zauważyłeś, że zamknąłem drzwi? Teraz jesteśmy tu sami - tylko ty i ja. Pokaż mi więc, kapitanie, z czego jesteś zrobiony!";
-			link.l1 = "Doprawdy? Myślisz, że masz szansę, wyzywając kapitana na pojedynek?! Pożałujesz tego, draniu!";
+			link.l1 = "Naprawdę? Naprawdę myślisz, że masz szansę?! Pożałujesz tego, draniu!";
 			link.l1.go = "FalseTrace_20";
 		break;
 		
@@ -233,7 +233,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_21":
 			dialog.text = "";
-			link.l1 = "I prosze bardzo... Rzuć broń, łajdaku! Bosmanie! Zakuć tego drania w kajdany, zawołaj Alonso jeśli za bardzo będzie się rzucać, i do ładowni!";
+			link.l1 = "I prosze bardzo... Odłóż broń, łajdaku! Bosmanie! Zakuć tego drania w kajdany i wrzuć go do ładowni!";
 			link.l1.go = "FalseTrace_22";
 		break;
 		
@@ -289,13 +289,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_25":
-			dialog.text = "Co?! Kha! Jaka umowa z moją żoną? O czym ty mówisz, ty zgniła rybo?!";
+			dialog.text = "Co?! Cha! Jaka umowa z moją żoną? O czym ty mówisz, ty zgniła rybo?!";
 			link.l1 = "Z powodu twoich fałszywych informacji pojmałem pustą fluite i zabiłem jego kapitana. Żałuję, że to zrobiłem, choć na żal jest już za późno. Twoja żona była zakochana w tym żeglarzu, jak zrozumiałem. Dlatego poprosiła mnie, bym cię zabił. Dlatego teraz jesteśmy w tej zatoce.";
 			link.l1.go = "FalseTrace_26";
 		break;
 		
 		case "FalseTrace_26":
-			dialog.text = "Nie mogę w to uwierzyć! Katherine... co za suka! Cóż, jeszcze dostaniesz to, na co zasługujesz... Więc jak obiecała ci zapłacić, głupcze? Nie ma grosza, sprzedała nawet całą swoją biżuterię, żeby uciec z tym kapitanem!";
+			dialog.text = "Nie mogę w to uwierzyć! Katerine... co za suka! Cóż, jeszcze dostaniesz to, na co zasługujesz... Więc jak obiecała ci zapłacić, głupcze? Nie ma grosza, sprzedała nawet całą swoją biżuterię, żeby uciec z tym kapitanem!";
 			link.l1 = "To nie twój interes, łajdaku. Ale czas zakończyć naszą rozmowę. Wyślę cię do piekła, gdzie już dawno powinieneś być!";
 			link.l1.go = "FalseTrace_27";
 		break;
@@ -332,7 +332,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_abordage_2":
-			dialog.text = "Powtarzam - nie mam żadnego ładunku na pokładzie. Ta fluita to statek zaopatrzeniowy zmierzający do "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+", celem dostarczenia ładunku kul armatnich i zaopatrzenia dla wojsk.";
+			dialog.text = "Powtarzam - nie mam żadnego ładunku na pokładzie. Ta fluita to statek zaopatrzeniowy zmierzający do "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+" dostarczyć ładunek kul armatnich i zaopatrzenia dla wojsk.";
 			link.l1 = "Zamydlasz mi oczy. Twoje ładownie muszą być pełne srebra. A ja to sprawdzę, gdy skończymy tę rozmowę...";
 			link.l1.go = "FalseTrace_abordage_3";
 		break;
@@ -411,7 +411,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_wife_4":
 			dialog.text = "Co... co zamierzasz z nim zrobić?";
-			link.l1 = "Co do? Skąd się tu wzięłaś, kochana?";
+			link.l1 = "Co to jest? Skąd się tu wzięłaś, kochana?";
 			link.l1.go = "FalseTrace_wife_5";
 		break;
 		
@@ -467,8 +467,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_wife_12":
-			dialog.text = "Nie... (płacząc) Nie chcę wracać do tego łotra! Włożyłam ogromny wysiłek, aby od niego uciec i zatrzeć swoje ślady, ale on i tak mnie znalazł... Łotr! Bandyta!  Złodziejskie skurwiel!";
-			link.l1 = "Spokojnie, Katherine... Uważaj na język. On jest przecież twoim mężem. I powiedział, że cię kocha.";
+			dialog.text = "Nie... (płacząc) Nie chcę wracać do tego łotra! Włożyłam ogromny wysiłek, aby od niego uciec i zatrzeć swoje ślady, ale on i tak mnie znalazł... Łotr! Bandyta!  Złodziejska kurwa!";
+			link.l1 = "Spokojnie, Katerine... Uważaj na język. On jest przecież twoim mężem. I powiedział, że cię kocha.";
 			link.l1.go = "FalseTrace_wife_13";
 		break;
 		
@@ -501,7 +501,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_wife_16":
 			dialog.text = "Popatrz, kto mówi o okrucieństwie. Płyń do "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.QuestCity)+", zrób, co Adam ci powiedział, tylko wyląduj nie w porcie, ale w najbliższej zatoce. Trzech z nas tam pójdzie, a ty zabijesz drania\nKiedy to zrobisz, powiem ci o skrytce. Przysięgam, nie kłamię. Wierzę, że masz więcej zaufania do moich słów niż do Adama, oszukał cię raz, prawda? Co powiesz, kapitanie?";
-			link.l1 = "Tak... Nie bez powodu mówią, że mąż i żona to naprawdę ta sama para. Patrzę na ciebie, Katerino, i widzę, że jesteś idealnym dopasowaniem dla Adama... Jeśli tak bardzo chcesz jego śmierci, możesz go równie dobrze zadźgać, gdy będzie spał pijany... Bosmanie! Zabierz ją!";
+			link.l1 = "Tak... Nie bez powodu mówią, że mąż i żona to naprawdę ta sama para. Patrzę na ciebie, Katerino, i widzę, że jesteś idealnym dopasowaniem dla Adama... Jeśli tak bardzo chcesz jego śmierci, możesz go równie dobrze zadźgać, gdy śpi pijany... Bosmanie! Zabierz ją!";
 			link.l1.go = "FalseTrace_wife_17";
 			link.l2 = "Nienawidzę łajdaków, którzy próbują mnie oszukać i wykorzystać do swoich celów. Dobrze, Katherine, zgadzam się na twoją propozycję, ponieważ jest dla mnie jasne, że Adamowi nie można ufać. Ale jeśli ty mnie oszukasz, także cię znajdę, nawet w Europie, przysięgam, i wpakuję ci kulę w łeb. A teraz zmykaj. Bosmanie! Zabierz ją!";
 			link.l2.go = "FalseTrace_wife_19";
@@ -668,7 +668,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_Bandits":
 			dialog.text = "A-ah, oto morderca Adama! Katerina miała rację, ten drań przyszedł obrabować skrytkę!";
-			link.l1 = "Co? Katherine? Kim jesteś?";
+			link.l1 = "Co? Katerine? Kim jesteś?";
 			link.l1.go = "FalseTrace_Bandits_1";
 		break;
 		
@@ -680,7 +680,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_Bandits_2":
 			dialog.text = "Zdradziłeś Adama, ty plugawy zdrajco, zmusiłeś jego żonę, by wyjawiła ci, gdzie Adam trzyma swoje złoto, a potem zostawiłeś biedną kobietę na pastwę losu na pustynnym brzegu\nAle ona przeżyła, poprosiła nas o pomoc, by naprawić krzywdę. Czekaliśmy na ciebie kilka dni. I oto jesteś, łajdaku!";
-			link.l1 = "Ha-ha! Zdecydowanie w stylu Katherine... Teraz posłuchaj, zabiłem Adama, to prawda, ale zrobiłem to, ponieważ jego żona faktycznie poprosiła mnie, abym go zabił. To była zemsta za śmierć jej kochanka. Powiedziała mi, gdzie znaleźć skrytkę, żeby mi się odwdzięczyć...";
+			link.l1 = "Ha-ha! Zdecydowanie w stylu Katerine... Teraz posłuchaj, zabiłem Adama, to prawda, ale zrobiłem to, ponieważ jego żona faktycznie poprosiła mnie, abym go zabił. To była zemsta za śmierć jej kochanka. Powiedziała mi, gdzie znaleźć skrytkę, żeby mi się odwdzięczyć...";
 			link.l1.go = "FalseTrace_Bandits_3";
 		break;
 		
@@ -765,14 +765,14 @@ void ProcessDialogEvent()
 			if (sti(pchar.basenation == HOLLAND) || sti(pchar.basenation == SPAIN))
 			{
 				pchar.questTemp.FalseTrace.ShipNation = ENGLAND;
-				pchar.questTemp.FalseTrace.ShipCity = "Port Royal";
+				pchar.questTemp.FalseTrace.ShipCity = "PortRoyal";
 			}
 			else
 			{
 				pchar.questTemp.FalseTrace.ShipNation = SPAIN;
-				pchar.questTemp.FalseTrace.ShipCity = "Marakaibo";
+				pchar.questTemp.FalseTrace.ShipCity = "Maracaibo";
 			}
-			dialog.text = "Tak, tak, oczywiście. Zobaczmy, licząc od dzisiaj... Tak... Za 12-14 dni z "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.ShipCity+"Gen")+" wypłynie do Europy ciężki galeon, załadowany złotą rudą. Będzie chroniony przez jedną fregatę lub korwetę\nWięc przygotuj się, to bogaty łup, ale ma zęby. Jednak jestem pewien, że ci się uda, dość łatwo pokonałeś mój opór... Musisz dotrzeć do "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.ShipCity+"Gen")+" w ciągu dwóch tygodni i przygotować zasadzkę\nPamiętaj, że twoim celem jest ciężki galeon z jednym statkiem konwojowym. To by było na tyle, jak sądzę. Reszta jest w twoich rękach.";
+			dialog.text = "Tak, tak, oczywiście. Zobaczmy, licząc od dzisiaj... Tak... Za 12-14 dni od "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.ShipCity+"Gen")+" ciężki galeon załadowany złotą rudą wypłynie do Europy. Będzie chroniony przez jedną fregatę lub korwetę\nWięc przygotuj się, to bogaty łup, ale ma zęby. Jednak jestem pewien, że ci się uda, dość łatwo pokonałeś mój opór... Musisz dotrzeć "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.ShipCity+"Gen")+" za dwa tygodnie i przygotować zasadzkę\nPamiętaj, że twoim celem jest ciężki galeon z jednym statkiem konwojowym. To by było na tyle, jak sądzę. Reszta jest w twoich rękach.";
 			link.l1 = "Rozumiem... Cóż, "+pchar.questTemp.FalseTrace.CapName+". Żegnaj. Może powinienem życzyć ci szczęścia i szczęśliwego życia z Katerine? Mam nadzieję, że wam obojgu będzie dobrze. Szkoda, że spotkaliśmy się w takich smutnych okolicznościach.";
 			link.l1.go = "FalseTrace_GoldShip_2";
 		break;

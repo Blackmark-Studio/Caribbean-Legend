@@ -1,19 +1,17 @@
-News {Actualización 1.6}
+News {Patch 1.7 BETA disponible}
 News_descr
 {
-************************   ¡Ahoy!   ***********************
-¡Bienvenido a la versión 1.6!
-------------------------------------------------------------------------------------------------
-— Ya está disponible el parche 1.6
-— Puedes encontrar la lista completa de cambios en las noticias haciendo clic en el botón de abajo
-— Se han añadido construcción de personajes y rejugabilidad al juego
-— Si cargas una partida de otra versión, no olvides reasignar las habilidades del héroe y los oficiales
-— Sistema de combate completamente renovado
-— Una docena de nuevas mecánicas y más de cien mejoras
-— Lanzado el DLC "Supporter Pack"
-— No es necesario empezar una nueva partida
-— Por favor, desactiva todos los mods
-— Siempre puedes volver a cualquier parche principal anterior desde la Biblioteca de Steam
+***************************  ¡Ahoy!   ***************************
+-------------------------------------------------------------------------------------------------
+— Ha comenzado la beta abierta del parche 1.7
+— Se ha lanzado la cuarta parte de la serie de DLC "Ship's Pack"
+— Puedes cambiar libremente entre versiones a través de Steam
+— No se requiere partida nueva
+— Los guardados han sido rediseñados y mejorados
+— Nuevas mecánicas de infiltración urbana y sigilo
+— La IA de combate funciona mejor en tierra
+— Epílogo, mejoras de calidad de vida y más
+— El listado detallado de cambios se encuentra en las noticias mediante el botón de abajo
 }
 News_Attention { }
 [News]

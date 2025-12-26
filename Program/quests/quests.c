@@ -253,7 +253,7 @@ string GetDateString()
 
 string GetDateStringEx(int year, int month, int day)
 {
-	return "" + day + " " + XI_ConvertString("target_month_" + month) + " " + year;
+	return "" + day + " " + XI_ConvertString("MonthGen_" + month) + " " + year;
 }
 
 string GetTimeStringEx(int hour, int minute)

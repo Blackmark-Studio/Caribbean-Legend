@@ -102,19 +102,13 @@ bool ApplyPerkEffects(ref chr, string perkName, bool fromOfficer)
 			refresh = true; // нужен рефрешь
 		break;
 
-		case "FastHands":
-		{
-			SetCharacterActionSpeed(chr, "fire", 1.0 + PERK_VALUE_FAST_HANDS); //JOKERTODO убрать в общие модификаторы в таблице
-		}
-		break;
-	
-		case "MarathonRunner":
+		case "MarathonRunner": 
 		{
 			if (!IsMainCharacter(chr)) SetChrModifier(chr, M_ENERGY_MAX, PERK_VALUE3_MARATHON_RUNNER, "MarathonRunner");
 		}
 		break;
 
-		case "KeenEye":
+		case "KeenEye": 
 		{
 			if (IsMainCharacter(chr)) break;
 			SetChrModifier(chr, M_CRIT_CHANCE, GUN_ITEM_TYPE    + "_" + PERK_VALUE2_KEEN_EYE, "KeenEye");
@@ -122,7 +116,7 @@ bool ApplyPerkEffects(ref chr, string perkName, bool fromOfficer)
 		}
 		break;
 
-		case "Investor":
+		case "Investor": 
 		{
 			if (!IsMainCharacter(chr))
 			{
@@ -626,8 +620,7 @@ int СharacterPerksEnb(ref chr, string perkType)
         perkName = GetAttributeName(GetAttributeN(arPerksRoot,i));
         if(CheckAttribute(arPerksRoot, perkName + ".Hidden")) continue;
 		if(!CheckAttribute(chr, "perks.list."+perkName)) continue;
-		if(perkName == "") continue;
-		if(!CheckAttribute(arPerksRoot, perkName + ".BaseType")) arPerksRoot.(perkName).BaseType = "self";
+        if(!CheckAttribute(arPerksRoot, perkName + ".BaseType")) arPerksRoot.(perkName).BaseType = "self";
 		if(CheckAttributeEqualTo(arPerksRoot, perkName + ".BaseType", perkType)) total++;
 	} 
 	return total;
@@ -727,19 +720,42 @@ bool bPerksMaxShip(ref chr)
 	return false;
 }
 
-// Есть ли перк, который можно вкачать
-bool HaveAllPerks(ref chr, string _type) // any, self, ship
+bool HaveAllPerks(ref chr, string type) // any, self, ship
 {
+    bool bFreeSelf, bFreeShip;
+    bool bAny  = (type == "any");
+    if (bAny)
+    {
+        bFreeSelf = GetAttributeInt(chr, "perks.FreePoints_self") > 0;
+        bFreeShip = GetAttributeInt(chr, "perks.FreePoints_ship") > 0;
+        if(!bFreeSelf && !bFreeShip) return true; // Нечего прокачивать
+    }
+
+	string perkName, perkType;
 	aref arPerksRoot;
 	makearef(arPerksRoot, ChrPerksList.list);
+	int perksQ = GetAttributesNum(arPerksRoot);
+    bool bHero = (sti(chr.index) == GetMainCharacterIndex());
 
-	for (int i = 0; i < GetAttributesNum(arPerksRoot); i++)
+	for(int i = 0; i < perksQ; i++)
 	{
-		aref perk = GetAttributeN(arPerksRoot, i);
-		if (CanTakePerk(chr, perk, "")) return false;
-	}
+		perkName = GetAttributeName(GetAttributeN(arPerksRoot,i));
+        if(!CheckAttribute(arPerksRoot, perkName + ".BaseType")) continue;   // Предыстории
+        perkType = ChrPerksList.list.(perkName).BaseType;
+		if(!bAny && perkType != type) continue; // Не тот тип
+        if(bAny)
+        {
+            if(!bFreeSelf && perkType == "self") continue;
+            if(!bFreeShip && perkType == "ship") continue;
+        }
+        if(CheckAttribute(arPerksRoot, perkName + ".HeroType")) continue;    // Личные спецперки
+        if(!bHero && CheckAttribute(arPerksRoot, perkName + ".PlayerOnly")) continue; // Не ГГ
+        if(bHero && CheckAttribute(arPerksRoot, perkName + ".NPCOnly")) continue;     // Не НПЦ
+        if(CheckAttribute(arPerksRoot, perkName + ".Hidden")) continue;       // Скрытые
 
-	return true;
+		if(!CheckCharacterPerk(chr, perkName)) return false; // Перк доступен, но не прокачан
+	}
+    return true;
 }
 // <-- подсчёт перков для интерфейса
 

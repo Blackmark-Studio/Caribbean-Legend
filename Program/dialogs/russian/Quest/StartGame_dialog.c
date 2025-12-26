@@ -81,10 +81,12 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "Вот, капитан, теперь вы хоть на себя стали похожи. Как себя чувствуете?";
+				// link.l2 = "BetaTest - SP4 Услуги конторы";
+				// link.l2.go = "ClockTower_OfficeServices";
 				if (bBettaTestMode)
 				{
-					link.l3 = "BetaTest - Начать тест массовой битвы на Каймане";
-					link.l3.go = "LadyBeth_Test_Start_CaimanBitvaStrong";
+					// link.l3 = "BetaTest - Начать тест массовой битвы на Каймане";
+					// link.l3.go = "LadyBeth_Test_Start_CaimanBitvaStrong";
 					// link.l4 = "BetaTest - Начать тест квеста Мэри";	// НЕ ЗАБЫТЬ на релизе это ВЫКЛЮЧИТЬ
 					// link.l4.go = "WildRose_Test_Start_1";
 					link.l0 = "BetaTest - пропустить и начать игру";
@@ -454,6 +456,16 @@ void ProcessDialogEvent()
 		case "LadyBeth_Test_Start_CaimanBitvaStrong":
 			DialogExit();
 			AddDialogExitQuestFunction("LadyBeth_Test_Start_CaimanBitvaStrong");
+		break;
+		
+		case "ClockTower_OfficeServices":
+			DialogExit();
+			//Телепорт
+			LAi_SetPlayerType(pchar);
+			// InterfaceStates.Buttons.Save.enable = true;
+			// DoQuestFunctionDelay("Tutorial_CameraControlFP", 2.5);
+			bGameMenuStart = false;
+			DoFunctionReloadToLocation("Villemstad_ClockTower", "goto", "goto2", "ClockTower_TEST_OfficeServices");
 		break;
 	}
 }

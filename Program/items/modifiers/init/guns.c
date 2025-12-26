@@ -63,6 +63,13 @@ bool InitGunsModifiers(ref item)
 			AddDescriptor(item, "HighQuality", -1);
 		}
 		break;
+		case "pistol15":
+		{
+			AddDescriptor(item, "Fancy", -1);
+			AddSpecialDescriptor(item, "Gun_SP4");
+			SetModifier(item, FIRE_MOVE + "_" + M_ACTION_SPEED, 0.15);
+		}
+		break;
 		case "howdah":
 		{
 			AddDescriptor(item, "Exotic", -1);
@@ -75,21 +82,9 @@ bool InitGunsModifiers(ref item)
 		break;
 
 		// Дальше мушкеты
-		case "mushket1":
-		{
-			AddDescriptor(item, "Unremarkable", -1);
-		}
-		break;
 		case "mushket2":
 		{
 			AddDescriptor(item, "Bayonet", -1);
-			AddDescriptor(item, "Fancy", -1);
-		}
-		break;
-
-		case "mushket3":
-		{
-			AddDescriptor(item, "Unremarkable", -1);
 		}
 		break;
 		case "grape_mushket":
@@ -100,7 +95,6 @@ bool InitGunsModifiers(ref item)
 		case "mushket5":
 		{
 			AddDescriptor(item, "HighQuality", -1);
-			AddDescriptor(item, "Fancy", -1);
 		}
 		break;
 		case "mushket6":
@@ -111,13 +105,11 @@ bool InitGunsModifiers(ref item)
 		case "mushket2x2":
 		{
 			AddDescriptor(item, "HighQuality", -1);
-			AddDescriptor(item, "Exotic", -1);
 		}
 		break;
 		case "mushket7":
 		{
 			AddDescriptor(item, "HighQuality", -1);
-			
 		}
 		break;
 		case "mushket8":

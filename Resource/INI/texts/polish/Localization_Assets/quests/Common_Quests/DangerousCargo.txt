@@ -1,3 +1,3 @@
 DangerousCargo_1 {Normandy}
-DangerousCargo_2 {Mały}
+DangerousCargo_2 {Small}
 DangerousCargo_3 {Jimmy}

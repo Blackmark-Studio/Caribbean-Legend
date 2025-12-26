@@ -61,16 +61,14 @@ descriptor_descr_Herb {Don de la terre. Principalement utilisé en alchimie pour
 descriptor_descr_Fancy {Cet objet se distingue par son aspect cérémoniel, ses incrustations et ses matériaux précieux. Le porter augmente le Leadership de $number($DescriptorBaseValue(Fancy)). Effets cumulables.}
 descriptor_descr_Exotic
 {
-Cet objet n’a rien à faire entre les mains d’un bon chrétien, et d’effrayantes rumeurs courent aussitôt sur son porteur.
-Augmente la Puissance de la Flotte de $percent($DescriptorBaseValue(Exotic)) ; effets cumulables.
+Cet objet n’a rien à faire entre les mains d’un bon chrétien, et d’effrayantes rumeurs courent aussitôt sur son porteur.Augmente la Puissance de la Flotte de $percent($DescriptorBaseValue(Exotic)) ; effets cumulables.
 }
 descriptor_descr_HighQuality {Cette arme est si bien conçue que ses dégâts critiques sont augmentés de $percent($DescriptorBaseValue(HighQuality)).}
 descriptor_descr_GoodFit {Cette armure s’ajuste parfaitement, augmentant la vitesse d’attaque de toute arme de $percent($DescriptorBaseValue(GoodFit)).}
 descriptor_descr_HeartDefence {Cette armure est renforcée aux points vitaux, réduisant les dégâts critiques ennemis de $percent($DescriptorBaseValue(HeartDefence)).}
 descriptor_descr_Unremarkable
 {
-Tout le monde possède ce genre d’objet. Avec, vous passez inaperçu.
-Augmente la Furtivité de $number($DescriptorBaseValue(Unremarkable)). Effets cumulables.
+Tout le monde possède ce genre d’objet. Avec, vous passez inaperçu.Augmente la Furtivité de $number($DescriptorBaseValue(Unremarkable)). Effets cumulables.
 }
 descriptor_descr_WeaponType_0 {Les Armes légères sont plus légères, plus agiles et conçues surtout pour les duels. Les attaques avec ces armes sont 5 % plus rapides.}
 descriptor_descr_WeaponType_1 {Les armes moyennes offrent un bon équilibre entre poids et rapidité, ce qui en fait le choix le plus polyvalent. Idéales pour les bagarres et les abordages.}
@@ -87,8 +85,7 @@ descriptor_descr_ArmorMaterial_1 {Une armure en cuir peut vous sauver lors d’u
 descriptor_descr_ArmorMaterial_2 {Les plates offrent un excellent équilibre entre poids et protection. Peuvent sauver la vie. Réduit les dégâts subis de 15 %.}
 descriptor_descr_ArmorMaterial_3
 {
-L’armure estampée est produite en masse pour équiper les troupes et utilisée dans les guerres européennes.
-Réduit les dégâts subis de 22 %.
+L’armure estampée est produite en masse pour équiper les troupes et utilisée dans les guerres européennes.Réduit les dégâts subis de 22 %.
 }
 descriptor_descr_ArmorMaterial_4 {La fabrication d'une armure forgée de haute qualité est un processus complexe et coûteux, ce qui en fait une rareté dans les Caraïbes. Réduit les dégâts subis de 35 %.}
 descriptor_descr_AmuletType_0 {Puise dans les présages, les superstitions maritimes et de vrais liens de cause à effet.}

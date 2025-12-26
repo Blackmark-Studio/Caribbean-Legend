@@ -106,7 +106,7 @@ void InitInterface(string iniName)
 	if(!CheckNews()) ShowNews(); // есть новости
 
 	// belamour ачивка за установленный мод
-	int itemsInfo;
+	int itemsInfo[2];
 	if(!GetAchievement("ach_CL_153") && GetOverlaysInfo(&itemsInfo) > 0) Achievment_Set("ach_CL_153");
 	
     // при выходе в главное меню сбрасываем звуки

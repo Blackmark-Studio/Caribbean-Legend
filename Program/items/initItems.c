@@ -195,7 +195,7 @@ int InitItems()
 	n = InitStdGun(n, "pistol12",	 "modular_pistol", "ITEMS_37", 14, 0.0001,  1,	   5200,	30.0,	145.0,	8.0,	4,	   B_UNIQUE); // Обрез штуцера cle
 	n = InitStdGun(n, "pistol13",	 	   "revolver", "ITEMS_37", 12, 0.0001,  1,	  20000,	45.0,	150.0,	5.0,	5,	   B_UNIQUE); // Кремневый револьвер cle
 	n = InitStdGun(n, "pistol14",		   "pistol14", "ITEMS_39",  4, 0.0001,  1,	  77000,	45.0,	165.0,	3.5,	2,	   B_UNIQUE); // Дуэльный двухзарядный пистоль cle 1.3
-	n = InitStdGun(n, "pistol15",			"pistol6",  "ITEMS_6",  6, 0.0001,  1,	   5200,	50.0,	160.0,	3.2,	2,	   B_UNIQUE); // резервный пистоль
+	n = InitStdGun(n, "pistol15",			"pistol15",  "ITEMS_42",  4, 0.0001,  1,	  72000,	50.0,	160.0,	1.4,	1,	   B_UNIQUE); // Именной пистолет sp4
 	n = InitStdGun(n, "howdah",		   "howdah_black", "ITEMS_37",  2, 0.0001,  1,    10000,    15.0,   215.0,  5.0,    2,  B_EXCELLENT); // гауда
 	n = InitStdGun(n, "mortairgun",	     "mortairgun", "ITEMS_37", 10, 0.0001,  1,     5500,     5.0,   180.0,  6.5,    1,     B_UNIQUE); // Ручная мортирка cle
 	
@@ -2545,7 +2545,7 @@ int InitItems()
 	n++;
 	
 	
-	makeref(itm,Items[n]); //резервный предмет №13
+	makeref(itm,Items[n]); //резервный предмет №13 Контракт ван Дорна
 	itm.id = "Reserve_item_13"; 
 	itm.name = "itmname_Reserve_item_13";
 	itm.describe = "itmdescr_Reserve_item_13";
@@ -2557,7 +2557,7 @@ int InitItems()
 	itm.ItemType = "QUESTITEMS";
 	n++;
 	
-	makeref(itm,Items[n]); //резервный предмет №14
+	makeref(itm,Items[n]); //резервный предмет №14 Странная книга
 	itm.id = "Reserve_item_14"; 
 	itm.name = "itmname_Reserve_item_14";
 	itm.describe = "itmdescr_Reserve_item_14";
@@ -2569,7 +2569,7 @@ int InitItems()
 	itm.ItemType = "QUESTITEMS";
 	n++;
 	
-	makeref(itm,Items[n]); //резервный предмет №15
+	makeref(itm,Items[n]); //резервный предмет №15 SP4 Документ 1
 	itm.id = "Reserve_item_15"; 
 	itm.name = "itmname_Reserve_item_15";
 	itm.describe = "itmdescr_Reserve_item_15";
@@ -2581,7 +2581,7 @@ int InitItems()
 	itm.ItemType = "QUESTITEMS";
 	n++;
 	
-	makeref(itm,Items[n]); //резервный предмет №16
+	makeref(itm,Items[n]); //резервный предмет №16 SP4 Документ 2
 	itm.id = "Reserve_item_16"; 
 	itm.name = "itmname_Reserve_item_16";
 	itm.describe = "itmdescr_Reserve_item_16";
@@ -2593,7 +2593,7 @@ int InitItems()
 	itm.ItemType = "QUESTITEMS";
 	n++;
 	
-	makeref(itm,Items[n]); //резервный предмет №17
+	makeref(itm,Items[n]); //резервный предмет №17 Ключ к ван Дорну
 	itm.id = "Reserve_item_17"; 
 	itm.name = "itmname_Reserve_item_17";
 	itm.describe = "itmdescr_Reserve_item_17";
@@ -5452,6 +5452,9 @@ void InitGuns()
 	InitGunExt(		"mushket9", "t2", 	      "GunEchin",               "",  70.0, 120.0,   0.0,  1, 0,  35, 0); // Аркебуза конкистадора SP2
 	InitGunExt(	   "mushket10", "t1", 	     "cartridge",               "", 150.0, 253.0,  0.0,   0, 0,  32, 0);	
 	InitGunExt(	   "mushket10", "t2", 		    "bullet",      "gunpowder", 130.0, 220.0,  0.0,   0, 0,  42, 1);
+	InitGunExt("pistol15", "t1", "cartridge",     "",          109.0, 138.0, 0.0, 0, 2,  19, 0);
+	InitGunExt("pistol15", "t2", "bullet",        "gunpowder", 95.0, 120.0,  0.0, 0, 2,  25, 1);
+	InitGunExt("pistol15", "t3", "bullet_double", "",          190.0, 240.0, 0.0, 0, 0,  12, 0);
 }
 
 void InitGrapeGuns()

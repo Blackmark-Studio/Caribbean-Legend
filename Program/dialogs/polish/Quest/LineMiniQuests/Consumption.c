@@ -54,8 +54,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Servant":
-			dialog.text = "Dzień dobry, Señor. Jaki masz tu interes?";
-			link.l1 = "Przyniosłem depeszę dla señor komendanta, ale powinienem przekazać ją osobiście.";
+			dialog.text = "Dzień dobry, seniorze. Jaki masz tu interes?";
+			link.l1 = "Przyniosłem depeszę dla seniora komendanta, ale powinienem przekazać ją osobiście.";
 			link.l1.go = "Servant_1";
 		break;
 		
@@ -69,7 +69,7 @@ void ProcessDialogEvent()
 			if (GetSummonSkillFromName(pchar, SKILL_SNEAK) < 40)
 			{
 				notification("Skill Check Failed (40)", SKILL_SNEAK);
-				dialog.text = "Señor komendant zazwyczaj ostrzega mnie o wszystkich ważnych sprawach, które wymagają zmiany rutyny... Wiesz, właściwie to ostrzegł mnie o tym konkretnym przypadku.";
+				dialog.text = "Senor komendant zazwyczaj ostrzega mnie o wszystkich ważnych sprawach, które wymagają zmiany rutyny... Wiesz, właściwie to ostrzegł mnie o tym konkretnym przypadku.";
 				link.l1 = "A co on powiedział?";
 				link.l1.go = "Servant_3";
 			}
@@ -141,7 +141,7 @@ void ProcessDialogEvent()
 		
 		case "Sergio_1":
 			dialog.text = "Słyszałem, że wypytujesz o człowieka imieniem Juan i chorobę w naszym więzieniu...";
-			link.l1 = "Rzeczywiście, wypytywałem... ale co ci do tego? Czy mógłbyś się wytłumaczyć?";
+			link.l1 = "Rzeczywiście, wypytywałem... czy mógłbyś się wytłumaczyć.";
 			link.l1.go = "Sergio_2";
 		break;
 		
@@ -179,7 +179,7 @@ void ProcessDialogEvent()
 		
 		case "Sergio_5":
 			dialog.text = "Dzięki Bogu, że jesteś... Mam nadzieję, że nikt cię nie śledził?";
-			link.l1 = " Dlaczego? Jesteś zbyt podejrzliwy, być może nawet bardziej niż señor komendant, więc lepiej przejdź do rzeczy... Co wiesz o Juanie?";
+			link.l1 = " Dlaczego? Jesteś zbyt podejrzliwy, być może nawet bardziej niż senor komendant, więc lepiej przejdź do rzeczy... Co wiesz o Juanie?";
 			link.l1.go = "Sergio_6";
 		break;
 		
@@ -228,7 +228,7 @@ void ProcessDialogEvent()
 		
 		case "Sergio_8":
 			dialog.text = "Schowaj swój miecz, to koniec! Widziałeś sam, że oni próbowali też i mnie zabić!";
-			link.l1 = "Cóż, to wydaje się zbyt wyrafinowane na nieczystą grę - więc nie jesteś z nimi. Na czym skończyliśmy? Jesteś więziennym lekarzem, prawda?";
+			link.l1 = "Cóż, to wydaje się zbyt wyrafinowane na nieczystą grę - więc nie jesteś z nimi. Gdzie skończyliśmy? Jesteś więziennym lekarzem, prawda?";
 			link.l1.go = "Sergio_9";
 		break;
 		
@@ -290,7 +290,7 @@ void ProcessDialogEvent()
 		
 		case "Sergio_17":
 			RemoveItems(PChar, "letter_consumption", 1);
-			Log_Info("Przekazałeś list");
+			Log_Info("You have given the letter");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Co to jest? To nazwisko pułkownika i monogram 'J'? Niesamowite! Skąd to masz?";
 			link.l1 = "Lepiej, żebyś tego nie wiedział, ale myślę, że wykorzystasz to w najlepszy możliwy sposób.";
@@ -319,7 +319,7 @@ void ProcessDialogEvent()
 		
 		// генератор торговли смолами
 		case "Sergio_20":
-			dialog.text = "O, cóż za szczęśliwe spotkanie! Señor "+GetFullName(pchar)+"! Tak się cieszę, że cię widzę!";
+			dialog.text = "O, cóż za szczęśliwe spotkanie! Senor "+GetFullName(pchar)+"! Tak się cieszę, że cię widzę!";
 			link.l1 = "Senor Sergio! Nie spodziewałem się ciebie spotkać! Jak się masz? Jak się miewa stary dobry komendant?";
 			link.l1.go = "Sergio_21";
 		break;
@@ -400,7 +400,7 @@ void ProcessDialogEvent()
 		
 		case "oil_trade":
 			dialog.text = "Witaj, señor kapitanie! Przyszedłeś po partię żywicy, jak sądzę.";
-			link.l1 = "Zgadza się, señor Sergio. Czy wszystko gotowe?";
+			link.l1 = "Zgadza się, senor Sergio. Czy wszystko gotowe?";
 			link.l1.go = "oil_trade_1";
 			link.l2 = "Senor Sergio, nie jestem w nastroju do handlu. Może później.";
 			link.l2.go = "oil_trade_exit";
@@ -414,7 +414,7 @@ void ProcessDialogEvent()
 		case "oil_trade_1":
 			if (CheckAttribute(pchar, "questTemp.UpgradeOil"))
 			{
-				dialog.text = "Tak. Masz przy sobie 2550 dublonów?";
+				dialog.text = "Tak. Masz przy sobie 2550 doblonów?";
 				if (PCharDublonsTotal() >= 2550)
 				{
 					link.l1 = "Jasne. Proszę bardzo.";
@@ -457,7 +457,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.UpgradeOil")) RemoveDublonsFromPCharTotal(2550);
 			else RemoveDublonsFromPCharTotal(600);
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Swietnie mi się z tobą współpracuję, kapitanie. Moi ludzie pomogą ci załadować beczki na twój statek.";
+			dialog.text = "Z przyjemnością z tobą współpracuję, kapitanie. Moi ludzie pomogą ci załadować beczki na twój statek.";
 			link.l1 = "Dziękuję!";
 			link.l1.go = "oil_trade_3";
 		break;
@@ -481,7 +481,7 @@ void ProcessDialogEvent()
 		case "UpgradeOil":
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 80)
 			{
-				dialog.text = "Señor"+GetSexPhrase("","ita")+" "+GetSexPhrase("pańskie","pani")+" pragnienie zakupu większej ilości żywicy niewątpliwie świadczy o zaufaniu do naszego interesu. Jednak pojawia się pewna trudność: wraz ze zwiększeniem wydobycia rośnie ryzyko zwrócenia uwagi władz wyspy, a kontrola nad takimi partiami wymaga ludzi i środków bezpieczeństwa, co, przyznaję, nie jest tanie. Jeśli jest "+GetSexPhrase("pan","pani")+" "+GetSexPhrase("gotowy","gotowa")+" dodać do ceny trzy tysiące dublonów jako jednorazową opłatę, zatrudnię godnych zaufania ludzi, którzy będą w stanie chronić ładunku i zapobiec wyciekom informacji. Wtedy nasza trasa stanie się bezpieczniejsza, a ja będę mógł dostarczać "+GetSexPhrase("panu","pani")+" trzysta beczek żywicy miesięcznie. Jako rekompensatę za "+GetSexPhrase("pańską","pani")+" inwestycję, zaproponuję "+GetSexPhrase("panu","pani")+" jako klientowi hurtowemu piętnastoprocentową zniżkę na wszystkie przyszłe partie.";
+				dialog.text = "Señor"+GetSexPhrase("","ita")+" "+GetSexPhrase("pańskie","pani")+" pragnienie zakupu większej ilości żywicy niewątpliwie świadczy o zaufaniu do naszego interesu. Jednak pojawia się pewna trudność: wraz ze zwiększeniem wydobycia rośnie ryzyko zwrócenia uwagi władz wyspy, a kontrola nad takimi partiami wymaga ludzi i środków bezpieczeństwa, co, przyznaję, nie jest tanie. Jeśli jest "+GetSexPhrase("pan","pani")+" "+GetSexPhrase("gotowy","gotowa")+" dodać do ceny trzy tysiące dublonów jako jednorazową opłatę, zatrudnię godnych zaufania ludzi, którzy będą w stanie chronić ładunki i zapobiec wyciekom informacji. Wtedy nasza trasa stanie się bezpieczniejsza, a ja będę mógł dostarczać "+GetSexPhrase("panu","pani")+" trzysta beczek żywicy miesięcznie. Jako rekompensatę za "+GetSexPhrase("pańską","pani")+" inwestycję, zaproponuję "+GetSexPhrase("panu","pani")+" jako klientowi hurtowemu piętnastoprocentową zniżkę na wszystkie przyszłe partie.";
 				link.l1 = "Trzy tysiące dublonów za bezpieczeństwo dostaw? Señor Sergio, nie ukrywam, ta cena wydaje mi się niewiarygodna - jakby proponował mi pan spisek w Eskorialu, a nie tylko zapewnienie ochrony ładunków żywicy!";
 				link.l1.go = "UpgradeOil_1";
 				Notification_Skill(true, 80, SKILL_COMMERCE);
@@ -548,7 +548,7 @@ void ProcessDialogEvent()
 		
 		case "Juan_abordage":
 			dialog.text = "Kim, do diabła, jesteś!?";
-			link.l1 = "Me imię to "+GetFullName(pchar)+", co do ciebie, Gruźlico, diabeł już na ciebie czeka - i wkrótce pochwyci twoją duszę!";
+			link.l1 = "Me imię to "+GetFullName(pchar)+", co do ciebie, Konsumpcjo, diabeł już na ciebie czeka - i wkrótce pochwyci twoją duszę!";
 			link.l1.go = "Juan_abordage_1";
 		break;
 		
@@ -558,20 +558,20 @@ void ProcessDialogEvent()
 				dialog.text = "Ten statek wyleci w powietrze - lont już się pali w prochowni - dlaczego obaj mamy zginąć? Odłóżmy szable. Będziesz miał dość czasu, by się wydostać, a ja skoczę ze statku, Galera Point jest stąd niemal na wyciągnięcie ręki. Jeśli potrzebujesz złota, weź je! Pięćset dublonów, gotówka na miejscu - i zapominasz o mnie, a ja o tobie! Zgoda?";
 				link.l1 = "Złoto? Zacząłem to wszystko nie dla pieniędzy, Juan, ale by zabijać szumowiny, a ty sam jesteś największą nagrodą.";
 				link.l1.go = "Juan_abordage_2";
-				link.l2 = "Pięćset doublonów? Żartujesz sobie ze mnie, Gruźlica. Myślę, że masz tutaj przynajmniej dwa razy tyle... Daj mi tysiąc teraz i możesz iść do diabła, w przeciwnym razie...";
+				link.l2 = "Pięćset doublonów? Żartujesz sobie ze mnie, Konsumpcjo. Myślę, że masz tutaj przynajmniej dwa razy tyle... Daj mi tysiąc teraz i możesz iść do diabła, w przeciwnym razie...";
 				link.l2.go = "Juan_abordage_3";
 			}
 			else
 			{
 				dialog.text = "Statek zaraz wybuchnie, więc będę miał dobre towarzystwo, co myślisz?";
-				link.l1 = "Za dużo gadasz, Gruźlica, zabieraj się do roboty!";
+				link.l1 = "Za dużo gadasz, Konsumpcja, zabieraj się do roboty!";
 				link.l1.go = "Juan_abordage_5";
 			}
 		break;
 		
 		case "Juan_abordage_2":
 			dialog.text = "Mogliśmy się dogadać... Eh, nieważne!";
-			link.l1 = "Zabrałeś tych biedaków z ich cel, a oni nie mogli się ani opierać, ani uciec. Jesteś tchórzem, Gruźlica, i teraz zginiesz jako tchórz.";
+			link.l1 = "Zabrałeś tych biedaków z ich cel, a oni nie mogli się ani opierać, ani uciec. Jesteś tchórzem, Consumption, i teraz zginiesz jako tchórz.";
 			link.l1.go = "Juan_abordage_5";
 		break;
 		
@@ -580,7 +580,7 @@ void ProcessDialogEvent()
 			link.l1 = "Twoje życie nie jest warte kuli, więc wygląda na to, że to najbardziej opłacalny interes w moim życiu. A teraz zjeżdżaj.";
 			link.l1.go = "Juan_abordage_4";
 			TakeNItems(pchar, "gold_dublon", 1000);
-			Log_Info("Otrzymałeś 1000 dublonów");
+			Log_Info("You received 1000 doubloons");
 			PlaySound("interface\important_item.wav");
 			ChangeCharacterComplexReputation(pchar, "nobility", -10);
 			OfficersReaction("bad");
@@ -649,7 +649,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Waitress_3":
-			dialog.text = "Ja... o Boże! Masz rację. Dla niego, jak obiecałam... Idź na górę do pokoju - nie mamy dużo czasu.";
+			dialog.text = "Ja... o Boże! Masz rację. Dla niego, jak obiecałem... Idź na górę do pokoju - nie mamy dużo czasu.";
 			link.l1 = "Pospieszmy się, zatem!";
 			link.l1.go = "Waitress_4";
 		break;
@@ -665,7 +665,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Waitress_sex":
-			dialog.text = "Oto jestem, mój dzielny caballero! I spójrz, co ze sobą przyniosłam.";
+			dialog.text = "Oto jestem, mój dzielny caballero! I spójrz, co ze sobą przyniosłem.";
 			link.l1 = "Ho ho, jestem pod wrażeniem, otwórzmy to wiśniowe wino! Potem otworzymy coś jeszcze... To twój szczęśliwy dzień w końcu... Ha-ha!";
 			link.l1.go = "Waitress_sex_1";
 		break;
@@ -678,7 +678,7 @@ void ProcessDialogEvent()
 		case "Waitress_5":
 			if (CheckAttribute(pchar, "questTemp.Consumption.KillJuan"))
 			{
-				dialog.text = "Jesteś prawdziwym rycerzem! Caballero! Proszę - nie traktuj tego jako zniewagi, ale chcę, żebyś to wziął. Zbierałam te pieniądze, aby wykupić Angelo, ale teraz to nie jest ważne! Proszę, nie odmawiaj - weź to!";
+				dialog.text = "Jesteś prawdziwym rycerzem! Caballero! Proszę - nie traktuj tego jako zniewagi, ale chcę, żebyś to wziął. Zbierałem te pieniądze, aby wykupić Angelo, ale teraz to nie jest ważne! Proszę, nie odmawiaj - weź to!";
 				link.l1 = "Cóż, zapamiętam twoje oczy, señorita - są o wiele piękniejsze, gdy błyszczą łzami szczęścia, a nie bólu. Przyjmuję twój dar. Żegnaj, i powodzenia tobie i Angelo.";
 				link.l1.go = "Waitress_6";
 				AddMoneyToCharacter(pchar, 5000);

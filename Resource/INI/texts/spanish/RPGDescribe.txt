@@ -30,45 +30,27 @@ Luck
 }
 Crit
 {
-Probabilidad base de infligir un golpe o disparo crítico al enemigo.
-~
-Depende de S y P.
-~
-Los Perks y el equipo pueden aumentar esta probabilidad.
+Probabilidad base de infligir un golpe o disparo crítico al enemigo.~Depende de S y P.~Los Perks y el equipo pueden aumentar esta probabilidad.
 }
 CharDefence
 {
-Estadísticas básicas de Protección contra daño. Reducen todo el daño recibido en un porcentaje específico.
- ~
- Los valores se ven afectados por los Perks personales y el equipo.
+Estadísticas básicas de Protección contra daño. Reducen todo el daño recibido en un porcentaje específico. ~ Los valores se ven afectados por los Perks personales y el equipo.
 }
 FencingL
 {
-Habilidad para manejar espadas ligeras, floretes y similares.
- (R*0.9+I*0.1)
- ~
- Afecta al daño del arma y al costo de Energía de los ataques.
+Habilidad para manejar espadas ligeras, floretes y similares. (R*0.9+I*0.1) ~ Afecta al daño del arma y al costo de Energía de los ataques.
 }
 FencingS
 {
-Habilidad para manejar hojas medianas y equilibradas, como sables, que requieren fuerza y agilidad.
- (P*0.6+R*0.4)
- ~
- Afecta al daño del arma y al costo de Energía de los ataques.
+Habilidad para manejar hojas medianas y equilibradas, como sables, que requieren fuerza y agilidad. (P*0.6+R*0.4) ~ Afecta al daño del arma y al costo de Energía de los ataques.
 }
 FencingH
 {
-Habilidad para manejar armas pesadas como espadones y hachas. Requiere mucha fuerza física.
- (P*0.9+E*0.1)
- ~
- Afecta al daño del arma y al costo de Energía de los ataques.
+Habilidad para manejar armas pesadas como espadones y hachas. Requiere mucha fuerza física. (P*0.9+E*0.1) ~ Afecta al daño del arma y al costo de Energía de los ataques.
 }
 Pistol
 {
-Habilidad para usar todo tipo de armas de fuego.
- (R*0.4+S*0.6)
- ~
- Afecta al daño y a la velocidad de recarga.
+Habilidad para usar todo tipo de armas de fuego. (R*0.4+S*0.6) ~ Afecta al daño y a la velocidad de recarga.
 }
 Fortune
 {
@@ -92,18 +74,7 @@ Cañones: ¡Venga, rápido! ¡Prepara y coloca el cañón! Antes de que te dejen
 }
 Sailing
 {
-Capacidad para conducir una embarcación en cualquier condición, utilizar los instrumentos y comandar una escuadra. Incluso la embarcación más caprichosa y poco maniobrable obedecerá la mano firme de un patrón experimentado.
- Depende de 'Percepción' y 'Talento' (I0.2 + T0.8)
- ~
- Para gobernar una embarcación de cierta clase se requiere un nivel mínimo de Navegación correspondiente:
- clase 1 requiere 90
- clase 2 requiere 70
- clase 3 requiere 55
- clase 4 requiere 40
- clase 5 requiere 20
- clase 6 requiere 01
- ~
- La falta de Navegación conduce a penalizaciones en todas las habilidades y atributos del héroe. Cuanto mayor sea la diferencia entre el valor actual y el requerido de Navegación, más severas serán las penalizaciones.
+Capacidad para conducir una embarcación en cualquier condición, utilizar los instrumentos y comandar una escuadra. Incluso la embarcación más caprichosa y poco maniobrable obedecerá la mano firme de un patrón experimentado. Depende de 'Percepción' y 'Talento' (I0.2 + T0.8) ~ Para gobernar una embarcación de cierta clase se requiere un nivel mínimo de Navegación correspondiente: clase 1 requiere 90 clase 2 requiere 70 clase 3 requiere 55 clase 4 requiere 40 clase 5 requiere 20 clase 6 requiere 01 ~ La falta de Navegación conduce a penalizaciones en todas las habilidades y atributos del héroe. Cuanto mayor sea la diferencia entre el valor actual y el requerido de Navegación, más severas serán las penalizaciones.
 }
 Repair
 {
@@ -111,10 +82,7 @@ Reparación. Cuando te llueven las balas enemigas que hacen polvo la cubierta y 
 }
 Grappling
 {
-Alinear el barco con el buque enemigo, lanzar los garfios para abordar al tembloroso adversario, limpiar las cubiertas y tomar el barco como premio merecido — todo esto requiere gran agilidad y experiencia, pero el botín sin duda compensará todo el esfuerzo.
- (R*0.7+T*0.3)
- ~
- Afecta la distancia de abordaje.
+Alinear el barco con el buque enemigo, lanzar los garfios para abordar al tembloroso adversario, limpiar las cubiertas y tomar el barco como premio merecido — todo esto requiere gran agilidad y experiencia, pero el botín sin duda compensará todo el esfuerzo. (R*0.7+T*0.3) ~ Afecta la distancia de abordaje.
 }
 Defence
 {
@@ -138,31 +106,21 @@ Attention_abilities
 }
 Personal_abilities
 {
-Perks que amplían las capacidades personales del personaje. Se progresa al subir los niveles de habilidades personales.
- ~
- Al alcanzar un umbral, obtienes un nuevo punto de Perk personal. Los diferentes Perks requieren una cantidad distinta de puntos. Normalmente, los más poderosos se encuentran al final del árbol de desarrollo.
+Perks que amplían las capacidades personales del personaje. Se progresa al subir los niveles de habilidades personales. ~ Al alcanzar un umbral, obtienes un nuevo punto de Perk personal. Los diferentes Perks requieren una cantidad distinta de puntos. Normalmente, los más poderosos se encuentran al final del árbol de desarrollo.
 }
 Ship_abilities
 {
-Perks que afectan a la gestión del barco. Se progresa al subir los niveles de habilidades navales.
- ~
- Al alcanzar un umbral, obtienes un nuevo punto de Perk naval. Los diferentes Perks requieren una cantidad distinta de puntos. Normalmente, los más poderosos se encuentran al final del árbol de desarrollo.
- ~
- Pueden heredarse por el protagonista de los oficiales asignados a los puestos del barco que dominan su oficio.
+Perks que afectan a la gestión del barco. Se progresa al subir los niveles de habilidades navales. ~ Al alcanzar un umbral, obtienes un nuevo punto de Perk naval. Los diferentes Perks requieren una cantidad distinta de puntos. Normalmente, los más poderosos se encuentran al final del árbol de desarrollo. ~ Pueden heredarse por el protagonista de los oficiales asignados a los puestos del barco que dominan su oficio.
 }
 Abilities_available {El número muestra los puntos de habilidad no asignados.}
 Abilities_active {El número muestra el número de habilidades que tiene el personaje.}
 Rank
 {
-El rango es un indicador del nivel de desarrollo del personaje en el juego. Se progresa al subir los niveles de habilidades.
- ~
- A medida que aumenta el rango del personaje, crecen su Salud y Energía, y comienzan a aparecer con mayor frecuencia enemigos más fuertes y nuevos objetos.
+El rango es un indicador del nivel de desarrollo del personaje en el juego. Se progresa al subir los niveles de habilidades. ~ A medida que aumenta el rango del personaje, crecen su Salud y Energía, y comienzan a aparecer con mayor frecuencia enemigos más fuertes y nuevos objetos.
 }
 Life
 {
-HP — medida de la resistencia de un personaje al daño físico. Cero significa muerte, uno significa un mundo de posibilidades.
- ~
- El valor depende de P y E y crece con el rango.
+HP — medida de la resistencia de un personaje al daño físico. Cero significa muerte, uno significa un mundo de posibilidades. ~ El valor depende de P y E y crece con el rango.
 }
 Health
 {
@@ -170,31 +128,16 @@ Salud: Es la condición física general del héroe. Cuanto peor sea la salud, m�
 }
 Energy
 {
-Energía - la reserva de resistencia física del personaje.
- 
-  ~
- 
-  Todas las acciones ofensivas y la carrera rápida en combate cuerpo a cuerpo consumen Energía; durante la lucha el personaje se cansa y necesita un respiro para recuperarse.
- 
-  ~
- 
-  El valor de Energía depende de R y T y aumenta con el rango.
+Energía - la reserva de resistencia física del personaje.   ~   Todas las acciones ofensivas y la carrera rápida en combate cuerpo a cuerpo consumen Energía; durante la lucha el personaje se cansa y necesita un respiro para recuperarse.   ~   El valor de Energía depende de R y T y aumenta con el rango.
 }
 Money {Dinero: ¡A todos nos gusta el dinero y por eso lo queremos! Doblones, piastras, táleros, guineas... ¿Qué más da? ¡Todo es oro!}
 Reputation
 {
-El honor refleja cómo la sociedad ve al personaje.
-~
-Cambia según cómo resuelvas los problemas.
-~
-Siempre tiende a volver a un estado neutral.
+El honor refleja cómo la sociedad ve al personaje.~Cambia según cómo resuelvas los problemas.~Siempre tiende a volver a un estado neutral.
 }
 Weight
 {
-El peso es la masa total máxima de carga que un personaje puede transportar.
- Depende de Fuerza, Resistencia, Perks personales y amuletos activos.
- ~
- Un personaje sobrecargado se mueve más despacio, recibe penalizaciones y no puede usar el viaje rápido.
+El peso es la masa total máxima de carga que un personaje puede transportar. Depende de Fuerza, Resistencia, Perks personales y amuletos activos. ~ Un personaje sobrecargado se mueve más despacio, recibe penalizaciones y no puede usar el viaje rápido.
 }
 Title {Título honorífico que indica los beneficios que el personaje aporta a la nación que sirve.}
 NextExp
@@ -291,15 +234,13 @@ SourceOverload {Sobrecargado}
 SourceNavyPenalty {Prueba de Navegación fallida}
 CritDamage
 {
-Cantidad de daño crítico. Se aplica después de todos los modificadores.
- ~
- Puede aumentarse mediante Perks personales y equipo.
+Cantidad de daño crítico. Se aplica después de todos los modificadores. ~ Puede aumentarse mediante Perks personales y equipo.
 }
 CritCharDefence
 {
-Reducción total del daño crítico enemigo.
- ~
- Puede aumentarse mediante Perks personales y equipo.
+Reducción total del daño crítico enemigo. ~ Puede aumentarse mediante Perks personales y equipo.
 }
 SourceSkill {Habilidad}
 SourceChickenGod {Bendición de Aruba}
+SourceSpecialityUpgrade {Mejora de subclase}
+SourceAudit {Auditoría}

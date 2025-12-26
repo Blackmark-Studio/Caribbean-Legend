@@ -137,7 +137,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "begin")
 			{
 				dialog.text = "Miło cię widzieć, Monsieur de Maure. Jaka to okazja?";
-				link.l1 = TimeGreeting()+", oficerze. Chciałbym porozmawiać o moim bracie, Michelu de Monper. Oczywiście nieoficjalnie. Próbuję dowiedzieć się o jego służbie tutaj na Karaibach.";
+				link.l1 = TimeGreeting()+", oficerze. Chciałbym porozmawiać z moim bratem, Michelem de Monper. Oczywiście nieoficjalnie. Próbuję dowiedzieć się o jego służbie tutaj na Karaibach.";
 				link.l1.go = "spanish";
 				break;
 			}
@@ -282,7 +282,7 @@ void ProcessDialogEvent()
 		
 		case "Sharlie_sailor_2":
 			dialog.text = "Już? Myślałem, że zajmie to co najmniej miesiąc, ha, ha!";
-			link.l1 = "Mówię poważnie! Wygląda na to, że mój pobyt na Karaibach strasznie się wydłuży... Musze szukać odpowiedzi na moje pytanie gdzie indziej, a nie zamierzam znowu czekać na kolejny fracht. Statek już mam, tylko załogi brak. Zdążyliśmy się poznać, Alonso, może chciałbyś za mną popłynąć? Przydałby mi się doświadczony marynarz.";
+			link.l1 = "Mówię poważnie!";
 			link.l1.go = "Sharlie_sailor_3";
 		break;
 		
@@ -342,7 +342,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sharlie_sailor_nomoney":
-			dialog.text = "Cóż, jak tylko znajdziesz wystarczająco pieniędzy, wracaj. Znajdziesz nas tutaj w karczmie. I tak nie ma innych statków w pobliżu. Będziemy po prostu dalej pić i trwonić nasze pieniądze na dziwki, haha!";
+			dialog.text = "Cóż, jak tylko znajdziesz wystarczająco pieniędzy, wracaj. Znajdziesz nas tutaj w karczmie. I tak nie ma innych statków w pobliżu. Będziemy po prostu dalej pić i trwonić nasze pieniądze na dziwki, harhar!";
 			link.l1 = "Postaram się wrócić tak szybko, jak to możliwe.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Sharlie_sailor_again";
@@ -377,7 +377,7 @@ void ProcessDialogEvent()
 		
 		case "skipertalker_1":
 			dialog.text = RandPhraseSimple("Cóż to jest?","Czego potrzebujesz?");
-			link.l1 = "Słuchaj, "+GetAddress_FormToNPC(NPChar)+", jest taka sprawa... Szukam nawigatora. Może znasz kogoś, kto nadaje się do tej pracy tutaj w mieście?";
+			link.l1 = "Słuchaj, "+GetAddress_FormToNPC(NPChar)+" , jest taka sprawa... Szukam nawigatora. Może znasz kogoś, kto nadaje się do tej pracy tutaj w mieście?";
 			link.l1.go = "skipertalker_2";
 		break;
 		
@@ -425,7 +425,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_4":
-			dialog.text = "Tak jest, kapitanie! Poczekam na ciebie w twojej kajucie.";
+			dialog.text = "Tak jest, kapitanie! Poczekam na ciebie w twojej kajucie. *Użyj menu akcji podczas żeglugi, aby uzyskać dostęp do kajuty i innych obszarów statku*";
 			link.l1 = "Dziękuję, Folke. Do zobaczenia na pokładzie.";
 			link.l1.go = "Folke_5";
 			Log_Info("Otrzymałeś amulet 'Kupieckie Koraliki'");
@@ -469,7 +469,7 @@ void ProcessDialogEvent()
 		
 		case "Folke_7":
 			dialog.text = "Do diabła, ten slup jest cienki jak sito, kapitanie. Będzie blisko, żebyśmy przeprawili się na Gwadelupę. Jeśli chcesz dotrzeć do Basse-Terre w jednym kawałku, trzeba go natychmiast oddać do naprawy w stoczni.";
-			link.l1 = "Nie miałem wyboru, to był jedyny statek na sprzedaż! I kazali mi za niego słono zapłacić. Jak wiesz, nie mamy teraz czasu, by go naprawić... Masz jakieś rady, zanim wyruszymy w morze?";
+			link.l1 = "Nie miałem wyboru, to był jedyny statek na sprzedaż! I kazali mi za nią słono zapłacić. Jak wiesz, nie mamy teraz czasu, by ją naprawić... Masz jakieś rady, zanim wyruszymy w morze?";
 			link.l1.go = "Folke_8";
 		break;
 		
@@ -495,7 +495,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_8_1":
-			dialog.text = "... I jak długo pan to ze sobą nosi?";
+			dialog.text = "...I jak długo pan to ze sobą nosi?";
 			link.l1 = "Prawie dwa tygodnie.";
 			link.l1.go = "Folke_8_2";
 			TakeItemFromCharacter(pchar, "BoxOfBalls");
@@ -829,7 +829,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "spanish_3":
-			dialog.text = "Planował także inną operację przeciwko Hiszpanom. Mówiąc precyzyjnie - przechwycenie hiszpańskiego statku z cennym ładunkiem na pokładzie. Michel miał zwabić cel pod działa lekkiej fregaty 'Gryffondor'. Nie widzieliśmy go ani śladu przez dłuższy czas, gdy planował to przedsięwzięcie.\nAle plan się nie powiódł. Hiszpański transport nie dotarł, a Michel został znaleziony przez miejscowych rybaków wyrzucony na brzeg Zatoki Le Marin, półżywy. Wygląda na to, że operacja zakończyła się niepowodzeniem.\nWojna to wojna, i rzeczy mogą pójść źle. Cudem było, że Michel w ogóle przeżył, ale Chevalier de Poincy wpadł w furię. Oskarżył Michela o sprzeniewierzenie pieniędzy Zakonu i kazał go uwięzić. Oczywiście, nie uwierzyliśmy w te oskarżenia. Michel to uczciwy człowiek, prawdziwy rycerz Zakonu. Tylko Bóg wie, co tak rozzłościło generała-gubernatora. Może Chevalier de Poincy powie ci to sam?";
+			dialog.text = "Planował także inną operację przeciwko Hiszpanom. Mówiąc precyzyjnie - przechwycenie hiszpańskiego statku z cennym ładunkiem na pokładzie. Michel miał zwabić cel pod działa ciężki korwet 'Gryffondor'. Nie widzieliśmy go ani śladu przez dłuższy czas, gdy planował to przedsięwzięcie.\nAle plan się nie powiódł. Hiszpański transport nie dotarł, a Michel został znaleziony przez miejscowych rybaków wyrzucony na brzeg Zatoki Le Marin, półżywy. Wygląda na to, że operacja zakończyła się niepowodzeniem.\nWojna to wojna, i rzeczy mogą pójść źle. Cudem było, że Michel w ogóle przeżył, ale Chevalier de Poincy wpadł w furię. Oskarżył Michela o sprzeniewierzenie pieniędzy Zakonu i kazał go uwięzić. Oczywiście, nie uwierzyliśmy w te oskarżenia. Michel to uczciwy człowiek, prawdziwy rycerz Zakonu. Tylko Bóg wie, co tak rozzłościło generała-gubernatora. Może Chevalier de Poincy powie ci to sam?";
 			link.l1 = "Możliwe. To wszystko, co wiesz?";
 			link.l1.go = "spanish_4";
 		break;

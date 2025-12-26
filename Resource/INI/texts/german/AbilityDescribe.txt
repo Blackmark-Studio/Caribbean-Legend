@@ -5,7 +5,7 @@ newline
 BasicDefense {Grundverteidigung}
 perkBasicDefense {Reduziert erlittenen Schaden um $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Fortgeschrittene Verteidigung}
-perkAdvancedDefense {Verringert erlittenen Schaden um $percent($perkBaseValue(AdvancedDefense|1)) und gegnerischen kritischen Schaden um $percent($perkBaseValue(AdvancedDefense|2)).}
+perkAdvancedDefense {Verringert erlittenen Schaden um $percent($perkBaseValue(AdvancedDefence|1)) und gegnerischen kritischen Schaden um $percent($perkBaseValue(AdvancedDefence|2)).}
 CriticalHit {Kritischer Treffer}
 perkCriticalHit {Erhöht die Grundchance auf kritische Treffer um 3,5 %.}
 Grus {Starker Rückhalt}
@@ -21,12 +21,10 @@ perkSliding {Hieb- oder Stichangriff mit einer leichten Waffe kann mit einer Cha
 Gunman {Musketier}
 perkGunman
 {
-Erhöht den Schaden und die Nachladegeschwindigkeit von Feuerwaffen um $percent($perkBaseValue(Gunman|1)). Ermöglicht die Verwendung von zweihändigen Einzelschuss- und einhändigen Mehrschusswaffen.
- ~
- Offiziere können $key(descriptor_TwoHanded|ItemsDescriptors.txt) nur verwenden, wenn sie ausdrücklich dazu angewiesen werden.
+Erhöht den Schaden und die Nachladegeschwindigkeit von Feuerwaffen um $percent($perkBaseValue(Gunman|1)). Ermöglicht die Verwendung von zweihändigen Einzelschuss- und einhändigen Mehrschusswaffen. ~ Offiziere können $key(descriptor_TwoHanded|ItemsDescriptors.txt) nur verwenden, wenn sie ausdrücklich dazu angewiesen werden.
 }
 GunProfessional {Plänkler}
-perkGunProfessional {Erhöht Schaden und Nachladegeschwindigkeit von Schusswaffen um $percent($perkBaseValue(GunProfessional|1)). Ermöglicht die Nutzung von zweihändigen Repetier-Schusswaffen.}
+perkGunProfessional {Erhöht Schaden und Nachladegeschwindigkeit von Feuerwaffen um $percent($perkBaseValue(GunProfessional|1)). Ermöglicht den Einsatz mehrschüssiger zweihändiger Feuerwaffen.}
 IronWill {Eiserner Wille}
 perkIronWill {Ermöglicht es dir, alle 3 Minuten eine tödliche Wunde zu überleben.}
 SharedExperience {Schnelllerner}
@@ -48,9 +46,7 @@ perkTrustworthy {Schaltet alternative Überredungsoptionen in Dialogen für best
 ShipEscape {Zweite Chance}
 perkShipEscape
 {
-Rettung per Beiboot vom sinkenden Heldenschiff auf ein anderes Schiff der Flotte.
-Erlaubt es, im Kampf bei weniger als 15 % Rumpf über das Laderaum-Menü auf ein anderes Flottenschiff zu wechseln oder zu übertragen.
-Hat ein Begleiter diese Fähigkeit, entkommt er von einem sinkenden Schiff oder Brander und kehrt als Passagier per Beiboot auf das Heldenschiff zurück.
+Rettung per Beiboot vom sinkenden Heldenschiff auf ein anderes Schiff der Flotte.Erlaubt es, im Kampf bei weniger als 15 % Rumpf über das Laderaum-Menü auf ein anderes Flottenschiff zu wechseln oder zu übertragen.Hat ein Begleiter diese Fähigkeit, entkommt er von einem sinkenden Schiff oder Brander und kehrt als Passagier per Beiboot auf das Heldenschiff zurück.
 }
 Alchemy {Alchemie}
 perkAlchemy {Rezepte benötigen keine Werkzeuge mehr. Gewährt 15 % Chance, beim Benutzen einen Trank zu sparen.}
@@ -75,8 +71,7 @@ perkLongRangeGrappling {Die Enterdistanz erhöht sich um 15 %.}
 MusketsShoot {Musketensalve}
 perkMusketsShoot
 {
-Vor dem Entern wird eine Musketensalve abgefeuert.
-Die Verluste hängen von der Schiffsklasse und der Anzahl der Vorhut ab.
+Vor dem Entern wird eine Musketensalve abgefeuert.Die Verluste hängen von der Schiffsklasse und der Anzahl der Vorhut ab.
 }
 GrapplingProfessional {Erfahrener Bootsmann}
 perkGrapplingProfessional {Die Enterdistanz ist um 25 % erhöht. Möglich aus jedem Annäherungswinkel und bei jeder Geschwindigkeit.}
@@ -99,49 +94,37 @@ perkSailingProfessional {Schiffsgeschwindigkeit und Manövrierfähigkeit um 5 % 
 SeaDogProfessional {Schrecken der Meere}
 perkSeaDogProfessional
 {
-Beim Anblick des Banners der Meeresgeißel wagen selbst die kühnsten Abenteurer und Gesetzlosen nicht, ihr Schicksal herauszufordern. Erhöht die Flottenstärke um $percent($PerkBaseValue(SeaDogProfessional|1)).
-~
-Fähigkeit nur für den Spieler verfügbar; benötigt Rang $attr($context.rank).
+Beim Anblick des Banners der Meeresgeißel wagen selbst die kühnsten Abenteurer und Gesetzlosen nicht, ihr Schicksal herauszufordern. Erhöht die Flottenstärke um $percent($PerkBaseValue(SeaDogProfessional|1)).~Fähigkeit nur für den Spieler verfügbar; benötigt Rang $attr($context.rank).
 }
 FlagPir {Jolly Roger}
 perkFlagPir
 {
-Fähigkeit, deine Flagge zur Jolly Roger zu wechseln.
-~
-Diese Fertigkeit ist nur für den Spieler verfügbar.
+Fähigkeit, deine Flagge zur Jolly Roger zu wechseln.~Diese Fertigkeit ist nur für den Spieler verfügbar.
 }
 FlagEng {Flagge Englands}
 perkFlagEng
 {
-Die Entdeckungswahrscheinlichkeit hängt von Tarnung, Schiffsklasse und Flottengröße, gegnerischer Flottengröße und Bedrohungsstufe ab.
-~
-Fähigkeit nur für Spieler verfügbar
+Die Entdeckungswahrscheinlichkeit hängt von Tarnung, Schiffsklasse und Flottengröße, gegnerischer Flottengröße und Bedrohungsstufe ab.~Fähigkeit nur für Spieler verfügbar
 }
 FlagFra {Flagge von Frankreich}
 perkFlagFra
 {
-Die Entdeckungswahrscheinlichkeit hängt von Tarnung, Schiffsklasse und Flottengröße, gegnerischer Flottengröße und Bedrohungsstufe ab.
-~
-Fähigkeit nur für Spieler verfügbar
+Die Entdeckungswahrscheinlichkeit hängt von Tarnung, Schiffsklasse und Flottengröße, gegnerischer Flottengröße und Bedrohungsstufe ab.~Fähigkeit nur für Spieler verfügbar
 }
 FlagSpa {Flagge von Spanien}
 perkFlagSpa
 {
-Die Entdeckungswahrscheinlichkeit hängt von Tarnung, Schiffsklasse und Flottengröße, gegnerischer Flottengröße und Bedrohungsstufe ab.~
-Fähigkeit nur für Spieler verfügbar
+Die Entdeckungswahrscheinlichkeit hängt von Tarnung, Schiffsklasse und Flottengröße, gegnerischer Flottengröße und Bedrohungsstufe ab.~Fähigkeit nur für Spieler verfügbar
 }
 FlagHol {Flagge der Niederlande}
 perkFlagHol
 {
-Die Entdeckungswahrscheinlichkeit hängt von Tarnung, Schiffsklasse und Flottengröße, gegnerischer Flottengröße und Bedrohungsstufe ab.
-~
-Fähigkeit nur für Spieler verfügbar
+Die Entdeckungswahrscheinlichkeit hängt von Tarnung, Schiffsklasse und Flottengröße, gegnerischer Flottengröße und Bedrohungsstufe ab.~Fähigkeit nur für Spieler verfügbar
 }
 Troopers {Belagerungstaktik}
 perkTroopers
 {
-Möglichkeit, die Mannschaften deiner Flotte vor dem Sturm auf eine Festung zu vereinen.
-Reduziert die für einen Landangriff auf eine Siedlung benötigte Mannschaftszahl.
+Möglichkeit, die Mannschaften deiner Flotte vor dem Sturm auf eine Festung zu vereinen.Reduziert die für einen Landangriff auf eine Siedlung benötigte Mannschaftszahl.
 }
 BasicCommerce {Grundlegendes Handeln}
 perkBasicCommerce {Einkäufe sind 4% günstiger. Gefragte Waren werden in Banken und Märkten hervorgehoben.}
@@ -154,30 +137,24 @@ perkCarpenter {Rumpf und Segel werden während der Reise langsam repariert. Plan
 InstantRepair {Kampf-Reparatur}
 perkInstantRepair
 {
-Schnelle Reparatur im Gefecht. Stellt bis zu 80 % der verfügbaren Haltbarkeit wieder her. Benötigt Planken für den Rumpf und Segeltuch für die Segel.
-Alle 1,5 Minuten einsetzbar.
+Schnelle Reparatur im Gefecht. Stellt bis zu 80 % der verfügbaren Haltbarkeit wieder her. Benötigt Planken für den Rumpf und Segeltuch für die Segel.Alle 1,5 Minuten einsetzbar.
 }
 LightRepair {Notfallreparatur}
 perkLightRepair
 {
-Fähigkeit, bis zu 10 % der Schiffshülle ohne zusätzliche Ressourcen zu reparieren. Ohne diese Fertigkeit zerfällt das Schiff langsam, wenn die Hüllen-HP unter 10 % fallen.
-Alle 3 Minuten einsetzbar.
+Fähigkeit, bis zu 10 % der Schiffshülle ohne zusätzliche Ressourcen zu reparieren. Ohne diese Fertigkeit zerfällt das Schiff langsam, wenn die Hüllen-HP unter 10 % fallen.Alle 3 Minuten einsetzbar.
 }
 Builder {Schadenskontrolle}
 perkBuilder {Der Verbrauch von Planken und Segeltuch bei Reparaturen ist um 25 % reduziert.}
 SelfRepair {Komplettreparatur}
 perkSelfRepair
 {
-Die Fähigkeit, dein Schiff mit deiner Crew an jedem geeigneten Ufer vollständig zu reparieren. Für Rumpf und Masten werden Planken benötigt, für die Segel Segeltuch. Eine vollständige Wiederherstellung von Rumpf, Segeln und Masten ist möglich.
-
-Reparaturoptionen sind nur an Land in Küstenorten verfügbar.
+Die Fähigkeit, dein Schiff mit deiner Crew an jedem geeigneten Ufer vollständig zu reparieren. Für Rumpf und Masten werden Planken benötigt, für die Segel Segeltuch. Eine vollständige Wiederherstellung von Rumpf, Segeln und Masten ist möglich.Reparaturoptionen sind nur an Land in Küstenorten verfügbar.
 }
 WindCatcher {Meeresgespür}
 perkWindCatcher
 {
-Das Schiff beschleunigt 10 % schneller.
-
-Erhöht die Geschwindigkeit auf der Weltkarte in bekannten Gewässern – wenn du eine Karte hast.
+Das Schiff beschleunigt 10 % schneller.Erhöht die Geschwindigkeit auf der Weltkarte in bekannten Gewässern – wenn du eine Karte hast.
 }
 SailsMan {Schnelle Segel}
 perkSailsMan {Dank modernster Zuckerbrot-und-Peitsche-Methoden werden alle Segelmanöver 10 % schneller ausgeführt.}
@@ -215,11 +192,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Schnelle Hände}
-perkFastHands {Erhöht die Zieh- und Holstergeschwindigkeit von Schusswaffen um $percent($perkBaseValue(FastHands|1)).}
+perkFastHands {Erhöht die Zieh- und Holstergeschwindigkeit von Schusswaffen um 20 %.}
 AmmoRig {Ausrüstung}
-perkAmmoRig {Das Nachladen von Schusswaffen ist $percent($perkBaseValue(AmmoRig|1)) schneller.}
+perkAmmoRig {Das Nachladen von Schusswaffen ist 5 % schneller.}
 Preaim {Einschießen}
-perkPreaim {Zielmodus ist $percent($perkBaseValue(Preaim|1)) chneller.}
+perkPreaim {Zielmodus ist 15 % schneller.}
 KeenEye {Scharfes Auge}
 perkKeenEye {Kopfschüsse verursachen $percent($perkBaseValue(KeenEye|1)) mehr Schaden.}
 PowderFeel {Sinn für Schwarzpulver}
@@ -340,10 +317,7 @@ InstantBoarding {Sofortiges Entern}
 Rush {Die Ometochtli Tinktur}
 perkRush
 {
-Berauschende Tinktur, die zur sofortigen Manifestation von enormer Kraft und Ausdauer, einer deutlichen Steigerung der Geschicklichkeit und Reaktionsschnelligkeit mit intensiver Aggression und Unempfindlichkeit gegenüber Schmerzen beiträgt.
-Für 12 Sekunden werden die Angriffe des Charakters viel mächtiger und der eingehende Schaden wird reduziert.
-~
-Diese Fähigkeit hat eine Abklingzeit von 1 Minute.
+Berauschende Tinktur, die zur sofortigen Manifestation von enormer Kraft und Ausdauer, einer deutlichen Steigerung der Geschicklichkeit und Reaktionsschnelligkeit mit intensiver Aggression und Unempfindlichkeit gegenüber Schmerzen beiträgt.Für 12 Sekunden werden die Angriffe des Charakters viel mächtiger und der eingehende Schaden wird reduziert.~Diese Fähigkeit hat eine Abklingzeit von 1 Minute.
 }
 perkTrustworthy_alternate {Als Offizier erhält der Charakter eine um $percent($perkBaseValue(Trustworthy|1)) verringerte Bezahlung.}
 perkAlchemy_alternate {Gewährt eine Chance von $percent($perkBaseValue(Alchemy|1)), beim Gebrauch einen Trank nicht zu verbrauchen.}

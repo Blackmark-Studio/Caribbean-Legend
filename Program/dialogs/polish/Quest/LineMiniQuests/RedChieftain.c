@@ -19,10 +19,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "RedChieftain":
-			dialog.text = "Pozdrowienia, blada twarzy. Widzę, że jesteś kapitanem dużej łodzi. Ja Kanauri. Jestem wodzem Kajmanów - potężnego plemienia Arawaków. Chcę z tobą rozmawiać.";
+			dialog.text = "Jak, blada twarzy. Widzę, że jesteś kapitanem dużej łodzi. Ja Kanauri. Jestem wodzem Kajmanów - potężnego plemienia Arawaków. Chcę z tobą rozmawiać.";
 			link.l1 = "Słucham, wodzu. Jakie kłopoty cię do mnie sprowadziły?";
 			link.l1.go = "RedChieftain_0";
-			link.l2 = "Czego chcesz ode mnie, ty plugawa, czerwonoskóra małpo? Wracaj do swojej dżungli i nie zawracaj mi głowy swoimi prośbami.";
+			link.l2 = "Czego chcesz ode mnie, ty plugawa, czerwonoskóra małpo? Wracaj do swoich dżungli i nie zawracaj mi głowy swoimi prośbami.";
 			link.l2.go = "RedChieftain_exit";
 			DelLandQuestMark(npchar);
 			DelMapQuestMarkCity(pchar.questTemp.RedChieftain.StartCity);
@@ -68,7 +68,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "RedChieftain_3":
-			dialog.text = "Indianin choruje i umiera z powodu niewolnictwa. Biały człowiek nie ma litości dla Indianina. Bat i pistolet to prawo białego dla Indianina. Ja stary. Nie mam ludzi do walki. Kajmańscy Arawakowie to pokojowy lud, wynaleźliśmy fajkę pokoju. Proszę cię, biały bracie, dobądź miecza i pistoletu przeciw złemu białemu, ocal Indianina Arawaka.";
+			dialog.text = "Indianin choruje i umiera z powodu niewolnictwa. Biały człowiek nie ma litości dla Indianina. Bat i pistolet to prawo białego dla Indianina. Ja stary. Nie mam ludzi do walki. Kajmańscy Arawakowie to pokojowy lud, wynaleźliśmy fajkę pokoju. Proszę cię, biały bracie, dobyj bata i pistoletu przeciw złemu białemu, ocal Indianina Arawaka.";
 			link.l1 = "Czy prosisz mnie, abym wypowiedział wojnę? Musisz zrozumieć, wodzu, moje zasoby są ograniczone.";
 			link.l1.go = "RedChieftain_4";
 		break;
@@ -131,8 +131,8 @@ void ProcessDialogEvent()
 				AddMapQuestMarkShore("Shore19", true);
 				pchar.questTemp.RedChieftain.Island = "Cumana";
 				pchar.questTemp.RedChieftain.Shore = "Shore19";
-				pchar.questTemp.RedChieftain.Add1 = "Hiszpański";
-				pchar.questTemp.RedChieftain.Add2 = "Zatoka Carupano, niedaleko Kumany";
+				pchar.questTemp.RedChieftain.Add1 = "Spanish";
+				pchar.questTemp.RedChieftain.Add2 = "Carupano Cove, not far from Cumana";
 				dialog.text = "Są w obozie w Zatoczce Carupano, niedaleko hiszpańskiego obozu zwanego Kumana. Każdego dnia wypływają łodziami na morze, nurkują w wodę, głęboko-głęboko...";
 				link.l1 = "Rozumiem. A Hiszpanie czuwają nad nimi, gdy nurkują?";
 				link.l1.go = "RedChieftain_6";
@@ -142,8 +142,8 @@ void ProcessDialogEvent()
 				AddMapQuestMarkShore("Shore54", true);
 				pchar.questTemp.RedChieftain.Island = "SantaCatalina";
 				pchar.questTemp.RedChieftain.Shore = "Shore54";
-				pchar.questTemp.RedChieftain.Add1 = "Anglików";
-				pchar.questTemp.RedChieftain.Add2 = "Przylądek Pereł, niedaleko Blueweld";
+				pchar.questTemp.RedChieftain.Add1 = "English";
+				pchar.questTemp.RedChieftain.Add2 = "Cape Perlas, not far from Blueweld";
 				dialog.text = "Rozbijają obóz na Przylądku Perlas w pobliżu angielskiego obozu zwanego Blueweld. Każdego dnia wypływają łodziami na morze, nurkują w wodę, głęboko-głęboko...";
 				link.l1 = "Rozumiem. I, oczywiście, Anglicy ich pilnują?";
 				link.l1.go = "RedChieftain_6";
@@ -169,7 +169,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "RedChieftain_9":
-			dialog.text = "Jeśli bladolicy brat weźmie małą łódź, to może podkraść się blisko brzegu. Pokażę drogę. Ale przyprowadź tylko jedną małą łódź, bo blade lice pies zobaczy i wypędzi Indianina z łodzi do dżungli...";
+			dialog.text = "Jeśli blade lice brat weźmie małą łódź, to może podkraść się blisko brzegu. Pokażę drogę. Ale przyprowadź tylko jedną małą łódź, bo blade lice pies zobaczy i wypędzi Indianina z łodzi do dżungli...";
 			link.l1 = "Zrozumiano. Będę potrzebował lugiera lub slupa do tej operacji. Świetnie. Slup przeciwko dwóm szkunerom... Boże... a myślałem, że to będzie łatwe!";
 			link.l1.go = "RedChieftain_10";
 		break;
@@ -191,7 +191,7 @@ void ProcessDialogEvent()
 			pchar.quest.Red_Chieftain_2.win_condition.l1 = "location";
 			pchar.quest.Red_Chieftain_2.win_condition.l1.location = pchar.questTemp.RedChieftain.Island;
 			pchar.quest.Red_Chieftain_2.function = "RedChieftain_CreateShooner";
-			if(bImCasual) NewGameTip("Tryb eksploracji: timer nie jest wyłączony. Dotrzymaj terminu!");
+			if(bImCasual) NewGameTip("Exploration mode: timer is not disabled. Meet the deadline!");
 			SetFunctionTimerCondition("RedChieftainOver", 0, 0, 30, false);
 			AddQuestRecord("RedChieftain", "1");
 			AddQuestUserData("RedChieftain", "sText1", pchar.questTemp.RedChieftain.Add1);

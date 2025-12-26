@@ -270,7 +270,7 @@ void SelectColony(int iColony)
 	if(CheckAttribute(&colonies[iColony], "info.day"))
 	{
 		sText = XI_ConvertString("LastInfoFromColony");
-		sText = sText + colonies[iColony].info.day + " " + XI_ConvertString("target_month_" + colonies[iColony].info.month) + " " + colonies[iColony].info.year + ".";
+		sText = sText + colonies[iColony].info.day + " " + XI_ConvertString("MonthGen_" + colonies[iColony].info.month) + " " + colonies[iColony].info.year + ".";
 	}
 	SetFormatedText("COLONY_TIME_INFO", sText);
 

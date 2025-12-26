@@ -1081,6 +1081,10 @@ Jeśli nie handlujesz ludźmi, Grim cię nie tknie. Jest dziwny, ale ma swoje za
 'Memento' krąży między pirackimi osadami, ale prawie nigdy nie cumuje. Załoga żyje na statku miesiącami, jakby bała się postawić stopę na lądzie. Mówi się też, że statek przetrwał kiedyś potworną epidemię — dlatego tak trudno zabić załogę.
 Jeśli planujesz ich zaatakować - zabierz dużo dział. Zdobycie 'Memento' abordażem jest prawie niemożliwe — załoga walczy jak opętana, jakby nie bała się śmierci. Jedyny sposób, by ich pokonać, to rozstrzelać statek na kawałki, by pozbawić ich schronienia. Odłamki ich nie ruszają, ale bezpośrednie trafienia kartaczami — to już co innego.
 Powodzenia. I pamiętaj o śmierci.
+#TEXT	4
+"Amsterdam"
+***********************
+Okręt flagowy szanownej Holenderskiej Kompanii Zachodnioindyjskiej. Wszystko, co dotyczy tego statku, owiane jest tajemnicą. Dowodzi nim Hendrik van Doorn, szef działu rejestru okrętów na Curaçao – niezwykle skuteczny człowiek, który świadczy bezcenne usługi najbogatszym i najbardziej wpływowym kapitanom. Spróbuj znaleźć się w ich gronie, a dowiesz się więcej.
 
 #QUEST StoriesTreasures
 Skarbowe Opowieści
@@ -1589,3 +1593,23 @@ Fragmenty dziennika Diego Velázquez de Cuéllar
 "Po tej egzekucji zacząłem dostrzegać coś dziwnego. Za dnia mnisi głosili o łasce Bożej, ale w nocy wokół zaczynały ożywać cienie. Wydawało mi się, że słyszę płacz kobiet, krzyki dzieci i przekleństwa dzikusów w uszach. Ostatniej nocy zginął jeden z marynarzy. Jego ciało znaleziono podrzebane na strzępy, jakby dzikie bestie się na niego rzuciły. Nakazałem wszystkim modlić się, ale modlitwy były daremne. Teraz jestem pewien: to Atuéy. On zesłał na nas klątwę. Ci barbarzyńcy nie wybaczają. Nigdy."
 
 "Klątwa... Nie opuszcza mnie. Gniazduje we mnie jak wąż oplatający serce. Każdej nocy widzę płonące chaty, słyszę krzyki i jęki umarłych, którzy wzywają mnie do rachunku. Ich zwęglone szkielety powstają z popiołów, ich puste oczodoły patrzą na mnie z nienawiścią. Nawet teraz, w tym pokoju, słyszę ich kroki. Drzwi skrzypią powoli, jakby ktoś wchodził, a jednak nikogo nie widzę. Ręce drżą tak mocno, że pióro ledwie słucha. Ratunku brak. Pan mnie opuścił, tak jak ja porzuciłem miłosierdzie. Już są blisko. Wkrótce przyjdą po mnie...
+
+#QUEST Doc1Sp4
+Raport o Sprawach Brazylijskich
+
+#TEXT 1
+POUFNY RAPORT DLA DYREKTORIATU Curaçao, maj 1654 roku DOTYCZY: Sytuacja w portugalskiej Brazylii
+SYTUACJA WOJSKOWA Nasze straty w Brazylii wciąż rosną. Pułkownik Sebastião Tavora zadał w zeszłym roku serię bolesnych ciosów naszym pozycjom przybrzeżnym. Trzy nasze statki zatopione, umocnienia brzegowe zniszczone.
+SYTUACJA POLITYCZNA Wywiad donosi ciekawe wieści z Lizbony. Pomimo sukcesów militarnych, kapitan Tavora popadł w niełaskę na dworze. Powód - jego otwarte przeciwstawienie się wpływowym kręgom handlowym, które potajemnie negocjują z nami w sprawie przywrócenia więzi handlowych.
+OBECNY STAN Według najnowszych danych, Tavora wraz z córką zostali wysłani na honorowe wygnanie. Jego obecne miejsce pobytu jest obecnie nieznane.
+ZALECENIA Wszystkim agentom nakazuje się ustalenie obecnej lokalizacji pułkownika Tavory. Obecność nawet niełaskawego patrioty i idealisty z wybitnym wykształceniem wojskowym w pobliżu sfer działalności Kompanii jest niepożądana.
+PODSUMOWANIE Wojna trwa, ale równowaga przesuwa się na naszą korzyść, dzięki powiązaniom i solidarności w kręgach biznesowych.
+Pełniący Obowiązki Dyrektora, Lucas Rodenburg
+
+#QUEST Doc2Sp4
+List z Antiguy
+
+#TEXT 1
+D. Dobrze przemyślałem twoją propozycję i moja odpowiedź brzmi nie. I lojalność wobec kantoru nie ma z tym nic wspólnego. Na Curaçao siedzą tak samo chciwi sukinsyny jak my wszyscy. Doskonale wiesz, że wypatroszyłbym ich wszystkich do jednego po tym, jak ten indor rzucił mnie i moich ludzi angielskim wilkom na pożarcie. 
+Mów, co chcesz, ale nasz Lewiatan to jedyna rzecz, która trzyma ten dziki skrawek w jakimś względnym porządku. Weksle i rejestr okrętowy to najlepsze, co przyniósł temu światu. Wiem, powiesz, że poradziłbyś sobie lepiej, ale co jeśli nie? Co wtedy? Koronowanym głowom Europy nie zależy na nas, a natura nie znosi próżni. Myślisz, że będzie nam lepiej, gdy ta piracka baronowska hołota przejmie władzę? 
+Wtedy osłoniłeś mi tyły, więc nie zamierzam cię kapować. Lepiej wracaj do swojej rodziny, przyjacielu. M.

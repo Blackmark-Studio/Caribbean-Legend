@@ -23,7 +23,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "twoitems" && !CheckAttribute(npchar, "quest.skinmap"))
 			{
-				dialog.text = "Tak, widzę w twych oczach, że masz dla mnie wieści. Słucham.";
+				dialog.text = "Tak, widzę w twych oczach, że masz dla mnie wieści. Całkowicie cię słucham.";
 				link.l1 = "Wasza Ekscelencjo, znalazłem waszego zaginionego sekretarza...";
 				link.l1.go = "guardoftruth";
 				break;
@@ -38,7 +38,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth.Archy") && pchar.questTemp.Guardoftruth.Archy == "begin")
 			{
 				dialog.text = "Pokój z tobą, synu mój... Co mogę dla ciebie uczynić?";
-				link.l1 = TimeGreeting()+" , Wasza Ekscelencjo. Czy macie jakieś wieści dotyczące naszej umowy?"link.l1.go ="guardoftruth_17";
+				link.l1 = TimeGreeting()+" , Wasza Ekscelencjo. Czy macie jakieś wieści dotyczące naszej umowy?"link.l1.go ="strażnikprawdy_17";
 				break;
 			}
 			dialog.text = "Czy coś chciałeś, mój synu?";
@@ -57,7 +57,7 @@ void ProcessDialogEvent()
 			RemoveItems(pchar, "jewelry33", 1);
 			RemoveItems(pchar, "jewelry34", 1);
 			RemoveItems(pchar, "jewelry35", 1);
-			dialog.text = "Benedicite! Dziękuję ci z głębi serca za twoją wierną służbę Świętej Matce Kościołowi i parafii Santiago, mój synu. Twoje dzieła nie pozostaną bez nagrody. Parafianie zebrali ofiarę dla odważnego wojownika, który zwróci ich skradzione przedmioty, i z przyjemnością przekazuję ją tobie w ich imieniu. 'Robotnik jest godzien swojej zapłaty.' ";
+			dialog.text = "Benedicite! Dziękuję ci z głębi serca za twoją wierną służbę Świętej Matce Kościołowi i parafii Santiago, mój synu. Twoje dzieła nie pozostaną bez nagrody. Parafianie zebrali ofiarę dla odważnego wojownika, który zwrócił ich skradzione przedmioty, i z przyjemnością przekazuję ją tobie w ich imieniu. 'Robotnik jest godzien swojej zapłaty.' ";
 			link.l1 = "Dziękuję, Wasza Ekscelencjo. Co za miła niespodzianka!";
 			link.l1.go = "utensil_2";
 		break;
@@ -116,7 +116,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "utensil_10":
-			dialog.text = "Ale nie zawsze tak było. Ciemność, o której mówię, pojawiła się tutaj jakieś dwadzieścia pięć lat temu i z każdym dniem zyskuje coraz większą moc. To oznacza tylko jedno: 'ono' już przyszło, 'ono' jest wśród nas i 'ono' działa...";
+			dialog.text = "Ale nie zawsze tak było. Ciemność, o której mówię, pojawiła się tutaj jakieś dwadzieścia pięć lat temu i z każdym dniem zyskuje coraz większą moc. To oznacza tylko jedno: 'to' już przyszło, 'to' jest wśród nas i 'to' działa...";
 			link.l1 = "O kim mówisz? Kim jest to tajemnicze 'ono'?";
 			link.l1.go = "utensil_11";
 		break;
@@ -205,7 +205,7 @@ void ProcessDialogEvent()
 		
 		case "guardoftruth_3":
 			dialog.text = "Gino... Ty biedny głupcze... Nawet ostatnią chwilę swojego życia spędził w grzechu, popełniając samobójstwo. Jaka tragiczna strata. Będę się modlił za jego duszę...";
-			link.l1 = "Po jego śmierci przeszukałem jego mieszkanie i znalazłem tam ten almanach. Czy może cię to zainteresować lub może pomóc nam w naszych poszukiwaniach? Są tu jakieś dziwne i ezoteryczne notatki...";
+			link.l1 = "Po jego śmierci przeszukałem jego mieszkanie i znalazłem tam ten foliał. Czy może cię to zainteresować lub może pomóc nam w naszych poszukiwaniach? Są tu jakieś dziwne i ezoteryczne notatki...";
 			link.l1.go = "guardoftruth_4";
 		break;
 		
@@ -244,7 +244,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_8":
-			dialog.text = "Żadnych specjalnych przedmiotów, mój synu. Przepaska biodrowa, prymitywna biżuteria, bambusowa fajka z jakimiś ziołami i kawałek surowej skóry używanej jako knebel.\nWszystko to zostało wysłane do Don Ramona de Mendozy y Riba. Ale zapewniam cię, nie było tam nic wartego uwagi.";
+			dialog.text = "Żadnych specjalnych przedmiotów, mój synu. Przepaska biodrowa, prymitywna biżuteria, bambusowa fajka z jakimiś ziołami i kawałek surowej skóry używanej jako knebel.\nWszystko to zostało wysłane do Don Ramona de Mendoza y Riba. Ale zapewniam cię, nie było tam nic wartego uwagi.";
 			link.l1 = "Rozumiem. Dziękuję, Ojcze. Do następnego razu!";
 			link.l1.go = "guardoftruth_9";
 		break;
@@ -266,7 +266,7 @@ void ProcessDialogEvent()
 		
 		case "guardoftruth_11":
 			dialog.text = "Co sprawiło, że tak postanowiłeś, mój synu?";
-			link.l1 = "Klucz tkwi w tym, że fregata ukrywała się gdzieś w kierunku Martyniki. I całkiem niedawno dzielny caballero o imieniu Diego de Montoya, jeden z ludzi Don Ramona de Mendozy, zaatakował Saint-Pierre z zamiarem znalezienia Miguela Dichoso, który rzekomo się tam ukrywał.";
+			link.l1 = "Klucz tkwi w tym, że fregata ukrywała się gdzieś w kierunku Martyniki. I całkiem niedawno dzielny caballero o imieniu Diego de Montoya, jeden z ludzi Don Ramona de Mendosa, zaatakował Saint-Pierre z zamiarem znalezienia Miguela Dichoso, który rzekomo się tam ukrywał.";
 			link.l1.go = "guardoftruth_12";
 		break;
 		
@@ -283,7 +283,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_14":
-			dialog.text = "Och, "+pchar.name+". Wątpię, by człowiek przysięgły Don Mendozy zechciał dojść do porozumienia z tobą. Wydanie mu rozkazu przybycia do Santiago na przesłuchanie ze mną może być opcją, ale nie jestem pewien, czy Diego byłby wobec mnie całkowicie szczery.";
+			dialog.text = "Och, "+pchar.name+". Wątpię, by człowiek przysięgły Don Mendozy zechciał dojść do porozumienia z tobą. Wydanie mu rozkazu przybycia do San Diego na przesłuchanie ze mną może być opcją, ale nie jestem pewien, czy Diego byłby wobec mnie całkowicie szczery.";
 			link.l1 = "Jakie kroki powinniśmy teraz podjąć, Ojcze?";
 			link.l1.go = "guardoftruth_15";
 		break;
@@ -324,7 +324,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_18":
-			dialog.text = "Zwolnij, mój synu. Nie mamy teraz żadnych informacji o jakimkolwiek wraku statku na Martynice w tamtym czasie. A fregata to nie lugier. Jej zniszczenie z pewnością przyciągnęłoby uwagę i stworzyło ogromną okazję do rabowania dla miejscowych padlinożerców.";
+			dialog.text = "Zwolnij, mój synu. Nie mamy teraz żadnych informacji o jakimkolwiek wraku statku na Martynice w tamtym czasie. A fregata to nie lugger. Jej zniszczenie z pewnością przyciągnęłoby uwagę i stworzyło ogromną okazję do ratowania dla miejscowych padlinożerców.";
 			link.l1 = "Czy warto przeszukać wybrzeże i plaże, aby znaleźć to, co pozostało z okrętu?";
 			link.l1.go = "guardoftruth_19";
 		break;
@@ -380,8 +380,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tieyasal_3":
-			dialog.text = "Udało ci się dokonać czegoś, czego ani ja z pomocą wszystkich moich agentów, ani baron Mendosa i Don Diego, ani nikt inny nie był w stanie dokonać. Udało ci się znaleźć przeklętą wyspę i odnaleźć na niej artefakt Kukulkana. Czyż nie?";
-			link.l1 = "Tak, mam maskę Kukulkana.";
+			dialog.text = "Udało ci się dokonać czegoś, czego ani ja z pomocą wszystkich moich agentów, ani baron Mendosa i Don Diego, ani nikt inny nie był w stanie dokonać. Udało ci się znaleźć przeklętą wyspę i odnaleźć na niej artefakt K'uk'ulkan'a. Czyż nie?";
+			link.l1 = "Tak, mam maskę K'uk'ulkan.";
 			link.l1.go = "tieyasal_4";
 		break;
 		
@@ -422,7 +422,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tieyasal_10":
-			dialog.text = "Musimy wykorzystać każdą przewagę, jaką mamy w tej walce, zarówno materialną, jak i duchową. Poprosiłem ojca Adriana, aby dołączył do mnie tutaj w tej kaplicy za pięć dni. Przywiezie ze sobą święte amulety dla ciebie. Amulety, które mogą wspomóc wojowników Chrystusa w bitwie. Dostarczy ci także wszelkiego rodzaju mikstur. Co do mnie, przyjmij ten miecz, mój synu.\nTo jest starożytny miecz Templariuszy, potężna broń naszych przodków. Wciąż ostry, lśniący błogosławieństwem Kościoła. Tylko najwięksi rycerze mieli zaszczyt nim władać. Weź go, posiądź z dumą i miażdż wrogów naszej Wiary z imieniem Jezusa Chrystusa na ustach!";
+			dialog.text = "Musimy wykorzystać każdą przewagę, jaką mamy w tej walce, zarówno materialną, jak i duchową. Poprosiłem ojca Adriana, aby dołączył do mnie tutaj w tej kaplicy za pięć dni. Przywiezie ze sobą święte amulety dla ciebie. Amulety, które mogą wspomóc wojowników Chrystusa w bitwie. Dostarczy ci także wszelkiego rodzaju mikstury. Co do mnie, przyjmij ten miecz, mój synu.\nTo jest starożytny miecz Templariuszy, potężna broń naszych przodków. Wciąż ostry, lśniący błogosławieństwem Kościoła. Tylko najwięksi rycerze mieli zaszczyt nim władać. Weź go, posiądź z dumą i miażdż wrogów naszej Wiary z imieniem Jezusa Chrystusa na ustach!";
 			link.l1 = "Dziękuję! Ten miecz jest absolutnie niesamowity. Brak mi słów...";
 			link.l1.go = "tieyasal_11";
 		break;

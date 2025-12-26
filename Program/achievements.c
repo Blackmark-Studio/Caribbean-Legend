@@ -68,6 +68,7 @@ string Stat_GetID(int achievNum)
 		case 175  :	id = "stat_CL_175"; break;
 		case 187  :	id = "stat_CL_187"; break;
 		case 188  :	id = "stat_CL_188"; break;
+		case 200  :	id = "stat_CL_200"; break;
 	}
 	return id;
 }
@@ -206,6 +207,9 @@ int GetMaxState(int StateNum)
 		case 188  :  // Сбежать на глобе 50 раз
 			curState = 50;
 		break;
+		case 200  :  // Собрать 50 журналов пиратов
+			curState = 50;
+		break;
 	}
 	return curState;
 }
@@ -262,7 +266,7 @@ void CheckAchievments()
 	if(CheckAttribute(pchar, "achievment.Tuning.stage1") && CheckAttribute(pchar, "achievment.Tuning.stage2") && CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(pchar, "achievment.Tuning.stage4")) Achievment_Set("ach_66");
 	if(CheckAttribute(pchar,"Achievment.Barbie") && CheckAttribute(pchar,"Achievment.Genrih")) Achievment_Set("ach_CL_111");
 	// Из народа: Выполнить все 10 квестов-события
-	if (!GetAchievement("ach_CL_175") && GetAttributeInt(pchar, "questTemp.MiniEvents") >= 10) Achievment_SetStat(175, 10);
+	if (!GetAchievement("ach_CL_175") && sti(pchar.questTemp.MiniEvents) >= 10) Achievment_SetStat(175, 10);
 	// дальше будет только хуже
 	if(!GetAchievement("ach_CL_113"))
 	{

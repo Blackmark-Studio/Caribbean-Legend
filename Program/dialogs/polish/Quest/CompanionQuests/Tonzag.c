@@ -101,7 +101,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_after_victory":
-			dialog.text = "Zwycięstwo, Kapitanie! Grupa desantowa została zniszczona, wróg postanowił się wycofać i skierował się na południe. Stan statku jest zadowalający. Żywa załoga: "+GetCrewQuantity(pchar)+" ludzi. Koniec raportu!";
+			dialog.text = "Zwycięstwo, Kapitanie! Grupa desantowa została zniszczona, wróg postanowił się wycofać i skierował się na południe. Stan statku jest zadowalający. Żywa załoga: "+GetCrewQuantity(pchar)+" ludzie. Koniec raportu!";
 			link.l1 = "Dziękuję! Rum dla wszystkich i wzmocnijcie straż, dopóki nie dotrzemy do portu!";
 			link.l1.go = "tonzag_after_victory_1";
 		break;
@@ -174,7 +174,7 @@ void ProcessDialogEvent()
 		
 		case "alonso_2":
 			dialog.text = "Ha-ha, nie, Kapitanie. Uwielbiam tę robotę, ale wygląda na to, że masz nowego mistrza rzemiosła na pokładzie!";
-			link.l1 = "Hercule? Skąd wziąłeś ten pomysł?";
+			link.l1 = "Herkule? Skąd wziąłeś ten pomysł?";
 			link.l1.go = "alonso_3";
 		break;
 		

@@ -5,7 +5,7 @@ newline
 BasicDefense {基础防御}
 perkBasicDefense {受到的伤害降低$percent($perkBaseValue(BasicDefense|1))。}
 AdvancedDefense {高级防御}
-perkAdvancedDefense {使受到的伤害降低$percent($perkBaseValue(AdvancedDefense|1)), 敌方暴击伤害降低$percent($perkBaseValue(AdvancedDefense|2))。}
+perkAdvancedDefense {使受到的伤害降低$percent($perkBaseValue(AdvancedDefence|1)), 敌方暴击伤害降低$percent($perkBaseValue(AdvancedDefence|2))。}
 CriticalHit {暴击}
 perkCriticalHit {基础暴击率提高3.5%。}
 Grus {强健脊梁}
@@ -21,12 +21,10 @@ perkSliding {轻型武器的劈砍或刺击攻击有 $percent($perkBaseValue(Sli
 Gunman {火枪手}
 perkGunman
 {
-将火器的伤害和装填速度提高 $percent($perkBaseValue(Gunman|1))。允许使用单发双手武器和多发单手武器。
- ~
- 军官只有在明确命令下才能使用 $key(descriptor_TwoHanded|ItemsDescriptors.txt)。
+将火器的伤害和装填速度提高 $percent($perkBaseValue(Gunman|1))。允许使用单发双手武器和多发单手武器。 ~ 军官只有在明确命令下才能使用 $key(descriptor_TwoHanded|ItemsDescriptors.txt)。
 }
 GunProfessional {散兵}
-perkGunProfessional {Increases damage and reload speed of firearms by $percent($perkBaseValue(GunProfessional|1)). Unlocks the ability to use two-handed multi-shot firearms.}
+perkGunProfessional {将火器伤害和装填速度提高 $percent($perkBaseValue(GunProfessional|1))。解锁使用多发双手火器的能力。}
 IronWill {钢铁意志}
 perkIronWill {每3分钟可幸存一次致命伤。}
 SharedExperience {学得快}
@@ -48,9 +46,7 @@ perkTrustworthy {在部分任务对话中解锁替代说服选 项, 更易避免
 ShipEscape {第二次机会}
 perkShipEscape
 {
-从英雄的沉船上乘救生艇转移到舰 队中的其他船只。
-战斗中, 当船体耐久低于15%时, 可通过货舱菜单转移或移动到其他 舰队船只。
-若同伴拥有此技能, 他们会从沉船或火船中逃生, 乘救生艇作为乘客返回英雄的船。
+从英雄的沉船上乘救生艇转移到舰 队中的其他船只。战斗中, 当船体耐久低于15%时, 可通过货舱菜单转移或移动到其他 舰队船只。若同伴拥有此技能, 他们会从沉船或火船中逃生, 乘救生艇作为乘客返回英雄的船。
 }
 Alchemy {炼金术}
 perkAlchemy {配方不再需要工具。使用时有15%概率不消耗药剂。}
@@ -95,50 +91,37 @@ perkSailingProfessional {船只速度和机动性提高5%。逃脱几率提升�
 SeaDogProfessional {海上霸主}
 perkSeaDogProfessional
 {
-见到海上恐怖的旗帜时, 即使是最勇敢的冒险者和亡命之徒 也不敢轻易挑战命运。 舰队力量提高$percent($PerkBaseValue(SeaDogProfessional|1))。
-~
-仅玩家可用技能; 需要$attr($context.rank)级。
+见到海上恐怖的旗帜时, 即使是最勇敢的冒险者和亡命之徒 也不敢轻易挑战命运。 舰队力量提高$percent($PerkBaseValue(SeaDogProfessional|1))。~仅玩家可用技能; 需要$attr($context.rank)级。
 }
 FlagPir {骷髅旗}
 perkFlagPir
 {
-可以将你的旗帜更换为骷髅旗。
-~
-该技能仅玩家可用。
+可以将你的旗帜更换为骷髅旗。~该技能仅玩家可用。
 }
 FlagEng {英格兰国旗}
 perkFlagEng
 {
-被发现的概率取决于潜行、你的船 只类型和舰队规模、敌方舰队规模 以及威胁等级。
-~
-该技能仅玩家可用
+被发现的概率取决于潜行、你的船 只类型和舰队规模、敌方舰队规模 以及威胁等级。~该技能仅玩家可用
 }
 FlagFra {法国国旗}
 perkFlagFra
 {
-被发现的概率取决于潜行、你的船 只类型和舰队规模、敌方舰队规模 以及威胁等级。
-~
-该技能仅玩家可用
+被发现的概率取决于潜行、你的船 只类型和舰队规模、敌方舰队规模 以及威胁等级。~该技能仅玩家可用
 }
 FlagSpa {西班牙国旗}
 perkFlagSpa
 {
-被发现的概率取决于潜行、你的舰 船类型和舰队规模、敌方舰队规模 以及威胁等级。
-~
-该技能仅玩家可用
+被发现的概率取决于潜行、你的舰 船类型和舰队规模、敌方舰队规模 以及威胁等级。~该技能仅玩家可用
 }
 FlagHol {荷兰国旗}
 perkFlagHol
 {
-被发现的概率取决于潜行、你的船 只类型和舰队规模、敌方舰队规模 以及威胁等级。
-~
-该技能仅玩家可用
+被发现的概率取决于潜行、你的船 只类型和舰队规模、敌方舰队规模 以及威胁等级。~该技能仅玩家可用
 }
 Troopers {攻城战术}
 perkTroopers
 {
-可在攻打要塞前合并舰队所有船员。
-减少陆上袭击定居点所需的船员数 量。
+可在攻打要塞前合并舰队所有船员。减少陆上袭击定居点所需的船员数 量。
 }
 BasicCommerce {基础贸易}
 perkBasicCommerce {购买收益提高4%。银行和市场中的热门商品会高亮 显示。}
@@ -151,30 +134,24 @@ perkCarpenter {航行时船体和帆会缓慢修复。需要 木板和帆布。}
 InstantRepair {战斗修理}
 perkInstantRepair
 {
-快速战斗维修, 可恢复高达80%的可用耐久度。需要木板修理船体, 帆布修理船帆。
-每1.5分钟可使用一次。
+快速战斗维修, 可恢复高达80%的可用耐久度。需要木板修理船体, 帆布修理船帆。每1.5分钟可使用一次。
 }
 LightRepair {紧急修理}
 perkLightRepair
 {
-可在不消耗额外资源的情况下修复 船体上限的10%。没有此技能时, 船体耐久低于10%会缓慢损坏。
-每3分钟可激活一次。
+可在不消耗额外资源的情况下修复 船体上限的10%。没有此技能时, 船体耐久低于10%会缓慢损坏。每3分钟可激活一次。
 }
 Builder {损管}
 perkBuilder {修理时木板和帆布消耗减少25%。}
 SelfRepair {完全修理}
 perkSelfRepair
 {
-能够在任何合适的岸边利用船员完 全修理你的船。 修理船体和桅杆需要木板, 修理帆需要帆布。可实现船体、帆 和桅杆的完全恢复。
-
-修理选项仅在沿海陆地地点可用。
+能够在任何合适的岸边利用船员完 全修理你的船。 修理船体和桅杆需要木板, 修理帆需要帆布。可实现船体、帆 和桅杆的完全恢复。修理选项仅在沿海陆地地点可用。
 }
 WindCatcher {海感}
 perkWindCatcher
 {
-船只加速提升10%。
-
-在熟悉水域拥有地图时, 提高全球地图上的航行速度。
+船只加速提升10%。在熟悉水域拥有地图时, 提高全球地图上的航行速度。
 }
 SailsMan {疾速帆}
 perkSailsMan {得益于最新的奖惩方法, 所有帆操作速度提升10%。}
@@ -212,11 +189,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {快手}
-perkFastHands {将火器的拔出和收回速度提高$percent($perkBaseValue(FastHands|1))。}
+perkFastHands {将火器的拔出和收回速度提高20%。}
 AmmoRig {装备}
-perkAmmoRig {火器的装填速度提高$percent($perkBaseValue(AmmoRig|1))。}
+perkAmmoRig {火器的装填速度提高5%。}
 Preaim {校准}
-perkPreaim {瞄准模式快$percent($perkBaseValue(Preaim|1))。}
+perkPreaim {瞄准模式快15%。}
 KeenEye {慧眼}
 perkKeenEye {爆头造成$percent($perkBaseValue(KeenEye|1))更多伤害。}
 PowderFeel {火药感知}

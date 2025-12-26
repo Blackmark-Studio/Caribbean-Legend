@@ -1,4 +1,7 @@
 #include "interface\utils\common_header.c"
+#include "interface\utils\ship_perks.c"
+#include "interface\utils\modifiers.c"
+
 /// BOAL меню корабль
 /// Sith новое меню
 #event_handler("Control Activation","ProcessInterfaceControls");// гуляем по меню кнопками Q и E
@@ -637,7 +640,7 @@ void OnShipScrollChange()
 		SetNodeUsing("BAR_Soldiers", false);
 		SetNodeUsing("BAR_CrewMoral", false);
 	}
-	SetShipPerks();
+	SetShipPerks(xi_refCharacter, "");
 	Table_UpdateWindow("TABLE_LIST");
 	Table_UpdateWindow("TABLE_OTHER");
 	Table_UpdateWindow("TABLE_CREW");
@@ -686,6 +689,8 @@ void ShowInfoWindow()
 	float fRepairPercent;
 	iShip = sti(xi_refCharacter.ship.type);
 	refBaseShip = GetRealShip(iShip);
+	aref tuning;
+	makearef(tuning, refBaseShip.tuning.modifiers);
 
 	switch (sCurrentNode)
 	{
@@ -699,33 +704,6 @@ void ShowInfoWindow()
 			{
 				sHeader = XI_Convertstring("NoneBoat");
 				sText1  = GetConvertStr("NoneBoat", "ShipsDescribe.txt");
-			}
-		break; 
-		
-		case "SHIP_PERK1":
-			string sPerkName1 = GetShipSpecDesc(xi_refCharacter);
-			sGroup = "PERKS_SHIPS";
-			sGroupPicture = sPerkName1;
-			sHeader = GetConvertStr(sPerkName1, "ShipsPerksDescribe.txt");
-			sText1 = GetConvertStr(sPerkName1 + "_desc", "ShipsPerksDescribe.txt");
-			sText3 = GetConvertStr(sPerkName1 + "_desc2", "ShipsPerksDescribe.txt");
-		break;
-
-		case "SHIP_PERK2":
-			string sPerkName2 = GetShipTraitDesc(xi_refCharacter);
-			sGroup = "PERKS_SHIPS";
-			sGroupPicture = sPerkName2;
-			sHeader = GetConvertStr(sPerkName2, "ShipsPerksDescribe.txt");
-			sText1 = GetConvertStr(sPerkName2 + "_desc", "ShipsPerksDescribe.txt");
-			sText3 = GetConvertStr(sPerkName2 + "_desc2", "ShipsPerksDescribe.txt");
-			if(CheckAttribute(refBaseShip, "DeadSailors"))
-			{
-				aref arShipBonus;
-				makearef(arShipBonus, refBaseShip.DeadSailors);
-				sText3 += newStr() + GetAssembledString(GetConvertStr("sp3_SailorsBoardingBonus_desc","ShipsPerksDescribe.txt"), arShipBonus)
-									 + GetAssembledString(GetConvertStr("sp3_SailorsBoardingBonus1_desc","ShipsPerksDescribe.txt"), refBaseShip);
-				sText3 += newStr() + GetAssembledString(GetConvertStr("sp3_SurrenderChanceBonus_desc","ShipsPerksDescribe.txt"), arShipBonus)
-								   + GetAssembledString(GetConvertStr("sp3_SurrenderChanceBonus1_desc","ShipsPerksDescribe.txt"), refBaseShip);
 			}
 		break;
 
@@ -809,6 +787,11 @@ void ShowInfoWindow()
 			{
 				sText3 = XI_ConvertString("Used") + ": " + FloatToString((stf(GetCargoLoad(xi_refCharacter))  /  stf(GetCargoMaxSpace(xi_refCharacter))) * 100.0, 1)+ " %";
 			}
+
+			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Speed") SetModifiersStatText(xi_refCharacter, &tuning, M_SHIP_SPEED, &sText3, "ToHumanPercent", 0.0);
+			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Maneuver") SetModifiersStatText(xi_refCharacter, &tuning, M_SHIP_TURNRATE, &sText3, "ToHumanPercent", 0.0);
+			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Crew") SetModifiersStatText(xi_refCharacter, &tuning, M_SHIP_MAXCREW, &sText3, "ToHumanPercent", 0.0);
+			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Capacity") SetModifiersStatText(xi_refCharacter, &tuning, M_SHIP_CAPACITY, &sText3, "ToHumanPercent", 0.0);
 		break; 
 		
 		case "CREW_PARTITION":
@@ -846,6 +829,7 @@ void ShowInfoWindow()
 			sText1 = GetConvertStr("Food_descr", "GoodsDescribe.txt");
 		break;
 	}
+	SetShipPerksTooltip(xi_refCharacter, &sCurrentNode, &sHeader, &sText1, &sText2, &sText3, &sPicture, &sGroup, &sGroupPicture);
 	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false);
 }
 
@@ -1635,11 +1619,11 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr3.td2.str = XI_ConvertString("Speed");
 	if (IsCompanion(_chr))
 	{
-		GameInterface.(_tabName).tr3.td3.str = FloatToString(FindShipSpeed(_chr),2) + " / " + FloatToString(stf(refBaseShip.SpeedRate),2);
+		GameInterface.(_tabName).tr3.td3.str = FloatToString(FindShipSpeed(_chr),2) + " / " + FloatToString(FindShipSpeedMax(_chr),2);
 	}
 	else
 	{
-	    GameInterface.(_tabName).tr3.td3.str = FloatToString(stf(refBaseShip.SpeedRate),2);
+	    GameInterface.(_tabName).tr3.td3.str = FloatToString(FindShipSpeedMax(_chr),2);
 	}
 	if (!CheckAttribute(&RealShips[iShip], "Tuning.SpeedRate")) 
 	{
@@ -1657,11 +1641,12 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr4.td2.str = XI_ConvertString("Maneuver");
 	if (IsCompanion(_chr))
 	{
-  		GameInterface.(_tabName).tr4.td3.str = FloatToString((stf(refBaseShip.turnrate) * FindShipTurnRate(_chr)), 2) + " / " + FloatToString(stf(refBaseShip.TurnRate),2);
+  		// GameInterface.(_tabName).tr4.td3.str = FloatToString((stf(refBaseShip.turnrate) * FindShipTurnRate(_chr)), 2) + " / " + FloatToString(FindShipTurnrateMax(_chr),2);
+  		GameInterface.(_tabName).tr4.td3.str = FloatToString((stf(refBaseShip.turnrate) * FindShipTurnRate(_chr)), 2) + " / " + FloatToString(FindShipTurnrateMax(_chr),2);
 	}
 	else
 	{
-	    GameInterface.(_tabName).tr4.td3.str = FloatToString(stf(refBaseShip.TurnRate),2);
+	    GameInterface.(_tabName).tr4.td3.str = FloatToString(FindShipTurnrateMax(_chr),2);
 	}
 	if (!CheckAttribute(&RealShips[iShip], "Tuning.TurnRate")) 
 	{
@@ -1886,25 +1871,6 @@ void HollandProcess()
 	ProcessExitCancel();
 }
 
-void SetShipPerks()
-{
-	string pictureGroup = "PERKS_SHIPS";
-	string perkName1, perkName2;
-	SetNodeUsing("SHIP_PERK1",false);
-	SetNodeUsing("SHIP_PERK2",false);
-
-	int iShip = sti(xi_refCharacter.ship.type);
-	if(iShip != SHIP_NOTUSED) 
-	{
-		perkName1 = GetShipSpecDesc(xi_refCharacter);
-		perkName2 = GetShipTraitDesc(xi_refCharacter);
-		SetNewGroupPicture("SHIP_PERK1", pictureGroup, perkName1);
-		SetNewGroupPicture("SHIP_PERK2", pictureGroup, perkName2);
-		if(perkName1 != "") SetNodeUsing("SHIP_PERK1",true);
-		if(perkName2 != "") SetNodeUsing("SHIP_PERK2",true);
-	}
-}
-
 void OnHeaderClick()
 {
 	string sControl = GetEventData();
@@ -1918,4 +1884,20 @@ void OnHeaderClick()
 	}
 
 	QoLSortTable("TABLE_LIST", column, datatype, false, 0);
+}
+
+void SetModifiersStatText(ref chr, ref equipTable, string modifier, string result, string formatter, float base)
+{
+	aref sources, source;
+	string bonusText = "";
+	makearef(sources, equipTable.(modifier));
+	for (int i = 0; i < GetAttributesNum(sources); i++)
+	{
+		source = GetAttributeN(sources, i);
+		string reason = GetAttributeName(source);
+		bonusText += GetHumanReadableReason(reason, chr) + ": " + call formatter(base+stf(GetAttributeValue(source))) + NewStr();
+	}
+
+	if (bonusText != "") bonusText = newStr() + " " + newStr() + " " + bonusText;
+	result += bonusText;
 }

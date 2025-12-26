@@ -147,6 +147,14 @@ void WorldSituationsUpdate()
 					CheckMemento();
 				}
 			}
+			if (GetDLCenabled(DLC_APPID_7))
+			{
+				if(!CheckAttribute(pchar, "questTemp.ClockTower_Start"))
+				{
+					if(SandBoxMode) ClockTower_Start();
+					else if (CheckAttribute(pchar, "questTemp.TrialEnd")) ClockTower_Start();
+				}
+			}
 			// Дикая Роза - без НИ
 			if (!CheckAttribute(pchar, "questTemp.WildRose_Start") && CheckAttributeEqualTo(pchar, "questTemp.Sharlie", "escape") && CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CharacterIsAlive("Mary") && ChangeCharacterNationReputation(pchar, ENGLAND, 0) >= 0 && !CheckAttribute(pchar, "questTemp.Tieyasal_final")) SetFunctionTimerCondition("WildRose_Start", 0, 0, 1, false);
 			CheckAchievments();

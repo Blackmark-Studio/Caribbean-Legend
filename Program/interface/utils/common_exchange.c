@@ -1,5 +1,3 @@
-// Модуль общего поведения торговли и обмена
-
 // метод на TAB переключает вкладки таблицы
 void ProcessInterfaceControls() 
 {
@@ -26,6 +24,17 @@ void ProcessInterfaceControls()
 	if (controlName == "InterfaceGoLeft") {
 		currentTab = (5 + currentTab - 2) % 5;
 		SetControlsTabMode(currentTab + 1);
+	}
+	
+	if (controlName == "InterfaceTakeAll")
+	{
+		onGetAllBtnClick();
+		string sInterfaceType = sGetInterfaceType();
+		if(sInterfaceType == INTERFACETYPE_DEADMAN && !CheckLastItemOnDead())
+		{
+			Dead_DelLoginedCharacter(refToChar);
+			IDoExit(RC_INTERFACE_FOOD_INFO_EXIT);
+		}
 	}
 }
 

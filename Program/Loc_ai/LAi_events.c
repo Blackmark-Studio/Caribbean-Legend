@@ -858,7 +858,6 @@ int Event_CheckPowerBreak()
 {
 	aref attack = GetEventData();
 	if (attack.sex == "woman" || !HasPerk(&attack, "HardHitter")) return 0;
-	if (!HasHeavyWeapon(&attack)) return 0;
 	return 1;
 }
 
@@ -892,7 +891,25 @@ void Event_PerkCollection()
 	ref cabin = &locations[cabinIdx];
 	if (!CheckAttribute(cabin, "box1")) return;
 
-	int exoticQty = GetAttributeInt(pchar, "ct.equip.descriptors.Exotic");
+	int exoticQty = 0;
+	aref arBox;
+	string boxId;
+	aref curItem;
+	ref item;
+	for (int n = 1; n <= 4; n++)
+	{
+		boxId = "box" + n;
+		makearef(arBox, cabin.(boxId).items);
+		for (int i=0; i<GetAttributesNum(arBox); i++)
+		{
+			curItem = GetAttributeN(arBox, i);
+			item = ItemsFromId(GetAttributeName(curItem));
+			if (HasDescriptor(item, "Exotic")) exoticQty += sti(GetAttributeValue(curItem));
+		}
+	}
+
+	if (exoticQty < 1) return;
+
 	Notification(StringFromKey("perks_9"), "Collection");
 	AddToAttributeInt(cabin, "box1.money", exoticQty * PERK_VALUE_COLLECTION);
 }

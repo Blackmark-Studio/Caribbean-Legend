@@ -108,3 +108,7 @@ sp3_SailorsBoardingBonus_desc {Premia do doświadczenia abordażowego: #dSailors
 sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 poległych marynarzy)}
 sp3_SurrenderChanceBonus_desc {Zwiększenie szansy na kapitulację: #dSurrenderChanceBonus#%}
 sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 poległych marynarzy)}
+sp4 {Łowca piratów}
+sp4_desc {Ten okręt został zbudowany specjalnie do oczyszczania mórz z piratów. Z każdym zatopionym statkiem załoga staje się bardziej zgrana, działa celniejsze, a fanatyzm kapitana coraz wyraźniejszy.}
+sp4_desc2 {Każdy zniszczony piracki statek na stałe zwiększa zwrotność, zasięg ostrzału, prędkość na mapie świata oraz szybkość przeładowania dział. Aktualny bonus: $percent($attr($context.tuning.modifiers.shipSpeed.trait_SP4)) z 15. ~ Im niższe zagrożenie pirackie, tym niższe koszty utrzymania okrętu. Aktualny bonus: $percent($GetAmsterdamMtp( )) z 40.}
+SpecialityUpgrade {Ulepszone przez HWIC}

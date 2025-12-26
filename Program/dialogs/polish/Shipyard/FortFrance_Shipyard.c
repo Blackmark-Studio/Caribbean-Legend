@@ -10,7 +10,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			// Addon-2016 Jason ”ЊЉ-Њартиника
 			if (CheckAttribute(pchar, "questTemp.FMQM") && pchar.questTemp.FMQM == "begin")
             {
-                link.l1 = "Twój człowiek powiedział mi, że chcesz mnie widzieć. Zamieniam się w słuch.";
+                link.l1 = "Twój człowiek powiedział mi, że chcesz mnie widzieć. Jestem cały uszy.";
                 link.l1.go = "FMQM";
             }
 			if (CheckAttribute(pchar, "questTemp.FMQM") && pchar.questTemp.FMQM == "oil" && GetSquadronGoods(pchar, GOOD_OIL) >= 50)
@@ -57,9 +57,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "FMQM_3":
-			string sTemp = "barkentynie,";
-			if (MOD_SKILL_ENEMY_RATE < 7) sTemp = "barce,";// Addon 2016-1 Jason пиратскаЯ линейка
-			dialog.text = "W takim razie słuchaj: konwój składa się z trzech statków, żywica będzie wśród innych towarów na "+sTemp+" zwanej 'Bensecho'. To twój główny cel. Jak już wspomniałem, Hiszpanie płyną z San Jose - Trynidad, do San Juan - Puerto Rico. Z wiatrem w żagle wyruszą jutro, więc możesz wybrać, gdzie ich zaatakować.";
+			string sTemp = "barquentine";
+			if (MOD_SKILL_ENEMY_RATE < 7) sTemp = "barque";// Addon 2016-1 Jason пиратскаЯ линейка
+			dialog.text = "W takim razie słuchaj: konwój składa się z trzech statków, żywica będzie wśród innych towarów na "+sTemp+" zwany 'Bensecho'. To twój główny cel. Jak już wspomniałem, Hiszpanie płyną z San Jose - Trynidad, do San Juan - Puerto Rico. Z wiatrem w żagle wyruszą jutro, więc możesz wybrać, gdzie ich zaatakować.";
 			link.l1 = "Zrozumiano. A co z nagrodą?";
 			link.l1.go = "FMQM_4";
 		break;

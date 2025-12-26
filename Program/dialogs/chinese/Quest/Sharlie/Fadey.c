@@ -63,7 +63,7 @@ void ProcessDialogEvent()
 					{
 						if (PCharDublonsTotal() >= 35) // belamour legendary edition
 						{
-							link.l1 = "是的。 给您, 您的35达布隆。";
+							link.l1 = "是的。给您, 您的35达布隆。";
 							link.l1.go = "Tichingitu_7";
 						}
 						else
@@ -465,7 +465,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tichingitu_5":
-			dialog.text = "好吧, 好吧, 40金达布隆。 但这是最后的价格。 而且必须是达布隆, 不是比索。 我们的放债人那里肯定有一些。";
+			dialog.text = "好吧, 好吧, 40金达布隆。但这是最后的价格。而且必须是达布隆, 不是比索。我们的放债人那里肯定有一些。";
 			if(PCharDublonsTotal() >= 40) // belamour legendary edition
 			{
 				link.l1 = "哦, 你远大啊, 我的朋友。 你说服我了! 35金——一文不减!";

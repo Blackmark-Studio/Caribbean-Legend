@@ -10,12 +10,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			//Голландский гамбит, Голландия
 			if (CheckAttribute(pchar, "questTemp.HWIC.Holl") && pchar.questTemp.HWIC.Holl == "SantiagoTripBegin")
 			{
-				link.l1 = "Señor, jestem kapitanem "+GetFullName(pchar)+", i jestem tutaj z polecenia Lucasa Rodenburga. Mam dla ciebie paczkę od niego.";
+				link.l1 = "Senior, jestem kapitanem "+GetFullName(pchar)+", i jestem tutaj z polecenia Lucasa Rodenburga. Mam dla ciebie paczkę od niego.";
 				link.l1.go = "SantiagoTripBank";	
 			}
 			if (CheckAttribute(pchar, "questTemp.HWIC.Holl") && pchar.questTemp.HWIC.Holl == "SantiagoTripReturn")
 			{
-				link.l1 = "Przyszedłem po odpowiedź señor Lucasa Rodenburga.";
+				link.l1 = "Przyszedłem po odpowiedź seniora Lucasa Rodenburga.";
 				link.l1.go = "SantiagoTripBank_3";	
 			}
 			//Голландский гамбит, Голландия
@@ -24,8 +24,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "SantiagoTripBank":
 			if (GetCharacterItem(pchar, "Chest") >= 5)
 			{
-			dialog.text = "No popatrz... paczka! No, dawaj, señor.";
-			link.l1 = "Señor Rodenburg prosił, bym ci to przekazał...";
+			dialog.text = "Wyobraź sobie... paczka! No, dawaj, seniorze.";
+			link.l1 = "Także, Senior Rodenburg prosił, bym ci to przekazał...";
 			link.l1.go = "SantiagoTripBank_1";
 			RemoveItems(PChar, "NPC_Letter", 1);
 			RemoveItems(PChar, "Chest", 5);
@@ -40,7 +40,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "SantiagoTripBank_1":
-			dialog.text = "Hm-m... interesujące. Więc on 'przesyła swoje ubolewania'. No cóż. Chociaż ubolewania señor Rodenburga są dość przekonujące, trudno zaprzeczyć. Señor, napisanie odpowiedzi zajmie trochę czasu, czy mógłbyś przyjść jutro w południe, aby odebrać odpowiedź? Odpocznij w karczmie, przejdź się po mieście. Santiago ma wiele do zaoferowania.";
+			dialog.text = "Hm-m... interesujące. Więc on 'przesyła swoje ubolewania'. No cóż. Chociaż ubolewania seniora Rodenburga są dość przekonujące, trudno zaprzeczyć. Seniorze, napisanie odpowiedzi zajmie trochę czasu, czy mógłbyś przyjść jutro w południe, aby odebrać odpowiedź? Odpocznij w karczmie, przejdź się po mieście. Santiago ma wiele do zaoferowania.";
 			link.l1 = "Zgoda, wrócę jutro około południa. Do zobaczenia wtedy, señor.";
 			link.l1.go = "SantiagoTripBank_2";
 		break;
@@ -58,14 +58,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "SantiagoTripBank_3":
 			dialog.text = "Tak, oczywiście... ale sądzę, że możemy się obyć bez pisemnych formalności. Po prostu powiedz mu te słowa 'ten człowiek musi umrzeć'. To będzie sprawiedliwe i nie będziemy mieli żadnych problemów z oceną 'wartości' otrzymanych przeprosin. A incydent będzie uważany za całkowicie załatwiony.";
-			link.l1 = "Dobrze, zapamiętam to, señor. Coś jeszcze?";
+			link.l1 = "Dobrze, zapamiętam to, senor. Coś jeszcze?";
 			link.l1.go = "SantiagoTripBank_4";
 			DelLandQuestMark(npchar);
 		break;
 		
 		case "SantiagoTripBank_4":
-			dialog.text = "Tak, oczywiście. To, co powiedziałem, jest wolą rodziny Giraldi. I możesz, oczywiście, przekazać moje najlepsze życzenia señor Lucasowi. Życzę ci pomyślnych wiatrów, kapitanie "+GetFullName(pchar)+".";
-			link.l1 = "Rozumiem. Żegnaj, señor "+npchar.name+".";
+			dialog.text = "Tak, oczywiście. To, co powiedziałem, jest wolą rodziny Giraldi. I możesz, oczywiście, przekazać moje najlepsze życzenia Senorowi Lucasowi. Życzę ci pomyślnych wiatrów, kapitanie "+GetFullName(pchar)+".";
+			link.l1 = "Rozumiem. Żegnaj, seniorze "+npchar.name+".";
 			link.l1.go = "SantiagoTripBank_5";
 		break;
 		

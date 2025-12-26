@@ -95,7 +95,7 @@ void setclock()
 void ActiveF10Control()
 {
 	Log_Info("ЛОГЛОГ");
-	
+	ChangeCharacterComplexReputation(pchar, "nobility", 100);
 }
 
 void AdvanceTime() {

@@ -62,7 +62,6 @@ bool InitWeaponModifiers(ref item)
 		case "blade_16":
 		{
 			SetWeaponDescriptors(item, WEAPON_LIGHT, WEAPON_SHORT, WEAPON_STRAIGHT, 0.65, 1.35);
-			AddDescriptor(item, "Fancy", -1);
 		}
 		break;
 		case "blade_22":
@@ -349,7 +348,6 @@ bool InitWeaponModifiers(ref item)
 		case "q_blade_16":
 		{
 			SetWeaponDescriptors(item, WEAPON_LIGHT, WEAPON_SHORT, WEAPON_STRAIGHT, 0.65, 1.35);
-			AddDescriptor(item, "Fancy", -1);
 		}
 		break;
 		case "q_blade_21":

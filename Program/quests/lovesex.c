@@ -21,7 +21,7 @@ void LoveSex_Cabin_Go_2(string qName)
 void LoveSex_Cabin_Go_3(string qName)
 {
 	LAi_FadeToBlackEnd();
-	if (Get_My_Cabin() == "My_Cabin_Huge" || Get_My_Cabin() == "My_CabineFDM" || Get_My_Cabin() == "My_CabineFDMR")
+	if (Get_My_Cabin() == "My_Cabin_Huge")
 	{
 		LoveSex_Cabin_Huge();
 	}
@@ -45,31 +45,38 @@ void LoveSex_Cabin_Go_3(string qName)
 	{
 		LoveSex_Cabin_Memento();
 	}
+	if (Get_My_Cabin() == "My_CabineFDM" || Get_My_Cabin() == "My_CabineFDMR")
+	{
+		LoveSex_Cabin_Caleuche();
+	}
 }
 
 //--> Огромная каюта
 void LoveSex_Cabin_Huge()
 {	
 	ref sld = characterFromId(pchar.quest.sex_partner);
-	IgnoreCollision(sld, true);
 	SyncPlaybackDlt(PChar, sld);
 	ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-	TeleportCharacterToLocatorIgnoreCollision(pchar, "quest", "kiss1");
-	TeleportCharacterToLocatorIgnoreCollision(sld, "quest", "kiss2");
+	TeleportCharacterToPosAy(pchar, -0.40, 10.00, 4.60, -1.50);
+	TeleportCharacterToPosAy(sld, -1.00, 10.00, 4.60, 1.50);
 	LAi_SetActorType(pchar);
 	LAi_SetActorType(sld);
-	LAi_ActorAnimation(pchar, "kiss", "1", 7.5);
-	LAi_ActorAnimation(sld, "kiss", "1", 7.5);
-	CharacterTurnByChr(pchar, sld);
-	CharacterTurnByChr(sld, pchar);
-	locCameraFromToPos(-0.07, 7.04, -0.40, true, 1.38, 5.00, 1.12);
-	DoQuestFunctionDelay("LoveSex_Cabin_Huge_2", 3.5);
-	DoQuestFunctionDelay("LoveSex_Cabin_Final", 7.5);
+	LAi_ActorAnimation(pchar, "kiss", "1", 16.5);
+	LAi_ActorAnimation(sld, "kiss", "1", 16.5);
+	locCameraFromToPos(1.64, 11.53, 1.81, true, -0.92, 9.78, 5.16);
+	DoQuestFunctionDelay("LoveSex_Cabin_Huge_2", 6.5);
+	DoQuestFunctionDelay("LoveSex_Cabin_Huge_3", 12.0);
+	DoQuestFunctionDelay("LoveSex_Cabin_Final", 15.0);
 }
 
 void LoveSex_Cabin_Huge_2(string qName)
 {	
-	locCameraFromToPos(2.54, 6.87, -0.21, true, -0.10, 4.82, 0.78);
+	locCameraFromToPos(-1.99, 11.43, 5.86, true, 3.00, 9.78, 1.58);
+}
+
+void LoveSex_Cabin_Huge_3(string qName)
+{	
+	locCameraFromToPos(-2.33, 11.08, 2.93, true, 1.14, 10.28, 5.84);
 }
 //<-- Огромная каюта
 
@@ -169,6 +176,7 @@ void LoveSex_Cabin_Small()
 	CharacterTurnByChr(pchar, sld);
 	CharacterTurnByChr(sld, pchar);
 	locCameraFromToPos(0.99, 6.52, 2.47, true, 0.17, 4.79, -0.59);
+	// locCameraFromToPos(0.31, 6.87, 2.26, true, 0.46, 4.84, -0.36);
 	DoQuestFunctionDelay("LoveSex_Cabin_Small_2", 3.5);
 	DoQuestFunctionDelay("LoveSex_Cabin_Final", 7.5);
 }
@@ -202,6 +210,33 @@ void LoveSex_Cabin_Memento_2(string qName)
 }
 //<-- Мементо каюта
 
+//--> Калеуче каюта
+void LoveSex_Cabin_Caleuche()
+{	
+	ref sld = characterFromId(pchar.quest.sex_partner);
+	IgnoreCollision(sld, true);
+	SyncPlaybackDlt(PChar, sld);
+	ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
+	TeleportCharacterToLocatorIgnoreCollision(pchar, "quest", "kiss1");
+	TeleportCharacterToLocatorIgnoreCollision(sld, "quest", "kiss2");
+	LAi_SetActorType(pchar);
+	LAi_SetActorType(sld);
+	LAi_ActorAnimation(pchar, "kiss", "1", 7.5);
+	LAi_ActorAnimation(sld, "kiss", "1", 7.5);
+	CharacterTurnByChr(pchar, sld);
+	CharacterTurnByChr(sld, pchar);
+	locCameraFromToPos(-0.07, 7.04, -0.40, true, 1.38, 5.00, 1.12);
+	
+	DoQuestFunctionDelay("LoveSex_Cabin_Caleuche_2", 3.5);
+	DoQuestFunctionDelay("LoveSex_Cabin_Final", 7.5);
+}
+
+void LoveSex_Cabin_Caleuche_2(string qName)
+{	
+	locCameraFromToPos(2.54, 6.87, -0.21, true, -0.10, 4.82, 0.78);
+}
+//<-- Калеуче каюта
+
 void LoveSex_Cabin_Final(string qName)
 {	
 	EndQuestMovie();
@@ -210,10 +245,10 @@ void LoveSex_Cabin_Final(string qName)
 	ref sld = CharacterFromID(pchar.quest.sex_partner);
 	// ChangeCharacterAddressGroup(pchar, PChar.location, "reload", "reload1");
 	// ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-	if (Get_My_Cabin() == "My_Cabin_Huge" || Get_My_Cabin() == "My_CabineFDM" || Get_My_Cabin() == "My_CabineFDMR")
+	if (Get_My_Cabin() == "My_Cabin_Huge")
 	{
-		TeleportCharacterToLocatorIgnoreCollision(pchar,  "quest", "lay2");
-		TeleportCharacterToLocatorIgnoreCollision(sld, "quest", "lay1");
+		ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc1");
+		ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc2");
 	}
 	if (Get_My_Cabin() == "My_Cabin")
 	{
@@ -239,6 +274,11 @@ void LoveSex_Cabin_Final(string qName)
 	{
 		TeleportCharacterToLocatorIgnoreCollision(pchar,  "quest", "lay1");
 		TeleportCharacterToLocatorIgnoreCollision(sld, "quest", "lay2");
+	}
+	if (Get_My_Cabin() == "My_CabineFDM" || Get_My_Cabin() == "My_CabineFDMR")
+	{
+		TeleportCharacterToLocatorIgnoreCollision(pchar,  "quest", "lay2");
+		TeleportCharacterToLocatorIgnoreCollision(sld, "quest", "lay1");
 	}
 	LAi_SetActorType(sld);
 	LAi_ActorTurnToCharacter(sld, pchar);

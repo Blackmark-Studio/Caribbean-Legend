@@ -979,6 +979,22 @@ void LeFransua_OpenLetterTreasureBox(string qName)
 	PChar.quest.Find_PR_Letter.function = "Find_PR_Letter";
 }
 
+void SetAnimationInDialog(ref character, string animation, bool atribute)
+{
+	if (atribute == true)
+	{
+		character.QuestDiag = animation;
+		BeginChangeCharacterActions(character);
+		DeleteAttribute(character, "actions.idle");
+		character.actions.idle.i1 = animation;
+		EndChangeCharacterActions(character);
+	}
+	else
+	{
+		DeleteAttribute(character, "QuestDiag");
+	}
+}
+
 void AutoSaveDelay(string qName)
 {
 	AutoSave();

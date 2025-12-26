@@ -22,10 +22,7 @@ Charyzmatyczni piraci to urodzeni przywódcy, negocjatorzy i kwatermistrzowie. 
 Intellect {Wrodzone skłonności i predyspozycje, bystrość i umiejętność szybkiego dostosowania się do sytuacji. ~ Wpływa na „Handel”, „Artylerię”, „Nawigację” oraz ilość energii zyskiwanej na rangę.}
 Endurance
 {
-Niezłomni piraci błyszczą jako stolarze i chirurdzy.
-~
-Wpływa na „Naprawa” i „Obrona”.
-Podobnie jak w przypadku siły, określa maksymalne PŻ i maksymalną pojemność ekwipunku.
+Niezłomni piraci błyszczą jako stolarze i chirurdzy.~Wpływa na „Naprawa” i „Obrona”.Podobnie jak w przypadku siły, określa maksymalne PŻ i maksymalną pojemność ekwipunku.
 }
 Luck
 {
@@ -33,45 +30,27 @@ Piraci z dużą dozą szczęścia są idealnymi strzelcami, hazardzistami i posz
 }
 Crit
 {
-Podstawowa szansa na zadanie wrogowi ciosu lub strzału krytycznego.
-~
-Zależy od S i P.
-~
-Perki i ekwipunek mogą zwiększyć tę szansę.
+Podstawowa szansa na zadanie wrogowi ciosu lub strzału krytycznego.~Zależy od S i P.~Perki i ekwipunek mogą zwiększyć tę szansę.
 }
 CharDefence
 {
-Podstawowe wskaźniki Ochrony przed obrażeniami. Zmniejszają wszystkie otrzymywane obrażenia o określony procent.
- ~
- Na wartości wpływają osobiste Perki i ekwipunek.
+Podstawowe wskaźniki Ochrony przed obrażeniami. Zmniejszają wszystkie otrzymywane obrażenia o określony procent. ~ Na wartości wpływają osobiste Perki i ekwipunek.
 }
 FencingL
 {
-Umiejętność posługiwania się lekkimi ostrzami, floretami i podobną bronią.
- (R*0.9+I*0.1)
- ~
- Wpływa na obrażenia broni i zużycie Energii podczas ataków.
+Umiejętność posługiwania się lekkimi ostrzami, floretami i podobną bronią. (R*0.9+I*0.1) ~ Wpływa na obrażenia broni i zużycie Energii podczas ataków.
 }
 FencingS
 {
-Umiejętność władania średnimi, dobrze wyważonymi ostrzami, takimi jak szable, wymagającymi siły i zręczności.
- (P*0.6+R*0.4)
- ~
- Wpływa na obrażenia broni i zużycie Energii podczas ataków.
+Umiejętność władania średnimi, dobrze wyważonymi ostrzami, takimi jak szable, wymagającymi siły i zręczności. (P*0.6+R*0.4) ~ Wpływa na obrażenia broni i zużycie Energii podczas ataków.
 }
 FencingH
 {
-Umiejętność posługiwania się ciężką bronią, taką jak pałasze i topory. Wymaga dużej siły fizycznej.
- (P*0.9+E*0.1)
- ~
- Wpływa na obrażenia broni i zużycie Energii podczas ataków.
+Umiejętność posługiwania się ciężką bronią, taką jak pałasze i topory. Wymaga dużej siły fizycznej. (P*0.9+E*0.1) ~ Wpływa na obrażenia broni i zużycie Energii podczas ataków.
 }
 Pistol
 {
-Umiejętność posługiwania się wszystkimi rodzajami broni palnej.
- (R*0.4+S*0.6)
- ~
- Wpływa na obrażenia i szybkość przeładowania.
+Umiejętność posługiwania się wszystkimi rodzajami broni palnej. (R*0.4+S*0.6) ~ Wpływa na obrażenia i szybkość przeładowania.
 }
 Fortune
 {
@@ -95,18 +74,7 @@ Załaduj szybko działa, obróć je, a podczas gdy echo salwy wciąż dudni mię
 }
 Sailing
 {
-Umiejętność prowadzenia statku w każdych warunkach, korzystania z przyrządów i dowodzenia eskadrą. Nawet najbardziej kapryśny i niezręczny statek posłucha twardej ręki doświadczonego skippera.
- Zależy od 'Percepcji' i 'Talentu' (I0.2 + T0.8)
- ~
- Do sterowania statkiem określonej klasy wymagany jest odpowiedni minimalny poziom Nawigacji:
- klasa 1 wymaga 90
- klasa 2 wymaga 70
- klasa 3 wymaga 55
- klasa 4 wymaga 40
- klasa 5 wymaga 20
- klasa 6 wymaga 01
- ~
- Brak Nawigacji prowadzi do kar we wszystkie umiejętności i cechy bohatera. Im większa różnica między bieżącą a wymaganą wartością Nawigacji, tym silniejsze kary.
+Umiejętność prowadzenia statku w każdych warunkach, korzystania z przyrządów i dowodzenia eskadrą. Nawet najbardziej kapryśny i niezręczny statek posłucha twardej ręki doświadczonego skippera. Zależy od 'Percepcji' i 'Talentu' (I0.2 + T0.8) ~ Do sterowania statkiem określonej klasy wymagany jest odpowiedni minimalny poziom Nawigacji: klasa 1 wymaga 90 klasa 2 wymaga 70 klasa 3 wymaga 55 klasa 4 wymaga 40 klasa 5 wymaga 20 klasa 6 wymaga 01 ~ Brak Nawigacji prowadzi do kar we wszystkie umiejętności i cechy bohatera. Im większa różnica między bieżącą a wymaganą wartością Nawigacji, tym silniejsze kary.
 }
 Repair
 {
@@ -114,10 +82,7 @@ Kiedy wróg szturmuje twój statek serią pocisków, rozszczepiając boki i zami
 }
 Grappling
 {
-Wyrównanie statku z wrogim okrętem, rzucenie haków abordażowych, opanowanie drżącego przeciwnika, oczyszczenie pokładu i przejęcie statku jako zasłużonej nagrody — wszystko to wymaga zręczności i doświadczenia, ale łupy z pewnością wynagrodzą cały trud.
- (R*0.7+T*0.3)
- ~
- Wpływa na dystans abordażu.
+Wyrównanie statku z wrogim okrętem, rzucenie haków abordażowych, opanowanie drżącego przeciwnika, oczyszczenie pokładu i przejęcie statku jako zasłużonej nagrody — wszystko to wymaga zręczności i doświadczenia, ale łupy z pewnością wynagrodzą cały trud. (R*0.7+T*0.3) ~ Wpływa na dystans abordażu.
 }
 Defence
 {
@@ -138,60 +103,35 @@ Uwaga!Niektóre umiejętności mogą nie być dostępne dla określonych typów
 }
 Personal_abilities
 {
-Perki rozszerzające osobiste możliwości postaci. Postępy zdobywa się poprzez podnoszenie poziomów osobistych umiejętności.
- ~
- Po osiągnięciu progu otrzymujesz nowy punkt osobistych Perków. Różne Perki kosztują różną liczbę punktów. Zazwyczaj na końcu drzewa rozwoju znajdują się te najsilniejsze.
+Perki rozszerzające osobiste możliwości postaci. Postępy zdobywa się poprzez podnoszenie poziomów osobistych umiejętności. ~ Po osiągnięciu progu otrzymujesz nowy punkt osobistych Perków. Różne Perki kosztują różną liczbę punktów. Zazwyczaj na końcu drzewa rozwoju znajdują się te najsilniejsze.
 }
 Ship_abilities
 {
-Perki wpływające na zarządzanie statkiem. Postępy zdobywa się poprzez podnoszenie poziomów umiejętności okrętowych.
- ~
- Po osiągnięciu progu otrzymujesz nowy punkt okrętowych Perków. Różne Perki kosztują różną liczbę punktów. Zazwyczaj na końcu drzewa rozwoju znajdują się te najsilniejsze.
- ~
- Mogą być odziedziczone przez bohatera od oficerów wyznaczonych na stanowiska na statku, którzy znają się na swoim fachu.
+Perki wpływające na zarządzanie statkiem. Postępy zdobywa się poprzez podnoszenie poziomów umiejętności okrętowych. ~ Po osiągnięciu progu otrzymujesz nowy punkt okrętowych Perków. Różne Perki kosztują różną liczbę punktów. Zazwyczaj na końcu drzewa rozwoju znajdują się te najsilniejsze. ~ Mogą być odziedziczone przez bohatera od oficerów wyznaczonych na stanowiska na statku, którzy znają się na swoim fachu.
 }
 Abilities_available {Liczba wskazuje ilość nieprzydzielonych punktów perków.}
 Abilities_active {Liczba wskazuje perki, które postać aktywowała.}
 Rank
 {
-Ranga to wskaźnik poziomu rozwoju postaci w grze. Postępy zdobywa się poprzez podnoszenie poziomu umiejętności.
- ~
- Wraz ze wzrostem rangi postaci zwiększa się jej Życie i Energia, a także częściej pojawiają się silniejsi przeciwnicy i nowe przedmioty.
+Ranga to wskaźnik poziomu rozwoju postaci w grze. Postępy zdobywa się poprzez podnoszenie poziomu umiejętności. ~ Wraz ze wzrostem rangi postaci zwiększa się jej Życie i Energia, a także częściej pojawiają się silniejsi przeciwnicy i nowe przedmioty.
 }
 Life
 {
-HP — miara odporności postaci na obrażenia fizyczne. Zero oznacza śmierć, jeden oznacza morze możliwości.
- ~
- Wartość zależy od P i E i rośnie wraz z rangą.
+HP — miara odporności postaci na obrażenia fizyczne. Zero oznacza śmierć, jeden oznacza morze możliwości. ~ Wartość zależy od P i E i rośnie wraz z rangą.
 }
 Health {Zdrowie jest wskaźnikiem stanu fizycznego postaci. Spada za każdym razem, gdy postać zostaje poważnie ranna w krótkim okresie czasu. Regeneruje się, jeśli unika się walki przez pewien czas, aby rany mogły się odpowiednio zagoić. Może poważnie obniżyć statystyki i umiejętności, jeśli zostanie zaniedbane.}
 Energy
 {
-Energia - zapas wytrzymałości fizycznej postaci.
- 
-  ~
- 
-  Wszystkie akcje ofensywne i szybki bieg w walce wręcz wymagają wydatków Energii; w trakcie walki postać męczy się i potrzebuje oddechu, by odzyskać siły.
- 
-  ~
- 
-  Wartość Energii zależy od R i T i rośnie wraz z rangą.
+Energia - zapas wytrzymałości fizycznej postaci.   ~   Wszystkie akcje ofensywne i szybki bieg w walce wręcz wymagają wydatków Energii; w trakcie walki postać męczy się i potrzebuje oddechu, by odzyskać siły.   ~   Wartość Energii zależy od R i T i rośnie wraz z rangą.
 }
 Money {Pieniądze rządzą światem. Piastry, talary, gwinee... Jaka to różnica, jeśli wszystko to płynna gotówka!}
 Reputation
 {
-Honor odzwierciedla, jak postrzega cię społeczeństwo.
-~
-Zmienia się w zależności od sposobu rozwiązywania problemów.
-~
-Zawsze dąży do stanu neutralnego.
+Honor odzwierciedla, jak postrzega cię społeczeństwo.~Zmienia się w zależności od sposobu rozwiązywania problemów.~Zawsze dąży do stanu neutralnego.
 }
 Weight
 {
-Waga to maksymalna łączna masa ładunku, którą postać może nosić.
- Zależy od Siły, Wytrzymałości, osobistych Perków i aktywnych amuletów.
- ~
- Przeciążona postać porusza się wolniej, otrzymuje kary i traci możliwość szybkiej podróży.
+Waga to maksymalna łączna masa ładunku, którą postać może nosić. Zależy od Siły, Wytrzymałości, osobistych Perków i aktywnych amuletów. ~ Przeciążona postać porusza się wolniej, otrzymuje kary i traci możliwość szybkiej podróży.
 }
 Title {Tytuł wskazuje, jak bardzo postać jest użyteczna dla państwa, któremu służy.}
 NextExp
@@ -288,15 +228,13 @@ SourceOverload {Przeciążony}
 SourceNavyPenalty {Test nawigacji niezaliczony}
 CritDamage
 {
-Wartość obrażeń krytycznych. Stosowana po wszystkich modyfikatorach.
- ~
- Może być zwiększona dzięki osobistym Perkom i ekwipunkowi.
+Wartość obrażeń krytycznych. Stosowana po wszystkich modyfikatorach. ~ Może być zwiększona dzięki osobistym Perkom i ekwipunkowi.
 }
 CritCharDefence
 {
-Całkowite zmniejszenie obrażeń krytycznych przeciwnika.
- ~
- Może być zwiększone dzięki osobistym Perkom i ekwipunkowi.
+Całkowite zmniejszenie obrażeń krytycznych przeciwnika. ~ Może być zwiększone dzięki osobistym Perkom i ekwipunkowi.
 }
 SourceSkill {Umiejętność}
 SourceChickenGod {Błogosławieństwo Aruby}
+SourceSpecialityUpgrade {Ulepszenie podklasy}
+SourceAudit {Audyt}

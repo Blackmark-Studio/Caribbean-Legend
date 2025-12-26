@@ -661,7 +661,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_drink_again_2":
-			dialog.text = "Prawdy? Prawda jest taka, kapitanie, że zdezerterowałem wraz z moją żoną Gruoh. Madame Tonzag nie chciała opuszczać Ligi; kochała takie życie, ale kochała mnie jeszcze bardziej. Mieliśmy zająć się hiszpańskim hidalgo, ale złożył lepszą ofertę. To była nasza szansa i oboje zgodziliśmy się pójść do jego służby. Oczywiście, Liga myślała, że ​​zginęliśmy podczas misji i wysłała drugą grupę do Portobelo, aby dokończyć zadanie i dokonać zemsty.";
+			dialog.text = "Prawda? Prawda jest taka, kapitanie, że zdezerterowałem wraz z moją żoną Gruoh. Madame Tonzag nie chciała opuszczać Ligi; kochała takie życie, ale kochała mnie jeszcze bardziej. Mieliśmy zająć się hiszpańskim hidalgo, ale złożył lepszą ofertę. To była nasza szansa i oboje zgodziliśmy się pójść do jego służby. Oczywiście, Liga myślała, że ​​zginęliśmy podczas misji i wysłała drugą grupę do Portobelo, aby dokończyć zadanie i dokonać zemsty.";
 			link.l1 = "I zabiłeś ich wszystkich?";
 			link.l1.go = "tonzag_drink_again_3";
 		break;
@@ -853,8 +853,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_church_2":
-			dialog.text = "Masakra. Chciałem przejść na emeryturę, Kapitanie. Chciałem zabrać złoto, moją żonę i wrócić do domu w Carcassonne. Wiedziałem, że Liga wyśle więcej ludzi, by dokończyć moją robotę, i wziąłem hojną zaliczkę od nowego mecenasa. Potem pozostało tylko napuścić straż miejską na moich dawnych wspólników i nowego pracodawcę. W tym całym zamieszaniu miałem zniknąć z pieniędzmi, a jeśli czas pozwoli, obrabować kilku nadzianych ważniaków z Portobelo.";
-			link.l1 = "Dobry plan, choć zrobiłbym to inaczej. Zbyt wiele rzeczy mogło pójść nie tak.";
+			dialog.text = "Masakra. Chciałem przejść na emeryturę, Kapitanie. Chciałem zabrać złoto, moją żonę i wrócić do domu w Carcassonne. Wiedziałem, że Liga wyśle więcej ludzi, by dokończyć moją robotę, i wziąłem hojną zaliczkę od nowego mecenasa. Potem pozostało tylko napuścić straż miejską na moich dawnych wspólników i nowego pracodawcę. W tym całym zamieszaniu miałem zniknąć z pieniędzmi, a jeśli czas pozwoli, obrabować kilka tłustych kotów z Portobelo.";
+			link.l1 = "Dobry plan, choć zrobiłbym to inaczej. Zbyt wiele rzeczy może pójść nie tak.";
 			link.l1.go = "tonzag_church_2a";
 			link.l2 = "Sam nie jestem aniołem, ale twoje podejście sprawia, że nawet ja drżę. Jestem zaskoczony, że jeszcze mnie nie zdradziłeś, jak to zrobiłeś z Ligą, Hidalgiem, a nawet własną żoną.";
 			link.l2.go = "tonzag_church_2a";
@@ -910,7 +910,7 @@ void ProcessDialogEvent()
 		
 		case "tonzag_afterchurchfight":
 			dialog.text = "Widziałem w swoim czasie wielu łajdaków, kapitanie, ale po raz pierwszy poczułem wewnętrzny dreszcz grozy. Jak myślisz: jeśli mniejszy potwór zabije większego potwora, czy to liczy się jako odkupienie?";
-			link.l1 = "Czy oni rozcieńczają rum wodą? Powiesz mi, kiedy się dowiesz. Chodźmy, musimy dać dyla na statek.";
+			link.l1 = "Czy oni rozcieńczają rum wodą? Powiedz mi, kiedy się dowiesz. Chodźmy, skończyliśmy tutaj.";
 			link.l1.go = "exit";
 			
 			AddDialogExitQuestFunction("Tonzag_ResetTonzag");

@@ -56,3 +56,6 @@ duelist {Swashbuckler}
 smuggler {Smuggler}
 AffairOfHonor_tavern {Desperate Drunk}
 hovernon_wife {Governor's Wife}
+Director {Director}
+Deputy Director {Deputy Director}
+Naval Registry Guard {Naval Registry Guard}

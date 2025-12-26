@@ -316,7 +316,11 @@ int GetCargoMaxSpace(ref _refCharacter)
 	int _ShipType = sti(_refCharacter.Ship.Type);
 	if( _ShipType==SHIP_NOTUSED )
 		return 0;
-	return sti(RealShips[_ShipType].Capacity);
+
+	ref realShip = &RealShips[_ShipType];
+	float capacity = stf(realShip.Capacity);
+	capacity *= 1.0 + GetAttributeFloat(realShip, "tuning.modifiers." + M_SHIP_CAPACITY);
+	return makeint(capacity);
 }
 
 int GetCharacterFreeSpace(ref _refCharacter,int _Goods)
@@ -566,7 +570,9 @@ int GetMaxCrewQuantity(ref _refCharacter)
 	int shipType = sti(_refCharacter.Ship.Type);
 	if(shipType<0) return 0;
 	if(shipType>=REAL_SHIPS_QUANTITY) return 0;
-	return GetBonusCrewQuartermaster(_refCharacter, sti(RealShips[shipType].OptCrew), sti(RealShips[shipType].MaxCrew));
+	int maxCrew = GetBonusCrewQuartermaster(_refCharacter, sti(RealShips[shipType].OptCrew), sti(RealShips[shipType].MaxCrew));
+	maxCrew = makefloat(maxCrew) * (1.0 + GetShipModifierBonus(_refCharacter, M_SHIP_MAXCREW));
+	return makeint(maxCrew);
 }
 
 //boal optimal crew
@@ -696,6 +702,12 @@ float GetSailRPD(ref _refCharacter) // процент ремонта парус�
     // belamour правка артефактов согласно описанию -->
 	if(IsCharacterEquippedArtefact(_refCharacter, "talisman7")) repairSkill = repairSkill * 2.0; // вдвое увеличивает 
     //<-- belamour
+
+	if (IsEquipCharacterByItem(_refCharacter, "piratesJournal_3"))
+	{
+		if (ShipBonus2Artefact(_refCharacter, SHIP_AMSTERDAM)) repairSkill *= 1.6;
+		else repairSkill *= 1.3;
+	}
 
 	float damagePercent = 100.0 - GetSailPercent(_refCharacter);
 	if (damagePercent == 0.0) return 0.0;
@@ -4560,11 +4572,6 @@ bool CanTakePerk(ref chr, ref perkEntity, string reason)
 	aref condtionPerks;
 	string perkName = GetAttributeName(perk);
 
-	if (!CheckAttribute(perk, "baseType"))
-	{
-		reason = "disabled";
-		return false;
-	}
 	string pointsAttribute = "FreePoints_" + perk.baseType;
 	if (HasPerkNatural(chr, perkName))                                       reason = "alreadyHave";     // уже есть
 	else if (!IsFellowOurCrew(chr))                                          reason = "notFellow";       // не можем качать навыки чужим
@@ -4593,7 +4600,6 @@ bool CheckPerkFilter(ref chr, ref perkEntity) {
 	if (IsMainCharacter(chr) && CheckAttribute(perk, "NPCOnly")) return true;
 	if (!IsMainCharacter(chr) && CheckAttribute(perk, "PlayerOnly")) return true;
 	if (perkName == "Captain" && CheckAttribute(chr, "CompanionDisable")) return true;
-	if (CheckAttribute(perk, "Hidden")) return true;
 	if (!CheckAttribute(perk, "HeroType")) return false;
 	if (!CheckCharacterPerk(chr, perk.HeroType)) return true;
 	return false;

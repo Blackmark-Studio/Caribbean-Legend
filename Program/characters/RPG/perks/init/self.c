@@ -8,6 +8,7 @@ void initSelfPerks(ref list)
 	// Мушкетёр
 	perks.FastHands.cost = 1;
 	SetArefModifier(perks, "FastHands", M_CROSSHAIR_UPDATE_SPEED, PERK_VALUE_FAST_HANDS);
+	SetArefModifier(perks, "FastHands", FIRE_MOVE + "_" + M_ACTION_SPEED, PERK_VALUE_FAST_HANDS);
 	SetAttribute(perks,"FastHands.descriptors.OneHanded", true);	
 	SetAttribute(perks,"FastHands.descriptors.TwoHanded", true);
 

@@ -115,7 +115,8 @@ itmdescr_blade_27 {这种细剑 因其传奇般的平衡性而被称为"撒克�
 itmname_blade_28 {武士刀}
 itmdescr_blade_28
 {
-来自传奇锡潘古岛的奇怪剑, 由高品质钢材制成, 手柄长, 允许单手握或双手握持。 这把剑从异国东方到加勒比的旅程 能讲述怎样的故事... 它怎么会在这里?
+来自传奇锡潘古岛的奇怪剑, 由高品质钢材制成, 手柄长, 允许单手握或双手握持。 
+这把剑从异国东方到加勒比的旅程 能讲述怎样的故事... 它怎么会在这里?
 }
 itmname_blade_29 {斯托塔军刀}
 itmdescr_blade_29 {阿戈斯蒂诺·巴尔巴里戈的登船弯刀—这位传奇威尼斯人海军上将从未尝 过败绩。 也许正是这把独特的佩剑, 成为他每场战斗中忠实的伙伴。}
@@ -144,7 +145,8 @@ itmdescr_blade_36 {马耳他骑士团的礼仪剑, 因 Charles de Maure 的杰�
 itmname_knife_01 {匕首"酋长之爪"}
 itmdescr_knife_01
 {
-这看起来像一把普通匕首... 莫斯科人 Fadey 声称这把匕首被印第 安巫师附魔, 拥有许多隐藏秘密。 但是有哪些秘密呢?
+这看起来像一把普通匕首... 莫斯科人 Fadey 声称这把匕首被印第 安巫师附魔, 拥有许多隐藏秘密。 
+但是有哪些秘密呢?
 }
 itmname_knife_02 {玛丽亚匕首}
 itmdescr_knife_02 {属于迭戈·德·蒙托亚的精美短剑。显然这把武器 被细心保养—仿佛对其前任主人有某种感情价值。}
@@ -279,7 +281,8 @@ UpgradeStageInfo_mushket9_2 {更换枪托并彻底清洁后, 它不再看起来�
 UpgradeStageInfo_mushket9_3 {更换锁后, 它开始类似于现代武器。 用骨油润滑的金属在阳光下闪闪发 光, 仿佛武器刚从大师手中取出。}
 UpgradeStageInfo_mushket9_4
 {
-在你手中, 这件武器已达到巅峰 —根本无处进一步发展。 最后的点缀 —扩大的枪管 —简化并加速了装填, 大大提高了效率。 你可以为自己感到骄傲。 你完全有理由感到骄傲。
+在你手中, 这件武器已达到巅峰 —根本无处进一步发展。 最后的点缀 —扩大的枪管 —简化并加速了装填, 大大提高了效率。 你可以为自己感到骄傲。 
+你完全有理由感到骄傲。
 }
 itmname_FirearmStockPart_1 {枪托和通条}
 itmdescr_FirearmStockPart_1 {为老式枪支精心雕刻的枪托和用于 清洁枪管的刷式通条。 它们被包裹在帆布中, 小心地放在距离宝藏中其他物品较 远的角落, 好像明显是后来放在那里的。}
@@ -350,7 +353,7 @@ itmdescr_hat5 {能见到这样一顶帽子的水手寥寥无 几。 它能激励
 itmname_hat6 {荷兰帽}
 itmdescr_hat6 {一顶昂贵而优雅的帽子, 中等商人尤为喜爱。其独特造型让 人远远就能认出谈判者, 提前准备迎接激烈的讨价还价。}
 itmname_hat7 {幸运帽}
-itmdescr_hat7 {据说这顶潇洒的帽子会带来好运。虽然饱经风霜，但仍显得高贵。如果你拥有这样一顶帽子，请放心——在最艰难的时刻，你不会缺少袖中的王牌。}
+itmdescr_hat7 {据说这顶潇洒的帽子会带来好运。虽然饱经风霜, 但仍显得高贵。如果你拥有这样一顶帽子, 请放心——在最艰难的时刻, 你不会缺少袖中的王牌。}
 itmname_hat8 {查理王子的三角帽}
 itmdescr_hat8 {这顶帽子比骷髅旗还要让商人—尤其是西班牙人—胆寒。它主人的名声, 足以让最强悍的水手都脸色发白、 浑身发抖。 诅咒查理·普林斯降生的那一天吧。}
 itmname_hat9 {格林的帽子}
@@ -386,12 +389,15 @@ itmdescr_sextant1 {用于确定地理坐标的独特设备。 六分仪的原主
 itmname_sextant2 {工作六分仪}
 itmdescr_sextant2
 {
-用于确定地理坐标的独特设备。 现在你拥有来自未来的计时仪, 它可以持续确定纬度和经度。 由于其高精度, 你可以实现船只速度5%的提升。 装备时增加航海技能成长。
+用于确定地理坐标的独特设备。 现在你拥有来自未来的计时仪, 它可以持续确定纬度和经度。 
+由于其高精度, 你可以实现船只速度5%的提升。 
+装备时增加航海技能成长。
 }
 itmname_bussol {罗盘}
 itmdescr_bussol
 {
-结合星盘和船用指南针的船舶仪器。 除其他外, 它允许你持续确定地理纬度。 装备时增加航海技能成长。
+结合星盘和船用指南针的船舶仪器。 除其他外, 它允许你持续确定地理纬度。 
+装备时增加航海技能成长。
 }
 itmname_clock3 {亚历克苏斯的精密计时器}
 itmdescr_clock3 {20世纪中叶的精密航海计时器, 带有自动上链机制, 来自Alexus大师的收藏。}
@@ -446,7 +452,11 @@ itmdescr_talisman19
 }
 talisman19_InSlot
 {
-一艘船同时存在于帷幕的两侧。 木材曾是活物, 然后变成死物来为活人服务。 "Memento (纪念品号)"船长的头骨提醒任何船只死亡不存 在, 你必须战斗到底。 ~每损失2%船体, 船只速度和加农炮伤害分别增加0.75%和0.5%. ~无惩罚, 可多次激活。
+一艘船同时存在于帷幕的两侧。 木材曾是活物, 然后变成死物来为活人服务。 "Memento (纪念品号)"船长的头骨提醒任何船只死亡不存 在, 你必须战斗到底。 
+~
+每损失2%船体, 船只速度和加农炮伤害分别增加0.75%和0.5%. 
+~
+无惩罚, 可多次激活。
 }
 itmname_talisman20 {射手腰带}
 itmdescr_talisman20 {由多条皮带、火药瓶和大量纸质弹 药组成的弹药带。 它在欧洲战场上有各种形制和用途, 而这件则来自遥远的异乡, 上面饰有来自严酷西伯利亚森林的 奇异兽纹。}
@@ -488,7 +498,7 @@ itmname_indian_2 {护身符"火药测试器"}
 itmdescr_indian_2
 {
 用于检测火药质量的装置。 ~
- 优质火药由于更均匀的燃烧会提高任何弹丸的伤害，但在自制弹药时尤其有用。
+ 优质火药由于更均匀的燃烧会提高任何弹丸的伤害, 但在自制弹药时尤其有用。
 }
 itmname_indian_3 {护身符"仪式刀"}
 itmdescr_indian_3
@@ -851,12 +861,14 @@ itmdescr_map_sharp_full {通过合并两半部分组成的完整宝藏 岛地图
 itmname_LSC_navigation_map {弃船之城航路指南}
 itmdescr_LSC_navigation_map
 {
-没有这些海图就不可能抵达正义岛。 北纬24`21, 西经84`50.
+没有这些海图就不可能抵达正义岛。 
+北纬24`21, 西经84`50.
 }
 itmname_RingCapBook {'圣卢西亚'号航海日志}
 itmdescr_RingCapBook
 {
-'Santa Lucia (圣卢西亚号) '轻帆船的航海日志。 值得一读 - 日志记录一直持续到船只沉没之时。
+'Santa Lucia (圣卢西亚号) '轻帆船的航海日志。 
+值得一读 - 日志记录一直持续到船只沉没之时。
 }
 itmname_leather_bag {旅行皮包}
 itmdescr_leather_bag {一个从妓院逃跑的女孩的手提箱。 里面装有一些钱、 文件、 一件体面的连衣裙和其他一些个人 物品。 可悲的是, 手提箱本身比里面的东西还重。}
@@ -882,7 +894,8 @@ itmdescr_PostLetters {密封信件和其他文件。}
 itmname_letter_consumption {给圣何塞指挥官的信}
 itmdescr_letter_consumption
 {
-庄稼大部分已收割 - 这是我们协议的第二部分。 第三部分将按惯例最后处理。 与您做生意很愉快 - 希望这不是最后一次。 J.
+庄稼大部分已收割 - 这是我们协议的第二部分。 第三部分将按惯例最后处理。 与您做生意很愉快 - 希望这不是最后一次。 
+J.
 }
 itmname_letter_church {密封教会信件}
 itmdescr_letter_church {一封教会急件。 这封信应尽快送达收信人手中。}
@@ -896,15 +909,18 @@ itmname_letter_chad {已拆封信件}
 itmdescr_letter_chad {我们已经找到了可靠的神射手。 现在我们在等待你承诺的膛线枪管 和消除目标的许可。}
 itmdescr_letter_adolf
 {
-'在你完成我们约定的所有事情后, 回到你的新舱室等我们。 我们会在午夜来取钥匙。 M.'
+'在你完成我们约定的所有事情后, 回到你的新舱室等我们。 我们会在午夜来取钥匙。 
+M.'
 }
 itmdescr_letter_adolf_1
 {
-'Marchello, 我们约定的金额是你给我的两倍。 这把卡宾枪更值钱, 你知道的。 如果你不把剩下的钱付给我, 舰队司令马上就会知道你在'Eva (夏娃号) '上与 Kapper 的交易。 阿道夫.'
+'Marchello, 我们约定的金额是你给我的两倍。 这把卡宾枪更值钱, 你知道的。 如果你不把剩下的钱付给我, 舰队司令马上就会知道你在'Eva (夏娃号) '上与 Kapper 的交易。 
+阿道夫.'
 }
 itmdescr_letter_aeva
 {
-没有比'Eva (夏娃号) '更好的地方了。 最近 Cecille 总是和另一个老家伙 Orelie 待在一起, 要么就是泡在酒馆里, 所以货舱是空的。 万一有人突然出现, 喝点酒也没什么不妥, 不是吗? 马塞洛。
+没有比'Eva (夏娃号) '更好的地方了。 最近 Cecille 总是和另一个老家伙 Orelie 待在一起, 要么就是泡在酒馆里, 所以货舱是空的。 万一有人突然出现, 喝点酒也没什么不妥, 不是吗? 
+马塞洛。
 }
 itmdescr_letter_valet {一封写给 David Fackman —外号'无赖'的有趣信件。}
 itmname_letter_chad_1 {已拆封信件}
@@ -912,17 +928,20 @@ itmdescr_letter_chad_1 {Chad Kapper 写给 Mary Casper 的信。}
 itmdescr_letter_facio {Giuseppe Fazio 的解释信。}
 itmdescr_letter_axel
 {
-Chad, 我按你要求查看了我的库存。 我只找到一桶爱尔兰威士忌。 是一种叫'布什米尔'的陈酿麦芽威士忌。 如果你觉得100杜布隆的价格合适, 就过来拿吧。 Axel。
+Chad, 我按你要求查看了我的库存。 我只找到一桶爱尔兰威士忌。 是一种叫'布什米尔'的陈酿麦芽威士忌。 如果你觉得100杜布隆的价格合适, 就过来拿吧。 
+Axel。
 }
 itmdescr_letter_vargant
 {
-如果计划失败, 我会在萨博-马蒂拉峡的'Centurion (百夫长号)'上等你和 David。 你们要用自己的人头为我弟弟担保。 像听我的话一样听他的话。 千万别想挑战 Tyrex 斯本人 - 他会立刻把你们俩砍成碎片。 Jackman。
+如果计划失败, 我会在萨博-马蒂拉峡的'Centurion (百夫长号)'上等你和 David。 你们要用自己的人头为我弟弟担保。 像听我的话一样听他的话。 千万别想挑战 Tyrex 斯本人 - 他会立刻把你们俩砍成碎片。 
+Jackman。
 }
 itmname_letter_parol {便条}
 itmdescr_letter_parol {请注意, 矿场主人更改了进入矿场的密码。 新密码是'Neptune'(海神尼普顿).}
 itmdescr_letter_ouster
 {
-老地方不再安全了。 英国人发现了一些事情。 我会在北纬12度1分, 西经60度11分的地方带着货物等你一周。 这次别让我失望! M.R.
+老地方不再安全了。 英国人发现了一些事情。 我会在北纬12度1分, 西经60度11分的地方带着货物等你一周。 这次别让我失望! 
+M.R.
 }
 itmdescr_letter_parol_FMQP {Ugo 给 Don Domingo Albalate 的一封未完成的信。}
 itmname_letter_mine {矿场文件}
@@ -937,7 +956,9 @@ itmdescr_letter_pinett {贝特朗.皮内特关于巴斯特尔银行家非法操 
 itmname_Cromvel_depeshe {Cromwell 的急件}
 itmdescr_Cromvel_depeshe
 {
-... 命令与护航队会合, 加强护航并将其护送至新尼德兰海 岸。 穿木鞋的荷兰人将亲自见识英国海 军的威力。 中队应在 #sDay#.#sMonth#.#sYear# 前抵达北纬18度40分, 西经72度10分
+... 命令与护航队会合, 加强护航并将其护送至新尼德兰海 岸。 
+穿木鞋的荷兰人将亲自见识英国海 军的威力。 
+中队应在 #sDay#.#sMonth#.#sYear# 前抵达北纬18度40分, 西经72度10分
 }
 itmname_specialletter {信件}
 itmdescr_specialletter {一封密封信件。 要阅读它, 必须先拆封。}
@@ -995,7 +1016,8 @@ itmdescr_Tool {从造船厂偷来的造船工具。}
 itmname_Tailor_Tool {裁缝工具}
 itmdescr_Tailor_Tool
 {
-经验丰富的流浪者用于独自克服所 有困难的旅行缝纫工具包。 在熟练的手中, 剪刀、 针、 钩子和顶针可以创造真正的奇迹!
+经验丰富的流浪者用于独自克服所 有困难的旅行缝纫工具包。 
+在熟练的手中, 剪刀、 针、 钩子和顶针可以创造真正的奇迹!
 }
 itmname_Mechanic_Tool {工作台与工具箱}
 itmdescr_Mechanic_Tool {包含小型维修所需设备的便捷箱子  - 对任何喜欢在业余时间小修小补的 人来说都是一大帮助。}
@@ -1024,7 +1046,8 @@ itmdescr_Ultimate_potion {一种神奇的药水, 即使最严重的疾病或最�
 itmname_berserker_potion {奥美托奇利酊剂}
 itmdescr_berserker_potion
 {
-一种传奇药水, 可释放超人的力量和耐力, 提高敏捷性和反应速度, 并使服用者免受疼痛。 此效果每分钟持续不超过12秒。 会损害您的健康。
+一种传奇药水, 可释放超人的力量和耐力, 提高敏捷性和反应速度, 并使服用者免受疼痛。 
+此效果每分钟持续不超过12秒。 会损害您的健康。
 }
 itmname_mangarosapower {巨浪药水}
 itmdescr_mangarosapower {用曼加罗萨依照阿梅莉娅的配方酿 制的药剂。 散发着火药与熏木的气息, 夹杂着硫磺的辛烈。其香仿佛召唤 你前往炮甲板—雷鸣轰响, 硝烟遮天。}
@@ -1055,7 +1078,8 @@ itmdescr_cannabis6 {用于药水。}
 itmname_cannabis7 {曼加罗萨}
 itmdescr_cannabis7
 {
-这种灌木的叶子被当地原住民高度 重视。 有人说这种植物拥有只有少数开明 人士才能理解的神秘特性。
+这种灌木的叶子被当地原住民高度 重视。 
+有人说这种植物拥有只有少数开明 人士才能理解的神秘特性。
 }
 itmname_GunPowder {火药}
 itmdescr_GunPowder {硫、 木炭和硝石 (硝酸钾) 的混合物。 任何火器运作都需要的物质。 火药消耗量因武器类型而异。}
@@ -1064,7 +1088,8 @@ itmdescr_bullet {通用滑膛枪和手枪弹丸。 弹丸造成的伤害取决�
 itmname_grapeshot {葡萄弹}
 itmdescr_grapeshot
 {
-铅制葡萄弹或大型鹿弹。 仅在使用霰弹枪射击时使用。 可同时对多个目标造成伤害。 枪管能装填的葡萄弹数量取决于所 使用的武器。
+铅制葡萄弹或大型鹿弹。 仅在使用霰弹枪射击时使用。 可同时对多个目标造成伤害。 
+枪管能装填的葡萄弹数量取决于所 使用的武器。
 }
 itmname_cartridge {纸质弹药筒}
 itmdescr_cartridge {将火药、铅弹和垫纸组合在一起的 弹药。 用油纸包裹以防潮湿。使用后可大 幅加快装填速度, 并因火药燃烧更均匀而提升伤害。}
@@ -1087,14 +1112,16 @@ itmdescr_GunCap_colt {用雷酸银制作的铜制火帽。 柯尔特左轮手枪
 itmname_GunEchin {钉子弹片}
 itmdescr_GunEchin
 {
-用于大口径霰弹枪的粗切钉子。 它们对人体和枪管都有毁灭性效果。 由于其形状, 它们会减少武器的散布。
+用于大口径霰弹枪的粗切钉子。 它们对人体和枪管都有毁灭性效果。 
+由于其形状, 它们会减少武器的散布。
 }
 itmname_bullet_double {双倍子弹装填}
 itmdescr_bullet_double {双倍装填的火药和子弹配有一枚切 碎的杜布隆币以求好运。 需要火药测试仪来防止枪管破裂的 风险增加。}
 itmname_grapeshot_double {双倍葡萄弹装填}
 itmdescr_grapeshot_double
 {
-增量的火药装药和葡萄弹, 配有一枚切碎的杜布隆币以求好运。 其效果取决于使用的武器。 没有火药测试仪时, 枪管破裂的风险会增加。
+增量的火药装药和葡萄弹, 配有一枚切碎的杜布隆币以求好运。 其效果取决于使用的武器。 
+没有火药测试仪时, 枪管破裂的风险会增加。
 }
 itmname_ArmoryPaper {火药纸}
 itmdescr_ArmoryPaper {这种纸是用石蜡浸渍纸基制成的。 在加勒比地区, 它相当稀有且昂贵, 主要用于包装食物, 但在巧手之下也能派上其他用场。}
@@ -1115,7 +1142,7 @@ itmdescr_Mineral6 {一个小巧的袖珍镜子。 在里面你几乎连自己的
 itmname_Mineral7 {瓷烟斗}
 itmdescr_Mineral7 {荷兰手工艺品, 采用从中国人那里偷来的技术制作。 比廉价的陶土烟斗更精致, 因此在当地吸烟者中很受欢迎。}
 itmname_Mineral8 {鞋子}
-itmdescr_Mineral8 {一只没有配对的鞋子。 不祥之兆。 }
+itmdescr_Mineral8 {一只没有配对的鞋子。 不祥之兆。}
 itmname_Mineral9 {旧杯子}
 itmdescr_Mineral9 {一个失去光泽的旧锡镴杯子。}
 itmname_Mineral10 {燧石}
@@ -1161,7 +1188,7 @@ itmdescr_Mineral29 {硝酸自8世纪起就为人所知。 假设你有一个耐�
 itmname_Mineral30 {奴隶手铐}
 itmdescr_Mineral30 {奴隶贩子用来防止他们的'财产' 逃跑的手铐。}
 itmname_Mineral31 {附魔骨头}
-itmdescr_Mineral31 {一根带有铜环的人类指骨。 伏都教女巫用于施法。 }
+itmdescr_Mineral31 {一根带有铜环的人类指骨。 伏都教女巫用于施法。}
 itmname_Mineral32 {子弹模具}
 itmdescr_Mineral32 {这个装置可以铸造出适合柯尔特左 轮手枪尺寸和形状的子弹。}
 itmname_Mineral33 {纹身染料}
@@ -1233,7 +1260,8 @@ itmdescr_FernandoDeAlavidaJournal {Fernando de Alavida 的航海日志。}
 itmname_FernandoDeAlavidaPismo {揉皱的信}
 itmdescr_FernandoDeAlavidaPismo
 {
-一张揉皱的纸, 显然是在愤怒中扔掉的, 被粗心地扔到了舱室的一个遥远角 落。 墨水已经晕染, 只剩下最后几行清晰可见: '... 但我强烈建议不要将宝藏存放在地 窖里。 最近, 岛上关于异教盗墓者的谣言越来越 多, 我担心主的安息之地可能会受到威 胁.'
+一张揉皱的纸, 显然是在愤怒中扔掉的, 被粗心地扔到了舱室的一个遥远角 落。 墨水已经晕染, 只剩下最后几行清晰可见: 
+'... 但我强烈建议不要将宝藏存放在地 窖里。 最近, 岛上关于异教盗墓者的谣言越来越 多, 我担心主的安息之地可能会受到威 胁.'
 }
 itmname_MC_Letter {密封信}
 itmdescr_MC_Letter {给 Richard Fleetwood 的信, 内容是 Abigail 的赎金条款。}
@@ -1367,7 +1395,8 @@ itmdescr_kaleuche_amulet35_potion {由加勒比印第安人萨满 Tuttuathapak �
 itmname_kaleuche_letter {卷起的便条}
 itmdescr_kaleuche_letter
 {
-在午夜沿着从城门进入丛林的路径 寻找收件人。 ... 三天后船将抵达切图马尔峡。 货物将在夜间装上两艘救生艇。 第二艘船将在卸载后仅一天抵达...
+在午夜沿着从城门进入丛林的路径 寻找收件人。 
+... 三天后船将抵达切图马尔峡。 货物将在夜间装上两艘救生艇。 第二艘船将在卸载后仅一天抵达...
 }
 itmname_kaleuche_key {钢钥匙}
 itmdescr_kaleuche_key {Reginald Jackson 用于巴巴多斯灯塔箱子的钥匙。}
@@ -1378,7 +1407,8 @@ itmdescr_MerrimanBook {Joachim Merriman 巢穴中的金属箱。}
 itmname_KhaelRoa_item {美洲豹皮}
 itmdescr_KhaelRoa_item
 {
-查维纳维酋长的华丽礼物 - 一张美丽的美洲豹皮, 由神尤姆.西米利亲自附魔。 将火器造成的伤害增加10倍。 效果持续长达2天。
+查维纳维酋长的华丽礼物 - 一张美丽的美洲豹皮, 由神尤姆.西米利亲自附魔。 
+将火器造成的伤害增加10倍。 效果持续长达2天。
 }
 itmname_key_candlestick_PortRoyal {钥匙}
 itmdescr_key_candlestick_PortRoyal {一把旧而磨损的钥匙。 还不清楚它能打开什么。}
@@ -1418,7 +1448,8 @@ itmdescr_key_ruins {在废墟中找到的一枚失去光泽的银 钥匙。}
 itmname_indian_poison {泰诺人毒药}
 itmdescr_indian_poison
 {
-由秘密植物和有毒青蛙的黏液制成 的致命毒药。 即使是最轻微的划伤也可能致命, 且无法用解毒剂治愈。 这种毒药可用作刀剑和子弹的润滑 油。效果持续两天。
+由秘密植物和有毒青蛙的黏液制成 的致命毒药。 即使是最轻微的划伤也可能致命, 且无法用解毒剂治愈。 这种毒药可用作刀剑和子弹的润滑 油。
+效果持续两天。
 }
 itmname_mapEnrico {Camilla 的地图}
 itmdescr_mapEnrico {它通向20年前失落并被遗弃的西班牙采矿村 庄的宝藏。}
@@ -1473,3 +1504,25 @@ itmdescr_blade_WR_1
 鲁珀特·诺斯伍德的华丽军刀。
 巨大的护手上镶嵌着金色凤凰, 见证痛苦与重生。刀身如镜闪耀, 槽内刻着: VULNERATUS NON VICTUS—“受伤却未被击败”。这把剑夺走了多少灵魂, 唯有上帝知晓……
 }
+itmname_piratesJournal_1 {海盗日记}
+itmdescr_piratesJournal_1 {由廉价材料制成的破旧文件, 显然已经更换过不止一位主人。记录着袭击与走私。}
+itmname_piratesJournal_2 {海盗航海日志}
+itmdescr_piratesJournal_2 {一本包覆煮制皮革的海盗航海日志。内页以工整的字迹记录了对商队的掠夺以及公海上的勒索行为。}
+itmname_piratesJournal_3 {海盗法典}
+itmdescr_piratesJournal_3 {厚重的船用文件, 包覆着皮革与金属。饰有浮雕与宝石的华丽封面价值连城。内部的记录堪比冒险小说：对殖民地的袭击、洗劫王室船队、大规模海战。}
+itmname_pistol15 {荣誉手枪}
+itmdescr_pistol15 {定制礼品,十七人议会为纪念在尊贵的荷兰西印度公司效力五周年而赠。}
+itmname_VD_Contract {Van Doorn的合同}
+itmdescr_VD_Contract {船舶登记处主管的原始合同。七年前已到期。如此重要的文件在你到来前就这么凑巧地摆在桌上,实在可疑。}
+itmname_BookSp4 {奇怪的书}
+itmdescr_BookSp4 {这本书不仅封面颜色与众不同,重量也异于常书。}
+itmname_Doc1Sp4 {巴西事务报告}
+itmdescr_Doc1Sp4 { }
+itmname_Doc2Sp4 {来自安提瓜的信}
+itmdescr_Doc2Sp4 { }
+itmname_VD_key {Van Doorn的钥匙}
+itmdescr_VD_key {打开船舶登记处的地窖。}
+itmname_CatharinaLetter {Catharina的来信}
+itmdescr_CatharinaLetter {用上等纸张写就的信件,至今仍留有一位美丽多情女子的香气。数周前送达,却从未被拆阅。}
+itmname_Visser_Key {Maarten Visser的把柄}
+itmdescr_Visser_Key {证明Maarten Visser收受了Michael Rosenkraft船长的贿赂,将其录入船舶登记册。}

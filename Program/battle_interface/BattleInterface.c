@@ -2116,7 +2116,7 @@ void SetParameterData()
 	BattleInterface.textinfo.Date.pos.x = sti(showWindow.right) - RecalculateHIcon(makeint(148 * fHtRatio));
 	if(iCompassPos) BattleInterface.textinfo.Date.pos.y = RecalculateVIcon(makeint(300 * fHtRatio));
 	else BattleInterface.textinfo.Date.pos.y = RecalculateVIcon(makeint(52 * fHtRatio));
-	BattleInterface.textinfo.Date.text = GetQuestBookData();//GetDataDay()+" "+XI_ConvertString("target_month_" + GetDataMonth())+" "+GetDataYear();
+	BattleInterface.textinfo.Date.text = GetQuestBookData();//GetDataDay()+" "+XI_ConvertString("MonthGen_" + GetDataMonth())+" "+GetDataYear();
 	BattleInterface.textinfo.Date.refreshable = true;
 
 	BattleInterface.textinfo.Balls.font = "interface_normal";

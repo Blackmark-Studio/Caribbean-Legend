@@ -1080,7 +1080,7 @@ Quando avrò portato a termine la mia grande opera, queste acque saranno purific
 #QUEST LegendaryShips
 Informazioni sulle navi leggendarie
 #TEXT	1
-Santa Misericordia
+"Santa Misericordia"
 ***********************
 Holy Mercy è stata inviata dall'Escorial in Europa per sorvegliare le colonie spagnole. Il suo capitano, Don Alamida, è un celebre servitore della corona spagnola: spietato contro la corruzione e il crimine, e fervente difensore della fede cattolica.
 Holy Mercy naviga tra le colonie, iniziando e terminando il suo viaggio all'Avana, dedicandosi unicamente alla sua missione.
@@ -1101,6 +1101,9 @@ Se non trasportate esseri umani, Grim non vi toccherà. È strano, ma ha i suoi 
 La 'Memento' naviga tra gli insediamenti dei pirati, ma attracca raramente. L’equipaggio vive a bordo per mesi, come se avesse paura di mettere piede a terra. Si dice anche che la nave abbia superato un’epidemia mostruosa — per questo l’equipaggio è così difficile da uccidere.
 Se pensate di attaccarli — portate molti cannoni. Abbordare la 'Memento' è quasi impossibile — l’equipaggio combatte come posseduto, come se non temesse la morte. L’unico modo per sconfiggerli è fare a pezzi la nave, togliendogli il rifugio. Le schegge non li spaventano, ma un colpo diretto di mitraglia — è tutta un’altra storia.
 In bocca al lupo. E ricordate la morte.
+"Amsterdam"
+***********************
+L'ammiraglia della stimata Compagnia Olandese delle Indie Occidentali. Tutto ciò che riguarda questa nave è avvolto nel segreto. È comandata da Hendrik van Doorn, capo del dipartimento di registrazione navale a Curaçao – un uomo di straordinaria efficienza che offre servizi preziosissimi ai capitani più ricchi e influenti. Provate a entrare nel loro circolo, e forse scoprirete di più.
 
 #QUEST StoriesTreasures
 Racconti di Tesori
@@ -1617,8 +1620,24 @@ Estratti dal diario di Diego Velázquez de Cuéllar
 
 "Dopo quell’esecuzione cominciai a notare cose strane. Di giorno i monaci predicavano la grazia di Dio, ma la notte le ombre intorno cominciavano a prendere vita. Mi sembrava di udire i pianti delle donne, le grida dei bambini e le maledizioni dei selvaggi risuonare nelle mie orecchie. La notte scorsa uno dei marinai è morto. Il suo corpo fu trovato lacerato a brandelli, come se belve selvagge lo avessero assalito. Ordinai a tutti di pregare, ma le preghiere furono inutili. Ora sono certo: è Atuéy. Ci ha lanciato una maledizione. Questi barbari non perdonano mai."
 
-"La maledizione… Non mi abbandona. Nidifica dentro di me come un serpente avvolto intorno al cuore. Ogni notte vedo capanne in fiamme, sento urla e gemiti dei morti che mi chiamano a rendere conto. I loro scheletri carbonizzati si ergono dalle ceneri, le orbite vuote mi guardano con odio. Anche ora, in questa stanza, sento i loro passi. La porta scricchiola lentamente, come se qualcuno stesse entrando, ma non vedo nessuno. Le mani tremano così forte che il pennino quasi non obbedisce. Non c’è salvezza. Il Signore mi ha abbandonato, come io ho abbandonato la misericordia. Sono già vicini. Presto verranno a prendermi..."
+"La maledizione... Non mi abbandona. Nidifica dentro di me come un serpente avvolto intorno al cuore. Ogni notte vedo capanne in fiamme, sento urla e gemiti dei morti che mi chiamano a rendere conto. I loro scheletri carbonizzati si ergono dalle ceneri, le orbite vuote mi guardano con odio. Anche ora, in questa stanza, sento i loro passi. La porta scricchiola lentamente, come se qualcuno stesse entrando, ma non vedo nessuno. Le mani tremano così forte che il pennino quasi non obbedisce. Non c’è salvezza. Il Signore mi ha abbandonato, come io ho abbandonato la misericordia. Sono già vicini. Presto verranno a prendermi..."
 
+#QUEST Doc1Sp4
+Rapporto sugli Affari Brasiliani
 
+#TEXT 1
+RAPPORTO RISERVATO PER IL DIRETTORATO Curaçao, maggio 1654 OGGETTO: Situazione nel Brasile portoghese
+SITUAZIONE MILITARE Le nostre perdite in Brasile continuano ad aumentare. Il colonnello Sebastião Tavora ha inflitto una serie di colpi dolorosi alle nostre posizioni costiere l'anno scorso. Tre delle nostre navi affondate, fortificazioni costiere distrutte.
+SITUAZIONE POLITICA L'intelligence riporta notizie curiose da Lisbona. Nonostante i suoi successi militari, il capitano Tavora è caduto in disgrazia a corte. Il motivo - la sua aperta opposizione ai circoli commerciali influenti che negoziano segretamente con noi per ripristinare i legami commerciali.
+STATO ATTUALE Secondo le ultime informazioni, Tavora e sua figlia sono stati mandati in onorevole esilio. La sua attuale ubicazione è al momento sconosciuta.
+RACCOMANDAZIONI A tutti gli agenti è ordinato di determinare l'attuale posizione del colonnello Tavora. La presenza anche di un patriota caduto in disgrazia e idealista con brillante preparazione militare vicino alle sfere di attività della Compagnia è indesiderabile.
+CONCLUSIONE La guerra continua, ma l'equilibrio si sta spostando a nostro favore, grazie ai collegamenti e alla solidarietà nei circoli d'affari.
+Direttore Facente Funzione, Lucas Rodenburg
 
+#QUEST Doc2Sp4
+Lettera da Antigua
 
+#TEXT 1
+D. Ho riflettuto bene sulla tua proposta e la mia risposta è no. E la lealtà all'ufficio non c'entra niente. A Curaçao siedono bastardi avidi quanto tutti noi. Sai benissimo che li avrei sventrati tutti fino all'ultimo dopo che quel tacchino ha gettato me e i miei uomini ai lupi inglesi. 
+Dì quello che vuoi, ma il nostro Leviatano è l'unica cosa che tiene questa frontiera selvaggia in un ordine relativo. Le cambiali e i registri navali sono la cosa migliore che abbia portato a questo mondo. So che dirai che faresti meglio, ma se non fosse così? E allora? Alle teste coronate d'Europa non importa un fico secco di noi, e la natura aborre il vuoto. Pensi che staremo tutti meglio quando quella feccia di baroni pirati prenderà il potere? 
+Mi hai coperto le spalle allora, quindi non ti denuncerò. Meglio che torni dalla tua famiglia, amico. M.

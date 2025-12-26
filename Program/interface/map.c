@@ -495,14 +495,18 @@ void wdmRecalcReloadToSea()
                                         case SPAIN:		loadScr = "interfaces\le\worldmapenc\elc.tga";	break;
                                         case HOLLAND:	loadScr = "interfaces\le\worldmapenc\mf.tga";	break;
                                     }
-									totalInfo = XI_ConvertString("someone follows") + totalInfo + 
-												StringFromKey("QuestsUtilite_278") + GetStrSmallRegister(XI_ConvertString(GetShipTypeName(rChar))) + 
-												" '" + rChar.Ship.Name + "'.";
-								break;
+									totalInfo = XI_ConvertString("someone follows") + totalInfo + StringFromKey("QuestsUtilite_278") + GetStrSmallRegister(XI_ConvertString(GetShipTypeName(rChar))) + " '" + rChar.Ship.Name + "'.";
+                                    break;
+
+                                case "BigBrigadier":
+                                    loadScr = "interfaces\le\worldmapenc\ams.tga";
+									totalInfo = StringFromKey("QuestsUtilite_331");
+                                    break;
+
                                 case "BountyHunter":
 									loadScr = "interfaces\le\worldmapenc\hunters.tga";
 									totalInfo = XI_ConvertString("someone sails") + totalInfo;
-                                break;
+                                    break;
                             }
                         }
                         else

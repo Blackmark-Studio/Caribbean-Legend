@@ -3741,18 +3741,23 @@ void ProcessDialogEvent()
 			dialog.text = "Valóban, ez elfogadható lenne. Melyik konkrét hajó érdekli?";
 			if (GetDLCenabled(DLC_APPID_4) && !CheckAttribute(pchar, "questTemp.SantaMisericordia_InfoPU") && CharacterIsAlive("SantaMisericordia_cap"))
 			{
-				link.l1 = "Galleon 'Holy Mercy'.";
+				link.l1 = "Galleon '"+GetShipName("Holy Mercy")+"'.";
 				link.l1.go = "UniqueShips_SantaMisericordia";
 			}
 			if (GetDLCenabled(DLC_APPID_5) && !CheckAttribute(pchar, "questTemp.LadyBeth_InfoPU") && CharacterIsAlive("LadyBeth_cap"))
 			{
-				link.l2 = "Havas ôrjárat 'Lady Beth'.";
+				link.l2 = "Havas ôrjárat '"+GetShipName("Lady Beth")+"'.";
 				link.l2.go = "UniqueShips_LadyBeth";
 			}
 			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Memento_InfoPU") && CharacterIsAlive("Memento_cap"))
 			{
-				link.l3 = "Brig 'Memento'.";
+				link.l3 = "Brig '"+GetShipName("Memento")+"'.";
 				link.l3.go = "UniqueShips_Memento";
+			}
+			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Amsterdam_InfoPU"))
+			{
+				link.l4 = "Company Flagship '"+GetShipName("Amsterdam")+"'.";
+				link.l4.go = "UniqueShips_Amsterdam";
 			}
 			link.l99 = "Azt hiszem, eleget tudok.";
 			link.l99.go = "node_2";
@@ -3787,6 +3792,15 @@ void ProcessDialogEvent()
 			"Ha azt tervezed, hogy felveszed velük a harcot, pakolj több ágyút. A 'Memento' fedélzetére lépni szinte lehetetlen - a legénység úgy harcol, mintha megszállottak lennének, mintha nem félnének a haláltól. Az egyetlen módja, hogy legyôzzük ôket, ha szilánkokra robbantjuk a hajót, és elvisszük a menedéküket. A szilánkok nem ijesztik meg ôket, de a közvetlen grapeshot-találatok - az már más kérdés.\n"+
 			"Sok sikert. És ne feledjétek a halált.";
 			link.l1 = "Köszönjük szépen.";
+			link.l1.go = "node_2";
+		break;
+		
+		case "UniqueShips_Amsterdam":
+			AddMoneyToCharacter(pchar, -25000);
+			AddQuestRecordInfo("LegendaryShips", "4");
+			pchar.questTemp.Amsterdam_InfoPU = true;
+			dialog.text = "The flagship of the esteemed Dutch West India Company. Everything about this vessel is shrouded in secrecy. She's commanded by Hendrik van Doorn, head of the naval registry department on Curaçao — an exceptionally efficient man who provides invaluable services to the wealthiest and most influential captains. Try to earn a place among them, and you may learn more.";
+			link.l1 = "Thank you very much.";
 			link.l1.go = "node_2";
 		break;
 		

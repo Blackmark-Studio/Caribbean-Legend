@@ -3687,18 +3687,23 @@ void ProcessDialogEvent()
 			dialog.text = "Пожалуй. Какое именно судно вас интересует?";
 			if (GetDLCenabled(DLC_APPID_4) && !CheckAttribute(pchar, "questTemp.SantaMisericordia_InfoPU") && CharacterIsAlive("SantaMisericordia_cap"))
 			{
-				link.l1 = "Галеон 'Святое Милосердие'.";
+				link.l1 = "Галеон '"+GetShipName("Holy Mercy")+"'.";
 				link.l1.go = "UniqueShips_SantaMisericordia";
 			}
 			if (GetDLCenabled(DLC_APPID_5) && !CheckAttribute(pchar, "questTemp.LadyBeth_InfoPU") && CharacterIsAlive("LadyBeth_cap"))
 			{
-				link.l2 = "Шнява 'Леди Бет'.";
+				link.l2 = "Шнява '"+GetShipName("Lady Beth")+"'.";
 				link.l2.go = "UniqueShips_LadyBeth";
 			}
 			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Memento_InfoPU") && CharacterIsAlive("Memento_cap"))
 			{
-				link.l3 = "Бриг 'Мементо'.";
+				link.l3 = "Бриг '"+GetShipName("Memento")+"'.";
 				link.l3.go = "UniqueShips_Memento";
+			}
+			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Amsterdam_InfoPU"))
+			{
+				link.l4 = "Флагман компании '"+GetShipName("Amsterdam")+"'.";
+				link.l4.go = "UniqueShips_Amsterdam";
 			}
 			link.l99 = "Думаю, я знаю достаточно.";
 			link.l99.go = "node_2";
@@ -3732,6 +3737,15 @@ void ProcessDialogEvent()
 			"'Мементо' курсирует между пиратскими поселениями, но почти никогда не причаливает. Команда живёт на корабле месяцами, словно боится ступить на твёрдую землю. А ещё ходят слухи, что корабль когда-то пережил чудовищную эпидемию - потому экипаж так просто не убить\n"+
 			"Если вздумаете на них напасть - берите побольше пушек. Взять 'Мементо' на абордаж практически невозможно - команда сражается как одержимая, словно смерти не боится. Единственный способ их одолеть - расстрелять корабль в щепки, чтобы лишить укрытия. Осколки и щепа их не пугают, а вот прямые попадания картечью - совсем другое дело\n"+
 			"Удачи вам. И помните о смерти.";
+			link.l1 = "Спасибо большое.";
+			link.l1.go = "node_2";
+		break;
+		
+		case "UniqueShips_Amsterdam":
+			AddMoneyToCharacter(pchar, -25000);
+			AddQuestRecordInfo("LegendaryShips", "4");
+			pchar.questTemp.Amsterdam_InfoPU = true;
+			dialog.text = "Флагман досточтимой Голландской Вест-Индской Компании. Всё, что касается этого корабля, держится в тайне. Командует им Хендрик ван Дорн, руководитель департамента корабельного учёта на Кюрасао. Невероятно эффективный человек, который оказывает ценнейшие услуги самым богатым и влиятельным капитанам. Попробуйте попасть в их число — и вы узнаете больше.";
 			link.l1 = "Спасибо большое.";
 			link.l1.go = "node_2";
 		break;

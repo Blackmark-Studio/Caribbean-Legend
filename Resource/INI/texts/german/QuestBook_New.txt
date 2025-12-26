@@ -980,3 +980,24 @@ Als ich mich bereit erklärte, den alten Mann zu begleiten, hätte ich nie gedac
 #TEXT	4
 Das Tagebuch ist abgeschlossen. Ich habe Gonsalo dorthin zurückgebracht, wo ich ihn getroffen habe — nach Sharptown. Möge er in Frieden leben, falls ihn die Albträume wirklich verlassen haben. Und ich halte besser den Mund — solche Geschichten wenden sich leicht gegen den Erzähler.
 
+#QUEST ClockTower
+Uhrenturm
+#TEXT	1
+Anscheinend handelt die WIC nicht nur mit nutzlosen Lizenzen und Werkzeugen. Wenn ich mich für sie nützlich mache, wird vielleicht die Kompanie auch für mich nützlich. Am offensichtlichsten ist es, meinen Ruf bei den holländischen Kolonien bis zur Bewunderung zu steigern.
+#TEXT	2
+Ich habe genug für die Republik der Freien Provinzen getan. Zeit, mit diesem netten Burschen Johan zu reden, dem Wachposten am Schiffsregisterbüro.
+#TEXT	3
+Erstaunlich, dass dieser Laden noch über Wasser hält! Meine Dublonen reichen ihnen nicht, also muss ich auf Piratenjagd gehen und fünf Schiffstagebücher sammeln. Ich könnte auch mehr besorgen, da sie mir deutlich gemacht haben, dass das Kontor in Zukunft bereit sein wird, dafür großzügig zu zahlen. Hätte ich das nur früher gewusst…
+#TEXT	4
+Tagebücher gesammelt. Zeit, mit Johan zu reden.
+#TEXT	5
+Was für ein langer Tag. Willemstad wird die Ankunft des Direktors noch lange in Erinnerung behalten. Und obwohl ich jetzt ein Klient bin und van Doorn unglaublich höflich zu mir war… habe ich ein weiteres Jobangebot. Ich muss nachts in den Turm einbrechen und van Doorns Originalvertrag stehlen. Sie haben mir eine Belohnung in Dublonen und unbegrenzten Zugang zu den Diensten des Kontors versprochen.
+#TEXT	6
+Ich habe den Vertrag! Van Doorn hat sich wirklich zu lange in seinem Turm aufgehalten. Stellvertreter Visser wird außer sich vor Freude sein. Ich kann ihn tagsüber im zentralen Flügel des Gebäudes finden.
+#TEXT	7
+Jetzt bleibt nur noch zu warten. Ich sollte Visser in ein paar Monaten besuchen und herausfinden, wie sein Putsch verlaufen ist.
+#TEXT	8
+Ich denke, genug Zeit ist vergangen. Zeit, nach Visser auf Curaçao zu sehen.
+#TEXT	9
+Das war's. Der Stellvertreter… oder vielmehr Direktor Maarten Visser hat bekommen, was er wollte, und sein Wort gehalten: Ich kann die Dienste des Kontors jederzeit nutzen, ohne diese lächerlichen Termine. Van Doorn hat natürlich von meiner Beteiligung an dieser zweifelhaften Angelegenheit erfahren, aber ich habe nichts von der Macht seiner legendären Fregatte zu befürchten. Das WIC-Flaggschiff wird nur dann nach meiner Seele kommen, wenn die Holländer mich für eine ausreichende Bedrohung ihrer Interessen halten. Man sagt, dieses Schiff sei ein wahres Juwel der Karibik… verlockend, verdammt.
+

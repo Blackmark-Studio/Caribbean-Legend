@@ -328,3 +328,4 @@ QuestsUtilite_327 {Hephaistos}
 QuestsUtilite_328 {Zenturio}
 QuestsUtilite_329 {Die Piraten sind besiegt, die Gewässer sind sicherer geworden.}
 QuestsUtilite_330 {Die Piraten sind stärker geworden, das Meer ist gefährlicher geworden.}
+QuestsUtilite_331 {Kapitän, die Amsterdam! Glückwunsch — die Kompanie betrachtet Sie jetzt als ernsthafte Bedrohung.}

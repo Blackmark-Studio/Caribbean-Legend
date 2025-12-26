@@ -56,3 +56,6 @@ duelist {Spadaccino}
 smuggler {Contrabbandiere}
 AffairOfHonor_tavern {Ubriacone disperato}
 hovernon_wife {Moglie del governatore}
+Director {Direttore}
+Deputy Director {Vice Direttore}
+Naval Registry Guard {Guardia del Registro Navale}

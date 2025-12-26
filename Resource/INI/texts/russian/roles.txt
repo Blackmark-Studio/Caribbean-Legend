@@ -56,3 +56,6 @@ duelist {Бретер}
 smuggler {Контрабандист}
 AffairOfHonor_tavern {Отчаянный пьяница}
 hovernon_wife {Жена губернатора}
+Director {Управляющий}
+Deputy Director {Заместитель управляющего}
+Naval Registry Guard {Охрана конторы}

@@ -18,7 +18,7 @@ void ProcessDialogEvent()
 				if (pchar.questTemp.HWIC.Holl == "AbbyInHouse")
 				{
 					dialog.text = "Dzień dobry, mynheer. Co cię sprowadza do naszego domu?";
-					link.l1 = "Dzień dobry, Abigail. Nazywam się "+GetFullName(pchar)+". Służę Holenderskiej Kompanii Zachodnioindyjskiej jako kapitan.";
+					link.l1 = "Dzień dobry, Abigail. Nazywam się "+GetFullName(pchar)+". Służę Republice Holenderskiej Kompanii Zachodnioindyjskiej jako kapitan.";
 					link.l1.go = "AbbyAndLucas";
 					DelLandQuestMark(npchar);
 					break;
@@ -434,7 +434,7 @@ void ProcessDialogEvent()
 		
 		case "Abigile_return_4":
 			dialog.text = "Ja... jestem zgubiona. Nie wiem. Charles... proszę... zabierz mnie do Willemstad. Potrzebuję mojego taty...";
-			link.l1 = "Oczywiście, moja droga. Z Bridgetown już cię nic nie łączy. Spakuj swoje rzeczy i pożegnaj się z Johnem. A potem natymiast wyruszymy w morze.";
+			link.l1 = "Oczywiście, moja droga. Z St. John's już cię nic nie łączy. Spakuj swoje rzeczy i pożegnaj się z Johnem. A potem natymiast wyruszymy w morze.";
 			link.l1.go = "Abigile_return_5";
 		break;
 		

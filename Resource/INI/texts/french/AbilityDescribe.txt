@@ -5,7 +5,7 @@ newline
 BasicDefense {Défense de base}
 perkBasicDefense {Réduit les dégâts subis de $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Défense avancée}
-perkAdvancedDefense {Réduit les dégâts subis de $percent($perkBaseValue(AdvancedDefense|1)) et les dégâts critiques ennemis de $percent($perkBaseValue(AdvancedDefense|2)).}
+perkAdvancedDefense {Réduit les dégâts subis de $percent($perkBaseValue(AdvancedDefence|1)) et les dégâts critiques ennemis de $percent($perkBaseValue(AdvancedDefence|2)).}
 CriticalHit {Coup critique}
 perkCriticalHit {Augmente la chance de coup critique de base de 3,5 %.}
 Grus {Échine solide}
@@ -21,12 +21,10 @@ perkSliding {Une attaque tranchante ou une estocade avec une arme légère peut 
 Gunman {Mousquetaire}
 perkGunman
 {
-Augmente les dégâts et la vitesse de rechargement des armes à feu de $percent($perkBaseValue(Gunman|1)). Permet d’utiliser des armes à deux mains à un seul coup et des armes à une main à plusieurs coups.
- ~
- Les officiers ne peuvent utiliser $key(descriptor_TwoHanded|ItemsDescriptors.txt) que s’ils en reçoivent l’ordre explicite.
+Augmente les dégâts et la vitesse de rechargement des armes à feu de $percent($perkBaseValue(Gunman|1)). Permet d’utiliser des armes à deux mains à un seul coup et des armes à une main à plusieurs coups. ~ Les officiers ne peuvent utiliser $key(descriptor_TwoHanded|ItemsDescriptors.txt) que s’ils en reçoivent l’ordre explicite.
 }
 GunProfessional {Tirailleur}
-perkGunProfessional {Augmente les dégâts et la vitesse de rechargement des armes à feu de $percent($perkBaseValue(GunProfessional|1)). Débloque l’utilisation des armes à feu à deux mains multi-coup.}
+perkGunProfessional {Augmente les dégâts et la vitesse de rechargement des armes à feu de $percent($perkBaseValue(GunProfessional|1)). Débloque l’utilisation des armes à feu à plusieurs coups à deux mains.}
 IronWill {Volonté de fer}
 perkIronWill {Permet de survivre à une blessure mortelle toutes les 3 minutes.}
 SharedExperience {Apprenti rapide}
@@ -48,9 +46,7 @@ perkTrustworthy {Débloque des options de persuasion alternatives dans certains 
 ShipEscape {Seconde chance}
 perkShipEscape
 {
-Sauvetage en canot de sauvetage depuis le navire du héros en perdition vers un autre navire de la flotte.
-Permet, en combat, lorsque la coque du navire passe sous 15 %, d’utiliser le menu de cale pour transférer ou passer sur un autre navire de la flotte.
-Si un compagnon possède cette compétence, il s’échappera d’un navire coulant ou brûlant et reviendra comme passager sur le navire du héros en lançant un canot de sauvetage.
+Sauvetage en canot de sauvetage depuis le navire du héros en perdition vers un autre navire de la flotte.Permet, en combat, lorsque la coque du navire passe sous 15 %, d’utiliser le menu de cale pour transférer ou passer sur un autre navire de la flotte.Si un compagnon possède cette compétence, il s’échappera d’un navire coulant ou brûlant et reviendra comme passager sur le navire du héros en lançant un canot de sauvetage.
 }
 Alchemy {Alchimie}
 perkAlchemy {Les recettes ne nécessitent plus d’Outils. Confère 15 % de chance d’économiser une potion à l’utilisation.}
@@ -75,8 +71,7 @@ perkLongRangeGrappling {La distance d’abordage augmente de 15 %.}
 MusketsShoot {Salve de mousquets}
 perkMusketsShoot
 {
-Une salve de mousquets est tirée avant l’abordage.
-Les pertes infligées dépendent de la classe du navire et du nombre de combattants.
+Une salve de mousquets est tirée avant l’abordage.Les pertes infligées dépendent de la classe du navire et du nombre de combattants.
 }
 GrapplingProfessional {Bosco expert}
 perkGrapplingProfessional {La distance d’abordage augmente de 25 %. Possible sous n’importe quel angle et à toute vitesse.}
@@ -99,50 +94,37 @@ perkSailingProfessional {Vitesse et manœuvrabilité du navire augmentées de 5 
 SeaDogProfessional {Terreur des mers}
 perkSeaDogProfessional
 {
-À la vue du pavillon de la Terreur des Mers, même les aventuriers et hors-la-loi les plus audacieux n’osent défier le destin. Augmente la Puissance de la Flotte de $percent($PerkBaseValue(SeaDogProfessional|1)).
-~
-Compétence réservée au joueur ; nécessite le rang $attr($context.rank).
+À la vue du pavillon de la Terreur des Mers, même les aventuriers et hors-la-loi les plus audacieux n’osent défier le destin. Augmente la Puissance de la Flotte de $percent($PerkBaseValue(SeaDogProfessional|1)).~Compétence réservée au joueur ; nécessite le rang $attr($context.rank).
 }
 FlagPir {Jolly Roger}
 perkFlagPir
 {
-Possibilité de hisser le pavillon Jolly Roger.
-~
-Cette compétence est réservée au joueur.
+Possibilité de hisser le pavillon Jolly Roger.~Cette compétence est réservée au joueur.
 }
 FlagEng {Drapeau de l’Angleterre}
 perkFlagEng
 {
-La chance d’être repéré dépend de la Furtivité, du type et de la taille de votre flotte, de la taille de la flotte ennemie et du niveau de Menace.
-~
-Compétence réservée au joueur
+La chance d’être repéré dépend de la Furtivité, du type et de la taille de votre flotte, de la taille de la flotte ennemie et du niveau de Menace.~Compétence réservée au joueur
 }
 FlagFra {Drapeau de la France}
 perkFlagFra
 {
-La probabilité d’être repéré dépend de la Furtivité, du type et de la taille de votre flotte, de la taille de la flotte ennemie et du niveau de Menace.
-~
-Compétence réservée au joueur
+La probabilité d’être repéré dépend de la Furtivité, du type et de la taille de votre flotte, de la taille de la flotte ennemie et du niveau de Menace.~Compétence réservée au joueur
 }
 FlagSpa {Drapeau d’Espagne}
 perkFlagSpa
 {
-La chance d’être repéré dépend de la Furtivité, du type et de la taille de votre flotte, de la taille de la flotte ennemie et du niveau de Menace.
-~
-Compétence réservée au joueur
+La chance d’être repéré dépend de la Furtivité, du type et de la taille de votre flotte, de la taille de la flotte ennemie et du niveau de Menace.~Compétence réservée au joueur
 }
 FlagHol {Drapeau des Pays-Bas}
 perkFlagHol
 {
-La chance d’être repéré dépend de la Furtivité, du type et de la taille de votre flotte, de la taille de la flotte ennemie et du niveau de Menace.
-~
-Compétence disponible uniquement pour le joueur
+La chance d’être repéré dépend de la Furtivité, du type et de la taille de votre flotte, de la taille de la flotte ennemie et du niveau de Menace.~Compétence disponible uniquement pour le joueur
 }
 Troopers {Tactiques de siège}
 perkTroopers
 {
-Permet de combiner les équipages de votre flotte avant l’assaut d’un fort.
-Réduit le nombre d’équipage requis pour attaquer une colonie depuis la terre.
+Permet de combiner les équipages de votre flotte avant l’assaut d’un fort.Réduit le nombre d’équipage requis pour attaquer une colonie depuis la terre.
 }
 BasicCommerce {Commerce de base}
 perkBasicCommerce {Les achats sont 4% plus rentables. Met en surbrillance les objets demandés dans les banques et marchés.}
@@ -155,30 +137,24 @@ perkCarpenter {La coque et les voiles sont lentement réparées en voyage. Planc
 InstantRepair {Réparation en combat}
 perkInstantRepair
 {
-Réparations rapides en combat jusqu'à 80 % de la durabilité disponible. Nécessite des planches pour la coque et de la toile pour les voiles.
-Peut être activé toutes les 1,5 minutes.
+Réparations rapides en combat jusqu'à 80 % de la durabilité disponible. Nécessite des planches pour la coque et de la toile pour les voiles.Peut être activé toutes les 1,5 minutes.
 }
 LightRepair {Réparation d'urgence}
 perkLightRepair
 {
-Répare 10 % de la coque du navire sans utiliser de ressources. Sans cette compétence, le navire se détériore lentement si la coque passe sous 10 %. 
-Peut être activé toutes les 3 minutes.
+Répare 10 % de la coque du navire sans utiliser de ressources. Sans cette compétence, le navire se détériore lentement si la coque passe sous 10 %. Peut être activé toutes les 3 minutes.
 }
 Builder {Contrôle des avaries}
 perkBuilder {La consommation de planches et de toile lors des réparations est réduite de 25 %.}
 SelfRepair {Réparation complète}
 perkSelfRepair
 {
-La capacité de réparer entièrement votre navire avec votre équipage sur n'importe quel rivage adapté. Nécessite des planches pour la coque et les mâts, et de la toile pour les voiles. Restauration complète de la coque, des voiles et des mâts possible.
-
-Les options de réparation ne sont disponibles qu'à terre, dans les zones côtières.
+La capacité de réparer entièrement votre navire avec votre équipage sur n'importe quel rivage adapté. Nécessite des planches pour la coque et les mâts, et de la toile pour les voiles. Restauration complète de la coque, des voiles et des mâts possible.Les options de réparation ne sont disponibles qu'à terre, dans les zones côtières.
 }
 WindCatcher {Sens marin}
 perkWindCatcher
 {
-Le navire accélère 10 % plus vite.
-
-Augmente la vitesse sur la carte globale dans les eaux connues — si vous avez une carte.
+Le navire accélère 10 % plus vite.Augmente la vitesse sur la carte globale dans les eaux connues — si vous avez une carte.
 }
 SailsMan {Voiles rapides}
 perkSailsMan {Grâce aux dernières méthodes de la carotte et du bâton, toutes les manœuvres de voile sont effectuées 10 % plus vite.}
@@ -216,11 +192,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Mains rapides}
-perkFastHands {Augmente la vitesse de dégainement et de rengainement des armes à feu de $percent($perkBaseValue(FastHands|1)).}
+perkFastHands {Augmente la vitesse de dégainement et de rengainement des armes à feu de 20 %.}
 AmmoRig {Équipement}
-perkAmmoRig {Le rechargement des armes à feu est $percent($perkBaseValue(AmmoRig|1)) plus rapide.}
+perkAmmoRig {Le rechargement des armes à feu est 5 % plus rapide.}
 Preaim {Ajustement}
-perkPreaim {Le mode visée est $percent($perkBaseValue(Preaim|1)) plus rapide.}
+perkPreaim {Le mode visée est 15 % plus rapide.}
 KeenEye {Œil vif}
 perkKeenEye {Les tirs à la tête infligent $percent($perkBaseValue(KeenEye|1)) de dégâts en plus.}
 PowderFeel {Instinct de poudre}
@@ -341,10 +317,7 @@ InstantBoarding {Abordage Instantané}
 Rush {La concoction Ometochtli}
 perkRush
 {
-Concoction enivrante, contribuant à la manifestation instantanée d'une force et d'une endurance considérables, d'une augmentation significative de la dextérité et de la rapidité de réaction, d'une agressivité intense et d'une insensibilité à la douleur.
-Pendant 12 secondes, les attaques du personnage deviennent beaucoup plus puissantes et les dégâts subis sont réduits. 
-~
-Cet avantage a un temps de recharge de 1 minute.
+Concoction enivrante, contribuant à la manifestation instantanée d'une force et d'une endurance considérables, d'une augmentation significative de la dextérité et de la rapidité de réaction, d'une agressivité intense et d'une insensibilité à la douleur.Pendant 12 secondes, les attaques du personnage deviennent beaucoup plus puissantes et les dégâts subis sont réduits. ~Cet avantage a un temps de recharge de 1 minute.
 }
 perkTrustworthy_alternate {En tant qu'officier, le personnage perçoit un salaire réduit de $percent($perkBaseValue(Trustworthy|1)).}
 perkAlchemy_alternate {Donne une chance de $percent($perkBaseValue(Alchemy|1)) de ne pas consommer la potion lors de son utilisation.}

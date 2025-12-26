@@ -477,3 +477,74 @@ void SetLocationCharacterMarksOptions(ref loc)
 	SendMessage(&loc, "lsl", MSG_LOCATION_EX_MSG, "SetAttackMarkMode", bAttack);
 	SendMessage(&loc, "lsl", MSG_LOCATION_EX_MSG, "SetDeadMarkMode", bDead);
 }
+
+#event_handler(EVENT_LOCATION_LOAD, "CallLocHandlers");
+void CallLocHandlers()
+{
+    if (CheckAttribute(loadedLocation, "SpecialHandlers"))
+    {
+        string func;
+        aref aHandlers;
+        makearef(aHandlers, loadedLocation.SpecialHandlers);
+        int Qty = GetAttributesNum(aHandlers);
+        for (int i = 0; i < Qty; i++)
+        {
+            func = GetAttributeValue(GetAttributeN(aHandlers, i));
+            call func();
+        }
+    }
+
+/*
+    if (!CheckAttribute(loadedLocation, "id"))
+        return;
+
+    switch (loadedLocation.id)
+    {
+        // ...
+    }
+*/
+}
+
+void Villemstad_BigClock_Sound()
+{
+    float x = stf(loadedLocation.locators.WindMill.Fan3.x);
+    float y = stf(loadedLocation.locators.WindMill.Fan3.y);
+    float z = stf(loadedLocation.locators.WindMill.Fan3.z);
+    SendMessage(Sound, "lslfff", MSG_SOUND_EVENT_PLAY, "Location/clocks_bell", 0, x, y, z);
+}
+
+void Villemstad_BigClock()
+{
+    int h = GetEventData();
+    RefreshLandTime();
+    Villemstad_BigClock_Sound();
+}
+
+void Villemstad_BigClock_Off()
+{
+    DelEventHandler("NextHour", "Villemstad_BigClock");
+    DelEventHandler(EVENT_LOCATION_UNLOAD, "Villemstad_BigClock_Off");
+}
+
+void HWIC_SetClockSound()
+{
+    if (loadedlocation.id == "Villemstad_ClockTower")
+        SendMessage(Sound, "ls", MSG_SOUND_EVENT_PLAY, "Location/clocks_mechanism_inside");
+
+    SetEventHandler("NextHour", "Villemstad_BigClock_Above", 0);
+    SetEventHandler(EVENT_LOCATION_UNLOAD, "Villemstad_BigClock_Above_Off", 0);
+}
+
+void Villemstad_BigClock_Above()
+{
+    int h = GetEventData();
+    RefreshLandTime();
+    SetCameraShake(4.0, 2.5, 5.0, 0.13, 0.01, true, false, CAM_EASING_SMOOTH_STEP);
+    SendMessage(Sound, "ls", MSG_SOUND_EVENT_PLAY, "Location/clocks_bell_inside");
+}
+
+void Villemstad_BigClock_Above_Off()
+{
+    DelEventHandler("NextHour", "Villemstad_BigClock_Above");
+    DelEventHandler(EVENT_LOCATION_UNLOAD, "Villemstad_BigClock_Above_Off");
+}

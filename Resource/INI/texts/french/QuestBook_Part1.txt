@@ -1081,6 +1081,10 @@ Si vous ne faites pas de commerce humain, Grim ne vous touchera pas. Il est étr
 Le 'Memento' navigue entre les repaires pirates, mais accoste rarement. Son équipage vit à bord pendant des mois, comme s’il craignait de poser le pied à terre. On raconte aussi que le navire a survécu à une terrible épidémie — c’est pour cela que l’équipage est si difficile à tuer.
 Si vous voulez l’affronter, prenez beaucoup de canons. Aborder le 'Memento' est presque impossible — l’équipage se bat comme des possédés, comme s’ils ne craignaient pas la mort. La seule façon de les vaincre est de réduire le navire en miettes pour leur ôter tout abri. Les échardes ne les effraient pas, mais un tir direct à la mitraille, c’est une autre affaire.
 Bonne chance. Et souvenez-vous de la mort.
+#TEXT	4
+"Amsterdam"
+***********************
+Le navire amiral de la prestigieuse Compagnie néerlandaise des Indes occidentales. Tout ce qui concerne ce bâtiment est entouré de mystère. Il est commandé par Hendrik van Doorn, chef du département d'enregistrement des navires à Curaçao – un homme d'une efficacité remarquable, rendant d'inestimables services aux capitaines les plus riches et influents. Essayez de rejoindre leurs rangs, et vous en apprendrez davantage.
 
 #QUEST StoriesTreasures
 Histoires de trésor
@@ -1599,3 +1603,23 @@ Extraits du journal de Diego Velázquez de Cuéllar
 "Après cette exécution je commençai à remarquer des choses étranges. Le jour, les moines prêchaient la grâce de Dieu, mais la nuit, des ombres reprenaient vie autour. Il me semblait entendre les pleurs des femmes, les cris des enfants et les malédictions des sauvages résonner à mes oreilles. La nuit passée un des matelots mourut. Son corps fut retrouvé déchiré comme par des bêtes sauvages. J’ordonnai à tous de prier, mais les prières étaient vaines. Maintenant je suis convaincu : c’est Atuéy. Il nous a jeté une malédiction. Ces barbares ne pardonnent jamais."
 
 "La malédiction… Elle ne me quitte pas. Elle nichant à l’intérieur, comme un serpent enroulé autour du cœur. Chaque nuit je vois des huttes en flammes, j’entends des cris et des gémissements des morts qui m’appellent à rendre des comptes. Leurs squelettes calcinés se dressent des cendres, leurs orbites vides me regardent avec haine. Même maintenant, dans cette chambre, j’entends leurs pas. La porte grince lentement, comme si quelqu’un entrait, mais je ne vois personne. Mes mains tremblent si fort que la plume obéit à peine. Il n’y a pas de salut. Le Seigneur m’a abandonné, comme j’ai abandonné la miséricorde. Ils sont déjà proches. Bientôt ils viendront me chercher..."
+
+#QUEST Doc1Sp4
+Rapport sur les Affaires Brésiliennes
+
+#TEXT 1
+RAPPORT CONFIDENTIEL POUR LE DIRECTORAT Curaçao, mai 1654 OBJET : Situation au Brésil portugais
+SITUATION MILITAIRE Nos pertes au Brésil continuent de s'accumuler. Le colonel Sebastião Tavora a infligé une série de coups douloureux à nos positions côtières l'année dernière. Trois de nos navires coulés, fortifications côtières détruites.
+SITUATION POLITIQUE Le renseignement rapporte des nouvelles curieuses de Lisbonne. Malgré ses succès militaires, le capitaine Tavora est tombé en disgrâce à la cour. La raison - son opposition ouverte aux cercles commerciaux influents qui négocient secrètement avec nous pour rétablir des liens commerciaux.
+ÉTAT ACTUEL Selon les dernières informations, Tavora et sa fille ont été envoyés en exil honorable. Sa localisation actuelle est présentement inconnue.
+RECOMMANDATIONS Tous les agents reçoivent instruction de déterminer la localisation actuelle du colonel Tavora. La présence même d'un patriote disgracié et idéaliste ayant une brillante formation militaire à proximité des sphères d'activité de la Compagnie est indésirable.
+CONCLUSION La guerre continue, mais l'équilibre se déplace en notre faveur, grâce aux connexions et à la solidarité dans les milieux d'affaires.
+Directeur par Intérim, Lucas Rodenburg
+
+#QUEST Doc2Sp4
+Lettre d'Antigua
+
+#TEXT 1
+D. J'ai bien réfléchi à ta proposition et ma réponse est non. Et la loyauté au bureau n'a rien à voir là-dedans. À Curaçao siègent les mêmes bâtards avides que nous tous. Tu sais très bien que je les aurais tous éventrés jusqu'au dernier après que ce dindon nous ait jetés, moi et mes hommes, aux loups anglais. 
+Dis ce que tu veux, mais notre Léviathan est la seule chose qui maintient cette frontière sauvage dans un semblant d'ordre. Les lettres de change et les registres maritimes sont la meilleure chose qu'il ait apportée à ce monde. Je sais que tu diras que tu ferais mieux, mais si ce n'est pas le cas ? Et alors ? Les têtes couronnées d'Europe se foutent de nous, et la nature a horreur du vide. Tu crois qu'on sera tous mieux lotis quand cette racaille de barons pirates prendra le pouvoir ? 
+Tu m'as couvert à l'époque, alors je ne te dénoncerai pas. Rentre plutôt auprès de ta famille, mon ami. M.

@@ -333,6 +333,7 @@ string GetPlayerShipModel()
 		if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_GALEON_SM) return "galeon_sm_player";
 		if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_LADYBETH) return "shnyava_sp2_player";
 		if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_MEMENTO) return "memento_player";
+		if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_AMSTERDAM) return "amsterdam_sp4_player";
 	}
 	return "Ship";
 }

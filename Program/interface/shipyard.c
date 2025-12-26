@@ -2,6 +2,7 @@
 /// Sith, mitrokosta Переделка меню верфи для LE
 #include "interface\character_all.h"
 #include "interface\utils\popup_confirmation.c"
+#include "interface\utils\ship_perks.c"
 ref refCharacter;
 ref refNPCShipyard;
 int shipIndex;
@@ -497,22 +498,19 @@ void FillShipParam(ref _chr)
 		SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"BUYSELL_PRICE",5);
 		SetNodeUsing("TABLE_OTHER", true);
 		SetNodeUsing("SHIP_BIG_PICTURE", true);
-		SetNodeUsing("SHIP_PERK1", true);
-		SetNodeUsing("SHIP_PERK2", true);
 		ShowCannonsMenu();
-		SetShipPerks(_chr);
+		SetShipPerks(_chr, "");
 	}
 	else
 	{
 		SetNewPicture("SHIP_BIG_PICTURE", "interfaces\le\ships\empty_ship.tga");
 		SetNodeUsing("SHIP_BIG_PICTURE", false);
-		SetNodeUsing("SHIP_PERK1", false);
-		SetNodeUsing("SHIP_PERK2", false);
 		SetFormatedText("INFO_CAPTION","");
 		SetFormatedText("INFO_TEXT","");
 		SetFormatedText("BUYSELL_PRICE","");
 		SetNodeUsing("TABLE_OTHER", false);
 		HideCannonsMenu();
+		SetShipPerks(&NullObject, "");
 	}
 	Table_UpdateWindow("TABLE_OTHER");
 }
@@ -581,35 +579,6 @@ void ShowInfoWindow()
 			}
 		break;
 
-		case "SHIP_PERK1":
-			string sPerkName1 = GetShipSpecDesc(rChr);
-			sGroup = "PERKS_SHIPS";
-			sGroupPicture = sPerkName1;
-			sHeader = GetConvertStr(sPerkName1, "ShipsPerksDescribe.txt");
-			sText1 = GetConvertStr(sPerkName1 + "_desc", "ShipsPerksDescribe.txt");
-			sText3 = GetConvertStr(sPerkName1 + "_desc2", "ShipsPerksDescribe.txt");
-		break;
-
-		case "SHIP_PERK2":
-			string sPerkName2 = GetShipTraitDesc(rChr);
-			sGroup = "PERKS_SHIPS";
-			sGroupPicture = sPerkName2;
-			sHeader = GetConvertStr(sPerkName2, "ShipsPerksDescribe.txt");
-			sText1 = GetConvertStr(sPerkName2 + "_desc", "ShipsPerksDescribe.txt");
-			sText3 = GetConvertStr(sPerkName2 + "_desc2", "ShipsPerksDescribe.txt");
-			iShip = sti(rChr.ship.type);
-			refBaseShip = GetRealShip(iShip);
-			if(CheckAttribute(refBaseShip, "DeadSailors"))
-			{
-				aref arShipBonus;
-				makearef(arShipBonus, refBaseShip.DeadSailors);
-				sText3 += newStr() + GetAssembledString(GetConvertStr("sp3_SailorsBoardingBonus_desc","ShipsPerksDescribe.txt"), arShipBonus)
-									 + GetAssembledString(GetConvertStr("sp3_SailorsBoardingBonus1_desc","ShipsPerksDescribe.txt"), refBaseShip);
-				sText3 += newStr() + GetAssembledString(GetConvertStr("sp3_SurrenderChanceBonus_desc","ShipsPerksDescribe.txt"), arShipBonus)
-								   + GetAssembledString(GetConvertStr("sp3_SurrenderChanceBonus1_desc","ShipsPerksDescribe.txt"), refBaseShip);
-			}
-		break;
-
 		case "SHIPS_SCROLL":
 			if (shipIndex != -1)
 			{
@@ -669,6 +638,8 @@ void ShowInfoWindow()
 			sText1  = GetConvertStr("Shipyard_hint", "ShipsDescribe.txt");
 		break;
 	}
+	SetShipPerksTooltip(refCharacter, &sCurrentNode, &sHeader, &sText1, &sText2, &sText3, &sPicture, &sGroup, &sGroupPicture);
+
 	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false);
 }
 
@@ -1619,11 +1590,11 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr3.td2.str = XI_ConvertString("Speed");
 	if (IsCompanion(_chr))
 	{
-		GameInterface.(_tabName).tr3.td3.str = FloatToString(FindShipSpeed(_chr),2) + " / " + FloatToString(stf(refBaseShip.SpeedRate),2);
+		GameInterface.(_tabName).tr3.td3.str = FloatToString(FindShipSpeed(_chr),2) + " / " + FloatToString(FindShipSpeedMax(_chr),2);
 	}
 	else
 	{
-	    GameInterface.(_tabName).tr3.td3.str = FloatToString(stf(refBaseShip.SpeedRate),2);
+	    GameInterface.(_tabName).tr3.td3.str = FloatToString(FindShipSpeedMax(_chr),2);
 	}
 	if (!CheckAttribute(&RealShips[iShip], "Tuning.SpeedRate")) 
 	{
@@ -1641,11 +1612,11 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr4.td2.str = XI_ConvertString("Maneuver");
 	if (IsCompanion(_chr))
 	{
-  		GameInterface.(_tabName).tr4.td3.str = FloatToString((stf(refBaseShip.turnrate) * FindShipTurnRate(_chr)), 2) + " / " + FloatToString(stf(refBaseShip.TurnRate),2);
+  		GameInterface.(_tabName).tr4.td3.str = FloatToString((stf(refBaseShip.turnrate) * FindShipTurnRate(_chr)), 2) + " / " + FloatToString(FindShipTurnrateMax(_chr),2);
 	}
 	else
 	{
-	    GameInterface.(_tabName).tr4.td3.str = FloatToString(stf(refBaseShip.TurnRate),2);
+	    GameInterface.(_tabName).tr4.td3.str = FloatToString(FindShipTurnrateMax(_chr),2);
 	}
 	if (!CheckAttribute(&RealShips[iShip], "Tuning.TurnRate")) 
 	{
@@ -1839,25 +1810,6 @@ bool bPassengersAccess() {
         }
     } 
     return false;
-}
-
-void SetShipPerks(ref chr)
-{
-	string pictureGroup = "PERKS_SHIPS";
-	string perkName1, perkName2;
-	SetNodeUsing("SHIP_PERK1",false);
-	SetNodeUsing("SHIP_PERK2",false);
-
-	int iShip = sti(chr.ship.type);
-	if(iShip != SHIP_NOTUSED) 
-	{
-		perkName1 = GetShipSpecDesc(chr);
-		perkName2 = GetShipTraitDesc(chr);
-		SetNewGroupPicture("SHIP_PERK1", pictureGroup, perkName1);
-		SetNewGroupPicture("SHIP_PERK2", pictureGroup, perkName2);
-		if(perkName1 != "") SetNodeUsing("SHIP_PERK1",true);
-		if(perkName2 != "") SetNodeUsing("SHIP_PERK2",true);
-	}
 }
 
 void SortShipsList(int column, bool preserveState, string tableName)

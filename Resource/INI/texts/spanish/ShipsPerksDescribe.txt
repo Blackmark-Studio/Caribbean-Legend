@@ -108,3 +108,7 @@ sp3_SailorsBoardingBonus_desc {Bonificación de experiencia en abordaje: #dSailo
 sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 marineros caídos)}
 sp3_SurrenderChanceBonus_desc {Aumento de probabilidad de rendición: #dSurrenderChanceBonus#%}
 sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 marineros caídos)}
+sp4 {Cazador de piratas}
+sp4_desc {Este barco fue construido específicamente para limpiar los mares de piratas. Con cada nave enviada al fondo, la tripulación se vuelve más unida, los cañones más precisos y el fanatismo del capitán más evidente.}
+sp4_desc2 {Cada barco pirata destruido aumenta permanentemente la maniobrabilidad, el alcance de disparo, la velocidad en el mapa global y la velocidad de recarga de los cañones. Bono actual: $percent($attr($context.tuning.modifiers.shipSpeed.trait_SP4)) de 15. ~ Cuanto menor sea la amenaza pirata, menor será el coste de mantenimiento del barco. Bono actual: $percent($GetAmsterdamMtp( )) de 40.}
+SpecialityUpgrade {Mejorado por la Compañía Holandesa de las Indias Occidentales}

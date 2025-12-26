@@ -3721,18 +3721,23 @@ void ProcessDialogEvent()
 			dialog.text = "Certo, sarebbe accettabile. In quale nave specifica sei interessato?";
 			if (GetDLCenabled(DLC_APPID_4) && !CheckAttribute(pchar, "questTemp.SantaMisericordia_InfoPU") && CharacterIsAlive("SantaMisericordia_cap"))
 			{
-				link.l1 = "Galeone 'Santa Misericordia'.";
+				link.l1 = "Galeone '"+GetShipName("Holy Mercy")+"'.";
 				link.l1.go = "UniqueShips_SantaMisericordia";
 			}
 			if (GetDLCenabled(DLC_APPID_5) && !CheckAttribute(pchar, "questTemp.LadyBeth_InfoPU") && CharacterIsAlive("LadyBeth_cap"))
 			{
-				link.l2 = "Patrullare la neve 'Signora Beth'.";
+				link.l2 = "Patrullare la neve '"+GetShipName("Lady Beth")+"'.";
 				link.l2.go = "UniqueShips_LadyBeth";
 			}
 			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Memento_InfoPU") && CharacterIsAlive("Memento_cap"))
 			{
-				link.l3 = "Brigantino 'Memento'.";
+				link.l3 = "Brigantino '"+GetShipName("Memento")+"'.";
 				link.l3.go = "UniqueShips_Memento";
+			}
+			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Amsterdam_InfoPU"))
+			{
+				link.l4 = "Nave Ammiraglia della Compagnia '"+GetShipName("Amsterdam")+"'.";
+				link.l4.go = "UniqueShips_Amsterdam";
 			}
 			link.l99 = "Credo di saperne abbastanza.";
 			link.l99.go = "node_2";
@@ -3766,6 +3771,15 @@ void ProcessDialogEvent()
 			"La 'Memento' naviga tra gli insediamenti dei pirati, ma attracca raramente. L’equipaggio vive a bordo per mesi, come se avesse paura di mettere piede a terra. Si dice anche che la nave abbia superato un’epidemia mostruosa — per questo l’equipaggio è così difficile da uccidere.\n"+
 			"Se pensate di attaccarli — portate molti cannoni. Abbordare la 'Memento' è quasi impossibile — l’equipaggio combatte come posseduto, come se non temesse la morte. L’unico modo per sconfiggerli è fare a pezzi la nave, togliendogli il rifugio. Le schegge non li spaventano, ma un colpo diretto di mitraglia — è tutta un’altra storia.\n"+
 			"In bocca al lupo. E ricordate la morte.";
+			link.l1 = "Grazie mille.";
+			link.l1.go = "node_2";
+		break;
+		
+		case "UniqueShips_Amsterdam":
+			AddMoneyToCharacter(pchar, -25000);
+			AddQuestRecordInfo("LegendaryShips", "4");
+			pchar.questTemp.Amsterdam_InfoPU = true;
+			dialog.text = "L'ammiraglia della stimata Compagnia Olandese delle Indie Occidentali. Tutto ciò che riguarda questa nave è avvolto nel segreto. È comandata da Hendrik van Doorn, capo del dipartimento di registrazione navale a Curaçao – un uomo di straordinaria efficienza che offre servizi preziosissimi ai capitani più ricchi e influenti. Provate a entrare nel loro circolo, e forse scoprirete di più.";
 			link.l1 = "Grazie mille.";
 			link.l1.go = "node_2";
 		break;

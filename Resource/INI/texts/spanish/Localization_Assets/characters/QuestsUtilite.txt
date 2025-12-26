@@ -328,3 +328,4 @@ QuestsUtilite_327 {Hefesto}
 QuestsUtilite_328 {Centurión}
 QuestsUtilite_329 {Los piratas han sido derrotados, las aguas se han vuelto más seguras.}
 QuestsUtilite_330 {Los piratas se han fortalecido, el mar se ha vuelto más peligroso.}
+QuestsUtilite_331 {Capitán, ¡el Amsterdam! Enhorabuena: la Compañía ahora lo considera una verdadera amenaza.}

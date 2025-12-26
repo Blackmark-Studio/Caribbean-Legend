@@ -220,8 +220,11 @@ void CreateShipEnvironment()
 	SetEventHandler(SHIP_FAKE_FIRE, "Ship_EventFakeFire", 0);
 
     // Sounds
-    SetEventHandler("NextHour", "ShipBells", 0);
-}	
+    if (bSeaActive)
+    {
+        SetEventHandler("NextHour", "ShipBells", 0);
+    }
+}
 
 float Ship_GetBortFireDelta()
 {
@@ -2021,6 +2024,14 @@ void Ship_CheckFlagEnemy(ref rCharacter)
 			RefreshBattleInterface();
 			ChangeCharacterNationReputation(pchar, sti(rCharacter.nation), -3);
 		}
+		if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_AMSTERDAM && sti(rCharacter.nation) == HOLLAND && CheckAttribute(pchar, "questTemp.ClockTower_AmsterdamCheck"))
+		{
+			SetNationRelation2MainCharacter(HOLLAND, RELATION_ENEMY);
+			LAi_group_ClearAllTargets();
+			DoQuestCheckDelay("NationUpdate", 3.0);
+			UpdateRelations();
+			RefreshBattleInterface();
+		}
 	}
 }
 
@@ -2548,6 +2559,7 @@ void ShipDead(int iDeadCharacterIndex, int iKillStatus, int iKillerCharacterInde
 		    }
 			if (iKillStatus != KILL_BY_SELF)
 			{
+				if (iDeadNation == PIRATE && IsMainCharacter(rKillerCharacter) && sti(rKillerBaseShip.BaseType) == SHIP_AMSTERDAM) UpgradeAmsterdam(rKillerBaseShip);
 		        AddCharacterExpToSkill(rKillerCharacter, SKILL_FORTUNE, stf(rKillerBaseShip.Class) / stf(rBaseShip.Class) * 20);
 		        AddCharacterExpToSkill(rKillerCharacter, "Leadership", stf(rKillerBaseShip.Class) / stf(rBaseShip.Class) * 25);
 

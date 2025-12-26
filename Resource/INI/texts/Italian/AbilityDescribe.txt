@@ -5,7 +5,7 @@ newline
 BasicDefense {Difesa base}
 perkBasicDefense {Riduce i danni subiti del $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Difesa avanzata}
-perkAdvancedDefense {Riduce i danni subiti del $percent($perkBaseValue(AdvancedDefense|1)) e i danni critici nemici del $percent($perkBaseValue(AdvancedDefense|2)).}
+perkAdvancedDefense {Riduce i danni subiti del $percent($perkBaseValue(AdvancedDefence|1)) e i danni critici nemici del $percent($perkBaseValue(AdvancedDefence|2)).}
 CriticalHit {Colpo critico}
 perkCriticalHit {Aumenta la probabilità base di colpo critico del 3,5%.}
 Grus {Schiena forte}
@@ -21,12 +21,10 @@ perkSliding {Cięcie lub pchnięcie lekką bronią może przebić blok z szansą
 Gunman {Moschettiere}
 perkGunman
 {
-Aumenta il danno e la velocità di ricarica delle armi da fuoco di $percent($perkBaseValue(Gunman|1)). Permette l’uso di armi a due mani a colpo singolo e di armi a una mano a colpi multipli.
- ~
- Gli ufficiali possono usare $key(descriptor_TwoHanded|ItemsDescriptors.txt) solo se espressamente ordinato.
+Aumenta il danno e la velocità di ricarica delle armi da fuoco di $percent($perkBaseValue(Gunman|1)). Permette l’uso di armi a due mani a colpo singolo e di armi a una mano a colpi multipli. ~ Gli ufficiali possono usare $key(descriptor_TwoHanded|ItemsDescriptors.txt) solo se espressamente ordinato.
 }
 GunProfessional {Scaramucciatore}
-perkGunProfessional {Aumenta del $percent($perkBaseValue(GunProfessional|1)) danni e velocità di ricarica delle armi da fuoco. Sblocca l’uso di armi da fuoco a due mani multi-colpo.}
+perkGunProfessional {Aumenta i danni e la velocità di ricarica delle armi da fuoco di $percent($perkBaseValue(GunProfessional|1)). Sblocca l’uso delle armi da fuoco a più colpi a due mani.}
 IronWill {Volontà di ferro}
 perkIronWill {Permette di sopravvivere a una ferita mortale una volta ogni 3 minuti.}
 SharedExperience {Apprendista Rapido}
@@ -48,9 +46,7 @@ perkTrustworthy {Sblocca opzioni alternative di persuasione nei dialoghi per alc
 ShipEscape {Seconda possibilità}
 perkShipEscape
 {
-Salvataggio con scialuppa dalla nave dell’eroe in affondamento verso un’altra nave della flotta.
-Permette, durante la battaglia e con lo scafo sotto il 15%, di usare il menu stiva per trasferirsi o spostarsi su un’altra nave della flotta.
-Se un compagno possiede questa abilità, si salverà da una nave che affonda o da una nave incendiaria, tornando come passeggero sulla nave dell’eroe tramite scialuppa.
+Salvataggio con scialuppa dalla nave dell’eroe in affondamento verso un’altra nave della flotta.Permette, durante la battaglia e con lo scafo sotto il 15%, di usare il menu stiva per trasferirsi o spostarsi su un’altra nave della flotta.Se un compagno possiede questa abilità, si salverà da una nave che affonda o da una nave incendiaria, tornando come passeggero sulla nave dell’eroe tramite scialuppa.
 }
 Alchemy {Alchimia}
 perkAlchemy {Le ricette non richiedono più Attrezzi. Conferisce il 15% di probabilità di non consumare una Pozione all’uso.}
@@ -75,8 +71,7 @@ perkLongRangeGrappling {La distanza di abbordaggio aumenta del 15%.}
 MusketsShoot {Scarica di moschetti}
 perkMusketsShoot
 {
-Una scarica di moschetti viene sparata prima dell’abbordaggio.
-Le perdite inflitte dipendono dalla classe della nave e dal numero di Armigeri.
+Una scarica di moschetti viene sparata prima dell’abbordaggio.Le perdite inflitte dipendono dalla classe della nave e dal numero di Armigeri.
 }
 GrapplingProfessional {Nostromo esperto}
 perkGrapplingProfessional {La distanza di abbordaggio aumenta del 25%. Possibile con qualsiasi angolo e velocità di avvicinamento.}
@@ -99,50 +94,37 @@ perkSailingProfessional {Velocità e manovrabilità della nave aumentate del 5%.
 SeaDogProfessional {Terrore dei Mari}
 perkSeaDogProfessional
 {
-Alla vista del vessillo del Terrore dei Mari, anche gli avventurieri e fuorilegge più audaci non osano sfidare il destino. Aumenta la Potenza della Flotta del $percent($PerkBaseValue(SeaDogProfessional|1)).
-~
-Abilità disponibile solo per il giocatore; richiede grado $attr($context.rank).
+Alla vista del vessillo del Terrore dei Mari, anche gli avventurieri e fuorilegge più audaci non osano sfidare il destino. Aumenta la Potenza della Flotta del $percent($PerkBaseValue(SeaDogProfessional|1)).~Abilità disponibile solo per il giocatore; richiede grado $attr($context.rank).
 }
 FlagPir {Jolly Roger}
 perkFlagPir
 {
-Possibilità di cambiare la tua bandiera con il Jolly Roger.
-~
-Questa abilità è disponibile solo per il giocatore.
+Possibilità di cambiare la tua bandiera con il Jolly Roger.~Questa abilità è disponibile solo per il giocatore.
 }
 FlagEng {Bandiera d’Inghilterra}
 perkFlagEng
 {
-La probabilità di essere scoperti dipende da Furtività, classe e dimensione della nave e della flotta, dimensione della flotta nemica e livello di Minaccia.
-~
-Abilità disponibile solo per il giocatore
+La probabilità di essere scoperti dipende da Furtività, classe e dimensione della nave e della flotta, dimensione della flotta nemica e livello di Minaccia.~Abilità disponibile solo per il giocatore
 }
 FlagFra {Bandiera della Francia}
 perkFlagFra
 {
-La probabilità di essere scoperti dipende da Furtività, classe e dimensione della nave e della flotta, dimensione della flotta nemica e livello di Minaccia.
-~
-Abilità disponibile solo per il giocatore
+La probabilità di essere scoperti dipende da Furtività, classe e dimensione della nave e della flotta, dimensione della flotta nemica e livello di Minaccia.~Abilità disponibile solo per il giocatore
 }
 FlagSpa {Bandiera della Spagna}
 perkFlagSpa
 {
-La probabilità di essere scoperti dipende da Furtività, classe e dimensione della tua nave e flotta, dimensione della flotta nemica e livello di Minaccia.
-~
-Abilità disponibile solo per il giocatore
+La probabilità di essere scoperti dipende da Furtività, classe e dimensione della tua nave e flotta, dimensione della flotta nemica e livello di Minaccia.~Abilità disponibile solo per il giocatore
 }
 FlagHol {Bandiera dei Paesi Bassi}
 perkFlagHol
 {
-La probabilità di essere scoperti dipende da Furtività, classe della nave, dimensione della flotta, dimensione della flotta nemica e livello di Minaccia.
-~
-Abilità disponibile solo per il giocatore
+La probabilità di essere scoperti dipende da Furtività, classe della nave, dimensione della flotta, dimensione della flotta nemica e livello di Minaccia.~Abilità disponibile solo per il giocatore
 }
 Troopers {Tattiche d’assedio}
 perkTroopers
 {
-Possibilità di unire gli equipaggi della flotta prima di assaltare un forte.
-Riduce il numero di equipaggio richiesto per razziare un insediamento da terra.
+Possibilità di unire gli equipaggi della flotta prima di assaltare un forte.Riduce il numero di equipaggio richiesto per razziare un insediamento da terra.
 }
 BasicCommerce {Commercio base}
 perkBasicCommerce {Gli acquisti sono il 4% più convenienti. Evidenzia gli oggetti richiesti in banche e mercati.}
@@ -155,30 +137,24 @@ perkCarpenter {Scafo e vele vengono riparati lentamente durante il viaggio. Sono
 InstantRepair {Riparazione in combattimento}
 perkInstantRepair
 {
-Riparazione rapida in combattimento fino all’80% della durabilità disponibile. Richiede assi per lo scafo e tela per le vele.
-Può essere attivata ogni 1,5 minuti.
+Riparazione rapida in combattimento fino all’80% della durabilità disponibile. Richiede assi per lo scafo e tela per le vele.Può essere attivata ogni 1,5 minuti.
 }
 LightRepair {Riparazione d’emergenza}
 perkLightRepair
 {
-Ripara fino al 10% dello scafo senza usare risorse. Senza questa abilità, la nave si deteriora se lo scafo scende sotto il 10%. 
-Utilizzabile ogni 3 minuti.
+Ripara fino al 10% dello scafo senza usare risorse. Senza questa abilità, la nave si deteriora se lo scafo scende sotto il 10%. Utilizzabile ogni 3 minuti.
 }
 Builder {Controllo danni}
 perkBuilder {Il consumo di assi e tela durante le riparazioni è ridotto del 25%.}
 SelfRepair {Riparazione completa}
 perkSelfRepair
 {
-La capacità di riparare completamente la nave usando l’equipaggio su qualsiasi costa adatta. Servono assi per scafo e alberi, e tela per le vele. È possibile il ripristino totale di scafo, vele e alberi.
-
-Le opzioni di riparazione sono disponibili solo a terra in località costiere.
+La capacità di riparare completamente la nave usando l’equipaggio su qualsiasi costa adatta. Servono assi per scafo e alberi, e tela per le vele. È possibile il ripristino totale di scafo, vele e alberi.Le opzioni di riparazione sono disponibili solo a terra in località costiere.
 }
 WindCatcher {Senso del mare}
 perkWindCatcher
 {
-La nave accelera il 10% più velocemente.
-
-Aumenta la velocità sulla mappa globale in acque conosciute, se hai una mappa.
+La nave accelera il 10% più velocemente.Aumenta la velocità sulla mappa globale in acque conosciute, se hai una mappa.
 }
 SailsMan {Vele rapide}
 perkSailsMan {Grazie ai più recenti metodi del bastone e della carota, tutte le operazioni alle vele sono eseguite il 10% più velocemente.}
@@ -216,11 +192,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Mani rapide}
-perkFastHands {Aumenta la velocità di estrazione e riposizionamento delle armi da fuoco del $percent($perkBaseValue(FastHands|1)).}
+perkFastHands {Aumenta la velocità di estrazione e riposizionamento delle armi da fuoco del 20%.}
 AmmoRig {Equipaggiamento}
-perkAmmoRig {La ricarica delle armi da fuoco è più veloce del $percent($perkBaseValue(AmmoRig|1)).}
+perkAmmoRig {La ricarica delle armi da fuoco è più veloce del 5%.}
 Preaim {Puntamento}
-perkPreaim {La modalità mira è più veloce del $percent($perkBaseValue(Preaim|1)).}
+perkPreaim {La modalità mira è più veloce del 15%.}
 KeenEye {Occhio attento}
 perkKeenEye {I colpi alla testa infliggono il $percent($perkBaseValue(KeenEye|1)) di danni in più.}
 PowderFeel {Senso della polvere nera}

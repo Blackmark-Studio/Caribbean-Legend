@@ -255,7 +255,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SetMusketBullets2":
-			i = sti(NPChar.SetMusketBullets) + 1; 
+			i = sti(NPChar.GenQuest.SetMusketBullets) + 1; 
 			sGun = GetCharacterEquipByGroup(NPChar, MUSKET_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -263,7 +263,7 @@ void ProcessDialogEvent()
 			LAi_SetCharacterUseBullet(NPChar, "musket", sBullet);
 			LAi_GunSetUnload(NPChar, "musket");
 			NextDiag.CurrentNode = NextDiag.TempNode;
-			DeleteAttribute(NPChar,"SetMusketBullets");
+			DeleteAttribute(NPChar,"GenQuest.SetMusketBullets");
 			DialogExit();
 		break;
 		

@@ -141,8 +141,8 @@ void ProcessDialogEvent()
 		break;
 
 		case "StartSailor_13":
-			dialog.text = "No se preocupe tanto. Saint-Pierre es una ciudad pequeña, está claro que no es el Louvre, pero tampoco es la jungla. Ahora, donde los bandidos de Le François, que Dios nos libre... un caballero no tiene nada que hacer allí.";
-			link.l1 = "Si hace falta, iré incluso con esos bandidos. Michel siempre me sacó de los líos. Ahora me toca a mí.";
+			dialog.text = "No se preocupe tanto. Saint-Pierre es una ciudad pequeña, no es el Louvre, claro, pero tampoco la jungla. Ahora, en el bandido Le François, que Dios nos libre... un caballero no tiene nada que hacer allí.";
+			link.l1 = "Si hace falta - iré incluso con los bandidos. Michel siempre me sacó de los líos. Ahora me toca a mí.";
 			link.l1.go = "StartSailor_14";
 		break;
 

@@ -1,3 +1,4 @@
+// Ship Sounds in sea_ai/ShipSounds.c
 // DEFINES
 #define MUSIC_CHANGE_TIME  3000
 #define MUSIC_SILENCE_TIME 180000.0
@@ -67,7 +68,13 @@ void ResumeSound(int id, int fade)
 {
 	InitSound();
 	//Trace("ResumeSound : "+id);
-	SendMessage(Sound, "lll", MSG_SOUND_RESUME, id, fade);
+	SendMessage(Sound, "lll", MSG_SOUND_PAUSE, id, false);
+}
+
+void SetSoundPauseState(int id, bool bPaused)
+{
+	InitSound();
+	SendMessage(Sound, "lll", MSG_SOUND_PAUSE, id, bPaused);
 }
 
 void ReleaseSound(int id)
@@ -249,7 +256,7 @@ void SetSchemeForLocation (ref loc)
 					else SetMusicAlarm(ClassicSoundScene+"music_nightjungle");
 				}
 				DeleteAttribute(pchar, "CheckStateOk"); // убрать флаг проверенности протектором
-				if(CheckAttribute(pchar,"StealtDeceptionPenalty")) DeleteAttribute(pchar,"StealtDeceptionPenalty");
+				DeleteAttribute(pchar,"StealtDeceptionPenalty");
 			break;
 			
 			case "mayak":
@@ -263,7 +270,7 @@ void SetSchemeForLocation (ref loc)
 				SetWeatherScheme("seashore");
 				SetMusicAlarm(ClassicSoundScene+"music_shore");
 				DeleteAttribute(pchar, "CheckStateOk"); // убрать флаг проверенности протектором
-				if(CheckAttribute(pchar,"StealtDeceptionPenalty")) DeleteAttribute(pchar,"StealtDeceptionPenalty");
+				DeleteAttribute(pchar,"StealtDeceptionPenalty");
 			break;
 			
 			case "cave": 
@@ -820,7 +827,7 @@ void SetMusic(string name)
 
 	if (name == musicName)
 	{
-		SendMessage(Sound, "lll", MSG_SOUND_RESUME, musicID, SOUNDS_FADE_TIME);
+		SendMessage(Sound, "lll", MSG_SOUND_PAUSE, musicID, false);
 		return;
 	}
 
@@ -852,7 +859,7 @@ void SetMusicOnce(string name)
 	
 	if (name == musicName)
 	{
-		SendMessage(Sound, "lll", MSG_SOUND_RESUME, musicID, SOUNDS_FADE_TIME);
+		SendMessage(Sound, "lll", MSG_SOUND_PAUSE, musicID, false);
 		return;
 	}
 
@@ -868,7 +875,7 @@ void SetMusicOnce(string name)
 		oldMusicID = musicID;
 	}
 	musicID = SendMessage(Sound, "lsllllllf", MSG_SOUND_PLAY, name, SOUND_MP3_STEREO, VOLUME_MUSIC, false, false, false, 0, 1.0);
-	SendMessage(Sound, "lll", MSG_SOUND_RESUME, musicID, MUSIC_CHANGE_TIME);
+	SendMessage(Sound, "lll", MSG_SOUND_PAUSE, musicID, false);
 	
 	oldMusicName = musicName;
 	musicName = name;
@@ -897,8 +904,8 @@ void PauseAllSounds()
 void ResumeAllSounds()
 {
 	//Trace("ResumeAllSounds");
-	//SendMessage(Sound,"lll",MSG_SOUND_RESUME, musicID, SOUNDS_FADE_TIME);
-	SendMessage(Sound,"lll",MSG_SOUND_RESUME, 0, SOUNDS_FADE_TIME);
+	//SendMessage(Sound,"lll",MSG_SOUND_PAUSE, musicID, false);
+	SendMessage(Sound,"lll", MSG_SOUND_PAUSE, 0, false);
 }
 
 // OLD VERSIONS
@@ -1165,21 +1172,76 @@ void Start_TrackNonStop(string track, float out)
 
 void End_TrackNonStop()
 {
-	if(CheckAttribute(pchar,"questTemp.TrackNonStop")) DeleteAttribute(pchar,"questTemp.TrackNonStop");
-	if(CheckAttribute(pchar,"questTemp.NoFast")) DeleteAttribute(pchar,"questTemp.NoFast");
+	DeleteAttribute(pchar,"questTemp.TrackNonStop");
+	DeleteAttribute(pchar,"questTemp.NoFast");
 	SetSchemeAfterFlagRise();
 }
 
 //////////////////////////////////////
 // SOUND EVENT SECTION
 //////////////////////////////////////
+int PlaySoundEvent(string name)
+{
+	InitSound();
+    return SendMessage(Sound, "lsl", MSG_SOUND_EVENT_PLAY, name, 0);
+}
+
+// Note: To use the loop flag, event must have the "Loop" parameter, which will switch between 1.0 and 0.0
+// You can also change it later via SoundEventSetParam
+int PlaySoundEventComplex(string name, int FadeTime, float x, float y, float z, bool looped, int prior)
+{
+	InitSound();
+    return SendMessage(Sound, "lslll", MSG_SOUND_EVENT_PLAY, name, FadeTime, looped, prior);
+}
+
 int Play3DSoundEvent(string name, float x, float y, float z)
 {
 	InitSound();
     return SendMessage(Sound, "lslfff", MSG_SOUND_EVENT_PLAY, name, 0, x, y, z);
 }
 
-void SoundEvent_SetVolume(int iEventID, float fVolume)
+int Play3DSoundEventComplex(string name, int FadeTime, float x, float y, float z, float vol, float mind, float maxd)
 {
-	SendMessage(Sound, "llf", MSG_SOUND_EVENT_SET_VOLUME, iEventID, fVolume);
+	InitSound();
+    return SendMessage(Sound, "lslffffff", MSG_SOUND_EVENT_PLAY, name, FadeTime, x, y, z, vol, mind, maxd);
+}
+
+void StopSoundEvent(int id, int FadeTime)
+{
+	SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, id, FadeTime);
+}
+
+void SoundEventSetVolume(int id, float fVolume)
+{
+	SendMessage(Sound, "llf", MSG_SOUND_EVENT_SET_VOLUME, id, fVolume);
+}
+
+void SetSoundEventPauseState(int id, bool bPaused)
+{
+	SendMessage(Sound, "lll", MSG_SOUND_EVENT_PAUSE, id, bPaused);
+}
+
+void SoundEventRelease(string name) // Stop and release all instances
+{
+	SendMessage(Sound, "ls", MSG_SOUND_EVENT_RELEASE, name);
+}
+
+int FindSoundEventId(string name) // First one found
+{
+	return SendMessage(Sound, "ls", MSG_SOUND_EVENT_FIND, name);
+}
+
+void SoundEventSetParam(int id, string name, float val, bool ignoreseekspeed)
+{
+	SendMessage(Sound, "llsfl", MSG_SOUND_EVENT_SET_PARAM, id, name, val, ignoreseekspeed);
+}
+
+void SoundEventUpdatePos(int id, float x, float y, float z)
+{
+	SendMessage(Sound, "llfffl", MSG_SOUND_UPDATE_POS, id, x, y, z, true);
+}
+
+void FMOD_LoadBank(string name, bool loadData)
+{
+    SendMessage(Sound, "lsl", MSG_SOUND_BANK_ADD, name, loadData);
 }

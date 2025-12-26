@@ -22,7 +22,7 @@ bool StartQuestMovie(bool noReload, bool noSave, bool lockPlayerCtrl)
 	//Stack level
 	EndBattleLandInterface();
 	ResetTimeScale();
-	SendMessage(&ILogAndActions,"ll",LI_SET_VISIBLE,0);
+	if (!bBettaTestMode) SendMessage(&ILogAndActions,"ll",LI_SET_VISIBLE,0);
 	int prevLevel = questMovieProcess - 1;
 	string level = "L" + questMovieProcess;
 	questMovieStack.(level) = "";
@@ -85,6 +85,7 @@ void QuestMovieLockPlayer()
 	questMovieIsLockPlayerCtrl = true;
 	SetCharacterTask_Stay(GetMainCharacter());
 	CreateEntity(&questMovieWideScreen, "WideScreen");
+	EndBattleLandInterface();
 }
 
 void QuestMovieUnLockPlayer()
@@ -93,6 +94,7 @@ void QuestMovieUnLockPlayer()
 	questMovieIsLockPlayerCtrl = false;
 	SetCharacterTask_None(GetMainCharacter());
 	SendMessage(&questMovieWideScreen, "");
+	StartBattleLandInterface();
 }
 
 bool qmIsNoReload()

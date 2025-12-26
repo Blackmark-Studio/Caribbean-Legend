@@ -132,6 +132,11 @@ void wdmCreateWorldMap()
 	else
 	{
 		if(IsEquipCharacterByItem(pchar, "bussol")) fSpeedBonus += 0.02;
+		if(IsEquipCharacterByItem(pchar, "piratesJournal_1"))
+		{
+			if (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_AMSTERDAM) fSpeedBonus += 0.06;
+			else fSpeedBonus += 0.03;
+		}
 		if(IsCharacterEquippedArtefact(pchar, "clock2")) fSpeedBonus += 0.03;
 	}
 	if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_FRIGATE_L) fSpeedBonus += 0.10;
@@ -168,18 +173,18 @@ void wdmCreateWorldMap()
 	ReloadProgressStart();
 
 	//Настраиваем имена месяцев
-	worldMap.date.monthnames.m01 = XI_ConvertString("target_month_1");
-	worldMap.date.monthnames.m02 = XI_ConvertString("target_month_2");
-	worldMap.date.monthnames.m03 = XI_ConvertString("target_month_3");
-	worldMap.date.monthnames.m04 = XI_ConvertString("target_month_4");
-	worldMap.date.monthnames.m05 = XI_ConvertString("target_month_5");
-	worldMap.date.monthnames.m06 = XI_ConvertString("target_month_6");
-	worldMap.date.monthnames.m07 = XI_ConvertString("target_month_7");
-	worldMap.date.monthnames.m08 = XI_ConvertString("target_month_8");
-	worldMap.date.monthnames.m09 = XI_ConvertString("target_month_9");
-	worldMap.date.monthnames.m10 = XI_ConvertString("target_month_10");
-	worldMap.date.monthnames.m11 = XI_ConvertString("target_month_11");
-	worldMap.date.monthnames.m12 = XI_ConvertString("target_month_12");
+	worldMap.date.monthnames.m01 = XI_ConvertString("MonthGen_1");
+	worldMap.date.monthnames.m02 = XI_ConvertString("MonthGen_2");
+	worldMap.date.monthnames.m03 = XI_ConvertString("MonthGen_3");
+	worldMap.date.monthnames.m04 = XI_ConvertString("MonthGen_4");
+	worldMap.date.monthnames.m05 = XI_ConvertString("MonthGen_5");
+	worldMap.date.monthnames.m06 = XI_ConvertString("MonthGen_6");
+	worldMap.date.monthnames.m07 = XI_ConvertString("MonthGen_7");
+	worldMap.date.monthnames.m08 = XI_ConvertString("MonthGen_8");
+	worldMap.date.monthnames.m09 = XI_ConvertString("MonthGen_9");
+	worldMap.date.monthnames.m10 = XI_ConvertString("MonthGen_10");
+	worldMap.date.monthnames.m11 = XI_ConvertString("MonthGen_11");
+	worldMap.date.monthnames.m12 = XI_ConvertString("MonthGen_12");
 
 	int	fOffX = makeint(50.0 * fHtRatio);
 	int	fOffY = makeint(50.0 * fHtRatio);

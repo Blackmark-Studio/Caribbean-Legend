@@ -1,19 +1,17 @@
-News {Patch 1.6}
+News {Patch 1.7 BETA Available}
 News_descr
 {
-************************   Ahoy!   ***********************
-Welcome to version 1.6!
-------------------------------------------------------------------------------------------------
-— Patch 1.6 is live
-— You can find a detailed list of changes in the news by clicking the button below
-— Character builds and replayability added to the game
-— If loading a save from another version, don't forget to reassign the perks of the hero and officers
-— Combat system completely reworked
-— A dozen of new feautures and over a hundred of improvements
-— "Supporter Pack" DLC released
-— No need to start a new game
-— Please disable all mods
-— You can always return to any previous major patch via Steam Library
+***************************   Ahoy!   ***************************
+-------------------------------------------------------------------------------------------------
+— Open beta for patch 1.7 has started
+— The fourth part of the "Ship's Pack" DLC series has been released
+— You can freely switch between versions via Steam
+— New game not required
+— Saving have been reworked and improved
+— New stealth and town infiltration mechanics
+— Combat AI performs better on land
+— Epilogue, quality of life improvements, and more
+— Detailed changelog can be found in the news via the button below
 }
 News_Attention { }
 [News]

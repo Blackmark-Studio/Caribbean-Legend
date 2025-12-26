@@ -3,10 +3,6 @@
 #define LOCCAMERA_TOPOS		2
 #define LOCCAMERA_FREE		3
 
-// Hokkins: радиус наземной камеры
-#define DEFAULT_CAM_RAD 3.0
-#define DEFAULT_CAM_RAD_DEN 0.22
-
 // Warship 20.07.09 Новое
 #define LOCCAMERA_MAX_STATES 15
 #define LOCCAMERA_ROTATE "Rotate"
@@ -627,4 +623,39 @@ void Camera_CheckPreset()
 	locCamera.offsetX = locCamera.OffsetPreset.(sPreset).x;
 	locCamera.offsetY = locCamera.OffsetPreset.(sPreset).y;
 	locCamera.offsetZ = locCamera.OffsetPreset.(sPreset).z;
+}
+
+// SetCameraShake(float time, float i1, float i2, float r1, float r2, bool sc, bool ev, int fd)
+// time - продолжительность в секундах, -1.0 до выключения, 0.0 выключить принудительно
+// i1 - интенсивность смещения положения камеры (оффсета по x, y) - множитель аргумента функции шума
+// i2 - интесивность кручения ориентации камеры (pitch, yaw, roll)
+// r1 - диапазон смещения в метрах (от -param до +param)
+// r2 - диапазон углов поворота в радианах (от -param до +param)
+// sc - true использовать screen space для смещения (будет учитывать повороты),
+//     false использовать world space (смещать глобально, шумовой оффсет игнорирует шумовой наклон)
+// ev - true вызывать ивент "CamShakeScaler" для получения множителя из скриптов, false не вызывать
+//     По задумке скриптовый множитель должен заменять собой движковый множитель затухания, поэтому при
+//     использовании ивента затухание лучше отключать (поставить -1 в следующем параметре), а сам float
+//     возвращать от 0.0 до 1.0. В скриптах можно: настроить свою функцию для затухания (fade out easing),
+//     скалировать силу тряски в зависимости от дистанции до какой-то координаты (например, персонажа) и т.п.
+//     Ивент ничего не передаёт, так что, например, дельту надо брать самостоятельно через GetRealDeltaTime()
+// fd - номер изинга из списка ниже для нарастания затухания, -1 не использовать затухание. Smoothstep хорош для
+//     относительно продолжительной тряски (3 секунды и более), условный x^3 подойдёт для более коротких
+
+// Any other number in func parameter <-> no easing
+// Attenuation increasing (from Engine)
+#define CAM_EASING_SMOOTH_STEP 0 // 3x^2 - 2x^3
+#define CAM_EASING_LINEAR      1 // x
+#define CAM_EASING_QUAD        2 // x^2
+#define CAM_EASING_CUBE        3 // x^3
+#define CAM_EASING_QUART       4 // x^4
+#define CAM_EASING_SINE        5 // 1 - cos((pi*0.5) * x)
+#define CAM_EASING_CIRC        6 // 1 - sqrt(1 - x^2)
+#define CAM_EASING_SIGMOID     7 // x^2 / (x^2 + (1 - x)^2)
+#define CAM_EASING_ELASTIC     8 // sin(pi * 6.5 * x) * pow(2, 10 * (x - 1))
+
+// Простейший пример функции для вызова шума
+void SetCameraShakeSimple(float time, float power, float range)
+{
+    SetCameraShake(time, 5.0 * power, 3.0 * power, 1.2 * range, 0.5 * range, true, false, CAM_EASING_SMOOTH_STEP);
 }

@@ -3741,18 +3741,23 @@ void ProcessDialogEvent()
 			dialog.text = "确实, 那将是可以接受的。 你对哪艘特定的船感兴趣? ";
 			if (GetDLCenabled(DLC_APPID_4) && !CheckAttribute(pchar, "questTemp.SantaMisericordia_InfoPU") && CharacterIsAlive("SantaMisericordia_cap"))
 			{
-				link.l1 = "盖伦帆船‘神圣慈悲’。 ";
+				link.l1 = "盖伦帆船‘"+GetShipName("Holy Mercy")+"’。 ";
 				link.l1.go = "UniqueShips_SantaMisericordia";
 			}
 			if (GetDLCenabled(DLC_APPID_5) && !CheckAttribute(pchar, "questTemp.LadyBeth_InfoPU") && CharacterIsAlive("LadyBeth_cap"))
 			{
-				link.l2 = "巡逻雪船‘贝丝女士’。 ";
+				link.l2 = "巡逻雪船‘"+GetShipName("Lady Beth")+"’。 ";
 				link.l2.go = "UniqueShips_LadyBeth";
 			}
 			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Memento_InfoPU") && CharacterIsAlive("Memento_cap"))
 			{
-				link.l3 = "双桅船‘纪念品’。 ";
+				link.l3 = "双桅船‘"+GetShipName("Memento")+"’。 ";
 				link.l3.go = "UniqueShips_Memento";
+			}
+			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Amsterdam_InfoPU"))
+			{
+				link.l4 = "公司旗舰 ‘"+GetShipName("Amsterdam")+"’.";
+				link.l4.go = "UniqueShips_Amsterdam";
 			}
 			link.l99 = "我想我知道的足够了。 ";
 			link.l99.go = "node_2";
@@ -3786,6 +3791,15 @@ void ProcessDialogEvent()
 			"‘纪念品’在海盗港口之间航行, 但很少靠岸。 船员在船上生活数月, 好像害怕踏上坚实的地面。 有传言说这艘船曾经在一场可怕的流行病中幸存下来  -  这就是为什么船员如此难以杀死。 \n"+
 			"如果你打算对付他们, 多装些大炮。 登上‘纪念品’几乎是不可能的  -  船员战斗起来像着了魔, 好像不怕死。 打败他们的唯一方法是将船炸成碎片, 夺走他们的庇护所。 碎片吓不到他们, 但直接的葡萄弹命中  -  那是另一回事。 \n"+
 			"祝你好运。 记住死亡。 ";
+			link.l1 = "非常感谢你。 ";
+			link.l1.go = "node_2";
+		break;
+		
+		case "UniqueShips_Amsterdam":
+			AddMoneyToCharacter(pchar, -25000);
+			AddQuestRecordInfo("LegendaryShips", "4");
+			pchar.questTemp.Amsterdam_InfoPU = true;
+			dialog.text = "尊贵的荷兰西印度公司旗舰。 这艘船的一切都笼罩在神秘之中。 由库拉索船只登记部门主管Hendrik van Doorn指挥——他是一位极其高效的人, 为最富有、最有影响力的船长们提供无价的服务。 若你能跻身他们的行列, 也许就能了解更多。";
 			link.l1 = "非常感谢你。 ";
 			link.l1.go = "node_2";
 		break;

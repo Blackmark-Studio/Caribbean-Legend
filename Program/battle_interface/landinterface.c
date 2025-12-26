@@ -74,6 +74,10 @@ void StartBattleLandInterface()
 	{
 		return;
 	}
+	if (questMovieIsLockPlayerCtrl)
+	{
+		return;
+	}
 	bLandInterfaceStart = true;
 
 	BLI_SetObjectData();
@@ -1004,7 +1008,7 @@ void BLI_SetObjectData()
 	objLandInterface.textinfo.datatext.pos.y = RecalculateVIcon(96 * fHtRatio);
 	objLandInterface.textinfo.datatext.text = GetQuestBookData();
 	// RefreshLandTime();
-	//objLandInterface.textinfo.datatext.text = XI_convertString("Date:") + GetQuestBookData(); //GetDataDay()+" "+XI_ConvertString("target_month_" + GetDataMonth())+" "+GetDataYear();
+	//objLandInterface.textinfo.datatext.text = XI_convertString("Date:") + GetQuestBookData(); //GetDataDay()+" "+XI_ConvertString("MonthGen_" + GetDataMonth())+" "+GetDataYear();
 	objLandInterface.textinfo.datatext.refreshable = true;
 	
 	// belamour legendary edition подсказки управления для новичков
@@ -1367,7 +1371,7 @@ void BLI_SetPossibleCommands()
     }
 
 	bool bSeaBattle = (bDisableMapEnter) && (bSeaActive) && (!CheckAttribute(pchar, "GenQuest.MapClosedNoBattle"));
-	if(!LAi_IsFightMode(pchar) && !bSeaBattle && PChar.location != "Deck_Near_Ship" && findsubstr(PChar.location, "_shipyard" , 0) == -1 && PChar.location != "CommonPackhouse_2" && !CheckAttribute(pchar, "GenQuest.CannotWait")) // отдых/проматывание времени
+	if(!LAi_IsFightMode(pchar) && !bSeaBattle && PChar.location != "Deck_Near_Ship" && findsubstr(PChar.location, "_shipyard" , 0) == -1 && PChar.location != "CommonPackhouse_2" && !CheckAttribute(pchar, "GenQuest.CannotWait") && !CheckAttribute(loadedLocation, "CannotWait")) // отдых/проматывание времени
 	{
     	objLandInterface.Commands.Rest.enable = true;//отдых/проматывание времени
     	bUseCommand = true;

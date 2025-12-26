@@ -21,12 +21,10 @@ perkSliding {Slash or thrust attack with a Light weapon can break through Block 
 Gunman {Musketeer}
 perkGunman
 {
-Increases firearm damage and reload speed by $percent($perkBaseValue(Gunman|1)). Allows the use of single-shot two-handed and multi-shot one-handed weapons.
- ~
- Officers can use $key(descriptor_TwoHanded|ItemsDescriptors.txt) only if explicitly instructed to do so.
+Increases firearm damage and reload speed by $percent($perkBaseValue(Gunman|1)). Allows the use of single-shot two-handed and multi-shot one-handed weapons. ~ Officers can use $key(descriptor_TwoHanded|ItemsDescriptors.txt) only if explicitly instructed to do so.
 }
 GunProfessional {Skirmisher}
-perkGunProfessional { }
+perkGunProfessional {Increases firearm damage and reload speed by $percent($perkBaseValue(GunProfessional|1)). Unlocks the ability to use multi-shot two-handed firearms.}
 IronWill {Iron Will}
 perkIronWill {Allows you to survive a fatal wound once every 3 minutes.}
 SharedExperience {Quick Learner}
@@ -48,9 +46,7 @@ perkTrustworthy {Unlocks alternative persuasion options in dialogues for certain
 ShipEscape {Second Chance}
 perkShipEscape
 {
-Rescue by lifeboat from the hero’s sinking ship to one of the ships in their fleet.
-Allows you, during battle, when the ship’s hull is below 15%, to use the hold menu to transfer or move to another fleet ship.
-If a companion has this skill, they will escape from a sinking ship or fireship, returning as a passenger to the hero’s ship by launching a lifeboat.
+Rescue by lifeboat from the hero’s sinking ship to one of the ships in their fleet.Allows you, during battle, when the ship’s hull is below 15%, to use the hold menu to transfer or move to another fleet ship.If a companion has this skill, they will escape from a sinking ship or fireship, returning as a passenger to the hero’s ship by launching a lifeboat.
 }
 Alchemy {Alchemy}
 perkAlchemy {Recipes no longer require Tools. Grants a 15% chance to save a potion on use.}
@@ -75,8 +71,7 @@ perkLongRangeGrappling {The boarding distance increases by 15%.}
 MusketsShoot {Musket Volley}
 perkMusketsShoot
 {
-A musket volley is fired before the boarding. 
-Inflicted casualties depend on the ship class and the number of Vanguards.
+A musket volley is fired before the boarding. Inflicted casualties depend on the ship class and the number of Vanguards.
 }
 GrapplingProfessional {Expert Boatswain}
 perkGrapplingProfessional {Boarding distance is increased by 25%. Possible at any approach angle and speed.}
@@ -99,50 +94,37 @@ perkSailingProfessional {Ship speed and maneuverability increased by 5%. Improve
 SeaDogProfessional {Terror of the Seas}
 perkSeaDogProfessional
 {
-At the sight of the Sea Terror’s pennant, even the boldest adventurers and outlaws dare not tempt fate. Increases Fleet Power by $percent($PerkBaseValue(SeaDogProfessional|1)).
-~
-Skill available only to the player; requires rank $attr($context.rank).
+At the sight of the Sea Terror’s pennant, even the boldest adventurers and outlaws dare not tempt fate. Increases Fleet Power by $percent($PerkBaseValue(SeaDogProfessional|1)).~Skill available only to the player; requires rank $attr($context.rank).
 }
 FlagPir {Jolly Roger}
 perkFlagPir
 {
-Ability to change your flag to the Jolly Roger.
-~
-This skill is available to the player only.
+Ability to change your flag to the Jolly Roger.~This skill is available to the player only.
 }
 FlagEng {Flag of England}
 perkFlagEng
 {
-The chance of being exposed depends on Stealth, your ship class and fleet size, enemy fleet size, and Threat level.
-~
-Skill available to player only
+The chance of being exposed depends on Stealth, your ship class and fleet size, enemy fleet size, and Threat level.~Skill available to player only
 }
 FlagFra {Flag of France}
 perkFlagFra
 {
-The chance of being exposed depends on Stealth, your ship class and fleet size, enemy fleet size, and Threat level.
-~
-Skill available to player only
+The chance of being exposed depends on Stealth, your ship class and fleet size, enemy fleet size, and Threat level.~Skill available to player only
 }
 FlagSpa {Flag of Spain}
 perkFlagSpa
 {
-The chance of being exposed depends on Stealth, your ship class and fleet size, enemy fleet size, and Threat level.
-~
-Skill available to player only
+The chance of being exposed depends on Stealth, your ship class and fleet size, enemy fleet size, and Threat level.~Skill available to player only
 }
 FlagHol {Flag of the Netherlands}
 perkFlagHol
 {
-The chance of being exposed depends on Stealth, your ship class and fleet size, enemy fleet size, and Threat level.
-~
-Skill available to player only
+The chance of being exposed depends on Stealth, your ship class and fleet size, enemy fleet size, and Threat level.~Skill available to player only
 }
 Troopers {Siege Tactics}
 perkTroopers
 {
-Ability to combine the crews of your fleet before storming a fort in full force.
-Reduces the number of crew required to raid a settlement from land.
+Ability to combine the crews of your fleet before storming a fort in full force.Reduces the number of crew required to raid a settlement from land.
 }
 BasicCommerce {Basic Trading}
 perkBasicCommerce {Buying is 4% more profitable. Highlights items in demand in banks and markets.}
@@ -155,30 +137,24 @@ perkCarpenter {Hull and sails are slowly being slowly repaired while traveling. 
 InstantRepair {Combat Repair}
 perkInstantRepair
 {
-Rapid combat reapirs up to 80% of available durability. Requires planks for the hull and canvas for the sails.
-Can be activated every 1.5 minutes.
+Rapid combat reapirs up to 80% of available durability. Requires planks for the hull and canvas for the sails.Can be activated every 1.5 minutes.
 }
 LightRepair {Emergency Repair}
 perkLightRepair
 {
-Ability to patch up the ship’s hull without extra resources, but no more than 10% of available HP. Without this skill, the ship slowly falls apart if hull HP drops below 10%. 
-Can be activated every 3 minutes.
+Ability to patch up the ship’s hull without extra resources, but no more than 10% of available HP. Without this skill, the ship slowly falls apart if hull HP drops below 10%. Can be activated every 3 minutes.
 }
 Builder {Damage Control}
 perkBuilder {The consumption of planks and sailcloth during repairs is reduced by 25%.}
 SelfRepair {Full Repair}
 perkSelfRepair
 {
-The ability to fully repair your ship using your crew at any suitable shore. Requires planks for the hull and masts, and canvas for the sails. Complete restoration of the hull, sails, and masts is possible.
-
-Repair options are only available on land in coastal locations.
+The ability to fully repair your ship using your crew at any suitable shore. Requires planks for the hull and masts, and canvas for the sails. Complete restoration of the hull, sails, and masts is possible.Repair options are only available on land in coastal locations.
 }
 WindCatcher {Sea Sense}
 perkWindCatcher
 {
-Ship accelerates 10% faster.
-
-Increases speed on the global map in familiar waters—if you have a map.
+Ship accelerates 10% faster.Increases speed on the global map in familiar waters—if you have a map.
 }
 SailsMan {Swift Sails}
 perkSailsMan {Thanks to the use of the latest carrot-and-stick methods, all sail operations are performed 10% faster.}
@@ -216,11 +192,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Quick Hands}
-perkFastHands {Increases the speed of drawing and holstering firearms by $percent($perkBaseValue(FastHands|1)).}
+perkFastHands {Increases the speed of drawing and holstering firearms by 20%.}
 AmmoRig {Loadout}
-perkAmmoRig {Reloading of firearms is $percent($perkBaseValue(AmmoRig|1)) faster.}
+perkAmmoRig {Reloading of firearms is 5% faster.}
 Preaim {Sighting}
-perkPreaim {Aim mode is $percent($perkBaseValue(Preaim|1)) faster.}
+perkPreaim {Aim mode is 15% faster.}
 KeenEye {Keen Eye}
 perkKeenEye {Headshots deal $percent($perkBaseValue(KeenEye|1)) more damage.}
 PowderFeel {Sense of Gunpowder}

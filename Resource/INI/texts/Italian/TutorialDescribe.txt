@@ -493,4 +493,3 @@ Puoi perquisire qualsiasi nemico caduto premendo il tasto di perquisizione.
 ~
 Trova l’elisir curativo di cui Alonso ha bisogno!
 }
-

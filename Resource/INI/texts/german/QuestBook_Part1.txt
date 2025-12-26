@@ -1231,6 +1231,10 @@ Wenn ihr keine menschliche Fracht transportiert, wird Grim euch nicht anrühren.
 Die 'Memento' kreuzt zwischen Piratensiedlungen, legt jedoch fast nie an. Die Mannschaft lebt monatelang an Bord, als fürchte sie, festen Boden zu betreten. Man munkelt, das Schiff habe einst eine schreckliche Seuche überstanden – deshalb ist die Crew so schwer zu töten.
 Wenn ihr angreifen wollt – nehmt viele Kanonen mit. Die 'Memento' zu entern ist nahezu unmöglich – die Mannschaft kämpft wie von Dämonen besessen, als hätte sie keine Angst vor dem Tod. Der einzige Weg, sie zu besiegen, ist, das Schiff in Stücke zu schießen und ihnen so das Versteck zu nehmen. Splitter schrecken sie nicht, aber gezielte Kartätschentreffer – das ist etwas anderes.
 Viel Glück. Und denkt an den Tod.
+#TEXT	4
+"Amsterdam"
+***********************
+Das Flaggschiff der angesehenen Niederländischen Westindien-Kompanie. Alles, was dieses Schiff betrifft, ist streng geheim. Kommandiert wird es von Hendrik van Doorn, dem Leiter der Schiffsregistrierungsabteilung auf Curaçao – ein außergewöhnlich effizienter Mann, der den wohlhabendsten und einflussreichsten Kapitänen unschätzbare Dienste erweist. Versuchen Sie, zu ihnen zu gehören – dann erfahren Sie vielleicht mehr.
 
 #QUEST StoriesTreasures
 Geschichten aus den Schatzkammern
@@ -1754,3 +1758,23 @@ Auszüge aus dem Tagebuch von Diego Velázquez de Cuéllar
 "Nach dieser Hinrichtung begann ich Seltsames zu bemerken. Am Tag predigten die Mönche von Gottes Gnade, doch nachts begannen Schatten um uns herum zu leben. Ich glaubte, die Weinen der Frauen, die Schreie der Kinder und die Flüche der Wilden in meinen Ohren zu hören. Letzte Nacht starb einer der Matrosen. Sein Körper wurde zerrissen wie von wilden Tieren. Ich befahl allen zu beten, doch die Gebete waren nutzlos. Jetzt bin ich überzeugt: Es ist Atuéy. Er hat einen Fluch über uns gebracht. Diese Barbaren vergeben nicht. Niemals."
 
 "Der Fluch... Er verlässt mich nicht. Er nistet in mir wie eine Schlange, die mein Herz umschlingt. Jede Nacht sehe ich brennende Hütten, höre Schreie und Stöhnen der Toten, die mich zur Rechenschaft rufen. Ihre verkohlten Skelette erheben sich aus der Asche, ihre leeren Augenhöhlen blicken mich mit Hass an. Selbst jetzt, in diesem Zimmer, höre ich Schritte. Die Tür knarrt leise, als würde jemand eintreten, doch ich sehe niemanden. Meine Hände zittern so sehr, dass die Feder kaum gehorcht. Es gibt kein Heil. Der Herr hat mich verlassen, wie ich die Barmherzigkeit verließ. Sie sind schon nah. Bald werden sie mich holen..."
+
+#QUEST Doc1Sp4
+Bericht über die Angelegenheiten in Brasilien
+
+#TEXT 1
+VERTRAULICHER BERICHT FÜR DAS DIREKTORAT Curaçao, Mai 1654 BETREFF: Lage im portugiesischen Brasilien
+MILITÄRISCHE LAGE Unsere Verluste in Brasilien steigen weiter. Oberst Sebastião Tavora hat im vergangenen Jahr eine Reihe schmerzhafter Schläge gegen unsere Küstenpositionen geführt. Drei unserer Schiffe versenkt, Küstenbefestigungen zerstört.
+POLITISCHE LAGE Die Aufklärung meldet merkwürdige Nachrichten aus Lissabon. Trotz seiner militärischen Erfolge ist Hauptmann Tavora bei Hofe in Ungnade gefallen. Der Grund - seine offene Opposition gegen einflussreiche Handelskreise, die heimlich mit uns über die Wiederherstellung kommerzieller Verbindungen verhandeln.
+AKTUELLER STAND Den neuesten Informationen zufolge wurden Tavora und seine Tochter in die ehrenvolle Verbannung geschickt. Sein derzeitiger Aufenthaltsort ist gegenwärtig unbekannt.
+EMPFEHLUNGEN Alle Agenten sind angewiesen, den aktuellen Aufenthaltsort von Oberst Tavora zu ermitteln. Die Anwesenheit selbst eines in Ungnade gefallenen Patrioten und Idealisten mit glänzender militärischer Ausbildung in der Nähe der Tätigkeitsbereiche der Kompanie ist unerwünscht.
+SCHLUSSFOLGERUNG Der Krieg geht weiter, aber das Gleichgewicht verschiebt sich zu unseren Gunsten, dank Verbindungen und Solidarität in Geschäftskreisen.
+Kommissarischer Direktor, Lucas Rodenburg
+
+#QUEST Doc2Sp4
+Brief aus Antigua
+
+#TEXT 1
+D. Ich habe deinen Vorschlag gründlich überdacht, und meine Antwort lautet nein. Und die Loyalität zum Kontor hat damit nichts zu tun. Auf Curaçao sitzen die gleichen gierigen Bastarde wie wir alle. Du weißt verdammt gut, dass ich sie alle bis auf den letzten ausgeweidet hätte, nachdem dieser Pfau mich und meine Leute den englischen Wölfen zum Fraß vorgeworfen hat. 
+Sag, was du willst, aber unser Leviathan ist das Einzige, was diese wilde Grenze in einer gewissen Ordnung hält. Wechsel und Schiffsregister sind das Beste, was er dieser Welt gebracht hat. Ich weiß, du wirst sagen, du würdest es besser machen, aber was, wenn nicht? Was dann? Den gekrönten Häuptern Europas sind wir scheißegal, und die Natur duldet kein Vakuum. Glaubst du, es geht uns allen besser, wenn dieses Piratenbarone-Gesindel die Macht übernimmt?
+Du hast mir damals den Rücken freigehalten, also werde ich dich nicht verpfeifen. Kehr lieber zu deiner Familie zurück, Freund. M.

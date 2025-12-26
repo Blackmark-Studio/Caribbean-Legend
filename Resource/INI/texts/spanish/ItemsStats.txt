@@ -11,10 +11,7 @@ itm_stat_descr_damageReduction {Este porcentaje se resta del daño recibido ante
 itm_stat_attack {Daño}
 itm_stat_descr_attack
 {
-Ataque cortante: #sattack.fast.min#–#sattack.fast.max# daño
-Ataque de estocada: #sattack.force.min#–#sattack.force.max# daño
-Ataque circular: #sattack.round.min#–#sattack.round.max# daño
-Ataque penetrante: #sattack.break.min#–#sattack.break.max# daño
+Ataque cortante: #sattack.fast.min#–#sattack.fast.max# dañoAtaque de estocada: #sattack.force.min#–#sattack.force.max# dañoAtaque circular: #sattack.round.min#–#sattack.round.max# dañoAtaque penetrante: #sattack.break.min#–#sattack.break.max# daño
 }
 itm_stat_gundamage {Daño por armas de fuego.}
 itm_stat_descr_gundamage {El daño infligido en combate a distancia depende de las habilidades, las características del arma y de la munición.}
@@ -54,16 +51,14 @@ itm_stat_descr_secondary_hat10 {Al destruirse, este objeto devuelve su ingredien
 itm_stat_hat11 {Abrazo}
 itm_stat_descr_hat11
 {
-Aguante +2
-Matar a un enemigo con arma blanca restaura un 25% de energía.
+Aguante +2Matar a un enemigo con arma blanca restaura un 25% de energía.
 }
 itm_stat_potion6 {Resistencia}
 itm_stat_descr_potion6 {Beber esta poción evita el aturdimiento en combate.}
 itm_stat_berserker_potion {Furia primitiva}
 itm_stat_descr_berserker_potion
 {
-Provoca una oleada instantánea de gran poder y resistencia, aumenta mucho la agilidad y la velocidad de reacción, reduce el dolor y eleva la agresividad.
-Dura hasta doce segundos y solo puede usarse una vez por minuto.
+Provoca una oleada instantánea de gran poder y resistencia, aumenta mucho la agilidad y la velocidad de reacción, reduce el dolor y eleva la agresividad.Dura hasta doce segundos y solo puede usarse una vez por minuto.
 }
 itm_stat_mangarosafast {Torbellino}
 itm_stat_descr_mangarosafast {Usar esta poción aumenta la velocidad de ataque con cualquier arma un 5%.}
@@ -154,8 +149,7 @@ itm_stat_descr_totem_06 {Superar el peso de carga no ralentiza al personaje ni a
 itm_stat_totem_07 {Invocar}
 itm_stat_descr_totem_07
 {
-Nuevos voluntarios se unirán por un precio menor, incluso si tienen deudas con la tripulación.
-Solo puede usarlo el personaje principal. Aumenta en un 5% el número de reclutas en la taberna.
+Nuevos voluntarios se unirán por un precio menor, incluso si tienen deudas con la tripulación.Solo puede usarlo el personaje principal. Aumenta en un 5% el número de reclutas en la taberna.
 }
 itm_stat_totem_08 {Participación personal}
 itm_stat_descr_totem_08 {Aumenta el daño con fuego naval apuntado en un 10%.}
@@ -170,8 +164,7 @@ itm_stat_descr_totem_12 {Las armas ligeras infligen un 15% más de daño con ata
 itm_stat_totem_13 {Tahúr}
 itm_stat_descr_totem_13
 {
-Aumenta notablemente la probabilidad de sacar la carta correcta y obtener el número deseado al lanzar los dados.
-Otorga +1 Suerte.
+Aumenta notablemente la probabilidad de sacar la carta correcta y obtener el número deseado al lanzar los dados.Otorga +1 Suerte.
 }
 itm_stat_knife_01 {Secreto}
 itm_stat_descr_knife_01 {Este puñal encierra un gran poder oculto. Llevado al pecho como talismán, puede vencer a la muerte.}
@@ -192,16 +185,14 @@ itm_stat_descr_talisman6 {Ayuda a ahorrar provisiones en el barco, reduciendo su
 itm_stat_talisman7 {Caparazón}
 itm_stat_descr_talisman7
 {
-Duplica la velocidad de reparación del barco y ahorra un 30% en recursos.
-Reduce el daño a velas y casco en un 5%.
+Duplica la velocidad de reparación del barco y ahorra un 30% en recursos.Reduce el daño a velas y casco en un 5%.
 }
 itm_stat_talisman8 {Mitridato}
 itm_stat_descr_talisman8 {Evita el envenenamiento por armas enemigas.}
 itm_stat_talisman9 {Servicio}
 itm_stat_descr_talisman9
 {
-Otorga +15% al reclutamiento de marineros en colonias francesas.
-Permite entrada gratuita a burdeles franceses y suma +1 a Liderazgo.
+Otorga +15% al reclutamiento de marineros en colonias francesas.Permite entrada gratuita a burdeles franceses y suma +1 a Liderazgo.
 }
 itm_stat_talisman10 {Poseidón}
 itm_stat_descr_talisman10 {Permite aguantar la respiración bajo el agua mucho tiempo y protege del agua hirviendo.}
@@ -277,9 +268,7 @@ itm_stat_kaleuche_amulet3 {Encantamiento de protección}
 itm_stat_descr_kaleuche_amulet3 {Hace que los monstruos del templo Chavinavi sean vulnerables al daño por arma y otorga protección contra sus ataques. Reduce el daño recibido por cualquier tipo de arma en un 25% y previene el envenenamiento.}
 itm_stat_descr_lacrima_patris_bonus
 {
-~
- ~
- Bono actual: $number($attr($context.KillerBonus.appliedbonus)) de daño y $number($attr($context.KillerBonus.RangeBonus))% de alcance.
+~ ~ Bono actual: $number($attr($context.KillerBonus.appliedbonus)) de daño y $number($attr($context.KillerBonus.RangeBonus))% de alcance.
 }
 itm_stat_blade_WR_1 {Diligencia}
 itm_stat_descr_blade_WR_1 {Aumenta por cinco la velocidad de regeneración de salud en combate.}
@@ -293,3 +282,11 @@ itm_stat_PerksPotion {Olvido}
 itm_stat_descr_PerksPotion {Restablece todos los Perks aprendidos del personaje. Tras consumirla, la memoria de los Perks y las técnicas se borra, pero la habilidad permanece — como si el cuerpo recordara lo que alcanzó y la mente ya no.}
 itm_stat_descr_talisman19_InSlot {Cada 2% del casco del barco perdido aumenta la velocidad y el daño de los cañones en un 0.75% y un 0.5% respectivamente.}
 itm_stat_descr_talisman19_InInventory {Cuando está en el inventario, hace que todos los oficiales sean inmortales.}
+itm_stat_piratesJournal_1 {Asaltante}
+itm_stat_descr_piratesJournal_1 {Aumenta la velocidad en el mapa global en un 3%. El bono se duplica si el buque insignia es el “Amsterdam”. La mejor de las tradiciones piratas.}
+itm_stat_piratesJournal_2 {Perista}
+itm_stat_descr_piratesJournal_2 {Reduce la penalización de las mercancías robadas en un 8%. El bono se duplica si el buque insignia es el “Amsterdam”.}
+itm_stat_piratesJournal_3 {Autosuficiencia}
+itm_stat_descr_piratesJournal_3 {Aumenta la eficiencia de las reparaciones en el mar en un 30%. El bono se duplica si el buque insignia es el “Amsterdam”.}
+itm_stat_pistol15 {Pequeño pero letal}
+itm_stat_descr_pistol15 {Sacar y guardar esta pistola es un 15% más rápido. Los impactos empujan con fuerza a los enemigos.}

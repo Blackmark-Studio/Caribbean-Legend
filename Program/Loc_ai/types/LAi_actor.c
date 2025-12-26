@@ -228,7 +228,7 @@ void LAi_type_actor_StartDialog(aref chr, aref by)
 			LAi_tmpl_SetActivatedDialog(chr, by);
 			chr.chr_ai.type.state = "dialog";
 		}
-		if(chr.chr_ai.type.mode == "stay")
+		if(chr.chr_ai.type.mode == "stay" && !CheckAttribute(chr, "QuestDiag"))
 		{
 			CharacterTurnByChr(chr, by);
 		}else{
@@ -360,6 +360,18 @@ void LAi_ActorRunToLocatorNoCheck(aref chr, string group, string locator, string
 	LAi_ActorRunToLocator(chr, group, locator, quest, timeout);
 }
 
+// Указать актёру переместиться в заданную точку
+void LAi_ActorMoveToPoint(aref chr, bool run, float x, float y, float z, string quest, float timeout)
+{
+    string locator = chr.id;
+    loadedLocation.locators.temp.(locator).x = x;
+    loadedLocation.locators.temp.(locator).y = y;
+    loadedLocation.locators.temp.(locator).z = z;
+    chr.ToPointForced = "";
+	if (run) LAi_ActorRunToLocatorNoCheck(chr, "temp", locator, quest, timeout);
+    else LAi_ActorGoToLocatorNoCheck(chr, "temp", locator, quest, timeout);
+}
+
 //Указать актёру идти в заданную локацию
 void LAi_ActorGoToLocation(aref chr, string groupExit, string locatorExit, string locID, string groupEnter, string locatorEnter, string quest, float timeout)
 {
@@ -464,6 +476,7 @@ void LAi_ActorDialogDelay(aref chr, aref to, string quest, float delayTime)
 	pchar.GenQuest.CallFunctionParam.ActorDialogDelay.quest = quest;
     DoQuestCheckDelay("CallFunctionParam", delayTime);
 }
+
 void ActorDialogDelay()    // относится к методу выше.
 {
 	ref chr = characterFromID(pchar.GenQuest.CallFunctionParam.ActorDialogDelay.chrId);

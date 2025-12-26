@@ -55,7 +55,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tichingitu_3":
-			dialog.text = "Tichingitu wyrzucony z plemienia tubylców. Tichingitu posprzeczał się z szamanem plemienia, szaman powiedział wodzowi, Szaman przeklął Tichingitu, Tichingitu opuścił plemię, daleko, daleko od ziemi przodków. Tichingitu bez domu, bez broni, bez niczego.";
+			dialog.text = "„Tichingitu wyrzucony z plemienia tubylców. Tichingitu posprzeczał się z szamanem plemienia, szaman powiedział wodzowi, Szaman przeklął Tichingitu, Tichingitu opuścił plemię, daleko, daleko od ziemi przodków. Tichingitu bez domu, bez broni, bez niczego.”";
 			link.l1 = "Tak to właśnie nazywam nieszczęściem. Czemu walczyłeś z własnymi ludźmi?";
 			link.l1.go = "Tichingitu_4";
 		break;
@@ -68,7 +68,7 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_5":
 			dialog.text = "Tak, blada twarzy. Tichingitu nie ma wyboru. Albo kraść, albo umrzeć z głodu...";
-			link.l1 = "Cóż, powiadam... Stryczek za kilka nędznych monet skradzionych przez głodnego człowieka... Tichingitu, spróbuję ci pomóc. Znam Fadieja, tego krzepkiego człowieka, do którego domu się wkradłeś. Może uda mi się coś zrobić... Pójdę porozmawiać z komendantem.";
+			link.l1 = "Cóż, powiadam... Stryczek za kilka nędznych monet skradzionych przez głodnego człowieka... Tichingitu, spróbuję ci pomóc. Znam Fadeya, tego krzepkiego człowieka, do którego domu się wkradłeś. Może uda mi się coś zrobić... Pójdę porozmawiać z komendantem.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Tichingitu_wait";
 			AddDialogExitQuestFunction("Tichingitu_DlgExit_1");
@@ -168,7 +168,7 @@ void ProcessDialogEvent()
 		/////////////////////////// ответы для казначея ///////////////////////////////////
 		case "QMASTER_1":
 			dialog.Text = "Raport z okrętu? Tichingitu nie ma raportu, panie. Tylko broń i ubrania. Tichingitu nie wziął raportu znikąd.";
-			Link.l1 = "Dobra, nieważne.";
+			Link.l1 = "Dobrza, nieważne.";
 			Link.l1.go = "exit";
 		break;	
 
@@ -196,7 +196,7 @@ void ProcessDialogEvent()
 			{
 				if(CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && sti(NPChar.chr_ai.musket.bulletNum) > 1)
 				{
-					Link.l4 = "Zmień rodzaj amunicji w swoim muszkiecie.";
+					Link.l4 = "Zmień rodzaj amunicji w swojej muszkiecie.";
 					Link.l4.go = "SetMusketBullets";
 				}
 					Link.l5 = "Zmień swoją priorytetową broń do walki.";
@@ -430,7 +430,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Del_Deluck_3":
-			dialog.text = "Albo zostaw go. Słabego zostaw jaguarowi w dżungli.";
+			dialog.text = "Albo zostaw go. Zostaw słabego jaguarowi w dżungli.";
 			link.l1 = "Komu?";
 			link.l1.go = "Del_Deluck_4";
 		break;

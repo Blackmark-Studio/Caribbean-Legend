@@ -25,7 +25,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sailor_1":
-			dialog.text = "Czego chcesz, "+GetSexPhrase("kolego","dziewczyno")+"? Jeśli proponujesz mi trochę rumu, nie odmówię. Obszedłem to przeklęte miasto już tyle razy, że nogi zaraz mi się w supeł zwiążą. Jak się nazywasz?";
+			dialog.text = "Czego chcesz, "+GetSexPhrase("kolega","dziewczyna")+"? Jeśli proponujesz mi trochę rumu, nie odmówię. Obszedłem to przeklęte miasto już tyle razy, że nogi zaraz mi się w supeł zwiążą. Jak się nazywasz?";
 			link.l1 = "Kapitan "+GetFullName(pchar)+". Nie jesteś z 'Orła', prawda?";
 			link.l1.go = "Sailor_2";
 			DelLandQuestMark(npchar);
@@ -38,7 +38,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Kapitan? No proszę... Ekhm... Nazywam się Antonio Velenta. I tak, jestem z 'Orła'. Nasz statek wpadł ci w oko, kapitanie?";
+				dialog.text = "Kapitán? No proszę... Ekhm... Nazywam się Antonio Velenta. I tak, jestem z 'Orła'. Nasz statek wpadł ci w oko, kapitanie?";
 			}
 			link.l1 = "Statek to statek. Lepiej się pospiesz i wejdź na pokład zamiast wałęsać się po mieście — twój kapitan już zieje gniewem. Zamierza opuścić port, zanim odpłynie przypływ, i coś mi mówi, chłopcze, że nie będzie na ciebie czekał.";
 			link.l1.go = "Sailor_3";
@@ -51,16 +51,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sailor_4":
-			dialog.text = "Widzisz, kiedy rozładowywałem ładownię, natknąłem się na list. Nie wyglądało na to, żeby był celowo ukryty, po prostu leżał tam wśród starych beczek. Nasza fluita przeżyła niejeden abordaż, więc trudno powiedzieć, skąd się wziął.";
+			dialog.text = "Widzisz, kiedy rozładowywałem ładownię, natknąłem się na list. Nie wyglądało na to, żeby był celowo ukryty, po prostu leżał tam wśród starych beczek. Nasz fluit przeżył niejedne abordaż, więc trudno powiedzieć, skąd się wziął.";
 			link.l1 = "Więc znalazłeś list, ale co z tego?";
 			link.l1.go = "Sailor_5";
 		break;
 		
 		case "Sailor_5":
-			dialog.text = "Adresowany jest do pewnej Marisy Caldery z Portobelo. Zapieczętowany woskiem... Czuję w kościach, że to nie błaha sprawa. Może od kapitana, może od kupca... ale na pewno nie od zwykłego marynarza, takiego jak ja! Tylko że nie będę miał czasu znaleźć adresatki – nasz kapitan nie żartuje z takimi rzeczami.  Nie chcesz go ode mnie odkupić? Oddam za tysiąc pesos. Jesteś kapitanem, łatwo ci będzie wytropić tę señorę. A kto wie, może cię wynagrodzi złotem, albo czymś jeszcze... rozumiesz, o co chodzi?";
+			dialog.text = "Adresowany jest do pewnej Marisy Caldery z Porto Bello. Zapieczętowany woskiem... Czuję w kościach, że to nie błaha sprawa. Może od kapitana, może od kupca... ale na pewno nie od zwykłego marynarza, takiego jak ja! Tylko że nie będę miał czasu znaleźć adresatki – nasz kapitan nie żartuje z takimi rzeczami.  Nie chcesz go ode mnie odkupić? Oddam za tysiąc pesos. Jesteś kapitanem, łatwo ci będzie wytropić tę señorę. A kto wie, może cię wynagrodzi złotem, albo czymś jeszcze... rozumiesz, o co chodzi?";
 			if (sti(pchar.Money) >= 1000)
 			{
-				link.l1 = "No dobrze, może znajdę twoją Marisę. Tak czy inaczej, nie mam nic do stracenia. Z wyjątkiem tysiąca pesos. Dawaj ten list.";
+				link.l1 = "No dobrze, może znajdę twoją Marisę.  Tak czy inaczej, nie mam nic do stracenia. Z wyjątkiem tysiąca pesos. Dawaj ten list.";
 				link.l1.go = "Sailor_6";
 			}
 			else
@@ -77,7 +77,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sailor_6":
-			dialog.text = "Proszę bardzo. No, trzymaj się, "+GetSexPhrase("kolego","dziewczyno")+", powinienem już iść – nie chciałbym, żeby moje rzeczy odpłynęły razem z 'Orłem'.";
+			dialog.text = "Proszę bardzo. No, trzymaj się, "+GetSexPhrase("kolega","dziewczyno")+", powinienem już iść – nie chciałbym, żeby moje rzeczy odpłynęły razem z 'Orłem'.";
 			link.l1 = "...";
 			link.l1.go = "Sailor_accept";
 			GiveItem2Character(PChar, "LFD_letter");
@@ -100,18 +100,18 @@ void ProcessDialogEvent()
 		case "Dolores_2":
 			sld = CharacterFromID("PortoBello_priest");
 			dialog.text = "Nie znam żadnej Marisy. Pomyliłeś drzwi. Odejdź teraz, zanim zawołam strażników – wyrzucą cię stąd w mgnieniu oka.";
-			link.l1 = "Ojciec "+sld.name+" powiedział mi, że jesteś jej przyjacielem. Mam do niej list. Sądząc po jego wyglądzie, jest bardzo spóźniony. Chcę dostarczyć go osobiście.";
+			link.l1 = "Ojciec "+sld.name+" powiedziała mi, że jesteś jej przyjacielem. Mam do niej list. Sądząc po jego wyglądzie, jest bardzo spóźniony. Chcę dostarczyć go osobiście.";
 			link.l1.go = "Dolores_3";
 		break;
 		
 		case "Dolores_3":
-			dialog.text = "Ach, kapłan... Jest zbyt uprzejmy dla wszystkich, ale rzadko myli się co do ludzi. Możesz zostawić list u mnie. Dopilnuję, żeby trafił w jej ręce.";
+			dialog.text = "Ach, ojciec... Jest zbyt uprzejmy dla wszystkich, ale rzadko myli się co do ludzi. Możesz zostawić list u mnie. Dopilnuję, żeby trafił w jej ręce.";
 			link.l1 = "Wybacz mi, señorita, ale wolałbym przekazać to osobiście. Może mieć pytania, skąd to mam i dlaczego dotarło tak późno.";
 			link.l1.go = "Dolores_4";
 		break;
 		
 		case "Dolores_4":
-			dialog.text = "I ty oczekujesz, że po prostu uwierzę w twoje dobre intencje? Widziałam już wielu łotrów o cnotliwych twarzach. Zostaw list albo odejdź.";
+			dialog.text = "I ty oczekujesz, że po prostu uwierzę w twoje dobre intencje? Widziałem już wielu łotrów o cnotliwych twarzach. Zostaw list albo odejdź.";
 			link.l1 = "Daję ci słowo kapitana, że nie zrobię krzywdy ani tobie, ani Marisie. Co więcej, możesz zaprosić strażnika lub kogokolwiek innego, kto potrafi władać bronią, na nasze spotkanie. Nie mam innego celu, jak tylko osobiście przekazać ten list Marisie.";
 			link.l1.go = "Dolores_5";
 		break;
@@ -177,7 +177,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_11":
-			dialog.text = "Dolores... On napisał ten list przed swoją ostatnią podróżą. Chciał mi powiedzieć, że miał szansę kupić dużą partię hebanu od kupca w Belize, ale nie miał wystarczająco pieniędzy. Wtedy wziął tę pożyczkę... Dwieście dublonów... Przez którą teraz nie moge zaznać spokoju.";
+			dialog.text = "Dolores... Napisał ten list przed swoją ostatnią podróżą. Chciał mi powiedzieć, że miał szansę kupić dużą partię hebanu od kupca w Belize, ale nie miał wystarczająco pieniędzy. Wtedy wziął tę pożyczkę... Dwieście doblonów... Przez którą teraz nie mogę zaznać spokoju.";
 			link.l1 = "...";
 			link.l1.go = "Marisa_11_1";
 			CharacterTurnByChr(CharacterFromID("LFD_Marisa"), CharacterFromID("LFD_Dolores"));
@@ -221,7 +221,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_15":
-			dialog.text = "Kapitanie, jeszcze raz dziękuję, że przyniósł mi pan ten list. To dla mnie naprawdę wiele znaczy... Ale muszę prosić pana o jeszcze jedną przysługę. Wie pan, mój mąż Ramiro był dla mnie wszystkim i nigdy nie szukałam ochrony u żadnego innego mężczyzny. Teraz, gdy go już nie ma, nie mam się do kogo zwrócić, nie mam własnej rodziny\nMuszę dotrzeć do jego kryjówki – jest poza miastem. Ale boję się iść sama, ścigają mnie wierzyciele mojego zmarłego męża. Zachował się pan bardzo szlachetnie, znajdując mnie, by doręczyć list... Proszę, pomóż mi jeszcze raz.";
+			dialog.text = "Kapitánie, jeszcze raz dziękuję, że przyniósł mi pan ten list. To dla mnie naprawdę wiele znaczy... Ale muszę prosić pana o jeszcze jedną przysługę. Wie pan, mój mąż Ramiro był dla mnie wszystkim i nigdy nie szukałam ochrony u żadnego innego mężczyzny. Teraz, gdy go już nie ma, nie mam się do kogo zwrócić, nie mam własnej rodziny\nMuszę dotrzeć do jego kryjówki – jest poza miastem. Ale boję się iść sama, ścigają mnie wierzyciele mojego zmarłego męża. Zachował się pan bardzo szlachetnie, znajdując mnie, by doręczyć list... Proszę, pomóż mi jeszcze raz.";
 			link.l1 = "Oczywiście, Marisa, odprowadzę cię. Kiedy chciałabyś wyruszyć?";
 			link.l1.go = "Marisa_16";
 			link.l2 = "Przepraszam, señora, ale mój pobyt w waszym mieście już trwa zbyt długo. Spacery po okolicy nie są częścią moich planów.";
@@ -237,7 +237,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_16":
-			dialog.text = "Dziękuję, Kapitanie. Przyjdź jutro o świcie, do siódmej. Będę gotowa.";
+			dialog.text = "Dziękuję, Kapitanie. Przyjdź jutro o świcie, do siódmej. Będę gotowy.";
 			link.l1 = "Zatem do zobaczenia, señora.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LFD_Marisa_1");
@@ -248,11 +248,11 @@ void ProcessDialogEvent()
 			{
 				if (pchar.sex == "man")
 				{
-					dialog.text = "Caballero, oto jesteś... Jesteś prawdziwym człowiekiem honoru! Ruszajmy. Nasza droga prowadzi przez dżunglę do groty niedaleko Zatoki Komarów.";
+					dialog.text = "Caballero, oto jesteś... Jesteś prawdziwym człowiekiem honoru! Ruszajmy. Nasza droga prowadzi przez dżunglę do groty niedaleko Zatoki Moskitów.";
 				}
 				else
 				{
-					dialog.text = "Kapitanko, oto jesteś... Wiedziałam, że przyjdziesz. Wiesz, to pierwszy raz, kiedy spotykam kobietę dowodzącą własnym statkiem. I już widzę, że dorównujesz każdemu mężczyźnie — zarówno honorem, jak i szlachetnością!";
+					dialog.text = "Kapitanko, oto jesteś... Wiedziałem, że przyjdziesz. Wiesz, to pierwszy raz, kiedy spotykam kobietę dowodzącą własnym statkiem. I już widzę, że dorównujesz każdemu mężczyźnie — zarówno honorem, jak i szlachetnością!";
 				}
 				link.l1 = "Doskonale, señora. Nie traćmy więc czasu. Trzymaj się blisko i nawet na chwilę się nie oddalaj.";
 				link.l1.go = "Marisa_go_cove";
@@ -264,7 +264,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Przyjdź o świcie, około siódmej. Będę gotowa.";
+				dialog.text = "Przyjdź o świcie, około siódmej. Będę gotowy.";
 				link.l1 = "Do zobaczenia, señora.";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "Marisa_21";
@@ -272,13 +272,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_22":
-			dialog.text = "Doprawdy? Spotkał go ten sam los co mojego Ramira?";
+			dialog.text = "Czy tak? Spotkał ten sam los co mój Ramiro?";
 			link.l1 = "Z pewnością wolałby odejść z mieczem w dłoni albo podczas sztormu. Ale los miał wobec niego inne plany – zgubiła go choroba, o której nikomu nigdy nie wspominał.";
 			link.l1.go = "Marisa_23";
 		break;
 		
 		case "Marisa_23":
-			dialog.text = "Przykro mi z powodu twojej straty, "+pchar.name+". Pan zabiera najlepszych spośród nas... I choć nie zawsze rozumiemy dlaczego, taka jest Jego wola. Jedyne, co możemy zrobić, to modlić się o spokój ich nieśmiertelnych dusz.";
+			dialog.text = "Przykro mi z powodu twojej straty, "+pchar.name+" Pan zabiera najlepszych spośród nas... I choć nie zawsze rozumiemy dlaczego, taka jest Jego wola. Jedyne, co możemy zrobić, to modlić się o spokój ich nieśmiertelnych dusz.";
 			link.l1 = "...";
 			link.l1.go = "Marisa_24";
 		break;
@@ -302,7 +302,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_32":
-			dialog.text = ""+GetSexPhrase("Señor "+pchar.lastname+"",""+pchar.name+"")+"... Znalazłeś coś? To to, co zostawił Ramiro? Nawet nie wiem, co mnie bardziej przeraża – że jest pusto, czy że to nie wystarczy, by spłacić dług...";
+			dialog.text = ""+GetSexPhrase("Señor "+pchar.lastname+"",""+pchar.name+"")+"...   Znalazłeś coś?   To to, co zostawił Ramiro?   Nawet nie wiem, co mnie bardziej przeraża – że jest pusto, czy że to nie wystarczy, by spłacić dług...";
 			if (PCharDublonsTotal() >= 400 && GetCharacterItem(pchar, "jewelry2") >= 10 && GetCharacterItem(pchar, "jewelry3") >= 10 && CheckCharacterItem(PChar, "mushket1"))
 			{
 				link.l1 = "(pokazuje) Proszę, to wszystko, co było w skrzyni. Mam nadzieję, że to wystarczy, by odmienić twój los na lepsze.";
@@ -318,7 +318,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_33":
-			dialog.text = "Ach, Kapitanie! Oczywiście! To powinno wystarczyć! Ale nie mogę pozwolić, żeby twoja pomoc została bez nagrody. Weź sto dublonów. Gdyby nie ty, nigdy nie dowiedziałabym się o tej skrytce i wciąż ukrywałabym się przed ludźmi nasłanymi przez wierzyciela Ramira...";
+			dialog.text = "Ach, Kapitanie! Oczywiście! To powinno wystarczyć! Ale nie mogę pozwolić, żeby twoja pomoc została bez nagrody. Weź sto doblonów. Gdyby nie ty, nigdy nie dowiedziałbym się o tej skrytce i wciąż ukrywałbym się przed ludźmi nasłanymi przez wierzyciela Ramira...";
 			link.l1 = "Jest pani bardzo hojna, señora, dziękuję. W naszej branży złoto nigdy się nie marnuje.";
 			link.l1.go = "Marisa_34";
 			link.l2 = "Nie, señora. To pani bardziej potrzebuje tych pieniędzy niż ja. Najważniejsze, że teraz może pani zostawić kłopoty za sobą i żyć w spokoju. To mi w zupełności wystarczy.";
@@ -365,7 +365,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_1":
-			dialog.text = "Ha! A więc tu jest nasza zaginiona! Naprawdę myślałaś, że możesz się tu ukryć, w tej norze jak mysz, i że cię nie znajdę? Przewróciłem całe miasto do góry nogami nie raz, a ty przez cały czas byłaś właśnie tutaj"+GetSexPhrase(", a na dodatek poszłaś na randkę z jakimś gówniarzem. Gdzie są moje pieniądze, ty mała dziwko? Lepiej oddaj je natychmiast, bo inaczej ta jaskinia stanie się twoim grobem.",".")+"";
+			dialog.text = "Ha! A więc tu jest nasz zaginiony! Naprawdę myślałeś, że możesz się tu ukryć, w tej norze jak mysz, i że cię nie znajdę? Przewróciłem całe miasto do góry nogami nie raz, a ty przez cały czas byłeś właśnie tutaj"+GetSexPhrase(", a na dodatek poszłaś na randkę z jakimś gówniarzem. Gdzie są moje pieniądze, ty mała dziwko? Lepiej oddaj je natychmiast, bo inaczej ta jaskinia stanie się twoim grobem.",".")+"";
 			link.l1 = "...";
 			link.l1.go = "Naemnik_1_1";
 			CharacterTurnByChr(CharacterFromID("LFD_Marisa"), CharacterFromID("LFD_Naemnik"));
@@ -396,7 +396,7 @@ void ProcessDialogEvent()
 		case "Naemnik_4":
 			if (pchar.sex == "man")
 			{
-				dialog.text = "Zamknij się, bohaterze. Twoja kolej jeszcze przyjdzie, ale najpierw zajmę się nią. Jest mi winna pięćset dwadzieścia pięć dublonów – to jej dług z odsetkami. Albo spłaci wszystko, albo zostanie tu na zawsze – na pożarcie robakom. Ale skoro taki z ciebie sprawiedliwy, możesz zapłacić za nią, a ja zniknę.";
+				dialog.text = "Zamknij się, bohaterze. Twoja kolej jeszcze przyjdzie, ale najpierw zajmę się nią. Jest mi winna pięćset dwadzieścia pięć doblonów – to jej dług z odsetkami. Albo spłaci wszystko, albo zostanie tu na zawsze – na pożarcie robakom. Ale skoro taki z ciebie sprawiedliwy, możesz zapłacić za nią, a ja zniknę.";
 				if (PCharDublonsTotal() >= 525)
 				{
 					link.l1 = "Myślisz, że możesz tu po prostu wejść, obrazić damę, zignorować mnie i wyjść stąd w jednym kawałku, jeszcze z tymi dublonami? Wygląda na to, że nie grzeszysz rozumem. Ale nie zamierzam wszczynać bójki przy kobiecie. Mam więc dla ciebie propozycję: przeproś panią Calderę, zabierz swoje dublony i wynoś się stąd. W przeciwnym razie będę musiał nauczyć cię trochę ogłady.";
@@ -410,7 +410,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Zamknij się i czekaj na swoją kolej. Z tobą porozmawiam później, jak skończę z tą nędznicą. Jest mi winna pięćset dwadzieścia pięć dublonów – tyle wynosi jej dług z odsetkami. Skoro jesteś taki sprawiedliwy, możesz za nią zapłacić, a ja znikam.";
+				dialog.text = "Zamknij się i czekaj na swoją kolej. Z tobą porozmawiam później, jak skończę z tą nędznicą. Jest mi winna pięćset dwadzieścia pięć doblonów – tyle wynosi jej dług z odsetkami. Skoro jesteś taki sprawiedliwy, możesz za nią zapłacić, a ja znikam.";
 				if (PCharDublonsTotal() >= 525)
 				{
 					link.l1 = "Cóż, jestem gotów wybaczyć ci twoje szorstkie maniery, a nawet nieuprzejmość wobec mnie. Ale jeśli chcesz dostać swoje dublony i wyjść stąd w jednym kawałku, będziesz musiał przeprosić Lady Calderę. W przeciwnym razie przekonamy się, kto lepiej włada bronią. I uwierz mi, nie noszę swojej tylko na pokaz.";
@@ -427,7 +427,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_5":
-			dialog.text = "No dobrze, niech będzie po twojemu. Jeśli możemy zdobyć pieniądze bez zbędnego ryzyka, nie widzę powodu, by się wychylać. Oddaj dublony – i znikaj.";
+			dialog.text = "No dobrze, niech będzie po twojemu. Jeśli możemy zdobyć pieniądze bez zbędnego ryzyka, nie widzę powodu, by się wychylać. Oddaj dubloony – i znikaj.";
 			link.l1 = "Najpierw przeproś damę.";
 			link.l1.go = "Naemnik_6";
 		break;
@@ -441,7 +441,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Naemnik_7":
-			dialog.text = "Zadowolon"+GetSexPhrase("y","a")+"? Oddaj złoto i pójdę swoją drogą. Mam mnóstwo spraw na głowie, nie będę tu stał i wdawał się z tobą w pogawędki.";
+			dialog.text = "Szczęśliwy"+GetSexPhrase("","")+"   Oddaj złoto i pójdę swoją drogą. Mam mnóstwo spraw na głowie, nie będę tu stał i wdawał się z tobą w pogawędki.";
 			link.l1 = "Weź swoje dublony i wynoś się stąd.";
 			link.l1.go = "Naemnik_7_1";
 			CharacterTurnByChr(npchar, pchar);
@@ -455,8 +455,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_37":
-			dialog.text = "Kapitanie, naprawdę nie rozumiem... Co to ma znaczyć?";
-			link.l1 = "To znaczy, że już nic nie jesteś winna. Jesteś wolna.";
+			dialog.text = "Kapitánie, naprawdę nie rozumiem... Co to ma znaczyć?";
+			link.l1 = "To znaczy, że już nic nie jesteś winien. Jesteś wolny.";
 			link.l1.go = "Marisa_38";
 			CharacterTurnByChr(npchar, pchar);
 			
@@ -473,7 +473,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_39":
-			dialog.text = "Ja... Ja po prostu nie mogę w to uwierzyć. Takie rzeczy się nie zdarzają, "+GetSexPhrase("caballero","señorita")+"! Zapłaciłeś za mnie fortunę... tak po prostu? I co, to już koniec? Żadnych długów, żadnej pogoni? Powiedz mi, czy to prawda?";
+			dialog.text = "Ja... Ja po prostu nie mogę w to uwierzyć. Takie rzeczy się nie zdarzają, "+GetSexPhrase("caballero","senorita")+"! Zapłaciłeś za mnie fortunę... tak po prostu? I co, to już koniec? Żadnych długów, żadnej pogoni? Powiedz mi, czy to prawda?";
 			link.l1 = "To prawda, señora. To już koniec. Nikomu już nic nie jesteś winna.";
 			link.l1.go = "Marisa_40";
 		break;
@@ -501,14 +501,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_42":
-			dialog.text = "O Kapitanie, odebranie życia, nawet komuś takiemu jak on, to straszny i ciężki grzech! Będziesz musiał modlić się dniami i nocami, by choć trochę zmyć go ze swojej nieśmiertelnej duszy. Bóg mi świadkiem, mogłam po prostu oddać mu wszystko, co miałam, i odszedłby... Ale teraz... teraz jego krew jest na twoich rękach, i tylko niebiosa zdecydują, czy zostaniesz przebaczony!";
+			dialog.text = "O Kapitanie, odebranie życia, nawet komuś takiemu jak on, to straszny i ciężki grzech! Będziesz musiał modlić się dniami i nocami, by choć trochę zmyć go ze swojej nieśmiertelnej duszy. Bóg mi świadkiem, mogłem po prostu oddać mu wszystko, co miałem, i odszedłby... Ale teraz... teraz jego krew jest na twoich rękach, i tylko niebiosa zdecydują, czy zostaniesz przebaczony!";
 			link.l1 = "Może tak chciał Pan. Ale nie roztrząsajmy tego. Lepiej wydostańmy się z tej jaskini.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LFD_Naemnik_bitva_3");
 		break;
 		
 		case "Marisa_51":
-			dialog.text = "Kapitanie, pozwól mi raz jeszcze podziękować! Będę się modlić o twoje zdrowie i pomyślność, "+pchar.name+". Proszę, przyjdź do naszego kościoła – niech Pan obdarzy cię przebaczeniem wszystkich twoich grzechów i swoim błogosławieństwem.";
+			dialog.text = "Kapitánie, pozwól mi raz jeszcze podziękować! Będę się modlić o twoje zdrowie i pomyślność, "+pchar.name+". Proszę, przyjdź do naszego kościoła – niech Pan obdarzy cię przebaczeniem wszystkich twoich grzechów i swoim błogosławieństwem.";
 			link.l1 = "Może kiedyś wpadnę. I pamiętaj, Marisa, jeśli nie zobaczę tam twojej uśmiechniętej twarzy, bardzo się rozczaruję.";
 			link.l1.go = "Marisa_52";
 		break;
@@ -521,21 +521,21 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_54":
-			dialog.text = "Kapitanie, pozwól mi raz jeszcze wyrazić moją bezgraniczną wdzięczność! Uczyniłeś dla mnie coś niemożliwego! Za twoją dobroć i szlachetność chcę ci opowiedzieć, jak udało mi się unikać najemników przez ostatnie dwa lata. Może ta wiedza kiedyś i tobie się przyda.";
+			dialog.text = "Kapitánie, pozwól mi raz jeszcze wyrazić moją bezgraniczną wdzięczność! Uczyniłeś dla mnie coś niemożliwego! Za twoją dobroć i szlachetność chcę ci opowiedzieć, jak udało mi się unikać najemników przez ostatnie dwa lata. Może ta wiedza kiedyś i tobie się przyda.";
 			link.l1 = "Dziękuję, señora. W takich sprawach wiedza jest warta tyle co złoto. Słucham.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LFD_Finish_In_Town_NaemnikAlive_2");
 		break;
 		
 		case "Marisa_55":
-			dialog.text = "W ten sposób spędziłam te dwa lata. W świecie, gdzie siła znaczy tak wiele, umiejętność pozostania w cieniu otwiera możliwości, o których inni mogą tylko marzyć.";
+			dialog.text = "W ten sposób spędziłem te dwa lata. W świecie, gdzie siła znaczy tak wiele, umiejętność pozostania w cieniu otwiera możliwości, o których inni mogą tylko marzyć.";
 			link.l1 = "Dziękuję, że podzieliłaś się swoją historią, Marisa. Przeszłaś naprawdę wiele, a twoje doświadczenie jest niezwykle cenne.";
 			link.l1.go = "Marisa_56";
 			AddCharacterExpToSkill(pchar, "Sneak", 500);
 		break;
 		
 		case "Marisa_56":
-			dialog.text = "Będę naprawdę szczęśliwa, widząc cię ponownie w naszym mieście. Proszę, przyjdź do naszego kościoła. Niech Pan obdarzy cię przebaczeniem wszystkich twoich grzechów i swoim błogosławieństwem.";
+			dialog.text = "Będę naprawdę szczęśliwy, widząc cię ponownie w naszym mieście. Proszę, przyjdź do naszego kościoła—niech Pan obdarzy cię przebaczeniem wszystkich twoich grzechów i swoim błogosławieństwem.";
 			link.l1 = "Może kiedyś wpadnę. I pamiętaj, Marisa, jeśli nie zobaczę tam twojej uśmiechniętej twarzy, będę bardzo rozczarowany.";
 			link.l1.go = "Marisa_57";
 		break;
@@ -557,13 +557,13 @@ void ProcessDialogEvent()
 				switch (rand(1))
 				{
 					case 0:
-						dialog.text = "Kapitanie, to prawdziwa przyjemność znów cię widzieć! Miałam nadzieję, że zajrzysz. Może dziś znajdziesz chwilę, by zostać dłużej i pomodlić się?";
-						link.l1 = "Cieszę się z "+GetSexPhrase("naszego","naszego")+" spotkania, Marisa. Ale obawiam się, że nie mogę sobie pozwolić na dłuższy postój. Pamiętam o swoim obowiązku wobec Pana, ale modlitwa będzie musiała poczekać.";
+						dialog.text = "Kapitánie, to prawdziwa przyjemność znów cię widzieć! Miałam nadzieję, że zajrzysz. Może dziś znajdziesz chwilę, by zostać dłużej i pomodlić się?";
+						link.l1 = "Cieszę się"+GetSexPhrase("","")+" spotkanie, Marisa. Ale obawiam się, że nie mogę sobie pozwolić na dłuższy postój. Pamiętam o swoim obowiązku wobec Pana, ale modlitwa będzie musiała poczekać.";
 						link.l1.go = "Marisa_62";
 					break;
 
 					case 1:
-						dialog.text = "Kapitanie, znowu pan! Zawsze miło pana widzieć. Wygląda na to, że Bóg nie pozwoli panu zapomnieć drogi do kościoła... Może jednak znajdzie pan chwilę na modlitwę?";
+						dialog.text = "Kapitánie, znowu pan! Zawsze miło pana widzieć. Wygląda na to, że Pan nie pozwoli panu zapomnieć drogi do kościoła... Może jednak znajdzie pan chwilę na modlitwę?";
 						link.l1 = "Marisa, dobrze cię widzieć. Ale nie mogę zostać – moje sprawy nie mogą czekać. Wierzę, że Pan zna moje myśli nawet bez modlitwy.";
 						link.l1.go = "Marisa_63";
 					break;
@@ -575,13 +575,13 @@ void ProcessDialogEvent()
 				{
 					case 0:
 						dialog.text = "Kapitanie, cóż za radość znów cię widzieć! Każdego dnia dziękuję Bogu za twoją dobroć. Świat stał się jaśniejszy, gdy mi pomogłeś.";
-						link.l1 = "Cieszę się "+GetSexPhrase("niezmiernie","niezmiernie")+". Miło cię widzieć w dobrym zdrowiu, Marisa. Mam nadzieję, że życie nie przyniosło ci więcej przykrych niespodzianek. Wyglądasz na dużo szczęśliwszą.";
+						link.l1 = "Cieszę się"+GetSexPhrase("","")+"   Miło cię widzieć w dobrym zdrowiu, Marisa. Mam nadzieję, że życie nie przyniosło ci więcej przykrych niespodzianek. Wyglądasz na dużo szczęśliwszą.";
 						link.l1.go = "Marisa_64";
 					break;
 
 					case 1:
 						dialog.text = "Kapitanie, tak się cieszę, że pana widzę! Za każdym razem, gdy przychodzi pan do naszego kościoła, ogarnia mnie spokój. Przynosi pan ze sobą światło dobrych uczynków.";
-						link.l1 = "I ja się cieszę."+GetSexPhrase("","")+" Miło cię widzieć, Marisa. Przywykłaś już do spokojnego życia, czy wciąż czasem oglądasz się za siebie?";
+						link.l1 = "I ja się cieszę"+GetSexPhrase("","")+" Miło cię widzieć, Marisa. Przywykłaś już do spokojnego życia, czy wciąż czasem oglądasz się za siebie?";
 						link.l1.go = "Marisa_65";
 					break;
 				}
@@ -611,7 +611,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_63_1":	
-			dialog.text = "Kapitanie, czy nie sądzisz, że odkładanie pokuty to już samo w sobie grzech? Pewnego dnia może być za późno.";
+			dialog.text = "Kapitánie, czy nie sądzisz, że odkładanie pokuty to już samo w sobie grzech? Pewnego dnia może być za późno.";
 			link.l1 = "Może, ale obawiam się, że dziś nie mam czasu. Wiara jest przy mnie, a Pan widzi moją skruchę nawet bez modlitwy.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Marisa_63_1";
@@ -646,7 +646,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marisa_Ne_Ta_Peshera":	
-			dialog.text = "Kapitanie, to nie tutaj. Jaskinia, której szukamy, jest przy Zatoce Komarów.";
+			dialog.text = "Kapitanie, to nie tutaj. Jaskinia, której szukamy, jest przy Mosquitos Bay.";
 			link.l1 = "...";
 			link.l1.go = "Marisa_Ne_Ta_Peshera_1";
 		break;

@@ -261,8 +261,8 @@ void FireBrigade_hol(string qName) {FireBrigadeCheck(HOLLAND);}
 
 void FireBrigadeCheck(int iNation)
 {
-	int    i, iTemp, num;
-	string sGroup, sCapId, sTemp;
+	int    i, iTemp;
+	string sGroup, sCapId;
     string sNation = NationShortName(iNation);
 	ref    sld;
     bool   bSkip = false;

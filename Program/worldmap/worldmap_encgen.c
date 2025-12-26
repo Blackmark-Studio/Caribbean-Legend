@@ -153,8 +153,14 @@ void Map_WarriorEnd_quest(string sChar)
     //if (iChar != -1)
     ref rChar = CharacterFromID(sChar);
 
-    if(FindSubStr(sChar, "Brigadier0", 0) != -1)
+    if(sChar == "ClockTower_HWIC_Cap01")
+    {
+        ClockTower_BrigadeRefresh(rChar);
+    }
+    else if(FindSubStr(sChar, "Brigadier0", 0) != -1)
+    {
         FireBrigadeRefresh(rChar, sti(rChar.Nation), 3 + rand(3));
+    }
 }
 
 void Map_TraderSucces()
@@ -335,7 +341,11 @@ void Map_TraderSucces_quest(string sChar)
 	{
 		Memento_ToCity(sChar);
 	}
-    else if(FindSubStr(sChar, "Brigadier0", 0) != -1)
+    else if (sChar == "ClockTower_HWIC_Cap01")
+    {
+        ClockTower_BrigadeRefresh(character);
+    }
+    else if (FindSubStr(sChar, "Brigadier0", 0) != -1)
     {
         FireBrigadeRefresh(character, sti(character.nation), 5 + rand(4));
     }

@@ -683,8 +683,8 @@ void LadyBeth_CaimanBitva_1(string qName)
 			else
 			{	// RB Союзные матросы Леди Бет
 				sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "citiz_3"+(rand(8)+1), "man", "man", 6, sti(pchar.nation), 0, false, "soldier"));
-				FantomMakeCoolFighter(sld, 7, 30, 30, "blade_10", "pistol1", "bullet", 30);
-				ForceAdaptiveLevel(sld, 8, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+				FantomMakeCoolFighter(sld, 6, 30, 30, "blade_10", "pistol1", "bullet", 30);
+				ForceAdaptiveLevel(sld, 7, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 				if (i >= 1 && i <= 4) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_1");
 				if (i >= 5 && i <= 8) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_2");
 				if (i >= 9 && i <= 12) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_3");
@@ -748,8 +748,8 @@ void LadyBeth_CaimanBitva_1(string qName)
 			else
 			{	// RB Союзные матросы Леди Бет
 				sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "citiz_3"+(rand(8)+1), "man", "man", 6, sti(pchar.nation), 0, false, "soldier"));
-				FantomMakeCoolFighter(sld, 8, 30, 30, "blade_10", "pistol1", "bullet", 30);
-				ForceAdaptiveLevel(sld, 8, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+				FantomMakeCoolFighter(sld, 6, 30, 30, "blade_10", "pistol1", "bullet", 30);
+				ForceAdaptiveLevel(sld, 7, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 				if (i >= 1 && i <= 4) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_1");
 				if (i >= 5 && i <= 8) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_2");
 				if (i >= 9 && i <= 12) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_3");
@@ -872,8 +872,8 @@ void LadyBeth_CaimanBitva_1(string qName)
 	LAi_SetActorType(sld);
 	//генерация зерна контрольного уровня для очередняр
 	float tweakLevel = 9*LadyBeth_SilaEnemy; //смещение контрольного уровня в зависимости от соотношения команды. 
-	int commonerLevel = 1 + tweakLevel; // дает от 5 до 12
-	int eliteLevel = 3 + tweakLevel*1.5;
+	int commonerLevel = 2 + tweakLevel; // дает от 6 до 13
+	int eliteLevel = 4 + tweakLevel*1.5;
 
 	// Отряд 1
 	for (i=1; i<=13; i++)
@@ -905,14 +905,14 @@ void LadyBeth_CaimanBitva_1(string qName)
 		LAi_group_MoveCharacter(sld, "LadyBeth_Enemy");
 	}
 	// Отряд 3
-	for (i=1; i<=11; i++)
+	for (i=1; i<=12; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_EnemyGroup3_"+i, "citiz_4"+(rand(8)+1), "man", "man", 3, ENGLAND, 0, false, "soldier"));
 		FantomMakeCoolFighter(sld, 3, 30, 30, "blade_10", "pistol1", "bullet", 0);
 		ForceAdaptiveLevel(sld, CommonerLevel, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 		if (i >= 1 && i <= 4) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc3_1");
 		if (i >= 5 && i <= 8) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc3_2");
-		if (i >= 9 && i <= 11) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc3_3");
+		if (i >= 9 && i <= 12) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc3_3");
 		LAi_CharacterDisableDialog(sld);
 		LAi_SetWarriorType(sld);
 		LAi_warrior_SetStay(sld, true);
@@ -920,14 +920,14 @@ void LadyBeth_CaimanBitva_1(string qName)
 		LAi_group_MoveCharacter(sld, "LadyBeth_Enemy");
 	}
 	// Отряд 4
-	for (i=1; i<=13; i++)
+	for (i=1; i<=14; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_EnemyGroup4_"+i, "citiz_4"+(rand(8)+1), "man", "man", 3, ENGLAND, 0, false, "soldier"));
 		FantomMakeCoolFighter(sld, 3, 30, 30, "blade_10", "pistol1", "bullet", 0);
 		ForceAdaptiveLevel(sld, CommonerLevel, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 		if (i >= 1 && i <= 4) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc4_1");
 		if (i >= 5 && i <= 8) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc4_2");
-		if (i >= 9 && i <= 13) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc4_3");
+		if (i >= 9 && i <= 14) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc4_3");
 		LAi_CharacterDisableDialog(sld);
 		LAi_SetWarriorType(sld);
 		LAi_warrior_SetStay(sld, true);
@@ -2082,7 +2082,6 @@ void LadyBeth_ShipInShore_Vnutri_3(string qName)
 	sld.Payment = true;
 	sld.location = "none";
 	sld.DontClearDead = true;
-	RemoveCaptainOfficers(sld);
 	SaveCurrentNpcQuestDateParam(sld, "HiredDate");
 	SetCompanionIndex(pchar, -1, sti(sld.index));
 	//трюм корабля

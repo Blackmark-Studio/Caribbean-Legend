@@ -1400,20 +1400,20 @@ void InitShips()
 	refShip.Cannon          			= CANNON_TYPE_CANNON_LBS20;
 	refShip.MaxCaliber      			= 24;
 	refShip.Weight						= Tonnes2CWT(950);
-	refShip.Capacity        			= 3950;
-	refShip.CannonsQuantity				= 46;
-	refShip.CannonsQuantityMin			= 40;
-	refShip.rcannon 					= 20;
-	refShip.lcannon 					= 20;
+	refShip.Capacity        			= 4100;
+	refShip.CannonsQuantity				= 42;
+	refShip.CannonsQuantityMin			= 36;
+	refShip.rcannon 					= 16;
+	refShip.lcannon 					= 16;
 	refShip.fcannon 					= 2;
 	refShip.bcannon 					= 4;	
 	refShip.MaxCrew         			= 460;
 	refShip.OptCrew         			= 368;
 	refShip.MinCrew         			= 92;	
-	refShip.SpeedRate       			= 10.05;
-	refShip.TurnRate        			= 35.0;
+	refShip.SpeedRate       			= 10.25;
+	refShip.TurnRate        			= 42.0;
 	refShip.Price           			= 66900;	
-	refShip.HP              			= 3500;
+	refShip.HP              			= 3900;
 	refShip.SP              			= 100;
 	refship.Type.Merchant				= false;
 	refship.Type.War					= true;
@@ -1770,7 +1770,7 @@ void InitShips()
 	refship.Soundtype					= "frigate";
 	refShip.Class						= 2;
 	refShip.Cannon          			= CANNON_TYPE_CANNON_LBS24;
-	refShip.MaxCaliber      			= 36;
+	refShip.MaxCaliber      			= 32;
 	refShip.Weight						= Tonnes2CWT(1050);
 	refShip.Capacity        			= 6150;
 	
@@ -1849,7 +1849,7 @@ void InitShips()
 	refship.Soundtype					= "frigate";
 	refShip.Class						= 2;
 	refShip.Cannon          			= CANNON_TYPE_CANNON_LBS24;
-	refShip.MaxCaliber      			= 32;
+	refShip.MaxCaliber      			= 24;
 	refShip.Weight						= Tonnes2CWT(1200);
 	refShip.Capacity        			= 5430;
 	refShip.CannonsQuantity				= 50;	// 4,6,20,20	4,6,19,19	4,6,18,18
@@ -3254,73 +3254,84 @@ void InitShips()
 	refship.icons.FirstIconPos = 0+2*16;
 	refship.icons.SecondIconPos = 0+2*16 + 1;
 	
-	// --> квестовые корабли - заглушки
 	///////////////////////////////////////////////////////////////////////////
-	//// квестовый корабль №0 - 6-ый класс
+	//// Фрегат "Амстердам"
 	///////////////////////////////////////////////////////////////////////////
-	makeref(refShip,ShipsTypes[SHIP_QUEST0]);
-	refShip.Name									= "QuestShip0";
-	refship.Soundtype								= "lugger";
-	refShip.Class									= 6;
-	refShip.Cannon									= CANNON_TYPE_NONECANNON;
-	refShip.MaxCaliber								= 3;
-	refShip.Weight									= Tonnes2CWT(10);
-	refShip.Capacity								= 80;
-	refShip.CannonsQuantity							= 0;
-	refShip.CannonsQuantityMin						= 0;
-	refShip.rcannon 								= 0;
-	refShip.lcannon 								= 0;
-	refShip.fcannon 								= 0;
-	refShip.bcannon 								= 0;
-	refShip.MaxCrew									= 15;
-	refShip.OptCrew									= 12;
-	refShip.MinCrew									= 1;	
-	refShip.SpeedRate								= 7.0;
-	refShip.TurnRate								= 75;
-	refShip.Price									= 2100;
-	refShip.HP										= 150;
-	refShip.SP										= 100;
-	refship.CanEncounter							= false;
-	refship.Type.Merchant							= false;
-	refship.Type.War								= false;
-	refship.QuestShip								= true; 
-	refship.ShipHolder								= true;
-	refShip.lowpolycrew 							= 3;
-
-	refShip.Massa 									= 10000.0;
-	refShip.Volume 									= 20.0;
-	refship.WindAgainstSpeed   						= 1.0;
-		
-	refship.InertiaAccelerationX	= 3.0;	refship.InertiaBrakingX		= 2.0;
-	refship.InertiaAccelerationY	= 14;	refship.InertiaBrakingY		= 5;
-	refship.InertiaAccelerationZ	= 5.0;	refship.InertiaBrakingZ		= 3.0;
+	makeref(refShip,ShipsTypes[SHIP_AMSTERDAM]);
+	refShip.Name            			= "Amsterdam";
+	refship.Soundtype					= "frigate";
+	refShip.Class						= 2;
+	refShip.Cannon          			= CANNON_TYPE_CANNON_LBS32;
+	refShip.MaxCaliber      			= 32;
+	refShip.Weight						= Tonnes2CWT(920);
+	refShip.Capacity        			= 5000;
+	refShip.CannonsQuantity				= 42;	// 2,4,18,18
+	refShip.CannonsQuantityMin			= 42;
+	refShip.rcannon 					= 18;
+	refShip.lcannon 					= 18;
+	refShip.fcannon 					= 2;
+	refShip.bcannon 					= 4;
 	
-	refShip.Height.Bombs.Y				= 0.4;	refShip.Height.Bombs.DY		= 0.2;
-	refShip.Height.Grapes.Y				= 1.3;	refShip.Height.Grapes.DY	= 0.6;
-	refShip.Height.Knippels.Y			= 6.5;	refShip.Height.Knippels.DY	= 5.8;
-	refShip.Height.Balls.Y				= 0.4;	refShip.Height.Balls.DY		= 0.2;
+	refShip.MaxCrew         			= 481;
+	refShip.OptCrew         			= 385;
+	refShip.MinCrew         			= 96;
+	
+	refShip.SpeedRate       			= 12.15;
+	refShip.TurnRate        			= 45.2;
+	refShip.Price           			= 95000;
+	refShip.HP              			= 5200;
+	refShip.SP              			= 100;
+
+	refship.Type.Merchant				= false;
+	refship.Type.War					= true;
+	refship.Spec                		= SHIP_SPEC_RAIDER;
+	refship.QuestShip					= true; 
+	refship.QuestSP						= true;
+
+	refShip.lowpolycrew 				= 20;
+	
+	refship.Rocking.y 					= 0.4;
+	refship.Rocking.az 					= 0.035;	
+	refship.WaterLine					= -1.7;
+
+	refship.SpeedDependWeight			= 0.3;
+	refship.SubSeaDependWeight			= 1.0;
+	refship.TurnDependWeight			= 0.3;
+	refship.WindAgainstSpeed   			= 0.62;
+	refship.CabinType          			= "Cabin"; 
+	refship.DeckType           			= "Big";
+	
+	refship.InertiaAccelerationX	= 5.0;	refship.InertiaBrakingX		= 5.0;
+	refship.InertiaAccelerationY	= 4;	refship.InertiaBrakingY		= 4;
+	refship.InertiaAccelerationZ	= 5.0;	refship.InertiaBrakingZ		= 5.0;
+	
+	refShip.Height.Bombs.Y				= 3.4;	refShip.Height.Bombs.DY		= 1.5;
+	refShip.Height.Grapes.Y				= 5.3;	refShip.Height.Grapes.DY	= 1.575;
+	refShip.Height.Knippels.Y			= 19.5;	refShip.Height.Knippels.DY	= 13.5;
+	refShip.Height.Balls.Y				= 3.4;	refShip.Height.Balls.DY		= 1.5;
+	
+	refShip.GeraldSails.rey_b1		= 1;
+	refShip.GeraldSails.rey_b2		= 1;
+	refShip.GeraldSails.rey_b3		= 1;
+	refShip.GeraldSails.rey_b1.vscale		= 0.9;
+	refShip.GeraldSails.rey_b2.vscale		= 0.7;
+	refShip.GeraldSails.rey_b3.vscale		= 0.7;
 
 	refship.Track.Enable	= true;
 	refship.Track1.ZStart	= 0.20;
-	refship.Track1.LifeTime = 9;
-	refship.Track1.Width	= "1.0, 2.0";
-	refship.Track1.Speed	= "5.2, 6.2";
+	refship.Track1.LifeTime = 14.5;
+	refship.Track1.Width	= "3.7, 3.9";
+	refship.Track1.Speed	= "7.0, 8.0";
 
 	refship.Track2.ZStart	= -0.15;
-	refship.Track2.LifeTime = 7;
-	refship.Track2.Width	= "1.2, 2.0";
-	refship.Track2.Speed	= "0.15, 0.25";
+	refship.Track2.LifeTime = 8.5;
+	refship.Track2.Width	= "8.0, 9.0";
+	refship.Track2.Speed	= "0.15, 0.25";	
+
+	refship.icons.FirstIconPos = 6+4*16;
+	refship.icons.SecondIconPos = 6+4*16 + 1;
 	
-	refship.nation.england	= true;
-	refship.nation.france	= true;
-	refship.nation.spain	= true;
-	refship.nation.holland	= true;
-	refship.nation.pirate	= false;
-
-	refship.icons.FirstIconPos = 12+1*16;
-	refship.icons.SecondIconPos = 12+1*16 + 1;
-
-
+	// --> квестовые корабли - заглушки
 	///////////////////////////////////////////////////////////////////////////
 	//// квестовый корабль №1 - 5-ый класс
 	///////////////////////////////////////////////////////////////////////////

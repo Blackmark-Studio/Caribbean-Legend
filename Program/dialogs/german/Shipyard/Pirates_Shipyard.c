@@ -87,17 +87,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			NextDiag.TempNode = "Master_Ship";
 		break;
 		
-		case "shipyard_dlg":			
-			if((shipBaseHP - shipCurHP > 0) && (shipClass < 7))
-			{
-				dialog.Text = "Ich kann Ihnen eine Hauptreparatur Ihres Rumpfrahmens vorschlagen. Die Leute hier haben keine Ahnung, wie man anständige Schiffe baut, sie zerfallen alle bei einem Schuss...";						
-				Link.l1 = "Großartig! Es stellt sich heraus, dass ich ein Schiff habe, das repariert werden muss. Vielleicht schaust du dir an, was du tun kannst?";
-				Link.l1.go = "ship_repair_start";		
-			}
-			else
-			{
-				dialog.Text = "Na los, was willst du? Belästige einen alten Mann nicht...";
-			}	
+		case "shipyard_dlg":
+			dialog.Text = "Na los, was willst du? Belästige einen alten Mann nicht...";		
 			link.l2 = "Ich möchte nur die Dienste der Werft nutzen.";
 			link.l2.go = "shipyard";
 			link.l3 = "Ich brauche Waffen für das Schiff.";

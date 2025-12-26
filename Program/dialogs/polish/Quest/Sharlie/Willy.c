@@ -87,19 +87,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "isladevieques_1":
-			dialog.text = "Ej, nie przeklinaj przed bramami Królestwa Niebieskiego. Nie spodziewałeś się tego? Jestem pochlebiony: udało mi się oszukać jednego z najsłynniejszych intrygantów archipelagu. Pomysł z dziennikiem był genialny, nie sądzisz?\nMusiałem cię zwabić w jakieś mroczne miejsce, zabicie cię na otwartym polu byłoby skandalem, jesteś bliskim przyjacielem Philippe'a de Poincy, prawda? Teraz znikniesz bez śladu i nikt nigdy nie dowie się jak.";
+			dialog.text = "Ej, nie przeklinaj przed bramami Ziemi Świętej. Nie spodziewałeś się tego? Jestem pochlebiony: udało mi się oszukać jednego z najsłynniejszych intrygantów archipelagu. Pomysł z dziennikiem był genialny, nie sądzisz?\nMusiałem cię zwabić w jakieś mroczne miejsce, zabicie cię na otwartym polu byłoby skandalem, jesteś bliskim przyjacielem Philippe'a de Poincy, prawda? Teraz znikniesz bez śladu i nikt nigdy nie dowie się jak.";
 			link.l1 = "Więc wszystko, co powiedział mi Calhoun... było kłamstwem?";
 			link.l1.go = "isladevieques_2";
 		break;
 		
 		case "isladevieques_2":
-			dialog.text = "Skądże znowu. Naprawdę znalazłem biednego Archibalda w tym miejscu. Nie napisał jednak żadnych wspomnień, dziennik, który znalazłeś w jego pokoju, był napisany na moje polecenie specjalnie dla ciebie, Monseniorze de Maure.\nObserwowałem cię od naszego spotkania na Cape Catoche. To ty zabrałeś mapę Dwóch Manifestacji z ciała don Diego? Nie zaprzeczaj, wiem, że to byłeś ty.";
+			dialog.text = "Skądże znowu. Naprawdę znalazłem biednego Archibalda w tym miejscu. Nie napisał jednak żadnych wspomnień, dziennik, który znalazłeś w jego pokoju, był napisany na moje polecenie specjalnie dla ciebie, Monseniorze de Maure.\nObserwowałem cię od naszego spotkania na Cape Catoche. To ty zabrałeś mapę Dwóch Wystąpień z ciała don Diego? Nie zaprzeczaj, wiem, że to byłeś ty.";
 			link.l1 = "Ty także wiesz o Strażniku Prawdy?";
 			link.l1.go = "isladevieques_3";
 		break;
 		
 		case "isladevieques_3":
-			dialog.text = "To głupie pytanie. Oczywiście, że tak. I wiem, że masz przy sobie Szpon Wodza. I wkrótce oddasz te przedmioty, które do ciebie nie należą.";
+			dialog.text = "To głupie pytanie. Oczywiście, że tak. I wiem, że masz przy sobie Pazur Wodza. I wkrótce oddasz te przedmioty, które do ciebie nie należą.";
 			link.l1 = "Cieszę się, że nie chwiejesz się jak Don Diego. Doceniam szczerość i bezpośredniość. Jak rozumiem, masz kompas, Strzałę Drogi?";
 			link.l1.go = "isladevieques_4";
 		break;
@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth.GirlKill"))
 			{
 				dialog.text = "Zmartwiony o swoją damę, kapitanie? Twoja kobieta leży tam w krzakach z dziurą w czole. Wytyczyła ci drogę i wkrótce do niej dołączysz. Powiem, była taką ładną dziewczyną! Mam nadzieję, że przeleciałeś ją więcej niż raz?";
-				link.l1 = "Ty... TY SKURWYSYNIE! Zabiłeś moją ukochaną?! Zapłacisz za to, ty chuju! Rozpierdole i ciebię i całe to anglikańskie zgromadzenie!";
+				link.l1 = "Ty... TY SKURWYSYNIE! Zabiłeś moją ukochaną?! Zapłacisz za to, ty chuju! Rozpieldole ciebię i całę to anglikańskie zgromadzenie!";
 				link.l1.go = "isladevieques_6";
 			}
 			else
@@ -134,7 +134,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "isladevieques_5_2":
-			dialog.text = "Upewnimy się, że to naprawdę będzie twoje ostatnie.";
+			dialog.text = "Upewnimy się, że to naprawdę będzie twój ostatni.";
 			link.l1 = "Zobaczymy, jak będzie!";
 			link.l1.go = "isladevieques_6";
 		break;

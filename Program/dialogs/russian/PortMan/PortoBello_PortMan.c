@@ -90,7 +90,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			n = GetAddingDataDay(0,0,21);
 			if(n<21) i = GetAddingDataMonth(0,1,0);
 			else i = GetDataMonth();
-			month = XI_ConvertString("target_month_" + i);
+			month = XI_ConvertString("MonthGen_" + i);
 			pchar.questTemp.SharkGoldFleet.Date = ""+n+" "+month+"";
 			SetFunctionTimerCondition("SharkGoldFleet1269fail", 0, 0, 22, false);
 			SetFunctionTimerCondition("SGF_FleetTime", 0, 0, 21, false);
@@ -211,7 +211,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			n = GetAddingDataDay(0,0,21);
 			if(n<21) i = GetAddingDataMonth(0,1,0);
 			else i = GetDataMonth();
-			month = XI_ConvertString("target_month_" + i);
+			month = XI_ConvertString("MonthGen_" + i);
 			pchar.questTemp.SharkGoldFleet.Date = ""+n+" "+month+"";
 			SetFunctionTimerCondition("SharkGoldFleet1269fail", 0, 0, 22, false);
 			SetFunctionTimerCondition("SGF_FleetTime", 0, 0, 21, false);

@@ -340,6 +340,8 @@ My_Deck {Hold}
 My_Ship {Ship}
 Drugstore {Drugstore}
 HWIC_flat {HWIC Headquarters}
+Office of Naval Registry {Amt für Schiffsregister}
+Van Doorn's Cellar {Van Doorns Keller}
 Comendant's House {Commandant's of Havana House}
 Tibo House {Henri Thibaut's House}
 Gaspard_Gold House {Gaspard Goldenteeth's House}

@@ -60,7 +60,7 @@ void SetCamShuttle(ref loc) // boal вынес в метод
 bool LoadLocation(ref loc)
 {
 	//trace("LoadLocation(ref loc) " + loc.id);
-	PostEvent(EVENT_LOCATION_LOAD,0);
+	PostEvent(EVENT_LOCATION_LOAD, 0);
 
 	int i;
 	bool res;
@@ -216,42 +216,42 @@ bool LoadLocation(ref loc)
 	
 	SendMessage(loc, "ls", MSG_LOCATION_SHADOWPATH, GetLmLightingPath());
     
-    // башенные часы
-    if(loc.id == "Villemstad_town")
+    // Башенные часы
+    // Weather.Time.speed - продолжительность игрового часа в секундах
+    // rotate.z - угловая скорость радиан в секунду
+    // rotate.dz - начальный поворот в радианах
+    if (loc.id == "Villemstad_town")
     {
-        float fTime = GetTime();
-        int Hour 	= makeint(fTime);
-        int Min 	= makeint((fTime - Hour) * 60);
-        float delta = makefloat(Min)/60.0;
-        
-        if(hour < 1 ) hour  = 12;
-        if(hour > 12) hour -= 12;
-        
+        float fHourSec = stf(Weather.Time.speed);
+        float fHour = GetTime();
+        if (fHour > 12.0) fHour -= 12.0;
+
         // часовая стрелка
         loc.models.always.clockh = "hourhand";
         loc.models.always.clockh.locator.group = "WindMill";
-        loc.models.always.clockh.locator.name ="Fan3";	
+        loc.models.always.clockh.locator.name = "Fan3";
         loc.models.always.clockh.rotate.x = 0.0;
         loc.models.always.clockh.rotate.y = 0.0;
-        loc.models.always.clockh.rotate.z = 0.00145;  
+        loc.models.always.clockh.rotate.z = PIm2 / (12.0 * fHourSec);
         
         loc.models.always.clockh.rotate.dx = 0.0;
         loc.models.always.clockh.rotate.dy = 0.0;
-        loc.models.always.clockh.rotate.dz = 0.523 * hour + 0.523 * delta;
+        loc.models.always.clockh.rotate.dz = PIm2 * (fHour / 12.0);
 
         // минутная стрелка
         loc.models.always.clock = "hand_clock";
         loc.models.always.clock.locator.group = "WindMill";
-        loc.models.always.clock.locator.name ="Fan2";	
+        loc.models.always.clock.locator.name = "Fan2";	
         loc.models.always.clock.rotate.x = 0.0;
         loc.models.always.clock.rotate.y = 0.0;
-        loc.models.always.clock.rotate.z = 0.016;
+        loc.models.always.clock.rotate.z = PIm2 / fHourSec;
 
         loc.models.always.clock.rotate.dx = 0.0;
         loc.models.always.clock.rotate.dy = 0.0;
-        loc.models.always.clock.rotate.dz = 6.28 * delta;
+        loc.models.always.clock.rotate.dz = PIm2 * (fHour - makeint(fHour));
 
-        //Log_SetStringToLog("Villemstad_town  - Hour : " + Hour + " min : " + Min);
+        SetEventHandler("NextHour", "Villemstad_BigClock", 0);
+        SetEventHandler(EVENT_LOCATION_UNLOAD, "Villemstad_BigClock_Off", 0);
     }
 
 	// ворота в резиденцию PortRoyal
@@ -1073,6 +1073,8 @@ void LocationSubstituteGeometry(ref loc)
 
 bool UnloadLocation(aref loc)
 {
+    // Удалить временные виртуальные локаторы
+    DeleteAttribute(loc, "locators.temp");
 	// ADDED BY VANO
 	// сбрасываем цвет фона на 0
 	Render.BackColor = 0;

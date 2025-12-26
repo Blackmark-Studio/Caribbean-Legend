@@ -1191,6 +1191,34 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		
         ok = false;
 	}
+	// Амстердам
+	if (_npchar.id == "ClockTower_HWIC_Cap01")
+	{
+		boarding_enemy.replaceFightWithFunc.ClockTower_CabinFight = true;
+		ClockTower_InitOfficersInCabin();
+		DeleteAttribute(_location, "box1");
+		_location.box1.items.cirass9 = 1;
+		_location.box1.items.chest = 3;
+		_location.box1.items.icollection = 2;
+		_location.box1.items.ArmoryPaper = 30;
+
+		if (GetCharacterItem(PChar, "map_full") == 0)
+		{
+			DeleteAttribute(_location, "box2");
+			_location.box2.items.map_full = 1;
+		}
+
+		if (CheckAttribute(pchar, "questTemp.AdmiralMap"))
+		{
+			SetAttribute(_location, "box1.items." + SelectAdmiralMaps(), 1);
+			SetAttribute(_location, "box1.items." + SelectAdmiralMaps(), 1);
+			SetAttribute(_location, "box1.items." + SelectAdmiralMaps(), 1);
+			SetAttribute(_location, "box1.items." + SelectAdmiralMaps(), 1);
+			SetAttribute(_location, "box1.items." + SelectAdmiralMaps(), 1);
+		}
+
+		ok = false;
+	}
 	// Пиратский пинас по Калеуче
 	if (_npchar.id == "Caleuche_PiratePinas")
 	{
@@ -1300,6 +1328,23 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		if (findsubstr(_npchar.id, "Follower0" , 0) != -1)
 		{
 			if(rand(10) == 4 && sti(pchar.rank) > 11) _location.box1.items.hat7 = 1;
+		}
+
+		// Пиратские журналы по SP4
+		if (iNation == PIRATE && CheckAttribute(pchar, "questTemp.SP4_PiratesJournals"))
+		{
+			string JournalId = "";
+			switch (iTemp)
+			{
+				case 6: JournalId = "piratesJournal_1"; break;
+				case 5: JournalId = "piratesJournal_" + (TagRandom(1, "SP4_PiratesJournals" + _npchar.id) + 1); break; // 1 или 2
+				case 4: JournalId = "piratesJournal_" + (TagRandom(2, "SP4_PiratesJournals" + _npchar.id) + 1); break; // 1, 2 или 3
+				case 3: JournalId = "piratesJournal_" + (TagRandom(1, "SP4_PiratesJournals" + _npchar.id) + 2); break; // 2 или 3
+				case 2: JournalId = "piratesJournal_3"; break;
+				case 1: JournalId = "piratesJournal_3"; break;
+			}
+
+			if (JournalId != "") _location.box1.items.(JournalId) = 1;
 		}
 		
     } else {
@@ -5426,6 +5471,8 @@ void SetStorageGoodsToShip(ref pStorage)
 // зануляем оставленные в ПУ корабли
 void SetNull2ShipInStockMan(string _city)
 {
+	if (CheckAttribute(pchar, "questTemp.ShipInsurance")) return;
+
 	int i;
 	ref chref, sld;
 	int iTest = FindColony(_city);
@@ -6905,4 +6952,20 @@ bool BlackMark_CheckTimeInGabeHouse()
 	if (iTime > 6 && iTime < 22) return false;
 	
 	return true;
+}
+
+int GetInsuranceCost()
+{
+	return 5000;
+}
+
+// Есть ли корабль игрока в порту
+bool IsShipInPort(string city)
+{
+	int idx = FindColony(city);
+	if (idx < 0) return false;
+
+	ref rColony = GetColonyByIndex(idx);
+	bool ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
+	return sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok;
 }

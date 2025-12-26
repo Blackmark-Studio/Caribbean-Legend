@@ -340,6 +340,8 @@ My_Deck {Ładownia}
 My_Ship {Statek}
 Drugstore {Apteka}
 HWIC_flat {Siedziba Kompanii}
+Office of Naval Registry {Biuro Rejestru Okrętowego}
+Van Doorn's Cellar {Piwnica Van Doorna}
 Comendant's House {Dom Komendanta Hawany}
 Tibo House {Dom Henriego Thibauta}
 Gaspard_Gold House {Dom Gasparda Goldenteetha}
@@ -389,7 +391,7 @@ Maze {Świątynia Chavinsów}
 Alcove {Sanktuarium}
 Merrimancave {Jaskinia Merrimana}
 River {Brzeg rzeki}
-Jungle Fort {Fort w Dżungli}
+Jungle Fort {Fort w Dzungli}
 Basement {Piwnica}
 Ruins {Ruiny}
 Ulysse {Pokład 'Ulysse'}

@@ -148,41 +148,32 @@ itmdescr_saber {A weapon worthy of a true patriot and officer, forged in many gl
 itmname_q_blade_10 {Jurgen Schmidt's Hanger}
 itmdescr_q_blade_10
 {
-Boarding cutlass crafted by Jürgen Schmidt. 
-The blade is made of fine steel and boasts excellent balance.
+Boarding cutlass crafted by Jürgen Schmidt. The blade is made of fine steel and boasts excellent balance.
 }
 itmname_q_blade_13 {Jurgen Schmidt's Broadsword}
 itmdescr_q_blade_13
 {
-Officer’s sabre crafted by Jürgen Schmidt. 
-The blade is made of fine steel and perfectly balanced.
+Officer’s sabre crafted by Jürgen Schmidt. The blade is made of fine steel and perfectly balanced.
 }
 itmname_q_blade_16 {Jurgen Schmidt's Small Sword}
 itmdescr_q_blade_16
 {
-Smallsword crafted by Master Jürgen Schmidt. 
-The blade is made of fine steel 
-and boasts excellent balance.
+Smallsword crafted by Master Jürgen Schmidt. The blade is made of fine steel and boasts excellent balance.
 }
 itmname_q_blade_18 {Jurgen Schmidt's Pappenheimer}
 itmdescr_q_blade_18
 {
-Pappenheimer crafted by Master Jürgen Schmidt. 
-The blade is made of fine steel 
-and is superbly balanced.
+Pappenheimer crafted by Master Jürgen Schmidt. The blade is made of fine steel and is superbly balanced.
 }
 itmname_q_blade_19 {Jurgen Schmidt's Saber}
 itmdescr_q_blade_19
 {
-A naval sabre crafted by master Jürgen Schmidt. 
-The blade is made of fine steel and perfectly balanced.
+A naval sabre crafted by master Jürgen Schmidt. The blade is made of fine steel and perfectly balanced.
 }
 itmname_q_blade_21 {Jurgen Schmidt's Backsword}
 itmdescr_q_blade_21
 {
-Kleeblattsäbel crafted by Master Jürgen Schmidt. 
-The blade is made of fine steel 
-and boasts superb balance.
+Kleeblattsäbel crafted by Master Jürgen Schmidt. The blade is made of fine steel and boasts superb balance.
 }
 itmname_shamshir {Shamshir}
 itmdescr_shamshir {A Persian shamshir meant for mounted battle, a true embodiment of harsh wars in the desert. Combines the efficiency of cutting and simplicity of chopping. The best choice for those who like circle slashes.}
@@ -230,8 +221,7 @@ itmdescr_mushket2 {A shortened version of the latest English fusil, equipped wit
 itmname_mushket3 {Arquebus}
 itmdescr_mushket3
 {
-Boarding Matchlock Blunderbuss 
-It may be long past its prime, but foes staring down its barrel have other things on their minds.
+Boarding Matchlock Blunderbuss It may be long past its prime, but foes staring down its barrel have other things on their minds.
 }
 itmname_mushket5 {Scoped Rifle}
 itmdescr_mushket5 {A custom-made wheellock rifle with a rifled barrel and a diopter spyglass. The weapon of a wealthy hunter or sportsman.}
@@ -299,8 +289,7 @@ itmdescr_suit3 {Uniform of a Catalan Guard officer.}
 itmname_suit4 {League Suit}
 itmdescr_suit4
 {
-League Mercenary Outfit 
-Sewn-on metal plates and adjustable straps—everything for swift, brutal combat. The half-mask helps keep your identity hidden.
+League Mercenary Outfit Sewn-on metal plates and adjustable straps—everything for swift, brutal combat. The half-mask helps keep your identity hidden.
 }
 itmname_suit5 {Admiral Uniform}
 itmdescr_suit5 {Uniform of a senior French naval officer. A true work of art, no less.}
@@ -375,8 +364,7 @@ itmdescr_talisman3 {A golden pendant shaped like Mjölnir—the hammer of Thor, 
 itmname_talisman4 {Ward 'Janissary'}
 itmdescr_talisman4
 {
-Ottoman Bracer of the Janissary Senior. 
-Increases crew discipline.
+Ottoman Bracer of the Janissary Senior. Increases crew discipline.
 }
 itmname_talisman6 {Ward 'Goddess'}
 itmdescr_talisman6 {Statuette of the goddess Tlazolteotl, the devourer of filth.}
@@ -385,8 +373,7 @@ itmdescr_talisman7 {A massive ancient Egyptian ring shaped like a diligent scara
 itmname_talisman8 {Ward 'Scorpion'}
 itmdescr_talisman8
 {
-Medici family brooch shaped like a scorpion. 
-Contains a hidden compartment with a potent antidote.
+Medici family brooch shaped like a scorpion. Contains a hidden compartment with a potent antidote.
 }
 itmname_talisman9 {Order of St. Louis}
 itmdescr_talisman9 {The most coveted prize of any French captain.}
@@ -415,9 +402,7 @@ talisman18_NoBonus {Treasures Found : 0 / 10}
 itmname_talisman19 {Talisman 'Yorick’s Skull'}
 itmdescr_talisman19
 {
-The skull of Captain Mortimer Grim of the 'Memento', who never fully realized his own death. You knew him, #sName#.
-The dead teach the living, and this artifact adapts to its owner's desires.
-When in your inventory, it makes all officers immortal.
+The skull of Captain Mortimer Grim of the 'Memento', who never fully realized his own death. You knew him, #sName#.The dead teach the living, and this artifact adapts to its owner's desires.When in your inventory, it makes all officers immortal.
 }
 talisman19_InSlot
 {
@@ -456,68 +441,57 @@ itmdescr_totem_13 {A handy card that's always at hand increases the chance of wi
 itmname_indian_1 {Amulet 'Voodoo doll'}
 itmdescr_indian_1
 {
-Ritual doll — a gruesome indigenous artifact said to bind itself to the victim’s soul.
- ~Can increase damage dealt to vulnerable spots — for example, the head.
+Ritual doll — a gruesome indigenous artifact said to bind itself to the victim’s soul. ~Can increase damage dealt to vulnerable spots — for example, the head.
 }
 itmname_indian_2 {Amulet 'Gunpowder tester'}
 itmdescr_indian_2
 {
-Device for testing the quality of gunpowder. ~
- High-quality gunpowder increases the damage of any projectiles due to more uniform burning, but is especially useful when crafting your own ammunition.
+Device for testing the quality of gunpowder. ~ High-quality gunpowder increases the damage of any projectiles due to more uniform burning, but is especially useful when crafting your own ammunition.
 }
 itmname_indian_3 {Amulet 'Ritual Knife'}
 itmdescr_indian_3
 {
-An obsidian sacrificial knife. How many souls it has claimed in attempts to win the blessings of heretical Aztec gods is unknown, but the obsidian edge has not dulled to this day.
- ~Increases critical damage against enemies; may God rest their souls.
+An obsidian sacrificial knife. How many souls it has claimed in attempts to win the blessings of heretical Aztec gods is unknown, but the obsidian edge has not dulled to this day. ~Increases critical damage against enemies; may God rest their souls.
 }
 itmname_indian_4 {Amulet 'Axe'}
 itmdescr_indian_4
 {
-Pendant covered in Asatru runes. No one knows how it found its way to the Caribbean, but it stirs a strange urge toward axes.
- ~Fosters a surge of unexpected strength in the arms, increasing the power of heavy weapon strikes.
+Pendant covered in Asatru runes. No one knows how it found its way to the Caribbean, but it stirs a strange urge toward axes. ~Fosters a surge of unexpected strength in the arms, increasing the power of heavy weapon strikes.
 }
 itmname_indian_5 {Amulet 'Tsantsa'}
 itmdescr_indian_5
 {
-A head dried by hideous rituals. Crafting such an amulet requires a foul pagan rite.
- ~Seeing one at a captain’s belt makes any boarding party cautious and fearful — friend or foe alike.
+A head dried by hideous rituals. Crafting such an amulet requires a foul pagan rite. ~Seeing one at a captain’s belt makes any boarding party cautious and fearful — friend or foe alike.
 }
 itmname_indian_6 {Amulet 'Coral head'}
 itmdescr_indian_6
 {
-A carved idol made from a fragment of coral. They say it brings luck and steadies the hand.
- ~At any rate, a musket volley fired with it becomes far more disciplined.
+A carved idol made from a fragment of coral. They say it brings luck and steadies the hand. ~At any rate, a musket volley fired with it becomes far more disciplined.
 }
 itmname_indian_7 {Amulet 'Humpback'}
 itmdescr_indian_7
 {
-A terracotta figurine of a hunchback — not the one from Notre Dame, but the patron of diligence.
- ~With it you more easily endure grueling jungle treks and boarding melees.
+A terracotta figurine of a hunchback — not the one from Notre Dame, but the patron of diligence. ~With it you more easily endure grueling jungle treks and boarding melees.
 }
 itmname_indian_8 {Amulet 'Xiuhtecuhtli'}
 itmdescr_indian_8
 {
-A totem figurine of an Aztec god, lord of fire and master of volcanoes. You would swear that, had the Aztecs possessed gunpowder, he would have claimed it as his charge.
- ~Mysteriously makes cannon shots deadlier.
+A totem figurine of an Aztec god, lord of fire and master of volcanoes. You would swear that, had the Aztecs possessed gunpowder, he would have claimed it as his charge. ~Mysteriously makes cannon shots deadlier.
 }
 itmname_indian_9 {Amulet 'Baldo'}
 itmdescr_indian_9
 {
-A Celtic brooch in the shape of a raven. They say the most skilled island seafarers among the Celtic clans wore such things.
- ~It most impresses the gun crew, causing them to begin mounting and aiming the guns much faster.
+A Celtic brooch in the shape of a raven. They say the most skilled island seafarers among the Celtic clans wore such things. ~It most impresses the gun crew, causing them to begin mounting and aiming the guns much faster.
 }
 itmname_indian_10 {Amulet 'Cascavella'}
 itmdescr_indian_10
 {
-An enchanted rattlesnake skull.
- ~Likely there is still venom in the set fangs; otherwise its ability to poison on strike is hard to explain.
+An enchanted rattlesnake skull. ~Likely there is still venom in the set fangs; otherwise its ability to poison on strike is hard to explain.
 }
 itmname_indian_11 {Amulet 'Ngombo mask'}
 itmdescr_indian_11
 {
-Ritual mask of the Sibonei people. Rumor has it it can instill false memories in a person.
- ~Useful for making an impression with trinkets, or conversely, for disappearing into a crowd.
+Ritual mask of the Sibonei people. Rumor has it it can instill false memories in a person. ~Useful for making an impression with trinkets, or conversely, for disappearing into a crowd.
 }
 itmname_amulet_1 {Amulet 'Ngombo shield'}
 itmdescr_amulet_1 {Necklace of bones and coral strengthened by an Ngombo charm. ~Even the lightest armor starts to turn blades aside with it.}
@@ -1009,8 +983,7 @@ itmdescr_mangarosapower {Potion brewed from mangarosa, following Amelia’s reci
 itmname_mangarosafast {Squall potion}
 itmdescr_mangarosafast
 {
-A potion brewed from mangarosa, following Amelia’s recipe.
-It smells of bitter smoke from freshly snapped branches and heated iron, like a forge at sunset. This scent stirs a battle frenzy, evoking the clash of blades and the heat of combat.
+A potion brewed from mangarosa, following Amelia’s recipe.It smells of bitter smoke from freshly snapped branches and heated iron, like a forge at sunset. This scent stirs a battle frenzy, evoking the clash of blades and the heat of combat.
 }
 itmname_mangarosatotal {Sea Hug potion}
 itmdescr_mangarosatotal {A potion brewed from mangarosa, following Amelia’s recipe. It carries the scent of salty wind and wet wood, like a deck after a storm. The aroma of sea air with a faint bitterness of seaweed brings a feeling of lightness and freedom, as if the sea itself has opened within your chest.}
@@ -1438,8 +1411,7 @@ itmdescr_recipe_potion1 {A recipe containing all the instructions needed to brew
 itmname_blade_WR {Reborn}
 itmdescr_blade_WR
 {
-Rupert Northwood’s Magnificent Sabre. 
-A massive guard adorned with a golden phoenix bears witness to pain and rebirth. The blade gleams with a mirror shine, and along its fuller is engraved: VULNERATUS NON VICTUS — “Wounded but undefeated.” Only God knows how many souls this sword has claimed…
+Rupert Northwood’s Magnificent Sabre. A massive guard adorned with a golden phoenix bears witness to pain and rebirth. The blade gleams with a mirror shine, and along its fuller is engraved: VULNERATUS NON VICTUS — “Wounded but undefeated.” Only God knows how many souls this sword has claimed…
 }
 itmname_hat11 {Theresa’s Hat}
 itmdescr_hat11 {Mary’s mother’s headpiece, preserved by Aurélie Bertin. Despite its age, it still retains its former elegance and charm.}
@@ -1448,6 +1420,27 @@ itmdescr_talisman21 {A pouch of herbs and ash, a vial of dark liquid, and a skul
 itmname_blade_WR_1 {Reborn}
 itmdescr_blade_WR_1
 {
-Rupert Northwood’s Magnificent Sabre. 
-A massive guard adorned with a golden phoenix bears witness to pain and rebirth. The blade gleams with a mirror shine, and along its fuller is engraved: VULNERATUS NON VICTUS — “Wounded but undefeated.” Only God knows how many souls this sword has claimed…
+Rupert Northwood’s Magnificent Sabre. A massive guard adorned with a golden phoenix bears witness to pain and rebirth. The blade gleams with a mirror shine, and along its fuller is engraved: VULNERATUS NON VICTUS — “Wounded but undefeated.” Only God knows how many souls this sword has claimed…
 }
+itmname_piratesJournal_1 {Pirate Diary}
+itmdescr_piratesJournal_1 {A battered document made of cheap materials, clearly passed through many hands. Contains records of raids and smuggling.}
+itmname_piratesJournal_2 {Pirate Logbook}
+itmdescr_piratesJournal_2 {A pirate ship’s log bound in boiled leather. Inside, raids on merchant caravans and extortion on the open sea are recorded in neat handwriting.}
+itmname_piratesJournal_3 {Pirate Codex}
+itmdescr_piratesJournal_3 {A thick ship document bound in leather and metal. Its richly decorated cover with embossing and gemstones is worth a fortune. Inside are records worthy of an adventure novel: raids on colonies, plundering of royal convoys, massive sea battles.}
+itmname_pistol15 {Presentation Pistol}
+itmdescr_pistol15 {Commissioned as a gift from the Council of Seventeen to commemorate five years of service to the honorable Dutch West India Company.}
+itmname_VD_Contract {Van Doorn's Contract}
+itmdescr_VD_Contract {The original contract of the Naval Registry Director. Expired seven years ago. It's suspicious that such an important document was so conveniently left on the desk before your arrival.}
+itmname_BookSp4 {Strange Book}
+itmdescr_BookSp4 {This book stands out from the rest not only by its cover color, but by its weight.}
+itmname_Doc1Sp4 {Report on Brazilian Affairs}
+itmdescr_Doc1Sp4 { }
+itmname_Doc2Sp4 {Letter from Antigua}
+itmdescr_Doc2Sp4 { }
+itmname_VD_key {Key to Van Doorn}
+itmdescr_VD_key {Unlocks the cellar in the Office of Naval Registry.}
+itmname_CatharinaLetter {Letter from Catharina}
+itmdescr_CatharinaLetter {A letter on fine paper, still bearing the scent of a loving, beautiful woman. Delivered weeks ago, yet never read.}
+itmname_Visser_Key {Key to Maarten Visser}
+itmdescr_Visser_Key {Proof that Maarten Visser accepted a bribe from Captain Michael Rosenkraft to enter them into the Naval Registry.}

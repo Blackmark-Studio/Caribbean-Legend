@@ -328,3 +328,4 @@ QuestsUtilite_327 {Hephaestus}
 QuestsUtilite_328 {Centurion}
 QuestsUtilite_329 {The pirates are defeated, the waters have become safer.}
 QuestsUtilite_330 {The pirates have grown stronger, the seas have become more dangerous.}
+QuestsUtilite_331 {Captain, it’s the Amsterdam! Congratulations — the Company now sees you as a real threat.}

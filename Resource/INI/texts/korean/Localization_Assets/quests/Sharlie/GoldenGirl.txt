@@ -1,0 +1,18 @@
+GoldenGirl_1 {북부 식민지에서 온 값비싼 창녀가 이제 생피에르의 쾌락의 집을 운영한다는 소문 들었어? 가끔씩 비밀 파티도 연다던데, 초대받은 상류층만 입장할 수 있대. 최고급 와인, 아름다운 여자들, 무제한 도박까지, 진짜 귀족이 원하는 건 다 있다지. 그 초대장 하나면 목숨도 아깝지 않다더라.}
+GoldenGirl_2 {마르키즈 보토 herself가 지금은 생피에르의 손님이라 하더군요. 뉴프랑스에서 가장 값비싼 여인이라죠. 가끔은 오직 상류층만을 위한 파티를 연다고 합니다. 진정한 우아한 방탕의 소굴이죠. 한 은행가가 자기 은행 전체를 도박으로 잃었다는 소문도 있어요. 하지만 초대장이 없으면 아무리 부자라도 발붙일 수 없다네요.}
+GoldenGirl_3 {이제 St. Pierre의 사창가는 고급 창녀가 운영하고 있어. 집 자체는 크게 달라진 게 없지만, 그녀가 비밀리에 여는 파티는… 소문이 자자하지. 마치 옛 파리처럼 최고의 와인, 최고의 여자, 최고의 손님들이 모인다나 봐. 그리고 아주 별난 손님들도 온다지—스페인 제독이나 해적 남작 같은 사람들 말이야! 믿기 힘들지, 그치?}
+GoldenGirl_4 {Julianne}
+GoldenGirl_5 {Botot}
+GoldenGirl_6 {Angerran}
+GoldenGirl_7 {de Chievous}
+GoldenGirl_8 {William}
+GoldenGirl_9 {Cortney}
+GoldenGirl_10 {Bart}
+GoldenGirl_11 {Portugal}
+GoldenGirl_12 {Hernando}
+GoldenGirl_13 {Vasces}
+GoldenGirl_14 {탐험 모드: 타이머가 비활성화되지 않습니다. 기한을 지키세요!}
+GoldenGirl_15 {Nayade}
+GoldenGirl_16 {보토 부인이 사라지고, 그녀의 호화로운 저택을 신임 관리인에게 맡겼다고들 하지. 귀족 청년들에게 닥친 슬픔을 상상해 봐!}
+GoldenGirl_17 {다음 날 아침...}
+GoldenGirl_18 {며칠이 흘렀다...@<NewStr()>당신과 baronet Courtney는 과들루프에 도착했다}

@@ -1,0 +1,17 @@
+Net_ShipDieFromPlayer {%1 <%2>, %3 <%4>'i batırdı.}
+Net_ShipDieFromCollisionLiveShip {%1 <%2>, %3 <%4>'e çarptı.}
+Net_ShipDieFromCollisionDeadShip {%1 <%2> köpekbalıklarına yem oldu! Böyle seyir subayına yazıklar olsun!}
+Net_ShipDieFromCollisionIsland {%1 <%2> kayalara çarptı! Böyle seyir subayına yazıklar olsun!}
+Net_ShipDieFromLighting {Rab, %1 <%2>’e öfkelendi ve onu cezalandırdı!}
+Net_ShipDieFromCriticalHit {%1 <%2>, %3 <%4>'i paramparça etti!}
+Net_CriticalHit {%1 <%2>, %3 <%4> güvertesindeki barut fıçısını vurdu!}
+Net_MastFallFromHit {%1 <%2>, %3 <%4>'in direğini devirdi.}
+Net_MastFallFromCollision {%1 <%2>, çarpışma sonucu direğini kaybetti.}
+Net_FireActivation {%1 <%2>, %3 <%4>'i ateşe verdi}
+NetFG_ServerIsFull {Sunucu dolu. Başka bir oyuncu katılamaz.}
+NetFG_NeedUserPassword {Girilen şifre sunucudaki kayıtlı şifreyle eşleşmiyor, lütfen tekrar deneyin.}
+NetFG_NeedServerPassword {Sunucuya bağlanmak için geçersiz bir parola girdiniz, lütfen tekrar deneyin.}
+NetFG_RejectedUnknown {Bilinmeyen bir nedenle sunucuya bağlanılamadı.}
+NetFG_Banned {Bu sunucuya erişiminiz yasaklandı.}
+NetEG_DeathMatch {Savaş bitti.\n \n%1 kazandı!}
+NetEG_Team {Savaş bitti.\n \n"%1" takımı kazandı!}

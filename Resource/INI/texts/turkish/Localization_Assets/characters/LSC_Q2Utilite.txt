@@ -1,0 +1,20 @@
+LSC_Q2Utilite_1 { }
+LSC_Q2Utilite_2 { }
+LSC_Q2Utilite_3 {@GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' gemisinin kaptanı @<GetFullName(sld)> şehirde. Şu anda liman ofisinde olmalı.}
+LSC_Q2Utilite_4 {Captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' şehirde. Liman ofisinde olmalı.}
+LSC_Q2Utilite_5 {@GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' kaptanı @<GetFullName(sld)> şehirde. Liman ofisinde olmalı.}
+LSC_Q2Utilite_6 {, ~ üzerinde}
+LSC_Q2Utilite_7 {@GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' kaptanı @<GetFullName(sld)> limanda gemisinde. Tuhaf adam, hiç karaya ayak basmaz derler.}
+LSC_Q2Utilite_8 {Kaptan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' şu anda limanda gemisinde. Tuhaf adam, karaya adımını hiç atmıyor.}
+LSC_Q2Utilite_9 {@GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' gemisinin kaptanı @<GetFullName(sld)> limanda gemisinde. Tuhaf adam, hiç karaya ayak basmazmış.}
+LSC_Q2Utilite_10 {, ~ üzerinde}
+LSC_Q2Utilite_11 {Kaptan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' şehirde. Sanırım adı @<GetFullName(sld)>.}
+LSC_Q2Utilite_12 {Kaptan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' şu anda şehirde.}
+LSC_Q2Utilite_13 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' kaptanı şehirde. Adı sanırım @<GetFullName(sld)>.}
+LSC_Q2Utilite_14 {Kaptan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' limanda gemisinde. Sanırım adı @<GetFullName(sld)>.}
+LSC_Q2Utilite_15 {Kaptan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' şu anda limanda kendi gemisinde.}
+LSC_Q2Utilite_16 {Kaptan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>', şu anda limanda gemisinde. Adı sanırım @<GetFullName(sld)>.}
+LSC_Q2Utilite_17 {, ~ üzerinde}
+LSC_Q2Utilite_18 {Mary Celeste}
+LSC_Q2Utilite_19 {Gemi boş}
+LSC_Q2Utilite_20 {brigantin 'Mary Celeste'}

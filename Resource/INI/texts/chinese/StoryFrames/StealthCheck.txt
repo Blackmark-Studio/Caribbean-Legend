@@ -1,0 +1,2 @@
+ShowPapersAction {出示国书}
+FactorQuestZpq {不明身份的加斯科涅人}

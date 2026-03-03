@@ -40,7 +40,7 @@ WorkWithContra_t1 {Mówią, że #sPsHero_Name# przywiózł pełny ładunek przem
 WorkWithContra_t2 {Podsłuchałem, jak #sPsHero_Name# rozmawiał z naszym przemytnikiem. Uzgodnili spotkanie w miejscu o nazwie #sContraPlace#.}
 DuelCoward_t0 {Jaka szkoda! #sName# spanikował i nie pojawił się na swoim własnym pojedynku. Teraz wszyscy gadają, że jest zwykłym tchórzem!}
 DuelCoward_t1 {Ha-ha, #sName# nie stawił się na pojedynek! Nie sądzę, żeby po tej akcji miał taki sam sukces z kobietami, jaki miał wcześniej.}
-DuelCoward_t2 {Słyszałeś? #sName# nie przyszedł na pojedynek! Mówią, że tak się wczoraj upił, że nie mógł wstać.}
-DuelHero_t0 {Wiesz, że #sName# to zaprawiony w boju pojedynkowicz? Zabił już #sKill# ludzi. Lepiej nie stawaj mu na drodze.}
+DuelCoward_t2 {Słyszałeś? #sName# nie stawił się na pojedynek! Mówią, że był absolutnie pijany i po prostu nie mógł ustać na nogach.}
+DuelHero_t0 {Wiesz, że #sName# to mistrz pojedynków? Zabił już #sKill# ludzi. Nie chciałbym stanąć mu na drodze.}
 DuelHero_t1 {Mówią, że #sName# sprzedał swoją duszę diabłu, dlatego nie można go pokonać w pojedynku! A dusze tych, których zabije... zabił już #sKill# ludzi i wszyscy idą prosto do piekła! Mówią też, że jeśli skończy swoją krwawą passę, diabeł zabierze jego duszę.}
 DuelHero_t2 {Ten nowicjusz #sName# ma niesamowite szczęście! Zabił już #sKill# ludzi w pojedynku i nigdy się nie zadrapał! Naprawdę, możesz w to w ogóle uwierzyć?}

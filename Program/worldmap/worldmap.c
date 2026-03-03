@@ -105,11 +105,10 @@ void wdmCreateMap(float x, float z, float ay)
 
 void wdmTimeUpdate()
 {
-	//QuestsTimeCheck();
-	// boal -->
+    if (!IsEntity(&worldMap)) return;
 	QuestsCheck();
+	ClearPostEventsForEvent("EventTimeUpdate");
 	PostEvent("EventTimeUpdate", 5000);
-	// boal <--
 }
 
 float GetWorldMapDistanceBonus(ref chr)
@@ -150,6 +149,8 @@ void wdmCreateWorldMap()
 		fSpeedBonus += 0.0025 * iThreat;
 	}
 
+	ref realShip = GetRealShip(GetCharacterShipType(pchar));
+	fSpeedBonus += GetAttributeFloat(realShip, "tuning.modifiers." + M_GLOBAL_SPEED);
 	TEV.worldMap.kPlayerMaxSpeed = 1.0 + fSpeedBonus;
 	worldMap.kPlayerMaxSpeed = 1.0 + fSpeedBonus;
 	worldMap.shipSpeedOppositeWind = 0.55;	
@@ -511,10 +512,11 @@ void wdmEscapeRefresh(string qName)
     DeleteAttribute(&TEV, "EscapeBlock");
 }
 
+int __DebugEncCnt = 0;
 void LogEncWeightSwitch()
 {
-    bGlobalVar4 = !bGlobalVar4;
-    if (bGlobalVar4)
+    __DebugEncCnt = !__DebugEncCnt;
+    if (__DebugEncCnt)
     {
         TEV.LastEnc = "-1";
         SetEventHandler("frame", "LogEncWeight", 0);
@@ -558,10 +560,10 @@ void LogEncWeight()
         case ENCOUNTER_TYPE_NAVAL_LARGE: sEnc = "Военные большие"; break;
         case ENCOUNTER_TYPE_SMUGGLERS: sEnc = "Контрабандисты"; break;
         case ENCOUNTER_TYPE_PIRATE: sEnc = "Пираты"; break;
-        case "-1": sEnc = "Никто"; break;
-        case "-2": sEnc = "Сражение"; break;
+        case -1: sEnc = "Никто"; break;
+        case -2: sEnc = "Сражение"; break;
     }
-    Log_Info(sEnc + " " + bGlobalVar4 + " раз подряд");
+    Log_Info(sEnc + " " + __DebugEncCnt + " раз подряд");
 	int numShips = wdmGetNumberShipEncounters() - sti(pchar.worldmap.shipcounter);
     Log_Info("Кол-во: " + numShips + " / 8");
     Log_Info("Таймер (Сражения): " + wdmTimeOfLastWarring + " / 1000");

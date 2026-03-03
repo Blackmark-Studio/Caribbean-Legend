@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 		case "prepare_convoy_quest_3":
 			LookShipConvoy();
 			GenerateConvoyQuest(npchar);
-			dialog.text = "J'ai besoin d'être escorté à "+XI_ConvertString("Colonie"+pchar.quest.destination+"Gen")+", qui est situé sur "+XI_ConvertString(GetIslandByCityName(pchar.quest.destination)+"Cela")+", dans "+FindRussianDaysString(sti(pchar.ConvoyQuest.iDay))+", et pour cela je vais te payer "+FindRussianMoneyString(sti(pchar.ConvoyQuest.convoymoney))+". Alors, votre décision?";
+			dialog.text = "J'ai besoin d'être escorté à "+XI_ConvertString("Colony"+pchar.quest.destination+"Gen")+", qui est situé sur "+XI_ConvertString(GetIslandByCityName(pchar.quest.destination)+"Cela")+", dans "+FindRussianDaysString(sti(pchar.ConvoyQuest.iDay))+", et pour cela je vais te payer "+FindRussianMoneyString(sti(pchar.ConvoyQuest.convoymoney))+". Alors, votre décision?";
 			link.l1 = "Je suis dedans.";
 			link.l1.go = "convoy_agreeded";
 			link.l2 = "Je ne pense pas que ce soit une proposition intéressante.";

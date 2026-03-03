@@ -378,13 +378,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "tieyasal_5_1":
-			dialog.text = "嘘…… (环顾四周) 你也觉得布雷兹·夏普是被迪乔索干掉的?";
-			link.l1 = "没错。我不只是怀疑, 我有证据。航海日志里的记录……";
+			dialog.text = "嘘……  (环顾四周) 你也觉得布雷兹·夏普是被迪乔索干掉的?";
+			link.l1 = "没错。我不只是怀疑, 我有证据。航海日志里的记录…… ";
 			link.l1.go = "tieyasal_6"
 		break;
 
 		case "tieyasal_5_bud_joke":
-			dialog.text = "你是来开玩笑的吗? 一点敬意都没有! 过来点……";
+			dialog.text = "你是来开玩笑的吗? 一点敬意都没有! 过来点…… ";
 			link.l1 = "想得美。";
 			link.l1.go = "fight";
 			NextDiag.TempNode = "norman_fight_again";

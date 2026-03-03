@@ -53,6 +53,7 @@ seg_Cannon_24 {24磅炮}
 seg_Cannon_32 {32磅炮}
 seg_Cannon_36 {36磅炮}
 seg_Cannon_42 {42磅炮}
+seg_Cannon_48 {48磅炮}
 seg_Culverine_8 {半长炮}
 seg_Culverine_18 {长炮}
 seg_Culverine_36 {全长炮}

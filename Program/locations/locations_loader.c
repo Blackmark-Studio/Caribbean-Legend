@@ -22,7 +22,7 @@ bool locDisableUpdateTime = false;
 int FindLocation(string id)
 {
 	/*
-	for(int i = 0; i < nLocationsNum; i++)
+	for(int i = 0; i < MAX_LOCATIONS; i++)
 	{
 		if(Locations[i].id == id)
 		{
@@ -64,16 +64,16 @@ bool LoadLocation(ref loc)
 
 	int i;
 	bool res;
-	
+
 	for (i = 0; i < MAX_SHIPS_IN_LOCATION; i++) { iShips[i] = -1; }
-	
+
 	//Time update==========================================================================
 	locTmpTime += 5;
 	CalcLocalTime(3);
 	//Environment==========================================================================
 	chrWaitReloadLocator = ""; // fix перехода в таверну при клики на диалог
 	chrWaitReloadIsNoLink = false;
-		
+
     loadedLocation = loc; // первое присвоение boal
 	//Environment==========================================================================
 
@@ -125,8 +125,7 @@ bool LoadLocation(ref loc)
 			ExecuteTechnique("amb_other");
 		}
 	}
-	//
-	
+
 	if(CheckAttribute(loc, "QuestlockWeather"))
 	{		
 		if (CheckAttribute(loc, "QuestlockWeather.hours") && CheckAttribute(loc, "QuestlockWeather.minutes"))
@@ -135,10 +134,8 @@ bool LoadLocation(ref loc)
 			DeleteAttribute(loc, "QuestlockWeather.hours");
 			DeleteAttribute(loc, "QuestlockWeather.minutes");
 		}
-		//SetNextWeather(loc.QuestlockWeather);
 	}
 
-	
 	bool isNoBoarding = true;
 	bool isFort = false;
 	if(CheckAttribute(loc, "boarding") == true)
@@ -198,7 +195,7 @@ bool LoadLocation(ref loc)
 	}
 	//Set lighting path
 	bool dLight = LocCheckDLight(loc);
-	if(!dLight) // inside
+	if (!dLight) // inside
 	{	
 		SendMessage(loc, "ls", MSG_LOCATION_LIGHTPATH, GetLightingPathLoc());
 	}		
@@ -352,7 +349,7 @@ bool LoadLocation(ref loc)
 	//<-- проверяем наличие контры для установки нужного патча
 	
 	//Loading day/night models=============================================================
-	if(Whr_IsDay() != 0)	//Day
+	if (Whr_IsDay() != 0)	//Day
 	{
 		makearef(st, loc.models.day);
 		num = GetAttributesNum(st);
@@ -396,7 +393,7 @@ bool LoadLocation(ref loc)
 			SendMessage(loc, "ls", MSG_LOCATION_SET_JMP_PATCH, loc.models.day.jumpPatch);
 		}
 	}
-	else	//Night
+	else // Night
 	{
 		makearef(st, loc.models.night);
 		num = GetAttributesNum(st);
@@ -420,8 +417,8 @@ bool LoadLocation(ref loc)
 		}
 		
 		//Loading patches
-		if(CheckAttribute(loc, "models.night.charactersPatch") != 0)
-		{			
+		if (CheckAttribute(loc, "models.night.charactersPatch") != 0)
+		{
 			res = SendMessage(loc, "ls", MSG_LOCATION_SET_CHRS_PATCH, loc.models.night.charactersPatch + smg);
 			if(res == 0)
 			{
@@ -974,15 +971,14 @@ void LocationSetLights(ref loc)
 	int i,num, lnum,j;
 	bool bOk = false;
 
-	if(Whr_IsLight() == 0)
+	if (Whr_IsLight() == 0)
 	{
-		if(CheckAttribute(loc, "fonarlights") == true) lightPath = "models.night.lights"; // включаем фонари всегда в нужных локах
+		if (CheckAttribute(loc, "fonarlights") == true) lightPath = "models.night.lights"; // включаем фонари всегда в нужных локах
 		else lightPath = "models.day.lights";
-	}else{
-		lightPath = "models.night.lights";
 	}
+    else lightPath = "models.night.lights";
 
-	if(CheckAttribute(loc, lightPath) != 0)
+	if (CheckAttribute(loc, lightPath) != 0)
 	{
 		makearef(st, loc.(lightPath));
 		num = GetAttributesNum(st);
@@ -1025,8 +1021,8 @@ void LocationSubstituteGeometry(ref loc)
 	aref 	st, at;
 	string 	sat, sat1, sat2;
 	int		i, num;
-	
-	if(Whr_IsDay() != 0)	// наступил день - грузим дневной патч фонарей
+
+	if (Whr_IsDay() != 0) // наступил день - грузим дневной патч фонарей
 	{
 		makearef(st, loc.models.day);
 		num = GetAttributesNum(st);
@@ -1034,7 +1030,7 @@ void LocationSubstituteGeometry(ref loc)
 		{
 			at = GetAttributeN(st, i);
 			sat = GetAttributeName(at);
-			if(sat == "fonar" 
+			if (sat == "fonar" 
 				|| sat == "fonars"
 				|| sat == "fortVFonarsDay"
 				|| sat == "deckBigFonarsDay"
@@ -1047,7 +1043,7 @@ void LocationSubstituteGeometry(ref loc)
 			}				
 		}		
 	}
-	else					// наступила ночь - грузим ночной патч
+	else // наступила ночь - грузим ночной патч
 	{
 		makearef(st, loc.models.night);
 		num = GetAttributesNum(st);
@@ -1055,7 +1051,7 @@ void LocationSubstituteGeometry(ref loc)
 		{
 			at = GetAttributeN(st, i);
 			sat = GetAttributeName(at);
-			if(sat == "fonar" 
+			if (sat == "fonar" 
 				|| sat == "fonars"
 				|| sat == "fortVBigNight"
 				|| sat == "deckMediumBigNight")
@@ -1089,12 +1085,11 @@ bool UnloadLocation(aref loc)
 
     LocUnloadGrass(loc);
 	ref mainCharacter = GetMainCharacter();
-	if(SendMessage(&mainCharacter, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode") != 0)
+	if (SendMessage(&mainCharacter, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode") != 0)
 	{
 		mainCharacter.lastFightMode = "1";
-	}else{
-		mainCharacter.lastFightMode = "0";
 	}
+    else mainCharacter.lastFightMode = "0";
 
 	Event(EVENT_LOCATION_UNLOAD,"");
 
@@ -1222,8 +1217,6 @@ bool LocCheckDLight(ref loc)
 	return checkDLight;
 }
 
-
-
 bool LocLoadModel(aref loc, string sat, string addition)
 {
 	//Пропустим пустое имя
@@ -1234,21 +1227,21 @@ bool LocLoadModel(aref loc, string sat, string addition)
 	bool dLight;
 	string tech = "";
 	int level = 10;
-	
+
     attr = sat + ".level";
     if(CheckAttribute(loc, attr)) 
 	{	
 		level = MakeInt(loc.(attr));
 		if(!bSeaActive) level += 10;
 	}	
-	
+
 	int dynamicLightsOn = sti(InterfaceStates.DYNAMICLIGHTS); //  belamour динамический свет
 	attr = sat + ".tech";
 	if(CheckAttribute(loc, attr)) tech = loc.(attr);
 	if(tech == "LocationModelBlend" && dynamicLightsOn) tech = "LocationModelBlendLighting";
 	dLight = LocCheckDLight(loc);
 	//Trace("Load model: " + loc.(sat) + " lights :" + dynamicLightsOn + " tech :" + tech + " dLight :" + dLight);
-	
+
 	int bOk;
 	if(!dLight) // внутренние локи
 	{		
@@ -1626,39 +1619,47 @@ void LocLoadGrass(aref loc, string sat)
     bool   bOk = true;
 	string grs = loc.(sat);
 	string tex = "";
-	if (GetTime() >=  5.5 && GetTime() < 19.8) {
-		if(Whr_IsStorm()) tex = "grass\grasstown.tga.tx";
-		else {
-			tex = "grass\grasstown.tga.tx";
-			if (GetTime() >=  5.5 && GetTime() < 7.0) tex = "grass\grasstownm.tga.tx";
-			if (GetTime() >=  18.0 && GetTime() < 19.0) tex = "grass\grasstowne1.tga.tx";
-			if (GetTime() >=  19.0 && GetTime() < 19.8) tex = "grass\grasstowne2.tga.tx";
-		}
-	} else tex = "grass\grasstownn.tga.tx";
+	if (GetTime() >=  5.5 && GetTime() < 19.8)
+    {
+		if (Whr_IsStorm())
+            tex = "grass\grasstown.tga.tx";
+		else 
+        {
+            tex = "grass\grasstown.tga.tx";
+            if (GetTime() >=  5.5 && GetTime() < 7.0) tex = "grass\grasstownm.tga.tx";
+            else if (GetTime() >=  18.0 && GetTime() < 19.0) tex = "grass\grasstowne1.tga.tx";
+            else if (GetTime() >=  19.0 && GetTime() < 19.8) tex = "grass\grasstowne2.tga.tx";
+        }
+	}
+    else tex = "grass\grasstownn.tga.tx";
 	sat = sat + ".texture";
-	if(CheckAttribute(loc, sat) != 0)
+	if (CheckAttribute(loc, sat) != 0)
 	{
-		if (GetTime() >=  5.5 && GetTime() < 19.8) {
-			if(Whr_IsStorm()) tex = "grass\grassshore.tga.tx";
-			else {
+		if (GetTime() >=  5.5 && GetTime() < 19.8)
+        {
+			if (Whr_IsStorm()) tex = "grass\grassshore.tga.tx";
+			else
+            {
 				tex = loc.(sat);
 				if (GetTime() >=  5.5 && GetTime() < 7.0) tex = "grass\grassshorem.tga.tx";
-				if (GetTime() >=  18.0 && GetTime() < 19.0) tex = "grass\grassshoree1.tga.tx";
-				if (GetTime() >=  19.0 && GetTime() < 19.8) tex = "grass\grassshoree2.tga.tx";
+				else if (GetTime() >=  18.0 && GetTime() < 19.0) tex = "grass\grassshoree1.tga.tx";
+				else if (GetTime() >=  19.0 && GetTime() < 19.8) tex = "grass\grassshoree2.tga.tx";
 			}
-		} else tex = "grass\grassshoren.tga.tx";
+		}
+        else tex = "grass\grassshoren.tga.tx";
 	}
-	if(CheckAttribute(loc, "texGrass")) 
+
+	if (CheckAttribute(loc, "texGrass")) 
 	{
-		if(loc.texGrass == tex)
+		if (loc.texGrass == tex)
 		{
-            if(actLoadFlag == 0) bOk = true;
+            if (actLoadFlag == 0) bOk = true;
             else bOk = false;
 		}
 		else
 		{
 			loc.texGrass = tex;
-			if(CheckAttribute(&InterfaceStates,"GrassDrawDistance") && stf(InterfaceStates.GrassDrawDistance) >= 250.0 && !iGrassQuality)
+			if (CheckAttribute(&InterfaceStates,"GrassDrawDistance") && stf(InterfaceStates.GrassDrawDistance) >= 250.0 && !iGrassQuality)
 			{
 				bOk = false;
 			}
@@ -1669,9 +1670,9 @@ void LocLoadGrass(aref loc, string sat)
 		loc.texGrass = tex;         
 		bOk = false;
 	}
-    
+
     // Trace("bOk = " + bOk);
-    if(!bOk) 
+    if (!bOk) 
 	{
 		SendMessage(loc, "lss", MSG_LOCATION_SET_GRS_PATCH, grs, tex); // grass tex update
 		object objGrass;

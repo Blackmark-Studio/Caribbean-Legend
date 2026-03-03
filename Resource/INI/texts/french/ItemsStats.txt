@@ -95,11 +95,11 @@ itm_stat_descr_indian_1 {Augmente les dégâts de tir à la tête de 20 %.}
 itm_stat_indian_10 {Poison}
 itm_stat_descr_indian_10 {Chaque attaque tranchante a 15 % de chances d’empoisonner l’ennemi.}
 itm_stat_indian_11 {Fumée et miroirs}
-itm_stat_descr_indian_11 {Chaque objet Raffiné augmente vos chances de Tromperie de 5%.}
+itm_stat_descr_indian_11 {Augmente de 15 % les chances de réussir une infiltration discrète en ville. Utile en entrant depuis la jungle ou de nuit.}
 itm_stat_indian_2 {Vérifier}
 itm_stat_descr_indian_2 {L’art de doser la poudre augmente les dégâts de Balle et de Mitraille de 10 %, et de 5 % supplémentaires pour les munitions Surchargées et Perforantes.}
 itm_stat_indian_3 {Soif de sang}
-itm_stat_descr_indian_3 {Augmente les dégâts critiques infligés de 15 %.}
+itm_stat_descr_indian_3 {Augmente les dégâts critiques infligés de $modifierPercent(blade_CritDamage).}
 itm_stat_indian_4 {Armement}
 itm_stat_descr_indian_4 {Les armes lourdes infligent 15 % de dégâts supplémentaires avec les attaques lourdes.}
 itm_stat_indian_5 {Équilibreur}
@@ -237,7 +237,7 @@ itm_stat_descr_secondary_hat11 {La vitesse d’attaque augmente de 5 % si le per
 itm_stat_blade_SP_3low {Potentiel inexploité}
 itm_stat_descr_blade_SP_3low {Cette lame n’a pas atteint toute sa puissance — il lui manque quelque chose…}
 itm_stat_blade_SP_3 {Faucheur}
-itm_stat_descr_blade_SP_3 {Empêche toute guérison. Pour chaque 2 % de Santé manquante, les dégâts infligés augmentent de 1,5 % et la régénération d’énergie de 1,75 %.}
+itm_stat_descr_blade_SP_3 {Empêche les soins de toutes les sources. Chaque tranche de 2 % de Vie manquante augmente les dégâts infligés de 1,5 % et la régénération d’énergie de 1,75 %.}
 itm_stat_blade_41 {Souplesse}
 itm_stat_descr_blade_41 {Bénéficie d’un bonus de dégâts selon votre meilleure compétence en arme blanche.}
 itm_stat_lacrima_patris {Voie du Juste}
@@ -290,3 +290,8 @@ itm_stat_piratesJournal_3 {Autonomie}
 itm_stat_descr_piratesJournal_3 {Augmente l’efficacité des réparations en mer de 30 %. Le bonus est doublé si le navire amiral est l’« Amsterdam ».}
 itm_stat_pistol15 {Petit mais redoutable}
 itm_stat_descr_pistol15 {Sortir et rengainer ce pistolet est 15 % plus rapide. Les impacts repoussent fortement les ennemis.}
+itm_stat_bonus_blade_SP_3
+{
+Bonus de dégâts actuel : $attr($context.damage)
+Bonus de récupération d’énergie : $attr($context.energy)
+}

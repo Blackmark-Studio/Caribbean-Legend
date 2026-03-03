@@ -8,8 +8,8 @@ Caleuche_7 {Hooper}
 Caleuche_8 {Uciekłeś od statku widmo!}
 Caleuche_9 {Reginald}
 Caleuche_10 {Jackson}
-Caleuche_11 {Harpy}
-Caleuche_12 {szebeka 'Harpy'}
+Caleuche_11 {Harpia}
+Caleuche_12 {szebeka 'Harpia'}
 Caleuche_13 {martwa gospodyni}
 Caleuche_14 { }
 Caleuche_15 {Chavinavy}

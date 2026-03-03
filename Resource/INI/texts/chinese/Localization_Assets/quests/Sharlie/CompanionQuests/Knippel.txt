@@ -25,6 +25,6 @@ Knippel_24 {Faggle}
 Knippel_25 {2小时后... @<NewStr()> 登船"Sussex"号}
 Knippel_26 {Thomas}
 Knippel_27 {Lynch}
-Knippel_28 {Сhimera}
+Knippel_28 {Chimera}
 Knippel_29 {当前时间}
 Knippel_30 {1654年8月17日, @<NewStr()>, 多米尼加东南部"}

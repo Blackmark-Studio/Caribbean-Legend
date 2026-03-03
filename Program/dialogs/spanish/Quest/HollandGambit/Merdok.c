@@ -708,6 +708,7 @@ void ProcessDialogEvent()
 		LAi_SetCitizenType(sld);
 		AddLandQuestMark(sld, "questmarkmain");
 		AddQuestRecord("Holl_Gambit", "3-34");
+		LocatorReloadEnterDisable("SentJons_HouseF3", "reload4", false);
 		break;
 
 	case "Lucas":

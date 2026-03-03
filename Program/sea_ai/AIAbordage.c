@@ -209,30 +209,19 @@ void Sea_AbordageLoad(int _iAbordageMode, bool _bMCAbordageInitiator)
 				pchar.boarding_info.mode = _iAbordageMode;
 				pchar.boarding_info.indicator = _bMCAbordageInitiator;
 
-				if(CheckAttribute(&InterfaceStates,"EnabledAutoSaveMode") )
+				if(GetMaxAutoSaves("BeforeBoarding") != 0)
 				{
-					if(sti(InterfaceStates.EnabledAutoSaveMode) != 0)
-					{
-						//MakeAutoSaveAndGoOnAbord(); //eddy. чтобы глюков не було.
-						MakeAutoSave();
-						SetEventHandler("evntSave","Continue_Sea_AbordageLoadPre", 0);
-					}
-					else
-					{
-						Continue_Sea_AbordageLoad();
-					}
+					bAutoSaveStarted = false;
+					PostEvent("Event_NewAutoSave", 1, "s", "BeforeBoarding");
+					SetAfterSaveFunction("Continue_Sea_AbordageLoad");
 				}
 				else
-				{
 					Continue_Sea_AbordageLoad();
-				}
-			} else {
-				Log_SetStringToLog(XI_ConvertString("The Repeated boarding the ship is impossible"));
 			}
+			else
+				Log_SetStringToLog(XI_ConvertString("The Repeated boarding the ship is impossible"));
 		}
 	}
-	
-	//PostEvent("Continue_Sea_AbordageLoad", 1, "ll", _iAbordageMode, _bMCAbordageInitiator)
 }
 
 void Sea_AbordageLoad_ActiveCountStart()
@@ -252,18 +241,10 @@ void Sea_AbordageLoad_ActiveCount()
 	}
 }
 
-void Continue_Sea_AbordageLoadPre()
-{
-	DelEventHandler("evntSave","Continue_Sea_AbordageLoadPre");
-	SetEventHandler("frame","Continue_Sea_AbordageLoad",1);
-}
-
 void Continue_Sea_AbordageLoad()
 {
 	int _iAbordageMode = sti(pchar.boarding_info.mode);
 	int _bMCAbordageInitiator = sti(pchar.boarding_info.indicator);
-	
-	DelEventHandler("frame","Continue_Sea_AbordageLoad");
 
 	if (bSeaActive == false) 
 	{ 

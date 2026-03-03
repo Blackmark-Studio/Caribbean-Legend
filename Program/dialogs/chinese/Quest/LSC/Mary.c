@@ -1082,8 +1082,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "return_2":
-			dialog.text = "不, 我不冷。 我只是... 我不想在这里谈论它。 等你忙完后来我的船舱。 我想单独和你待在一起, 没错... 你现在不去见舰队司令和纳撒尼尔吗? ";
-			link.l1 = "是的。 我必须和鲨鱼谈谈, 当然, 还要把丹妮尔带给纳撒尼尔。 不会花太多时间。 我很快就会见到你, 玛丽。 ";
+			if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie"))
+			{
+				dialog.text = "不, 我不冷。 我只是... 我不想在这里谈论它。 等你忙完后来我的船舱。 我想单独和你待在一起, 没错... 你现在不去见舰队司令和纳撒尼尔吗? ";
+				link.l1 = "是的。 我必须和鲨鱼谈谈，当然，还要把丹妮尔带给纳撒尼尔。 不会花太多时间。 我很快就会见到你，玛丽。";
+			}
+			else
+			{
+				dialog.text = "不, 我不冷。 我只是... 我不想在这里谈论它。 等你忙完后来我的船舱。 我想单独和你待在一起, 没错... 你现在不去见纳撒尼尔吗? ";
+				link.l1 = "是的。 我必须把丹妮尔带给他。 不会花太多时间。 我很快就会见到你, 玛丽。";
+			}
 			link.l1.go = "return_3";
 		break;
 		
@@ -2749,7 +2757,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -2764,7 +2772,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;		

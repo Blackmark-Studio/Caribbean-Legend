@@ -544,7 +544,7 @@ int LAi_GetCharacterChargeCur(aref chr, string sType)
 void LAi_GunSetChargeQuant(aref chr, string sType, int quant)
 {
 	if(quant < 0) quant = 0;
-	if(quant > 5) quant = 5;
+
 	chr.chr_ai.(sType).charge_max = quant;
 	
 	int iCharge = iGetPistolChargeNum(chr, sType, quant);
@@ -646,12 +646,13 @@ string LAi_SetCharacterDefaultBulletType(ref rChar, string sType)
 		ref rItm = ItemsFromID(sGun); 
 		makearef(rType, rItm.type);
 		iNum = GetAttributesNum(rType);
+		aref arBullet;
 		for (int i = 0; i < iNum; i++)
 		{
-			sAttr = GetAttributeName(GetAttributeN(rType, i));
-			if(sti(rItm.type.(sAttr).Default) > 0)
+			aref arCur = GetAttributeN(rType, i);
+			if(AttributeIsTrue(arCur, "Default"))
 			{
-				sBulletType = rItm.type.(sAttr).bullet;
+				sBulletType = arCur.bullet;
 				isBulletSet = LAi_SetCharacterUseBullet(rChar, sType, sBulletType);
 			}
 		}
@@ -691,7 +692,7 @@ void GunCharging(ref _Ch, string sType, string sGun)
 	string sAttr, Bullet;
 	string sBulletType = "";
 	int iNum;
-	aref rType, aref gun;
+	aref rType, gun;
 	Items_FindItem(sGun, &Gun);
 	makearef(rType, gun.type);
 	iNum = GetAttributesNum(rType);

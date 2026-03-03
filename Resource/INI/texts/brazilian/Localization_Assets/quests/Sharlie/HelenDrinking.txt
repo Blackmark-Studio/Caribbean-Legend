@@ -1,0 +1,23 @@
+HelenDrinking_1 {Francois}
+HelenDrinking_2 {de Tavann}
+HelenDrinking_3 {Vit}
+HelenDrinking_4 {Needles}
+HelenDrinking_5 {Rainbow}
+HelenDrinking_6 {Isso é um sonho? Onde está todo mundo?}
+HelenDrinking_7 {Preciso ver o Jan e pedir desculpas.}
+HelenDrinking_8 {Amelia}
+HelenDrinking_9 { }
+HelenDrinking_10 {Dane}
+HelenDrinking_11 { }
+HelenDrinking_12 {Lucky}
+HelenDrinking_13 { }
+HelenDrinking_14 {E como é angustiante ter dois lares. Oh, Mary... Depois de tudo que aconteceu, o que faremos agora, nós três?}
+HelenDrinking_15 { }
+HelenDrinking_16 { }
+HelenDrinking_17 {Richard}
+HelenDrinking_18 {Small}
+HelenDrinking_19 { }
+HelenDrinking_20 { }
+HelenDrinking_21 {Madeira de ferro entregue ao seu porão!}
+HelenDrinking_22 {~ ganhou +1 em ~}
+HelenDrinking_23 {~ ganhou +1 em ~}

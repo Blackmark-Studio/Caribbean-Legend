@@ -411,25 +411,6 @@ ref SetFantomOfficer(string group, string locator, int nation, string enemygroup
     }
     return Cr;
 }
-//Создадим фантомов из нашей команды
-ref SetFantomOurAttackForts(string group, string locator)
-{
-    string  smodel;
-    ref     CrOur;
-    string  ani;
-	// boal 08.01.05 патент влияет
-    smodel = LAi_GetBoardingModel(GetMainCharacter(), &ani);
-
-    CrOur = LAi_CreateFantomCharacterEx(smodel, ani, group, locator);
-
-    if (CrOur.location.locator != "")
-    {
-	    SetFantomParam(CrOur);
-	    LAi_group_MoveCharacter(CrOur, LAI_GROUP_PLAYER);
-	    LAi_LoginInCaptureTown(CrOur, true); // для записи игры
-    }
-    return CrOur;
-}
 
 void TWN_FreeCaptureForts() // уберем солдат, откроем входы (на всяк случай) при выходе на карту
 {
@@ -525,7 +506,12 @@ void TWN_FightInTown()
     string sTemp, snCity, sModel;
     aref aData;  //  homo
     makearef(aData, NullCharacter.Siege);   // homo
-    
+	string model;
+	string ani;
+
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
 	sld = GetCharacter(sti(Pchar.GenQuestFort.fortCharacterIdx));
     Log_TestInfo("Cur boarding_player_crew: " + Pchar.GenQuestFort.PlayerCrew);
     Log_TestInfo("Cur TownCrew: " + Pchar.GenQuestFort.TownCrew);
@@ -656,7 +642,7 @@ void TWN_FightInTown()
 	            }
 	            // натравим
 	            LAi_group_SetHearRadius("TOWN_BATTLE_SOLDIERS", 100.0);
-	            LAi_group_FightGroupsEx("TOWN_BATTLE_SOLDIERS", LAI_GROUP_PLAYER, true, Pchar, -1, false, false);
+	            LAi_group_FightGroupsEx("TOWN_BATTLE_SOLDIERS", LAI_GROUP_PLAYER, true, GetMainCharacterIndex(), -1, false, false);
 	            LAi_group_SetRelation("TOWN_BATTLE_SOLDIERS", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 
 	            LAi_group_SetCheck("TOWN_BATTLE_SOLDIERS", "FightInTown_Finish");
@@ -712,36 +698,52 @@ void TWN_FightInTown()
 				ChangeCharacterAddressGroup(sld, loadedLocation.id, "rld", sTemp);
 				Pchar.GenQuestFort.TownCrew = sti(Pchar.GenQuestFort.TownCrew) - 1;
 			}
-			
 
             if (chrDisableReloadToLocation)
             {
+				object aBoardingModels[1];
+				SetArraySize(&aBoardingModels, MAX_TOWN_CREW);
+				GenerateCrew(pchar, "soldier", &aBoardingModels);
+
 	            // наши
 	            Pchar.GenQuestFort.FarLocator = false;
 	            sTemp = LAi_FindNPCLocator("rld");
 	            for (i = 0; i < MAX_TOWN_CREW; i++)
 	            {
                     if (sti(Pchar.GenQuestFort.PlayerCrew) < 1) break;
-					SetFantomOurAttackForts("rld", sTemp);
+
+					model = aBoardingModels[i].model;
+					ani = aBoardingModels[i].ani;
+
+					ref CrOur = LAi_CreateFantomCharacterEx(model, ani, "rld", sTemp);
+
+					if (CrOur.location.locator != "")
+					{
+						SetNPCEquip(CrOur, &aSoldier, false);
+						SetFantomParam(CrOur);
+						LAi_group_MoveCharacter(CrOur, LAI_GROUP_PLAYER);
+						LAi_LoginInCaptureTown(CrOur, true); // для записи игры
+					}
 	            	Pchar.GenQuestFort.PlayerCrew = sti(Pchar.GenQuestFort.PlayerCrew) - 1;
 	            }
-				if (pchar.questTemp.Ascold != "Ascold_ImMummy")
+				if (!CheckAttributeEqualTo(pchar, "questTemp.Ascold", "Ascold_ImMummy"))
 				{
 					//наши мушкетёры
+					object aCrewMushketer[MAX_TOWN_MUSHKETER];
+					GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+
 					for (i = 0; i < MAX_TOWN_MUSHKETER; i++) // Captain Beltrop, фикс моделей мушкетёров, раньше они определялись по флагу ГГ, теперь всё как и раньше... 31.10.2020
 					// belamour legendary edition UPD rCharacter был использован без инициализации
-					{				
+					{
+						model = aCrewMushketer[i].model;
+						ani = aCrewMushketer[i].ani;
 						if (sti(Pchar.GenQuestFort.PlayerCrew) < 1) break;
-						if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 1) //если есть патент, оставлю, хотя рудимент, форма только со звания капитан
-						{
-                         iNation = sti(Items[sti(pchar.EquipedPatentId)].Nation);
-			             sModel = "mush_"+NationShortName(iNation)+"_"+(rand(5)+1); 
-                        }
-                        else sModel = "mush_ctz_"+(rand(2)+4); // шесть моделей				
-						sld = GetCharacter(NPC_GenerateCharacter("GenChar_", sModel, "man", "mushketer", 5, sti(pchar.nation), 0, false, "soldier"));
+
+						sld = GetCharacter(NPC_GenerateCharacter("GenChar_", model, "man", ani, 5, sti(pchar.nation), 0, false, "soldier"));
 						sld.id = "GenChar_" + sld.index;
 						LAi_NoRebirthEnable(sld); //не показывать убитых при входе в локацию
 						LAi_LoginInCaptureTown(sld, true); // для записи игры
+						SetNPCEquip(sld, &aMushketers, true);
 						SetMushketerParamFortOur(sld);
 						LAi_SetWarriorType(sld);
 						LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
@@ -763,7 +765,7 @@ void TWN_FightInTown()
 	            Pchar.GenQuestFort.FarLocator = true;
           		// натравим
 	            LAi_group_SetHearRadius("TOWN_BATTLE_SOLDIERS", 100.0);
-	            LAi_group_FightGroupsEx("TOWN_BATTLE_SOLDIERS", LAI_GROUP_PLAYER, true, Pchar, -1, false, false);
+	            LAi_group_FightGroupsEx("TOWN_BATTLE_SOLDIERS", LAI_GROUP_PLAYER, true, GetMainCharacterIndex(), -1, false, false);
 	            LAi_group_SetRelation("TOWN_BATTLE_SOLDIERS", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 
 	            LAi_group_SetCheck("TOWN_BATTLE_SOLDIERS", "FightInTown_OpenNext");
@@ -912,7 +914,7 @@ void TWN_Back_Mayor_Type()
 void TWN_ExitForPay() // мэр даёт откуп - табличка прибыли
 {
     ref sld, Builder;
-    
+    string sTmp;
     sld = GetCharacter(sti(Pchar.GenQuestFort.fortCharacterIdx));
     Builder = characterFromID(sld.City + "_Mayor");
     LAi_SetImmortal(Builder, false);
@@ -1000,18 +1002,19 @@ void TWN_ExitForPay() // мэр даёт откуп - табличка приб�
 						if(sti(1+hrand(7, "&TaPrize" + Builder.id)) == 5)
 						{
 							GiveItem2Character(pchar, "Talisman8");
-							log_info(StringFromKey("colony_6")+GetConvertStr("itmname_Talisman8", "ItemsDescribe.txt"));
+							log_info(StringFromKey("colony_6")+GetItemName("talisman8"));
 						}
 						else
 						{
-							GiveItem2Character(pchar, "Talisman"+sti(1+hrand(7, "&TaPrize" + Builder.id)));
-							log_info(StringFromKey("colony_6")+GetConvertStr("itmname_Talisman"+sti(1+hrand(7, "&TaPrize" + Builder.id)), "ItemsDescribe.txt"));
+							sTmp = "Talisman"+sti(1+hrand(7, "&TaPrize" + Builder.id));
+							GiveItem2Character(pchar, sTmp);
+							log_info(StringFromKey("colony_6")+GetItemName(sTmp));
 						}
 					}
 					else
 					{
 						GiveItem2Character(pchar, "Talisman8");
-						log_info(StringFromKey("colony_6")+GetConvertStr("itmname_Talisman8", "ItemsDescribe.txt"));
+						log_info(StringFromKey("colony_6")+GetItemName("talisman8"));
 					}
 				break;
 				case 3:
@@ -1031,23 +1034,23 @@ void TWN_ExitForPay() // мэр даёт откуп - табличка приб�
 						break;
 						case 3:
 							GiveItem2Character(pchar, "mushket1");
-							log_info(StringFromKey("colony_6")+GetConvertStr("itmname_mushket1", "ItemsDescribe.txt"));
+							log_info(StringFromKey("colony_6")+GetItemName("mushket1"));
 						break;
 						case 4:
 							GiveItem2Character(pchar, "mushket2");
-							log_info(StringFromKey("colony_6")+GetConvertStr("itmname_mushket2", "ItemsDescribe.txt"));
+							log_info(StringFromKey("colony_6")+GetItemName("mushket2"));
 						break;
 						case 5:
 							GiveItem2Character(pchar, "grape_mushket");
-							log_info(StringFromKey("colony_7")+GetConvertStr("itmname_grape_mushket", "ItemsDescribe.txt"));
+							log_info(StringFromKey("colony_7")+GetItemName("grape_mushket"));
 						break;
 						case 6:
 							GiveItem2Character(pchar, "hat4");
-							log_info(StringFromKey("colony_7")+GetConvertStr("itmname_hat4", "ItemsDescribe.txt"));
+							log_info(StringFromKey("colony_7")+GetItemName("hat4"));
 						break;
 						case 7:
 							GiveItem2Character(pchar, "hat6");
-							log_info(StringFromKey("colony_7")+GetConvertStr("itmname_hat6", "ItemsDescribe.txt"));
+							log_info(StringFromKey("colony_7")+GetItemName("hat6"));
 						break;
 					}
 				break;
@@ -1069,7 +1072,7 @@ void TWN_ExitForPay() // мэр даёт откуп - табличка приб�
 					else
 					{
 						GiveItem2Character(pchar, "spyglass4");
-						log_info(StringFromKey("colony_7")+GetConvertStr("itmname_spyglass4", "ItemsDescribe.txt"));
+						log_info(StringFromKey("colony_7")+GetItemName("spyglass4"));
 					}
 				break; 
 			}
@@ -1633,8 +1636,8 @@ void SetShipSquadron(ref rChar)
 {
     int SiegeShips, hcrew;
 
-	SiegeShips = SHIP_FRIGATE + rand(makeint(SHIP_LINESHIP - SHIP_FRIGATE));
-	
+	SiegeShips = GetRandomShipTypeEx(FLAG_SHIP_CLASS_1 + FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_WAR, GetNationFlag(sti(rChar.nation)), true);
+
 	if(rand(2) == 1)
 	{
 		switch( sti(rChar.nation) )

@@ -1,0 +1,9 @@
+perks_1 {Preços atualizados}
+perks_2 {O rombo no casco do navio '@<_ShipName>' foi consertado.}
+perks_3 {@<_ShipName> – rombo abaixo da linha d'água!}
+perks_4 {$rand(Deve ter algo valioso no porão do '$attr($context.ship.name)'|Eles claramente estão levando algo importante no '$attr($context.ship.name)')}
+perks_5 {$rand(Não há muito o que pegar no porão do '$attr($context.ship.name)'|Parece que não há nada de valor no porão do '$attr($context.ship.name)')}
+perks_6 {No navio @<rChar.Ship.Name>, @<FindRussianSailorString(cn, "No")> morreu na multidão.}
+perks_7 {Segundo os cálculos, @<_ShipName> chegou a @<_PortName>.}
+perks_8 {Ainda a caminho.}
+perks_9 {Taxa de exibição coletada.}

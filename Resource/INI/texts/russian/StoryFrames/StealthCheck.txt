@@ -1,0 +1,2 @@
+ShowPapersAction {Показать верительную грамоту}
+FactorQuestZpq {Неизвестный гасконец}

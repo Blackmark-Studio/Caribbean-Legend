@@ -1,9 +1,9 @@
 // Сглаживаем значения по рангу ГГ, чтобы рандомные разбросы были адекватны
-int GEN_SmoothBonusByRank(int bonus, float playerRank)
+int GEN_SmoothBonusByRank(int bonus, int playerRank)
 {
 	if (bonus == 0) return 0;
 
-	float mdf = Bring2Range(0.4, 1.2, 3.0, 26.0, playerRank);
+	float mdf = Bring2Range(0.4, 1.2, 3.0, 26.0, makefloat(playerRank));
 	return makeint(makefloat(bonus) * mdf + 0.5);
 }
 
@@ -61,7 +61,7 @@ int GEN_GetPowerLevelRankOffset(int powerLevel)
 	}
 }
 
-void GEN_GetPowerLevelPirates(int powerLevel, int base, int random)
+void GEN_GetPowerLevelPirates(int powerLevel, ref base, ref random)
 {
 	switch (powerLevel)
 	{

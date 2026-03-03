@@ -1,0 +1,63 @@
+QUEST_MESSAGE1 {El Caimano Kolonisi işgal altında.}
+QUEST_MESSAGE2 {El Caimano kolonisi ele geçirildi.}
+QUEST_MESSAGE3 {Artık Aztek altınının lanetine karşı koyamayacak kadar yaşlısın...}
+QUEST_MESSAGE4 {Bir hazine buldun!}
+QUEST_MESSAGE5 {Nigel Blight kaçakçıların korvetine saldırdı!}
+QUEST_MESSAGE6 {Nigel Blight kayboldu!}
+QUEST_MESSAGE7 {Kaptan, 'Black Pearl' ufukta göründü!}
+QUEST_MESSAGE8 {Harika iş çıkardın. Ustayı öldürdün!}
+QUEST_MESSAGE9 {Artık bu acımasız dünyayla baş başasın!}
+QUEST_MESSAGE10 {Merhametsiz bir korsan}
+QUEST_MESSAGE11 {özel bir ödülü hak ediyor!}
+QUEST_MESSAGE12 {Maalesef, zaten çok fazla subay tuttunuz! Yeni bir subay almak için önce mevcutlardan birini kovmalısınız!}
+Address_Form_Spa {Senyor}
+Address_Form_Fra {Monsieur}
+Address_Form_Eng {Bayım}
+Address_Form_Por {Senyor}
+Address_Form_Hol {Mynheer}
+Swear_1 {Dalaklarım patlasın!}
+Swear_2 {Lanet olsun!}
+Swear_3 {Aman Tanrım!}
+Swear_4 {Lanet olsun!}
+Swear_5 {Bin şeytan!}
+Swear_6 {Kıçımda çapa olsun!}
+Swear_7 {Aman Tanrım!}
+Swear_8 {Arrghhh!!!}
+Swear_9 {Bin köpekbalığı!}
+Swear_10 {Şeytan!}
+TimeGreeting {İyi günler}
+Antigua {Antigua}
+Barbados {Barbados}
+Curacao {Curacao}
+Dominica {Dominica}
+Grenada {Grenada}
+Guadeloupe {Guadeloupe}
+Hispaniola {Hispaniola}
+IslaMona {Isla Mona}
+Jamaica {Jamaica}
+MarieGalante {Marie Galante}
+Martinique {Martinique}
+Montserrat {Montserrat}
+Nevis {Nevis}
+PuertoRico {Puerto Rico}
+StEustatius {St. Eustatius}
+StKitts {St. Kitts}
+StMartin {St. Martin}
+Tortuga {Tortuga}
+LaVega {La Vega}
+SantoDomingo {Santo Domingo}
+PetitGoave {Petit Goave}
+Bridgetown {Bridgetown}
+SanJuan {San Juan}
+SantiagoVega {Santiago Vega}
+OFFIC_TYPE_BOATSWAIN {güverte subayı}
+OFFIC_TYPE_CANNONEER {Topçu}
+OFFIC_TYPE_QMASTER {dümenci}
+OFFIC_TYPE_NAVIGATOR {Seyir subayı}
+OFFIC_TYPE_FIRSTMATE {birinci zabit}
+Pirate {Korsan}
+Spain {İspanyol}
+France {Fransız}
+Smuggler {Kaçakçı}
+Holland {Hollandalı}
+England {İngiliz}

@@ -18,7 +18,8 @@ void ReapplyPerksItems0037()
 		UnloadSegment("items\modifiers\init\init.c");
 	}
 
-	object fellows = GetAllFellows(pchar, true);
+	object fellows;
+	AddAllFellows(&fellows, pchar, true);
 	for (int i=0; i < GetAttributesNum(&fellows); i++)
 	{
 		int idx = sti(GetAttributeValue(GetAttributeN(&fellows, i)));
@@ -290,8 +291,8 @@ void Amsterdam()
 	DeleteAttribute(refship, "ShipHolder");
 	
 	makeref(refShip,ShipsTypes[SHIP_FRIGATE]);
-	refShip.CannonsQuantity				= 42;
-	refShip.CannonsQuantityMin			= 36;
+	refShip.CannonsQuantity				= 38;
+	refShip.CannonsQuantityMin			= 32;
 	refShip.rcannon 					= 16;
 	refShip.lcannon 					= 16;
 	refShip.cannonr  = refShip.rcannon;

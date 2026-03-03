@@ -20,6 +20,7 @@ void PrepareDefaultOption(ref optref)
 	optref.volume.music = 0.25;
 	optref.volume.sound = 0.25;
 	optref.volume.dialog = 0.25;
+	optref.cameramode.SFW = false;
 	optref.cameramode.follow_on = true;
 	/*
 	optref.arcademode.bArcadeSails = true;
@@ -166,6 +167,12 @@ void GetRealOptions(ref optref)
 		optref.cameramode.ClassicSoundScene = true;
 	}
 
+	if( CheckAttribute(&InterfaceStates,"SFW") ) {
+		optref.cameramode.SFW = sti(InterfaceStates.SFW);
+	} else {
+		optref.cameramode.SFW = false;
+	}
+
 	if( CheckAttribute(&InterfaceStates,"InvertCameras") ) {
 		optref.cameramode.InvertCameras = sti(InterfaceStates.InvertCameras);
 	} else {
@@ -189,17 +196,16 @@ void GetRealOptions(ref optref)
 	} else {
 		optref.cameramode.ShowTutorial = true;
 	}
-
-	if( CheckAttribute(&InterfaceStates,"EnabledAutoSaveMode") ) {
-		optref.cameramode.EnabledAutoSaveMode = sti(InterfaceStates.EnabledAutoSaveMode);
-	} else {
-		optref.cameramode.EnabledAutoSaveMode = true;
-	}
-
-	if( CheckAttribute(&InterfaceStates,"EnabledAutoSaveMode2") ) {
-		optref.cameramode.EnabledAutoSaveMode2 = sti(InterfaceStates.EnabledAutoSaveMode2);
-	} else {
-		optref.cameramode.EnabledAutoSaveMode2 = false;
+	
+	// автосейвы
+	string sAutoSave;
+	for(int i = 0; i < 13; i++)
+	{
+		sAutoSave = "AutoSave_" + GetAutoSaveType(i);
+		if(CheckAttribute(&InterfaceStates, sAutoSave))
+			optref.(sAutoSave) = sti(InterfaceStates.(sAutoSave));
+		else
+			optref.(sAutoSave) = -1;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"EnabledQuestsMarks") ) {
@@ -331,6 +337,13 @@ void SetCurentOptions(ref optref)
 		InterfaceStates.ClassicSoundScene = true;
 	}
 
+	if( CheckAttribute(optref,"cameramode.SFW") ) {
+		bSFW = sti(optref.cameramode.SFW);
+		InterfaceStates.SFW = bSFW;
+	} else {
+		InterfaceStates.SFW = false;
+	}
+
 	if( CheckAttribute(optref,"cameramode.ShowBattleMode") ) {
 		InterfaceStates.ShowBattleMode = optref.cameramode.ShowBattleMode;
 	} else {
@@ -348,17 +361,16 @@ void SetCurentOptions(ref optref)
 	} else {
 		InterfaceStates.ShowTutorial = true;
 	}
-
-	if( CheckAttribute(optref,"cameramode.EnabledAutoSaveMode") ) {
-		InterfaceStates.EnabledAutoSaveMode = optref.cameramode.EnabledAutoSaveMode;
-	} else {
-		InterfaceStates.EnabledAutoSaveMode = true;
-	}
-
-	if( CheckAttribute(optref,"cameramode.EnabledAutoSaveMode2") ) {
-		InterfaceStates.EnabledAutoSaveMode2 = optref.cameramode.EnabledAutoSaveMode2;
-	} else {
-		InterfaceStates.EnabledAutoSaveMode2 = false;
+	
+	// автосейвы
+	string sAutoSave;
+	for(int i = 0; i < 13; i++)
+	{
+		sAutoSave = "AutoSave_" + GetAutoSaveType(i);
+		if(CheckAttribute(optref, sAutoSave))
+			InterfaceStates.(sAutoSave) = sti(optref.(sAutoSave));
+		else
+			InterfaceStates.(sAutoSave) = -1;
 	}
 
 	if( CheckAttribute(optref,"cameramode.EnabledQuestsMarks") ) {

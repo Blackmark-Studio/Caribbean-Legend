@@ -9,7 +9,7 @@
 #define SEA_GRID_STEP			0.051
 
 //отдельный объект, в котором будут храниться настройки нового моря
-object SeaSettings;	
+object SeaSettings;
 
 int iSkyColor = argb(0, 255, 255, 255);
 
@@ -20,11 +20,11 @@ void WhrDeleteSeaEnvironment()
 
 void WhrCreateSeaEnvironment()
 {
-	aref	aCurWeather = GetCurrentWeather();
-	aref	aSea; makearef(aSea,aCurWeather.Sea);
-	aref	aSea2; makearef(aSea2, aCurWeather.Sea2);
-	aref	aCommon; makearef(aCommon, WhrCommonParams.Sea);
-	
+	aref aCurWeather = GetCurrentWeather();
+	aref aSea;    makearef(aSea,  aCurWeather.Sea);
+	aref aSea2;   makearef(aSea2, aCurWeather.Sea2);
+	aref aCommon; makearef(aCommon, WhrCommonParams.Sea);
+
 	float fMaxSeaHeight;
 	float fMaxSeaDistance = 1600;
 
@@ -45,7 +45,7 @@ void WhrCreateSeaEnvironment()
 	int iLocation 		= FindLocation(sLocation);
 	int iIsland 		= FindIsland(sLocation);
 
-	if(bMainMenu)
+	if (bMainMenu)
 	{
 		SetSeaSettings();
 		Sea.MaxDim = 65536*2;
@@ -53,7 +53,7 @@ void WhrCreateSeaEnvironment()
 	}
 	else
 	{
-		if(iLocation != -1)
+		if (iLocation != -1)
 		{
 			trace("sLocation : " + sLocation + " iLocation :" + iLocation);
 			SetSeaSettings();
@@ -248,71 +248,65 @@ string Whr_SetSeaAngle()
 //шторм
 bool Whr_CheckStorm()
 {
-	bool bRealStorm = CheckAttribute(&WeatherParams, "Storm") && sti(WeatherParams.Storm) == true; 				//реальный игровой шторм
+	bool bRealStorm = CheckAttribute(&WeatherParams, "Storm") && sti(WeatherParams.Storm) == true; //реальный игровой шторм
 	bool bDebugerStorm = CheckAttribute(pchar, "debuger_weather.storm") && pchar.debuger_weather.storm == true; //шторм вызываемый через дебагер
-
-	if(bRealStorm || bDebugerStorm)
-	{
-		return true;
-	}
-	return false;
+	return bRealStorm || bDebugerStorm;
 }
 
 //Ugeen: проверка атрибутов шторма и торнадо в текущей локации или на острове
-//Sith: пока здесь не используется
 void Whr_CheckLocationStorm(ref _storm, ref _tornado)
 {
-	int 	iCurLocation;
-		
-	if(CheckAttribute(pchar, "location"))
+	int iCurLocation;
+
+	if(CheckAttribute(pchar, "location")) // TO_DO: Избыточный чек?
 	{
 		iCurLocation = reload_location_index;
-		if(iCurLocation != -1)	// локация
+		if(iCurLocation != -1) // локация
 		{
 			if(CheckAttribute(&locations[iCurLocation], "storm"))
 			{
-				_storm 				= 1; 
+				_storm = true; 
 			}
 			if(CheckAttribute(&locations[iCurLocation], "tornado"))
 			{
-				_tornado 			= 1;
+				_tornado = true;
 			}
 			//малый шторм в локациях
 			if(CheckAttribute(&locations[iCurLocation], "alwaysStorm"))
 			{
-				_storm 				= 1; 
-				_tornado 			= 1;				
-				if (CheckAttribute(&locations[iCurLocation], "alwaysStorm.WaveHeigh")) locations[iCurLocation].MaxWaveHeigh = 2.5; 		// установим уровень воды
+				_storm   = true;
+				_tornado = true;
+				if (CheckAttribute(&locations[iCurLocation], "alwaysStorm.WaveHeigh")) locations[iCurLocation].MaxWaveHeigh = 2.5; // установим уровень воды
 			}
 			//большой шторм в локациях (в ККС не используется но пусть будет)
 			if(CheckAttribute(&locations[iCurLocation], "alwaysStorm_2"))
 			{
-				_storm 				= 1; 
-				_tornado 			= 1;				
-				if (CheckAttribute(&locations[iCurLocation], "alwaysStorm_2.WaveHeigh")) locations[iCurLocation].MaxWaveHeigh = 40.0; 	// установим уровень воды
-			}			
+				_storm   = true;
+				_tornado = true;
+				if (CheckAttribute(&locations[iCurLocation], "alwaysStorm_2.WaveHeigh")) locations[iCurLocation].MaxWaveHeigh = 40.0; // установим уровень воды
+			}
 		}
-		else	// остров
+		else // остров
 		{		
 			iCurLocation = FindIsland(pchar.location);
 			if(iCurLocation != -1)
 			{
 				if(CheckAttribute(&Islands[iCurLocation], "storm"))
 				{
-					_storm 			= 1; 
+					_storm = true;
 				}
 				if(CheckAttribute(&Islands[iCurLocation], "tornado"))
 				{
-					_tornado 		= 1;
+					_tornado = true;
 				}
 				if(CheckAttribute(&Islands[iCurLocation], "alwaysStorm"))
 				{
-					_storm 			= 1; 
-					_tornado 		= 1;
+					_storm   = true; 
+					_tornado = true;
 				}
-			}		
+			}
 		}
-	}	
+	}
 }
 
 //Sith: шторм в локациях упрощенная функция. Можно потом заменить. 
@@ -583,16 +577,16 @@ float Whr_SetLocationMaxSeaHeight()
 	aref aCurWeather = GetCurrentWeather();
 	float fMaxSeaHeight = 0.5;	//базовое значение 0.5
 
-	if(CheckAttribute(Sea, "CabinSeaHeight"))
+	if(CheckAttribute(&Sea, "CabinSeaHeight"))
 	{
 		fMaxSeaHeight = stf(Sea.CabinSeaHeight);
-		DeleteAttribute(Sea, "CabinSeaHeight");
+		DeleteAttribute(&Sea, "CabinSeaHeight");
 		return fMaxSeaHeight;
 	}
-	if(CheckAttribute(Sea, "AbordageSeaHeight"))
+	if(CheckAttribute(&Sea, "AbordageSeaHeight"))
 	{
 		fMaxSeaHeight = stf(Sea.AbordageSeaHeight);
-		DeleteAttribute(Sea, "AbordageSeaHeight");
+		DeleteAttribute(&Sea, "AbordageSeaHeight");
 		return fMaxSeaHeight;
 	}
 	if(Whr_CheckStorm() || Whr_CheckLandStorm())
@@ -863,7 +857,7 @@ void Whr_SetSeaFromWind(float fSpeed, float fMaxSeaHeight)
 	int iLocation = FindLocation(pchar.location);
 	string sType = "";
 	string sMoveSpeed 	= Whr_SetSeaAngle();				//направление волн в море
-	Whr_ModifySeaFog( fSpeed );
+	Whr_ModifySeaFog(fSpeed);
 	bool bRain = CheckAttribute(&WeatherParams,"Rain") && sti(WeatherParams.Rain); // дождь
 	float fFrenel = 0.3;
 	
@@ -1279,63 +1273,59 @@ void Whr_SetLocationSeaParams(ref rReflection, ref rTransparency, ref rFrenel, r
 }
 
 // Усиливаем туман по ветру - чем больше ветер, тем больше волны, чем больше волны - тем больше ляпы вдали, прячем в тумане.
-void Whr_ModifySeaFog( float fWind )
+void Whr_ModifySeaFog(float fWind)
 {
 	float 	additionalNightFog = 0.0000;
-	
+
 	float 	fDensity 	= 0.0000; // туман на суше
 	float 	iDensity 	= 0.0000; // туман для островов
 	float 	sDensity 	= 0.0000; // туман на море
     float   fBlend      = 0.0000; // текущий коэффициент блендинга
     float   blendCoeff  = 0.00035;// максимальный коэффициент блендинга
-	
+
 	float 	currentHour = GetTime();
-	
+
 	bool 	bOk1 = false;
-	
-	if(Whr_CheckUnderwater()) return;  // под водой пропускаем
-	if(Whr_CheckStorm()) return;  // в шторм пропускаем
-	
+
+	if (Whr_CheckUnderwater()) return; // под водой пропускаем
+	if (Whr_CheckStorm()) return; // в шторм пропускаем
+
 	if (currentHour >= 0.0 && currentHour <= 7.0)
 	{
-        if(currentHour >= 6.0)
+        if (currentHour >= 6.0)
         {
             fBlend = blendCoeff + (stf(currentHour) - sti(currentHour)) * (-1.0 * blendCoeff);
             additionalNightFog = fBlend;
         }
-        else
+        else if(currentHour <= 1.0)
         {
-            if(currentHour <= 1.0)
-            {
-                fBlend = (stf(currentHour) - sti(currentHour)) * (blendCoeff);
-                additionalNightFog = fBlend;
-            }
-            else additionalNightFog = blendCoeff;
+            fBlend = (stf(currentHour) - sti(currentHour)) * (blendCoeff);
+            additionalNightFog = fBlend;
         }
+        else additionalNightFog = blendCoeff;
 	}
-	
-	aref weather = GetCurrentWeather();
 
-	iDensity 		= 0.00025 + 0.00003 * pow(fWind/12.0, 3) + additionalNightFog;
-	sDensity 		= 0.00065 + 0.00003 * pow(fWind/12.0, 3) + additionalNightFog;
-	// fDensity 		= 0.00025 + 0.00003 * pow(fWind/12.0, 3) + additionalNightFog;
-	bOk1 	= 	CheckAttribute(&WeatherParams, "Fog.ThisDay") && sti(WeatherParams.Fog.ThisDay) && CheckAttribute(weather, "SpecialLandFog");
-	
-	// штатный туман в режиме моря и если не установлен утренний туман в локе
-	if(bSeaActive || !bOk1 )
+	aref aCurWeather = GetCurrentWeather();
+
+	iDensity = 0.00025 + 0.00003 * pow(fWind/12.0, 3) + additionalNightFog;
+	sDensity = 0.00065 + 0.00003 * pow(fWind/12.0, 3) + additionalNightFog;
+	// fDensity = 0.00025 + 0.00003 * pow(fWind/12.0, 3) + additionalNightFog;
+	bOk1 = CheckAttribute(&WeatherParams, "Fog.ThisDay") && sti(WeatherParams.Fog.ThisDay) && CheckAttribute(weather, "SpecialLandFog");
+
+	// штатный туман в режиме моря и если не установлен утренний или вечерний туман в локе
+	if (bSeaActive || !bOk1)
 	{
-		weather.Fog.Height 	= 	200;
-		weather.Fog.Start 	= 	10.0;
-	
+		aCurWeather.Fog.Height 	= 	200;
+		aCurWeather.Fog.Start 	= 	10.0;
+
 		Whr_DebugLog("Fog - Density: " + fDensity + " IDensity: " + iDensity + " SDensity: " + sDensity + " wind:" + fWind + " Time:" + currentHour + " hour:" + sti(currentHour) + " blend:" + fBlend);
 
-		weather.Fog.IslandDensity	=	iDensity;
-		weather.Fog.SeaDensity		=	sDensity;
-		// weather.Fog.Density			=	fDensity;// сейчас туман сбрасывается с каждым часом
+		aCurWeather.Fog.IslandDensity = iDensity;
+		aCurWeather.Fog.SeaDensity    = sDensity;
+		// aCurWeather.Fog.Density    = fDensity; // сейчас туман сбрасывается с каждым часом
 
-		Island.FogDensity 			= 	weather.Fog.IslandDensity;
-		Sea.Fog.SeaDensity 			= 	weather.Fog.SeaDensity;
-		// Sea.Fog.Density 			= 	weather.Fog.Density;
+		Island.FogDensity  = iDensity;
+		Sea.Fog.SeaDensity = sDensity;
+		// Sea.Fog.Density = fDensity;
 	}	
 }
-

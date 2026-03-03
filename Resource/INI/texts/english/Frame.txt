@@ -23,3 +23,11 @@ Frame_DayPassed_4 {Four days have passed...}
 Frame_DayPassed_5 {Five days have passed...}
 Frame_DayPassed_6 {Six days have passed...}
 Frame_WeekPassed {A week has passed...}
+Frame_WeekPassed_2 {Two weeks have passed...}
+Frame_WeekPassed_3 {Three weeks have passed...}
+Frame_MonthPassed {A month has passed...}
+Frame_MonthPassed_2 {Two months have passed...}
+Frame_MonthPassed_3 {Three months have passed...}
+Frame_YearPassed {A year has passed...}
+Frame_YearPassed_2 {Two years have passed...}
+Frame_YearPassed_3 {Three years have passed...}

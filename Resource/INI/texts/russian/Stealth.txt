@@ -1,0 +1,13 @@
+license_violations_name {Нарушения}
+license_violation_tooltip_body {Нарушением считается атака на корабли под союзным или нейтральным флагом, агрессия против граждан, грабёж в море и атака фортов.}
+license_violation_1 {Мы нарушили условия контракта. Это не пройдет даром.}
+license_violation_2 {Мы нарушили контракт дважды. Скоро у нас отберут лицензию.}
+license_violation_3 {Мы трижды нарушили контракт и лишились торговой лицензии.}
+license_state
+{
+Истекает: $attr($context.humanExpireDate)
+~Осталось дней: $attr($context.humanDaysLeft)
+}
+flags_newFlagTaken {Новый флаг захвачен}
+flags_allFlagsCollected {Все флагии нации собраны}
+license_expired {Срок торговой лицензии истёк}

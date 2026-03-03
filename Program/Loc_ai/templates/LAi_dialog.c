@@ -462,7 +462,7 @@ void LAi_tmpl_dialog_StartDialog(aref chr, aref by, float dlgTime)
 	{
 		//Диалог с главным персонажем
 		chr.chr_ai.tmpl.dlgtime = "-1";
-		if(!DialogMain(&Characters[my]))
+		if(!DialogMain(&Characters[my], false))
 		{
 			Trace("Template dialog: can't start dialog_1, DialogMain return false!");
 			chr.chr_ai.tmpl.dlgtime = "0";
@@ -472,7 +472,7 @@ void LAi_tmpl_dialog_StartDialog(aref chr, aref by, float dlgTime)
 		{
 			//Диалог с главным персонажем
 			chr.chr_ai.tmpl.dlgtime = "-1";
-			if(!DialogMain(&Characters[idx]))
+			if(!DialogMain(&Characters[idx], false))
 			{
 				Trace("Template dialog: can't start dialog_2, DialogMain return false!");
 				chr.chr_ai.tmpl.dlgtime = "0";

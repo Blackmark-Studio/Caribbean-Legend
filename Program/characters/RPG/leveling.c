@@ -32,7 +32,7 @@ void ClearCharacterExpRate(ref _chref)
     int    i;
     string name;
 
-    for (i=1; i<15; i++)
+    for (i=1; i <= SKILL_QTY; i++)
     {
         name = GetSkillNameByIdx(i);
         DeleteAttribute(_chref, "skill." + name + "_rate");
@@ -52,7 +52,7 @@ void RefreshCharacterSkillExpRate(ref _chref)
     _chref.TempSailing = GetSummonSkillFromNameSimple(_chref, SKILL_SAILING); // бэкапим её
     // <-- Оптимизация (and its really works!)
 
-    for (i=1; i<15; i++)
+    for (i=1; i <= SKILL_QTY; i++)
     {
         if(i == 10) continue; // SKILL_SAILING
         name = GetSkillNameByIdx(i);
@@ -145,7 +145,7 @@ void AddCharacterExpToSkill(ref _chref, string _skill, float _addValue)
         if(ShowExpNotifications()) notification(StringFromKey("RPGUtilite_1"), _skill);
 
         float div;
-        bool  bShare = CheckCharacterPerk(_chref, "SharedExperience");
+        float leadershipFactor = 1 + LVL_GetCurrentLeadershipBonusMtp();
 		int cn, i, iPas;
 		iPas = GetPassengersQuantity(_chref);
         for(i=0; i<iPas; i++)
@@ -155,15 +155,13 @@ void AddCharacterExpToSkill(ref _chref, string _skill, float _addValue)
             {
                if (isOfficerInShip(GetCharacter(cn), true))
                {
-                   if(bShare) div = 1.5;
-                   else div = 1.5;
+                    div = 0.65 * leadershipFactor;
                }
                else
                {
-                   if(bShare) div = 4.0;
-                   else div = 4.0;
+                    div = 0.25;
                }
-               AddCharacterExpToSkill(GetCharacter(cn), _skill, _addValue / div);
+               AddCharacterExpToSkill(GetCharacter(cn), _skill, _addValue * div);
             }
         }
         for(i=1; i<COMPANION_MAX; i++)
@@ -171,14 +169,24 @@ void AddCharacterExpToSkill(ref _chref, string _skill, float _addValue)
             cn = GetCompanionIndex(_chref,i);
             if(cn!=-1)
             {
-               if(bShare) div = 2.5;
-               else div = 2.5;
-               AddCharacterExpToSkill(GetCharacter(cn), _skill, _addValue / div);
+               div = 0.4 * leadershipFactor;
+               AddCharacterExpToSkill(GetCharacter(cn), _skill, _addValue * div);
             }
         }
     }
 }
 
+// Текущий бонус лидерства к содержанию офицеров и набора опыта
+float LVL_GetCurrentLeadershipBonusMtp(string _temp = "")
+{
+	return GetPiratesMtp(LVL_MAX_LEADERSHIP_BONUS_MTP, PIRATES_A, 2.5);
+}
+
+// Максимальный бонус лидерства к содержанию офицеров и набора опыта, метод нужен для локализации
+float LVL_GetMAXLeadershipBonusMtp(string _temp = "")
+{
+	return LVL_MAX_LEADERSHIP_BONUS_MTP;
+}
 
 int AddCharacterExp(ref _refCharacter,int _exp)
 {
@@ -284,72 +292,82 @@ void ApplayNewSkill(ref _chref, string _skill, int _addValue)
 	// boal 05.05.04 разделение по группам -->
     if (isSelfTypeSkill(_skill))
     {
-       if(CheckAttribute(_chref,"perks.FreePoints_self_exp"))
-       {
-           _chref.perks.FreePoints_self_exp = sti(_chref.perks.FreePoints_self_exp) + _addValue;
-       }
-       else
-       {	_chref.perks.FreePoints_self_exp = _addValue;
-       }
-       if (sti(_chref.perks.FreePoints_self_exp) >= GetFreePoints_SelfRate(_chref))
-       {
+        if(CheckAttribute(_chref,"perks.FreePoints_self_exp"))
+        {
+            _chref.perks.FreePoints_self_exp = sti(_chref.perks.FreePoints_self_exp) + _addValue;
+        }
+        else
+        {	_chref.perks.FreePoints_self_exp = _addValue;
+        }
+        if (sti(_chref.perks.FreePoints_self_exp) >= GetFreePoints_SelfRate(_chref))
+        {
             DeleteAttribute(&InterfaceStates, "markers." + _chref.id);
-           _chref.perks.FreePoints_self_exp = 0;
-           if(CheckAttribute(_chref,"perks.FreePoints_self"))
-           {
-               _chref.perks.FreePoints_self = sti(_chref.perks.FreePoints_self) + 1;
-           }
-           else
-           {	_chref.perks.FreePoints_self = 1;
-           }
-           if (sti(_chref.index) == GetMainCharacterIndex())
-           {
-			   notification(XI_ConvertString("Personal abilities Note"), "Personal abilities");
-			   if(CheckAttribute(_chref,"systeminfo.tutorial.Perk"))
-			   {
-				   Tutorial_Perk("");
-				   DeleteAttribute(_chref,"systeminfo.tutorial.Perk");
-			   }
-           }
-       }
+            _chref.perks.FreePoints_self_exp = 0;
+            if(CheckAttribute(_chref,"perks.FreePoints_self"))
+            {
+                _chref.perks.FreePoints_self = sti(_chref.perks.FreePoints_self) + 1;
+            }
+            else
+            {	_chref.perks.FreePoints_self = 1;
+            }
+            if (sti(_chref.index) == GetMainCharacterIndex())
+            {
+			    notification(XI_ConvertString("Personal abilities Note"), "Personal abilities");
+			    if(CheckAttribute(_chref,"systeminfo.tutorial.Perk"))
+			    {
+				    Tutorial_Perk("");
+				    DeleteAttribute(_chref,"systeminfo.tutorial.Perk");
+			    }
+				if(GetMaxAutoSaves("Perk") != 0)
+				{
+					DeleteAfterSaveFunction();
+					PostEvent("Event_NewAutoSave", 1, "s", "Perk");
+				}
+            }
+        }
     }
     else
     {
-       if(CheckAttribute(_chref,"perks.FreePoints_ship_exp"))
-       {
-           _chref.perks.FreePoints_ship_exp = sti(_chref.perks.FreePoints_ship_exp) + _addValue;
-       }
-       else
-       {	_chref.perks.FreePoints_ship_exp = _addValue;
-       }
-       if (sti(_chref.perks.FreePoints_ship_exp) >= GetFreePoints_ShipRate(_chref))
-       {
+        if(CheckAttribute(_chref,"perks.FreePoints_ship_exp"))
+        {
+            _chref.perks.FreePoints_ship_exp = sti(_chref.perks.FreePoints_ship_exp) + _addValue;
+        }
+        else
+        {	_chref.perks.FreePoints_ship_exp = _addValue;
+        }
+        if (sti(_chref.perks.FreePoints_ship_exp) >= GetFreePoints_ShipRate(_chref))
+        {
             DeleteAttribute(&InterfaceStates, "markers." + _chref.id);
-           _chref.perks.FreePoints_ship_exp = 0;
-           if(CheckAttribute(_chref,"perks.FreePoints_ship"))
-           {
-               _chref.perks.FreePoints_ship = sti(_chref.perks.FreePoints_ship) + 1;
-           }
-           else
-           {	_chref.perks.FreePoints_ship = 1;
-           }
-           if (sti(_chref.index) == GetMainCharacterIndex())
-           {
-               notification(XI_ConvertString("Ship abilities Note"), "Ship abilities");
-			   if(CheckAttribute(_chref,"systeminfo.tutorial.Perk"))
-			   {
+            _chref.perks.FreePoints_ship_exp = 0;
+            if(CheckAttribute(_chref,"perks.FreePoints_ship"))
+            {
+                _chref.perks.FreePoints_ship = sti(_chref.perks.FreePoints_ship) + 1;
+            }
+            else
+            {	_chref.perks.FreePoints_ship = 1;
+            }
+            if (sti(_chref.index) == GetMainCharacterIndex())
+            {
+                notification(XI_ConvertString("Ship abilities Note"), "Ship abilities");
+			    if(CheckAttribute(_chref,"systeminfo.tutorial.Perk"))
+			    {
 				    Tutorial_Perk("");
 				    DeleteAttribute(_chref,"systeminfo.tutorial.Perk");
-			   }
-           }
-       }
+			    }
+				if(GetMaxAutoSaves("Perk") != 0)
+				{
+					DeleteAfterSaveFunction();
+					PostEvent("Event_NewAutoSave", 1, "s", "Perk");
+				}
+            }
+        }
     }
     // boal 05.05.04 разделение по группам <--
 
 
     if(!CheckAttribute(_chref, "rank_exp"))
     {
-      _chref.rank_exp = 0;
+        _chref.rank_exp = 0;
     }
     _chref.rank_exp = sti(_chref.rank_exp) + _addValue;
 
@@ -381,6 +399,11 @@ void ApplayNewSkill(ref _chref, string _skill, int _addValue)
             AddMsgToCharacter(_chref, MSGICON_LEVELUP);
             LA_LevelUp(XI_ConvertString("Level Up"), ""+sti(_chref.rank)+"");
             Event("PlayerLevelUp");
+			if(GetMaxAutoSaves("Rank") != 0)
+			{
+				DeleteAfterSaveFunction();
+				PostEvent("Event_NewAutoSave", 1, "s", "Rank");
+			}
             //QuestsCheck();
         }
     }

@@ -1,0 +1,32 @@
+Tutorial_1 {선회}
+Tutorial_2 {@<key1>와 @<key2>를 눌러 선박을 조타하세요}
+Tutorial_3 {시간 조절}
+Tutorial_4 {시간 가속 활성화 @<key>}
+Tutorial_5 {@<key>을(를) 다시 눌러 비활성화하세요}
+Tutorial_6 {@<key>를 눌러 최대 x6까지 속도 증가}
+Tutorial_7 {@<key1>을(를) 눌러 감속하거나, @<key2>}
+Tutorial_8 {돛 제어}
+Tutorial_9 {전투 모드로 돛 올리기 @<key1>}
+Tutorial_10 {돛 완전히 내리기 @<key1>}
+Tutorial_11 {함선 전투 기본}
+Tutorial_12 {@<key1>를 눌러 빠른 일제사격}
+Tutorial_13 {고급 함선 전투}
+Tutorial_14 {@<key1> 조준 모드 진입}
+Tutorial_15 {@<key1>을(를) 눌러 조준 일제사격}
+Tutorial_16 {@<key1> 조준 모드 종료}
+Tutorial_17 {승리 쟁취}
+Tutorial_18 {남은 해적선을 침몰시키십시오}
+Tutorial_19 {적을 공격}
+Tutorial_20 {@<key1> 공격}
+Tutorial_21 {@<key1> 찌르기}
+Tutorial_22 {@<key1> 강공격}
+Tutorial_23 {방어하세요}
+Tutorial_24 {@<key1> 방어 공격}
+Tutorial_25 {@<key1> 패링 공격}
+Tutorial_26 {해적을 처치하라!}
+Tutorial_27 {퀘스트}
+Tutorial_28 {문서 @<key1> 읽기}
+Tutorial_29 {더블룬 상자 열기 @<key1>}
+Tutorial_30 {약탈}
+Tutorial_31 {선원 약탈}
+Tutorial_32 {알론소에게 수수께끼의 물약을 건네기}

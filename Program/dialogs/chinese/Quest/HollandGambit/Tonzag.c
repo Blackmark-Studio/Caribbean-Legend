@@ -208,6 +208,13 @@ void ProcessDialogEvent()
 		//--> --------------------------------- —军官模块 ------------------------------------------
 		case "tonzag_officer":
 			dialog.text = "我在听你说, 船长。 你有什么事? ";
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				dialog.text = "你看起来心事重重, 船长。 出什么事了? ";
+				Link.l1 = "我得离开这片群岛了。 两周后。 搭别人的船, 当乘客走。";
+				Link.l1.go = "SharlieEpilog_Tonzag_1";
+				break;
+			}
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
 				Link.l4 = "赫丘勒, 我要去古老的印第安城市泰亚萨尔, 更不寻常的是, 我的路要经过一座传送雕像。 你愿意加入我吗? ";
@@ -339,7 +346,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -354,7 +361,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;		
@@ -914,6 +921,41 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			
 			AddDialogExitQuestFunction("Tonzag_ResetTonzag");
+		break;
+		
+		// Эпилог
+case "SharlieEpilog_Tonzag_1":
+			dialog.text = "哈! 真没想到会从你嘴里听到这种话。 接下来你是不是还打算进修道院了? ";
+			link.l1 = "我是认真的，"+npchar.name+"。我父亲的身体一天不如一天。我想在……还没来得太晚之前，去见他一面。";
+			link.l1.go = "SharlieEpilog_Tonzag_2";
+		break;
+
+		case "SharlieEpilog_Tonzag_2":
+			dialog.text = "那我们的船怎么惹你不高兴了? 还是你真觉得，大西洋现在对我们来说已经啃不动了? ";
+			link.l1 = "我得开始考虑上岸、 安定下来的事了。 老实说, 我还无法想象没有大海的生活。但如果那一天真的到来——我希望自己已经做好准备。 我想弄清楚, 到时候我内心需要面对的会是什么。";
+			link.l1.go = "SharlieEpilog_Tonzag_3";
+		break;
+
+		case "SharlieEpilog_Tonzag_3":
+			dialog.text = "你今天第二次把我给说懵了。 你真打算把迎风鼓起的船帆, 换成壁炉和一碗热粥? ";
+			link.l1 = "父亲病情的恶化提醒了我——我们谁都不是永恒的。 但接下来会怎样, 我还没决定。眼下, 只有回家的路。 还有…… 我想邀请你和我一起走。 作为朋友。 不过, 如果你拒绝——我能理解。 我不会强求。";
+			link.l1.go = "SharlieEpilog_Tonzag_4";
+		break;
+
+		case "SharlieEpilog_Tonzag_4":
+			dialog.text = "拒绝? 要是我让你一个人走, 就让我这辈子都去刷锚吧! 你可真是太不了解我了, 船长。";
+			link.l1 = "我正是指望你这么回答。 老法兰西已经不是从前那个样子了。 它太空旷、 太乏味、 太陌生…… 而且恐怕已经没有谁, 还能被我称作朋友。 两周后就起航, 我可不打算虚度这段时间。 我们在酒馆办一场送别酒宴吧。 你觉得如何? ";
+			link.l1.go = "SharlieEpilog_Tonzag_5";
+		break;
+
+		case "SharlieEpilog_Tonzag_5":
+			dialog.text = "哈! 要是你以为我会反对, 那你可就想多了!";
+			link.l1 = "那就这么定了——等我把手头的事情都处理完, 我们就在酒馆见。";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Tonzag_officer";
+			npchar.quest.SharlieEpilog_FarewellOfficers = true;
+			pchar.questTemp.SharlieEpilog_Tonzag = true;
+			pchar.questTemp.SharlieEpilog_Friends = sti(pchar.questTemp.SharlieEpilog_Friends) + 1;
 		break;
 
 	}

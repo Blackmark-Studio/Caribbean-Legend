@@ -3,7 +3,7 @@ characterUtilite_2 {Wydano @<abs(_Money)> Pesos}
 characterUtilite_3 {Otrzymano Przedmiot: ~}
 characterUtilite_4 {Otrzymano @<n> Dublony}
 characterUtilite_5 {Przekazano Przedmiot: ~}
-characterUtilite_6 {zauważył, że @<LanguageConvertString(idLngFile, arItem.name)> stracił swą moc}
+characterUtilite_6 {~ zauważył, że @<LanguageConvertString(idLngFile, arItem.name)> stracił swą moc}
 characterUtilite_7 {Zyskano Honor}
 characterUtilite_8 {Utracono Honor}
 characterUtilite_9 {Wydano @<_Dublons> Dublony}

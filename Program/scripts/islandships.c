@@ -26,40 +26,47 @@ void GenerateIslandShips(string sIslandID)
                     SaveCurrentNpcQuestDateParam(&colonies[i], "GenShipDate"); // дата заполнения
                     
 					iNation = sti(Colonies[i].nation);
-					float fChecker = frand(1.0);
-					if (fChecker < 0.8)
-					{
-						iShipsQuantity = makeint(fChecker * 4.0);
-						while (iShipsQuantity > 0)
-						{
-							iChar = GenerateCharacter(iNation, WITH_SHIP, "soldier", MAN, -1, WARRIOR); //-1 - это 1 день
-							PlaceCharacterShip(iChar, iNation, sIslandID, i);
+					int seed = rand(99);
+					if (seed >= 95) return;                            // 5% что не будет
+					else if (seed >= 85) iShipsQuantity = 1+rand(1);   // 10% что будет 1-2
+					else if (seed >= 10) iShipsQuantity = 3+rand(2);   // 75% что будет 3-5
+					else iShipsQuantity = 5 + rand(2);                 // 10% что будет 5-7
 
-                            characters[iChar].IslandShips = Colonies[i].id; // номер города, чтоб тереть по захвату города to_do
-							if (iNation == PIRATE)
-							{ // нащ город
-								characters[iChar].AlwaysFriend        = true;
-								SetCharacterRelationBoth(iChar, GetMainCharacterIndex(), RELATION_FRIEND);
-							}
-							iType = rand(1);
-							if(iType == 0)
-							{
-								characters[iChar].Ship.Mode = "war";
-							}
-							else
-							{
-								characters[iChar].Ship.Mode = "trade";
-							}
-							if (rand(4) == 1 || GetCharacterShipClass(&characters[iChar]) == 1) SetRandGeraldSail(&characters[iChar], sti(characters[iChar].Nation));
-							characters[iChar].AlwaysSandbankManeuver = true;  // тупым запрет тонуть об берег
-							characters[iChar].AnalizeShips = true; //анализить вражеские корабли
-							characters[iChar].location.from_sea = colonies[i].from_sea;
-							SetCaptanModelByEncType(&characters[iChar], characters[iChar].Ship.Mode); // boal
-							Fantom_SetCannons(&characters[iChar], characters[iChar].Ship.Mode);
-							Fantom_SetBalls(&characters[iChar], characters[iChar].Ship.Mode);
-							Fantom_SetGoods(&characters[iChar], characters[iChar].Ship.Mode);
-							iShipsQuantity = iShipsQuantity - 1;
+					// костыль для лимитинга кол-ва кораблей, если у ГГ эскадра, пока беда с локаторами
+					int playerShipsQty = GetCompanionQuantity(pchar);
+					if (playerShipsQty > 3) iShipsQuantity = func_fmin(2, iShipsQuantity);
+					else if (playerShipsQty > 2) iShipsQuantity = func_fmin(3, iShipsQuantity);
+					else if (playerShipsQty > 1) iShipsQuantity = func_fmin(4, iShipsQuantity);
+
+					while (iShipsQuantity > 0)
+					{
+						iChar = GenerateCharacter(iNation, WITH_SHIP, "soldier", MAN, -1, WARRIOR); //-1 - это 1 день
+						PlaceCharacterShip(iChar, iNation, sIslandID, i);
+
+						characters[iChar].IslandShips = Colonies[i].id; // номер города, чтоб тереть по захвату города to_do
+						if (iNation == PIRATE)
+						{ // нащ город
+							characters[iChar].AlwaysFriend        = true;
+							SetCharacterRelationBoth(iChar, GetMainCharacterIndex(), RELATION_FRIEND);
 						}
+						iType = rand(1);
+						if(iType == 0)
+						{
+							characters[iChar].Ship.Mode = "war";
+						}
+						else
+						{
+							characters[iChar].Ship.Mode = "trade";
+						}
+						if (rand(4) == 1 || GetCharacterShipClass(&characters[iChar]) == 1) SetRandGeraldSail(&characters[iChar], sti(characters[iChar].Nation));
+						characters[iChar].AlwaysSandbankManeuver = true;  // тупым запрет тонуть об берег
+						characters[iChar].AnalizeShips = true; //анализить вражеские корабли
+						characters[iChar].location.from_sea = colonies[i].from_sea;
+						SetCaptanModelByEncType(&characters[iChar], characters[iChar].Ship.Mode); // boal
+						Fantom_SetCannons(&characters[iChar], characters[iChar].Ship.Mode);
+						Fantom_SetBalls(&characters[iChar], characters[iChar].Ship.Mode);
+						Fantom_SetGoods(&characters[iChar], characters[iChar].Ship.Mode);
+						iShipsQuantity = iShipsQuantity - 1;
 					}
 				}
 			}

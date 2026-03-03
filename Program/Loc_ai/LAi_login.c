@@ -235,6 +235,15 @@ void LAi_CharacterPostLogin(ref location)
 	{
 		QuestsCheck(); // в начале квесты, иначе нет перехвата
 		// заполнение фантомами локаций
+		if (CheckAttribute(location, "CreateFantomCallback"))
+		{
+			string sCallback = location.CreateFantomCallback;
+			bool ret = call sCallback(location);
+			if (ret)
+			{
+				return;
+			}
+		}
 		CreateCitizens(location);
 		CreateTraders(location);
 		CreateHabitues(location);
@@ -248,8 +257,8 @@ void LAi_CharacterPostLogin(ref location)
 		CreateMineBandits(location); // Jason: бандиты у рудника
 		CreateIslatesoroEng(location); // Jason: английский Шарптаун
 		CreateAmmo(location); // Jason: оружейная
-		CreateKsochitamSkeletons(location) // Jason: монстры Ксочитэма
-		CreateKhaelRoaSkeletons(location) // Jason: монстры Хаэль Роа
+		CreateKsochitamSkeletons(location); // Jason: монстры Ксочитэма
+		CreateKhaelRoaSkeletons(location); // Jason: монстры Хаэль Роа
 		CreateMayak(location);
 		CreateBrothels(location);
 		CreatePearlVillage(location);
@@ -276,6 +285,7 @@ void LAi_CharacterPostLogin(ref location)
 		//обновить базу абордажников для нефритового черепа
 		CopyPassForAztecSkull();
 		CheckTradeConnections(location);
+		STH_CheckIfTownFriendly(location);
 	}
 }
 

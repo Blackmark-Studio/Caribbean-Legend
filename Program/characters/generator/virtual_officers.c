@@ -188,7 +188,8 @@ void RemoveCaptainVirtualOfficersPerksNoCash(ref chr, string job)
 	aref perks, perk;
 	makearef(perks, chr.perks.list);
 
-	for (int i=GetAttributesNum(perks)-1; i > -1; i--)
+	int perksQty = GetAttributesNum(perks)-1;
+	for (int i=perksQty; i > -1; i--)
 	{
 		aref charPerk = GetAttributeN(perks, i);
 		string perkName = GetAttributeName(charPerk);
@@ -205,7 +206,8 @@ void RemoveCaptainOfficers(ref chr)
 	DeleteAttribute(chr, "personality.HasCrew");
 	aref perks, perk;
 	makearef(perks, chr.perks.list);
-	for (int i=GetAttributesNum(perks)-1; i > -1; i--)
+		int perksQty = GetAttributesNum(perks)-1;
+	for (int i=perksQty; i > -1; i--)
 	{
 		aref charPerk = GetAttributeN(perks, i);
 		string perkName = GetAttributeName(charPerk);

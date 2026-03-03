@@ -144,3 +144,8 @@ void CopyModifier(ref rTo, ref rFrom, string modifier)
 	if (!CheckAttribute(rFrom, modifier)) return;
 	rTo.(modifier) = rFrom.(modifier);
 }
+
+int GetModifierInt(ref rObject, string sModifierName, int iDefault)
+{
+	return GetAttributeIntOrDefault(rObject, "modifiers." + sModifierName, iDefault);
+}

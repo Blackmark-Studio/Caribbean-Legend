@@ -55,7 +55,7 @@ void ProcessDialogEvent()
 			}
 			
 			//--> Тайна Бетси Прайс
-			if (npchar.location == "Villemstad_tavern" && CheckAttribute(pchar, "questTemp.TBP_BetsiPrice") && !CheckAttribute(pchar, "questTemp.TBP_BetsiPrice_Sex"))
+			if (npchar.location == "Villemstad_tavern" && npchar.model == "Marquesa" && CheckAttribute(pchar, "questTemp.TBP_BetsiPrice") && !CheckAttribute(pchar, "questTemp.TBP_BetsiPrice_Sex"))
 			{
 				bOk1 = CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && IsOfficer(characterFromId("Mary"));
 				bOk2 = CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && IsOfficer(characterFromId("Helena"));
@@ -84,7 +84,7 @@ void ProcessDialogEvent()
 							dialog.text = ""+pchar.name+"! Я знала, что ты не заставишь меня слишком долго тосковать. Знаешь, больше не хочу терять ни минуты. Комната наверху свободна... только для нас двоих. Ты ведь не собираешься мне отказать?";
 							link.l1 = "Ты знаешь, как заманить в свои сети... Ну что ж, у меня нет причин сопротивляться. Пойдём?";
 							link.l1.go = "TBP_BetsiPriceSex1";
-							link.l2 = "Боюсь, сегодня мне действительно нужно заняться кое-чем важным. Но, обещаю, следующий раз я заглажу свою вину.";
+							link.l2 = "Боюсь, сегодня мне действительно нужно заняться кое-чем важным. Но, обещаю, следующий раз я искуплю свою вину.";
 							link.l2.go = "exit";
 						break;
 

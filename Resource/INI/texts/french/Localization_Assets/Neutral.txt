@@ -34,3 +34,9 @@ Neutral_33 {Javier}
 Neutral_34 {Castillo}
 Neutral_35 {Gonzalo}
 Neutral_36 {Peralta}
+Neutral_37 {... désormais, tous les soupçons sur Shark seront levés}
+Neutral_38 {Fonds insuffisants (10 100 000)}
+Neutral_39 {Fonds insuffisants (25 250 000)}
+Neutral_40 {Fonds insuffisants (50 500 000)}
+Neutral_41 {toi}
+Neutral_42 {vous deux}

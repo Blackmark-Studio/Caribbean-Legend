@@ -1,4 +1,4 @@
-// Движковые: frnd, rand, hrand, wrand_h
+// Движковые: frnd, rand, hrand
 
 float frand(float _x)
 {
@@ -33,9 +33,8 @@ string GetRandomAttrName(aref Lottery)
 }
 
 ////////////////////////////////////////////////////////////////////////
-//  ROSARAK WEIGHT RANDOM
+//  WEIGHT RANDOM (АТРИБУТНЫЙ)
 ////////////////////////////////////////////////////////////////////////
-//  ПОЛОЖНЯК:
 //  1. Лотерея создаётся в виде:
 //     LTR.LotteryName.participant_1.weight = n_1;
 //     LTR.LotteryName.participant_2.weight = n_2;
@@ -45,55 +44,47 @@ string GetRandomAttrName(aref Lottery)
 //  3. Как правило, веса задаются в InitWeightParameters.
 //     Как правило, после лотереи веса меняются в CorrectWeightParameters.
 //  4. Чтобы определить победителя через hrand используется wrand_h.
-//     В нём опционально вторым аргументом указывается тэг:
-//     Можно wrand_h(LotteryName), можно wrand_h(LotteryName, tag).
 ////////////////////////////////////////////////////////////////////////
 
-// Лотерея для целочисленных массивов (она же развесовка)
-// Здесь нет проверки валидности, так как массив предварительно подготавливается в WeightRandom
+// TO_DO: Это и тасование вынести в C-API в нормальном виде
 int WeightRandomMethod(ref iMassive)
 {
     int i, n;
     int Size = GetArraySize(iMassive);
-    int Summ = -1; //чтобы рандомило от 0 до Summ-1
+    int Summ = -1;
     for (i = 0; i < Size; i++) Summ += iMassive[i];
-    if(CheckAttribute(&LTR, "WRM"))
-    {
-        n = hrand(Summ, LTR.WRM.TAG);
-        DeleteAttribute(&LTR, "WRM");
-    }
+    if (wrand_h_tag != "") n = hrand(Summ, wrand_h_tag);
     else n = rand(Summ);
-    for (i = 0; n >= 0; i++) n -= iMassive[i]; //Определяем победителя
-    return i-1; //После победителя был инкремент, поэтому -1
+    for (i = 0; n >= 0; i++) n -= iMassive[i];
+    return i-1;
 }
 
 // Подготовка участников лотереи
 int WeightRandom(aref Lottery)
 {
     aref participant;
-    string sNumber; //Для конвертации
+    string sNumber;
     int num = GetAttributesNum(Lottery);
-    if(num == 0) return -1; //Нет участников
-    int iMassive[2]; //Меньше 2 нельзя!
+    if(num == 0) return -1;
+    int iMassive[num];
     int k = 0;
-    SetArraySize(&iMassive, num);
     for(int i = 0; i < num; i++)
     {
         participant = GetAttributeN(Lottery,i);
         if(CheckAttribute(participant, "weight") && sti(participant.weight) > 0)
         {
             sNumber = k;
-            LTR.LotteryProcess.(sNumber) = i; //Общий номер участника
-            iMassive[k] = sti(participant.weight); //Сколько билетов купил
+            LTR.LotteryProcess.(sNumber) = i;
+            iMassive[k] = sti(participant.weight);
             k++;
         }
     }
-    if(k == 0) return -1; //Нет валидных участников
-    SetArraySize(&iMassive, k); //Срезаем лишнее
-    sNumber = WeightRandomMethod(&iMassive); //Проводим лотерею
+    if(k == 0) return -1;
+    SetArraySize(&iMassive, k);
+    sNumber = WeightRandomMethod(&iMassive);
     sNumber = LTR.LotteryProcess.(sNumber);
     DeleteAttribute(&LTR, "LotteryProcess");
-    return sti(sNumber); //Победил атрибут под номером sNumber!
+    return sti(sNumber);
 }
 
 // Получить ссылку на победителя лотереи
@@ -114,31 +105,14 @@ string wrand(string sLottery)
     return GetAttributeName(aWinner);
 }
 
-// Для wrand_h, если тэг не указан отдельно, используется название лотереи
-// В этом случае также можно добавлять спецсимволы @ и &
-#event_handler("evntWeightHashRandom","WeightHashRandom");
-string WeightHashRandom()
+string wrand_h_tag = "";
+string wrand_h(string sLottery, string tag)
 {
-    LTR.WRM.TAG = GetEventData();
-    string sLottery = GetEventData();
-
-    if(LTR.WRM.TAG == "")
-    {
-        LTR.WRM.TAG = sLottery;
-
-        // Удаляем спецсимволы
-        int i, iMax = strlen(sLottery);
-        string s1, s2 = "";
-        for (i = 0; i < iMax; i++)
-        {
-            s1 = GetSymbol(sLottery, i);
-            if (s1 != "@" && s1 != "&")
-                s2 += GetSymbol(sLottery, i);
-        }
-        sLottery = s2;
-    }
-
-    return wrand(sLottery);
+    if (tag == "") wrand_h_tag = sLottery;
+    else wrand_h_tag = tag;
+    sLottery = wrand(sLottery);
+    wrand_h_tag = "";
+    return sLottery;
 }
 
 // Взятие наибольшего по весу
@@ -187,89 +161,16 @@ string GetMaxWeightAttr(string sLottery)
 //   - Одно и то же в течении суток
 //   - В отличие от drand, числа определяются независимо в разных местах использования
 //  2. В качестве второго аргумента опционально указывается тэг:
-//     Можно hrand(n), можно hrand(n, tag). 
-//  3. В диалогах с персонажем к тэгу автоматически добавляется id + имя.
-//  4. Чтобы использовать предопределённую на сутки очередь значений,
-//     в тэге дожен присутствовать символ '@'.
-//  5. Чтобы отождествить два hrand в разных местах, в их тэгах должен присутствовать
-//     символ '&'.
-//  6. Два одинаковых hrand, находящиеся в одной строке файла, вернут одно и то же,
-//     если только не используют очередь.
+//   - Можно hrand(n), можно hrand(n, tag)
+//  3. В диалогах с персонажем к тэгу автоматически добавляются его id и имя
+//  4. Два hrand отождествляются, если у них одинаковый тэг с первым символом '&'
+//  5. В среднем это работает всего на 15% медленнее обычного rand
 ////////////////////////////////////////////////////////////////////////
 
 void UpdateSeeds()
 {
-    GlobalSeed = rand(100000);
-    DeleteAttribute(&HTBL, "");
-}
-
-#event_handler("evntHashRandom","HashRandom");
-int HashRandom()
-{
-    int n = GetEventData();
-    string tag = GetEventData();
-    string callID = GetEventData();
-    bool inDiag = GetEventData(); // dialogRun не подходит, надо проверять стек вызовов
-    bool bQueue = (FindSubStr(tag, "@", 0) != -1); //Генерировать новое зерно по номеру вызова
-
-    string HRAND_ID;
-    if(FindSubStr(tag, "&", 0) != -1) HRAND_ID = tag; //Универсальный тэг
-    else
-    {
-        if(inDiag) tag += CharacterRef.id + CharacterRef.name; //Авто
-        HRAND_ID = callID + "_" + tag;
-    }
-
-    aref CurCall;
-    makearef(CurCall, HTBL.(HRAND_ID));
-
-    float fSeed;
-    if(CheckAttribute(CurCall, "Seed"))
-    {
-        // Таймер не истёк
-        if(bQueue) GetCurSeed(CurCall, &fSeed);
-        else fSeed = stf(CurCall.Seed);
-    }
-    else
-    {
-        GetCurSeed(CurCall, &fSeed);
-        CurCall.Seed = fSeed;
-        if(bQueue) CurCall.callCount = 0; 
-    }
-
-    return MakeInt(fSeed * (n + 1));
-}
-
-void GetCurSeed(aref CurCall, ref fSeed)
-{
-    int iHash;
-    if(!CheckAttribute(CurCall, "Seed"))
-    {
-        //Выбор первого зерна
-        iHash = hash(GetAttributeName(CurCall) + GlobalSeed);
-    }
-    else
-    {
-        //Выбор нового зерна для очереди (bQueue) 
-        CurCall.callCount = sti(CurCall.callCount) + 1;
-        iHash = hash(CurCall.callCount + CurCall.Seed);
-    }
-    fSeed = GetFractionByHash(iHash);
-}
-
-float GetFractionByHash(int iHash)
-{
-    iHash = abs(iHash) % 100000; //Последние 5 цифр
-    if(iHash < 1) return 0.0;
-
-    string fResult = iHash;
-    while(iHash < 10000)
-    {
-        fResult = "0" + fResult;
-        iHash *= 10;
-    }
-    fResult = "0." + fResult;
-    return stf(fResult);
+    GSeed = rand(INT_MAX);
+    SetGlobalSeed(GSeed);
 }
 
 // Для каждой конкретной даты и тэга число предопределено
@@ -286,8 +187,15 @@ int TagRandom(int n, string tag)
     return MakeInt(fSeed * (n + 1));
 }
 
+// TO_DO: Сделать нормальную версию в C-API
+float GetFractionByHash(int iHash)
+{
+    if (iHash == INT_MIN) return 0.83647;
+    return (abs(iHash) % 100000) * 0.00001; 
+}
+
 ////////////////////////////////////////////////////////////////////////
-//  ПОКУПКА ЛОТЕРЕЙНЫХ БИЛЕТОВ
+//  ПОКУПКА ЛОТЕРЕЙНЫХ БИЛЕТОВ (АТРИБУТНАЯ)
 ////////////////////////////////////////////////////////////////////////
 
 // Первичное выставление весовых параметров в начале игры

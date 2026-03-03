@@ -503,7 +503,7 @@ void ProcessDialogEvent()
 			link.l1.go = "ClockTower_Johan_47";
 
 			if (iClockSP4PseudoGlobal != SOUND_INVALID_ID)
-				SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, iClockSP4PseudoGlobal, 0);
+				SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, iClockSP4PseudoGlobal, 300);
 			ClockTower_PlaySound_rh2("Location/SP4_quest3");
 		break;
 
@@ -514,7 +514,7 @@ void ProcessDialogEvent()
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 
 			if (iClockSP4PseudoGlobal != SOUND_INVALID_ID)
-				SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, iClockSP4PseudoGlobal, 0);
+				SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, iClockSP4PseudoGlobal, 300);
 			ClockTower_PlaySound_rh2("Location/SP4_quest3");
 		break;
 
@@ -581,17 +581,17 @@ void ProcessDialogEvent()
 				dialog.text = "Ich brauche Kapitäne, die Piraten effektiv bekämpfen und dabei kommerziell erfolgreich genug sind, um sich unsere Dienste leisten zu können. Entsprecht Ihr diesen Kriterien?";
 			}
 			else dialog.text = "";
-			if (!CheckAttribute(npchar, "ClockTower_option_1") && CheckAttribute(pchar, "questTemp.DiegoDeLanda_Memento"))
+			if (!CheckAttribute(npchar, "ClockTower_option_1") && GetDLCenabled(DLC_APPID_6) && !CharacterIsAlive("Memento_cap"))
 			{
 				link.l1 = "Ich habe Mortimer Grimm vernichtet. Kapitän der Brigg Memento.";
 				link.l1.go = "ClockTower_VanDoorn_option_1";
 			}
-			if (!CheckAttribute(npchar, "ClockTower_option_2") && CheckAttribute(pchar, "questTemp.DiegoDeLanda_LadyBeth"))
+			if (!CheckAttribute(npchar, "ClockTower_option_2") && GetDLCenabled(DLC_APPID_5) && !CharacterIsAlive("LadyBeth_cap"))
 			{
 				link.l2 = "Ich glaube, Eure Gesellschaft hat meinen Sieg über Albert Blackwood hoch geschätzt. Die Schaluppe Lady Beth war ein ernsthafter Gegner.";
 				link.l2.go = "ClockTower_VanDoorn_option_2";
 			}
-			if (!CheckAttribute(npchar, "ClockTower_option_3") && CheckAttribute(pchar, "questTemp.DiegoDeLanda_SantaMisericordia"))
+			if (!CheckAttribute(npchar, "ClockTower_option_3") && GetDLCenabled(DLC_APPID_4) && !CharacterIsAlive("SantaMisericordia_cap"))
 			{
 				link.l3 = "Fernando de Alamida war kein Pirat, aber...";
 				link.l3.go = "ClockTower_VanDoorn_option_3";

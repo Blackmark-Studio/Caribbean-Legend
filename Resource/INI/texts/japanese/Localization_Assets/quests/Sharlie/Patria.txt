@@ -1,0 +1,46 @@
+Patria_1 {Noel}
+Patria_2 {Forget}
+Patria_3 { }
+Patria_4 {Hubert}
+Patria_5 {Dassien}
+Patria_6 {探索モード： タイマー延長。 クエストを完了せよ！}
+Patria_7 {スペイン側に、 トリニダードの灯台へ使者を送り交渉を始めるよう伝達された！}
+Patria_8 {1日が過ぎた…}
+Patria_9 {探索モード： タイマーは有効です。 期限内に達成してください！}
+Patria_10 {バロン・ ノエル・ フォルジェがあなたの船を去りました！}
+Patria_11 {また敵の船が接近中だ！}
+Patria_12 {Frederick}
+Patria_13 {Peter}
+Patria_14 {Stuyvesant}
+Patria_15 {会社の交易船団}
+Patria_16 {カンパニーのオストインディアンが拿捕された！}
+Patria_17 { }
+Patria_18 {Lenart}
+Patria_19 {Klap}
+Patria_20 {Edward}
+Patria_21 {Doily}
+Patria_22 { }
+Patria_23 {Kristian}
+Patria_24 {Beusson}
+Patria_25 {会社のアフリカ船団}
+Patria_26 {探索モード：タイマー無効。}
+Patria_27 {敵艦隊を撃滅せよ！}
+Patria_28 {ドイリー大佐がブランカ潟で上陸の合図を出した！}
+Patria_29 {2時間の砲撃の後、@<NewStr()>オランダ側が使者を送ってきた}
+Patria_30 {Christian}
+Patria_31 {Tior}
+Patria_32 { }
+Patria_33 {Steven}
+Patria_34 {Dodson}
+Patria_35 { }
+Patria_36 {Marcus}
+Patria_37 {Tyrex}
+Patria_38 {2時間後...@<NewStr()>}
+Patria_39 {バロン・ ノエル・ フォルジェが熱病で亡くなった！}
+Patria_40 {Olivier}
+Patria_41 {Burden}
+Patria_42 {Mary}
+Patria_43 {Casper}
+Patria_44 {鉱山の管理者が家の一つで発見され、 捕らえられて監禁された}
+Patria_45 {二十三時間後…@<NewStr()>Peter Stuyvesantが門に現れた}
+Patria_46 {1日後…@<NewStr()>}

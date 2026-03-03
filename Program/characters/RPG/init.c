@@ -2,9 +2,8 @@
 void initNewMainCharacter()//инициализация главного героя
 {
 	ref ch = GetMainCharacter();
-	// Установим начальный дневной рандом
-	UpdateSeeds();
-	ch.PersonalSeed = rand(1000000); // уникальное число для рандома с хэшем
+	ch.PersonalSeed = rand(INT_MAX); // Уникальное число для рандома с хэшем
+
 	string sTemp;
 	int    iTmp, i;
 
@@ -13,7 +12,7 @@ void initNewMainCharacter()//инициализация главного гер�
     InitMigrations();
     // контроль версий <--
 
-    // ROSARAK WEIGHT RANDOM (ВАЖНО ТУТ)
+    // WEIGHT RANDOM (ВАЖНО ТУТ)
     InitWeightParameters();
 
     MOD_EXP_RATE =  makeint(MOD_EXP_RATE + MOD_SKILL_ENEMY_RATE * MOD_EXP_RATE / 1.666666666); // разные уровни для всех
@@ -137,7 +136,7 @@ void initNewMainCharacter()//инициализация главного гер�
 	SetCharacterPerk(ch, "FlagPir");
 	SetCharacterPerk(ch, "Energaiser"); // скрытый перк даёт 1.5 к приросту энергии, даётся ГГ и боссам уровней
 	SetCharacterPerk(ch, "Rush");
-    SetBonusPush(ch, true); // Rosarak - Коллизии
+    SetBonusPush(ch, true);
 	// начальные скилы задать
     //InitStartParam(ch); // Jason - fix
 	LAi_SetHP(ch, GetCharacterBaseHPValue(ch), GetCharacterBaseHPValue(ch));
@@ -176,7 +175,7 @@ void initNewMainCharacter()//инициализация главного гер�
 		DoQuestFunctionDelay("SharlieTutorial_RadiusCannonsOff", 1.5);
 		
 		pchar.Ship.Type = GenerateShipExt(SHIP_PINNACE, true, pchar);
-		pchar.Ship.name = StringFromKey("SharlieTutorial_6");
+		pchar.Ship.name = GetShipName("Ulysse");
 		SetBaseShipData(pchar);
 		RealShips[sti(pchar.Ship.Type)].ship.upgrades.hull = 2;
 		SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
@@ -292,6 +291,7 @@ void initNewMainCharacter()//инициализация главного гер�
 		ch.systeminfo.tutorial.Amulet = true;
 		ch.systeminfo.tutorial.Perk = true;
 		ch.systeminfo.tutorial.Fighter = true;
+		ch.systeminfo.tutorial.MapEncounter = true;
 		if(startHeroType == 4)
 		{
 			SetItemInLocation("pirate_cutlass", "Pirates_townhall_upstairs", "item1");
@@ -452,7 +452,6 @@ void initMainFreePlayCharacterItem()
 	AddItems(ch, "Mechanic_Tool", 1);
 	AddItems(ch, "spyglass1", 1);
 	
-	SetCharacterPerk(ch, "FlagHol");
 	//GiveNationLicence(HOLLAND, 180);
 	ch.alchemy.known = 1;
 	AddQuestRecordInfo_Silent("Recipe", "cartridge");
@@ -773,7 +772,7 @@ void InitStartParam(ref _chref)
     
     ClearCharacterExpRate(_chref);
     
-    for (i=1; i<15; i++)
+    for (i=1; i <= SKILL_QTY; i++)
     {
         skillName = GetSkillNameByIdx(i);
         _chref.skill.(skillName) = makeint(MOD_EXP_RATE / GetCharacterExpRate(_chref, skillName) + 0.5);

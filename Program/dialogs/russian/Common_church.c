@@ -1356,13 +1356,13 @@ void ProcessDialogEvent()
 			TakeNItems(pchar, "chest", 3+hrand(1));
 			PlaySound("interface\important_item.wav");
 			sQuestTitle = NPChar.City + "ChurchGenQuest1";
-			characters[GetCharacterIndex("ChurchGenQuest1_Cap")].LifeDay = 0;
+			if (GetCharacterIndex("ChurchGenQuest1_Cap") != -1) characters[GetCharacterIndex("ChurchGenQuest1_Cap")].LifeDay = 0;
 			Group_DeleteGroup("ChurchGenQuest1_CapGroup"); // Трем кэпа
 			PChar.Quest.Church_GenQuest1_ChangeCapitanLocation.over = true; // Завершаем, если вдруг осталось
 			AddQuestRecordEx(sQuestTitle, "ChurchGenQuest1", "7");
 			AddQuestUserData(sQuestTitle, "sSex", GetSexPhrase("","а"));
 			AddQuestUserData(sQuestTitle, "sColony", XI_ConvertString("Colony" + NPChar.City + "Gen"));
-			AddQuestUserData(sQuestTitle, "sSumm", FindRussianMoneyString(sti(PChar.GenQuest.ChurchQuest_1.AwardSumm)));
+			
 			CloseQuestHeader(sQuestTitle);
 			DeleteAttribute(PChar, "GenQuest.ChurchQuest_1");
 			NPChar.GenQuest.ChurchQuest_1.GiveQuestDateParam = iMonth;

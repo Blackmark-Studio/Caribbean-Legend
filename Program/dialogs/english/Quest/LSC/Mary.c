@@ -1082,8 +1082,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "return_2":
-			dialog.text = "No, I'm not cold. I'm just... I don't want to talk about it here. Come to my cabin later. I want to talk with you alone, all right? Are you going to see the Admiral and Nathaniel now?";
-			link.l1 = "Yes. I have to talk to Shark and, of course, take Danielle to Nathaniel. I won't be long. I'll see you soon, Mary.";
+			if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie"))
+			{
+				dialog.text = "No, I'm not cold. I'm just... I don't want to talk about it here. Come to my cabin later. I want to talk with you alone, all right? Are you going to see the Admiral and Nathaniel now?";
+				link.l1 = "Yes. I have to talk to Shark and, of course, take Danielle to Nathaniel. I won't be long. I'll see you soon, Mary.";
+			}
+			else
+			{
+				dialog.text = "No, I'm not cold. I'm just... I don't want to talk about it here. Come to my cabin later. I want to talk with you alone, all right? Are you going to see Nathaniel now?";
+				link.l1 = "Yes. I have to take Danielle to him. I won't be long. I'll see you soon, Mary.";
+			}
 			link.l1.go = "return_3";
 		break;
 		
@@ -2749,7 +2757,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -2764,7 +2772,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;		

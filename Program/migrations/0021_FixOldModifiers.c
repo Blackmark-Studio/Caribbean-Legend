@@ -1,6 +1,7 @@
 void ApplyMigration(ref migrationState) {
 
-	object fellows = GetAllFellows(pchar, true);
+	object fellows;
+	AddAllFellows(&fellows, pchar, true);
 	for (int i=0; i < GetAttributesNum(&fellows); i++)
 	{
 		int idx = sti(GetAttributeValue(GetAttributeN(&fellows, i)));

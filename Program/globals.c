@@ -75,14 +75,27 @@ ref pchar;
 
 object TEV; // Temporary events
 object LTR; // Lottery
-object HTBL;// Hash Table
-int GlobalSeed; // Суточное зерно
+string GSeed; // Суточное зерно
 
 //--------------------------------------------------------------------
 // Bool section
 //--------------------------------------------------------------------
 #define false			0
 #define true			1			
+
+//--------------------------------------------------------------------
+// Variables types
+// VarType(ref) вернёт тип переменной по ссылке, а не "ref" или "ref: <type>"
+// Если ссылка пустая, то вернёт "nullptr"
+//--------------------------------------------------------------------
+#define VAR_INTEGER     "int"
+#define VAR_FLOAT       "float"
+#define VAR_STRING      "string"
+#define VAR_OBJECT      "object"
+#define VAR_REFERENCE   "ref" // Не возвращается VarType
+#define VAR_AREFERENCE  "aref"
+#define VAR_PTR         "ptr"
+#define VAR_NULLREF     "nullptr"
 
 //--------------------------------------------------------------------
 // Nation section
@@ -110,18 +123,11 @@ object InterfaceBackScene;
 //--------------------------------------------------------------------
 int     GlobalCharacters = 0;  // номер, с которого идут фантомы
 int     MAX_CHARACTERS   = 10;
-#define TOTAL_CHARACTERS			1201
+#define TOTAL_CHARACTERS 1201 // ~!~ ???
 
-/* belamour legendary edition динамические массивы
-Очень важно!!! Во избежание ошибок компиляции
-при объявлении массива указываем его четкую размерность(константа).
-и только затем изменяем до нужного значения:
-int storeArray[2];
-SetArraySize(&storeArray, MAX_LOCATIONS);*/
-
-int MAX_LOCATIONS = 1108;
-int MAX_ISLANDS = 38;
-int MAX_COLONIES = 43;
+int MAX_LOCATIONS = 1109; // меняем вместе с object Locations[n];
+int MAX_ISLANDS = 41;  // меняем вместе с object Islands[n]
+int MAX_COLONIES = 43; // меняем вместе с object Colonies[n]
 
 #define LSC_MAX_TAVERN		12
 #define LSC_MAX_RESIDENCE	3
@@ -159,10 +165,11 @@ object Names;
 object NullCharacter;
 object NullObject; // заглушка, не записывайте сюда ничего
 object Characters[TOTAL_CHARACTERS];
-object Locations[1108];
-object Islands[38];
+object Locations[1109];
+object Islands[41];
 object Colonies[43];
 object Atlas;
+object StealthSystem;
 
 object  Environment;
 int		nMainCharacterIndex = 1;//-1;
@@ -186,6 +193,8 @@ int StealthLuck = 0;
 int StealthNat  = 4;
 int WarningTime = 0;
 bool StealthEnable = false;
+
+bool bAutoSaveStarted = false;
 
 ref GetCharacter(int iIndex) 
 { 
@@ -259,7 +268,7 @@ int EventReturn_isGrassLightsOn()
 		return 0;
     }
 	
-	if (bSeaActive || bStorm || bTornado)
+	if (bSeaActive || bStorm || bTornado) // ~!~
 	{
 		return 0;
 	}

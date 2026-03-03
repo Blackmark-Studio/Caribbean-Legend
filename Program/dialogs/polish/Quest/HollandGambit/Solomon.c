@@ -19,17 +19,17 @@ void ProcessDialogEvent()
 				if (pchar.questTemp.HWIC.Holl == "AbbyFather")
 				{
 					dialog.text = "Czego chcesz od tego starego Żyda, młodzieńcze?";
-					link.l1 = "Salomonie, potrzebuję, abyś się skupił i przypomniał sobie o zagubionej wyspie, na której rozbił się twój statek. Ukryłeś tam skarb. Rozmawiałem z twoją córką. Mój szef Lucas Rodenburg dał mi carte blanche, by działać na rzecz dobra twojej rodziny. Jak widzę, najważniejszą rzeczą dla ciebie w tej chwili jest odzyskanie kapitału twojej rodziny, a bez mojej pomocy nie wywąchasz ani grosza z tego złota.";
+					link.l1 = "Solomonie, potrzebuję, abyś się skupił i przypomniał sobie o zagubionej wyspie, na której rozbił się twój statek. Ukryłeś tam skarb. Rozmawiałem z twoją córką. Mój szef Lucas Rodenburg dał mi carte blanche, by działać na rzecz dobra twojej rodziny. Jak widzę, najważniejszą rzeczą dla ciebie w tej chwili jest odzyskanie kapitału twojej rodziny, a bez mojej pomocy nie wywąchasz ani grosza z tego złota.";
 					link.l1.go = "SolomonBonanza";
 					DelLandQuestMark(npchar);
 					break;
 				}
 				if (pchar.questTemp.HWIC.Holl == "AbbyFindScull" && makeint(Pchar.money) >= 200000)
 				{
-					dialog.text = "O, mój młodzieńcze, to ty? Czy nie możesz mi powiedzieć czegoś dobrego? Czy wy, chrześcijanie, znowu przyszliście dręczyć tego biednego starego Żyda pytaniami?";
+					dialog.text = "O, mój młodzieńcze, to ty? Czy nie możesz mi powiedzieć czegoś dobrego? Czy wy, chrześcijanie, znowu przyszliście dręczyć biednego starego Żyda pytaniami?";
 					if (CheckCharacterItem(pchar, "SkullAztec"))
 					{
-						link.l1 = "Znalazłem wyspę, choć było to dość trudne. Znalazłem również twój kufer z pieniędzmi i tę czaszkę. Domyślam się, że to czaszka twojego dziadka-patriarchy, o czymkolwiek tam mówiłeś.";
+						link.l1 = "Znalazłem wyspę, choć było to dość trudne. Znalazłem również twój kufer z pieniędzmi i tę czaszkę. Domyślam się, że to czaszka twojego dziadka-patriarchy, czy cokolwiek tam mówiłeś.";
 						link.l1.go = "SolomonBonanza_2";
 					}
 					link.l2 = "Znalazłem wyspę, choć nie było to łatwe. Znalazłem też twoją skrzynię z pieniędzmi. Ale w tej skrzyni nie było żadnych czaszek.";
@@ -92,18 +92,18 @@ void ProcessDialogEvent()
 				}
 				if (pchar.questTemp.HWIC.Self == "SolomonHistoryAfter")
 				{
-					dialog.text = "Dobrze. Pamiętam fleut i jego kapitana. Widziałem go nawet raz wcześniej w Amsterdamie. Fleut nazywał się 'Leiden', a kapitan nosił imię Toff Keller.";
+					dialog.text = "Dobrze. Pamiętam fluite i jego kapitana. Widziałem go nawet raz wcześniej w Amsterdamie. Fluita nazywała się 'Leiden', a kapitan nosił imię Toff Keller.";
 					link.l1 = "To dobry początek! Mam teraz trop.";
 					link.l1.go = "Solomon_history_3";
 					pchar.questTemp.HWIC.Self = "SolomonHistoryEnd";
 					break;
 				}
-				dialog.text = "Oy vey, czego chcesz od tego biednego starego Żyda tym razem?";
+				dialog.text = "Aj waj, czego chcesz od tego biednego starego Żyda tym razem?";
 				link.l1 = "Dzień dobry. Nie, nic takiego, przyszedłem tylko się przywitać.";
 				link.l1.go = "exit";
 				break;
 			}
-			dialog.text = "Oy vey, czego chcesz od tego biednego starego Żyda tym razem?";
+			dialog.text = "Aj waj, czego chcesz od tego biednego starego Żyda tym razem?";
 			link.l1 = "Dzień dobry. Nie, nic takiego, przyszedłem tylko się przywitać.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
@@ -112,7 +112,7 @@ void ProcessDialogEvent()
 //-----------------------------------------------За Голландию-----------------------------------
 		case "SolomonBonanza":
 			PlaySound("Voice\English\hambit\Solomon Shneur-03.wav");
-			dialog.text = "A czego chcesz ode mnie? Czy wyglądam na człowieka, który coś wie? Skądże mogłem wiedzieć, że w takim dniu, zapomnianym przez Boga, dokładnie tam znajdowała się działka z towarami i złotem do zabrania? Wyobraź sobie, jak wielu gojów chodzących po ulicach chce przechytrzyć takiego Żyda jak ja i zabrać mi pieniądze!\nJest wyspa. Ani jednego człowieka tam, oprócz Abiego i mnie. Ani jednego. Nikogo w ogóle. Pośrodku była grota. Tam schowałem swoją skrzynię, aby uchronić ją przed tym piratem gojem Amalekiem! Skrzynia pełna złota, żadnych drobiazgów w niej. Dźwigałem ją aż z Starego Kraju! Wszystko, co zarobiłem potem, jak się mówi, w pocie czoła, jest tam. Plus, czaszka mojego dziadka... Uwierz mi, to nas uratowało, tak, tak\nOh-ho-ho, to starożytny talizman naładowany magiczną mocą Talmudu! Boże chroń nas przed Amalekiem! Oy vey, trudno zacząć od nowa w tej epoce gojów! Chciałbym, żebyś wiedział, młody człowieku! Och, chciałbym, żebyś wiedział!";
+			dialog.text = "A czego chcesz ode mnie? Czy wyglądam na człowieka, który coś wie? Skądże mogłem wiedzieć, że w takim dniu, zapomnianym przez Boga, dokładnie tam znajdowała się działka z towarami i złotem do zabrania? Wyobraź sobie, jak wielu gojów chodzących po ulicach chce przechytrzyć takiego Żyda jak ja i zabrać mi pieniądze!\nJest wyspa. A na niej ani jednego człowieka, oprócz Abi i mnie. Nikogo w ogóle. Pośrodku była grota. Tam schowałem swoją skrzynię, aby uchronić ją przed tym piratem gojem Amalekiem! Skrzynia pełna złota, żadnych drobiazgów w niej. Dźwigałem ją aż z Starego Świata! Wszystko, co zarobiłem potem, jak się mówi, w pocie czoła, jest tam. Plus, czaszka mojego dziadka... Uwierz mi, to nas uratowało, tak, tak\nOch-ho-ho, to starożytny talizman naładowany magiczną mocą Talmudu! Boże chroń nas przed Amalekiem! Aj waj, trudno zacząć od nowa w tej epoce gojów! Chciałbym, żebyś wiedział, młody człowieku! Och, chciałbym, żebyś wiedział!";
 			link.l1 = "Co ty, do diabła, bredzisz, szaleńcze? Kogo to obchodzi. Poradzę sobie z tym sam. Żegnaj!";
 			link.l1.go = "SolomonBonanza_1";
 		break;
@@ -126,8 +126,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SolomonBonanza_2"://отдаем всё
-			dialog.text = "Oj, jest Bóg i jesteś prawdziwym mężczyzną! Przywróciłeś nie tylko moje złoto, ale także odkupiłeś nazwisko Shneur! Jakiego wstydu zapobiegłeś! Mynheer Rodenburg może być słusznie dumny, że ma takich kapitanów jak ty pod swoją komendą. Dam czaszkę mynheerowi Rodenburgowi, obiecał zapłacić za nią znaczną sumę. Chciałbym ci osobiście podziękować, jesteś znakomitym szabes gojem - proszę, przyjmij ten amulet jako mały dowód wdzięczności tego Żyda.";
-			link.l1 = "Uh, dziękuję, chyba.";
+			dialog.text = "Oj, jest Bóg i jesteś prawdziwym mężczyzną! Przywróciłeś nie tylko moje złoto, ale także odkupiłeś nazwisko Shneur! Jakiego wstydu mi oszczędziłeś! Mynheer Rodenburg może być słusznie dumny, że ma takich kapitanów jak ty pod swoją komendą. Dam czaszkę mynheerowi Rodenburgowi, obiecał zapłacić za nią znaczną sumę. Chciałbym ci osobiście podziękować, jesteś znakomitym szabes gojem - proszę, przyjmij ten amulet jako mały dowód wdzięczności tego Żyda.";
+			link.l1 = "Uch, dziękuję, chyba.";
 			link.l1.go = "SolomonBonanza_4";
 			RemoveItems(PChar, "SkullAztec", 1);
 			AddMoneyToCharacter(pchar, -200000);

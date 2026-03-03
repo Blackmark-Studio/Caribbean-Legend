@@ -29,7 +29,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "Cupture_after":
-            dialog.text = RandPhraseSimple("Vous avez déjà tout pris. Que voulez-vous de plus ?","Y a-t-il quelque chose que vous n'avez pas encore raflé ?");
+            dialog.text = RandPhraseSimple("Vous avez déjà tout pris. Que voulez-vous de plus ?","Y a-t-il quelque chose que vous n'avez pas encore raflé ?");
             link.l1 = RandPhraseSimple("Je regarde simplement autour de moi...","Je vérifie juste, je pourrais oublier de prendre quelque chose...");
             link.l1.go = "exit";
             NextDiag.TempNode = "Cupture_after";

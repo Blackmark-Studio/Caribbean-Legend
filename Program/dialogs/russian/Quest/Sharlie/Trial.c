@@ -263,10 +263,6 @@ void ProcessDialogEvent()
 			//Log_Info("Получен амулет 'Веер цыганки'");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "obereg_4");
-			pchar.quest.NewGameTip5.win_condition.l1 = "location";
-			pchar.quest.NewGameTip5.win_condition.l1.location = "PortoBello_town";
-			pchar.quest.NewGameTip5.function = "ShowNewGameTip";
-			pchar.quest.NewGameTip5.text = "Старайтесь двигаться шагом. Тогда стражники будут менее подозрительны!";
 			
 			pchar.quest.Trial_CreatHabitue.win_condition.l1 = "location";
 			pchar.quest.Trial_CreatHabitue.win_condition.l1.location = "PortoBello_tavern";

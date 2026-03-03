@@ -676,18 +676,21 @@ bool InitRestModifiers(ref item)
 		break;
 		case "piratesJournal_1":
 		{
+			AddDescriptor(item, "Quest", -1);
 			AddDescriptor(item, item.kind, -1);
 			AddSpecialDescriptor(item, "piratesJournal");
 		}
 		break;
 		case "piratesJournal_2":
 		{
+			AddDescriptor(item, "Quest", -1);
 			AddDescriptor(item, item.kind, -1);
 			AddSpecialDescriptor(item, "piratesJournal");
 		}
 		break;
 		case "piratesJournal_3":
 		{
+			AddDescriptor(item, "Quest", -1);
 			AddDescriptor(item, item.kind, -1);
 			AddSpecialDescriptor(item, "piratesJournal");
 		}

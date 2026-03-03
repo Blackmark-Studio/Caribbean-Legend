@@ -228,7 +228,7 @@ void AddTakeAllHint()
 	int base = y2-60;
 	SendMessage(&GameInterface,"lslslllll",MSG_INTERFACE_MSG_TO_NODE,"KEY_BTNS", 0, key, argb(200,128,128,128), 876,base, 916,base+40);
 	SendMessage(&GameInterface,"lslsssllllllfl", MSG_INTERFACE_MSG_TO_NODE,"KEY_STRS",0,
-		"getAll", GetConvertStr("InterfaceTakeAll", "ControlsNames.txt"), FONT_NORMAL, 936, 1028, argb(200,255,255,255),0, 
+		"getAll", GetConvertStr("InterfaceTakeAll", "ControlsNames.txt"), FONT_NORMAL, 936, base+4, argb(200,255,255,255),0, 
 		SCRIPT_ALIGN_LEFT, false, 1.5, 420);
 }
 
@@ -1068,7 +1068,9 @@ void AddToTable(ref rChar)
 
 		iLeftQty  = GetCharacterFreeItem(&refCharacter, sItem);
 		iRightQty = GetCharacterFreeItem(&rChar, sItem);
-		bool isHighlighted = IsItemForChar(&rItem, &refCharacter)
+		bool isHighlighted = false;
+		if (sGetInterfaceType() == INTERFACETYPE_EXCHANGE_ITEMS) isHighlighted = IsItemForChar(rItem, rChar);
+		else isHighlighted = IsItemForChar(rItem, refCharacter);
 		// Персонаж
 		if(iLeftQty > 0)
 		{
@@ -1246,18 +1248,16 @@ void ShowItemInfo()
 	{
 		ref arItm = &Items[iCurGoodsIdx];
 		currentItem = arItm;
-		int lngFileID = LanguageOpenFile("ItemsDescribe.txt");
 
 		describeStr += GetItemDescr(iCurGoodsIdx);
 		AddRecipeKnownMarker(&Items[iCurGoodsIdx], &describeStr);
 		AddMapKnownMarker(&Items[iCurGoodsIdx], &describeStr);
 		SetNewGroupPicture("INFO_ITEMS_PICTURE", Items[iCurGoodsIdx].picTexture, "itm" + Items[iCurGoodsIdx].picIndex);
-		sCaption = LanguageConvertString(lngFileID, Items[iCurGoodsIdx].name);
+		sCaption = GetItemName(&Items[iCurGoodsIdx]);
 		SetFormatedText("INFO_CAPTION", sCaption);
 		SetFormatedText("INFO_ITEMS_TEXT", describeStr);
 		SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"INFO_ITEMS_TEXT", 5 );
 		SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"INFO_CAPTION", 5 );
-		LanguageCloseFile(lngFileID);
 		XI_WindowDisable("INFO_WINDOW", false);
 		XI_WindowShow("INFO_WINDOW", true);
 		validLineClicked = false;
@@ -1668,10 +1668,8 @@ void onTableRemoveBtnClick()
 // инфа о предмете
 void ShowGoodsInfo(int iGoodIndex)
 {
-	string GoodName = Items[iGoodIndex].name;
 	ref    arItm = &Items[iGoodIndex];
-	int    lngFileID = LanguageOpenFile("ItemsDescribe.txt");
-	string sHeader = LanguageConvertString(lngFileID, GoodName);
+	string sHeader = GetItemName(arItm);
 
 	iCurGoodsIdx = iGoodIndex;
 	string describeStr = "";
@@ -1694,7 +1692,6 @@ void ShowGoodsInfo(int iGoodIndex)
 	SetNewGroupPicture("QTY_GOODS_PICTURE", Items[iCurGoodsIdx].picTexture, "itm" + Items[iCurGoodsIdx].picIndex);
 	SetFormatedText("QTY_CAPTION", sHeader);
 	SetFormatedText("QTY_GOODS_INFO", describeStr);
-	LanguageCloseFile(lngFileID);
 
 	iCharQty 	= GetCharacterFreeItem(refCharacter, Items[iCurGoodsIdx].id);
 	iStoreQty 	= GetCharacterFreeItem(refToChar, Items[iCurGoodsIdx].id);

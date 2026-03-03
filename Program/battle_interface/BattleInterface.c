@@ -566,6 +566,38 @@ ref BI_CommandEndChecking()
 
 	return &BI_retComValue;
 }
+
+#event_handler(BI_EVENT_GET_CMD_LIST_ORDER_PRIORITY, "GetListOrderPriority");
+int GetListOrderPriority()
+{
+	int index = GetEventData();
+	switch(index)
+	{
+		// города
+		case 0:		return BI_COMMODE_ENEMY_TOWN;			break;
+		case 1: 	return BI_COMMODE_DISEASED_TOWN;		break;
+		case 2: 	return BI_COMMODE_NOTDISEASED_TOWN;		break;
+		// форты
+		case 3: 	return BI_COMMODE_FRIEND_FORT_SELECT;	break;
+		case 4: 	return BI_COMMODE_NEUTRAL_FORT_SELECT;	break;
+		case 5: 	return BI_COMMODE_ENEMY_FORT_SELECT;	break;
+		// бухты
+		case 6: 	return BI_COMMODE_LAND_SELECT;			break;
+		// корабли
+		case 7: 	return BI_COMMODE_MY_SHIP_SELECT;		break;
+		case 8: 	return BI_COMMODE_FRIEND_SHIP_SELECT;	break;
+		case 9: 	return BI_COMMODE_NEUTRAL_SHIP_SELECT;	break;
+		case 10: 	return BI_COMMODE_ENEMY_SHIP_SELECT;	break;
+		// прочее
+		case 11: 	return BI_COMMODE_COMMAND_SELECT;		break;
+		case 12: 	return BI_COMMODE_CANNON_CHARGE;		break;
+		case 13:	return BI_COMMODE_USER_ICONS;			break;
+
+		default: 	return 0;								break;
+	}
+	return 0;
+}
+
 void BI_SailDirIconSet()
 {
     BattleInterface.UserIcons.ui1.enable = false;
@@ -782,7 +814,7 @@ void BI_LaunchCommand()
 			{
 				if (GetRelation(sti(pchar.index), targetNum) == RELATION_ENEMY && !CheckAttribute(&Characters[targetNum], "CanBeSailTo"))
 				{
-                  	if (sti(Characters[targetNum].Fort.Mode) == FORT_NORMAL)
+					if (sti(Characters[targetNum].Fort.Mode) == FORT_NORMAL || sti(Characters[targetNum].Fort.Mode) == FORT_HOLD_FIRE)
 					{
 						bOk = false;
 					}
@@ -1121,7 +1153,7 @@ void BI_SetPossibleCommands()
 		//BattleInterface.Commands.CCommand.enable		= GetCompanionQuantity(pchar)>1;
 		//BattleInterface.Commands.Ability.enable			= true;
 		//  проверка на 7 класс
-		if (sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE) // pchar.Ship.Type != SHIP_NOTUSED
+		if (!IsSmallShip(sti(RealShips[sti(pchar.Ship.Type)].BaseType))) // pchar.Ship.Type != SHIP_NOTUSED
         {
             BattleInterface.Commands.Cabin.enable		= true;
         }
@@ -1706,22 +1738,28 @@ int FindIconTextureIndexWithInserting(int idx, int startIdx)
 	string modname = refShip.modname;
 
 	object mods;
-	int ret = startIdx;
-	for (int i = 0; i < idx; i++)
+	int ret = startIdx - 1;
+	for (int i = 0; i <= idx; i++)
 	{
 		makeref(refShip,ShipsTypes[i]);
 
-		if (CheckAttribute(refShip, "modname"))
+		if (!CheckAttribute(refShip, "modname"))
 		{
-			string curModname = refShip.modname;
-			if (!CheckAttribute(mods, curModname)) 
-			{
-				mods.(curModname) = 1;
-				ret++;
-			}
+			continue;
+		}
+
+		string curModname = refShip.modname;
+		if (!CheckAttribute(mods, curModname))
+		{
+			ret++;
+			mods.(curModname) = ret;
+		}
+
+		if (curModname == modname)
+		{
+			break;
 		}
 	}
-
 	return ret;
 }
 
@@ -1760,7 +1798,9 @@ int GetIconTextureIndexWithInserting(int idx, int startIdx)
 
 		if (!CheckAttribute(largeTextureList, attName))
 		{
-			continue;
+			largeTextureList.(attName).name = largeFilePath;
+			largeTextureList.(attName).xsize = 16;
+			largeTextureList.(attName).ysize = 8;
 		}
 
 		if (smallTextureList.(attName).name == smallFilePath && largeTextureList.(attName).name == largeFilePath)
@@ -2987,20 +3027,21 @@ ref procGetSmallFlagData()
 	int chrIdx = GetEventData();
 	BI_intNRetValue[0] = 3;
 	BI_intNRetValue[1] = 0;
-	if( chrIdx >= 0 ) {
+	if (chrIdx >= 0)
+    {
 		int iNation = sti(Characters[chrIdx].nation);
-		switch( iNation )
+		switch (iNation)
 		{
-		case ENGLAND: BI_intNRetValue[1]=3; break;
-		case FRANCE: BI_intNRetValue[1]=2; break;
-		case SPAIN: BI_intNRetValue[1]=0; break;
-		case HOLLAND: BI_intNRetValue[1]=4; break;
-		case PIRATE: BI_intNRetValue[1]=5; break;
-		//case SMUGGLER: BI_intNRetValue[1]=1; break;
+            case ENGLAND: BI_intNRetValue[1] = 3; break;
+            case FRANCE:  BI_intNRetValue[1] = 2; break;
+            case SPAIN:   BI_intNRetValue[1] = 0; break;
+            case HOLLAND: BI_intNRetValue[1] = 4; break;
+            case PIRATE:  BI_intNRetValue[1] = 5; break;
+            //case SMUGGLER: BI_intNRetValue[1]=1; break;
 		}
 
 		BI_intNRetValue[2] = 7;
-		switch( SeaAI_GetRelation(chrIdx,nMainCharacterIndex) )
+		switch (SeaAI_GetRelation(chrIdx, nMainCharacterIndex))
 		{
 			case RELATION_FRIEND:	BI_intNRetValue[2] = 7; break;
 			case RELATION_NEUTRAL:	BI_intNRetValue[2] = 7; break;
@@ -3146,6 +3187,11 @@ float GetRigDamage(int shootIdx, int iBallType, ref damage_chr)
 	}
 	// Addon 2016-1 Jason Пиратская линейка
 	if (CheckAttribute(damage_chr, "SeaBoss")) { fDmgRig *= 0.1; }
+
+	if (GetMainCharacterIndex() == shootIdx && !SeaCameras_isCameraOutside())
+	{
+		fDmgRig *= isEquippedArtefactUse(shoot_chr, "totem_08", 1.0, 1.1); // Повелитель огня для прицельной у ГГ
+	}
 
 	return fDmgRig;
 }
@@ -3429,7 +3475,7 @@ void BI_ProcessControlPress()
 		break;
 		
 		case "hk_Cabin":
-			if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE && !bSeaReloadStarted) // pchar.Ship.Type != SHIP_NOTUSED
+			if(!IsSmallShip(sti(RealShips[sti(pchar.Ship.Type)].BaseType)) && !bSeaReloadStarted) // pchar.Ship.Type != SHIP_NOTUSED
 			{
 				Sea_CabinStartNow();
 			}
@@ -3613,14 +3659,12 @@ ref BI_GetLandData()
 		}
 	}*/
 
-	int g_LocLngFileID = LanguageOpenFile("LocLables.txt");
 	if( CheckAttribute(arLoc,"label") ) {
-		arLoc.labelLoc = LanguageConvertString(g_LocLngFileID,arLoc.label);
+		arLoc.labelLoc = GetLocatorName(arLoc);
 		if( arLoc.labelLoc == "" ) {
 			Trace("Warning! Language: string <"+arLoc.label+"> hav`t translation into file <LocLables.txt>");
 		}
 	}
-	LanguageCloseFile(g_LocLngFileID);
 
 	if( BI_intNRetValue[2]<0 || BI_intNRetValue[3]<0 )
 	{
@@ -3751,7 +3795,7 @@ string GetBILocationName()
 	float fHtRatio = stf(Render.screen_y) / iHudScale;
 
 	if (LanguageGetLanguage() != "russian" && strlen(Name) > 24 && fHtRatio > 1.0)
-	{
+	{   // ~!~ ???
 		Name += strcut("               ", 0, makeint((fHtRatio - 1.0) * 10.0 + 0.5));
 	}
 	return Name;
@@ -3880,7 +3924,7 @@ void ControlsDesc()
 			sAttrDes = "Con"+numLine+"desc";
 			sAttrB = "Con"+numLine+"Back";
 			
-			if(!bGlobalTutor && sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE) // pchar.Ship.Type != SHIP_NOTUSED
+			if(!bGlobalTutor && !IsSmallShip(sti(RealShips[sti(pchar.Ship.Type)].BaseType))) // pchar.Ship.Type != SHIP_NOTUSED
 			{
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_Cabin");
 				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("hk_Cabin","ControlsNames.txt");

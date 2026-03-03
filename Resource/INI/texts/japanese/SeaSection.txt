@@ -1,0 +1,60 @@
+Ship_critical {クリティカルヒット！}
+Ship_critical_notif {' - クリティカルヒット!}
+Ship_sunk {%1「%2」が沈没した。+%3 経験値獲得。}
+Ship_sunk_other {%1「%2」は沈没した。}
+Ship_got_good {%2を%1センタル積み込んだ}
+Ship_cant_got_good {%1 の空きがありません}
+Fort_destroy {要塞%1が破壊された。+%2経験値獲得。}
+Fort_destroy_notif {砲台制圧！}
+Fort_cannon {砦の砲台が破壊された！}
+seg_Balls {ラウンド弾}
+seg_Grapes {散弾}
+seg_Knippels {チェーンショット}
+seg_Bombs {爆弾}
+seg_Sailcloth {帆布}
+seg_Planks {板}
+seg_Slaves {奴隷}
+seg_Wheat {小麦}
+seg_Ebony {黒檀}
+seg_Chocolate {カカオ}
+seg_Sugar { }
+seg_Wine {ワイン}
+seg_ShipSilk {船絹}
+seg_Rum {ラム}
+seg_Tobacco {タバコ}
+seg_Coffee {コーヒー}
+seg_Mahogany {マホガニー}
+seg_Cinnamon {バニラ}
+seg_Copra {コプラ}
+seg_Paprika {パプリカ}
+seg_Fruits {果物}
+seg_Ale {エール}
+seg_Ropes {ロープ}
+seg_Clothes {服}
+seg_Cotton {綿}
+seg_Sandal {アイアンウッド}
+seg_Leather {革製}
+seg_Oil {樹脂}
+seg_Food {食糧}
+seg_Weapon {武器}
+seg_Gold {金}
+seg_Silver {銀}
+seg_Powder {火薬}
+seg_Brick {レンガ}
+seg_Medicament {薬}
+seg_Cannon_3 {3ポンド・ファルコネット}
+seg_Cannon_6 {6ポンド砲}
+seg_Cannon_8 {8ポンド砲}
+seg_Cannon_12 {12ポンド砲}
+seg_Cannon_16 {16ポンド砲}
+seg_Cannon_18 {18ポンド砲}
+seg_Cannon_20 {20ポンド砲}
+seg_Cannon_24 {24ポンド砲}
+seg_Cannon_32 {32ポンド砲}
+seg_Cannon_36 {36ポンド砲}
+seg_Cannon_42 {42ポンド砲}
+seg_Cannon_48 {48ポンド砲}
+seg_Culverine_8 {セミクーレヴリン}
+seg_Culverine_18 {クーレヴリン}
+seg_Culverine_36 {フル・クーレヴリン}
+sea_exp_add {+%1 獲得経験値}

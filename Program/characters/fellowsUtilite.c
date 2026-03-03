@@ -1,17 +1,6 @@
-// Собрать индексы всей команды капитана с сортировкой абордажники => офицеры => компаньоны => пассажиры/пленники
-// Fellow -- член экипажа ГГ в любом статусе, будь то абордажник, офицер, компаньон или пассажир
-// [!] Этот метод возвращает в том числе квестовых персонажей
-object GetAllFellows(ref captain, bool includeCaptain)
-{
-	object result;
-	AddAllFellows(&result, captain, includeCaptain);
-	return result;
-}
-
 // Получить уникальные индексы всех персонажей, имеющих корабельные должности
-object GetAllFellowsManagers(ref captain)
+void GetAllFellowsManagers(ref result, ref captain)
 {
-	object result;
 	aref passengers;
 	makearef(passengers, captain.fellows.passengers);
 
@@ -19,12 +8,15 @@ object GetAllFellowsManagers(ref captain)
 	{
 		string job = JobByIdx(i);
 		if (!CheckAttribute(passengers, job)) continue;
-		AddFellow(&result, sti(passengers.(job)));
+		AddFellow(result, sti(passengers.(job)));
 	}
 
 	return result;
 }
 
+// Собрать индексы всей команды капитана с сортировкой абордажники => офицеры => компаньоны => пассажиры/пленники
+// Fellow -- член экипажа ГГ в любом статусе, будь то абордажник, офицер, компаньон или пассажир
+// [!] Этот метод возвращает в том числе квестовых персонажей
 void AddAllFellows(ref result, ref captain, bool includeCaptain)
 {
 	if (includeCaptain) result.f1 = captain.index;
@@ -118,6 +110,15 @@ bool IsFellowAbleToBeCompanion(ref chr)
 	return true;
 }
 
+// Может ли братишка сейчас стать компаньоном при захвате корабля
+bool IsFellowAbleToBeCompanionOnBoarding(ref chr)
+{
+	if (!IsFellowOurCrew(chr)) return false;
+	if (AttributeIsTrue(chr, "CompanionDisable")) return false;
+	if (IsCompanion(chr)) return false;
+	return true;
+}
+
 // Может ли братишка сейчас занять новую должность
 bool IsFellowAbleToGetShipJob(ref chr)
 {
@@ -175,4 +176,13 @@ void FillFellowJobs(ref chrVT, ref result)
 			return;
 		}
 	}
+}
+
+bool CanHirePrisoner(ref chr)
+{
+	int rankDiff = func_max(0, GetAttributeInt(chr, "rank") - GetAttributeInt(pchar, "rank"));
+	if (rankDiff > 5) return false; // 5 рангов разницы макс
+
+	int leadershipDebuff = rankDiff * 5;
+	return GetSkillAfterPenalty(pchar, SKILL_LEADERSHIP) + 20 >= GetSkillAfterPenalty(chr, SKILL_LEADERSHIP) + leadershipDebuff;
 }

@@ -1,0 +1,1 @@
+Debuger_1 {我らの街 @<GetCN(city)> が包囲されています！}

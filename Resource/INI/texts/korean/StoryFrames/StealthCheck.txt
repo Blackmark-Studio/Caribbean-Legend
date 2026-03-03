@@ -1,0 +1,2 @@
+ShowPapersAction {신임장을 제시하다}
+FactorQuestZpq {정체불명의 가스코뉴인}

@@ -130,7 +130,7 @@ header_26_line_18 {Maxim "Shomaan" Shimansky}
 header_26_line_19 {Matvey "Mett" Topchilko}
 header_26_line_20 {Aleksei "q4a" Komarov}
 header_26_line_21 {Sergey "Serginio" Kaptsan}
-header_26_line_22 {Vitaly "Алмейда" Nechkhayev}
+header_26_line_22 {Vitaly "Almeida" Nechkhayev}
 header_26_line_23 {Aleksandr "Lexanni" Volchkov}
 header_26_line_24 {Aleksandr "Shurik" Shpekht}
 header_26_line_25 {Dmitry "Jafar" Strelyaev}

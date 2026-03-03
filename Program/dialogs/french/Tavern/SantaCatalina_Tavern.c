@@ -44,7 +44,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Svenson_2":
 			dialog.text = "Il vit dans un manoir en face de la résidence de notre maire, à côté de la fontaine. Mais en ce moment, il traverse des moments difficiles et je ne recommanderais pas de le déranger à moins que ce ne soit d'une importance capitale.";
-			link.l1 = "Pourquoi donc ?";
+			link.l1 = "Pourquoi donc ?";
 			link.l1.go = "Svenson_3";			
 		break;
 		

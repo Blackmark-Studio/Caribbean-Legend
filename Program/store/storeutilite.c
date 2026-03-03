@@ -18,7 +18,7 @@ void RefreshStoresForTheNewGood(int idx)
 	makeref(curGood, Goods[idx]);
 	string goodName = curGood.name;
 	float rateInc = 0.0;
-	for(int i=0; i<STORE_QUANTITY; i++)
+	for(int i=0; i<GetArraySize(&stores); i++)
 	{
 		ref refStore = &stores[i];
 		if (CheckAttribute(refStore,"Goods."+goodName))
@@ -60,7 +60,7 @@ void RefreshStoresForTheNewGood(int idx)
 
 void UpdateAllStores()
 {
-	for(int i=0; i<STORE_QUANTITY; i++)
+	for(int i=0; i<GetArraySize(&stores); i++)
 	{
 		UpdateStore(&stores[i]);
 	}
@@ -101,7 +101,10 @@ void CalculateGoodStoreNorm(ref pRef, int goodIdx)
 	}
 	else
 	{
-		trace("Mistake Colony id into store:  id=" + pRef.Colony);
+		if (pRef.Colony != "none")
+		{
+			trace("Mistake Colony id into store:  id=" + pRef.Colony);
+		}
 	}
 
 	switch(sti(pRef.Goods.(goodName).TradeType))
@@ -691,7 +694,7 @@ void StoreDayUpdate()
 	{
 		UpdateStore(&Stores[storeDayUpdateCnt]);
 		storeDayUpdateCnt++;
-		if(storeDayUpdateCnt >= STORE_QUANTITY) storeDayUpdateCnt = -1;
+		if(storeDayUpdateCnt >= GetArraySize(&stores)) storeDayUpdateCnt = -1;
 		PostEvent("EvStoreDayUpdate", 200);
 	}
 }
@@ -715,7 +718,7 @@ void FillShipStore( ref chr)
 
 int FindStore(string sColony)
 {
-	for(int i = 0; i < STORE_QUANTITY; i++)
+	for(int i = 0; i < GetArraySize(&stores); i++)
 	{
 		if (Stores[i].colony == sColony)
 		{
@@ -759,17 +762,6 @@ int GetStoreFreeSpace(object refStore)
 		iWeight = iWeight + iGoodsQ * stf(Goods[i].weight);
 	}
 	return iWeight;
-}
-
-// boal -->
-string GetGoodsNameAlt(int idx)
-{
-    string ret;
-    int iSeaGoods = LanguageOpenFile("ShipEatGood.txt");
-    ret = LanguageConvertString(iSeaGoods, "seg_" + Goods[idx].Name);
-    LanguageCloseFile(iSeaGoods);
-
-    return ret;
 }
 
 // запоминаем цены в ГГ
@@ -937,14 +929,14 @@ int GetStorageUsedWeight(object refStore)
 	for(int i = 0; i < GetArraySize(&Goods); i++)
 	{
 		iGoodsQ = GetStorageGoodsQuantity(refStore, i);
-		iWeight = iWeight + GetGoodWeightByType(i, iGoodsQ)
+		iWeight = iWeight + GetGoodWeightByType(i, iGoodsQ);
 	}
 	return iWeight;
 }
 
 int GetStorage(string sColony)
 {
-	for(int i = 0; i < STORE_QUANTITY; i++)
+	for(int i = 0; i < GetArraySize(&stores); i++)
 	{
 		if (Stores[i].colony == sColony)
 		{

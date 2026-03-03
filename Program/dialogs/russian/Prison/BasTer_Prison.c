@@ -281,7 +281,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "PZ_IshemLongway_Uiti_1":
 			dialog.text = "Боюсь, что я не могу позволить вам пока что отсюда выйти, сударь.";
-			link.l1 = "В каком это смысле? Что вы имеете ввиду?";
+			link.l1 = "В каком это смысле? Что вы имеете в виду?";
 			link.l1.go = "PZ_IshemLongway_Uiti_2";
 		break;
 		

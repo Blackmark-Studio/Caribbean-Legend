@@ -322,7 +322,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				case 1: //просто кораблик
 					SelectSouthcity();
 					pchar.GenQuest.Marginpassenger.ShipName1 = GenerateRandomNameToShip(SPAIN);
-					dialog.text = "C'est bon de faire affaire avec un homme intelligent. Maintenant écoute : dans environ une semaine, un brigantin espagnol '"+pchar.GenQuest.Marginpassenger.ShipName1+"chargé de marchandises précieuses partira de "+XI_ConvertString("Colony"+pchar.GenQuest.Marginpassenger.Southcity+"Gén")+" à "+XI_ConvertString("Colonie"+pchar.GenQuest.Marginpassenger.Southcity1+"Gén")+".  Si tu te dépêches, tu l'attraperas facilement.\nTu es encore là ? Si j'étais toi, je serais déjà en train de me diriger vers mon navire. Et amène le prisonnier ici.";
+					dialog.text = "C'est bon de faire affaire avec un homme intelligent. Maintenant écoute : dans environ une semaine, un brigantin espagnol '"+pchar.GenQuest.Marginpassenger.ShipName1+"chargé de marchandises précieuses partira de "+XI_ConvertString("Colony"+pchar.GenQuest.Marginpassenger.Southcity+"Gen")+" à "+XI_ConvertString("Colony"+pchar.GenQuest.Marginpassenger.Southcity1+"Gen")+".  Si tu te dépêches, tu l'attraperas facilement.\nTu es encore là ? Si j'étais toi, je serais déjà en train de me diriger vers mon navire. Et amène le prisonnier ici.";
 					link.l1 = "Merci! Les marchandises seront une belle compensation pour mes ennuis. Et mon passager doit être près des portes de la ville. Il sera amené à toi.";
 					link.l1.go = "Marginpassenger_offer_2";
 				break;

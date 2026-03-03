@@ -24,7 +24,7 @@ void CreateSea(int sExecuteLayer, int sRealizeLayer)
 
 	LayerFreeze(SEA_REFLECTION2, false);
 
-	if (LoadSegment("sea_ai\ShipLights.c"))
+	if (LoadSegment("sea_ai\ShipLights.c")) // ~!~
 	{
 		InitShipLights();
 		trace("init ship lights");

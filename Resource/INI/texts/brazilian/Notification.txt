@@ -1,0 +1,17 @@
+Notification_ReputationCheckPassed {Verificação de reputação aprovada}
+Notification_ReputationCheckFailed {Reputação muito baixa}
+Notification_PerkCheckPassed {Teste de Vantagem Aprovado}
+Notification_PerkCheckFailed {Teste de Vantagem Falhou}
+Notification_SkillCheckPassed {Teste de Habilidade Bem-sucedido}
+Notification_SkillCheckFailed {Teste de Habilidade Falhou}
+Notification_LevelCheckPassed {Verificação de nível aprovada}
+Notification_LevelCheckFailed {Nível necessário}
+CanBeCaptain {$attr($context.name) não pode comandar um navio em mar aberto \('Capitão' necessário\)}
+Notification_ApproveCheckPassed {aprova}
+Notification_ApproveCheckFailed {desaprova}
+Notification_ReputationCheckFailed_High {Reputação muito alta}
+Notification_ReputationNationCheckPassed {Verificação de relacionamento aprovada}
+Notification_ReputationNationCheckFailed {Relacionamento muito baixo}
+Notification_MoneyCheckPassed {Teste aprovado}
+Notification_MoneyCheckFailed_Peso {Peso insuficiente}
+Notification_MoneyCheckFailed_Dublon {Dublões insuficientes}

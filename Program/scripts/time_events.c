@@ -65,14 +65,11 @@ void WorldSituationsUpdate()
 
 	switch(iStep)
 	{
-		case 0:		
-			DailyEatCrewUpdate();
-
-			Log_QuestInfo("WorldSituationsUpdate DailyEatCrewUpdate");
-
-			UpdateSeeds();
-
-			CheckCharactersUpdateItems();
+		case 0:
+            UpdateSeeds();
+            DailyEatCrewUpdate();
+            Log_QuestInfo("WorldSituationsUpdate DailyEatCrewUpdate");
+            CheckCharactersUpdateItems();
 
 			if (CheckAttribute(pchar, "questTemp.LSC")) 
 			{ //Jason: еженедельное обновление паролей кланов LSC и ежедневное вытирание
@@ -156,14 +153,27 @@ void WorldSituationsUpdate()
 				}
 			}
 			// Дикая Роза - без НИ
-			if (!CheckAttribute(pchar, "questTemp.WildRose_Start") && CheckAttributeEqualTo(pchar, "questTemp.Sharlie", "escape") && CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CharacterIsAlive("Mary") && ChangeCharacterNationReputation(pchar, ENGLAND, 0) >= 0 && !CheckAttribute(pchar, "questTemp.Tieyasal_final")) SetFunctionTimerCondition("WildRose_Start", 0, 0, 1, false);
+			if (!CheckAttribute(pchar, "questTemp.WildRose_Start") && CheckAttributeEqualTo(pchar, "questTemp.Sharlie", "escape") && CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CharacterIsAlive("Mary") && ChangeCharacterNationReputation(pchar, ENGLAND, 0) >= -5) SetFunctionTimerCondition("WildRose_Start", 0, 0, 1, false);
+			// Эпилог - без НИ
+			if (!CheckAttribute(pchar, "questTemp.SharlieEpilog_Start"))
+			{
+				pchar.questTemp.SharlieEpilog_Start = true;
+				if (CheckAttributeEqualTo(pchar, "questTemp.LongHappy", "end"))
+				{
+					SetFunctionTimerCondition("SharlieEpilog_Start_2", 0, 0, 7, false); //есть жена
+				}
+				if (CheckAttribute(pchar, "questTemp.Tieyasal_WinEnd") && !CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && !CheckAttribute(pchar, "questTemp.LSC.Mary_officer"))
+				{
+					SetFunctionTimerCondition("SharlieEpilog_Start", 0, 0, 30, false); //нет жены
+				}
+			}
 			CheckAchievments();
 		break;
-		
+
 		case 2:
             RaisePirateThreat();
 			ProcessDayRepair();
-			
+
 			// Addon 2016-1 Jason пиратская линейка
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.CharleePrince"))
 			{
@@ -177,7 +187,7 @@ void WorldSituationsUpdate()
 				}
 			}
 		break;
-		
+
 		case 3:				
 			Group_FreeAllDead();
 
@@ -194,7 +204,7 @@ void WorldSituationsUpdate()
 				LongHappy_GiveBaronPart();
 				log_info(StringFromKey("time_events_2"));
 			}	
-			
+
 			// belamour legendary edition генерация призов за штурм колоний
 			if(GetDataDay() == 13)
 			{
@@ -203,7 +213,7 @@ void WorldSituationsUpdate()
 			}			
 			
 		break;
-		
+
 		case 4:		
 			QuestActions(); //eddy	
 			// Jason Исла Мона
@@ -212,19 +222,19 @@ void WorldSituationsUpdate()
 				IslaMona_FactoryPart();
 			}	
 		break;
-		
+
 		case 5:
 			wdmEmptyAllOldEncounter();// homo чистка энкоутеров				
 		break;
-		
+
 		case 6:
 			UpdateCrewExp();  // изменение опыта команды	
 		break;
-		
+
 		case 7:
 			UpdateCrewInColonies(); // пересчет наёмников в городах	
 		break;
-		
+
 		case 8:
 			if(IsEntity(&worldMap))
 			{
@@ -233,17 +243,16 @@ void WorldSituationsUpdate()
 				WM_SetNationsThreat();	// обновляем индикаторы угрозы
 			}
 		break;
-		
+
 		case 9:		
 			if(GetDataDay() == 28) UpdateReputation();
 			UpdateCrewInDockedShips(); // обновляем команду на кораблях на приколе
 		break;
-		
+
 		case 10:
 			GenerateRumour(); //homo 05/07/06
 			pchar.goldenfleet.capname = GetPersonaName();
-		break;		
-		
+		break;
 	}
 
 	iStep++;
@@ -372,7 +381,7 @@ void Tut_TeachBattle()
 	    LAi_group_MoveCharacter(sld, "TmpEnemy");
 	}
 	LAi_group_SetHearRadius("TmpEnemy", 100.0);
-    LAi_group_FightGroupsEx("TmpEnemy", LAI_GROUP_PLAYER, true, Pchar, -1, false, false);
+    LAi_group_FightGroupsEx("TmpEnemy", LAI_GROUP_PLAYER, true, GetMainCharacterIndex(), -1, false, false);
     LAi_group_SetRelation("TmpEnemy", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 	if(CheckAttribute(pchar, "systeminfo.tutorial.firstfight1_SandBox"))
 	{

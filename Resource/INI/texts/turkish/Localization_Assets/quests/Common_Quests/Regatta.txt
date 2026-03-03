@@ -1,0 +1,11 @@
+Regatta_1 {Henry}
+Regatta_2 {Stivenson}
+Regatta_3 {Regata için çok geç kaldınız.}
+Regatta_4 {Saint Catherine}
+Regatta_5 {teğmen}
+Regatta_6 {Mahoiny}
+Regatta_7 {Vudro}
+Regatta_8 {Doggerty}
+Regatta_9 {Seyir subayı geminizi terk etti!}
+Regatta_10 {Yolcular gemide.}
+Regatta_11 {Geminiz aşırı yüklü. Hızı ve manevra kabiliyeti düşer.}

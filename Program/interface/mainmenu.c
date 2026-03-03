@@ -1,6 +1,6 @@
+#define NEWS_INI_PATH "Resource\INI\texts\news.ini"
 // Sith,mitrokosta,ugeen для LE
 // Главное меню учитывает прогресс в игре
-
 string isUsersName="";
 
 bool DLCState;
@@ -43,7 +43,7 @@ void InitInterface(string iniName)
     SendMessage(&GameInterface,"ls",MSG_INTERFACE_INIT,iniName);
 
 	string Version = VERSION_NUMBER1 + GetVerNum();
-	string Copyright = " BlackMark Studio - 2025 ";
+	string Copyright = " BlackMark Studio - 2026 ";
 	
 	SetFormatedText("VERSION_TEXT", Version);
 	SetFormatedText("COPYRIGHT_TEXT", Copyright);
@@ -105,16 +105,26 @@ void InitInterface(string iniName)
 	
 	if(!CheckNews()) ShowNews(); // есть новости
 
-	// belamour ачивка за установленный мод
-	int itemsInfo[2];
-	if(!GetAchievement("ach_CL_153") && GetOverlaysInfo(&itemsInfo) > 0) Achievment_Set("ach_CL_153");
-	
     // при выходе в главное меню сбрасываем звуки
 	if(!bMainMenu)
     {
         PauseAllSounds();
         ResetSound(); 
     }
+
+	// запуск титров после прохождения игры
+	if(CheckAttribute(&InterfaceStates, "MainMenu.InstantCredits"))
+    {
+		DeleteAttribute(&InterfaceStates, "MainMenu.InstantCredits");
+		InterfaceStates.MainMenu.DoNotClearCharacters = true;
+		IDoExit(RC_INTERFACE_DO_CREDITS, false);
+		bMainMenu = true;
+        return;
+	}
+
+	// belamour ачивка за установленный мод
+	object itemsInfo[2];
+	if(!GetAchievement("ach_CL_153") && GetOverlaysInfo(&itemsInfo) > 0) Achievment_Set("ach_CL_153");
 
 	// ВВОД СВОИХ СХЕМ В ЗАВИСИМОСТИ ОТ ПОГОДЫ (BY LOKK)
 	if(Whr_IsRain())
@@ -145,14 +155,7 @@ void InitInterface(string iniName)
 	}
 
 	SetMusic("music_MainMenu");
-	// запуск титров после прохождения игры
-	if(CheckAttribute(&InterfaceStates, "MainMenu.InstantCredits")) {
-		DeleteAttribute(&InterfaceStates, "MainMenu.InstantCredits");
-		InterfaceStates.MainMenu.DoNotClearCharacters = true;
-		IDoExit( RC_INTERFACE_DO_CREDITS, false );
-		bMainMenu = true;
-	}
-	
+
 	// if("Условие") // условие на появление окна с предупреждением
 		// ShowAttention();
 }
@@ -266,7 +269,7 @@ void ShowNews()
 		SetNodeUsing("NEWS_SCROLL_TEXT",false);
 		SendMessage( &GameInterface,"lsll",MSG_INTERFACE_MSG_TO_NODE,"NEWS_TEXT", 13, 1 ); //1 - запрет, 0 - нет
 	}
-	SendMessage(&GameInterface, "lssss", MSG_INTERFACE_SAVE_STRINGS_TO_FILE, "Resource\INI\texts\\" + LanguageGetLanguage() + "\News.txt", "News", "IsRead", "true");
+	SendMessage(&GameInterface, "lssss", MSG_INTERFACE_SAVE_STRINGS_TO_FILE, NEWS_INI_PATH, "News", "key", GetNewsKey());
 }
 
 void NewsCancel()
@@ -803,17 +806,21 @@ bool ModelExists(string path) {
     return result;
 }
 
-/* belamour проверяем прочитана ли новость
-для апдейтов удаляем блок из txt файла
-[News]
-IsRead = true*/
+/*
+Проверяем прочитана ли новость
+Для апдейтов меняем ключ key в файле news.txt
+В качестве key ставим дату изменения новостей dd.mm.yyyy
+*/
 bool CheckNews()
 {
-	string value;
-	string fileName = "Resource\INI\texts\\" + LanguageGetLanguage() + "\News.txt";
-	
-	if(!SendMessage(&GameInterface, "lssse", MSG_INTERFACE_READ_STRINGS_FROM_FILE, fileName, "News", "IsRead", &value)) return false;
-	if(value == "true") return true;
-	
-	return false;
+	string value = "none";
+	SendMessage(&GameInterface, "lssse", MSG_INTERFACE_READ_STRINGS_FROM_FILE, NEWS_INI_PATH, "News", "key", &value);
+	return value == GetNewsKey();
+}
+
+string GetNewsKey()
+{
+	string key = GetConvertStr("key", "News.txt");
+	if (key == "") key = "none";
+	return key;
 }

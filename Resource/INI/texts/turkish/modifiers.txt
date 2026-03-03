@@ -1,0 +1,10 @@
+blade_critDamage {Yakın Dövüş Kritik Hasarı}
+gun_critDamage {Tabanca Kritik Hasarı}
+musket_critDamage {Tüfek Kritik Hasarı}
+blade_critChance {Kesici Silah Kritik Şansı}
+gun_critChance {Tabanca Kritik Şansı}
+musket_critChance {Tüfek Kritik Şansı}
+incomingDamageReduction {Hasar Koruması}
+RangeIncomingDamageReduction {Ateşli Silah Hasarına Karşı Koruma}
+Shot_Damage {Ateşli Silah Hasarı}
+HeadshotDamage {Kafa Vuruşu Hasarı}

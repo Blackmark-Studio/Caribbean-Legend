@@ -1,6 +1,6 @@
 // Общие для инвентаря/торговли/обмена/лута функции представления предметов в интерфейсе, подсветки, метки и т. п.
 
-void AddRecipeKnownMarker(ref item, string description)
+void AddRecipeKnownMarker(ref item, ref description)
 {
 	if (findsubstr(item.id, "recipe_" , 0) == -1) return;
 	if (!isMultiObjectKnown(item.result)) return;
@@ -8,7 +8,7 @@ void AddRecipeKnownMarker(ref item, string description)
 	description += GetConvertStr("newLine", "AbilityDescribe.txt") + xiStr("KnownRecipe") + ".";
 }
 
-void AddMapKnownMarker(ref item, string description)
+void AddMapKnownMarker(ref item, ref description)
 {
 	if (!CheckAttribute(&item, "GroupID") || item.groupID != MAPS_ITEM_TYPE) return;
 	if (!CheckMapForEquipped(&pchar, item.id)) return;
@@ -36,28 +36,76 @@ string GetItemName(ref ref_Id_Idx)
 	ref refItem = FindItem_VT(&ref_Id_Idx);
 
 	if (!CheckAttribute(refItem, "name")) return refItem.id;
-
-	if (CheckAttribute(refItem, "modname"))
-	{
-		return GetConvertStr(refItem.name, "mods\"+refItem.modname+"\ItemsDescribe.txt");
-	}
 	return GetConvertStr(refItem.name, "ItemsDescribe.txt");
+}
+
+string GetSimpleItemKey(string sKey)
+{
+    return GetConvertStr(sKey, "ItemsDescribe.txt");
 }
 
 string GetItemDescr(ref ref_Id_Idx)
 {
 	ref refItem = FindItem_VT(&ref_Id_Idx);
-
-	if (CheckAttribute(refItem, "modname"))
-	{
-		return DLG_Convert(refItem.describe, "mods\"+refItem.modname+"\ItemsDescribe.txt", refItem);
-	}
 	return DLG_Convert(refItem.describe, "ItemsDescribe.txt", refItem);
 }
 
-string GetItemDescribe(int iGoodIndex)
+string GetItemUpgradeStage(ref ref_Id_Idx)
 {
-	return GetItemDescr(&iGoodIndex);
+	ref refItem = FindItem_VT(&ref_Id_Idx);
+
+	string sKeyFile = "ItemsDescribe.txt";
+
+	return GetConvertStr("UpgradeStageInfo_" + refItem.id + "_" + sti(refItem.UpgradeStage), sKeyFile);
+}
+
+
+string GetItemStat(ref ref_Id_Idx, string sStatName, bool bAllowEmpty)
+{
+	ref refItem = FindItem_VT(&ref_Id_Idx);
+	string sKeyFile = "ItemsStats.txt";
+
+	if (sStatName == "mainEffect")
+	{
+		sStatName = refItem.id;
+	}
+	else if (sStatName == "secondaryEffect")
+	{
+		sStatName = "secondary_" + refItem.id;
+	}
+
+	if (bAllowEmpty)
+	{
+		return GetConvertStr("itm_stat_" + sStatName, sKeyFile);
+	}
+	else
+	{
+		return GetConvertStrB("itm_stat_" + sStatName, sKeyFile);
+	}
+}
+
+string GetItemStatDescr(ref ref_Id_Idx, string sStatName)
+{
+	ref refItem = FindItem_VT(&ref_Id_Idx);
+
+	string sKeyFile = "ItemsStats.txt";
+
+	if (sStatName == "mainEffect")
+	{
+		sStatName = refItem.id;
+	}
+	else if (sStatName == "secondaryEffect")
+	{
+		sStatName = "secondary_" + refItem.id;
+	}
+
+	return DLG_Convert("itm_stat_descr_" + sStatName, sKeyFile, refItem);
+}
+
+
+string GetSimpleItemStatKey(string sKey)
+{
+	return GetConvertStrB(sKey, "ItemsStats.txt");
 }
 
 string GetItemType(ref ref_Id_Idx)
@@ -68,78 +116,8 @@ string GetItemType(ref ref_Id_Idx)
 	return GetConvertStr("itmtype_" + item.groupID, "ItemsDescribe.txt");
 }
 
-string GetItemNameBatch(ref ref_Id_Idx, ref files)
-{
-	ref refItem = FindItem_VT(&ref_Id_Idx);
-
-	if (!CheckAttribute(refItem, "name")) return refItem.id;
-
-	string filename = "ItemsDescribe.txt";
-
-	if (CheckAttribute(refItem, "modname"))
-	{
-		filename = "mods\"+refItem.modname+"\ItemsDescribe.txt";
-	}
-
-	int idLngFile = -1;
-
-	if (CheckAttribute(files, filename))
-	{
-		idLngFile = sti(files.(filename));
-	}
-	else
-	{
-		idLngFile = LanguageOpenFile(filename);
-		files.(filename) = idLngFile;
-	}
-	return LanguageConvertString(idLngFile, refItem.name);
-}
-
-string GetItemDescrBatch(ref ref_Id_Idx, ref files)
-{
-	ref refItem = FindItem_VT(&ref_Id_Idx);
-
-	if (!CheckAttribute(refItem, "name"))
-	{
-		return refItem.id;
-	}
-
-	string filename = "ItemsDescribe.txt";
-
-	if (CheckAttribute(refItem, "modname"))
-	{
-		filename = "mods\"+refItem.modname+"\ItemsDescribe.txt";
-	}
-
-
-	int    idLngFile = -1;
-
-	if (CheckAttribute(files, filename))
-	{
-		idLngFile = sti(files.(filename));
-	}
-	else
-	{
-		idLngFile = LanguageOpenFile(filename);
-		files.(filename) = idLngFile;
-	}
-	return LanguageConvertString(idLngFile, refItem.describe);
-}
-
-void CloseLanguageFilesBatch(ref files)
-{
-	int filesNum = GetAttributesNum(files);
-	for (int i = 0; i < filesNum; i++) 
-	{
-		aref file = GetAttributeN(files, i);
-		int idLngFile = sti(GetAttributeValue(file));
-		LanguageCloseFile(idLngFile);
-	}
-	DeleteAttribute(files, "");
-}
-
 // Усредняем урон от всех типов ударов для какого-то общего числа в интерфейсе
-void WeaponSetVisualDamages(ref weapon, int min, int max)
+void WeaponSetVisualDamages(ref weapon, ref min, ref max)
 {
 	aref damages;
 	makearef(damages, weapon.attack);

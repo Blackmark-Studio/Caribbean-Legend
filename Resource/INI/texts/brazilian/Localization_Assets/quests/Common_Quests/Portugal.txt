@@ -1,0 +1,16 @@
+Portugal_1 {Bartolomeo}
+Portugal_2 {Português}
+Portugal_3 {Piter}
+Portugal_4 {van Stahl}
+Portugal_5 {Leo}
+Portugal_6 {Cord}
+Portugal_7 {Dois dias depois@<NewStr()>o navio inimigo não foi avistado}
+Portugal_8 {Frants}
+Portugal_9 {Garke}
+Portugal_10 {Albatross}
+Portugal_11 {Bart, o Português, deixou seu navio!}
+Portugal_12 {Ernando}
+Portugal_13 {Vaskez}
+Portugal_14 {Uma hora se passou...@<NewStr()>O português foi levado para dentro da casa}
+Portugal_15 {Duas horas se passaram...}
+Portugal_16 {Você descobriu os tesouros de Bart, o Português!}

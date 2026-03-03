@@ -1,0 +1,67 @@
+Node0_title {Im Hafen}
+Node0_a {Du betrittst einen feindseligen Hafen in der Hoffnung, nicht enttarnt zu werden.}
+Node0_b_a {Im Hafen herrscht geschäftiges Treiben — kürzlich ist ein großes $rand(französisches|spanisches|niederländisches|englisches) Handelsschiff eingelaufen. Alle verfügbaren Arbeiter sind mit dem Entladen beschäftigt.}
+Node0_b_b {Der Hafen ist menschenleer, und am Ufer sind Spuren eines kürzlichen Gefechts zu sehen. $rand(Brandspuren und Kanonenkugeln zeichnen die Pflastersteine.|Einige Häuser wurden durch Bomben beschädigt, trauernde Frauen stehen auf der Straße.)}
+Node0_b_c {Im Hafen wimmelt es von Soldaten. Ein großes Kriegsschiff liegt vor Anker — eine $rand(Galeone|Fregatte|Korvette). Es ist $rand(deutlich beschädigt und wird repariert, mit Spuren eines kürzlichen Gefechts am Rumpf|voll einsatzbereit und bereitet sich auf das Auslaufen vor).}
+Node0_c_a {Ein Hafenverwalter kommt widerwillig auf dich zu und wirkt deutlich müde und schläfrig.}
+Node0_c_b {Der Hafenmeister selbst tritt an dich heran und beabsichtigt offensichtlich, dir besondere Aufmerksamkeit zu schenken. In seinen Augen liegt $rand(Verärgerung — er verrichtet offenbar Arbeit unter seinem Rang und weiß, dass es anderen auffällt|Gier — er wittert in dir leichtes Geld und freut sich bereits auf einen ausgelassenen Abend).}
+Node0_c_c {Die Hafenwache kommt auf dich zu, die Waffen erhoben und sichtlich angespannt.}
+Node0_d {Sie sammeln Ihre Kräfte und bereiten sich darauf vor, wahre Wunder der Redekunst zu vollbringen. Oder sich einfach den Weg in die Stadt zu bahnen.}
+Node0_b_a_reaction {Sich als Begleitschiff ausgeben}
+Node0_b_a_reaction_log {Ihr gebt euch erfolgreich als Handelsschiff innerhalb eines Konvois aus. Ihr beteiligt euch am Entladen und erregt nun deutlich weniger Aufmerksamkeit.}
+Node0_b_a_reaction_factor {Begleitschiff}
+Node0_b_b_reaction {Sich als Lazarettschiff ausgeben}
+Node0_b_b_reaction_log {Ihr gebt euch erfolgreich als Lazarettschiff aus, das zur Versorgung der Verwundeten entsandt wurde. Ein Arzt ist in der Karibik eine Seltenheit, und ein paar wohlgewählte Worte genügen, um Glauben zu finden.}
+Node0_b_b_reaction_factor {Lazarettschiff}
+Node0_b_c_reaction {Sich als geheimer Kurier ausgeben}
+Node0_b_c_reaction_log {Sie haben lange geübt, ein geheimnisvolles Auftreten anzunehmen, und überzeugen die Soldaten davon, dass Sie ein Geheimagent sind.}
+Node0_b_c_reaction_factor {Kurierschiff}
+Node0_c_a_reaction {Vorschlagen, Formalitäten zu lassen}
+Node0_c_a_reaction_log_0 {Ihrem Mitgefühl wird geglaubt, und Sie gewinnen die Gunst des Hafenmeisters.}
+Node0_c_a_reaction_log_1 {In Ihren Worten wird Ironie erkannt. Der Hafenmeister begegnet Ihnen nun mit Misstrauen.}
+Node0_c_a_reaction_factor {Mitgefühl}
+Node0_c_b_reaction {Bereitschaft zeigen, die doppelte Abgabe zu zahlen}
+Node0_c_b_reaction_log {Sie finden schnell eine Schwachstelle im korrupten System und verbessern Ihre Chancen erheblich zu einem vertretbaren Preis. Leider ist der Hafenmeister nicht der Einzige, den man heute besänftigen muss.}
+Node0_c_b_reaction_factor {Bestechung}
+Node0_c_c_reaction {Den schwächsten Wachmann herauspicken und unter Druck setzen}
+Node0_c_c_reaction_log_0 {Sie finden unter den Wachen ein leichtes Ziel, und nach ein paar treffenden Worten steht er auf Ihrer Seite.}
+Node0_c_c_reaction_log_1 {Sie wählen eindeutig das falsche Ziel, und die Wachen reagieren nun noch aggressiver.}
+Node0_c_c_reaction_factor {Schwaches Glied}
+Node0_a_action {Versuchen durchzukommen}
+Node0_b_action {Sich mit Gewalt durchschlagen}
+Node0_c_action {Handelslizenz vorzeigen}
+Node0_success {$rand(Sie geben sich erfolgreich als neutrales Schiff aus und werden ohne Probleme in die Stadt gelassen. Es ist ratsam, Ihre Angelegenheiten schnell zu erledigen, da erneut Misstrauen aufkommen könnte.|Sie waren nahe daran, sich zu verraten, doch offenbar ging alles gut. Ob es Können oder göttliches Eingreifen war, wird die Zeit zeigen.)}
+Node0_success_action {Ausgezeichnet!}
+Node1_a {Es gelingt Ihnen nicht, als Freund durchzugehen, und die Situation spitzt sich zu. Dennoch sind Sie sicher, dass sich noch alles richten lässt – man muss nur den richtigen Ansatz finden.}
+Node1_b_a {Etwas hat die örtlichen Wachen zu einer verstärkten Kontrolle veranlasst. Das Schiff wird umzingelt.}
+Node1_b_b {Einheimische Seeleute scheinen Ihr Schiff als eines aus _$playerNationAbl erkannt zu haben. Sie haben offenbar vor, Sie zu entlarven.}
+Node1_b_c {Während die Hafenverwaltung über Ihren Antrag entschied, lief ausgerechnet ein Patrouillenschiff in den Hafen ein. Als sie die Verzögerung bemerkten, verlangten sie, Ihr Schiff zu durchsuchen.}
+Node1_c_a {Sie bemerken, dass die Flagge über der Residenz auf Halbmast hängt – die Stadt trauert.}
+Node1_c_b {Unter den Schaulustigen entdecken Sie einen bekannten Kapitän, den Sie einst zur See begleitet haben.}
+Node1_c_c {Sie hören ein ungewöhnliches Glockengeläut – in der örtlichen Kirche beginnt ein festlicher Gottesdienst.}
+Node1_d {Eine Entscheidung muss sofort getroffen werden.}
+Node1_b_a_reaction {Soldaten von wichtiger Fracht überzeugen}
+Node1_b_a_reaction_log {Sie versuchen, die Soldaten davon zu überzeugen, dass sich wertvolle Fracht an Bord befindet. Angesichts buchhalterischer Berechnungen und komplizierter Begriffe geraten sie ins Wanken, und die Drohung mit Soldkürzungen zügelt die Zögernden.}
+Node1_b_a_reaction_factor {Wichtige Fracht}
+Node1_b_b_reaction {Seeleute überzeugen: auf See keine Nationen}
+Node1_b_b_reaction_log {Sie versuchen, die Seeleute davon zu überzeugen, dass Sie alle im selben Boot sitzen. Als sie Ihre kräftigen Hände, die Arbeitschwielen und das vom Seewind gezeichnete Gesicht sehen, werden sie milder und nehmen Sie als einen der Ihren an.}
+Node1_b_b_reaction_factor {Solidarische Seeleute}
+Node1_b_c_reaction {Sich auf das Seerecht berufen}
+Node1_b_c_reaction_log {Ihr versucht, die Soldaten des Patrouillenschiffs vom Entern abzuhalten, indem ihr euch auf Seegesetze beruft, die zufällige und unbegründete Kontrollen von Schiffen im Hafen ausdrücklich verbieten. Ihr kramt alles hervor, was ihr über das Seerecht wisst, würzt es mit Erfindungen, Seemannsgarn und bürokratischem Kauderwelsch, um das Patrouillenschiff in diesen Strudel zu ziehen. Flüche waren noch nie so bürokratisch.}
+Node1_b_c_reaction_factor {Rechtsklauberei}
+Node1_c_a_reaction {Versuchen, den Grund der Trauer zu erraten}
+Node1_c_a_reaction_log {Ihr versucht, den Grund der Trauer zu erraten, und erklärt, dass ihr deshalb gekommen seid. Ihr seid euch nicht sicher, ob euer Plan aufgegangen ist, doch der Versuch ist eindeutig nicht unbemerkt geblieben.}
+Node1_c_a_reaction_factor {Zufällige Trauer}
+Node1_c_b_reaction {Unterstützung eines bekannten Kapitäns suchen}
+Node1_c_b_reaction_log_0 {Sie rufen den Kapitän herbei und bitten ihn, bei den Wachen für Sie zu bürgen. Er erinnert sich an Ihre gemeinsamen Abenteuer und legt gern ein gutes Wort für Sie ein.}
+Node1_c_b_reaction_log_1 {Sie rufen den Kapitän herbei und bitten ihn, bei den Wachen für Sie zu bürgen. Im letzten Moment stocken Sie und erinnern sich daran, woher Sie ihn kennen – gemeinsam haben Sie ein paar dreiste Überfälle auf friedliche Händler verübt. Er setzt sich zwar für Sie ein, doch selbst ist er in der Kolonie nicht wohlgelitten.}
+Node1_c_b_reaction_factor {Bekannter Kapitän}
+Node1_c_c_reaction {Behaupten, kirchliche Reliquien zu transportieren}
+Node1_c_c_reaction_log {Ihr versucht, die Wachen davon zu überzeugen, dass ihr wertvolle kirchliche Gerätschaften für ein Fest an Bord habt — $rand(einen silbernen Kelch|eine Monstranz zur Aussetzung des Allerheiligsten|einen Reliquienschrein mit Gebeinen|ein Altarkreuz|eine Bischofsmitra|brokatene Messgewänder und Stola|Altarkerzenständer|ein kleines Altarglöckchen). Zu eurer Überraschung erwartete die Kolonie tatsächlich ein Schiff mit kirchlichen Reliquien, das inzwischen deutlich überfällig ist. Man glaubt euch.}
+Node1_c_c_reaction_factor {Kirchengerät}
+Node1_a_action {Versuchen, die Situation zu entschärfen}
+Node1_b_action {Anker lichten und fliehen}
+Node1_success {$rand(Sie schlüpfen in den Hafen und spüren den langen Blick der Wachen auf sich. Noch eine Sekunde, und alles wäre aufgeflogen — doch das Schicksal entschied anders.|Mit schwerem Gefühl laufen Sie in den Hafen ein – Ihr Schiff steht eindeutig weiterhin unter Verdacht. Es ging im allerletzten Moment gut aus, aber besser, Sie bleiben nicht zu lange in der Stadt.)}
+Node1_success_action {Dieses Mal sind wir gerettet}
+Node1_fail {$rand(Die Wachen schlagen Alarm – Sie sind aufgeflogen. Soldaten rennen bereits über den Kai, und die Nachricht erreicht die Festung jeden Moment.|Die Verzögerung zieht sich hin, und den Wachen reißt die Geduld. Der ganze Hafen starrt vor Klingen, und zur Festung geht das Signal, die Geschütze vorzubereiten.)}
+Node1_fail_action {Lauft!}

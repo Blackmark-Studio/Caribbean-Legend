@@ -101,7 +101,6 @@ void Process_Controls(string ControlName)
 			case "Tele": 
 				StartQuickTeleport();
 			break;
-			case "TeleBack": Teleport(-1); break;
 			case "Action":
 				//DumpAttributes(loadedLocation/*loadedLocation.reload.reload1.x*/);
 				//trace("Y: " + loadedLocation.reload.reload1.y);
@@ -111,15 +110,15 @@ void Process_Controls(string ControlName)
 	}
 
     // boal 27.11.03 time --> // belamour +/- на основную клавиатуру
-  	if (ControlName=="TimeScaleFaster" || ControlName == "TimeScaleSlower" ||
+  	if (ControlName=="TimeScaleFaster" || ControlName == "TimeScaleSlower" ||
 		ControlName=="TimeScaleFasterBA" || ControlName=="TimeScaleSlowerBA" )
-  	{
+  	{
 		//запрет ускорения под водой.
         if (CheckAttribute(loadedLocation, "type") && loadedLocation.type == "underwater") return; 
 		if (CheckAttribute(pchar, "questTemp.NoFast")) return; //запрет ускорения
 		DeleteAttribute(pchar, "pause");
 		if (ControlName == "TimeScaleFaster" || ControlName=="TimeScaleFasterBA")
-     	{
+     	{
 			if (TimeScaleCounter >= 12)
 			{
 			    TimeScaleCounter += 4;
@@ -136,8 +135,8 @@ void Process_Controls(string ControlName)
 				}
 			}
 		}
-     	else
-     	{
+     	else
+     	{
             if (TimeScaleCounter >= 16)
 			{
 			    TimeScaleCounter -= 4;
@@ -182,22 +181,22 @@ void Process_Controls(string ControlName)
             }
         }
 		
-     	float newTimeScale = 1 + (TimeScaleCounter)*0.25; // GetSeaTimeScale()
-     	if (newTimeScale < 0) //don't wanna crash the game
-     	{
-        		TimeScaleCounter = -4;
-        		newTimeScale = 0;
-     	}
-     	if (TimeScaleCounter == 0) //back to normal
-     	{
-        		SetTimeScale(1.0);
+     	float newTimeScale = 1 + (TimeScaleCounter)*0.25; // GetSeaTimeScale()
+     	if (newTimeScale < 0) //don't wanna crash the game
+     	{
+        		TimeScaleCounter = -4;
+        		newTimeScale = 0;
+     	}
+     	if (TimeScaleCounter == 0) //back to normal
+     	{
+        		SetTimeScale(1.0);
 				TimeScale_Info("");
-     	}
-     	else
-     	{
-        	SetTimeScale(newTimeScale);
+     	}
+     	else
+     	{
+        	SetTimeScale(newTimeScale);
 			TimeScale_Info("x" + newTimeScale);
-     	}
+     	}
 
         // TUTOR-ВСТАВКА
         if(TW_IsActive())
@@ -974,7 +973,7 @@ void HKE_Button(string sHKB) // мушкет и клинки
 			{
 				SetMainCharacterToMushketer(sGun, true);
 				GunCharging(pchar, MUSKET_ITEM_TYPE, sGun);
-				log_info("Gun selected: "+GetConvertStr("itmname_"+sGun, "ItemsDescribe.txt")+"");
+				log_info("Gun selected: "+GetItemName(sGun)+"");
 				/* DoQuestCheckDelay("pchar_fast_mushket_fade", 0.0);
 				DoQuestCheckDelay("pchar_fast_mushket", 3.5); */
 			}
@@ -1000,7 +999,7 @@ void HKE_Button(string sHKB) // мушкет и клинки
 					PChar.IsMushketer.MushketID = sGun;
 					EquipCharacterByItem(PChar, sGun); 
 					SendMessage(&ILogAndActions,"l",LI_CLEAR_STRINGS);
-					Log_info(XI_ConvertString("GunSelect")+GetConvertStr(aGun.name, "ItemsDescribe.txt"));
+					Log_info(XI_ConvertString("GunSelect")+GetItemName(aGun));
 					GunCharging(pchar, MUSKET_ITEM_TYPE, sGun);
 				}
 			}
@@ -1046,7 +1045,7 @@ void HKE_Button(string sHKB) // мушкет и клинки
 				EquipCharacterbyItem(pchar, sBlade); 
 				PlaySound("PEOPLE FIGHT\Blade_Take_In_0"+(rand(2)+1) +".wav"); 
 				SendMessage(&ILogAndActions,"l",LI_CLEAR_STRINGS);
-				Log_info(XI_ConvertString("BladeSelect")+GetConvertStr(BladeInfo, "ItemsDescribe.txt"));
+				Log_info(XI_ConvertString("BladeSelect")+GetItemName(sBlade));
 				GetWeaponQty();
 			}
 			else

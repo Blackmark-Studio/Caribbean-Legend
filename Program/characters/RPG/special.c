@@ -6,6 +6,12 @@ int GetSpecialBase(ref chr, string specialName)
 }
 
 // Получить уровень характеристики со всеми эффектами и штрафом от навигации
+int GetPirates(ref chr, string piratesName)
+{
+	return GetSpecialAfterPenalty(chr, piratesName);
+}
+
+// Получить уровень характеристики со всеми эффектами и штрафом от навигации
 int GetSpecialAfterPenalty(ref chr, string specialName)
 {
 	int specialValue = GetSpecialWithEffects(chr, specialName);

@@ -1,0 +1,17 @@
+food_1 {Sıçanlar}
+food_2 {~ bozulmuş ~}
+food_3 {~ hasarlı ~}
+food_4 {~ yok edildi ~}
+food_5 {~ adet ~}
+food_6 {Gemide @<rChar.Ship.Name> hastalıklardan @<FindRussianSailorString(cn, "No")> öldü}
+food_7 {@<rChar.Ship.Name> gemisinde ilaç azaldı}
+food_8 {Gemide @<rChar.Ship.Name> hastalıklardan @<FindRussianSlavesString(cn, "No")> öldü}
+food_9 {@<rChar.Ship.Name> gemisinde herkes rom istiyor.}
+food_10 {Gemide @<rChar.Ship.Name> yiyecek @<FindRussianDaysString(cn)> kaldı}
+food_11 {Acilen stokları yenilemeliyiz!}
+food_12 {Köleler isyan etti!}
+food_13 {@<rChar.Ship.Name> gemisinde denizciler aç. Mürettebatın morali düşüyor!}
+food_14 {Denizciler açlıktan ölüyor}
+food_15 {Köleler açlıktan ölüyor}
+food_16 {@<rChar.Ship.Name> gemisinde isyan çıktı!!!! ~}
+food_17 {Gemi filodan ayrılıyor}

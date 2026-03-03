@@ -36,7 +36,7 @@ void SetShipPerks(ref chr, string sIndex)
 	if (traitName != "")      SetNodeUsing("SHIP_PERK_BACKGROUND2" + sIndex, true);
 }
 
-void SetShipPerksTooltip(ref chr, string sCurrentNode, string sHeader, string sText1, string sText2, string sText3, string sPicture, string sGroup, string sGroupPicture)
+void SetShipPerksTooltip(ref chr, ref sCurrentNode, ref sHeader, ref sText1, ref sText2, ref sText3, ref sPicture, ref sGroup, ref sGroupPicture)
 {
 	ref realShip;
 	if (HasSubStr(sCurrentNode, "SHIP_PERK1"))
@@ -48,7 +48,7 @@ void SetShipPerksTooltip(ref chr, string sCurrentNode, string sHeader, string sT
 		sText1 = DLG_Convert(sPerkName1 + "_desc", "ShipsPerksDescribe.txt", &NullObject);
 		sText3 = DLG_Convert(sPerkName1 + "_desc2", "ShipsPerksDescribe.txt", &NullObject);
 		realShip = GetRealShip(GetCharacterShipType(chr));
-		if (CheckAttribute(realShip, "tuning.SpecialityUpgrade")) sText3 += newStr()  + " " + newStr() + DLG_Convert("SpecialityUpgrade", "ShipsPerksDescribe.txt", &NullObject);
+		if (CheckAttribute(realShip, "tuning.SpecialityUpgrade")) sText3 += newStr()  + " " + newStr() + DLG_Convert("SpecialityUpgrade", "ShipsPerksDescribe.txt", &NullObject);
 	}
 	else if (HasSubStr(sCurrentNode, "SHIP_PERK2"))
 	{

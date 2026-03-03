@@ -439,7 +439,6 @@ void ProcessDialogEvent()
 				dialog.text = "Tylko pomyśl o tym! Taka bezczelność! Przyjść tutaj pod przykrywką kupca! Twoje zdjęcia są umieszczone w każdym baraku, ty bękart! Tym razem ci się nie uda! Chwytajcie go!";
 				link.l1 = RandPhraseSimple("Arrgh!..","Cóż, sam o to prosiłeś...");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (findsubstr(pchar.location.from_sea, "_town" , 0) == -1) //если причалил не в городе
@@ -447,7 +446,6 @@ void ProcessDialogEvent()
 				dialog.text = "Przyszedłeś tutaj handlować? Mogę zapytać jak? Gdzie jest twój statek? Wiesz, to wszystko wygląda bardzo podejrzanie, i jestem zmuszony zatrzymać cię, aż wszystko wyjaśnimy. Oddaj broń i chodź za mną!";
 				link.l1 = RandPhraseSimple("Spadaj!","Gdy dwa niedziele przychodzą w jeden tydzień...");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (iTemp == -1)
@@ -455,7 +453,6 @@ void ProcessDialogEvent()
 				dialog.text = "Twoja licencja musi zostać unieważniona, ponieważ wygasła i z tego powodu nie jest ważna. Oddaj swoją broń i podążaj za mną w celu dalszego śledztwa!";
 				link.l1 = RandPhraseSimple("Spieprzaj!","Gdy dwa niedziele przychodzą w jeden tydzień...");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (iTemp == 0)

@@ -240,14 +240,7 @@ void LAi_type_carrier_GoTo(aref chr)
 string LAi_type_carrier_SetPath(aref chr)
 {
 	//определим маршрут
-	string locReload[7];
-	locReload[0] = "reload4";
-	locReload[1] = "reload5";
-	locReload[2] = "reload6";
-	locReload[3] = "reload7";
-	locReload[4] = "reload8";
-	locReload[5] = "reload10";
-	locReload[6] = "reload9";
+	string locReload[7] = {"reload4", "reload5", "reload6", "reload7", "reload8", "reload10", "reload9"};
 	ref loc = &locations[reload_location_index];
 	aref aLocator;
 	makearef(aLocator, loc.locators.reload);

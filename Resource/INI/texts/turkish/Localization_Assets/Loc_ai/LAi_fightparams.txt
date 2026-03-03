@@ -1,0 +1,2 @@
+LAi_fightparams_1 {Atıştan kaçınma}
+LAi_fightparams_2 {Paralı Asker Şapkası yok edildi.}

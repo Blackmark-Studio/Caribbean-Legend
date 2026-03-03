@@ -390,8 +390,7 @@ void GenerateGenerableItems()
 string GetGeneratedItem(string _itemId)
 {
 	int itemsQty = 0;
-	String generatedItems[2];
-	SetArraySize(&generatedItems, TOTAL_ITEMS);
+	string generatedItems[TOTAL_ITEMS];
 	if(!IsGenerableItem(_itemId)) // Генерящийся ли предмет
 	{
 		return _itemID;
@@ -418,9 +417,8 @@ string GetGeneratedItem(string _itemId)
 string GetBestGeneratedItem(string _itemId)
 {
 	int itemsQty = 0;
-	String generatedItems[2];
-	SetArraySize(&generatedItems, TOTAL_ITEMS);
-	String tmpItem;
+	string generatedItems[TOTAL_ITEMS];
+	string tmpItem;
 	bool bOk;
 	int itemIndex1, itemIndex2; 
 	ref rItem1, rItem2;
@@ -498,8 +496,7 @@ string GetBestGeneratedItem(string _itemId)
 string GetGeneratedItemNum(string _itemId, int Num)
 {
 	int itemsQty = 0;
-	String generatedItems[2];
-	SetArraySize(&generatedItems, TOTAL_ITEMS);
+	string generatedItems[TOTAL_ITEMS];
 	if(!IsGenerableItem(_itemId)) // Генерящийся ли предмет
 	{
 		return _itemID;
@@ -550,18 +547,17 @@ void SetItemPrice(String _itemId)
 */
 
 // Создадим предмет, вернет АйДи нового предмета
-String GenerateItem(String _itemId)
+string GenerateItem(string _itemId)
 {
 	int i, defItemIndex, priceMod;
 	int itemsQty = 0;
 	int itemIndex = FindFirstEmptyItem();
 	float MaxAttack = 0.0;
 	ref item, realItem;
-	String generatedItems[2];
-	SetArraySize(&generatedItems, TOTAL_ITEMS);
+	string generatedItems[TOTAL_ITEMS];
 	if(!IsGenerableItem(_itemId)) // Генерящийся ли предмет
 	{
-		return _itemID;
+		return _itemId;
 	}
 	
 	if(itemIndex == -1) // Нету свободных слотов - вернём случайный существующий
@@ -591,96 +587,29 @@ String GenerateItem(String _itemId)
 	
 	switch (realItem.FencingType) 
 	{
-		case "FencingL" :
-			realItem.Weight 	= 2.0 + fRandSmall(1.0); 
-			MaxAttack			= FencingL_MaxAttack;
-		break;
-		case "FencingS" :
-			realItem.Weight 	= 2.4 + fRandSmall(1.2);
-			MaxAttack			= FencingS_MaxAttack;			
-		break;
-		case "FencingH" :
-			realItem.Weight 	= 3.0 + fRandSmall(1.5); 
-			MaxAttack			= FencingH_MaxAttack;
-		break;
+		case "FencingL" : realItem.Weight = 2.0 + fRandSmall(1.0); break;
+		case "FencingS" : realItem.Weight = 2.4 + fRandSmall(1.2); break;
+		case "FencingH" : realItem.Weight = 3.0 + fRandSmall(1.5); break;
 	}
 	
-	realItem.Balance = fRandSmall(2.0);
-	// belamour legendary edition -->
-	switch(realItem.FencingType)
-	{
-		case "FencingL" :
-			if(sti(realItem.quality) == B_GOOD)
-				realItem.Balance = 0.0 + fRandSmall(1.0);
-			if(sti(realItem.quality) == B_EXCELLENT)
-				realItem.Balance = 0.0 + fRandSmall(0.5);
-			if(realItem.target == TGT_QUEST || realItem.target == TGT_PERSIAN)			
-				realItem.Balance = 0.0 + fRandSmall(0.4); 			
-		break;
-		
-		case "FencingS" :
-			if(sti(realItem.quality) == B_GOOD)
-				realItem.Balance = 2.0 - fRandSmall(1.0);
-			if(sti(realItem.quality) == B_EXCELLENT)
-				realItem.Balance = 2.0 - fRandSmall(0.5); 		
-			if(realItem.target == TGT_QUEST || realItem.target == TGT_PERSIAN)
-				realItem.Balance = 2.0 - fRandSmall(0.4); 	
-		break;
-		
-		case "FencingH" : 
-			if(realItem.id == "blade_31")
-			{
-				realItem.Balance = 2.0;
-				break;
-			}
-			if(sti(realItem.quality) == B_GOOD)
-				realItem.Balance = 2.0 - fRandSmall(1.0);
-			if(sti(realItem.quality) == B_EXCELLENT)
-				realItem.Balance = 2.0 - fRandSmall(0.5);
-			if(realItem.target == TGT_QUEST || realItem.target == TGT_PERSIAN)
-				realItem.Balance = 2.0 - fRandSmall(0.4);
-		break;
-	}
-	// <-- legendary edition
-	switch (sti(realItem.quality))
-	{
-		case B_POOR :
-			realItem.Attack 	= MaxAttack * (42.5 + fRandSmall(15.0))/100.0;			
-		break;
-		case B_ORDINARY :
-			realItem.Attack 	= MaxAttack * (55.0 + fRandSmall(15.0))/100.0;
-		break;
-		case B_GOOD :
-			realItem.Attack 	= MaxAttack * (70.0 + fRandSmall(15.0))/100.0;
-			if(realItem.target == TGT_QUEST) // для квестового оружия атаку считаем по максимуму
-			{
-				realItem.Attack 	= MaxAttack * 0.85;	
-			}
-		break;
-		case B_EXCELLENT :
-			realItem.Attack 	= MaxAttack * (85.0 + fRandSmall(15.0))/100.0;
-			if(realItem.target == TGT_QUEST) // для квестового оружия атаку считаем по максимуму
-			{
-				realItem.Attack 	= MaxAttack;	
-			}
-		break;
-	}
+	realItem.Balance = fRandSmall(2.0); // на всякий не пустое, хотя баланс уже не влияет на урон
+	if (CheckAttribute(realItem, "quality")) realItem.Attack 	= GetGeneratableDamageFromOriginalBlade(item);
 	
-	switch (realItem.FencingType) 
+	switch (realItem.FencingType)
 	{
-		case "FencingL" :
+		case "FencingL":
 			if(sti(realItem.Generation.price)) 
 			{
 				realItem.price  = makeint(35.0 * (1.0/stf(realItem.curve) + stf(realItem.lenght)) * (stf(realItem.Attack) * 2.0 - 30.0));
 			}	
 		break;
-		case "FencingS" :
+		case "FencingS":
 			if(sti(realItem.Generation.price)) 
 			{
 				realItem.price  = makeint(25.0 * (stf(realItem.curve) + stf(realItem.lenght)) * (stf(realItem.Attack) * 2.0 - 40.0));
 			}	
 		break;
-		case "FencingH" :
+		case "FencingH":
 			if(sti(realItem.Generation.price)) 
 			{
 				realItem.price  = makeint(20.0 * ((stf(realItem.curve) + 1.0) * 1.0/stf(realItem.lenght)) * (stf(realItem.Attack) * 2.0 - 50.0));
@@ -740,7 +669,7 @@ bool RefreshGeneratedItem(String _itemID)
 	
 	if(itemIndex == -1) return false;
 
-	for(i = 0; i < nLocationsNum; i++)
+	for(i = 0; i < MAX_LOCATIONS; i++)
 	{
 		reference = &Locations[i];
 		
@@ -811,8 +740,7 @@ string SelectGeneratedItem(string TargetGroup, string Quality, string BladeType)
 {
 	ref item;
 	int itemsQty = 0;
-	string generatedItems[2];
-	SetArraySize(&generatedItems, TOTAL_ITEMS);
+	string generatedItems[TOTAL_ITEMS];
 	bool bOk1, bOk2, bOk3;
 	
 	if(TargetGroup == "" && Quality == "" && BladeType == "") return "";
@@ -1682,4 +1610,36 @@ float GetWeightMtp(int weaponType, float weight)
 	}
 
 	return 1.0; // для мушкетов
+}
+
+// Добавить предмет в сундук на локации
+void PutItemToLocationBox(ref loc_id_or_Idx, string itemId, int qty, int boxIndex = 1)
+{
+	ref location = FindLocation_VT(loc_id_or_Idx);
+	if (location == nullptr)
+	{
+		trace("Error: Can't place item to the ship: bad location");
+		return;
+	}
+
+	// костыль для private-сундуков
+	string boxAttributeName = "box";
+	if (location.id == SHIP_LOC_HOLD || location.id == SHIP_LOC_CAMPUS || location.id == SHIP_LOC_GUNDECK) boxAttributeName = "private";
+	boxAttributeName += boxIndex;
+
+	if (!CheckAttribute(location, boxAttributeName))
+	{
+		trace("Error: Can't place item to the ship: no box with boxId: " + boxAttributeName);
+		return;
+	}
+
+	aref box = GetAref(location, boxAttributeName);
+	PutItemInBox(&box, itemId, qty);
+}
+
+// Увеличить количество предметов в сундуке
+void PutItemInBox(ref box, string itemId, int qty)
+{
+	if (itemId == "money") AddToAttributeInt(box, itemId, qty);
+	else AddToAttributeInt(box, "items." + itemId, qty);
 }

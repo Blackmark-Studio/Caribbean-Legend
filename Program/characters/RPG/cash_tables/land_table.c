@@ -24,7 +24,7 @@ void CT_UpdateLandTable(ref chr)
 	CT_SetAllHeadshotDamage(&landTable, &equipTable, chr, hasMusket);
 	CT_SetDefence(&landTable, &equipTable, chr);
 	CT_SetCritDefence(&landTable, &equipTable, chr);
-	CT_SetAllAttackSpeed(&landTable, &equipTable, chr, blade);
+	CT_SetAllAttackSpeed(&landTable, &equipTable, chr);
 	CT_SetAllMoveSpeed(&landTable, &equipTable, chr);
 	CT_SetAllReloadSpeed(&landTable, &equipTable, chr);
 	CT_SetPoisonAttack(&landTable, &equipTable, chr);
@@ -120,9 +120,9 @@ void CT_SetAllReloadSpeed(ref landTable, ref equipTable, ref chr)
 	SetAttribute(landTable, modifier, mtp);
 }
 
-void CT_SetAllAttackSpeed(ref landTable, ref equipTable, ref chr, ref blade)
+void CT_SetAllAttackSpeed(ref landTable, ref equipTable, ref chr)
 {
-	float baseSpeed =  GetAttributeFloatOrDefault(chr, "baseAttackSpeed", 1.0);
+	float baseSpeed = GetAttributeFloatOrDefault(chr, "baseAttackSpeed", 1.0);
 
 	float mtp = 1.0 + (GetAttributeFloat(equipTable, BLADE_ITEM_TYPE + "_" + M_ACTION_SPEED));
 	mtp += GetAttributeFloat(equipTable, BLADE_ITEM_TYPE + "_" + M_ACTION_SPEED);
@@ -236,7 +236,7 @@ void CT_SetMusketDamageCoeff(ref table, ref equipTable, ref chr)
 	if (shotBonus > 0)  SetAttribute(table, MUSKET_ITEM_TYPE + "_" + SHOT_STRIKE  + "_" + M_DAMAGE, shotBonus);
 }
 
-void CT_AddEquipCoeffBonuses(ref equipTable, string weaponType, float fastBonus, float forceBonus, float roundBonus, float breakBonus, float shotBonus)
+void CT_AddEquipCoeffBonuses(ref equipTable, string weaponType, ref fastBonus, ref forceBonus, ref roundBonus, ref breakBonus, ref shotBonus)
 {
 	if (weaponType != "") weaponType += "_";
 	fastBonus  += GetAttributeFloat(equipTable, weaponType + FAST_STRIKE  + "_" + M_DAMAGE);

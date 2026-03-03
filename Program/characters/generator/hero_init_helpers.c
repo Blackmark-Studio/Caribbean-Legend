@@ -2,7 +2,6 @@
 ref InitHugo(string name, string lastname)
 {
 	ref sld = GetCharacter(NPC_GenerateCharacter("Avendel", "Hugh", "man", "man", 10, HOLLAND, -1, true, "quest"));
-	SetHeroAutolevel(sld);
 	FantomMakeCoolFighter(sld, 20, 50, 50, "blade_04", "pistol1", "bullet", 50);
 	sld.name = name;
 	sld.lastname = lastname;
@@ -26,6 +25,7 @@ ref InitHugo(string name, string lastname)
 	EquipCharacterbyItem(sld, "pistol1");
 	TakeNItems(sld, "bullet", 10);
 	AddItems(sld, "gunpowder", 10);
+	ForceHeroAutolevel(sld);
 	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
 	LAi_group_MoveCharacter(sld, "HOLLAND_CITIZENS");
 	LAi_SetImmortal(sld, true);

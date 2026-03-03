@@ -24,7 +24,7 @@ void CheckForUninstalledMods() {
 
   // идём по всем миграциям в сейве
   for (int i = 0; i < migrationsLength; i++) {
-		migration = GetAttributeN(migrations, i)
+		migration = GetAttributeN(migrations, i);
     string migName = GetAttributeName(migration);
     string exactMigName = GetAttributeValue(migration);
     if (!IsMigrationFromMod(migName)) continue;               // это миграция не из мода, пропускаем
@@ -160,9 +160,8 @@ void ApplyModResources()
 void ApplyMigrationsForFolder(string migrationDir, string modName) {
 	trace("Applying migrations ("+migrationDir + "/" + modName+")...");
 	// построение списка миграций
-	int migrationsNum = 0;
-	string migrationsList[2];
-	
+	int i, migrationsNum = 0;
+
     object fileFinder;
 	if (modName != "")
 	{
@@ -176,12 +175,9 @@ void ApplyMigrationsForFolder(string migrationDir, string modName) {
 	aref fileList;
 	makearef(fileList, fileFinder.filelist);
 	int filesNum = GetAttributesNum(fileList);
-	
-	if (filesNum > 1) {
-		SetArraySize(&migrationsList, filesNum);
-	}
-	
-	for (int i = 0; i < filesNum; i++) {
+    string migrationsList[filesNum];
+
+	for (i = 0; i < filesNum; i++) {
 		aref file = GetAttributeN(fileList, i);
 		string fileName = GetAttributeValue(file);
 		//fileName = strcut(&fileName, 0, strlen(&fileName) - 3) + ".c";
@@ -327,7 +323,7 @@ string GetModeNameByMigName(string currentMigName, int iteration){
   string tempName1 = strcut(currentMigName, 0, strlen(currentMigName) - 2);
 
   // ррррекурррррсивное прогррррамиррррование
-  return GetModeNameByMigName(tempName1, iteration + 1) // следующая итерация
+  return GetModeNameByMigName(tempName1, iteration + 1); // следующая итерация
 }
 
 // есть ли папка с модом?

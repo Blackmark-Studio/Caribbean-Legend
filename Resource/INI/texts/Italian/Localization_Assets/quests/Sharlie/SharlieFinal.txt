@@ -82,4 +82,5 @@ SharlieFinal_81 {Gobart}
 SharlieFinal_82 {colonel}
 SharlieFinal_83 {Kirk}
 SharlieFinal_84 {Il mondo è cambiato e così ha fatto il tuo eroe@<NewStr()> Ma questa è un'altra storia...}
-SharlieFinal_85 { }
+SharlieFinal_85 {The letter is written.}
+SharlieFinal_86 { }

@@ -1,0 +1,12 @@
+IslaMona_1 {Rodrigo}
+IslaMona_2 {Jiménez}
+IslaMona_3 {다음 날 아침...}
+IslaMona_4 {Rodrigo Jimenez가 Isla Mona에서 또 다른 철목을 준비했습니다}
+IslaMona_5 {@<sti(pchar.questTemp.IslaMona.Factory.Bottle)>병의 럼주를 전달했습니다}
+IslaMona_6 {@<sti(pchar.questTemp.IslaMona.Factory.Bottle)>병의 와인을 전달했습니다}
+IslaMona_7 {창고에 아이언우드 @<sti(pchar.questTemp.IslaMona.Factory.Goods)>개가 추가되었습니다}
+IslaMona_8 { }
+IslaMona_9 { }
+IslaMona_10 {Francisco}
+IslaMona_11 {de Alba}
+IslaMona_12 {소리로 보아 함정이 성공했군! 이제 마을로 돌아가자!}

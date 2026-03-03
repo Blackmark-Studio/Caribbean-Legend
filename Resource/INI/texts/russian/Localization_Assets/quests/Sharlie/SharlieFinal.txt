@@ -82,4 +82,5 @@ SharlieFinal_81 {Гобарт}
 SharlieFinal_82 {полковник}
 SharlieFinal_83 {Кирк}
 SharlieFinal_84 {Мир изменился, и наш герой - вместе с ним.@<NewStr()>Но это уже совсем другая история...}
-SharlieFinal_85 { }
+SharlieFinal_85 {Письмо написано.}
+SharlieFinal_86 {Где-то в море...}

@@ -124,7 +124,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			//Квест бук
 			AddQuestRecord("Gen_ContrabandTravel", "4");
-			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetConvertStr(pchar.GenQuest.contraTravel.destination.loc, "LocLables.txt")));
+			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc)));
 
 
 			LAi_SetPlayerType(PChar);

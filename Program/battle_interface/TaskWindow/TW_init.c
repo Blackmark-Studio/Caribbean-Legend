@@ -131,7 +131,7 @@ void TW_InitSea_1_Turn()
     TW_ColorHead(arText);
 
     makearef(arText, arTask.texts.turn_text);
-    arText.font  = "interface_normalpcb";
+    arText.font  = "interface_normal";
     arText.base.pos.y = TW_DEF_FIRSTSTRING;
     arText.base.scale = TW_DEF_STRING_SCALE;
     arText.text  = StringFromKey("Tutorial_2", GKIC("Ship_TurnLeft", "Sailing3Pers"), GKIC("Ship_TurnRight", "Sailing3Pers"));
@@ -178,16 +178,16 @@ void TW_InitSea_2_TimeScale(string qName)
     arBase.t0.font  = "interface_normal_bold";
 	arBase.t0.scale = TW_DEF_HEADER_SCALE;
     arBase.t1.text  = StringFromKey("Tutorial_4", GKIC("TimeScale", "Sailing3Pers"));
-    arBase.t1.font  = "interface_normalpcb";
+    arBase.t1.font  = "interface_normal";
     arBase.t1.scale = TW_DEF_STRING_SCALE;
     arBase.t2.text  = StringFromKey("Tutorial_5", GKIC("TimeScale", "Sailing3Pers"));
-    arBase.t2.font  = "interface_normalpcb";
+    arBase.t2.font  = "interface_normal";
     arBase.t2.scale = TW_DEF_STRING_SCALE;
     arBase.t3.text  = StringFromKey("Tutorial_6", GKIC("TimeScaleFasterBA", "Sailing3Pers"));
-    arBase.t3.font  = "interface_normalpcb";
+    arBase.t3.font  = "interface_normal";
     arBase.t3.scale = TW_DEF_STRING_SCALE;
     arBase.t4.text  = StringFromKey("Tutorial_7", GKIC("TimeScaleSlowerBA", "Sailing3Pers"), GKIC("TimeScale", "Sailing3Pers"));
-    arBase.t4.font  = "interface_normalpcb";
+    arBase.t4.font  = "interface_normal";
     arBase.t4.scale = TW_DEF_STRING_SCALE;
     arTask.fixWidth = true;
 
@@ -204,7 +204,7 @@ void TW_InitSea_2_TimeScale(string qName)
     TW_ColorHead(arText);
 
     makearef(arText, arTask.texts.TimeScale_R_on);
-    arText.font  = "interface_normalpcb";
+    arText.font  = "interface_normal";
     arText.base.pos.y = TW_DEF_FIRSTSTRING;
     arText.base.scale = TW_DEF_STRING_SCALE;
     arText.text  = StringFromKey("Tutorial_4", GKIC("TimeScale", "Sailing3Pers"));
@@ -243,10 +243,10 @@ void TW_InitSea_3_Sails(string qName)
     arBase.t0.font  = "interface_normal_bold";
 	arBase.t0.scale = TW_DEF_HEADER_SCALE;
     arBase.t1.text  = StringFromKey("Tutorial_9", GKIC("Ship_SailDown", "Sailing3Pers"));//, GKIC("Ship_SailUp", "Sailing3Pers"));
-    arBase.t1.font  = "interface_normalpcb";
+    arBase.t1.font  = "interface_normal";
     arBase.t1.scale = TW_DEF_STRING_SCALE;
     arBase.t2.text  = StringFromKey("Tutorial_10", GKIC("Ship_SailDown", "Sailing3Pers"));
-    arBase.t2.font  = "interface_normalpcb";
+    arBase.t2.font  = "interface_normal";
     arBase.t2.scale = TW_DEF_STRING_SCALE;
     arTask.fixWidth = true;
 
@@ -263,7 +263,7 @@ void TW_InitSea_3_Sails(string qName)
     TW_ColorHead(arText);
 
     makearef(arText, arTask.texts.Battle_Sails);
-    arText.font  = "interface_normalpcb";
+    arText.font  = "interface_normal";
     arText.base.pos.y = TW_DEF_FIRSTSTRING;
     arText.base.scale = TW_DEF_STRING_SCALE;
     arText.text  = StringFromKey("Tutorial_9", GKIC("Ship_SailDown", "Sailing3Pers"));//, GKIC("Ship_SailUp", "Sailing3Pers"));
@@ -303,10 +303,10 @@ void TW_InitSea_Battle_1_AutoFire()
     arBase.t0.font  = "interface_normal_bold";
 	arBase.t0.scale = TW_DEF_HEADER_SCALE;
     arBase.t1.text  = StringFromKey("Tutorial_12", GKIC("Ship_Fire", "Sailing3Pers"));
-    arBase.t1.font  = "interface_normalpcb";
+    arBase.t1.font  = "interface_normal";
     arBase.t1.scale = TW_DEF_STRING_SCALE;
 	arBase.t2.text  = "0/3";
-	arBase.t2.font  = "interface_normalpcb";
+	arBase.t2.font  = "interface_normal";
     arBase.t2.scale = 2.0;
 	arBase.t2.align = "right";
 	arTask.fixWidth = true;
@@ -320,7 +320,7 @@ void TW_InitSea_Battle_1_AutoFire()
     TW_ColorHead(arText);
 	
 	makearef(arText, arTask.texts.AutoFire_do);
-    arText.font  = "interface_normalpcb";
+    arText.font  = "interface_normal";
     arText.base.pos.y = TW_DEF_FIRSTSTRING;
     arText.base.scale = TW_DEF_STRING_SCALE;
     arText.text  = StringFromKey("Tutorial_12", GKIC("Ship_Fire", "Sailing3Pers"));
@@ -328,7 +328,7 @@ void TW_InitSea_Battle_1_AutoFire()
     TW_MarkBottom("sea_battle", "AutoFire_do");
 	
 	arText = TW_SetTextCounter("sea_battle", "AutoFire_do", 3, false);
-	arText.font  = "interface_normalpcb";
+	arText.font  = "interface_normal";
 	arText.base.scale = 2.0;
     arText.base.pos.y = TW_DEF_FIRSTSTRING - TW_DEF_COUNTERVOFFSET;
     arText.align = "right";
@@ -365,13 +365,13 @@ void TW_InitSea_Battle_2_AimingFire(string qName)
     arBase.t0.font  = "interface_normal_bold";
 	arBase.t0.scale = TW_DEF_HEADER_SCALE;
     arBase.t1.text  = StringFromKey("Tutorial_14", GKIC("FireCamera_Set", "Sailing3Pers"));
-    arBase.t1.font  = "interface_normalpcb";
+    arBase.t1.font  = "interface_normal";
     arBase.t1.scale = TW_DEF_STRING_SCALE;
 	arBase.t2.text  = StringFromKey("Tutorial_15", GKIC("Ship_Fire", "SailingFire"));
-    arBase.t2.font  = "interface_normalpcb";
+    arBase.t2.font  = "interface_normal";
     arBase.t2.scale = TW_DEF_STRING_SCALE;
 	arBase.t3.text  = StringFromKey("Tutorial_16", GKIC("FireCamera_Set", "SailingFire"));
-    arBase.t3.font  = "interface_normalpcb";
+    arBase.t3.font  = "interface_normal";
     arBase.t3.scale = TW_DEF_STRING_SCALE;
 	arTask.fixWidth = true;
 	
@@ -388,7 +388,7 @@ void TW_InitSea_Battle_2_AimingFire(string qName)
     TW_ColorHead(arText);
 	
 	makearef(arText, arTask.texts.AimingFire_enter);
-    arText.font  = "interface_normalpcb";
+    arText.font  = "interface_normal";
     arText.base.pos.y = TW_DEF_FIRSTSTRING;
     arText.base.scale = TW_DEF_STRING_SCALE;
     arText.text  = StringFromKey("Tutorial_14", GKIC("FireCamera_Set", "SailingFire"));
@@ -424,10 +424,10 @@ void TW_InitSea_Battle_3_WinBattle(string qName)
     arBase.t0.font  = "interface_normal_bold";
 	arBase.t0.scale = TW_DEF_HEADER_SCALE;
     arBase.t1.text  = StringFromKey("Tutorial_18");
-    arBase.t1.font  = "interface_normalpcb";
+    arBase.t1.font  = "interface_normal";
     arBase.t1.scale = TW_DEF_STRING_SCALE;
 	arBase.t2.text  = "0/3";
-	arBase.t2.font  = "interface_normalpcb";
+	arBase.t2.font  = "interface_normal";
     arBase.t2.scale = 2.0;
 	arBase.t2.align = "right";
 	arTask.fixWidth = true;
@@ -445,7 +445,7 @@ void TW_InitSea_Battle_3_WinBattle(string qName)
     TW_ColorHead(arText);
 	
 	makearef(arText, arTask.texts.WinBattle_do);
-    arText.font  = "interface_normalpcb";
+    arText.font  = "interface_normal";
     arText.base.pos.y = TW_DEF_FIRSTSTRING;
     arText.base.scale = TW_DEF_STRING_SCALE;
     arText.text  = StringFromKey("Tutorial_18");
@@ -454,7 +454,7 @@ void TW_InitSea_Battle_3_WinBattle(string qName)
 	
 	int iMax = Group_GetLiveCharactersNum("SharlieTutorial_SeaAttack");
 	arText = TW_SetTextCounter("sea_battle", "WinBattle_do", iMax, false);
-	arText.font  = "interface_normalpcb";
+	arText.font  = "interface_normal";
 	arText.base.scale = 2.0;
     arText.base.pos.y = TW_DEF_FIRSTSTRING - TW_DEF_COUNTERVOFFSET;
     arText.align = "right";
@@ -482,16 +482,16 @@ void TW_InitLand_Fight_1_Attack()
     arBase.t0.font  = "interface_normal_bold";
 	arBase.t0.scale = TW_DEF_HEADER_SCALE;
     arBase.t1.text  = StringFromKey("Tutorial_20", GKIC("ChrAltAttackBase", "FightModeControls"));
-    arBase.t1.font  = "interface_normalpcb";
+    arBase.t1.font  = "interface_normal";
     arBase.t1.scale = TW_DEF_STRING_SCALE;
 	arBase.t2.text  = StringFromKey("Tutorial_21", GKIC("ChrAttackBase", "FightModeControls"));
-    arBase.t2.font  = "interface_normalpcb";
+    arBase.t2.font  = "interface_normal";
     arBase.t2.scale = TW_DEF_STRING_SCALE;
 	arBase.t3.text  = StringFromKey("Tutorial_22", GKIC("ChrAttackBreakBase", "FightModeControls"));
-    arBase.t3.font  = "interface_normalpcb";
+    arBase.t3.font  = "interface_normal";
     arBase.t3.scale = TW_DEF_STRING_SCALE;
 	arBase.t4.text  = "0/3";
-	arBase.t4.font  = "interface_normalpcb";
+	arBase.t4.font  = "interface_normal";
     arBase.t4.scale = 2.0;
 	arBase.t4.align = "right";
 	arTask.fixWidth = true;
@@ -505,21 +505,21 @@ void TW_InitLand_Fight_1_Attack()
     TW_ColorHead(arText);
 	
 	makearef(arText, arTask.texts.FightAttack_fast);
-    arText.font  = "interface_normalpcb";
+    arText.font  = "interface_normal";
     arText.base.pos.y = TW_DEF_FIRSTSTRING;
     arText.base.scale = TW_DEF_STRING_SCALE;
     arText.text  = StringFromKey("Tutorial_20", GKIC("ChrAltAttackBase", "FightModeControls"));
     TW_ColorDefault(arText);
 	
 	makearef(arText, arTask.texts.FightAttack_force);
-    arText.font  = "interface_normalpcb";
+    arText.font  = "interface_normal";
     arText.base.pos.y = TW_DEF_FIRSTSTRING + TW_DEF_INTERVAL;
     arText.base.scale = TW_DEF_STRING_SCALE;
     arText.text  = StringFromKey("Tutorial_21", GKIC("ChrAttackBase", "FightModeControls"));
     TW_ColorDefault(arText);
 	
 	makearef(arText, arTask.texts.FightAttack_break);
-    arText.font  = "interface_normalpcb";
+    arText.font  = "interface_normal";
     arText.base.pos.y = TW_DEF_FIRSTSTRING + 2 * TW_DEF_INTERVAL;
     arText.base.scale = TW_DEF_STRING_SCALE;
     arText.text  = StringFromKey("Tutorial_22", GKIC("ChrAttackBreakBase", "FightModeControls"));
@@ -528,21 +528,21 @@ void TW_InitLand_Fight_1_Attack()
     TW_MarkBottom("land_fight", "FightAttack_break");
 	
 	arText = TW_SetTextCounter("land_fight", "FightAttack_fast", 3, false);
-	arText.font  = "interface_normalpcb";
+	arText.font  = "interface_normal";
 	arText.base.scale = 2.0;
     arText.base.pos.y = TW_DEF_FIRSTSTRING - TW_DEF_COUNTERVOFFSET;
     arText.align = "right";
 	TW_ColorDefault(arText);
 	
 	arText = TW_SetTextCounter("land_fight", "FightAttack_force", 3, false);
-	arText.font  = "interface_normalpcb";
+	arText.font  = "interface_normal";
 	arText.base.scale = 2.0;
     arText.base.pos.y = TW_DEF_FIRSTSTRING - TW_DEF_COUNTERVOFFSET + TW_DEF_INTERVAL;
     arText.align = "right";
 	TW_ColorDefault(arText);
 	
 	arText = TW_SetTextCounter("land_fight", "FightAttack_break", 1, false);
-	arText.font  = "interface_normalpcb";
+	arText.font  = "interface_normal";
 	arText.base.scale = 2.0;
     arText.base.pos.y = TW_DEF_FIRSTSTRING - TW_DEF_COUNTERVOFFSET + 2 * TW_DEF_INTERVAL;
     arText.align = "right";
@@ -578,13 +578,13 @@ void TW_InitLand_Fight_2_Defence(string qName)
     arBase.t0.font  = "interface_normal_bold";
 	arBase.t0.scale = TW_DEF_HEADER_SCALE;
     arBase.t1.text  = StringFromKey("Tutorial_24", GKIC("ChrBlock", "FightModeControls"));
-    arBase.t1.font  = "interface_normalpcb";
+    arBase.t1.font  = "interface_normal";
     arBase.t1.scale = TW_DEF_STRING_SCALE;
 	arBase.t2.text  = StringFromKey("Tutorial_25", GKIC("ChrParry", "FightModeControls"));
-    arBase.t2.font  = "interface_normalpcb";
+    arBase.t2.font  = "interface_normal";
     arBase.t2.scale = TW_DEF_STRING_SCALE;
 	arBase.t3.text  = "0/3";
-	arBase.t3.font  = "interface_normalpcb";
+	arBase.t3.font  = "interface_normal";
     arBase.t3.scale = 2.0;
 	arBase.t3.align = "right";
 	arTask.fixWidth = true;
@@ -598,14 +598,14 @@ void TW_InitLand_Fight_2_Defence(string qName)
     TW_ColorHead(arText);
 	
 	makearef(arText, arTask.texts.FightDefence_block);
-    arText.font  = "interface_normalpcb";
+    arText.font  = "interface_normal";
     arText.base.pos.y = TW_DEF_FIRSTSTRING;
     arText.base.scale = TW_DEF_STRING_SCALE;
     arText.text  = StringFromKey("Tutorial_24", GKIC("ChrBlock", "FightModeControls"));
     TW_ColorDefault(arText);
 	
 	makearef(arText, arTask.texts.FightDefence_parry);
-    arText.font  = "interface_normalpcb";
+    arText.font  = "interface_normal";
     arText.base.pos.y = TW_DEF_FIRSTSTRING + TW_DEF_INTERVAL;
     arText.base.scale = TW_DEF_STRING_SCALE;
     arText.text  = StringFromKey("Tutorial_25", GKIC("ChrParry", "FightModeControls"));
@@ -614,14 +614,14 @@ void TW_InitLand_Fight_2_Defence(string qName)
     TW_MarkBottom("land_fight", "FightDefence_parry");
 	
 	arText = TW_SetTextCounter("land_fight", "FightDefence_block", 3, false);
-	arText.font  = "interface_normalpcb";
+	arText.font  = "interface_normal";
 	arText.base.scale = 2.0;
     arText.base.pos.y = TW_DEF_FIRSTSTRING - TW_DEF_COUNTERVOFFSET;
     arText.align = "right";
 	TW_ColorDefault(arText);
 	
 	arText = TW_SetTextCounter("land_fight", "FightDefence_parry", 2, false);
-	arText.font  = "interface_normalpcb";
+	arText.font  = "interface_normal";
 	arText.base.scale = 2.0;
     arText.base.pos.y = TW_DEF_FIRSTSTRING - TW_DEF_COUNTERVOFFSET + TW_DEF_INTERVAL;
     arText.align = "right";
@@ -664,7 +664,7 @@ void TW_InitLand_Fight_3_Win(string qName)
     arBase.t0.font  = "interface_normal_bold";
 	arBase.t0.scale = TW_DEF_HEADER_SCALE;
     arBase.t1.text  = StringFromKey("Tutorial_26");
-    arBase.t1.font  = "interface_normalpcb";
+    arBase.t1.font  = "interface_normal";
     arBase.t1.scale = TW_DEF_STRING_SCALE;
 	arTask.fixWidth = true;
 	
@@ -681,7 +681,7 @@ void TW_InitLand_Fight_3_Win(string qName)
     TW_ColorHead(arText);
 	
 	makearef(arText, arTask.texts.WinFight_do);
-    arText.font  = "interface_normalpcb";
+    arText.font  = "interface_normal";
     arText.base.pos.y = TW_DEF_FIRSTSTRING;
     arText.base.scale = TW_DEF_STRING_SCALE;
     arText.text  = StringFromKey("Tutorial_26");
@@ -711,10 +711,10 @@ void TW_InitLand_Craft_1_Inventory()
     arBase.t0.font  = "interface_normal_bold";
 	arBase.t0.scale = TW_DEF_HEADER_SCALE;
     arBase.t1.text  = StringFromKey("Tutorial_28", GKIC("QuestBook", "PrimaryLand"));
-    arBase.t1.font  = "interface_normalpcb";
+    arBase.t1.font  = "interface_normal";
     arBase.t1.scale = TW_DEF_STRING_SCALE;
 	arBase.t2.text  = StringFromKey("Tutorial_29", GKIC("Alchemy", "PrimaryLand"));
-    arBase.t2.font  = "interface_normalpcb";
+    arBase.t2.font  = "interface_normal";
     arBase.t2.scale = TW_DEF_STRING_SCALE;
 	arTask.fixWidth = true;
 	
@@ -727,14 +727,14 @@ void TW_InitLand_Craft_1_Inventory()
     TW_ColorHead(arText);
 	
 	makearef(arText, arTask.texts.Inventory_document);
-    arText.font  = "interface_normalpcb";
+    arText.font  = "interface_normal";
     arText.base.pos.y = TW_DEF_FIRSTSTRING;
     arText.base.scale = TW_DEF_STRING_SCALE;
     arText.text  = StringFromKey("Tutorial_28", GKIC("QuestBook", "PrimaryLand"));
     TW_ColorDefault(arText);
 	
 	makearef(arText, arTask.texts.Inventory_alchemy);
-    arText.font  = "interface_normalpcb";
+    arText.font  = "interface_normal";
     arText.base.pos.y =  TW_DEF_FIRSTSTRING + TW_DEF_INTERVAL;
     arText.base.scale = TW_DEF_STRING_SCALE;
     arText.text  = StringFromKey("Tutorial_29", GKIC("Alchemy", "PrimaryLand"));
@@ -769,13 +769,13 @@ void TW_InitLand_1_Loot()
     arBase.t0.font  = "interface_normal_bold";
 	arBase.t0.scale = TW_DEF_HEADER_SCALE;
     arBase.t1.text  = StringFromKey("Tutorial_31");
-    arBase.t1.font  = "interface_normalpcb";
+    arBase.t1.font  = "interface_normal";
     arBase.t1.scale = TW_DEF_STRING_SCALE;
 	arBase.t2.text  = StringFromKey("Tutorial_32");
-    arBase.t2.font  = "interface_normalpcb";
+    arBase.t2.font  = "interface_normal";
     arBase.t2.scale = TW_DEF_STRING_SCALE;
 	arBase.t3.text  = "0/3";
-	arBase.t3.font  = "interface_normalpcb";
+	arBase.t3.font  = "interface_normal";
     arBase.t3.scale = 2.0;
 	arBase.t3.align = "right";
 	arTask.fixWidth = true;
@@ -789,7 +789,7 @@ void TW_InitLand_1_Loot()
     TW_ColorHead(arText);
 	
 	makearef(arText, arTask.texts.Loot_search);
-    arText.font  = "interface_normalpcb";
+    arText.font  = "interface_normal";
     arText.base.pos.y = TW_DEF_FIRSTSTRING;
     arText.base.scale = TW_DEF_STRING_SCALE;
     arText.text  = StringFromKey("Tutorial_31");
@@ -800,7 +800,7 @@ void TW_InitLand_1_Loot()
 	TEV.Tutor.NeedPotion = 1;
 	
 	arText = TW_SetTextCounter("land", "Loot_search", 3, false);
-	arText.font = "interface_normalpcb";
+	arText.font = "interface_normal";
 	arText.base.scale = 2.0;
     arText.base.pos.y = TW_DEF_FIRSTSTRING - TW_DEF_COUNTERVOFFSET;
     arText.align = "right";

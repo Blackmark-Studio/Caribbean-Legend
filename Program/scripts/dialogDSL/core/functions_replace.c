@@ -2,7 +2,7 @@
 // $func(args) → result
 
 // Looking for the functions call in the input
-void DLG_RunAllFunctions(string input, ref context)
+void DLG_RunAllFunctions(ref input, ref context)
 {
   int startFuncIdx = FindSubStr(input, "$" , 0);
   int endFuncIdx   = FindSubStr(input, ")" , 0);
@@ -28,7 +28,7 @@ void DLG_RunAllFunctions(string input, ref context)
 }
 
 // Looking for another $func inside the brackets like $func($func(args)) → fills start/end indexes for "$func(args)"
-void DLG_FindNestedFunction(string input, int length, int start, int end)
+void DLG_FindNestedFunction(string input, int length, ref start, ref end)
 {
   int braceRPos = -1;
   int braceLPos = -1;
@@ -51,7 +51,7 @@ void DLG_FindNestedFunction(string input, int length, int start, int end)
 }
 
 // Running specific function by predefined list with custom function corner case
-string DLG_RunFunction(string input, ref context)
+string DLG_RunFunction(ref input, ref context)
 {
   int startArgsIdx = FindSubStr(input, "(" , 0);
   string functionName = strcut(input, 1, startArgsIdx-1);

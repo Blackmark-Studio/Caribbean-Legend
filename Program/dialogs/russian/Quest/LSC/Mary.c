@@ -1082,8 +1082,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "return_2":
-			dialog.text = "Нет, не холодно. Просто я... я не хочу об этом при всех. Приходи ко мне в каюту, когда закончишь свои дела. Я хочу остаться с тобой вдвоём, да... Ты ведь сейчас пойдёшь к адмиралу, или Натаниэлю?";
-			link.l1 = "Да. Мне нужно поговорить с Акулой и, конечно, отвести Даниэль к Натаниэлю. Это не займёт много времени. Я скоро буду у тебя, Мэри.";
+			if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie"))
+			{
+				dialog.text = "Нет, не холодно. Просто я... я не хочу об этом при всех. Приходи ко мне в каюту, когда закончишь свои дела. Я хочу остаться с тобой вдвоём, да... Ты ведь сейчас пойдёшь к адмиралу, или Натаниэлю?";
+				link.l1 = "Да. Мне нужно поговорить с Акулой и, конечно, отвести Даниэль к Натаниэлю. Это не займёт много времени. Я скоро буду у тебя, Мэри.";
+			}
+			else 
+			{
+				dialog.text = "Нет, не холодно. Просто я... я не хочу об этом при всех. Приходи ко мне в каюту, когда закончишь свои дела. Я хочу остаться с тобой вдвоём, да... Ты ведь сейчас пойдёшь к Натаниэлю?";
+				link.l1 = "Да. Мне нужно отвести Даниэль к нему. Это не займёт много времени. Я скоро буду у тебя, Мэри.";
+			}
 			link.l1.go = "return_3";
 		break;
 		
@@ -2749,7 +2757,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -2764,7 +2772,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;		

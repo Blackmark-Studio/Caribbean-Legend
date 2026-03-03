@@ -74,25 +74,16 @@ void LAi_StartBoarding(int locType, ref echr, bool _isMCAttack)
 	{
 		if (!CheckAttribute(pchar, "GenQuest.MarchCap.Battlestart")) DoQuestFunctionDelay("MarchCap2_CheckBattle", 0.5); //Jason
 	}
-	//Jason, изъятие лицензии
-	bool blic = (CheckAttribute(echr, "Ship.Mode")) && (echr.Ship.Mode == "trade");
-	if (CheckCharacterItem(pchar, "HolTradeLicence"))
-	{
-		if (blic || sti(echr.nation) == HOLLAND)
-		{
-			TakeNationLicence(HOLLAND);
-			log_info(XI_ConvertString("LicenseCancel"));
-		}
-	}
+	// JOKERTODO посмотреть, нужно ли тут бахать нарушение лицензии
 
 	if(!GetAchievement("ach_CL_123") && !IsFort)
  	{
  		if(GetHullPercent(pchar)<10.0) Achievment_Set("ach_CL_123");
  	}
-	
+
 	if (BRD_ProcessSurrender(pchar, echr, IsFort, mclass, eclass)) return; // Сдача в плен
 	if (!IsFort) BRD_FireMusketsShoot(pchar, echr, mclass, eclass, &mcrew, &ecrew);    // мушкетный залп
-	trace("псле мушкетных залпов: " + ecrew + " а mcrew " + mcrew);
+	trace("после мушкетных залпов: " + ecrew + " а mcrew " + mcrew);
 
 	// база для расчета
 	boarding_enemy_base_crew = ecrew;
@@ -106,7 +97,11 @@ void LAi_StartBoarding(int locType, ref echr, bool _isMCAttack)
 	string deckID = "";
 	int locID = -1;
 	BRD_SetLocationForFight(&deckID, &locID, echr, IsFort);
-	if (locID < 0) return BRD_FallbackNoLocation(deckID, echr, IsFort);
+	if (locID < 0)
+	{
+		BRD_FallbackNoLocation(deckID, echr, IsFort);
+		return;
+	}
 
 	pchar.abordage = 0;
 	boarding_enemy = echr;

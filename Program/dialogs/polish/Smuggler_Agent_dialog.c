@@ -77,7 +77,7 @@ void ProcessDialogEvent()
 				}
 				AddQuestUserData("Gen_Contraband", "sIsland", XI_ConvertString(GetIslandByCityName(npchar.city)));
 			}
-			AddQuestUserData("Gen_Contraband", "sLoc", GetConvertStr(Pchar.quest.contraband.CurrentPlace, "LocLables.txt"));
+			AddQuestUserData("Gen_Contraband", "sLoc", GetLocationNameByID(Pchar.quest.contraband.CurrentPlace));
 				
 			DialogExit();
 		break;
@@ -603,11 +603,11 @@ void ProcessDialogEvent()
                         {
                             if (ChangeContrabandRelation(pchar, 0) >= 70)
                             {
-                                Dialog.Text = "Wiem, że możemy z tobą handlować. Będziemy czekać w "+GetConvertStr(Pchar.quest.contraband.CurrentPlace,"LocLables.txt")+".";
+                                Dialog.Text = "Wiem, że możemy z tobą handlować. Będziemy czekać w "+GetLocationNameByID(Pchar.quest.contraband.CurrentPlace)+".";
                             }
                             else
                             {
-            				    Dialog.Text = "Hm... Być może, znajdziemy dla ciebie kupca. Będziemy na ciebie czekać w "+GetConvertStr(Pchar.quest.contraband.CurrentPlace,"LocLables.txt")+".";
+            				    Dialog.Text = "Hm... Być może, znajdziemy dla ciebie kupca. Będziemy na ciebie czekać w "+GetLocationNameByID(Pchar.quest.contraband.CurrentPlace)+".";
             				}
             				Link.l1 = "W porządku. Do zobaczenia tam.";
             				Link.l1.go = "Smuggling_exit";
@@ -714,7 +714,7 @@ void ProcessDialogEvent()
 							SetNPCQuestDate(npchar, "Travel_Talk");
 							SaveCurrentQuestDateParam("contraTravel");
 
-							Dialog.Text = "No cóż, możemy cię dostać do "+GetConvertStr(locations[FindLocation(pchar.GenQuest.contraTravel.destination.loc)].id,"LocLables.txt")+" blisko "+XI_ConvertString("Colony"+pchar.GenQuest.contraTravel.destination+"Gen")+" za "+pchar.GenQuest.contraTravel.price+" złoto. Przynieś pieniądze "+FindRussianDaysString(nDay)+". Statek będzie na ciebie czekać przy "+GetConvertStr(locations[FindLocation(Pchar.GenQuest.contraTravel.CurrentPlace)].id,"LocLables.txt")+" dokładnie 24 godziny.";
+							Dialog.Text = "No cóż, możemy cię dostać do "+GetLocationNameByRef(&locations[FindLocation(pchar.GenQuest.contraTravel.destination.loc)])+" blisko "+XI_ConvertString("Colony"+pchar.GenQuest.contraTravel.destination+"Gen")+" za "+pchar.GenQuest.contraTravel.price+" złoto. Przynieś pieniądze "+FindRussianDaysString(nDay)+". Statek będzie na ciebie czekać przy "+GetLocationNameByRef(&locations[FindLocation(Pchar.GenQuest.contraTravel.CurrentPlace)])+" dokładnie 24 godziny.";
 
 							pchar.GenQuest.contraTravel.days = nDay;
 							Link.l1 = "Jestem za.";
@@ -768,8 +768,8 @@ void ProcessDialogEvent()
 			ReOpenQuestHeader("Gen_ContrabandTravel");
 			AddQuestRecord("Gen_ContrabandTravel", "1");
 			AddQuestUserData("Gen_ContrabandTravel", "sSex", GetSexPhrase("",""));
-			AddQuestUserData("Gen_ContrabandTravel", "sLoc", GetConvertStr(pchar.GenQuest.contraTravel.CurrentPlace, "LocLables.txt"));
-			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetConvertStr(pchar.GenQuest.contraTravel.destination.loc, "LocLables.txt"));
+			AddQuestUserData("Gen_ContrabandTravel", "sLoc", GetLocationNameByID(pchar.GenQuest.contraTravel.CurrentPlace));
+			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc));
 			AddQuestUserData("Gen_ContrabandTravel", "sPlaceTo", XI_ConvertString("Colony" + pchar.GenQuest.contraTravel.destination + "Gen"));
 			AddQuestUserData("Gen_ContrabandTravel", "sDays", FindRussianDaysString(sti(pchar.GenQuest.contraTravel.days)));
 			AddQuestUserData("Gen_ContrabandTravel", "sPrice", pchar.GenQuest.contraTravel.price);

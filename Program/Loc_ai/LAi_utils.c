@@ -75,7 +75,7 @@ int LAi_GetLocatorNum(string group)
 //Найти случайный локатор в заданной группе локаторов
 string LAi_FindRandomLocator(string group)
 {
-	if(IsEntity(&loadedLocation) != true) return "";
+	if(IsEntity(loadedLocation) != true) return "";
 	string at = "locators." + group;
 	if(CheckAttribute(loadedLocation, at) == 0) return "";
 	aref grp;
@@ -1001,7 +1001,7 @@ void LAi_FadeToBlackEnd()
 	SendMessage(&LAi_QuestFader, "lfl", FADER_IN, 1.0, true);
 }
 
-void LAi_FadeEx(int f_start, int f_duration, int f_end, string questFadeOut, string questFadeDuration, string questFadeIn)
+void LAi_FadeEx(float f_start, float f_duration, float f_end, string questFadeOut, string questFadeDuration, string questFadeIn)
 {
 	if(questFadeOut != "") DoQuestFunctionDelay(questFadeOut, f_start);
 	if(questFadeDuration != "") DoQuestFunctionDelay(questFadeDuration, f_start + f_duration);
@@ -1021,8 +1021,7 @@ void LAi_FadeEx(int f_start, int f_duration, int f_end, string questFadeOut, str
 
 void LAi_FadeEx_end(string qName)
 {
-	int f_end = pchar.FadeEx.End;
-	DelEventHandler("FaderEvent_EndFade", "LAi_FadeToBlackEnd");
+	float f_end = pchar.FadeEx.End;
 	SendMessage(&LAi_QuestFader, "lfl", FADER_IN, f_end, true);
 }
 
@@ -1138,6 +1137,7 @@ void Dead_AddLoginedCharacter(aref chr)
 		chref = &Dead_Characters[Dead_Char_num];
 		DeleteAttribute(chref, "items");
 		DeleteAttribute(chref, "Money");
+		if (CheckAttribute(chr, "MustLoot")) chref.MustLoot = true; // нельзя будет нажать «Не обыскивать»
 		if (IsOfficer(chr) || CheckAttribute(chr, "SaveItemsForDead"))// для офицеров и НПС сохраняем все вещи
 		{
 		    chref.Money = chr.Money;
@@ -1263,22 +1263,11 @@ void Dead_AddLoginedCharacter(aref chr)
                 string name = "";
                 string  sModel = chr.model;
                 howI = 0;
+
                 // выясняем тип -->
-                if (chr.sex != "man")
-                {
-    		        name = "Citizen_f";
-    		    }
-    		    else
-    		    {
-                    if (findsubstr(sModel, "off_" , 0) != -1)
-					{
-	    		        name = "Solder_o";
-	    		    }
-    		    }
-                if (name == "")
-                {
-                    name = GetCharType(chr);
-            	}
+                if (chr.sex == "woman") name = "Citizen_f";
+    		    else if (findsubstr(sModel, "off_" , 0) != -1) name = "Solder_o";
+                if (name == "") name = GetCharType(chr);
             	// выясняем тип <--
 
                 for (j= ItemDeadStartCount; j<ITEMS_QUANTITY; j++) // нужно оптимизировать!!! 137 - это много  начало с опред места
@@ -1415,7 +1404,7 @@ void Dead_OpenBoxProcedure()
         return; // Лог на этот случай в другом месте
     deadCh = &Dead_Characters[dchr_index];
 	
-	// TUTOR-вставка
+	// TUTOR-вставка // TO_DO: А где проверка на тутор???
 	if(deadCh.id == "SharlieTutorial_EnemyPirate_2" && CheckAttribute(&TEV, "Tutor.Loot.Pirate2"))
 	{
 		DeleteAttribute(&TEV, "Tutor.Loot.Pirate2");
@@ -1716,7 +1705,7 @@ void SetSurrenderedAnimation(aref chr)
 	EndChangeCharacterActions(chr);
 }
 
-ref LAi_GetCurrentWeapon(ref chr, string sWeapon, string attackType)
+ref LAi_GetCurrentWeapon(ref chr, ref sWeapon, string attackType)
 {
 	if (CharUseMusket(chr)) sWeapon = MUSKET_ITEM_TYPE;
 	else if (attackType == "range") sWeapon = GUN_ITEM_TYPE;

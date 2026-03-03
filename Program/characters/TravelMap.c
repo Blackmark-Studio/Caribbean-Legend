@@ -4289,7 +4289,7 @@ string GetIslandRandomShoreId(string _island)
 	iNum = GetAttributesNum(arDest);
 	sAttr = "t" + rand(iNum-1);
 	
-	if (sAttr == "t-1")
+	if (!CheckAttribute(arDest, sAttr))
 	{
 		Log_TestInfo("Can't find any shore on island: " + _island);
 		return "";

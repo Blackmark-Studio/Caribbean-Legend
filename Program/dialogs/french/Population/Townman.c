@@ -347,7 +347,7 @@ void ProcessDialogEvent()
 			else SetPassengerParameter("Townpassenger", true);
 			if (!CheckAttribute(pchar, "GenQuest.Townpassenger.Enemycity"))
 			{
-				dialog.text = "Capitaine, j'ai besoin d'aller à la colonie nommée "+XI_ConvertString("Colonie"+pchar.GenQuest.Townpassenger.City)+", dès que possible, c'est sur "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Townpassenger.City)+"Ça")+", dans "+FindRussianDaysString(sti(pchar.GenQuest.Townpassenger.DaysQty))+". Votre navire a l'air solide comparé à la majorité de ces petites embarcations qui naviguent ici. Je peux vous payer "+FindRussianMoneyString(sti(pchar.GenQuest.Townpassenger.Money))+"Que dis-tu ?";
+				dialog.text = "Capitaine, j'ai besoin d'aller à la colonie nommée "+XI_ConvertString("Colony"+pchar.GenQuest.Townpassenger.City)+", dès que possible, c'est sur "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Townpassenger.City)+"Voc")+", dans "+FindRussianDaysString(sti(pchar.GenQuest.Townpassenger.DaysQty))+". Votre navire a l'air solide comparé à la majorité de ces petites embarcations qui naviguent ici. Je peux vous payer "+FindRussianMoneyString(sti(pchar.GenQuest.Townpassenger.Money))+"Que dis-tu ?";
 			}
 			else
 			{

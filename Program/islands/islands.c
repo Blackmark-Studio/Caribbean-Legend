@@ -1,5 +1,8 @@
 #include "islands\islands_loader.c"
 
+#define ISLAND_COMMON  "common"
+#define ISLAND_QUEST   "quest"
+#define ISLAND_VIRTUAL "virtual"
 extern void InitIslands();
 int iNumIslands = 0;
 
@@ -207,29 +210,19 @@ string Island_GetLocationReloadLocator(string _island, string _location)
 string GetRandIslandId()
 {
 	int n;
-    int islandsArray[2];
-	SetArraySize(&islandsArray, MAX_ISLANDS);
+    int islandsArray[MAX_ISLANDS];
 	int iNum = 0;
 	
 	for (n=0;n<MAX_ISLANDS;n++)
 	{
-		if(Islands[n].id == "LostShipsCity") continue;
-		if(Islands[n].id == "KhaelRoa") continue;
-		if(Islands[n].id == "Ksochitam") continue;
-		if(Islands[n].id == "RockIsland") continue;
-		if(Islands[n].id == "Providence") continue;
-		if(Islands[n].id == "SantaQuiteria") continue;
-		if(Islands[n].id == "IslaDeVieques") continue;
-		if(Islands[n].id == "IslaMona") continue;
-		if(Islands[n].id == "IslaDeCoche") continue;
-		if(Islands[n].id == "") continue;
+		if (!CheckAttributeEqualTo(&Islands[n], "type", ISLAND_COMMON)) continue;
 		
 		islandsArray[iNum] = n;
 		iNum++;
 	}
 	if (iNum == 0) return "none";
 	n = islandsArray[rand(iNum-1)];
-	trace("Остров с индексом " + n + " имеет айди " + Islands[n].id);
+	// trace("Остров с индексом " + n + " имеет айди " + Islands[n].id);
 	return Islands[n].id;
 }
 

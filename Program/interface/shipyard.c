@@ -23,6 +23,7 @@ int timeHull, timeRig;
 
 void InitInterface_R(string iniName, ref _shipyarder)
 {
+	pchar.systeminfo.InGameNotifications = true;
  	StartAboveForm(true);
 	if(!isEntity(&WorldMap) || !bSeaActive)
 	{
@@ -115,6 +116,7 @@ void ProcessExitCancel()
 
 void IDoExit(int exitCode)
 {
+	DeleteAttribute(pchar,"systeminfo.InGameNotifications");
     EndAboveForm(true);
 	if(!isEntity(&WorldMap) || !bSeaActive)
 	{
@@ -638,7 +640,7 @@ void ShowInfoWindow()
 			sText1  = GetConvertStr("Shipyard_hint", "ShipsDescribe.txt");
 		break;
 	}
-	SetShipPerksTooltip(refCharacter, &sCurrentNode, &sHeader, &sText1, &sText2, &sText3, &sPicture, &sGroup, &sGroupPicture);
+	SetShipPerksTooltip(rChr, &sCurrentNode, &sHeader, &sText1, &sText2, &sText3, &sPicture, &sGroup, &sGroupPicture);
 
 	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false);
 }
@@ -1483,7 +1485,7 @@ void RepairOk()
 	if (RepairHull > 0)
 	{
 		timeHull = timeHull + RepairHull * (9-GetCharacterShipClass(refCharacter));
-	    AddCharacterExpToSkill(pchar, "Repair", (RepairHull * (8-GetCharacterShipClass(refCharacter)) / 10.0));
+		AddCharacterExpToSkill(pchar, "Repair", GetExpForRepair(refCharacter, RepairHull, "hull"));
 		AddMoneyToCharacter(pchar, -GetHullRepairCost(st, RepairHull, refNPCShipyard));
 
 		ret = ProcessHullRepair(refCharacter, stf(RepairHull));
@@ -1491,7 +1493,7 @@ void RepairOk()
 	if (RepairSail > 0)
 	{
 	  	timeRig = timeRig + RepairSail * (9-GetCharacterShipClass(refCharacter));
-	    AddCharacterExpToSkill(pchar, "Repair", (RepairSail * (8-GetCharacterShipClass(refCharacter)) / 14.0));
+		AddCharacterExpToSkill(pchar, "Repair", GetExpForRepair(refCharacter, RepairSail, "sail"));
 		AddMoneyToCharacter(pchar,-GetSailRepairCost(st, RepairSail, refNPCShipyard));
 
 		ret = ProcessSailRepair(refCharacter, stf(RepairSail));

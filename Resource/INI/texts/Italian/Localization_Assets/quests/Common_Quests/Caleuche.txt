@@ -1,4 +1,4 @@
-Caleuche_1 {Tutti i giorni}
+Caleuche_1 {Tuttuathapak}
 Caleuche_2 { }
 Caleuche_3 {capitano-nonMorto}
 Caleuche_4 { }

@@ -349,7 +349,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Hold_GenQuest83":
-			dialog.text = "Cholera jasna! Zawsze wiedziałem, że ten łajdak"+pchar.GenQuest.Hold_GenQuest.CapName+"wygadałby to prędzej czy później! Co ja sobie myślałem, oferując mu ten układ?";
+			dialog.text = "Cholera jasna! Zawsze wiedziałem, że ten łajdak "+pchar.GenQuest.Hold_GenQuest.CapName+"wygadałby to prędzej czy później! Co ja sobie myślałem, oferując mu ten układ?";
 			link.l1 = "Przestań już jęczeć. Nie mam złych zamiarów... Po prostu sprzedaj mi tę mapę i prowadź życie, do którego jesteś przyzwyczajony.";
 			link.l1.go = "Hold_GenQuest84";
 		break;

@@ -1,7 +1,7 @@
 // Здесь геймплейные функции абордажа
 
 // Мушкетный залп
-void BRD_FireMusketsShoot(ref pchar, ref echr, int mclass, int eclass, int realmcrew, int realecrew)
+void BRD_FireMusketsShoot(ref pchar, ref echr, int mclass, int eclass, ref realmcrew, ref realecrew)
 {
 	if (BRD_IsCrewGiveUpCaptain(echr, 1)) return;
 
@@ -85,7 +85,7 @@ void BRD_FireMusketsShoot(ref pchar, ref echr, int mclass, int eclass, int realm
 //Расставить персонажей для боя
 void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 {
-	int    limit, i, iQty;
+	int    limit, i, j, iQty;
 	ref    chr;
 	string model, ani, sTemp;
 	int    xhp;
@@ -123,12 +123,26 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 	// определение стороны на палубе
 	sLocType = ChooseShipUpDeck(pchar, boarding_enemy);
 
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
+
+	object aSoldierEnemy[1];
+	object aMushketersEnemy[1];
+	GenerateItemsForCharacter(boarding_enemy, ITEM_PACK_GENERIC, &aSoldierEnemy, &aMushketersEnemy);
 	if (!CheckAttribute(location, "CabinType"))
 	{ // не грузим матросов в каюту
+		object aBoardingModels[1];
+		SetArraySize(&aBoardingModels, limit);
+		GenerateCrew(pchar, "soldier", &aBoardingModels);
+		j = 0;
+
 		for(i = LAi_numloginedcharacters; i < limit; i++)
 		{
 			if(boarding_player_crew <= 0) break;
-			model = LAi_GetBoardingModel(pchar, &ani);
+			model = aBoardingModels[j].model;
+			ani = aBoardingModels[j].ani;
+			j++;
 			// boal star with new loc always  -->
 			if (pchar.location.locator == (sLocType + i))
 			{ // искодим из того, что наша локация всегда < 4 офицеры пусть накладываются а матросик идёт к противнику.
@@ -147,6 +161,9 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 
 			LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER);
 			boarding_player_crew = boarding_player_crew - 1;
+
+			SetNPCEquip(chr, &aSoldier, false);
+
 			if (IsFort) SetFantomParamFortOur(chr);
 			else SetFantomParamAbordOur(chr);
 
@@ -180,36 +197,37 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 			}
 			if (!IsFort) iQty = 2-mush_officers;
 			else iQty = 3;
+
+			object aBoardingMushModels[1];
+			SetArraySize(&aBoardingMushModels, iQty);
+			GenerateCrew(pchar, "mushketer", &aBoardingMushModels);
+			j = 0;
+
 			for(i=1; i<=iQty; i++)
 			{
 				if (LAi_CheckLocatorFree("rld", sLocType+"mush"+i))
-				{			
-					model = LAi_GetBoardingMushketerModel(pchar);
-					chr = GetCharacter(NPC_GenerateCharacter("GenChar_", model, "man", "mushketer", 5, sti(pchar.nation), 0, false, "soldier"));					
+				{
+					model = aBoardingMushModels[j].model;
+					ani = aBoardingMushModels[j].ani;
+					j++;
+					chr = GetCharacter(NPC_GenerateCharacter("GenChar_", model, "man", ani, 5, sti(pchar.nation), 0, false, "soldier"));
 					chr.id = "GenChar_" + chr.index;
-					if(i == iQty && mclass <= 3) chr.MushketType = "mushket3"; // 280313
-					
-					//Экку Korsar - мушкетерам-нежити выставляем анимацию мушкетеров нежити. Ну и для пущей сложности им дадим мушкеты с "папиросами")
-					if(HasSubStr(chr.model, "skel"))
-					{
-						chr.model.animation = "Mush_skel";
-						chr.MushketType = "mushket1";
-						chr.MushketBulletType = "bullet";
-				    }
 					
 					chr.AboardFantom = true;
 					if (!IsFort) chr.MusketerDistance = 0;
 					LAi_SetWarriorType(chr);
 					LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER);
 					ChangeCharacterAddressGroup(chr, locID, "rld", sLocType+"mush"+i);
+
+					SetNPCEquip(chr, &aMushketers, true);
+					if (IsFort) SetMushketerParamFortOur(chr);
+					else SetMushketerParamAbordOur(chr);
+
+					AddCharHP(chr, boarding_player_hp); // влияение опыта и морали в НР
+					BRD_InjectBalance(chr, attackerRankOffset, boardingObject, location);
 				}
 			}
 
-			if (IsFort) SetMushketerParamFortOur(chr);
-			else SetMushketerParamAbordOur(chr);
-
-			AddCharHP(chr, boarding_player_hp); // влияение опыта и морали в НР
-			BRD_InjectBalance(chr, attackerRankOffset, boardingObject, location);
 			if(!IsFort && mush_officers > 0)
 			{
 				if(CheckAttribute(pchar, "GenQuest.boarding.n2"))
@@ -263,20 +281,35 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 	if (!isCabin && boarding_enemy_crew > limit) capIdx = rand(limit-1);
 	else if (!isCabin) capIdx = rand(boarding_enemy_crew - 1);
 
+	object aBoardingModelsEnemy[1];
+	SetArraySize(&aBoardingModelsEnemy, limit);
+	GenerateCrew(boarding_enemy, "soldier", &aBoardingModelsEnemy);
+	j = 0;
+
 	for(i = 0; i < limit; i++) // <= тк loc0 .. loc4 = 5
 	{
 		if(boarding_enemy_crew <= 0) break;
-		model = LAi_GetBoardingModel(boarding_enemy, &ani);
+		model = aBoardingModelsEnemy[j].model;
+		ani = aBoardingModelsEnemy[j].ani;
+		j++;
 
 		string fantomLock = sLocType + i;
 		if (i == 0 && isCabin) fantomLock = Locations[locIndex].boarding.Loc.Capt;
 		chr = LAi_CreateFantomCharacterEx(model, ani, "rld", fantomLock);
 		LAi_group_MoveCharacter(&chr, LAI_GROUP_BRDENEMY);
 
-		if (IsFort) SetFantomParamFortEnemy(&chr);
-		else if (i == capIdx) BRD_PlaceCaptain(&chr, &boarding_enemy, locIndex, sLocType);
+		if (IsFort)
+		{
+			SetNPCEquip(chr, &aSoldierEnemy, false);
+			SetFantomParamFortEnemy(&chr);
+		}
+		else if (i == capIdx)
+		{
+			BRD_PlaceCaptain(&chr, &boarding_enemy, locIndex, sLocType);
+		}
 		else 
 		{
+			SetNPCEquip(chr, &aSoldierEnemy, false);
 			SetFantomParamAbordEnemy(&chr);
 			BRD_InjectPerks(chr, i, &enemyPerkChars, location, defenderElixir);
 		}
@@ -301,36 +334,37 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 		{
 			if (!IsFort) iQty = 2;
 			else iQty = 3;
+
+			object aBoardingMushModelsEnemy[1];
+			SetArraySize(&aBoardingMushModelsEnemy, iQty);
+			GenerateCrew(boarding_enemy, "mushketer", &aBoardingMushModelsEnemy);
+			j = 0;
+
 			for(i=1; i<=iQty; i++)
 			{
 				if (LAi_CheckLocatorFree("rld", sLocType+"mush"+i))
 				{
-					model = LAi_GetBoardingMushketerModel(boarding_enemy);		
-					chr = GetCharacter(NPC_GenerateCharacter("GenChar_", model, "man", "mushketer", 5, sti(boarding_enemy.nation), 0, false, "soldier"));					
+					model = aBoardingMushModelsEnemy[j].model;
+					ani = aBoardingMushModelsEnemy[j].ani;
+					j++;
+					chr = GetCharacter(NPC_GenerateCharacter("GenChar_", model, "man", ani, 5, sti(boarding_enemy.nation), 0, false, "soldier"));
 					chr.id = "GenChar_" + chr.index;
-					if(i == iQty && eclass <= 3) chr.MushketType = "mushket3"; // 280313
-					
-					//Экку Korsar - мушкетерам-нежити выставляем анимацию мушкетеров нежити. Ну и для пущей сложности им дадим мушкеты с "папиросами")
-					if(HasSubStr(chr.model, "skel"))
-					{
-						chr.model.animation = "Mush_skel";
-						chr.MushketType = "mushket1";
-						chr.MushketBulletType = "bullet";
-				    }
-					
+
 					chr.AboardFantom = true;
 					chr.MusketerDistance = 0;
 					LAi_SetWarriorType(chr);
 					LAi_group_MoveCharacter(chr, LAI_GROUP_BRDENEMY);
 					ChangeCharacterAddressGroup(chr, locID, "rld", sLocType+"mush"+i);
 					boarding_enemy_crew = boarding_enemy_crew - 1; // to_do: если сухопутных нет, уйдёт в минус
-				}
-			
-			if (IsFort) SetMushketerParamFortEnemy(chr);
-			else SetMushketerParamAbordEnemy(chr); 
 
-			AddCharHP(chr, boarding_enemy_hp); // влияение опыта и морали в НР
-			BRD_InjectBalance(chr, defenderRankOffset, boardingObject, location);
+					SetNPCEquip(chr, &aMushketersEnemy, true);
+
+					if (IsFort) SetMushketerParamFortEnemy(chr);
+					else SetMushketerParamAbordEnemy(chr);
+
+					AddCharHP(chr, boarding_enemy_hp); // влияение опыта и морали в НР
+					BRD_InjectBalance(chr, defenderRankOffset, boardingObject, location);
+				}
 			}	
 		}
 	}
@@ -345,9 +379,9 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 	BRD_StartFight(locIndex, boarding_enemy, isCabin);
 }
 
-bool BRD_ExitToInterface(ref chr, int leftCrew, bool IsFort, bool surrender)
+bool BRD_ExitToInterface(ref chr, int leftCrew, bool IsFort, ref surrender)
 {
-	trace("BRD_ExitToInterface sur: " + surrender + " leftCrew: " + leftCrew)
+	trace("BRD_ExitToInterface sur: " + surrender + " leftCrew: " + leftCrew);
 	LAi_boarding_process = false;
 	if (CheckAttribute(pchar, "GenQuest.QuestAboardCaptanSurrender")) // квестовая сдача в плен кэпа
 	{
@@ -460,7 +494,7 @@ bool BRD_FallbackNoLocation(string deckID, ref echr, bool isFort)
 	return true;
 }
 
-void BRD_ApplyMedicine(int deadCrewWOMedic, int deadCrew)
+void BRD_ApplyMedicine(int deadCrewWOMedic, ref deadCrew)
 {
 	int iTemp = deadCrewWOMedic - deadCrew;
 	if (iTemp <= 0) return;

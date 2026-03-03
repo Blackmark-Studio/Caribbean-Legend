@@ -1,0 +1,16 @@
+Delete profile confirm {Bu profili ve tüm kayıtlarını silmek istediğinizden emin misiniz?}
+Delete savefile confirm {Bu kaydı silmek istediğinizden emin misiniz?}
+Overwrite savefile confirm {Bu kaydı üzerine yazmak istediğinizden emin misiniz?}
+Low storage and unable save create {Oyunu kaydetmek için yeterli boş alan yok.}
+Load game confirm {Bu kaydı yüklemek istediğinizden emin misiniz?}
+Unable to Load save game {Bu kaydı yükleyemiyor.}
+Salary info
+{
+Mürettebatınız aylık ücretini istiyor.
+Ödeyecek misiniz?
+}
+Officer info {Subaylarınız aylık maaşlarını talep ediyor:}
+All info {Net tutar:}
+New game confirm {Yeni bir oyuna başlamak istediğinizden emin misiniz?}
+Insert Disk Ok {Lütfen 1. Diski "Pirates Of The Caribbean" takın}
+save game limit {Kayıtlı oyun sınırını aştınız. Eski kayıtları silin.}

@@ -113,7 +113,7 @@ Marigo_Cave_box2 {un coffre dans un cul-de-sac}
 Marigo_Cave_box3 {un coffre près de la torche}
 Panama_Cave {dans une grotte a gauche de la sortie de Portobelo}
 Panama_Cave_box1 {sous les planches dans un cul-de-sac}
-Pearl_Grot {dans une grotte près de la côte occidentale entre Belize et Blueweld}
+Pearl_Grot {dans une grotte sur la côte ouest, au cœur de la jungle derrière la crique Amatique}
 Pearl_Grot_box1 {un coffre sur une grosse pierre}
 PortoBello_Cave {dans une grotte à droite de la Baie des moustiques}
 PortoBello_Cave_box1 {sous les planches dans un cul-de-sac}

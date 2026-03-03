@@ -1082,8 +1082,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "return_2":
-			dialog.text = "Nein, mir ist nicht kalt. Ich will nur... Ich möchte nicht hier darüber sprechen. Komm in meine Kajüte, wenn du fertig bist. Ich möchte alleine mit dir sein, ja, gell... Gehst du jetzt nicht zum Admiral und Nathaniel?";
-			link.l1 = "Ja, ich muss mit Shark sprechen und natürlich Danielle zu Nathaniel bringen. Es wird nicht allzu viel Zeit in Anspruch nehmen. Wir sehen uns bald, Mary.";
+			if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie"))
+			{
+				dialog.text = "Nein, mir ist nicht kalt. Ich will nur... Ich möchte nicht hier darüber sprechen. Komm in meine Kajüte, wenn du fertig bist. Ich möchte alleine mit dir sein, ja, gell... Gehst du jetzt nicht zum Admiral und Nathaniel?";
+				link.l1 = "Ja, ich muss mit Shark sprechen und natürlich Danielle zu Nathaniel bringen. Es wird nicht allzu viel Zeit in Anspruch nehmen. Wir sehen uns bald, Mary.";
+			}
+			else
+			{
+				dialog.text = "Nein, mir ist nicht kalt. Ich will nur... Ich möchte nicht hier darüber sprechen. Komm in meine Kajüte, wenn du fertig bist. Ich möchte alleine mit dir sein, ja, gell... Gehst du jetzt nicht zu Nathaniel?";
+				link.l1 = "Ja, ich muss Danielle zu ihm bringen. Es wird nicht allzu viel Zeit in Anspruch nehmen. Wir sehen uns bald, Mary.";
+			}
 			link.l1.go = "return_3";
 		break;
 		
@@ -2749,7 +2757,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -2764,7 +2772,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;		

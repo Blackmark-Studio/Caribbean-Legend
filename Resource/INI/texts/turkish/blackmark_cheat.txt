@@ -1,0 +1,47 @@
+CheatStatus {açık}
+new_string
+{
+
+}
+Cheat_success {Hile başarıyla çalıştı!}
+Cheat_on {Hile açık}
+Cheat_off {Hile kapalı}
+Cheat_Comming_soon {Çok yakında!}
+f1 {Peso + 500 000}
+f2 {Fotoğraf modu}
+f3 {Savaş Haritasında Arcade Yelken AÇIK/KAPALI}
+StrF3_on {Atari Yelken Açık}
+StrF3_off {Arcade Yelken Devre Dışı}
+f4 {Mürettebat deneyimi +10}
+f5 {Beceri puanı +35}
+f6 {Denizcilik yetenekleri +1}
+f7 {Kişisel yetenekler +1}
+f8 {Seyir subayına +35 beceri puanı}
+f9 {Meyhanedeki subaylar}
+f10 {Tanrı modu açık/kapalı}
+f11 {Subay sadakati +1}
+f12 {Subayların sadakati -1}
+f13 {Ulusların ilişkileri +10}
+f14 {Ulusların ilişkileri -10}
+f15 {İtibarı artır}
+f16 {İtibarı düşür}
+f17 {Şöhreti artır}
+f18 {Azalan şöhret}
+f19 {Ağırlık limiti +1000}
+f20 {+100 dublon}
+f21 {Rüzgar hızını 14.5 olarak ayarla}
+f22 {Kahramanın gemisini kutsa}
+f23 {Gövdeyi ve yelkenleri onar}
+f24 {Stratejik mallar +500}
+f25 {Yaşam destek malları +500}
+f26 {Canlılığı artır}
+f27 {Düşman dünya haritasında AÇIK/KAPALI}
+f28 {Denizde sınırsız hızlı seyahat AÇIK/KAPALI}
+f29 {Kara üzerinde sınırsız hızlı seyahat}
+f30 {"Rakip gemiyi batır" menü komutunu aç}
+StrF9_on {Subaylar ertesi gün ortaya çıkacak!}
+StrF9_off {Hile devre dışı: Subaylar meyhanede!}
+StrF27_on {Düşman karşılaşmaları AÇIK}
+StrF27_off {Düşman karşılaşmaları KAPALI}
+StrF28_on {Denizde ışınlanma AÇIK}
+StrF28_off {Denizde ışınlanma KAPALI}

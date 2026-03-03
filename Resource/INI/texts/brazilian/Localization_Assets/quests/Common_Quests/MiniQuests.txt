@@ -1,0 +1,24 @@
+MiniQuests_1 { }
+MiniQuests_2 { }
+MiniQuests_3 { }
+MiniQuests_4 { }
+MiniQuests_5 { }
+MiniQuests_6 { }
+MiniQuests_7 { }
+MiniQuests_8 { }
+MiniQuests_9 {O mercante hasteou a bandeira negra e está nos atacando!}
+MiniQuests_10 {Contramestre}
+MiniQuests_11 {Passageiro @<GetFullName(sld)> deixou seu navio!}
+MiniQuests_12 {Capelão @<GetFullName(sld)> deixou seu navio!}
+MiniQuests_13 {barquentine '@<pchar.GenQuest.Marginpassenger.ShipName1>'}
+MiniQuests_14 {comboio comercial}
+MiniQuests_15 { }
+MiniQuests_16 { }
+MiniQuests_17 {Nave inimiga no horizonte!}
+MiniQuests_18 {Comboio inimigo no horizonte!}
+MiniQuests_19 {Navio pirata no horizonte!}
+MiniQuests_20 {@<pchar.GenQuest.FindFugitive.Name> morreu de febre tropical!}
+MiniQuests_21 {@<sld.name> foi colocado sob guarda em seu navio}
+MiniQuests_22 {Uma hora se passou...}
+MiniQuests_23 {, que em ~}
+MiniQuests_24 { }

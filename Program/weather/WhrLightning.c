@@ -82,7 +82,7 @@ void WhrStartLightning()
 	Lightning.isDone = "";
 
 	PostEvent(WHR_LIGHTNING_DOIT,1000 + rand(1000));
-    
+
     WeatherParams.Lighting = true;
 }
 
@@ -119,7 +119,7 @@ void Lightning_DoIt()
 
 	// next lightning
 	PostEvent(WHR_LIGHTNING_DOIT, 500 + rand(5000));
-	
+
 	// if interface launched, return
 	if (sti(InterfaceStates.Launched) && CurrentInterface != INTERFACE_MAINMENU) { return; }
 

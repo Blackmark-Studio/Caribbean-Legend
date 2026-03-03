@@ -1,0 +1,122 @@
+Saga_1 {Jimmy}
+Saga_2 {Higgins}
+Saga_3 {Arbutus}
+Saga_4 {Arthur}
+Saga_5 {Donovan}
+Saga_6 {Keşif modu: sayaç uzatıldı. Görevi tamamla!}
+Saga_7 {Helen McArthur kalentürden öldü!}
+Saga_8 {Enrique}
+Saga_9 {Gonzales}
+Saga_10 {Enrique}
+Saga_11 {Galliardo}
+Saga_12 {Alvares}
+Saga_13 {Ortega}
+Saga_14 {Snake Eye}
+Saga_15 { }
+Saga_16 {Giant crab}
+Saga_17 { }
+Saga_18 {Adolf}
+Saga_19 {Barbier}
+Saga_20 {Söylentilere göre Amiral’in gardiyanı Chad Capper ortadan kaybolmuş. Belki de Köpekbalığı ona gizli bir görev verdi?}
+Saga_21 {Söylentilere göre Amiral’in gardiyanı Chad Capper iz bırakmadan ortadan kaybolmuş. Belki de Köpekbalığı ona gizli bir görev verdi?}
+Saga_22 {Haberin var mı? Rivados büyücüsü, yaşlı Chimiset, hapishanede kafesinde parçalanarak öldürülmüş. Söylentiye göre bunu Amiral’in adamları yapmış. Kara Eddie öfkeden kuduruyor...}
+Saga_23 {Büyücü Rivados, Chimiset, öldürüldü. Garip bir şekilde, narvallardan değil, Köpekbalığı halkından şüpheleniyorlar. Rivados, amirale çok öfkeli...}
+Saga_24 {Amiralin hapishanesi bir cinayet yerine dönüyor: önce Alan Milrow, şimdi de Chimiset. Evet, amiral rakiplerine sert davranıyor.}
+Saga_25 {Red Mary tehlikede. Onu bulup yardım etmek için sadece 100 saniyen var!}
+Saga_26 {Dur! Adayı terk etmeden önce Mary ile konuşmalıyım. Onu uyarmadan kaybolursam beni affetmez.}
+Saga_27 {Ama Adayı terk etmeden önce Mary ile konuşmalıyım. Onu uyarmadan kaybolursam beni affetmez.}
+Saga_28 {Adayın resiflerinden geçmek için seyir talimatlarına ihtiyacın var!}
+Saga_29 {Adaya yaklaşamazsınız - gemileriniz çok büyük!}
+Saga_30 {Bir saat geçti...@<NewStr()>İpek geminize yüklendi}
+Saga_31 {Simon}
+Saga_32 {Morelle}
+Saga_33 {Morel’in gizli zulasını buldun}
+Saga_34 {Malllar gemiye yüklendi}
+Saga_35 {David}
+Saga_36 {Fackman}
+Saga_37 {Marlin}
+Saga_38 {Homewrecker}
+Saga_39 {Bernar}
+Saga_40 {Vensan}
+Saga_41 {Cuttlefish}
+Saga_42 {Vagrant}
+Saga_43 { }
+Saga_44 {Merciless}
+Saga_45 {Vampire}
+Saga_46 { }
+Saga_47 {Mayın bırakıldı!}
+Saga_48 {Kaçmak için sadece @<sti(fTemp)> süren var!}
+Saga_49 {Patlamadan kaçamadın!}
+Saga_50 {Evet, baruttan kısmadık orada! Öyle bir patladı ki, muhtemelen Tortuga’da bile duymuşlardır. Fırkateynin barut ambarı infilak etti, kaptanı da gemisiyle birlikte anında dibe gitti.}
+Saga_51 {Centurion}
+Saga_52 {Dur! Mary'den bir fikir almak fena olmaz, sonuçta geçen sefer bombada da o yardımcı olmuştu! Belki yine parlak bir fikir çıkar onun aklından...}
+Saga_53 {Ah, Mary burada olsaydı keşke... Kesin bir şeyler uydururdu...}
+Saga_54 {Dur! Helen’e danışmakta fayda var, sonuçta geçen sefer bombayla da o yardımcı olmuştu! Belki yine parlak bir fikri çıkar...}
+Saga_55 {Korsanlar gerçek kimliğini fark etti!}
+Saga_56 {Mayınlar atıldı!}
+Saga_57 {Patlayıcılar @<sti(fTemp)> saniye içinde patlayacak!}
+Saga_58 {Randolf}
+Saga_59 {Berns}
+Saga_60 {Gregory}
+Saga_61 {Couper}
+Saga_62 {Paul}
+Saga_63 {Molligan}
+Saga_64 {Oyster}
+Saga_65 {'Oyster'}
+Saga_66 {Zincir mermileriyle kritik isabet!}
+Saga_67 {Milligan’ın kamarasında koordinatların yazılı olduğu bir not buldum. Gizemli bir alıcı bekliyor. Ona yelken açıp belki iyi bir para kazanabilirim. Ya da yükü Svensson’a teslim edebilirim.}
+Saga_68 {[ERROR: RateLimitError]}
+Saga_69 {Sandal}
+Saga_70 {Pole Molligan sana saldırıyor!}
+Saga_71 {Mikhael}
+Saga_72 {Rozencraft}
+Saga_73 {Jim}
+Saga_74 {Benson}
+Saga_75 {Bald Maggy}
+Saga_76 {Raymond Baker gemide}
+Saga_77 {Raymond}
+Saga_78 {Baсker}
+Saga_79 {Jessica}
+Saga_80 {Rose}
+Saga_81 {David}
+Saga_82 {Fackman}
+Saga_83 {Caracas’tan kurye lugger}
+Saga_84 {Keşif modu: zamanlayıcı devre dışı.}
+Saga_85 {Steven}
+Saga_86 {Dodson}
+Saga_87 {İspanyol Altın Konvoyu ufukta!}
+Saga_88 {El Carnivoro}
+Saga_89 {San Raphael}
+Saga_90 {İspanyol güvenlik filosundan sıyrılıp onları açıkta bıraktık! Sorun yok, nasılsa hâlâ çok zenginlikleri var...}
+Saga_91 {İspanyol güvenlik filosundan sıyrılıp onları avucunu yalatmayı başardık! Ama ondan önce güzelce hırpaladık, hehe. Boşver, katlanırlar: hâlâ çok zenginler...}
+Saga_92 {Tüm eskort filosunu batırdık! Bizimle uğraşmadan önce iki kere düşünsünler!}
+Saga_93 {Jose Dios mükemmel haritaların kopyalarını yaptı.}
+Saga_94 {Jose Dios, Mükemmel Takımadalar Haritası'nın bir kopyasını yaptı.}
+Saga_95 {Bir gün geçti...@<NewStr()>Gümüş ambarınıza yüklendi}
+Saga_96 {Moknitekuvry}
+Saga_97 { }
+Saga_98 {@<iTemp> saat geçti...}
+Saga_99 {Söylentilere göre amiralimiz Narwals'ın lideri Alan Milrow'u öldürmüş. Şimdi Narwals korsanlara çok öfkeli...}
+Saga_100 {Red Mary, sevgilisi Alan Milrow’un trajik ölümünden sonra tamamen çöktü. Her gece 'Ceres Smithy' kamarasında oturup ağlıyor... Zavallı kız.}
+Saga_101 {Narwals liderini hapishanenin ortasında öldürmüşler. Tüyler ürpertici bir iş, söyleyeyim. Savunmasız bir adamı öylece öldürmek...}
+Saga_102 {Duyduk duymadık demeyin! Alan amiralin zindanına düştü, birkaç ay kafeste kaldı ve sonra yargılanmadan öldürüldü. Bizim tuhaf Kızıl Mary ise ‘Ceres Smithy’ kamarasında tamamen kayboldu. Zavallı kız, her gece ağlıyor. Eskiden ne kadar neşeliydi!}
+Saga_103 {Komançi iksiri kullanıldı}
+Saga_104 {Kendinizi tamamen iyileşmiş hissediyorsunuz!}
+Saga_105 {Adolf Barbier’in kaybolduğu söyleniyor. Evet, kolay para insana yaramaz...}
+Saga_106 {Adolf Barbier’in nerede olduğunu biliyor musun? Parayı alıp yeni bir kamara edindikten sonra ortadan kayboldu...}
+Saga_107 {Burada tuhaf şeyler oluyor. O çılgın Red Mary, Chad Kapper’la birlikte ortadan kayboldu. Eminim bu Rivados’un işi. Büyücülerinin intikamını aldılar...}
+Saga_108 {Şimdi de Red May kayboldu. Muhtemelen öldü, Rivados’la uğraşırsan böyle olur. Chad ve Mary’nin kaybolmasından da eminim ki onlar sorumlu.}
+Saga_109 {Dün gece 'Caroline'den garip sesler geldiğini söylüyorlar, orada biri kavga etmiş ve bir kadının ölüm öncesi çığlığı duyulmuş. Bence bu, May Casper'ın kayboluşunu açıklıyor. Zavallı kız! Eminim, onu bir daha asla göremeyeceğiz...}
+Saga_110 {Üç saat geçti...}
+Saga_111 {Ertesi sabah...}
+Saga_112 {Dev yengeç}
+Saga_113 { }
+Saga_114 {Doğru sandığı buldun@<NewStr()>Kaptanın altını bulundu!}
+Saga_115 {Jessica koşma yeteneğini elinden aldı!}
+Saga_116 {Jessica gücünü emdi – tüm silah becerilerin 30 puan düştü!}
+Saga_117 {Jessica çevikliğinizi emdi - enerjiniz artık 20 puan daha düşük!}
+Saga_118 {Saatlerce dua ettin...@<NewStr()>Mumlar tükendi...}
+Saga_119 {Jessica}
+Saga_120 {Rose}
+Saga_121 {Duruşma gerçekleşti!}
+Saga_122 {Bir saat geçti...@<NewStr()>Enkaz halindeki gemiye ulaştın}

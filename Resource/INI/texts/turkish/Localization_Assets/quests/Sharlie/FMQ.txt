@@ -1,0 +1,76 @@
+FMQ_1 {Bertrand}
+FMQ_2 {Pinette}
+FMQ_3 {Carlos}
+FMQ_4 {de Milyar}
+FMQ_5 {Jean}
+FMQ_6 {Deno}
+FMQ_7 {Sario}
+FMQ_8 {Juan}
+FMQ_9 {Deno}
+FMQ_10 {'Sario'}
+FMQ_11 {~ Pinette'e gelince... Bırak gitsin, o alçak tefeciye kalmaz.}
+FMQ_12 {~ Bu işi çözmemde bana o alçak tefeci yardım edecek, ifşa tehdidiyle – Pinette’in mektubu çok güçlü bir koz. Guadeloupe’a gitmeli ve gece şehir kapısından şehre girmeliyim.}
+FMQ_13 {Benseсho}
+FMQ_14 {San Jose'den ticaret konvoyu}
+FMQ_15 {Keşif modu: sayaç uzatıldı. Görevi tamamla!}
+FMQ_16 {Akşam oldu...@<NewStr()>Reçineler tersaneye boşaltıldı...}
+FMQ_17 {Topaz}
+FMQ_18 {Topaz tartanede alarm sesleri!}
+FMQ_19 {Karaya çıkabilirsiniz}
+FMQ_20 {Keşif modu: görev başarısız olmaz}
+FMQ_21 {Caspar}
+FMQ_22 {Gratton}
+FMQ_23 {Zeepard}
+FMQ_24 {İngiliz baskın ekibi hapishanemize sızmaya çalıştı ama uyanık komutanımızın kurduğu tuzağa düştü. Şimdi her İngiliz parmaklıklar ardında, ha ha!}
+FMQ_25 {Duydun mu? Kısa süre önce İngiliz baskıncıları yakaladılar. Kendi adamlarını hapishaneden kurtarmak istemişler ama sonunda kendileri de oraya tıkılmış!}
+FMQ_26 {Filippe}
+FMQ_27 {Jaсobsen}
+FMQ_28 {İngiliz baskın ekibi adamıza geldi ama uyanık komutanımız hepsini bulup hakladı. Büyük iş!}
+FMQ_29 {Duydun mu? Kasaba dışında bir çatışma olmuş. İngiliz baskın ekibini bulmuşlar. Britler teslim olmayı reddetmiş ve çatışmada öldürülmüş. Aferin komutan!}
+FMQ_30 {Gemi ipeği +200}
+FMQ_31 {Ah, sizsiniz! Bravo kaptan! Dişine kadar silahlanmış İngiliz casuslarına karşı cesurca durdunuz!}
+FMQ_32 {Üstlerimiz sizi çok övüyor, kaptan. Sebebi de var: İngiliz casuslarını ortadan kaldırmaya yardım etmek büyük iş!}
+FMQ_33 {İngiliz çıkarma birliği adamı adamı adaya çıktı, ama uyanık komutanımız boş durmadı, tüm hainleri bulup hakladı. İşte böyle!}
+FMQ_34 {Duydun mu? Şehir dışında bir çatışma çıktı. İngiliz sabotajcıları bulduk. Teslim olmayı reddettiler ve askerler tarafından öldürüldüler. Komutanımıza helal olsun!}
+FMQ_35 {Kasabada alarm!}
+FMQ_36 {Ne cüret! İngilizler gece şehre sızmış! Ama komutanımız hepsini bulup öldürttü. Ne var yani!}
+FMQ_37 {Duydun mu? Şehirde bir çatışma çıkmış. İngiliz baskın ekibini yakalamışlar. Britler teslim olmayı reddetmiş ve çatışmada öldürülmüş. Aferin komutan!}
+FMQ_38 {Gemini koyda demirlemediniz!}
+FMQ_39 {Hans}
+FMQ_40 {Shulte}
+FMQ_41 {Zeepard korveti yakınımızda!}
+FMQ_42 {Burada olanları duydun mu? Vali öfkeden delirmiş. İngiliz casusları, hapishanemizdeki adamlarını kaçırmış! Söylentiye göre işin içinde bir Fransız da varmış.}
+FMQ_43 {Duydun mu? Vali öfkeli. İngiliz casusları, kendi adamlarını hapishanemizden kaçırmış! Söylentiye göre işin içinde bazı Fransızlar da varmış.}
+FMQ_44 {Keşif modu: sayaç uzatıldı. Yolcuları varış noktasında bırakın!}
+FMQ_45 {Ah, sizmişsiniz! Bravo kaptan! Hollandalıların ininde denizcilerimize yardım edecek kadar cesurdunuz!}
+FMQ_46 {Vali sizi çok övüyor, kaptan. Hem de haklı olarak: Fox’un adamlarına esir subayları kurtarmakta yardım etmek büyük bir iş!}
+FMQ_47 {Marceline}
+FMQ_48 {Levasseur}
+FMQ_49 {Claude}
+FMQ_50 {Durand}
+FMQ_51 {Ugo}
+FMQ_52 { }
+FMQ_53 {önleyici}
+FMQ_54 {Domingo Albalate geminizden ayrıldı}
+FMQ_55 {Ağır bir muhasebe defteri buldun}
+FMQ_56 {Luis}
+FMQ_57 {Ortiz}
+FMQ_58 {Fudroyan}
+FMQ_59 {Gregoire}
+FMQ_60 {Valinnie}
+FMQ_61 {Prosper}
+FMQ_62 {Trubal}
+FMQ_63 {Johnny}
+FMQ_64 { }
+FMQ_65 {Selina Trubal için 20.000 peso ayırdınız}
+FMQ_66 {Felicien}
+FMQ_67 {Gronier}
+FMQ_68 {Keşif modu: görev süresi iki katına çıkar}
+FMQ_69 {Keşif modu: zamanlayıcı kaldırıldı}
+FMQ_70 {Hans}
+FMQ_71 {Shulte}
+FMQ_72 {Silvestre}
+FMQ_73 {McCoy}
+FMQ_74 {Domingo}
+FMQ_75 {Albalate}
+FMQ_76 {Birkaç saat sonra...@<NewStr()>Malları kıyıya teslim edildi}

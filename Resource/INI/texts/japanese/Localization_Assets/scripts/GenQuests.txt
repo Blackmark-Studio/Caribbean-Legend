@@ -1,0 +1,109 @@
+GenQuests_1 {密輸業者}
+GenQuests_2 {士官}
+GenQuests_3 {兵士}
+GenQuests_4 {@<sCity>の娘の結婚指輪を見つけた。 彼女に届けないと。}
+GenQuests_16 {宝がどこか近くにある！}
+GenQuests_17 {船の捜索時間が終了しました}
+GenQuests_18 {船の捜索時間が終了し、 船長は上陸しました}
+GenQuests_19 {船長が上陸した}
+GenQuests_20 {船長！疫病が発生しました！}
+GenQuests_21 {船@<chref.Ship.Name>の乗組員@<crew>人がすでに死亡}
+GenQuests_22 {爆発した}
+GenQuests_23 {爆発した}
+GenQuests_24 {~ カメラをフックする。}
+GenQuests_25 {船内空}
+GenQuests_26 {ご存知ですか、女主人が@<pchar.GenQuest.EncGirl.name>という名のメイドを、 ジャングルで散らばった真珠を集められなかっただけで追い出したそうですよ？ まったく、 最近の人たちは恥も知らない…いや、 もともと良心なんてなかったんでしょうね。}
+GenQuests_27 {聞いたかい？ ある娼婦が書類もなしに船に乗り込もうとしたらしい。 見つかって娼館に連れ戻されたそうだ。 どうやら主人にかなりの借金があるらしいぜ。}
+GenQuests_28 {聞いたかい？ うちの港で身分証のない娼婦が捕まったらしい。 あの女、 娼館から逃げ出す前に女主人の金庫を空にしたって話だ。 病気と盗みを広めるあんな連中は、 とっくに取り締まるべきだったんだよ。 子供たちだって見てるんだ、 何を学ぶっていうんだ？}
+GenQuests_29 {George}
+GenQuests_30 {Bush}
+GenQuests_31 {Rabak}
+GenQuests_32 {Maboa}
+GenQuests_33 {Abraham}
+GenQuests_34 {Lincoln}
+GenQuests_35 {造船で}
+GenQuests_36 {砲兵で}
+GenQuests_37 {航海術で}
+GenQuests_38 {キャプテン、 海賊船の旅はどうだった？ 普通だった？ 何か嫌なことされた？ ははは！}
+GenQuests_39 {おおお、 キャプテン、 最近ずいぶん楽しんだそうじゃないか……あんた、 今やすっからかんだな！ ハハハハ！}
+GenQuests_40 {湾に停泊できます。}
+GenQuests_41 {ご存知ですか、@<GetAddress_Form(pchar)>、最近パトロールの@<sShipType>の船長@<pchar.GenQuest.CaptainComission.Name>が逮捕されたそうです。 実は密輸で小遣い稼ぎをしていたとか。 今の総督になってから、 植民地はどうなってしまったのでしょう！ 海賊を捕まえるはずの者たちが、 私たちを食い物にしているなんて…噂では、 彼は一週間後に処刑されるそうです。 当然の報いですね。}
+GenQuests_42 {噂によると、パトロール船@<sShipType>の@<pchar.GenQuest.CaptainComission.Name>船長が密輸団の首謀者だったそうだ。 捕らえられ、 まもなく絞首刑になるらしい。 どうやら@<GetAddress_Form(pchar)>、 我々の総督は本気で植民地の秩序回復に乗り出したようだ。}
+GenQuests_43 {想像できますか？ 砦の司令官が密輸業者の秘密組織を暴き、 その組織はなんと海軍の士官まで仲間に引き入れていたのです。 その一人、 @<pchar.GenQuest.CaptainComission.Name>はすでに捕まり、 まもなく絞首刑にされます。 ああ、 @<GetAddress_Form(pchar)>、 私はいつも言っていましたが、 我々の総督は遅かれ早かれこの入植地に秩序を取り戻してくれると信じていました。}
+GenQuests_44 {もうご存知ですか、パトロールの@sShipType @<pchar.GenQuest.CaptainComission.Name>の船長が逮捕されたことを？ 当局は、 彼がこの海域を通る船から没収した大量の積荷を隠していたことを突き止めました。 どうやら、 絞首刑は免れそうにありません。 でも、 正直に言えば、 彼はパトロール艦隊でも屈指の腕利きでした。 まさか、 こんなことになるとは……}
+GenQuests_45 {くそっ！捕虜が逃げた！}
+GenQuests_46 {聞きましたか、@<GetAddress_Form(pchar)>、最近パトロールの@<sShipType> @<pchar.GenQuest.CaptainComission.Name>の船長が絞首刑になったそうです。 商人を襲ったとか。 ここでは誰も信用できませんね… しかも乗組員全員も一緒に処刑されたとか。 共謀というわけです…}
+GenQuests_47 {もうご存知ですか、@<GetAddress_Form(pchar)>。元巡回@<sShipType>の船長@<pchar.GenQuest.CaptainComission.Name>が処刑されたことを。 噂によれば、 彼は重要な船を沈めて、 積み荷を隠したそうです。 しかも、 乗組員の誰も隠し場所を明かさなかったとか。 それで全員が絞首刑にされたのです…}
+GenQuests_48 {想像できますか、@<GetAddress_Form(pchar)>？ 巡回艦隊のある船長が海賊行為に手を染めていたそうです。 最近、 その者は乗組員ごと処刑されました。 商船を襲い、 沈めていたと言われています。}
+GenQuests_49 {最近、元船長の@<pchar.GenQuest.CaptainComission.Name>と彼の巡回@<sShipType>の乗組員が処刑されました。 彼らはこの海域を通る船から押収した大量の貨物を隠したという噂です。 しかし、 彼らは優秀な巡回隊でした。 @<GetAddress_Form(pchar)>、 私は彼らが意図的に陥れられたと思います。 結局、 その貨物は見つかっていません……}
+GenQuests_50 {すべての貨物が船倉に積み込まれました}
+GenQuests_51 {三人}
+GenQuests_52 {四人}
+GenQuests_53 {五人}
+GenQuests_54 {六人}
+GenQuests_55 {七人}
+GenQuests_56 {八人}
+GenQuests_57 {九人}
+GenQuests_58 {十人}
+GenQuests_59 {難破者たちを集落に送り届けた}
+GenQuests_60 {密輸業者は砦の武器庫に行くのを恐れて逃げ出した}
+GenQuests_61 {正しい洞窟に到着しました}
+GenQuests_62 { }
+GenQuests_63 { }
+GenQuests_64 { }
+GenQuests_65 { }
+GenQuests_66 { }
+GenQuests_67 { }
+GenQuests_68 {紳士的でない}
+GenQuests_69 {見苦しい}
+GenQuests_70 { }
+GenQuests_71 { }
+GenQuests_72 {紳士の誓い}
+GenQuests_73 {約束を守る}
+GenQuests_74 {沈み、そのまま}
+GenQuests_75 {沈み、そのとき}
+GenQuests_76 { }
+GenQuests_77 { }
+GenQuests_78 {キャプテン@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>「@<sld.Ship.name>」、本名@<GetFullName(sld)>が再び海へ出航した。 噂によれば、 @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>へ向かったという。}
+GenQuests_79 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>「@<sld.Ship.name>」 の船長をご存知ですか？ その人なら@<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>へ向かいましたよ。}
+GenQuests_80 {もし@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>「@<sld.Ship.name>」の船長が必要なら、@<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>へ行く必要があります。@<GetFullName(sld)>はそこへ向かいました。}
+GenQuests_81 {キャプテン@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>「@<sld.Ship.name>」、本名@<GetFullName(sld)>が再び航海に出た。噂によれば、@<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>へ向かったらしい。}
+GenQuests_82 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>「@<sld.Ship.name>」の船長をご存知ですか？彼は@<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>へ向かいましたよ。}
+GenQuests_83 {もし@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>「@<sld.Ship.name>」の船長が必要なら、@<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>へ行く必要があります。@<GetFullName(sld)>はそこへ向かいました。}
+GenQuests_84 {キャプテン@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>「@<sld.Ship.name>」、本名@<GetFullName(sld)>が再び航海に出た。噂によれば、@<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>へ向かったという。}
+GenQuests_85 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>「@<sld.Ship.name>」の船長をご存知ですか？彼は@<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>へ向かいましたよ。}
+GenQuests_86 {もし@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>「@<sld.Ship.name>」の船長が必要なら、@<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>へ行く必要があります。@<GetFullName(sld)>はそこへ向かいました。}
+GenQuests_87 {士官@<GetFullName(sld)>が@<sld.ship.name>と共に逃亡しました}
+GenQuests_88 {士官@<GetFullName(sld)>が@<pchar.ship.name>から逃亡しました}
+GenQuests_89 {迎撃船}
+GenQuests_90 {五日が過ぎた…}
+GenQuests_91 {55人が乗組員に加わった}
+GenQuests_92 { }
+GenQuests_93 { }
+GenQuests_94 {聞いたかい？キャプテン@<GetFullName(pchar)>は、@<pchar.GenQuest.(Gun).name>という名の盗賊と戦ったんだ。 奴らは金を奪おうとしたが、 キャプテンは屈しなかった。 勇敢な男さ、 あのキャプテンは。 見事に悪党を倒したんだ。}
+GenQuests_95 {最近ジャングルで戦いがあったそうだ――盗賊どもがキャプテン@<GetFullName(pchar)>を襲って、 金を奪おうとしたらしい…ああ、@<pchar.GenQuest.(Gun).name>を倒したのはあなたなんですね！ 見事なお手並みです…}
+GenQuests_96 {地元の@<pchar.GenQuest.(Gun).name>という一味が、@<GetFullName(pchar)>という名の船長を襲って金を奪おうとしたって聞いたか？ 船長は支払いを拒んで、 全員を斬り捨てたらしいぞ。}
+GenQuests_97 {@<pchar.GenQuest.EncGirl.name> の殺人事件を聞きましたか？ かわいそうに、 彼女は最近ジャングルで殺されたんです。 犯人を見つけて絞首刑にすべきですね！}
+GenQuests_98 {ご存知ですか、キャプテン@<GetFullName(pchar)>、@<pchar.GenQuest.EncGirl.name>という可哀そうな娘さんが殺されたんです。 残念ですね、 とても良い子だったのに…}
+GenQuests_99 {彼女の名は@<pchar.GenQuest.EncGirl.name>、 ジャングルで命を落とした。 特に驚くことじゃないさ、 あそこは危険だからな…}
+GenQuests_100 {聞いたかい？ある船長が@<pchar.GenQuest.EncGirl.name>という娘を盗賊から救い出したんだ――まさに彼らの手から引き離したってさ！ 立派な人だし、 本物の男だよ！}
+GenQuests_101 {ご存知ですか、キャプテン@<GetFullName(pchar)>はジャングルで@<pchar.GenQuest.EncGirl.name>という娘を暴漢から救ったんですよ…ああ、 それがあなたでしたか！ 感服しました…}
+GenQuests_102 { }
+GenQuests_103 {いやはや、キャプテン@<GetFullName(pchar)>、 まさかあなたが無力な女性を山賊の慰み者にするなんて誰も思いませんでしたよ。 可哀想な@<pchar.GenQuest.EncGirl.name>、言葉もありません…}
+GenQuests_104 {ねえ、 キャプテン、 あなたって本当に最低ね。 どうしてジャングルで無力な女の子を見捨てられるの？ 彼女がどんな目に遭ったか、 想像できる？ かわいそうな@<pchar.GenQuest.EncGirl.name>、 もう誰も彼女と結婚してくれないわ…}
+GenQuests_105 {@<pchar.GenQuest.EncGirlF.name>の殺人事件を聞きましたか？ かわいそうに、 彼女は最近ジャングルで殺されたそうです。 犯人を見つけて絞首刑にすべきですね！}
+GenQuests_106 {ご存知ですか、船長@<GetFullName(pchar)>、@<pchar.GenQuest.EncGirlF.name>という可哀想な娘さんが殺されたんです。 残念ですね、 あの子は本当にいい子だったのに…}
+GenQuests_107 {彼女の名は@<pchar.GenQuest.EncGirlF.name>。 ジャングルで命を落としたんだ。 まあ、 特に驚くことじゃないさ、 あそこは危険だからな…}
+GenQuests_108 {最近、 私たちの士官とその部下全員が死んでいるのが発見された。 誰が彼らを殺したのか？ そして、 なぜだ？}
+GenQuests_109 {うちの司令官は普段からジャングルに巡回隊を送っているが、 今後どうするつもりなのか見当もつかない。 つい最近、 兵士たちがあそこで死体で見つかったんだ…}
+GenQuests_110 {くそっ、 誰かが街の外で我々の兵士部隊を皆殺しにした…}
+GenQuests_111 {噂によれば、キャプテン@<GetFullName(pchar)>はジャングルで@<NationNameGenitive(sti(pchar.GenQuest.(attrName).nation))>の兵士たちに出くわし、 全員を倒したそうだ。 ふん、 @<NationNamePeople(sti(pchar.GenQuest.(attrName).nation))>なんて戦士としては役立たずだな…}
+GenQuests_112 {どうやら、@<GetMainCharacterNameGen()> という船長が街の外で巡回隊に検査されたらしい…}
+GenQuests_113 {ふむ、 私の知る限り、 あなたは街の外で我々の巡回隊に検査されたはずです。 どれほど効果があったかは分かりませんが……}
+GenQuests_114 {我々の司令官がジャングルの巡回を強化する。 君も知っているだろう、 つい最近検査を受けたはずだ…}
+GenQuests_115 {ご存知ですか、総督の@<sTemp>がある船長@<GetMainCharacterNameDat()>に、悪名高い盗賊@<GetFullName(arAll)>の討伐を命じたんです。 そして、 その船長はどうやら任務を果たしたようですよ…}
+GenQuests_116 {勇敢な船長が、@<GetFullName(arAll)>という地元の盗賊を討伐すると名乗り出た。 そしてどうやら成し遂げたようだ！}
+GenQuests_117 {ははっ！ ついに我らの総督がジャングルの秩序回復に乗り出したぞ――キャプテン@<GetMainCharacterNameDat()>に、 あの悪名高い盗賊を追跡し討伐するよう命じたんだ。 そしてどうなったと思う？ その盗賊、 @<GetFullName(arAll)>は死んだ！}
+GenQuests_118 {地図}
+GenQuests_119 {財宝}
+GenQuests_120 {お金}

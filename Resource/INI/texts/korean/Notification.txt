@@ -1,0 +1,17 @@
+Notification_ReputationCheckPassed {평판 검사 통과}
+Notification_ReputationCheckFailed {평판이 너무 낮음}
+Notification_PerkCheckPassed {특성 판정 성공}
+Notification_PerkCheckFailed {특성 확인 실패}
+Notification_SkillCheckPassed {기술 판정 성공}
+Notification_SkillCheckFailed {기술 판정 실패}
+Notification_LevelCheckPassed {레벨 확인 통과}
+Notification_LevelCheckFailed {필요 레벨}
+CanBeCaptain {$attr($context.name)은(는) 공해에서 선박을 조종할 수 없습니다 \('선장' 특성 필요\)}
+Notification_ApproveCheckPassed {승인함}
+Notification_ApproveCheckFailed {못마땅해함}
+Notification_ReputationCheckFailed_High {명성이 너무 높음}
+Notification_ReputationNationCheckPassed {관계 확인 통과}
+Notification_ReputationNationCheckFailed {관계 수치 부족}
+Notification_MoneyCheckPassed {판정 성공}
+Notification_MoneyCheckFailed_Peso {페소 부족}
+Notification_MoneyCheckFailed_Dublon {둔블룬이 부족합니다}

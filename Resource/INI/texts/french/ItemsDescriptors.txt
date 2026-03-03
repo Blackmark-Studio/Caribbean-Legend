@@ -80,14 +80,15 @@ descriptor_descr_WeaponCurvature_1 {Cette arme présente une courbure marquée e
 descriptor_descr_ArmorType_0 {L’armure légère ressemble à de simples vêtements et ne gêne aucun mouvement. En contrepartie, la protection est réduite.}
 descriptor_descr_ArmorType_1 {L’armure moyenne limite un peu les mouvements, mais protège très bien les organes vitaux. Réduit la vitesse de déplacement du personnage de 5 %.}
 descriptor_descr_ArmorType_2 {L’armure lourde est encombrante et peu maniable, mais idéale pour prendre d’assaut une forteresse. Réduit la vitesse de déplacement de 10 %.}
-descriptor_descr_ArmorMaterial_0 {Le tissu ne résiste pas aux gros chocs, mais protège des éraflures et des griffures. Réduit les dégâts subis de 4 %.}
-descriptor_descr_ArmorMaterial_1 {Une armure en cuir peut vous sauver lors d’une rixe, mais elle n’arrêtera ni une balle ni une estoc habile. Réduit les dégâts subis de 8 %.}
-descriptor_descr_ArmorMaterial_2 {Les plates offrent un excellent équilibre entre poids et protection. Peuvent sauver la vie. Réduit les dégâts subis de 15 %.}
+descriptor_descr_ArmorMaterial_0 {Le tissu ne résiste pas aux gros chocs, mais protège des éraflures et des griffures. Réduit les dégâts subis de $percent($MaterialDefenceValue(0)).}
+descriptor_descr_ArmorMaterial_1 {Une armure en cuir peut vous sauver lors d’une rixe, mais elle n’arrêtera ni une balle ni une estoc habile. Réduit les dégâts subis de $percent($MaterialDefenceValue(1)).}
+descriptor_descr_ArmorMaterial_2 {Les plates offrent un excellent équilibre entre poids et protection. Peuvent sauver la vie. Réduit les dégâts subis de $percent($MaterialDefenceValue(2)).}
 descriptor_descr_ArmorMaterial_3
 {
-L’armure estampée est produite en masse pour équiper les troupes et utilisée dans les guerres européennes.Réduit les dégâts subis de 22 %.
+L’armure estampée est produite en masse pour équiper les troupes et utilisée dans les guerres européennes.
+Réduit les dégâts subis de $percent($MaterialDefenceValue(3)).
 }
-descriptor_descr_ArmorMaterial_4 {La fabrication d'une armure forgée de haute qualité est un processus complexe et coûteux, ce qui en fait une rareté dans les Caraïbes. Réduit les dégâts subis de 35 %.}
+descriptor_descr_ArmorMaterial_4 {La fabrication d'une armure forgée de haute qualité est un processus complexe et coûteux, ce qui en fait une rareté dans les Caraïbes. Réduit les dégâts subis de $percent($MaterialDefenceValue(4)).}
 descriptor_descr_AmuletType_0 {Puise dans les présages, les superstitions maritimes et de vrais liens de cause à effet.}
 descriptor_descr_AmuletType_1 {Puise dans la puissance des dieux païens et des rituels indigènes.}
 descriptor_descr_AmuletType_2 {Puise dans la puissance des saints chrétiens et de la foi juste.}

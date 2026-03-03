@@ -1,3 +1,5 @@
+// Модуль общего поведения торговли и обмена
+
 // метод на TAB переключает вкладки таблицы
 void ProcessInterfaceControls() 
 {
@@ -5,6 +7,7 @@ void ProcessInterfaceControls()
 	if (controlName == "InterfaceTabSwitch") {
 		string tableName = "TABLE_LIST";
 		if (CurTable == "TABLE_LIST") tableName = "TABLE_LIST2";
+		if (!CheckAttribute(&GameInterface, tableName + ".tr1" )) return;
 
 		Event("TableSelectChange", "sll", tableName, 1 , 1);
 		GameInterface.TABLE_LIST.select = tableName == "TABLE_LIST";
@@ -24,17 +27,6 @@ void ProcessInterfaceControls()
 	if (controlName == "InterfaceGoLeft") {
 		currentTab = (5 + currentTab - 2) % 5;
 		SetControlsTabMode(currentTab + 1);
-	}
-	
-	if (controlName == "InterfaceTakeAll")
-	{
-		onGetAllBtnClick();
-		string sInterfaceType = sGetInterfaceType();
-		if(sInterfaceType == INTERFACETYPE_DEADMAN && !CheckLastItemOnDead())
-		{
-			Dead_DelLoginedCharacter(refToChar);
-			IDoExit(RC_INTERFACE_FOOD_INFO_EXIT);
-		}
 	}
 }
 

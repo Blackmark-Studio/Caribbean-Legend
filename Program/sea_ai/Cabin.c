@@ -39,7 +39,7 @@ void Cabin_ReloadStartFade()
 
 	fOldMaxSeaHeight = stf(Sea.MaxSeaHeight);
 	trace("fOldMaxSeaHeight : " + fOldMaxSeaHeight);
-	Sea.MaxSeaHeight = 1.2;						// set maxinum sea height for ship abordage
+	Sea.MaxSeaHeight = 1.2; // set maxinum sea height for ship abordage
 	
 }
 
@@ -614,19 +614,33 @@ void SetSailorDeck_Ships(ref Chref)
 	pchar.GenQuest.CaptainId = characterID; // boal заготовка для других квестов, обработка в диалоге
 	pchar.quest.Munity = ""; // закрыто для квестов на выход
 	//<-- eddy. квест мэра, закрываем выход с палубы
-	
+
+
+	object aBoardingModels[1];
+	GenerateCrew(PChar, "soldier", &aBoardingModels);
+	model = aBoardingModels[0].model;
+	ani = aBoardingModels[0].ani;
+
+	object aSoldier[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, nullptr);
+
+	object aSoldierEnemy[1];
+	GenerateItemsForCharacter(Chref, ITEM_PACK_GENERIC, &aSoldierEnemy, nullptr);
+
+	int iRank = sti(pchar.rank);
+	int iScl = 20 + 2*sti(pchar.rank);
 	// Warship 08.07.09 Пасхалка с бригантиной Мэри Селест
 	// Генерим нашего матроса, который скажет, что, мол, корабль пуст
 	if(characterID == "MaryCelesteCapitan")
 	{
-		model = LAi_GetBoardingModel(PChar, &ani);
 		sld = GetCharacter(NPC_GenerateCharacter("saylor_0" + i, model, "man", ani, Rank, sti(PChar.nation), 0, true, "soldier"));
 	    sld.name = Xi_ConvertString("Sailor");
 	    sld.lastname = "";
         sld.Dialog.Filename = "Quest\sailors_dialog.c";
     	sld.Dialog.CurrentNode = "On_MaryCeleste_Deck";
     	sld.greeting = "sea_sailors";
-		
+
+		FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, PChar, "", 5.0, 0);
 		
@@ -657,7 +671,6 @@ void SetSailorDeck_Ships(ref Chref)
 	
 	if(CheckAttribute(pchar,"questTemp.ReasonToFast.canSpeakSailor") || CheckAttribute(pchar,"GenQuest.CaptainComission.canSpeakBoatswain"))
 	{
-		model = LAi_GetBoardingModel(PChar, &ani);
 		sld = GetCharacter(NPC_GenerateCharacter("saylor_0"+i, model, "man", ani, 10, sti(PChar.nation), 0, true, "soldier"));
 		sld.name = Xi_ConvertString("boatswain");
 	    sld.lastname = "";
@@ -683,7 +696,6 @@ void SetSailorDeck_Ships(ref Chref)
 	
 	if(CheckAttribute(pchar,"GenQuest.Hold_GenQuest.canSpeakSailor"))
 	{
-		model = LAi_GetBoardingModel(PChar, &ani);
 		sld = GetCharacter(NPC_GenerateCharacter("saylor_0"+i, model, "man", ani, 10, sti(PChar.nation), 0, true, "soldier"));
 		sld.name = Xi_ConvertString("boatswain");
 	    sld.lastname = "";
@@ -804,12 +816,17 @@ void SetSailorDeck_Ships(ref Chref)
 	}
 
 	if(CheckAttribute(pchar,"GenQuest.CaptainComission")) Rank = sti(pchar.rank) + rand(MOD_SKILL_ENEMY_RATE); // чтобы жизнь медом не казалась
-    
-    for (int i=1; i<5; i++)
+
+	object aBoardingModels2[4];
+	GenerateCrew(Chref, "soldier", &aBoardingModels2);
+
+	for (int i=1; i<5; i++)
     {
-        model = LAi_GetBoardingModel(Chref, &ani);
+		model = aBoardingModels2[i - 1].model;
+		ani = aBoardingModels2[i - 1].ani;
 		cn = NPC_GenerateCharacter("saylor_0" + i, model, "man", ani, Rank, sti(Chref.nation), 0, true, "soldier");
 		sld = &Characters[cn];
+		FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldierEnemy, iScl*2);
         LAi_SetWarriorType(sld); // участвуют в расстреле - переинитим тип
     	LAi_warrior_DialogEnable(sld, true);
 	    sld.name = Xi_ConvertString("Sailor");

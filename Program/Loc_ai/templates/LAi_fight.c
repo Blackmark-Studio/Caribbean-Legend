@@ -42,6 +42,8 @@ bool LAi_tmpl_fight_IsGo(aref chr)
 
 bool LAi_tmpl_fight_InitTemplate(aref chr)
 {
+	bool isRes = SendMessage(&chr, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode");
+	if(!LAi_IsInitedAI) isRes = true;
 	CharacterPlayAction(chr, "");
 	bool isNew = false;
 	if(CheckAttribute(chr, "chr_ai.tmpl"))

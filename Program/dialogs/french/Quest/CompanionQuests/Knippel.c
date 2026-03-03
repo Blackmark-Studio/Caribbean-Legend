@@ -795,25 +795,8 @@ void ProcessDialogEvent()
 			StartQuestMovie(true, false, true);
 			locCameraFromToPos(0.34, 0.51, 34.93, true, -5.63, -1.20, 57.46);
 			DoQuestCheckDelay("DTSG_PoP_Duel_Podkreplenie", 3.0);
-			
-			int DTSG_PoP_MK;
-			if (MOD_SKILL_ENEMY_RATE == 2) DTSG_PoP_MK = 5;
-			if (MOD_SKILL_ENEMY_RATE == 4) DTSG_PoP_MK = 5;
-			if (MOD_SKILL_ENEMY_RATE == 6) DTSG_PoP_MK = 4;
-			if (MOD_SKILL_ENEMY_RATE == 8) DTSG_PoP_MK = 4;
-			if (MOD_SKILL_ENEMY_RATE == 10) DTSG_PoP_MK = 3;
-			
-			for (i=1; i<=DTSG_PoP_MK; i++)
-			{
-				sld = GetCharacter(NPC_GenerateCharacter("DTSG_PoP_Matrosy_"+i, "citiz_3"+i, "man", "man", sti(pchar.rank)-5, sti(pchar.nation), -1, false, "quest"));
-				GiveItem2Character(sld, "blade_11");
-				sld.equip.blade = "blade_11";
-				ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload3");
-				LAi_SetActorType(sld);
-				LAi_ActorFollow(sld, pchar, "", -1);
-				sld.lifeday = 0;
-				LAi_SetHP(sld, 120.0, 120.0);
-			}
+
+			DTSG_Knippel_GenerateParty();
 		break;
 		
 		case "DTSG_PiterAdams_Nastoroje_29":

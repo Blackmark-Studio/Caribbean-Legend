@@ -26,8 +26,8 @@ Roger_25 {One hour later...@<NewStr()>The silk was unloaded to the buyer}
 Roger_26 {Moray}
 Roger_27 {Paul}
 Roger_28 {Chant}
-Roger_29 {Jean}
-Roger_30 {Picard}
+Roger_29 { }
+Roger_30 { }
 Roger_31 {30 pieces of cold arms has been taken from the ship's arsenal}
 Roger_32 {Gathered cold arms - 30 pieces}
 Roger_33 {No cold arms}
@@ -137,7 +137,7 @@ Roger_136 {... I swear to oppose any villain I will meet on my path ...}
 Roger_137 {... I swear to always choose honor between it and riches ...}
 Roger_138 {... I swear to stay an worthy and noble man in any situation and with any people ...}
 Roger_139 {I keep thinking of Mirabelle for some reason. How is she there? Is she missing me? It must had been cruel of me to leave a young girl alone. I will fix this! I should see her soon.}
-Roger_140 {Книппель}
-Roger_141 {Лонгвэй}
-Roger_142 {Тичингиту}
-Roger_143 {Томми}
+Roger_140 {Knippel}
+Roger_141 {Longway}
+Roger_142 {Tichingitu}
+Roger_143 {Tommy}

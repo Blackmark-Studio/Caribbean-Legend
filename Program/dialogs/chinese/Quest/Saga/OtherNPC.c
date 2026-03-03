@@ -843,6 +843,7 @@ void ProcessDialogEvent()
 			sld = characterFromId("Cap_Vensan");
 			sld.lifeday = 1;
 			sld.DontDeskTalk = true;
+			chrDisableReloadToLocation = false;
 		break;
 		
 		// Addon 2016-1 Jason 海盗系列补丁17/1

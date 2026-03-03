@@ -1,0 +1,21 @@
+NoLootCorpse0 {Bu delikanlının cepleri hayalet gemi gibi bomboş.}
+NoLootCorpse1 {Görünüşe göre değerli bir şeyi yokmuş.}
+NoLootCorpse2 {Bunun cepleri boş.}
+NoLootCorpse3 {Bir şeyi mi kaçırdım? Yok, kesinlikle boş.}
+NoLootCorpse4 {Adı bile olmayan bir kuruşsuz daha.}
+NoLootCorpse5 {Görünüşe göre borç parayla yaşamış.}
+NoLootCorpse6 {Bu cesedin kayıkçıya verecek parası bile yok.}
+NoLootCorpse7 {Ne yedek mermi var ne barut. Boşuna uğraştım.}
+NoLootCorpse8 {Ne cebinde bir kuruş var, ne de gömleğinde.}
+NoLootCorpse9 {Beş parasızdı, cebinde tek kuruş yoktu.}
+NoLootCorpse10 {Neden uğraştım ki? Bu boşmuş.}
+NoLootCorpse11 {Cepleri bomboş.}
+NoLootCorpse12 {Burada bir şey yok. Belki gizli cepler vardır?}
+NoLootCorpse13 {Ne para, ne anahtar, ne vasiyet.}
+NoLootCorpse14 {Öteye tek bir değerli eşyası olmadan gitti.}
+NoLootCorpse15 {Belli ki zengin değildi - cepleri bomboş.}
+NoLootCorpse16 {Zavallı adam savaşa belli ki hafif teçhizatla gitmiş.}
+NoLootCorpse17 {Son paralarını silahlanmak için harcadı.}
+NoLootCorpse18 {Ceset işte. Burada bir şey yok.}
+NoLootCorpse19 {Belli ki tüm hazinelerini bir sandıkta bırakmış.}
+NoLootCorpse20 {Görünüşe göre dövüş sırasında tüm değerli eşyalarını kaybetmiş.}

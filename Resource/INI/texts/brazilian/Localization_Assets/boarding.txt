@@ -1,0 +1,11 @@
+boarding_1 {O capitão escolheu tirar a própria vida.}
+boarding_2 {A tripulação se recusou a lutar por seu capitão.}
+boarding_3 {Capitão no convés!}
+boarding_4 {@<_Name> entra na briga!}
+boarding_5 {O capitão está morto; os sobreviventes se renderam.}
+boarding_6 {O capitão está morto, mas a tripulação se recusa a se render.}
+boarding_7 {Saque.}
+boarding_8 {Itens no saque.}
+boarding_9 {Equipe de abordagem de @<_ShipName>: @<_CrewSize>.}
+boarding_10 {Sobreviventes retornaram ao @<_ShipName>: @<_CrewSize>.}
+boarding_11 {O companheiro não conseguiu aproximar o navio para o abordo.}

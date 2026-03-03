@@ -34,3 +34,9 @@ Neutral_33 {Javier}
 Neutral_34 {Castillo}
 Neutral_35 {Gonzalo}
 Neutral_36 {Peralta}
+Neutral_37 {... now all suspicions about Shark Dodson will be cleared}
+Neutral_38 {Not enough money (10,100,000)}
+Neutral_39 {Not enough money (25,250,000)}
+Neutral_40 {Not enough money (50,500,000)}
+Neutral_41 {you}
+Neutral_42 {you both}

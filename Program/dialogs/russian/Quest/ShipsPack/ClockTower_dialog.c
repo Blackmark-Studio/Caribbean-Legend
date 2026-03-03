@@ -504,7 +504,7 @@ void ProcessDialogEvent()
 			link.l1.go = "ClockTower_Johan_47";
 
             if (iClockSP4PseudoGlobal != SOUND_INVALID_ID)
-                SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, iClockSP4PseudoGlobal, 0);
+                SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, iClockSP4PseudoGlobal, 300);
             ClockTower_PlaySound_rh2("Location/SP4_quest3");
 		break;
 
@@ -515,7 +515,7 @@ void ProcessDialogEvent()
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 
             if (iClockSP4PseudoGlobal != SOUND_INVALID_ID)
-                SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, iClockSP4PseudoGlobal, 0);
+                SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, iClockSP4PseudoGlobal, 300);
             ClockTower_PlaySound_rh2("Location/SP4_quest3");
 		break;
 		
@@ -582,17 +582,17 @@ void ProcessDialogEvent()
 				dialog.text = "Мне нужны капитаны, которые эффективно борются с пиратами и при этом достаточно успешны коммерчески, чтобы позволить себе наши услуги. Вы соответствуете этим критериям?";
 			}
 			else dialog.text = "";
-			if (!CheckAttribute(npchar, "ClockTower_option_1") && CheckAttribute(pchar, "questTemp.DiegoDeLanda_Memento"))
+			if (!CheckAttribute(npchar, "ClockTower_option_1") && GetDLCenabled(DLC_APPID_6) && !CharacterIsAlive("Memento_cap"))
 			{
 				link.l1 = "Я уничтожил Мортимера Грима. Капитана брига '"+GetShipName("Memento")+"'.";
 				link.l1.go = "ClockTower_VanDoorn_option_1";
 			}
-			if (!CheckAttribute(npchar, "ClockTower_option_2") && CheckAttribute(pchar, "questTemp.DiegoDeLanda_LadyBeth"))
+			if (!CheckAttribute(npchar, "ClockTower_option_2") && GetDLCenabled(DLC_APPID_5) && !CharacterIsAlive("LadyBeth_cap"))
 			{
 				link.l2 = "Думаю, ваша компания высоко оценила мою победу над Альбертом Блэквудом. Шнява 'Леди Бет' была серьёзным противником.";
 				link.l2.go = "ClockTower_VanDoorn_option_2";
 			}
-			if (!CheckAttribute(npchar, "ClockTower_option_3") && CheckAttribute(pchar, "questTemp.DiegoDeLanda_SantaMisericordia"))
+			if (!CheckAttribute(npchar, "ClockTower_option_3") && GetDLCenabled(DLC_APPID_4) && !CharacterIsAlive("SantaMisericordia_cap"))
 			{
 				link.l3 = "Фернандо де Аламида пиратом не был, но...";
 				link.l3.go = "ClockTower_VanDoorn_option_3";
@@ -1198,7 +1198,7 @@ void ProcessDialogEvent()
 
 		case "ClockTower_Visser_83":
 			dialog.text = "Проигрывать он умеет. Просто собрал личные вещи из кабинета и ушёл. Хотя проиграл ли он?\n"+
-			"Его командование 'Амстердамом' сохранили. На этот счёт компания, конечно, допустила промашку. Не надо было отдавать ему этот корабль ещё в тогда\n"+
+			"Его командование 'Амстердамом' сохранили. На этот счёт компания, конечно, допустила промашку. Не надо было отдавать ему этот корабль ещё тогда\n"+
 			"Недооценили мы его. Как бы всё хуже по итогу не обернулось\n"+
 			"И это ещё не всё.";
 			link.l1 = "Куда уж хуже?";

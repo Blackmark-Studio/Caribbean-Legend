@@ -1,0 +1,30 @@
+new_string
+{
+
+}
+Cheat_success {Trapaça executada com sucesso!}
+Cheat_on {Trapaça ativada}
+Cheat_off {Trapaça desativada}
+Cheat_Comming_soon {Em breve!}
+f1 {Desbloquear todas as receitas de criação}
+f2 {Adicionar materiais de criação}
+f3 {Adicionar ervas}
+f4 {Adicionar joias}
+f5 {Pedra do Adder +100}
+f6 {Munição +50}
+f7 {Obter Lâminas}
+f8 {Obter pistolas}
+f9 {Obter mosquetes}
+f10 {Modo deus ativado/desativado}
+f11 {Obter Coraças}
+f12 {Obter Talismãs}
+f13 {Obter Amuletos}
+f14 {Obter Talismãs}
+f15 {Obter Poções}
+f16 {Obter lunetas}
+f17 {Obter Lanterna}
+f18 {Obter dispositivos de navegação}
+f19 {Obter Ferramentas}
+f20 {Obter mapas comuns}
+f21 {Obter mapas de almirante}
+descF21No {Indisponível neste estágio do jogo}

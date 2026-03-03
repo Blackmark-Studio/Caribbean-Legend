@@ -113,7 +113,7 @@ Marigo_Cave_box2 {a chest in a dead end}
 Marigo_Cave_box3 {a chest near the torch}
 Panama_Cave {in a cave to the left of the exit from Portobello}
 Panama_Cave_box1 {under the planks in a dead end}
-Pearl_Grot {in a cave near the western coast between Belize and Blueweld}
+Pearl_Grot {in a cave on the western coast, deep in the jungle beyond Amatique Cove}
 Pearl_Grot_box1 {a chest over a large stone}
 PortoBello_Cave {in a cave to the right of Mosquitos Bay}
 PortoBello_Cave_box1 {under the planks in a dead end}

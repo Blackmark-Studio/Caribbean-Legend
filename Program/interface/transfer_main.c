@@ -100,7 +100,7 @@ void InitInterface_RS(string iniName, ref _chr, string _type)
 	SetEventHandler("HideInfoWindow","HideInfoWindow",0);
 	SetEventHandler("ShowRPGHint1","ShowRPGHint",0);
 	SetEventHandler("ShowRPGHint2","ShowRPGHint2",0);
-	SetEventHandler("MouseRClickUp","HideInfoWindow",0);
+	SetEventHandler("MouseRClickUp","ExitRPGHint",0);
 	SetEventHandler("TableSelectChange", "TableSelectChange", 0);
 	SetEventHandler("OnTableRClick", "OnTableRClick", 0);
 	SetEventHandler("ShowItemInfo", "ShowItemInfo", 0);
@@ -163,6 +163,7 @@ void InitInterface_RS(string iniName, ref _chr, string _type)
 		{
 			SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("Surrendered_" + _type)); 
 		}
+		SetCurrentNode("REMOVE_WINDOW_TEXT");
 		sMessageMode = "Surrendered_Ok";
 		ShowOkMessage();	
 	}
@@ -171,6 +172,17 @@ void InitInterface_RS(string iniName, ref _chr, string _type)
 	SetNodeUsing("DROP_GOODS",false);
 	CreateString(true, "CharJob", "", FONT_NORMAL, COLOR_NORMAL, 960, 290, SCRIPT_ALIGN_CENTER, 1.4);
 	GameInterface.strings.CharJob = "";
+
+	if (!bTransferMode) STH_StealShipFlag(sti(refEnemyCharacter.nation), GetCharacterShipClass(refEnemyCharacter));
+	InitLootCabinButton(_type);
+}
+
+// кнопка обыска каюты
+void InitLootCabinButton(string situation)
+{
+	bool canLoot = !bTransferMode & situation != "";
+	SetNodeUsing("LOOT_CABIN_BUTTON", canLoot);
+	if (!canLoot) AutoLayoutCenter("OFF_CANNONS_BUTTON|LOOT_CABIN_BUTTON", 1); // перемещаем кнопку, если вместо двух одна
 }
 
 void ProcessExitCancel()
@@ -274,6 +286,7 @@ void ProcessExitCancel()
 			SetFormatedText("REMOVE_WINDOW_CAPTION", XI_ConvertString("Capture Ship"));
 			SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("Surrendered_exit_1")); // Корабль остался без капитана. Потопить его?
 			SetSelectable("REMOVE_ACCEPT_OFFICER", true);
+			SetCurrentNode("REMOVE_WINDOW_CAPTION");
 			sMessageMode = "ShipDeadAsk";
 			ShowShipChangeMenu();
 		}
@@ -281,6 +294,7 @@ void ProcessExitCancel()
 		{//пленный кэп, живой ещё
 			SetFormatedText("REMOVE_WINDOW_CAPTION", XI_ConvertString("Surrendered_caption_2"));
 			SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("Surrendered_exit_2")); // Закончить грабеж и отпустить сдавшегося капитана и его экипаж? 
+			SetCurrentNode("REMOVE_WINDOW_CAPTION");
 			SetSelectable("REMOVE_ACCEPT_OFFICER", true);
 			sMessageMode = "ShipGoFreeAsk";
 			ShowShipChangeMenu();
@@ -318,6 +332,11 @@ void ProcessExitCancel()
 		}
 		else
 		{
+			if(GetMaxAutoSaves("AfterBoarding") != 0)
+			{
+				DeleteAfterSaveFunction();
+				PostEvent("Event_NewAutoSave", 1000, "s", "AfterBoarding");
+			}
 			IDoExit(RC_INTERFACE_RANSACK_MAIN_EXIT);
 		}
 	}
@@ -333,7 +352,7 @@ void IDoExit(int exitCode)
 	DelEventHandler("HideInfoWindow","HideInfoWindow");
 	DelEventHandler("ShowRPGHint1","ShowRPGHint");
 	DelEventHandler("ShowRPGHint2","ShowRPGHint2");
-	DelEventHandler("MouseRClickUp","HideInfoWindow");
+	DelEventHandler("MouseRClickUp","ExitRPGHint");
 	DelEventHandler("TableSelectChange", "TableSelectChange");
 	DelEventHandler("OnTableRClick", "OnTableRClick");
 	DelEventHandler("ShowItemInfo", "ShowItemInfo");
@@ -398,12 +417,48 @@ void IDoExit(int exitCode)
 		if(ach139condition()) Achievment_Set("ach_CL_139");
 	}
 }
+
+// Переместить вещи из каюты капитана в трюм игрока
+void LootCabin()
+{
+	ref cabin =	FindLocationById(GetShipCabinID(xi_refCharacter));
+	if (cabin == nullptr)
+	{
+		trace("Error: can't loot cabin for captain: " + xi_refCharacter.id + ". Can't found cabin location.");
+		return;
+	}
+
+	FillAboardCabinBox(cabin, xi_refCharacter);
+	for (int i = 1; i < 5; i++)
+	{
+		aref box = GetAref(cabin, "box" + i);
+		aref itemsList = GetAref(&box, "items");
+		if (itemsList == nullptr) continue;
+
+		int itemsListLength = GetAttributesNum(itemsList);
+		PutItemToShip(SHIP_LOC_HOLD, "money", GetAttributeInt(&box, "money"));
+
+		for (int x = 0; x < itemsListLength; x++)
+		{
+			aref boxItem = GetAttributeN(itemsList, x);
+			PutItemToShip(SHIP_LOC_HOLD, GetAttributeName(boxItem), sti(GetAttributeValue(boxItem)));
+			Log_TestInfo("Закинули в трюм: " + GetAttributeName(boxItem) + " " + sti(GetAttributeValue(boxItem)));
+		}
+	}
+
+	SetSelectable("LOOT_CABIN_BUTTON", false);
+	SetCurrentNode("TABLE_LIST");
+}
+
 void ProcessCommandExecute()
 {
 	string comName = GetEventData();
 	string nodName = GetEventData();
 	switch(nodName)
 	{
+		case "LOOT_CABIN_BUTTON":
+				if (comName=="click" || comName=="activate") CallWithConfirmation(XiStr("LootPopupText"), "LootCabin", true);
+		break;
 		case "REMOVE_OK":
 			if(comName=="click" || comName=="activate")
 			{
@@ -856,11 +911,10 @@ void ShowInfoWindow()
 			if (CheckAttribute(&GameInterface, "TABLE_LIST." + sRow + ".index")) {
 				iItem = sti(GameInterface.TABLE_LIST.(sRow).index)
 				string GoodName = goods[iItem].name;
-				int lngFileID = LanguageOpenFile("GoodsDescribe.txt");
 				sHeader = XI_ConvertString(GoodName);
 				sGroup = "GOODS";
 				sGroupPicture = GoodName;
-				sText1 = GetAssembledString(LanguageConvertString(lngFileID,GoodName+"_descr"), &Goods[iItem]) + newStr() + "***";
+				sText1 = GetAssembledString(GetGoodDescr(&Goods[iItem]), &Goods[iItem]) + newStr() + "***";
 			} else {
 				sHeader = XI_Convertstring("Goods");
 				sText1  = GetRPGText("GoodsCargo_hint");
@@ -958,11 +1012,11 @@ void ShowInfoWindow()
 		break;
 		case "FOOD_SHIP":
 			sHeader = XI_Convertstring("FoodShipInfoShort");
-			sText1 = GetConvertStr("Food_descr", "GoodsDescribe.txt");
+			sText1 = GetGoodDescr("Food");
 		break;
 		case "RUM_SHIP":
 			sHeader = XI_Convertstring("RumShipInfoShort");
-			sText1 = GetConvertStr("Rum_descr", "GoodsDescribe.txt");
+			sText1 = GetGoodDescr("Rum");
 		break;
 		case "MONEY_SHIP2":
 			sHeader = XI_Convertstring("CostPerMonth");
@@ -970,11 +1024,11 @@ void ShowInfoWindow()
 		break;
 		case "FOOD_SHIP2":
 			sHeader = XI_Convertstring("FoodShipInfoShort");
-			sText1 = GetConvertStr("Food_descr", "GoodsDescribe.txt");
+			sText1 = GetGoodDescr("Food");
 		break;
 		case "RUM_SHIP2":
 			sHeader = XI_Convertstring("RumShipInfoShort");
-			sText1 = GetConvertStr("Rum_descr", "GoodsDescribe.txt");
+			sText1 = GetGoodDescr("Rum");
 		break;
 	}
 
@@ -989,7 +1043,6 @@ void ShowInfoWindow()
 void HideInfoWindow()
 {
 	CloseTooltipNew();
-	ExitRPGHint();
 }
 
 void TableSelectChange()
@@ -1138,11 +1191,10 @@ void ShowGoodsInfo(int iGoodIndex)
 {
 	string GoodName = goods[iGoodIndex].name;
 
-	int lngFileID = LanguageOpenFile("GoodsDescribe.txt");
 	string sHeader = XI_ConvertString(GoodName);
 
     iCurGoodsIdx = iGoodIndex;
-	string goodsDescr = GetAssembledString( LanguageConvertString(lngFileID,goodName+"_descr"), &Goods[iGoodIndex]);
+	string goodsDescr = GetAssembledString(GetGoodDescr(&Goods[iGoodIndex]), &Goods[iGoodIndex]);
     goodsDescr += newStr() + XI_ConvertString("weight") + " " + Goods[iGoodIndex].weight + " " + XI_ConvertString("cwt") +
 	              ", " + XI_ConvertString("PackHolds") + " " + Goods[iGoodIndex].Units + " " + XI_ConvertString("units");
 
@@ -1158,7 +1210,6 @@ void ShowGoodsInfo(int iGoodIndex)
 	SetNewGroupPicture("QTY_GOODS_PICTURE", "GOODS", GoodName);
     SetFormatedText("QTY_CAPTION", sHeader);
     SetFormatedText("QTY_GOODS_INFO", goodsDescr);
-	LanguageCloseFile(lngFileID);
 	
 	iShipQty = GetCargoGoods(pchar, iGoodIndex);
     SetFormatedText("QTY_INFO_SHIP_QTY", its(iShipQty))
@@ -1330,7 +1381,7 @@ void ShipChangeCaptan()
 				// проверка на 5 кораблей
 				if (GetCompanionQuantity(PChar) < COMPANION_MAX)
 				{
-					FillScrollWithCharacters(&NullCharacter, "PASSENGERSLIST", "IsFellowAbleToBeCompanion", false, &nCurScrollOfficerNum, -1);
+					FillScrollWithCharacters(&NullCharacter, "PASSENGERSLIST", "IsFellowAbleToBeCompanionOnBoarding", false, &nCurScrollOfficerNum, -1);
 				    SendMessage(&GameInterface,"lsl",MSG_INTERFACE_SCROLL_CHANGE,"PASSENGERSLIST",-1);
 				    SetCurrentNode("PASSENGERSLIST");
 					ProcessFrame();
@@ -1443,6 +1494,11 @@ void GoToShipChange() // нажатие ОК на табличке ок-отме
 			}
 			else
 			{
+				if(GetMaxAutoSaves("AfterBoarding") != 0)
+				{
+					DeleteAfterSaveFunction();
+					PostEvent("Event_NewAutoSave", 1000, "s", "AfterBoarding");
+				}
 				IDoExit(RC_INTERFACE_RANSACK_MAIN_EXIT);
 			}
 		break;
@@ -1524,6 +1580,11 @@ void GoToShipChange() // нажатие ОК на табличке ок-отме
 			}
 			else
 			{
+				if(GetMaxAutoSaves("AfterBoarding") != 0)
+				{
+					DeleteAfterSaveFunction();
+					PostEvent("Event_NewAutoSave", 1000, "s", "AfterBoarding");
+				}
 				IDoExit(RC_INTERFACE_RANSACK_MAIN_EXIT);
 			}
 		break;
@@ -2000,6 +2061,7 @@ void delayedDisableMainWindow()
 {
 	DelEventHandler("delayedDisableMainWindow", "delayedDisableMainWindow");
 	XI_WindowDisable("MAIN_WINDOW", true);
+	SetCurrentNode("HIRE_QTY_EDIT_BOX");
 }
 
 void ExitHireCrewWindow()

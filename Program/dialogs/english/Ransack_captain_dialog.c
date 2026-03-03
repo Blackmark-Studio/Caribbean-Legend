@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 			attrLoc = Sea_FindNearColony();
 			if (attrLoc != "none") 
 			{
-                link.l3 = "We are not far from "+GetConvertStr(attrLoc+" Town","LocLables.txt")+". And I could let you go here.";
+                link.l3 = "We are not far from "+GetCityName(attrLoc)+". And I could let you go here.";
 			    link.l3.go = "free_withoutFee";
 			}
 			else
@@ -161,7 +161,7 @@ void ProcessDialogEvent()
 				attrLoc = Sea_FindNearColony();
 				if (attrLoc != "none") 
 				{
-					link.l4 = "We are not far from "+GetConvertStr(attrLoc+" Town","LocLables.txt")+". And I could let you go here.";
+					link.l4 = "We are not far from "+GetCityName(attrLoc)+". And I could let you go here.";
 					link.l4.go = "free_withoutFee";
 				}
 				else
@@ -190,7 +190,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "free_to_officer":
-			if ((GetSummonSkillFromName(pchar, "Leadership") + 20) <= GetSummonSkillFromName(npchar, "Leadership"))
+			if (!CanHirePrisoner(npchar))
 			{
 				dialog.text = "Serving under your command? I'd rather feed the sharks!";
 				link.l1 = "Watch your tongue or you will feed them.";
@@ -207,7 +207,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "free_to_officer_trader":
-			if (GetSummonSkillFromName(pchar, "Leadership") <= GetSummonSkillFromName(npchar, "Leadership"))
+			if (!CanHirePrisoner(npchar))
 			{
 				dialog.text = LinkRandPhrase("It is a tempting offer... but I have to refuse it. On principle.","Sorry, but after what you did to my friends... It's impossible.","No, captain. After all this terror I can't do this job anymore. I made a vow that if the Blessed Virgin hears my prayers and grants me freedom I won't sail anymore.");
 				link.l1 = "It is your choice. I won't insist.";	
@@ -358,7 +358,7 @@ void ProcessDialogEvent()
             LAi_SetWarriorType(NPChar);
             LAi_group_MoveCharacter(NPChar, LAI_GROUP_TmpEnemy);
             LAi_group_SetHearRadius(LAI_GROUP_TmpEnemy, 100.0);
-            LAi_group_FightGroupsEx(LAI_GROUP_TmpEnemy, LAI_GROUP_PLAYER, true, Pchar, -1, false, false);
+            LAi_group_FightGroupsEx(LAI_GROUP_TmpEnemy, LAI_GROUP_PLAYER, true, GetMainCharacterIndex(), -1, false, false);
             LAi_group_SetRelation(LAI_GROUP_TmpEnemy, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
             LAi_group_SetCheck(LAI_GROUP_TmpEnemy, "My_Deck_Battle_End");
             LAi_group_SetRelation(LAI_GROUP_TmpEnemy, "Prisoner", LAI_GROUP_NEITRAL);
@@ -388,7 +388,7 @@ void ProcessDialogEvent()
             LAi_LocationFightDisable(&Locations[FindLocation("My_Deck")], false);
             LAi_SetFightMode(Pchar, true);
 			LAi_group_SetHearRadius(LAI_GROUP_TmpEnemy, 100.0);
-            LAi_group_FightGroupsEx(LAI_GROUP_TmpEnemy, LAI_GROUP_PLAYER, true, Pchar, -1, false, false);
+            LAi_group_FightGroupsEx(LAI_GROUP_TmpEnemy, LAI_GROUP_PLAYER, true, GetMainCharacterIndex(), -1, false, false);
             LAi_group_SetRelation(LAI_GROUP_TmpEnemy, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
             LAi_group_SetCheck(LAI_GROUP_TmpEnemy, "My_Deck_Battle_End");
         	DialogExit();

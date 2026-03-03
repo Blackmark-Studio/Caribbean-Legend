@@ -94,10 +94,10 @@ void wdmShipEncounter(float dltTime, float playerShipX, float playerShipZ, float
 			if(rand(1001) + 1 < wdmTimeOfLastWarring)
 			{
 				// Сражения по обычной логике
-                if (bBettaTestMode && bGlobalVar4)
+                if (bBettaTestMode && __DebugEncCnt)
                 {
-                    if (TEV.LastEnc != "-2") bGlobalVar4 = 1;
-                    else bGlobalVar4++;
+                    if (TEV.LastEnc != "-2") __DebugEncCnt = 1;
+                    else __DebugEncCnt++;
                     TEV.LastEnc = "-2";
                 }
 				wdmTimeOfLastWarring = 0.0;
@@ -140,10 +140,10 @@ void Map_WarriorEnd()
 	pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
 	if(sti(pchar.worldmap.shipcounter) < 0)
 	{
-		sti(pchar.worldmap.shipcounter) = 0;
+		pchar.worldmap.shipcounter = 0;
 	}
-    string sChar = GetEventData();
 
+    string sChar = GetEventData();
     Map_WarriorEnd_quest(sChar);
 }
 

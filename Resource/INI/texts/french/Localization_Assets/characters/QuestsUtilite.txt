@@ -161,36 +161,36 @@ QuestsUtilite_160 { }
 QuestsUtilite_161 {Warder}
 QuestsUtilite_162 { }
 QuestsUtilite_163 {Gone are the long days...}
-QuestsUtilite_164 {Amphitrite}
+QuestsUtilite_164 {Anfitrite}
 QuestsUtilite_165 {Fuerte}
-QuestsUtilite_166 {Impérial}
+QuestsUtilite_166 {Imperial}
 QuestsUtilite_167 {Bonnet}
 QuestsUtilite_168 {Trafalgar}
 QuestsUtilite_169 {Gloucester}
-QuestsUtilite_170 {Griffon}
+QuestsUtilite_170 {Griffin}
 QuestsUtilite_171 {Languedoc}
-QuestsUtilite_172 {Leyde}
+QuestsUtilite_172 {Leiden}
 QuestsUtilite_173 {Moloch}
 QuestsUtilite_174 {Cristobal}
-QuestsUtilite_175 {Souverain}
+QuestsUtilite_175 {Soberano}
 QuestsUtilite_176 {Alcantara}
-QuestsUtilite_177 {Avant-garde}
+QuestsUtilite_177 {Vanguard}
 QuestsUtilite_178 {Torbay}
 QuestsUtilite_179 {Russell}
 QuestsUtilite_180 {Barford}
-QuestsUtilite_181 {Pélican}
+QuestsUtilite_181 {Pelican}
 QuestsUtilite_182 {Montebello}
-QuestsUtilite_183 {Zélande}
-QuestsUtilite_184 {Liménien}
-QuestsUtilite_185 {Léviathan}
-QuestsUtilite_186 {Phénix}
+QuestsUtilite_183 {Zeelandia}
+QuestsUtilite_184 {Limeno}
+QuestsUtilite_185 {Leviathan}
+QuestsUtilite_186 {Phoenix}
 QuestsUtilite_187 {Neptune}
 QuestsUtilite_188 {Bourgogne}
-QuestsUtilite_189 {Pandore}
+QuestsUtilite_189 {Pandora}
 QuestsUtilite_190 {Rotterdam}
 QuestsUtilite_191 {Meerman}
 QuestsUtilite_192 {Bucentaure}
-QuestsUtilite_193 {Concorde}
+QuestsUtilite_193 {Concord}
 QuestsUtilite_194 {A Comanche potion is used}
 QuestsUtilite_195 {You are feeling that your health is restored!}
 QuestsUtilite_196 {Marlin}

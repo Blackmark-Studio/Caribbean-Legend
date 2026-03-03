@@ -1,5 +1,0 @@
-newline
-{
-
-}
-Template {Template}

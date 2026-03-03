@@ -75,7 +75,7 @@ void SelectAction(ref rid) //CASE с действиями для слухов
 			    object otmp;
 			    ref rtmp;
                 rtmp = &otmp;
-        	    rtmp.colony = GetConvertStr(rcolony.id+" Town", "LocLables.txt");
+        	    rtmp.colony = GetCityName(rcolony.id);
                 rid.text = GetAssembledString( rid.text, rtmp);
             }
             else rid.text = NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)]; // нету слухов				           

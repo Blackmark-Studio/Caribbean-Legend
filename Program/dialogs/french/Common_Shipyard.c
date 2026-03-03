@@ -333,7 +333,7 @@ void ProcessDialogEvent()
 				{
 					if (pchar.questTemp.WPU.Postcureer.TargetPortmanID == npchar.id)
 					{
-						link.l14 = "J'ai livré le dessin du navire de la ville de "+XI_ConvertString("Colonie"+pchar.questTemp.WPU.Postcureer.StartCity+"Gen")+".";
+						link.l14 = "J'ai livré le dessin du navire de la ville de "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.StartCity+"Gen")+".";
 						link.l14.go = "Postcureer_LevelUp_ForAll";
 					}
 				}
@@ -403,7 +403,7 @@ void ProcessDialogEvent()
 				{
 					if (pchar.questTemp.WPU.Postcureer.TargetPortmanID == npchar.id)
 					{
-						link.l14 = "J'ai livré le dessin du navire de la ville de "+XI_ConvertString("Colonie"+pchar.questTemp.WPU.Postcureer.StartCity+"Gén")+".";
+						link.l14 = "J'ai livré le dessin du navire de la ville de "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.StartCity+"Gen")+".";
 						link.l14.go = "Postcureer_LevelUp_ForAll";
 					}
 				}
@@ -2734,7 +2734,7 @@ string findShipyardCity(ref NPChar)
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(npchar.nation), sti(colonies[n].nation));
-		if (sti(colonies[n].nation) != PIRATE && colonies[n].id != "Panama" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //не на свой остров
+		if (sti(colonies[n].nation) != PIRATE && colonies[n].id != "Panama" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //не на свой остров
 		{
 			if (GetCharacterIndex(colonies[n].id + "_shipyarder") != -1)
 			{

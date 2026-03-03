@@ -48,7 +48,7 @@ bool InitArmorModifiers(ref item)
 		break;
 		case "cirass11":
 		{
-			SetArmorDescriptors(item, ARMOR_MEDIUM, ARMOR_STAMPS);
+			SetArmorDescriptors(item, ARMOR_MEDIUM, ARMOR_MOLDED);
 			AddDescriptor(item, "Exotic", -1);
 			AddDescriptor(item, "HeartDefence", -1);
 		}

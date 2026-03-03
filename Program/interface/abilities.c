@@ -319,16 +319,7 @@ void SetVariable()
 	{
 	   xi_refCharacter.perks.FreePoints_ship_exp = 0;
 	}
-	SetFormatedText("Personal_progress", sti(xi_refCharacter.perks.FreePoints_self_exp)+ "/" + GetFreePoints_SelfRate(xi_refCharacter));
-	GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Max   = GetFreePoints_SelfRate(xi_refCharacter);
-	GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Min   = 0;
-	GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Value = sti(xi_refCharacter.perks.FreePoints_self_exp);	
-	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"PERSONAL_PROGRESSBAR",0);
-	SetFormatedText("Ship_progress", sti(xi_refCharacter.perks.FreePoints_ship_exp)+ "/" + GetFreePoints_ShipRate(xi_refCharacter));
-	GameInterface.StatusLine.SHIP_PROGRESSBAR.Max   = GetFreePoints_ShipRate(xi_refCharacter);
-	GameInterface.StatusLine.SHIP_PROGRESSBAR.Min   = 0;
-	GameInterface.StatusLine.SHIP_PROGRESSBAR.Value = sti(xi_refCharacter.perks.FreePoints_ship_exp);	
-	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"SHIP_PROGRESSBAR",0);
+	UpdateFreePoints();
 
 		if (bBettaTestMode)
 		{
@@ -660,9 +651,7 @@ void FillSkillTables()
 		xi_refCharacter.perks.FreePoints_self = 0;
     if (!CheckAttribute(xi_refCharacter,"perks.FreePoints_ship") )
 		xi_refCharacter.perks.FreePoints_ship = 0;
-	SetFormatedText("TABSTR_SELF_PERKS", XI_ConvertString("Personal abilities") + "  -  " +xi_refCharacter.perks.FreePoints_self);
-	SetFormatedText("TABSTR_SHIP_PERKS", XI_ConvertString("Ship abilities") + "  -  " + xi_refCharacter.perks.FreePoints_ship);
-	
+	SetFormatedText("FREE_POINTS", XiStr("Available points"));
 	GameInterface.TABLE_SPECIAL.select = 0;
 	GameInterface.TABLE_SPECIAL.hr.td1.str = "";
 
@@ -678,6 +667,8 @@ void FillSkillTables()
 		// GameInterface.TABLE_SPECIAL.(row).td1.scale = 0.88;
 		GameInterface.TABLE_SPECIAL.(row).td2.textoffset = "0,0";
 		GameInterface.TABLE_SPECIAL.(row).td2.scale = 1.25;
+		GameInterface.TABLE_SPECIAL.(row).td3.scale = 1.2;
+		GameInterface.TABLE_SPECIAL.(row).td3.textoffset = "0,1";
 		GameInterface.TABLE_SPECIAL.(row).td3.align = "center";
 		GameInterface.TABLE_SPECIAL.(row).td4.fontidx = 1;
 		GameInterface.TABLE_SPECIAL.(row).td4.textoffset = "5,0";
@@ -692,6 +683,7 @@ void FillSkillTables()
 		GameInterface.TABLE_SPECIAL.(row).td4.str = specialValue;
 		// рассчет драйна
 		diff = specialValue - skillVal;
+
 		if (diff == 0)
 		{
      		GameInterface.TABLE_SPECIAL.(row).td3.str = "";
@@ -699,17 +691,19 @@ void FillSkillTables()
 		}
 		else
 		{
-		   if (diff > 0)
-		   {
-	          GameInterface.TABLE_SPECIAL.(row).td3.str = "(+" + diff + ")";
-	          GameInterface.TABLE_SPECIAL.(row).td3.color = argb(255,196,255,196);
-	       }
-	       else
-	       {
-	          GameInterface.TABLE_SPECIAL.(row).td3.str = "(" + diff + ")";
-	          GameInterface.TABLE_SPECIAL.(row).td3.color = argb(255,255,196,196);
-	       }
-		}
+			if (diff > 0)
+			{
+				if (diff < 10) GameInterface.TABLE_SPECIAL.(row).td3.str = "~~~~~~+" + diff;
+				else GameInterface.TABLE_SPECIAL.(row).td3.str = "+" + diff;
+				GameInterface.TABLE_SPECIAL.(row).td3.color = argb(255,196,255,196);
+			}
+			else
+			{
+				if (abs(diff) < 10) GameInterface.TABLE_SPECIAL.(row).td3.str = "~~~~~~~" + diff;
+				else GameInterface.TABLE_SPECIAL.(row).td3.str = diff;
+					GameInterface.TABLE_SPECIAL.(row).td3.color = argb(255,255,196,196);
+			}
+		}	
 	}
 
     GameInterface.TABLE_SKILL_1.select = 0;
@@ -735,6 +729,10 @@ void FillSkillTables()
 		// GameInterface.TABLE_SKILL_1.(row).td5.align = "center";
 		GameInterface.TABLE_SKILL_1.(row).td3.scale = 1.2;
 		// GameInterface.TABLE_SKILL_1.(row).td4.scale = 0.85;
+		GameInterface.TABLE_SKILL_1.(row).td3.textoffset = "0,1";
+		GameInterface.TABLE_SKILL_1.(row).td4.scale = 1.2;
+		GameInterface.TABLE_SKILL_1.(row).td3.align = "right";
+		GameInterface.TABLE_SKILL_1.(row).td4.textoffset = "0,1";
 
 		GameInterface.TABLE_SKILL_1.(row).td2.str = XI_ConvertString(skillName);
 		skillVal = GetSkillBase(xi_refCharacter, &skillName);
@@ -758,16 +756,18 @@ void FillSkillTables()
 		}
 		else
 		{
-		   if (diff > 0)
-		   {
-	          GameInterface.TABLE_SKILL_1.(row).td4.str = "(+" + diff + ")";
-	          GameInterface.TABLE_SKILL_1.(row).td4.color = argb(255,196,255,196);
-	       }
-	       else
-	       {
-	          GameInterface.TABLE_SKILL_1.(row).td4.str = "(" + diff + ")";
-	          GameInterface.TABLE_SKILL_1.(row).td4.color = argb(255,255,196,196);
-	       }
+			if (diff > 0)
+			{
+				if (diff < 10) GameInterface.TABLE_SKILL_1.(row).td4.str = "~~~~~~+" + diff;
+				else GameInterface.TABLE_SKILL_1.(row).td4.str = "+" + diff;
+				GameInterface.TABLE_SKILL_1.(row).td4.color = argb(255,196,255,196);
+			}
+			else
+			{
+				if (abs(diff) < 10) GameInterface.TABLE_SKILL_1.(row).td4.str = "~~~~~~~" + diff;
+				else GameInterface.TABLE_SKILL_1.(row).td4.str = diff;
+					GameInterface.TABLE_SKILL_1.(row).td4.color = argb(255,255,196,196);
+			}
 		}
 	}
 	GameInterface.TABLE_SKILL_2.select = 0;
@@ -793,6 +793,10 @@ void FillSkillTables()
 		GameInterface.TABLE_SKILL_2.(row).td5.align = "left";
 
 		GameInterface.TABLE_SKILL_2.(row).td2.str = XI_ConvertString(skillName);
+		GameInterface.TABLE_SKILL_2.(row).td3.textoffset = "0,1";
+		GameInterface.TABLE_SKILL_2.(row).td4.scale = 1.2;
+		GameInterface.TABLE_SKILL_2.(row).td3.align = "right";
+		GameInterface.TABLE_SKILL_2.(row).td4.textoffset = "0,1";
 		skillVal = GetSkillBase(xi_refCharacter, &skillName);
 		skillValWithEffects = GetSkillAfterPenalty(xi_refCharacter, &skillName);
 		//GameInterface.TABLE_SKILL_2.(row).td5.str = skillVal; // старый метод
@@ -815,16 +819,18 @@ void FillSkillTables()
 		}
 		else
 		{
-		   if (diff > 0)
-		   {
-	          GameInterface.TABLE_SKILL_2.(row).td4.str = "(+" + diff + ")";
-	          GameInterface.TABLE_SKILL_2.(row).td4.color = argb(255,196,255,196);
-	       }
-	       else
-	       {
-	          GameInterface.TABLE_SKILL_2.(row).td4.str = "(" + diff + ")";
-	          GameInterface.TABLE_SKILL_2.(row).td4.color = argb(255,255,196,196);
-	       }
+			if (diff > 0)
+			{
+				if (diff < 10) GameInterface.TABLE_SKILL_2.(row).td4.str = "~~~~~~+" + diff;
+				else GameInterface.TABLE_SKILL_2.(row).td4.str = "+" + diff;
+				GameInterface.TABLE_SKILL_2.(row).td4.color = argb(255,196,255,196);
+			}
+			else
+			{
+				if (abs(diff) < 10) GameInterface.TABLE_SKILL_2.(row).td4.str = "~~~~~~~" + diff;
+				else GameInterface.TABLE_SKILL_2.(row).td4.str = diff;
+					GameInterface.TABLE_SKILL_2.(row).td4.color = argb(255,255,196,196);
+			}
 		}
 	}
 
@@ -1028,12 +1034,49 @@ void ChoosePerk(string perkName)
 	XI_DeleteNode("PERKWINDOW_TEXT");
 	XI_MakeNode("resource\ini\interfaces\abilities.ini", "FORMATEDTEXT", "PERKWINDOW_TEXT", 83);
 	SetFormatedText("PERKWINDOW_TEXT", descr);
-	GetNodePosition("PERKWINDOW_TEXT",&x,&y,&x2,&y2)
+	GetNodePosition("PERKWINDOW_TEXT",&x,&y,&x2,&y2);
 	if (descriptorsQty > 0) SetNodePosition("PERKWINDOW_TEXT", x, y, x2, y2);
 	else SetNodePosition("PERKWINDOW_TEXT", x, y-30, x2, y2);
 
 	AutoLayoutCenter("DESCRIPTOR_1|DESCRIPTOR_2|DESCRIPTOR_3|DESCRIPTOR_4", descriptorsQty);
 	AutoLayoutCenter("DESCRIPTOR_1_VALUE|DESCRIPTOR_2_VALUE|DESCRIPTOR_3_VALUE|DESCRIPTOR_4_VALUE", descriptorsQty);
+	SetFlagPictures(xi_refCharacter, perk, perkName, descr);
+}
+
+void SetFlagPictures(ref chr, ref perk, string perkName, string descr)
+{
+	int x,y,x2,y2;
+	bool showFlags = IsMainCharacter(chr) && HasSubStr(perkName, "flag") && perkName != "flagPir";
+	int flagState;
+	int color;
+	int nation;
+	bool hasAllFlags = true;
+	for (int j = 1; j <= 6; j++)
+	{
+		SetNodeUsing("STEALTH_SHIP_RANK" + j, showFlags);
+		SetNodeUsing("STEALTH_SHIP_RANK_BACKGROUND" + j, showFlags);
+		if (!showFlags) continue;
+
+		string backgroundPicture = "background1";
+		flagState = STH_GetFlagState(_STH_GetNationByPerk(perkName), j);
+		bool hasFlag = flagState > FLAG_MISSING;
+		if (hasFlag) backgroundPicture = "background3";
+		if (flagState < FLAG_CAPTURED) hasAllFlags = false;
+		if (flagState == FLAG_JOKER) backgroundPicture = "background4";
+		if (flagState == FLAG_LICENCE) backgroundPicture = "background4";
+		SetNewGroupPicture("STEALTH_SHIP_RANK_BACKGROUND" + j, "Stealth", backgroundPicture);
+		SetNewGroupPicture("STEALTH_SHIP_RANK" + j, "Stealth", "rank" + hasFlag + j);
+		SendMessage(&GameInterface,"lsll", MSG_INTERFACE_MSG_TO_NODE, "STEALTH_SHIP_RANK_BACKGROUND" + j, 5, flagState > FLAG_MISSING);
+	}
+
+	if (showFlags)
+	{
+		SetSelectable("PERKACCEPT", false);
+		SetNodeUsing("PERKPRICE", false);
+		SetNewGroupPicture("PERKPICTURE", PERKPICTURE(hasAllFlags), perkName); // иконка перка
+		SetNewGroupPicture("PERKPICTURE_BASE", PERKPICTURE(hasAllFlags), PERKPICTURE_BASE(hasAllFlags, perk)); // подложка перка
+		SendMessage(&GameInterface,"lsll", MSG_INTERFACE_MSG_TO_NODE, "PERKPICTURE_BASE", 4, argb(255,128,128,128));
+	}
 }
 
 void ExitPerkMenu()
@@ -1064,8 +1107,7 @@ void AcceptPerk()
 			SetVariable();
     }
     // перерисуем все -->
-	SetFormatedText("TABSTR_SELF_PERKS", XI_ConvertString("Personal abilities") + "  -  " +xi_refCharacter.perks.FreePoints_self);
-	SetFormatedText("TABSTR_SHIP_PERKS", XI_ConvertString("Ship abilities") + "  -  " + xi_refCharacter.perks.FreePoints_ship);
+	UpdateFreePoints();
 	RefreshPerksPictures();
 	// if(currentScrollTab == 1) FillCharactersScrollEx(true);
 	// else FillCharactersScrollEx(false);
@@ -1209,8 +1251,9 @@ void SetPerksTabMode(int nMode)
 
 	SetNodeUsing("PERK_TREES_SELF", nMode == 1);
 	SetNodeUsing("PERK_TREES_SHIP", nMode == 2);
-
+	
 	currentPerkTab = nMode;
+	UpdateFreePoints();
 	RefreshPerksPictures();
 }
 
@@ -1328,4 +1371,27 @@ void TestRerollGiveOfficer()
 
 	RefreshPerksPictures();
 	SetVariable();
+}
+
+void UpdateFreePoints()
+{
+	if (currentPerkTab == 1) SetFormatedText("FREE_POINTS_VALUE", xi_refCharacter.perks.FreePoints_self);
+	else SetFormatedText("FREE_POINTS_VALUE", xi_refCharacter.perks.FreePoints_ship);
+
+	if (currentPerkTab == 1)
+	{
+		SetFormatedText("Personal_progress", sti(xi_refCharacter.perks.FreePoints_self_exp)+ "/" + GetFreePoints_SelfRate(xi_refCharacter));
+		GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Max   = GetFreePoints_SelfRate(xi_refCharacter);
+		GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Min   = 0;
+		GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Value = sti(xi_refCharacter.perks.FreePoints_self_exp);	
+		SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"PERSONAL_PROGRESSBAR",0);
+	}
+	else
+	{
+		SetFormatedText("Personal_progress", sti(xi_refCharacter.perks.FreePoints_ship_exp)+ "/" + GetFreePoints_ShipRate(xi_refCharacter));
+		GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Max   = GetFreePoints_ShipRate(xi_refCharacter);
+		GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Min   = 0;
+		GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Value = sti(xi_refCharacter.perks.FreePoints_ship_exp);	
+		SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"PERSONAL_PROGRESSBAR",0);
+	}
 }

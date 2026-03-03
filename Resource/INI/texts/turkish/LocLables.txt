@@ -1,0 +1,404 @@
+Antigua {Antigua}
+Barbados {Barbados}
+Bermudes {Isla del Tesoro}
+Beliz {Yucatan}
+Cuba {Küba}
+Cuba1 {Küba}
+Cuba2 {Küba}
+Caiman {Cayman}
+Cumana {Ana}
+Caracas {Ana}
+Curacao {Curacao}
+Cartahena {Ana}
+Dominica {Dominica}
+Guadeloupe {Guadeloupe}
+Hispaniola {Hispaniola}
+Hispaniola1 {Hispaniola}
+Hispaniola2 {Hispaniola}
+Jamaica {Jamaica}
+Maracaibo {Ana}
+Martinique {Martinique}
+SentMartin {Saint-Martin}
+Nevis {Aziz Christopher}
+PuertoRico {Puerto Rico}
+PortoBello {Ana}
+Pearl {İnci Sahili}
+Panama {Panama}
+SantaCatalina {Ana}
+Terks {Türkler}
+Tortuga {Tortuga}
+Trinidad {Trinidad}
+Tenotchitlan {Lago Peten}
+Mein {Ana}
+KhaelRoa {Khael Roa}
+Ksochitam {Ksocheatem}
+RockIsland {Kuzey Resifleri}
+Providence {Providence}
+SantaQuiteria {Santa Quiteria}
+IslaDeVieques {Isla de Vieques}
+IslaMona {Isla Mona}
+IslaDeCoche {Isla de Coche}
+Tobago {Tobago}
+MarieGalante {Marie Galante}
+SentJons_town {St. John's}
+Pirates_town {Sharptown}
+Bridgetown_town {Bridgetown}
+Beliz_town {Belize}
+Santiago_town {Santiago}
+PuertoPrincipe_town {Puerto del Principe}
+Havana_town {Havana}
+Cumana_town {Cumana}
+Caracas_town {Caracas}
+Villemstad_town {Willemstad}
+Cartahena_town {Cartagena}
+BasTer_town {Basse-Terre}
+SantoDomingo_town {Santo Domingo}
+LaVega_town {La Vega}
+PortPax_town {Port-au-Prince}
+PortRoyal_town {Port Royal}
+Maracaibo_town {Maracaibo}
+FortFrance_town {Saint-Pierre}
+LeFransua_town {Le Francois}
+Marigo_town {Philipsburg}
+Charles_town {Capsterville}
+SanJuan_town {San Juan}
+PortoBello_town {Portobello}
+Panama_town {Panama}
+SantaCatalina_town {Blueweld}
+Tortuga_town {Tortuga}
+PortSpein_town {San Jose}
+Tenotchitlan_town {Tayasal}
+FortOrange_town {Maroon Town}
+Providence_town {San Andres}
+Oglethorpe_Estate {Oglethorpe malikanesi}
+DeMonpe_Estate {de Monpe Malikânesi}
+DesMoines {Des Moines}
+LosTeques_town {Los-Teques madeni}
+ExitMine {Madene geçit}
+Factoria {Faktori}
+Shore1 {Boon Burnu}
+Shore2 {Falmouth Koyu}
+Shore3 {Benures Körfezi}
+Shore4 {Harrison Burnu}
+Shore5 {Cape Ragged Point}
+Shore6 {Cape Catoche}
+Shore7 {Cozumel Körfezi}
+Shore8 {Chetumal Koyu}
+Shore9 {Amatique Koyu}
+Shore10 {Caratasca Lagünü}
+Shore11 {Camaguey Burnu}
+Shore12 {Anna Maria Körfezi}
+Shore13 {Batabano Körfezi}
+Shore14 {Juventud Koyu}
+Shore15 {San Antonio Burnu}
+Shore16 {Çorak Sahil}
+Shore17 {Esmeralda Körfezi}
+Shore18 {Boca de la Serpienta Sahili}
+Shore19 {Carupano Koyu}
+Shore20 {Los-Teques Plajı}
+Shore21 {Aruba Burnu}
+Shore22 {Van Hato Sahili}
+Shore23 {Cape Santa Maria}
+Shore24 {Blanca Lagünü}
+Shore25 {Covenas Koyu}
+Shore26 {Castle Bruce Plajı}
+Shore27 {Cape Scott's Head}
+Shore28 {Morne-a-l'Eau Koyu}
+Shore29 {Capster Plajı}
+Shore30 {Grand-Bourg Koyu}
+Shore31 {Ulaşılamaz Burun}
+Shore32 {Cape Isabella}
+Shore33 {Samana Koyu}
+Shore34 {Gonaives Körfezi}
+Shore35 {Cape Negril}
+Shore36 {Portland Körfezi}
+Shore37 {Guajira Körfezi}
+Shore38 {Lamentin Körfezi}
+Shore39 {Le Marin Koyu}
+Shore40 {Grand Case Plajı}
+Shore41 {Simpson Körfezi}
+Shore42 {Sandy Bay}
+Shore43 {Half Moon Körfezi}
+Shore44 {Aguadilla Koyu}
+Shore45 {Fajardo Plajı}
+Shore46 {Chiriqui Lagünü}
+Shore47 {Sivrisinekler Körfezi}
+Shore48 {Darien Körfezi}
+Shore49 {Papagayo Körfezi}
+Shore50 {Nicoya Körfezi}
+Shore51 {Coronado Körfezi}
+Shore52 {Golfo Dulce}
+Shore53 {Sivrisinek Kıyısı}
+Shore54 {Perlas Burnu}
+Shore55 {San Juan del Norte Körfezi}
+Shore56 {Kuzey Körfezi}
+Shore57 {Güney Körfezi}
+Shore58 {Balıkgözü Plajı}
+Shore59 {Scarborough Koyu}
+Shore60 {Galera Burnu}
+Shore61 {Tepeyakak}
+Shore62 {Iztapalapa}
+Shore63 {San Miguel Körfezi}
+Shore64 {Resif Koyu}
+Shore65 {Kayalık Koy}
+Shore66 {Köpekbalığı Plajı}
+Shore66_1 {Lanetli Koy}
+Shore67 {İskelet Resifi}
+Shore67_1 {İskelet Resifi - Batı}
+Shore67_2 {İskelet Resifi - Doğu}
+Shore68 {Ingallado Koyu}
+Shore69 {Santa Maria del Mar Plajı}
+Shore70 {Köle Koyu}
+Shore71 {Aşağılama Burnu}
+Shore72 {Oriente Koyu}
+Shore73 {Machete Burnu}
+Shore74 {Yengeç Plajı}
+Shore75 {Vali Koyu}
+Shore76 {Boğulan Adam Burnu}
+Shore77 {Vieques Koyu}
+Shore78 {Bukanirler Körfezi}
+Shore79 {Cape Cabo Rojo}
+Shore_ship1 {Sabo-Matila Koyu}
+Shore_ship2 {Tehlike Körfezi}
+Shore_ship3 {Aldatıcı Umutlar Burnu}
+Shore_ship4 {Lanetli Koy}
+Shore_mask {Muhafız Mağarası}
+Mayak1 {Trinidad Feneri}
+Mayak2 {Barbados Feneri}
+Mayak3 {Port Royal Deniz Feneri}
+Mayak4 {Guadeloupe Feneri}
+Mayak5 {Saint Christopher Feneri}
+Mayak6 {Tortuga Deniz Feneri}
+Mayak7 {Port-au-Prince Feneri}
+Mayak8 {Santo Domingo Deniz Feneri}
+Mayak9 {Santiago Deniz Feneri}
+Mayak10 {Havana Feneri}
+Mayak11 {Cartagena Feneri}
+Bridgetown {Bridgetown}
+Bridgetown Town {Bridgetown}
+Bridgetown Fort {Bridgetown Kalesi}
+Bridgetown Port {Bridgetown Limanı}
+SanJuan {San Juan}
+SanJuan Town {San Juan}
+SanJuan Fort {San Juan Kalesi}
+SanJuan Port {San Juan Limanı}
+Santiago {Santiago}
+Santiago Town {Santiago}
+Santiago Fort {Fort Santiago}
+Santiago Port {Port Santiago}
+PuertoPrincipe {Puerto del Principe}
+PuertoPrincipe Town {Puerto del Principe}
+PuertoPrincipe Fort {Puerto del Principe Kalesi}
+PuertoPrincipe Port {Puerto del Principe Limanı}
+SentJons {St. John's}
+SentJons Town {St. John's}
+SentJons Fort {St. John's Kalesi}
+SentJons Port {St. John's Limanı}
+PortRoyal {Port Royal}
+PortRoyal Town {Port Royal}
+PortRoyal Fort {Port Royal Kalesi}
+PortRoyal Port {Port Royal Limanı}
+FortOrange {Maroon Town}
+FortOrange Town {Maroon Kasabası}
+Villemstad {Willemstad}
+Villemstad Town {Willemstad}
+Villemstad Fort {Willemstad Kalesi}
+Villemstad Port {Willemstad Limanı}
+BasTer {Basse-Terre}
+BasTer Town {Basse-Terre}
+BasTer Fort {Basse-Ter Kalesi}
+BasTer Port {Basse-Ter Limanı}
+LaVega {La Vega}
+LaVega Town {La Vega}
+LaVega Fort {La Vega Kalesi}
+LaVega Port {La Vega Limanı}
+SantoDomingo {Santo Domingo}
+SantoDomingo Town {Santo Domingo}
+SantoDomingo Fort {Fort Santo-Domingo}
+SantoDomingo Port {Santo-Domingo Limanı}
+PortPax {Port-au-Prince}
+PortPax Town {Port-au-Prince}
+PortPax Fort {Port-au-Prince Kalesi}
+PortPax Port {Port-au-Prince Limanı}
+Pirates {Sharptown}
+Pirates Town {Sharptown}
+Pirates Port {Sharptown Limanı}
+FortFrance {Saint-Pierre}
+FortFrance Town {Saint-Pierre}
+FortFrance Fort {Saint-Pierre Kalesi}
+FortFrance Port {Saint-Pierre Limanı}
+LeFransua {Le Francois}
+LeFransua Town {Le Francois}
+LeFransua Port {Le Francois Limanı}
+Havana {Havana}
+Havana Town {Havana}
+Havana Fort {Havana Kalesi}
+Havana Port {Havana Limanı}
+Charles {Capsterville}
+Charles Town {Capsterville}
+Charles Fort {Capsterville Kalesi}
+Charles Port {Capsterville Limanı}
+PortoBello Town {Portobello}
+PortoBello Fort {Portobello Kalesi}
+PortoBello Port {Portobello Limanı}
+PortSpein {San Jose}
+PortSpein Town {San Jose}
+PortSpein Fort {San Jose Kalesi}
+PortSpein Port {San Jose Limanı}
+Tortuga Town {Tortuga}
+Tortuga Fort {Tortuga Kalesi}
+Tortuga Port {Tortuga Limanı}
+Marigo {Philipsburg}
+Marigo Town {Philipsburg}
+Marigo Fort {Philipsburg Kalesi}
+Marigo Port {Philipsburg Limanı}
+Panama Town {Panama}
+Panama Fort {Panama Kalesi}
+Panama Port {Panama Limanı}
+Cartahena Town {Cartagena}
+Cartahena Fort {Cartagena Kalesi}
+Cartahena Port {Cartagena Limanı}
+Maracaibo Town {Maracaibo}
+Maracaibo Fort {Maracaibo Kalesi}
+Maracaibo Port {Maracaibo Limanı}
+Caracas Town {Caracas}
+Caracas Fort {Caracas Kalesi}
+Caracas Port {Caracas Limanı}
+Cumana Town {Cumana}
+Cumana Fort {Cumana Kalesi}
+Cumana Port {Cumana Limanı}
+SantaCatalina Town {Blueweld}
+SantaCatalina Fort {Blueweld Kalesi}
+SantaCatalina Port {Blueweld Limanı}
+Beliz Town {Belize}
+Beliz Fort {Belize Kalesi}
+Beliz Port {Belize Limanı}
+SanAndres {San Andres}
+SanAndres Town {San Andres}
+SanAndres Fort {San Andres Kalesi}
+SanAndres Port {San Andres Limanı}
+IslaMona Town {Isla Mona}
+LosTeques {Los-Teques madeni}
+LosTeques Town {Los-Teques madeni}
+Duel Field {Düello Alanı}
+Boarding deck {Üst güverte}
+Orlop deck {Orlop güvertesi}
+Fort inside {Kale}
+Sea {Deniz}
+Jungle {Orman}
+Street {Sokaklar}
+ExitTown {Ormana Geçiş}
+Graveyard {Mezarlık}
+Port {Liman}
+Tavern {Meyhane}
+Tavern upstairs {Han Odası}
+Store {Mağaza}
+Shipyard {Tersane}
+PackHouse {Depo}
+Townhall {Vali Konağı}
+TownhallRoom {Köşk odası}
+Residence {Konut}
+PortOffice {Liman Ofisi}
+Church {Kilise}
+Incquisitio {Engizisyon}
+Maltese Order {Malta Şövalyeleri}
+Incas Temple {İnka Tapınağı}
+Usurer House {Banka}
+House {Ev}
+ammo {Silahhane}
+shack {Kulübe}
+Room {Oda}
+Cabinet {Çalışma Odası}
+Bedroom {Yatak Odası}
+Сhapel {Şapel}
+Crypt {Mezarlık}
+Exit {Çıkış}
+The cavern {Mağara}
+????? {?????}
+Passage {Köprü}
+Beach {Plaj}
+Cave {Mağara}
+Cave entrance {Mağara Girişi}
+FloodedCave {Sular Altında Mağara}
+Grot {Mağara}
+Prison {Hapishane}
+Lighthouse Inside {Deniz feneri içi}
+Mines {Madenler}
+Dungeon {Zindan}
+Gate {Şehir Kapısı}
+Brothel {Genelev}
+Brothel Room {Gizlilik Odası}
+Village {Köy}
+Plantation {Plantasyon}
+UnderWater {Suyun Altında}
+Grotto {Mağara}
+Dunes house {Kum Tepesi Evi}
+Torture room {İşkence odası}
+Wine Cellar {Şarap Mahzeni}
+cabine {Kabin}
+My_Campus {Subay salonu}
+My_Deck_Medium {Top güvertesi}
+My_Deck {Ambar}
+My_Ship {Gemi}
+Drugstore {Eczane}
+HWIC_flat {HWIC Karargâhı}
+Office of Naval Registry {Donanma Sicil Dairesi}
+Van Doorn's Cellar {Van Doorn'un Mahzeni}
+Comendant's House {Havana Komutanı'nın Konağı}
+Tibo House {Henri Thibaut'un Evi}
+Gaspard_Gold House {Gaspard Goldenteeth'in Evi}
+Ascold House {Fadey'in Evi}
+Abby_House {Abigail Shneur'un Evi}
+Knippel_House {Charley Knippel'in Evi}
+Fleetwood_House {Richard Fleetwood'un Evi}
+Comendant_House {San Jose Komutanı'nın Evi}
+Svensons_house {Jan Svenson'un Evi}
+Gladis_house {Gladys McArthur'ın Evi}
+Gonsales_house {Enrique Gonzales'ın Evi}
+Loxly_house {[ERROR: APIConnectionError]}
+Kristian_house {Christian’ın Evi}
+LostShipsCity {Loco-Riferte}
+LostShipsCity Town {Loco-Riferte}
+LSC South {Ölü Gemiler Adası - Güney}
+LSC North {Ölü Gemiler Adası - Kuzey}
+LSC Town {Loco-Riferte Sokakları}
+Ava Cabin {Galyon 'Eva'}
+Caroline cabin {Fırkateyn 'Carolina'}
+CeresSmithy cabin {Fleut 'Ceres Smithy'}
+EsmeraldaStoreBig cabin {Galyon 'Esmeralda'}
+FenixPlatform cabin {'Phoenix' platformu}
+FernandaDiffIndoor cabin {Fleut 'Fernanda'}
+FleuronTavern cabin {Karavel 'Fleron'}
+FurieShipInside2 cabin {Pinnace 'Fury'}
+GloriaChurch cabin {Galyon 'Gloria'}
+PlutoStoreSmall cabin {Fleut 'Pluto'}
+ProtectorFisher cabin {Korvet 'Protector'}
+SanAugustineResidence cabin {Savaş Gemisi 'San Augustine'}
+SanGabrielMechanic cabin {Barque 'San Gabriel'}
+SantaFlorentinaShipInside4 cabin {Brig 'Santa Florentina'}
+TartarusPrison cabin {Zırhlı 'Tartarus'}
+VelascoShipInside1 cabin {Galyon 'Velasco'}
+Tenochtitlan {Tayasal}
+Temple_1 {Tohil Tapınağı}
+Temple_2 {Kauil Tapınağı}
+Temple_3 {Chak Tapınağı}
+Temple_4 {Kinich Ahaw Tapınağı}
+Temple_5 {Itzamna Tapınağı}
+Temple_6 {Ek Chuah Tapınağı}
+TempleTreasure {Hazine}
+TempleGreatInside {Büyük Tapınak}
+TempleRoundInside {Kukulcan Tapınağı}
+TempleUnderwater {Sualtı Labirenti}
+Maze {Chavin Tapınağı}
+Alcove {Kutsal Alan}
+Merrimancave {Merriman’ın inı}
+River {Nehir kıyısı}
+Jungle Fort {Orman kalesi}
+Basement {Bodrum}
+Ruins {Harabeler}
+Ulysse {Ulysse Gemisinde}
+La Espada Del Rey {Fluyt 'La Espada del Rey'}
+Europe {Avrupa}
+England {İngiltere}
+France {Fransa}
+Spain {İspanya}

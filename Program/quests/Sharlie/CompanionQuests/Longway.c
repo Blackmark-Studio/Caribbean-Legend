@@ -685,6 +685,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		LAi_GetCharacterMaxEnergy(pchar);
 		LAi_SetCurHPMax(sld);
 		LAi_GetCharacterMaxEnergy(sld);
+		sld.QuestImmortal = true;
 		
 		for(i=1; i<=3; i++)
 		{
@@ -739,6 +740,8 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		{
 			DoQuestCheckDelay("hide_weapon", 1.2);
 			sld = CharacterFromID("Longway");
+			DeleteAttribute(sld, "QuestImmortal");
+			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 			sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 			if (CheckAttribute(pchar, "questTemp.PZ_IshemLongway_SorraKomendant")) sld.dialog.currentnode = "PZ_IshemLongway_SorraKomendant_Dialog_6";
 			else sld.dialog.currentnode = "PZ_IshemLongway_SrazuNashli_4";

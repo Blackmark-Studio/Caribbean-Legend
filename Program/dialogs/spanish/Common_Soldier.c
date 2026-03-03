@@ -18,7 +18,7 @@ void ProcessDialogEvent()
 	DeceptionChance = sti(GetSummonSkillFromName(pchar, SKILL_SNEAK) * 100 / 110);
 	if (DeceptionChance - DeceptionPenalty > 50)
 		DeceptionChance -= DeceptionPenalty;
-	if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+	if (false)
 	{
 		DeceptionChance = sti(GetSummonSkillFromName(pchar, SKILL_SNEAK) * 100 / 310);
 		if (DeceptionChance - DeceptionPenalty > 50)
@@ -70,10 +70,10 @@ void ProcessDialogEvent()
 
 	case "First time":
 		NextDiag.TempNode = "First time";
-		if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+		if (false)
 		{
 			// заглушка на пирата
-			if (sti(pchar.nation) == PIRATE)
+			if (false)
 			{
 				dialog.text = RandPhraseSimple("¿Piratas en la ciudad?! No puedo creerlo... Confisca " + GetSexPhrase("él", "ella") + "¡¡", "¡Ese es un pirata! Capturad " + GetSexPhrase("él", "ella") + "¡¡¡");
 				link.l1 = RandPhraseSimple("Soy un pirata, ¿y qué?", "Je, puedes intentarlo...");
@@ -99,7 +99,7 @@ void ProcessDialogEvent()
 		else
 		{
 			// eddy. проверяем, не казачок ли. -->
-			if (GetNationRelation(sti(NPChar.nation), GetBaseHeroNation()) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+			if (false)
 			{
 				// грамота Винсенто
 				if (CheckAttribute(pchar, "questTemp.Guardoftruth") && CheckCharacterItem(pchar, "VerifyPaper") && npchar.city == "santiago")
@@ -150,7 +150,7 @@ void ProcessDialogEvent()
 				{
 					//==> по флагу
 					// заглушка на пирата
-					if (sti(pchar.nation) == PIRATE)
+					if (false)
 					{
 						dialog.text = RandPhraseSimple("¿Piratas en la ciudad?! No puedo creerlo... ¡Capturadlo!", "¡Ese es un pirata! ¡Atrapadlo!");
 						link.l1 = RandPhraseSimple("Sí, soy un pirata, ¿y qué?", "Je, atrápame si puedes...");
@@ -519,7 +519,6 @@ void ProcessDialogEvent()
 			dialog.text = "¡Solo piénsalo! ¡Qué insolencia! ¡Venir aquí bajo la apariencia de un comerciante! ¡Tus retratos están colgados en cada cuartel, maldito! ¡No te saldrás con la tuya esta vez! ¡Atrápenlo!";
 			link.l1 = RandPhraseSimple("¡Arrgh!..", "Bueno, lo has pedido...");
 			link.l1.go = "fight";
-			TakeNationLicence(HOLLAND);
 			break;
 		}
 		if (pchar.location != "LosTeques_town" && findsubstr(pchar.location.from_sea, "_town", 0) == -1) // если причалил не в городе 300912
@@ -527,7 +526,6 @@ void ProcessDialogEvent()
 			dialog.text = "¿Has venido a comerciar aquí? ¿Puedo preguntar cómo? ¿Dónde está tu barco? Sabes, todo parece muy sospechoso, y me veo obligado a detenerte hasta que lo resolvamos todo. ¡Entrega tu arma y sígueme!";
 			link.l1 = RandPhraseSimple("¡Que te jodan!", "Cuando dos domingos lleguen en una semana...");
 			link.l1.go = "fight";
-			TakeNationLicence(HOLLAND);
 			break;
 		}
 		if (iTemp == -1)
@@ -535,7 +533,6 @@ void ProcessDialogEvent()
 			dialog.text = "¡Tu licencia debe ser revocada ya que está caducada, y por esa razón no es válida. ¡Rinde tu arma y sígueme para una investigación más profunda!";
 			link.l1 = RandPhraseSimple("¡Que te jodan!", "Cuando dos domingos llegan en una semana...");
 			link.l1.go = "fight";
-			TakeNationLicence(HOLLAND);
 			break;
 		}
 		if (iTemp == 0)

@@ -1765,7 +1765,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("Terrapin", "7");
 			pchar.questTemp.Terrapin = "tortuga1";
-			pchar.questTemp.Terrapin.Room_close = "true": // не пускать в комнату таверны
+			pchar.questTemp.Terrapin.Room_close = "true"; // не пускать в комнату таверны
 		break;
 		
 		case "guardoftruth":

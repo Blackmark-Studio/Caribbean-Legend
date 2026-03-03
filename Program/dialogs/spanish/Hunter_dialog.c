@@ -390,29 +390,24 @@ void ProcessDialogEvent()
 string GetLocHunterName()
 {
 	int nLoc = FindLocation(Pchar.location);
-	int nFile = LanguageOpenFile("LocLables.txt");
 	string ret = "";
 
-	if (nFile >= 0)
+	if (CheckAttribute(&locations[nLoc], "islandId"))
 	{
-		if (CheckAttribute(&locations[nLoc], "islandId"))
+		if (locations[nLoc].islandId != "Mein")
 		{
-			if (locations[nLoc].islandId != "Mein")
-			{
-				ret = "isla de " + LanguageConvertString(nFile, locations[nLoc].islandId);
-			}
-			else
-			{
-				ret = "continente de ";
-			}
+			ret = "isla de " + GetIslandNameByID(locations[nLoc].islandId);
 		}
-		//
-		if (CheckAttribute(&locations[nLoc], "fastreload"))
+		else
 		{
-			ret += " (" + LanguageConvertString(nFile, locations[nLoc].fastreload + " Town") + ")";
+			ret = "continente de ";
 		}
-		// ret += LanguageConvertString(nFile, locations[nLoc].id.label);
-		LanguageCloseFile(nFile);
 	}
+	//
+	if (CheckAttribute(&locations[nLoc], "fastreload"))
+	{
+		ret += " (" + GetCityName(locations[nLoc].fastreload) + ")";
+	}
+
 	return ret;
 }

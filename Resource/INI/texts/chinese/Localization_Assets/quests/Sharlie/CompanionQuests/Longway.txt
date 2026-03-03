@@ -23,7 +23,7 @@ Longway_22 {Georges}
 Longway_23 {Gravel}
 Longway_24 {会议安排在 @<NewStr()> 城门后面}
 Longway_25 {Hugo}
-Longway_26 {Марсо}
+Longway_26 {Marso}
 Longway_27 {一天后... @<NewStr()> 傍晚, 城门外。}
 Longway_28 {Mathieu}
 Longway_29 {Terugny}

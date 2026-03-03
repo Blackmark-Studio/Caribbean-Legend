@@ -1,5 +1,5 @@
 // Стандартное свойство предмета, для любого предмета работает и выглядит одинаково
-void AddDescriptor(ref rObject, string descriptorId, int variant)
+void AddDescriptor(ref rObject, string descriptorId, int variant = -1)
 {
 	bool universalDescriptor = false; // может ли дескриптор быть у разного типа предметов
 	aref modifier;
@@ -34,7 +34,7 @@ void AddDescriptor(ref rObject, string descriptorId, int variant)
 		break;
 		case "TwoHanded":
 		{
-			SetWeaponDamageByStrikes(rObject, MUSKET_ITEM_TYPE, 0.7, 1.3);
+			SetWeaponDamageByStrikes(rObject, -1, 0.7, 1.3);
 		}
 		break;
 		case M_WEAPON_TYPE:
@@ -133,6 +133,15 @@ void AddSpecialDescriptor(ref item, string descriptorId)
 		}
 		break;
 	}
+}
+
+// Добавить дескриптор должности офицера
+void AddJobDescriptor(ref rObject, string descriptorId)
+{
+	AddDescriptor(rObject, descriptorId);
+	string oldKind = GetAttributeOrDefault(rObject, "kind", "none");
+	if (oldKind != descriptorId) trace("Changed kind for " + rObject.id + " from " + oldKind +  " to " + descriptorId);
+	rObject.kind = descriptorId;
 }
 
 bool HasDescriptor(ref rObject, string descriptor)

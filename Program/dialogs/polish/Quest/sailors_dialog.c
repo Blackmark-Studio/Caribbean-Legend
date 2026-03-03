@@ -198,7 +198,7 @@ void ProcessDialogEvent()
 		
 		case "On_MaryCeleste_Deck_1":
 			Dialog.text = "Nie, one mają dusze. Nie było dziennika pokładowego ani jednego instrumentu nawigacyjnego. Nawet jednej łodzi.";
-			Link.l1 = "Nie. Czy to zostało zerwane przez burzę?";
+			Link.l1 = "Co? Czy to zostało zerwane przez burzę?";
 			Link.l1.go = "On_MaryCeleste_Deck_2";
 		break;
 		

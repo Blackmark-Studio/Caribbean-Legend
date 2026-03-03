@@ -53,6 +53,7 @@ seg_Cannon_24 {24-Pfünder}
 seg_Cannon_32 {32-Pfünder}
 seg_Cannon_36 {36-Pfünder}
 seg_Cannon_42 {42-Pfünder}
+seg_Cannon_48 {48-Pfünder}
 seg_Culverine_8 {Halb-Kulverinen}
 seg_Culverine_18 {Kulverinen}
 seg_Culverine_36 {Volle Kulverinen}

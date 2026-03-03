@@ -143,7 +143,7 @@ void ProcessDialogEvent()
 		
 		case "Fugitive_city_1":
 			dialog.text = "Eh bien, c'est moi, en effet, bien que je me demande pourquoi tu es content de me voir? Cela me semble étrange, car je ne t'ai jamais vu auparavant... Tu voudrais bien t'expliquer?";
-			link.l1 = "Mais bien sûr. Je viens de "+XI_ConvertString("Colonie"+pchar.GenQuest.FindFugitive.Startcity+"Gén")+", par ordres du gouverneur local. Vous êtes arrêté et je dois vous livrer à la même ville... Oh, et éloignez les mains de votre sabre ! Ne tentez rien de stupide monsieur, ou ça se passera mal pour vous !";
+			link.l1 = "Mais bien sûr. Je viens de "+XI_ConvertString("Colony"+pchar.GenQuest.FindFugitive.Startcity+"Gen")+", par ordres du gouverneur local. Vous êtes arrêté et je dois vous livrer à la même ville... Oh, et éloignez les mains de votre sabre ! Ne tentez rien de stupide monsieur, ou ça se passera mal pour vous !";
 			link.l1.go = "Fugitive_city_2";
 		break;
 		
@@ -226,7 +226,7 @@ void ProcessDialogEvent()
 		
 		case "Fugitive_shore_1":
 			dialog.text = "Et je ne vais pas le nier, c'est moi. Mais que voulez-vous ?";
-			link.l1 = "J'ai besoin de vous emmener à "+XI_ConvertString("Colonie"+pchar.GenQuest.FindFugitive.Startcity)+", le gouverneur local meurt d'envie de vous voir. Pas de betises, s'il vous plait! Rendez votre arme et suivez-moi!";
+			link.l1 = "J'ai besoin de vous emmener à "+XI_ConvertString("Colony"+pchar.GenQuest.FindFugitive.Startcity)+", le gouverneur local meurt d'envie de vous voir. Pas de betises, s'il vous plait! Rendez votre arme et suivez-moi!";
 			link.l1.go = "Fugitive_shore_2";
 		break;
 		
@@ -251,12 +251,12 @@ void ProcessDialogEvent()
 		case "Fugitive_tavern": // в таверне
 			pchar.quest.AllMayorsQuests_Late.over = "yes"; //снимаем общий таймер
 			dialog.text = "Ehhh... hic! Monsieur, je ne cherche pas de compagnie - surtout la vôtre. Dégagez!";
-			link.l1 = "Mais je CHERCHE votre compagnie, "+pchar.GenQuest.FindFugitive.Name+"! Et tu toléreras ma compagnie dans la cale de mon navire. Nous allons à  "+XI_ConvertString("Colonie"+pchar.GenQuest.FindFugitive.Startcity)+", au gouverneur de la ville. Il est presque mourant de vous voir.";
+			link.l1 = "Mais je CHERCHE votre compagnie, "+pchar.GenQuest.FindFugitive.Name+"! Et tu toléreras ma compagnie dans la cale de mon navire. Nous allons à  "+XI_ConvertString("Colony"+pchar.GenQuest.FindFugitive.Startcity)+", au gouverneur de la ville. Il est presque mourant de vous voir.";
 			link.l1.go = "Fugitive_tavern_1";
 		break;
 		
 		case "Fugitive_tavern_1":
-			dialog.text = "H-Hic!"+RandSwear()+" Alors il m'a finalement traqué ! Écoute, camarade, tu ne sais pas ce qui s'est passé, tu n'étais pas là ! Je ne pouvais pas rester au service, je ne pouvais tout simplement pas ! Je me saoule encore chaque soir pour oublier ça\nRegarde, faisons un marché. Dis-lui que tu as échoué à me trouver ou que j'ai fui avec des pirates en haute mer. En retour, je te donnerai tous les pépites que j'ai trouvées dans la grotte locale. C'est tout ce que j'ai, vois-tu, je te donne tout, juste pour ne plus jamais voir "+XI_ConvertString("Colonie"+pchar.GenQuest.FindFugitive.Startcity)+"...";
+			dialog.text = "H-Hic!"+RandSwear()+" Alors il m'a finalement traqué ! Écoute, camarade, tu ne sais pas ce qui s'est passé, tu n'étais pas là ! Je ne pouvais pas rester au service, je ne pouvais tout simplement pas ! Je me saoule encore chaque soir pour oublier ça\nRegarde, faisons un marché. Dis-lui que tu as échoué à me trouver ou que j'ai fui avec des pirates en haute mer. En retour, je te donnerai tous les pépites que j'ai trouvées dans la grotte locale. C'est tout ce que j'ai, vois-tu, je te donne tout, juste pour ne plus jamais voir "+XI_ConvertString("Colony"+pchar.GenQuest.FindFugitive.Startcity)+"...";
 			link.l1 = "Ne pensez même pas à me corrompre, monsieur! Rendez votre arme et suivez-moi!";
 			link.l1.go = "Fugitive_tavern_fight";
 			link.l2 = "Hmm... Une histoire désagréable ? Êtes-vous tourmenté par des cauchemars ou la conscience coupable ? D'accord, je suppose que je peux vous laisser avec ça tout seul. Où sont vos pépites ?";

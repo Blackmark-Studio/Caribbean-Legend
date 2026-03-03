@@ -1,7 +1,7 @@
 // Здесь функции личных перков, вызываемые в соответствующих местах кода
 // В основном тут то, что нет смысла/не получилось/не успели, перевести на модификаторы и коллбэки
 
-void Perk_Preaim(ref attacker, ref enemy, float damageMtp)
+void Perk_Preaim(ref attacker, ref enemy, ref damageMtp)
 {
 	if (IsMainCharacter(attacker)) return;
 	if (!HasPerk(attacker, "Preaim")) return;

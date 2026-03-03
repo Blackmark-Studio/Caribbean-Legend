@@ -1,0 +1,13 @@
+license_violations_name {위반 사항}
+license_violation_tooltip_body {동맹 또는 중립 국기의 선박 공격, 민간인에 대한 공격, 해상 약탈 및 요새 공격은 위반으로 간주됩니다.}
+license_violation_1 {우리는 계약 조건을 위반했습니다. 대가를 치르게 될 것입니다.}
+license_violation_2 {우리는 계약을 두 번 위반했습니다. 곧 면허를 박탈당할 것입니다.}
+license_violation_3 {우리는 계약을 세 번 위반하여 무역 면허를 잃었습니다.}
+license_state
+{
+만료일: $attr($context.humanExpireDate)
+~남은 일수: $attr($context.humanDaysLeft)
+}
+flags_newFlagTaken {새 깃발 획득}
+flags_allFlagsCollected {해당 국가의 모든 깃발을 수집했습니다}
+license_expired {무역 면허가 만료되었습니다}

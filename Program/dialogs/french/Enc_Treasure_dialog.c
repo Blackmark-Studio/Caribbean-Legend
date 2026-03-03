@@ -27,6 +27,9 @@ void ProcessDialogEvent()
     }
 
 	ProcessDuelDialog(NPChar, link, Diag); //navy
+	
+	bool bPesosMap = Statistic_AddValue(PChar, "Treasure", 0) < 3;
+	int iTreasureMapPesosCost = TreasureMapPesosCost();
 
 	switch(Dialog.CurrentNode)
 	{
@@ -52,7 +55,7 @@ void ProcessDialogEvent()
 		
 		case "map_treasure_1":
             ok = GetCharacterItem(Pchar, "map_part1") > 0 && GetCharacterItem(Pchar, "map_part2") > 0;
-            if (GetCharacterItem(Pchar, "map_full") > 0 || ok)
+            if (!CheckAttribute(NPChar, "TreasureMoney") || GetCharacterItem(Pchar, "map_full") > 0 || ok)
             {
                 dialog.Text = "À propos d'un verre! H-Hic... bois avec moi!";
     			Link.l1 = "Oh, tais-toi. Je pensais que tu étais sérieux.";
@@ -81,15 +84,31 @@ void ProcessDialogEvent()
 		    {
                 npchar.quest.trade_date      = lastspeak_date;
             }
-            dialog.Text = "Cela coûte seulement "+Pchar.GenQuest.TreasureMoney+" doublons."; // Addon-2016 Jason
-			Link.l1 = "D'accord. Et enveloppez-le dans un joli morceau de tissu.";
-			if (PCharDublonsTotal() >= sti(Pchar.GenQuest.TreasureMoney)) // Addon-2016 Jason
+			if(bPesosMap)
 			{
-			   Link.l1.go = "map_treasure_buy";
+				dialog.Text = "Cela coûte seulement "+FindRussianMoneyString(iTreasureMapPesosCost)+"."; // Addon-2016 Jason
+				Link.l1 = "D'accord. Et enveloppez-le dans un joli morceau de tissu.";
+				if (sti(pchar.money) >= iTreasureMapPesosCost) // Addon-2016 Jason
+				{
+				   Link.l1.go = "map_treasure_buy";
+				}
+				else
+				{
+				   Link.l1.go = "Map_NotBuy";
+				}
 			}
 			else
 			{
-			   Link.l1.go = "Map_NotBuy";
+				dialog.Text = "Cela coûte seulement "+NPChar.TreasureMoney+" doublons."; // Addon-2016 Jason
+				Link.l1 = "D'accord. Et enveloppez-le dans un joli morceau de tissu.";
+				if (PCharDublonsTotal() >= sti(NPChar.TreasureMoney)) // Addon-2016 Jason
+				{
+				   Link.l1.go = "map_treasure_buy";
+				}
+				else
+				{
+				   Link.l1.go = "Map_NotBuy";
+				}
 			}
 			Link.l2 = "C'est trop cher. Je n'en ai pas besoin.";
 			Link.l2.go = "exit";
@@ -99,7 +118,8 @@ void ProcessDialogEvent()
             dialog.Text = "Voici. Maintenant, tu vas devenir riche!";
 			Link.l1 = "Merci!";
 			Link.l1.go = "exit";
-			RemoveDublonsFromPCharTotal(sti(Pchar.GenQuest.TreasureMoney));// Addon-2016 Jason
+			if(bPesosMap) AddMoneyToCharacter(pchar, -iTreasureMapPesosCost);
+			else RemoveDublonsFromPCharTotal(sti(NPChar.TreasureMoney));// Addon-2016 Jason
 			GiveItem2Character(pchar, "map_full");
 			Diag.TempNode = "Temp_treasure";
 			npchar.LifeDay = 0; // продал и свалил, если дуэль, то продлится у него жизнь

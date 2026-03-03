@@ -1372,10 +1372,22 @@ void IslaMona_DefAttackCommonArmy(string qName) // абордажная рота
 	ChangeCharacterAddressGroup(sld, "Shore75", "reload", "sea");
 	LAi_SetActorType(sld);
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
+
+	object aCrewSoldier[5];
+	GenerateCrew(pchar, "soldier", &aCrewSoldier);
+	string model;
+	string ani;
+
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
+
 	for (int i=1; i<=5; i++) 
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("IM_our_soldier_"+i, "citiz_3"+i, "man", "man", iRank, FRANCE, -1, true, "soldier"));
-		FantomMakeCoolFighter(sld, iRank, iScl, iScl, LinkRandPhrase("blade_10","blade_13","blade_15"), "pistol1", "bullet", iScl*2);
+		model = aCrewSoldier[i-1].model;
+		ani = aCrewSoldier[i-1].ani;
+		sld = GetCharacter(NPC_GenerateCharacter("IM_our_soldier_"+i, model, "man", ani, iRank, FRANCE, -1, true, "soldier"));
+		FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 		ChangeCharacterAddressGroup(sld, "Shore75", "reload", "sea");
 		LAi_SetActorType(sld);
 		LAi_ActorFollow(sld, characterFromID("Alonso"), "", -1);
@@ -2157,7 +2169,8 @@ bool IslaMona_QuestComplete(string sQuestName, string qname)
 		WaitDate("", 0, 0, 0, 2, 30);
 		SetLaunchFrameFormParam("", "", 0, 12);
 		SetLaunchFrameFormPic("loading\inside\censored1.tga");
-		PlayStereoSound("sex\sex10.wav");
+		if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+		else PlayStereoSound("sex\sex10.wav");
 		LaunchFrameForm();
 		if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
 		{

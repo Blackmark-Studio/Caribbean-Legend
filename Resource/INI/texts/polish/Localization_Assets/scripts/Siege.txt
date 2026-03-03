@@ -14,13 +14,13 @@ Siege_13 {Today we are celebrating! @<NationNameSK(sti(aData.nation))> attackers
 Siege_14 {hey say that @<NationNameSK(sti(aData.nation))> squadron was defeated during the assault on @<NationNameSK(sti(aData.conation))> colony @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>. The defenders turned out to be stronger.}
 Siege_15 {They say that @<NationNamePeople(sti(aData.nation))> suddenly attacked @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>, but reinforcements came just in time! All @<NationNameSK(sti(aData.nation))> were sunken.}
 Siege_16 {I have heard that our squadron failed to besiege @<NationNameSK(sti(aData.conation))> colony @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>. It was a long siege but our ships were sunken! Next time, I guess.}
-Siege_17 {british}
-Siege_18 {french}
-Siege_19 {spanish}
-Siege_20 {dutch}
-Siege_21 {days}
-Siege_22 {day}
-Siege_23 {several hours}
+Siege_17 {brytyjczycy}
+Siege_18 {francuzi}
+Siege_19 {hiszpanie}
+Siege_20 {holendrzy}
+Siege_21 {dni}
+Siege_22 {dzień}
+Siege_23 {pare godzin}
 Siege_24 {They say that @<NationNamePeople(sti(aData.nation))> have attacked @<NationNameSK(sti(aData.conation))> colony @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>. They are still fighting, but defenders are low on supplies. They can hold on for @<sDays> at most.}
 Siege_25 {There are rumors that our unstoppable fleet is storming @<NationNameSK(sti(aData.conation))> colony  @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>. Our enemies are fighting hard, but, most likely, we shall learn who is a victor in @<sDays>.}
 Siege_26 {~ @<NationNamePeople(sti(aData.nation))> have attacked our colony @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>. Our brave defenders have only @<sDays> before they will run out of provisions.}

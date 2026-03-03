@@ -34,3 +34,9 @@ Neutral_33 {Javier}
 Neutral_34 {Castillo}
 Neutral_35 {Gonzalo}
 Neutral_36 {Peralta}
+Neutral_37 {... nun werden alle Verdächtigungen gegen Shark beseitigt}
+Neutral_38 {Nicht genug Geld (10.100.000)}
+Neutral_39 {Nicht genug Geld (25.250.000)}
+Neutral_40 {Nicht genug Geld (50.500.000)}
+Neutral_41 {dich}
+Neutral_42 {euch}

@@ -32,10 +32,11 @@ void UpdateSpeedByWeight(ref chr)
 	CheckAndSetOverloadMode(chr);
 	aref landTable = CT_GetTable(chr, CT_LAND);
 	aref equipTable = CT_GetTable(chr, CT_EQUIP);
-	ref blade = ItemsFromID(GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE));
+	string bladeId = GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE);
+	CT_SetAllMoveSpeed(&landTable, &equipTable, chr);
+	if (bladeId == "") return;
 
-	CT_SetAllMoveSpeed(&landTable, &equipTable, &chr);
-	CT_SetAllAttackSpeed(&landTable, &equipTable, chr, blade);
+	CT_SetAllAttackSpeed(&landTable, &equipTable, chr);
 }
 
 void UpdateLandTable()
@@ -81,7 +82,8 @@ void CT_UpdateCashTables(ref chr)
 void UpdateCashTablesFellows()
 {
 	CT_UpdateCashTables(pchar); // гг на случай шляпы
-	object fellows = GetAllFellows(pchar, false);
+	object fellows;
+	AddAllFellows(&fellows, pchar, false);
 	for (int i=0; i < GetAttributesNum(&fellows); i++)
 	{
 		ref chr = GetCharacter(sti(GetAttributeValue(GetAttributeN(&fellows, i))));

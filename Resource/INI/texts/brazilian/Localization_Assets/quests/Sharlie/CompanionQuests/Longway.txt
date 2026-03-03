@@ -1,0 +1,68 @@
+Longway_1 { }
+Longway_2 { }
+Longway_3 {Abe}
+Longway_4 {Bix}
+Longway_5 {Marcel}
+Longway_6 {Schulte}
+Longway_7 {Johan}
+Longway_8 {van Merden}
+Longway_9 {Ilha Formosa@<NewStr()>2 de abril de 1645.}
+Longway_10 {Oliver}
+Longway_11 {Trust}
+Longway_12 {Antoon}
+Longway_13 {van Diemen}
+Longway_14 {Joep}
+Longway_15 {van der Vink}
+Longway_16 {Vette}
+Longway_17 {van Haan}
+Longway_18 {Luiters}
+Longway_19 {van Haan}
+Longway_20 {Vitus}
+Longway_21 {Hengel}
+Longway_22 {Georges}
+Longway_23 {Gravel}
+Longway_24 {O encontro está marcado atrás@<NewStr()>dos portões da cidade}
+Longway_25 {Hugo}
+Longway_26 {Marso}
+Longway_27 {Um dia depois...@<NewStr()>À noite, fora dos Portões da Cidade.}
+Longway_28 {Mathieu}
+Longway_29 {Terugny}
+Longway_30 {Três horas depois...@<NewStr()>Pier de Capsterville}
+Longway_31 {Comandante}
+Longway_32 { }
+Longway_33 {Estranho}
+Longway_34 { }
+Longway_35 {Georges}
+Longway_36 {Gravel}
+Longway_37 {Edgardo}
+Longway_38 {Sotta}
+Longway_39 {Morning Star}
+Longway_40 {O Convés de Popa do Morning Star}
+Longway_41 {Fechem as escotilhas! Hora de conversar com Fermentelos...}
+Longway_42 {A equipe toda está vindo pra cá agora!}
+Longway_43 {Longway está morto!!! Vamos! Não temos mais motivo para ficar aqui!}
+Longway_44 {Annabel}
+Longway_45 {Latter}
+Longway_46 {Certas mercadorias da Star foram rapidamente transferidas para nosso porão}
+Longway_47 {Abraham}
+Longway_48 {Norman}
+Longway_49 {Mary}
+Longway_50 {Helen}
+Longway_51 {Rober}
+Longway_52 {Martene}
+Longway_53 {Voltigeur}
+Longway_54 {Clement}
+Longway_55 {Lebran}
+Longway_56 {Prevoyant}
+Longway_57 {Aliás, achei o diário de bordo no baú do capitão, mas todas as páginas foram arrancadas, então não adiantou nada.}
+Longway_58 {Marinheiro}
+Longway_59 { }
+Longway_60 {Henri}
+Longway_61 {Thibaut}
+Longway_62 {Marceline}
+Longway_63 {Levasseur}
+Longway_64 {Marceline poderia ter me ajudado agora – ela odeia o marido amaldiçoado com todo o coração, se é que tem um. E claro, eu tinha que roubar a caixa de joias dela ao sair da cama. Ela deve ter percebido o roubo quase na hora. Só me resta torcer para que Chang Xing coopere conosco. As coisas poderiam ter sido diferentes...}
+Longway_65 {Chang}
+Longway_66 {Xing}
+Longway_67 {Minha amada precisa descansar. Vou tentar não incomodá-la tão cedo.}
+Longway_68 {Voltigeur}

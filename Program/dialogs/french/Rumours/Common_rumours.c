@@ -923,6 +923,15 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 				IslaMona_TerksCreateHimenes();
 				break;
 			}
+			// Гаспар во фриплее 
+			if ((SandBoxMode) && npchar.city == "Tortuga" && (sti(pchar.reputation.nobility) < 41))
+			{
+				AddMoneyToCharacter(pchar, -1000);
+				Dialog.Text = "Votre réputation vous précède, capitaine. Je parie que vous vous êtes souvent demandé où écouler toutes ces babioles et ces cailloux brillants...";
+				link.l1 = "Et tu sais qui pourrait m'aider avec ça ?";
+				link.l1.go = "About_Gaspar";
+				break;
+			}
 			string RumText = SelectRumourEx("tavern", NPChar); //fix
 
 			if(!RumourHasInformation(RumText))
@@ -1298,6 +1307,15 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			AddQuestUserData("MayorsQuestsList", "sCity", XI_ConvertString("Colony"+pchar.GenQuest.Intelligence.City+"Voc")); // belamour gen
 			AddQuestUserData("MayorsQuestsList", "sWho", GetWorkTypeOfMan(&characters[GetCharacterIndex(pchar.GenQuest.Intelligence.SpyId)], "Gen"));
 			AddQuestUserData("MayorsQuestsList", "SpyName", GetFullName(&characters[GetCharacterIndex(pchar.GenQuest.Intelligence.SpyId)]));			
+		break;
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////		Гаспар во фриплее
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		case "About_Gaspar":
+			dialog.text = "Je sais. Il s'appelle Gaspar Parmentier, mais ses amis le surnomment Dent d'Or. C'est un homme fiable et, surtout, il achète en des quantités qu'aucun usurier ne pourrait imaginer. Je suis sûr que vous vous entendrez vite. Mais souvenez-vous : il n'aime pas les étrangers. Alors si vous allez le voir, précisez bien que vous venez de ma part. Sa maison est près de l'administration portuaire.";
+			link.l1 = "Eh bien, tu as gagné ton argent — le voilà. Tu ne sais rien d'autre d'intéressant ?";
+			link.l1.go = "rumours_tavern";
+			AddDialogExitQuestFunction("CreateGaspar_Sandbox");
 		break;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

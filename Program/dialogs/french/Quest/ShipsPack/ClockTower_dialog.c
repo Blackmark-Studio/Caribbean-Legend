@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 
 		case "ClockTower_Johan_3":
 			dialog.text = "Ceux qui ont besoin de savoir le savent. Le mynheer directeur ne travaille pas avec n'importe qui.";
-			link.l1 = "«Mynheer directeur?» Qui est-ce?";
+			link.l1 = "« Mynheer directeur »? Qui est-ce?";
 			link.l1.go = "ClockTower_Johan_4";
 		break;
 
@@ -80,25 +80,25 @@ void ProcessDialogEvent()
 
 		case "ClockTower_Johan_8_1":
 			dialog.text = "Je ne prends pas de pots-de-vin!";
-			link.l1 = "Excusez-moi. Vous êtes un brave homme. Comment vous appelez-vous?";
+			link.l1 = "Mes excuses. Tu es un brave homme. Comment t'appelles-tu?";
 			link.l1.go = "ClockTower_Johan_9";
 		break;
 
 		case "ClockTower_Johan_9":
-			dialog.text = ""+npchar.name+"... Ecoutez... Je comprends que vous n'êtes pas d'ici. Mais ici, il y a de l'ordre. Le mynheer directeur dit toujours : montrez de la faiblesse une fois, et notre tour s'effondre. Vous voulez entrer? Aidez la ville — et on vous remarquera.";
-			link.l1 = "Comprendu. Soyez prudent, soldat.";
+			dialog.text = ""+npchar.name+"... Écoutez... Je comprends que vous n'êtes pas d'ici. Mais ici, il y a de l'ordre. Le mynheer directeur dit toujours : montrez de la faiblesse une fois, et notre tour s'effondre. Vous voulez entrer? Aidez la ville — et on vous remarquera.";
+			link.l1 = "Je vois. Reste vigilant, soldat.";
 			link.l1.go = "ClockTower_Johan_11";
 		break;
 
 		case "ClockTower_Johan_8_2":
 			dialog.text = "Eh bien, je ne sais pas. Le mynheer directeur récompense les amis de Willemstad. Aidez la ville — et on vous remarquera. Je comprends que vous n'êtes pas d'ici. Mais ici, il y a de l'ordre. Le mynheer directeur dit toujours : montrez de la faiblesse une fois, et notre tour s'effondre.";
-			link.l1 = "Comprendu. Et comment vous appelez-vous?";
+			link.l1 = "Je vois. Et comment t'appelles-tu?";
 			link.l1.go = "ClockTower_Johan_10";
 		break;
 
 		case "ClockTower_Johan_10":
 			dialog.text = ""+npchar.name+", "+GetTitle(NPChar, true)+".";
-			link.l1 = "Et moi, je suis "+GetTitle(NPChar, false)+" "+GetFullName(pchar)+". Soyez prudent, soldat.";
+			link.l1 = "Et moi, je suis "+GetTitle(NPChar, false)+" "+GetFullName(pchar)+". Reste vigilant, soldat.";
 			link.l1.go = "ClockTower_Johan_11";
 		break;
 		
@@ -503,7 +503,7 @@ void ProcessDialogEvent()
 			link.l1.go = "ClockTower_Johan_47";
 
 			if (iClockSP4PseudoGlobal != SOUND_INVALID_ID)
-				SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, iClockSP4PseudoGlobal, 0);
+				SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, iClockSP4PseudoGlobal, 300);
 			ClockTower_PlaySound_rh2("Location/SP4_quest3");
 		break;
 
@@ -514,7 +514,7 @@ void ProcessDialogEvent()
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 
 			if (iClockSP4PseudoGlobal != SOUND_INVALID_ID)
-				SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, iClockSP4PseudoGlobal, 0);
+				SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, iClockSP4PseudoGlobal, 300);
 			ClockTower_PlaySound_rh2("Location/SP4_quest3");
 		break;
 
@@ -581,17 +581,17 @@ void ProcessDialogEvent()
 				dialog.text = "J'ai besoin de capitaines qui combattent efficacement les pirates tout en ayant suffisamment de succès commercial pour se permettre nos services. Répondez-vous à ces critères?";
 			}
 			else dialog.text = "";
-			if (!CheckAttribute(npchar, "ClockTower_option_1") && CheckAttribute(pchar, "questTemp.DiegoDeLanda_Memento"))
+			if (!CheckAttribute(npchar, "ClockTower_option_1") && GetDLCenabled(DLC_APPID_6) && !CharacterIsAlive("Memento_cap"))
 			{
 				link.l1 = "J'ai détruit Mortimer Grimm. Capitaine du brick Memento.";
 				link.l1.go = "ClockTower_VanDoorn_option_1";
 			}
-			if (!CheckAttribute(npchar, "ClockTower_option_2") && CheckAttribute(pchar, "questTemp.DiegoDeLanda_LadyBeth"))
+			if (!CheckAttribute(npchar, "ClockTower_option_2") && GetDLCenabled(DLC_APPID_5) && !CharacterIsAlive("LadyBeth_cap"))
 			{
 				link.l2 = "Je crois que votre compagnie a grandement apprécié ma victoire sur Albert Blackwood. Le senau Lady Beth était un adversaire redoutable.";
 				link.l2.go = "ClockTower_VanDoorn_option_2";
 			}
-			if (!CheckAttribute(npchar, "ClockTower_option_3") && CheckAttribute(pchar, "questTemp.DiegoDeLanda_SantaMisericordia"))
+			if (!CheckAttribute(npchar, "ClockTower_option_3") && GetDLCenabled(DLC_APPID_4) && !CharacterIsAlive("SantaMisericordia_cap"))
 			{
 				link.l3 = "Fernando de Alamida n'était pas un pirate, mais...";
 				link.l3.go = "ClockTower_VanDoorn_option_3";

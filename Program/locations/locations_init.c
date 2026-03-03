@@ -135,7 +135,6 @@ void InitLocations()
 		loc.models.night.lights.magsteleport = "magsteleport";
 	}
 
-
 	ReloadProgressUpdate();
 
 	//Init locations
@@ -359,8 +358,11 @@ void InitLocations()
 	ReloadProgressUpdate();
 	
 	n = LocationInitQuestLocations(n);
-	n = LocationInitBoarding(n);
-	nLocationsNum = n;
-	Trace("Number of locations: " + nLocationsNum + " Last location id: " + Locations[nLocationsNum-1].id);
+    Trace("Quest locations " + n);
 
+	n = LocationInitBoarding(n);
+    Trace("Boarding locations " + n);
+
+	nLocationsNum = n;
+	Trace("Number of locations: " + nLocationsNum + " Last location id: " + Locations[nLocationsNum-1].id + " MAX_LOCATIONS: " + MAX_LOCATIONS);
 }

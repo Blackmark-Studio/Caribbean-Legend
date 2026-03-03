@@ -1,0 +1,11 @@
+boarding_1 {船長は自ら命を絶つ道を選んだ。}
+boarding_2 {乗組員は船長のために戦うことを拒んだ。}
+boarding_3 {船長、甲板に登場！}
+boarding_4 {@<_Name>が戦いに加わった！}
+boarding_5 {船長は死亡し、 生存者たちは降伏した。}
+boarding_6 {船長は死んだが、 乗組員は降伏を拒んでいる。}
+boarding_7 {戦利品}
+boarding_8 {戦利品のアイテム}
+boarding_9 {@<_ShipName>の白兵戦要員：@<_CrewSize>}
+boarding_10 {@<_ShipName>に生還者@<_CrewSize>人が戻った。}
+boarding_11 {仲間は船を接舷できなかった。}

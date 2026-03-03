@@ -43,9 +43,8 @@
 #define BI_MSG_SET_MSG_ICONS 46006   // "e" &aref[4]
 
 #define BI_MSG_ADD_NEWTEXTURE 46007          // "sll" texName, horzSize, vertSize
-#define BI_MSG_SHOW_EXT_INFO 46015 // "l"
-#define BI_MSG_SHOW_SHIP_STATES 46016 // "l"
-
+#define BI_MSG_SHOW_EXT_INFO 46015// "l" 
+#define BI_MSG_SHOW_SHIP_STATES 46016// "l" 
 #define BI_MSG_CARE_COMMANDLIST_UPDATE 46050 // "ls" texIdx, texName
 
 #define BI_EVENT_SET_VISIBLE "BI_Visible"

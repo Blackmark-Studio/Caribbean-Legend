@@ -1,94 +1,0 @@
-new_string
-{
-
-}
-Tartane {Egy halászbárka nem a legjobb hajó egy elôkelô társaságban tündöklô kapitány számára. De ha a rossz sors megfosztotta kedvenc hajójától, ez a sivár hajó egészen alkalmas a szigetek közötti gyors utazásra, bár emlékeztetnie kell magát - ez csak ideiglenes!}
-WarTartane {A Tartanes ugyanazok a halászbárkák, amelyeket sietve átépítettek a Karib-tenger veszélyes vizein végzett parti munkára. Szerény fegyverzetük és rögtönzött építésük nem kelt tiszteletet, de egy tapasztalatlan kalóz vagy egy szegény csempész elijesztésére igencsak alkalmasak. Ideiglenes megoldás, ha nincs más választás.}
-Barque {A bárka ideális a hosszú utakra. Tágas raktérrel és jó hajózási tulajdonságokkal a bárka az egyik legkiegyensúlyozottabb kereskedelmi hajónak számít. Lenyûgözô mérete és viszonylag gyenge fegyverzete azonban könnyû célponttá teszi a tengeri fosztogatók számára.}
-Schooner {A jó vitorlázási tulajdonságok, a tágas rakodótér, a sekély merülés és a tisztességes fegyverzet a schoonert az egyik legnépszerûbb kisméretû hajóvá tették. Egyaránt alkalmas kereskedelemre, part menti hajózásra és harcra.}
-Barkentine {A barkentine megjelenését az a törekvés vezérelte, hogy egy kereskedelmi hajó vezetését leegyszerûsítsék a tapasztalatlan és kis létszámú legénység számára. Ennek érdekében a bárka fôárbocán lévô négyszögletes vitorlákat orr- és hátvitorlákra cserélték, és a hajótestet kissé kisebbre szabták. A vegyes kötélzetnek köszönhetôen a barkentine magabiztosan vitorlázik széllel és széllel szemben egyaránt.}
-Shnyava {A brigg elôdje a shnyava és a brigantin volt. Sikeres hajótest-kialakításuknak, jó sebességüknek és nehéz ágyúk hordozására való képességüknek köszönhetôen ezek a hajók mind a Karib-tengeren, mind Európában igen népszerûek lettek. Gyakran használták ôket kisebb osztályú kereskedelmi konvojok kíséretére.}
-Fleut {A fluyt a kereskedelmi hajók fejlôdésének egy egyedülálló ága. Jellegzetesen keskenyített fedélzete lehetôvé tette a vámok csökkentését, amelyeket a felsô fedélzet szélessége alapján számítottak ki. A tágas rakodótér, a nagy sebesség és a magabiztos szembeszélben nyújtott teljesítmény gyorsan az egyik legnépszerûbb kereskedelmi hajóvá tette a fluytot.}
-Caravel {A karavella jellegzetes kötélzetének köszönhetôen a hajó már messzirôl felismerhetô. A karavella elavult kialakítása meglehetôsen közepes vitorlázási tulajdonságokat kölcsönöz neki, ami megakadályozza, hogy a modern hajókkal egyenrangúan versenyezzen, annak ellenére, hogy elegendô ágyúval rendelkezik.}
-Pinnace {A fluittal együtt a pinnace is elterjedt kereskedelmi hajóként. Elég nagy és robusztus a hosszú tengeri utakhoz, és a raktérkapacitása lehetôvé teszi, hogy nagy mennyiségû rakományt szállítson. Az orr éles vonalainak köszönhetôen a pinnace még ilyen nehéz hajótesttel is megfelelô sebességet ér el.}
-Navio {Egy ilyen hajó csak egy igazán gazdag kereskedô számára megfizethetô. A nagy és erôs hajótest, a tágas raktér és a fejlett kötélzet lehetôvé teszi a leghosszabb utakat is, és nem kevesebb mint három tucat nehéz ágyú megbízhatóan védi a kalózoktól és a kalózoktól.}
-EastIndiaMan {A kelet-indiai hajók megtestesítették a pinnacák legjobb tulajdonságait, és megszabadultak hiányosságaiktól, így szinte tökéletes univerzális hajókká váltak. Nagy kaliberû ágyúkat hordozva felveszik a versenyt a hasonló méretû hadihajókkal, és tágas rakterük lehetôvé teszi, hogy hatékonyan használják ôket a kereskedelemben.}
-LuggerQuest {A futárszállító lugger kifejezetten a futárszolgálat igényeihez készült. Kiváló vitorlázási tulajdonságai, nagyszerû szélsebesség és meglehetôsen erôs fegyverzet garantálja a fontos küldemények és kisebb értékes rakományok megbízható kézbesítését.}
-Lugger
-{
-A lugger egy kis vitorlás, amelyet sok hajós, különösen a csempészek, manôverezhetôsége és sokoldalúsága miatt nagyra értékelnek. A luggerek teljes vitorlázat alatt a sebességük hiányát kiváló szélárnyékolási szögekkel kompenzálják.Kis méretük ellenére a luggerek jó tengerállósággal rendelkeznek, és hosszú utakra is képesek.
-}
-Sloop {Jó sebességével és manôverezôképességével, valamint méretéhez képest szilárd fegyverzetével a sloop megbízható járôrhajó, amely felderítésre is alkalmas.}
-Brigantine {A vitorláshajók legendás típusa. Gyors és manôverezô, mint egy fecske, a brigantint különösen nagyra értékelik a kalózok és a kalandorok mindenféle fajtája. Sikeres kialakításának köszönhetôen a brigantin bármilyen feladatra - a harctól a kereskedelemig - jól használható.}
-Brig {A brigantikat a haditengerészetben széles körben használják felderítésre. A sekély merülés, a hajótest éles vonalvezetése és a fejlett kötélzet a brigget az egyik leggyorsabb hajóvá teszi, és a tisztességes kaliberû ágyúi igen veszélyes ellenféllé teszik.}
-Schooner_W {Az Újvilág tengerészei voltak az elsôk, akik értékelték a schoonereket, és katonai célokra kezdték használni ôket. Ehhez a hajótestet kissé módosítani kellett, a hasznos rakteret csökkenteni, és ágyúkat kellett hozzáadni, de az eredmény megérte. A jól felfegyverzett, gyors és manôverezôképes hadihajó komoly fenyegetést jelent minden kereskedelmi hajóra.}
-Galeon_l {A gályát a 16. század elején a karakk alapján hozták létre, és kezdettôl fogva hadihajónak tervezték. A 17. század közepére a gálya elérte fejlôdésének csúcspontját, és átadta a stafétabotot a fejlettebb hajóknak, de mégsem hagyta el a színpadot, és továbbra is hûségesen szolgálja a tengerészeket.}
-Galeon_sm {A spanyol hatalom és ambíció szimbóluma. Fedélzetét arany díszítések ragyogják be, a hajó tatját pedig a hajó védôszentjének, az Irgalmas Szûznek a képe koronázza. Egyesek számára 'Santa Misericordia' a rend megtestesítôje, mások számára a királyi elnyomás rettegett szimbóluma. Egyesek pedig még az igazi isteni gondviselést is látják benne.}
-LadyBeth
-{
-Az angol hajóépítés csodálatos példája, amelyet a veszélyes vizeken való független járôrszolgálatra készítettek. Ez a shnyava kiváló vitorlázási tulajdonságokkal és méretéhez képest lenyûgözô fegyverzettel rendelkezik, ami lehetôvé teszi, hogy felvegye a versenyt a magasabb osztályú hajókkal.Katonai szolgálatának évei már régen elmúltak, és egykori tulajdonosának dicsôsége ma már inkább vonzza a régiségkereskedôket és a kincses térképekkel kereskedôket, mint a tengeri farkasokat.
-}
-Memento
-{
-Ezen a hajón alig lehet észrevenni egy angol brigg elavult konstrukcióját, amely a vitorlázó képességek hiányát lenyûgözô tûzerôvel és nehéz, masszív hajótesttel kompenzálja. Bennszülött amulettekkel felakasztva és halálra áztatva nemcsak az ellenséget, hanem saját legénységét is megrémíti.
-}
-Amsterdam {A GVIK zászlóshajója, amelyet Európa legjobb hajógyárában építettek, a rendszer diadala a személyiség felett és az eljövendő új kor szimbóluma. Minden fegyvernek és fontos alkatrésznek vannak táblái az ellenőrzési ütemtervekkel és a kézművesek aláírásával — Amszterdamban mindent figyelembe vesznek és dokumentálnak. Hagyományosan nem a tengeri farkasok parancsolják őket, hanem a Társaság polgári igazgatói — és ez működik.}
-Corvette {A korvetteket felderítésre, futárszolgálatra és cirkáló mûveletekre tervezték. Jó sebességével és manôverezôképességével egy korvett képes elkapni a könnyebb hajókat, és sikeresen elkerülheti a nehezebbekkel való csatát.}
-XebekVML {A xebec a leghíresebb mediterrán hajótípus. Keskeny hajótestének és az összes árbocán elhelyezett nagyméretû lateenvitorláinak köszönhetôen szélsôséges szélszögben is képes vitorlázni, ami igen kellemetlen ellenféllé teszi. Sajnos a szél elôtt futó alacsony sebessége a xebecet elsôsorban a kalózkodásra és a csempészetre korlátozza.}
-Polacre {A polacre a xebec legközelebbi rokona. A xebec-kel ellentétben négyszögletes vitorlákat visel a fôárbocán, ami lehetôvé teszi, hogy magabiztosan tartsa az irányt követô szélben. Ez a kötélzet azonban csökkenti a manôverezôképességet, rontja a széllel szembeni teljesítményt, és jelentôsen megnöveli a legénység képességeivel és koordinációjával szemben támasztott követelményeket.}
-Galeon_h {A nehéz gálya nagy teljesítményû hadihajó, amelyet konvojok ôrzésére és különösen értékes rakományok önálló szállítására terveztek. Sebességben és manôverezôképességben alulmarad a modern hajókkal szemben, de nagy kaliberû ágyúi, erôs hajóteste és számos legénysége megbízható védelmet nyújt bármilyen rakomány számára. Egy nehéz gályákból álló flotta olyan erô, amellyel számolni kell a Karib-tengeren.}
-Elcasador {A nyílt óceánon végrehajtott különleges mûveletekre tervezett hadihajó ragyogó példája. Ezt a gályát a Casa de Contratación parancsára építették, hogy elpusztítsa a legveszélyesebb kalózokat, akik valódi veszélyt jelentenek a térség kereskedelmére és a spanyol korona érdekeire.}
-Frigate {A fregattok kiváló vitorlázási tulajdonságokkal és jó tûzerôvel rendelkeznek, és kifejezetten nagy hatótávolságú felderítésre, szállítmányok konvojozására, valamint egy hajóraj részeként folytatott harcra lettek tervezve. Manapság gyakrabban találhatók meg önálló cirkálóhajóként az ellenséges kommunikáción - az ellenséges kereskedelmi hajók elfogására vagy megsemmisítésére.}
-Frigate_h {A nehéz fregattok kompromisszumos megoldásként szolgáltak azon kapitányok számára, akiknek nem volt elegendô tûzerôjük a hagyományos fregattokhoz. A megerôsített hajótestek és a nagyobb kaliberû ágyúk közelebb hozták ôket a 4. osztályú sorhajókhoz - de a sebesség és a manôverezôképesség csökkenése árán.}
-LineShip {A 4. osztályú vonalhajók tûzereje nem tudja felvenni a versenyt idôsebb testvéreikkel, ezért nincs értelme csatasorba állítani ôket. Legjobb felhasználási területük a konvojvédelem, mivel sebességük és manôverezôképességük miatt erre a feladatra a leghatékonyabbak.}
-Warship {Az ilyen típusú hajók még Richelieu bíboros idejében épültek, és mára szerkezetileg elavultak. De tisztességes vitorlázási tulajdonságokkal rendelkeznek, és a legnehezebb ágyúkat is képesek hordozni, így félelmetes erôt képviselnek.}
-Ecliaton {Az ilyen típusú hajók még Richelieu bíboros idejében épültek, és mára szerkezetileg elavultak. De tisztességes vitorlázási tulajdonságokkal rendelkeznek, és a legnehezebb ágyúkat is képesek hordozni, így félelmetes erôt képviselnek.}
-Pink {A rózsaszín egy kis hajó, amelyet teherszállításra és kisebb konvojok ôrzésére terveztek. Bár a fegyverzete gyenge, és a legénysége kicsi, a rózsaszínt kifejezetten kereskedelemre és harcra egyaránt tervezték, és sok kapitány a gyorsasága és a manôverezôképessége miatt értékeli. A rózsaszín kis mérete nem teszi lehetôvé, hogy hosszú tengeri utakat tegyen meg.}
-Battleship {A 3. osztályú vonalhajók igen nagy számban vannak jelen, és a legkiegyensúlyozottabb harci tulajdonságokkal rendelkeznek, vonalcsatákra tervezték ôket. Elég tûzerôvel rendelkeznek ahhoz, hogy akár a 100 ágyús leviatánokat is kihívják. Ugyanakkor sebességben és manôverezôképességben érezhetôen felülmúlják ôket.}
-Manowar {A 2. osztályú vonalhajók minden nemzet haditengerészeti erejének gerincét alkotják. A harmadosztályú hajókkal együtt olyan flottát alkotnak, amely az erôt a manôverezéssel ötvözi. Ha pedig a hajórajban nincsenek 1. osztályú hajók, néhányan közülük zászlóshajóként szolgálnak.}
-Manowar_e {Az 1. osztályú vonalhajó egy igazi úszó erôdítmény. Félelmetes tûzerôjének köszönhetôen néhány pontos sortûzzel bármelyik ellenfelet a mélybe küldheti. De még a legnagyobb tengeri hatalmaknak sincs sok ilyen hajójuk, és a nagy tengeri csatákban zászlóshajóként használják ôket.}
-MayFang
-{
-Ennek a xebecnek a hajótestét az erô rovására könnyítették meg, de ez páratlan vitorlázóvá tette - nincs még egy olyan hajó a Karib-tengeren, amelyik szinte közvetlenül a széllel szemben képes vitorlázni!Húsz közepes kaliberû ágyúja pedig erôs érv a tengeri versengésben.
-}
-Mirage {A bombakétákkal ellentétben a magánhajókéták nem hordoznak óriási, erôdök bombázására tervezett aknavetôket, hanem könnyebb, áramvonalasabb hajótesttel rendelkeznek, ami kedvezôen befolyásolja a vitorlázási tulajdonságaikat. Még a hercegek jachtjai is megirigyelhetnék ennek a privát ketchnek a sebességét.}
-Himera {Egy remekmû, amelyet kifejezetten a brit haditengerészeti hírszerzés igényeihez készítettek. Jellemzôit tekintve a 3. osztályú hadihajókhoz hasonlítható, miközben megtartja a 4. osztályú hajók könnyû kezelhetôségét.}
-Valciria {Egy remek angol brigg. Nagy sebesség és manôverezôképesség, jó széllel szembeni teljesítmény és két tucat ágyú a fedélzeten teszi ezt a vitorlás hajót álommá.}
-CORVETTE_QUEST {Egyedi hajó, a francia hajóépítôk remekmûve. A korvett konstrukciójának mélyreható modernizálása szinte minden tulajdonságát javította anélkül, hogy a sebességet feláldozta volna. A megnövelt vitorlafelület és az ágyúk kaliberének növelése tapasztaltabb és nagyobb létszámú legénységet igényel, de ha a karibi próbák sikeresek lesznek, az itt alkalmazott technológiák igazi áttörést jelenthetnek a hajóépítésben.}
-Polacre_q {A mester, aki sikeresen ötvözte a xebec és a fregatt elemeit, egy szokatlan hajótestû, erôs és tágas polákot hozott létre, amelyet magas oldalfalak, de sekély merülés és nagyon erôs fegyverzet jellemez. A három árboc és a különbözô típusú vitorlákkal ellátott orrvitorla gyors és nagyon manôverezôképessé teszi. Mindezek a tulajdonságok külön-külön is jók, de együtt kiválóak - egyedül a tulajdonos dönti el: hadihajó, kalózhajó vagy kereskedelmi hajó lesz, amely vitorlát bont.}
-ArabellaShip {Ez az egyedülálló hajó egyesíti a fregattok és a hadihajók legjobb tulajdonságait. Elképesztô vitorlázási tulajdonságai nagy kaliberû ágyúakból álló üteggel párosulnak, és a belsô térben egy egész tengerészgyalogos század is elfér. Ügyes kezekben a Fortuna egyedül is képes ellenállni egy sokkal erôsebb ellenfélnek.}
-Flyingdutchman {"Caleuche". Mindenki rettegése, aki hajózik...}
-Flyingdutchman_l {A "Caleuche"egy példánya.}
-NewFlyingdutchman {Ez volt egykor a hírhedt "szellemhajó". Mostanra teljesen átépítették, és egy erôs harci gálya, amely még a csatahajókkal is képes egyenrangú harcra. Méretéhez képest lenyûgözô sebességgel, nagy rakterével és félelmetes fegyverzetével teljesen önellátó hajó, amely képes ellenséges hajók elsüllyesztésére, partraszállásra, sôt egész kolóniák ostromlására is.}
-Santisima {Ezt a hajót a híres havannai hajógyárból bocsátották vízre. A hajótest valamivel könnyebb és gyengébb, mint más elsô osztályú hajóké, de ezt bôven ellensúlyozzák a jobb hajózási tulajdonságok.}
-NoneBoat {Nincs hajó. A hôs szárazföldi patkány lett, és nem nevezheti magát kapitánynak, amíg nem kap egy hajót.}
-Hull {Hull - mutatja a hajótest jelenlegi és maximálisan elviselhetô sérülését.}
-Sails {Vitorlák - mutatja a hajó vitorlái által elviselhetô jelenlegi és maximális sérülés mértékét.}
-Speed {Sebesség - mutatja a hajó aktuális maximális sebességét, figyelembe véve minden tényezôt (rakományt, a kapitány képességeit, a hajó sérülését), és a hajó maximálisan elérhetô sebességét.}
-Maneuver {Manôverezôképesség - mutatja a hajó pillanatnyi manôverezôképességét, figyelembe véve minden tényezôt (rakományt, a kapitány képességeit, a hajó sérülését)és a hajó maximálisan elérhetô manôverezôképességét.}
-AgainstWind
-{
-A hajó szélhez viszonyított legjobb iránya, amelyen a hajó elérheti a maximális sebességet. Az értékek fokokban vannak megadva.A második érték az aktuális szélirány és az adott hajó legjobb irányszöge közötti különbséget mutatja.
-}
-Capacity
-{
-Holtsúly - a hajó jelenlegi és maximális teherbírását mutatja. Minél nagyobb a hajó terhelése, annál lomhább és lassabb lesz.A hajóra szerelt ágyúkat is figyelembe veszik a hordképesség kiszámításakor. Ezek eltávolíthatók a hajóról, így további hely szabadul fel a rakomány számára. Ehhez válassza ki az aktuális ágyúkat a hajó paraméterlistájában a "Ship" felületen.
-}
-Crew {Legénység - mutatja a legénység jelenlegi létszámát, valamint a hajóra vonatkozó minimum és maximum értéket.}
-CannonType {Löveg típusa - mutatja a típusát (cannons or culverins), az aktuális kaliber és a telepített lövegek száma.}
-sCannons {Megmutatja a maximálisan megengedett kalibert és az ágyúk maximálisan lehetséges számát a hajón.}
-Crew_Exp {A legénység tapasztalata}
-Crew_Exp_hint
-{
-A legénység tapasztalata három kategóriára oszlik: tengerészmesterség (hat a hajó kezelésére), tüzérség (töltési sebesség és célzási pontosság), valamint a beszállás (csapat hatékonysága közelharcban).Egy tapasztalt legénység kisebb létszámban hatékonyabb lehet, mint egy túlterhelt, zöldfülûekkel teli hajó.Mindhárom kategóriában tapasztalatot szerez a legénység a megfelelô mûveletek végrehajtása során (manôverezés, lövés, beszállás), de a megszerzett képességek el is vesznek, ha a megszerzett készségeket hosszú ideig nem gyakorolják.
-}
-TakeAllGoods_hint {A "Transfer all goods" gomb az átlagos fajlagos értéküknek megfelelô árukat helyezi át a karakter hajójára. Elôször a legértékesebb áruk kerülnek át, majd a kevésbé értékesek, és így tovább, amíg nincs több szabad hely a raktérben.}
-GoodsKeys_hint
-{
-A billentyûzet "Balra" és "Jobbra" nyílbillentyûkkel a táblázat kiválasztott sorában az árukat egy tételben mozgathatja. Ha a nyílbillentyûk lenyomása közben lenyomva tartja a Shift billentyût, akkor az áruk teljes egészében mozognak.Ha jobbra kattint a nyílbillentyûkkel a felületen lévô árut tartalmazó sorra, akkor egyszerre tíz tételt mozgat át.
-}
-Shipyard_hint
-{
-A hajógyárban hajókat vásárolhatsz, javíthatsz vagy eladhatsz.A hôs nem tudja eladni a hajóját, ha vannak társai. Ugyanígy nem tudsz hajót vásárolni egy társadnak, ha a hôsnek nincs saját hajója.A hôs vagy társa hajójának lecseréléséhez a raktér és a legénység teljes tartalmának megtartása mellett válassza ki a hôs hajórajának hajólistájában (a felület bal oldalán) a lecserélni kívánt hajót egy újjal, majd a hajógyárban eladó hajók listájában (a felület jobb oldalán) a kívánt hajót, majd kattintson a "Vásárlás" gombra.Ha új hajót szeretnél vásárolni (új társat rendelni), vásárlás elôtt elôször válassz ki egy üres helyet a bal oldali listában.
-}
-NoneBoat2 {Nincs hajó. Kár.}

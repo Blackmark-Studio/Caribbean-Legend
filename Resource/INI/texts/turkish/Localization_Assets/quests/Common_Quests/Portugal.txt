@@ -1,0 +1,16 @@
+Portugal_1 {Bartolomeo}
+Portugal_2 {Portekizli}
+Portugal_3 {Piter}
+Portugal_4 {van Stahl}
+Portugal_5 {Leo}
+Portugal_6 {Cord}
+Portugal_7 {İki gün sonra@<NewStr()>düşman gemisi görülmedi}
+Portugal_8 {Frants}
+Portugal_9 {Garke}
+Portugal_10 {Albatross}
+Portugal_11 {Bart the Portuguese geminizi terk etti!}
+Portugal_12 {Ernando}
+Portugal_13 {Vaskez}
+Portugal_14 {Bir saat geçti...@<NewStr()>Portekizli eve taşındı}
+Portugal_15 {İki saat geçti...}
+Portugal_16 {Bart the Portuguese'nin hazinelerini buldun!}

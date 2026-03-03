@@ -73,7 +73,6 @@ void InitInterface_RI(string iniName, ref pTrader, int mode)
 	SetEventHandler("HideInfoWindow", "HideHelpHint", 0);
 	SetEventHandler("ShowItemInfo", "ShowItemInfo", 0);
 	SetEventHandler("TableSelectChange", "CS_TableSelectChange", 0);
-	SetEventHandler("eTabControlPress", "procTabChange",0);	
 	SetEventHandler("TransactionOK", "TransactionWithConfirm", 0);
 	SetEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT", 0);
 
@@ -157,7 +156,6 @@ void IDoExit(int exitCode)
 	DelEventHandler("HideInfoWindow", "HideHelpHint");
 	DelEventHandler("ShowItemInfo", "ShowItemInfo");
 	DelEventHandler("TableSelectChange", "CS_TableSelectChange");
-	DelEventHandler("eTabControlPress", "procTabChange");
 	DelEventHandler("frame","ProcessFrame");
 	DelEventHandler("TransactionOK", "TransactionWithConfirm");
 	DelEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT");
@@ -276,7 +274,7 @@ bool FilterItems(ref Item)
 
 	if(CheckAttribute(refStoreChar, "Merchant.type"))
 	{
-		if(refStoreChar.Merchant.type == "jeweller" || refStoreChar.Merchant.type == "GasparGold")
+		if (ItemTrade_IsJeweller(refStoreChar))
 		{
 			if(!CheckAttribute(Item,"TradeType")) return false;
 			if(Item.TradeType != ITEM_TRADE_JEWELRY && !items2) return false;
@@ -284,7 +282,7 @@ bool FilterItems(ref Item)
 			if(items5) return false;
 		}
 
-		if (refStoreChar.Merchant.type == "jeweller" && TradeMode == 0 && CheckAttribute(Item, "PriceDublon")) return false;
+		if (ItemTrade_IsJeweller(refStoreChar) && TradeMode == 0 && CheckAttribute(Item, "PriceDublon")) return false;
 	}
 	
 	if(currentTab == 2)
@@ -316,7 +314,6 @@ bool FilterItems(ref Item)
 void AddToTable()
 {
 	int n, i, j, leftQty, rightQty;
-	int  idLngFile;
 	string row, row2, sItem; 
 	ref rItem;
 	string sList;
@@ -325,7 +322,6 @@ void AddToTable()
 
 	n = 1;
 	j = 1;
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 	Table_Clear("TABLE_LIST", false, true, false);
 	Table_Clear("TABLE_LIST2", false, true, false);	
 	HideItemInfo(); // прячем по умолчанию инфу по предметам
@@ -370,7 +366,7 @@ void AddToTable()
 			GameInterface.TABLE_LIST.(row).td1.icon.width = 50;
 			GameInterface.TABLE_LIST.(row).td1.icon.height = 50;
 			GameInterface.TABLE_LIST.(row).td1.textoffset = "50,0";
-			GameInterface.TABLE_LIST.(row).td1.str = LanguageConvertString(idLngFile, rItem.name);
+			GameInterface.TABLE_LIST.(row).td1.str = GetItemName(rItem);
 			GameInterface.TABLE_LIST.(row).td1.line_space_modifier = 0.9;
 			GameInterface.TABLE_LIST.(row).td2.str = leftQty;
 			GameInterface.TABLE_LIST.(row).td3.str = FloatToString(stf(rItem.Weight) * leftQty, 1);
@@ -379,13 +375,8 @@ void AddToTable()
 
 	
 			GameInterface.TABLE_LIST.(row).index = i;
-			ShowItemInfo();	
-			sList = "tr" + sti(GameInterface.TABLE_LIST.select);
-			if(CheckAttribute(&GameInterface, "TABLE_LIST." + sList + ".index"))
-			{
-				iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(sList).index);
-				ShowGoodsInfo(iCurGoodsIdx);
-			}
+			ShowItemInfo();
+
 			n++;
 		} 
 		
@@ -400,22 +391,31 @@ void AddToTable()
 			GameInterface.TABLE_LIST2.(row2).td1.icon.height = 50;
 			GameInterface.TABLE_LIST2.(row2).td1.textoffset = "50,0";
 			GameInterface.TABLE_LIST2.(row2).td1.line_space_modifier = 0.9;
-			GameInterface.TABLE_LIST2.(row2).td1.str = LanguageConvertString(idLngFile, rItem.name);            
+			GameInterface.TABLE_LIST2.(row2).td1.str = GetItemName(rItem);
 			GameInterface.TABLE_LIST2.(row2).td2.str = rightQty;
 			GameInterface.TABLE_LIST2.(row2).td3.str = FloatToString(stf(rItem.Weight), 1);
 			GameInterface.TABLE_LIST2.(row2).td4.str = GetTradeItemPrice(i, PRICE_TYPE_BUY, refStoreChar, &modifier);
 			GameInterface.TABLE_LIST2.(row2).index = i;
 			ShowItemInfo();	
-			sList = "tr" + sti(GameInterface.TABLE_LIST2.select);
-			if(CheckAttribute(&GameInterface, "TABLE_LIST2." + sList + ".index"))
-			{
-				iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(sList).index);
-				ShowGoodsInfo(iCurGoodsIdx);
-			}
+
 			j++;
 		} 
 	}
-	
+
+	sList = "tr" + sti(GameInterface.TABLE_LIST.select);
+	if(CheckAttribute(&GameInterface, "TABLE_LIST." + sList + ".index"))
+	{
+		iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(sList).index);
+		ShowGoodsInfo(iCurGoodsIdx);
+	}
+
+	sList = "tr" + sti(GameInterface.TABLE_LIST2.select);
+	if(CheckAttribute(&GameInterface, "TABLE_LIST2." + sList + ".index"))
+	{
+		iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(sList).index);
+		ShowGoodsInfo(iCurGoodsIdx);
+	}
+
 	for (i = 0; i < ITEMS_QUANTITY; i++)
 	{
 		row = "tr" + n;
@@ -463,7 +463,7 @@ void AddToTable()
 			GameInterface.TABLE_LIST.(row).td1.icon.width = 50;
 			GameInterface.TABLE_LIST.(row).td1.icon.height = 50;
 			GameInterface.TABLE_LIST.(row).td1.textoffset = "50,0";
-			GameInterface.TABLE_LIST.(row).td1.str = LanguageConvertString(idLngFile, rItem.name);
+			GameInterface.TABLE_LIST.(row).td1.str = GetItemName(rItem);
 			GameInterface.TABLE_LIST.(row).td1.line_space_modifier = 0.9;
 			GameInterface.TABLE_LIST.(row).td2.str = leftQty;
 			GameInterface.TABLE_LIST.(row).td3.str = FloatToString(stf(rItem.Weight) * leftQty, 1);
@@ -480,12 +480,7 @@ void AddToTable()
 				GameInterface.TABLE_LIST.(row).td4.str = GetTradeItemPriceDublon(i, PRICE_TYPE_SELL, refStoreChar);
 			}			
 			ShowItemInfo();	
-			sList = "tr" + sti(GameInterface.TABLE_LIST.select);
-			if(CheckAttribute(&GameInterface, "TABLE_LIST." + sList + ".index"))
-			{
-				iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(sList).index);
-				ShowGoodsInfo(iCurGoodsIdx);
-			}
+
 			n++;
 		} 
 		
@@ -499,7 +494,7 @@ void AddToTable()
 			GameInterface.TABLE_LIST2.(row2).td1.icon.height = 50;
 			GameInterface.TABLE_LIST2.(row2).td1.textoffset = "50,0";
 			GameInterface.TABLE_LIST2.(row2).td1.line_space_modifier = 0.9;
-			GameInterface.TABLE_LIST2.(row2).td1.str = LanguageConvertString(idLngFile, rItem.name);            
+			GameInterface.TABLE_LIST2.(row2).td1.str = GetItemName(rItem);
 			GameInterface.TABLE_LIST2.(row2).td2.str = rightQty;
 			GameInterface.TABLE_LIST2.(row2).td3.str = FloatToString(stf(rItem.Weight), 1);
 			GameInterface.TABLE_LIST2.(row2).td4.str = GetTradeItemPrice(i, PRICE_TYPE_BUY, refStoreChar, &modifier);
@@ -514,18 +509,26 @@ void AddToTable()
 				GameInterface.TABLE_LIST2.(row2).td4.str = GetTradeItemPriceDublon(i, PRICE_TYPE_BUY, refStoreChar);
 			}
 			ShowItemInfo();	
-			sList = "tr" + sti(GameInterface.TABLE_LIST2.select);
-			if(CheckAttribute(&GameInterface, "TABLE_LIST2." + sList + ".index"))
-			{
-				iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(sList).index);
-				ShowGoodsInfo(iCurGoodsIdx);
-			}
+
 			j++;
 		}
 	}
-	
+
+	sList = "tr" + sti(GameInterface.TABLE_LIST.select);
+	if(CheckAttribute(&GameInterface, "TABLE_LIST." + sList + ".index"))
+	{
+		iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(sList).index);
+		ShowGoodsInfo(iCurGoodsIdx);
+	}
+
+	sList = "tr" + sti(GameInterface.TABLE_LIST2.select);
+	if(CheckAttribute(&GameInterface, "TABLE_LIST2." + sList + ".index"))
+	{
+		iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(sList).index);
+		ShowGoodsInfo(iCurGoodsIdx);
+	}
+
 	NextFrameRefreshTable();
-	LanguageCloseFile(idLngFile);
 
 	RestoreTableSorting("TABLE_LIST");
 	RestoreTableSorting("TABLE_LIST2");
@@ -553,6 +556,7 @@ void RefreshTableByFrameEvent()
 	DelEventHandler("frame", "RefreshTableByFrameEvent");
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"TABLE_LIST", 0 );
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"TABLE_LIST2", 0 );
+	ShowGoodsInfo(iCurGoodsIdx);  //сбросим все состояния
 }
 
 void OnTableClick()
@@ -639,39 +643,9 @@ void CS_TableSelectChange()
 	ShowItemInfo();
 	sortedGoodIndex = sti(GameInterface.(CurTable).(sRow).index);
 	sortedRow = selectedRow;
-  ShowGoodsInfo(sortedGoodIndex);
+	ShowGoodsInfo(sortedGoodIndex);
 }
 
-void procTabChange()
-{
-	int iComIndex = GetEventData();
-	string sNodName = GetEventData();
-	if( sNodName == "TABBTN_1" )
-	{
-		SetControlsTabModeManual( 1 );
-		return;
-	}
-	if( sNodName == "TABBTN_2" )
-	{
-		SetControlsTabModeManual( 2 );
-		return;
-	}
-	if( sNodName == "TABBTN_3" )
-	{
-		SetControlsTabModeManual( 3 );
-		return;
-	}
-	if( sNodName == "TABBTN_4" )
-	{
-		SetControlsTabModeManual( 4 );
-		return;
-	}
-	if( sNodName == "TABBTN_5" )
-	{
-		SetControlsTabModeManual( 5 );
-		return;
-	}
-}
 
 // метод на TAB переключает вкладки таблицы
 void SetControlsTabModeManual(int mode) 
@@ -853,18 +827,16 @@ void SetCharWeight()
 // инфа о предмете
 void ShowGoodsInfo(int iGoodIndex)
 {
-	string GoodName = Items[iGoodIndex].name;
 	ref    arItm = &Items[iGoodIndex];
 	currentItem = arItm;
-	int    lngFileID = LanguageOpenFile("ItemsDescribe.txt");
 	float modifier = 1;
-	string sHeader = LanguageConvertString(lngFileID, GoodName);
+	string sHeader = GetItemName(arItm);
 
     iCurGoodsIdx = iGoodIndex;
 
     string describeStr = "";
 
-	describeStr += GetItemDescribe(iGoodIndex);
+	describeStr += GetItemDescr(arItm);
 	AddRecipeKnownMarker(&arItm, &describeStr);
 	AddMapKnownMarker(&arItm, &describeStr);
 
@@ -880,7 +852,6 @@ void ShowGoodsInfo(int iGoodIndex)
 	SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"QTY_CAPTION", 5 );
     SetFormatedText("QTY_GOODS_INFO", describeStr);
 	SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"QTY_GOODS_INFO", 5 );
-	LanguageCloseFile(lngFileID);
 
 	if(CheckAttribute(refStoreChar, "Merchant.type") && refStoreChar.Merchant.type == "GasparGold")
 	{
@@ -914,7 +885,7 @@ void ShowGoodsInfo(int iGoodIndex)
 	else 			   iCharPrice = GetTradeItemPriceDublon(iGoodIndex, PRICE_TYPE_BUY, refStoreChar);
 	SetFormatedText("QTY_INFO_SHIP_PRICE", XI_ConvertString("Price buy") + NewStr() + its(iCharPrice));
 
-	FillUpDescriptors(&arItm);
+	FillUpDescriptors(&arItm, !XI_IsWindowEnable("QTY_WINDOW"));
 	FillUpStats(&arItm, &NullCharacter);
 }
 
@@ -1559,4 +1530,9 @@ void SortTradeList(int column, bool preserveState, string tableName)
 	}
 
 	QoLSortTable(tableName, column, datatype, preserveState, 0);
+}
+
+bool ItemTrade_IsJeweller(ref chr)
+{
+	return chr.Merchant.type == "jeweller" || chr.Merchant.type == "GasparGold";
 }

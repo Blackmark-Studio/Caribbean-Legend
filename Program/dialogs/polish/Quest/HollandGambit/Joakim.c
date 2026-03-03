@@ -18,7 +18,7 @@ void ProcessDialogEvent()
 				if (pchar.questTemp.HWIC.Holl == "AbbySeekIsland" && !CheckAttribute(npchar, "quest.HWICHoll.Task"))
 				{
 					dialog.text = "Dzień dobry, sir! Jestem doktor Joachim Merriman. Czy mam przyjemność rozmawiać z kapitanem "+GetFullName(pchar)+"?";
-					link.l1 = "Tak, to ja. Jak diabli znasz moje imię? Nie przypominam sobie, żebyśmy się wcześniej spotkali.";
+					link.l1 = "Tak, to ja. Skąd do diabła znasz moje imię? Nie przypominam sobie, żebyśmy się wcześniej spotkali.";
 					link.l1.go = "JoakimSeekSkull";
 					break;
 				}
@@ -65,21 +65,21 @@ void ProcessDialogEvent()
 
 		case "Landlady"://хозяйка дома
 			dialog.text = "Jeśli przyszedłeś do doktora Merrimana, to go tu nie ma. Już tu nie mieszka.";
-			link.l1 = "Widzę.";
+			link.l1 = "Rozumiem.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Landlady";
 		break;
 		
 		case "Landlady_1"://хозяйка дома
 			dialog.text = "Jeśli przyszedłeś zobaczyć Doktora Merrimana, to muszę ci powiedzieć, że nie ma go w domu. W tej chwili podróżuje i nie wiem, kiedy wróci.";
-			link.l1 = "Widzę.";
+			link.l1 = "Rozumiem.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Landlady_1";
 		break;
 		
 		case "Landlady_2"://хозяйка дома
 			dialog.text = "Jeśli przyszedłeś zobaczyć się z doktorem Merrimanem, to go tu nie ma. Już tu nie mieszka.";
-			link.l1 = "Widzę.";
+			link.l1 = "Rozumiem.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Landlady_2";
 		break;
@@ -92,7 +92,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JoakimSeekSkull_1":
-			dialog.text = "Nie odrzucicie tego, panie! Mój dom jest niedaleko stąd. Chodźcie za mną!";
+			dialog.text = "Nie odrzucisz tego, panie! Mój dom jest niedaleko stąd. Chodź za mną!";
 			link.l1 = "... ";
 			link.l1.go = "JoakimSeekSkull_2";
 		break;
@@ -105,13 +105,13 @@ void ProcessDialogEvent()
 		
 		case "JoakimSeekSkull_3":
 			PlaySound("Voice\English\hambit\Joakim Merriman-01.wav");
-			dialog.text = "Możemy tu rozmawiać bez obaw o ciekawskie uszy. Ostatnio odwiedzałeś mojego sąsiada, Solomona Shneura. Przechodziłem obok i, musisz mi wybaczyć kapitanie, przypadkiem usłyszałem kilka szczegółów twojej rozmowy z Solomonem. To było tak fascynujące, że musiałem wysłuchać wszystkiego!";
+			dialog.text = "Możemy tu rozmawiać bez obawiania się o ciekawskich. Ostatnio odwiedzałeś mojego sąsiada, Solomona Shneura. Przechodziłem obok i, musisz mi wybaczyć kapitanie, przypadkiem usłyszałem kilka szczegółów twojej rozmowy z Solomonem. To było tak fascynujące, że musiałem wysłuchać wszystkiego!";
 			link.l1 = "Podsłuchiwacz, który boi się innych podsłuchiwaczy, co?";
 			link.l1.go = "JoakimSeekSkull_4";
 		break;
 		
 		case "JoakimSeekSkull_4":
-			dialog.text = "Teraz, teraz, kapitanie! Wcale nie tak! Salomon jest moim sąsiadem i często mnie odwiedza. Jesteśmy dobrymi przyjaciółmi mimo naszych różnic religijnych! Znam jego nieszczęścia... tak samo jak wszyscy inni w Willemstad! Salomon opowiada o swoich kłopotach każdemu, kto zechce słuchać, rano, w południe i wieczorem. Ale dość o tym. Stary Żyd musiał już ci powiedzieć o starym jadeitowym czaszce, która jest ukryta razem z jego złotem na jakiejś nieznanej wyspie. Czy ci o tym mówił?";
+			dialog.text = "Zaraz, zaraz, kapitanie! Wcale nie tak! Solomon jest moim sąsiadem i często mnie odwiedza. Jesteśmy dobrymi przyjaciółmi mimo naszych różnic religijnych! Znam jego nieszczęścia... tak samo jak wszyscy inni w Willemstad! Solomon opowiada o swoich kłopotach każdemu, kto zechce słuchać, rano, w południe i wieczorem. Ale dość o tym. Stary Żyd musiał już ci powiedzieć o starej jadeitowej czaszce, która jest ukryta razem z jego złotem na jakiejś nieznanej wyspie. Czy ci o tym mówił?";
 			link.l1 = "Opowiedział mi o czaszce, nie wspomniał, że jest zrobiona z jadeitu. Powiedział także, że to czaszka jego dziadka, prawdę mówiąc, myślałem, że to albo jakiś kabałistyczny horror, albo stary dziwak ma nietoperze w dzwonnicy.";
 			link.l1.go = "JoakimSeekSkull_5";
 		break;

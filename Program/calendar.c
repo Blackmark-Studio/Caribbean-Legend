@@ -6,13 +6,13 @@
 #define DAY_TIME_DAY		"Day"
 #define DAY_TIME_EVENING	"Evening"
 
-float  GetTime(){ return stf(Environment.time); }
-float  GetHour(){ return stf(Environment.date.hour); }
-float  GetMinute(){ return stf(Environment.date.min); }
-float  GetSecond(){ return stf(Environment.date.sec); }
-int	GetDataYear(){ return sti(Environment.date.year); }
-int	GetDataMonth(){ return sti(Environment.date.month); }
-int	GetDataDay(){ return sti(Environment.date.day); }
+float GetTime(){ return stf(Environment.time); }
+float GetHour(){ return stf(Environment.date.hour); }
+float GetMinute(){ return stf(Environment.date.min); }
+float GetSecond(){ return stf(Environment.date.sec); }
+int GetDataYear(){ return sti(Environment.date.year); }
+int GetDataMonth(){ return sti(Environment.date.month); }
+int GetDataDay(){ return sti(Environment.date.day); }
 
 void SetDayTime(string name)
 {
@@ -166,9 +166,9 @@ int GetAddingTimeDay(int hour,int minute)
 	float curtime = GetTime();
 	float nexttime = curtime+hour+(makefloat(minute)/60.0);
 	int addingDays = 0;
-	while(nexttime>=24.0)
+	while(nexttime >= 24.0)
 	{
-		nexttime = nexttime - 24.0;
+		nexttime -= 24.0;
 		addingDays++;
 	}
 	return addingDays;
@@ -179,9 +179,9 @@ int AddTimeToCurrent(int hour,int minute)
 	float curtime = GetTime();
 	float nexttime = curtime + hour + (makefloat(minute)/60.0);
 	int addingDays = 0;
-	while(nexttime>=24.0)
+	while(nexttime >= 24.0)
 	{
-		nexttime = nexttime - 24.0;
+		nexttime -= 24.0;
 		addingDays++;
 	}
 	if(addingDays > 0)
@@ -198,7 +198,7 @@ int AddTimeToCurrent(int hour,int minute)
 	Environment.date.min = makeint(nexttime);
 	worldMap.date.min = makeint(nexttime);
     Weather.Time.time = GetTime(); // новая погода
-    
+
 	return addingDays; // boal верунть число дней, чтоб понять, что новый наступил
 }
 

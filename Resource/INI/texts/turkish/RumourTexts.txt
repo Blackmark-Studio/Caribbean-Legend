@@ -1,0 +1,46 @@
+Start_GoldFleet_t0 {Altın ve gümüşü İspanya hazinesine taşıyan filonun yakın zamanda Portobello limanından ayrılıp Havana’ya doğru yelken açtığı söyleniyor.}
+Start_GoldFleet_t1 {Kıymet biçilmez İnka ve Aztek altınlarıyla yüklü bir İspanyol filosu yakın zamanda Portobello’dan ayrıldı. Konvoy Havana’ya gidiyor, oradan da hazineler İspanya’ya taşınacak.}
+Start_GoldFleet_t2 {Söylentilere göre, İspanyol altın konvoyu Portobello’dan Havana’ya gümüş ve altın yüklü olarak yola çıkmış. Filoya devasa bir man-o-war, ayrıca her biri iki top güvertesine sahip fırkateynler ve kalyonlar eşlik ediyor; ayrıca tanıyamadığım başka askeri gemiler de var.}
+End_GoldFleet_t0 {İspanyol altın konvoyu başarıyla Küba'ya ulaştı. Artık toplanan tüm altın ve gümüş güvenli bir şekilde İspanya'ya taşınacak.}
+End_GoldFleet_t1 {İspanyol altın filosunun tüm gemileri başarıyla Havana'ya ulaştı. Peru ve Meksika'nın tüm altın ve gümüşü yakında Avrupa'ya taşınacak.}
+End_GoldFleet_t2 {Havana'ya bir İspanyol filosu ulaştı. Gümüş ve altın yükü güvende, yakında İspanya'ya gönderilecek.}
+Defeat_GoldFleet_t0 {Portobello'dan Havana'ya giden İspanyol altın konvoyunun asla varış noktasına ulaşmadığı söyleniyor. Ona ne olmuş olabilir, Tanrı bilir; belki korkunç fırtınalar ya da korsanlar, gerçi bu kadar cesur ya da deli korsanların var olduğuna pek inanmıyorum.}
+Defeat_GoldFleet_t1 {Portobello'dan gümüş ve altın taşıyan İspanyol altın filosu iz bırakmadan kayboldu. Kimse tam olarak bilmiyor, ama söylentiye göre korsanların eline düşmüş!}
+Defeat_GoldFleet_t2 {Portobello’dan hazineler taşıyan altın filo, çoktan varması gerekirken Havana’ya hiç ulaşmadı. Ona ne olmuş olabilir? ... Kim bilir, bu mevsimde şiddetli fırtınalar eksik olmaz.}
+Attak_GoldFleet_t0 {Söylentilere göre, Yeni Dünya’dan gümüş, altın ve diğer hazineleri taşıyan İspanyol altın filosu saldırıya uğramış ve birkaç gemi kaybolmuş.}
+Attak_GoldFleet_t1 {Denizler artık güvensiz! Portobello'dan Havana'ya giden İspanyol altın filosuna ya korsanlar ya da İngiliz kapitanlar saldırmış, belki de Fransızlardı, emin değilim! Gerçekten, ne cüret! Keşke hepsinin asıldığını görebilsem!}
+Attak_GoldFleet_t2 {Her geçen gün işler daha da kötüye gidiyor! Portobello’dan Havana’ya Yeni Dünya’nın altın, gümüş ve hazinelerini taşıyan İspanyol altın filosu, gözü pek korsanlar tarafından saldırıya uğradı! Ey Kutsal Meryem! Kıyamet günü yaklaşıyor!}
+Init_GoldFleet_t0 {Söylentilere göre Portobello'dan bir İspanyol altın filosu yola çıkmaya hazırlanıyor. Tam çıkış günü gizli tutuluyor, fakat konvoyun #sgold_month# başında Küba'ya gideceği söyleniyor.}
+Init_GoldFleet_t1 {Altın filosunun gemilerine altın ve gümüş yüklendiği söyleniyor. Konvoy, #sgold_month# ayının ilk yarısında Küba'ya yelken açacak.}
+Init_GoldFleet_t2 {Portobello'dan Küba'ya gidecek altın konvoyunun hareketi #sgold_month# ayının ilk yarısına planlandı. O zamana kadar elde edilen tüm altın ve gümüş ambarlara yüklenecek.}
+MerchantOnMapTo_t0 {"#sShipName#" adlı geminin #snation# bayrağı altında, #ssColony# kolonisinden tamamen #sQuestGoodsIdx# yüklü olarak bize doğru geldiği söyleniyor.}
+MerchantOnMapTo_t1 {Yerel tüccar, #ssColony# kolonisinden #snation# bayrağı altında gelen "#sShipName#" gemisinin #sQuestGoodsIdx# yüküyle varışını bekliyor.}
+MerchantOnMapTo_t2 {Duyduğuma göre, #snation# bayrağı altındaki "#sShipName#" gemisinde bir tüccar, #ssColony# kolonisinden bir yük #sQuestGoodsIdx# taşıyormuş.}
+MerchantOnMap_t0 {Söylentilere göre "#sShipName#" adlı bir ticaret gemisi, #snation# bayrağı altında, #sQuestGoodsIdx# yüküyle #ssNextColony#'ye yelken açmak için gelgitin yükselmesini bekliyor.}
+MerchantOnMap_t1 {Söylentilere göre, #snation# himayesinde çalışan zengin bir tüccar, "#sShipName#" gemisini kiraladı. Çok yakında bu gemi, #sQuestGoodsIdx# yüküyle #ssNextColony#'ye yelken açacak.}
+MerchantOnMap_t2 {Yerel tüccar, "#sShipName#" gemisini #snation# için #sQuestGoodsIdx# yüküyle donattı ve yakında #ssNextColony#'ye doğru yola çıkacak.}
+MerchantRumour_t0 {"#sShipName#" adlı geminin #snation# bayrağı altında, #ssColony#’den #ssNextColony#’ye #sQuestGoodsIdx# yüküyle giderken, bilinmeyen bir korsan tarafından batırıldığına dair söylentiler duydum!}
+MerchantRumour_t1 {"#sShipName#" adlı geminin #snation# bayrağı altında, #ssColony# limanından #sQuestGoodsIdx# yüküyle #ssNextColony#'ye giderken, hem yüküyle hem de mürettebatıyla birlikte kaybolduğu söyleniyor!}
+MerchantRumour_t2 {Korkunç söylentiler var: Bir korsan, yakın zamanda #ssColony# kolonisinden çıkan #snation# ticaret gemisine denizde baskın yapmış. Mürettebatı katledip tüm #sQuestGoodsIdx# yükünü kendine almış. Bu kişi sen olmasın kaptan?}
+GetColonyPrices_t0 {Geçenlerde handa iki kaptanın #sColony# kasabasındaki dükkânın fiyatlarını tartıştığını duydum. (fiyat listesi alındı)}
+WaitInTavern_t0 {Söylentilere göre #sPsHero_Name# gemisini kaybetmiş ve şimdi #sTown_Name# tavernasında kederini romla bastırıyormuş.}
+WaitInTavern_t1 {Dün hırsızlıktan tutuklanan sarhoş bir denizcinin, içki arkadaşlarına #sPsHero_Name#'in kart oyununda gemisini kaybettiğini ve şimdi #sTown_Name# meyhanesinde uygun rüzgarı beklediğini anlattığını duydum.}
+WaitInTavern_t2 {Meyhanedeki denizciler, #sPsHero_Name#'ın son zamanlarda şanssızlık yaşadığını söylüyor. Gümrük memurları gemisini batırmış, kendisi ise #sTown_Name# kasabasında zor kurtulmuş.}
+WorkOnMayor_t0 {Bugün #sPsHero_Name#’i valimizle gördüm. Görünüşe göre Ekselansları ona yine bir “ilginç” görev verdi.}
+WorkOnMayor_t1 {Söylentilere göre valimizin yeni bir gözdesi varmış. Kaptan #sPsHero_Name# sık sık konakta görülüyor, onun için hassas görevler üstleniyor ve görünüşe göre Ekselanslarının kızıyla bir gönül ilişkisi yaşıyor.}
+WorkOnMayor_t2 {Aşçı bana, Ekselanslarının hizmetçisinden #sPsHero_Name#'in onun yakın dostu olduğunu duyduğunu söyledi. Bugün sabahın erken saatlerinde konuta aceleyle gidiyordu – belli ki orada önemli bir işi vardı.}
+SailToIsland_t0 {#sPsHero_Name#'ın #sTo# #sTown_Name#'a gideceğini söyledi. Belki orada alınacak bir şeyler vardır.}
+SailToIsland_t1 {#sPsHero_Name# ticaret için #sTo# #sTown_Name#'a gidiyormuş – bunu tayfasından biri handa anlattı.}
+SailToIsland_t2 {Dün #sPsHero_Name# yerel meyhanede sarhoş olup yüksek sesle #sTo# #sTown_Name#'a gideceğini, orada işi olduğunu söyledi.}
+WorkOnStore_t0 {Meyhanedeki denizcilerden biri, #sPsHero_Name#'in #sGood# yükünü #sTown_Name#'e götürmeyi üstlendiğini söyledi.}
+WorkOnStore_t1 {Tüccarımızın yardımcısı, #sPsHero_Name#'ın patronunun dükkanından #sGood# yükünü #sTown_Name# kasabasına götürmeyi üstlendiğini söyledi.}
+WorkOnStore_t2 {Barmenimiz, #sPsHero_Name#’ın yerel dükkândan aldığı #sGood# yüküyle #sTown_Name#’a gitmek için tavernada denizci aradığını söyledi.}
+WorkWithContra_t0 {#sPsHero_Name#’i şüpheli biriyle konuşurken gördüm. Duyduğuma göre kaçakçıymış.}
+WorkWithContra_t1 {Söylentilere göre #sPsHero_Name# bir ambar dolusu kaçak mal getirmiş. Belki şimdiye kadar satmıştır – ya da belki hâlâ duruyordur...}
+WorkWithContra_t2 {#sPsHero_Name#'ı kaçakçımızla konuşurken duydum. #sContraPlace# adında bir yerde buluşmak için anlaştılar.}
+DuelCoward_t0 {Ne ayıp! #sName# düelloya gelmedi. Şimdi herkes onun korkak olduğunu söylüyor!}
+DuelCoward_t1 {Ha-ha, #sName# düelloya gelmedi! Sanırım artık kadınlar arasında eskisi kadar başarılı olamayacak.}
+DuelCoward_t2 {Duydun mu? #sName# düelloya gelmemiş! Dün gece o kadar sarhoş olmuş ki ayakta duramamış.}
+DuelHero_t0 {#sName#’in usta bir düellocu olduğunu biliyor muydun? Şimdiye kadar #sKill# kişiyi öldürdü. Onunla karşılaşmak istemezsin.}
+DuelHero_t1 {Söylentilere göre #sName# ruhunu şeytana sattı, bu yüzden düelloda asla yenilmiyor! Öldürdüğü insanların ruhları... Şimdiye kadar #sKill# kişiyi öldürdü ve hepsinin ruhu doğrudan Cehennem’e gidiyor! Ayrıca, eğer öldürmeyi bırakırsa, şeytan kendi ruhunu alacakmış diyorlar.}
+DuelHero_t2 {O ukala #sName# inanılmaz şanslı! Şimdiye kadar düelloda #sKill# adam öldürdü, ama en ufak bir yara bile almadı! Gerçekten, buna inanabiliyor musun?}

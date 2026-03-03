@@ -1,3 +1,4 @@
+#define QUEST_PLAYER_CABIN_LOCATION "MyAnyCabin" // эта локация в контексте квестовых проверок win_condition.location означает «текущая каюта игрока»
 
 bool TestIntValue(int nValue, int nCompareValue, string sOperation)
 {
@@ -80,6 +81,8 @@ bool ProcessCondition(aref condition, int n)
 				bLandEncountersGen = false;
 				return !CharacterIsDead(refCharacter);
 			}
+
+				if (condition.location == QUEST_PLAYER_CABIN_LOCATION) return refCharacter.location == Get_My_Cabin_Now(); // динамическое сравнение с каютой, т. к. на момент взятия квеста могла отличаться
     		return false;
     	break;
 

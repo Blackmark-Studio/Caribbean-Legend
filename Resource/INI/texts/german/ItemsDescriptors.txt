@@ -80,14 +80,15 @@ descriptor_descr_WeaponCurvature_1 {Diese Waffe hat eine ausgeprägte Krümmung 
 descriptor_descr_ArmorType_0 {Leichte Rüstung ist kaum von normaler Kleidung zu unterscheiden und schränkt die Bewegungsfreiheit nicht ein. Dafür bietet sie weniger Schutz.}
 descriptor_descr_ArmorType_1 {Mittlere Rüstung schränkt die Beweglichkeit etwas ein, bietet aber hervorragenden Schutz für lebenswichtige Organe. Verringert die Bewegungsgeschwindigkeit des Charakters um 5 %.}
 descriptor_descr_ArmorType_2 {Schwere Rüstung ist sperrig und unhandlich, doch sie macht dich zum Festungsstürmer. Verringert Bewegungsgeschwindigkeit um 10 %.}
-descriptor_descr_ArmorMaterial_0 {Stoff hält schweren Schlägen nicht stand, schützt aber vor Schrammen und Kratzern. Verringert erlittenen Schaden um 4 %.}
-descriptor_descr_ArmorMaterial_1 {Lederrüstung schützt dich vielleicht in einer Kneipenschlägerei, doch gegen Kugeln oder einen gezielten Stich hilft sie nicht. Verringert erlittenen Schaden um 8 %.}
-descriptor_descr_ArmorMaterial_2 {Platte bietet ein ausgezeichnetes Gleichgewicht zwischen Gewicht und Schutz. Kann Leben retten. Verringert erlittenen Schaden um 15%.}
+descriptor_descr_ArmorMaterial_0 {Stoff hält schweren Schlägen nicht stand, schützt aber vor Schrammen und Kratzern. Verringert erlittenen Schaden um $percent($MaterialDefenceValue(0)).}
+descriptor_descr_ArmorMaterial_1 {Lederrüstung schützt dich vielleicht in einer Kneipenschlägerei, doch gegen Kugeln oder einen gezielten Stich hilft sie nicht. Verringert erlittenen Schaden um $percent($MaterialDefenceValue(1)).}
+descriptor_descr_ArmorMaterial_2 {Platte bietet ein ausgezeichnetes Gleichgewicht zwischen Gewicht und Schutz. Kann Leben retten. Verringert erlittenen Schaden um $percent($MaterialDefenceValue(2)).}
 descriptor_descr_ArmorMaterial_3
 {
-Gepresste Rüstung wird in Massen für Truppen gefertigt und in europäischen Kriegen eingesetzt.Verringert erlittenen Schaden um 22 %.
+Gepresste Rüstung wird in Massen für Truppen gefertigt und in europäischen Kriegen eingesetzt.
+Verringert erlittenen Schaden um $percent($MaterialDefenceValue(3)).
 }
-descriptor_descr_ArmorMaterial_4 {Die Herstellung hochwertiger geschmiedeter Rüstungen ist ein komplexer und kostspieliger Prozess, der sie in der Karibik zu einer Seltenheit macht. Reduziert erlittenen Schaden um 35 %.}
+descriptor_descr_ArmorMaterial_4 {Die Herstellung hochwertiger geschmiedeter Rüstungen ist ein komplexer und kostspieliger Prozess, der sie in der Karibik zu einer Seltenheit macht. Reduziert erlittenen Schaden um $percent($MaterialDefenceValue(4)).}
 descriptor_descr_AmuletType_0 {Stützt sich auf Omen, Seemannsglauben und echte Zusammenhänge.}
 descriptor_descr_AmuletType_1 {Zieht Kraft aus heidnischen Göttern und einheimischen Ritualen.}
 descriptor_descr_AmuletType_2 {Zieht Kraft aus christlichen Heiligen und rechtschaffenem Glauben.}

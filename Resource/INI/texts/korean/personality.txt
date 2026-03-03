@@ -1,0 +1,12 @@
+Archetype_Title {직업}
+Archetype_Tooltip {캐릭터의 주요 직업과 취미입니다.}
+Duelist {$key(perkTreeFencing|AbilityDescribe.txt)}
+Pirate {$key(perkTreePirat|AbilityDescribe.txt)}
+Gunman {$key(Shooter)}
+Soldier {$key(perkTreeSoldier|AbilityDescribe.txt)}
+Cannoner {$key(Cannoner)}
+Boatswain {$key(Boatswain)}
+Carpenter {$key(Carpenter)}
+Navigator {$key(Navigator)}
+Treasurer {$key(Treasurer)}
+Doctor {$key(Doctor)}

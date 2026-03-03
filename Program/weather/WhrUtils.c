@@ -5,32 +5,28 @@ int Whr_GetColor(aref arRef, string sAttribute)
 
 float Whr_GetFloat(aref arRef, string sAttribute)
 {
+    if (!CheckAttribute(arRef, sAttribute)) return 0.0;
 	string sTmpAttr = sAttribute + ".max";
-	if (CheckAttribute(arRef,sTmpAttr))
+	if (CheckAttribute(arRef, sTmpAttr))
 	{
 		float fMin = stf(arRef.(sAttribute).min);
 		float fMax = stf(arRef.(sAttribute).max);
 		return fMin + frnd() * (fMax - fMin);
 	}
-	if (!CheckAttribute(&arRef, sAttribute)) return 0.0; //задолбало
-	
 	return stf(arRef.(sAttribute));
 }
 
 int Whr_GetLong(aref arRef, string sAttribute)
 {
+    if (!CheckAttribute(arRef, sAttribute)) return 0;
 	string sTmpAttr = sAttribute + ".max";
-	if (CheckAttribute(arRef,sTmpAttr))
+	if (CheckAttribute(arRef, sTmpAttr))
 	{
 		int iMin = sti(arRef.(sAttribute).min);
 		int iMax = sti(arRef.(sAttribute).max);
 		return iMin + rand(iMax - iMin - 1);
 	}
-	if (CheckAttribute(arRef, sAttribute))		// LDH added check  30 Mar09
-	{
-		return sti(arRef.(sAttribute));
-	}
-	return 0;
+    return sti(arRef.(sAttribute));
 }
 
 string Whr_GetString(aref arRef, string sAttribute)
@@ -54,7 +50,6 @@ int Whr_BlendLong(float fBlend, int i1, int i2)
 	int i = makeint(i1 + fBlend * (i2-i1));
 	return i;
 }
-
 
 /* TO_DO: REF. По идее правильно так
 

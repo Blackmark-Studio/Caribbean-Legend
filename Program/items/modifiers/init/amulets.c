@@ -16,21 +16,21 @@ bool InitAmuletModifiers(ref item)
 		case "totem_09":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_COMMON);
-			AddDescriptor(item, JOB_BOATSWAIN, -1);
+			AddJobDescriptor(item, JOB_BOATSWAIN);
 			AddDescriptor(item, "Alchemy", -1);
 		}
 		break;
 		case "indian_3":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 			SetModifier(item, BLADE_ITEM_TYPE + "_" + M_CRIT_DAMAGE, 0.15);
 		}
 		break;
 		case "indian_9":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_CANNONER, -1);
+			AddJobDescriptor(item, JOB_CANNONER);
 		}
 		break;
 		case "totem_03":
@@ -54,7 +54,7 @@ bool InitAmuletModifiers(ref item)
 		case "indian_7":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 			SetModifier(item, M_MTP_ENERGY_MAX, 0.12);
 		}
 		break;
@@ -75,7 +75,7 @@ bool InitAmuletModifiers(ref item)
 		case "indian_10":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 			SetModifier(item, M_POISON_CHANCE, 0.15);
 		}
 		break;
@@ -88,13 +88,13 @@ bool InitAmuletModifiers(ref item)
 		case "indian_6":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_BOATSWAIN, -1);
+			AddJobDescriptor(item, JOB_BOATSWAIN);
 		}
 		break;
 		case "indian_1":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 			SetModifier(item, M_HEADSHOT_DAMAGE, 0.2);
 		}
 		break;
@@ -107,13 +107,12 @@ bool InitAmuletModifiers(ref item)
 		case "amulet_6":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_CHURCH);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 		}
 		break;
 		case "indian_11":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_FIGHTER, -1);
 		}
 		break;
 		case "totem_07":
@@ -125,7 +124,7 @@ bool InitAmuletModifiers(ref item)
 		case "amulet_2":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_CHURCH);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 			modifier = AddCallback(item, CT_EQUIP, "Euchologion"); // Молитвослов
 			modifier.arg0 = 0.05;
 		}
@@ -133,7 +132,7 @@ bool InitAmuletModifiers(ref item)
 		case "amulet_3":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_CHURCH);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 			modifier = AddCallback(item, CT_EQUIP, "Crucifix"); // Нательный крест
 			modifier.arg0 = 0.15;
 		}
@@ -147,7 +146,7 @@ bool InitAmuletModifiers(ref item)
 		case "obereg_3":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 		}
 		break;
 		case "obereg_6":
@@ -159,7 +158,7 @@ bool InitAmuletModifiers(ref item)
 		case "obereg_11":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_CHURCH);
-			AddDescriptor(item, JOB_NAVIGATOR, -1);
+			AddJobDescriptor(item, JOB_NAVIGATOR);
 		}
 		break;
 		case "totem_08":
@@ -171,7 +170,7 @@ bool InitAmuletModifiers(ref item)
 		case "indian_2":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_COMMON);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 		}
 		break;
 		case "talisman16":
@@ -179,20 +178,20 @@ bool InitAmuletModifiers(ref item)
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
 			modifier = AddCallback(item, CT_EQUIP, "GoldenKnife");
 			modifier.arg0 = 0.15;
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 		}
 		break;
 		case "obereg_7":
 		{
 			SetModifier(item, SKILL_TYPE + SKILL_SAILING, 10);
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_COMMON);
-			AddDescriptor(item, JOB_NAVIGATOR, -1);
+			AddJobDescriptor(item, JOB_NAVIGATOR);
 		}
 		break;
 		case "amulet_7":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_CHURCH);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 			modifier = AddCallback(item, CT_EQUIP, "HolyWater");
 			modifier.arg0 = 0.15;
 		}
@@ -202,25 +201,25 @@ bool InitAmuletModifiers(ref item)
 			modifier = AddCallback(item, CT_EQUIP, "Battleaxe");
 			modifier.arg0 = 0.15;
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 		}
 		break;
 		case "obereg_10":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_COMMON);
-			AddDescriptor(item, JOB_NAVIGATOR, -1);
+			AddJobDescriptor(item, JOB_NAVIGATOR);
 		}
 		break;
 		case "amulet_5":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_CANNONER, -1);
+			AddJobDescriptor(item, JOB_CANNONER);
 		}
 		break;
 		case "totem_02":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_COMMON);
-			AddDescriptor(item, JOB_BOATSWAIN, -1);
+			AddJobDescriptor(item, JOB_BOATSWAIN);
 			AddDescriptor(item, "Alchemy", -1);
 		}
 		break;
@@ -228,7 +227,7 @@ bool InitAmuletModifiers(ref item)
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
 			AddDescriptor(item, "Alchemy", -1);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 			modifier = AddCallback(item, CT_EQUIP, "JaguarSon");
 			modifier.arg0 = 0.10;
 		}
@@ -237,7 +236,7 @@ bool InitAmuletModifiers(ref item)
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_COMMON);
 			AddDescriptor(item, "Alchemy", -1);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 			modifier = AddCallback(item, CT_EQUIP, "TasmanianDevil");
 			modifier.arg0 = 0.15;
 		}
@@ -245,13 +244,13 @@ bool InitAmuletModifiers(ref item)
 		case "obereg_1":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_CARPENTER, -1);
+			AddJobDescriptor(item, JOB_CARPENTER);
 		}
 		break;
 		case "indian_5":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_BOATSWAIN, -1);
+			AddJobDescriptor(item, JOB_BOATSWAIN);
 		}
 		break;
 		case "totem_11":
@@ -264,37 +263,37 @@ bool InitAmuletModifiers(ref item)
 		{
 			SetModifier(item, SKILL_TYPE + SKILL_COMMERCE, 10);
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_TREASURER, -1);
+			AddJobDescriptor(item, JOB_TREASURER);
 		}
 		break;
 		case "amulet_11":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_BOATSWAIN, -1);
+			AddJobDescriptor(item, JOB_BOATSWAIN);
 		}
 		break;
 		case "amulet_10":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_CHURCH);
-			AddDescriptor(item, JOB_DOCTOR, -1);
+			AddJobDescriptor(item, JOB_DOCTOR);
 		}
 		break;
 		case "indian_8":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_CANNONER, -1);
+			AddJobDescriptor(item, JOB_CANNONER);
 		}
 		break;
 		case "obereg_2":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_CARPENTER, -1);
+			AddJobDescriptor(item, JOB_CARPENTER);
 		}
 		break;
 		case "amulet_1":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 			modifier = AddCallback(item, CT_EQUIP, "NgomboShield");
 			modifier.arg0 = 1;
 			modifier.arg1 = 0.10;
@@ -303,7 +302,7 @@ bool InitAmuletModifiers(ref item)
 		case "amulet_4":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 			modifier = AddCallback(item, CT_EQUIP, "ElTrozo");
 			modifier.arg0 = 0.025;
 		}
@@ -311,31 +310,31 @@ bool InitAmuletModifiers(ref item)
 		case "amulet_9":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_CHURCH);
-			AddDescriptor(item, JOB_CARPENTER, -1);
+			AddJobDescriptor(item, JOB_CARPENTER);
 		}
 		break;
 		case "obereg_9":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_NAVIGATOR, -1);
+			AddJobDescriptor(item, JOB_NAVIGATOR);
 		}
 		break;
 		case "amulet_8":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_COMMON);
-			AddDescriptor(item, JOB_CARPENTER, -1);
+			AddJobDescriptor(item, JOB_CARPENTER);
 		}
 		break;
 		case "rat_poison":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_COMMON);
-			AddDescriptor(item, JOB_TREASURER, -1);
+			AddJobDescriptor(item, JOB_TREASURER);
 		}
 		break;
 		case "clock2":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_COMMON);
-			AddDescriptor(item, JOB_NAVIGATOR, -1);
+			AddJobDescriptor(item, JOB_NAVIGATOR);
 		}
 		break;
 		case "KhaelRoa_item":
@@ -352,26 +351,26 @@ bool InitAmuletModifiers(ref item)
 		case "talisman2":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_CHURCH);
-			AddDescriptor(item, JOB_NAVIGATOR, -1);
+			AddJobDescriptor(item, JOB_NAVIGATOR);
 		}
 		break;
 		case "talisman1":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_TREASURER, -1);
+			AddJobDescriptor(item, JOB_TREASURER);
 		}
 		break;
 		case "talisman6":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_CHURCH);
-			AddDescriptor(item, JOB_TREASURER, -1);
+			AddJobDescriptor(item, JOB_TREASURER);
 		}
 		break;
 		case "talisman14":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
 			SetModifier(item, SKILL_TYPE + SKILL_SAILING, 15);
-			AddDescriptor(item, JOB_NAVIGATOR, -1);
+			AddJobDescriptor(item, JOB_NAVIGATOR);
 		}
 		break;
 		case "talisman11":
@@ -396,26 +395,26 @@ bool InitAmuletModifiers(ref item)
 		case "talisman3":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_CANNONER, -1);
+			AddJobDescriptor(item, JOB_CANNONER);
 		}
 		break;
 		case "talisman7":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_CARPENTER, -1);
+			AddJobDescriptor(item, JOB_CARPENTER);
 		}
 		break;
 		case "talisman8":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
 			SetModifierFromSource(item, HAS + M_CANT_BE_POISONED, true, TALISMAN_ITEM_TYPE);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 		}
 		break;
 		case "talisman13":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 		}
 		break;
 		case "talisman15":
@@ -427,7 +426,7 @@ bool InitAmuletModifiers(ref item)
 		case "talisman4":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_BOATSWAIN, -1);
+			AddJobDescriptor(item, JOB_BOATSWAIN);
 		}
 		break;
 		case "talisman10":
@@ -438,7 +437,7 @@ bool InitAmuletModifiers(ref item)
 		case "talisman12":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 		}
 		break;
 		case "talisman9":
@@ -450,7 +449,7 @@ bool InitAmuletModifiers(ref item)
 		case "talisman18":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_CHURCH);
-			AddDescriptor(item, JOB_BOATSWAIN, -1);
+			AddJobDescriptor(item, JOB_BOATSWAIN);
 		}
 		break;
 		case "talisman19":
@@ -461,7 +460,7 @@ bool InitAmuletModifiers(ref item)
 		case "talisman17":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_CHURCH);
-			AddDescriptor(item, JOB_DOCTOR, -1);
+			AddJobDescriptor(item, JOB_DOCTOR);
 			SetModifier(item, M_REDUCE_DAMAGE, 0.05);
 			modifier = AddCallback(item, CT_EQUIP, "LiberMisericordiae");
 		}
@@ -474,7 +473,7 @@ bool InitAmuletModifiers(ref item)
 			SetModifier(item, M_HEADSHOT_DAMAGE, 0.2);
 			SetModifier(item, GUN_ITEM_TYPE + "_" + M_RELOAD_SPEED, 0.2);
 			SetModifier(item, MUSKET_ITEM_TYPE + "_" + M_RELOAD_SPEED, 0.2);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 		}
 		break;
 		case "talisman21":
@@ -496,13 +495,13 @@ bool InitAmuletModifiers(ref item)
 			SetModifier(item, BLADE_ITEM_TYPE  + "_" + M_CRIT_DAMAGE, 0.10);
 			SetModifier(item, GUN_ITEM_TYPE    + "_" + M_CRIT_DAMAGE, 0.10);
 			SetModifier(item, MUSKET_ITEM_TYPE + "_" + M_CRIT_DAMAGE, 0.10);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 		}
 		break;
 		case "knife_02":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_CHURCH);
-			AddDescriptor(item, JOB_FIGHTER, -1);
+			AddJobDescriptor(item, JOB_FIGHTER);
 		}
 		break;
 		case "kaleuche_amulet2":

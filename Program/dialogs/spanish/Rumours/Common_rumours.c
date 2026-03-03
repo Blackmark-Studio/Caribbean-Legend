@@ -915,6 +915,15 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			IslaMona_TerksCreateHimenes();
 			break;
 		}
+		// Гаспар во фриплее 
+		if ((SandBoxMode) && npchar.city == "Tortuga" && (sti(pchar.reputation.nobility) < 41))
+		{
+			AddMoneyToCharacter(pchar, -1000);
+			Dialog.Text = "Su reputación lo precede, capitán. Apostaría a que más de una vez ha tenido que pensar dónde deshacerse de esas chucherías y piedrecitas brillantes...";
+			link.l1 = "¿Y sabes quién podría ayudarme con eso?";
+			link.l1.go = "About_Gaspar";
+			break;
+		}
 		string RumText = SelectRumourEx("tavern", NPChar); // fix
 
 		if (!RumourHasInformation(RumText))
@@ -1288,6 +1297,15 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			AddQuestUserData("MayorsQuestsList", "sWho", GetWorkTypeOfMan(&characters[GetCharacterIndex(pchar.GenQuest.Intelligence.SpyId)], "Gen"));
 			AddQuestUserData("MayorsQuestsList", "SpyName", GetFullName(&characters[GetCharacterIndex(pchar.GenQuest.Intelligence.SpyId)]));
 			break;
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////		Гаспар во фриплее
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		case "About_Gaspar":
+			dialog.text = "Lo sé. Se llama Gaspar Parmentier, pero sus amigos lo llaman Diente de Oro. Es un hombre confiable y, lo más importante, compra en volúmenes que ningún prestamista podría imaginar. Estoy seguro de que se entenderán rápido. Solo recuerda: no le gustan los extraños. Así que si vas a verlo, asegúrate de decir que vas de mi parte. Su casa está cerca de la administración portuaria.";
+			link.l1 = "Bueno, te has ganado tu dinero — aquí tienes. ¿Sabes algo más digno de mención?";
+			link.l1.go = "rumours_tavern";
+			AddDialogExitQuestFunction("CreateGaspar_Sandbox");
+		break;
 
 			//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			/////////		Грабеж среди бела дня, попытка залезть в сундуки

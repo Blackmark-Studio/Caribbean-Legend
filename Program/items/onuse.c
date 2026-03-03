@@ -28,7 +28,8 @@ void RunOnUseCallbacks(ref chr, ref item)
 
 	aref callbacks;
 	makearef(callbacks, item.callbacks.onUse);
-	for (int i = 0; i < GetAttributesNum(callbacks); i++)
+    int qty = GetAttributesNum(callbacks);
+	for (int i = 0; i < qty; i++)
 	{
 		aref function = GetAttributeN(callbacks, i);
 		string functionName = GetAttributeName(function);
@@ -46,7 +47,8 @@ bool RunCanBeUsedCallbacks(ref chr, ref item)
 	aref callbacks;
 	bool result = true;
 	makearef(callbacks, item.callbacks.CanBeUsed);
-	for (int i = 0; i < GetAttributesNum(callbacks); i++)
+    int qty = GetAttributesNum(callbacks);
+	for (int i = 0; i < qty; i++)
 	{
 		aref function = GetAttributeN(callbacks, i);
 		string functionName = GetAttributeName(function);

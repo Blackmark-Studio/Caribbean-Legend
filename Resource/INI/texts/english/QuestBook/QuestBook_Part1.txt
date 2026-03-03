@@ -1,0 +1,1647 @@
+#QUEST JacobVanBerg_Journal
+Jacob van Berg's Journal
+#TEXT 1
+... I've had enough of this ban on plundering English merchants!
+There's no sense in sinking ships that could be plundered!
+I've had enough of this 'Flying Dutchman' affair. It was amusing and profitable at first, but now it's time to put an end to it.
+... I'm growing weary of these foolish tasks from my employer. The last order was to recall the coordinates of the spot where I sank that English fluyt. I've sent so many fluyts to the bottom since then! All I remember is that I was sailing at latitude 12 degrees 48`.
+... I'm also tired of waiting for this yellow-skinned messenger; it's been weeks. If he doesn't arrive within two days, I'll sail back to Boca de la Sierpe Bay, reclaim my ship, and leave this whole mess behind.
+#TEXT 2
+...have to catch another mark—some fool who bought the 'Valkyrie' from that half-dead Fleetwood. He's sailing to Blueweld now, and his ship is packed with slaves...
+...this hunt will be my last. I've had enough of playing the monster—it's time to take my leave. My last conversation with the master was quite unpleasant; he's still demanding I remember where I sank that British fluyt. It feels like ages ago—the only thing I recall is the latitude: 12 degrees 48'. Now he's trying to frighten me with that yellow-skinned bastard. No, I've had enough of these 'ghost' games. It's time to do something serious and get away from here, back to Europe...
+...I suppose I should change my flag from 'Mirage' to 'Valkyrie'. She'll be mine soon enough. I couldn't care less about the master's wish to deliver her to Esmeralda Bay. That landlubber already owns 'Meifeng'—damn him, he won't get 'Valkyrie' too!
+
+#QUEST Fleetwood_Journal
+Richard Fleetwood's Journal
+#TEXT 1
+Poor Abi is begging me to find the island where I discovered her and her father. Damn, I wish I could remember exactly where it happened. Longitude 64 degrees 41'—that's all I recall. I saw the 'Flying Dutchman' there and tried to give chase. I failed, but instead I found that island with Abi and her father. It seems the old Jew believes I was the one who sank their ship. I hope sweet Abi doesn't think the same.
+...we almost had proof of Rodenburg's connection to the 'Flying Dutchman.' Good old Charlie says she's moved her base to Castle Bruce Bay on Dominica. I hope this tale ends soon—before the cannibals tear them apart. This is shaping up to be quite a story!
+... It would be useful to unmask the rat in Bridgetown. I hope it isn't the governor, but who else could be so well informed about planned trade routes and patrols?
+
+#QUEST Merdok_Archive
+The Last Pages of Johan van Merden's Archive
+#TEXT 1
+...That was to be expected. I know Lucas too well. There will be no rest for me now that he's been promoted...
+...that 'Flying Dutchman' scheme is a fine example of how Rodenburg conducts his affairs. He won't leave me in peace. I'm locking up my pharmacy and preparing for a siege while I wait for a ship to take me out of the Caribbean...
+It seems Lucas's new agent is a decent fellow. I don't want to kill him, in case that bastard sends him to St. John's. Still, that's a better fate than dying at the hands of Ostin's men. Lucas can afford to hire them—he's got plenty of coin.
+#TEXT 2
+... That 'Flying Dutchman' scheme is a fine example of how Rodenburg conducts his business. It seriously disrupted the English merchants' operations...
+...Joachim Merriman has kept his end of the bargain and paid handsomely for the nephrite skull. Half a million pieces of eight—a considerable sum...
+...After that, Merriman asked everyone to leave him—he wanted to set some sort of trap for anyone who might come looking for us. Tonzag decided to follow and see what he was up to. An hour later, the Portuguese returned alone. He made a grim joke that Tonzag shouldn't have followed him, but admitted he was a great help nonetheless...
+
+#QUEST LetterToAbi
+Richard Fleetwood's Letter to Abigail
+#TEXT 1
+Dear Abi,
+
+As I promised, I am bringing you to join me in St. John's. This messenger, Charlie, is my dearest friend—you can trust him. He will see you safely to Antigua, so do not hesitate to follow him. I know of your troubles, and I promise to repay your father's money at the earliest opportunity. Nothing will stand between us. I look forward to seeing you.
+Richard.
+
+#QUEST LetterToFleetwood
+Letter to Richard Fleetwood with Terms of Ransom for Abigail
+#TEXT 1
+I have your Abigail, and you will never find her. She became my "guest" after I boarded your companion's ship. The price is 200,000 pesos. According to your letter, you have plenty of coin. Meet me on Turks Island at the northern bay. Come alone, and bring only your brig. Do not harm or follow my messenger—I will be watching. If my messenger does not leave your home within thirty minutes, or is followed, I will send you a box containing a finger and an ear of your beloved. If he leaves without a response, or does not leave at all, I will cut off Abi's head and send it to you. I trust you will be reasonable, Englishman. Abi's life is in your hands. 200,000 pesos is the price—if I do not receive it, you will get your girl back in pieces.
+Mr. Evil
+
+#QUEST FleetwoodAnswer
+Response from Richard Fleetwood
+#TEXT 1
+I agree to your terms, Mr. Evil. I'll meet you on Turks and bring the money you demanded. If you harm Abigail, I'll spend the rest of my life seeking vengeance.
+Richard Fleetwood
+
+#QUEST LetterToLucas
+Letter to Lucas Rodenburg from Richard Fleetwood
+#TEXT 1
+You're finished, Rodenburg. I've arrested that chemist, John Murdock, for being a Dutch agent, and I've also confiscated a rather interesting archive. The man didn't last long... and now I have the cipher key. I've got solid proof of your involvement in the 'Flying Dutchman' affair—or, more accurately, your connection to Jacob van Berg, who's been preying on English ships. There are plenty of juicy details in that archive, I'll tell you. I could promise you an international scandal—your own superiors will turn their backs on you once they learn what you've done. Still, I've been thinking... perhaps you should prepare ten million in exchange for the archive?
+Richard Fleetwood
+
+#QUEST LetterFromGaston
+Letter from Callow Gaston
+#TEXT 1
+If you are reading this, it means I am already dead.
+You did well to fool me with that slave story. No one has ever managed to trick Hercule Tonzag. That is my real name—or rather, it was.
+The man who killed me is also a grave threat to you. That is why I will help you survive, and you will avenge my death. It's a pity we were enemies in this life—we had much in common and could have worked together.
+Don't trust anyone, especially that English spy. He sent me to my death—he didn't even mention that the entire Caribbean is hunting the captain of the Valkyrie, and the governor of Curaçao will pay handsomely for his head.
+Too many Dutchmen have been sent to the sharks by my companion. He's nearly matched that bastard Van Berg's tally.
+I'm certain I didn't know all of that. So, keep your distance from that Englishman if you value your life. Why get involved in this bloody politics?
+But there is a man far more dangerous—Lucas Rodenburg, your friend's greatest enemy. Simply helping Fleetwood is enough to land yourself on his blacklist. As the Company's deputy director, he's guarded by soldiers and patrols; you can't reach him directly. But there is a way.
+Find a chemist in St. John's named John Murdock. He was Lucas Rodenburg's right hand. I worked for him, and Lucas decided to get rid of us both. It doesn't matter who killed me—Longway or the lads from the League. I was murdered on Rodenburg's orders. He'll do the same to you unless you strike first.
+Find the chemist before Lucas does. His real name is van Merden, and he’s likely hiding in the dungeons of St. John’s. Tell him you’ve come on my behalf—he’ll help you seek justice. He has something that will lure Lucas out of Curaçao, and you’re well suited for this kind of work.
+Good luck to you, stranger! Remember Hercule Tonzag.
+Only van Merden and I knew this name. Now you know it too.
+
+#QUEST	LetterFromFleetwood
+Farewells from Richard Fleetwood
+#TEXT	1
+Farewell, my faithful friend!
+I had to deceive you about my feelings for Abigail. Don't judge me—she is the only one who truly matters to me. I couldn't trust you with such an important conversation with her father. To be honest, my eyesight isn't as poor as I claimed. It's much easier for me to admit this in a letter. Trust me, it's better for both of us.
+I've paid Solomon and taken Abigail with me. Now I'm out of the game for good—I can't risk her life or her happiness. As you read this, the Valkyrie is bound for London.
+You're on your own now against Rodenburg and his mercenaries. I hope you make it out alive. My loyal Charlie has refused to return to England, disobeying my orders for the first time. I can't say I'm pleased about it. Charlie will give you some gold—may it help ease your disappointment.
+Hire Charlie as your gunner. He'll serve you faithfully, so long as you don't stain your honor as I once did.
+I wish you luck and victory!
+P.S. An Indian shaman told me that the undead may guard treasure if they were cursed by a local spell and a part of their body was placed inside the chest. That's why Gaston's head was found inside a chest on the island.
+The creature you encountered is called Chavinavi. According to local legend, they are minions of Yum Cimil, the Mayan God of Death. The man who summoned it is a powerful sorcerer. That's another reason I'm taking Abi away. I'm afraid—not for myself, but for her. Abi is pregnant. Good luck!
+
+#QUEST LetterToMerdok
+Letter to Johan van Merden from Lucas Rodenburg
+#TEXT 1
+
+Johan! You know me—I’ll get your damned archive one way or another. The only question is whether you’ll bring it to me yourself, or if Ostin’s boys will do it. I don’t even need your cipher, though I know you’re hiding it somewhere in your den. I just want to burn those papers with my own hands.
+You won't be leaving Antigua. For the sake of our old friendship, I'm giving you one last chance to live.
+I'll be waiting for you at our old meeting place. Longway will deliver this message. I know you've taken a liking to him for some reason, and I wouldn't be surprised if he doesn't return. He'll deliver the message, and you'll read it. That's why the Chinaman will come back on his own this time. The "Meifeng" has a new captain now.
+I don't want your life. I just don't want any surprises from my past. You can keep the Jew's gold and the money you got from the Portuguese for the Indian skull.
+Know this, van Merden: I am waiting for you, but my patience has its limits. When those limits are reached, the League will deal with you.
+Your old friend and commander,
+Lucas.
+
+#QUEST LSC_Alvorado
+Caribbean Chronicles - Cursed Place
+#TEXT 1
+
+Trip Notes of Ignacio Alvarado, Captain of the 'Santiago' Galleon
+20.06.1620
+I have no idea, señores, what we have done to deserve such a fate. For what sins? I have no answers, but I will tell you what I witnessed. I swear by the Holy Virgin, it is all true!
+Summer, 1620. My name is Ignacio Alvarado, captain of the galleon 'Santiago'. We were sailing from Havana to Vera Cruz when a deadly storm struck. We lost control of the ship and drifted northward. For a week, massive waves battered us, but the Santiago proved sturdy. Her hull held fast, and at last we found ourselves near a strange island—a veritable graveyard of ships.
+It was enormous—debris everywhere, with no sign of life. We took the ship's boat to explore this strange place. I spotted a narrow passage through the wreckage, and soon we reached the heart of this graveyard: a massive warship called the San Augustine...
+28.06.1620
+... Surprisingly, it was quiet there, with not a hint of wind. As soon as the men and I set foot on the warship's deck, we were attacked by strange black monsters. There were too many of them, and we had no choice but to surrender.
+...the island was inhabited. People of all races and nations live here, all survivors of shipwrecks over the past fifty years. Thank God, they accepted us as their own. They don't know our ship survived. Justice Island—that's what they call it. But I shall name it 'The City of Abandoned Ships.' That is the only name such a place deserves.
+Two clans rule this island. Unfortunately, we've been captured by the Rivados clan. Descended from savages, they treat white men as we treat Africans and Indians. Our small boat was seized, and we've been taken to San Geronimo to be sacrificed according to their local customs, to some stone idol. I noticed that the ship was likely to sink soon, and I feared that we...
+29.06.1620
+...the Narwhal clan is their enemy. White men, mostly descended from the first European settlers. Fortunately for us, they attacked the ship to rescue their comrades—and in doing so, saved us as well. The Narwhals told us we were only an hour away from being sacrificed. Our situation has improved somewhat, but we remain prisoners on the island, as we have no means to secure our...
+03.07.1620
+There are plenty of treasures in the cargo holds—clothes, arms, tools, rum, wine, and spice. However, supplies and provisions are scarce. That’s why the local clans consider San Augustine neutral ground. It serves as a gateway to the pass through the wreckage. Only small boats can navigate those waters, and the locals have plenty, trading with smugglers—treasures for food. That’s how things work here. Gold holds no value in this place...
+05.07.1620
+...not much remains. The locals don't trust one another, hiding their belongings in chests secured with sturdy locks. Some skilled swimmers attempt to dive and search the seabed. They say there are plenty of treasures down there. They must be truly brave to dive so deep—giant enemy crabs dwell below. The most frightening part is that I've seen them myself: massive claws and venomous jaws. Sometimes they even reach the surface and...
+07.07.1620
+Despite our skin color, the Narwals don't trust us. Perhaps they are heretics—Dutchmen and Englishmen who despise true Catholics. Or maybe they simply fear we might bring Spanish soldiers to put an end to their anarchy. In any case, they did not invite us aboard one of their small boats to sail to Cuba for trade.
+...secretly, without the Narwhals' knowledge, I have recorded the sailing directions to this island. Perhaps His Excellency Sancho de Alkis, Governor-General of Cuba, will find them useful for reaching this place and putting an end to it.
+15.07.1620
+A young local, born in Dublin, Ireland, and a true son of the Church, has offered us a way to escape the City of Abandoned Ships. It seems this brave soul has discovered that our ship is still seaworthy. Tomorrow, we will steal the Rivados' boat. May the Holy Virgin guide us!
+21.07.1620
+Success! But once again, we find ourselves at the mercy of a storm. Our hull is damaged, and we have only one day to find safe harbor, or our fate will be grim. All the men are in a panic, save for our brave young Irishman. No doubt, a great future awaits him—if we survive this ordeal...
+
+#QUEST Legend_CapBucher
+Caribbean Chronicles - The Legend of Captain Butcher
+#TEXT 1
+
+No one knows where that cruel and reckless pirate came from. Some called him a devil, while others admired his courage and luck, which let him escape every pursuit aboard his frigate, the Neptune. His name was spoken in every tavern across the Archipelago. Butcher spared no one—neither his men nor his enemies—yet his crew was always full, as new cutthroats were always welcome. Only the captain, his quartermaster Jacob Jackman, the boatswain Henry the Hangman, and his red-haired beauty Jessica seemed invincible. Jessica accompanied Butcher on every raid. They said she was the daughter of Oliver Rose, a wealthy planter from Barbados.
+That red-haired demoness was like a talisman for Butcher. But one day, our captain fell in love—with the daughter of the famous Nicolas Sharp, who was already dead.
+Butcher wanted to get rid of his Jessica—either he sold her for a hefty sum or simply let her go. No one has seen Jess since then.
+Every pirate on Isla Tesoro was taken with Beatrice Sharp, and all admired her, willing to risk their lives for her sake. Suitors were never in short supply, and her brother Blaze could have chosen any one of them for her. No one knows why he disliked Butcher—there was some dark history between them. In the end, Butcher had to steal Beatrice away, and that's exactly what he did. Yet some say he never stole her at all; she loved him, and together they eloped.
+Butcher made many enemies through his way of life, but one stood out—a relentless pursuer known only as the Mask. Clad in an old British uniform and hiding his face behind a mask, his real name had long been forgotten. One day, Jessica approached the Mask, claiming she knew Butcher's secret. She revealed the location of a small island to the north, where Butcher had established his base and storehouse. Jessica's offer was straightforward: she would help organize an ambush, but she wanted to be part of it. It seemed she sought vengeance against her former lover. The Mask agreed, knowing he would never have found the island without her aid.
+No sooner said than done. They didn't have to wait long. Butcher was unfortunate enough to cross swords with the Spanish. He lost too many men, and his ship was badly damaged. They barely made it to the island to repair the vessel and catch their breath. But that was only the beginning! Redcoats attacked from every corner, led by Jessica wielding her fearsome flame-bladed sword. She killed Beatrice, but fell to Butcher's hand.
+He didn't stand a chance. His men were killed on the shore. However, Jackman and the Hangman were not found. The captain was taken to Antigua. The two women were buried together on the island.
+Believe it or not, they say fishermen once landed on that island. The next morning, they were found dead—their wounds were terrible, as if inflicted by a flamberge. Since then, people avoid the island at night, even pirates.
+Butcher was executed at Antigua, hanged like any common pirate. That was the end of his story. Things might have turned out differently if he hadn't refused his red talisman.
+The Mask didn't live long after that—he was found dead the very next day, his throat slit by a shark tooth. They say it was Shark Dodson who killed him. Rumor has it Dodson loved his friend's sister, and he always wore a shark tooth around his neck. But he'll tell you nothing about it. That was a long time ago...
+
+#QUEST Mask
+Caribbean Chronicles - The Masked Man
+#TEXT 1
+
+... on 17 June 1634, the frigate 'Neptune' departed Glasgow, Scotland, bound for Bridgetown.
+The 'Neptune' was carrying not only passengers, letters, and arms for the island's garrison, but also convicts destined for the plantations of Barbados.
+This military frigate was never meant to transport slaves. The poor prisoners were crammed into the cargo hold, chained together with a single length of iron and deprived of fresh air.
+The significance of these criminals warranted the use of such a powerful warship for their transport. Each was involved in a government coup. One in particular stood out: Lawrence, a young nobleman from London with an athletic build and bold eyes. His family estate was destroyed and sold off. His father—once a corsair of Providence, a wealthy landowner, and a member of the British Parliament—could not withstand the chaos of the civil war and died. This loss drove Lawrence to change his political views and join other noble conspirators against the Lord Protector.
+Captain Joshua Leadbeater wasn't pleased to play the role of jailer, but the presence of the young and lovely Jessica Rose made the monotonous voyage more bearable. As the daughter of a wealthy planter from Barbados, she quickly won over the hardened captain's heart. Though it was his first voyage to the West Indies, the two months seemed to pass in the blink of an eye.
+As we neared the Antilles, our frigate was set upon by pirates who closed in for boarding. A ragged broadside tore a gaping hole in the pirates' barque, but it wasn't enough to turn the tide. The pirates nearly claimed victory, but Leadbeater's command and his well-drilled crew held them at bay. The battle might have been won, had the prisoners—led by Lawrence—not attacked Leadbeater and his men from behind. That betrayal proved decisive. Leadbeater took a blast of grapeshot to the face; they believed him dead. Morale among his men crumbled, and within half an hour, it was all over.
+After the battle, Lawrence and the pirate captain quarreled over Jessica. The pirate intended to hand her over to his crew for their amusement, while Lawrence insisted on ransoming her. Words quickly gave way to swords, and the pirate fell in an instant—Lawrence had trained with the finest fencers in London.
+The pirate crew chose Lawrence as their new captain. The barque was left to sink, along with the half-dead sailors. Leadbeater was among them; despite the terrible wound across his face, he survived just long enough to see Lawrence embracing the girl—the very one he had dreamed of.
+Thanks to Jacob Jackman, Lawrence earned his nickname—Butcher. Soon, that name was known in every tavern from Cuba to Barbados.
+Leadbeater's fate would not let him die. He was rescued by a passing vessel, though his face was so badly disfigured that he must always wear a mask and a wig. Hunting down the Butcher became his obsession—the sole purpose of his life.
+
+#QUEST RegataLetter
+Invitation to Regatta
+#TEXT 1
+
+Dear Captain,
+
+You are invited to participate in the Grand Caribbean Regatta. If you are interested, make your way at once to Port Royal and report to me, the Governor-General of Jamaica. Only luggers are permitted in the race, so be sure to prepare your vessel accordingly. Do not bring any other ships from your squadron—squadrons are not allowed in the regatta. You are guaranteed free passage to Port Royal.
+The fee is 50,000 pesos; that will be your share of the prize money.
+Governor-General of the English Colonies, Count Edward Doiley
+
+#QUEST RegataRules
+Rules and Terms of Regatta
+#TEXT 1
+
+Start and finish - Port Royal, Jamaica.
+Route, five voyages in total
+
+Port Royal (Jamaica) - Belize (West Spanish Main)
+Belize (West Spanish Main) - Port-au-Prince (Espanola)
+Port-au-Prince (Hispaniola) - St. John's (Antigua)
+St. John's (Antigua) - Bridgetown (Barbados)
+Bridgetown (Barbados) - Port Royal (Jamaica)
+Each participant must report to the harbor master in every town to check in and record their progress; otherwise, they will be disqualified. The offices will remain open around the clock throughout the regatta.
+
+You may not
+Sail with a squadron.
+Change your original lugger.
+Stray off the prescribed course.
+#QUEST Sharlie_Father
+A Letter from Henri de Monper
+#TEXT 1
+
+Greetings, Charles
+I have nearly forgotten what you look like. You know I do not approve of your idle ways. I have forbidden you from setting foot on our estate until you come to your senses and follow your brother’s example—choosing a more fitting occupation for a nobleman than daubing paint on canvases and the bedsheets of wealthy courtesans.
+But circumstances compel me to ask for your help.
+My brother Michel has vanished. It's been nearly a year since I last heard from him. In his final letter, he mentioned his wish to join an expedition to the New World and warned that he might not be able to write often. A ship takes three months to cross the Atlantic, but communication with our colonies is reliable and the mail has been getting through.
+I'm concerned he may have run into trouble. My letters to our countryman, the Chevalier de la Brignais, have gone unanswered. Michel called him his closest friend, and as far as I know, he did not accompany Michel on his expedition.
+I beg you, leave your painting and your women behind. Sail to Martinique and put an end to this uncertainty—it's killing me. As a former naval officer, I'd rather face the worst than live with doubt.
+Unfortunately, I can't give you any money for this voyage. Our estate is in decline, and a poor harvest has ruined me. Michel promised to set things right upon his return, but...
+Please, my boy, let go of old wounds and do as I ask—this may be the last favor I ever request of you. You're the only one who can do this for me.
+Your father, Henri de Monper
+Gascony, 6th April, 1654
+
+#QUEST Sharlie_Father_1
+A Letter from Henri de Monper
+#TEXT 1
+
+Dear Charles, my beloved son, it has been a long time since you set sail in search of your brother, and even longer since I last saw you. I am overjoyed that you took my advice and chose a path worthy of the de Monper name. When we last met years ago, I could not have imagined that you would become an officer of the Navy, and then rise even higher—to the esteemed position of governor-general of the New World! I am proud of you, my son!
+But what happened to Michel? I've been kept in the dark about his fate for years! Not long ago, the Chevalier La Brignais visited our estate, but all I learned was that Michel has been accused of something very serious. I hope you'll tell me everything when you return to France.
+Charles, our family estate is doing a bit better now, though your help would still be greatly appreciated. I won't pressure you as I once did. Just remember—a man is defined by his actions and deeds. May God Almighty be with you.
+Your father, Henri de Monper
+
+#QUEST Sharlie_Shevallie
+Letter from Chevalier de La Brignais
+#TEXT 1
+
+Monsieur de Maure, it is with deepest regret that I must inform you your brother, Michel de Monper, has been accused of serious crimes and is being held under arrest by order of the governor-general of the Antilles, Philippe de Poincy. This chevalier is our commander and represents the Maltese Order in the West Indies. One year ago, a secret expedition was dispatched under his command, and your poor brother was among its members. There are rumors that Martinique was sold to the Order, and perhaps the expedition was connected to this. I know no further details—neither where Michel is being held nor the true purpose of that expedition. It is likely a secret that could cost the head of anyone who shows too much interest.
+This information came from my trusted men. I didn't want to trouble your father with such ill news.
+This letter will be delivered to you by my servant, who will burn it as soon as you've read it. I risk both my career and my life, but I cannot stand aside while my friend is in trouble. He once saved my life on the walls of Barcelona.
+Perhaps you will manage to save your brother and set things right. I do not believe he is guilty. I am bound by my oath to the Order, so I cannot offer any further help. It is all in your hands now.
+I rely on your wisdom and nobility.
+Chevalier de La Brignais
+Malta, 15th June, 1654
+
+#QUEST Sharlie_Lover
+Note from Lulu
+#TEXT 1
+
+Sweet Charles! My heart is broken, yet I must ask you to flee Paris as soon as possible. No doubt, my husband knows of our trysts. He won't dare harm me because of my position, but you are in great danger, my love.
+Our brave cuckold is taking his soldiers to Flanders for Christmas. My cousin told me this. It seems her latest décolleté has finally driven young Louis mad.
+You'd best disappear into the colonies for a while. It's a good opportunity to ease your conscience and visit your poor father.
+Save yourself, my darling, and remember that I will be waiting for you. I hope these trinkets will ease the sorrow of our parting.
+P.S. Be careful, and don't forget your little Lulu. They say the girls in the Caribbean grow truly passionate under the southern sun... Oh, listen to me—I'm already jealous!
+Paris, 24th, 1654
+
+#QUEST Chad_Mary_letter
+Letter to Mary Casper from Chad Kapper
+#TEXT 1
+
+My plan will succeed, and Alan will be avenged. We will all benefit from his death—you, me, and the Narwhals. You must eliminate Cyclops once he completes the job. Do it when you pay him. Don’t take any chances—shoot him from behind. We’ll leave his body and the rifle on Rivados territory. No one will doubt that the locals killed Dodson. The Narwhals will join forces with Shark’s men, and together we’ll finish them off. You and I will rule the island—as king and queen.
+#TEXT 2
+
+...this is your final warning, you foolish girl. Did you really think I would let you go after you uncovered my plans to kill Shark? No, sweetheart, we're bound together now, and you'll do what you must—pay for the rifle, take the key, and prepare our dear Giuseppe...
+...you bear a grudge against me for Alan's death, but understand this, my dear: the rumors about Shark's 'involvement' in Alan's death served my purpose well. Now the Narwhals stand against him. That's how I was able to befriend them and arrange this assassination. There was no hope for you with Milrow—he would have rotted in his cell regardless...
+...I suggest you accept that you belong to me, and only to me. I'll deal with any of your suitors just as I did with Alan. I don't need some grand, pure love from you, foolish girl—I need you, and I always get what I want. Don't think of me as a monster. No, when Steven is dead and I become admiral, I swear you'll have whatever you desire...
+...think about it. If you don't show yourself on the 'Tartarus' before eleven bells, you won't live to see the dawn. I have loyal men among the Narwhals, and they'll gut you in your own cabin without hesitation. Don't think those clever locks or your pretty face will save you from a saber. Understand this, Mary: either you stay with me and rule this island, or you'll be feeding the crabs with your charms...
+Chad.
+
+#QUEST Letter_Facio
+Giuseppe's Explanations
+#TEXT 1
+
+...that letter to Dodson was written under great pressure from his boatswain and that mad girl Mary. They had a strong argument—a pistol aimed at my face. I couldn't have resisted that pair, even in my younger days. I had no choice but to obey and become part of their dirty scheme...
+...Chad and Mary have gathered a small band of accomplices who want Shark dead. When Dodson enters my cabin, they'll ambush him, and he won't stand a chance. Good Lord, have mercy on his soul!
+...I want no part in this madness. I don't care who wins this fight. Kapper is a dangerous snake, and fortunately, he won't leave any witnesses alive. And if the admiral survives, I doubt he'll show mercy to poor Giuseppe. That's why I'm leaving this letter here, hoping the admiral's men will find it. I'm done with this game—I'll hide somewhere neither Kapper nor his woman can find me. I'll stay there until this whole mess blows over...
+
+#QUEST Letter_valet
+Letter to David Fackman, also known as Knife
+#TEXT 1
+
+David, wait for the Barbazon man and send him to Marcus with a tale about the Turks.
+Best to keep my distance from this—Tyrex might suspect the messenger was sent to deceive him. Let the Barbazon man take the risk. I regret making you wait, but we need Jacques to be involved in eliminating his rival. This will bind him to us by blood. So, let his associate be seen in La Vega.
+Check the trap again. Tyrex is sure to charge in and board the brigantine himself. Inspect the gunpowder and make sure the marksmen on shore are ready. Everything must be in order and prepared.
+Ghoul and Prowler are waiting for me in the northern bay. They will follow my orders. Both are well acquainted with the polacre. Prowler has received my additional instructions on what to do if Tyrex manages to survive.
+Barbazon will join our cause as soon as Tyrex is dealt with. Our next goal is to win the loyalty of Black Pastor. I should consider eliminating Forest Devil—he's proven to be completely unreasonable.
+The boss plans to sell Isla Tesoro to the British for his own gain. Not this time—damn him. Hangman is dead, but my crew is close to capturing the girl. I must keep an eye on Charles de Maure; he works for Svenson and has become a real thorn in my side. It seems he has the girl now, though I still don't know what he intends to do with her.
+We're close now—soon the Brethren will be ours. Remember, brother, you're the only man I trust. Be careful, and don't take unnecessary risks.
+Jacob.
+
+#QUEST Letter_jess
+Jessica Rose's Notes
+#TEXT 1
+
+Several poems written in Jessica's hand. It seems she truly loved Butcher, even after he betrayed her with Beatrice.
+
+...I see the masts of the 'Neptune'! She's damaged, and that only works to my advantage. Soon, I'll lay eyes on the wretch who took everything from me.
+
+... I am calm! I am absolutely calm! Vengeance!
+
+12th April 1636, 78 degrees 33' West
+
+#QUEST Letter_beatriss
+Beatrice Sharp's Letter to Her Brother Blaze
+#TEXT 1
+
+My dear brother, forgive me!
+I love Lawrence Beltrop, and I chose him myself. My beloved was forced to become a pirate and an outcast—to become Captain Butcher. He deserves better; injustice has poisoned him, yet it has not destroyed the best in him. I hope that one day we will return to Europe, and that family life will heal him.
+There’s one thing that could hasten our return. Blaze, you’re an uncle now! We have a daughter—Helen. Perhaps she’ll be the one to restore our family. Believe me, Lawrence knew nothing of his father’s betrayal; he shouldn’t be made to answer for his father’s sins. In truth, he always admired our father and knew he had friends here in the Caribbean. Don’t let our friendship be ruined—listen to your heart. Lawrence is the father of my child, which makes him your kin now.
+P.S. Little Helen is not with me now. I've left her in Belize with her wet nurse, Gladys Chandler. She seems like a kind woman. If I... well, best not dwell on it. I'll send you the letter as soon as I can.
+Your beloved sister, Beatrice.
+
+#QUEST Letter_Mishelle
+Letter from Michel de Monper
+#TEXT 1
+
+My dear brother!
+I can imagine your feelings after reading this letter. But for me, there is nothing left to do here. I have stayed long enough. My life has been devoted to a great purpose since birth, and of course, I cannot reveal it to you. Everything I have done has served a single reason, a single goal. My imprisonment, however, was not part of the plan. Yet you managed to resolve that little complication. Thank you.
+I no longer need my name—De Monper—or my past with the Maltese Order. I have repaid my debts to the country by helping defend Saint Pierre. A new era is coming, and there will be no room for such trivial matters.
+Don't try to look for me. I know you will, but you must understand: it's pointless and dangerous. Return to France, to your father. From where I stand, you've earned enough coin, and your naval skills will serve you well. Don't hesitate—these Caribbean waters are about to change forever, and you won't like what’s coming.
+Farewell.
+
+#QUEST Letter_Vincento
+Letter from Padre Vincento
+#TEXT 1
+
+Greetings, Captain Charles de Maure.
+I am well aware of you and your actions, and I appreciate your offer—even considering your service to the enemies of Spain. The Roman Catholic Church can accept help from any Catholic Christian eager to assist us, regardless of his nationality or station, especially when all of Christendom is under threat.
+Nevertheless, before I welcome you into my home, you must prove the purity and sincerity of your intentions. Listen closely now, my son.
+Three beautiful and valuable items were to be delivered to our parish in Santiago directly from Spain: a golden monstrance, a ring cross set with lazurite, and a golden censer. I am determined to make this the finest parish in all the New World. The galleon 'Santa Margarita', which carried these treasures, was boarded near the shores of Española by a French privateer. He seized the ship, stole our sacred items, and even killed a lay brother who tried to defend them. This crime must not go unpunished. Track down the wretched criminal, capture him, and deliver him alive to the Holy Inquisition. You must also recover all the stolen items. Report to the lighthouse master and avoid speaking with Spanish soldiers. If you do as I ask, I will share with you the details regarding the matter you are interested in.
+His Reverence, Inquisitor, Padre Vincento
+
+#QUEST Letter_Vincento_next
+Second Letter from Padre Vincento
+#TEXT 1
+
+May God bless you, my son!
+Well done on delivering this heretic to us. The poor soul has already repented of his sins and is ready to atone. He revealed where our items are hidden. I am glad to share this information with you. The censer and monstrance were sold to the banker in Willemstad. The cross was gifted to the parish in Basse-Terre to help cleanse their own sins. Good luck, and may God watch over you!
+His Reverence, Inquisitor, Padre Vincento
+
+#QUEST Letter_Vincento_last
+Third Letter from Padre Vincento
+#TEXT 1
+
+Greetings, my son. I hope you read this and do not let your anger get the best of you.
+Alonso de Maldonado disobeyed my orders and my wishes. He should have joined you, but not to fight. Pride and the thirst for revenge are poor companions for a warrior of Christ. This caballero has greatly disappointed me.
+Still, I hope you will see the truth and understand that I have always been on your side. We share the same noble goal: to save our world and prevent evil from prevailing in this conflict. Now you hold a powerful weapon against the Indian demon—his own artifact. You, and only you, can lead the army of Christ.
+I, Charles de Maure, ask you to meet with me. To prove my good intentions, I propose we meet on neutral ground—on Curaçao. There is a cemetery not far from Willemstad; seek me there. I shall wait for you for two weeks. I trust you will make the right decision. I assure you, I mean you no harm—I only wish to help. Remember, my son, the fate of all good Christians rests in your hands.
+His Reverence, Inquisitor, Padre Vincento
+
+#QUEST Letter_Dichoso
+Letter from Miguel Dichoso to Arturo Lopez
+#TEXT 1
+
+Arturo, prepare yourself for the coming meeting. Charles is a formidable man—position your men wisely to prevent his escape. Take your best soldiers, and don't forget the marksmen. Give him no chance. Surround the cemetery in case he manages to leave the crypt. All I ask is that you let him die with honor, as a soldier should. May his death be swift and painless. Come see me when it is done. I will give you your reward and further instructions.
+Miguel Dichoso.
+
+#QUEST ArchyBook
+Archibald Calhoun's Diary - Selected Fragments
+#TEXT 1
+
+... I knew that staying aboard the ship would be fatal, so I took a barrel of water and a few of my belongings, including the compass I received from the Indian. Perhaps this artifact will save me...
+...I was damn happy when I spotted land, but it turned out to be just a small, uninhabited island I'd never heard of. That damned magic compass is playing tricks on me again...
+...I didn't find anyone here. On second thought, perhaps that's a stroke of luck—being eaten by savages is hardly a desirable fate...
+...thank God, there's fresh water, turtles, and crabs here. Crabs are crawling all over the shore—so many that I've decided to call this place Crab Island. I suppose that makes me something of a discoverer...
+... Fate has smiled on poor Calhoun once again—I found a toolbox on the shore. Now I have a decent axe and saw, so I can begin building a house. There’s a chance I might end up staying here for the rest of my life...
+Months have passed, and not a single sail has appeared. I built a bonfire atop the hill, ready to light it as soon as I spot any vessel. But what if it's a Spanish ship? In that case, I'll find myself in the hands of the Inquisition...
+...the construction of the house is underway. I've managed to build a decent hut. It should protect me well enough from both rain and sun...
+Every morning, I fish. Sometimes I land a big one with my trusty harpoon. Today, I had quite a tussle with a shark. It nearly made a meal of good Archie, but my hands worked miracles—now Archie will be feasting on shark instead. The meat was fair enough, but I'd trade all my coins for a bit of pork and a mug of ale...
+...my house is ready. I’ve nailed a shark skull above the entrance—my hunting trophy. Ah, I’d trade all the gold in the world for a barrel of rum!
+...A year and a half. I've grown accustomed to the life of a hermit, yet I still hope to return to the outside world...
+...sails! Thank God—sails! And the vessel appears to be British. They're not Spanish! My bonfire is ready, and I'll try to make as much smoke as possible...
+... they've spotted me! The ship is approaching, flying the English flag. I'm saved!
+...it can't be... that's Willy Paterson! My old friend and fellow countryman—Scottish Willy! Old Calhoun can't hold back his tears; after two years, he's finally hearing his native tongue again!...
+... I'll serve under Willy's command. If it weren't for him, I might have been stuck there forever. I've had my fill of adventures, Indian amulets, questionable treasures, and the Order of Jesus. It's time to start a new life. I left my compass inside my hut—let it stay there, a worthless and dangerous relic...
+...I am leaving Crab Island. Its green hill has nearly vanished on the horizon. I will remember its location forever—16 degrees North, 71 degrees West. I doubt I shall ever set foot there again...
+
+#QUEST SQCapBook
+Journal of 'Santa Quiteria', the Last Pages
+#TEXT 1
+
+...Finally, we've reached San Jose. We'll resupply with food and water here. It seems Miguel Dichoso doesn't realize we're bound for Europe. His behavior is odd—he's tense and watchful, as if waiting for something. The Baron warned me that Dichoso is extremely dangerous. I must stay vigilant...
+...I am surprised that Dichoso was the only conquistador to survive that expedition to Tayasal. Some say his surname speaks for itself—"the lucky one." I don't think so. There's a hardness in his eyes. No, it wasn't illness or Indian poison that finished off the others, but the blade and pistol of Dichoso himself...
+...sailing to Tobago. We'll say our goodbyes to Miguel there, and I'll finally be able to breathe freely again. Still, I doubt it will be easy to get rid of him—this man always gets what he wants. How does he manage it? Selling the 'Santa Quiteria' twin, 'San Martin,' to that heretic Dodson without raising suspicion? Killing Blaze Sharp, double-crossing Dodson, and setting the Brethren against each other? How did he manage to find Tayasal and escape with the treasure when other well-trained, perfectly prepared expeditions were wiped out by the Itza?..
+... not far from Tobago. Dichoso looks grim and tense, but remains calm. The scar on his face has reddened. Miguel is waiting for something, watching the sky and the horizon. No matter—soon we'll be rid of him.
+...it's supernatural... The fiercest storm has descended upon us, driving our ship eastward. The frigate is completely out of control. Dichoso unsettles me—there's a grin on his face, and it seems the storm doesn't frighten him in the least...
+...Trinidad is behind us. The waves and wind carry us northwest. There's nothing we can do...
+The good news is that the giant wave swept Dichoso away while we were passing Martinique. Now we are free from that terrible man. Perhaps it's a good sign...
+Damn it, there were never any islands in this part of the Caribbean. We've been cast onto the shoals. Not everyone survived, though many of us are still alive. Our ship was split in two, yet she remains here, stranded on the sands. The storm shows no sign of ending...
+...We explored the shore and the bay. The island is unknown and uninhabited, but that's not the worst of it. This place is eerie, with storms raging endlessly. It seems as if the sun has never shone upon this land. A cursed island...
+...Itza's treasures were swept from our cargo hold and scattered everywhere. We've managed to recover some from the water. Forbidding cliffs surround the bay, leaving only one way forward—into a flooded grotto. There's a hole leading into an underwater cave, but so far, no one has dared to explore it...
+Two sailors failed to return to the bay. We found their bodies in the grotto—both slain by the sword. Who could have done such a thing? We buried them there and have begun organizing a night watch.
+...mysterious murders continue. Three men in three days—each a victim of some unseen butcher wielding a sword. The people are terrified. There is no escape from this place. God, help us!
+...this place is cursed! It was the most terrible thing I've ever witnessed. I thought I was ready for anything, but not this. The butcher's victims have risen and are attacking the living. Now, we're burning the bodies...
+... my prayers went unanswered. I am in a panic. Damn Miguel Dichoso—this is all his fault! I'm certain this is no coincidence!
+...a night of nightmares. At last, we saw the night murderer—a massive skeleton wielding a great sword. He cuts down any man with a single blow or two, and our blades and bullets are useless against him. He is utterly invincible! After several futile attempts to fight him, I, our quartermaster, and three sailors decided to retreat to the sea and take shelter inside the wreck of the Santa Quiteria. For hours, we listened to the terrible screams of men being slaughtered on the shore...
+...the undead have overrun the shore. They wander about, making dreadful noises and filling the air with the stench of rotting flesh. We've barricaded ourselves in the ship's cargo hold. Now, we listen to the footsteps of that giant monster and the shuffling of the walking dead...
+...the quartermaster has gone completely mad. He used Tayasal artifacts to build some sort of pagan altar. Now he's raving, calling upon Indian gods and demons... I don't understand it. The sailors are huddled in the corners, listening to his crazed shouting...
+...heavy sword blows are smashing through the door. The Butcher is coming. No barricade will hold him back. I know now that we are doomed—this thing cannot be stopped. I write these words as I hear the madman calling upon his pagan demons, and the cries of sailors who realize their fate. I am ready to die. If you are reading this—flee from this cursed place! The treasures of Tayasal... Dichoso... Dichoso... CURSE YOU!..
+
+#QUEST RingCapBook
+Notes from 'Santa Lucia' Journal
+#TEXT 1
+
+We are now sailing from Caracas along the coast to an Indian village, where they've been preparing copra especially for me. I plan to buy it directly, avoiding taxes and price markups.
+There was some sort of celebration that day. The high chief from a neighboring village had been invited, along with his relatives. Much kashirie was consumed. And then I saw her—she was the very image of beauty. I knew at once she was destined to be my wife...
+Her name is Vavaya. It turns out she is the youngest daughter of the high chief. I spoke with her and presented some gifts. It seems my courtship was well received...
+... I'll stay here a bit longer. Copra is being loaded onto my ship, and I'm getting to know young Vavaya better. I've fallen in love with her—and thank God, she feels the same! I am the happiest man alive. I'm preparing her ransom, as is the local custom...
+...her father refused! He rejected my generous gifts and quite literally threw me out of his hut. I saw tears on my beloved's cheeks—she wants to be with me as well! So it's settled, then. I won't let any savage, not even her father, stand in the way of our happiness...
+Vavaya insists on offering some jewels to her tribe's gods to gain their favor. I agreed for now—once we reach New Spain, she’ll eventually abandon these pagan customs and become a true Christian. For the moment, we must press on...
+...a white man would never be able to find this sacred place. I could have died a thousand times without Vavaya—she showed me every trap, spike, and poisoned dart...
+...this is incredible! I've never seen so much gold—there were nuggets the size of eggs! Even half this treasure would be enough to make a person rich for life. Vavaya objected, but I managed to persuade her... I even doubled my offering to soothe my beloved...
+...Only after two weeks did my first mate, the quartermaster, and I finally manage to bring the Indian gold aboard our ship, hidden in a covered carriage. So far, no one else knows about it. I don't trust the sailors. The crew was already growing restless after spending a fortnight anchored near these wild shores, but I had no choice—I needed to slip away from Vavaya's father without drawing attention...
+...We took the gold under cover of night and hid it inside one of the copra crates, piling more copra on top to conceal it. At last, we're back at sea. In two weeks, we'll reach New Spain. Vavaya and I will be wed in the church. We were made for each other, and we'll remain together until death...
+...It's the third day of dead calm. The ship barely moves. I see the scowling glances from the ignorant sailors—they look at my beautiful Vavaya and consider her a bad omen...
+...one of the sailors dropped a flask of arsenic while dealing with rats in the cargo hold. I still don't understand it. Fifty gallons of water are now spoiled. The dead calm continues to torment us. My beloved is praying for her god's forgiveness—she truly believes this whole ordeal is our punishment for the stolen gold...
+...there are already ten men dying from this sudden fever epidemic. The sailors are grumbling, and the boatswain is barely maintaining order. The first of the dead has been cast overboard. Our fresh water is nearly gone. God, send us wind!
+...a fresh wind at last. A third of the crew are ill. Last night, a few sailors stole a crate of expensive rum. The boatswain punished them with the lash. The crew is furious with me, the officers, and my poor Vavaya. I won't let her leave her quarters—I fear for her life. I look forward to reaching Cuba, where I can buy water and hire new hands...
+...damn savages appeared out of nowhere. Their schooner was no real threat to my vessel, armed as she is with twenty-pound cannons, but my crew was weak from the fever and could barely hold the shrouds. Pirate cannonballs punched a few holes in our hull, though nothing serious. We did what we could, and thank God, the pirates were forced to retreat...
+...my crew demands Vavaya's death. They believe this poor Indian woman is a witch, responsible for all our misfortunes. My loyal officers and I will protect her to the last bullet if need be. There's a scent of mutiny in the air, and I can't see the shores of Cuba—no doubt we've lost our course after the battle...
+...the deck is awash with blood. The first mate and boatswain are dead, and the quartermaster is wounded—he won't last long with only a single musket against the enraged sailors. I've locked myself in my cabin and, for now, I'm holding out. My love stands behind me, handing me powder charges. Her sweet face is filled with fear. But not of the mutineers, no. She looks into my eyes and whispers: "Gods' revenge!"...
+...my heart is breaking! A pistol shot pierced the door and struck the lovely chest of my dear Vavaya. I'm trying to stop her bleeding, but I'm no doctor... I'm nearly out of ammunition, and my musket is the only thing keeping them from launching a direct attack...
+...poor Vavaya is dead. She passed peacefully, with a smile on her face. There was no fear in her eyes, only love and sorrow. I prayed for her, and now I am ready to join her—there is no reason left for me to live without her... Another bullet has wounded my leg. I can barely move...
+...the gunpowder is nearly spent. I have only four charges left for my pair of double-barreled pistols. I sit behind my desk, preparing to die with honor—as a white man and as a captain. A storm is coming, and it will be a fierce one...
+...they are breaking down the door. Soon it will be over, and I will meet my Vavaya in a better world. I am thinking of her. Perhaps she was right. All of this feels like a curse. The gods' revenge! The box with the gold... was it even...
+ 
+#QUEST Recipe
+Recipes
+#TEXT Gold_dublon
+Golden doubloons are typically kept in chests, with 150 coins in each one.
+
+#TEXT clock2
+Charged timer: uncharged timer + hourglass
+
+#TEXT bussol
+Boussole: compass + astrolabe
+
+#TEXT cartridge
+Paper Cartridge
+
+A remarkable innovation by Swedish musketeers that doubles the speed of reloading!
+
+Take a sheet of gun paper and use a folding knife to cut off an even piece the size of half a palm.
+Roll it into a tube and pour in gunpowder, then place a bullet on top.
+
+Ingredients: Granular gunpowder, lead bullet
+Tools: Folding knife
+
+#TEXT powder_pellet
+Petard
+
+A stun projectile that disorients enemies without damaging property.
+
+Take a thin sheet of copper, shape it into a cup like a glass, and add ten measures of gunpowder. Seal the copper, place it in the barrel, and make a hole for the fuse.
+
+Ingredients: Copper jar, coarse gunpowder, candle, twine.
+Tools: Metalwork tool
+
+#TEXT grenade
+Grenade
+
+A Spanish invention, perfected by the British, capable of striking major enemy forces from afar.
+
+Prepare a sheet of copper and twelve bullets. Shape the copper into a head that fits the mortar's barrel. Place some bullets inside, then add ten measures of gunpowder, and seal the copper casing. Make a hole in the bottom and plug it with a wooden spool. In battle, remove the spool, insert a fuse or wick, cover it with saltpeter, and secure it with wax or the spool.
+
+Ingredients: Copper jar, coarse gunpowder, candle, twine.
+Tools: Metalwork tool
+
+#TEXT harpoon
+Arrow
+
+A slender metal rod, sharp enough to pierce both armor and the man inside.
+
+Take a thin metal rod—even a simple harpoon will do—and cut off a piece about one and a half fingers long.
+
+Ingredients: Harpoon
+Tools: Metalwork tool, Touchstone
+
+#TEXT shotgun_bullet
+Revolver Bullets
+
+Unusual lead bullets, shaped like cylinders with tapered ends. Their design makes them highly accurate, well-balanced, and deadly.
+
+Melt some lead over the fire and cast a bullet. Wrap it in cloth to cool—avoid any contact with water!
+
+Ingredients: Lead Bullets
+Tools: Bullet mold, Melting pot, Icon-lamp
+
+#TEXT shotgun_cartridge
+Revolver Cartridge
+
+Used for compact storage of gunpowder and bullets for firing.
+
+Take the thinnest paper available and coat it with gunpowder, alcohol, and wax. Let it dry. Apply flour paste to the base of the bullet and form a sleeve shaped like a truncated cylinder. Add some black powder inside. Seal the open end and fold it over. Wrap the cartridge in parchment or leather. When loading, pierce the paper at the base.
+
+Ingredients: Revolver bullet, revolver gunpowder
+Tools: Sartorial Set, Candle
+
+#TEXT GunCap_colt
+Capsules
+
+These are disposable and placed on the gun nipples one by one. They are used to ignite the charge in a revolver’s chamber, and are highly reliable in any weather and at any angle.
+
+You'll need a sheet of pure copper, a melting pot, a chisel, and some yew wood for crafting. Cut the copper sheet into round pieces. Melt the wax, mix in silver fulminate, and place the mixture inside the copper cylinder.
+
+Ingredients: Copper Bar, Candles, Silver Fulminate
+Tools: Melting Pot, Icon-lamp, Metalwork tool
+
+#TEXT OxyHydSilver
+Silver Fulminate
+
+The explosive used to ignite the gunpowder in the cartridge.
+
+Take a clean, empty flask and add some silver, dissolving it with nitric acid. Cover the neck of the bottle to contain the gas. Add some alcohol and heat the flask, then add more alcohol. Shiny crystals will form at the bottom. Cool the flask in water, then remove the crystals, rinse them with water, and dry them thoroughly. Store with care, and never use too many ingredients at once to avoid the risk of explosion.
+
+Ingredients: Silver bar, Nitric acid, Alcohol
+Tools: Alchemy tools, Icon-lamp
+
+#TEXT GunEchin
+Charge of Nails
+
+Chopped iron rods are used against enemies and are effective only at close range, causing a stunning effect. They are lightweight and tend to fly off target, so precise aim isn't necessary. However, they can damage the barrel, so avoid using them with fine or long barrels.
+
+To craft a cartridge, chop nails or other metal scraps and bind them together with wax. Then, pack them with gunpowder in a paper cartridge.
+
+Ingredients: Nails, Candle, Granular Gunpowder
+Tools: Metalwork tool, Melting Pot, Icon-lamp
+
+#TEXT potion2
+Elixir
+
+An Inca invention known as the "Stone Warrior" is said to relieve pain, neutralize poison, and heal wounds with remarkable speed.
+
+Chop ginger root, sabadilla herb, and the ash of devil's weed. Add the saliva of a drunkard and let it stand. Then heat the mixture and add a healing potion.
+
+Ingredients: Healing Potion, ginger root, devil's weed x3, sabadilla, empty vial, old mug, candle, amber
+Tools: Mortar and Pestle, Silver Spoon, Alchemy Chest
+Quantity made: 3 pieces
+
+#TEXT potion3
+Antidote
+
+A decoction brewed from rare ingredients, serving as an antidote to many local poisons. It tastes and smells foul, but it is effective.
+
+Add verbena leaves to a half-filled bottle of water, along with guarana seeds, allspice, ginger root, and ipecac. Seal the bottle and heat it over a fire. When the liquid turns cloudy, add a large pearl. Strain the liquid once it has cooled.
+
+Ingredients: Verbena, Guarana, Ipecac, Allspice, Empty vial, Big pearl
+Tools: Copper Jar, Wooden Spoon, Icon-Lamp, Mortar and Pestle, Alchemy Chest
+Quantity made: 3 pieces
+
+#TEXT potion4
+Mixture
+
+This potion, crafted from the finest apothecary’s recipe, not only cures poisoning but also restores health.
+
+Grind the herbs and mix the resulting decoction with a bottle of elixir.
+
+Ingredients: Elixir, devil's weed, sabadilla, verbena, ipecac, guarana, Jamaican pepper, antidote.
+Tools: Mortar and Pestle, Alchemist's Chest
+Quantity made: 3 pieces
+
+#TEXT berserker_potion
+Ometochtli Tincture
+
+The Aztecs were strongly opposed to drunkenness. According to their laws, any man caught drunk was to be executed. Ironically, this drink was named after the Aztec god of strong spirits.
+
+Add devil's weed, allspice, and a pint of boiling rum to an empty vial. Seal it with a wax plug containing an emerald, then let it cool.
+
+Ingredients: Rum, Allspice, devil's weed x2, Candle, Emerald, Empty vial
+Tools: Mortar and Pestle, Alchemy Chest
+
+#TEXT mangarosapower
+Tidal Wave
+
+A unique potion, brewed from the rare Manga Rosa weed according to Amelia's recipe, increases my strength, endurance, and combat skills. The effects last for two days.
+
+Add Manga Rosa leaves, Ipecac, and ginger root to a copper jar. Pour in a pint of rum and let it stand for several hours. Then add three small pearls and some amber, and heat it over a low flame. Once cooled, strain the liquid and seal it in a bottle.
+
+Ingredients: Manga Rosa, Ipecac, Ginger root, Rum, Small pearl x3, Amber, Empty vial
+Tools: Alchemy chest, Icon-lamp, Copper jar
+
+#TEXT mangarosafast
+Squall
+
+A unique potion brewed from the rare Mangarosa weed, following Amelia's recipe, heightens my reflexes, sharpens my senses, and improves my combat skills. Its effects last for two days.
+
+Add mangarosa leaves, verbena, and guarana to a silver jar. Pour in some wine, add two large pearls and a piece of amber, then let it stand for a few hours. Strain the liquid and seal the bottle.
+
+Ingredients: Mangarosa, Verbena, Guarana x2, Good Wine, Big Pearl x2, Amber, Empty Vial
+Tools: Alchemy Chest, Silver Spoon, Silver Jar, Mortar and Pestle
+
+#TEXT mangarosatotal
+Sea Hug
+
+A unique potion, brewed from the rare Mangarosa weed using Amelia's recipe, enhances my strength, endurance, reflexes, senses, charisma, speech, luck, and combat skills. Its effects last for two days.
+
+Add Mangarosa foliage to a mug. Add a healing potion, two large pearls and three small ones, a piece of blue amber, and heat it over a low flame. Let the liquid cool, pour it into a clean bottle, and seal it.
+
+Ingredients: Mangarosa, Big pearl x2, Small pearl x3, Blue amber, Empty vial
+Tools: Alchemy Chest, Wooden Spoon, Mug, Mortar and Pestle, Icon-Lamp
+
+#TEXT totem_01
+'Booming Voice' Talisman
+
+Battle experience and faith can work miracles.
+
+Take a metal mug and place some silver inside. Heat it, then let it cool before adding strong rum. Set an amethyst in the center. Hold blue amber to your cheek and cover the mug with your own shadow. Then pour out the rum and spit out the stone. Midnight is the best time for this ritual. They say it creates a very powerful talisman.
+
+Ingredients: Bottle of rum, old mug, silver nugget, amethyst
+Tools: Icon-lamp
+
+#TEXT totem_02
+'Ankle Biter' Talisman
+
+This will ensure the crew obeys and respects their captain. Sometimes, a firm reprisal is the best way to show mutineers what fate awaits them and to inspire fear.
+
+Unwind three lashes and choose the strongest stalk. Dip it into a mixture of rat poison, allspice, tobacco, and blue amber. Insert the ruby into the stalk from the opposite end.
+
+Ingredients: Lash x3, Gold nugget x3, Ruby, Blue amber, Twine, Allspice, Tobacco, Arsenic
+Tools: Sartorial Set, Mortar and Pestle
+
+#TEXT totem_03
+'Cupid's Balm' Talisman
+
+An aphrodisiac with a powerful emotional effect. It helps to overcome depression and has antibacterial, antifungal, antiviral, and anti-inflammatory properties. Indispensable for those who often engage in relations with different partners.
+
+Combine Hercules beetle powder, bat wing powder, guarana seeds, and fine copper filings. Heat the mixture, then allow it to cool. Grind it into a powder with hyacinth and blue amber. Add ginger root to the final powder. Store in a cool, dark place.
+
+Ingredients: Hercules beetle x5, Bat wing, Guarana x3, Ginger root, Hyacinth, Blue amber, Copper bar
+Tools: Alchemy Chest, Icon-Lamp, Mortar and Pestle
+
+#TEXT totem_04
+Talisman of the Accomplice
+
+A silver hoop encrusted with turquoise and bands of raw iron, marking the wearer's allegiance to the one who cast the hex upon it. An ancient yet highly effective talisman.
+
+Craft an exquisite silver band. Take some used shackles and cut several rings from the chain. Set the undamaged rings into the band as decoration. Wrap the remaining pieces of the shackles in cloth and tie them with blue amber. Work swiftly and with care. Heat the piece of turquoise and hold it tightly in your fist. Secure the turquoise at the center of the band. Persuade the person to put the band on themselves. Before gifting the band, whisper, "So be it." It is said that gypsies and red-haired folk craft this talisman best.
+
+Ingredients: Silver nugget x7, Shackles, Guarana x3, Ginger root, Hyacinth, Blue amber, Copper bar, Candle
+Tools: Metalwork tool
+
+#TEXT totem_05
+'Iron Navel' Talisman
+
+This belt lets me carry my weapon more comfortably and protects me from being stunned in battle.
+
+Choose the belts you prefer and fasten them together. Add some rings and holders. Fashion the buckle from a large piece of bone—tortoise shell works well. Attach the clasp to it, setting a small blue amber and a piece of jade. Stand before the mirror and whisper: "The stone is hard, the metal is hard—so is the spirit." The talisman will protect you as long as you remain standing. Beware of powerful blows.
+
+Ingredients: Leather belt x3, Tortoise-shell comb, Iron bar, Jade, Blue amber
+Tools: Metalwork tool, Mirror
+
+#TEXT totem_06
+'Gonter' Talisman
+
+An all-purpose charm for your favorite shoes. Perhaps it's just self-hypnosis... but it works.
+
+Take an old shoe and remove the insole. Place a Hercules beetle inside the insole, then set the package on a copper bar. Hold blue amber in your fist and smash the package. Ignite the leather using sparks from the chrysoprase. Place the cinders into a clean flask. When you need to walk several miles with a heavy load, smash the flask with your heel.
+
+Ingredients: Old shoe, Hercules beetle, Empty vial, Copper bar, Chrysoprase, Blue amber
+Tools: Flint
+
+#TEXT totem_07
+'Minstrel' Talisman
+
+A skilled bard would find silver strings too fragile and impractical. However, untrained listeners are sure to enjoy the silvery tones of an expensive lute in the hands of a gallant adventurer. Rumors of miserliness and bloodshed would seem less important.
+
+Craft silver strings using wax and wooden branches. Surround yourself with blue amber and lapis lazuli. As you melt the wax, keep your audience in mind. Then, heat the silver and hammer it into a round disc. Cut a thin spiral to form the strings.
+
+Ingredients: Silver nugget x5, Lapis lazuli, Blue amber
+Tools: Metalwork tool, Icon-lamp
+
+#TEXT totem_08
+'Lord of Fire' Talisman
+
+The Maya's Lord of the Heavens is called Itzamna. The Indians are too afraid to speak his name incorrectly. Itzamna embodies the power of fire. Those favored by him are said to brim with life, inspiration, and enthusiasm. This amulet is used in the ritual of Itzamna, which only one who has taken a life may perform.
+
+Take the tobacco pipe, a piece of fire opal, and blue amber. Gather tongs, stones, and a generous portion of devil's weed. Kindle the brazier and place a gold nugget inside. Blow on the flames while holding the blue amber between your teeth. Fan the brazier with the devil's weed. Then place some of the weed onto the brazier and spit the amber into it. Add the arsenic and fire opal. Once it cools, retrieve the opal from the cinders and place it inside the pipe. This is your talisman. Be sure the pipe faces the sky when you wear the amulet.
+
+Ingredients: Devil's weed x3, Porcelain pipe, Twine, Gold nugget, Fire opal, Blue amber
+Tools: Metalwork tool
+
+#TEXT totem_09
+'Arguzin' Talisman
+
+Good teamwork is crucial for victory. That's why the boatswain is such an important crew member, always ready with loud and forceful commands.
+
+Craft a platinum ball and place it inside the boatswain's pipe. Put blue amber beneath your right heel and aquamarine beneath your left. Hold the bugle close to your chest, face south, and pray.
+
+Ingredients: Boatswain's pipe, platinum bar, aquamarine, blue amber
+Tools: Metalwork tool
+
+#TEXT totem_10
+'Widow Maker' Talisman
+
+Spanish knightly law: military valor, fierce boldness, selfless service to the lady of one's heart, and veneration of the Virgin Mary. Those who possess a golden pectoral cross and a piece of coral may continue the traditions of their lineage.
+
+The ritual is simple. Cut the palm of your hand in the shape of a cross, place the pectoral cross on the wound, press blue amber against it, and close your hand into a fist. Catch a drop of blood on the knife blade, "feed" the blade with it, then let the drop fall onto the piece of coral. This will be your artifact.
+
+Ingredients: Clasp-knife, golden pectoral cross, coral, blue amber
+You can exchange blue amber for a diamond (for warriors of spirit) or morion (for easy riders).
+
+#TEXT totem_11
+'Vampire' Talisman
+
+Battle energy is not limitless—neither mine nor my enemies’. The locals believe Huitzilopochtli, the Aztec god of war, watches every fight and feeds on the energy of battle. Through the ritual of power, I can draw energy from my enemy by sacrificing his soul.
+
+Cut off the finger bearing the ring from your chosen victim. Dedicate your prey to a god: cast them into the sea for Tlaloc, offer them to the sun for Tonatiuh, to the wind for Quetzalcoatl, or to the fire for Huehueteotl. This artifact can seal doors, shield the hidden, and turn away prying eyes. For greater power, go further: remove the ring from the dagger and replace it with an opal, a meteorite, and blue amber. If you complete the cycle with amber, you will sap energy from your foes. Sew the gems into the wing and drop it at your feet before your next battle.
+
+Ingredients: Charmed bone, bat wing, opal, meteorite, blue amber
+Tools: Sartorial set
+
+#TEXT totem_12
+'The Son of Jaguar' Talisman
+
+The Aztecs honored their gods with sacrifices and built arenas where captives fought to the death. A jaguar’s claw has always been considered a lucky talisman among hunters.
+
+Boil this trophy in a silver pot with pearl powder, verbena, blue amber, and hyacinth to achieve remarkable accuracy. This talisman is effective only in dark places.
+
+Ingredients: Jaguar's claw x1, Small pearls x5, Verbena x1, Jacinth x1, Blue amber x1
+Tools: Silver Jug, Mortar and Pestle
+
+#TEXT totem_13
+'Joker' Talisman
+
+The Joker is an unpredictable card—the greatest and the least among all the Major Arcana. Its purpose is to serve the will of its owner.
+
+Draw a wheel on the table and divide it into four sections. Take four cards from the deck and place one on each section according to its suit. Lay the Joker face down in the center and place a candle on top of it. Hold a piece of iron, chrysoberyl, blue amber, and a large pearl in your hand. Then blow out the candle.
+
+Ingredients: Pack of cards, candle, large pearl, iron bar, chrysoberyl, blue amber
+You can trade blue amber for a diamond (for warriors of spirit) or a morion (for easy riders).
+Tools: Pen and ink
+
+
+
+#QUEST Rome
+Latin Expressions
+#TEXT 1
+Ab ovo usque ad mala
+Alea jacta est - the die is cast
+Alter Ego
+Amat victoria curam - victory favors care
+Ars longa, vita brevis - art is long, life is short
+Audaces fortuna juvat - fortune favors the bold
+Аurеa mediocritas - golden mean
+Aut vincere, aut mori - either to conquer or die
+Aut Caesar, aut nihil - either Caesar or nothing
+Carpe Diem - Seize the Day
+Casus Belli - Event of War
+Circulus Vitiosus - Vicious Circle
+Cogito, ergo sum - I think, therefore I am
+Cognosce te ipsum - know thyself
+Conditio sine qua non - without which there is nothing
+Consumor aliis inserviendo - Consumed in the service of others
+Contra spem - hope against hope
+Conditio sine qua non - essential condition
+Debes, ergo potes - you should, therefore you can
+De gustibus non est disputandum - there is no disputing about tastes
+Silly words can cause great trouble.
+De mortuis aut bene aut nihil – speak only good of the dead
+Dulce et decorum est pro patria mori – it is sweet and honorable to die for one's fatherland.
+Dum spiro, spero – while I breathe, I hope.
+Duos lepores insequens, neutrum cepit - by chasing two rabbits, he catches neither
+Dura lex, sed lex - the law is harsh, but it is the law
+Epistula non erubescit - a letter doesn't blush
+Errare humanum est - to err is human
+Est modus in rebus - there is a middle ground in things
+Ex ungue leonem - from the claw, we may judge the lion
+Fama clamosa - a loud rumor
+Fac simile - make a similar thing
+Ferro ignique - with fire and sword
+Festina lente - hurry slowly
+Finis coronat opus - the end crowns the work
+Gloria victoribus - glory to the victors
+Gutta cavat lapidem - a water drop hollows a stone
+Hic et nunc - here and now
+Homo homini lupus est - man is a wolf to man
+Labor omnia vincit - hard work conquers all
+Littera scripta manet - the written word remains
+Mala herba cito crescit - bad grass grows quickly
+Memento mori - remember that you will die
+Nec sutor ultra crepidam - a cobbler should stick to his trade
+Ne varietur - lest it be changed
+Nil desperandum – nothing is to be despaired of
+Non progredi est regredi - to not go forward is to go backward
+Nulla dies sine linea - not a day without a line drawn
+Omne minium nocet - everything in excess is dangerous
+Omnia mea mecum porto - all that is mine, I carry with me
+Opera et studio - work and study
+Per aspera ad astra - through hardships to the stars
+Per fas et nefas - right and wrong
+Pigritia mater vitiorum - laziness is the mother of vice
+Quilibet fortunae suae faber - every man is the architect of his own fortune
+Quod licet Jovi, non licet bovi - what is permitted to Jupiter is not permitted to an ox
+Radices litterarum amarae sunt, fructus dulces – the roots of knowledge are bitter, but the fruits are sweet.
+Repetitio est mater studiorum - repetition is the mother of learning
+Res ipsa loquitur - the thing speaks for itself
+Sapienti sat - enough for the wise
+Scientia Potentia Est - Knowledge Itself Is Power
+Sine ira et studio - without anger or favor
+Si vis pacem para bellum - if you want peace, prepare for war
+Sol lucet omnibus - the sun shines on everyone
+Suum cuique - to each his own
+Tempora Mutantur - The Times Are Changing
+Tertium non datur - a third is not given
+Ultima Ratio - The Final Argument
+Una hirundo non facit ver - one swallow does not make a spring
+Usus est optimus magister - experience is the best teacher
+Vae victis - woe to the conquered!
+Veni, vidi, vici - I came, I saw, I conquered
+Viribus unitis - united effort
+Vita sine libertate, nihil - life without freedom is nothing
+
+#QUEST	Wolfreek_Journal
+Wulfric Johannsen's Log - Fragments
+#TEXT	1
+==============================================================================================================================================================
+January 30. I have captured the Spanish barque 'Atocha' 50 miles from Blueweld. The plunder amounts to 1,244 units of coffee. Now heading to Blueweld.
+January 31. I've managed to turn the coffee into a tidy sum of coins. Now I'm setting a course for Mosquito Bay.
+************************************************************
+March 1. A Spanish barquentine, the 'Baliente', caught my eye not far from the shores of Trinidad. She was carrying over 150 barrels of resin. I relieved her of that burden.
+March 4. The shipwright in Martinique paid me handsomely in gold and silver for the resin. It's time to set sail for Mosquito Bay.
+************************************************************
+April 15. I have captured a Dutch trading schooner, the 'Hooda,' not far from Port Royal. Acquired 1,510 units of cacao. Heading to Port Royal now.
+April 16. I've filled my chests with more pesos thanks to the cacao we captured. Time to set sail for Mosquito Bay.
+************************************************************
+June 8. I have successfully attacked and captured the courier lugger San Eugenio, property of the governor of Cumaná. She carried 2,000 doubloons aboard. Now heading to Mosquito Bay.
+************************************************************
+August 22. I have captured a fluyt, the 'Santa Isavelle,' not far from Dominica. She was loaded with ironwood and resin. I should approach the smugglers in Willemstad to sell the cargo.
+August 26. The deal went well, and the profit met my expectations. It's time to set sail for Porto Bello and Mosquito Bay.
+************************************************************
+==============================================================================================================================================================
+#TEXT	2
+==============================================================================================================================================================
+February 15. That jeweler from Cartagena is a good man—he paid me 200 diamonds and 200 rubies for his wife. Well, he'll get her back in one piece, and I should head to Tortuga to see Gaspard Parmentier.
+************************************************************
+May 1. Our raid on the pearl fishers at Boca de la Sierpe went quite well. We've stowed 598 large and 1,759 small pearls in our chests.
+May 2. It's time to pay a visit to Gaspard Parmentier.
+************************************************************
+July 22. I’ve found and dug up the treasure of Connie Two Pesos, using a map drawn by one of his crewmen. Fifteen thousand pesos well spent. Plenty of jewelry and gemstones—Connie must have been quite the specialist when it came to bankers and noble ladies. Time to see Gaspard Parmentier.
+************************************************************
+November 10. Sold the Dutch slave at the Los-Teques mines for a pile of gold nuggets. Time to pay Gaspard Parmentier a visit.
+************************************************************
+==============================================================================================================================================================
+#TEXT	3
+March 9. The 'Freyja' has been loaded with planks and provisions and is heading to the fort.
+March 17. We've arrived. Now it's time to unload the goods and make repairs.
+************************************************************
+May 15, Jamaica, Port Royal. I should head to the port at once. The men need rest, and they'll have four days to recover.
+************************************************************
+July 2. My Cuban adventure is over. The Spanish will remember this lesson. Now, it's on to Cape San Antonio, and then to the Gourd.
+July 9. It's good to be somewhere I feel safe.
+************************************************************
+September 4. Flames! There's a Spanish squadron anchored near Mosquitos Bay. We should set sail to intercept them; we'll arrive in ten or eleven days.
+************************************************************
+November 20. Paid Levasseur his usual fee. The greedy bastard takes so much for doing nothing. No matter—I’ll be leaving this region and this life in a year or two anyway. I should head to the gourd now; the men must be worried.
+November 26. We've arrived. We'll be staying here to rest for a couple of weeks.
+************************************************************
+January 11. At last, the trader has returned to Basse-Terre. I made a huge profit from this venture—it was worth waiting over a week for him. I should stock up on provisions and head to the fort.
+January 14. Three days with a favorable wind, and here we are—swift as birds.
+============================================================================================================================================================
+#QUEST Ignasio_Journal
+Ignacio Marco's Log - Fragments
+#TEXT 1
+Joker and I have agreed on our signals: I am to raise the Spanish colors if the squadron heads to Puerto Rico via Santo Domingo; the Jolly Roger for Isla Tesoro and the Turks; and the French colors for Tortuga and the Turks.
+
+...the Spanish have changed their route—their exit point from the Caribbean will be between Isla Tesoro and the Turks. I've even managed to calculate the possible range of their coordinates during @<sMonth> @<sDay> @<sYear>: 23°0'–23°30' North and 64°25'–64°55' West. I should consider how best to inform Joker, so it will be easier to hunt them down.
+
+#QUEST GG_Letter_1
+The Letter from Angerran de Chievous
+#TEXT 1
+Esteemed Charles de Maure
+A certain lady well known to you is quite upset by your recent actions. She has agreed to remain in my company for now, though not of her own free will. I suspect her feelings for you are not reciprocated; however, if I am mistaken, we can come to an arrangement. Everything has its price—let us discuss it in a week in Basse-Terre, Guadeloupe. You have ten days, no more, to make up your mind. Governor de Lyon is a good friend of mine and has agreed to arrange our meeting.
+
+Best regards,
+Angerran de Chievous
+
+P.S. Though the lass is fair, she’s not to my liking. Still, know that I’ll force myself to cross that line if it’ll make you suffer. Perhaps as soon as tomorrow. If this matter between us remains unsettled, I’ll hand her over to my men—they aren’t nearly as particular as we are.
+
+#QUEST Letter_Portugal
+The Letter from Bartolomeo the Portuguese
+#TEXT 1
+Señor de Maure,
+I apologize for leaving you just like that. It was a great pleasure doing business with you; I must say that you are an exceptionally committed man. I assume the Brits will tell you about the missing parts of the story. I will not apologize for using you since it worked just fine for all of us.
+
+It's been quite some time since I last penned an elegant letter, but it's high time the real me returned. It's a shame we didn't share a cup or two of good rum—perhaps someday, when our nations are closer. We've already taken the first step toward making that happen. Godspeed!
+
+Sincerely yours,
+Señor Bartolomeo, Baron de la Cueva
+
+#QUEST Letter_France
+A Letter from Henry de Monper
+#TEXT 1
+Hello, Charles.
+I do not know whether this letter will reach you, or if any of my previous letters have found their way to you. Even if it does, will you remember who writes to you? Still, I must try. I understand that it is no easy thing to trade brushes and paints for a sword, but I never expected that the pen would prove the most difficult of all. Since you left at my request to search for your brother, I have not received a single word from either of you. Over time, I have come to terms with the idea that the de Monper family might be destined to fade away. Imagine my surprise, then, when I received a letter from an old acquaintance in our colonies in the New World. I have mourned the fate of my poor Michel, but with all my heart, I rejoice at your successes. To see you as a naval officer, a captain who has steered his fortune onto the right course, is as surprising as it is joyful for me. Yet I fear I have little time left for congratulations or reproaches—illness may grant a reprieve, but it will not retreat nor depart entirely.
+
+So, my son, we must address one last, most important matter. With this letter, which I am sending through my old friend Benoit, I enclose copies of documents confirming that you, Charles de Maure, are now Chevalier de Monper—my heir and the continuer of our proud family line. I must ask you once more: you must return to the family estate. All the papers are notarized, and your presence is not required to claim the inheritance or the title, but for me to go to God with a peaceful soul, I must know that my family will not vanish after I am gone.
+
+I do not know if you remember the La Brigne family, but Yvonne, their youngest daughter, has blossomed and is quite suitable for marriage. Her father and brother have already given their consent, but we must hold the wedding according to proper custom. It is a worthy name, and as a dowry, Guillaume La Brigne is prepared to offer a small vineyard just a couple of miles from our estate.
+
+You, Charles, should by now understand the meaning of duty and responsibility; a man without such knowledge cannot stand upon the bridge of a warship, and now you bear the responsibility for the entire de Monper family. From this day forward, you are my last son and my heir. Return to fulfill your filial duty and receive my parental blessing at the altar, so that your father may depart this world in peace.
+
+Full of expectations, my father, Henri de Monper.
+Gascony.
+
+#QUEST Letter_Marquesa
+The Letter from Julianne Botot
+#TEXT 1
+Charles, you know well why I have reason to be angry with you, and I’m still not ready to share in your happiness. So let’s dispense with pleasantries and get straight to the point:
+Despite our differences, I wish you no harm. However, there are those who do. I know this is nothing new to you, but you should be aware—there are people who want you dead. I do not know how or when they will strike, but be on your guard. If you are killed, it will bring me no satisfaction.
+
+D.B.
+
+#TEXT 2
+Charles, you know well enough why I’m angry with you, and I’m still not ready to celebrate your happiness. So let’s dispense with the pleasantries and get straight to the point:
+Despite our differences, I wish you no harm, though there are others who do. I know this is nothing new to you, but you should be aware—there are people who want to see you dead. I don't know how or when they'll strike. Be on your guard—if you are killed, it will bring me no satisfaction.
+
+D.B.
+
+P.S. Just to be clear—if you get yourself killed, I might even shed a tear. But let's not put that to the test.
+
+#TEXT 3
+Dear friend, may I call you that? I'm not in town at the moment and won't be able to congratulate you in person, but please accept my heartfelt wishes. Imagine that! Even courtesans still believe in love, and I want to believe you've found yours. I'm grateful to you for rekindling that faith in me—it will warm my heart for many years to come. Be happy; you deserve it!
+
+Your Good Friend
+
+P.S. Now, to the point—you know I wouldn't trouble you without good reason. Beware of the so-called good man. Not everyone around you is pleased about your wedding. Keep your pistol close and stay alert. I worry for you and wish you happiness once more.
+
+#TEXT 4
+Dear friend—may I call you that? I'm not in town at the moment, so I can't congratulate you in person, but please accept my heartfelt wishes. I won't ask you to remember me—that would be foolish, wouldn't it? But know this: I will carry the memory of you in my heart until my final day. Be happy, wherever you may be!
+
+Your Good Friend
+
+P.S. Now, to the point—you know I wouldn't trouble you without good reason. Beware of the so-called good man. Not everyone around you is pleased about your wedding. Keep your pistol close and stay alert. I worry for you and wish you happiness once more.
+
+#TEXT 1-1
+Charles, you know well enough why I’m angry with you, and I’m not yet ready to fully share in your happiness. Still, I’ll try. Be happy, and stay safe.
+
+D.B.
+
+#TEXT 2-1
+Charles, I have my reasons to be angry with you, as you well remember, and I'm still not quite ready to truly rejoice in your happiness—but I'll try. Be happy and stay safe. Let me be clear: if you get yourself killed, I might even shed a tear. But let's not put that to the test.
+
+D.B.
+
+P.S. Just to be clear—if you get yourself killed, I might even shed a tear. But let's not put that to the test.
+
+#TEXT 3-1
+Dear friend, may I call you that? I’m not in town at the moment and won’t be able to congratulate you in person, but please accept my heartfelt wishes. Imagine that! Even courtesans believe in love after all, and I like to think you’ve found yours. I’m grateful to you for rekindling that faith in me, and it will warm my heart for many years to come. Be happy—you deserve it!
+
+Your Good Friend
+
+#TEXT 4-1
+Dear friend—if I may call you that—I’m not in town at the moment and can’t congratulate you in person. Still, please accept my heartfelt wishes. I won’t ask you to remember me—that would be foolish—but know that I will carry the memory of you in my heart until my last day. Be happy, wherever you are!
+
+Your Good Friend
+
+#QUEST	IslaMonaData
+Isla Mona: construction
+#TEXT	1
+To strengthen, improve, and build new houses, I'll need: 1,000 planks, 500 bricks, 200 bundles of leather, 300 pieces of sailcloth, 50 barrels of resin, and 200 sets of clothing.
+Construction period: 6 months.
+
+#TEXT	2
+To build a pier, I must clear the bay and install lighting. This will allow me to accommodate three ships of ranks 3-6, or one ship of ranks 1-2.
+Materials needed: 300 planks, 50 bricks, 150 pieces of sailcloth, 20 barrels of resin.
+Construction period: 4 months.
+************
+To turn the first floor of my house into a tavern, I need to build furniture, set up a kitchen, and stock the cellar with alcohol. This will allow me to accommodate up to 300 people on the island as reserves.
+Materials needed: 200 planks, 200 bricks, 100 leather, 50 pieces of sailcloth, 10 barrels of resin, 1,000 rum, 1,000 wine.
+Construction period: 3 months.
+************
+To build a factory, I must clear the site, arrange housing and security for the workers, and establish a warehouse for materials.
+Materials needed: 500 planks, 250 bricks, 200 leather, 100 pieces of sailcloth, 30 barrels of resin.
+Additional items: 15 shackles, 1 musket (any).
+Construction period: 6 months.
+************
+#TEXT	3
+To build a church, bringing harmony to Isla Mona and delighting us settlers.
+Materials needed: 300 planks, 100 bricks, 10 barrels of resin, 20 ironwood, 100 mahogany.
+Additional items: 50 gold nuggets, 100 candles, 30 pieces of amber, 1 piece of blue amber.
+Construction period: 2 months.
+
+#QUEST ChickenGodOptionalQuests
+Aruba's List
+#TEXT 1
+Aruba's Exclusive Trade Proposition! Valuables and a clear conscience in exchange for improving your mortal body, Captain @<sName>!
+First Task
+I am sorry to inform you, but I'm quite married. The only hitch is, the governor, her husband, remains blissfully unaware, hehe. I have a soft spot for Castilians, so let's keep it professional. Inform the senora that she has an appointment at an ancient pagan pyramid and escort her here.
+Second Task
+The sea can be merciless, leaving some souls in captivity or adrift. It's imperative that we rescue these poor souls. I need a group of thirty assembled—don't ask me why, just see it done.
+Third Task
+I am in dire need of attire worthy of Italian craftsmanship. My current wardrobe is lacking, so I must find something more suitable to wear.
+Fourth Task:
+Adder stones seem to go missing far too often, and I never have enough on hand. I know what must be done.
+
+#QUEST	Guide_AtSea
+Tutorial: At Sea
+#TEXT	1
+The pier is the heart of any port. Having sailed these waters myself, I can share a thing or two about seamanship.
+First, remember the most important thing: never attempt to steer a vessel unless you have enough points in your navigation skill! If you don't meet the requirement, your other skills—and those of your officers—will suffer.
+You'll fight worse, shoot worse, trade worse, and more. If you try to command a man-of-war with your current navigation skills, you won't get far—the ship will handle like a massive wooden tub.
+At the moment, I can manage a tartane or a longboat on my own. However, I can—and should—hire a navigator. They're usually found in taverns, along with other mercenaries.
+Always check their skill level first. If it's not high enough for your ship, you'll run into the same problems I mentioned before.
+************************************************************
+The required navigation level is determined by the ship's class. The larger the vessel, the more navigation skill you need to command it successfully. Me, for example - I’ve only mastered ships up to class four: brigs, xebecs, fluyts. But a pinnace or a corvette is already beyond me, not to mention second-class ships like heavy frigates or heavy galleons.
+When it comes to giant ships of the line or men-of-war, only true masters of navigation can command such leviathans. It takes years to hone the necessary skills, and the cost is staggering. A battleship and her crew can empty your coffers within a month—unless you're as rich as King Louis himself.
+Mind your officer positions. The boatswain trains your crew and improves boarding actions, while the purser manages finances and keeps your ship free of rats. The surgeon heals wounded men and reduces battle casualties, the carpenter repairs damage to the ship, and the vanguards protect you when pirates swarm your deck. Pay attention to each candidate's skills and reputation.
+************************************************************
+Every man has one. It reveals who he truly is.
+If you are an honorable man and strive to do good, seek officers who share your ideals. But if you wish to live as a pirate... well, you know the rest. Honest men won't serve scoundrels, and the reverse holds true.
+Now, a bit about ship types. There are merchant ships and warships. Merchant vessels are known for their spacious holds, while warships are defined by crew size and heavy guns. Notable merchant ships include the barque, fluyt, and pinnace; examples of warships are the sloop, snow, and galleon. There are also versatile ships with well-balanced characteristics — such as luggers, schooners, and brigantines. Good examples of raider ships are the brig, corvette, and xebec.
+The off-bow angle determines how your rigging is affected by the wind and on which course your vessel will reach her best speed. Once at sea, watch for the arrow on the mini-map; it shows your off-bow angle.
+************************************************************
+Next, your crew. You and your ship are nothing without the men who serve aboard her. Every sailor must master three skills: handling the rigging, operating the cannons, and fighting. Each nation excels in only one of these areas. For example, Spain boasts the finest fighters in the world, and their boarders wear armor, making grapeshot, slashing, and stabbing less effective against them. I mean small arms, of course—cannon grapeshot pays no heed to body armor.
+If you want to assemble a dream crew, visit the taverns of Spain, England, and France. Keep an eye on your men's morale—supply them regularly with rum, women, and coin. Do this, and your crew will be willing to die for you; neglect it, and they'll mutiny. A seasoned professional is worth ten green hands in a fight. And don't forget to hire a physician, or hone your own medical skills to prevent unnecessary casualties.
+A few words about naval battles. The Caribbean is a perilous place, teeming with Spanish patrols and pirates, so sooner or later, I'll have to face them on the open sea.
+************************************************************
+Ship cannons use four types of ammunition: round shot, grape shot, chain shot, and bombs.
+Round shot is versatile and the cheapest to buy; it also has the greatest effective firing range. It tears enemy sails, destroys hulls, and kills crew.
+Chain shot has a decent range; its purpose is to destroy an enemy's rigging and slow them down. It's best used when you're chasing or fleeing. With some luck, you might even bring down an entire mast.
+Bombs
+
+Use them if you want to sink your opponent's vessel. Bombs deal the most damage to the hull, but they have the second-shortest range, so you'll need to get in close—which can be dangerous. They are also the most expensive type of ammunition.
+Grape shot is your best choice if you want to board and capture an enemy ship. These nasty little buggers cut down the crew, but their short range makes them risky to use. Still, it can be worth the risk.
+Hold your fire if you're not sure you can deal enough damage. Every broadside costs gunpowder and wears down your cannons—they might even explode if fired too often. Always maneuver to gain a better position with respect to the wind. If the enemy is too dangerous and you can't escape, try to provoke them into firing at you from a distance while avoiding damage yourself. This trick will eventually deplete their gunpowder reserves. It may take days, so it's best to find cover behind rocks or along the coastline. Of course, such tactics won't work in open waters.
+Mines
+
+A fine way to send them to the bottom. Taunt your pursuers into chasing you, then drop mines in their path. Each mine requires a fair amount of powder, but even a single one can nearly destroy a lugger.
+************************************************************
+Obtain a spyglass and use it to observe your enemies, increasing the range of the 'Sail to' fast travel ability. A quality spyglass will provide a clear tactical overview, allowing you to spot musketeer units aboard enemy ships. Enemy musketeers can cut down many of your crew on deck, so be sure to give them a taste of grape shot before boarding.
+Godspeed, Captain!
+
+
+#QUEST	Guide_OnLand
+Tutorial: On Land
+#TEXT	1
+The city gates open directly onto the island's jungle interior—the very edge of civilization, if it can be called that. By day, two soldiers stand guard, checking everyone who enters the city. At night, the gates are left unattended. So, there are two ways to get inside.
+First, you can drop anchor in the port and disembark at the pier. Alternatively, if you wish to be discreet, you may land at another bay or shore on the island and make your way through the jungle to the city gates.
+Sometimes I'll need to visit Spanish colonies. I must remember that we're at war with Spain—if I sail into their ports without flying a Spanish flag, the fort will open fire and reduce my ship to splinters. I'll need to master special skills and proceed with caution when entering hostile settlements. The only safe way to anchor in Spanish ports is to acquire the 'Raise the Spanish Flag' or 'Raise the Dutch Flag' perk.
+************************************************************
+Such tricks require time and experience to master. 'Raising the flag' isn't just about hoisting some yellow and red rag—it's about employing various disguises to blend in. The success of your deception depends on your stealth skill, your ship's class, and the size of your fleet. It's easy enough to make a lone sloop pass for a Spanish vessel, but five heavily armed frigates are another matter entirely! If you fail to fool the fort guards or port officers, consider slipping through the city gates as I've described before. Wait until nightfall to avoid the guards, then enter the city. Steer clear of any soldiers patrolling the streets, especially after dark. Find a tavern, rest there until morning, and then go about your business. If you're discovered, don't fight the soldiers—duck into an empty house to shake them off and stay hidden for half an hour. That should make them give up the chase. Cunning, isn't it? If such daring isn't to your taste, purchase a trading license from the Dutch. It will save you the trouble of sneaking through hostile territory and let you sail in openly.
+A trading license is a document available at the headquarters of the Honorable Dutch West India Company in Willemstad, Curaçao. It serves as proof of peaceful intentions and grants access to any port until it expires. However, there are drawbacks. First, the Company imposes strict rules that every captain seeking a license must obey. Second, the license is quite expensive. Worst of all, you still need the "raising flag" perk to land at hostile ports—without it, the fort's heavy cannons will open fire on you immediately.
+************************************************************
+Let me teach you a few fencing techniques.
+There are three types of cold steel: light, medium, and heavy. Each type requires different skills and abilities to master, so you'll need to learn them separately. Each class has its own advantages and disadvantages.
+Light weapons, such as foils and rapiers, require little effort to wield but deal the least amount of damage.
+A heavy weapon, such as an axe, can kill with a single blow, but it will quickly drain your energy, and you may need to rest between swings.
+Medium weapons, such as sabres and cutlasses, strike a balance between weight and damage. Several fencing techniques are at my disposal: fast attack, slash attack, heavy attack, and group attack. I can also parry, feint, and block.
+Fast attacks, as the name suggests, are quick and require the least amount of energy to perform—perfect for long rapiers, but nearly useless with axes. The slash attack is quite versatile, offering decent speed and a moderate energy cost. It's well-suited for sabres, broadswords, and axes, though not particularly effective with rapiers. Heavy attacks are delivered from above—an excellent choice for axes, and also suitable for short sabres and cutlasses, but rapiers simply aren't built for such strikes. This attack consumes a great deal of energy, is slow to execute, but inflicts crippling damage and can break through an enemy's guard.
+Blocking is useless against heavy attacks, and experienced opponents can always break your guard. Parrying is far better; it exposes your opponent to counterattacks and drains his energy. After several successful parries, your opponent will lose all initiative and be forced onto the defensive, giving you the upper hand.
+Feints are tricky and risky maneuvers. Deceiving your opponent and delivering a swift thrust requires only a bit of energy, but you must remain focused, attentive, and in tune with the rhythm of the fight. Mastering this technique will take plenty of practice, but it's well worth the effort—even professional duelists and masters of the sword can fall by your hand. To maximize the damage of each attack, you must choose the right weapon for every situation.
+************************************************************
+Thrust attacks are most effective with long, heavy, straight rapiers or swords balanced between 0 and 0.5. Long, curved cutlasses or sabres with a balance from 1.5 to 2 excel at chopping and heavy strikes. A heavy axe with a balance of 2.0 is ideal for powerful attacks, but such a weapon demands considerable strength and skill. The group attack isn't suited as your primary move—it's more defensive in nature—but a curved, light, long cutlass with a balance around 1.25 can be devastating against multiple foes nearby. For feints, a dagger is the weapon of choice; you might consider making this maneuver your specialty. The weight of a weapon determines how much energy each attack requires and also affects the damage dealt. Remember, finding your perfect weapon may take time, and refining your fighting style will take even longer.
+Facing several enemies at once makes things much more difficult. A skilled fighter can handle a few poorly trained fools in the open, but if a dozen scoundrels come at you, avoid being surrounded at all costs. Run, find a corner, some stairs, a doorway—anything that forces them to fight you one at a time, or at most two against one. If you make a mistake, they'll cut you down in a heartbeat. Make them fight on your terms, keep the initiative, and watch your energy. Still, I've heard tales of a special Indian potion that allows masters of sword and axe to cut down five or six foes at once with a few sweeping attacks.
+The Ometochtli mixture, or whatever they call it, is an ancient Indian recipe. Ask the merchants—someone may sell it to you one day. But you'll need to learn alchemy before you can use the recipe...
+************************************************************ Since we're already talking about potions, let me explain healing. For minor wounds, use a healing essence. More serious injuries require a healing elixir. Healing mixtures, rum, and wine will also restore your health. If you're poisoned, an antidote or special mixture will do the trick. I also recommend ginger root—it freshens your breath and heals without any side effects, unlike essences and elixirs.
+Essences, elixirs, and mixtures can damage your health. As I mentioned at the start of our little tour, that's a serious concern. Poor health will lower your skill levels and reduce both your total health points and energy. Rest, intimacy, and a rare potion called the 'Tears of Ish-Chel' can restore your health—provided it hasn't been completely ruined. If it's too late for that, seek out a priest; for a fee, they can help.
+Firearms are the simplest weapons—just point and shoot! Use grapeshot when facing multiple foes. For serious encounters, arm yourself with a musket or rifle; they deal deadly damage, and you can always strike with the buttstock if needed.
+Good luck, Captain. Remember: when you die on land, you die alone.
+
+#QUEST PZ_LongwayProshaetsya
+Longway's Farewell Letter
+#TEXT	1
+Lord Captain,
+It's easier to put hard truths to paper than to speak them face to face—especially when I couldn't let Longway go when he needed it most. And not even for his own sake, but for someone who meant the world to him.
+Still, Longway thanks you for something rare from a white man—genuine respect. Your regard made me defy orders and stand up to those who were supposed to be my saviors. People I once considered friends, but to my sorrow, never truly were.
+Now Longway must depart. Once he has fulfilled his duty, he will seek me out and return. He will offer his apologies then, though he already asks my pardon for any inconvenience his leaving may cause.
+Long ago, I made a promise and a vow—both to myself and to someone very important. More important than any other duty or oath. More important than anyone else—even you, Lord Captain.
+Longway had hoped I would understand, but since I do not, he has been forced to flee. Still, he thanked me once again for my respect.
+Until we meet again,
+Longway
+
+#QUEST PZ_ArchiveOneMerden
+Van Merden's Archive - Summary
+#TEXT	1
+Beginning around 1637, Antoon van Diemen, Governor-General of the Dutch East Indies, uncovered a new and sinister venture in the trade of human lives: the abduction of the most attractive Asian women from the islands and, at times, from mainland China. These were not frequent mass kidnappings, but rather rare and covert operations, as any publicity would have spelled disaster. Van Diemen did not fear the outrage of his fellow countrymen; the profits from this vile trade were immense, with beautiful, exotic women sent to the Old World to be sold to the highest bidder—nobles and wealthy merchants alike. The true danger, however, came from the Chinese lords, who, if they learned the truth, would likely seek bloody vengeance with the support of other powerful allies.
+To carry out this operation, van Diemen needed trusted accomplices. He enlisted his inner circle—men who had gathered in the region. These included his close friend and right-hand man, Joep van der Vink; Oliveiro Fermentelos, a Portuguese defector now siding with the Dutch; and Johan van Merden, another key figure in the scheme.
+For eight long years, this dark enterprise thrived, leaving a trail of ruined lives in its wake. The families of the kidnapped girls were shattered, and the mercenaries who carried out the dirty work were often eliminated to keep the operation secret. Replacing them was easy, as new recruits were always available.
+But then, something went wrong. Fermentelos, who commanded these mercenary units aboard his heavy galleon, the Morning Star, suddenly stopped reporting to van Merden. The chain of communication was broken, putting the entire operation in jeopardy. Just a few months later, a man named Longway appeared on the scene.
+Chang Tu, a small-time pirate and smuggler from a village on the Chinese mainland, had his life torn apart when Oliveiro Fermentelos kidnapped his sister, Chang Xing. Driven by a twisted sense of affection, Fermentelos made advances toward her, which she rejected. Enraged, he not only abducted her but also murdered Chang Tu's parents. Fermentelos kept this a secret, as the theft of such a valuable "commodity" could not go unnoticed, even by his own allies.
+Driven by vengeance, Chang Tu—now known as Longway—tracked his sister's captor to Formosa, where he encountered one of van Merden's men. They decided to bring Longway before Johan van Merden. The plan was simple: find out what the Chinaman wanted and, if necessary, get rid of him. However, Johan, sensing an opportunity, chose to help Longway—not out of kindness, but to rid himself of a troublesome associate.
+Van Merden had never trusted Fermentelos, always expecting betrayal from the cunning Portuguese. Now, with Fermentelos on the run, Johan saw a chance to settle old scores. He believed his other partners, van der Vink and van Diemen, were cheating him out of profits as well. So Johan sent Longway to Batavia, hoping the Chinaman and van Diemen might do each other in. He armed Longway with a letter to his old acquaintance, Oliver Trust, demanding assistance in settling a long-standing debt.
+But Johan van Merden was shocked when Longway not only survived, but also managed to kill both van Diemen and van der Vink. Upon returning to Formosa, Longway sought another meeting with Johan through an intermediary. Fearing that Longway had uncovered the full extent of his involvement in the human trafficking ring, Johan arranged for mercenaries to ambush him in the streets. However, Longway defeated them, and Johan, ever the coward, pretended to assist him—though he kept a pistol hidden under the table throughout their entire conversation.
+Despite his victories, Longway was no closer to finding the Morning Star or discovering his sister's whereabouts. Desperate, he turned to van Merden once more, calling him his "first white friend." Johan, nearly laughing at the irony, concealed his amusement by claiming it was simply old age making him sentimental.
+In exchange for van Merden's promise to help find Fermentelos, Longway began working for him. It was Johan who gave him the name "Longway," a call sign taken from the English phrase "Long Way"—a fitting moniker for the path Longway had traveled and the journey still ahead of him, now under the command of Lucas Rodenburg.
+
+#QUEST ChroniclesMadness
+Chronicles of Madness: Part 1
+#TEXT	1
+******
+Father, how I miss you. Your wise counsel, your calm voice. Every time I'm in Havana, I visit you. There, at your tomb, miles from the city, I can sit for hours, pondering my next move. Rest in peace, Father. Your sacrifice will not be in vain—I will cleanse these waters of every criminal rat lurking in the dark corners of the archipelago. Especially those responsible for your death.
+******
+Oh, how blind I was! I thought all evil came from ragamuffins and smugglers. No... As they say, a fish rots from the head. The King himself, God bless him, sees this—that's why he sent me with special authority. But the farther I sail, the more I understand—the corruption runs too deep. Our governors, these "noble" men, are no better than the schemers at court in Madrid! Not all, of course. You, father, were different. But the others... Bribery, intrigue, nepotism—all have flourished like poisonous flowers. It's as if the court's sickness has spread across the ocean to our colonies. I'm no longer sure that ordinary measures will suffice.
+******
+Today I had a long talk with the Illuminator. An extraordinary man—as if he can see right through me. Everything that troubled me, everything I was afraid to even think about—he put into words. He said that sometimes the Lord demands decisive action from His warriors, that mercy without strength is an empty sound, and that true faith is revealed in struggle. After speaking with him, much became clear to me.
+******
+They're trying to stop me. At first, I thought it was enemies of the Empire. But no—it’s our own people! Masked mercenaries, assassins from respectable houses. One of the captured men confessed he was sent by a governor I recently reprimanded. Is that how it is? Well, now I know—I was too soft. It's time to act differently. Sometimes you must cut off a diseased limb to save the body.
+******
+The Lord sends me signs. Every port, every city cries out for purification. I see it more clearly now—it is not enough to simply collect taxes and catch smugglers. Something more is required. Sacred fire must burn away the filth. For now, I try to act within the law, but I feel it is not enough. To become the Lord's punishing sword—that hour seems near.
+******
+Sometimes doubts torment me. In such moments, I reread HIS letters and recall our conversations. Yes, I was weak then. But now I see my path clearly. The Archipelago is mired in sin. Every city, every port must be cleansed. And if blood must be spilled for this—so be it. After all, were not our own sins washed away by Christ’s blood?
+When I complete my great work, these waters will be cleansed. But for now... I must prepare, gather my strength, and wait for the sign. I will know when the time comes to act—and then, no one will be able to stop me.
+
+#QUEST LegendaryShips
+Information about legendary ships
+#TEXT	1
+"Holy Mercy"
+***********************
+Holy Mercy was sent from Europe by the Escorial to oversee the Spanish colonies. Its captain, Don Alamida, is a renowned servant of the Spanish Crown—a ruthless enemy of corruption and crime, and a zealous defender of the Catholic faith.
+The Holy Mercy sails between the colonies, always beginning and ending her voyage in Havana, devoted entirely to her mission.
+In every port, Alamida lingers for several days, sometimes even longer. They say that during these visits, he can occasionally be seen on the streets, but the locals are not eager for such encounters—for among Spaniards, the señor inspires only fear and awe.
+The Holy Mercy boasts an experienced and loyal crew, handpicked by Alamida himself. Every sailor stands ready to defend both their homeland and their captain with their lives. Rumor has it that Don Fernando has decreed the Holy Mercy must never fall into enemy hands. Some whisper that, if faced with overwhelming odds during a boarding, the crew would sooner send her to the depths than allow her to be taken.
+#TEXT	2
+"Lady Beth"
+***********************
+Lady Beth is a true beauty—a marvel of English naval craftsmanship, now under the command of Albert Blackwood, a former officer of the Royal Navy. Not everyone manages to desert so spectacularly! He abandoned his post, ruined a promising career, and stole a warship—all for the sake of treasure hunting!
+And not without reason. He's already amassed enough wealth to buy half of Barbados, yet he still craves more. If you encounter him at sea, don't even think about trying to intercept him—his ship is too fine, and the captain is both skilled and wary. Lately, Blackwood has been spending a lot of time around Cayman, digging day and night, working his men to the bone. If you decide to investigate, bring no fewer than sixty men and plenty of good firearms... In truth, even that might not be enough.
+I hope you know how to shoot, because Colonel Fox and his company of former marine infantry have deserted with him. These are professionals, not common cutthroats. Never attack him in French ports—he has protection and patrons there, and they receive a share of his spoils.
+#TEXT	3
+"Memento"
+***********************
+The "Memento"—a true pirate legend. A black brig under the command of Mortimer Grim.
+Grim preys exclusively on slavers. They say he frees the slaves and buys the condemned with hard gold. A noble cause—if you don't know the whole story.
+If you’re not hauling human cargo, Grim won’t bother you. He’s an odd one, but he has his principles. But if you’ve got slaves in your hold... pray you never see black sails on the horizon.
+The 'Memento' sails between pirate havens but rarely docks. Her crew lives aboard for months at a time, as if afraid to set foot on solid ground. Rumor has it the ship once survived a monstrous epidemic—that’s why her crew is so hard to kill.
+If you plan to take them on, bring more cannons. Boarding the 'Memento' is nearly impossible—the crew fights like men possessed, as if they have no fear of death. The only way to defeat them is to blast their ship to splinters and leave them without shelter. Splinters don't frighten them, but a direct hit with grapeshot is another matter.
+Good luck. And remember death.
+#TEXT	4
+"Amsterdam"
+***********************
+The flagship of the esteemed Dutch West India Company. Everything about this vessel is shrouded in secrecy. She's commanded by Hendrik van Doorn, head of the naval registry department on Curaçao — an exceptionally efficient man who provides invaluable services to the wealthiest and most influential captains. Try to earn a place among them, and you may learn more.
+
+#QUEST StoriesTreasures
+Treasure Tales
+#TEXT	1
+************************************************************
+This stash belongs to me, the future captain of the barquentine San Sebastián! If I'm reading this, don't forget: Miguel still owes you money, and he probably hasn't paid up yet.
+If you're the one reading this, I hope you're not from my crew. But if you are—know this: I've long suspected you were a rat.
+#TEXT	2
+************************************************************
+I'm growing more fond of working for Tyrex. This is already my third hidden cache.
+So I don't forget where the last ones are: one is where I began my pirate career, and the other is where I shot that blasted fat cat.
+#TEXT	3
+************************************************************
+If you’ve found this stash, know that I didn’t hide it from pirates or tax collectors—I hid it from my own wife.
+Three years ago, she forbade me from going to the tavern. Two years ago, she started a huge row when I bought a new dirk. And a year ago, she knocked out two of my teeth.
+But she'll never find my treasure here! She believes I lost everything in a card game.
+Have a drink for me while I’m busy convincing my vixen that I never had the money in the first place.
+#TEXT	4
+************************************************************
+Martin, if you’re reading this, it means you’ve found what I left for you. So it wasn’t all in vain. Fourteen paintings in six months, and that bloated toad still wants more! I no longer need gold or jewels, nor his pompous invitations to the residence.
+But before I disappeared, I left him a parting gift: his own portrait—no flattery, no bootlicking. Let everyone see him as he truly is.
+#TEXT	5
+************************************************************
+If you are reading this, it means the contents of the chest belong to you.
+That fateful meeting with the fair-haired pirate changed everything. I don't know how I'll carry on now, but this gold has cost me too much. I caused too much suffering to get it, though I never used to think in those terms before.
+Now I understand what I truly need.
+Take it if you wish, but let me warn you—the die is cast.
+#TEXT	6
+************************************************************
+September, 1648.
+The captain says that tomorrow our squadron will storm the fort. They say the walls are strong, the cannons fierce, and the soldiers aren't the sort to surrender without a fight.
+If I make it back alive, I swear I'll donate half of this loot to the church.
+#TEXT	7
+************************************************************
+I never thought I could feel such fear. I've survived a cursed storm, betrayal, a queen, a king, and even the damned British fleet. Now, only one last job remains—and my knees are shaking like it's my first time.
+I've never made promises to anyone, but paper will bear anything. I, Sammy, captain of the Striker, do solemnly swear: when I return for my gold, I'll leave this wretched archipelago for good.
+#TEXT	8
+************************************************************
+If I’d sold all this to our friend on Tortuga, I could have thrown a feast they’d gossip about even in the Spanish ports. But no—this is for you, Charlie, for your old age, from your younger, wilder self.
+Don’t you dare blow it all on rum and port girls, you hear me, you drunkard? I know you—once you get your hands on some doubloons, you’ll dive straight into cheap liquor and some wench’s embrace.
+I hope you live long enough to choose to leave this damned life of piracy behind.
+#TEXT	9
+************************************************************
+James, I hope you found this stash before anyone else. Inside is what I managed to swipe from that Dutch merchant’s cabin before the rest of the rabble arrived. Give half to Isabel, as we agreed. The rest you can spend on yourself.
+#TEXT	10
+************************************************************
+There were five of us—now only two remain. Only we know about this place.
+Whoever hasn't taken this stash, remember: this gold isn't for carousing or revelry. It's for revenge. The entire Treviño family must answer for what they've done to us.
+It's either them or us. There's no other way.
+#TEXT	11
+************************************************************
+Burying gold in the ground isn’t the best way to protect my wealth, but I can’t help myself—I enjoy it. There’s a real thrill in hiding it where no one can find it.
+If you're reading this note, it means I've failed. Now it's your turn.
+#TEXT	12
+************************************************************
+No matter how hard I try, no matter how many doors I knock on, or how much I plead—it's all in vain. The governor refuses to listen, claiming there's no money for an expedition. He'll spare two soldiers, but only if I cover all the expenses myself. But I won't back down! I know the legendary emerald, the Spirit of the Corsair, is hidden somewhere in this island's jungle. It exists, and the world needs it. I'll find it, whatever it takes. This treasure will be my first investment in that future expedition.
+#TEXT	13
+************************************************************
+The Inquisition is watching me more closely with each passing day. Remaining on this archipelago is becoming too dangerous.
+My dearest, if you must take this stash and set sail on your own, do not hesitate for a moment.
+I love you and want you to be safe. Don’t worry about me—I’ll finish what I set out to do and return to your arms.
+#TEXT	14
+************************************************************
+Being a smuggler is the best job in the world! I’ve only been in the Caribbean a short while, and I’m already swimming in gold. And no governor can tell me what to do!
+But there’s no such thing as too much gold. I won’t stop until I’m richer than the king himself!
+Then she'll realize what she's lost. That soldier was right—someone with the right knowledge here can get rich in just a few months.
+#TEXT	15
+************************************************************
+Remy, my love, Father has discovered our secret! I've never seen him so furious. He even struck me and locked me in my room.
+My darling, I fear for your life! He has ordered my brothers to hunt you down and kill you. But I managed to slip away for a moment and left all my jewelry in our hiding place. Please sell it—may it be enough for us to escape this cursed island. Where we go doesn’t matter, so long as I can be with you for the rest of my days.
+Don’t worry about me. I have a vial of poison, and if anything happens to you, I’ll take it without hesitation. If we can’t be together in this world, perhaps God will have mercy and reunite us in Heaven.
+Forever yours,
+Juanita.
+#TEXT	16
+************************************************************
+They say poverty ennobles a person, but that's only in books. In reality, a true citizen worthy of respect is a wealthy one. Everyone else is merely his servant.
+A few more lucky finds, and I’ll join their circle. Soon I’ll have my own plantation, servants, lavish receptions, and the governor’s attention. No more cramped, musty cabins on a merchant ship for me.
+I mustn't forget to buy a fine nobleman's rapier—a symbol of my new status.
+#TEXT	17
+************************************************************
+If I deduct Gaston’s share for the tip-off, the crew’s pay, and the bribe for that greasy bigwig in the capital, there’s still an impressive sum left. I don’t know where he gets his information, but a few more profitable raids like this and I’ll be able to settle my debts. I just hope the Company’s reach doesn’t snare me before I sail back to Europe. I must be careful.
+#TEXT	18
+************************************************************
+Henry, we've come into a bit more loot. You know what to do with it.
+Just don’t keep it all in one bank. If the enemy comes to town, our money will be gone—and I’m too old to board a ship with a knife between my teeth again.
+Handle it yourself—after what happened in Bluevelde, Anderson hasn’t been himself. There’s a good chance he’ll snap and sink all our earnings into his pointless vendetta. I’ve told him a hundred times you can’t change what’s done, but he refuses to listen.
+I don't trust him.
+#TEXT	19
+************************************************************
+April 13.
+Today, I received a strange request from a Portuguese fellow. Portuguese are as rare as hen's teeth in the Caribbean, and this one has asked me to collect a number of native trinkets. The coin he's offering is good, so I've decided to take the job.
+May 2.
+I delivered the first batch of amulets and received payment as promised. This venture seems quite lucrative, so I'll continue with it.
+May 28.
+Second delivery complete, payment received in full. I still have no idea about Merriman's true origins, but his pockets are deep and his ambitions deeper still. We're to meet again in two months at a hidden spot—the Havana cemetery, of all places. Grim, perhaps, but better than chasing debtors through jungle thickets. All future earnings from this venture will be stashed right here.
+#TEXT	20
+************************************************************
+Ed, I've struck gold with this one! What you see in this cache isn't even a third of what I took from a single voyage. Sharing this treasure map with you settles our account.
+Listen carefully—north of the Spanish Main, nestled between Cuba and Florida, there’s a remarkable settlement built atop the remains of countless shipwrecks. Strange vessels, some so old they might have carried our grandfathers, all run aground and fused together like a mad carpenter’s nightmare. And Ed, people actually live there—real, breathing souls! The place is overflowing with valuables, and they’ll trade them for nothing more than food. If you doubt me, ask the Havana smugglers.
+I've already made my fortune from this. I'd best hurry before someone else catches wind of it.
+#TEXT	21
+************************************************************
+Ship's log of the brig "Rapid".
+June 19.
+I raided the waters near Trinidad and crossed paths with a Spanish merchant convoy under light escort. The matter was resolved without bloodshed, and I acquired a modest amount of plunder.
+June 24.
+I patrolled the Willemstad-Blueveld trade route. The waters were empty, save for a peculiar vessel flying unfamiliar colors spotted on the horizon.
+July 18.
+While hunting near the waters of Willemstad, I blundered into a Dutch patrol. During our escape, we encountered that same mysterious ship again. I thought we were trapped between the hammer and the anvil, but curiously, the Dutch seemed to fear it as much as we did. We slipped away in the confusion.
+August 3.
+I'm beginning to suspect that this phantom ship is hiding somewhere near Curaçao. I spotted it again and managed a closer look this time. My First Mate insists it bears Portuguese markings, but I remain skeptical—Portugal has no business in these waters. I've ordered coastal sweeps along the Main.
+September 12.
+A pattern is emerging. This vessel appears about twice a year, haunting the triangle between Trinidad, Curaçao, and the Main for several months before vanishing like morning mist.
+October 8.
+The ghost ship is no longer in sight. It seems to have abandoned Caribbean waters entirely. The crew is weary of this fruitless hunt, so we've altered course northward to the Lesser Antilles. Perhaps we'll find worthier prey there—ships with heavier purses.
+#TEXT	22
+************************************************************
+Roger, read carefully and follow these instructions to the letter.
+Some crazed British treasure hunter has been prowling the Caribbean. If you spot redcoats with shovels, run like the devil himself is on your heels—they show no mercy to rivals. Clear out all our stashes, gather everything of value, then head for Antigua where our contact awaits—I’ve made the necessary arrangements. We’ll lose some gold in the process, but the rest will be as clean as a whistle. Stick to British territories—this Blackwood fellow won’t dare show his face there. You can operate without looking over your shoulder. I don’t know what grudge they hold against him, but his ship only docks at French harbors.
+#TEXT	23
+************************************************************
+Hans, if you're reading this, know that my vengeance remains unfulfilled, even here in the Caribbean. Our quarry is nowhere to be found. The memory of my father's sword grows faint in my mind, and our enemy's face fades into shadow.
+We've weathered much together, old friend, yet my rage remains untamed. Had I foreseen the consequences, I would have sought peace with greater vigor. Perhaps fewer souls would have crossed the final threshold. Tell Teresa I love her still and that I kept my vows, though I'll never survive the journey home. This chest holds all I've earned through blood and steel, though the taste of idle comfort has long since turned to ash. Perhaps you can still savor it.
+H.
+#TEXT	24
+************************************************************
+René, the Caribbean grows more treacherous by the day. Soon, our kind will find no safe harbor here. You and I were among the first to catch wind of Cromwell's new squadron, led by their crown jewel—the Victory. They aim to tame these wild isles and put the Dutch in their place, but my gut tells me this will end badly for everyone involved.
+There's more—the French won't be outdone by their Channel neighbors. A true monster has slipped from the Brest shipyards, christened after one of their kings. I can't vouch for all I've heard, but they speak of a floating fortress unlike anything seen before, and it's soon to sail these waters.
+Time to fold our cards, I reckon. Your share from our final venture is in this chest. I'm bound for home shores, and I strongly suggest you do the same.
+Martin.
+#TEXT	25
+************************************************************
+Reid uncovered the whole story about that Alonso fellow. The cold-blooded bastard once served under Captain Vane aboard the "Xenon," and before that, he spent years as a professional executioner. That explains his deadly skills and that bone-chilling stare that could freeze a man's very marrow. Rumor had it he'd hung up his cutlass for good, but he's been spotted now and then in Caribbean ports, following some young, hotheaded captain. Best stay sharp and watch your back.
+#TEXT	26
+************************************************************
+Lucas, Artois, and Mode, this chest contains your advance payment for Mr. Rodenburg's latest commission. A new player from old Europe has washed up on our shores—he goes by the name Gascon. Despite his recent arrival, he's already caused quite a stir and crossed several influential gentlemen.
+My orders are to gather every bit of information about him and report each month, as before. The meeting point remains unchanged.
+Enclosed are three copies detailing his appearance and the name of his vessel. He is most often seen near the Lesser Antilles.
+#TEXT	27
+************************************************************
+Karl, this is pure madness. My raid on the Muscovite's Basse-Terre residence has been foiled twice now, each time because some drunken fool tried his luck at the worst possible moment. But this latest fiasco defies belief—while I was setting up the ambush, a blundering native burst into the house. I barely escaped with my life; the oaf made such a commotion that the guards swarmed the place almost instantly. These problems are yours to solve now. Your advance payment and compensation for the botched job are in the chest.
+#TEXT	28
+************************************************************
+I've taken another step toward true power. Ten thousand! Ten thousand doubloons demanded by some forgotten jungle deity. For one who calls himself "Immortal," he's remarkably stingy—after countless centuries, you'd think he'd have outgrown the need for mortal currency.
+Still, our bargain stands—ten thousand coins, and the fate of the world becomes my plaything! A trifling price, indeed.
+The only annoyance is having to scrape together these doubloons from local moneychangers, constantly running back and forth between my cache and the town.
+#TEXT	29
+************************************************************
+Vittorio, I've just completed the strangest contract of my life. In Panama, I encountered a peculiar native dressed in European finery who paid me a fistful of pure doubloons to serve as his personal page. He had me recite poetry, pour wine, and address him like some continental aristocrat. He prattled endlessly about lost temples and heretical gods, though he seemed harmless enough otherwise.
+The payment covers my debts, with enough left over to secure passage to Havana—just as we planned.
+#TEXT	30
+************************************************************
+To whoever finds this—deliver it to Marcus and read no further. If Marcus means nothing to you, put this back and be gone.
+Marcus, Gaston is playing a dangerous game. He's a hired killer with shady dealings in Bridgetown. During the last raid, Jimmy and I crossed his path by accident—now Jimmy's feeding the sharks. Your share is here, with a little extra. I'm heading to Spanish territory, where his reach can't follow.
+#TEXT	31
+************************************************************
+Mr. Lynch, I've uncovered what you sought. Your person of interest resides on Antigua and, together with his right-hand man, is guilty of high crimes against our homeland. The treacherous assault on His Majesty's frigate "Sussex" was their doing, not the work of the Dutch as reported. I'll forward all evidence to our mutual contact once the remainder of my payment arrives.
+#TEXT	32
+************************************************************
+Anna, your persistence has paid off—the fugitive alchemist Gino is indeed hiding somewhere among these islands. His trail has gone cold in the Lesser Antilles, but I am closer than ever. This sickness gnaws at me more deeply with each passing day, but he holds the cure, and I'll stop at nothing until I find him.
+Please accept the contents of this chest as both a token of my gratitude and a personal offering. I know Becky's fate still stirs your anger, but grant me at least a chance to make amends.
+Jack.
+#QUEST PortRoyal_town_Letter
+The Secrets of Port Royal
+
+#TEXT 1
+************************************************************
+My dear, if you are reading this, it means I am no longer here. The illness has taken its toll, and now I am but a memory of the past.
+This is unlikely to change anything in your life. You'll continue on your course, as always—steadily, confidently, without looking back.
+But before you return to your schooner and disappear beyond the horizon once more, I would like you to grant my request.
+I had no one to whom I could leave all I possessed, so it shall go to the one who captured my heart at first glance, with the first word, with the first smile. I ask you to walk through the places where our paths once crossed. Remember the moments that surely meant more to me than to you. And at the end of this journey, you will receive everything I have managed to acquire over these past years. I want you to feel the full strength of my feelings one last time before you forget me forever.
+P.S. A candle will show the way to what you seek, even if it is unlit.
+
+#TEXT 2
+************************************************************
+Do you remember that evening when the rain poured down the streets, and you laughed, tilting your head back to let the raindrops touch your face? I told you that one day I would win your heart, but you only smirked in response.
+Then our conversation was interrupted by two sailors from a privateer ship, and I had to put them in their place. I will always remember the way you looked at me that night.
+I need to return to that place and recall that evening. I must remember everything that happened.
+P.S. Wine, like people, can keep secrets.
+
+#TEXT 3
+************************************************************
+You were always brutally honest—perhaps too much so. Your bluntness wounded me more than once, but even the most beautiful roses have their thorns, don't they?
+The next note lies in a special place—the spot where we agreed to meet. But the next day, you never appeared. You set sail, leaving me alone with my new verses and the confession I had prepared.
+Later, I explained that I had to weigh anchor in a hurry because of yet another sailor’s superstition, which I never quite managed to understand.
+P.S. The best place to hide something is where it's always noisy and crowded—where no one would ever suspect anything unusual might be concealed nearby.
+
+#TEXT 4
+************************************************************
+You always laughed when I said I would become the Governor of Cuba for you. There was truth in those words—I was willing to do anything for you. But love does not tolerate coercion, and no matter how hard I tried, no matter how quickly I ran to you, the distance between us never changed. Now, it no longer matters. Now, it is all just the past.
+You're just one step away from claiming what I've left for you. Each note holds a clue. Piece them together, and you'll know where to search.
+To succeed, you'll need a key. I left it where we once watched the sunset, talking about everything under the sun, surrounded by the hum of millstones and the creak of the old windmill.
+This was a necessary precaution to ensure that only I could reach this place. I've always been clever and resourceful—perhaps even too much so.
+P.S. Where the waves meet the shore, you'll find a door behind which lies the secret that guards my gift.
+
+#TEXT 5
+************************************************************
+So, here you are.
+I don't know why you chose to follow this path. Perhaps it was for amusement, or maybe out of pity. But I want to believe I meant at least a little more to you than your other admirers.
+The Rainbow carried you beyond the horizon, and I watched as her sails faded into the golden light of evening, hoping for only one thing—to see you again.
+With a love you never needed, I am yours until my last breath.
+Francis.
+
+#QUEST Villemstad_town_Letter
+The Secrets of Willemstad
+
+#TEXT 1
+************************************************************
+You've found this message, which means Señor Attano taught you well. But not everyone is cut out to join our ranks. You must prove you possess all the skills needed to handle even the most difficult assignments.
+We're watching you closely. As soon as you complete this task, another will be waiting for you. If you manage to pass every trial, you'll become one of us.
+
+My next task is to find the best spot to observe the office of the Dutch West India Company. Only a sharp mind and keen eyes will reveal the right vantage point. I must watch the streets, listen to the city's hum, and use the shadows to remain unseen.
+
+Remember: the guards are always on alert. They'll immediately notice anyone lingering near the entrance. I must look busy, even if I'm only pretending to mind my own business.
+
+P.S. The path to what is hidden is not always obvious. Only those who understand that even an unlit candle can reveal a secret will make it all the way.
+
+#TEXT 2
+************************************************************
+I continue my journey, proving that I possess not only intellect but also cunning. However, any man who sails alone is doomed to fail. It's time to find a place where I can meet my contact.
+It should be a place that arouses no suspicion, yet allows for a private conversation without unwanted listeners. I must choose carefully, ensuring no one can hide nearby to eavesdrop. In such matters, it's more important to spot a lurking spy before being discovered myself.
+
+And remember: outside noise—whether it’s the cries of seagulls, the sound of waves crashing against the pier, or the clank of an anchor chain—will help mask your words from curious onlookers.
+
+P.S. A lantern can reveal even the most secure hiding place. Yet in other situations, it may guide you to the right door.
+
+#TEXT 3
+************************************************************
+If you're reading this message, you've completed the previous task. A good observer not only knows how to watch, but also how to find places to stash their tools for quick access when needed.
+Now I must find a deserted and safe spot—somewhere I can set up a stash. I should choose a hidden corner that won't attract attention or arouse the curiosity of passersby.
+
+Don't forget: the guards notice anyone who wanders aimlessly. Move with purpose, as if you know exactly where you're going. Let the townsfolk believe you're just another sailor here on business.
+
+P.S. A brick house stands for strength and reliability. It can safeguard both treasure and secrets from unwelcome guests.
+
+#TEXT 4
+************************************************************
+I've already learned a great deal, but the most important rule is to always have a backup plan. Anyone who wishes to succeed in our trade must have a reliable secret hideout—a place to take refuge, lay low, or wait for new orders.
+My next step is to find that place. It's hidden from prying eyes, but the surrounding alleys are busy and noisy enough to conceal my movements—especially in the evenings, when the tavern is packed and it's nearly impossible to step into the alley without stumbling into a brawl.
+Drunken townsfolk and weary carpenters will glance your way as they head home, suspecting nothing—for only you know the secret. The place can only be reached with the ring, a symbol of your loyalty to the Order and the key to entry. Seek the ring opposite the residence, in a secluded spot.
+Remember: your hideout must have everything you need—money, provisions, medicines. Most importantly, it must remain a secret known only to you.
+  
+P.S. When looking at a three-story house, most people only see what rises above the ground. But the greatest secrets are usually hidden below.
+  
+P.P.S. If you truly deserve to be part of our brotherhood, you'll see connections where others see only nonsense.
+
+#TEXT 5
+************************************************************
+You have passed the trials that only a chosen few can overcome. You have proven your skill in observation, stealth, secret dealings, and careful planning. Now you are one of us. The contents of this chest are your personal reserve for hard times, and this room is your safe haven. Remember this moment. From this day forward, you are no longer just another face in the crowd—you are part of the brotherhood.
+
+#QUEST LeFransua_town_Letter
+The Secrets of Le Fransua
+
+#TEXT 1
+************************************************************
+Anne, my trouble and my muse...
+You’re probably roaming the town right now, trying to find me... Don’t bother. I’m already at sea.
+And damn it, don’t think it was easy for me. Those fools gave me no choice – either they keep you around and don’t share loot with a whore, or they share with you, but you’re out of the crew... I was furious, Anne, but arguing with a bunch of armed idiots is a bad idea.
+If I’d cut them off from leads, I’d have lost my captain’s post just after getting it. So first, I’ll win their trust, and then you’ll come back. And then we’ll lead these dogs together, I swear on my last shirt.
+I left you everything I had on me. It’s enough to get you to Nassau... unless, of course, you decide to tumble into bed with someone again on the way. The notes are hidden around town. Gather them – and you’ll know where to go. I picked spots only you’d be smart enough to check.
+
+#TEXT 2
+************************************************************
+Yeah, yeah, "Screw you, Jack!" – I can hear you saying it right now. "First you bail on me, and now I’ve gotta go chasing some damn scraps of paper?!"
+What else could I do? There’s no one here I’d trust with a rotten copper. And Barbazon’s mutts like Marco – they’d chain up their own mothers for a couple doubloons. So believe me, of all the shitty options, this was the best one.
+
+P.S. On the highest hill of the island. But don’t go rushing there until you’ve got everything you need.
+
+#TEXT 3
+************************************************************
+Nassau changes every damn minute. When you return, whisper to your "girlfriend" that I want to know everything going on in town. Every rumor, every word.
+For now – you need a key. It’s well hidden. Look for a narrow passage behind a barrel – where the guards are pacing above your head.
+P.S. Everything you need is under that pathetic excuse for a fortification. I’d build it better.
+
+#TEXT 4
+************************************************************
+This stash will get you to Nassau.
+We’ve got this, Anne. We’ll be together again, like before. I believe fate has marked me for greatness as a captain, and greatness never comes easy. But I promise you, every time people speak of Captain Jack Rackham, they’ll say your name too.
+Wait in Nassau. I’ll return with treasure. And if not, you’ll have to find someone else willing to put up with your attitude. Good luck with that.
+
+#QUEST FortFrance_town_Letter
+The Secrets of Saint-Pierre
+
+#TEXT 1
+************************************************************
+My friend. I had to leave Saint-Pierre in a hurry. I can no longer be part of a game where there’s no place for honor and a brother’s life is treated like currency. As long as there are those in the Order who have sold their conscience, I refuse to serve its cause.
+Michel was arrested. Pietro was killed. He knew the risks, and before his final mission, he left us everything he had. I wanted to hand it over to you in person, but I couldn’t.
+I’ve hidden several notes for you in places you know well. They contain clues. Collect them. They’ll lead you to where everything will be revealed.
+P.S. All the chests look the same. But only one holds what you truly need.
+
+#TEXT 2
+************************************************************
+You might judge me for leaving. But I had no choice. I will stay true to my brothers and to the Lord until my last breath – but not to those who broke their oath for greed. And I will never risk Alicia’s safety. It was worth losing everything to find the love of my life at the edge of the world!
+P.S. Look for the door you can see through.
+
+#TEXT 3
+************************************************************
+I was supposed to carry out the same mission as Pietro. But when I got home, they were waiting for me. Three of them. Mercenaries. We clashed, and I was lucky to make it out alive.
+Before drawing their weapons, the mercenaries gave me a "greeting" from Levasseur. After Pietro’s death and Michel’s arrest, he must’ve guessed someone was hunting him. But he couldn’t have known who they’d send to take his head – only the highest-ranking officers and the commander knew the name.
+Traitors within the Brotherhood!
+P.S. Go down. Until there’s not a single step left below you.
+
+#TEXT 4
+************************************************************
+When it was all over and I stepped outside, Valigny was waiting. His smirk said it all: he was the one who pointed the mercenaries to my house. No pious words of his will ever convince me otherwise.
+P.S. Your path leads to the place I left behind.
+P.S.S. To reach what’s hidden, you’ll need a key. Look for it where each of us draws strength and inspiration, turning to the Creator.
+
+#TEXT 5
+************************************************************
+You know the truth about the conspiracy. You know about the mine on Sint Maarten. About the hunt for "Heinrich."
+First, Michel was thrown into a dungeon without trial – you know who gave the order. Then Pietro was killed. Now it’s my turn.
+The lives of our brothers are nothing more than bargaining chips to these people – a way to cling to power and fix their own problems. The best of us are being killed or imprisoned. Thanks to a certain someone, the Order will soon become a gang of mercenaries – no better than Rodenburg’s thugs.
+Soon I’ll send a letter to the Grand Master – I’m sure he’ll investigate and make the only right decision.
+I’m taking Alicia and heading to Port Royal.
+May the Lord watch over you.
+And if our paths ever cross again – I hope you’ll still call me a friend.
+
+#QUEST LadyBeth_Book
+Blackwood's Diary
+#TEXT 1
+***************
+"An exemplary officer, Blackwood. Such order in everything—from documentation to battle formations. You will go far," said the governor, congratulating me on the successful operation against the smugglers. Elizabeth was present at the reception—I saw admiration in her eyes. Everything seems to be falling into place, just as I dreamed while rising through the ranks of the navy.
+***************
+I woke up from the same nightmare again. The filthy docks of Bristol, my perpetually drunk father, an empty stomach... I thought an officer's commission and years of impeccable service would have erased all that. But no. As soon as I heard the old planter's refusal—it all came rushing back. "You understand, Lieutenant... Means..." As if I'm once again that hungry boy from the docks.
+***************
+The decision is made. "Beth" is a fine ship, and the crew is loyal to me. It's strange—they're willing to leave their posts, knowing I'm off to hunt for treasure. "You have never let us down, señor," Harris said. And I won't let them down.
+***************
+Success! Not just luck, but proof that my methods work. Maps, calculations, questioning the locals—everything runs like clockwork. The crew is in high spirits, though I can tell some aren't used to such thoroughness in our search. Still, I’m beginning to realize—it’s not enough.
+***************
+Second year aboard the "Beth." I've earned enough gold to buy myself a title. The crew have bought themselves fine jerkins, treat everyone in the taverns, and boast about their expensive trinkets. I'm happy for them—who better than I knows what it's like to work for a pittance?
+As for me... I still have these dreams. Elizabeth writes that she is waiting for me. And her father still calls me "that sailor." I need something more—something real. To distract myself, I even wrote a brief charter on treasure hunting and sent it to Barbados. What can I say? Military men do love writing regulations, and I’m glad to oblige.
+***************
+Today, everything changed. He seems to read my thoughts. "You're looking in the wrong place, Captain. These pitiful findings are merely crumbs and a waste of your talents. Real treasures don't just enrich—they allow you to change destiny." I thought I was on the right path. How wrong I was.
+***************
+The gifted arquebus leaves no doubt—Cortez's treasures exist and are buried somewhere on the Cayman! I won't rest until I've searched every inch of land there. Lieutenant Harris says I'm changing. I say I'm on the right course.
+***************
+I dug up the entire island. Found many valuables, but not what I'm looking for. It's a shame what happened with Harris and the others, but I can't afford discord among the crew after everything I've done for them. Excessive scrupulousness is fine in the navy, but here I need men willing to get their hands dirty. I'll have to hire some Frenchmen for the crew, which is personally quite humiliating. Still, perhaps a few worthy sailors can be found among this harbor rabble. I need to change my approach.
+***************
+Studying trade routes. Every ship is a source of information... and free labor. Their captains know something about Cortez's treasures, and their crews are used to hard work for little pay. It's time to act with more resolve. By all the storms, I swear I'll find that cursed gold!
+***************
+Today I overheard sailors talking in the tavern. "Blackwood is now richer than any planter," they said. But I know it's all just glitter and show. The real treasure lies on the Cayman Islands. And I will find it, even if I have to send a thousand men with shovels—and in chains—there.
+***************
+This expedition will likely be my last. From now on, I'll follow the new charter—no more recruiting or wasting time in taverns. This island will become my fortress, and the waters around it, my hunting grounds. It's funny—once, I was proud of how I rose from the bottom of society. Now I know you must fall even lower to truly rise.
+Just wait for me.
+
+#QUEST SharlieTutorial_Journal
+Captain Ulysse’s Journal
+#TEXT 1
+September 19, 1654
+We entered the waters of Mare Caribaeum right on schedule. The wind is fair, and there have been no incidents.
+
+September 20, 1654
+An unexpected encounter at sea with a Castilian colleague: I spotted the caravel "La Pícara" bound for San José by way of Dominica. You've strayed quite far, Lorenzo.
+
+September 21, 1654
+The wind remains favorable. Sailor Paul Lourie has gotten himself into a dispute with his mates, so Alonso now assigns him the hardest tasks. I must remember to look into this matter.
+
+September 22, 1654
+The courier lugger "Augustine," registered at the port of Capsterville, conducted a customs inspection of our ship. The colonial authorities distrust each other so deeply that the governor-general doesn't hesitate to intercept and search major merchant vessels before they even reach their destination ports.
+
+After reviewing the passenger list, the lieutenant of the "Augustine" ordered us to heave to and await further instructions. Since we have only one passenger, it's not hard to guess who has brought all this trouble upon me.
+It's a good thing they didn't order us to follow them to Capsterville, but this foolishness will still cost me a tidy sum.
+I should have a word with that fop and give him a proper shaking.
+
+#QUEST SharlieTutorial_ListOfSailors
+Note from the Purser
+#TEXT 1
+To Be Paid
+Señor Sailor Alonso Pimentel: 50 doubloons
+Sailor Henry Chaussone: 35 doubloons
+Sailor Paul Lourie: 25 doubloons (the bloody idiot nearly ruined everything!)
+
+To Be Collected
+From Sailor Germain Chat: Paid 7 pesos for paper ruined by Chantal’s cat.
+From Captain Devegni: 2,000 pesos for medical instruments
+From Passenger Charles de Maure: 30 pesos for a spoiled barrel of fresh water, and 200 pesos for a damaged windlass rope
+
+#TEXT 2
+To Be Paid
+Señor Sailor Alonso Pimentel: 50 doubloons
+Sailor Henry Chaussone: 35 doubloons
+Sailor Paul Lourie: 25 doubloons (the bloody idiot nearly ruined everything!)
+
+To Be Collected
+Sailor Germain Chat: 7 pesos for paper ruined by Chantal’s cat
+From Captain Devegni: 2,000 pesos for medical instruments
+From Passenger Charles de Maure: 30 pesos for a spoiled barrel of fresh water
+
+#QUEST GS_Letters
+Notes Revealing the True Face of a Belizean Official
+#TEXT 1
+***************
+Fluyt "Bat". Setting sail on the 14th. Trading voyage from Belize to Port Royal. Few guardsmen aboard. Cargo: sugar cane. My fifth share will be delivered through the usual channels.
+***************
+Pinnace "Wavebreaker"
+
+Sets sail on the 26th. Trade passage from Belize to Capsterville. Precious ebony aboard. The fools depart with powder spoiled by damp. Remember my portion, lest ye face my displeasure.
+***************
+Galleon "Silver Wind". Scheduled to weigh anchor on the 18th. Commercial voyage from Belize to Blueveld. Human cargo—slaves! A rich prize indeed, so I must see that my share comes to me without delay. The fools sail unescorted.
+***************
+
+#QUEST Memento_Book
+Grim's Journal
+#TEXT 1
+A new assignment from the Admiralty. I'm to transport "special cargo" to a hostile colony. Captain Mortimer Grim has agreed to provide his fine brig for a generous fee. He's a good man—an honest sailor. His crew is excellent: experienced and loyal. It's a shame I must deceive them about the true nature of the cargo.
+
+And yes, I know how this looks. Yorick Graves, secret agent of the English Crown, keeping a journal where he openly records the secrets of his mission. I don't care! Work like this would drive anyone mad otherwise. Courtney, if you're reading this—kiss my ass!
+
+Mortimer asks too many questions about the cargo. I had to lie—mumbled something about medicine for those suffering from fever in the Caribbean jungle. He believed me, of course. Grim lives in a world where a Royal Navy officer’s word still means something.
+
+The cargo was brought aboard in sealed crates. The crew grumbled—the crates are heavy and the smell is strange. Mortimer brushed it off with a joke, even making me laugh.
+
+Damn! It's happened—the first cases of fever among the crew. Mortimer asked for permission to open the crates and check the medicine. I had to forbid it under threat of court-martial. I hate myself for this.
+
+God have mercy, what have I done... The plague has struck. The captain died yesterday.
+
+Alone.
+
+I spoke with Mortimer—or rather, with what remains of him. He's no longer angry; he understands now. He says everyone gets a chance at redemption. But how does one redeem something like this? How do you bring these people back?
+
+Saved by natives off the coast of Dominica. The shaman said, "Let the dead teach the living." What could I possibly learn from the dead?
+
+A great battle took place near the island. The survivors washed ashore, ready to continue the slaughter, but I stopped them. I don't know where this strength within me comes from. I don't know if I'm alive or if this is the afterlife. But the Memento won't sail without a crew. And without a ship, I can't atone for my sins.
+
+Yorick Graves is dead, and Mortimer Grim will be remembered as the savior of the doomed. That's how it should be. I hope you appreciate the sentiment. Now you're part of the Memento—part of the crew.
+
+We rescued a dozen Indians from a slaver's hold. I gave most of the doubloons to my crew, and I'll take the former captives to Dominica.
+
+The shaman tore off the skull and hid it somewhere! Feathered fool! I would have cut him down with my new cutlass if not for the missionary visiting the tribe.
+
+I told him everything. An incredible feeling. Now I know what to do! "Let the dead teach the living." Of course! It's not enough to save people from chains or the noose—you have to save them from death itself. And the only way is to make another soul endure what I did: to die and return. Do I pity them? Of course. But I was right. No one ever pitied me.
+
+I've already found a new skull—not everyone survives the trial of death. It's just as well. Let Mortimer's empty eye sockets remain on Dominica, blind to what happens aboard his ship. He wouldn't understand.
+
+#QUEST WildRose_Records
+Excerpts from records of ships wrecked at Justice Island in June 1638
+#TEXT 1
+“...15 June. Brig 'Wrangler'. A ship of His Majesty King Charles I.  
+Driven ashore on the southeast side of the outer ring. Salvaged from the wreck:  
+- 11 casks of Scotch ale  
+- 20 casks of fresh water  
+- 17 crates of provisions  
+- 3 guns, 16-pounders  
+- 18 muskets  
+- 29 pieces of edged weapons  
+- 4 crates of ammunition  
+- 15 rolls of canvas  
+Four survivors:  
+- Joshua Casper (captain)  
+- Teresa Casper  
+- Anthony Young  
+- Pieter Friddiks...”
+
+#QUEST WildRose_Records_2
+Extracts from the church book of Padre Domingo De la Cruz, summer 1638
+#TEXT 1
+“7 June. Funeral service for the newly departed servant of God Maximilian van Ekkus.  
+
+18 June. Funeral service for the newly departed servants of God Anthony Young and Pieter Friddiks.  
+
+25 June. Funeral service for the newly departed servant of God Teresa V. Casper. Prayers for the repose of the servants of God Jean-Pierre R. Sorren and Umberto Rojas (bodies not found).  
+
+5 July. Baptism of the servant of God Thierry G. Legros (born 27 February).  
+
+3 August. Baptism of the servant of God Fabian O. Galard (born 10 June) and the servant of God Mary J. Casper (born 22 June).”
+
+#QUEST WildRose_Records_3
+Certain details from the personal file of Joshua Casper
+#TEXT 1
+Joshua Anthony Casper, born 1586 AD in the city of Portsmouth.  
+In service of His Majesty’s Navy since June 1611.  
+1619: passed exam for lieutenant, appointed to the frigate 'Reversible'...  
+1625: transferred to the frigate 'Triumph' as first officer...  
+1630: appointed captain of the brig 'Cornwall'... Lost at sea with ship and crew in 1638.  
+Unmarried. No children.  
+Exemplary officer, recipient of many awards and commendations, no censures or reprimands recorded...
+
+#QUEST WildRose_Records_4
+Contents of the order to Captain Joshua Casper to deliver wages to Antigua and Providence
+#TEXT 1
+To Captain of the brig 'Cornwall', Joshua Anthony Casper — proceed to the town of Dundalk for unloading of military stores, thereafter cross the Atlantic Ocean to deliver wages to the garrisons of the islands of Antigua and Providence. Upon completion of the task, report to the Governor of Antigua - Thomas Warner, grant the crew leave, then return to England to the home port.  
+Responsibility for preparing the brig 'Cornwall' for the voyage, instructing the crew, loading provisions and the mentioned cargo rests with Captain Joshua Anthony Casper.  
+
+Signed in my own hand,  
+Vice Admiral Robert Bertie, 3rd Earl of Lindsey  
+8 January 1638  
+London, England
+
+#QUEST WildRose_Records_5
+Certain details from the report of Captain Joshua Casper on the Atlantic crossing
+#TEXT 1
+...Departed London, 14 January 1638, course set for Dundalk...  
+...Arrived in Dundalk, 19 January 1638, began unloading military stores...  
+...Departed Dundalk, 21 January 1638, set course southwest...  
+...10 February 1638, off the island of São Miguel (Azores), engaged in battle with the Spanish galleon 'Toro'. Estimated armament: about 50 heavy guns. Having shot away the enemy’s mainmast, I resolved not to endanger the mission entrusted by the Admiralty and withdrew, steering west. Casualties: 32 men, including the following officers: First Mate Rupert Northwood, Lieutenant Edward Matts, Lieutenant Samuel Downes. The dead were buried at sea according to the traditions of His Majesty’s Navy.  
+...Arrived at the island of Antigua, 1 June 1638, delivered to Governor Sir Thomas Warner the chest with wages for the garrison...  
+
+Signed in my own hand,  
+Captain of His Majesty’s ship 'Cornwall', Joshua Anthony Casper  
+2 June 1638  
+St. John’s, island of Antigua
+
+#QUEST WildRose_Records_6
+Letter from Jerome Sauvernier to Fadey the Muscovite
+#TEXT 1
+Monsieur Fadey, I hope this letter finds you in good health. Alas, I cannot say the same of myself. In the “Glass Eye” a violent brawl broke out, in which I was unlucky enough to be caught. A serious wound, though not life-threatening, forces me to remain for some time in this most inhospitable town.  
+As for your commission — I have good news. I have managed to pick up the trail of a man named Rupert Casper. I will give you the details on my return to Basse-Terre. I regret to keep you waiting.  
+Jerome Sauvernier
+
+#QUEST LEDR_Book_1
+Excerpts from the diary of Diego Velázquez de Cuéllar
+#TEXT 1
+"Today we destroyed yet another village of savages. Not one of them withstood our blades. The men who dared resist we killed on the spot, the rest we fettered in chains. Their huts were burned to cinders, the granaries emptied, and all valuables became our spoil. Those who tried to hide their children were slain before the eyes of those who survived. Their tears flowed like rivers, washing the triumph of our standards. These lands now belong to Spain. We brought here order and the will of the Lord, even if by the price of blood."
+
+"My design was fulfilled. The savages came to parley. Their chiefs sat about the fire, naively believing in the possibility of peace. But true peace comes only through blood. We surrounded the hut, barred the door and set it alight. At first there were cries — furious, doomed. Then all fell quiet, only the crackle of the fire breaking the silence. The smell of scorched flesh filled the air like a blessing from the Lord himself. These savages will never raise their heads again."
+
+"Cacique Atuay received his due. I forced him to watch the execution of his people: women were thrown into the flames, youths had their heads cleft, and children screamed in terror. He was bound to a post in the center of the great pyre. I watched as the flame embraced his body. Yet he did not cry out from pain. No, his voice was calm and full of scorn toward us. He begged for nothing, instead hurling curses in our direction. Foolish savage! He believed his words could frighten us. The wind will scatter that delusion along with the ash of his body."
+
+"After that execution I began to notice strange things. By day the monks intoned of God’s grace, but at night shadows would seem to come alive around us. It felt as if the women’s weeping, the children’s screams, and the savages’ curses echoed in my very ears. Last night one of the sailors died. His body was found torn to pieces, as if wild beasts had fallen upon him. I ordered all to pray, but the prayers were useless. Now I am convinced: it is Atuay. He has laid a curse upon us."
+
+"The curse... It will not leave me. It nests within like a serpent coiling round the heart. Each night I see the burning huts, hear the cries and moans of the dead, calling me to answer. Their charred skeletons rise from the ashes, their hollow sockets stare at me with hatred. Even now, in this room, I hear their steps. The doors creak slowly, as if someone enters, yet I see no one. My hands shake so badly the quill scarcely obeys. There is no salvation. The Lord has forsaken me, as I forsook mercy. They are near. Soon they will take me..."
+
+#QUEST Doc1Sp4
+Report on Brazilian Affairs
+
+#TEXT 1
+CONFIDENTIAL REPORT FOR THE DIRECTORATE Curaçao, May 1654 REGARDING: Situation in Portuguese Brazil
+MILITARY SITUATION Our losses in Brazil continue to mount. Colonel Sebastião Tavora inflicted a series of painful blows against our coastal positions last year. Three of our ships sunk, shore fortifications destroyed.
+POLITICAL SITUATION Intelligence reports curious news from Lisbon. Despite his military successes, Colonel Tavora has fallen from grace at court. The reason - his open opposition to influential trading circles who are secretly negotiating with us to restore commercial ties.
+CURRENT STATUS According to latest intelligence, Tavora and his daughter have been sent into honorable exile. His current whereabouts are presently unknown.
+RECOMMENDATIONS All agents are instructed to determine Colonel Tavora's current location. The presence of even a disgraced patriot and idealist with brilliant military training near the Company's spheres of operation is undesirable.
+CONCLUSION The war continues, but the balance is shifting in our favor, thanks to connections and solidarity within business circles.
+Acting Director, Lucas Rodenburg
+
+#QUEST Doc2Sp4
+Letter from Antigua
+
+#TEXT 1
+D. I've given your proposal serious thought, and my answer is no. And loyalty to the office has nothing to do with it. The bastards sitting on Curaçao are just as greedy as the rest of us. You know damn well I'd gut every last one of them after that cunt threw me and my men under the redcoat boots.
+
+Say what you will, but our Leviathan is the only thing keeping this wild frontier in some semblance of order. Bills of exchange and ship registries are the best thing he's brought to this world. I know you'll say you'd do better, but what if you don't? What then? The crowned heads of Europe don't give a damn about us, and nature abhors a vacuum. You think we'll all be better off when those pirate baron scum seize power?
+
+You had my back then, so I won't report you. Better go home to your family, friend. M.

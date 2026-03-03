@@ -4417,7 +4417,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Rupert_3":
 			sld = CharacterFromID("Mary");
-			if (CheckCharacterItem(sld, "hat11")) // У Мэри есть своя шляпа
+			if (GetCharacterEquipByGroup(sld, HAT_ITEM_TYPE) == "hat11")
 			{
 				dialog.text = "Vaya, he visto mucho en mi larga y dura vida. Siempre pienso que ya nada puede sorprenderme — y siempre me equivoco. Así que lograste sobrevivir allá... Y hasta conservaste el sombrero de Teresa. Ya no creí que alguna vez volvería a verlo.";
 				link.l1 = "...";
@@ -4856,7 +4856,7 @@ void ProcessDialogEvent()
 			dialog.text = "Me alcé como pude y abandoné esa maldita aldea hasta llegar a la costa, a la bahía de Amatique. Allí encontré contrabandistas cuyo barco había echado ancla cerca, y me uní a ellos, llamándome Rupert Casper — no renuncié a mi nombre, pero sí mantuve el apellido de uno de los culpables de todas mis desgracias. Para no olvidar por qué terminé aquí.";
 			link.l1 = "Siempre culpas a los demás, Northwood... Menos a ti mismo. Aunque se puede entender — años de humillaciones y sufrimiento, y ahora te escondes en estos bosques. ¿Cómo no volverte loco aquí?";
 			link.l1.go = "WildRose_Rupert_80_1";
-			link.l2 = "Has pasado por mucho, Northwood — no lo niego. Y mira dónde terminaste… En los bosques, al borde de la civilización. Aquí, ¿cómo no perder la cabeza?";
+			link.l2 = "Has pasado por mucho, Northwood — no lo niego. Y mira dónde terminaste... En los bosques, al borde de la civilización. Aquí, ¿cómo no perder la cabeza?";
 			link.l2.go = "WildRose_Rupert_80_2";
 		break;
 
@@ -4970,21 +4970,52 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Alonso_12":
-			dialog.text = "¡Qué alegría verlo, capitán! Ese miserable alguien le susurró que lo buscaban — y nos recibieron a cañonazos casi a mitad del camino. Con unos cuantos hombres logré retroceder, y corrimos al puerto para dar la voz de alerta. Por suerte, el vigilante de guardia, al ver el barcazo que compré apresuradamente en la ciudad, comprendió enseguida de qué iba todo esto. Rápidamente reunió gente — y partimos aquí para socorrer.";
-			link.l1 = "Gracias, amigo. Nos has salvado de una muerte segura.";
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Tichingitu")) sld = characterFromId("Tichingitu");
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Duran")) sld = characterFromId("Duran");
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Tonzag")) sld = characterFromId("Tonzag");
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Irons")) sld = characterFromId("Irons");
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Longway")) sld = characterFromId("Longway");
+			dialog.text = "¡Capitán, me alegra mucho verte! Alguien le chivó a ese desgraciado que lo estabas buscando — y nos recibieron con una lluvia de metralla a mitad de camino. Logré retirarme con unos pocos hombres y corrimos al puerto para avisar. Por suerte, el vigía al verme en el bote que compré a toda prisa en la ciudad, entendió la situación enseguida. Reunió a los hombres rápidamente — y vinimos aquí a ayudar.";
+			link.l1 = "Gracias, amigo... "+sld.name+" murió por mi culpa... Los llevé directo a una trampa.";
 			link.l1.go = "WildRose_Alonso_13";
 		break;
 
 		case "WildRose_Alonso_13":
-			dialog.text = "Sin importancia. ¿Qué vamos a hacer ahora, capitán?";
-			link.l1 = "Reúne a la gente y vayan al barco. Mary y yo necesitamos estar a solas.";
+			dialog.text = "Nadie sabía que era una trampa. Hiciste lo correcto — nosotros debimos ser más cuidadosos.";
+			link.l1 = "Aun así... debí haberlo previsto. Nunca debí haber entrado en esa taberna.";
+			link.l1.go = "WildRose_Alonso_14";
+		break;
+
+		case "WildRose_Alonso_14":
+			dialog.text = "Ya es tarde, capitán. ¿Qué ordenas hacer?";
+			link.l1 = "Hay que enterrar a nuestros hombres como dicta la tradición. También a Northwood, en algún lugar lejano en la selva. Nadie debe saber de este sitio, especialmente Mary. Así que lleva solo a los hombres más confiables.";
+			link.l1.go = "WildRose_Alonso_15";
+		break;
+
+		case "WildRose_Alonso_15":
+			dialog.text = "Así se hará.";
+			link.l1 = "Mary y yo subiremos a bordo más tarde. Necesitamos un momento a solas.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_31");
 		break;
 		
 		case "WildRose_Mary_261":
-			dialog.text = "Dios mío, "+pchar.name+"... Todavía no puedo, simplemente no puedo creerlo. Mi padre... Es un monstruo... ¿Por qué me hace esto? ¿De verdad se ha vuelto loco?";
-			link.l1 = "Tuvo que pasar por sufrimientos terribles. El motín en el 'Cornualles', la huida a través del Atlántico, la tormenta y la muerte de tu madre. No me imagino cómo logró sobrevivir al viaje por los portales de esos ídolos sin la poción de los comanches — pero eso fue lo que acabó con su cordura.";
+			string sSname = "";
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Tichingitu")) sSname = "Tichingitu";
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Duran")) sSname = "Claude";
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Tonzag")) sSname = "Hercule";
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Irons")) sSname = "Tommy";
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Longway")) sSname = "Longway";
+			if (!CheckAttribute(pchar, "questTemp.WildRose_Etap6_GoodEnd"))
+			{
+				dialog.text = "Dios mío, "+pchar.name+"... Aún no puedo, simplemente no puedo creerlo. Mi padre... Es un monstruo... ¿Por qué me haría esto? ¡Mató a "+sSname+"! ¿Acaso se ha vuelto loco de verdad?";
+				link.l1 = "El motín en el 'Cornwall', la huida por el Atlántico, la tormenta y la muerte de su madre, el paso por los portales de esos ídolos – ¡sin el elixir comanche! Pruebas más que dignas, sin duda. Pero hubiera sido mejor que no hubiera salido vivo de ese infierno.";
+			}
+			else
+			{	
+				dialog.text = "Dios mío, "+pchar.name+"... Aún no puedo, simplemente no puedo creerlo. Mi padre... Es un monstruo... ¿Por qué me haría esto? ¿Acaso se ha vuelto loco de verdad?";
+				link.l1 = "Tuvo que pasar por tormentos horribles. El motín en el 'Cornwall', la fuga por el Atlántico, la tormenta, la muerte de tu madre... No puedo imaginar cómo sobrevivió a los portales de esos ídolos sin el elixir comanche – pero eso fue lo que destrozó su mente.";
+			}
 			link.l1.go = "WildRose_Mary_262";
 			locCameraFromToPos(-3.80, 1.10, 52.00, false, 0.61, 0.27, 49.69);
 			LAi_ActorAnimation(pchar, "sharle_mary_sit", "", 50.0);
@@ -5042,7 +5073,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Tichingitu_Final_3":
 			dialog.text = "¿Qué planea hacer el capitán "+pchar.name+" ahora?";
-			link.l1 = "Mary y yo necesitamos un momento a solas. Reúne a todos los heridos y llévalos al barco; también traigan a los muertos — los enterramos en el mar. Y, "+npchar.name+"… dile a Alonso que el padre de Mary debe ser enterrado conforme al rito protestante, aquí, en la selva, lejos de ojos curiosos. Que sólo él y tú sepan dónde será el entierro. No hablar de ese lugar con nadie, ni siquiera con Mary. No necesita atormentarse con recuerdos.";
+			link.l1 = "Mary y yo necesitamos un momento a solas. Reúne a todos los heridos y llévalos al barco; también traigan a los muertos — los enterramos en el mar. Y, "+npchar.name+"... dile a Alonso que el padre de Mary debe ser enterrado conforme al rito protestante, aquí, en la selva, lejos de ojos curiosos. Que sólo él y tú sepan dónde será el entierro. No hablar de ese lugar con nadie, ni siquiera con Mary. No necesita atormentarse con recuerdos.";
 			link.l1.go = "WildRose_Tichingitu_Final_4";
 		break;
 
@@ -5068,7 +5099,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Duran_Final_3":
-			dialog.text = "Se hará, capitán. Espera... Bueno… me voy.";
+			dialog.text = "Se hará, capitán. Espera... Bueno... me voy.";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_31");
@@ -5104,7 +5135,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Irons_Final_2":
-			dialog.text = "Eh… en realidad soy un oficial, y...";
+			dialog.text = "Eh... en realidad soy un oficial, y...";
 			link.l1 = "De momento. Hoy oficial — mañana marino, pasado mañana mendigo.";
 			link.l1.go = "WildRose_Irons_Final_3";
 		break;

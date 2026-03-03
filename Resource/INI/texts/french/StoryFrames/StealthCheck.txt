@@ -1,0 +1,2 @@
+ShowPapersAction {Présenter les lettres de créance}
+FactorQuestZpq {Gascogne inconnu}

@@ -208,6 +208,13 @@ void ProcessDialogEvent()
 		//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "tonzag_officer":
 			dialog.text = "Je vous écoute, capitaine. Que voulez-vous dire ?";
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				dialog.text = "Tu as l’air sombre, capitaine. Quelque chose s’est‑il passé ?";
+				Link.l1 = "Je dois quitter l’archipel. Dans deux semaines. Sur un navire d’autrui, en tant que passager.";
+				Link.l1.go = "SharlieEpilog_Tonzag_1";
+				break;
+			}
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
 				Link.l4 = "Hercule, je vais à l'ancienne cité indienne de Tayasal et, ce qui est encore plus inhabituel, mon chemin passe par une statue de téléportation. Te joindras-tu à moi ?";
@@ -339,7 +346,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -354,7 +361,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;		
@@ -914,6 +921,41 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			
 			AddDialogExitQuestFunction("Tonzag_ResetTonzag");
+		break;
+		
+		// Эпилог
+		case "SharlieEpilog_Tonzag_1":
+			dialog.text = "Ha ! Je ne m’attendais pas à t’entendre dire ça. Et après ça, tu vas rejoindre un monastère ?";
+			link.l1 = "Je suis sérieux, "+npchar.name+". La santé de mon père se détériore chaque jour. Je veux le voir avant… qu’il ne soit trop tard.";
+			link.l1.go = "SharlieEpilog_Tonzag_2";
+		break;
+
+		case "SharlieEpilog_Tonzag_2":
+			dialog.text = "Qu’est‑ce qui ne va pas avec notre navire ? Ou tu penses vraiment que l’Atlantique est maintenant au‑dessus de nos forces ?";
+			link.l1 = "Je pense à débarquer et m’installer quelque part. Je n’arrive pas encore à imaginer vivre sans la mer. Mais si ce jour arrive vraiment, je veux être prêt. Je veux comprendre contre quoi je devrai lutter en moi.";
+			link.l1.go = "SharlieEpilog_Tonzag_3";
+		break;
+
+		case "SharlieEpilog_Tonzag_3":
+			dialog.text = "C’est la deuxième fois dans cette conversation que tu me laisses sans voix. Serais‑tu vraiment prêt à troquer le vent dans tes voiles contre une cheminée et de la bouillie chaude ?";
+			link.l1 = "La maladie qui s’aggrave de mon père m’a rappelé que personne n’est immortel. Je n’ai pas encore décidé ce qui suivra. Pour l’instant — juste le chemin du retour. Et… je voulais te proposer de venir avec moi. En ami. Mais si tu refuses — je comprendrai. Je ne vais pas insister.";
+			link.l1.go = "SharlieEpilog_Tonzag_4";
+		break;
+
+		case "SharlieEpilog_Tonzag_4":
+			dialog.text = "Refuser ? Que je passe le reste de mes jours à nettoyer l’ancre si je te laisse partir seul ! Tu ne me connais pas bien, capitaine.";
+			link.l1 = "C’est exactement la réponse que j’espérais. La vieille France n’est plus ce qu’elle était. Elle est trop vide, ennuyeuse, étrangère… Je doute qu’il reste quelqu’un là‑bas que je pourrais appeler ami. Dans deux semaines, nous mettons les voiles, et je ne compte pas perdre de temps. Faisons une fête à la taverne pour célébrer le départ. Qu’en dis‑tu ?";
+			link.l1.go = "SharlieEpilog_Tonzag_5";
+		break;
+
+		case "SharlieEpilog_Tonzag_5":
+			dialog.text = "Ha ! Si tu crois que je vais dire non — tu feras bien d’attendre longtemps !";
+			link.l1 = "Alors c’est décidé — on se retrouve à la taverne une fois que j’aurai réglé mes affaires.";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Tonzag_officer";
+			npchar.quest.SharlieEpilog_FarewellOfficers = true;
+			pchar.questTemp.SharlieEpilog_Tonzag = true;
+			pchar.questTemp.SharlieEpilog_Friends = sti(pchar.questTemp.SharlieEpilog_Friends) + 1;
 		break;
 
 	}

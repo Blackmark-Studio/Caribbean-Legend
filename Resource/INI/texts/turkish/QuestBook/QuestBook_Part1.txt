@@ -1,0 +1,1650 @@
+#QUEST JacobVanBerg_Journal
+Jacob van Berg'in Günlüğü
+#TEXT 1
+... İngiliz tüccarlarını yağmalama yasağından artık bıktım!
+Yağmalanabilecek gemileri batırmanın hiçbir anlamı yok!
+Bu 'Flying Dutchman' meselesinden bıktım artık. Başlarda eğlenceli ve kârlıydı, ama şimdi buna bir son vermenin vakti geldi.
+... İşverenimin bu saçma sapan emirlerinden bıktım artık. Son talimatı, o İngiliz fluytunu batırdığım yerin koordinatlarını hatırlamamı istemekti. O zamandan beri o kadar çok fluytu dibe gönderdim ki! Tek hatırladığım, o sırada 12 derece 48` enleminde seyir halinde olduğum.
+... Bu sarı tenli haberciden de bıktım artık; haftalardır bekliyorum. Eğer iki gün içinde gelmezse, Boca de la Sierpe Bay'e geri dönüp gemimi geri alacağım ve bu karmaşayı arkamda bırakıp gideceğim.
+#TEXT 2
+...başka bir av bulmam gerek—o yarı ölü Fleetwood’dan 'Valkyrie'yi satın alan bir enayi. Şimdi Blueweld’e doğru yelken açmış, gemisi kölelerle dolu...
+...bu av benim sonum olacak. Artık canavar rolünü oynamaktan bıktım—artık ayrılma vakti. Ustamla yaptığım son konuşma oldukça tatsız geçti; hâlâ o İngiliz fluytunu nereye batırdığımı hatırlamamı istiyor. Sanki üzerinden asırlar geçmiş gibi—hatırladığım tek şey enlem: 12 derece 48'. Şimdi de beni o sarı tenli herifle korkutmaya çalışıyor. Hayır, bu 'hayalet' oyunlarından bıktım. Artık ciddi bir şeyler yapıp buradan uzaklaşmanın, Avrupa'ya dönmenin zamanı geldi...
+...Sanırım artık sancağımı 'Mirage'dan 'Valkyrie'ye çevirmeliyim. Yakında o gemi benim olacak. Ustanın onu Esmeralda Bay'e teslim etmemi istemesi umurumda bile değil. O karadaki fare zaten 'Meifeng'in sahibi—kahretsin, 'Valkyrie'yi de ona bırakmam!
+
+#QUEST Fleetwood_Journal
+Richard Fleetwood'un Güncesi
+#TEXT 1
+Zavallı Abi, onu ve babasını bulduğum adayı bulmam için bana yalvarıyor. Kahretsin, keşke tam olarak nerede olduğunu hatırlayabilsem. Sadece 64 derece 41' boylamını anımsıyorum. Orada 'Flying Dutchman'ı gördüm ve peşine düşmeye çalıştım. Başaramadım, ama onun yerine Abi ve babasını bulduğum adayı keşfettim. Yaşlı Yahudi, gemilerini batıranın ben olduğuma inanıyor gibi görünüyor. Umarım tatlı Abi de aynı şeyi düşünmüyordur.
+...Rodenburg’un ‘Flying Dutchman’ ile bağlantısına neredeyse kanıt buluyorduk. Eski dostum Charlie, onun üssünü Dominica’daki Castle Bruce Bay’e taşıdığını söyledi. Umarım bu hikaye yakında sona erer—yamyamlar onları paramparça etmeden önce. Bu macera tam bir denizci hikayesine dönüşüyor!
+... Bridgetown’daki haini ortaya çıkarmak faydalı olurdu. Umarım vali değildir, fakat ticaret rotaları ve devriyeler hakkında bu kadar bilgi sahibi başka kim olabilir ki?
+
+#QUEST Merdok_Archive
+Johan van Merden'ın Arşivinin Son Sayfaları
+#TEXT 1
+...Beklenildiği gibi oldu. Lucas’ı çok iyi tanıyorum. Terfi ettiğine göre bana artık huzur yok...
+...şu 'Flying Dutchman' oyunu, Rodenburg'un işlerini nasıl yürüttüğünün güzel bir örneği. Beni rahat bırakmayacak. Eczanemi kilitliyorum ve Karayipler'den çıkmak için bir gemi beklerken kuşatmaya hazırlanıyorum...
+Görünüşe göre Lucas’ın yeni ajanı düzgün bir adam. Onu öldürmek istemiyorum; olur da o alçak onu St. John's’a gönderirse diye. Yine de, bu Ostin’in adamlarının elinde ölmekten daha iyi bir kader olurdu. Lucas bu adamları tutacak paraya sahip—kesesi hayli dolu.
+#TEXT 2
+... Şu 'Flying Dutchman' oyunu, Rodenburg'un işlerini nasıl yürüttüğünün güzel bir örneği. İngiliz tüccarlarının işlerini fena halde aksattı...
+...Joachim Merriman anlaşmanın kendi payına düşen kısmını yerine getirdi ve nefrit kafatası için yüklü bir ödeme yaptı. Yarım milyon sekizlik—azımsanmayacak bir meblağ...
+...Bundan sonra Merriman, herkesin onu yalnız bırakmasını istedi—bize aramaya gelebilecekler için bir tuzak kurmak niyetindeydi. Tonzag ise onu takip etmeye ve ne yaptığını görmeye karar verdi. Bir saat sonra Portekizli tek başına geri döndü. Tonzag’ın onu takip etmemesi gerektiğine dair kara bir şaka yaptı ama yine de büyük yardımı dokunduğunu itiraf etti...
+
+#QUEST LetterToAbi
+Richard Fleetwood'un Abigail'e Mektubu
+#TEXT 1
+Sevgili Abi,
+
+Söz verdiğim gibi, seni St. John's'a götürüyorum. Bu haberci, Charlie, benim en yakın dostumdur—ona güvenebilirsin. Seni güvenle Antigua'ya ulaştıracak, bu yüzden ona tereddütsüz eşlik et. Sıkıntılarını biliyorum ve babanın parasını en kısa zamanda ödeyeceğime söz veriyorum. Hiçbir şey aramıza giremeyecek. Seni görmeyi sabırsızlıkla bekliyorum.
+Richard.
+
+#QUEST LetterToFleetwood
+Richard Fleetwood’a Fidye Şartlarını Bildiren Mektup
+#TEXT 1
+Abigail’in artık bende, onu asla bulamayacaksın. Senin yoldaşının gemisine çıktığımda “misafirim” oldu. Bedeli 200.000 peso. Mektubuna bakılırsa, bolca altının var. Benimle Turks Island’ın kuzey koyunda buluş. Yalnız gel ve sadece brigini getir. Elçime zarar verme ya da onu takip etme—seni gözlüyor olacağım. Eğer elçim evinden yarım saat içinde ayrılmazsa ya da takip edilirse, sana sevgilinin bir parmağıyla bir kulağını içeren bir kutu göndereceğim. Eğer elçim cevapsız ayrılırsa ya da hiç ayrılmazsa, Abi’nin kafasını keseceğim ve sana göndereceğim. Umarım makul davranırsın, İngiliz. Abi’nin hayatı senin ellerinde. 200.000 peso bedel—eğer alamazsam, kızını parça parça alırsın.
+Bay Evil
+
+#QUEST FleetwoodAnswer
+Richard Fleetwood'dan Gelen Yanıt
+#TEXT 1
+Şartlarını kabul ediyorum, Mr. Evil. Seninle Turks'ta buluşacağım ve istediğin parayı getireceğim. Abigail'e zarar verirsen, hayatımın geri kalanını intikam peşinde geçireceğim.
+Richard Fleetwood
+
+#QUEST LetterToLucas
+Richard Fleetwood'dan Lucas Rodenburg'a Mektup
+#TEXT 1
+İşin bitti, Rodenburg. O kimyager John Murdock’u Hollanda ajanı olduğu gerekçesiyle tutukladım ve oldukça ilginç bir arşive de el koydum. Adam fazla dayanamadı... ve şimdi şifre anahtarı elimde. 'Flying Dutchman' meselesine karıştığına dair elimde sağlam kanıt var—daha doğrusu, İngiliz gemilerine musallat olan Jacob van Berg’le bağlantını ortaya koydum. O arşivde anlatacak çok şey var, söyleyeyim. Uluslararası bir skandal vadedebilirim sana—üstlerin yaptıklarını öğrenince senden yüz çevirecekler. Yine de düşünüyorum... Belki de arşiv karşılığında on milyon hazırlasan iyi olur?
+Richard Fleetwood
+
+#QUEST LetterFromGaston
+Callow Gaston'dan Mektup
+#TEXT 1
+Eğer bunu okuyorsan, demek ki ben çoktan öldüm.
+O köle hikayesiyle beni kandırmayı başardın, helal olsun. Hercule Tonzag’ı bugüne kadar kimse kandıramamıştı. Gerçek adım buydu—ya da daha doğrusu, bir zamanlar öyleydi.
+Beni öldüren adam, senin için de büyük bir tehdit. Bu yüzden hayatta kalmana yardım edeceğim ve sen de ölümümün intikamını alacaksın. Bu hayatta düşman olmamız ne yazık—aslında ortak çok yanımız vardı ve birlikte çalışabilirdik.
+Kimseye güvenme, hele o İngiliz casusuna hiç güvenme. Beni ölüme gönderdi—Valkyrie'nin kaptanının peşinde tüm Karayipler varmış, bunu bile söylemedi. Curaçao valisi ise onun kellesi için yüklü bir ödül verecekmiş.
+Yoldaşım tarafından köpekbalıklarına gönderilen Hollandalı sayısı artık fazlasıyla arttı. Neredeyse o alçak Van Berg’in rekoruna yetişmek üzere.
+Bunların hepsini bildiğimden emin değilim. Hayatını önemsiyorsan o İngiliz'den uzak dur. Bu kanlı siyaset işlerine neden bulaşayım ki?
+Ama çok daha tehlikeli bir adam var—Lucas Rodenburg, dostumun en büyük düşmanı. Sadece Fleetwood'a yardım etmek bile, kendimi onun kara listesine sokmaya yeter. Şirketin müdür yardımcısı olarak, askerler ve devriyeler tarafından korunuyor; ona doğrudan ulaşmak mümkün değil. Fakat bir yol var.
+St. John's'ta John Murdock adında bir kimyager bulmalıyım. O, Lucas Rodenburg'un sağ koluydu. Ben onun için çalıştım, Lucas ise ikimizi de ortadan kaldırmaya karar verdi. Beni kimin öldürdüğü—Longway mi yoksa League'den adamlar mı—önemli değil. Rodenburg'un emriyle katledildim. Eğer önce davranmazsan, sana da aynısını yapacaktır.
+Kimyageri Lucas’tan önce bulmalıyım. Gerçek adı van Merden ve büyük ihtimalle St. John’s zindanlarında saklanıyor. Ona benim gönderdiğimi söylemeliyim—adaleti aramamda bana yardım edecek. Lucas’ı Curaçao’dan çıkmaya zorlayacak bir şeyi var ve bu iş tam bana göre.
+Sana bol şanslar, yabancı! Hercule Tonzag’ı unutma.
+Bu ismi yalnızca van Merden ve ben biliyorduk. Artık sen de biliyorsun.
+
+#QUEST	LetterFromFleetwood
+Richard Fleetwood'dan Vedalar
+#TEXT	1
+Elveda, sadık dostum!
+Abigail’e karşı hislerim konusunda seni kandırmak zorunda kaldım. Beni yargılama—benim için gerçekten önemli olan tek kişi o. Babasıyla böylesine önemli bir konuşmada sana güvenemezdim. Doğrusunu söylemek gerekirse, gözlerim iddia ettiğim kadar kötü değil. Bunları bir mektupta itiraf etmek benim için çok daha kolay. Bana güven, bu ikimiz için de en iyisi.
+Solomon’a parasını ödedim ve Abigail’i yanıma aldım. Artık bu işten tamamen çekiliyorum—onun hayatını ya da mutluluğunu riske atamam. Bu satırları okuduğunda, Valkyrie çoktan Londra’ya doğru yola çıkmış olacak.
+Artık Rodenburg ve paralı askerlerine karşı yalnızsın. Umarım sağ çıkarsın. Sadık dostum Charlie, ilk kez emirlerime karşı gelerek İngiltere'ye dönmeyi reddetti. Bundan memnun olduğumu söyleyemem. Charlie sana biraz altın verecek—umarım hayal kırıklığını biraz hafifletir.
+Charlie’yi topçu olarak işe al. Onurunu benim gibi lekelemediğin sürece sana sadakatle hizmet edecektir.
+Sana şans ve zafer diliyorum!
+Not: Bir Hintli şaman, ölülerin bir hazineyi koruyabileceğini söyledi; eğer yerel bir büyüyle lanetlenmişlerse ve bedenlerinin bir parçası sandığın içine konmuşsa. Bu yüzden Gaston’un kafası adadaki sandığın içinde bulunmuş.
+Karşılaştığın yaratığın adı Chavinavi. Yerel efsanelere göre, bunlar Maya Ölüm Tanrısı Yum Cimil’in hizmetkârlarıymış. Onu çağıran adam ise kudretli bir büyücü. Abi’yi götürmemin bir sebebi de bu. Korkuyorum—kendim için değil, onun için. Abi hamile. Bol şans!
+
+#QUEST LetterToMerdok
+Lucas Rodenburg'dan Johan van Merden'a Mektup
+#TEXT 1
+
+Johan! Beni tanırsın—şu lanet arşivini bir şekilde ele geçireceğim. Tek mesele, onu bana bizzat mı getireceksin, yoksa Ostin’in adamları mı getirecek? Şifreni de umursamıyorum, gerçi onu bir yerlerde sakladığını biliyorum. O evrakları kendi ellerimle yakmak istiyorum, hepsi bu.
+Antigua’dan ayrılmayacaksın. Eski dostluğumuzun hatrına, sana yaşaman için son bir şans veriyorum.
+Seni eski buluşma yerimizde bekleyeceğim. Bu mesajı Longway getirecek. Ona nedenini bilmediğim bir şekilde sempati duyduğunu biliyorum, geri dönmezse şaşırmam. Mesajı iletecek ve sen de okuyacaksın. Bu yüzden bu sefer Çinli kendi başına geri dönecek. "Meifeng"in artık yeni bir kaptanı var.
+Senin hayatını istemiyorum. Sadece geçmişimden sürprizler çıkmasını istemiyorum. Yahudinin altınını ve Hintli kafatası için Portekizlilerden aldığın parayı da kendine saklayabilirsin.
+Bunu bil, van Merden: Seni bekliyorum, fakat sabrımın da bir sınırı var. O sınır aşıldığında, Senyörler Birliği seninle ilgilenecek.
+Eski dostun ve komutanın,
+Lucas.
+
+#QUEST LSC_Alvorado
+Karayip Günlükleri - Lanetli Yer
+#TEXT 1
+
+Ignacio Alvarado'nun Seyir Defteri, 'Santiago' Kalyonunun Kaptanı
+20.06.1620
+Bilmiyorum, señores, böyle bir kadere ne yaptık da layık görüldük. Hangi günahlarımız için? Hiçbir cevabım yok, ama size gördüklerimi anlatacağım. Kutsal Meryem Ana adına yemin ederim, hepsi gerçektir!
+Yaz, 1620. Benim adım Ignacio Alvarado, 'Santiago' adlı kalyonun kaptanıyım. Havana'dan Vera Cruz'a doğru yelken açmıştık ki ölümcül bir fırtına patlak verdi. Geminin kontrolünü kaybettik ve kuzeye doğru sürüklendik. Bir hafta boyunca dev dalgalar bizi hırpaladı, ama Santiago sağlam çıktı. Gövdesi dayanıklıydı ve sonunda kendimizi tuhaf bir adanın yakınında bulduk—adeta bir gemi mezarlığı.
+Burası devasa bir yerdi—her yerde enkaz, canlıdan eser yoktu. Mürettebatla birlikte geminin sandalına binip bu garip yeri keşfe çıktık. Enkazın arasından dar bir geçit fark ettim ve kısa süre sonra bu deniz mezarlığının kalbine ulaştık: San Augustine adında muazzam bir savaş gemisi...
+28.06.1620
+... Şaşırtıcı bir şekilde, orası sessizdi, en ufak bir rüzgar esintisi bile yoktu. Adamlarımla birlikte savaş gemisinin güvertesine adım atar atmaz, tuhaf siyah yaratıkların saldırısına uğradık. Sayıları çok fazlaydı, başka çaremiz kalmadı ve teslim olduk.
+...ada aslında insanlarla doluymuş. Son elli yılda yaşanan gemi kazalarından kurtulan her ırktan ve milletten insanlar burada yaşıyor. Tanrıya şükür, bizi kendi aralarına kabul ettiler. Gemimizin kurtulduğundan haberleri yok. Justice Island—burası için kullandıkları isim bu. Ama ben buraya 'The City of Abandoned Ships' diyeceğim. Böyle bir yere yakışan tek isim bu.
+Bu adada iki klan hüküm sürüyor. Ne yazık ki, Rivados klanının eline düştük. Vahşilerden geldikleri söyleniyor; beyazlara, bizim Afrikalılara ve yerlilere davrandığımız gibi davranıyorlar. Küçük kayığımızı aldılar ve bizi San Geronimo'ya, yerel geleneklerine göre taş bir put için kurban edilmek üzere götürdüler. Geminin yakında batacak gibi olduğunu fark ettim ve korktum ki biz...
+29.06.1620
+...Narwhal klanı onların düşmanıymış. Çoğunluğu ilk Avrupalı yerleşimcilerin soyundan gelen beyaz adamlar. Neyse ki, kendi adamlarını kurtarmak için gemiye saldırdılar—ve bu sayede bizi de kurtarmış oldular. Narwhal’lar, kurban edilmemize yalnızca bir saat kaldığını söylediler. Durumumuz bir nebze iyileşti, fakat hâlâ adada esiriz; zira özgürlüğümüzü kazanacak bir yolumuz yok...
+03.07.1620
+Ambarlarda bolca hazine var—giysi, silah, alet, rom, şarap ve baharat. Fakat erzak ve yiyecek neredeyse yok denecek kadar az. Bu yüzden yerel klanlar San Augustine’i tarafsız bölge olarak kabul ediyor. Burası, enkaz arasındaki geçide açılan bir kapı işlevi görüyor. O sularda sadece küçük tekneler yol alabiliyor ve yerlilerin elinde bolca var; kaçakçılarla takas yapıyorlar—hazineler yiyeceğe karşılık. Burada işler böyle yürüyor. Altının burada hiçbir değeri yok...
+05.07.1620
+...geriye pek bir şey kalmamış. Yerliler birbirlerine güvenmiyor, eşyalarını sağlam kilitlerle sandıklara saklıyorlar. Usta yüzücülerden bazıları denizin dibine dalıp arama yapmaya çalışıyor. Orada bolca hazine olduğunu söylüyorlar. Bu kadar derine dalmak için gerçekten cesur olmalılar—dev düşman yengeçler aşağıda yaşıyor. En korkutucu olanıysa, onları bizzat görmüş olmam: kocaman kıskaçlar ve zehirli çeneler. Bazen yüzeye kadar çıkıyorlar ve...
+07.07.1620
+Tenimizin rengine rağmen, Narwals bize güvenmiyor. Belki de onlar sapkın—gerçek Katoliklerden nefret eden Hollandalılar ve İngilizler. Ya da belki sadece, İspanyol askerlerini getirip anarşilerine son vereceğimizden korkuyorlar. Her halükarda, ticaret için Küba'ya gitmek üzere küçük teknelerinden birine binmemiz için bizi davet etmediler.
+...Narwhals'ın haberi olmadan, gizlice bu adaya giden deniz rotalarını kaydettim. Belki Küba Genel Valisi Ekselansları Sancho de Alkis, buraya ulaşmak ve buradaki işlere son vermek için bu bilgileri faydalı bulacaktır.
+15.07.1620
+Dublin, İrlanda doğumlu genç bir yerli, gerçek bir Kilise evladı, bize Abandoned Ships şehrinden kaçış yolu sundu. Görünüşe göre bu cesur adam, gemimizin hâlâ denize elverişli olduğunu keşfetmiş. Yarın Rivados'un teknesini çalacağız. Kutsal Meryem Ana bize yol göstersin!
+21.07.1620
+Başardık! Ama yine de kendimizi bir fırtınanın insafına bırakılmış bulduk. Gövdemiz hasar aldı ve güvenli bir liman bulmak için yalnızca bir günümüz var; aksi takdirde sonumuz kötü olacak. Mürettebatın hepsi panik içinde, yalnızca cesur genç İrlandalımız hariç. Şüphe yok ki, bu badireyi atlatırsak onu büyük bir gelecek bekliyor...
+
+#QUEST Legend_CapBucher
+Karayip Günlükleri - Kaptan Butcher'ın Efsanesi
+#TEXT 1
+
+Kimse o zalim ve gözü kara korsanın nereden çıktığını bilmiyor. Kimileri ona şeytan derdi, kimileri ise cesaretine ve şansına hayran kalırdı; çünkü Neptune adlı firkateyniyle her kovalamacadan sıyrılmayı başarırdı. Adı, Takımadalar’daki her meyhanede dilden dile dolaşırdı. Butcher kimseye acımazdı—ne kendi adamlarına ne de düşmanlarına—ama tayfası hep doluydu, çünkü yeni haydutlara her zaman kapısı açıktı. Yalnızca kaptan, onun çavuşu Jacob Jackman, lostromosu Henry the Hangman ve kızıl saçlı güzeli Jessica yenilmez görünürdü. Jessica, Butcher’ın her baskınında yanında olurdu. Söylentilere göre, Barbadoslu zengin bir plantasyon sahibi olan Oliver Rose’un kızıymış.
+O kızıl saçlı şeytan kadın, Butcher için adeta bir tılsım gibiydi. Ama bir gün, kaptanımız aşık oldu—çoktan ölmüş olan ünlü Nicolas Sharp’ın kızına.
+Butcher, Jessica’dan kurtulmak istiyordu—ya onu yüklü bir paraya sattı ya da sessizce salıverdi. O günden beri Jess’i gören olmadı.
+Isla Tesoro’daki her korsan Beatrice Sharp’a hayrandı; herkes ona hayranlıkla bakar, uğruna canını ortaya koymaya hazırdı. Talipleri hiç eksik olmazdı ve kardeşi Blaze, onun için dilediği kişiyi seçebilirdi. Kimse Butcher’dan neden hoşlanmadığını bilmiyor—aralarında karanlık bir geçmiş varmış. Sonunda, Butcher Beatrice’i kaçırmak zorunda kaldı ve gerçekten de öyle yaptı. Ama bazıları, aslında onu hiç kaçırmadığını, Beatrice’in de ona âşık olduğunu ve birlikte kaçtıklarını söyler.
+Butcher, yaşam tarzı yüzünden birçok düşman edindi, fakat biri diğerlerinden ayrılıyordu—yalnızca Mask olarak bilinen amansız bir takipçi. Eski bir İngiliz üniforması giymiş, yüzünü bir maskeyle gizlemişti; gerçek adı çoktan unutulmuştu. Bir gün Jessica, Mask’in yanına gelip Butcher’ın sırrını bildiğini iddia etti. Butcher’ın kuzeyde, küçük bir adada üs ve depo kurduğunu açıkladı. Jessica’nın teklifi açıktı: Pusu kurmaya yardım edecekti, fakat bunun bir parçası olmak istiyordu. Görünüşe göre eski sevgilisinden intikam almak istiyordu. Mask, adayı asla kendi başına bulamayacağını bildiğinden, bu teklifi kabul etti.
+Söz ağızdan çıkar çıkmaz, iş hemen oldu. Beklemeleri gerekmedi. Butcher, İspanyollarla kılıç sallayacak kadar talihsizdi. Adamlarının çoğunu kaybetti, gemisi de ağır hasar aldı. Zar zor adaya ulaşıp gemiyi onardılar ve biraz nefes aldılar. Ama bu sadece başlangıçtı! Her köşeden kırmızı ceketliler saldırdı, başlarında korkunç alevli kılıcıyla Jessica vardı. Beatrice’i öldürdü, fakat sonunda Butcher’ın elinde can verdi.
+Hiç şansı yoktu. Adamları kıyıda öldürüldü. Ancak Jackman ve Hangman bulunamadı. Kaptan Antigua'ya götürüldü. İki kadın ise adada yan yana gömüldü.
+İster inan ister inanma, anlatılanlara göre bir zamanlar balıkçılar o adaya çıkmış. Ertesi sabah, korkunç yaralarla ölü bulunmuşlar—sanki bir flamberge tarafından açılmış gibiymiş kesikleri. O günden beri, korsanlar bile geceleri o adadan uzak duruyor.
+Butcher, Antigua’da idam edildi; sıradan bir korsan gibi asıldı. Onun hikâyesi böylece sona erdi. Kırmızı muskasını reddetmeseydi, işler belki de bambaşka gelişirdi.
+Mask bundan sonra fazla yaşamadı—ertesi gün boğazı köpekbalığı dişiyle kesilmiş halde ölü bulundu. Söylenene göre onu öldüren Shark Dodson'mış. Rivayete göre Dodson, arkadaşının kız kardeşine âşıktı ve boynunda daima bir köpekbalığı dişi taşırdı. Ama bu konuda ağzını bıçak açmaz. O günler çok geride kaldı...
+
+#QUEST Mask
+Karayip Günlükleri - Maskeli Adam
+#TEXT 1
+
+... 17 Haziran 1634'te, 'Neptune' firkateyni Glasgow, İskoçya'dan Bridgetown'a doğru yola çıktı.
+'Neptune' sadece yolcuları, mektupları ve adanın garnizonu için silahları değil, aynı zamanda Barbados plantasyonlarına gönderilecek mahkumları da taşıyordu.
+Bu askeri fırkateyn asla köle taşımak için tasarlanmamıştı. Zavallı tutsaklar, ambarın içine tıkılmış, tek bir demir zincirle birbirlerine bağlanmış ve temiz havadan mahrum bırakılmışlardı.
+Bu suçluların önemi, onların nakliyesi için böylesine güçlü bir savaş gemisinin kullanılmasını gerektiriyordu. Her biri bir hükümet darbesine karışmıştı. Özellikle biri öne çıkıyordu: Lawrence, atletik yapılı ve cesur bakışlı, Londralı genç bir soylu. Ailesinin malikanesi yok edilmiş ve satılmıştı. Babası—bir zamanlar Providence korsanı, varlıklı bir toprak sahibi ve Britanya Parlamentosu üyesi—iç savaşın kaosuna dayanamayarak hayatını kaybetmişti. Bu kayıp, Lawrence’ın siyasi görüşlerini değiştirmesine ve Lord Protector’a karşı diğer soylu komploculara katılmasına sebep oldu.
+Kaptan Joshua Leadbeater, gardiyan rolünü üstlenmekten hoşnut değildi, fakat genç ve güzel Jessica Rose’un varlığı, tekdüze yolculuğu katlanılır kıldı. Barbadoslu zengin bir plantasyon sahibinin kızı olarak, kısa sürede sert kaptanın kalbini fethetti. Batı Hint Adaları’na yaptığı ilk sefer olmasına rağmen, iki ay göz açıp kapayıncaya dek geçti.
+Antiller’e yaklaşırken, fırkateynimize korsanlar saldırdı ve gemimize yanaşıp güverteye çıkmaya çalıştılar. Yıpranmış bir salvo, korsanların barçasında kocaman bir delik açtı ama bu, savaşın gidişatını değiştirmeye yetmedi. Korsanlar neredeyse zaferi kazanıyordu ki, Leadbeater’ın kumandası ve disiplinli tayfası onları geri püskürttü. Belki de zafer bizim olabilirdi, eğer tutsaklar—başlarında Lawrence olmak üzere—Leadbeater ve adamlarına arkadan saldırmasaydı. O ihanet her şeyi değiştirdi. Leadbeater yüzüne saçılan kartaşla yere serildi; öldüğünü sandılar. Adamlarının morali çöktü ve yarım saat içinde her şey sona erdi.
+Savaştan sonra Lawrence ile korsan kaptan, Jessica yüzünden tartıştı. Korsan, onu tayfasına eğlenceleri için teslim etmek niyetindeydi, ancak Lawrence fidye karşılığında serbest bırakılması konusunda ısrar etti. Sözler hızla kılıçlara dönüştü ve korsan anında yere serildi—Lawrence, Londra'nın en iyi eskrimcileriyle antrenman yapmıştı.
+Korsan tayfası, yeni kaptan olarak Lawrence’ı seçti. Barque, yarı ölü denizcilerle birlikte batmaya terk edildi. Leadbeater da onların arasındaydı; yüzündeki korkunç yaraya rağmen, Lawrence’ın o kızı—hayallerini süsleyen kızı—kucakladığını görecek kadar yaşadı.
+Jacob Jackman sayesinde Lawrence, "Kasap" lakabını aldı. Kısa sürede bu isim, Küba'dan Barbados'a kadar her meyhanede duyulur oldu.
+Leadbeater’ın kaderi ona ölümü bile çok gördü. Yanından geçen bir gemi tarafından kurtarıldı, fakat yüzü öyle fena halde yaralanmıştı ki, artık daima maske ve peruk takmak zorunda. Kasap’ın peşine düşmek onun takıntısı, hayatının tek amacı haline geldi.
+
+#QUEST RegataLetter
+Regatta Daveti
+#TEXT 1
+
+Sayın Kaptan,
+
+Büyük Karayip Regattası’na katılmaya davet edildiniz. İlgileniyorsanız, derhal Port Royal’e gidip Jamaika Genel Valisi olarak bana başvurun. Yarışa yalnızca lugger tipi gemiler kabul ediliyor, bu yüzden geminizi buna göre hazırlayın. Filo ile gelmeyin—regattada filolara izin yok. Port Royal’e ücretsiz geçişiniz garanti.
+Ücret 50.000 peso; bu, ganimetten alacağın pay olacak.
+İngiliz Kolonilerinin Genel Valisi, Kont Edward Doiley
+
+#QUEST RegataRules
+Regatta Kuralları ve Şartları
+#TEXT 1
+
+Başlangıç ve bitiş - Port Royal, Jamaica.
+Rota, toplam beş sefer
+
+Port Royal (Jamaika) - Belize (Batı İspanyol Sahili)
+Belize (Batı İspanyol Ana Karası) - Port-au-Prince (Espanola)
+Port-au-Prince (Hispaniola) - St. John's (Antigua)
+St. John's (Antigua) - Bridgetown (Barbados)
+Bridgetown (Barbados) - Port Royal (Jamaica)
+Her katılımcı, her kasabadaki liman başkanına gidip kaydını yaptırmalı ve ilerlemesini bildirmeli; aksi takdirde diskalifiye edilir. Regatta boyunca ofisler gece gündüz açık kalacak.
+
+Yapamazsın
+Filo ile denize açıl.
+Orijinal luggerini değiştir.
+Belirlenen rotadan sapmak.
+#QUEST Sharlie_Father
+Henri de Monper'den Bir Mektup
+#TEXT 1
+
+Selamlar, Charles
+Neredeyse nasıl göründüğünü unuttum. Boş işlerle uğraşmanı hiç onaylamadığımı biliyorsun. Akıllanıp kardeşinin yolundan gidene kadar, yani bir soyluya yakışır bir meslek seçip, zengin kadınların çarşaflarına ve tuvallere boya sürmekten vazgeçene kadar, malikanemize adım atmanı yasakladım.
+Fakat şartlar beni sizden yardım istemeye zorluyor.
+Kardeşim Michel ortadan kayboldu. Ondan son haberimi alalı neredeyse bir yıl oldu. Son mektubunda, Yeni Dünya'ya yapılacak bir sefere katılmak istediğinden bahsetmiş ve sık sık yazamayabileceği konusunda uyarmıştı. Bir geminin Atlantik'i geçmesi üç ay sürer, fakat kolonilerimizle iletişim güvenilirdir ve posta düzenli olarak ulaşır.
+Başına bir iş gelmiş olmasından endişeliyim. Memleketlimiz Chevalier de la Brignais’e gönderdiğim mektuplara cevap alamadım. Michel onu en yakın dostu olarak tanımlardı ve bildiğim kadarıyla Michel’in seferine katılmadı.
+Sana yalvarıyorum, resimlerini ve kadınlarını geride bırak. Martinique'e yelken aç ve bu belirsizliğe bir son ver—beni içten içe bitiriyor. Eski bir deniz subayı olarak, en kötüsüyle yüzleşmeyi belirsizlikle yaşamaya tercih ederim.
+Ne yazık ki, bu sefer için sana para veremem. Malikânemiz zor günler geçiriyor, kötü bir hasat beni mahvetti. Michel döndüğünde her şeyi düzelteceğine söz vermişti ama...
+Lütfen, evladım, eski yaraları bir kenara bırak ve senden istediğimi yap—belki de senden isteyeceğim son iyilik bu olacak. Bunu benim için yapabilecek tek kişi sensin.
+Baban, Henri de Monper
+Gaskonya, 6 Nisan 1654
+
+#QUEST Sharlie_Father_1
+Henri de Monper'den Bir Mektup
+#TEXT 1
+
+Sevgili Charles, canım oğlum, kardeşini aramak için denize açıldığından beri uzun zaman geçti, seni en son görüşüm ise daha da eskide kaldı. Benim tavsiyemi dinleyip de Monper adını layıkıyla temsil edecek bir yol seçmiş olmandan büyük mutluluk duyuyorum. Yıllar önce son buluşmamızda, bir gün donanmanın subayı olacağını, ardından daha da yükselip Yeni Dünya'nın saygıdeğer genel valisi olacağını hayal bile edemezdim! Seninle gurur duyuyorum, oğlum!
+Peki ya Michel’e ne oldu? Yıllardır onun akıbetinden habersizim! Kısa bir süre önce Chevalier La Brignais malikanemizi ziyaret etti, fakat tek öğrendiğim Michel’in çok ciddi bir suçla itham edildiği oldu. Fransa’ya döndüğünde bana her şeyi anlatmanı umuyorum.
+Charles, aile mülkümüz şimdi biraz daha iyi durumda, fakat yardımın hâlâ çok makbule geçerdi. Eskisi gibi seni zorlamayacağım. Yalnızca unutma—bir adamı tanımlayan, yaptığı işler ve eylemleridir. Yüce Tanrı seninle olsun.
+Baban, Henri de Monper
+
+#QUEST Sharlie_Shevallie
+Chevalier de La Brignais'den Mektup
+#TEXT 1
+
+Monsieur de Maure, en derin üzüntülerimle bildiririm ki, kardeşiniz Michel de Monper ağır suçlarla itham edilerek Antiller genel valisi Philippe de Poincy’nin emriyle tutuklanmıştır. Bu şövalye bizim komutanımızdır ve Batı Hint Adaları’nda Malta Tarikatı’nı temsil eder. Bir yıl önce, onun komutasında gizli bir keşif seferi düzenlendi ve zavallı kardeşiniz de bu seferin üyeleri arasındaydı. Martinique’in Tarikat’a satıldığına dair söylentiler var; belki de bu sefer bununla bağlantılıydı. Daha fazla ayrıntı bilmiyorum—ne Michel’in nerede tutulduğunu ne de o seferin gerçek amacını. Muhtemelen bu, fazla ilgi gösterenin başını uçuracak kadar tehlikeli bir sırdır.
+Bu bilgi bana güvenilir adamlarımdan ulaştı. Babanı böyle kötü haberlerle üzmek istemedim.
+Bu mektubu size hizmetkârım ulaştıracak ve okuduktan hemen sonra yakacak. Hem kariyerimi hem de hayatımı riske atıyorum, fakat bir dostum dertteyken kenarda duramam. Bir zamanlar Barselona surlarında hayatımı kurtarmıştı.
+Belki de kardeşini kurtarıp işleri yoluna koymayı başaracaksın. Onun suçlu olduğuna inanmıyorum. Düzen’e olan yeminimle bağlıyım, bu yüzden daha fazla yardımcı olamam. Artık her şey senin ellerinde.
+Senin bilgeliğine ve asaletine güveniyorum.
+Chevalier de La Brignais
+Malta, 15 Haziran 1654
+
+#QUEST Sharlie_Lover
+Lulu'dan Not
+#TEXT 1
+
+Tatlı Charles! Kalbim paramparça, ama senden Paris'ten bir an önce kaçmanı istemek zorundayım. Hiç şüphem yok ki, kocam buluşmalarımızı öğrendi. Benim konumumdan dolayı bana zarar vermeye cesaret edemez, fakat sen büyük tehlikedesin, sevgilim.
+Bizim cesur boynuzlumuz, askerlerini Noel için Flanders’a götürüyor. Bunu bana kuzenim söyledi. Görünüşe göre onun son dekoltesi genç Louis’i sonunda deliye çevirmiş.
+Bir süreliğine kolonilerde gözden kaybolsam iyi olacak. Vicdanımı rahatlatmak ve zavallı babamı ziyaret etmek için iyi bir fırsat.
+Kendini kurtar, sevgilim, ve unutma ki seni bekliyor olacağım. Umarım bu küçük hediyeler ayrılığımızın acısını biraz olsun hafifletir.
+Not: Dikkatli ol ve küçük Lulu'nu unutma. Derler ki, Karayipler’deki kızlar güney güneşi altında gerçekten ateşli oluyormuş... Bak hele bana—şimdiden kıskanmaya başladım!
+Paris, 24, 1654
+
+#QUEST Chad_Mary_letter
+Mary Casper’a Chad Kapper’dan Mektup
+#TEXT 1
+
+Planım başarıya ulaşacak ve Alan’ın intikamı alınacak. Onun ölümüyle hepimiz kazançlı çıkacağız—sen, ben ve Narwhals. Cyclops işini bitirince onu ortadan kaldırmalısın. Parayı verirken yap bunu. Hiçbir riske girme—arkasından vur. Cesedini ve tüfeği Rivados topraklarında bırakacağız. Kimse Dodson’ı öldürenin yerliler olduğundan şüphe etmeyecek. Narwhals, Shark’ın adamlarıyla güçlerini birleştirecek ve birlikte onları yok edeceğiz. Seninle ben bu adada hüküm süreceğiz—kral ve kraliçe olarak.
+#TEXT 2
+
+...bu senin son uyarın, aptal kız. Shark’ı öldürme planımı ortaya çıkardıktan sonra seni serbest bırakacağımı gerçekten mi sandın? Hayır, güzelim, artık birbirimize bağlıyız ve sen de gerekeni yapacaksın—tüfeğin parasını öde, anahtarı al ve sevgili Giuseppe’mizi hazırla...
+...Alan’ın ölümünden dolayı bana kin besliyorsun, ama şunu iyi bil sevgilim: Shark’ın Alan’ın ölümüne ‘karıştığı’na dair söylentiler işime çok yaradı. Artık Narwhals ona karşı. Böylece onlarla dostluk kurup bu suikasti ayarlayabildim. Milrow ile senin için hiçbir umut yoktu—o, hücresinde çürümeye mahkûmdu zaten...
+...Sana ait olduğun ve sadece bana ait olduğun gerçeğini kabul etmeni öneririm. Taliplerinle, Alan’a yaptığım gibi, ben ilgileneceğim. Senden büyük, saf bir aşk istemiyorum, aptal kız—sadece seni istiyorum ve istediğimi her zaman elde ederim. Beni bir canavar olarak görme. Hayır, Steven öldüğünde ve ben amiral olduğumda, yemin ederim ki ne istersen senin olacak...
+...bunu iyi düşün. Eğer saat on bir vurmadan önce 'Tartarus'ta görünmezsen, şafağı göremeyeceksin. Narwhals arasında bana sadık adamlarım var; hiç tereddüt etmeden seni kendi kamaranda doğrarlar. O akıllı kilitlerin ya da güzel yüzün, seni bir pala darbelerinden korumaz. Bunu iyi anla Mary: Ya benimle kalıp bu adaya hükmedersin, ya da cazibelerinle yengeçlere yem olursun...
+Chad
+
+#QUEST Letter_Facio
+Giuseppe'nin Açıklamaları
+#TEXT 1
+
+...o mektubu Dodson’a büyük bir baskı altında, onun lostromosu ve o deli kız Mary yüzünden yazdım. Ellerinde sağlam bir koz vardı—yüzüme doğrultulmuş bir tabanca. Gençliğimde olsam bile o ikisine karşı koyamazdım. Başka çarem yoktu, boyun eğip onların kirli planının bir parçası oldum...
+...Chad ve Mary, Shark’ı öldürmek isteyen küçük bir suç ortağı grubunu topladı. Dodson kamarama girdiğinde ona pusu kuracaklar ve kurtuluş şansı olmayacak. Tanrım, ruhuna merhamet et!
+...Bu deliliğin bir parçası olmak istemiyorum. Bu kavganın galibi umurumda değil. Kapper tehlikeli bir yılan, neyse ki arkasında tanık bırakmaz. Eğer amiral sağ kalırsa, zavallı Giuseppe’ye acıyacağını hiç sanmıyorum. Bu yüzden bu mektubu buraya bırakıyorum, umarım amiralin adamları bulur. Bu oyundan bıktım—Kapper da kadını da beni bulamayacağı bir yere saklanacağım. Bütün bu karmaşa geçene kadar orada kalacağım...
+
+#QUEST Letter_valet
+David Fackman’a, nam-ı diğer Knife’a Mektup
+#TEXT 1
+
+David, Barbazon adamını bekle ve onu Marcus’a, Türklerle ilgili bir hikayeyle gönder.
+Bundan uzak durmam en iyisi—Tyrex, haberciyi kandırmak için gönderildiğimi düşünebilir. Barbazonlu adam bu riski üstlensin. Seni beklettiğim için üzgünüm, fakat rakibini ortadan kaldırmak için Jacques’in de işin içinde olması gerekiyor. Böylece onu kan bağıyla kendimize bağlamış olacağız. O yüzden, onun ortağı La Vega’da görülsün.
+Tuzak tekrar kontrol edilmeli. Tyrex kesinlikle öne atılıp doğrudan brigantine'e çıkacak. Barutu incele ve kıyıdaki nişancıların hazır olduğundan emin ol. Her şey eksiksiz ve tam hazırlıklı olmalı.
+Ghoul ve Prowler beni kuzey koyunda bekliyorlar. Emirlerime uyacaklar. İkisi de polacre hakkında oldukça bilgili. Prowler, Tyrex hayatta kalmayı başarırsa ne yapacağı konusunda ek talimatlarımı aldı.
+Barbazon, Tyrex meselesi hallolur hallolmaz safımıza katılacak. Sıradaki hedefimiz Black Pastor’ın sadakatini kazanmak. Forest Devil’ı ortadan kaldırmayı düşünmeliyim—tamamen mantıksız biri olduğunu kanıtladı.
+Patron, Isla Tesoro’yu kendi çıkarı için İngilizlere satmayı planlıyor. Bu sefer olmayacak—kahrolası herif. Hangman öldü ama tayfam kızı ele geçirmeye çok yakın. Charles de Maure’u gözümden kaçırmamalıyım; Svenson için çalışıyor ve başıma bela oldu. Görünüşe göre şimdi kız onun elinde, ama onunla ne yapmayı planladığını hâlâ bilmiyorum.
+Artık çok yaklaştık—yakında Brethren bizim olacak. Unutma kardeşim, güvendiğim tek adam sensin. Dikkatli ol ve gereksiz risklere girme.
+Jacob.
+
+#QUEST Letter_jess
+Jessica Rose’un Notları
+#TEXT 1
+
+Jessica'nın el yazısıyla yazılmış birkaç şiir. Görünen o ki, Butcher onu Beatrice ile aldattıktan sonra bile ona gerçekten âşıkmış.
+
+...‘Neptune’un direklerini görüyorum! Gemi hasar almış, bu da işime yarar. Yakında, her şeyimi elimden alan o alçağı gözlerimle göreceğim.
+
+... Sakinim! Tamamen sakinim! İntikam!
+
+12 Nisan 1636, 78 derece 33' Batı
+
+#QUEST Letter_beatriss
+Beatrice Sharp'ın Kardeşi Blaze'e Mektubu
+#TEXT 1
+
+Sevgili kardeşim, beni affet!
+Lawrence Beltrop’a aşığım ve onu kendim seçtim. Sevgilim, korsan ve toplumdan dışlanmış biri olmaya—Captain Butcher olmaya—zorlandı. O daha iyisini hak ediyor; haksızlık onu zehirledi ama içindeki iyiliği yok edemedi. Bir gün Avrupa’ya döneceğimizi ve aile hayatının onu iyileştireceğini umuyorum.
+Dönüşümüzü hızlandırabilecek bir şey var. Blaze, artık bir amcasın! Bir kızımız oldu—Helen. Belki de ailemizi eski haline getirecek olan o olur. İnan bana, Lawrence babasının ihanetinden habersizdi; onun günahlarının bedelini ödememeli. Gerçek şu ki, her zaman babamıza hayranlık duyardı ve onun Karayipler’de dostları olduğunu bilirdi. Dostluğumuz bozulmasın—kalbinin sesini dinle. Lawrence, çocuğumun babası; bu da artık onu senin akraban yapıyor.
+Not: Küçük Helen şu anda yanımda değil. Onu Belize’de sütannesi Gladys Chandler’ın yanında bıraktım. Kadın iyi biri gibi görünüyor. Eğer ben... Neyse, üzerinde fazla durmamak en iyisi. Mektubu sana en kısa zamanda göndereceğim.
+Sevgili kız kardeşin, Beatrice.
+
+#QUEST Letter_Mishelle
+Michel de Monper'den Mektup
+#TEXT 1
+
+Sevgili kardeşim!
+Bu mektubu okuduktan sonra neler hissettiğini tahmin edebiliyorum. Fakat benim için burada yapılacak bir şey kalmadı. Yeterince uzun süre kaldım. Hayatım doğduğumdan beri büyük bir amaca adandı ve elbette bunu sana açıklayamam. Yaptığım her şey tek bir sebep, tek bir hedef içindi. Fakat hapsedilmem planın bir parçası değildi. Yine de, sen o küçük sorunu çözmeyi başardın. Teşekkür ederim.
+Artık ne adım—De Monper—ne de Malta Şövalyeleri ile geçmişim bir anlam ifade ediyor. Saint Pierre’i savunmaya yardım ederek ülkeme olan borcumu ödedim. Yeni bir devir geliyor ve böylesine önemsiz meseleler için yer kalmayacak.
+Beni aramaya kalkışma. Biliyorum, deneyeceksin ama anlamalısın ki bu hem boşuna hem de tehlikeli. Fransa'ya, babanın yanına dön. Şu ana kadar yeterince altın kazandın ve denizcilik yeteneklerin sana orada da fayda sağlayacak. Tereddüt etme—bu Karayip suları yakında sonsuza dek değişecek ve olacaklardan hiç hoşlanmayacaksın.
+Elveda.
+
+#QUEST Letter_Vincento
+Padre Vincento'dan Mektup
+#TEXT 1
+
+Selamlar, Kaptan Charles de Maure.
+Senin kim olduğunu ve yaptıklarını gayet iyi biliyorum, teklifini de takdir ediyorum—İspanya'nın düşmanlarına hizmet etmiş olsan da. Roma Katolik Kilisesi, bize yardım etmeye istekli olan her Katolik Hristiyan’ın yardımını, milliyeti ya da mevkii ne olursa olsun, kabul edebilir. Hele ki tüm Hristiyan âlemi tehdit altındayken.
+Yine de, seni evime kabul etmeden önce, niyetlerinin saflığını ve samimiyetini kanıtlamalısın. Şimdi dikkatlice dinle, evladım.
+İspanya’dan doğrudan Santiago’daki cemaatimize teslim edilmek üzere üç güzel ve değerli eşya gönderilmişti: altın bir monstrans, lazurit taşlı bir haç yüzük ve altın bir buhurdan. Kararlıyım; bu cemaat Yeni Dünya’daki en ihtişamlısı olacak. Bu hazineleri taşıyan 'Santa Margarita' adlı kalyon, Española kıyılarında bir Fransız korsanı tarafından ele geçirildi. Gemiyi zapt etti, kutsal eşyalarımızı çaldı ve onları savunmaya çalışan bir laik kardeşi öldürdü. Bu suç cezasız kalmamalı. O alçak suçlunun izini sür, onu yakala ve sağ olarak Engizisyon’a teslim et. Ayrıca çalınan tüm eşyaları da geri almalısın. Fener bekçisiyle görüş, İspanyol askerleriyle konuşmaktan kaçın. İstediğimi başarırsan, ilgilendiğin meseleyle ilgili ayrıntıları seninle paylaşacağım.
+Rahip Vincento, Engizisyoncu Hazretleri
+
+#QUEST Letter_Vincento_next
+Padre Vincento'dan İkinci Mektup
+#TEXT 1
+
+Tanrı seni korusun, evladım!
+Bu kafiri bize teslim ettiğin için iyi iş çıkardın. Zavallı ruh, günahlarından pişman oldu bile ve kefaretini ödemeye hazır. Eşyalarımızın nerede saklandığını açıkladı. Bu bilgiyi seninle paylaşmaktan memnuniyet duyarım. Buhurdan ve monstrans, Willemstad’daki bankere satılmış. Haç ise, kendi günahlarını arındırmaları için Basse-Terre’deki kiliseye hediye edilmiş. İyi şanslar, Tanrı seni korusun!
+Rahip Vincento, Engizisyoncu Efendimiz
+
+#QUEST Letter_Vincento_last
+Padre Vincento'dan Üçüncü Mektup
+#TEXT 1
+
+Selam oğlum. Umarım bunu okur ve öfkenin seni ele geçirmesine izin vermezsin.
+Alonso de Maldonado, emirlerimi ve isteklerimi hiçe saydı. Sana katılması gerekiyordu, ama savaşmak için değil. Gurur ve intikam arzusu, bir Hristiyan savaşçısına yakışmayan yol arkadaşlarıdır. Bu caballero beni fazlasıyla hayal kırıklığına uğrattı.
+Yine de umuyorum ki gerçeği görecek ve her zaman senin tarafında olduğumu anlayacaksın. Biz aynı soylu amacı paylaşıyoruz: Dünyamızı kurtarmak ve bu çatışmada kötülüğün galip gelmesini engellemek. Artık Hintli şeytana karşı güçlü bir silahın var—kendi yadigârı. Ordusunu Mesih’in yolunda sadece sen yönlendirebilirsin.
+Ben, Charles de Maure, seninle buluşmanı istiyorum. İyi niyetimi göstermek için tarafsız bir yerde buluşmayı teklif ediyorum—Curaçao’da. Willemstad yakınlarında bir mezarlık var; beni orada ara. Seni iki hafta boyunca bekleyeceğim. Doğru kararı vereceğine inanıyorum. Sana zarar vermek gibi bir niyetim yok—yalnızca yardımcı olmak istiyorum. Unutma evladım, tüm iyi Hristiyanların kaderi senin ellerinde.
+Rahip Vincento, Engizisyoncu Hazretleri
+
+#QUEST Letter_Dichoso
+Miguel Dichoso'dan Arturo Lopez'e Mektup
+#TEXT 1
+
+Arturo, yaklaşan buluşmaya hazır ol. Charles zorlu bir adam—adamlarını akıllıca yerleştir ki kaçmasına fırsat vermeyesin. En iyi askerlerini al, nişancıları da unutma. Ona hiç şans tanıma. Mezar odasından çıkmayı başarırsa diye mezarlığı çepeçevre sar. Tek isteğim, onun bir asker gibi onuruyla ölmesine izin vermendir. Ölümü hızlı ve acısız olsun. İş bitince yanıma gel. Sana ödülünü ve sonraki talimatlarını vereceğim.
+Miguel Dichoso.
+
+#QUEST ArchyBook
+Archibald Calhoun'un Günlüğü - Seçilmiş Parçalar
+#TEXT 1
+
+... Gemide kalmanın ölümcül olacağını biliyordum, bu yüzden bir varil su ve birkaç eşyamı, Hintliden aldığım pusula dahil, yanıma aldım. Belki de bu eski eser beni kurtarır...
+...Kara göründüğünde çok sevinmiştim, ama meğerse hiç duymadığım, küçük ve ıssız bir adadan ibaretmiş. Şu lanetli sihirli pusula yine bana oyun oynuyor...
+...Burada kimseyi bulamadım. Bir bakıma şanslı sayılırım—vahşiler tarafından yenmek hiç de arzu edilecek bir son değil...
+...şükürler olsun ki burada taze su, kaplumbağalar ve yengeçler var. Yengeçler kıyıda her yerde dolaşıyor—o kadar çoklar ki buraya Yengeç Adası adını vermeye karar verdim. Sanırım bu da beni bir nevi kâşif yapıyor...
+... Kader bir kez daha zavallı Calhoun’un yüzüne güldü—sahilde bir alet sandığı buldum. Artık elimde sağlam bir balta ve testere var, bu sayede bir ev inşa etmeye başlayabilirim. Belki de ömrümün geri kalanını burada geçirmek zorunda kalacağım...
+Aylar geçti, tek bir yelken bile görünmedi. Tepedeki tepeye bir ateş yığını kurdum, herhangi bir gemi gördüğüm anda yakmaya hazırım. Ama ya gelen bir İspanyol gemisiyse? O zaman kendimi Engizisyon’un ellerinde bulurum...
+...evin inşası devam ediyor. Kendime düzgün bir kulübe yapmayı başardım. Hem yağmurdan hem de güneşten beni yeterince koruyacaktır...
+Her sabah balık tutarım. Bazen güvenilir zıpkınımla koca bir balık yakalarım. Bugün bir köpekbalığıyla epeyce boğuştum. Az kalsın zavallı Archie onun yemeği olacaktı, ama ellerim harikalar yarattı—şimdi Archie köpekbalığıyla ziyafet çekecek. Eti fena değildi, ama biraz domuz etiyle bir kupa bira için tüm paramı verirdim...
+...evim hazır. Girişin üzerine bir köpekbalığı kafatası çaktım—avladığımın hatırası. Ah, dünyadaki tüm altını bir fıçı rom için takas ederdim!
+...Bir buçuk yıl geçti. Münzevi hayatına alıştım, ama hâlâ dış dünyaya dönmeyi umuyorum...
+...yelkenler! Tanrıya şükür—yelkenler göründü! Ve gemi Britanyalı gibi görünüyor. İspanyol değiller! Meşalem hazır, olabildiğince çok duman çıkarmaya çalışacağım...
+... beni fark ettiler! Gemi yaklaşıyor, İngiliz bayrağı çekili. Kurtuldum!
+...bu olamaz... bu Willy Paterson! Eski dostum ve hemşehrim—İskoç Willy! Zavallı Calhoun gözyaşlarını tutamıyor; iki yılın ardından nihayet anavatanının dilini tekrar duyuyor!...
+... Willy'nin emri altında hizmet edeceğim. O olmasaydı, orada sonsuza dek sıkışıp kalabilirdim. Maceralar, Hint tılsımları, şüpheli hazineler ve İsa Tarikatı bana fazlasıyla yetti. Artık yeni bir hayata başlama vakti. Pusulamı kulübemin içinde bıraktım—orada kalsın, değersiz ve tehlikeli bir hatıra...
+...Crab Island'dan ayrılıyorum. Yeşil tepesi ufukta neredeyse kayboldu. Yerini sonsuza dek hatırlayacağım—16 derece Kuzey, 71 derece Batı. Bir daha oraya ayak basacağımı sanmıyorum...
+
+#QUEST SQCapBook
+'Santa Quiteria'nın Güncesi, Son Sayfalar
+#TEXT 1
+
+...Nihayet San Jose'ye vardık. Burada erzak ve su stoklayacağız. Görünen o ki Miguel Dichoso, Avrupa'ya gittiğimizin farkında değil. Davranışları tuhaf—gergin ve tetikte, sanki bir şeyi bekliyor gibi. Baron, Dichoso'nun son derece tehlikeli olduğunu söylemişti. Dikkatli olmalıyım...
+...Tayasal seferinden sağ çıkan tek conquistadorun Dichoso olmasına şaşırdım. Bazıları soyadının anlamının her şeyi açıkladığını söylüyor—"şanslı olan." Ben öyle düşünmüyorum. Gözlerinde bir sertlik var. Hayır, diğerlerini öldüren hastalık ya da yerlilerin zehiri değildi; onları bizzat Dichoso'nun kılıcı ve tabancası bitirdi...
+...Tobago'ya yelken açıyoruz. Orada Miguel'e veda edeceğiz ve sonunda tekrar rahat bir nefes alabileceğim. Yine de ondan kurtulmanın kolay olacağını sanmıyorum—bu adam her zaman istediğini elde ediyor. Bunu nasıl başarıyor? 'Santa Quiteria'nın ikizi 'San Martin'i o kafir Dodson'a hiç şüphe çekmeden satmak mı? Blaze Sharp'ı öldürüp Dodson'a kazık atmak, ardından Brethren'ı birbirine düşürmek mi? Diğer iyi eğitimli, mükemmel hazırlanmış keşifler Itza tarafından yok edilirken Tayasal'ı bulup hazineyle kaçmayı nasıl başardı?..
+... Tobago'dan çok uzakta değiliz. Dichoso'nun suratı asık ve gergin, ama sakinliğini koruyor. Yüzündeki yara izi kızarmış. Miguel bir şey bekliyor, gökyüzünü ve ufku gözlüyor. Fark etmez—yakında ondan kurtulmuş olacağız.
+...bu doğaüstü bir şey... En şiddetli fırtına üzerimize çöktü, gemimizi doğuya doğru sürüklüyor. Fırkateyn tamamen kontrolden çıktı. Dichoso beni huzursuz ediyor—yüzünde bir sırıtış var ve fırtına onu hiç mi hiç korkutmuyor gibi görünüyor...
+...Trinidad arkamızda kaldı. Dalgalar ve rüzgâr bizi kuzeybatıya sürüklüyor. Yapacak hiçbir şeyimiz yok...
+İyi haber şu ki, dev dalga Dichoso’yu Martinique yakınlarından geçerken alıp götürdü. Artık o korkunç adamdan kurtulduk. Belki de bu bir işarettir...
+Lanet olsun, Karayipler’in bu kısmında hiç ada yoktu. Sığlıklara vurulduk. Herkes hayatta kalamadı, ama çoğumuz hâlâ yaşıyoruz. Gemimiz ikiye ayrıldı, ama hâlâ burada, kumların üstünde mahsur. Fırtına ise dinmek bilmiyor...
+...Kıyıyı ve koyu keşfettik. Ada bilinmeyen ve ıssız, ama en kötüsü bu değil. Burası ürkütücü bir yer; fırtınalar hiç dinmiyor. Sanki güneş bu topraklara hiç doğmamış gibi. Lanetli bir ada...
+...Itza'nın hazineleri ambarımızdan alınıp her yere saçıldı. Bir kısmını sudan çıkarmayı başardık. Koyun etrafı ürkütücü kayalıklarla çevrili, tek bir yol var—sular altında kalmış bir mağaraya doğru. Su altındaki bir mağaraya açılan bir delik var, fakat şimdiye kadar kimse orayı keşfetmeye cesaret edemedi...
+İki denizci körfeze geri dönmedi. Cesetlerini mağarada bulduk—ikisi de kılıçla öldürülmüş. Bunu kim yapmış olabilir? Onları oraya gömdük ve gece nöbeti tutmaya başladık.
+...gizemli cinayetler devam ediyor. Üç gün içinde üç adam—her biri görünmeyen bir celladın kılıcıyla öldürüldü. Halk dehşet içinde. Buradan kaçış yok. Tanrım, bize yardım et!
+...burası lanetli! Hayatımda gördüğüm en korkunç şeydi bu. Her şeye hazır olduğumu sanıyordum, ama buna değil. Kasabın kurbanları mezarlarından kalktı ve yaşayanlara saldırıyorlar. Şimdi, cesetleri yakıyoruz...
+... dualarım cevapsız kaldı. Panik içindeyim. Kahrolası Miguel Dichoso—bütün bunlar onun suçu! Eminim bu bir tesadüf değil!
+...kâbuslarla dolu bir geceydi. Sonunda gece katilini gördük—elinde kocaman bir kılıç tutan devasa bir iskelet. Herkesi bir ya da iki darbede biçip geçiyor, ne kılıçlarımız ne de kurşunlarımız ona zarar verebiliyor. Tam anlamıyla yenilmez! Onunla savaşmak için yaptığımız birkaç nafile denemeden sonra ben, çarkçımız ve üç tayfa denize çekilmeye, Santa Quiteria'nın enkazında saklanmaya karar verdik. Saatlerce, kıyıda katledilen adamların korkunç çığlıklarını dinledik...
+...ölüler kıyıyı istila etti. Etrafta dolaşıyor, korkunç sesler çıkarıyor ve havayı çürümüş et kokusuyla dolduruyorlar. Kendimizi geminin ambarına kapattık. Şimdi ise o devasa canavarın ayak seslerini ve yürüyen ölülerin sürünmelerini dinliyoruz...
+...kâhya tamamen delirmiş durumda. Tayasal eserlerini kullanarak bir çeşit putperest sunak inşa etmiş. Şimdi ise sayıklıyor, Hintli tanrılara ve şeytanlara sesleniyor... Bunu anlamıyorum. Mürettebat köşelere sinmiş, onun delice bağırışlarını korkuyla dinliyor...
+...ağır kılıç darbeleri kapıyı parçalıyor. The Butcher geliyor. Hiçbir barikat onu durduramaz. Artık biliyorum ki mahvolduk—bu yaratık durdurulamaz. Bu satırları yazarken, delinin putperest iblislerine seslendiğini ve kaderini anlayan denizcilerin çığlıklarını duyuyorum. Ölümümle yüzleşmeye hazırım. Eğer bu satırları okuyorsan—bu lanetli yerden kaç! Tayasal'ın hazineleri... Dichoso... Dichoso... LANET OLSUN SANA!..
+
+#QUEST RingCapBook
+'Santa Lucia' Güncesinden Notlar
+#TEXT 1
+
+Şimdi Caracas'tan kıyı boyunca bir Kızılderili köyüne doğru yelken açıyoruz. Orada, özellikle benim için kopra hazırlamışlar. Vergilerden ve fiyat artışlarından kaçınmak için doğrudan satın almayı planlıyorum.
+O gün bir tür kutlama vardı. Komşu köyden yüksek reis, akrabalarıyla birlikte davet edilmişti. Bolca kashirie içildi. Sonra onu gördüm—güzelliğin ta kendisiydi. O anda anladım ki, kaderimde onunla evlenmek varmış...
+Adı Vavaya. Meğer yüksek şefin en küçük kızıymış. Onunla konuştum ve bazı hediyeler sundum. Görünen o ki, kur yapmam hoş karşılandı...
+... Biraz daha burada kalacağım. Gemime kopra yükleniyor ve genç Vavaya’yı daha yakından tanıyorum. Ona âşık oldum—ve Tanrı’ya şükürler olsun ki, o da bana aynı duyguları besliyor! Şu anda yaşayan en mutlu adam benim. Yerel geleneklere uygun olarak fidyesini hazırlıyorum...
+...babası reddetti! Cömert hediyelerimi kabul etmedi ve beni resmen kulübesinden kovdu. Sevgilimin yanaklarında yaşlar gördüm—o da benimle olmak istiyor! O halde kararımı verdim. Hiçbir vahşi, babası bile olsa, mutluluğumuzun önüne geçemeyecek...
+Vavaya, kabilesinin tanrılarına bir miktar mücevher sunmakta ısrar ediyor; onların lütfunu kazanmak istiyor. Şimdilik kabul ettim—New Spain’e vardığımızda, er geç bu putperest adetlerinden vazgeçip gerçek bir Hristiyan olacak. Şimdilik yolumuza devam etmeliyiz...
+...beyaz bir adam asla bu kutsal yeri bulamazdı. Vavaya olmasaydı bin kere ölebilirdim—bana her tuzağı, dikeni ve zehirli oku gösterdi...
+...bu inanılmaz! Hayatımda bu kadar altını bir arada görmemiştim—yumurta büyüklüğünde külçeler vardı! Bu hazinenin yarısı bile bir ömür boyu zengin olmaya yeter. Vavaya karşı çıktı ama onu ikna etmeyi başardım... Hatta sevgilimi yatıştırmak için teklifimi iki katına çıkardım...
+...Ancak iki hafta sonra, başçavuşum, kamarotum ve ben, Hint altınını nihayet gemimize gizlice taşıyabildik; üstü kapalı bir arabada sakladık. Şimdilik, bundan başka kimsenin haberi yok. Tayfalara güvenmiyorum. Mürettebat, bu vahşi kıyılarda iki hafta demirli kalınca huzursuzlanmaya başlamıştı ama başka çarem yoktu—Vavaya'nın babasından dikkat çekmeden sıvışmam gerekiyordu...
+...Altını gece karanlığında aldık ve onu kopra sandıklarından birinin içine sakladık, üstüne daha fazla kopra yığarak gizledik. Sonunda tekrar denizdeyiz. İki hafta içinde New Spain'e varacağız. Vavaya ile kilisede evleneceğiz. Birbirimiz için yaratılmışız; ölüm bizi ayırana dek birlikte olacağız...
+...Ölü sakinliğin üçüncü günü. Gemi neredeyse hiç ilerlemiyor. Cahil tayfanın bana attığı asık suratlı bakışları görüyorum—gözleri güzel Vavaya'mda, onu uğursuzluk sayıyorlar...
+...tayfalardan biri ambarlarda farelerle uğraşırken bir şişe arsenik düşürdü. Hâlâ aklım almıyor. Elli galon su artık zehirli. Ölüm sessizliği hâlâ peşimizi bırakmıyor. Sevgilim, tanrısının affı için dua ediyor—bütün bu çilenin, çaldığımız altının cezası olduğuna gerçekten inanıyor...
+...bu ani çıkan ateş salgınından dolayı şimdiden on adam can çekişiyor. Tayfalar homurdanıyor, lostromos ise düzeni zar zor sağlıyor. İlk ölü denize atıldı bile. Tatlı suyumuz neredeyse tükendi. Tanrım, bize rüzgar gönder!
+...nihayet taze bir rüzgar çıktı. Mürettebatın üçte biri hasta. Dün gece, birkaç denizci pahalı bir rom sandığını çaldı. Lostromos onları kırbaçla cezalandırdı. Mürettebat bana, subaylara ve zavallı Vavaya’ma öfkeli. Onun kamarasından çıkmasına izin vermiyorum—hayatı için endişeliyim. Küba’ya varmayı sabırsızlıkla bekliyorum; orada su alıp yeni tayfalar tutabilirim...
+...lanet olası vahşiler bir anda ortaya çıktı. Onların şilebi, yirmi librelik toplarla donatılmış gemime gerçek bir tehdit oluşturamazdı, fakat tayfam hummadan güçsüz düşmüştü, iskele halatlarını zor tutuyorlardı. Korsan topları gövdemizde birkaç delik açtı ama ciddi bir hasar yoktu. Elimizden geleni yaptık ve Tanrı’ya şükür, korsanlar geri çekilmek zorunda kaldı...
+...mürettebatım Vavaya'nın ölümünü istiyor. Bu zavallı Hintli kadının bir cadı olduğuna, başımıza gelen bütün felaketlerin sorumlusu olduğuna inanıyorlar. Sadık subaylarım ve ben, gerekirse son kurşunumuza kadar onu koruyacağız. Havada isyan kokusu var ve Küba kıyılarını göremiyorum—şüphe yok ki, savaştan sonra rotamızı kaybettik...
+...güverte kanla yıkanmış durumda. Birinci zabit ve lostromo öldü, kamarot ise yaralı—öfkeli tayfaların arasında tek bir tüfekle fazla dayanamaz. Kendimi kamarama kilitledim ve şimdilik direniyorum. Sevdiğim arkamda duruyor, bana barut fişekleri uzatıyor. Güzel yüzü korkuyla dolu. Ama isyancılardan değil, hayır. Gözlerimin içine bakıp fısıldıyor: "Tanrıların intikamı!"...
+...kalbim paramparça! Kapıdan bir tabanca kurşunu geçti ve sevgili Vavaya'mın güzel göğsüne isabet etti. Kanamasını durdurmaya çalışıyorum ama ben bir hekim değilim... Cephanem neredeyse tükendi ve tüfeğim, onların doğrudan saldırıya geçmesini engelleyen tek şey...
+...Zavallı Vavaya öldü. Yüzünde bir tebessümle huzur içinde göçtü. Gözlerinde korku yoktu, yalnızca sevgi ve hüzün vardı. Onun için dua ettim, şimdi ise ona katılmaya hazırım—onsuz yaşamak için hiçbir sebebim kalmadı... Bir kurşun daha bacağıma isabet etti. Neredeyse hareket edemiyorum...
+...barut neredeyse tükendi. Çift namlulu tabancalarım için sadece dört fişeğim kaldı. Masamın arkasında oturuyorum, onurlu bir şekilde ölmeye hazırlanıyorum—bir beyaz adam ve bir kaptan olarak. Bir fırtına yaklaşıyor, hem de şiddetli bir fırtına...
+...kapıyı kırıyorlar. Yakında her şey bitecek ve Vavaya'mla daha iyi bir dünyada buluşacağım. Onu düşünüyorum. Belki de haklıydı. Bütün bunlar bir lanet gibi geliyor. Tanrıların intikamı! Altın dolu kutu... acaba gerçekten...
+ 
+#QUEST Recipe
+Tarifler
+#TEXT Gold_dublon
+Altın doblonlar genellikle sandıklarda saklanır, her birinde 150 sikke bulunur.
+
+#TEXT clock2
+Charged zamanlayıcı: şarj edilmemiş zamanlayıcı + kum saati
+
+#TEXT bussol
+Boussole: pusula + usturlab
+
+#TEXT cartridge
+Kağıt Kartuş
+
+İsveçli musketeercilerin olağanüstü bir yeniliği; yeniden doldurma hızını iki katına çıkarıyor!
+
+Bir parça barut kağıdı alıp, katlanır bıçağımla avuç içimin yarısı büyüklüğünde düzgün bir parça kestim.
+Onu bir tüp haline getirip içine barut doldur, sonra da üstüne bir kurşun yerleştir.
+
+Malzemeler: Taneli barut, kurşun mermi
+Aletler: Çakı
+
+#TEXT powder_pellet
+Petard
+
+Mülke zarar vermeden düşmanları sersemleten bir sersemletici mühimmat.
+
+İnce bir bakır levha al, bir bardak gibi şekillendir ve içine on ölçek barut koy. Bakırı mühürle, namluya yerleştir ve fitil için bir delik aç.
+
+Malzemeler: Bakır kavanoz, kalın barut, mum, sicim.
+Aletler: Metal işçiliği aleti
+
+#TEXT grenade
+El Bombası
+
+İspanyolların icadı, İngilizlerin ustalığıyla geliştirildi; uzaktaki büyük düşman kuvvetlerine darbe indirebilecek kudrette.
+
+Bir bakır levha ve on iki kurşun hazırlayın. Bakırı havanın namlusuna uygun bir baş şeklinde dövün. İçine birkaç kurşun yerleştirin, ardından on ölçü barut ekleyin ve bakır muhafazayı kapatın. Alt kısmına bir delik açıp, tahta bir makara ile tıkayın. Savaş sırasında makarayı çıkarın, fitil veya meşale yerleştirin, üstünü güherçileyle kaplayın ve balmumu ya da makarayla sabitleyin.
+
+Malzemeler: Bakır kavanoz, kalın barut, mum, sicim.
+Aletler: Metal işçiliği aleti
+
+#TEXT harpoon
+Ok
+
+Zırhı da içindeki adamı da delip geçebilecek kadar sivri, ince bir metal çubuk.
+
+İnce bir metal çubuk al—basit bir zıpkın bile iş görür—ve bundan bir buçuk parmak uzunluğunda bir parça kes.
+
+Malzeme: Zıpkın
+Aletler: Metal işçiliği aleti, taşlama taşı
+
+#TEXT shotgun_bullet
+Revolver Mermileri
+
+Alışılmadık kurşun mermiler; uçları sivrilen silindir şeklinde dökülmüşler. Bu tasarım, onları son derece isabetli, dengeli ve ölümcül kılıyor.
+
+Ateşin üzerinde biraz kurşun eritip bir mermi dök. Soğuması için beze sar—sakın suya temas ettirme!
+
+Malzemeler: Kurşun Mermiler
+Aletler: Kurşun kalıp, Eritme kabı, İkon lambası
+
+#TEXT shotgun_cartridge
+Revolver Fişeği
+
+Barut ve kurşunları ateşlemek için kullanılan, kolay taşınabilen bir muhafaza.
+
+Mevcut en ince kağıdı alıp barut, alkol ve mumla kapla. Kurumasını bekle. Merminin tabanına unlu macun sürüp, kesik silindir şeklinde bir kılıf oluştur. İçine biraz kara barut ekle. Açık ucu kapatıp içeri doğru kıvır. Kartuşu parşömen ya da deriyle sar. Doldururken, kağıdı tabanından del.
+
+Malzemeler: Revolver kurşunu, revolver barutu
+Aletler: Sartorial Set, Mum
+
+#TEXT GunCap_colt
+Kapsüller
+
+Bunlar tek kullanımlıktır ve tabancanın tetik memelerine teker teker yerleştirilir. Revolverin haznesindeki barutu ateşlemek için kullanılırlar ve her türlü hava koşulunda, her açıdan son derece güvenilirdirler.
+
+Zanaatkarlık için saf bakır bir levha, bir eritme potası, bir keski ve biraz porsuk ağacı gerekecek. Bakır levhayı yuvarlak parçalara kes. Mumu erit, içine gümüş fulminat karıştır ve karışımı bakır silindirin içine yerleştir.
+
+Malzemeler: Bakır Çubuğu, Mumlar, Gümüş Fulminatı
+Aletler: Ergitme Potası, Simgeli Lamba, Metal İşleme Aleti
+
+#TEXT OxyHydSilver
+Gümüş Fulminat
+
+Kartuştaki barutu ateşlemek için kullanılan patlayıcı.
+
+Temiz, boş bir şişe alıp içine biraz gümüş koy, ardından nitrik asitle çöz. Şişenin boynunu gazı tutacak şekilde kapat. Bir miktar alkol ekleyip şişeyi ısıt, sonra biraz daha alkol ilave et. Dipte parlak kristaller oluşacak. Şişeyi suyla soğut, ardından kristalleri çıkar, suyla iyice durula ve tamamen kurut. Dikkatlice sakla ve patlama riskine karşı asla bir seferde fazla malzeme kullanma.
+
+Malzemeler: Gümüş külçesi, Nitrik asit, Alkol
+Aletler: Simya aletleri, Icon-lamp
+
+#TEXT GunEchin
+Çivilerin Teslimatı
+
+Düşmanlara karşı kullanılan kesilmiş demir çubuklar, yalnızca yakın mesafede etkilidir ve sersemletici bir etki yaratır. Hafif olduklarından hedefi şaşırmaya meyillidirler, bu yüzden hassas nişan almak gerekmez. Ancak namluya zarar verebilirler; bu yüzden ince veya uzun namlulu silahlarla kullanmaktan kaçınmak gerekir.
+
+Bir kartuş yapmak için, çivileri veya diğer metal parçalarını doğrayıp balmumuyla bir araya getirmek gerekir. Sonra bunları kâğıt bir kartuşun içine barutla doldurmak lazım.
+
+Malzemeler: Çivi, Mum, Taneli Barut
+Aletler: Metal işçiliği aleti, Eritme Kabı, Simge-lamba
+
+#TEXT potion2
+İksir
+
+"Taş Savaşçı" olarak bilinen bir İnka icadının, acıyı dindirdiği, zehri etkisiz hale getirdiği ve yaraları olağanüstü bir hızla iyileştirdiği söyleniyor.
+
+Zencefil kökünü, sabadilla otunu ve şeytan otu külünü doğra. Bir ayyaşın tükürüğünü ekle ve karışımı bir süre beklet. Sonra karışımı ısıt ve içine bir şifa iksiri kat.
+
+Malzeme Listesi: Şifa İksiri, zencefil kökü, şeytan otu x3, sabadilla, boş şişe, eski kupa, mum, kehribar
+Aletler: Havan ve Tokmak, Gümüş Kaşık, Simya Sandığı
+Yapılan miktar: 3 adet
+
+#TEXT potion3
+Panzehir
+
+Nadir malzemelerden hazırlanmış bir kaynatma; bölgedeki birçok zehre karşı panzehir olarak kullanılır. Tadı ve kokusu berbat, ama etkili olduğu kesin.
+
+Yarım şişe suya verbena yaprakları, guarana tohumları, yenibahar, zencefil kökü ve ipekakuanayı ekle. Şişeyi kapatıp ateşin üzerinde ısıt. Sıvı bulandığında içine büyük bir inci at. Sıvı soğuduktan sonra süz.
+
+Malzemeler: Verbena, Guarana, Ipecac, Yenibahar, Boş şişe, Büyük inci
+Araçlar: Bakır Kavanoz, Tahta Kaşık, Kandil, Havan ve Tokmak, Simya Sandığı
+Üretilen miktar: 3 adet
+
+#TEXT potion4
+Karışım
+
+Bu iksir, en iyi eczacı tarifinden hazırlanmış olup yalnızca zehri temizlemekle kalmaz, sağlığı da geri kazandırır.
+
+Otları öğütüp, elde ettiğim karışımı bir şişe iksirle birleştirmeliyim.
+
+Malzemeler: İksir, şeytan otu, sabadilla, verbena, ipeka, guarana, Jamaika biberi, panzehir.
+Aletler: Havan ve Tokmak, Simyacı Sandığı
+Üretilen miktar: 3 adet
+
+#TEXT berserker_potion
+Ometochtli Tentürü
+
+Aztekler sarhoşluğa şiddetle karşıydı. Yasalarına göre, sarhoş yakalanan herhangi bir adam idam edilirdi. İronik olarak, bu içki güçlü içkilerin Aztek tanrısının adını taşıyor.
+
+Boş bir şişeye şeytan otu, yenibahar ve bir pint kaynar rom ekle. İçine zümrüt yerleştirilmiş balmumundan bir tıpayla mühürle, ardından soğumaya bırak.
+
+Malzemeler: Rom, Yenibahar, şeytan otu x2, Mum, Zümrüt, Boş şişe
+Araçlar: Havan ve Tokmak, Simya Sandığı
+
+#TEXT mangarosapower
+Gelgit Dalgası
+
+Nadir bulunan Manga Rosa otundan, Amelia'nın tarifine göre hazırlanmış eşsiz bir iksir, gücümü, dayanıklılığımı ve dövüş yeteneklerimi artırıyor. Etkileri iki gün sürüyor.
+
+Manga Rosa yaprakları, Ipecac ve zencefil kökünü bakır bir kavanoza ekle. Üzerine bir pint rom dök ve birkaç saat beklet. Ardından üç küçük inci ve biraz kehribar ekle, kısık ateşte ısıt. Soğuduktan sonra sıvıyı süz ve bir şişeye mühürle.
+
+Malzemeler: Manga Rosa, Ipecac, Zencefil kökü, Rom, Küçük inci x3, Kehribar, Boş şişe
+Araçlar: Simya sandığı, Simgesel lamba, Bakır kavanoz
+
+#TEXT mangarosafast
+Fırtına
+
+Nadir bulunan Mangarosa otu kullanılarak, Amelia'nın tarifine göre hazırlanmış bu eşsiz iksir reflekslerimi hızlandırıyor, duyularımı keskinleştiriyor ve dövüş yeteneklerimi artırıyor. Etkisi iki gün sürüyor.
+
+Gümüş bir kavanoza mangarosa yaprakları, verbena ve guarana ekle. Biraz şarap dök, içine iki büyük inci ve bir parça kehribar at, sonra birkaç saat beklet. Sıvıyı süz ve şişeyi mühürle.
+
+Malzemeler: Mangarosa, Verbena, Guarana x2, İyi Şarap, Büyük İnci x2, Kehribar, Boş Şişe
+Aletler: Simya Sandığı, Gümüş Kaşık, Gümüş Kavanoz, Havan ve Tokmak
+
+#TEXT mangarosatotal
+Deniz Sarılması
+
+Amelia'nın tarifine göre nadir Mangarosa otu ile hazırlanan bu eşsiz iksir, gücümü, dayanıklılığımı, reflekslerimi, hislerimi, karizmamı, hitabetimi, şansımı ve dövüş yeteneklerimi artırıyor. Etkisi iki gün sürüyor.
+
+Bir kupa içine Mangarosa yaprağı ekle. Bir şifa iksiri, iki büyük inci ve üç küçük inci, bir parça mavi kehribar koy, ardından kısık ateşte ısıt. Sıvı soğuyunca temiz bir şişeye dök ve ağzını sıkıca kapat.
+
+Malzemeler: Mangarosa, Büyük inci x2, Küçük inci x3, Mavi kehribar, Boş şişe
+Araçlar: Simya Sandığı, Tahta Kaşık, Kupa, Havan ve Tokmak, İkon-Lamba
+
+#TEXT totem_01
+‘Gürleyen Ses’ Tılsımı
+
+Savaş tecrübesi ve inanç, mucizeler yaratabilir.
+
+Bir metal kupa alıp içine biraz gümüş koymalısın. Isıt, sonra soğumaya bırak ve ardından içine sert rom ekle. Ortasına bir ametist yerleştir. Mavi kehribarı yanağına tut ve kupayı kendi gölgenle ört. Sonra romu dök ve taşı tükür. Bu ritüel için en uygun zaman gece yarısıdır. Söylenene göre, bu şekilde çok güçlü bir tılsım yaratılır.
+
+Malzemeler: Bir şişe rom, eski bir kupa, gümüş külçesi, ametist
+Araçlar: Lamba Simgesi
+
+#TEXT totem_02
+'Ankle Biter' Tılsımı
+
+Bu, tayfanın kaptanına itaat edip saygı göstermesini sağlar. Bazen, isyancılara başlarına neler gelebileceğini göstermek ve korku salmak için sert bir ceza en etkili yoldur.
+
+Üç kamçıyı çöz ve en sağlam sapı seç. Onu sıçan zehiri, yenibahar, tütün ve mavi kehribar karışımına batır. Yakutu, sapın öteki ucundan içeri yerleştir.
+
+Malzemeler: Lash x3, Gold nugget x3, Ruby, Blue amber, Twine, Allspice, Tobacco, Arsenic
+Aletler: Sartorial Set, Havaneli ve Tokmak
+
+#TEXT totem_03
+‘Cupid’in Merhemi’ Tılsımı
+
+Güçlü duygusal etkisi olan bir afrodizyak. Depresyonu atlatmaya yardımcı olur; antibakteriyel, antifungal, antiviral ve anti-enflamatuar özelliklere sahiptir. Farklı partnerlerle sıkça ilişkiye girenler için vazgeçilmezdir.
+
+Herkül böceği tozu, yarasa kanadı tozu, guarana tohumu ve ince bakır talaşını birleştir. Karışımı ısıt, ardından soğumaya bırak. Soğuyan karışımı sümbül ve mavi kehribarla birlikte toz haline getir. Son olarak zencefil kökü ekle. Elde ettiğin tozu serin ve karanlık bir yerde sakla.
+
+Malzemeler: Hercules böceği x5, Yarasa kanadı, Guarana x3, Zencefil kökü, Sümbül, Mavi kehribar, Bakır külçe
+Araçlar: Simya Sandığı, Simgesel Lamba, Havan ve Tokmak
+
+#TEXT totem_04
+Yardımcının Tılsımı
+
+Turkuaz taşlarla süslenmiş, ham demir bantlarla çevrili gümüş bir halka; sahibinin, üzerine büyü yapan kişiye bağlılığını gösteriyor. Kadim ama son derece etkili bir tılsım.
+
+Nefis bir gümüş halka yap. Kullanılmış kelepçelerden birkaç halka kes ve zincirden çıkardığın sağlam halkaları süs olarak banda yerleştir. Kelepçelerin kalan parçalarını bir beze sar ve mavi kehribarla bağla. Hızlı ve dikkatli çalış. Bir parça turkuazı ısıt ve avucunda sıkıca tut. Turkuazı bandın tam ortasına sabitle. Bandı kişinin kendi eliyle takmasını sağla. Hediyeyi vermeden önce, fısıldayarak "Öyle olsun," de. Söylenir ki, bu tılsımı en iyi çingeneler ve kızıl saçlılar yaparmış.
+
+Malzemeler: Gümüş külçesi x7, Zincirli kelepçe, Guarana x3, Zencefil kökü, Sümbül, Mavi kehribar, Bakır külçe, Mum
+Aletler: Metal işçiliği aleti
+
+#TEXT totem_05
+‘Demir Göbek’ Tılsımı
+
+Bu kemer, silahımı daha rahat taşımamı sağlıyor ve savaşta sersemlememe karşı koruma sağlıyor.
+
+Tercih ettiğin kemerleri seç ve birbirine bağla. Birkaç halka ve askı ekle. Tokayı büyük bir kemik parçasından yap—kaplumbağa kabuğu da işe yarar. Kapatma mekanizmasını buna tak, içine küçük bir mavi kehribar ve bir parça yeşim yerleştir. Aynanın karşısına geçip fısılda: "Taş serttir, metal serttir—ruh da öyle." Tılsım, ayakta kaldığın sürece seni koruyacak. Ancak güçlü darbelere karşı dikkatli ol.
+
+Malzemeler: Deri kemer x3, Kaplumbağa kabuğundan tarak, Demir çubuk, Yeşim taşı, Mavi kehribar
+Aletler: Metal işleme aleti, Ayna
+
+#TEXT totem_06
+‘Gonter’ Tılsımı
+
+En sevdiğin ayakkabıların için her derde deva bir tılsım. Belki de sadece kendini kandırmaktır... ama işe yarıyor.
+
+Eski bir ayakkabı alıp iç tabanını çıkar. Hercules böceğini bu tabanın içine yerleştir, ardından paketi bir bakır çubuğun üzerine koy. Mavi kehribarı avucunda tutup paketi ez. Deriyi krizoprazdan çıkan kıvılcımlarla tutuştur. Kül olmuş parçaları temiz bir şişeye koy. Ağır bir yükle birkaç mil yürümek gerektiğinde, şişeyi topuğunla kır.
+
+Malzemeler: Eski ayakkabı, Hercules böceği, Boş şişe, Bakır külçe, Krizopras, Mavi kehribar
+Aletler: Çakmaktaşı
+
+#TEXT totem_07
+"Minstrel" Tılsımı
+
+Usta bir ozan, gümüş telleri fazla narin ve kullanışsız bulurdu. Fakat müzikten anlamayanlar, pahalı bir lavtanın gümüş gibi tınılarını cesur bir maceracının ellerinde dinlemekten mutlaka keyif alacaktır. Cimrilik ve kan dökülmesiyle ilgili söylentiler ise kulağa o kadar da önemli gelmez.
+
+Balmumu ve tahta dallar kullanarak gümüş teller yap. Kendini mavi kehribar ve lapis lazuli ile çevrele. Balmumunu eritirken dinleyicilerini aklında tut. Ardından gümüşü ısıt ve yuvarlak bir levha haline getir. İnce bir spiral keserek telleri oluştur.
+
+Malzemeler: Gümüş külçesi x5, Lapis lazuli, Mavi kehribar
+Aletler: Metal işleme aleti, ikon lambası
+
+#TEXT totem_08
+'Ateşin Efendisi' Tılsımı
+
+Mayaların Gökyüzü Efendisi’ne Itzamna denir. Yerliler, adını yanlış telaffuz etmekten öylesine korkarlar ki, ağızlarına almaya çekinirler. Itzamna, ateşin kudretini temsil eder. Onun gözdeleri, yaşam enerjisiyle, ilhamla ve coşkuyla dolup taşar derler. Bu muska, yalnızca birinin canını almış olanların gerçekleştirebileceği Itzamna ayininde kullanılır.
+
+Tütün piposunu, bir parça ateş opali ve mavi amberi al. Kerpetenleri, taşları ve bolca şeytan otu hazırla. Mangalı yak ve içine bir altın külçesi koy. Mavi amberi dişlerinin arasında tutarken alevlere üfle. Şeytan otuyla mangalı yelle. Sonra biraz otu mangalın üzerine koy ve amberi içine tükür. Ardından arsenik ve ateş opalini ekle. Soğuduktan sonra opali közlerin arasından çıkar ve piponun içine yerleştir. Bu senin tılsımın olacak. Muska olarak taktığında piponun gökyüzüne bakmasına dikkat et.
+
+Malzemeler: Şeytan otu x3, Porselen pipo, Sicim, Altın külçesi, Ateş opali, Mavi kehribar
+Aletler: Metal işçiliği aleti
+
+#TEXT totem_09
+'Arguzin' Tılsımı
+
+Zafer için iyi bir ekip çalışması şart. Bu yüzden lostromos, her zaman yüksek sesli ve etkili komutlarıyla mürettebatın en önemli üyelerinden biri.
+
+Bir platin top yapıp bunu lostromonun düdüğünün içine yerleştir. Sağ topuğunun altına mavi kehribar, sol topuğunun altına ise akuamarin koy. Borazanı göğsüne yakın tut, güneye dön ve dua et.
+
+Malzemeler: Başçavuş düdüğü, platin külçesi, akuamarin, mavi kehribar
+Aletler: Metal işçiliği aleti
+
+#TEXT totem_10
+‘Widow Maker’ Tılsımı
+
+İspanyol şövalyelik yasası: askerî cesaret, gözü peklik, kalbinin hanımefendisine karşı özverili hizmet ve Meryem Ana’ya derin saygı. Altın bir göğüs haçı ve bir parça mercan taşıyanlar, soylarının geleneklerini sürdürebilirler.
+
+Ritüel basit. Avuç içini haç şeklinde kes, pektoral haçı yaranın üzerine yerleştir, mavi kehribarı bastır ve elini yumruk yaparak kapat. Bir damla kanı bıçak ucunda yakala, bıçağı bu kanla "besle", sonra damlayı mercan parçasının üzerine bırak. Bu senin eserinin olacak.
+
+Malzemeler: Çakı, altın göğüs haçı, mercan, mavi kehribar
+Mavi kehribarı, ruh savaşçıları için bir elmasla ya da özgür ruhlular için bir morion taşıyla takas edebilirsin.
+
+#TEXT totem_11
+"Vampir" Tılsımı
+
+Savaş enerjisi sonsuz değildir—ne benimki ne de düşmanlarımınki. Yerliler, Aztek savaş tanrısı Huitzilopochtli'nin her çatışmayı izlediğine ve savaşın enerjisiyle beslendiğine inanıyor. Güç ritüeliyle, düşmanımın ruhunu kurban ederek ondan enerji çekebilirim.
+
+Seçtiğin kurbanın yüzük takılı parmağını kes. Avını bir tanrıya adamalısın: Tlaloc için denize at, Tonatiuh için güneşe sun, Quetzalcoatl için rüzgara bırak ya da Huehueteotl için ateşe ver. Bu eser, kapıları mühürleyebilir, gizleneni koruyabilir ve meraklı gözleri uzaklaştırabilir. Daha büyük bir güç için daha ileri git: Yüzüğü hançerden çıkar ve yerine bir opal, bir göktaşı ve mavi kehribar yerleştir. Döngüyü kehribarla tamamlarsan, düşmanlarının enerjisini emersin. Mücevherleri kanada dik ve bir sonraki savaşından önce ayaklarının dibine bırak.
+
+Malzemeler: Büyülü kemik, yarasa kanadı, opal, göktaşı, mavi kehribar
+Araçlar: Sartorial set
+
+#TEXT totem_12
+'Jaguar'ın Oğlu' Tılsımı
+
+Aztekler, tanrılarını kurbanlarla onurlandırır ve esirlerin ölümüne dövüştüğü arenalar inşa ederdi. Avcılar arasında jaguar pençesi her zaman uğurlu bir tılsım olarak kabul edilmiştir.
+
+Bu ganimeti, inci tozu, verbena, mavi kehribar ve sümbül ile birlikte gümüş bir kapta kaynatırsam olağanüstü bir isabet elde edebilirim. Bu tılsım yalnızca karanlık yerlerde etkili.
+
+Malzemeler: Jaguar pençesi x1, Küçük inci x5, Verbena x1, Yakut x1, Mavi kehribar x1
+Aletler: Gümüş Sürahi, Havan ve Tokmak
+
+#TEXT totem_13
+'Joker' Tılsımı
+
+Joker, öngörülemez bir karttır—Büyük Arkana'nın hem en yücesi hem de en önemsizidir. Amacı, sahibinin iradesine hizmet etmektir.
+
+Masada bir tekerlek çizin ve dört bölüme ayırın. Desten dört kart alın ve her birini, sembolüne göre bir bölüme yerleştirin. Joker’i kapalı bir şekilde merkeze koyun ve üstüne bir mum yerleştirin. Elinizde bir parça demir, krizoberil, mavi kehribar ve büyük bir inci tutun. Sonra mumu üfleyip söndürün.
+
+Malzemeler: Bir deste iskambil kağıdı, mum, büyük inci, demir çubuk, krizoberil, mavi kehribar
+Mavi kehribarı, bir elmasla (ruh savaşçıları için) ya da bir morionla (rahat yolcular için) takas edebilirsin.
+Araçlar: Tükenmez kalem ve mürekkep
+
+
+
+#QUEST Rome
+Latince İfadeler
+#TEXT 1
+Baştan sona kadar
+Alea jacta est - zar atıldı
+Alter Ego
+Zafer ihtiyatı sever
+Ars longa, vita brevis - sanat uzun, hayat kısa
+Şans cesurlardan yanadır
+Aurea Mediocritas - Altın Orta Yolu
+Ya zafer, ya ölüm
+Ya Sezar ya hiç
+Carpe Diem - Günü Yaşa
+Casus Belli - Savaş Nedeni Olayı
+Kısır Döngü
+Cogito, ergo sum - Düşünüyorum, öyleyse varım
+Kendini Bil
+Olmazsa olmaz
+Başkalarına hizmet ederken tükenmek
+Umutsuz Umut
+Olmazsa olmaz şart
+Yapmalısın, öyleyse yapabilirsin.
+Zevkler tartışılmaz.
+Saçma sözler büyük belalara yol açabilir.
+Ölüler hakkında ya iyi konuş, ya da hiç konuşma
+Dulce et decorum est pro patria mori – vatan uğruna ölmek tatlı ve şereflidir.
+Dum spiro, spero – nefes aldığım sürece umut vardır.
+İki tavşanın peşinden koşan, hiçbirini yakalayamaz
+Dura lex, sed lex - kanun serttir, ama kanundur
+Epistula non erubescit - bir mektup utanmaz
+Errare humanum est - hata yapmak insana mahsustur
+Her şeyde bir denge vardır.
+Pençesinden aslanı tanırız
+Fama Clamosa - Yüksek Sesli Bir Söylenti
+Benzerini Yap
+Ateş ve Kılıç
+Festina lente - acele et ama dikkatli ol
+Sonu, işi taçlandırır
+Zafer kazananlara şan olsun
+Gutta cavat lapidem - damla damla taş delinir
+Hic et nunc - burada ve şimdi
+İnsanoğlu insana kurttur
+Emek her zorluğu yener
+Yazılı söz kalıcıdır
+Kötü ot çabuk biter
+Memento mori - ölümün kaçınılmaz olduğunu unutma
+Nec sutor ultra crepidam - bir ayakkabıcı kendi işini bilmeli
+Ne varietur - değişmesin diye
+Nil desperandum – Umutsuzluğa kapılmamalı
+İleri gitmemek, gerilemek demektir.
+Hiçbir gün çizgisiz geçmez
+Her şeyin fazlası zararlıdır
+Omnia mea mecum porto - Sahip olduğum her şeyi yanımda taşırım
+Opera et studio - çalışma ve öğrenme
+Zorluklar içinden yıldızlara
+Doğru ve yanlış - her yol mubah
+Tembellik, bütün kötülüklerin anasıdır.
+Quilibet fortunae suae faber - Her insan kendi talihinin mimarıdır
+Quod licet Jovi, non licet bovi - Jüpiter’e serbest olan, öküz için yasaktır
+Bilginin kökleri acıdır, meyveleri ise tatlı.
+Tekrar, öğrenmenin anasıdır.
+Res ipsa loquitur - şey kendini anlatıyor
+Sapienti sat - akıllıya bir işaret yeter
+Bilgi Güçtür - Bilginin Kendisi Güçtür
+Öfkesiz ve kayırımsız
+Barış istiyorsan, savaşa hazırlan.
+Güneş herkesin üzerine doğar
+Herkese hakkı olan verilir
+Tempora Mutantur - Zaman Değişiyor
+Üçüncü bir seçenek yok
+Ultima Ratio - Son Söz
+Bir kırlangıçla bahar gelmez
+Tecrübe en iyi öğretmendir
+Vae victis - mağlup olana yazıklar olsun!
+Geldim, gördüm, fethettim
+Viribus Unitis - Birlikten Kuvvet Doğar
+Özgürlük olmadan hayat, hiçbir şeydir
+
+#QUEST	Wolfreek_Journal
+Wulfric Johannsen'ın Günlüğü - Parçalar
+#TEXT	1
+==============================================================================================================================================================
+30 Ocak. İspanyol barque'u 'Atocha'yı Blueweld'den 50 mil açıkta ele geçirdim. Ganimet 1.244 birim kahveye ulaşıyor. Şimdi rotamı Blueweld'e çevirdim.
+31 Ocak. Kahveyi güzel bir miktar paraya çevirmeyi başardım. Şimdi rotamı Mosquito Bay'e kırıyorum.
+************************************************************
+1 Mart. Trinidad kıyılarından pek uzakta olmayan bir yerde İspanyol barquentine 'Baliente' dikkatimi çekti. Gemide 150'den fazla fıçı reçine vardı. O yükten onu kurtardım.
+4 Mart. Martinique'teki gemi ustası, reçine karşılığında bana bolca altın ve gümüş ödedi. Şimdi rotamı Mosquito Bay'e çevirmem vakti geldi.
+************************************************************
+15 Nisan. Port Royal yakınlarında Hollandalı bir ticaret şilebi olan 'Hooda'yı ele geçirdim. 1.510 birim kakao aldım. Şimdi Port Royal'a gidiyorum.
+16 Nisan. Ele geçirdiğimiz kakao sayesinde sandıklarım daha fazla peso ile doldu. Şimdi Mosquito Bay'e yelken açma vakti.
+************************************************************
+8 Haziran. Cumaná valisine ait olan San Eugenio adlı kurye luggerini başarılı bir şekilde saldırıp ele geçirdim. Gemide 2.000 dublon vardı. Şimdi Mosquito Bay'e doğru yelken açıyorum.
+************************************************************
+22 Ağustos. Dominica yakınlarında 'Santa Isavelle' adında bir fluyt ele geçirdim. Gemide demir ağacı ve reçine yüklüydü. Yükü satmak için Willemstad’daki kaçakçılarla görüşmeliyim.
+26 Ağustos. Anlaşma sorunsuz geçti ve kâr beklentilerimi karşıladı. Artık Porto Bello ve Mosquito Bay'e yelken açmanın vakti geldi.
+************************************************************
+==============================================================================================================================================================
+#TEXT	2
+==============================================================================================================================================================
+15 Şubat. Cartagena’daki kuyumcu iyi bir adammış—karısı için bana 200 elmas ve 200 yakut ödedi. Neyse, kadını sapasağlam geri alacak. Şimdi Tortuga’ya gidip Gaspard Parmentier’i görmeliyim.
+************************************************************
+1 Mayıs. Boca de la Sierpe'deki inci avcılarına yaptığımız baskın gayet başarılı geçti. Sandıklarımıza 598 büyük ve 1.759 küçük inci yerleştirdik.
+2 Mayıs. Gaspard Parmentier’i ziyaret etmenin vakti geldi.
+************************************************************
+22 Temmuz. Connie Two Pesos’un hazinesini bulup çıkardım; haritayı tayfalarından biri çizmişti. On beş bin peso buna değdi. Bir sürü mücevher ve değerli taş—Connie bankerler ve soylu hanımlar konusunda tam bir ustaymış belli ki. Şimdi Gaspard Parmentier’in yanına gitme vakti.
+************************************************************
+10 Kasım. Hollandalı köleyi Los-Teques madenlerinde bir yığın altın külçesi karşılığında sattım. Artık Gaspard Parmentier’i ziyaret etme vakti.
+************************************************************
+==============================================================================================================================================================
+#TEXT	3
+9 Mart. 'Freyja' kereste ve erzakla yüklendi, kaleye doğru yola çıkıyor.
+17 Mart. Vardık. Şimdi malları boşaltıp tamirat işine koyulma vakti.
+************************************************************
+15 Mayıs, Jamaika, Port Royal. Hemen limana gitmeliyim. Adamlarımın dinlenmeye ihtiyacı var; dört gün boyunca toparlanacaklar.
+************************************************************
+2 Temmuz. Küba maceram sona erdi. İspanyollar bu dersi asla unutmayacak. Şimdi sırada Cape San Antonio var, ardından Gourd'a yelken açıyorum.
+9 Temmuz. Kendimi güvende hissettiğim bir yerde olmak güzel.
+************************************************************
+4 Eylül. Alevler içinde! Mosquitos Bay yakınlarında bir İspanyol filosu demirlemiş. Onları karşılamak için yelken açmalıyız; onlara on ya da on bir gün içinde ulaşırız.
+************************************************************
+20 Kasım. Levasseur’a her zamanki ücretini ödedim. Açgözlü herif hiçbir şey yapmadan bu kadarını alıyor. Neyse—zaten bir iki yıla bu bölgeden ve bu hayattan ayrılacağım. Şimdi gourd’a gitmeliyim; adamlar endişelenmiş olmalı.
+26 Kasım. Vardık. Birkaç hafta burada kalıp dinleneceğiz.
+************************************************************
+11 Ocak. Nihayet tüccar Basse-Terre'e döndü. Bu işten büyük bir kâr elde ettim—onu bir haftadan fazla beklemeye değdi. Erzaklarımı tamamlayıp kaleye gitmeliyim.
+14 Ocak. Üç gündür rüzgar lehimize esti, işte buradayız—kuşlar kadar hızlı geldik.
+============================================================================================================================================================
+#QUEST Ignasio_Journal
+Ignacio Marco'nun Günlüğü - Parçalar
+#TEXT 1
+Joker ile işaretlerimiz konusunda anlaştık: Eğer filo, Santo Domingo üzerinden Puerto Rico'ya yönelirse İspanyol bayrağını çekeceğim; Isla Tesoro ve Turks için korsan bayrağını; Tortuga ve Turks için ise Fransız bayrağını göndereceğim.
+
+...İspanyollar rotalarını değiştirdi—Karayipler'den çıkış noktaları Isla Tesoro ile Turks arasında olacak. Hatta @<sMonth> @<sDay> @<sYear> tarihleri arasında olası koordinat aralıklarını bile hesapladım: 23°0'–23°30' Kuzey ve 64°25'–64°55' Batı. Joker'a bunu nasıl en iyi şekilde bildireceğimi düşünmeliyim ki, onları avlamak daha kolay olsun.
+
+#QUEST GG_Letter_1
+Angerran de Chievous'tan Mektup
+#TEXT 1
+Saygıdeğer Charles de Maure
+Sana oldukça aşina olan bir hanımefendi, son yaptıklarından dolayı epey üzgün. Şimdilik kendi isteğiyle olmasa da yanımda kalmayı kabul etti. Sana karşı hislerinin karşılıksız olduğunu düşünüyorum; fakat yanılıyorsam, bir anlaşmaya varabiliriz. Her şeyin bir bedeli vardır—bunu bir hafta sonra Guadeloupe, Basse-Terre’de konuşalım. Karar vermen için on günün var, fazlası yok. Governor de Lyon iyi bir dostumdur ve görüşmemizi ayarlamayı kabul etti.
+
+Saygılarımla,
+Angerran de Chievous
+
+Not: Kız güzel olabilir, ama bana göre değil. Yine de, seni acı içinde bırakacaksa o çizgiyi geçmekten çekinmem. Belki de yarın bile olabilir. Aramızdaki mesele çözülmezse, onu adamlarıma teslim ederim—bizim kadar seçici değiller.
+
+#QUEST Letter_Portugal
+Bartolomeo the Portuguese'den Mektup
+#TEXT 1
+Señor de Maure,
+Seni böylece bırakıp gittiğim için özür dilerim. Seninle iş yapmak büyük bir zevkti; söylemeliyim ki, gerçekten adanmış bir adamsın. Hikâyenin eksik kalan kısımlarını Britanyalılar sana anlatacaktır diye tahmin ediyorum. Seni kullandığım için özür dilemeyeceğim, çünkü bu hepimizin işine yaradı.
+
+Uzun zamandır zarif bir mektup kaleme almamıştım, ama artık gerçek benliğime dönmenin vakti geldi. Güzel bir rom eşliğinde bir iki kadeh paylaşamadığımıza üzülüyorum—belki bir gün, uluslarımız birbirine daha yakın olduğunda. Zaten bunun için ilk adımı attık bile. Tanrı yardımcımız olsun!
+
+Saygılarımla,
+Señor Bartolomeo, Baron de la Cueva
+
+#QUEST Letter_France
+Henry de Monper'den Bir Mektup
+#TEXT 1
+Merhaba, Charles.
+Bu mektubun sana ulaşıp ulaşmayacağını, ya da önceki mektuplarımdan herhangi birinin eline geçip geçmediğini bilmiyorum. Ulaşsa bile, sana yazanın kim olduğunu hatırlayacak mısın? Yine de denemek zorundayım. Fırçaları ve boyaları bir kenara bırakıp kılıca sarılmanın kolay olmadığını biliyorum, ama asıl zor olanın kalem olduğunu hiç düşünmemiştim. Sen, kardeşini aramak için benim isteğimle ayrıldığından beri, sizden tek bir haber bile almadım. Zamanla, de Monper ailesinin kaderinin yavaşça silinmek olduğuna alıştım. Fakat, Yeni Dünya’daki kolonilerimizden eski bir tanıdıktan bir mektup alınca şaşkınlığımı tahmin edebilirsin. Zavallı Michel’in akıbetine çok üzüldüm, ama tüm kalbimle senin başarılarınla gurur duyuyorum. Seni bir deniz subayı, talihini doğru rotaya çevirmiş bir kaptan olarak görmek, benim için hem şaşırtıcı hem de büyük bir sevinç kaynağı. Yine de, tebrik ya da sitem için fazla vaktim kalmadığından korkuyorum—hastalık bazen insana mühlet verir, ama asla tamamen çekip gitmez.
+
+Oğlum, şimdi son ve en önemli meseleyi konuşmamız gerekiyor. Bu mektubun yanında, eski dostum Benoit aracılığıyla sana gönderdiğim belgelerin kopyalarını da ekliyorum. Bu belgeler, senin—Charles de Maure—artık Chevalier de Monper olduğuna, benim varisim ve gururlu ailemizin soyunu sürdürecek kişi olduğuna dair kanıt niteliğindedir. Senden bir kez daha rica ediyorum: Aile mülküne dönmelisin. Tüm evraklar noter tasdikli, mirası ya da unvanı almak için orada olman gerekmiyor. Fakat benim huzur içinde Tanrı’ya kavuşabilmem için, ailemin benden sonra yok olmayacağını bilmem şart.
+
+La Brigne ailesini hatırlıyor musun bilmiyorum, fakat onların en küçük kızı Yvonne artık büyüdü ve evlenmek için oldukça uygun. Babası ve ağabeyi zaten rızalarını verdiler, fakat düğünü usulüne uygun şekilde yapmamız gerekiyor. Soyadları itibarıyla saygın bir aile ve çeyiz olarak Guillaume La Brigne, malikânemize birkaç mil mesafede küçük bir üzüm bağı vermeye hazır.
+
+Charles, artık görev ve sorumluluğun anlamını kavramış olmalısın; bu bilgiye sahip olmayan bir adam savaş gemisinin köprüsünde duramaz ve şimdi tüm de Monper ailesinin sorumluluğunu omuzlarında taşıyorsun. Bugünden itibaren, sen benim son oğlum ve varisim oldun. Geri dön, evlatlık görevini yerine getir ve babanın huzur içinde bu dünyadan ayrılabilmesi için, sunağın önünde babalık kutsamamı al.
+
+Beklentilerle dolu babam, Henri de Monper.
+Gaskonya
+
+#QUEST Letter_Marquesa
+Julianne Botot'tan Mektup
+#TEXT 1
+Charles, neden sana kızgın olduğumu gayet iyi biliyorsun ve hâlâ senin mutluluğunu paylaşmaya hazır değilim. O yüzden nezaket gösterilerine gerek yok, doğrudan sadede gelelim:
+Aramızda anlaşmazlıklar olsa da, sana zarar vermek gibi bir niyetim yok. Ancak, sana zarar vermek isteyenler var. Bunun senin için yeni bir durum olmadığını biliyorum, ama yine de dikkatli olmalısın—seni öldürmek isteyen insanlar var. Ne zaman ya da nasıl saldıracaklarını bilmiyorum, fakat tetikte ol. Eğer ölürsen, bundan hiçbir memnuniyet duymam.
+
+D.B.
+
+#TEXT 2
+Charles, neden sana kızgın olduğumu gayet iyi biliyorsun ve mutluluğunu kutlamaya hâlâ hazır değilim. O yüzden lafı uzatmadan doğrudan konuya gelelim:
+Aramızda anlaşmazlıklar olsa da, sana zarar vermek gibi bir niyetim yok. Fakat, sana kötülük düşünen başkaları var. Bu senin için yeni bir durum değil, biliyorum, ama yine de dikkatli olmalısın—seni öldürmek isteyenler var. Ne zaman ve nasıl saldıracaklarını bilmiyorum. Tetikte ol—öldürülmen bana hiçbir huzur getirmez.
+
+D.B.
+
+Not: Açık konuşmak gerekirse—eğer ölürsen, belki bir damla gözyaşı dökerim. Ama bunu sınamaya hiç niyetim yok.
+
+#TEXT 3
+Sevgili dostum, sana böyle hitap edebilir miyim? Şu anda şehirde değilim ve seni şahsen tebrik edemeyeceğim, ama lütfen en içten dileklerimi kabul et. Düşünsene! Hâlâ aşkın varlığına inanan randevu kadınları bile var ve senin kendi aşkını bulduğuna inanmak istiyorum. İçimdeki o inancı yeniden alevlendirdiğin için sana minnettarım—bu his kalbimi yıllar boyunca ısıtacak. Mutlu ol; bunu fazlasıyla hak ediyorsun!
+
+Senin Sadık Dostun
+
+Not: Şimdi sadede gelelim—biliyorsun, seni boş yere rahatsız etmem. Sözde iyi adamdan sakın. Etrafındakilerin hepsi düğününden memnun değil. Tabancanı yanında tut ve tetikte ol. Senin için endişeleniyorum ve tekrar mutlu olmanı diliyorum.
+
+#TEXT 4
+Sevgili dostum—sana böyle hitap edebilir miyim? Şu anda şehirde değilim, bu yüzden seni şahsen tebrik edemiyorum, ama lütfen en içten dileklerimi kabul et. Beni hatırlamanı istemeyeceğim—bu aptalca olurdu, değil mi? Ama şunu bil ki; seni son nefesime kadar kalbimde taşıyacağım. Nerede olursan ol, mutlu ol!
+
+Sadık Dostun
+
+Not: Şimdi sadede gelelim—biliyorsun, boş yere seni rahatsız etmem. Sözde iyi adama dikkat et. Etrafındaki herkes düğününden memnun değil. Tabancanı yanında tut ve tetikte ol. Senin için endişeleniyorum ve tekrar mutluluğunu diliyorum.
+
+#TEXT 1-1
+Charles, sana neden kızgın olduğumu gayet iyi biliyorsun ve henüz mutluluğunu tam anlamıyla paylaşmaya hazır değilim. Yine de deneyeceğim. Mutlu ol ve kendine dikkat et.
+
+D.B.
+
+#TEXT 2-1
+Charles, sana kızgın olmamın sebeplerini gayet iyi hatırlıyorsun, ve henüz senin mutluluğuna tam anlamıyla sevinmeye hazır değilim—ama deneyeceğim. Mutlu ol ve kendine dikkat et. Şunu açıkça söyleyeyim: Eğer kendini öldürtürsen, belki bir damla gözyaşı bile dökebilirim. Ama bunu sınamaya kalkmayalım.
+
+D.B.
+
+Not: Açık konuşmak gerekirse—eğer ölürsen, belki bir damla gözyaşı dökerim. Ama bunu denemeye hiç niyetim yok.
+
+#TEXT 3-1
+Sevgili dostum, sana böyle hitap edebilir miyim? Şu anda şehirde değilim ve seni şahsen tebrik edemeyeceğim, ama içten dileklerimi lütfen kabul et. Düşünsene! Hatta saraylı kadınlar bile sonunda aşka inanıyor, ve senin de kendi aşkını bulduğunu düşünmek hoşuma gidiyor. Bu inancı bana yeniden kazandırdığın için sana minnettarım; bu, kalbimi yıllar boyunca ısıtacak. Mutlu ol—bunu fazlasıyla hak ediyorsun!
+
+Sadık Dostun
+
+#TEXT 4-1
+Sevgili dostum—böyle hitap edebiliyorsam—şu anda şehirde değilim ve seni şahsen tebrik edemiyorum. Yine de, içten dileklerimi kabul et lütfen. Beni hatırlamanı istemeyeceğim—bu aptalca olurdu—ama bil ki, seni son nefesime kadar kalbimde taşıyacağım. Nerede olursan ol, mutlu ol!
+
+Senin Sadık Dostun
+
+#QUEST	IslaMonaData
+Isla Mona: inşaat
+#TEXT	1
+Yeni evler inşa etmek, mevcutları güçlendirmek ve iyileştirmek için şunlara ihtiyacım olacak: 1.000 kalas, 500 tuğla, 200 demet deri, 300 parça yelken bezi, 50 varil reçine ve 200 takım giysi.
+İnşaat süresi: 6 ay.
+
+#TEXT	2
+Bir iskele inşa etmek için körfezi temizlemeli ve aydınlatma kurmalıyım. Böylece 3-6 rütbeli üç gemiyi ya da 1-2 rütbeli bir gemiyi barındırabilirim.
+Gerekli malzemeler: 300 kalas, 50 tuğla, 150 parça yelken bezi, 20 varil reçine.
+İnşaat süresi: 4 ay.
+************
+Evinin ilk katını bir meyhaneye dönüştürmek için mobilya yapmam, bir mutfak kurmam ve mahzeni içkiyle doldurmam gerekiyor. Böylece adada yedek olarak 300 kişiye kadar ağırlayabilirim.
+Gerekli malzemeler: 200 kalas, 200 tuğla, 100 deri, 50 parça yelken bezi, 10 varil reçine, 1.000 rom, 1.000 şarap.
+İnşaat süresi: 3 ay.
+************
+Bir fabrika inşa etmek için önce araziyi temizlemem, işçiler için barınma ve güvenlik sağlamam, ayrıca malzemeler için bir depo kurmam gerekiyor.
+Gerekli malzemeler: 500 kalas, 250 tuğla, 200 deri, 100 parça yelken bezi, 30 varil reçine.
+Ekstra eşyalar: 15 zincir, 1 tüfek (herhangi biri).
+İnşaat süresi: 6 ay.
+************
+#TEXT	3
+Bir kilise inşa etmek, Isla Mona'ya huzur getirecek ve biz yerleşimcileri sevindirecek.
+Gerekli malzemeler: 300 kalas, 100 tuğla, 10 varil reçine, 20 demir ağaç, 100 maun.
+Ekstra eşyalar: 50 altın külçesi, 100 mum, 30 kehribar parçası, 1 mavi kehribar parçası.
+İnşaat süresi: 2 ay.
+
+#QUEST ChickenGodOptionalQuests
+Aruba'nın Listesi
+#TEXT 1
+Aruba'nın Özel Ticaret Teklifi! Kaptan @<sName>, değerli eşyalar ve huzurlu bir vicdan karşılığında ölümlü bedeninizi geliştirme fırsatı!
+İlk Görev
+Üzgünüm, ama evliyim. Tek sorun şu ki, vali—yani kocası—bundan tamamen habersiz, hehe. Kastilyalılara karşı bir zaafım var, o yüzden işi profesyonel tutalım. Señora’ya eski bir pagan piramidinde randevusu olduğunu bildir ve onu buraya getir.
+İkinci Görev
+Deniz acımasız olabilir; bazı ruhları esir alır, bazılarını ise başıboş bırakır. Bu zavallı insanları kurtarmamız şart. Otuz kişilik bir grup toplamam gerekiyor—nedenini sorma, sadece dediğimi yap.
+Üçüncü Görev
+İtalyan ustalığına yaraşır bir kıyafete acilen ihtiyacım var. Mevcut gardırobum yetersiz kalıyor; kendime daha uygun bir şey bulmam şart.
+Dördüncü Görev
+Adder taşları çok sık kayboluyor, elimde asla yeterince olmuyor. Ne yapmam gerektiğini biliyorum.
+
+#QUEST	Guide_AtSea
+Eğitim: Denizde
+#TEXT	1
+İskele, her limanın kalbidir. Bu sularda bizzat yol almış biri olarak, denizcilik hakkında bir iki şey paylaşabilirim.
+Öncelikle en önemli şeyi unutma: Yeterli seyrüsefer becerin yoksa asla bir gemiyi idare etmeye kalkışma! Gerekli şartı karşılamazsan, hem kendi yeteneklerin hem de subaylarının becerileri olumsuz etkilenir.
+Daha kötüsüyle dövüşecek, daha kötü ateş edecek, daha kötü ticaret yapacaksın ve dahası da var. Şu anki seyir bilgilerinle bir man-of-war komuta etmeye kalkarsan, pek ilerleyemezsin—gemi koca bir tahta fıçı gibi zor idare edilir.
+Şu anda kendi başıma bir tartane ya da sandal idare edebilirim. Yine de bir seyir subayı tutabilirim ve aslında tutmam da iyi olur. Genellikle meyhanelerde, diğer paralı askerlerle birlikte bulunurlar.
+Önce daima mürettebatın yetenek seviyesini kontrol etmeliyim. Eğer gemim için yeterince yüksek değilse, daha önce bahsettiğim aynı sorunlarla karşılaşırım.
+************************************************************
+Gerekli seyir seviyesi, geminin sınıfına göre belirlenir. Gemi ne kadar büyükse, onu başarıyla idare etmek için o kadar fazla denizcilik bilgisi gerekir. Benim durumumda, örneğin, ancak dördüncü sınıfa kadar olan gemilerde ustalaştım: brigler, xebec’ler, fluyt’lar. Ama bir pinnace ya da korvet bile bana fazla gelir; ikinci sınıf gemilerden, ağır fırkateynler ya da ağır kalyonlardan bahsetmiyorum bile.
+Hatırı sayılır büyüklükte hat gemileri ya da savaş gemileri söz konusu olduğunda, ancak gerçek denizcilik ustaları bu devasa gemilere komuta edebilir. Gerekli becerileri kazanmak yıllar alır ve maliyeti akıl almaz boyutlardadır. Bir savaş gemisi ve mürettebatı, eğer King Louis kadar zengin değilseniz, bir ayda kasanızı kurutabilir.
+Subay pozisyonlarına dikkat etmeliyim. Lostromos tayfayı eğitir ve aborda sırasında avantaj sağlar, veznedar ise mali işleri yönetir ve gemiyi farelerden uzak tutar. Cerrah yaralı adamları tedavi eder ve muharebe kayıplarını azaltır, marangoz gemideki hasarı onarır, öncü askerler ise korsanlar güverteye doluştuğunda beni korur. Her adayın yeteneklerine ve itibarına özellikle dikkat etmeliyim.
+************************************************************
+Her erkeğin bir zayıf noktası vardır. Gerçek yüzünü ortaya çıkaran da budur.
+Eğer onurlu bir adamsan ve iyilik peşindeysen, senin ideallerini paylaşan subaylar bulmalısın. Ama korsan gibi yaşamak istiyorsan... gerisini biliyorsun. Dürüst adamlar alçaklara hizmet etmez, tersi de geçerlidir.
+Şimdi biraz da gemi türlerinden bahsedeyim. Ticaret gemileri ve savaş gemileri var. Ticaret gemileri geniş ambarlarıyla bilinirken, savaş gemileri kalabalık mürettebatları ve ağır toplarıyla öne çıkar. Önemli ticaret gemileri arasında barque, fluyt ve pinnace sayılabilir; savaş gemilerine örnek olarak ise sloop, snow ve galleon gösterilebilir. Ayrıca, dengeli özelliklere sahip çok yönlü gemiler de mevcut — lugger, schooner ve brigantine gibi. Akıncı gemilerine iyi örnekler ise brig, corvette ve xebec’tir.
+Baş omuzluk açısı, arma takımının rüzgârdan nasıl etkileneceğini ve geminin en yüksek hızına hangi rotada ulaşacağını belirler. Denize açıldığında, mini haritadaki oka dikkat et; bu ok, baş omuzluk açını gösterir.
+************************************************************
+Sırada mürettebatın var. Sen ve gemin, sana hizmet eden adamlar olmadan bir hiçsiniz. Her denizci üç beceride ustalaşmalı: arma kullanımı, topları idare etmek ve dövüşmek. Her ulus bu alanlardan yalnızca birinde üstünlük gösterir. Mesela, İspanya dünyanın en iyi savaşçılarına sahiptir ve onların gemi baskıncıları zırh giyer; bu da saçma, kesici ve saplayıcı silahları onlara karşı daha az etkili kılar. Tabii ki küçük silahlardan bahsediyorum—toplardan atılan saçma, zırha hiç aldırmaz.
+Eğer hayalindeki mürettebatı toplamak istiyorsan, İspanya, İngiltere ve Fransa'nın meyhanelerini ziyaret etmelisin. Adamlarının moraline dikkat et—onlara düzenli olarak rom, kadın ve para sağla. Bunu yaparsan, mürettebatın senin için canını ortaya koyar; ihmal edersen isyan ederler. Tecrübeli bir denizci, on acemiye bedeldir. Ayrıca bir hekim tutmayı ya da kendi tıbbi becerilerini geliştirmeyi unutma; yoksa gereksiz kayıplar verirsin.
+Deniz savaşları hakkında birkaç söz. Karayipler tehlikelerle dolu; İspanyol devriyeleri ve korsanlar her yerde cirit atıyor. Er ya da geç, açık denizde onlarla karşı karşıya gelmek zorunda kalacağım.
+************************************************************
+Gemi topları dört çeşit mühimmat kullanır: yuvarlak gülle, kartuş, zincir gülle ve bombalar.
+Yuvarlak gülle çok yönlüdür ve satın alınabilecek en ucuz mühimmattır; ayrıca en geniş etkili menzile sahiptir. Düşman yelkenlerini parçalar, gövdeyi tahrip eder ve mürettebatı öldürür.
+Zincirli gülle iyi bir menzile sahip; esas amacı düşmanın arma donanımını parçalamak ve onları yavaşlatmak. Kovalamaca ya da kaçış sırasında kullanmak en iyisi. Biraz şansla, koca bir direği bile devirebilirsin.
+Bombalar
+
+Rakibinin gemisini batırmak istiyorsan bunları kullan. Bombalar gövdeye en fazla hasarı verir, ama menzilleri ikinci en kısa olanıdır; yani yaklaşman gerekecek—ki bu da tehlikeli olabilir. Ayrıca, bombalar en pahalı mühimmat türüdür.
+Bir düşman gemisini ele geçirip güvertesine çıkmak istiyorsan, en iyi seçimin üzüm saçmasıdır. Bu belalı küçük mermiler mürettebatı biçip geçer, fakat menzilleri kısa olduğu için kullanırken risklidir. Yine de, bazen bu riske girmeye değer.
+Emin değilseniz ateş etmeyin; yeterince hasar veremeyebilirsiniz. Her borda atışı barut harcar ve toplarınızı yıpratır—çok sık ateşlerseniz patlayabilirler bile. Daima rüzgâra göre daha iyi bir pozisyon almak için manevra yapın. Düşman çok tehlikeliyse ve kaçamıyorsanız, onları uzaktan ateş etmeye kışkırtıp kendiniz zarar almamaya çalışın. Bu numara sonunda onların barut stoklarını tüketecektir. Günler sürebilir; bu yüzden kayaların ya da kıyı şeridinin arkasında saklanmak en iyisidir. Tabii, bu tür taktikler açık denizde işe yaramaz.
+Madenler
+
+Onları denizin dibine göndermenin güzel bir yolu. Peşindekileri kışkırtıp seni kovalamalarını sağla, sonra yollarına mayın bırak. Her mayın için hatırı sayılır miktarda barut gerekiyor, ama tek bir mayın bile bir lugger’ı neredeyse yok edebilir.
+************************************************************
+Bir dürbün edin ve düşmanlarını gözlemlemek için kullan; böylece 'Yelken Aç' hızlı seyahat yeteneğinin menzili artar. Kaliteli bir dürbün, sana net bir taktiksel bakış sağlar ve düşman gemilerindeki tüfekli askerleri fark etmene olanak tanır. Düşman tüfekçileri, güvertedeki tayfanı kolayca biçebilir; bu yüzden gemiye çıkmadan önce onlara mutlaka üzüm gülleleriyle karşılık ver.
+Rüzgarın daima arkanda olsun, Kaptan!
+
+
+#QUEST	Guide_OnLand
+Eğitim: Karada
+#TEXT	1
+Şehrin kapıları doğrudan adanın ormanlık iç kısmına açılıyor—medeniyetin sınırı, buna medeniyet denirse tabii. Gündüzleri iki asker nöbet tutuyor, şehre giren herkesi kontrol ediyorlar. Geceleri ise kapılar başıboş bırakılıyor. Yani içeri girmek için iki yol var.
+Öncelikle, limanda demir atıp iskeleye çıkabilirsin. Dilersen daha gizli hareket etmek istersen, adanın başka bir koyuna ya da kıyısına yanaşıp ormandan geçerek şehrin kapılarına ulaşabilirsin.
+Bazen İspanyol kolonilerine uğramam gerekecek. İspanya ile savaş halinde olduğumuzu unutmamalıyım—eğer limanlarına İspanyol bayrağı çekmeden girersem, kale topa tutar ve gemimi paramparça eder. Düşman yerleşimlerine girerken özel yetenekler edinmeli ve dikkatli olmalıyım. İspanyol limanlarında güvenle demir atmanın tek yolu, 'Raise the Spanish Flag' ya da 'Raise the Dutch Flag' yeteneğini kazanmaktır.
+************************************************************
+Böyle numaraları öğrenmek zaman ve tecrübe ister. ‘Bayrak çekmek’ sadece sarı kırmızı bir paçavrayı göndere asmak değildir—çeşitli kılıklara bürünüp ortama karışmak demektir. Aldatmacanın başarısı gizlilik yeteneğine, geminin sınıfına ve filonun büyüklüğüne bağlıdır. Tek başına bir sloop’u İspanyol gemisi gibi göstermek kolaydır, ama beş ağır silahlı fırkateyni kimse yutmaz! Eğer kale muhafızlarını ya da liman görevlilerini kandıramazsan, daha önce anlattığım gibi şehir kapılarından sızmayı dene. Gece olmasını bekle, nöbetçilerden kaçınmak için, sonra şehre gir. Sokaklarda devriye gezen askerlerden uzak dur, özellikle de hava karardıktan sonra. Bir meyhane bul, orada sabaha kadar dinlen, sonra işine bak. Yakalanırsan, askerlerle çatışmaya girme—boş bir eve dal, peşindekileri atlatmak için yarım saat saklan. Böylece seni kovalamaktan vazgeçerler. Kurnazca, değil mi? Eğer böyle cesur oyunlar sana göre değilse, Hollandalılardan bir ticaret ruhsatı satın al. Böylece düşman topraklarında gizlice dolaşmak zorunda kalmaz, açıkça yol alırsın.
+Ticaret ruhsatı, Willemstad, Curaçao’daki Honorable Dutch West India Company’nin merkezinden temin edilebilen bir belgedir. Barışçıl niyetlerin kanıtı olarak kabul edilir ve süresi dolana kadar tüm limanlara giriş hakkı tanır. Fakat bazı dezavantajları da var. Öncelikle, Şirket ruhsat almak isteyen her kaptana sıkı kurallar uygular. Ayrıca, ruhsatın bedeli de oldukça yüksek. En kötüsü ise, düşman limanlarına yanaşmak için hâlâ "raising flag" yeteneğine sahip olmanız gerekir—aksi halde, kalenin ağır topları anında üzerinize ateş açar.
+************************************************************
+Sana birkaç eskrim tekniği öğreteyim.
+Üç çeşit soğuk silah vardır: hafif, orta ve ağır. Her birini ustalıkla kullanmak için farklı beceri ve yetenekler gerekir; bu yüzden her birini ayrı ayrı öğrenmem gerekecek. Her sınıfın kendine özgü avantajları ve dezavantajları var.
+Hafif silahlar, örneğin folyo ve rapierler, kullanımı kolaydır ancak en az hasarı verirler.
+Balta gibi ağır bir silah, tek darbede öldürebilir; ancak enerjini hızla tüketir ve her vuruş arasında dinlenmen gerekebilir.
+Kılıç ve pala gibi orta boy silahlar, ağırlık ve hasar arasında iyi bir denge sunuyor. Elimde birkaç eskrim tekniği var: hızlı saldırı, kesme saldırısı, ağır saldırı ve grup saldırısı. Ayrıca savuşturma, yanıltma ve blok yapabiliyorum.
+Hızlı saldırılar, adından da anlaşılacağı gibi, çabuk yapılır ve en az enerji gerektirir—uzun rapierler için mükemmeldir, fakat baltalarla neredeyse işe yaramaz. Yarma saldırısı ise oldukça çok yönlüdür; iyi bir hız ve makul bir enerji tüketimi sunar. Kılıçlar, pala ve baltalar için uygundur, ancak rapierlerle pek etkili değildir. Ağır saldırılar yukarıdan indirilir—baltalar için harika bir tercihtir, kısa pala ve kılıçlarla da kullanılabilir, fakat rapierler böyle vuruşlar için uygun değildir. Bu saldırı çok fazla enerji harcar, yavaş uygulanır, fakat yıkıcı hasar verir ve düşmanın savunmasını kırabilir.
+Ağır saldırılara karşı savunma yapmak faydasızdır; tecrübeli rakipler her zaman gardını kırabilir. Karşı koymak ise çok daha etkilidir; rakibini açıkta bırakır ve enerjisini tüketir. Birkaç başarılı karşı koymadan sonra, rakibin tüm inisiyatifini kaybeder ve savunmaya çekilmek zorunda kalır; böylece üstünlük sende olur.
+Fint hareketleri hem kurnazca hem de risklidir. Rakibini kandırıp hızlı bir hamle yapmak çok fazla enerji gerektirmez, fakat tüm dikkatinle dövüşün ritmine uyum sağlaman gerekir. Bu tekniği ustalıkla kullanmak bolca alıştırma ister, ama buna fazlasıyla değer—en usta düellocular ve kılıç ustaları bile elinden düşebilir. Her saldırının etkisini artırmak için, her durumda doğru silahı seçmelisin.
+************************************************************
+Düz, uzun ve ağır rapierler veya 0 ile 0.5 arasında dengelenmiş kılıçlarla yapılan delici saldırılar en etkilisidir. 1.5 ile 2 arasında dengesi olan uzun, eğri pala veya kılıçlar ise kesme ve ağır darbelerde ustadır. 2.0 dengeli ağır bir balta, güçlü saldırılar için idealdir; fakat böyle bir silah ciddi bir güç ve ustalık ister. Grup saldırısı ana hamlen olarak uygun değildir—daha çok savunma amaçlıdır—ama 1.25 civarında dengesi olan eğri, hafif ve uzun bir pala, yakındaki birden fazla düşmana karşı yıkıcı olabilir. Aldatmaca hamlelerinde ise hançer en uygun silahtır; belki de bu manevrayı uzmanlığın haline getirmelisin. Bir silahın ağırlığı, her saldırının ne kadar enerji gerektirdiğini ve verdiği hasarı belirler. Unutma, mükemmel silahını bulmak zaman alabilir ve dövüş tarzını geliştirmek daha da uzun sürecektir.
+Birden fazla düşmanla karşılaşmak işleri epey zorlaştırıyor. Usta bir dövüşçü, açık alanda birkaç eğitimsiz serseriyi alt edebilir; ama bir düzine alçak üzerinize gelirse, ne pahasına olursa olsun etrafınızı sarmalarına izin vermeyin. Kaçın, bir köşe, bir merdiven, bir kapı arayın—onları tek tek ya da en fazla ikiye bir dövüşmeye zorlayacak bir yer bulun. Bir hata yaparsanız, göz açıp kapayıncaya kadar sizi yere sererler. Onları kendi şartlarınızda dövüştürün, inisiyatifi elden bırakmayın ve enerjinizi gözleyin. Yine de, kılıç ve balta ustalarının birkaç savuruşla beş-altı düşmanı birden yere serebildiği, özel bir Hint iksirinin hikâyelerini duydum.
+Ometochtli karışımı ya da her ne diyorlarsa, eski bir Kızılderili tarifine benziyor. Tüccarlara sor—belki bir gün biri sana satar. Ama tarifi kullanabilmek için önce simya öğrenmen gerekecek...
+************************************************************ Şimdi iksirlerden bahsetmişken, iyileşme meselesini de açıklayayım. Küçük yaralar için bir şifa özü kullan. Daha ciddi yaralanmalarda ise şifa iksiri gerekir. Şifa karışımları, rom ve şarap da sağlığını geri kazandırır. Zehirlenirsen, panzehir ya da özel bir karışım işini görecektir. Ayrıca zencefil kökünü de tavsiye ederim—nefesini tazeler ve özler ile iksirlerin aksine yan etki olmadan iyileştirir.
+Özler, iksirler ve karışımlar sağlığınıza zarar verebilir. Küçük gezimizin başında da belirttiğim gibi, bu ciddi bir mesele. Zayıf bir sağlık durumu, yetenek seviyelerinizi düşürür ve hem toplam sağlık puanınızı hem de enerjinizi azaltır. Dinlenmek, mahremiyet ve nadir bulunan 'Tears of Ish-Chel' adlı iksir sağlığınızı geri kazandırabilir—tabii sağlığınız tamamen mahvolmamışsa. Eğer iş işten geçtiyse, bir rahip bulun; belli bir ücret karşılığında size yardımcı olabilirler.
+Ateşli silahlar en basit silahlardır—hedef al ve tetiği çek! Birden fazla düşmanla karşılaştığında saçma kullan. Ciddi çatışmalarda ise mutlaka bir musket ya da tüfek edin; ölümcül hasar verirler ve gerekirse dipçikle de vurabilirsin.
+İyi şanslar, Kaptan. Unutma: Karada ölürsen, yalnız ölürsün.
+
+#QUEST PZ_LongwayProshaetsya
+Longway'nin Veda Mektubu
+#TEXT	1
+Lord Kaptan,
+Acı gerçekleri kâğıda dökmek, yüz yüze söylemekten daha kolay—özellikle de Longway’in en çok ihtiyacı olduğu anda onu bırakmaya cesaret edemediğimde. Üstelik bunu onun için değil, onun dünyası kadar değer verdiği biri uğruna yaptım.
+Yine de, Longway sana beyaz bir adamdan nadiren görülen bir şey için teşekkür ediyor—gerçek bir saygı. Senin takdirin, bana verilen emirleri hiçe sayıp, sözde kurtarıcılarıma karşı durmamı sağladı. Bir zamanlar dostum sandığım, ama ne yazık ki asla gerçek dost olmayan insanlara karşı.
+Şimdi Longway yola çıkmak zorunda. Görevini tamamladıktan sonra beni bulacak ve geri dönecek. O zaman özrünü sunacak, fakat şimdiden ayrılışının vereceği rahatsızlık için af diliyor.
+Uzun zaman önce, hem kendime hem de çok önemli birine bir söz ve yemin verdim. Her türlü görevden, yeminden daha önemliydi bu. Herkesten, hatta senden bile daha önemliydi, Lord Captain.
+Longway, anlayış göstereceğimi ummuştu, fakat anlamadığım için kaçmak zorunda kaldı. Yine de, ona gösterdiğim saygı için bir kez daha teşekkür etti.
+Tekrar görüşene dek,
+Uzun Yol
+
+#QUEST PZ_ArchiveOneMerden
+Van Merden’in Arşivi - Özet
+#TEXT	1
+1637 civarında, Dutch East Indies’in Genel Valisi Antoon van Diemen, insan ticaretinde yeni ve uğursuz bir girişimi ortaya çıkardı: adalardan ve zaman zaman Çin ana karasından en güzel Asyalı kadınların kaçırılması. Bunlar sık sık yapılan toplu kaçırmalar değil, nadir ve gizli operasyonlardı; çünkü en ufak bir dedikodu bile felakete yol açabilirdi. Van Diemen, kendi yurttaşlarının öfkesinden korkmuyordu; bu alçak ticaretten elde edilen kazançlar büyüktü—güzel ve egzotik kadınlar Eski Dünya’ya gönderilip, soylulara ve zengin tüccarlara en yüksek teklifi verene satılıyordu. Asıl tehlike ise Çinli lordlardan geliyordu; gerçeği öğrenirlerse, başka güçlü müttefiklerin desteğiyle kanlı bir intikam arayışına girecekleri kesindi.
+Bu operasyonu gerçekleştirmek için van Diemen güvenilir yoldaşlara ihtiyaç duydu. Bölgeye toplanan en yakın çevresini yanına aldı. Bunlar arasında sağ kolu ve yakın dostu Joep van der Vink, artık Hollandalıların safında olan Portekizli firari Oliveiro Fermentelos ve planın bir diğer kilit ismi Johan van Merden vardı.
+Sekiz uzun yıl boyunca bu karanlık iş sürdü, ardında harap olmuş hayatlar bırakarak. Kaçırılan kızların aileleri paramparça oldu, kirli işleri yapan paralı askerler ise çoğu zaman sırların ortaya çıkmaması için ortadan kaldırıldı. Yerlerine yenilerini bulmak ise çocuk oyuncağıydı; her zaman yeni gönüllüler çıkıyordu.
+Ama sonra işler ters gitti. Bu paralı asker birliklerine komuta eden Fermentelos, ağır kalyonu Morning Star'ın başında, aniden van Merden'a rapor vermeyi kesti. İletişim zinciri kopmuştu ve tüm operasyon tehlikeye girdi. Sadece birkaç ay sonra, Longway adında bir adam ortaya çıktı.
+Çin anakarasındaki bir köyden gelen küçük çaplı bir korsan ve kaçakçı olan Chang Tu’nun hayatı, Oliveiro Fermentelos’un kız kardeşi Chang Xing’i kaçırmasıyla altüst oldu. Fermentelos, sapkın bir sevgiyle ona yaklaşmaya çalıştı, fakat Chang Xing bu ilgiyi reddetti. Öfkeye kapılan Fermentelos, yalnızca onu kaçırmakla kalmadı, Chang Tu’nun anne babasını da öldürdü. Böyle değerli bir “malın” çalınması kendi müttefiklerinin bile dikkatinden kaçamayacağı için Fermentelos bu olayı gizli tuttu.
+İntikam hırsıyla hareket eden Chang Tu—artık Longway olarak biliniyor—kız kardeşinin kaçıranını Formosa'ya kadar takip etti ve orada van Merden'ın adamlarından biriyle karşılaştı. Onlar, Longway'i Johan van Merden'ın huzuruna çıkarmaya karar verdiler. Plan basitti: Çinlinin ne istediğini öğrenmek ve gerekirse ondan kurtulmak. Fakat Johan, bir fırsat sezinleyerek, Longway'e yardım etmeye karar verdi—bunu iyilikten değil, başına bela olan bir ortağından kurtulmak için yaptı.
+Van Merden, kurnaz Portekizli Fermentelos’a asla güvenmemişti; ondan hep bir ihanet beklerdi. Şimdi Fermentelos kaçak durumdayken, Johan eski hesapları kapatmak için bir fırsat gördü. Diğer ortakları van der Vink ve van Diemen’in de kârını çaldığından emindi. Bu yüzden Longway’i Batavia’ya gönderdi; umudu, Çinli ile van Diemen’in birbirini ortadan kaldırmasıydı. Longway’in eline, eski dostu Oliver Trust’a hitaben yazılmış bir mektup verdi ve yıllardır süregelen borcun ödenmesini talep etti.
+Ama Johan van Merden, Longway’in sadece hayatta kalmakla kalmayıp, aynı zamanda hem van Diemen’i hem de van der Vink’i öldürmesine çok şaşırdı. Longway, Formosa’ya döndüğünde, bir aracı vasıtasıyla Johan’la tekrar görüşmek istedi. Longway’in insan kaçakçılığı çetesindeki rolünü tamamen ortaya çıkardığından korkan Johan, paralı askerleri sokakta ona pusu kurmaları için ayarladı. Ancak Longway onları da alt etti ve Johan, her zamanki gibi korkakça davranıp ona yardım ediyormuş gibi yaptı—ama tüm konuşma boyunca masanın altında bir tabancayı gizli tuttu.
+Zaferlerine rağmen, Longway ne Morning Star’ın izini bulabildi ne de kız kardeşinin nerede olduğunu öğrenebildi. Umutsuzca, yine van Merden’a başvurdu ve ona “ilk beyaz dostum” dedi. Johan ise bu ironik duruma neredeyse kahkaha atacaktı ama gülüşünü yaşlılığın verdiği duygusallığa bağlayarak gizledi.
+Van Merden’in, Fermentelos’u bulmamda yardımcı olacağına dair verdiği söz karşılığında, Longway onun için çalışmaya başladı. Ona “Longway” adını veren kişi Johan’dı; bu, İngilizce “Long Way” ifadesinden alınmış bir çağrı adıydı—Longway’in şimdiye kadar kat ettiği yol ve Lucas Rodenburg’un emri altında önünde uzanan macera için tam yerinde bir lakap.
+
+#QUEST ChroniclesMadness
+Deliliğin Güncesi: Bölüm 1
+#TEXT	1
+******
+Baba, seni ne kadar özlüyorum. O bilgece öğütlerin, sakin sesin... Her Havana'ya geldiğimde mutlaka seni ziyaret ediyorum. Şehirden millerce uzaktaki mezarında saatlerce oturup bir sonraki hamlemi düşünüyorum. Huzur içinde yat, baba. Fedakârlığın boşa gitmeyecek—bu suları, takımadanın karanlık köşelerinde saklanan tüm suçlu farelerden temizleyeceğim. Özellikle de ölümünden sorumlu olanlardan.
+******
+Ah, ne kadar da körmüşüm! Bütün kötülüğün serserilerden ve kaçakçılardan geldiğini sanıyordum. Hayır... Derler ya, balık baştan kokar. Kral’ın kendisi, Tanrı onu korusun, bunu görüyor—bu yüzden bana özel yetki verdi. Ama ne kadar çok denize açılırsam, o kadar iyi anlıyorum ki—yolsuzluk kök salmış, çok derinlerde. Valilerimiz, şu "soylu" adamlar, Madrid’deki entrikacılardan hiç de farklı değiller! Tabii hepsi değil. Sen farklıydın baba. Ama diğerleri... Rüşvet, entrika, kayırmacılık—hepsi zehirli çiçekler gibi serpilmiş. Sanki sarayın hastalığı okyanusu aşıp kolonilerimize yayılmış. Artık sıradan önlemlerin yeterli olacağından emin değilim.
+******
+Bugün Illuminator ile uzun bir sohbet yaptım. Olağanüstü bir adam—sanki içimi görebiliyor. Beni rahatsız eden, düşünmeye bile korktuğum her şeyi kelimelere döktü. Bazen Rabbin savaşçılarından kararlı hareketler beklediğini, gücü olmayan merhametin boş bir ses olduğunu ve gerçek imanın mücadelede ortaya çıktığını söyledi. Onunla konuştuktan sonra birçok şey benim için netleşti.
+******
+Beni durdurmaya çalışıyorlar. Başta bunun İmparatorluğun düşmanları olduğunu sanmıştım. Ama hayır—kendi insanlarımız! Maskeli paralı askerler, saygın ailelerden suikastçılar. Yakalanan adamlardan biri, yakın zamanda azarladığım bir valinin onu gönderdiğini itiraf etti. Demek böyleymiş? Artık biliyorum—fazla yumuşak davranmışım. Artık farklı hareket etmenin zamanı geldi. Bazen bedeni kurtarmak için çürük bir uzvu kesmek gerekir.
+******
+Tanrı bana işaretler gönderiyor. Her liman, her şehir arınma için feryat ediyor. Artık daha net görüyorum—yalnızca vergi toplamak ve kaçakçıları yakalamak yetmiyor. Daha fazlası gerek. Kutsal ateş, pisliği yakıp yok etmeli. Şimdilik kanun çerçevesinde hareket etmeye çalışıyorum, ama bunun yetersiz olduğunu hissediyorum. Tanrı’nın cezalandırıcı kılıcı olmak—o an yaklaşıyor gibi.
+******
+Bazen şüpheler içimi kemiriyor. Böyle anlarda O'nun mektuplarını tekrar okur, sohbetlerimizi hatırlarım. Evet, o zamanlar zayıftım. Ama şimdi yolumu açıkça görüyorum. Takımadalar günaha batmış durumda. Her şehir, her liman arınmalı. Bunun için kan dökülmesi gerekiyorsa—öyle olsun. Sonuçta, bizim günahlarımız da Mesih’in kanıyla yıkanmadı mı?
+Büyük işimi tamamladığımda, bu sular arınacak. Ama şimdilik... Hazırlanmalı, gücümü toplamalı ve işareti beklemeliyim. Harekete geçme zamanı geldiğinde bunu anlayacağım—ve o zaman, kimse beni durduramayacak.
+
+#QUEST LegendaryShips
+Efsanevi Gemiler Hakkında Bilgi
+#TEXT	1
+Kutsal Merhamet
+***********************
+Holy Mercy, Escorial tarafından İspanyol kolonilerini denetlemek üzere Avrupa'dan gönderildi. Geminin kaptanı Don Alamida, İspanyol Tacı'nın meşhur bir hizmetkârı—yolsuzluğun ve suçun amansız düşmanı, Katolik inancının ateşli bir savunucusu.
+The Holy Mercy, koloniler arasında sefer yapıyor; yolculuğuna her zaman Havana’da başlıyor ve orada son veriyor. Görevi tamamen kutsal amacına adanmış.
+Her limanda, Alamida birkaç gün, bazen daha da uzun süre kalıyor. Söylentilere göre, bu ziyaretler sırasında zaman zaman sokaklarda görülebiliyormuş; fakat yerel halk böyle karşılaşmalardan pek hoşlanmıyor—zira İspanyollar arasında bu señor yalnızca korku ve hayranlık uyandırıyor.
+Holy Mercy, Alamida'nın bizzat seçtiği deneyimli ve sadık bir mürettebata sahip. Her bir denizci, vatanını ve kaptanını canı pahasına savunmaya hazır. Söylentilere göre Don Fernando, Holy Mercy'nin asla düşmanın eline geçmemesi için emir vermiş. Fısıltılar arasında, eğer gemi baskın sırasında umutsuz bir durumda kalırsa, mürettebatın onu düşmana teslim etmektense denizin dibine göndermeyi tercih edeceği konuşuluyor.
+#TEXT	2
+"Lady Beth"
+***********************
+Lady Beth gerçek bir güzellik—İngiliz denizciliğinin harikası, şimdi ise eski Kraliyet Donanması subayı Albert Blackwood'un emrinde. Herkes böylesine görkemli bir firar gerçekleştiremez! Görevini terk etti, parlak bir kariyeri mahvetti ve bir savaş gemisini çalıp kaçtı—hepsi hazine avcılığı uğruna!
+Ve bunun bir sebebi var. Şimdiye kadar Barbados’un yarısını satın alacak kadar servet topladı, ama hâlâ daha fazlasını istiyor. Onu denizde görürsen, sakın yolunu kesmeyi düşünme bile—gemisi çok sağlam, kaptanı ise hem usta hem de tetikte. Son zamanlarda Blackwood, Cayman civarında çok vakit geçiriyor; gece gündüz kazı yapıyor, adamlarını canından bezdiriyor. Eğer araştırmaya karar verirsen, yanında en az altmış adam ve bol miktarda iyi ateşli silah götür... Gerçi, bu bile yeterli olmayabilir.
+Umarım silah kullanmayı biliyorsundur, çünkü Colonel Fox ve onun eski deniz piyadelerinden oluşan birliği onunla birlikte firar etti. Bunlar sıradan haydutlar değil, tam anlamıyla profesyoneller. Sakın Fransız limanlarında ona saldırma—orada koruyucuları ve destekçileri var, üstelik ganimetinden pay alıyorlar.
+#TEXT	3
+Hatıra
+***********************
+"Memento"—gerçek bir korsan efsanesi. Mortimer Grim'in komutasındaki siyah bir brig.
+Grim yalnızca köle tacirlerinin peşine düşüyor. Söylenene göre, köleleri özgür bırakıyor ve mahkûmları altınla satın alıyor. Hikâyenin tamamını bilmiyorsan, bu asil bir amaç gibi görünebilir.
+Eğer insan taşımacılığı yapmıyorsan, Grim sana bulaşmaz. Tuhaf bir adam ama prensipleri var. Ama ambarında köle varsa... ufukta kara yelkenler görmemek için dua et.
+Memento, korsan sığınakları arasında seyreder ama nadiren limana yanaşır. Mürettebatı aylarca gemide yaşar; sanki karaya ayak basmaktan korkuyorlarmış gibi. Söylentiye göre, bu gemi bir zamanlar korkunç bir salgından sağ çıkmış—bu yüzden mürettebatı öldürmek neredeyse imkânsız.
+Onlarla karşılaşmayı düşünüyorsan, daha fazla top getir. 'Memento'ya çıkmak neredeyse imkânsız—mürettebatı sanki içine şeytan kaçmış gibi savaşıyor, ölümden zerre korkuları yok. Onları alt etmenin tek yolu, gemilerini paramparça edip sığınacak yer bırakmamak. Kıymıklar onları korkutmuyor ama doğrudan atılan saçma topu bambaşka bir mesele.
+İyi şanslar. Ve ölümü unutma.
+#TEXT	4
+"Amsterdam"
+***********************
+Saygın Dutch West India Company'nin amiral gemisi. Bu gemiyle ilgili her şey sırlarla örtülü. Komutası, Curaçao'daki deniz sicil dairesinin başkanı Hendrik van Doorn'da — son derece disiplinli ve etkili bir adam, en zengin ve nüfuzlu kaptanlara paha biçilmez hizmetler sunuyor. Onların arasına girmeye çalışırsam, belki daha fazlasını öğrenebilirim.
+
+#QUEST StoriesTreasures
+Hazine Hikâyeleri
+#TEXT	1
+************************************************************
+Bu ganimet bana ait, barquentine San Sebastián’ın gelecekteki kaptanına! Eğer bunu okuyorsam, unutma: Miguel hâlâ sana borçlu ve muhtemelen hâlâ ödemedi.
+Eğer bu satırları okuyan sensen, umarım tayfamdan biri değilsindir. Ama eğer öyleysen—şunu bil ki: Uzun zamandır bir fare olduğundan şüpheleniyordum.
+#TEXT	2
+************************************************************
+Tyrex için çalışmaktan giderek daha çok hoşlanıyorum. Bu, şimdiden bulduğum üçüncü gizli sandık oldu.
+Unutmamak için yazıyorum: Sonunculardan biri korsanlık kariyerime başladığım yerde, diğeri ise o lanet şişko kediye kurşun sıktığım yerde.
+#TEXT	3
+************************************************************
+Eğer bu ganimeti bulduysan, bil ki onu korsanlardan ya da vergi memurlarından saklamadım—kendi karımdan sakladım.
+Üç yıl önce, meyhaneye gitmemi yasakladı. İki yıl önce, yeni bir hançer aldığımda büyük bir kavga çıkardı. Ve geçen yıl, iki dişimi kırdı.
+Ama hazinemi burada asla bulamayacak! Her şeyimi bir kart oyununda kaybettiğime inanıyor.
+Ben yokken, bir kadeh de benim için iç; ben ise o fettan kadını, parayı baştan beri hiç almadığıma inandırmakla meşgul olacağım.
+#TEXT	4
+************************************************************
+Martin, eğer bunu okuyorsan, sana bıraktıklarımı bulmuşsun demektir. Demek ki her şey boşa gitmemiş. Altı ayda on dört tablo yaptım, o şişkin kurbağa hâlâ daha fazlasını istiyor! Artık ne altına ne de mücevhere ihtiyacım var, ne de onun o gösterişli davetlerine.
+Ama ortadan kaybolmadan önce ona bir veda hediyesi bıraktım: Kendi portresi—ne pohpohlama, ne de yağcılık var. Herkes onu olduğu gibi görsün.
+#TEXT	5
+************************************************************
+Bunu okuyorsan, sandığın içindekiler artık sana ait demektir.
+O kader anı, sarı saçlı korsanla karşılaşmam her şeyi değiştirdi. Şimdi nasıl devam edeceğimi bilmiyorum, ama bu altının bana bedeli çok ağır oldu. Ona sahip olmak için çok fazla acıya sebep oldum; eskiden böyle düşünmezdim, ama artık işler değişti.
+Artık gerçekten neye ihtiyacım olduğunu anladım.
+İstersen al, ama seni uyarayım—ok yaydan çıktı.
+#TEXT	6
+************************************************************
+Eylül, 1648.
+Kaptan, yarın filomuzun kaleye saldıracağını söyledi. Söylentilere göre surlar sağlam, toplar kudretli ve askerler kolay kolay teslim olacak cinsten değil.
+Eğer sağ salim geri dönersem, bu ganimetin yarısını kiliseye bağışlayacağıma yemin ederim.
+#TEXT	7
+************************************************************
+Böylesine bir korku hissedebileceğimi hiç düşünmemiştim. Lanetli bir fırtınadan, ihanetten, bir kraliçeden, bir kraldan ve hatta şu lanet Britanya filosundan sağ çıktım. Şimdi ise geriye sadece son bir iş kaldı—ve dizlerim, sanki ilk defa sefere çıkıyormuşum gibi titriyor.
+Kimseye söz vermedim, ama kâğıt her şeyi kaldırır. Ben, Striker'ın kaptanı Sammy, namusum üzerine yemin ederim: Altınımı almaya döndüğümde, bu lanet takımadayı sonsuza dek terk edeceğim.
+#TEXT	8
+************************************************************
+Bunların hepsini Tortuga’daki dostumuza satsaydım, İspanyol limanlarında bile dedikodusu yapılacak bir şölen verebilirdim. Ama hayır—bu senin için Charlie, yaşlılığın için, genç ve deli halinden bir armağan.
+Sakın bütün parayı rom ve liman fahişelerine harcama, duydun mu beni, ayyaş herif? Seni iyi tanırım—biraz doblon geçti mi eline, hemen ucuz içkiye ve bir yosmanın kollarına koşarsın.
+Umarım bu lanet korsan hayatını geride bırakmayı seçecek kadar uzun yaşarsın.
+#TEXT	9
+************************************************************
+James, umarım bu ganimeti başkalarından önce bulmuşsundur. İçinde, o Hollandalı tüccarın kamarasından kalabalık gelmeden önce çaldıklarım var. Anlaştığımız gibi, yarısını Isabel’e ver. Kalanını kendine harcayabilirsin.
+#TEXT	10
+************************************************************
+Beş kişiydik—şimdi sadece ikimiz kaldık. Bu yeri yalnızca biz biliyoruz.
+Bu ganimeti kim almadıysa, unutmasın: Bu altın eğlence ya da sefahat için değil. Bu, intikam için. Tüm Treviño ailesi bize yaptıklarının hesabını vermeli.
+Ya onlar ya biz. Başka yolu yok.
+#TEXT	11
+************************************************************
+Altını toprağa gömmek servetimi korumanın en iyi yolu olmasa da kendimi tutamıyorum—bunu yapmaktan keyif alıyorum. Kimsenin bulamayacağı bir yere saklamak insana gerçek bir heyecan veriyor.
+Eğer bu notu okuyorsan, demek ki ben başaramadım. Şimdi sıra sende.
+#TEXT	12
+************************************************************
+Ne kadar uğraşırsam uğraşayım, kaç kapı çalarsam çalayım, ne kadar yalvarsam da—hepsi boşuna. Vali dinlemeyi reddediyor, bir sefere para olmadığını söylüyor. Yalnızca iki asker verecek, o da tüm masrafları kendim karşılamam şartıyla. Ama pes etmeyeceğim! Efsanevi zümrüt, Korsan'ın Ruhu, bu adanın ormanında bir yerde saklı. O gerçekten var ve dünya onun varlığını bilmeli. Ne pahasına olursa olsun onu bulacağım. Bu hazine, gelecekteki o büyük sefer için ilk yatırımım olacak.
+#TEXT	13
+************************************************************
+Engizisyon her geçen gün beni daha yakından izliyor. Bu takımadalarda kalmak artık fazlasıyla tehlikeli hale geliyor.
+Sevgilim, eğer bu ganimeti alıp kendi başına denize açılman gerekiyorsa, bir an bile tereddüt etme.
+Seni seviyorum ve güvende olmanı istiyorum. Benim için endişelenme—başladığım işi bitirip tekrar kollarına döneceğim.
+#TEXT	14
+************************************************************
+Kaçakçılık yapmak dünyadaki en iyi iş! Karayipler’de henüz yeniyim ama şimdiden altına boğuldum. Üstelik hiçbir vali bana ne yapacağımı söyleyemez!
+Ama altın asla fazla olmaz. Kraldan bile zengin olana dek durmayacağım!
+O zaman ne kaybettiğini anlayacak. O asker haklıydı—burada doğru bilgiye sahip biri, sadece birkaç ayda zengin olabilir.
+#TEXT	15
+************************************************************
+Remy, sevgilim, Babam sırrımızı öğrendi! Onu hiç bu kadar öfkeli görmemiştim. Bana vurdu ve beni odamda kilitledi.
+Sevgilim, hayatın için korkuyorum! Kardeşlerime seni bulup öldürmelerini emretti. Ama ben bir anlığına kaçmayı başardım ve tüm mücevherlerimi saklandığımız yere bıraktım. Lütfen onları sat—umarım bu lanetli adadan kaçmamıza yeter. Nereye gideceğimizin önemi yok, yeter ki ömrümün geri kalanında seninle olabileyim.
+Benim için endişelenme. Yanımda bir şişe zehir var; sana bir şey olursa, tereddüt etmeden içeceğim. Bu dünyada birlikte olamıyorsak, belki Tanrı bize merhamet eder ve Cennet’te tekrar buluşturur.
+Sonsuza dek seninim,
+Juanita.
+#TEXT	16
+************************************************************
+Yoksulluğun insanı yücelttiğini söylerler, ama bu sadece kitaplarda olur. Gerçekte, saygıya layık gerçek bir vatandaş zengin olandır. Geri kalan herkes ise onun hizmetkârıdır.
+Birkaç talihli ganimet daha bulursam, onların arasına katılacağım. Yakında kendi plantasyonum, hizmetkarlarım, gösterişli davetlerim ve valinin ilgisi olacak. Artık tüccar gemisinde daracık, rutubetli kamaralarda sürünmek yok benim için.
+Yeni statümün simgesi olacak, kaliteli bir soylu rapiri almayı unutmamalıyım.
+#TEXT	17
+************************************************************
+Gaston’un payını, mürettebatın ücretini ve başkentteki o kaypak kodamana verdiğim rüşveti düşersem, yine de hatırı sayılır bir miktar kalıyor. Bilgileri nereden buluyor bilmiyorum ama birkaç kârlı baskın daha yaparsam borçlarımı kapatabilirim. Yeter ki Company’nin uzun eli beni Avrupa’ya dönmeden yakalamasın. Dikkatli olmalıyım.
+#TEXT	18
+************************************************************
+Henry, biraz daha ganimet elde ettik. Ne yapacağını biliyorsun.
+Hepsini tek bir bankada tutma. Düşman şehre gelirse, tüm paramız uçar gider—ve ben artık ağzımda bıçakla gemi basacak yaşta değilim.
+Kendin hallet—Bluevelde’de olanlardan sonra Anderson eski Anderson değil. Büyük ihtimalle bir anlık öfkeyle tüm kazancımızı anlamsız intikamına harcayacak. Ona defalarca söyledim, olanı geri alamazsın diye, ama dinlemeye hiç yanaşmıyor.
+Ona güvenmiyorum.
+#TEXT	19
+************************************************************
+13 Nisan
+Bugün, Portekizli bir adamdan tuhaf bir istek aldım. Karayipler'de Portekizlilere nadiren rastlanır, ama bu adam benden yerli süs eşyalarından birkaçını toplamamı istedi. Ödediği para gayet iyi, bu yüzden işi kabul ettim.
+2 Mayıs
+İlk parti muskaları teslim ettim ve söz verilen ödemeyi aldım. Bu iş oldukça kârlı görünüyor, devam edeceğim.
+28 Mayıs
+İkinci teslimatı tamamladım, ödememi tam olarak aldım. Merriman’ın gerçek kökenleri hakkında hâlâ en ufak bir fikrim yok, fakat kesesi derin, hırsı ise daha da derin. İki ay sonra tekrar buluşacağız; hem de gizli bir yerde—Havana mezarlığında, başka bir yerde değil. Kulağa kasvetli geliyor olabilir, ama borçluları ormanlarda kovalamaktan iyidir. Bu işten elde edeceğim tüm gelecekteki kazançları da tam burada saklayacağım.
+#TEXT	20
+************************************************************
+Ed, bunda altın madeni buldum! Bu sandıkta gördüklerin, tek bir seferde ele geçirdiklerimin üçte biri bile değil. Bu hazine haritasını seninle paylaşmamız, aramızdaki hesabı kapatır.
+Dikkatle dinle—Spanish Main’in kuzeyinde, Küba ile Florida arasında, sayısız batığın kalıntıları üzerine kurulmuş olağanüstü bir yerleşim var. Garip gemiler, öylesine eski ki, belki de dedelerimizin zamanından kalma; hepsi karaya oturmuş ve çılgın bir marangozun elinden çıkmış gibi birbirine kenetlenmiş. Ve Ed, orada gerçekten yaşayan insanlar var—etten kemikten ruhlar! Mekân değerli eşyalarla dolup taşıyor, üstelik bunları yalnızca yiyecek karşılığında takas ediyorlar. Bana inanmıyorsan, Havana’daki kaçakçılara sor.
+Bundan zaten servetimi kazandım. Başkası işin kokusunu almadan acele etsem iyi olur.
+#TEXT	21
+************************************************************
+"Rapid" briginin seyir defteri
+19 Haziran
+Trinidad yakınlarındaki sularda baskın düzenledim ve hafif korumalı bir İspanyol ticaret konvoyuyla karşılaştım. Mesele kansız çözüldü, az da olsa ganimet elde ettim.
+24 Haziran
+Willemstad-Blueveld ticaret rotasında devriye gezdim. Sular sakindi; ufukta, bilinmeyen bayraklar taşıyan tuhaf bir gemi dışında hiçbir şey yoktu.
+18 Temmuz
+Willemstad açıklarında avlanırken, yanlışlıkla bir Hollanda devriyesine rastladım. Kaçışımız sırasında, o gizemli gemiyle yine karşılaştık. Kendimi örs ile çekiç arasında sıkışmış sandım, fakat tuhaf bir şekilde, Hollandalılar da en az bizim kadar o gemiden korkuyordu. Ortaya çıkan kargaşadan faydalanıp sessizce sıvıştık.
+3 Ağustos
+Bu hayalet geminin Curaçao civarında bir yerde saklandığından şüphelenmeye başladım. Onu tekrar gördüm ve bu sefer daha yakından inceleme fırsatım oldu. Birinci Zabitim, geminin Portekiz işaretleri taşıdığında ısrarcı, ama ben hâlâ şüpheliyim—Portekiz’in bu sularda ne işi olur? Ana karanın kıyılarını taramaları için emir verdim.
+12 Eylül
+Bir desen ortaya çıkıyor. Bu gemi yılda yaklaşık iki kez beliriyor, Trinidad, Curaçao ve Main arasındaki üçgende birkaç ay boyunca dolaşıp sonra sabah sisi gibi kayboluyor.
+8 Ekim
+Hayalet gemi artık gözükmüyor. Görünüşe göre Karayip sularını tamamen terk etti. Mürettebat bu sonuçsuz avdan yorgun düştü, bu yüzden rotamızı kuzeye, Lesser Antilles'e çevirdik. Belki orada daha değerli bir av buluruz—cepleri daha dolu gemiler.
+#TEXT	22
+************************************************************
+Roger, bu talimatları dikkatlice oku ve harfiyen uygula.
+Karayipler’de deli bir İngiliz define avcısı dolaşıyor. Eğer kürekli kırmızı ceketlileri görürsen, şeytan peşindeymiş gibi kaç—rakiplerine hiç acımazlar. Bütün sakladıklarımızı boşalt, değerli ne varsa topla ve Antigua’ya git; temasımız orada seni bekliyor—gerekli ayarlamaları yaptım. Bu işte biraz altın kaybedeceğiz ama gerisi tertemiz olacak. İngiliz topraklarından ayrılma—bu Blackwood denilen adam orada ortaya çıkmaya cesaret edemez. Arkana bakmadan işini halledebilirsin. İngilizlerin ona ne garezi var bilmiyorum ama gemisi sadece Fransız limanlarına yanaşıyor.
+#TEXT	23
+************************************************************
+Hans, eğer bunu okuyorsan bil ki intikamım hâlâ tamamlanmadı, Karayipler’de bile. Avımızı hiçbir yerde bulamıyorum. Babamın kılıcının hatırası zihnimde silikleşiyor, düşmanımızın yüzü ise gölgeler arasında kayboluyor.
+Birlikte nice fırtınalar atlattık, eski dostum, ama öfkem hâlâ dizginlenemedi. Sonuçlarını önceden görebilseydim, barışı daha büyük bir azimle arardım. Belki de daha az can sonsuzluğa göçerdi. Teresa’ya hâlâ onu sevdiğimi ve yeminlerime sadık kaldığımı söyle; gerçi eve dönüş yolculuğundan sağ çıkamayacağım. Bu sandıkta kan ve çelikle kazandığım her şey var, ama rahatlığın tadı çoktan küle döndü benim için. Belki sen hâlâ tadını çıkarabilirsin.
+H.
+#TEXT	24
+************************************************************
+René, Karayipler her geçen gün daha da tehlikeli bir hal alıyor. Yakında bizim gibiler için burada güvenli bir liman kalmayacak. Seninle ben, Cromwell’in yeni filosunun haberini ilk alanlardan olduk; başlarında da gözde gemileri Victory var. Bu adamlar, bu vahşi adaları dizginleyip Hollandalılara haddini bildirmek niyetinde. Ama içimde kötü bir his var; bu işin sonu kimse için hayırlı olmayacak.
+Dahası da var—Fransızlar, Kanal komşularına boyun eğmeye hiç niyetli değil. Brest tersanelerinden, krallarından birinin adını taşıyan gerçek bir canavar denize indirildi. Duyduklarımın hepsine kefil olamam ama anlatılanlara göre, daha önce benzerine rastlanmamış, yüzen bir kale yakında bu sularda boy gösterecek.
+Sanırım artık kartları masaya bırakma vakti geldi. Son maceramızdan payına düşen bu sandıkta. Ben yuvama, anavatan kıyılarına dönüyorum; sana da aynısını şiddetle tavsiye ederim.
+Martin.
+#TEXT	25
+************************************************************
+Reid, Alonso denilen herifin tüm geçmişini ortaya çıkardı. Bu soğukkanlı herif, bir zamanlar Kaptan Vane’in "Xenon" adlı gemisinde hizmet etmiş, ondan önce de yıllarca profesyonel cellatlık yapmış. Ölümcül yetenekleri ve insanın iliğini donduran bakışları da buradan geliyor. Söylentilere göre palasını sonsuza dek asmıştı, ama zaman zaman Karayip limanlarında, genç ve ateşli bir kaptanın peşinde görülüyormuş. Dikkatli olmakta ve arkamı kollamakta fayda var.
+#TEXT	26
+************************************************************
+Lucas, Artois ve Mode, bu sandık Bay Rodenburg'un son işi için peşin ödemenizi içeriyor. Eski Avrupa'dan yeni bir oyuncu kıyılarımıza vurdu—adı Gascon. Daha yeni gelmiş olmasına rağmen, şimdiden ortalığı karıştırdı ve nüfuzlu bazı beyefendilerin canını sıktı.
+Emrim, onunla ilgili her türlü bilgiyi toplamak ve her ay, eskisi gibi rapor vermek. Buluşma noktası değişmedi.
+Ekli belgelerde adamın görünüşü ve gemisinin adı üç nüsha halinde yer alıyor. Çoğunlukla Lesser Antilles civarında görülüyor.
+#TEXT	27
+************************************************************
+Karl, bu tam anlamıyla delilik. Muscovite'in Basse-Terre'deki konutuna yaptığım baskın iki kez boşa çıktı; her seferinde, sarhoş bir ahmak en kötü anda şansını denediği için işler ters gitti. Ama son yaşanan rezalet akıl alır gibi değil—pusu kurarken, sakar bir yerli aniden eve daldı. Canımı zor kurtardım; herif öyle bir gürültü kopardı ki, muhafızlar anında evi bastı. Artık bu sorunlarla sen uğraşacaksın. Avansın ve başarısız işin tazminatı sandıkta.
+#TEXT	28
+************************************************************
+Gerçek güce bir adım daha yaklaştım. On bin! Unutulmuş bir orman tanrısı on bin dublon istiyor. Kendine "Ölümsüz" diyen biri için pek cimri—yüzyıllar boyunca yaşamış biri, ölümlülerin parasına duyduğu ihtiyacı çoktan aşmış olmalıydı.
+Yine de, anlaşmamız geçerli—on bin altın ve dünyanın kaderi avucumda olacak! Gerçekten de önemsiz bir bedel.
+Tek sıkıntı, bu doblonları yerel sarraflardan toplamak zorunda kalmam; sürekli gizli zulası ile kasaba arasında mekik dokuyorum.
+#TEXT	29
+************************************************************
+Vittorio, hayatımın en tuhaf işini yeni tamamladım. Panama’da, Avrupalı soylular gibi giyinmiş tuhaf bir yerliyle karşılaştım; bana bir avuç saf doblon ödeyip kendisine özel uşaklık yapmamı istedi. Şiir okumamı, şarap sunmamı ve ona kıta aristokratıymış gibi hitap etmemi istedi. Kaybolmuş tapınaklardan ve sapkın tanrılardan durmaksızın bahsetti, ama bunun dışında zararsız görünüyordu.
+Ödeme borçlarımı kapatıyor, üstüne bir de Havana'ya geçişimi güvence altına alacak kadar para kalıyor—tam planladığımız gibi.
+#TEXT	30
+************************************************************
+Bunu bulan kişi—Marcus’a teslim etsin ve daha fazla okumasın. Eğer Marcus senin için bir anlam ifade etmiyorsa, bunu yerine bırak ve uzaklaş.
+Marcus, Gaston tehlikeli bir oyun oynuyor. Bridgetown'da karanlık işlere bulaşmış bir kiralık katil. Son baskında, Jimmy’yle ben istemeden onun yoluna çıktık—şimdi Jimmy köpekbalıklarına yem oldu. Payın burada, biraz da fazlası var. Ben İspanyol topraklarına gidiyorum, orada onun eli bana ulaşamaz.
+#TEXT	31
+************************************************************
+Bay Lynch, aradığınız şeyi ortaya çıkardım. İlgilendiğiniz şahıs Antigua'da ikamet ediyor ve sağ koluyla birlikte vatanımıza karşı ağır suçlar işledi. Majestelerinin "Sussex" firkateynine düzenlenen hain saldırı onların işiymiş; rapor edildiği gibi Hollandalıların değil. Kalan ödemen elime ulaşır ulaşmaz tüm delilleri ortak irtibatımıza ileteceğim.
+#TEXT	32
+************************************************************
+Anna, azmin sonunda meyvesini verdi—kaçak simyacı Gino gerçekten de bu adalar arasında bir yerde saklanıyor. İzini Lesser Antilles civarında kaybettim, ama hiç olmadığı kadar yakınım. Bu illet her geçen gün içimi daha da kemiriyor, fakat tedavi onun elinde ve onu bulana dek hiçbir şey beni durduramayacak.
+Lütfen bu sandığın içindekileri hem minnettarlığımın bir göstergesi hem de şahsi bir sunum olarak kabul et. Becky’nin akıbetinin hâlâ öfkeni kabarttığını biliyorum, fakat bana en azından hatamı telafi etme fırsatı ver.
+Jack.
+#QUEST PortRoyal_town_Letter
+Port Royal'ın Sırları
+
+#TEXT 1
+************************************************************
+Sevgilim, eğer bunu okuyorsan, artık burada olmadığım anlamına geliyor. Hastalık beni tüketti ve şimdi geçmişin bir hatırasından ibaretim.
+Bu, hayatında pek bir şeyi değiştirmeyecek. Her zamanki gibi rotanda ilerlemeye devam edeceksin—sakin, kendinden emin, arkana bakmadan.
+Ama sen tekrar şalopana dönüp ufkun ötesinde kaybolmadan önce, senden bir ricam olacak.
+Sahip olduğum her şeyi bırakabileceğim kimsem yoktu, bu yüzden her şeyim, ilk bakışta, ilk kelimede, ilk gülümsemede kalbimi fetheden kişiye gidecek. Yollarımızın kesiştiği yerlerde yürümeni istiyorum. O anları hatırla; eminim ki benim için senin için olduğundan çok daha fazlasıydı. Bu yolculuğun sonunda, yıllar boyunca elde ettiğim her şeyi sana bırakacağım. Unutmadan önce, hislerimin gücünü son bir kez hissetmeni istiyorum.
+Not: Aradığını bulmana, sönük olsa bile bir mum yol gösterecek.
+
+#TEXT 2
+************************************************************
+O akşamı hatırlıyor musun? Yağmur sokaklara dökülürken, başını geriye atıp damlaların yüzüne değmesine izin vererek gülmüştün. Sana bir gün kalbini kazanacağımı söylemiştim, ama sen sadece alaycı bir gülümsemeyle karşılık vermiştin.
+Sonra konuşmamız bir kaper gemisinden iki denizci tarafından bölündü ve onlara haddini bildirmek zorunda kaldım. O gece bana baktığın o bakışı asla unutmayacağım.
+O yere geri dönüp o akşamı hatırlamalıyım. Olan biten her şeyi yeniden anımsamalıyım.
+Not: Şarap da insanlar gibi sır saklayabilir.
+
+#TEXT 3
+************************************************************
+Sen her zaman acımasızca dürüst oldun—belki de fazlasıyla. Dobra sözlerin beni birden fazla kez yaraladı, ama en güzel güllerin bile dikeni olur, değil mi?
+Bir sonraki not özel bir yerde—buluşmak için anlaştığımız noktada. Ama ertesi gün hiç gelmedin. Yelken açıp gittin, beni yeni dizelerim ve hazırladığım itirafımla baş başa bıraktın.
+Daha sonra, bir denizcinin batıl inancından dolayı aceleyle demir almak zorunda kaldığımı açıkladım; bu tür hurafeleri bir türlü anlayabilmiş değilim.
+Not: Bir şeyi saklamanın en iyi yolu, her zaman gürültülü ve kalabalık olan bir yere koymaktır—kimsenin yakınında olağanüstü bir şey gizlenmiş olabileceğinden şüphelenmeyeceği bir yere.
+
+#TEXT 4
+************************************************************
+Sen her söylediğimde Küba Valisi olacağımı söyleyip gülerdin. O sözlerde gerçeklik payı vardı—senin için her şeyi yapmaya hazırdım. Fakat aşk zorlamayı kaldırmaz; ne kadar çabalasam, ne kadar hızlı sana koşsam da aramızdaki mesafe hiç azalmadı. Artık bunun bir önemi yok. Artık hepsi geçmişte kaldı.
+Sana bıraktığım şeyi elde etmene sadece bir adım kaldı. Her notta bir ipucu var. Hepsini birleştirirsen, nerede araman gerektiğini anlayacaksın.
+Başarılı olmak için bir anahtara ihtiyacın olacak. Onu, bir zamanlar gün batımını izlediğimiz, her şeyden konuştuğumuz yerde bıraktım; etrafımızda değirmen taşlarının uğultusu ve eski yel değirmeninin gıcırtısı vardı.
+Burasıma yalnızca benim ulaşabilmem için gerekli bir önlemdi. Her zaman zeki ve becerikli oldum—belki de fazlasıyla.
+Not: Dalgaların kıyıya vurduğu yerde, bir kapı bulacaksın; ardında ise hediyemi koruyan sır saklı.
+
+#TEXT 5
+************************************************************
+Demek buradasın.
+Neden bu yolu seçtiğini bilmiyorum. Belki eğlence içindi, belki de acıdığın için. Ama sana, diğer hayranlarından biraz daha fazla anlam ifade ettiğime inanmak istiyorum.
+Rainbow seni ufkun ötesine taşıdı, ben de yelkenlerinin akşamın altın ışığında yavaşça kayboluşunu izledim. Tek bir dileğim vardı: Seni bir kez daha görebilmek.
+Hiç ihtiyacın olmayan bir aşkla, son nefesime kadar seninim.
+Francis.
+
+#QUEST Villemstad_town_Letter
+Willemstad'ın Sırları
+
+#TEXT 1
+************************************************************
+Bu mesajı bulduğuna göre, Señor Attano sana iyi eğitim vermiş demektir. Ancak herkes bizim saflarımıza katılacak kadar yetenekli değildir. En zorlu görevlerin bile üstesinden gelebileceğini kanıtlaman gerekiyor.
+Seni dikkatle izliyoruz. Bu görevi tamamladığın anda, seni bir yenisi bekliyor olacak. Tüm sınavlardan başarıyla geçersen, artık bizden biri olacaksın.
+
+Bir sonraki görevim, Dutch West India Company'nin ofisini gözlemlemek için en iyi noktayı bulmak. Doğru bakış açısını ancak keskin bir zihin ve dikkatli gözler ortaya çıkarır. Sokakları izlemeli, şehrin uğultusunu dinlemeli ve gölgeleri kullanarak fark edilmeden kalmalıyım.
+
+Unutma: Muhafızlar her zaman tetikte. Girişin yakınında oyalanan birini hemen fark ederler. Kendi işimle ilgileniyormuş gibi görünmeli, gerekirse rol yapmalıyım.
+
+Not: Gizlenenin yolu her zaman açık değildir. Sönük bir mumun bile bir sırrı ortaya çıkarabileceğini anlayanlar, sonuna kadar gidebilir.
+
+#TEXT 2
+************************************************************
+Yolculuğuma devam ediyorum; yalnızca zekâya değil, kurnazlığa da sahip olduğumu kanıtlıyorum. Fakat tek başına denize açılan her adamın sonu hüsrandır. Artık temas kuracağım kişiyle buluşabileceğim bir yer bulmanın vakti geldi.
+Şüphe uyandırmayan, fakat istenmeyen kulaklardan uzak, özel bir konuşmaya imkân tanıyan bir yer olmalı. Seçimimi dikkatle yapmalıyım; yakında gizlenip dinleyebilecek kimsenin olmamasına özen göstermeliyim. Böyle işlerde, kendim açığa çıkmadan önce gözetleyen bir casusu fark etmek her şeyden daha mühimdir.
+
+Unutma: Martıların çığlıkları, dalgaların iskeleye çarpan sesi ya da demir zincirinin şakırtısı gibi dışarıdan gelen gürültüler, meraklı gözlerden sözlerini gizlemene yardımcı olur.
+
+Not: Bir fener, en güvenli saklanma yerini bile ortaya çıkarabilir. Ama başka zamanlarda, doğru kapıya ulaşmana da yardımcı olabilir.
+
+#TEXT 3
+************************************************************
+Bu mesajı okuyorsan, önceki görevi tamamladın demektir. İyi bir gözlemci sadece izlemeyi bilmez, aynı zamanda gerektiğinde çabucak ulaşabileceği yerlere aletlerini saklamayı da bilir.
+Şimdi terkedilmiş ve güvenli bir yer bulmam gerek—biraz eşya saklayabileceğim bir köşe. Dikkat çekmeyecek, yoldan geçenlerin merakını uyandırmayacak gizli bir köşe seçmeliyim.
+
+Unutma: Muhafızlar amaçsızca dolaşanları hemen fark eder. Hedefin belliymiş gibi yürü; nereye gittiğini biliyormuşsun gibi davran. Kasaba halkı seni burada işi olan sıradan bir denizci sansın.
+
+Not: Tuğladan bir ev, sağlamlık ve güvenilirlik demektir. Hem hazineleri hem de sırları davetsiz misafirlere karşı koruyabilir.
+
+#TEXT 4
+************************************************************
+Şimdiye kadar çok şey öğrendim, fakat en önemli kuralın her zaman bir B planının olması gerektiği. Bizim işimizde başarılı olmak isteyen herkesin güvenilir bir gizli sığınağı olmalı—saklanacak, izini kaybettirecek ya da yeni emirleri bekleyecek bir yer.
+Bir sonraki adımım, o yeri bulmak. Meraklı gözlerden saklanmış, fakat çevresindeki dar sokaklar yeterince kalabalık ve gürültülü; hareketlerimi gizlemek için özellikle akşamları, meyhanenin tıka basa dolduğu saatlerde, sokağa adım atar atmaz bir kavgaya karışmak neredeyse kaçınılmaz.
+Sarhoş kasabalılar ve yorgun marangozlar eve dönerken sana şöyle bir bakacak, hiçbir şeyden şüphelenmeyecekler—zira sırrı yalnızca sen biliyorsun. Oraya sadece Yüzük’le ulaşılabiliyor; bu yüzük, Tarikat’a olan sadakatinin simgesi ve içeri girmenin anahtarı. Yüzüğü, konutun tam karşısındaki tenha bir yerde ara.
+Unutma: sığınağında ihtiyacın olan her şey bulunmalı—para, erzak, ilaçlar. En önemlisi ise, bu yerin sadece senin bildiğin bir sır olarak kalması.
+  
+Not: Üç katlı bir eve bakınca çoğu insan sadece yerin üstünde yükseleni görür. Oysa en büyük sırlar genellikle yerin altında gizlidir.
+  
+Not: Eğer gerçekten kardeşliğimizin bir parçası olmayı hak ediyorsan, başkalarının saçmalık olarak gördüğü yerde sen bağlantıları göreceksin.
+
+#TEXT 5
+************************************************************
+Sadece seçilmiş birkaç kişinin üstesinden gelebileceği sınavları geçtin. Gözlem, gizlilik, gizli işler ve dikkatli planlama konusundaki ustalığını kanıtladın. Artık bizden birisin. Bu sandığın içindekiler, zor zamanlar için kişisel hazinendir ve bu oda senin güvenli sığınağın. Bu anı unutma. Bugünden itibaren, kalabalığın içindeki sıradan biri değilsin artık—kardeşliğin bir parçasısın.
+
+#QUEST LeFransua_town_Letter
+Le Fransua'nın Sırları
+
+#TEXT 1
+************************************************************
+Anne, baş belam ve ilham perim...
+Muhtemelen şu anda kasabada dolaşıp beni arıyorsundur... Boşuna uğraşma. Çoktan denize açıldım bile.
+Lanet olsun, bunun benim için kolay olduğunu sanma. O ahmaklar bana başka seçenek bırakmadı – ya seni yanlarında tutup ganimeti bir fahişeyle paylaşmayacaklardı, ya da seninle paylaşacaklardı ama tayfadan atılacaktın... Çok öfkelendim, Anne, ama silahlı bir grup aptalla tartışmak akıllıca olmaz.
+Eğer onları ipuçlarından mahrum bıraksaydım, kaptanlık görevimi daha yeni almışken kaybederdim. Önce güvenlerini kazanacağım, sonra sen geri döneceksin. Ve ardından bu köpekleri birlikte yöneteceğiz, son gömleğim üzerine yemin ederim.
+Yanımda ne varsa hepsini sana bıraktım. Nassau’ya varman için yeterli... Tabii yolda yine birinin koynuna girmeye karar vermezsen. Notlar kasabanın dört bir yanına gizlendi. Hepsini topla – nereye gideceğini o zaman anlayacaksın. Sadece senin akıl edebileceğin yerleri seçtim.
+
+#TEXT 2
+************************************************************
+Evet, evet, "Defol git, Jack!" – Şu an bunu söylediğini duyar gibiyim. "Önce beni yüzüstü bırakıyorsun, şimdi de gidip lanet olası birkaç kağıt parçasının peşine mi düşmem gerekiyor?!"
+Başka ne yapabilirdim ki? Burada çürük bir bakırı bile emanet edebileceğim kimse yok. Barbazon’un köpekleri, Marco gibiler – birkaç dublon için öz annelerini bile zincire vururlar. Yani bana güven, berbat seçenekler arasında en iyisi buydu.
+
+Not: Adanın en yüksek tepesinde. Ama ihtiyacın olan her şeyi almadan oraya aceleyle gitme.
+
+#TEXT 3
+************************************************************
+Nassau her an lanet dakikada değişiyor. Döndüğünde, "sevgiline" fısılda: Şehirde olup biten her şeyi bilmek istiyorum. Her dedikodu, her laf.
+Şimdilik bir anahtara ihtiyacın var. İyi saklanmış. Bir fıçının arkasındaki dar geçidi ara – muhafızların başının üstünde devriye gezdiği yerde.
+Not: İhtiyacın olan her şey o zavallı tahkimatın altında. Ben olsam daha iyisini inşa ederdim.
+
+#TEXT 4
+************************************************************
+Bu ganimet seni Nassau'ya götürecek.
+Bunu başaracağız, Anne. Yine birlikte olacağız, eskisi gibi. Kaderin beni büyük bir kaptan olmam için seçtiğine inanıyorum ve büyüklük asla kolay gelmez. Ama sana söz veriyorum, bir gün insanlar Kaptan Jack Rackham’dan bahsederken, senin adını da anacaklar.
+Nassau’da bekle. Hazineyle döneceğim. Dönmezsem de, senin huysuzluğuna katlanacak başka birini bulman gerekecek. Ona da bol şans.
+
+#QUEST FortFrance_town_Letter
+Saint-Pierre'nin Sırları
+
+#TEXT 1
+************************************************************
+Dostum, Saint-Pierre’den aceleyle ayrılmak zorunda kaldım. Onurun yerinin olmadığı, bir kardeşin hayatının para gibi görüldüğü bir oyunun parçası olamam artık. Vicdanını satanlar Tarikat’ta oldukça, onun davasına hizmet etmeyi reddediyorum.
+Michel tutuklandı. Pietro öldürüldü. Riskleri biliyordu ve son görevinden önce sahip olduğu her şeyi bize bıraktı. Bunu sana bizzat teslim etmek isterdim, ama yapamadım.
+Senin iyi bildiğin yerlere senin için birkaç not sakladım. İçlerinde ipuçları var. Hepsini topla. Seni her şeyin açığa çıkacağı yere götürecekler.
+Not: Sandıkların hepsi birbirine benziyor. Ama yalnızca biri gerçekten ihtiyacın olanı saklıyor.
+
+#TEXT 2
+************************************************************
+Beni terk ettiğim için yargılayabilirsin. Ama başka çarem yoktu. Son nefesime kadar kardeşlerime ve Rabbime sadık kalacağım – fakat açgözlülük uğruna yeminini bozanlara asla. Ve Alicia’nın güvenliğini asla riske atmam. Dünyanın ucunda hayatımın aşkını bulmak için her şeyi kaybetmeye değerdi!
+Not: İçini görebildiğin kapıyı ara.
+
+#TEXT 3
+************************************************************
+Pietro ile aynı görevi yerine getirmem gerekiyordu. Ama eve döndüğümde beni bekliyorlardı. Üç kişiydiler. Paralı askerler. Çatıştık ve sağ çıkmak tamamen şansımdı.
+Silahlarına davranmadan önce paralı askerler bana Levasseur’dan bir “selam” ilettiler. Pietro’nun ölümü ve Michel’in tutuklanmasından sonra, birinin peşine düştüğünü anlamış olmalı. Ama onun başını almak için kimi göndereceklerini bilemezdi – sadece en üst düzey subaylar ve komutan ismi biliyordu.
+Kardeşlikte Hainler!
+Not: Aşağı in. Altınızda tek bir basamak kalmayana dek devam edin.
+
+#TEXT 4
+************************************************************
+Her şey bittikten ve dışarı adım attığımda, Valigny beni bekliyordu. Yüzündeki alaycı sırıtış her şeyi anlatıyordu: paralı askerleri evime yönlendiren oydu. Bundan sonra ne kadar dindar sözler söylerse söylesin, beni asla ikna edemez.
+Not: Yolun, geride bıraktığım yere çıkıyor.
+Not: Saklı olana ulaşmak için bir anahtara ihtiyacın olacak. Hepimizin güç ve ilham bulduğu, Yaratıcı'ya yöneldiğimiz yere bak.
+
+#TEXT 5
+************************************************************
+Artık komployla ilgili gerçeği biliyorum. Sint Maarten'deki madenden de haberdarım. "Heinrich" avının ardındaki sırları öğrendim.
+Önce Michel, yargılanmadan zindana atıldı – emri kimin verdiğini biliyorsun. Sonra Pietro öldürüldü. Şimdi sıra bana geldi.
+Kardeşlerimizin hayatı, bu insanlar için sadece birer pazarlık kozu – iktidara tutunmak ve kendi sorunlarını çözmek için bir araç. En iyilerimiz öldürülüyor ya da hapsediliyor. Birilerinin sayesinde, Tarikat yakında paralı askerlerden oluşan bir çeteye dönüşecek – Rodenburg’un haydutlarından hiçbir farkı kalmayacak.
+Yakında Büyük Üstat’a bir mektup göndereceğim – eminim ki olayı araştırıp tek doğru kararı verecektir.
+Alicia’yı yanıma alıp Port Royal’a gidiyorum.
+Tanrı seni korusun.
+Ve yollarımız bir gün yeniden kesişirse – umarım hâlâ bana dostum dersin.
+
+#QUEST LadyBeth_Book
+Blackwood'un Güncesi
+#TEXT 1
+***************
+“Örnek bir subay, Blackwood. Her şeyde öyle bir düzen var ki—evrak işlerinden savaş düzenine kadar. Çok yol kat edeceksin,” dedi vali, kaçakçılara karşı başarılı operasyonumuzu kutlarken. Elizabeth de resepsiyondaydı—gözlerinde hayranlığı gördüm. Her şey yerli yerine oturuyor gibi; donanmada yükselirken hayalini kurduğum gibi.
+***************
+Yine aynı kâbustan uyandım. Bristol’un pis limanları, sürekli sarhoş babam, aç bir mide... Bir subaylık rütbesi ve yıllarca lekesiz hizmet, tüm bunları siler sanmıştım. Ama hayır. Yaşlı plantasyon sahibinin reddini duyar duymaz—her şey yeniden aklıma üşüştü. “Anlıyorsunuz, Teğmen... Demek oluyor ki...” Sanki limanlardan o aç çocuk yine benmişim gibi.
+***************
+Kararımı verdim. "Beth" sağlam bir gemi ve mürettebatım bana sadık. Garip bir durum—hazine avına çıkacağımı bilmelerine rağmen görevlerinden ayrılmaya razılar. "Bizi hiç yüzüstü bırakmadınız, señor," dedi Harris. Ben de onları yüzüstü bırakmayacağım.
+***************
+Başardım! Bu sadece şans değil, yöntemlerimin işe yaradığının kanıtı. Haritalar, hesaplamalar, yerlilere sorular—her şey saat gibi işliyor. Mürettebatın morali yüksek, gerçi bazılarının bu kadar titiz arayışa alışık olmadığını görebiliyorum. Yine de fark ediyorum ki—bu yetmiyor.
+***************
+"Beth" gemisinde ikinci yılım. Artık kendime bir unvan alacak kadar altın kazandım. Mürettebat ise şık yelekler aldı, meyhanelerde herkese içki ısmarlıyor, pahalı süs eşyalarıyla övünüyorlar. Onlar adına seviniyorum—bir zamanlar yokluk içinde çalışmanın ne demek olduğunu benden iyi kim bilebilir ki?
+Bana gelince... Hâlâ o rüyaları görüyorum. Elizabeth, beni beklediğini yazıyor. Babası ise hâlâ bana "o denizci" diyor. Daha fazlasına ihtiyacım var—gerçek bir şeye. Kafamı dağıtmak için hazine avcılığına dair kısa bir tüzük bile yazıp Barbados’a gönderdim. Ne diyebilirim? Askerler yönetmelik yazmaya bayılır, ben de onları memnun etmekten mutluyum.
+***************
+Bugün her şey değişti. Sanki düşüncelerimi okuyor. "Yanlış yerde arıyorsun, Kaptan. Bu zavallı buluntular sadece kırıntı, yeteneklerine yazık. Gerçek hazineler sadece zenginleştirmez—kaderi değiştirmeni sağlar." Doğru yolda olduğumu sanıyordum. Ne kadar da yanılmışım.
+***************
+Bu değerli arkebüz hiçbir şüphe bırakmıyor—Cortez’in hazineleri gerçekten var ve Cayman’da bir yere gömülmüş! Oradaki her karış toprağı aramadan rahat etmeyeceğim. Teğmen Harris değiştiğimi söylüyor. Ben ise doğru rotada olduğumu düşünüyorum.
+***************
+Tüm adayı kazdım. Pek çok değerli eşya buldum, ama aradığımı bulamadım. Harris ve diğerleriyle yaşananlara yazık oldu, fakat onca şeyden sonra tayfamda huzursuzluğa göz yumamam. Aşırı titizlik donanmada işe yarar, ama burada ellerini kirletmeye hazır adamlara ihtiyacım var. Tayfaya birkaç Fransız almak zorunda kalacağım, bu da şahsen benim için oldukça küçük düşürücü. Yine de, bu liman ayak takımının arasında belki birkaç değerli denizci bulabilirim. Yaklaşımımı değiştirmem şart.
+***************
+Ticaret rotalarını inceliyorum. Her gemi bir bilgi kaynağı... ve bedava iş gücü. Kaptanları Cortez'in hazineleri hakkında bir şeyler biliyor, mürettebatları ise az paraya ağır işlere alışkın. Artık daha kararlı hareket etme zamanı. Tüm fırtınalar adına yemin ederim, o lanetli altını bulacağım!
+***************
+Bugün meyhanede denizcilerin konuşmalarına kulak misafiri oldum. "Blackwood artık herhangi bir plantasyon sahibinden daha zengin," diyorlardı. Ama biliyorum ki bu sadece parıltı ve gösterişten ibaret. Asıl hazine Cayman Islands'da yatıyor. Ve onu bulacağım; gerekirse bin adamı küreklerle—ve zincirlerle—oraya gönderirim.
+***************
+Bu sefer büyük ihtimalle sonum olacak. Bundan böyle yeni tüzüğe uyacağım—artık ne adam toplayacağım ne de meyhanelerde vakit harcayacağım. Bu ada benim kalesi olacak, çevresindeki sular ise av saham. Ne garip—bir zamanlar toplumun en dibinden nasıl yükseldiğimle övünürdüm. Şimdi biliyorum ki, gerçekten yükselmek için önce daha da dibe batmak gerekiyormuş.
+Beni bekle.
+
+#QUEST SharlieTutorial_Journal
+Kaptan Ulysse’nin Güncesi
+#TEXT 1
+19 Eylül 1654
+Mare Caribaeum sularına tam zamanında girdik. Rüzgar uygun, şimdiye kadar hiçbir sorun yaşanmadı.
+
+20 Eylül 1654
+Denizde beklenmedik bir karşılaşma: Kastilyalı meslektaşımın karavelası "La Pícara"yı Dominica üzerinden San José'ye giderken gördüm. Oldukça uzaklara savrulmuşsun, Lorenzo.
+
+21 Eylül 1654
+Rüzgar hâlâ lehimize esiyor. Tayfa Paul Lourie, arkadaşlarıyla bir tartışmaya tutuşmuş; bu yüzden Alonso ona en ağır işleri veriyor. Bu meseleyi araştırmayı unutmamalıyım.
+
+22 Eylül 1654
+Capsterville limanına kayıtlı "Augustine" adlı kurye luggeri, gemimizde gümrük denetimi yaptı. Koloni yetkilileri birbirlerine öyle bir güvensizlik besliyor ki, genel vali büyük ticaret gemilerini varış limanlarına ulaşmadan durdurup aramaktan çekinmiyor.
+
+"Augustine" gemisinin teğmeni, yolcu listesini inceledikten sonra demir atmamızı ve yeni talimatları beklememizi emretti. Gemide yalnızca bir yolcumuz olduğuna göre, başıma bunca belayı kimin açtığını tahmin etmek zor değil.
+Neyse ki bizi Capsterville’e kadar peşlerinden gitmeye zorlamadılar, ama bu saçmalık yine de bana epey pahalıya patlayacak.
+Şu züppeyle konuşup ona haddini bildirmeliyim.
+
+#QUEST SharlieTutorial_ListOfSailors
+Kâtipten Not
+#TEXT 1
+Ödenecek
+Señor Denizci Alonso Pimentel: 50 doblon
+Denizci Henry Chaussone: 35 dublon
+Denizci Paul Lourie: 25 dublon (o ahmak her şeyi neredeyse berbat ediyordu!)
+
+Toplanacak
+Gemici Germain Chat'tan: Chantal’ın kedisinin mahvettiği kağıt için 7 peso ödedim.
+Kaptan Devegni'den: Tıbbi aletler için 2.000 peso
+Yolcu Charles de Maure’dan: Bozulmuş bir varil tatlı su için 30 peso ve hasar görmüş bir ırgat halatı için 200 peso.
+
+#TEXT 2
+Ödeme Bekleniyor
+Señor Denizci Alonso Pimentel: 50 dublon
+Denizci Henry Chaussone: 35 dublon
+Denizci Paul Lourie: 25 dublon (şu lanet ahmak neredeyse her şeyi berbat ediyordu!)
+
+Toplanacak
+Denizci Germain Sohbeti: Chantal’ın kedisinin mahvettiği kâğıt için 7 peso
+Kaptan Devegni'den: Tıbbi aletler için 2.000 peso
+Yolcu Charles de Maure'dan: Bozulmuş bir taze su fıçısı için 30 peso
+
+#QUEST GS_Letters
+Belizli Bir Yetkilinin Gerçek Yüzünü Ortaya Çıkaran Notlar
+#TEXT 1
+***************
+Fluyt "Bat". 14’ünde denize açılıyoruz. Belize’den Port Royal’a ticaret seferi. Gemide az sayıda muhafız var. Yük: şeker kamışı. Beşinci payım her zamanki yollarla teslim edilecek.
+***************
+Pinnace "Wavebreaker"
+
+26’sında denize açılıyor. Belize’den Capsterville’e ticaret seferi. Kıymetli abanoz yüklenmiş. Ahmaklar, nemden bozulmuş barutla yola çıkıyorlar. Payımı unutmasınlar, yoksa gazabımla karşılaşırlar.
+***************
+Galyon "Silver Wind". 18'inde demir alacak. Belize'den Blueveld'e ticaret seferi. İnsan yükü—köleler! Gerçekten değerli bir ganimet, payımın bana gecikmeden ulaşmasını sağlamalıyım. Aptallar korumasız yola çıkıyorlar.
+***************
+
+#QUEST Memento_Book
+Grim’in Güncesi
+#TEXT 1
+Amirallikten yeni bir görev aldım. "Özel bir yükü" düşman bir kolonye taşımam gerekiyor. Captain Mortimer Grim, cömert bir ücret karşılığında zarif brig'ini kullanmama razı oldu. İyi bir adam—dürüst bir denizci. Mürettebatı da harika: tecrübeli ve sadıklar. Yükün gerçek mahiyeti konusunda onları kandırmak zorunda kalmam üzücü.
+
+Evet, bunun nasıl göründüğünü biliyorum. Yorick Graves, İngiliz Kraliyeti'nin gizli ajanı, görevine dair sırları açıkça günlüğüne yazıyor. Umurumda değil! Bu tür bir iş insanı delirtir, başka türlü başa çıkılmaz. Courtney, eğer bunu okuyorsan—defol git!
+
+Mortimer yük hakkında fazlasıyla soru soruyor. Yalan söylemek zorunda kaldım—Karayip ormanlarında sıtma çekenler için ilaç taşıdığımı geveledim. Tabii ki bana inandı. Grim, Kraliyet Donanması subayının sözünün hâlâ bir anlamı olduğu bir dünyada yaşıyor.
+
+Yük mühürlü sandıklar içinde gemiye getirildi. Mürettebat homurdanıyordu—sandıklar ağır ve içlerinden tuhaf bir koku geliyor. Mortimer ise işi şakaya vurdu, beni bile güldürdü.
+
+Lanet olsun! Sonunda oldu—mürettebat arasında ilk ateş vakaları başladı. Mortimer sandıkları açıp ilaçları kontrol etmek için izin istedi. Sıkıyönetim tehdidiyle bunu yasaklamak zorunda kaldım. Kendimden nefret ediyorum.
+
+Tanrı merhamet etsin, ben ne yaptım... Veba bastı. Kaptan dün öldü.
+
+Yalnız.
+
+Mortimer’la konuştum—ya da ondan geriye ne kaldıysa. Artık öfkeli değil; şimdi anlıyor. Herkesin kefaret için bir şansı olduğunu söylüyor. Ama böyle bir şey nasıl telafi edilir? Bu insanları geri getirmek mümkün mü?
+
+Dominica açıklarında yerliler tarafından kurtarıldım. Şaman, "Ölüler yaşayanlara ders verir," dedi. Ölülerden ne öğrenebilirim ki?
+
+Adanın yakınlarında büyük bir savaş yaşandı. Hayatta kalanlar kıyıya vurdu, katliama devam etmeye hazırdılar ama onları durdurdum. İçimdeki bu gücün nereden geldiğini bilmiyorum. Hayatta mıyım yoksa burası öteki dünya mı, emin değilim. Ama Memento mürettebatsız yelken açamaz. Gemim olmadan da günahlarımın kefaretini ödeyemem.
+
+Yorick Graves öldü ve Mortimer Grim, mahvolmuşların kurtarıcısı olarak hatırlanacak. Zaten olması gereken de buydu. Umarım bu duyguyu takdir edersin. Artık sen de Memento’nun bir parçasısın—mürettebatın bir üyesi oldun.
+
+Bir düzine Kızılderiliyi bir köle gemisinin ambarından kurtardık. Altınların çoğunu mürettebatıma verdim, eski tutsakları ise Dominica'ya götüreceğim.
+
+Şaman kafatasını koparıp bir yere sakladı! Tüylü ahmak! Kabileyi ziyarete gelen misyoner olmasaydı, yeni pala kılıcımla onu yere sererdim.
+
+Ona her şeyi anlattım. İnanılmaz bir his. Artık ne yapmam gerektiğini biliyorum! "Ölüler yaşayanlara ders versin." Elbette! İnsanları zincirlerden ya da ilmekten kurtarmak yetmez—onları ölümden de kurtarmak gerekir. Ve bunun tek yolu, başka bir ruhun benim yaşadıklarımı yaşamasını sağlamak: ölmek ve geri dönmek. Onlara acıyor muyum? Elbette. Ama haklıydım. Kimse bana hiç acımadı.
+
+Zaten yeni bir kafatası buldum—ölüm sınavından herkes sağ çıkamaz. Böyle olması daha iyi. Mortimer’ın boş göz çukurları Dominica’da kalsın, gemisinde olup bitenlere kör olsun. Zaten anlamazdı.
+
+#QUEST WildRose_Records
+1638 Haziran’ında Justice Island açıklarında batan gemilere dair kayıtlardan alıntılar
+#TEXT 1
+"...15 Haziran. 'Wrangler' brigası. Majesteleri Kral Charles I'in gemisi."
+Dış halkasının güneydoğu kıyısına vurduk. Enkazdan kurtarabildiklerim:
+- 11 fıçı İskoç birası
+- 20 fıçı taze su
+- 17 sandık erzak
+- 3 top, 16 librelik
+- 18 misket tüfeği
+- 29 adet keskin silah
+- 4 sandık cephane
+- 15 top kumaş balyası
+Dört Kurtulan
+- Joshua Casper (kaptan)
+- Teresa Casper
+- Anthony Young
+- Pieter Friddiks...”
+
+#QUEST WildRose_Records_2
+Padre Domingo De la Cruz'un kilise defterinden alıntılar, 1638 yazı
+#TEXT 1
+7 Haziran. Yeni vefat eden Tanrı’nın hizmetkârı Maximilian van Ekkus için cenaze töreni.
+
+18 Haziran. Tanrı'nın yeni vefat eden kulları Anthony Young ve Pieter Friddiks için cenaze ayini.
+
+25 Haziran. Yeni vefat eden Tanrı’nın hizmetkârı Teresa V. Casper için cenaze ayini. Tanrı’nın hizmetkârları Jean-Pierre R. Sorren ve Umberto Rojas’ın ruhu için dualar edilecek (cesetleri bulunamadı).
+
+5 Temmuz. Tanrı'nın kulu Thierry G. Legros'un vaftizi (doğum tarihi: 27 Şubat).
+
+3 Ağustos. Tanrı’nın kulu Fabian O. Galard’ın (10 Haziran doğumlu) ve Tanrı’nın kulu Mary J. Casper’ın (22 Haziran doğumlu) vaftizi.
+
+#QUEST WildRose_Records_3
+Joshua Casper’ın kişisel dosyasından bazı detaylar
+#TEXT 1
+Joshua Anthony Casper, 1586 yılında Portsmouth şehrinde doğdu.
+Haziran 1611'den beri Majestelerinin Donanması'na hizmet ediyorum.
+1619: Teğmenlik sınavını geçtim, 'Reversible' firkateynine atandım...
+1625: 'Triumph' firkateynine birinci zabit olarak transfer edildim...
+1630: 'Cornwall' adlı brigantin kaptanlığına atandım... 1638'de gemi ve mürettebatımla birlikte denizde kayboldum.
+Evli değilim. Çocuğum yok.
+Örnek bir subay, birçok ödül ve takdirname sahibi, hiçbir kınama ya da uyarı kaydı yok...
+
+#QUEST WildRose_Records_4
+Kaptan Joshua Casper’a Antigua ve Providence’a maaşları teslim etmesi emrinin içeriği
+#TEXT 1
+'Cornwall' adlı brigantin kaptanı Joshua Anthony Casper'a — askeri malzemeleri boşaltmak üzere Dundalk kasabasına git, ardından Atlantik Okyanusu'nu geçerek Antigua ve Providence adalarındaki garnizonlara maaşları teslim et. Görevi tamamladıktan sonra Antigua Valisi Thomas Warner'a rapor ver, mürettebata izin ver ve ardından ana limanına, İngiltere'ye dön.
+'Cornwall' brigini sefere hazırlamak, mürettebatı eğitmek, erzakları ve belirtilen yükü gemiye almak tamamen Kaptan Joshua Anthony Casper'ın sorumluluğunda.
+
+Kendi elimle imzaladım,
+Amiral Yardımcısı Robert Bertie, 3. Lindsey Kontu
+8 Ocak 1638
+Londra, İngiltere
+
+#QUEST WildRose_Records_5
+Kaptan Joshua Casper'ın Atlantik geçişine dair raporundan bazı detaylar
+#TEXT 1
+...Londra’dan ayrıldım, 14 Ocak 1638, rota Dundalk’a ayarlandı...
+...1638, 19 Ocak'ta Dundalk'a vardım, askeri malzemelerin boşaltılmasına başladık...
+...Dundalk'tan ayrıldım, 21 Ocak 1638, güneybatı rotasına yelken açtım...
+...10 Şubat 1638, São Miguel adası açıklarında (Azorlar), İspanyol kalyonu 'Toro' ile çatışmaya girdik. Tahmini silah gücü: yaklaşık 50 ağır top. Düşmanın ana direğini devirdikten sonra, Amirallik tarafından bana verilen görevi tehlikeye atmamak için geri çekilmeye karar verdim ve rotamı batıya çevirdim. Kayıplar: 32 adam, aralarında şu subaylar da var: Birinci Zabıt Rupert Northwood, Teğmen Edward Matts, Teğmen Samuel Downes. Ölenler, Majestelerinin Donanması'nın geleneklerine uygun şekilde denize defnedildi.
+...1 Haziran 1638'de Antigua adasına vardım, garnizonun maaş sandığını Vali Sir Thomas Warner'a teslim ettim...
+
+Kendi elimle imzaladım,
+Majestelerinin gemisi 'Cornwall'un kaptanı Joshua Anthony Casper
+2 Haziran 1638
+St. John’s, Antigua adası
+
+#QUEST WildRose_Records_6
+Jerome Sauvernier'den Fadey the Muscovite'ye Mektup
+#TEXT 1
+Monsieur Fadey, umarım bu mektup size sağlıklı bir şekilde ulaşır. Ne yazık ki, kendi durumum için aynı şeyi söyleyemem. “Glass Eye”da şiddetli bir kavga patlak verdi ve ben de talihsizce bu kargaşanın ortasında kaldım. Hayati tehlikesi olmayan ama ciddi bir yara aldım; bu da beni, bu son derece misafirperver olmayan kasabada bir süre kalmaya mecbur ediyor.
+Gelelim görevinize — iyi haberlerim var. Rupert Casper adında bir adamın izini sürmeyi başardım. Basse-Terre’ye döndüğümde size ayrıntıları vereceğim. Beklettiğim için üzgünüm.
+Jerome Sauvernier
+
+#QUEST LEDR_Book_1
+Diego Velázquez de Cuéllar'ın Günlüğünden Alıntılar
+#TEXT 1
+Bugün yine bir vahşi köyünü yerle bir ettik. Hiçbiri kılıçlarımıza karşı duramadı. Direnmeye cüret edenleri anında öldürdük, geri kalanları zincire vurduk. Kulübeleri kül oldu, ambarları boşaltıldı, tüm değerli eşyalar ganimetimiz oldu. Çocuklarını saklamaya çalışanlar, hayatta kalanların gözleri önünde öldürüldü. Gözyaşları sel gibi aktı, zaferimizin sancaklarını yıkadı adeta. Artık bu topraklar İspanya’ya ait. Buraya düzeni ve Tanrı’nın iradesini getirdik, kan pahasına da olsa.
+
+Planım başarıya ulaştı. Yerliler görüşmeye geldi. Şefleri ateşin etrafında oturmuş, safça barışın mümkün olduğuna inanıyorlardı. Ama gerçek barış ancak kanla sağlanır. Kulübeyi kuşattık, kapıyı kapattık ve ateşe verdik. İlk başta öfke dolu, çaresiz çığlıklar yükseldi. Sonra her şey sustu, yalnızca ateşin çıtırtısı sessizliği bozuyordu. Yanık et kokusu havayı doldurdu; sanki Rab’bin bir lütfu gibi. Bu vahşiler bir daha asla başlarını kaldıramayacaklar.
+
+Cacique Atuay hak ettiğini buldu. Kendi halkının infazını izlemeye zorladım onu: kadınlar ateşe atıldı, gençlerin kafaları yarıldı, çocuklar korkudan çığlık attı. Büyük ateşin ortasında bir direğe bağlanmıştı. Alevler bedenini sararken izledim onu. Ama acıdan tek bir feryat duymadım. Hayır, sesi sakindi ve bize karşı küçümsemeyle doluydu. Hiçbir şey için yalvarmadı, bunun yerine bize lanetler savurdu. Aptal vahşi! Sözlerinin bizi korkutabileceğine inanıyordu. Rüzgar, onun bu hayalini de, bedeninin külüyle birlikte savurup götürecek.
+
+O infazdan sonra tuhaf şeyler fark etmeye başladım. Gündüzleri rahipler Tanrı’nın lütfundan bahsederken, geceleri etrafımızda gölgeler sanki canlanıyordu. Kadınların ağıtları, çocukların çığlıkları ve vahşilerin lanetleri kulaklarımda yankılanıyor gibiydi. Dün gece denizcilerden biri öldü. Cesedi parçalanmış halde bulundu, sanki vahşi hayvanlar saldırmıştı. Herkese dua etmelerini emrettim ama dualar fayda etmedi. Artık eminim: Bu Atuay’ın işi. Üzerimize bir lanet koydu.
+
+Lanet... Beni asla terk etmeyecek. İçimde, kalbimi saran bir yılan gibi yuvalanıyor. Her gece yanan kulübeleri görüyorum, ölülerin çığlıklarını ve inlemelerini duyuyorum; beni hesap vermeye çağırıyorlar. Külün içinden iskeletleri doğruluyor, boş göz çukurlarıyla bana kinle bakıyorlar. Şimdi bile, bu odada, adımlarını işitiyorum. Kapılar yavaşça gıcırdıyor, sanki biri içeri giriyor ama kimseyi göremiyorum. Ellerim öyle titriyor ki, tüy kalem neredeyse elimden kayacak. Kurtuluş yok. Tanrı beni terk etti, tıpkı benim merhameti terk ettiğim gibi. Yakındalar. Yakında beni alacaklar...
+
+#QUEST Doc1Sp4
+Brezilya İşleri Raporu
+
+#TEXT 1
+GİZLİ RAPOR DİREKTÖRLÜK İÇİN Curaçao, Mayıs 1654 KONU: Portekiz Brezilyası'ndaki Durum
+ASKERİ DURUM  
+Brezilya’daki kayıplarımız artmaya devam ediyor. Albay Sebastião Tavora geçen yıl sahil mevzilerimize bir dizi ağır darbe indirdi. Üç gemimiz battı, kıyı tahkimatlarımız yerle bir edildi.
+SİYASİ DURUM  
+Lizbon’dan gelen istihbarat ilginç haberler taşıyor. Askeri başarılarına rağmen, Colonel Tavora sarayda gözden düşmüş. Nedeni ise, bizimle ticari bağları yeniden kurmak için gizlice pazarlık yapan etkili ticaret çevrelerine açıkça karşı çıkmasıymış.
+GÜNCEL DURUM Son gelen bilgilere göre, Tavora ve kızı onurlu bir sürgüne gönderilmiş. Şu an nerede oldukları bilinmiyor.
+TAVSİYELER  
+Tüm ajanlara, Albay Tavora'nın şu anki yerini tespit etmeleri emredildi. Şirketin faaliyet alanlarına yakınlarında, gözden düşmüş de olsa, parlak askeri eğitime sahip bir vatansever ve idealistin varlığı istenmeyen bir durumdur.
+SONUÇ Savaş sürüyor, fakat ticaret çevrelerindeki bağlantılarımız ve dayanışmamız sayesinde dengeler lehimize dönmeye başladı.
+Vekâleten Direktör, Lucas Rodenburg
+
+#QUEST Doc2Sp4
+Antigua'dan Mektup
+
+#TEXT 1
+D. Teklifini ciddi şekilde düşündüm ve cevabım hayır. Bu kararın makam sadakatiyle hiçbir ilgisi yok. Curaçao’daki o alçaklar da en az bizim kadar açgözlü. O kaltak beni ve adamlarımı kırmızı ceketlilerin ayakları altına attıktan sonra, oradaki her birini gözümü kırpmadan doğrayacağımı sen de gayet iyi biliyorsun.
+
+Ne derseniz deyin, bizim Leviathan bu vahşi sınırda düzeni sağlayan tek şey. Poliçeler ve gemi kayıtları, bu dünyaya getirdiği en iyi şeyler. Biliyorum, sen daha iyisini yapacağını söylersin, ama ya yapamazsan? O zaman ne olacak? Avrupa'nın taçlı başları bizimle ilgilenmiyor, doğa ise boşluktan hoşlanmaz. O korsan baronlarının iktidarı ele geçirmesiyle hepimiz daha mı iyi olacağız sanıyorsun?
+
+O zaman bana destek olmuştun, bu yüzden seni ihbar etmeyeceğim. En iyisi ailene dön dostum. M.

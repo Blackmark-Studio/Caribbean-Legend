@@ -1,0 +1,18 @@
+News {Patch 1.7}
+News_descr
+{
+***************************   Ahoy!   ***************************
+-------------------------------------------------------------------------------------------------
+— Bem-vindo à versão 1.7!
+— A quarta parte da série de DLC "Ships Pack" foi lançada
+— Você pode alternar livremente entre versões pelo Steam
+— Não é necessário começar um novo jogo
+— Os saves foram reformulados e melhorados
+— Novas mecânicas de infiltração em cidades e furtividade
+— A IA luta melhor em terra
+— Epílogo, melhorias de qualidade de vida e mais
+— Você pode encontrar a lista detalhada de mudanças nas notícias pelo botão abaixo
+}
+News_Attention { }
+
+key {31.01.2026}

@@ -222,7 +222,7 @@ void ProcessDialogEvent()
 			pchar.quest.storehelper4.win_condition.l1 = "location";
 			pchar.quest.storehelper4.win_condition.l1.location = "FortFrance_store";
 			pchar.quest.storehelper4.function = "NewstorehelperRegard";
-			AddQuestRecord("SharlieA", "4");
+			// AddQuestRecord("SharlieA", "4");
 			pchar.questTemp.Sharlie.Storehelper = "choise";
 			pchar.quest.storehelper.over = "yes"; //снять прерывание
 			

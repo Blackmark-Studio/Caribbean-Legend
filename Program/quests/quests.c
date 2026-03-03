@@ -330,6 +330,8 @@ void AddQuestUserData(string idQuest, string strID, string strData)
 		tmpStr = arCur.UserData;
 	}
 	arCur.UserData = tmpStr + "@<"+strID+">" + strData;
+	
+	pchar.last_quest_record.(idQuest).UserData = pchar.QuestInfo.(idQuest).UserData;
 }
 string usrQuestData;
 ref GetQuestUserData()
@@ -416,6 +418,14 @@ void AddQuestRecordEx(string idQuest,string idReferenceQuest,string idText)
 		DoQuestFunctionDelay("Tutorial_Logbook", 1.0);
 		DeleteAttribute(&TEV, "Tutor.PopUpLogbook");
 	}
+	pchar.last_quest_record.uniqueID = idQuest;
+	pchar.last_quest_record.ID = idReferenceQuest;
+	pchar.last_quest_record.closed = false;
+	if(GetMaxAutoSaves("QuestRecord") != 0)
+	{
+		DeleteAfterSaveFunction();
+		PostEvent("Event_NewAutoSave", 1, "s", "QuestRecord");
+	}
 }
 
 // boal метод для инфы  -->
@@ -485,6 +495,7 @@ void CloseQuestHeader(string idQuest)
 	DeleteAttribute(pchar,"QuestInfo."+idQuest);
 	aref newAttr; makearef(newAttr,pchar.QuestInfo.(idQuest));
 	CopyAttributes(newAttr,questRef);
+	pchar.last_quest_record.closed = true;
 }
 bool CheckActiveQuest(string idQuest)
 {
@@ -1158,8 +1169,8 @@ void ReloadFromWMtoL_complete()
 bool DoReloadFromSeaToLocation(string idLocation, string idGroup, string idLocator)
 {
 	
-	if(bSeaActive)	{ DeleteSeaEnvironment(); }
-	else {bSkipSeaLogin = true;}
+	if (bSeaActive) DeleteSeaEnvironment();
+	else bSkipSeaLogin = true;
 
 	pchar.tmpWDMtoLand.location = idLocation;
 	pchar.tmpWDMtoLand.group = idGroup;
@@ -1243,11 +1254,11 @@ string GetFullName(ref chref)
 	}
 	if(CheckAttribute(chref,"middlename"))
 	{
-	    if (chref.middlename != "") retStr = retStr + " " + chref.middlename;
+	    if (stripblank(chref.middlename) != "") retStr = retStr + " " + chref.middlename;
 	}
 	if(CheckAttribute(chref,"lastname"))
 	{
-	    if (chref.lastname != "") retStr = retStr + " " + chref.lastname;
+	    if (stripblank(chref.lastname) != "") retStr = retStr + " " + chref.lastname;
 	}
 	
 	return retStr;
@@ -1941,9 +1952,10 @@ void EnterMapFunction(string sQuest)
 }
 // Для универсализации <--
 
-void DeleteQuestCondition(string sQuest)
+// Останавливаем обработчик с опциональной проверкой, что он был
+void DeleteQuestCondition(string sQuest, bool deleteOnlyifPresent = false)
 {
-	PChar.Quest.(sQuest).over = "yes";
+	if (!deleteOnlyifPresent || CheckAttribute(PChar, "Quest." + sQuest)) PChar.Quest.(sQuest).over = "yes";
 }
 
 void CalculateCheatsInfo() // Для статистики по читам. Используется в интерфейсе Debuger

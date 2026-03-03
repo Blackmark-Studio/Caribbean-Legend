@@ -581,12 +581,22 @@ void Slavetrader_EscapeSlaveInShore(string qName)
     LAi_group_Delete("EnemyFight"); 
 	chrDisableReloadToLocation = true; //закроем локацию
 	GetCharacterPos(pchar, &locx, &locy, &locz);
+	object aCrewSoldier[3];
+	GenerateCrew(pchar, "soldier", &aCrewSoldier);
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20 + 2*sti(pchar.rank);
 	//наши
     for (i=1; i<=3; i++)
     {
+		string model = aCrewSoldier[i - 1].model;
+		string ani = aCrewSoldier[i - 1].ani;
         iTemp = 10+rand(10);
-		sld = GetCharacter(NPC_GenerateCharacter("OwnCrew_"+i, "citiz_"+(rand(8)+42), "man", "man", iTemp, sti(pchar.nation), 0, true, "soldier"));
-		SetFantomParamFromRank(sld, iTemp, true);
+		sld = GetCharacter(NPC_GenerateCharacter("OwnCrew_"+i, model, "man", ani, iTemp, sti(pchar.nation), 0, true, "soldier"));
+		FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
+		SetFantomParamFromRank(sld, iTemp, false);
         LAi_SetWarriorType(sld);
 		LAi_warrior_DialogEnable(sld, false);
         LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);

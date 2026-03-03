@@ -349,7 +349,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Hold_GenQuest83":
-			dialog.text = "Goddamn it! I always knew that scoundrel"+pchar.GenQuest.Hold_GenQuest.CapName+" would blab this out sooner or later! What was I thinking when I offered him this deal?";
+			dialog.text = "Goddamn it! I always knew that scoundrel "+pchar.GenQuest.Hold_GenQuest.CapName+" would blab this out sooner or later! What was I thinking when I offered him this deal?";
 			link.l1 = "Stop whining already. I mean no harm... Just sell me this map and go on living the life you're used to.";
 			link.l1.go = "Hold_GenQuest84";
 		break;

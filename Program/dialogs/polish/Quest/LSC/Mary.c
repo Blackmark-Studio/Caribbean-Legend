@@ -1082,8 +1082,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "return_2":
-			dialog.text = "Nie, nie jest mi zimno. Po prostu... Nie chcę o tym tutaj rozmawiać. Przyjdź do mojej kajuty, gdy skończysz. Chcę z tobą zostać sama, tak, co nie? Czy nie idziesz teraz do admirała i Nathaniela?";
-			link.l1 = "Tak. Muszę porozmawiać z Rekinem i, oczywiście, zabrać Danielle do Nathaniela. To nie zajmie zbyt dużo czasu. Wkrótce cię zobaczę, Mary.";
+			if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie"))
+			{
+				dialog.text = "Nie, nie jest mi zimno. Po prostu... Nie chcę o tym tutaj rozmawiać. Przyjdź do mojej kajuty, gdy skończysz. Chcę z tobą zostać sama, tak, co nie? Czy nie idziesz teraz do admirała i Nathaniela?";
+				link.l1 = "Tak. Muszę porozmawiać z Rekinem i, oczywiście, zabrać Danielle do Nathaniela. To nie zajmie zbyt dużo czasu. Wkrótce cię zobaczę, Mary.";
+			}
+			else
+			{
+				dialog.text = "Nie, nie jest mi zimno. Po prostu... Nie chcę o tym tutaj rozmawiać. Przyjdź do mojej kajuty, gdy skończysz. Chcę z tobą zostać sama, tak, co nie? Czy nie idziesz teraz do Nathaniela?";
+				link.l1 = "Tak. Muszę zabrać do niego Danielle. To nie zajmie zbyt dużo czasu. Wkrótce cię zobaczę, Mary.";
+			}
 			link.l1.go = "return_3";
 		break;
 		
@@ -2749,7 +2757,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -2764,7 +2772,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;		

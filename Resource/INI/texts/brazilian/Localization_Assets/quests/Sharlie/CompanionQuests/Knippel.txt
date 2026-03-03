@@ -1,0 +1,30 @@
+Knippel_1 {Você usou a chave}
+Knippel_2 {Peter}
+Knippel_3 {Adams}
+Knippel_4 {Jane}
+Knippel_5 {Adams}
+Knippel_6 {Charlie veio ao resgate!}
+Knippel_7 {Frederick}
+Knippel_8 {Stokes}
+Knippel_9 {Ralph}
+Knippel_10 {Faggle}
+Knippel_11 {21 de julho de 1654@<NewStr()>St. John's, Antígua}
+Knippel_12 {Thomas}
+Knippel_13 {Lynch}
+Knippel_14 {O Sussex está no horizonte!}
+Knippel_15 {Edmund}
+Knippel_16 {Sheffield}
+Knippel_17 {Michael}
+Knippel_18 {Whitney}
+Knippel_19 {Bombardeiro desbloqueado}
+Knippel_20 {Algum tempo depois...@<NewStr()>Na Casa Fleetwood}
+Knippel_21 {Frederick}
+Knippel_22 {Stokes}
+Knippel_23 {Ralph}
+Knippel_24 {Faggle}
+Knippel_25 {2 horas depois...@<NewStr()>Abordagem do 'Sussex'}
+Knippel_26 {Thomas}
+Knippel_27 {Lynch}
+Knippel_28 {Сhimera}
+Knippel_29 {Tempo presente}
+Knippel_30 {17 de agosto de 1654@<NewStr()>, a sudeste de Dominica}

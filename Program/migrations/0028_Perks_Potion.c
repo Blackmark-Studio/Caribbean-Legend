@@ -11,9 +11,7 @@ void PerksPotionInit()
 	int i, n;
 	ref itm;
 	aref callback;
-	
-	object tempItems[2];
-	SetArraySize(&tempItems, TOTAL_ITEMS);
+	object tempItems[TOTAL_ITEMS];
 	
 	for(i = 0; i < TOTAL_ITEMS; i++)
 	{

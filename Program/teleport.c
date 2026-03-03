@@ -121,7 +121,7 @@ void DoTeleportChoose()
 		tmp_chref.name = tel_dialogFileName;
 		tmp_chref.Dialog.Filename = tel_dialogFileName;
 		tmp_chref.Dialog.CurrentNode = tel_dialogNodeName;
-		DialogMain(tmp_chref);
+		DialogMain(tmp_chref, false);
 		break;
 	}
 }

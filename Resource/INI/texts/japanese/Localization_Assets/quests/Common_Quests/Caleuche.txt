@@ -1,0 +1,40 @@
+Caleuche_1 {Tuttuathapak}
+Caleuche_2 { }
+Caleuche_3 {キャプテン・アンデッド}
+Caleuche_4 { }
+Caleuche_5 {幽霊船}
+Caleuche_6 {Fergus}
+Caleuche_7 {Hooper}
+Caleuche_8 {幽霊船から逃げ出した！}
+Caleuche_9 {Reginald}
+Caleuche_10 {Jackson}
+Caleuche_11 {Harpy}
+Caleuche_12 {シェベック「Harpy」}
+Caleuche_13 {死んだ女主人}
+Caleuche_14 { }
+Caleuche_15 {Chavinavy}
+Caleuche_16 { }
+Caleuche_17 {Esberto}
+Caleuche_18 {Salinas}
+Caleuche_19 {トゥットゥアタパクの護符は力を失った！}
+Caleuche_20 {「T」キーで使用}
+Caleuche_21 {ポータルが封鎖されています！}
+Caleuche_22 {チャビナビ族の酋長}
+Caleuche_23 { }
+Caleuche_24 {神殿のアンデッド}
+Caleuche_25 { }
+Caleuche_26 {地平線に幽霊船だ！}
+Caleuche_27 {Baltazar}
+Caleuche_28 {de Cordes}
+Caleuche_29 { }
+Caleuche_30 {身軽になった気がする}
+Caleuche_31 {より頑丈になった気がする}
+Caleuche_32 {力がみなぎる}
+Caleuche_33 {洞察が研ぎ澄まされる}
+Caleuche_34 {洞察力が高まった気がする}
+Caleuche_35 {自信が湧いてくる}
+Caleuche_36 {ひらめきを感じる}
+Caleuche_37 {幽霊船が水平線に現れた！}
+Caleuche_38 {傷のため気を失った…}
+Caleuche_39 { }
+Caleuche_40 { }

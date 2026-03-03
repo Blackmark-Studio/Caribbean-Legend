@@ -1,4 +1,5 @@
 // Захария Марлоу, Чёрный Пастор, Пуэрто-Принсипе, Куба
+int iMarlowTotalTemp;
 void ProcessDialogEvent()
 {
 	ref NPChar, sld;
@@ -28,29 +29,42 @@ void ProcessDialogEvent()
                 case "repeat":
                     if (npchar.angry.name == "Firsttime") Dialog.CurrentNode = "AngryRepeat_1";
                     if (npchar.angry.name == "I_know_you_good") Dialog.CurrentNode = "AngryRepeat_2";
+                    if (npchar.angry.name == "pirate_threat")
+                    {
+                        if (Dialog.CurrentNode == "I_know_you_good") Dialog.CurrentNode = "AngryRepeat_2";
+                        else Dialog.CurrentNode = "AngryRepeat_1";
+                    }
                 break;
             }
         }
     } //<-- блок angry
 
-	switch(Dialog.CurrentNode)
+	switch (Dialog.CurrentNode)
 	{
 		case "First time":
-            dialog.text = NPCStringReactionRepeat("As-tu une affaire avec moi ? Si ce n'est pas le cas, alors dégage d'ici !","Je pense que je me suis bien fait comprendre.","Bien que je me sois expliqué, tu continues à m'agacer !","D'accord, je commence à en avoir marre de cette impolitesse.","répéter",3,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("Je pars déjà.","Bien sûr, Pasteur.","Je suis désolé, Pasteur.","Oups...",npchar,Dialog.CurrentNode);
-			link.l1.go = "exit";
-			NextDiag.TempNode = "First time";
-			
 			if (sti(pchar.GenQuest.Piratekill) > 20)
 			{
-				dialog.text = RandPhraseSimple("Es-tu fou ? Tu voulais jouer au boucher ? Tous les pirates sont en colère contre toi, garçon, tu ferais mieux de quitter cet endroit.","Il semble que tu sois devenu fou, garçon. Voulais-tu dégourdir un peu tes mains ? Sans vouloir t'offenser, mais tu n'as rien à faire ici. Déguerpis !");
-				link.l1 = RandPhraseSimple("Écoute, je veux arranger la situation...","Aidez-moi à résoudre ce problème...");
+				dialog.text = RandPhraseSimple("Es-tu fou ? Voulais-tu jouer au boucher ? Tous les pirates sont en colère contre toi, garçon, tu ferais mieux de quitter cet endroit...","Il semble que tu sois devenu fou, garçon. Tu voulais te dégourdir un peu les mains ? Sans vouloir t'offenser, mais tu n'as rien à faire ici. Dégage !");
+				link.l1 = RandPhraseSimple("Ecoute, je veux arranger la situation...","Aidez-moi à résoudre ce problème...");
 				link.l1.go = "pirate_town";
 				break;
 			}
 			
+			link.l0 = ""+npchar.name+", je voudrais" + GetSexPhrase("","e") + " discuter de ma sécurité en mer. Les gars de la Fraternité de la Côte s'intéressent un peu trop à ma modeste personne. Tu pourrais les calmer un peu ?";
+			link.l0.go = "pirate_threat";
+			
+			dialog.text = NPCStringReactionRepeat("As-tu quelque chose à me dire ? Non ? Alors dégage d'ici !",
+						"Je pense avoir été clair, cesse de m'importuner.","Bien que je me sois fait comprendre, tu continues à m'agacer !",
+						"D'accord, je commence à en avoir marre de cette grossièreté.","répéter",3,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("Je pars déjà.",
+						"D'accord, "+npchar.name+"...",
+						"Désolé, "+npchar.name+"...",
+						"Aïe...",npchar,Dialog.CurrentNode);
+			link.l1.go = "exit";
+			NextDiag.TempNode = "First time";
+			
 			//--> Сага
-			if(CheckAttribute(pchar, "questTemp.Saga.SharkHunt") && !CheckAttribute(npchar, "quest.sharkbegin"))
+			if (CheckAttribute(pchar, "questTemp.Saga.SharkHunt") && !CheckAttribute(npchar, "quest.sharkbegin"))
 			{
 				link.l1 = "J'essaie de trouver Shark Dodson. On dit que vous êtes le dernier homme qui l'a vu. Pouvez-vous m'aider avec ça ?";
 				link.l1.go = "Shark";
@@ -174,7 +188,8 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = "I_know_you_good";
 			AddQuestRecord("BarbTemptation", "27");
-			if (CheckCharacterItem(pchar, "splinter_mt") && CheckCharacterItem(pchar, "splinter_jb") && CheckCharacterItem(pchar, "splinter_zm")) Saga_GiveCalendar();
+			if (CheckCharacterItem(pchar, "splinter_mt") && CheckCharacterItem(pchar, "splinter_jb") && CheckCharacterItem(pchar, "splinter_zm"))
+                Saga_GiveCalendar();
 			ChangeCharacterComplexReputation(pchar, "fame", 1);
 		break;
 
@@ -184,18 +199,27 @@ void ProcessDialogEvent()
 		break;
 
         case "I_know_you_good":
-            dialog.text = NPCStringReactionRepeat(GetFullName(pchar)+", je suis content de te voir ! Que veux-tu ?","Que veux-tu d'autre ?","Encore ? Ne dérange pas les gens si tu n'as rien à faire !","Tu es un "+GetSexPhrase("bon corsaire","bonne fille")+", donc tu peux vivre pour l'instant. Mais je ne veux plus te parler.","répéter",10,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("Je ne fais que rendre visite.","Rien...","D'accord, Pasteur, je suis désolé...","Merde, ma faute !",npchar,Dialog.CurrentNode);
-			link.l1.go = "exit";
-			NextDiag.TempNode = "I_know_you_good";
-			
 			if (sti(pchar.GenQuest.Piratekill) > 20)
 			{
-				dialog.text = RandPhraseSimple("Es-tu fou? Tu voulais jouer au boucher? Tous les pirates sont en colère contre toi, garçon, alors tu ferais mieux de quitter cet endroit...","On dirait que tu es devenu fou, garçon. Tu voulais te dégourdir un peu ? Sans vouloir t'offenser, mais tu n'as rien à faire ici. Dégage !");
-				link.l1 = RandPhraseSimple("Ecoute, je veux arranger la situation...","Aide-moi à résoudre ce problème...");
+				dialog.text = RandPhraseSimple("Es-tu fou ? Voulais-tu jouer au boucher ? Tous les pirates sont en colère contre toi, garçon, tu ferais mieux de quitter cet endroit...","Il semble que tu sois devenu fou, garçon. Tu voulais te dégourdir un peu les mains ? Sans vouloir t'offenser, mais tu n'as rien à faire ici. Dégage !");
+				link.l1 = RandPhraseSimple("Ecoute, je veux arranger la situation...","Aidez-moi à résoudre ce problème...");
 				link.l1.go = "pirate_town";
 				break;
 			}
+
+			link.l0 = ""+npchar.name+", je voudrais" + GetSexPhrase("","e") + " discuter de ma sécurité en mer. Les gars de la Fraternité de la Côte s'intéressent un peu trop à ma modeste personne. Tu pourrais les calmer un peu ?";
+			link.l0.go = "pirate_threat";
+
+			dialog.text = NPCStringReactionRepeat("As-tu quelque chose à me dire ? Non ? Alors dégage d'ici !",
+						"Je pense avoir été clair, cesse de m'importuner.","Bien que je me sois fait comprendre, tu continues à m'agacer !",
+						"D'accord, je commence à en avoir marre de cette grossièreté.","répéter",3,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("Je pars déjà.",
+						"D'accord, "+npchar.name+"...",
+						"Désolé, "+npchar.name+"...",
+						"Aïe...",npchar,Dialog.CurrentNode);
+			link.l1.go = "exit";
+			NextDiag.TempNode = "First time";
+
 			//поручение капитана - выкуп
 			if (CheckAttribute(pchar, "GenQuest.CaptainComission") && CheckAttribute(pchar,"GenQuest.CaptainComission.toMayor"))
 			{
@@ -224,7 +248,7 @@ void ProcessDialogEvent()
 	//-----------------------------------Поручение капитана - Выкуп-------------------------------------------------
 		case "CapComission1":
 			dialog.text = "Ha-ha. Penses-tu que je n'ai qu'un seul prisonnier ici ? Nomme-le.";
-			link.l1 = pchar.GenQuest.CaptainComission.SlaveName+"Est-il ici ?";
+			link.l1 = pchar.GenQuest.CaptainComission.SlaveName+" Est-il ici ?";
 			link.l1.go = "CapComission2";
 			DeleteAttribute(pchar,"GenQuest.CaptainComission.toMayor");
 		break;
@@ -243,7 +267,8 @@ void ProcessDialogEvent()
 				link.l1.go = "CapComission2_2";
 				if(makeint(pchar.money) > 150000)
 				{
-					link.l2 = "C'est bien que tu ne l'aies pas vendu. Voici tes pièces - 150.000 pesos. Où puis-je le récupérer ?"link.l2.go ="CapComission2_3";
+					link.l2 = "C'est bien que tu ne l'aies pas vendu. Voici tes pièces - 150.000 pesos. Où puis-je le récupérer ?";
+                    link.l2.go = "CapComission2_3";
 				}	
 			}
 		break;
@@ -297,7 +322,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(sti(NPChar.nation));
 			pchar.GenQuest.CaptainComission.UnknownPirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
 			sLoc = XI_ConvertString(pchar.GenQuest.CaptainComission.Island + "Dat"); // belamour gen
-			dialog.text = "Hm... Eh bien, "+GetName(NAMETYPE_ORIG,pchar.GenQuest.CaptainComission.UnknownPirateName,NAME_NOM)+"a convaincu certains pirates que leur part du butin est gardée dans notre cachette non loin de "+XI_ConvertString(pchar.GenQuest.CaptainComission.Island.Shore+"Gén")+". Leurs deux navires '"+pchar.GenQuest.CaptainComission.ShipName1+"' et '"+pchar.GenQuest.CaptainComission.ShipName2+"' levé l'ancre il n'y a pas longtemps et a navigué vers "+sLoc+"Maintenant tu vois pourquoi je ne peux pas faire confiance à mes hommes pour ce boulot?";
+			dialog.text = "Hm... Eh bien, "+GetName(NAMETYPE_ORIG,pchar.GenQuest.CaptainComission.UnknownPirateName,NAME_NOM)+"a convaincu certains pirates que leur part du butin est gardée dans notre cachette non loin de "+XI_ConvertString(pchar.GenQuest.CaptainComission.Island.Shore+"Gen")+". Leurs deux navires '"+pchar.GenQuest.CaptainComission.ShipName1+"' et '"+pchar.GenQuest.CaptainComission.ShipName2+"' levé l'ancre il n'y a pas longtemps et a navigué vers "+sLoc+"Maintenant tu vois pourquoi je ne peux pas faire confiance à mes hommes pour ce boulot?";
 			link.l1 = "Je le fais. Combien de temps ai-je ?";
 			link.l1.go = "CapComission2_2_3";
 		break;
@@ -464,7 +489,8 @@ void ProcessDialogEvent()
 			link.l1.go = "CapComission2_2";
 			if(makeint(pchar.money) > 150000)
 			{
-				link.l2 = "Il est bon que tu ne l'aies pas vendu. Voici tes pièces - 150000 pesos. Où puis-je le trouver ?"link.l2.go ="CapComission2_3";
+				link.l2 = "Il est bon que tu ne l'aies pas vendu. Voici tes pièces - 150000 pesos. Où puis-je le trouver ?";
+                link.l2.go ="CapComission2_3";
 			}			
 		break;*/
 		  case "CapComission6":                        // лесник . пусть шарль бабло ищет,или забить на пленника.
@@ -473,11 +499,11 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			if(makeint(pchar.money) > 150000)
 			{
-				link.l2 = "C'est bien que tu ne l'aies pas vendu. Voici tes pièces - 150.000 pesos. Où puis-je le trouver ?"link.l2.go ="CapComission2_3";
+				link.l2 = "C'est bien que tu ne l'aies pas vendu. Voici tes pièces - 150.000 pesos. Où puis-je le trouver ?";
+                link.l2.go ="CapComission2_3";
 			}			
 		break;
 
-																																				 																																													  																																															
 //--------------------------------------------Похититель------------------------------------------------------
 		case "Marginpassenger":
 			dialog.text = "Et pourquoi te soucies-tu de ce que je fais? Tu sais, tu ferais mieux de t'en aller...";
@@ -545,7 +571,7 @@ void ProcessDialogEvent()
 					link.l1 = "Merci ! Les marchandises seront une belle compensation pour mes ennuis. Et mon passager doit déjà être près des portes de la ville. Il vous sera amené.";
 					link.l1.go = "Marginpassenger_offer_1";
 				break;
-				
+
 				case 1: //просто кораблик
 					SelectSouthcity();
 					pchar.GenQuest.Marginpassenger.ShipName1 = GenerateRandomNameToShip(SPAIN);
@@ -564,7 +590,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("Marginpassenger", "13");
 			AddQuestUserData("Marginpassenger", "sShore", XI_ConvertString(pchar.GenQuest.Marginpassenger.Shore+"Dat"));//лесник - окончание в СЖ // belamour gen: Abl - это к Залив"ом", нужен дательный
-			AddQuestUserData("Marginpassenger", "sName", "Zachary Marlow")); // belamour gen : как-то странно, наводку даёт Захар, а в сж Добряк дефолтом
+			AddQuestUserData("Marginpassenger", "sName", "Zachary Marlow"); // belamour gen : как-то странно, наводку даёт Захар, а в сж Добряк дефолтом
 			SetFunctionTimerCondition("Marginpassenger_SouthshoreOver", 0, 0, 7, false);
 			pchar.quest.Marginpassenger.win_condition.l1 = "location";
 			pchar.quest.Marginpassenger.win_condition.l1.location = pchar.GenQuest.Marginpassenger.Shore;
@@ -657,6 +683,55 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			AddMoneyToCharacter(pchar, -1000000);
 			pchar.GenQuest.Piratekill = 0;
+		break;
+		
+		case "pirate_threat":
+			if (GetNpcQuestPastDayWOInit(NPChar, "ThreatTalk") == 0)
+			{
+				dialog.text = NPCStringReactionRepeat("On a déjà parlé de ça aujourd'hui.",
+				                                      "Je n’ai pas été assez clair ?",
+				                                      "Ton insistance commence à m’agacer.",
+				                                      "Ça suffit maintenant. Dégage d’ici !",
+				                                      "repeat", 3, npchar, Dialog.CurrentNode);
+				link.l1 = HeroStringReactionRepeat("Une autre fois, peut-être...",
+				                                   "Bien sûr, "+npchar.name+"...",
+				                                   "Désolé, "+npchar.name+"...",
+				                                   "Aïe...", npchar, Dialog.CurrentNode);
+				link.l1.go = "exit";
+				break;
+			}
+			if (iGPThreat != 0)
+			{
+				iMarlowTotalTemp = 10 * iGPThreatRate;
+				dialog.text = "Ha ! Les gars de notre fraternité te mettent la pression, hein, " + GetSexPhrase("pote", "ma fille") + " ? Je peux les calmer un moment. Mais ça va te coûter un joli paquet. " + FindRussianDublonString(iMarlowTotalTemp) + " sur la table, et on est d'accord.";
+				if (PCharDublonsTotal() >= iMarlowTotalTemp)
+				{
+					if (iGPThreat < 5) link.l0 = "Évidemment, voilà ton argent.";
+					else link.l0 = "On dirait que je n’ai pas le choix. Voilà ton argent.";
+					link.l0.go = "pirate_threat_pay";
+				}
+				link.l1 = "Je repasserai plus tard...";
+				link.l1.go = "exit";
+			}
+			else
+			{
+				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
+				if (NextDiag.TempNode != "I_know_you_good")
+					dialog.text = "T’as perdu la tête" + GetSexPhrase("", " ma fille") + " ? Nos gars te fuient comme la peste. Alors fiche le camp et arrête de me casser les pieds.";
+				else
+					dialog.text = "De quoi tu parles, " + GetSexPhrase("pote", "ma fille") + " ? Tu es une vraie plaie — même les chiens le sentent. Personne ne veut avoir affaire à toi.";
+				link.l1 = "Je vois...";
+				link.l1.go = "exit";
+			}
+		break;
+
+		case "pirate_threat_pay":
+			iGPThreatRate = 0;
+			iGPThreat = 0;
+			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
+			RemoveDublonsFromPCharTotal(iMarlowTotalTemp);
+			DialogExit();
+			PiratesDecreaseNotif("");
 		break;
 	}
 }

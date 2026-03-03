@@ -61,7 +61,7 @@ void ProcessDialogEvent()
 		break;
 	
 		case "Wine_fort_3":
-			dialog.text = "Błogosławione są stopy, które niosą radosne wieści o dobrym trunku! Liczę na ciebie, kapitanie. Ach, prawie zapomniałem! Musisz dostarczyć alkohol tutaj w ciągu tygodnia, bo moja kompania morska za siedem dni zostanie przeniesiona do floty i wyjedziemy na kilka miesięcy.";
+			dialog.text = "Błogosławione są stopy, które niosą radosne wieści o dobrym trunku! Liczę na ciebie, kapitanie. Ach, prawie zapomniałem! Musisz dostarczyć alkohol tutaj w ciągu tygodnia, bo moja kompania morska za siedem dni zostanie przeniesiona do floty i wypłyniemy na kilka miesięcy.";
 			link.l1 = "Rozumiem. Postaram się być szybki.";
 			link.l1.go = "exit";
 			pchar.questTemp.Wine.bottles = "true";

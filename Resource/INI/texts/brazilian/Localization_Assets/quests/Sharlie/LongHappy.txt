@@ -1,0 +1,44 @@
+LongHappy_1 {Para tomar decisões sobre o casamento, USE A OPÇÃO PENSAR EM VOZ ALTA}
+LongHappy_2 {Abade Benoit desembarcou!}
+LongHappy_3 {@<sti(pchar.questTemp.LongHappy.MarryRum)> barris de rum e @<sti(pchar.questTemp.LongHappy.MarryMoney)> pesos.}
+LongHappy_4 {50 barris de rum, 20 barris de vinho e 300 000 pesos.}
+LongHappy_5 {100 barris de rum, 50 barris de vinho e 500 000 pesos.}
+LongHappy_6 {Mas antes disso, preciso organizar uma festa na taverna de Saint-Pierre. Apresse-se!}
+LongHappy_7 {Mas antes disso, preciso organizar uma celebração em Isla Tesoro. Apresse-se!}
+LongHappy_8 {Primeiro, você precisa organizar uma celebração na taverna de Saint-Pierre!}
+LongHappy_9 {Primeiro, você precisa organizar uma celebração em Isla Tesoro!}
+LongHappy_10 {Sea Devil}
+LongHappy_11 {Jan}
+LongHappy_12 {Svensson}
+LongHappy_13 {Cachalote}
+LongHappy_14 {Marcus}
+LongHappy_15 {Tyrex}
+LongHappy_16 { }
+LongHappy_17 {Steven}
+LongHappy_18 {Dodson}
+LongHappy_19 {Algum tempo se passou...@<NewStr()>A festa está a todo vapor...}
+LongHappy_20 {Tichingitu}
+LongHappy_21 {Nathaniel}
+LongHappy_22 {Mauritz}
+LongHappy_23 {Dussak}
+LongHappy_24 {Jacques}
+LongHappy_25 {Barbazon}
+LongHappy_26 {Black Dragon}
+LongHappy_27 {Jan Svensson escapou em um barco!}
+LongHappy_28 {Steven Dodson fugiu em um barco!}
+LongHappy_29 {Marcus Tyrex escapou em um barco!}
+LongHappy_30 {Bernard Vensan, velho camarada e aliado de Marcus Tyrex, está morto, caiu enquanto limpava a cidade dos mercenários remanescentes que avançavam pelas catacumbas. Não viveu para ver a vitória por apenas algumas horas... ~}
+LongHappy_31 {E isso não é tudo – o próprio Marcus Tyrex desapareceu quando seu navio foi abordado. Jan Swenson organizou as buscas, e espero que o velho barão tenha resistido às balas e às ondas do mar – seria uma perda irreparável para toda a Irmandade da Costa. ~}
+LongHappy_32 {As perdas também não me pouparam. Sempre é difícil quando a guerra leva vidas inocentes. Gino Gvineili — um bom amigo e brilhante cientista — acabou sendo vítima desse ataque traiçoeiro. Voltarei a Antigua para enterrá-lo como merece.}
+LongHappy_33 {As perdas graves também não me pouparam. Tichingitu, meu fiel companheiro e oficial, protegeu minha esposa e Dannielle Hawk de um tiro. O assassino teve o que merecia, mas a que custo? E como se não bastasse, Gino Gvineili – um bom amigo e brilhante cientista – acabou sendo vítima desse ataque traiçoeiro. Voltarei a Antígua para enterrá-los como deve ser.}
+LongHappy_34 {Mas ainda há uma ponta de esperança – Tichingitu, meu companheiro de armas, se perdeu logo no início da batalha. Eu nem esperava vê-lo vivo, mas Jan disse que o viram com a sobrinha do taberneiro local, indo em direção à enseada de Sabo-Matila antes do ataque. Eu podia imaginar qualquer coisa – mas uma fuga bêbada com uma jovem? Esse é o Tichingitu?! De qualquer forma, é preciso encontrá-los o quanto antes, antes que o tio furioso pegue um porrete pesado.}
+LongHappy_35 {Tichingitu se recuperou e está pronto para retomar suas funções como oficial}
+LongHappy_36 {Jean}
+LongHappy_37 {David}
+LongHappy_38 {Prosper}
+LongHappy_39 {Trubal}
+LongHappy_40 {Bernard}
+LongHappy_41 {Vensan}
+LongHappy_42 {@<GetFullName(sld)> adicionado à sua equipe como oficial}
+LongHappy_43 {Você pode designar @<GetFullName(sld)> como oficial de abordagem}
+LongHappy_44 {Na manhã seguinte...}

@@ -1,0 +1,1 @@
+Debuger_1 {우리 도시 @<GetCN(city)>가 포위당했습니다!}

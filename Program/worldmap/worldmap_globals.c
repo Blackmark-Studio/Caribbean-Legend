@@ -37,6 +37,14 @@ void Map_CreateTrader(string beginlocator, string endLocator, string characterID
 		pchar.worldmap.shipcounter = 0;
 	}
 	pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) + 1;
+	if(CheckAttribute(pchar, "systeminfo.tutorial.MapEncounter"))
+	{
+		if(CheckAttributeEqualTo(&Characters[GetCharacterIndex(characterID)], "mapEnc.worldMapShip", "quest_ship"))
+		{
+			pchar.quest.Tut_MapEncounter.win_condition.l1          = "MapEnter";
+			pchar.quest.Tut_MapEncounter.function                  = "Tutorial_MapEncounter";
+		}
+	}
 }
 
 // boal 04/10/06
@@ -216,10 +224,10 @@ bool wdmChoseAndCreateShip()
     int  iType = i-1;
 	bool bTrade = (sti(EncountersTypes[iType].Type) == ENCOUNTER_TRADE);
 
-    if (bBettaTestMode && bGlobalVar4)
+    if (bBettaTestMode && __DebugEncCnt)
     {
-        if (sti(TEV.LastEnc) != iType) bGlobalVar4 = 1;
-        else bGlobalVar4++;
+        if (sti(TEV.LastEnc) != iType) __DebugEncCnt = 1;
+        else __DebugEncCnt++;
         TEV.LastEnc = iType;
     }
 
@@ -534,7 +542,7 @@ void wdmCreateStorm()
 		}
 	}
 	// тест торнадор
-	isTornado = 1;
+	isTornado = 1; // ~!~
 	// конец теста
 	SendMessage(&worldMap, "ll", MSG_WORLDMAP_CREATESTORM, isTornado);
 }
@@ -806,6 +814,7 @@ int wdmGetSummaryThreat()
 int iGPThreat = 0;
 int iGPThreatMax = THREAT_LVL_1;
 int iGPThreatRate = 0;
+int iGPDaysChange = 1;
 int wdmGetNationThreat(int iNation)
 {
 	if(iNation == PIRATE)
@@ -875,8 +884,14 @@ void RaisePirateThreat()
     // Квестовые ситуативные фризы
     if (bFreezePirateThreat)
         return;
-    // Суточный инкремент
-    iGPThreatRate++;
+    // Рост
+    iGPDaysChange--;
+    if (iGPDaysChange <= 0)
+    {
+        iGPThreatRate++;
+        iGPDaysChange = 1 + rand(2);
+    }
+    else return;
     // Проверяем взятие порога
     bool bThreshold = (iGPThreatRate == THREAT_LVL_1) || (iGPThreatRate == THREAT_LVL_2) ||
                       (iGPThreatRate == THREAT_LVL_3) || (iGPThreatRate == THREAT_LVL_4) ||

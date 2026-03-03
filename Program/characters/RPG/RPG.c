@@ -16,6 +16,8 @@
 #include "characters\RPG\personality.c"
 #include "characters\RPG\perks\perks.c"
 
+#define LVL_MAX_LEADERSHIP_BONUS_MTP 0.4 // Максимальный бонус лидерства к содержанию офицеров и набора опыта
+
 int GetCharacterMaxOfficersQty(ref _refCharacter)
 {
     return GetCharacterSPECIAL(_refCharacter, SPECIAL_C)*2;
@@ -170,9 +172,25 @@ int GetBaseHeroNation()
 	return sti(pchar.BaseNation);
 }
 
-// Бонусный шанс обмануть корабли/укрепления
+// Легаси бонусный шанс обмануть корабли/укрепления, пока оставляю на всякий
 float GetBonusDeceptionChance(ref chr)
 {
+	return 1.0;
 	if (!IsCharacterEquippedArtefact(chr, "indian_11")) return 1.0;
 	return 1 + 0.05 * CountItemsWithDescriptor(chr, "Fancy");
+}
+
+/*Получение множителя на основе `pirates` со сглаживанием от степени. 
+	*@param maxmtp максимальный множитель 
+	*@param pirates нужный стат
+	*@param degree степень
+
+	С увеличением `pirates` при `degree` >1:  рост экспоненциальный, <1: корневой, =1: линейный
+
+	*@return ножитель вида n.n
+*/
+float GetPiratesMtp(float maxmtp, string pirates, float degree)
+{
+	int stat = GetPirates(pchar, pirates);
+	return maxmtp*pow(stat/10.0, degree);
 }

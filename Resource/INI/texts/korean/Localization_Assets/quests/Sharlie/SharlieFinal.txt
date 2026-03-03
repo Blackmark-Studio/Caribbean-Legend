@@ -1,0 +1,86 @@
+SharlieFinal_1 {Cathrin}
+SharlieFinal_2 {Fox}
+SharlieFinal_3 {탐험 모드: 타이머 연장됨. 퀘스트를 완료하세요!}
+SharlieFinal_4 {캐서린 폭스가 열병으로 사망했습니다!}
+SharlieFinal_5 {chevalier Timoleon}
+SharlieFinal_6 {de Fontene}
+SharlieFinal_7 { }
+SharlieFinal_8 {Rober}
+SharlieFinal_9 {Marten}
+SharlieFinal_10 {Enphanta}
+SharlieFinal_11 {스페인 호위대}
+SharlieFinal_12 {승리}
+SharlieFinal_13 {윈저 성}
+SharlieFinal_14 {Royal Katherine}
+SharlieFinal_15 {충성스러운 런던}
+SharlieFinal_16 {거만한}
+SharlieFinal_17 { }
+SharlieFinal_18 { }
+SharlieFinal_19 { }
+SharlieFinal_20 { }
+SharlieFinal_21 { }
+SharlieFinal_22 {감옥이 열렸습니다!}
+SharlieFinal_23 {Michel}
+SharlieFinal_24 {de Monper}
+SharlieFinal_25 {Anry}
+SharlieFinal_26 {Duble}
+SharlieFinal_27 {Delicious}
+SharlieFinal_28 {갑판장 Serge}
+SharlieFinal_29 {Dega}
+SharlieFinal_30 {San Gregorio}
+SharlieFinal_31 {Carlos}
+SharlieFinal_32 {Gevarra}
+SharlieFinal_33 {Guy}
+SharlieFinal_34 {Marshe}
+SharlieFinal_35 {하루가 지났다...@<NewStr()>바닐라가 캐랙에 실렸다...}
+SharlieFinal_36 {Barty}
+SharlieFinal_37 {Flayer}
+SharlieFinal_38 {Father Vincento}
+SharlieFinal_39 { }
+SharlieFinal_40 {Pedro}
+SharlieFinal_41 {Lopez}
+SharlieFinal_42 {San Markos}
+SharlieFinal_43 {Shadow}
+SharlieFinal_44 {Diego}
+SharlieFinal_45 {de Montoya}
+SharlieFinal_46 {운반 루거 'Shadow'}
+SharlieFinal_47 {Shadow'의 화약고가 폭발했다!}
+SharlieFinal_48 { }
+SharlieFinal_49 {선장}
+SharlieFinal_50 {Santa Quiteria'의}
+SharlieFinal_51 {아드리안 신부}
+SharlieFinal_52 { }
+SharlieFinal_53 {이방인}
+SharlieFinal_54 { }
+SharlieFinal_55 {매복 중인 적 - @<n>명}
+SharlieFinal_56 {내 선실로 가야겠어}
+SharlieFinal_57 {Urakan}
+SharlieFinal_58 { }
+SharlieFinal_59 {Kanek}
+SharlieFinal_60 { }
+SharlieFinal_61 {Itzha의 보물창고가 열렸습니다}
+SharlieFinal_62 {쿠쿨칸의 가면이 파괴되었습니다@<NewStr()>포탈이 제거되었습니다!}
+SharlieFinal_63 {며칠이 흘렀다...@<NewStr()>배가 만에 도착했다}
+SharlieFinal_64 {Gaetano}
+SharlieFinal_65 {Rosetty}
+SharlieFinal_66 {30분이 흘렀다@<NewStr()>올바른 항로를 정했다}
+SharlieFinal_67 {가면의 수호자}
+SharlieFinal_68 { }
+SharlieFinal_69 {수호자가 완전히 회복되었습니다!}
+SharlieFinal_70 {더 강해진 기분이 듭니다}
+SharlieFinal_71 {더 지구력이 강해진 느낌입니다}
+SharlieFinal_72 {몸이 더 민첩해진 느낌이다}
+SharlieFinal_73 { }
+SharlieFinal_74 { }
+SharlieFinal_75 {선봉대 @<GetFullName(sld)>이@<sTemp> 코만치 물약을 사용했습니다}
+SharlieFinal_76 { }
+SharlieFinal_77 { }
+SharlieFinal_78 {선봉대 @<GetFullName(sld)>이(가) @<sTemp> 사망했습니다. 코만치 물약이 없어서입니다.}
+SharlieFinal_79 {쿠쿨칸이 과거로 사라졌다@<NewStr()>당신은 그를 막지 못했다...}
+SharlieFinal_80 {선장}
+SharlieFinal_81 {Gobart}
+SharlieFinal_82 {대령}
+SharlieFinal_83 {Kirk}
+SharlieFinal_84 {세상이 변했고, 당신의 영웅도 변했습니다@<NewStr()>하지만 그건 또 다른 이야기입니다...}
+SharlieFinal_85 {편지가 작성되었습니다.}
+SharlieFinal_86 { }

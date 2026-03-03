@@ -34,71 +34,71 @@ void ProcessDialogEvent()
 		
 		// Диалог с Йоханом
 		case "ClockTower_Johan_1":
-			dialog.text = "Halte, "+GetTitle(NPChar, true)+". Passage interdit au-delà de ce point.";
-			link.l1 = "Pourquoi donc?";
+			dialog.text = "Alto ahí, "+GetTitle(NPChar, true)+". No se puede pasar.";
+			link.l1 = "¿Por qué no?";
 			link.l1.go = "ClockTower_Johan_2";
 			DelLandQuestMark(npchar);
 		break;
 
 		case "ClockTower_Johan_2":
-			dialog.text = "Vous voyez cette tour? Bureau de la Compagnie des Indes occidentales. Département d'enregistrement des navires et archives. Entrée sur rendez-vous uniquement.";
-			link.l1 = "Et comment obtient-on un rendez-vous?";
+			dialog.text = "¿Veis esa torre? Oficina de la Compañía Neerlandesa de las Indias Occidentales. Departamento de registro naval y archivo. Entrada sólo con cita previa.";
+			link.l1 = "¿Y cómo se consigue esa cita?";
 			link.l1.go = "ClockTower_Johan_3";
 		break;
 
 		case "ClockTower_Johan_3":
-			dialog.text = "Ceux qui ont besoin de savoir le savent. Le mynheer directeur ne travaille pas avec n'importe qui.";
-			link.l1 = "'Mynheer directeur'? Qui est-ce?";
+			dialog.text = "Quien necesita saberlo, lo sabe. El mynheer director no trabaja con cualquiera.";
+			link.l1 = "¿'Mynheer director'? ¿Quién es ese?";
 			link.l1.go = "ClockTower_Johan_4";
 		break;
 
 		case "ClockTower_Johan_4":
-			dialog.text = "L'intendant van Doorn. Ce n'est peut-être pas vraiment un directeur, mais tout le monde l'appelle comme ça. Il travaille ici depuis dix ans — il a mis de l'ordre partout. Maintenant, tous les navires des Caraïbes passent par son bureau.";
-			link.l1 = "Tous les navires? Même les vaisseaux de guerre?";
+			dialog.text = "El administrador van Doorn. Quizá no sea exactamente un director, pero así lo llaman todos. Lleva diez años trabajando aquí, ha puesto orden en todo. Ahora todos los barcos del Caribe pasan por su oficina.";
+			link.l1 = "¿Todos los barcos? ¿Incluso los de guerra?";
 			link.l1.go = "ClockTower_Johan_5";
 		break;
 
 		case "ClockTower_Johan_5":
-			dialog.text = "Seulement les meilleurs navires et les capitaines les plus fortunés. Être client de notre bureau est un grand honneur!";
-			link.l1 = "Quel genre de services offrez-vous?";
+			dialog.text = "Solo los mejores barcos y los capitanes más ricos. ¡Ser cliente de nuestra oficina es un gran honor!";
+			link.l1 = "¿Qué tipo de servicios ofrecéis?";
 			link.l1.go = "ClockTower_Johan_6";
 		break;
 
 		case "ClockTower_Johan_6":
-			dialog.text = "Je ne suis pas au courant des détails — je garde simplement l'entrée. Mais j'ai entendu dire que les gens repartent satisfaits.";
-			link.l1 = "Impressionnant.";
+			dialog.text = "No me corresponde conocer los detalles — sólo vigilo la entrada. Pero he oído que la gente sale satisfecha.";
+			link.l1 = "Impresionante.";
 			link.l1.go = "ClockTower_Johan_7";
 		break;
 
 		case "ClockTower_Johan_7":
-			dialog.text = "Et je vais vous dire autre chose. Vous voyez cette horloge? Une merveille européenne — vous n'en trouverez pas de pareille dans notre coin perdu. Le mynheer directeur l'entretient personnellement.";
-			link.l1 = "Peut-être pourrions-nous nous arranger?";
+			dialog.text = "Y te diré algo más. ¿Ves ese reloj? Una maravilla europea, no encontrarás nada igual en este rincón perdido. El mynheer director lo cuida personalmente.";
+			link.l1 = "¿Quizás podamos llegar a un acuerdo?";
 			link.l1.go = "ClockTower_Johan_8_1";
-			link.l2 = "Il n'y a vraiment rien que je puisse faire pour entrer?";
+			link.l2 = "¿De verdad no hay nada que pueda hacer para entrar?";
 			link.l2.go = "ClockTower_Johan_8_2";
 		break;
 
 		case "ClockTower_Johan_8_1":
-			dialog.text = "Je ne prends pas de pots-de-vin!";
-			link.l1 = "Excusez-moi. Vous êtes un bon homme. Comment vous appelez-vous?";
+			dialog.text = "¡No acepto sobornos!";
+			link.l1 = "Disculpa. Eres un buen hombre. ¿Cómo te llamas?";
 			link.l1.go = "ClockTower_Johan_9";
 		break;
 
 		case "ClockTower_Johan_9":
-			dialog.text = ""+npchar.name+"... Écoutez... Je comprends que vous n'êtes pas d'ici. Mais ici, il y a de l'ordre. Le mynheer directeur dit toujours : montrez de la faiblesse une fois, et notre tour s'effondre. Vous voulez entrer? Aidez la ville — et on vous remarquera.";
-			link.l1 = "Je vois. Au revoir, soldat.";
+			dialog.text = ""+npchar.name+"... Mira... Entiendo que no eres de aquí. Pero aquí hay orden. El mynheer director siempre dice: cede una vez, y nuestra torre se derrumbará. ¿Quieres entrar? Ayuda a la ciudad, y te notarán.";
+			link.l1 = "Entendido. Cuídate, soldado.";
 			link.l1.go = "ClockTower_Johan_11";
 		break;
 
 		case "ClockTower_Johan_8_2":
-			dialog.text = "Eh bien, je ne sais pas. Le mynheer directeur récompense les amis de Willemstad. Aidez la ville — et on vous remarquera. Je comprends que vous n'êtes pas d'ici. Mais ici, il y a de l'ordre. Le mynheer directeur dit toujours : montrez de la faiblesse une fois, et notre tour s'effondre.";
-			link.l1 = "Je vois. Et quel est votre nom?";
+			dialog.text = "Bueno, no lo sé. El mynheer director recompensa a los amigos de Willemstad. Ayuda a la ciudad, y te notarán. Entiendo que no eres de aquí. Pero aquí hay orden. El mynheer director siempre dice: cede una vez, y nuestra torre se derrumbará.";
+			link.l1 = "Entendido. ¿Y cómo te llamas?";
 			link.l1.go = "ClockTower_Johan_10";
 		break;
 
 		case "ClockTower_Johan_10":
 			dialog.text = ""+npchar.name+", "+GetTitle(NPChar, true)+".";
-			link.l1 = "Quant à moi, je suis "+GetTitle(NPChar, false)+" "+GetFullName(pchar)+". Au revoir, soldat.";
+			link.l1 = "Y yo soy "+GetTitle(NPChar, false)+" "+GetFullName(pchar)+". Cuídate, soldado.";
 			link.l1.go = "ClockTower_Johan_11";
 		break;
 		
@@ -503,7 +503,7 @@ void ProcessDialogEvent()
 			link.l1.go = "ClockTower_Johan_47";
 
 			if (iClockSP4PseudoGlobal != SOUND_INVALID_ID)
-				SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, iClockSP4PseudoGlobal, 0);
+				SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, iClockSP4PseudoGlobal, 300);
 			ClockTower_PlaySound_rh2("Location/SP4_quest3");
 		break;
 
@@ -514,7 +514,7 @@ void ProcessDialogEvent()
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 
 			if (iClockSP4PseudoGlobal != SOUND_INVALID_ID)
-				SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, iClockSP4PseudoGlobal, 0);
+				SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, iClockSP4PseudoGlobal, 300);
 			ClockTower_PlaySound_rh2("Location/SP4_quest3");
 		break;
 
@@ -581,17 +581,17 @@ void ProcessDialogEvent()
 				dialog.text = "Necesito capitanes que combatan eficazmente a los piratas y que al mismo tiempo sean lo bastante exitosos comercialmente como para permitirse nuestros servicios. ¿Cumples estos criterios?";
 			}
 			else dialog.text = "";
-			if (!CheckAttribute(npchar, "ClockTower_option_1") && CheckAttribute(pchar, "questTemp.DiegoDeLanda_Memento"))
+			if (!CheckAttribute(npchar, "ClockTower_option_1") && GetDLCenabled(DLC_APPID_6) && !CharacterIsAlive("Memento_cap"))
 			{
 				link.l1 = "Destruí a Mortimer Grimm. Capitán del bergantín Memento.";
 				link.l1.go = "ClockTower_VanDoorn_option_1";
 			}
-			if (!CheckAttribute(npchar, "ClockTower_option_2") && CheckAttribute(pchar, "questTemp.DiegoDeLanda_LadyBeth"))
+			if (!CheckAttribute(npchar, "ClockTower_option_2") && GetDLCenabled(DLC_APPID_5) && !CharacterIsAlive("LadyBeth_cap"))
 			{
 				link.l2 = "Creo que tu compañía valoró mucho mi victoria sobre Albert Blackwood. La nieve Lady Beth era un adversario formidable.";
 				link.l2.go = "ClockTower_VanDoorn_option_2";
 			}
-			if (!CheckAttribute(npchar, "ClockTower_option_3") && CheckAttribute(pchar, "questTemp.DiegoDeLanda_SantaMisericordia"))
+			if (!CheckAttribute(npchar, "ClockTower_option_3") && GetDLCenabled(DLC_APPID_4) && !CharacterIsAlive("SantaMisericordia_cap"))
 			{
 				link.l3 = "Fernando de Alamida no era un pirata, pero...";
 				link.l3.go = "ClockTower_VanDoorn_option_3";

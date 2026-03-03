@@ -1,0 +1,33 @@
+Frame_HourPassed {Uma hora se passou...}
+Frame_HourPassed_2 {Duas horas se passaram...}
+Frame_HourPassed_3 {Três horas se passaram...}
+Frame_HourPassed_4 {Quatro horas se passaram...}
+Frame_HourPassed_5 {Cinco horas se passaram...}
+Frame_HourPassed_? {Algumas horas se passaram...}
+Frame_BeenWhile {Algum tempo se passou...}
+Frame_MinutePassed {Um minuto se passou...}
+Frame_MinutePassed_2 {Dois minutos se passaram...}
+Frame_MinutePassed_3 {Três minutos se passaram...}
+Frame_MinutePassed_5 {Cinco minutos se passaram...}
+Frame_MinutePassed_10 {Dez minutos se passaram...}
+Frame_MinutePassed_20 {Vinte minutos se passaram...}
+Frame_MinutePassed_? {Alguns minutos se passaram...}
+Frame_NextMorning {Na manhã seguinte...}
+Frame_NextDay {No dia seguinte...}
+Frame_NextEvening {Na noite seguinte...}
+Frame_NextNight {Na noite seguinte...}
+Frame_DayPassed {Um dia se passou...}
+Frame_DayPassed_2 {Dois dias se passaram...}
+Frame_DayPassed_3 {Três dias se passaram...}
+Frame_DayPassed_4 {Quatro dias se passaram...}
+Frame_DayPassed_5 {Cinco dias se passaram...}
+Frame_DayPassed_6 {Seis dias se passaram...}
+Frame_WeekPassed {Uma semana se passou...}
+Frame_WeekPassed_2 {Duas semanas se passaram...}
+Frame_WeekPassed_3 {Três semanas se passaram...}
+Frame_MonthPassed {Um mês se passou...}
+Frame_MonthPassed_2 {Dois meses se passaram...}
+Frame_MonthPassed_3 {Três meses se passaram...}
+Frame_YearPassed {Um ano se passou...}
+Frame_YearPassed_2 {Dois anos se passaram...}
+Frame_YearPassed_3 {Três anos se passaram...}

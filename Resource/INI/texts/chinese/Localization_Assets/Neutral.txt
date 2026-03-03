@@ -34,3 +34,9 @@ Neutral_33 {Javier}
 Neutral_34 {Castillo}
 Neutral_35 {Gonzalo}
 Neutral_36 {Peralta}
+Neutral_37 {... 所有对鲨鱼的怀疑都会被解除}
+Neutral_38 {资金不足（10,100,000）}
+Neutral_39 {资金不足（25,250,000）}
+Neutral_40 {资金不足（50,500,000）}
+Neutral_41 {你}
+Neutral_42 {你们}

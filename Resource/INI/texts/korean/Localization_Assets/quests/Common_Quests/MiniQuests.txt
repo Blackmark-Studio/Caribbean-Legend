@@ -1,0 +1,24 @@
+MiniQuests_1 { }
+MiniQuests_2 { }
+MiniQuests_3 { }
+MiniQuests_4 { }
+MiniQuests_5 { }
+MiniQuests_6 { }
+MiniQuests_7 { }
+MiniQuests_8 { }
+MiniQuests_9 {상인이 해적 깃발을 올리고 우리를 공격하고 있어!}
+MiniQuests_10 {갑판장}
+MiniQuests_11 {승객 @<GetFullName(sld)>이(가) 선박을 떠났습니다!}
+MiniQuests_12 {목사 @<GetFullName(sld)>이(가) 당신의 배를 떠났습니다!}
+MiniQuests_13 {바르켄틴 '@<pchar.GenQuest.Marginpassenger.ShipName1>'}
+MiniQuests_14 {교역 호송대}
+MiniQuests_15 { }
+MiniQuests_16 { }
+MiniQuests_17 {적선이 수평선에 나타났다!}
+MiniQuests_18 {적 호송대가 수평선에 나타났다!}
+MiniQuests_19 {수평선에 해적선이다!}
+MiniQuests_20 {@<pchar.GenQuest.FindFugitive.Name>이(가) 열병으로 급사했습니다!}
+MiniQuests_21 {@<sld.name>이(가) 당신의 배에서 감시하에 놓였습니다}
+MiniQuests_22 {한 시간이 지났다...}
+MiniQuests_23 {, 이는 ~}
+MiniQuests_24 { }

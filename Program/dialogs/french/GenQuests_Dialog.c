@@ -349,7 +349,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Hold_GenQuest83":
-			dialog.text = "Bon sang ! J'ai toujours su que ce scélérat"+pchar.GenQuest.Hold_GenQuest.CapName+" finirait par révéler cela tôt ou tard ! Qu'est-ce qui m'est passé par la tête quand je lui ai proposé cet accord ?";
+			dialog.text = "Bon sang ! J'ai toujours su que ce scélérat "+pchar.GenQuest.Hold_GenQuest.CapName+" finirait par révéler cela tôt ou tard ! Qu'est-ce qui m'est passé par la tête quand je lui ai proposé cet accord ?";
 			link.l1 = "Arrête de te plaindre. Je ne te veux aucun mal... Vends-moi juste cette carte et vis la vie à laquelle tu es habitué.";
 			link.l1.go = "Hold_GenQuest84";
 		break;
@@ -416,7 +416,7 @@ void ProcessDialogEvent()
 			
 			if(rand(1) == 0)
 			{
-				dialog.text = RandPhraseSimple("Bonjour, je suis "+pchar.GenQuest.ShipWreck.Name+", capitaine du "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name+"Acc"))+" ' "+pchar.GenQuest.ShipWreck.ShipTypeName+", mon navire s'est écrasé sur les récifs non loin de la côte."+"Seuls quelques marins de tout l'équipage ont réussi à survivre. La marée nous a échoués sur cette rive désolée. Nous étions affamés et assoiffés de "+(5+hrand(7))+" semaines maintenant","Bonjour, je suis "+pchar.GenQuest.ShipWreck.Name+", capitaine du "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name+"Gén"))+" '"+pchar.GenQuest.ShipWreck.ShipTypeName+". Notre navire s'est écrasé non loin d'ici."+"Nous avons réussi à atteindre cette rive sur les épaves, mais cet endroit semble inhabité. Nous avons été forcés de survivre avec des coquillages et des fruits de palmier pendant "+(5+hrand(7))+"semaines maintenant.");
+				dialog.text = RandPhraseSimple("Bonjour, je suis "+pchar.GenQuest.ShipWreck.Name+", capitaine du "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name+"Acc"))+" ' "+pchar.GenQuest.ShipWreck.ShipTypeName+", mon navire s'est écrasé sur les récifs non loin de la côte."+"Seuls quelques marins de tout l'équipage ont réussi à survivre. La marée nous a échoués sur cette rive désolée. Nous étions affamés et assoiffés de "+(5+hrand(7))+" semaines maintenant","Bonjour, je suis "+pchar.GenQuest.ShipWreck.Name+", capitaine du "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name+"Gen"))+" '"+pchar.GenQuest.ShipWreck.ShipTypeName+". Notre navire s'est écrasé non loin d'ici."+"Nous avons réussi à atteindre cette rive sur les épaves, mais cet endroit semble inhabité. Nous avons été forcés de survivre avec des coquillages et des fruits de palmier pendant "+(5+hrand(7))+"semaines maintenant.");
 				link.l1 = RandPhraseSimple("Et combien d'entre vous reste-t-il ?","Et combien d'entre vous ont réussi à survivre?");
 				link.l1.go = "ShipWreck_3";
 			}
@@ -2326,7 +2326,7 @@ void ProcessDialogEvent()
 			CaptainComission_GetFamilyType();
 			if(pchar.GenQuest.CaptainComission == "Begin_1")
 			{
-				dialog.text = "Ah, c'est complètement déplacé ! Tant de temps perdu\n"+"Capitaine, dans ce cas, je dois vous demander de m'aider. Des pirates de "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.PiratesCity+"Gén")+"ont capturé mon parent"+pchar.GenQuest.CaptainComission.SlaveName+" et exigent une rançon pour lui. Pourriez-vous entreprendre cette mission ? La récompense devrait être assez généreuse.";
+				dialog.text = "Ah, c'est complètement déplacé ! Tant de temps perdu\n"+"Capitaine, dans ce cas, je dois vous demander de m'aider. Des pirates de "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.PiratesCity+"Gen")+"ont capturé mon parent"+pchar.GenQuest.CaptainComission.SlaveName+" et exigent une rançon pour lui. Pourriez-vous entreprendre cette mission ? La récompense devrait être assez généreuse.";
 				link.l1 = "Malheureusement, j'ai d'autres projets.";
 				link.l1.go = "CaptainComission_6_1";
 				link.l2 = "Je vais essayer de t'aider si tu m'expliques plus en détail.";
@@ -3432,7 +3432,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.CaptainComission.ConvoyIsland = GetArealByCityName(sTemp);
 			pchar.GenQuest.CaptainComission.ConvoyShore = SelectQuestShoreLocationFromSea(pchar.GenQuest.CaptainComission.ConvoyIsland);
 			pchar.GenQuest.CaptainComission.ConvoyCity = sTemp;
-			dialog.text = "Et juste une demande de plus. Les autorités vont sûrement nous poursuivre, pourriez-vous escorter mon navire jusqu'à "+XI_ConvertString(pchar.GenQuest.CaptainComission.ConvoyShore+"Gén")+", qui est sur "+XI_ConvertString(GetIslandByCityName(sTemp)+"Voc")+"?"; // belamour gen
+			dialog.text = "Et juste une demande de plus. Les autorités vont sûrement nous poursuivre, pourriez-vous escorter mon navire jusqu'à "+XI_ConvertString(pchar.GenQuest.CaptainComission.ConvoyShore+"Gen")+", qui est sur "+XI_ConvertString(GetIslandByCityName(sTemp)+"Voc")+"?"; // belamour gen
 			link.l1 = "Non, mon ami, désormais chacun pour soi. Adieu...";
 			link.l1.go = "CaptainComission_322";
 			if (GetCompanionQuantity(pchar) < COMPANION_MAX)
@@ -3939,7 +3939,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_374":
-			dialog.text = "Je vois... Alors c'est comme ça, hein? Beaucoup de choses s'éclaircissent maintenant. Alors, quelqu'un a bavardé que nous avions pillé "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Nom")+"Gén"))+". "+"Tôt ou tard, ils trouveront la cargaison et me pendre. Capitaine "+pchar.GenQuest.CaptainComission.CapName+"est mort, cela signifie que personne ne peut m'aider\nSauf toi\n"+GetFullName(pchar)+", sors-moi d'ici et je te récompenserai comme il se doit.";
+			dialog.text = "Je vois... Alors c'est comme ça, hein? Beaucoup de choses s'éclaircissent maintenant. Alors, quelqu'un a bavardé que nous avions pillé "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Nom")+"Gen"))+". "+"Tôt ou tard, ils trouveront la cargaison et me pendre. Capitaine "+pchar.GenQuest.CaptainComission.CapName+"est mort, cela signifie que personne ne peut m'aider\nSauf toi\n"+GetFullName(pchar)+", sors-moi d'ici et je te récompenserai comme il se doit.";
 			if(!CheckAttribute(pchar,"GenQuest.CaptainComission.GetRumour"))
 			{
 				if(CheckAttribute(pchar,"GenQuest.CaptainComission.SpeakMayor"))
@@ -4720,7 +4720,7 @@ void ProcessDialogEvent()
 			
 		case "ChurchGenQuest1_DialogInTavernWithCap_5":
 			dialog.text = "Non, non ! Ce vieux capitaine est peut-être ivre, mais il garde encore toute sa tête. Les livres et les parchemins m'ont été donnés par le père "+PChar.GenQuest.ChurchQuest_1.ToName+", je les emmenais à " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + "Et le matin, je suis allé à l'église locale et j'ai mentionné ces livres au père local. Bien sûr, il voulait les voir, tu sais comment ils sont, ils sont fous de la vie de leurs saints et tout ce bazar. Alors, j'ai envoyé un mousse chercher le coffre avec eux. Et pendant que j'attendais, j'ai décidé de jouer un peu... et d'une manière ou d'une autre j'ai perdu tout mon argent. Tout! Rien pour payer la boisson! Alors, le propriétaire de la taverne a pris les livres en gage, et puis je lui ai aussi donné les rouleaux...";
-				link.l1 = "Alors, tu as vendu des livres, les livres sacrés qui t'ont été confiés par le prêtre  "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_1.ToColony+"Gén")+"?";
+				link.l1 = "Alors, tu as vendu des livres, les livres sacrés qui t'ont été confiés par le prêtre  "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_1.ToColony+"Gen")+"?";
 				link.l1.go = "ChurchGenQuest1_DialogInTavernWithCap_6";
 			break;
 			

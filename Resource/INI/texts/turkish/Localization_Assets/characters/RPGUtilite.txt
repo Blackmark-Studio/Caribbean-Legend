@@ -1,0 +1,23 @@
+RPGUtilite_1 {Deneyim Kazanıldı ~}
+RPGUtilite_2 {berbat}
+RPGUtilite_3 {kötü}
+RPGUtilite_4 {zayıf}
+RPGUtilite_5 {orta}
+RPGUtilite_6 {iyi}
+RPGUtilite_7 {mükemmel}
+RPGUtilite_8 {Canlılık Arttı}
+RPGUtilite_9 {Canlılık Azaldı}
+RPGUtilite_10 {Ulusal İtibar Azaldı!}
+RPGUtilite_11 {Ulusal İtibar Arttı!}
+RPGUtilite_12 {Ulusal İtibar Arttı!}
+RPGUtilite_13 {Ulusal İtibar Azaldı!}
+RPGUtilite_14 {Nefret}
+RPGUtilite_15 {Düşmanlık}
+RPGUtilite_16 {Hoşlanmama}
+RPGUtilite_17 {Tahriş}
+RPGUtilite_18 {Tarafsızlık}
+RPGUtilite_19 {Sempati}
+RPGUtilite_20 {Dostluk}
+RPGUtilite_21 {Hayranlık}
+RPGUtilite_22 {Gökkuşağı}
+RPGUtilite_23 {Hızlı Domuz}

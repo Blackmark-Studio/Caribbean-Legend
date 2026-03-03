@@ -1,0 +1,15 @@
+characterUtilite_1 {@<_Money> Pesos ganhos}
+characterUtilite_2 {@<abs(_Money)> Pesos gastos}
+characterUtilite_3 {Novo item: ~}
+characterUtilite_4 {[ERROR: RateLimitError]}
+characterUtilite_5 {Item perdido: ~}
+characterUtilite_6 {~ percebeu que @<LanguageConvertString(idLngFile, arItem.name)> perdeu seus poderes}
+characterUtilite_7 {Honra aumentada}
+characterUtilite_8 {Honra Diminuída}
+characterUtilite_9 {@<_Dublons> Dublões gastos}
+characterUtilite_10 {O destacamento de @<officer.Ship.Name> tem @<compCrew> soldados}
+characterUtilite_11 {O prazo do seu empréstimo expirou}
+characterUtilite_12 {Atualização do Atlas: @<LanguageConvertString(idLngFile, arItem.name)>}
+characterUtilite_13 {Índios desaprovam (}
+characterUtilite_14 {Índios aprovam (}
+characterUtilite_15 {O mercador não tem o valor total. Deseja vender por @<money>?}

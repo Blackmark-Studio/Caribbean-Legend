@@ -1,5 +1,5 @@
-#define BASE_HP 160.0
-#define BASE_HP_FOR_RANK 11
+#define BASE_HP 200
+#define BASE_HP_FOR_RANK 10
 #define MAIN_HP_BONUS		0.0
 
 float GetCharacterBaseHPValue(ref chr)

@@ -1,0 +1,46 @@
+Start_GoldFleet_t0 {スペインの財宝庫へ金銀を運ぶ艦隊が、 最近ポルトベロの港を出航し、 ハバナへ向かったという噂だ。}
+Start_GoldFleet_t1 {つい先日、 ポルトベロを出航したスペインの小艦隊が、 インカとアステカの銀と金という貴重な財宝を積んでいます。 この護送船団はハバナへ向かい、 そこから宝物はスペインへ運ばれる予定です。}
+Start_GoldFleet_t2 {ポルトベロからハバナへ、 銀と金を積んだスペインの金輸送船団が出航したらしい。 艦隊は巨大な戦列艦に加え、 二層砲甲板を持つフリゲートやガレオンが護衛している。 他にも見慣れない軍艦が随行していた。}
+End_GoldFleet_t0 {スペインの金輸送船団が無事にキューバへ到着しました。 集められた銀と金は、 これから安全にスペインへ運ばれます。}
+End_GoldFleet_t1 {スペインの金輸送船団はすべて無事にハバナへ到着しました。 ペルーとメキシコの銀と金も間もなくヨーロッパへ運ばれます。}
+End_GoldFleet_t2 {スペインの小艦隊がハバナに到着した。 銀と金の積荷は無事で、 まもなくスペインへ運ばれる。}
+Defeat_GoldFleet_t0 {ポルトベロからハバナへ向かっていたスペインの金輸送船団が、 目的地に到着しなかったという噂だ。 何があったのかは神のみぞ知る――恐ろしい嵐か、 あるいは海賊かもしれないが、 そんな大胆というか無謀な海賊が本当にいるのか、 私には信じがたい。}
+Defeat_GoldFleet_t1 {ポルトベロから銀と金を運んでいたスペインの黄金艦隊が、 跡形もなく姿を消した。 真相は誰にも分からないが、 海賊の仕業だと噂されている！}
+Defeat_GoldFleet_t2 {ポルトベロから財宝を運ぶ金の艦隊が、 とうに到着しているはずのハバナに現れなかった。 一体何があったのだろうか？ …この季節は激しい嵐が多いからな。}
+Attak_GoldFleet_t0 {スペインの金銀艦隊が新大陸の銀や金、 財宝を運ぶ途中で襲撃され、 数隻の船が失われたという噂だ。}
+Attak_GoldFleet_t1 {海はもう安全じゃない！ ポルトベロからハバナへ向かうスペインの金輸送船団が、 海賊かイギリスの私掠船、 もしかしたらフランス人にも襲われたらしい！ まったく、 なんて大胆なんだ！ あいつら全員が絞首刑になるところを見てみたいよ！}
+Attak_GoldFleet_t2 {日に日に状況が悪化しています！ ポルトベロからハバナへ新世界の銀や金、 財宝を運ぶスペインの金輸送艦隊が、 大胆な海賊たちに襲撃されました！ ああ、 聖母マリアよ！ まさに世の終わりが近づいています！}
+Init_GoldFleet_t0 {ポルトベロからスペインの金輸送艦隊が出航準備中だという噂がある。 出発日は極秘だが、 コンボイは#sgold_month#の初めにキューバへ向かうらしい。}
+Init_GoldFleet_t1 {金銀が黄金艦隊の船に積み込まれているそうだ。 護送船団は#sgold_month#の前半にキューバへ出航する。}
+Init_GoldFleet_t2 {ポルトベロからキューバへの金輸送船団の出発は#sgold_month#前半に予定されています。 その頃までに集められた金銀はすべて船倉に積み込まれます。}
+MerchantOnMapTo_t0 {「#sShipName#」号が#snation#の旗の下、#ssColony#の植民地から#sQuestGoodsIdx#を満載してこちらに向かっているそうだ。}
+MerchantOnMapTo_t1 {地元の商人は、#ssColony#植民地から#snation#の旗を掲げた船「#sShipName#」が#sQuestGoodsIdx#を積んで到着するのを待っています。}
+MerchantOnMapTo_t2 {#sShipName#号という船で#snation#の旗のもと、ある商人が#ssColony#の植民地から#sQuestGoodsIdx#を運んでいるらしい。}
+MerchantOnMap_t0 {#sShipName#号という#snation#の商船が、#sQuestGoodsIdx#を積んで#ssNextColony#へ出航するために、 潮の満ちるのを待っているらしい。}
+MerchantOnMap_t1 {#snation#の後ろ盾を持つ裕福な商人が「#sShipName#」 号を傭船したという噂だ。 まもなく#ssNextColony#へ#sQuestGoodsIdx#を積んで出航するらしい。}
+MerchantOnMap_t2 {地元の商人が「#sShipName#」に#snation#向けの#sQuestGoodsIdx#を積み込み、間もなく#ssNextColony#へ出航します。}
+MerchantRumour_t0 {#sShipName#号が#snation#の旗の下、#ssColony#から#ssNextColony#へ#sQuestGoodsIdx#を積んで航行中、 正体不明の海賊に沈められたという噂を聞いたぞ！}
+MerchantRumour_t1 {#sShipName#号が#snation#の旗の下、#ssColony#から#sQuestGoodsIdx#を積んで#ssNextColony#へ向かっていたが、 積荷も乗組員もろとも消息を絶ったという噂を聞いたぞ！}
+MerchantRumour_t2 {最近、#ssColony#植民地から出航した#snation#の商船が、 ある海賊に襲われ、 乗組員は皆殺しにされ、 #sQuestGoodsIdx#の積荷も奪われたという恐ろしい噂が流れています。 もしかして、 キャプテン、 それはあなたでは？}
+GetColonyPrices_t0 {先日、酒場で二人の船長が#sColony#の町の店の価格について話しているのを耳にしました。 （ 価格リストを入手）}
+WaitInTavern_t0 {#sPsHero_Name# は船を失い、今は #sTown_Name# の酒場でラム酒に溺れているらしい。}
+WaitInTavern_t1 {昨日盗みで捕まった酔っ払いの水夫が、 #sPsHero_Name#はカード勝負で船を失い、今は#sTown_Name#の酒場で追い風を待っていると仲間に話しているのを聞いたよ。}
+WaitInTavern_t2 {酒場の水夫たちは、#sPsHero_Name#が最近ひどく運に見放されたと噂している。 税関役人に船を沈められ、 #sTown_Name#の町では首の皮一枚で絞首台を逃れたそうだ。}
+WorkOnMayor_t0 {今日は#sPsHero_Name#が総督と一緒にいるのを見かけた。 どうやら閣下からまた 「面白い」 任務を与えられたようだ。}
+WorkOnMayor_t1 {噂によれば、 我らの総督には新たな寵愛を受ける者がいるそうだ。 #sPsHero_Name#船長はしばしば官邸を訪れ、 繊細な任務を任されているらしい。 しかも閣下のご令嬢と恋仲だとか。}
+WorkOnMayor_t2 {料理人が、 閣下の家政婦から聞いた話として、 #sPsHero_Name#は閣下と親しい友人だと言っていました。 今朝早く、 彼は急いで邸宅へ向かっていたので、 きっと大事な用事があったのでしょう。}
+SailToIsland_t0 {#sPsHero_Name# は #sTo# #sTown_Name# に行くと言っていました。 何か買えるものがあるかもしれません。}
+SailToIsland_t1 {#sPsHero_Name# は #sTo# #sTown_Name# へ交易のために航海中だと、 酒場で彼の船の水夫から聞いたよ。}
+SailToIsland_t2 {昨日、#sPsHero_Name#は地元の酒場で泥酔し、大声で#sTo##sTown_Name#に用事があると言いふらしていた。}
+WorkOnStore_t0 {酒場の水夫の一人が、#sPsHero_Name# が #sGood# を #sTown_Name# まで運ぶことを引き受けたと話していた。}
+WorkOnStore_t1 {商人の助手によると、#sPsHero_Name#が主人の店から#sGood#を#sTown_Name#まで届けることを引き受けたそうだ。}
+WorkOnStore_t2 {うちのバーテンダーによると、#sPsHero_Name#は地元の店の#sGood#を積んで#sTown_Name#へ向かうため、 酒場で水夫を雇っていたそうだ。}
+WorkWithContra_t0 {#sPsHero_Name#が怪しげな人物と話しているのを見かけた。 どうやら密輸業者らしい。}
+WorkWithContra_t1 {#sPsHero_Name#が満載の密輸品を運んできたらしい。 もう売りさばいたかもしれないし、 まだかもしれない…}
+WorkWithContra_t2 {#sPsHero_Name#が密輸業者と話しているのを聞いた。 二人は#sContraPlace#という場所で会う約束をしていた。}
+DuelCoward_t0 {なんて恥だ！#sName# は決闘に現れなかった。 今や皆が彼を臆病者だと言っている！}
+DuelCoward_t1 {ははっ、#sName# は決闘に現れなかったな！ これからは、 以前のように女性にモテることもないだろう。}
+DuelCoward_t2 {聞いたかい？#sName#は決闘に現れなかったんだって！ 昨夜は酔っ払いすぎて立つこともできなかったらしいよ。}
+DuelHero_t0 {#sName# は熟練の決闘者だって知ってたか？ すでに #sKill# 人を倒している。 敵に回したくない相手だな。}
+DuelHero_t1 {#sName#は悪魔に魂を売ったから、 決闘で誰にも負けないらしい！ そして彼が殺した者たちの魂――すでに#sKill#人も殺している――はみな地獄へ送られるという。 もし殺しをやめれば、 悪魔が彼の魂を奪いに来るとも噂されている。}
+DuelHero_t2 {あの成り上がり者#sName#は本当に運がいい！決闘で#sKill#人も倒したのに、 傷ひとつ負っていない！ 本当に信じられるか？}

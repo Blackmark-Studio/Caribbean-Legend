@@ -658,7 +658,7 @@ void ProcessDialogEvent()
 		if (PChar.GenQuest.PGG_Quest.Island.Town == "" || PChar.GenQuest.PGG_Quest.Island.Town == "Caiman" ||
 			PChar.GenQuest.PGG_Quest.Island.Town == "Terks" || PChar.GenQuest.PGG_Quest.Island.Town == "Dominica")
 		{
-			sLoc = GetConvertStr(PChar.GenQuest.PGG_Quest.Island, "LocLables.txt") + "");
+			sLoc = GetIslandNameByID(PChar.GenQuest.PGG_Quest.Island);
 		}
 		else
 		{
@@ -667,11 +667,11 @@ void ProcessDialogEvent()
 
 		if (sti(PChar.GenQuest.PGG_Quest.Template))
 		{
-			sTmp += ", se detuvo no lejos de " + sLoc + " en la cala de " + GetConvertStr(PChar.GenQuest.PGG_Quest.Island.Shore, "LocLables.txt") + " para reabastecerse.";
+			sTmp += ", se detuvo no lejos de " + sLoc + " en la cala de " + GetLocationNameByID(PChar.GenQuest.PGG_Quest.Island.Shore) + " para reabastecerse.";
 		}
 		else
 		{
-			sTmp += ", quedó atrapado en la tormenta no lejos de " + sLoc + " y bajó. Pero consiguieron asegurar parte de la carga y desembarcaron en la cala de " + GetConvertStr(PChar.GenQuest.PGG_Quest.Island.Shore, "LocLables.txt") +
+			sTmp += ", quedó atrapado en la tormenta no lejos de " + sLoc + " y bajó. Pero consiguieron asegurar parte de la carga y desembarcaron en la cala de " + GetLocationNameByID(PChar.GenQuest.PGG_Quest.Island.Shore) +
 					" Ahora están esperando que llegue su escuadrón.";
 		}
 
@@ -700,7 +700,7 @@ void ProcessDialogEvent()
 		AddQuestUserData("Gen_PGGQuest1", "sNation", NationNameGenitive(sti(PChar.GenQuest.PGG_Quest.Nation)));
 		AddQuestUserData("Gen_PGGQuest1", "sGoods", PChar.GenQuest.PGG_Quest.Goods.Text));
 		AddQuestUserData("Gen_PGGQuest1", "sColony", sLoc);
-		AddQuestUserData("Gen_PGGQuest1", "sShore", GetConvertStr(PChar.GenQuest.PGG_Quest.Island.Shore, "LocLables.txt"));
+		AddQuestUserData("Gen_PGGQuest1", "sShore", GetLocationNameByID(PChar.GenQuest.PGG_Quest.Island.Shore));
 		break;
 
 	case "Quest_1_Ship_Detail_1":

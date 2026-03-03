@@ -26,8 +26,8 @@ Roger_25 {Un'ora dopo...@<NewStr()>La seta è stata scaricata all'acquirente}
 Roger_26 {Moray}
 Roger_27 {Paul}
 Roger_28 {Chant}
-Roger_29 {Jean}
-Roger_30 {Picard}
+Roger_29 { }
+Roger_30 { }
 Roger_31 {Sono state prelevate 30 armi da taglio dall'arsenale della nave}
 Roger_32 {Armi da taglio raccolte - 30 pezzi}
 Roger_33 {Niente armi da taglio}
@@ -138,6 +138,6 @@ Roger_137 {... Giuro di sempre scegliere l'onore piuttosto che le ricchezze ...}
 Roger_138 {... Giuro di rimanere un uomo degno e nobile in qualsiasi situazione e con qualsiasi gente ...}
 Roger_139 {Continuo a pensare a Mirabelle per qualche ragione. Come sta? È scomparsa? Dev'essere stato crudele lasciare una ragazza sola. Me ne occupo io! Dovrei vederla presto.}
 Roger_140 {Knippel}
-Roger_141 {Longwei}
-Roger_142 {Ticinitit}
+Roger_141 {Longway}
+Roger_142 {Tichingitu}
 Roger_143 {Tommy}

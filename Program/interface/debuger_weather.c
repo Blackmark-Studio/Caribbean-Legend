@@ -55,19 +55,19 @@ void InitInterface(string iniName)
 	GameInterface.oldMaxSeaHeight = stf(Sea.MaxSeaHeight);
 	GameInterface.oldGlobalFoamV = fGlobalFoamV;
 	WhrCreateSeaEnvironment();
-	
+
 	GameInterface.nodes.HOURS_SLIDE.value = 0.5;
 	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "HOURS_SLIDE", 0, 0.5);
 
 	sWindSpeed = "Wind speed";
 	sWindAngle = "Wind angle";
 	sFoamHeight = "Foam height";
-	
+
 	SetFormatedText("WIND_SPEED_STR", sWindSpeed + " (" + FloatToString(fWeatherSpeed, 1) + ")");	//Скорость ветра
 	SetFormatedText("WIND_ANGLE_STR", sWindAngle + " (" + FloatToString(Radian2Degree(GetWindAngle(fAY)), 1) + ")");	//Направление ветра
 	SetFormatedText("FOAM_STR", sFoamHeight + " (" + FloatToString(fGlobalFoamV, 1) + ")");	//Высота пены
 
-	if(!isEntity(&WorldMap) || !bSeaActive)
+	if (!isEntity(&WorldMap) || !bSeaActive)
 	{
 		LAi_SetActorType(pchar);
 	}
@@ -142,7 +142,7 @@ void ProcessCommandExecute()
 	{
     	case "test":
 		break;
-		
+
 		case "OK_BTN":
 			if(comName=="activate" || comName=="click")
 				WaitProcess(iHourWait);		
@@ -179,7 +179,7 @@ void procSlideChange()
 void WaitProcess(int _iHour)
 {
 	ProcessCancelExit();
-	
+
 	if( bSeaActive && !bAbordageStarted )
     {
     	Sea_ReloadStart();
@@ -188,7 +188,7 @@ void WaitProcess(int _iHour)
 	{
 	    DoQuestReloadToLocation(pchar.location, pchar.location.group, pchar.location.locator, "");
 	}
-	
+
 	pchar.quest.waithours = _iHour;
 	WaitDate("", 0, 0, 0, sti(pchar.quest.waithours), 0);
 	DeleteAttribute(pchar,"quest.waithours");
@@ -207,7 +207,7 @@ void CanWait()
 string GetCorrectHourString(int _hour)
 {
 	string sRetStr = "";
-	
+
 	switch(_hour)
 	{
 		case "0": 	sRetStr = "0.5 hour"; 	break;

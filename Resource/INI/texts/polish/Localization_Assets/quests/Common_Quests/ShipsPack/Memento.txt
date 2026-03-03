@@ -3,7 +3,8 @@ Memento_2 {Mortimer}
 Memento_3 {Grim}
 Memento_4
 {
-Kapitanie, to jest ten sam 'Memento' - postrach handlarzy niewolników! To nie jest nasz wróg, więc możemy wysłać łódź.
+Kapitanie, to jest ten sam 'Memento' - postrach handlarzy niewolników! 
+To nie jest nasz wróg, więc możemy wysłać łódź.
 }
 Memento_5 {Opuszczony}
 Memento_6 {Alonso: Kapitanie! Kartacz nic nie da, dopóki nie przebijemy im kadłuba!}

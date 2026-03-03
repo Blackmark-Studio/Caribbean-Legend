@@ -71,7 +71,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		//--> Письмо от покойника
 		case "LFD_Tavern_1_1":
-			dialog.text = "马丽萨? 哼……我好久没见到她了。自从她得知丈夫去世的消息后, 就再也没在城里露面。";
+			dialog.text = "马丽萨? 哼…… 我好久没见到她了。自从她得知丈夫去世的消息后, 就再也没在城里露面。";
 			link.l1 = "所以, 她成了寡妇? ";
 			link.l1.go = "LFD_Tavern_1_2";
 			DelLandQuestMark(npchar);
@@ -84,7 +84,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "LFD_Tavern_1_3":
-			dialog.text = "嗯, 说她‘消失了’有点夸张。但从那以后, 她几乎不再出现在城里。不过, 奇怪的是……时不时有男人打听她。就像你一样, 船长。如果她不是那么虔诚, 我都以为她……是躲了起来, 靠别的手段谋生。但马丽萨在丈夫死前, 从不缺席任何一次弥撒, 几乎住在教堂里, 所以这种可能性不大。";
+			dialog.text = "嗯, 说她‘消失了’有点夸张。但从那以后, 她几乎不再出现在城里。不过, 奇怪的是…… 时不时有男人打听她。就像你一样, 船长。如果她不是那么虔诚, 我都以为她…… 是躲了起来, 靠别的手段谋生。但马丽萨在丈夫死前, 从不缺席任何一次弥撒, 几乎住在教堂里, 所以这种可能性不大。";
 			link.l1 = "就这些? 你就知道这么多? ";
 			link.l1.go = "LFD_Tavern_1_4";
 		break;

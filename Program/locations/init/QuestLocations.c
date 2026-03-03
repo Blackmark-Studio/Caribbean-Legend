@@ -230,11 +230,13 @@ int LocationInitQuestLocations(int n)
 	// Имение Оглторпа
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	locations[n].id = "Estate";
-	locations[n].id.label = "Estate";
+	locations[n].id.label = "Oglethorpe_Estate";
 	locations[n].filespath.models = "locations\Estate";
 	locations[n].image = "loading\EstateN.tga";
 	//Sound
 	locations[n].type = "europe";
+	locations[n].islandId = "Europe";
+	locations[n].countryId = "England";
 	//Models
 	//Always
 	locations[n].models.always.estate = "estate";
@@ -300,6 +302,8 @@ int LocationInitQuestLocations(int n)
 	//Models
 	//Sound
 	locations[n].type = "house";
+	locations[n].islandId = "Europe";
+	locations[n].countryId = "England";
 	//Always
 	locations[n].models.always.estateBadRoom = "estateBadRoom1";	
 	locations[n].models.always.windows = "estateBadRoom1_windows";
@@ -329,7 +333,7 @@ int LocationInitQuestLocations(int n)
 	locations[n].reload.l1.go = "Estate";
 	locations[n].reload.l1.emerge = "reload3";
 	locations[n].reload.l1.autoreload = "0";
-	locations[n].reload.l1.label = "Estate";
+	locations[n].reload.l1.label = "Oglethorpe_Estate";
 	n = n + 1;
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Подводная Локация

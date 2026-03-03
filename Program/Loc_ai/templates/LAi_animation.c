@@ -180,7 +180,8 @@ void LAi_tmpl_ani_FailureEscape(aref chr)
 //Персонаж толкается с другими персонажами
 void LAi_tmpl_ani_ColThreshold(aref chr)
 {
-	LAi_tmpl_ani_UpdateState(chr);
+    if (!CheckAttribute(chr, "chr_ai.tmpl.ignorecol"))
+        LAi_tmpl_ani_UpdateState(chr);
 }
 
 

@@ -13,7 +13,9 @@
 #include "Loc_ai\LAi_equip.c"
 #include "Loc_ai\LAi_sounds.c"
 #include "Loc_ai\LAi_utilites.c"
-#include "Loc_ai\LAi_zLoadUtils.c" 
+#include "Loc_ai\LAi_zLoadUtils.c"
+#include "Loc_ai\LAi_boarding_team.c"
+#include "Loc_ai\LAi_equip_generator.c"
 #include "Loc_ai\fightparams\common.c"
 
 bool LAi_IsInitedAI = false;

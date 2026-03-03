@@ -72,3 +72,6 @@
 #define M_SHIP_MINCREW "shipMincrew"
 #define M_SHIP_FIRE_DISTANCE "shipFireDistance"
 #define M_SHIP_RELOAD_SPEED "shipReloadSpeed"
+
+// Глобальная карта
+#define M_GLOBAL_SPEED "GlobalSpeed"

@@ -119,7 +119,7 @@ Marigo_Cave_box2 {una cassapanca in un vicolo cieco}
 Marigo_Cave_box3 {una cassa vicino alla torcia}
 Panama_Cave {in una grotta a sinistra dell'uscita da Portobello}
 Panama_Cave_box1 {sotto le assi in un vicolo cieco}
-Pearl_Grot {in una grotta vicino alla costa occidentale tra Belize e Blueweld}
+Pearl_Grot {in una grotta sulla costa occidentale, nel profondo della giungla oltre la Baia Amatique}
 Pearl_Grot_box1 {una cassa sopra una grande pietra}
 PortoBello_Cave {in una grotta a destra di Mosquitos Bay}
 PortoBello_Cave_box1 {sotto le assi in un vicolo cieco}

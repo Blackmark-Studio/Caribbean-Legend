@@ -1,0 +1,331 @@
+QuestsUtilite_1 {運命の輪}
+QuestsUtilite_2 {同じことを何度も話したくない。}
+QuestsUtilite_3 {この話はもうしましたよ。}
+QuestsUtilite_4 {この話はもう済んでいる。}
+QuestsUtilite_5 {繰り返しますが、 同じ話題を何度も話したくありません。}
+QuestsUtilite_6 {もう話すことは何もないと言っただろう！}
+QuestsUtilite_7 {もう話し合っただろう。 記憶に問題でもあるのか？}
+QuestsUtilite_8 {もうあなたとは話したくありません。}
+QuestsUtilite_9 {もう二度とあなたとは話さない！}
+QuestsUtilite_10 {今は本気で怒っている}
+QuestsUtilite_11 { }
+QuestsUtilite_12 { }
+QuestsUtilite_13 {、もう話しかけないでくれ。}
+QuestsUtilite_14 {わかったよ、相棒。}
+QuestsUtilite_15 {お好きにどうぞ。}
+QuestsUtilite_16 {ごめん}
+QuestsUtilite_17 { }
+QuestsUtilite_18 { }
+QuestsUtilite_19 {、ごめん…}
+QuestsUtilite_20 {わかった、 わかった。 落ち着いて。}
+QuestsUtilite_21 {わかったから、 そんなに怒鳴らないでくれ。}
+QuestsUtilite_22 {すみません、ひどい頭痛で…}
+QuestsUtilite_23 {好きにしろ。}
+QuestsUtilite_24 {残念だ…}
+QuestsUtilite_25 {残念だな。}
+QuestsUtilite_26 {Lucas}
+QuestsUtilite_27 {Rodenburg}
+QuestsUtilite_28 {Abigail}
+QuestsUtilite_29 {Shneur}
+QuestsUtilite_30 {Solomon}
+QuestsUtilite_31 {Shneur}
+QuestsUtilite_32 {John}
+QuestsUtilite_33 {Murdock}
+QuestsUtilite_34 {Gino}
+QuestsUtilite_35 {Gvineili}
+QuestsUtilite_36 {Charlie}
+QuestsUtilite_37 {Knippel}
+QuestsUtilite_38 {Richard}
+QuestsUtilite_39 {Fleetwood}
+QuestsUtilite_40 {Jacob}
+QuestsUtilite_41 {van Berg}
+QuestsUtilite_42 {Longway}
+QuestsUtilite_43 { }
+QuestsUtilite_44 {Joachim}
+QuestsUtilite_45 {Merriman}
+QuestsUtilite_46 {Hercule}
+QuestsUtilite_47 {Tonzag}
+QuestsUtilite_48 {Michel}
+QuestsUtilite_49 {de Monper}
+QuestsUtilite_50 {abbot}
+QuestsUtilite_51 {Benoit}
+QuestsUtilite_52 {Fadey}
+QuestsUtilite_53 { }
+QuestsUtilite_54 {Diego}
+QuestsUtilite_55 {de Montoya}
+QuestsUtilite_56 {Alonso}
+QuestsUtilite_57 {de Maldonado}
+QuestsUtilite_58 {William}
+QuestsUtilite_59 {Paterson}
+QuestsUtilite_60 {Archibald}
+QuestsUtilite_61 {Colhaun}
+QuestsUtilite_62 {Jan}
+QuestsUtilite_63 {Svensson}
+QuestsUtilite_64 {Joanna}
+QuestsUtilite_65 {Svensson}
+QuestsUtilite_66 {Nathaniel}
+QuestsUtilite_67 {Hawk}
+QuestsUtilite_68 {Danielle}
+QuestsUtilite_69 {Hawk}
+QuestsUtilite_70 {Eduard}
+QuestsUtilite_71 {Doylie}
+QuestsUtilite_72 {Lawrence}
+QuestsUtilite_73 {Beltrop}
+QuestsUtilite_74 {Gladys}
+QuestsUtilite_75 {McArthur}
+QuestsUtilite_76 {Helen}
+QuestsUtilite_77 {McArthur}
+QuestsUtilite_78 {Jose}
+QuestsUtilite_79 {Dios}
+QuestsUtilite_80 {Albert}
+QuestsUtilite_81 {Loxley}
+QuestsUtilite_82 {Steven}
+QuestsUtilite_83 {Dodson}
+QuestsUtilite_84 {Chad}
+QuestsUtilite_85 {Kapper}
+QuestsUtilite_86 {Layton}
+QuestsUtilite_87 {Dexter}
+QuestsUtilite_88 {Eduard}
+QuestsUtilite_89 {Black}
+QuestsUtilite_90 {Chimiset}
+QuestsUtilite_91 { }
+QuestsUtilite_92 {Zicomo}
+QuestsUtilite_93 { }
+QuestsUtilite_94 {Giuseppe}
+QuestsUtilite_95 {Fazio}
+QuestsUtilite_96 {Axel}
+QuestsUtilite_97 {Yost}
+QuestsUtilite_98 {Sancho}
+QuestsUtilite_99 {Carpentero}
+QuestsUtilite_100 {brother}
+QuestsUtilite_101 {Julian}
+QuestsUtilite_102 {Mary}
+QuestsUtilite_103 {Casper}
+QuestsUtilite_104 {Henrick}
+QuestsUtilite_105 {Vedecker}
+QuestsUtilite_106 {Jurgen}
+QuestsUtilite_107 {Schmidt}
+QuestsUtilite_108 {Donald}
+QuestsUtilite_109 {Greenspen}
+QuestsUtilite_110 {Ole}
+QuestsUtilite_111 {Christiansen}
+QuestsUtilite_112 {Marcello}
+QuestsUtilite_113 { }
+QuestsUtilite_114 {Dougall}
+QuestsUtilite_115 {Abbot}
+QuestsUtilite_116 {Lionell}
+QuestsUtilite_117 {Maskered}
+QuestsUtilite_118 {Gerard}
+QuestsUtilite_119 {Smeets}
+QuestsUtilite_120 {Richard}
+QuestsUtilite_121 {Shambon}
+QuestsUtilite_122 {Alvaro}
+QuestsUtilite_123 {Gomez}
+QuestsUtilite_124 {Victor}
+QuestsUtilite_125 {Cassel}
+QuestsUtilite_126 {Adolf}
+QuestsUtilite_127 {Barbier}
+QuestsUtilite_128 {Curanai}
+QuestsUtilite_129 { }
+QuestsUtilite_130 {Ramona}
+QuestsUtilite_131 {Lozano}
+QuestsUtilite_132 {Oelart}
+QuestsUtilite_133 {Koteel}
+QuestsUtilite_134 {Jasper}
+QuestsUtilite_135 {Prutt}
+QuestsUtilite_136 {Leonard}
+QuestsUtilite_137 {Musket}
+QuestsUtilite_138 {Josef}
+QuestsUtilite_139 {Loderdale}
+QuestsUtilite_140 {Lorenzo}
+QuestsUtilite_141 {Solderra}
+QuestsUtilite_142 {Jacqueline}
+QuestsUtilite_143 {Turam}
+QuestsUtilite_144 {Jillian}
+QuestsUtilite_145 {Steiner}
+QuestsUtilite_146 {Tanneke}
+QuestsUtilite_147 {Aevers}
+QuestsUtilite_148 {Orelie}
+QuestsUtilite_149 {Bertine}
+QuestsUtilite_150 {Antonio}
+QuestsUtilite_151 {Betancourt}
+QuestsUtilite_152 {Cecille}
+QuestsUtilite_153 {Halard}
+QuestsUtilite_154 {Nathalie}
+QuestsUtilite_155 {Booshell}
+QuestsUtilite_156 {どうやら、 これが探していた宝のようだ}
+QuestsUtilite_157 { }
+QuestsUtilite_158 { }
+QuestsUtilite_159 { }
+QuestsUtilite_160 { }
+QuestsUtilite_161 {看守}
+QuestsUtilite_162 { }
+QuestsUtilite_163 {長い日々は過ぎ去った…}
+QuestsUtilite_164 {Anfitrite}
+QuestsUtilite_165 {Fuerte}
+QuestsUtilite_166 {Imperial}
+QuestsUtilite_167 {Bonnet}
+QuestsUtilite_168 {Trafalgar}
+QuestsUtilite_169 {Gloucester}
+QuestsUtilite_170 {Griffin}
+QuestsUtilite_171 {Languedoc}
+QuestsUtilite_172 {Leiden}
+QuestsUtilite_173 {Moloch}
+QuestsUtilite_174 {Cristobal}
+QuestsUtilite_175 {Soberano}
+QuestsUtilite_176 {Alcantara}
+QuestsUtilite_177 {Vanguard}
+QuestsUtilite_178 {Torbay}
+QuestsUtilite_179 {Russell}
+QuestsUtilite_180 {Barford}
+QuestsUtilite_181 {Pelican}
+QuestsUtilite_182 {Montebello}
+QuestsUtilite_183 {Zeelandia}
+QuestsUtilite_184 {Limeno}
+QuestsUtilite_185 {Leviathan}
+QuestsUtilite_186 {Phoenix}
+QuestsUtilite_187 {Neptune}
+QuestsUtilite_188 {Bourgogne}
+QuestsUtilite_189 {Pandora}
+QuestsUtilite_190 {Rotterdam}
+QuestsUtilite_191 {Meerman}
+QuestsUtilite_192 {Bucentaure}
+QuestsUtilite_193 {Concord}
+QuestsUtilite_194 {コマンチの薬が使われた}
+QuestsUtilite_195 {体力が回復したと感じる！}
+QuestsUtilite_196 {Marlin}
+QuestsUtilite_197 {迎撃船}
+QuestsUtilite_198 {Aurora Bardot, 1612-1637、給仕}
+QuestsUtilite_199 {テーブル中に吐きやがって、 この海賊め！}
+QuestsUtilite_200 {Jules Couvier, 1591-1640、屋根職人}
+QuestsUtilite_201 {強い風が吹いてきそうだ…}
+QuestsUtilite_202 {ジェラール・レスブロ（1555-1596）、錬金術師}
+QuestsUtilite_203 {では、 この液体を少し温めましょう…}
+QuestsUtilite_204 {Judith Boson（1589-1618） ガヴァネス}
+QuestsUtilite_205 {なんて馬鹿な方なんだ、 あのご令室は！}
+QuestsUtilite_206 {オーギュスト・ポワティエ（1567-1624） 銃工}
+QuestsUtilite_207 {ほう、 この銃は不良品か。 じっくり見てみよう…}
+QuestsUtilite_208 {Marc Romari, 1544-1599、金貸し}
+QuestsUtilite_209 {ムッシュ、 誓って本当に盗まれたんです！}
+QuestsUtilite_210 {Marcel d'Aubet, 1611-1650、荷運び}
+QuestsUtilite_211 {どうやらこのロープは本当に腐っているようだ…}
+QuestsUtilite_212 {ローズ・デュプラン　1621-1649　メイド}
+QuestsUtilite_213 {この箱に主人は何を入れているのだろう？ いない間に、 ちょっと見てみよう…}
+QuestsUtilite_214 {Victor Marion, 1577-1608、見張り}
+QuestsUtilite_215 {おい、誰だ？}
+QuestsUtilite_216 {Alvaro Lopez, 1587-1633、真珠採り}
+QuestsUtilite_217 {このラグーンにサメが現れたことはない！}
+QuestsUtilite_218 {Gaspar Ibanez, 1599-1640, 船大工}
+QuestsUtilite_219 {フアン、 その大きな斧を投げてくれ！}
+QuestsUtilite_220 {Lorenzo Perdoso, 1581-1630、砲手}
+QuestsUtilite_221 {銃口にもっと火薬を！ もっとだ！ そう、 その調子…}
+QuestsUtilite_222 {Simon Zorrita, 1602-1645、探偵}
+QuestsUtilite_223 {司令官、 事件は解決しました。 犯人はあなたです！}
+QuestsUtilite_224 {Lolita Cheka（1610-1639）仕立屋}
+QuestsUtilite_225 {心配しないで、 あなた。 夫はまだしばらく泳ぎから戻らないわ…}
+QuestsUtilite_226 {Ricardo Cazares, 1590-1633、狩人}
+QuestsUtilite_227 {このヘビは知ってる。 まったく無害だよ！}
+QuestsUtilite_228 {Isidro Davilla, 1588-1624、粉ひき}
+QuestsUtilite_229 {明日の朝、 この階段のひび割れた段を取り替えるよ…}
+QuestsUtilite_230 {Teodoro Bello, 1599-1646, 副官}
+QuestsUtilite_231 {このろくでなしめ、 サー！ さあ、 その鈍くて錆びた鉄くずを抜いてみろ！}
+QuestsUtilite_232 {Gelvira Cheka（1605-1648）、商人}
+QuestsUtilite_233 {私の商品は返品・ 返金できません！}
+QuestsUtilite_234 {Jacob Black, 1608-1631、漁師}
+QuestsUtilite_235 {父のロングボートは数々の嵐を乗り越えてきた。 今回もきっと大丈夫だ…}
+QuestsUtilite_236 {Ralph Chaplin, 1602-1649、木こり}
+QuestsUtilite_237 {ジョン、 斧の刃を柄にしっかり固定したか？}
+QuestsUtilite_238 {Kermit Filler, 1615-1653、バーテンダー}
+QuestsUtilite_239 {モーガン、 ラムは薄めてないよ、 母さんに誓う！}
+QuestsUtilite_240 {ローラ・ハート（1605-1627）、娼婦}
+QuestsUtilite_241 {よくもそんなことを！ 私は毎週医者に診てもらっているんだぞ！}
+QuestsUtilite_242 {Simon Luther（サイモン・ルーサー）、1598-1639年、医師}
+QuestsUtilite_243 {白い粉、無臭…苦い味…}
+QuestsUtilite_244 {Oscar Marker, 1611-1642、盗賊}
+QuestsUtilite_245 {でも、 犬の鎖はここまでは届かないな…}
+QuestsUtilite_246 {Macolm Camley（1545-1587）俳優}
+QuestsUtilite_247 {この赤い鼻の仮面をかぶれば、 まるで砦の司令官そのものだ！}
+QuestsUtilite_248 {トビアス・フィラー（1567-1599） 狩猟者}
+QuestsUtilite_249 {ジョン、 このジャガーはおとなしく見えるよ、 檻を開けて…}
+QuestsUtilite_250 {Camille Rutter, 1571-1596、農民女性}
+QuestsUtilite_251 {今日はうちのハゼ、 なんだか落ち着かないな…}
+QuestsUtilite_252 {Fritz Loots, 1587-1631、コック}
+QuestsUtilite_253 {ピクルスは士官用、 船乗り娘は出されたものを食べるだけだ！}
+QuestsUtilite_254 {Rupert Hofmeyr, 1601-1649, 書記}
+QuestsUtilite_255 {10回目だぞ、 このバカ！ ミンヘール・ ヘリッツは今日は会ってくれない！}
+QuestsUtilite_256 {Paul Wlecke, 1577-1622, 水先案内人}
+QuestsUtilite_257 {心配いりません、 キャプテン： このリーフの抜け道なら、 手のひらを見てるようにわかっています！}
+QuestsUtilite_258 {Yedam Uustgen（1589-1635） 鍛冶職人}
+QuestsUtilite_259 {もっといいサーベルはいらない。 鍛冶場でその手を鍛え直すべきだ！}
+QuestsUtilite_260 {Katrina Erb, 1610-1644、洗濯女}
+QuestsUtilite_261 {リズベス、 どこへ行ったの？ 彼らは穏やかなインディアンだよ、 白人には手を出さないんだ…}
+QuestsUtilite_262 {Peter Konnink, 1561-1615、マスケット銃兵}
+QuestsUtilite_263 {銃口にしっかりと弾を込めて…}
+QuestsUtilite_264 {Tanna Graaff, 1588-1607、メイド}
+QuestsUtilite_265 {誰かが下で歩いているみたいだな。 それに、 こんな夜中に誰を連れてきたんだ？ ちょっと見てくる…}
+QuestsUtilite_266 {Krelis van Eck, 1572-1611、甲板長}
+QuestsUtilite_267 {鞭で二十回打て！ いや、 三十回だ！ 全員にだ！}
+QuestsUtilite_268 {Jacob de Haez（1611-1651） 旅行者}
+QuestsUtilite_269 {カイマンは人を襲わない。 よほど空腹な時だけだ。 こいつは明らかに満腹だな…}
+QuestsUtilite_270 { }
+QuestsUtilite_271 { }
+QuestsUtilite_272 {毒が効かなかった！}
+QuestsUtilite_273 {タイノの毒に侵された！}
+QuestsUtilite_274 {@<GetFullName(chref)> はタイノの毒で毒された}
+QuestsUtilite_275 {アクションメニュー（ENTER） からル・ フランソワへファストトラベルできます。}
+QuestsUtilite_276 {海域がさらに危険になり、 海賊の脅威が増している}
+QuestsUtilite_277 {キメラ}
+QuestsUtilite_278 {~ 本気で怒らせたな！艦隊の旗艦は ~}
+QuestsUtilite_279 {ディエゴ}
+QuestsUtilite_280 {デ・ランダ}
+QuestsUtilite_281 {ジャガー}
+QuestsUtilite_282 {ベローナ}
+QuestsUtilite_283 {ミネルヴァ}
+QuestsUtilite_284 {マナティ}
+QuestsUtilite_285 {マングローブ}
+QuestsUtilite_286 {貿易風}
+QuestsUtilite_287 {トリトン}
+QuestsUtilite_288 {カカオ}
+QuestsUtilite_289 {ハチドリ}
+QuestsUtilite_290 {シビュラ}
+QuestsUtilite_291 {ジュノ}
+QuestsUtilite_292 {オルフェウス}
+QuestsUtilite_293 {グアバ}
+QuestsUtilite_294 {モレナ}
+QuestsUtilite_295 {ポセイドン}
+QuestsUtilite_296 {バラクーダ}
+QuestsUtilite_297 {ヒュドラ}
+QuestsUtilite_298 {マナティ}
+QuestsUtilite_299 {城塞}
+QuestsUtilite_300 {アナテマ}
+QuestsUtilite_301 {キメラ}
+QuestsUtilite_302 {ネメシス}
+QuestsUtilite_303 {イグアナ}
+QuestsUtilite_304 {セクロピア}
+QuestsUtilite_305 {エスチュアリ}
+QuestsUtilite_306 {ディオニュソス}
+QuestsUtilite_307 {アスタルテ}
+QuestsUtilite_308 {カロン}
+QuestsUtilite_309 {グアカマヨ}
+QuestsUtilite_310 {ヘリアダ}
+QuestsUtilite_311 {ケルベロス}
+QuestsUtilite_312 {ベレロフォン}
+QuestsUtilite_313 {モルフェウス}
+QuestsUtilite_314 {ペルセウス}
+QuestsUtilite_315 {バク}
+QuestsUtilite_316 {カーテンウォール}
+QuestsUtilite_317 {ファランクス}
+QuestsUtilite_318 {レギオン}
+QuestsUtilite_319 {前哨基地}
+QuestsUtilite_320 {ドリアード}
+QuestsUtilite_321 {ゴルゴン}
+QuestsUtilite_322 {オベリスク}
+QuestsUtilite_323 {アラベラ}
+QuestsUtilite_324 {レギオン兵}
+QuestsUtilite_325 {ヴァルカン}
+QuestsUtilite_326 {ヘリアドン}
+QuestsUtilite_327 {ヘパイストス}
+QuestsUtilite_328 {センチュリオン}
+QuestsUtilite_329 {海賊は討たれ、 海はより安全になった。}
+QuestsUtilite_330 {海賊たちは力を増し、 海はさらに危険になった。}
+QuestsUtilite_331 {キャプテン、 あれはアムステルダム号です！ ついにあなたはカンパニーから脅威と見なされました。}

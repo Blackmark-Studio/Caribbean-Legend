@@ -1,0 +1,30 @@
+MerchantOnMap_1 {tüccar}
+MerchantOnMap_2 {Bir söylentiye göre}
+MerchantOnMap_3 {atılgan korsan}
+MerchantOnMap_4 {atılgan korsan}
+MerchantOnMap_5 {, yakalandı}
+MerchantOnMap_6 { }
+MerchantOnMap_7 { }
+MerchantOnMap_8 {~ bir tuzağa, ki o tuzağa ~}
+MerchantOnMap_9 {onun}
+MerchantOnMap_10 {onun}
+MerchantOnMap_11 {~ @<NationNameSK(sti(MerPrm.ination))> makamları tarafından kandırıldı. ~ için birini gönderdiler}
+MerchantOnMap_12 {ona}
+MerchantOnMap_13 {onu}
+MerchantOnMap_14 {~ ambarında tam teçhizatlı @<NationNameSK(sti(MerPrm.ination))> askerleriyle bir ''ticaret'' gemisi. Ama @<pchar.name> şaşırmadı ~}
+MerchantOnMap_15 { }
+MerchantOnMap_16 { }
+MerchantOnMap_17 {, ~}
+MerchantOnMap_18 {o}
+MerchantOnMap_19 {o}
+MerchantOnMap_20 {~ hepsini basitçe öldürdü!}
+MerchantOnMap_21 { }
+MerchantOnMap_22 { }
+MerchantOnMap_23 { }
+MerchantOnMap_24 { }
+MerchantOnMap_25 { }
+MerchantOnMap_26 { }
+MerchantOnMap_27 { }
+MerchantOnMap_28 { }
+MerchantOnMap_29 {~ İşte cesur korsanımız @<GetFullName(pchar)>.}
+MerchantOnMap_30 {Söylentilere göre, gözüpek korsan @<GetFullName(pchar)>, @<NationNameSK(sti(MerPrm.ination))> tüccar gemilerini soymaya başlamış. Bunun üzerine Genel Valimiz ona bir son vermeye karar verdi. Avrupa’dan getirilen birkaç düzine eğitimli askerle donatılmış, tüccar kılığına sokulmuş bir gemi hazırlatıp onun peşine gönderdi. Fakat kana susamış korsan hepsini öldürdü ve yine adaletten kaçmayı başardı!}

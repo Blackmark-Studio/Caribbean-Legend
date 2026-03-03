@@ -111,7 +111,8 @@ void ProcessDialogEvent()
 						if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 						{
 							RemoveItems(pchar, "map_sharp_full", 1);
-							dialog.text = "Mister, why have you been working so slowly?! It's all over for your principal. The period for validating the testament has expired, and Isla Tesoro now belongs to England. It will soon become a military base."link.l1 ="Shiver me timbers! It seems all my efforts were for nothing...";
+							dialog.text = "Mister, why have you been working so slowly?! It's all over for your principal. The period for validating the testament has expired, and Isla Tesoro now belongs to England. It will soon become a military base.";
+							link.l1 ="Shiver me timbers! It seems all my efforts were for nothing...";
 							link.l1.go = "saga_l3";
 						}
 						else
@@ -137,7 +138,8 @@ void ProcessDialogEvent()
 						// пятая проверка времени
 						if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 						{
-							dialog.text = "Mister, why have you been working so slowly?! It's all over for your principal. The period of validation for the testament has expired and Isla Tesoro now belongs to England. It will become a military base soon."link.l1 ="Shiver me timbers! It seems that all my efforts were for nothing...";
+							dialog.text = "Mister, why have you been working so slowly?! It's all over for your principal. The period of validation for the testament has expired and Isla Tesoro now belongs to England. It will become a military base soon.";
+							link.l1 ="Shiver me timbers! It seems that all my efforts were for nothing...";
 							link.l1.go = "saga_l3";
 						}
 						else
@@ -195,7 +197,8 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 			{
 				RemoveItems(pchar, "map_sharp_full", 1);
-				dialog.text = "Sir, you must have been at sea for too long. Isla Tesoro is now a military base of the English Navy! Yes, Sharp's testament exists, but it has expired and Isla Tesoro has become the property of the English crown. Alas!"link.l1 ="Shiver me timbers! It seems all my efforts were for nothing...";
+				dialog.text = "Sir, you must have been at sea for too long. Isla Tesoro is now a military base of the English Navy! Yes, Sharp's testament exists, but it has expired and Isla Tesoro has become the property of the English crown. Alas!";
+				link.l1 ="Shiver me timbers! It seems all my efforts were for nothing...";
 				link.l1.go = "saga_l3";
 			}
 			else
@@ -381,7 +384,8 @@ void ProcessDialogEvent()
 			// шестая проверка времени
 			if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 			{
-				dialog.text = "Sir, you have astonished me! You did so much, the island was almost in our hands, but it is over now because of your delay with my fee! The testament has expired and Isla Tesoro now belongs to the English crown. It will become a military base."link.l1 ="Shiver me timbers! It seems that all my efforts were for nothing...";
+				dialog.text = "Sir, you have astonished me! You did so much, the island was almost in our hands, but it is over now because of your delay with my fee! The testament has expired and Isla Tesoro now belongs to the English crown. It will become a military base.";
+				link.l1 ="Shiver me timbers! It seems that all my efforts were for nothing...";
 				link.l1.go = "saga_l3";
 			}
 			else

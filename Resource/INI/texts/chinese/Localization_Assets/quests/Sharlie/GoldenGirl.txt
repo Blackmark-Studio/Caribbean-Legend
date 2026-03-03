@@ -8,7 +8,7 @@ GoldenGirl_7 {de Chievous}
 GoldenGirl_8 {William}
 GoldenGirl_9 {Cortney}
 GoldenGirl_10 {Bart}
-GoldenGirl_11 {葡萄牙人}
+GoldenGirl_11 {Portugal}
 GoldenGirl_12 {Hernando}
 GoldenGirl_13 {Vasces}
 GoldenGirl_14 {探索模式: 计时器未禁用。 迎接最后期限!}

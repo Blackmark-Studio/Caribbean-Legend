@@ -1237,6 +1237,7 @@ bool GoldenGirl_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "GoldenGirl_ToJulianna") 
 	{
 		sld = characterFromId("Julianna");
+		ChangeCharacterAddressGroup(sld, "FortFrance_SecBrRoom", "barmen", "stay");
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 	} 
@@ -1270,9 +1271,11 @@ bool GoldenGirl_QuestComplete(string sQuestName, string qname)
 		locCameraFollow();
 		
 		pchar.GenQuest.FrameLockEsc = true;
+		ResetSound();
 		SetLaunchFrameFormParam("", "", 0, 14);
 		SetLaunchFrameFormPic("loading\inside\censored1.tga");
-		PlayStereoSound("sex\sex6.wav");
+		if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+		else PlayStereoSound("sex\sex6.wav");
 		LaunchFrameForm();
 		DoQuestCheckDelay("GoldenGirl_AfterSexJulianna", 14.0);
 		if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	

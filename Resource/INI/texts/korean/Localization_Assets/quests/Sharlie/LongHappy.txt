@@ -1,0 +1,44 @@
+LongHappy_1 {결혼 결정을 내리려면 '생각을 말하기' 옵션을 사용하세요}
+LongHappy_2 {아보 베누아가 상륙했습니다!}
+LongHappy_3 {@<sti(pchar.questTemp.LongHappy.MarryRum)>통의 럼주와 @<sti(pchar.questTemp.LongHappy.MarryMoney)>페소.}
+LongHappy_4 {럼 50통, 와인 20통, 페소 300,000.}
+LongHappy_5 {럼 100통, 와인 50통, 그리고 500,000페소.}
+LongHappy_6 {하지만 그 전에 생피에르 선술집에서 축하 연회를 열어야 해. 서둘러!}
+LongHappy_7 {하지만 그 전에 Isla Tesoro에서 축하 행사를 준비해야 해. 서둘러!}
+LongHappy_8 {먼저 생피에르 선술집에서 축하 연회를 준비해야 합니다!}
+LongHappy_9 {먼저 Isla Tesoro에서 축하 행사를 준비해야 합니다!}
+LongHappy_10 {Sea Devil}
+LongHappy_11 {Jan}
+LongHappy_12 {Svensson}
+LongHappy_13 {향유고래}
+LongHappy_14 {Marcus}
+LongHappy_15 {Tyrex}
+LongHappy_16 { }
+LongHappy_17 {Steven}
+LongHappy_18 {Dodson}
+LongHappy_19 {시간이 흘렀다...@<NewStr()>연회는 한창이었다...}
+LongHappy_20 {Tichingitu}
+LongHappy_21 {Nathaniel}
+LongHappy_22 {Mauritz}
+LongHappy_23 {Dussak}
+LongHappy_24 {Jacques}
+LongHappy_25 {Barbazon}
+LongHappy_26 {Black Dragon}
+LongHappy_27 {얀 스벤손이 보트로 탈출했다!}
+LongHappy_28 {Steven Dodson이 보트를 타고 탈출했습니다!}
+LongHappy_29 {Marcus Tyrex가 보트를 타고 도망쳤다!}
+LongHappy_30 {마르쿠스 티렉스의 오랜 동료이자 친구였던 베르나르 벵상은 mercenaries의 잔당을 카타콤을 통해 몰아내던 중 전사했다. 승리를 불과 몇 시간 앞두고 눈을 감았다... ~}
+LongHappy_31 {그게 다가 아니야 – Marcus Tyrex 본인도 배가 적에게 넘어갈 때 실종됐어. Jan Swenson이 수색을 조직했고, 나는 그 늙은 남작이 총탄과 파도에도 굴하지 않았기를 바란다네. 그가 없어진다면 해안의 형제단 전체에 돌이킬 수 없는 손실이 될 거야. ~}
+LongHappy_32 {나 역시 피해를 피할 수 없었다. 전쟁이 평화로운 생명을 앗아갈 때마다 마음이 무겁다. Gino Gvineili—좋은 친구이자 뛰어난 과학자였던 그가 이 비열한 공격에 우연히 희생되고 말았다. 나는 그를 정중히 묻기 위해 Antigua로 돌아갈 것이다.}
+LongHappy_33 {무거운 상실은 나 역시 피할 수 없었다. 충직한 동료이자 장교인 티칭기투는 내 아내와 다니엘 호크를 향한 총알을 대신 막아주었다. 암살자는 마땅한 대가를 치렀지만, 그게 무슨 소용인가? 그것만으로도 부족한 듯, 좋은 친구이자 뛰어난 과학자 지노 그비넬리마저 이 비열한 공격에 우연히 희생되고 말았다. 나는 그들을 제대로 묻어주기 위해 앤티가로 돌아갈 것이다.}
+LongHappy_34 {하지만 희망의 빛도 있다. 티칭기투, 내 전우는 전투가 시작되자마자 어딘가에서 사라졌다. 살아 있는 모습을 다시 볼 거라 기대하지도 않았는데, 얀은 그가 현지 주점 주인의 조카딸과 함께 사보-마틸라 만 쪽으로 떠나는 걸 공격 전에 봤다고 했다. 뭐든 상상할 수 있었지만, 젊은 아가씨와 취한 채 도망치다니? 그게 티칭기투라고?! 어쨌든, 화난 삼촌이 무거운 몽둥이를 들기 전에 최대한 빨리 그들을 찾아야 한다.}
+LongHappy_35 {Tichingitu가 회복하여 장교 임무를 시작할 준비가 되었습니다}
+LongHappy_36 {Jean}
+LongHappy_37 {David}
+LongHappy_38 {Prosper}
+LongHappy_39 {Trubal}
+LongHappy_40 {Bernard}
+LongHappy_41 {Vensan}
+LongHappy_42 {@<GetFullName(sld)>님이 장교로 팀에 합류했습니다}
+LongHappy_43 {@GetFullName(sld)>를 접현 담당으로 지정할 수 있습니다}
+LongHappy_44 {다음 날 아침...}

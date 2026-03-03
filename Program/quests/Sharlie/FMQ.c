@@ -380,7 +380,7 @@ void FMQG_PlantationGuards(string qName) //
 {
 	int n = 1;
 	if (MOD_SKILL_ENEMY_RATE > 4) n = 2;
-	int iRank = MOD_SKILL_ENEMY_RATE+7;
+	int iRank = MOD_SKILL_ENEMY_RATE/2+7;
 	for (int i=1; i<=n; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("FMQG_plant_guard_"+i, "sold_eng_"+i, "man", "man", iRank, ENGLAND, -1, false, "soldier"));
@@ -520,7 +520,7 @@ void FMQG_Killers(string qName) // привет от ростовщика
 	int n = 2;// Addon 2016-1 Jason пиратская линейка
 	if (MOD_SKILL_ENEMY_RATE > 6) n = 3;
 	if (MOD_SKILL_ENEMY_RATE < 4) n = 1;
-	int iRank = MOD_SKILL_ENEMY_RATE+5;
+	int iRank = MOD_SKILL_ENEMY_RATE/2+5;
 	chrDisableReloadToLocation = true;
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true); // правки релиза
 	for (int i=1; i<=n; i++)
@@ -893,7 +893,7 @@ void FMQM_ArriveGuadeloupe(string qName) //
 	sld = GetCharacter(NPC_GenerateCharacter("FMQM_Tartane_Cap", "mercen_7", "man", "man", 15, FRANCE, 5, true, "soldier"));
 	FantomMakeCoolSailor(sld, SHIP_WAR_TARTANE, StringFromKey("FMQ_17"), CANNON_TYPE_CANNON_LBS3, 30, 30, 30);// Addon 2016-1 Jason пиратская линейка
 	FantomMakeCoolFighter(sld, 15, 30, 30, "blade_06", "pistol1", "bullet", 50);
-	realships[sti(sld.ship.type)].SpeedRate = 35.0;
+	realships[sti(sld.ship.type)].SpeedRate = 4.0;
 	sld.DontRansackCaptain = true;
 	sld.AnalizeShips = true;
 	sld.Ship.Mode = "pirate";
@@ -1004,10 +1004,21 @@ void FMQM_AbandonCoast(string qName) // в бухте Морн л'О
 	chrDisableReloadToLocation = true;//закрыть локацию
 	LAi_LocationFightDisable(&Locations[FindLocation("Shore28")], true);//запретить драться
 	//ставим наших бойцов
+	object aCrewSoldier[5];
+	GenerateCrew(pchar, "soldier", &aCrewSoldier);
+	string model;
+	string ani;
+
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
+
 	for (i=1; i<=5; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("FMQM_Our_crew_"+i, "citiz_"+(i+30), "man", "man", iRank, sti(pchar.nation), 0, false, "soldier"));
-		FantomMakeCoolFighter(sld, iRank, iScl, iScl, LinkRandPhrase("blade_12","blade_09","blade_14"), "pistol1", "bullet", iScl*2);
+		model = aCrewSoldier[i-1].model;
+		ani = aCrewSoldier[i-1].ani;
+		sld = GetCharacter(NPC_GenerateCharacter("FMQM_Our_crew_"+i, model, "man", ani, iRank, sti(pchar.nation), 0, false, "soldier"));
+		FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 		ChangeCharacterAddressGroup(sld, "Shore28", "goto", "goto12");
 		LAi_SetActorType(sld);
 		LAi_ActorFollow(sld, pchar, "", -1);
@@ -1834,9 +1845,8 @@ void FMQN_EnglandReloadJungle(string qName) // релоад в джунгли
 
 void FMQN_EnglandInShoreAttack(string qName) // рубилово в бухте
 {
-	bool bOk;
-	if (pchar.location.from_sea == "shore40") bOk;
-	else 
+	bool bOk = CheckAttributeEqualTo(pchar, "location.from_sea", "shore40");
+	if (!bOk)
 	{
 		Log_Info(StringFromKey("FMQ_38"));
 		PlaySound("interface\notebook.wav");
@@ -1909,7 +1919,7 @@ void FMQN_EnglandInShoreAttack(string qName) // рубилово в бухте
 void FMQN_EnglandSeaAttack(string qName) // атака в море
 {
 	DeleteAttribute(pchar, "GenQuest.MapClosedNoBattle");// Addon 2016-1 Jason пиратская линейка
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE-2;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 15 + 2*sti(pchar.rank);
 	int iShipType = SHIP_SHNYAVA;
 	int iCannon = CANNON_TYPE_CULVERINE_LBS8;
@@ -1922,7 +1932,8 @@ void FMQN_EnglandSeaAttack(string qName) // атака в море
 	DeleteAttribute(sld, "SaveItemsForDead");
 	DeleteAttribute(sld, "DontClearDead");
 	sld.DontRansackCaptain = true;
-	sld.AnalizeShips = true;
+	//sld.AnalizeShips = true;
+	DeleteAttribute(sld, "AnalizeShips");
 	sld.Ship.Mode = "war";
 	sld.AlwaysEnemy = true;
 	sld.Coastal_Captain = true;
@@ -2575,7 +2586,7 @@ void FMQP_InSantoDomingo(string qName) //
 	LocatorReloadEnterDisable("Santodomingo_town", "houseSp4", false);
 	pchar.questTemp.FMQP = "sdm";
 	// ставим засаду в коммон
-	int iRank = MOD_SKILL_ENEMY_RATE+sti(pchar.rank)/2-2;// Addon 2016-1 Jason пиратская линейка
+	int iRank = MOD_SKILL_ENEMY_RATE/2+sti(pchar.rank)/2;// Addon 2016-1 Jason пиратская линейка
 	int iScl = 15 + sti(pchar.rank);
 	sld = GetCharacter(NPC_GenerateCharacter("FMQP_Ugo", "citiz_19", "man", "man", iRank, SPAIN, 2, false, "soldier"));
 	FantomMakeCoolFighter(sld, iRank, iScl, iScl, RandPhraseSimple("blade_05","blade_07"), "pistol1", "bullet", iScl*2);
@@ -2595,10 +2606,10 @@ void FMQP_InSantoDomingo(string qName) //
 	pchar.GenQuestRandItem.CommonPirateHouse.randitem2 = "letter_parol";
 }
 
-void FMQP_SantoDomingoFight(string qName) // 
+void FMQP_SantoDomingoFight(string qName = "") // 
 {
 	chrDisableReloadToLocation = true;
-	int iRank = MOD_SKILL_ENEMY_RATE+sti(pchar.rank)/2-2;// Addon 2016-1 Jason пиратская линейка
+	int iRank = MOD_SKILL_ENEMY_RATE/2+sti(pchar.rank)/2;// Addon 2016-1 Jason пиратская линейка
 	int iScl = 10 + sti(pchar.rank);
 	LAi_group_Delete("EnemyFight");
 	sld = CharacterFromID("FMQP_Ugo");
@@ -2645,7 +2656,7 @@ void FMQP_DomingoEnter(string qName) //
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
 }
 
-void FMQP_OnBoard(string qName) // 
+void FMQP_OnBoard(string qName = "") // 
 {
 	DoQuestReloadToLocation("Santodomingo_tavern", "tables", "stay1", "FMQP_OnBoard");
 }
@@ -2653,7 +2664,7 @@ void FMQP_OnBoard(string qName) //
 void FMQP_SetRaiders(string qName) // 
 {
 	if(bImCasual) return;
-	int iRank = MOD_SKILL_ENEMY_RATE+sti(pchar.rank);// Addon 2016-1 Jason пиратская линейка
+	int iRank = MOD_SKILL_ENEMY_RATE/2+sti(pchar.rank);// Addon 2016-1 Jason пиратская линейка
 	int iScl = 10 + 2*sti(pchar.rank);
 	int iShipType = GetRandomShipType(GetClassFlag(sti(RealShips[sti(pchar.ship.type)].Class)), FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY);
 	string sGroup = "FMQP_SeaGroup";
@@ -2666,7 +2677,8 @@ void FMQP_SetRaiders(string qName) //
 	DeleteAttribute(sld, "SaveItemsForDead");
 	DeleteAttribute(sld, "DontClearDead");
 	sld.AlwaysSandbankManeuver = true;
-	sld.AnalizeShips = true;
+	//sld.AnalizeShips = true;
+	DeleteAttribute(sld, "AnalizeShips");
 	sld.DontRansackCaptain = true;
 	sld.WatchFort = true;
 	sld.AlwaysEnemy = true;
@@ -2766,7 +2778,7 @@ void FMQP_FindBook(string qName) //
 	pchar.questTemp.FMQP = "book";
 }
 
-void FMQP_PrepareUncle(string qName) // 
+void FMQP_PrepareUncle(string qName = "") // 
 {
 	LAi_SetPlayerType(pchar);
 	sld = CharacterFromID("FMQP_noble");
@@ -2820,7 +2832,7 @@ void FMQP_CreateUncleLuis(string qName) //
 	}
 }
 
-void FMQP_UncleExit(string qName) // 
+void FMQP_UncleExit(string qName = "") // 
 {
 	DoQuestReloadToLocation("Portobello_exittown", "reload", "reload2", "FMQP_UncleExit");
 }
@@ -2830,7 +2842,7 @@ void FMQP_OpenPlantation(string qName) //
 	LocatorReloadEnterDisable("Portobello_exittown", "reload2_back", false);
 }
 
-void FMQP_PlantatonPause(string qName) // 
+void FMQP_PlantatonPause(string qName = "") // 
 {
 	LocatorReloadEnterDisable("PortoBello_Plantation", "reload2_back", false);
 	chrDisableReloadToLocation = false;
@@ -2860,7 +2872,7 @@ void FMQP_PlantatonReward(string qName) //
 	sld.talker = 9;
 }
 
-void FMQP_ReceiveReward(string qName) // 
+void FMQP_ReceiveReward(string qName = "") // 
 {
 	bQuestDisableMapEnter = false;// Addon 2016-1 Jason пиратская линейка
 	sld = CharacterFromID("FMQP_noble");
@@ -2918,13 +2930,15 @@ void FMQL_Start() // накручиваем гида и выдаем ему шн
 	EquipCharacterbyItem(sld, "blade_30");
 	GiveItem2Character(sld, "pistol6");
 	EquipCharacterbyItem(sld, "pistol6");
-	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Валинье на острове
+	ForceAdaptiveLevel(sld, 16, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Валинье на острове
 	GiveCaptainOfficers(sld, true);
+	GiveItem2Character(sld, "cirass4");
+	EquipCharacterbyItem(sld, "cirass4");
 	sld.cirassId = Items_FindItemIdx("cirass4");
 	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
     TakeNItems(sld, "bullet", 30);
 	AddItems(sld, "gunpowder", 30);
-	TakeNItems(sld, "potion2", 5);
+	TakeNItems(sld, "potion2", 7);
 	DeleteAttribute(sld, "SaveItemsForDead");
 	DeleteAttribute(sld, "DontClearDead");
 	SetCrewQuantityOverMax(sld, 100);
@@ -3078,7 +3092,7 @@ void FMQL_AbandonBdlS(string qName) //
 	pchar.questTemp.FMQL = "shore";
 	chrDisableReloadToLocation = true;
 	int oRank = sti(pchar.rank)+5;
-	int eRank = sti(pchar.rank);
+	int eRank = sti(pchar.rank)-1;
 	int oScl = 20 + 2*sti(pchar.rank);
 	int eScl = 10 + 2*sti(pchar.rank);// Addon 2016-1 Jason пиратская линейка
 	// ставим наших
@@ -3087,12 +3101,29 @@ void FMQL_AbandonBdlS(string qName) //
 	ChangeCharacterAddressGroup(sld, "Shore18", "goto", "goto8");
 	LAi_SetWarriorType(sld);
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+
+
+	object aCrewSoldier[10];
+	GenerateCrew(pchar, "soldier", &aCrewSoldier);
+	int nSoldierIndex = 0;
+
+	object aCrewMushketer[1];
+	GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+
+	string model;
+	string ani;
+
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
 	for (int i=1; i<=5; i++)
 	{
 		if (i == 5)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("FMQL_sailor_"+i, "mush_ctz_5", "man", "mushketer", oRank, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, oRank, oScl, oScl, "", "mushket3", "grapeshot", oScl*3);
+			model = aCrewMushketer[0].model;
+			ani = aCrewMushketer[0].ani;
+			sld = GetCharacter(NPC_GenerateCharacter("FMQL_sailor_"+i, model, "man", ani, oRank, FRANCE, -1, false, "soldier"));
+			FantomMakeCoolFighterForRef(sld, oRank, oScl, oScl, &aMushketers, oScl*3);
 			TakeNItems(pchar, "grapeshot", 40);
 			TakeNItems(pchar, "gunpowder", 40);
 			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "grapeshot");
@@ -3100,8 +3131,11 @@ void FMQL_AbandonBdlS(string qName) //
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("FMQL_sailor_"+i, "citiz_3"+i, "man", "man", oRank, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, oRank, oScl, oScl, LinkRandPhrase("blade_08","blade_11","blade_14"), "pistol1", "bullet", oScl*2);
+			model = aCrewSoldier[nSoldierIndex].model;
+			ani = aCrewSoldier[nSoldierIndex].ani;
+			nSoldierIndex++;
+			sld = GetCharacter(NPC_GenerateCharacter("FMQL_sailor_"+i, model, "man", ani, oRank, FRANCE, -1, false, "soldier"));
+			FantomMakeCoolFighterForRef(sld, oRank, oScl, oScl, &aSoldier, oScl*2);
 		}
 		ChangeCharacterAddressGroup(sld, "shore18", "goto", "goto7");
 		LAi_SetWarriorType(sld);
@@ -3126,7 +3160,7 @@ void FMQL_AbandonBdlS(string qName) //
 
 void FMQL_SecondCoastBattle() // 
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;// Addon 2016-1 Jason пиратская линейка
+	int iRank = sti(pchar.rank)-1+MOD_SKILL_ENEMY_RATE/2;// Addon 2016-1 Jason пиратская линейка
 	int iScl = 25 + 2*sti(pchar.rank);
 	// вторая группа индеев
 	PlaySound("interface\abordage_wining.wav");
@@ -3304,7 +3338,7 @@ void FMQL_PrepareSneakAttack() // засада
 
 void FMQL_CreateCaribMushketer(string qName) // вышли из леса крутые карибы с пушками
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+2;// Addon 2016-1 Jason пиратская линейка
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;// Addon 2016-1 Jason пиратская линейка
 	int iScl = 30 + 2*sti(pchar.rank);
 	// третья группа индеев - мушкетеры
 	for (int i=1; i<=4; i++)
@@ -3325,11 +3359,11 @@ void FMQL_CreateCaribMushketer(string qName) // вышли из леса кру�
 
 void FMQL_CreateCaribWarrior(string qName) // вождь с командой
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
+	int iRank = sti(pchar.rank)+1+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 35 + 3*sti(pchar.rank);
 	LAi_group_MoveCharacter(sld, "EnemyFight");
 	// вождь
-	sld = GetCharacter(NPC_GenerateCharacter("FMQL_canib_chief", "canib_boss", "man", "man", iRank+5, PIRATE, -1, false, "native"));
+	sld = GetCharacter(NPC_GenerateCharacter("FMQL_canib_chief", "canib_boss", "man", "man", iRank+2, PIRATE, -1, false, "native"));
 	FantomMakeCoolFighter(sld, iRank+5, iScl+5, iScl+5, "topor_01", "pistol5", "bullet", iScl*3+50);
 	ChangeCharacterAddressGroup(sld, "Common_jungle_01", "quest", "quest1");
 	LAi_SetCheckMinHP(sld, 10, true, "FMQL_CanibBossAmulet");
@@ -3811,7 +3845,7 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 		RemoveAllCharacterItems(sld, true);
 		GiveItem2Character(sld, "blade_12");
 		EquipCharacterbyItem(sld, "blade_12");
-		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Валинье на острове
+		ForceAdaptiveLevel(sld, 15, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Валинье на острове
 		sld.name = StringFromKey("FMQ_59");
 		sld.lastname = StringFromKey("FMQ_60");
 		sld.dialog.FileName = "Quest\LineMiniQuests\FMQ_Martinique.c";

@@ -1,0 +1,13 @@
+WildRose_1 {聞いたか？ 数日前、 ビショップのプランテーションから二十人ほどの奴隷が逃げ出したらしい。 夜中に鎖を切って、 何人かの見張りを殺し、 ジャングルへ消えたそうだ。 でも、 この島からどこへ行ける？ 結局すぐに捕まった――洞窟で見つかった者もいれば、 ラグド・ ポイントの近くで捕まった者もいた。 ほとんどは射殺された。 兵士たちにも犠牲者が出たらしい。 でも噂によると、 ビショップが一番腹を立てたのはそのことじゃなく、 自分の手で逃亡者たちに報いを与えられなかったことだそうだ。}
+WildRose_2 {Bruce}
+WildRose_3 {Primer}
+WildRose_4 {Jerry}
+WildRose_5 {Kasper}
+WildRose_6 {Lewis}
+WildRose_7 {Gernon}
+WildRose_8 {Jerome}
+WildRose_9 {Sauvernier}
+WildRose_10 {Rupert}
+WildRose_11 {Kasper}
+WildRose_12 {異端者}
+WildRose_13 {部隊はもう配置についているはずだ…}

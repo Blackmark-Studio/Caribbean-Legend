@@ -1,0 +1,3 @@
+locations_loader_1 {İlk ziyaret ~}
+locations_loader_2 {Tüm koloniler ziyaret edildi!}
+locations_loader_3 {Gizemli bir yer ziyaret edildi!}

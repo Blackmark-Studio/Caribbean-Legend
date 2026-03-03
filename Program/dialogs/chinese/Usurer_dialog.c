@@ -183,7 +183,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			// 贝丝女士 -->
-			if (pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_Bank" && !CheckAttribute(pchar, "questTemp.LadyBeth_Usurer")) // 布莱克伍德在城里
+			if (pchar.location == GetAttributeOrDefault(pchar, "questTemp.LadyBeth.CaptainInColony", "none") + "_Bank" && !CheckAttribute(pchar, "questTemp.LadyBeth_Usurer")) // 布莱克伍德在城里
 			{
 				dialog.Text = "哦, 船长! 请看我今天得到了什么。 有些物品是我从布莱克伍德的手下那里得到的。 他们需要钱进行新的探险, 而对我们来说 —是利润, 对吧? ";
 				link.l1 = "布莱克伍德知道他的手下在卖他们的发现吗? ";
@@ -994,7 +994,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "result":
-			Pchar.QuestTemp.Deposits.(sDepositType1).Interest = GetDepositRate();
+			Pchar.QuestTemp.Deposits.(sDepositType1).Interest = GetDepositRate("peso");
 			Pchar.QuestTemp.Deposits.(sDepositType1).Sum = dialogEditStrings[3];
 			iTemp = sti(dialogEditStrings[3]);
 			if (iTemp <= 0)
@@ -1166,7 +1166,7 @@ void ProcessDialogEvent()
 		
 		case "result_dub":		
 			iTotalDublonQty = GetCharacterItem(pchar,"gold_dublon") + CheckItemMyCabin("gold_dublon");		
-			Pchar.QuestTemp.Deposits.(sDepositType2).Interest = 1;
+			Pchar.QuestTemp.Deposits.(sDepositType2).Interest = GetDepositRate("dublon");
 			Pchar.QuestTemp.Deposits.(sDepositType2).Sum = dialogEditStrings[3];
 			iTemp = sti(dialogEditStrings[3]);
 			if (iTemp <= 0)

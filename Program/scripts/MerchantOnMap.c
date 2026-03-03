@@ -110,7 +110,7 @@ bool MerchantPrepare(int Mnation)
             MerPrm.QuestGoodsIdx = GOOD_FOOD;
         break;
         case 6 :
-            MerPrm.QuestGoodsIdx = GOOD_WEAPON;
+            MerPrm.QuestGoodsIdx = GOOD_WINE;
         break;
         case 7 :
             MerPrm.QuestGoodsIdx = GOOD_TOBACCO;
@@ -283,7 +283,7 @@ void SetMerchantShip(ref Cap, int igoods)
     }
 }
 
-string All_GetColony();
+string All_GetColony()
 {
     int locnum = FindLocation(pchar.location);
     if (locnum != -1 )
@@ -380,7 +380,7 @@ string GenerateMerchant()
         string reztext, tresult, sdirect;
         int lngFileID;
         string HomeColony = All_GetColony();
-        int iNation = sti(Colonies[FindColony(HomeColony)].nation)
+        int iNation = sti(Colonies[FindColony(HomeColony)].nation);
         if ( MerchantPrepare(iNation) )
         {
 
@@ -401,10 +401,9 @@ string GenerateMerchant()
             reztext = LanguageConvertString(lngFileID, tid);
             MerPrm.ination = MerPrm.nation; // fix
             MerPrm.nation = NationNameGenitive(sti(MerPrm.nation));
-            string GoodName = "seg_"+goods[sti(MerPrm.QuestGoodsIdx)].name;
-            MerPrm.QuestGoodsIdx = GetConvertStr(GoodName, "ShipEatGood.txt");
-            MerPrm.sColony = GetConvertStr(MerPrm.sColony+" Town", "LocLables.txt");
-            MerPrm.sNextColony = GetConvertStr(MerPrm.sNextColony+" Port", "LocLables.txt");
+            MerPrm.QuestGoodsIdx = GetGoodsNameSeaSection(&goods[sti(MerPrm.QuestGoodsIdx)]);
+            MerPrm.sColony = GetCityName(MerPrm.sColony);
+            MerPrm.sNextColony = GetCityPort(MerPrm.sNextColony);
 
             tresult += GetAssembledString( reztext,	MerPrm);
 

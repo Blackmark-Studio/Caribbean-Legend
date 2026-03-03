@@ -1,0 +1,2 @@
+LAi_fightparams_1 {총알 회피}
+LAi_fightparams_2 {용병의 모자가 파괴되었습니다.}

@@ -114,8 +114,8 @@ void ProcessDialogEvent()
 			// Addon 2016-1 Jason пиратская линейка
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.Retribution") && pchar.questTemp.Mtraxx.Retribution == "brothel" && npchar.location == "Tortuga_SecBrRoom")
 			{
-				dialog.text = "O mój Boże, popatrz na to! Charlie Prince, sławny korsarz! We własnej osobie!";
-				link.l1 = RandSwear()+" Witaj, Janette. Jestem tu w misji dla Marcusa Tyrex.";
+				dialog.text = "O mój Boże, popatrz na to! Charlie Książe, sławny korsarz! We własnej osobie!";
+				link.l1 = RandSwear()+" Witaj, Janette. Jestem tu w misji dla Marcusa Tyrexa.";
 				link.l1.go = "mtraxx_R";
 				break;
 			}
@@ -124,7 +124,7 @@ void ProcessDialogEvent()
 				dialog.text = "Czy jesteś gotowy na niezapomniane lecznicze zabiegi, mój dzielny korsarzu?";
 				if (sti(pchar.money) >= 31000)
 				{
-					link.l1 = "Jestem! Charlie Prince nie marnuje słów jak marnuje pieniądze, ha-ha!";
+					link.l1 = "Jestem! Charlie Książe nie marnuje słów jak marnuje pieniądze, ha-ha!";
 					link.l1.go = "mtraxx_R2";
 				}
 				else
@@ -272,7 +272,7 @@ void ProcessDialogEvent()
 				// belamour legendary edition Орден Святого Людовика -->
 				if(IsEquipTalisman9() && npchar.nation == FRANCE)
 				{
-					dialog.text = ""+GetSexPhrase("Cóż, rumaku, to doskonałe!","Wszystkie one są niezwykle zręczne, możesz być tego pewna.")+"Mogę zaoferować piękną dziewczynę o imieniu "+GetFullName(sld)+", jest teraz wolna i gotowa do akcji.\nO, co to ukrywasz tak skromnie?! Czy to najwyższe odznaczenie we Francji? Plotki głoszą, że nosiciele tego znaku są legendarni nie tylko na polu bitwy... No wiesz, co mam na myśli, mój filibuście... Poza tym, każdy uznałby za zaszczyt dotknąć twojego 'Orderu', więc dzisiaj odpoczywasz na koszt mojej instytucji. Odmowy nie są akceptowane, przystojniaku.";
+					dialog.text = ""+GetSexPhrase("Cóż, rumaku, to doskonałe!","Wszystkie one są niezwykle zręczne, możesz być tego pewna.")+"Mogę zaoferować piękną dziewczynę o imieniu "+GetFullName(sld)+", jest teraz wolna i gotowa do akcji.\nO, co to ukrywasz tak skromnie?! Czy to najwyższe odznaczenie we Francji? Plotki głoszą, że nosiciele tego znaku są legendarni nie tylko na polu bitwy... No wiesz, co mam na myśli, mój rozrabiako... Poza tym, każdy uznałby za zaszczyt dotknąć twojego 'Orderu', więc dzisiaj odpoczywasz na koszt mojej instytucji. Odmowy nie są akceptowane, przystojniaku.";
 					Link.l1 = "Oczywiście, że się zgadzam, jak mógłbym odmówić?!";
 					Link.l1.go = "Hostess_NotChoice_agree";	
 					npchar.quest.choiceIdx = sld.index;
@@ -584,7 +584,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = LinkRandPhrase(""+GetSexPhrase("Wiesz co ci powiem, kochanie? Nie potrzebuję tych tanich rozmów. Prowadź interesy albo wychodź!","To wszystko, czego potrzebowałem! Komplementy od kobiet!")+"",""+GetSexPhrase("Czy jesteś jednym z tych, którzy myślą, że kobiety kochają uszami? Cóż, skarbie, to po prostu nieprawda. Jeśli mnie chcesz, to zapłać madame i oszczędź mi swoich pustych słów.","Dziewczyno, nie marnuj się na puste rozmowy. Jeśli mówisz poważnie - to zapłać...")+"",""+GetSexPhrase("O, kolejny miłośnik zmysłowości... Po prostu zapłać, a będę twoja. To takie proste, bez całego tego delikatnego nonsensu!","Co u ciebie, kochanie? Jeśli chcesz oddać się przyjemnościom, to po prostu zapłać i przestań z tymi bzdurami!")+"");
+				dialog.text = LinkRandPhrase(""+GetSexPhrase("Wiesz co ci powiem, kochanie? Nie potrzebuję tych tanich rozmów. Prowadź interesy albo wychodź!","To wszystko, czego potrzebowałam! Komplementy od kobiet!")+"",""+GetSexPhrase("Czy jesteś jednym z tych, którzy myślą, że kobiety kochają uszami? Cóż, skarbie, to po prostu nieprawda. Jeśli mnie chcesz, to zapłać madame i oszczędź mi swoich pustych słów.","Dziewczyno, nie marnuj się na puste rozmowy. Jeśli mówisz poważnie - to zapłać...")+"",""+GetSexPhrase("O, kolejny miłośnik zmysłowości... Po prostu zapłać, a będę twoja. To takie proste, bez całego tego delikatnego nonsensu!","Co u ciebie, kochanie? Jeśli chcesz oddać się przyjemnościom, to po prostu zapłać i przestań z tymi bzdurami!")+"");
 				link.l1 = "O, co za chwyt!";
 				Link.l1.go = "exit";
 				npchar.quest.choice = 2; //ГГ послали
@@ -800,7 +800,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_GetBag1":
-			dialog.text = "Ponieważ właściciel tej walizki nie pojawił się, pani zabrała go do swojego boudoir.";
+			dialog.text = "Ponieważ właściciel tej walizki nie pojawił się, pani zabrała ją do swojego boudoir.";
 			link.l1 = "Dzięki, kochanie. Do widzenia.";
 			link.l1.go = "exit";
 			pchar.GenQuest.EncGirl = "Bag_BrothelHostess";
@@ -809,7 +809,7 @@ void ProcessDialogEvent()
 		
 		// --> генератор - "A reason to hurry"
 		case "Horse_ReasonToFast_1":
-			dialog.text = "Wtedy wpadnij kiedykolwiek, zawsze będę się cieszyć na twój widok. Jesteś tak"+GetSexPhrase("i łagodny, nie jak tamci inni","a łagodna, nie jak te wieśniaki")+", ani cześć, ani do widzenia, a często nawet próbują zaszkodzić...";
+			dialog.text = "W takim razie wpadaj do nas kiedy tylko chcesz, zawsze będę się cieszyć na twój widok. Jesteś tak"+GetSexPhrase("i łagodny, nie jak tamci inni","a łagodna, nie jak te wieśniaki")+", ani cześć, ani do widzenia, a często nawet próbują zaszkodzić...";
 			link.l1 = "Co masz na myśli mówiąc to?";
 			link.l1.go = "Horse_ReasonToFast_2";
 		break;
@@ -1099,7 +1099,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_3":
-            dialog.text = "Dobrze zatem. Mniej więcej tydzień temu, do Santo Domingo przybył wojskowy okręt. Był uszkodzony, czy to przez burzę, czy przez walkę, więc naprawy rozpoczęły się od razu, a załoga przeniosła się do fortu. Jego kapitan natomiast spędzał cały swój wolny czas właśnie tutaj. Przez dwa dni bez przerwy pił i relaksował się w towarzystwie jednej z naszych dziewcząt. To ona dostała klejnot, i to nie jeden. Chwaliła się nim na prawo i lewo - Lolita pozwala nam zatrzymywać prezenty od klientów. \nGłupia dziewczyna nawet nie wiedziała, jaką prawdziwą wartość ma ten prezent, podczas gdy ja od razu go oceniłam. Kiedy opowiedziała mi, jak pijany kapitan chwalił się górą pełną bursztynów, natychmiast wysłałam list do Tyrexa...";
+            dialog.text = "Dobrze zatem. Mniej więcej tydzień temu, do Santo Domingo przybył wojskowy okręt. Był uszkodzony, czy to przez burzę, czy przez walkę, więc naprawy rozpoczęły się od razu, a załoga przeniosła się do portu. Jego kapitan natomiast spędzał cały swój wolny czas właśnie tutaj. Przez dwa dni bez przerwy pił i relaksował się w towarzystwie jednej z naszych dziewcząt. To ona dostała klejnot, i to nie jeden. Chwaliła się nim na prawo i lewo - Lolita pozwala nam zatrzymywać prezenty od klientów. \nGłupia dziewczyna nawet nie wiedziała, jaką prawdziwą wartość ma ten prezent, podczas gdy ja od razu go oceniłam. Kiedy opowiedziała mi, jak pijany kapitan chwalił się górą pełną bursztynów, natychmiast wysłałam list do Tyrexa...";
 			link.l1 = "";
 			link.l1.go = "mtraxx_4";
 		break;
@@ -1117,13 +1117,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_6":
-            dialog.text = "Co, uważasz mnie za głupca? Jego imię to Esberdo Cabanas, kapitan Cantavro. Myślę, że marynarze nazywali to szkunerem.";
+            dialog.text = "Co, uważasz mnie za głupca? Jego imię to Esberdo Cabanas, kapitan 'Cantavro'. Myślę, że marynarze nazywali to szkunerem.";
 			link.l1 = "I to wszystko, co wiesz?";
 			link.l1.go = "mtraxx_7";
 		break;
 		
 		case "mtraxx_7":
-            dialog.text = "Co jeszcze chcesz? Jestem pewien, że mógłbyś go dogonić przed Hawaną. Nie marnuj jednak czasu, nie sądzę, aby zrobił długą przerwę przed opuszczeniem Kuby w kierunku swojego schowka, a potem to już przegrana sprawa. Z drugiej strony, mógłbyś zatrzymać się na godzinę czy dwie, przecież za to zapłaciłeś.";
+            dialog.text = "Co jeszcze chcesz? Jestem pewna, że mógłbyś go dogonić przed Hawaną. Nie marnuj jednak czasu, nie sądzę, aby zrobił długą przerwę przed opuszczeniem Kuby w kierunku swojego schowka, a potem to już przegrana sprawa. Z drugiej strony, mógłbyś zatrzymać się na godzinę czy dwie, przecież za to zapłaciłeś.";
 			link.l1 = "Dobrze powiedziane, kochanie. Dwie godziny nie zrobią wielkiej różnicy...";
 			// belamour legendary edition -->
 			link.l1.go = "mtraxx_7S";
@@ -1184,7 +1184,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_R1":
-            dialog.text = "Ah, Charlie Prince, twój humor jest tak ostry jak twoja szabla! Prawie mnie zdenerwowałeś... Dziewczyny! Mamy gościa, specjalnego gościa! Przynieście wino i jedzenie!";
+            dialog.text = "Ah, Charlie Książe, twój humor jest tak ostry jak twoja szabla! Prawie mnie zdenerwowałeś... Dziewczyny! Mamy gościa, specjalnego gościa! Przynieście wino i jedzenie!";
 			if (sti(pchar.money) >= 31000)
 			{
 				link.l1 = "Zwołaj tu każdą ładną dziewczynę! Będziemy odpoczywać i bawić się! Yo-ho-ho!..";
@@ -1261,7 +1261,7 @@ void ProcessDialogEvent()
 		
 		case "chicken_god_notpay":
 			dialog.text = "Dlaczego, Panie, dlaczego? Wynoś się stąd! Idź sobie, idź sobie, już nie mogę tego znieść! Drań!";
-			link.l1 = "To poszło dobrze.";
+			link.l1 = "Łatwo poszło.";
 			link.l1.go = "exit";
 			
 			AddDialogExitQuestFunction("ChickenGod_NotPayForRoom");

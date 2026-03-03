@@ -1,0 +1,16 @@
+quests_reaction_1 {士官@<GetFullName(npchar)>が乗船しています。}
+quests_reaction_2 {@<GetFullName(npchar)> は降伏した。}
+quests_reaction_3 {反乱者たちの亡骸は最後の航海へと海に投げ捨てられた}
+quests_reaction_4 {反乱は鎮圧された}
+quests_reaction_5 {@<GetCityName(sld.City)> は我々のものだ！}
+quests_reaction_6 {誰かがあなたのポケットを探った。}
+quests_reaction_7 {つい先日、 灯台の近くで争いがあったんだ。 ある船長が密輸を企てたが、 うちの巡回隊が現場で捕まえたらしい。 ~}
+quests_reaction_8 {すさまじい銃撃戦だったよ、 店の屋根は流れ弾の砲弾でぶち抜かれた！ でも結局、 全部無駄だった。 地元の密輸業者はジャングルに隠れて、 船長はさっさと海へ逃げたんだ。 うちの兵士たちもまんまと騙されたよ！ あの船長、 腕もすごい。 湾から王様みたいに見事に抜け出したぜ！}
+quests_reaction_9 { }
+quests_reaction_10 { }
+quests_reaction_11 {、～にある}
+quests_reaction_12 {納品期限が切れています。}
+quests_reaction_13 {数時間が経過した…}
+quests_reaction_14 {1時間が経過した…}
+quests_reaction_15 {1日が経過した…}
+quests_reaction_16 {数日が過ぎた…}

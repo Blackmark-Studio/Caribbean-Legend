@@ -1,0 +1,44 @@
+LongHappy_1 {Düğün kararları için DÜŞÜNEREK KONUŞ seçeneğini kullanın}
+LongHappy_2 {Başrahip Benoit karaya çıktı!}
+LongHappy_3 {@<sti(pchar.questTemp.LongHappy.MarryRum)> varil rom ve @<sti(pchar.questTemp.LongHappy.MarryMoney)> peso.}
+LongHappy_4 {50 varil rom, 20 varil şarap ve 300.000 peso.}
+LongHappy_5 {100 varil rom, 50 varil şarap ve 500.000 peso.}
+LongHappy_6 {Ama ondan önce, Saint-Pierre meyhanesinde bir kutlama düzenlemem gerek. Acele et!}
+LongHappy_7 {Ama ondan önce Isla Tesoro’da bir kutlama düzenlemem gerek. Acele et!}
+LongHappy_8 {Önce Saint-Pierre meyhanesinde bir kutlama düzenlemelisiniz!}
+LongHappy_9 {Önce Isla Tesoro’da bir kutlama düzenlemelisin!}
+LongHappy_10 {Sea Devil}
+LongHappy_11 {Jan}
+LongHappy_12 {Svensson}
+LongHappy_13 {Kaşalot}
+LongHappy_14 {Marcus}
+LongHappy_15 {Tyrex}
+LongHappy_16 { }
+LongHappy_17 {Steven}
+LongHappy_18 {Dodson}
+LongHappy_19 {Bir süre geçti...@<NewStr()>Eğlence tam gaz devam ediyor...}
+LongHappy_20 {Tichingitu}
+LongHappy_21 {Nathaniel}
+LongHappy_22 {Mauritz}
+LongHappy_23 {Dussak}
+LongHappy_24 {Jacques}
+LongHappy_25 {Barbazon}
+LongHappy_26 {Black Dragon}
+LongHappy_27 {Jan Svensson bir kayıkla kaçtı!}
+LongHappy_28 {Steven Dodson bir kayıkla kaçtı!}
+LongHappy_29 {Marcus Tyrex bir kayıkla kaçtı!}
+LongHappy_30 {Bernard Vensan, Marcus Tyrex’in eski dostu ve yoldaşı, öldü; katakomblardan şehre dalan paralı askerlerin kalıntılarını temizlerken düştü. Zafere sadece birkaç saat kala yaşama veda etti... ~}
+LongHappy_31 {Ve dahası var – Marcus Tyrex’in kendisi, gemisi bordalandığında kayboldu. Jan Swenson arama çalışmalarını organize etti ve umarım yaşlı baron, top güllelerine ve denizin dalgalarına boyun eğmemiştir – bu, tüm Sahil Kardeşliği için telafisi olmayan bir kayıp olurdu. ~}
+LongHappy_32 {Kayıplar beni de es geçmedi. Savaş masum hayatları aldığında her zaman zordur. Gino Gvineili — iyi bir dost ve parlak bir bilim insanı, bu hain saldırının kurbanı oldu. Onu layıkıyla defnetmek için Antigua'ya döneceğim.}
+LongHappy_33 {Ağır kayıplar beni de es geçmedi. Sadık yoldaşım ve subayım Tichingitu, eşimi ve Dannielle Hawk’ı bir kurşundan korudu. Katil hak ettiğini buldu, ama ne pahasına? Ve sanki bu yetmezmiş gibi, iyi dostum ve parlak bir bilim insanı olan Gino Gvineili de bu hain saldırının kurbanı oldu. Onları layıkıyla defnetmek için Antigua’ya döneceğim.}
+LongHappy_34 {Ama yine de bir umut ışığı var – silah arkadaşım Tichingitu, savaşın en başında bir yerde kaybolmuştu. Onu bir daha sağ göreceğimi sanmıyordum, fakat Jan, saldırıdan önce onu yerel meyhanecinin yeğeniyle birlikte Sabo-Matila Koyu’na doğru giderken gördüklerini söyledi. Her şeyi beklerdim – ama genç bir hanımla sarhoş kaçış mı? Bu Tichingitu muymuş?! Her halükarda, öfkeli dayısı ağır bir sopa kapmadan önce onları bulmak şart.}
+LongHappy_35 {Tichingitu iyileşti ve subay olarak görevine başlamaya hazır}
+LongHappy_36 {Jean}
+LongHappy_37 {David}
+LongHappy_38 {Prosper}
+LongHappy_39 {Trubal}
+LongHappy_40 {Bernard}
+LongHappy_41 {Vensan}
+LongHappy_42 {@<GetFullName(sld)> subay olarak ekibine katıldı}
+LongHappy_43 {@<GetFullName(sld)> kişisini borda subayı olarak atayabilirsiniz}
+LongHappy_44 {Ertesi sabah...}

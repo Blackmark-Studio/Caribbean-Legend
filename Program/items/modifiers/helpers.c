@@ -20,6 +20,37 @@ bool HasWeaponType(ref chr, int weaponType)
 	return CheckAttribute(descriptors, M_WEAPON_TYPE + "_" + weaponType);
 }
 
+
+bool IsLightWeapon(ref rItem)
+{
+	return IsWeaponType(rItem, WEAPON_LIGHT);
+}
+
+bool IsMediumWeapon(ref rItem)
+{
+	return IsWeaponType(rItem, WEAPON_MEDIUM);
+}
+
+bool IsHeavyWeapon(ref rItem)
+{
+	return IsWeaponType(rItem, WEAPON_HEAVY);
+}
+
+bool IsWeaponType(ref rItem, int weaponType)
+{
+	return HasDescriptor(rItem, M_WEAPON_TYPE + "_" + weaponType);
+}
+
+int GetWeaponType(ref rItem)
+{
+	return GetModifierInt(rItem, HAS + M_WEAPON_TYPE, -1);
+}
+
+int GetArmorType(ref rItem)
+{
+	return GetModifierInt(rItem, HAS + M_ARMOR_TYPE, -1);
+}
+
 void SetWeaponDamageByStrikes(ref item, int type, float dmgMin, float dmgMax)
 {
 	float weightMtp = GetWeightMtp(type, stf(item.weight));
@@ -29,6 +60,15 @@ void SetWeaponDamageByStrikes(ref item, int type, float dmgMin, float dmgMax)
 	item.attack.min = makeInt(baseAttack * dmgMin + 0.5);
 	item.attack.max = makeInt(baseAttack * dmgMax + 0.5);
 	float mtp = baseAttack * weightMtp;
+
+	if (type == -1) // мушкеты
+	{
+		SetWeaponStrikeDamage(attack, FAST_STRIKE , mtp * MUSKET_FAST_STRIKE_MTP, dmgMin, dmgMax);
+		SetWeaponStrikeDamage(attack, FORCE_STRIKE, mtp * MUSKET_FORCE_STRIKE_MTP, dmgMin, dmgMax);
+		SetWeaponStrikeDamage(attack, ROUND_STRIKE, mtp * MUSKET_ROUND_STRIKE_MTP, dmgMin, dmgMax);
+		SetWeaponStrikeDamage(attack, BREAK_STRIKE, mtp * MUSKET_BREAK_STRIKE_MTP, dmgMin, dmgMax);
+		return;
+	}
 	switch (type)
 	{
 		case WEAPON_LIGHT:
@@ -55,18 +95,10 @@ void SetWeaponDamageByStrikes(ref item, int type, float dmgMin, float dmgMax)
 			SetWeaponStrikeDamage(attack, BREAK_STRIKE, mtp * WEAPON_HEAVY_BREAK_STRIKE_MTP, dmgMin, dmgMax);
 		}
 		break;
-		case MUSKET_ITEM_TYPE:
-		{
-			SetWeaponStrikeDamage(attack, FAST_STRIKE , mtp * MUSKET_FAST_STRIKE_MTP, dmgMin, dmgMax);
-			SetWeaponStrikeDamage(attack, FORCE_STRIKE, mtp * MUSKET_FORCE_STRIKE_MTP, dmgMin, dmgMax);
-			SetWeaponStrikeDamage(attack, ROUND_STRIKE, mtp * MUSKET_ROUND_STRIKE_MTP, dmgMin, dmgMax);
-			SetWeaponStrikeDamage(attack, BREAK_STRIKE, mtp * MUSKET_BREAK_STRIKE_MTP, dmgMin, dmgMax);
-		}
-		break;
 	}
 }
 
-void SetWeaponStrikeDamage(ref attack, string strike, float mtp, float dmgMin, float dmgMax)
+void SetWeaponStrikeDamage(aref attack, string strike, float mtp, float dmgMin, float dmgMax)
 {
 	SetAttribute(attack, strike + ".min", makeInt(mtp * dmgMin + 0.5));
 	SetAttribute(attack, strike + ".max", makeInt(mtp * dmgMax + 0.5));

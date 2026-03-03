@@ -1,0 +1,20 @@
+LSC_Q2Utilite_1 { }
+LSC_Q2Utilite_2 { }
+LSC_Q2Utilite_3 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>「@<sld.Ship.name>」号の船長@<GetFullName(sld)>は街にいる。 今は港役所にいるはずだ。}
+LSC_Q2Utilite_4 {キャプテン@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>「@<sld.Ship.name>」 は街にいます。 港の事務所にいるはずです。}
+LSC_Q2Utilite_5 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>「@<sld.Ship.name>」の船長@<GetFullName(sld)>は街にいます。 今は港役所にいるはずです。}
+LSC_Q2Utilite_6 {、～の上に}
+LSC_Q2Utilite_7 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))>「@<sld.Ship.name>」の船長@<GetFullName(sld)>は、 港で自分の船に乗っています。 変わった人物で、 決して陸に上がろうとしません。}
+LSC_Q2Utilite_8 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>「@<sld.Ship.name>」 の船長は、 港の自分の船にいる。 変わった人で、 決して陸に上がろうとしないんだ。}
+LSC_Q2Utilite_9 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))>「@<sld.Ship.name>」号の船長@<GetFullName(sld)>は、 港で自分の船に乗ったままだ。 変わった人物で、 決して陸に上がろうとしないらしい。}
+LSC_Q2Utilite_10 {、〜にある}
+LSC_Q2Utilite_11 {キャプテン@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))>「@<sld.Ship.name>」が街にいます。名前は@<GetFullName(sld)>だと思います。}
+LSC_Q2Utilite_12 {キャプテン@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))>「@<sld.Ship.name>」は今、街にいます。}
+LSC_Q2Utilite_13 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))>「@<sld.Ship.name>」 の船長がこの街にいます。 名前は@<GetFullName(sld)>だったと思います。}
+LSC_Q2Utilite_14 {船長@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))>「@<sld.Ship.name>」 は港で自分の船にいます。 名前は@<GetFullName(sld)>だったと思います。}
+LSC_Q2Utilite_15 {キャプテン@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))>「@<sld.Ship.name>」は港で自分の船にいます。}
+LSC_Q2Utilite_16 {港には、@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))>「@<sld.Ship.name>」の船長が乗船中です。名前は@<GetFullName(sld)>だったと思います。}
+LSC_Q2Utilite_17 {、〜の上に}
+LSC_Q2Utilite_18 {Mary Celeste}
+LSC_Q2Utilite_19 {船は空です}
+LSC_Q2Utilite_20 {ブリガンティン「Mary Celeste」}

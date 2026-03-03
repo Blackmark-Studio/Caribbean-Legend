@@ -1,0 +1,5 @@
+reaction_functions_1 {マンガローサ薬の過剰摂取！}
+reaction_functions_2 {毒状態になった}
+reaction_functions_3 {特製マンガローサ薬を使用！}
+reaction_functions_4 {マンガローザの薬の効果が切れた}
+reaction_functions_5 {取引日和だ、 船倉は商品でいっぱいだ！ +}

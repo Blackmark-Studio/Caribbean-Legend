@@ -1,18 +1,18 @@
-News {Patch 1.7 BETA Available}
+News {Patch 1.7}
 News_descr
 {
 ***************************   Ahoy!   ***************************
 -------------------------------------------------------------------------------------------------
-— Open beta for patch 1.7 has started
-— The fourth part of the "Ship's Pack" DLC series has been released
+— Welcome to version 1.7!
+— The fourth part of the "Ships Pack" DLC series is out
 — You can freely switch between versions via Steam
-— New game not required
-— Saving have been reworked and improved
-— New stealth and town infiltration mechanics
-— Combat AI performs better on land
-— Epilogue, quality of life improvements, and more
-— Detailed changelog can be found in the news via the button below
+— No need to start a new game
+— Saves have been reworked and improved
+— New city infiltration and stealth mechanics
+— AI fights better on land
+— Epilogue, quality of life improvements and more
+— You can find the detailed changelog in the news via the button below
 }
 News_Attention { }
-[News]
-IsRead = false
+
+key {31.01.2026} 

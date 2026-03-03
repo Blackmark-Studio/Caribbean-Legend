@@ -8,9 +8,9 @@ void InitSelectors(string optionName, string selectorName, ref curValue)
 }
 
 // Заполняем тултип о правой кнопке мыши
-bool HandleSelectorDescription(string nodeName, string header, string bodyText, string optionName, string selectorName)
+bool HandleSelectorDescription(string nodeName, ref header, ref bodyText, string optionName, string selectorName)
 {
-	if (!HasSubStr(&nodeName, selectorName)) return false; // нода должна содержать имя селектора
+	if (!HasSubStr(nodeName, selectorName)) return false; // нода должна содержать имя селектора
 	header = XI_ConvertString("Options_" + optionName);
 	bodyText = XI_ConvertString("Options_" + optionName + "_descr");
 	return true;
@@ -19,8 +19,8 @@ bool HandleSelectorDescription(string nodeName, string header, string bodyText, 
 // Обрабатываем нажатия на стрелки селектора мышкой или с клавы
 bool HandleSelector(string nodeName, string optionName, int direction, string selectorName, int optionMax, ref globVariable)
 {
-	if (!HasSubStr(&nodeName, selectorName)) return false; // нода должна содержать имя селектора
-	ChangedOptionByName(&direction, &optionName, &selectorName, &optionMax, &globVariable);
+	if (!HasSubStr(nodeName, selectorName)) return false; // нода должна содержать имя селектора
+	ChangedOptionByName(direction, optionName, selectorName, optionMax, &globVariable);
 	return true;
 }
 
@@ -37,7 +37,7 @@ void ChangedOptionByName(int direction, string optionName, string selectorName, 
 	int newMode = iClamp(0, optionMax, GetAttributeInt(&InterfaceStates, optionName)+direction);
 	globVariable = newMode;
 	InterfaceStates.(optionName) = newMode;
-	SetSelectorNewTextValue(&optionName, &selectorName, &newMode);
+	SetSelectorNewTextValue(optionName, selectorName, newMode);
 }
 
 // По тому, какая стрелка нажата, возвращаем -1 или 1
@@ -49,9 +49,9 @@ void SetActionDirection(int actionIndex, ref direction)
 }
 
 // Устанавливаем селектор по умолчанию
-void SetSelectorDefault(string optionName, string selectorName, int defaultValue, int variableToUpdate)
+void SetSelectorDefault(string optionName, string selectorName, int defaultValue, ref variableToUpdate)
 {
 	InterfaceStates.(optionName) = defaultValue;
 	variableToUpdate = defaultValue;
-	SetSelectorNewTextValue(&optionName, &selectorName, &defaultValue);
+	SetSelectorNewTextValue(optionName, selectorName, defaultValue);
 }

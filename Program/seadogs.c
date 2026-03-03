@@ -44,7 +44,7 @@
 #include "migrations.c"
 #include "achievements.c"
 #include "ships\ships_generator.c"
-
+#include "story_frames\persistent.c"
 
 extern void InitBaseCannons();
 extern void InitCharacters();
@@ -75,6 +75,7 @@ native float Clampf(float fValue);
 native float Degree2Radian(float fDegree);
 native int RDTSC_B();
 native int RDTSC_E(int iRDTSC);
+native void SetGlobalSeed(string seed);
 
 native int SetTexturePath(int iLevel, string sPath);
 native int SetGlowParams(float fBlurBrushSize, int Intensivity, int BlurPasses);
@@ -109,7 +110,7 @@ native bool IsVirtualKeyboardShowing();
 native bool ShowSteamVirtualKeyboard(int iVKMode, int iTextFieldX, int iTextFieldY, int iTextFieldWidth, int iTextFieldHeight);
 // GetOverlaysInfo function usage example:
 // {
-//     object itemsInfo[2]; // MUST BE of size [2] !!!
+//     object itemsInfo[2];
 //     int itemsInfoSize = GetOverlaysInfo(&itemsInfo);
 //     for (int i = 0; i < itemsInfoSize; i++) {
 //         string itemId = itemsInfo[i].itemId;
@@ -147,6 +148,34 @@ native bool SteamSetRichPresence(string sKey, string sValue);
 native bool SteamClearRichPresence();
 #include "RichPresence.c"
 
+native bool BIsSubscribedApp(int uAppID);
+// https://partner.steamgames.com/doc/api/ISteamApps#BIsSubscribedApp
+// Only use this if you need to check ownership of another game related to yours, a demo for example.
+// Do not use this for DLCs or games not within the same Steamworks Organization.
+// Example App IDs:
+// 2230980 - Caribbean Legend
+// 3549020 - Caribbean Legend: Age of Pirates
+// Check if the user bought AoP (does not mean they have it installed!!):
+// if (BIsSubscribedApp(3549020)) { ... } else { ... }
+
+native bool GameOverlayToWebPageModal(string sWebPageURL);
+// Calls ActivateGameOverlayToWebPage
+// with k_EActivateGameOverlayToWebPageMode_Modal as the Mode.
+// Use for Call-To-Actions, for example subscription to a Curator, or a Wishlist
+
+native int BeginCuratorCheckAsync(string sCuratorID, int iTimeOut);
+// 0 - failed to start check (offline? bad steam?)
+// 1 - check is started in background
+// 2 - check is already in progress, wait for it
+// sCuratorID must be a Steam Curator ID as a string
+// iTimeOut is a global timeout for the check in seconds
+// if the check takes longer than iTimeOut seconds - it is cancelled
+// KNOWN CURATOR IDS:
+// "45734318" - Caribbean Legend (the game franchise)
+// "35094948" - Valkyrie Initiative (the publisher)
+// Results go into the event handler defined JUST BELOW THE OTHERS
+
+
 #libriary "script_libriary_test"
 #libriary "dx9render_script_libriary"
 #libriary "SteamApiScriptLib"
@@ -160,6 +189,31 @@ native bool SteamClearRichPresence();
 #event_handler("Cheat","ProcessCheat");
 #event_handler("SeaDogs_ClearSaveData", "ClearLocationsSaveData");
 #event_handler("StopQuestCheckProcessFreeze","ProcessStopQuestCheckProcessFreeze"); // boal 240804
+
+#event_handler("CuratorCheckResult","ProcessCuratorCheckResult"); // nkrapivindev 230226
+void ProcessCuratorCheckResult()
+{
+	// always a lowercase english string
+    string sResult = GetEventData();
+    if (sResult == "success")
+    {
+        // user is subscribed to the curator
+        // 100% sure
+		Trace("ProcessCuratorCheckResult: Success! :D");
+    }
+    else if (sResult == "notsubscribedfailure")
+    {
+        // user is NOT subscribed to the curator
+        // 100% sure
+		Trace("ProcessCuratorCheckResult: NotSubscribedFailure! ;-(");
+    }
+    else
+    {
+        // don't know for sure.
+        // either time-out or check is broken
+		Trace("ProcessCuratorCheckResult: Unknown sResult=" + sResult);
+    }
+}
 
 float fHighPrecisionDeltaTime;	
 
@@ -452,7 +506,8 @@ void SaveGame()
 	SaveCurrentShipToCurrentProfile();
 	SaveCurrentCharactersToCurrentProfile();
 	SaveCurrentMoneyToCurrentProfile();
-	PostEvent("evntSaveGameAfter",2);// boal спец прерывание для автосейва
+	
+	PostEvent("Event_AfterSave", 2);
 }
 
 void LoadGame()
@@ -475,7 +530,7 @@ void LoadGame()
 	string retStr="";
 	SendMessage(&GameInterface,"lse",MSG_INTERFACE_GET_SAVE_DATA,saveName,&retStr);
 	if( retStr=="" ) {return;}
-
+	trace("Last commit: " + GetDataFromSave(retStr, "last_commit"));
 	DeleteEntities();
 	ClearEvents();
 	ClearPostEvents();
@@ -736,12 +791,14 @@ int actLoadFlag = 0;
 void OnLoad()
 {
 	actLoadFlag = 1;
+
+    SetGlobalSeed(GSeed);
 	
 	if(iHudScale < 50) iHudScale = BI_COMPARE_HEIGHT;
 
 	DeleteAttribute( pchar, "abordage_active_count" );
 	FreezeGroupControls(curKeyGroupName,false);
-	if(CheckAttribute(pchar,"questTemp.TrackNonStop")) DeleteAttribute(pchar,"questTemp.TrackNonStop");
+	if(CheckAttribute(pchar,"questTemp.TrackNonStop")) DeleteAttribute(pchar,"questTemp.TrackNonStop"); // ~!~
 
 	if( CharacterIsDead(pchar) ) {
 		pchar.chr_ai.hp = 1.0;
@@ -963,17 +1020,13 @@ void NewGame_continue()
 }
 
 void InitGame()
-{	
+{
+    UpdateSeeds(); // Инит рандома
+
 	InitSound();
 	ReloadProgressUpdate();
 
 	DeleteSeaEnvironment();
-	if(LoadSegment("worldmap\worldmap_init.c"))
-	{
-		wdmInitWorldMap();
-		UnloadSegment("worldmap\worldmap_init.c");
-	}
-    ReloadProgressUpdate();
 
     InitPerks();
     ReloadProgressUpdate();
@@ -983,7 +1036,14 @@ void InitGame()
 	
 	LocationInit();
 	ReloadProgressUpdate();
-	
+
+	if(LoadSegment("worldmap\worldmap_init.c"))
+	{
+		wdmInitWorldMap();
+		UnloadSegment("worldmap\worldmap_init.c");
+	}
+	ReloadProgressUpdate();
+
 	DialogsInit();
 	ReloadProgressUpdate();
 	
@@ -1046,22 +1106,6 @@ void ProcessControls()
 	Process_Controls(_ControlName);
 }
 
-void Teleport(int step)
-{
-	nTeleportLocation = nTeleportLocation + step;
-	if(nTeleportLocation >=	nLocationsNum) nTeleportLocation = 1;
-	if(nTeleportLocation <=	0) nTeleportLocation = nLocationsNum - 1;
-	
-	sTeleportLocName = Locations[nTeleportLocation].id;
-	Trace("Teleport to '" + sTeleportLocName + "'");
-
-	ReleaseSound(0);
-	ClearEvents();
-	ClearPostEvents();
-	DeleteEntities();
-	SetEventHandler("frame","NewGame",1);
-}
-
 void ProcessMainMenuKey()
 {
 	if (interfacestates.buttons.resume.enable == "1")
@@ -1105,7 +1149,6 @@ void GameOverMainMenu()
 		SendMessage(&AIBalls, "l", MSG_MODEL_RELEASE);
 	}
 	bMainMenu = true; // вышли в меню из игры
-	pchar.mainmenu = true; // вышли в меню из игры
 	GameOver("mainmenu");
 }
 // <===
@@ -1198,17 +1241,19 @@ void GameOver(string sName)
 		case "complete_bad": 
 			InterfaceStates.Death = true;	
 			InterfaceStates.MainMenu.InstantCredits = true;
+			pchar.mainmenu = true;
 			StartPictureAsVideo( "loading\Start_Loading.tga", 3.0 );
 		break;
 
 		case "complete":
 			// StartPostVideo("credits",1);
 			InterfaceStates.MainMenu.InstantCredits = true;
+			pchar.mainmenu = true;
 			StartPictureAsVideo( "loading\Start_Loading.tga", 3.0 );
 		break;
 
 		case "mainmenu":
-			// InterfaceStates.Death = true;										 
+			pchar.mainmenu = true;
 			StartPictureAsVideo( "loading\Start_Loading.tga", 3.0 );
 		break;
 	}

@@ -3,11 +3,11 @@ float DescriptorBaseValue(string descriptorName)
 {
 	switch (descriptorName)
 	{
-		case "Exotic":        return 0.07; break;
+		case "Exotic":        return 0.08; break;
 		case "HighQuality":   return 0.30; break;
 		case "Fancy":         return 7.0;  break;
 		case "Unremarkable":  return 7.0;  break;
-		case "GoodFit":       return 0.07; break;
+		case "GoodFit":       return 0.10; break;
 		case "HeartDefence":  return 0.16; break;
 		case "Bayonet":       return 0.25; break;
 
@@ -15,5 +15,18 @@ float DescriptorBaseValue(string descriptorName)
 		case "MonsterGun":    return 20.0; break;
 		case "IronsideArmor": return 0.15; break;
 		case "LamportSuit":   return 0.13; break;
+	}
+}
+
+float MaterialDefenceValue(string sMaterialIndex)
+{
+	int materialIndex = sti(sMaterialIndex);
+	switch (materialIndex)
+	{
+		case ARMOR_FABRIC:  return ARMOR_FABRIC_DAMAGE_REDUCTION; break;
+		case ARMOR_LEATHER: return ARMOR_LEATHER_DAMAGE_REDUCTION; break;
+		case ARMOR_PLATES:  return ARMOR_PLATES_DAMAGE_REDUCTION; break;
+		case ARMOR_STAMPS:  return ARMOR_STAMPS_DAMAGE_REDUCTION; break;
+		case ARMOR_MOLDED:  return ARMOR_MOLDED_DAMAGE_REDUCTION; break;
 	}
 }

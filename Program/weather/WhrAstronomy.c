@@ -188,10 +188,10 @@ void FillAstronomyFadeValue()
 	}
 }
 
-void MoveAstronomyToLayers(string sExecuteLayer, string sRealizeLayer)
+void MoveAstronomyToLayers(int sExecuteLayer, int sRealizeLayer)
 {
-/*	LayerDelObject("execute", &Astronomy);
-	LayerDelObject("realize", &Astronomy);
+/*	LayerDelObject(EXECUTE, &Astronomy);
+	LayerDelObject(REALIZE, &Astronomy);
 	LayerDelObject(SEA_EXECUTE, &Astronomy);
 	LayerDelObject(SEA_REALIZE, &Astronomy);
 

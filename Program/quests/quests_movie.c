@@ -22,7 +22,7 @@ bool StartQuestMovie(bool noReload, bool noSave, bool lockPlayerCtrl)
 	//Stack level
 	EndBattleLandInterface();
 	ResetTimeScale();
-	if (!bBettaTestMode) SendMessage(&ILogAndActions,"ll",LI_SET_VISIBLE,0);
+	// if (!bBettaTestMode) SendMessage(&ILogAndActions,"ll",LI_SET_VISIBLE,0);
 	int prevLevel = questMovieProcess - 1;
 	string level = "L" + questMovieProcess;
 	questMovieStack.(level) = "";
@@ -57,7 +57,7 @@ bool EndQuestMovie()
 	Event("EndStartQuestMovie");
 	StartBattleLandInterface();
 	ResetTimeScale();
-	SendMessage(&ILogAndActions,"ll",LI_SET_VISIBLE,1);
+	// SendMessage(&ILogAndActions,"ll",LI_SET_VISIBLE,1);
 	questMovieProcess = questMovieProcess - 1;
 	if(questMovieProcess == 0)
 	{

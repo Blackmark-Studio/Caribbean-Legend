@@ -537,12 +537,8 @@ void SetTreasureBoxFromMap()
 void TraderHunterOnMap(bool bCool)
 {
     int Rank = sti(PChar.Rank);
-    int iShips[4];
+    int iShips[4] = {0, 0, 0, 0}; // Рейдер, Универсал, Рейдер, Военник
     int i, num, max, add = 5;
-    iShips[0] = 0; // Рейдер
-    iShips[1] = 0; // Универсал
-    iShips[2] = 0; // Рейдер
-    iShips[3] = 0; // Военник
     if(bCool) add = 8;
 
     if(Rank < 8)      {iShips[0] = 6; num = 1;}
@@ -603,11 +599,8 @@ void TraderHunterOnMap(bool bCool)
 void TreasureHunterOnMap(bool bCool, int iTier)
 {
     if (iTier < 2) return;
-    int iShips[4];
+    int iShips[3] = {0, 0, 0}; // Рейдер, Рейдер/Универсал, Военник
     int i, num, max, add = 5;
-    iShips[0] = 0; // Рейдер
-    iShips[1] = 0; // Рейдер/Универсал
-    iShips[2] = 0; // Военник
     if(bCool) add = 8;
 
     if(iTier < 4)      {iShips[0] = 6; num = 1;}
@@ -922,8 +915,7 @@ void Treasure_SetOfficerWarrior(string qName)
 string GetFixGeneratedItem(string _itemId)
 {
 	int itemsQty = 0;
-	String generatedItems[2];
-	SetArraySize(&generatedItems, TOTAL_ITEMS);
+	string generatedItems[TOTAL_ITEMS];
 	if(!IsGenerableItem(_itemId)) // Генерящийся ли предмет
 	{
 		return _itemID;
@@ -950,15 +942,14 @@ string SelectFixAdmiralMap()
 {
 	string mapId = "";
 	string map[24];
-	string leftMaps[2];
+	string leftMaps[];
 	int n = 1;
 	int mapQty = FillAdmiralMaps(&map);
 
 	for (int i = 0; i < mapQty; i++) {
 		mapId = map[i];
 		if (CheckMapForEquipped(pchar, mapId)) continue;
-		SetArraySize(&leftMaps, n);
-		leftMaps[n-1] = mapId;
+		leftMaps += mapId;
 		n++;
 	}
 

@@ -34,3 +34,24 @@ bool IsInBattle()
 	if (bDisableMapEnter && !CheckAttribute(pchar, "GenQuest.MapClosedNoBattle")) return true;
 	return false;
 }
+
+// Получить локацию по id или nullptr
+ref FindLocationById(string locId)
+{
+	int locIdx = FindLocation(locId);
+	if (locIdx > -1) return &locations[locIdx];
+	return nullptr;
+}
+
+// Получить локацию по idx или nullptr
+ref FindLocationByIdx(int locIdx)
+{
+	if (locIdx > -1) return &locations[locIdx];
+	return nullptr;
+}
+
+// Получить локацию по ссылке/id/индексу или nullptr
+ref FindLocation_VT(ref ref_id_idx)
+{
+	return FindObject_VT(ref_id_idx, "FindLocationById", "FindLocationByIdx");
+}

@@ -1,3 +1,4 @@
+// TO_DO: del
 // Warship. В этом скрипте идёт обработка прерывания, выполняющегося в каждом фрейме
 
 #define MAX_GAMEMODE_CONDITIONS 10
@@ -5,7 +6,7 @@
 #event_handler("frame", "CheckGameModeConditions");
 #event_handler("frame", "CheckItemsGameModeConditions");
 
-string GameModeConditions[MAX_GAMEMODE_CONDITIONS] = { "", "", "", "", "", "", "", "", "", "", };
+string GameModeConditions[MAX_GAMEMODE_CONDITIONS] = {"", "", "", "", "", "", "", "", "", ""};
 string sCurGameModeCondition = "";
 
 void SetGameModeCondition(string _sQuest)

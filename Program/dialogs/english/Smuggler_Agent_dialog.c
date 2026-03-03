@@ -77,7 +77,7 @@ void ProcessDialogEvent()
 				}
 				AddQuestUserData("Gen_Contraband", "sIsland", XI_ConvertString(GetIslandByCityName(npchar.city)));
 			}
-			AddQuestUserData("Gen_Contraband", "sLoc", GetConvertStr(Pchar.quest.contraband.CurrentPlace, "LocLables.txt"));
+			AddQuestUserData("Gen_Contraband", "sLoc", GetLocationNameByID(Pchar.quest.contraband.CurrentPlace));
 				
 			DialogExit();
 		break;
@@ -599,11 +599,11 @@ void ProcessDialogEvent()
                         {
                             if (ChangeContrabandRelation(pchar, 0) >= 70)
                             {
-                                Dialog.Text = "I know we can do business with you. We will be waiting at "+GetConvertStr(Pchar.quest.contraband.CurrentPlace,"LocLables.txt")+".";
+                                Dialog.Text = "I know we can do business with you. We will be waiting at "+GetLocationNameByID(Pchar.quest.contraband.CurrentPlace)+".";
                             }
                             else
                             {
-            				    Dialog.Text = "Hm... Perhaps we can find you a buyer. We will be waiting for you at "+GetConvertStr(Pchar.quest.contraband.CurrentPlace,"LocLables.txt")+".";
+            				    Dialog.Text = "Hm... Perhaps we can find you a buyer. We will be waiting for you at "+GetLocationNameByID(Pchar.quest.contraband.CurrentPlace)+".";
             				}
             				Link.l1 = "Alright. See you there.";
             				Link.l1.go = "Smuggling_exit";
@@ -710,7 +710,7 @@ void ProcessDialogEvent()
 							SetNPCQuestDate(npchar, "Travel_Talk");
 							SaveCurrentQuestDateParam("contraTravel");
 
-							Dialog.Text = "Well, we can get you there "+GetConvertStr(locations[FindLocation(pchar.GenQuest.contraTravel.destination.loc)].id,"LocLables.txt")+" near "+XI_ConvertString("Colony"+pchar.GenQuest.contraTravel.destination+"Gen")+" for "+pchar.GenQuest.contraTravel.price+" gold. Bring the money in "+FindRussianDaysString(nDay)+". The ship will be waiting for you at "+GetConvertStr(locations[FindLocation(Pchar.GenQuest.contraTravel.CurrentPlace)].id,"LocLables.txt")+" exactly 24 hours.";
+							Dialog.Text = "Well, we can get you there "+GetLocationNameByRef(&locations[FindLocation(pchar.GenQuest.contraTravel.destination.loc)])+" near "+XI_ConvertString("Colony"+pchar.GenQuest.contraTravel.destination+"Gen")+" for "+pchar.GenQuest.contraTravel.price+" gold. Bring the money in "+FindRussianDaysString(nDay)+". The ship will be waiting for you at "+GetLocationNameByRef(&locations[FindLocation(Pchar.GenQuest.contraTravel.CurrentPlace)])+" exactly 24 hours.";
 
 							pchar.GenQuest.contraTravel.days = nDay;
 							Link.l1 = "Works for me.";
@@ -764,8 +764,8 @@ void ProcessDialogEvent()
 			ReOpenQuestHeader("Gen_ContrabandTravel");
 			AddQuestRecord("Gen_ContrabandTravel", "1");
 			AddQuestUserData("Gen_ContrabandTravel", "sSex", GetSexPhrase("",""));
-			AddQuestUserData("Gen_ContrabandTravel", "sLoc", GetConvertStr(pchar.GenQuest.contraTravel.CurrentPlace, "LocLables.txt"));
-			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetConvertStr(pchar.GenQuest.contraTravel.destination.loc, "LocLables.txt"));
+			AddQuestUserData("Gen_ContrabandTravel", "sLoc", GetLocationNameByID(pchar.GenQuest.contraTravel.CurrentPlace));
+			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc));
 			AddQuestUserData("Gen_ContrabandTravel", "sPlaceTo", XI_ConvertString("Colony" + pchar.GenQuest.contraTravel.destination + "Gen"));
 			AddQuestUserData("Gen_ContrabandTravel", "sDays", FindRussianDaysString(sti(pchar.GenQuest.contraTravel.days)));
 			AddQuestUserData("Gen_ContrabandTravel", "sPrice", pchar.GenQuest.contraTravel.price);
@@ -808,7 +808,8 @@ void ProcessDialogEvent()
 			//нет, посылаем в сад...
 			else
 			{
-				Dialog.Text = "It looks like you don't have enough money."Link.l1 ="What a pity, I'll come back later.";
+				Dialog.Text = "It looks like you don't have enough money.";
+				Link.l1 ="What a pity, I'll come back later.";
 			}
 			Link.l1.go = "Exit";
 		break;  

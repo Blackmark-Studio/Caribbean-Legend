@@ -300,35 +300,26 @@ void Memento_Dich(string qName)
 
 void Memento_Dich_Start_EtapOne() // Этап первый
 {
-	SetFunctionLocationCondition("Memento_Dich_EtapOne_Paluba_2", "My_Campus", false);
+	CloneLocation(Get_My_Cabin(), "Clone_location");
+	ref sld = &locations[FindLocation("Clone_location")];
+	sld.locators_radius.box.box1 = 0.0;
+	sld.locators_radius.box.box2 = 0.0;
+	sld.locators_radius.box.box3 = 0.0;
+	SetFunctionLocationCondition("Memento_Dich_EtapOne_Paluba_4", "Clone_location", false);
 	aref arOldMapPos;
 	makearef(arOldMapPos, worldMap.old);
 	WdmPrepareMapForAbordage(arOldMapPos);
-	LAi_LocationFightDisable(&Locations[FindLocation("My_Campus")], true);
-	DoReloadFromWorldMapToLocation("My_Campus", "goto", "goto1");
-}
-
-void Memento_Dich_EtapOne_Paluba_2(string qName)
-{
-	QuestToSeaLogin_Launch();
-	pchar.GenQuest.CabinLock = true;
-	bQuestDisableMapEnter = true;
-			
-	DoQuestFunctionDelay("Memento_Dich_EtapOne_Paluba_3", 5.0);
-}
-
-void Memento_Dich_EtapOne_Paluba_3(string qName)
-{
-	DeleteAttribute(pchar, "GenQuest.CabinLock");
-	pchar.GenQuest.DontSetCabinOfficer = true;
-	chrDisableReloadToLocation = true;
-	Sea_CabinStartNow();
-	
-	DoQuestFunctionDelay("Memento_Dich_EtapOne_Paluba_4", 3.0);
+	LAi_LocationFightDisable(&Locations[FindLocation("Clone_location")], true);
+	DoReloadFromWorldMapToLocation("Clone_location", "rld", "loc0");
 }
 
 void Memento_Dich_EtapOne_Paluba_4(string qName)
 {
+	CreateSea(EXECUTE, REALIZE);
+	CreateWeather(EXECUTE,REALIZE);
+	pchar.GenQuest.DontSetCabinOfficer = true;
+	chrDisableReloadToLocation = true;
+	
 	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, false, "soldier"));
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
@@ -343,16 +334,20 @@ void Memento_Dich_EtapOne_Paluba_4(string qName)
 
 void Memento_Dich_EtapOne_End()
 {
-	SetCrewQuantity(pchar, GetCrewQuantity(pchar) - 1);
-	AddCrewMorale(Pchar, -10);
-	SetFunctionTimerCondition("Memento_Dich", 0, 0, 3, true);
-	pchar.questTemp.Memento_Dich_EtapTwo = true;
-	
-	DeleteAttribute(pchar, "GenQuest.DontSetCabinOfficer");
-	bQuestDisableMapEnter = false;
-	
-	sld = characterFromId("Memento_Alonso");
-	LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "OpenTheDoors", 3);
+	if(UnloadLocation(loadedLocation) == true)
+	{
+		SetFunctionTimerCondition("Memento_Dich", 0, 0, 3, true);
+		pchar.questTemp.Memento_Dich_EtapTwo = true;
+		DeleteAttribute(pchar, "GenQuest.DontSetCabinOfficer");
+		chrDisableReloadToLocation = false;
+		DeleteSea();
+		DeleteWeather();
+		LAi_SetPlayerType(pchar);
+		SetCrewQuantity(pchar, GetCrewQuantity(pchar) - 1);
+		AddCrewMorale(Pchar, -10);
+		Sea_MapLoad();
+		pchar.location = "";
+	}
 }
 
 void Memento_Dich_Start_EtapTwo() // Этап второй
@@ -396,14 +391,13 @@ void Memento_Dich_EtapTwo_End()
 {
 	if(UnloadLocation(loadedLocation) == true)
 	{
-		//EndQuestMovie();
 		chrDisableReloadToLocation = false;
 		DeleteSea();
 		DeleteWeather();
 		LAi_SetPlayerType(pchar);
 		SetCrewQuantity(pchar, GetCrewQuantity(pchar) - 13);
 		AddCrewMorale(Pchar, -20);
-		Land_MapLoad();
+		Sea_MapLoad();
 		pchar.location = "";
 		SetFunctionTimerCondition("Memento_Dich", 0, 0, 3, true);
 		pchar.questTemp.Memento_Dich_EtapThree = true;
@@ -754,23 +748,27 @@ void Memento_Dich_EtapThree_Paluba_22()
 
 void Memento_Dich_EtapThree_End()
 {
-	sld = CharacterFromID("Memento_Alonso");
-	sld.lifeday = 0;
-	ChangeCharacterAddressGroup(sld, "none", "", "");
+	if(UnloadLocation(loadedLocation) == true)
+	{
+		sld = CharacterFromID("Memento_Alonso");
+		sld.lifeday = 0;
+		ChangeCharacterAddressGroup(sld, "none", "", "");
+		
+		EndQuestMovie();
+		bDisableCharacterMenu = false;
+		chrDisableReloadToLocation = false;
+		LAi_SetPlayerType(pchar);
+		InterfaceStates.Buttons.Save.enable = true;
+		LAi_RemoveCheckMinHP(pchar);
+		LAi_SetImmortal(pchar, false);
+		pchar.questTemp.Memento_Dich_EtapDominika = true;
+		Memento_Dominica_SpawnObereg();
 	
-	EndQuestMovie();
-	DeleteSea();
-	DeleteWeather();
-	bDisableCharacterMenu = false;
-	chrDisableReloadToLocation = false;
-	LAi_SetPlayerType(pchar);
-	InterfaceStates.Buttons.Save.enable = true;
-	LAi_RemoveCheckMinHP(pchar);
-	LAi_SetImmortal(pchar, false);
-	pchar.questTemp.Memento_Dich_EtapDominika = true;
-	Memento_Dominica_SpawnObereg();
-	QuestToSeaLogin_Prepare(0.0, 0.0, "");
-	QuestToSeaLogin_Launch();
+		DeleteSea();
+		DeleteWeather();
+		Sea_MapLoad();
+		pchar.location = "";
+	}
 }
 
 //===============Доминика==============
@@ -864,6 +862,7 @@ void Memento_OnUpdeck()
 		ChangeCharacterAddressGroup(sld, "Deck_Near_Ship", "quest", "quest2");
 		LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "tutorial_4", "", -1.0);
+        sld.chr_ai.tmpl.ignorecol = "";
 	}
 	else
 	{
@@ -889,6 +888,7 @@ void Memento_OnUpdeck()
 		ChangeCharacterAddressGroup(sld, "Deck_Near_Ship", "quest", "quest2");
 		LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "tutorial_4", "", -1.0);
+        sld.chr_ai.tmpl.ignorecol = "";
 	}
 	DoQuestFunctionDelay("Memento_BrushProps", 2.0);
 }

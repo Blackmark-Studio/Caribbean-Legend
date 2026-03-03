@@ -1,0 +1,143 @@
+Roger_1 {스페인 국기를 넘겼습니다}
+Roger_2 {Gabriela}
+Roger_3 {Chapada}
+Roger_4 {탐험 모드: 타이머 연장됨. 퀘스트를 완료하세요!}
+Roger_5 {Lope}
+Roger_6 {Montoro}
+Roger_7 {Rosario}
+Roger_8 {Gusman}
+Roger_9 {Cantavro}
+Roger_10 {Esberdo}
+Roger_11 {Cabanas}
+Roger_12 {바지선에 바짝 다가가 전리품을 챙기세요. 선체로 바지선을 부수지 않도록 주의하십시오.}
+Roger_13 {호박 획득 @<sti(pchar.questTemp.Mtraxx_SobralVsyo)> / 5}
+Roger_14 {Snake}
+Roger_15 {Geffrey}
+Roger_16 {Brooke}
+Roger_17 {Fly Fish}
+Roger_18 {Billy}
+Roger_19 {Pert}
+Roger_20 {Utrecht}
+Roger_21 {Joachim}
+Roger_22 {Gusen}
+Roger_23 {브리건틴 'Utrecht'}
+Roger_24 {탐험 모드: 타이머가 꺼지지 않습니다. 기한을 지키세요!}
+Roger_25 {한 시간이 흘렀다@<NewStr()>비단이 구매자에게 하역되었다}
+Roger_26 {Moray}
+Roger_27 {Paul}
+Roger_28 {Chant}
+Roger_29 { }
+Roger_30 { }
+Roger_31 {선박 무기고에서 근접무기 30개가 가져갔습니다}
+Roger_32 {근접무기 수집 - 30개}
+Roger_33 {근접무기 없음}
+Roger_34 {수집한 권총 - @<FindRussianQtyString(iGun)>}
+Roger_35 {모은 머스킷 - @<FindRussianQtyString(iMushket)>}
+Roger_36 {치유 물약 획득 - @<FindRussianQtyString(iPotion)>}
+Roger_37 {@<iShot>발 분량의 탄약 확보됨}
+Roger_38 {근접무기 수집 - 30개}
+Roger_39 {수집한 권총 - 50정}
+Roger_40 {치유 물약 획득 - 90개}
+Roger_41 {70발 분량의 탄약 준비 완료}
+Roger_42 {다음 날 저녁이 되었다...}
+Roger_43 {잠시 후...}
+Roger_44 {플랜테이션에 경보 발생!}
+Roger_45 {300초 후에 스페인군이 요새에서 증원군을 받습니다.}
+Roger_46 {스페인 함대가 기함을 잃었다! 지금 도망칠 수 있어!}
+Roger_47 {네덜란드 호송선이 수평선에 나타났다!}
+Roger_48 {Rosbohom}
+Roger_49 {Gryphon}
+Roger_50 {밤이 찾아왔다...}
+Roger_51 {Mirabelle}
+Roger_52 { }
+Roger_53 {미라벨이 열병으로 죽었습니다!}
+Roger_54 {Luka}
+Roger_55 {Bayard}
+Roger_56 {Kumwana}
+Roger_57 { }
+Roger_58 {Hayami}
+Roger_59 { }
+Roger_60 {Tagofa}
+Roger_61 { }
+Roger_62 {이틀 후...@<NewStr()>노 젓는 보트 여섯 척이 완성됐다...}
+Roger_63 {Demetrio}
+Roger_64 {Rojas}
+Roger_65 {Kitty}
+Roger_66 { }
+Roger_67 {Ignacio}
+Roger_68 {Marco}
+Roger_69 {탐험 모드: 타이머 비활성화.}
+Roger_70 {Eduardo}
+Roger_71 {de Losada}
+Roger_72 {El Casador}
+Roger_73 {선실에서 항해일지를 확인하세요}
+Roger_74 {Gaspard}
+Roger_75 {Goldenteeth}
+Roger_76 {접현대가 준비되었습니다!}
+Roger_77 {Cuttlefish}
+Roger_78 {Vagrant}
+Roger_79 { }
+Roger_80 {Merciless}
+Roger_81 {Vampire}
+Roger_82 { }
+Roger_83 {토레로가 르 프랑수아 앞바다에 정박해 있습니다!}
+Roger_84 {숨은 곳에서 은밀하게 기다립니다...}
+Roger_85 {'Torero'}
+Roger_86 {탐험 모드: 퀘스트 기간 2배}
+Roger_87 {Eagle-Owl}
+Roger_88 {Joker}
+Roger_89 {Jim}
+Roger_90 {탐험 모드: Corrida - 좌표 일치}
+Roger_91 {탐험 모드: Corrida - 좌표가 올바르지 않습니다}
+Roger_92 {스페인 호송선단이 수평선에 나타났다!}
+Roger_93 {Toro de Oro}
+Roger_94 { }
+Roger_95 {@<pchar.ship.name>에서 거대한 폭발 발생!}
+Roger_96 {카르타헤나에 도착했다! Tyrex가 코베냐스 만으로 항해하라고 명령한다}
+Roger_97 {상륙대가 카르타헤나 공략 준비 완료!}
+Roger_98 {@<pchar.ship.name>' 상륙대 인원: @<iCrew1>명}
+Roger_99 {Red Dragon의 상륙조 인원: @<iCrew2>명}
+Roger_100 {Snake의 상륙대 인원: @<iCrew3>명}
+Roger_101 {Moray의 상륙조는 @<iCrew4>명입니다}
+Roger_102 {하루가 지났다...@<NewStr()>화약이 담긴 통이 장애물에 도착했다}
+Roger_103 {Tonneur}
+Roger_104 {Libre}
+Roger_105 {Myutin}
+Roger_106 {Inconnu}
+Roger_107 { }
+Roger_108 { }
+Roger_109 {세 시간이 흐르고...}
+Roger_110 {Rodgar}
+Roger_111 {Janssen}
+Roger_112 {Ignacio Marco가 부두에 상륙했습니다!}
+Roger_113 {2시간이 지났다...@<NewStr()>}
+Roger_114 {Ignacio Marco가 저택을 떠났습니다}
+Roger_115 {두 명의 선장과 함께}
+Roger_116 {Separator}
+Roger_117 {Bernar}
+Roger_118 {Vensan}
+Roger_119 {Dionisio}
+Roger_120 {Peres}
+Roger_121 {하루가 지났다...@<NewStr()>카르타헤나의 몸값이 모였다}
+Roger_122 {이틀이 순식간에 흘렀다@<NewStr()>연회와 사랑의 향연 속에서…}
+Roger_123 {Camilla}
+Roger_124 { }
+Roger_125 {don Enrico}
+Roger_126 { }
+Roger_127 {Michel}
+Roger_128 {de Monper}
+Roger_129 {Marcus}
+Roger_130 {Tyrex}
+Roger_131 {나, Charles de Maure, 프랑스 귀족이자 선장으로서 맹세한다:}
+Roger_132 {... 이제 해적이었던 과거와는 영원히 결별한다 ...}
+Roger_133 {... 더 이상 내 손에 무고한 시민이 희생되는 일은 없을 것이다 ...}
+Roger_134 {... 나는 신분이나 국적에 상관없이 여성을 보호할 것을 맹세한다 ...}
+Roger_135 {... 나는 더 이상 황금에 눈이 멀지 않을 것을 맹세한다 ...}
+Roger_136 {... 내 길에서 만나는 모든 악당에 맞서 싸울 것을 맹세한다 ...}
+Roger_137 {… 나는 언제나 부와 명예 사이에서 명예를 선택할 것을 맹세한다 …}
+Roger_138 {... 나는 어떤 상황에서도, 어떤 사람들과 함께 있더라도 늘 품위 있고 고결한 사람이 될 것을 맹세한다 ...}
+Roger_139 {왠지 미라벨 생각이 자꾸 난다. 그곳에서 잘 지내고 있을까? 나를 그리워하고 있을까? 어린 소녀를 혼자 두고 떠난 건 너무 잔인했을지도 몰라. 반드시 바로잡겠다! 곧 그녀를 만나러 가야겠다.}
+Roger_140 {Knippel}
+Roger_141 {Longway}
+Roger_142 {Tichingitu}
+Roger_143 {Tommy}

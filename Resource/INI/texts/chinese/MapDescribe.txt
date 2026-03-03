@@ -113,7 +113,7 @@ Marigo_Cave_box2 {死胡同里的箱子}
 Marigo_Cave_box3 {火炬附近的箱子}
 Panama_Cave {在贝洛港出口左侧的洞穴中}
 Panama_Cave_box1 {死胡同的木板下}
-Pearl_Grot {在伯利兹和布鲁维尔德之间西海岸的洞穴 中}
+Pearl_Grot {在西部海岸的一处洞穴中，位于阿马蒂克湾后方的丛林深处}
 Pearl_Grot_box1 {一块大石头上的箱子}
 PortoBello_Cave {在蚊子湾右侧的洞穴中}
 PortoBello_Cave_box1 {死胡同的木板下}

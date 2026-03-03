@@ -229,6 +229,11 @@ Cannon_42_descr
 {
 Canons redoutables, le summum de la puissance de feu navale. Utilisés exclusivement sur les navires de ligne, dans les forts et lors des grandes batailles européennes. Nécessitent une grande équipe bien entraînée.Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
+Cannon_48 {Bombardes de 48 livres}
+Cannon_48_descr
+{
+Canons redoutables, le summum de la puissance de feu navale. Utilisés exclusivement sur les navires de ligne, dans les forts et lors des grandes batailles européennes. Nécessitent une grande équipe bien entraînée.Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+}
 Culverine_8 {Demi-culverines}
 Culverine_8_descr
 {

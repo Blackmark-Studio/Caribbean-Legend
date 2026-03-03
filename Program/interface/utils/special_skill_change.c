@@ -101,7 +101,7 @@ void DecreaseSkill(int _add)
 	SetSkillArrows();
 }
 
-void SetSkillsTooltip(string sCurrentNode, string header, string text, string badText, string goodText, string sRow)
+void SetSkillsTooltip(string sCurrentNode, ref header, ref text, ref badText, ref goodText, string sRow)
 {
 	cashTable = CT_GetTableOrInit(xi_refCharacter, CT_COMMON);
 	string skillType = "";
@@ -122,17 +122,18 @@ void SetSkillsTooltip(string sCurrentNode, string header, string text, string ba
 	GetStatusIntWithInfo(xi_refCharacter, skillName, &skillAttribute, true); // добавляем эффекты статусов
 
 	int lngFileID = LanguageOpenFile("RPGDescribe.txt");
-	text = LanguageConvertString(lngFileID, skillName) + newStr() + " " +  newStr() + " " +  newStr();
+	text = DLG_Convert(skillName, "RPGDescribe.txt") + newStr() + " " +  newStr() + " " +  newStr();
 
-	for (int i=0; i < GetAttributesNum(skillAttribute); i++)
+	int skillAttributesQty = GetAttributesNum(skillAttribute);
+	for (int i=0; i < skillAttributesQty; i++)
 	{
 		aref row = GetAttributeN(skillAttribute, i);
 		string reasonName = GetAttributeName(row);
 		string reasonValue = GetAttributeValue(row);
 		int value = sti(reasonValue);
 
-		string humanReason = newStr() + GetHumanReadableReason(reasonName, xi_refCharacter) + ": " + ToHumanNumber(reasonValue);
-		if (reasonName == "base") text += humanReason;
+		string humanReason = newStr() + GetHumanReadableReason(reasonName, xi_refCharacter) + ": " + ToHumanModifier(reasonValue);
+		if (reasonName == "base") text += newStr() + GetHumanReadableReason(reasonName, xi_refCharacter) + ": " + ToHumanNumber(reasonValue);
 		else if (value > 0) goodText += humanReason;
 		else if (value < 0) badText += humanReason;
 	}
@@ -140,7 +141,7 @@ void SetSkillsTooltip(string sCurrentNode, string header, string text, string ba
 	string navyAttribute = "navypenalty"+skillType;
 	if (GetAttributeInt(&cashTable, navyAttribute) > 0)
 	{
-		badText += newStr() + LanguageConvertString(lngFileID, "SourceNavyPenalty") + ": " + cashTable.(navyAttribute);
+		badText += newStr() + LanguageConvertString(lngFileID, "SourceNavyPenalty") + ": - " + cashTable.(navyAttribute);
 	}
 
 	LanguageCloseFile(lngFileID);

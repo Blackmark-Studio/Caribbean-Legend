@@ -100,7 +100,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(PChar, "questTemp.WPU.Escort.LevelUp_1VSP") && pchar.questTemp.WPU.Escort == "toCap" && NPChar.id == "WMCaptain")
 				{
 					dialog.text = "Ahoy, "+GetAddress_Form(NPChar)+". Mon nom est "+GetFullName(NPChar)+", je suis le capitaine de ce navire. Permettez-moi d'exprimer ma plus sincère gratitude pour votre aide dans un combat avec cette maudite racaille pirate - si vous n'aviez pas interféré, les choses auraient pu mal tourner pour nous. Vous nous avez réellement sauvés, bon sang !";
-					link.l1 = "Ce n'était rien,  "+GetAddress_FormToNPC(NPChar)+". Permettez-moi de me présenter - "+GetFullName(PChar)+", je suis venu à vous à la demande du maître de port "+XI_ConvertString("Colonie"+pchar.questTemp.WPU.Escort.StartCity+"Gén")+". Il m'a informé sur les malheurs de votre caravane et m'a envoyé trouver votre navire.";
+					link.l1 = "Ce n'était rien,  "+GetAddress_FormToNPC(NPChar)+". Permettez-moi de me présenter - "+GetFullName(PChar)+", je suis venu à vous à la demande du maître de port "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.StartCity+"Gen")+". Il m'a informé sur les malheurs de votre caravane et m'a envoyé trouver votre navire.";
 					link.l1.go = "VSP_Captain";
 					break;
 				}
@@ -808,7 +808,7 @@ void ProcessDialogEvent()
 		
 		case "attack_fort":
                 dialog.text = "Et qu'est-ce que tu veux dire ?";
-                link.l1 = "Je peux vous aider à écraser le fort de la colonie de "+GetConvertStr(aData.Colony+" Ville","LocLables.txt")+" et capture la ville, et une proie, ce qui résulte dans le cas de notre succès, nous divisons parmi nous.";
+                link.l1 = "Je peux vous aider à écraser le fort de la colonie de "+GetCityName(aData.Colony)+" et capture la ville, et une proie, ce qui résulte dans le cas de notre succès, nous divisons parmi nous.";
                 link.l1.go = "Siegehelp_1";
                 link.l2 = "En fait, mes affaires ne valent guère votre temps. Adieu, "+GetAddress_FormToNPC(NPChar)+".";
                 link.l2.go = "exit";
@@ -969,7 +969,7 @@ void ProcessDialogEvent()
             aData.loot = sti(aData.loot) - ilt;
             if (CheckAttribute(PChar, "quest.LeaveTown")) Pchar.quest.LeaveTown.over = "yes";
             //--> слухи
-            SiegeRumour("I've been told that you had helped our squadron in the assault of the "+NationNameSK(sti(aData.conation))+" colony - "+GetConvertStr(aData.Colony+" Town", "LocLables.txt")+"! We're so thankfull to you, "+ GetAddress_Form(NPChar)+".", "", sti(aData.nation), -1, 30, 3);
+            SiegeRumour("I've been told that you had helped our squadron in the assault of the "+NationNameSK(sti(aData.conation))+" colony - "+GetCityName(aData.Colony)+"! We're so thankfull to you, "+ GetAddress_Form(NPChar)+".", "", sti(aData.nation), -1, 30, 3);
             //<-- слухи
 		break;
 
@@ -1051,7 +1051,7 @@ void ProcessDialogEvent()
 		
 		case "WM_Captain_5":
 			dialog.text = "Excellent! Maintenant nous pouvons commencer à réparer le navire!";
-			link.l1 = "Mes hommes vous donneront un coup de main - de cette façon, ce sera plus rapide. De plus, je dois vous accompagner à la colonie de "+XI_ConvertString("Colonie"+pchar.questTemp.WPU.Escort.StartCity)+", donc plus vite nous aurons fini avec les réparations, mieux ce sera pour moi.";
+			link.l1 = "Mes hommes vous donneront un coup de main - de cette façon, ce sera plus rapide. De plus, je dois vous accompagner à la colonie de "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.StartCity)+", donc plus vite nous aurons fini avec les réparations, mieux ce sera pour moi.";
 			link.l1.go = "WM_Captain_6";
 		break;
 		
@@ -1150,7 +1150,7 @@ void ProcessDialogEvent()
 		
 		case "VSP_Captain":
 			dialog.text = "Est-ce ainsi? Et je pensais qu'ils nous avaient oubliés. Ouais, mon navire a eu le pire de tous. Nous avons été laissés à lutter contre les éléments de la nature après que la tempête a forcé les pirates à arrêter une attaque de notre caravane. Nous avons été portés à ce rivage inhospitalier\nNous avons passé quelques jours à réparer et à nous reposer. Ces païens nous ont attaqués à nouveau, dès que nous allions naviguer loin\nEt puis la tempête nous a frappé à nouveau - nous avons pensé que le Seigneur avait finalement décidé de nous finir, mais vous êtes arrivé. Merci à la Sainte Marie! Merci encore, capitaine!";
-			link.l1 = "C'est fini, "+GetAddress_FormToNPC(NPChar)+". Maintenant, je dois vous escorter jusqu'à "+XI_ConvertString("Colonie"+pchar.questTemp.WPU.Escort.StartCity+"Gén")+", afin de le protéger d'autres ennuis possibles. Êtes-vous prêt à partir maintenant? La tempête a déjà commencé à diminuer.";
+			link.l1 = "C'est fini, "+GetAddress_FormToNPC(NPChar)+". Maintenant, je dois vous escorter jusqu'à "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.StartCity+"Gen")+", afin de le protéger d'autres ennuis possibles. Êtes-vous prêt à partir maintenant? La tempête a déjà commencé à diminuer.";
 			link.l1.go = "VSP_Captain_1";
 		break;
 		

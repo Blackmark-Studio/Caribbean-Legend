@@ -64,11 +64,11 @@ void ProcessDialogEvent()
 			{
     			if (pchar.nation == npchar.nation)
 				{
-					dialog.text = RandPhraseSimple("Oh regarde, il semble que ce coquin ait donné l'alarme dans "+XI_ConvertString("Colonie"+npchar.city+"Cela")+"! Seize h"+GetSexPhrase("suis","hein")+"!!","Heh, regarde ça ! Plusieurs "+NationNamePeople(sti(pchar.nation))+" réussir à être ennemis avec "+NationNameAblative(sti(npchar.nation))+"! Attrapez le vaurien!!!");
+					dialog.text = RandPhraseSimple("Oh regarde, il semble que ce coquin ait donné l'alarme dans "+XI_ConvertString("Colony"+npchar.city+"Cela")+"! Seize h"+GetSexPhrase("suis","hein")+"!!","Heh, regarde ça ! Plusieurs "+NationNamePeople(sti(pchar.nation))+" réussir à être ennemis avec "+NationNameAblative(sti(npchar.nation))+"! Attrapez le vaurien!!!");
 				}
 				else
 				{
-					dialog.text = RandPhraseSimple("Agent ennemi proche "+XI_ConvertString("Colonie"+npchar.city+"Gen")+"! Seize h"+GetSexPhrase("suis","hein")+"!!","Eh bien, regarde, "+NationNamePeople(sti(pchar.nation))+" se promènent presque dans "+XI_ConvertString("Colonie"+npchar.city+"Cela")+"! Attrapez-le immédiatement!!!");
+					dialog.text = RandPhraseSimple("Agent ennemi proche "+XI_ConvertString("Colony"+npchar.city+"Gen")+"! Seize h"+GetSexPhrase("suis","hein")+"!!","Eh bien, regarde, "+NationNamePeople(sti(pchar.nation))+" se promènent presque dans "+XI_ConvertString("Colony"+npchar.city+"Cela")+"! Attrapez-le immédiatement!!!");
 				}
 				link.l1 = RandPhraseSimple("Eh bien, vous pouvez essayer. Nous sommes seuls ici...","Heh, personne ne vous prêtera main forte ici.");
 				link.l1.go = "exit_fight"; 				
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 				if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation)) sTemp1 = "Vice Admiral! ";
 				if(CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE) sTemp1 = "Your Excellency Governor General! ";
 				
-				dialog.text = LinkRandPhrase("Permettez-moi de me présenter! Je suis un officier de patrouille de "+XI_ConvertString("Colonie"+npchar.city+"Gén")+", nous recherchons un prisonnier évadé.","Bonjour, je suis le chef de cette patrouille. Nous recherchons un esclave échappé de "+XI_ConvertString("Colonie"+npchar.city+"Gen")+".","Salutations à vous, "+GetAddress_Form(NPChar)+". Mon détachement patrouille le territoire près de "+XI_ConvertString("Colonie"+npchar.city+"Gen")+".");
+				dialog.text = LinkRandPhrase("Permettez-moi de me présenter! Je suis un officier de patrouille de "+XI_ConvertString("Colony"+npchar.city+"Gen")+", nous recherchons un prisonnier évadé.","Bonjour, je suis le chef de cette patrouille. Nous recherchons un esclave échappé de "+XI_ConvertString("Colony"+npchar.city+"Gen")+".","Salutations à vous, "+GetAddress_Form(NPChar)+". Mon détachement patrouille le territoire près de "+XI_ConvertString("Colony"+npchar.city+"Gen")+".");
 				Link.l1 = LinkRandPhrase("Très bien. Comment puis-je vous aider?","Très bien. Puis-je vous aider avec quelque chose, "+GetAddress_FormToNPC(NPChar)+"?","Très bien. Y a-t-il quelque chose que je peux faire pour vous?");
 				Link.l1.go = "Node_2";
 			}

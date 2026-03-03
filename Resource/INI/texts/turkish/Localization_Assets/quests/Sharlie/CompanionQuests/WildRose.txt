@@ -1,0 +1,13 @@
+WildRose_1 {Duydun mu? Birkaç gün önce Bishop’un plantasyonundan birkaç düzine köle kaçmış. Gece zincirlerini testereyle kesip, birkaç nöbetçiyi öldürüp ormana karışmışlar. Ama bu adadan nereye gidebilirler ki? Tabii, kısa sürede yakalanmışlar — bazıları bir mağarada, bazıları Ragged Point yakınında bulunmuş. Çoğu vurulmuş. Yine de askerler de kayıp vermiş. Ama söylentiye göre, Bishop’u en çok öfkelendiren bunlar değilmiş — asıl kaçaklarla bizzat ilgilenememesiymiş.}
+WildRose_2 {Bruce}
+WildRose_3 {Primer}
+WildRose_4 {Jerry}
+WildRose_5 {Kasper}
+WildRose_6 {Lewis}
+WildRose_7 {Gernon}
+WildRose_8 {Jerome}
+WildRose_9 {Sauvernier}
+WildRose_10 {Rupert}
+WildRose_11 {Kasper}
+WildRose_12 {Kafir}
+WildRose_13 {Takım çoktan yerini almış olmalı...}

@@ -1,0 +1,9 @@
+perks_1 {가격이 갱신되었습니다}
+perks_2 {@<_ShipName>' 선체 파손이 수리되었습니다.}
+perks_3 {@<_ShipName> – 수선 아래에 파공 발생!}
+perks_4 {$rand('$attr($context.ship.name)'의 화물창에 분명 귀중한 게 있을 거야|'$attr($context.ship.name)'에 뭔가 중요한 걸 싣고 있는 게 틀림없어)}
+perks_5 {$rand('$attr($context.ship.name)'의 화물창에는 건질 게 별로 없다|'$attr($context.ship.name)'의 화물창에는 값진 것이 없는 듯하다)}
+perks_6 {@<rChar.Ship.Name>에서 압사로 @<FindRussianSailorString(cn, "No")>이(가) 사망했습니다.}
+perks_7 {계산에 따르면 @<_ShipName>이(가) @<_PortName>에 도착했습니다.}
+perks_8 {아직 이동 중.}
+perks_9 {전시 요금이 징수되었습니다.}

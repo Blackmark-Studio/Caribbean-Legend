@@ -1,0 +1,30 @@
+Knippel_1 {Anahtarı kullandın}
+Knippel_2 {Peter}
+Knippel_3 {Adams}
+Knippel_4 {Jane}
+Knippel_5 {Adams}
+Knippel_6 {Charlie yardıma yetişti!}
+Knippel_7 {Frederick}
+Knippel_8 {Stokes}
+Knippel_9 {Ralph}
+Knippel_10 {Faggle}
+Knippel_11 {21 Temmuz 1654@<NewStr()>St. John's, Antigua}
+Knippel_12 {Thomas}
+Knippel_13 {Lynch}
+Knippel_14 {Sussex ufukta!}
+Knippel_15 {Edmund}
+Knippel_16 {Sheffield}
+Knippel_17 {Michael}
+Knippel_18 {Whitney}
+Knippel_19 {Bombacı Açıldı}
+Knippel_20 {Bir süre sonra...@<NewStr()>Fleetwood Malikanesi'nde}
+Knippel_21 {Frederick}
+Knippel_22 {Stokes}
+Knippel_23 {Ralph}
+Knippel_24 {Faggle}
+Knippel_25 {2 saat sonra...@<NewStr()>'Sussex'e Borda}
+Knippel_26 {Thomas}
+Knippel_27 {Lynch}
+Knippel_28 {Сhimera}
+Knippel_29 {Şimdiki zaman}
+Knippel_30 {17 Ağustos 1654@<NewStr()>Dominika'nın güneydoğusunda}

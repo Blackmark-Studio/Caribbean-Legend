@@ -1,0 +1,102 @@
+new_string
+{
+
+}
+Tartane {Uma barca de pesca não é o melhor navio para um capitão de destaque na alta sociedade. Mas se o destino tirou seu navio favorito, este barco modesto serve bem para viagens rápidas entre ilhas—só não se esqueça: é só por enquanto!}
+WarTartane {Tartanas são os mesmos barcos de pesca adaptados às pressas para o trabalho costeiro nas perigosas águas do Caribe. Seu armamento modesto e construção improvisada não impressionam, mas conseguem afugentar piratas inexperientes ou contrabandistas pobres. Uma solução temporária quando não há muitas opções.}
+Barque {A barca é ideal para longas viagens. Com porão espaçoso e boa navegação, é considerada uma das embarcações mercantes mais equilibradas. Porém, seu tamanho imponente e armamento relativamente fraco a tornam um alvo fácil para corsários.}
+Schooner {Boas qualidades de navegação, porão espaçoso, calado raso e armamento decente fizeram da escuna um dos navios de pequeno porte mais populares. É igualmente adequada para comércio, navegação costeira e combate.}
+Barkentine {O surgimento da barquentina foi motivado pelo desejo de facilitar o comando de um navio mercante por uma tripulação pequena e inexperiente. Para isso, as velas quadradas do mastro principal do barca foram substituídas por velas de popa, e o casco ficou um pouco menor. Graças ao seu velame misto, a barquentina navega com confiança tanto a favor quanto contra o vento.}
+Shnyava {A shnyava e a brigantina foram precursoras do brigue. Graças ao design eficiente do casco, boa velocidade e capacidade de carregar canhões pesados, esses navios se tornaram muito populares tanto no Caribe quanto na Europa. São frequentemente usados para escoltar comboios mercantes de pequeno porte.}
+Fleut {O fluyt é um ramo único no desenvolvimento dos navios mercantes. Seu convés superior estreito permitia reduzir taxas alfandegárias, calculadas pela largura do convés. Porão espaçoso, alta velocidade e bom desempenho contra o vento logo fizeram do fluyt um dos navios mercantes mais populares.}
+Caravel {O velame característico da caravela permite reconhecê-la de longe. Seu projeto ultrapassado resulta em qualidades de navegação medianas, impedindo-a de competir de igual para igual com navios modernos, mesmo contando com armamento suficiente.}
+Pinnace {Junto com o fluyt, o pinnace se tornou comum como navio mercante. É grande e robusto o bastante para longas viagens marítimas, e sua capacidade de porão permite transportar muita carga. Graças às linhas afiadas da proa, mesmo com um casco pesado, o pinnace atinge boa velocidade.}
+Navio {Um navio assim só está ao alcance de um comerciante realmente rico. Casco grande e resistente, porão espaçoso e mastreação avançada permitem as viagens mais longas, e nada menos que três dezenas de canhões pesados o protegem com segurança de piratas e corsários.}
+EastIndiaMan {Os East Indiamen reuniram as melhores qualidades dos pinnaces e superaram suas limitações, tornando-se navios universais quase perfeitos. Armados com canhões de grande calibre, podem rivalizar com navios de guerra de tamanho semelhante, e seu porão espaçoso permite um uso eficiente no comércio.}
+LuggerQuest {O lugre de correio foi especialmente construído para atender às necessidades do serviço de mensageiros. Excelentes qualidades de navegação, ótimo desempenho contra o vento e armamento relativamente forte garantem a entrega confiável de despachos importantes e pequenas cargas valiosas.}
+Lugger {O lugre é um pequeno veleiro muito apreciado por marinheiros, especialmente contrabandistas, por sua manobrabilidade e versatilidade. Compensa a falta de velocidade com excelentes ângulos de navegação contra o vento. Apesar do tamanho, tem boa navegabilidade e pode realizar longas viagens.}
+Sloop {Com boa velocidade e manobrabilidade, além de armamento sólido para seu porte, o sloop é um navio de patrulha confiável, também adequado para reconhecimento.}
+Brigantine {Um lendário tipo de navio à vela. Rápida e ágil como uma andorinha, a brigantina é especialmente valorizada por piratas e aventureiros de todos os tipos. Seu projeto bem-sucedido torna a brigantina ideal para qualquer tarefa — do combate ao comércio.}
+Brig {Brigs são amplamente usados na marinha para reconhecimento. Calado raso, linhas de casco afiadas e mastreação avançada fazem do brig um dos navios mais rápidos, e seus canhões de bom calibre o tornam um adversário muito perigoso.}
+Schooner_W {Marinheiros no Novo Mundo foram os primeiros a valorizar as escunas e começaram a usá-las para fins militares. Para isso, foi preciso modificar um pouco o casco, reduzir o espaço útil do porão e adicionar canhões, mas o resultado valeu a pena. Bem armada, rápida e manobrável, a escuna de guerra é uma ameaça séria para qualquer navio mercante.}
+Galeon_l {O galeão foi criado no início do século XVI a partir da carraca e já nasceu como navio de guerra. No meio do século XVII, atingiu o auge de seu desenvolvimento e cedeu lugar a embarcações mais avançadas, mas ainda não saiu de cena e continua servindo fielmente aos marinheiros.}
+Galeon_sm {Um símbolo do poder e da ambição espanhola. Os conveses brilham com decorações douradas, e a popa é coroada pela imagem da Virgem da Misericórdia, padroeira do navio. Para alguns, 'Santa Misericordia' é a personificação da ordem; para outros, um temido símbolo da opressão real. E há quem veja nela a verdadeira Providência Divina.}
+LadyBeth
+{
+Um magnífico exemplo da construção naval inglesa, criado para patrulhas independentes em águas perigosas. Esta shnyava possui excelentes qualidades de navegação e um armamento impressionante para seu porte, permitindo competir com navios de classes superiores.
+Seus anos de serviço militar já ficaram para trás, e a glória de seu antigo dono hoje atrai mais antiquários e negociantes de mapas do tesouro do que lobos do mar.
+}
+Memento
+{
+Neste navio, mal se percebe o antigo projeto de um Brig inglês, que compensa a falta de qualidades de navegação com um poder de fogo impressionante e um casco pesado e resistente. 
+Coberto de amuletos nativos e impregnado de morte, assusta não só os inimigos, mas também sua própria tripulação.
+}
+Amsterdam {O Amsterdam — nau capitânia da Companhia Holandesa das Índias Ocidentais e o mais refinado navio já construído em um estaleiro europeu. Cronogramas de inspeção e assinaturas de artesãos marcam cada canhão e peça vital — nada a bordo do Amsterdam escapa ao controle e à documentação. Seus capitães, por tradição, não são lobos do mar, mas diretores civis da Companhia. E, ainda assim, ela cumpre seu papel — prenúncio de uma nova era.}
+Corvette {Corvetas são projetadas para reconhecimento, serviço de mensageiro e operações de cruzeiro. Com boa velocidade e manobrabilidade, uma corveta pode alcançar navios mais leves e evitar combates com embarcações mais pesadas.}
+XebekVML {O xebec é o tipo de navio mediterrâneo mais famoso. Seu casco estreito e as grandes velas latinas em todos os mastros permitem navegar em ângulos extremos ao vento, tornando-o um adversário bastante incômodo. Infelizmente, a baixa velocidade com vento favorável limita o xebec principalmente à pirataria e ao contrabando.}
+Polacre {A polaca é o parente mais próximo do xebec. Diferente do xebec, ela usa velas quadradas no mastro principal, o que permite manter o rumo com confiança quando o vento está a favor. No entanto, esse tipo de mastreação reduz a manobrabilidade, piora o desempenho contra o vento e exige muito mais habilidade e coordenação da tripulação.}
+Galeon_h {O galeão pesado é um poderoso navio de guerra projetado para escoltar comboios e transportar cargas especialmente valiosas por conta própria. Embora seja inferior aos navios modernos em velocidade e manobrabilidade, seus canhões de grande calibre, casco resistente e tripulação numerosa garantem proteção confiável para qualquer carga. Uma frota de galeões pesados é uma força a ser respeitada no Caribe.}
+Elcasador {Um brilhante exemplo de navio de guerra projetado para operações especiais em alto-mar. Este galeão foi construído sob encomenda da Casa de Contratação para destruir os piratas mais perigosos que representam uma verdadeira ameaça ao comércio na região e aos interesses da Coroa Espanhola.}
+Frigate {As fragatas possuem excelentes qualidades de navegação, boa armamento e foram criadas especialmente para reconhecimento de longo alcance, escolta de transportes e combate em esquadrão. Hoje em dia, são mais comuns como navios de cruzeiro independentes nas rotas inimigas — para capturar ou destruir navios mercantes adversários.}
+Frigate_h {Os fragatas pesadas tornaram-se um compromisso para capitães que sentiam falta do poder de fogo das fragatas comuns. Casco reforçado e canhões de maior calibre os aproximam dos navios de linha de 4ª classe — mas à custa de velocidade e manobrabilidade.}
+LineShip {Navios de linha de 4ª classe não conseguem competir em armamento com seus irmãos mais velhos, então não faz sentido colocá-los na linha de batalha. Seu melhor uso é na escolta de comboios, já que sua velocidade e manobrabilidade os tornam mais eficazes nessa função.}
+Warship {Navios desse tipo foram construídos na época do Cardeal Richelieu e hoje estão estruturalmente ultrapassados. Ainda assim, possuem boas qualidades de navegação e podem carregar os canhões mais pesados, tornando-se uma força formidável.}
+Ecliaton {Navios desse tipo foram construídos ainda na época do Cardeal Richelieu e hoje estão estruturalmente ultrapassados. Porém, possuem boas qualidades de navegação e podem carregar os canhões mais pesados, tornando-se uma força temível.}
+Pink {O pink é um navio pequeno projetado para transportar carga e escoltar pequenos comboios. Embora tenha armamento fraco e tripulação reduzida, o pink foi feito tanto para o comércio quanto para o combate, e muitos capitães o valorizam por sua velocidade e manobrabilidade. Seu tamanho limitado impede viagens longas pelo mar.}
+Battleship {Navios de linha de 3ª classe são muito numerosos e os mais equilibrados em combate, feitos para batalhas em linha. Têm poder de fogo suficiente para enfrentar até leviatãs de 100 canhões e ainda superam esses gigantes em velocidade e manobrabilidade.}
+Manowar {Navios de linha de 2ª classe são a base do poder naval de qualquer nação. Junto com os de 3ª classe, formam uma frota que une força e manobrabilidade. Na ausência de navios de 1ª classe no esquadrão, alguns deles servem como capitânia.}
+Manowar_e {Um navio de linha de 1ª classe é uma verdadeira fortaleza flutuante. Graças ao seu poder de fogo aterrorizante, pode afundar qualquer oponente com apenas algumas salvas precisas. Mas mesmo as maiores potências navais possuem poucos desses navios, usados como capitânias em grandes batalhas navais.}
+MayFang
+{
+Este xebec possui um casco leve à custa da resistência, mas isso o tornou um veleiro sem igual — não há outro navio no Caribe capaz de navegar quase contra o vento!
+E vinte canhões de médio calibre são um argumento de peso na rivalidade marítima.
+}
+Mirage {Ao contrário dos bombardeiros, os keches corsários não carregam enormes morteiros para atacar fortalezas, mas sim possuem um casco mais leve e aerodinâmico, o que melhora muito sua navegação. Até mesmo os iates de príncipes invejariam a velocidade deste keche corsário.}
+Himera {Um navio de mestre, criado especialmente para as necessidades da inteligência naval britânica. Suas características se comparam às de navios de guerra de 3ª classe, mantendo a facilidade de manobra dos de 4ª classe.}
+Valciria {Um belo brigue inglês. Alta velocidade e manobrabilidade, bom desempenho contra o vento e duas dezenas de canhões no convés fazem deste veleiro um sonho.}
+CORVETTE_QUEST {Um navio exclusivo, obra-prima dos construtores navais franceses. Uma profunda modernização do projeto do corveta aprimorou quase todas as suas características sem sacrificar a velocidade. A área de velas ampliada e o calibre dos canhões exigem uma tripulação mais experiente e numerosa, mas, se os testes no Caribe forem bem-sucedidos, as tecnologias empregadas aqui podem representar um verdadeiro avanço na construção naval.}
+Polacre_q {Um mestre que soube unir elementos do xebec e da fragata criou uma polaca com casco incomum, forte e espaçoso, marcada por bordas altas, calado raso e armamento muito poderoso. Três mastros e um gurupés com velas de diferentes tipos a tornam veloz e altamente manobrável. Todas essas qualidades já são boas isoladamente, mas juntas são excelentes—cabe ao dono decidir: será um navio de guerra, pirata ou mercante que zarpará.}
+ArabellaShip {Este navio único reúne o melhor dos navios de linha e das fragatas. Possui excelentes qualidades de navegação, uma bateria de canhões de grande calibre e acomoda uma companhia inteira de fuzileiros. Nas mãos certas, Fortuna pode enfrentar sozinha adversários muito mais poderosos.}
+Flyingdutchman {"Caleuche". O terror de todos que navegam...}
+Flyingdutchman_l {Uma cópia do "Caleuche".}
+NewFlyingdutchman {Este já foi o infame "navio fantasma". Agora, totalmente reconstruído, é um poderoso galeão de guerra, capaz de enfrentar até mesmo navios de linha em igualdade. Com velocidade impressionante para seu porte, grande porão e armamento formidável, é uma embarcação autossuficiente, capaz de afundar inimigos, abordá-los e até sitiar colônias inteiras.}
+Santisima {Este navio foi lançado no famoso estaleiro de Havana. Seu casco é um pouco mais leve e frágil que o de outros navios de 1ª classe, mas isso é mais do que compensado por qualidades de navegação superiores.}
+NoneBoat {Sem navio. O herói virou um rato de terra e não pode se chamar capitão até conseguir um navio.}
+Hull {Casco - mostra a quantidade atual e máxima de dano que o casco do navio pode suportar.}
+Sails {Velas - mostra a quantidade atual e máxima de dano que as velas do navio podem suportar.}
+Speed {Velocidade - mostra a velocidade máxima atual do navio considerando todos os fatores (carga, habilidades do capitão, danos ao navio) e a velocidade máxima que o navio pode alcançar.}
+Maneuver {Manobrabilidade - mostra a manobrabilidade atual do navio considerando todos os fatores (carga, habilidades do capitão, danos ao navio) e a manobrabilidade máxima possível.}
+AgainstWind
+{
+O melhor rumo do navio em relação ao vento, no qual pode atingir a velocidade máxima. Os valores são dados em graus.
+O segundo valor mostra a diferença entre a direção atual do vento e o melhor ângulo de rumo para este navio.
+}
+Capacity
+{
+Porão - mostra a capacidade atual e máxima do navio. Quanto mais carregado, mais lento e difícil de manobrar ele fica.
+Os canhões instalados também contam no cálculo do porão. Eles podem ser removidos para liberar espaço extra para carga. Para isso, selecione os canhões atuais na lista de parâmetros do navio na interface "Navio".
+}
+Crew {Tripulação - mostra o número atual de tripulantes, além do mínimo e máximo para este navio.}
+CannonType {Tipo de arma - mostra o tipo (canhões ou culverinas), calibre atual e quantidade instalada}
+sCannons {Mostra o calibre máximo permitido e o número máximo de canhões no navio.}
+Crew_Exp {Experiência da tripulação}
+Crew_Exp_hint
+{
+A experiência da tripulação é dividida em três categorias: marinharia (afeta o manejo do navio), artilharia (velocidade de recarga e precisão de mira) e abordagem (eficácia da tripulação no combate corpo a corpo).
+Uma tripulação experiente, mesmo em menor número, pode ser mais eficaz do que um navio lotado de novatos.
+A experiência em cada categoria é adquirida ao realizar as ações correspondentes (manobrar, disparar, abordar), mas também é perdida se as habilidades não forem praticadas por muito tempo.
+}
+TakeAllGoods_hint {O botão "Transferir todos os bens" move os bens para o navio do personagem de acordo com seu valor específico médio. Os bens mais valiosos são transferidos primeiro, depois os menos valiosos, e assim por diante até não haver mais espaço livre no porão.}
+GoodsKeys_hint
+{
+As teclas de seta "Esquerda" e "Direita" no teclado movem as mercadorias na linha selecionada da tabela por um lote. Se você segurar Shift ao pressionar as setas, as mercadorias serão movidas por completo.
+Clicar com o botão direito nas setas da linha de mercadorias transfere dez lotes de uma vez.
+}
+Shipyard_hint
+{
+No estaleiro, você pode comprar, reparar ou vender navios.
+O herói não pode vender seu navio se tiver companheiros. Também não é possível comprar um navio para um companheiro se o herói não tiver seu próprio navio.
+Para trocar o navio do herói ou de um companheiro mantendo todo o conteúdo do porão e a tripulação, selecione na lista de navios da esquadra do herói (à esquerda da interface) o navio que será substituído e, na lista de navios à venda no estaleiro (à direita da interface), o desejado, depois clique no botão "Comprar".
+Para comprar um novo navio (atribuir um novo companheiro), selecione primeiro um slot vazio na lista à esquerda antes de comprar.
+}
+NoneBoat2 {Sem navio. Que pena.}

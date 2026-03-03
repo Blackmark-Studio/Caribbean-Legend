@@ -1,0 +1,109 @@
+GenQuests_1 {밀수업자}
+GenQuests_2 {장교}
+GenQuests_3 {병사}
+GenQuests_4 {@<sCity> 출신 소녀의 결혼반지를 찾았다. 그녀에게 가져다줘야 한다.}
+GenQuests_16 {보물이 근처에 있습니다!}
+GenQuests_17 {선박 수색 시간이 종료되었습니다}
+GenQuests_18 {선박 수색 시간이 끝났고, 선장은 상륙했습니다}
+GenQuests_19 {선장이 상륙함}
+GenQuests_20 {선장님! 전염병이 돌고 있습니다!}
+GenQuests_21 {@<chref.Ship.Name> 선박에 이미 @<crew>명이 사망했습니다}
+GenQuests_22 {폭파됨}
+GenQuests_23 {폭발했다}
+GenQuests_24 {~ 카메라를 걸어라.}
+GenQuests_25 {선박 비어 있음}
+GenQuests_26 {정말 들었어요? 주인마님이 @<pchar.GenQuest.EncGirl.name>라는 하녀를, 정글에서 흩어진 진주를 못 주웠다고 내쫓았대요. 사람들, 부끄러움도 양심도 정말 없네요!}
+GenQuests_27 {어떤 창녀가 서류 없이 배에 타려고 했다는 얘기 들었어? 잡혀서 다시 사창가로 끌려갔대. 주인한테 꽤 큰 돈을 빚졌다고 하더라.}
+GenQuests_28 {들었어요? 우리 항구에서 신분증도 없는 창녀가 잡혔다네요. 들리는 말로는, 그 여자가 사창가에서 도망치기 전에 주인 금고를 털었다고 해요. 저런 병과 도둑질을 퍼뜨리는 자는 진작에 쫓아냈어야 했죠. 우리 아이들이 이런 걸 다 보고 있는데, 뭘 배우겠어요?}
+GenQuests_29 {George}
+GenQuests_30 {Bush}
+GenQuests_31 {Rabak}
+GenQuests_32 {Maboa}
+GenQuests_33 {Abraham}
+GenQuests_34 {Lincoln}
+GenQuests_35 {조선에서}
+GenQuests_36 {포병에서}
+GenQuests_37 {항해술에서}
+GenQuests_38 {선장님, 해적선 여행은 어떠셨나요? 괜찮으셨어요? 거기서 기분 상한 일은 없으셨죠? 하하하!}
+GenQuests_39 {오오오, 선장님, 최근에 아주 신나게 노셨다면서요... 이제 완전 거지가 되셨군요! 하하하!!}
+GenQuests_40 {만에 정박할 수 있습니다.}
+GenQuests_41 {들으셨나요, @<GetAddress_Form(pchar)>? 최근에 순찰 @<sShipType>의 선장 @<pchar.GenQuest.CaptainComission.Name>이 체포됐답니다. 알고 보니 밀수꾼으로 이중생활을 했더군요. 이게 다 현 총독이 식민지를 어떻게 만들었는지 보여주는 거죠! 해적을 잡아야 할 자들이 오히려 우리를 털고 있다니… 소문에 따르면, 일주일 후에 처형된다고 해요. 당연한 결과죠.}
+GenQuests_42 {소문에 따르면, 순찰선 @<sShipType>의 선장 @<pchar.GenQuest.CaptainComission.Name>이 밀수단의 주모자였다고 합니다. 그는 붙잡혀 곧 교수형에 처해질 예정입니다. @<GetAddress_Form(pchar)>, 우리 총독이 식민지의 질서 확립에 본격적으로 나선 것 같군요.}
+GenQuests_43 {상상이나 해보세요? 요새 사령관이 밀수업자들의 비밀 조직을 밝혀냈는데, 심지어 해군 장교들까지 그 조직에 끌어들였답니다. 그 중 한 명, 이름이 @<pchar.GenQuest.CaptainComission.Name>인 자는 이미 붙잡혀 곧 교수형에 처해질 거예요. 아, @<GetAddress_Form(pchar)>, 저는 항상 우리 총독께서 언젠가는 이 정착지에 질서를 되찾으실 거라고 말했죠.}
+GenQuests_44 {혹시 순찰 @<sShipType>의 선장 @<pchar.GenQuest.CaptainComission.Name>이 체포된 걸 이미 알고 계십니까? 당국이 그가 해역을 지나는 배들에서 몰수한 대량의 물자를 숨겼다는 사실을 알아냈답니다. 아마 교수형을 피하긴 어려울 것 같군요. 하지만 말씀드리자면, 그는 순찰대에서 손꼽히는 인물이었죠. 누가 이런 일을 예상했겠습니까...}
+GenQuests_45 {젠장! 포로가 도망쳤어!}
+GenQuests_46 {들으셨나요, @<GetAddress_Form(pchar)>? 얼마 전 @<sShipType> @<pchar.GenQuest.CaptainComission.Name>의 순찰대장이 교수형을 당했다더군요. 상인을 털었다고 하던데, 이곳에선 정말 누구도 믿을 수가 없어요... 결국 선원들도 모두 함께 처형당했다네요. 한통속이었다는 거죠...}
+GenQuests_47 {이미 알고 계셨나요, @<GetAddress_Form(pchar)>? 전직 순찰 @<sShipType> 선장 @<pchar.GenQuest.CaptainComission.Name>이 처형당했다는 소문이 있습니다. 중요한 배를 침몰시키고 물건을 숨겼다던데, 선원들 중 누구도 은닉처를 밝히지 않아 모두 교수형을 당했다고 하네요...}
+GenQuests_48 {상상해보세요, @<GetAddress_Form(pchar)>? 순찰 함대의 한 선장이 해적질을 했답니다. 그래서 얼마 전 선원 전원과 함께 처형당했죠. 상인선을 약탈하고 침몰시켰다고 해요.}
+GenQuests_49 {최근에 @<pchar.GenQuest.CaptainComission.Name>라는 전직 선장과 그의 순찰 @<sShipType> 승무원이 처형당했습니다. 그들이 해역을 지나던 배들에서 압수한 대량의 물자를 숨겼다는 소문이 돌고 있죠. 하지만 그들은 최고의 순찰대 중 하나였습니다. 제 생각엔, @<GetAddress_Form(pchar)>, 일부러 누명을 씌운 것 같습니다. 결국 그 물자는 끝내 발견되지 않았으니까요.}
+GenQuests_50 {모든 상품이 화물창에 적재되었습니다}
+GenQuests_51 {세 명에게}
+GenQuests_52 {네 명에게}
+GenQuests_53 {다섯 명}
+GenQuests_54 {여섯 명}
+GenQuests_55 {일곱 명}
+GenQuests_56 {여덟 명}
+GenQuests_57 {아홉 명}
+GenQuests_58 {열 명}
+GenQuests_59 {난파 survivors가 정착지로 이송되었습니다}
+GenQuests_60 {밀수업자는 요새 무기고에 가는 것을 두려워하며 도망쳤다}
+GenQuests_61 {올바른 동굴에 도착했습니다}
+GenQuests_62 { }
+GenQuests_63 { }
+GenQuests_64 { }
+GenQuests_65 { }
+GenQuests_66 { }
+GenQuests_67 { }
+GenQuests_68 {신사답지 않음}
+GenQuests_69 {보기 흉함}
+GenQuests_70 { }
+GenQuests_71 { }
+GenQuests_72 {신사의 말}
+GenQuests_73 {약속을 지키다}
+GenQuests_74 {가라앉았고, 그와 함께}
+GenQuests_75 {가라앉았고, 그와 함께}
+GenQuests_76 { }
+GenQuests_77 { }
+GenQuests_78 {선장 @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'(이)라는 이름의 @<GetFullName(sld)>이(가) 다시 바다로 나갔습니다. 소문에 따르면, 그는 @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>로 향했다고 합니다.}
+GenQuests_79 {혹시 @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' 선장을 아시나요? 그가 @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>로 갔답니다.}
+GenQuests_80 {만약 @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' 선장이 필요하다면, @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>로 가야 합니다. @<GetFullName(sld)>가 그곳으로 갔습니다.}
+GenQuests_81 {선장 @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'(이)라는 이름의 @<GetFullName(sld)>이(가) 다시 바다로 나갔습니다. 소문에 따르면, 그는 @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>로 향했다고 합니다.}
+GenQuests_82 {혹시 @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' 선장을 아시나요? 그가 @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>로 갔습니다.}
+GenQuests_83 {만약 선장 @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'이(가) 필요하다면, @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>로 가야 합니다. @<GetFullName(sld)>이(가) 그곳으로 갔습니다.}
+GenQuests_84 {선장 @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'(@<GetFullName(sld)>)이 다시 바다로 나갔습니다. 소문에 따르면, 그는 @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>로 향했다고 합니다.}
+GenQuests_85 {혹시 @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' 선장을 아시나요? 그가 @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>로 갔답니다.}
+GenQuests_86 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' 선장이 필요하다면 @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>로 가야 합니다. @<GetFullName(sld)>가 그곳으로 갔습니다.}
+GenQuests_87 {장교 @<GetFullName(sld)>이(가) @<sld.ship.name>와 함께 도망쳤습니다}
+GenQuests_88 {장교 @<GetFullName(sld)>이(가) @<pchar.ship.name>에서 도망쳤습니다}
+GenQuests_89 {요격선}
+GenQuests_90 {닷새가 지났다...}
+GenQuests_91 {55명이 선원으로 합류했습니다}
+GenQuests_92 { }
+GenQuests_93 { }
+GenQuests_94 {들으셨나요? 선장 @<GetFullName(pchar)>께서 @<pchar.GenQuest.(Gun).name>라는 산적과 싸웠답니다. 산적이 돈을 빼앗으려 했지만, 선장은 굴하지 않았죠. 용감한 분이에요. 결국 그 악당을 쓰러뜨렸답니다.}
+GenQuests_95 {얼마 전 정글에서 싸움이 있었어요. 산적들이 선장 @<GetFullName(pchar)>을 습격해서 금을 노렸죠... 아, 바로 당신이 @<pchar.GenQuest.(Gun).name>을 처치한 그분이군요! 훌륭하게 해내셨습니다...}
+GenQuests_96 {@<pchar.GenQuest.(Gun).name>라는 지역 갱단이 @<GetFullName(pchar)>라는 선장을 털려고 했다는 소식 들었어? 그 선장이 돈을 내길 거부하고 전부 쓸어버렸다더라.}
+GenQuests_97 {@<pchar.GenQuest.EncGirl.name>의 살인 사건 들으셨나요? 불쌍한 소녀가 최근 정글에서 죽임을 당했대요. 범인을 꼭 잡아서 처형해야 해요!}
+GenQuests_98 {있잖아요, 선장 @<GetFullName(pchar)>, 누가 불쌍한 소녀 @<pchar.GenQuest.EncGirl.name>를 죽였다는 거 아세요? 안타깝네요, 정말 착한 아이였는데...}
+GenQuests_99 {그녀의 이름은 @<pchar.GenQuest.EncGirl.name>였고, 정글에서 죽었어. 별로 놀랄 일도 아니지, 밖은 정말 위험하거든...}
+GenQuests_100 {들으셨나요? 어떤 선장이 @<pchar.GenQuest.EncGirl.name>라는 소녀를 산적에게서 구해냈대요—정말 그들의 손아귀에서 직접 빼냈다네요! 참 훌륭한 사람이고 진짜 사나이죠!}
+GenQuests_101 {있잖아요, 선장 @<GetFullName(pchar)>께서 정글에서 @<pchar.GenQuest.EncGirl.name>라는 소녀를 악당들에게서 구해주셨다던데... 아, 그게 바로 당신이었군요! 감탄했습니다...}
+GenQuests_102 { }
+GenQuests_103 {정말이지, 선장 @<GetFullName(pchar)>, 아무도 당신이 무력한 여인을 산적들에게 버려둘 거라곤 생각 못 했습니다. 불쌍한 @<pchar.GenQuest.EncGirl.name>, 할 말이 없군요...}
+GenQuests_104 {있잖아요, 선장님. 정말 못된 사람이군요. 어떻게 정글에서 무력한 소녀를 외면할 수 있죠? 그녀에게 무슨 일이 있었는지 아시기나 해요? 불쌍한 @<pchar.GenQuest.EncGirl.name>, 이제 아무도 그녀와 결혼하려 하지 않을 거예요...}
+GenQuests_105 {@<pchar.GenQuest.EncGirlF.name>의 살인 사건 들으셨나요? 불쌍한 아가씨가 최근 정글에서 죽임을 당했다네요. 범인을 꼭 잡아서 처형해야 해요!}
+GenQuests_106 {있잖아요, 선장 @<GetFullName(pchar)>, 누가 불쌍한 소녀 @<pchar.GenQuest.EncGirlF.name>을 죽였다는 거 아세요? 안타깝네요, 정말 착한 아이였는데...}
+GenQuests_107 {그녀의 이름은 @<pchar.GenQuest.EncGirlF.name>였고, 정글에서 목숨을 잃었어. 별로 놀랄 일도 아니지, 저 밖은 정말 위험하거든...}
+GenQuests_108 {얼마 전 우리 장교와 그의 부대 전체가 죽은 채로 발견됐다. 누가 그들을 죽였을까? 그리고 왜?}
+GenQuests_109 {우리 사령관은 정기적으로 정글에 순찰대를 보내지만, 지금은 무슨 조치를 취할지 모르겠어요. 얼마 전 그곳에서 병사들이 죽은 채 발견됐거든요...}
+GenQuests_110 {젠장, 누가 도시 밖에서 우리 병사 한 부대를 몰살시켰어...}
+GenQuests_111 {소문에 따르면 선장 @<GetFullName(pchar)>이(가) 정글에서 @<NationNameGenitive(sti(pchar.GenQuest.(attrName).nation))> 군인들과 마주쳐 전부 쓰러뜨렸다더군. 허, @<NationNamePeople(sti(pchar.GenQuest.(attrName).nation))> 놈들은 정말 형편없는 싸움꾼들이지...}
+GenQuests_112 {@<GetMainCharacterNameGen()> 선장이 도시 밖에서 순찰대의 검문을 받았다는 얘기를 들은 것 같아요...}
+GenQuests_113 {흠, 내가 알기로는 우리 순찰대가 도시 밖에서 당신을 검사했었죠. 그게 얼마나 효과 있었는지는 모르겠군요...}
+GenQuests_114 {우리 사령관이 정글 순찰을 강화할 거야. 이미 알고 있겠지, 얼마 전에 점검받았잖아...}
+GenQuests_115 {알고 계시죠? 총독 @<sTemp>께서 어떤 선장 @<GetMainCharacterNameDat()>에게 악명 높은 산적 @<GetFullName(arAll)>을 처치하라고 명령했답니다. 그리고 보아하니 그 선장이 임무를 완수한 것 같군요...}
+GenQuests_116 {어떤 용감한 선장이 @<GetFullName(arAll)>라는 현지 산적을 잡겠다고 자원했습니다. 그리고 정말 해냈나 봅니다!}
+GenQuests_117 {하! 우리 총독이 마침내 정글에 질서를 되찾기로 결심했어 — 캡틴 @<GetMainCharacterNameDat()>에게 가장 악명 높은 산적을 추적해 죽이라고 보냈지. 그런데 말이야, 그 산적 @<GetFullName(arAll)>이(가) 죽었어!}
+GenQuests_118 {지도}
+GenQuests_119 {보물}
+GenQuests_120 {돈}

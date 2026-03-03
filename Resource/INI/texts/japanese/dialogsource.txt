@@ -1,0 +1,1 @@
+SelectDeliveryTradeDialog0 {ファイルは空です。Storm-2.5コアとの互換性のために必要ですが、 スクリプトには使われていません。}

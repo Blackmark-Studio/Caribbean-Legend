@@ -1,0 +1,68 @@
+Longway_1 { }
+Longway_2 { }
+Longway_3 {Abe}
+Longway_4 {Bix}
+Longway_5 {Marcel}
+Longway_6 {Schulte}
+Longway_7 {Johan}
+Longway_8 {van Merden}
+Longway_9 {Formosa Island@<NewStr()>1645년 4월 2일}
+Longway_10 {Oliver}
+Longway_11 {Trust}
+Longway_12 {Antoon}
+Longway_13 {van Diemen}
+Longway_14 {Joep}
+Longway_15 {van der Vink}
+Longway_16 {Vette}
+Longway_17 {van Haan}
+Longway_18 {Luiters}
+Longway_19 {van Haan}
+Longway_20 {Vitus}
+Longway_21 {Hengel}
+Longway_22 {Georges}
+Longway_23 {Gravel}
+Longway_24 {도시 성문 밖에서@<NewStr()>만남이 정해졌습니다}
+Longway_25 {Hugo}
+Longway_26 {Marso}
+Longway_27 {하루 뒤...@<NewStr()>저녁, 성문 밖}
+Longway_28 {Mathieu}
+Longway_29 {Terugny}
+Longway_30 {세 시간 후...@<NewStr()>Capsterville 부두}
+Longway_31 {사령관}
+Longway_32 { }
+Longway_33 {이방인}
+Longway_34 { }
+Longway_35 {Georges}
+Longway_36 {Gravel}
+Longway_37 {Edgardo}
+Longway_38 {Sotta}
+Longway_39 {Morning Star}
+Longway_40 {Morning Star의 쿼터덱}
+Longway_41 {해치 닫아라! 이제 Fermentelos와 얘기 좀 할 시간이군...}
+Longway_42 {이제 모두 여기로 온다!}
+Longway_43 {롱웨이가 죽었어!!! 가자! 이제 여기 있을 이유가 없어!}
+Longway_44 {Annabel}
+Longway_45 {Latter}
+Longway_46 {Star에서 가져온 일부 화물이 우리 화물창에 신속히 옮겨졌다}
+Longway_47 {Abraham}
+Longway_48 {Norman}
+Longway_49 {Mary}
+Longway_50 {Helen}
+Longway_51 {Rober}
+Longway_52 {Martene}
+Longway_53 {Voltigeur}
+Longway_54 {Clement}
+Longway_55 {Lebran}
+Longway_56 {Prevoyant}
+Longway_57 {참, 선장 사물함에서 항해일지를 찾긴 했는데, 페이지가 전부 찢겨 있어서 아무 소용이 없었어.}
+Longway_58 {선원}
+Longway_59 { }
+Longway_60 {Henri}
+Longway_61 {Thibaut}
+Longway_62 {Marceline}
+Longway_63 {Levasseur}
+Longway_64 {마르셀린이 지금 나를 도와줄 수도 있었을 텐데 — 그녀는 저주받은 남편을 진심으로 증오하지. 물론, 그녀에게 마음이란 게 있다면 말이지. 그런데 나는 하필 그녀의 침대에서 나오면서 보석함까지 훔쳐버렸지 뭐야. 그녀는 분명 거의 바로 도둑맞은 걸 눈치챘을 거야. 이제 내가 할 수 있는 건 창싱이 우리와 협력해주길 바라는 것뿐. 모든 게 달라질 수도 있었는데...}
+Longway_65 {Chang}
+Longway_66 {Xing}
+Longway_67 {내 사랑은 휴식이 필요해. 당분간 그녀를 방해하지 않도록 할게.}
+Longway_68 {볼티저}

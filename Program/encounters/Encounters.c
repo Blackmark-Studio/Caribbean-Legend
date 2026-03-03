@@ -27,9 +27,8 @@ void EncountersInit()
 
 int FindEncounter(int type, int nat)
 {
-	int iTypes[2]; 
-	int i;
-	SetArraySize(&iTypes, MAX_ENCOUNTER_TYPES * 10);
+    int i;
+	int iTypes[MAX_ENCOUNTER_TYPES*10]; 
 	for(i = 0; i < MAX_ENCOUNTER_TYPES*10; i++) iTypes[i] = -1;
 	int iNumTypes = 0;
 
@@ -240,7 +239,7 @@ int ENC_RANDOM_PARAMS[12] = {0,0,0,0,0,0,0,0,0,0,0,0};
 // Установить параметры для слота специализации
 void SetEncSlot_Params(int iEncType, int iSpec, int qMin, int qMax, int cMin, int cMax)
 {
-    int BitMask = qMin + shl(qMax, 4) + shl(cMin, 8) + shl(cMax, 12);
+    int BitMask = qMin + (qMax << 4) + (cMin << 8) + (cMax << 12);
     switch (iSpec)
     {
         case SHIP_SPEC_MERCHANT:  ENC_MERCHANT_SLOT[iEncType]  = BitMask; break;
@@ -253,8 +252,8 @@ void SetEncSlot_Params(int iEncType, int iSpec, int qMin, int qMax, int cMin, in
 // Получить количество кораблей
 int GetEncSlotQty(int BitMask)
 {
-    int min = and(BitMask, 15);
-    int max = and(shr(BitMask, 4), 15);
+    int min = BitMask & LBITS_4;
+    int max = (BitMask >> 4) & LBITS_4;
     return min + rand(max - min);
 }
 
@@ -267,13 +266,14 @@ void SetEncSlot_SpecRandom(int iEncType, bool bM, bool bW, bool bR, bool bU)
       bU - SHIP_SPEC_UNIVERSAL 3*/
 
     int qty = bM + bW + bR + bU;
-    int BitMask = bM + shl(bW, 1) + shl(bR, 2) + shl(bU, 3) + shl(qty, 4);
-    for (int i = 0; i < qty; i++) {
+    int BitMask = bM + (bW << 1) + (bR << 2) + (bU << 3) + (qty << 4);
+    for(int i = 0; i < qty; i++)
+    {
         int offset = 8 + (i*2);
-        if (bM) {BitMask += shl(SHIP_SPEC_MERCHANT, offset); bM = 0;}
-        else if (bW) {BitMask += shl(SHIP_SPEC_WAR, offset); bW = 0;}
-        else if (bR) {BitMask += shl(SHIP_SPEC_RAIDER, offset); bR = 0;}
-        else if (bU) {BitMask += shl(SHIP_SPEC_UNIVERSAL, offset); bU = 0;}
+        if (bM) {     BitMask += SHIP_SPEC_MERCHANT  << offset; bM = 0;}
+        else if (bW) {BitMask += SHIP_SPEC_WAR       << offset; bW = 0;}
+        else if (bR) {BitMask += SHIP_SPEC_RAIDER    << offset; bR = 0;}
+        else if (bU) {BitMask += SHIP_SPEC_UNIVERSAL << offset; bU = 0;}
     }
 
     ENC_RANDOM_PARAMS[iEncType] = BitMask;
@@ -282,15 +282,15 @@ void SetEncSlot_SpecRandom(int iEncType, bool bM, bool bW, bool bR, bool bU)
 // Проверить, участвует ли конкретная специализация в рандоме
 bool CheckEncRand_Spec(int BitMask, int iSpec)
 {
-    return and(shr(BitMask, iSpec), 1);
+    return (BitMask >> iSpec) & 1;
 }
 
 // Выбрать специализацию из участвующих в рандоме
 int GetEncRandSpec(int BitMask)
 {
-    int qty = and(shr(BitMask, 4), 15);
+    int qty = (BitMask >> 4) & LBITS_4;
     int offset = rand(qty-1);
-    return and(shr(BitMask, 8 + offset*2), 3);
+    return (BitMask >> (8 + offset*2)) & LBITS_2;
 }
 
 bool EncProgress[60];

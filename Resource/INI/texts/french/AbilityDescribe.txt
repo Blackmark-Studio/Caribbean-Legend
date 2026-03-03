@@ -5,30 +5,32 @@ newline
 BasicDefense {Défense de base}
 perkBasicDefense {Réduit les dégâts subis de $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Défense avancée}
-perkAdvancedDefense {Réduit les dégâts subis de $percent($perkBaseValue(AdvancedDefence|1)) et les dégâts critiques ennemis de $percent($perkBaseValue(AdvancedDefence|2)).}
+perkAdvancedDefense {Réduit les dégâts subis de $percent($perkBaseValue(AdvancedDefense|1)) et les dégâts critiques ennemis de $percent($perkBaseValue(AdvancedDefense|2)).}
 CriticalHit {Coup critique}
-perkCriticalHit {Augmente la chance de coup critique de base de 3,5 %.}
+perkCriticalHit {Augmente la chance de coup critique de base de $percent($perkBaseValue(CriticalHit|1)) .}
 Grus {Échine solide}
 perkGrus {Augmente la charge transportable de 35 livres.}
 Tireless {Inlassable}
-perkTireless {La vitesse de récupération d'énergie augmente de 15 %.}
+perkTireless {La vitesse de récupération d'énergie augmente de $percent($perkBaseValue(Tireless|1)) .}
 HardHitter {Main lourde}
-perkHardHitter {Les attaques lourdes avec les Armes lourdes infligent 15 % de dégâts en plus. Débloque l’attaque lourde avancée.}
+perkHardHitter {Les attaques lourdes avec les Armes lourdes infligent $percent($perkBaseValue(HardHitter|1))  de dégâts en plus. Débloque l’attaque lourde avancée.}
 BladeDancer {Danse avec les sabres}
-perkBladeDancer {L’attaque de groupe avec des armes courbées inflige 30 % de dégâts en plus.}
+perkBladeDancer {L’attaque de groupe avec des armes courbées inflige $percent($perkBaseValue(BladeDancer|1))  de dégâts en plus.}
 Sliding {Coup irrésistible}
 perkSliding {Une attaque tranchante ou une estocade avec une arme légère peut briser une parade avec $percent($perkBaseValue(Sliding|1)) de chance grâce à une frappe avancée unique.}
 Gunman {Mousquetaire}
 perkGunman
 {
-Augmente les dégâts et la vitesse de rechargement des armes à feu de $percent($perkBaseValue(Gunman|1)). Permet d’utiliser des armes à deux mains à un seul coup et des armes à une main à plusieurs coups. ~ Les officiers ne peuvent utiliser $key(descriptor_TwoHanded|ItemsDescriptors.txt) que s’ils en reçoivent l’ordre explicite.
+Augmente les dégâts et la vitesse de rechargement des armes à feu de $percent($perkBaseValue(Gunman|1)). Permet d’utiliser des armes à deux mains à un seul coup et des armes à une main à plusieurs coups.
+ ~
+ Les officiers ne peuvent utiliser $key(descriptor_TwoHanded|ItemsDescriptors.txt) que s’ils en reçoivent l’ordre explicite.
 }
 GunProfessional {Tirailleur}
-perkGunProfessional {Augmente les dégâts et la vitesse de rechargement des armes à feu de $percent($perkBaseValue(GunProfessional|1)). Débloque l’utilisation des armes à feu à plusieurs coups à deux mains.}
+perkGunProfessional {Augmente les dégâts et la vitesse de rechargement des armes à feu de $percent($perkBaseValue(GunProfessional|1)). Débloque l’utilisation des armes à feu à plusieurs coups à deux mains. Les officiers mousquetaires peuvent tirer à travers les rangs alliés sans les blesser.}
 IronWill {Volonté de fer}
 perkIronWill {Permet de survivre à une blessure mortelle toutes les 3 minutes.}
 SharedExperience {Apprenti rapide}
-perkSharedExperience {Accélère le développement des compétences de 5 %.}
+perkSharedExperience {Accélère le développement des compétences de 15 %.}
 Medic {Bonnes habitudes}
 perkMedic {Augmente la santé de 25 points. Double la régénération passive si la santé est inférieure à la moitié du maximum.}
 HPPlus {Santé croissante}
@@ -46,7 +48,9 @@ perkTrustworthy {Débloque des options de persuasion alternatives dans certains 
 ShipEscape {Seconde chance}
 perkShipEscape
 {
-Sauvetage en canot de sauvetage depuis le navire du héros en perdition vers un autre navire de la flotte.Permet, en combat, lorsque la coque du navire passe sous 15 %, d’utiliser le menu de cale pour transférer ou passer sur un autre navire de la flotte.Si un compagnon possède cette compétence, il s’échappera d’un navire coulant ou brûlant et reviendra comme passager sur le navire du héros en lançant un canot de sauvetage.
+Sauvetage en canot de sauvetage depuis le navire du héros en perdition vers un autre navire de la flotte.
+Permet, en combat, lorsque la coque du navire passe sous 15 %, d’utiliser le menu de cale pour transférer ou passer sur un autre navire de la flotte.
+Si un compagnon possède cette compétence, il s’échappera d’un navire coulant ou brûlant et reviendra comme passager sur le navire du héros en lançant un canot de sauvetage.
 }
 Alchemy {Alchimie}
 perkAlchemy {Les recettes ne nécessitent plus d’Outils. Confère 15 % de chance d’économiser une potion à l’utilisation.}
@@ -71,7 +75,8 @@ perkLongRangeGrappling {La distance d’abordage augmente de 15 %.}
 MusketsShoot {Salve de mousquets}
 perkMusketsShoot
 {
-Une salve de mousquets est tirée avant l’abordage.Les pertes infligées dépendent de la classe du navire et du nombre de combattants.
+Une salve de mousquets est tirée avant l’abordage.
+Les pertes infligées dépendent de la classe du navire et du nombre de combattants.
 }
 GrapplingProfessional {Bosco expert}
 perkGrapplingProfessional {La distance d’abordage augmente de 25 %. Possible sous n’importe quel angle et à toute vitesse.}
@@ -94,37 +99,30 @@ perkSailingProfessional {Vitesse et manœuvrabilité du navire augmentées de 5 
 SeaDogProfessional {Terreur des mers}
 perkSeaDogProfessional
 {
-À la vue du pavillon de la Terreur des Mers, même les aventuriers et hors-la-loi les plus audacieux n’osent défier le destin. Augmente la Puissance de la Flotte de $percent($PerkBaseValue(SeaDogProfessional|1)).~Compétence réservée au joueur ; nécessite le rang $attr($context.rank).
+À la vue du pavillon de la Terreur des Mers, même les aventuriers et hors-la-loi les plus audacieux n’osent défier le destin. Augmente la Puissance de la Flotte de $percent($PerkBaseValue(SeaDogProfessional|1)).
+~
+Compétence réservée au joueur ; nécessite le rang $attr($context.rank).
 }
 FlagPir {Jolly Roger}
 perkFlagPir
 {
-Possibilité de hisser le pavillon Jolly Roger.~Cette compétence est réservée au joueur.
+Possibilité de hisser le pavillon Jolly Roger.
+~
+Cette compétence est réservée au joueur.
 }
 FlagEng {Drapeau de l’Angleterre}
-perkFlagEng
-{
-La chance d’être repéré dépend de la Furtivité, du type et de la taille de votre flotte, de la taille de la flotte ennemie et du niveau de Menace.~Compétence réservée au joueur
-}
+perkFlagEng {Vous ne pouvez utiliser que les pavillons accessibles au rate de votre navire. Pour obtenir un pavillon, vous devez capturer un navire du rate correspondant ou acheter une licence.}
 FlagFra {Drapeau de la France}
-perkFlagFra
-{
-La probabilité d’être repéré dépend de la Furtivité, du type et de la taille de votre flotte, de la taille de la flotte ennemie et du niveau de Menace.~Compétence réservée au joueur
-}
+perkFlagFra {Vous ne pouvez utiliser que les pavillons accessibles au rate de votre navire. Pour obtenir un pavillon, vous devez capturer un navire du rate correspondant ou acheter une licence.}
 FlagSpa {Drapeau d’Espagne}
-perkFlagSpa
-{
-La chance d’être repéré dépend de la Furtivité, du type et de la taille de votre flotte, de la taille de la flotte ennemie et du niveau de Menace.~Compétence réservée au joueur
-}
+perkFlagSpa {Vous ne pouvez utiliser que les pavillons accessibles au rate de votre navire. Pour obtenir un pavillon, vous devez capturer un navire du rate correspondant ou acheter une licence.}
 FlagHol {Drapeau des Pays-Bas}
-perkFlagHol
-{
-La chance d’être repéré dépend de la Furtivité, du type et de la taille de votre flotte, de la taille de la flotte ennemie et du niveau de Menace.~Compétence disponible uniquement pour le joueur
-}
+perkFlagHol {Vous ne pouvez utiliser que les pavillons accessibles au rate de votre navire. Pour obtenir un pavillon, vous devez capturer un navire du rate correspondant ou acheter une licence.}
 Troopers {Tactiques de siège}
 perkTroopers
 {
-Permet de combiner les équipages de votre flotte avant l’assaut d’un fort.Réduit le nombre d’équipage requis pour attaquer une colonie depuis la terre.
+Permet de combiner les équipages de votre flotte avant l’assaut d’un fort.
+Réduit le nombre d’équipage requis pour attaquer une colonie depuis la terre.
 }
 BasicCommerce {Commerce de base}
 perkBasicCommerce {Les achats sont 4% plus rentables. Met en surbrillance les objets demandés dans les banques et marchés.}
@@ -137,24 +135,30 @@ perkCarpenter {La coque et les voiles sont lentement réparées en voyage. Planc
 InstantRepair {Réparation en combat}
 perkInstantRepair
 {
-Réparations rapides en combat jusqu'à 80 % de la durabilité disponible. Nécessite des planches pour la coque et de la toile pour les voiles.Peut être activé toutes les 1,5 minutes.
+Réparations rapides en combat jusqu'à 80 % de la durabilité disponible. Nécessite des planches pour la coque et de la toile pour les voiles.
+Peut être activé toutes les 1,5 minutes.
 }
 LightRepair {Réparation d'urgence}
 perkLightRepair
 {
-Répare 10 % de la coque du navire sans utiliser de ressources. Sans cette compétence, le navire se détériore lentement si la coque passe sous 10 %. Peut être activé toutes les 3 minutes.
+Répare 10 % de la coque du navire sans utiliser de ressources. Sans cette compétence, le navire se détériore lentement si la coque passe sous 10 %. 
+Peut être activé toutes les 3 minutes.
 }
 Builder {Contrôle des avaries}
 perkBuilder {La consommation de planches et de toile lors des réparations est réduite de 25 %.}
 SelfRepair {Réparation complète}
 perkSelfRepair
 {
-La capacité de réparer entièrement votre navire avec votre équipage sur n'importe quel rivage adapté. Nécessite des planches pour la coque et les mâts, et de la toile pour les voiles. Restauration complète de la coque, des voiles et des mâts possible.Les options de réparation ne sont disponibles qu'à terre, dans les zones côtières.
+La capacité de réparer entièrement votre navire avec votre équipage sur n'importe quel rivage adapté. Nécessite des planches pour la coque et les mâts, et de la toile pour les voiles. Restauration complète de la coque, des voiles et des mâts possible.
+
+Les options de réparation ne sont disponibles qu'à terre, dans les zones côtières.
 }
 WindCatcher {Sens marin}
 perkWindCatcher
 {
-Le navire accélère 10 % plus vite.Augmente la vitesse sur la carte globale dans les eaux connues — si vous avez une carte.
+Le navire accélère 10 % plus vite.
+
+Augmente la vitesse sur la carte globale dans les eaux connues — si vous avez une carte.
 }
 SailsMan {Voiles rapides}
 perkSailsMan {Grâce aux dernières méthodes de la carotte et du bâton, toutes les manœuvres de voile sont effectuées 10 % plus vite.}
@@ -192,11 +196,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Mains rapides}
-perkFastHands {Augmente la vitesse de dégainement et de rengainement des armes à feu de 20 %.}
+perkFastHands {Augmente la vitesse de dégainement et de rengainement des armes à feu de $percent($perkBaseValue(FastHands|1)) .}
 AmmoRig {Équipement}
-perkAmmoRig {Le rechargement des armes à feu est 5 % plus rapide.}
+perkAmmoRig {Le rechargement des armes à feu est $percent($perkBaseValue(AmmoRig|1))  plus rapide.}
 Preaim {Ajustement}
-perkPreaim {Le mode visée est 15 % plus rapide.}
+perkPreaim {Le mode visée est $percent($perkBaseValue(Preaim|1))  plus rapide.}
 KeenEye {Œil vif}
 perkKeenEye {Les tirs à la tête infligent $percent($perkBaseValue(KeenEye|1)) de dégâts en plus.}
 PowderFeel {Instinct de poudre}
@@ -208,37 +212,37 @@ perkLeadRain {La mitraille inflige 5 % de dégâts supplémentaires par ennemi t
 ShootToKill {Tir à tuer}
 perkShootToKill {Toucher un ennemi avec une arme à feu le ralentit, réduisant sa vitesse de déplacement de 25 %. Durée : 5 secondes.}
 Muscles {Montagne de muscles}
-perkMuscles {Toutes les attaques avec des armes lourdes consomment 10 % d'énergie en moins et sont 4 % plus rapides. La récupération d’étourdissement est 15 % plus rapide.}
+perkMuscles {Toutes les attaques avec des armes lourdes consomment $percent($perkBaseValue(Muscles|1))  d'énergie en moins et sont $percent($perkBaseValue(Muscles|2))  plus rapides. La récupération d’étourdissement est $percent($perkBaseValue(Muscles|3))  plus rapide.}
 Conquest {Conquista}
-perkConquest {Les attaques tranchantes et lourdes avec des armes blanches droites longues infligent 15 % de dégâts en plus.}
+perkConquest {Les attaques tranchantes et les attaques lourdes avec des armes longues infligent $percent($perkBaseValue(Conquest|1)) de dégâts supplémentaires.}
 PalaceGuard {Garde du palais}
-perkPalaceGuard {Les armes blanches Lourdes Courbées infligent 15 % de dégâts en plus avec les attaques, et 5 % supplémentaires avec les attaques de groupe.}
+perkPalaceGuard {Les armes blanches Lourdes Courbées infligent $percent($perkBaseValue(PalaceGuard|1)) de dégâts en plus avec les attaques, et 5 % supplémentaires avec les attaques de groupe.}
 CunningStrike {Frappe traîtresse}
-perkCunningStrike {Les armes légères ont 3 % de chance critique en plus. Les attaques dans le dos infligent 10 % de dégâts supplémentaires.}
+perkCunningStrike {Les armes légères ont $percent($perkBaseValue(CunningStrike|1))  de chance critique en plus. Les attaques dans le dos infligent $percent($perkBaseValue(CunningStrike|2))  de dégâts supplémentaires.}
 Heartbreaker {Briseur de cœurs}
-perkHeartbreaker {Les attaques rapides avec des armes blanches droites et longues infligent 10 % de dégâts en plus et sont 3 % plus rapides.}
+perkHeartbreaker {Les attaques rapides avec des armes droites infligent $percent($perkBaseValue(Heartbreaker|1)) de dégâts supplémentaires et sont $percent($perkBaseValue(Heartbreaker|2)) plus rapides.}
 Dodgy {Opportunisme}
-perkDodgy {La poussée en sprint est 30 % plus puissante et consomme moins d’énergie.}
+perkDodgy {La poussée en sprint est $percent($perkBaseValue(Dodgy|1))  plus puissante et consomme moins d’énergie.}
 Exhaustion {Épuisement}
-perkExhaustion {Parer avec des armes courtes draine 20 % d’énergie en plus. La récupération après Étourdissant dure 10 % plus longtemps.}
+perkExhaustion {Parer avec des armes courtes draine  $percent($perkBaseValue(Exhaustion|1)) d’énergie en plus. La récupération après Étourdissant dure 10 % plus longtemps.}
 Reaper {Faucheur}
-perkReaper {Dégâts critiques augmentés de 30 %, et chance de critique avec Attaques rapides augmentée de 3 %.}
+perkReaper {Dégâts critiques augmentés de  $percent($perkBaseValue(Reaper|1)) , et chance de critique avec Attaques rapides augmentée de  $percent($perkBaseValue(Reaper|2)) .}
 MarathonRunner {Marathonien}
-perkMarathonRunner {Sprinter devient 15 % plus rapide et consomme un tiers d'énergie en moins.}
+perkMarathonRunner {Sprinter devient $percent($perkBaseValue(MarathonRunner|2))  plus rapide et consomme un tiers d'énergie en moins.}
 PerfectBalance {Équilibre parfait}
-perkPerfectBalance {Les armes moyennes en main réduisent les dégâts subis de 10 %.}
+perkPerfectBalance {Les armes moyennes en main réduisent les dégâts subis de $percent($perkBaseValue(PerfectBalance|1)) .}
 Flanking {Débordement}
-perkFlanking {Les attaques avec armes courbées sont 5 % plus rapides. Débloque Attaque de groupe avancée.}
+perkFlanking {Les attaques avec armes courbées sont $percent($perkBaseValue(Flanking|1))  plus rapides. Débloque Attaque de groupe avancée.}
 SabreHurricane {Tourbillon de sabres}
-perkSabreHurricane {Les attaques tranchantes et rapides avec des armes blanches moyennes courbées ont un arc plus large, touchent les ennemis adjacents et infligent 10 % de dégâts en plus.}
+perkSabreHurricane {Les attaques tranchantes et rapides avec des armes blanches moyennes courbées ont un arc plus large, touchent les ennemis adjacents et infligent $percent($perkBaseValue(SabreHurricane|1))  de dégâts en plus.}
 Practice {Développement de la pratique}
-perkPractice {Chaque objet fabriqué équipé augmente toutes les compétences de 2.}
+perkPractice {Chaque objet fabriqué équipé augmente toutes les compétences de $number($perkBaseValue(Practice|1)).}
 Strychnine {Strychnine}
 perkStrychnine {Les frappes et tirs ont 9 % de chance d’empoisonner la cible. Cumulable avec les bonus d’Amulette.}
 DarkHorse {Cheval noir}
-perkDarkHorse {Chaque Amulette ordinaire et Talisman équipé augmente la santé et l’énergie de 2,5 %.}
+perkDarkHorse {Chaque Amulette ordinaire et Talisman équipé augmente la santé et l’énergie de $percent($perkBaseValue(DarkHorse|1)).}
 Master {Maître}
-perkMaster {Chaque objet fabriqué nécessitant un outil augmente les dégâts infligés de 0,1 %.}
+perkMaster {Chaque objet fabriqué nécessitant une trousse d’outils augmente les dégâts infligés de $percent($perkBaseValue(Master|2)).}
 Quiet {Pied Léger}
 perkQuiet {Vous ne pouvez pas être détecté en volant.}
 Looting {Fouille minutieuse}
@@ -246,7 +250,7 @@ perkLooting {Après l'abordage, les marins fouillent automatiquement le pont et 
 Collection {Curiosité}
 perkCollection {Chaque objet exotique placé sur le navire rapporte 1 000 pesos par jour passé dans un port non hostile.}
 Tiefit {Ajusté}
-perkTiefit {Le bonus de compétence des objets Ordinaires et Précieux est augmenté de 3.}
+perkTiefit {Le bonus de compétence des objets Ordinaires et Précieux est augmenté de $number($perkBaseValue(Tiefit|1)).}
 Investor {Investisseur}
 perkInvestor {Le taux d’intérêt des dépôts augmente de 1 %.}
 Gossip {Centre d’attention}
@@ -317,7 +321,10 @@ InstantBoarding {Abordage Instantané}
 Rush {La concoction Ometochtli}
 perkRush
 {
-Concoction enivrante, contribuant à la manifestation instantanée d'une force et d'une endurance considérables, d'une augmentation significative de la dextérité et de la rapidité de réaction, d'une agressivité intense et d'une insensibilité à la douleur.Pendant 12 secondes, les attaques du personnage deviennent beaucoup plus puissantes et les dégâts subis sont réduits. ~Cet avantage a un temps de recharge de 1 minute.
+Concoction enivrante, contribuant à la manifestation instantanée d'une force et d'une endurance considérables, d'une augmentation significative de la dextérité et de la rapidité de réaction, d'une agressivité intense et d'une insensibilité à la douleur.
+Pendant 12 secondes, les attaques du personnage deviennent beaucoup plus puissantes et les dégâts subis sont réduits. 
+~
+Cet avantage a un temps de recharge de 1 minute.
 }
 perkTrustworthy_alternate {En tant qu'officier, le personnage perçoit un salaire réduit de $percent($perkBaseValue(Trustworthy|1)).}
 perkAlchemy_alternate {Donne une chance de $percent($perkBaseValue(Alchemy|1)) de ne pas consommer la potion lors de son utilisation.}

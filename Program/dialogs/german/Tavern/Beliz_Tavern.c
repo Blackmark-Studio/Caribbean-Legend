@@ -65,7 +65,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		//--> Дикая Роза
 		case "WildRose_Tavern_1":
-			dialog.text = "Ähm, ja… ich glaube schon. Ja, ich erinnere mich an diesen Herrn. Nicht gerade wie aus dem Ei gepellt, aber mit Geld.";
+			dialog.text = "Ähm, ja... ich glaube schon. Ja, ich erinnere mich an diesen Herrn. Nicht gerade wie aus dem Ei gepellt, aber mit Geld.";
 			link.l1 = "Er wurde in einer Schlägerei in eurer Taverne verletzt.";
 			link.l1.go = "WildRose_Tavern_2";
 			DelLandQuestMark(npchar);

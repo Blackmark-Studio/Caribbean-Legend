@@ -1,0 +1,10 @@
+Consumption_1 { }
+Consumption_2 { }
+Consumption_3 {Sergio}
+Consumption_4 {Saldo}
+Consumption_5 {Juan}
+Consumption_6 {Consumption}
+Consumption_7 { }
+Consumption_8 { }
+Consumption_9 {곧 배가 폭발합니다. 지금 바로 떠나야 합니다!}
+Consumption_10 {곧 배가 폭발합니다. 지금 바로 떠나야 합니다!}

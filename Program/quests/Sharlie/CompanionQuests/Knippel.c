@@ -1870,3 +1870,39 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 	
 	return condition;
 }
+
+
+void DTSG_Knippel_GenerateParty()
+{
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20 + 2*sti(pchar.rank);
+	int DTSG_PoP_MK;
+	if (MOD_SKILL_ENEMY_RATE == 2) DTSG_PoP_MK = 5;
+	if (MOD_SKILL_ENEMY_RATE == 4) DTSG_PoP_MK = 5;
+	if (MOD_SKILL_ENEMY_RATE == 6) DTSG_PoP_MK = 4;
+	if (MOD_SKILL_ENEMY_RATE == 8) DTSG_PoP_MK = 4;
+	if (MOD_SKILL_ENEMY_RATE == 10) DTSG_PoP_MK = 3;
+
+	object aCrewSoldier[1];
+	SetArraySize(&aCrewSoldier, DTSG_PoP_MK);
+	GenerateCrew(pchar, "soldier", &aCrewSoldier);
+	string model;
+	string ani;
+
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
+
+	for (i=1; i<=DTSG_PoP_MK; i++)
+	{
+		model = aCrewSoldier[i-1].model;
+		ani = aCrewSoldier[i-1].ani;
+		ref sld = GetCharacter(NPC_GenerateCharacter("DTSG_PoP_Matrosy_"+i, model, "man", ani, sti(pchar.rank)-5, sti(pchar.nation), -1, false, "quest"));
+		FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
+		ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload3");
+		LAi_SetActorType(sld);
+		LAi_ActorFollow(sld, pchar, "", -1);
+		sld.lifeday = 0;
+		LAi_SetHP(sld, 120.0, 120.0);
+	}
+}

@@ -1,0 +1,56 @@
+SharlieTrial_1 {アベ・ ブノワからの借金の期限が切れました！}
+SharlieTrial_2 {Gralam}
+SharlieTrial_3 {Lavua}
+SharlieTrial_4 {ボート}
+SharlieTrial_5 {船が準備できた！ 桟橋へ向かい、 いざ出航だ！}
+SharlieTrial_6 {ゴースト}
+SharlieTrial_7 {島の反対側へ向かい、 クエストを達成しよう。 湾を右に出て、 海岸沿いを進め！}
+SharlieTrial_8 {海上モードの操作はゲームオプションで確認できます。}
+SharlieTrial_9 {会議にはもう間に合いません！}
+SharlieTrial_10 {1時間が経過した…@<NewStr()>ラム酒があなたの船に積み込まれた}
+SharlieTrial_11 {アクションメニューから船に戻る（ enter）}
+SharlieTrial_12 {ラム酒をル・ フランソワに運べ。 島の周りを航行し続けろ。}
+SharlieTrial_13 {Lutisse}
+SharlieTrial_14 {Montane}
+SharlieTrial_15 {まもなく戦闘です！(F6)でクイックセーブ。}
+SharlieTrial_16 {近くで誰かが殺されました！ 殺人があった場合は、 アクションメニュー（ ENTER） または割り当てられたホットキーで遺体を漁れます。}
+SharlieTrial_17 {Prosper}
+SharlieTrial_18 {Trubal}
+SharlieTrial_19 {Selina}
+SharlieTrial_20 {Trubal}
+SharlieTrial_21 {Gilbert}
+SharlieTrial_22 {Cursee}
+SharlieTrial_23 {Wolter}
+SharlieTrial_24 {Catcher}
+SharlieTrial_25 {爆弾で撃沈するか、 風が許せばすぐに白兵戦を仕掛けよ。}
+SharlieTrial_26 {素晴らしい！ アクションメニューからグローバルマップを開き、 北のグアドループへ出航しよう！}
+SharlieTrial_27 {Tichingitu}
+SharlieTrial_28 { }
+SharlieTrial_29 { }
+SharlieTrial_30 { }
+SharlieTrial_31 {Gerar}
+SharlieTrial_32 {Lecrua}
+SharlieTrial_33 {Warlike}
+SharlieTrial_34 {Florian}
+SharlieTrial_35 {Shoke}
+SharlieTrial_36 {三時間が過ぎた…@<NewStr()>大砲はフリゲートに積み込まれた}
+SharlieTrial_37 {Arthuro}
+SharlieTrial_38 {Cascos}
+SharlieTrial_39 {Puebla}
+SharlieTrial_40 {'Puebla'}
+SharlieTrial_41 {Jirarz}
+SharlieTrial_42 {Artua}
+SharlieTrial_43 {Gregoire}
+SharlieTrial_44 {Valinnie}
+SharlieTrial_45 {F3キーでクエストログを開く}
+SharlieTrial_46 {これからは、 この残酷な世界で一人だ。}
+SharlieTrial_47 {ティチンギトゥは考えを変えた。}
+SharlieTrial_48 {Charles}
+SharlieTrial_49 {Barbier}
+SharlieTrial_50 {Henry}
+SharlieTrial_51 {バーク「Henry」}
+SharlieTrial_52 {死体から貴重な品を手に入れるチャンス！}
+SharlieTrial_53 {Guillaume}
+SharlieTrial_54 {Dubois}
+SharlieTrial_55 {Cocoa}
+SharlieTrial_56 {Leaf}

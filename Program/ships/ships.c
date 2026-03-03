@@ -143,3 +143,14 @@ string GetShipCabinID(ref chref)
 	}
 	return RealShips[st].CabinType;
 }
+
+bool IsSmallShip(int iShipType)
+{
+	ref refShip;
+	makeref(refShip, ShipsTypes[iShipType]);
+	if (sti(refShip.Class) == 7)
+	{
+		return true;
+	}
+	return false;
+}

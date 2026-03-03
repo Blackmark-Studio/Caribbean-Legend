@@ -1,0 +1,67 @@
+Node0_title {No porto}
+Node0_a {Você entra em um porto hostil, esperando não ser descoberto.}
+Node0_b_a {O porto está agitado — um grande navio mercante $rand(francês|espanhol|holandês|inglês) chegou recentemente. Todos os trabalhadores disponíveis estão ocupados descarregando.}
+Node0_b_b {O porto está vazio, e na costa há sinais de uma batalha recente. $rand(Os paralelepípedos das ruas da cidade exibem marcas de queimaduras e impactos de balas de canhão.|Algumas casas foram danificadas por bombas, e mulheres enlutadas permanecem nas ruas.)}
+Node0_b_c {O porto está cheio de soldados. Um grande navio de guerra está fundeado — um $rand(galeão|fragata|corveta). Ele está $rand(claram​ente danificado e passando por reparos, com marcas de uma batalha recente no casco|em plena prontidão de combate, preparando-se para zarpar).}
+Node0_c_a {Um administrador do porto se aproxima de má vontade, claramente cansado e sonolento.}
+Node0_c_b {O chefe do porto se aproxima pessoalmente, claramente decidido a lhe dar atenção especial. Em seus olhos se lê $rand(irritação — ele está fazendo um trabalho abaixo de seu posto e sabe que os outros percebem isso|ganância — ele enxergou em você dinheiro fácil e já antecipa uma noite de farra).}
+Node0_c_c {Os guardas do porto se aproximam, armas erguidas, visivelmente tensos.}
+Node0_d {Você se recompõe e se prepara para fazer milagres com a eloquência. Ou talvez simplesmente abrir caminho até a cidade.}
+Node0_b_a_reaction {Fingir ser um navio de escolta}
+Node0_b_a_reaction_log {Você consegue se passar por um navio mercante dentro de um comboio. Junta-se à descarga e agora atrai muito menos atenção.}
+Node0_b_a_reaction_factor {Navio de escolta}
+Node0_b_b_reaction {Fingir ser um navio sanitário}
+Node0_b_b_reaction_log {Você consegue se passar por um navio sanitário enviado para cuidar dos feridos. Um médico é uma raridade no Caribe, e algumas palavras bem escolhidas bastam para convencer.}
+Node0_b_b_reaction_factor {Navio hospital}
+Node0_b_c_reaction {Fingir ser correio secreto}
+Node0_b_c_reaction_log {Você treinou por muito tempo para assumir um ar misterioso e consegue convencer os soldados de que é um agente secreto.}
+Node0_b_c_reaction_factor {Navio courier}
+Node0_c_a_reaction {Sugerir sem formalidades}
+Node0_c_a_reaction_log_0 {Sua compaixão é acreditada e você conquista a simpatia do administrador do porto.}
+Node0_c_a_reaction_log_1 {Eles percebem ironia nas suas palavras. O administrador do porto agora trata você pior.}
+Node0_c_a_reaction_factor {Compaixão}
+Node0_c_b_reaction {Mostrar disposição para pagar o dobro da taxa}
+Node0_c_b_reaction_log {Você encontra facilmente um ponto fraco no sistema corrupto e aumenta bastante suas chances por um preço razoável. Infelizmente, o chefe do porto não é o único que precisará ser agradado hoje.}
+Node0_c_b_reaction_factor {Suborno}
+Node0_c_c_reaction {Identificar o guarda mais fraco e pressioná-lo}
+Node0_c_c_reaction_log_0 {Você identifica um alvo fácil entre os guardas e, após algumas palavras certeiras, ele fica do seu lado.}
+Node0_c_c_reaction_log_1 {Você claramente escolhe o alvo errado, e os guardas ficam ainda mais agressivos.}
+Node0_c_c_reaction_factor {Elo fraco}
+Node0_a_action {Tentar passar}
+Node0_b_action {Abrir caminho à força}
+Node0_c_action {Mostrar a licença comercial}
+Node0_success {$rand(Você consegue se passar por um navio neutro e entra na cidade sem problemas. É melhor resolver seus assuntos rapidamente, pois as suspeitas podem voltar.|Você esteve perto de se revelar, mas parece que tudo deu certo. Se foi habilidade ou intervenção divina, o tempo dirá.)}
+Node0_success_action {Excelente!}
+Node1_a {Você não consegue passar por um aliado e a situação começa a se intensificar. Ainda assim, tem certeza de que dá para consertar — basta encontrar a abordagem certa.}
+Node1_b_a {Algo levou os guardas locais a realizarem uma inspeção reforçada. O navio está sendo cercado.}
+Node1_b_b {Os marinheiros locais parecem ter reconhecido seu navio como pertencente a _$playerNationAbl. Eles claramente pretendem desmascará-lo.}
+Node1_b_c {Enquanto a administração do porto analisava seu pedido, um navio patrulha entrou no porto na pior hora possível. Ao perceber a demora, exigiram inspecionar sua embarcação.}
+Node1_c_a {Você percebe que a bandeira na residência está a meio mastro — a cidade está de luto.}
+Node1_c_b {Entre os curiosos, você reconhece um capitão conhecido, a quem certa vez escoltou no mar.}
+Node1_c_c {Você ouve um toque incomum de sinos — uma celebração festiva começa na igreja local.}
+Node1_d {É preciso tomar uma decisão imediatamente.}
+Node1_b_a_reaction {Convencer soldados de carga valiosa}
+Node1_b_a_reaction_log {Você tenta convencer os soldados de que há uma carga importante a bordo. Diante de cálculos contábeis e termos complexos, eles claramente cedem, e a ameaça de perder o soldo reduz a arrogância dos hesitantes.}
+Node1_b_a_reaction_factor {Carga importante}
+Node1_b_b_reaction {Convencer marinheiros: no mar não há nações}
+Node1_b_b_reaction_log {Você tenta convencer os marinheiros de que todos estão no mesmo barco. Ao verem suas mãos fortes, os calos do trabalho e o rosto castigado pelo vento do mar, eles se acalmam e o aceitam como um dos seus.}
+Node1_b_b_reaction_factor {Marinheiros solidários}
+Node1_b_c_reaction {Invocar as leis marítimas}
+Node1_b_c_reaction_log {Você tenta impedir que os soldados do navio patrulha embarquem, invocando leis marítimas que proíbem explicitamente inspeções aleatórias e sem fundamento de navios no porto. Puxa tudo o que sabe sobre direito marítimo, temperando com invenções, histórias mirabolantes e jargão burocrático para arrastar o patrulheiro para esse redemoinho. Nunca antes os impropérios foram tão burocráticos.}
+Node1_b_c_reaction_factor {Pedantismo legal}
+Node1_c_a_reaction {Tentar adivinhar o motivo do luto}
+Node1_c_a_reaction_log {Você tenta adivinhar o motivo do luto e diz que veio por causa disso. Não tem certeza se o plano deu certo, mas a tentativa claramente não passou despercebida.}
+Node1_c_a_reaction_factor {Luto casual}
+Node1_c_b_reaction {Obter apoio de um capitão conhecido}
+Node1_c_b_reaction_log_0 {Você chama o capitão e pede que ele dê garantias por você diante dos guardas. Ele se lembra das aventuras que viveram juntos e prontamente fala a seu favor.}
+Node1_c_b_reaction_log_1 {Você chama o capitão e pede que ele garanta por você diante dos guardas. No último momento hesita, lembrando de onde o conhece: juntos realizaram alguns ataques ousados contra mercadores pacíficos. Ele o defende, claro, mas ele próprio não é bem visto na colônia.}
+Node1_c_b_reaction_factor {Capitão conhecido}
+Node1_c_c_reaction {Dizer que você transporta relíquias da Igreja}
+Node1_c_c_reaction_log {Você tenta convencer a guarda de que leva a bordo valiosos objetos litúrgicos necessários para uma festividade — $rand(um cálice de prata|uma custódia para exposição do Santíssimo|um relicário com relíquias|uma cruz de altar|uma mitra episcopal|paramentos de brocado e estola|castiçais de altar|uma pequena campainha de altar). Para sua surpresa, a colônia realmente aguardava um navio com relíquias da Igreja, que já está bastante atrasado. Eles acreditam em você.}
+Node1_c_c_reaction_factor {Utensílios litúrgicos}
+Node1_a_action {Tentar apaziguar a situação}
+Node1_b_action {Suspender âncora e fugir}
+Node1_success {$rand(Você se esgueira para dentro do porto, sentindo sobre si o olhar prolongado da guarda. Mais um segundo e tudo teria desandado, mas o destino decidiu diferente.|Você entra no porto com um aperto no peito — seu navio claramente continua sob suspeita. Tudo se resolveu no último instante, mas é melhor não ficar na cidade.)}
+Node1_success_action {Desta vez estamos salvos}
+Node1_fail {$rand(A guarda faz alarde — você foi descoberto. Soldados já correm pelo cais, e a notícia chegará ao forte a qualquer instante.|A demora se alonga e a paciência da guarda estoura. O porto inteiro se arma de lâminas, e um sinal é enviado ao forte para preparar os canhões.)}
+Node1_fail_action {Vamos fugir!}

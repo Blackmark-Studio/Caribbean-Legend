@@ -1,0 +1,9 @@
+FalseTrace_1 {Adam}
+FalseTrace_2 {Rayner}
+FalseTrace_3 {フリュート「@<pchar.questTemp.FalseTrace.ShipName>」}
+FalseTrace_4 {アダム・ レイナーはボートを盗み、 妻と共に逃走した！}
+FalseTrace_5 {Cockeyed}
+FalseTrace_6 {Solly}
+FalseTrace_7 {金鉱石を積んだフリュート}
+FalseTrace_8 {Katerine}
+FalseTrace_9 {Rayner}

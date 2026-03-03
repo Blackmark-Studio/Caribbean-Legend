@@ -129,14 +129,6 @@ void OZ_GameCards_Duel()
 	PChar.quest.OZ_Shuler_Bitva_3.win_condition.l1 = "item";
 	PChar.quest.OZ_Shuler_Bitva_3.win_condition.l1.item = "OZ_book";
 	PChar.quest.OZ_Shuler_Bitva_3.function = "OZ_Shuler_Bitva_3";
-	
-	/*PChar.Quest.Duel_Fight_Right_Now.win_condition.l1 = "Location";
-	PChar.Quest.Duel_Fight_Right_Now.win_condition.l1.Location = "Clone_location";
-	PChar.Quest.Duel_Fight_Right_Now.function = "OZ_GameCards_Duel_2";
-
-	LocationMakeClone(pchar.location);
-	Locations[FindLocation("Clone_location")].image = "loading\tavern_fight.tga";
-	DoReloadCharacterToLocation("Clone_location", "goto", "goto5");*/
 }
 
 void OZ_GameCards_Duel_2(string qName)
@@ -303,7 +295,7 @@ void OZ_Kuznets_Nagrada()
 		CloseQuestHeader("OZ");
 		pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
 		Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
-		if (sti(pchar.questTemp.MiniEvents) > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
+		if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 	}
 	sld = CharacterFromID("OZ_Blacksmith");
 	sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
@@ -417,7 +409,7 @@ void OZ_Felip_timer(string qName)
 		CloseQuestHeader("OZ");
 		pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
 		Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
-		if (sti(pchar.questTemp.MiniEvents) > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
+		if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 	}
 }
 
@@ -432,7 +424,7 @@ void OZ_Felip_good()
 		CloseQuestHeader("OZ");
 		pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
 		Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
-		if (sti(pchar.questTemp.MiniEvents) > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
+		if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 	}
 }
 
@@ -463,6 +455,6 @@ void OZ_Felip_bad_2(string qName)
 		CloseQuestHeader("OZ");
 		pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
 		Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
-		if (sti(pchar.questTemp.MiniEvents) > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
+		if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 	}
 }

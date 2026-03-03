@@ -80,14 +80,14 @@ descriptor_descr_WeaponCurvature_1 {This weapon features a pronounced curve and 
 descriptor_descr_ArmorType_0 {Light armor is almost indistinguishable from regular clothing and doesn’t restrict movement at all. The trade-off is reduced protection.}
 descriptor_descr_ArmorType_1 {Medium armor somewhat restricts movement, but offers excellent protection for vital organs. Reduces character movement speed by 5%.}
 descriptor_descr_ArmorType_2 {Heavy armor is bulky and unwieldy, but it lets you storm a fortress. Reduces movement speed by 10%.}
-descriptor_descr_ArmorMaterial_0 {Cloth can’t withstand heavy blows, but it protects against scrapes and scratches. Reduces incoming damage by 4%.}
-descriptor_descr_ArmorMaterial_1 {Leather armor might save you in a drunken brawl, but it won’t stop a bullet or a skilled thrust. Reduces incoming damage by 8%.}
-descriptor_descr_ArmorMaterial_2 {Plate is an excellent balance of weight and protection. Can save your life. Reduces incoming damage by 15%.}
+descriptor_descr_ArmorMaterial_0 {Cloth can’t withstand heavy blows, but it protects against scrapes and scratches. Reduces incoming damage by $percent($MaterialDefenceValue(0)).}
+descriptor_descr_ArmorMaterial_1 {Leather armor might save you in a drunken brawl, but it won’t stop a bullet or a skilled thrust. Reduces incoming damage by $percent($MaterialDefenceValue(1)).}
+descriptor_descr_ArmorMaterial_2 {Plate is an excellent balance of weight and protection. Can save your life. Reduces incoming damage by $percent($MaterialDefenceValue(2)).}
 descriptor_descr_ArmorMaterial_3
 {
-Stamped armor is mass-produced to equip troops and is used in European wars. Reduces incoming damage by 22%.
+Stamped armor is mass-produced to equip troops and is used in European wars. Reduces incoming damage by $percent($MaterialDefenceValue(3)).
 }
-descriptor_descr_ArmorMaterial_4 {Producing high-quality forged armor is a complex and costly process, which makes it a rare sight in the Caribbean. Reduces incoming damage by 35%.}
+descriptor_descr_ArmorMaterial_4 {Producing high-quality forged armor is a complex and costly process, which makes it a rare sight in the Caribbean. Reduces incoming damage by $percent($MaterialDefenceValue(4)).}
 descriptor_descr_AmuletType_0 {Draws on omens, sea superstitions, and real cause-and-effect.}
 descriptor_descr_AmuletType_1 {Draws on the power of pagan gods and native rituals.}
 descriptor_descr_AmuletType_2 {Draws on the power of Christian saints and righteous faith.}

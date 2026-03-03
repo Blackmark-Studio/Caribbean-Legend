@@ -1,8 +1,10 @@
 
 void ApplyMigration(ref migrationState)
 {
+    int i;
+	for (i = 0; i < MAX_ENCOUNTER_TYPES; i++) DeleteAttribute(&EncountersTypes[i], "");
     EncountersInit();
-    for(int i = 0; i < 60; i++) EncProgress[i] = false;
+    for (i = 0; i < 60; i++) EncProgress[i] = false;
 	Encounter_Progress();
     PChar.quest.PirateNotificationUPD.over = "yes";
 	

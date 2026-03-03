@@ -764,7 +764,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_114":
-			dialog.text = "Dokładnie. O ile mi wiadomo, kiedy wstąpiłeś na służbę Francji, otrzymałeś do dyspozycji ciężki korwet 'Gryffondor'. To wspaniały statek, bez wątpienia, ale wciąż jest tylko dla oficera, a nie dla wiceadmirała, a teraz gubernatora generalnego. Jesteś tutaj twarzą Francji. I twój okręt flagowy powinien być odpowiedni. Dlatego postanowiliśmy, że statek, który przeszedł swoje pierwsze bitwy tutaj na Karaibach, zostanie dodany do twojej eskadry...";
+			dialog.text = "Dokładnie. O ile mi wiadomo, kiedy wstąpiłeś na służbę Francji, otrzymałeś do dyspozycji lekką fregatę 'Gryffondor'. To wspaniały statek, bez wątpienia, ale wciąż jest tylko dla oficera, a nie dla wiceadmirała, a teraz gubernatora generalnego. Jesteś tutaj twarzą Francji. I twój okręt flagowy powinien być odpowiedni. Dlatego postanowiliśmy, że statek, który przeszedł swoje pierwsze bitwy tutaj na Karaibach, zostanie dodany do twojej eskadry...";
 			link.l1 = "Monsieur Forget, czy próbujesz powiedzieć...";
 			link.l1.go = "noel_115";
 		break;
@@ -1849,7 +1849,7 @@ void ProcessDialogEvent()
 				if(sItem != "" && rItem.groupID == BLADE_ITEM_TYPE) 
 				{
 					attrL = "l" + i;
-					Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt") + ": Attack - " + FloatToString(stf(rItem.attack),1) + ", balance - " + FloatToString(stf(rItem.Balance),1) + ", weight - " + FloatToString(stf(rItem.Weight),1);
+					Link.(attrL) = GetItemName(rItem) + ": Attack - " + FloatToString(stf(rItem.attack),1) + ", balance - " + FloatToString(stf(rItem.Balance),1) + ", weight - " + FloatToString(stf(rItem.Weight),1);
 					Link.(attrL).go = "bladeindex_"+GetItemIndex(rItem.id);
 					i++;
 				}

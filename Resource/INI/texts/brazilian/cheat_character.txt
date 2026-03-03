@@ -1,0 +1,35 @@
+new_string
+{
+
+}
+Cheat_success {Concluído!}
+Cheat_on {Trapaça Ativada}
+Cheat_off {Trapaça desativada}
+Cheat_Comming_soon {Em breve!}
+f1 {Adicionar 35 pontos de habilidade}
+f2 {Adicionar 1 ponto de Habilidade Naval}
+f3 {Adicionar 1 ponto de Vantagem Pessoal}
+f4 {+10 de HP máximo}
+f5 {+10 Energia Máxima}
+f6 {Aumentar Honra}
+f7 {Reduzir Honra}
+f8 {Aumentar Fama}
+f9 {Diminuir Fama}
+f10 {Modo Deus ativado/desativado}
+f11 {Aumentar Autoridade}
+f12 {Aumentar Vitalidade}
+f13 {+1000 Capacidade Máxima de Inventário}
+f14 {dano de arma branca x10}
+f15 {Dano da arma de fogo equipada x10}
+f16 {Tempo de recarga da arma de fogo equipado x10}
+f17 {Definir chance de quebra de bloqueio em 100%}
+f18 {Regeneração de energia x10}
+f19 {Regeneração de HP x10}
+f20 {Definir chance de bloqueio em 100%}
+f21 {Veneno Taino ativado/desativado}
+f22 {Desbloquear vantagens de origem Duelista}
+f23 {Desbloquear vantagens de origem Contador}
+f24 {Desbloquear vantagens de histórico de Atleta}
+f25 {Desbloquear vantagens de fundo Atirador}
+f26 {Desativar requisitos de Navegação}
+f27 {Deixar o herói sóbrio se estiver bêbado}

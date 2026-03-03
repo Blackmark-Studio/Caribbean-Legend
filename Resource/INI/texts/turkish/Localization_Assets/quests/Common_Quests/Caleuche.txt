@@ -1,0 +1,40 @@
+Caleuche_1 {Tuttuathapak}
+Caleuche_2 { }
+Caleuche_3 {kaptan-ölümsüz}
+Caleuche_4 { }
+Caleuche_5 {Hayalet gemi}
+Caleuche_6 {Fergus}
+Caleuche_7 {Hooper}
+Caleuche_8 {Hayalet gemiden kaçtın!}
+Caleuche_9 {Reginald}
+Caleuche_10 {Jackson}
+Caleuche_11 {Harpy}
+Caleuche_12 {xebec 'Harpy'}
+Caleuche_13 {ölü ev sahibi kadın}
+Caleuche_14 { }
+Caleuche_15 {Chavinavy}
+Caleuche_16 { }
+Caleuche_17 {Esberto}
+Caleuche_18 {Salinas}
+Caleuche_19 {Tuttuathapak muskaları güçlerini kaybetti!}
+Caleuche_20 {Kullanmak için 'T' tuşuna bas}
+Caleuche_21 {Portal engellendi!}
+Caleuche_22 {Chavinavy Reis}
+Caleuche_23 { }
+Caleuche_24 {tapınak ölüsü}
+Caleuche_25 { }
+Caleuche_26 {Ufukta hayalet gemi!}
+Caleuche_27 {Baltazar}
+Caleuche_28 {de Cordes}
+Caleuche_29 { }
+Caleuche_30 {Kendini daha çevik hissediyorsun}
+Caleuche_31 {Kendini daha dayanıklı hissediyorsun}
+Caleuche_32 {Kendini daha güçlü hissediyorsun}
+Caleuche_33 {Algınız keskinleşiyor}
+Caleuche_34 {Daha sezgili hissediyorsun}
+Caleuche_35 {Kendinizi daha özgüvenli hissediyorsunuz}
+Caleuche_36 {İlham aldın}
+Caleuche_37 {Hayalet gemi ufukta!}
+Caleuche_38 {Yaralarından dolayı bayıldın...}
+Caleuche_39 { }
+Caleuche_40 { }

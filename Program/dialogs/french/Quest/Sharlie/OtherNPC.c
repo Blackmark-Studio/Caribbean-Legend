@@ -1856,7 +1856,7 @@ case "Europe":
 		break;
 		
 		case "MOT_Barbie_107":
-			dialog.text = "Yes. Unfortunately, I had a falling out with Santiago smugglers last year. I had nearly forgotten about it, but these individuals maintain close connections and long memories. Here's a piece of advice: avoid incensing them and reneging on deals; it's a situation you won't rectify later.";
+			dialog.text = "Oui. Malheureusement, j'ai eu un différent avec les contrebandiers de Santiago l'année dernière. J'avais presque oublié cet incident, mais ces individus conservent des liens étroits et une longue mémoire. Voici un conseil : évite de les irriter et de revenir sur des accords ; c'est une situation que tu ne pourras pas rectifier plus tard.";
 			link.l1 = "Merci, mais la contrebande ne m'intéresse pas.";
 			link.l1.go = "MOT_Barbie_108";
 		break;

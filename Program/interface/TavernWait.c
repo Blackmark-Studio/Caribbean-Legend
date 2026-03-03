@@ -109,6 +109,7 @@ void ProcCommand()
 		break;
 	}
 }
+
 //Sith обновляем вывод инфы, когда кликаем по чекбоксам
 void RefreshVariables()
 {
@@ -118,23 +119,29 @@ void RefreshVariables()
 	int minute = sti(worldMap.date.min);
 	int addDays;
 	
-	if(days == false) {
-		if(SendMessage(&GameInterface,"lsll",MSG_INTERFACE_MSG_TO_NODE, "TIME_CHECK", 3, 3)){
+	if (days == false)
+    {
+		if (SendMessage(&GameInterface,"lsll",MSG_INTERFACE_MSG_TO_NODE, "TIME_CHECK", 3, 3))
+        {
 			addDays = (hour + iHourWait) / 24;
 			hour = (hour + iHourWait) % 24;
 			sDate = GetDateStringEx(GetAddingDataYear(0, 0, addDays), GetAddingDataMonth(0, 0, addDays), GetAddingDataDay(0, 0, addDays));		
 			sTime = GetTimeStringEx(hour, minute);
 			SetFormatedText("RESTTIME_TEXT", sDate + " " + sTime);
 			SetFormatedText("TIME_TEXT", (iHourWait) + GetCorrectHourString(iHourWait));
-		} else SetFormatedText("TIME_TEXT", "");
-	} else {
+		}
+        else SetFormatedText("TIME_TEXT", "");
+	}
+    else
+    {
 		addDays = iHourWait;
-		sDate = GetDateStringEx(GetAddingDataYear(0, 0, addDays), GetAddingDataMonth(0, 0, addDays), GetAddingDataDay(0, 0, addDays));		
+		sDate = GetDateStringEx(GetAddingDataYear(0, 0, addDays), GetAddingDataMonth(0, 0, addDays), GetAddingDataDay(0, 0, addDays));
 		sTime = GetTimeStringEx(hour, minute);
 		SetFormatedText("RESTTIME_TEXT", sDate + " " + sTime);
 		SetFormatedText("TIME_TEXT", (iHourWait) + GetCorrectDayString(iHourWait));
 	}
 }
+
 //Sith крутим вертим часы и дни
 void ProcSlideChange()
 {
@@ -143,7 +150,7 @@ void ProcSlideChange()
 	int 	iVal 		= GetEventData(); // int GameInterface.nodes.<node_name>.value
 	float 	fVal 		= GetEventData(); // float GameInterface.nodes.<node_name>.value
 	sCurDayTime 		= GetDayTime();
-	
+
 	int hour = sti(worldMap.date.hour);
 	int minute = sti(worldMap.date.min);
 	int addDays;
@@ -156,7 +163,7 @@ void ProcSlideChange()
 		iHourWait = 1 + iVal;
 		addDays = (hour + iHourWait) / 24;
 		hour = (hour + iHourWait) % 24;
-		sDate = GetDateStringEx(GetAddingDataYear(0, 0, addDays), GetAddingDataMonth(0, 0, addDays), GetAddingDataDay(0, 0, addDays));		
+		sDate = GetDateStringEx(GetAddingDataYear(0, 0, addDays), GetAddingDataMonth(0, 0, addDays), GetAddingDataDay(0, 0, addDays));
 		sTime = GetTimeStringEx(hour, minute);
 		SetFormatedText("RESTTIME_TEXT", sDate + " " + sTime);
 		SetFormatedText("TIME_TEXT", (iHourWait) + GetCorrectHourString(iHourWait));
@@ -166,12 +173,11 @@ void ProcSlideChange()
 	{
 		iHourWait = 1 + iVal;
 		addDays = iHourWait;
-		sDate = GetDateStringEx(GetAddingDataYear(0, 0, addDays), GetAddingDataMonth(0, 0, addDays), GetAddingDataDay(0, 0, addDays));		
+		sDate = GetDateStringEx(GetAddingDataYear(0, 0, addDays), GetAddingDataMonth(0, 0, addDays), GetAddingDataDay(0, 0, addDays));
 		sTime = GetTimeStringEx(hour, minute);
 		SetFormatedText("RESTTIME_TEXT", sDate + " " + sTime);
 		SetFormatedText("TIME_TEXT", (iHourWait) + GetCorrectDayString(iHourWait));
 	}
-
 }
 
 void SetTimeSlider()

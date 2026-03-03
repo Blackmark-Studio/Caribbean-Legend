@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 			if (LAi_grp_playeralarm > 0)
 			{
        			dialog.text = PCharRepPhrase(LinkRandPhrase("L'alarme est déclenchée dans la ville. Apparemment, il est temps pour moi de prendre les armes aussi...","Les gardes de la ville ne te poursuivent pas, par hasard ? ","Vous ne trouverez aucun abri ici, mais vous risquez de trouver plusieurs pouces d'acier froid entre vos côtes !"),LinkRandPhrase("De quoi as-tu besoin,"+GetSexPhrase("canaille","coquin")+"?! Les gardes de la ville ont déjà trouvé ton odeur, tu n'iras pas loin, "+GetSexPhrase("sale pirate","toi, garce de pirate")+"!","Sale assassin ! Gardes !!!","Je ne te crains pas, "+GetSexPhrase("rampant","garce")+"! Bientôt tu seras pendu dans notre fort, tu n'iras pas loin..."));
-				link.l1 = PCharRepPhrase(RandPhraseSimple("Je vois que tu es fatigué de vivre...","Alors il semble qu'il n'y ait pas de vie paisible pour les citoyens de "+XI_ConvertString("Colonie"+npchar.city+"Gén")+"!"),RandPhraseSimple("Va en enfer !","Heh, ce seront les dernières secondes de ta vie..."));
+				link.l1 = PCharRepPhrase(RandPhraseSimple("Je vois que tu es fatigué de vivre...","Alors il semble qu'il n'y ait pas de vie paisible pour les citoyens de "+XI_ConvertString("Colony"+npchar.city+"Gen")+"!"),RandPhraseSimple("Va en enfer !","Heh, ce seront les dernières secondes de ta vie..."));
 				link.l1.go = PCharRepPhrase("exit_setOwner", "fight");
 				break;
 			}
@@ -199,7 +199,7 @@ void ProcessDialogEvent()
 			if (LAi_grp_playeralarm > 0)
 			{
        			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase("L'alarme est donnée dans la ville. Apparemment, il est temps pour moi de prendre les armes aussi...","Les gardes de la ville ne te poursuivent pas, par hasard ?","Vous ne trouverez aucun abri ici, mais vous risquez de trouver plusieurs centimètres d'acier froid entre vos côtes!"),LinkRandPhrase("De quoi as-tu besoin,"+GetSexPhrase("canaille","coquin")+"?! Les gardes de la ville ont déjà trouvé votre odeur, vous n'irez pas loin, "+GetSexPhrase("sale pirate","gourgandine")+"!","Sale assassin! Gardes!!!","Je n'ai pas peur de toi, "+GetSexPhrase("rampant","garce")+"! Bientôt tu seras pendu dans notre fort, tu n'iras pas loin..."));
-				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Je vois que tu es fatigué de vivre...","Donc, il semble qu'il n'y ait pas de vie paisible pour les citoyens de "+XI_ConvertString("Colonie"+npchar.city+"Gén")+"!"),RandPhraseSimple("Va en enfer!","Heh, ce seront les dernières secondes de ta vie..."));
+				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Je vois que tu es fatigué de vivre...","Donc, il semble qu'il n'y ait pas de vie paisible pour les citoyens de "+XI_ConvertString("Colony"+npchar.city+"Gen")+"!"),RandPhraseSimple("Va en enfer!","Heh, ce seront les dernières secondes de ta vie..."));
 				link.l1.go = NPCharRepPhrase("exit_setOwner", "fight");
 				break;
 			}
@@ -213,7 +213,7 @@ void ProcessDialogEvent()
 			if (LAi_grp_playeralarm > 0)
 			{
        			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase("L'alarme est déclenchée dans la ville. Apparemment, il est temps pour moi aussi de prendre les armes...","Les gardes de la ville ne vous courent pas après, par hasard ? ","Vous ne trouverez aucun abri ici, mais vous pourriez bien trouver plusieurs pouces d'acier froid entre vos côtes !"),LinkRandPhrase("De quoi as-tu besoin,"+GetSexPhrase("coquin","coquin")+"?! Les gardes de la ville ont déjà trouvé ton odeur, tu n'iras pas loin, "+GetSexPhrase("sale pirate","gourgandine")+"!",""+GetSexPhrase("Sale","Crade")+" assassin ! Gardes !!!","Je ne te crains pas, "+GetSexPhrase("rampant","morue")+"! Bientôt tu seras pendu dans notre fort, tu n'iras pas loin..."));
-				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Je vois que tu en as assez de vivre...","Alors il semble, il n'y a pas de vie paisible pour les citoyens de "+XI_ConvertString("Colonie"+npchar.city+"Gén")+"!"),RandPhraseSimple("Va en enfer !","Heh, ce seront les dernières secondes de ta vie..."));
+				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Je vois que tu en as assez de vivre...","Alors il semble, il n'y a pas de vie paisible pour les citoyens de "+XI_ConvertString("Colony"+npchar.city+"Gen")+"!"),RandPhraseSimple("Va en enfer !","Heh, ce seront les dernières secondes de ta vie..."));
 				link.l1.go = NPCharRepPhrase("exit_setOwner", "fight");
 				break;
 			}

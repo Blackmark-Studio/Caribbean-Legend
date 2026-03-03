@@ -1,0 +1,2 @@
+ShowPapersAction {Okazać listy uwierzytelniające}
+FactorQuestZpq {Nieznany Gaskończyk}

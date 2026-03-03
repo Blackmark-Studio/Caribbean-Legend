@@ -208,6 +208,13 @@ void ProcessDialogEvent()
 		//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "tonzag_officer":
 			dialog.text = "Słucham cię, kapitanie. Co masz do powiedzenia?";
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				dialog.text = "Wyglądasz ponuro, kapitanie. Coś się stało?";
+				Link.l1 = "Muszę opuścić archipelag. Za dwa tygodnie. Na czyimś statku, jako pasażer.";
+				Link.l1.go = "SharlieEpilog_Tonzag_1";
+				break;
+			}
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
 				Link.l4 = "Hercule, wybieram się do starego indiańskiego miasta Tayasal i, co jeszcze bardziej niezwykłe, moja droga prowadzi przez teleportacyjną statuę. Czy dołączysz do mnie?";
@@ -339,7 +346,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -354,7 +361,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;		
@@ -661,7 +668,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_drink_again_2":
-			dialog.text = "Prawda? Prawda jest taka, kapitanie, że zdezerterowałem wraz z moją żoną Gruoh. Madame Tonzag nie chciała opuszczać Ligi; kochała takie życie, ale kochała mnie jeszcze bardziej. Mieliśmy zająć się hiszpańskim hidalgo, ale złożył lepszą ofertę. To była nasza szansa i oboje zgodziliśmy się pójść do jego służby. Oczywiście, Liga myślała, że ​​zginęliśmy podczas misji i wysłała drugą grupę do Portobelo, aby dokończyć zadanie i dokonać zemsty.";
+			dialog.text = "Prawdy? Prawda jest taka, kapitanie, że zdezerterowałem wraz z moją żoną Gruoh. Madame Tonzag nie chciała opuszczać Ligi; kochała takie życie, ale kochała mnie jeszcze bardziej. Mieliśmy zająć się hiszpańskim hidalgo, ale złożył lepszą ofertę. To była nasza szansa i oboje zgodziliśmy się pójść do jego służby. Oczywiście, Liga myślała, że ​​zginęliśmy podczas misji i wysłała drugą grupę do Portobelo, aby dokończyć zadanie i dokonać zemsty.";
 			link.l1 = "I zabiłeś ich wszystkich?";
 			link.l1.go = "tonzag_drink_again_3";
 		break;
@@ -853,8 +860,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_church_2":
-			dialog.text = "Masakra. Chciałem przejść na emeryturę, Kapitanie. Chciałem zabrać złoto, moją żonę i wrócić do domu w Carcassonne. Wiedziałem, że Liga wyśle więcej ludzi, by dokończyć moją robotę, i wziąłem hojną zaliczkę od nowego mecenasa. Potem pozostało tylko napuścić straż miejską na moich dawnych wspólników i nowego pracodawcę. W tym całym zamieszaniu miałem zniknąć z pieniędzmi, a jeśli czas pozwoli, obrabować kilka tłustych kotów z Portobelo.";
-			link.l1 = "Dobry plan, choć zrobiłbym to inaczej. Zbyt wiele rzeczy może pójść nie tak.";
+			dialog.text = "Masakra. Chciałem przejść na emeryturę, Kapitanie. Chciałem zabrać złoto, moją żonę i wrócić do domu w Carcassonne. Wiedziałem, że Liga wyśle więcej ludzi, by dokończyć moją robotę, i wziąłem hojną zaliczkę od nowego mecenasa. Potem pozostało tylko napuścić straż miejską na moich dawnych wspólników i nowego pracodawcę. W tym całym zamieszaniu miałem zniknąć z pieniędzmi, a jeśli czas pozwoli, obrabować kilku nadzianych ważniaków z Portobelo.";
+			link.l1 = "Dobry plan, choć zrobiłbym to inaczej. Zbyt wiele rzeczy mogło pójść nie tak.";
 			link.l1.go = "tonzag_church_2a";
 			link.l2 = "Sam nie jestem aniołem, ale twoje podejście sprawia, że nawet ja drżę. Jestem zaskoczony, że jeszcze mnie nie zdradziłeś, jak to zrobiłeś z Ligą, Hidalgiem, a nawet własną żoną.";
 			link.l2.go = "tonzag_church_2a";
@@ -910,10 +917,45 @@ void ProcessDialogEvent()
 		
 		case "tonzag_afterchurchfight":
 			dialog.text = "Widziałem w swoim czasie wielu łajdaków, kapitanie, ale po raz pierwszy poczułem wewnętrzny dreszcz grozy. Jak myślisz: jeśli mniejszy potwór zabije większego potwora, czy to liczy się jako odkupienie?";
-			link.l1 = "Czy oni rozcieńczają rum wodą? Powiedz mi, kiedy się dowiesz. Chodźmy, skończyliśmy tutaj.";
+			link.l1 = "Czy oni rozcieńczają rum wodą? Powiesz mi, kiedy się dowiesz. Chodźmy, musimy dać dyla na statek.";
 			link.l1.go = "exit";
 			
 			AddDialogExitQuestFunction("Tonzag_ResetTonzag");
+		break;
+		
+		// Эпилог
+		case "SharlieEpilog_Tonzag_1":
+			dialog.text = "¡Ja! No esperaba escuchar eso de ti. ¿Y qué sigue, unirte a un monasterio?";
+			link.l1 = "Hablo en serio, "+npchar.name+". La salud de mi padre se deteriora cada día. Quiero verlo antes… de que sea demasiado tarde.";
+			link.l1.go = "SharlieEpilog_Tonzag_2";
+		break;
+
+		case "SharlieEpilog_Tonzag_2":
+			dialog.text = "¿Qué tiene de malo nuestro barco? ¿O de verdad piensas que el Atlántico ya es demasiado para nosotros?";
+			link.l1 = "He estado pensando en desembarcar y establecerme en tierra firme. Aún no puedo imaginar cómo sería vivir sin el mar. Pero si ese día realmente llega, quiero estar preparado. Quiero entender con qué tendré que luchar dentro de mí.";
+			link.l1.go = "SharlieEpilog_Tonzag_3";
+		break;
+
+		case "SharlieEpilog_Tonzag_3":
+			dialog.text = "Por segunda vez en esta conversación me has dejado sin palabras. ¿Realmente estás listo para cambiar el viento en tus velas por una chimenea y un tazón de gachas caliente?";
+			link.l1 = "El empeoramiento de la enfermedad de mi padre me recordó que ninguno de nosotros es eterno. Aún no he decidido qué vendrá después. Por ahora — solo el camino a casa. Y… quería proponerte que vinieras conmigo. Como amigo. Pero si dices que no — lo entenderé. No voy a convencerte.";
+			link.l1.go = "SharlieEpilog_Tonzag_4";
+		break;
+
+		case "SharlieEpilog_Tonzag_4":
+			dialog.text = "¿Rechazar? ¡Que una bala de cañón me rompa el cuello si te dejo ir solo! No me conoces bien, capitán.";
+			link.l1 = "Esa es exactamente la respuesta que esperaba. La vieja Francia ya no es lo que era. Está demasiado vacía, aburrida, extraña… Dudo que quede allí alguien a quien pueda llamar amigo. En dos semanas zarparemos, y no quiero perder tiempo. Organicemos una fiesta en la taberna para celebrar la partida. ¿Qué dices?";
+			link.l1.go = "SharlieEpilog_Tonzag_5";
+		break;
+
+		case "SharlieEpilog_Tonzag_5":
+			dialog.text = "¡Ja! ¡Si crees que diré que no — te vas a esperar mucho!";
+			link.l1 = "Entonces está decidido — nos vemos en la taberna una vez que termine con mis asuntos.";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Tonzag_officer";
+			npchar.quest.SharlieEpilog_FarewellOfficers = true;
+			pchar.questTemp.SharlieEpilog_Tonzag = true;
+			pchar.questTemp.SharlieEpilog_Friends = sti(pchar.questTemp.SharlieEpilog_Friends) + 1;
 		break;
 
 	}

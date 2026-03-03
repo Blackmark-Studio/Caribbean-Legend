@@ -2440,7 +2440,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Mary_101":
-			dialog.text = "Hier, "+pchar.name+", schau mal, ja, gell! Joshua und Teresa Casper! Ich kann’s kaum fassen – wir haben es geschafft, geschafft, ja, gell! Und der Name des Schiffs – ‚Wrangler‘! Jetzt können wir alles über meinen Vater herausfinden – wer er war, wie er hierher gekommen ist…";
+			dialog.text = "Hier, "+pchar.name+", schau mal, ja, gell! Joshua und Teresa Casper! Ich kann’s kaum fassen – wir haben es geschafft, geschafft, ja, gell! Und der Name des Schiffs – ‚Wrangler‘! Jetzt können wir alles über meinen Vater herausfinden – wer er war, wie er hierher gekommen ist...";
 			link.l1 = "Ich fürchte, "+npchar.name+", du bist zu voreilig...   Das könnte sich als schwieriger erweisen, als es scheint.   Ein Schiff Seiner Majestät...   Wir müssen überlegen, wer uns helfen könnte, an Informationen aus den Archiven der Königlichen Flotte zu kommen...";
 			link.l1.go = "WildRose_Mary_102";
 			DelLandQuestMark(npchar);
@@ -4416,7 +4416,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Rupert_3":
 			sld = CharacterFromID("Mary");
-			if (CheckCharacterItem(sld, "hat11")) // У Мэри есть своя шляпа
+			if (GetCharacterEquipByGroup(sld, HAT_ITEM_TYPE) == "hat11")
 			{
 				dialog.text = "Ja-a, ich habe viel gesehen in meinem langen und schweren Leben. Jedes Mal denke ich, nichts kann mich mehr überraschen – und jedes Mal irre ich mich. Also hast du dort tatsächlich überlebt... Und sogar Theresas Hut bewahrt. Ich hätte nie gedacht, dass ich ihn je wiedersehen würde.";
 				link.l1 = "...";
@@ -4970,21 +4970,52 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Alonso_12":
-			dialog.text = "Und ich freue mich auch so sehr, euch zu sehen, Käpt’n! Irgendein Schuft hat diesem Halunken gesteckt, dass ihr ihn sucht — und wir wurden auf halbem Weg von einer Ladung Kartätschen empfangen. Mir und ein paar Jungs ist es gelungen, uns zurückzuziehen, und wir sind so schnell wir konnten in den Hafen gerannt, um zu warnen. Zum Glück hat der Wachposten, sobald er mich auf dem Kahn gesehen hat, den ich hastig in der Stadt gekauft habe, gleich verstanden, was los ist. Er hat schnell Leute zusammengerufen – und wir sind sofort hierher geeilt, um zu helfen.";
-			link.l1 = "Vielen Dank, Freund. Du hast uns vor dem sicheren Tod gerettet.";
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Tichingitu")) sld = characterFromId("Tichingitu");
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Duran")) sld = characterFromId("Duran");
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Tonzag")) sld = characterFromId("Tonzag");
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Irons")) sld = characterFromId("Irons");
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Longway")) sld = characterFromId("Longway");
+			dialog.text = "Ich bin verdammt froh, dich zu sehen, Käpt’n! Irgendein Mistkerl hat ihm wohl gesteckt, dass du hinter ihm her bist — wir gerieten mitten auf dem Weg in ein Hagel aus Kartätschen. Ich konnte mit ein paar Männern entkommen, und wir rannten zum Hafen, um dich zu warnen. Zum Glück hat der Wachposten mich im Beiboot erkannt, das ich in aller Eile gekauft hatte, und sofort geschaltet. Er hat schnell Leute zusammengetrommelt — und wir sind direkt hierher, um dir zu helfen.";
+			link.l1 = "Danke dir, Freund... "+sld.name+" ist durch meine Schuld gestorben... Ich hab euch direkt in die Falle geführt.";
 			link.l1.go = "WildRose_Alonso_13";
 		break;
 
 		case "WildRose_Alonso_13":
-			dialog.text = "Kleinigkeiten. Was machen wir jetzt, Käpt’n?";
-			link.l1 = "Sammle die Leute und geht zum Schiff. Mary und ich brauchen etwas Zeit für uns allein.";
+			dialog.text = "Niemand wusste, dass es eine Falle war. Du hast alles richtig gemacht — wir hätten vorsichtiger sein müssen.";
+			link.l1 = "Und trotzdem... Ich hätte es vorhersehen müssen. Ich hätte nie in diese Taverne gehen dürfen.";
+			link.l1.go = "WildRose_Alonso_14";
+		break;
+
+		case "WildRose_Alonso_14":
+			dialog.text = "Jetzt ist es zu spät, Käpt’n. Was sollen wir tun?";
+			link.l1 = "Unsere Männer müssen ehrenvoll begraben werden. Northwood auch, aber irgendwo tief im Dschungel. Niemand darf von diesem Ort wissen, vor allem nicht Mary. Also nimm nur die vertrauenswürdigsten Männer mit.";
+			link.l1.go = "WildRose_Alonso_15";
+		break;
+
+		case "WildRose_Alonso_15":
+			dialog.text = "Wird erledigt.";
+			link.l1 = "Mary und ich kommen später an Bord. Wir brauchen etwas Zeit für uns.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_31");
 		break;
 		
 		case "WildRose_Mary_261":
-			dialog.text = "Mein Gott, "+pchar.name+"... Ich kann es immer noch nicht fassen, einfach nicht glauben. Mein Vater... Er ist ein Monster... Warum tut er mir das an? Ist er wirklich völlig verrückt geworden?";
-			link.l1 = "Er musste schreckliche Qualen durchmachen. Die Meuterei auf der 'Cornwall', die Flucht über den Atlantik, der Sturm und der Tod deiner Mutter. Ich kann mir nicht vorstellen, wie er die Reise durch die Portale dieser Idole ohne den Trank der Komantschen überstanden hat – aber genau das hat seinen Verstand zerstört.";
+			string sSname = "";
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Tichingitu")) sSname = "Tichingitu";
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Duran")) sSname = "Claude";
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Tonzag")) sSname = "Hercule";
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Irons")) sSname = "Tommy";
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Longway")) sSname = "Longway";
+			if (!CheckAttribute(pchar, "questTemp.WildRose_Etap6_GoodEnd"))
+			{
+				dialog.text = "Mein Gott, "+pchar.name+"... Ich kann es immer noch nicht glauben. Mein Vater... Er ist ein Monster... Warum tut er mir das an? Er hat "+sSname+" getötet! Ist er wirklich wahnsinnig geworden?";
+				link.l1 = "Die Meuterei auf der 'Cornwall', die Flucht über den Atlantik, der Sturm, der Tod seiner Mutter, der Durchgang durch die Portale dieser Idole – ohne das Elixier der Komantschen! Prüfungen, die mehr als würdig waren. Und doch wäre es besser gewesen, wenn er aus dieser Hölle nie lebend herausgekommen wäre.";
+			}
+			else
+			{	
+				dialog.text = "Mein Gott, "+pchar.name+"... Ich kann es immer noch nicht glauben. Mein Vater... Er ist ein Monster... Warum tut er mir das an? Ist er wirklich wahnsinnig geworden?";
+				link.l1 = "Er musste durch entsetzliche Qualen gehen. Die Meuterei auf der 'Cornwall', die Flucht über den Atlantik, der Sturm, der Tod deiner Mutter... Ich kann mir nicht vorstellen, wie er die Portale dieser Idole ohne das Komantschen-Elixier überlebt hat – aber genau das hat seinen Verstand zerstört.";
+			}
 			link.l1.go = "WildRose_Mary_262";
 			locCameraFromToPos(-3.80, 1.10, 52.00, false, 0.61, 0.27, 49.69);
 			LAi_ActorAnimation(pchar, "sharle_mary_sit", "", 50.0);

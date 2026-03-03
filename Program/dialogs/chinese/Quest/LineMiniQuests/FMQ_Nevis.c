@@ -112,7 +112,7 @@ void ProcessDialogEvent()
 		case "seafox_6":
 			PlaySound("Voice\English\LE\SeaFox\SeaFox_02.wav");
 			dialog.text = "感谢你平稳的航行, 船长! 非常抱歉, 但我现在无法支付你... 我们本应在这个区域有一艘纵帆船, 但她不在这里。 如你所见。 我必须再请你帮一次忙。 你能在这个海湾等待两三天吗? 我们必须去四处看看。 一旦我们回来, 把我们送到安提瓜。 福克斯上校会慷慨地奖励你。 ";
-			link.l1 = "嗯……这好像和我们之前说好的不太一样……";
+			link.l1 = "嗯…… 这好像和我们之前说好的不太一样…… ";
 			link.l1.go = "seafox_7";
 		break;
 		

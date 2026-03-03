@@ -95,11 +95,11 @@ itm_stat_descr_indian_1 {Erhöht Kopfschussschaden um 20 %.}
 itm_stat_indian_10 {Gift}
 itm_stat_descr_indian_10 {Jeder Hieb-Angriff hat eine 15% Chance, den Gegner zu vergiften.}
 itm_stat_indian_11 {Rauch und Spiegel}
-itm_stat_descr_indian_11 {Jeder Ausgefallene Gegenstand erhöht deine Täuschungschance um 5%.}
+itm_stat_descr_indian_11 {Erhöht die Erfolgschance, unbemerkt in die Stadt zu gelangen, um 15 %. Nützlich beim Eintritt aus dem Dschungel und bei Nacht.}
 itm_stat_indian_2 {Prüfen}
 itm_stat_descr_indian_2 {Die Kunst, das richtige Maß an Schwarzpulver zu wählen, erhöht den Schaden von Kugeln und Kartätschen um 10 % und um weitere 5 % bei überladener und panzerbrechender Munition.}
 itm_stat_indian_3 {Blutgier}
-itm_stat_descr_indian_3 {Erhöht ausgehenden kritischen Schaden um 15 %.}
+itm_stat_descr_indian_3 {Erhöht den verursachten kritischen Schaden um $modifierPercent(blade_CritDamage).}
 itm_stat_indian_4 {Ausholen}
 itm_stat_descr_indian_4 {Schwere Waffen verursachen 15 % mehr Schaden mit schweren Angriffen.}
 itm_stat_indian_5 {Ausgleicher}
@@ -237,7 +237,7 @@ itm_stat_descr_secondary_hat11 {Angriffsgeschwindigkeit steigt um 5 %, wenn die 
 itm_stat_blade_SP_3low {Unentdecktes Potenzial}
 itm_stat_descr_blade_SP_3low {Diese Klinge ist nicht auf dem Höhepunkt ihrer Macht – etwas fehlt...}
 itm_stat_blade_SP_3 {Schnitter}
-itm_stat_descr_blade_SP_3 {Verhindert Heilung aus allen Quellen. Für je 2 % fehlende Gesundheit steigen ausgehender Schaden um 1,5 % und die Energiewiederherstellung um 1,75 %.}
+itm_stat_descr_blade_SP_3 {Verhindert Heilung aus allen Quellen. Je 2 % fehlender Lebenspunkte erhöhen den verursachten Schaden um 1,5 % und die Energiewiederherstellung um 1,75 %.}
 itm_stat_blade_41 {Flexibilität}
 itm_stat_descr_blade_41 {Erhält einen Schadensbonus basierend auf deiner höchsten Hiebwaffen-Fertigkeit.}
 itm_stat_lacrima_patris {Pfad des Rechtschaffenen}
@@ -290,3 +290,8 @@ itm_stat_piratesJournal_3 {Selbstversorgung}
 itm_stat_descr_piratesJournal_3 {Erhöht die Effizienz von Reparaturen auf See um 30 %. Der Bonus wird verdoppelt, wenn das Flaggschiff die „Amsterdam“ ist.}
 itm_stat_pistol15 {Klein, aber tödlich}
 itm_stat_descr_pistol15 {Das Ziehen und Wegstecken dieser Pistole ist um 15 % schneller. Treffer stoßen Gegner stark zurück.}
+itm_stat_bonus_blade_SP_3
+{
+Aktueller Schadensbonus: $attr($context.damage)
+Bonus zur Energiewiederherstellung: $attr($context.energy)
+}

@@ -95,11 +95,11 @@ itm_stat_descr_indian_1 {Aumenta i danni ai colpi alla testa del 20%.}
 itm_stat_indian_10 {Veleno}
 itm_stat_descr_indian_10 {Ogni attacco con colpo ha il 15% di probabilità di avvelenare il nemico.}
 itm_stat_indian_11 {Fumo negli occhi}
-itm_stat_descr_indian_11 {Ogni oggetto Stravagante aumenta la tua probabilità di Inganno del 5%.}
+itm_stat_descr_indian_11 {Aumenta del 15% le probabilità di riuscire a entrare furtivamente in città. Utile entrando dalla giungla e di notte.}
 itm_stat_indian_2 {Verifica}
 itm_stat_descr_indian_2 {La capacità di dosare la polvere da sparo aumenta del 10% i danni di Palla e Mitraglia, e di un ulteriore 5% per munizioni Sovraccarico e Perforante.}
 itm_stat_indian_3 {Sete di sangue}
-itm_stat_descr_indian_3 {Aumenta i danni critici inflitti del 15%.}
+itm_stat_descr_indian_3 {Aumenta i danni critici inflitti di $modifierPercent(blade_CritDamage).}
 itm_stat_indian_4 {Caricamento}
 itm_stat_descr_indian_4 {Le armi pesanti infliggono il 15% di danni in più con gli attacchi pesanti.}
 itm_stat_indian_5 {Equalizzatore}
@@ -237,7 +237,7 @@ itm_stat_descr_secondary_hat11 {La velocità d’attacco aumenta del 5% se il pe
 itm_stat_blade_SP_3low {Potenziale Inespresso}
 itm_stat_descr_blade_SP_3low {Questa lama non è al massimo del suo potere: manca qualcosa...}
 itm_stat_blade_SP_3 {Mietitore}
-itm_stat_descr_blade_SP_3 {Impedisce la cura da qualsiasi fonte. Per ogni 2% di Salute mancante, i danni inflitti aumentano dell’1,5% e la rigenerazione di energia dell’1,75%.}
+itm_stat_descr_blade_SP_3 {Impedisce le cure da qualsiasi fonte. Ogni 2% di Vita mancante aumenta i danni inflitti dell’1,5% e il recupero di energia dell’1,75%.}
 itm_stat_blade_41 {Flessibilità}
 itm_stat_descr_blade_41 {Ottiene un bonus ai danni dalla tua abilità Arma bianca più alta.}
 itm_stat_lacrima_patris {Sentiero del Giusto}
@@ -290,3 +290,8 @@ itm_stat_piratesJournal_3 {Autosufficienza}
 itm_stat_descr_piratesJournal_3 {Aumenta l’efficienza delle riparazioni in mare del 30%. Il bonus raddoppia se la nave ammiraglia è l’“Amsterdam”.}
 itm_stat_pistol15 {Piccolo ma letale}
 itm_stat_descr_pistol15 {L’estrazione e il rinfodero di questa pistola sono più rapidi del 15%. I colpi respingono con forza i nemici.}
+itm_stat_bonus_blade_SP_3
+{
+Bonus ai danni attuale: $attr($context.damage)
+Bonus al recupero di energia: $attr($context.energy)
+}

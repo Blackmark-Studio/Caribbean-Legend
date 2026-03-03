@@ -42,7 +42,7 @@ Tobago {Tobago}
 MarieGalante {Marie Galante}
 SentJons_town {St. John's}
 Pirates_town {Sharptown}
-Bridge_town {Bridgetown}
+Bridgetown_town {Bridgetown}
 Beliz_town {Belize}
 Santiago_town {Santiago}
 PuertoPrincipe_town {Puerto del Principe}
@@ -70,7 +70,8 @@ PortSpein_town {San Jose}
 Tenotchitlan_town {Tayasal}
 FortOrange_town {Maroon Town}
 Providence_town {San Andres}
-Estate {Oglethorpe estate, England}
+Oglethorpe_Estate {Oglethorpe estate}
+DeMonpe_Estate {de Monpe Estate}
 DesMoines {Des Moines}
 LosTeques_town {Los-Teques mine}
 ExitMine {Passage to the mine}
@@ -314,7 +315,8 @@ Crypt {Crypt}
 Exit {Quit}
 The cavern {Cave}
 ????? {?????}
-Passage (мост)Beach { }
+Passage {Bridge}
+Beach {Beach}
 Cave {Cave}
 Cave entrance {Entrance to the Cave}
 FloodedCave {Drowned Cave}
@@ -396,3 +398,7 @@ Basement {Basement}
 Ruins {Ruins}
 Ulysse {Aboard the Ulysse}
 La Espada Del Rey {Fluyt 'La Espada del Rey'}
+Europe {Europe}
+England {England}
+France {France}
+Spain {Spain}

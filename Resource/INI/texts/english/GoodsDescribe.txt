@@ -229,6 +229,11 @@ Cannon_42_descr
 {
 Formidable guns, the peak of naval firepower. Used exclusively on ships of the line, in forts, and in major European battles. Require a huge and well-trained crew for operation.Range - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
 }
+Cannon_48 {48-pound Bombards}
+Cannon_48_descr
+{
+Formidable guns, the peak of naval firepower. Used exclusively on ships of the line, in forts, and in major European battles. Require a huge and well-trained crew for operation.Range - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
+}
 Culverine_8 {Demi-culverins}
 Culverine_8_descr
 {

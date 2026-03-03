@@ -266,7 +266,6 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	CI_CreateAndSetControls("Sailing3Pers", "Sea_CameraSwitch", CI_GetKeyCode("VK_TAB"), 0, true);
     AddControlToGroups("Sea_CameraSwitch", "Sailing1Pers", "SailingFire", "", "");
 
-    // Rosarak Зум подзорки
 	CI_CreateAndSetControls("Sailing1Pers", "TelescopeMode",    CI_GetKeyCode("VK_CONTROL"),     0, true);
 	CI_CreateAndSetControls("Sailing1Pers", "TelescopeZoomIn",  CI_GetKeyCode("VK_MWHEEL_UP"),   0, true);
 	CI_CreateAndSetControls("Sailing1Pers", "TelescopeZoomOut", CI_GetKeyCode("VK_MWHEEL_DOWN"), 0, true);

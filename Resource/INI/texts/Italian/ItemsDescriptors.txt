@@ -80,14 +80,14 @@ descriptor_descr_WeaponCurvature_1 {Quest’arma ha una curvatura marcata e il b
 descriptor_descr_ArmorType_0 {L’armatura leggera è quasi identica a un abito normale e non limita i movimenti. In cambio, offre meno protezione.}
 descriptor_descr_ArmorType_1 {L’armatura media limita leggermente i movimenti, ma protegge bene gli organi vitali. Riduce la velocità di movimento del personaggio del 5%.}
 descriptor_descr_ArmorType_2 {L’armatura pesante è ingombrante e difficile da muovere, ma ti permette di assaltare una fortezza. Riduce la velocità di movimento del 10%.}
-descriptor_descr_ArmorMaterial_0 {La stoffa non resiste ai colpi forti, ma protegge da graffi e abrasioni. Riduce il danno subito del 4%.}
-descriptor_descr_ArmorMaterial_1 {L’armatura in cuoio può salvarti in una rissa da taverna, ma non ferma né un proiettile né una stoccata precisa. Riduce i danni subiti dell’8%.}
-descriptor_descr_ArmorMaterial_2 {Le piastre offrono un ottimo equilibrio tra peso e protezione. Possono salvarti la vita. Riduce i danni subiti del 15%.}
+descriptor_descr_ArmorMaterial_0 {La stoffa non resiste ai colpi forti, ma protegge da graffi e abrasioni. Riduce il danno subito del $percent($MaterialDefenceValue(0)).}
+descriptor_descr_ArmorMaterial_1 {L’armatura in cuoio può salvarti in una rissa da taverna, ma non ferma né un proiettile né una stoccata precisa. Riduce i danni subiti dell’$percent($MaterialDefenceValue(1)).}
+descriptor_descr_ArmorMaterial_2 {Le piastre offrono un ottimo equilibrio tra peso e protezione. Possono salvarti la vita. Riduce i danni subiti del $percent($MaterialDefenceValue(2)).}
 descriptor_descr_ArmorMaterial_3
 {
-L’armatura stampata è prodotta in serie per equipaggiare le truppe ed è usata nelle guerre europee.Riduce i danni subiti del 22%.
+L’armatura stampata è prodotta in serie per equipaggiare le truppe ed è usata nelle guerre europee.Riduce i danni subiti del $percent($MaterialDefenceValue(3)).
 }
-descriptor_descr_ArmorMaterial_4 {La produzione di armature forgiata di alta qualità è un processo complesso e costoso, che le rende una rarità nei Caraibi. Riduce i danni subiti del 35%.}
+descriptor_descr_ArmorMaterial_4 {La produzione di armature forgiata di alta qualità è un processo complesso e costoso, che le rende una rarità nei Caraibi. Riduce i danni subiti del $percent($MaterialDefenceValue(4)).}
 descriptor_descr_AmuletType_0 {Si basa su presagi, superstizioni marinare e reali rapporti di causa-effetto.}
 descriptor_descr_AmuletType_1 {Attinge al potere degli dèi pagani e ai rituali nativi.}
 descriptor_descr_AmuletType_2 {Attinge al potere dei santi cristiani e della fede giusta.}

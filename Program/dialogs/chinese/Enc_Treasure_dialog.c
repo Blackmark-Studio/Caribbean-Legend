@@ -27,6 +27,9 @@ void ProcessDialogEvent()
     }
 
 	ProcessDuelDialog(NPChar, link, Diag); //海军
+	
+	bool bPesosMap = Statistic_AddValue(PChar, "Treasure", 0) < 3;
+	int iTreasureMapPesosCost = TreasureMapPesosCost();
 
 	switch(Dialog.CurrentNode)
 	{
@@ -52,7 +55,7 @@ void ProcessDialogEvent()
 		
 		case "map_treasure_1":
             ok = GetCharacterItem(Pchar, "map_part1") > 0 && GetCharacterItem(Pchar, "map_part2") > 0;
-            if (GetCharacterItem(Pchar, "map_full") > 0 || ok)
+            if (!CheckAttribute(NPChar, "TreasureMoney") || GetCharacterItem(Pchar, "map_full") > 0 || ok)
             {
 				dialog.Text = "来杯酒! 嗝... 和我一起喝! ";
 				Link.l1 = "哦, 闭嘴。 我还以为你是认真的。 ";
@@ -81,15 +84,31 @@ void ProcessDialogEvent()
 		    {
                 npchar.quest.trade_date      = lastspeak_date;
             }
-			dialog.Text = "只要" + Pchar.GenQuest.TreasureMoney + "杜布隆。 "; // Addon-2016 Jason
-			Link.l1 = "好吧。 用一块漂亮的布把它包起来。 ";
-			if (PCharDublonsTotal() >= sti(Pchar.GenQuest.TreasureMoney)) // Addon-2016 Jason
+			if(bPesosMap)
 			{
-			   Link.l1.go = "map_treasure_buy";
+				dialog.Text = "只要" + FindRussianMoneyString(iTreasureMapPesosCost) + "。 "; // Addon-2016 Jason
+				Link.l1 = "好吧。 用一块漂亮的布把它包起来。 ";
+				if(sti(pchar.money) >= iTreasureMapPesosCost) // Addon-2016 Jason
+				{
+				   Link.l1.go = "map_treasure_buy";
+				}
+				else
+				{
+				   Link.l1.go = "Map_NotBuy";
+				}
 			}
 			else
 			{
-			   Link.l1.go = "Map_NotBuy";
+				dialog.Text = "只要" + NPChar.TreasureMoney + "杜布隆。 "; // Addon-2016 Jason
+				Link.l1 = "好吧。 用一块漂亮的布把它包起来。 ";
+				if (PCharDublonsTotal() >= sti(NPChar.TreasureMoney)) // Addon-2016 Jason
+				{
+				   Link.l1.go = "map_treasure_buy";
+				}
+				else
+				{
+				   Link.l1.go = "Map_NotBuy";
+				}
 			}
 			Link.l2 = "太贵了。 我不需要。 ";
 			Link.l2.go = "exit";
@@ -99,7 +118,8 @@ void ProcessDialogEvent()
 			dialog.Text = "给你。 现在你要发财了! ";
 			Link.l1 = "谢谢! ";
 			Link.l1.go = "exit";
-			RemoveDublonsFromPCharTotal(sti(Pchar.GenQuest.TreasureMoney));// Addon-2016 Jason
+			if(bPesosMap) AddMoneyToCharacter(pchar, -iTreasureMapPesosCost);
+			else RemoveDublonsFromPCharTotal(sti(NPChar.TreasureMoney));// Addon-2016 Jason
 			GiveItem2Character(pchar, "map_full");
 			Diag.TempNode = "Temp_treasure";
 			npchar.LifeDay = 0; // 卖完就跑, 如果是决斗, 他的生命会延长

@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	
 	DeceptionChance = sti(GetSummonSkillFromName(pchar, SKILL_SNEAK)*100/110);
 	if(DeceptionChance - DeceptionPenalty > 50) DeceptionChance -= DeceptionPenalty;
-	if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE) 
+	if (false) 
 	{
 		DeceptionChance = sti(GetSummonSkillFromName(pchar, SKILL_SNEAK)*100/310);
 		if(DeceptionChance - DeceptionPenalty > 50) DeceptionChance -= DeceptionPenalty;
@@ -63,10 +63,10 @@ void ProcessDialogEvent()
 		
 		case "First time":			
             NextDiag.TempNode = "First time";
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+			if (false)
 			{
 				// 海盗占位符
-				if (sti(pchar.nation) == PIRATE)
+				if (false)
 				{
     				dialog.text = RandPhraseSimple("镇上有海盗? ! 真不敢相信... 抓住" + GetSexPhrase("他","她") + "! ! ", "那是个海盗! 抓住" + GetSexPhrase("他","她") + "! ! ! ");
 					link.l1 = RandPhraseSimple("我是海盗, 那又怎样? ", "呵, 你们可以试试... ");
@@ -92,7 +92,7 @@ void ProcessDialogEvent()
 			else
 			{
 				// eddy。 检查是否是敌人。 -->
-				if (GetNationRelation(sti(NPChar.nation), GetBaseHeroNation()) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+				if (false)
 				{
 					// 文森托文书
 					if(CheckAttribute(pchar, "questTemp.Guardoftruth") && CheckCharacterItem(pchar, "VerifyPaper") && npchar.city == "santiago")
@@ -143,7 +143,7 @@ void ProcessDialogEvent()
 					{
 						//==> 按旗帜
 						// 海盗占位符
-						if (sti(pchar.nation) == PIRATE)
+						if (false)
 						{
     						dialog.text = RandPhraseSimple("镇上有海盗? ! 真不敢相信... 抓住他! ", "那是个海盗! 抓住他! ");
 							link.l1 = RandPhraseSimple("是的, 我是海盗 —现在怎样? ", "呵, 有本事就来抓我... ");
@@ -469,8 +469,8 @@ void ProcessDialogEvent()
 			//--> Дикая Роза
 			if (CheckAttribute(pchar, "questTemp.WildRose_DialogeWithSoldierOnPier") && npchar.location.group == "soldiers" && npchar.city == "Bridgetown")
 			{
-				dialog.text = "欢迎来到布里奇敦, "+GetAddress_Form(NPChar)+"……";
-				link.l1 = "我还以为我的脸在法属殖民地之外也很有名呢…… 我叫"+GetFullName(pchar)+"。";
+				dialog.text = "欢迎来到布里奇敦, "+GetAddress_Form(NPChar)+"…… ";
+				link.l1 = "我还以为我的脸在法属殖民地之外也很有名呢……  我叫"+GetFullName(pchar)+"。";
 				link.l1.go = "WildRose_Soldier_1";
 				DeleteAttribute(pchar, "questTemp.WildRose_DialogeWithSoldierOnPier");
 				DelLandQuestMark(npchar);
@@ -513,7 +513,6 @@ void ProcessDialogEvent()
 				dialog.text = "想想看! 如此无礼! 以商人的名义来到这里! 你的照片贴在每个营房里, 你这个混蛋! 这次你逃不掉了! 抓住他! ";
 				link.l1 = RandPhraseSimple("啊! ... ", "好吧, 你自找的... ");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (pchar.location != "LosTeques_town" && findsubstr(pchar.location.from_sea, "_town" , 0) == -1) //如果停泊不在城市 300912
@@ -521,7 +520,6 @@ void ProcessDialogEvent()
 				dialog.text = "你是来这里交易的? 我可以问问怎么交易吗? 你的船在哪里? 你知道, 这一切看起来都很可疑, 我不得不拘留你, 直到我们弄清楚。 放下武器跟我来! ";
 				link.l1 = RandPhraseSimple("去你的! ", "当两个星期天在一周内到来时... ");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (iTemp == -1)
@@ -529,7 +527,6 @@ void ProcessDialogEvent()
 				dialog.text = "你的许可证必须被吊销, 因为它已经过期了, 因此无效。 放下武器跟我来接受进一步调查! ";
 				link.l1 = RandPhraseSimple("去你的! ", "当两个星期天在一周内到来时... ");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (iTemp == 0)
@@ -735,7 +732,7 @@ void ProcessDialogEvent()
 		case "WildRose_Soldier_1":
 			if (GetHour() >= 6 && GetHour() <= 21)
 			{
-				dialog.text = "啊, 是您啊, 船长……太阳底下真让人犯困…… 该死的热浪! ";
+				dialog.text = "啊, 是您啊, 船长…… 太阳底下真让人犯困……  该死的热浪! ";
 			}
 			else
 			{
@@ -746,13 +743,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Soldier_2":
-			dialog.text = "咳, 是的, "+GetAddress_Form(NPChar)+"。 不过我奉威洛比勋爵的命令行事: 必须提醒所有新上岛的人, 几天前有一小撮奴隶从毕肖普种植园逃跑了。 那些该死的监工大概在呼呼大睡时让他们砸开了镣铐。 本来今天我该在我亲爱的安杰莉卡怀里……";
+			dialog.text = "咳, 是的, "+GetAddress_Form(NPChar)+"。 不过我奉威洛比勋爵的命令行事: 必须提醒所有新上岛的人, 几天前有一小撮奴隶从毕肖普种植园逃跑了。 那些该死的监工大概在呼呼大睡时让他们砸开了镣铐。 本来今天我该在我亲爱的安杰莉卡怀里…… ";
 			link.l1 = "让我猜猜: 派去追捕庄园主“财产”的, 是你们驻军?";
 			link.l1.go = "WildRose_Soldier_3";
 		break;
 		
 		case "WildRose_Soldier_3":
-			dialog.text = "当然……毕肖普还派了几支雇佣兵小队进了雨林, 但他还嫌不够。 他许诺, 谁要是能把奴隶带回来——活的, 就有重赏。 平时干活的是那些黑皮肤的, 但最近送来了一批逃兵——挖矿不顶用, 但脑子倒挺灵, 居然真从种植园逃了出去……";
+			dialog.text = "当然…… 毕肖普还派了几支雇佣兵小队进了雨林, 但他还嫌不够。 他许诺, 谁要是能把奴隶带回来——活的, 就有重赏。 平时干活的是那些黑皮肤的, 但最近送来了一批逃兵——挖矿不顶用, 但脑子倒挺灵, 居然真从种植园逃了出去…… ";
 			link.l1 = "所以他们是白人? ";
 			link.l1.go = "WildRose_Soldier_4";
 		break;
@@ -765,9 +762,9 @@ void ProcessDialogEvent()
 		
 		case "WildRose_Soldier_5":
 			dialog.text = "当然没有——城又没戒严。 您想去哪儿就去哪儿。 不过要是您想猎人变成猎物, 正好撞进火力交叉点, 那就别怪我们没提醒。真要能活下来, 也别回头去总督府拍门喊冤——毕竟, 他已经表现出足够的善意, 不光照顾布里奇敦的居民, 还照顾到了客人。";
-			link.l1 = "这真是……仁慈之举。 愿上帝保佑弗朗西斯·威洛比!";
+			link.l1 = "这真是…… 仁慈之举。 愿上帝保佑弗朗西斯·威洛比!";
 			link.l1.go = "WildRose_Soldier_6";
-			link.l2 = "唉, 要是所有总督都像威洛比爵士一样关心新来的就好了……";
+			link.l2 = "唉, 要是所有总督都像威洛比爵士一样关心新来的就好了…… ";
 			link.l2.go = "WildRose_Soldier_7";
 		break;
 		

@@ -34,7 +34,7 @@ aref GetItemDescriptors(ref ref_Id_Idx)
 	return descriptors;
 }
 
-void SetDescriptorsTooltip(string sCurrentNode, string header, string text, string badText, string goodText, ref rObject)
+void SetDescriptorsTooltip(string sCurrentNode, ref header, ref text, ref badText, ref goodText, ref rObject)
 {
 	if (!HasSubStr(sCurrentNode, "DESCRIPTOR_")) return;
 
@@ -47,7 +47,7 @@ void SetDescriptorsTooltip(string sCurrentNode, string header, string text, stri
 	goodText = "";
 }
 
-int FillUpDescriptors(ref rObject)
+int FillUpDescriptors(ref rObject, bool hide = false)
 {
 	aref descriptors, descriptor;
 	makearef(descriptors, rObject.descriptors);
@@ -56,7 +56,7 @@ int FillUpDescriptors(ref rObject)
 	{
 		string nodeName = "DESCRIPTOR_" + (x+1);
 		string nodeName2 = nodeName + "_VALUE";
-		if (x < descriptorsQty)
+		if (x < descriptorsQty && !hide)
 		{
 			SetNodeUsing(nodeName, true);
 			SetNodeUsing(nodeName2, true);

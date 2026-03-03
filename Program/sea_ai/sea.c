@@ -75,10 +75,10 @@ float	SeaMapLoadAY = 10.54;
 float	fSeaExp = 0.0;
 float	fSeaExpTimer = 0.0;
 
-int	iSeaSectionLang = -1;
-
 void DeleteSeaEnvironment()
 {
+	ClearPostEventsForEvent(SHIP_DETONATE_SMALL);
+
     PauseParticles(true); //fix
 	Ship_Walk_Delete();
 
@@ -150,19 +150,16 @@ void DeleteSeaEnvironment()
 	// delete hulls fall modules
 	DeleteEntitiesByType("hull");	
 		
- 	// delete particle system
+    // delete particle system
 	//	DeleteParticles();
 
 	ClearSeaFantoms();
 
 	// delete our group
-		Group_DeleteGroup(PLAYER_GROUP);
+    Group_DeleteGroup(PLAYER_GROUP);
 
 	// delete fantom and dead groups
-		Group_DeleteUnusedGroup();
-
-	//
-		LanguageCloseFile(iSeaSectionLang); iSeaSectionLang = -1;
+    Group_DeleteUnusedGroup();
 }
 
 void CreateSeaEnvironment()
@@ -171,8 +168,6 @@ void CreateSeaEnvironment()
 	
 	sCurrentSeaExecute = SEA_EXECUTE;
 	sCurrentSeaRealize = SEA_REALIZE;
-
-	iSeaSectionLang = LanguageOpenFile("SeaSection.txt");
 
 	CreateParticleEntity();
 
@@ -278,10 +273,11 @@ string Sea_FindNearColony()
 		aLocators = GetAttributeN(arIslandReload, i);
 		if(aLocators.name == sIslandLocator)
 		{
-			sColony = aLocators.go;
-            if(CheckAttribute(&locations[FindLocation(sColony)], "fastreload"))
+			string sLocatorName = aLocators.go;
+			int iLocationIndex = FindLocation(sLocatorName);
+            if(CheckAttribute(&locations[iLocationIndex], "fastreload"))
             {
-                sColony = locations[FindLocation(sColony)].fastreload;
+                sColony = locations[iLocationIndex].fastreload;
                 break;
             }
 		}
@@ -318,6 +314,13 @@ void Sea_LandLoad()
 				return;
 			}
 		}
+
+		if (!STH_CanEnterTown(sColony))
+		{
+			if (IsDay()) Event("StoryFrameLaunch", "ssss", "ssss", "StealthCheckHarbour", "colonyId", sColony);
+			else Event("StoryFrameLaunch", "ssssss", "ssssss", "StealthCheckNight", "colonyId", sColony, "entryPoint", "port");
+			return;
+		}
 	}
 	pchar.CheckEnemyCompanionType = "Sea_LandLoad"; // откуда вход
     if (!CheckEnemyCompanionDistance2GoAway(true)) return; // && !bBettaTestMode  табличка выхода из боя
@@ -339,6 +342,11 @@ void Sea_LandLoad()
 		DeleteAttribute(pchar, "CheckStateOk"); // проверка протектором
 		if(CheckAttribute(pchar,"StealtDeceptionPenalty")) DeleteAttribute(pchar,"StealtDeceptionPenalty");
 		Group_FreeAllDead();
+		if(GetMaxAutoSaves("Moor") != 0)
+		{
+			DeleteAfterSaveFunction();
+			PostEvent("Event_NewAutoSave", 500, "s", "Moor");
+		}
 	}
 	DoQuestFunctionDelay("Hat6_deal", 2.5);
 }
@@ -388,6 +396,17 @@ void Sea_MapLoadXZ_AY(float x, float z, float ay)
 
 void Sea_MapLoad()
 {
+	if(GetMaxAutoSaves("Map") != 0)
+	{
+		SetAfterSaveFunction("Sea_MapLoad_Continue");
+		PostEvent("Event_NewAutoSave", 1, "s", "Map");
+	}
+	else
+		Sea_MapLoad_Continue();
+}
+
+void Sea_MapLoad_Continue()
+{	
 	// boal 201004 проверка на перегруз и мин команду -->
 	ref  rPlayer = GetMainCharacter();
     int  i, cn;
@@ -509,7 +528,7 @@ void Land_MapLoad()
 	SeaMapLoadAY = stf(pchar.Ship.Ang.y);
 }
 
-string sTaskList[2];
+string sTaskList[2]; // ~!~ TO_DO: ref
 
 void Sea_FreeTaskList()
 {
@@ -565,8 +584,10 @@ void SeaLogin(ref Login)
 	// weather parameters
 	WeatherParams.Tornado = false;
 	WeatherParams.Storm = false;
-	if (CheckAttribute(&Login,"Storm")) { WeatherParams.Storm = Login.Storm; }
-	if (CheckAttribute(&Login,"Tornado")) { WeatherParams.Tornado = Login.Tornado; }
+	if (CheckAttribute(&Login,"Storm"))
+        WeatherParams.Storm = Login.Storm;
+	if (CheckAttribute(&Login,"Tornado"))
+        WeatherParams.Tornado = Login.Tornado;
 	bStorm = sti(WeatherParams.Storm);
 	bTornado = sti(WeatherParams.Tornado);
 	if (bStorm)
@@ -1298,10 +1319,9 @@ void Sea_FirstInit()
 { 
 	bSeaLoaded = true;
 	RefreshBattleInterface();
-	if( SeaCameras.Camera == "SeaDeckCamera" ) {
+	if (SeaCameras.Camera == "SeaDeckCamera")
 		Sailors.IsOnDeck = "1";
-	}
-	CreateEntity(&Seafoam,"Seafoam");//				ReloadProgressUpdate();
+	CreateEntity(&Seafoam,"Seafoam"); // ReloadProgressUpdate();
 	LayerAddObject(SEA_EXECUTE, &Seafoam, -1);
 	LayerAddObject(SEA_REALIZE, &Seafoam, -1);
 	if(Whr_IsStorm()) Seafoam.storm = "true";
@@ -1330,14 +1350,13 @@ void Sea_Reload()
 
 void Sea_ReloadStart()
 {
-	if (!bSeaActive) { return; }
+	if (!bSeaActive) return;
 	ShipsInit();	
 	//characters[1].ship.type = GenerateShip(SHIP_barque, 1);
 	DeleteSeaEnvironment();
 	SetEventHandler("Sea_Reload", "Sea_Reload", 0);
 	PostEvent("Sea_Reload", 1);
 }
-
 
 void Sea_Save()
 {
@@ -1383,7 +1402,7 @@ float SetMaxSeaHeight(int islandIdx)
 	makearef(arShip, pchar.Ship.Pos);
 	string sReload, sName, sLabel;
 	sReload = Island_FindNearestLocator2PChar("reload");	//найдем ближайший к нам локатор
-	if(sReload == "")										//ситуация когда не получается найти локатор
+	if (sReload == "") //ситуация когда не получается найти локатор
 	{
 		_MaxSeaHeight = MAX_SEA_HEIGHT;
 		Whr_DebugLog("SetMaxSeaHeight: sReload == ''''");
@@ -1452,7 +1471,7 @@ void Sea_LoadIsland(string sIslandID)
 
 		// boal <--
 		CreateEntity(&Island, "Island");
-		Island.LightingPath = GetLightingPath();
+		Island.LightingPath = GetIslandLightingPath();
 		//Island.dynamicLightsOn = DYNAMIC_LIGHTS;
 		Island.dynamicLightsOn =  sti(InterfaceStates.DYNAMICLIGHTS); //  belamour динамический свет
 		Island.ImmersionDistance = Islands[iIslandIndex].ImmersionDistance;			// distance = fRadius * ImmersionDistance, from island begin immersion
@@ -1461,42 +1480,44 @@ void Sea_LoadIsland(string sIslandID)
 		SetTexturePath(0, sTexturePath);
 		Island.FogDensity = Weather.Fog.IslandDensity;
 		// трава на остров
-		if( CheckAttribute(&Islands[iIslandIndex],"jungle") )
+		if (CheckAttribute(&Islands[iIslandIndex], "jungle"))
 		{
 			string tex = "";
 			float fJungleScale = 10.0;
 			fW = 20.0;
 			fH = 200.0;
 			fMinDist = 100.0;
-			if( CheckAttribute(&InterfaceStates,"FoliageDrawDistance") ) {
+			if (CheckAttribute(&InterfaceStates,"FoliageDrawDistance"))
 				fMaxDist = stf(InterfaceStates.FoliageDrawDistance);
-			} else {
-				fMaxDist = 1000;
-			}
+			else
+                fMaxDist = 1000;
 			fMinLod = 0.1;
-			if( CheckAttribute(&Islands[iIslandIndex],"jungle.scale") )
+			if (CheckAttribute(&Islands[iIslandIndex],"jungle.scale"))
 			{
 				fJungleScale = stf(Islands[iIslandIndex].jungle.scale);
 			}
 			if (GetTime() >=  6.0 && GetTime() < 20.0)
 			{
-				if(bRain || bStorm) tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"n.tga";
-				else {
+				if (bRain || bStorm)
+                    tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"n.tga";
+				else
+                {
 					tex = "Grass\"+Islands[iIslandIndex].jungle.texture+".tga";
-					if(GetTime() >=  6.0 && GetTime() < 7.0) tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"m.tga";
-					if(GetTime() >=  18.0 && GetTime() < 19.0) tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"e1.tga";
-					if(GetTime() >=  19.0 && GetTime() < 20.0) tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"e2.tga";
+					if (GetTime() >=  6.0 && GetTime() < 7.0) tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"m.tga";
+					else if (GetTime() >=  18.0 && GetTime() < 19.0) tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"e1.tga";
+					else if (GetTime() >=  19.0 && GetTime() < 20.0) tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"e2.tga";
 				}
-			} else tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"n.tga";
+			}
+            else tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"n.tga";
 			CreateGrass("resource\models\islands\"+ Islands[iIslandIndex].id +"\"+ Islands[iIslandIndex].jungle.patch + ".grs", tex, fJungleScale, fW, fH, fMinDist, fMaxDist, fMinLod);
 			Whr_DebugLog("fMaxDistFoliage:" + makeint(fMaxDist));
 		}
-/*		
+/*
 		if (MOD_BETTATESTMODE == "On")
 		{
 			CreateEntity(&SeaLighter, "lighter");  //eddy. не надо это пока коментить, это и есть Lighter. ошибку даёт, если в локлайтере лоадинг == 0, т.к. в этом случае тулза не инитится в движке.
 		}
-*/		
+*/
 		SendMessage(&SeaLighter, "ss", "ModelsPath", Islands[iIslandIndex].filespath.models);
 		SendMessage(&SeaLighter, "ss", "LightPath", GetLightingPath());
 
@@ -1561,33 +1582,41 @@ void Sea_UpdateIslandGrass(string sIslandID)
 	{
 		float  fW, fH, fMinDist, fMaxDist, fMinLod;
 		// трава на остров
-		if( CheckAttribute(&Islands[iIslandIndex],"jungle") )
+		if (CheckAttribute(&Islands[iIslandIndex], "jungle"))
 		{
 			string tex = "";
 			float fJungleScale = 10.0;
 			fW = 20.0;
 			fH = 200.0;
 			fMinDist = 100.0;
-			if( CheckAttribute(&InterfaceStates,"FoliageDrawDistance") ) {
+			if (CheckAttribute(&InterfaceStates, "FoliageDrawDistance"))
+            {
 				fMaxDist = stf(InterfaceStates.FoliageDrawDistance);
-			} else {
-				fMaxDist = 1000;
 			}
+            else fMaxDist = 1000;
+
 			fMinLod = 0.1;
-			if( CheckAttribute(&Islands[iIslandIndex],"jungle.scale") )
+			if (CheckAttribute(&Islands[iIslandIndex],"jungle.scale"))
 			{
 				fJungleScale = stf(Islands[iIslandIndex].jungle.scale);
 			}
 			if (GetTime() >=  6.0 && GetTime() < 20.0)
 			{
-				if(bRain || bStorm) tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"n.tga";
-				else {
+				if (bRain || bStorm)
+                    tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"n.tga";
+				else
+                {
 					tex = "Grass\"+Islands[iIslandIndex].jungle.texture+".tga";
-					if(GetTime() >=  6.0 && GetTime() < 7.0) tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"m.tga";
-					if(GetTime() >=  18.0 && GetTime() < 19.0) tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"e1.tga";
-					if(GetTime() >=  19.0 && GetTime() < 20.0) tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"e2.tga";
+					if (GetTime() >=  6.0 && GetTime() < 7.0)
+                        tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"m.tga";
+					else if (GetTime() >=  18.0 && GetTime() < 19.0)
+                        tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"e1.tga";
+					else if (GetTime() >=  19.0 && GetTime() < 20.0)
+                        tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"e2.tga";
 				}
-			} else tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"n.tga";
+			}
+            else tex = "Grass\"+Islands[iIslandIndex].jungle.texture+"n.tga";
+
 			CreateGrass("resource\models\islands\"+ Islands[iIslandIndex].id +"\"+ Islands[iIslandIndex].jungle.patch + ".grs", tex, fJungleScale, fW, fH, fMinDist, fMaxDist, fMinLod);
 			Whr_DebugLog("fMaxDistFoliage:" + makeint(fMaxDist));
 		}

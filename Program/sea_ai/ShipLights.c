@@ -1,5 +1,6 @@
 void InitShipLights()
 {
+	string __default = "default"; // default is a keyword now
 	aref rlights;
 
 	ShipLights.LightTypes = "";
@@ -14,28 +15,28 @@ void InitShipLights()
     makearef(rlights, ShipLights.LightTypes);
 
 	// default light emitter for ship
-	rlights.default.light.r = 1.0;
-	rlights.default.light.g = 0.9;
-	rlights.default.light.b = 0.0;
-	rlights.default.light.range = 15.0;
+	rlights.(__default).light.r = 1.0;
+	rlights.(__default).light.g = 0.9;
+	rlights.(__default).light.b = 0.0;
+	rlights.(__default).light.range = 15.0;
 
-	rlights.default.light.Attenuation0 = 0.0;
-	rlights.default.light.Attenuation1 = 0.3;
-	rlights.default.light.Attenuation2 = 0.0;
+	rlights.(__default).light.Attenuation0 = 0.0;
+	rlights.(__default).light.Attenuation1 = 0.3;
+	rlights.(__default).light.Attenuation2 = 0.0;
 	
-	rlights.default.Oscillator1.Flicker = 0.15;
-	rlights.default.Oscillator1.Freq = 5.0;
+	rlights.(__default).Oscillator1.Flicker = 0.15;
+	rlights.(__default).Oscillator1.Freq = 5.0;
 
-	rlights.default.Oscillator2.Flicker = 0.1;
-	rlights.default.Oscillator2.Freq = 1.0;
+	rlights.(__default).Oscillator2.Flicker = 0.1;
+	rlights.(__default).Oscillator2.Freq = 1.0;
 
-	rlights.default.corona.r = 1.0;
-	rlights.default.corona.g = 1.0;
-	rlights.default.corona.b = 1.0;
-	rlights.default.corona.subtexture = 0;
-	rlights.default.corona.Range = 5.0
-	rlights.default.corona.Size = 1.0
-	rlights.default.SunRoadFlareFadeDistance = 600.0;
+	rlights.(__default).corona.r = 1.0;
+	rlights.(__default).corona.g = 1.0;
+	rlights.(__default).corona.b = 1.0;
+	rlights.(__default).corona.subtexture = 0;
+	rlights.(__default).corona.Range = 5.0
+	rlights.(__default).corona.Size = 1.0
+	rlights.(__default).SunRoadFlareFadeDistance = 600.0;
 
 	// cannon default light emitter
 	rlights.cannondefault.light.r = 2.0;

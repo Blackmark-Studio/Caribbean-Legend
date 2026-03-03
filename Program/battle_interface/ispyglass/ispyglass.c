@@ -372,7 +372,7 @@ void SetSpyGlassData()
 		                           " Moral= " + chref.ship.crew.morale);
 		Log_SetStringToLog("Sailors = " + chref.Ship.Crew.Exp.Sailors +" Cannoners = " + chref.Ship.Crew.Exp.Cannoners + " Soldiers = "+ chref.Ship.Crew.Exp.Soldiers);
 		Log_SetStringToLog("Ship.MaxCaliber=  " + RealShips[sti(chref.Ship.Type)].MaxCaliber +
-		                           " Ship.Capacity =" + RealShips[sti(chref.Ship.Type)].Capacity  +
+		                           " Ship.Capacity =" + GetCargoMaxSpace(chref)  +
 		                           " Ship.MaxCrew= " + RealShips[sti(chref.Ship.Type)].MaxCrew);
 
 		Log_SetStringToLog("Ship.SpeedRate= " + RealShips[sti(chref.Ship.Type)].SpeedRate +

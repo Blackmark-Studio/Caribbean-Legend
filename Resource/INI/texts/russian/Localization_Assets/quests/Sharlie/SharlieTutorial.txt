@@ -3,7 +3,7 @@ SharlieTutorial_2 {Матрос}
 SharlieTutorial_3 {Боцман}
 SharlieTutorial_4 {Казначей}
 SharlieTutorial_5 {Пират}
-SharlieTutorial_6 {Улисс}
+SharlieTutorial_6 { }
 SharlieTutorial_7 {Поль}
 SharlieTutorial_8 {Анри}
 SharlieTutorial_9 {Матье}

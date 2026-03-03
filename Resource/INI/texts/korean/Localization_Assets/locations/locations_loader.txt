@@ -1,0 +1,3 @@
+locations_loader_1 {첫 방문 ~}
+locations_loader_2 {모든 식민지 방문 완료!}
+locations_loader_3 {신비로운 장소 방문!}

@@ -45,14 +45,14 @@ void ProcessDialogEvent()
 				if (pchar.questTemp.Sharlie == "takeknife" && !CheckAttribute(pchar, "questTemp.Persian"))
 				{
 					dialog.text = "哈哈, 又是你啊, Charles! 你好吗? 这次又有什么事? ";
-					link.l1 = "你说你被抢了……找到凶手了吗? ";
+					link.l1 = "你说你被抢了…… 找到凶手了吗? ";
 					link.l1.go = "Sharlie_8";
 					break;
 				}
 				if (CheckAttribute(pchar, "questTemp.Sharlie.Tichingitu") && pchar.questTemp.Sharlie.Tichingitu == "fadey")
 				{
 					dialog.text = "所以, Charles, 你去跟那个野蛮人谈过了吗? ";
-					link.l1 = "我有……这就是我为什么又来找你。";
+					link.l1 = "我有…… 这就是我为什么又来找你。";
 					link.l1.go = "Tichingitu";
 					break;
 				}
@@ -63,7 +63,7 @@ void ProcessDialogEvent()
 					{
 						if (PCharDublonsTotal() >= 35) // belamour legendary edition
 						{
-							link.l1 = "是的。给您, 您的35达布隆。";
+							link.l1 = "是的。 给您, 您的35达布隆。";
 							link.l1.go = "Tichingitu_7";
 						}
 						else
@@ -101,7 +101,7 @@ void ProcessDialogEvent()
 				if (pchar.questTemp.Sharlie == "trial" && !CheckAttribute(npchar, "quest.vodka"))
 				{
 					dialog.text = "哈, 是你啊! 什么风把您吹来了, de Maure先生? ";
-					link.l1 = TimeGreeting()+", Fadey。哥哥坚持让我别跟你提这事, 可我实在忍不住……";
+					link.l1 = TimeGreeting()+", Fadey。哥哥坚持让我别跟你提这事, 可我实在忍不住…… ";
 					link.l1.go = "vodka";
 					break;
 				}
@@ -204,13 +204,13 @@ void ProcessDialogEvent()
 				if (CheckAttribute(pchar, "questTemp.WildRose_Etap5_Fadey"))
 				{
 					dialog.text = "哎呀, 您来了, 善人! 一听说您的船在我们港口抛锚, 我就盼着您能来拜访我。";
-					link.l1 = "您好, "+npchar.name+"。 我就不啰嗦了。 我和我的同伴玛丽正在寻找她的父亲, 他二十年前神秘失踪了……";
+					link.l1 = "您好, "+npchar.name+"。 我就不啰嗦了。 我和我的同伴玛丽正在寻找她的父亲, 他二十年前神秘失踪了…… ";
 					link.l1.go = "WildRose_Fadey_4";
 					break;
 				}
 				if (CheckAttribute(pchar, "questTemp.WildRose_Etap5_Fadey_2")) 
 				{
-					link.l31 = "关于玛丽的父亲……";
+					link.l31 = "关于玛丽的父亲…… ";
 					link.l31.go = "WildRose_Fadey_return";
 				}
 				if (CheckAttribute(pchar, "questTemp.WildRose_Etap5_Fadey_3"))
@@ -300,7 +300,7 @@ void ProcessDialogEvent()
 		
 		case "Sharlie_1":
 			dialog.text = "你说啥! 这本地朗姆酒跟俄国伏特加比起来就是稀尿水! 你们根本不知道自己错过了啥, 要是老子撒谎就让大海吞了我! 行吧, 说正事吧。Charles, 老子洗耳恭听。";
-			link.l1 = "先生, 我怀疑接下来我要说的话您可能会觉得很不愉快, 但无奈职责所在, 我必须如实告知! Michel告诉我, 您欠了他不少赌债。他还让我代为收取, 因为我兄弟现在……暂时无法亲自来见您。";
+			link.l1 = "先生, 我怀疑接下来我要说的话您可能会觉得很不愉快, 但无奈职责所在, 我必须如实告知! Michel告诉我, 您欠了他不少赌债。他还让我代为收取, 因为我兄弟现在…… 暂时无法亲自来见您。";
 			link.l1.go = "Sharlie_2";
 		break;
 		
@@ -312,7 +312,7 @@ void ProcessDialogEvent()
 		
 		case "Sharlie_3":
 			dialog.text = "可我手头没钱, 只有这件稀有的魔法宝物! 你说说, 我的朋友, 换做别的时候, 老子会用这把华丽的魔法匕首来抵你那点破银币吗? 比索大街上都能捡到! 你得承认, 老子现在确实走投无路。光是想到要和这件绝世工艺品分开, 老子的心都在滴血, 但赌债如山, 这是老子的荣誉。虽然这宝贝对我意义重大, 但老子愿意只给你, 因为你是真正的君子, 也是老子的挚友。";
-			link.l1 = "好吧, 既然你发誓身上没钱, 那老子就拿走你这把魔法匕首。希望能卖个好价钱……";
+			link.l1 = "好吧, 既然你发誓身上没钱, 那老子就拿走你这把魔法匕首。希望能卖个好价钱…… ";
 			link.l1.go = "Sharlie_4";
 		break;
 		
@@ -324,13 +324,13 @@ void ProcessDialogEvent()
 		
 		case "Sharlie_5":
 			dialog.text = "哦, 哈哈哈! Charles, 俺可是个虔诚的基督徒, 你懂的, 可不是啥印第安巫师。俺哪懂这把刀子里头藏着啥神秘力量。不过它确实有, 没错! 你把这匕首拿在手里, 自己就能感受到里面的力量! 拿着, 兄弟! 怎么样! 有没有啥感觉? ";
-			link.l1 = "嗯……我什么感觉都没有。不过握在手里倒是挺顺手的。";
+			link.l1 = "嗯…… 我什么感觉都没有。不过握在手里倒是挺顺手的。";
 			link.l1.go = "Sharlie_6";
 		break;
 		
 		case "Sharlie_6":
 			dialog.text = "哈哈! 这就对了! 不过这还只是它最不起眼的本事罢了。要是你在战斗中挥舞这把匕首, 肯定能见识到它各种惊人的威力! 那么, 你要收下吗? ";
-			link.l1 = "好吧, 难道我还有选择吗? 既然你没钱, 那我就收下了……";
+			link.l1 = "好吧, 难道我还有选择吗? 既然你没钱, 那我就收下了…… ";
 			link.l1.go = "Sharlie_7";
 		break;
 		
@@ -344,9 +344,9 @@ void ProcessDialogEvent()
 			AddLandQuestMark(characterFromId("Mishelle"), "questmarkmain");
 			AddMapQuestMarkCity("FortFrance", false);
 			dialog.text = "多谢, Charles。你绝对不会后悔的, 真的不会! 给你。记得替我向Michel问好! 告诉他有空一定要来看看我。";
-			link.l1 = "哦, 我会告诉他的……";
+			link.l1 = "哦, 我会告诉他的…… ";
 			link.l1.go = "exit";
-			link.l2 = "你说你被抢劫了……找到凶手了吗? ";
+			link.l2 = "你说你被抢劫了…… 找到凶手了吗? ";
 			link.l2.go = "Sharlie_8";
 			pchar.questTemp.Sharlie = "takeknife";
 			AddQuestRecord("Sharlie", "18-1");
@@ -371,13 +371,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sharlie_8":
-			dialog.text = "问题就在这, 俺可是一点都没剩下。那些混账把俺家洗劫一空, 银器、金子, 还有俺这些年辛辛苦苦攒下的积蓄, 全都卷跑了。其实这些俺倒也不太在意, 毕竟真正的绅士, 即便一无所有, 也绝不动声色! 钱财对绅士来说, 低贱得连皱眉都不值得。但最让俺心痛的是, 他们还把俺那一整套波斯弯刀也抢走了! 整个新大陆加旧大陆, 都找不到第二份这样的收藏。那可都是了不起的波斯骑兵佩刀啊……";
+			dialog.text = "问题就在这, 俺可是一点都没剩下。那些混账把俺家洗劫一空, 银器、金子, 还有俺这些年辛辛苦苦攒下的积蓄, 全都卷跑了。其实这些俺倒也不太在意, 毕竟真正的绅士, 即便一无所有, 也绝不动声色! 钱财对绅士来说, 低贱得连皱眉都不值得。但最让俺心痛的是, 他们还把俺那一整套波斯弯刀也抢走了! 整个新大陆加旧大陆, 都找不到第二份这样的收藏。那可都是了不起的波斯骑兵佩刀啊…… ";
 			link.l1 = "波斯刀剑? 听起来挺有意思啊。那你是个收藏家咯? ";
 			link.l1.go = "Sharlie_9";
 		break;
 		
 		case "Sharlie_9":
-			dialog.text = "嗯, 俺喜欢收集稀罕玩意儿……听着, Charles, 也许你能在这事上帮帮俺……";
+			dialog.text = "嗯, 俺喜欢收集稀罕玩意儿…… 听着, Charles, 也许你能在这事上帮帮俺…… ";
 			link.l1 = "帮忙? 可怎么帮? 你是说抓住那些贼吗? ";
 			link.l1.go = "Sharlie_10";
 		break;
@@ -416,8 +416,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sharlie_14":
-			dialog.text = "不, 俺可不这么觉得。他就是冲着钱来的。俺逮住他在俺屋里翻俺的箱子。\n是个来自西班牙领地深丛林的印第安人。看起来滑稽极了, 跟这儿本地的完全不一样, 满身都是战纹, 还穿着花里胡哨的衣服……你要是有兴趣, 趁那小丑还活着, 自己去地牢瞧瞧吧。";
-			link.l1 = "嗯……也许我该过去看看他。";
+			dialog.text = "不, 俺可不这么觉得。他就是冲着钱来的。俺逮住他在俺屋里翻俺的箱子。\n是个来自西班牙领地深丛林的印第安人。看起来滑稽极了, 跟这儿本地的完全不一样, 满身都是战纹, 还穿着花里胡哨的衣服…… 你要是有兴趣, 趁那小丑还活着, 自己去地牢瞧瞧吧。";
+			link.l1 = "嗯…… 也许我该过去看看他。";
 			link.l1.go = "Sharlie_15";
 		break;
 		
@@ -436,12 +436,12 @@ void ProcessDialogEvent()
 		case "Tichingitu":
 			DelLandQuestMark(npchar);
 			dialog.text = "有意思! 我洗耳恭听。";
-			link.l1 = "Fadey, 我已经和那个印第安人谈过了。我来找你, 是想让你帮忙把他弄出来。那可怜的家伙只是想找点吃的……";
+			link.l1 = "Fadey, 我已经和那个印第安人谈过了。我来找你, 是想让你帮忙把他弄出来。那可怜的家伙只是想找点吃的…… ";
 			link.l1.go = "Tichingitu_1";
 		break;
 		
 		case "Tichingitu_1":
-			dialog.text = "哈哈哈, 你居然信了那种鬼话? 现在的年轻人真是太容易上当了……";
+			dialog.text = "哈哈哈, 你居然信了那种鬼话? 现在的年轻人真是太容易上当了…… ";
 			link.l1 = "Fadey, 虽然我年纪比你小, 但我也能分得清别人是在说实话还是在撒谎。再说了, 你真觉得绞刑适合这种罪行吗? 这也太过头了。在我们家乡, 顶多挨几鞭子, 或者惯犯才会被烙个印。";
 			link.l1.go = "Tichingitu_2";
 		break;
@@ -453,19 +453,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tichingitu_3":
-			dialog.text = "啊—Charles……你还真跟你哥哥一个样……好吧。咱们就像正经商人那样解决这事。既然你这么想要这个印第安人, 那你就赔偿俺因他造成的精神损失和财产损害, 俺就会跟指挥官说俺不打算追究责任。怎么样? ";
+			dialog.text = "啊—Charles…… 你还真跟你哥哥一个样…… 好吧。咱们就像正经商人那样解决这事。既然你这么想要这个印第安人, 那你就赔偿俺因他造成的精神损失和财产损害, 俺就会跟指挥官说俺不打算追究责任。怎么样? ";
 			link.l1 = "多少钱? ";
 			link.l1.go = "Tichingitu_4";
 		break;
 		
 		case "Tichingitu_4":
 			dialog.text = "哈, Charles, 你已经开始学会加勒比的规矩了。一百五十枚金币达布隆, 一个子儿都不能少。";
-			link.l1 = "Fadey, 愿上帝怜悯……";
+			link.l1 = "Fadey, 愿上帝怜悯…… ";
 			link.l1.go = "Tichingitu_5";
 		break;
 		
 		case "Tichingitu_5":
-			dialog.text = "好吧, 好吧, 40金达布隆。但这是最后的价格。而且必须是达布隆, 不是比索。我们的放债人那里肯定有一些。";
+			dialog.text = "好吧, 好吧, 40金达布隆。 但这是最后的价格。 而且必须是达布隆, 不是比索。 我们的放债人那里肯定有一些。";
 			if(PCharDublonsTotal() >= 40) // belamour legendary edition
 			{
 				link.l1 = "哦, 你远大啊, 我的朋友。 你说服我了! 35金——一文不减!";
@@ -474,7 +474,7 @@ void ProcessDialogEvent()
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
 				Notification_Perk(true, "Trustworthy");
-				link.l2 = "值得信赖的Fadey, 听我说……我明白你有多郁闷, 但现在只有我愿意用真金白银补偿你这点麻烦。";
+				link.l2 = "值得信赖的Fadey, 听我说…… 我明白你有多郁闷, 但现在只有我愿意用真金白银补偿你这点麻烦。";
 				link.l2.go = "Tichingitu_7_TW";
 			}
 			else Notification_Perk(false, "Trustworthy");
@@ -504,7 +504,7 @@ void ProcessDialogEvent()
 			}
 			else RemoveDublonsFromPCharTotal(40); // belamour legendary edition
 			PlaySound("interface\important_item.wav");
-			dialog.text = "很好。我这就写个便条盖上印章, 稍等片刻……给你。把这个交给指挥官, 你就能把你的印第安人带走了。我是真不明白你为啥这么操心他, 不过那是你的事。你打算干啥, 把他带去假面舞会当展品? 哈哈, 真有意思! ";
+			dialog.text = "很好。我这就写个便条盖上印章, 稍等片刻…… 给你。把这个交给指挥官, 你就能把你的印第安人带走了。我是真不明白你为啥这么操心他, 不过那是你的事。你打算干啥, 把他带去假面舞会当展品? 哈哈, 真有意思! ";
 			link.l1 = "上帝无所不见, Fadey。救人一命是高尚的行为。";
 			link.l1.go = "Tichingitu_8";
 		break;
@@ -513,7 +513,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "letter_1");
 			ChangeItemDescribe("letter_1", "itmdescr_letter_1_Fadey");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "我同意你说的第一句话, 但第二句就见仁见智了, Charles。要是你救下的那个人其实是个杀人犯或者强奸犯, 本该上绞刑架接受正义的审判呢? 哼, 算了, 这事儿跟我没关系了。愿上帝与你同在。快去找指挥官吧, 免得你那红皮肤的朋友还没吊上去就吓得脸都白了……";
+			dialog.text = "我同意你说的第一句话, 但第二句就见仁见智了, Charles。要是你救下的那个人其实是个杀人犯或者强奸犯, 本该上绞刑架接受正义的审判呢? 哼, 算了, 这事儿跟我没关系了。愿上帝与你同在。快去找指挥官吧, 免得你那红皮肤的朋友还没吊上去就吓得脸都白了…… ";
 			link.l1 = "我这就去。回头见, Fadey。";
 			link.l1.go = "exit";
 			pchar.questTemp.Sharlie.Tichingitu = "pay";
@@ -530,20 +530,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "vodka_1":
-			dialog.text = "哎呀, de Maure先生……我可是受伤了! 你哥哥真让我意外。街上的那些半吊子骗子怎么胡说八道都无所谓, 可他竟然也这样! 你说说看, Charles, 要是有人拿着一把查理曼大帝时代的双手骑士剑来卖给你, 你会出多少钱买? ";
+			dialog.text = "哎呀, de Maure先生…… 我可是受伤了! 你哥哥真让我意外。街上的那些半吊子骗子怎么胡说八道都无所谓, 可他竟然也这样! 你说说看, Charles, 要是有人拿着一把查理曼大帝时代的双手骑士剑来卖给你, 你会出多少钱买? ";
 			link.l1 = "双手大剑? 你他妈在逗老子吗, Fadey? 老子要那把生锈的刽子手大刀有啥用? 现在可是主耶稣的十七世纪! 老子一分钱都不想给! ";
 			link.l1.go = "vodka_2";
 		break;
 		
 		case "vodka_2":
-			dialog.text = "唉, 你看看你这目光短浅的样子, 朋友! 你这种态度, 永远成不了大事。要是你把那样的神器带来给我, 俺会出三百达布隆买下。你问为啥? 因为那是古董, 是如今世上难得一见的历史珍宝! 你啥也不懂, 还敢妄下断语! \n以天主和圣母为证, 酋长的利爪可是一把大师级的匕首, 我的消息说, Cortez本人曾经拥有它。没错, 就是那个Hernan Cortez! 传说中的征服者, 攻陷特诺奇提特兰、活捉阿兹特克皇帝的传奇人物! 你倒好, 还敢嗤之以鼻, 说这玩意儿是破烂! \n再说了, 我早跟你说过, 这可不是普通的匕首, 这是把附魔的匕首! 你还嫩得很, 连加勒比的奇迹都没见识过? 法术、魔咒、仪式、诅咒? Charles, 这里可是新大陆, 是玛雅和阿兹特克的故乡, 他们的邪术造诣高得让咱们基督徒都难以想象! \n这匕首有隐藏的力量。可惜现在还没人知道到底是什么力量。你有独一无二、不可思议的机会亲自去发现它的秘密, 可你还在说这东西是“狗屎”, 还说你那可怜的老朋友Fadey想坑你! \n要是俺有钱还你兄弟的债, 俺立马就用你那点可怜的臭钱把它换回来……这可是真正的宝贝, 它的价值远不止金钱能衡量, 是的! ";
+			dialog.text = "唉, 你看看你这目光短浅的样子, 朋友! 你这种态度, 永远成不了大事。要是你把那样的神器带来给我, 俺会出三百达布隆买下。你问为啥? 因为那是古董, 是如今世上难得一见的历史珍宝! 你啥也不懂, 还敢妄下断语! \n以天主和圣母为证, 酋长的利爪可是一把大师级的匕首, 我的消息说, Cortez本人曾经拥有它。没错, 就是那个Hernan Cortez! 传说中的征服者, 攻陷特诺奇提特兰、活捉阿兹特克皇帝的传奇人物! 你倒好, 还敢嗤之以鼻, 说这玩意儿是破烂! \n再说了, 我早跟你说过, 这可不是普通的匕首, 这是把附魔的匕首! 你还嫩得很, 连加勒比的奇迹都没见识过? 法术、魔咒、仪式、诅咒? Charles, 这里可是新大陆, 是玛雅和阿兹特克的故乡, 他们的邪术造诣高得让咱们基督徒都难以想象! \n这匕首有隐藏的力量。可惜现在还没人知道到底是什么力量。你有独一无二、不可思议的机会亲自去发现它的秘密, 可你还在说这东西是“狗屎”, 还说你那可怜的老朋友Fadey想坑你! \n要是俺有钱还你兄弟的债, 俺立马就用你那点可怜的臭钱把它换回来…… 这可是真正的宝贝, 它的价值远不止金钱能衡量, 是的! ";
 			link.l1 = "好啦好啦, 别激动, Fadey。我信你。你的说辞确实有说服力, 你表现出来的那股火热劲儿, 要么证明你是真心的, 要么说明你撒谎的本事无人能及。";
 			link.l1.go = "vodka_3";
 		break;
 		
 		case "vodka_3":
 			dialog.text = "多谢! Charles, 你做得很好, 没有生气, 还直接来找我解释。我相信现在这事就算揭过去了吧? ";
-			link.l1 = "是的, Fadey先生。完全正确。现在请允许我告退……";
+			link.l1 = "是的, Fadey先生。完全正确。现在请允许我告退…… ";
 			link.l1.go = "vodka_4";
 		break;
 		
@@ -552,19 +552,19 @@ void ProcessDialogEvent()
 			dialog.text = "站住, Charles! 说实话, 老子挺喜欢你的风格。说不定哪天咱俩还能成最铁的兄弟。既然如此, 何不现在就迈出友谊的第一步? 俺在地窖里用冰泉水冰着两瓶上好的俄国伏特加。你说咋样, 咱俩开一瓶, 为你兄弟的健康干一杯? ";
 			link.l1 = "嗯, 抱歉了, Fadey先生, 但我已经该启航出海了。我现在有点赶时间。";
 			link.l1.go = "vodka_no";
-			link.l2 = "上次你提过, 俺拒绝了……要是再拒绝就太不给面子了。行吧, Fadey, 俺加入! ";
+			link.l2 = "上次你提过, 俺拒绝了…… 要是再拒绝就太不给面子了。行吧, Fadey, 俺加入! ";
 			link.l2.go = "vodka_5";
 		break;
 		
 		case "vodka_no":
 			dialog.text = "真可惜啊。跟伏特加比起来, 朗姆酒就是水, 淡得要命的便宜货。不过既然你赶时间, 老子就不耽误你了。祝你好运, Charles! ";
-			link.l1 = "彼此彼此, Fadey先生……";
+			link.l1 = "彼此彼此, Fadey先生…… ";
 			link.l1.go = "exit";
 		break;
 		
 		case "vodka_5":
 			dialog.text = "这话说得好! 太棒了! 快请坐, 歇歇脚! Monsieur, 您就当自己家一样, 我去拿伏特加。唉, 好久没和朋友们这样下午小聚了! 伏特加冰得正好, 您一定会喜欢, 来, 干杯! 我再摆点腌黄瓜和熏火腿。";
-			link.l1 = "……";
+			link.l1 = "…… ";
 			link.l1.go = "vodka_6";
 		break;
 		
@@ -584,31 +584,31 @@ void ProcessDialogEvent()
 		
 		case "vodka_7":
 			dialog.text = "";
-			link.l1 = "哇……所以, Fadey, 你跟俺说说, 这到底咋回事? 嗝! 咱俩……喝了两瓶伏特加……顺便说一句! —你看起来一点都没醉, 俺却醉得跟烂泥一样。为啥会这样啊, 嗯? ";
+			link.l1 = "哇…… 所以, Fadey, 你跟俺说说, 这到底咋回事? 嗝! 咱俩…… 喝了两瓶伏特加…… 顺便说一句! —你看起来一点都没醉, 俺却醉得跟烂泥一样。为啥会这样啊, 嗯? ";
 			link.l1.go = "vodka_8";
 		break;
 		
 		case "vodka_8":
 			dialog.text = "Charles, 我的朋友, 放轻松点。一只臭鼬跟这事有啥关系? 咱们刚喝了上好的伏特加。赶紧睡一觉, 醒来你就精神百倍, 连宿醉都没了, 脑袋也清爽多了。你等着瞧吧。";
-			link.l1 = "呃—对, 伏特加……这、这伏特加真是太棒了。我从来没喝过这么厉害的酒。";
+			link.l1 = "呃—对, 伏特加…… 这、这伏特加真是太棒了。我从来没喝过这么厉害的酒。";
 			link.l1.go = "vodka_9";
 		break;
 		
 		case "vodka_9":
 			dialog.text = "哈! 你说得没错! 那种伏特加可是按照祖传秘方酿的, 从俺的祖国俄罗斯运过来的, 就连在那儿也不是谁都能酿得出来。俺只买最好的! 就像咱们刚才喝的这瓶一样。";
-			link.l1 = "可、可是你告诉我, Fadey: 你、你怎么能喝那么多还不醉? 你、你是怎么做到的, 嗯? 把秘诀教教我呗。说不定以后用得上……嗝! ";
+			link.l1 = "可、可是你告诉我, Fadey: 你、你怎么能喝那么多还不醉? 你、你是怎么做到的, 嗯? 把秘诀教教我呗。说不定以后用得上…… 嗝! ";
 			link.l1.go = "vodka_10";
 		break;
 		
 		case "vodka_10":
 			dialog.text = "哈! 你我可没法比啊, 小Charles! 瞧瞧你, 瘦得跟根鞭子似的。再说了, 你还不习惯痛快喝酒, 对吧! 不过咱俩是铁哥们, 老子就教你几招, 怎么喝酒还能不尿裤子。";
-			link.l1 = "请……求你了……嗝! ";
+			link.l1 = "请…… 求你了…… 嗝! ";
 			link.l1.go = "vodka_11";
 		break;
 		
 		case "vodka_11":
 			dialog.text = "如果你想喝酒又不想立刻被放倒, 那就得遵循几条关键规矩。最重要的是, 千万别空腹喝酒。开喝前先吃点实在的东西垫垫肚子\n其次, 每喝一杯别忘了再吃点东西。肉或者鱼最好, 咸一点的更合适。第三, 别用伏特加漱口, 直接一口吞下去\n还有, 正餐前来上一小杯—不超过半品脱—能让身体提前适应后面的烈酒。可别喝多了开胃酒, 不然效果适得其反, 还没出海就先把自己喝趴下了\n最后, 关键还是得靠平时的锻炼, 定期适量喝点朗姆酒或者其他酒精饮品, 慢慢你就能扛得住了。";
-			link.l1 = "嗯嗯……原、原来是这么做的! 俺一、一定会……嗝! ……记住你说的每一步, Fadey。谢、谢谢你。现、现在俺觉得最好还是去眯一会儿, 因为俺现在真有点不舒服……";
+			link.l1 = "嗯嗯…… 原、原来是这么做的! 俺一、一定会…… 嗝! …… 记住你说的每一步, Fadey。谢、谢谢你。现、现在俺觉得最好还是去眯一会儿, 因为俺现在真有点不舒服…… ";
 			link.l1.go = "vodka_12";
 		break;
 		
@@ -651,7 +651,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "trial_1":
-			dialog.text = "嗯。不是, 当然不会拒绝你。如果你想让一个人吃饱, 别给他鱼, 给他鱼竿才对。是不是这样, de Maure先生? 所以你需要份差事……这简单。我去和我认识的一个人聊聊, 把你推荐给他。剩下的就看你办事的本事了。";
+			dialog.text = "嗯。不是, 当然不会拒绝你。如果你想让一个人吃饱, 别给他鱼, 给他鱼竿才对。是不是这样, de Maure先生? 所以你需要份差事…… 这简单。我去和我认识的一个人聊聊, 把你推荐给他。剩下的就看你办事的本事了。";
 			link.l1 = "太好了。我该去找谁谈? ";
 			link.l1.go = "trial_2";
 		break;
@@ -678,7 +678,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Slaves_1":
-			dialog.text = "哦吼! 看来你是要拓展生意啊! 真是会赚钱! 老朋友, 俺当然愿意帮你。不过你也知道, 俺可不是白干活的。想让卖家相信你是真心想买黑奴, 得花上一百五十枚金币—当然, 还得给俺点辛苦费……";
+			dialog.text = "哦吼! 看来你是要拓展生意啊! 真是会赚钱! 老朋友, 俺当然愿意帮你。不过你也知道, 俺可不是白干活的。想让卖家相信你是真心想买黑奴, 得花上一百五十枚金币—当然, 还得给俺点辛苦费…… ";
 			if(PCharDublonsTotal() >= 150)
 			{
 				link.l1 = "这正是我所期待的, Fadey先生! 这是你的金币。";
@@ -764,7 +764,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "pistols_4":
-			dialog.text = "好吧, 那么……手枪, 还有几支火枪, 每支都要配火药和弹丸……所以……我不能保证能把你要的东西全都弄齐, 但我一定尽力而为。与此同时, 我需要你先付四万比索的定金, 或者你愿意的话, 也可以付75枚达布隆。";
+			dialog.text = "好吧, 那么…… 手枪, 还有几支火枪, 每支都要配火药和弹丸…… 所以…… 我不能保证能把你要的东西全都弄齐, 但我一定尽力而为。与此同时, 我需要你先付四万比索的定金, 或者你愿意的话, 也可以付75枚达布隆。";
 			if(PCharDublonsTotal() >= 75)
 			{
 				link.l1 = "把金币拿去吧, Fadey。正好老子身上现在就有几枚。";
@@ -854,24 +854,24 @@ void ProcessDialogEvent()
 		
 		//--> Дикая Роза
 		case "WildRose_Fadey_4":
-			dialog.text = "哎呀, "+pchar.name+", 您可真闯下大事了! 想法当然是好的, 可二十年过去了, 他身上什么事都有可能发生……";
-			link.l1 = "您说得对, 法捷。但我们花了许多时间与精力, 走了很长的路——如今已经快到终点。 我们几乎把他的情况都查清楚了: 姓名、在英王海军的服役经历、所乘战舰的名字…… 以及一些生平细节。 线索断在1638年六月卡托切角的那场海难。";
+			dialog.text = "哎呀, "+pchar.name+", 您可真闯下大事了! 想法当然是好的, 可二十年过去了, 他身上什么事都有可能发生…… ";
+			link.l1 = "您说得对, 法捷。但我们花了许多时间与精力, 走了很长的路——如今已经快到终点。 我们几乎把他的情况都查清楚了: 姓名、在英王海军的服役经历、所乘战舰的名字……  以及一些生平细节。 线索断在1638年六月卡托切角的那场海难。";
 			link.l1.go = "WildRose_Fadey_5";
 			DelLandQuestMark(npchar);
 			DeleteAttribute(pchar, "questTemp.WildRose_Etap5_Fadey");
 		break;
 
 		case "WildRose_Fadey_5":
-			dialog.text = "卡托切? 哎呀, 善人, 那种地方就是拿棍子打我也不去——那里满是该死的野人! 若他真在那里没被海水吞没, 那十有八九也成了那些该死土著的盘中餐……";
-			link.l1 = "我们有证据, 他在海难后幸存, 并设法到了古巴。或许他死在那里, 但从我们听到的情况来看——他足够机敏狡猾, 能避开宗教裁判所的爪牙。他多半不会留在古巴, 更可能是在群岛某个殖民地定居下来……";
+			dialog.text = "卡托切? 哎呀, 善人, 那种地方就是拿棍子打我也不去——那里满是该死的野人! 若他真在那里没被海水吞没, 那十有八九也成了那些该死土著的盘中餐…… ";
+			link.l1 = "我们有证据, 他在海难后幸存, 并设法到了古巴。或许他死在那里, 但从我们听到的情况来看——他足够机敏狡猾, 能避开宗教裁判所的爪牙。他多半不会留在古巴, 更可能是在群岛某个殖民地定居下来…… ";
 			link.l1.go = "WildRose_Fadey_6";
 		break;
 
 		case "WildRose_Fadey_6":
 			dialog.text = "世上奇事不少, 我的朋友, 凡事皆有可能。但我还是不明白, 你为何要向我说这些。";
-			link.l1 = ""+npchar.name+", 您的关系比不少总督还广。我敢肯定, 您手下必有能干的小伙子, 能办一些不复杂的差事……";
+			link.l1 = ""+npchar.name+", 您的关系比不少总督还广。我敢肯定, 您手下必有能干的小伙子, 能办一些不复杂的差事…… ";
 			link.l1.go = "WildRose_Fadey_7_1";
-			link.l2 = ""+npchar.name+", 您是受人尊敬、颇有声望的人。 您在上流社会也有人脉, 生意往来绝不限于瓜德罗普。 既然您不可能事事亲力亲为, 自然要依靠一些可靠的人, 替您跑腿办事……";
+			link.l2 = ""+npchar.name+", 您是受人尊敬、颇有声望的人。 您在上流社会也有人脉, 生意往来绝不限于瓜德罗普。 既然您不可能事事亲力亲为, 自然要依靠一些可靠的人, 替您跑腿办事…… ";
 			link.l2.go = "WildRose_Fadey_7_2";
 		break;
 
@@ -896,7 +896,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Fadey_9":
-			dialog.text = "好吧, 若真是叫这名字的人, 我们一定能找到……";
+			dialog.text = "好吧, 若真是叫这名字的人, 我们一定能找到…… ";
 			link.l1 = "太好了, "+npchar.name+"。那我们谈谈报酬? ";
 			link.l1.go = "WildRose_Fadey_10";
 		break;
@@ -921,7 +921,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Fadey_13":
 			dialog.text = "这些人个个熟练能干, 所以每人要付150个达布隆。 至于去托尔图加、伊斯帕尼奥拉和古巴的那位, 还得额外奖励50金币。 毕竟要跑四个地方。";
-			link.l1 = "总共800个达布隆……好吧, 咱们结算? ";
+			link.l1 = "总共800个达布隆…… 好吧, 咱们结算? ";
 			link.l1.go = "WildRose_Fadey_14";
 		break;
 		
@@ -934,7 +934,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "嗯……我身上没带全额。";
+				link.l1 = "嗯…… 我身上没带全额。";
 				link.l1.go = "WildRose_Fadey_14_nopay";
 			}
 		break;
@@ -988,7 +988,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Fadey_19":
-			dialog.text = "哎呀, 别说这些了, 好小子! 您是我的朋友, 而朋友嘛, 自然该互相帮衬。近期就再来找我吧——我相信热罗姆很快会康复, 然后搭上第一艘船……";
+			dialog.text = "哎呀, 别说这些了, 好小子! 您是我的朋友, 而朋友嘛, 自然该互相帮衬。近期就再来找我吧——我相信热罗姆很快会康复, 然后搭上第一艘船…… ";
 			link.l1 = "我想我们会加快进度。 我们自己去伯利兹, 与您的信使直接谈谈。 再次谢过, "+npchar.name+"。您无法想象您为我们做了什么! 后会有期! ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap5_Fadey_5");
@@ -1005,14 +1005,14 @@ void ProcessDialogEvent()
 
 		case "LoyaltyPack_Fadey_2":
 			dialog.text = "我希望并相信最精彩的他都留着没说。但既然阿隆索与您分享了我们的友谊, 我也有个稀奇物给您。看看吧! ";
-			link.l1 = "这是……盔甲? ";
+			link.l1 = "这是…… 盔甲? ";
 			link.l1.go = "LoyaltyPack_Fadey_3";
 		break;
 
 		case "LoyaltyPack_Fadey_3":
 			dialog.text = "唉, 朋友。 这是我在那场该死的战争中穿过的镜甲仅存的部分。 后来在斯摩棱斯克附近, 我还得\n"+
 			"无论如何, 即使这样它看起来也很华丽, 保护性更好。而且我完全穿不下了! ";
-			link.l1 = "看起来很异国情调……即使对这里来说也是。华丽的礼物, 法杰伊。谢谢您。";
+			link.l1 = "看起来很异国情调…… 即使对这里来说也是。华丽的礼物, 法杰伊。谢谢您。";
 			link.l1.go = "LoyaltyPack_Fadey_4";
 		break;
 		
@@ -1091,7 +1091,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_3":
-			dialog.text = "严格来说, 每一只被祝圣的圣杯都承载着无辜基督的圣血……不过我扯远了。我猜你是想让我帮忙吧? ";
+			dialog.text = "严格来说, 每一只被祝圣的圣杯都承载着无辜基督的圣血…… 不过我扯远了。我猜你是想让我帮忙吧? ";
 			link.l1 = "当然! 您在巴斯特尔很有影响力, 大家都很尊敬您, 也许神父会听您的劝告。";
 			link.l1.go = "guardoftruth_4";
 		break;
@@ -1103,13 +1103,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_5":
-			dialog.text = "嗯……你有没有试过用别的方法说服他? ";
+			dialog.text = "嗯…… 你有没有试过用别的方法说服他? ";
 			link.l1 = "你是说贿赂他? 老子可不会去贿赂神父。如果他是个银行家、商人, 甚至总督, 老子或许会用这种办法解决问题, 但神父可不行! ";
 			link.l1.go = "guardoftruth_6";
 		break;
 		
 		case "guardoftruth_6":
-			dialog.text = "我亲爱的天真朋友啊, 如果神父的耳朵真对良心的呼声充耳不闻, 那他的手肯定会对黄金敞开……或者反过来也说得通。我会帮你的, 我觉得把这么一笔带着污点的宝藏留在这儿, 迟早会惹出更大的麻烦。不过, 这事可得花点钱。"link.l1 ="我就知道会这样。这次要多少钱? ";
+			dialog.text = "我亲爱的天真朋友啊, 如果神父的耳朵真对良心的呼声充耳不闻, 那他的手肯定会对黄金敞开…… 或者反过来也说得通。我会帮你的, 我觉得把这么一笔带着污点的宝藏留在这儿, 迟早会惹出更大的麻烦。不过, 这事可得花点钱。"link.l1 ="我就知道会这样。这次要多少钱? ";
 			link.l1.go = "guardoftruth_7";
 		break;
 		
@@ -1127,13 +1127,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_9":
-			dialog.text = "正如承诺的那样, 十字架我已经带来了。至于细节……算了吧……一切荒唐都因我们至圣救主的宝血而被宽恕";
+			dialog.text = "正如承诺的那样, 十字架我已经带来了。至于细节…… 算了吧…… 一切荒唐都因我们至圣救主的宝血而被宽恕";
 			link.l1 = "我还欠你多少钱? ";
 			link.l1.go = "guardoftruth_10";
 		break;
 		
 		case "guardoftruth_10":
-			dialog.text = "二百五十枚达布隆。算是补偿俺的花销, 当然, 俺这正义之举要是能再给点小费, 俺可更高兴……";
+			dialog.text = "二百五十枚达布隆。算是补偿俺的花销, 当然, 俺这正义之举要是能再给点小费, 俺可更高兴…… ";
 			if(PCharDublonsTotal() >= 250) // belamour legendary edition
 			{
 				link.l1 = "遵命, Fadey先生。您的金币在这儿。";
@@ -1177,7 +1177,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_15":
-			dialog.text = "什么都瞒不过你, "+pchar.name+"。你看得一清二楚, 和你兄弟一个样。没错, 这把匕首是我在骰子游戏里从Calhoun手里赢来的。他是谁? 老实说, 我自己也不知道。我们在酒馆偶遇, 聊了几句, 喝了点酒, 他就开始跟我吐露自己过去的一些罪孽, 说那些事一直压在他心头……";
+			dialog.text = "什么都瞒不过你, "+pchar.name+"。你看得一清二楚, 和你兄弟一个样。没错, 这把匕首是我在骰子游戏里从Calhoun手里赢来的。他是谁? 老实说, 我自己也不知道。我们在酒馆偶遇, 聊了几句, 喝了点酒, 他就开始跟我吐露自己过去的一些罪孽, 说那些事一直压在他心头…… ";
 			link.l1 = "你是他忏悔神父吗? 什么罪? ";
 			link.l1.go = "guardoftruth_16";
 		break;
@@ -1189,7 +1189,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_17":
-			dialog.text = "当然不是, 他已经死了。一帮可怜的海盗把他的弗吕特船送进了Davy Jones的海底地狱, 整船人都归了Mictlantecuhtli。说实话, 传言他们其实是被装成海盗的专业杀手袭击的……宗教裁判所的爪牙。都说Vincento神父从不放过目标。";
+			dialog.text = "当然不是, 他已经死了。一帮可怜的海盗把他的弗吕特船送进了Davy Jones的海底地狱, 整船人都归了Mictlantecuhtli。说实话, 传言他们其实是被装成海盗的专业杀手袭击的…… 宗教裁判所的爪牙。都说Vincento神父从不放过目标。";
 			link.l1 = "Archibald Calhoun还活着。我不久前刚见过他, 和一个叫William Paterson的人在一起。他现在是Paterson的副手。";
 			link.l1.go = "guardoftruth_18";
 		break;
@@ -1225,13 +1225,13 @@ void ProcessDialogEvent()
 		
 		// персидские клинки
 		case "persian":
-			dialog.text = "让我看看, "+pchar.name+"……哈! 就是这个! 好样的, 今天多亏了你! 你是在哪儿找到的? ";
+			dialog.text = "让我看看, "+pchar.name+"…… 哈! 就是这个! 好样的, 今天多亏了你! 你是在哪儿找到的? ";
 			link.l1 = "这无关紧要。重要的是它最终回到了你手中。";
 			link.l1.go = "persian_1";
 		break;
 		
 		case "persian_1":
-			dialog.text = "只要你能彻查此事, 俺会给你丰厚的报酬。三百枚金达布隆, 应该足够补偿你的辛苦……";
+			dialog.text = "只要你能彻查此事, 俺会给你丰厚的报酬。三百枚金达布隆, 应该足够补偿你的辛苦…… ";
 			link.l1 = "你是用之前从老子这儿榨出来的金币付钱吗? 不过嘛, 老子也不会嫌弃。你的弯刀, 拿好。";
 			link.l1.go = "persian_2";
 		break;
@@ -1280,7 +1280,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "persian_6":
-			dialog.text = "哎呀, 我的好朋友! 你刚刚帮我擦干了眼泪! 让我看看……哈! 就是它, 我心爱的弯刀! 来吧, 说到做到, 这里有三百杜布隆赏金给你。";
+			dialog.text = "哎呀, 我的好朋友! 你刚刚帮我擦干了眼泪! 让我看看…… 哈! 就是它, 我心爱的弯刀! 来吧, 说到做到, 这里有三百杜布隆赏金给你。";
 			link.l1 = "谢了! ";
 			link.l1.go = "persian_7";
 		break;
@@ -1307,7 +1307,7 @@ void ProcessDialogEvent()
 			//Log_Info("You've received the Scarab amulet");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "我那失落藏品里只剩最后一把弯刀还没找到。我全指望你了, "+pchar.name+", 也指望你的好运。如果你找到了, 别犹豫, 赶紧回来找我。";
-			link.l1 = "当然! 很快再见……";
+			link.l1 = "当然! 很快再见…… ";
 			link.l1.go = "exit";
 			if (CheckNCountPersian() > 0)
 			{
@@ -1372,7 +1372,7 @@ void ProcessDialogEvent()
 			//Log_Info("You've received wicker armour");
 			AddCharacterExpToSkill(pchar, "Sneak", 300);
 			dialog.text = "是的, 老兄! 来, 拿去吧。这身藤甲可不一般, 俺跟你保证, 全加勒比海也找不出第二件! ";
-			link.l1 = "是的, 我看出来了。谢谢你! 迫不及待想试试了……";
+			link.l1 = "是的, 我看出来了。谢谢你! 迫不及待想试试了…… ";
 			link.l1.go = "persian_15";
 		break;
 		
@@ -1535,7 +1535,7 @@ void ProcessDialogEvent()
 			RemoveDublonsFromPCharTotal(iFadeyPseudoGlobal); // belamour legendary edition
 			PlaySound("interface\important_item.wav");
 			dialog.text = "好吧, 给我十到十五天左右。这期间我会安排见面, 把这些事都处理好。大概两周内就能搞定。";
-			link.l1 = "谢谢你, Fadey! 我会等着的……";
+			link.l1 = "谢谢你, Fadey! 我会等着的…… ";
 			link.l1.go = "agree_1";
 		break;
 		
@@ -1552,7 +1552,7 @@ void ProcessDialogEvent()
 		case "contraband":
 			iFadeyPseudoGlobal = DiplomatDublonPayment(rate, "Fadey", true);
 			sTemp = FindRussianDublonString(iFadeyPseudoGlobal);
-			dialog.Text = "你干嘛要去惹他们啊, 老兄? 在这片地方, 走私贩可不算最坏的人, 他们还能让你赚上一笔。行吧, 我帮你, 我知道怎么哄他们高兴……" + sTemp + ", 别讨价还价。";
+			dialog.Text = "你干嘛要去惹他们啊, 老兄? 在这片地方, 走私贩可不算最坏的人, 他们还能让你赚上一笔。行吧, 我帮你, 我知道怎么哄他们高兴…… " + sTemp + ", 别讨价还价。";
 			if (PCharDublonsTotal() >= iFadeyPseudoGlobal) // belamour legendary edition
 			{
 				Link.l1 = "好吧, Fadey, 我同意。拿走你的金币吧。";
@@ -1578,7 +1578,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "UpgradeRopes_1":
-			dialog.text = "我知道你箱子里肯定有不少金币, 绝不止几枚, 装下五十枚都绰绰有余! 可咱们这买卖可不是寻常生意—不仅仅是搬货, 更得讲究个……低调。要做这么大的买卖, 你得下血本, 不只是付钱, 还得投资, 才能赚到大头! 还得保证你的钱不会凭空蒸发。如果你舍得拿出三千枚金达布隆, 那你尽管放心, 老哥我一定替你办得妥妥当当, 像对待好兄弟一样, 绝不会在价格上坑你。";
+			dialog.text = "我知道你箱子里肯定有不少金币, 绝不止几枚, 装下五十枚都绰绰有余! 可咱们这买卖可不是寻常生意—不仅仅是搬货, 更得讲究个…… 低调。要做这么大的买卖, 你得下血本, 不只是付钱, 还得投资, 才能赚到大头! 还得保证你的钱不会凭空蒸发。如果你舍得拿出三千枚金达布隆, 那你尽管放心, 老哥我一定替你办得妥妥当当, 像对待好兄弟一样, 绝不会在价格上坑你。";
 			if (PCharDublonsTotal() >= 3000)
 			{
 				Link.l1 = "三千达布隆! 哎呀, 我得承认, 就算是最富有的商人, 在最离奇的传说里也难得听到这么慷慨的报价! 很少有人愿意如此大方地投资这种冒险。但幸运的是, 俺正是其中之一。钱在这儿, Fadey先生。";
@@ -1586,7 +1586,7 @@ void ProcessDialogEvent()
 			}
 			Link.l2 = "三千金币达布隆! Fadey, 这么大一笔钱俺可拿不出来, 真是遗憾。俺以后再来吧。";
 			Link.l2.go = "UpgradeRopes_Potom";
-			link.l3 = "你说三千? 嗯……说实话, 这种数目还真让人佩服你的野心。不过我得承认—这事儿老子可干不了。";
+			link.l3 = "你说三千? 嗯…… 说实话, 这种数目还真让人佩服你的野心。不过我得承认—这事儿老子可干不了。";
 			link.l3.go = "UpgradeRopes_2";
 		break;
 		

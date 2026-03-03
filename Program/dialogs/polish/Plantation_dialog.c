@@ -130,7 +130,6 @@ void ProcessDialogEvent()
 				dialog.text = "Zobaczmy... ha! Twoja licencja jest przeterminowana. Idź za mną, zaprowadzę cię do komendanta...";
 				link.l1 = RandPhraseSimple("Cholera! Chyba nadszedł czas, abyś poznał moją szablę, kumplu.","Nie sądzę...");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			dialog.text = "Dobrze. Możesz wejść. Zachowuj się i nie przeszkadzaj niewolnikom.";

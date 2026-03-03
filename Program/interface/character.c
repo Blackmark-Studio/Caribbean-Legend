@@ -338,16 +338,6 @@ void ShowInfoWindow()
 		    sText1  = GetRPGText("Ship_abilities");
 		    sText3  = GetRPGText("Abilities_active");
 		break;
-		case "TABLE_PERKS":
-		    sHeader = XI_ConvertString("Personal abilities");
-		    sText1  = GetRPGText("Personal_abilities");
-		    sText3  = GetRPGText("Abilities_active");
-		break;
-		case "TABLE_PERKS2":
-		    sHeader = XI_ConvertString("Ship abilities");
-		    sText1  = GetRPGText("Ship_abilities");
-		    sText3  = GetRPGText("Abilities_active");
-		break;
 		case "PERK_TABLE_NEED":
 		    sHeader = GetRPGText("PERK_TABLE_NEED");
 		    sText1  = GetRPGText("PERK_TABLE_NEED_desc");
@@ -398,11 +388,16 @@ void FillSkillTables()
 
         GameInterface.TABLE_SPECIAL.(row).UserData.ID = skillName;
 		GameInterface.TABLE_SPECIAL.(row).td1.fontidx = 0;
-		GameInterface.TABLE_SPECIAL.(row).td1.textoffset = "6,-5";
+		GameInterface.TABLE_SPECIAL.(row).td1.textoffset = "5,-5";
 		//GameInterface.TABLE_SPECIAL.(row).td1.align = "center";
-		GameInterface.TABLE_SPECIAL.(row).td2.textoffset = "5,0";
+		// GameInterface.TABLE_SPECIAL.(row).td1.scale = 0.88;
+		GameInterface.TABLE_SPECIAL.(row).td2.textoffset = "0,0";
+		GameInterface.TABLE_SPECIAL.(row).td2.scale = 1.25;
+		GameInterface.TABLE_SPECIAL.(row).td3.scale = 1.2;
+		GameInterface.TABLE_SPECIAL.(row).td3.textoffset = "-10,1";
 		GameInterface.TABLE_SPECIAL.(row).td3.align = "center";
 		GameInterface.TABLE_SPECIAL.(row).td4.fontidx = 1;
+		GameInterface.TABLE_SPECIAL.(row).td4.textoffset = "5,0";
 		GameInterface.TABLE_SPECIAL.(row).td4.align = "left";
 		GameInterface.TABLE_SPECIAL.(row).td4.scale = 0.8;
 
@@ -421,17 +416,19 @@ void FillSkillTables()
 		}
 		else
 		{
-		   if (diff > 0)
-		   {
-	          GameInterface.TABLE_SPECIAL.(row).td3.str = "(+" + diff + ")";
-	          GameInterface.TABLE_SPECIAL.(row).td3.color = argb(255,196,255,196);
-	       }
-	       else
-	       {
-	          GameInterface.TABLE_SPECIAL.(row).td3.str = "(" + diff + ")";
-	          GameInterface.TABLE_SPECIAL.(row).td3.color = argb(255,255,196,196);
-	       }
-		}
+			if (diff > 0)
+			{
+				if (diff < 10) GameInterface.TABLE_SPECIAL.(row).td3.str = "~~~~~~+" + diff;
+				else GameInterface.TABLE_SPECIAL.(row).td3.str = "+" + diff;
+				GameInterface.TABLE_SPECIAL.(row).td3.color = argb(255,196,255,196);
+			}
+			else
+			{
+				if (abs(diff) < 10) GameInterface.TABLE_SPECIAL.(row).td3.str = "~~~~~~~" + diff;
+				else GameInterface.TABLE_SPECIAL.(row).td3.str = diff;
+					GameInterface.TABLE_SPECIAL.(row).td3.color = argb(255,255,196,196);
+			}
+		}	
 	}
     GameInterface.TABLE_SKILL_1.select = 0;
     GameInterface.TABLE_SKILL_1.hr.td1.str = "";
@@ -451,6 +448,10 @@ void FillSkillTables()
 		GameInterface.TABLE_SKILL_1.(row).td5.fontidx = 0;
 		GameInterface.TABLE_SKILL_1.(row).td5.scale = 0.8;
 		GameInterface.TABLE_SKILL_1.(row).td5.align = "left";
+		GameInterface.TABLE_SKILL_1.(row).td3.textoffset = "0,1";
+		GameInterface.TABLE_SKILL_1.(row).td4.scale = 1.2;
+		GameInterface.TABLE_SKILL_1.(row).td3.align = "right";
+		GameInterface.TABLE_SKILL_1.(row).td4.textoffset = "0,1";
 
 		GameInterface.TABLE_SKILL_1.(row).td2.str = XI_ConvertString(skillName);
 		skillVal = GetSkillBase(xi_refCharacter, &skillName);
@@ -475,16 +476,18 @@ void FillSkillTables()
 		}
 		else
 		{
-		   if (diff > 0)
-		   {
-	          GameInterface.TABLE_SKILL_1.(row).td4.str = "(+" + diff + ")";
-	          GameInterface.TABLE_SKILL_1.(row).td4.color = argb(255,196,255,196);
-	       }
-	       else
-	       {
-	          GameInterface.TABLE_SKILL_1.(row).td4.str = "(" + diff + ")";
-	          GameInterface.TABLE_SKILL_1.(row).td4.color = argb(255,255,196,196);
-	       }
+			if (diff > 0)
+			{
+				if (diff < 10) GameInterface.TABLE_SKILL_1.(row).td4.str = "~~~~~~+" + diff;
+				else GameInterface.TABLE_SKILL_1.(row).td4.str = "+" + diff;
+				GameInterface.TABLE_SKILL_1.(row).td4.color = argb(255,196,255,196);
+			}
+			else
+			{
+				if (abs(diff) < 10) GameInterface.TABLE_SKILL_1.(row).td4.str = "~~~~~~~" + diff;
+				else GameInterface.TABLE_SKILL_1.(row).td4.str = diff;
+					GameInterface.TABLE_SKILL_1.(row).td4.color = argb(255,255,196,196);
+			}
 		}
 	}
 	GameInterface.TABLE_SKILL_2.select = 0;
@@ -506,6 +509,10 @@ void FillSkillTables()
 		GameInterface.TABLE_SKILL_2.(row).td5.fontidx = 0;
 		GameInterface.TABLE_SKILL_2.(row).td5.scale = 0.8;
 		GameInterface.TABLE_SKILL_2.(row).td5.align = "left";
+		GameInterface.TABLE_SKILL_2.(row).td3.textoffset = "0,1";
+		GameInterface.TABLE_SKILL_2.(row).td4.scale = 1.2;
+		GameInterface.TABLE_SKILL_2.(row).td3.align = "right";
+		GameInterface.TABLE_SKILL_2.(row).td4.textoffset = "0,1";
 
 		GameInterface.TABLE_SKILL_2.(row).td2.str = XI_ConvertString(skillName);
 		skillVal = GetSkillBase(xi_refCharacter, &skillName);
@@ -530,16 +537,18 @@ void FillSkillTables()
 		}
 		else
 		{
-		   if (diff > 0)
-		   {
-	          GameInterface.TABLE_SKILL_2.(row).td4.str = "(+" + diff + ")";
-	          GameInterface.TABLE_SKILL_2.(row).td4.color = argb(255,196,255,196);
-	       }
-	       else
-	       {
-	          GameInterface.TABLE_SKILL_2.(row).td4.str = "(" + diff + ")";
-	          GameInterface.TABLE_SKILL_2.(row).td4.color = argb(255,255,196,196);
-	       }
+			if (diff > 0)
+			{
+				if (diff < 10) GameInterface.TABLE_SKILL_2.(row).td4.str = "~~~~~~~+" + diff;
+				else GameInterface.TABLE_SKILL_2.(row).td4.str = "+" + diff;
+				GameInterface.TABLE_SKILL_2.(row).td4.color = argb(255,196,255,196);
+			}
+			else
+			{
+				if (abs(diff) < 10) GameInterface.TABLE_SKILL_2.(row).td4.str = "~~~~~~~" + diff;
+				else GameInterface.TABLE_SKILL_2.(row).td4.str = diff;
+					GameInterface.TABLE_SKILL_2.(row).td4.color = argb(255,255,196,196);
+			}
 		}
 	}
 	////  остальное

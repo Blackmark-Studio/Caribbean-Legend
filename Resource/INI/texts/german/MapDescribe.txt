@@ -116,7 +116,7 @@ Marigo_Cave_box2 {eine Truhe in einer Sackgasse}
 Marigo_Cave_box3 {eine Truhe in der Nähe der Fackel}
 Panama_Cave {in einer Höhle auf der linken Seite des Ausgangs von Portobello}
 Panama_Cave_box1 {unter den Brettern in einer Sackgasse}
-Pearl_Grot {in einer Höhle in der Nähe der Westküste zwischen Belize und Blueweld}
+Pearl_Grot {in einer Höhle an der Westküste, tief im Dschungel hinter der Amatique Cove}
 Pearl_Grot_box1 {eine Truhe über einem großen Stein}
 PortoBello_Cave {in einer Höhle rechts von Mosquitos Bay}
 PortoBello_Cave_box1 {unter den Brettern in einer Sackgasse}

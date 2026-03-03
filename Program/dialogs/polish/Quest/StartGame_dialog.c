@@ -81,7 +81,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Cóż, kapitanie, teraz wyglądasz jak powinieneś. Jak się czujesz?";
+				dialog.text = "Cóż, kapitanie, teraz wyglądasz tak jak powinieneś. Jak się czujesz?";
 				//link.l2 = "BetaTest - Rozpocznij test zadania Longwaya";
 				//link.l2.go = "PZ_Test_Start_1";
 				if (bBettaTestMode)
@@ -1264,7 +1264,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_2":
-			dialog.text = "Nie martw się, nie musisz się martwić. Wdychaj świeże powietrze i spójrz na morze, wtedy twoja głowa będzie w porządku. Lekarz powiedział, że niczego nie będziesz pamiętać, gdy dojdziesz do siebie. Więc nie próbuj sobie przypominać, nie potrzebujesz tego.";
+			dialog.text = "Nie martw się, nie musisz się martwić. Wciągnij świeże powietrze i spójrz na morze, wtedy twoja głowa będzie w porządku. Lekarz powiedział, że niczego nie będziesz pamiętać, gdy dojdziesz do siebie. Więc nie próbuj sobie przypominać, nie potrzebujesz tego.";
 			link.l1 = "Jestem ciekaw mojej innej opcji.";
 			link.l1.go  = "Node_3";
 		break;
@@ -1330,10 +1330,10 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Jesteśmy teraz w porcie osady "+XI_ConvertString("Colony"+pchar.HeroParam.ToCityId+"Gen")+", rozgość się, ale wracaj. Już przegapiliśmy prawdziwą sprawę - musieliśmy sprzedać stary statek, ale na tym wiele nie zarobisz. Przerwała nam jednak nadzieja na twoje wyzdrowienie. A chłopaki wciąż w ciebie wierzą, inaczej dawno by się rozbiegli...";
+				dialog.text = "Jesteśmy teraz w "+XI_ConvertString("Colony"+pchar.HeroParam.ToCityId+"Gen")+", rozgość się, ale wracaj. Już przegapiliśmy prawdziwą sprawę - musieliśmy sprzedać stary statek, ale na tym wiele nie zarobisz. Przetrwała nam jednak nadzieja na twoje wyzdrowienie. A chłopaki wciąż w ciebie wierzą, inaczej dawno by się rozbiegli...";
 				link.l1 = "Znakomicie. Dobrze, schodzę na ląd... Nie martw się, nie zgubię się.";
 				link.l1.go  = "Finish_2";
-				link.l2 = "Jeśli myślisz, że nie jestem gotowy?";
+				link.l2 = "Myślisz, że nie jestem gotowy?";
 				link.l2.go  = "Advice_1";
 			}
 		break;
@@ -1486,7 +1486,7 @@ void ProcessDialogEvent()
 			pchar.HeroParam.Teach_battle = 2;
 			Tut_RestoreState();
 			dialog.text = "Dobrze. Świetna robota! Nie walczyłem nieuczciwie, ale twoi przeciwnicy mogą mieć własne eliksiry i nie będą tak łatwo pokonani. "+"Cóż, uczyńmy to nieco trudniejszym. Co powiesz na walkę przeciwko dwóm przeciwnikom jednocześnie?";
-			link.l1 = "Spróbujmy. Hej, Hopkins! Weź swój ostrze i wejdź na pokład!";
+			link.l1 = "Spróbujmy. Hej, Hopkins! Weź swoje ostrze i wejdź na pokład!";
 			link.l1.go  = "Teach_battle_1";
 			link.l2 = "Nie, dziękuję, miałem już dość praktyki.";
 			link.l2.go  = "Finish_1";

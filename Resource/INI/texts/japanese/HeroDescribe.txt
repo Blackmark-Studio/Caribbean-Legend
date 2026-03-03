@@ -1,0 +1,312 @@
+info
+{
+SLiBアドオン用ユニバーサルヒーロークリエイター
+    スクリプト作成：ALexusB 2004年10月9日
+    ファイルパス：\RESOURCE\INI\TEXTS\RUSSIAN\HeroDescribe.txt
+
+    バージョン 02.07.06
+
+    hero_qty - ヒーローの数
+    ps_hero_qty - 擬似ヒーローの数（ ゲーム内でクエストキャラとして登場する場合あり、 PГГでは男性キャラのみ）
+    heroName_Х        - ヒーローの名
+    heroLastname_Х    - ヒーローの姓
+    heroNameGen_ および heroLastnameGen_ - 属格、heroLastnameDat_ - 与格
+    heroFace_Х        - ポートレート番号
+    heroModel_Х       - カンマ区切りのモデルリスト（ スペースなし） 、 全リストより少ない場合は最初のものが使用される
+            （ ノーアーマー、 軽装、 中装、 クール、 ゴールド、 服1、服2、服3）
+    heroType_Х        - ヒーロータイプ（ 初期パラメータに影響）
+        値は：Corsair, Merchant, Adventurer のみ
+または（ロシア語版の場合）
+コルセア、
+商人、
+冒険者
+    heroNation_Х      - ヒーローの初期国籍（中立関係）
+        値は：ENGLAND, FRANCE, SPAIN, HOLLAND のみ
+            または（ロシア語版の場合）
+イングランド
+            フランス
+            スペイン
+            オランダ
+    sex_X             - 性別（man, woman, skeleton）
+    animation_X       - アニメーション（man, woman, towngirl）
+    hero_Х            - ヒーローの簡単な経歴（5～7行以内、 テキスト欄に収まるように）
+    Х - リスト内のヒーローの番号
+
+    各ファイルの場所：
+    ポートレートテクスチャ \RESOURCE\Textures\INTERFACES\PORTRAITS  (64, 128, 256)
+    スキン                \RESOURCE\Textures\Characters
+    モデル                \RESOURCE\MODELS\Characters
+    頭部                  \RESOURCE\MODELS\Heads
+    頭部アニメーション    \RESOURCE\animation\Heads および \RESOURCE\animation\Heads\AN
+
+    編集前に必ず元ファイルをバックアップしてください。 そうしないとアップデートが適用できない場合があります。
+    インストール前に元に戻し、 アップデートを適用してください。 その後、 ヒーローの設定を再度行ってください。
+
+    _______________
+               皆様のために　ALexusB
+}
+Merchant {カリブ海の群島で交易に挑む者は、 私掠船や海賊、 あらゆる無法者がひしめく中、 島々の相場を見極めて最大の利益を狙うだけでなく、 その利益を守るために剣を握る覚悟も求められるだろう。}
+Corsair {コルセア――それは悪党か、 それともロマンチストか？ それはあなたが主人公をどう導くか次第。 しかし、 コルセアになるには欠かせない資質がある。 それは、 恐れ知らずの心、 粘り強さ、 そして瞬時の決断力だ。 さあ、 挑め。}
+Adventurer {冒険こそが自由な冒険者の本当の生き方だ。 そして、 その追求で思わぬ報酬が手に入るなら、 存分に活かさない手はないだろう。}
+hero_qty {5}
+ps_hero_qty {20}
+heroName_1 {チャールズ}
+heroNameGen_1 {チャールズ}
+heroNameDat_1 {チャールズ}
+heroLastname_1 {ド・モール}
+heroLastnameGen_1 {ド・モール}
+heroLastNameDat_1 {ド・モール}
+heroFace_1 {201}
+heroModel_1 {Sharle_1,Sharle_2,Sharle_3,Sharle_4,Sharle_5,protocusto,Sharle_6,Sharle_8,Sharle_7,Sharle_9,Sharle_1,Sharle_11,Sharle_12,Sharle_13,Sharle_14}
+heroType_1 {コルセア}
+heroNation_1 {フランス}
+sex_1 {男}
+animation_1 {男}
+hero_1 {フランス貴族の息子であり、 気ままな芸術家、 そして名高い色男。 彼は行方不明の兄を探すためカリブにやって来た。 しかし、 この旅は家族探し以上のものとなる。 欺きと危険に直面し、 知識と愛を追い求め、 やがて自らの運命を切り開くための試練に立ち向かうことになる。}
+heroName_2 {Diego}
+heroLastname_2 {de Montoya}
+heroNameGen_2 {ディエゴ}
+heroLastnameGen_2 {de Montoya}
+heroNameDat_2 {ディエゴ}
+heroLastNameDat_2 {de Montoya}
+heroFace_2 {203}
+heroModel_2 {Diego_1,Diego_2,Diego_3,Diego_4,Diego_5,protocusto,Diego_6,Diego_8,Diego_1,Diego_9,Diego_1,Diego_11,Diego_12,Diego_13,Diego_14}
+heroType_2 {冒険者}
+heroNation_2 {スペイン}
+sex_2 {男}
+animation_2 {男}
+hero_2 {遥かアラゴン出身の傭兵。 自信過剰が災いし、 マドリードの夜の街で命を落としかけた。 新世界で彼は、 バロンの称号と自らの人生を手にする二度目の機会を得る。}
+heroName_3 {ウィリアム}
+heroLastname_3 {パターソン}
+heroNameGen_3 {ウィリアム}
+heroLastnameGen_3 {Paterson}
+heroNameDat_3 {ウィリアム}
+heroLastNameDat_3 {パターソン}
+heroFace_3 {202}
+heroModel_3 {Willy_1,Willy_2,Willy_3,Willy_4,Willy_5,protocusto,Willy_6,Willy_8,Willy_1,Willy_9,Willy_1,Willy_11,Willy_12,Willy_13,Willy_14}
+heroType_3 {商人}
+heroNation_3 {イングランド}
+sex_3 {man}
+animation_3 {man}
+hero_3 {この若き貴族の、 公正な交易で国と自らの懐を潤すという高潔な志は、 過酷な現実の前に打ち砕かれた。 彼は私掠免許状を手にし、 大砲と剣で繁栄への道を切り開くしかなくなり、 旧世界の気取った作法など忘れ去ることとなった……}
+heroName_4 {Helen}
+heroLastname_4 {McArthur}
+heroNameGen_4 {Helen}
+heroLastnameGen_4 {McArthur}
+heroNameDat_4 {Helen}
+heroLastNameDat_4 {McArthur}
+heroFace_4 {250}
+heroModel_4 {Rumba}
+heroType_4 {コルセア}
+heroNation_4 {海賊兄弟団}
+sex_4 {woman}
+animation_4 {rumba}
+hero_4 {若き海賊、フォレスト・デビル――海岸の兄弟団の男爵の庇護を受ける弟子。 しかし男爵は、 真の海賊たちがどれほど残酷で恐ろしい存在かを彼女に隠している。 ヘレンにとって海賊稼業とは、 ロマンスと小さな密輸、 自由…そして愛する戦闘スクーナー 「レインボー」 の甲板なのだ。}
+heroName_5 {Jessica}
+heroLastname_5 {Bradford}
+heroNameGen_5 {Jessica}
+heroLastnameGen_5 {Bradford}
+heroNameDat_5 {Jessica}
+heroLastNameDat_5 {Bradford}
+heroFace_5 {244}
+heroModel_5 {jessika}
+heroType_5 {コルセア}
+heroNation_5 {イングランド}
+sex_5 {女性}
+animation_5 {Jessika}
+hero_5 {ベルトロップの裏切りの後、 彼女は二度と男たちに譲らず、 コルセア艦隊の優れた船長になると誓った。 その誓い通り、 彼女は見事に成功し、 多くの国の政府が彼女の美しい首に懸賞金をかけている。}
+heroName_6 {イングアシオ}
+heroLastname_6 {マルコ}
+heroNameGen_6 {イングアシオ}
+heroLastnameGen_6 {マルコ}
+heroNameDat_6 {イングアシオ}
+heroLastNameDat_6 {マルコ}
+heroFace_6 {212}
+heroModel_6 {Chard2}
+heroType_6 {冒険者}
+heroNation_6 {スペイン}
+sex_6 {男}
+animation_6 {男}
+hero_6 {ПГГ}
+heroName_7 {ホラティオ}
+heroLastname_7 {ホーンブロワー}
+heroNameGen_7 {ホラティオ}
+heroLastnameGen_7 {ホーンブロワー}
+heroNameDat_7 {ホラティオ}
+heroLastNameDat_7 {ホーンブロワーへ}
+heroFace_7 {220}
+heroModel_7 {若者}
+heroType_7 {冒険者}
+heroNation_7 {イングランド}
+sex_7 {男}
+animation_7 {男}
+hero_7 {P.G.G.}
+heroName_8 {ジョン}
+heroLastname_8 {イースターリング}
+heroNameGen_8 {ジョナ}
+heroLastnameGen_8 {イステルリンガ}
+heroNameDat_8 {ジョンへ}
+heroLastNameDat_8 {イースターリング}
+heroFace_8 {216}
+heroModel_8 {Isterling}
+heroType_8 {冒険者}
+heroNation_8 {イングランド}
+sex_8 {男}
+animation_8 {男}
+hero_8 {ПГГ}
+heroName_9 {サンチョス}
+heroLastname_9 {エステバン}
+heroNameGen_9 {サンチョサ}
+heroLastnameGen_9 {エステバナ}
+heroNameDat_9 {サンチョス}
+heroLastnameDat_9 {エステバヌ}
+heroFace_9 {30}
+heroModel_9 {officer_13}
+heroType_9 {冒険者}
+heroNation_9 {スペイン}
+sex_9 {男}
+animation_9 {男}
+hero_9 {PGG}
+heroName_10 {ケルク}
+heroLastname_10 {ザンダー}
+heroNameGen_10 {ケルカ}
+heroLastnameGen_10 {Zandera}
+heroNameDat_10 {ケルク}
+heroLastnameDat_10 {ザンデル}
+heroFace_10 {31}
+heroModel_10 {officer_14}
+heroType_10 {冒険者}
+heroNation_10 {オランダ}
+sex_10 {男}
+animation_10 {男}
+hero_10 {ПГГ}
+heroName_11 {アルフォンソ}
+heroLastname_11 {サルヴァトーレ}
+heroNameGen_11 {アルフォンソ}
+heroLastnameGen_11 {サルヴァトーレ}
+heroNameDat_11 {アルフォンソ}
+heroLastnameDat_11 {サルヴァトーレ}
+heroFace_11 {32}
+heroModel_11 {officer_15}
+heroType_11 {冒険者}
+heroNation_11 {スペイン}
+sex_11 {男}
+animation_11 {男}
+hero_11 {P.G.G}
+heroName_12 {デルヴィン}
+heroNameGen_12 {デルヴィナ}
+heroNameDat_12 {デルヴィンへ}
+heroLastname_12 {ブレイズ}
+heroLastnameGen_12 {ブレイズ}
+heroLastNameDat_12 {ブレイズへ}
+heroFace_12 {1}
+heroModel_12 {Devlin}
+heroType_12 {商人}
+heroNation_12 {オランダ}
+sex_12 {男}
+animation_12 {男}
+hero_12 {P.G.G.}
+heroName_13 {ジョン}
+heroLastname_13 {シルバー}
+heroNameGen_13 {ジョナ}
+heroLastnameGen_13 {シルヴェラ}
+heroNameDat_13 {ジョンへ}
+heroLastNameDat_13 {シルバーへ}
+heroFace_13 {22}
+heroModel_13 {officer_5}
+heroType_13 {コルセア}
+heroNation_13 {イングランド}
+sex_13 {男}
+animation_13 {男}
+hero_13 {ПГГ}
+heroName_14 {フランシスコ}
+heroLastname_14 {デュボワ}
+heroNameGen_14 {フランシスカ}
+heroLastnameGen_14 {デュボワ}
+heroNameDat_14 {フランシスクへ}
+heroLastNameDat_14 {デュボワ}
+heroFace_14 {24}
+heroModel_14 {officer_7}
+heroType_14 {冒険者}
+heroNation_14 {フランス}
+sex_14 {男}
+animation_14 {男}
+hero_14 {ПГГ}
+heroName_15 {アーサー}
+heroLastname_15 {コルネル}
+heroNameGen_15 {アルトゥラ}
+heroLastnameGen_15 {コルネラ}
+heroNameDat_15 {アルトゥールへ}
+heroLastNameDat_15 {コルネル}
+heroFace_15 {25}
+heroModel_15 {officer_8}
+heroType_15 {冒険者}
+heroNation_15 {イングランド}
+sex_15 {男}
+animation_15 {男}
+hero_15 {PGG}
+heroName_16 {マーク}
+heroLastname_16 {ヴァンデルボルグ}
+heroNameGen_16 {マーク}
+heroLastnameGen_16 {ヴァンデルボルガ}
+heroNameDat_16 {マルク}
+heroLastNameDat_16 {ヴァンデルボルフへ}
+heroFace_16 {27}
+heroModel_16 {officer_10}
+heroType_16 {冒険者}
+heroNation_16 {オランダ}
+sex_16 {男}
+animation_16 {男}
+hero_16 {PGG}
+heroName_17 {セシル}
+heroLastname_17 {フォレスター}
+heroNameGen_17 {セシラ}
+heroLastnameGen_17 {フォレスター}
+heroNameDat_17 {セシル}
+heroLastNameDat_17 {フォレスターへ}
+heroFace_17 {28}
+heroModel_17 {officer_11}
+heroType_17 {冒険者}
+heroNation_17 {イングランド}
+sex_17 {男}
+animation_17 {男}
+hero_17 {ПГГ}
+heroName_18 {ホセ}
+heroLastname_18 {ダスコ}
+heroNameGen_18 {ホセ}
+heroLastnameGen_18 {ダスコ}
+heroNameDat_18 {ホセ}
+heroLastNameDat_18 {ダスコ}
+heroFace_18 {26}
+heroModel_18 {officer_9}
+heroType_18 {冒険者}
+heroNation_18 {スペイン}
+sex_18 {男}
+animation_18 {男}
+hero_18 {ПГГ}
+heroName_19 {ヨハン}
+heroLastname_19 {大胆}
+heroNameGen_19 {ヨハナ}
+heroLastnameGen_19 {ダーリンガ}
+heroNameDat_19 {ヨハンへ}
+heroLastNameDat_19 {ダリンгу}
+heroFace_19 {213}
+heroModel_19 {Chard3}
+heroType_19 {冒険者}
+heroNation_19 {オランダ}
+sex_19 {男}
+animation_19 {男}
+hero_19 {PGG}
+heroName_20 {マイケル}
+heroLastname_20 {チャード}
+heroNameGen_20 {マイクラ}
+heroLastnameGen_20 {チャルダ}
+heroNameDat_20 {マイクルへ}
+heroLastNameDat_20 {チャルドゥ}
+heroFace_20 {211}
+heroModel_20 {Chard}
+heroType_20 {冒険者}
+heroNation_20 {イングランド}
+sex_20 {男}
+animation_20 {男}
+hero_20 {ПГГ}

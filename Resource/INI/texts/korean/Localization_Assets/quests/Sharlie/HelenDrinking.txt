@@ -1,0 +1,23 @@
+HelenDrinking_1 {Francois}
+HelenDrinking_2 {de Tavann}
+HelenDrinking_3 {Vit}
+HelenDrinking_4 {Needles}
+HelenDrinking_5 {Rainbow}
+HelenDrinking_6 {이게 꿈인가? 모두 어디 있지?}
+HelenDrinking_7 {얀을 찾아가 사과해야겠다.}
+HelenDrinking_8 {Amelia}
+HelenDrinking_9 { }
+HelenDrinking_10 {Dane}
+HelenDrinking_11 { }
+HelenDrinking_12 {Lucky}
+HelenDrinking_13 { }
+HelenDrinking_14 {집이 두 곳이나 있다는 게 이렇게나 괴로울 줄이야. 오, 메리… 이 모든 일이 지나고 나서, 우리 셋은 이제 어떻게 해야 할까?}
+HelenDrinking_15 { }
+HelenDrinking_16 { }
+HelenDrinking_17 {Richard}
+HelenDrinking_18 {Small}
+HelenDrinking_19 { }
+HelenDrinking_20 { }
+HelenDrinking_21 {아이언우드가 화물창에 적재되었습니다!}
+HelenDrinking_22 {~ ~에 +1 획득 ~}
+HelenDrinking_23 {~ 이(가) ~에 +1을 얻음 ~}

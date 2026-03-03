@@ -326,6 +326,91 @@ int LocationInitOldWorld(int n)
 	Location_AddReload(sLocID, 1, "Reload2", "OldWorld_Town_Part3", "reload1", false, "Street", 1.5); // Warship новое
 	
 	n++;
+	
+	//////////////////////////////////////////////////////////////////////
+	// Франция, поместье де Монпе
+	//////////////////////////////////////////////////////////////////////
+	locations[n].id = "EstateDM1";
+	locations[n].id.label = "DeMonpe_Estate";
+	locations[n].filespath.models = "locations\Estate";
+	locations[n].image = "loading\EstateN.tga";
+	//Sound
+	locations[n].type = "europe";
+	locations[n].islandId = "Europe";
+	locations[n].countryId = "France";
+	//Models
+	//Always
+	locations[n].models.always.estate = "estate";
+	
+	locations[n].models.always.windows = "estate_windows";
+	Locations[n].models.always.windows.tech = "LocationWindows";	
+	Locations[n].models.always.windows.level = 66532;	
+	//VolumeLight	
+	Locations[n].models.always.vlight = "estate_vlight";
+	Locations[n].models.always.vlight.uvslide.v0 = 0.05;
+    Locations[n].models.always.vlight.uvslide.v1 = 0.0;
+	Locations[n].models.always.vlight.tech = "LocationWaterFall";
+	Locations[n].models.always.vlight.level = 99950;
+	
+	locations[n].models.always.locators = "estate_locators";
+	locations[n].models.always.grassPatch = "estate_grass";
+	//Day
+	locations[n].models.day.charactersPatch = "estate_patch";
+	locations[n].models.day.fonar = "estate_fd";
+	//Night
+	locations[n].models.night.charactersPatch = "estate_patch";
+	locations[n].models.night.fonar = "estate_fn";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "true";
+	//Reload map
+	locations[n].reload.l1.name = "reload3";
+	locations[n].reload.l1.go = "EstateDM1_Kitchen";
+	locations[n].reload.l1.emerge = "reload1";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "Bedroom";
+	
+	locations[n].locators_radius.item.item1 = 1.0;
+	
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////
+	// Франция, поместье де Монпе - столовая
+	//////////////////////////////////////////////////////////////////////
+	locations[n].id = "EstateDM1_Kitchen";
+	locations[n].id.label = "DeMonpe_Estate";
+	Locations[n].filespath.models = "Locations\EstateRooms\EstateKitchen";
+	locations[n].image = "loading\EstateRoomN.tga";		
+	//Models
+	//Sound
+	locations[n].type = "house";
+	locations[n].islandId = "Europe";
+	locations[n].countryId = "France";
+	//Always
+	Locations[n].models.always.main = "EstateKitchen";
+	Locations[n].models.always.main.level = 65538;
+	Locations[n].models.always.parts = "EstateKitchen_parts";
+	Locations[n].models.always.outside = "EstateKitchen_outside";
+	Locations[n].models.always.locators = "EstateKitchen_locators";
+	locations[n].models.always.grassPatch = "EstateKitchen_grass";
+	locations[n].models.always.window = "EstateKitchen_windows";
+	locations[n].models.always.window.tech = "LocationWindows";
+	locations[n].models.always.window.level = 65539;
+	//Day
+	Locations[n].models.day.charactersPatch = "EstateKitchen_patch";
+	//Night
+	Locations[n].models.night.charactersPatch = "EstateKitchen_patch";
+	
+	//Environment
+	Locations[n].environment.sea = "true";
+	Locations[n].environment.weather = "true";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "EstateDM1";
+	locations[n].reload.l1.emerge = "reload3";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "DeMonpe_Estate";
+	n = n + 1;
 
 	return n;
 }

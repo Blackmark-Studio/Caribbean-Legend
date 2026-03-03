@@ -8,5 +8,3 @@ incomingDamageReduction {Schadensschutz}
 RangeIncomingDamageReduction {Schutz vor Schusswaffenschaden}
 Shot_Damage {Schusswaffenschaden}
 HeadshotDamage {Kopftreffer-Schaden}
-Grapeshot_Damage {Erhöhter Schaden beim Schießen mit Kartätschen}
-Bullet_Damage {Erhöhter Schaden beim Schießen mit Kugeln}

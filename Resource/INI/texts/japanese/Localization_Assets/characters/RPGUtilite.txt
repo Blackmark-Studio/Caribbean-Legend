@@ -1,0 +1,23 @@
+RPGUtilite_1 {経験値獲得 ~}
+RPGUtilite_2 {ひどい}
+RPGUtilite_3 {悪い}
+RPGUtilite_4 {粗悪}
+RPGUtilite_5 {中程度}
+RPGUtilite_6 {良い}
+RPGUtilite_7 {優秀}
+RPGUtilite_8 {体力が上昇}
+RPGUtilite_9 {体力低下}
+RPGUtilite_10 {評判が下がった}
+RPGUtilite_11 {国の評判が上昇！}
+RPGUtilite_12 {国の評判が上昇！}
+RPGUtilite_13 {評判が下がった}
+RPGUtilite_14 {憎悪}
+RPGUtilite_15 {敵対}
+RPGUtilite_16 {嫌悪}
+RPGUtilite_17 {苛立ち}
+RPGUtilite_18 {中立}
+RPGUtilite_19 {共感}
+RPGUtilite_20 {友好度}
+RPGUtilite_21 {賞賛}
+RPGUtilite_22 {虹}
+RPGUtilite_23 {クイックシルバー}

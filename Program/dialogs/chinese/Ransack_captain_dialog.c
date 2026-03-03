@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 			attrLoc = Sea_FindNearColony();
 			if (attrLoc != "none") 
 			{
-                link.l3 = "我们离" + GetConvertStr(attrLoc +" Town", "LocLables.txt") + "不远。 我可以在这里放你走。 ";
+                link.l3 = "我们离" + GetCityName(attrLoc) + "不远。 我可以在这里放你走。 ";
 			    link.l3.go = "free_withoutFee";
 			}
 			else
@@ -170,7 +170,7 @@ void ProcessDialogEvent()
 				attrLoc = Sea_FindNearColony();
 				if (attrLoc != "none") 
 				{
-					link.l4 = "我们离" + GetConvertStr(attrLoc +" Town", "LocLables.txt") + "不远。 我可以在这里放你走。 ";
+					link.l4 = "我们离" + GetCityName(attrLoc) + "不远。 我可以在这里放你走。 ";
 					link.l4.go = "free_withoutFee";
 				}
 				else
@@ -199,7 +199,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "free_to_officer":
-			if ((GetSummonSkillFromName(pchar, "Leadership") + 20) <= GetSummonSkillFromName(npchar, "Leadership"))
+			if (!CanHirePrisoner(npchar))
 			{
 				dialog.text = "在你的指挥下服役? 我宁愿喂鲨鱼! ";
 				link.l1 = "注意你的言辞, 否则你会喂它们。 ";
@@ -216,7 +216,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "free_to_officer_trader":
-			if (GetSummonSkillFromName(pchar, "Leadership") <= GetSummonSkillFromName(npchar, "Leadership"))
+			if (!CanHirePrisoner(npchar))
 			{
 				dialog.text = LinkRandPhrase("这是一个诱人的提议... 但我必须拒绝。 原则上。 ",
 					"抱歉, 但在你对我的朋友做了那些之后... 这是不可能的。 ",
@@ -370,7 +370,7 @@ void ProcessDialogEvent()
             LAi_SetWarriorType(NPChar);
             LAi_group_MoveCharacter(NPChar, LAI_GROUP_TmpEnemy);
             LAi_group_SetHearRadius(LAI_GROUP_TmpEnemy, 100.0);
-            LAi_group_FightGroupsEx(LAI_GROUP_TmpEnemy, LAI_GROUP_PLAYER, true, Pchar, -1, false, false);
+            LAi_group_FightGroupsEx(LAI_GROUP_TmpEnemy, LAI_GROUP_PLAYER, true, GetMainCharacterIndex(), -1, false, false);
             LAi_group_SetRelation(LAI_GROUP_TmpEnemy, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
             LAi_group_SetCheck(LAI_GROUP_TmpEnemy, "My_Deck_Battle_End");
             LAi_group_SetRelation(LAI_GROUP_TmpEnemy, "Prisoner", LAI_GROUP_NEITRAL);
@@ -400,7 +400,7 @@ void ProcessDialogEvent()
             LAi_LocationFightDisable(&Locations[FindLocation("My_Deck")], false);
             LAi_SetFightMode(Pchar, true);
 			LAi_group_SetHearRadius(LAI_GROUP_TmpEnemy, 100.0);
-            LAi_group_FightGroupsEx(LAI_GROUP_TmpEnemy, LAI_GROUP_PLAYER, true, Pchar, -1, false, false);
+            LAi_group_FightGroupsEx(LAI_GROUP_TmpEnemy, LAI_GROUP_PLAYER, true, GetMainCharacterIndex(), -1, false, false);
             LAi_group_SetRelation(LAI_GROUP_TmpEnemy, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
             LAi_group_SetCheck(LAI_GROUP_TmpEnemy, "My_Deck_Battle_End");
         	DialogExit();

@@ -544,10 +544,20 @@ void Tonzag_LoadDeck() {
 		if (stf(loc.z) > 7.6 || stf(loc.z) < -22.0) {
 			continue;
 		}
-		
+		object aCrewSoldier[2];
+		GenerateCrew(pchar, "soldier", &aCrewSoldier);
+		string model;
+		string ani;
+
+		object aSoldier[1];
+		object aMushketers[1];
+		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
 		for (int j = 1; j <= 2; j++) {
-			sld = GetCharacter(NPC_GenerateCharacter("Tonzag_OurSailor_" + (sailorsCount + 1), "citiz_" + (rand(9)+31), "man", "man", 10, FRANCE, 0, true, "pirate"));
+			model = aCrewSoldier[j-1].model;
+			ani = aCrewSoldier[j-1].ani;
+			sld = GetCharacter(NPC_GenerateCharacter("Tonzag_OurSailor_" + (sailorsCount + 1), model, "man", ani, 10, FRANCE, 0, true, "pirate"));
 			LAi_SetHP(sld, 100, 100);
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 			ChangeCharacterAddressGroup(sld, pchar.location, "rld", GetAttributeName(loc));
 			LAi_SetActorType(sld);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
@@ -689,12 +699,19 @@ void Tonzag_SpawnGunDeck() {
 	aref locators;
 	makearef(locators, loadedLocation.locators.rld);
 	int locCount = GetAttributesNum(locators);
+	object aCrewSoldier[1];
+	SetArraySize(&aCrewSoldier, locCount);
+	GenerateCrew(pchar, "soldier", &aCrewSoldier);
+	string model;
+	string ani;
 	for (i = 1; i <= locCount; i++) {
 		aref loc = GetAttributeN(locators, i - 1);
 		string locatorName = GetAttributeName(loc);
 		
 		if (i % 5 != 1 && i % 5 != 4) {
-			sld = GetCharacter(NPC_GenerateCharacter("Tonzag_DeadManOur_" + i, "citiz_" + (rand(9)+31), "man", "man_dead", 10, FRANCE, 0, true, "pirate"));
+			model = aCrewSoldier[i-1].model;
+			ani = aCrewSoldier[i-1].ani;
+			sld = GetCharacter(NPC_GenerateCharacter("Tonzag_DeadManOur_" + i, model, "man", "man_dead", 10, FRANCE, 0, true, "pirate"));
 			sld.DontClearDead = true;
 			sld.DeadWithBlade = true;
 			ChangeCharacterAddressGroup(sld, pchar.location, "rld", locatorName);
@@ -721,15 +738,9 @@ void Tonzag_SpawnGunDeck() {
 		sld.viper = true;
 		LAi_group_MoveCharacter(sld, "EnemyFight");
 	}
-	
-	string officers[6];
-	officers[0] = "navigator";
-	officers[1] = "boatswain";
-	officers[2] = "cannoner";
-	officers[3] = "doctor";
-	officers[4] = "treasurer";
-	officers[5] = "carpenter";
-	
+
+	string officers[6] = {"navigator", "boatswain", "cannoner", "doctor", "treasurer", "carpenter"};
+
 	for (i = 0; i < 6; i++) {
 		string off = officers[i];
 		
@@ -780,14 +791,8 @@ void Tonzag_GunDeckFightEnd(string qName) {
 		sld.location = "none";
 	}
 	
-	string officers[6];
-	officers[0] = "navigator";
-	officers[1] = "boatswain";
-	officers[2] = "cannoner";
-	officers[3] = "doctor";
-	officers[4] = "treasurer";
-	officers[5] = "carpenter";
-	
+	string officers[6] = {"navigator", "boatswain", "cannoner", "doctor", "treasurer", "carpenter"};
+
 	for (i = 0; i < 6; i++) {
 		string off = officers[i];
 		

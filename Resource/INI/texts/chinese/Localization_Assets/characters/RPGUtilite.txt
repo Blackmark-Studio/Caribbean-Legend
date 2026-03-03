@@ -7,7 +7,7 @@ RPGUtilite_6 {良好}
 RPGUtilite_7 {优秀}
 RPGUtilite_8 {活力增加}
 RPGUtilite_9 {活力减少}
-RPGUtilite_10 {赏金增加!}
+RPGUtilite_10 {国家声望减少!}
 RPGUtilite_11 {国家声望增加!}
 RPGUtilite_12 {国家声望增加!}
 RPGUtilite_13 {国家声望减少!}

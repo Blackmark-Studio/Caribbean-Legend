@@ -60,9 +60,7 @@ void ArmoryPaperInit()
 {
 	int i;
 	ref itm;
-	
-	object tempItems[2];
-	SetArraySize(&tempItems, TOTAL_ITEMS);
+	object tempItems[TOTAL_ITEMS];
 	
 	for(i = 0; i < TOTAL_ITEMS; i++)
 	{

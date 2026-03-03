@@ -613,16 +613,7 @@ void ProcessDialogEvent()
 			
 			TakeNItems(pchar, "cannabis7", -15);
 			pchar.questTemp.ChickenGod.Tasks.p2.Completed = true;
-			if (pchar.rank >= 21)
-			{
-				sld = ItemsFromID("machete2");
-                sld.Attack = 80.0;
-			}
-			else
-			{
-				sld = ItemsFromID("machete2");
-                sld.Attack = 60.0;
-			}
+
 			GiveItem2Character(pchar, "machete2");
 			//Log_info("Вы получили Мачете конкистадора");
 			PlaySound("interface\important_item.wav");
@@ -874,12 +865,14 @@ void ProcessDialogEvent()
 			dialog.text = "Да будет так. Назови имя?";
 			
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Duran");
-			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Baker");
+
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Folke");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Avendel");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Tonzag");
 			if (!CheckAttribute(pchar, "questTemp.PZ_LongwayNelzyaOtdatArube")) ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Longway");
+			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Longway_FP");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Knippel");
+			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Kneepel_FP");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Tichingitu");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Irons");
 		break;
@@ -1082,12 +1075,14 @@ void ProcessDialogEvent()
 			dialog.text = "Назови имя?";
 			
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Duran");
-			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Baker");
+
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Folke");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Avendel");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Tonzag");
 			if (!CheckAttribute(pchar, "questTemp.PZ_LongwayNelzyaOtdatArube")) ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Longway");
+			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Longway_FP");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Knippel");
+			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Kneepel_FP");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Tichingitu");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Irons");
 			
@@ -1478,7 +1473,7 @@ bool ChickenGod_HaveOfficers() {
 	object fakelink;
 	
 	ChickenGod_AddOfficerLink(&fakelink, "", "Duran");
-	ChickenGod_AddOfficerLink(&fakelink, "", "Baker");
+
 	ChickenGod_AddOfficerLink(&fakelink, "", "Folke");
 	ChickenGod_AddOfficerLink(&fakelink, "", "Avendel");
 	ChickenGod_AddOfficerLink(&fakelink, "", "Tonzag");

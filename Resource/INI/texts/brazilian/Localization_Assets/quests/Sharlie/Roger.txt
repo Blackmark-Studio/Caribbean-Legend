@@ -1,0 +1,143 @@
+Roger_1 {Você entregou a bandeira espanhola}
+Roger_2 {Gabriela}
+Roger_3 {Chapada}
+Roger_4 {Modo exploração: tempo estendido. Complete a missão!}
+Roger_5 {Lope}
+Roger_6 {Montoro}
+Roger_7 {Rosario}
+Roger_8 {Gusman}
+Roger_9 {Cantavro}
+Roger_10 {Esberdo}
+Roger_11 {Cabanas}
+Roger_12 {Aproxime-se dos botes e pegue o saque. Cuidado para não esmagá-los com o casco do navio.}
+Roger_13 {Âmbar coletado @<sti(pchar.questTemp.Mtraxx_SobralVsyo)> / 5}
+Roger_14 {Snake}
+Roger_15 {Geffrey}
+Roger_16 {Brooke}
+Roger_17 {Fly Fish}
+Roger_18 {Billy}
+Roger_19 {Pert}
+Roger_20 {Utrecht}
+Roger_21 {Joachim}
+Roger_22 {Gusen}
+Roger_23 {brigantina 'Utrecht'}
+Roger_24 {Modo exploração: o cronômetro não está desativado. Cumpra o prazo!}
+Roger_25 {Uma hora depois...@<NewStr()>A seda foi descarregada para o comprador}
+Roger_26 {Moray}
+Roger_27 {Paul}
+Roger_28 {Chant}
+Roger_29 { }
+Roger_30 { }
+Roger_31 {30 armas brancas foram retiradas do arsenal do navio}
+Roger_32 {Armas brancas coletadas - 30 unidades}
+Roger_33 {Sem arma branca}
+Roger_34 {Pistolas reunidas - @<FindRussianQtyString(iGun)>}
+Roger_35 {Mosquetes reunidos - @<FindRussianQtyString(iMushket)>}
+Roger_36 {Poções de cura coletadas - @<FindRussianQtyString(iPotion)>}
+Roger_37 {Suprimentos reunidos para @<iShot> disparos}
+Roger_38 {Armas brancas coletadas - 30 unidades}
+Roger_39 {Pistolas reunidas - 50 unidades}
+Roger_40 {Poções de cura coletadas - 90 unidades}
+Roger_41 {Suprimentos reunidos para 70 disparos}
+Roger_42 {Mais tarde, na noite seguinte...}
+Roger_43 {Algum tempo depois...}
+Roger_44 {Plantação em alerta!}
+Roger_45 {Você tem 300 segundos antes que os espanhóis recebam reforços do forte}
+Roger_46 {A nau capitânia espanhola foi perdida! Podemos tentar fugir!}
+Roger_47 {Comboio holandês no horizonte!}
+Roger_48 {Rosbohom}
+Roger_49 {Gryphon}
+Roger_50 {A noite caiu...}
+Roger_51 {Mirabelle}
+Roger_52 { }
+Roger_53 {Mirabelle morreu de febre!}
+Roger_54 {Luka}
+Roger_55 {Bayard}
+Roger_56 {Kumwana}
+Roger_57 { }
+Roger_58 {Hayami}
+Roger_59 { }
+Roger_60 {Tagofa}
+Roger_61 { }
+Roger_62 {Dois dias depois...@<NewStr()>Seis botes foram construídos...}
+Roger_63 {Demetrio}
+Roger_64 {Rojas}
+Roger_65 {Kitty}
+Roger_66 { }
+Roger_67 {Ignacio}
+Roger_68 {Marco}
+Roger_69 {Modo de exploração: temporizador desativado.}
+Roger_70 {Eduardo}
+Roger_71 {de Losada}
+Roger_72 {El Casador}
+Roger_73 {Vá para sua cabine para estudar o diário de bordo}
+Roger_74 {Gaspard}
+Roger_75 {Goldenteeth}
+Roger_76 {A equipe de abordagem está pronta!}
+Roger_77 {Cuttlefish}
+Roger_78 {Vagrant}
+Roger_79 { }
+Roger_80 {Merciless}
+Roger_81 {Vampire}
+Roger_82 { }
+Roger_83 {O Torero está ancorado em Le Francois!}
+Roger_84 {Você espera furtivamente em seu esconderijo...}
+Roger_85 {'Torero'}
+Roger_86 {Modo exploração: duração da missão dobrada}
+Roger_87 {Eagle-Owl}
+Roger_88 {Joker}
+Roger_89 {Jim}
+Roger_90 {Modo de exploração: Corrida - as coordenadas estão corretas}
+Roger_91 {Modo de exploração: Corrida - as coordenadas estão incorretas}
+Roger_92 {Comboio espanhol no horizonte!}
+Roger_93 {Toro de Oro}
+Roger_94 { }
+Roger_95 {Uma grande explosão em @<pchar.ship.name>!}
+Roger_96 {Chegamos a Cartagena! Tyrex ordena seguir para a Baía de Covenas}
+Roger_97 {Os grupos de desembarque estão prontos para atacar Cartagena!}
+Roger_98 {O destacamento de '@<pchar.ship.name>' tem @<iCrew1> homens}
+Roger_99 {O destacamento do Red Dragon tem @<iCrew2> homens}
+Roger_100 {Destacamento do Snake tem @<iCrew3> homens}
+Roger_101 {O destacamento de Moray tem @<iCrew4> homens}
+Roger_102 {Um dia depois...@<NewStr()>Barris de pólvora foram entregues no bloqueio.}
+Roger_103 {Tonneur}
+Roger_104 {Libre}
+Roger_105 {Myutin}
+Roger_106 {Inconnu}
+Roger_107 { }
+Roger_108 { }
+Roger_109 {Três horas depois...}
+Roger_110 {Rodgar}
+Roger_111 {Janssen}
+Roger_112 {Ignacio Marco desembarcou no píer!}
+Roger_113 {2 horas se passaram...@<NewStr()>}
+Roger_114 {Ignacio Marco saiu da residência}
+Roger_115 {junto com dois capitães}
+Roger_116 {Separator}
+Roger_117 {Bernar}
+Roger_118 {Vensan}
+Roger_119 {Dionisio}
+Roger_120 {Peres}
+Roger_121 {Um dia depois...@<NewStr()>O resgate por Cartagena foi arrecadado}
+Roger_122 {Dois dias se passaram rapidamente@<NewStr()>em festas e prazeres amorosos...}
+Roger_123 {Camilla}
+Roger_124 { }
+Roger_125 {don Enrico}
+Roger_126 { }
+Roger_127 {Michel}
+Roger_128 {de Monper}
+Roger_129 {Marcus}
+Roger_130 {Tyrex}
+Roger_131 {Eu, Charles de Maure, nobre francês e capitão, juro:}
+Roger_132 {... estou deixando meu passado pirata para trás de uma vez por todas ...}
+Roger_133 {... Nunca mais um civil inocente morrerá por minhas mãos ...}
+Roger_134 {... juro proteger as mulheres, independentemente de sua posição ou nacionalidade ...}
+Roger_135 {... juro que o ouro não me cegará mais ...}
+Roger_136 {... juro enfrentar qualquer vilão que cruzar meu caminho ...}
+Roger_137 {... juro que, entre a honra e a riqueza, sempre escolherei a honra ...}
+Roger_138 {... juro permanecer um homem digno e nobre em qualquer situação e com qualquer pessoa ...}
+Roger_139 {Por algum motivo, não paro de pensar na Mirabelle. Como será que ela está? Será que sente minha falta? Deve ter sido cruel deixá-la sozinha, tão jovem. Vou consertar isso! Preciso vê-la em breve.}
+Roger_140 {Knippel}
+Roger_141 {Longway}
+Roger_142 {Tichingitu}
+Roger_143 {Tommy}

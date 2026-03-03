@@ -205,7 +205,7 @@ void SantiagoTrip_Attack(string qName)//подкраулили
 {
 	pchar.GenQuest.Hunter2Pause = true; // ОЗГи на паузу
 	LAi_LocationFightDisable(&Locations[FindLocation("Santiago_town")], true); // Addon 2016-1 Jason пиратская линейка
-	int iRank = 12+MOD_SKILL_ENEMY_RATE/2;
+	int iRank = 9+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 20+MOD_SKILL_ENEMY_RATE*2;
 	sld = GetCharacter(NPC_GenerateCharacter("SantiagoEnemy1", "mercen_10", "man", "man", iRank, SPAIN, -1, true, "quest"));
 	FantomMakeCoolFighter(sld, iRank, iScl, iScl, "blade_06", "pistol1", "bullet", iScl);
@@ -249,7 +249,7 @@ void SantiagoTripInHouse(string qName)//телепорт
 	}
 	location.box1.money = sti(PChar.money);	
 	location.box1 = Items_MakeTime(GetTime(), GetDataDay(), GetDataMonth(), GetDataYear());
-	RemoveAllCharacterItems(PChar, true);
+	RemoveAllCharacterItems(PChar, true, true);
 }
 
 void SantiagoTrip_wait(string qName)//
@@ -946,7 +946,7 @@ void MerdokInUndergroundCave(string qName)//установим Мердока и
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретим драться
 	sld = characterFromId("Merdok");
 	sld.greeting = "merdok_6";
-	FantomMakeCoolFighter(sld, 20, 50, 50, "blade_27", "pistol6", "bullet", 100); // приз - саксенфедер 090912
+	FantomMakeCoolFighter(sld, 14+MOD_SKILL_ENEMY_RATE/2, 50, 50, "blade_27", "pistol6", "bullet", 100); // приз - саксенфедер 090912
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
 	GiveItem2Character(sld, "Drugstore_keys");//ключи
@@ -954,7 +954,7 @@ void MerdokInUndergroundCave(string qName)//установим Мердока и
 	ChangeCharacterAddressGroup(sld, "SentJons_TownCave", "item", "berglar1");
 	//помощник Мердока - Тонзаг
 	sld = characterFromId("Tonzag");	
-	FantomMakeCoolFighter(sld, 30, 70, 70, "blade_07", "pistol6", "bullet", 150);
+	FantomMakeCoolFighter(sld, 17+MOD_SKILL_ENEMY_RATE/2, 70, 70, "blade_07", "pistol6", "bullet", 150);
 	LAi_SetStayType(sld);
 	DeleteAttribute(sld, "SaveItemsForDead");
 	DeleteAttribute(sld, "DontClearDead");
@@ -1289,7 +1289,7 @@ void FailVanBergInWorld()//не создаем ван Берга, если си�
 
 void CreateVanBergInWorld()//запускаем Ван Берга на карте
 {
-	int iRank = 15+MOD_SKILL_ENEMY_RATE;
+	int iRank = 15+MOD_SKILL_ENEMY_RATE/2;
     string sCapId = "JacobBerg";
     string sGroup = "Sea_" + sCapId + "1";
 	Group_DeleteGroup(sGroup);
@@ -1467,8 +1467,8 @@ void CreateChavinavyMonster(string qName)//драка с монстром
 	LAi_group_Delete("EnemyFight");
 	PlaySound("ambient\horror\horror2.wav");
 	LAi_SetStayType(Pchar);
-	sld = GetCharacter(NPC_GenerateCharacter("Chavinavi", "Chavinavi_1", "man", "skeleton", 20+MOD_SKILL_ENEMY_RATE*3, PIRATE, -1, false, "quest"));
-	FantomMakeCoolFighter(sld, 20+MOD_SKILL_ENEMY_RATE*3, 70, 70, "topor_01", "pistol6", "bullet", MOD_SKILL_ENEMY_RATE*60);
+	sld = GetCharacter(NPC_GenerateCharacter("Chavinavi", "Chavinavi_1", "man", "skeleton", 18+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, false, "quest"));
+	FantomMakeCoolFighter(sld, 18+MOD_SKILL_ENEMY_RATE/2, 70, 70, "topor_01", "pistol6", "bullet", MOD_SKILL_ENEMY_RATE*60);
 	sld.name = StringFromKey("HollandGambit_44");
 	sld.lastname = StringFromKey("HollandGambit_45");
 	sld.greeting = "";
@@ -1537,7 +1537,7 @@ void CreateHollandShorePatrol(string qName)//патруль, драться не
     {
         sld = GetCharacter(NPC_GenerateCharacter("PatrolCap_"+i, "off_hol_"+(rand(5)+1), "man", "man", 20, HOLLAND, 3, true, "hunter"));
 		FantomMakeSmallSailor(sld, iTemp, "", CANNON_TYPE_CANNON_LBS16, 40+rand(10), 40+rand(15), 40+rand(15), 50+rand(15), 45+rand(15));
-		FantomMakeCoolFighter(sld, 20, 50, 50, "blade_10", "pistol1", "bullet", 70);
+		FantomMakeCoolFighter(sld, 11+MOD_SKILL_ENEMY_RATE/2, 50, 50, "blade_10", "pistol1", "bullet", 70);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
         sld.AlwaysEnemy = true;
@@ -1568,7 +1568,7 @@ void MerdokInUndergroundCaveEng(string qName)//установим Мердока
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретим драться
 	sld = characterFromId("Merdok");
 	sld.greeting = "merdok_3";
-	FantomMakeCoolFighter(sld, 20, 60, 60, "blade_14", "pistol3", "bullet", 100);
+	FantomMakeCoolFighter(sld, 14+MOD_SKILL_ENEMY_RATE/2, 60, 60, "blade_14", "pistol3", "bullet", 100);
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
 	GiveItem2Character(sld, "MerdokArchive");//архив
@@ -1614,7 +1614,7 @@ void CreateLucasOnMeifeng(string qName)//создадим Лукаса на Ме
 	Group_FindOrCreateGroup("Lucas_Attack");
 	sld = characterFromId("Lucas");
 	FantomMakeSmallSailor(sld, SHIP_MAYFANG, GetShipName("Meifeng"), CANNON_TYPE_CANNON_LBS16, 100, 70, 70, 90, 70);
-	FantomMakeCoolFighter(sld, 25, 70, 70, "blade_30", "pistol5", "bullet", 100); // приз - офицерский катлас
+	FantomMakeCoolFighter(sld, 17+MOD_SKILL_ENEMY_RATE/2, 70, 70, "blade_30", "pistol5", "bullet", 100); // приз - офицерский катлас
     sld.AlwaysEnemy = true;
     sld.DontRansackCaptain = true;
 	sld.SaveItemsForDead = true;
@@ -1737,8 +1737,8 @@ void DelMapTonzagAllQM() // удалить остатки квестмаркер
 void CreateFernandoOnLand(string qName)//испанец в городе
 {
 	pchar.questTemp.HWIC.Self = "FernandoCreated";
-	sld = GetCharacter(NPC_GenerateCharacter("HWICFernando", "Rodriges", "man", "man", 20, SPAIN, 1, false, "quest"));
-	FantomMakeCoolFighter(sld, 20, 50, 50, "blade_09", "pistol1", "bullet", 50);
+	sld = GetCharacter(NPC_GenerateCharacter("HWICFernando", "Rodriges", "man", "man", 13+MOD_SKILL_ENEMY_RATE/2, SPAIN, 1, false, "quest"));
+	FantomMakeCoolFighter(sld, 13+MOD_SKILL_ENEMY_RATE/2, 50, 50, "blade_09", "pistol1", "bullet", 50);
 	sld.name = StringFromKey("HollandGambit_18");
 	sld.lastname = StringFromKey("HollandGambit_19");
 	sld.greeting = "hambit_other_5";
@@ -1765,15 +1765,15 @@ void CreateFernandoOnSea(string qName)//испанец на море
 	Group_SetType("Fernando_Attack", "war");
 	if(MOD_SKILL_ENEMY_RATE > 8)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("HWICFernando", "Rodriges", "man", "man", 20, SPAIN, -1, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("HWICFernando", "Rodriges", "man", "man", 13+MOD_SKILL_ENEMY_RATE/2, SPAIN, -1, false, "quest"));
 		FantomMakeSmallSailor(sld, SHIP_BRIGANTINE, "", CANNON_TYPE_CANNON_LBS12, 45, 40, 40, 50, 50);
-		FantomMakeCoolFighter(sld, 20, 50, 50, "blade_09", "pistol1", "bullet", 150);
+		FantomMakeCoolFighter(sld, 13+MOD_SKILL_ENEMY_RATE/2, 50, 50, "blade_09", "pistol1", "bullet", 150);
 	}
 	else
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("HWICFernando", "Rodriges", "man", "man", 17, SPAIN, -1, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("HWICFernando", "Rodriges", "man", "man", 11+MOD_SKILL_ENEMY_RATE/2, SPAIN, -1, false, "quest"));
 		FantomMakeSmallSailor(sld, SHIP_BRIGANTINE, "", CANNON_TYPE_CANNON_LBS12, 38, 34, 34, 43, 43);
-		FantomMakeCoolFighter(sld, 17, 43, 43, "blade_09", "pistol1", "bullet", 130);
+		FantomMakeCoolFighter(sld, 11+MOD_SKILL_ENEMY_RATE/2, 43, 43, "blade_09", "pistol1", "bullet", 130);
 		SetCrewQuantity(sld,GetOptCrewQuantity(sld));
 	}
 	sld.name = StringFromKey("HollandGambit_18");
@@ -1959,6 +1959,7 @@ void FleetwoodHouseEnter(string qName)//открываем дверь
 
 void FindRoomKey(string qName)//открываем дверь
 {
+	chrDisableReloadToLocation = false;
 	PlaySound("interface\key.wav");//щелк!
 	LocatorReloadEnterDisable("SentJons_houseSP3", "reload2", false);//комнату откроем
 	pchar.quest.Fleetwood_Book.win_condition.l1 = "item";
@@ -1975,8 +1976,8 @@ void FirstFloorFight(string qName)//драка в доме
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запрет драки до разговора
 	for (i=1; i<=4; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Attack_sold_"+i, "sold_eng_"+i, "man", "man", 20, ENGLAND, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, 20, 50, 50, "blade_10", "pistol6", "bullet", 50);//подразделение альфа
+		sld = GetCharacter(NPC_GenerateCharacter("Attack_sold_"+i, "sold_eng_"+i, "man", "man", 11+MOD_SKILL_ENEMY_RATE/2, ENGLAND, -1, false, "soldier"));
+		FantomMakeCoolFighter(sld, 11+MOD_SKILL_ENEMY_RATE/2, 50, 50, "blade_10", "pistol6", "bullet", 50);//подразделение альфа
 		LAi_SetWarriorType(sld);
 		if (i == 4)
 		{
@@ -1999,8 +2000,8 @@ void SJ_StreetFight(string qName)//драка на улице - Тонзаг в 
 	pchar.GenQuest.Notsearchbody = true;//запрет обыска трупов
 	for (i=1; i<=2; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Attack2_sold_"+i, "sold_eng_"+i, "man", "man", 20, ENGLAND, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, 20, 60, 60, "blade_19", "pistol4", "bullet", 60);//подразделение альфа
+		sld = GetCharacter(NPC_GenerateCharacter("Attack2_sold_"+i, "sold_eng_"+i, "man", "man", 13+MOD_SKILL_ENEMY_RATE/2, ENGLAND, -1, false, "soldier"));
+		FantomMakeCoolFighter(sld, 13+MOD_SKILL_ENEMY_RATE/2, 60, 60, "blade_19", "pistol4", "bullet", 60);//подразделение альфа
 		LAi_SetWarriorType(sld);
 		ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
 		LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -2163,9 +2164,20 @@ void Knippel_AfterBattle(string qName)//реакция на победу
 		ChangeCharacterAddressGroup(chr, "My_Deck", "rld", "aloc3");
 		chr.Dialog.Filename = "Quest\HollandGambit\Knippel.c";
 		chr.Dialog.CurrentNode = "Knippel_prisoner";
+		object aCrewSoldier[2];
+		GenerateCrew(pchar, "soldier", &aCrewSoldier);
+
+		int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+		int iScl = 20 + 2*sti(pchar.rank);
+		object aSoldier[1];
+		object aMushketers[1];
+		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
 		for (i=1; i<=2; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Sailor_"+i, "citiz_"+(30+i), "man", "man", 25, pchar.nation, -1, false, "soldier"));
+			string model = aCrewSoldier[i-1].model;
+			string ani = aCrewSoldier[i-1].ani;
+			sld = GetCharacter(NPC_GenerateCharacter("Sailor_"+i, model, "man", ani, 25, pchar.nation, -1, false, "soldier"));
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 			LAi_SetStayType(sld);
 			LAi_CharacterDisableDialog(sld);
 			if (i == 1) ChangeCharacterAddressGroup(sld, "My_Deck", "rld", "aloc2");
@@ -2322,8 +2334,8 @@ void CreateDrunckardInTavern()//создаем пьянтоса
 {
 	pchar.questTemp.HWIC.Self = "LetterToDrunkard";
 	FreeSitLocator("Sentjons_tavern", "sit_front1");
-	sld = GetCharacter(NPC_GenerateCharacter("Drunkard", "panhandler_6", "man", "man", 10, ENGLAND, -1, true, "quest"));
-	FantomMakeCoolFighter(sld, 10, 10, 10, "topor_1", "pistol3", "bullet", 50);
+	sld = GetCharacter(NPC_GenerateCharacter("Drunkard", "panhandler_6", "man", "man", 7+MOD_SKILL_ENEMY_RATE/2, ENGLAND, -1, true, "quest"));
+	FantomMakeCoolFighter(sld, 7+MOD_SKILL_ENEMY_RATE/2, 10, 10, "topor_1", "pistol3", "bullet", 50);
 	RemoveAllCharacterItems(sld, true);
 	sld.name = StringFromKey("HollandGambit_30");
 	sld.lastname = StringFromKey("HollandGambit_31");
@@ -2366,10 +2378,20 @@ void InTerksShore(string qName)//пришли на Теркс в бухту
 		pchar.quest.Fleetwood_meetingOver.over = "yes";//снять таймер
 		SetFunctionTimerCondition("Fleetwood_ShoreOver", 0, 0, 5, false);//новый таймер, чтобы не занимался ерундой
 		AddQuestRecord("Holl_Gambit", "3-33");
+		object aCrewSoldier[7];
+		GenerateCrew(pchar, "soldier", &aCrewSoldier);
+
+		int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+		int iScl = 20 + 2*sti(pchar.rank);
+		object aSoldier[1];
+		object aMushketers[1];
+		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
 		for (i=1; i<=7; i++)//организуем засаду
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("OwrSailor_"+i, "citiz_"+(30+i), "man", "man", 20, sti(pchar.nation), -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, 20, 40, 40, "blade_14", "pistol1", "bullet", 70);
+			string model = aCrewSoldier[i-1].model;
+			string ani = aCrewSoldier[i-1].ani;
+			sld = GetCharacter(NPC_GenerateCharacter("OwrSailor_"+i, model, "man", ani, 20, sti(pchar.nation), -1, false, "soldier"));
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 			DeleteAttribute(sld, "SaveItemsForDead");
 			DeleteAttribute(sld, "DontClearDead");
 			LAi_SetStayType(sld);
@@ -2434,7 +2456,7 @@ void CreateFleetwoodInShore(string qName)//явился Флитвуд
 		LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретим драться
 		chrDisableReloadToLocation = true;//закрыть локацию
 		ref chr = characterFromId("Fleetwood");
-		FantomMakeCoolFighter(chr, 25, 70, 70, "blade_14", "pistol3", "bullet", 100);//крутой парень
+		FantomMakeCoolFighter(chr, 17+MOD_SKILL_ENEMY_RATE/2, 70, 70, "blade_14", "pistol3", "bullet", 100);//крутой парень
 		chr.SaveItemsForDead = true;
 		chr.DontClearDead = true;
 		chr.dialog.currentnode = "InTerksShore";
@@ -2444,8 +2466,8 @@ void CreateFleetwoodInShore(string qName)//явился Флитвуд
 		AddLandQuestMark(chr, "questmarkmain");
 		for (i=1; i<=3; i++)//офицеры
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("FlOfficer_"+i, "sold_eng_"+i, "man", "man", 20, ENGLAND, -1, true, "soldier"));
-			FantomMakeCoolFighter(sld, 20, 40, 40, "blade_13", "pistol3", "bullet", 70);
+			sld = GetCharacter(NPC_GenerateCharacter("FlOfficer_"+i, "sold_eng_"+i, "man", "man", 12+MOD_SKILL_ENEMY_RATE/2, ENGLAND, -1, true, "soldier"));
+			FantomMakeCoolFighter(sld, 12+MOD_SKILL_ENEMY_RATE/2, 40, 40, "blade_13", "pistol3", "bullet", 70);
 			DeleteAttribute(sld, "SaveItemsForDead");
 			DeleteAttribute(sld, "DontClearDead");
 			LAi_SetStayType(sld);
@@ -2812,9 +2834,9 @@ void LongwayInShore(string qName)//Лонгвэй в бухте
 void CreatePiterHalleon(string qName)//галеон Стайвесанта
 {
 	Group_FindOrCreateGroup("Stivesant_Halleon");
-	sld = GetCharacter(NPC_GenerateCharacter("Stivesant", "huber_1", "man", "man_B", 35, HOLLAND, 9, false, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("Stivesant", "huber_1", "man", "man_B", 21+MOD_SKILL_ENEMY_RATE/2, HOLLAND, 9, false, "quest"));
 	FantomMakeSmallSailor(sld, SHIP_GALEON_H, StringFromKey("HollandGambit_38"), CANNON_TYPE_CANNON_LBS24, 100, 100, 100, 100, 100);
-	FantomMakeCoolFighter(sld, 35, 90, 90, "blade_15", "pistol5", "bullet", 250);
+	FantomMakeCoolFighter(sld, 21+MOD_SKILL_ENEMY_RATE/2, 90, 90, "blade_15", "pistol5", "bullet", 250);
 	DeleteAttribute(sld, "SaveItemsForDead");
 	DeleteAttribute(sld, "DontClearDead");
 	sld.name = StringFromKey("HollandGambit_36");
@@ -3031,9 +3053,9 @@ void CreateTradeFleut(string qName)//флейт Тоффа Келлера
 {
 	Group_FindOrCreateGroup("Keller_Fleut");
 	Group_SetType("Keller_Fleut", "trade");//тип группы
-	sld = GetCharacter(NPC_GenerateCharacter("Keller", "trader_2", "man", "man", 20, HOLLAND, 5, false, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("Keller", "trader_2", "man", "man", 16+MOD_SKILL_ENEMY_RATE/2, HOLLAND, 5, false, "quest"));
 	FantomMakeSmallSailor(sld, SHIP_FLEUT, StringFromKey("HollandGambit_39"), CANNON_TYPE_CANNON_LBS8, 50, 40, 40, 60, 60);
-	FantomMakeCoolFighter(sld, 20, 30, 30, "blade_08", "pistol3", "grapeshot", 50);
+	FantomMakeCoolFighter(sld, 16+MOD_SKILL_ENEMY_RATE/2, 30, 30, "blade_08", "pistol3", "grapeshot", 50);
 	sld.name = StringFromKey("HollandGambit_40");
 	sld.lastname = StringFromKey("HollandGambit_41");
 	DeleteAttribute(sld, "SaveItemsForDead");
@@ -3069,8 +3091,8 @@ void BattleInGrot(string qName)//напали ванберговцы в пеще
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретить драться 300912
 	for (i=1; i<=4; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("vanberg_sold_"+i, "citiz_"+(40+i), "man", "man", 15, PIRATE, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, 15, 40, 40, "blade_04", "pistol3", "bullet", 70);
+		sld = GetCharacter(NPC_GenerateCharacter("vanberg_sold_"+i, "citiz_"+(40+i), "man", "man", 10+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, false, "soldier"));
+		FantomMakeCoolFighter(sld, 10+MOD_SKILL_ENEMY_RATE/2, 40, 40, "blade_04", "pistol3", "bullet", 70);
 		if (i == 1) 
 		{
 			sld.Dialog.Filename = "Quest\HollandGambit\OtherNPC.c";
@@ -3093,8 +3115,8 @@ void CreateVanbergSailors(string qName)//напали ванберговцы в 
 	chrDisableReloadToLocation = true;
 	for (i=1; i<=5; i++)//5 солдат
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("vanberg_sailor_"+i, "citiz_"+(i+43), "man", "man", 15, PIRATE, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, 15, 40, 40, "blade_10", "pistol6", "bullet", 50);
+		sld = GetCharacter(NPC_GenerateCharacter("vanberg_sailor_"+i, "citiz_"+(i+43), "man", "man", 10+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, false, "soldier"));
+		FantomMakeCoolFighter(sld, 10+MOD_SKILL_ENEMY_RATE/2, 40, 40, "blade_10", "pistol6", "bullet", 50);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
 		ChangeCharacterAddressGroup(sld, pchar.location.from_sea, "goto", "goto"+(i+3));
@@ -3102,8 +3124,8 @@ void CreateVanbergSailors(string qName)//напали ванберговцы в 
 	}
 	for (i=1; i<=3; i++)//3 мушкетера
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("vanberg_mushketer_"+i, "mush_ctz_"+(6+i), "man", "mushketer", 20, PIRATE, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, 20, 50, 50, "", "mushket1", "bullet", 50);
+		sld = GetCharacter(NPC_GenerateCharacter("vanberg_mushketer_"+i, "mush_ctz_"+(6+i), "man", "mushketer", 12+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, false, "soldier"));
+		FantomMakeCoolFighter(sld, 12+MOD_SKILL_ENEMY_RATE/2, 50, 50, "", "mushket1", "bullet", 50);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
 		ChangeCharacterAddressGroup(sld, pchar.location.from_sea, "goto", "goto"+i);
@@ -3125,7 +3147,7 @@ void CreateVanbergInSea(string qName)//Якоб ван Берг у остров�
 	// belamour для легких уровней команду в опт -->
 	if(MOD_SKILL_ENEMY_RATE < 7) SetCrewQuantity(sld,GetOptCrewQuantity(sld));
 	// <-- legendary edition			 
-	FantomMakeCoolFighter(sld, 30, 80, 80, "topor_04", "pistol5", "bullet", 150); // приз - секира 090912
+	FantomMakeCoolFighter(sld, 19+MOD_SKILL_ENEMY_RATE/2, 80, 80, "topor_04", "pistol5", "bullet", 150); // приз - секира 090912
 	sld.DontRansackCaptain = true;
 	sld.AnalizeShips = true;
 	sld.SaveItemsForDead = true;
@@ -3448,7 +3470,7 @@ bool HollandGambit_QuestComplete(string sQuestName, string qname)
 		LAi_SetPlayerType(pchar);
 		sld = characterFromId("Merdok");
 		sld.dialog.currentnode = "MC_InHouse";
-		ChangeCharacterAddressGroup(sld, "SentJons_HouseF3_Room2", "barmen", "bar3");
+		ChangeCharacterAddressGroup(sld, "SentJons_HouseF3_Room2", "barmen", "bar2");
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 		sld = characterFromId("Tonzag");

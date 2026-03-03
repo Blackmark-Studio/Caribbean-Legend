@@ -130,6 +130,13 @@ void ProcessDialogEvent()
 			dialog.text = "什么事, 船长? ";
 			Link.l1 = "听我的命令! ";
             Link.l1.go = "stay_follow";
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				dialog.text = "船长, 我看您似乎有些心神不宁, 而且脸色也不太好…… 换作别的情况, 我本该给您来一剂我的药酒, 不过…… ";
+				Link.l1 = "看得出来你在医术上颇有造诣, "+npchar.name+" 。谢谢, 我没事。 只是不得不迈出一步——在别的情况下, 也许我根本不会下这个决心。";
+				Link.l1.go = "SharlieEpilog_Baker_1";
+				break;
+			}
 			
 			////////////////////////军需官///////////////////////////////////////////////////////////
            	// boal 船舶报告
@@ -190,7 +197,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -205,7 +212,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;		
@@ -225,8 +232,65 @@ void ProcessDialogEvent()
             Link.l1 = "解散。 ";
             Link.l1.go = "Exit";
         break;
-	//< —--------------------------------- —军官模块 ----------------------------------------
+	//<-- ----------------------------------- офицерский блок ----------------------------------------
 		
+		// Эпилог
+		case "SharlieEpilog_Baker_1":
+			dialog.text = "嗯…… 看起来, 是我有些没弄明白。 我原以为, 即将发生的事会让您感到高兴。";
+			link.l1 = "你这话是什么意思?";
+			link.l1.go = "SharlieEpilog_Baker_2";
+		break;
+
+		case "SharlieEpilog_Baker_2":
+			dialog.text = "咳…… 抱歉。 我也不知道自己怎么了。 大概是被太阳晒昏头了吧。 其实, 我是想和您谈一谈, 船长。";
+			link.l1 = "哦？那你想谈什么？";
+			link.l1.go = "SharlieEpilog_Baker_3";
+		break;
+		
+		case "SharlieEpilog_Baker_3":
+			dialog.text = "我已经太老了, 不适合这些没完没了的海战了, 哪怕我只是间接参与其中。 我有一些积蓄, 打算上岸, 开一家私人诊所。希望您不会反对? ";
+			link.l1 = "当然不会, "+npchar.name+"。老实说, 我会想念像你这样能干的军官。但我理解并尊重你的决定。祝你好运。我相信, 你很快就会成为一位有名望、受人尊敬的医生。";
+			link.l1.go = "SharlieEpilog_Baker_nothing";
+			link.l2 = "你做出了明智的选择, 我当然不会反对。 我会安排额外发给你一个月的薪水—— 这些钱肯定用得上。 唉, 也没什么好说的了…… 祝你在新生活中一切顺利。";
+			link.l2.go = "SharlieEpilog_Baker_salary";
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") || CheckAttribute(pchar, "questTemp.LSC.Mary_officer")) // только если есть жена
+			{
+				link.l3 = "哈哈, 我当然不会反对, 亲爱的"+npchar.name+"。 而且, 现在我比任何人都更能理解你。来, 收下吧——这里是三个月的薪水。 希望你一切顺利。";
+				link.l3.go = "SharlieEpilog_Baker_salary_X3";
+			}
+		break;
+		
+		case "SharlieEpilog_Baker_nothing":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Baker_exit");
+		break;
+		
+		case "SharlieEpilog_Baker_salary":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Baker_exit");
+			//
+			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+		break;
+		
+		case "SharlieEpilog_Baker_salary_X3":
+			dialog.text = "感谢您, 船长 。我相信, 您也该尽快为自己和夫人找一处舒适的住所了。 毕竟, 船只的颠簸对某些在腹中的过程, 有着相当不利的影响…… ";
+			link.l1 = "在腹中? 我没太明白你的意思。 我们这儿似乎没人晕船吧。";
+			link.l1.go = "SharlieEpilog_Baker_salary_X3_2";
+			//
+			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+		break;
+		
+		case "SharlieEpilog_Baker_salary_X3_2":
+			dialog.text = "只是随口一说, 船长, 别放在心上。请照顾好您的夫人, 也照顾好自己。";
+			link.l1 = "你也要保重, "+npchar.name+"。等你安顿好了, 就通过本努瓦神父给我捎个信。 他可以在圣皮埃尔教堂找到。";
+			link.l1.go = "SharlieEpilog_Baker_salary_X3_3";
+		break;
+		
+		case "SharlieEpilog_Baker_salary_X3_3":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Baker_exit");
+		break;
+	
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();

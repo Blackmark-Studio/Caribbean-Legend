@@ -1,0 +1,10 @@
+blade_critDamage {Dano Crítico de Arma Branca}
+gun_critDamage {Dano Crítico de Pistola}
+musket_critDamage {Dano Crítico de Mosquete}
+blade_critChance {Chance de Crítico com Arma Branca}
+gun_critChance {Chance Crítica de Pistola}
+musket_critChance {Chance Crítica de Mosquete}
+incomingDamageReduction {Proteção contra Dano}
+RangeIncomingDamageReduction {Proteção contra dano de arma de fogo}
+Shot_Damage {Dano de arma de fogo}
+HeadshotDamage {Dano na cabeça}

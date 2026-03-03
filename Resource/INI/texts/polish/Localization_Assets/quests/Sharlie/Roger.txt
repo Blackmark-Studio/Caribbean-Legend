@@ -26,8 +26,8 @@ Roger_25 {Godzinę później...@<NewStr()>Jedwab został rozładowany u kupując
 Roger_26 {Moray}
 Roger_27 {Paul}
 Roger_28 {Chant}
-Roger_29 {Jean}
-Roger_30 {Picard}
+Roger_29 { }
+Roger_30 { }
 Roger_31 {Z arsenału statku zabrano 30 sztuk broni białej}
 Roger_32 {Zebrana broń biała - 30 sztuk}
 Roger_33 {Brak broni białej}

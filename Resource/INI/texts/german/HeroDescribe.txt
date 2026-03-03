@@ -59,12 +59,12 @@ heroNation_4 {Береговое братство}
 sex_4 {woman}
 animation_4 {rumba}
 hero_4 {A young pirate, the protégé of the Forest Devil - Baron of the Brethren of the Coast. However, the Baron shields her from the harsh realities of what true pirates are and the atrocities they can commit. To Helen, piracy is all about romance, small-time smuggling, freedom... and the deck of her beloved war schooner, the Rainbow.}
-heroName_5 {Джессика}
-heroLastname_5 {Брэдфорд}
-heroNameGen_5 {Джессики}
-heroLastnameGen_5 {Брэдфорд}
-heroNameDat_5 {Джессике}
-heroLastNameDat_5 {Брэдфорд}
+heroName_5 {Jessica}
+heroLastname_5 {Bradford}
+heroNameGen_5 {Jessica}
+heroLastnameGen_5 {Bradford}
+heroNameDat_5 {Jessica}
+heroLastNameDat_5 {Bradford}
 heroFace_5 {244}
 heroModel_5 {jessika}
 heroType_5 {Корсар}

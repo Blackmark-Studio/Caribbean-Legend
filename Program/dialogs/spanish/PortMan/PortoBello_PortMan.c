@@ -121,11 +121,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	case "SharkGoldFleet_08":
 		DialogExit();
 		pchar.questTemp.SharkGoldFleet = "DifficultVar";
-		if (CheckCharacterItem(pchar, "HolTradeLicence"))
-		{
-			TakeNationLicence(HOLLAND);
-			log_info("¡Licencia de comercio cancelada!");
-		}
+		LICENSE_AddViolation();
 		for (i = 1; i <= 2; i++)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("Sold" + i, "sold_" + NationShortName(SPAIN) + "_" + (rand(1) + 1), "man", "man", sti(pchar.rank), SPAIN, 0, true, "soldier"));

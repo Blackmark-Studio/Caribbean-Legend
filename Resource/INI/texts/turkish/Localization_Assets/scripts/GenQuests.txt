@@ -1,0 +1,109 @@
+GenQuests_1 {Kaçakçı}
+GenQuests_2 {Subay}
+GenQuests_3 {Asker}
+GenQuests_4 {@<sCity>'den kızın alyansını buldum... Ona götürmeliyim.}
+GenQuests_16 {Hazineler bir yerlerde yakınlarda!}
+GenQuests_17 {Gemi arama süresi doldu}
+GenQuests_18 {Gemi arama süresi doldu, kaptan karaya çıktı}
+GenQuests_19 {Kaptan karaya çıktı}
+GenQuests_20 {Kaptan! Bir salgın var!}
+GenQuests_21 {@<chref.Ship.Name> gemisinde @<crew> kişi zaten ölü}
+GenQuests_22 {patlattı}
+GenQuests_23 {patlattı}
+GenQuests_24 {~ kamerayı kancala.}
+GenQuests_25 {Gemi boş}
+GenQuests_26 {Hanımefendinin, @<pchar.GenQuest.EncGirl.name> adındaki hizmetçiyi sadece ormanda saçılan incilerini toplayamadı diye kovduğunu duydun mu? İnsanlar artık hiç utanmıyor!.. Zaten vicdanları da yoktu.}
+GenQuests_27 {Bir fahişenin belge olmadan gemiye binmeye çalıştığını duydun mu? Yakalanıp geneleve geri götürülmüş. Sahibi olan kadına yüklü bir borcu varmış, diyorlar.}
+GenQuests_28 {Duydun mu? Limanımızda belgeleri olmayan bir fahişe yakalamışlar. Söylentiye göre, bir genelevden kaçmadan önce oranın sahibinin sandıklarını boşaltmış. Bu hastalık ve hırsızlık taşıyanı çoktan kapatmak gerekirdi. Sonuçta çocuklarımız bunların hepsini görüyor, ne öğrenebilirler ki?}
+GenQuests_29 {George}
+GenQuests_30 {Bush}
+GenQuests_31 {Rabak}
+GenQuests_32 {Maboa}
+GenQuests_33 {Abraham}
+GenQuests_34 {Lincoln}
+GenQuests_35 {gemi yapımında}
+GenQuests_36 {topçulukta}
+GenQuests_37 {navigasyonda}
+GenQuests_38 {Kaptan, korsan gemisindeki yolculuğunuz nasıl geçti? Her şey yolunda mı? Size kötü davrandılar mı? Ha ha ha!}
+GenQuests_39 {O-o-o, kaptan, son zamanlarda çok eğlendiğini duydum.... Artık fakir bir adamsın dostum! Ha-ha-ha!!}
+GenQuests_40 {Koyda demirleyebilirsin.}
+GenQuests_41 {Duydunuz mu, @<GetAddress_Form(pchar)>, devriye kaptanı @<sShipType> @<pchar.GenQuest.CaptainComission.Name> kısa süre önce tutuklanmış. Meğer kaçakçılık yapıyormuş. Düşünebiliyor musunuz, şu anki vali koloniyi ne hale getirdi! Korsanları yakalaması gerekenler, bizi kendileri soyuyor!.. Söylentiye göre bir hafta içinde idam edilecekmiş. Hak ettiğini buldu.}
+GenQuests_42 {Söylentilere göre, devriye kaptanı @<sShipType> @<pchar.GenQuest.CaptainComission.Name> kaçakçı çetesinin başıymış. Yakalandı ve yakında asılacak. Görünüşe bakılırsa @<GetAddress_Form(pchar)>, valimiz kolonide düzeni sağlama işini ciddiye aldı.}
+GenQuests_43 {Düşünebiliyor musunuz? Kale komutanı, saflarına donanma subaylarını bile katmayı başaran gizli bir kaçakçı örgütünü ortaya çıkardı. Onlardan biri, adı @<pchar.GenQuest.CaptainComission.Name> olan, çoktan yakalandı ve yakında asılacak. Ah, @<GetAddress_Form(pchar)>, her zaman söylerdim; valimiz er ya da geç yerleşimde düzeni sağlayacak.}
+GenQuests_44 {Patrol @<sShipType> gemisinin kaptanı @<pchar.GenQuest.CaptainComission.Name>'ın tutuklandığını duydunuz mu? Yetkililer, sulardan geçen gemilerden el koyduğu büyük bir mal sevkiyatını gizlediğini öğrenmiş. Görünüşe göre idamdan kaçamayacak. Ama size söyleyeyim, devriye filosunun en iyilerindendi. Kim tahmin edebilirdi ki...}
+GenQuests_45 {Lanet olsun! Tutsak kaçtı!}
+GenQuests_46 {Duydunuz mu, @<GetAddress_Form(pchar)>, yakın zamanda bir devriye kaptanı @<sShipType> @<pchar.GenQuest.CaptainComission.Name> idam edilmiş. Söylentiye göre bir tüccarı soymuş. Burada kimseye güven olmuyor... Tüm mürettebatı da onunla birlikte idam edilmiş. Demek ki işbirliği...}
+GenQuests_47 {Zaten duydunuz mu, @<GetAddress_Form(pchar)>, eski devriye kaptanı @<sShipType> @<pchar.GenQuest.CaptainComission.Name>'ın idam edildiğini? Söylentiye göre önemli bir gemiyi batırmış ve malları saklamış. Mürettebattan hiçbiri de saklanma yerini söylememiş. Hepsini astılar...}
+GenQuests_48 {Hayal edebiliyor musunuz, @<GetAddress_Form(pchar)>? Devriye filosunun kaptanlarından biri deniz haydutluğu yapmış. Yakın zamanda tüm mürettebatıyla birlikte idam edilmiş. Söylenene göre ticaret gemilerini soyup batırmışlar.}
+GenQuests_49 {Kısa süre önce, @<pchar.GenQuest.CaptainComission.Name> adında eski bir kaptan ve onun devriye @<sShipType> ekibi idam edildi. Söylentiye göre, sulardan geçen gemilerden el konulan büyük bir mal sevkiyatını gizlemişler. Oysa bu, en iyi devriye ekiplerinden biriydi. Bence, @<GetAddress_Form(pchar)>, onlara kasıtlı iftira atıldı. Sonuçta, mallar asla bulunamadı.}
+GenQuests_50 {Tüm mallar ambarlara yüklendi}
+GenQuests_51 {üçe}
+GenQuests_52 {dörtlüye}
+GenQuests_53 {beşine}
+GenQuests_54 {altısına}
+GenQuests_55 {yedilere}
+GenQuests_56 {sekiz kişiye}
+GenQuests_57 {dokuzuna}
+GenQuests_58 {on kişiye}
+GenQuests_59 {Gemi kazazedeleri yerleşime teslim edildi}
+GenQuests_60 {Kaçakçı, kalenin cephaneliğine gitmekten korktu ve kaçtı}
+GenQuests_61 {Doğru mağaraya vardınız}
+GenQuests_62 { }
+GenQuests_63 { }
+GenQuests_64 { }
+GenQuests_65 { }
+GenQuests_66 { }
+GenQuests_67 { }
+GenQuests_68 {centilmence değil}
+GenQuests_69 {yakışıksız}
+GenQuests_70 { }
+GenQuests_71 { }
+GenQuests_72 {bir centilmenin sözü}
+GenQuests_73 {sözünü tutmak}
+GenQuests_74 {battı, onunla birlikte}
+GenQuests_75 {battı, onunla birlikte}
+GenQuests_76 { }
+GenQuests_77 { }
+GenQuests_78 {Kaptan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', gerçek adıyla @<GetFullName(sld)>, yeniden denize açıldı. Söylentilere göre @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>'ya doğru yola çıktı.}
+GenQuests_79 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' kaptanını tanıyor musun? O, @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>'ya gitti.}
+GenQuests_80 {Eğer kaptan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' gerekiyorsa, @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>'ya gitmelisiniz. @<GetFullName(sld)> oraya gitti.}
+GenQuests_81 {Kaptan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', asıl adı @<GetFullName(sld)>, yeniden denize açıldı. Söylentilere göre @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>'ya doğru yelken açtı.}
+GenQuests_82 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' kaptanını tanıyor musun? O, @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>'ya gitti.}
+GenQuests_83 {Eğer kaptan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' gerekiyorsa, @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>'ya gitmelisiniz. @<GetFullName(sld)> oraya gitti.}
+GenQuests_84 {Kaptan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', gerçek adı @<GetFullName(sld)>, yeniden denize açıldı. Söylentilere göre @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>'e doğru yelken açtı.}
+GenQuests_85 {@<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' kaptanını tanıyor musun? O, @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>'ya gitti.}
+GenQuests_86 {Eğer kaptan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' gerekiyorsa, @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>'ya gitmelisiniz. @<GetFullName(sld)> oraya gitti.}
+GenQuests_87 {Subay @<GetFullName(sld)>, @<sld.ship.name> ile kaçtı}
+GenQuests_88 {Subay @<GetFullName(sld)>, @<pchar.ship.name> gemisinden kaçtı}
+GenQuests_89 {önleyiciler}
+GenQuests_90 {Beş gün geçti...}
+GenQuests_91 {Mürettebatınıza 55 kişi katıldı}
+GenQuests_92 { }
+GenQuests_93 { }
+GenQuests_94 {Duydunuz mu, kaptan @<GetFullName(pchar)> bir haydut olan @<pchar.GenQuest.(Gun).name> ile çatıştı. Onu soymak istediler ama o boyun eğmedi. Cesur adam bu kaptan, pisliği hakladı.}
+GenQuests_95 {Kısa süre önce ormanda bir kavga çıktı – haydutlar kaptan @<GetFullName(pchar)>’a saldırıp altınını almak istemiş... A-ha, demek @<pchar.GenQuest.(Gun).name>’i ortadan kaldıran sizsiniz! Güzel iş çıkarmışsınız...}
+GenQuests_96 {Yerel @<pchar.GenQuest.(Gun).name> çetesinin, @<GetFullName(pchar)> adındaki kaptanı soymaya çalıştığını duydun mu? Kaptan ödemeyi reddetti ve hepsini kılıçtan geçirdi.}
+GenQuests_97 {@<pchar.GenQuest.EncGirl.name>'in öldürüldüğünü duydun mu? Zavallı kız, yakın zamanda ormanda öldürülmüş. Katili bulup asmalılar!}
+GenQuests_98 {Biliyor musunuz kaptan @<GetFullName(pchar)>, @<pchar.GenQuest.EncGirl.name> adında zavallı bir kızı biri öldürmüş. Yazık, gerçekten iyi bir kızdı...}
+GenQuests_99 {Adı @<pchar.GenQuest.EncGirl.name>'di ve ormanda öldü. Şaşılacak bir şey yok, oralarda güvenli değil...}
+GenQuests_100 {Duydunuz mu? Bir kaptan, @<pchar.GenQuest.EncGirl.name> adında bir kızı haydutların elinden kurtarmış — resmen ellerinden çekip almış! Ne iyi insan, ne gerçek bir adam!}
+GenQuests_101 {Biliyor musunuz, Kaptan @<GetFullName(pchar)> ormanda @<pchar.GenQuest.EncGirl.name> adında bir kızı tecavüzcülerden kurtarmış... Aa, o sizmişsiniz! Etkilendim...}
+GenQuests_102 { }
+GenQuests_103 {Vay be, kaptan @<GetFullName(pchar)>, kimse çaresiz bir kadını haydutların eline bırakıp oyuncak olmasına göz yumacağını düşünmezdi. Zavallı @<pchar.GenQuest.EncGirl.name>, ne desem boş...}
+GenQuests_104 {Biliyor musun kaptan, tam bir alçaksın. Savunmasız bir kızı ormanda nasıl yüzüstü bırakabildin? Ona ne yaptıklarını tahmin edebiliyor musun? Zavallı @<pchar.GenQuest.EncGirl.name>, artık kimse onunla evlenmez...}
+GenQuests_105 {@<pchar.GenQuest.EncGirlF.name>'in öldürüldüğünü duydun mu? Zavallı kız, yakın zamanda ormanda öldürülmüş. Katili bulup asmalılar!}
+GenQuests_106 {Biliyor musunuz kaptan @<GetFullName(pchar)>, @<pchar.GenQuest.EncGirlF.name> adında zavallı bir kızı biri öldürmüş? Yazık, gerçekten iyi bir kızdı...}
+GenQuests_107 {Adı @<pchar.GenQuest.EncGirlF.name>'di ve ormanda öldü. Hiç şaşırtıcı değil, oralarda güvenli değil...}
+GenQuests_108 {Yakın zamanda subayımızı ve tüm birliğini ölü buldular. Kim öldürmüş olabilir? Ve neden?}
+GenQuests_109 {Komutanımız düzenli olarak ormanlara devriyeler gönderir, ama şimdi ne yapacağını hiç bilmiyorum. Kısa süre önce orada askerler ölü bulundu...}
+GenQuests_110 {Lanet olsun, şehir dışında birileri bütün birliğimizi katletmiş...}
+GenQuests_111 {Söylentilere göre kaptan @<GetFullName(pchar)>, @<NationNameGenitive(sti(pchar.GenQuest.(attrName).nation))> askerlerine ormanda rastlamış ve hepsini haklamış. Ha, @<NationNamePeople(sti(pchar.GenQuest.(attrName).nation))> dövüşçü olarak beş para etmez...}
+GenQuests_112 {Duyduğuma göre kaptan @<GetMainCharacterNameGen()> şehir dışında bir devriye tarafından kontrol edilmiş...}
+GenQuests_113 {Hmm, bildiğim kadarıyla şehir dışında devriyemiz tarafından kontrol edildiniz. Ne kadar etkili oldu, bilemiyorum...}
+GenQuests_114 {Komutanımız ormanlarda devriye gezilmesini sıkılaştıracak. Bunu zaten biliyorsundur, kısa süre önce denetlendin...}
+GenQuests_115 {Biliyor musunuz, Vali @<sTemp>, Kaptan @<GetMainCharacterNameDat()>'a @<GetFullName(arAll)> adındaki ünlü haydutu ortadan kaldırma emri verdi. Görünüşe göre kaptan bu görevi tamamlamış...}
+GenQuests_116 {Bir cesur kaptan, @<GetFullName(arAll)> adındaki yerel haydutu bulup ortadan kaldırmaya gönüllü oldu. Görünüşe göre başardı!}
+GenQuests_117 {Ha! Nihayet valimiz ormanda düzeni sağlamak için harekete geçti — en azılı haydutu bulup öldürmesi için Kaptan @<GetMainCharacterNameDat()>’ı gönderdi. Ve biliyor musun? O haydut, @<GetFullName(arAll)>, artık ölü!}
+GenQuests_118 {harita}
+GenQuests_119 {hazine}
+GenQuests_120 {para}

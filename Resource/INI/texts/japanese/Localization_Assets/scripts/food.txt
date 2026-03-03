@@ -1,0 +1,17 @@
+food_1 {ネズミ}
+food_2 {~ 腐敗 ~}
+food_3 {~ 損傷 ~}
+food_4 {~ 破壊された ~}
+food_5 {~ 個 ~}
+food_6 {船@<rChar.Ship.Name>で病気により@<FindRussianSailorString(cn, "No")>が死亡}
+food_7 {船@<rChar.Ship.Name>の医薬品が不足しています}
+food_8 {船上で@<rChar.Ship.Name>、病で@<FindRussianSlavesString(cn, "No")>が死亡}
+food_9 {@<rChar.Ship.Name> では皆がラム酒を欲しがっている。}
+food_10 {船@<rChar.Ship.Name>の食料は@<FindRussianDaysString(cn)>分残っています}
+food_11 {至急補給が必要だ！}
+food_12 {奴隷が反乱を起こした！}
+food_13 {@<rChar.Ship.Name> で水夫たちが飢えています。 乗組員の士気が下がっています！}
+food_14 {水夫たちが飢えている}
+food_15 {奴隷が飢えている}
+food_16 {@<rChar.Ship.Name>で反乱発生!!!! ~}
+food_17 {艦船が艦隊を離脱}

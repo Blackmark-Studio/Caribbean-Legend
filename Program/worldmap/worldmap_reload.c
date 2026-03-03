@@ -45,25 +45,28 @@ void wdmReloadToSea()
 	//Удаляем атрибуты выделенных энкаунтеров
 	worldMap.deleteUpdate = "";
 	
-	//  AutoSave boal 17.04.24 -->
-	if (sti(wdmLoginToSea.storm) == 0 && !isShipEncounterType && MakeAutoSave2()) // не в шторме, не в бою
+	if (sti(wdmLoginToSea.storm) == 0 && !isShipEncounterType) // не в шторме, не в бою
+		MapToSea_CheckAutoSave();
+	else
+		WdmReloadStart(isShipEncounterType);
+}
+
+void MapToSea_CheckAutoSave()
+{
+	if(GetMaxAutoSaves("MapToSea") != 0)
 	{
-		SetEventHandler("evntSaveGameAfter","WdmReloadAferSave", 0);
+		SetAfterSaveFunction("MapToSea_Continue");
+		PostEvent("Event_NewAutoSave", 1, "s", "MapToSea");
 	}
 	else
-	{
-		WdmReloadStart(isShipEncounterType);
-	}
-	//  AutoSave boal 17.04.24 <--
-	
-	
+		MapToSea_Continue();
 }
-//  AutoSave boal 17.04.24 -->
-void WdmReloadAferSave()
+
+void MapToSea_Continue()
 {
-	DelEventHandler("evntSaveGameAfter","WdmReloadAferSave"); // убрать прерывание
-	WdmReloadStart(false); // то, что было бы сразу
+	WdmReloadStart(false);
 }
+
 void WdmReloadStart(bool isShipEncounterType)
 {
 	//Фейдер
@@ -424,7 +427,7 @@ bool WdmAddEncountersData()
         idx  = sti(CurEnc.nation);
 		encX = stf(CurEnc.x);
 		encZ = stf(CurEnc.z);
-        if (or(GetNationRelation2MainCharacter(idx) == RELATION_ENEMY, CurEnc.rel == "1") && CurEnc.rel != "2")
+        if ((CurEnc.rel == "1") || (GetNationRelation2MainCharacter(idx) == RELATION_ENEMY && CurEnc.rel != "2"))
         {
             attr = "-2";
             enemies.(attr) = "";

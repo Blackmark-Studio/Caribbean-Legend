@@ -473,7 +473,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_wife_13":
-			dialog.text = "(en pleurant) Mon mari ? Savez-vous qui est mon mari ? C'est un ancien prisonnier, un forçat et maintenant le bandit le plus cruel de "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.StartCity+"Gén")+"! C'est une bête vile et ignoble, et je ne suis pour lui qu'un trou entre les jambes à baiser !";
+			dialog.text = "(en pleurant) Mon mari ? Savez-vous qui est mon mari ? C'est un ancien prisonnier, un forçat et maintenant le bandit le plus cruel de "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.StartCity+"Gen")+"! C'est une bête vile et ignoble, et je ne suis pour lui qu'un trou entre les jambes à baiser !";
 			link.l1 = "N'avais-tu pas tout vu avant de l'épouser ?";
 			link.l1.go = "FalseTrace_wife_14";
 		break;
@@ -772,7 +772,7 @@ void ProcessDialogEvent()
 				pchar.questTemp.FalseTrace.ShipNation = SPAIN;
 				pchar.questTemp.FalseTrace.ShipCity = "Maracaibo";
 			}
-			dialog.text = "Oui, oui, bien sûr. Voyons voir, en comptant à partir d'aujourd'hui... Oui... Dans 12-14 jours à partir de "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.ShipCity+"Gén")+" un lourd galion chargé de minerai d'or mettra le cap sur l'Europe. Il sera protégé par une seule frégate ou corvette\nAlors prépare-toi, c'est un riche butin, mais il a des dents. Cependant, je suis sûr que tu réussiras, tu as écrasé ma résistance assez facilement... Tu dois atteindre "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.ShipCity+"Gén")+" dans deux semaines et préparez une embuscade\nSouvenez-vous que votre cible est un lourd galion avec un seul navire de convoi. C'est tout, je suppose. Le reste est entre vos mains.";
+			dialog.text = "Oui, oui, bien sûr. Voyons voir, en comptant à partir d'aujourd'hui... Oui... Dans 12-14 jours à partir de "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.ShipCity+"Gen")+" un lourd galion chargé de minerai d'or mettra le cap sur l'Europe. Il sera protégé par une seule frégate ou corvette\nAlors prépare-toi, c'est un riche butin, mais il a des dents. Cependant, je suis sûr que tu réussiras, tu as écrasé ma résistance assez facilement... Tu dois atteindre "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.ShipCity+"Gen")+" dans deux semaines et préparez une embuscade\nSouvenez-vous que votre cible est un lourd galion avec un seul navire de convoi. C'est tout, je suppose. Le reste est entre vos mains.";
 			link.l1 = "Je vois... Eh bien, "+pchar.questTemp.FalseTrace.CapName+"Adieu. Peut-être devrais-je te souhaiter bonne chance et une vie heureuse avec Katerine ? J'espère que vous vous en sortirez bien tous les deux. C'est dommage que nous nous soyons rencontrés dans de si tristes circonstances.";
 			link.l1.go = "FalseTrace_GoldShip_2";
 		break;

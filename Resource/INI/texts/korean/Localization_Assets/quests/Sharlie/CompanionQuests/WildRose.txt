@@ -1,0 +1,13 @@
+WildRose_1 {들으셨나요? 며칠 전에 Bishop의 플랜테이션에서 수십 명의 노예들이 탈출했대요. 밤에 사슬을 톱으로 끊고, 경비 몇 명을 죽인 뒤 정글로 사라졌다고 하더군요. 하지만 이 섬에서 어디로 갈 수 있었겠어요? 결국 금방 잡혔다네요—어떤 이들은 동굴에서, 또 어떤 이들은 Ragged Point 근처에서 발견됐답니다. 대부분은 총에 맞아 죽었죠. 그래도 군인들도 손해를 봤다더군요. 그런데 소문에 따르면, Bishop이 가장 분노한 건 그게 아니라 직접 도망자들을 처리하지 못했다는 거라네요.}
+WildRose_2 {Bruce}
+WildRose_3 {Primer}
+WildRose_4 {Jerry}
+WildRose_5 {Kasper}
+WildRose_6 {Lewis}
+WildRose_7 {Gernon}
+WildRose_8 {Jerome}
+WildRose_9 {Sauvernier}
+WildRose_10 {Rupert}
+WildRose_11 {Kasper}
+WildRose_12 {이단자}
+WildRose_13 {분대가 이미 위치에 있어야 해...}

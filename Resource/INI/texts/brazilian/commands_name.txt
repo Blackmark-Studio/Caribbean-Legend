@@ -1,0 +1,89 @@
+sea_Cancel {Cancelar}
+sea_Moor {Atracar}
+sea_Cabin {Cabine}
+sea_SailTo {Navegar até}
+sea_Board {Abordagem}
+sea_LandTroops {Desembarcar Tropas}
+sea_Map {Mapa}
+sea_Attack {Ataque}
+sea_Abordage {Abordagem}
+sea_Defend {Defesa}
+sea_SailAway {Zarpar}
+sea_HeaveToDrift {Arriar as velas}
+sea_Reload {Comércio}
+sea_Charge {Recarregar}
+sea_Speed {Velas}
+sea_CCommand {Ordens}
+sea_Ability {Habilidade}
+sea_ImmediateDeath {Destruir!}
+sea_InstantBoarding {Abordagem Instantânea}
+sea_Speak {Conversar}
+sea_Sneak {Infiltrar-se na cidade}
+sea_Repair {Reparo}
+sea_SailDir {Navegar para ..}
+sea_SailNW {Noroeste}
+sea_SailN {Norte}
+sea_SailNE {Nordeste}
+sea_SailE {Leste}
+sea_SailSE {Sudeste}
+sea_SailS {Sul}
+sea_SailSW {Sudoeste}
+sea_SailW {Oeste}
+sea_Boat {Enviar bote}
+sea_Bomb {Lançar mina}
+sea_Brander {Brander}
+sea_ImmediateReload {Recarregando}
+sea_LightRepair {Reparo urgente}
+sea_InstantRepair {Reparo em combate}
+sea_SandbankManeuver {Manobra em águas rasas}
+sea_Turn180 {Virar Rápido}
+land_TalkSelf {Pensando alto}
+land_ItemsDead {Saquear}
+land_FastReload {Ir para}
+land_ItemsUse {Usar}
+land_DialogStart {Dialogar}
+land_ItemsChange {Troca}
+land_TakeItem {Pegar}
+land_PlaceItem {Colocar}
+land_OutDoor {Abrir}
+land_UseBox {Abrir}
+land_ActivateRush {Usar tintura de Ometochtli}
+land_ActivateCabine {Cabine do Capitão}
+land_DeActivateCabine {Terra}
+land_Look {Ver}
+land_Exit {Mar}
+land_SelfRepair {Reparo}
+land_Alchemy {Alquimia}
+land_MapAtlas {Mapas}
+land_Rest {Descansar}
+go_store {Loja}
+go_shipyard {Estaleiro}
+go_tavern {Taverna}
+go_residence {Residência}
+go_port {Porto}
+go_loanshark {Agiota}
+go_church {Igreja}
+go_prison {Prisão}
+go_brothel {Bordel}
+go_usurer {Agiota}
+go_portman {Mestre do porto}
+go_duel {Duelo}
+go_exittown {Portão da cidade}
+go_Caroline {Fragata 'Carolina'}
+go_CeresSmithy_Mary {Mary Casper}
+go_CeresSmithy_Jurgen {Jurgen Schmidt}
+go_EsmeraldaStoreBig {Galeão 'Esmeralda'}
+go_EsmeraldaStoreBig_Donald {Donald Greenspen}
+go_FenixPlatform {Plataforma 'Fenix'}
+go_FleuronTavern {Caravela 'Fleron'}
+go_GloriaChurch {Galeão 'Gloria'}
+go_ProtectorFisher {Eduard Black}
+go_SanAugustineResidence {Steven Dodson}
+go_SanGabrielMechanic {Henrick Vedecker}
+go_TartarusPrison {Couraçado 'Tartarus'}
+worldmap_toisland {Ao mar}
+worldmap_tosea {Zarpar}
+worldmap_toship {Atacar}
+worldmap_tostorm {Tempestade}
+worldmap_toattack {Entrar na batalha}
+worldmap_toenemy {Lutar}

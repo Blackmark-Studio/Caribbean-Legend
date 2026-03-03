@@ -1,0 +1,1 @@
+SelectDeliveryTradeDialog0 {dosya boş, storm-2.5 çekirdeğiyle uyumluluk için. Orada bir sebepten gerekli, ama scriptlerde yok}

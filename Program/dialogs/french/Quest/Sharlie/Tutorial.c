@@ -1731,7 +1731,7 @@ void ProcessDialogEvent()
 		
 		// --> Матрос сообщает о приближающихся кораблях
 		case "Sailor_Trevoga":
-			dialog.text = "Cap’taine, alerte ! Des pirates à l’horizon !";
+			dialog.text = "Cap’taine, alerte ! Des pirates à l’horizon !";
 			link.l1 = "...";
 			link.l1.go = "Sailor_Trevoga_2";
 			SetCameraDialogMode(npchar);

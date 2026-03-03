@@ -89,4 +89,3 @@ void DeleteAnimals()
 	if (IsEntity(&Animals))
 		DeleteClass(Animals);
 }
-

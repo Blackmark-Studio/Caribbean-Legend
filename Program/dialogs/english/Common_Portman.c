@@ -3744,216 +3744,6 @@ void ProcessDialogEvent()
 	}
 }
 
-float BurntShipQuest_GetMaxNeededValue(int iShipType, string _param)
-{
-	float NeededValue = makefloat(GetBaseShipParamFromType(iShipType, _param));
-	switch (_param)
-	{
-		case "speedrate":
-			NeededValue += ((0.72 + frandSmall(0.30)) * (NeededValue/10.0)); 
-		break;
-		case "turnrate":
-			NeededValue += ((0.72 + frandSmall(0.30)) * (NeededValue/10.0)); 
-		break;
-		case "capacity":
-			NeededValue += ((0.72 + frandSmall(0.30)) * (NeededValue/8.0)); 
-		break;
-	}
-	return NeededValue;
-}
-
-// Warship 25.07.09 Генер "A burnt vessel". Начальные иниты для портмана - тип разыскиваемого судна, выдающаяся характеристика и т.д.
-void BurntShipQuest_FillStartParams(ref _npchar)
-{
-	int rank = sti(PChar.rank);
-	int shipType, temp;
-	float neededValue;
-	String shipAttribute;
-	
-	// TODO Пересмотреть зависимость от ранга
-	if(rank <= 5)
-	{
-		shipType = SHIP_LUGGER + rand(1);
-		
-		switch(shipType)
-		{
-			case SHIP_LUGGER:
-				shipAttribute = "speedrate";
-			break;
-			
-			case SHIP_SLOOP:
-				temp = rand(2);
-				
-				if(temp == 2)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					if(temp == 1)
-					{
-						shipAttribute = "turnrate";
-					}
-					else
-					{
-						shipAttribute = "capacity";
-					}
-				}
-			break;
-		}
-	}
-	
-	if(rank > 5 && rank <= 15)
-	{
-		shipType = SHIP_SCHOONER + rand(2);
-		
-		switch(shipType)
-		{
-			case SHIP_SCHOONER:
-				if(rand(1) == 0)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					shipAttribute = "turnrate";
-				}
-			break;
-			
-			case SHIP_BARKENTINE:
-				shipAttribute = "capacity";
-			break;
-			
-			case SHIP_SHNYAVA:
-				shipAttribute = "capacity";
-			break;
-		}
-	}
-	
-	if(rank > 15 && rank <= 25)
-	{
-		shipType = SHIP_FLEUT + rand(3);
-		
-		switch(shipType)
-		{
-			case SHIP_FLEUT:
-				shipAttribute = "turnrate";
-			break;
-			
-			case SHIP_CARAVEL:
-				if(rand(1) == 1)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					shipAttribute = "turnrate";
-				}
-			break;
-			
-			case SHIP_PINNACE:
-				shipAttribute = "capacity";
-			break;
-			
-			case SHIP_BRIGANTINE:
-				if(rand(1) == 1)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					shipAttribute = "turnrate";
-				}
-			break;
-			
-		}
-	}
-	
-	if(rank > 25 && rank <= 35)
-	{
-		shipType = SHIP_SCHOONER_W + rand(2);
-		
-		switch(shipType)
-		{
-			case SHIP_SCHOONER_W:
-				if(rand(1) == 1)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					shipAttribute = "turnrate";
-				}
-			break;
-			
-			case SHIP_GALEON_L:
-				shipAttribute = "capacity";
-			break;
-			
-			case SHIP_CORVETTE:
-				if(rand(1) == 1)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					shipAttribute = "capacity";
-				}
-			break;
-		}
-	}
-	
-	if(rank > 35)
-	{
-		shipType = SHIP_GALEON_H + rand(1);
-		
-		switch(shipType)
-		{
-			case SHIP_GALEON_H:
-				temp = rand(2);
-				
-				if(temp == 0)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					if(temp == 1)
-					{
-						shipAttribute = "turnrate";
-					}
-					else
-					{
-						shipAttribute = "capacity";
-					}
-				}
-			break;
-			
-			case SHIP_FRIGATE:
-				shipAttribute = "turnrate";
-			break;
-		}
-	}
-	
-	neededValue = BurntShipQuest_GetMaxNeededValue(shipType, shipAttribute);
-	
-	Log_TestInfo("shipType == " + shipType);
-	Log_TestInfo("ShipAttribute == " + shipAttribute);
-	Log_TestInfo("ShipNeededValue == " + neededValue);
-	
-	_npchar.Quest.BurntShip.ShipType = shipType;
-	_npchar.Quest.BurntShip.ShipAttribute = shipAttribute;
-	
-	if(shipAttribute != "capacity") // Чтобы трюм с десятичными не писался
-	{
-		_npchar.Quest.BurntShip.ShipNeededValue = FloatToString(neededValue, 2);
-	}
-	else
-	{
-		_npchar.Quest.BurntShip.ShipNeededValue = MakeInt(neededValue);
-	}
-}
-
 void SetJornalCapParam(ref npchar)
 {
 	//созадем рассеянного кэпа
@@ -4174,7 +3964,7 @@ string findCurrentCity1(ref NPChar)//выбираем целевой город 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
+		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -4195,7 +3985,7 @@ string findCurrentCity2(ref NPChar)//выбираем целевой город 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
+		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -4216,7 +4006,7 @@ string findCurrentCity3(ref NPChar)//выбираем целевой город 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
+		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;

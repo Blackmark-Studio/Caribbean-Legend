@@ -439,7 +439,6 @@ void ProcessDialogEvent()
 				dialog.text = "Viens juste d'y penser ! Quelle insolence ! Venir ici sous le guise d'un marchand ! Tes portraits sont affichés dans chaque caserne, espèce de salaud ! Tu ne t'en sortiras pas cette fois ! Attrapez-le !";
 				link.l1 = RandPhraseSimple("Arrgh!..","Eh bien, tu l'as demandé...");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (findsubstr(pchar.location.from_sea, "_town" , 0) == -1) //если причалил не в городе
@@ -447,7 +446,6 @@ void ProcessDialogEvent()
 				dialog.text = "Vous êtes venu faire du commerce ici? Puis-je demander comment? Où est votre navire? Vous savez, tout cela semble très suspect, et je suis obligé de vous retenir jusqu'à ce que nous ayons tout compris. Rendez votre arme et suivez-moi!";
 				link.l1 = RandPhraseSimple("Va te faire foutre !","Quand deux dimanches viennent en une semaine...");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (iTemp == -1)
@@ -455,7 +453,6 @@ void ProcessDialogEvent()
 				dialog.text = "Votre licence doit être révoquée car elle est expirée et n'est donc pas valable. Rendez votre arme et suivez-moi pour une enquête plus approfondie!";
 				link.l1 = RandPhraseSimple("Va te faire foutre !","Quand deux dimanches viennent en une semaine...");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (iTemp == 0)

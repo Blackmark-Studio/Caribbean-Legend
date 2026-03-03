@@ -1,0 +1,22 @@
+colony_1 {薬が足りず、@<iTemp>人の水夫が傷で死亡}
+colony_2 {船 @<Pchar.Ship.Name> の医療品が残りわずかです}
+colony_3 {町の戦闘に備える}
+colony_4 {ERROR: 占領時の都市バイパスが設定されていません!!!}
+colony_5 {敵軍は制圧された！ 道は開かれた。}
+colony_6 {~を受け取りました}
+colony_7 {~を受け取りました}
+colony_8 {入手 - 斧}
+colony_9 {入手しました - Saxon Feather}
+colony_10 {入手しました - マドンナ}
+colony_11 {Chevalier Philippe}
+colony_12 {de Poincy}
+colony_13 {lord Thomas}
+colony_14 {ヴィンドザー}
+colony_15 {don Juan}
+colony_16 {de Cordova}
+colony_17 {大佐}
+colony_18 {Jonathan Fox}
+colony_19 {我々の街 @<GetCityName(city)> は包囲されています！}
+colony_20 {包囲が解かれた！}
+colony_21 {我々の街 @<GetCityName(city)> は包囲されています！}
+colony_22 {我々の都市@<GetCityName(city)>が占領された！}

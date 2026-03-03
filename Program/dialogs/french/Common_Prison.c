@@ -152,7 +152,7 @@ void ProcessDialogEvent()
 					}
 					if(pchar.GenQuest.CaptainComission == "MayorTalkGood")
 					{
-						link.l6 = "Je "+GetFullName(pchar)+", agissant au nom et sur ordre du gouverneur "+XI_ConvertString("Colonie"+pchar.GenQuest.CaptainComission.City+"Gen")+"besoin de parler avec l'ancien capitaine "+pchar.GenQuest.CaptainComission.Name+".";
+						link.l6 = "Je "+GetFullName(pchar)+", agissant au nom et sur ordre du gouverneur "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.City+"Gen")+"besoin de parler avec l'ancien capitaine "+pchar.GenQuest.CaptainComission.Name+".";
 						link.l6.go = "CapComission_PrisonGood1";
 					}
 				}	
@@ -213,7 +213,7 @@ void ProcessDialogEvent()
 	
 		case "Marginpassenger_2":
 			dialog.text = "Et il a suggéré que vous capturiez le passager puis demandiez une rançon pour lui?";
-			link.l1 = "Exactement. Pour collecter la rançon, je me rendrais à "+XI_ConvertString("Colonie"+pchar.GenQuest.Marginpassenger.Targetcity)+", à une certaine personne du nom de "+pchar.GenQuest.Marginpassenger.q2Name+". J'ai payé pour cette information, mais bien sûr, je n'allais pas kidnapper cette personne.";
+			link.l1 = "Exactement. Pour collecter la rançon, je me rendrais à "+XI_ConvertString("Colony"+pchar.GenQuest.Marginpassenger.Targetcity)+", à une certaine personne du nom de "+pchar.GenQuest.Marginpassenger.q2Name+". J'ai payé pour cette information, mais bien sûr, je n'allais pas kidnapper cette personne.";
 			link.l1.go = "Marginpassenger_3";
 		break;
 		
@@ -799,7 +799,7 @@ void ProcessDialogEvent()
         case "First_prisoner": 
 			if (GetNationRelation2MainCharacter(sti(npchar.nation)) == RELATION_ENEMY)
 			{
-				dialog.text = LinkRandPhrase("Ho-ho, n'est-ce pas un bon moment !","Tranchez-les, "+GetSexPhrase("camarade","lass")+", coupe!!!","Oh, enfer! J'ai perdu tout espoir de voir le cadavre de mon geôlier!");
+				dialog.text = LinkRandPhrase("Ho-ho, n'est-ce pas un bon moment !","Tranchez-les, "+GetSexPhrase("camarade","lass")+", coupe!!!","Oh, enfer! J'ai perdu tout espoir de voir le cadavre de mon geôlier!");
 				link.l1 = RandPhraseSimple("Heh !","Arrgh !");
 				link.l1.go = "NoMoreTalkExit";
 				if (rand(10) > 6 && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && !CheckAttribute(pchar, "GenQuest.PrisonQuestLock") && !CheckAttribute(pchar, "quest.GivePrisonFree") && !CheckAttribute(pchar, "quest.GivePrisonFree_Over") && !CheckAttribute(pchar, "quest.DeliverToBander")) // Addon 2016-1 Jason пиратская линейка

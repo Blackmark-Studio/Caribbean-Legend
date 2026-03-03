@@ -511,7 +511,7 @@ void ProcessDialogEvent()
 				DeleteAttribute(pchar, "GenQuest.ChurchQuest_1.NoMoneyToPortMan");
 			}
 			else
-				dialog.text = "Oh ! Vous comprenez vraiment que je suis un homme très occupé, et je suis heureux que vous l'appréciiez ! Voyons maintenant... juste une minute... ici... bien. Le changement de nom du navire a été enregistré, et le navire, qui désormais sera connu sous le nom de '"+PChar.GenQuest.ChurchQuest_1.CapShipName+"commandé par le capitaine "+PChar.GenQuest.ChurchQuest_1.CapFullName+"a mis les voiles aujourd'hui vers "+XI_ConvertString("Colonie"+sColony+"Gen")+".";			
+				dialog.text = "Oh ! Vous comprenez vraiment que je suis un homme très occupé, et je suis heureux que vous l'appréciiez ! Voyons maintenant... juste une minute... ici... bien. Le changement de nom du navire a été enregistré, et le navire, qui désormais sera connu sous le nom de '"+PChar.GenQuest.ChurchQuest_1.CapShipName+"commandé par le capitaine "+PChar.GenQuest.ChurchQuest_1.CapFullName+"a mis les voiles aujourd'hui vers "+XI_ConvertString("Colony"+sColony+"Gen")+".";			
 				link.l1 = "Merci, monsieur, vous m'avez rendu un grand service.";
 				link.l1.go = "Church_GenQuest1_Node_FillFullInfo_4";
 				AddMoneyToCharacter(pchar, -1000);
@@ -1064,13 +1064,13 @@ void ProcessDialogEvent()
 				Link.l1.go = "Fraht_Choise_1";
 				Link.l2 = "Je choisirai la troisième option - charte vers la ville de "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City2)+" chargé de "+GetGoodsNameAlt(iFrahtGoods2)+".";
 				Link.l2.go = "Fraht_Choise_2";
-				Link.l3 = "Je choisirai la troisième variante - affréter vers la ville de "+XI_ConvertString("Colonie"+pchar.questTemp.WPU.Fraht.City3)+" chargé de "+GetGoodsNameAlt(iFrahtGoods3)+".";
+				Link.l3 = "Je choisirai la troisième variante - affréter vers la ville de "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City3)+" chargé de "+GetGoodsNameAlt(iFrahtGoods3)+".";
 				Link.l3.go = "Fraht_Choise_3";
 			}
 			else //два варианта
 			{
 				dialog.text = "Il y a les variantes suivantes disponibles:\n"+"cargaison "+GetGoodsNameAlt(iFrahtGoods1)+" à hauteur de "+FindRussianQtyString(iFrahtGoodsQty1)+" à la ville de "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City1)+", dans "+FindRussianDaysString(pchar.questTemp.WPU.Fraht.DaysQty1)+". Paiement - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money1))+"\ncargo "+GetGoodsNameAlt(iFrahtGoods2)+" en quantité de "+FindRussianQtyString(iFrahtGoodsQty2)+"  à la ville de "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City2)+", dans "+FindRussianDaysString(pchar.questTemp.WPU.Fraht.DaysQty2)+". Paiement - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money2))+" \nQuel est votre choix ?";
-				Link.l1 = "Je choisirai la première option - affréter vers la ville de "+XI_ConvertString("Colonie"+pchar.questTemp.WPU.Fraht.City1)+" chargé de "+GetGoodsNameAlt(iFrahtGoods1)+".";
+				Link.l1 = "Je choisirai la première option - affréter vers la ville de "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City1)+" chargé de "+GetGoodsNameAlt(iFrahtGoods1)+".";
 				Link.l1.go = "Fraht_Choise_1";
 				Link.l2 = "Je choisirai la deuxième option - affréter vers la ville de "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City2)+" chargé de "+GetGoodsNameAlt(iFrahtGoods2)+".";
 				Link.l2.go = "Fraht_Choise_2";
@@ -1948,7 +1948,7 @@ void ProcessDialogEvent()
 				break;
 			
 				case 1:
-					dialog.text = "Vous devrez livrer ces papiers au propriétaire du magasin de "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City+"Gén")+"au plus tard que"+FindRussianDaysString(sti(pchar.questTemp.WPU.Postcureer.DaysQty))+" . Voici le dernier résumé des prix dans les magasins de tout l'archipel - un document commercial précieux. Il faut être prudent - les concurrents pourraient organiser une chasse. Paiement pour la livraison - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money))+".";
+					dialog.text = "Vous devrez livrer ces papiers au propriétaire du magasin de "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City+"Gen")+"au plus tard que"+FindRussianDaysString(sti(pchar.questTemp.WPU.Postcureer.DaysQty))+" . Voici le dernier résumé des prix dans les magasins de tout l'archipel - un document commercial précieux. Il faut être prudent - les concurrents pourraient organiser une chasse. Paiement pour la livraison - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money))+".";
 					link.l1 = "Je suis d'accord !";
 					link.l1.go = "Postcureer_LevelUp_Go";
 					link.l2 = "Non, je suppose que je vais passer.";
@@ -1973,7 +1973,7 @@ void ProcessDialogEvent()
 				break;
 			
 				case 3:
-					dialog.text = "Vous devriez livrer ce paquet au maître de quai dans la ville de "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City+"Gén")+" pas plus tard que "+FindRussianDaysString(sti(pchar.questTemp.WPU.Postcureer.DaysQty))+". Il contient les plans pour le nouveau "+RandPhraseSimple(LinkRandPhrase("brigantin","corvette","frégate"),LinkRandPhrase("flûte","pinace","galion"))+", employant des conceptions technologiques uniques. J'espère que vous comprenez qu'il y a d'autres... parties intéressées, donc vous devrez agir discrètement. Paiement pour la livraison - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money))+".";
+					dialog.text = "Vous devriez livrer ce paquet au maître de quai dans la ville de "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City+"Gen")+" pas plus tard que "+FindRussianDaysString(sti(pchar.questTemp.WPU.Postcureer.DaysQty))+". Il contient les plans pour le nouveau "+RandPhraseSimple(LinkRandPhrase("brigantin","corvette","frégate"),LinkRandPhrase("flûte","pinace","galion"))+", employant des conceptions technologiques uniques. J'espère que vous comprenez qu'il y a d'autres... parties intéressées, donc vous devrez agir discrètement. Paiement pour la livraison - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money))+".";
 					link.l1 = "Je suis d'accord !";
 					link.l1.go = "Postcureer_LevelUp_Go";
 					link.l2 = "Non, je suppose que je vais passer.";
@@ -2317,7 +2317,7 @@ void ProcessDialogEvent()
 	break;
 	
 	case "Escort_LevelUp_0":
-		dialog.text = "Excellent ! Je savais que je pouvais compter sur vous. Veuillez essayer d'être aussi rapide que possible. Je pense "+FindRussianDaysString(pchar.questTemp.WPU.Escort.DaysQty)+" suffira pour arriver à "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.City+"Gén")+". Tenez, prenez ces papiers qui confirmeront votre identité. Vent arrière, capitaine !";
+		dialog.text = "Excellent ! Je savais que je pouvais compter sur vous. Veuillez essayer d'être aussi rapide que possible. Je pense "+FindRussianDaysString(pchar.questTemp.WPU.Escort.DaysQty)+" suffira pour arriver à "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.City+"Gen")+". Tenez, prenez ces papiers qui confirmeront votre identité. Vent arrière, capitaine !";
 		link.l1 = "Ne vous inquiétez pas, je ne vous laisserai pas tomber.";
 		link.l1.go = "Escort_LevelUp_0_go";
 	break;
@@ -3039,7 +3039,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.PortmansJornal.gem = GenQuestPortman_GenerateGem();
 		break;
 		case "PortmanQuest_2":
-			dialog.text = "Oui, bien sûr ! Son nom est "+npchar.quest.PortmansJornal.capName+", c'est un capitaine de "+GetStrSmallRegister(XI_ConvertString(npchar.quest.PortmansJornal.shipTapeName+"Gén"))+" nommé '"+npchar.quest.PortmansJornal.shipName+"'. Il a mis les voiles il n'y a pas longtemps et s'est dirigé vers "+XI_ConvertString("Colony"+npchar.quest.PortmansJornal.city+"Acc")+".";
+			dialog.text = "Oui, bien sûr ! Son nom est "+npchar.quest.PortmansJornal.capName+", c'est un capitaine de "+GetStrSmallRegister(XI_ConvertString(npchar.quest.PortmansJornal.shipTapeName+"Gen"))+" nommé '"+npchar.quest.PortmansJornal.shipName+"'. Il a mis les voiles il n'y a pas longtemps et s'est dirigé vers "+XI_ConvertString("Colony"+npchar.quest.PortmansJornal.city+"Acc")+".";
 			link.l1 = "Je vois. D'accord, je vais le trouver. Maintenant, qu'en est-il du paiement ?";
 			link.l1.go = "PortmanQuest_3";
 		break;
@@ -3235,7 +3235,7 @@ void ProcessDialogEvent()
     		arCapLocal = GetAttributeN(arCapBase,  2);
 			sCapitainId = GetAttributeName(arCapLocal);
 			sld = characterFromId(sCapitainId);
-			dialog.text = LinkRandPhrase("Eh bien, voyons voir... A-ha! Là! ","Ah-ha... A-ha! Là! ","D'accord, alors. ")+"Capitaine "+GetFullName(sld)+" "+arCapLocal.date+"année a quitté notre port et a navigué vers "+XI_ConvertString("Colonie"+arCapLocal+"Accord")+".";
+			dialog.text = LinkRandPhrase("Eh bien, voyons voir... A-ha! Là! ","Ah-ha... A-ha! Là! ","D'accord, alors. ")+"Capitaine "+GetFullName(sld)+" "+arCapLocal.date+"année a quitté notre port et a navigué vers "+XI_ConvertString("Colony"+arCapLocal+"Accord")+".";
 			link.l1 = "Merci. J'aimerais revoir la liste encore une fois...";
 			link.l1.go = "CapitainList";
 			link.l2 = "Très bien, c'est tout. Je ne suis pas intéressé par d'autres capitaines.";
@@ -3260,7 +3260,7 @@ void ProcessDialogEvent()
     		arCapLocal = GetAttributeN(arCapBase,  3);
 			sCapitainId = GetAttributeName(arCapLocal);
 			sld = characterFromId(sCapitainId);
-			dialog.text = LinkRandPhrase("Eh bien, voyons voir... Ah-ha ! Là !","Ah-ha... A-ha! Là ! ","D'accord, alors. ")+"Capitaine "+GetFullName(sld)+" "+arCapLocal.date+" année a quitté notre port et a navigué vers "+XI_ConvertString("Colonie"+arCapLocal+"Acc")+".";
+			dialog.text = LinkRandPhrase("Eh bien, voyons voir... Ah-ha ! Là !","Ah-ha... A-ha! Là ! ","D'accord, alors. ")+"Capitaine "+GetFullName(sld)+" "+arCapLocal.date+" année a quitté notre port et a navigué vers "+XI_ConvertString("Colony"+arCapLocal+"Acc")+".";
 			link.l1 = "Merci. J'aimerais revoir la liste à nouveau...";
 			link.l1.go = "CapitainList";
 			link.l2 = "Bien, c'est tout. Je ne suis pas intéressé par d'autres capitaines.";
@@ -3789,216 +3789,6 @@ void ProcessDialogEvent()
 	}
 }
 
-float BurntShipQuest_GetMaxNeededValue(int iShipType, string _param)
-{
-	float NeededValue = makefloat(GetBaseShipParamFromType(iShipType, _param));
-	switch (_param)
-	{
-		case "speedrate":
-			NeededValue += ((0.72 + frandSmall(0.30)) * (NeededValue/10.0)); 
-		break;
-		case "turnrate":
-			NeededValue += ((0.72 + frandSmall(0.30)) * (NeededValue/10.0)); 
-		break;
-		case "capacity":
-			NeededValue += ((0.72 + frandSmall(0.30)) * (NeededValue/8.0)); 
-		break;
-	}
-	return NeededValue;
-}
-
-// Warship 25.07.09 Генер "A burnt vessel". Начальные иниты для портмана - тип разыскиваемого судна, выдающаяся характеристика и т.д.
-void BurntShipQuest_FillStartParams(ref _npchar)
-{
-	int rank = sti(PChar.rank);
-	int shipType, temp;
-	float neededValue;
-	String shipAttribute;
-	
-	// TODO Пересмотреть зависимость от ранга
-	if(rank <= 5)
-	{
-		shipType = SHIP_LUGGER + rand(1);
-		
-		switch(shipType)
-		{
-			case SHIP_LUGGER:
-				shipAttribute = "speedrate";
-			break;
-			
-			case SHIP_SLOOP:
-				temp = rand(2);
-				
-				if(temp == 2)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					if(temp == 1)
-					{
-						shipAttribute = "turnrate";
-					}
-					else
-					{
-						shipAttribute = "capacity";
-					}
-				}
-			break;
-		}
-	}
-	
-	if(rank > 5 && rank <= 15)
-	{
-		shipType = SHIP_SCHOONER + rand(2);
-		
-		switch(shipType)
-		{
-			case SHIP_SCHOONER:
-				if(rand(1) == 0)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					shipAttribute = "turnrate";
-				}
-			break;
-			
-			case SHIP_BARKENTINE:
-				shipAttribute = "capacity";
-			break;
-			
-			case SHIP_SHNYAVA:
-				shipAttribute = "capacity";
-			break;
-		}
-	}
-	
-	if(rank > 15 && rank <= 25)
-	{
-		shipType = SHIP_FLEUT + rand(3);
-		
-		switch(shipType)
-		{
-			case SHIP_FLEUT:
-				shipAttribute = "turnrate";
-			break;
-			
-			case SHIP_CARAVEL:
-				if(rand(1) == 1)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					shipAttribute = "turnrate";
-				}
-			break;
-			
-			case SHIP_PINNACE:
-				shipAttribute = "capacity";
-			break;
-			
-			case SHIP_BRIGANTINE:
-				if(rand(1) == 1)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					shipAttribute = "turnrate";
-				}
-			break;
-			
-		}
-	}
-	
-	if(rank > 25 && rank <= 35)
-	{
-		shipType = SHIP_SCHOONER_W + rand(2);
-		
-		switch(shipType)
-		{
-			case SHIP_SCHOONER_W:
-				if(rand(1) == 1)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					shipAttribute = "turnrate";
-				}
-			break;
-			
-			case SHIP_GALEON_L:
-				shipAttribute = "capacity";
-			break;
-			
-			case SHIP_CORVETTE:
-				if(rand(1) == 1)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					shipAttribute = "capacity";
-				}
-			break;
-		}
-	}
-	
-	if(rank > 35)
-	{
-		shipType = SHIP_GALEON_H + rand(1);
-		
-		switch(shipType)
-		{
-			case SHIP_GALEON_H:
-				temp = rand(2);
-				
-				if(temp == 0)
-				{
-					shipAttribute = "speedrate";
-				}
-				else
-				{
-					if(temp == 1)
-					{
-						shipAttribute = "turnrate";
-					}
-					else
-					{
-						shipAttribute = "capacity";
-					}
-				}
-			break;
-			
-			case SHIP_FRIGATE:
-				shipAttribute = "turnrate";
-			break;
-		}
-	}
-	
-	neededValue = BurntShipQuest_GetMaxNeededValue(shipType, shipAttribute);
-	
-	Log_TestInfo("shipType == " + shipType);
-	Log_TestInfo("ShipAttribute == " + shipAttribute);
-	Log_TestInfo("ShipNeededValue == " + neededValue);
-	
-	_npchar.Quest.BurntShip.ShipType = shipType;
-	_npchar.Quest.BurntShip.ShipAttribute = shipAttribute;
-	
-	if(shipAttribute != "capacity") // Чтобы трюм с десятичными не писался
-	{
-		_npchar.Quest.BurntShip.ShipNeededValue = FloatToString(neededValue, 2);
-	}
-	else
-	{
-		_npchar.Quest.BurntShip.ShipNeededValue = MakeInt(neededValue);
-	}
-}
-
 void SetJornalCapParam(ref npchar)
 {
 	//созадем рассеянного кэпа
@@ -4219,7 +4009,7 @@ string findCurrentCity1(ref NPChar)//выбираем целевой город 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
+		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -4240,7 +4030,7 @@ string findCurrentCity2(ref NPChar)//выбираем целевой город 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
+		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -4261,7 +4051,7 @@ string findCurrentCity3(ref NPChar)//выбираем целевой город 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
+		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;

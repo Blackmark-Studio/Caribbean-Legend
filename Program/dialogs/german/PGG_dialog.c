@@ -653,7 +653,7 @@ void ProcessDialogEvent()
 		if (PChar.GenQuest.PGG_Quest.Island.Town == "" || PChar.GenQuest.PGG_Quest.Island.Town == "Caiman" ||
 			PChar.GenQuest.PGG_Quest.Island.Town == "Terks" || PChar.GenQuest.PGG_Quest.Island.Town == "Dominica")
 		{
-			sLoc = GetConvertStr(PChar.GenQuest.PGG_Quest.Island, "LocLables.txt") + "");
+			sLoc = GetIslandNameByID(PChar.GenQuest.PGG_Quest.Island);
 		}
 		else
 		{
@@ -662,11 +662,11 @@ void ProcessDialogEvent()
 		
 		if (sti(PChar.GenQuest.PGG_Quest.Template)) 
 		{
-			sTmp +=	", stopped not far from " + sLoc + " at the cove of " + GetConvertStr(PChar.GenQuest.PGG_Quest.Island.Shore, "LocLables.txt") + " to resupply.";
+			sTmp +=	", stopped not far from " + sLoc + " at the cove of " + GetLocationNameByID(PChar.GenQuest.PGG_Quest.Island.Shore) + " to resupply.";
 		}
 		else
 		{
-			sTmp += ", wurde vom Sturm erwischt, nicht weit von " + sLoc + " und ist gesunken. Es gelang ihnen jedoch, einen Teil der Ladung zu sichern in der Bucht von " + GetConvertStr(PChar.GenQuest.PGG_Quest.Island.Shore, "LocLables.txt") + 
+			sTmp += ", wurde vom Sturm erwischt, nicht weit von " + sLoc + " und ist gesunken. Es gelang ihnen jedoch, einen Teil der Ladung zu sichern in der Bucht von " + GetLocationNameByID(PChar.GenQuest.PGG_Quest.Island.Shore) +
 				" Jetzt warten sie auf die Ankunft ihrer Staffel.";
 		}
 		
@@ -695,7 +695,7 @@ void ProcessDialogEvent()
 		AddQuestUserData("Gen_PGGQuest1", "sNation", NationNameGenitive(sti(PChar.GenQuest.PGG_Quest.Nation)));
 		AddQuestUserData("Gen_PGGQuest1", "sGoods", PChar.GenQuest.PGG_Quest.Goods.Text));
 		AddQuestUserData("Gen_PGGQuest1", "sColony", sLoc);
-		AddQuestUserData("Gen_PGGQuest1", "sShore", GetConvertStr(PChar.GenQuest.PGG_Quest.Island.Shore, "LocLables.txt"));
+		AddQuestUserData("Gen_PGGQuest1", "sShore", GetLocationNameByID(PChar.GenQuest.PGG_Quest.Island.Shore));
 		break;
 
 	case "Quest_1_Ship_Detail_1":

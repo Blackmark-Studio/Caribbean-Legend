@@ -63,7 +63,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "ResMan";
 			if (isBadReputation(pchar, 30))
 			{
-				dialog.text = LinkRandPhrase("Dégage d'ici, rat !","Dégage de la propriété du gouverneur immédiatement, rat!","Je m'en fiche de ce que tu fais chez le gouverneur de "+XI_ConvertString("Colonie"+npchar.city+"Gén")+"Mais mon conseil est de te perdre, maintenant !");
+				dialog.text = LinkRandPhrase("Dégage d'ici, rat !","Dégage de la propriété du gouverneur immédiatement, rat!","Je m'en fiche de ce que tu fais chez le gouverneur de "+XI_ConvertString("Colony"+npchar.city+"Gen")+"Mais mon conseil est de te perdre, maintenant !");
 				link.l1 = RandPhraseSimple("Garde ça simple, pote...","Surveille tes mots !");
 				link.l1.go = "exit";
 			}
@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "ResGuard";
 			if (isBadReputation(pchar, 30))
 			{
-				dialog.text = LinkRandPhrase("Vous feriez mieux de partir d'ici, "+GetSexPhrase("copain","fille")+"...","Va-t'en !","Manqué la porte, "+GetSexPhrase("pote","fille")+"? ? Cette propriété appartient au gouverneur de "+XI_ConvertString("Colonie"+npchar.city+"Gén")+".");
+				dialog.text = LinkRandPhrase("Vous feriez mieux de partir d'ici, "+GetSexPhrase("copain","fille")+"...","Va-t'en !","Manqué la porte, "+GetSexPhrase("pote","fille")+"? ? Cette propriété appartient au gouverneur de "+XI_ConvertString("Colony"+npchar.city+"Gen")+".");
 				link.l1 = RandPhraseSimple("Je partirai quand je le voudrai!","Ce n'est pas ton affaire...");
 				link.l1.go = "exit";
 			}

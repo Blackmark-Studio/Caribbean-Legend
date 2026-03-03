@@ -1,0 +1,18 @@
+News {Yama 1.7}
+News_descr
+{
+***************************   Ahoy!   ***************************
+-------------------------------------------------------------------------------------------------
+— Sürüm 1.7'ye hoş geldiniz!
+— "Ships Pack" DLC serisinin dördüncü bölümü çıktı
+— Steam üzerinden sürümler arasında serbestçe geçiş yapabilirsiniz
+— Yeni oyun başlatmaya gerek yok
+— Kayıtlar yeniden tasarlandı ve iyileştirildi
+— Yeni şehir sızma ve gizlilik mekanikleri
+— Yapay zeka karada daha iyi savaşıyor
+— Epilog, yaşam kalitesi iyileştirmeleri ve daha fazlası
+— Ayrıntılı değişiklik listesini aşağıdaki düğme aracılığıyla haberlerde bulabilirsiniz
+}
+News_Attention { }
+
+key {31.01.2026} 

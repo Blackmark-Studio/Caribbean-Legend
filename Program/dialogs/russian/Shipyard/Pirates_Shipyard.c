@@ -522,7 +522,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.quest.Alex_Chest.function = "AlexClock_Chest";
 			pchar.quest.AlexClock_Over.over = "yes"; //снять прерывание
 			pchar.questTemp.AlexClock = "chest";
-			AddQuestRecord("alex_clock", "3");
+			//AddQuestRecord("alex_clock", "3");
 		break;
 		
 		case "clock_complete":

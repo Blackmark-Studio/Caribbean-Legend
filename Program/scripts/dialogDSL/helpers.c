@@ -50,3 +50,13 @@ string DLG_IfHasAttribute(ref args, ref context)
   if (DLG_HasArgument(args, 2)) return DLG_A2(args);
   return "";
 }
+
+string DLG_NationGen(int iNation)
+{
+  return XI_ConvertString(GetNationNameByType(iNation) + "Gen");
+}
+
+string DLG_ColonyVoc(string sColony)
+{
+  return XiStr("Colony" + sColony + "Voc");
+}

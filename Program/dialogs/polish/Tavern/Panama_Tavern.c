@@ -28,7 +28,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Panama_rat_2":
-			dialog.text = "Cóż, jest tylko jedno wyjście stąd na piechotę - Portobello. I on tam pomaszerował. Więc szukaj go tam.";
+			dialog.text = "Cóż, jest tylko jedno wyjście stąd na piechotę - Portobelo. I on tam pomaszerował. Więc szukaj go tam.";
 			link.l1 = "Dzięki, bardzo mi pomogłeś!";
 			link.l1.go = "exit";
 			pchar.questTemp.Slavetrader = "FindRatPortobello";
@@ -46,7 +46,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "FMQG_1":
-			dialog.text = "Senor de Milyar? Ten jegomość odwiedził Panamę rok temu. Właściwie Don Carlos de Milyar mieszka w Portobello. Jest wielkim przyjacielem miejscowego gubernatora.";
+			dialog.text = "Senor de Milyar? Ten jegomość odwiedził Panamę rok temu. Właściwie Don Carlos de Milyar mieszka w Portobelo. Jest wielkim przyjacielem miejscowego gubernatora.";
 			link.l1 = "Rozumiem. Nie było potrzeby marnować czasu i tchu w dżungli. Dziękuję, kamracie.";
 			link.l1.go = "FMQG_2";
 		break;

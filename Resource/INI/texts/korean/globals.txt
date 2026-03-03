@@ -1,0 +1,63 @@
+QUEST_MESSAGE1 {엘 카이마노 식민지가 점령되었습니다.}
+QUEST_MESSAGE2 {엘 카이마노 식민지가 점령되었습니다.}
+QUEST_MESSAGE3 {당신은 이제 아즈텍 황금의 저주를 견딜 수 없을 만큼 늙었습니다...}
+QUEST_MESSAGE4 {보물을 발견했습니다!}
+QUEST_MESSAGE5 {나이젤 블라이트가 밀수업자의 코르벳을 공격했습니다!}
+QUEST_MESSAGE6 {나이젤 블라이트가 사라졌다!}
+QUEST_MESSAGE7 {선장님, 'Black Pearl'이 수평선에 나타났습니다!}
+QUEST_MESSAGE8 {훌륭합니다. 마스터를 처치하셨군요!}
+QUEST_MESSAGE9 {이제 이 잔혹한 세상과 맞서게 되었군!}
+QUEST_MESSAGE10 {무자비한 해적}
+QUEST_MESSAGE11 {특별한 보상이 주어집니다!}
+QUEST_MESSAGE12 {안타깝게도 이미 너무 많은 장교를 고용하셨습니다! 한 명을 해고해야 새로 고용할 수 있습니다!}
+Address_Form_Spa {세뇨르}
+Address_Form_Fra {몽시외}
+Address_Form_Eng {경爵}
+Address_Form_Por {세뇨르}
+Address_Form_Hol {민헤르}
+Swear_1 {내 지라가 터지겠군!}
+Swear_2 {젠장!}
+Swear_3 {오, 맙소사!}
+Swear_4 {젠장!}
+Swear_5 {천 개의 악마가!}
+Swear_6 {내 선미에 닻을 내려라!}
+Swear_7 {오, 하늘이시여!}
+Swear_8 {아르르르!!!}
+Swear_9 {상어가 천 마리나!}
+Swear_10 {악마!}
+TimeGreeting {안녕하세요}
+Antigua {Antigua}
+Barbados {Barbados}
+Curacao {Curacao}
+Dominica {Dominica}
+Grenada {Grenada}
+Guadeloupe {Guadeloupe}
+Hispaniola {Hispaniola}
+IslaMona {Isla Mona}
+Jamaica {Jamaica}
+MarieGalante {Marie Galante}
+Martinique {Martinique}
+Montserrat {Montserrat}
+Nevis {Nevis}
+PuertoRico {Puerto Rico}
+StEustatius {St. Eustatius}
+StKitts {St. Kitts}
+StMartin {St. Martin}
+Tortuga {Tortuga}
+LaVega {La Vega}
+SantoDomingo {Santo Domingo}
+PetitGoave {Petit Goave}
+Bridgetown {Bridgetown}
+SanJuan {San Juan}
+SantiagoVega {Santiago Vega}
+OFFIC_TYPE_BOATSWAIN {갑판장}
+OFFIC_TYPE_CANNONEER {포수}
+OFFIC_TYPE_QMASTER {키잡이}
+OFFIC_TYPE_NAVIGATOR {항해사}
+OFFIC_TYPE_FIRSTMATE {일등항해사}
+Pirate {해적}
+Spain {스페인인}
+France {프랑스인}
+Smuggler {밀수업자}
+Holland {네덜란드인}
+England {영국인}

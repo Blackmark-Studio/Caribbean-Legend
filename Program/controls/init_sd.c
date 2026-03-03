@@ -56,6 +56,14 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	AddControlToGroups("ChrStrafeLeft", "FightModeControls", "BattleInterfaceControls", "", "");
 	CI_CreateAndSetControls("PrimaryLand", "ChrStrafeRight", CI_GetKeyCode("KEY_D"), 0, true);
 	AddControlToGroups("ChrStrafeRight", "FightModeControls", "BattleInterfaceControls", "", "");
+	
+	// стик
+	CI_CreateAndSetControls("PrimaryLand", "StickY", 261, 0, false);
+	AddControlToGroups("StickY", "FightModeControls", "BattleInterfaceControls", "WorldMapControls", "Sailing3Pers");
+	AddControlToGroups("StickY", "Sailing1Pers", "SailingFire", "", "");
+	CI_CreateAndSetControls("PrimaryLand", "StickX", 260, 0, false);
+	AddControlToGroups("StickX", "FightModeControls", "BattleInterfaceControls", "WorldMapControls", "Sailing3Pers");
+	AddControlToGroups("StickX", "Sailing1Pers", "SailingFire", "", "");
 
     /* CI_CreateAndSetControls( "PrimaryLand", "ChrTurnHL", CI_GetKeyCode("KEY_A"), 0, true );
 	AddControlToGroups("ChrTurnHL", "FightModeControls", "BattleInterfaceControls", "", "");
@@ -259,7 +267,6 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	CI_CreateAndSetControls("Sailing3Pers", "Sea_CameraSwitch", CI_GetKeyCode("VK_TAB"), 0, true);
     AddControlToGroups("Sea_CameraSwitch", "Sailing1Pers", "SailingFire", "", "");
 
-    // Rosarak Зум подзорки
 	CI_CreateAndSetControls("Sailing1Pers", "TelescopeMode",    CI_GetKeyCode("VK_CONTROL"),     0, true);
 	CI_CreateAndSetControls("Sailing1Pers", "TelescopeZoomIn",  CI_GetKeyCode("VK_MWHEEL_UP"),   0, true);
 	CI_CreateAndSetControls("Sailing1Pers", "TelescopeZoomOut", CI_GetKeyCode("VK_MWHEEL_DOWN"), 0, true);
@@ -645,6 +652,11 @@ void ExternInitKeyCodes()
 	objControlsState.key_codes.VK_MWHEEL_UP.img = "ᐲ";
 	objControlsState.key_codes.VK_MWHEEL_DOWN	= 259; //CE_MOUSE_WHEEL_DOWN
 	objControlsState.key_codes.VK_MWHEEL_DOWN.img = "ᐲ";
+	
+	objControlsState.key_codes.260 = 260;
+	objControlsState.key_codes.260.img = "ᐲ";
+	objControlsState.key_codes.261 = 261;
+	objControlsState.key_codes.261.img = "ᐲ";
 
     // NUMPAD
 	objControlsState.key_codes.VK_NUMPAD0     = 96;

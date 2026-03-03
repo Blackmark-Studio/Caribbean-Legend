@@ -1,0 +1,24 @@
+MiniQuests_1 { }
+MiniQuests_2 { }
+MiniQuests_3 { }
+MiniQuests_4 { }
+MiniQuests_5 { }
+MiniQuests_6 { }
+MiniQuests_7 { }
+MiniQuests_8 { }
+MiniQuests_9 {Tüccar siyah bayrağı çekti ve bize saldırıyor!}
+MiniQuests_10 {Güverte subayı}
+MiniQuests_11 {Yolcu @<GetFullName(sld)> geminizden ayrıldı!}
+MiniQuests_12 {Papaz @<GetFullName(sld)> geminizden ayrıldı!}
+MiniQuests_13 {barquentine '@<pchar.GenQuest.Marginpassenger.ShipName1>'}
+MiniQuests_14 {ticaret konvoyu}
+MiniQuests_15 { }
+MiniQuests_16 { }
+MiniQuests_17 {Ufukta düşman gemisi var!}
+MiniQuests_18 {Düşman konvoyu ufukta!}
+MiniQuests_19 {Ufukta bir korsan gemisi göründü!}
+MiniQuests_20 {@<pchar.GenQuest.FindFugitive.Name> sıtmadan öldü!}
+MiniQuests_21 {@<sld.name> geminizde gözetim altına alındı}
+MiniQuests_22 {Bir saat geçti...}
+MiniQuests_23 {, bu da ~}
+MiniQuests_24 { }

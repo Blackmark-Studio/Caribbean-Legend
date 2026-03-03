@@ -429,6 +429,13 @@ void ProcessDialogEvent()
 		//--> --------------------------------- —офицерский блок ------------------------------------------
 		case "Longway_officer":
 			dialog.text = "龙威在听, 船长。 ";
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				dialog.text = "有什么命令, 船长大人? ";
+				Link.l1 = ""+npchar.name+", 我决定前往欧洲——去见我的父亲。 这条路不会轻松, 而且我也不知道什么时候才能回来。 看来, 是时候分别了。 你大概也不会在这里等我——而且那样做也并不安全。 ";
+				Link.l1.go = "SharlieEpilog_Longway_1";
+				break;
+			}
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
 				Link.l4 = "龙威, 我要去一座古老的印第安城市泰亚萨尔。 我直说吧, 这将是一次非常危险的旅行, 也是一次神秘的旅行 —我们将通过传送偶像到达那里。 你会... 加入我吗? ";
@@ -574,7 +581,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -589,7 +596,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;
@@ -605,7 +612,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -620,7 +627,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, MUSKET_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetMusketBullets");
 			DialogExit();
 		break;
@@ -722,6 +729,35 @@ void ProcessDialogEvent()
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
+		break;
+		
+		// Эпилог
+		case "SharlieEpilog_Longway_1":
+			dialog.text = ""+npchar.name+"认为自己是船长大人的朋友。 小的愿意追随您到任何地方, 哪怕是去欧洲, 如果有需要。 ";
+			link.l1 = "但你还记得, 这里的人是怎么看待像你这样的外乡人的吗? 在欧洲会更加艰难。 我当然不会让任何人伤害你——但那些目光和嘲笑, 我却无法替你挡下。 所以我不能命令你——你必须自己做出选择: 跟我走, 或者…… ";
+			link.l1.go = "SharlieEpilog_Longway_2";
+		break;
+
+		case "SharlieEpilog_Longway_2":
+			dialog.text = ""+npchar.name+"已经习惯这样的对待。 自从张新死后, 船长大人成了朗威唯一在乎的人。 小的会追随您, 替您挡住背后的危险。 ";
+			link.l1 = "那么…… 我珍视你的忠诚, 朋友, 也由衷高兴你能在我身边。 你知道吗, 我甚至有点羡慕你。 你见过中国、 加勒比——而现在, 还将看到欧洲。 能走完如此漫长旅程的人并不多…… 万·默登给你的名字, 果然成了预言。 ";
+			link.l1.go = "SharlieEpilog_Longway_3";
+		break;
+
+		case "SharlieEpilog_Longway_3":
+			dialog.text = "...";
+			link.l1 = "我们两周后起航。 出发前, 我打算在酒馆好好庆祝一番。 你也在受邀之列。 记住——不许拒绝。 ";
+			link.l1.go = "SharlieEpilog_Longway_4";
+		break;
+
+		case "SharlieEpilog_Longway_4":
+			dialog.text = ""+npchar.name+"也没打算拒绝。 小的一定会来, 船长大人。 ";
+			link.l1 = "我也没指望你会有别的回答。 等宴会开始时我会通知你。 现在, 我还得先处理其他事情。 ";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Longway_officer";
+			npchar.quest.SharlieEpilog_FarewellOfficers = true;
+			pchar.questTemp.SharlieEpilog_Longway = true;
+			pchar.questTemp.SharlieEpilog_Friends = sti(pchar.questTemp.SharlieEpilog_Friends) + 1;
 		break;
 	}
 }

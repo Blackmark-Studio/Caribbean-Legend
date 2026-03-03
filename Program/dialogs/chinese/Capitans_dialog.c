@@ -163,7 +163,7 @@ void ProcessDialogEvent()
 							if(pchar.GenQuest.FishingBoatDialogEnb != "no special goods")
 							{
 								link.l3 = "嗯, 也许到船舱里再找找 - 也许能找到什么可卖的? ";
-								link.l3.go = "特殊商品";
+								link.l3.go = "Особые товары";
 							}
 						}
 						link.l4 = "没什么特别的, 只是来问候你! ";
@@ -250,7 +250,7 @@ void ProcessDialogEvent()
 						if(pchar.GenQuest.FishingBoatDialogEnb != "no special goods")
 						{
 							link.l3 = "嗯, 也许到船舱里再找找 - 也许能找到什么可卖的? ";
-							link.l3.go = "特殊商品";
+							link.l3.go = "Особые товары";
 						}
 					}
 					link.l4 = "没什么特别的, 只是来问候你! ";
@@ -272,7 +272,7 @@ void ProcessDialogEvent()
                 if (CheckAttribute(NPChar, "EncGroupName") && !bOk) // 仅用于幻影掠夺
                 {
                     iCapBattleDifficulty = CalcBattleDifficulty();
-                    link.l2 = "(威慑几率 " + iCapBattleDifficulty + "%%) " + RandPhraseSimple("你知道我是谁吗? 我的火炮能把你的破船打成筛子。 和平解决吧—赎金就够了。", "大海上…… 只有我们…… 为了你船员的安全, 何不打赏点东西安抚我的兄弟们?");
+                    link.l2 = "(威慑几率 " + iCapBattleDifficulty + "%%) " + RandPhraseSimple("你知道我是谁吗? 我的火炮能把你的破船打成筛子。 和平解决吧—赎金就够了。", "大海上……  只有我们……  为了你船员的安全, 何不打赏点东西安抚我的兄弟们?");
                     link.l2.go = "Talk_board";
                 }
                 if (CheckAttribute(NPChar, "Ship.Mode") && NPChar.Ship.Mode == "Trade")
@@ -816,7 +816,7 @@ void ProcessDialogEvent()
 		
 		case "attack_fort":
                 dialog.text = "你是什么意思? ";
-                link.l1 = "我可以协助你摧毁" + GetConvertStr(aData.Colony + " Town", "LocLables.txt") + "殖民地的堡垒并占领城市, 如果我们成功, 战利品由我们平分。 ";
+                link.l1 = "我可以协助你摧毁" + GetCityName(aData.Colony) + "殖民地的堡垒并占领城市, 如果我们成功, 战利品由我们平分。 ";
                 link.l1.go = "Siegehelp_1";
                 link.l2 = "实际上, 我的事不值得你花时间。 再见, " + GetAddress_FormToNPC(NPChar) + "。 ";
                 link.l2.go = "exit";
@@ -981,7 +981,7 @@ void ProcessDialogEvent()
             aData.loot = sti(aData.loot) - ilt;
             if (CheckAttribute(PChar, "quest.LeaveTown")) Pchar.quest.LeaveTown.over = "yes";
             //--> 传闻
-            SiegeRumour("我听说你在攻击" + NationNameSK(sti(aData.conation)) + "殖民地 - " + GetConvertStr(aData.Colony + " Town", "LocLables.txt") + "时帮助了我们的中队! 我们非常感谢你, " + GetAddress_Form(NPChar) + "。 ", "", sti(aData.nation), -1, 30, 3);
+            SiegeRumour("我听说你在攻击" + NationNameSK(sti(aData.conation)) + "殖民地 - " + GetCityName(aData.Colony) + "时帮助了我们的中队! 我们非常感谢你, " + GetAddress_Form(NPChar) + "。 ", "", sti(aData.nation), -1, 30, 3);
             //< —传闻
 		break;
 
@@ -1376,7 +1376,7 @@ void ProcessDialogEvent()
 				dialog.text = "今天收获很好, 刚有时间拉出渔网。 我们可以卖给你, 甚至比商店便宜 - 反正我们把鱼卖给当地商人。 如果我们把这些都换算成食物... 我们现在有" + iTemp + ", 我们可以以每件" + iMoney + "比索的价格出售。 你要多少? ";
 				link.l1.edit = 3;
 				link.l1 = "";	
-				link.l1.go = "输入的食物数量";
+				link.l1.go = "Количество вбитого провианта";
 				link.l2 = "你知道, 我改变主意了, 不想买你的食物了。 ";	
 				link.l2.go = "exit";
 				
@@ -1388,7 +1388,7 @@ void ProcessDialogEvent()
 				link.l1 = "不, 我对鱼叉不感兴趣。 ";
 				link.l1.go = "exit";
 				link.l2 = "嗯, 鱼叉在合适的人手中也是有用的东西。 我可能会买。 ";
-				link.l2.go = "鱼叉";
+				link.l2.go = "Гарпуны";
 			}
 			if(GetDataDay() > 20)
 			{
@@ -1396,11 +1396,11 @@ void ProcessDialogEvent()
 				link.l1 = "不, 我对小饰品不感兴趣。 ";
 				link.l1.go = "exit";
 				link.l2 = "真遗憾没有收获。 好吧, 至少看看你的小饰品 - 突然有什么会吸引... ";
-				link.l2.go = "贸易";
+				link.l2.go = "Торговля";
 			}	
 		break;
 		
-		case "输入的食物数量":
+		case "Количество вбитого провианта":
 			Diag.TempNode = "FishingBoat_1";
 			iQty = sti(dialogEditStrings[3]);
 			iTemp = makeint(pchar.GenQuest.FishingBoatITemp);
@@ -1411,7 +1411,7 @@ void ProcessDialogEvent()
 				dialog.text = "你要太多了... 我没有那么多! 你能少买些吗? ";
 				link.l1.edit = 3;
 				link.l1 = "";	
-				link.l1.go = "重新输入食物数量";	
+				link.l1.go = "Количество вбитого провианта повтор";	
 				link.l2 = "你知道, 我改变主意了, 不想买你的食物了。 ";	
 				link.l2.go = "exit";
 			}	
@@ -1420,7 +1420,7 @@ void ProcessDialogEvent()
 				dialog.text = "你在开玩笑吗? 你需要食物吗? 如果需要, 多少? ";
 				link.l1.edit = 3;
 				link.l1 = "";	
-				link.l1.go = "重新输入食物数量";	
+				link.l1.go = "Количество вбитого провианта повтор";	
 				link.l2 = "你知道, 我改变主意了, 不想买你的食物了。 ";	
 				link.l2.go = "exit";
 			}
@@ -1435,14 +1435,14 @@ void ProcessDialogEvent()
 				else
 				{
 					link.l1 = "成交! 把货物拖到我的船上。 ";
-					link.l1.go = "成功购买食物";
+					link.l1.go = "Удачная покупка";
 					link.l2 = "你知道, 我改变主意了, 不想买你的食物了。 ";
 					link.l2.go = "exit";
 				}
 			}
 		break;
 		
-		case "重新输入食物数量":
+		case "Количество вбитого провианта повтор":
 			Diag.TempNode = "FishingBoat_1";
 			iQty = sti(dialogEditStrings[3]);
 			iTemp = makeint(pchar.GenQuest.FishingBoatITemp);
@@ -1453,7 +1453,7 @@ void ProcessDialogEvent()
 				dialog.text = "你要太多了... 我没有那么多! 你能少买些吗? ";
 				link.l1.edit = 3;
 				link.l1 = "";	
-				link.l1.go = "输入的食物数量";	
+				link.l1.go = "Количество вбитого провианта";	
 				link.l2 = "你知道, 我改变主意了, 不想买你的食物了。 ";	
 				link.l2.go = "exit";
 			}	
@@ -1462,7 +1462,7 @@ void ProcessDialogEvent()
 				dialog.text = "你在开玩笑吗? 你需要食物吗? 如果需要, 多少? ";
 				link.l1.edit = 3;
 				link.l1 = "";	
-				link.l1.go = "输入的食物数量";	
+				link.l1.go = "Количество вбитого провианта";	
 				link.l2 = "你知道, 我改变主意了, 不想买你的食物了。 ";	
 				link.l2.go = "exit";
 			}
@@ -1477,14 +1477,14 @@ void ProcessDialogEvent()
 				else
 				{
 					link.l1 = "成交! 把货物拖到我的船上。 ";
-					link.l1.go = "成功购买食物";
+					link.l1.go = "Удачная покупка";
 					link.l2 = "你知道, 我改变主意了, 不想买你的食物了。 ";
 					link.l2.go = "exit";
 				}
 			}
 		break;
 		
-		case "成功购买食物":
+		case "Удачная покупка":
 			Diag.TempNode = "First time";
 			Diag.CurrentNode = "First time";
 			iQty = makeint(pchar.GenQuest.FishingBoatIQty);
@@ -1495,20 +1495,19 @@ void ProcessDialogEvent()
 			AddMoneyToCharacter(pchar, -iTemp);
 		break;
 		
-		case "鱼叉":
+		case "Гарпуны":
 				Diag.TempNode = "FishingBoat_1";
 				iTemp = 5+hrand(5);
 				pchar.GenQuest.FishingBoatITemp = iTemp;
 				dialog.text = "我们有" +iTemp+ "件。 我们可以以每把鱼叉一百比索的价格出售。 你需要多少? ";
 				link.l1.edit = 3;
 				link.l1 = "";	
-				link.l1.go = "输入鱼叉数量";
+				link.l1.go = "Количество вбитых гарпунов";
 				link.l2 = "你知道, 我改变主意了, 我不需要鱼叉。 ";	
 				link.l2.go = "exit";
 		break;
 		
-		case "输入鱼叉数量":
-   
+		case "Количество вбитых гарпунов":
 			iQty = sti(dialogEditStrings[3]);
 			iTemp = makeint(pchar.GenQuest.FishingBoatITemp);
 			pchar.GenQuest.FishingBoatIQty = iQty;
@@ -1518,7 +1517,7 @@ void ProcessDialogEvent()
 				dialog.text = "你要太多了... 我没有那么多! 你能少买些吗? ";
 				link.l1.edit = 3;
 				link.l1 = "";	
-				link.l1.go = "重新输入鱼叉数量";	
+				link.l1.go = "Количество вбитых гарпунов заново";	
 				link.l2 = "你知道, 我改变主意了, 我不需要鱼叉。 ";	
 				link.l2.go = "exit";
 			}	
@@ -1527,7 +1526,7 @@ void ProcessDialogEvent()
 				dialog.text = "你在开玩笑吗? 你需要鱼叉吗? 如果需要, 多少? ";
 				link.l1.edit = 3;
 				link.l1 = "";	
-				link.l1.go = "重新输入鱼叉数量";	
+				link.l1.go = "Количество вбитых гарпунов заново";	
 				link.l2 = "你知道, 我改变主意了, 我不需要鱼叉。 ";	
 				link.l2.go = "exit";
 			}
@@ -1542,14 +1541,14 @@ void ProcessDialogEvent()
 				else
 				{
 					link.l1 = "成交! 我会找到它们的用途。 ";
-					link.l1.go = "成功购买鱼叉";
+					link.l1.go = "Удачная покупка гарпунов";
 					link.l2 = "你知道, 我改变主意了, 我不需要鱼叉。 ";
 					link.l2.go = "exit";
 				}
 			}
 		break;
 		
-		case "重新输入鱼叉数量":
+		case "Количество вбитых гарпунов заново":
 			iQty = sti(dialogEditStrings[3]);
 			iTemp = makeint(pchar.GenQuest.FishingBoatITemp);
 			pchar.GenQuest.FishingBoatIQty = iQty;
@@ -1559,7 +1558,7 @@ void ProcessDialogEvent()
 				dialog.text = "你要太多了... 我没有那么多! 你能少买些吗? ";
 				link.l1.edit = 3;
 				link.l1 = "";	
-				link.l1.go = "输入鱼叉数量";	
+				link.l1.go = "Количество вбитых гарпунов";	
 				link.l2 = "你知道, 我改变主意了, 我不需要鱼叉。 ";	
 				link.l2.go = "exit";
 			}	
@@ -1568,7 +1567,7 @@ void ProcessDialogEvent()
 				dialog.text = "你在开玩笑吗? 你需要鱼叉吗? 如果需要, 多少? ";
 				link.l1.edit = 3;
 				link.l1 = "";	
-				link.l1.go = "输入鱼叉数量";	
+				link.l1.go = "Количество вбитых гарпунов";	
 				link.l2 = "你知道, 我改变主意了, 我不需要鱼叉。 ";	
 				link.l2.go = "exit";
 			}
@@ -1583,14 +1582,14 @@ void ProcessDialogEvent()
 				else
 				{
 					link.l1 = "成交! 我会找到它们的用途。 ";
-					link.l1.go = "成功购买鱼叉";
+					link.l1.go = "Удачная покупка гарпунов";
 					link.l2 = "你知道, 我改变主意了, 我不需要鱼叉。 ";
 					link.l2.go = "exit";
 				}
 			}
 		break;
 		
-		case "成功购买鱼叉":
+		case "Удачная покупка гарпунов":
 			DialogExit();
 			Diag.TempNode = "First time";
 			Diag.CurrentNode = "First time";
@@ -1600,7 +1599,7 @@ void ProcessDialogEvent()
 			
 		break;
 		
-		case "贸易":
+		case "Торговля":
 			DialogExit();
 			Diag.TempNode = "First time";
 			Diag.CurrentNode = "First time";
@@ -1608,7 +1607,7 @@ void ProcessDialogEvent()
 			LaunchItemsTrade(NPChar, 0);
 		break;
 		
-		case "特殊商品":
+		case "Особые товары":
 			if(hrand(2, "&SpeGoo") == 0)
 			{
 				Diag.TempNode = "First time";
@@ -1625,7 +1624,7 @@ void ProcessDialogEvent()
 					
 					dialog.text = "嗯... 我这里有一样小东西... 我留着, 想卖给某人。 但我会为此收很多钱! 而且我不会再提供第二次。 你要看吗? ";
 					link.l1 = "给我看看, 看看是什么小东西。 ";
-					link.l1.go = "特殊商品物品";
+					link.l1.go = "Особые товары предметы";
 				}
 				else
 				{
@@ -1679,13 +1678,13 @@ void ProcessDialogEvent()
 					if(sti(pchar.money) >= iMoney*iQty)
 					{
 						link.l2 = "我明白你的意思。 但这货物值得。 我买了。 让他送到我的船上。 ";
-						link.l2.go = "购买战略物资";
+						link.l2.go = "Купили стратегический товар";
 					}
 				}
 			}
 		break;
 		
-		case "特殊商品物品":
+		case "Особые товары предметы":
 			pchar.GenQuest.FishingBoatDialogEnb = "no special goods";
 			Diag.TempNode = "First time";
 			Diag.CurrentNode = "First time";
@@ -1706,11 +1705,11 @@ void ProcessDialogEvent()
 					case 31: sTemp = "obereg_10"; break;	
 				}
 				pchar.GenQuest.FishingBoatSTemp = sTemp;
-				dialog.text = "这是" + GetConvertStr("itmname_"+sTemp, "ItemsDescribe.txt") + "。 设法弄到... 嗯, 不管从哪里。 想卖给某个鉴赏家。 我只收10000比索就给你! 你要吗? ";
+				dialog.text = "这是" + GetItemName(sTemp) + "。 设法弄到... 嗯, 不管从哪里。 想卖给某个鉴赏家。 我只收10000比索就给你! 你要吗? ";
 				if(sti(pchar.money) > 9999)
 				{
 					link.l1 = "我当然要! 这东西很值。 ";
-					link.l1.go = "购买特殊商品";
+					link.l1.go = "Купили особый товар";
 				}
 				link.l2 = "不, 我不需要。 我不要。 ";
 				link.l2.go = "exit";
@@ -1718,7 +1717,7 @@ void ProcessDialogEvent()
 		
 		break;
 		
-		case "购买特殊商品":
+		case "Купили особый товар":
 			Diag.TempNode = "First time";
 			Diag.CurrentNode = "First time";
 			DialogExit();
@@ -1735,7 +1734,7 @@ void ProcessDialogEvent()
 			AddMoneyToCharacter(pchar, -10000);
 		break;
 		
-		case "购买战略物资":
+		case "Купили стратегический товар":
 			Diag.TempNode = "First time";
 			Diag.CurrentNode = "First time";
 			iQty = makeint(pchar.GenQuest.FishingBoatIQty);

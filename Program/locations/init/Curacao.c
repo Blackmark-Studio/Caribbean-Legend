@@ -1354,7 +1354,7 @@ int LocationInitCuracao(int n)
 	// Дом представителя Голландской Вест-Индской компании
     //////////////////////////////////////////////////////////////////////////////////////////////////////
 	locations[n].id = "GVIK_residence";
-	locations[n].id.label = "Townhall"; // Rebbebion, лишний пробел
+	locations[n].id.label = "Townhall";
 	locations[n].image = "loading\inside\smallresidence.tga";
     locations[n].SpecialHandlers.l1 = "HWIC_SetClockSound";
 	//Town sack
@@ -1705,7 +1705,7 @@ int LocationInitCuracao(int n)
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "house";
-	locations[n].fastreload = "";
+	locations[n].fastreload = "Villemstad";
 	//Models
 	//Always
 	locations[n].models.always.locators = "Hut_locators";
@@ -1750,7 +1750,7 @@ int LocationInitCuracao(int n)
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "house";
-	locations[n].fastreload = "";
+	locations[n].fastreload = "Villemstad";
 	//Models
 	//Always
 	locations[n].filespath.models = "locations\inside\mediumhouse09_2";
@@ -1794,7 +1794,7 @@ int LocationInitCuracao(int n)
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "house";
-	locations[n].fastreload = "";
+	locations[n].fastreload = "Villemstad";
 	//Models
 	//Always
 	locations[n].models.always.locators = "Hut3_locators";
@@ -1835,7 +1835,7 @@ int LocationInitCuracao(int n)
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "house";
-	locations[n].fastreload = "";
+	locations[n].fastreload = "Villemstad";
 	//Models
 	//Always
 	locations[n].models.always.locators = "SH_l";

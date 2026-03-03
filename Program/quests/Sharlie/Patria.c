@@ -205,18 +205,36 @@ void Patria_SanJoseMayak(string qName) // на маяке Тринидада
 {
 	chrDisableReloadToLocation = true;
 	LAi_LocationFightDisable(&Locations[FindLocation("Mayak1")], true);
+
+	object aCrewSoldier[8];
+	GenerateCrew(pchar, "soldier", &aCrewSoldier);
+	object aCrewMushketer[3];
+	GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+	string model;
+	string ani;
+
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20 + 2*sti(pchar.rank);
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
+
 	for (int i=1; i<=11; i++)
 	{
 		if (i > 8) // мушкетеры, 3 шт
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Patria_SanJoseSoldier_"+i, "mush_fra_"+(i-8), "man", "mushketer", 30, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, 30, 80, 80, "", "mushket1", "bullet", 150);
+			model = aCrewMushketer[i-9].model;
+			ani = aCrewMushketer[i-9].ani;
+			sld = GetCharacter(NPC_GenerateCharacter("Patria_SanJoseSoldier_"+i, model, "man", ani, 30, FRANCE, -1, false, "soldier"));
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl*2);
 			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 		}
 		else
 		{
-				sld = GetCharacter(NPC_GenerateCharacter("Patria_SanJoseSoldier_"+i, "sold_fra_"+i, "man", "man", 30, FRANCE, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, 30, 60, 60, LinkRandPhrase("blade_11","blade_12","blade_13"), "pistol1", "bullet", 150);
+			model = aCrewSoldier[i-1].model;
+			ani = aCrewSoldier[i-1].ani;
+			sld = GetCharacter(NPC_GenerateCharacter("Patria_SanJoseSoldier_"+i, model, "man", ani, 30, FRANCE, -1, false, "soldier"));
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 		}
 		ChangeCharacterAddressGroup(sld, "Mayak1", "goto", "goto"+i);
 		LAi_SetWarriorType(sld);
@@ -1767,7 +1785,7 @@ void Patria_SiegeEscape(string qName) // вышли в море, начинае�
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
 	if (iRank > 45) iRank = 45;
 	int iShip, iCannon;
-	
+	ref refShip;
 	switch (MOD_SKILL_ENEMY_RATE)
 	{
 		case 2:
@@ -1781,19 +1799,39 @@ void Patria_SiegeEscape(string qName) // вышли в море, начинае�
 		break;
 		
 		case 6:
-			iShip = SHIP_GALEON_H + rand(1);
+			iShip = GetRandomShipType(FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
 			iCannon = CANNON_TYPE_CANNON_LBS24;
 		break;
 		
 		case 8:
-			iShip = SHIP_GALEON_H + rand(2);
-			iCannon = CANNON_TYPE_CANNON_LBS32;
+			iShip = GetRandomShipType(FLAG_SHIP_CLASS_1 + FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
+			makeref(refShip, ShipsTypes[iShip]);
+			if (sti(refShip.MaxCaliber) >= 32)
+			{
+				iCannon = CANNON_TYPE_CANNON_LBS32;
+			}
+			else
+			{
+				iCannon = CANNON_TYPE_CANNON_LBS24;
+			}
 		break;
 		
 		case 10:
-			iShip = SHIP_FRIGATE_H + rand(1);
-			if (iShip == SHIP_LINESHIP) iCannon = CANNON_TYPE_CANNON_LBS36;
-			else iCannon = CANNON_TYPE_CANNON_LBS32;
+			iShip = GetRandomShipType(FLAG_SHIP_CLASS_1 + FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
+			makeref(refShip, ShipsTypes[iShip]);
+
+			if (sti(refShip.MaxCaliber) >= 36)
+			{
+				iCannon = CANNON_TYPE_CANNON_LBS36;
+			}
+			else if (sti(refShip.MaxCaliber) >= 32)
+			{
+				iCannon = CANNON_TYPE_CANNON_LBS32;
+			}
+			else
+			{
+				iCannon = CANNON_TYPE_CANNON_LBS24;
+			}
 		break;
 	}
 	sld = GetCharacter(NPC_GenerateCharacter(sGroup+"_Cap", "off_hol_"+(rand(2)+1), "man", "man", iRank, HOLLAND, 2, true, "quest"));
@@ -1942,7 +1980,7 @@ void Patria_SiegeAddEngSquadron() // присоединяем эскадру д'
 		sld = GetCharacter(NPC_GenerateCharacter("Patria_SiegeCapNew_"+i, "off_hol_"+(7-i), "man", "man", 35, HOLLAND, -1, true, "quest"));
 		if (i == 1) 
 		{
-			sld.Ship.Type = GenerateShipHand(sld, SHIP_LSHIP_HOL, 42, 9500, 840, 11500, 350000, 12.5, 29.5, 0.38);
+			sld.Ship.Type = GenerateShipHand(sld, SHIP_LSHIP_HOL, 42, 9500, 840, 11500, 350000, 9.5, 29.5, 0.38);
 			sld.Ship.name = GetShipName("Oliphant");
 			SetBaseShipData(sld);
 			sld.Ship.Cannons.Type = CANNON_TYPE_CULVERINE_LBS36;
@@ -2499,19 +2537,35 @@ void Patria_BastionSintMartenCapture() // Филипсбург капитули�
 
 void Patria_BastionShore(string qName) // в бухте, ставим штурмовую роту
 {
+	object aCrewSoldier[12];
+	GenerateCrew(pchar, "soldier", &aCrewSoldier);
+	object aCrewMushketer[3];
+	GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+	string model;
+	string ani;
+
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20 + 2*sti(pchar.rank);
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
 	for (int i=1; i<=15; i++)
 	{
 		if (i < 4) // мушкетеры, 3 шт
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Bastion_soldier_"+i, "mush_fra_"+i, "man", "mushketer", 30, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, 30, 60, 60, "", "mushket2", "bullet", 170);
+			model = aCrewMushketer[i-1].model;
+			ani = aCrewMushketer[i-1].ani;
+			sld = GetCharacter(NPC_GenerateCharacter("Bastion_soldier_"+i, model, "man", ani, 30, FRANCE, -1, false, "soldier"));
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl*2);
 			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 			sld.cirassId = Items_FindItemIdx("cirass1");
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Bastion_soldier_"+i, "sold_fra_"+(rand(7)+1), "man", "man", 30, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, 30, 60, 60, LinkRandPhrase("blade_08","blade_12","blade_14"), "pistol1", "bullet", 150);
+			model = aCrewSoldier[i-4].model;
+			ani = aCrewSoldier[i-4].ani;
+			sld = GetCharacter(NPC_GenerateCharacter("Bastion_soldier_"+i, model, "man", ani, 30, FRANCE, -1, false, "soldier"));
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 			sld.cirassId = Items_FindItemIdx("cirass2");
 		}
 		ChangeCharacterAddressGroup(sld, "shore40", "goto", "goto1");
@@ -2813,8 +2867,6 @@ void Patria_SlaveShipsSail(string qName) // запускаем конвой
 	if (iRank > 45) iRank = 45;
 	for (int i = 1; i <= 4; i++)
     {
-		SetRandomNameToCharacter(sld);
-		SetRandomNameToShip(sld);
 		switch (i)
 		{
 			case 1: 
@@ -2839,6 +2891,8 @@ void Patria_SlaveShipsSail(string qName) // запускаем конвой
 			break;
 		}
 		sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, sModel, "man", "man", iRank, HOLLAND, 6, true, "quest"));
+		SetRandomNameToCharacter(sld);
+		SetRandomNameToShip(sld);
 		FantomMakeCoolSailor(sld, iShip, "", iCannon, 65, 65, 65);
 		FantomMakeCoolFighter(sld, iRank, 65, 65, LinkRandPhrase("blade_09","blade_12","blade_13"), "pistol1", "bullet", 220);
 		DeleteAttribute(sld, "SaveItemsForDead");
@@ -3357,19 +3411,35 @@ void Patria_CuracaoMarch(string qName) // наш отряд в бухте
 	Locations[n].models.always.mortair2.locator.name = "gun2";
 	Locations[n].models.always.mortair2.tech = "DLightModel";
 	// наша рота
+	object aCrewSoldier[12];
+	GenerateCrew(pchar, "soldier", &aCrewSoldier);
+	object aCrewMushketer[3];
+	GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+	string model;
+	string ani;
+
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20 + 2*sti(pchar.rank);
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
 	for (i=1; i<=15; i++)
 	{
 		if (i < 4) // мушкетеры, 3 шт
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Curacao_fra_soldier_"+i, "mush_fra_"+i, "man", "mushketer", 30, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, 30, 60, 60, "", "mushket2", "bullet", 170);
+			model = aCrewMushketer[i-1].model;
+			ani = aCrewMushketer[i-1].ani;
+			sld = GetCharacter(NPC_GenerateCharacter("Curacao_fra_soldier_"+i, model, "man", ani, 30, FRANCE, -1, false, "soldier"));
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl*2);
 			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 			sld.cirassId = Items_FindItemIdx("cirass1");
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Curacao_fra_soldier_"+i, "sold_fra_"+(rand(7)+1), "man", "man", 30, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, 30, 60, 60, LinkRandPhrase("blade_08","blade_12","blade_14"), "pistol1", "bullet", 150);
+			model = aCrewSoldier[i-4].model;
+			ani = aCrewSoldier[i-4].ani;
+			sld = GetCharacter(NPC_GenerateCharacter("Curacao_fra_soldier_"+i, model, "man", ani, 30, FRANCE, -1, false, "soldier"));
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 			sld.cirassId = Items_FindItemIdx("cirass2");
 		}
 		ChangeCharacterAddressGroup(sld, "shore23", "goto", "goto1");
@@ -3556,6 +3626,7 @@ void Patria_CuracaoGateBattle2(string qName) // выскочили голлан�
 void Patria_CuracaoGateBattleBoom1(string qName) // выстрел из пушки №1
 {
 	CreateLocationParticles("Bombard", "quest", "gun1", 1.0, -90, 0, "cannon_fire_2");
+	SetCameraShake(1.0, 12.0, 0.1, 0.1, 0.05, true, false, -1);
 	if (CheckAttribute(pchar, "questTemp.Patria.Curacao.BoomGate3")) DoQuestFunctionDelay("Patria_CuracaoGateBattleExp3", 1.0);
 	else DoQuestFunctionDelay("Patria_CuracaoGateBattleExp1", 1.0);
 }
@@ -3563,6 +3634,7 @@ void Patria_CuracaoGateBattleBoom1(string qName) // выстрел из пушк
 void Patria_CuracaoGateBattleBoom2(string qName) // выстрел из пушки №2
 {
 	CreateLocationParticles("Bombard", "quest", "gun2", 1.0, 0, -90, "cannon_fire_2");
+	SetCameraShake(1.0, 12.0, 0.1, 0.1, 0.05, true, false, -1);
 	DoQuestFunctionDelay("Patria_CuracaoGateBattleExp2", 1.0);
 }
 
@@ -4216,7 +4288,7 @@ void Patria_CondotierPuancieFinal(string qName) // пора к Пуанси
 	Island_SetReloadEnableGlobal("Bermudes", true);
 }
 
-void Patria_CondotierToCabin(string qName) // 
+void Patria_CondotierToCabin(string qName = "") // 
 {
 	DoQuestReloadToLocation("Portpax_tavern", "tables", "stay3", "Patria_CondotierToCabin");
 }
@@ -4978,7 +5050,7 @@ bool Patria_QuestComplete(string sQuestName, string qname)
 		bQuestDisableMapEnter = true;//закрыть карту
 		pchar.GenQuest.MapClosedNoBattle = true;
 		pchar.quest.Patria_Condotier_inCabin.win_condition.l1 = "location";
-		pchar.quest.Patria_Condotier_inCabin.win_condition.l1.location = Get_My_Cabin();
+		pchar.quest.Patria_Condotier_inCabin.win_condition.l1.location = QUEST_PLAYER_CABIN_LOCATION;
 		pchar.quest.Patria_Condotier_inCabin.function = "Patria_CondotierInCabin";
 	}
 	else if (sQuestName == "Patria_CondotierToSMartin") 

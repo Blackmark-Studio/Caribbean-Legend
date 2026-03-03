@@ -22,7 +22,7 @@ void ProcessDialogEvent()
 		//разговор на палубе
 		case "MarginCap":
 			dialog.text = "Witam, kapitanie. Czy czegoś ode mnie potrzebujesz?";
-			link.l1 = "Tak. Dokładnie, "+GetAddress_FormToNPC(NPChar)+"  Jest pasażer na twoim statku, którym jestem bardzo zainteresowany. Nazywam się "+pchar.GenQuest.Marginpassenger.q1Name+"Chcę, aby twój pasażer stał się moim pasażerem. Jeśli ci to odpowiada, wtedy się rozstaniemy i już nigdy więcej się nie zobaczymy.";
+			link.l1 = "Tak. Dokładnie, "+GetAddress_FormToNPC(NPChar)+"  Jest pasażer na twoim statku, którym jestem bardzo zainteresowany. Nazywam się "+pchar.GenQuest.Marginpassenger.q1Name+". Chcę, aby twój pasażer stał się moim pasażerem. Jeśli ci to odpowiada, wtedy się rozstaniemy i już nigdy więcej się nie zobaczymy.";
 			link.l1.go = "MarginCap_1";
 		break;
 	
@@ -96,7 +96,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "Argh, bękarcie! Dlaczego zaatakowałeś spokojny statek? Nie mamy złota ani cennych towarów!";
-				link.l1 = "Ale masz na pokładzie cenną osobę..."+pchar.GenQuest.Marginpassenger.q1Name+"Chcę twojego pasażera.";
+				link.l1 = "Ale masz na pokładzie cenną osobę..."+pchar.GenQuest.Marginpassenger.q1Name+". Chcę twojego pasażera.";
 				link.l1.go = "MarginCap_abordage_2";
 			}
 		break;

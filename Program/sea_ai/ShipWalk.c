@@ -18,15 +18,6 @@ void Ship_Walk_Delete()
 	DeleteClass(&Sailors);
 }
 
-	string sModelGroup[8] = {"LowCharacters/sold_eng_",	// солдаты англичане [0]
-							 "LowCharacters/sold_fra_",	// солдаты французы [1]
-							 "LowCharacters/sold_spa_",	// солдаты испанцы [2]
-							 "LowCharacters/sold_hol_",	// солдаты голландцы [3]
-							 "LowCharacters/pirate_",	// пираты [4]
-							 "LowCharacters/trader_",	// торговцы [5]
-							 "LowCharacters/skeleton_",	// скелеты [6]
-							 "LowCharacters/man_"};		// обычные моряки [7]
-	
 void Ship_Walk_Create()
 {
 	int charIndex = GetEventData();
@@ -55,22 +46,11 @@ void Ship_Walk_Create()
 	}
 	else
 	{
-		string sModel = sModelGroup[7]; // обычные моряки
-		if (sti(ch.index) == nMainCharacterIndex)
-		{
-			if (isMainCharacterPatented()) sModel = sModelGroup[sti(ch.nation)];
-		}
-		else
-		{
-			if (RealShips[Index].Type.War == true) sModel = sModelGroup[sti(ch.nation)];
-			if (RealShips[Index].Type.Merchant == true) sModel = sModelGroup[5]; // торговцы
-		}
-		if (ch.sex == "skeleton") 
-		{
-			sModel = sModelGroup[7];
-		}
+		object aModels[10];
+		GenerateCrew(ch, "lowpoly", &aModels);
+
 		string sModelRange[10];
-		for (int i = 0; i < 10; i++) sModelRange[i] = sModel + (i+1); // выбор моделей
+		for (int i = 0; i < 10; i++) sModelRange[i] = aModels[i].model; // выбор моделей
 		SendMessage(&Sailors, "lise", AI_MESSAGE_ADD_SHIP, ship, RealShips[Index].name,&sModelRange); // выбор группы моделей
 	}
 }

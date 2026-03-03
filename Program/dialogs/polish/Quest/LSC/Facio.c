@@ -301,7 +301,7 @@ void ProcessDialogEvent()
 			if (sti(pchar.GenQuest.NarvalConflict) < 3) dialog.text = "No cóż, to właściwie nie konflikt, tylko małe nieporozumienie, he-he. "+sti(npchar.quest.price)+"  dublony i twój problem zostanie rozwiązany w ciągu dnia.";
 			else
 			{
-				if (sti(pchar.GenQuest.NarvalConflict) >= 3 && sti(pchar.GenQuest.NarvalConflict) < 10) dialog.text = "Oczywiście, słyszałem o tym. Narobiłeś niezłego bałaganu, mój drogi. Ale jest na to sposób. "+sti(npchar.quest.price)+" dublony i twój problem zostanie rozwiązany w ciągu dnia.";
+				if (sti(pchar.GenQuest.NarvalConflict) >= 3 && sti(pchar.GenQuest.NarvalConflict) < 10) dialog.text = "Oczywiście, słyszałem o tym. Narobiłeś niezłego bałaganu, mój drogi. Ale jest na to sposób. "+sti(npchar.quest.price)+" dublony i twój problem zostanie rozwiązany w ciągu dnia.";
 				else dialog.text = "Cała Wyspa jest świadoma rzezi, którą popełniłeś. Nie będzie łatwo ci pomóc, ale jest szansa."+sti(npchar.quest.price)+" dubloonów i spróbuję rozwiązać twój problem.";
 			}
 			if (PCharDublonsTotal() >= sti(npchar.quest.price))

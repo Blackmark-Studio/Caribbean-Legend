@@ -24,22 +24,20 @@ void ProcessDialogEvent()
 	 	PChar.GenQuest.CabinCompanionNum = strcut(sAttr, i+1, strlen(sAttr)-1); // индекс в конце
  	    Dialog.CurrentNode = "Cabin_Companion_Talk";
  	}
-	
-	if (findsubstr(sAttr, "SetGunBullets1_" , 0) != -1)
+	else if (findsubstr(sAttr, "SetGunBullets1_" , 0) != -1)
  	{
         i = findsubstr(sAttr, "_" , 0);
 	 	PChar.GenQuest.SetGunBullets = strcut(sAttr, i + 1, strlen(sAttr) - 1); // индекс в конце
  	    Dialog.CurrentNode = "SetGunBullets2";
  	}
-	
-	if (findsubstr(sAttr, "SetMusketBullets1_" , 0) != -1)
+	else if (findsubstr(sAttr, "SetMusketBullets1_" , 0) != -1)
  	{
         i = findsubstr(sAttr, "_" , 0);
 	 	PChar.GenQuest.SetMusketBullets = strcut(sAttr, i + 1, strlen(sAttr) - 1); // индекс в конце
  	    Dialog.CurrentNode = "SetMusketBullets2";
  	}
-	
-	if (findsubstr(sAttr, "tonzag_jail_" , 0) != -1) {
+	else if (findsubstr(sAttr, "tonzag_jail_" , 0) != -1)
+    {
 	 	pchar.questTemp.Tonzag.JailDialog.ID = strcut(sAttr, strlen("tonzag_jail_"), strlen(sAttr) - 1);
 		DeleteAttribute(pchar, "questTemp.TonzagQuest.JailDialog." + pchar.questTemp.Tonzag.JailDialog.ID);
 		AddDialogExitQuestFunction("Tonzag_InJailDialog");
@@ -550,11 +548,11 @@ void ProcessDialogEvent()
 	    		Link.l18.go = "LH_marry_4";
 	    	}
 			//--> завершение игры
-			if(CheckAttribute(pchar, "questTemp.Tieyasal_WinEnd")) // patch-9
+			/*if(CheckAttribute(pchar, "questTemp.Tieyasal_WinEnd")) // patch-9
 	        {
 	        	Link.l15 = "Закончить дела на Карибах и отправиться в Европу.";
 	    		Link.l15.go = "final_1";
-	    	}
+	    	}*/
 			//<-- завершение игры
 			Link.l20 = RandPhraseSimple("Не сейчас. Нет времени.", "Некогда. Дела ждут.");
 			Link.l20.go = "exit";
@@ -578,7 +576,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;
@@ -607,7 +605,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetMusketBullets1_" + i;
 			}
 		break;

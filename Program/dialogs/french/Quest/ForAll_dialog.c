@@ -188,7 +188,7 @@ void ProcessDialogEvent()
 		break;
 		case "PortmansCap_inDeck_1":
 			dialog.text = "Pourquoi?";
-			link.l1 = "Vous avez oublié votre journal de bord chez le maître du port de "+XI_ConvertString("Colony"+npchar.quest.firstCity+"Gén")+".";
+			link.l1 = "Vous avez oublié votre journal de bord chez le maître du port de "+XI_ConvertString("Colony"+npchar.quest.firstCity+"Gen")+".";
 			link.l1.go = "PortmansCap_inDeck_2";
 		break;
 		case "PortmansCap_inDeck_2":
@@ -1297,7 +1297,7 @@ void ProcessDialogEvent()
 			link.l2.go = "SCQ_exit_clear";
 		break;
 		case "SCQ_Revenge_8":
-			dialog.text = "Le nom de ce vaurien est "+npchar.quest.SeekCap.capName+" et il navigue sur un "+GetStrSmallRegister(XI_ConvertString(npchar.quest.SeekCap.shipTapeName+"Gén"))+" nommé "+npchar.quest.SeekCap.shipName+"."; // belamour gen
+			dialog.text = "Le nom de ce vaurien est "+npchar.quest.SeekCap.capName+" et il navigue sur un "+GetStrSmallRegister(XI_ConvertString(npchar.quest.SeekCap.shipTapeName+"Gen"))+" nommé "+npchar.quest.SeekCap.shipName+"."; // belamour gen
 			link.l1 = "Considérez cela fait, "+GetAddress_FormToNPC(NPChar)+" Attends-moi dans l'église locale. J'espère que tu te calmeras un peu...";
 			link.l1.go = "exit";
 			//==> ставим квестодателя в церковь
@@ -1591,7 +1591,7 @@ void ProcessDialogEvent()
 		case "RapeWifeCap_inDeck":  //встреча на палубе
 			sld = &characters[GetCharacterIndex("QuestCitiz_"+npchar.quest.cribCity)];
 			dialog.text = "Je suis ravi de saluer un collègue sur mon pont ! Que voulez-vous ?";
-			link.l1 = "J'aimerais savoir si vous avez enlevé une femme de "+XI_ConvertString("Colony"+npchar.quest.cribCity+"Gén")+" du nom de"+GetFullName(sld)+"?";
+			link.l1 = "J'aimerais savoir si vous avez enlevé une femme de "+XI_ConvertString("Colony"+npchar.quest.cribCity+"Gen")+" du nom de"+GetFullName(sld)+"?";
 			link.l1.go = "RapeWifeCap_1";
 		break;
 		case "RapeWifeCap_inDeck_1":

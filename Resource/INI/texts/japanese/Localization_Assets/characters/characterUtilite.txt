@@ -1,0 +1,15 @@
+characterUtilite_1 {@<_Money> ペソ獲得}
+characterUtilite_2 {@<abs(_Money)> ペソ消費}
+characterUtilite_3 {新しいアイテム：~}
+characterUtilite_4 {@<n> ドゥブロン獲得}
+characterUtilite_5 {失ったアイテム：~}
+characterUtilite_6 {~ @<LanguageConvertString(idLngFile, arItem.name)> の力が失われたことに気づいた}
+characterUtilite_7 {名誉が上昇}
+characterUtilite_8 {名誉が下がった}
+characterUtilite_9 {@<_Dublons> ドゥブロン消費}
+characterUtilite_10 {@<officer.Ship.Name>の上陸部隊は@<compCrew>名の兵士で構成されています}
+characterUtilite_11 {ローンの期限が切れました}
+characterUtilite_12 {アトラス更新：@<LanguageConvertString(idLngFile, arItem.name)>}
+characterUtilite_13 {インディアンの評価低下（}
+characterUtilite_14 {インディアンの好感度上昇（}
+characterUtilite_15 {商人に全額はありません。@<money>で売りますか？}

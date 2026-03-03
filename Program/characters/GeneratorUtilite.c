@@ -150,7 +150,7 @@ void CorrectSkillParam(ref Npchar)
     int i;
     string  skillName;
 
-    for (i=1; i<15; i++)
+    for (i=1; i <= SKILL_QTY; i++)
     {
         skillName = GetSkillNameByIdx(i);
         if(sti(Npchar.skill.(skillName)) > SKILL_MAX) Npchar.skill.(skillName) = SKILL_MAX;
@@ -171,7 +171,7 @@ int GetSkillSum(ref Npchar)
     string  skillName;
     
 	sum = 0;
-    for (i=1; i<15; i++)
+    for (i=1; i <= SKILL_QTY; i++)
     {
         skillName = GetSkillNameByIdx(i);
         sum += sti(Npchar.skill.(skillName));
@@ -185,7 +185,7 @@ int GetSPECIALSum(ref Npchar)
     string  skillName;
 
 	sum = 0;
-    for (i=15; i<22; i++)
+    for (i=15; i <= SPECIAL_END; i++)
     {
         skillName = GetSkillNameByIdx(i);
         sum += sti(Npchar.SPECIAL.(skillName));

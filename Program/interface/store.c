@@ -402,7 +402,7 @@ void HideInfoWindow()
 
 void EndTooltip()
 {
-	CloseTooltip(); // всегда убирать, если был
+	CloseTooltipNew(); // всегда убирать, если был
     GameInterface.qty_edit.str = 0;
 	SetShipWeight();
 	SetVariable();
@@ -481,7 +481,7 @@ void SetVariable()
 	int nShipType = sti(refCharacter.ship.type);
 	ref refBaseShip = GetRealShip(nShipType);
 
-	iShipCapacity = sti(refBaseShip.Capacity);
+	iShipCapacity = GetCargoMaxSpace(refCharacter);
 	sText  = iShipCapacity;
 
 	sText  = makeint(fShipWeight) + " / " + sText;
@@ -492,7 +492,7 @@ void SetVariable()
 	string sStoreName, sMaxGoodsStore;
 	if(refStore.Colony == "none")
 	{
-		iTotalSpace = sti(RealShips[sti(refShipChar.ship.type)].capacity);
+		iTotalSpace = GetCargoMaxSpace(refShipChar);
 		sStoreName = GetFullName(refShipChar);
 		sMaxGoodsStore = makeint(fStoreWeight) + " / " + iTotalSpace;
 	}
@@ -589,7 +589,6 @@ void ShowGoodsInfo(int iGoodIndex)
 {
 	string GoodName = goods[iGoodIndex].name;
 
-	int lngFileID = LanguageOpenFile("GoodsDescribe.txt");
 	string sHeader = XI_ConvertString(GoodName);
 
     iCurGoodsIdx = iGoodIndex;
@@ -602,7 +601,7 @@ void ShowGoodsInfo(int iGoodIndex)
 								 FloatToString(stf(stf(refStore.Goods.(GoodName).Quantity) / stf(refStore.Goods.(GoodName).Norm)), 3);
 		goodsDescr += NewStr();
 	}
-	goodsDescr += GetAssembledString( LanguageConvertString(lngFileID,goodName+"_descr"), &Goods[iGoodIndex]);
+	goodsDescr += GetAssembledString( GetGoodDescr(&Goods[iGoodIndex]), &Goods[iGoodIndex]);
     goodsDescr += newStr() + XI_ConvertString("weight") + " " + Goods[iGoodIndex].weight + " " + XI_ConvertString("cwt") +
 	              ", " + XI_ConvertString("PackHold") + " "  + Goods[iGoodIndex].Units + " " + XI_ConvertString("units");
 
@@ -625,7 +624,6 @@ void ShowGoodsInfo(int iGoodIndex)
 	SetNewGroupPicture("QTY_GOODS_PICTURE", "GOODS", GoodName);	
 	SetFormatedText("QTY_CAPTION", sHeader);
     SetFormatedText("QTY_GOODS_INFO", goodsDescr);
-	LanguageCloseFile(lngFileID);
 
 	iShipQty = GetCargoGoods(refCharacter, iGoodIndex);
 
@@ -983,7 +981,7 @@ void SellAll()
 // Продать всё в магазине
 void BulkSale(bool isSellAll)
 {
-  if (!GetRemovable(&refCharacter)) return; // не можем продавать с корабля
+  if (!GetRemovable(refCharacter)) return; // не можем продавать с корабля
 
 	int i, tradeType;
 	int resultSumm = 0;
@@ -1011,7 +1009,7 @@ void BulkSale(bool isSellAll)
 			if (i == GOOD_PLANKS) continue;
 		}
 
-		shipCargoQty = GetCargoGoods(&refCharacter, i);
+		shipCargoQty = GetCargoGoods(refCharacter, i);
 		if (shipCargoQty <= 0) continue;                                          // нет товара на корабле
 
 		goodPrice = GetStoreGoodsPrice(refStore, i, PRICE_TYPE_SELL, pchar, 1);
@@ -1029,6 +1027,12 @@ void BulkSale(bool isSellAll)
 	Achievment_SetStat(39, resultSumm);
 	AddCharacterExpToSkill(pchar, "Commerce", resultSumm / 1600.0);
 	WaitDate("",0,0,0,0,15);
+
+	if (HasShipTrait(pchar, "trait03") && resultSumm >= 50000)
+	{
+		ref rColony = GetColonyRefByID(refStore.Colony);
+		ChangeCharacterNationReputation(pchar, sti(rColony.nation), resultSumm/50000);
+	}
 
 	AddToTable();
 	EndTooltip();

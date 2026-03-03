@@ -1665,6 +1665,34 @@ void LongHappy_GiveBaronPart()
 	pchar.questTemp.LongHappy.BaronMoney = sti(pchar.questTemp.LongHappy.BaronMoney)+iMoney;
 }
 
+void LongHappy_ReturnOfficersToNormal()
+{
+	// Джино
+	sld = characterFromId("Jino");
+	sld.Dialog.Filename = "Quest\HollandGambit\Jino.c";
+	sld.dialog.currentnode = "First time";
+	ChangeCharacterAddressGroup(sld, "SentJons_HouseF3_Room", "goto", "goto1");
+	LAi_SetCitizenType(sld);
+	LAi_group_MoveCharacter(sld, "ENGLAND_CITIZENS");
+	// Бейкер
+	if (GetCharacterIndex("Baker") != -1)
+	{
+		ReturnOfficer_Baker();
+	}
+	// офицер Гамбита
+	if (CheckAttribute(pchar, "questTemp.LongHappy.HambitOfficer"))
+	{
+		if (pchar.questTemp.LongHappy.HambitOfficer == "Longway") ReturnOfficer_Longway();
+		if (pchar.questTemp.LongHappy.HambitOfficer == "Knippel") ReturnOfficer_Knippel();
+		if (pchar.questTemp.LongHappy.HambitOfficer == "Tonzag") ReturnOfficer_Tonzag();
+	}
+	// Тичингиту
+	if (GetCharacterIndex("Tichingitu") != -1)
+	{
+		ReturnOfficer_Tichingitu();
+	}
+}
+
 //=================================================================
 //======================кейсы из quests_reaction===================
 //=================================================================
@@ -1989,42 +2017,9 @@ bool LongHappy_QuestComplete(string sQuestName, string qname)
 		sld = characterFromId("FortFrance_tavernkeeper");
 		sld.Dialog.Filename = "Common_Tavern.c";
 		sld.dialog.currentnode = "First time";
-		// Джино
-		sld = characterFromId("Jino");
-		sld.Dialog.Filename = "Quest\HollandGambit\Jino.c";
-		sld.dialog.currentnode = "First time";
-		ChangeCharacterAddressGroup(sld, "SentJons_HouseF3_Room", "goto", "goto1");
-		LAi_SetCitizenType(sld);
-		LAi_group_MoveCharacter(sld, "ENGLAND_CITIZENS");
-		// Бейкер
-		if (GetCharacterIndex("Baker") != -1)
-		{
-			sld = characterFromId("Baker");
-			ChangeCharacterAddressGroup(sld, "none", "", "");
-			LAi_SetOfficerType(sld);
-			sld.Dialog.Filename = "Quest\Saga\Baker.c";
-			sld.dialog.currentnode = "Baker_officer";
-		}
-		// офицер Гамбита
-		if (CheckAttribute(pchar, "questTemp.LongHappy.HambitOfficer"))
-		{
-			sld = characterFromId(pchar.questTemp.LongHappy.HambitOfficer);
-			ChangeCharacterAddressGroup(sld, "none", "", "");
-			LAi_SetOfficerType(sld);
-			if (pchar.questTemp.LongHappy.HambitOfficer == "Longway") sld.Dialog.Filename = "Quest\HollandGambit\Longway.c";
-			if (pchar.questTemp.LongHappy.HambitOfficer == "Knippel") sld.Dialog.Filename = "Quest\HollandGambit\Knippel.c";
-			if (pchar.questTemp.LongHappy.HambitOfficer == "Tonzag") sld.Dialog.Filename = "Quest\HollandGambit\Tonzag.c";
-			sld.dialog.currentnode = sld.id+"_officer";
-		}
-		// Тичингиту
-		if (GetCharacterIndex("Tichingitu") != -1)
-		{
-			sld = characterFromId("Tichingitu");
-			sld.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
-			sld.dialog.currentnode = "Tichingitu_officer";
-			ChangeCharacterAddressGroup(sld, "none", "", "");
-			LAi_SetOfficerType(sld);
-		}
+		
+		LongHappy_ReturnOfficersToNormal();
+		
 		sld = characterFromId("Mary");
 		sld.dialog.currentnode = "LongHappy_59";
 		ChangeCharacterAddressGroup(sld, "My_Cabin", "rld", "aloc1");
@@ -2045,6 +2040,10 @@ bool LongHappy_QuestComplete(string sQuestName, string qname)
 		RefreshLandTime();
 		CloseQuestHeader("LongHappy");
 		pchar.questTemp.LongHappy = "end";
+		LongHappy_ReturnOfficersToNormal();
+		// Таймер на Эпилог
+		SetFunctionTimerCondition("SharlieEpilog_Start", 0, 0, 7, false);
+		pchar.questTemp.SharlieEpilog_Start = true;
 	}
 	//<-- блок празднования в таверне Сен-Пьер
 	else if (sQuestName == "LongHappy_IslaTesoroTavern") //
@@ -2365,6 +2364,7 @@ bool LongHappy_QuestComplete(string sQuestName, string qname)
 		if (CheckAttribute(pchar, "questTemp.LongHappy.Tichingitu_Victim"))
 		{
 			sld = characterFromId("Nathaniel");
+			ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 			ChangeCharacterAddressGroup(sld, "Pirates_town", "reload", "reload3"); 
 			sld.dialog.currentnode = "Nathaniel_20";
 			LAi_SetOfficerType(sld);
@@ -2383,6 +2383,7 @@ bool LongHappy_QuestComplete(string sQuestName, string qname)
 		else
 		{
 			sld = characterFromId("Nathaniel");
+			ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 			LAi_SetLayType(sld);
 			ChangeCharacterAddressGroup(sld, "Location_reserve_04", "goto", "goto1"); 
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer")) sld = characterFromId("Helena");
@@ -2550,6 +2551,10 @@ bool LongHappy_QuestComplete(string sQuestName, string qname)
 		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer")) sld.CompanionDisable = true; // fix 25-03-20 блок компаньона у Мэри
 		CloseQuestHeader("LongHappy");
 		pchar.questTemp.LongHappy = "end";
+		LongHappy_ReturnOfficersToNormal();
+		// Таймер на Эпилог
+		SetFunctionTimerCondition("SharlieEpilog_Start_2", 0, 0, 7, false);
+		pchar.questTemp.SharlieEpilog_Start = true;
 	}
 	else
 	{

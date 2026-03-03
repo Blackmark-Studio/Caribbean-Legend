@@ -1,0 +1,21 @@
+NoLootCorpse0 {이 녀석 주머니엔 바람만 분다.}
+NoLootCorpse1 {아무 값진 것도 없었던 것 같다.}
+NoLootCorpse2 {이 자의 주머니는 비어 있다.}
+NoLootCorpse3 {내가 뭘 놓쳤나? 아니, 정말 비었어.}
+NoLootCorpse4 {또 한 명의 빈털터리 시체.}
+NoLootCorpse5 {아마 빚으로 연명했던 것 같군.}
+NoLootCorpse6 {이 시체는 뱃삯조차 낼 수 없다.}
+NoLootCorpse7 {예비 탄환도, 화약도 없군. 헛수고였어.}
+NoLootCorpse8 {주머니에도, 셔츠 속에도 동전 한 닢 없다.}
+NoLootCorpse9 {그는 완전히 빈털터리였다. 동전 한 닢도 없었다.}
+NoLootCorpse10 {대체 왜 신경 썼지? 이건 비어 있잖아.}
+NoLootCorpse11 {주머니가 텅 비어 있다.}
+NoLootCorpse12 {아무것도 없습니다. 혹시 숨겨진 주머니가 있을까요?}
+NoLootCorpse13 {돈도, 열쇠도, 유언장도 없다.}
+NoLootCorpse14 {귀중한 것 하나 없이 저세상으로 떠났다.}
+NoLootCorpse15 {분명 부자가 아니었다 - 주머니가 비어 있다.}
+NoLootCorpse16 {가엾은 자, 분명 가볍게 싸우러 나섰군.}
+NoLootCorpse17 {그는 마지막 동전으로 무장을 갖췄다.}
+NoLootCorpse18 {시체는 시체일 뿐. 아무것도 없다.}
+NoLootCorpse19 {그는 모든 보물을 상자에 두고 떠난 게 틀림없어.}
+NoLootCorpse20 {싸움 중에 모든 귀중품을 잃어버린 것 같군.}

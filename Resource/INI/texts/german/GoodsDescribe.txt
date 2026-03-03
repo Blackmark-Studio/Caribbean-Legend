@@ -232,6 +232,11 @@ Cannon_42_descr
 {
 Furchterregende Geschütze, der Höhepunkt der Schiffsfeuerkraft. Sie werden ausschließlich auf Linienschiffen, in Festungen und bei großen europäischen Schlachten eingesetzt. Erfordern eine große und gut ausgebildete Besatzung.Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
+Cannon_48 {48-Pfund-Bombarden}
+Cannon_48_descr
+{
+Furchterregende Geschütze, der Höhepunkt der Schiffsfeuerkraft. Sie werden ausschließlich auf Linienschiffen, in Festungen und bei großen europäischen Schlachten eingesetzt. Erfordern eine große und gut ausgebildete Besatzung.Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+}
 Culverine_8 {Halbkartaunen}
 Culverine_8_descr
 {

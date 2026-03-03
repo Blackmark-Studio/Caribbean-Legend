@@ -42,7 +42,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "我有一艘" + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name")) + ", 她的名字是" + pchar.ship.name + "。 ";
+				link.l1 = "我有一艘" + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name"))) + ", 她的名字是" + pchar.ship.name + "。 ";
 				if (6-sti(RealShips[sti(pchar.ship.type)].Class) < 0) link.l1.go = "lecrua_badship";
 				else link.l1.go = "lecrua_2";
 			}
@@ -264,10 +264,6 @@ void ProcessDialogEvent()
 			//Log_Info("你获得了护身符'吉普赛人的扇子'");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "obereg_4");
-			pchar.quest.NewGameTip5.win_condition.l1 = "location";
-			pchar.quest.NewGameTip5.win_condition.l1.location = "PortoBello_town";
-			pchar.quest.NewGameTip5.function = "ShowNewGameTip";
-			pchar.quest.NewGameTip5.text = "当您慢走时, 守卫的疑心较小! ";
 			
 			pchar.quest.Trial_CreatHabitue.win_condition.l1 = "location";
 			pchar.quest.Trial_CreatHabitue.win_condition.l1.location = "PortoBello_tavern";

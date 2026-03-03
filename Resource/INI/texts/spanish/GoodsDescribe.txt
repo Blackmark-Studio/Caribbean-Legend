@@ -5,245 +5,313 @@ newline
 Balls {Balas de cañón}
 Balls_descr
 {
-Munición común, sencilla, barata y fiable. Sirve para disparar a cualquier objetivo, tanto en ataque como defensa. Es el proyectil de mayor alcance. No es muy efectiva contra la tripulación del enemigo.Daño: casco: #f.2DamageHull#, velas: #f.2DamageRig#, tripulación: #f.2DamageCrew#
+Munición común, sencilla, barata y fiable. Sirve para disparar a cualquier objetivo, tanto en ataque como defensa. Es el proyectil de mayor alcance. No es muy efectiva contra la tripulación del enemigo.
+Daño: casco: #f.2DamageHull#, velas: #f.2DamageRig#, tripulación: #f.2DamageCrew#
 }
 Grapes {Metralla}
 Grapes_descr
 {
-Son unas pequeñas bolas de metal que se insertan en el cañón y buscan causar el mayor número de bajas en la tripulación enemiga. Como la metralla no tiene un gran alcance, se recomienda usarla de cerca antes del abordaje. Daño: casco: #f.2DamageHull#, velas: #f.2DamageRig#, tripulación: #f.2DamageCrew#
+Son unas pequeñas bolas de metal que se insertan en el cañón y buscan causar el mayor número de bajas en la tripulación enemiga. 
+Como la metralla no tiene un gran alcance, se recomienda usarla de cerca antes del abordaje. 
+Daño: casco: #f.2DamageHull#, velas: #f.2DamageRig#, tripulación: #f.2DamageCrew#
 }
 Knippels {Balas encadenadas}
 Knippels_descr
 {
-Están compuestas de dos bolas de metal unidas por una cadena o cable. Se crearon para romper las velas y los aparejos del enemigo. Giran por el aire y se envuelven alrededor de lo que alcancen, destruyendo los mástiles del enemigo. Tienen una trayectoria de vuelo impredecible y casi no causa daño al casco y la tripulación del enemigo.Daño: casco: #f.2DamageHull#, velas: #f.2DamageRig#, tripulación: #f.2DamageCrew#
+Están compuestas de dos bolas de metal unidas por una cadena o cable. Se crearon para romper las velas y los aparejos del enemigo. 
+Giran por el aire y se envuelven alrededor de lo que alcancen, destruyendo los mástiles del enemigo. Tienen una trayectoria de vuelo impredecible y casi no causa daño al casco y la tripulación del enemigo.
+Daño: casco: #f.2DamageHull#, velas: #f.2DamageRig#, tripulación: #f.2DamageCrew#
 }
 Bombs {Bombas}
 Bombs_descr
 {
-Es la munición más cara y destructiva que existe: Son recipientes de metal llenos de pólvora con una mecha. Al encenderla, la bomba explota en el aire, cubriendo de metralla a la tripulación, prendiendo fuego a los aparejos y destrozando el casco con su onda explosiva. Daño: casco: #f.2DamageHull#, velas: #f.2DamageRig#, tripulación: #f.2DamageCrew#
+Es la munición más cara y destructiva que existe: Son recipientes de metal llenos de pólvora con una mecha. Al encenderla, la bomba explota en el aire, cubriendo de metralla a la tripulación, prendiendo fuego a los aparejos y destrozando el casco con su onda explosiva. 
+Daño: casco: #f.2DamageHull#, velas: #f.2DamageRig#, tripulación: #f.2DamageCrew#
 }
 Sailcloth {Lona}
 Sailcloth_descr
 {
-Es un tejido grueso y denso que se utiliza en la fabricación de las velas.Sus fibras transversales están hechas de algodón y las fibras longitudinales son de cáñamo. Es más ligero y se seca más rápido en comparación con la tela tradicional fabricada con lino sin blanquear.
+Es un tejido grueso y denso que se utiliza en la fabricación de las velas.
+Sus fibras transversales están hechas de algodón y las fibras longitudinales son de cáñamo. Es más ligero y se seca más rápido en comparación con la tela tradicional fabricada con lino sin blanquear.
 }
 Planks {Tablones}
 Planks_descr
 {
-Tablas secas de madera de calidad obtenidas partiendo troncos con cuñas. Son más resistentes que las tablas aserradas y menos propensas a secarse, encorvarse y agrietarse.El mejor material para reparar elementos de madera en el mar.
+Tablas secas de madera de calidad obtenidas partiendo troncos con cuñas. Son más resistentes que las tablas aserradas y menos propensas a secarse, encorvarse y agrietarse.
+El mejor material para reparar elementos de madera en el mar.
 }
 Wheat {Trigo}
 Wheat_descr
 {
-La harina de las variedades locales de trigo es muy apreciada por su capacidad para producir pan de gran volumen con una miga esponjosa y bien aireada al hornearlo.Dada su alta productividad y maduración en enero, se puede ganar bastante dinero con los envíos de trigo para importar a Europa.
+La harina de las variedades locales de trigo es muy apreciada por su capacidad para producir pan de gran volumen con una miga esponjosa y bien aireada al hornearlo.
+Dada su alta productividad y maduración en enero, se puede ganar bastante dinero con los envíos de trigo para importar a Europa.
 }
 Ebony {Ébano}
 Ebony_descr
 {
-La madera de ébano se caracteriza por su sorprendente dureza: su madera es dos veces más dura que la del roble. Esto impresiona mucho a los europeos, especialmente cuando se combina con el sorprendente color de la madera.Cada variedad tiene un tono especial, que va desde verdoso y marrón hasta un negro aterciopelado. Además, la madera se oscurece con el tiempo, y el precio de los productos hechos con ébano también aumenta constantemente.
+La madera de ébano se caracteriza por su sorprendente dureza: su madera es dos veces más dura que la del roble. Esto impresiona mucho a los europeos, especialmente cuando se combina con el sorprendente color de la madera.
+Cada variedad tiene un tono especial, que va desde verdoso y marrón hasta un negro aterciopelado. Además, la madera se oscurece con el tiempo, y el precio de los productos hechos con ébano también aumenta constantemente.
 }
 Chocolate {Cacao}
 Chocolate_descr
 {
-Los frutos maduros del cacao se recolectan y se parten para extraer los granos durante todo el año, y las semillas secas pueden almacenarse increíblemente bien durante mucho tiempo.La alta demanda de cacao entre los nativos y los colonos adinerados ya dicta un alto precio para este producto, pero la disposición de los italianos a pagar por él con oro lo convierte en algo prohibitivo.
+Los frutos maduros del cacao se recolectan y se parten para extraer los granos durante todo el año, y las semillas secas pueden almacenarse increíblemente bien durante mucho tiempo.
+La alta demanda de cacao entre los nativos y los colonos adinerados ya dicta un alto precio para este producto, pero la disposición de los italianos a pagar por él con oro lo convierte en algo prohibitivo.
 }
 Sugar {Azúcar}
 Sugar_descr
 {
-Almíbar espeso, secado para su transporte a Europa para su procesamiento.Una moda imperecedera, un símbolo aristocrático de prosperidad, servir a los invitados una taza de té o café dulce es una garantía confiable de una demanda constante de caña de azúcar.
+Almíbar espeso, secado para su transporte a Europa para su procesamiento.
+Una moda imperecedera, un símbolo aristocrático de prosperidad, servir a los invitados una taza de té o café dulce es una garantía confiable de una demanda constante de caña de azúcar.
 }
 Wine {Vino}
 Wine_descr
 {
-A pesar de los numerosos intentos de producir vinos locales cultivando variedades de uva importadas, ¡el verdadero vino francés, italiano, español o portugués es de gran valor!Se comprarán con gusto en cualquier asentamiento, y en cantidades ilimitadas.
+A pesar de los numerosos intentos de producir vinos locales cultivando variedades de uva importadas, ¡el verdadero vino francés, italiano, español o portugués es de gran valor!
+Se comprarán con gusto en cualquier asentamiento, y en cantidades ilimitadas.
 }
 ShipSilk {Seda}
 ShipSilk_descr
 {
-Una obra maestra de las fábricas textiles lionesas: la lona de seda densa.La seda es extremadamente resistente, los filamentos son fuertes, elásticos y de grosor uniforme. Este tejido es ligero y transpirable; absorbe rápidamente la humedad, pero se seca aún más rápido. Conserva la forma y es resistente al estiramiento.Con todas sus ventajas, la tela de seda sigue teniendo un inconveniente importante: la exposición a la luz solar tiende a degradar el material.
+Una obra maestra de las fábricas textiles lionesas: la lona de seda densa.
+La seda es extremadamente resistente, los filamentos son fuertes, elásticos y de grosor uniforme. Este tejido es ligero y transpirable; absorbe rápidamente la humedad, pero se seca aún más rápido. Conserva la forma y es resistente al estiramiento.
+Con todas sus ventajas, la tela de seda sigue teniendo un inconveniente importante: la exposición a la luz solar tiende a degradar el material.
 }
 Rum {Ron}
 Rum_descr
 {
-Una bebida alcohólica fuerte con un sabor y aroma originales que siempre se puede vender con éxito.Además, el ron se agrega a las reservas de agua dulce en el barco para desinfectarla, lo que prolonga significativamente su período de almacenamiento.La falta de ron a bordo puede llevar al descontento de la tripulación e incluso a un motín.
+Una bebida alcohólica fuerte con un sabor y aroma originales que siempre se puede vender con éxito.
+Además, el ron se agrega a las reservas de agua dulce en el barco para desinfectarla, lo que prolonga significativamente su período de almacenamiento.
+La falta de ron a bordo puede llevar al descontento de la tripulación e incluso a un motín.
 }
 Tobacco {Tabaco}
 Tobacco_descr
 {
-En la lejana Europa, en los asentamientos locales y en los estrechos camarotes de la tripulación bajo cubierta, el tabaco es la delicia de todo hombre. También se considera una medida profiláctica fiable contra muchas enfermedades, al menos eso es lo que la gente cree.Existen tres tipos de tabaco listos para el consumo: el tabaco para fumar, el tabaco en rapé y el tabaco de mascar. Las hojas de tabaco en sacos de lino son un tesoro para muchos comerciantes.
+En la lejana Europa, en los asentamientos locales y en los estrechos camarotes de la tripulación bajo cubierta, el tabaco es la delicia de todo hombre. También se considera una medida profiláctica fiable contra muchas enfermedades, al menos eso es lo que la gente cree.
+Existen tres tipos de tabaco listos para el consumo: el tabaco para fumar, el tabaco en rapé y el tabaco de mascar. Las hojas de tabaco en sacos de lino son un tesoro para muchos comerciantes.
 }
 Coffee {Café}
 Coffee_descr
 {
-Una bebida aromática y tonificante hecha de granos de café, miel y canela se ha convertido en una parte integral de la vida en el Nuevo Mundo debido a la falta de té.Los granos de café de color amarillento-grisáceo, que conservan sus propiedades beneficiosas y cualidades comerciales durante mucho tiempo, siempre son demandados, incluso en Europa continental, donde el café se ha establecido firmemente en las reuniones sociales y en las casas de los ricos.
+Una bebida aromática y tonificante hecha de granos de café, miel y canela se ha convertido en una parte integral de la vida en el Nuevo Mundo debido a la falta de té.
+Los granos de café de color amarillento-grisáceo, que conservan sus propiedades beneficiosas y cualidades comerciales durante mucho tiempo, siempre son demandados, incluso en Europa continental, donde el café se ha establecido firmemente en las reuniones sociales y en las casas de los ricos.
 }
 Mahogany {Caoba}
 Mahogany_descr
 {
-La madera roja tiene un patrón natural increíblemente hermoso, es muy fuerte, resistente al fuego y duradera, se puede pulir fácilmente y no se ve afectada por las plagas.Los europeos apreciaron estas cualidades y, por lo tanto, la utilizan ampliamente para la construcción de barcos, monasterios y palacios.
+La madera roja tiene un patrón natural increíblemente hermoso, es muy fuerte, resistente al fuego y duradera, se puede pulir fácilmente y no se ve afectada por las plagas.
+Los europeos apreciaron estas cualidades y, por lo tanto, la utilizan ampliamente para la construcción de barcos, monasterios y palacios.
 }
 Cinnamon {Canela}
 Cinnamon_descr
 {
-Es la madera seca del canelo, que se utiliza como especia. Han llegado a borrar del mapa naciones enteras para conseguirla.
+Es la madera seca del canelo, que se utiliza como especia. 
+Han llegado a borrar del mapa naciones enteras para conseguirla.
 }
 Copra {Copra}
 Copra_descr
 {
-Es la pulpa molida y seca del coco. Se utiliza para obtener aceite de coco y jabón. Este jabón no solo huele maravillosamente, sino que también tiñe el cabello, ocultando las canas con un noble tono amarillo.
+Es la pulpa molida y seca del coco. 
+Se utiliza para obtener aceite de coco y jabón. Este jabón no solo huele maravillosamente, sino que también tiñe el cabello, ocultando las canas con un noble tono amarillo.
 }
 Paprika {Pimentón}
 Paprika_descr
 {
-La "sal roja" india o pimiento rojo molido, es una especia de un color rojo brillante, dulce y picante.El pimentón es muy popular entre los alemanes, españoles y en la Europa mediterránea, ya que combina perfectamente con la carne, aves, pescado, marisco, verduras y la cuajada.
+La "sal roja" india o pimiento rojo molido, es una especia de un color rojo brillante, dulce y picante.
+El pimentón es muy popular entre los alemanes, españoles y en la Europa mediterránea, ya que combina perfectamente con la carne, aves, pescado, marisco, verduras y la cuajada.
 }
 Fruits {Fruta}
 Fruits_descr
 {
-Tras su llegada al Nuevo Mundo, los europeos han descubierto muchos vegetales deliciosos y nutritivos, como:Mangos, limones, aguacates, etc.
+Tras su llegada al Nuevo Mundo, los europeos han descubierto muchos vegetales deliciosos y nutritivos, como:
+Mangos, limones, aguacates, etc.
 }
 Ale {Cerveza}
 Ale_descr
 {
-Una bebida densa y viscosa, con bajo contenido de alcohol, elaborada mediante fermentación alta.La cerveza, junto con el pan, se considera un artículo de primera necesidad y forma parte de la ración diaria de las guarniciones locales. Además de no estropearse durante el almacenamiento prolongado, tiene propiedades antisépticas gracias al gruit (una mezcla de hierbas y especias que se cocían en el mosto en lugar del lúpulo).
+Una bebida densa y viscosa, con bajo contenido de alcohol, elaborada mediante fermentación alta.
+La cerveza, junto con el pan, se considera un artículo de primera necesidad y forma parte de la ración diaria de las guarniciones locales. Además de no estropearse durante el almacenamiento prolongado, tiene propiedades antisépticas gracias al gruit (una mezcla de hierbas y especias que se cocían en el mosto en lugar del lúpulo).
 }
 Ropes {Cuerdas}
 Ropes_descr
 {
-Son unas fuertes cuerdas de cáñamo. Al ser resistentes al agua salada, son las mejores para los aparejos.Las cuerdas más famosas y codiciadas por marineros de todos los perfiles se fabrican en las fábricas de hilado de fibra de cáñamo en la lejana Rusia.
+Son unas fuertes cuerdas de cáñamo. Al ser resistentes al agua salada, son las mejores para los aparejos.
+Las cuerdas más famosas y codiciadas por marineros de todos los perfiles se fabrican en las fábricas de hilado de fibra de cáñamo en la lejana Rusia.
 }
 Clothes {Ropa}
 Clothes_descr
 {
-Ropajes gruesos hechos con lona. No son bonitos, pero si resistentes, así que la usan mucho los plebeyos de las lejanas colonias.Es una mercancía muy barata que siempre tiene demanda.
+Ropajes gruesos hechos con lona. No son bonitos, pero si resistentes, así que la usan mucho los plebeyos de las lejanas colonias.
+Es una mercancía muy barata que siempre tiene demanda.
 }
 Cotton {Algodón}
 Cotton_descr
 {
-El algodón de las plantaciones del archipiélago madura tarde y tiene un rendimiento bajo, pero su fibra tiene propiedades especialmente valiosas: es larga y delgada.En Europa, se utiliza para fabricar hilos para las telas más finas y de mayor calidad.
+El algodón de las plantaciones del archipiélago madura tarde y tiene un rendimiento bajo, pero su fibra tiene propiedades especialmente valiosas: es larga y delgada.
+En Europa, se utiliza para fabricar hilos para las telas más finas y de mayor calidad.
 }
 Sandal {Sándalo}
 Sandal_descr
 {
-El sándalo también se conoce como "lignum vitae". Esta madera densa, dura y robusta es casi imposible de agrietar. Es muy pesada y se humedece fácilmente.Es una madera muy robusta, aunque difícil de trabajar. Tiene propiedades autolubricantes, especialmente en el agua.Debido a la robustez y a su lubricante natural, los elementos de los barcos hechos con sándalo no necesitan ser reemplazados a pesar de las severas condiciones del océano.
+El sándalo también se conoce como "lignum vitae". Esta madera densa, dura y robusta es casi imposible de agrietar. Es muy pesada y se humedece fácilmente.
+Es una madera muy robusta, aunque difícil de trabajar. Tiene propiedades autolubricantes, especialmente en el agua.
+Debido a la robustez y a su lubricante natural, los elementos de los barcos hechos con sándalo no necesitan ser reemplazados a pesar de las severas condiciones del océano.
 }
 Oil {Resina}
 Oil_descr
 {
-La resina es un producto natural, pegajoso y de color grisáceo o negro. Es una mezcla de betún, arcilla fina y agua salada. Es el producto más famoso de Trinidad, aunque seguramente no el más bello.La resina se utiliza para impregnar los cascos de los barcos.Se cree que este alquitrán es muy superior a los análogos producidos en los países del norte de Europa.
+La resina es un producto natural, pegajoso y de color grisáceo o negro. Es una mezcla de betún, arcilla fina y agua salada. Es el producto más famoso de Trinidad, aunque seguramente no el más bello.
+La resina se utiliza para impregnar los cascos de los barcos.
+Se cree que este alquitrán es muy superior a los análogos producidos en los países del norte de Europa.
 }
 Leather {Cuero}
 Leather_descr
 {
-Las pieles de ganado curtidas son una mercancía universal siempre demandada en Europa.Aunque no hay muchos comerciantes que carguen sus barcos sólo con cuero, es conveniente para que el espacio de la bodega se ajuste a las condiciones de navegación.
+Las pieles de ganado curtidas son una mercancía universal siempre demandada en Europa.
+Aunque no hay muchos comerciantes que carguen sus barcos sólo con cuero, es conveniente para que el espacio de la bodega se ajuste a las condiciones de navegación.
 }
 Slaves {Esclavos}
 Slaves_descr
 {
-Hombres blancos o negros que cayeron en la esclavitud tras perder una batalla, como castigo por delitos cometidos o al ser vendidos para saldar deudas.La vida de un esclavo es corta, la mayoría muere durante los tres primeros años después de su venta para trabajar en las plantaciones.
+Hombres blancos o negros que cayeron en la esclavitud tras perder una batalla, como castigo por delitos cometidos o al ser vendidos para saldar deudas.
+La vida de un esclavo es corta, la mayoría muere durante los tres primeros años después de su venta para trabajar en las plantaciones.
 }
 Powder {Pólvora}
 Powder_descr
 {
-Un producto estratégico importado, resultado de las sucias, ruidosas, malolientes y peligrosas fábricas de pólvora."Mantén la pólvora seca y serás invencible" es un sabio refrán entre los experimentados artilleros: sin pólvora, los cañones no son más que lastre para el barco.Un capitán digno siempre tiene un suministro de pólvora seca en su bodega.
+Un producto estratégico importado, resultado de las sucias, ruidosas, malolientes y peligrosas fábricas de pólvora.
+"Mantén la pólvora seca y serás invencible" es un sabio refrán entre los experimentados artilleros: sin pólvora, los cañones no son más que lastre para el barco.
+Un capitán digno siempre tiene un suministro de pólvora seca en su bodega.
 }
 Food {Comida}
 Food_descr
 {
-Un conjunto estándar de alimentos militares y provisiones de agua dulce necesarias para alimentar a la tripulación durante la navegación.La falta de provisiones a bordo provoca hambre, muerte y una fuerte caída de la moral.Cada día en el mar consume 1 unidad de comida para 10 marineros o 20 esclavos.
+Un conjunto estándar de alimentos militares y provisiones de agua dulce necesarias para alimentar a la tripulación durante la navegación.
+La falta de provisiones a bordo provoca hambre, muerte y una fuerte caída de la moral.
+Cada día en el mar consume 1 unidad de comida para 10 marineros o 20 esclavos.
 }
 Weapon {Armas}
 Weapon_descr
 {
-Se necesitan para armar a la tripulación, una para cada mano. Si no hay suficientes armas, sufrirás más bajas en los abordajes. Si mueren los marineros, disminuirá la cantidad de armas.
+Se necesitan para armar a la tripulación, una para cada mano. 
+Si no hay suficientes armas, sufrirás más bajas en los abordajes. 
+Si mueren los marineros, disminuirá la cantidad de armas.
 }
 Gold {Oro}
 Gold_descr
 {
-Barras de oro marcadas por la tesorería española.¡Capturar un barco con esta carga a bordo es el sueño de cualquier corsario!
+Barras de oro marcadas por la tesorería española.
+¡Capturar un barco con esta carga a bordo es el sueño de cualquier corsario!
 }
 Silver {Plata}
 Silver_descr
 {
-Barras de plata marcadas por la tesorería española.Un codiciado premio, tesoros ajenos que no se han hundido en las profundidades olvidados en las bodegas de los barcos destrozados durante los abordajes y las crueles tormentas...
+Barras de plata marcadas por la tesorería española.
+Un codiciado premio, tesoros ajenos que no se han hundido en las profundidades olvidados en las bodegas de los barcos destrozados durante los abordajes y las crueles tormentas...
 }
 Brick {Ladrillos}
 Brick_descr
 {
-Son bloques grandes de arcilla y piedra que se utilizan para construir edificios y las fortificaciones de la ciudad.Debido a los frecuentes incendios, las autoridades estimulan el uso de ladrillos en la construcción, por eso siempre hay demanda de esta mercancía.
+Son bloques grandes de arcilla y piedra que se utilizan para construir edificios y las fortificaciones de la ciudad.
+Debido a los frecuentes incendios, las autoridades estimulan el uso de ladrillos en la construcción, por eso siempre hay demanda de esta mercancía.
 }
 Medicament {Medicina}
 Medicament_descr
 {
-Un conjunto típico de medicamentos, productos farmacéuticos e instrumentos destinados a tratar las enfermedades más comunes y brindar primeros auxilios en caso de lesiones y heridas.Tener un suministro de medicamentos a bordo del barco puede ayudar a salvar a los heridos (reduce las pérdidas en los abordajes) y a los enfermos durante la navegación.
+Un conjunto típico de medicamentos, productos farmacéuticos e instrumentos destinados a tratar las enfermedades más comunes y brindar primeros auxilios en caso de lesiones y heridas.
+Tener un suministro de medicamentos a bordo del barco puede ayudar a salvar a los heridos (reduce las pérdidas en los abordajes) y a los enfermos durante la navegación.
 }
 Cannon_3 {Falconetes}
 Cannon_3_descr
 {
-Cañones de cubierta equipados con torreta. Tienen la mayor movilidad y, debido a su pequeño tamaño, la menor potencia y alcance.A menudo están equipados con una recámara intercambiable, lo que permite una recarga rápida.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+Cañones de cubierta equipados con torreta. Tienen la mayor movilidad y, debido a su pequeño tamaño, la menor potencia y alcance.
+A menudo están equipados con una recámara intercambiable, lo que permite una recarga rápida.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 Cannon_6 {Cañones de 6 libras}
 Cannon_6_descr
 {
-Cañones pequeños, muy populares en barcos de mensajería y mercantes por su bajo peso, bajo costo y durabilidad. Son fáciles de mantener y no requieren una tripulación experimentada.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+Cañones pequeños, muy populares en barcos de mensajería y mercantes por su bajo peso, bajo costo y durabilidad. Son fáciles de mantener y no requieren una tripulación experimentada.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 Cannon_8 {Cañones de 8 libras}
 Cannon_8_descr
 {
-Uno de los calibres más populares en barcos pequeños, que se encuentra tanto en mercantes como en patrulleros. Son valorados por su excelente combinación de tamaño, peso y potencia de fuego.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+Uno de los calibres más populares en barcos pequeños, que se encuentra tanto en mercantes como en patrulleros. Son valorados por su excelente combinación de tamaño, peso y potencia de fuego.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 Cannon_12 {Cañones de 12 libras}
 Cannon_12_descr
 {
-Un calibre común entre los buques de guerra pequeños. Para su tamaño y peso, tienen una potencia de fuego impresionante, pero requieren dotaciones completas, lo que aumenta el número de tripulantes en el barco.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+Un calibre común entre los buques de guerra pequeños. Para su tamaño y peso, tienen una potencia de fuego impresionante, pero requieren dotaciones completas, lo que aumenta el número de tripulantes en el barco.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 Cannon_16 {Cañones de 16 libras}
 Cannon_16_descr
 {
-Cañones modernos de tipo francés. Gracias a su diseño avanzado, tienen excelente alcance, fiabilidad y potencia de fuego. Un calibre muy común entre barcos de patrulla y reconocimiento.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+Cañones modernos de tipo francés. Gracias a su diseño avanzado, tienen excelente alcance, fiabilidad y potencia de fuego. Un calibre muy común entre barcos de patrulla y reconocimiento.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 Cannon_18 {Cañones de 18 libras}
 Cannon_18_descr
 {
-Cañones universales potentes que antes se instalaban a menudo en buques de guerra. Bastante comunes en el archipiélago y valorados por su simplicidad y fiabilidad, aunque su diseño anticuado limita un poco su alcance.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+Cañones universales potentes que antes se instalaban a menudo en buques de guerra. Bastante comunes en el archipiélago y valorados por su simplicidad y fiabilidad, aunque su diseño anticuado limita un poco su alcance.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 Cannon_20 {Cañones de 20 libras}
 Cannon_20_descr
 {
-Cañones de artillería de cañón largo utilizados en cruceros y barcos auxiliares de convoyes militares. Requieren un trabajo coordinado de la dotación para un fuego efectivo.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+Cañones de artillería de cañón largo utilizados en cruceros y barcos auxiliares de convoyes militares. Requieren un trabajo coordinado de la dotación para un fuego efectivo.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 Cannon_24 {Cañones de 24 libras}
 Cannon_24_descr
 {
-El calibre principal en buques de guerra, la cima de la evolución de la artillería naval. Tienen un equilibrio perfecto entre alcance y potencia de fuego, y su exitoso diseño les permite soportar largas batallas navales sin daños críticos.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+El calibre principal en buques de guerra, la cima de la evolución de la artillería naval. Tienen un equilibrio perfecto entre alcance y potencia de fuego, y su exitoso diseño les permite soportar largas batallas navales sin daños críticos.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 Cannon_32 {Cañones de 32 libras}
 Cannon_32_descr
 {
-Cañones pesados de gran calibre que infligen un gran daño y son adecuados para bombardear fuertes. Debido a los límites de resistencia de los materiales, se utiliza una carga de pólvora reducida, lo que limita el alcance.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+Cañones pesados de gran calibre que infligen un gran daño y son adecuados para bombardear fuertes. Debido a los límites de resistencia de los materiales, se utiliza una carga de pólvora reducida, lo que limita el alcance.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 Cannon_36 {Cañones de 36 libras}
 Cannon_36_descr
 {
-Cañones de cañón largo, raros en la cubierta de artillería. Su recarga lenta y alcance limitado se compensan con el daño devastador que infligen sus pesadas balas. Requieren grandes dotaciones.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+Cañones de cañón largo, raros en la cubierta de artillería. Su recarga lenta y alcance limitado se compensan con el daño devastador que infligen sus pesadas balas. Requieren grandes dotaciones.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 Cannon_42 {Bombardas de 42 libras}
 Cannon_42_descr
 {
-Cañones formidables, el pináculo de la potencia de fuego naval. Se utilizan exclusivamente en navíos de línea, fuertes y grandes batallas europeas. Requieren una dotación grande y bien entrenada.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+Cañones formidables, el pináculo de la potencia de fuego naval. Se utilizan exclusivamente en navíos de línea, fuertes y grandes batallas europeas. Requieren una dotación grande y bien entrenada.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+}
+Cannon_48 {Bombardas de 48 libras}
+Cannon_48_descr
+{
+Cañones formidables, el pináculo de la potencia de fuego naval. Se utilizan exclusivamente en navíos de línea, fuertes y grandes batallas europeas. Requieren una dotación grande y bien entrenada.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 Culverine_8 {Media culebrina}
 Culverine_8_descr
 {
-Cañones de 8 libras de cañón largo en un soporte especial con base robusta y ruedas de madera maciza.Tienen mayor alcance de disparo. Comúnmente usados para fuego de barrera.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+Cañones de 8 libras de cañón largo en un soporte especial con base robusta y ruedas de madera maciza.
+Tienen mayor alcance de disparo. Comúnmente usados para fuego de barrera.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 Culverine_18 {Culebrinas}
 Culverine_18_descr
 {
-Cañones medianos de 18 libras con mayor alcance, adecuados para su uso en barcos relativamente pequeños.A pesar de su impresionante distancia de disparo, son extremadamente pesados y tardan mucho en recargarse.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+Cañones medianos de 18 libras con mayor alcance, adecuados para su uso en barcos relativamente pequeños.
+A pesar de su impresionante distancia de disparo, son extremadamente pesados y tardan mucho en recargarse.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 Culverine_36 {Culebrinas completas}
 Culverine_36_descr
 {
-Cañones de fortaleza de 36 libras diseñados para fuego de brecha: ¡gana el que dispara primero!Debido a su gran longitud, solo pueden instalarse en puertos diseñados para cañones de 42 libras.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+Cañones de fortaleza de 36 libras diseñados para fuego de brecha: ¡gana el que dispara primero!
+Debido a su gran longitud, solo pueden instalarse en puertos diseñados para cañones de 42 libras.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }

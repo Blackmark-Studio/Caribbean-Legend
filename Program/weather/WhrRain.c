@@ -18,10 +18,10 @@ void WhrCreateRainEnvironment()
 		CreateEntity(&Rain,"rain");
 	}
 
-	FillRainData(iCurWeatherNum,iBlendWeatherNum);
+	FillRainData(iCurWeatherNum, iBlendWeatherNum);
 	Rain.isDone = "";
 
-	if( sti(Rain.NumDrops) > 0 ) 
+	if (sti(Rain.NumDrops) > 0)
 	{
 		bWeatherIsRain = true;
 	}
@@ -34,7 +34,7 @@ void ClearRainEnvironment()
 		CreateEntity(&Rain,"rain");
 	}
 
-	FillRainData(iCurWeatherNum,iBlendWeatherNum);
+	FillRainData(iCurWeatherNum, iBlendWeatherNum);
 	Rain.NumDrops = 0.0;
 	Rain.DropLength = 0.1;
 	Rain.isDone = "";
@@ -44,7 +44,7 @@ void ClearRainEnvironment()
 
 void FillRainData(int nw1, int nw2)
 {
-	if( nw1 < 0 || nw1 >= MAX_WEATHERS ) {return;}
+	if (nw1 < 0 || nw1 >= MAX_WEATHERS) return;
 
 	aref aRain1; makearef(aRain1, Weathers[nw1].Rain);
 	aref aRainbow1; makearef(aRainbow1, Weathers[nw1].Rainbow);
@@ -52,7 +52,7 @@ void FillRainData(int nw1, int nw2)
 	Rain.Clear = "";
 	DeleteAttribute(&Rain,"");
 
-	if( nw2 < 0 )
+	if (nw2 < 0)
 	{
 		Rain.NumDrops = Whr_GetLong(aRain1,"NumDrops");
 		Rain.Color = Whr_GetColor(aRain1,"Color");
@@ -136,80 +136,74 @@ string Whr_SetStormSkyData(float curTime, ref _fog, ref _sAmbient)
 	iEvening 	= hrand(2);
 	iTwilight 	= hrand(2);
 	iNight 		= 0;
-	
-	if(curTime >= 23.00 && curTime < 23.99) // night
+
+	if (curTime >= 23.00 && curTime < 23.99) // night
 	{		
 		skyDir = "weather\skies_storm\night\01\\"; 					_fog = argb(  0,  2,  2,  2 );
 	}
-	
-	if(curTime >= 0.00 && curTime < 3.00) // night
+	else if (curTime >= 0.00 && curTime < 3.00) // night
 	{
 		skyDir = "weather\skies_storm\night\01\\"; 					_fog = argb(  0,  2,  2,  2 );
 	}
-
-	if(curTime >= 3.00 && curTime < 6.00) // twilight
+	else if (curTime >= 3.00 && curTime < 6.00) // twilight
 	{
-		switch(iTwilight)
+		switch (iTwilight)
 		{
 			case 0: skyDir = "weather\skies_storm\twilight\01\\"; 	_fog = argb(  0,  4,  5,  8 );	break;
 			case 1: skyDir = "weather\skies_storm\twilight\02\\"; 	_fog = argb(  0,  0,  0,  0 );	break;
 			case 2: skyDir = "weather\skies_storm\twilight\03\\"; 	_fog = argb(  0,  7,  7,  7 );	break;
 		}
 	}
-	
-	if(curTime >= 6.00 && curTime < 11.00) // morning
+	else if (curTime >= 6.00 && curTime < 11.00) // morning
 	{
-		switch(iMorning)
+		switch (iMorning)
 		{
 			case 0: skyDir = "weather\skies_storm\morning\01\\"; 	_fog = argb(  0, 12, 14, 16 );	break;
 			case 1: skyDir = "weather\skies_storm\morning\02\\"; 	_fog = argb(  0, 12, 14, 16 );	break;
 			case 2: skyDir = "weather\skies_storm\morning\03\\"; 	_fog = argb(  0, 19, 19, 20 );	break;
 		}		
 	}
-	
-	if(curTime >= 11.00 && curTime < 19.00) // day
+	else if (curTime >= 11.00 && curTime < 19.00) // day
 	{
-		switch(iDay)
+		switch (iDay)
 		{
 			case 0: skyDir = "weather\skies_storm\day\01\\"; 		_fog = argb(  0, 33, 34, 34 );	break;
 			case 1: skyDir = "weather\skies_storm\day\02\\"; 		_fog = argb(  0, 30, 30, 31 );	break;
 			case 2: skyDir = "weather\skies_storm\day\03\\";		_fog = argb(  0, 15, 20, 23 );	break;
 		}		
 	}
-
-	if(curTime >= 19.00 && curTime < 21.00) // evening
+	else if (curTime >= 19.00 && curTime < 21.00) // evening
 	{
-		switch(iEvening)
+		switch (iEvening)
 		{
 			case 0: skyDir = "weather\skies_storm\evening\01\\"; 	_fog = argb(  0,  8, 10, 14 );	break;
 			case 1: skyDir = "weather\skies_storm\evening\02\\"; 	_fog = argb(  0, 12, 13, 14 );	break;
 			case 2: skyDir = "weather\skies_storm\evening\03\\"; 	_fog = argb(  0,  8,  9,  9 );	break;
 		}			
 	}
-	
-	if(curTime >= 21.00 && curTime < 23.00) // twilight
+	else if (curTime >= 21.00 && curTime < 23.00) // twilight
 	{
-		switch(iTwilight)
+		switch (iTwilight)
 		{
 			case 0: skyDir = "weather\skies_storm\twilight\01\\"; 	_fog = argb(  0,  4,  5,  8 );	break;
 			case 1: skyDir = "weather\skies_storm\twilight\02\\"; 	_fog = argb(  0,  0,  0,  0 );	break;
 			case 2: skyDir = "weather\skies_storm\twilight\03\\"; 	_fog = argb(  0,  7,  7,  7 );	break;
 		}		
 	}
-	
-	if(curTime >=  0.00 && curTime <  4.00)		_sAmbient = argb(  0, 28, 28, 28 );
-	if(curTime >=  4.00 && curTime <  5.00)		_sAmbient = argb(  0, 45, 45, 45 );
-	if(curTime >=  5.00 && curTime <  6.00)		_sAmbient = argb(  0, 55, 55, 55 );
-	if(curTime >=  6.00 && curTime <  7.00)		_sAmbient = argb(  0,105,105,105 );
-	if(curTime >=  7.00 && curTime < 19.00)		_sAmbient = argb(  0,128,128,128 );
-	if(curTime >= 19.00 && curTime < 20.00)		_sAmbient = argb(  0,105,105,105 );
-	if(curTime >= 20.00 && curTime < 21.00)		_sAmbient = argb(  0, 45, 45, 45 );
-	if(curTime >= 21.00 && curTime < 23.99)		_sAmbient = argb(  0, 28, 28, 28 );
 
-	return skyDir;	
+	if (curTime >=  0.00 && curTime <  4.00)      _sAmbient = argb(0, 28, 28, 28);
+	else if (curTime >=  4.00 && curTime <  5.00) _sAmbient = argb(0, 45, 45, 45);
+	else if (curTime >=  5.00 && curTime <  6.00) _sAmbient = argb(0, 55, 55, 55);
+	else if (curTime >=  6.00 && curTime <  7.00) _sAmbient = argb(0,105,105,105);
+	else if (curTime >=  7.00 && curTime < 19.00) _sAmbient = argb(0,128,128,128);
+	else if (curTime >= 19.00 && curTime < 20.00) _sAmbient = argb(0,105,105,105);
+	else if (curTime >= 20.00 && curTime < 21.00) _sAmbient = argb(0, 45, 45, 45);
+	else if (curTime >= 21.00 && curTime < 23.99) _sAmbient = argb(0, 28, 28, 28);
+
+	return skyDir;
 }
 
-string Whr_SetRainSkyData( float curTime, ref _fog, ref _sAmbient )
+string Whr_SetRainSkyData( float curTime, ref _fog, ref _sAmbient)
 {
 	string 	skyDir = "";
 	int		iDay, iMorning, iEvening, iNight, iTwilight;
@@ -230,9 +224,9 @@ string Whr_SetRainSkyData( float curTime, ref _fog, ref _sAmbient )
 	if(CheckAttribute(&WeatherParams,"Rain.sTwilight"))	iTwilight 	= sti(WeatherParams.Rain.sTwilight);
 	else												iTwilight 	= 0;
 
-	if(curTime >= 23.00 && curTime < 23.99) // night
+	if (curTime >= 23.00 && curTime < 23.99) // night
 	{
-		switch(iNight)
+		switch (iNight)
 		{
 			case 0: skyDir = "weather\skies_rain\night\01\\"; 		_fog = argb(  0,  2,  5,  9 ); 	break;
 			case 1: skyDir = "weather\skies_rain\night\02\\"; 		_fog = argb(  0,  0,  0,  3 );	break;
@@ -243,10 +237,9 @@ string Whr_SetRainSkyData( float curTime, ref _fog, ref _sAmbient )
 			case 6: skyDir = "weather\skies_rain\night\07\\"; 		_fog = argb(  0,  5,  5,  5 );	break;
 		}
 	}
-	
-	if(curTime >= 0.00 && curTime < 3.00) // night
+	else if (curTime >= 0.00 && curTime < 3.00) // night
 	{
-		switch(iNight)
+		switch (iNight)
 		{
 			case 0: skyDir = "weather\skies_rain\night\01\\"; 		_fog = argb(  0,  2,  5,  9 ); 	break;
 			case 1: skyDir = "weather\skies_rain\night\02\\"; 		_fog = argb(  0,  0,  0,  3 );	break;
@@ -257,10 +250,9 @@ string Whr_SetRainSkyData( float curTime, ref _fog, ref _sAmbient )
 			case 6: skyDir = "weather\skies_rain\night\07\\"; 		_fog = argb(  0,  5,  5,  5 );	break;
 		}
 	}
-
-	if(curTime >= 3.00 && curTime < 6.00) // twilight
+	else if (curTime >= 3.00 && curTime < 6.00) // twilight
 	{
-		switch(iTwilight)
+		switch (iTwilight)
 		{
 			case 0: skyDir = "weather\skies_rain\twilight\01\\"; 	_fog = argb(  0,  7, 22, 41 );	break;
 			case 1: skyDir = "weather\skies_rain\twilight\02\\"; 	_fog = argb(  0,  0,  0, 12 );	break;
@@ -271,10 +263,9 @@ string Whr_SetRainSkyData( float curTime, ref _fog, ref _sAmbient )
 			case 6: skyDir = "weather\skies_rain\twilight\07\\"; 	_fog = argb(  0, 14, 14, 16 );	break;
 		}
 	}
-	
-	if(curTime >= 6.00 && curTime < 11.00) // morning
+	else if (curTime >= 6.00 && curTime < 11.00) // morning
 	{
-		switch(iMorning)
+		switch (iMorning)
 		{
 			case 0: skyDir = "weather\skies_rain\morning\01\\"; 	_fog = argb(  0, 67, 77, 89 );	break;
 			case 1: skyDir = "weather\skies_rain\morning\02\\"; 	_fog = argb(  0, 62, 74, 90 );	break;
@@ -284,10 +275,9 @@ string Whr_SetRainSkyData( float curTime, ref _fog, ref _sAmbient )
 			case 5: skyDir = "weather\skies_rain\morning\06\\"; 	_fog = argb(  0, 93, 96,105 );	break;
 		}
 	}
-	
-	if(curTime >= 11.00 && curTime < 19.00) // day
+	else if (curTime >= 11.00 && curTime < 19.00) // day
 	{
-		switch(iDay)
+		switch (iDay)
 		{
 			case 0: skyDir = "weather\skies_rain\day\01\\"; 		_fog = argb(  0,132,134,131 );	break;
 			case 1: skyDir = "weather\skies_rain\day\02\\"; 		_fog = argb(  0,157,155,158 );	break;
@@ -300,10 +290,9 @@ string Whr_SetRainSkyData( float curTime, ref _fog, ref _sAmbient )
 			case 8:	skyDir = "weather\skies_rain\day\09\\"; 		_fog = argb(  0, 77, 81, 92 );	break;
 		}
 	}
-
-	if(curTime >= 19.00 && curTime < 21.00) // evening
+	else if (curTime >= 19.00 && curTime < 21.00) // evening
 	{
-		switch(iEvening)
+		switch (iEvening)
 		{
 			case 0: skyDir = "weather\skies_rain\evening\01\\"; 	_fog = argb(  0, 33, 45, 67 );	break;
 			case 1: skyDir = "weather\skies_rain\evening\02\\"; 	_fog = argb(  0, 58, 76, 90 );	break;
@@ -315,10 +304,9 @@ string Whr_SetRainSkyData( float curTime, ref _fog, ref _sAmbient )
 			case 7: skyDir = "weather\skies_rain\evening\08\\"; 	_fog = argb(  0, 30, 40, 41 );	break;
 		}
 	}
-	
-	if(curTime >= 21.00 && curTime < 23.00) // twilight
+	else if (curTime >= 21.00 && curTime < 23.00) // twilight
 	{
-		switch(iTwilight)
+		switch (iTwilight)
 		{
 			case 0: skyDir = "weather\skies_rain\twilight\01\\"; 	_fog = argb(  0,  7, 22, 41 );	break;
 			case 1: skyDir = "weather\skies_rain\twilight\02\\"; 	_fog = argb(  0,  0,  0, 12 );	break;
@@ -329,15 +317,15 @@ string Whr_SetRainSkyData( float curTime, ref _fog, ref _sAmbient )
 			case 6: skyDir = "weather\skies_rain\twilight\07\\"; 	_fog = argb(  0, 14, 14, 16 );	break;
 		}
 	}
-	
-	if(curTime >=  0.00 && curTime <  4.00)		_sAmbient = argb(  0, 28, 28, 28 );
-	if(curTime >=  4.00 && curTime <  5.00)		_sAmbient = argb(  0, 45, 45, 45 );
-	if(curTime >=  5.00 && curTime <  6.00)		_sAmbient = argb(  0, 55, 55, 55 );
-	if(curTime >=  6.00 && curTime <  7.00)		_sAmbient = argb(  0,105,105,105 );
-	if(curTime >=  7.00 && curTime < 19.00)		_sAmbient = argb(  0,128,128,128 );
-	if(curTime >= 19.00 && curTime < 20.00)		_sAmbient = argb(  0,105,105,105 );
-	if(curTime >= 20.00 && curTime < 21.00)		_sAmbient = argb(  0, 45, 45, 45 );
-	if(curTime >= 21.00 && curTime < 23.99)		_sAmbient = argb(  0, 28, 28, 28 );
+
+	if (curTime >=  0.00 && curTime <  4.00)        _sAmbient = argb(  0, 28, 28, 28 );
+	else if (curTime >=  4.00 && curTime <  5.00)   _sAmbient = argb(  0, 45, 45, 45 );
+	else if (curTime >=  5.00 && curTime <  6.00)   _sAmbient = argb(  0, 55, 55, 55 );
+	else if (curTime >=  6.00 && curTime <  7.00)   _sAmbient = argb(  0,105,105,105 );
+	else if (curTime >=  7.00 && curTime < 19.00)   _sAmbient = argb(  0,128,128,128 );
+	else if (curTime >= 19.00 && curTime < 20.00)   _sAmbient = argb(  0,105,105,105 );
+	else if (curTime >= 20.00 && curTime < 21.00)   _sAmbient = argb(  0, 45, 45, 45 );
+	else if (curTime >= 21.00 && curTime < 23.99)   _sAmbient = argb(  0, 28, 28, 28 );
 
 	return skyDir;
 }	
@@ -350,81 +338,89 @@ string Whr_SetRainSkyData( float curTime, ref _fog, ref _sAmbient )
 void Whr_RainFogGenerator()
 {
 	int iMonth = GetDataMonth();
-	
-	WeatherParams.Rain 			= false;
-	WeatherParams.Rain.ThisDay 	= false;
-	
-	WeatherParams.Fog 			= false;
-	WeatherParams.Fog.ThisDay 	= false;
-	
+
+	WeatherParams.Rain         = false;
+	WeatherParams.Rain.ThisDay = false;
+
+	WeatherParams.Fog          = false;
+	WeatherParams.Fog.ThisDay  = false;
+
 	int chance = 100;
-	
+
 	// дожди
-	switch(iMonth)
+	switch (iMonth)
 	{
 		case 1:  chance = 10; 	break;
 		case 2:  chance = 5; 	break;
+
 		case 3:  chance = 5; 	break;
 		case 4:  chance = 5; 	break;
 		case 5:  chance = 15; 	break; // начало сезона дождей
+
 		case 6:  chance = 20; 	break;
 		case 7:  chance = 30; 	break;
 		case 8:  chance = 45; 	break;
+
 		case 9:  chance = 90; 	break; // высокий шанс ежедневного дождя
 		case 10: chance = 85; 	break; // высокий шанс ежедневного дождя
 		case 11: chance = 35; 	break;
+
 		case 12: chance = 15; 	break; // сухой сезон
 	}	
-	
-	if(WEATHER_DEBUG || hrand(100) < chance)
+
+	if (WEATHER_DEBUG || hrand(100) < chance)
 	{
-		if(hrand(100) < 30)
-		{			
-			WeatherParams.Rain.StartTime = 2 + rand(13) + rand(59)/60.0; 	// время старта с минутами
-			WeatherParams.Rain.Duration  = 180 + rand(360); 				// затяжной дождь
+		if (hrand(100) < 30)
+		{
+			WeatherParams.Rain.StartTime = 2 + rand(13) + rand(59)/60.0; // время старта с минутами
+			WeatherParams.Rain.Duration  = 180 + rand(360); // затяжной дождь
 		}
 		else
 		{
-			WeatherParams.Rain.StartTime = 2 + rand(19) + rand(59)/60.0;	// время старта с минутами
-			WeatherParams.Rain.Duration  = 60 + rand(120); 					// короткий дождь
-		}		
-		WeatherParams.Rain.ThisDay 		= true;								// дождь сегодня будет
+			WeatherParams.Rain.StartTime = 2 + rand(19) + rand(59)/60.0; // время старта с минутами
+			WeatherParams.Rain.Duration  = 60 + rand(120); // короткий дождь
+		}
+		WeatherParams.Rain.ThisDay 		= true; // дождь сегодня будет
 		WeatherParams.Rain.sDay			= rand(8);
 		WeatherParams.Rain.sMorning		= rand(5);
 		WeatherParams.Rain.sEvening		= rand(7);
 		WeatherParams.Rain.sNight		= rand(6);
-		WeatherParams.Rain.sTwilight 	= sti(WeatherParams.Rain.sNight);
-		WeatherParams.Rain.Type			= rand(1);							// тип дождя 
+		WeatherParams.Rain.sTwilight 	= WeatherParams.Rain.sNight;
+		WeatherParams.Rain.Type			= rand(1); // тип дождя 
 		WeatherParams.Rain.year 		= GetDataYear();
 		WeatherParams.Rain.month 		= GetDataMonth();
 		WeatherParams.Rain.day 			= GetDataDay();
 		WeatherParams.Rain.time 		= stf(WeatherParams.Rain.StartTime);
-				
+
 		Log_TestInfo("Дождь начнется в " + WeatherParams.Rain.time + " Выбран дождь : " + (sti(WeatherParams.Rain.Type) + 1));
 		Log_TestInfo("Продолжительность дождя: " + WeatherParams.Rain.Duration + " мин.");
-		
-		if(WEATHER_DEBUG || hrand(100) < 40)    WeatherParams.Rain.IsLightingActive = true;		// гроза будет или нет
-		else				                    WeatherParams.Rain.IsLightingActive = false;
+
+		if (WEATHER_DEBUG || hrand(100) < 40)
+            WeatherParams.Rain.IsLightingActive = true; // гроза будет или нет
+		else
+            WeatherParams.Rain.IsLightingActive = false;
 	}
 	else
 	{
 		Log_TestInfo("Дождя сегодня не будет");
-	}		
-	
+	}
+
 	// туманы по утрам в локациях, простой рэндом
 	// ~!~ TO_DO добавить зависимость от типа скайбокса и дождей в этот день
-	if(WEATHER_DEBUG || hrand(100) < 101) // 10% вероятность (TO_DO: WTF)
+	if (true) // (WEATHER_DEBUG || hrand(99) < 10) // TO_DO ???
 	{
 		WeatherParams.Fog 			= true;
 		WeatherParams.Fog.ThisDay 	= true;
-		WeatherParams.Fog.Type		= rand(1);	// тип тумана - утренний или вечерний 
-		if(sti(WeatherParams.Fog.Type) == 0)	Log_TestInfo("Будет утренний туман в локациях");
-		else									Log_TestInfo("Будет вечерний туман в локациях");
+		WeatherParams.Fog.Type		= rand(1);	// тип тумана - утренний или вечерний
+		if(sti(WeatherParams.Fog.Type) == 0)
+            Log_TestInfo("Будет утренний туман в локациях");
+		else
+            Log_TestInfo("Будет вечерний туман в локациях");
 	}
 	else
 	{
 		Log_TestInfo("Тумана сегодня не будет");
-	}		
+	}
 }
 
 // ****************************************************************************************
@@ -444,16 +440,16 @@ void Whr_SetRainExt1(int iCurWeatherNum, int iBlendWeatherNum, bool bRain)
 	float 	fTmp, fDuration;
 	int 	iHour = MakeInt(GetHour());
 	int 	iTmp;
-	
-	if(!CheckAttribute(&WeatherParams, "Rain.StartTime")) return;
-	
+
+	if (!CheckAttribute(&WeatherParams, "Rain.StartTime")) return;
+
 	fDuration	= stf(WeatherParams.Rain.Duration)/60.0;
 	fTmp 		= stf(WeatherParams.Rain.StartTime) + fDuration;
-	
-	if(bRain)
+
+	if (bRain)
 	{
 		iTmp = 0;
-		if(fTime >= fTmp)														// 0 стадия - заканчиваем дождь
+		if (fTime >= fTmp) // 0 стадия - заканчиваем дождь
 		{
 			iTmp 					= 0;
 			bRain 					= false;
@@ -463,16 +459,16 @@ void Whr_SetRainExt1(int iCurWeatherNum, int iBlendWeatherNum, bool bRain)
 			Whr_DebugLog("Заканчиваем дождь. Время : " + fTime + " время остановки дождя : " + fTmp );
 		}	
 
-		if(fTime < (stf(WeatherParams.Rain.StartTime) + 4 * (fDuration/5.0)))	iTmp = 3;	// 3 стадия - дождь идёт на убыль
-		if(fTime < (stf(WeatherParams.Rain.StartTime) + 2 * (fDuration/3.0)))	iTmp = 2;	// 2 стадия - дождь льет как из ведра
-		if(fTime < (stf(WeatherParams.Rain.StartTime) + fDuration/3.0) )		iTmp = 1;	// 1 стадия - дождь усиливается
+		if (fTime < (stf(WeatherParams.Rain.StartTime) + 4 * (fDuration/5.0)))	iTmp = 3;	// 3 стадия - дождь идёт на убыль
+		if (fTime < (stf(WeatherParams.Rain.StartTime) + 2 * (fDuration/3.0)))	iTmp = 2;	// 2 стадия - дождь льет как из ведра
+		if (fTime < (stf(WeatherParams.Rain.StartTime) + fDuration/3.0) )		iTmp = 1;	// 1 стадия - дождь усиливается
 
 		Whr_DebugLog("Дождь - время : " + fTime + " время остановки дождя : " + fTmp + " стадия: " + iTmp);	//лог будет идти только во время дождя, чтоб не грузило
 
-		switch(iTmp)
+		switch (iTmp)
 		{
 			case 0:			// 0 стадия - дождя нет, заканчиваем дождь, убираем молнии и звук дождя, запускаем радугу
-				if(CheckAttribute(&WeatherParams, "Rain.Sound") && sti(WeatherParams.Rain.Sound))
+				if (CheckAttribute(&WeatherParams, "Rain.Sound") && sti(WeatherParams.Rain.Sound))
 				{
 					WeatherParams.Rain 			= false;
 					WeatherParams.Rain.Sound 	= false;
@@ -496,10 +492,10 @@ void Whr_SetRainExt1(int iCurWeatherNum, int iBlendWeatherNum, bool bRain)
 				Whr_DebugLog("Стадия 1");
 				wRain = 1;
 			break;
-			
+
 			case 2:		// 2 стадия - дождь льет как из ведра
-				if(CheckAttribute(&WeatherParams,"Rain.IsLightingActive") && sti(WeatherParams.Rain.IsLightingActive) == 1)
-				{                    
+				if (CheckAttribute(&WeatherParams,"Rain.IsLightingActive") && sti(WeatherParams.Rain.IsLightingActive) == 1)
+				{
 					Whr_DebugLog("Дождь : будут молнии");					
 					Weathers[iCurWeatherNum].Rainbow.Enable   			= false;
                     Weathers[iCurWeatherNum].Lightning.Enable 		    = true; 
@@ -511,17 +507,17 @@ void Whr_SetRainExt1(int iCurWeatherNum, int iBlendWeatherNum, bool bRain)
 				Whr_DebugLog("Стадия 2");
 				wRain = 2;
 			break;
-			
+
 			case 3:		// 3 стадия - дождь идёт на убыль
 				Weathers[iCurWeatherNum].Rain.NumDrops 					= 2500 + rand(1000);
 				Weathers[iCurWeatherNum].Rain.DropLength 				= 6 + rand(8);
 				Weathers[iCurWeatherNum].Rain.Color 					= argb(0,23,23,23);
-                if(fTime > 7.0 && fTime < 20.0) 
+                if (fTime > 7.0 && fTime < 20.0) 
 				{
 					Weathers[iCurWeatherNum].Rainbow.Enable     = true;
                     Weathers[iCurWeatherNum].Rainbow.Texture 	= "weather\rainbow\rainbow.tga";
 				}
-                if(CheckAttribute(&WeatherParams,"Rain.IsLightingActive") && sti(WeatherParams.Rain.IsLightingActive) == 1)
+                if (CheckAttribute(&WeatherParams,"Rain.IsLightingActive") && sti(WeatherParams.Rain.IsLightingActive) == 1)
 				{                    
 					Whr_DebugLog("Дождь : будут молнии");					
                     Weathers[iCurWeatherNum].Lightning.Enable 		    = true;
@@ -531,19 +527,19 @@ void Whr_SetRainExt1(int iCurWeatherNum, int iBlendWeatherNum, bool bRain)
 				wRain = 1;
 			break;
 		}
-		if(iTmp != 0)	// пока идёт дождь держим туман, не врубаем солнце 
+		if (iTmp != 0) // пока идёт дождь держим туман, не врубаем солнце 
 		{
 			Whr_SetRainBlendWeather(iBlendWeatherNum, false); 
 		}
 	}
-	else	//начало дождя... если генератор не запущен...
+	else // начало дождя... если генератор не запущен...
 	{
-		if(CheckAttribute(&WeatherParams, "Rain.ThisDay") && sti(WeatherParams.Rain.ThisDay))
+		if (CheckAttribute(&WeatherParams, "Rain.ThisDay") && sti(WeatherParams.Rain.ThisDay))
 		{
-			if(fTime >= stf(WeatherParams.Rain.StartTime) && fTime < fTmp)		// можем начинать
+			if (fTime >= stf(WeatherParams.Rain.StartTime) && fTime < fTmp)		// можем начинать
 			{
 				Whr_SetRainBlendWeather(iBlendWeatherNum, true); 				// Mett: интенсивность - лёгкий дождь
-				WeatherParams.Rain = true;										// флаг "дождь"
+				WeatherParams.Rain = true; // флаг "дождь"
                 WhrStopLightning();
 				Whr_SetRainSound(true, sti(Weathers[iCurWeatherNum].Night));	// звук
                 Weathers[iCurWeatherNum].Rainbow.Enable   = false;	
@@ -560,16 +556,16 @@ void Whr_SetRainExt2(int iCurWeatherNum, int iBlendWeatherNum, bool bRain)
 	float 	fTmp, fDuration;
 	int 	iHour = MakeInt(GetHour());
 	int 	iTmp;
-	
-	if(!CheckAttribute(&WeatherParams, "Rain.StartTime")) return;
-	
+
+	if (!CheckAttribute(&WeatherParams, "Rain.StartTime")) return;
+
 	fDuration	= stf(WeatherParams.Rain.Duration)/60.0;
 	fTmp 		= stf(WeatherParams.Rain.StartTime) + fDuration;
 	
 	if (bRain)
 	{
-		iTmp = 4;	//по-умолчанию пятая стадия
-		if(fTime >= fTmp)														// 5 стадия - заканчиваем дождь
+		iTmp = 4; //по-умолчанию пятая стадия
+		if (fTime >= fTmp) // 5 стадия - заканчиваем дождь
 		{
 			iTmp 					= 4;
 			bRain 					= false;
@@ -579,14 +575,14 @@ void Whr_SetRainExt2(int iCurWeatherNum, int iBlendWeatherNum, bool bRain)
 			Whr_DebugLog("Заканчиваем дождь. Время : " + fTime + " время остановки дождя : " + fTmp );
 		}
 
-		if(fTime < (stf(WeatherParams.Rain.StartTime) + 5 * (fDuration)/7.0)) iTmp = 3;// четвертая стадия, дождь идёт на убыль
-		if(fTime < (stf(WeatherParams.Rain.StartTime) + 4 * (fDuration)/7.0)) iTmp = 2;// третья стадия, дождь идёт на убыль
-		if(fTime < (stf(WeatherParams.Rain.StartTime) + 3 * (fDuration)/7.0)) iTmp = 1;// вторая стадия, дождь льет как из ведра
-		if(fTime < (stf(WeatherParams.Rain.StartTime) + 1 * (fDuration)/5.0)) iTmp = 0;// первая стадия, дождь усиливается
+		if (fTime < (stf(WeatherParams.Rain.StartTime) + 5 * (fDuration)/7.0)) iTmp = 3;// четвертая стадия, дождь идёт на убыль
+		if (fTime < (stf(WeatherParams.Rain.StartTime) + 4 * (fDuration)/7.0)) iTmp = 2;// третья стадия, дождь идёт на убыль
+		if (fTime < (stf(WeatherParams.Rain.StartTime) + 3 * (fDuration)/7.0)) iTmp = 1;// вторая стадия, дождь льет как из ведра
+		if (fTime < (stf(WeatherParams.Rain.StartTime) + 1 * (fDuration)/5.0)) iTmp = 0;// первая стадия, дождь усиливается
 		
 		Whr_DebugLog("Дождь - время : " + fTime + " время остановки дождя : " + fTmp + " стадия: " + iTmp);	//лог будет идти только во время дождя, чтоб не грузило
 		
-		switch(iTmp)	//в зависимости от заданной стадия моделируем дождь, всего 4 стадий (0-3)
+		switch (iTmp) //в зависимости от заданной стадия моделируем дождь, всего 4 стадий (0-3)
 		{
 			case 0:	//стадия 1: дождь усиливается
 				Weathers[iCurWeatherNum].Rain.NumDrops 					= 1500 + rand(2000);
@@ -646,7 +642,7 @@ void Whr_SetRainExt2(int iCurWeatherNum, int iBlendWeatherNum, bool bRain)
                     Weathers[iCurWeatherNum].Lightning.Enable 	= false;
                     WhrStopLightning();
 					Whr_SetRainSound(false, sti(Weathers[iCurWeatherNum].Night));
-					Weathers[iCurWeatherNum].Rainbow.Enable   = false;																	  
+					Weathers[iCurWeatherNum].Rainbow.Enable = false;
 					Weathers[iCurWeatherNum].Rain.NumDrops 	= 0;
 					DeleteAttribute(&WeatherParams, "Rain.StartTime");
 					Whr_DebugLog("Стадия 5");
@@ -655,22 +651,22 @@ void Whr_SetRainExt2(int iCurWeatherNum, int iBlendWeatherNum, bool bRain)
 				wRain = 0;
 			break;
 		}
-		if(iTmp != 4)	//пока идёт дождь держим туман, не врубаем солнце 
+		if (iTmp != 4) // пока идёт дождь держим туман, не врубаем солнце 
 		{
 			Whr_SetRainBlendWeather(iBlendWeatherNum, false); 	//Mett: без дождя
 		}
 	}
-	else	//начало дождя... если генератор не запущен...
-	{	//начинаем...
-		if(CheckAttribute(&WeatherParams, "Rain.ThisDay") && sti(WeatherParams.Rain.ThisDay))
+	else //начало дождя... если генератор не запущен...
+	{   //начинаем...
+		if (CheckAttribute(&WeatherParams, "Rain.ThisDay") && sti(WeatherParams.Rain.ThisDay))
 		{
-			if(fTime >= stf(WeatherParams.Rain.StartTime) && fTime < fTmp)		// можем начинать
+			if (fTime >= stf(WeatherParams.Rain.StartTime) && fTime < fTmp) // можем начинать
 			{
-				Whr_SetRainBlendWeather(iBlendWeatherNum, true); 				// Mett: интенсивность - лёгкий дождь
-				WeatherParams.Rain = true;										// флаг "дождь"
+				Whr_SetRainBlendWeather(iBlendWeatherNum, true); // Mett: интенсивность - лёгкий дождь
+				WeatherParams.Rain = true; // флаг "дождь"
                 WhrStopLightning();
 				Weathers[iCurWeatherNum].Rainbow.Enable   = false;	
-				Whr_SetRainSound(true, sti(Weathers[iCurWeatherNum].Night));	// звук
+				Whr_SetRainSound(true, sti(Weathers[iCurWeatherNum].Night)); // звук
 				Whr_DebugLog("Стартуем дождь. Стартовое время : " + stf(WeatherParams.Rain.StartTime) + " продолжительность : " + (stf(WeatherParams.Rain.Duration)/60.0));
 			}
 		}
@@ -685,7 +681,7 @@ void Whr_SetRainExt3(int iCurWeatherNum, int iBlendWeatherNum, bool bRain)
 	int 	iHour = MakeInt(GetHour());
 	int 	iTmp;
 	
-	if(!CheckAttribute(&WeatherParams, "Rain.StartTime")) return;
+	if (!CheckAttribute(&WeatherParams, "Rain.StartTime")) return;
 	
 	fDuration	= stf(WeatherParams.Rain.Duration)/60.0;
 	fTmp 		= stf(WeatherParams.Rain.StartTime) + fDuration;
@@ -693,7 +689,7 @@ void Whr_SetRainExt3(int iCurWeatherNum, int iBlendWeatherNum, bool bRain)
 	if (bRain)
 	{
 		iTmp = 4;	//по-умолчанию пятая стадия
-		if(fTime >= fTmp)														// 5 стадия - заканчиваем дождь
+		if (fTime >= fTmp)														// 5 стадия - заканчиваем дождь
 		{
 			iTmp 					= 4;
 			bRain 					= false;
@@ -710,7 +706,7 @@ void Whr_SetRainExt3(int iCurWeatherNum, int iBlendWeatherNum, bool bRain)
 		
 		Whr_DebugLog("Дождь - время : " + fTime + " время остановки дождя : " + fTmp + " стадия: " + iTmp);	//лог будет идти только во время дождя, чтоб не грузило
 		
-		switch(iTmp)	//в зависимости от заданной стадия моделируем дождь, всего 4 стадий (0-3)
+		switch (iTmp) // в зависимости от заданной стадия моделируем дождь, всего 4 стадий (0-3)
 		{
 			case 0:	//стадия 1: дождь усиливается
 				if (CheckAttribute(&WeatherParams, "Rain.WhrLight"))
@@ -789,7 +785,7 @@ void Whr_SetRainExt3(int iCurWeatherNum, int iBlendWeatherNum, bool bRain)
                     Weathers[iCurWeatherNum].Lightning.Enable 	= false;
                     WhrStopLightning();
 					Whr_SetRainSound(false, sti(Weathers[iCurWeatherNum].Night));
-					Weathers[iCurWeatherNum].Rainbow.Enable   = false;																	  
+					Weathers[iCurWeatherNum].Rainbow.Enable = false;
 					Weathers[iCurWeatherNum].Rain.NumDrops 	= 0;
 					DeleteAttribute(&WeatherParams, "Rain.StartTime");
 					DeleteAttribute(&WeatherParams, "Rain.WhrLight");
@@ -800,19 +796,19 @@ void Whr_SetRainExt3(int iCurWeatherNum, int iBlendWeatherNum, bool bRain)
 				wRain = 0;
 			break;
 		}
-		if(iTmp != 4)	//пока идёт дождь держим туман, не врубаем солнце 
+		if (iTmp != 4) // пока идёт дождь держим туман, не врубаем солнце 
 		{
 			Whr_SetRainBlendWeather(iBlendWeatherNum, false); 	//Mett: без дождя
 		}
 	}
-	else	//начало дождя... если генератор не запущен...
-	{	//начинаем...
-		if(CheckAttribute(&WeatherParams, "Rain.ThisDay") && sti(WeatherParams.Rain.ThisDay))
+	else // начало дождя... если генератор не запущен...
+	{	// начинаем...
+		if (CheckAttribute(&WeatherParams, "Rain.ThisDay") && sti(WeatherParams.Rain.ThisDay))
 		{
-			if(fTime >= stf(WeatherParams.Rain.StartTime) && fTime < fTmp)		// можем начинать
+			if (fTime >= stf(WeatherParams.Rain.StartTime) && fTime < fTmp)		// можем начинать
 			{
 				Whr_SetRainBlendWeather(iBlendWeatherNum, true); 				// Mett: интенсивность - лёгкий дождь
-				WeatherParams.Rain = true;										// флаг "дождь"
+				WeatherParams.Rain = true; // флаг "дождь"
                 WhrStopLightning();
 				Weathers[iCurWeatherNum].Rainbow.Enable   = false;	
 				Whr_SetRainSound(true, sti(Weathers[iCurWeatherNum].Night));	// звук
@@ -825,7 +821,7 @@ void Whr_SetRainExt3(int iCurWeatherNum, int iBlendWeatherNum, bool bRain)
 //общие настройки погоды в дождь
 void Whr_SetRainBlendWeather(int iBlendWeatherNum, bool bRain)
 {
-	if(bRain)	//идёт лёгкий дождь?
+	if (bRain) //идёт лёгкий дождь?
 	{
 		Weathers[iBlendWeatherNum].Rain.NumDrops 	= 500 + rand(500);
 		Weathers[iBlendWeatherNum].Rain.DropLength 	= 4 + rand(8);
@@ -835,13 +831,13 @@ void Whr_SetRainBlendWeather(int iBlendWeatherNum, bool bRain)
     Whr_DebugLog("iCurWeatherNum : " + iCurWeatherNum + " curHour : " + Weathers[iCurWeatherNum].Hour.Min);
 	Whr_DebugLog("iBlendWeatherNum : " + iBlendWeatherNum + " blendHour : " + Weathers[iBlendWeatherNum].Hour.Min);
 
-	if(wRain == 1)
+	if (wRain == 1) // ~!~ Почему на пресете?
 	{
-		Weathers[iBlendWeatherNum].LightingLm				= "storm";
+		Weathers[iBlendWeatherNum].LightingLm = "storm";
 	}
-	if(wRain == 2)
+	else if (wRain == 2)
 	{
-		Weathers[iBlendWeatherNum].LightingLm				= "storm";
-		Weathers[iBlendWeatherNum].InsideBack 				= "n";
+		Weathers[iBlendWeatherNum].LightingLm = "storm";
+		Weathers[iBlendWeatherNum].InsideBack = "n";
 	}	
 } 

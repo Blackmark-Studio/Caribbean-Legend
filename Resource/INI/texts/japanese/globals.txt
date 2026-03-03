@@ -1,0 +1,63 @@
+QUEST_MESSAGE1 {エル・ カイマノ植民地は占領されています。}
+QUEST_MESSAGE2 {エルカイマノ植民地が占領された。}
+QUEST_MESSAGE3 {アステカの黄金の呪いには、 もう抗えない年齢だ……}
+QUEST_MESSAGE4 {宝を見つけた！}
+QUEST_MESSAGE5 {ナイジェル・ ブライトが密輸業者のコルベットを攻撃した！}
+QUEST_MESSAGE6 {ナイジェル・ ブライトが行方不明になった！}
+QUEST_MESSAGE7 {キャプテン、「Black Pearl」が地平線に見えます！}
+QUEST_MESSAGE8 {素晴らしい！ マスターを倒しました！}
+QUEST_MESSAGE9 {今やこの残酷な世界と一対一だ！}
+QUEST_MESSAGE10 {容赦なき海賊}
+QUEST_MESSAGE11 {特別な報酬に値する！}
+QUEST_MESSAGE12 {残念ですが、 すでに多くの士官を雇っています。 新たに雇うには、 誰かを解雇する必要があります。}
+Address_Form_Spa {セニョール}
+Address_Form_Fra {ムッシュ}
+Address_Form_Eng {サー}
+Address_Form_Por {セニョール}
+Address_Form_Hol {ミンヘール}
+Swear_1 {脾臓が破裂しそうだ！}
+Swear_2 {くそっ！}
+Swear_3 {なんてこった！}
+Swear_4 {くそっ！}
+Swear_5 {千の悪魔め！}
+Swear_6 {俺の船尾に錨を下ろせ！}
+Swear_7 {おお、天よ！}
+Swear_8 {アーッ!!!}
+Swear_9 {千匹のサメだ！}
+Swear_10 {悪魔め！}
+TimeGreeting {こんにちは}
+Antigua {Antigua}
+Barbados {Barbados}
+Curacao {Curacao}
+Dominica {Dominica}
+Grenada {Grenada}
+Guadeloupe {Guadeloupe}
+Hispaniola {Hispaniola}
+IslaMona {Isla Mona}
+Jamaica {Jamaica}
+MarieGalante {Marie Galante}
+Martinique {Martinique}
+Montserrat {Montserrat}
+Nevis {Nevis}
+PuertoRico {Puerto Rico}
+StEustatius {St. Eustatius}
+StKitts {St. Kitts}
+StMartin {St. Martin}
+Tortuga {Tortuga}
+LaVega {La Vega}
+SantoDomingo {Santo Domingo}
+PetitGoave {Petit Goave}
+Bridgetown {Bridgetown}
+SanJuan {San Juan}
+SantiagoVega {Santiago Vega}
+OFFIC_TYPE_BOATSWAIN {甲板長}
+OFFIC_TYPE_CANNONEER {砲手}
+OFFIC_TYPE_QMASTER {操舵手}
+OFFIC_TYPE_NAVIGATOR {航海士}
+OFFIC_TYPE_FIRSTMATE {一等航海士}
+Pirate {海賊}
+Spain {スペイン人}
+France {フランス人}
+Smuggler {密輸業者}
+Holland {オランダ人}
+England {イングランド人}

@@ -27,9 +27,9 @@ void UpgradeShipAudit(ref chr)
 	UPGRD_UpgradeShipAudit(realShip);
 }
 
-bool CanUpgradeShip(ref chr, string reason, string type)
+bool CanUpgradeShip(ref chr, ref reason, string type)
 {
-	int nShipType = GetCharacterShipType(chr);
+	int nShipType = GetBaseShipType(chr);
 	if (nShipType == SHIP_NOTUSED)
 	{
 		reason = "EmptyShip";
@@ -49,7 +49,7 @@ void UPGRD_UpgradeShipAudit(ref realShip)
 {
 	string sourceName = "Audit";
 	realShip.tuning.Audit = true;
-	// realShip.tuning.Audit.offset = -10 + rand(20); // JOKERTODO мб позже вкрутить случайный поворот/офсет
+	// realShip.tuning.Audit.offset = -10 + rand(20); // JOKERBACKLOG мб позже вкрутить случайный поворот/офсет
 	// realShip.tuning.Audit.offset = rand(10);
 	UPGRD_SetShipModifier(realShip, M_SHIP_CAPACITY, 0.10, sourceName);
 	UPGRD_SetShipModifier(realShip, M_SHIP_SPEED, 0.05, sourceName);
@@ -60,12 +60,12 @@ void UPGRD_UpgradeShipAudit(ref realShip)
 void UpgradeAmsterdam(ref realShip)
 {
 	string sourceName = "trait_SP4";
-	float value = GetAttributeFloat(realShip, "tuning.modifiers." + M_SHIP_SPEED + "." + sourceName);
-	if (value == 15.0) return;
+	float value = GetAttributeFloat(realShip, "tuning.modifiers." + M_SHIP_RELOAD_SPEED + "." + sourceName);
+	if (value == 0.15) return;
 
-	value = fClamp(0, 15.0, value + 0.003);
-	if (value == 15.0) Achievment_Set("ach_CL_201");
-	UPGRD_SetShipModifier(realShip, M_SHIP_SPEED, value, sourceName);
+	value = fClamp(0, 0.15, value + 0.003);
+	if (value == 0.15) Achievment_Set("ach_CL_201");
+	UPGRD_SetShipModifier(realShip, M_GLOBAL_SPEED, value, sourceName);
 	UPGRD_SetShipModifier(realShip, M_SHIP_TURNRATE, value, sourceName);
 	UPGRD_SetShipModifier(realShip, M_SHIP_FIRE_DISTANCE, value, sourceName);
 	UPGRD_SetShipModifier(realShip, M_SHIP_RELOAD_SPEED, value, sourceName);

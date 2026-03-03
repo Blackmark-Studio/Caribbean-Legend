@@ -266,6 +266,7 @@ void WildRose_Etap1_EscapeSlaves_13(string qName)
 	LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
 	LAi_group_SetCheckFunction("EnemyFight", "WildRose_Etap1_EscapeSlaves_14");
+	LAi_LocationFightDisable(LoadedLocation, false);
 }
 
 void WildRose_Etap1_EscapeSlaves_14(string qName)
@@ -590,9 +591,11 @@ void WildRose_Etap2_IslandOfJustice_5_sex_3(string qName)
 
 void WildRose_Etap2_IslandOfJustice_5_sex_4(string qName)
 {
+	ResetSound();
 	SetLaunchFrameFormParam("", "", 0, 15);
 	SetLaunchFrameFormPic("loading\inside\censored1.tga");
-	PlayStereoSound("sex\sex" + (rand(9) + 1) + ".wav");
+	if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+	else PlayStereoSound("sex\sex" + (rand(14) + 1) + ".wav");
 	LaunchFrameForm();
 	// SetLaunchFrameFormParam(GetConvertStr("Frame_NextMorning", "Frame.txt"), "Run_Function", 0, 4.0);
 	// SetLaunchFrameRunFunctionParam("WildRose_Etap2_IslandOfJustice_6_1", 0.0);
@@ -2613,12 +2616,27 @@ void WildRose_Etap6_LifeAfterDeath_29()
 	}
 	pchar.OfficerAttRange = 35.0;
 	OfficersFollow();
+
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20 + 2*sti(pchar.rank);
+	object aCrewSoldier[10];
+	GenerateCrew(pchar, "soldier", &aCrewSoldier);
+	string model;
+	string ani;
+
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
+
 	for (i=1; i<=10; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("WildRose_OurSoldier_"+i, "citiz_3"+(rand(7)+1), "man", "man", 15, FRANCE, 0, true, "pirate"));
+		model = aCrewSoldier[i-1].model;
+		ani = aCrewSoldier[i-1].ani;
+		sld = GetCharacter(NPC_GenerateCharacter("WildRose_OurSoldier_"+i, model, "man", ani, 15, FRANCE, 0, true, "pirate"));
 		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_BadEnd")) ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload1");
 		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_GoodEnd")) ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload2");
 		LAi_SetHP(sld, 175.0, 175.0);
+		FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 	}
@@ -2843,10 +2861,12 @@ void WildRose_Etap6_LifeAfterDeath_39()
 	LAi_LocationFightDisable(&Locations[FindLocation("Beliz_jungle_03")], false);
 	LAi_LocationDisableOfficersGen("Shore8", false);
 	LAi_LocationDisableOfficersGen("Beliz_jungle_03", false);
+	pchar.questTemp.WildRoseComplete = true;
 	DeleteAttribute(pchar, "GenQuest.CabinLock");
 	DeleteAttribute(pchar, "questTemp.CameraDialogMode");
 	
-	AddQuestRecord("WildRose", "35");
+	if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_GoodEnd")) {AddQuestRecord("WildRose", "35");}
+	else {AddQuestRecord("WildRose", "36");}
 	ChangeContrabandRelation(PChar, -30);
 	
 	// Корабль Корвет "Еретик"
@@ -3034,6 +3054,7 @@ void WildRose_Test()
 	sld = characterFromId("Benua");
 	sld.quest.help = "true";
 	sld.quest.meet = true;
+	sld.quest.relation_info = "true";
 	pchar.questTemp.Saga.BaronReturn = "return_LSC";
 	i = FindIsland("LostShipsCity");
 	Islands[i].visible = true;

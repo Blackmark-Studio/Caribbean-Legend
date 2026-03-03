@@ -44,7 +44,7 @@ void ProcessDialogEvent()
 					DeleteAttribute(npchar, "talker"); //снимаем говорилку
 					break;
 				}
-				dialog.text = LinkRandPhrase("Hé, capitaine, je suis occupé en ce moment. Que voulez-vous?","Que voulez-vous, capitaine ?","Capitaine, je ne suis pas d'humeur à parler. Que voulez-vous ?");
+				dialog.text = LinkRandPhrase("Hé, capitaine, je suis occupé en ce moment. Que voulez-vous?","Que voulez-vous, capitaine ?","Capitaine, je ne suis pas d'humeur à parler. Que voulez-vous ?");
 				link.l1 = "Salutation, "+GetAddress_FormToNPC(NPChar)+". Attendez une minute, je veux que vous me disiez quelque chose.";
 				link.l1.go = "question";
 				link.l2 = RandPhraseSimple("J'ai une question pour vous.","J'ai besoin d'informations.");

@@ -36,7 +36,7 @@ void ProcessDialogEvent()
 			if (LAi_grp_playeralarm > 0)
 			{
        			dialog.text = PCharRepPhrase(LinkRandPhrase("L'alarme est donnée dans la ville. Apparemment, il est temps pour moi aussi de prendre les armes...","Les gardes de la ville ne te courent pas après, par hasard?","Tu ne trouveras pas un abri ici, mais tu pourrais trouver plusieurs pouces d'acier froid sous ta côte!"),LinkRandPhrase("De quoi as-tu besoin, "+GetSexPhrase("canaille","coquin")+"?! Les gardes vous traquent, vous n'irez pas loin, "+GetSexPhrase("sale pirate","puant")+"!",""+GetSexPhrase("Crade","Sale")+" assassin! Gardes!!!","Je ne te crains pas, "+GetSexPhrase("vermine","puant")+"! Bientôt tu seras pendu dans notre fort, tu n'iras pas loin..."));
-				link.l1 = PCharRepPhrase(RandPhraseSimple("Je vois que tu es fatigué de vivre...","Alors il semble, il n'y a pas de gens pacifiques dans "+XI_ConvertString("Colonie"+npchar.city+"Gen")+", tout le monde veut être un héros !"),RandPhraseSimple("Va en enfer !","Heh, ce seront les dernières secondes de ta vie..."));
+				link.l1 = PCharRepPhrase(RandPhraseSimple("Je vois que tu es fatigué de vivre...","Alors il semble, il n'y a pas de gens pacifiques dans "+XI_ConvertString("Colony"+npchar.city+"Gen")+", tout le monde veut être un héros !"),RandPhraseSimple("Va en enfer !","Heh, ce seront les dernières secondes de ta vie..."));
 				link.l1.go = PCharRepPhrase("exit_setOwner", "fight");
 				break;
 			}

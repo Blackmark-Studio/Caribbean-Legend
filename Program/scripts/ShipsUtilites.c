@@ -5,18 +5,15 @@ object	RealShips[REAL_SHIPS_QUANTITY];
 #define SAILSCOLOR_PRICE_RATE    0.1 
 #define SAILSGERALD_PRICE_RATE   0.2 
 
-#define SAIL_COST_PERCENT 10
-#define HULL_COST_PERCENT 20
+#define SAIL_COST_PERCENT 18
+#define HULL_COST_PERCENT 25
+#define HULL_REPAIR_EXP_MTP 8.0
+#define SAIL_REPAIR_EXP_MTP 11.0
 
 string GetShipDescr(ref refRealShip)
 {
 	ref refShip;
 	makeref(refShip, ShipsTypes[sti(refRealShip.basetype)]);
-
-	if (CheckAttribute(refShip, "modname"))
-	{
-		return GetConvertStr(refRealShip.BaseName, "mods\"+refShip.modname+"\ShipsDescribe.txt");
-	}
 	return GetConvertStr(refRealShip.BaseName, "ShipsDescribe.txt");
 }
 
@@ -1203,7 +1200,7 @@ int GetShipBuyPrice(int iType, ref _shipyard)
 
 int GetSailRepairCost(int shipType, int repairPercent, ref _shipyard)
 {
-	int SailRepairCoeff = makeint(3.0 + MOD_SKILL_ENEMY_RATE/10.0);
+	int SailRepairCoeff = makeint(2.0 + MOD_SKILL_ENEMY_RATE/2.0);
 	int shipPrice = GetShipPriceByType(shipType, _shipyard);
 	if(shipPrice<=0) return 0;
 	ref shref = GetRealShip(shipType);
@@ -1214,7 +1211,7 @@ int GetSailRepairCost(int shipType, int repairPercent, ref _shipyard)
 
 int GetHullRepairCost(int shipType,int repairPercent, ref _shipyard)
 {
-	int HullRepairCoeff = makeint(3.0 + MOD_SKILL_ENEMY_RATE/10.0);
+	int HullRepairCoeff = makeint(2.0 + MOD_SKILL_ENEMY_RATE/2.0);
 	int shipPrice = GetShipPriceByType(shipType, _shipyard);
 	if(shipPrice<=0) return 0;
 	ref shref = GetRealShip(shipType);
@@ -1492,13 +1489,13 @@ float GetModifiedBaseShipPower(ref chr, int baseType)
 	float fMaxPower = GetBaseShipPower(baseType);
 	if (!IsCompanion(chr)) return fMaxPower;
 
+	ref rBaseShip = &ShipsTypes[baseType];
 	float mtp = 1.0;
 	if (GetCharacterEquipByGroup(pchar, HAT_ITEM_TYPE) == "hat6")
 	{
 		if (sti(rBaseShip.Spec) == SHIP_SPEC_MERCHANT) mtp += 0.4;
 	}
 
-	ref rBaseShip = &ShipsTypes[baseType];
 	return fMaxPower * mtp;
 }
 
@@ -1674,10 +1671,10 @@ void SetCannonsToBort(ref chr, string sBort, int iQty)
 
 float GetAmsterdamMtp(string _temp)
 {
-	return 0.08 * 5-wdmGetNationThreat(PIRATE);
+	return 0.08 * (5-wdmGetNationThreat(PIRATE));
 }
 
-bool ShipTraitCanBeChanged(ref chr, string reason)
+bool ShipTraitCanBeChanged(ref chr, ref reason)
 {
 	int nShipType = GetCharacterShipType(chr);
 	if (nShipType == SHIP_NOTUSED) reason = "EmptyShip";
@@ -1731,4 +1728,13 @@ int GetSpecialityUpgradeShipCost(ref chr)
 		case 6: return 250; break;
 		case 7: return 100; break;
 	}
+}
+
+// Получить кол-во опыта за процент отремонтированного корпуса/парусов корабля
+float GetExpForRepair(ref chr, int percentRepaired, string type)
+{
+	float divider = HULL_REPAIR_EXP_MTP;
+	if (type == "sails") divider = SAIL_REPAIR_EXP_MTP;
+
+	return percentRepaired * (8-GetCharacterShipClass(chr)) / divider;
 }

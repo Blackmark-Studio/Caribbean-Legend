@@ -1,0 +1,13 @@
+license_violations_name {违规行为}
+license_violation_tooltip_body {攻击盟友或中立旗帜下的船只、 侵害平民、 海上抢劫以及攻击要塞均被视为违规行为。}
+license_violation_1 {我们违反了合同条款。 这不会白白过去。}
+license_violation_2 {我们已两次违反合同。 很快就会被吊销执照。}
+license_violation_3 {我们三次违反合同, 已被吊销贸易许可证。}
+license_state
+{
+到期: $attr($context.humanExpireDate)~
+剩余天数: $attr($context.humanDaysLeft)
+}
+flags_newFlagTaken {新旗帜已夺取}
+flags_allFlagsCollected {该国家的所有旗帜已收集}
+license_expired {贸易许可证已到期}

@@ -79,6 +79,7 @@ void Cannon_RecalculateParameters(int iCharacterIndex)
 	ref	rCharacter = GetCharacter(iCharacterIndex);
 	ref	rCannon = GetCannonByType(sti(rCharacter.Ship.Cannons.Type));
 	ref	rBall = GetGoodByType(sti(rCharacter.Ship.Cannons.Charge.Type));
+	ref realShip = GetRealShip(GetCharacterShipType(rCharacter));
 	if (CheckAttribute(rCharacter, "TmpPerks.LongRangeShoot"))
 	{
 		rCharacter.Ship.Cannons.SpeedV0 = stf(rCannon.SpeedV0) * stf(rBall.SpeedV0) * AIShip_isPerksUse(rCharacter.TmpPerks.LongRangeShoot, 1.0, PERK_VALUE_LONG_RANGE_SHOOT); //slib
@@ -87,12 +88,14 @@ void Cannon_RecalculateParameters(int iCharacterIndex)
 	{
 	    rCharacter.Ship.Cannons.SpeedV0 = stf(rCannon.SpeedV0) * stf(rBall.SpeedV0);
 	}
+	float RangeBonusMtp = 1.0;
 	if(IsMainCharacter(rCharacter) && ShipBonus2Artefact(rCharacter, SHIP_GALEON_SM) && GetCharacterEquipByGroup(rCharacter, BLADE_ITEM_TYPE) == "lacrima_patris")
 	{
 		ref Blade = ItemsFromID("lacrima_patris");
-		if(CheckAttribute(Blade,"KillerBonus.RangeBonus"))
-			rCharacter.Ship.Cannons.SpeedV0 = stf(rCharacter.Ship.Cannons.SpeedV0) * (1.0 + stf(Blade.KillerBonus.RangeBonus)/100.0);
+		if(CheckAttribute(Blade,"KillerBonus.RangeBonus")) RangeBonusMtp += stf(Blade.KillerBonus.RangeBonus)/100.0;
 	}
+	RangeBonusMtp += GetAttributeFloat(realShip, "tuning.modifiers." + M_SHIP_FIRE_DISTANCE);
+	rCharacter.Ship.Cannons.SpeedV0 = stf(rCharacter.Ship.Cannons.SpeedV0) * RangeBonusMtp;
 	rCharacter.Ship.Cannons.FireAngMax = rCannon.FireAngMax;
 	rCharacter.Ship.Cannons.FireAngMin = rCannon.FireAngMin;
 }
@@ -165,6 +168,7 @@ float Cannon_GetRechargeTime()
 	}
 	
 	ref refBaseShip = GetRealShip(sti(aCharacter.ship.Type));
+	fMultiply += GetAttributeFloat(refBaseShip, "tuning.modifiers." + M_SHIP_RELOAD_SPEED);
 	if (sti(refBaseShip.BaseType) != SHIP_FORT)
 	{
         // boal 060804 для компа поблажки

@@ -1701,7 +1701,7 @@ int LocationInitTenotchitlan(int n)
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "house";
-	locations[n].fastreload = "";
+	locations[n].islandId = "Mein";
 	//Models
 	locations[n].filespath.models = "locations\inside\SmallResidence";
 	//Always

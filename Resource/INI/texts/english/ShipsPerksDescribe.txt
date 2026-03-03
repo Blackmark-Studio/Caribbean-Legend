@@ -42,7 +42,8 @@ trait05 {False Documents}
 trait05_desc {An impressive set of patents, documents, and nameplates allows this ship to enter almost any port incognito, and the inconspicuous hull reduces the risk of encountering patrols during smuggling deals.}
 trait05_desc2
 {
-Increases chance of deception: 15%.Reduces chance of encountering a patrol: 50%.
+Increases deception chance when docking during the day by 15%. 
+Reduces the chance of encountering a patrol by 50%.
 }
 trait11 {Pivoting Carriages}
 trait11_desc {The gun ports and carriages have been specially reconstructed, increasing the firing sector of the guns.}
@@ -110,5 +111,5 @@ sp3_SurrenderChanceBonus_desc {Surrender chance increase: #dSurrenderChanceBonus
 sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 fallen sailors)}
 sp4 {Pirate Hunter}
 sp4_desc {This ship was purpose-built to cleanse the seas of pirates. With every ship sent to the bottom, the crew grows more united, the guns more accurate, and the captain’s fanaticism ever clearer.}
-sp4_desc2 {Each destroyed pirate ship permanently increases maneuverability, firing range, global map speed, and gun reload speed. Current bonus: $percent($attr($context.tuning.modifiers.shipSpeed.trait_SP4)) of 15. ~ The lower the pirate threat, the lower the ship’s upkeep. Current bonus: $percent($GetAmsterdamMtp( )) of 40.}
+sp4_desc2 {Each destroyed pirate ship permanently increases maneuverability, firing range, global map speed, and gun reload speed. Current bonus: $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) of 15. ~ The lower the pirate threat, the lower the ship’s upkeep. Current bonus: $percent($GetAmsterdamMtp( )) of 40.}
 SpecialityUpgrade {Upgraded by HWIC}

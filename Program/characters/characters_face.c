@@ -130,6 +130,8 @@ void FaceMaker(aref rCharacter)
 		case "mercen_26"	: 		rCharacter.FaceId = 54;		break;
 		case "mercen_27"	: 		rCharacter.FaceId = 55;		break;
 		case "mercen_28"	: 		rCharacter.FaceId = 56;		break;
+		case "mercen_29"	: 		rCharacter.FaceId = 57;		break;
+		case "mercen_30"	: 		rCharacter.FaceId = 58;		break;
 		
 		// гражданское население
 		// дворяне
@@ -434,14 +436,14 @@ void FaceMaker(aref rCharacter)
 		case "officer_19":		rCharacter.FaceId = 336; break;
 		case "officer_20":		rCharacter.FaceId = 337; break;
 
-		case "girl_1":			rCharacter.FaceId = 350; break;
-		case "girl_2":			rCharacter.FaceId = 351; break;
-		case "girl_3":			rCharacter.FaceId = 352; break;
-		case "girl_4":			rCharacter.FaceId = 353; break;
-		case "girl_5":			rCharacter.FaceId = 354; break;
-		case "girl_6":			rCharacter.FaceId = 355; break;
-		case "girl_7":			rCharacter.FaceId = 356; break;
-		case "girl_8":			rCharacter.FaceId = 357; break;
+		case "girl_1":			rCharacter.FaceId = 161; break;
+		case "girl_2":			rCharacter.FaceId = 162; break;
+		case "girl_3":			rCharacter.FaceId = 165; break;
+		case "girl_4":			rCharacter.FaceId = 166; break;
+		case "girl_5":			rCharacter.FaceId = 164; break;
+		case "girl_6":			rCharacter.FaceId = 167; break;
+		case "girl_7":			rCharacter.FaceId = 158; break;
+		case "girl_8":			rCharacter.FaceId = 160; break;
 		case "head_pir":		rCharacter.FaceId = 358; break;
 		//<-- временно переименованные
 		

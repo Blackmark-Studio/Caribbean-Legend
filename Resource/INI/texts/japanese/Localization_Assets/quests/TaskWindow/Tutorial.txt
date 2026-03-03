@@ -1,0 +1,32 @@
+Tutorial_1 {船の旋回}
+Tutorial_2 {@<key1> と @<key2> を押して船を旋回}
+Tutorial_3 {時間操作}
+Tutorial_4 {時間加速を有効化 @<key>}
+Tutorial_5 {@<key> をもう一度押すと無効になります}
+Tutorial_6 {@<key> を押して最大6倍速}
+Tutorial_7 {@<key1> を押して減速、または @<key2>}
+Tutorial_8 {帆操作}
+Tutorial_9 {戦闘帆走モードに切替 @<key1>}
+Tutorial_10 {帆をすべて下ろす @<key1>}
+Tutorial_11 {船戦の基本}
+Tutorial_12 {@<key1> で素早く一斉射撃}
+Tutorial_13 {高度な艦船戦闘}
+Tutorial_14 {@<key1> エイムモードに入る}
+Tutorial_15 {@<key1> を押して狙い撃ちの一斉射撃}
+Tutorial_16 {@<key1> エイムモード解除}
+Tutorial_17 {勝利を収める}
+Tutorial_18 {残りの海賊船を沈めろ}
+Tutorial_19 {敵を攻撃}
+Tutorial_20 {@<key1> 斬撃}
+Tutorial_21 {@<key1> 突き}
+Tutorial_22 {@<key1> 強攻撃}
+Tutorial_23 {身を守れ}
+Tutorial_24 {@<key1> ブロック攻撃}
+Tutorial_25 {@<key1> パリィ攻撃}
+Tutorial_26 {海賊を倒せ！}
+Tutorial_27 {クエスト}
+Tutorial_28 {ドキュメント@<key1>を読む}
+Tutorial_29 {ダブロンの宝箱を開ける @<key1>}
+Tutorial_30 {略奪}
+Tutorial_31 {水夫をあさる}
+Tutorial_32 {アロンソに謎の薬を渡す}

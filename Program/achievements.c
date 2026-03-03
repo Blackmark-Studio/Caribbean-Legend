@@ -266,7 +266,7 @@ void CheckAchievments()
 	if(CheckAttribute(pchar, "achievment.Tuning.stage1") && CheckAttribute(pchar, "achievment.Tuning.stage2") && CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(pchar, "achievment.Tuning.stage4")) Achievment_Set("ach_66");
 	if(CheckAttribute(pchar,"Achievment.Barbie") && CheckAttribute(pchar,"Achievment.Genrih")) Achievment_Set("ach_CL_111");
 	// Из народа: Выполнить все 10 квестов-события
-	if (!GetAchievement("ach_CL_175") && sti(pchar.questTemp.MiniEvents) >= 10) Achievment_SetStat(175, 10);
+	if (!GetAchievement("ach_CL_175") && GetAttributeInt(pchar, "questTemp.MiniEvents") >= 10) Achievment_SetStat(175, 10);
 	// дальше будет только хуже
 	if(!GetAchievement("ach_CL_113"))
 	{

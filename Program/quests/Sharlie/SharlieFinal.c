@@ -574,6 +574,7 @@ void Terrapin_LateDelete() //общее на все опоздания
 	sld = characterFromId("Tortuga_Mayor");
 	LAi_LoginInCaptureTown(sld, true);
 	pchar.questTemp.Sharlie.Hardcore_Tortuga = "true";
+	Terrapin_ReturnFox("");
 }
 
 void Terrapin_SetCromvelScuadron(string qName) //эскадра Кромвеля прибыла
@@ -1883,12 +1884,37 @@ void GuardOT_SanAntonioPrepare(string qName) // ставим абордажну�
 	// устанавливаем солдат ГГ, 9 рыл+офицер
 	int iRank = 25+MOD_SKILL_ENEMY_RATE+5;
 	int iScl = 60;
+
+	object aCrewSoldier[7];
+	GenerateCrew(pchar, "soldier", &aCrewSoldier);
+	int nSoldierIndex = 0;
+
+	object aCrewMushketer[2];
+	GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+	int nMushketerIndex = 0;
+
+	object aCrewCaptain[1];
+	GenerateCrew(pchar, "captain", &aCrewCaptain);
+	string model;
+	string ani;
+
+
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
+
+	object aSoldierCapo[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_ELITE, &aSoldierCapo, nullptr);
+
+
 	for (int i=1; i<=10; i++)
 	{
 		if (i == 1)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("GuardOT_Oursoldier_"+i, "mercen_25", "man", "man", iRank+5, FRANCE, -1, true, "soldier"));
-			FantomMakeCoolFighter(sld, iRank+5, iScl+5, iScl+5, "blade_13", "pistol4", "bullet", iScl*2+50);
+			model = aCrewCaptain[0].model;
+			ani = aCrewCaptain[0].ani;
+			sld = GetCharacter(NPC_GenerateCharacter("GuardOT_Oursoldier_"+i, model, "man", ani, iRank+5, FRANCE, -1, true, "soldier"));
+			FantomMakeCoolFighterForRef(sld, iRank+5, iScl+5, iScl+5, &aSoldierCapo, iScl*2+50);
 			sld.dialog.FileName = "Quest\Sharlie\guardoftruth.c";
 			sld.dialog.currentnode = "batabano_officer";
 		}
@@ -1896,13 +1922,19 @@ void GuardOT_SanAntonioPrepare(string qName) // ставим абордажну�
 		{
 			if (i == 2 || i == 3)
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("GuardOT_Oursoldier_"+i, "mush_ctz_"+(4+rand(2)), "man", "mushketer", iRank, FRANCE, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
+				model = aCrewMushketer[nMushketerIndex].model;
+				ani = aCrewMushketer[nMushketerIndex].ani;
+				nMushketerIndex++;
+				sld = GetCharacter(NPC_GenerateCharacter("GuardOT_Oursoldier_"+i, model, "man", ani, iRank, FRANCE, -1, false, "soldier"));
+				FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl*2);
 			}
 			else
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("GuardOT_Oursoldier_"+i, "citiz_"+(31+rand(9)), "man", "man", iRank, FRANCE, -1, true, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, iScl, iScl, RandPhraseSimple("blade_10","blade_11"), "pistol1", "bullet", iScl*2);
+				model = aCrewSoldier[nSoldierIndex].model;
+				ani = aCrewSoldier[nSoldierIndex].ani;
+				nSoldierIndex++;
+				sld = GetCharacter(NPC_GenerateCharacter("GuardOT_Oursoldier_"+i, model, "man", ani, iRank, FRANCE, -1, true, "soldier"));
+				FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 			}
 			LAi_CharacterDisableDialog(sld);
 		}
@@ -2189,17 +2221,38 @@ void GuardOT_CatocheCoastBattle(string qName) // бой на берегу
 	int iRank = 25+MOD_SKILL_ENEMY_RATE*2;
 	int iScl = 55;
 	// наши
+
+	object aCrewSoldier[13];
+	GenerateCrew(pchar, "soldier", &aCrewSoldier);
+	int nSoldierIndex = 0;
+
+	object aCrewMushketer[2];
+	GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+	int nMushketerIndex = 0;
+
+	string model;
+	string ani;
+
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
 	for (int i=1; i<=15; i++)
 	{
 		if (i == 1 || i == 12)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("GuardOT_soldier_"+i, "mush_ctz_"+(4+rand(2)), "man", "mushketer", iRank, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
+			model = aCrewMushketer[nMushketerIndex].model;
+			ani = aCrewMushketer[nMushketerIndex].ani;
+			nMushketerIndex++;
+			sld = GetCharacter(NPC_GenerateCharacter("GuardOT_soldier_"+i, model, "man", ani, iRank, FRANCE, -1, false, "soldier"));
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl*2);
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("GuardOT_soldier_"+i, "citiz_"+(31+rand(9)), "man", "man", iRank, FRANCE, -1, true, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, RandPhraseSimple("blade_10","blade_11"), "pistol1", "bullet", iScl*2);
+			model = aCrewSoldier[nSoldierIndex].model;
+			ani = aCrewSoldier[nSoldierIndex].ani;
+			nSoldierIndex++;
+			sld = GetCharacter(NPC_GenerateCharacter("GuardOT_soldier_"+i, model, "man", ani, iRank, FRANCE, -1, true, "soldier"));
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 		}
 		LAi_CharacterDisableDialog(sld);
 		LAi_SetWarriorType(sld);
@@ -2716,6 +2769,7 @@ void GuardOT_ArchyChestBoom() // ба-бах!!
 	CreateLocationParticles("smoke", "box", "box1", 1.0, 0, 0, "");
 	CreateLocationParticles("blood_big", "box", "box1", 1.3, 0, 0, "");
 	LAi_SetActorType(Pchar);
+	SetCameraShake(1.2, 2.5, 5.0, 0.13, 0.5, true, false, CAM_EASING_SMOOTH_STEP);
 	LAi_ActorAnimation(Pchar, "jump", "GuardOT_SitInHouse", 0.5);
 	ChangeCharacterAddressGroup(Pchar, "IslaDeVieques_House", "goto", "goto5");
 	Pchar.chr_ai.hp = stf(Pchar.chr_ai.hp)/4;
@@ -2778,7 +2832,7 @@ void GuardOT_KillMCOfficerInJungle() // убиваем офицеров ГГ
 		{
 			sld.Health.HP = makefloat(sld.Health.HP)/2.0;
 			sld.Health.maxHP = makefloat(sld.Health.maxHP)/2.0;
-			
+
 			LAi_ApplyCharacterDamage(sld, 1000, "fire", true);
 			LAi_CheckKillCharacter(sld);
 		}
@@ -2789,7 +2843,7 @@ void GuardOT_KillMCOfficerInJungle() // убиваем офицеров ГГ
 	if (n > 0) pchar.questTemp.Guardoftruth.OfficerKill = "true";
 	// запрещаем генерацию офицеров по всему острову
 	for (i=0; i<MAX_LOCATIONS; i++)
-	{	
+	{
 		if (findsubstr(locations[i].id, "IslaDeVieques" , 0) != -1)
 		{
 			LAi_LocationDisableOfficersGen(locations[i].id, true);//офицеров не пускать
@@ -2956,17 +3010,40 @@ void GuardOT_OurSailorInCrabShore(string qName) // подмога - наши п�
 	int iScl = 60;
 	int n = 4+MOD_SKILL_ENEMY_RATE;
 	// наши
+
+
+	object aCrewSoldier[1];
+	SetArraySize(&aCrewSoldier, n - 2);
+	GenerateCrew(pchar, "soldier", &aCrewSoldier);
+	int nSoldierIndex = 0;
+
+	object aCrewMushketer[2];
+	GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+	int nMushketerIndex = 0;
+
+	string model;
+	string ani;
+
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
 	for (int i=1; i<=n; i++)
 	{
 		if (i < 3)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("GuardOT_soldier_"+i, "mush_ctz_"+(4+rand(2)), "man", "mushketer", iRank, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
+			model = aCrewMushketer[nMushketerIndex].model;
+			ani = aCrewMushketer[nMushketerIndex].ani;
+			nMushketerIndex++;
+			sld = GetCharacter(NPC_GenerateCharacter("GuardOT_soldier_"+i, model, "man", ani, iRank, FRANCE, -1, false, "soldier"));
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl*2);
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("GuardOT_soldier_"+i, "citiz_"+(31+rand(9)), "man", "man", iRank, FRANCE, 1, true, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, RandPhraseSimple("blade_10","blade_11"), "pistol1", "bullet", iScl*2);
+			model = aCrewSoldier[nSoldierIndex].model;
+			ani = aCrewSoldier[nSoldierIndex].ani;
+			nSoldierIndex++;
+			sld = GetCharacter(NPC_GenerateCharacter("GuardOT_soldier_"+i, model, "man", ani, iRank, FRANCE, 1, true, "soldier"));
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 		}
 		LAi_CharacterDisableDialog(sld);
 		LAi_SetWarriorType(sld);
@@ -2991,13 +3068,13 @@ void GuardOT_FindArchyKey(string qName) // нашли ключ Арчи
 			sld = characterFromID("GuardOT_soldier_"+i);
 			if (!LAi_IsDead(sld))
 			{
-			    sld.lifeday = 0; 
+			    sld.lifeday = 0;
 			}
 	}
 }
 
 void GuardOT_WillySquadronSeaBattle(string qName) // эскадра Патерсона
-{ 
+{
 	bQuestDisableMapEnter = true;//закрыть карту
 	for (int i=1; i<=4; i++)
 	{
@@ -3016,7 +3093,7 @@ void GuardOT_WillySquadronSeaBattle(string qName) // эскадра Патерс
 	Group_SetTaskAttack("Willy_group", PLAYER_GROUP);
 	Group_SetPursuitGroup("Willy_group", PLAYER_GROUP);
 	Group_LockTask("Willy_group");
-	
+
 	pchar.quest.GuardOT_crabseabattle_AfterBattle.win_condition.l1 = "Group_Death";
 	pchar.quest.GuardOT_crabseabattle_AfterBattle.win_condition.l1.group = "Willy_group";
 	pchar.quest.GuardOT_crabseabattle_AfterBattle.function = "GuardOT_WillySquadronAfterBattle";
@@ -3030,7 +3107,7 @@ void GuardOT_WillySquadronAfterBattle(string qName) // победа!
 	DeleteAttribute(pchar, "GenQuest.CannotWait");//можно мотать время
 	// разрешаем генерацию офицеров по всему острову
 	for (i=0; i<MAX_LOCATIONS; i++)
-	{	
+	{
 		if (findsubstr(locations[i].id, "IslaDeVieques" , 0) != -1)
 		{
 			LAi_LocationDisableOfficersGen(locations[i].id, false);//офицеров пускать
@@ -3053,7 +3130,7 @@ void GuardOT_FindArrowWayCompas(string qName) // нашли компас
 	AddCharacterExpToSkill(pchar, "Fortune", 500);
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Jason----------------------------------- Коварный остров Ксочитэм ---------------------------------------
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Ksochitam_StartSearchIsland(string qName) // активация
@@ -3118,7 +3195,7 @@ void Ksochitam_FindShowScene(string qName) // сценка
 	AddCharacterExpToSkill(pchar, "Fortune", 200);
 }
 
-void Ksochitam_FindShowSceneEnd(string qName) // 
+void Ksochitam_FindShowSceneEnd(string qName) //
 {
 	locCameraResetState();
 	EndQuestMovie();
@@ -3150,7 +3227,7 @@ void Ksochitam_ArriveIsland(string qName) // вошли в локацию Ксо
 	AddQuestRecord("Ksochitam", "17");
 }
 
-void Ksochitam_ArriveRockshore(string qName) // 
+void Ksochitam_ArriveRockshore(string qName) //
 {
 	bQuestDisableMapEnter = true;//закрыть карту
 	pchar.GenQuest.MapClosedNoBattle = true;
@@ -3163,7 +3240,7 @@ void Ksochitam_ArriveRockshore(string qName) //
 	LAi_group_SetCheck("KSOCHITAM_MONSTERS", "OpenTheDoors");
 }
 
-void Ksochitam_Shoreship(string qName) // 
+void Ksochitam_Shoreship(string qName) //
 {
 	int iRank = 25+MOD_SKILL_ENEMY_RATE*2;
 	int iScl = 80;
@@ -3218,7 +3295,7 @@ void Ksochitam_SQInside(string qName) // внутри Санта-Квитери�
 	sld.MultiFighter = 1.0+fMft; // мультифайтер
 	GiveItem2Character(sld, "key_archy");
 	sld.SaveItemsForDead = true; // сохранять на трупе вещи
-	sld.DontClearDead = true; 
+	sld.DontClearDead = true;
 	sld.cirassId = Items_FindItemIdx("cirass1");
 	sld.monster = true;
 	ChangeCharacterAddressGroup(sld, "SantaQuiteriaInside", "goto", "goto1");
@@ -3310,18 +3387,18 @@ void Ksochitam_CreateMaldonadoSquadron(string qName)
 				iShip = SHIP_LINESHIP;
 				iCannon = CANNON_TYPE_CANNON_LBS36;
 			break;
-			
+
 			case 2:
 				if (MOD_SKILL_ENEMY_RATE > 4) iShip = SHIP_LINESHIP;
 				else iShip = SHIP_GALEON_H;
 				iCannon = CANNON_TYPE_CANNON_LBS32;
 			break;
-			
+
 			case 3:
 				iShip = SHIP_GALEON_H;
 				iCannon = CANNON_TYPE_CANNON_LBS24;
 			break;
-			
+
 			case 4:
 				iShip = SHIP_CORVETTE;
 				iCannon = CANNON_TYPE_CULVERINE_LBS18;
@@ -3347,7 +3424,7 @@ void Ksochitam_CreateMaldonadoSquadron(string qName)
 	Group_SetTaskAttack("Maldonado_group", PLAYER_GROUP);
 	Group_SetAddress("Maldonado_group", "Ksochitam", "quest_ships", "quest_ship_10");
 	Group_LockTask("Maldonado_group");
-	
+
 	pchar.quest.Ksochitam_Maldonadoshipsdie.win_condition.l1 = "Group_Death";
 	pchar.quest.Ksochitam_Maldonadoshipsdie.win_condition.l1.group = "Maldonado_group";
 	pchar.quest.Ksochitam_Maldonadoshipsdie.function = "Ksochitam_MaldonadoSquadronDie";
@@ -3473,7 +3550,7 @@ void Ksochitam_VinsentoLastLetterRead() // прочли письмо
 	SetFunctionTimerCondition("Tieyasal_VinsentoChapelOver", 0, 0, 15, false); // таймер
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Jason----------------------------------- Древний город майя --------------------------------------------
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Tieyasal_VinsentoChapelOver(string qName) // отказались проходить квест
@@ -3499,7 +3576,7 @@ void Tieyasal_TotalOver(string qName)
 	else DoQuestFunctionDelay("Tieyasal_TimeOver", 1.0);
 }
 
-void Tieyasal_TimeOver(string qName) // 
+void Tieyasal_TimeOver(string qName) //
 {
 	GetCharacterPos(pchar, &locx, &locy, &locz);
 	sTotalTemp = LAi_FindNearestLocator("reload", locx, locy, locz);
@@ -3511,19 +3588,19 @@ void Tieyasal_TimeOver(string qName) //
 	DoQuestFunctionDelay("Tieyasal_TimeOverMusic", 1.5);
 }
 
-void Tieyasal_TimeOverMusic(string qName) // 
+void Tieyasal_TimeOverMusic(string qName) //
 {
 	SetMusic("music_teleport");
 }
 
-void Tieyasal_TimeOverContinue_1(string qName) // 
+void Tieyasal_TimeOverContinue_1(string qName) //
 {
 	PlaySound("Weather\Thunder_Q.wav");
 	CreateLocationParticles("fire_incas", "reload", sTotalTemp, 0.5, 0, 0, "");
 	DoQuestFunctionDelay("Tieyasal_TimeOverContinue_2", 7.0);
 }
 
-void Tieyasal_TimeOverContinue_2(string qName) // 
+void Tieyasal_TimeOverContinue_2(string qName) //
 {
 	PlaySound("Weather\Thunder_Q.wav");
 	PlaySound("Ambient\Teno_inside\big_ring.wav");
@@ -3533,7 +3610,7 @@ void Tieyasal_TimeOverContinue_2(string qName) //
 	DoQuestFunctionDelay("Tieyasal_TimeOverContinue_3", 7.0);
 }
 
-void Tieyasal_TimeOverContinue_3(string qName) // 
+void Tieyasal_TimeOverContinue_3(string qName) //
 {
 	RemoveAllCharacterItems(pchar, true);
 	GiveItem2Character(pchar, "blade_13");
@@ -3604,17 +3681,17 @@ void Tieyasal_CreateITShips(string qName) // ставим корабли у Ис
 				iShip = SHIP_LINESHIP;
 				iCannon = CANNON_TYPE_CANNON_LBS32;
 			break;
-			
+
 			case 2:
 				iShip = SHIP_FRIGATE;
 				iCannon = CANNON_TYPE_CANNON_LBS24;
 			break;
-			
+
 			case 3:
 				iShip = SHIP_BRIG;
 				iCannon = CANNON_TYPE_CANNON_LBS16;
 			break;
-			
+
 			case 4:
 				iShip = SHIP_SHNYAVA;
 				iCannon = CANNON_TYPE_CANNON_LBS16;
@@ -3644,7 +3721,7 @@ void Tieyasal_CreateITShips(string qName) // ставим корабли у Ис
 	Group_SetTaskAttack("ITDichoso_group", PLAYER_GROUP);
 	Group_SetAddress("ITDichoso_group", "Bermudes", "quest_ships", "quest_ship_6");
 	Group_LockTask("ITDichoso_group");
-	
+
 	pchar.quest.Tieyasal_ITShipsDie.win_condition.l1 = "Group_Death";
 	pchar.quest.Tieyasal_ITShipsDie.win_condition.l1.group = "ITDichoso_group";
 	pchar.quest.Tieyasal_ITShipsDie.function = "Tieyasal_ITShipsDie";
@@ -3689,12 +3766,37 @@ void Tieyasal_ArriveToNevis(string qName) // прибыли на Сент-Кри
 	int iScl = 70;
 	iTotalTemp = 6;
 	if (CheckAttribute(pchar, "questTemp.Tieyasal.MigelKnow")) iTotalTemp = 14;
+
+
+	object aCrewSoldier[1];
+	SetArraySize(&aCrewSoldier, iTotalTemp - 3);
+	GenerateCrew(pchar, "soldier", &aCrewSoldier);
+	int nSoldierIndex = 0;
+
+	object aCrewMushketer[2];
+	GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+	int nMushketerIndex = 0;
+
+	object aCrewCaptain[1];
+	GenerateCrew(pchar, "captain", &aCrewCaptain);
+
+	string model;
+	string ani;
+
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
+
+	object aSoldierCapo[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_ELITE, &aSoldierCapo, nullptr);
 	for (int i=1; i<=iTotalTemp; i++)
 	{
 		if (i == 1)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Tieyasal_Oursoldier_"+i, "mercen_24", "man", "man", iRank+5, FRANCE, -1, true, "soldier"));
-			FantomMakeCoolFighter(sld, iRank+5, iScl+5, iScl+5, "blade_21", "pistol4", "bullet", iScl*2+100);
+			model = aCrewCaptain[0].model;
+			ani = aCrewCaptain[0].ani;
+			sld = GetCharacter(NPC_GenerateCharacter("Tieyasal_Oursoldier_"+i, model, "man", ani, iRank+5, FRANCE, -1, true, "soldier"));
+			FantomMakeCoolFighterForRef(sld, iRank+5, iScl+5, iScl+5, &aSoldierCapo, iScl*2+100);
 			sld.dialog.FileName = "Quest\Sharlie\OtherNPC.c";
 			sld.dialog.currentnode = "newcastle_officer";
 			if (CheckAttribute(pchar, "questTemp.Tieyasal.MigelKnow")) sld.dialog.currentnode = "newcastle_officer_0";
@@ -3703,13 +3805,19 @@ void Tieyasal_ArriveToNevis(string qName) // прибыли на Сент-Кри
 		{
 			if (i == 2 || i == 3)
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("Tieyasal_Oursoldier_"+i, "mush_ctz_"+(4+rand(2)), "man", "mushketer", iRank, FRANCE, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2+50);
+				model = aCrewMushketer[nMushketerIndex].model;
+				ani = aCrewMushketer[nMushketerIndex].ani;
+				nMushketerIndex++;
+				sld = GetCharacter(NPC_GenerateCharacter("Tieyasal_Oursoldier_"+i, model, "man", ani, iRank, FRANCE, -1, false, "soldier"));
+				FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl*2);
 			}
 			else
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("Tieyasal_Oursoldier_"+i, "citiz_"+(31+rand(9)), "man", "man", iRank, FRANCE, -1, true, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, iScl, iScl, RandPhraseSimple("blade_10","blade_11"), "pistol1", "bullet", iScl*2+50);
+				model = aCrewSoldier[nSoldierIndex].model;
+				ani = aCrewSoldier[nSoldierIndex].ani;
+				nSoldierIndex++;
+				sld = GetCharacter(NPC_GenerateCharacter("Tieyasal_Oursoldier_"+i, model, "man", ani, iRank, FRANCE, -1, true, "soldier"));
+				FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 			}
 			LAi_CharacterDisableDialog(sld);
 		}
@@ -3913,7 +4021,7 @@ void Tieyasal_CalendarDone(string qName) // календарь готов
 	sld.dialog.currentnode = "calendar_28";
 }
 
-void Tieyasal_SetUrakanItzaWarrior(string qName) 
+void Tieyasal_SetUrakanItzaWarrior(string qName)
 {
 	LAi_group_Delete("TMP_FRIEND");
 	pchar.GenQuest.CannotWait = true;//запрет ожидания
@@ -4113,7 +4221,7 @@ void Tieyasal_TempleFightGuard(string qName) // драка с гардами и�
 void Tieyasal_TempleDefendActivation() // защита
 {
 	LAi_ApplyCharacterDamage(pchar, 100, "other", true);
-	LAi_CheckKillCharacter(pchar);			
+	LAi_CheckKillCharacter(pchar);
 	GetCharacterPos(pchar, &locx, &locy, &locz);
 	string locator = LAi_FindNearestLocator("rld", locx, locy, locz);
 	ChangeCharacterAddressGroup(pchar, "Temple_great", "rld", locator);
@@ -4173,7 +4281,7 @@ void Tieyasal_ThirdFloorActivate(string qName) // активация боя на
 		LAi_group_MoveCharacter(sld, "ITZA");
 	}
 	LAi_group_SetRelation("ITZA", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-	LAi_group_FightGroups("ITZA", LAI_GROUP_PLAYER, true);	
+	LAi_group_FightGroups("ITZA", LAI_GROUP_PLAYER, true);
 	//LAi_group_SetCheck("EnemyFight", "Tieyasal_FloorWarriorDie");
 }
 
@@ -4225,7 +4333,7 @@ void Tieyasal_PrepareToWinBattle()
 		LAi_SetImmortal(sld, true);
 		LAi_group_MoveCharacter(sld, "TMP_FRIEND");
 	}
-	
+
 	// входит Канек
 	sld = characterFromId("Kanek");
 	ChangeCharacterAddressGroup(sld, "Temple_great", "quest", "detector3");
@@ -4411,7 +4519,7 @@ void Tieyasal_FindTabletChak(string qName) // нашли скрижаль Чак
 	sld.shown = "0";
 }
 
-void Tieyasal_UrakanInTemple(string qName) // 
+void Tieyasal_UrakanInTemple(string qName) //
 {
 	for(int i=1; i<=12; i++)
 	{
@@ -4434,7 +4542,7 @@ void Tieyasal_UrakanInTemple(string qName) //
 	ChangeCharacterAddressGroup(sld, "Temple_great", "quest", "urakan");
 }
 
-void Tieyasal_FindTreasureEntrance(string qName) // 
+void Tieyasal_FindTreasureEntrance(string qName) //
 {
 	sld = characterFromId("Urakan");
 	sld.quest.treasureentrance = "true";
@@ -4612,7 +4720,7 @@ void Tieyasal_Win_TempleFinal(string qName)
 	AddQuestRecord("Tieyasal", "29");
 	// очищаем джунгли от засад ица
 	for (i=0; i<MAX_LOCATIONS; i++)
-	{				
+	{
 		if (CheckAttribute(&locations[i], "ItzaLand"))
 		{
 			DeleteAttribute(&locations[i], "ItzaLand");
@@ -4627,7 +4735,7 @@ void Tieyasal_Win_TempleFinal(string qName)
 	pchar.quest.Tieyasal_Returnshore.win_condition.l1.location = "Shore_ship2";
 	pchar.quest.Tieyasal_Returnshore.function = "Tieyasal_InSeaShore";
 	pchar.questTemp.Tieyasal = "home";
-	pchar.GenQuest.Hunter2Pause = true; 
+	pchar.GenQuest.Hunter2Pause = true;
 }
 
 void Tieyasal_InSeaShore(string qName) // победный финал
@@ -4638,21 +4746,27 @@ void Tieyasal_InSeaShore(string qName) // победный финал
 	RemoveItems(pchar, "stonekey", 1);
 	pchar.questTemp.Tieyasal_final = "true";
 	if (CheckAttribute(pchar, "questTemp.Tieyasal.Teleport")) DoQuestFunctionDelay("Tieyasal_InSeaShoreTime", 1.2);
-	else DoQuestFunctionDelay("Tieyasal_InSeaShore_Continue", 0.5);
+	else DoQuestCheckDelay("Final_StayInCarribean", 0.5);
+	// Таймер на Эпилог (если жены нет)
+	if (!CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && !CheckAttribute(pchar, "questTemp.LSC.Mary_officer"))
+	{
+		SetFunctionTimerCondition("SharlieEpilog_Start", 0, 0, 30, false);
+		pchar.questTemp.SharlieEpilog_Start = true;
+	}
 }
 
 void Tieyasal_InSeaShoreTime(string qName)
 {
 	SetLaunchFrameFormParam(StringFromKey("SharlieFinal_63", NewStr()), "", 0, 5);
-	WaitDate("", 0, 0, 7, 3, 10); 
+	WaitDate("", 0, 0, 7, 3, 10);
 	LaunchFrameForm();
 	RefreshLandTime();
 	RecalculateJumpTable();
 	Whr_UpdateWeather();
-	DoQuestFunctionDelay("Tieyasal_InSeaShore_Continue", 5.5);
+	DoQuestCheckDelay("Final_StayInCarribean", 0.5);
 }
 
-void Tieyasal_InSeaShore_Continue(string qName) // победный финал 
+void Tieyasal_InSeaShore_Continue(string qName) // победный финал
 {
 	StartQuestMovie(true, false, true);
 	LAi_SetActorType(pchar);
@@ -4672,9 +4786,9 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 	int iTemp, i, n, idx, iRank, iScl, iAddTime;
     float locx, locy, locz, fMft;
 	string sTemp;
-	
+
 	bool condition = true;
-	
+
 	if (sQuestName == "Terrapin_LevasserCaveDied")
 	{
 		LAi_group_Delete("EnemyFight");
@@ -4682,7 +4796,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		AddQuestRecord("Terrapin", "10");
 		pchar.questTemp.Terrapin = "done";
 		sld = characterFromId("Tortuga_Mayor");
-		LAi_NoRebirthEnable(sld); // респавнился, гад 
+		LAi_NoRebirthEnable(sld); // респавнился, гад
 		pchar.questTemp.Sharlie.DelTerGuard = "true"; // убираем пиратскую эскадру
 		ChangeCharacterComplexReputation(pchar, "authority", 10);
 		ChangeOfficersLoyality("good_all", 2);
@@ -4748,14 +4862,14 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		pchar.GenQuest.CannotWait = true;//запрет ожидания
 		n = Findlocation("Tortuga_town");
 		locations[n].models.always.roof_details = "Margarita_GPK_roof_details";  //Экку Korsar - выставляем детали для бега по крыше от новой Маргариты
-		locations[n].models.day.charactersPatch = "Margarita_patch_roof"; 
+		locations[n].models.day.charactersPatch = "Margarita_patch_roof";
 		locations[n].models.night.charactersPatch = "Margarita_patch_roof"; // подменяем патч для персонажа
 		LAi_LocationDisableOfficersGen("Tortuga_Town", true);//офицеров не пускать
 		pchar.questTemp.Terrapin = "roof";
 		DoQuestCheckDelay("hide_weapon", 1.0);//убрать оружие
 		DoQuestCheckDelay("TalkSelf_Quest", 1.0);
 		sld = characterFromId("Tortuga_Mayor");
-		LAi_NoRebirthEnable(sld); // респавнился, гад 
+		LAi_NoRebirthEnable(sld); // респавнился, гад
 		pchar.questTemp.Sharlie.DelTerGuard = "true"; // убираем пиратскую эскадру
 		ChangeCharacterComplexReputation(pchar, "authority", 10);
 		ChangeOfficersLoyality("good_all", 2);
@@ -4798,10 +4912,10 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		LAi_KillCharacter(sld);
 		DoQuestCheckDelay("Terrapin_GirlShot_1", 1.5);
 	}
-	else if (sQuestName == "Terrapin_GirlShot_1") // 
+	else if (sQuestName == "Terrapin_GirlShot_1") //
 	{
 		LAi_SetActorType(pchar);
-		LAi_ActorTurnToLocator(pchar, "quest", "mushketer2"); 
+		LAi_ActorTurnToLocator(pchar, "quest", "mushketer2");
 		sld = CharacterFromID("TerrapinMush2");
 		LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "shot", "Terrapin_SecondShot", 1.0);
@@ -4845,7 +4959,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		LAi_group_Delete("EnemyFight");
 		chrDisableReloadToLocation = false;//открыть локацию
 		sld = characterFromId("Tortuga_Mayor");
-		LAi_NoRebirthEnable(sld); // респавнился, гад 
+		LAi_NoRebirthEnable(sld); // респавнился, гад
 		pchar.questTemp.Sharlie.DelTerGuard = "true"; // убираем пиратскую эскадру
 		ChangeCharacterComplexReputation(pchar, "authority", 5);
 		ChangeOfficersLoyality("good_all", 1);
@@ -4861,7 +4975,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		PChar.GenQuest.VideoAfterQuest = "DefendSP_continueSiege";
 		DoQuestCheckDelay("PostVideo_Start", 0.2);
 	}
-	else if (sQuestName == "DefendSP_continueSiege") 
+	else if (sQuestName == "DefendSP_continueSiege")
 	{
 		DoQuestReloadToLocation("Shore38", "reload", "sea", "DefendSP_SetInJungle");
 		setCharacterShipLocation(pchar, "Shore38");
@@ -4876,12 +4990,35 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		// устанавливаем солдат ГГ, 12 рыл+офицер
 		iRank = 25+MOD_SKILL_ENEMY_RATE*2;
 		iScl = 60;
+
+		object aCrewSoldier[10];
+		GenerateCrew(pchar, "soldier", &aCrewSoldier);
+		int nSoldierIndex = 0;
+
+		object aCrewMushketer[2];
+		GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+		int nMushketerIndex = 0;
+
+		object aCrewCaptain[1];
+		GenerateCrew(pchar, "captain", &aCrewCaptain);
+
+		string model;
+		string ani;
+
+		object aSoldier[1];
+		object aMushketers[1];
+		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
+
+		object aSoldierCapo[1];
+		GenerateItemsForCharacter(pchar, ITEM_PACK_ELITE, &aSoldierCapo, nullptr);
 		for (i=0; i<=12; i++)
 		{
 			if (i == 0)
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("DefendSP_soldier_"+i, "mercen_26", "man", "man", iRank+5, FRANCE, -1, true, "soldier"));
-				FantomMakeCoolFighter(sld, iRank+5, iScl+5, iScl+5, "blade_13", "pistol4", "bullet", iScl*2+100);
+				model = aCrewCaptain[0].model;
+				ani = aCrewCaptain[0].ani;
+				sld = GetCharacter(NPC_GenerateCharacter("DefendSP_soldier_"+i, model, "man", ani, iRank+5, FRANCE, -1, true, "soldier"));
+				FantomMakeCoolFighterForRef(sld, iRank+5, iScl+5, iScl+5, &aSoldierCapo, iScl*2+100);
 				sld.name = StringFromKey("SharlieFinal_64");
 				sld.lastname = StringFromKey("SharlieFinal_65");
 				sld.dialog.FileName = "Quest\Sharlie\OtherNPC.c";
@@ -4891,13 +5028,19 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 			{
 				if (i == 9 || i == 12)
 				{
-					sld = GetCharacter(NPC_GenerateCharacter("DefendSP_soldier_"+i, "mush_ctz_"+(4+rand(2)), "man", "mushketer", iRank, FRANCE, -1, false, "soldier"));
-					FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket2", "bullet", iScl*2);
+					model = aCrewMushketer[nMushketerIndex].model;
+					ani = aCrewMushketer[nMushketerIndex].ani;
+					nMushketerIndex++;
+					sld = GetCharacter(NPC_GenerateCharacter("DefendSP_soldier_"+i, model, "man", ani, iRank, FRANCE, -1, false, "soldier"));
+					FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl*2);
 				}
 				else
 				{
-					sld = GetCharacter(NPC_GenerateCharacter("DefendSP_soldier_"+i, "citiz_"+(31+rand(9)), "man", "man", iRank, FRANCE, -1, true, "soldier"));
-					FantomMakeCoolFighter(sld, iRank, iScl, iScl, RandPhraseSimple("blade_10","blade_11"), "pistol1", "bullet", iScl*2);
+					model = aCrewSoldier[nSoldierIndex].model;
+					ani = aCrewSoldier[nSoldierIndex].ani;
+					nSoldierIndex++;
+					sld = GetCharacter(NPC_GenerateCharacter("DefendSP_soldier_"+i, model, "man", ani, iRank, FRANCE, -1, true, "soldier"));
+					FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 				}
 				LAi_CharacterDisableDialog(sld);
 			}
@@ -6915,7 +7058,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 	}
-	else if (sQuestName == "Tieyasal_FinalChoise")
+	else if (sQuestName == "Tieyasal_FinalChoise")  // 26.12.2025 Не активно - ачивки преренесены в эпилог
 	{
 		if(MOD_SKILL_ENEMY_RATE > 9) Achievment_Set("ach_CL_103");
 		if(CheckAttribute(pchar,"questTemp.HorseQty") && sti(pchar.questTemp.HorseQty) < 1)
@@ -6932,26 +7075,22 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 	{
 		EndQuestMovie();
 		Achievment_Set("ach_48");
-		pchar.GenQuest.VideoAVI = "Outro_home";
-		pchar.GenQuest.VideoAfterQuest = "Final_Credits";
-		DoQuestCheckDelay("PostVideo_Start", 0.2);
+		//pchar.GenQuest.VideoAVI = "Outro_home";
+		//pchar.GenQuest.VideoAfterQuest = "Final_Credits";
+		DoQuestCheckDelay("Final_Credits", 0.2);
 	}
-	else if (sQuestName == "Final_StayInCarribean") // финал - остаемся
+	else if (sQuestName == "Final_StayInCarribean") // финал - остаемся UPD. andre39966 - остаёмся безальтернативно, проходим Эпилог
 	{
 		DeleteAttribute(pchar, "questTemp.Tieyasal_final");
 		DeleteAttribute(pchar, "questTemp.Dolly_Tieyasal"); // прогон 4
-		EndQuestMovie();
-		InterfaceStates.Buttons.Save.enable = true;
-		bDisableCharacterMenu = false;
-		CloseQuestHeader("Tieyasal");
+		//EndQuestMovie();
 		AddQuestRecord("Sharlie", "43");
-		CloseQuestHeader("Sharlie");
+		CloseQuestHeader("Tieyasal");
 		Achievment_Set("ach_48");
-		pchar.GenQuest.VideoAVI = "Outro_stay";
-		PChar.GenQuest.VideoAfterQuest = "Final_ReloadShore";
-		DoQuestCheckDelay("PostVideo_Start", 0.2);
+		//pchar.GenQuest.VideoAVI = "Outro_stay";
+		//PChar.GenQuest.VideoAfterQuest = "Final_ReloadShore";
+		//DoQuestCheckDelay("Final_ReloadShore", 0.2);
 		pchar.questTemp.Tieyasal_WinEnd = "true"; // patch-9
-		Achievment_Set("ach_48");
 		SetFunctionTimerCondition("LongHappy_Prepare", 0, 0, 1, false); // belamour legendary edition
 	}
 	else if (sQuestName == "Final_Credits")

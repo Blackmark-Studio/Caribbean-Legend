@@ -851,6 +851,7 @@ int LocationInitNevis(int n)
 	//Sound
 	locations[n].type = "House";
 	locations[n].islandId = "Nevis";
+	locations[n].fastreload = "Charles";
 	//Models
 	//Always
 	locations[n].models.always.house = "mediumhouse07";
@@ -893,12 +894,14 @@ int LocationInitNevis(int n)
 	locations[n].id = "Charles_houseS3";
 	locations[n].id.label = "House";
 	locations[n].image = "loading\inside\largehouse01.tga";
+	locations[n].townsack = "Charles";
 	//Town sack
-	locations[n].townsack = "";
+	locations[n].townsack = "Charles";
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "house";
-	locations[n].fastreload = "";
+	locations[n].islandId = "Nevis";
+	locations[n].fastreload = "Charles";
 	//Models
 	//Always
 	locations[n].filespath.models = "locations\inside\largehouse01";

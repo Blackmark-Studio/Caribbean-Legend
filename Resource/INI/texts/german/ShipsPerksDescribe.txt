@@ -42,7 +42,8 @@ trait05 {Falsche Dokumente}
 trait05_desc {Ein beeindruckender Satz von Patenten, Dokumenten und Namensschildern ermöglicht es diesem Schiff, fast jeden Hafen inkognito anzulaufen, und der unauffällige Rumpf verringert das Risiko, bei Schmugglergeschäften auf Patrouillen zu treffen.}
 trait05_desc2
 {
-Erhöht die Täuschungschance: 15%.Verringert die Patrouillengefahr: 50%.
+Erhöht die Täuschungschance beim Anlegen am Tag um 15 %. 
+Verringert die Wahrscheinlichkeit einer Patrouillenbegegnung um 50 %.
 }
 trait11 {Drehbare Lafetten}
 trait11_desc {Die Kanonenpforten und Lafetten wurden speziell umgebaut, wodurch sich der Schusssektor der Kanonen vergrößert.}
@@ -110,5 +111,5 @@ sp3_SurrenderChanceBonus_desc {Kapitulationschance erhöht: #dSurrenderChanceBon
 sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 gefallene Matrosen)}
 sp4 {Piratenjäger}
 sp4_desc {Dieses Schiff wurde speziell dafür gebaut, die Meere von Piraten zu säubern. Mit jedem versenkten Schiff wächst der Zusammenhalt der Crew, die Geschütze werden präziser und der Fanatismus des Kapitäns deutlicher.}
-sp4_desc2 {Jedes zerstörte Piratenschiff erhöht dauerhaft Wendigkeit, Schussreichweite, Geschwindigkeit auf der Weltkarte und die Nachladegeschwindigkeit der Geschütze. Aktueller Bonus: $percent($attr($context.tuning.modifiers.shipSpeed.trait_SP4)) von 15. ~ Je niedriger die Piratenbedrohung, desto geringer die Unterhaltskosten des Schiffs. Aktueller Bonus: $percent($attr($context.tuning.modifiers.shipSpeed.trait_SP4)) von 40.}
+sp4_desc2 {Jedes zerstörte Piratenschiff erhöht dauerhaft Wendigkeit, Schussreichweite, Geschwindigkeit auf der Weltkarte und die Nachladegeschwindigkeit der Geschütze. Aktueller Bonus: $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) von 15. ~ Je niedriger die Piratenbedrohung, desto geringer die Unterhaltskosten des Schiffs. Aktueller Bonus: $percent($GetAmsterdamMtp( )) von 40.}
 SpecialityUpgrade {Von der HWIC verbessert}

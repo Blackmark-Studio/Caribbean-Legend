@@ -1126,7 +1126,7 @@ void ProcessDialogEvent()
 			//--> Jason Доставка молитвенников
 			if (CheckAttribute(pchar, "GenQuest.Churchbooks") && pchar.GenQuest.Churchbooks == "go" && sti(npchar.nation) == sti(pchar.GenQuest.Churchbooks.Nation) && npchar.city != pchar.GenQuest.Churchbooks.StartCity)
 			{
-	            link.l11 = "Padre, je viens de la colonie de "+XI_ConvertString("Colonie"+pchar.GenQuest.Churchbooks.StartCity)+"  L'église locale a besoin de plus de livres de prières, et un moine local a suggéré de vous voir à ce sujet. ";
+	            link.l11 = "Padre, je viens de la colonie de "+XI_ConvertString("Colony"+pchar.GenQuest.Churchbooks.StartCity)+"  L'église locale a besoin de plus de livres de prières, et un moine local a suggéré de vous voir à ce sujet. ";
 	            link.l11.go = "Churchbooks";
             }
 			if (CheckAttribute(pchar, "GenQuest.Churchbooks") && pchar.GenQuest.Churchbooks == "return" && npchar.city == pchar.GenQuest.Churchbooks.StartCity)
@@ -1168,7 +1168,7 @@ void ProcessDialogEvent()
 		case "GenQuest_Church_1_Start_2":
 			PChar.GenQuest.ChurchQuest_1.QuestTown = NPChar.City;
 			Church_GenQuest1_InitStartParam(NPChar);
-			dialog.text = "Oh! Bon... Mais, encore une fois, c'est une affaire très délicate... Il y a quelque temps, le père supérieur "+PChar.GenQuest.ChurchQuest_1.ToName+" de "+XI_ConvertString("Colonie"+PChar.GenQuest.ChurchQuest_1.ToColony+"Gen")+" sur "+XI_ConvertString(PChar.GenQuest.ChurchQuest_1.ToIsland+"Voc")+"a emprunté quelques ouvrages théologiques et manuscrits anciens d'une bibliothèque d'église pour moi pendant un certain temps. Parce que la demande était soutenue par l'insistance de l'archevêque à ne pas empêcher la diffusion de la charmante lumière de la connaissance, je ne pouvais pas refuser, même si je supposais que les difficultés des voyages en mer ne lui permettraient pas de retourner les manuscrits à temps... Pourriez-vous m'aider à résoudre ce problème ?";
+			dialog.text = "Oh! Bon... Mais, encore une fois, c'est une affaire très délicate... Il y a quelque temps, le père supérieur "+PChar.GenQuest.ChurchQuest_1.ToName+" de "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_1.ToColony+"Gen")+" sur "+XI_ConvertString(PChar.GenQuest.ChurchQuest_1.ToIsland+"Voc")+"a emprunté quelques ouvrages théologiques et manuscrits anciens d'une bibliothèque d'église pour moi pendant un certain temps. Parce que la demande était soutenue par l'insistance de l'archevêque à ne pas empêcher la diffusion de la charmante lumière de la connaissance, je ne pouvais pas refuser, même si je supposais que les difficultés des voyages en mer ne lui permettraient pas de retourner les manuscrits à temps... Pourriez-vous m'aider à résoudre ce problème ?";
 			link.l1 = "J'ai bien peur, "+LinkRandPhrase("Père","père","saint Père")+", je ne pourrai pas faire cela pour vous. C'est une affaire très délicate, et seul un véritable diplomate réussirait à la régler.";
 			link.l1.go = "exit";
 			link.l2 = LinkRandPhrase("Père","Mon père","Père")+", votre mission ne me semble pas trop compliquée. J'y vais tout de suite.";
@@ -1207,7 +1207,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "GenQuest_Church_1_Dialog_1_1": // Сцена 2а
-			dialog.text = "Je comprends, mon enfant, mais ne prions-nous pas notre Seigneur chaque jour : 'et pardonne-nous nos offenses, comme nous pardonnons aussi à ceux qui nous ont offensés'? Et l'église de "+XI_ConvertString("Colonie"+PChar.GenQuest.ChurchQuest_1.QuestTown+"Gen")+"plus riche que ma modeste paroisse.";
+			dialog.text = "Je comprends, mon enfant, mais ne prions-nous pas notre Seigneur chaque jour : 'et pardonne-nous nos offenses, comme nous pardonnons aussi à ceux qui nous ont offensés'? Et l'église de "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_1.QuestTown+"Gen")+"plus riche que ma modeste paroisse.";
 			link.l1 = "Vous avez certainement raison, Père, mais je viens de penser à d'autres lignes des Saintes Écritures : 'ne cherchez pas un chemin facile, car c'est là que le Diable nous attend, et sa voix est d'autant plus subtile et la tentation d'autant plus forte, que le chemin est facile !' Et padre "+PChar.GenQuest.ChurchQuest_1.PriestName+" avait déjà l'intention d'envoyer un message concernant votre oubli à l'archevêque - je viens juste de le dissuader de le faire.";
 			link.l1.go = "GenQuest_Church_1_Dialog_1_1_1";
 		break;
@@ -1259,7 +1259,7 @@ void ProcessDialogEvent()
 			
 			if(CheckAttribute(PChar, "GenQuest.ChurchQuest_1.2BA_Scene")) // Сцена 2б-а
 			{
-				dialog.text = "Mais, "+GetSexPhrase("mon fils","ma fille")+"... Vous voyez, la chose est que la semaine dernière, j'ai rencontré un capitaine du navire '"+sld.Ship.Name+"où j'ai été appelé pour administrer la communion d'un marin mourant. À ma grande joie, capitaine "+GetFullName(sld)+" m'a dit qu'il allait "+XI_ConvertString("Colonie"+GetColonyExpect2Colonies(NPChar.city,PChar.GenQuest.ChurchQuest_1.QuestTown))+". Et bien qu'il n'ait garanti aucune condition, il a tout de même accepté d'aider et m'a assuré que le port de "+XI_ConvertString("Colonie"+PChar.GenQuest.ChurchQuest_1.QuestTown+"Gen")+" il viendra certainement. Alors j'ai profité de cette occasion, j'ai envoyé des livres avec cet homme bon et j'ai confié leur avenir au Seigneur.";
+				dialog.text = "Mais, "+GetSexPhrase("mon fils","ma fille")+"... Vous voyez, la chose est que la semaine dernière, j'ai rencontré un capitaine du navire '"+sld.Ship.Name+"où j'ai été appelé pour administrer la communion d'un marin mourant. À ma grande joie, capitaine "+GetFullName(sld)+" m'a dit qu'il allait "+XI_ConvertString("Colony"+GetColonyExpect2Colonies(NPChar.city,PChar.GenQuest.ChurchQuest_1.QuestTown))+". Et bien qu'il n'ait garanti aucune condition, il a tout de même accepté d'aider et m'a assuré que le port de "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_1.QuestTown+"Gen")+" il viendra certainement. Alors j'ai profité de cette occasion, j'ai envoyé des livres avec cet homme bon et j'ai confié leur avenir au Seigneur.";
 				link.l1 = "Hmm, es-tu sûr que ce capitaine est digne de confiance ? A-t-il compris la valeur des oeuvres qui lui ont été confiées et l'importance de cette mission ?";
 				link.l1.go = "GenQuest_Church_1_Dialog_1_2_1";
 			}
@@ -1348,13 +1348,13 @@ void ProcessDialogEvent()
 			TakeNItems(pchar, "chest", 3+hrand(1));
 			PlaySound("interface\important_item.wav");
 			sQuestTitle = NPChar.City + "ChurchGenQuest1";
-			characters[GetCharacterIndex("ChurchGenQuest1_Cap")].LifeDay = 0;
+			if (GetCharacterIndex("ChurchGenQuest1_Cap") != -1) characters[GetCharacterIndex("ChurchGenQuest1_Cap")].LifeDay = 0;
 			Group_DeleteGroup("ChurchGenQuest1_CapGroup"); // Трем кэпа
 			PChar.Quest.Church_GenQuest1_ChangeCapitanLocation.over = true; // Завершаем, если вдруг осталось
 			AddQuestRecordEx(sQuestTitle, "ChurchGenQuest1", "7");
 			AddQuestUserData(sQuestTitle, "sSex", GetSexPhrase("",""));
 			AddQuestUserData(sQuestTitle, "sColony", XI_ConvertString("Colony" + NPChar.City + "Gen"));
-			AddQuestUserData(sQuestTitle, "sSumm", FindRussianMoneyString(sti(PChar.GenQuest.ChurchQuest_1.AwardSumm)));
+			
 			CloseQuestHeader(sQuestTitle);
 			DeleteAttribute(PChar, "GenQuest.ChurchQuest_1");
 			NPChar.GenQuest.ChurchQuest_1.GiveQuestDateParam = iMonth;
@@ -1592,7 +1592,7 @@ void ProcessDialogEvent()
 		
 		//--> Jason Доставить молитвенники
 		case "Churchbooks":
-			dialog.text = "Vous avez été envoyé pour prendre des livres de prières chez nous - pour l'église de "+XI_ConvertString("Colonie"+pchar.GenQuest.Churchbooks.StartCity+"Gen")+"? Eh bien. J'ai un colis contenant trente livres de prières. Prends-le, mon fils.";
+			dialog.text = "Vous avez été envoyé pour prendre des livres de prières chez nous - pour l'église de "+XI_ConvertString("Colony"+pchar.GenQuest.Churchbooks.StartCity+"Gen")+"? Eh bien. J'ai un colis contenant trente livres de prières. Prends-le, mon fils.";
 			link.l1 = "Merci, padre. Au revoir !";
 			link.l1.go = "Churchbooks_1";
 		break;

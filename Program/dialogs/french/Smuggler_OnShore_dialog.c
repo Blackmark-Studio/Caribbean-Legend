@@ -68,7 +68,7 @@ void ProcessDialogEvent()
 				//по заданию губернатора, истребление контры, только эта ветка.
 				if (CheckAttribute(pchar, "GenQuest.KillSmugglers") && pchar.GenQuest.KillSmugglers == "" && pchar.GenQuest.KillSmugglers.Areal == GiveArealByLocation(&locations[FindLocation(pchar.location)]))				
 				{
-					Link.l2 = "Je suis ici sur ordre du gouverneur de "+XI_ConvertString("Colonie"+characters[GetCharacterIndex(pchar.GenQuest.KillSmugglers.MayorId)].city+"Gén")+"! Déposez vos armes et suivez-moi, vous êtes arrêté!";
+					Link.l2 = "Je suis ici sur ordre du gouverneur de "+XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.KillSmugglers.MayorId)].city+"Gen")+"! Déposez vos armes et suivez-moi, vous êtes arrêté!";
 					Link.l2.go = "GenQuestKillContraband_1";
 				}
 			}
@@ -82,7 +82,7 @@ void ProcessDialogEvent()
 					//по заданию губернатора, истребление контры, только эта ветка.
 					if (CheckAttribute(pchar, "GenQuest.KillSmugglers") && pchar.GenQuest.KillSmugglers == "" && pchar.GenQuest.KillSmugglers.Areal == GiveArealByLocation(&locations[FindLocation(pchar.location)]))
 					{
-						Link.l1 = "Je suis ici sur les ordres du gouverneur de "+XI_ConvertString("Colonie"+characters[GetCharacterIndex(pchar.GenQuest.KillSmugglers.MayorId)].city+"Gen")+"! Baissez vos armes et suivez-moi, vous êtes arrêté !";
+						Link.l1 = "Je suis ici sur les ordres du gouverneur de "+XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.KillSmugglers.MayorId)].city+"Gen")+"! Baissez vos armes et suivez-moi, vous êtes arrêté !";
 						Link.l1.go = "GenQuestKillContraband_1";
 						break;
 					}

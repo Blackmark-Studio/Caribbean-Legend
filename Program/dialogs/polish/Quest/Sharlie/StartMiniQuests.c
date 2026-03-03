@@ -221,7 +221,7 @@ void ProcessDialogEvent()
 			pchar.quest.storehelper4.win_condition.l1 = "location";
 			pchar.quest.storehelper4.win_condition.l1.location = "FortFrance_store";
 			pchar.quest.storehelper4.function = "NewstorehelperRegard";
-			AddQuestRecord("SharlieA", "4");
+			// AddQuestRecord("SharlieA", "4");
 			pchar.questTemp.Sharlie.Storehelper = "choise";
 			pchar.quest.storehelper.over = "yes"; //снять прерывание
 			
@@ -765,8 +765,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_noweapon":
-			dialog.text = "Monsieur, gdzie jest twój ostrze?";
-			link.l1 = "Zdaje się, że gdzieś to zgubiłem.";
+			dialog.text = "Monsieur, gdzie jest twoje ostrze?";
+			link.l1 = "Zdaje się, że gdzieś je zgubiłem.";
 			link.l1.go = "Prosper_noweapon_1";
 		break;
 		

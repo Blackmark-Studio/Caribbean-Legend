@@ -260,7 +260,7 @@ void LAi_CharacterFire()
 	float fAimingTime = GetEventData();	// evganat - прицеливание
 	
 	// belamour Берендейка стрельца
-	if (IsCharacterEquippedArtefact(attack, "talisman20"))
+	if (IsEquipCharacterByArtefact(attack, "talisman20"))
 	{
 		ref talisman = ItemsFromID("talisman20");
 		if(CheckAttribute(talisman, "durability"))
@@ -283,8 +283,7 @@ void LAi_CharacterFire()
 			}
 		}
 	}
-	
-	//Rosarak. Чем стреляли?
+
 	if(!CharUseMusket(attack))
 	{
 		sType = "gun";
@@ -789,8 +788,7 @@ void Location_CharacterFireShardEnd()
 {
 	string sBullet, sGunPowder, sType, weaponID;
 	aref attack = GetEventData();
-	
-	//Rosarak. Чем стреляли?
+
 	if(!CharUseMusket(attack))
 	{
 		sType = "gun";
@@ -858,6 +856,7 @@ int Event_CheckPowerBreak()
 {
 	aref attack = GetEventData();
 	if (attack.sex == "woman" || !HasPerk(&attack, "HardHitter")) return 0;
+	if (!HasHeavyWeapon(&attack)) return 0;
 	return 1;
 }
 

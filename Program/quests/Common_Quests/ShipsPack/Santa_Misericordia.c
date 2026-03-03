@@ -100,29 +100,7 @@ void SantaMisericordia_init()
 
 string SantaMisericordia_findColony(int stage);
 {
-	string OurColonies[22];
-    OurColonies[0] = "Havana";
-    OurColonies[1] = "Santiago";
-    OurColonies[2] = "PortRoyal";
-    OurColonies[3] = "Tortuga";
-    OurColonies[4] = "PortPax";
-    OurColonies[5] = "SantoDomingo";
-    OurColonies[6] = "SanJuan";
-    OurColonies[7] = "Marigo";
-    OurColonies[8] = "Charles";
-    OurColonies[9] = "SentJons";
-    OurColonies[10] = "BasTer";
-    OurColonies[11] = "FortFrance";
-    OurColonies[12] = "Bridgetown";
-    OurColonies[13] = "Villemstad";
-    OurColonies[14] = "PortSpein";
-    OurColonies[15] = "Cumana";
-    OurColonies[16] = "Caracas";
-    OurColonies[17] = "Maracaibo";
-    OurColonies[18] = "Cartahena";
-    OurColonies[19] = "PortoBello";
-    OurColonies[20] = "SantaCatalina";
-    OurColonies[21] = "Beliz";
+	string OurColonies[22] = {"Havana", "Santiago", "PortRoyal", "Tortuga", "PortPax", "SantoDomingo", "SanJuan", "Marigo", "Charles", "SentJons", "BasTer", "FortFrance", "Bridgetown", "Villemstad", "PortSpein", "Cumana", "Caracas", "Maracaibo", "Cartahena", "PortoBello", "SantaCatalina", "Beliz"};
 
     string SpanishColonies[22];
     int spanishCount = 0;
@@ -521,10 +499,10 @@ void SantaMisericordia_ChangeWhr()
 	pchar.questTemp.SantaMisericordia.ChangeWhr = true;
 	DeleteAttribute(&Islands[FindIsland(pchar.questTemp.SantaMisericordia_stormLocation)],"storm");
 	Seafoam.storm = "false";
-	WeatherParams.Rain.Duration  = 1000000; 				// затяжной дождь
-	WeatherParams.Rain.ThisDay 		= true;
-    WeatherParams.Rain.StartTime 	= MakeInt(GetHour());
-	DeleteAttribute(&WeatherParams,"Storm");
+	WeatherParams.Rain.Duration  = 1000000; // затяжной дождь
+	WeatherParams.Rain.ThisDay   = true;
+    WeatherParams.Rain.StartTime = MakeInt(GetHour());
+	DeleteAttribute(&WeatherParams, "Storm");
 	Whr_UpdateWeather();
 	//PauseAllSounds();
 	//ResetSound();

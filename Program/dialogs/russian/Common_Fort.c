@@ -438,7 +438,6 @@ void ProcessDialogEvent()
 				dialog.text = "Только подумать, какая наглость! Явиться сюда под видом торговца! Да твои портреты развешаны в каждой казарме, негодяй! Ну, теперь ты не уйдёшь! Хватай его!";
 				link.l1 = RandPhraseSimple("Аргх!..", "Ну, вы сами напросились...");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (findsubstr(pchar.location.from_sea, "_town" , 0) == -1) //если причалил не в городе
@@ -446,7 +445,6 @@ void ProcessDialogEvent()
 				dialog.text = "Вы прибыли сюда торговать? Позвольте спросить - на чём? Где ваш корабль? Всё это очень подозрительно - я вынужден вас задержать до выяснения. Сдайте оружие и следуйте за мной!";
 				link.l1 = RandPhraseSimple("Как бы не так!", "После дождичка, в четверг...");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (iTemp == -1)
@@ -454,7 +452,6 @@ void ProcessDialogEvent()
 				dialog.text = "Ваша лицензия подлежит изъятию, так как просрочена и поэтому недействительна. Сдайте оружие и следуйте за мной для последующих разбирательств!";
 				link.l1 = RandPhraseSimple("Как бы не так!", "После дождичка, в четверг...");
 				link.l1.go = "fight";	
-				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (iTemp == 0)

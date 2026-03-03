@@ -53,6 +53,7 @@ seg_Cannon_24 {Пушек 24ф.}
 seg_Cannon_32 {Пушек 32ф.}
 seg_Cannon_36 {Пушек 36ф.}
 seg_Cannon_42 {Пушек 42ф.}
+seg_Cannon_48 {Пушек 48ф.}
 seg_Culverine_8 {Полукулеврин}
 seg_Culverine_18 {Кулеврин}
 seg_Culverine_36 {Полных кулеврин}

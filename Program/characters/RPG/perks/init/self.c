@@ -101,7 +101,6 @@ void initSelfPerks(ref list)
 	perks.Conquest.cost = 2;
 	perks.Conquest.condition.Medic = true;
 	AddArefCallback(perks, "Conquest", CT_EQUIP, "Perk_Conquest");
-	SetAttribute(perks,"Conquest.descriptors." +M_WEAPON_CURVATURE + "_" +  WEAPON_STRAIGHT, true);	
 	SetAttribute(perks,"Conquest.descriptors." +M_WEAPON_LENGTH + "_" +  WEAPON_LONG, true);
 
 	perks.Muscles.cost = 2;
@@ -142,7 +141,6 @@ void initSelfPerks(ref list)
 	perks.Heartbreaker.condition.CunningStrike = true;
 	AddArefCallback(perks, "Heartbreaker", CT_EQUIP, "Perk_Heartbreaker");
 	SetAttribute(perks,"Heartbreaker.descriptors." +M_WEAPON_CURVATURE + "_" +  WEAPON_STRAIGHT, true);	
-	SetAttribute(perks,"Heartbreaker.descriptors." +M_WEAPON_LENGTH + "_" +  WEAPON_LONG, true);
 
 	perks.Dodgy.cost = 2;
 	perks.Dodgy.condition.CunningStrike = true;
@@ -219,7 +217,7 @@ void initSelfPerks(ref list)
 	SetAttribute(perks,"Alchemy.descriptors.Alchemy", true);
 	SetAttribute(perks,"Alchemy.descriptors.Alternate", true);
 
-	perks.Practice.cost = 2;
+	perks.Practice.cost = 1;
 	perks.Practice.condition.Alchemy = true;
 	SetAttribute(perks,"Practice.descriptors.Alchemy", true);
 	AddArefCallback(perks, "Practice", CT_EQUIP, "Perk_Practice");
@@ -228,11 +226,11 @@ void initSelfPerks(ref list)
 	perks.Strychnine.condition.Practice = true;
 	SetArefModifier(perks, "Strychnine", M_POISON_CHANCE, PERK_VALUE_STRYCHNINE);
 
-	perks.DarkHorse.cost = 2;
+	perks.DarkHorse.cost = 1;
 	perks.DarkHorse.condition.Practice = true;
 	AddArefCallback(perks, "DarkHorse", CT_EQUIP, "Perk_DarkHorse");
 
-	perks.Master.cost = 3;
+	perks.Master.cost = 2;
 	perks.Master.condition.DarkHorse = true;
 	perks.Master.condition.Strychnine = true;
 	SetAttribute(perks,"Master.descriptors.Alchemy", true);
@@ -240,7 +238,7 @@ void initSelfPerks(ref list)
 
 	perks.Grus.cost = 1;
 
-	perks.Quiet.cost = 2;
+	perks.Quiet.cost = 1;
 	perks.Quiet.condition.Grus = true;
 	SetAttribute(perks,"Quiet.descriptors.Alternate", true);
 
@@ -248,7 +246,7 @@ void initSelfPerks(ref list)
 	perks.Looting.condition.Quiet = true;
 	SetAttribute(perks,"Looting.descriptors.Alternate", true);
 
-	perks.Collection.cost = 3;
+	perks.Collection.cost = 2;
 	perks.Collection.condition.Looting = true;
 	SetAttribute(perks,"Collection.descriptors.Exotic", true);
 	SetAttribute(perks,"Collection.descriptors.Alternate", true);
@@ -257,18 +255,18 @@ void initSelfPerks(ref list)
 	perks.Trustworthy.cost = 1;
 	SetAttribute(perks,"Trustworthy.descriptors.Alternate", true);
 
-	perks.TieFit.cost = 2;
+	perks.TieFit.cost = 1;
 	perks.TieFit.condition.Trustworthy = true;
 	AddArefCallback(perks, "TieFit", CT_EQUIP, "Perk_TieFit");
 	AddArefCallback(perks, "TieFit", CT_EQUIP, "Perk_TieFitAlternate");
 	SetAttribute(perks,"Tiefit.descriptors.Unremarkable", true);	
 	SetAttribute(perks,"Tiefit.descriptors.Fancy", true);
 
-	perks.Investor.cost = 2;
+	perks.Investor.cost = 1;
 	perks.Investor.condition.Trustworthy = true;
 	SetAttribute(perks,"Investor.descriptors.Alternate", true);
 
-	perks.Gossip.cost = 3;
+	perks.Gossip.cost = 2;
 	perks.Gossip.condition.TieFit = true;
 	perks.Gossip.condition.Investor = true;
 	AddArefCallback(perks, "Gossip", CT_EQUIP, "Perk_Gossip");

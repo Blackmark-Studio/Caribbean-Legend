@@ -1,6 +1,5 @@
 //  boal 14.02.06 меню дебугера
 string totalInfo;
-int idLngFile = -1;
 int remInt = 0;
 
 void InitInterface(string iniName)
@@ -110,7 +109,7 @@ void CalculateInfoData()
                 "F31 - " + descF31 + NewStr() +
                 "F32 - " + descF32 + NewStr() +
                 "F33 - " + descF33;
-    // перевод строки (по другому у меня не вышло) +LanguageConvertString(idLngFile,"new_string");
+    // перевод строки (по другому у меня не вышло) +NewStr();
     // тут высчитываем нужную информацию и выводим в totalInfo <--
 }
 
@@ -567,7 +566,6 @@ string descF5 = "Ранг +1 (35 скилов)";
 int BOAL_debug_num = 1;
 void CalculateInfoDataF5()
 {
-    idLngFile = LanguageOpenFile("ItemsDescribe.txt");
     // -->
     totalInfo = descF5;
 
@@ -577,9 +575,8 @@ void CalculateInfoDataF5()
 	sld.perks.FreePoints_self = sti(sld.perks.FreePoints_self) + 25;
 	sld.perks.FreePoints_ship = sti(sld.perks.FreePoints_ship) + 25;	
     // pchar.Perks.FreePerks = sti(pchar.perks.FreePoints_ship) + 15;
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
-    LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
 
     // Статистика по читам
@@ -648,7 +645,6 @@ string descF10 = "Бессмертие вкл/выкл";
 
 void CalculateInfoDataF10()
 {
-    idLngFile = LanguageOpenFile("ItemsDescribe.txt");
     // -->
     totalInfo = descF10;
     ref mc;
@@ -664,9 +660,8 @@ void CalculateInfoDataF10()
         Log_SetStringToLog("God mode ON");
     }
     // <--
-    totalInfo = totalInfo + LanguageConvertString(idLngFile, "new_string") + LanguageConvertString(idLngFile, "new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
-    LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT", totalInfo);
 
     // Статистика по читам
@@ -721,17 +716,15 @@ void CalculateInfoDataF12()
 
 void CalculateInfoDataF13()
 {
-    idLngFile = LanguageOpenFile("ItemsDescribe.txt");
     // -->
     totalInfo = descF13;
 
 	bEncOffGlobal = !bEncOffGlobal;
-	if (bEncOffGlobal) totalInfo = totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_off") + NewStr();
-	else totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_on") + NewStr();
+	if (bEncOffGlobal) totalInfo = totalInfo + NewStr() + GetSimpleItemKey("StrF27_off") + NewStr();
+	else totalInfo + NewStr() + GetSimpleItemKey("StrF27_on") + NewStr();
     // <--
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
+    totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
-    LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT",totalInfo);
     
     // Статистика по читам

@@ -216,7 +216,7 @@ void ProcessDialogEvent()
 			}
 			if (!CheckAttribute(npchar, "quest.answer_2"))
 			{
-				link.l2 = "Combien de personnes y a-t-il dans votre paroisse ?";
+				link.l2 = "Combien de personnes y a-t-il dans votre paroisse ?";
 				link.l2.go = "ansewer_2";
 			}
 			if (!CheckAttribute(npchar, "quest.answer_3"))

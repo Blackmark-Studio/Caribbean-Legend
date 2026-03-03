@@ -1,6 +1,7 @@
 #include "interface\utils\common_header.c"
 #include "interface\utils\ship_perks.c"
 #include "interface\utils\modifiers.c"
+#include "interface\utils\stealth.c"
 
 /// BOAL меню корабль
 /// Sith новое меню
@@ -51,7 +52,7 @@ void InitInterface_R(string iniName, ref _chr) // _chr нужно для чит�
 	SetEventHandler("CheckForRename","CheckForRename",0);
 	SetEventHandler("ShowInfoWindow","ShowInfoWindow",0);
 	SetEventHandler("ShowRPGHint","ShowRPGHint",0);
-	SetEventHandler("MouseRClickUp","HideInfoWindow",0);
+	SetEventHandler("MouseRClickUp","ExitRPGHint",0);
 	SetEventHandler("HideInfoWindow","HideInfoWindow",0);
 	SetEventHandler("TableSelectChange", "TableSelectChange", 0);
 	SetEventHandler("ShowItemInfo", "ShowItemInfo", 0);
@@ -87,7 +88,7 @@ void InitInterface_R(string iniName, ref _chr) // _chr нужно для чит�
 	sMessageMode = "";
 	ref chref = GetMainCharacter();
 	curNationIdx = sti(chref.nation);
-    SetNewNation(0);
+    SetNewNation(0, &curNationIdx);
 }
 
 // гуляем по меню кнопками Q и E
@@ -139,7 +140,7 @@ void IDoExit(int exitCode)
 	DelEventHandler("CheckForRename","CheckForRename");
 	DelEventHandler("ShowInfoWindow","ShowInfoWindow");
 	DelEventHandler("ShowRPGHint","ShowRPGHint");
-	DelEventHandler("MouseRClickUp","HideInfoWindow");
+	DelEventHandler("MouseRClickUp","ExitRPGHint");
 	DelEventHandler("HideInfoWindow","HideInfoWindow");
 	DelEventHandler("TableSelectChange", "TableSelectChange");
 	DelEventHandler("ShowItemInfo", "ShowItemInfo");
@@ -188,12 +189,15 @@ void ProcessCommandExecute()
 	string nodName = GetEventData();
     switch(nodName)
 	{
+		case "CANNONS_BUTTON":
+			if(comName=="activate" || comName=="click") ShowCannonsMenu();
+		break;
         case "LEFTCHANGE_NATION":
     		if(comName=="activate" || comName=="click")
     		{
 				if (!CheckAttribute(pchar, "DisableChangeFlagMode"))
 				{
-					SetNewNation(-1);
+					SetNewNation(-1, &curNationIdx);
 				}
     		}
     	break;
@@ -203,7 +207,7 @@ void ProcessCommandExecute()
     		{
                 if (!CheckAttribute(pchar, "DisableChangeFlagMode"))
                 {
-					SetNewNation(1);
+					SetNewNation(1, &curNationIdx);
 				}
     		}
     	break;
@@ -728,7 +732,7 @@ void ShowInfoWindow()
 			}
 		break;
 		
-		case "TABLE_LIST":
+		case "HELP":
 			sHeader = XI_Convertstring("Goods");
 			sText1  = GetRPGText("GoodsCargo_hint");	
 		break; 
@@ -742,6 +746,7 @@ void ShowInfoWindow()
 			CloseTooltipNew();
 			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_OTHER", 1);
 			sRow = "tr"+nChooseNum;
+			if (nChooseNum < 1) return;
 			sHeader = XI_ConvertString(GameInterface.TABLE_OTHER.(sRow).UserData.ID);
 		    sText1  = GetConvertStr(GameInterface.TABLE_OTHER.(sRow).UserData.ID, "ShipsDescribe.txt");
 		    if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "CannonType" && sti(xi_refCharacter.Ship.Cannons.Type) != CANNON_TYPE_NONECANNON)
@@ -788,10 +793,10 @@ void ShowInfoWindow()
 				sText3 = XI_ConvertString("Used") + ": " + FloatToString((stf(GetCargoLoad(xi_refCharacter))  /  stf(GetCargoMaxSpace(xi_refCharacter))) * 100.0, 1)+ " %";
 			}
 
-			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Speed") SetModifiersStatText(xi_refCharacter, &tuning, M_SHIP_SPEED, &sText3, "ToHumanPercent", 0.0);
-			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Maneuver") SetModifiersStatText(xi_refCharacter, &tuning, M_SHIP_TURNRATE, &sText3, "ToHumanPercent", 0.0);
-			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Crew") SetModifiersStatText(xi_refCharacter, &tuning, M_SHIP_MAXCREW, &sText3, "ToHumanPercent", 0.0);
-			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Capacity") SetModifiersStatText(xi_refCharacter, &tuning, M_SHIP_CAPACITY, &sText3, "ToHumanPercent", 0.0);
+			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Speed") SetModifiersStatText(xi_refCharacter, &tuning, M_SHIP_SPEED, &sText3, "ToHumanModifierPercent", 0.0);
+			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Maneuver") SetModifiersStatText(xi_refCharacter, &tuning, M_SHIP_TURNRATE, &sText3, "ToHumanModifierPercent", 0.0);
+			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Crew") SetModifiersStatText(xi_refCharacter, &tuning, M_SHIP_MAXCREW, &sText3, "ToHumanModifierPercent", 0.0);
+			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Capacity") SetModifiersStatText(xi_refCharacter, &tuning, M_SHIP_CAPACITY, &sText3, "ToHumanModifierPercent", 0.0);
 		break; 
 		
 		case "CREW_PARTITION":
@@ -814,11 +819,11 @@ void ShowInfoWindow()
 		//<--- sith
 		case "FOOD_SHIP":
 			sHeader = XI_Convertstring("FoodShipInfoShort");
-			sText1 = GetConvertStr("Food_descr", "GoodsDescribe.txt");
+			sText1 = GetGoodDescr("Food");
 		break;
 		case "RUM_SHIP":
 			sHeader = XI_Convertstring("RumShipInfoShort");
-			sText1 = GetConvertStr("Rum_descr", "GoodsDescribe.txt");
+			sText1 = GetGoodDescr("Rum");
 		break;
 		case "MONEY_SHIP":
 			sHeader = XI_Convertstring("CostPerMonth");
@@ -826,7 +831,7 @@ void ShowInfoWindow()
 		break;
 		case "FOOD":
 			sHeader = XI_Convertstring("FoodSquadronInfoShort");
-			sText1 = GetConvertStr("Food_descr", "GoodsDescribe.txt");
+			sText1 = GetGoodDescr("Food");
 		break;
 	}
 	SetShipPerksTooltip(xi_refCharacter, &sCurrentNode, &sHeader, &sText1, &sText2, &sText3, &sPicture, &sGroup, &sGroupPicture);
@@ -836,7 +841,6 @@ void ShowInfoWindow()
 void HideInfoWindow()
 {
 	CloseTooltipNew();
-	ExitRPGHint();
 }
 
 void TableSelectChange()
@@ -979,11 +983,10 @@ void ShowGoodsInfo(int iGoodIndex)
 {
 	string GoodName = goods[iGoodIndex].name;
 
-	int lngFileID = LanguageOpenFile("GoodsDescribe.txt");
 	string sHeader = XI_ConvertString(GoodName);
 
     iCurGoodsIdx = iGoodIndex;
-	string goodsDescr = GetAssembledString( LanguageConvertString(lngFileID,goodName+"_descr"), &Goods[iGoodIndex]);
+	string goodsDescr = GetAssembledString( GetGoodDescr(&Goods[iGoodIndex]), &Goods[iGoodIndex]);
     goodsDescr += newStr() + XI_ConvertString("weight") + " " + Goods[iGoodIndex].weight + " " + XI_ConvertString("cwt") +
 	              ", " + XI_ConvertString("PackHolds") + " " + Goods[iGoodIndex].Units + " " + XI_ConvertString("units");
 
@@ -999,7 +1002,6 @@ void ShowGoodsInfo(int iGoodIndex)
 	SetNewGroupPicture("QTY_GOODS_PICTURE", "GOODS", GoodName);
     SetFormatedText("QTY_CAPTION", sHeader);
     SetFormatedText("QTY_GOODS_INFO", goodsDescr);
-	LanguageCloseFile(lngFileID);
 	
 	iShipQty = GetCargoGoods(xi_refCharacter, iGoodIndex);
     SetFormatedText("QTY_INFO_SHIP_QTY", its(iShipQty))
@@ -1782,50 +1784,6 @@ void FlagsProcess()
 	}
 }
 
-void SetNewNation(int add)
-{
-    ref   mchar = GetMainCharacter();
-    bool  ok, ok2, ok3;
-    
-    curNationIdx = curNationIdx + add;
-    if (curNationIdx < 0) curNationIdx = 4;
-    if (curNationIdx > 4) curNationIdx = 0;
-    SetNewGroupPicture("FLAGPIC", "NATIONS", GetNationNameByType(curNationIdx));
-    
-    if (IsCharacterPerkOn(mchar,"FlagPir")  ||
-	    IsCharacterPerkOn(mchar,"FlagEng")  ||
-		IsCharacterPerkOn(mchar,"FlagFra")  ||
-		IsCharacterPerkOn(mchar,"FlagSpa")  ||
-		IsCharacterPerkOn(mchar,"FlagHol"))
-    {
-		SetNodeUsing("FLAG_BTN",true);
-		if (!bBettaTestMode)
-		{
-			ok3 = bSeaActive && !CheckEnemyCompanionDistance2GoAway(false);
-			if (bDisableMapEnter || bLandInterfaceStart || ok3) SetSelectable("FLAG_BTN",false);
-		}
-        ok  = !IsCharacterPerkOn(mchar,"Flag" + NationShortName(curNationIdx)) && (sti(mchar.nation) != curNationIdx);
-        ok2 =  true;
-        if (isMainCharacterPatented())
-        {
-            ok2 = (sti(Items[sti(mchar.EquipedPatentId)].Nation) != curNationIdx);
-        }
-        if (ok && ok2)
-        {
-            SetNewNation(add);
-        }
-        if (sti(mchar.nation) == curNationIdx)
-        {
-			SetNodeUsing("FLAG_BTN",false);
-        }
-    }
-    else
-    {
-        SetNodeUsing("FLAG_BTN",false);
-	    SetNodeUsing("RIGHTCHANGE_NATION",false);
-	    SetNodeUsing("LEFTCHANGE_NATION",false);
-    }
-}
 void PirateProcess()
 {
     PChar.GenQuest.VideoAVI        = "Pirate";
@@ -1886,7 +1844,7 @@ void OnHeaderClick()
 	QoLSortTable("TABLE_LIST", column, datatype, false, 0);
 }
 
-void SetModifiersStatText(ref chr, ref equipTable, string modifier, string result, string formatter, float base)
+void SetModifiersStatText(ref chr, ref equipTable, string modifier, ref result, string formatter, float base)
 {
 	aref sources, source;
 	string bonusText = "";
@@ -1895,9 +1853,10 @@ void SetModifiersStatText(ref chr, ref equipTable, string modifier, string resul
 	{
 		source = GetAttributeN(sources, i);
 		string reason = GetAttributeName(source);
-		bonusText += GetHumanReadableReason(reason, chr) + ": " + call formatter(base+stf(GetAttributeValue(source))) + NewStr();
+		float value = stf(GetAttributeValue(source));
+		if (value != 0.0) bonusText += GetHumanReadableReason(reason, chr) + ": " + call formatter(base+value) + NewStr();
 	}
 
-	if (bonusText != "") bonusText = newStr() + " " + newStr() + " " + bonusText;
+	if (bonusText != "") bonusText = newStr() + " " + newStr() + " " + bonusText;
 	result += bonusText;
 }

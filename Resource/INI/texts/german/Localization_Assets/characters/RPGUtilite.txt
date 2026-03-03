@@ -7,7 +7,7 @@ RPGUtilite_6 {gut}
 RPGUtilite_7 {hervorragend}
 RPGUtilite_8 {Vitalität erhöht}
 RPGUtilite_9 {Vitalität gesunken}
-RPGUtilite_10 {Kopfgeld erhöht!}
+RPGUtilite_10 {Nationale Reputation gesunken!}
 RPGUtilite_11 {Nationale Reputation gestiegen!}
 RPGUtilite_12 {Nationale Reputation gesunken!}
 RPGUtilite_13 {Nationale Reputation gesunken!}

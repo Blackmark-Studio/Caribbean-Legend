@@ -170,7 +170,10 @@ void BRD_PlaceCaptain(ref chr, ref boarding_enemy, int locIndex, string sLocType
 
 	if (!isCabin) notification(StringFromKey("boarding_3"), "leadership");
 
-	model = LAi_GetBoardingModel(boarding_enemy, &ani);
+	object aBoardingModelsEnemy[1];
+	GenerateCrew(boarding_enemy, "soldier", &aBoardingModelsEnemy);
+	model = aBoardingModelsEnemy[0].model;
+	ani = aBoardingModelsEnemy[0].ani;
 	LAi_CreateFantomCharacterEx(model, ani, "rld", sLocType);
 	ChangeAttributesFromCharacter(chr, boarding_enemy, true);
 	GEN_OverrideAppearance(chr, 6);
@@ -251,17 +254,23 @@ void BRD_SetCrewSurrendered()
 
 bool BRD_IsCrewGiveUpCaptain(ref enemy, int leftCrew)
 {
+	if (CheckAttribute(enemy, "DontRansackCaptain")) return false;
 	if (!CheckAttribute(enemy, "BoardingFaith.CrewGiveUpCaptain")) return false;
+
 	return leftCrew > 0; // кто-то же должен что-то решать
 }
 
 bool BRD_IsSurrenderBeforeCabin(ref enemy)
 {
+	if (CheckAttribute(enemy, "DontRansackCaptain")) return false;
+
 	return CheckAttribute(enemy, "BoardingFaith.SurrenderBeforeCabin");
 }
 
 bool BRD_IsUpperDeskFight(ref enemy)
 {
+	if (CheckAttribute(enemy, "DontRansackCaptain")) return false;
+
 	return CheckAttribute(enemy, "BoardingFaith.UpperDeskFight");
 }
 

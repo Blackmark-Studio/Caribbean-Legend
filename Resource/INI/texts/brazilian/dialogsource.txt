@@ -1,0 +1,1 @@
+SelectDeliveryTradeDialog0 {arquivo vazio, para compatibilidade com o núcleo storm-2.5. Ele é necessário lá por algum motivo, mas não nos scripts}

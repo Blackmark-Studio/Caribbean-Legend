@@ -8,5 +8,3 @@ incomingDamageReduction {Protection contre les dégâts}
 RangeIncomingDamageReduction {Protection contre les tirs}
 Shot_Damage {Dégâts de tir}
 HeadshotDamage {Dégâts de tir à la tête}
-Grapeshot_Damage {Dégâts accrus lors du tir à la mitraille}
-Bullet_Damage {Dégâts accrus lors du tir avec des balles}

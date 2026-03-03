@@ -1,0 +1,17 @@
+Notification_ReputationCheckPassed {評判チェック合格}
+Notification_ReputationCheckFailed {名声が低すぎます}
+Notification_PerkCheckPassed {特典判定成功}
+Notification_PerkCheckFailed {特典チェック失敗}
+Notification_SkillCheckPassed {判定成功}
+Notification_SkillCheckFailed {スキルチェック失敗}
+Notification_LevelCheckPassed {レベルチェック合格}
+Notification_LevelCheckFailed {必要レベル}
+CanBeCaptain {$attr($context.name)は外洋で船を操れません（  「船長」 特典が必要）}
+Notification_ApproveCheckPassed {承認する}
+Notification_ApproveCheckFailed {不満}
+Notification_ReputationCheckFailed_High {名声が高すぎる}
+Notification_ReputationNationCheckPassed {関係判定成功}
+Notification_ReputationNationCheckFailed {関係値が低すぎます}
+Notification_MoneyCheckPassed {判定成功}
+Notification_MoneyCheckFailed_Peso {ペソが足りません}
+Notification_MoneyCheckFailed_Dublon {ダブロンが足りません}

@@ -156,7 +156,7 @@ void ProcCommand()
 			{
                 if (bRollEscape)
                 {
-                    ShuffleSubs();
+                    ShuffleArray(&iSubs);
                     totalInfo = XI_ConvertString("map_maneuvers_" + iSubs[0]);
                     SetFormatedText("INFO_TEXT", totalInfo);
 					SendMessage(&GameInterface,"lsl", MSG_INTERFACE_MSG_TO_NODE, "INFO_TEXT", 5); // выравниванием текст по центру
@@ -708,17 +708,17 @@ void MapEncInfo(ref rEncounter, int iRealEncounterType)
                     //default:
                         sInfo += "UNKNOWN; ";
                 }
-                sInfo += "Qty " + and(BitParams, 15) + " - " + and(shr(BitParams, 4), 15) + "; ";
-                sInfo += "Cls " + and(shr(BitParams, 8), 15) + " - " + and(shr(BitParams, 12), 15) + "; ";
+                sInfo += "Qty " + (BitParams & LBITS_4) + " - " + ((BitParams >> 4) & LBITS_4) + "; ";
+                sInfo += "Cls " + ((BitParams >> 8) & LBITS_4) + " - " + ((BitParams >> 12) & LBITS_4) + "; ";
             }
             BitParams = ENC_RANDOM_PARAMS[iRealEncounterType];
             if (BitParams)
             {
                 sInfo += NewStr() + "    Есть рандом между слотами: ";
-                if (and(BitParams, 1)) sInfo += " торговый ";
-                if (and(shr(BitParams, 1), 1)) sInfo += " военный ";
-                if (and(shr(BitParams, 2), 1)) sInfo += " рейдер ";
-                if (and(shr(BitParams, 3), 1)) sInfo += " универсал ";
+                if ( BitParams & 1)       sInfo += " торговый ";
+                if ((BitParams >> 1) & 1) sInfo += " военный ";
+                if ((BitParams >> 2) & 1) sInfo += " рейдер ";
+                if ((BitParams >> 3) & 1) sInfo += " универсал ";
             }
         }
     }
@@ -941,7 +941,7 @@ int CalculateEscapeChance()
         iPositive += PERK_VALUE2_SAILING_PROFESSIONAL;
         sGreenText += NewStr() + GetConvertStr("SailingProfessional", "AbilityDescribe.txt") + ": " + PERK_VALUE2_SAILING_PROFESSIONAL;
     }
-    if (CheckOfficersPerk(PChar, "LoneWolf") && GetCompanionQuantity(pchar) < 1)
+    if (CheckOfficersPerk(PChar, "LoneWolf") && GetCompanionQuantity(pchar) < 2)
     {
         iPositive += PERK_VALUE2_LONE_WOLF;
         sGreenText += NewStr() + GetConvertStr("LoneWolf", "AbilityDescribe.txt") + ": " + PERK_VALUE2_LONE_WOLF;
@@ -1050,17 +1050,5 @@ void SuccessEscape()
         TEV.EncSpeed.(sTargetId).dLeft = 3;
         if (!CheckAttribute(PChar, "quest.wdmEncSpeedUpdate"))
             SetFunctionTimerCondition("wdmEncSpeedUpdate", 0, 0, 1, true);
-    }
-}
-
-void ShuffleSubs()
-{
-    int i, j, tmp;
-    for (i = 3; i > 0; i--)
-    {
-        j = rand(i);
-        tmp = iSubs[i];
-        iSubs[i] = iSubs[j];
-        iSubs[j] = tmp;
     }
 }

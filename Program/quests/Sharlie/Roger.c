@@ -12,7 +12,7 @@ void Mtraxx_TerraxReset(int i) // общая функция при провал�
 	if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 	{
 		DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
-		DeleteAttribute(pchar,"perks.list.FlagSpa"); 
+		STH_SetJokerFlag(SPAIN, false); 
 		log_info(StringFromKey("Roger_1"));
 	}
 	if(CheckAttribute(pchar,"questTemp.Mtraxx.GiveMeSlaves")) DeleteAttribute(pchar,"questTemp.Mtraxx.GiveMeSlaves");
@@ -1057,8 +1057,8 @@ void Mtraxx_PlantPrepareTimeOver(string qName) // стал заниматься 
 void Mtraxx_PlantSetMaxRocur() // ставим Жана Пикара
 {
 	sld = GetCharacter(NPC_GenerateCharacter("Mrt_Rocur", "Jan_Slave", "man", "man", 20, PIRATE, -1, false, "soldier"));
-	sld.name = StringFromKey("Roger_29");
-	sld.lastname = StringFromKey("Roger_30");
+	sld.name = GetCharacterName("Jean");
+	sld.lastname = GetCharacterName("Picard");
 	sld.Dialog.Filename = "Quest\Roger.c";
 	sld.Dialog.currentnode = "rocur";
 	sld.greeting = "Rocur_01";
@@ -1101,8 +1101,8 @@ void Mtraxx_PlantMakeMaxRocurClone() // ставим клон Жана Пика�
 {
 	sld = GetCharacter(NPC_GenerateCharacter("Mrt_Rocur_clone", "Jan_Slave", "man", "man", 20, PIRATE, -1, false, "soldier"));
 	SetFantomParamFromRank(sld, 15, true);
-	sld.name = StringFromKey("Roger_29");
-	sld.lastname = StringFromKey("Roger_30");
+	sld.name = GetCharacterName("Jean");
+	sld.lastname = GetCharacterName("Picard");
 	sld.Dialog.Filename = "Quest\Roger.c";
 	sld.Dialog.currentnode = "rocur_4";
 	sld.SpecialRole = "mtraxx_vanguard";
@@ -2039,7 +2039,7 @@ void Mtraxx_PlantGoHomeOver(string qName) // истекло время на во
 	if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 	{
 		DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
-		DeleteAttribute(pchar,"perks.list.FlagSpa"); 
+		STH_SetJokerFlag(SPAIN, false); 
 		log_info(StringFromKey("Roger_1"));
 	}
 }
@@ -2580,7 +2580,7 @@ void Mtraxx_PasqualeAddComplete() // итоги
 	LAi_SetActorType(sld);
 	LAi_ActorRunToLocation(sld, "reload", "sea", "none", "", "", "", 10.0);
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
-	sld.lifeday = 0;
+	//sld.lifeday = 0;       andre39966 - чтобы работало в прологе
 	Group_DeleteGroup("RocurSeaGroup");
 	//AddQuestRecord("Roger_4", "17");
 	CloseQuestHeader("Roger_4");
@@ -2737,10 +2737,12 @@ void Mtraxx_MirabellaSex(string qName) // секс с Мирабель
 			fTime = 5.0;
 		break;
 	}
-	PlayStereoSound("sex\sex" + sTemp + ".wav");
+
 	WaitDate("", 0, 0, 0, 2, 30);
 	SetLaunchFrameFormParam("", "", 0, fTime);
 	SetLaunchFrameFormPic("loading\inside\censored1.tga");
+	if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+	else PlayStereoSound("sex\sex" + sTemp + ".wav");
 	LaunchFrameForm();
 	if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
 	{
@@ -4035,14 +4037,14 @@ void Mtraxx_IgnasioCreateCaravane(string qName) // ставим голландц
 	Group_FindOrCreateGroup("Mtr_IgnasioSeaGroup");
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
 	int iScl = 30 + 3*sti(pchar.rank);
-	int Type, iShip[5], iSpace, iCrew, hcrew;
+	int Type, iSpace, iCrew, hcrew;
 	int n = 3;
 	int iClass = sti(RealShips[sti(pchar.ship.type)].Class) + 1;
 	
 	if (MOD_SKILL_ENEMY_RATE > 8) iClass -= 1;
 	if(iClass < 3) iClass = 3;
 	if(iClass > 5) iClass = 5;
-	
+	int iShip[5];
 	iShip[1] = GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
 	iShip[2] = GetRandomShipType(GetClassFlag(iClass + 1), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
 	iShip[3] = GetRandomShipType(GetClassFlag(iClass + 1), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
@@ -4491,7 +4493,7 @@ void Mtraxx_WolfreekGrot(string qName) // в гроте - злые индеи, 6
 	//индеи
 	for (int i=1; i<=6; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Mtr_indian_grot_"+i, "canib_"+(i+1), "man", "man", 25, PIRATE, -1, true, "native"));
+		sld = GetCharacter(NPC_GenerateCharacter("Mtr_indian_grot_"+i, "canib_"+i, "man", "man", 25, PIRATE, -1, true, "native"));
 		FantomMakeCoolFighter(sld, 25, 70, 70, LinkRandPhrase("blade_01","blade_02","topor_02"), "", "", 150);
 		sld.name = GetIndianName(MAN);
 		sld.lastname = "";
@@ -4718,6 +4720,24 @@ void Mtraxx_WolfreekCreateGaspar()
 	LAi_SetOwnerType(sld);
 }
 
+void CreateGaspar_Sandbox()  // Гаспар во фриплее
+{
+	ref loc = &Locations[FindLocation("Tortuga_Town")];
+	DeleteAttribute(loc, "reload.l15.disable");
+				
+	sld = GetCharacter(NPC_GenerateCharacter("GasparGold", "banker_6", "man", "man", 10, PIRATE, -1, true, "citizen"));
+	sld.Merchant.type = "GasparGold";
+	sld.dialog.filename = "Quest\Roger.c";
+	sld.dialog.currentnode = "GasparGold_meeting_sandbox";
+	sld.name = StringFromKey("Roger_74");
+	sld.lastname = StringFromKey("Roger_75");
+	sld.money = 5000000;
+	AddItems(sld, "gold_dublon", 1000);
+	ChangeCharacterAddressGroup(sld, "Tortuga_houseS3", "barmen", "stay");
+	LAi_SetOwnerType(sld);
+	AddQuestRecordInfo("Useful_Acquaintances", "8");
+}
+
 void Mtraxx_WolfreekPellyGemsToPrince (string qName)
 {
 	DeleteAttribute(loadedLocation,"reload.l15.disable");
@@ -4859,18 +4879,39 @@ void Mtraxx_WolfreekMarch(string qName) // собираем штурмовую �
 {
 	pchar.quest.mtraxx_wolfreek_march.over = "yes";
 	pchar.quest.mtraxx_wolfreek_march1.over = "yes";
+	object aCrewSoldier[6];
+	GenerateCrew(pchar, "soldier", &aCrewSoldier);
+	int nSoldierIndex = 0;
+
+	object aCrewMushketer[1];
+	GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+
+	string model;
+	string ani;
+
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20 + 2*sti(pchar.rank);
+
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
 	for (int i=1; i<=7; i++) 
 	{
 		if (i == 5)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Islamona_cpy_"+i, "mush_ctz_"+i, "man", "mushketer", 25, PIRATE, -1, false, "quest"));
-			FantomMakeCoolFighter(sld, 25, 65, 65, "", "mushket3", "grapeshot", 150);
+			model = aCrewMushketer[0].model;
+			ani = aCrewMushketer[0].ani;
+			sld = GetCharacter(NPC_GenerateCharacter("Islamona_cpy_"+i, model, "man", ani, 25, PIRATE, -1, false, "quest"));
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl*2);
 			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "grapeshot");
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Islamona_cpy_"+i, "citiz_4"+i, "man", "man", 20, PIRATE, -1, true, "quest"));
-			FantomMakeCoolFighter(sld, 20, 55, 55, LinkRandPhrase("blade_07","blade_08","blade_11"), "pistol1", "bullet", 120);
+			model = aCrewSoldier[nSoldierIndex].model;
+			ani = aCrewSoldier[nSoldierIndex].ani;
+			nSoldierIndex++;
+			sld = GetCharacter(NPC_GenerateCharacter("Islamona_cpy_"+i, model, "man", ani, 20, PIRATE, -1, true, "quest"));
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 		}
 		LAi_CharacterDisableDialog(sld);
 		ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto1");
@@ -4909,6 +4950,7 @@ void Mtraxx_WolfreekCannon(string qName) // в локации форта пер�
 		CreateLocationParticles("Bombard", "quest", "mortair_battle", 1.0, 90, 90, "cannon_fire_2");
 		CreateLocationParticles("blast_dirt", "quest", "mortair_battle", 1.0, 90, 90, "");
 		CreateLocationParticles("blast_dirt", "quest", "mortair_battle", 1.0, 90, 90, "");
+		SetCameraShake(2.0, 2.5, 5.0, 0.13, 0.5, true, false, CAM_EASING_SMOOTH_STEP);
 		DoQuestFunctionDelay("Mtraxx_WolfreekGameover", 0.5);
 	}
 }
@@ -5287,7 +5329,7 @@ void Mtraxx_CorridaIgnasioFail() // провал перехвата Тореро
 	if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 	{
 		DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
-		DeleteAttribute(pchar,"perks.list.FlagSpa"); 
+		STH_SetJokerFlag(SPAIN, false); 
 		log_info(StringFromKey("Roger_1"));
 	}
 }
@@ -7332,10 +7374,17 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	ref sld, chr;
 	int iTemp, i, n, idx, ShipType, iRank, Rank, iScl, iAddTime, iTime, iClass; 
 	string  Model, Blade, sTemp, attrName;
-	
-	
+
+	int iSharleCrew;
+	object aCrewSoldier[1];
+	int nSoldierIndex = 0;
+	object aCrewMushketer[1];
+	string sModel;
+	string sAni;
+
 	bool condition = true;
-	
+	object aSoldier[1];
+	object aMushketers[1];
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// Addon 2016-1 Jason Пиратская линейка
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -7761,18 +7810,34 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 			LAi_SetWarriorType(sld);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		}
+
+		SetArraySize(&aCrewSoldier, 6);
+		GenerateCrew(pchar, "soldier", &aCrewSoldier);
+		nSoldierIndex = 0;
+		SetArraySize(&aCrewMushketer, 2);
+		GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+
+		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
+
+		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+		iScl = 20 + 2*sti(pchar.rank);
+
 		for (i=1; i<=8; i++) // наши красавцы
 		{
 			if (i > 6)
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("Merida_pirate_"+i, "mush_ctz_"+i, "man", "mushketer", 20, PIRATE, -1, false, "quest"));
-				FantomMakeCoolFighter(sld, 20, 60, 60, "", "mushket3", "grapeshot", 150);
+				sModel = aCrewMushketer[i-7].model;
+				sAni = aCrewMushketer[i-7].ani;
+				sld = GetCharacter(NPC_GenerateCharacter("Merida_pirate_"+i, sModel, "man", sAni, 20, PIRATE, -1, false, "quest"));
+				FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl*2);
 				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "grapeshot");
 			}
 			else
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("Merida_pirate_"+i, "citiz_4"+i, "man", "man", 18, PIRATE, -1, true, "quest"));
-				FantomMakeCoolFighter(sld, 18, 50, 50, LinkRandPhrase("blade_07","blade_08","blade_11"), "pistol3", "grapeshot", 120);
+				sModel = aCrewSoldier[i-1].model;
+				sAni = aCrewSoldier[i-1].ani;
+				sld = GetCharacter(NPC_GenerateCharacter("Merida_pirate_"+i, sModel, "man", sAni, 18, PIRATE, -1, true, "quest"));
+				FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 			}
 			TakeNItems(sld, "potion3", n);
 			LAi_CharacterDisableDialog(sld);
@@ -8613,7 +8678,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		if (!CheckAttribute(pchar, "questTemp.Mtraxx.Cartahena.Fort")) return true;
 		sld = CharacterFromID("Cartahena Fort Commander");
 		Fort_SetAbordageMode(pchar, sld);
-		AutoSave();
+	//	AutoSave();
 		// Mtraxx_CartahenaPrepareFortBattle();
 	}
 	else if (sQuestName == "Mtraxx_CartahenaFortFirstBattle") // бой в цитадели форта // патч 17/1
@@ -8642,20 +8707,66 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		if (iTotalTemp < 1) iTotalTemp = 1;
 		if (iTotalTemp > 25) iTotalTemp = 25;
 		log_Testinfo("Наших с оружием - " + iTotalTemp + " бойцов");
+
+		iSharleCrew = (sti(pchar.questTemp.Mtraxx.Cartahena.Crewpercent1) * iTotalTemp) / 100;
+
+		SetArraySize(&aCrewSoldier, iSharleCrew);
+		GenerateCrew(pchar, "soldier", &aCrewSoldier);
+		nSoldierIndex = 0;
+		GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+
+		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+		iScl = 20 + 2*sti(pchar.rank);
+		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
 		for (i = 1; i <= iTotalTemp; i++)
 		{
 			if (i < 3) // мушкетеры, 2 шт
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaFort1Pirate_" + i, "mush_ctz_" + (i + 6), "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket3", "grapeshot", 170);
-				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "grapeshot");
-				if (iTotalTemp > 15) sld.cirassId = Items_FindItemIdx("cirass1");
+				if (i < 2)
+				{
+					sModel = aCrewMushketer[0].model;
+					sAni = aCrewMushketer[0].ani;
+				}
+				else
+				{
+					sModel = "mush_ctz_" + (i + 6);
+					sAni = "mushketer";
+				}
+				sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaFort1Pirate_" + i, sModel, "man", sAni, iRank, PIRATE, -1, false, "soldier"));
+				if (i < 2)
+				{
+					FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl * 2);
+				}
+				else
+				{
+					FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket3", "grapeshot", 170);
+					LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "grapeshot");
+					if (iTotalTemp > 15) sld.cirassId = Items_FindItemIdx("cirass1");
+				}
 			}
 			else
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaFort1Pirate_" + i, "citiz_" + (rand(9) + 41), "man", "man", iRank, PIRATE, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, 60, 60, LinkRandPhrase("blade_03", "blade_05", "blade_07"), "pistol1", "bullet", 150);
-				if (iTotalTemp > 15) sld.cirassId = Items_FindItemIdx("cirass2");
+				if (i <= iSharleCrew + 1)
+				{
+					sModel = aCrewSoldier[nSoldierIndex].model;
+					sAni = aCrewSoldier[nSoldierIndex].ani;
+					nSoldierIndex++;
+				}
+				else
+				{
+					sModel = "citiz_" + (rand(9) + 41);
+					sAni = "man";
+				}
+				sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaFort1Pirate_" + i, sModel, "man", sAni, iRank, PIRATE, -1, false, "soldier"));
+				if (i <= iSharleCrew + 1)
+				{
+					FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl * 2);
+				}
+				else
+				{
+					FantomMakeCoolFighter(sld, iRank, 60, 60, LinkRandPhrase("blade_03", "blade_05", "blade_07"), "pistol1", "bullet", 150);
+					if (iTotalTemp > 15) sld.cirassId = Items_FindItemIdx("cirass2");
+				}
 			}
 			ChangeCharacterAddressGroup(sld, "BOARDING_FORT", "rld", "loc" + i);
 			LAi_SetWarriorType(sld);
@@ -8752,20 +8863,64 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		if (iTotalTemp < 1) iTotalTemp = 1;
 		if (iTotalTemp > 15) iTotalTemp = 15;
 		log_Testinfo("Наших с оружием - " + iTotalTemp + " бойцов");
+		iSharleCrew = (sti(pchar.questTemp.Mtraxx.Cartahena.Crewpercent1) * iTotalTemp) / 100;
+
+		SetArraySize(&aCrewSoldier, iSharleCrew);
+		GenerateCrew(pchar, "soldier", &aCrewSoldier);
+		nSoldierIndex = 0;
+		GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
+		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+		iScl = 20 + 2*sti(pchar.rank);
 		for (i = 1; i <= iTotalTemp; i++)
 		{
 			if (i < 3) // мушкетеры, 2 шт
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaFort2Pirate_" + i, "mush_ctz_" + (i + 6), "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket3", "grapeshot", 170);
-				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "grapeshot");
-				if (iTotalTemp > 10) sld.cirassId = Items_FindItemIdx("cirass1");
+				if (i < 2)
+				{
+					sModel = aCrewMushketer[0].model;
+					sAni = aCrewMushketer[0].ani;
+				}
+				else
+				{
+					sModel = "mush_ctz_" + (i + 6);
+					sAni = "mushketer";
+				}
+				sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaFort2Pirate_" + i, sModel, "man", sAni, iRank, PIRATE, -1, false, "soldier"));
+				if (i < 2)
+				{
+					FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl * 2);
+				}
+				else
+				{
+					FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket3", "grapeshot", 170);
+					LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "grapeshot");
+					if (iTotalTemp > 10) sld.cirassId = Items_FindItemIdx("cirass1");
+				}
 			}
 			else
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaFort2Pirate_" + i, "citiz_" + (rand(9) + 41), "man", "man", iRank, PIRATE, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, 60, 60, LinkRandPhrase("blade_03", "blade_05", "blade_07"), "pistol1", "bullet", 150);
-				if (iTotalTemp > 10) sld.cirassId = Items_FindItemIdx("cirass2");
+				if (i <= iSharleCrew + 1)
+				{
+					sModel = aCrewSoldier[nSoldierIndex].model;
+					sAni = aCrewSoldier[nSoldierIndex].ani;
+					nSoldierIndex++;
+				}
+				else
+				{
+					sModel = "citiz_" + (rand(9) + 41);
+					sAni = "man";
+				}
+				sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaFort2Pirate_" + i, sModel, "man", sAni, iRank, PIRATE, -1, false, "soldier"));
+				if (i <= iSharleCrew + 1)
+				{
+					FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl * 2);
+				}
+				else
+				{
+					FantomMakeCoolFighter(sld, iRank, 60, 60, LinkRandPhrase("blade_03", "blade_05", "blade_07"), "pistol1", "bullet", 150);
+					if (iTotalTemp > 10) sld.cirassId = Items_FindItemIdx("cirass2");
+				}
 			}
 			ChangeCharacterAddressGroup(sld, "Boarding_bastion1", "rld", "loc" + i);
 			LAi_SetWarriorType(sld);
@@ -8854,11 +9009,39 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		if (iTotalTemp < 1) iTotalTemp = 1;
 		if (iTotalTemp > 15) iTotalTemp = 15;
 		log_Testinfo("Наших с оружием - " + iTotalTemp + " бойцов");
+
+		iSharleCrew = (sti(pchar.questTemp.Mtraxx.Cartahena.Crewpercent1) * iTotalTemp) / 100;
+		SetArraySize(&aCrewSoldier, iSharleCrew);
+		GenerateCrew(pchar, "soldier", &aCrewSoldier);
+		nSoldierIndex = 0;
+		GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
+		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+		iScl = 20 + 2*sti(pchar.rank);
 		for (i = 1; i <= iTotalTemp; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaFort3Pirate_" + i, "citiz_" + (rand(9) + 41), "man", "man", iRank, PIRATE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, 60, 60, LinkRandPhrase("blade_03", "blade_05", "blade_07"), "pistol1", "bullet", 150);
-			if (iTotalTemp > 10) sld.cirassId = Items_FindItemIdx("cirass2");
+			if (i <= iSharleCrew)
+			{
+				sModel = aCrewSoldier[nSoldierIndex].model;
+				sAni = aCrewSoldier[nSoldierIndex].ani;
+				nSoldierIndex++;
+			}
+			else
+			{
+				sModel = "citiz_" + (rand(9) + 41);
+				sAni = "man";
+			}
+
+			sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaFort3Pirate_" + i, sModel, "man", sAni, iRank, PIRATE, -1, false, "soldier"));
+			if (i <= iSharleCrew)
+			{
+				FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl * 2);
+			}
+			else
+			{
+				FantomMakeCoolFighter(sld, iRank, 60, 60, LinkRandPhrase("blade_03", "blade_05", "blade_07"), "pistol1", "bullet", 150);
+				if (iTotalTemp > 10) sld.cirassId = Items_FindItemIdx("cirass2");
+			}
 			ChangeCharacterAddressGroup(sld, "Boarding_fortyard", "rld", "loc" + i);
 			LAi_SetWarriorType(sld);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
@@ -9044,20 +9227,66 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		ChangeCharacterAddressGroup(sld, "Cartahena_Town", "reload", "houseS2");
 		log_Testinfo("Наших с оружием - "+iTotalTemp+" бойцов");
+
+		iSharleCrew = (sti(pchar.questTemp.Mtraxx.Cartahena.Crewpercent1) * iTotalTemp) / 100;
+		SetArraySize(&aCrewSoldier, iSharleCrew);
+		GenerateCrew(pchar, "soldier", &aCrewSoldier);
+		nSoldierIndex = 0;
+		GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+
+		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
+		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+		iScl = 20 + 2*sti(pchar.rank);
 		for (i=1; i<=iTotalTemp; i++)
 		{
 			if (i < 3) // мушкетеры, 2 шт
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaTownPirate_"+i, "mush_ctz_"+(i+6), "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket3", "grapeshot", 170);
-				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "grapeshot");
-				if (iTotalTemp > 17) sld.cirassId = Items_FindItemIdx("cirass1");
+				if (i < 2)
+				{
+					sModel = aCrewMushketer[0].model;
+					sAni = aCrewMushketer[0].ani;
+				}
+				else
+				{
+					sModel = "mush_ctz_" + (i + 6);
+					sAni = "mushketer";
+				}
+				sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaTownPirate_"+i, sModel, "man", sAni, iRank, PIRATE, -1, false, "soldier"));
+				if (i < 2)
+				{
+					FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl*2);
+				}
+				else
+				{
+					FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket3", "grapeshot", 170);
+					LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "grapeshot");
+					if (iTotalTemp > 17) sld.cirassId = Items_FindItemIdx("cirass1");
+				}
+
 			}
 			else
 			{
-					sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaTownPirate_"+i, "citiz_"+(rand(9)+41), "man", "man", iRank, PIRATE, -1, false, "soldier"));
+				if (i <= iSharleCrew + 1)
+				{
+					sModel = aCrewSoldier[nSoldierIndex].model;
+					sAni = aCrewSoldier[nSoldierIndex].ani;
+					nSoldierIndex++;
+				}
+				else
+				{
+					sModel = "citiz_" + (rand(9) + 41);
+					sAni = "man";
+				}
+				sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaTownPirate_"+i, sModel, "man", sAni, iRank, PIRATE, -1, false, "soldier"));
+				if (i <= iSharleCrew + 1)
+				{
+					FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
+				}
+				else
+				{
 					FantomMakeCoolFighter(sld, iRank, 60, 60, LinkRandPhrase("blade_03","blade_05","blade_07"), "pistol1", "bullet", 150);
 					if (iTotalTemp > 17) sld.cirassId = Items_FindItemIdx("cirass2");
+				}
 			}
 			ChangeCharacterAddressGroup(sld, "Cartahena_Town", "goto", "goto"+i);
 			LAi_SetWarriorType(sld);

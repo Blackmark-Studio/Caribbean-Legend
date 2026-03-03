@@ -1,0 +1,17 @@
+food_1 {Ratos}
+food_2 {~ estragado ~}
+food_3 {~ danificado ~}
+food_4 {~ destruído ~}
+food_5 {~ unid. ~}
+food_6 {No navio @<rChar.Ship.Name> morreram de doenças @<FindRussianSailorString(cn, "No")>}
+food_7 {No navio @<rChar.Ship.Name> há poucos medicamentos}
+food_8 {No navio @<rChar.Ship.Name> morreram de doenças @<FindRussianSlavesString(cn, "No")>}
+food_9 {Na @<rChar.Ship.Name> a tripulação está sedenta por rum.}
+food_10 {No navio @<rChar.Ship.Name> comida para @<FindRussianDaysString(cn)>}
+food_11 {Precisamos reabastecer com urgência!}
+food_12 {Os escravos se rebelaram!}
+food_13 {Os marinheiros estão passando fome no navio @<rChar.Ship.Name>. A moral da tripulação está caindo!}
+food_14 {Marinheiros estão morrendo de fome}
+food_15 {Os escravos estão morrendo de fome}
+food_16 {Motim no navio @<rChar.Ship.Name>!!!! ~}
+food_17 {Navio deixa a esquadra}

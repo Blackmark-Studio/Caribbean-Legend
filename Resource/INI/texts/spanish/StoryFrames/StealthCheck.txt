@@ -1,0 +1,2 @@
+ShowPapersAction {Mostrar credenciales}
+FactorQuestZpq {Gascón desconocido}

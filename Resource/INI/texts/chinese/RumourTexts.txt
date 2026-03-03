@@ -13,13 +13,13 @@ Attak_GoldFleet_t2 {日子一天比一天糟! 一支从贝洛港载着新大陆�
 Init_GoldFleet_t0 {据说一支西班牙运金船队正准备从 贝洛港起航。 确切的出发日期保密, 但据说船队将在#sgold_month#月初前往古巴。}
 Init_GoldFleet_t1 {据说金银正在装上运金船队的船只。 船队将在#sgold_month#上半月起航前往古巴。}
 Init_GoldFleet_t2 {一支运金船队从贝洛港前往古巴 的出发时间定在#sgold_month#上半月。 到那时, 所有收购的金银都将装入货舱。}
-MerchantOnMapTo_t0 {据说悬挂#snation#旗帜的"#sShipName#"号船, 正满载着#sQuestGoodsIdx#从#ssColony#殖民地向我们驶来。}
-MerchantOnMapTo_t1 {当地商人正在等待悬挂#snation#旗帜的"#sShipName#"号船从#ssColony#殖民地运来#sQuestGoodsIdx#货物。}
+MerchantOnMapTo_t0 {据说悬挂 #snation# 旗帜的 "#sShipName#" 号船, 正满载着 #sQuestGoodsIdx# 从 #ssColony# 殖民地向我们驶来。}
+MerchantOnMapTo_t1 {当地商人正在等待悬挂 #snation# 旗帜的 "#sShipName#" 号船从 #ssColony# 殖民地运来 #sQuestGoodsIdx# 货物。}
 MerchantOnMapTo_t2 {我听说一名商人乘坐悬挂#snation#旗帜的"#sShipName#"号船, 正从#ssColony#殖民地运送一批#sQuestGoodsIdx#货物。}
-MerchantOnMap_t0 {据说悬挂#snation#旗帜的商船"#sShipName#"正在等待涨潮, 以便载着#sQuestGoodsIdx#货物起航前往#ssNextColony#。}
-MerchantOnMap_t1 {据说一名受#snation#庇护的富商包租了"#sShipName#"号船。 它很快将载着#sQuestGoodsIdx#货物起航前往#ssNextColony#。}
-MerchantOnMap_t2 {当地商人给悬挂#snation#旗帜的"#sShipName#"号船装载了一批#sQuestGoodsIdx#货物, 不久它将起航前往#ssNextColony#。}
-MerchantRumour_t0 {我听到传言说, 悬挂#snation#旗帜。 载着#sQuestGoodsIdx#货物从#ssColony#驶往#ssNextColony#的"#sShipName#"号船, 被一名不明身份的海盗击沉了!}
+MerchantOnMap_t0 {据说悬挂 #snation# 旗帜的商船 "#sShipName#" 正在等待涨潮, 以便载着 #sQuestGoodsIdx# 货物起航前往 #ssNextColony#。}
+MerchantOnMap_t1 {据说一名受 #snation# 庇护的富商包租了 "#sShipName#" 号船。 它很快将载着#sQuestGoodsIdx#货物起航前往 #ssNextColony#。}
+MerchantOnMap_t2 {当地商人给悬挂 #snation# 旗帜的 "#sShipName#" 号船装载了一批 #sQuestGoodsIdx# 货物, 不久它将起航前往 #ssNextColony#。}
+MerchantRumour_t0 {我听到传言说, 悬挂 #snation# 旗帜。 载着#sQuestGoodsIdx#货物从#ssColony#驶往#ssNextColony#的"#sShipName#"号船, 被一名不明身份的海盗击沉了!}
 MerchantRumour_t1 {我听到传言说, 悬挂#snation#旗帜。 载着#sQuestGoodsIdx#货物从#ssColony#驶往#ssNextColony#的"#sShipName#"号船, 连同货物和船员一起失踪了!}
 MerchantRumour_t2 {有可怕的传言说, 最近一名海盗登上了一艘从#ssColony#殖民地起航的#snation#商船。 他屠杀了全体船员, 将#sQuestGoodsIdx#货物据为己有。 不会碰巧是你干的吧, 船长?}
 GetColonyPrices_t0 {最近我在酒馆里无意中听到两位船 长讨论#sColony#镇商店里的价格。 (已获取价格列表)}

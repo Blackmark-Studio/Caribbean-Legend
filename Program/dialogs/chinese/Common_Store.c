@@ -31,8 +31,6 @@ void ProcessDialogEvent()
 	{
 		rColony = GetColonyByIndex(iTest);
 	}
-	
-	int iSeaGoods = LanguageOpenFile("ShipEatGood.txt"); // 需要替换为 GetGoodsNameAlt(idx)
 
 	if(!CheckAttribute(npchar, "quest.trade_date"))
 	{
@@ -1355,7 +1353,7 @@ case "storage_01":
             iQuantityGoods =  makeint(pchar.CargoQuest.iQuantityGoods);
 
             dialog.text = "嗯。 我听说你没有履行前一份合同中的义务 - 而你现在又在要求另一份? 你本应把" +
-            LanguageConvertString(iSeaGoods, "seg_" + Goods[iTradeGoods].Name)+ "的货物送到" + XI_ConvertString("Colony"+pchar.CargoQuest.iTradeColony) + "。 ";
+            GetGoodsNameSeaSection(&Goods[iTradeGoods])+ "的货物送到" + XI_ConvertString("Colony"+pchar.CargoQuest.iTradeColony) + "。 ";
 			link.l1 = "是的, 确实! 你说得对! ";
 			link.l1.go = "exit";
 		break;
@@ -1991,7 +1989,6 @@ case "storage_01":
 			DialogExit();			
 		break;
 	}
-	LanguageCloseFile(iSeaGoods);
 }
 
 int findStoreMan(ref NPChar, int iTradeNation)
@@ -2048,7 +2045,7 @@ string findSunplaceCity(ref NPChar) // 新
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //在自己的岛屿
+		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //在自己的岛屿
 		{
 			storeArray[howStore] = n;
 			howStore++;

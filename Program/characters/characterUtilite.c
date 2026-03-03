@@ -481,7 +481,16 @@ int GetMaximumCaliber(ref refCharacter)
 	return sti(rShip.MaxCaliber);
 }
 
-// Ship utilite
+// Возвращает настоящий тип корабля персонажа
+int GetBaseShipType(ref chr)
+{
+	int shipIndex = GetCharacterShipType(chr);
+	if (shipIndex == SHIP_NOTUSED) return SHIP_NOTUSED;
+
+	return sti(RealShips[shipIndex].basetype);
+}
+
+// ℹ️ Этот метод возвращает не тип корабля, а его индекс в массиве RealShips
 int GetCharacterShipType(ref _refCharacter)
 {
 	if(CheckAttribute(_refCharacter,"Ship.Type"))
@@ -728,6 +737,12 @@ float GetHullRPD(ref _refCharacter) // процент ремонта корпу�
     // belamour правка артефактов согласно описанию -->
 	if(IsCharacterEquippedArtefact(_refCharacter, "talisman7")) repairSkill = repairSkill * 2.0; // вдвое увеличивает
     //<-- belamour
+
+	if (IsEquipCharacterByItem(_refCharacter, "piratesJournal_3"))
+	{
+		if (ShipBonus2Artefact(_refCharacter, SHIP_AMSTERDAM)) repairSkill *= 1.6;
+		else repairSkill *= 1.3;
+	}
 
 	float damagePercent = 100.0 - GetHullPercent(_refCharacter);
 	if(damagePercent == 0.0) return 0.0;
@@ -1993,20 +2008,16 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 			{
 				if(n > 0)
 				{
-					idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-					if(pchar.chr_ai.type == "player" && !LAi_IsDead(pchar)) notification(StringFromKey("characterUtilite_3")+LanguageConvertString(idLngFile, arItm.name), "BoxPlus");
+					if(pchar.chr_ai.type == "player" && !LAi_IsDead(pchar)) notification(StringFromKey("characterUtilite_3")+GetItemName(arItm), "BoxPlus");
 					//Log_Info(XI_ConvertString("You take item"));
 					AddMsgToCharacter(_refCharacter, MSGICON_GETITEM);
-					LanguageCloseFile(idLngFile);
 				}
 				
 				if(n < 0)
 				{
-					idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-					//log_info("Отдано: "+LanguageConvertString(idLngFile, arItm.name))
-					if(dialogrun) notification(StringFromKey("characterUtilite_5")+LanguageConvertString(idLngFile, arItm.name), "BoxMinus");
+					//log_info("Отдано: "+GetItemName(arItm))
+					if(dialogrun) notification(StringFromKey("characterUtilite_5")+GetItemName(arItm), "BoxMinus");
 					//Log_Info(XI_ConvertString("You give item"));
-					LanguageCloseFile(idLngFile);
 				}
 			}
 		}
@@ -2526,6 +2537,7 @@ void SetEquipedItemToCharacter(ref chref, string groupID, string itemID)
 			SendMessage(chref, "lsl", MSG_CHARACTER_EX_MSG, "UntieItem", 10);
 			if(HasHatLocator(chref))
 			{
+				if(CheckAttribute(chref, "HatShow") && sti(chref.HatShow) == 0) return;
 				SendMessage(chref, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", 10, modelName, "hat", 1);
 			}
 		break;
@@ -3000,13 +3012,11 @@ void UpdateCharacterEquipItem(ref chref)
 				arEquip.(sAttr).time = sti(arEquip.(sAttr).time) - 1;
 				if(sti(arEquip.(sAttr).time) == 0) 
 				{
-					idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 					sItem = GetCharacterEquipBySlot(chref, sAttr);
 					ref arItem = ItemsFromID(sItem);
-					pchar.systemInfo.messages.Artefact = GetFullName(chref) + StringFromKey("characterUtilite_6", LanguageConvertString(idLngFile, arItem.name))+ LanguageConvertString(idLngFile, "new_string");
-					//Log_SetStringToLog(GetFullName(chref) + " заметил, что артефакт " + LanguageConvertString(idLngFile, arItem.name) + " утратил силу");
+					pchar.systemInfo.messages.Artefact = GetFullName(chref) + StringFromKey("characterUtilite_6", GetItemName(arItem.id))+ NewStr();
+					//Log_SetStringToLog(GetFullName(chref) + " заметил, что артефакт " + GetItemName(arItem.id)) + " утратил силу");
 					RemoveCharacterArtefactEquip(chref, sAttr);
-					LanguageCloseFile(idLngFile);
 					if(!IsMainCharacter(chref) && GetCharacterFreeItem(chref, sItem) > 0)
 					{
 						EquipCharacterByArtefact(chref, sItem);
@@ -3410,6 +3420,13 @@ string  Get_My_Cabin()
 	return Pchar.SystemInfo.CabinType;
 }
 
+// Обновить инфу по каюте и получить ID текущей каюто-локации
+string Get_My_Cabin_Now()
+{
+	Set_My_Cabin();
+	return Get_My_Cabin();
+}
+
 string  Get_My_Cabin_Pic()
 {
     int  i;
@@ -3674,304 +3691,6 @@ int CheckItemInBox(string _itemID, string _locationID, string _box) // Addon 201
 		if (attr == _itemID) Qty += makeint(GetAttributeValue(curItem));
 	}
 	return Qty;
-}
-
-int CheckItemMyCabin(string _itemID)
-{
-	int     n,i;	
-	int		Qty = 0; 
-    string  sTemp;
-    ref     loc;
-	aref    arBox;
-    aref    curItem;
-	string  attr;
-
-	int nShipType = GetCharacterShipType(pchar);
-	if (nShipType == SHIP_NOTUSED)	return 0;
-	
-	if (Pchar.SystemInfo.CabinType != "")
-	{
-		loc = &locations[FindLocation(Pchar.SystemInfo.CabinType)]; 
-		for (n = 1; n <= 4; n++)
-	    {
-			sTemp = "box" + n;			
-			makearef(arBox, loc.(sTemp).items);
-            for(i=0; i<GetAttributesNum(arBox); i++)
-            {
-                curItem = GetAttributeN(arBox, i);
-                attr = GetAttributeName(curItem);
-                if (attr == _itemID)
-                {
-                    Qty += makeint(GetAttributeValue(curItem));
-                }
-            }			
-		}
-	}
-	loc = &locations[FindLocation("My_Deck")];
-	for (n = 1; n <= 4; n++)
-    {
-		sTemp = "box" + n;
-		makearef(arBox, loc.(sTemp).items);
-        for(i=0; i<GetAttributesNum(arBox); i++)
-        {
-            curItem = GetAttributeN(arBox, i);
-            attr = GetAttributeName(curItem);
-            if (attr == _itemID)
-            {
-                Qty += makeint(GetAttributeValue(curItem));
-            }
-        }					
-	}
-	return Qty;
-}
-
-int GetItemMyCabin(string _itemID, int _qty)
-{
-	int     n,i;	
-	int		Qty = 0; 
-	int 	rQty = 0;	
-    string  sTemp;
-    ref     loc;
-	aref    arBox;
-    aref    curItem;
-	string  attr;
-	
-	int nShipType = GetCharacterShipType(pchar);
-	if (nShipType == SHIP_NOTUSED)	return;
-
-	if (Pchar.SystemInfo.CabinType != "")
-	{
-		loc = &locations[FindLocation(Pchar.SystemInfo.CabinType)]; 
-		for (n = 1; n <= 4; n++)
-	    {	
-			sTemp = "box" + n;			
-			makearef(arBox, loc.(sTemp).items);
-            for(i=0; i<GetAttributesNum(arBox); i++)
-            {
-                curItem = GetAttributeN(arBox, i);
-                attr = GetAttributeName(curItem);
-                if (attr == _itemID)
-				{
-					Qty = makeint(GetAttributeValue(curItem));
-					if(Qty > 0)
-					{
-						if(Qty > _qty) 
-						{
-							loc.(sTemp).items.(attr) = makeint(sti(loc.(sTemp).items.(attr)) - _qty);
-							rQty += Qty;
-							return rQty;
-						}
-						else
-						{
-							DeleteAttribute(loc, sTemp + ".items." + attr);
-							_qty -= Qty;
-							rQty += Qty;
-						}		
-					}
-				}
-			}
-		}
-	}
-	loc = &locations[FindLocation("My_Deck")];
-	for (n = 1; n <= 4; n++)
-    {
-		sTemp = "box" + n;	
-		makearef(arBox, loc.(sTemp).items);
-        for(i=0; i<GetAttributesNum(arBox); i++)
-        {
-            curItem = GetAttributeN(arBox, i);
-            attr = GetAttributeName(curItem);
-            if (attr == _itemID)
-            {		
-				Qty = makeint(GetAttributeValue(curItem));
-				if(Qty > 0)
-				{
-					if(Qty > _qty) 
-					{
-						loc.(sTemp).items.(attr) = makeint(sti(loc.(sTemp).items.(attr)) - _qty);
-						rQty += Qty;
-						return rQty;
-					}
-					else
-					{
-						DeleteAttribute(loc, sTemp + ".items." + attr);
-						_qty -= Qty;
-						rQty += Qty;
-					}		
-				}				
-			}
-		}	
-	}
-	return rQty;
-} 
-// belamour положить предмет в корабельный сундук
-void PutItemMyBox(string _Box, string _itemID, int _qty)
-{
-	int nShipType = GetCharacterShipType(pchar);
-	if (nShipType == SHIP_NOTUSED)	return;
-	if (Pchar.SystemInfo.CabinType != "")
-	{
-		ref loc = &locations[FindLocation(Pchar.SystemInfo.CabinType)]; 
-		if(CheckAttribute(loc,_Box+".items."+_itemID))
-		{
-			loc.(_Box).items.(_itemID) = makeint(sti(loc.(_Box).items.(_itemID)) + _qty);
-		}
-		else
-		{
-			loc.(_Box).items.(_itemID) = _qty;
-		}
-	}
-} 
-
-// belamour количество предмета в конкретном корабельном сундуке
-int CheckItemMyBox(string _Box, string _itemID)
-{
-	int     i;	
-	int		Qty = 0; 
-    ref     loc;
-	aref    arBox;
-    aref    curItem;
-	string  attr;
-
-	int nShipType = GetCharacterShipType(pchar);
-	if (nShipType == SHIP_NOTUSED)	return 0;
-	if (Pchar.SystemInfo.CabinType != "")
-	{
-		loc = &locations[FindLocation(Pchar.SystemInfo.CabinType)]; 			
-		makearef(arBox, loc.(_Box).items);
-		for(i=0; i<GetAttributesNum(arBox); i++)
-		{
-			curItem = GetAttributeN(arBox, i);
-			attr = GetAttributeName(curItem);
-			if (attr == _itemID)
-			{
-				Qty += makeint(GetAttributeValue(curItem));
-			}
-		}			
-	}
-	return Qty;
-}
-
-// belamour взять предмет из конкретного корабельного сундука
-int GetItemMyBox(string _Box, string _itemID, int _qty)
-{
-	int     i;	
-	int		Qty = 0; 
-	int 	rQty = 0;	
-    ref     loc;
-	aref    arBox;
-    aref    curItem;
-	string  attr;
-	
-	int nShipType = GetCharacterShipType(pchar);
-	if (nShipType == SHIP_NOTUSED)	return;
-	if (Pchar.SystemInfo.CabinType != "")
-	{
-		loc = &locations[FindLocation(Pchar.SystemInfo.CabinType)]; 			
-		makearef(arBox, loc.(_Box).items);
-		for(i=0; i<GetAttributesNum(arBox); i++)
-		{
-			curItem = GetAttributeN(arBox, i);
-			attr = GetAttributeName(curItem);
-			if (attr == _itemID)
-			{
-				Qty = makeint(GetAttributeValue(curItem));
-				if(Qty > 0)
-				{
-					if(Qty > _qty) 
-					{
-						loc.(_Box).items.(attr) = makeint(sti(loc.(_Box).items.(attr)) - _qty);
-						rQty += Qty;
-						return rQty;
-					}
-					else
-					{
-						DeleteAttribute(loc, _Box + ".items." + attr);
-						_qty -= Qty;
-						rQty += Qty;
-					}		
-				}
-			}
-		}
-		
-	}
-	return rQty;
-}
-
-// belamour общая проверка количества дублонов у ГГ и в каюте
-int PCharDublonsTotal()
-{
-	int	Qty = 0; 
-	Qty = GetCharacterItem(pchar,"gold_dublon") + CheckItemMyCabin("gold_dublon");
-	return Qty;
-}
-// belamour взять дублоны сначала у ГГ, а потом в каюте 
-void RemoveDublonsFromPCharTotal(int _Dublons)
-{
-	int	Qty = _Dublons; 
-	if(Qty<1) return;
-	if(GetCharacterItem(pchar,"gold_dublon") + CheckItemMyCabin("gold_dublon") < Qty) return;
-	int Total = Qty;
-	int cq = GetCharacterItem(pchar,"gold_dublon");
-	int bq = CheckItemMyCabin("gold_dublon");
-	if(cq > 0) // есть дублоны на руках
-	{
-		if(cq >= Qty) // можем оплатить полную сумму
-		{
-			//Log_Info("Потрачено "+FindRussianDublonString(Qty));
-			TakeNItems(pchar,"gold_dublon", -Qty));
-		}
-		else // на руках часть дублонов
-		{
-			Total -= cq;
-			TakeNItems(pchar,"gold_dublon", -cq));
-			//Log_Info("Потрачено "+FindRussianDublonString(cq));
-			GetItemMyCabin("gold_dublon", Total);
-			//Log_Info("Взято из каюты "+FindRussianDublonString(Total));
-		}
-	}
-	else
-	{
-		GetItemMyCabin("gold_dublon", Qty);
-		//Log_Info("Взято из каюты "+FindRussianDublonString(Qty));
-	}
-	//"Потрачено "+_Dublons+" дублонов"
-	notification(StringFromKey("characterUtilite_9", _Dublons), "Dubloon");
-	PlayStereoSound("Ambient\SHOP\dubloons.wav");
-}
-
-int PCharItemsTotal(string _itemID)
-{
-	int	Qty = 0; 
-	Qty = GetCharacterItem(pchar,_itemID) + CheckItemMyCabin(_itemID);
-	return Qty;
-}
-
-void RemoveItemsFromPCharTotal(string _itemID, int _qty)
-{
-	int	Qty = _qty; 
-	if(Qty<1) return;
-	if(GetCharacterItem(pchar,_itemID) + CheckItemMyCabin(_itemID) < Qty) return;
-	int Total = Qty;
-	int cq = GetCharacterItem(pchar,_itemID);
-	int bq = CheckItemMyCabin(_itemID);
-	if(cq > 0)
-	{
-		if(cq >= Qty)
-		{
-			TakeNItems(pchar,_itemID, -Qty));
-		}
-		else
-		{
-			Total -= cq;
-			TakeNItems(pchar,_itemID, -cq));
-			GetItemMyCabin(_itemID, Total);
-		}
-	}
-	else
-	{
-		GetItemMyCabin(_itemID, Qty);
-	}
 }
 
 // есть ли патент
@@ -4566,12 +4285,17 @@ string GetMessagePortrait(ref chr)
 }
 
 // Может ли персонаж прокачать себе этот перк
-bool CanTakePerk(ref chr, ref perkEntity, string reason)
+bool CanTakePerk(ref chr, ref perkEntity, ref reason)
 {
 	ref perk = FindPerk_VT(&perkEntity);
 	aref condtionPerks;
 	string perkName = GetAttributeName(perk);
 
+	if (!CheckAttribute(perk, "baseType"))
+	{
+		reason = "disabled";
+		return false;
+	}
 	string pointsAttribute = "FreePoints_" + perk.baseType;
 	if (HasPerkNatural(chr, perkName))                                       reason = "alreadyHave";     // уже есть
 	else if (!IsFellowOurCrew(chr))                                          reason = "notFellow";       // не можем качать навыки чужим
@@ -4600,16 +4324,22 @@ bool CheckPerkFilter(ref chr, ref perkEntity) {
 	if (IsMainCharacter(chr) && CheckAttribute(perk, "NPCOnly")) return true;
 	if (!IsMainCharacter(chr) && CheckAttribute(perk, "PlayerOnly")) return true;
 	if (perkName == "Captain" && CheckAttribute(chr, "CompanionDisable")) return true;
+	if (CheckAttribute(perk, "Hidden")) return true;
 	if (!CheckAttribute(perk, "HeroType")) return false;
 	if (!CheckCharacterPerk(chr, perk.HeroType)) return true;
 	return false;
 }
 
-float GetDepositRate()
+string GetDepositRate(string type)
 {
-	float result = 2.0 + (makeint(((1.0 * (GetSummonSkillFromName(pchar, "Commerce") + GetSummonSkillFromName(pchar, "Leadership")) / 200) ) / 0.5 + 0.5)) * 0.5;
+	float result = 1.0;
+	if (type == "peso")
+	{
+		result = 2.0 + (makeint(((1.0 * (GetSummonSkillFromName(pchar, "Commerce") + GetSummonSkillFromName(pchar, "Leadership")) / 200) ) / 0.5 + 0.5)) * 0.5;
+	}
+
 	if (HasPerk(pchar, "Investor")) result += PERK_VALUE_INVESTOR;
-	return result;
+	return ToHumanNumber(result);
 }
 
 // Может ли персонаж управлять кораблём на глобальной карте
@@ -4637,4 +4367,12 @@ bool CanEquipFireArmsNow(ref chr, ref item)
 	if (HasDescriptor(item, "Multicharge") || HasDescriptor(item, "TwoHanded")) return false;
 
 	return true;
+}
+
+// Есть ли государственный титул
+bool IsStateTitle()
+{
+	if (CheckAttribute(pchar, "questTemp.Patria.GenGovernor")) return true;
+	if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4) return true;
+	return false;
 }

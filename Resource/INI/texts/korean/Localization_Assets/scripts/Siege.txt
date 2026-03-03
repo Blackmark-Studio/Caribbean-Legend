@@ -1,0 +1,27 @@
+Siege_1 {현지 어부들이 이 지역에서 강력한 @<NationNameSK(sti(aData.nation))> 함대를 목격했다고 합니다.}
+Siege_2 {@<NationNameSK(sti(aData.nation))> 함대가 우리 도시를 약탈한 뒤 아직 멀지 않은 곳에 있다고 합니다. 저들을 되갚아줄 용감한 선장이 있었으면 좋겠군요.}
+Siege_3 {전투함대}
+Siege_4 {못 들으셨습니까? @<NationNameSK(sti(aData.nation))> 함선들이 우리 요새를 포격 중입니다. 언제든 함락될 수 있고, 끔찍한 일이 벌어질 겁니다.}
+Siege_5 {오늘은 @<NationNameGenitive(sti(aData.nation))>에게 위대한 날입니다. 우리는 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>처럼 중요한 식민지를 점령하는 데 성공했습니다! 모든 @<NationNameSK(sti(aData.conation))> 주둔군이 전멸했고, 요새는 우리 군이 점령하여 이미 다시 강화되었습니다!}
+Siege_6 {소문에 따르면 @<NationNameSK(sti(aData.nation))> 함대가 오랜 포위 끝에 @<NationNameSK(sti(aData.conation))> 식민지 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>를 점령했다고 합니다. 이제 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>는 @<NationNameSK(sti(aData.nation))>의 식민지가 되었습니다!}
+Siege_7 {@<NationNamePeople(sti(aData.nation))>이(가) 비열하게 우리 식민지 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>를 공격해 도시를 점령했다고 합니다!}
+Siege_8 {소식 들으셨나요? 우리 용맹한 함대가 @<NationNameGenitive(sti(aData.conation))>에게서 부유한 식민지 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>를 탈환했습니다. ~}
+Siege_9 {@<NationNameGenitive(sti(aData.conation))>에 슬픈 소식입니다. 우리는 식민지를 지키지 못했습니다. 요새가 @<NationNameSK(sti(aData.nation))> 함선에 의해 파괴되고, 도시는 약탈당했습니다.}
+Siege_10 {소문에 따르면 @<NationNameSK(sti(aData.nation))>이(가) @<NationNameSK(sti(aData.conation))>의 식민지 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>를 점령했다고 합니다. @<NationNameSK(sti(aData.nation))> 함대는 도시를 약탈한 뒤 떠났습니다.}
+Siege_11 {소문에 따르면 @<NationNamePeople(sti(aData.nation))>이(가) 갑자기 우리 식민지 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>를 공격해, 지원군이 도착하기 전에 도시를 약탈했다고 합니다! 그리고 나서 @<NationNamePeople(sti(aData.nation))>은(는) 전리품을 챙겨 수치스럽게 도망쳤다고 합니다.}
+Siege_12 {소식 들으셨나요? 우리 군 함대가 @<NationNameSK(sti(aData.conation))>의 도시 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>를 성공적으로 포위했습니다. 수비대의 저항은 무너졌지만, 물론 우리 군도 떠나야 했죠. 하지만 전리품은...}
+Siege_13 {오늘은 축하의 날입니다! @<NationNameSK(sti(aData.nation))> 침입자들이 모두 물리쳐져 도시가 안전해졌습니다.}
+Siege_14 {@<NationNameSK(sti(aData.nation))> 함대가 @<NationNameSK(sti(aData.conation))> 식민지 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> 공격 중 패배했다고 합니다. 수비대가 더 강했다고 합니다.}
+Siege_15 {소문에 따르면 @<NationNamePeople(sti(aData.nation))>이(가) 갑자기 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>을(를) 공격했지만, 마침내 지원군이 도착했다고 합니다! 모든 @<NationNameSK(sti(aData.nation))> 함선이 침몰했습니다.}
+Siege_16 {우리 함대가 @<NationNameSK(sti(aData.conation))> 식민지 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> 포위를 실패했다는 소문을 들었어. 오랜 포위전 끝에 우리 배들이 침몰했다네! 다음엔 더 잘할 수 있겠지.}
+Siege_17 {영국}
+Siege_18 {프랑스}
+Siege_19 {스페인}
+Siege_20 {네덜란드}
+Siege_21 {일}
+Siege_22 {일}
+Siege_23 {몇 시간}
+Siege_24 {@<NationNamePeople(sti(aData.nation))>이(가) @<NationNameSK(sti(aData.conation))> 식민지 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>를 공격했다고 합니다. 아직 전투 중이지만, 수비대의 보급품이 부족합니다. 최대 @<sDays>일까지만 버틸 수 있습니다.}
+Siege_25 {우리의 막강한 함대가 @<NationNameSK(sti(aData.conation))> 식민지 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>를 공격했다는 소문이 돌고 있습니다. 적들은 필사적으로 저항하고 있지만, 아마도 @<sDays> 내에 승자가 누가 될지 알게 될 것입니다.}
+Siege_26 {~ @<NationNamePeople(sti(aData.nation))>이(가) 우리 식민지 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>를 공격했습니다. 용감한 수비대는 @<sDays> 후면 식량이 바닥납니다.}
+Siege_27 {~ 포위됨 ~}

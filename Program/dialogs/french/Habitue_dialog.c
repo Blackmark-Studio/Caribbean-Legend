@@ -616,7 +616,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FindFugitiveHb_1":
-			dialog.text = "Bien sûr, je peux! Chaque matin, il peut être trouvé sur la rive, à "+XI_ConvertString(pchar.GenQuest.FindFugitive.Shore+"Gén")+". Venez aussi tôt que possible sinon il mettra les voiles et vous devrez attendre le lendemain matin.";
+			dialog.text = "Bien sûr, je peux! Chaque matin, il peut être trouvé sur la rive, à "+XI_ConvertString(pchar.GenQuest.FindFugitive.Shore+"Gen")+". Venez aussi tôt que possible sinon il mettra les voiles et vous devrez attendre le lendemain matin.";
 			link.l1 = "Merci ! Tu m'as beaucoup aidé, mon ami ! À bientôt !";
 			link.l1.go = "exit_sit";
 			pchar.GenQuest.FindFugitive.Chance = 3; // чтобы никто больше не говорил

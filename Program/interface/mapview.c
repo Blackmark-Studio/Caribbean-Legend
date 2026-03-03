@@ -13,6 +13,7 @@ ref xi_refCharacter;
 int iSelected = 1;
 int colonyindex = -1;
 int  iGoodIndex;
+bool colonyIsShown = false;
 ///espkk. utils -->
 //cuz the game doesn't use built-in language mechanism
 #define LANG_FILE "activemap"
@@ -195,6 +196,7 @@ void ProcessCommandExecute()
 {
 	string comName = GetEventData();
 	string nodName = GetEventData();
+	if (comName == "click" && colonyIsShown) HideRColony();
 	switch(nodName)
 	{
 		/////////////////////// menu ///////////////
@@ -241,6 +243,8 @@ void ProcessCommandExecute()
 			}
 		break;
 		case "MAPS":
+			if (colonyIsShown) break;
+
 			if (CheckAttribute(&GameInterface, "TABLE_MAPS." + CurRow + ".index")){
 				iGoodIndex = sti(GameInterface.TABLE_MAPS.(CurRow).index);
 			}
@@ -287,14 +291,12 @@ void FillMapsTable()
 	int n, i;
 	string row;
 	string sGood, selectedId = "";
-	int  idLngFile;
 	aref arItem;
 	string bestMapId = GetBestRegionMap();
 	aref mapsTable;
 	makearef(mapsTable, GameInterface.TABLE_MAPS);
 
 	n = 1;
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 
 	if (CheckAttribute(pchar, "showlastmap.force"))
 	{
@@ -303,6 +305,8 @@ void FillMapsTable()
 	}
 	else if (IsEntity(&worldMap) && bestMapId != "") selectedId = bestMapId;                     // в море берем лучшую из доступных карту архипелага
 	else if (FindAtlasMap(&selectedId) == "") selectedId = bestMapId;                            // показываем карту архипелага, потому что у нас нет карты из атрибута showlastmap
+	else selectedId = FindAtlasMap(&selectedId);
+
 
 	mapsTable.hr.td1.str = XI_ConvertString("Select map");
 	Table_UpdateWindow("TABLE_MAPS");
@@ -317,23 +321,6 @@ void FillMapsTable()
 		if (selectedId == bestMapId) { iSelected = n; }
 		n++;
 	}
-
-	// // Затем какие-то остальные карты
-	// aref restMaps, restMap;
-	// makearef(restMaps, Atlas.rest);
-
-	// for(i=0;i<GetAttributesNum(&restMaps);i++)
-	// {
-	// 	restMap = GetAttributeN(&restMaps, i);
-	// 	Items_FindItem(GetAttributeName(&restMap), &arItem)
-	// 	row = "tr" + n;
-	// 	sGood = arItem.id;
-
-	// 	if (selectedId == sGood) { iSelected = n; }
-	// 	mapsTable.(row).index = arItem.index;
-	// 	mapsTable.(row).td1.str = LanguageConvertString(idLngFile, "itmname_"+arItem.id);
-	// 	n++;
-	// }
 
 	// Теперь карты акваторий
 	string areaMapsIds[2];
@@ -356,7 +343,6 @@ void FillMapsTable()
 	SetNewMapPicture(&arItem);
 
 	Table_UpdateWindow("TABLE_MAPS");
-	LanguageCloseFile(idLngFile);
 }
 
 void TableSelectChange()
@@ -404,6 +390,7 @@ void SetNewMapPicture(ref itmRef)
 
 	ref switchMap = GetMapSwitch(itmRef);
 	SetNodeUsing("SWITCH_MAP_BUTTON", switchMap.id != itmRef.id);
+	HideRColony();
 }
 
 void ShowInfoWindow()
@@ -439,14 +426,12 @@ void ShowInfoWindow()
 		break;
 	}
 
-	LanguageCloseFile(LanguageOpenFile("ItemsDescribe.txt"));
 	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 128, 128, false);
 }
 
 void HideInfoWindow()
 {
 	CloseTooltipNew();
-	HideRColony();
 }
 
 /// bestmap section ===>
@@ -643,7 +628,6 @@ void FillTable()
 								Table_Clear("TABLE_LOCS",false,true,false);
 								GameInterface.TABLE_LOCS.select = 0;
 								GameInterface.TABLE_LOCS.top = 0;
-								int nFile = LanguageOpenFile("LocLables.txt");
 								ref rColony = &colonies[i];
 								string island = rColony.island;
 								string row = "";
@@ -656,7 +640,7 @@ void FillTable()
 									{
 										row = "tr" + n;
 										GameInterface.TABLE_LOCS.(row).td1.str = locations[z].id;
-										GameInterface.TABLE_LOCS.(row).td2.str = LanguageConvertString(nFile, locations[z].id.label);
+										GameInterface.TABLE_LOCS.(row).td2.str = GetLocationLabelByRef(&locations[z]);
 										if (HasSubStr(locations[z].id.label,"upstairs")) GameInterface.TABLE_LOCS.(row).td2.str = "Комната наверху таверны";
 										n++;
 									}
@@ -774,6 +758,12 @@ void FillTable()
 			setWDMPointXZ("Shore74");
 			ssColony = "IslaDeVieques";
 		}
+		if (fMouseX >= 1261.0 && fMouseX <= 1330.0 && fMouseY >= 424.0 && fMouseY <= 522.0)
+		{
+			setCharacterShipLocation(pchar, "Shore67");
+			setWDMPointXZ("Shore67");
+			ssColony = "RockIsland";
+		}
 		if (ssColony == "") return;
 		XI_WindowShow("TP_WINDOW", true);
 		XI_WindowDisable("TP_WINDOW", false);
@@ -781,7 +771,6 @@ void FillTable()
 		Table_Clear("TABLE_LOCS",false,true,false);
 		GameInterface.TABLE_LOCS.select = 0;
 		GameInterface.TABLE_LOCS.top = 0;
-		int nFile1 = LanguageOpenFile("LocLables.txt");
 		string row1 = "";
 		int x = 1;
 		GameInterface.TABLE_LOCS.hr.td1.str = "ID";
@@ -792,7 +781,7 @@ void FillTable()
 			{
 				row1 = "tr" + x;
 				GameInterface.TABLE_LOCS.(row1).td1.str = locations[y].id;
-				GameInterface.TABLE_LOCS.(row1).td2.str = LanguageConvertString(nFile1, locations[y].id.label);
+				GameInterface.TABLE_LOCS.(row1).td2.str = GetLocationLabelByRef(&locations[y]);
 				if (HasSubStr(locations[y].id.label,"upstairs")) GameInterface.TABLE_LOCS.(row1).td2.str = "Комната наверху таверны";
 				x++;
 			}
@@ -955,6 +944,12 @@ void SelectRColony()
 			setWDMPointXZ("Shore74");
 			DoQuestReloadToLocation("Shore74", "reload", "reload1", "");
 		}
+		if (fMouseX >= 1261.0 && fMouseX <= 1330.0 && fMouseY >= 424.0 && fMouseY <= 522.0)
+		{
+			setCharacterShipLocation(pchar, "Shore67");
+			setWDMPointXZ("Shore67");
+			DoQuestReloadToLocation("Shore67", "reload", "reload1", "");
+		}
 	}
 }
 
@@ -964,6 +959,7 @@ void HideRColony()
 	XI_WindowDisable("MAINBESTMAP_WINDOW", true);
 	XI_WindowDisable("INFO_WINDOW", true);
 	XI_WindowShow("INFO_WINDOW", false);
+	colonyIsShown = false;	
 	// телепорт на правую кнопку
 	// if (bBettaTestMode && colonyindex != -1)
 	// {
@@ -980,6 +976,7 @@ void ShowColonyInfo(int iColony)
 	rColony = &colonies[iColony];
 	string sColony = colonies[iColony].id;
 	int iColor;
+	colonyIsShown = true;
 
 	//Clean up -->
 	sText = XI_ConvertString("Colony" + sColony);
@@ -1150,7 +1147,7 @@ void ShowColonyInfo(int iColony)
 
 	ref refStore, refStore2;
 	aref arefStore2, refGoods;
-	for(i = 0; i < STORE_QUANTITY; i++)
+	for(i = 0; i < GetArraySize(&stores); i++)
 	{
 		makeref(refStore, Stores[i]);
 		if (refStore.colony == sColony)
@@ -1255,7 +1252,7 @@ void ShowColonyInfo(int iColony)
 	}
 		
 	//Find our store
-	for(i = 0; i < STORE_QUANTITY; i++)
+	for(i = 0; i < GetArraySize(&stores); i++)
 	{
 		makeref(refStore, Stores[i]);
 		if (refStore.colony == sTown)
@@ -1268,7 +1265,7 @@ void ShowColonyInfo(int iColony)
 	}
 	else
 	{
-		for(i = 0; i < STORE_QUANTITY; i++)
+		for(i = 0; i < GetArraySize(&stores); i++)
 		{
 			makeref(refStore2, Stores[i]);
 			if (refStore2.colony == sColony)

@@ -1,0 +1,11 @@
+Regatta_1 {Henry}
+Regatta_2 {Stivenson}
+Regatta_3 {もうレガッタは始まってしまいました。}
+Regatta_4 {Saint Catherine}
+Regatta_5 {副官}
+Regatta_6 {Mahoiny}
+Regatta_7 {Vudro}
+Regatta_8 {Doggerty}
+Regatta_9 {航海士があなたの船を離れました！}
+Regatta_10 {乗客が乗船しています。}
+Regatta_11 {船が過積載です。 速度と機動性が大きく低下しています。}

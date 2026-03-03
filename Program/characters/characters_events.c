@@ -356,11 +356,62 @@ void chrCharacterKeys()
     else
 	{
     // boal <--
-	
-		Reload(chrWaitReloadRef, chrWaitReloadLocator, mc.location);
+		ref loc = &Locations[FindLocation(mc.location)];
+		if(chrGetLabelName(loc, chrWaitReloadLocator) == "sea")
+			LandToSea_CheckAutoSave();
+		else if (CheckStealthOnLoad(chrWaitReloadRef, chrWaitReloadLocator)) return;
+		else Reload(chrWaitReloadRef, chrWaitReloadLocator, mc.location);
 	}
 	chrWaitReloadLocator = "";
 	chrWaitReloadIsNoLink = false;
+}
+
+// Стори-фреймовский блок проникновения/причаливания
+bool CheckStealthOnLoad(aref chrWaitReloadRef, string chrWaitReloadLocator)
+{
+	int num = GetAttributesNum(chrWaitReloadRef);
+	aref arLocator;
+	if (num == 0) return false;
+	for (int i = 0; i < num; i++)
+	{
+		arLocator = GetAttributeN(chrWaitReloadRef, i);
+		if (chrWaitReloadLocator == arLocator.name) break;
+	}
+
+	if (!CheckAttribute(&arLocator, "go")) return false;
+
+	int reload_location_index = FindLocation(arLocator.go);
+	if (reload_location_index < 0) return false;
+
+	ref location = &locations[reload_location_index];
+	bool canEnter = !CheckAttributeEqualTo(location, "type", "town") || STH_CanEnterTown(location.townsack);
+	if (!canEnter)
+	{
+		if (IsDay()) Event("StoryFrameLaunch", "ssss", "ssss", "StealthCheckGates", "colonyId", location.townsack);
+		else Event("StoryFrameLaunch", "ssssss", "ssssss", "StealthCheckNight", "colonyId", location.townsack, "entryPoint", "gates");
+		return true;
+	}
+
+	return false;
+}
+
+void LandToSea_CheckAutoSave()
+{
+	if(GetMaxAutoSaves("LandToSea") != 0)
+	{
+		TEV.AutoSave.Location = pchar.location;
+		TEV.AutoSave.Locator = chrWaitReloadLocator;
+		SetAfterSaveFunction("LandToSea_Continue");
+		PostEvent("Event_NewAutoSave", 1, "s", "LandToSea");
+	}
+	else
+		Reload(chrWaitReloadRef, chrWaitReloadLocator, pchar.location);
+}
+
+void LandToSea_Continue()
+{
+	Reload(chrWaitReloadRef, TEV.AutoSave.Locator, TEV.AutoSave.Location);
+	DeleteAttribute(&TEV, "AutoSave");
 }
 
 bool chrIsNowEnableReload()

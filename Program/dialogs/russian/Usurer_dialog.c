@@ -184,7 +184,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			// Леди Бет -->
-			if (pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_Bank" && !CheckAttribute(pchar, "questTemp.LadyBeth_Usurer")) // Блеквуд в городе
+			if (pchar.location == GetAttributeOrDefault(pchar, "questTemp.LadyBeth.CaptainInColony", "none") + "_Bank" && !CheckAttribute(pchar, "questTemp.LadyBeth_Usurer")) // Блеквуд в городе
 			{
 				dialog.Text = "О, капитан! Прошу, посмотрите, что у меня есть сегодня. Некоторые вещи я приобрел у людей Блэквуда. Им нужны деньги на новую экспедицию, а нам с вами - выгода, верно?";
 				link.l1 = "Блэквуд знает, что его люди продают находки?";
@@ -986,7 +986,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "result":
-			Pchar.QuestTemp.Deposits.(sDepositType1).Interest = GetDepositRate();
+			Pchar.QuestTemp.Deposits.(sDepositType1).Interest = GetDepositRate("peso");
 			Pchar.QuestTemp.Deposits.(sDepositType1).Sum = dialogEditStrings[3];
 			iTemp = sti(dialogEditStrings[3]);
 			if (iTemp <= 0)
@@ -1157,7 +1157,7 @@ void ProcessDialogEvent()
 		
 		case "result_dub":		
 			iTotalDublonQty = GetCharacterItem(pchar,"gold_dublon") + CheckItemMyCabin("gold_dublon");		
-			Pchar.QuestTemp.Deposits.(sDepositType2).Interest = 1; 
+			Pchar.QuestTemp.Deposits.(sDepositType2).Interest = GetDepositRate("dublon"); 
 			Pchar.QuestTemp.Deposits.(sDepositType2).Sum = dialogEditStrings[3];
 			iTemp = sti(dialogEditStrings[3]);
 			if (iTemp <= 0)

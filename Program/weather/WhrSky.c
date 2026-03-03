@@ -20,7 +20,7 @@ void WhrCreateSkyEnvironment()
 	makearef(aSky, aCurWeather.Sky);
 
 	DeleteAttribute(&Sky, "")
-	if(!isEntity(&Sky))
+	if (!isEntity(&Sky))
 	{
 		CreateEntity(&Sky, "Sky");
 		LayerAddObject(SEA_REFLECTION,&Sky,1);
@@ -31,53 +31,32 @@ void WhrCreateSkyEnvironment()
 	Sky.RotateSpeed = Whr_GetFloat(aSky, "Rotate"); // Warship 02.06.09 - ротация неба ниже
 	Sky.Angle 		= Whr_GetFloat(aSky, "Angle");
 	Sky.Size 		= Whr_GetFloat(aSky, "Size");
-	
+
 	Sky.isDone = "";
 }
 
 // Warship 02.06.09 - апдейт параметров неба (например, скорость ротации в зависимости от силы ветра)
 void UpdateSky()
 {
+    if (!CheckAttribute(&InterfaceStates,"ROTATESKY") || sti(InterfaceStates.ROTATESKY) != 1)
+    {
+        Sky.RotateSpeed = 0.0;
+        return;
+    }
+
+    float fTime = GetTime();
 	float windSpeed = 5.0;
 	float timeScale = 1.0 + TimeScaleCounter * 0.25; // Текущее ускорение времени
 
 	// Вычисление делителя для ускорения, чтоб на x8 бешенно не крутились
-	if(timeScale <= 2)
-	{
-		timeScale = 1.0;
-	}
-	else
-	{
-		timeScale /= 2.0;
-	}
-	
-	if(CheckAttribute(Weather, "Wind.Speed"))
-	{
-		windSpeed = stf(Weather.Wind.Speed);
-	}
-	
-	if(CheckAttribute(&InterfaceStates,"ROTATESKY") && sti(InterfaceStates.ROTATESKY) == 1) // belamour ( ROTATE_SKY == 1)
-	{	
-		if( GetTime() >= 5.0 && GetTime() < 8.0 ) 
-		{
-			Sky.RotateSpeed = 0.0;
-		}	
-		else 
-		{
-			if( GetTime() >= 18.0 && GetTime() < 21.0 ) 
-			{
-				Sky.RotateSpeed = 0.0;
-			}
-		}
-		else 
-		{
-			Sky.RotateSpeed = windSpeed / 16000 / timeScale;
-		}
-	}
-	else
-	{
-		Sky.RotateSpeed = 0.0;
-	}	
+	if (timeScale <= 2.0) timeScale = 1.0;
+	else timeScale *= 0.5;
+
+	if (CheckAttribute(&Weather, "Wind.Speed")) windSpeed = stf(Weather.Wind.Speed);
+
+    if (fTime >= 5.0 && fTime < 8.0)        Sky.RotateSpeed = 0.0;
+    else if (fTime >= 18.0 && fTime < 21.0) Sky.RotateSpeed = 0.0;
+    else Sky.RotateSpeed = windSpeed / 16000.0 / timeScale;
 }
 
 void FillSkyDir(aref aSky)
@@ -92,83 +71,84 @@ void FillSkyDir(aref aSky)
 	int			sunAmb 	= 0;
 	int			sky		= 1;
 
-	DeleteAttribute(aSky,"Dir");
-	
-	if(CheckAttribute(WeatherParams,"weather_sky"))		
-	{	
+	DeleteAttribute(aSky, "Dir"); // ~!~ Атрибуты и так удалены в WhrCreateSkyEnvironment
+
+	if (CheckAttribute(&WeatherParams, "weather_sky"))		
+	{
 		sSubDir = "weather\skies" + sti(WeatherParams.weather_sky) + "\";	
 		sky		= sti(WeatherParams.weather_sky);
-	}	
+	}
 	else
-	{	
+	{
 		sSubDir = "weather\skies1\";
 		sky		= 1;
-	}	
+	}
 	Whr_DebugLog("SkySubDir : " + sSubDir + " sky :" + sky);	
-	
-	if( iBlendWeatherNum < 0 )
+
+	if (iBlendWeatherNum < 0)
 	{
-		if(CheckAttribute(aCurWeather,"Sky.SubDir")) 	aSky.Dir.d1 = sSubDir + aCurWeather.Sky.SubDir + "\\";
-		else											aSky.Dir.d1 = aCurWeather.Sky.Dir;
-			
+		if (CheckAttribute(aCurWeather,"Sky.SubDir"))
+            aSky.Dir.d1 = sSubDir + aCurWeather.Sky.SubDir + "\\";
+		else
+            aSky.Dir.d1 = aCurWeather.Sky.Dir; // Не используется
+
 		Whr_DebugLog("aSky.Dir.d1 " + aSky.Dir.d1);
 		aSky.Dir = GetHour();
-	} 
-	else 
-	{		
-		for (i = 0;i < MAX_WEATHERS; i++)
+	}
+	else
+	{
+		for (i = 0; i < MAX_WEATHERS; i++)
 		{
-			if (!CheckAttribute(&Weathers[i], "Hour")) {continue;}
-			if ( CheckAttribute(&Weathers[i], "Skip") 	&& 	sti(Weathers[i].Skip)  == true	) {continue;}
-			
+			if (CheckAttribute(&Weathers[i], "Skip") && sti(Weathers[i].Skip) == true) continue;
+
 			satr = "d" + sti(Weathers[i].Hour.Min);
-			
-			if(Whr_CheckStorm())		// если идёт шторм
+
+			if (Whr_CheckStorm()) // если идёт шторм
 			{
-				if(sti(Weathers[i].Storm))
+				if (sti(Weathers[i].Storm))
 				{
 					sDir = Whr_SetStormSkyData(stf(Weathers[i].Hour.Min), &fog, &sunAmb);
-					Weathers[i].Fog.Color 				= fog;
-					Weathers[i].Sun.Ambient 			= sunAmb;
+					Weathers[i].Fog.Color   = fog;
+					Weathers[i].Sun.Ambient = sunAmb;
 				}
 				else continue;	
 			}
-			else	                    // если шторма нет, т.е. штатная погода
+			else // если шторма нет, т.е. штатная погода
 			{
-				if(!sti(Weathers[i].Storm))
+				if (!sti(Weathers[i].Storm))
 				{
-					sDir = sSubDir + Weathers[i].Sky.SubDir + "\\";	
-					Whr_SetSkyFogData( sky, sti(Weathers[i].Hour.Min), &fog);	
+					sDir = sSubDir + Weathers[i].Sky.SubDir + "\\";
+					Whr_SetSkyFogData(sky, sti(Weathers[i].Hour.Min), &fog);
 					Weathers[i].Fog.Color = fog;
-								
+
 					if (CheckAttribute(&WeatherParams, "Rain.ThisDay") && sti(WeatherParams.Rain.ThisDay))
 					{
-						nStart 	= stf(WeatherParams.Rain.StartTime);
-						nDur 	= stf(WeatherParams.Rain.Duration)/60.0;
-						
+						nStart = stf(WeatherParams.Rain.StartTime);
+						nDur   = stf(WeatherParams.Rain.Duration)/60.0;
+
 						if (sti(Weathers[i].Hour.Min) >= makeint(nStart - 1.0) && sti(Weathers[i].Hour.Max) <= makeint(nStart + nDur + 1.0))
-						{	
-							sDir = Whr_SetRainSkyData( Weathers[i].Hour.Min, &fog, &sunAmb );
-							Weathers[i].Fog.Color 				= fog;
-							Weathers[i].Sun.Ambient 			= sunAmb;
-							Whr_DebugLog("RainDir : " + sDir + " hour :" + sti(Weathers[i].Hour.Min) );	
+						{
+							sDir = Whr_SetRainSkyData(Weathers[i].Hour.Min, &fog, &sunAmb);
+							Weathers[i].Fog.Color   = fog;
+							Weathers[i].Sun.Ambient = sunAmb;
+							Whr_DebugLog("RainDir : " + sDir + " hour :" + sti(Weathers[i].Hour.Min));	
 						}
-					}					
+					}
 				}
-				else continue;	
-			}					
+				else continue;
+			}
 			aSky.Dir.(satr) = sDir;
 		}
 		aSky.Dir = GetTime();
 	}
 }
 
-void Whr_SetSkyFogData( int _sky, int curTime, ref _fog)
+void Whr_SetSkyFogData(int _sky, int curTime, ref _fog)
 {
-	switch(_sky)
+	switch (_sky)
 	{
 		case 1 :
-			switch(curTime)
+			switch (curTime)
 			{
 				case  0: _fog = argb(  0,  6, 13, 23);break;
 				case  1: _fog = argb(  0,  5, 12, 19);break;
@@ -196,9 +176,9 @@ void Whr_SetSkyFogData( int _sky, int curTime, ref _fog)
 				case 23: _fog = argb(  0,  6, 13, 21);break;
 			}
 		break;
-		
+
 		case 2 :
-			switch(curTime)
+			switch (curTime)
 			{
 				case  0: _fog = argb(  0,  6, 14, 21);break;
 				case  1: _fog = argb(  0,  6, 14, 21);break;
@@ -226,9 +206,9 @@ void Whr_SetSkyFogData( int _sky, int curTime, ref _fog)
 				case 23: _fog = argb(  0,  9, 15, 21);break;
 			}		
 		break;
-		
+
 		case 3 :
-			switch(curTime)
+			switch (curTime)
 			{
 				case  0: _fog = argb(  0,  6, 14, 21);break;
 				case  1: _fog = argb(  0,  6, 14, 21);break;

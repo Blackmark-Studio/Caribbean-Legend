@@ -207,7 +207,7 @@ void ProcessDialogEvent()
 					pchar.GenQuest.EncGirl.Father = "shipyard_keeper";
 				break;				
 			}
-			dialog.text = "Son père "+pchar.GenQuest.EncGirl.FatherNom+", dans la colonie de "+XI_ConvertString("Colonie"+pchar.GenQuest.EncGirl.city)+". Mais s'il vous plaît, ne nous laissez pas tomber, car il n'est pas quelqu'un avec qui il faut plaisanter, il nous écorchera tous vifs...";
+			dialog.text = "Son père "+pchar.GenQuest.EncGirl.FatherNom+", dans la colonie de "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+". Mais s'il vous plaît, ne nous laissez pas tomber, car il n'est pas quelqu'un avec qui il faut plaisanter, il nous écorchera tous vifs...";
 			link.l1 = "Ne t'inquiète pas. Je la lui livrerai.";
 			link.l1.go = "Node_12";
 			pchar.GenQuest.EncGirl = "toParents";

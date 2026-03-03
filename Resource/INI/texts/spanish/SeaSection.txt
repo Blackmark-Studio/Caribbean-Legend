@@ -53,6 +53,7 @@ seg_Cannon_24 {Cañones de 24 libras}
 seg_Cannon_32 {Cañones de 32 libras}
 seg_Cannon_36 {Cañones de 36 libras}
 seg_Cannon_42 {Bombardas de 42 libras}
+seg_Cannon_48 {Bombardas de 48 libras}
 seg_Culverine_8 {Culebrinas de 8 libras}
 seg_Culverine_18 {Culebrinas de 18 libras}
 seg_Culverine_36 {Culebrinas de 36 libras}

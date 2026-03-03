@@ -20,6 +20,7 @@ int		curGrassDrawDistance;
 int		curFov = 1;
 int		iFov;
 int		iEnabledShipMarks;
+int		nAutoSaves[13];
 
 #define BI_LOW_RATIO 	0.25
 #define BI_HI_RATIO 	4.0
@@ -236,9 +237,18 @@ void ProcessOkExit()
 	if(iEnabledShipMarks > 0) bDrawBars = true;
 	else bDrawBars = false;
 	
+	if(CheckAttribute(&InterfaceStates,"SFW")) bSFW = sti(InterfaceStates.SFW);
+	
 	if(iLocation != -1)
 		SetLocationCharacterMarksOptions(&Locations[iLocation]);
 	Camera_CheckPreset();
+	
+	// автосейвы
+	for(int i = 0; i < 13; i++)
+	{
+		string sAutoSave = "AutoSave_" + GetAutoSaveType(i);
+		InterfaceStates.(sAutoSave) = nAutoSaves[i];
+	}
 
 	SaveGameOptions();
 
@@ -361,6 +371,12 @@ void IReadVariableAfterInit()
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CLASSIC_SOUNDSCENE_CHECKBOX", 2, 1, nClassicSoundScene);
 
+	int nSFW = 0;
+	if(CheckAttribute(&InterfaceStates,"SFW")) {
+		nSFW = sti(InterfaceStates.SFW);
+	}
+	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"SFW_CHECKBOX", 2, 1, nSFW);
+
 	int nAdvancedChange = 0;
 	if(CheckAttribute(&InterfaceStates,"AdvancedChange")) {
 		nAdvancedChange = sti(InterfaceStates.AdvancedChange);
@@ -384,18 +400,6 @@ void IReadVariableAfterInit()
 		nShowTutorial = sti(InterfaceStates.ShowTutorial);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TUTORIAL_CHECKBOX", 2, 1, nShowTutorial);
-	
-	int nEnabledAutoSaveMode = 1;
-	if(CheckAttribute(&InterfaceStates,"EnabledAutoSaveMode")) {
-		nEnabledAutoSaveMode = sti(InterfaceStates.EnabledAutoSaveMode);
-	}
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"AUTOSAVE_CHECKBOX", 2, 1, nEnabledAutoSaveMode);
-
-	int nEnabledAutoSaveMode2 = 0;
-	if(CheckAttribute(&InterfaceStates,"EnabledAutoSaveMode2")) {
-		nEnabledAutoSaveMode2 = sti(InterfaceStates.EnabledAutoSaveMode2);
-	}
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"AUTOSAVE2_CHECKBOX", 2, 1, nEnabledAutoSaveMode2);
 
 	int nEnabledQuestsMarks = 1;
 	if(CheckAttribute(&InterfaceStates,"EnabledQuestsMarks")) {
@@ -428,6 +432,22 @@ void IReadVariableAfterInit()
 	if(CheckAttribute(&InterfaceStates,"DYNAMICLIGHTS")) 
 	{
 		nEnabledDYNAMICLIGHTS = sti(InterfaceStates.DYNAMICLIGHTS);
+	}
+	
+	// автосейвы
+	string sAutoSave, sDescr;
+	for (int i = 0; i < 13; i++)
+	{
+		sDescr = "50";
+		sAutoSave = "AutoSave_" + GetAutoSaveType(i);		
+		if(CheckAttribute(&InterfaceStates, sAutoSave))
+			sDescr = InterfaceStates.(sAutoSave);
+		else
+			InterfaceStates.(sAutoSave) = sDescr;
+		nAutoSaves[i] = sti(sDescr);
+		if(sDescr == "-1")
+			sDescr = XI_ConvertString("Infinite");
+		SetFormatedText("DESCRIP_TEXT_" + sAutoSave, sDescr);	
 	}
 }
 
@@ -687,20 +707,55 @@ void SelectorValueChanged()
 	}
 	if (direction == 0) return;
 
-	if (HandleSelector(&sNodeName, "ControlsMode",		&direction, "CONTROLS_MODE",	1, &iControlsMode)) return;
-	if (HandleSelector(&sNodeName, "HerbQuantity",		-direction, "HERB",				3, &iGrassQuality)) return; // -direction для инверсии справа налево
-	if (HandleSelector(&sNodeName, "FOV",				&direction, "FOV",				1, &iFov)) return;
-	if (HandleSelector(&sNodeName, "EnabledShipMarks",	&direction, "SHIPMARKS",		2, &iEnabledShipMarks)) return;
-	if (HandleSelector(&sNodeName, "FontType",			&direction, "FONT",				2, &iFontType)) return;
-	if (HandleSelector(&sNodeName, "MoreInfo",			&direction, "MOREINFO",			1, &iMoreInfo)) return;
-	if (HandleSelector(&sNodeName, "ControlsTips",		&direction, "CONTROLS_TIPS",	2, &iControlsTips)) return;
-	if (HandleSelector(&sNodeName, "CompassPos",		&direction, "COMPASS_POS",		1, &iCompassPos)) return;
-	if (HandleSelector(&sNodeName, "MapLabelsMode",		&direction, "MAP_LABELS",		2, 0)) return;
+	if (HandleSelector(sNodeName, "ControlsMode",		direction, "CONTROLS_MODE",		1, &iControlsMode)) return;
+	if (HandleSelector(sNodeName, "HerbQuantity",		-direction, "HERB",				3, &iGrassQuality)) return; // -direction для инверсии справа налево
+	if (HandleSelector(sNodeName, "FOV",				direction, "FOV",				1, &iFov)) return;
+	if (HandleSelector(sNodeName, "EnabledShipMarks",	direction, "SHIPMARKS",			2, &iEnabledShipMarks)) return;
+	if (HandleSelector(sNodeName, "FontType",			direction, "FONT",				2, &iFontType)) return;
+	if (HandleSelector(sNodeName, "MoreInfo",			direction, "MOREINFO",			1, &iMoreInfo)) return;
+	if (HandleSelector(sNodeName, "ControlsTips",		direction, "CONTROLS_TIPS",		2, &iControlsTips)) return;
+	if (HandleSelector(sNodeName, "CompassPos",			direction, "COMPASS_POS",		1, &iCompassPos)) return;
+	if (HandleSelector(sNodeName, "MapLabelsMode",		direction, "MAP_LABELS",		2, 0)) return;
 	
-	if (HandleSelector(&sNodeName, "HelpTime",			&direction, "HELPTIME",			3, &iGlobalHelpTime)) return;
-	if (HandleSelector(&sNodeName, "Camera",			&direction, "CAMERA",			1, &iGlobalCamera)) return;
-	if (HandleSelector(&sNodeName, "EnemyType",			&direction, "ENEMYTYPE",		2, &iGlobalEnemyType)) return;
-	if (HandleSelector(&sNodeName, "Target",			&direction, "TARGET",			3, &iGlobalTarget)) return;
+	if (HandleSelector(sNodeName, "HelpTime",			direction, "HELPTIME",			3, &iGlobalHelpTime)) return;
+	if (HandleSelector(sNodeName, "Camera",				direction, "CAMERA",			1, &iGlobalCamera)) return;
+	if (HandleSelector(sNodeName, "EnemyType",			direction, "ENEMYTYPE",			2, &iGlobalEnemyType)) return;
+	if (HandleSelector(sNodeName, "Target",				direction, "TARGET",			3, &iGlobalTarget)) return;
+	
+	// обработка автосейвов
+	if(FindSubStr(sNodeName, "AUTOSAVE", 0) != -1)
+	{
+		string sAutoSave = FindStringAfterChar(sNodeName, "_");
+		int i = GetAutoSaveIndex(FindStringAfterChar(sAutoSave, "_"));
+		string sCurSaves = nAutoSaves[i];
+		switch(sCurSaves)
+		{
+			case "0":
+				if(direction > 0)
+					sCurSaves = 10;
+			break;
+			case "10":
+				if(direction > 0)
+					sCurSaves = 50;
+				else
+					sCurSaves = 0;
+			break;
+			case "50":
+				if(direction > 0)
+					sCurSaves = -1;
+				else
+					sCurSaves = 10;
+			break;
+			case "-1":
+				if(direction < 0)
+					sCurSaves = 50;
+			break;
+		}
+		nAutoSaves[i] = sti(sCurSaves);
+		if(sCurSaves == "-1")
+			sCurSaves = XI_ConvertString("Infinite");
+		SetFormatedText("DESCRIP_TEXT_" + sAutoSave, sCurSaves);
+	}
 }
 
 void ApplyLabelsMode(int newMode)
@@ -774,18 +829,12 @@ void procCheckBoxChange()
 			InterfaceStates.ClassicSoundScene = bBtnState;
 		}
 	}	
-	if(sNodName == "AUTOSAVE_CHECKBOX") 
+	if(sNodName == "SFW_CHECKBOX") 
 	{
 		{
-			InterfaceStates.EnabledAutoSaveMode = bBtnState;
+			InterfaceStates.SFW = bBtnState;
 		}
-	}
-	if(sNodName == "AUTOSAVE2_CHECKBOX") 
-	{
-		{
-			InterfaceStates.EnabledAutoSaveMode2 = bBtnState;
-		}
-	}
+	}	
 	if(sNodName == "QUESTMARK_CHECKBOX") 
 	{
 		{
@@ -1512,7 +1561,7 @@ void ShowInfo()
 			sPicture = "interfaces\le\help\fov.tga";
 		break;
 // Controls
-		case "CONTROLS_LIST":
+		case "HELP":
 			sHeader = XI_ConvertString("Button Settings");
 			sText1 = XI_ConvertString("Button Settings_descr");
 			sText2 = XI_ConvertString("Button Settings_descr2");
@@ -1554,41 +1603,38 @@ void ShowInfo()
 			sHeader = XI_ConvertString("Classic Soundscene");
 			sText1 = XI_ConvertString("Classic Soundscene_descr");
 		break;
+		case "SFW_CHECKBOX_FRAME":
+			sHeader = XI_ConvertString("SFW");
+			sText1 = XI_ConvertString("SFW_descr");
+		break;
 // Other
-		case "AUTOSAVE2_CHECKBOX_FRAME":
-			sHeader = XI_ConvertString("AutoSave Mode2");
-			sText1 = XI_ConvertString("AutoSave Mode2_descr");
-		break;
-		case "AUTOSAVE_CHECKBOX_FRAME":
-			sHeader = XI_ConvertString("AutoSave Mode");
-			sText1 = XI_ConvertString("AutoSave Mode_descr");
-		break;
+		if(FindSubStr(sNode, "AUTOSAVE", 0) != -1)
+		{
+			string sAutoSave = FindStringAfterChar(sNode, "_");
+			sHeader = XI_ConvertString(sAutoSave);
+			sText1 = XI_ConvertString(sAutoSave + "_descr");
+		}
 	}
 
-	HandleSelectorDescription(&sNode, &sHeader, &sText1, "FOV", "FOV");
-	HandleSelectorDescription(&sNode, &sHeader, &sText1, "ControlsMode", "CONTROLS_MODE");
-	HandleSelectorDescription(&sNode, &sHeader, &sText1, "HerbQuantity", "HERB");
-	HandleSelectorDescription(&sNode, &sHeader, &sText1, "EnabledShipMarks", "SHIPMARKS");
-	HandleSelectorDescription(&sNode, &sHeader, &sText1, "FontType", "FONT");
-	HandleSelectorDescription(&sNode, &sHeader, &sText1, "MoreInfo", "MOREINFO");
-	HandleSelectorDescription(&sNode, &sHeader, &sText1, "ControlsTips", "CONTROLS_TIPS");
-	HandleSelectorDescription(&sNode, &sHeader, &sText1, "CompassPos", "COMPASS_POS");
-	HandleSelectorDescription(&sNode, &sHeader, &sText1, "MapLabelsMode", "MAP_LABELS");
-	HandleSelectorDescription(&sNode, &sHeader, &sText1, "HelpTime", "HELPTIME");
-	HandleSelectorDescription(&sNode, &sHeader, &sText1, "Camera", "CAMERA");
-	HandleSelectorDescription(&sNode, &sHeader, &sText1, "EnemyType", "ENEMYTYPE");
-	HandleSelectorDescription(&sNode, &sHeader, &sText1, "Target", "TARGET");
+	HandleSelectorDescription(sNode, &sHeader, &sText1, "FOV", "FOV");
+	HandleSelectorDescription(sNode, &sHeader, &sText1, "ControlsMode", "CONTROLS_MODE");
+	HandleSelectorDescription(sNode, &sHeader, &sText1, "HerbQuantity", "HERB");
+	HandleSelectorDescription(sNode, &sHeader, &sText1, "EnabledShipMarks", "SHIPMARKS");
+	HandleSelectorDescription(sNode, &sHeader, &sText1, "FontType", "FONT");
+	HandleSelectorDescription(sNode, &sHeader, &sText1, "MoreInfo", "MOREINFO");
+	HandleSelectorDescription(sNode, &sHeader, &sText1, "ControlsTips", "CONTROLS_TIPS");
+	HandleSelectorDescription(sNode, &sHeader, &sText1, "CompassPos", "COMPASS_POS");
+	HandleSelectorDescription(sNode, &sHeader, &sText1, "MapLabelsMode", "MAP_LABELS");
+	HandleSelectorDescription(sNode, &sHeader, &sText1, "HelpTime", "HELPTIME");
+	HandleSelectorDescription(sNode, &sHeader, &sText1, "Camera", "CAMERA");
+	HandleSelectorDescription(sNode, &sHeader, &sText1, "EnemyType", "ENEMYTYPE");
+	HandleSelectorDescription(sNode, &sHeader, &sText1, "Target", "TARGET");
 	CreateTooltipNew(sNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false);
 }
 
 void HideInfo()
 {
 	CloseTooltipNew();
-/*	if(g_bToolTipStarted) {
-		g_bToolTipStarted = false;
-		CloseTooltip();
-		SetCurrentNode("OK_BUTTON");
-	}*/
 }
 
 bool KeyAlreadyUsed(string sGrpName, string sControl, string sKey, bool bAltPress, ref controlReplacement)
@@ -1735,6 +1781,9 @@ void RestoreDefaultSettings()
 	InterfaceStates.ClassicSoundScene =  1;
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CLASSIC_SOUNDSCENE_CHECKBOX", 2, 1, 1);
 
+	InterfaceStates.SFW =  0;
+	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"SFW_CHECKBOX", 2, 1, 0);
+
 	GameInterface.nodes.GAMMA_SLIDE.value = 0.5;
 	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "GAMMA_SLIDE", 0, 0.5);
 	
@@ -1762,12 +1811,6 @@ void RestoreDefaultSettings()
 
 	InterfaceStates.ShowTutorial = 1
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TUTORIAL_CHECKBOX", 2, 1, 1);
-
-	InterfaceStates.EnabledAutoSaveMode = 1;
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"AUTOSAVE_CHECKBOX", 2, 1, 1);
-
-	InterfaceStates.EnabledAutoSaveMode2 = 0;
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"AUTOSAVE2_CHECKBOX", 2, 1, 0);
 
 	InterfaceStates.EnabledQuestsMarks = 1;
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"QUESTMARK_CHECKBOX", 2, 1, 1);

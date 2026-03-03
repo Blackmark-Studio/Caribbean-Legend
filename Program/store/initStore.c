@@ -4,7 +4,7 @@ void InitStores()
 {
     int i;
 
-    for(i=0; i<STORE_QUANTITY; i++)
+    for(i=0; i<GetArraySize(&stores); i++)
     {
 		stores[i].index = i;
         StoreVoidFill(&stores[i]);
@@ -16,7 +16,7 @@ void InitStores()
 		UnloadSegment("store\store_init.c");
 	}
 
-   for(i=0; i<STORE_QUANTITY; i++)
+   for(i=0; i<GetArraySize(&stores); i++)
    {
        FillStoreGoods(&stores[i]);
    }
@@ -89,7 +89,10 @@ void FillStoreGoods(ref pRef)
 	}
 	else
 	{
-		trace("Mistake Colony id into store:  id=" + pRef.Colony);
+		if (pRef.Colony != "none")
+		{
+			trace("Mistake Colony id into store:  id=" + pRef.Colony);
+		}
 	}
 	
 	for (i=0; i<GetArraySize(&Goods); i++)

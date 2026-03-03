@@ -1,0 +1,13 @@
+license_violations_name {Infracciones}
+license_violation_tooltip_body {Se consideran infracciones los ataques a barcos bajo bandera aliada o neutral, la agresión contra civiles, el saqueo en el mar y los ataques a fuertes.}
+license_violation_1 {Hemos violado los términos del contrato. Esto no quedará impune.}
+license_violation_2 {Hemos violado el contrato dos veces. Pronto nos retirarán la licencia.}
+license_violation_3 {Hemos violado el contrato tres veces y hemos perdido la licencia comercial.}
+license_state
+{
+Expira: $attr($context.humanExpireDate)~
+Días restantes: $attr($context.humanDaysLeft)
+}
+flags_newFlagTaken {Nueva bandera capturada}
+flags_allFlagsCollected {Se han reunido todas las banderas de la nación}
+license_expired {La licencia comercial ha expirado}

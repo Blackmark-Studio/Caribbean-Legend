@@ -1,0 +1,2 @@
+ShowPapersAction {Mostrare le credenziali}
+FactorQuestZpq {Guascone sconosciuto}

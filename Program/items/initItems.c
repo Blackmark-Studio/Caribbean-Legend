@@ -218,25 +218,25 @@ int InitItems()
 	//Jason: номер модели задействован при смене модели перснажа и сопоставляется со списком моделей по очереди из ХероМейкера: 0 - без кирасы, 1-4 - тяжёлые кирасы. Номером 5 пойдёт для всех водолазное снаряжение. Дальше прописываем мундиры под номером 6 для всех, т.к. в игре они выдаются строго под конкретного перса своей нации, т.е. Шарль английский мундир в игре не встретит по определению. Номер 7 - бонусный костюм Лампорта. Это учтем в ХироМейкере. Легкие доспехи, под которые уникальных моделей не предусмотрено, будут иметь модель 0 - дефолтная модель персонажа.
 	//n = InitStdSuit( индекс, идентификатор, модель, текстура, картинка, цена, вес, редкость, мин.уровень, одежда?, защита ХО, защита PM, вер-ть крита);
 	// тяжёлые доспехи
-	n = InitStdSuit(n, "cirass1",     	"1", "ITEMS_32",  1,  21000, 27,   0.01,  1, false, 0.35, 0.35, 0.2 ); // траншейный доспех
-	n = InitStdSuit(n, "cirass2",     	"2", "ITEMS_32",  2,  38500, 30,   0.01,  5, false, 0.25, 0.25, 0.3 ); // рейтарская кираса
-	n = InitStdSuit(n, "cirass3",     	"3", "ITEMS_32",  3,  77000, 12,   0.01, 11, false, 0.20, 0.20, 0.5 ); // парадная кираса
-	n = InitStdSuit(n, "cirass4",     	"4", "ITEMS_32",  4, 230000, 18,   0.01, 20, false, 0.30, 0.30, 0.0 ); // миланский панцирь
-	n = InitStdSuit(n, "underwater",  	"5", "ITEMS_33",  9, 300000, 70, 0.0001, 20,  true, 0.60, 0.35, 0.0 ); // водолазное снаряжение
-	n = InitStdSuit(n, "cirass10",  	"14","ITEMS_39",  5,  38500, 15,   0.01, 20, false, 0.15, 0.15, 0.5 ); // Броня железнобоких
-	n = InitStdSuit(n, "cirass11",  	"15","ITEMS_41",  13,  45000, 23,   0.01, 20, false, 0.22, 0.22, 0.5 ); // Зерцальный нагрудник
+	n = InitStdSuit(n, "cirass1",     	"1", "ITEMS_32",  1,  21000, 27,   0.01,  1, false, 0.35, 0.35, 0.2, B_POOR); // траншейный доспех
+	n = InitStdSuit(n, "cirass2",     	"2", "ITEMS_32",  2,  38500, 30,   0.01,  5, false, 0.25, 0.25, 0.3, B_ORDINARY); // рейтарская кираса
+	n = InitStdSuit(n, "cirass3",     	"3", "ITEMS_32",  3,  77000, 12,   0.01, 11, false, 0.20, 0.20, 0.5, B_GOOD); // парадная кираса
+	n = InitStdSuit(n, "cirass4",     	"4", "ITEMS_32",  4, 230000, 18,   0.01, 20, false, 0.30, 0.30, 0.0, B_EXCELLENT); // миланский панцирь
+	n = InitStdSuit(n, "underwater",  	"5", "ITEMS_33",  9, 300000, 70, 0.0001, 20,  true, 0.60, 0.35, 0.0, B_UNIQUE); // водолазное снаряжение
+	n = InitStdSuit(n, "cirass10",  	"14","ITEMS_39",  5,  38500, 15,   0.01, 20, false, 0.15, 0.15, 0.5, B_UNIQUE); // Броня железнобоких
+	n = InitStdSuit(n, "cirass11",  	"15","ITEMS_41",  13,  45000, 23,   0.01, 20, false, 0.22, 0.22, 0.5, B_UNIQUE); // Зерцальный нагрудник
 	// костюмы
-	n = InitStdSuit(n,   "suit1", 		"6", "ITEMS_32",  9, 150000,  5, 0.0001, 20,  true, 0.10, 0.00, 0.7 ); // французский офицерский мундир
-	n = InitStdSuit(n,   "suit5", 		"8", "ITEMS_33",  5, 150000,  5, 0.0001, 20,  true, 0.10, 0.00, 0.7 ); // французский адмиральский мундир
-	n = InitStdSuit(n,   "suit2", 		"6", "ITEMS_32", 10, 150000,  5, 0.0001, 20,  true, 0.10, 0.00, 0.7 ); // английский офицерский мундир
-	n = InitStdSuit(n,   "suit3", 		"6", "ITEMS_32", 11, 150000,  5, 0.0001, 20,  true, 0.10, 0.00, 0.7 ); // испанский офицерский мундир
-	n = InitStdSuit(n,   "suit4", 		"7", "ITEMS_32",  8,   8000,  8, 0.0001,  1,  false, 0.15, 0.10, 0.5 ); // костюм Лампорта
+	n = InitStdSuit(n,   "suit1", 		"6", "ITEMS_32",  9, 150000,  5, 0.0001, 20,  true, 0.10, 0.00, 0.7, B_UNIQUE); // французский офицерский мундир
+	n = InitStdSuit(n,   "suit5", 		"8", "ITEMS_33",  5, 150000,  5, 0.0001, 20,  true, 0.10, 0.00, 0.7, B_UNIQUE); // французский адмиральский мундир
+	n = InitStdSuit(n,   "suit2", 		"6", "ITEMS_32", 10, 150000,  5, 0.0001, 20,  true, 0.10, 0.00, 0.7, B_UNIQUE); // английский офицерский мундир
+	n = InitStdSuit(n,   "suit3", 		"6", "ITEMS_32", 11, 150000,  5, 0.0001, 20,  true, 0.10, 0.00, 0.7, B_UNIQUE); // испанский офицерский мундир
+	n = InitStdSuit(n,   "suit4", 		"7", "ITEMS_32",  8,   8000,  8, 0.0001,  1,  false, 0.15, 0.10, 0.5, B_UNIQUE); // костюм Лампорта
 	// легкие доспехи
-	n = InitStdSuit(n, "cirass5",  		"9", "ITEMS_32",   5,  8000,  3,   0.01,  1, false, 0.05, 0.00, 1.0 ); // кожаный корсет
-    n = InitStdSuit(n, "cirass6",  		"10", "ITEMS_32",  6,  19000,  5,   0.01, 10, false, 0.10, 0.05, 0.5 ); // жилет бретера
-	n = InitStdSuit(n, "cirass7",  		"11", "ITEMS_32",  7,  38500, 12,   0.01, 10, false, 0.20, 0.10, 0.4 ); // бригант
-	n = InitStdSuit(n, "cirass8",  		"12", "ITEMS_17", 11, 108000,  6,   0.01, 20, false, 0.20, 0.20, 0.3 ); // плетёный доспех
-	n = InitStdSuit(n, "cirass9",  		"13", "ITEMS_38", 12, 230000, 15,   0.01, 20, false, 0.25, 0.25, 0.3 ); // бригант с горжетом
+	n = InitStdSuit(n, "cirass5",  		"9", "ITEMS_32",   5,  8000,  3,   0.01,  1, false, 0.05, 0.00, 1.0, B_POOR); // кожаный корсет
+	n = InitStdSuit(n, "cirass6",  		"10", "ITEMS_32",  6,  19000,  5,   0.01, 10, false, 0.10, 0.05, 0.5, B_ORDINARY); // жилет бретера
+	n = InitStdSuit(n, "cirass7",  		"11", "ITEMS_32",  7,  38500, 12,   0.01, 10, false, 0.20, 0.10, 0.4, B_GOOD); // бригант
+	n = InitStdSuit(n, "cirass8",  		"12", "ITEMS_17", 11, 108000,  6,   0.01, 20, false, 0.20, 0.20, 0.3, B_UNIQUE); // плетёный доспех
+	n = InitStdSuit(n, "cirass9",  		"13", "ITEMS_38", 12, 230000, 15,   0.01, 20, false, 0.25, 0.25, 0.3, B_UNIQUE); // бригант с горжетом
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//										МУЛЬТИКОМПОНЕНТНЫЕ АРТЕФАКТЫ - ТОТЕМЫ
@@ -3782,6 +3782,7 @@ int InitItems()
 	itm.SortIndex = 1;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	itm.quality = B_POOR;
 	n++;
 	
 	makeref(itm,Items[n]);
@@ -3803,6 +3804,7 @@ int InitItems()
 	itm.multiobject.alchemy = false;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	itm.quality = B_UNIQUE;
 	n++;
 	
 	makeref(itm,Items[n]); // картечь
@@ -3821,6 +3823,7 @@ int InitItems()
 	itm.SortIndex = 1;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	itm.quality = B_POOR;
 	n++;
 	
 	makeref(itm,Items[n]); // бумажный патрон
@@ -3842,6 +3845,7 @@ int InitItems()
 	itm.multiobject.alchemy = false;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	itm.quality = B_EXCELLENT;
 	n++;
 	
 	// cle расширенное издание -->
@@ -3864,6 +3868,7 @@ int InitItems()
 	itm.multiobject.alchemy = false;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	itm.quality = B_UNIQUE;
 	n++;
 	
 	makeref(itm,Items[n]); // бумажный патрон x2
@@ -3885,6 +3890,7 @@ int InitItems()
 	itm.multiobject.alchemy = false;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	itm.quality = B_UNIQUE;
 	n++;
 	//<-- расширенное издание
 	
@@ -3907,6 +3913,7 @@ int InitItems()
 	itm.multiobject.alchemy = false;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	itm.quality = B_GOOD;
 	n++;
 	
 	makeref(itm,Items[n]); // граната
@@ -3928,6 +3935,7 @@ int InitItems()
 	itm.multiobject.alchemy = false;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	itm.quality = B_EXCELLENT;
 	n++;
 	
 	makeref(itm,Items[n]); // гарпун
@@ -3949,6 +3957,7 @@ int InitItems()
 	itm.multiobject.alchemy = false;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	itm.quality = B_GOOD;
 	n++;
 	
 	makeref(itm,Items[n]); // Warship. Порох
@@ -4005,6 +4014,7 @@ int InitItems()
 	itm.multiobject.alchemy = false;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	itm.quality = B_UNIQUE;
 	n++;
 	
 	makeref(itm,Items[n]); // картридж для Кольта
@@ -4025,6 +4035,7 @@ int InitItems()
 	itm.multiobject.alchemy = false;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	itm.quality = B_UNIQUE;
 	n++;
 	
 	makeref(itm,Items[n]); // ежовый заряд
@@ -4045,6 +4056,7 @@ int InitItems()
 	itm.multiobject.alchemy = false;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	itm.quality = B_EXCELLENT;
 	n++;
 	
 	makeref(itm,Items[n]); // Гремучее серебро
@@ -4441,7 +4453,7 @@ int InitStdBlade( 	int		ItemIndex,
 					string 	ModelID, 
 					string 	picTexture,
 					int		picIndex,
-					string  TargetGroup,
+					int     TargetGroup,
 					int     Quality,
 					string  BladeType,
 					int     BladeNum,
@@ -4549,30 +4561,21 @@ int InitStdBlade( 	int		ItemIndex,
 			if(BladeType == "FencingH") blade.Balance = 2.0 - fRandSmall(0.5);
 		break;
 	}
-	if(ModelID == "unarmed") blade.Balance = 1.0;
-	// belamour legendary edition фиксированные статы для негенерабельных клинков -->
-	if(ModelID == "q_blade_16" || ModelID == "q_blade_18") blade.Balance = 0.0;
-	if(ModelID == "knife_02"   || ModelID ==   "knife_03") blade.Balance = 0.0;
-	if(ModelID == "q_blade_10" || ModelID == "q_blade_19") blade.Balance = 2.0;
-	if(ModelID == "q_blade_13" || ModelID == "q_blade_21") blade.Balance = 2.0;
-	if(ModelID == "topor_07") blade.Balance = 2.0;
-	if(ModelID == "blade_40") blade.Balance = 0.0;
-	if(ModelID == "blade_41") blade.Balance = 1.0;
-	// <-- legendary edition
-	if(HasSubStr(ModelID, "khopesh")) blade.Balance = 2.0;
 
-	if(ModelID == "unarmed") blade.Attack = 15.0;
-	if(ModelID == "knife_01") blade.Attack = 34.5;
-	if(ModelID == "knife_03") blade.Attack = 50.0;
-	if(ModelID == "blade_40") blade.Attack = 42.0;
-	if(ModelID == "blade_41") blade.Attack = 90.0;
-	if(ModelID == "blade_42") blade.Attack = 70.0;
+	// if(ModelID == "unarmed") blade.Attack = 15.0;
+	// if(ModelID == "knife_01") blade.Attack = 34.5;
+	// if(ModelID == "knife_03") blade.Attack = 50.0;
+	// if(ModelID == "blade_40") blade.Attack = 42.0;
+	// if(ModelID == "blade_41") blade.Attack = 90.0;
+	// if(ModelID == "blade_42") blade.Attack = 70.0;
 
-	if(ModelID == "blade_SP_3low") blade.Balance = 1.2;
-	if(ModelID == "blade_SP_3") blade.Balance = 1.2;
+	// if(ModelID == "blade_SP_3low") blade.Balance = 1.2;
+	// if(ModelID == "blade_SP_3") blade.Balance = 1.2;
 
-	if(ModelID == "blade_SP_3low") blade.Attack = 77.0;
-	if(ModelID == "blade_SP_3") blade.Attack = 77.0;
+	// if(ModelID == "blade_SP_3low") blade.Attack = 77.0;
+	// if(ModelID == "blade_SP_3") blade.Attack = 77.0;
+	// if (blade.id == "machete2") blade.Attack = 70.0;
+	ReinitBladeDamage(blade);
 
 	switch (BladeType) 
 	{
@@ -4818,8 +4821,9 @@ int InitStdSuit(	int		ItemIndex,
 					int 	MinLevel,
 					bool    isClothes,
 					float	CirassLevel_blade,
-					float   CirassLevel_gun, 
-					float   Critical)
+					float   CirassLevel_gun,
+					float   Critical,
+					int 	Quality)
 {
 	ref	suit;
 	int	suitIndex;
@@ -4842,6 +4846,7 @@ int InitStdSuit(	int		ItemIndex,
 	suit.Clothes 			= isClothes;
 	suit.B_CirassLevel 		= CirassLevel_blade;
 	suit.G_CirassLevel 		= CirassLevel_gun;
+	suit.Quality 			= Quality;
 	// belamour legendary edition дырки в доспехах -->
 	/*if(Critical > 0.0)
 	{

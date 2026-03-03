@@ -1,0 +1,11 @@
+new_string
+{
+
+}
+Uninstalled_Mods_Founded
+{
+Atenção!
+   Não há mods suficientes instalados para jogar neste save. Não é recomendado jogar assim.
+   Instale-os ou carregue um save anterior feito antes da instalação do mod. Mods:
+   ~
+}

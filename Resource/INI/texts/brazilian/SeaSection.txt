@@ -1,0 +1,60 @@
+Ship_critical {Acerto Crítico!}
+Ship_critical_notif {' - Acerto Crítico!}
+Ship_sunk {%1 "%2" afundado. +%3 de experiência.}
+Ship_sunk_other {%1 "%2" foi afundado.}
+Ship_got_good {%1 arrobas de %2 foram embarcadas}
+Ship_cant_got_good {Sem espaço para %1}
+Fort_destroy {Forte %1 destruído. +%2 de experiência obtida.}
+Fort_destroy_notif {Artilharia do forte suprimida!}
+Fort_cannon {O canhão do forte foi destruído!}
+seg_Balls {Bala redonda}
+seg_Grapes {Metralha}
+seg_Knippels {Bala encadeada}
+seg_Bombs {bombas}
+seg_Sailcloth {Lona de vela}
+seg_Planks {Tábuas}
+seg_Slaves {Escravos}
+seg_Wheat {Trigo}
+seg_Ebony {Ébano}
+seg_Chocolate {Cacau}
+seg_Sugar { }
+seg_Wine {Vinho}
+seg_ShipSilk {Seda naval}
+seg_Rum {rum}
+seg_Tobacco {Tabaco}
+seg_Coffee {Café}
+seg_Mahogany {Mogno}
+seg_Cinnamon {Baunilha}
+seg_Copra {copra}
+seg_Paprika {Páprica}
+seg_Fruits {Frutas}
+seg_Ale {Ale}
+seg_Ropes {cordas}
+seg_Clothes {Roupas}
+seg_Cotton {Algodão}
+seg_Sandal {pau-ferro}
+seg_Leather {Couro}
+seg_Oil {Resina}
+seg_Food {Provisões}
+seg_Weapon {Armas}
+seg_Gold {ouro}
+seg_Silver {Prata}
+seg_Powder {pólvora}
+seg_Brick {Tijolos}
+seg_Medicament {Remédio}
+seg_Cannon_3 {Falconetes 3p.}
+seg_Cannon_6 {Canhões de 6 libras}
+seg_Cannon_8 {Canhões de 8 libras}
+seg_Cannon_12 {Canhões de 12 lb}
+seg_Cannon_16 {Canhões de 16 lb}
+seg_Cannon_18 {Canhões de 18 lb}
+seg_Cannon_20 {Canhões de 20 lb}
+seg_Cannon_24 {Canhões de 24 libras}
+seg_Cannon_32 {Canhões de 32 libras}
+seg_Cannon_36 {Canhões de 36 libras}
+seg_Cannon_42 {Canhões de 42 libras}
+seg_Cannon_48 {Canhões de 48 lb}
+seg_Culverine_8 {Semiculevrinas}
+seg_Culverine_18 {Couleuvrines}
+seg_Culverine_36 {Couleuvrines completas}
+sea_exp_add {+%1 de experiência obtida}

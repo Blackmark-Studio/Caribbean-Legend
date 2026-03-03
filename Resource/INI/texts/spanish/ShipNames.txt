@@ -21,3 +21,4 @@ Oliphant {Oliphant}
 Trafalgar {Trafalgar}
 Eclatant {Eclatant}
 Red Dragon {Red Dragon}
+Ulysse {Ulysse}

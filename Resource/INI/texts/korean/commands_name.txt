@@ -1,0 +1,89 @@
+sea_Cancel {취소}
+sea_Moor {정박}
+sea_Cabin {선실}
+sea_SailTo {항해}
+sea_Board {접현}
+sea_LandTroops {상륙부대}
+sea_Map {지도}
+sea_Attack {공격}
+sea_Abordage {접현}
+sea_Defend {방어}
+sea_SailAway {떠나기}
+sea_HeaveToDrift {돛을 내린다}
+sea_Reload {교역}
+sea_Charge {재장전}
+sea_Speed {돛}
+sea_CCommand {명령}
+sea_Ability {능력}
+sea_ImmediateDeath {파괴!}
+sea_InstantBoarding {즉시 접현}
+sea_Speak {대화}
+sea_Sneak {마을에 몰래 들어가기}
+sea_Repair {수리}
+sea_SailDir {항해하기 ..}
+sea_SailNW {북서}
+sea_SailN {북쪽}
+sea_SailNE {북동}
+sea_SailE {동쪽}
+sea_SailSE {남동}
+sea_SailS {남쪽}
+sea_SailSW {남서}
+sea_SailW {서쪽}
+sea_Boat {보트 보내기}
+sea_Bomb {기뢰 투하}
+sea_Brander {브랜더}
+sea_ImmediateReload {재장전}
+sea_LightRepair {긴급 수리}
+sea_InstantRepair {전투 수리}
+sea_SandbankManeuver {얕은 물에서 기동}
+sea_Turn180 {급선회}
+land_TalkSelf {생각을 소리내어}
+land_ItemsDead {루팅}
+land_FastReload {이동}
+land_ItemsUse {사용}
+land_DialogStart {대화}
+land_ItemsChange {교환}
+land_TakeItem {획득}
+land_PlaceItem {놓기}
+land_OutDoor {열기}
+land_UseBox {열기}
+land_ActivateRush {오메토치틀리 팅크제 사용}
+land_ActivateCabine {선장 선실}
+land_DeActivateCabine {육지}
+land_Look {보기}
+land_Exit {바다}
+land_SelfRepair {수리}
+land_Alchemy {제작}
+land_MapAtlas {지도}
+land_Rest {휴식}
+go_store {상점}
+go_shipyard {조선소}
+go_tavern {주점}
+go_residence {저택}
+go_port {항구}
+go_loanshark {금융업자}
+go_church {교회}
+go_prison {감옥}
+go_brothel {매춘굴}
+go_usurer {고리대금업자}
+go_portman {항만 관리소}
+go_duel {결투}
+go_exittown {도시 관문}
+go_Caroline {프리깃 'Carolina'}
+go_CeresSmithy_Mary {Mary Casper}
+go_CeresSmithy_Jurgen {Jurgen Schmidt}
+go_EsmeraldaStoreBig {갤리언 'Esmeralda'}
+go_EsmeraldaStoreBig_Donald {Donald Greenspen}
+go_FenixPlatform {플랫폼 'Fenix'}
+go_FleuronTavern {캐러벨 'Fleron'}
+go_GloriaChurch {갤리온 'Gloria'}
+go_ProtectorFisher {Eduard Black}
+go_SanAugustineResidence {Steven Dodson}
+go_SanGabrielMechanic {Henrick Vedecker}
+go_TartarusPrison {전함 'Tartarus'}
+worldmap_toisland {출항}
+worldmap_tosea {항해 시작}
+worldmap_toship {공격}
+worldmap_tostorm {폭풍}
+worldmap_toattack {전투 참가}
+worldmap_toenemy {전투}

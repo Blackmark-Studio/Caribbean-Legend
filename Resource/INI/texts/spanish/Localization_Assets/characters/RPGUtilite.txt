@@ -7,7 +7,7 @@ RPGUtilite_6 {buena}
 RPGUtilite_7 {excelente}
 RPGUtilite_8 {Vitalidad mejorada}
 RPGUtilite_9 {Vitalidad reducida}
-RPGUtilite_10 {¡Ha aumentado la recompensa por tu cabeza!}
+RPGUtilite_10 {¡Reputación nacional reducida!}
 RPGUtilite_11 {¡Reputación nacional incrementada!}
 RPGUtilite_12 {¡Reputación nacional incrementada!}
 RPGUtilite_13 {¡Reputación nacional reducida!}

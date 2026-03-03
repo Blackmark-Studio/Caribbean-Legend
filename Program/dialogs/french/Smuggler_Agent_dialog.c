@@ -77,7 +77,7 @@ void ProcessDialogEvent()
 				}
 				AddQuestUserData("Gen_Contraband", "sIsland", XI_ConvertString(GetIslandByCityName(npchar.city)));
 			}
-			AddQuestUserData("Gen_Contraband", "sLoc", GetConvertStr(Pchar.quest.contraband.CurrentPlace, "LocLables.txt"));
+			AddQuestUserData("Gen_Contraband", "sLoc", GetLocationNameByID(Pchar.quest.contraband.CurrentPlace));
 				
 			DialogExit();
 		break;
@@ -223,7 +223,7 @@ void ProcessDialogEvent()
 				
 				if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskContra_2") && NPChar.location == PChar.GenQuest.ChurchQuest_2.Contra_Colony + "_tavern")
 				{
-					Link.l5 = "Un collègue à vous et mon bon ami de  "+XI_ConvertString("Colonie"+PChar.GenQuest.ChurchQuest_2.QuestTown+"Gén")+" a dit que vous êtes au courant de certaines affaires.";
+					Link.l5 = "Un collègue à vous et mon bon ami de  "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_2.QuestTown+"Gen")+" a dit que vous êtes au courant de certaines affaires.";
 					Link.l5.go = "Contra_GenQuest_Church_2_Contra2_1";
 				}
 				// <-- Церковный генератор №2
@@ -440,7 +440,7 @@ void ProcessDialogEvent()
 			
 			if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskContra_2") && NPChar.location == PChar.GenQuest.ChurchQuest_2.Contra_Colony + "_tavern")
 			{
-				Link.l3 = "Un collègue à vous et mon bon ami de  "+XI_ConvertString("Colonie"+PChar.GenQuest.ChurchQuest_2.QuestTown+"Gen")+" a dit que vous êtes au courant de certaines affaires.";
+				Link.l3 = "Un collègue à vous et mon bon ami de  "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_2.QuestTown+"Gen")+" a dit que vous êtes au courant de certaines affaires.";
 				Link.l3.go = "Contra_GenQuest_Church_2_Contra2_1";
 			}
 			// <-- Церковный генератор №2
@@ -484,7 +484,7 @@ void ProcessDialogEvent()
 			
 		case "Contra_GenQuest_Church_2_4":
 			sColony = QuestGetColony(PChar.GenQuest.ChurchQuest_2.QuestTown);
-			dialog.text = "Je vois... J'ai rencontré quelques gars, ils ont dit qu'ils devaient s'éloigner de l'île et ils se fichaient de savoir où. Nous ne demandons pas les raisons dans un tel cas, seulement le paiement. Nous avions un voyage vers "+XI_ConvertString("Colonie"+sColony+"Acc")+" , "+XI_ConvertString(locations[FindLocation(sColony+"_Ville")].IslandID+"Cela")+" . Nous pouvons vous y emmener, si nous nous entendons sur l'argent.";
+			dialog.text = "Je vois... J'ai rencontré quelques gars, ils ont dit qu'ils devaient s'éloigner de l'île et ils se fichaient de savoir où. Nous ne demandons pas les raisons dans un tel cas, seulement le paiement. Nous avions un voyage vers "+XI_ConvertString("Colony"+sColony+"Acc")+" , "+XI_ConvertString(locations[FindLocation(sColony+"_Ville")].IslandID+"Cela")+" . Nous pouvons vous y emmener, si nous nous entendons sur l'argent.";
 			link.l1 = "Merci, mais j'ai mon propre navire.";
 			link.l1.go = "exit";
 			sQuestTitle = PChar.GenQuest.ChurchQuest_2.QuestTown + "ChurchGenQuest2";
@@ -530,7 +530,7 @@ void ProcessDialogEvent()
 		case "Meeting_2":
 			Dialog.Text = "Pour quoi ?";
 			Link.l1 = "Peut-être, vous serez intéressé par des marchandises spéciales ? Ou peut-être, avez-vous quelque chose à me proposer à la place ?"Link.l1.go ="Rencontre_3";				
-			Link.l.go = "Meeting_3";
+			Link.l1.go = "Meeting_3";
 		break;
 
 		case "Meeting_3":
@@ -604,11 +604,11 @@ void ProcessDialogEvent()
                         {
                             if (ChangeContrabandRelation(pchar, 0) >= 70)
                             {
-                                Dialog.Text = "Je sais que nous pouvons faire des affaires avec vous. Nous vous attendrons à "+GetConvertStr(Pchar.quest.contraband.CurrentPlace,"LocLables.txt")+".";
+                                Dialog.Text = "Je sais que nous pouvons faire des affaires avec vous. Nous vous attendrons à "+GetLocationNameByID(Pchar.quest.contraband.CurrentPlace)+".";
                             }
                             else
                             {
-            				    Dialog.Text = "Hm... Peut-être, nous pouvons vous trouver un acheteur. Nous vous attendrons à "+GetConvertStr(Pchar.quest.contraband.CurrentPlace,"LocLables.txt")+".";
+            				    Dialog.Text = "Hm... Peut-être, nous pouvons vous trouver un acheteur. Nous vous attendrons à "+GetLocationNameByID(Pchar.quest.contraband.CurrentPlace)+".";
             				}
             				Link.l1 = "D'accord. A bientôt là-bas.";
             				Link.l1.go = "Smuggling_exit";
@@ -715,7 +715,7 @@ void ProcessDialogEvent()
 							SetNPCQuestDate(npchar, "Travel_Talk");
 							SaveCurrentQuestDateParam("contraTravel");
 
-							Dialog.Text = "Eh bien, nous pouvons vous emmener à "+GetConvertStr(locations[FindLocation(pchar.GenQuest.contraTravel.destination.loc)].id,"LocLables.txt")+" près "+XI_ConvertString("Colonie"+pchar.GenQuest.contraTravel.destination+"Gen")+" pour "+pchar.GenQuest.contraTravel.price+" or. Apporte l'argent dans "+FindRussianDaysString(nDay)+". Le navire vous attendra à "+GetConvertStr(locations[FindLocation(Pchar.GenQuest.contraTravel.CurrentPlace)].id,"LocLables.txt")+"exactement 24 heures.";
+							Dialog.Text = "Eh bien, nous pouvons vous emmener à "+GetLocationNameByRef(&locations[FindLocation(pchar.GenQuest.contraTravel.destination.loc)])+" près "+XI_ConvertString("Colony"+pchar.GenQuest.contraTravel.destination+"Gen")+" pour "+pchar.GenQuest.contraTravel.price+" or. Apporte l'argent dans "+FindRussianDaysString(nDay)+". Le navire vous attendra à "+GetLocationNameByRef(&locations[FindLocation(Pchar.GenQuest.contraTravel.CurrentPlace)])+"exactement 24 heures.";
 
 							pchar.GenQuest.contraTravel.days = nDay;
 							Link.l1 = "Ça marche pour moi.";
@@ -769,8 +769,8 @@ void ProcessDialogEvent()
 			ReOpenQuestHeader("Gen_ContrabandTravel");
 			AddQuestRecord("Gen_ContrabandTravel", "1");
 			AddQuestUserData("Gen_ContrabandTravel", "sSex", GetSexPhrase("",""));
-			AddQuestUserData("Gen_ContrabandTravel", "sLoc", GetConvertStr(pchar.GenQuest.contraTravel.CurrentPlace, "LocLables.txt"));
-			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetConvertStr(pchar.GenQuest.contraTravel.destination.loc, "LocLables.txt"));
+			AddQuestUserData("Gen_ContrabandTravel", "sLoc", GetLocationNameByID(pchar.GenQuest.contraTravel.CurrentPlace));
+			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc));
 			AddQuestUserData("Gen_ContrabandTravel", "sPlaceTo", XI_ConvertString("Colony" + pchar.GenQuest.contraTravel.destination + "Gen"));
 			AddQuestUserData("Gen_ContrabandTravel", "sDays", FindRussianDaysString(sti(pchar.GenQuest.contraTravel.days)));
 			AddQuestUserData("Gen_ContrabandTravel", "sPrice", pchar.GenQuest.contraTravel.price);
@@ -998,7 +998,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "bakaut_1":
-			dialog.text = "Son galion naviguera près des côtes de "+XI_ConvertString(pchar.GenQuest.Bakaut.Island+"Gén")+" pendant plusieurs jours. Alors ne soyez pas en retard - il pourrait naviguer vers un autre endroit de l'archipel.";
+			dialog.text = "Son galion naviguera près des côtes de "+XI_ConvertString(pchar.GenQuest.Bakaut.Island+"Gen")+" pendant plusieurs jours. Alors ne soyez pas en retard - il pourrait naviguer vers un autre endroit de l'archipel.";
 			link.l1 = "D'accord, je vais accélérer. Merci !";
 			link.l1.go = "bakaut_2";
 		break;

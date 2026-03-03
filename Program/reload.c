@@ -120,12 +120,13 @@ void SetPlayerShipLocation(int location_index)
 	mc.location.from_sea = Locations[location_index].id;
 }
 
-
 //reload_group = xxx.reload
 int Reload(aref reload_group, string locator_name, string current_location)
 {
-    if(CheckAttribute(&Environment,"oldtime"))   reload_cur_time = Environment.oldtime;
-    else                                         reload_cur_time = GetTime();
+    if(CheckAttribute(&Environment,"oldtime"))
+        reload_cur_time = Environment.oldtime;
+    else
+        reload_cur_time = GetTime();
     SetTimeScale(1.0);
 	//EmptySelectedTutorials();
 	SetReloadNextTipsImage();
@@ -201,7 +202,7 @@ int Reload(aref reload_group, string locator_name, string current_location)
 			return 0;
 		}
 	}
-	
+
 	//Main character
 	ref mc = GetMainCharacter();
 	Trace("reload_cur_island_index = " + reload_cur_island_index);
@@ -222,17 +223,9 @@ int Reload(aref reload_group, string locator_name, string current_location)
 			}
 		}
 	}
-	// boal 12/04/24 MakeAutoSave -->
-	// нужно поймать критерий ReloadToSea, т.к. между локациями не сейвим	
-	if (!bHardcoreGame && reload_island_index >= 0 && MakeAutoSave2())
-	{
-		SetEventHandler("evntSave","Reload_Pre", 0);
-	}
-	else
-	{
-		ReloadStart();
-	}	
-	
+
+	ReloadStart();
+
 	return 1;
 }
 

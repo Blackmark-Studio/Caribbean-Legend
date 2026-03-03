@@ -98,9 +98,9 @@ void QuestComplete(string sQuestName, string qname)
 				}
 			}
 		break;
-		
+
 		case "update_sea_after_cabin": //обновление моря при выходе из каюты в море
-			if(bSeaActive)
+			if (bSeaActive)
 			{
 				WhrCreateSeaEnvironment();
 			}		
@@ -138,7 +138,7 @@ void QuestComplete(string sQuestName, string qname)
 				DoQuestCheckDelay("Tut_StartGame_CheckMinHP_Hero", 0.3);
 			}
         break;
-        
+
         case "Tut_StartGame_CheckMinHP_2":
         	if (!CheckAttribute(pchar, "HeroParam.Teach_beat"))
 			{
@@ -156,7 +156,7 @@ void QuestComplete(string sQuestName, string qname)
 				DoQuestCheckDelay("Tut_StartGame_CheckMinHP_Hero", 0.3);
 			}
         break;
-        
+
         case "Tut_StartGame_CheckMinHP_Hero":
         	// запуск диалога
         	LAi_SetActorTypeNoGroup(pchar);
@@ -336,83 +336,19 @@ void QuestComplete(string sQuestName, string qname)
 		//  boal 290804 наказание битьем морды <--
 		// индульгенция -->
 		case "donation":
-			int iDonation = makeint(pchar.questTemp.donate);
-			int iRep      = makeint(pchar.reputation.nobility);
-			int iRepIncr;
-			if (iRep <10)
-			{
-				if (iDonation >= 1000)
-				{
-					iRepIncr = iDonation / 1000;
-					ChangeCharacterComplexReputation(pchar,"nobility", iRepIncr);
-				}
-			}
-			if (iRep < 20 && iRep >= 10)
-			{
-				if (iDonation >= 2000)
-				{
-					iRepIncr = iDonation/2000;
-					ChangeCharacterComplexReputation(pchar,"nobility", iRepIncr);
-				}
-			}
-			if (iRep <30 && iRep >=20)
-			{
-				if (iDonation >= 3000)
-				{
-					iRepIncr = iDonation/3000;
-					ChangeCharacterComplexReputation(pchar,"nobility", iRepIncr);
-				}
-			}
-			if (iRep <40 && iRep >=30)
-			{
-				if (iDonation >= 4000)
-				{
-					iRepIncr = iDonation/4000;
-					ChangeCharacterComplexReputation(pchar,"nobility", iRepIncr);
-				}
-			}
-			if (iRep <50 && iRep >=40)
-			{
-				if (iDonation >= 5000)
-				{
-					iRepIncr = iDonation/5000;
-					ChangeCharacterComplexReputation(pchar,"nobility", iRepIncr);
-				}
-			}
-			if (iRep <60 && iRep >=50)
-			{
-				if (iDonation >= 6000)
-				{
-					iRepIncr = iDonation/6000;
-					ChangeCharacterComplexReputation(pchar,"nobility", iRepIncr);
-				}
-			}
-			if (iRep <70 && iRep >=60)
-			{
-				if (iDonation >= 7000)
-				{
-					iRepIncr = iDonation/7000;
-					ChangeCharacterComplexReputation(pchar,"nobility", iRepIncr);
-				}
-			}
-			if (iRep <80 && iRep >=70)
-			{
-				if (iDonation >= 8000)
-				{
-					iRepIncr = iDonation/8000;
-					ChangeCharacterComplexReputation(pchar,"nobility", iRepIncr);
-				}
-			}
-			if (iRep < REPUTATION_MAX && iRep >=80)
-			{
-				if (iDonation >= 10000)
-				{
-					iRepIncr = iDonation/10000;
-					ChangeCharacterComplexReputation(pchar,"nobility", iRepIncr);
-				}
-				}
-			pchar.questTemp.donate = 0; // mitrokosta фикс накопления пожертвований
-		break;
+			int iDonation = int(PChar.questTemp.donate);
+			int iRep      = int(PChar.reputation.nobility);
+			int iRepIncr  = 0;
+            // Тут целочисленное деление
+			if (iRep < 10)      iRepIncr = iDonation / 1000;
+            else if (iRep < 80) iRepIncr = iDonation / (1000 * (iRep/10 + 1));
+            else                iRepIncr = iDonation / 10000;
+			if (iRep < REPUTATION_MAX && iRepIncr)
+            {
+                ChangeCharacterComplexReputation(PChar, "nobility", iRepIncr);
+                PChar.questTemp.donate = 0;
+            }
+        break;
 	    // индульгенция <--
 		case "SetNPCInShipDeck":  // народ внутри нашего корабля
             if (Pchar.location == Get_My_Cabin())//"My_Cabin" || Pchar.location == "My_Cabin_Small")
@@ -1185,6 +1121,11 @@ void QuestComplete(string sQuestName, string qname)
 			}
 			if (CheckAttribute(pchar, "GenQuest.LigaAttack.Go")) DoQuestReloadToLocation(pchar.location + "_upstairs", "goto", "goto1", "LigaAttack_LoginKillers"); //лига ночных убийц атакует
 			else DoQuestReloadToLocation(pchar.location + "_upstairs", "goto", "goto1", "restore_hp");
+			if(GetMaxAutoSaves("TavernRest") != 0)
+			{
+				DeleteAfterSaveFunction();
+				PostEvent("Event_NewAutoSave", 1000, "s", "TavernRest");
+			}
 		break;
 		
 		case "restore_hp":
@@ -1322,6 +1263,11 @@ void QuestComplete(string sQuestName, string qname)
 			AddCharacterExpToSkill(pchar, "Leadership", 30);
 			AddCharacterExpToSkill(pchar, "FencingS", -15);
 			AddCharacterExpToSkill(pchar, "Pistol", -15);
+			if(GetMaxAutoSaves("BrothelRest") != 0)
+			{
+				DeleteAfterSaveFunction();
+				PostEvent("Event_NewAutoSave", 1, "s", "BrothelRest");
+			}
 		break;
 		////////////////////////////////////////////////////////////////////////
 		//  Конец    Бордель
@@ -1426,7 +1372,8 @@ void QuestComplete(string sQuestName, string qname)
 		break;
 
 		case "PlaySex_2":
-			PlayStereoSound("sex\sex" + sGlobalTemp + ".wav");
+			if(bSFW) PlayStereoSound("sex\sex_sfw_brothel.wav");
+			else PlayStereoSound("sex\sex" + sGlobalTemp + ".wav");
             AddTimeToCurrent(2, rand(30));
 			LAi_SetCurHPMax(pchar); // Rebbebion, полностью восстанавливаем здоровье и энергию
 			if (pchar.location == "SanJuan_houseS1Bedroom")
@@ -1626,6 +1573,7 @@ void QuestComplete(string sQuestName, string qname)
 		if(MysteryOfBetsyPrice_QuestComplete(sQuestName, qname)) return;
 		if(LaEspadaDelRey_QuestComplete(sQuestName, qname)) return;
 		if(WildRose_QuestComplete(sQuestName, qname)) return;
+		if(SharlieEpilog_QuestComplete(sQuestName, qname)) return;
 	}	
 }
 
@@ -1751,7 +1699,7 @@ void WaitNextDays(string qName)
 		SetLaunchFrameFormParam(sDay, "Reload_To_Location", 0.1, 2.0);
 		SetLaunchFrameReloadLocationParam(pchar.location, "goto", LAi_FindNearestFreeLocator2Pchar("goto"), "LocTeleport");
 	}
-	for (int i = 0; i < sti(pchar.quest.waithours); i++) WaitDate("", 0, 0, 1, 0, 0);	
+	for (int i = 0; i < sti(pchar.quest.waithours); i++) WaitDate("", 0, 0, 1, 0, 0);
 	// WaitDate("", 0, 0, sti(pchar.quest.waithours), 0, 0);
 	LaunchFrameForm();
 	DeleteAttribute(pchar,"quest.waithours");

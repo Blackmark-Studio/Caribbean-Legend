@@ -58,7 +58,7 @@ void ProcessDialogEvent()
 		case "officer_5":
 			PlaySound("Voice\English\z_arest_02.wav");
 			dialog.text = "先生们, 这里到底发生了什么? 我听到了打斗声。 ";
-			link.l1 = "唉……军官, 我是应酒馆女服务员的请求来的——她说这里有人被杀, 事实也确实如此——那两名歹徒袭击了这位高贵的贵族。不幸的是, 我没能救下他。那些混蛋杀了他。";
+			link.l1 = "唉…… 军官, 我是应酒馆女服务员的请求来的——她说这里有人被杀, 事实也确实如此——那两名歹徒袭击了这位高贵的贵族。不幸的是, 我没能救下他。那些混蛋杀了他。";
 			link.l1.go = "officer_6";
 		break;
 		
@@ -438,8 +438,8 @@ void ProcessDialogEvent()
 		
 		case "uncle":
 			PlaySound("Voice\English\OliverTrast02.wav");
-			if (pchar.sex == "woman") { dialog.text = "看来我来得正是时候。我的不争气的侄子和他的新情人, 女船长"+GetFullName(pchar)+"……是的, 是的, "+GetSexPhrase("小伙子","小姐")+", 别惊讶——我已经打听过你了。"; }
-			else { dialog.text = "看来我来得正是时候。我的不争气的侄子和他的守护天使, 船长"+GetFullName(pchar)+"……是的, 是的, "+GetSexPhrase("小伙子","小姐")+", 别惊讶——我已经打听过你了。"; }
+			if (pchar.sex == "woman") { dialog.text = "看来我来得正是时候。我的不争气的侄子和他的新情人, 女船长"+GetFullName(pchar)+"…… 是的, 是的, "+GetSexPhrase("小伙子","小姐")+", 别惊讶——我已经打听过你了。"; }
+			else { dialog.text = "看来我来得正是时候。我的不争气的侄子和他的守护天使, 船长"+GetFullName(pchar)+"…… 是的, 是的, "+GetSexPhrase("小伙子","小姐")+", 别惊讶——我已经打听过你了。"; }
 			link.l1 = "路易斯.奥尔蒂斯? ";
 			link.l1.go = "uncle_1";
 		break;

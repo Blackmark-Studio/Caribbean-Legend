@@ -433,7 +433,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsFirstJungle_3":
-			dialog.text = "你为什么把我的请求看得这么严重? 我又不是在要什么值钱的珍珠, 只是一颗子弹而已。 我甚至还挑了合适的时机, 好不打扰你的正事, 也不至于像个疯子一样挡你路, 嘿嘿。 那么……有子弹吗? ";
+			dialog.text = "你为什么把我的请求看得这么严重? 我又不是在要什么值钱的珍珠, 只是一颗子弹而已。 我甚至还挑了合适的时机, 好不打扰你的正事, 也不至于像个疯子一样挡你路, 嘿嘿。 那么…… 有子弹吗? ";
 			if (CheckCharacterItem(PChar, "cartridge") || CheckCharacterItem(PChar, "bullet"))
 			{
 				link.l1 = "是的, 我有一发。 给你。 只是别用那颗子弹跟我开愚蠢的玩笑。 明白吗, 汤米? ";
@@ -1652,6 +1652,12 @@ void ProcessDialogEvent()
 		//--> --------------------------------- —офицерский блок ------------------------------------------
 		case "Irons_officer":
 			dialog.text = "啊啊-是, 船长? ";
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				Link.l1 = "汤米, 看起来, 从这一刻起, 我们的道路要分开了。";
+				Link.l1.go = "SharlieEpilog_Irons_1";
+				break;
+			}
 			if (startHeroType == 4 && CheckAttribute(pchar, "questTemp.BlackMarkQuestCompleted"))
 			{
 				dialog.text = "那么, 伦巴, 今晚我们要在谁的骨头上跳舞? ";
@@ -1875,7 +1881,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -1890,7 +1896,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;
@@ -1906,7 +1912,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -1921,7 +1927,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, MUSKET_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetMusketBullets");
 			DialogExit();
 		break;
@@ -2130,6 +2136,56 @@ void ProcessDialogEvent()
 		case "tieyasal_10":
 			DialogExit();
 			AddDialogExitQuestFunction("BM_Irons_tieyasal_otkaz");
+		break;
+		
+		// Эпилог
+		case "SharlieEpilog_Irons_1":
+			dialog.text = "哈。瞧瞧, 你还学会开玩笑了。 几乎跟我一样。 不过这种诱饵我可不上钩, 你想都别想。";
+			link.l1 = "你没明白——这不是玩笑 。我准备去欧洲, 去见我父亲。 你当然可以留在这里, 等我回来…… 但我也不知道这会花多久。";
+			link.l1.go = "SharlieEpilog_Irons_2";
+		break;
+		
+		case "SharlieEpilog_Irons_2":
+			dialog.text = "啧, 你可没好到能摆出这种脸来开玩笑 。所以, 你是打算一脚把我踹走? 在我救过你的小命之后? 在我为你干了那么多事之后? ";
+			link.l1 = "别把事情搞得这么戏剧化, 汤米。 你是在干你的活儿, 也拿到了应得的薪水。 我承认——你在这行确实很厉害。 如果你决定等我, 我也会很高兴再次在船上见到你。 至于现在…… ";
+			link.l1.go = "SharlieEpilog_Irons_3";
+		break;
+		
+		case "SharlieEpilog_Irons_3":
+			dialog.text = "真他妈宽宏大量。 好吧, 谢谢你了, 背信弃义的船长先生。 那就这么记着吧一‘一条忠犬要是没无聊死, 说不定还能等到主人回来。’";
+			link.l1 = "别太往心里去。 世事就是这样。";
+			link.l1.go = "SharlieEpilog_Irons_nothing";
+			link.l2 = "我明白你在生气。 要是换成我, 也不会高兴。 我会额外付你一个月的薪水, 超过你应得的那部分。 希望你别对我怀恨在心。";
+			link.l2.go = "SharlieEpilog_Irons_salary";
+			link.l3 = "我知道这消息让你措手不及, 你有理由愤怒。 我愿意额外付你三个月的薪水, 超过你应得的那部分。";
+			link.l3.go = "SharlieEpilog_Irons_salary_X3";
+		break;
+		
+		case "SharlieEpilog_Irons_nothing":
+			dialog.text = "去他的世事。 也去你的。 我真后悔跟你扯上关系。 还有, 你听好了——不是你把我赶走, 是我自己走。";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Irons_exit";
+		break;
+		
+		case "SharlieEpilog_Irons_salary":
+			dialog.text = "把这些零钱留给乞丐吧。 我用不着你的施舍。";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Irons_exit";
+			//
+			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+		break;
+		
+		case "SharlieEpilog_Irons_salary_X3":
+			dialog.text = "三倍薪水? 这可真是慷慨啊…… 我都快被感动了。 拿来吧你的施舍。 我会用它在酒馆里请兄弟们喝一轮一为了夏尔·德·莫尔船长: 忠诚的典范, 友谊的象征, 人人学习的榜样。";
+			link.l1 = "...";
+			link.l1.go = "SharlieEpilog_Irons_exit";
+			//
+			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+		break;
+		
+		case "SharlieEpilog_Irons_exit":
+			DialogExit();
+			AddDialogExitQuestFunction("SharlieEpilog_Irons_exit");
 		break;
 	}
 } 

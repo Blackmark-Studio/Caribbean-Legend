@@ -1,0 +1,30 @@
+MerchantOnMap_1 {商人}
+MerchantOnMap_2 {噂によれば}
+MerchantOnMap_3 {華麗な海賊}
+MerchantOnMap_4 {華麗な海賊}
+MerchantOnMap_5 {、捕まった}
+MerchantOnMap_6 { }
+MerchantOnMap_7 { }
+MerchantOnMap_8 {~ 罠に、そこへ ~}
+MerchantOnMap_9 {彼}
+MerchantOnMap_10 {彼女}
+MerchantOnMap_11 {~ は@<NationNameSK(sti(MerPrm.ination))>当局に誘い出された。彼らは~に刺客を送った}
+MerchantOnMap_12 {彼}
+MerchantOnMap_13 {彼女}
+MerchantOnMap_14 {~ 交易船の船倉には武装した@<NationNameSK(sti(MerPrm.ination))>兵が潜んでいた。しかし@<pchar.name>は動じなかった ~}
+MerchantOnMap_15 { }
+MerchantOnMap_16 { }
+MerchantOnMap_17 {, ~}
+MerchantOnMap_18 {彼}
+MerchantOnMap_19 {彼女}
+MerchantOnMap_20 {~  皆殺しにしただけだ！}
+MerchantOnMap_21 { }
+MerchantOnMap_22 { }
+MerchantOnMap_23 { }
+MerchantOnMap_24 { }
+MerchantOnMap_25 { }
+MerchantOnMap_26 { }
+MerchantOnMap_27 { }
+MerchantOnMap_28 { }
+MerchantOnMap_29 {~ これが我らが大胆な海賊、@<GetFullName(pchar)> だ。}
+MerchantOnMap_30 {人々は、あの大胆不敵な海賊@<GetFullName(pchar)>が@<NationNameSK(sti(MerPrm.ination))>の商船を襲い始めたと噂している。 そこで我らの総督は彼を討つ決意をした。 商人に偽装した船にヨーロッパから集めた精鋭の兵士を数十人乗せ、 彼のもとへ送り出したのだ。 しかし、 血に飢えたその海賊は全員を斬り捨て、 またしても法の手を逃れた！}

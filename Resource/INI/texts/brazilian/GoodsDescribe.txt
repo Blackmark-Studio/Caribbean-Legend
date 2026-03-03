@@ -1,0 +1,300 @@
+newline
+{
+
+}
+Balls {Bala redonda}
+Balls_descr
+{
+O tipo de munição mais barato, fácil de usar e confiável. Balas redondas são geralmente usadas para causar dano ao casco do navio e atacar estruturas costeiras a longa distância, mas não são muito eficazes contra a tripulação inimiga.
+Dano base: casco - #f.2DamageHull#, velas - #f.2DamageRig#, tripulação - #f.2DamageCrew#
+}
+Grapes {Metralha}
+Grapes_descr
+{
+Uma carga de pequenas bolas de chumbo ou ferro forjadas, mantidas juntas por um saco de linho.
+Tem alcance efetivo muito curto. Não causa muito dano ao casco, mas inflige danos devastadores à tripulação inimiga. Muito usada em combates navais para enfraquecer o navio inimigo antes do abordo.
+Dano base: casco - #f.2DamageHull#, velas - #f.2DamageRig#, tripulação - #f.2DamageCrew#
+}
+Knippels {Cadeia de balas}
+Knippels_descr
+{
+Um projétil formado por duas balas de canhão ligadas por uma corrente ou haste de ferro. Essa munição é usada para danificar mastros, vergas e o velame.
+Em geral, o tiro de corrente tem baixa precisão em médias e longas distâncias, pois a corrente faz o projétil girar de forma imprevisível. Sua trajetória é errática e causa pouco dano ao casco. No entanto, rasga velas e cordames e pode derrubar mastros, imobilizando navios inimigos.
+Dano base: casco - #f.2DamageHull#, velas - #f.2DamageRig#, tripulação - #f.2DamageCrew#
+}
+Bombs {Granadas}
+Bombs_descr
+{
+Bombas são o tipo de munição mais caro e destrutivo. Estas bombas são esferas ocas de ferro fundido cheias de pólvora e equipadas com um estopim de madeira. Após a ignição, a esfera explode ao impacto, atingindo a tripulação com estilhaços, destruindo mastros, incendiando a mastreação e quebrando o casco com a onda de choque.
+Dano base: casco - #f.2DamageHull#, velas - #f.2DamageRig#, tripulação - #f.2DamageCrew#
+}
+Sailcloth {Lona de vela}
+Sailcloth_descr
+{
+Lona grossa e densa usada na fabricação de velas.
+As colônias inglesas na América do Norte produzem algodão e cânhamo de alta qualidade, tecendo a lona com as duas fibras: os fios transversais são de algodão e os longitudinais (a base), de cânhamo. Tem cor creme, é mais leve e seca mais rápido do que a lona europeia tradicional feita de linho cru.
+}
+Planks {Tábuas}
+Planks_descr
+{
+Tábuas secas de madeira de segunda seleção, obtidas ao rachar troncos antigos com cunhas. São mais resistentes que as tábuas serradas, menos suscetíveis ao ressecamento e deformam ou racham menos.
+O melhor material para reparos emergenciais no casco do navio.
+}
+Wheat {Trigo}
+Wheat_descr
+{
+Os tipos locais de trigo são muito valorizados pela farinha, usada por padeiros para fazer pães deliciosos com uma crosta incrível.  
+Com a alta produtividade e a colheita fora de época (janeiro), importar trigo para a Europa no inverno pode render um bom lucro.
+}
+Ebony {Ébano}
+Ebony_descr
+{
+A madeira de ébano (preta) sempre fascinou carpinteiros e leigos por sua beleza e dureza: é duas vezes mais resistente que o carvalho. Com seu tom único, tornou-se a favorita da nobreza europeia que busca impressionar.
+Cada tipo de ébano possui uma cor própria — do marrom esverdeado ao preto aveludado. Com o tempo, a madeira escurece, fica ainda mais dura — e mais valiosa.
+}
+Chocolate {Cacau}
+Chocolate_descr
+{
+Frutos maduros de cacau são colhidos e abertos para extrair as sementes. Esses grãos de cacau, depois de fermentados e secos, podem ser armazenados por muito tempo.
+A grande procura por cacau entre indígenas e ricos locais já garante preços altos para essa mercadoria, mas espanhóis e italianos estão dispostos a pagar em ouro, tornando o valor exorbitante.
+}
+Sugar {Açúcar}
+Sugar_descr {Ferver o caldo de cana por horas em grandes tachos de cobre transforma o doce xarope em grandes cristais marrons de açúcar bruto, prontos para serem secos e enviados à Europa para refino. O costume de servir chá ou café adoçado com açúcar — moda eterna e símbolo aristocrático de prosperidade — garante que o açúcar bruto esteja sempre em alta demanda.}
+Wine {Vinho}
+Wine_descr
+{
+Apesar de muitas tentativas fracassadas de cultivar vinhedos no Novo Mundo, os vinhos importados da França, Espanha, Itália e Portugal continuam sendo muito valorizados, tanto para fins religiosos quanto para o prazer!
+Vinho europeu de verdade é muito procurado em qualquer assentamento, e os comerciantes locais compram grandes quantidades.
+}
+ShipSilk {Seda naval}
+ShipSilk_descr
+{
+Uma obra-prima das fábricas têxteis de Lyon: lona de vela de seda densa.
+A seda é extremamente resistente, com filamentos fortes, elásticos e de espessura uniforme. O tecido é leve e respirável; absorve a umidade rapidamente, mas seca ainda mais rápido. Mantém o formato e resiste ao estiramento.
+Apesar de todas as vantagens, o tecido de seda tem uma desvantagem importante: a exposição ao sol tende a degradar o material.
+}
+Rum {Rum}
+Rum_descr
+{
+Uma bebida alcoólica forte destilada do caldo fermentado da cana-de-açúcar, com um sabor marcante e levemente exótico. É uma mercadoria valiosa, sempre vendida com lucro, mas também eleva o moral dos marinheiros enquanto houver estoque. O rum também é misturado à água potável do navio para fazer grogue, desinfetando e melhorando o sabor da água. 
+A falta de rum a bordo pode causar insatisfação entre os marinheiros e até provocar um motim.
+}
+Tobacco {Tabaco}
+Tobacco_descr
+{
+Na distante Europa, nos povoados locais e nos apertados alojamentos sob o convés, o tabaco é o prazer de todo homem. Também é visto como uma prevenção confiável contra várias doenças — ou pelo menos é o que dizem.
+Há três tipos de tabaco prontos para consumo: para fumar, para cheirar e para mascar. Folhas de tabaco em sacos de linho são carga valiosa para muitos mercadores.
+}
+Coffee {Café}
+Coffee_descr
+{
+Uma bebida aromática e revigorante feita de grãos de café, mel e canela tornou-se muito popular entre os habitantes do Novo Mundo — não só pelo grande número de plantações de café, que viraram fonte de renda para muitos europeus ricos, mas também porque o chá da Índia e da China é difícil de encontrar.  
+Grãos de café verdes, não torrados, que mantêm suas propriedades e valor comercial por muito tempo, são sempre muito procurados na Europa continental, já que o café agora é indispensável em qualquer casa abastada.
+}
+Mahogany {Mogno}
+Mahogany_descr
+{
+A madeira dessas árvores possui um padrão muito distinto e belo, além de ser resistente, durável e à prova de fogo. Pode ser facilmente polida e não é afetada por pragas. Os espanhóis foram os primeiros a valorizá-la — hoje, o mogno é amplamente usado na construção de navios, igrejas e palácios.
+Móveis de mogno são símbolo de luxo clássico, bom gosto e prosperidade de seu dono.
+}
+Cinnamon {Baunilha}
+Cinnamon_descr
+{
+Vagens secas e fermentadas dessa trepadeira perene originária do México têm aroma doce, mas sabor amargo.
+Na Europa, a baunilha é usada para preparar cacau e chocolate quente, além de aromatizar tabaco; alguns apenas mastigam a vagem, geralmente para ostentar status!
+}
+Copra {Copra}
+Copra_descr
+{
+Polpa de coco seca.
+A copra é usada na produção de óleo de coco e sabão. Esse sabão tem um aroma agradável e também colore os cabelos, disfarçando os fios brancos com um tom loiro nobre.
+}
+Paprika {Páprica}
+Paprika_descr {Páprica é feita de pimentas vermelhas secas e moídas, uma especiaria doce e picante muito usada para dar sabor aos pratos. É especialmente popular entre alemães, espanhóis e nos países do Mediterrâneo, pois combina com quase tudo: carnes, aves, peixes, frutos do mar, legumes e queijos.}
+Fruits {Frutas}
+Fruits_descr
+{
+Fruta tropical comestível colhida da flora local. Ótima para evitar escorbuto ou dar sabor ao vinho barato.
+Pode ser vendida em qualquer assentamento – sempre há compradores, até para iguarias raras.
+}
+Ale {Ale}
+Ale_descr
+{
+Bebida fermentada de baixo teor alcoólico, preparada por fermentação alta. 
+O ale, junto com o pão, é considerado alimento básico e faz parte das rações dos guarnições locais (especialmente inglesas). Pode ser armazenado por longos períodos e possui propriedades antibióticas graças ao gruit (mistura de ervas e especiarias usada no lugar do lúpulo).
+}
+Ropes {Cordas}
+Ropes_descr
+{
+Cordas resistentes de cânhamo. Imunes à água salgada, são as melhores para o uso em mastreação.
+As cordas mais renomadas e cobiçadas são fabricadas no Tsarado da Rússia.
+}
+Clothes {Roupas}
+Clothes_descr
+{
+Roupas conservadoras e práticas de tecido escuro, linho simples de cambraia, colarinhos e punhos dobrados — traje confortável para qualquer homem honesto, trabalhador, modesto e econômico.
+Mercadoria barata, sempre procurada.
+}
+Cotton {Algodão}
+Cotton_descr
+{
+O algodão amadurece tarde e a colheita nas plantações das ilhas do Caribe é bem menor do que nas colônias da América do Norte, mas suas fibras continuam muito valiosas, pois são incomumente longas e finas. Esses fios sedosos e cremosos são usados para produzir os tecidos mais finos e de melhor qualidade.  
+Esse trabalho exige uma plantação relativamente grande e pelo menos 20 escravos para operá-la.
+}
+Sandal {Madeira de ferro}
+Sandal_descr
+{
+O ironwood, também chamado de "lignum vitae", é uma madeira densa, dura e resistente, quase impossível de rachar. É muito pesada e, ao contrário da maioria das madeiras, afunda na água em vez de flutuar.
+Como o nome sugere, é extremamente resistente, mas difícil de trabalhar. Possui propriedades autolubrificantes, especialmente em contato com a água.
+Graças à sua robustez e lubrificação natural, peças de navio feitas de ironwood exigem pouca manutenção, mesmo nas piores condições do mar.
+}
+Oil {Alcatrão}
+Oil_descr
+{
+Este asfalto natural é uma mistura pegajosa, cinza-escura, de betume, argila fina e água salgada. É a exportação mais famosa de Trinidad — embora certamente não a mais bonita.
+
+Este piche é usado para impermeabilizar e calafetar as juntas do casco dos navios.
+
+Diz-se que este piche é muito superior ao produzido nos países do norte da Europa a partir de pinheiros.
+}
+Leather {Couro}
+Leather_descr
+{
+Os couros curtidos de gado são uma mercadoria universal, sempre procurada na Europa. Foi assim que os primeiros bucaneiros ganhavam a vida, vendendo peles e carne do gado selvagem de Hispaniola.
+Embora poucos mercadores embarquem apenas couro, ele é ótimo para completar o espaço vazio do porão, pois é muito resistente e suporta qualquer condição de transporte.
+}
+Slaves {Escravos}
+Slaves_descr {Homens e mulheres — brancos e negros — vendidos como escravos após batalhas perdidas, punição por crimes ou dívidas. Para o dono da plantação ou da mina, isso é mercadoria totalmente legítima, já que a pessoa já era escrava no momento da compra. A vida de um escravo costuma ser dura, brutal e curta — a maioria morre nos primeiros sete anos após ser vendida para trabalhar nas plantações.}
+Powder {Pólvora}
+Powder_descr
+{
+Mercadoria estratégica importada, fruto de moinhos de pólvora sujos, barulhentos, fedorentos e perigosos. “Mantenha a pólvora seca”, dizem os canhoneiros experientes. Não é exagero: sem pólvora, os canhões são só peso morto no navio.
+Um capitão sábio sempre guarda bastante pólvora na parte mais seca e segura do porão.
+}
+Food {Provisões}
+Food_descr
+{
+Um conjunto padrão de rações preservadas e água potável, essenciais para alimentar a tripulação e os escravizados durante a viagem.
+A falta de comida a bordo causa fome, mortes e queda de moral.
+Consumo diário: marinheiros - 0,1 unidade, escravizados - 0,05 unidade.
+}
+Weapon {Arma}
+Weapon_descr
+{
+Um conjunto de armas: de sabres e espadas a pistolas e mosquetes.
+Durante abordagens, todos os combatentes precisam estar armados. A falta de armas aumenta as baixas.
+À medida que marinheiros morrem em combate, o número de armas a bordo diminui.
+}
+Gold {Ouro}
+Gold_descr
+{
+Lingotes de ouro maciço, marcados pelo Tesouro da Espanha.
+Capturar um navio do tesouro carregado de ouro é o sonho de todo pirata e corsário.
+}
+Silver {Prata}
+Silver_descr
+{
+Lingotes de prata maciça, marcados pelo Tesouro da Espanha.
+Um prêmio cobiçado, já que a prata tem bom valor e é a segunda escolha do tesouro espanhol para armazenar e transportar riqueza. Estima-se que, no século XVI, a Coroa Espanhola importou mais de 210 milhões de pesos em prata do Novo Mundo para a Europa.
+}
+Brick {Tijolos}
+Brick_descr
+{
+Blocos e telhas de terracota, amplamente usados na construção das cidades, já que a madeira apodrece rápido no clima úmido do Caribe.
+Devido aos incêndios frequentes, as autoridades incentivam o uso de tijolos, tornando esse produto sempre procurado.
+}
+Medicament {Medicamentos}
+Medicament_descr
+{
+Conjunto de remédios e instrumentos para tratar doenças comuns e prestar primeiros socorros a feridos e acidentados.
+Ter medicamentos a bordo ajuda a salvar feridos, reduzir baixas em abordagens e cuidar dos doentes durante a viagem.
+}
+Cannon_3 {Falconetes}
+Cannon_3_descr
+{
+Canhões de convés equipados com torre. Possuem a maior mobilidade e, devido ao tamanho reduzido, menor potência e alcance.
+Frequentemente contam com culatra substituível, permitindo recarga rápida.
+Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+}
+Cannon_6 {Demi-canhões de 6 libras}
+Cannon_6_descr
+{
+Canhões pequenos, muito usados em navios-correio e mercantes por serem leves, baratos e duráveis. Fáceis de manter e não exigem tripulação experiente.
+Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+}
+Cannon_8 {Demi-canhões de 8 libras}
+Cannon_8_descr
+{
+Um dos calibres mais populares em navios pequenos, presente tanto em mercantes quanto em patrulhas. Valorizado pela excelente combinação de tamanho, peso e poder de fogo.
+Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+}
+Cannon_12 {Demi-canhões de 12 libras}
+Cannon_12_descr
+{
+Um calibre comum entre pequenos navios de guerra. Para seu tamanho e peso, oferece poder de fogo impressionante, mas exige tripulação completa nos canhões, aumentando o número de tripulantes a bordo.
+Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+}
+Cannon_16 {Demi-canhões de 16 libras}
+Cannon_16_descr
+{
+Canhões modernos do tipo francês. Graças ao design avançado, oferecem excelente alcance, confiabilidade e poder de fogo. Um calibre muito comum em navios de patrulha e reconhecimento.
+Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+}
+Cannon_18 {Demi-canhões de 18 libras}
+Cannon_18_descr
+{
+Canhões universais potentes, frequentemente usados em navios de guerra no passado. Ainda comuns no arquipélago e valorizados por sua simplicidade e confiabilidade, embora o design antigo limite um pouco seu alcance.
+Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# s.
+}
+Cannon_20 {Canhões de 20 libras}
+Cannon_20_descr
+{
+Canhões de artilharia de cano longo usados em cruzadores e navios auxiliares de comboios militares. Exigem trabalho coordenado da equipe para disparos eficazes.
+Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# s.
+}
+Cannon_24 {Canhões de 24 libras}
+Cannon_24_descr
+{
+O calibre principal dos navios de guerra, ápice da evolução da artilharia naval. Equilibram alcance e poder de fogo, e seu projeto robusto permite suportar longas batalhas no mar sem sofrer danos críticos.  
+Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# s.
+}
+Cannon_32 {Canhões de 32 libras}
+Cannon_32_descr
+{
+Canhões pesados de grande calibre que causam dano massivo e são ideais para bombardear fortes. Devido ao limite de resistência dos materiais, usam carga de pólvora reduzida, o que limita o alcance.
+Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+}
+Cannon_36 {Canhões de 36 libras}
+Cannon_36_descr
+{
+Canhões de cano longo, raros no convés de armas. Sua recarga lenta e alcance limitado são compensados pelo dano devastador causado por suas balas pesadas de voo lento. Exigem grandes equipes de artilheiros.
+Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+}
+Cannon_42 {Bombardas de 42 libras}
+Cannon_42_descr
+{
+Canhões formidáveis, auge do poder naval. Usados apenas em navios de linha, fortes e grandes batalhas europeias. Exigem uma tripulação numerosa e experiente.
+Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# s.
+}
+Cannon_48 {Bombardas de 48 libras}
+Cannon_48_descr
+{
+Canhões formidáveis, auge do poder de fogo naval. Usados apenas em navios de linha, fortes e grandes batalhas europeias. Exigem uma tripulação numerosa e bem treinada.
+Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+}
+Culverine_8 {Demi-culverins}
+Culverine_8_descr
+{
+Canhões de 8 libras de cano longo em carro especial com suporte reforçado e rodas de madeira maciça.
+Possuem alcance de tiro ampliado. Usados com frequência para fogo de barragem.
+Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+}
+Culverine_18 {Culverins}
+Culverine_18_descr {Canhões médios de 18 libras com alcance aumentado, adequados para navios relativamente pequenos. Apesar do alcance impressionante, são extremamente pesados e demoram para recarregar. Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.}
+Culverine_36 {Culverinas completas}
+Culverine_36_descr
+{
+Canhões de 36 libras de fortaleza projetados para fogo de brecha: vence quem atira primeiro!
+Devido ao grande comprimento, só podem ser instalados em portos para canhões de 42 libras.
+Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+}

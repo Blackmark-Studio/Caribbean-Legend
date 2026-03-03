@@ -1,0 +1,35 @@
+new_string
+{
+
+}
+Cheat_success {Tamamlandı!}
+Cheat_on {Hile Etkin}
+Cheat_off {Hile Devre Dışı}
+Cheat_Comming_soon {Çok yakında!}
+f1 {35 yetenek puanı ekle}
+f2 {Bir Denizcilik Yeteneği puanı ekle}
+f3 {Kişisel Yetenek puanı +1}
+f4 {+10 Maks HP}
+f5 {+10 Maksimum Enerji}
+f6 {Onuru Artır}
+f7 {Onuru Azalt}
+f8 {Şöhreti Artır}
+f9 {Şöhreti Azalt}
+f10 {Tanrı Modu açık/kapalı}
+f11 {Otoriteyi Artır}
+f12 {Canlılığı Artır}
+f13 {+1000 Maksimum Envanter Kapasitesi}
+f14 {Takılı kesici silahın hasarı x10}
+f15 {Ateşli silah hasarı x10}
+f16 {Donanmış ateşli silahın yeniden doldurma süresi x10}
+f17 {%100 blok kırma şansı ayarla}
+f18 {x10 Enerji Yenileme}
+f19 {x10 HP Yenileme}
+f20 {%100 bloklama şansı ayarla}
+f21 {Taino Zehiri açık/kapalı}
+f22 {Düellocu geçmişi yeteneklerini aç}
+f23 {Muhasebeci geçmişi yeteneklerini aç}
+f24 {Atlet geçmişi yeteneklerini aç}
+f25 {Keskin Nişancı geçmişi yeteneklerini aç}
+f26 {Navigasyon gereksinimlerini devre dışı bırak}
+f27 {Kahramanı ayılt (sarhoşsa)}

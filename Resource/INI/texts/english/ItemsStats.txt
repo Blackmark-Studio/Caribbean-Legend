@@ -95,11 +95,11 @@ itm_stat_descr_indian_1 {Increases headshot damage by 20%.}
 itm_stat_indian_10 {Poison}
 itm_stat_descr_indian_10 {Each slash attack has a 15% chance to poison the enemy.}
 itm_stat_indian_11 {Smoke and Mirrors}
-itm_stat_descr_indian_11 {Each Fancy item increases your Deception chance by 5%.}
+itm_stat_descr_indian_11 {Increases the chance of successfully sneaking into the city by 15%. Useful when entering from the jungle and at night.}
 itm_stat_indian_2 {Check}
 itm_stat_descr_indian_2 {The skill of measuring out the right amount of gunpowder increases Ball and Grapeshot damage by 10%, and by an additional 5% for Overcharged and Armor-Piercing ammo.}
 itm_stat_indian_3 {Bloodlust}
-itm_stat_descr_indian_3 {Increases outgoing critical damage by 15%.}
+itm_stat_descr_indian_3 {Increases critical damage dealt by $modifierPercent(blade_CritDamage).}
 itm_stat_indian_4 {Wind-up}
 itm_stat_descr_indian_4 {Heavy Weapons deal 15% more damage with heavy attacks.}
 itm_stat_indian_5 {Equalizer}
@@ -237,7 +237,7 @@ itm_stat_descr_secondary_hat11 {Attack speed increases by 5% if the character ha
 itm_stat_blade_SP_3low {Untapped Potential}
 itm_stat_descr_blade_SP_3low {This blade is not at the height of its power—something is missing...}
 itm_stat_blade_SP_3 {Reaper}
-itm_stat_descr_blade_SP_3 {Prevents healing from any source. For every 2% missing Health, outgoing damage increases by 1.5% and energy regeneration by 1.75%.}
+itm_stat_descr_blade_SP_3 {Disables healing from all sources. Every 2% of missing Health increases damage dealt by 1.5% and energy recovery by 1.75%.}
 itm_stat_blade_41 {Flexibility}
 itm_stat_descr_blade_41 {Gains a damage bonus from your highest Coldarm skill.}
 itm_stat_lacrima_patris {Path of the Righteous}
@@ -290,3 +290,8 @@ itm_stat_piratesJournal_3 {Self-Sufficiency}
 itm_stat_descr_piratesJournal_3 {Increases at-sea repair efficiency by 30%. The bonus is doubled if the flagship is 'Amsterdam'.}
 itm_stat_pistol15 {Small but Deadly}
 itm_stat_descr_pistol15 {Drawing and holstering this pistol is 15% faster. Hits strongly knock enemies back.}
+itm_stat_bonus_blade_SP_3
+{
+Current damage bonus: $attr($context.damage)
+Energy recovery bonus: $attr($context.energy)
+}

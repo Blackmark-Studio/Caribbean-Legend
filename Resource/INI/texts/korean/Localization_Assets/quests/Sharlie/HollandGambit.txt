@@ -1,0 +1,46 @@
+HollandGambit_1 {Baltazar}
+HollandGambit_2 {Ridderbok}
+HollandGambit_3 {탐험 모드: 타이머 연장됨. 퀘스트를 완료하세요!}
+HollandGambit_4 {Miguel}
+HollandGambit_5 { }
+HollandGambit_6 { }
+HollandGambit_7 {탐험 모드: 퀘스트 기간 2배}
+HollandGambit_8 { }
+HollandGambit_9 {발키리가 수평선에 나타났다!}
+HollandGambit_10 {Hainrih}
+HollandGambit_11 {Claus}
+HollandGambit_12 { }
+HollandGambit_13 {여기가 동굴이다. 솔로몬의 은닉처를 여기서 찾아야겠다.}
+HollandGambit_14 {Harry}
+HollandGambit_15 {Fletcher}
+HollandGambit_16 {은화 호송대}
+HollandGambit_17 {보트}
+HollandGambit_18 {Fernando}
+HollandGambit_19 {Rodriges}
+HollandGambit_20 {Zeekalf}
+HollandGambit_21 {Charlie}
+HollandGambit_22 {Knippel}
+HollandGambit_23 { }
+HollandGambit_24 { }
+HollandGambit_25 {애비게일이 열병으로 숨졌습니다!}
+HollandGambit_26 {Charlie Knippel이 부상으로 사망했습니다!}
+HollandGambit_27 {롱웨이가 열병으로 죽었습니다!}
+HollandGambit_28 {롱웨이가 부상으로 사망했습니다!}
+HollandGambit_29 {한 시간이 지났다...}
+HollandGambit_30 {Jack}
+HollandGambit_31 {Harrison}
+HollandGambit_32 {브리건틴 'Hoop'}
+HollandGambit_33 {Hoop}
+HollandGambit_34 {Longway}
+HollandGambit_35 { }
+HollandGambit_36 {Peter}
+HollandGambit_37 {Stuyvesant}
+HollandGambit_38 {Frederic}
+HollandGambit_39 {Leiden}
+HollandGambit_40 {Toff}
+HollandGambit_41 {Keller}
+HollandGambit_42 {상처로 인해 의식을 잃었습니다...}
+HollandGambit_43 {당신은 Abigail에게 돈을 돌려주지 않아 그녀를 거지로 만들었습니다}
+HollandGambit_44 {Chavinavy}
+HollandGambit_45 { }
+HollandGambit_46 { }

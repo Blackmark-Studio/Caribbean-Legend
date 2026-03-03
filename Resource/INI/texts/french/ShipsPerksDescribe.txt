@@ -42,7 +42,8 @@ trait05 {Faux documents}
 trait05_desc {Un ensemble impressionnant de brevets, de documents et de plaques permet à ce navire d'entrer incognito dans presque tous les ports, et la coque discrète réduit le risque de rencontrer des patrouilles lors d'opérations de contrebande.}
 trait05_desc2
 {
-Augmente la probabilité de tromperie : 15%.Réduit la probabilité de rencontrer une patrouille : 50%.
+Augmente de 15 % les chances de tromper lors de l’accostage de jour. 
+Réduit de 50 % le risque de croiser une patrouille.
 }
 trait11 {Affûts pivotants}
 trait11_desc {Les sabords et affûts des canons ont été spécialement reconstruits, augmentant le secteur de tir des canons.}
@@ -110,5 +111,5 @@ sp3_SurrenderChanceBonus_desc {Augmentation de la chance de reddition : #dSurren
 sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 marins tombés)}
 sp4 {Chasseur de pirates}
 sp4_desc {Ce navire a été conçu spécialement pour purger les mers de la piraterie. À chaque bâtiment envoyé par le fond, l’équipage se soude davantage, les canons gagnent en précision et le fanatisme du capitaine s’affirme.}
-sp4_desc2 {Chaque navire pirate détruit augmente définitivement la manœuvrabilité, la portée de tir, la vitesse sur la carte du monde et la vitesse de rechargement des canons. Bonus actuel : $percent($attr($context.tuning.modifiers.shipSpeed.trait_SP4)) sur 15. ~ Plus la menace pirate est faible, plus l’entretien du navire est réduit. Bonus actuel : $percent($GetAmsterdamMtp( )) sur 40.}
+sp4_desc2 {Chaque navire pirate détruit augmente définitivement la manœuvrabilité, la portée de tir, la vitesse sur la carte du monde et la vitesse de rechargement des canons. Bonus actuel : $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) sur 15. ~ Plus la menace pirate est faible, plus l’entretien du navire est réduit. Bonus actuel : $percent($GetAmsterdamMtp( )) sur 40.}
 SpecialityUpgrade {Amélioré par la CNIO}

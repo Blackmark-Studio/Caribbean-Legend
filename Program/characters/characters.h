@@ -39,13 +39,13 @@ string  LoyalityTable[MORALE_TABLE_SIZE];
 #define SPECIAL_MAX         10
 #define SKILL_TO_OLD        10.0
 // личные
-#define SKILL_F_LIGHT		"FencingL"  //1
+#define SKILL_F_LIGHT		"FencingL" //1
 #define SKILL_FENCING		"FencingS"
 #define SKILL_F_HEAVY		"FencingH"
-#define SKILL_PISTOL		"Pistol" // boal
-#define SKILL_FORTUNE	    "Fortune"     //5
+#define SKILL_PISTOL		"Pistol"
+#define SKILL_FORTUNE	    "Fortune"  //5
 // корабельные
-#define SKILL_LEADERSHIP	"Leadership"    //6
+#define SKILL_LEADERSHIP	"Leadership" //6
 #define SKILL_COMMERCE		"Commerce"
 #define SKILL_ACCURACY		"Accuracy"
 #define SKILL_CANNONS		"Cannons"
@@ -53,7 +53,8 @@ string  LoyalityTable[MORALE_TABLE_SIZE];
 #define SKILL_REPAIR		"Repair"
 #define SKILL_GRAPPLING		"Grappling"
 #define SKILL_DEFENCE		"Defence"
-#define SKILL_SNEAK		    "Sneak"   //14
+#define SKILL_SNEAK		    "Sneak" //14
+#define SKILL_QTY		     14
 
 // атрибуты
 #define SPECIAL_S	"Strength"   //15
@@ -63,6 +64,15 @@ string  LoyalityTable[MORALE_TABLE_SIZE];
 #define SPECIAL_I	"Intellect"
 #define SPECIAL_A	"Agility"
 #define SPECIAL_L	"Luck"  //21
+#define SPECIAL_END  21
+
+#define PIRATES_P	"Strength"   // Сила
+#define PIRATES_I	"Perception" // Восприятие
+#define PIRATES_R	"Agility"    // Реакция
+#define PIRATES_A	"Charisma"   // Лидерство
+#define PIRATES_T	"Intellect"  // Талант
+#define PIRATES_E	"Endurance"  // Выносливость
+#define PIRATES_S	"Luck"       // Удача
 
 #define SPECIAL_TYPE	"SPECIAL"
 #define SKILL_TYPE	    "Skill"

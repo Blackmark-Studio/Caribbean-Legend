@@ -13,6 +13,7 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 {
 	// boal не нужно - ранг и так точно расчитан r = rank + rand(3) - 1;
 	string sBullet = "bullet";
+	string sGun;
 	string sGunPowder;
 	
 	DeleteAttribute(chr, "equip");
@@ -36,13 +37,22 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 	if(isWeapons)
 	{
 		string blade;
-		if (CheckAttribute(chr, "CityType") && chr.CityType == "soldier")
-		{   // у солдат в городе свои сабли
-			blade = LAi_Soldier_EquipBlade();
+
+		if(CheckAttribute(chr, "BladeType"))
+		{
+			blade = chr.BladeType;
 		}
 		else
 		{
-            blade = LAi_NPC_EquipBladeSelection(chr);
+			if (CheckAttribute(chr, "CityType") && chr.CityType == "soldier")
+			{
+				// у солдат в городе свои сабли
+				blade = LAi_Soldier_EquipBlade();
+			}
+			else
+			{
+				blade = LAi_NPC_EquipBladeSelection(chr);
+			}
 		}
 		
 		DeleteAttribute(chr, "items"); // это можно не делать, но так наверняка (идёт проверка на колво предметов, и сабель может стать вагон)
@@ -74,8 +84,43 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 	{
 		if(CheckAttribute(chr, "PhantomType") && chr.PhantomType == "native") return; //Jason
 		if(CheckAttribute(chr, "PhantomType") && chr.PhantomType == "slave") return; //Jason
-		
-		if(rand(1000) < MOD_SKILL_ENEMY_RATE * sti(chr.rank) * 8)
+
+		if(CheckAttribute(chr, "GunBulletType") && CheckAttribute(chr, "GunType"))
+		{
+			sBullet = chr.GunBulletType;
+			sGun = chr.GunType;
+
+			if (sGun != "")
+			{
+				ref rGun = ItemsFromID(sGun);
+				int chrgQ = sti(rGun.chargeQ);
+				if (chrgQ >= 2)
+				{
+					SetCharacterPerk(chr, "Gunman");
+				}
+
+				GiveItem2Character(chr, sGun);
+				EquipCharacterByItem(chr, sGun);
+
+				TakeNItems(chr, sBullet, 5 + rand(10));// boal gun bullet
+				LAi_SetCharacterUseBullet(chr, GUN_ITEM_TYPE, sBullet);
+
+				int iBulletIdx = GetItemIndex(sBullet);
+				if(iBulletIdx == -1)
+				{
+					trace("Bad index for item : " + sBullet);
+				}
+				else
+				{
+					sGunPowder = GetGunPowderTypeForBullet(rGun, &Items[iBulletIdx]);
+					if (sGunPowder != "")
+					{
+						AddItems(chr, sGunPowder, 5 + rand(10)); // Warship. Порох
+					}
+				}
+			}
+		}
+		else if(rand(1000) < MOD_SKILL_ENEMY_RATE * sti(chr.rank) * 8)
 		{
 			int iRnd = rand(1);
 			if(sti(chr.rank) > 10) iRnd = rand(2);
@@ -194,85 +239,150 @@ void LAi_NPC_MushketerEquip(ref chr)
 			if(HasSubStr(chr.model, "mush_rvd_")) sMush = "mushket1";
 		}
 	}
-			
+
+	ref rGun = ItemsFromID(sMush);
+	int chrgQ = sti(rGun.chargeQ);
+
+	if (chrgQ >= 2)
+	{
+		SetCharacterPerk(chr, "GunProfessional");
+	}
+	else
+	{
+		SetCharacterPerk(chr, "Gunman");
+	}
+
 	GiveItem2Character(chr, sMush);
 	EquipCharacterbyItem(chr, sMush);
-	
-	switch (sMush)
+
+
+	if (CheckAttribute(chr, "MushketBulletType"))
 	{
-		case "mushket1"		:
-			AddItems(chr, "cartridge", 	5);
-			AddItems(chr, "bullet", 	50);
-			AddItems(chr, "gunpowder", 	50);
-			if(CheckAttribute(chr, "MushketType") && 
-			   CheckAttribute(chr, "MushketBulletType")) 	LAi_SetCharacterUseBullet(chr, "musket", sBullet);
-			else											LAi_SetCharacterDefaultBulletType(chr, "musket");
-		break;
-		case "mushket2"		:
-			AddItems(chr, "cartridge", 	5);
-			AddItems(chr, "bullet", 	50);
-			AddItems(chr, "gunpowder", 	50);
-			if(CheckAttribute(chr, "MushketType") && 
-			   CheckAttribute(chr, "MushketBulletType")) 	LAi_SetCharacterUseBullet(chr, "musket", sBullet);
-			else											LAi_SetCharacterDefaultBulletType(chr, "musket");
-		break;
-		case "mushket3"		:
-			AddItems(chr, "grapeshot", 	50);
-			AddItems(chr, "gunpowder", 	50);
-			LAi_SetCharacterUseBullet(chr, "musket", "grapeshot");
-		break;
-		case "mushket5"		:
-			AddItems(chr, "cartridge", 	5);
-			AddItems(chr, "bullet", 	50);
-			AddItems(chr, "gunpowder", 	50);
-			if(CheckAttribute(chr, "MushketType") && 
-			   CheckAttribute(chr, "MushketBulletType")) 	LAi_SetCharacterUseBullet(chr, "musket", sBullet);
-			else											LAi_SetCharacterDefaultBulletType(chr, "musket");
-		break;
-		case "mushket6"		:
-			AddItems(chr, "grapeshot", 	50);
-			AddItems(chr, "gunpowder", 	50);
-			
-			if(CheckAttribute(chr, "MushketType") && 
-			   CheckAttribute(chr, "MushketBulletType")) 
+		AddItems(chr, sBullet, 	50);
+		string sGunPowder;
+		int iBulletIdx = GetItemIndex(sBullet);
+		if(iBulletIdx == -1)
+		{
+			trace("Bad index for item : " + sBullet);
+		}
+		else
+		{
+			sGunPowder = GetGunPowderTypeForBullet(rGun, &Items[iBulletIdx]);
+			if (sGunPowder != "")
 			{
-				if(sBullet == "GunEchin") AddItems(chr, sBullet, 15);
-				LAi_SetCharacterUseBullet(chr, "musket", sBullet);
+				AddItems(chr, sGunPowder, 5 + rand(10)); // Warship. Порох
+			}
+		}
+
+		LAi_SetCharacterUseBullet(chr, "musket", sBullet);
+
+		int aBullets[0];
+		GetAllBulletTypes(rGun, &aBullets);
+		int iBulletTypesCount = GetArraySize(&aBullets);
+
+		for (int i = 0; i < iBulletTypesCount; i++)
+		{
+			ref rCurBullet = &Items[aBullets[i]];
+			if (rCurBullet.id == sBullet || GetAttributeInt(rCurBullet, "quality") == B_UNIQUE)
+			{
+				continue;
+			}
+
+			AddItems(chr, rCurBullet.id, 	5);
+
+			iBulletIdx = GetItemIndex(rCurBullet.id);
+			if(iBulletIdx == -1)
+			{
+				trace("Bad index for item : " + rCurBullet.id);
 			}
 			else
 			{
-				LAi_SetCharacterUseBullet(chr, "musket", "grapeshot");		
-			}			
-		break;
-		case "grape_mushket":
-			if(CheckAttribute(chr, "MushketBulletType")) 
-			{
-				AddItems(chr, sBullet, 15);
-				LAi_SetCharacterUseBullet(chr, "musket", sBullet);		
-			}
-			else
-			{
-				if(rand(1) == 0)
+				sGunPowder = GetGunPowderTypeForBullet(rGun, &Items[iBulletIdx]);
+				if (sGunPowder != "")
 				{
-					AddItems(chr, "grenade", 	15);
-					LAi_SetCharacterUseBullet(chr, "musket", "grenade");		
+					AddItems(chr, sGunPowder, 5); // Warship. Порох
+				}
+			}
+		}
+	}
+	else
+	{
+		switch (sMush)
+		{
+			case "mushket1"		:
+				AddItems(chr, "cartridge", 	5);
+				AddItems(chr, "bullet", 	50);
+				AddItems(chr, "gunpowder", 	50);
+				if(CheckAttribute(chr, "MushketType") &&
+				CheckAttribute(chr, "MushketBulletType")) 	LAi_SetCharacterUseBullet(chr, "musket", sBullet);
+				else											LAi_SetCharacterDefaultBulletType(chr, "musket");
+			break;
+			case "mushket2"		:
+				AddItems(chr, "cartridge", 	5);
+				AddItems(chr, "bullet", 	50);
+				AddItems(chr, "gunpowder", 	50);
+				if(CheckAttribute(chr, "MushketType") &&
+				CheckAttribute(chr, "MushketBulletType")) 	LAi_SetCharacterUseBullet(chr, "musket", sBullet);
+				else											LAi_SetCharacterDefaultBulletType(chr, "musket");
+			break;
+			case "mushket3"		:
+				AddItems(chr, "grapeshot", 	50);
+				AddItems(chr, "gunpowder", 	50);
+				LAi_SetCharacterUseBullet(chr, "musket", "grapeshot");
+			break;
+			case "mushket5"		:
+				AddItems(chr, "cartridge", 	5);
+				AddItems(chr, "bullet", 	50);
+				AddItems(chr, "gunpowder", 	50);
+				if(CheckAttribute(chr, "MushketType") &&
+				CheckAttribute(chr, "MushketBulletType")) 	LAi_SetCharacterUseBullet(chr, "musket", sBullet);
+				else											LAi_SetCharacterDefaultBulletType(chr, "musket");
+			break;
+			case "mushket6"		:
+				AddItems(chr, "grapeshot", 	50);
+				AddItems(chr, "gunpowder", 	50);
+
+				if(CheckAttribute(chr, "MushketType") &&
+				CheckAttribute(chr, "MushketBulletType"))
+				{
+					if(sBullet == "GunEchin") AddItems(chr, sBullet, 15);
+					LAi_SetCharacterUseBullet(chr, "musket", sBullet);
 				}
 				else
 				{
-					AddItems(chr, "powder_pellet", 	15);
-					LAi_SetCharacterUseBullet(chr, "musket", "powder_pellet");		
+					LAi_SetCharacterUseBullet(chr, "musket", "grapeshot");
 				}
-			}
-		break;
-		
-		case "mushket2x2"	:
-			AddItems(chr, "cartridge", 	5);
-			AddItems(chr, "bullet", 	50);
-			AddItems(chr, "gunpowder", 	50);
-			if(CheckAttribute(chr, "MushketType") && 
-			   CheckAttribute(chr, "MushketBulletType")) 	LAi_SetCharacterUseBullet(chr, "musket", sBullet);
-			else											LAi_SetCharacterDefaultBulletType(chr, "musket");
-		break;
+			break;
+			case "grape_mushket":
+				if(CheckAttribute(chr, "MushketBulletType"))
+				{
+					AddItems(chr, sBullet, 15);
+					LAi_SetCharacterUseBullet(chr, "musket", sBullet);
+				}
+				else
+				{
+					if(rand(1) == 0)
+					{
+						AddItems(chr, "grenade", 	15);
+						LAi_SetCharacterUseBullet(chr, "musket", "grenade");
+					}
+					else
+					{
+						AddItems(chr, "powder_pellet", 	15);
+						LAi_SetCharacterUseBullet(chr, "musket", "powder_pellet");
+					}
+				}
+			break;
+
+			case "mushket2x2"	:
+				AddItems(chr, "cartridge", 	5);
+				AddItems(chr, "bullet", 	50);
+				AddItems(chr, "gunpowder", 	50);
+				if(CheckAttribute(chr, "MushketType") &&
+				CheckAttribute(chr, "MushketBulletType")) 	LAi_SetCharacterUseBullet(chr, "musket", sBullet);
+				else											LAi_SetCharacterDefaultBulletType(chr, "musket");
+			break;
+		}
 	}
 
 	if(rand(9) == 5) AddItems(chr, "ArmoryPaper", 3 + rand(4));
@@ -280,6 +390,7 @@ void LAi_NPC_MushketerEquip(ref chr)
 	chr.isMusketer = true;
 	chr.isMusketer.weapon = true; // Jason: а пули с порохом кто удалять будет? И вообще, что за муть - менять мушкет при каждой установке типа?
 	if (!CheckAttribute(chr, "MusketerDistance")) chr.MusketerDistance = 10.0 + frand(10.0);
+	UpdateNpcFightAI(chr);
 }
 
 string LAi_NPC_EquipBladeSelection(ref chr)

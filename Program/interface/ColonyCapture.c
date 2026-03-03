@@ -364,7 +364,7 @@ void SetVariable()
 	int nShipType = sti(refCharacter.ship.type);
 	ref refBaseShip = GetRealShip(nShipType);
 
-	iShipCapacity = sti(refBaseShip.Capacity);
+	iShipCapacity = GetCargoMaxSpace(refCharacter);
 	sText  = iShipCapacity;
 
 	sText  = makeint(fShipWeight) + " / " + sText;
@@ -375,7 +375,7 @@ void SetVariable()
 	string sStoreName, sMaxGoodsStore;
 	if(refStore.Colony == "none")
 	{
-		iTotalSpace = sti(RealShips[sti(refShipChar.ship.type)].capacity);
+		iTotalSpace = GetCargoMaxSpace(refShipChar);
 		sStoreName = GetFullName(refShipChar);
 		sMaxGoodsStore = makeint(fStoreWeight) + " / " + iTotalSpace;
 		SetNodeUsing("WEIGHTMONEY2", true);
@@ -461,12 +461,11 @@ void ShowGoodsInfo(int iGoodIndex)
 {
 	string GoodName = goods[iGoodIndex].name;
 
-	int lngFileID = LanguageOpenFile("GoodsDescribe.txt");
 	string sHeader = XI_ConvertString(GoodName);
 
     iCurGoodsIdx = iGoodIndex;
     string goodsDescr = "";
-	goodsDescr += GetAssembledString( LanguageConvertString(lngFileID,goodName+"_descr"), &Goods[iGoodIndex]);
+	goodsDescr += GetAssembledString(GetGoodDescr(&Goods[iGoodIndex]), &Goods[iGoodIndex]);
     goodsDescr += newStr() + XI_ConvertString("weight") + " " + Goods[iGoodIndex].weight + " " + XI_ConvertString("cwt") +
 	              ", " + XI_ConvertString("PackHold") + " "  + Goods[iGoodIndex].Units + " " + XI_ConvertString("units");
 
@@ -488,8 +487,6 @@ void ShowGoodsInfo(int iGoodIndex)
 	SetNewGroupPicture("QTY_GOODS_PICTURE", "GOODS", GoodName);
     SetFormatedText("QTY_CAPTION", sHeader);
     SetFormatedText("QTY_GOODS_INFO", goodsDescr);
-	LanguageCloseFile(lngFileID);
-
 	iShipQty = GetCargoGoods(refCharacter, iGoodIndex);
 
 	if(refStore.Colony != "none")

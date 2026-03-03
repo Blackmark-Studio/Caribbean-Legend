@@ -1,0 +1,23 @@
+HelenDrinking_1 {Francois}
+HelenDrinking_2 {de Tavann}
+HelenDrinking_3 {Vit}
+HelenDrinking_4 {Needles}
+HelenDrinking_5 {Rainbow}
+HelenDrinking_6 {Bu bir rüya mı? Herkes nerede?}
+HelenDrinking_7 {Jan’ı görüp özür dilemeliyim.}
+HelenDrinking_8 {Amelia}
+HelenDrinking_9 { }
+HelenDrinking_10 {Dane}
+HelenDrinking_11 { }
+HelenDrinking_12 {Lucky}
+HelenDrinking_13 { }
+HelenDrinking_14 {Ve iki eve sahip olmak ne kadar da iç burkucu. Ah, Mary... Bunca şeyden sonra, şimdi ne yapacağız, üçümüz?}
+HelenDrinking_15 { }
+HelenDrinking_16 { }
+HelenDrinking_17 {Richard}
+HelenDrinking_18 {Small}
+HelenDrinking_19 { }
+HelenDrinking_20 { }
+HelenDrinking_21 {Demir ağacı ambarına teslim edildi!}
+HelenDrinking_22 {~ +1 yetenek kazandı ~}
+HelenDrinking_23 {~ ~ yeteneğine +1 aldı ~}

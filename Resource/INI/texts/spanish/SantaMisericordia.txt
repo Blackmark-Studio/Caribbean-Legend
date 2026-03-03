@@ -20,7 +20,9 @@ Pop_lastname {de Landa}
 Took_LiberMisericordiae {Recibido: Liber Misericordiae}
 SM_WorldMap
 {
-¡Todos a cubierta! ¡Se acerca la Santa Misericordia!Un adversario feroz. ¿Estamos realmente preparados para hacerle frente?¿Quizás deberíamos interceptarlo en mar abierto, lejos de las colonias?
+¡Todos a cubierta! ¡Se acerca la Santa Misericordia!
+Un adversario feroz. ¿Estamos realmente preparados para hacerle frente?
+¿Quizás deberíamos interceptarlo en mar abierto, lejos de las colonias?
 }
 City_Rum11 {Ha llegado a mis oídos la noticia de que el objetivo de la Santa Misericordia esta vez es el  ~}
 City_Rum12 {. Una vez más, todos inclinaremos la cabeza bajo el yugo del Escorial. ¿De verdad nos hemos ganado este destino?}

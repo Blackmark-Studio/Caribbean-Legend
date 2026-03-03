@@ -34,3 +34,9 @@ Neutral_33 {Javier}
 Neutral_34 {Castillo}
 Neutral_35 {Gonzalo}
 Neutral_36 {Peralta}
+Neutral_37 {... ahora todas las sospechas sobre el Tiburón Dodson quedarán aclaradas}
+Neutral_38 {Dinero insuficiente (10.100.000)}
+Neutral_39 {Dinero insuficiente (25.250.000)}
+Neutral_40 {Dinero insuficiente (50.500.000)}
+Neutral_41 {te}
+Neutral_42 {a ambos}

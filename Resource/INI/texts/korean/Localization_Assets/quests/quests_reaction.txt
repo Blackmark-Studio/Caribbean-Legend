@@ -1,0 +1,16 @@
+quests_reaction_1 {장교 @<GetFullName(npchar)>가 승선했습니다.}
+quests_reaction_2 {@<GetFullName(npchar)>가 항복했다.}
+quests_reaction_3 {반란자들의 시신은 마지막 항해를 위해 바다에 던져졌다}
+quests_reaction_4 {반란이 진압되었다}
+quests_reaction_5 {@<GetCityName(sld.City)>는 이제 우리 것이다!}
+quests_reaction_6 {누군가 당신의 주머니를 뒤졌습니다.}
+quests_reaction_7 {얼마 전 등대 근처에서 싸움이 있었어. 어떤 선장이 밀수하려다 우리 순찰대에게 딱 걸렸지. ~}
+quests_reaction_8 {총격전이 장난 아니었지, 상점 지붕이 대포알에 뚫릴 정도였으니까! 하지만 다 헛수고였어. 현지 밀수꾼들은 정글에 숨고, 선장은 이미 바다로 도망쳤지. 우리 병사들 완전히 속았어! 조타 실력도 끝내주더라, 왕처럼 만조를 빠져나갔으니까!}
+quests_reaction_9 { }
+quests_reaction_10 { }
+quests_reaction_11 {, ~에 있는}
+quests_reaction_12 {배송 기한이 만료되었습니다.}
+quests_reaction_13 {몇 시간이 흘렀다...}
+quests_reaction_14 {한 시간이 지났다...}
+quests_reaction_15 {하루가 지났습니다...}
+quests_reaction_16 {며칠이 지났다...}

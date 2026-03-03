@@ -1,2 +1,0 @@
-smuggling_1 {A csempészek jóváhagyják (}
-smuggling_2 {A csempészek helytelenítik (}

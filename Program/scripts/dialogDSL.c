@@ -19,7 +19,22 @@ string DLGO(string input, ref context)
 }
 
 // Universal translate function
-string DLG_Convert(string key, string filename, ref context)
+string DLG_Convert(string key, string filename, ref context = nullptr)
+{
+  string result;
+  object tempContext;
+  if (context != nullptr) CopyAttributes(&tempContext, context);
+  tempContext.filename = filename;
+  if (filename != "") result = GetConvertStr(key, filename);
+  else result = xiStr(key); // empty filename so we looking in common.ini
+
+  if (result == "" || result == " ") return "Key " + key + " in " + filename;
+  if (HasSubStr(result, "#")) result = GetAssembledString(result, &tempContext);
+  return DLGO(result, &tempContext);
+}
+
+// Universal translate function with empty result
+string DLG_ConvertE(string key, string filename, ref context)
 {
   string result;
   object tempContext;
@@ -28,7 +43,6 @@ string DLG_Convert(string key, string filename, ref context)
   if (filename != "") result = GetConvertStr(key, filename);
   else result = xiStr(key); // empty filename so we looking in common.ini
 
-  if (result == "" || result == " ") return "Key " + key + " in " + filename;
   if (HasSubStr(result, "#")) result = GetAssembledString(result, &tempContext);
   return DLGO(result, &tempContext);
 }

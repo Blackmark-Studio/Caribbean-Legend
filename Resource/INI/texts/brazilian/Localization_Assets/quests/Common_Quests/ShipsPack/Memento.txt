@@ -1,0 +1,10 @@
+Memento_1 { }
+Memento_2 {Mortimer}
+Memento_3 {Grim}
+Memento_4
+{
+Capitão, esse é o próprio 'Memento' – o terror dos traficantes de escravos!  
+Ele não é nosso inimigo, então podemos enviar um bote.
+}
+Memento_5 {Abandonado}
+Memento_6 {Alonso: Capitão! Metralha não serve de nada até quebrarmos o casco deles!}

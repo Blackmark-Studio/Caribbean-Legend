@@ -1,0 +1,9 @@
+sea_minimap {Navigasyon mini harita.}
+ship_commands {Kendi geminizi ve yoldaşlarınızın gemilerini kontrol etme komutları.}
+fast_commands {Hızlı erişimdeki mevcut komut.}
+sea_aim {Geminin toplarının nişangahı.}
+alarm_indicator {Alarm göstergesi.}
+land_commands {Kara eylem komutları.}
+WorldMap_Date_Clock {Harita üzerinde tarih ve saat göstergesi.}
+WorldMap_Compas {Harita üzerinde pusula.}
+Dialog_window {Diyalog penceresi.}

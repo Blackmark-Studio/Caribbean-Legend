@@ -1,0 +1,106 @@
+new_string
+{
+
+}
+Tartane {Bir balıkçı barkası, yüksek sosyetede parlayan bir kaptan için en iyi gemi değildir. Ama talihsiz bir şekilde favori geminizden olduysanız, bu kasvetli tekne adalar arasında hızlı bir yolculuk için gayet uygundur—yalnız kendinize hatırlatın, bu sadece geçici!}
+WarTartane {Tartanlar, Karayipler’in tehlikeli sularında kıyı işleri için aceleyle uyarlanmış balıkçı sandallarının aynısıdır. Mütevazı silahları ve derme çatma yapıları saygı uyandırmaz, ama deneyimsiz bir korsanı ya da yoksul bir kaçakçıyı korkutmaya yeterler. Seçeneğin az olduğu zamanlarda geçici bir çözümdür.}
+Barque {Bir barque uzun yolculuklar için idealdir. Geniş ambarı ve iyi yelken performansıyla en dengeli ticaret gemilerinden biri sayılır. Ancak etkileyici boyutu ve nispeten zayıf silahlanması, onu deniz akıncıları için kolay bir hedef haline getirir.}
+Schooner {İyi denizcilik özellikleri, geniş ambarı, sığ su çekimi ve yeterli silahlanmasıyla, şalopa küçük sınıf gemiler arasında en popülerlerden biri olmuştur. Ticaret, kıyı seferleri ve savaş için eşit derecede uygundur.}
+Barkentine {Barkentinanın ortaya çıkışı, deneyimsiz ve az sayıda mürettebatın bir ticaret gemisini daha kolay yönetme isteğinden kaynaklanıyordu. Bu amaçla, barçın ana direğindeki kare yelkenler yerine gabya yelkenleri kullanıldı ve gövde biraz küçültüldü. Karışık donanımı sayesinde barkentina, rüzgârla da rüzgâra karşı da güvenle seyir yapar.}
+Shnyava {Şnyava ve brigantin, brig’in öncülleriydi. Başarılı gövde tasarımları, iyi hızları ve ağır toplar taşıyabilmeleri sayesinde bu gemiler hem Karayipler’de hem de Avrupa’da çok popüler oldu. Genellikle küçük sınıf ticaret konvoylarına eşlik etmek için kullanılırlar.}
+Fleut {Fluyt, ticaret gemilerinin gelişiminde benzersiz bir dalı temsil eder. Üst güverte genişliğine göre hesaplanan gümrük vergilerini azaltan dar güverte yapısıyla öne çıkar. Geniş ambarı, yüksek hızı ve rüzgara karşı güvenli seyriyle fluyt kısa sürede en popüler ticaret gemilerinden biri olmuştur.}
+Caravel {Karavelanın kendine özgü arma düzeni, bu gemiyi uzaktan kolayca tanımayı sağlar. Ancak eski tasarımı, karavelanın denizdeki performansını oldukça vasat kılar; yeterli topa sahip olsa da modern gemilerle eşit şekilde rekabet edemez.}
+Pinnace {Fluyt ile birlikte, pinas ticaret gemisi olarak yaygınlaştı. Uzun deniz yolculukları için yeterince büyük ve sağlamdır, ambarı ise bol miktarda yük taşımaya olanak tanır. Sivri baş hattı sayesinde, ağır gövdesine rağmen pinas iyi bir hız elde eder.}
+Navio {Böyle bir gemi ancak gerçekten varlıklı bir tüccarın karşılayabileceği bir lükstür. Büyük ve sağlam gövdesi, geniş ambarı ve gelişmiş yelken donanımı en uzun yolculuklara imkân tanır; en az otuz ağır topu ise onu korsanlara ve kaperlere karşı güvenle korur.}
+EastIndiaMan {Doğu Hindistan gemileri, pinasların en iyi özelliklerini alıp eksiklerinden kurtularak neredeyse kusursuz çok amaçlı gemilere dönüştü. Büyük kalibre toplar taşıdıkları için benzer boyuttaki savaş gemileriyle boy ölçüşebilirler ve geniş ambarları sayesinde ticarette de etkili şekilde kullanılabilirler.}
+LuggerQuest {Kurye luggeri, haberci servisi ihtiyaçları için özel olarak inşa edildi. Mükemmel yelken performansı, rüzgara karşı üstün seyir kabiliyeti ve oldukça güçlü silahlanması, önemli mesajların ve küçük değerli yüklerin güvenli teslimatını garanti eder.}
+Lugger
+{
+Lugger, özellikle kaçakçıların ve denizcilerin manevra kabiliyeti ve çok yönlülüğü nedeniyle tercih ettiği küçük bir yelkenli gemidir. Tam yelkenle yüksek hız yapamasalar da, rüzgâra karşı üstün açılarla bu açığı kapatırlar.
+Küçük boyutlarına rağmen, lugger’lar iyi denizciliğe sahiptir ve uzun yolculuklara çıkabilirler.
+}
+Sloop {İyi hız ve manevra kabiliyetine sahip, boyutuna göre güçlü silahlanmasıyla şalopa güvenilir bir devriye gemisidir; keşif için de uygundur.}
+Brigantine {Efsanevi bir yelkenli türü. Bir kırlangıç gibi hızlı ve çevik olan brigantin, korsanlar ve maceraperestler tarafından özellikle değer görür. Başarılı tasarımı sayesinde, brigantin her iş için uygundur—savaştan ticarete kadar.}
+Brig {Brigler, donanmada keşif için yaygın olarak kullanılır. Sığ su çekimi, keskin gövde hatları ve gelişmiş arma, brigi en hızlı gemilerden biri yapar; iyi kalibre topları ise onu son derece tehlikeli bir rakip haline getirir.}
+Schooner_W {Yeni Dünya’daki denizciler, şunları ilk takdir edenler oldu ve askeri amaçlarla kullanmaya başladılar. Bunun için gövdede bazı değişiklikler yapıldı, ambar hacmi azaltıldı ve toplar eklendi, fakat sonuç buna değdi. İyi silahlanmış, hızlı ve çevik olan savaş şilebi, her ticaret gemisi için ciddi bir tehdit oluşturur.}
+Galeon_l {Galyon, 16. yüzyılın başlarında karak temelli olarak ve baştan savaş gemisi olarak tasarlandı. 17. yüzyılın ortalarına gelindiğinde, gelişiminin zirvesine ulaşıp yerini daha gelişmiş gemilere bıraksa da, sahneden çekilmedi ve denizcilere sadakatle hizmet etmeye devam ediyor.}
+Galeon_sm {İspanyol gücünün ve hırsının bir simgesi. Güverteler altın süslemelerle parıldar, kıçta ise geminin koruyucusu Merhametli Meryem’in tasviri yükselir. Kimileri için 'Santa Misericordia' düzenin vücut bulmuş hali, kimileri için ise kraliyet baskısının korkulan simgesidir. Hatta bazıları onda gerçek İlahi Takdir’i görür.}
+LadyBeth
+{
+Tehlikeli sularda bağımsız devriye görevi için inşa edilmiş, İngiliz gemi yapımının muhteşem bir örneği. Bu şnyava, boyutuna göre üstün denizcilik özellikleri ve etkileyici bir silahlanmaya sahip; böylece daha üst sınıf gemilerle bile rekabet edebilir.
+Askeri hizmet yılları geride kaldı; eski sahibinin şöhreti artık deniz kurtlarından çok antikacıları ve hazine haritası tüccarlarını cezbediyor.
+}
+Memento
+{
+Bu gemide, eski tip bir İngiliz Brig’inin tasarımını seçmek neredeyse imkânsız; yetersiz denizcilik yeteneklerini etkileyici ateş gücü ve ağır, sağlam gövdesiyle telafi ediyor.
+Yerel tılsımlarla süslü ve ölümle yoğrulmuş haliyle, yalnızca düşmanlarını değil, kendi mürettebatını da korkutuyor.
+}
+Amsterdam {Amsterdam — Hollanda Batı Hint Şirketi'nin amiral gemisi ve bir Avrupa tersanesinden çıkan en kusursuz gemi. Her top ve önemli donanımda denetim çizelgeleri ve ustaların imzaları bulunur — Amsterdam’da hiçbir şey kayıttan ve kontrolden kaçmaz. Kaptanları ise geleneksel olarak denizcilerden değil, Şirket’in sivil yöneticilerinden seçilir. Yine de işler — yaklaşan yeni çağın habercisi.}
+Corvette {Korvetler keşif, kurye hizmeti ve kruvaziyer operasyonlar için tasarlanmıştır. İyi hız ve manevra kabiliyetiyle, bir korvet daha hafif gemileri yakalayabilir ve daha ağırlarla çatışmadan kaçınabilir.}
+XebekVML {Şebek, Akdeniz’in en ünlü gemi tipidir. Dar gövdesi ve tüm direklerdeki büyük latin yelkenleri sayesinde rüzgâra karşı keskin açılarda seyir yapabilir; bu da onu oldukça can sıkıcı bir rakip haline getirir. Ne yazık ki, rüzgârı arkadan aldığında düşük hızı nedeniyle şebek genellikle korsanlık ve kaçakçılıkla sınırlı kalır.}
+Polacre {Polacre, xebec’in en yakın akrabasıdır. Xebec’ten farklı olarak ana direğinde kare yelken taşır; bu da rüzgâr arkadan estiğinde rotasını güvenle korumasını sağlar. Ancak bu arma, manevra kabiliyetini azaltır, rüzgâra karşı performansı düşürür ve mürettebatın beceri ve uyum gereksinimlerini önemli ölçüde artırır.}
+Galeon_h {Ağır kalyon, konvoyları korumak ve özellikle değerli yükleri bağımsız olarak taşımak için tasarlanmış güçlü bir savaş gemisidir. Hız ve manevra kabiliyeti açısından modern gemilere göre geride kalsa da, büyük kalibre topları, sağlam gövdesi ve kalabalık mürettebatı sayesinde her türlü yük için güvenli koruma sunar. Ağır kalyonlardan oluşan bir filo, Karayipler’de herkesin hesaba katması gereken bir güçtür.}
+Elcasador {Açık okyanusta özel operasyonlar için tasarlanmış bir savaş gemisinin parlak bir örneği. Bu kalyon, bölgedeki ticarete ve İspanyol Tacı'nın çıkarlarına gerçek tehdit oluşturan en tehlikeli korsanları yok etmek üzere Casa de Contratación'un emriyle inşa edildi.}
+Frigate {Fırkateynler mükemmel seyir kabiliyetine, iyi ateş gücüne sahiptir ve uzun menzilli keşif, nakliye gemilerini koruma ve filo içinde muharebe için özel olarak tasarlanmıştır. Günümüzde ise genellikle düşman hatlarında bağımsız devriye gemileri olarak—düşman ticaret gemilerini ele geçirmek veya yok etmek amacıyla—kullanılırlar.}
+Frigate_h {Ağır fırkateynler, normal fırkateynlerin ateş gücünden yoksun kaptanlar için bir uzlaşma oldu. Güçlendirilmiş gövdeleri ve daha büyük kalibreli toplarıyla 4. sınıf hat gemilerine yaklaşsalar da, bu hız ve manevra kabiliyetinden ödün verilmesi anlamına geliyor.}
+LineShip {4. sınıf hat gemileri, büyük kardeşleriyle ateş gücü açısından yarışamaz; bu yüzden savaş hattında yer almaları mantıklı değildir. En iyi kullanım alanları, hızları ve manevra kabiliyetleri sayesinde konvoy korumasıdır.}
+Warship {Bu tip gemiler Kardinal Richelieu döneminde inşa edilmiş olup artık yapısal olarak eskimiştir. Ancak iyi seyir özelliklerine sahipler ve en ağır topları taşıyabildikleri için hâlâ korkutucu bir güç oluştururlar.}
+Ecliaton {Bu tip gemiler Kardinal Richelieu döneminde inşa edilmiş olup, artık yapısal olarak eskimiştir. Yine de iyi denizcilik özelliklerine sahiptirler ve en ağır topları taşıyabilirler, bu da onları korkutucu bir güç yapar.}
+Pink {Pink, yük taşımak ve küçük konvoyları korumak için tasarlanmış küçük bir gemidir. Silahları zayıf ve mürettebatı az olsa da, pink hem ticaret hem de savaş için özel olarak üretilmiştir; birçok kaptan onu hızı ve manevra kabiliyeti nedeniyle tercih eder. Ancak küçük boyutu, pink’in uzun deniz yolculuklarına çıkmasına izin vermez.}
+Battleship {Üçüncü sınıf hat gemileri oldukça yaygındır ve savaş özellikleri açısından en dengeli olanlardır; hat savaşları için tasarlanmıştır. 100 topluk devlere bile meydan okuyacak ateş gücüne sahiptirler. Aynı zamanda hız ve manevra kabiliyetinde onlardan belirgin şekilde üstündürler.}
+Manowar {2. sınıf hat gemileri, her ulusun deniz gücünün bel kemiğidir. 3. sınıf gemilerle birlikte, güç ve manevrayı birleştiren bir filo oluştururlar. Filoda 1. sınıf gemi yoksa, bazıları sancak gemisi olarak görev yapar.}
+Manowar_e {Birinci sınıf bir hat gemisi, gerçek bir yüzen kale gibidir. Korkutucu silahlanması sayesinde birkaç isabetli salvo ile her rakibi suyun dibine gönderebilir. Ancak en büyük deniz güçlerinde bile bu gemilerden pek azı bulunur ve büyük deniz savaşlarında amiral gemisi olarak kullanılırlar.}
+MayFang
+{
+Bu xebec, dayanıklılıktan ödün verilerek hafifletilmiş bir gövdeye sahip, fakat bu sayede rakipsiz bir denizciye dönüşmüş—Karayipler’de neredeyse rüzgâra karşı gidebilen başka bir gemi yok!
+Ve yirmi adet orta kalibre top, deniz rekabetinde güçlü bir koz.
+}
+Mirage {Bombardıman keçlerinden farklı olarak, korsan keçlerinde kaleleri bombalamak için tasarlanmış dev havan topları bulunmaz; bunun yerine daha hafif ve aerodinamik bir gövdeye sahiptirler, bu da yelken performanslarını artırır. Bu korsan keçinin hızına prenslerin yatları bile imrenebilir.}
+Himera {İngiliz deniz istihbaratı için özel olarak tasarlanmış bir başyapıt gemi. Özellikleriyle 3. sınıf savaş gemileriyle boy ölçüşürken, 4. sınıf gemilerin kolay manevrasını korur.}
+Valciria {Zarif bir İngiliz briki. Yüksek hız ve manevra kabiliyeti, rüzgara karşı iyi performans ve güvertede iki düzine top, bu yelkenliyi gerçek bir hayal gemisi yapıyor.}
+CORVETTE_QUEST {Fransız gemi ustalarının elinden çıkma özel yapım bir gemi. Korvet tasarımında yapılan kapsamlı modernizasyon, hızdan ödün vermeden neredeyse tüm özelliklerini geliştirdi. Artan yelken alanı ve top kalibresi, daha deneyimli ve kalabalık bir mürettebat gerektiriyor; ancak Karayipler'deki denemeler başarılı olursa, burada kullanılan teknolojiler gemi yapımında gerçek bir devrim yaratabilir.}
+Polacre_q {Şebek ve fırkateyn unsurlarını ustalıkla birleştiren bir usta, alışılmadık gövdeli, sağlam ve geniş, yüksek bordalı ama sığ su çekimli ve çok güçlü silah donanımlı bir polacre yarattı. Üç direk ve farklı tipte yelkenler taşıyan bir baş istralyası sayesinde hem hızlı hem de çok çevik. Tüm bu özellikler tek başına iyi, birlikte ise mükemmel—yola çıkacak geminin savaş, korsan ya da ticaret gemisi olacağına yalnızca sahibi karar verecek.}
+ArabellaShip {Bu eşsiz gemi, firkateynlerin ve hat gemilerinin en iyi özelliklerini bir araya getirir. Olağanüstü denizcilik yetenekleri, büyük kalibreli toplardan oluşan bir batarya ile birleşir; iç kısmı ise tüm bir deniz piyadesi birliğini barındırabilir. Usta ellerde Fortuna, kendisinden çok daha güçlü bir rakibe tek başına karşı koyabilir.}
+Flyingdutchman {"Caleuche". Yelken açan herkesin korkulu rüyası...}
+Flyingdutchman_l {"Caleuche" kopyası.}
+NewFlyingdutchman {Bir zamanlar korkuyla anılan “hayalet gemi”ydi. Şimdi ise tamamen yenilenmiş, hatta hat gemileriyle bile başa baş savaşabilecek güçlü bir savaş galeonu. Boyutuna göre etkileyici bir hıza, geniş bir ambarına ve güçlü bir silahlanmaya sahip; düşman gemilerini batırabilen, onları bordalayabilen ve hatta tüm kolonileri kuşatabilecek tam anlamıyla bağımsız bir gemi.}
+Santisima {Bu gemi, ünlü Havana tersanesinden denize indirildi. Gövdesi diğer 1. sınıf gemilere göre biraz daha hafif ve zayıf, ancak bu eksikliği gelişmiş seyir özellikleri fazlasıyla telafi ediyor.}
+NoneBoat {Gemi yok. Kahraman artık bir kara faresi ve bir gemi edinene kadar kendine kaptan diyemez.}
+Hull {Gövde - geminin gövdesinin dayanabileceği mevcut ve maksimum hasarı gösterir.}
+Sails {Yelkenler - geminin yelkenlerinin dayanabileceği mevcut ve maksimum hasarı gösterir.}
+Speed {Hız - geminin mevcut maksimum hızını, tüm faktörler (yük, kaptanın yetenekleri, gemi hasarı) dikkate alınarak ve geminin ulaşabileceği en yüksek hızı gösterir.}
+Maneuver {Manevra kabiliyeti - geminin mevcut manevra kabiliyetini, tüm etkenler (yük, kaptanın becerileri, gemi hasarı) dikkate alınarak ve geminin ulaşabileceği en yüksek manevra kabiliyetini gösterir.}
+AgainstWind
+{
+Geminin rüzgara göre en yüksek hıza ulaşabileceği en iyi rotadır. Değerler derece cinsindendir.
+İkinci değer, mevcut rüzgar yönü ile bu gemi için en iyi rota arasındaki farkı gösterir.
+}
+Capacity
+{
+Deadweight - geminin mevcut ve maksimum kapasitesini gösterir. Gemi ne kadar yüklüyse, o kadar hantal ve yavaş olur.
+Gemide takılı olan toplar da deadweight hesabına dahildir. Toplar çıkarılarak ek yük alanı açılabilir. Bunu yapmak için "Gemi" arayüzünde, gemi parametreleri listesinden mevcut topları seçin.
+}
+Crew {Mürettebat - mevcut mürettebat sayısını, ayrıca bu gemi için minimum ve maksimum değerleri gösterir.}
+CannonType {Silah türü - türü (top veya kulverin), mevcut kalibre ve takılı top sayısını gösterir}
+sCannons {Gemide izin verilen en yüksek kalibre ve azami top sayısını gösterir.}
+Crew_Exp {Mürettebat deneyimi}
+Crew_Exp_hint
+{
+Mürettebat deneyimi üç kategoriye ayrılır: denizcilik (gemi yönetimini etkiler), topçuluk (yeniden doldurma hızı ve nişan alma hassasiyeti) ve borda (mürettebatın yakın dövüşteki etkinliği).
+Daha az sayıda deneyimli mürettebat, acemilerle dolu aşırı yüklü bir gemiden daha etkili olabilir.
+Tüm kategorilerde deneyim, mürettebat ilgili eylemleri (manevra, ateş, borda) gerçekleştirirken kazanılır, ancak kazanılan beceriler uzun süre kullanılmazsa kaybedilir.
+}
+TakeAllGoods_hint {"Tüm malları aktar" düğmesi, malları karakterin gemisine ortalama birim değerlerine göre aktarır. Önce en değerli mallar, ardından daha az değerli olanlar aktarılır; ambar dolana kadar bu şekilde devam eder.}
+GoodsKeys_hint
+{
+Klavye üzerindeki "Sol" ve "Sağ" ok tuşları, tabloda seçili satırdaki malları bir parti olarak taşır. Ok tuşlarına Shift ile basarsanız, mallar tamamen taşınır.
+Arayüzde mal bulunan satırdaki ok simgelerine sağ tıklamak, malları onar parti halinde aktarır.
+}
+Shipyard_hint
+{
+Tersanede gemi satın alabilir, tamir edebilir veya satabilirsiniz.
+Kahramanın yanında yoldaşları varsa kendi gemisini satamaz. Ayrıca, kahramanın kendi gemisi yoksa bir yoldaşa gemi satın alınamaz.
+Kahramanın veya yoldaşın gemisini, ambar ve mürettebatı koruyarak değiştirmek için, sol taraftaki filodaki listeden değiştirilecek gemiyi, sağ taraftaki tersanede satılık gemilerden ise almak istediğinizi seçin ve "Satın Al" butonuna tıklayın.
+Yeni bir gemi almak (yeni bir yoldaş atamak) için, önce soldaki listeden boş bir yuva seçin ve ardından satın alma işlemini yapın.
+}
+NoneBoat2 {Gemi yok. Ne yazık.}

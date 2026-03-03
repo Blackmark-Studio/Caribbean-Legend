@@ -202,7 +202,7 @@ void ProcessDialogEvent()
 		
 		case "NationLicenceType2":
 			iSumm = sti(npchar.LicenceType) * (3000 + MOD_SKILL_ENEMY_RATE*500);
-        	dialog.text = "Alors, la licence commerciale de"+XI_ConvertString(Nations[sti(npchar.LicenceNation)].Name+"Gén")+" pour "+sti(npchar.LicenceType)+" jours, le prix est "+FindRussianMoneyString(iSumm)+".";
+        	dialog.text = "Alors, la licence commerciale de"+XI_ConvertString(Nations[sti(npchar.LicenceNation)].Name+"Gen")+" pour "+sti(npchar.LicenceType)+" jours, le prix est "+FindRussianMoneyString(iSumm)+".";
 		    link.l1 = "Je suis d'accord.";
 		    if(makeint(Pchar.money) < iSumm)
             {

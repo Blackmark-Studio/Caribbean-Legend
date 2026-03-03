@@ -1,0 +1,3 @@
+locations_loader_1 {Primeira visita ~}
+locations_loader_2 {Todas as colônias visitadas!}
+locations_loader_3 {Um lugar misterioso visitado!}

@@ -305,17 +305,35 @@ void FalseTrace_SollyBonanza(string qName)//высадка на берег за 
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 10 + 2*sti(pchar.rank);
 	//ставим наших бойцов
+
+	object aCrewSoldier[9];
+	GenerateCrew(pchar, "soldier", &aCrewSoldier);
+	int nSoldierIndex = 0;
+
+	object aCrewMushketer[1];
+	GenerateCrew(pchar, "mushketer", &aCrewMushketer);
+	string model;
+	string ani;
+
+	object aSoldier[1];
+	object aMushketers[1];
+	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
 	for (i=1; i<=10; i++)
 	{
 		if (i == 3)
 		{
-		sld = GetCharacter(NPC_GenerateCharacter("FTOur_crew_"+i, "mush_ctz_5", "man", "mushketer", iRank, sti(pchar.nation), 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
+			model = aCrewMushketer[0].model;
+			ani = aCrewMushketer[0].ani;
+			sld = GetCharacter(NPC_GenerateCharacter("FTOur_crew_"+i, model, "man", ani, iRank, sti(pchar.nation), 0, false, "soldier"));
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl*2);
 		}
 		else
 		{
-		sld = GetCharacter(NPC_GenerateCharacter("FTOur_crew_"+i, "citiz_"+(i+30), "man", "man", iRank, sti(pchar.nation), 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "blade_10", "pistol1", "bullet", iScl*2);
+			model = aCrewSoldier[nSoldierIndex].model;
+			ani = aCrewSoldier[nSoldierIndex].ani;
+			nSoldierIndex++;
+			sld = GetCharacter(NPC_GenerateCharacter("FTOur_crew_"+i, model, "man", ani, iRank, sti(pchar.nation), 0, false, "soldier"));
+			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 		}
 		ChangeCharacterAddressGroup(sld, "Shore55", "goto", "goto1");
 		LAi_SetActorType(sld);

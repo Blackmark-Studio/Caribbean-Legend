@@ -94,7 +94,8 @@ void ApplyMigration(ref migrationState) {
 void KukulklanStoleMyPerks()
 {
 	ref chr;
-	object fellows = GetAllFellows(pchar, true);
+	object fellows;
+	AddAllFellows(&fellows, pchar, true);
 	for (int i=0; i < GetAttributesNum(&fellows); i++)
 	{
 		int idx = sti(GetAttributeValue(GetAttributeN(&fellows, i)));
@@ -126,9 +127,7 @@ void PotionsRebalance()
 {
 	int i;
 	ref itm;
-
-	object tempItems[2];
-	SetArraySize(&tempItems, TOTAL_ITEMS);
+	object tempItems[TOTAL_ITEMS];
 	
 	for(i = 0; i < TOTAL_ITEMS; i++)
 	{

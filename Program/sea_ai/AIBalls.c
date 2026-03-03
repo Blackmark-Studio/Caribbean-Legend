@@ -135,7 +135,7 @@ void Ball_AddBall(aref aCharacter, float fX, float fY, float fZ, float fSpeedV0,
 	EntityUpdate(1);
 	AIBalls.Add = "";
 	
-	string sParticleName = "cancloud_fire";		// if (sti(aCharacter.ship.type) < SHIP_CORVETTE)
+	string sParticleName = "cancloud_fire";
 	
 	if (iCannonType == CANNON_TYPE_CANNON_LBS48)
 	{ 

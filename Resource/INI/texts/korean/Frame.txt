@@ -1,0 +1,33 @@
+Frame_HourPassed {한 시간이 지났습니다...}
+Frame_HourPassed_2 {두 시간이 지났습니다...}
+Frame_HourPassed_3 {세 시간이 지났습니다...}
+Frame_HourPassed_4 {네 시간이 지났습니다...}
+Frame_HourPassed_5 {다섯 시간이 지났습니다...}
+Frame_HourPassed_? {몇 시간이 흘렀다...}
+Frame_BeenWhile {조금의 시간이 흘렀다...}
+Frame_MinutePassed {1분이 지났습니다...}
+Frame_MinutePassed_2 {2분이 지났습니다...}
+Frame_MinutePassed_3 {3분이 지났습니다...}
+Frame_MinutePassed_5 {5분이 지났습니다...}
+Frame_MinutePassed_10 {10분이 지났습니다...}
+Frame_MinutePassed_20 {20분이 지났습니다...}
+Frame_MinutePassed_? {몇 분이 지났습니다...}
+Frame_NextMorning {다음 날 아침...}
+Frame_NextDay {다음 날...}
+Frame_NextEvening {다음 날 저녁...}
+Frame_NextNight {다음 밤에...}
+Frame_DayPassed {하루가 지났습니다...}
+Frame_DayPassed_2 {이틀이 지났다...}
+Frame_DayPassed_3 {사흘이 지났다...}
+Frame_DayPassed_4 {나흘이 지났다...}
+Frame_DayPassed_5 {닷새가 지났다...}
+Frame_DayPassed_6 {여섯 날이 지났다...}
+Frame_WeekPassed {일주일이 지났다...}
+Frame_WeekPassed_2 {2주가 지났다...}
+Frame_WeekPassed_3 {3주가 지났다...}
+Frame_MonthPassed {한 달이 지났다...}
+Frame_MonthPassed_2 {두 달이 지났다...}
+Frame_MonthPassed_3 {세 달이 지났다...}
+Frame_YearPassed {1년이 지났다...}
+Frame_YearPassed_2 {2년이 지났다...}
+Frame_YearPassed_3 {3년이 지났다...}

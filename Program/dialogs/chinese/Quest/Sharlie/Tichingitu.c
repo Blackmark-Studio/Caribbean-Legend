@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_2":
 			dialog.text = "Tichingitu走了许多许多路, 穿过大海, 从茂密的森林和沼泽来到白人的城镇。Tichingitu累了, 想吃东西。Tichingitu快要饿死了。没人愿意帮Tichingitu。他们大喊: “滚开, 红皮狗。”酒馆老板像赶癞皮狗一样把印第安人赶了出去。Tichingitu只想吃点东西。";
-			link.l1 = "该死, 你怎么会从……你那片森林跑到这镇上来的? ";
+			link.l1 = "该死, 你怎么会从…… 你那片森林跑到这镇上来的? ";
 			link.l1.go = "Tichingitu_3";
 		break;
 		
@@ -67,8 +67,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tichingitu_5":
-			dialog.text = "是的, 白脸。Tichingitu没得选, 不是偷就是饿死……";
-			link.l1 = "唉, 我说啊……一个饿肚子的可怜人偷了点零钱, 就要上绞刑架……Tichingitu, 俺会尽力帮你的。俺认识Fadey, 就是你溜进他家的那个壮汉。也许俺能想点办法……俺这就去找指挥官谈谈。";
+			dialog.text = "是的, 白脸。Tichingitu没得选, 不是偷就是饿死…… ";
+			link.l1 = "唉, 我说啊…… 一个饿肚子的可怜人偷了点零钱, 就要上绞刑架…… Tichingitu, 俺会尽力帮你的。俺认识Fadey, 就是你溜进他家的那个壮汉。也许俺能想点办法…… 俺这就去找指挥官谈谈。";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Tichingitu_wait";
 			AddDialogExitQuestFunction("Tichingitu_DlgExit_1");
@@ -76,7 +76,7 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_wait":
 			dialog.text = "Tichingitu等着。印第安人不怕死。萨满诅咒了Tichingitu, Tichingitu必须死。";
-			link.l1 = "还没到山穷水尽的地步。我会尽力帮忙……";
+			link.l1 = "还没到山穷水尽的地步。我会尽力帮忙…… ";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Tichingitu_wait";
 		break;
@@ -109,13 +109,13 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_11":
 			dialog.text = "印第安人欠债, 白人主人。Tichingitu会忠心侍奉您, 绝不欺骗。Tichingitu会打仗。Tichingitu愿为主人战死。他会留下。";
-			link.l1 = "天啊! 该死……Tichingitu, 我算什么主子啊? 我帮你可不是为了让你当奴隶。";
+			link.l1 = "天啊! 该死…… Tichingitu, 我算什么主子啊? 我帮你可不是为了让你当奴隶。";
 			link.l1.go = "Tichingitu_12";
 		break;
 		
 		case "Tichingitu_12":
 			dialog.text = "Tichingitu不是奴隶。Tichingitu是自由的印第安人。Tichingitu愿意为你效劳。Tichingitu会打仗, 任何狗敢靠近主人都得死。Tichingitu会清理和装填火枪。Tichingitu也会开枪。";
-			link.l1 = "不过……你知道吗, Tichingitu, 这主意倒也不错。老子正缺几个忠心的人, 你看起来也不坏, 还会用火枪。再说你一个人能干啥? 到头来还不是又去偷东西, 下回肯定就得上绞刑架了……行吧, 你可以留下。但记住, 跟着老子可没安生日子过。";
+			link.l1 = "不过…… 你知道吗, Tichingitu, 这主意倒也不错。老子正缺几个忠心的人, 你看起来也不坏, 还会用火枪。再说你一个人能干啥? 到头来还不是又去偷东西, 下回肯定就得上绞刑架了…… 行吧, 你可以留下。但记住, 跟着老子可没安生日子过。";
 			link.l1.go = "Tichingitu_13";
 			link.l2 = "好了, 够了。带着平安离开吧, 红皮肤的兄弟。愿你的神明保佑你! ";
 			link.l2.go = "Tichingitu_exit";
@@ -140,9 +140,18 @@ void ProcessDialogEvent()
 	//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "Tichingitu_officer":
 			dialog.text = "Tichingitu听你吩咐, "+pchar.name+"船长! ";
+			//--> Эпилог
+			if (CheckAttribute(pchar, "questTemp.SharlieEpilog_FarewellOfficers") && !CheckAttribute(npchar, "quest.SharlieEpilog_FarewellOfficers"))
+			{
+				dialog.text = ""+npchar.name+"在"+pchar.name+" 船长的眼中看到了困惑。";
+				Link.l1 = "你一如既往地能看透人心, 我的朋友。事情是这样的, 我必须回家, 回到欧洲。 我做出了一个艰难的决定——这次我会作为乘客, 搭乘另一艘船启程。 ";
+				Link.l1.go = "SharlieEpilog_Tichingitu_1";
+				break;
+			}
+			//<-- Эпилог
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
-				Link.l4 = "Tichingitu, 我马上要前往一个叫Tayasal的印第安老村庄。老实说, 这趟旅程极其危险, 也非常离奇—要通过一个传送神像。你……你愿意和我一起去吗? ";
+				Link.l4 = "Tichingitu, 我马上要前往一个叫Tayasal的印第安老村庄。老实说, 这趟旅程极其危险, 也非常离奇—要通过一个传送神像。你…… 你愿意和我一起去吗? ";
 				Link.l4.go = "tieyasal";
 			}
 			
@@ -217,7 +226,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -232,7 +241,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;
@@ -248,7 +257,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+				Link.(attrL) = GetItemName(rItem);
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -263,7 +272,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, MUSKET_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetMusketBullets");
 			DialogExit();
 		break;
@@ -315,7 +324,7 @@ void ProcessDialogEvent()
 			if (iTemp < 0)
 			{
 				dialog.text = "船长, 恕Tichingitu直言, 俺听不懂你说啥。";
-				link.l1 = "抱歉, 是我搞错了……";
+				link.l1 = "抱歉, 是我搞错了…… ";
 				link.l1.go = "exit";
 				break;
 			}
@@ -389,7 +398,7 @@ void ProcessDialogEvent()
 		
 		case "tonzag_aftershot":
 			dialog.text = "近距离开枪。船长, 这老头挺硬朗的, 要是动作快点还能救他。";
-			link.l1 = "……";
+			link.l1 = "…… ";
 			link.l1.go = "exit";
 			
 			NextDiag.TempNode = "Tichingitu_officer";
@@ -403,7 +412,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_dead_1":
-			dialog.text = "“有……有些是俺的。”";
+			dialog.text = "“有…… 有些是俺的。”";
 			link.l1 = "撑住, 伙计。";
 			link.l1.go = "exit";
 			
@@ -419,7 +428,7 @@ void ProcessDialogEvent()
 		
 		case "Del_Deluck_1":
 			dialog.text = "是的。";
-			link.l1 = "我自己也不确定……你怎么看? ";
+			link.l1 = "我自己也不确定…… 你怎么看? ";
 			link.l1.go = "Del_Deluck_2";
 		break;
 		
@@ -451,6 +460,35 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("FolkeDeluc", "2");
 			ReturnOfficer_Tichingitu();
+		break;
+		
+		// Эпилог
+		case "SharlieEpilog_Tichingitu_1":
+			dialog.text = ""+pchar.name+"船长，不带"+npchar.name+"一起走?";
+			link.l1 = "你是我的朋友，"+npchar.name+", 我当然邀请你和我一起踏上这段旅程。 但你必须明白, 旧大陆的人并不习惯看到印第安人。 他们会对你指指点点, 把你当成我的奴隶, 并因此那样对待你。";
+			link.l1.go = "SharlieEpilog_Tichingitu_2";
+		break;
+
+		case "SharlieEpilog_Tichingitu_2":
+			dialog.text = ""+npchar.name+"不在乎这些。 "+npchar.name+"知道白皮肤的人轻视印第安人, 也会遵守承诺, 跟随"+pchar.name+"船长, 直到最后一口气。 ";
+			link.l1 = "并不是所有人都轻视印第安人。 但大多数人确实心存戒备——他们用这种方式来保护自己的信仰, 不受外来之物侵扰。无论如何, 我不会允许任何人侮辱你, 或把你当成奴隶。 我敢肯定, 你们部族中没人去过欧洲——就连那个该死的萨满, 在他最放肆的梦里, 也未必见过那样的地方。 ";
+			link.l1.go = "SharlieEpilog_Tichingitu_3";
+		break;
+
+		case "SharlieEpilog_Tichingitu_3":
+			dialog.text = "马斯科格印第安人不是水手。 我们永远到不了欧洲。 我听说: 巨大的独木舟要去那里, 需要整整两轮满月。 ";
+			link.l1 = "是的, "+npchar.name+", 而且那还是顺风的情况下。 这条路绝不轻松。 我们两周后起航…… 我很高兴你能和我们一起走。 为这次启航, 我打算在酒馆办个小小的庆祝。 我知道你不喜欢火水, 但我还是希望你能来。";
+			link.l1.go = "SharlieEpilog_Tichingitu_4";
+		break;
+		
+		case "SharlieEpilog_Tichingitu_4":
+			dialog.text = ""+npchar.name+"会来。 但也许, 节日登船战更好? ";
+			link.l1 = "哈哈。 不了, 朋友, 这次不合适。我会在开始时通知你。 现在我得走了——有事要办。 ";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Tichingitu_officer";
+			npchar.quest.SharlieEpilog_FarewellOfficers = true;
+			pchar.questTemp.SharlieEpilog_Tichingitu = true;
+			pchar.questTemp.SharlieEpilog_Friends = sti(pchar.questTemp.SharlieEpilog_Friends) + 1;
 		break;
 		
 		case "Exit":

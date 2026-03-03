@@ -5,5 +5,5 @@ FalseTrace_4 {Adam Rayner ukradł łódź wiosłową i uciekł razem z żoną!}
 FalseTrace_5 {Zezowaty}
 FalseTrace_6 {Solly}
 FalseTrace_7 {fluita z rudą złota}
-FalseTrace_8 {Katerine}
+FalseTrace_8 {Katherine}
 FalseTrace_9 {Rayner}

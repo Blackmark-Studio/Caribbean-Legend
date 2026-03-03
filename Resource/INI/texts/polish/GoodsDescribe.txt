@@ -5,242 +5,305 @@ newline
 Balls {Kula Armatnia}
 Balls_descr
 {
-Najtańszy, najłatwiejszy w użyciu i najbardziej niezawodny rodzaj amunicji. Te zwykle kule są zazwyczaj używane do zadawania uszkodzeń kadłuba statku i atakowania przybrzeżnych struktur obronnych z dużej odległości, ale nie są zbyt skuteczne w robieniu krzywdy załodze wroga.Podstawowe obrażenia: kadłub - #f.2DamageHull#, żagle-#f.2DamageRig#, załoga-#f.2DamageCrew#
+Najtańszy, najłatwiejszy w użyciu i najbardziej niezawodny rodzaj amunicji. Te zwykle kule są zazwyczaj używane do zadawania uszkodzeń kadłuba statku i atakowania przybrzeżnych struktur obronnych z dużej odległości, ale nie są zbyt skuteczne w robieniu krzywdy załodze wroga.
+Podstawowe obrażenia: kadłub - #f.2DamageHull#, żagle-#f.2DamageRig#, załoga-#f.2DamageCrew#
 }
 Grapes {Kartacze}
 Grapes_descr
 {
-Ładunek małych kutych kulek, wykonanych z ołowiu lub żelaza, trzymanych razem w lnianym worku.Ma bardzo krótki efektywny zasięg z uwagi na szybkie rozproszenie ładunku w momencie wystrzelenia. Nie uszkadza kadłuba tak poważnie przy uderzeniu, ale zadaje niszczycielskie obrażenia załodze wroga. Jest szeroko stosowany w walce morskiej do uszczuplania szeregów wrogiego statku przed wejściem na pokład.Podstawowe obrażenia: kadłub - #f.2DamageHull#, żagle-#f.2DamageRig#, załoga-#f.2DamageCrew#
+Ładunek małych kutych kulek, wykonanych z ołowiu lub żelaza, trzymanych razem w lnianym worku.
+Ma bardzo krótki efektywny zasięg z uwagi na szybkie rozproszenie ładunku w momencie wystrzelenia. Nie uszkadza kadłuba tak poważnie przy uderzeniu, ale zadaje niszczycielskie obrażenia załodze wroga. Jest szeroko stosowany w walce morskiej do uszczuplania szeregów wrogiego statku przed wejściem na pokład.
+Podstawowe obrażenia: kadłub - #f.2DamageHull#, żagle-#f.2DamageRig#, załoga-#f.2DamageCrew#
 }
 Knippels {Kula Łańcuchowa}
 Knippels_descr
 {
-Pocisk składający się z dwóch kul armatnich połączonych żelaznym łańcuchem lub prętem. Amunicja ta służy do uszkadzania masztów, drzewców i takielunku.Ogólnie rzecz biorąc, kula łańcuchowa ma niska skuteczność na średnim i długim dystansie, ponieważ łańcuch ma tendencje do niedokładnego przewracania się. Maja nieprzewidywalną trajektorię i powodują bardzo niewielkie uszkodzenia kadłuba statku. Jednakże przedzierają się przez żagle i takielunek oraz mogą powalic maszty, unieruchamiajac wrogie statki.Podstawowe obrażenia: kadłub - #f.2DamageHull#, żagle-#f.2DamageRig#, załoga-#f.2DamageCrew#
+Pocisk składający się z dwóch kul armatnich połączonych żelaznym łańcuchem lub prętem. Amunicja ta służy do uszkadzania masztów, drzewców i takielunku.
+Ogólnie rzecz biorąc, kula łańcuchowa ma niska skuteczność na średnim i długim dystansie, ponieważ łańcuch ma tendencje do niedokładnego przewracania się. Maja nieprzewidywalną trajektorię i powodują bardzo niewielkie uszkodzenia kadłuba statku. Jednakże przedzierają się przez żagle i takielunek oraz mogą powalic maszty, unieruchamiajac wrogie statki.
+Podstawowe obrażenia: kadłub - #f.2DamageHull#, żagle-#f.2DamageRig#, załoga-#f.2DamageCrew#
 }
 Bombs {Bomby}
 Bombs_descr
 {
-Bomby są najdroższym i najbardziej niszczycielskim rodzajem amunicji. Bomby te wykonane są z żeliwnej pustej kuli wypełnionej prochem i wyposażonej w drewniany zapalnik. Po zapłonie kula eksploduje po uderzeniu, raniąc członków załogi odłamkami, niszcząc maszty, podpalając olinowanie i rozbijając kadłuby fala uderzeniowa.Podstawowe obrażenia: kadlub - #f.2DamageHull#, żagle-#f.2DamageRig#, załoga-#f.2DamageCrew#
+Bomby są najdroższym i najbardziej niszczycielskim rodzajem amunicji. Bomby te wykonane są z żeliwnej pustej kuli wypełnionej prochem i wyposażonej w drewniany zapalnik. Po zapłonie kula eksploduje po uderzeniu, raniąc członków załogi odłamkami, niszcząc maszty, podpalając olinowanie i rozbijając kadłuby fala uderzeniowa.
+Podstawowe obrażenia: kadlub - #f.2DamageHull#, żagle-#f.2DamageRig#, załoga-#f.2DamageCrew#
 }
 Sailcloth {Płótno żaglowe}
 Sailcloth_descr
 {
-Grube, gęste płótno używane do produkcji żagli.Angielskie kolonie w Ameryce Północnej produkują wysokiej jakości bawełnę i konopie oraz tkają płótno z dwóch różnych włókien. Włókna poprzeczne wykonane są z bawełny, a włókna wzdłużne (podstawa) z konopi. Ma złamaną biel, jest jaśniejszy i schnie szybciej w porównaniu z tradycyjnym europejskim płótnem w odcieniu szarości, wykonanym z niebielonego lnu.
+Grube, gęste płótno używane do produkcji żagli.
+Angielskie kolonie w Ameryce Północnej produkują wysokiej jakości bawełnę i konopie oraz tkają płótno z dwóch różnych włókien. Włókna poprzeczne wykonane są z bawełny, a włókna wzdłużne (podstawa) z konopi. Ma złamaną biel, jest jaśniejszy i schnie szybciej w porównaniu z tradycyjnym europejskim płótnem w odcieniu szarości, wykonanym z niebielonego lnu.
 }
 Planks {Deski}
 Planks_descr
 {
-Suche deski z wybranego drewna II gatunku, otrzymywane poprzez rozłupywanie starych kłód za pomocą klinów. Są one trwalsze w porównaniu do desek piłowanych, są mniej podatne na wysychanie, a także nie odpadają i nie pękają tak bardzo.Najlepszy materiał do awaryjnych napraw kadłuba statku.
+Suche deski z wybranego drewna II gatunku, otrzymywane poprzez rozłupywanie starych kłód za pomocą klinów. Są one trwalsze w porównaniu do desek piłowanych, są mniej podatne na wysychanie, a także nie odpadają i nie pękają tak bardzo.
+Najlepszy materiał do awaryjnych napraw kadłuba statku.
 }
 Wheat {Pszenica}
 Wheat_descr
 {
-Lokalne odmiany pszenicy są bardzo cenione ze względu na mąkę, z której piekarze wypiekają pyszne bochenki chleba z niesamowitą skórką.Biorąc pod uwagę wysokie plony i pozasezonowy czas dojrzewania (styczeń), można nieźle zarobić na imporcie pszenicy do Europy w trakcie zimy.
+Lokalne odmiany pszenicy są bardzo cenione ze względu na mąkę, z której piekarze wypiekają pyszne bochenki chleba z niesamowitą skórką.
+Biorąc pod uwagę wysokie plony i pozasezonowy czas dojrzewania (styczeń), można nieźle zarobić na imporcie pszenicy do Europy w trakcie zimy.
 }
 Ebony {Heban}
 Ebony_descr
 {
-Drewno hebanowe (czarne) zawsze fascynowało stolarzy i zwykłych ludzi swoim pięknem i twardością. Drewno to jest dwukrotnie twardsze niż dąb. W polaczeniu z wyjątkowym kolorem drewna jest ulubieńcem europejskiej szlachty próbującej zaszpanować na wszystkich dworach w okolicy.Każdy rodzaj hebanu ma swój własny, niepowtarzalny kolor - od zielonkawo-brązowego po aksamitna czerń. Z czasem drewno staje się ciemniejsze, twardsze i droższe.
+Drewno hebanowe (czarne) zawsze fascynowało stolarzy i zwykłych ludzi swoim pięknem i twardością. Drewno to jest dwukrotnie twardsze niż dąb. W polaczeniu z wyjątkowym kolorem drewna jest ulubieńcem europejskiej szlachty próbującej zaszpanować na wszystkich dworach w okolicy.
+Każdy rodzaj hebanu ma swój własny, niepowtarzalny kolor - od zielonkawo-brązowego po aksamitna czerń. Z czasem drewno staje się ciemniejsze, twardsze i droższe.
 }
 Chocolate {Kakao}
 Chocolate_descr
 {
-Dojrzale owoce kakaowca są zbierane i łamane w celu ekstrakcji ziaren. Te ziarna kakaowe – po sfermentowaniu i wysuszeniu – można przechowywać przez długi czas.Wysoki popyt na kakao wśród Tubylców i zamożnych mieszkańców już dyktuje wysokie ceny tego towaru, jednak Hiszpanie i Włosi są skłonni płacić za nie złotem, co sprawia, ze ​​ceny są wygórowane.
+Dojrzale owoce kakaowca są zbierane i łamane w celu ekstrakcji ziaren. Te ziarna kakaowe – po sfermentowaniu i wysuszeniu – można przechowywać przez długi czas.
+Wysoki popyt na kakao wśród Tubylców i zamożnych mieszkańców już dyktuje wysokie ceny tego towaru, jednak Hiszpanie i Włosi są skłonni płacić za nie złotem, co sprawia, ze ​​ceny są wygórowane.
 }
 Sugar {Cukier}
 Sugar_descr
 {
-Gotowanie soku z trzciny cukrowej przez wiele godzin w dużych miedzianych kotłach powoduje, ze słodki syrop zamienia się w duży brązowy kryształ surowego cukru, gotowy do osuszenia i przygotowania do transportu do Europy, gdzie ma podlec rafinacji.Zwyczaj poczęstowania gości herbata lub kawa słodzona cukrem był ponadczasowa moda i arystokratycznym symbolem dobrego samopoczucia, była to swoista gwarancja, ze na cukier surowy zawsze jest duże zapotrzebowanie.
+Gotowanie soku z trzciny cukrowej przez wiele godzin w dużych miedzianych kotłach powoduje, ze słodki syrop zamienia się w duży brązowy kryształ surowego cukru, gotowy do osuszenia i przygotowania do transportu do Europy, gdzie ma podlec rafinacji.
+Zwyczaj poczęstowania gości herbata lub kawa słodzona cukrem był ponadczasowa moda i arystokratycznym symbolem dobrego samopoczucia, była to swoista gwarancja, ze na cukier surowy zawsze jest duże zapotrzebowanie.
 }
 Wine {Wino}
 Wine_descr
 {
-Pomimo wielu prób uprawy winorośli w Nowym Świecie (większość nieudanych), importowane wina z Francji, Hiszpanii, Włoch i Portugalii są nadal wysoko cenione zarówno do celów sakramentalnych, jak i rekreacyjnych.Porządne wino europejskie jest w każdej osadzie bardzo poszukiwane i lokalni kupcy zawsze będą je kupować w dużych ilościach, podczas gdy tanie i lokalnie produkowane wino jest w skrajnych przypadkach używane jako środek dezynfekujący.
+Pomimo wielu prób uprawy winorośli w Nowym Świecie (większość nieudanych), importowane wina z Francji, Hiszpanii, Włoch i Portugalii są nadal wysoko cenione zarówno do celów sakramentalnych, jak i rekreacyjnych.
+Porządne wino europejskie jest w każdej osadzie bardzo poszukiwane i lokalni kupcy zawsze będą je kupować w dużych ilościach, podczas gdy tanie i lokalnie produkowane wino jest w skrajnych przypadkach używane jako środek dezynfekujący.
 }
 ShipSilk {Jedwab}
 ShipSilk_descr
 {
-Arcydzieło fabryk tekstylnych w Lyonie - gęste, jedwabne i aksamitne płótno.Jedwab jest niezwykle wytrzymały, włókna są mocne, elastyczne i maja jednakowa grubość. Tkanina ta jest lekka i oddychająca; szybko wchłania wilgoć, ale jeszcze szybciej schnie. Zachowuje kształt i jest odporna na rozciąganie.Przy wszystkich swoich zaletach jedwabna tkanina ma jednak istotna wadę – zbyt długa ekspozycja na światło słoneczne ma tendencje do degradacji materiału.
+Arcydzieło fabryk tekstylnych w Lyonie - gęste, jedwabne i aksamitne płótno.
+Jedwab jest niezwykle wytrzymały, włókna są mocne, elastyczne i maja jednakowa grubość. Tkanina ta jest lekka i oddychająca; szybko wchłania wilgoć, ale jeszcze szybciej schnie. Zachowuje kształt i jest odporna na rozciąganie.
+Przy wszystkich swoich zaletach jedwabna tkanina ma jednak istotna wadę – zbyt długa ekspozycja na światło słoneczne ma tendencje do degradacji materiału.
 }
 Rum {Rum}
 Rum_descr
 {
-Mocny napój alkoholowy, destylowany z fermentowanego soku z trzciny cukrowej o lekko funkowym smaku i aromacie. To cenny towar, który zawsze można sprzedać z zyskiem, ale tez podnosi morale Twoich marynarzy, o ile ich posiadasz. Rum jest również dodawany do świeżej wody na statkach w celu przygotowania grogu, który zarówno dezynfekuje wodę, jak i poprawia jej smak. Niedobór rumu na statku może wywołać niepokoje wśród marynarzy, a nawet stać się przyczyna buntu.
+Mocny napój alkoholowy, destylowany z fermentowanego soku z trzciny cukrowej o lekko funkowym smaku i aromacie. To cenny towar, który zawsze można sprzedać z zyskiem, ale tez podnosi morale Twoich marynarzy, o ile ich posiadasz. Rum jest również dodawany do świeżej wody na statkach w celu przygotowania grogu, który zarówno dezynfekuje wodę, jak i poprawia jej smak. 
+Niedobór rumu na statku może wywołać niepokoje wśród marynarzy, a nawet stać się przyczyna buntu.
 }
 Tobacco {Tytoń}
 Tobacco_descr
 {
-W odleglej Europie, w lokalnych osadach i w ciasnych kwaterach załogi pod pokładem, tytoń jest rozkoszą każdego człowieka. Uważany jest także za niezawodny środek profilaktyczny przeciwko wielu chorobom, a tak przynajmniej uważają ludzie.Istnieją trzy rodzaje tytoniu gotowego do spożycia – tytoń do palenia, tytoń do tabaki i tytoń do żucia. Liście tytoniu w lnianych workach są cennym ładunkiem dla wielu kupców.
+W odleglej Europie, w lokalnych osadach i w ciasnych kwaterach załogi pod pokładem, tytoń jest rozkoszą każdego człowieka. Uważany jest także za niezawodny środek profilaktyczny przeciwko wielu chorobom, a tak przynajmniej uważają ludzie.
+Istnieją trzy rodzaje tytoniu gotowego do spożycia – tytoń do palenia, tytoń do tabaki i tytoń do żucia. Liście tytoniu w lnianych workach są cennym ładunkiem dla wielu kupców.
 }
 Coffee {Kawa}
 Coffee_descr
 {
-Pachnący, energetyzujący napój na bazie ziaren kawy, miodu i cynamonu cieszy się obecnie dużą popularnością wśród mieszkańców Nowego Świata – nie tylko ze względu na dużą liczbę plantacji kawy, które stały się głównym źródłem dochodu wielu bogatych Europejczyków, ale także bo herbata z Indii i Chin stała się dość trudno dostępną.Zielone, niepalone ziarna kawy, które przez długi czas zachowują swoje walory handlowe i użyteczne, cieszą się zawsze dużym zainteresowaniem w Europie kontynentalnej, ponieważ kawa jest obecna w każdym bogatym gospodarstwie domowym.
+Pachnący, energetyzujący napój na bazie ziaren kawy, miodu i cynamonu cieszy się obecnie dużą popularnością wśród mieszkańców Nowego Świata – nie tylko ze względu na dużą liczbę plantacji kawy, które stały się głównym źródłem dochodu wielu bogatych Europejczyków, ale także bo herbata z Indii i Chin stała się dość trudno dostępną.
+Zielone, niepalone ziarna kawy, które przez długi czas zachowują swoje walory handlowe i użyteczne, cieszą się zawsze dużym zainteresowaniem w Europie kontynentalnej, ponieważ kawa jest obecna w każdym bogatym gospodarstwie domowym.
 }
 Mahogany {Mahoń}
 Mahogany_descr
 {
-Drewno tych drzew ma bardzo wyraźny i piękny wzór, a także jest bardzo mocne, ognioodporne i trwale. Można go bardzo łatwo polerować i nie jest uszkadzany przez szkodniki drewna. Jako pierwsi docenili go Hiszpanie – obecnie mahoń jest szeroko stosowany w budowie statków, kościołów i pałaców.Meble wykonane z mahoniu są przykładem klasycznego luksusu, dobrego smaku i dobrego samopoczucia ich właściciela.
+Drewno tych drzew ma bardzo wyraźny i piękny wzór, a także jest bardzo mocne, ognioodporne i trwale. Można go bardzo łatwo polerować i nie jest uszkadzany przez szkodniki drewna. Jako pierwsi docenili go Hiszpanie – obecnie mahoń jest szeroko stosowany w budowie statków, kościołów i pałaców.
+Meble wykonane z mahoniu są przykładem klasycznego luksusu, dobrego smaku i dobrego samopoczucia ich właściciela.
 }
 Cinnamon {Wanilia}
 Cinnamon_descr
 {
-Suszone i sfermentowane strąki tej wiecznie zielonej winorośli pochodzącej z Meksyku maja słodki aromat, ale gorzki smak.Wanilie wykorzystuje się w Europie do produkcji kakao i gorącej czekolady. Stosowany jest także jako aromat do tytoniu, podczas gdy inni po prostu go przeżuwają, choć głownie po to, aby pokazać swój status.
+Suszone i sfermentowane strąki tej wiecznie zielonej winorośli pochodzącej z Meksyku maja słodki aromat, ale gorzki smak.
+Wanilie wykorzystuje się w Europie do produkcji kakao i gorącej czekolady. Stosowany jest także jako aromat do tytoniu, podczas gdy inni po prostu go przeżuwają, choć głownie po to, aby pokazać swój status.
 }
 Copra {Kopra}
 Copra_descr
 {
-Suszone mięso kokosowe.Kopra jest wykorzystywana do produkcji oleju koprowego i mydła. Mydło pachnie dość ładnie, a także farbuje włosy, maskując siwe włosy szlachetnym odcieniem blondu.
+Suszone mięso kokosowe.
+Kopra jest wykorzystywana do produkcji oleju koprowego i mydła. Mydło pachnie dość ładnie, a także farbuje włosy, maskując siwe włosy szlachetnym odcieniem blondu.
 }
 Paprika {Papryka}
 Paprika_descr
 {
-Mielona i suszona czerwona papryczka chili, słodka i ostra przyprawa, która jest niezwykle popularna w kuchni jako środek aromatyzujący.Papryka jest bardzo popularna wśród Niemców, Hiszpanów oraz w Europie śródziemnomorskiej, gdyż doskonale komponuje się praktycznie ze wszystkim: mięsem, drobiem, rybami, owocami morza, warzywami i serami.
+Mielona i suszona czerwona papryczka chili, słodka i ostra przyprawa, która jest niezwykle popularna w kuchni jako środek aromatyzujący.
+Papryka jest bardzo popularna wśród Niemców, Hiszpanów oraz w Europie śródziemnomorskiej, gdyż doskonale komponuje się praktycznie ze wszystkim: mięsem, drobiem, rybami, owocami morza, warzywami i serami.
 }
 Fruits {Owoce}
 Fruits_descr
 {
-Jadalne owoce tropikalne zbierane z lokalnej flory. Świetnie nadaje się do zapobiegania szkorbutowi lub aromatyzowania taniego wina.Owoce można sprzedać w każdej osadzie - znajdą się nabywcy nawet na rzadkie przysmaki.
+Jadalne owoce tropikalne zbierane z lokalnej flory. Świetnie nadaje się do zapobiegania szkorbutowi lub aromatyzowania taniego wina.
+Owoce można sprzedać w każdej osadzie - znajdą się nabywcy nawet na rzadkie przysmaki.
 }
 Ale {Piwo}
 Ale_descr
 {
-Warzony napój o niskiej zawartości alkoholu, przygotowany w drodze górnej fermentacji. Wraz z chlebem uważany jest za podstawowe pożywienie i wchodzi w skład racji żywnościowych lokalnych garnizonów (zwłaszcza angielskich). Można je też przechowywać przez długi czas; ponadto posiada właściwości antybiotyczne dzięki gruitowi (mieszance ziół i przypraw stosowanej zamiast chmielu).
+Warzony napój o niskiej zawartości alkoholu, przygotowany w drodze górnej fermentacji. 
+Wraz z chlebem uważany jest za podstawowe pożywienie i wchodzi w skład racji żywnościowych lokalnych garnizonów (zwłaszcza angielskich). Można je też przechowywać przez długi czas; ponadto posiada właściwości antybiotyczne dzięki gruitowi (mieszance ziół i przypraw stosowanej zamiast chmielu).
 }
 Ropes {Liny}
 Ropes_descr
 {
-Mocne liny wykonane z konopi. Odporne na słoną wodę, są to najlepsze liny do stosowania w olinowaniu.Najlepsze i najbardziej znane liny produkowane są w carstwie rosyjskim.
+Mocne liny wykonane z konopi. Odporne na słoną wodę, są to najlepsze liny do stosowania w olinowaniu.
+Najlepsze i najbardziej znane liny produkowane są w carstwie rosyjskim.
 }
 Clothes {Ubrania}
 Clothes_descr
 {
-Praktyczny, konserwatywny ubiór z ciemnej tkaniny, prosty batystowy len, wywijane kołnierzyki i mankiety – wygodny strój każdego uczciwego, pracowitego, skromnego i oszczędnego mężczyzny.Niedrogi towar, zawsze poszukiwany.
+Praktyczny, konserwatywny ubiór z ciemnej tkaniny, prosty batystowy len, wywijane kołnierzyki i mankiety – wygodny strój każdego uczciwego, pracowitego, skromnego i oszczędnego mężczyzny.
+Niedrogi towar, zawsze poszukiwany.
 }
 Cotton {Bawełna}
 Cotton_descr
 {
-Bawełna dojrzewa późno, a plony na plantacjach na wyspach karaibskich są raczej niskie w porównaniu z koloniami w Ameryce Północnej, ale jej włókna są nadal bardzo cenne, ponieważ są niezwykle długie i cienkie. Te jedwabiście kremowe włókna służą do produkcji nici do najcieńszych tkanin najwyższej jakości.Ta pracochłonna produkcja wymaga założenia stosunkowo dużej plantacji i pracy na niej co najmniej 20 niewolników.
+Bawełna dojrzewa późno, a plony na plantacjach na wyspach karaibskich są raczej niskie w porównaniu z koloniami w Ameryce Północnej, ale jej włókna są nadal bardzo cenne, ponieważ są niezwykle długie i cienkie. Te jedwabiście kremowe włókna służą do produkcji nici do najcieńszych tkanin najwyższej jakości.
+Ta pracochłonna produkcja wymaga założenia stosunkowo dużej plantacji i pracy na niej co najmniej 20 niewolników.
 }
 Sandal {Drewno twarde}
 Sandal_descr
 {
-Drewno twarde jest również znane jako „lignum vitae”. To gęste, twarde i mocne drewno jest prawie niemożliwe do złamania. Jest bardzo ciężki i w przeciwieństwie do większości drewna tonie, a nie unosi się w wodzie.Jak sama nazwa wskazuje, jest to drewno bardzo mocne, choć trudne w obróbce. Posiada również właściwości samosmarujące, zwłaszcza w wodzie.Ze względu na wytrzymałość i naturalne smarowanie, elementy statków wykonane z drewna żelaznego nie wymagają wielu konserwacji, nawet w najgorszych warunkach morskich.
+Drewno twarde jest również znane jako „lignum vitae”. To gęste, twarde i mocne drewno jest prawie niemożliwe do złamania. Jest bardzo ciężki i w przeciwieństwie do większości drewna tonie, a nie unosi się w wodzie.
+Jak sama nazwa wskazuje, jest to drewno bardzo mocne, choć trudne w obróbce. Posiada również właściwości samosmarujące, zwłaszcza w wodzie.
+Ze względu na wytrzymałość i naturalne smarowanie, elementy statków wykonane z drewna żelaznego nie wymagają wielu konserwacji, nawet w najgorszych warunkach morskich.
 }
 Oil {Żywica}
 Oil_descr
 {
-Ta naturalna smoła asfaltowa jest lepka, szarawo-czarna mieszanina bitumu, drobno rozproszonej gliny i słonej wody. Najsłynniejszy produkt eksportowy wyspy Trinidad - choć na pewno nie najpiękniejszy.Smoła ta służy do uszczelniania i uszczelniania polaczeń kadłubów statków.Uważa się, ze smoła ta jest znacznie lepsza od smoły produkowanej w krajach Europy Północnej z drzew sosnowych.
+Ta naturalna smoła asfaltowa jest lepka, szarawo-czarna mieszanina bitumu, drobno rozproszonej gliny i słonej wody. Najsłynniejszy produkt eksportowy wyspy Trinidad - choć na pewno nie najpiękniejszy.
+Smoła ta służy do uszczelniania i uszczelniania polaczeń kadłubów statków.
+Uważa się, ze smoła ta jest znacznie lepsza od smoły produkowanej w krajach Europy Północnej z drzew sosnowych.
 }
 Leather {Skóra}
 Leather_descr
 {
-Wysuszone i wyprawione skory bydlęce to towar uniwersalny, zawsze poszukiwany w Europie. W ten sposób pierwotni korsarze zarabiali na życie, sprzedając skory i mięso dzikiego bydła na Hispanioli.Chociaż niewielu handlarzy załadowywałoby swoje statki samą skorą, świetnie nadaje się ona do wypełniania pustej przestrzeni ładunkowej, ponieważ jest bardzo wytrzymała i wytrzyma każde warunki transportu.
+Wysuszone i wyprawione skory bydlęce to towar uniwersalny, zawsze poszukiwany w Europie. W ten sposób pierwotni korsarze zarabiali na życie, sprzedając skory i mięso dzikiego bydła na Hispanioli.
+Chociaż niewielu handlarzy załadowywałoby swoje statki samą skorą, świetnie nadaje się ona do wypełniania pustej przestrzeni ładunkowej, ponieważ jest bardzo wytrzymała i wytrzyma każde warunki transportu.
 }
 Slaves {Niewolnicy}
 Slaves_descr {Mężczyźni i kobiety – biali i czarni – sprzedawani w niewole w wyniku przegranych bitew, kary za popełnione przestępstwa lub długów. Z punktu widzenia plantatora czy właściciela kopalni jest to towar w pełni legalny, gdyż w chwili zakupu osoba ta była już niewolnikiem. Zycie niewolników jest zwykle paskudne, brutalne i krótkie – większość z nich umiera w ciągu pierwszych siedmiu lat po sprzedaniu do pracy na plantacjach.}
 Powder {Proch strzelniczy}
 Powder_descr
 {
-Importowany towar strategiczny, produkt brudnych, hałaśliwych, śmierdzących i niebezpiecznych młynów prochowych. „Utrzymuj proch w suchości” – mówią doświadczeni kanonierzy. Nie można tego wystarczająco podkreślić: bez prochu armaty są po prostu ciężarem nośnym dla statku.Mądry kapitan zawsze będzie trzymał dużo prochu w najsuchszej i najbezpieczniejszej części ładowni.
+Importowany towar strategiczny, produkt brudnych, hałaśliwych, śmierdzących i niebezpiecznych młynów prochowych. „Utrzymuj proch w suchości” – mówią doświadczeni kanonierzy. Nie można tego wystarczająco podkreślić: bez prochu armaty są po prostu ciężarem nośnym dla statku.
+Mądry kapitan zawsze będzie trzymał dużo prochu w najsuchszej i najbezpieczniejszej części ładowni.
 }
 Food {Jedzenie}
 Food_descr
 {
-Standardowy zestaw konserwowanych racji żywnościowych i świeżej wody, niezbędny do wyżywienia załogi i niewolników podczas rejsu.Brak żywności na pokładzie prowadzi do głodu, śmierci i spadku morale. Dzienne spożycie: marynarze - 0.1 jednostki, niewolnicy - 0.05 jednostki.
+Standardowy zestaw konserwowanych racji żywnościowych i świeżej wody, niezbędny do wyżywienia załogi i niewolników podczas rejsu.
+Brak żywności na pokładzie prowadzi do głodu, śmierci i spadku morale. 
+Dzienne spożycie: marynarze - 0.1 jednostki, niewolnicy - 0.05 jednostki.
 }
 Weapon {Bronie}
 Weapon_descr
 {
-Kolekcja broni: od szabli i mieczy po pistolety i muszkiety.Podczas wejścia na pokład każdy uczestnik bitwy musi być uzbrojony. Brak broni spowoduje wzrost ofiar.Gdy marynarze giną w bitwie, ilość broni na pokładzie maleje.
+Kolekcja broni: od szabli i mieczy po pistolety i muszkiety.
+Podczas wejścia na pokład każdy uczestnik bitwy musi być uzbrojony. Brak broni spowoduje wzrost ofiar.
+Gdy marynarze giną w bitwie, ilość broni na pokładzie maleje.
 }
 Gold {Złoto}
 Gold_descr
 {
-Solidne złote sztabki, oznaczone przez Skarb Państwa Hiszpanii.Ten cenny metal jest wykorzystywany do wytwarzania regaliów i biżuterii. Zdobycie statku ze skarbami załadowanego zlotem to marzenie każdego pirata i korsarza.
+Solidne złote sztabki, oznaczone przez Skarb Państwa Hiszpanii.
+Ten cenny metal jest wykorzystywany do wytwarzania regaliów i biżuterii. Zdobycie statku ze skarbami załadowanego zlotem to marzenie każdego pirata i korsarza.
 }
 Silver {Srebro}
 Silver_descr
 {
-Sztabki srebra, oznaczone przez Skarb Państwa Hiszpanii.Pożądana nagroda, ponieważ srebro ma przyzwoita wartość, będąc drugim wyborem hiszpańskiego skarbu do przechowywania i transportu bogactwa. Szacuje się, ze w XVI wieku Korona Hiszpańska sprowadziła srebro z Nowego Świata do Europy o wartości ponad 210 milionów peso.
+Sztabki srebra, oznaczone przez Skarb Państwa Hiszpanii.
+Pożądana nagroda, ponieważ srebro ma przyzwoita wartość, będąc drugim wyborem hiszpańskiego skarbu do przechowywania i transportu bogactwa. Szacuje się, ze w XVI wieku Korona Hiszpańska sprowadziła srebro z Nowego Świata do Europy o wartości ponad 210 milionów peso.
 }
 Brick {Cegły}
 Brick_descr
 {
-Zadbane bloczki i dachówki wykonane z terakoty. Są one szeroko stosowane w budowie miast, ponieważ drewno ma tendencje do szybkiego gnicia na wilgotnych Karaibach.Ze względu na częste pożary władze zachęcają do stosowania cegieł w budownictwie, dlatego na ten towar zawsze jest zapotrzebowanie.
+Zadbane bloczki i dachówki wykonane z terakoty. Są one szeroko stosowane w budowie miast, ponieważ drewno ma tendencje do szybkiego gnicia na wilgotnych Karaibach.
+Ze względu na częste pożary władze zachęcają do stosowania cegieł w budownictwie, dlatego na ten towar zawsze jest zapotrzebowanie.
 }
 Medicament {Medykamenty}
 Medicament_descr
 {
-Zestaw leków i narzędzi przeznaczonych do leczenia najczęstszych chorób oraz udzielania pierwszej pomocy rannym i poszkodowanym.Posiadanie leków na pokładzie pomaga ratować rannych, zmniejszać liczbę ofiar na pokładzie i leczyć chorych na morzu.
+Zestaw leków i narzędzi przeznaczonych do leczenia najczęstszych chorób oraz udzielania pierwszej pomocy rannym i poszkodowanym.
+Posiadanie leków na pokładzie pomaga ratować rannych, zmniejszać liczbę ofiar na pokładzie i leczyć chorych na morzu.
 }
 Cannon_3 {Działka}
 Cannon_3_descr
 {
-Działka pokładowe wyposażone w montaż pierścieniowy. Charakteryzują się wysoką mobilnością, ale mają ograniczony zasięg i mniejsze obrażenia ze względu na mały kaliber.Często są wyposażone w wymienny zamek, co pozwala na jeszcze szybsze przeładowanie.Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
+Działka pokładowe wyposażone w montaż pierścieniowy. Charakteryzują się wysoką mobilnością, ale mają ograniczony zasięg i mniejsze obrażenia ze względu na mały kaliber.
+Często są wyposażone w wymienny zamek, co pozwala na jeszcze szybsze przeładowanie.
+Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
 }
 Cannon_6 {Lekkie półkartauny}
 Cannon_6_descr
 {
-Małe działa, cieszące się dużą popularnością na statkach kurierskich i handlowych ze względu na niską wagę i łatwość konserwacji.  Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
+Małe działa, cieszące się dużą popularnością na statkach kurierskich i handlowych ze względu na niską wagę i łatwość konserwacji.  
+Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
 }
 Cannon_8 {8-funtowe półdziała}
 Cannon_8_descr
 {
-Jeden z najpopularniejszych kalibrów na małych statkach, spotykany zarówno na handlowych, jak i patrolowych. Cenione za doskonałe połączenie rozmiaru, wagi i siły ognia.Zasięg - #dFireRange#, obrażenia - x#f.1DamageMultiply#, przeładowanie - #dReloadTime# sek.
+Jeden z najpopularniejszych kalibrów na małych statkach, spotykany zarówno na handlowych, jak i patrolowych. Cenione za doskonałe połączenie rozmiaru, wagi i siły ognia.
+Zasięg - #dFireRange#, obrażenia - x#f.1DamageMultiply#, przeładowanie - #dReloadTime# sek.
 }
 Cannon_12 {Półkartauny}
 Cannon_12_descr
 {
-Standardowe, niezwykle niezawodne działa większości flot wojskowych, zdolne do strzelania pod dużym kątem, co znacznie zwiększa efektywny dystans walki.  Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
+Standardowe, niezwykle niezawodne działa większości flot wojskowych, zdolne do strzelania pod dużym kątem, co znacznie zwiększa efektywny dystans walki.  
+Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
 }
 Cannon_16 {Morskie półkartauny}
 Cannon_16_descr
 {
-Nowoczesne francuskie działa. Dzięki zaawansowanej konstrukcji i nowemu systemowi opracowanemu przez monsieur de Vallière’a, te działa mają większy zasięg i zadają większe obrażenia niż zwykłe półkartauny. Jednak ich ładowanie trwa dłużej, są nieco mniej niezawodne i cięższe.  Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
+Nowoczesne francuskie działa. Dzięki zaawansowanej konstrukcji i nowemu systemowi opracowanemu przez monsieur de Vallière’a, te działa mają większy zasięg i zadają większe obrażenia niż zwykłe półkartauny. Jednak ich ładowanie trwa dłużej, są nieco mniej niezawodne i cięższe.  
+Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
 }
 Cannon_18 {18-funtowe półdziała}
 Cannon_18_descr
 {
-Mocne uniwersalne działa, które dawniej często montowano na okrętach wojennych. Dość powszechne na archipelagu i cenione za prostotę i niezawodność, choć przestarzała konstrukcja nieco ogranicza ich zasięg.Zasięg - #dFireRange#, obrażenia - x#f.1DamageMultiply#, przeładowanie - #dReloadTime# sek.
+Mocne uniwersalne działa, które dawniej często montowano na okrętach wojennych. Dość powszechne na archipelagu i cenione za prostotę i niezawodność, choć przestarzała konstrukcja nieco ogranicza ich zasięg.
+Zasięg - #dFireRange#, obrażenia - x#f.1DamageMultiply#, przeładowanie - #dReloadTime# sek.
 }
 Cannon_20 {Małe działa}
 Cannon_20_descr
 {
-Działa największego kalibru, strzelające wyjątkowo twardymi kulami armatnimi, co zwiększa zadawane obrażenia. Jednak dłuższa lufa znacznie zwiększa ich wagę.  Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
+Działa największego kalibru, strzelające wyjątkowo twardymi kulami armatnimi, co zwiększa zadawane obrażenia. Jednak dłuższa lufa znacznie zwiększa ich wagę.  
+Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
 }
 Cannon_24 {Działa okrętowe}
 Cannon_24_descr
 {
-Najlepiej zrównoważone działa pod względem parametrów technicznych. Cieszą się dużą popularnością na statkach wojennych i ekspedycyjnych – i to nie bez powodu.  Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
+Najlepiej zrównoważone działa pod względem parametrów technicznych. Cieszą się dużą popularnością na statkach wojennych i ekspedycyjnych – i to nie bez powodu.  
+Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
 }
 Cannon_32 {Działa baterii}
 Cannon_32_descr
 {
-Ciężkie działa dużego kalibru, zdolne do ostrzału struktur obronnych. Zadają ogromne obrażenia kadłubowi.  Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
+Ciężkie działa dużego kalibru, zdolne do ostrzału struktur obronnych. Zadają ogromne obrażenia kadłubowi.  
+Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
 }
 Cannon_36 {Działa nadbrzeżne}
 Cannon_36_descr
 {
-Długolufowe działa rzadko pojawiają się na pokładach okrętów. Jednak mimo długiego czasu przeładowania, zadają duże obrażenia i mają znaczny zasięg ostrzału.  Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
+Długolufowe działa rzadko pojawiają się na pokładach okrętów. Jednak mimo długiego czasu przeładowania, zadają duże obrażenia i mają znaczny zasięg ostrzału.  
+Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
 }
 Cannon_42 {Działa oblężnicze}
 Cannon_42_descr
 {
-Niemal przestarzałe, ale wciąż potężne działa, doskonale nadające się do montażu na okrętach liniowych.  Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
+Niemal przestarzałe, ale wciąż potężne działa, doskonale nadające się do montażu na okrętach liniowych.  
+Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
+}
+Cannon_48 {Działa oblężnicze}
+Cannon_48_descr
+{
+Niemal przestarzałe, ale wciąż potężne działa, doskonale nadające się do montażu na okrętach liniowych.
+Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
 }
 Culverine_8 {Półkulweryny}
 Culverine_8_descr
 {
-Długolufowe, 8-funtowe działo na stałym montażu. Charakteryzuje się zwiększonym zasięgiem ostrzału i jest zwykle używane do ognia zaporowego.  Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
+Długolufowe, 8-funtowe działo na stałym montażu. Charakteryzuje się zwiększonym zasięgiem ostrzału i jest zwykle używane do ognia zaporowego.  
+Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
 }
 Culverine_18 {Kulweryny}
 Culverine_18_descr
 {
-Średnie 18-funtowe działo o długim zasięgu, mierzące 12 stóp długości. Mimo imponującego zasięgu jest bardzo powolne i wymaga długiego czasu przeładowania.  Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
+Średnie 18-funtowe działo o długim zasięgu, mierzące 12 stóp długości. Mimo imponującego zasięgu jest bardzo powolne i wymaga długiego czasu przeładowania.  
+Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
 }
 Culverine_36 {Pełne kulweryny}
 Culverine_36_descr
 {
-36-funtowe działo forteczne przeznaczone do ostrzału oblężniczego. Może być również używane w bateriach okrętowych i zadawać znaczne obrażenia wrogowi, pod warunkiem że artylerzysta jest doświadczony, zręczny i celny.  Te działa wymagają stanowisk zdolnych pomieścić 42-funtowe armaty ze względu na dłuższe lufy.  Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
+36-funtowe działo forteczne przeznaczone do ostrzału oblężniczego. Może być również używane w bateriach okrętowych i zadawać znaczne obrażenia wrogowi, pod warunkiem że artylerzysta jest doświadczony, zręczny i celny.  
+Te działa wymagają stanowisk zdolnych pomieścić 42-funtowe armaty ze względu na dłuższe lufy.  
+Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
 }

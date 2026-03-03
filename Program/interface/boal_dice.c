@@ -1,10 +1,12 @@
 // boal 10.06.05
 //   DICE GAME
 int scx, scy, spx, spy, sgxy, ssxy, smxy;
-int move_i, dir_i, dir_i_start;
+int move_i, dir_i, dir_i_start, x_rand, y_rand, r_delta;
 bool openExit;
 int  money_i, moneyOp_i;
 string money_s;
+
+bool bTip[5], bEffect[5];
 
 ref npchar;
 
@@ -47,6 +49,7 @@ void InitInterface(string iniName)
     SetEventHandler("ShowInfoWindow","ShowInfoWindow",0);
 	SetEventHandler("HideInfoWindow","HideInfoWindow",0);
 	SetEventHandler("MouseRClickUp","HideInfoWindow",0);
+	SetEventHandler("Event_NodeMouseEffect", "MouseEffect", 0);
 	/*
 	gold, silver   - 100x100
 	screen: -40..680 x -30..510  (720x540)
@@ -62,7 +65,7 @@ void InitInterface(string iniName)
 	7) одна пара 2- одинаковых
 	8) ничего нет
 	*/
-	
+	r_delta = makeint(Bring2Range(20.0, 5.0, 5.0, 20.0, GetRDeltaTime() * 1.0));
     sgxy = 120;
     ssxy = 120;
     
@@ -71,6 +74,9 @@ void InitInterface(string iniName)
     
     spx = 354;
     spy = 282;
+	
+	x_rand = -1;
+	y_rand = -1;
     
     openExit = false;  // можно ли прервать игру
     
@@ -112,8 +118,27 @@ void InitInterface(string iniName)
     {
         smxy = ssxy;
     }
-	CreateImage("DiceCup","DICE","cup", 170, 160, 170 + spx, 160 + spy); // выше всех
 	
+	for(int i = 1; i<=5; i++)
+	{
+		XI_MakeNode("resource\ini\interfaces\defaultnode.ini", "PICTURE", "HeroDice" + i, 100);
+		SetNodeUsing("HeroDice" + i, false);
+		XI_MakeNode("resource\ini\interfaces\defaultnode.ini", "PICTURE", "CompDice" + i, 100);
+		SetNodeUsing("CompDice" + i, false);
+		bTip[i-1] = false;
+		bEffect[i-1] = false;
+	}
+	
+	XI_MakeNode("resource\ini\interfaces\defaultnode.ini", "PICTURE", "DiceCup", 100);
+	SetNewGroupPicture("DiceCup", "DICE", "cup");
+	int x1, y1, x2, y2;
+	GetNodePosition("B_PACK", &x1, &y1, &x2, &y2);
+	x1 = x1 - 100;
+	y1 = y1 - 40;
+	x2 = x1 + spx;
+	y2 = y1 + spy;
+	SetNodePosition("DiceCup", x1, y1, x2, y2);
+
 	// CreateImage("GOLD","GOLD","GOLD", 482,444,524,486);
 	SetNewPicture("ICON_1", "interfaces\le\portraits\512\face_" + npchar.faceId+ ".tga");
     SetNewPicture("ICON_2", "interfaces\le\portraits\512\face_" + pchar.faceId+ ".tga");
@@ -135,6 +160,7 @@ void InitInterface(string iniName)
     CreateString(true,"Beta_P", "", "INTERFACE_NORMAL",COLOR_NORMAL, 960, 710, SCRIPT_ALIGN_CENTER,2.0);
     CreateString(true,"Beta_Next", "", "INTERFACE_NORMAL",COLOR_NORMAL, 580, 520, SCRIPT_ALIGN_LEFT,2.0);
     CreateString(true,"Beta_MoneyN", "", "INTERFACE_NORMAL",COLOR_NORMAL, 1560, 350, SCRIPT_ALIGN_CENTER,2.0);
+	CreateString(true,"Beta_TXT", "", "INTERFACE_NORMAL",COLOR_NORMAL, 1560, 250, SCRIPT_ALIGN_CENTER,2.0);
     CreateString(true,"Beta_WinLose", "", "INTERFACE_NORMAL",COLOR_NORMAL, 1560, 710, SCRIPT_ALIGN_CENTER,1.8);
     iHeroLose = 0;
     iHeroWin  = 0;
@@ -169,6 +195,7 @@ void Exit()
 		DelEventHandler("ShowInfoWindow","ShowInfoWindow");
 		DelEventHandler("HideInfoWindow","HideInfoWindow");
 		DelEventHandler("MouseRClickUp","HideInfoWindow");
+		DelEventHandler("Event_NodeMouseEffect", "MouseEffect");
 
         if (sti(pchar.GenQuest.Dice.SitType) == true)
     	{
@@ -188,7 +215,7 @@ void Exit()
 			{
 				if(sti(Pchar.Ship.Type) != SHIP_NOTUSED)
 				{
-					locations[FindLocation("My_Deck")].box1.items.hat7 = 1;
+					PutItemToShip("My_deck", "hat7", 1);
 					Pchar.questTemp.hat7 = true;
 				}
 			}
@@ -269,6 +296,7 @@ void ProcessCommandExecute()
 					// ГГ бросает кубики первый раз кубики
 					if (dir_i == 1 && CheckCupForDice())
 					{
+						SetDiceTip("");
                         bLockClick = true;
 						move_i = 0;
 				        PlaySound("interface\dice_mix.wav");
@@ -342,29 +370,54 @@ void ProcessCommandExecute()
 
 void MoveImg()
 {
-    move_i++;
-    if (move_i < 10)
+    float t;
+	int x1, y1, x2, y2;
+	GetNodePosition("B_PACK", &x1, &y1, &x2, &y2);
+	x1 = x1 - 100;
+	y1 = y1 - 40;
+	x2 = x1 + 500;
+	y2 = y2 - 100;
+	int x, y;
+	move_i++;
+	if (move_i < 50)
     {
-		CreateImage("DiceCup","DICE","cup", 170 + move_i*60, 160 + move_i*25, 170 + move_i*60 + spx, 160 + move_i*25 + spy);
-        PostEvent("My_eventMoveImg", 60);
+		if(move_i == 1)
+		{
+			x_rand = x1 - 150 + rand(x2 - x1 + 300);
+			y_rand = y1 - 150 + rand(y2 - y1 + 300);
+		}
+		t = move_i / 50.0;
+		x = makeint((1.0 - t) * (1.0 - t) * x1 + 2.0 * (1.0 - t) * t * x_rand + t * t * x2);
+		y = makeint((1.0 - t) * (1.0 - t) * y1 + 2.0 * (1.0 - t) * t * y_rand + t * t * y2);
+		SetNodePosition("DiceCup", x, y, x + spx, y + spy);
+        PostEvent("My_eventMoveImg", r_delta);
     }
     else
     {
-        if (move_i <= 20)
+		if(move_i == 50)
+		{
+			x_rand = x1 + x2 - x_rand;
+			y_rand = y1 + y2 - y_rand;
+		}
+
+		t = (move_i - 50) / 50.0;
+		x = makeint((1.0 - t) * (1.0 - t) * x2 + 2.0 * (1.0 - t) * t * x_rand + t * t * x1);
+		y = makeint((1.0 - t) * (1.0 - t) * y2 + 2.0 * (1.0 - t) * t * y_rand + t * t * y1);
+        if (move_i <= 100)
         {
- 			CreateImage("DiceCup","DICE","cup", 170 + (20 - move_i)*25, 160 + (20 - move_i)*25, 170 + (20 - move_i)*35 + spx, 160 +(20 - move_i)*35 + spy);
+			SetNodePosition("DiceCup", x, y, x + spx, y + spy);
             
-            if (move_i == 20) // все - собрать кубики в линеку
+            if (move_i == 100) // все - собрать кубики в линеку
 			{
-            	PostEvent("My_eventMoveImg", 1000);
+            	PostEvent("My_eventMoveImg", 200);
             }
 			else
 			{
-            	PostEvent("My_eventMoveImg", 100);
+            	PostEvent("My_eventMoveImg", r_delta);
             }
         }
         // сброс
-        if (move_i == 12)
+        if (move_i == 60)
         {
             PlaySound("interface\dice_end.wav");
 			if (bSetRandDice)
@@ -378,7 +431,7 @@ void MoveImg()
             PutDiceOnTable();
         }
 		// все - собрать кубики в линеку
-        if (move_i == 21)
+        if (move_i == 101)
         {
             SetLineAfterDeck();
         }
@@ -411,17 +464,11 @@ void RedrawDeck(bool _newGame, bool _clearDice)
 	// место под кубики
 	if (_clearDice)
 	{
-		CreateImage("CompDice1","DICE","", 770, 180, 770 + scx, 180 + scy);
-		CreateImage("CompDice2","DICE","",  850, 180,  850 + scx, 180 + scy);
-		CreateImage("CompDice3","DICE","", 930, 180, 930 + scx, 180 + scy);
-		CreateImage("CompDice4","DICE","", 1010, 180, 1010 + scx, 180 + scy);
-		CreateImage("CompDice5","DICE","", 1090, 180, 1090 + scx, 180 + scy);
-		
-		CreateImage("HeroDice1","DICE","", 770, 840, 770 + scx, 840 + scy);
-		CreateImage("HeroDice2","DICE","",  850, 840,  850 + scx, 840 + scy);
-		CreateImage("HeroDice3","DICE","", 930, 840, 930 + scx, 840 + scy);
-		CreateImage("HeroDice4","DICE","", 1010, 840, 1010 + scx, 840 + scy);
-		CreateImage("HeroDice5","DICE","", 1090, 840, 1090 + scx, 840 + scy);
+		for(i = 1; i <= 5; i++)
+		{
+			SetNodeUsing("HeroDice" + i, false);
+			SetNodeUsing("CompDice" + i, false);
+		}
     }
 
     ShowMoney();
@@ -474,6 +521,7 @@ void StartGame()
 	{
 	    SetFormatedText("INFO_TEXT",XI_ConvertString("DicePhrase2"));
 	    bLockClick = false;
+		SetDiceTip("action");
 	}
 	// оба ставят
 	for (i=0; i<5; i++)
@@ -517,6 +565,7 @@ void NewGameBegin(bool _newGame)
     bLockClick = true;
     openExit = false;
     BetaInfo();
+	SetDiceTip("");
 }
 // деньги в карман
 // mitrokosta а теперь не в карман
@@ -643,7 +692,7 @@ void ClickHeroDice(int d)
 	if (DiceState.Hero.(sGlobalTemp).Mix == true) return; // mitrokosta фикс множественного переброса
 	if (iMoneyP >= iRate)
 	{
-		CreateImage("HeroDice" + d ,"","", 0,0,0,0);
+		SetNodeUsing("HeroDice" + d, false);
 		DiceState.Hero.(sGlobalTemp).Mix = true;
 		DiceState.Desk.(sGlobalTemp).Mix = true;
 		PutNextCoin();
@@ -652,6 +701,8 @@ void ClickHeroDice(int d)
 	    iChest += iRate;
 	    PlaySound("interface\took_item.wav");
 	    ShowMoney();
+		SetDiceTip("action");
+		SetNodeUsing("TIP_REROLL", false);
     }
     else
     {
@@ -746,6 +797,7 @@ bool CheckGame()
 		// подвод итога
 		openExit = false;
 		bLockClick = true;
+		SetDiceTip("");
 		if (EndTurnGame())
 		{
 			PostEvent("My_eNewNextGame", 2000);
@@ -755,6 +807,13 @@ bool CheckGame()
 			PostEvent("My_eContinueGame", 3500);
 		}
 	}
+	else
+	{
+		if(dir_i == 1)
+			SetDiceTip("action");
+		else
+			SetDiceTip("");
+	}
 	BetaInfo();
 	return true;
 }
@@ -762,12 +821,19 @@ bool CheckGame()
 void PutCompLine()
 {
 	int i;
+	int x_dist = 80;
+	int x1, y1, x2, y2;
+	GetNodePosition("B_HeroDice1", &x1, &y1, &x2, &y2);
+	x1 = x1 - 20;
+	y1 = y1 - 630;
 	for (i = 1; i<=5; i++)
 	{
         sGlobalTemp = "d"+i;
         if (DiceState.Comp.(sGlobalTemp).Mix == false)
         {
-			CreateImage("CompDice" + i,"DICE","dice_" + DiceState.Comp.(sGlobalTemp) + "_1", 730 + 80*(i-1), 200, 730 + 80*(i-1) + scx, 200 + scy);
+			SetNodeUsing("CompDice" + i, true);
+			SetNewGroupPicture("CompDice" + i, "DICE", "dice_" + DiceState.Comp.(sGlobalTemp) + "_1");
+			SetNodePosition("CompDice" + i, x1 + x_dist * (i - 1), y1, x1 + x_dist * (i - 1) + scx, y1 + scy);
 		}
 	}
 }
@@ -775,12 +841,19 @@ void PutCompLine()
 void PutHeroLine()
 {
 	int i;
+	int x_dist = 80;
+	int x1, y1, x2, y2;
+	GetNodePosition("B_HeroDice1", &x1, &y1, &x2, &y2);
+	x1 = x1 - 20;
+	y1 = y1 - 10;
 	for (i = 1; i<=5; i++)
 	{
         sGlobalTemp = "d"+i;
         if (DiceState.Hero.(sGlobalTemp).Mix == false)
         {
-			CreateImage("HeroDice" + i,"DICE","dice_" + DiceState.Hero.(sGlobalTemp) + "_1", 730 + 80*(i-1), 820, 730 + 80*(i-1) + scx, 820 + scy);
+			SetNodeUsing("HeroDice" + i, true);
+			SetNewGroupPicture("HeroDice" + i, "DICE", "dice_" + DiceState.Hero.(sGlobalTemp) + "_1");
+			SetNodePosition("HeroDice" + i, x1 + x_dist * (i - 1), y1, x1 + x_dist * (i - 1) + scx, y1 + scy);
 		}
 	}
 }
@@ -1157,6 +1230,8 @@ void NewNextGame()
     {
         ResultStr += NewStr() + XI_ConvertString("DicePhrase15");
 		bLockClick = false;
+		SetDiceTip("");
+		SetDiceTip("restart");
 	}
 	else
 	{
@@ -1358,8 +1433,7 @@ bool ClickCompDice(int d)
     
 	if (iMoneyN >= iRate && sti(DiceState.Comp.(sGlobalTemp).Mix) == false)
 	{
-		CreateImage("CompDice" + d ,"","", 0,0,0,0);
-
+		SetNodeUsing("CompDice" + d, false);
 		DiceState.Comp.(sGlobalTemp).Mix = true;
 		DiceState.Desk.(sGlobalTemp).Mix = true;
   		PutNextCoinOp();
@@ -1391,4 +1465,107 @@ void RecalcAIDice(string _whom)
         sTemp       = "d" + sti(DiceState.(_whom).(sGlobalTemp));
         DiceState.(_whom).Result.(sTemp) = sti(DiceState.(_whom).Result.(sTemp)) + 1;
 	}
+}
+
+/*
+restart - новый кон
+action - перебросить кубик, сделать бросок, передать ход, подсчитать очки
+*/
+void SetDiceTip(string tag)
+{
+	int i;
+	string sDice;
+	switch(tag)
+	{
+		case "":	// убираем все подсказки
+			for(i = 1; i <= 5; i++)
+			{
+				SetPictureBlind("HeroDice" + i, false, argb(255, 128, 128, 128), argb(255, 155, 155, 155), 0.6, 0.6);
+				bTip[i-1] = false;
+			}
+			SetPictureBlind("DiceCup", false, argb(255, 128, 128, 128), argb(255, 155, 155, 155), 0.6, 0.6);
+			SetPictureBlind("ICON_1", false, argb(255, 128, 128, 128), argb(255, 155, 155, 155), 0.6, 0.6);
+			SetNodeUsing("TIP_RESTART", false);
+			SetNodeUsing("TIP_TURN", false);
+			SetNodeUsing("TIP_ROLL", false);
+			SetNodeUsing("TIP_REROLL", false);
+			SetNodeUsing("TIP_SHOW", false);
+		break;
+		case "restart":
+			if(!bLockClick && openExit)	// можно начать новую игру - колода
+			{
+				SetPictureBlind("DiceCup", true, argb(255, 95, 95, 95), argb(255, 155, 155, 155), 0.6, 0.6);
+				SetNodeUsing("TIP_RESTART", true);
+			}
+		break;
+		case "action":
+			if(!bLockClick && dir_i == 1)
+			{
+				if(bStartGame >= 2 && bStartGame <= 3 && iMoneyP >= iRate)	// хватает денег на переброс
+				{
+					for(i = 1; i <= 5; i++)
+					{
+						sDice = "d" + i;
+						if(DiceState.Hero.(sDice).Mix == false)	// есть ли на столе
+						{
+							SetPictureBlind("HeroDice" + i, true, argb(255, 95, 95, 95), argb(255, 155, 155, 155), 0.6, 0.6);
+							bTip[i-1] = true;
+						}
+						else
+							bTip[i-1] = false;
+					}
+				}
+				if(CheckCupForDice())	// в стакане что-то есть
+				{
+					SetPictureBlind("DiceCup", true, argb(255, 95, 95, 95), argb(255, 155, 155, 155), 0.6, 0.6);
+					SetNodeUsing("TIP_ROLL", true);
+					SetPictureBlind("ICON_1", false, argb(255, 128, 128, 128), argb(255, 155, 155, 155), 0.6, 0.6);
+					SetNodeUsing("TIP_TURN", false);
+					SetNodeUsing("TIP_SHOW", false);
+				}
+				else
+				{
+					if(dir_i_start == 1 && bStartGame == 2)	// передача хода
+					{
+						SetPictureBlind("ICON_1", true, argb(255, 95, 95, 95), argb(255, 155, 155, 155), 0.6, 0.6);
+						SetNodeUsing("TIP_TURN", true);
+					}
+					if(dir_i_start == -1 && bStartGame == 3)	// подсчёт очков
+					{
+						SetPictureBlind("ICON_1", true, argb(255, 95, 95, 95), argb(255, 155, 155, 155), 0.6, 0.6);
+						SetNodeUsing("TIP_SHOW", true);
+					}
+				}
+			}
+		break;
+	}
+}
+
+void MouseEffect()
+{
+	string sNode = GetEventData();
+	int isEffect = GetEventData();
+	if(!IsStrLeft(sNode, "B_HeroDice"))
+		return;
+	
+	int x = 0;
+	int x1, y1, x2, y2;
+	GetNodePosition("B_HeroDice1", &x1, &y1, &x2, &y2);
+	x1 = x1 - 20;
+	y1 = y1 + 10;
+	int iDice = sti(strright(sNode, 1)) - 1;
+	x = x1 + iDice * 80;
+	int y = y1 + scy;
+	if(iDice >= 0 && iDice <= 4)
+	{
+		bEffect[iDice] = (isEffect != 0);
+		if(bEffect[0] || bEffect[1] || bEffect[2] || bEffect[3] || bEffect[4])
+			SetNodeUsing("TIP_REROLL", bTip[iDice]);
+		else
+			SetNodeUsing("TIP_REROLL", false);
+	}
+	else
+		SetNodeUsing("TIP_REROLL", false);
+	if(isEffect != 0)
+		SetNodePosition("TIP_REROLL", x, y, x + scx + 20, y + 50);
 }

@@ -1897,7 +1897,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SpaOfficer_9":
-			dialog.text = "Kapitan "+GetFullName(pchar)+"! Uratowałeś mi życie i przywróciłeś mnie do życia. Rozumiem, jak trudno było podjąć takie ryzyko – nigdy bym się na to nie odważył. Jestem ci to winien, senor. Daję ci słowo, że nigdy nikomu nie opowiem o okolicznościach tej nieszczęsnej bitwy. Kiedy wrócisz do Starego Świata, koniecznie mnie odszukaj; zawsze będziesz mile widziany w naszej rodzinnej posiadłości w Madrycie. A teraz weź to…";
+			dialog.text = "Kapitan "+GetFullName(pchar)+"! Uratowałeś mi życie i przywróciłeś mnie do życia. Rozumiem, jak trudno było podjąć takie ryzyko – nigdy bym się na to nie odważył. Jestem ci to winien, senor. Daję ci słowo, że nigdy nikomu nie opowiem o okolicznościach tej nieszczęsnej bitwy. Kiedy wrócisz do Starego Świata, koniecznie mnie odszukaj; zawsze będziesz mile widziany w naszej rodzinnej posiadłości w Madrycie. A teraz weź to...";
 			link.l1 = "Kawałek mapy?";
 			link.l1.go = "SpaOfficer_10";
 		break;

@@ -286,7 +286,7 @@ void TBP_BetsiBackToWork(string qName)
 	
 	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
 	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
-	if (sti(pchar.questTemp.MiniEvents) > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
+	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }
 
 void TBP_BetsiBackToWork_2(string qName)
@@ -360,10 +360,12 @@ void TBP_Betsi_sex_6(string qName)
 	sld.dialog.currentnode = "BetsiPrice_sex_2";
 	sld.SpecialRole = "fgirl";
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
-	
+
+	ResetSound();
 	SetLaunchFrameFormParam("", "", 0, 15);
 	SetLaunchFrameFormPic("loading\inside\censored1.tga");
-	PlayStereoSound("sex\sex"+(rand(9)+1)+".wav");
+	if(bSFW) PlayStereoSound("sex\sex_sfw.wav");
+	else PlayStereoSound("sex\sex" + (rand(14) + 1) + ".wav");
 	LaunchFrameForm();
 	WaitDate("", 0, 0, 0, 3, 10); //крутим время
 	RecalculateJumpTable();

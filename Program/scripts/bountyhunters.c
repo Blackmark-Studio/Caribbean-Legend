@@ -21,11 +21,7 @@ void SeaHunterCheck(int iNation)
     if (iTemp != 0)
     {
         string sMapShip = Nations[iNation].worldMapShip + "_";
-        int iShips[4];
-        iShips[0] = 0;
-        iShips[1] = 0;
-        iShips[2] = 0;
-        iShips[3] = 0;
+        int iShips[4] = {0, 0, 0, 0};
 
         if(iTemp == 1) {
             sMapShip += "sloop";
@@ -113,7 +109,7 @@ void SetShipHunter(ref Hunter)
     else
     {
         iTemp = sti(Hunter.GenShip.Class);
-        ShipsHunter = WME_GetShipTypeExt(iTemp, iTemp, "War", Hunter.GenShip.Spec, sti(Hunter.nation), false);
+        ShipsHunter = WME_GetShipTypeExt(iTemp, iTemp, Hunter.GenShip.Spec, sti(Hunter.nation), false);
         if(ShipsHunter == INVALID_SHIP_TYPE) goto ReGen;
     }
 
@@ -286,13 +282,7 @@ void FireBrigadeCheck(int iNation)
         Group_DeleteGroup(sGroup);
         Group_FindOrCreateGroup(sGroup);
 
-        int iShips[6];
-        iShips[0] = 0;
-        iShips[1] = 0;
-        iShips[2] = 0;
-        iShips[3] = 0;
-        iShips[4] = 0;
-        iShips[5] = 0;
+        int iShips[6] = {0, 0, 0, 0, 0, 0};
 
         if(iNation == ENGLAND) {
             iShips[0] = SHIP_HIMERA;

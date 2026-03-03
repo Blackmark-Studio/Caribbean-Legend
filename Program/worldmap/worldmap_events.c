@@ -315,13 +315,8 @@ void wdmEnterSeaQuest(string _chrId)
 #event_handler("WorldMap_GetWindParameters", "wdmGetWindParameters");
 void wdmGetWindParameters()
 {
-	float WindForce = GetEventData();
-	float WindAngle = GetEventData();
-	
-	pchar.WorldMap.WindForce = WindForce;
-	pchar.WorldMap.WindAngle = WindAngle;
-	
-	//trace("WorldMap.WindAngle " + WindAngle + " worldMap.playerShipAY " + worldMap.playerShipAY);
+	PChar.WorldMap.WindForce = GetEventData();
+	PChar.WorldMap.WindAngle = GetEventData();
 }
 
 // belamour модель корабля главного героя на глобальной карте

@@ -1,0 +1,312 @@
+info
+{
+SLiB eklentisi için evrensel kahraman oluşturucu  
+    Script yazarı: ALexusB 09.10.04  
+    Dosya yolu: \RESOURCE\INI\TEXTS\RUSSIAN\HeroDescribe.txt  
+    
+    sürüm 02.07.06
+
+    hero_qty - kahraman sayısı
+    ps_hero_qty - sahte kahraman sayısı (oyunda görev karakteri olarak karşılaşılabilir, PGG'de sadece erkek karakterler alınır)
+    heroName_X        - kahramanın adı
+    heroLastname_X    - kahramanın soyadı
+    heroNameGen_ ve heroLastnameGen_ - tamlayan hali, heroLastnameDat_ - yönelme hali
+    heroFace_X        - portre numarası
+    heroModel_X       - modellerin virgülle ayrılmış listesi, boşluk olmadan; tam listeden az olabilir, o zaman ilki alınır
+            (zırhsız, hafif, orta, havalı, altın, kıyafet_1, kıyafet_2, kıyafet_3)
+    heroType_X        - kahraman tipi (başlangıç özelliklerini etkiler)
+        sadece şu değerler: Corsair, Merchant, Adventurer
+veya (Rusça sürüm için)
+Korsan,
+Tüccar,
+Maceracı
+    heroNation_X      - kahramanın başlangıç ulusu (tarafsız ilişkiler)
+        sadece şu değerler: ENGLAND, FRANCE, SPAIN, HOLLAND
+            veya (Rusça sürüm için)
+İngiltere
+            Fransa
+            İspanya
+            Hollanda
+    sex_X             - cinsiyet (man, woman, skeleton)
+    animation_X       - animasyon (man, woman, towngirl)
+    hero_X            - kahramanın kısa biyografisi (metin alanına sığacak şekilde 5-7 satırı geçmesin)
+    X - listedeki kahramanın sıra numarası
+
+    Nerede ne var:
+    Portre dokuları \RESOURCE\Textures\INTERFACES\PORTRAITS  (64, 128, 256)
+    Skinler         \RESOURCE\Textures\Characters
+    Modeller        \RESOURCE\MODELS\Characters
+    Kafalar         \RESOURCE\MODELS\Heads
+    Kafa animasyonu \RESOURCE\animation\Heads ve \RESOURCE\animation\Heads\AN
+
+    Düzenlemeden önce orijinal dosyayı mutlaka yedekleyin. Aksi halde güncellemeler yüklenmeyebilir.
+    Kurulumdan önce dosyayı eski yerine koyun, güncellemeyi yükleyin. Ardından kahraman(lar)ınızı tekrar ayarlayın.
+
+    _______________
+               Sizin için, ALexusB
+}
+Merchant {Karayip takımadalarının korsanlar, kaparlar ve her türden haydutlarla dolu sularında ticaret yapmaya cesaret edenler, en yüksek kazancı elde etmek için adalardaki fiyatları takip etmekle kalmayıp, bu kazancı koruyabilmek için kılıcını da sağlam tutmayı öğrenmek zorunda kalacak.}
+Corsair {Korsan – haydut mu, romantik mi? Bu, ana karakterinizi nasıl şekillendireceğinize bağlı. Ama korsan olmak için vazgeçilmez bazı nitelikler var: korkusuzluk, azim ve hızlı karar verme. Cesaretinizi gösterin.}
+Adventurer {Macera, özgür bir maceraperestin gerçek yaşamıdır. Üstelik peşinden koşarken güzel kazançlar da elde ediliyorsa, neden bundan tam anlamıyla faydalanmayasın?}
+hero_qty {5}
+ps_hero_qty {20}
+heroName_1 {Charles}
+heroNameGen_1 {Charles}
+heroNameDat_1 {Charles}
+heroLastname_1 {de Maure}
+heroLastnameGen_1 {de Maure}
+heroLastNameDat_1 {de Maure}
+heroFace_1 {201}
+heroModel_1 {Sharle_1,Sharle_2,Sharle_3,Sharle_4,Sharle_5,protocusto,Sharle_6,Sharle_8,Sharle_7,Sharle_9,Sharle_1,Sharle_11,Sharle_12,Sharle_13,Sharle_14}
+heroType_1 {Korsan}
+heroNation_1 {Fransa}
+sex_1 {adam}
+animation_1 {adam}
+hero_1 {Fransız bir soylunun oğlu, kaygısız bir sanatçı ve nam salmış bir çapkın olarak, kayıp kardeşini bulmak için Karayiplere gelir. Fakat bu yolculuk, aile arayışından fazlası olacak; burada aldatma ve tehlikeyle yüzleşecek, bilgi ve aşkın peşinden gidecek ve sonunda kaderinin önündeki engellerle karşı karşıya kalacak.}
+heroName_2 {Diego}
+heroLastname_2 {de Montoya}
+heroNameGen_2 {Diego}
+heroLastnameGen_2 {de Montoya}
+heroNameDat_2 {Diego}
+heroLastNameDat_2 {de Montoya}
+heroFace_2 {203}
+heroModel_2 {Diego_1,Diego_2,Diego_3,Diego_4,Diego_5,protocusto,Diego_6,Diego_8,Diego_1,Diego_9,Diego_1,Diego_11,Diego_12,Diego_13,Diego_14}
+heroType_2 {Maceracı}
+heroNation_2 {İspanya}
+sex_2 {adam}
+animation_2 {adam}
+hero_2 {Uzak Aragon’dan bir paralı asker; aşırı özgüveninin kurbanı olup Madrid’in gece sokaklarında ölümden kıl payı kurtuldu. Yeni Dünya’da, baron unvanını kazanmak ve sonunda kendi hayatının kontrolünü ele almak için ikinci bir şans bulacak.}
+heroName_3 {William}
+heroLastname_3 {Paterson}
+heroNameGen_3 {William}
+heroLastnameGen_3 {Paterson}
+heroNameDat_3 {William}
+heroLastNameDat_3 {Paterson}
+heroFace_3 {202}
+heroModel_3 {Willy_1,Willy_2,Willy_3,Willy_4,Willy_5,protocusto,Willy_6,Willy_8,Willy_1,Willy_9,Willy_1,Willy_11,Willy_12,Willy_13,Willy_14}
+heroType_3 {Tüccar}
+heroNation_3 {İngiltere}
+sex_3 {man}
+animation_3 {man}
+hero_3 {Bu genç soylunun, ulusun ve kendi cüzdanının yararına adil ticaret hakkındaki asil niyetleri, acımasız bir gerçekliğe çarparak paramparça oldu. Kaper mektubu almak ve refaha giden yolu toplar ve kılıçlarla açmak zorunda kaldı; Eski Dünya'nın gösterişli tavırlarını ise geride bıraktı...}
+heroName_4 {Helen}
+heroLastname_4 {McArthur}
+heroNameGen_4 {Helen}
+heroLastnameGen_4 {McArthur}
+heroNameDat_4 {Helen}
+heroLastNameDat_4 {McArthur}
+heroFace_4 {250}
+heroModel_4 {Rumba}
+heroType_4 {Korsan}
+heroNation_4 {Sahil Kardeşliği}
+sex_4 {woman}
+animation_4 {rumba}
+hero_4 {Genç bir korsan, Orman Şeytanı'nın - Kıyı Kardeşliği Baronu'nun - gözdesi. Ancak Baron, onu gerçek korsanların acımasız dünyasından ve işleyebilecekleri vahşetlerden korur. Helen için korsanlık; romantizm, ufak çaplı kaçakçılık, özgürlük... ve sevgili savaş şonerinin, Rainbow'un güvertesidir.}
+heroName_5 {Jessica}
+heroLastname_5 {Bradford}
+heroNameGen_5 {Jessica}
+heroLastnameGen_5 {Bradford}
+heroNameDat_5 {Jessica}
+heroLastNameDat_5 {Bradford}
+heroFace_5 {244}
+heroModel_5 {jessika}
+heroType_5 {Korsan}
+heroNation_5 {İngiltere}
+sex_5 {kadın}
+animation_5 {Jessika}
+hero_5 {Belthrope’un ihanetinden sonra, bir daha asla erkeklere boyun eğmeyeceğine ve korsan filosunun başarılı bir kaptanı olacağına yemin etti. Kabul etmek gerekir ki bunda oldukça başarılı; birçok ülkenin hükümeti onun güzel başına ödül koymuş durumda.}
+heroName_6 {İngasio}
+heroLastname_6 {Marko}
+heroNameGen_6 {İngasio}
+heroLastnameGen_6 {Marko}
+heroNameDat_6 {İngasio}
+heroLastNameDat_6 {Marko}
+heroFace_6 {212}
+heroModel_6 {Chard2}
+heroType_6 {Maceracı}
+heroNation_6 {İspanya}
+sex_6 {adam}
+animation_6 {adam}
+hero_6 {PGG}
+heroName_7 {Horacio}
+heroLastname_7 {Hornblower}
+heroNameGen_7 {Horacio}
+heroLastnameGen_7 {Hornblower}
+heroNameDat_7 {Horacio}
+heroLastNameDat_7 {Hornblower’a}
+heroFace_7 {220}
+heroModel_7 {Delikanlı}
+heroType_7 {Maceraperest}
+heroNation_7 {İngiltere}
+sex_7 {adam}
+animation_7 {adam}
+hero_7 {PGG}
+heroName_8 {John}
+heroLastname_8 {İsterling}
+heroNameGen_8 {John'a}
+heroLastnameGen_8 {İsterlinga}
+heroNameDat_8 {John’a}
+heroLastNameDat_8 {Esterling'e}
+heroFace_8 {216}
+heroModel_8 {Isterling}
+heroType_8 {Maceracı}
+heroNation_8 {İngiltere}
+sex_8 {adam}
+animation_8 {adam}
+hero_8 {PGG}
+heroName_9 {Sanchos}
+heroLastname_9 {Esteban}
+heroNameGen_9 {Sanchosa}
+heroLastnameGen_9 {Estebana}
+heroNameDat_9 {Sanchosu}
+heroLastnameDat_9 {Estebanu}
+heroFace_9 {30}
+heroModel_9 {officer_13}
+heroType_9 {Maceracı}
+heroNation_9 {İspanya}
+sex_9 {adam}
+animation_9 {adam}
+hero_9 {PGG}
+heroName_10 {Kerk}
+heroLastname_10 {Zander}
+heroNameGen_10 {Kerka}
+heroLastnameGen_10 {Zandera}
+heroNameDat_10 {Kerkou}
+heroLastnameDat_10 {Zanderu}
+heroFace_10 {31}
+heroModel_10 {officer_14}
+heroType_10 {Maceracı}
+heroNation_10 {Hollanda}
+sex_10 {adam}
+animation_10 {adam}
+hero_10 {PGG}
+heroName_11 {Alfonso}
+heroLastname_11 {Salvatore}
+heroNameGen_11 {Alfonso}
+heroLastnameGen_11 {Salvatore}
+heroNameDat_11 {Alfonso}
+heroLastnameDat_11 {Salvatore}
+heroFace_11 {32}
+heroModel_11 {officer_15}
+heroType_11 {Maceracı}
+heroNation_11 {İspanya}
+sex_11 {adam}
+animation_11 {adam}
+hero_11 {PGG}
+heroName_12 {Delvin}
+heroNameGen_12 {Delvina}
+heroNameDat_12 {Delvin'e}
+heroLastname_12 {Blaze}
+heroLastnameGen_12 {Bleyza}
+heroLastNameDat_12 {Blaze'ye}
+heroFace_12 {1}
+heroModel_12 {Devlin}
+heroType_12 {Tüccar}
+heroNation_12 {Hollanda}
+sex_12 {adam}
+animation_12 {adam}
+hero_12 {PGG}
+heroName_13 {John}
+heroLastname_13 {Silver}
+heroNameGen_13 {John'a}
+heroLastnameGen_13 {Silyvera}
+heroNameDat_13 {John’a}
+heroLastNameDat_13 {Silver'a}
+heroFace_13 {22}
+heroModel_13 {officer_5}
+heroType_13 {Korsan}
+heroNation_13 {İngiltere}
+sex_13 {adam}
+animation_13 {adam}
+hero_13 {PGG}
+heroName_14 {Fransisk}
+heroLastname_14 {Dubuois}
+heroNameGen_14 {Fransiska}
+heroLastnameGen_14 {Dubuois}
+heroNameDat_14 {Fransisku}
+heroLastNameDat_14 {Dubuа}
+heroFace_14 {24}
+heroModel_14 {officer_7}
+heroType_14 {Maceracı}
+heroNation_14 {Fransa}
+sex_14 {adam}
+animation_14 {adam}
+hero_14 {PGG}
+heroName_15 {Arthur}
+heroLastname_15 {Cornel}
+heroNameGen_15 {Artura}
+heroLastnameGen_15 {Cornela}
+heroNameDat_15 {Artur'a}
+heroLastNameDat_15 {Cornelu}
+heroFace_15 {25}
+heroModel_15 {officer_8}
+heroType_15 {Maceracı}
+heroNation_15 {İngiltere}
+sex_15 {adam}
+animation_15 {adam}
+hero_15 {PGG}
+heroName_16 {Mark}
+heroLastname_16 {Vanderborg}
+heroNameGen_16 {Marka}
+heroLastnameGen_16 {Vanderborga}
+heroNameDat_16 {Marku}
+heroLastNameDat_16 {Vanderborg'a}
+heroFace_16 {27}
+heroModel_16 {officer_10}
+heroType_16 {Maceracı}
+heroNation_16 {Hollanda}
+sex_16 {adam}
+animation_16 {adam}
+hero_16 {PGG}
+heroName_17 {Cecil}
+heroLastname_17 {Ormancı}
+heroNameGen_17 {Sesila}
+heroLastnameGen_17 {Forrester}
+heroNameDat_17 {Cecil'e}
+heroLastNameDat_17 {Forrester'a}
+heroFace_17 {28}
+heroModel_17 {officer_11}
+heroType_17 {Maceracı}
+heroNation_17 {İngiltere}
+sex_17 {adam}
+animation_17 {adam}
+hero_17 {PGG}
+heroName_18 {Jose}
+heroLastname_18 {Dasko}
+heroNameGen_18 {Jose}
+heroLastnameGen_18 {Dasko}
+heroNameDat_18 {Jose}
+heroLastNameDat_18 {Dasko}
+heroFace_18 {26}
+heroModel_18 {officer_9}
+heroType_18 {Maceracı}
+heroNation_18 {İspanya}
+sex_18 {adam}
+animation_18 {adam}
+hero_18 {PGG}
+heroName_19 {Yohan}
+heroLastname_19 {Cüretkar}
+heroNameGen_19 {Yohana}
+heroLastnameGen_19 {Daringa}
+heroNameDat_19 {Yohan’a}
+heroLastNameDat_19 {Daringu}
+heroFace_19 {213}
+heroModel_19 {[ERROR: RateLimitError]}
+heroType_19 {Macera Avcısı}
+heroNation_19 {Hollanda}
+sex_19 {adam}
+animation_19 {adam}
+hero_19 {PGG}
+heroName_20 {Michael}
+heroLastname_20 {Chard}
+heroNameGen_20 {Micheal}
+heroLastnameGen_20 {Çarda}
+heroNameDat_20 {Michael’a}
+heroLastNameDat_20 {Chardu}
+heroFace_20 {211}
+heroModel_20 {Chard}
+heroType_20 {Maceracı}
+heroNation_20 {İngiltere}
+sex_20 {adam}
+animation_20 {adam}
+hero_20 {PGG}

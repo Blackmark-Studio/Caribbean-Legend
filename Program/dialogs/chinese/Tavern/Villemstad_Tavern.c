@@ -211,10 +211,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
 		
 		case "TBP_Tavern3_21_1":
-			dialog.text = "你救了我一命, 船长! 我本来已经不抱希望能再见到她了…… 到底发生了什么? 她真的想逃走? 我不敢亲口问她。";
+			dialog.text = "你救了我一命, 船长! 我本来已经不抱希望能再见到她了……  到底发生了什么? 她真的想逃走? 我不敢亲口问她。";
 			link.l1 = "这么说吧, 她得处理一些过去的麻烦事。 不过看起来已经解决了, 她很快就能恢复工作了。";
 			link.l1.go = "TBP_Tavern3_22_leadership_1";
-			link.l2 = "这么说吧, 她只是想暂时逃离你那张无聊的脸罢了。 哈哈! 别这么板着脸, 我是开玩笑的。 每位女士都该有点小秘密……";
+			link.l2 = "这么说吧, 她只是想暂时逃离你那张无聊的脸罢了。 哈哈! 别这么板着脸, 我是开玩笑的。 每位女士都该有点小秘密…… ";
 			link.l2.go = "TBP_Tavern3_22_fortune";
 			DelLandQuestMark(npchar);
 		break;

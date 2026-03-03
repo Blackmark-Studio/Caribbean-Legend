@@ -45,7 +45,7 @@ void AISeaGoods_ShipDead()
 		if (rand(100) > 95) { continue; }
 
 		int iSwimQuantity = 0; 
-		iSwimQuantity = MakeInt(1 + iQuantity / 3 + rand(MakeInt(iQuantity / 2)));
+		iSwimQuantity = MakeInt(iQuantity * 0.8 + rand(MakeInt(iQuantity * 0.2)));
 		
 		float fTime = stf(rGood.Swim.Time);
 		string sModel = rGood.Swim.Model;
@@ -243,11 +243,11 @@ bool AISeaGoods_ShipEatGood()
 		return false;
 	}
 
-	string sGoodName = LanguageConvertString(iSeaSectionLang, "seg_" + sGood);
+	string sGoodName = GetGoodsNameSeaSection(rGood);
 
 	if (iMaxGoodAllow == 0)
 	{
-		string sShipCantGotGood = LanguageConvertString(iSeaSectionLang, "Ship_cant_got_good");
+		string sShipCantGotGood = GetSimpleSeaSectionKey("Ship_cant_got_good");
 		Event(PARSE_STRING, "asls", &oRes, sShipCantGotGood, 1, sGoodName);
 		Log_SetStringToLog(oRes.Str);
 		return false;
@@ -265,7 +265,7 @@ bool AISeaGoods_ShipEatGood()
 		//notification("+ "+iQuantity, sGood);
 		notification(GetGoodName(rGood) + " + "+iQuantity, sGood);
 		/* string sGoodQuantity = iQuantity * iGoodWeight;
-		string sShipGotGood = LanguageConvertString(iSeaSectionLang, "Ship_got_good");
+		string sShipGotGood = GetSimpleSeaSectionKey("Ship_got_good");
 		Event(PARSE_STRING, "aslss", &oRes, sShipGotGood, 2, sGoodQuantity, sGoodName);
 		Log_SetStringToLog(oRes.Str); */
 	}

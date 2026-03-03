@@ -14,7 +14,7 @@ bool GrimHatSecondary(ref chr)
 // Оберег Мария
 bool TalismanMaria(ref chr)
 {
-	if (!IsCharacterEquippedArtefact(chr, "knife_02")) return false;
+	if (!IsEquipCharacterByArtefact(chr, "knife_02")) return false;
 	if (!PercentChance(12)) return false;
 
 	notification(StringFromKey("LAi_fightparams_1"), "None");
@@ -24,7 +24,7 @@ bool TalismanMaria(ref chr)
 // Пороховой тестер увеличивает урон пуль/картечи 
 void GunpowderTester(ref chr, ref damageMtp, ref ammo)
 {
-	if (!IsCharacterEquippedArtefact(chr, "indian_2")) return;
+	if (!IsEquipCharacterByArtefact(chr, "indian_2")) return;
 	if (HasDescriptor(ammo, "GrapeAmmo") || HasDescriptor(ammo, "BulletAmmo")) damageMtp += 0.1;
 	if (HasDescriptor(ammo, "EmpoweredAmmo") || HasDescriptor(ammo, "PiercingAmmo")) damageMtp += 0.05;
 }
@@ -94,5 +94,20 @@ string GetYorickLoc(string prefix)
 	object nullObj;
 	string postfix = "InSlot";
 	if (GetCharacterFreeItem(pchar, "talisman19")) postfix = "InInventory";
-	return DLG_Convert("itm_stat" + prefix + "_talisman19_" + postfix, "ItemsStats.txt", &nullObj);
+	return GetSimpleItemStatKey("itm_stat" + prefix + "_talisman19_" + postfix);
+}
+
+// Висельник увеличивает урон/энергию
+void Hungman(ref attacker, ref mtp)
+{
+	if (GetCharacterEquipByGroup(attacker, BLADE_ITEM_TYPE) != "blade_SP_3") return;
+	mtp += GetHungmanBonus(attacker, "damage");
+}
+
+float GetHungmanBonus(ref attacker, string type)
+{
+	float missingHpPercents = (1.0 - LAi_GetCharacterRelHP(attacker)) * 50;
+
+	if (type == "damage") return 0.015 * missingHpPercents;
+	return 0.0175 * missingHpPercents;
 }

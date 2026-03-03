@@ -2,7 +2,7 @@
 // здесь и далее ник boal - это разработческий ник ALexusB
 
 #define VERSION_NUMBER1       "Caribbean Legend "
-#define VERSION_NUMBER2       "ver. 1.6.0 (26.12.25)"
+#define VERSION_NUMBER2       "ver. 1.7.0 (02.03.26)"
 #define VERSION_NUMBER3       "BlackMark.bz"
 
 #define VERSION_NUM      150  // текущий номер
@@ -65,7 +65,7 @@ bool bDrawBars = true;
 // отправление полученных ачивок в стим; для внутренних тестов устанавливать в false !!!
 bool bSteamAchievements	= true;
 // дополнительный контент, для внутренних тестов ставим в true
-bool bAddonContent = true;
+bool bAddonContent = false; // bAddonContent = GetDLCenabled(...);
 // belamour альтернативный модификатор 20.07.2021 
 bool bAltPressed = false; 
 // belamour режим казуала 22.09.2021
@@ -78,6 +78,8 @@ bool SandBoxMode = false;
 bool bGlobalTutor = false;
 //belamour не обновлять интерфейсы
 bool DontRefreshBLI = false;
+// безопасный режим
+bool bSFW = false;
 // belamour переспектива наземной камеры
 //int iLocCamPersp = 1;
 // belamour переспектива морской камеры
@@ -177,5 +179,4 @@ int iFortNation, iFortCommander;
 int ItemsForLocators_start, ItemsForLocators_end;
 
 GetEngineVersion();
-bAddonContent = GetDLCenabled();
 /////////////////////////////

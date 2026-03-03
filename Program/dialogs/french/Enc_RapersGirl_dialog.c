@@ -152,7 +152,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_12":
-			dialog.text = "Je ne peux toujours pas me ressaisir. Pourriez-vous s'il vous plaît apporter "+GetSexPhrase("une dame","moi")+" à l'établissement de "+XI_ConvertString("Colonie"+pchar.GenQuest.EncGirl.city)+"? Vous savez, maintenant il me semble voir des violeurs derrière chaque buisson.";
+			dialog.text = "Je ne peux toujours pas me ressaisir. Pourriez-vous s'il vous plaît apporter "+GetSexPhrase("une dame","moi")+" à l'établissement de "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+"? Vous savez, maintenant il me semble voir des violeurs derrière chaque buisson.";
 			link.l1 = RandPhraseSimple("Ne t'inquiète pas tant, vraiment... D'accord, allons-y.","Tu es un tel lâche, n'est-ce pas? D'accord, je t'y emmènerai.");
 			link.l1.go = "Node_121Next";
 			link.l2 = "Je suis désolé, mon chéri, mais je n'ai tout simplement pas de temps, je suis trop occupé.";
@@ -160,7 +160,7 @@ void ProcessDialogEvent()
 		break;
 						
 		case "Node_22":
-			dialog.text = "Je pensais que vous alliez simplement les effrayer ! Maintenant, vous devez m'emmener à la taverne dans la colonie de "+XI_ConvertString("Colonie"+pchar.GenQuest.EncGirl.city)+", je n'ai personne d'autre que vous à qui je pourrais demander de l'aide.";
+			dialog.text = "Je pensais que vous alliez simplement les effrayer ! Maintenant, vous devez m'emmener à la taverne dans la colonie de "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+", je n'ai personne d'autre que vous à qui je pourrais demander de l'aide.";
 			link.l1 = "Oh, zut! D'accord, allons-y. Juste ne reste pas en arrière.";
 			link.l1.go = "Node_122Next";
 			link.l2 = "Non, c'est tout, "+GetSexPhrase("beauté","cher")+"! J'en ai eu assez de surprises pour aujourd'hui. Cherchez quelqu'un d'autre pour vous aider.";
@@ -177,7 +177,7 @@ void ProcessDialogEvent()
 		
 		case "Node_32":
 			pchar.GenQuest.EncGirl.sLoverId = GenerateRandomName(sti(npchar.nation), "man"); 
-			dialog.text = "Son nom est "+pchar.GenQuest.EncGirl.sLoverId+", c'est un nouveau venu. Pour l'instant, il séjourne à la colonie de "+XI_ConvertString("Colonie"+pchar.GenQuest.EncGirl.city)+", a essayé de trouver un travail là-bas, mais ce sont des temps difficiles. Tout le monde parle de crise... Et maintenant, de toute façon, je ne peux plus rentrer chez moi.";
+			dialog.text = "Son nom est "+pchar.GenQuest.EncGirl.sLoverId+", c'est un nouveau venu. Pour l'instant, il séjourne à la colonie de "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+", a essayé de trouver un travail là-bas, mais ce sont des temps difficiles. Tout le monde parle de crise... Et maintenant, de toute façon, je ne peux plus rentrer chez moi.";
 			link.l1 = "Une crise? Ha... Pour un vrai pirate, une crise c'est quand il y a une caravane commerciale à l'horizon, mais pas de vent pour gonfler les voiles...";
 			link.l1.go = "Node_12Next";
 		break;
@@ -408,14 +408,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_132_9":
-			dialog.text = "Vous? Et iriez-vous? Mais alors, vous devrez me ramener ici, à l'établissement de "+XI_ConvertString("Colonie"+pchar.GenQuest.EncGirl.city)+", d'accord?";
+			dialog.text = "Vous? Et iriez-vous? Mais alors, vous devrez me ramener ici, à l'établissement de "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+", d'accord?";
 			link.l1 = "D'accord, je te donne ma parole. Montre-moi juste le chemin.";
 			link.l1.go = "Node_132_10";
 		break;
 		
 		case "Node_132_10":
 			EncGirl_GenQuest_GetChestPlaceName();
-			dialog.text = "Le trésor est caché dans la grotte sur "+XI_ConvertString(pchar.GenQuest.EncGirl.islandId+"Acc")+", nous devons accoster à "+XI_ConvertString(pchar.GenQuest.EncGirl.shoreId+"Gén")+", l'endroit où je me montrerai... Mais n'oublie pas, tu n'auras que la moitié!";
+			dialog.text = "Le trésor est caché dans la grotte sur "+XI_ConvertString(pchar.GenQuest.EncGirl.islandId+"Acc")+", nous devons accoster à "+XI_ConvertString(pchar.GenQuest.EncGirl.shoreId+"Gen")+", l'endroit où je me montrerai... Mais n'oublie pas, tu n'auras que la moitié!";
 			link.l1 = "D'accord, je ne te tromperai pas, je te le promets. Suis-moi et ne reste pas en arrière.";
 			link.l1.go = "Node_132_11";
 		break;
@@ -562,7 +562,7 @@ void ProcessDialogEvent()
 		
 		case "Node_133":
 			dialog.text = "Mais que puis-je faire? Je ne peux pas ignorer les ordres de ma maîtresse, elle me écorchera vif.";
-			link.l1 = "Attends-moi dans l'église de la colonie de "+XI_ConvertString("Colonie"+pchar.GenQuest.EncGirl.city)+", je vous apporterai les perles pour faire un nouveau collier.";
+			link.l1 = "Attends-moi dans l'église de la colonie de "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+", je vous apporterai les perles pour faire un nouveau collier.";
 			link.l1.go = "Node_133_1";
 			if(sti(pchar.money) >= 15000)
 			{
@@ -710,7 +710,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Bien sûr que non! Mais ils ne me laisseront pas tranquille, de toute façon. Pourriez-vous m'amener à la colonie de "+XI_ConvertString("Colonie"+pchar.GenQuest.EncGirl.city)+", s'il vous plaît?";
+				dialog.text = "Bien sûr que non! Mais ils ne me laisseront pas tranquille, de toute façon. Pourriez-vous m'amener à la colonie de "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+", s'il vous plaît?";
 				link.l1 = "Rentrez simplement chez vous, ils ne vous toucheront pas. Ils devraient se rendre à la taverne en ce moment pour gaspiller leur argent facile.";
 				link.l1.go = "Node_200End";
 				link.l2 = RandPhraseSimple("Ne t'inquiète pas tant, vraiment... D'accord, allons-y.","Tu es un tel lâche, n'est-ce pas? D'accord, je t'y amènerai..");
@@ -798,14 +798,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_211":
-			dialog.text = "J'étais tellement agité ! Pourriez-vous s'il vous plaît m'emmener à la taverne dans la colonie de "+XI_ConvertString("Colonie"+pchar.GenQuest.EncGirl.city)+"? Sinon, je crains qu'ils ne me poursuivent de nouveau.";
+			dialog.text = "J'étais tellement agité ! Pourriez-vous s'il vous plaît m'emmener à la taverne dans la colonie de "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+"? Sinon, je crains qu'ils ne me poursuivent de nouveau.";
 			link.l1 = "Peut-être, tu as raison. Allons-y...";
 			link.l1.go = "Node_122Next";
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 		break;
 		
 		case "Node_220":
-			dialog.text = "Oh, capitaine, c'est une longue histoire, et je ne suis pas sûr que vous la trouverez intéressante. Bien que... Je ne le ferai toujours pas sans votre aide maintenant. Pourriez-vous s'il vous plaît m'amener à la taverne dans la colonie de "+XI_ConvertString("Colonie"+pchar.GenQuest.EncGirl.city)+"? J'ai peur qu'ils ne me laissent simplement pas tranquille.";
+			dialog.text = "Oh, capitaine, c'est une longue histoire, et je ne suis pas sûr que vous la trouverez intéressante. Bien que... Je ne le ferai toujours pas sans votre aide maintenant. Pourriez-vous s'il vous plaît m'amener à la taverne dans la colonie de "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+"? J'ai peur qu'ils ne me laissent simplement pas tranquille.";
 			link.l1 = "Désolé, chéri, je n'ai pas de temps pour ça. J'ai des choses à faire.";
 			link.l1.go = "Node_221";
 			link.l2 = "Pourquoi es-tu si secret?";
@@ -836,7 +836,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_224":
-			dialog.text = "Capitaine, vous m'avez promis de m'amener à la taverne dans la colonie de "+XI_ConvertString("Colonie"+pchar.GenQuest.EncGirl.city)+".";
+			dialog.text = "Capitaine, vous m'avez promis de m'amener à la taverne dans la colonie de "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+".";
 			link.l1 = RandPhraseSimple("Je me souviens.","Ne t'inquiète pas, je te verrai là-bas.");
 			link.l1.go = "exit";
 		break;
@@ -972,7 +972,7 @@ void ProcessDialogEvent()
 		
 		case "Node_233":
 			pchar.GenQuest.EncGirl.Parents_City = GetQuestNationsCity(sti(pchar.GenQuest.EncGirl.nation));
-			dialog.text = "Ma famille vit dans la colonie de "+XI_ConvertString("Colonie"+pchar.GenQuest.EncGirl.Parents_City)+". Je suis arrivée ici par hasard, sur le navire, sur lequel mon fiancé m'emmenait chez ses parents, mais il a été capturé par des pirates. Le navire a été emporté, et les passagers ont été débarqués à la baie non loin d'ici. Mon fiancé a été tué lors de l'abordage du navire, et j'étais gravement malade lors de la transition à travers la jungle\nLa maîtresse du bordel local m'a soignée, et quand je me suis remise sur pied, elle a exigé de travailler de l'argent dépensé pour le traitement. J'étais une prostituée mais je ne plaisais pas à la Madame, et alors la maîtresse m'a vendue à des bandits pour gagner au moins un peu d'argent. La suite de l'histoire, vous la connaissez déjà.";
+			dialog.text = "Ma famille vit dans la colonie de "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.Parents_City)+". Je suis arrivée ici par hasard, sur le navire, sur lequel mon fiancé m'emmenait chez ses parents, mais il a été capturé par des pirates. Le navire a été emporté, et les passagers ont été débarqués à la baie non loin d'ici. Mon fiancé a été tué lors de l'abordage du navire, et j'étais gravement malade lors de la transition à travers la jungle\nLa maîtresse du bordel local m'a soignée, et quand je me suis remise sur pied, elle a exigé de travailler de l'argent dépensé pour le traitement. J'étais une prostituée mais je ne plaisais pas à la Madame, et alors la maîtresse m'a vendue à des bandits pour gagner au moins un peu d'argent. La suite de l'histoire, vous la connaissez déjà.";
 			link.l1 = "Alors abandonne et rentre chez toi! Pourquoi te laisses-tu traiter comme un esclave?!";
 			link.l1.go = "Node_234";
 		break;
@@ -1210,7 +1210,7 @@ void ProcessDialogEvent()
 		
 		case "Node_251":
 			pchar.GenQuest.EncGirl.sLoverId = GenerateRandomName(sti(npchar.nation), "man"); 
-			dialog.text = "Non! Non, capitaine, j'aime "+pchar.GenQuest.EncGirl.sLoverId+" et je n'épouserai aucun autre homme ! Et mon père ne veut rien entendre ! Il dit que "+XI_ConvertString("Colonie"+pchar.GenQuest.EncGirl.city)+" n'est qu'un visiteur ici, alors il ne trouvera jamais de travail ici, et il est destiné à mourir dans la pauvreté, et moi avec lui! Et j'irais avec lui jusqu'au bout du monde, juste pour être à ses côtés! Emmenez-moi à lui, je vous en supplie!";
+			dialog.text = "Non! Non, capitaine, j'aime "+pchar.GenQuest.EncGirl.sLoverId+" et je n'épouserai aucun autre homme ! Et mon père ne veut rien entendre ! Il dit que "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+" n'est qu'un visiteur ici, alors il ne trouvera jamais de travail ici, et il est destiné à mourir dans la pauvreté, et moi avec lui! Et j'irais avec lui jusqu'au bout du monde, juste pour être à ses côtés! Emmenez-moi à lui, je vous en supplie!";
 			link.l1 = "D'accord, allons-y. Je suppose que je vais trouver quoi faire de toi...";
 			link.l1.go = "Node_252";
 		break;
@@ -1230,7 +1230,7 @@ void ProcessDialogEvent()
 		
 		case "Node_253":
 			Diag.TempNode = "Node_253";
-			dialog.text = "Capitaine, vous avez promis de m'amener à l'établissement de "+XI_ConvertString("Colonie"+pchar.GenQuest.EncGirl.city)+".";
+			dialog.text = "Capitaine, vous avez promis de m'amener à l'établissement de "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+".";
 			link.l1 = RandPhraseSimple("Je me souviens.","Ne t'inquiète pas, je t'y emmènerai.");
 			link.l1.go = "exit";			
 		break;

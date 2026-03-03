@@ -1,0 +1,312 @@
+info
+{
+SLiB 애드온용 범용 영웅 생성기
+    스크립트 제작: ALexusB 09.10.04
+    파일 경로: \RESOURCE\INI\TEXTS\RUSSIAN\HeroDescribe.txt
+    
+    버전 02.07.06
+
+    hero_qty - 영웅 수
+    ps_hero_qty - 가상 영웅 수 (게임 내 퀘스트 캐릭터로 등장할 수 있으며, PGG에서는 남성 캐릭터만 사용)
+    heroName_Х        - 영웅 이름
+    heroLastname_Х    - 영웅 성
+    heroNameGen_ 및 heroLastnameGen_ - 소유격,   heroLastnameDat_  - 여격
+    heroFace_Х        - 초상화 번호
+    heroModel_Х       - 쉼표로 구분된 모델 목록(공백 없음), 전체 목록보다 적을 수 있으며, 이 경우 첫 번째가 사용됨
+            (무장 없음, 경갑, 중갑, 특수, 금장, 의상_1, 의상_2, 의상_3)
+    heroType_Х        - 영웅 유형 (시작 능력치에 영향)
+        값: Corsair, Merchant, Adventurer
+또는 (러시아어 버전)
+코르세어,
+상인,
+모험가
+    heroNation_Х      - 영웅의 시작 국가 (중립 관계)
+        값: ENGLAND, FRANCE, SPAIN, HOLLAND
+            또는 (러시아어 버전)
+잉글랜드
+            프랑스
+            스페인
+            홀랜드
+    sex_X             - 성별 (man, woman, skeleton)
+    animation_X       - 애니메이션 (man, woman, towngirl)
+    hero_Х            - 영웅의 간단한 소개 (텍스트 필드에 맞게 5~7줄 이내)
+    Х - 영웅 목록의 순번
+    
+    참고:
+    초상화 텍스처: \RESOURCE\Textures\INTERFACES\PORTRAITS  (64, 128, 256)
+    스킨:              \RESOURCE\Textures\Characters
+    모델:             \RESOURCE\MODELS\Characters
+    머리:             \RESOURCE\MODELS\Heads
+    머리 애니메이션:    \RESOURCE\animation\Heads 및 \RESOURCE\animation\Heads\AN
+    
+    편집 전 반드시 원본 파일을 백업하세요. 그렇지 않으면 업데이트가 적용되지 않을 수 있습니다.
+    설치 전 파일을 원위치에 두고, 업데이트를 적용한 후 영웅 설정을 다시 해주세요.
+    
+    _______________
+               ALexusB가 드립니다
+}
+Merchant {카리브 제도의 바다에서 무역에 도전하는 이들은, 각종 사략선과 해적, 그리고 온갖 도적들 사이에서 최고의 이익을 얻기 위해 섬마다 가격을 살피는 것뿐만 아니라, 그 이익을 지키기 위해 검을 단단히 쥐는 법도 배워야 한다.}
+Corsair {코르세어—악당인가, 낭만가인가? 그것은 당신이 주인공을 어떻게 키우느냐에 달려 있습니다. 하지만 두려움 없는 용기, 끈기, 그리고 빠른 결단력 없이는 진정한 코르세어가 될 수 없습니다. 도전하세요.}
+Adventurer {모험이야말로 진정한 자유로운 모험가의 삶입니다. 그리고 그 과정에서 쏠쏠한 이득까지 챙길 수 있다면, 마다할 이유가 있을까요?}
+hero_qty {5}
+ps_hero_qty {20}
+heroName_1 {Charles}
+heroNameGen_1 {Charles}
+heroNameDat_1 {샤를}
+heroLastname_1 {de Maure}
+heroLastnameGen_1 {de Maure}
+heroLastNameDat_1 {de Maure}
+heroFace_1 {201}
+heroModel_1 {Sharle_1,Sharle_2,Sharle_3,Sharle_4,Sharle_5,protocusto,Sharle_6,Sharle_8,Sharle_7,Sharle_9,Sharle_1,Sharle_11,Sharle_12,Sharle_13,Sharle_14}
+heroType_1 {코르사르}
+heroNation_1 {프랑스}
+sex_1 {남자}
+animation_1 {남자}
+hero_1 {프랑스 귀족의 아들이자 자유로운 예술가, 악명 높은 매력가인 그는 실종된 형제를 찾아 카리브 해에 온다. 그러나 이 여정은 단순한 가족 찾기를 넘어 그의 삶을 바꿀 것이다. 이곳에서 그는 속임수와 위험을 마주하고, 지식과 사랑을 좇으며, 마침내 자신의 운명을 가로막는 모든 장애와 맞서게 된다.}
+heroName_2 {Diego}
+heroLastname_2 {de Montoya}
+heroNameGen_2 {Diego}
+heroLastnameGen_2 {de Montoya}
+heroNameDat_2 {Diego}
+heroLastNameDat_2 {de Montoya}
+heroFace_2 {203}
+heroModel_2 {Diego_1,Diego_2,Diego_3,Diego_4,Diego_5,protocusto,Diego_6,Diego_8,Diego_1,Diego_9,Diego_1,Diego_11,Diego_12,Diego_13,Diego_14}
+heroType_2 {모험가}
+heroNation_2 {스페인}
+sex_2 {남자}
+animation_2 {남자}
+hero_2 {먼 아라곤 출신의 용병으로, 지나친 자신감에 휘말려 마드리드의 밤거리에서 죽을 뻔했다. 신세계에서 그는 다시 한 번 남작의 칭호를 얻고 마침내 자신의 삶을 주도할 기회를 얻게 된다.}
+heroName_3 {William}
+heroLastname_3 {패터슨}
+heroNameGen_3 {William}
+heroLastnameGen_3 {Paterson}
+heroNameDat_3 {William}
+heroLastNameDat_3 {Paterson}
+heroFace_3 {202}
+heroModel_3 {Willy_1,Willy_2,Willy_3,Willy_4,Willy_5,protocusto,Willy_6,Willy_8,Willy_1,Willy_9,Willy_1,Willy_11,Willy_12,Willy_13,Willy_14}
+heroType_3 {상인}
+heroNation_3 {잉글랜드}
+sex_3 {man}
+animation_3 {man}
+hero_3 {이 젊은 귀족의 공정 무역과 국가, 그리고 자신의 이익을 위한 고귀한 의지는 냉혹한 현실에 산산이 부서졌다. 그는 결국 사략선 허가장을 손에 쥐고, 구세계의 으스대던 태도는 잊은 채, 대포와 칼로 번영을 쟁취해야 했다...}
+heroName_4 {Helen}
+heroLastname_4 {McArthur}
+heroNameGen_4 {Helen}
+heroLastnameGen_4 {McArthur}
+heroNameDat_4 {Helen}
+heroLastNameDat_4 {McArthur}
+heroFace_4 {250}
+heroModel_4 {Rumba}
+heroType_4 {코르사르}
+heroNation_4 {해안 형제단}
+sex_4 {woman}
+animation_4 {rumba}
+hero_4 {젊은 해적이자 Forest Devil의 수제자, Brethren of the Coast의 남작. 하지만 남작은 그녀가 진짜 해적들의 냉혹한 현실과 그들이 저지를 수 있는 잔혹함을 알지 못하도록 보호한다. Helen에게 해적질이란 로맨스, 소소한 밀수, 자유… 그리고 사랑하는 전투 스쿠너 Rainbow의 갑판이다.}
+heroName_5 {Jessica}
+heroLastname_5 {Bradford}
+heroNameGen_5 {Jessica}
+heroLastnameGen_5 {Bradford}
+heroNameDat_5 {Jessica}
+heroLastNameDat_5 {Bradford}
+heroFace_5 {244}
+heroModel_5 {jessika}
+heroType_5 {코르세어}
+heroNation_5 {잉글랜드}
+sex_5 {여성}
+animation_5 {Jessika}
+hero_5 {벨트롭의 배신 이후, 그녀는 더 이상 남성들에게 양보하지 않고 성공한 해적단의 선장이 되겠다고 맹세했다. 실제로 그녀는 이를 훌륭히 해내고 있으며, 여러 나라 정부가 이미 그녀의 아름다운 머리에 현상금을 걸었다.}
+heroName_6 {이нгасио}
+heroLastname_6 {마르코}
+heroNameGen_6 {이нгасио}
+heroLastnameGen_6 {마르코}
+heroNameDat_6 {이нгасио}
+heroLastNameDat_6 {마르코}
+heroFace_6 {212}
+heroModel_6 {Chard2}
+heroType_6 {모험가}
+heroNation_6 {스페인}
+sex_6 {남자}
+animation_6 {남자}
+hero_6 {PGG}
+heroName_7 {고라시오}
+heroLastname_7 {호른블로워}
+heroNameGen_7 {고라시오}
+heroLastnameGen_7 {Hornblower}
+heroNameDat_7 {고라시오}
+heroLastNameDat_7 {호른블로워에게}
+heroFace_7 {220}
+heroModel_7 {청년}
+heroType_7 {모험가}
+heroNation_7 {잉글랜드}
+sex_7 {남자}
+animation_7 {남자}
+hero_7 {PГГ}
+heroName_8 {존}
+heroLastname_8 {이스터링}
+heroNameGen_8 {조나}
+heroLastnameGen_8 {이스터링가}
+heroNameDat_8 {존에게}
+heroLastNameDat_8 {이스터링에게}
+heroFace_8 {216}
+heroModel_8 {Isterling}
+heroType_8 {모험가}
+heroNation_8 {잉글랜드}
+sex_8 {남자}
+animation_8 {남자}
+hero_8 {PGG}
+heroName_9 {Sanchos}
+heroLastname_9 {에스테반}
+heroNameGen_9 {산초사}
+heroLastnameGen_9 {에스테바나}
+heroNameDat_9 {산초수}
+heroLastnameDat_9 {에스테바누}
+heroFace_9 {30}
+heroModel_9 {officer_13}
+heroType_9 {모험가}
+heroNation_9 {스페인}
+sex_9 {남자}
+animation_9 {남자}
+hero_9 {P.G.G.}
+heroName_10 {Керк}
+heroLastname_10 {Зандер}
+heroNameGen_10 {Керка}
+heroLastnameGen_10 {Зандера}
+heroNameDat_10 {Керку}
+heroLastnameDat_10 {Zanderu}
+heroFace_10 {31}
+heroModel_10 {officer_14}
+heroType_10 {모험가}
+heroNation_10 {네덜란드}
+sex_10 {남자}
+animation_10 {남자}
+hero_10 {P.G.G.}
+heroName_11 {Alfonso}
+heroLastname_11 {살바토레}
+heroNameGen_11 {알폰소}
+heroLastnameGen_11 {살바토레}
+heroNameDat_11 {알폰소}
+heroLastnameDat_11 {살바토레}
+heroFace_11 {32}
+heroModel_11 {officer_15}
+heroType_11 {모험가}
+heroNation_11 {스페인}
+sex_11 {남자}
+animation_11 {남자}
+hero_11 {PGG}
+heroName_12 {델빈}
+heroNameGen_12 {델비나}
+heroNameDat_12 {델비누에게}
+heroLastname_12 {블레이즈}
+heroLastnameGen_12 {블레이즈}
+heroLastNameDat_12 {블레이즈에게}
+heroFace_12 {1}
+heroModel_12 {Devlin}
+heroType_12 {상인}
+heroNation_12 {네덜란드}
+sex_12 {남자}
+animation_12 {남자}
+hero_12 {PГГ}
+heroName_13 {존}
+heroLastname_13 {실버}
+heroNameGen_13 {Джона}
+heroLastnameGen_13 {실베라}
+heroNameDat_13 {존에게}
+heroLastNameDat_13 {실버에게}
+heroFace_13 {22}
+heroModel_13 {officer_5}
+heroType_13 {코르사르}
+heroNation_13 {잉글랜드}
+sex_13 {남자}
+animation_13 {남자}
+hero_13 {PGG}
+heroName_14 {프란치스코}
+heroLastname_14 {듀부아}
+heroNameGen_14 {프란치스카}
+heroLastnameGen_14 {듀부아}
+heroNameDat_14 {프란시스쿠에게}
+heroLastNameDat_14 {듀부아}
+heroFace_14 {24}
+heroModel_14 {officer_7}
+heroType_14 {모험가}
+heroNation_14 {프랑스}
+sex_14 {남자}
+animation_14 {남자}
+hero_14 {PGG}
+heroName_15 {아르투르}
+heroLastname_15 {코르넬}
+heroNameGen_15 {아르투라}
+heroLastnameGen_15 {코르넬라}
+heroNameDat_15 {아르투루에게}
+heroLastNameDat_15 {코르넬루}
+heroFace_15 {25}
+heroModel_15 {officer_8}
+heroType_15 {모험가}
+heroNation_15 {잉글랜드}
+sex_15 {남자}
+animation_15 {남자}
+hero_15 {PGG}
+heroName_16 {마크}
+heroLastname_16 {Vanderborg}
+heroNameGen_16 {마크}
+heroLastnameGen_16 {Vanderborga}
+heroNameDat_16 {마르쿠}
+heroLastNameDat_16 {Vanderborg}
+heroFace_16 {27}
+heroModel_16 {officer_10}
+heroType_16 {모험가}
+heroNation_16 {네덜란드}
+sex_16 {남자}
+animation_16 {남자}
+hero_16 {PGG}
+heroName_17 {세실}
+heroLastname_17 {포레스터}
+heroNameGen_17 {Сесила}
+heroLastnameGen_17 {포레스터라}
+heroNameDat_17 {세실루}
+heroLastNameDat_17 {포레스터에게}
+heroFace_17 {28}
+heroModel_17 {officer_11}
+heroType_17 {모험가}
+heroNation_17 {잉글랜드}
+sex_17 {남자}
+animation_17 {남자}
+hero_17 {PГГ}
+heroName_18 {호세}
+heroLastname_18 {다스코}
+heroNameGen_18 {호세}
+heroLastnameGen_18 {Даско}
+heroNameDat_18 {호세}
+heroLastNameDat_18 {다스코}
+heroFace_18 {26}
+heroModel_18 {officer_9}
+heroType_18 {모험가}
+heroNation_18 {스페인}
+sex_18 {남자}
+animation_18 {남자}
+hero_18 {PГГ}
+heroName_19 {요한}
+heroLastname_19 {대담함}
+heroNameGen_19 {Йохана}
+heroLastnameGen_19 {다링가}
+heroNameDat_19 {요한에게}
+heroLastNameDat_19 {다린구}
+heroFace_19 {213}
+heroModel_19 {Chard3}
+heroType_19 {모험가}
+heroNation_19 {네덜란드}
+sex_19 {남자}
+animation_19 {남자}
+hero_19 {PGG}
+heroName_20 {마이클}
+heroLastname_20 {차드}
+heroNameGen_20 {마이클라}
+heroLastnameGen_20 {차르다}
+heroNameDat_20 {마이클에게}
+heroLastNameDat_20 {차르두}
+heroFace_20 {211}
+heroModel_20 {Chard}
+heroType_20 {모험가}
+heroNation_20 {잉글랜드}
+sex_20 {남자}
+animation_20 {남자}
+hero_20 {PГГ}

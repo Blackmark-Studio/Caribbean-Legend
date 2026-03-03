@@ -1,0 +1,67 @@
+Node0_title {W porcie}
+Node0_a {Wchodzisz do wrogiego portu, mając nadzieję, że nie zostaniesz rozpoznany.}
+Node0_b_a {W porcie panuje ruch — niedawno zawinął tu duży $rand(francuski|hiszpański|holenderski|angielski) statek handlowy. Wszyscy wolni robotnicy zajęci są rozładunkiem.}
+Node0_b_b {W porcie pusto, a na brzegu widać ślady niedawnej bitwy. $rand(Bruk miejskich ulic nosi ślady przypaleń i uderzeń kul armatnich.|Niektóre domy zostały uszkodzone przez bomby, a na ulicach stoją pogrążone w żałobie kobiety.)}
+Node0_b_c {W porcie panuje tłok, pełno tu żołnierzy. Na kotwicy stoi duży okręt wojenny — $rand(galeon|fregata|korweta). Jest $rand(wyraźnie uszkodzony i przechodzi naprawy, z widocznymi śladami niedawnej bitwy|w pełnej gotowości bojowej i przygotowuje się do wypłynięcia).}
+Node0_c_a {Niechętnie podchodzi do ciebie zarządca portu, wyraźnie zmęczony i senny.}
+Node0_c_b {Podchodzi do ciebie sam naczelnik portu, wyraźnie zamierzając poświęcić ci szczególną uwagę. W jego oczach widać $rand(irytację — wyraźnie wykonuje pracę nie na swoim poziomie i wie, że inni to widzą|chciwość — dostrzegł w tobie łatwy zarobek i już wyobraża sobie wieczorną hulankę).}
+Node0_c_c {Zbliżają się do ciebie strażnicy portowi, z bronią w rękach i wyraźnie spięci.}
+Node0_d {Zbierasz siły i przygotowujesz się na popis elokwencji. A może po prostu przebić się do miasta.}
+Node0_b_a_reaction {Udać statek eskortowy}
+Node0_b_a_reaction_log {Udaje ci się podać za statek handlowy należący do konwoju. Dołączasz do rozładunku i teraz zwracasz znacznie mniej uwagi.}
+Node0_b_a_reaction_factor {Statek eskortowy}
+Node0_b_b_reaction {Udać statek sanitarny}
+Node0_b_b_reaction_log {Z powodzeniem podajesz się za statek sanitarny wysłany do opieki nad rannymi. Lekarz to na Karaibach rzadkość, a kilka trafnych słów wystarcza, by ci uwierzyli.}
+Node0_b_b_reaction_factor {Statek sanitarny}
+Node0_b_c_reaction {Udawać tajnego kuriera}
+Node0_b_c_reaction_log {Długo ćwiczyłeś tajemniczą i zagadkową manierę i przekonujesz żołnierzy, że jesteś tajnym agentem.}
+Node0_b_c_reaction_factor {Statek kurierski}
+Node0_c_a_reaction {Zaproponować bez formalności}
+Node0_c_a_reaction_log_0 {Twoje współczucie zostaje uznane za szczere i zyskujesz przychylność zarządcy portu.}
+Node0_c_a_reaction_log_1 {W twoich słowach dostrzegają ironię. Zarządca portu odnosi się do ciebie gorzej.}
+Node0_c_a_reaction_factor {Współczucie}
+Node0_c_b_reaction {Okazać gotowość zapłacenia podwójnego cła}
+Node0_c_b_reaction_log {Z łatwością znajdujesz słaby punkt w skorumpowanym systemie i znacznie zwiększasz swoje szanse niewielkim kosztem. Niestety, zarządca portu nie jest jedynym, kogo dziś trzeba przekonać.}
+Node0_c_b_reaction_factor {Łapówka}
+Node0_c_c_reaction {Wytypować najsłabszego strażnika i wywrzeć na nim presję}
+Node0_c_c_reaction_log_0 {Udaje ci się wytypować łatwy cel wśród strażników i po kilku celnych słowach staje po twojej stronie.}
+Node0_c_c_reaction_log_1 {Wyraźnie wybierasz zły cel i strażnicy stają się jeszcze bardziej agresywni.}
+Node0_c_c_reaction_factor {Słabe ogniwo}
+Node0_a_action {Spróbować przejść}
+Node0_b_action {Przebić się siłą}
+Node0_c_action {Okazać licencję handlową}
+Node0_success {$rand(Udaje ci się uchodzić za statek neutralny i bez problemu wchodzisz do miasta. Lepiej szybko załatwić swoje sprawy, bo podejrzenia mogą się pojawić ponownie.|Byłeś bliski zdemaskowania, ale wygląda na to, że wszystko się udało. Czy pomogły umiejętności, czy boska interwencja – czas pokaże.)}
+Node0_success_action {Świetnie!}
+Node1_a {Nie udaje się uchodzić za sprzymierzeńca i sytuacja zaczyna się zaostrzać. Mimo to jesteś pewien, że wciąż da się ją naprawić — trzeba tylko znaleźć odpowiednie podejście.}
+Node1_b_a {Coś skłoniło miejscowych strażników do przeprowadzenia wzmożonej kontroli. Statek zostaje otoczony.}
+Node1_b_b {Lokalni marynarze zdają się rozpoznać twój statek jako należący do _$playerNationAbl. Wyraźnie zamierzają cię zdemaskować.}
+Node1_b_c {Podczas gdy władze portowe rozpatrywały twoją prośbę, do portu jak na złość wpłynął statek patrolowy. Widząc zwłokę, zażądali przeszukania twojej jednostki.}
+Node1_c_a {Zauważasz, że na rezydencji flaga jest opuszczona — miasto pogrążone jest w żałobie.}
+Node1_c_b {Wśród gapiów dostrzegasz znajomego kapitana, którego kiedyś eskortowałeś na morzu.}
+Node1_c_c {Słyszysz niezwykłe bicie dzwonów — w miejscowym kościele rozpoczyna się uroczyste nabożeństwo.}
+Node1_d {Należy natychmiast podjąć decyzję.}
+Node1_b_a_reaction {Przekonać żołnierzy o cennym ładunku}
+Node1_b_a_reaction_log {Próbujesz przekonać żołnierzy, że na pokładzie znajduje się ważny ładunek. Pod naporem wyliczeń księgowych i skomplikowanych terminów wyraźnie ustępują, a groźba utraty żołdu studzi zapędy wahających się.}
+Node1_b_a_reaction_factor {Ważny ładunek}
+Node1_b_b_reaction {Przekonać marynarzy: na morzu brak narodów}
+Node1_b_b_reaction_log {Próbujesz przekonać marynarzy, że wszyscy jesteście w jednej łodzi. Widząc twoje silne ręce, robocze odciski i twarz pooraną morskim wiatrem, miękną i uznają cię za swojego.}
+Node1_b_b_reaction_factor {Solidarni marynarze}
+Node1_b_c_reaction {Powołać się na prawo morskie}
+Node1_b_c_reaction_log {Próbujesz nie dopuścić żołnierzy z okrętu patrolowego na pokład, powołując się na przepisy prawa morskiego, które wprost zakazują przypadkowych i nieuzasadnionych kontroli statków w porcie. Przywołujesz wszystko, co wiesz o prawie morskim, doprawiając to zmyśleniami, bajdurzeniem i urzędowym żargonem, by wciągnąć patrolowiec w ten wir. Przekleństwa nigdy nie były tak biurokratyczne.}
+Node1_b_c_reaction_factor {Pieniactwo prawne}
+Node1_c_a_reaction {Spróbować odgadnąć powód żałoby}
+Node1_c_a_reaction_log {Próbujesz odgadnąć powód żałoby i mówisz, że przybyłeś właśnie z tego powodu. Nie masz pewności, czy plan się powiódł, ale próba z pewnością nie przeszła niezauważona.}
+Node1_c_a_reaction_factor {Przypadkowa żałoba}
+Node1_c_b_reaction {Zyskać wsparcie znanego kapitana}
+Node1_c_b_reaction_log_0 {Przywołujesz kapitana i prosisz go, by poręczył za ciebie przed strażnikami. Pamięta wasze wspólne przygody i chętnie wstawia się za tobą.}
+Node1_c_b_reaction_log_1 {Przywołujesz kapitana i prosisz go, by poręczył za ciebie przed strażnikami. W ostatniej chwili wahasz się, przypominając sobie, skąd go znasz — razem dokonaliście kilku zuchwałych napadów na pokojowych kupców. Owszem, wstawia się za tobą, ale sam nie cieszy się dobrą opinią w kolonii.}
+Node1_c_b_reaction_factor {Znajomy kapitan}
+Node1_c_c_reaction {Powiedzieć, że przewozisz relikwie kościelne}
+Node1_c_c_reaction_log {Próbujesz przekonać straż, że na pokładzie znajdują się cenne przedmioty kościelne potrzebne na święto — $rand(srebrny kielich|monstrancja do wystawienia Najświętszego Sakramentu|relikwiarz z relikwiami|krzyż ołtarzowy|mitra biskupia|ornaty i stuła z brokatu|świeczniki ołtarzowe|dzwonek ołtarzowy). Ku twojemu zaskoczeniu kolonia rzeczywiście oczekiwała statku z relikwiami kościelnymi, który jest już poważnie spóźniony. Wierzą ci.}
+Node1_c_c_reaction_factor {Sprzęty kościelne}
+Node1_a_action {Spróbować załagodzić sytuację}
+Node1_b_action {Podnieść kotwicę i uciec}
+Node1_success {$rand(Przemykasz do portu, czując na sobie długie spojrzenie straży. Jeszcze sekunda, a wszystko by się posypało, lecz los zdecydował inaczej.|Wchodzisz do portu z ciężkim sercem — twój statek wyraźnie pozostał pod podejrzeniem. Udało się dosłownie w ostatniej chwili, ale lepiej nie zwlekać w mieście.)}
+Node1_success_action {Tym razem jesteśmy bezpieczni}
+Node1_fail {$rand(Straż podnosi alarm — jesteś zdemaskowany. Żołnierze już biegną po nabrzeżu, a do fortu wieść dotrze lada chwila.|Zamieszanie się przeciąga i cierpliwość straży pęka. Cały port jeży się klingami, a do fortu idzie sygnał, by szykować działa.)}
+Node1_fail_action {Uciekajmy!}

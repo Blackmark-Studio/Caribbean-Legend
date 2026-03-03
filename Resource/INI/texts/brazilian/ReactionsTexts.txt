@@ -1,0 +1,21 @@
+NoLootCorpse0 {Os bolsos desse sujeito estão mais vazios que navio fantasma.}
+NoLootCorpse1 {Parece que ele não tinha nada de valor.}
+NoLootCorpse2 {Este aqui não tem nada nos bolsos.}
+NoLootCorpse3 {Será que deixei passar algo? Não, está mesmo vazio.}
+NoLootCorpse4 {Mais um morto sem um tostão no bolso.}
+NoLootCorpse5 {Parece que ele vivia de dinheiro emprestado.}
+NoLootCorpse6 {Nem para o barqueiro este defunto tem como pagar.}
+NoLootCorpse7 {Sem bala extra, sem pólvora. Perdi meu tempo.}
+NoLootCorpse8 {Nem uma moeda nos bolsos, nem na camisa.}
+NoLootCorpse9 {Ele era miserável, não tinha nem uma moeda.}
+NoLootCorpse10 {Por que eu perdi tempo? Este aqui está vazio.}
+NoLootCorpse11 {Os bolsos dele são um vazio sem fim.}
+NoLootCorpse12 {Nada aqui. Talvez bolsos ocultos?}
+NoLootCorpse13 {Sem dinheiro, sem chaves, sem testamento.}
+NoLootCorpse14 {Partiu para o além sem levar nada de valor.}
+NoLootCorpse15 {Ele claramente não era rico – bolsos vazios.}
+NoLootCorpse16 {Coitado entrou na batalha só com o básico.}
+NoLootCorpse17 {Armou-se com suas últimas moedas.}
+NoLootCorpse18 {Um corpo é só um corpo. Nada aqui.}
+NoLootCorpse19 {Ele deve ter deixado todos os seus tesouros em um baú.}
+NoLootCorpse20 {Parece que ele perdeu todos os seus valores durante a luta.}

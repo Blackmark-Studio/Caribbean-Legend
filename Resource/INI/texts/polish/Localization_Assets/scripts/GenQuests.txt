@@ -59,7 +59,7 @@ GenQuests_69 {unseemly}
 GenQuests_70 { }
 GenQuests_71 { }
 GenQuests_72 {a gentleman's word}
-GenQuests_73 {'to keep one's word'}
+GenQuests_73 {''to keep one's word'}
 GenQuests_74 {sank, and with it}
 GenQuests_75 {sank, and with it}
 GenQuests_76 { }

@@ -250,7 +250,7 @@ void GetBandersTradeShore()//为商人和信使选择岛屿
 	pchar.questTemp.jailCanMove.Deliver.Island.Town = FindTownOnIsland(pchar.questTemp.jailCanMove.Deliver.Island);
 	if (pchar.questTemp.jailCanMove.Deliver.Island.Town == "" || pchar.questTemp.jailCanMove.Deliver.Island.Town == "Caiman" || pchar.questTemp.jailCanMove.Deliver.Island.Town == "Terks" || pchar.questTemp.jailCanMove.Deliver.Island.Town == "Dominica")
 	{
-		pchar.questTemp.jailCanMove.Deliver.Island.Areal = GetConvertStr(pchar.questTemp.jailCanMove.Deliver.Island, "LocLables.txt") + "");
+		pchar.questTemp.jailCanMove.Deliver.Island.Areal = GetIslandNameByID(pchar.questTemp.jailCanMove.Deliver.Island);
 	}
 	else
 	{
@@ -260,7 +260,7 @@ void GetBandersTradeShore()//为商人和信使选择岛屿
 
 void GetBandersTradeGoods()//为商人选择货物
 {
-	switch (rand(6))
+	switch (rand(5))
 	{
 		case 0:
 			pchar.questTemp.jailCanMove.Deliver.Goods = GOOD_EBONY;
@@ -290,11 +290,6 @@ void GetBandersTradeGoods()//为商人选择货物
 		case 5:
 			pchar.questTemp.jailCanMove.Deliver.Goods = GOOD_FOOD;
 			pchar.questTemp.jailCanMove.Deliver.add = "补给品";
-		break;
-		
-		case 6:
-			pchar.questTemp.jailCanMove.Deliver.Goods = GOOD_WEAPON;
-			pchar.questTemp.jailCanMove.Deliver.add = "武器";
 		break;
 	}
 }

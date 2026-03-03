@@ -34,7 +34,7 @@ void DeleteParticleSystem(int id)
 int CreateParticleSystem(string name,float x,float y,float z,
 		float ax,float ay,float az,int lifetime)
 {
-	int pid;
+	int pid; // ~!~ ptr
 	if (!CreateParticleEntity()) return 0;
 	pid = SendMessage(&Particles,"lsffffffl",PS_CREATE,name,x,y,z,ax,ay,az,lifetime);
 	return pid;

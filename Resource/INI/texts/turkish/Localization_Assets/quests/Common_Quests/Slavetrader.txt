@@ -1,0 +1,33 @@
+Slavetrader_1 {Keşif modu: zamanlayıcı uzatıldı. Görevi tamamla!}
+Slavetrader_2 { }
+Slavetrader_3 { }
+Slavetrader_4 { }
+Slavetrader_5 { }
+Slavetrader_6 { }
+Slavetrader_7 { }
+Slavetrader_8 {Nabukee}
+Slavetrader_9 {Anaconda}
+Slavetrader_10 {Caracas'tan}
+Slavetrader_11 {Cumana'dan}
+Slavetrader_12 {Fransua}
+Slavetrader_13 {Gontier}
+Slavetrader_14 {kabul etti}
+Slavetrader_15 {kabul edildi}
+Slavetrader_16 {Barbados kıyılarında}
+Slavetrader_17 {Guadeloupe kıyılarında}
+Slavetrader_18 {Santiago yakınlarında}
+Slavetrader_19 {Havana yakınlarında}
+Slavetrader_20 {Tortuga kıyılarında}
+Slavetrader_21 {Trinidad kıyılarında}
+Slavetrader_22 {St. Christopher kıyılarında}
+Slavetrader_23 {Santo Domingo yakınlarında}
+Slavetrader_24 {Port-au-Prince yakınlarında}
+Slavetrader_25 {Cartagena yakınlarında}
+Slavetrader_26 {Tamango}
+Slavetrader_27 { }
+Slavetrader_28 {Sven}
+Slavetrader_29 {Carlson}
+Slavetrader_30 {Janna}
+Slavetrader_31 {Mollery}
+Slavetrader_32 {Izaura}
+Slavetrader_33 { }

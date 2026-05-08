@@ -278,7 +278,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OZ_Felip_again":
-			dialog.text = ""+UpperFirst(GetAddress_Form(NPChar))+"! Не уж то вы справились так быстро?";
+			dialog.text = ""+UpperFirst(GetAddress_Form(NPChar))+"! Неужто вы справились так быстро?";
 			link.l1 = "К сожалению, пока нет. Но я работаю над этим.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "OZ_Felip_again";

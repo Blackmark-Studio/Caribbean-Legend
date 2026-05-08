@@ -1,0 +1,49 @@
+Node0_title {Terra in vista!}
+Node0_a_a {Costeggiando $key($ctx(islandName)Gen), notate sulla sabbia un $rand(brigantino|polacca). Giace su un fianco, l'albero è spezzato e nella stiva si apre un'enorme falla, dentro la quale si vedono casse e barili. Intorno non si vede anima viva.$br$redAvvicinandovi, notate tracce di lotta sulla sabbia e diversi corpi distesi accanto al relitto. Questo litorale è tremendo - chiazze chiare al limite dell'acqua, onde che si rompono in linee irregolari — è facilissimo incagliarsi e aggiungersi a questa sosta forzata.}
+Node0_a_a_action {Accostare e perquisire}
+Node0_a_a_success {Riuscite a trovare un punto profondo lungo la linea di costa e ad accostare. La nave è stata chiaramente scaraventata a riva durante una tempesta. Per miracolo non è andata a fondo per via dell'enorme falla sotto la linea di galleggiamento, ma non è più recuperabile.$br$redAll'interno della nave ci sono merci fradice d'acqua, ormai prive di valore.$br$red Nella cabina del capitano trovate denaro e gioielli, ma vi inquieta il fatto che intorno non ci sia anima viva.}
+Node0_a_a_success_action {Spero che siano sopravvissuti}
+Node0_a_a_fail {Cercate di trovare un punto adatto tra i tagli della costa, ma urtate un reef e la nave comincia a far acqua.$br$redPassate tutto il resto della giornata a riparare la falla e decidete che la nave arenata non valeva affatto il rischio.}
+Node0_a_a_fail_action {È un'esperienza utile}
+Node0_a_b_action {Calate le scialuppe!}
+Node0_a_b_success {Decidete di ricorrere a un metodo impiegato negli abbordaggi e negli assedi alle colonie. Sbarcare una squadra senza attraccare è una manovra rischiosa, e sperate che vi renda il doppio e oltre.$br$redLa nave è stata chiaramente scaraventata a riva durante una tempesta. Per miracolo non è andata a fondo per via dell'enorme falla sotto la linea di galleggiamento, ma non è più recuperabile.$br$redAll'interno ci sono merci fradice d'acqua e prive di valore. La vostra squadra d'abbordaggio perquisisce la nave, mentre voi vi concentrate sulla cabina.$br$redDopo qualche ora vi radunate presso le scialuppe sulla spiaggia per contare il bottino. I marinai vi consegnano la vostra parte, e voi la aggiungete ai preziosi trovati nella cabina.}
+Node0_a_b_success_action {È bello essere il capitano}
+Node0_a_c_action {Non rischiamo}
+Node0_a_c_success {Decidete che tentare di accostare a una costa tanto pericolosa non valga il rischio, e del resto il saccheggio non è tenuto in gran conto dal vostro equipaggio. Lasciate il luogo del naufragio dietro la vostra poppa.}
+Node0_a_c_success_action {L'importante è non andarci a finire anche noi}
+Node0_a_b {Costeggiando $key($ctx(islandName)Gen), notate nella giungla luci appena distinguibili. Non assomigliano affatto al bagliore di fuochi o torce, e attirano subito la vostra attenzione.$br$redAvvicinandovi, scorgete sull'acqua una scialuppa carica di balle, ormeggiata alla riva nella più completa oscurità. Non vedete nessuno, ma è chiaro che sono qui.}
+Node0_b_a_action {Rubare la scialuppa}
+Node0_b_a_success {Riuscite ad avvicinarvi di nascosto alla riva con un piccolo drappello e vi impadronite della scialuppa. A un rapido controllo, scoprite che le balle contengono caffè, tabacco e un po' di seta da nave. Avete chiaramente mandato a monte l'affare dei contrabbandieri.}
+Node0_b_a_success_action {Quel che era vostro ora è nostro}
+Node0_b_a_fail {Riuscite ad avvicinarvi inosservati alla barca, ma quando arriva il momento di scioglierla attirate attenzioni indesiderate, e dalla giungla compaiono uomini. Capiscono subito tutto e aprono il fuoco.$br$redNe segue un breve scontro, nel quale perdete diversi uomini della squadra d'abbordaggio. Anche la merce sulla scialuppa viene rovinata, e si riescono a salvare soltanto poche balle di seta da nave.}
+Node0_b_a_fail_action {Meglio di niente}
+Node0_b_b_action {Mettere in fuga i contrabbandieri}
+Node0_b_b_success {Ordinate di aprire il fuoco con i cannoni della nave per costringere gli uomini a rifugiarsi nella giungla. Quando vi assicurate che la riva sia sgombra, sbarcate con la squadra d'abbordaggio e perquisite le scorte abbandonate.$br$redNella barca trovate un po' di tabacco, caffè e seta da nave. Nelle casse sulla riva trovate ancora un po' degli stessi beni.}
+Node0_b_b_success_action {Preda facile}
+Node0_b_c_action {Proseguire la rotta}
+Node0_b_c_success {Decidete di non tentare la sorte e riprendete il largo, lasciando i contrabbandieri dietro la vostra poppa.}
+Node0_b_c_success_action {È meglio così}
+Node0_a_c {Siete passati così tante volte davanti alle coste di $key($ctx(islandName)Gen) che ormai vi sembrano quasi di casa. Tanto più strano appare quel fumo che si alza sulla selva - fitto, uniforme e raccolto da più punti diversi.$br$redLungo la riva vedete barche da pesca, canne, una miriade di impronte e segni di trascinamento lasciati da qualcosa di pesante. Più vi avvicinate, più nell'aria si fa netto l'odore di pesce e carne affumicati, tanto da farvi subito brontolare lo stomaco.}
+Node0_c_a_action {Un po' di provviste non guasterebbe}
+Node0_c_a_action_tooltip_bad {Per questo ci vorranno soldi...}
+Node0_c_a_success {Sparate una salva a salve da un cannone e fate segno ai pescatori usciti a vedere da dove venisse il rumore. All'inizio vi guardano con sospetto, ma il sacco d'argento che avete in mano dissolve in fretta ogni malinteso. Caricano una delle loro barche di pesce e salgono a bordo da voi.$br$redPer una somma piuttosto modesta comprate un'intera partita di pesce e carne affumicati. I marinai si scambiano storie con i pescatori e regalano loro pallottole e polvere in più per la caccia alla selvaggina. Tutto ciò giova molto all'equipaggio.}
+Node0_c_a_success_action {Buono e sostanzioso}
+Node0_c_b_action {Dunque, qui si pesca bene?}
+Node0_c_b_success {Ordinate di $rand(gettare l'ancora e mettervi a cercare vettovaglie|mettervi all'ancora e procurarvi provviste). I marinai $rand(prendono lance e lenze|afferrano lance e canne da pesca), e $rand(vengono calate diverse scialuppe|diverse scialuppe prendono il largo). Voi $rand(osservate tutta quella frenesia|guardate quel viavai) e, dopo $rand(un po'|qualche tempo), decidete di $rand(unirvi a loro|scendere da loro).$br$red La pesca $rand(dà ottimi frutti|procede insolitamente bene), e la vista del capitano che $rand(pesca accanto ai marinai|sta pescando insieme ai marinai) $rand(rinfranca l'equipaggio|solleva il morale dell'equipaggio).}
+Node0_c_b_success_action {I Doni della Natura}
+Node0_c_c_action {Non mettiamoli a disagio}
+Node0_c_c_success {Decidete di non intervenire e ordinate di proseguire. A poppa restano le piccole barche da pesca e quelle acque piene di pesce.}
+Node0_c_c_success_action {A loro serve di più}
+Node0_a_d {Navigando al largo di $key($ctx(islandName)Gen), notate un villaggio proprio al margine della foresta. $rand(Alcune capanne, luci fioche, canoe tirate sulla sabbia.|Le capanne stanno presso la selva, luci smorte tremano sull'acqua, e canoe giacciono tirate a secco sulla spiaggia.) Verso la riva conducono $rand(sentieri battuti|strette tracce), e lungo il litorale sono ammucchiati $rand(ceste e fasci di gaïac|fasci di gaïac e ceste); tra gli alberi $rand(si muovono indigeni|passano figure).$br$redAlonso dice che questa è terra dei $rand(Caraibi|Taíno|Arawak|Guaraní|Ciboney), e che $rand(possono rivelarsi tanto amici quanto nemici|potrebbero accogliervi in modi molto diversi).}
+Node0_d_a_action {Proveremo a commerciare}
+Node0_d_a_success {Gettate l'ancora e sbarcate. Gli indiani si disperdono, donne e bambini lasciano cadere le ceste, mentre gli uomini afferrano le armi. Cercate di muovervi il più lentamente possibile, mostrando i palmi aperti.$br$redVedete smarrimento, ma non ostilità. Giudicandola una buona occasione, mostrate i gioielli e gli ornamenti che avete portato con voi e proponete di scambiare quei doni con del gaïac.$br$redGli indiani comprendono le vostre intenzioni, abbassano le armi e si prendono i vostri tesori. Il gaïac viene caricato sulla vostra nave.}
+Node0_d_a_success_action {È andata bene per un soffio}
+Node0_d_a_fail {Gettate l'ancora e sbarcate. Gli indiani si disperdono, donne e bambini lasciano cadere le ceste, mentre gli uomini afferrano le armi. Cercate di muovervi lentamente, mostrando i palmi aperti.$br$redEppure qualcosa nel vostro atteggiamento li spinge all'aggressione, e verso di voi volano frecce e dardi. Rispondete con un paio di salve mal coordinate e ripiegate verso le scialuppe. Nessuno muore nello scontro, ma il rancore rimane.}
+Node0_d_a_fail_action {Maledetti pagani}
+Node0_d_b_action {Il Signore riconoscerà i suoi}
+Node0_d_b_success {Decidete che l'incertezza potrebbe lasciarvi scoperti e date ordine di prepararsi all'attacco. La compagnia d'abbordaggio sale sulle scialuppe, armata fino ai denti, mentre i cannonieri preparano i pezzi al fuoco.$br$redLo scontro comincia rapido e nel sangue: il fuoco dei cannoni disperde gli indiani, e le salve dei moschetti abbattono chi tarda a fuggire. Sembra che il massacro sia finito, quando all'improvviso dalla selva piovono frecce: il villaggio si rivela più grande di quanto apparisse dal mare. Ne segue una sanguinosa mischia.$br$redIn questa carneficina perdete alcuni uomini, ma la maggior parte della compagnia d'abbordaggio sopravvive. Ora il gaïac è vostro.}
+Node0_d_b_success_action {Ne vale la pena}
+Node0_d_c_action {Non rischiamo}
+Node0_d_c_success {Decidete che il rischio è troppo grande e che non vale la pena guastare i rapporti con gli indiani proprio ora. Il villaggio costiero resta dietro la vostra poppa.}
+Node0_d_c_success_action {Lasciamoli in pace}
+Node0_MissingTreasures {Serviranno gioielli e specchi...}

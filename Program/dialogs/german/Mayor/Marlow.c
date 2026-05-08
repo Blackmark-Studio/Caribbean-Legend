@@ -712,7 +712,6 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 				if (NextDiag.TempNode != "I_know_you_good")
 					dialog.text = "Bist du verrückt geworden" + GetSexPhrase("", ", Mädchen") + "? Unsere Jungs machen einen Bogen um dich, als hättest du die Pest. Also verschwinde und nerv mich nicht.";
 				else
@@ -720,12 +719,12 @@ void ProcessDialogEvent()
 				link.l1 = "Verstanden...";
 				link.l1.go = "exit";
 			}
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 		break;
 
 		case "pirate_threat_pay":
 			iGPThreatRate = 0;
 			iGPThreat = 0;
-			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iMarlowTotalTemp);
 			DialogExit();
 			PiratesDecreaseNotif("");

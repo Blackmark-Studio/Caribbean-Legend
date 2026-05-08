@@ -1,12 +1,4 @@
 HollandGambit_1 {Baltazar}
-HollandGambit_2 {Ridderbok}
-HollandGambit_3 {探索模式: 计时器延长。 完成任务!}
-HollandGambit_4 {Miguel}
-HollandGambit_5 { }
-HollandGambit_6 { }
-HollandGambit_7 {探索模式: 任务持续时间加倍}
-HollandGambit_8 { }
-HollandGambit_9 {"Valkyrie (瓦尔基里号)" 出现在地平线上!}
 HollandGambit_10 {Hainrih}
 HollandGambit_11 {Claus}
 HollandGambit_12 { }
@@ -17,6 +9,7 @@ HollandGambit_16 {silver convoy}
 HollandGambit_17 {Boat}
 HollandGambit_18 {Fernando}
 HollandGambit_19 {Rodriges}
+HollandGambit_2 {Ridderbok}
 HollandGambit_20 {Zeekalf}
 HollandGambit_21 {Charlie}
 HollandGambit_22 {Knippel}
@@ -27,6 +20,7 @@ HollandGambit_26 {Charlie Knippel 因伤死亡!}
 HollandGambit_27 {Longway 死于热病!}
 HollandGambit_28 {Longway 因伤死亡!}
 HollandGambit_29 {一小时过去了...}
+HollandGambit_3 {探索模式: 计时器延长。 完成任务!}
 HollandGambit_30 {Jack}
 HollandGambit_31 {Harrison}
 HollandGambit_32 {双桅帆船'Hoop (霍普号)'}
@@ -37,6 +31,7 @@ HollandGambit_36 {Peter}
 HollandGambit_37 {Stuyvesant}
 HollandGambit_38 {Frederic}
 HollandGambit_39 {Leiden}
+HollandGambit_4 {Miguel}
 HollandGambit_40 {Toff}
 HollandGambit_41 {Keller}
 HollandGambit_42 {你因受伤而昏厥...}
@@ -44,3 +39,8 @@ HollandGambit_43 {你未将钱还给 Abigail, 使她沦为乞丐}
 HollandGambit_44 {Chavinavy}
 HollandGambit_45 { }
 HollandGambit_46 { }
+HollandGambit_5 { }
+HollandGambit_6 { }
+HollandGambit_7 {探索模式: 任务持续时间加倍}
+HollandGambit_8 { }
+HollandGambit_9 {"Valkyrie (瓦尔基里号)" 出现在地平线上!}

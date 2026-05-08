@@ -1,0 +1,4 @@
+Description {Mevsimler oyun yılını parçalara böler ve mevsim sürdüğü sürece etkili olan güçlü küresel etkiler uygular. Her Mevsim benzersizdir ve yıldan yıla değişir.}
+effects_title {Mevsim etkileri}
+effects_current_title {Mevcut mevsimin etkileri}
+additional_effects_title {Ek mevsim etkileri}

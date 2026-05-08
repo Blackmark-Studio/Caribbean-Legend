@@ -1,12 +1,4 @@
 Neutral_1 {强盗}
-Neutral_2 {你留下了便条}
-Neutral_3 {Jack}
-Neutral_4 {Veils}
-Neutral_5 {Sea Beast}
-Neutral_6 { }
-Neutral_7 { }
-Neutral_8 {Golden Seagull}
-Neutral_9 {Tristan}
 Neutral_10 {Renier}
 Neutral_11 {地平线上有一艘海盗船! 他们正要来截断我们的航线。}
 Neutral_12 {门后传来一个声音}
@@ -17,6 +9,7 @@ Neutral_16 {已给予: Betsy Price 的文件}
 Neutral_17 {Lea}
 Neutral_18 {Carno}
 Neutral_19 {Pierre}
+Neutral_2 {你留下了便条}
 Neutral_20 {地平线上有一艘海盗船! 他们正在横切我们的航线。}
 Neutral_21 {甲板}
 Neutral_22 {洞穴入口覆盖着蜘蛛网。 看起来很久没人来过这里了。}
@@ -27,6 +20,7 @@ Neutral_26 {Moño}
 Neutral_27 {Marisa}
 Neutral_28 {Caldera}
 Neutral_29 {Felipe}
+Neutral_3 {Jack}
 Neutral_30 {Alarcón}
 Neutral_31 {Sebastián}
 Neutral_32 {Córdoba}
@@ -37,6 +31,12 @@ Neutral_36 {Peralta}
 Neutral_37 {... 所有对鲨鱼的怀疑都会被解除}
 Neutral_38 {资金不足（10,100,000）}
 Neutral_39 {资金不足（25,250,000）}
+Neutral_4 {Veils}
 Neutral_40 {资金不足（50,500,000）}
 Neutral_41 {你}
 Neutral_42 {你们}
+Neutral_5 {Sea Beast}
+Neutral_6 { }
+Neutral_7 { }
+Neutral_8 {Golden Seagull}
+Neutral_9 {Tristan}

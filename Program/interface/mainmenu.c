@@ -1,4 +1,7 @@
 #define NEWS_INI_PATH "Resource\INI\texts\news.ini"
+#include "interface\utils\items\stats.c"
+#include "interface\utils\items\descriptors.c"
+#include "interface\utils\popup_error.c"
 // Sith,mitrokosta,ugeen для LE
 // Главное меню учитывает прогресс в игре
 string isUsersName="";
@@ -9,6 +12,8 @@ int	 DLCAppID = 0;
 bool bFire = false;
 int iChar;
 string title, descr;
+object rewardsInfo;
+ref currentReward = nullptr;
 
 void InitInterface(string iniName)
 {
@@ -55,6 +60,10 @@ void InitInterface(string iniName)
 	SetEventHandler("ConfirmExitCancel","ConfirmExitCancel",0);
 	SetEventHandler("NewsCancel","NewsCancel",0);
 	SetEventHandler("AttentionCancel","AttentionCancel",0);
+	SetEventHandler("CuratorCheckResult","MM_ProcessCuratorCheckResult",0);
+	SetEventHandler("ShowInfoWindow", "ShowHelpHint", 0);
+	SetEventHandler("HideInfoWindow", "HideHelpHint", 0);
+	SetEventHandler("MM_ShowReward", "MM_ShowReward", 0);
 
 	GameInterface.SavePath = "SAVE";
 
@@ -158,6 +167,140 @@ void InitInterface(string iniName)
 
 	// if("Условие") // условие на появление окна с предупреждением
 		// ShowAttention();
+
+	// Награды за франшизу
+	MM_InitFranchiseRewards();
+}
+
+void MM_InitFranchiseRewards()
+{
+	if (!CheckAttribute(&rewardsInfo, "mushket_indian"))
+	{
+		rewardsInfo.mushket_indian = BIsSubscribedApp(3549020);
+		SetNewGroupPicture("REWARD_ITEM_1","ITEMS_42", "itm6");
+		SetNodeUsing("REWARD_AVAILABLE_1", rewardsInfo.mushket_indian == "1");
+	}
+
+	if (!CheckAttribute(&rewardsInfo, "legendGuide"))
+	{
+		SetNewGroupPicture("REWARD_ITEM_2","ITEMS_42", "itm5");
+		SetNodeUsing("REWARD_AVAILABLE_2", false);
+		int status = GetSteamEnabled() ? BeginCuratorCheckAsync("45734318", 10) : -1;
+		if (status == 0) Log_Info("Error while checking your Steam subscription. Please try restarting the game");
+	}
+
+	SetNewGroupPicture("REWARD_ITEM_3","ITEMS_EMPTY", "empty");
+	Picture_SetColor("REWARD_ITEM_3", argb(220,50,50,50));
+	SetNewGroupPicture("REWARD_ITEM_4","ITEMS_EMPTY", "empty");
+	Picture_SetColor("REWARD_ITEM_4", argb(220,50,50,50));
+	SetNewGroupPicture("REWARD_ITEM_5","ITEMS_EMPTY", "empty");
+	Picture_SetColor("REWARD_ITEM_5", argb(220,50,50,50));
+}
+
+void MM_ShowReward()
+{
+	string comName = GetEventData();
+	string nodName = GetEventData();
+	
+	ref item = nullptr;
+	switch (nodName)
+	{
+		case "REWARD_ITEM_1": item = ItemsFromID("mushket_indian"); break;
+		case "REWARD_ITEM_2": item = ItemsFromID("legendGuide"); break;
+		case "REWARD_CLOSE_BUTTON": 
+		{
+			MM_HideReward();
+			return;
+		}
+		break;
+	}
+
+	if (item == nullptr) MM_ShowEmptyReward();
+	else MM_ShowRewardItem(item);
+}
+
+void MM_ShowEmptyReward()
+{
+	ShowError(GetConvertStr("noRewardYetMessage", "franchiseRewards.txt"));
+	XI_WindowDisable("REWARD_WINDOW", true);
+	XI_WindowShow("REWARD_WINDOW", false);
+}
+
+void MM_ShowRewardItem(ref item, bool forceShow = false)
+{
+	SetFormatedText("REWARD_CONDITIONS", GetConvertStr("condition_" + item.id, "franchiseRewards.txt"));
+	if (MM_ToggleReward(currentReward != item || forceShow)) return;
+
+	currentReward = item;
+	SetNewGroupPicture("REWARD_PICTURE", item.picTexture, "itm" + item.picIndex);
+	SetFormatedText("REWARD_NAME", GetItemName(item));
+	SetFormatedText("REWARD_DESCRIPTION", GetItemDescr(item));
+	FillUpDescriptors(item, !XI_IsWindowEnable("REWARD_WINDOW"));
+	FillUpStats(item, &NullCharacter);
+
+	string steamButtonText = GetConvertStr("steamButtonGet", "franchiseRewards.txt");
+	bool alreadyGot = CheckAttributeEqualTo(&rewardsInfo, item.id, "1");
+	SetSelectable("GET_REWARD_BUTTON", !alreadyGot);
+	if (alreadyGot) steamButtonText = GetConvertStr("steamButtonAlreadyGot", "franchiseRewards.txt");
+	SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"GET_REWARD_BUTTON",0, "#"+steamButtonText);
+}
+
+bool MM_ToggleReward(bool forceShow = false)
+{
+	bool isShowed = XI_IsWindowEnable("REWARD_WINDOW");
+	if (forceShow) isShowed = false;
+
+	if (!isShowed) MM_InitFranchiseRewards();
+	XI_WindowDisable("REWARD_WINDOW", isShowed);
+	XI_WindowShow("REWARD_WINDOW", !isShowed);
+	SetCurrentNode("REWARD_DESCRIPTION");
+	return isShowed;
+}
+
+void MM_HideReward()
+{
+	XI_WindowDisable("REWARD_WINDOW", true);
+	XI_WindowShow("REWARD_WINDOW", false);
+}
+
+void ShowHelpHint()
+{
+	string sCurrentNode = GetEventData();
+	string sHeader;
+	string sText1, sText2, sText3, sPicture, sGroup, sGroupPicture;
+	sPicture = "none";
+	sGroup = "none";
+	sGroupPicture = "none";
+	SetDescriptorsTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3, currentReward);
+	SetItemStatsTooltip(nullptr, sCurrentNode, &sHeader, &sText1, &sText2, &sText3, currentReward);
+
+	if (sHeader != "") CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false, false);
+}
+
+void MM_ProcessCuratorCheckResult()
+{
+	string sResult = GetEventData();
+	if (sResult == "success")
+	{
+		rewardsInfo.legendGuide = true;
+		if (currentReward != nullptr && currentReward.id == "legendGuide")
+		{
+			SetSelectable("GET_REWARD_BUTTON", false);
+			SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"GET_REWARD_BUTTON",0, "#"+GetConvertStr("steamButtonAlreadyGot", "franchiseRewards.txt"));
+		}
+		SetNodeUsing("REWARD_AVAILABLE_2", true);
+		return;
+	}
+
+	SetNodeUsing("REWARD_AVAILABLE_2", false);
+	if (sResult == "notsubscribedfailure")
+	{
+		Trace("ProcessCuratorCheckResult: NotSubscribedFailure! ;-(");
+	}
+	else
+	{
+		Trace("ProcessCuratorCheckResult: Unknown sResult=" + sResult);
+	}
 }
 
 void ProcessCommandExecute()
@@ -206,6 +349,8 @@ void ProcessCommandExecute()
 			if(comName == "click" || comName == "activate"){
 				XI_WindowDisable("MAIN_WINDOW",true);
 				XI_WindowDisable("CONFIRM_EXIT_WINDOW",false);
+				XI_WindowDisable("REWARD_WINDOW", true);
+				XI_WindowShow("REWARD_WINDOW", false);
 				XI_WindowShow("CONFIRM_EXIT_WINDOW", true);
 				SetCurrentNode("CONFIRM_EXIT_NO");
 			}
@@ -249,7 +394,19 @@ void ProcessCommandExecute()
 					GameOverlayToWebPage("https://steamcommunity.com/app/2230980/allnews/");
 			}
 		break;
+
+		case "GET_REWARD_BUTTON":
+			if (!GetSteamEnabled()) break;
+			if (comName != "click" && comName != "activate") break;
+		
+			string url;
+			if (currentReward.id == "mushket_indian") url = "https://store.steampowered.com/app/3549020/Caribbean_Legend_Age_of_Pirates/";
+			else if (currentReward.id == "legendGuide") url = "https://store.steampowered.com/franchise/caribbeanlegend";
+			GameOverlayToWebPage(url);
+		break;
 	}
+
+	if (comName == "deactivate") MM_HideReward();
 }
 
 void ShowNews()
@@ -257,6 +414,8 @@ void ShowNews()
 	XI_WindowDisable("MAIN_WINDOW",true);
 	XI_WindowShow("NEWS_WINDOW", true);
 	XI_WindowDisable("NEWS_WINDOW",false);
+	XI_WindowDisable("REWARD_WINDOW", true);
+	XI_WindowShow("REWARD_WINDOW", false);
 	SetCurrentNode("NEWS_TEXT");
 	title = GetConvertStr("News", "News.txt");
 	descr = GetConvertStr("News" + "_descr", "News.txt");
@@ -285,6 +444,8 @@ void ShowAttention()
 	XI_WindowDisable("MAIN_WINDOW",true);
 	XI_WindowShow("ATTENTION_WINDOW", true);
 	XI_WindowDisable("ATTENTION_WINDOW",false);
+	XI_WindowDisable("REWARD_WINDOW", true);
+	XI_WindowShow("REWARD_WINDOW", false);
 	descr = GetConvertStr("News" + "_Attention", "News.txt");
 	SetFormatedText("ATTENTION_TEXT", descr);
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"ATTENTION_TEXT",5);
@@ -339,6 +500,10 @@ void IDoExit(int exitCode, bool bClear)
 	DelEventHandler("ConfirmExitCancel","ConfirmExitCancel");
 	DelEventHandler("NewsCancel","NewsCancel");
 	DelEventHandler("AttentionCancel","AttentionCancel");
+	DelEventHandler("CuratorCheckResult","MM_ProcessCuratorCheckResult");
+	DelEventHandler("ShowInfoWindow", "ShowHelpHint");
+	DelEventHandler("HideInfoWindow", "ShowHelpHint");
+	DelEventHandler("MM_ShowReward", "MM_ShowReward");
 	
 	if(!CheckAttribute(&InterfaceStates, "MainMenu.DoNotClearCharacters"))
 	{
@@ -348,6 +513,11 @@ void IDoExit(int exitCode, bool bClear)
 	
 	interfaceResultCommand = exitCode;
 	EndCancelInterface(bClear);
+}
+
+void HideHelpHint()
+{
+	CloseTooltipNew();
 }
 
 void ExitCancel()

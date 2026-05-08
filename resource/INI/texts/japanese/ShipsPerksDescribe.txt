@@ -2,6 +2,31 @@ new_string
 {
 
 }
+sp1 {狂信者}
+sp1_desc {装備された甲板の礼拝堂と聖母マリアのイコンが、 不思議な力で教会の護符の効果と持続時間を高める。}
+sp1_desc2
+{
+各アミュレットの強化効果： 個別。
+持続時間延長：15日間。
+}
+sp2 {ようこそ}
+sp2_desc {この伝説の船はカリブ諸島の隅々までその名を轟かせ、 どこでも敬意と賞賛を集めている。 Lady Bethの所在はすぐに地図商に知れ渡り、 地元の商人たちは貴重品を買い集めるために資金をかき集めようとする。}
+sp2_desc2
+{
+地図商人出現率ボーナス：5～12％
+ペソ備蓄増加：100％
+ドゥブロン備蓄増加：約30％
+}
+sp3 {るつぼ}
+sp3_desc {この船では、 人の命は真の力が現れるまでの束の間の段階にすぎない。 ヴェールを越えて戻る者は稀だが、 彼らはもはや死を恐れない。}
+sp3_desc2 {戦死した水夫は乗組員の経験値と士気を高める。}
+sp3_SailorsBoardingBonus_desc {白兵戦経験値ボーナス：#dSailorsBoardingBonus#%}
+sp3_SailorsBoardingBonus1_desc {~（#dDeadSailors#/500人の戦死した水夫）}
+sp3_SurrenderChanceBonus_desc {降伏確率上昇：#dSurrenderChanceBonus#%}
+sp3_SurrenderChanceBonus1_desc {~（#dDeadSailors#/2000 戦死した水夫）}
+sp4 {海賊狩り}
+sp4_desc {この船は海を海賊から一掃するために造られた。 沈める船が増すごとに、 乗組員は結束を強め、 大砲はより正確になり、 そして船長の狂信ぶりがますます際立っていく。}
+sp4_desc2 {撃沈した海賊船ごとに、 機動性・ 射程・ ワールドマップ速度・ 砲のリロード速度が恒久的に上昇します。 現在のボーナス： $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) / 15。~ 海賊の脅威が低いほど、 船の維持費も下がります。 現在のボーナス： $percent($GetAmsterdamMtp( )) / 40。}
 special0 {商船}
 special0_desc {商船は通常、 広い船倉のために口径や速度、 大砲の数を犠牲にします。 そんな船で単独航海に出られるのは、 熟練した船長だけです。}
 special0_desc2 {艦隊力ボーナス：低}
@@ -18,6 +43,7 @@ special3_desc2
 艦隊力ボーナス：中
 能力強化ボーナス：15%
 }
+SpecialityUpgrade {HWICで強化}
 trait01 {現在の地図}
 trait01_desc {ヨーロッパの職人が特注で仕立てた高度な航海用具と、 諸島の海流を正確に記した地図により、 航海時間を大幅に短縮できる。}
 trait01_desc2
@@ -104,29 +130,3 @@ trait24_desc2
 効果時間：15秒  
 火災発生率上昇：200％
 }
-sp1 {狂信者}
-sp1_desc {装備された甲板の礼拝堂と聖母マリアのイコンが、 不思議な力で教会の護符の効果と持続時間を高める。}
-sp1_desc2
-{
-各アミュレットの強化効果： 個別。
-持続時間延長：15日間。
-}
-sp2 {ようこそ}
-sp2_desc {この伝説の船はカリブ諸島の隅々までその名を轟かせ、 どこでも敬意と賞賛を集めている。 Lady Bethの所在はすぐに地図商に知れ渡り、 地元の商人たちは貴重品を買い集めるために資金をかき集めようとする。}
-sp2_desc2
-{
-地図商人出現率ボーナス：5～12％
-ペソ備蓄増加：100％
-ドゥブロン備蓄増加：約30％
-}
-sp3 {るつぼ}
-sp3_desc {この船では、 人の命は真の力が現れるまでの束の間の段階にすぎない。 ヴェールを越えて戻る者は稀だが、 彼らはもはや死を恐れない。}
-sp3_desc2 {戦死した水夫は乗組員の経験値と士気を高める。}
-sp3_SailorsBoardingBonus_desc {白兵戦経験値ボーナス：#dSailorsBoardingBonus#%}
-sp3_SailorsBoardingBonus1_desc {~（#dDeadSailors#/500人の戦死した水夫）}
-sp3_SurrenderChanceBonus_desc {降伏確率上昇：#dSurrenderChanceBonus#%}
-sp3_SurrenderChanceBonus1_desc {~（#dDeadSailors#/2000 戦死した水夫）}
-sp4 {海賊狩り}
-sp4_desc {この船は海を海賊から一掃するために造られた。 沈める船が増すごとに、 乗組員は結束を強め、 大砲はより正確になり、 そして船長の狂信ぶりがますます際立っていく。}
-sp4_desc2 {撃沈した海賊船ごとに、 機動性・ 射程・ ワールドマップ速度・ 砲のリロード速度が恒久的に上昇します。 現在のボーナス： $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) / 15。~ 海賊の脅威が低いほど、 船の維持費も下がります。 現在のボーナス： $percent($GetAmsterdamMtp( )) / 40。}
-SpecialityUpgrade {HWICで強化}

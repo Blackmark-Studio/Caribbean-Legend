@@ -476,7 +476,7 @@ void IDoExit(int exitCode)
 			{
 				arCurChar = CharacterFromID(sCurArroyID);
 				if(IsMainCharacter(arCurChar)) continue;
-				if(LAi_CheckFightMode(arCurChar)) continue;		// если перс дерется то некогда ему обменом заниматься
+				if(LAi_CheckFightMode(arCurChar) != CHR_MODE_PEACE) continue; // если перс дерется то некогда ему обменом заниматься
 				
 				if (CheckAttribute(arCurChar, "CanTakeMushket") && CheckAttribute(arCurChar, "IsMushketer")) continue;
 				
@@ -1285,8 +1285,8 @@ void ShowInfoWindow()
 	}
 
 	SetDescriptorsTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3, currentItem);
-	SetItemStatsTooltip(refCharacter, sCurrentNode, &sHeader, &sText1, &sText2, &sText3);
-	if (sHeader != "") CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false);
+	SetItemStatsTooltip(refCharacter, sCurrentNode, &sHeader, &sText1, &sText2, &sText3, currentItem);
+	if (sHeader != "") CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false, false);
 }
 
 void HideInfoWindow()

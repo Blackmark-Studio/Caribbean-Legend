@@ -1,45 +1,100 @@
-Reaction {反应}
 Action {决策}
+Actions {决策}
+DisabledAction {此操作还缺少某些条件……}
+FactorAccuracy {$key(Accuracy)}
+FactorAgility {$key(Agility)}
+FactorAmmo {$key(itmtype_ammo|ItemsDescribe.txt)}
+FactorBase {基础概率}
+FactorBlade {$key(itmtype_blade|ItemsDescribe.txt)}
+FactorCharisma {$key(Charisma)}
+FactorCirass {$key(itmtype_cirass|ItemsDescribe.txt)}
+FactorCommerce {$key(Commerce)}
+FactorDefence {$key(Defence)}
+FactorEndurance {$key(Endurance)}
+FactorFencingH {$key(FencingH)}
+FactorFencingL {$key(FencingL)}
+FactorFencingS {$key(FencingS)}
+FactorFortune {$key(Fortune)}
+FactorGrappling {$key(Grappling)}
+FactorGun {$key(itmtype_gun|ItemsDescribe.txt)}
+FactorHat {$key(itmtype_hat|ItemsDescribe.txt)}
+FactorIntellect {$key(Intellect)}
+FactorLantern {$key(itmtype_lantern|ItemsDescribe.txt)}
+FactorLeadership {$key(Leadership)}
+FactorLuck {$key(Luck)}
+FactorMaps {$key(itmtype_maps|ItemsDescribe.txt)}
+FactorMusket {$key(itmtype_musket|ItemsDescribe.txt)}
+FactorNobility {荣誉}
+FactorPatent {$key(itmtype_patent|ItemsDescribe.txt)}
+FactorPerception {$key(Perception)}
+FactorPistol {$key(Pistol)}
 FactorRelationship0 {与 $key(englandAbl) 的关系}
 FactorRelationship1 {与 $key(franceAbl) 的关系}
 FactorRelationship2 {与 $key(spainAbl) 的关系}
 FactorRelationship3 {与 $key(hollandAbl) 的关系}
 FactorRelationshipSmugglers {与 $key(SmugglerAbl) 的关系}
-FactorBase {基础概率}
-FactorShipRank {船只等级}
-FactorShipQty {舰队规模}
-FactorFencingL {$key(FencingL)}
-FactorFencingS {$key(FencingS)}
-FactorFencingH {$key(FencingH)}
-FactorPistol {$key(Pistol)}
-FactorFortune {$key(Fortune)}
-FactorLeadership {$key(Leadership)}
-FactorSailing {$key(Sailing)}
-FactorAccuracy {$key(Accuracy)}
-FactorGrappling {$key(Grappling)}
 FactorRepair {$key(Repair)}
-FactorDefence {$key(Defence)}
-FactorCommerce {$key(Commerce)}
-FactorSneak {$key(Sneak)}
-FactorStrength {$key(Strength)}
-FactorPerception {$key(Perception)}
-FactorEndurance {$key(Endurance)}
-FactorCharisma {$key(Charisma)}
-FactorIntellect {$key(Intellect)}
-FactorAgility {$key(Agility)}
-FactorLuck {$key(Luck)}
-DisabledAction {此操作还缺少某些条件……}
-FactorGun {$key(itmtype_gun|ItemsDescribe.txt)}
-FactorBlade {$key(itmtype_blade|ItemsDescribe.txt)}
-FactorSpyglass {$key(itmtype_spyglass|ItemsDescribe.txt)}
-FactorPatent {$key(itmtype_patent|ItemsDescribe.txt)}
-FactorCirass {$key(itmtype_cirass|ItemsDescribe.txt)}
-FactorMaps {$key(itmtype_maps|ItemsDescribe.txt)}
-FactorTool {$key(itmtype_tool|ItemsDescribe.txt)}
-FactorTalisman {$key(itmtype_talisman|ItemsDescribe.txt)}
+FactorSailing {$key(Sailing)}
+FactorSeason {季}
+FactorShipQty {舰队规模}
+FactorShipRank {船只等级}
 FactorSlot {$key(itmtype_slot|ItemsDescribe.txt)}
+FactorSneak {$key(Sneak)}
 FactorSpecial {$key(itmtype_special|ItemsDescribe.txt)}
-FactorAmmo {$key(itmtype_ammo|ItemsDescribe.txt)}
-FactorLantern {$key(itmtype_lantern|ItemsDescribe.txt)}
-FactorHat {$key(itmtype_hat|ItemsDescribe.txt)}
-FactorMusket {$key(itmtype_musket|ItemsDescribe.txt)}
+FactorSpyglass {$key(itmtype_spyglass|ItemsDescribe.txt)}
+FactorStrength {$key(Strength)}
+FactorTalisman {$key(itmtype_talisman|ItemsDescribe.txt)}
+FactorTool {$key(itmtype_tool|ItemsDescribe.txt)}
+HelpTextActions {决策取决于故事的具体细节，并且总会推动剧情向前发展。它们体现了你角色最初的目标，或他选择达成目标的方式。故事的结局往往取决于你所做出的决策。}
+HelpTextCommon
+{
+这是一个互动叙事，你的行动与准备都会影响这段小故事的走向。
+首先，你会遭遇一个情境——这段文字已经显示在屏幕上。
+根据你抽到的情境，你可以采取某些行动。
+~
+故事中的行动分为反应和决策。
+每个决策或反应都可能包含对角色技能、特长或属性的检定。
+如果你不符合某些要求，有些行动可能无法使用。
+~
+故事中的任何检定都会考虑许多影响成功的因素。它们会在悬停提示中列出。
+检定结果不会因读档而改变，只会在条件变化时改变。失败了也别灰心——下次你一定会走运。
+}
+HelpTextReactions {反应取决于故事的具体细节，它们能让你获得意想不到的优势、使任务变得更轻松，但作为交换，你必须满足某项条件——拥有合适的特长、物品，或通过一次检定。反应不会推动故事进入下一部分；它们会立刻产生效果，并且常常影响决策中检定的难度。}
+HelpTitleCommon {故事}
+Reaction {反应}
+Reactions {反应}
+CommonTriumph {凯旋}
+CommonFail {崩溃}
+DisabledAction_Money {这需要花钱}
+DisabledAction_Perk {需要技能：$ctx(value)}
+DisabledAction_Skill {技能等级不足：$ctx(value)}
+DisabledAction_Herotype {需要英雄背景：$ctx(value)}
+DisabledAction_Pirates {属性不足：$ctx(value)}
+DisabledAction_Reputation {此操作需要特定的声望}
+DisabledAction_Relations {与 _$key($ctx(value)Abl) 的关系必须更好}
+DisabledAction_Item {需要物品：$ctx(value)}
+DisabledAction_license {没有贸易许可证}
+FactorFencingL_chr {军官的$key(FencingL)}
+FactorFencingS_chr {军官的$key(FencingS)}
+FactorFencingH_chr {军官的$key(FencingH)}
+FactorPistol_chr {军官的$key(Pistol)}
+FactorFortune_chr {军官的$key(Fortune)}
+FactorLeadership_chr {军官的$key(Leadership)}
+FactorSailing_chr {军官的$key(Sailing)}
+FactorAccuracy_chr {军官的$key(Accuracy)}
+FactorGrappling_chr {军官的$key(Grappling)}
+FactorRepair_chr {军官的$key(Repair)}
+FactorDefence_chr {军官的$key(Defence)}
+FactorCommerce_chr {军官的$key(Commerce)}
+FactorSneak_chr {军官的$key(Sneak)}
+FactorStrength_chr {军官的$key(Strength)}
+FactorPerception_chr {军官的$key(Perception)}
+FactorEndurance_chr {军官的$key(Endurance)}
+FactorCharisma_chr {军官的$key(Charisma)}
+FactorIntellect_chr {军官的$key(Intellect)}
+FactorAgility_chr {军官的$key(Agility)}
+FactorLuck_chr {军官的$key(Luck)}
+FactorNobility_chr {$casedName($ctx(name)|Gen)的荣誉}
+FactorRelationshipIndians {与$key(IndianAbl)的关系}
+DisabledAction_Capellan {此选项仅在船上有随船神父时可用}
+check_title {检定难度：}

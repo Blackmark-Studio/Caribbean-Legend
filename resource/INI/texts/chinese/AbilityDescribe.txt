@@ -1,320 +1,231 @@
+AdvancedBattleState {高级船只防御}
+AdvancedCommerce {高级贸易}
+AdvancedDefense {高级防御}
+Alchemy {炼金术}
+Ambuscade {伏击团}
+AmmoRig {装备}
+Bartender {酒保}
+BasicBattleState {基础船只防御}
+BasicCommerce {基础贸易}
+BasicDefense {基础防御}
+Bayonet {刺刀冲锋}
+BeneathWaterline {水线下方}
+BladeDancer {刀剑之舞}
+BoardingPrepare {准备}
+Bombardier {轰炸手}
+BruteForce {蛮力}
+Builder {损管}
+ByWorker {天赋}
+ByWorker2 {天才}
+CannonProfessional {高级炮手}
+Captain {船长}
+Carpenter {被动修理}
+Chance {孤注一掷}
+ChiefCook {高级厨师}
+Collection {稀奇物}
+Conquest {征服}
+Cook {厨师}
+CoordinatedBoarding {联合登船}
+CrewDamageUp {甲板扫帚}
+CriticalHit {暴击}
+CriticalShoot {致命射击}
+CunningStrike {阴险一击}
+DarkHorse {黑马}
+disabled_CompanionDisable {该角色不能或不愿指挥船只。}
+disabled_heroType {该perk仅对具有特定背景的角色开放。}
+disabled_NPCOnly {该perk仅对军官开放。}
+disabled_PlayerOnly {该perk仅对玩家开放。}
+Doctor {医生}
+Doctor1 {医生}
+Doctor2 {专家医生}
+Dodgy {机会主义}
+Dragoon {龙骑兵}
+Drill {操练}
+EnergyPlus {增长的能量}
+Exhaustion {疲劳}
+FastHands {快手}
+FastReload {射击训练}
+FlagEng {英格兰国旗}
+FlagFra {法国国旗}
+FlagHol {荷兰国旗}
+FlagPir {骷髅旗}
+FlagSpa {西班牙国旗}
+Flanking {侧翼进攻}
+Gossip {众人焦点}
+GrapplingProfessional {资深水手长}
+Grus {强健脊梁}
+Gunman {火枪手}
+GunProfessional {散兵}
+HardHitter {重手}
+Heartbreaker {心碎者}
+HPPlus {增长生命}
+HullDamageUp {弱点}
+ImmediateReload {预备射击}
+Inertia {惯性}
+InstantBoarding {立即登船}
+InstantRepair {战斗修理}
+Intendant {后勤官}
+Investor {投资者}
+Involvement {军械师}
+IronWill {钢铁意志}
+KeenEye {慧眼}
+Kern {实心弹}
+LeadRain {铅雨}
+LightRepair {紧急修理}
+LoneWolf {孤狼}
+LongRangeGrappling {狼之擒拿}
+LongRangeShoot {侧舷射程}
+Looting {彻底搜查}
+MarathonRunner {马拉松选手}
+Master {大师}
+MeatGrinder {绞肉机}
+Medic {健康习惯}
+Mimicry {拟态}
+Moonshiner {酿酒师}
+Mule {佩尔什龙}
+Muscles {肌肉山}
+MusketsShoot {火枪齐射}
+NeckStrike {颈部劈砍}
 newline
 {
 
 }
-BasicDefense {基础防御}
-perkBasicDefense {受到的伤害降低$percent($perkBaseValue(BasicDefense|1))。}
-AdvancedDefense {高级防御}
+OttomanGrip {奥斯曼握法}
+PalaceGuard {宫廷卫兵}
+PerfectBalance {完美平衡}
+perkAdvancedBattleState {对船只造成的所有伤害再降低10%。}
+perkAdvancedCommerce {出售商品的收益提高了4%。}
 perkAdvancedDefense {使受到的伤害降低$percent($perkBaseValue(AdvancedDefense|1)), 敌方暴击伤害降低$percent($perkBaseValue(AdvancedDefense|2))。}
-CriticalHit {暴击}
-perkCriticalHit {基础暴击率提高$percent($perkBaseValue(CriticalHit|1))。}
-Grus {强健脊梁}
-perkGrus {携带重量增加35磅。}
-Tireless {不知疲倦}
-perkTireless {能量恢复速度提高$percent($perkBaseValue(Tireless|1))。}
-HardHitter {重手}
-perkHardHitter {重型武器的重击攻击造成$percent($perkBaseValue(HardHitter|1))更多伤害。解锁高级重击攻击。}
-BladeDancer {刀剑之舞}
-perkBladeDancer {弯曲武器的群体攻击造成$percent($perkBaseValue(BladeDancer|1))更多伤害。}
-Sliding {不可抗拒的打击}
-perkSliding {轻型武器的劈砍或刺击攻击有 $percent($perkBaseValue(Sliding|1)) 概率以独特的高级打击突破格挡。}
-Gunman {火枪手}
-perkGunman
+perkAlchemy {配方不再需要工具。使用时有15%概率不消耗药剂。}
+perkAlchemy_alternate {提供 $percent($perkBaseValue(Alchemy|1)) 的几率在使用时不消耗药剂。}
+perkAmbuscade {配备长剑和多发手枪的决斗者在登 船时会替换部分普通水手。}
+perkAmmoRig {火器的装填速度提高$percent($perkBaseValue(AmmoRig|1))。}
+perkBartender {减少5%的朗姆酒消耗。}
+perkBasicBattleState {对船只造成的所有伤害减少10%。}
+perkBasicCommerce {购买收益提高4%。银行和市场中的热门商品会高亮 显示。}
+perkBasicDefense {受到的伤害降低$percent($perkBaseValue(BasicDefense|1))。}
+perkBayonet {双手近战攻击造成15%额外伤害, 使用刺刀时额外造成30%伤害。}
+perkBeneathWaterline
 {
-将火器的伤害和装填速度提高 $percent($perkBaseValue(Gunman|1))。 允许使用单发双手武器和多发单手武器。
- ~
- 军官只有在明确命令下才能使用 $key(descriptor_TwoHanded|ItemsDescriptors.txt)。
+命中舰船时，有概率在其吃水线以下打出破口，使目标进水并减速，直到漏洞被修补。~
+解锁选择舷侧齐射模式的能力。
 }
-GunProfessional {散兵}
-perkGunProfessional {将火器伤害和装填速度提高 $percent($perkBaseValue(GunProfessional|1))。解锁使用多发双手火器的能力。火枪手军官可以隔着友军队列射击而不会误伤。}
-IronWill {钢铁意志}
-perkIronWill {每3分钟可幸存一次致命伤。}
-SharedExperience {学得快}
-perkSharedExperience {技能发展速度提升15%。}
-Medic {健康习惯}
-perkMedic {生命值增加25点。当生命值低于最大值一半时, 被动治疗速度翻倍。}
-HPPlus {增长生命}
-perkHPPlus {每提升一个等级, 角色的 HP 增加 $perkBaseValue(HPPlus|1)。该特性具有追溯效果。}
-EnergyPlus {增长的能量}
-perkEnergyPlus {每提升一个新等级, 角色的能量上限增加1点。效果可追溯。}
-ByWorker {天赋}
+perkBladeDancer {弯曲武器的群体攻击造成$percent($perkBaseValue(BladeDancer|1))更多伤害。}
+perkBoardingPrepare {登船队在登船时获得药剂。}
+perkBombardier {火炮耐久度提升。}
+perkBruteForce {在登船战斗中, 部分普通水手会被装备斧头和护甲 的重装士兵替换。}
+perkBuilder {修理时木板和帆布消耗减少25%。}
 perkByWorker {角色可以同时担任两个军官职位}
-perkByWorkerShort {角色可以同时担任两个军官职位}
-ByWorker2 {天才}
 perkByWorker2 {该角色最多可同时担任三项军官职 务。}
 perkByWorker2Short {角色可同时担任三项军官职务}
-Trustworthy {值得信赖}
-perkTrustworthy {在部分任务对话中解锁替代说服选 项, 更易避免惩罚并进入敌对城镇。}
-ShipEscape {第二次机会}
-perkShipEscape
-{
-从英雄的沉船上乘救生艇转移到舰 队中的其他船只。
-战斗中, 当船体耐久低于15%时, 可通过货舱菜单转移或移动到其他 舰队船只。
-若同伴拥有此技能, 他们会从沉船或火船中逃生, 乘救生艇作为乘客返回英雄的船。
-}
-Alchemy {炼金术}
-perkAlchemy {配方不再需要工具。使用时有15%概率不消耗药剂。}
-FastReload {射击训练}
-perkFastReload {火炮装填速度提高10%。}
-ImmediateReload {预备射击}
-perkImmediateReload {下一次装填速度提升30%。每5分钟可激活一次。}
-HullDamageUp {弱点}
-perkHullDamageUp {对敌方船只船体的伤害提高10%。}
-SailsDamageUp {缆索弹}
-perkSailsDamageUp {对敌舰帆布造成的伤害提高10%。}
-CrewDamageUp {甲板扫帚}
-perkCrewDamageUp {对敌方船只船员的伤害提高10%。}
-CriticalShoot {致命射击}
-perkCriticalShoot {角色有几率对敌人发动暴击齐射。 几率: 5%。}
-LongRangeShoot {侧舷射程}
-perkLongRangeShoot {火炮射程提高10%}
-CannonProfessional {高级炮手}
+perkByWorkerShort {角色可以同时担任两个军官职位}
 perkCannonProfessional {对船体任意部位的伤害、火炮瞄准 与锁定速度, 以及暴击几率提高10%。}
-LongRangeGrappling {狼之擒拿}
-perkLongRangeGrappling {登船距离提高15%。}
-MusketsShoot {火枪齐射}
-perkMusketsShoot {在登船前会进行一次火枪齐射。造 成的伤亡取决于船只类型和先锋人 数。}
-GrapplingProfessional {资深水手长}
-perkGrapplingProfessional {登船距离提高25%。 可在任意接近角度和速度下进行。}
-BasicBattleState {基础船只防御}
-perkBasicBattleState {对船只造成的所有伤害减少10%。}
-AdvancedBattleState {高级船只防御}
-perkAdvancedBattleState {对船只造成的所有伤害再降低10%。}
-ShipDefenseProfessional {高级木匠}
-perkShipDefenseProfessional {舰船受到的所有伤害再降低5%。敌方暴击伤害降低35%。}
-ShipSpeedUp {疾速航行}
-perkShipSpeedUp {使船只最大速度提高15%。}
-ShipTurnRateUp {提升船只机动性}
-perkShipTurnRateUp {使船只机动性提高15%。}
-StormProfessional {防风暴}
-perkStormProfessional {风暴伤害降低30%。}
-Turn180 {规避机动}
-perkTurn180 {船只转向速度提升4倍, 持续1分钟。每3分钟可激活一次。}
-SailingProfessional {资深领航员}
-perkSailingProfessional {船只速度和机动性提高5%。逃脱几率提升。}
-SeaDogProfessional {海上霸主}
-perkSeaDogProfessional
-{
-见到海上恐怖的旗帜时, 即使是最勇敢的冒险者和亡命之徒 也不敢轻易挑战命运。 舰队力量提高$percent($PerkBaseValue(SeaDogProfessional|1))。
-~
-仅玩家可用技能; 需要$attr($context.rank)级。
-}
-FlagPir {骷髅旗}
+perkCaptain {角色可以在舰队中指挥4级及以上的船只。驾驶拉格船或小 型帆船不必是天才, 但对于大型舰船, 仅靠胆识是不够的。}
+perkCarpenter {航行时船体和帆会缓慢修复。需要 木板和帆布。}
+perkChance {单发火器暴击时造成15%额外伤害。单手火器暴击率提高2%。}
+perkChiefCook {将补给消耗减少10%。}
+perkCollection {每件放在船上的异域物品, 每在非敌对港口停留一天可获得1000比索。}
+perkCollection_alternate {每件由角色装备的异国物品都会使 其伤害增加 $percent($perkBaseValue(Collection|2)).}
+perkConquest {使用长兵器的斩击和重击造成的伤害提高 $percent($perkBaseValue(Conquest|1))。}
+perkCook {将补给消耗减少5%。}
+perkCoordinatedBoarding {允许舰队中的船只在距离足够近时 加入由其本舰船长领导的登船战。}
+perkCrewDamageUp {对敌方船只船员的伤害提高10%。}
+perkCriticalHit {基础暴击率提高$percent($perkBaseValue(CriticalHit|1))。}
+perkCriticalShoot {炮击命中时有 $percent($perkBaseValue(CriticalShoot|1)) 的概率造成暴击伤害。~在火炮完全装填后切换弹种时，其装填进度会重置为 $percent($perkBaseValue(CriticalShoot|2))，而不是归零。}
+perkCunningStrike {轻型武器暴击率提高$percent($perkBaseValue(CunningStrike|1))。背后攻击造成$percent($perkBaseValue(CunningStrike|2))更多伤害。}
+perkDarkHorse {每装备一个普通护身符和幸运符, 生命值与精力提升$percent($perkBaseValue(DarkHorse|1))。}
+perkDoctor {海战中减少5%的船员因伤和霰弹造成的损失。}
+perkDoctor1 {海战中因伤和霰弹造成的船员损失 减少5%。}
+perkDoctor2 {海战中因伤和霰弹造成的船员损失 减少10%。}
+perkDodgy {冲刺推搡效果提升$percent($perkBaseValue(Dodgy|1)), 且消耗更少能量。}
+perkDragoon {中型武器伤害提高10%。}
+perkDrill {携带火枪时的移动速度与瞄准时的行走速度提高 18%。}
+perkEnergyPlus {每提升一个新等级, 角色的能量上限增加1点。效果可追溯。}
+perkExhaustion {用短冷兵器招架时多消耗 $percent($perkBaseValue(Exhaustion|1))体力。敌人眩晕恢复时间延长10%。}
+perkFastHands {将火器的拔出和收回速度提高$percent($perkBaseValue(FastHands|1))。}
+perkFastReload {火炮装填速度提高10%。}
+perkFlagEng {你只能使用与你的船只等级 (rate) 相符的旗帜。要获得旗帜, 必须俘获相应等级的船只, 或购买许可证。}
+perkFlagFra {你只能使用与你的船只等级 (rate) 相符的旗帜。要获得旗帜, 必须俘获相应等级的船只, 或购买许可证。}
+perkFlagHol {你只能使用与你的船只等级 (rate) 相符的旗帜。要获得旗帜, 必须俘获相应等级的船只, 或购买许可证。}
 perkFlagPir
 {
 可以将你的旗帜更换为骷髅旗。
 ~
 该技能仅玩家可用。
 }
-FlagEng {英格兰国旗}
-perkFlagEng {你只能使用与你的船只等级 (rate) 相符的旗帜。要获得旗帜, 必须俘获相应等级的船只, 或购买许可证。}
-FlagFra {法国国旗}
-perkFlagFra {你只能使用与你的船只等级 (rate) 相符的旗帜。要获得旗帜, 必须俘获相应等级的船只, 或购买许可证。}
-FlagSpa {西班牙国旗}
 perkFlagSpa {你只能使用与你的船只等级 (rate) 相符的旗帜。要获得旗帜, 必须俘获相应等级的船只, 或购买许可证。}
-FlagHol {荷兰国旗}
-perkFlagHol {你只能使用与你的船只等级 (rate) 相符的旗帜。要获得旗帜, 必须俘获相应等级的船只, 或购买许可证。}
-Troopers {攻城战术}
-perkTroopers
+perkFlanking {弯曲武器攻击速度提高$percent($perkBaseValue(Flanking|1))。解锁高级群体攻击。}
+perkGossip {异域物品对舰队力量的加成提高5%。}
+perkGossip_alternate {作为伙伴时, 角色将舰队的战力提升 $percent($perkBaseValue(Gossip|1)).}
+perkGrapplingProfessional {登船距离提高25%。 可在任意接近角度和速度下进行。}
+perkGrus {携带重量增加35磅。}
+perkGunman
 {
-可在攻打要塞前合并舰队所有船员。
-减少陆上袭击定居点所需的船员数 量。
+将火器的伤害和装填速度提高 $percent($perkBaseValue(Gunman|1))。 允许使用单发双手武器和多发单手武器。
+ ~
+ 军官只有在明确命令下才能使用 $key(descriptor_TwoHanded|ItemsDescriptors.txt)。
 }
-BasicCommerce {基础贸易}
-perkBasicCommerce {购买收益提高4%。银行和市场中的热门商品会高亮 显示。}
-AdvancedCommerce {高级贸易}
-perkAdvancedCommerce {出售商品的收益提高了4%。}
-ProfessionalCommerce {资深财务官}
-perkProfessionalCommerce {买卖商品收益提高8%。}
-Carpenter {被动修理}
-perkCarpenter {航行时船体和帆会缓慢修复。需要 木板和帆布。}
-InstantRepair {战斗修理}
+perkGunProfessional {将火器伤害和装填速度提高 $percent($perkBaseValue(GunProfessional|1))。解锁使用多发双手火器的能力。火枪手军官可以隔着友军队列射击而不会误伤。}
+perkHardHitter {重型武器的重击攻击造成$percent($perkBaseValue(HardHitter|1))更多伤害。解锁高级重击攻击。}
+perkHeartbreaker {直刃武器的快速攻击造成的伤害提高 $percent($perkBaseValue(Heartbreaker|1)), 并且攻击速度提高 $percent($perkBaseValue(Heartbreaker|2))。}
+perkHPPlus {每提升一个等级, 角色的 HP 增加 $perkBaseValue(HPPlus|1)。该特性具有追溯效果。}
+perkHullDamageUp {对敌方船只船体的伤害提高10%。}
+perkImmediateReload {下一次装填速度提升30%。每5分钟可激活一次。}
+perkInertia {重型武器伤害提高10%。}
 perkInstantRepair
 {
 快速战斗维修, 可恢复高达80%的可用耐久度。需要木板修理船体, 帆布修理船帆。
 每1.5分钟可使用一次。
 }
-LightRepair {紧急修理}
+perkIntendant {减少战斗和逃离时货舱装载对速度 与机动性的惩罚。}
+perkInvestor {存款利率提高1%。}
+perkInvestor_alternate {将角色的贸易和领导技能提高 $number($perkBaseValue(Investor|2)).}
+perkInvolvement {水手长在登船战斗时登上甲板, 加入你的战斗。会替换一名水手且 无法被击杀。}
+perkIronWill {每3分钟可幸存一次致命伤。}
+perkKeenEye {爆头造成$percent($perkBaseValue(KeenEye|1))更多伤害。}
+perkKeenEye_alternate {角色获得 $percent($perkBaseValue(KeenEye|2)) 的暴击射击几率提升。}
+perkKern {多发火器每有一个空弹可获得8%伤害加成和4%装填速度。}
+perkLeadRain {霰弹每击中一名敌人, 伤害提高5%。}
 perkLightRepair
 {
 可在不消耗额外资源的情况下修复 船体上限的10%。没有此技能时, 船体耐久低于10%会缓慢损坏。
 每3分钟可激活一次。
 }
-Builder {损管}
-perkBuilder {修理时木板和帆布消耗减少25%。}
-SelfRepair {完全修理}
-perkSelfRepair
-{
-能够在任何合适的岸边利用船员完 全修理你的船。 修理船体和桅杆需要木板, 修理帆需要帆布。可实现船体、帆 和桅杆的完全恢复。
-
-修理选项仅在沿海陆地地点可用。
-}
-WindCatcher {海感}
-perkWindCatcher
-{
-船只加速提升10%。
-
-在熟悉水域拥有地图时, 提高全球地图上的航行速度。
-}
-SailsMan {疾速帆}
-perkSailsMan {得益于最新的奖惩方法, 所有帆操作速度提升10%。}
-Doctor1 {医生}
-perkDoctor1 {海战中因伤和霰弹造成的船员损失 减少5%。}
-Doctor2 {专家医生}
-perkDoctor2 {海战中因伤和霰弹造成的船员损失 减少10%。}
-TannedLeather {厚皮}
-perkTannedLeather {轻甲防护提升50%, 快速回退时能量消耗减少30%。}
-RatsWolf {鼠狼}
-perkRatsWolf {该角色的船上货物不会因老鼠等害 虫受损。}
-Mimicry {拟态}
-perkMimicry {海上潜行检定效果提升50%。}
-TreasureHunter {寻宝者}
-perkTreasureHunter {藏宝图商人出现得更频繁, 宝藏本身也更有价值。}
-Dragoon {龙骑兵}
-perkDragoon {中型武器伤害提高10%。}
-Bombardier {轰炸手}
-perkBombardier {火炮耐久度提升。}
-Sniper {狙击手}
-perkSniper {用火器命中会消耗敌人的能量。}
-perkTreeMusketer {火枪手}
-perkTreeSoldier {士兵}
-perkTreeMastery {精通}
-perkTreeBackground {背景}
-perkTreeFencing {击剑手}
-perkTreePirat {海盗}
-perkTreeAdventurer {冒险者}
-perkTreeOfficer {军官}
-perkTreeFlags {旗帜}
-perkTreeCannoner {$key(Cannoner)}
-perkTreeBoatswain {$key(Boatswain)}
-perkTreeCarpenter {$key(Carpenter)}
-perkTreeNavigator {$key(Navigator)}
-perkTreeTreasurer {$key(Treasurer)}
-perkTreeDoctor {$key(Doctor)}
-FastHands {快手}
-perkFastHands {将火器的拔出和收回速度提高$percent($perkBaseValue(FastHands|1))。}
-AmmoRig {装备}
-perkAmmoRig {火器的装填速度提高$percent($perkBaseValue(AmmoRig|1))。}
-Preaim {校准}
-perkPreaim {瞄准模式快$percent($perkBaseValue(Preaim|1))。}
-KeenEye {慧眼}
-perkKeenEye {爆头造成$percent($perkBaseValue(KeenEye|1))更多伤害。}
-PowderFeel {火药感知}
-perkPowderFeel {使用炼金术制作的弹药数量提高$percent($perkBaseValue(PowderFeel|1))。}
-Drill {操练}
-perkDrill {使用火枪时的移动速度和瞄准行走 速度提高18%。解锁高级射击姿态。}
-LeadRain {铅雨}
-perkLeadRain {霰弹每击中一名敌人, 伤害提高5%。}
-ShootToKill {格杀射击}
-perkShootToKill {用火器命中敌人会使其减速, 移动速度降低25%。持续时间: 5秒。}
-Muscles {肌肉山}
-perkMuscles {使用重型武器的任何攻击消耗能量 减少$percent($perkBaseValue(Muscles|1)), 速度提升$percent($perkBaseValue(Muscles|2))。眩晕恢复速度提升$percent($perkBaseValue(Muscles|3))。}
-Conquest {征服}
-perkConquest {使用长兵器的斩击和重击造成的伤害提高 $percent($perkBaseValue(Conquest|1))。}
-PalaceGuard {宫廷卫兵}
-perkPalaceGuard {重型弯曲武器攻击时伤害提高$percent($perkBaseValue(PalaceGuard|1)), 群体攻击时额外提高5%。}
-CunningStrike {阴险一击}
-perkCunningStrike {轻型武器暴击率提高$percent($perkBaseValue(CunningStrike|1))。背后攻击造成$percent($perkBaseValue(CunningStrike|2))更多伤害。}
-Heartbreaker {心碎者}
-perkHeartbreaker {直刃武器的快速攻击造成的伤害提高 $percent($perkBaseValue(Heartbreaker|1)), 并且攻击速度提高 $percent($perkBaseValue(Heartbreaker|2))。}
-Dodgy {机会主义}
-perkDodgy {冲刺推搡效果提升$percent($perkBaseValue(Dodgy|1)), 且消耗更少能量。}
-Exhaustion {疲劳}
-perkExhaustion {用短冷兵器招架时多消耗 $percent($perkBaseValue(Exhaustion|1))体力。敌人眩晕恢复时间延长10%。}
-Reaper {死神}
-perkReaper {暴击伤害提高 $percent($perkBaseValue(Reaper|1)), 快速攻击的暴击几率提高 $percent($perkBaseValue(Reaper|2))。}
-MarathonRunner {马拉松选手}
-perkMarathonRunner {冲刺速度提升$percent($perkBaseValue(MarathonRunner|2)), 能量消耗减少三分之一。}
-PerfectBalance {完美平衡}
-perkPerfectBalance {手持中型武器时, 所受伤害降低$percent($perkBaseValue(PerfectBalance|1))。}
-Flanking {侧翼进攻}
-perkFlanking {弯曲武器攻击速度提高$percent($perkBaseValue(Flanking|1))。解锁高级群体攻击。}
-SabreHurricane {弯刀旋风}
-perkSabreHurricane {使用中型弯曲冷兵器进行劈砍攻击 和快速攻击时, 攻击范围更广, 可击中相邻敌人, 并造成$percent($perkBaseValue(SabreHurricane|1))额外伤害。}
-Practice {实践提升}
-perkPractice {每装备一件可制作物品, 所有技能提升$number($perkBaseValue(Practice|1))点。}
-Strychnine {士的宁}
-perkStrychnine {攻击和射击有9%几率使目标中毒。可与护身符加成 叠加。}
-DarkHorse {黑马}
-perkDarkHorse {每装备一个普通护身符和幸运符, 生命值与精力提升$percent($perkBaseValue(DarkHorse|1))。}
-Master {大师}
-perkMaster {每制作一件需要工具套装的物品，造成的伤害提高 $percent($perkBaseValue(Master|2))。}
-Quiet {轻步}
-perkQuiet {偷窃时不会被发现。}
-Looting {彻底搜查}
-perkLooting {登船结束后, 水手会自动搜查甲板, 并将所有战利品交给你。}
-Collection {稀奇物}
-perkCollection {每件放在船上的异域物品, 每在非敌对港口停留一天可获得1000比索。}
-Tiefit {定制}
-perkTiefit {普通和华丽物品的技能加成提高$number($perkBaseValue(Tiefit|1))点。}
-Investor {投资者}
-perkInvestor {存款利率提高1%。}
-Gossip {众人焦点}
-perkGossip {异域物品对舰队力量的加成提高5%。}
-Captain {船长}
-perkCaptain {角色可以在舰队中指挥4级及以上的船只。驾驶拉格船或小 型帆船不必是天才, 但对于大型舰船, 仅靠胆识是不够的。}
-Chance {孤注一掷}
-perkChance {单发火器暴击时造成15%额外伤害。单手火器暴击率提高2%。}
-Bayonet {刺刀冲锋}
-perkBayonet {双手近战攻击造成15%额外伤害, 使用刺刀时额外造成30%伤害。}
-Kern {实心弹}
-perkKern {多发火器每有一个空弹可获得8%伤害加成和4%装填速度。}
-MeatGrinder {绞肉机}
-perkMeatGrinder {短武器伤害提高10%。}
-NeckStrike {颈部劈砍}
-perkNeckStrike {长武器伤害提高10%。}
-Stabbing {持刀斗殴}
-perkStabbing {短武器伤害提高8%。}
-Virtuosity {精湛}
-perkVirtuosity {轻型武器伤害提高10%。}
-Puncher {打孔器}
-perkPuncher {直武器伤害提高10%。}
-Reach {攻击距离}
-perkReach {长武器伤害提高8%。}
-Inertia {惯性}
-perkInertia {重型武器伤害提高10%。}
-OttomanGrip {奥斯曼握法}
-perkOttomanGrip {弯曲武器伤害提高10%。}
-Mule {佩尔什龙}
-perkMule {训练有成—重型武器和护甲的减速效果降低50%, 并且每级负重量增加2磅。}
-BeneathWaterline {水线下方}
-perkBeneathWaterline {命中船只时, 有概率击穿水线下方, 使目标进水并减速, 直到破洞被修复。}
-CoordinatedBoarding {联合登船}
-perkCoordinatedBoarding {允许舰队中的船只在距离足够近时 加入由其本舰船长领导的登船战。}
-Involvement {军械师}
-perkInvolvement {水手长在登船战斗时登上甲板, 加入你的战斗。会替换一名水手且 无法被击杀。}
-BruteForce {蛮力}
-perkBruteForce {在登船战斗中, 部分普通水手会被装备斧头和护甲 的重装士兵替换。}
-Ambuscade {伏击团}
-perkAmbuscade {配备长剑和多发手枪的决斗者在登 船时会替换部分普通水手。}
-LoneWolf {孤狼}
 perkLoneWolf {只要舰队中只有一艘船, 逃跑几率提升, 舰队力量提高$percent($perkBaseValue(LoneWolf|1))。}
-Thrift {节俭}
-perkThrift {使帆损伤对速度和机动性的影响降 低10%。}
-QuickGlance {快眼}
-perkQuickGlance {使用望远镜勘察时可确定船只类型 和特性。}
-TrainedEye {敏锐之眼}
-perkTrainedEye {使用望远镜勘察时, 可大致估算船上贵重物品的数量。}
-TradeConnections {贸易关系}
-perkTradeConnections {价格列表在访问殖民地时会自动更 新。}
-Intendant {后勤官}
-perkIntendant {减少战斗和逃离时货舱装载对速度 与机动性的惩罚。}
-Doctor {医生}
-perkDoctor {海战中减少5%的船员因伤和霰弹造成的损失。}
-BoardingPrepare {准备}
-perkBoardingPrepare {登船队在登船时获得药剂。}
-Cook {厨师}
-perkCook {将补给消耗减少5%。}
-ChiefCook {高级厨师}
-perkChiefCook {将补给消耗减少10%。}
-Bartender {酒保}
-perkBartender {减少5%的朗姆酒消耗。}
-Moonshiner {酿酒师}
+perkLongRangeGrappling {登船距离提高15%。}
+perkLongRangeShoot {火炮射程提高10%}
+perkLooting {登船结束后, 水手会自动搜查甲板, 并将所有战利品交给你。}
+perkLooting_alternate {将可携带重量增加 $perkBaseValue(Looting|1) 磅。}
+perkMarathonRunner {冲刺速度提升$percent($perkBaseValue(MarathonRunner|2)), 能量消耗减少三分之一。}
+perkMarathonRunner_alternate {角色将其能量储备增加 $number($perkBaseValue(MarathonRunner|3)).}
+perkMaster {每制作一件需要工具套装的物品，造成的伤害提高 $percent($perkBaseValue(Master|2))。}
+perkMaster_alternate {角色每喝下一瓶药剂，造成的伤害提高 $percent($perkBaseValue(Master|2))。}
+perkMaster_currentBonus {当前加成: $percent($attr($context.ct.static.fast_Damage.perk_master))}
+perkMeatGrinder {短武器伤害提高10%。}
+perkMedic {生命值增加25点。当生命值低于最大值一半时, 被动治疗速度翻倍。}
+perkMimicry {海上潜行检定效果提升50%。}
 perkMoonshiner {减少10%的朗姆酒消耗。}
-Quartermaster {军需官}
+perkMule {训练有成—重型武器和护甲的减速效果降低50%, 并且每级负重量增加2磅。}
+perkMuscles {使用重型武器的任何攻击消耗能量 减少$percent($perkBaseValue(Muscles|1)), 速度提升$percent($perkBaseValue(Muscles|2))。眩晕恢复速度提升$percent($perkBaseValue(Muscles|3))。}
+perkMusketsShoot {在登船前会进行一次火枪齐射。造 成的伤亡取决于船只类型和先锋人 数。}
+perkNeckStrike {长武器伤害提高10%。}
+perkOttomanGrip {弯曲武器伤害提高10%。}
+perkPalaceGuard {重型弯曲武器攻击时伤害提高$percent($perkBaseValue(PalaceGuard|1)), 群体攻击时额外提高5%。}
+perkPerfectBalance {手持中型武器时, 所受伤害降低$percent($perkBaseValue(PerfectBalance|1))。}
+perkPowderFeel {使用炼金术制作的弹药数量提高$percent($perkBaseValue(PowderFeel|1))。}
+perkPowderFeel_alternate {角色获得 $percent($perkBaseValue(PowderFeel|2)) 的几率在开火时不消耗弹药。}
+perkPractice {每装备一件可制作物品, 所有技能提升$number($perkBaseValue(Practice|1))点。}
+perkPreaim {瞄准模式快$percent($perkBaseValue(Preaim|1))。}
+perkPreaim_alternate {角色对未满生命值的敌人造成 $percent($perkBaseValue(Preaim|2)) 更多的射击伤害。}
+perkProfessionalCommerce {买卖商品收益提高8%。}
+perkPuncher {直武器伤害提高10%。}
 perkQuartermaster {最大船员数提高10%。}
-InstantBoarding {立即登船}
-Rush {奥美托奇利酊剂}
+perkQuickGlance {使用望远镜勘察时可确定船只类型 和特性。}
+perkQuiet {偷窃时不会被发现。}
+perkQuiet_alternate {角色进行背后攻击时造成 $percent($perkBaseValue(Quiet|1)) 更多伤害。}
+perkRatsWolf {该角色的船上货物不会因老鼠等害 虫受损。}
+perkReach {长武器伤害提高8%。}
+perkReaper {暴击伤害提高 $percent($perkBaseValue(Reaper|1)), 快速攻击的暴击几率提高 $percent($perkBaseValue(Reaper|2))。}
 perkRush
 {
 致幻酊剂, 促使瞬间展现巨大力量和耐力, 显著提高敏捷度和反应速度, 同时产生强烈攻击性和疼痛麻木感。 
@@ -322,16 +233,114 @@ perkRush
 ~
 此能力有1分钟冷却时间。
 }
+perkSabreHurricane {使用中型弯曲冷兵器进行劈砍攻击 和快速攻击时, 攻击范围更广, 可击中相邻敌人, 并造成$percent($perkBaseValue(SabreHurricane|1))额外伤害。}
+perkSailingProfessional {船只速度和机动性提高5%。逃脱几率提升。}
+perkSailsDamageUp {对敌舰帆布造成的伤害提高10%。}
+perkSailsMan {得益于最新的奖惩方法, 所有帆操作速度提升10%。}
+perkSeaDogProfessional
+{
+见到海上恐怖的旗帜时, 即使是最勇敢的冒险者和亡命之徒 也不敢轻易挑战命运。 舰队力量提高$percent($PerkBaseValue(SeaDogProfessional|1))。
+~
+仅玩家可用技能; 需要$attr($context.rank)级。
+}
+perkSelfRepair
+{
+能够在任何合适的岸边利用船员完 全修理你的船。 修理船体和桅杆需要木板, 修理帆需要帆布。可实现船体、帆 和桅杆的完全恢复。
+
+修理选项仅在沿海陆地地点可用。
+}
+perkSharedExperience {技能发展速度提升15%。}
+perkShipDefenseProfessional {舰船受到的所有伤害再降低5%。敌方暴击伤害降低35%。}
+perkShipEscape
+{
+从英雄的沉船上乘救生艇转移到舰 队中的其他船只。
+战斗中, 当船体耐久低于15%时, 可通过货舱菜单转移或移动到其他 舰队船只。
+若同伴拥有此技能, 他们会从沉船或火船中逃生, 乘救生艇作为乘客返回英雄的船。
+}
+perkShipSpeedUp {使船只最大速度提高15%。}
+perkShipTurnRateUp {使船只机动性提高15%。}
+perkShootToKill {用火器命中敌人会使其减速, 移动速度降低25%。持续时间: 5秒。}
+perkSliding {轻型武器的劈砍或刺击攻击有 $percent($perkBaseValue(Sliding|1)) 概率以独特的高级打击突破格挡。}
+perkSniper {用火器命中会消耗敌人的能量。}
+perkStabbing {短武器伤害提高8%。}
+perkStormProfessional {风暴伤害降低30%。}
+perkStrychnine {攻击和射击有9%几率使目标中毒。可与护身符加成 叠加。}
+perkTannedLeather {轻甲防护提升50%, 快速回退时能量消耗减少30%。}
+perkThrift {使帆损伤对速度和机动性的影响降 低10%。}
+perkTiefit {普通和华丽物品的技能加成提高$number($perkBaseValue(Tiefit|1))点。}
+perkTireless {能量恢复速度提高$percent($perkBaseValue(Tireless|1))。}
+perkTradeConnections {价格列表在访问殖民地时会自动更 新。}
+perkTrainedEye {使用望远镜勘察时, 可大致估算船上贵重物品的数量。}
+perkTreasureHunter {藏宝图商人出现得更频繁, 宝藏本身也更有价值。}
+perkTreeAdventurer {冒险者}
+perkTreeBackground {背景}
+perkTreeBoatswain {$key(Boatswain)}
+perkTreeCannoner {$key(Cannoner)}
+perkTreeCarpenter {$key(Carpenter)}
+perkTreeDoctor {$key(Doctor)}
+perkTreeFencing {击剑手}
+perkTreeFlags {旗帜}
+perkTreeMastery {精通}
+perkTreeMusketer {火枪手}
+perkTreeNavigator {$key(Navigator)}
+perkTreeOfficer {军官}
+perkTreePirat {海盗}
+perkTreeSoldier {士兵}
+perkTreeTreasurer {$key(Treasurer)}
+perkTroopers
+{
+可在攻打要塞前合并舰队所有船员。
+减少陆上袭击定居点所需的船员数 量。
+}
+perkTrustworthy {在部分任务对话中解锁替代说服选 项, 更易避免惩罚并进入敌对城镇。}
 perkTrustworthy_alternate {担任军官时, 角色的薪资减少 $percent($perkBaseValue(Trustworthy|1)).}
-perkAlchemy_alternate {提供 $percent($perkBaseValue(Alchemy|1)) 的几率在使用时不消耗药剂。}
-perkPreaim_alternate {角色对未满生命值的敌人造成 $percent($perkBaseValue(Preaim|2)) 更多的射击伤害。}
-perkKeenEye_alternate {角色获得 $percent($perkBaseValue(KeenEye|2)) 的暴击射击几率提升。}
-perkPowderFeel_alternate {角色获得 $percent($perkBaseValue(PowderFeel|2)) 的几率在开火时不消耗弹药。}
-perkMarathonRunner_alternate {角色将其能量储备增加 $number($perkBaseValue(MarathonRunner|3)).}
-perkQuiet_alternate {角色进行背后攻击时造成 $percent($perkBaseValue(Quiet|1)) 更多伤害。}
-perkCollection_alternate {每件由角色装备的异国物品都会使 其伤害增加 $percent($perkBaseValue(Collection|2)).}
-perkInvestor_alternate {将角色的贸易和领导技能提高 $number($perkBaseValue(Investor|2)).}
-perkGossip_alternate {作为伙伴时, 角色将舰队的战力提升 $percent($perkBaseValue(Gossip|1)).}
-perkMaster_alternate {角色每喝下一瓶药剂，造成的伤害提高 $percent($perkBaseValue(Master|2))。}
-perkLooting_alternate {将可携带重量增加 $perkBaseValue(Looting|1) 磅。}
-perkMaster_currentBonus {当前加成: $percent($attr($context.ct.static.fast_Damage.perk_master))}
+perkTurn180 {船只转向速度提升4倍, 持续1分钟。每3分钟可激活一次。}
+perkVirtuosity {轻型武器伤害提高10%。}
+perkWindCatcher
+{
+船只加速提升10%。
+
+在熟悉水域拥有地图时, 提高全球地图上的航行速度。
+}
+PowderFeel {火药感知}
+Practice {实践提升}
+Preaim {校准}
+ProfessionalCommerce {资深财务官}
+Puncher {打孔器}
+Quartermaster {军需官}
+QuickGlance {快眼}
+Quiet {轻步}
+rankRequired {需要达到 $attr($context.rank) 级才能学习。}
+RatsWolf {鼠狼}
+Reach {攻击距离}
+Reaper {死神}
+Rush {奥美托奇利酊剂}
+SabreHurricane {弯刀旋风}
+SailingProfessional {资深领航员}
+SailsDamageUp {缆索弹}
+SailsMan {疾速帆}
+SeaDogProfessional {海上霸主}
+SelfRepair {完全修理}
+SharedExperience {学得快}
+ShipDefenseProfessional {高级木匠}
+ShipEscape {第二次机会}
+ShipSpeedUp {疾速航行}
+ShipTurnRateUp {提升船只机动性}
+ShootToKill {格杀射击}
+Sliding {不可抗拒的打击}
+Sniper {狙击手}
+Stabbing {持刀斗殴}
+StormProfessional {防风暴}
+Strychnine {士的宁}
+TannedLeather {厚皮}
+Thrift {节俭}
+Tiefit {定制}
+Tireless {不知疲倦}
+TradeConnections {贸易关系}
+TrainedEye {敏锐之眼}
+TreasureHunter {寻宝者}
+Troopers {攻城战术}
+Trustworthy {值得信赖}
+Turn180 {规避机动}
+Virtuosity {精湛}
+WindCatcher {海感}

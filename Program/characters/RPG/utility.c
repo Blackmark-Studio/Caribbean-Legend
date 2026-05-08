@@ -355,14 +355,7 @@ void ChangeAttributesFromCharacter(ref CopyChref, ref PastChref, bool _dialogCop
 
 string GetRPGText(string _param)
 {
-    int    idLngFile = -1;
-    string totalInfo;
-
-    idLngFile = LanguageOpenFile("RPGDescribe.txt");
-    totalInfo = LanguageConvertString(idLngFile, _param);
-    LanguageCloseFile(idLngFile);
-
-    return totalInfo;
+	return DLG_Convert(_param, "RPGDescribe.txt");
 }
 
 // В будущем должно быть в кеш-таблице для глобалки, пока что просто берем из предметов

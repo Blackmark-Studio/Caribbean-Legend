@@ -1,11 +1,33 @@
 GenQuests_1 {走私者}
-GenQuests_2 {军官}
-GenQuests_3 {士兵}
-GenQuests_4 {所以我找到了来自 @<sCity> 姑娘的结婚戒指... 我得把它交给她。}
+GenQuests_100 {你听说了吗? 某个船长从强盗手中救出了一个名 叫 @<pchar.GenQuest.EncGirl.name> 的女孩 —简直是从他们手中把她抢了过来! 多么好的人, 是个真正的男人!}
+GenQuests_101
+{
+你知道吗, @<GetFullName(pchar)> 船长在丛林里从强奸犯手中救出了 一个名叫 @<pchar.GenQuest.EncGirl.name> 的女孩... 啊, 那是你! 我印象深刻... GenQuests_102
+}
+GenQuests_102 { }
+GenQuests_103 {嗯, @<GetFullName(pchar)> 船长, 没人会想到你会把一个无助的女人 留在强盗手中任他们玩弄。 可怜的 @<pchar.GenQuest.EncGirl.name> , 要是我有话可说...}
+GenQuests_104 {你知道吗, 船长, 你真是个混蛋。 怎么能在丛林里对一个无助的女孩 置之不理? 你知道他们对她做了什么吗? 可怜的 @<pchar.GenQuest.EncGirl.name> , 再也没人会娶她了...}
+GenQuests_105 {你听说 @<pchar.GenQuest.EncGirlF.name> 被谋杀的事了吗? 可怜的女孩, 她最近在丛林里被杀了。 应该找到凶手并绞死他!}
+GenQuests_106 {你知道吗, @<GetFullName(pchar)> 船长, 有人谋杀了一个名叫 @<pchar.GenQuest.EncGirlF.name> 的可怜女孩? 真可惜, 她是个非常好的女孩...}
+GenQuests_107 {她的名字叫 @<pchar.GenQuest.EncGirlF.name> , 死在丛林里。 我告诉你, 那里并不安全...}
+GenQuests_108 {最近他们发现我们的军官和他的整 个部队都死了。 谁会杀了他们? 为什么?}
+GenQuests_109 {我们的指挥官定期派巡逻队进入丛 林, 但我不知道他现在打算做什么。 不久前在那里发现了士兵的尸体...}
+GenQuests_110 {该死的, 有人在城外屠杀了我们一整个部队 的士兵...}
+GenQuests_111 {据说 @<GetFullName(pchar)> 船长在丛林里与 @<NationNameGenitive(sti(pchar.GenQuest.(attrName).nation))> 的士兵相遇, 并将他们全部消灭。 哈, @<NationNamePeople(sti(pchar.GenQuest.(attrName).nation))> 都是些没用的士兵...}
+GenQuests_112 {我肯定听说某个 @<GetMainCharacterNameGen()> 船长在城外被巡逻队检查过...}
+GenQuests_113 {嗯, 据我所知, 你在城外被我们的巡逻队检查过。 我不知道这有多有效...}
+GenQuests_114 {我们的指挥官将加强丛林巡逻。 你肯定已经知道了, 你不久前被检查过...}
+GenQuests_115 {你知道吗, @<sTemp> 总督命令某个 @<GetMainCharacterNameDat()> 船长去消灭一个名叫 @<GetFullName(arAll)> 的臭名昭著的强盗。 看来船长完成了任务...}
+GenQuests_116 {某个勇敢的船长自愿追捕并消灭一 个名叫 @<GetFullName(arAll)> 的当地强盗。 看起来他做到了!}
+GenQuests_117 {哈! 我们的总督终于决定恢复丛林的秩 序 —他派 @<GetMainCharacterNameDat()> 船长去追踪并杀死最臭名昭著的强 盗。 你知道吗? 那个强盗, @<GetFullName(arAll)> , 死了!}
+GenQuests_118 {地图}
+GenQuests_119 {宝藏}
+GenQuests_120 {钱}
 GenQuests_16 {宝藏就在附近!}
 GenQuests_17 {搜寻船只的时间已到}
 GenQuests_18 {搜寻船只的时间已到, 船长上岸了}
 GenQuests_19 {船长上岸了}
+GenQuests_2 {军官}
 GenQuests_20 {船长! 我们这里有流行病!}
 GenQuests_21 {@<chref.Ship.Name> 号上已经死亡 @<crew> 人}
 GenQuests_22 {爆炸了}
@@ -16,6 +38,7 @@ GenQuests_26 {你听说了吗? 女主人把一个名叫 @<pchar.GenQuest.EncGirl
 GenQuests_27 {你听说了吗? 某个妓女试图无证登船? 她被抓住并送回了妓院。 据说她欠了老鸨一大笔钱。}
 GenQuests_28 {你听说了吗? 我们港口抓到了一个没有证件的妓 女。 据说她从妓院偷了老板的箱子后逃 了出来。 这种传播疾病和盗窃的地方早就该 关闭了。 毕竟, 我们的孩子都看到了这一切, 他们能学到什么呢?}
 GenQuests_29 {George}
+GenQuests_3 {士兵}
 GenQuests_30 {Bush}
 GenQuests_31 {Rabak}
 GenQuests_32 {Maboa}
@@ -26,6 +49,7 @@ GenQuests_36 {在炮兵领域}
 GenQuests_37 {在航海领域}
 GenQuests_38 {船长, 你在海盗船上的旅行怎么样? 正常吗? 你在那里受委屈了吗? 哈哈哈!}
 GenQuests_39 {哦哦哦, 船长, 我听说你最近玩得很开心... .你, 我的朋友, 现在是个穷人了! 哈哈哈!!}
+GenQuests_4 {所以我找到了来自 @<sCity> 姑娘的结婚戒指... 我得把它交给她。}
 GenQuests_40 {你可以在海湾停泊。}
 GenQuests_41 {你听说了吗, @<GetAddress_Form(pchar)> , @<sShipType> 巡逻队长 @<pchar.GenQuest.CaptainComission.Name> 最近被捕了。 原来他兼职做走私者。 想想看, 前任总督给殖民地带来了什么! 那些本应抓捕海盗的人却自己在抢 劫我们! ... 据传一周后他将被处决。 他罪有应得。}
 GenQuests_42 {据传 @<sShipType> 巡逻队长 @<pchar.GenQuest.CaptainComission.Name> 原来是一个走私团伙的组织者。 他被抓住了, 很快就要被绞死。 看来 @<GetAddress_Form(pchar)> , 我们的总督已经认真对待殖民地的 秩序了。}
@@ -86,27 +110,3 @@ GenQuests_96 {你听说当地 @<pchar.GenQuest.(Gun).name> 团伙试图抢劫一
 GenQuests_97 {你听说 @<pchar.GenQuest.EncGirl.name> 被谋杀的事了吗? 可怜的女孩, 她最近在丛林里被杀了。 应该找到凶手并绞死他!}
 GenQuests_98 {你知道吗, @<GetFullName(pchar)> 船长, 有人谋杀了一个名叫 @<pchar.GenQuest.EncGirl.name> 的可怜女孩? 真可惜, 她是个非常好的女孩...}
 GenQuests_99 {她的名字叫 @<pchar.GenQuest.EncGirl.name> , 死在丛林里。 我告诉你, 那里并不安全...}
-GenQuests_100 {你听说了吗? 某个船长从强盗手中救出了一个名 叫 @<pchar.GenQuest.EncGirl.name> 的女孩 —简直是从他们手中把她抢了过来! 多么好的人, 是个真正的男人!}
-GenQuests_101
-{
-你知道吗, @<GetFullName(pchar)> 船长在丛林里从强奸犯手中救出了 一个名叫 @<pchar.GenQuest.EncGirl.name> 的女孩... 啊, 那是你! 我印象深刻... GenQuests_102
-}
-GenQuests_102 { }
-GenQuests_103 {嗯, @<GetFullName(pchar)> 船长, 没人会想到你会把一个无助的女人 留在强盗手中任他们玩弄。 可怜的 @<pchar.GenQuest.EncGirl.name> , 要是我有话可说...}
-GenQuests_104 {你知道吗, 船长, 你真是个混蛋。 怎么能在丛林里对一个无助的女孩 置之不理? 你知道他们对她做了什么吗? 可怜的 @<pchar.GenQuest.EncGirl.name> , 再也没人会娶她了...}
-GenQuests_105 {你听说 @<pchar.GenQuest.EncGirlF.name> 被谋杀的事了吗? 可怜的女孩, 她最近在丛林里被杀了。 应该找到凶手并绞死他!}
-GenQuests_106 {你知道吗, @<GetFullName(pchar)> 船长, 有人谋杀了一个名叫 @<pchar.GenQuest.EncGirlF.name> 的可怜女孩? 真可惜, 她是个非常好的女孩...}
-GenQuests_107 {她的名字叫 @<pchar.GenQuest.EncGirlF.name> , 死在丛林里。 我告诉你, 那里并不安全...}
-GenQuests_108 {最近他们发现我们的军官和他的整 个部队都死了。 谁会杀了他们? 为什么?}
-GenQuests_109 {我们的指挥官定期派巡逻队进入丛 林, 但我不知道他现在打算做什么。 不久前在那里发现了士兵的尸体...}
-GenQuests_110 {该死的, 有人在城外屠杀了我们一整个部队 的士兵...}
-GenQuests_111 {据说 @<GetFullName(pchar)> 船长在丛林里与 @<NationNameGenitive(sti(pchar.GenQuest.(attrName).nation))> 的士兵相遇, 并将他们全部消灭。 哈, @<NationNamePeople(sti(pchar.GenQuest.(attrName).nation))> 都是些没用的士兵...}
-GenQuests_112 {我肯定听说某个 @<GetMainCharacterNameGen()> 船长在城外被巡逻队检查过...}
-GenQuests_113 {嗯, 据我所知, 你在城外被我们的巡逻队检查过。 我不知道这有多有效...}
-GenQuests_114 {我们的指挥官将加强丛林巡逻。 你肯定已经知道了, 你不久前被检查过...}
-GenQuests_115 {你知道吗, @<sTemp> 总督命令某个 @<GetMainCharacterNameDat()> 船长去消灭一个名叫 @<GetFullName(arAll)> 的臭名昭著的强盗。 看来船长完成了任务...}
-GenQuests_116 {某个勇敢的船长自愿追捕并消灭一 个名叫 @<GetFullName(arAll)> 的当地强盗。 看起来他做到了!}
-GenQuests_117 {哈! 我们的总督终于决定恢复丛林的秩 序 —他派 @<GetMainCharacterNameDat()> 船长去追踪并杀死最臭名昭著的强 盗。 你知道吗? 那个强盗, @<GetFullName(arAll)> , 死了!}
-GenQuests_118 {地图}
-GenQuests_119 {宝藏}
-GenQuests_120 {钱}

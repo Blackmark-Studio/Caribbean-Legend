@@ -292,7 +292,7 @@ void ProcessDialogEvent()
 
 		case "Zaharia_3":
 			sld = CharacterFromID("PuertoPrincipe_tavernkeeper");
-			dialog.text = "很高兴看到我没信错人, "+sld.name+"。 明天来我住处拿杜布隆。 ";
+			dialog.text = "很高兴看到我没信错人, "+sld.name+"。";
 			link.l1 = "... ";
 			link.l1.go = "Zaharia_4";
 			CharacterTurnByChr(npchar, sld);
@@ -314,7 +314,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tavern_1":
-			dialog.text = "船长, 关于那块牌匾... ";
+			dialog.text = "船长，这是您的达布隆。至于那块铭牌...";
 			link.l1 = "什么牌匾? 啊, 那个... 我想我不需要这种荣誉。 不必为我麻烦。 ";
 			link.l1.go = "Tavern_2";
 		break;
@@ -332,6 +332,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("OS", "5");
 			AddQuestUserData("OS", "sSex", GetSexPhrase("","а"));
 			pchar.questTemp.OS_Tavern_FreeBuhlo = true;
+			TakeNItems(pchar, "gold_dublon", 150);
 			ChangeShowIntarface();
 			
 			sld = CharacterFromID("PuertoPrincipe_tavernkeeper");

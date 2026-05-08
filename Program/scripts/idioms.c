@@ -1221,3 +1221,15 @@ string FindRussianSailorString(int iPeoples, string sCase)
 	}
 	return sPeoples;
 }
+
+// Вернём имя по падежам
+string CasedName(string name, string caseName, string sex = "M")
+{
+	if (caseName == NAME_NOM) return name;
+	if (LanguageGetLanguage() != "russian") return name; // по идее ещё польский, как появится локализация
+
+	if (HasSubStr(name, "-")) name = FindStringBeforeChar(name, "-");     // двойные имена склоняем по первой части
+	string res = GetConvertStr(name + sex + caseName, "nameCases.txt");   // пытаемся с полом
+	if (res == "") res = GetConvertStr(name + caseName, "nameCases.txt"); // пытаемся без пола
+	return res == "" ? name : res;                                        // не склоняется
+}

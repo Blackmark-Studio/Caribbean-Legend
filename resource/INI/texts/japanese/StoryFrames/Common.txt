@@ -1,45 +1,100 @@
-Reaction {反応}
 Action {決定}
+Actions {決断}
+DisabledAction {この行動には何かが足りない…}
+FactorAccuracy {$key(Accuracy)}
+FactorAgility {$key(Agility)}
+FactorAmmo {$key(itmtype_ammo|ItemsDescribe.txt)}
+FactorBase {基本確率}
+FactorBlade {$key(itmtype_blade|ItemsDescribe.txt)}
+FactorCharisma {$key(Charisma)}
+FactorCirass {$key(itmtype_cirass|ItemsDescribe.txt)}
+FactorCommerce {$key(Commerce)}
+FactorDefence {$key(Defence)}
+FactorEndurance {$key(Endurance)}
+FactorFencingH {$key(FencingH)}
+FactorFencingL {$key(FencingL)}
+FactorFencingS {$key(FencingS)}
+FactorFortune {$key(Fortune)}
+FactorGrappling {$key(Grappling)}
+FactorGun {$key(itmtype_gun|ItemsDescribe.txt)}
+FactorHat {$key(itmtype_hat|ItemsDescribe.txt)}
+FactorIntellect {$key(Intellect)}
+FactorLantern {$key(itmtype_lantern|ItemsDescribe.txt)}
+FactorLeadership {$key(Leadership)}
+FactorLuck {$key(Luck)}
+FactorMaps {$key(itmtype_maps|ItemsDescribe.txt)}
+FactorMusket {$key(itmtype_musket|ItemsDescribe.txt)}
+FactorNobility {名誉}
+FactorPatent {$key(itmtype_patent|ItemsDescribe.txt)}
+FactorPerception {$key(Perception)}
+FactorPistol {$key(Pistol)}
 FactorRelationship0 {$key(englandAbl) との関係}
 FactorRelationship1 {$key(franceAbl) との関係}
 FactorRelationship2 {$key(spainAbl) との関係}
 FactorRelationship3 {$key(hollandAbl) との関係}
 FactorRelationshipSmugglers {$key(SmugglerAbl) との関係}
-FactorBase {基本確率}
-FactorShipRank {船のランク}
-FactorShipQty {艦隊規模}
-FactorFencingL {$key(FencingL)}
-FactorFencingS {$key(FencingS)}
-FactorFencingH {$key(FencingH)}
-FactorPistol {$key(Pistol)}
-FactorFortune {$key(Fortune)}
-FactorLeadership {$key(Leadership)}
-FactorSailing {$key(Sailing)}
-FactorAccuracy {$key(Accuracy)}
-FactorGrappling {$key(Grappling)}
 FactorRepair {$key(Repair)}
-FactorDefence {$key(Defence)}
-FactorCommerce {$key(Commerce)}
-FactorSneak {$key(Sneak)}
-FactorStrength {$key(Strength)}
-FactorPerception {$key(Perception)}
-FactorEndurance {$key(Endurance)}
-FactorCharisma {$key(Charisma)}
-FactorIntellect {$key(Intellect)}
-FactorAgility {$key(Agility)}
-FactorLuck {$key(Luck)}
-DisabledAction {この行動には何かが足りない…}
-FactorGun {$key(itmtype_gun|ItemsDescribe.txt)}
-FactorBlade {$key(itmtype_blade|ItemsDescribe.txt)}
-FactorSpyglass {$key(itmtype_spyglass|ItemsDescribe.txt)}
-FactorPatent {$key(itmtype_patent|ItemsDescribe.txt)}
-FactorCirass {$key(itmtype_cirass|ItemsDescribe.txt)}
-FactorMaps {$key(itmtype_maps|ItemsDescribe.txt)}
-FactorTool {$key(itmtype_tool|ItemsDescribe.txt)}
-FactorTalisman {$key(itmtype_talisman|ItemsDescribe.txt)}
+FactorSailing {$key(Sailing)}
+FactorSeason {季節}
+FactorShipQty {艦隊規模}
+FactorShipRank {船のランク}
 FactorSlot {$key(itmtype_slot|ItemsDescribe.txt)}
+FactorSneak {$key(Sneak)}
 FactorSpecial {$key(itmtype_special|ItemsDescribe.txt)}
-FactorAmmo {$key(itmtype_ammo|ItemsDescribe.txt)}
-FactorLantern {$key(itmtype_lantern|ItemsDescribe.txt)}
-FactorHat {$key(itmtype_hat|ItemsDescribe.txt)}
-FactorMusket {$key(itmtype_musket|ItemsDescribe.txt)}
+FactorSpyglass {$key(itmtype_spyglass|ItemsDescribe.txt)}
+FactorStrength {$key(Strength)}
+FactorTalisman {$key(itmtype_talisman|ItemsDescribe.txt)}
+FactorTool {$key(itmtype_tool|ItemsDescribe.txt)}
+HelpTextActions {決断はストーリーの細部によって左右され、常に物語を前へ進める。それはキャラクターが最初に抱いていた目的、あるいはそれにどう取り組むかを表している。ストーリーの結末は、選んだ決断によって左右されることが多い。}
+HelpTextCommon
+{
+これは、あなたの行動と準備が小さな物語に影響を与えるインタラクティブな物語だ。
+まず、あなたはある状況に直面する。この文章はすでに画面に表示されている。
+与えられた状況に応じて、特定の行動を取ることができる。
+~
+ストーリーでの行動は、リアクションと決断に分かれる。
+それぞれの決断やリアクションには、キャラクターのskills、perks、あるいは能力値の判定が含まれることがある。
+特定の条件を満たしていない場合、一部の行動は選べないことがある。
+~
+ストーリー内のあらゆる判定は、成功に影響する多くの要素を考慮している。それらはカーソルを合わせたときのツールチップに表示される。
+判定結果はロードしても変わらず、条件が変わったときにのみ変化する。失敗しても落ち込むな――次はきっと運が味方する。
+}
+HelpTextReactions {リアクションはストーリーの細部によって決まり、思いがけない優位を得て事態を楽にする機会を与えてくれる。その代わり、適切なperkや必要なアイテム、あるいは判定の成功といった条件を満たさなければならない。リアクションはストーリーを次の段階へ進めるものではなく、その場で即座に効果を発揮し、しばしば決断における判定の難易度にも影響する。}
+HelpTitleCommon {ストーリー}
+Reaction {反応}
+Reactions {リアクション}
+CommonTriumph {勝利}
+CommonFail {破綻}
+DisabledAction_Money {これには資金が必要だ}
+DisabledAction_Perk {必要なスキル: $ctx(value)}
+DisabledAction_Skill {スキルの成長が不足している: $ctx(value)}
+DisabledAction_Herotype {必要な主人公の背景: $ctx(value)}
+DisabledAction_Pirates {能力値が不足している: $ctx(value)}
+DisabledAction_Reputation {この行動には特定の評判が必要だ}
+DisabledAction_Relations {_$key($ctx(value)Abl) との関係がもっと良くなければならない}
+DisabledAction_Item {必要なアイテム: $ctx(value)}
+DisabledAction_license {交易ライセンスがない}
+FactorFencingL_chr {士官の$key(FencingL)}
+FactorFencingS_chr {士官の$key(FencingS)}
+FactorFencingH_chr {士官の$key(FencingH)}
+FactorPistol_chr {士官の$key(Pistol)}
+FactorFortune_chr {士官の$key(Fortune)}
+FactorLeadership_chr {士官の$key(Leadership)}
+FactorSailing_chr {士官の$key(Sailing)}
+FactorAccuracy_chr {士官の$key(Accuracy)}
+FactorGrappling_chr {士官の$key(Grappling)}
+FactorRepair_chr {士官の$key(Repair)}
+FactorDefence_chr {士官の$key(Defence)}
+FactorCommerce_chr {士官の$key(Commerce)}
+FactorSneak_chr {士官の$key(Sneak)}
+FactorStrength_chr {士官の$key(Strength)}
+FactorPerception_chr {士官の$key(Perception)}
+FactorEndurance_chr {士官の$key(Endurance)}
+FactorCharisma_chr {士官の$key(Charisma)}
+FactorIntellect_chr {士官の$key(Intellect)}
+FactorAgility_chr {士官の$key(Agility)}
+FactorLuck_chr {士官の$key(Luck)}
+FactorNobility_chr {$casedName($ctx(name)|Gen)の名誉}
+FactorRelationshipIndians {$key(IndianAbl)との関係}
+DisabledAction_Capellan {この選択肢は船に司祭がいる場合にのみ使用できます}
+check_title {判定難易度:}

@@ -310,7 +310,7 @@ void Tutorial_Mushket2(string qName)
 
 void Tutorial_Stealth(string qName)
 {
-	DoQuestFunctionDelay("Tutorial_Stealth2", 5.0);
+	// DoQuestFunctionDelay("Tutorial_Stealth2", 5.0);
 }
 
 void Tutorial_Stealth2(string qName)

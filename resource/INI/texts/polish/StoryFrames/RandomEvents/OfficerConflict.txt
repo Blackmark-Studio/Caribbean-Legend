@@ -1,0 +1,76 @@
+Node0_title {Konflikt między oficerami}
+Node0_a_a
+{
+Wasze zwyczajowe popołudniowe rozmyślania przerywa dźwięk okrętowego dzwonu. Do zmiany wachty jeszcze daleko, więc ruszacie za odgłosem, chcąc zrobić porządek z tym zamieszaniem. Na międzypokładzie zatrzymuje was wyraźnie poruszony Alonso i szybko przedstawia sytuację.$br$redPodczas zmiany wachty dwóch oficerów, $ctx(officerName_A), wasz _$key($ctx(officerJob_A)), oraz $ctx(officerName_B), wasz _$key($ctx(officerJob_B)), starło się o wygodniejszą koję. $rand(Słowna sprzeczka szybko przerodziła się w prawdziwy konflikt i $ctx(officerName_A) pierwszy puścił w ruch pięści.|Wystarczyło kilka uszczypliwości, by rozmowa zakończyła się bójką: to $ctx(officerName_A) pierwszy ruszył z pięściami.|Przeszli do krzyków i $ctx(officerName_A) nie wytrzymał, puszczając w ruch pięści.) $ctx(officerName_B) $rand(nie pozostał bierny|od razu odpowiedział|nie został mu dłużny), a $rand(wkrótce rozwalili połowę mesy|po minucie mesa wyglądała, jakby przeszedł przez nią abordaż|zanim ich odciągnięto od siebie, połowa mesy była już w drzazgach).$br$red
+Alonso $rand(rozdzielił awanturników|rozciągnął ich po kątach|przerwał bójkę), ale konflikt wyraźnie nie został zażegnany i potrzebne jest słowo kapitana.
+}
+Node0_a_a_action {$ctx(officerName_A) zaczął pierwszy}
+Node0_a_a_success {Uznajecie, że winę za całą sytuację ponosi $ctx(officerName_A), bo to on pierwszy puścił w ruch pięści. Wyznaczacie mu kilka karnych wacht i rozkazujecie pokryć szkody wyrządzone $casedName($ctx(officerName_B)|Dat) z własnego żołdu.}
+Node0_a_a_success_action {Pójdziesz szorować pokład}
+Node0_a_b_action {$ctx(officerName_B) niepotrzebnie dał się sprowokować}
+Node0_a_b_success {Uznajecie, że za to, co się stało, odpowiada $ctx(officerName_B), bo mógł uniknąć bójki i załatwić sprawę przez kapitana. Jako karę przydzielacie $casedName($ctx(officerName_B)|Dat) dodatkowe, zaostrzone treningi.}
+Node0_a_b_success_action {To dla twojego dobra}
+Node0_a_c_action {Ukarać obu}
+Node0_a_c_success {Uznajecie, że obaj oficerowie ponoszą winę za to, co się stało, i wyznaczacie im wspólne karne wachty. Nie liczycie na to, że ich to zbliży, ale z pewnością oduczy podobnych wybryków na przyszłość. Koszty naprawy mesy zostaną potrącone z ich żołdu.}
+Node0_a_c_success_action {Obaj są głupcami}
+Node0_a_d_action {Sami wszystko naprawicie}
+Node0_a_d_success {Uznajecie, że idealną karą będzie zmuszenie oficerów, by własnymi siłami doprowadzili mesę do porządku. Może i nie są zręcznymi stolarzami, ale taka nauczka z pewnością sprawi, że dwa razy się zastanowią, zanim znów narobią bałaganu.}
+Node0_a_d_success_action {Zburzyć łatwiej niż zbudować}
+Node0_a_b
+{
+Podczas wieczornego obchodu idziecie jak zwykle po pokładzie i łapiecie się na myśli, że dziś jest aż podejrzanie cicho. $rand(Jakby na przekór tej ciszy|Jakby z szyderstwem wobec tej ciszy|Właśnie w tej chwili) na pokład $rand(wpada|wybiega) dwóch oficerów – $ctx(officerName_A), wasz _$key($ctx(officerJob_A)), i $ctx(officerName_B), wasz _$key($ctx(officerJob_B)). Wyraźnie szukali kapitana i $rand(ruszyli do was, jak tylko was zobaczyli|idą prosto na was, nie tracąc ani chwili). Oficerowie wyglądają na $rand(wzburzonych|rozdrażnionych) i, $rand(zrównawszy się z wami|dopadłszy was|zatrzymawszy się tuż przed wami), zaczynają mówić jeden przez drugiego.$br$red
+Konflikt wybuchł, gdy $ctx(officerName_B) $rand(publicznie odmówił wykonania rozkazu $ctx(officerName_A)|zapierał się i nie podporządkował się rozkazowi $ctx(officerName_A)|nie wykonał rozkazu $ctx(officerName_A) na oczach świadków). Regulamin $rand(jest zbyt niejasny|nie rozdziela do końca ich kompetencji|pozostawia szarą strefę) między ich stanowiskami, a _$key($ctx(officerJob_B)) $rand(oświadczył, że nie będzie pracował pod komendą _$key($ctx(officerJob_A))|uciął, że _$key($ctx(officerJob_A)) nie jest jego przełożonym|powiedział mu w twarz, że _$key($ctx(officerJob_A)) nie ma nad nim władzy).$br$red
+$rand(Subordynacja pęka na waszych oczach|Dyscyplina zaczyna się sypać|Załoga już to słyszy), a oficerowie domagają się waszego słowa, zanim wszystko przerodzi się w otwarty rozłam na pokładzie.
+}
+Node0_b_a_action {_$key($ctx(officerJob_A)) ma rację}
+Node0_b_a_success {Interpretujecie okrętowy regulamin w taki sposób, że funkcja okazuje się ważniejsza od pionowej hierarchii.$br$redKażdy oficer ma obowiązek podporządkować się _$key($ctx(officerJob_A)) w chwili, gdy ten wykonuje swoje bezpośrednie obowiązki. $ctx(officerName_A) jest usatysfakcjonowany, a $ctx(officerName_B) przeprasza go za naruszenie subordynacji. Postanawiacie nikogo nie karać.}
+Node0_b_a_success_action {Obowiązek jest ważniejszy}
+Node0_b_b_action {$key($ctx(officerJob_B)) nie ma obowiązku się podporządkować}
+Node0_b_b_success {Interpretujecie okrętowy regulamin w taki sposób, że pionowa hierarchia okazuje się ważniejsza od stanowisk. Oficerowie mają dowodzić marynarzami, a nie sobą nawzajem. Od całej reszty jest kapitan.}
+Node0_b_b_success_action {Pozostaje mieć nadzieję, że nikt nie ucierpi}
+Node0_b_c_action {Nauczę was posłuszeństwa}
+Node0_b_c_success {Otwieracie okrętowy regulamin i widzicie, że dość wyraźnie rozgranicza on zakresy odpowiedzialności. $ctx(officerName_B) nadużył przepisów, a $ctx(officerName_A) nie zna regulaminu dość dobrze, by umieć to powstrzymać.$br$red Nie lubicie ani bezczelnych pyszałków, ani oficerów, którzy słabo znają regulamin, więc postanawiacie ukarać obu. Przez najbliższe dwa tygodnie po każdej wachcie _$key($ctx(officerJob_A)) i _$key($ctx(officerJob_B)) będą stali na beczce w ładowni i czytali sobie nawzajem regulamin na głos.}
+Node0_b_c_success_action {Marynarze też sobie posłuchają}
+Node0_a_c
+{
+Kończycie poranny obchód, gdy Alonso $rand(przywołuje was|zatrzymuje was krótkim) gestem. Jego sygnałów nie warto lekceważyć, więc $rand(zatrzymujecie się i żądacie meldunku|od razu pytacie, co się stało).$br$red
+Okazuje się, że wokół $casedName($ctx(prisonerName)|Gen), waszego jeńca, $rand(zbiera się skandal|rozgrywa się prawdziwy dramat|już zaczyna wybuchać konflikt). $ctx(officerName_A), wasz _$key($ctx(officerJob_A)), $rand(jest pewien|twierdzi|nalega), że $ctx(prisonerName) nie jest tym, za kogo się podaje, i $rand(chce wydobyć prawdę torturami|zamierza przesłuchać go brutalnie). $ctx(officerName_B), wasz _$key($ctx(officerJob_B)), $rand(domaga się, by nie ruszać jeńca|nalega, że tortury są niedopuszczalne|mówi, że jeńca nie wolno okaleczyć): jest zbyt cenny i $rand(można go drożej sprzedać|da za niego dobrą cenę|każda rana obniży jego wartość).$br$red
+$rand(Wzywacie obu do kajuty|Każecie ich do siebie przyprowadzić|Rozkazujecie im stawić się u was natychmiast) i żądacie wyjaśnień za samowolę. Oficerowie $rand(słusznie|sucho|spokojnie) zauważają, że $rand(nic jeszcze nie zdążyli zrobić|nie podnieśli na niego ręki|nie tknęli jeńca), a takie decyzje należą do kapitana.
+}
+Node0_c_a_action {$ctx(officerName_A), ustal, kim on jest}
+Node0_c_a_success {Podejrzenia $casedName($ctx(officerName_A)|Gen) wydają się wam dość poważne, więc pozwalacie mu wybadać szczegóły dotyczące jeńca. $ctx(officerName_B) wygląda na urażonego, więc dziękujecie mu za czujność, by złagodzić sytuację.}
+Node0_c_a_success_action {Nie jestem pewien, czy to pomoże}
+Node0_c_b_action {$ctx(officerName_B), nie wpuszczaj $casedName($ctx(officerName_A)|Gen) do ładowni}
+Node0_c_b_success {Argumenty $casedName($ctx(officerName_B)|Gen) wydają się wam dość przekonujące i postanawiacie chronić jeńca. Jednak cała ta sytuacja podejrzanie przypomina samowolę, więc jako środek dyscyplinarny wyznaczacie $casedName($ctx(officerName_A)|Dat) dwie karne wachty, a $ctx(officerName_B) powierzacie pilnowanie ładowni z jeńcem aż do wejścia do portu.}
+Node0_c_b_success_action {Żeby mu się odechciało}
+Node0_c_c_action {Nikt nie będzie mi rozkazywał}
+Node0_c_c_success {Czujecie, jak w środku burzy się gniew, walicie pięścią w stół i wyrzucacie oficerów z kajuty. Nikt nie ma prawa stawiać was w sytuacji, w której musicie wybierać. Później karzecie obu oficerów kilkoma karnymi wachtami i chłostą za samowolę oraz naruszenie subordynacji. Wieści o tej historii szybko rozchodzą się po statku i przez następny miesiąc za waszymi plecami nazywają was Mureną.}
+Node0_c_c_success_action {$name Murena? Całkiem nieźle}
+Node0_a_d {Budzicie się przed świtem i od razu czujecie, że na statku coś jest nie tak. Problem nie każe na siebie długo czekać – po kilku minutach słyszycie tupot kroków i natarczywe pukanie do drzwi kajuty. $br$red Na progu stoją trzy osoby – $ctx(officerName_A), wasz _$key($ctx(officerJob_A)), $ctx(officerName_B), wasz _$key($ctx(officerJob_B)), oraz chłopak na oko trzynastoletni. Majtek wygląda na zagubionego, a oficerowie są wyraźnie rozdrażnieni. $br$red Żądacie meldunku jak należy i zostajecie wtajemniczeni w sytuację. Tego chłopca zabrano na pokład podczas ostatniego postoju w porcie i od razu zrobił na wszystkich wrażenie swoim zapałem i talentem. $ctx(officerName_A) uważa, że wyrośnie z niego pierwszorzędny _$key($ctx(officerJob_A)) i chce wziąć go pod swoje skrzydła, by go szkolić. Z kolei $ctx(officerName_B) sądzi, że z chłopaka wyjdzie utalentowany _$key($ctx(officerJob_B)) i chce mieć go jako pomocnika.$br$redMajtek jest otwarcie ciągnięty w dwie strony, a tego konfliktu nie da się rozwiązać rozmową. Oficerowie proszą was o decyzję, zanim chłopak całkiem się zniechęci.}
+Node0_d_a_action {$ctx(officerName_A) będzie cię uczył}
+Node0_d_a_success {Decydujecie o losie chłopca. Waszym zdaniem _$key($ctx(officerJob_A)) to znacznie bardziej obiecujący fach i majtkowi będzie lepiej pod opieką $casedName($ctx(officerName_A)|Gen). $ctx(officerName_B) wygląda na rozczarowanego.}
+Node0_d_a_success_action {Znajdzie się jeszcze ktoś}
+Node0_d_b_action {_$key($ctx(officerJob_B)) – oto twój los}
+Node0_d_b_success {Uważacie, że pod opieką $casedName($ctx(officerName_B)|Gen) chłopak zajdzie daleko i że pewnego dnia na Karaibach pojawi się nowy, wysokiej klasy _$key($ctx(officerJob_B)). $ctx(officerName_A) wydaje się zasmucony. Najwyraźniej było w tym coś osobistego.}
+Node0_d_b_success_action {Czasem są dla nas jak synowie}
+Node0_d_c_action {Będzie pełnił po dwie wachty}
+Node0_d_c_success {Przypominacie sobie przypowieść z Biblii i mówicie, że potrzebny wam jest utalentowany oficer na dwa etaty. Majtek będzie służył na zmianę pod rozkazami obu oficerów. Podwójna wachta to nieznośne obciążenie, więc uważnie obserwujecie ich reakcje. $ctx(officerName_A) przytakująco kiwa głową, a $ctx(officerName_B), przerażony, prosi was o zmianę decyzji. _$key($ctx(officerJob_B)) jest gotów zrezygnować z pomocnika dla dobra zdrowia chłopca, i decyzja staje się dla was oczywista. Młodzieniec będzie służył pod rozkazami $ctx(officerName_B).}
+Node0_d_c_success_action {To minie}
+Node0_a_e {Postanawiacie zajrzeć do oficerów i, zbliżając się do mesy, słyszycie gwar. Otworzywszy drzwi, stajecie się świadkami gwałtownego konfliktu. $br$red$ctx(officerName_A) wrzeszczy na $casedName($ctx(officerName_B)|Gen), oskarżając go o to, że go podstawił. $ctx(officerName_B) aż kipi i już jest gotów sięgnąć po szpadę. Rykniecie, powstrzymując ten cyrk. Oficerowie stają na baczność i bledną. $br$redŻądacie wyjaśnień i grozicie, że wyrzucicie obu za burtę, jeśli zaczną kręcić. Wtedy wtajemniczają was w sytuację. Podczas ostatniego zawinięcia do portu $ctx(officerName_A), wasz _$key($ctx(officerJob_A)), źle wykonał wasz rozkaz, przez co statek poniósł straty, i ukaraliście go za to. Dopiero na morzu wyszło na jaw, że pomylił się przez błędną podpowiedź daną przez $casedName($ctx(officerName_B)|Gen). Konflikt gwałtownie wszedł w ostrą fazę, której właśnie staliście się świadkami, wchodząc do mesy.$br$red$ctx(officerName_B) twierdzi, że próbował pomóc, ale $ctx(officerName_A) jest pewien, że został podłożony celowo. Musicie podjąć decyzję.}
+Node0_e_a_action {Uznać karę za niesłuszną}
+Node0_e_a_success {Postanawiacie załagodzić konflikt, uznając karę za niesprawiedliwą. Z własnej kieszeni rekompensujecie $casedName($ctx(officerName_A)|Dat) doznaną krzywdę moralną i konflikt szybko wygasa. Czasem wystarczy dobre słowo, czasem dźwięczna moneta. Oficerowie stygną i przepraszają się nawzajem. Błahostka, która omal nie kosztowała czyjegoś życia, staje się cenną lekcją i macie nadzieję, że ją zapamiętają.}
+Node0_e_a_success_action {I wszyscy są zadowoleni}
+Node0_e_b_action {Ukarać $casedName($ctx(officerName_B)|Gen)}
+Node0_e_b_success {Uznajecie, że cała ta sytuacja rzeczywiście podejrzanie przypomina celowe szkodzenie. Nie dość, że $ctx(officerName_A) poniósł niesprawiedliwą karę, to jeszcze kapitan wyszedł na tym w złym świetle. Za coś takiego należy karać, więc rozkazujecie wychłostać $ctx(officerName_B). $ctx(officerName_A) wygląda na usatysfakcjonowanego.}
+Node0_e_b_success_action {Nikomu nie dawać taryfy ulgowej}
+Node0_e_c_action {Ukarać $casedName($ctx(officerName_A)|Gen) jeszcze raz}
+Node0_e_c_success {Uznajecie, że $ctx(officerName_A) próbuje dowartościować się cudzym kosztem i po prostu nie potrafi uwierzyć, że się pomylił. Jeśli sądzi, że czyjaś podpowiedź, nawet fałszywa, zwalnia go z obowiązku myślenia własną głową, to jest w głębokim błędzie. $ctx(officerName_B) nie jest _$key($ctx(officerJob_A)), a to, że $ctx(officerName_A) go posłuchał, tylko pogarsza sprawę. $br$redRozkazujecie ponownie wychłostać $ctx(officerName_A), żeby odtąd nie przyszło mu nawet do głowy dyskutować waszych rozkazów ani zrzucać odpowiedzialności na innych.}
+Node0_e_c_success_action {Sam sobie wykopałeś grób}
+Node0_e_d_action {Ukarać obu}
+Node0_e_d_success {Widzicie w tej sytuacji koszmarne naruszenie porządku i subordynacji. Nie dość, że oficerowie mają czelność dyskutować wasze rozkazy, to jeszcze gotowi są przelewać krew na pokładzie waszego statku.$br$redWyznaczacie każdemu z nich po 10 uderzeń batem: 5 za podważanie waszych rozkazów i 5 za naruszenie subordynacji oraz grożenie bronią członkowi korpusu oficerskiego.}
+Node0_e_d_success_action {Wiedzieli, na co się piszą}
+Node0_e_e_action {No dobrze – walczcie}
+Node0_e_e_success {Wyznaczacie pojedynek na górnym pokładzie, gdzie sami wystąpicie jako sekundant. Jeśli już mają wyjaśniać sprawy, to wedle zasad. $br$red Walka się zaczyna i po krótkim czasie przewaga $ctx(officerName_A) staje się oczywista. Przerywacie pojedynek i uznajecie zwycięstwo $ctx(officerName_A).}
+Node0_e_e_success_action {Obronił swój honor}
+Node0_e_e_fail {Wyznaczacie pojedynek na górnym pokładzie, gdzie sami wystąpicie jako sekundant. Jeśli już mają wyjaśniać sprawy, to wedle zasad. $br$red Walka się zaczyna i po krótkim czasie przewaga $officer_name staje się oczywista. Przerywacie pojedynek i uznajecie zwycięstwo $ctx(officerName_B).}
+Node0_e_e_fail_action {Udowodnił swoją rację}

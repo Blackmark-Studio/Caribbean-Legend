@@ -1,7 +1,11 @@
 #define MAX_CANNON_DAMAGE_DISTANCE				3.0
 
 #define MAX_HEEL_ANGLE							0.262 // в радианах = 15 гр. - максимальный угол крена при потере всех орудий с одного борта и всех целых другого борта
-#define MAX_VOLLEY_HEEL_ANGLE					0.10  
+#define MAX_VOLLEY_HEEL_ANGLE					0.10
+
+#define FIRE_MODE_RANDOM "random"
+#define FIRE_MODE_DIRECT "direct"
+#define FIRE_MODE_REVERSE "reverse"
 
 void DeleteCannonsEnvironment()
 {
@@ -207,7 +211,9 @@ float Cannon_GetFireTime()
 {
 	aref aCharacter = GetEventData();
 	string sBort = GetEventData();
-	bool isRandom = GetEventData();
+	bool isRandom = GetEventData();	// true для случайной задержки в момент реального выстрела, false для расчёта упреждения по среднему числу
+	int cannonIndex = GetEventData();	// индекс орудия (от носа к корме) от 0 до количества пушек
+	
 	ref refBaseShip = GetRealShip(sti(aCharacter.ship.Type));
 
 	// форт
@@ -225,19 +231,40 @@ float Cannon_GetFireTime()
 	else if (nCannons >= 11) fBaseFireTime = 1.7; //военные 3-классники и малые квестовики, малые второклашки
 	else if (nCannons >= 8)  fBaseFireTime = 1.3; //ранние военники и 4 класс
 	else if (nCannons >= 4)  fBaseFireTime = 0.55; //6 и 5 класс 
-
-
-
 		
 	float fCannonSkillNormalized = 1.8 - 1.0*pow(stf(aCharacter.TmpSkill.Cannons)/100, 0.65); //нормализация задержки по скиллу дает от +40% до -40% в зависимости от навыка, а не фиксу
 
 	float fBase = pow((fCannonSkillNormalized * fBaseFireTime), 0.65); //база получает +-40% к скорости в зависимости от скилла, с нормализацией
 	
+	// режим стрельбы
+	bool bRipple = isRandom;
+	if(bRipple)
+	{
+		if ("firemode" !in aCharacter || aCharacter.firemode == FIRE_MODE_RANDOM)
+			bRipple = false;
+		if (cannonIndex <= -1)
+			bRipple = false;
+		if (sBort != "cannonr" && sBort != "cannonl")
+			bRipple = false;
+	}
+	
 	// рандом
 	float rMin = 0.35;
 	float rMax = 4.85;
 	float fRandom;
-	if(isRandom)
+	if(bRipple)
+	{
+		float rAverage = (rMin + rMax) * 0.5;
+		rMin = (rMin + rAverage) * 0.5;
+		rMax = (rAverage + rMax) * 0.5;
+		if(nCannons < 2)
+			fRandom = rAverage;
+		else if(aCharacter.firemode == FIRE_MODE_DIRECT)
+			fRandom = rMin + (rMax - rMin) * cannonIndex / float(nCannons - 1);	// прямой порядок - от носа к корме
+		else
+			fRandom = rMax - (rMax - rMin) * cannonIndex / float(nCannons - 1); // обратный порядок - от кормы к носу
+	}
+	else if (isRandom)
 		fRandom = uniform(rMin, rMax);
 	else
 		fRandom = (rMax + rMin) * 0.5;
@@ -270,9 +297,6 @@ void Cannon_FireCannon()
 	float fX, fY, fZ, fSpeedV0, fDirAng, fHeightAng, fCannonDirAng, fMaxFireDistance;
 
 	aref aCharacter = GetEventData();
-
-	DeleteAttribute(aCharacter, "Sea_AI.Cannon.Charge"); //должно располагаться здесь, а не выше
-
 	fX = GetEventData();
 	fY = GetEventData();
 	fZ = GetEventData();

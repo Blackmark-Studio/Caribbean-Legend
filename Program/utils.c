@@ -458,7 +458,7 @@ void Dev_Trace(string _str) // логи только в дев версии
 }
 
 // Warship -->
-String FindStringAfterChar(string _string, string _char)
+string FindStringAfterChar(string _string, string _char)
 {
 	int i = FindSubStr(_string, _char , 0);
 	if(i == -1 || i + 1 >= strlen(_string)) return "";
@@ -466,7 +466,7 @@ String FindStringAfterChar(string _string, string _char)
 	return sRetStr;
 }
 
-String FindStringBeforeChar(string _string, string _char) // Поиск строки перед символом
+string FindStringBeforeChar(string _string, string _char) // Поиск строки перед символом
 {
 	int i = FindSubStr(_string, _char , 0);
 	if(i == -1 || i == 0) return "";
@@ -552,11 +552,13 @@ bool IsStrRight(string str1, string str2)
 }
 
 // mitrokosta просто CopyAttributes стирает старые атрибуты
-void CopyAttributesSafe(aref to, aref from) {
+void CopyAttributesSafe(aref to, aref from)
+{
 	aref toRec, fromRec;
 	string attr;
 	int numAttrs = GetAttributesNum(from);
-	for (int i = 0; i < numAttrs; i++) {
+	for (int i = 0; i < numAttrs; i++)
+    {
 		attr = GetAttributeName(GetAttributeN(from, i));
 		to.(attr) = from.(attr);
 		makearef(toRec, to.(attr));
@@ -637,12 +639,33 @@ ref FindObject_VT(ref someRef, string handlerId, string handlerIdx)
 	return ErrorAttr(); // ~!~ nullptr
 }
 
+/* Вернем обратно ссылку на объект/атрибут или найдем по id/индексу и вернем ссылку.
+Нужно для унификации вызовов из разных ситуаций, когда объект уже нашли или когда есть только id/индекс
+Сам поиск объекта произойдёт по функции, переданной в `handler`
+@param someRef поисковый запрос
+@param handlerId функция поиска, если `someRef` это строковый id
+@param handlerIdx функция поиска, если `someRef` это целочисленный idx
+@param ignoreNotFound передаём `true`, если отсутствие результата поиска является ожидаемым поведением
+*/
+ref FindObjectSafe_VT(ref someRef, string handlerId, string handlerIdx, bool ignoreNotFound = false)
+{
+	switch (VarType(someRef))
+	{
+		case VAR_OBJECT: return someRef; break;
+		case VAR_AREFERENCE: return someRef; break;
+		case VAR_STRING:  return call handlerId(someRef, ignoreNotFound);  break;
+		case VAR_INTEGER: return call handlerIdx(someRef, ignoreNotFound); break;
+	}
+	assert(!ignoreNotFound, "Can't found object by Vartype. Handlers: " + handlerId + "/" + handlerIdx)
+	return nullptr;
+}
+
 // Делим строку по символу, кусочки пишем в объект, в конце передаем нолик, это нужно для рекурсии
 // SplitString(obj, "a|b|c", "|", 0) →
 // obj.p0 = a
 // obj.p1 = b
 // obj.p2 = c
-void SplitString(ref result, string input, string bySym, int iteration)
+void SplitString(ref result, string input, string bySym, int iteration = 0)
 {
 	string varName = "p" + iteration;
 	int iPos = findsubstr(&input, bySym, 0);
@@ -782,15 +805,9 @@ string AtributesToTextExclude(ref rObject, ref attributesList)
 }
 
 // Содержит ли массив строк конкретную строку
-bool StringArrayInclude(ref array, string text)
+bool StringArrayInclude(ref array, string text, int arraySize = -1)
 {
-	int length = GetArraySize(array);
-	for (int i = 0; i < length; i++)
-	{
-		if (array[i] == text) return true;
-	}
-
-	return false;
+	return FindIndexOf(array, &text, arraySize) > -1;
 }
 
 // Проверить, что строка есть в массиве или показать ошибку и вернуть false
@@ -861,4 +878,80 @@ string Truncate(string text, int maxLength, string omnission)
 	string truncated = strleft(text, maxLength) + omnission;
 	if (strlen(truncated) < textLength) return truncated;
 	return text;
+}
+
+string bts(bool b)
+{
+    return b ? "true" : "false";
+}
+
+float GetTimeScale()
+{
+    return 1.0 + TimeScaleCounter * 0.25;
+}
+
+// Получить индекс элемента в массиве, либо -1, если искомого нет
+int FindIndexOf(ref array, ref el, int arraySize = -1)
+{
+	if (arraySize == -1) arraySize = GetArraySize(array);
+
+	for (int i = 0; i < arraySize; i++)
+	{
+		if (array[i] == el) return i;
+	}
+
+	return -1;
+}
+
+// Округление вверх, JOKERTODO: лучше бы подтянуть нативное
+int ceil(float num)
+{
+	return int(num+0.999);
+}
+
+// Проверяем, есть ли файл
+bool IsFileExist(string folderName, string fileName)
+{
+	object fileFinderRes;
+	aref fileResList;
+
+	fileFinderRes.dir = folderName;
+	fileFinderRes.mask = fileName;
+	CreateEntity(&fileFinderRes, "FINDFILESINTODIRECTORY");
+	DeleteClass(&fileFinderRes);
+	makearef(fileResList, fileFinderRes.filelist);
+	return GetAttributesNum(fileResList) > 0;
+}
+
+// Текст без точки в конце
+string noDot(string input)
+{
+	int len = strlen(input);
+	if (len < 2) return input;                                     // слишком коротко
+	if (strright(input, 3) == "...") return input;                 // многоточие не трогаем
+	if (strright(input, 1) == ".") return strcut(input, 0, len-2); // режем точку
+	return input;
+}
+
+bool CheckRestAvailable(bool bCheckControl = false)
+{
+    if (LAi_grp_alarmactive || LAi_IsFightMode(PChar)) // Land battle
+        return false;
+    if (bDisableMapEnter && bSeaActive && "GenQuest.MapClosedNoBattle" !in PChar) // Sea battle
+        return false;
+    if (PChar.location == "Deck_Near_Ship" || PChar.location == "CommonPackhouse_2" ||
+        FindSubStr(PChar.location, "_shipyard" , 0) != -1) // Special locations
+        return false;
+    if ("GenQuest.CannotWait" in PChar || "CannotWait" in loadedLocation) // Block
+        return false;
+
+    return !bCheckControl || LAi_IsCharacterControl(PChar);
+}
+// Режем \n из начала текста
+void RemoveFirstNewline(ref input)
+{
+	int len = strlen(input);
+	if (len < 2) return;
+
+	if (strleft(input, 2) == "\n") input = strcut(input, 2, len-1);
 }

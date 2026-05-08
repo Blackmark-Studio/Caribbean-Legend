@@ -2,6 +2,11 @@
 //native string GetHello();
 //#libriary "b_engine"
 
+__lua string LuaHELLO(string a, string b);
+__lua void MemoryStress();
+__lua void MemoryClear();
+__lua string LUAAddRandomItem(string groupID, int count);
+
 void ActiveINSERTControl()
 {
     //DoReloadCharacterToLocation(Pchar.location, "goto", "goto2");
@@ -50,6 +55,8 @@ void ActiveF5Control()
 
 void ActiveF7Control()
 {
+	__RefreshLocalization();
+	return;
 	// Warship. Убить боижайшего персонажа
 	int characterIndex = LAi_FindNearestVisCharacter(PChar, 25);
 	ref characterRef;
@@ -116,7 +123,8 @@ void AdvanceTime() {
     }
 }
 
-void SummonStorm() {
+void SummonStorm()
+{
     ref location = &loadedLocation;
     if (CheckAttribute(location, "alwaysStorm"))
     {
@@ -131,7 +139,7 @@ void SummonStorm() {
         location.storm = true;
         location.tornado = true;
     }
-    
+
     DoReloadCharacterToLocation(pchar.location, pchar.location.group, pchar.location.locator);
 }
 

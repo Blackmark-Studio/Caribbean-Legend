@@ -42,20 +42,18 @@ void InitBaseInterfaces_main()
 	InterfaceStates.Buttons.Quit.enable = true;
 	InterfaceStates.Buttons.Controls.enable = true;
 
-
 	InterfaceStates.BattleShow.FastCommand	= true;
 	InterfaceStates.BattleShow.LogString	= true;
 	InterfaceStates.BattleShow.Navigator	= true;
 	InterfaceStates.BattleShow.Command		= true;
 	InterfaceStates.BattleShow.Alarm		= true;
 	
-
 	InterfaceStates.doUnFreeze = true;
 	InterfaceStates.Launched = false;
 
 	InitInterfaceTables();
 
-	if( LoadSegment("battle_interface\fast_reload_table.c") )
+	if (LoadSegment("battle_interface\fast_reload_table.c"))
 	{
 		initFastReloadTable();
 		UnloadSegment("battle_interface\fast_reload_table.c");

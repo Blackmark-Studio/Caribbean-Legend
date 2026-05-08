@@ -666,7 +666,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         }
 		//<-- LaEspadaDelRey
 		
-		Dialog.Text = LinkRandPhrase("음... 헉! ","아, 좋은 럼이군! ","음... ")+SelectRumourEx("단골",NPChar);
+		Dialog.Text = LinkRandPhrase("음... 헉! ","아, 좋은 럼이군! ","음... ")+SelectRumourEx("habitue",NPChar);
 		link.l1 = RandPhraseSimple(RandSwear()+"이건 한 잔 더 마실 만한 얘기지...","좋아, 한 잔 더 하자.");
 		link.l1.go = "sit_3";
 		link.l2 = RandPhraseSimple("고맙다, 이만 가볼게.","에이, 이 럼 진짜 죽이네. 좋아, 난 가야겠다, 여기서 잘 놀아.");
@@ -685,7 +685,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		break;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         case "rumours_capitan":
-			Dialog.Text = SelectRumourEx("선장",NPChar);
+			Dialog.Text = SelectRumourEx("capitan", NPChar);
 			Link.l1 = RandPhraseSimple(RandSwear()+"흥미롭군! 한 가지 더 묻고 싶은 게 있어...","질문 하나만 더.");
 			Link.l1.go = "quests";
 			Link.l2 = RandPhraseSimple("고마워, 이제 가봐야겠어.","잘 가라.");
@@ -695,7 +695,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		break;
 		
 		 case "rumours_landcaptain":
-			Dialog.Text = SelectRumourEx("육지 선장",NPChar);
+			Dialog.Text = SelectRumourEx("landcaptain",NPChar);
 			Link.l1 = RandPhraseSimple(RandSwear()+"재미있군! 한 가지 더 묻고 싶은 게 있어...","질문 하나만 더.");
 			Link.l1.go = "question";
 			Link.l2 = RandPhraseSimple("고맙다, 이만 가봐야겠다.","잘 가라.");
@@ -874,7 +874,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         case "rumours_poor":
 			if (!CheckAttribute(NPChar, "quest.repeat.rumours_poor") || NPChar.quest.repeat.rumours_poor <= 1)
 			{
-				Dialog.Text = SelectRumourEx("가난한",NPChar);
+				Dialog.Text = SelectRumourEx("poor",NPChar);
 				Link.l1 = RandPhraseSimple(RandSwear()+"흥미롭군. 한 가지만 더 물어보지...","음, 다른 걸 좀 물어보자...");
 				Link.l1.go = "rumours_poor_2";
 				Link.l2 = RandPhraseSimple("그래, 잘 가라.","잘 가라, 친구.");
@@ -892,7 +892,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         case "rumours_poor_2":
 			if (NPChar.quest.repeat.rumours_poor <= 1)
 			{
-				Dialog.Text = SelectRumourEx("가난한",NPChar);
+				Dialog.Text = SelectRumourEx("poor",NPChar);
 				Link.l1 = RandPhraseSimple(RandSwear()+"흥미롭군. 질문 하나만 더 하자...","음, 다른 걸 좀 물어보자...");
 				Link.l1.go = "rumours_poor";
 				Link.l2 = RandPhraseSimple("그래, 잘 가라.","잘 가라, 친구.");

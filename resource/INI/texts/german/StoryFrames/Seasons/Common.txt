@@ -1,0 +1,4 @@
+Description {Die Saisons unterteilen das Spieljahr in Abschnitte und verleihen mächtige globale Effekte, die während der gesamten Dauer der Saison wirken. Jede Saison ist einzigartig und verändert sich von Jahr zu Jahr.}
+effects_title {Effekte der Saison}
+effects_current_title {Effekte der aktuellen Saison}
+additional_effects_title {Zusätzliche Saison-Effekte}

@@ -449,7 +449,8 @@ float Fort_CannonDamage()
 	float fkoeff = 1.05+0.19*(10-MOD_SKILL_ENEMY_RATE)+0.1;
 	if (rFortCharacter.id == "Tortuga Fort Commander") fkoeff = 1.15-MOD_SKILL_ENEMY_RATE/100;
 	fkoeff *= GetFloatByCondition(HasShipTrait(pchar, "trait13"), 1.0, 1.15);
-	if (iNumDamagedCannonsQuantity >= makeint(iNumAllCannons / fkoeff)) // усложним с 2 до 1.5
+	fkoeff *= -SZN_GetModifierMtp(M_MIN_FORT_CANNONS_MTP, -1.0, -0.99, -0.01);
+	if (iNumDamagedCannonsQuantity >= makeint(iNumAllCannons / fClamp(1.0, 10.0, fkoeff))) // усложним с 2 до 1.5
 	{
 		Fort_SetAbordageMode(rBallCharacter, rFortCharacter);
   		// 13.05.05 anticheat -->

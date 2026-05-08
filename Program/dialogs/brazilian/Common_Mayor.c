@@ -1199,8 +1199,8 @@ void ProcessDialogEvent()
 					dialog.text = "Por que não! Relaxar faz bem para o coração, mas não para a bolsa...";
 	    			link.l1 = "Excelente.";
 	    			link.l1.go = "Cards_begin";
-	    			link.l2 = "Quais são as regras do nosso jogo?";
-	    			link.l2.go = "Cards_Rule";
+	    			// link.l2 = "Quais são as regras do nosso jogo?";
+	    			// link.l2.go = "Cards_Rule";
     			}
     			else
     			{
@@ -1212,7 +1212,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Cards_Rule":
-   			dialog.text = CARDS_RULE;
+   			dialog.text = GlobalStringConvert("CARDS_RULE");
 			link.l1 = "Bem, então vamos começar!";
 			link.l1.go = "Cards_begin";
 			link.l3 = "Não, não é para mim...";
@@ -1334,8 +1334,8 @@ void ProcessDialogEvent()
 					dialog.text = "Por que não! Relaxar faz bem para o coração... mas não para a bolsa...";
 	    			link.l1 = "Excelente.";
 	    			link.l1.go = "Dice_begin";
-	    			link.l2 = "Quais são as regras do nosso jogo?";
-	    			link.l2.go = "Dice_Rule";
+	    			// link.l2 = "Quais são as regras do nosso jogo?";
+	    			// link.l2.go = "Dice_Rule";
     			}
     			else
     			{
@@ -1347,7 +1347,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Dice_Rule":
-   			dialog.text = DICE_RULE;
+   			dialog.text = GlobalStringConvert("DICE_RULE");
 			link.l1 = "Então, vamos começar!";
 			link.l1.go = "Dice_begin";
 			link.l3 = "Não, não é para mim...";
@@ -2009,6 +2009,7 @@ void ProcessDialogEvent()
             // цена зависит от губернатора
             qty = makeint(sti(offref.rank)*(800 + GetCharacterSPECIALSimple(NPChar, SPECIAL_L)*100) + GetCharacterSkillToOld(offref, "Leadership")*500 + GetCharacterSkillToOld(pchar, "commerce")*500);
 			if(HasShipTrait(pchar, "trait14")) qty = makeint(qty * 1.35);
+			qty = int(qty * GetAttributeFloatOrDefault(offref, "bonusCost", 1.0));
             if (sti(offref.nation) == sti(NPChar.nation))
             {
                 attrLoc = attrLoc + " I am ready to pay the ransom for my compatriot in the amount of  " + FindRussianMoneyString(qty) + ".";

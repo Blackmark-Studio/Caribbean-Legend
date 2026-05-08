@@ -1,0 +1,38 @@
+Node0_a {Das letzte Viertel des Jahres beginnt - die Saison des Schattens bricht an. Die Hurrikane, die den Atlantik heimsuchen, lassen nach, doch ihre Folgen sind überall zu spüren. Die Garnisonen sind von Krankheit und Hunger verheert, die Handelsketten zerrissen, und die Karibik verharrt in Erwartung des Winters.$br$redIn dieser Jahreszeit färbt sich das Meer scharlachrot - vor den Küsten wüten ausgehungerte, rasende Piraten, die nationalen Flotten versuchen, dem geschwächten Gegner das fetteste Stück abzubeißen, und Schmuggler werden zu den wertvollsten und reichsten Menschen des Archipels.}
+Node0_a_action {Die Zeit von Trauer und Stärke ist gekommen}
+Node0_b_a {Mit der Feuchtigkeit verschwinden auch die Krankheiten, die Besatzungen und Kolonisten dahinrafften. Die deutlich leereren Straßen der Städte, Tavernen und Kasernen erschweren die Ausbreitung von Seuchen auf natürliche Weise, sodass man auf eine Reise deutlich weniger Arznei mitnehmen kann.}
+Node0_b_a_reaction {Doppelte Grog-Ration für alle!}
+Node0_b_a_reaction_log {Sie beschließen, allen eine zusätzliche Ration Grog zur Krankheitsvorbeugung auszugeben. Das wird helfen, bei Arzneimitteln zu sparen.}
+Node0_b_b {Die Saison des Sturms war in diesem Jahr besonders grausam. Krankheitsausbrüche fegten wie ein tödlicher Wirbelwind durch die Karibik und entvölkerten Städte und Kasernen. Nur die gesündesten und zähesten haben überlebt, und keine Krankheit schreckt sie nun noch. Das ermöglicht erhebliche Einsparungen bei Arzneimitteln.}
+Node0_b_b_reaction {Eine Portion Heilkräuter für alle!}
+Node0_b_b_reaction_log {Sie beschließen, allen Heilkräuter zur Krankheitsvorbeugung auszugeben. Das wird helfen, bei Arzneimitteln zu sparen.}
+Node0_b_c {In diesem Jahr zog sich die feuchte Jahreszeit früher als gewöhnlich zurück. Die Winde trockneten die Häfen, die Nässe wich aus Kasernen und Lagern, und das Atmen fiel spürbar leichter. Das Fieber klingt ab, die Menschen erholen sich schneller, und auf den Kais erscheinen wieder jene, die in See stechen wollen. Es ist, als hätte der Archipel aufgeatmet, und jeder blickt hoffnungsvoll in die Zukunft.}
+Node0_b_c_reaction {Willkommen an Bord!}
+Node0_b_c_reaction_log {Sie nutzen Ihre Verbindungen und Ihren Ruf, um möglichst viele Matrosen anzuwerben.}
+Node0_b_d {Der Sommer erwies sich als weniger erbarmungslos als erwartet. Die Krankheiten rafften die Schwachen nicht dahin, und bis zum Herbst sind mehr Menschen als gewöhnlich in den Häfen. Doch mit ihnen bleibt auch das Siechtum - es schleppt sich mit und heftet sich an neue Besatzungen. Krankheiten können jederzeit an Bord ausbrechen, und man muss darauf vorbereitet sein.}
+Node0_b_d_reaction {Ich weiß, wie man die Gesundheit wieder stärkt}
+Node0_b_d_reaction_log {Sie wählen unter den Rekruten die gesündesten aus und verteilen sie so auf dem Schiff, dass das Krankheitsrisiko sinkt.}
+Node0_c_a {Die Reparatur eines Schiffes ist dagegen zu einem teuren Luxus geworden. Die Vorräte an Schiffsholz schwinden zusehends, jeder Nagel kostet das Dreifache des Üblichen, und die Handwerker sind gezwungen, ihre Preise anzuheben, um dem Andrang Herr zu werden.}
+Node0_c_a_reaction {Können wir den Preis drücken?}
+Node0_c_a_reaction_log {Sie beschließen, Ihr Wissen über den Schiffsbau zu nutzen, um bei Reparaturen zu sparen. Jemanden übers Ohr zu hauen, der sich auskennt, ist deutlich schwerer.}
+Node0_c_b {Ein Schiff zu reparieren wird jedoch nicht leicht sein - die Werkstätten wurden vom Unwetter zerstört, und es fehlt an Zimmerleuten. Vor den Werften bilden sich Schlangen beschädigter Schiffe, und die Meister geben Kriegsschiffen den Vorzug. Reparaturen werden zu einem Luxus, den sich nicht jeder Kapitän leisten kann.}
+Node0_c_b_reaction {Kriegsschiffe zuerst?}
+Node0_c_b_reaction_log {Sie nutzen Ihre militärische Ausbildung, um als Patrouillenschiff durchzugehen und in der Warteschlange vorzurücken.}
+Node0_c_c {Nach den Sommerhurrikanen sind Riffe und Untiefen mit Trümmern übersät. Auf Befehl der Gouverneure wird alles Wertvolle zu den Forts und Werften gebracht - Planken, Rahen, Anker, sogar ganze Masten. Aus den Laderäumen zieht man Kanonen, befreit sie vom Rost und legt sie ins Lager. Es gibt mehr Material als erwartet, und die Reparaturen sind nicht ganz so stark teurer geworden.}
+Node0_c_c_reaction {Wir haben selbst etwas aufzubieten!}
+Node0_c_c_reaction_log {Sie geben den Befehl, jedes für Reparaturen brauchbare Material zusammenzutragen. Eine Mannschaft erfahrener Matrosen wird rasch genug Wertvolles beschaffen, um den Preis in der Werft zu drücken.}
+Node0_d_a {In den Läden kämpft man um die letzten Fässer Pulver und Säcke Zucker, während die Händler ihre Restbestände zurückhalten und auf noch höhere Preise warten. Mancherorts gibt es noch Waren, doch sie kosten weit mehr als gewöhnlich.}
+Node0_d_a_reaction {Wir wissen, wo es billiger ist!}
+Node0_d_a_reaction_log {Dank Ihrer gut ausgebauten Handelsverbindungen und persönlichen Bekanntschaften mit vielen angesehenen Kaufleuten können Sie die Aufschläge in den Geschäften deutlich senken.}
+Node0_d_b {Die Lagerhäuser, die sich zum Jahresende leeren, wirken diesmal besonders düster. Es ist nicht ganz klar, was die Ursache ist - eine schlechte Ernte, mehrere missglückte Fahrten aus Europa oder wütende Piraten -, doch der Warenmangel ist jetzt besonders akut.}
+Node0_d_b_reaction {Wir wissen, wer noch Vorräte hat}
+Node0_d_b_reaction_log {Dank Ihrer eingespielten Verbindungen zu Schmugglern und Ihres guten Rufs in den Schattenkreisen erhalten Sie deutlich größere Warenvorräte als alle anderen. Es ist immer angenehm, zu den Auserwählten zu gehören.}
+Node0_d_c {Diesmal haben die Behörden genug Kraft bewahrt, um in der Region einen aktiven Kampf zu erzwingen, und jeder Gouverneur bemüht sich, möglichst viele Freikapitäne unter sein Banner zu ziehen.$br$redKaum hatten sich die Stürme gelegt, verbreitete sich in den Kolonien das Gerücht über gelockerte Vorschriften. Im Kampf erbeutete Ladung unterliegt nun keiner eingehenden Kontrolle mehr. Beute wird beinahe legal, und die Grenze zwischen Piraterie und Dienst für die Krone verschwimmt. Das wird den Warenmangel etwas abmildern und die Preise senken.}
+Node0_d_c_reaction {Gestohlene Waren?}
+Node0_d_c_reaction_log {Sie haben schon immer gewusst, wie man gestohlene Waren als legal ausgibt, und die neuen Regeln machen diesen Vorgang für Sie noch einfacher.}
+Node0_d_d {In diesem Herbst hat der Warenmangel die Gouverneure zu verzweifelten Maßnahmen gezwungen. Sämtliche Patrouillen wurden aus den Städten abgezogen, der Dschungel wird durchkämmt, Küstenbuchten werden überprüft, kleine Schiffe kontrolliert und verdächtige Lagerhäuser ohne viel Federlesens aufgebrochen.$br$redSchmuggler werden demonstrativ gefasst, ihre Waren zugunsten der Staatskasse beschlagnahmt. Das glättet manches und hält die Preise im Zaum, doch der Schattenhandel wird zu gefährlich. Solange sich die Schlinge nicht lockert, wird kein Schmuggler in See stechen.}
+Node0_d_d_reaction {Es gibt immer Raum für ein Geschäft}
+Node0_d_d_reaction_log {Sie wissen genau, wie man dubiose Geschäfte einfädelt und dabei unbemerkt bleibt. Es wird Ihnen leichtfallen, einen so raffinierten Plan zu ersinnen, dass die Schmuggler Ihnen glauben.}
+Node0_success {Sie treten voll gerüstet in diese schwere Zeit ein. Jedes Jahr ist die Season of Shade eine Prüfung und ein Härtetest für alle, die im Archipel leben. Werden wir die nächste noch erleben?}
+Node0_success_action {In See!}
+Node0_title {Saison des Schattens}

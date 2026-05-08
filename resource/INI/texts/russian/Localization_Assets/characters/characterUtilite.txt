@@ -1,4 +1,10 @@
 characterUtilite_1 {Получено @<_Money> песо}
+characterUtilite_10 {Десант корабля @<officer.Ship.Name> составляет @<compCrew> человек.}
+characterUtilite_11 {Срок Вашего займа истек}
+characterUtilite_12 {@<LanguageConvertString(idLngFile, arItem.name)> в атласе!}
+characterUtilite_13 {Индейцы относятся хуже (}
+characterUtilite_14 {Индейцы относятся лучше (}
+characterUtilite_15 {У торговца нет полной суммы. Хотите продать за @<money>?}
 characterUtilite_2 {Потрачено @<abs(_Money)> песо}
 characterUtilite_3 {Получен предмет ~}
 characterUtilite_4 {Получено @<n> дублонов}
@@ -7,9 +13,3 @@ characterUtilite_6 {~ заметил, что артефакт @<LanguageConvertS
 characterUtilite_7 {Честь выросла}
 characterUtilite_8 {Честь упала}
 characterUtilite_9 {Потрачено @<_Dublons> дублонов}
-characterUtilite_10 {Десант корабля @<officer.Ship.Name> составляет @<compCrew> человек.}
-characterUtilite_11 {Срок Вашего займа истек}
-characterUtilite_12 {@<LanguageConvertString(idLngFile, arItem.name)> в атласе!}
-characterUtilite_13 {Индейцы относятся хуже (}
-characterUtilite_14 {Индейцы относятся лучше (}
-characterUtilite_15 {У торговца нет полной суммы. Хотите продать за @<money>?}

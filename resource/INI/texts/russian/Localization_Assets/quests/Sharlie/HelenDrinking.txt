@@ -1,12 +1,4 @@
 HelenDrinking_1 {Франсуа}
-HelenDrinking_2 {де Таванн}
-HelenDrinking_3 {Вит}
-HelenDrinking_4 {Нидлс}
-HelenDrinking_5 {Радуга}
-HelenDrinking_6 {Это что, сон? Где все?}
-HelenDrinking_7 {Надо зайти к Яну и извиниться.}
-HelenDrinking_8 {Амелия}
-HelenDrinking_9 { }
 HelenDrinking_10 {Датчанин}
 HelenDrinking_11 { }
 HelenDrinking_12 {Счастливчик}
@@ -17,7 +9,15 @@ HelenDrinking_16 { }
 HelenDrinking_17 {Ричард}
 HelenDrinking_18 {Смолл}
 HelenDrinking_19 { }
+HelenDrinking_2 {де Таванн}
 HelenDrinking_20 { }
 HelenDrinking_21 {Матросы перенесли бакаут на корабль!}
 HelenDrinking_22 {~ получил +1 к умению ~}
 HelenDrinking_23 {~ получила +1 к умению ~}
+HelenDrinking_3 {Вит}
+HelenDrinking_4 {Нидлс}
+HelenDrinking_5 {Радуга}
+HelenDrinking_6 {Это что, сон? Где все?}
+HelenDrinking_7 {Надо зайти к Яну и извиниться.}
+HelenDrinking_8 {Амелия}
+HelenDrinking_9 { }

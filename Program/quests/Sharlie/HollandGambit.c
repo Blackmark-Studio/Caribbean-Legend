@@ -492,37 +492,47 @@ void MC_GoAway(string qName)//провалил задание - в лодку и
 
 void Jacob_RemoveShip()//удаление корабля
 {
-	if(sti(RealShips[sti(pchar.ship.type)].basetype) == sti(pchar.questTemp.HWIC.Holl.ShipType))
+	ref longway = CharacterFromID("Longway");
+	// Найдем, у кого квестовый корабль
+	ref questCap;
+	for (int i = 0; i < COMPANION_MAX; i++)
 	{
-		pchar.Ship.Type = GenerateShipExt(SHIP_TARTANE, true, pchar);
-		pchar.Ship.name = "Лодка";
-		SetBaseShipData(pchar);
-		SetCrewQuantityOverMax(PChar, 0);//сажаем на тартану
+		int iTemp = GetCompanionIndex(pchar, i);
+		if (iTemp <= 0) continue;
+
+		sld = GetCharacter(iTemp);
+		if (sti(RealShips[sti(sld.ship.type)].basetype) != sti(pchar.questTemp.HWIC.Holl.ShipType)) continue;
+
+		pchar.questTemp.HWIC.Holl.CompanionIndex = sld.Index;
+		questCap = GetCharacter(sti(pchar.questTemp.HWIC.Holl.CompanionIndex));
 	}
-	else
+
+	DistributeCrewFromShipToSquadron(pchar, questCap);
+
+	if (IsCompanion(longway)) SeaAI_SwapShipsAttributes(questCap, longway); // отдаём квестовый Лонгвею в обмен на его корабль
+	else if (IsMainCharacter(questCap)) // сам ГГ на квестовом, меняемся с ближайшим компаньоном и снимаем его
 	{
-		for(i = 1; i < COMPANION_MAX; i++)
-		{
-			int iTemp = GetCompanionIndex(PChar, i);
-			if(iTemp > 0)
-			{
-				sld = GetCharacter(iTemp);
-				if(sti(RealShips[sti(sld.ship.type)].basetype) == sti(pchar.questTemp.HWIC.Holl.ShipType))
-				{
-					pchar.questTemp.HWIC.Holl.CompanionIndex = sld.Index;
-					sld = GetCharacter(sti(pchar.questTemp.HWIC.Holl.CompanionIndex));
-					RemoveCharacterCompanion(PChar, sld);
-					AddPassenger(PChar, sld, false);
-				}
-			}
-		}
-    }
+		sld = GetCharacter(GetCompanionIndex(pchar, 1));
+		SeaAI_SwapShipsAttributes(pchar, sld);
+		RemoveCharacterCompanion(pchar, sld);
+		AddPassenger(pchar, sld, false);
+		Event(EVENT_CT_UPDATE, "a", sld);
+	}
+	else // на квестовом кто-то ещё, тупа снимаем его
+	{
+		RemoveCharacterCompanion(PChar, questCap);
+		AddPassenger(PChar, questCap, false);
+	}
+
+	Event(EVENT_CT_UPDATE, "a", pchar);
+	DelBakSkillAttr(pchar);
+
 	Pchar.questTemp.FiringOfficerIDX = GetCharacterIndex("Longway");
 	sld = &Characters[sti(Pchar.questTemp.FiringOfficerIDX)];
 	CheckForReleaseOfficer(sti(Pchar.questTemp.FiringOfficerIDX));
 	RemovePassenger(Pchar, sld);
 	RemoveCharacterCompanion(pchar, sld);
-    DeleteAttribute(sld, "Payment");
+	DeleteAttribute(sld, "Payment");
 	DeleteAttribute(Pchar, "questTemp.FiringOfficerIDX");//удаляем из офицеров
 }
 
@@ -2036,7 +2046,7 @@ void TonzagMeeting(string qName)//встреча друзей
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
 }
 
-void HollandGambit_NewShipTwilight()//получаем новый корабль Twilight
+void HollandGambit_NewShipTwilight()
 {
 	sld = characterFromId("Tonzag");
 	LAi_SetActorType(sld);
@@ -2045,13 +2055,15 @@ void HollandGambit_NewShipTwilight()//получаем новый корабль
 	pchar.questTemp.HWIC.Self = "HuntFleetwood";
 	AddLandQuestMark(characterFromId("Merdok"), "questmarkmain");
 	
+	if (pchar.Ship.Type != SHIP_NOTUSED) return; // получаем новый корабль Twilight
+
 	if(GetSummonSkillFromName(pchar, SKILL_SAILING) < 46)
 	{
-		pchar.Ship.Type = GenerateShipHand(pchar, SHIP_CAREERLUGGER, 12, 580, 30, 800, 20000, 9.5, 65.5, 1.6);
+		pchar.Ship.Type = GenerateShipHand(pchar, SHIP_CAREERLUGGER, 12, 580, 30, 800, 20000, 9.5, 65.5);
 	}
 	else
 	{
-		pchar.Ship.Type = GenerateShipHand(pchar, SHIP_SCHOONER, 16, 1900, 50, 1350, 25000, 10.5, 55.0, 1.10);
+		pchar.Ship.Type = GenerateShipHand(pchar, SHIP_SCHOONER, 16, 1900, 50, 1350, 25000, 10.5, 55.0);
 	}
 	pchar.Ship.name = GetShipName("Twilight");
 	SetBaseShipData(pchar);
@@ -2561,7 +2573,7 @@ void CreateHWICCureerOnMap(string qName)//энкаунтер курьера на
 	sld.Ship.Crew.Exp.Soldiers = MOD_SKILL_ENEMY_RATE*10;
 	UpgradeShipParameter(sld, "SpeedRate");
 	UpgradeShipParameter(sld, "Capacity");
-	UpgradeShipParameter(sld, "WindAgainstSpeed");
+	UpgradeShipParameter(sld, "Rig");
 	UpgradeShipParameter(sld, "TurnRate");
 	if (MOD_SKILL_ENEMY_RATE > 4) TakeNItems(sld, "potion2", 3);
 	SetCharacterPerk(sld, "HullDamageUp");
@@ -3267,6 +3279,7 @@ bool HollandGambit_QuestComplete(string sQuestName, string qname)
 	{
 		chrDisableReloadToLocation = false;
 		pchar.quest.HWIC_ReturnOfficer.win_condition.l1 = "location";
+        pchar.quest.HWIC_ReturnOfficer.win_condition.l1.silent = ""; // Не мешать быстрым переходам
 		pchar.quest.HWIC_ReturnOfficer.win_condition.l1.location = "Villemstad_town";
 		pchar.quest.HWIC_ReturnOfficer.function = "HWICofficerTalkReturn";
 	}
@@ -3388,7 +3401,7 @@ bool HollandGambit_QuestComplete(string sQuestName, string qname)
 		sld = characterFromId("Chavinavi");
 		LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "Ground_StandUp", "MonsterFight", 3.5);
-		PlaySound("VOICE\Russian\hambit\Chavinavy.wav");
+		PlaySoundSafe("VOICE\" + LanguageGetLanguage() + "\hambit", "Chavinavy.wav");
 	}
 	else if (sQuestName == "MonsterFight")
 	{

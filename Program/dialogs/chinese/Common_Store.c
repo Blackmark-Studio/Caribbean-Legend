@@ -887,19 +887,14 @@ case "storage_01":
 		break;
 		
 		case "storage_5":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage)); 
-			NPChar.Storage.NoActivate = true;
-			DeleteAttribute(NPChar,"Storage.Activate");
+			LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
 			DialogExit();
 		break;
 		
 		case "storage_6":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			DeleteAttribute(NPChar,"Storage.Activate");
-			NPChar.Storage.NoActivate = true;
+			LeaveStorage(NPChar, rColony);
 			DialogExit();
-		break;		
+		break;
 
 		case "business":
 			iTest = 0;			
@@ -975,17 +970,6 @@ case "storage_01":
 			}
 			// < —гeнeратор Мeсто под солнцeм
 			
-//navy -->
-			//занят ПГГ
-			iTmp = CheckAvailableTaskForNPC(NPChar, PGG_TASK_WORKONSTORE);
-			if (iTmp != -1)
-			{
-				dialog.text = "我有个工作, 但" + GetFullName(&Characters[iTmp]) + "已经答应帮我做了。 ";
-				link.l1 = "哦, 真的吗? 那我稍后再来。 ";
-				link.l1.go = "exit";
-				break;
-			}
-//navy <--
 			dialog.text = NPCharRepPhrase(npchar,"什么生意? ! 全告诉我! ","我在听。 你说的那笔交易是什么? ");
             ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
             if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
@@ -1060,11 +1044,8 @@ case "storage_01":
 					}
 					else
 					{
-						if(!CheckAttribute(NPChar,"Storage.NoActivate"))
-						{
-							link.l7 = "打扰一下, 好心人 - 你碰巧租仓库吗? ";
-							link.l7.go = "storage_01";
-						}	
+						link.l7 = "打扰一下, 好心人 - 你碰巧租仓库吗? ";
+						link.l7.go = "storage_01";
 					}
 				}				
 				// < —ugeen

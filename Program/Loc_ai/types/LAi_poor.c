@@ -112,7 +112,7 @@ void LAi_type_poor_CharacterUpdate(aref chr, float dltTime)
 			{
 				idx = sti(chrFindNearCharacters[i].index);
 				if(LAi_group_IsEnemy(chr, &Characters[idx])) break;
-				if(LAi_CheckFightMode(&Characters[idx])) break;
+				if(LAi_CheckFightMode(&Characters[idx]) != CHR_MODE_PEACE) break;
 			}
 			//есть враги
 			if(i < num)
@@ -326,7 +326,7 @@ int LAi_type_poor_FindNearEnemy(aref chr)
 		for(i = 0; i < num; i++)
 		{
 			idx = sti(chrFindNearCharacters[i].index);
-			if(LAi_CheckFightMode(&Characters[idx])) return idx;	
+			if(LAi_CheckFightMode(&Characters[idx]) != CHR_MODE_PEACE) return idx;	
 		}
 	}
 	return -1;

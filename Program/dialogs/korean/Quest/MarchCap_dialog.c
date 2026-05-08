@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 					dialog.text = "나는 ~에서 알아내는 데 성공했어 "+FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty))+" 깃발 아래의 작은 무역 호송대 "+NationNameGenitive(sti(pchar.GenQuest.MarchCap.Nation))+", 상선 두 척과 호위선 한 척이 곧 근처를 항해할 거야 "+XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore+"Gen")+", 여기서 멀지 않아 "+XI_ConvertString(pchar.GenQuest.MarchCap.Island+"Gen")+". 상인들이 많은 "+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+" 창고 안에 있소. 이 정보를 안 쓸 이유가 없지, 선장님\n우리 둘이 경비병쯤은 쉽게 처리하고 화물을 가질 수 있소. 자, 할 텐가?";
 					link.l1 = "솔깃한데. 난 찬성이야!";
 					link.l1.go = "MarchCap_1_1";
-					link.l2 = "Some"+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+" 내가 "+를+ "와(과) 관계를 망칠 만큼 충분하지 않아 "+NationNameAblative(sti(pchar.GenQuest.MarchCap.Nation))+"아니, 난 이 짓 안 해! 잘 있어라, 나리, 그리고 날 막으려 들지도 마!";
+					link.l2 = "Some"+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+" 내가 를 와(과) 관계를 망칠 만큼 충분하지 않아 "+NationNameAblative(sti(pchar.GenQuest.MarchCap.Nation))+"아니, 난 이 짓 안 해! 잘 있어라, 나리, 그리고 날 막으려 들지도 마!";
 					link.l2.go = "MarchCap_exit";
 				break;
 				

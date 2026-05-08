@@ -87,8 +87,9 @@ void ProcessDialogEvent()
 		case "Town_7":
 			PlaySound("Voice\English\LSC\Mary Casper-04.wav");
 			dialog.text = "你说什么? ... 该死的, 你不是普通的强盗! 他为舰队司令工作! 抓住他, 伙计们! ";
-			link.l1 = "... ";
-			link.l1.go = "Cabin_fight";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("LSC_Cabin_fight");
 		break;
 		
 	// ---------------------------------刺杀鲨鱼 - 变体N --------------------------------

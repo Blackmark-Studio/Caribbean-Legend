@@ -1,0 +1,36 @@
+effects_title {Story Results}
+SkillExp_1 {$ctx(p1) gained experience: $key($ctx(p2))}
+SkillExp_pchar_1 {You gained experience: $key($ctx(p1))}
+Loyality_0 {$ctx(p1) is displeased}
+Loyality_1 {$ctx(p1) is pleased}
+CrewMorale_pchar_0 {Crew morale $MoraleStrDiff($ctx(value))}
+CrewMorale_pchar_1 {Crew morale $MoraleStrDiff($ctx(value))}
+Reputation_pchar_0 {Reputation decreased}
+Reputation_pchar_1 {Reputation increased}
+CrewExp_pchar_1 {$key($ctx(p1)) gained experience}
+Money_pchar_1 {You received $money($ctx(value))}
+Money_pchar_0 {You paid $abs($money($ctx(value)))}
+Goods_pchar_1 {You received _$key($goodI($ctx(p1))Acc): $number($ctx(value))}
+Goods_pchar_0 {You gave away _$key($goodI($ctx(p1))Acc): $abs($number($ctx(value)))}
+NationRelation_pchar_0 {Relations with $key($nationI($ctx(p1))Abl) worsened}
+NationRelation_pchar_1 {Relations with $key($nationI($ctx(p1))Abl) improved}
+ItemsCabin_0 {You gave away item: $GetItemName($ctx(p1)) x $abs($number($ctx(value)))}
+ItemsCabin_1 {You received item: $GetItemName($ctx(p1)) x $number($ctx(value))}
+Items_pchar_0 {You gave away item: $GetItemName($ctx(p1)) x $abs($number($ctx(value)))}
+Items_pchar_1 {You received item: $GetItemName($ctx(p1)) x $number($ctx(value))}
+TempModifier_pchar_0 {$key($ctx(p1)|modifiers.txt) $percent($ctx(value)) for $days($ctx(duration))}
+TempModifier_pchar_1 {$key($ctx(p1)|modifiers.txt) +$percent($ctx(value)) for $days($ctx(duration))}
+moraleDiff_up3 {increased sharply}
+moraleDiff_up2 {increased}
+moraleDiff_up1 {increased slightly}
+moraleDiff_stay {did not change}
+moraleDiff_down3 {decreased sharply}
+moraleDiff_down2 {decreased}
+moraleDiff_down1 {decreased slightly}
+FractionRelation_0 {Relations with $key($ctx(p1)Abl) worsened}
+FractionRelation_1 {Relations with $key($ctx(p1)Abl) improved}
+CrewQty_pchar_0 {Crew lost: $abs($number($ctx(value)))}
+CrewQty_pchar_1 {New crew members: $number($ctx(value))}
+NoEffectsStory {No consequences}
+LoyalityAll_1 {Your officers are now more loyal}
+LoyalityAll_0 {Your officers are now less loyal}

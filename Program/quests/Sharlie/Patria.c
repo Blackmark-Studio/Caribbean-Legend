@@ -25,7 +25,7 @@ void Patria_SetEcliaton() // ставим Эклятон
 	itm.Weight = 0.1;
 	// Эклятон
 	sld = GetCharacter(NPC_GenerateCharacter("Ecliaton_Cap", "Off_Fra_Z", "man", "man", 40, FRANCE, -1, true, "officer"));
-	sld.Ship.Type = GenerateShipHand(sld, SHIP_LSHIP_FRA, 42, 11250, 742, 9900, 250000, 12.85, 32.5, 0.4);
+	sld.Ship.Type = GenerateShipHand(sld, SHIP_LSHIP_FRA, 42, 11250, 742, 9900, 250000, 12.85, 32.5);
 	sld.Ship.name = GetShipName("Eclatant");
 	SetBaseShipData(sld);
 	sld.Ship.Cannons.Type = CANNON_TYPE_CULVERINE_LBS36;
@@ -1980,7 +1980,7 @@ void Patria_SiegeAddEngSquadron() // присоединяем эскадру д'
 		sld = GetCharacter(NPC_GenerateCharacter("Patria_SiegeCapNew_"+i, "off_hol_"+(7-i), "man", "man", 35, HOLLAND, -1, true, "quest"));
 		if (i == 1) 
 		{
-			sld.Ship.Type = GenerateShipHand(sld, SHIP_LSHIP_HOL, 42, 9500, 840, 11500, 350000, 9.5, 29.5, 0.38);
+			sld.Ship.Type = GenerateShipHand(sld, SHIP_LSHIP_HOL, 42, 9500, 840, 11500, 350000, 9.5, 29.5);
 			sld.Ship.name = GetShipName("Oliphant");
 			SetBaseShipData(sld);
 			sld.Ship.Cannons.Type = CANNON_TYPE_CULVERINE_LBS36;

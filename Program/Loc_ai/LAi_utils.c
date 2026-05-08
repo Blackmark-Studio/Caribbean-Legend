@@ -26,7 +26,7 @@ bool LAi_CheckCharacter(aref chr, string out)
 }
 
 //Зарядилось ли используемое персонажем огнестрельное оружие
-bool LAi_CharacterCanFrie(aref chr)
+bool LAi_CharacterCanFire(aref chr)
 {
 	if(!CharUseMusket(chr))
 	{
@@ -434,6 +434,7 @@ void LAi_CheckKillCharacter(aref chr)
 			chr.Health.HP = makefloat(chr.Health.HP) - 10.0;
 			if(makefloat(chr.Health.HP) < 20.0) chr.Health.HP = 20.0;
 			SetCharacterTask_Dead(chr);
+			CT_UpdateCashTables(&chr);
 			if(!bSeaActive)
 			{
 				SetFunctionExitFromLocationCondition("RestoreInjOfficerInLoc", pchar.location, false);
@@ -1056,7 +1057,7 @@ bool LAi_IsFightMode(aref chr)
 {
 	if (bLandInterfaceStart && CheckAttribute(chr, "equip.blade"))
     {
-        return (SendMessage(&chr, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode") != 0);
+        return (SendMessage(&chr, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode") != CHR_MODE_PEACE);
     }
     return false;
 }

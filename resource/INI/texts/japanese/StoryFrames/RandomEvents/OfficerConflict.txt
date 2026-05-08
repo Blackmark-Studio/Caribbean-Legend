@@ -1,0 +1,76 @@
+Node0_title {士官同士の対立}
+Node0_a_a
+{
+いつもの食後の思索は、船鐘の音によって破られる。まだ当番交代の時刻ではないため、あなたはこの騒ぎを確かめるべく音の方へ向かう。中甲板で、ひどく気の立ったアロンソがあなたを呼び止め、事の次第を手短に報告する。$br$red交代の最中、二人の士官――$ctx(officerName_A)、あなたの _$key($ctx(officerJob_A))、そして $ctx(officerName_B)、あなたの _$key($ctx(officerJob_B))――が、寝心地のいい寝台をめぐって取っ組み合いになったという。 $rand(口論はたちまち本物の争いへと発展し、最初に拳を使ったのは $ctx(officerName_A) だった。|二、三の嫌味が交わされただけで、話し合いは殴り合いに変わった。最初に拳を振るったのは $ctx(officerName_A) だった。|怒鳴り合いにまで発展し、ついに $ctx(officerName_A) が堪えきれず拳に訴えた。) $ctx(officerName_B) も $rand(黙ってはいなかった|すぐにやり返した|やられっぱなしではいなかった)ため、$rand(ほどなくして士官室の半分がめちゃくちゃになった|一分も経たぬうちに士官室はまるで白兵戦の跡のようになった|二人が引き離された頃には、士官室の半分はすでに木片だらけだった)。$br$red
+アロンソは $rand(暴れていた二人を引き離した|それぞれを反対側の隅へ引きずっていった|喧嘩を止めた) が、争いそのものは明らかに収まっておらず、いま必要なのは船長の一言だ。
+}
+Node0_a_a_action {先に手を出したのは $ctx(officerName_A) だ}
+Node0_a_a_success {あなたは、最初に拳を使ったのが $ctx(officerName_A) である以上、この件の責任は彼にあると判断する。あなたは彼に数度の懲罰当番を命じ、さらに $casedName($ctx(officerName_B)|Dat) に与えた損害を自分の給金から弁償するよう言い渡す。}
+Node0_a_a_success_action {甲板でも磨いてこい}
+Node0_a_b_action {$ctx(officerName_B) は挑発に乗るべきではなかった}
+Node0_a_b_success {あなたは、この一件の責任は $ctx(officerName_B) にあると判断する。彼は喧嘩を避け、船長を通して解決することもできたはずだからだ。罰として、あなたは $casedName($ctx(officerName_B)|Dat) に追加の厳しい訓練を課す。}
+Node0_a_b_success_action {これはお前のためだ}
+Node0_a_c_action {二人とも罰する}
+Node0_a_c_success {あなたは、この一件については二人の士官に責任があると判断し、共同の懲罰当番を命じる。それで彼らの仲が良くなるとは思っていないが、少なくとも今後こうした騒ぎを起こす気はなくなるだろう。士官室の修繕費は二人の給金から差し引かれる。}
+Node0_a_c_success_action {二人とも愚か者だ}
+Node0_a_d_action {全部お前たち自身で元通りにしろ}
+Node0_a_d_success {あなたは、理想的な罰は士官たち自身の手で士官室を元通りに修復させることだと判断する。腕利きの大工ではないにせよ、こうした処置なら、また騒ぎを起こす前に二度は考えるようになるはずだ。}
+Node0_a_d_success_action {壊すのは作るよりたやすい}
+Node0_a_b
+{
+夕方の見回りの最中、あなたはいつものように甲板を歩きながら、今日は妙に静かすぎると感じる。$rand(まるでその静けさを嘲笑うかのように|まるでその静けさに逆らうかのように|ちょうどその瞬間)、二人の士官が甲板へ $rand(飛び込んでくる|駆け込んでくる)――$ctx(officerName_A)、あなたの _$key($ctx(officerJob_A)) と、$ctx(officerName_B)、あなたの _$key($ctx(officerJob_B)) だ。彼らは明らかに船長を探しており、あなたを見つけるやいなや $rand(一直線に駆け寄ってくる|一刻も無駄にせずまっすぐこちらへ来る)。二人は $rand(ひどく高ぶった|苛立った) 様子で、$rand(あなたの横まで来ると|すぐ目の前まで駆け寄ると|まさに目の前で立ち止まると)、我先にとまくし立て始める。$br$red
+事の発端は、$ctx(officerName_B) が $rand($ctx(officerName_A) の命令を人前で拒んだこと|意固地になって $ctx(officerName_A) の命令に従わなかったこと|証人のいる前で $ctx(officerName_A) の命令を拒否したこと) にある。規定は彼らの職務の境界を $rand(あまりに曖昧にしており|最後まで明確に分けておらず|灰色地帯を残している) 、_$key($ctx(officerJob_B)) は $rand(_$key($ctx(officerJob_A)) の指揮下では働かないと言い放ち|_$key($ctx(officerJob_A)) は自分の上官ではないと言い切り|_$key($ctx(officerJob_A)) には自分を指揮する権限はないと面と向かって言った)。$br$red
+$rand(上下関係は目の前で軋み始め|規律は崩れかけており|この騒ぎはすでに乗組員にも聞こえている)。事が甲板上の露骨な分裂へ発展する前に、士官たちはあなたの裁定を求めている。
+}
+Node0_b_a_action {_$key($ctx(officerJob_A)) に理がある}
+Node0_b_a_success {あなたは船の規定を、形式的な上下関係よりも職務の方が優先されるように解釈する。$br$red_$key($ctx(officerJob_A)) がその本来の任務を遂行しているかぎり、いかなる士官もそれに従う義務がある。$ctx(officerName_A) は満足し、$ctx(officerName_B) は命令系統を乱したことを彼に詫びる。あなたは誰も罰しないことにする。}
+Node0_b_a_success_action {務めが先だ}
+Node0_b_b_action {$key($ctx(officerJob_B)) に従う義務はない}
+Node0_b_b_success {あなたは船の規定を、役職よりも上下の序列が優先されるように解釈する。士官の役目は水夫を指揮することであって、互いに命令し合うことではない。それ以外のことは、すべて船長の裁量だ。}
+Node0_b_b_success_action {誰も傷つかなければいいが}
+Node0_b_c_action {従うということを教えてやる}
+Node0_b_c_success {あなたは船の規定を開き、責任の範囲が実のところかなり明確に区切られていることを確認する。$ctx(officerName_B) は規則を悪用し、$ctx(officerName_A) はそれを食い止められるほど規定に通じていなかった。$br$red あなたは生意気な出しゃばりも、規定をろくに知らぬ士官も同じように嫌っている。そこで二人とも罰することにする。これから二週間、毎回の当番のあと、_$key($ctx(officerJob_A)) と _$key($ctx(officerJob_B)) は船倉の樽の上に立ち、互いに規定を声に出して読み聞かせることになる。}
+Node0_b_c_success_action {ついでに水夫たちにも聞かせてやればいい}
+Node0_a_c
+{
+朝の見回りを終えようとしたところで、アロンソが $rand(あなたを手招きする|短い) 仕草で呼び止める。彼の合図を無視するわけにはいかず、あなたは $rand(立ち止まって報告を求める|すぐに何があったのか尋ねる)。$br$red
+どうやら、あなたの捕虜 $casedName($ctx(prisonerName)|Gen) を巡って $rand(一悶着が持ち上がりつつあり|まるで芝居じみた騒ぎが起きており|すでに対立が燃え上がり始めている) らしい。あなたの _$key($ctx(officerJob_A)) である $ctx(officerName_A) は、$rand(確信し|言い張り|強く主張して) $ctx(prisonerName) は名乗っている人物ではないと言い、$rand(拷問で真実を吐かせようとし|手荒に問い詰めるつもりでいる)。一方、あなたの _$key($ctx(officerJob_B)) である $ctx(officerName_B) は、$rand(捕虜に手を出すなと要求し|拷問は認められないと言い張り|捕虜を傷物にしてはならないと言う)。あまりに値打ちがあり、$rand(もっと高く売れる|かなりの値がつく|傷一つで値打ちが下がる)からだ。$br$red
+あなたは $rand(二人を船室に呼びつけ|二人を連れて来させ|ただちに自分の前に出るよう命じ)、勝手な振る舞いの釈明を求める。士官たちは $rand(もっともだというように|乾いた口調で|淡々と)、$rand(まだ何もしていない|手は出していない|捕虜には触れていない)し、そうした判断は船長の役目だと指摘する。
+}
+Node0_c_a_action {$ctx(officerName_A)、そいつの正体を突き止めろ}
+Node0_c_a_success {$casedName($ctx(officerName_A)|Gen) の疑いには十分な重みがあるとあなたは判断し、捕虜の素性を詳しく探らせることにする。$ctx(officerName_B) は気分を害したようだが、あなたはその警戒心に礼を述べて場を和らげる。}
+Node0_c_a_success_action {それでどうにかなるとは思えない}
+Node0_c_b_action {$ctx(officerName_B)、$casedName($ctx(officerName_A)|Gen)を船倉に入れるな}
+Node0_c_b_success {$casedName($ctx(officerName_B)|Gen)の主張には十分な説得力があるとあなたは判断し、捕虜を守ることにする。だが、この一件全体があまりにも独断専行じみているため、懲戒として$casedName($ctx(officerName_A)|Dat)に二度の懲罰当番を命じ、$ctx(officerName_B)には入港まで捕虜のいる船倉の見張りを任せる。}
+Node0_c_b_success_action {これで懲りるだろう}
+Node0_c_c_action {誰も私に命図はできない}
+Node0_c_c_success {あなたは腹の底で煮えたぎる怒りを覚え、机を拳で叩き、士官たちを船室から追い出す。誰にも、あなたに選択を強いるような状況へ追い込む権利はない。後にあなたは、独断専行と命令系統の乱れを理由に、二人の士官を数度の懲罰当番と鞭打ちで罰する。この一件の噂はたちまち船中に広まり、その後ひと月のあいだ、陰ではあなたをモレイと呼ぶようになる。}
+Node0_c_c_success_action {$name モレイ？ 悪くない}
+Node0_a_d {あなたは夜明け前に目を覚まし、すぐに船内の様子がおかしいと感じる。問題はすぐに姿を見せる――数分後、足音が駆け寄り、船室の扉をしつこく叩く音が響く。$br$red 戸口には三人いる――$ctx(officerName_A)、あなたの _$key($ctx(officerJob_A))、$ctx(officerName_B)、あなたの _$key($ctx(officerJob_B))、そして十三歳ほどの少年だ。見習い水夫は戸惑った顔をしており、士官たちはひどく苛立っている。$br$red あなたがきちんとした報告を求めると、事情が明かされる。この少年は前回の寄港の際に船へ乗せられ、熱意と才能ですぐに皆を感心させたという。$ctx(officerName_A)は、彼が一流の _$key($ctx(officerJob_A)) になると見込み、自分のもとで教えたいと思っている。一方の$ctx(officerName_B)は、この少年が才能ある _$key($ctx(officerJob_B)) になると考え、自分の助手にしたがっている。$br$red 見習い水夫は露骨に二つの方向へ引っ張られており、この争いは話し合いではどうにも解決しない。士官たちは、少年が絶望してしまう前にあなたに決断を下してほしいと願い出る。}
+Node0_d_a_action {$ctx(officerName_A)がお前を育てる}
+Node0_d_a_success {あなたは少年の行く末を決める。あなたの目には、_$key($ctx(officerJob_A))の方がずっと将来性のある役目に映り、見習い水夫は$casedName($ctx(officerName_A)|Gen)の庇護のもとに置くのが最善だ。$ctx(officerName_B)は落胆した様子を見せる。}
+Node0_d_a_success_action {また別の者も見つかるさ}
+Node0_d_b_action {_$key($ctx(officerJob_B))――それがお前の進む道だ}
+Node0_d_b_success {あなたは、$casedName($ctx(officerName_B)|Gen)の指導のもとなら、この少年は大きく伸び、いつの日かカリブに新たな一流の _$key($ctx(officerJob_B)) が現れるだろうと考える。$ctx(officerName_A)はどこか気落ちした様子だ。どうやら、彼にとっては少し個人的な思いもあったらしい。}
+Node0_d_b_success_action {時には息子のようなものだ}
+Node0_d_c_action {二つ分の当番を務めてもらう}
+Node0_d_c_success {あなたは聖書の一節を思い出し、必要なのは兼務のできる有能な士官だと言う。見習い水夫は二人の士官のもとで交代に仕えることになる。二重の当番は耐えがたい重荷であり、あなたは士官たちの反応を注意深く見守る。$ctx(officerName_A)は同意するように頷くが、$ctx(officerName_B)は愕然として決定の見直しを願い出る。_$key($ctx(officerJob_B))は少年の健康のためなら助手を諦めてもよいと考えており、あなたにとって正しい答えは明らかになる。少年は$ctx(officerName_B)のもとで仕えることになる。}
+Node0_d_c_success_action {そのうち慣れる}
+Node0_a_e {あなたは士官たちの様子を見に行くことにし、士官室へ近づくと騒がしい声が聞こえてくる。扉を開けると、激しい言い争いのただ中に出くわす。$br$red$ctx(officerName_A)は$casedName($ctx(officerName_B)|Gen)に怒鳴りつけ、自分を陥れたと責め立てている。$ctx(officerName_B)も怒りに煮え、今にもレイピアに手をかけそうだ。あなたは一喝してこの醜態を止める。士官たちは直立不動となり、顔を青ざめさせる。$br$redあなたは事の次第を報告するよう命じ、はぐらかそうものなら二人まとめて海へ放り込むと脅す。すると事情が明かされる。前回の寄港時、あなたの _$key($ctx(officerJob_A)) である$ctx(officerName_A)は命令を誤って実行し、そのせいで船は損失を被り、あなたは彼を処罰した。だが後になって海上で、彼の失敗は$casedName($ctx(officerName_B)|Gen)が与えた誤った助言によるものだと判明した。対立は一気に激しい局面へ移り、あなたが士官室へ入ったとき、まさにその瞬間を目撃したのだ。$br$red$ctx(officerName_B)は助けようとしただけだと主張するが、$ctx(officerName_A)は故意にはめられたと信じて疑わない。いまや決断を下すのはあなたの役目だ。}
+Node0_e_a_action {処罰が誤りだったと認める}
+Node0_e_a_success {あなたは、この処罰が不当だったと認めることで対立を収めることにする。あなたは自分の懐から$casedName($ctx(officerName_A)|Dat)の受けた屈辱への埋め合わせを支払い、争いはたちまち鎮まる。時には一言の温かい言葉で足りるし、時には硬貨の音が物を言う。士官たちは頭を冷やし、互いに詫び合う。命さえ失いかねなかった些細なことが、今では貴重な教訓となった。あなたは、彼らがそこから学んでくれることを願う。}
+Node0_e_a_success_action {これで皆まるく収まる}
+Node0_e_b_action {$casedName($ctx(officerName_B)|Gen)を罰する}
+Node0_e_b_success {あなたは、この状況がどうにも故意の害意を思わせると判断する。$ctx(officerName_A)が不当な処罰を受けただけでなく、船長であるあなたの面目までも潰されたのだ。こうしたことには罰が必要であり、あなたは$ctx(officerName_B)の鞭打ちを命じる。$ctx(officerName_A)は満足げな様子を見せる。}
+Node0_e_b_success_action {誰にも容赦はしない}
+Node0_e_c_action {$casedName($ctx(officerName_A)|Gen)をもう一度罰する}
+Node0_e_c_success {あなたは、$ctx(officerName_A)が他人を踏み台にして自分を大きく見せようとしており、自分が誤ったことをどうしても認められないのだと判断する。たとえ誤った助言であっても、それで自分の頭で考える義務がなくなると思っているなら、大きな思い違いだ。$ctx(officerName_B)は_$key($ctx(officerJob_A))ではなく、$ctx(officerName_A)がその言葉に従ったこと自体が、事態をさらに悪くしている。$br$red今後、あなたの命令を論じたり責任を他人に押しつけたりする考えすら抱かぬよう、あなたは$ctx(officerName_A)の再度の鞭打ちを命じる。}
+Node0_e_c_success_action {自分で自分の墓穴を掘ったな}
+Node0_e_d_action {二人とも罰する}
+Node0_e_d_success {あなたには、この一件が秩序と命令系統に対する悪夢のような破壊に映る。士官たちはあなたの命令を論じる大胆さを見せただけでなく、あなたの船上で血を流すことすら厭わなかった。$br$redあなたは士官それぞれに鞭打ち10回を言い渡す。5回はあなたの命令を論じた罰、5回は命令系統の乱れと武器による士官仲間への脅迫の罰だ。}
+Node0_e_d_success_action {何を招くかは承知の上だった}
+Node0_e_e_action {よかろう――ならば決闘しろ}
+Node0_e_e_success {あなたは上甲板での決闘を定め、自ら立会人を務めることにする。どうしても決着をつけるというなら、せめて作法に従わせるのだ。$br$red 勝負が始まり、ほどなくして$ctx(officerName_A)の優勢は明らかになる。あなたは戦いを止め、$ctx(officerName_A)の勝利を認める。}
+Node0_e_e_success_action {彼は己の名誉を守った}
+Node0_e_e_fail {あなたは上甲板での決闘を定め、自ら立会人を務めることにする。どうしても決着をつけるというなら、せめて作法に従わせるのだ。$br$red 勝負が始まり、ほどなくして$officer_nameの優勢は明らかになる。あなたは戦いを止め、$ctx(officerName_B)の勝利を認める。}
+Node0_e_e_fail_action {彼は自らの正しさを証明した}

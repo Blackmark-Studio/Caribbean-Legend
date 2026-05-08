@@ -1,0 +1,53 @@
+Node0_title {Die Bitte eines Offiziers}
+Node0_a_a {$attr($context.officerName), euer _$attr($context.officerJob), tritt mit gesenktem Kopf in eure Kajüte. Er lässt erst eine bedeutungsschwere Pause entstehen und schildert dann voller Gram sein Unglück: Bei einer kürzlichen Spielrunde im Laderaum hat er tatsächlich $rand(eine Familienbrosche|sein Kreuz|die Manschettenknöpfe seines Vaters) an einen Matrosen verloren. Nun bittet er euch um ein kleines Darlehen, damit er es zurückgewinnen und das wertvolle Stück wieder an sich bringen kann.}
+Node0_a_a_action {Gewinnt es zurück und teilt den Gewinn!}
+Node0_a_a_success {Ihr gebt ihm die nötige Summe unter der Bedingung, dass er euch $rand(das Geld und die Hälfte des Gewinns zurückbringt|jeden einzelnen Betrag zurückzahlt und darüber hinaus die Hälfte des Gewinns abgibt). Nach einiger Zeit klopft ein glücklicher $attr($context.officerName) an eure Tür. Sein Wertstück ist wieder bei ihm, und er $rand(hält seinen Teil der Abmachung ein|hält Wort), indem er euch euren Anteil übergibt.}
+Node0_a_a_success_action {Leicht verdientes Geld!}
+Node0_a_a_fail {Ihr gebt ihm die nötige Summe unter der Bedingung, dass er $rand(euer Geld und die Hälfte des Gewinns zurückbringt|euch das Geld zurückzahlt und darüber hinaus die Hälfte des Gewinns abtritt). $attr($context.officerName) $rand(lässt sich lange nicht blicken|scheint wie vom Schiff verschwunden), und ihr $rand(befehlt schließlich, ihn in eure Kajüte zu rufen|lasst ihn schließlich zu euch kommen). An seinem $rand(gesenkten Blick|ganzen Auftreten) erkennt ihr sofort, dass er das Wertstück $rand(nicht zurückgewonnen hat|nicht mehr zurückholen konnte), und euer Geld $rand(verloren hat|am Spieltisch verspielt hat).}
+Node0_a_a_fail_action {Eine bittere Lehre}
+Node0_a_b_action {Glücksspiel an Bord bestrafen}
+Node0_a_b_success {Die Schiffsordnung verbietet Glücksspiel unmissverständlich. Ihr $rand(laßt die beteiligten Matrosen zur Abschreckung öffentlich auspeitschen|befehlt, die beteiligten Matrosen vor versammelter Mannschaft auszupeitschen), während der Offizier $rand(mit Soldentzug bestraft wird|einen Monat lang ohne Sold bleibt).}
+Node0_a_b_success_action {Regeln sind Regeln}
+Node0_a_c_action {Den Matrosen zwingen, das Eigentum zurückzugeben}
+Node0_a_c_success {Ihr seid der Kapitän, und euer Wort ist Gesetz, doch für solche Fälle gibt es keine Vorschrift. Ihr nutzt eure furchteinflößende Erscheinung und eure eindrucksvolle Statur, um den Matrosen einzuschüchtern und ihn zu zwingen, das Eigentum eures Offiziers zurückzugeben. Die Mannschaft wird das nicht vergessen.}
+Node0_a_c_success_action {Mit mir spaßt man nicht}
+Node0_a_b {Als ihr nach der Abendrunde in eure Kajüte zurückkehrt, wartet dort vor der Tür bereits $attr($context.officerName), euer _$attr($context.officerJob). Er $rand(tritt unsicher von einem Fuß auf den anderen|drückt sich verlegen auf der Stelle herum), doch unter eurem $rand(strengen Blick|Blick) $rand(gibt er nach|bricht ein) und trägt schließlich sein Anliegen vor. Im Zielhafen ist ein Duell für ihn angesetzt, und er fürchtet zu verlieren. Als Trumpf bittet er um die Klinge, die in eurer Truhe liegt. Er versichert euch, dass _$attr($context.bladeName) $rand(seine Siegchancen erheblich steigern wird|ihm einen entscheidenden Vorteil verschaffen wird).}
+Node0_b_a_action {Nicht der Degen entscheidet, sondern die Hand!}
+Node0_b_a_success {Ihr fordert $casedName($attr($context.officerName)|Gen) direkt in der Kajüte zu einem Übungsduell heraus. Er schlägt sich anständig, auch wenn er von eurem Können noch weit entfernt ist. Nach dem Training zeigt ihr ihm ein paar eurer bewährten Finten und Hiebe, und nun fühlt sich $attr($context.officerName) deutlich sicherer.}
+Node0_b_a_success_action {Schweiß im Training, Leichtigkeit im Kampf.}
+Node0_b_a_fail {$attr($context.officerName) schlägt sich anfangs gar nicht schlecht, doch ihm geht rasch die Luft aus, und er wird vernichtend geschlagen. Ihr verbietet ihm die Teilnahme am Duell – Ehre ist kostbar, aber das Leben ist kostbarer.}
+Node0_b_a_fail_action {Lasst euch auf so etwas nicht noch einmal ein.}
+Node0_b_b_action {Nehmt es, es gehört nun euch.}
+Node0_b_b_success {Ihr beschließt, dass diese Waffe dem Offizier $rand(offenkundig nützlicher sein wird als euch|mehr nützen wird als euch), und $rand(überlasst sie ihm ohne Gegenleistung|trennt euch ohne Zögern von ihr). $attr($context.officerName) dankt euch aufrichtig und wirkt deutlich gefasster. Ihr kommt zu dem Schluss, dass $rand(solche Geschenke öfter vergeben werden sollten|es sich lohnt, solche Geschenke häufiger zu machen) – $rand(für treue Dienste oder besondere Tapferkeit|für treue Dienste und besondere Tapferkeit).}
+Node0_b_b_success_action {Sie sollen es sich erst verdienen.}
+Node0_b_c_action {Es wird kein Duell geben.}
+Node0_b_c_success {Ihr weist die Bitte des Offiziers zurück und $rand(haltet ihm stattdessen eine lange erzieherische Standpauke|nehmt ihn stattdessen gründlich auseinander). Er $rand(hört sie sich mit gesenktem Blick und ergeben an|hört schweigend zu, den Blick zu Boden gerichtet), und ihr $rand(bekräftigt die Lektion mit zwei Strafwachen|legt ihm noch zwei Strafwachen auf). Das Duell selbst ist $rand(selbstverständlich|natürlich) abgesagt.}
+Node0_b_c_success_action {Die Vorschriften sind mit Blut geschrieben.}
+Node0_a_c {Bei eurem abendlichen Rundgang bemerkt ihr, dass $attr($context.officerName), euer _$attr($context.officerJob), sich lange mit $casedName($attr($context.prisonerName)|Abl) unterhält. Noch am selben Abend lasst ihr den Offizier in eure Kajüte rufen und stellt ihn zur Rede. Zunächst windet sich $attr($context.officerName), doch unter Druck gibt er zu, dass $attr($context.prisonerName) sein $rand}
+Node0_c_a_action {Den Gefangenen hinrichten}
+Node0_c_a_success {Ihr beschließt, aus der Sache eine harte Lehre zu machen, und gebt den Befehl, den Gefangenen hinzurichten. $attr($context.officerName) ist schockiert, wagt es aber nicht, eurem Wort zu widersprechen. Alonso vollstreckt das Urteil. Gerüchte über eure Grausamkeit verbreiten sich augenblicklich auf dem ganzen Schiff und darüber hinaus.}
+Node0_c_a_success_action {Keine Gnade}
+Node0_c_b_action {Den Gefangenen freilassen}
+Node0_c_b_success {Ihr gebt den Befehl, den Gefangenen freizulassen und ihm bis zur Ankunft in der nächsten Stadt einen Platz in der Kombüse zuzuweisen. $attr($context.officerName) dankt euch und wirkt sichtlich beflügelt. Ihr verlangt, dass die Sache geheim bleibt, damit sich vor eurer Kajüte nicht bald eine Reihe von Bittstellern bildet.}
+Node0_c_b_success_action {Das ist eine Ausnahme, keine Regel}
+Node0_c_c_action {Dann kauf ihn selbst frei}
+Node0_c_c_success {Ihr schlagt einen fairen Handel vor - der Offizier kann $attr($context.prisonerName) sofort von seinem eigenen Sold freikaufen. So muss keine Regel gebrochen werden, und niemand muss sich verschuldet fühlen. $attr($context.officerName) zögert eine Weile, willigt dann aber in eure Bedingungen ein.}
+Node0_c_c_success_action {Fairer Handel}
+Node0_c_d_action {Die Entscheidungen des Kapitäns stehen nicht zur Debatte}
+Node0_c_d_success {Ihr verweigert dem Offizier seine Bitte. Wer der Gefangene auch sein mag - er hat sich ergeben und befindet sich nun in eurer Gewalt, und allein ihr entscheidet, was mit ihm geschieht. Zeigt ihr einmal Schwäche, wird es kein Ende mit denen geben, die ihre persönlichen Probleme auf Kosten des Kapitäns lösen wollen. $attr($context.officerName) wirkt niedergeschlagen, doch das kümmert euch nicht.}
+Node0_c_d_success_action {Ich bin das Gesetz}
+Node0_a_d {In letzter Zeit ist euch aufgefallen, dass $attr($context.officerName) $rand(ungewöhnlich still und in Gedanken versunken ist|unnatürlich schweigsam geworden ist und mit versteinertem Gesicht umherläuft). $rand(Er verbringt seine freie Zeit immer öfter damit, auf den Horizont hinauszustarren.|Immer häufiger steht er an der Reling und blickt starr in die Ferne, als warte er auf ein bestimmtes Segel.) Schließlich haltet ihr es nicht mehr aus und $rand(fragt ihn nach dem Grund|sprecht ihn direkt darauf an), woraufhin er euch sein Unglück offenbart – beim letzten Hafenaufenthalt erhielt er die Nachricht vom Tod $rand(eines nahen Verwandten|eines geliebten Menschen). Ihr $rand(kommt gar nicht erst dazu, euer Beileid auszusprechen|seid gerade erst im Begriff, etwas zu sagen), da bittet euch der Offizier bereits um einen Gefallen – er braucht eine Kerze und eine Öllampe zum Gebet, und ausgerechnet diese befinden sich nur in eurer Kajüte.}
+Node0_d_a_action {Natürlich, nehmt sie}
+Node0_d_a_success {Ihr gebt dem Offizier die für die Totenmesse nötigen Dinge und beschließt, ihn $rand(nicht zusätzlich mit Arbeit zu belasten|von einigen Pflichten zu entbinden), solange er $rand(trauert|im Trauerzustand ist). Er wirkt $rand(dankbar|offenkundig dankbar), auch wenn $rand(der Stempel der Trauer|der schwarze Schatten der Trauer) dieses Gefühl überdeckt.}
+Node0_d_a_success_action {Das geht vorüber}
+Node0_d_b_action {Wir machen es, wie es sich gehört}
+Node0_d_b_success {$attr($context.officerName) ist euer _$attr($context.officerJob) und kein gewöhnlicher Matrose. Das $rand(gewährt ihm|bedeutet) gewisse Vorrechte. Ihr befehlt, in der Messe $rand(eine offizielle Totenmesse|eine Totenmesse nach Vorschrift) abzuhalten. $attr($context.officerName) wirkt zunächst $rand(etwas verlegen|verlegen), doch dieses Gefühl $rand(weicht rasch der Dankbarkeit|macht der Dankbarkeit Platz).}
+Node0_d_b_success_action {Den treuen Gefährten das Beste}
+Node0_d_c_action {Gott hört euch auch so}
+Node0_d_c_success {Ihr redet dem Offizier zu, dass ein aufrichtiges Gebet auch ohne Zeremonie erhört wird.$br$red$attr($context.officerName) scheint euch zuzustimmen. Ihr empfindet einen stillen Stolz darüber, dass eure Worte ihm Erleichterung verschaffen.}
+Node0_d_c_success_action {Ihr werdet das überstehen}
+Node0_d_c_fail {Eure Worte klingen unerquicklich, und $attr($context.officerName) wirkt niedergeschlagen. Offenbar hält er euch schlicht für geizig und zynisch.}
+Node0_d_c_fail_action {Wartet, ich habe nichts dagegen}
+Node0_d_d_action {Der Schiffsgeistliche wird helfen}
+Node0_d_d_success {Es kommt euch seltsam vor, dass $attr($context.officerName) den eigentlichen Schiffsgeistlichen vergessen hat, doch ihr schreibt es der betäubenden Trauer zu.$br$redIhr lasst den Geistlichen in eure Kajüte rufen, schildert ihm das Problem und bittet um Zuspruch. $attr($context.officerName) wirkt noch wie betäubt, doch die Worte des Seelsorgers bringen ihn rasch wieder zu sich.}
+Node0_d_d_success_action {Gott hat uns erhört}

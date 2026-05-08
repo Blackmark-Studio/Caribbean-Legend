@@ -22,5 +22,7 @@ void RevokePerksPotionEffect(ref chr, ref item)
 	else ForceHeroPerks(chr);
 
 	RemoveItems(chr, item.id, 1);
+	RemoveCharacterEquip(chr, MUSKET_ITEM_TYPE);
+	RemoveCharacterEquip(chr, GUN_ITEM_TYPE);
 	CT_UpdateCashTables(chr);
 }

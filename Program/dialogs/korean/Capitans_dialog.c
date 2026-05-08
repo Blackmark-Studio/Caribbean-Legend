@@ -343,13 +343,13 @@ void ProcessDialogEvent()
                 dialog.text = "왜 안 되겠어? 나도 잠깐 쉬는 거라면 전혀 상관없지...";
     			link.l1 = "훌륭하군.";
     			link.l1.go = "Cards_begin";
-    			link.l2 = "규칙이 뭐지?";
-    			link.l2.go = "Cards_Rule";
+    			// link.l2 = "규칙이 뭐지?";
+    			// link.l2.go = "Cards_Rule";
 			}
 		break;
 
 		case "Cards_Rule":
-   			dialog.text = CARDS_RULE;
+   			dialog.text = GlobalStringConvert("CARDS_RULE");
 			link.l1 = "자, 그럼 시작하자!";
 			link.l1.go = "Cards_begin";
 			link.l3 = "아니, 나한테 필요한 건 아니야...";
@@ -434,8 +434,8 @@ void ProcessDialogEvent()
 					dialog.text = "왜 안 되겠어! 쉬는 건 건강에 항상 좋지... 하지만 지갑에는 항상 좋은 건 아니야...";
 	    			link.l1 = "훌륭하군.";
 	    			link.l1.go = "Dice_begin";
-	    			link.l2 = "우리 게임의 규칙이 뭐지?";
-	    			link.l2.go = "Dice_Rule";
+	    			// link.l2 = "우리 게임의 규칙이 뭐지?";
+	    			// link.l2.go = "Dice_Rule";
     			}
     			else
     			{
@@ -447,7 +447,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Dice_Rule":
-   			dialog.text = DICE_RULE;
+   			dialog.text = GlobalStringConvert("DICE_RULE");
 			link.l1 = "자, 그럼 시작하자!";
 			link.l1.go = "Dice_begin";
 			link.l3 = "아니, 나한테 필요한 건 아니야...";

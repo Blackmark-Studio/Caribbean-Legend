@@ -1,63 +1,121 @@
-QUEST_MESSAGE1 {エル・ カイマノ植民地は占領されています。}
-QUEST_MESSAGE2 {エルカイマノ植民地が占領された。}
-QUEST_MESSAGE3 {アステカの黄金の呪いには、 もう抗えない年齢だ……}
-QUEST_MESSAGE4 {宝を見つけた！}
-QUEST_MESSAGE5 {ナイジェル・ ブライトが密輸業者のコルベットを攻撃した！}
-QUEST_MESSAGE6 {ナイジェル・ ブライトが行方不明になった！}
-QUEST_MESSAGE7 {キャプテン、「Black Pearl」が地平線に見えます！}
-QUEST_MESSAGE8 {素晴らしい！ マスターを倒しました！}
-QUEST_MESSAGE9 {今やこの残酷な世界と一対一だ！}
-QUEST_MESSAGE10 {容赦なき海賊}
-QUEST_MESSAGE11 {特別な報酬に値する！}
-QUEST_MESSAGE12 {残念ですが、 すでに多くの士官を雇っています。 新たに雇うには、 誰かを解雇する必要があります。}
-Address_Form_Spa {セニョール}
-Address_Form_Fra {ムッシュ}
 Address_Form_Eng {サー}
-Address_Form_Por {セニョール}
+Address_Form_Eng_Title1 {私掠船乗り}
+Address_Form_Eng_Title2 {指揮官}
+Address_Form_Eng_Title3 {船長}
+Address_Form_Eng_Title4 {准将}
+Address_Form_Eng_Title5 {提督}
+Address_Form_EngWoman {ミス}
+Address_Form_EngWoman2 {ミセス}
+Address_Form_Fra {ムッシュ}
+Address_Form_Fra_Title1 {コルセール}
+Address_Form_Fra_Title2 {指揮官}
+Address_Form_Fra_Title3 {船長}
+Address_Form_Fra_Title4 {准将}
+Address_Form_Fra_Title5 {副提督}
+Address_Form_FraWoman {マドモアゼル}
+Address_Form_FraWoman2 {マダム}
 Address_Form_Hol {ミンヘール}
-Swear_1 {脾臓が破裂しそうだ！}
-Swear_2 {くそっ！}
-Swear_3 {なんてこった！}
-Swear_4 {くそっ！}
-Swear_5 {千の悪魔め！}
-Swear_6 {俺の船尾に錨を下ろせ！}
-Swear_7 {おお、天よ！}
-Swear_8 {アーッ!!!}
-Swear_9 {千匹のサメだ！}
-Swear_10 {悪魔め！}
-TimeGreeting {こんにちは}
-Antigua {Antigua}
-Barbados {Barbados}
-Curacao {Curacao}
-Dominica {Dominica}
-Grenada {Grenada}
-Guadeloupe {Guadeloupe}
-Hispaniola {Hispaniola}
-IslaMona {Isla Mona}
-Jamaica {Jamaica}
-MarieGalante {Marie Galante}
-Martinique {Martinique}
-Montserrat {Montserrat}
-Nevis {Nevis}
-PuertoRico {Puerto Rico}
-StEustatius {St. Eustatius}
-StKitts {St. Kitts}
-StMartin {St. Martin}
-Tortuga {Tortuga}
-LaVega {La Vega}
-SantoDomingo {Santo Domingo}
-PetitGoave {Petit Goave}
-Bridgetown {Bridgetown}
-SanJuan {San Juan}
-SantiagoVega {Santiago Vega}
-OFFIC_TYPE_BOATSWAIN {甲板長}
-OFFIC_TYPE_CANNONEER {砲手}
-OFFIC_TYPE_QMASTER {操舵手}
-OFFIC_TYPE_NAVIGATOR {航海士}
-OFFIC_TYPE_FIRSTMATE {一等航海士}
-Pirate {海賊}
-Spain {スペイン人}
-France {フランス人}
-Smuggler {密輸業者}
-Holland {オランダ人}
-England {イングランド人}
+Address_Form_Hol_Title1 {フリービュスティア}
+Address_Form_Hol_Title2 {指揮官}
+Address_Form_Hol_Title3 {船長}
+Address_Form_Hol_Title4 {准将}
+Address_Form_Hol_Title5 {提督}
+Address_Form_HolWoman {メフラウ}
+Address_Form_HolWoman2 {フラウ}
+Address_Form_Pir {サー}
+Address_Form_Pir_Title1 {バッカニア}
+Address_Form_Pir_Title2 {海の狼}
+Address_Form_Pir_Title3 {ベテラン}
+Address_Form_Pir_Title4 {男爵}
+Address_Form_Pir_Title5 {伝説}
+Address_Form_PirWoman {ミス}
+Address_Form_PirWoman2 {ミセス}
+Address_Form_Spa {セニョール}
+Address_Form_Spa_Title1 {コルサリオ}
+Address_Form_Spa_Title2 {指揮官}
+Address_Form_Spa_Title3 {船長}
+Address_Form_Spa_Title4 {准将}
+Address_Form_Spa_Title5 {提督}
+Address_Form_SpaWoman {セニョリータ}
+Address_Form_SpaWoman2 {セニョーラ}
+DayGreeting {こんにちは}
+EveningGreeting {こんばんは}
+Exclamation_1 {なんてこった!!}
+Exclamation_2 {天よ!}
+Exclamation_3 {聖なるマドンナ!}
+FriendlyGoodbye_0 {じゃあな}
+FriendlyGoodbye_1 {達者でな}
+FriendlyGreeting {よう}
+MorningGreeting {おはようございます}
+NationEuropaTown_Eng {ロンドン}
+NationEuropaTown_Fra {ラ・ロシェル}
+NationEuropaTown_Hol {アムステルダム}
+NationEuropaTown_Pir {トルトゥーガ}
+NationEuropaTown_Spa {セビリア}
+NationKingsCrown_Eng {イングランド王室に}
+NationKingsCrown_Fra {フランス王室に}
+NationKingsCrown_Hol {ネーデルラント王国に}
+NationKingsCrown_Pir {海岸兄弟団に}
+NationKingsCrown_Spa {スペイン王室に}
+NationKingsName_Eng {護国卿}
+NationKingsName_Fra {ルイ14世陛下}
+NationKingsName_Hol {オラニエ公ウィレム3世陛下}
+NationKingsName_Pir {海岸兄弟団}
+NationKingsName_Spa {ハプスブルク家フェリペ4世陛下}
+NationNameAblative_Eng {イングランド}
+NationNameAblative_Fra {フランス}
+NationNameAblative_Hol {オランダ}
+NationNameAblative_Pir {海賊}
+NationNameAblative_Spa {スペイン}
+NationNameGenitive_Eng {イングランドの}
+NationNameGenitive_Fra {フランスの}
+NationNameGenitive_Hol {オランダの}
+NationNameGenitive_Pir {海賊たちの}
+NationNameGenitive_Spa {スペインの}
+NationNameMan_Eng {イギリス人}
+NationNameMan_Fra {フランス人}
+NationNameMan_Hol {オランダ人}
+NationNameMan_Pir {海賊}
+NationNameMan_Spa {スペイン人}
+NationNameNominative_Eng {イングランド}
+NationNameNominative_Fra {フランス}
+NationNameNominative_Hol {オランダ}
+NationNameNominative_Pir {海岸兄弟団}
+NationNameNominative_Spa {スペイン}
+NationNamePeople_Eng {イギリス人たち}
+NationNamePeople_Fra {フランス人たち}
+NationNamePeople_Hol {オランダ人たち}
+NationNamePeople_Pir {海賊たち}
+NationNamePeople_Spa {スペイン人たち}
+NationNamePeopleAcc_Eng {イギリス人たちを}
+NationNamePeopleAcc_Fra {フランス人たちを}
+NationNamePeopleAcc_Hol {オランダ人たちを}
+NationNamePeopleAcc_Pir {海賊たちを}
+NationNamePeopleAcc_Spa {スペイン人たちを}
+NationNameWoman_Eng {イギリス女性}
+NationNameWoman_Fra {フランス女性}
+NationNameWoman_Hol {オランダ女性}
+NationNameWoman_Pir {女海賊}
+NationNameWoman_Spa {スペイン女性}
+NightGreeting {おやすみなさい}
+PoliteGoodbye_0 {さようなら}
+PoliteGoodbye_1 {ご武運を}
+PoliteGreeting {いらっしゃいませ}
+Swear_1 {カランバ!}
+Swear_10 {雷に打たれろ!}
+Swear_11 {後檣でも折れろ!}
+Swear_12 {海の底へ沈め!}
+Swear_13 {サメが十二匹!}
+Swear_14 {ニシンにでも噛まれろ!}
+Swear_15 {悪魔が三千人!}
+Swear_2 {くそっ!}
+Swear_3 {悪魔にでも食われろ!}
+Swear_4 {畜生!}
+Swear_5 {錨でも飲み込みやがれ!}
+Swear_6 {サメが千匹!}
+Swear_7 {うわああ!!!}
+Swear_8 {悪魔が千人!}
+Swear_9 {Alle Hagel!}
+Title_Captain {船長}
+Title_Ghovernor {総督}
+Title_ViceAdmiral {副提督}

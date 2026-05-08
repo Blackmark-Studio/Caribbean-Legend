@@ -279,7 +279,7 @@ void ProcessDialogEvent()
 		
 		case "Merdok_talk_3":
 			PlaySound("Voice\English\hambit\John Mardock-07.wav");
-			dialog.text = ""틀렸군, 넌 여기서 지금 죽는다! 롱웨이, 공격해라!"\n";
+			dialog.text = "틀렸군, 넌 여기서 지금 죽는다! 롱웨이, 공격해라!";
 			link.l1 = "오호, 저 중국놈이 그림자 속에서 기어나오는군! 걱정 마라, 너희 둘 다 잡채로 만들어주지!";
 			link.l1.go = "Merdok_fightEng";			
 		break;

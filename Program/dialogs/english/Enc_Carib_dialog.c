@@ -36,6 +36,8 @@ void ProcessDialogEvent()
 				LAi_group_MoveCharacter(sld, sGroup);
 				LAi_RemoveCheckMinHP(sld);
 				LAi_SetImmortal(sld, false);
+				if("quest.agressive" in npchar)
+					sld.quest.agressive = true;
 			}
 			LAi_group_SetRelation(sGroup, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 			LAi_group_FightGroups(sGroup, LAI_GROUP_PLAYER, true);
@@ -106,6 +108,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_2_2":
+			npchar.quest.agressive = true;
 			dialog.text = RandPhraseSimple("You lie, paleface cur! You came here to kill Indians! Ready for battle, paleface?!","You kill Indians. White tongue is a lying tongue. I cut it off and fry it on the fire!");
 			link.l1 = RandPhraseSimple("Well, mate, don't blame me then. God knows, I tried to avoid it...","Well, you asked for it, warrior.");
 			link.l1.go = "exit_fight";
@@ -123,6 +126,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
+				npchar.quest.agressive = true;
 				dialog.text = "You do not have what we want, paleface... You will be our war trophy!";
 				link.l1 = "Try if you dare, scarecrow...";
 				link.l1.go = "exit_fight";
@@ -130,6 +134,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_3_2":
+			npchar.quest.agressive = true;
 			dialog.text = RandPhraseSimple("We do not trade with paleface dogs. We kill and take!","We are not filthy Miskito or Arawaks, we do not trade with palefaces! We kill them and take war trophies!");
 			link.l1 = RandPhraseSimple("Well, then try to rob me, scoundrel!","First, you'll have to take my saber from me, you filth!");
 			link.l1.go = "exit_fight";
@@ -340,6 +345,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
+				npchar.quest.agressive = true;
 				dialog.text = "Then we take everything for free, paleface!";
 				link.l1 = "You may try...";
 				link.l1.go = "exit_fight";

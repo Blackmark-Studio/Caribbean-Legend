@@ -4,6 +4,11 @@ bool bSeePeoplesOnDeck = false; // Warship 08.06.09 видеть матросо�
 #define DEFAULT_CAM_PERSP 				1.285
 #define DEFAULT_CAM_PERSP_DEN 			1.25
 
+#define SEA_CAMERA_SHIP "SeaShipCamera"
+#define SEA_CAMERA_DECK "SeaDeckCamera"
+#define SEA_CAMERA_FIRE "SeaFireCamera"
+#define SEA_CAMERA_FREE "SeaFreeCamera"
+
 object	SeaCameras;
 aref	Crosshair;
 object	SeaShipCamera, SeaFreeCamera, SeaDeckCamera, SeaFireCamera;
@@ -17,7 +22,7 @@ void DeleteSeaCamerasEnvironment()
 	DeleteClass(&SeaShipCamera);
 	DeleteClass(&SeaDeckCamera);
 	DeleteClass(&SeaFireCamera);
-	DelEventHandler("SeaCameras_Switch", "SeaCameras_Switch");
+//	DelEventHandler("SeaCameras_Switch", "SeaCameras_Switch");
 	DelEventHandler(TELESCOPE_ACTIVE, "SeaCameras_TelescopeActive");
 }
 
@@ -152,7 +157,7 @@ void CreateSeaCamerasEnvironment()
 
 	SendMessage(&AISea, "la", AI_MESSAGE_SET_CAMERAS_ATTRIBUTE, &SeaCameras);
 
-	SetEventHandler("SeaCameras_Switch", "SeaCameras_Switch", 1);
+//	SetEventHandler("SeaCameras_Switch", "SeaCameras_Switch", 1);
 	SetEventHandler(TELESCOPE_ACTIVE, "SeaCameras_TelescopeActive", 0);
 
 	// add cameras to list
@@ -177,6 +182,55 @@ void SeaCameras_TelescopeActive()
 	}
 }
 
+void SeaCameras_Switch(string sControl)
+{
+	if (!bSeaActive || bAbordageStarted)
+		return;
+	if (!bCanSwitchCameras) 
+		return;
+	
+	string curCamera = SeaCameras.Camera;
+	string newCamera;
+	
+	if (sControl == "Sea_CameraSwitch")	// таб
+	{
+		if (curCamera == SEA_CAMERA_SHIP)
+			newCamera = SEA_CAMERA_DECK;
+		else
+			newCamera = SEA_CAMERA_SHIP;
+	}
+	else if (sControl == "FireCamera_Set")	// пкм
+	{
+		if (curCamera == SEA_CAMERA_FREE)
+			return;
+		if (curCamera == SEA_CAMERA_FIRE)
+		{
+			if ("LastCamera" !in &SeaFireCamera)
+				SeaFireCamera.LastCamera = SEA_CAMERA_SHIP;
+			newCamera = SeaFireCamera.LastCamera;
+			SendMessage(&AISea, "la", AI_MESSAGE_FIRE_CAMERA_EXIT, pchar);
+		}
+		else
+		{
+			newCamera = SEA_CAMERA_FIRE;
+			SeaFireCamera.LastCamera = curCamera;
+		}
+	}
+	else if (sControl == "FreeCam")
+	{
+		if (curCamera == SEA_CAMERA_FREE)
+			newCamera = SEA_CAMERA_SHIP;
+		else
+			newCamera = SEA_CAMERA_FREE;
+	}
+	
+	SeaCameras.Camera = newCamera;
+	Crosshair.OutsideCamera = (newCamera != SEA_CAMERA_FIRE);
+	Sailors.IsOnDeck = ((newCamera == SEA_CAMERA_FIRE) || (newCamera == SEA_CAMERA_DECK && !int(InterfaceStates.CREWONDECK)));
+	
+	SeaCameras_UpdateCamera();
+}
+/*
 void SeaCameras_Switch()
 {
 	if (!bCanSwitchCameras) return;
@@ -239,6 +293,7 @@ void SeaCameras_SetFireCamera()
 	}
 	else
 	{
+		SendMessage(&AISea, "la", AI_MESSAGE_FIRE_CAMERA_EXIT, pchar);
 		if(!CheckAttribute(SeaFireCamera, "LastCamera"))
 			SeaFireCamera.LastCamera = "SeaShipCamera";
 		SeaCameras.Camera = SeaFireCamera.LastCamera;
@@ -251,6 +306,7 @@ void SeaCameras_SetFireCamera()
 	
 	SeaCameras_UpdateCamera();
 }
+*/
 
 void SeaCameras_SetShipCameraAy(float ay)
 {

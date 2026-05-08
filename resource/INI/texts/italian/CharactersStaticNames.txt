@@ -1,0 +1,168 @@
+Abraham {Abraham}
+Alexandro {Alexandro}
+Alexis {Alexis}
+Alicia {Alicia}
+Alonso {Alonso}
+Alvares {Alvares}
+Andres {Andres}
+Aurora {Aurora}
+Avendel {Avendel}
+Baker {Baker}
+Bald-pate {Bald-pate}
+Barbazon {Barbazon}
+Bartel {Bartel}
+Batler {Batler}
+Beck {Beck}
+Benjamin {Benjamin}
+Bernard {Bernard}
+Brouwer {Brouwer}
+Carlos {Carlos}
+Cesare {Cesare}
+Chardon {Chardon}
+Charlie {Charlie}
+Chavinavi {Chavinavi}
+Claude {Claude}
+Claude Francois {Claude Francois}
+Coris {Coris}
+Craig {Craig}
+Cristopher {Cristopher}
+d'Armagnac {d'Armagnac}
+d'Aubuisson {d'Aubuisson}
+Danielle {Danielle}
+de Aguillera-Gamboa {de Aguillera-Gamboa}
+de Aquerre {de Aquerre}
+de Flores-Aldana {de Flores-Aldana}
+de Gusman {de Gusman}
+de Kero {de Kero}
+de Kuencka {de Kuencka}
+de la Cruz {de la Cruz}
+de Lyon {de Lyon}
+de Maldonado {de Maldonado}
+de Maure {de Maure}
+de Monper {de Monper}
+de Montanos {de Montanos}
+de Montoya {de Montoya}
+de Toledo {de Toledo}
+de Vera {de Vera}
+de Vilyegas {de Vilyegas}
+Deluc {Deluc}
+Diego {Diego}
+Diego Francisco {Diego Francisco}
+Dionisio {Dionisio}
+do Mussack {do Mussack}
+Doily {Doily}
+Dolores {Dolores}
+du Parquet { }
+Duran {Durand}
+Edward {Edward}
+Ernesto {Ernesto}
+Esteban {Esteban}
+Estrada {Estrada}
+Ferguson {Ferguson}
+Fernando {Fernando}
+Florentina {Florentina}
+Folke {Folke}
+Francis {Francis}
+Francois {Francois}
+Gachet {Gachet}
+Garcia {Garcia}
+Gaston {Gaston}
+Gerritz {Gerritz}
+Gustave {Gustave}
+Hawk {Hawk}
+Helena {Helen}
+Hendrik {Hendrik}
+Henri {Henri}
+Hercule {Hercule}
+Hope {Hope}
+Hugo {Hugo}
+Ian {Ian}
+Ida {Ida}
+Ignasio {Ignasio}
+Irons {Irons}
+Jackman {Jackman}
+Jacob {Jacob}
+Jacopo {Jacopo}
+Jacques {Jacques}
+Jacques Dille {Jacques Dille}
+Jan {Jan}
+Janetta {Janetta}
+Jean {Jean}
+Jean Pierre {Jean Pierre}
+Jeraldy {Jeraldy}
+Jeremy Deshamp {Jeremy Deshamp}
+Johan {Johan}
+Johanna {Johanna}
+Jones {Jones}
+Joseph {Joseph}
+Juan {Juan}
+Julie {Julie}
+Kasper {Kasper}
+Keynell {Keynell}
+Knippel {Knippel}
+Levasseur {Levasseur}
+Lolita {Lolita}
+Longway {Longway}
+lord Willoughby {lord Willoughby}
+Luis {Luis}
+Maarten {Maarten}
+Marcus {Marcus}
+Marlow {Marlow}
+Martin {Martin}
+Mary {Mary}
+Master {Master}
+Matthias {Matthias}
+McArthur {McArthur}
+Merilin {Merilin}
+Mirabelle {Mirabelle}
+Moko {Moko}
+Moris {Moris}
+Morrison {Morrison}
+Mortimer {Mortimer}
+Morua {Morua}
+Niels {Niels}
+Norman {Norman}
+Oldjivly {Oldjivly}
+One-eyed {One-eyed}
+Ortega {Ortega}
+Pascal {Pascal}
+Paterson {Paterson}
+Pedro Carrilia {Pedro Carrilia}
+Peres {Peres}
+Peter {Peter}
+Picard {Picard}
+Raymond {Raymond}
+Rodrigo {Rodrigo}
+Ruis {Ruis}
+Sailor {Sailor}
+Sharle {Sharle}
+Simon {Simon}
+Smuggler {Smuggler}
+Smuggler_0 {Ubriaco misterioso}
+Smuggler_1 {Anonimo}
+Smuggler_2 {Qualcuno}
+Smuggler_3 {Persona incognita}
+Smuggler_4 {Mario Rossi}
+Smuggler_5 {Straniero}
+Smuggler_6 {Sconosciuto}
+Smuggler_7 {Visitatore sospetto}
+Snake {Snake}
+Snellius {Snellius}
+Stieltjes {Stieltjes}
+TempleSkeleton {temple skeleton}
+Thomas {Thomas}
+Throckmorton {Throckmorton}
+Tichingitu {Tichingitu}
+Timothy {Timothy}
+Tommy {Tommy}
+Tonzag {Tonzag}
+Tyrax {Tyrex}
+van der Waerden {van der Waerden}
+van Doorn {van Doorn}
+Visser {Visser}
+Vitrye {Vitrye}
+Voisier {Voisier}
+Walles {Walles}
+Willebrord {Willebrord}
+Willy {Willy}
+Zachary {Zachary}

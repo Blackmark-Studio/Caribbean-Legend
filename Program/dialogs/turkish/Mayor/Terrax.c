@@ -647,7 +647,6 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 				if (NextDiag.TempNode != "I_know_you_good")
 					dialog.text = "Aklını mı kaçırdın" + GetSexPhrase("", "") + "? Bizim tayfa seni vebalı gibi kaçıyor. Hadi git, kafamı ütüleme.";
 				else
@@ -655,12 +654,12 @@ void ProcessDialogEvent()
 				link.l1 = "Anladım...";
 				link.l1.go = "exit";
 			}
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 		break;
 
 		case "pirate_threat_pay":
 			iGPThreatRate = 0;
 			iGPThreat = 0;
-			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iTerraxTotalTemp);
 			DialogExit();
 			PiratesDecreaseNotif("");
@@ -1569,7 +1568,7 @@ void ProcessDialogEvent()
 				break;
 			}*/
 			dialog.text = "İyi zamanlama! Hemen bana rapor ver.";
-			link.l1 = "I've tracked my obligor to Le Francois. His polacre was part of a squadron consisting of a corvette and a frigate. Marco himself paid a visit to Barbaszon; they had a meeting at his place for two hours, and other visitors were sent away by his guards. Then he left the house with two gloomy fellows: one was red-haired and bearded, wearing a reiter cuirass; the other had a moustache and wore heavy trench armour. They all went to the port and sailed away before I reached Saint Pierre.";
+			link.l1 = "I've tracked my obligor to Le Francois. His polacre was part of a squadron consisting of a corvette and a frigate. Marco himself paid a visit to Barbazon; they had a meeting at his place for two hours, and other visitors were sent away by his guards. Then he left the house with two gloomy fellows: one was red-haired and bearded, wearing a reiter cuirass; the other had a moustache and wore heavy trench armour. They all went to the port and sailed away before I reached Saint Pierre.";
 			link.l1.go = "mtraxx_74";
 		break;
 		

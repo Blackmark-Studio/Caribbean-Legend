@@ -115,7 +115,7 @@ void SkipSailorPayment()
 		if(cn >= 0)
 		{
             chref = &Characters[cn];
-			AddCrewMorale(chref, -nMoraleDecreaseQ);
+			AddCrewMorale(chref, -nMoraleDecreaseQ, i==0);
 			if (i > 0 && CheckAttribute(chref, "loyality") && !CheckAttribute(chref, "OfficerWantToGo.DontGo") && !IsEquipCharacterByArtefact(chref, "totem_04"))
 			{
 			    chref.loyality = makeint(chref.loyality) - 1;

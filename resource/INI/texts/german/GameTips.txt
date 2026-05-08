@@ -1,0 +1,67 @@
+Tip0 {Red Mary ist sehr eifersüchtig.}
+Tip1 {Helen ist äußerst abergläubisch — wie jeder Pirat.}
+Tip10 {Beachtet die Archetypen der Gegner: Sie werden neben den Anzeigen für Gesundheit und Energie eingeblendet.}
+Tip11 {Die Angriffe von Fechtern sollte man besser nicht blocken — sie durchbrechen die Deckung zu leicht. Parieren ist sicherer.}
+Tip12 {Musketiere verursachen gewaltigen Schaden. Schaltet sie zuerst aus.}
+Tip13 {Ein schneller Schuss ist schwächer als ein gezielter. Das ist der Preis für Geschwindigkeit.}
+Tip14 {Kampf-Amulets sind besonders stark, wenn sie miteinander kombiniert werden. Wählt sie mit Bedacht.}
+Tip15 {Schusswaffen stoßen Gegner bei Treffern zurück — nutzt das, um Abstand zu halten.}
+Tip16 {Eine Muskete in der Hand verlangsamt die Bewegung stark. Eine gezogene Klinge ebenfalls, aber weniger.}
+Tip17 {Rückwärts und seitwärts bewegt ihr euch deutlich langsamer als vorwärts, dafür verliert ihr den Gegner nicht aus den Augen.}
+Tip18 {Viele Gegner können euch im Kampf vergiften. Tragt immer Gegengifte bei euch.}
+Tip19 {Jede Waffe ist auf ihre Weise einzigartig — wählt sie passend zu euren Perks und Skills.}
+Tip2 {Alonso spricht nicht gern über seine Vergangenheit.}
+Tip20 {Mit Kampfsegeln dreht das Schiff am schnellsten.}
+Tip21 {Schlingern, Wendungen und Schiffsgeschwindigkeit beeinflussen die Genauigkeit des Kanonenfeuers stark.}
+Tip22 {Wenn ihr mit euren Geschützen oft verfehlt, verringert die Distanz.}
+Tip23 {Die Skills „Geschütze“ und „Treffsicherheit“ beeinflussen sowohl das Schießen aus der Third-Person-Ansicht als auch den Zielmodus.}
+Tip24 {Sinkende Schiffe verursachen beim Rammen keinen Schaden — fürchtet sie nicht.}
+Tip25 {Ein präziser Kettenschuss auf einen Mast kann ihn zum Einsturz bringen. Sind die Segel bereits beschädigt, steigen die Chancen.}
+Tip26 {Bei großem zahlenmäßigen Übergewicht kann sich ein feindliches Schiff schon bei einem Enterversuch ergeben.}
+Tip27 {Das Versenken von Piratenschiffen senkt die Piratenbedrohung und macht die Karibik sicherer.}
+Tip28 {Offiziere ohne das Perk „Captain“ können nur Schiffe bis zur 4. Klasse kommandieren.}
+Tip29 {Schiffseigenschaften sind in unterschiedlichen Situationen nützlich — wählt sie passend zu eurem Spielstil.}
+Tip3 {Denkt daran: Den Pistol zu ziehen geht immer schneller, als eine Muskete nachzuladen.}
+Tip30 {Forts können durch Beschuss der Mauern zerstört werden, doch Treffer in die Schießscharten beschleunigen den Vorgang.}
+Tip31 {Auf der Flucht können Schiffe Waren über Bord werfen. Fahrt heran, um die Ladung aufzunehmen.}
+Tip32 {Geschütze nutzen sich mit der Zeit ab. Haltet einige Ersatzgeschütze in Reserve.}
+Tip33 {Unterschiedliche Munition hat unterschiedliche Reichweiten. Kugeln haben die größte, Kartätsche die kleinste.}
+Tip34 {Kugeln sind universell einsetzbar. Gegen Segel und Masten nehmt Kettenschuss, gegen die Besatzung Kartätsche, gegen den Rumpf Bomben.}
+Tip35 {Lest Dialoge aufmerksam — darin steckt manchmal einzigartige Information.}
+Tip36 {Wird eine Kolonie erfolgreich belagert, gehen eure Einlagen und Schiffe bei der Hafenbehörde verloren.}
+Tip37 {Fragt Stadtbewohner und Säufer nach Gerüchten — sie wissen oft eine Menge Interessantes.}
+Tip38 {Die Schatzsuche lohnt sich. Den Verkäufer von Schatzkarten findet ihr in der Taverne.}
+Tip39 {Fadey Moskovit, Loxley und Abt Benoit können euch ein Kopfgeld vom Hals schaffen.}
+Tip4 {In der Karibik gibt es genug seltsame Leute. Man sagt, es gebe hier einen Priester, der euch eher vom Weg abbringt, als euch zu führen.}
+Tip40 {Mit Hilfe der Piratenbarone könnt ihr die Piratenbedrohung vorübergehend senken.}
+Tip41 {Amulets werden zerstört, wenn ihr sie von einem Charakter abnehmt. Plant euren Build im Voraus.}
+Tip42 {Wards können beliebig oft abgenommen und angelegt werden. Sie zerbrechen nicht und wirken ewig.}
+Tip43 {Haltet Ersatzwaffen an Bord bereit: Jeder gefallene Matrose nimmt seine mit ins Grab.}
+Tip44 {Vergewissert euch vor dem Auslaufen, dass Rum, Arznei und Proviant für die ganze Reise reichen.}
+Tip45 {Ratten sind die Geißel des Seefahrers. Loswerden kann man sie mit Arsen oder uralter Magie.}
+Tip46 {Gewölbe können sehr verwirrend sein. Wenn ihr euch verlauft, haltet euch rechts und folgt der Wand.}
+Tip47 {Gegenstände können aus dem Inventar weggeworfen werden. Manchmal ist es sinnvoll, schweren Plunder loszuwerden.}
+Tip48 {Perks können durch das Trinken eines besonderen Tranks zurückgesetzt werden. Habt keine Angst, mit Builds zu experimentieren.}
+Tip49 {Schätze, Ladenbesitzer und Friedhofswärter sind gute Quellen für Crafting-Zutaten. Sucht sie regelmäßig auf.}
+Tip5 {Die Fertigkeit im Nahkampfwaffengebrauch senkt die Energiekosten von Schlägen.}
+Tip50 {Schiffe können zusammen mit ihrer Besatzung und ihrem Offizier bei der Hafenbehörde zurückgelassen werden.}
+Tip51 {In den Werften der Hauptkolonien könnt ihr ein Lagerhaus mieten, um Waren und Schiffsgeschütze sicher zu lagern.}
+Tip52 {Wenn euch das Fort der Kolonie eindeutig zu stark ist, versucht, die Stadt vom Land aus anzugreifen. Die Stadtgarnison ist deutlich schwächer, aber die Beute fällt ebenfalls geringer aus.}
+Tip53 {Auf offener See kann man treibende Fässer finden. Darin kann Wertvolles oder bloßer Plunder sein - es ist immer eine Überraschung.}
+Tip54 {Jeder Schlag kann pariert werden. Wenn ihr diese Technik gut beherrscht, könnt ihr jedes Duell gewinnen.}
+Tip55 {Manchmal bringen Meeresströmungen denjenigen unerwartete Geschenke, die durch abgelegene Buchten streifen.}
+Tip56 {Amethyste helfen nicht gegen Trunkenheit. Im Ernst.}
+Tip57 {Im Notfall kann jeder Offizier auf den Posten des Enteroffiziers gesetzt werden. Eine Armee aus Schafen unter der Führung eines Löwen besiegt eine Armee aus Löwen unter der Führung eines Schafes.}
+Tip58 {Auch Gouverneure und Kapitäne sind dem Glücksspiel nicht abgeneigt, aber erwartet nicht, dass sie mit Unbekannten spielen.}
+Tip59 {In einer kritischen Situation könnt ihr Sklaven in die Besatzung aufnehmen. Das untergräbt die Moral der Mannschaft, ermöglicht aber eine schnelle Auffüllung.}
+Tip6 {Überladung und Trunkenheit verhängen Mali auf Fertigkeiten.}
+Tip60 {Wenn die Wachen euch bei einem Geschäft mit Schmugglern erwischen, ist es manchmal einfacher, sich einfach freizukaufen. Das ist ein geschäftsmäßiger Ansatz.}
+Tip61 {Das Herstellen von Gegenständen kostet Spielzeit. Manchmal ist Crafting sinnvoller, als ziellos in einer Taverne zu schlafen.}
+Tip62 {Die Reparatur eines Schiffs auf der Werft kostet Spielzeit. Behaltet das im Kopf, wenn ihr irgendwohin in Eile seid.}
+Tip63 {Im Notfall kann jeder Offizier auf den Posten des Enteroffiziers gesetzt werden. Eine Armee aus Schafen unter der Führung eines Löwen besiegt eine Armee aus Löwen unter der Führung eines Schafes.}
+Tip64 {Die Kolonien des Archipels verbergen zehn einzigartige Stadtgeschichten. Sprecht häufiger mit den Stadtbewohnern auf den Straßen und spart in den Tavernen nicht am Rum für die Säufer.}
+Tip65 {Ihr könnt eure Enterkämpfer im Gefecht befehligen. Versucht, ihnen mit Hotkeys Befehle zu geben.}
+Tip66 {Einige Perks haben unterschiedliche Effekte für den Hauptcharakter und Offiziere.}
+Tip7 {Tränke stellen Gesundheit nur langsam wieder her — hofft nicht, euch im Blocken auszuruhen.}
+Tip8 {Wenn ihr umzingelt seid, ist ein schneller Seitensprung der beste Weg, auszubrechen.}
+Tip9 {Schwere Waffen verbrauchen mehr Energie, schlagen aber auch härter zu.}

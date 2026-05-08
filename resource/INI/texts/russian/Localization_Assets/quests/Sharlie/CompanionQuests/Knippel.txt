@@ -1,12 +1,4 @@
 Knippel_1 {Вы использовали ключ}
-Knippel_2 {Питер}
-Knippel_3 {Адамс}
-Knippel_4 {Джейн}
-Knippel_5 {Адамс}
-Knippel_6 {Чарли пришёл на помощь!}
-Knippel_7 {Фредерик}
-Knippel_8 {Стоукс}
-Knippel_9 {Ральф}
 Knippel_10 {Фаггл}
 Knippel_11 {21 июля 1654 г.@<NewStr()>Сент-Джонс, Антигуа}
 Knippel_12 {Томас}
@@ -17,6 +9,7 @@ Knippel_16 {Шеффилд}
 Knippel_17 {Майкл}
 Knippel_18 {Уитни}
 Knippel_19 {Открыт 'Бомбардир'}
+Knippel_2 {Питер}
 Knippel_20 {Спустя некоторое время...@<NewStr()>В доме Флитвуда}
 Knippel_21 {Фредерик}
 Knippel_22 {Стоукс}
@@ -27,4 +20,11 @@ Knippel_26 {Томас}
 Knippel_27 {Линч}
 Knippel_28 {Химера}
 Knippel_29 {Настоящее время@<NewStr()>В каюте Шарля}
+Knippel_3 {Адамс}
 Knippel_30 {17 августа 1654 г.@<NewStr()>к юго-востоку от острова Доминика}
+Knippel_4 {Джейн}
+Knippel_5 {Адамс}
+Knippel_6 {Чарли пришёл на помощь!}
+Knippel_7 {Фредерик}
+Knippel_8 {Стоукс}
+Knippel_9 {Ральф}

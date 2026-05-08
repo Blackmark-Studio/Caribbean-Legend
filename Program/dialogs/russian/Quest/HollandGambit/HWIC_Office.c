@@ -85,8 +85,8 @@ void ProcessDialogEvent()
 		case "HWIC_officer_exit":
 			DialogExit();
 			// belamour legendary edition переехали
-			LAi_ActorGoToLocation(npchar, "soldiers", "soldier3", "GVIK", "soldiers", "soldier3", "", 5);
-			DoQuestCheckDelay("ReturnTalkerToOfficer", 5.0); // 140313
+			LAi_ActorGoToLocation(npchar, "soldiers", "soldier3", "GVIK", "soldiers", "soldier3", "", 3.0);
+			DoQuestCheckDelay("ReturnTalkerToOfficer", 3.0); // 140313
 			NextDiag.TempNode = "HWIC_officer";
 		break;
 		
@@ -210,7 +210,7 @@ void ProcessDialogEvent()
 		
 		case "licence_1":
 			float fQty = stf(dialogEditStrings[6]);
-			npchar.quest.lcc_summ = makeint(sqrt(fQty)*10)*7;
+			npchar.quest.lcc_summ = LICENSE_GetPrice("", fQty);
 			if (fQty < 1)
 			{
 				dialog.text = "Минхер, пожалуйста, говорите чётче, не заикайтесь и не мямлите. Я вас плохо расслышал. Так на сколько дней вам нужна лицензия?";

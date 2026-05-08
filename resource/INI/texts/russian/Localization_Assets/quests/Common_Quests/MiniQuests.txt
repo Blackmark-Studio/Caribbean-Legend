@@ -1,12 +1,4 @@
 MiniQuests_1 {ся}
-MiniQuests_2 {ась}
-MiniQuests_3 { }
-MiniQuests_4 {а}
-MiniQuests_5 {ен}
-MiniQuests_6 {ьна}
-MiniQuests_7 {ел}
-MiniQuests_8 {ла}
-MiniQuests_9 {Торговец поднял пиратский флаг и атакует нас!}
 MiniQuests_10 {Боцман}
 MiniQuests_11 {Пассажир @<GetFullName(sld)> покинул ваш корабль!}
 MiniQuests_12 {Капеллан @<GetFullName(sld)> покинул ваш корабль!}
@@ -17,8 +9,16 @@ MiniQuests_16 {й}
 MiniQuests_17 {Вражеское судно на горизонте!}
 MiniQuests_18 {Вражеский конвой на горизонте!}
 MiniQuests_19 {Пиратское судно на горизонте!}
+MiniQuests_2 {ась}
 MiniQuests_20 {@<pchar.GenQuest.FindFugitive.Name> заболел тропической лихорадкой и скоропостижно скончался!}
 MiniQuests_21 {@<sld.name> помещен на ваш корабль под стражу}
 MiniQuests_22 {Прошёл час...}
 MiniQuests_23 {, что на ~}
 MiniQuests_24 { }
+MiniQuests_3 { }
+MiniQuests_4 {а}
+MiniQuests_5 {ен}
+MiniQuests_6 {ьна}
+MiniQuests_7 {ел}
+MiniQuests_8 {ла}
+MiniQuests_9 {Торговец поднял пиратский флаг и атакует нас!}

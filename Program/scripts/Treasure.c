@@ -106,7 +106,7 @@ void GenerateAdmiralMapsTreasure(ref item, int abl)
 	}
 }
 
-void FillMapForTreasure(ref item, string tag)
+void FillMapForTreasure(ref item, string tag, bool canBeFake = true)
 {
 	sTrTag  = tag;
 	sTrSubTag = "";
@@ -121,7 +121,7 @@ void FillMapForTreasure(ref item, string tag)
 	if (bTrHash) iBiba = hrand(15, sTrTag);
 	else iBiba = rand(15);
 
-    if (!CheckAttribute(Pchar, "GenQuest.TreasureBuild") && iBiba == 1)
+    if (canBeFake && !CheckAttribute(Pchar, "GenQuest.TreasureBuild") && iBiba == 1)
     {
         item.MapTypeIdx = -1; // Подделка 6.25%
     }

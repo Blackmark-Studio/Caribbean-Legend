@@ -1,0 +1,76 @@
+Node0_title {Conflict Between Officers}
+Node0_a_a
+{
+Your usual after-dinner reflections are interrupted by the ringing of the ship's bell. It is not yet time to сменять вахту, and you head toward the sound, intending to put an end to this disorder. On the orlop, a flustered Alonso intercepts you and quickly explains the situation.$br$redDuring the watch change, two officers - $ctx(officerName_A), your _$key($ctx(officerJob_A)), and $ctx(officerName_B), your _$key($ctx(officerJob_B)) - came to blows over a more comfortable berth. $rand(A sharp exchange quickly turned into a real quarrel, and $ctx(officerName_A) threw the first punch.|A couple of barbed remarks were enough for the conversation to end in a fight: $ctx(officerName_A) was the first to use his fists.|Voices were raised, and $ctx(officerName_A) lost his temper and resorted to his fists.) $ctx(officerName_B) $rand(did not stay out of it|hit back at once|did not let it go unanswered), and $rand(before long they had wrecked half the wardroom|within a minute the wardroom looked as though a boarding action had swept through it|by the time they were dragged apart, half the wardroom had already been smashed to splinters).$br$red
+Alonso $rand(pulled the troublemakers apart|dragged them into opposite corners|put an end to the brawl), but the quarrel is clearly not over, and the captain's word is needed.
+}
+Node0_a_a_action {$ctx(officerName_A) started it}
+Node0_a_a_success {You decide that $ctx(officerName_A) is to blame, since he was the one who turned to his fists. You assign him several punitive watches and order him to compensate $casedName($ctx(officerName_B)|Dat) for the damage out of his own pay.}
+Node0_a_a_success_action {You'll be scrubbing decks}
+Node0_a_b_action {$ctx(officerName_B) took the bait}
+Node0_a_b_success {You decide that $ctx(officerName_B) bears the blame, since he could have avoided the fight and taken the matter to the captain. As punishment, you assign $casedName($ctx(officerName_B)|Dat) additional intensive drills.}
+Node0_a_b_success_action {It's for your own good}
+Node0_a_c_action {Punish them both}
+Node0_a_c_success {You decide that both officers are at fault and assign them joint punitive watches. You do not expect this to bring them closer, but it will certainly discourage such incidents in the future. The cost of repairing the wardroom will be deducted from their pay.}
+Node0_a_c_success_action {They're both fools}
+Node0_a_d_action {You'll restore it yourselves}
+Node0_a_d_success {You decide that the ideal punishment is to make the officers restore the wardroom with their own hands. They may not be skilled carpenters, but this will certainly make them think twice before causing such disorder again.}
+Node0_a_d_success_action {Breaking is easier than building}
+Node0_a_b
+{
+During your evening rounds, you make your usual way across the deck and catch yourself thinking that things are altogether too quiet today. $rand(As though in mockery of that silence|As if out of spite for that silence|At that very moment), two officers $rand(burst onto the deck|come running onto the deck) - $ctx(officerName_A), your _$key($ctx(officerJob_A)), and $ctx(officerName_B), your _$key($ctx(officerJob_B)). They were clearly looking for the captain and $rand(make straight for you the moment they see you|head directly toward you without wasting a second). The officers look $rand(on edge|irritated), and, $rand(drawing level with you|running right up to you|stopping directly in front of you), begin talking over one another.$br$red
+The quarrel began when $ctx(officerName_B) $rand(publicly refused to carry out an order from $ctx(officerName_A)|dug in his heels and refused to obey an order from $ctx(officerName_A)|refused to obey an order from $ctx(officerName_A) in front of witnesses). The regulations $rand(are too vague|do not fully divide their authority|leave too much gray area) between their posts, and the _$key($ctx(officerJob_B)) $rand(declared he would not serve under the command of the _$key($ctx(officerJob_A))|flatly stated that the _$key($ctx(officerJob_A)) was not his superior|said to his face that the _$key($ctx(officerJob_A)) had no authority over him).$br$red
+$rand(Discipline is cracking before your eyes|Order is starting to fray|The crew can already hear it), and the officers demand your ruling before it turns into an open split on deck.
+}
+Node0_b_a_action {The _$key($ctx(officerJob_A)) is in the right}
+Node0_b_a_success {You interpret the ship's regulations so that function takes precedence over formal hierarchy.$br$redAny officer is bound to obey the _$key($ctx(officerJob_A)) while he is carrying out his direct duties. $ctx(officerName_A) is satisfied, and $ctx(officerName_B) apologizes to him for breaking subordination. You decide not to punish anyone.}
+Node0_b_a_success_action {Duty comes first}
+Node0_b_b_action {$key($ctx(officerJob_B)) is not required to obey}
+Node0_b_b_success {You interpret the ship's regulations so that formal hierarchy takes precedence over rank-specific duties. Officers are meant to command sailors, not each other. For everything else, there is the captain.}
+Node0_b_b_success_action {Let's just hope nobody gets hurt}
+Node0_b_c_action {I'll teach you to obey}
+Node0_b_c_success {You open the ship's regulations and find that the division of responsibility is actually stated plainly enough. $ctx(officerName_B) abused the rules, while $ctx(officerName_A) does not know the regulations well enough to stop it.$br$red You have no patience either for insolent upstarts or for officers who do not know the rules, so you decide to punish them both. For the next two weeks, after every watch, the _$key($ctx(officerJob_A)) and the _$key($ctx(officerJob_B)) will stand on a barrel in the hold and read the regulations aloud to one another.}
+Node0_b_c_success_action {The sailors can listen too}
+Node0_a_c
+{
+As you finish your morning rounds, Alonso $rand(waves you over|stops you with a brief) gesture. His signals are not to be ignored, and you $rand(stop and demand a report|ask at once what has happened).$br$red
+It turns out that around $casedName($ctx(prisonerName)|Gen), your prisoner, $rand(a scandal is brewing|an entire drama is unfolding|a conflict is already flaring up). $ctx(officerName_A), your _$key($ctx(officerJob_A)), $rand(is convinced|claims|insists) that $ctx(prisonerName) is not who he pretends to be and $rand(wants to beat the truth out of him|intends to question him under duress). $ctx(officerName_B), your _$key($ctx(officerJob_B)), $rand(demands that the prisoner not be touched|insists that torture is out of the question|says the prisoner must not be maimed): he is too valuable, and $rand(he could be sold for more|he would fetch a good price|any wound would lower his price).$br$red
+You $rand(call both of them to your cabin|order them brought before you|command them to appear before you at once) and demand an answer for taking matters into their own hands. The officers $rand(rightly|dryly|evenly) point out that they $rand(have not done anything yet|have not laid a hand on him|have not touched the prisoner), and that such decisions are the captain's to make.
+}
+Node0_c_a_action {$ctx(officerName_A), find out who he is}
+Node0_c_a_success {The suspicions raised by $casedName($ctx(officerName_A)|Gen) seem weighty enough to you, and you allow him to look into the prisoner's background. $ctx(officerName_B) looks offended, and you thank him for his vigilance to smooth things over.}
+Node0_c_a_success_action {I'm not sure it'll help}
+Node0_c_b_action {$ctx(officerName_B), don't let $casedName($ctx(officerName_A)|Gen) into the hold}
+Node0_c_b_success {The arguments of $casedName($ctx(officerName_B)|Gen) seem convincing enough to you, and you decide to protect the prisoner. However, the whole affair looks suspiciously like officers taking matters into their own hands, so as a disciplinary measure you assign $casedName($ctx(officerName_A)|Dat) two punitive watches and order $ctx(officerName_B) to guard the hold with the prisoner until you enter port.}
+Node0_c_b_success_action {That'll teach them}
+Node0_c_c_action {No one dares order me around}
+Node0_c_c_success {You feel anger boiling inside you, slam your fist on the table, and drive the officers out of the cabin. No one has the right to put you in a position where you are forced to choose. Later, you punish both officers with several punitive watches and lashes for their insubordination and taking matters into their own hands. Word of the affair spreads quickly through the ship, and for the next month they call you Moray behind your back.}
+Node0_c_c_success_action {$name Moray? Not bad}
+Node0_a_d {You wake before dawn and immediately feel that something is wrong aboard ship. The trouble does not keep you waiting - a couple of minutes later, you hear the pounding of footsteps and an insistent knock at your cabin door. $br$red There are three figures on the threshold - $ctx(officerName_A), your _$key($ctx(officerJob_A)), $ctx(officerName_B), your _$key($ctx(officerJob_B)), and a boy of about thirteen. The cabin boy looks bewildered, while the officers look deeply irritated. $br$red You demand a proper report, and they explain the situation. The boy was taken aboard at the last stop in port and at once impressed everyone with his enthusiasm and talent. $ctx(officerName_A) believes he could become a first-rate _$key($ctx(officerJob_A)) and wants to take him on as a pupil. $ctx(officerName_B), on the other hand, is certain the lad would make a gifted _$key($ctx(officerJob_B)) and wants him as an assistant.$br$redThe boy is being pulled in opposite directions quite openly, and the dispute cannot be settled by talk alone. The officers ask you to decide before the youngster loses heart.}
+Node0_d_a_action {$ctx(officerName_A) will train you}
+Node0_d_a_success {You decide the boy's fate. In your view, the _$key($ctx(officerJob_A)) is a far more promising calling, and the cabin boy will be better off under the patronage of $casedName($ctx(officerName_A)|Gen). $ctx(officerName_B) looks disappointed.}
+Node0_d_a_success_action {There will be others}
+Node0_d_b_action {_$key($ctx(officerJob_B)) - that is your path}
+Node0_d_b_success {You believe that under the guidance of $casedName($ctx(officerName_B)|Gen) the boy will go far, and one day the Caribbean will gain a new master _$key($ctx(officerJob_B)). $ctx(officerName_A) seems upset. Apparently, there was something personal in it for him.}
+Node0_d_b_success_action {Sometimes they are like sons to us}
+Node0_d_c_action {He'll serve two watches}
+Node0_d_c_success {You recall a lesson from the Bible and say that what you need is a gifted officer who can serve two masters. The cabin boy will alternate under the command of both officers. A double watch is a crushing burden, and you watch the officers' reactions closely. $ctx(officerName_A) nods in agreement, while $ctx(officerName_B), horrified, begs you to reconsider. The _$key($ctx(officerJob_B)) is willing to give up his assistant for the boy's health, and the right decision becomes obvious. The lad will serve under $ctx(officerName_B).}
+Node0_d_c_success_action {It will pass}
+Node0_a_e {You decide to check on the officers, and as you approach the wardroom, you hear an uproar. When you open the door, you find yourself witnessing a fierce quarrel. $br$red$ctx(officerName_A) is shouting at $casedName($ctx(officerName_B)|Gen), accusing him of setting him up. $ctx(officerName_B) is seething and already looks ready to reach for his rapier. You bark an order, putting a stop to the disgrace. The officers snap to attention and go pale. $br$redYou demand an account of the cause and threaten to throw both of them overboard if they start dodging the truth. They explain the situation. During the last call at port, $ctx(officerName_A), your _$key($ctx(officerJob_A)), carried out your order incorrectly, causing the ship financial loss, and you punished him for it. Once back at sea, it turned out that he had blundered because of false advice from $casedName($ctx(officerName_B)|Gen). The conflict flared into open hostility, and you walked in just in time to witness it.$br$red$ctx(officerName_B) insists he was trying to help, but $ctx(officerName_A) is convinced he was set up on purpose. You need to make a decision.}
+Node0_e_a_action {Admit the punishment was wrong}
+Node0_e_a_success {You decide to defuse the quarrel by admitting that the punishment was unjust. You compensate $casedName($ctx(officerName_A)|Dat) for the insult out of your own purse, and the conflict quickly dies down. Sometimes a kind word is enough; sometimes it takes a ringing coin. The officers cool off and apologize to one another. A trifle that nearly cost lives has become a valuable lesson, and you hope they will learn from it.}
+Node0_e_a_success_action {And everyone is satisfied}
+Node0_e_b_action {Punish $casedName($ctx(officerName_B)|Gen)}
+Node0_e_b_success {You decide that the whole affair does indeed look suspiciously like deliberate sabotage. Not only did $ctx(officerName_A) suffer unjust punishment, but the captain was made to look a fool as well. That deserves punishment, and you order $ctx(officerName_B) flogged. $ctx(officerName_A) looks satisfied.}
+Node0_e_b_success_action {Give no one any slack}
+Node0_e_c_action {Punish $casedName($ctx(officerName_A)|Gen) again}
+Node0_e_c_success {You decide that $ctx(officerName_A) is trying to prop himself up at others' expense and simply cannot admit that he was wrong. If he thinks that a suggestion, even a false one, frees him from the need to think with his own head, he is badly mistaken. $ctx(officerName_B) is not the _$key($ctx(officerJob_A)), and the fact that $ctx(officerName_A) listened to him only makes matters worse. $br$redYou order $ctx(officerName_A) flogged again, so that in future he will not even think of second-guessing your orders and shifting the blame.}
+Node0_e_c_success_action {You dug your own grave}
+Node0_e_d_action {Punish them both}
+Node0_e_d_success {This whole affair strikes you as a monstrous breach of order and discipline. Not only do the officers dare to question your orders, they are also prepared to spill blood aboard your ship.$br$redYou sentence each officer to 10 lashes: 5 for disputing your orders, and 5 for breaking discipline and threatening a fellow officer with a weapon.}
+Node0_e_d_success_action {They knew what they were getting into}
+Node0_e_e_action {Fine, fight it out}
+Node0_e_e_success {You arrange a duel on the upper deck, where you will act as second. If they must settle matters, then it will be by the rules. $br$red The fight begins, and before long $ctx(officerName_A)'s advantage becomes obvious. You stop the duel and declare $ctx(officerName_A) the victor.}
+Node0_e_e_success_action {He defended his honor}
+Node0_e_e_fail {You arrange a duel on the upper deck, where you will act as second. If they must settle matters, then it will be by the rules. $br$red The fight begins, and before long the advantage of $officer_name becomes obvious. You stop the duel and declare $ctx(officerName_B) the victor.}
+Node0_e_e_fail_action {He proved he was right}

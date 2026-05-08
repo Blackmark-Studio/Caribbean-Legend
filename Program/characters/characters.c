@@ -17,7 +17,6 @@
 object chrFindNearCharacters[MAX_CHARS_IN_LOC];
 bool isBoardingLoading = false;
 
-
 void CharactersInit()
 {
     if(LoadSegment("characters\Characters_tables.c"))
@@ -413,7 +412,7 @@ void SetDialogStayIdle(ref character)
 void SetDefaultNormWalk(ref character)
 {
 	string tagMus = "";
-	if(LAi_CheckFightMode(character) == 2) tagMus = "_mus";
+	if(LAi_CheckFightMode(character) == CHR_MODE_MUSKET) tagMus = "_mus";
 
 	int i, j, k, l;
 	string tagFightMode;	// "fight" или ""
@@ -525,7 +524,7 @@ void SetDefaultNormWalk(ref character)
 void SetDefaultFight(ref character)
 {
 	string tag = "";
-	if(LAi_CheckFightMode(character) == 2) tag = "_mus";
+	if(LAi_CheckFightMode(character) == CHR_MODE_MUSKET) tag = "_mus";
 
 	character.actions.fightwalk = "fight walk" + tag;
 	character.actions.fightrun = "fight run" + tag;
@@ -658,7 +657,7 @@ void SetAfraidDead(ref character)
 void SetDefaultFightDead(ref character)
 {
 	string tag = "";
-	if(LAi_CheckFightMode(character) == 2) tag = "_mus";
+	if(LAi_CheckFightMode(character) == CHR_MODE_MUSKET) tag = "_mus";
 
 	character.actions.fightdead.d1 = "death_0" + tag;
 	character.actions.fightdead.d2 = "death_1" + tag;

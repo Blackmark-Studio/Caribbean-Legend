@@ -1464,6 +1464,7 @@ int LocationInitJamaica(int n)
 	locations[n].townsack = "PortRoyal";
 	//Sound
 	locations[n].type = "jungle";
+    locations[n].fastreload = "PortRoyal";
 	locations[n].islandId = "Jamaica";
 	//Models
 	//Always
@@ -1534,6 +1535,7 @@ int LocationInitJamaica(int n)
 	locations[n].townsack = "PortRoyal";
 	//Sound
 	locations[n].type = "jungle";
+    locations[n].fastreload = "PortRoyal";
 	locations[n].islandId = "Jamaica";
 	locations[n].DisableEncounters = true;
 	//Models
@@ -1604,6 +1606,7 @@ int LocationInitJamaica(int n)
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "House";
+    locations[n].fastreload = "PortRoyal";
 	locations[n].islandId = "Jamaica";
 	//Models
 	//Always

@@ -846,7 +846,7 @@ void ProcessDialogEvent()
 			UpgradeShipFull(sld);
 			/* UpgradeShipParameter(sld, "SpeedRate");
 			UpgradeShipParameter(sld, "TurnRate");
-			UpgradeShipParameter(sld, "WindAgainstSpeed");
+			UpgradeShipParameter(sld, "rig");
 			UpgradeShipParameter(sld, "HP");
 			UpgradeShipParameter(sld, "MaxCrew");
 			sld.ship.HP = 11880; */

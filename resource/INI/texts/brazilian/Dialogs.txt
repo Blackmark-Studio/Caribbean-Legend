@@ -1,0 +1,6 @@
+Shipyard_TuningRig {Vejamos o que pode ser feito. As velas deste navio são _$key($attr($context.rig_type)), e eu poderia $key($attr($context.rig_upgrade_type)). Para isso, vou precisar de: $attr($context.material) de seda naval. Pelo meu trabalho, vou cobrar: $attr($context.price) baús de dobrões para cobrir as despesas. Acho que é isso. Ah, sim — pagamento adiantado.}
+Smuggler_can_trade {Nesta temporada estamos sob pressão, não arriscaria… mas sua fama o precede, seu malandro. Dizem que você conseguiria roubar até a peruca do governador. Vamos ver o que trouxe.}
+Smuggler_can_trade_reply {É sempre bom quando sua reputação é reconhecida. Vamos negociar.}
+Smuggler_cant_trade {Não sei do que está falando, capitão. O contrabando é estritamente proibido e severamente punido. (sussurrando) Especialmente nesta temporada.}
+Smuggler_cant_trade_reply {Qual é, eu não tinha intenção de negociar contrabando algum. (sussurrando) Nunca nos vimos.}
+storageRent {E além da guarda, vocês fazem mais alguma coisa por aqui?}

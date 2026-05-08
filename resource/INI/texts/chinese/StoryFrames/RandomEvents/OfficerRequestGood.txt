@@ -1,0 +1,53 @@
+Node0_title {军官的请求}
+Node0_a_a {$attr($context.officerName)低着头走进了你的船长室——你的_$attr($context.officerJob)。他先故意停顿了一下，随后满脸苦相地讲起了自己的倒霉事——前些天在货舱里和人消遣时，他竟把$rand(家传胸针|自己的十字架|父亲留下的袖扣)输给了一个水手。他求你借他一小笔钱，好让他翻本，把那件贵重东西赢回来。}
+Node0_a_a_action {赢回来，然后分我一份！}
+Node0_a_a_success {你把所需的钱给了他，但条件是他$rand(得还你本金外加一半赢利|得分文不少地还你本金，再额外给你一半赢利)。过了一阵子，兴高采烈的$attr($context.officerName)敲响了你的门。他的宝贝已经拿回来了，而他也$rand(履行了约定|信守了承诺)，把属于你的那份交到了你手上。}
+Node0_a_a_success_action {这钱来得真轻松！}
+Node0_a_a_fail {你把所需的钱给了他，条件是他$rand(得还你本金和一半赢利|得把钱还你，再额外给你一半赢利)。可$attr($context.officerName)$rand(很久都不敢出现在你面前|简直像从船上消失了一样)，最后还是你$rand(把他叫进了船长室|下令让他来见你)。看他那$rand(垂头丧气的眼神|蔫头耷脑的样子)就知道，东西他$rand(没赢回来|到底还是没能翻本)，而你的钱也$rand(输光了|全扔在牌桌上了)。}
+Node0_a_a_fail_action {惨痛的教训}
+Node0_a_b_action {惩治船上赌博}
+Node0_a_b_success {船上的规章明文禁止赌博。你$rand(拿涉事水手公开杀鸡儆猴，狠狠干了一顿鞭子|下令当众鞭打涉事水手以儆效尤)，而那名军官则$rand(被处以停发薪水的处罚|被罚扣一个月薪饷)。}
+Node0_a_b_success_action {规矩就是规矩}
+Node0_a_c_action {逼水手把东西交出来}
+Node0_a_c_success {你是船长，你的话就是规矩，可这种事偏偏没写进条文里。于是你靠自己凶神恶煞的气势和魁梧的身板，直接把那水手镇住，逼他把你军官的东西交出来。全船都会记住这件事。}
+Node0_a_c_success_action {别拿我开玩笑}
+Node0_a_b {当你结束晚间巡视回到船长室时，发现$attr($context.officerName)——你的_$attr($context.officerJob)——正在门口等着你。他$rand(怯生生地来回挪着脚步|站在原地局促不安)，可在你$rand(凌厉的目光|目光)逼视下，终于$rand(撑不住了|松了口)，说出了自己的请求。目的港有人约他决斗，而他害怕自己会输。为了多一张底牌，他想借走你箱子里收藏的那把剑。他信誓旦旦地保证，_$attr($context.bladeName) $rand(会大大提高他的胜算|会给他带来决定性的优势)。}
+Node0_b_a_action {重要的不是剑，而是握剑的人！}
+Node0_b_a_success {你当场就在船长室里把$casedName($attr($context.officerName)|Gen)叫来练了一场。他表现得还算体面，虽然离你的水准还差得远。训练过后，你又教了他几招自己最拿手的假动作和杀招，现在$attr($context.officerName)明显比先前自信多了。}
+Node0_b_a_success_action {平时多吃苦，战时少流血。}
+Node0_b_a_fail {$attr($context.officerName)一开始还撑得像模像样，可很快就泄了气，败得一塌糊涂。你当即禁止他去参加那场决斗——名声固然值钱，命可更值钱。}
+Node0_b_a_fail_action {别再把自己卷进这种事里。}
+Node0_b_b_action {拿去吧，送你了。}
+Node0_b_b_success {你认定这件武器在军官手里$rand(显然比留在你这里更有用|会比留在你这里更派得上用场)，于是$rand(干脆白送给了他|很痛快地把它让了出去)。$attr($context.officerName)真心实意地向你道谢，整个人看起来都自信了许多。你不禁觉得，$rand(这种赏赐以后应该多给一些|这样的礼物以后倒是可以多发些)——$rand(赏给那些资历老的，或特别勇敢的人|赏给那些资历老又格外勇敢的人)。}
+Node0_b_b_success_action {先让他们立下功劳再说。}
+Node0_b_c_action {不会有任何决斗。}
+Node0_b_c_success {你拒绝了军官的请求，转而$rand(给他上了一堂长长的训诫课|把他狠狠干了一通思想教育)。他$rand(垂着眼睛、认命似地听着|低着头一声不吭地听完)，而你$rand(又加上两班惩戒值更来让这堂课更有分量|顺手给他挂上了两班惩戒值更)。至于那场决斗，$rand(自然|当然)也就取消了。}
+Node0_b_c_success_action {规章是用鲜血写成的。}
+Node0_a_c {在晚间巡查时，你注意到 $attr($context.officerName)，你的_$attr($context.officerJob)，正与 $casedName($attr($context.prisonerName)|Abl) 长时间低声交谈。当晚稍后，你把这名军官叫进船长室盘问。一开始，$attr($context.officerName) 还试图搪塞，但在压力之下还是承认，$attr($context.prisonerName) 是他的 $rand(同乡|远亲|结义亲人|旧识)。他请求你不要把俘虏交给当局，而是在最近的海湾把人放走。}
+Node0_c_a_action {处决俘虏}
+Node0_c_a_success {你决定把这件事变成一次沉重的教训，下令处决俘虏。$attr($context.officerName) 震惊不已，却不敢公然违抗你的命令。阿隆索执行了判决。关于你残酷无情的流言立刻传遍全船，甚至传到了船外。}
+Node0_c_a_success_action {绝不宽恕}
+Node0_c_b_action {释放俘虏}
+Node0_c_b_success {你下令放了俘虏，并在抵达最近的城镇前给他在厨房里留个位置。$attr($context.officerName) 向你道谢，整个人都像活过来了一样。你要求把这件事保密，免得一大串求情的人排到你的船长室门口。}
+Node0_c_b_success_action {这是破例，不是惯例}
+Node0_c_c_action {那你就自己把他赎下来}
+Node0_c_c_success {你提出一笔公平的交易——这名军官现在就可以用自己的薪水把 $attr($context.prisonerName) 赎下来。这样一来，不必破坏任何规矩，也没人会欠谁的人情。$attr($context.officerName) 犹豫了一阵，最后还是同意了你的条件。}
+Node0_c_c_success_action {公平交易}
+Node0_c_d_action {船长的决定不容置喙}
+Node0_c_d_success {你拒绝了这名军官的请求。无论那名俘虏是谁，他既然已经投降，如今就在你的掌控之下，该怎么处置，只能由你来决定。只要你示弱一次，今后想拿船长来替自己解决私事的人就会没完没了。$attr($context.officerName) 看上去很失落，但你并不在乎。}
+Node0_c_d_success_action {法律由我说了算}
+Node0_a_d {近来，你开始注意到，$attr($context.officerName)$rand(异常沉默而心事重重|一反常态地沉默寡言，整天板着一张脸)。$rand(他越来越常在闲暇时盯着海平线出神。|他越来越常倚在船舷边，盯着远处一点不动，仿佛在等谁的帆影。)终于，你忍不住了，$rand(追问他缘由|直接开口问他)，而他也向你吐露了自己的悲剧——上次停靠时，他得知了$rand(一位近亲|至亲之人)去世的消息。你$rand(还没来得及表示哀悼|刚准备说句安慰的话)，军官便先开口求你帮个忙——他想要一支蜡烛和一盏祈祷用的油灯，偏偏这两样东西只在你的船长室里有。}
+Node0_d_a_action {当然，拿去吧}
+Node0_d_a_success {你把办追思所需的东西交给了军官，并决定在他$rand(哀伤之际不再给他添更多差事|守丧期间替他减轻些额外职责)。他看起来$rand(心怀感激|明显十分感激)，只是$rand(悲伤的阴影|那层沉沉的哀色)压住了这种情绪。}
+Node0_d_a_success_action {会过去的}
+Node0_d_b_action {我们按规矩来}
+Node0_d_b_success {$attr($context.officerName)是你的_$attr($context.officerJob)，不是普通水手。这样的身份$rand(赋予了他|意味着他享有)一些特殊待遇。你下令在军官餐厅举行$rand(正式的追思仪式|按规矩办的追思仪式)。$attr($context.officerName)起初看上去$rand(有些不好意思|颇为窘迫)，但很快$rand(这种窘意就被感激取代了|便只剩下感激了)。}
+Node0_d_b_success_action {忠诚的同伴，理应得到最好的}
+Node0_d_c_action {就算没有这些，上帝也会听见你的}
+Node0_d_c_success {你让军官相信，真诚的祈祷即便没有仪式也会被听见。$br$red$attr($context.officerName)看起来像是接受了。你也不由生出一丝自豪，因为你的话确实让他轻松了些。}
+Node0_d_c_success_action {你会撑过去的}
+Node0_d_c_fail {你的话听起来毫无说服力，$attr($context.officerName)也显得十分失落。看样子，他只是把你当成了个吝啬又刻薄的人。}
+Node0_d_c_fail_action {等等，我又不是舍不得}
+Node0_d_d_action {船上的随船神父会帮你}
+Node0_d_d_success {你觉得奇怪，$attr($context.officerName)竟然把船上真正的随船神父给忘了，但你还是把这归结于悲痛过甚。$br$red你把神父请进船长室，向他说明情况，请他出言开导。$attr($context.officerName)起初神情恍惚，但神职人员的话很快就让他回过了神。}
+Node0_d_d_success_action {上帝听见了我们的祈祷}

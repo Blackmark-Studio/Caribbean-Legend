@@ -1,0 +1,61 @@
+bigCannonsAvailable {Cannoni di grosso calibro disponibili}
+BigCannonsAvailable_0 {Non si vendono cannoni di grosso calibro}
+BigCannonsAvailable_1 {Sono in vendita cannoni di grosso calibro}
+blade_critChance {Probabilità di colpo critico corpo a corpo}
+blade_critDamage {Danno critico corpo a corpo}
+caribbeanGoodsCost {Prezzi delle merci coloniali}
+caribbeanGoodsStock {Scorte delle merci coloniali}
+contrabandTradeStatus_0 {Gli affari con i contrabbandieri sono possibili}
+contrabandTradeStatus_1 {Gli affari con i contrabbandieri sono impossibili}
+contrabandTradeStatus_2 {Gli affari con i contrabbandieri sono complicati}
+convenienceGoodsCost {Prezzi dei beni essenziali}
+convenienceGoodsStock {Scorte dei beni essenziali}
+crewExpMtp {Velocità di acquisizione esperienza dell'equipaggio}
+crewHireCost {Costo di assunzione dei marinai}
+crewHireMoraleMtp {Morale dell'equipaggio assoldato}
+crewHiringExpMtp {Esperienza dell'equipaggio assoldato}
+crewMaintenanceCost {Costo di mantenimento dei marinai}
+crownGoodsCost {Prezzi delle merci della Corona}
+crownGoodsStock {Scorte delle merci della Corona}
+debitRate {Tasso d'interesse sui prestiti}
+depositGoldRate {Tasso dei depositi in dobloni}
+depositSilverRate {Tasso dei depositi in pesos}
+drugConsumption {Consumo di medicine}
+enemyHullDamageMtp {Danni agli scafi nemici}
+europeanGoodsCost {Prezzi delle merci europee}
+europeanGoodsStock {Scorte delle merci europee}
+exportPriceMtp {Prezzi d'esportazione}
+foodConsumption {Consumo di viveri}
+GlobalSpeed {Velocità della nave sulla mappa del mondo}
+goldsilverGoodsAvailable_0 {Argento e oro non sono in vendita}
+goldsilverGoodsAvailable_1 {Argento e oro sono in vendita}
+gun_critChance {Probabilità di colpo critico con pistola}
+gun_critDamage {Danno critico da pistola}
+HeadshotDamage {Danno da colpo alla testa}
+importPriceMtp {Prezzi d'importazione}
+incomingDamageReduction {Protezione dai danni}
+legalContraband_0 {Il contrabbando funziona normalmente}
+legalContraband_1 {Il contrabbando conta come importazione}
+medicamentCost {Prezzi delle medicine}
+minFortCannonsMtp {Soglia di cannoni distrutti per l'assalto al forte}
+moraleMtp {Aumento del morale dell'equipaggio}
+musket_critChance {Probabilità di colpo critico con moschetto}
+musket_critDamage {Danno critico da moschetto}
+nationsReputationMtp {Velocità di variazione della reputazione con le nazioni}
+RangeIncomingDamageReduction {Protezione dai danni da fuoco}
+recruitsMtp {Reclute}
+repairCost {Costo delle riparazioni al cantiere}
+seaRepairEfficency {Efficienza delle riparazioni in mare}
+shipSpeedDynamic {Accelerazione della nave}
+shipyardCannonsStock {Scorte di cannoni al cantiere}
+Shot_Damage {Danno da fuoco}
+slavesGoodsAvailable_0 {Gli schiavi non sono in vendita}
+slavesGoodsAvailable_1 {Gli schiavi sono in vendita}
+stealthInceptionBonus {Probabilità di infiltrarsi in città}
+stolenGoodsMtp {Riduzione della penalità per merce rubata}
+stormDamageMtp {Danni da tempesta}
+tradeLicenseCost {Costo della licenza commerciale}
+uniqueGoodsAvailable_0 {Le merci strategiche non sono in vendita}
+uniqueGoodsAvailable_1 {Le merci strategiche sono in vendita}
+uniqueGoodsStock {Scorte delle merci strategiche}
+SquadronPower {Potenza della squadra}

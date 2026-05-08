@@ -36,6 +36,8 @@ void ProcessDialogEvent()
 				LAi_group_MoveCharacter(sld, sGroup);
 				LAi_RemoveCheckMinHP(sld);
 				LAi_SetImmortal(sld, false);
+				if("quest.agressive" in npchar)
+					sld.quest.agressive = true;
 			}
 			LAi_group_SetRelation(sGroup, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 			LAi_group_FightGroups(sGroup, LAI_GROUP_PLAYER, true);
@@ -106,6 +108,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_2_2":
+			npchar.quest.agressive = true;
 			dialog.text = RandPhraseSimple("거짓말하지 마라, 창백한 놈! 인디언을 죽이려고 온 거잖아! 싸울 준비 됐냐, 창백한 놈?!","너희는 인디언을 죽인다. 백인의 혀는 거짓말쟁이 혀다. 내가 그 혀를 잘라내어 불에 구워버리겠다!");
 			link.l1 = RandPhraseSimple("글쎄, 친구야, 그럼 나한테 탓하지 마라. 신만이 아시겠지만, 나도 피하려고 했거든...","좋아, 네가 원한 거다, 전사.");
 			link.l1.go = "exit_fight";
@@ -123,6 +126,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
+				npchar.quest.agressive = true;
 				dialog.text = "네가 우리가 원하는 걸 가지고 있지 않구나, 창백한 얼굴 녀석... 넌 우리 전리품이 될 거다!";
 				link.l1 = "해볼 테면 해봐라, 허수아비...";
 				link.l1.go = "exit_fight";
@@ -130,6 +134,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_3_2":
+			npchar.quest.agressive = true;
 			dialog.text = RandPhraseSimple("우리는 창백한 얼굴의 개들과 거래하지 않는다. 죽이고 빼앗는다!","우리는 더러운 미스키토족이나 아라와크족이 아니다, 우리는 창백한 얼굴들과 거래하지 않아! 우리는 그놈들을 죽이고 전리품을 챙긴다!");
 			link.l1 = RandPhraseSimple("그렇다면 한번 털어보시지, 이 악당아!","먼저, 내 세이버부터 빼앗아야 할 거다, 이 더러운 놈아!");
 			link.l1.go = "exit_fight";
@@ -340,6 +345,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
+				npchar.quest.agressive = true;
 				dialog.text = "그럼 이제 다 공짜로 가져가겠다, 창백한 놈아!";
 				link.l1 = "시도해 보시지...";
 				link.l1.go = "exit_fight";

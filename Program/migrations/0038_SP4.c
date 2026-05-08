@@ -12,11 +12,11 @@ void ReapplyPerksItems0037()
 {
 	InitPerks();
 
-	if(LoadSegment("items\modifiers\init\init.c"))
-	{
-		InitModifiers();
-		UnloadSegment("items\modifiers\init\init.c");
-	}
+	// if(LoadSegment("items\modifiers\init\init.c"))
+	// {
+	// 	InitModifiers();
+	// 	UnloadSegment("items\modifiers\init\init.c");
+	// }
 
 	object fellows;
 	AddAllFellows(&fellows, pchar, true);
@@ -79,7 +79,6 @@ void ClockTower_Sp4()
 	locations[n].id = "Villemstad_ClockTower";
 	locations[n].id.label = "HWIC_flat";
 	locations[n].image = "loading\inside\smallresidence.tga";
-	locations[n].HWIC = true;
 	locations[n].CannotWait = true;
     locations[n].SpecialHandlers.l1 = "HWIC_SetClockSound";
 	//Town sack
@@ -170,7 +169,6 @@ void ClockTower_Sp4()
 	locations[n].id = "Villemstad_ClockCellar";
 	locations[n].image = "loading\inside\sklad.tga";
 	locations[n].id.label = "Office of Naval Registry";
-	locations[n].HWIC = true;
 	locations[n].CannotWait = true;
     locations[n].SpecialHandlers.l1 = "HWIC_SetClockSound";
 	//Sound
@@ -249,7 +247,6 @@ void Amsterdam()
 	refship.SpeedDependWeight			= 0.3;
 	refship.SubSeaDependWeight			= 1.0;
 	refship.TurnDependWeight			= 0.3;
-	refship.WindAgainstSpeed   			= 0.62;
 	refship.CabinType          			= "Cabin"; 
 	refship.DeckType           			= "Big";
 	

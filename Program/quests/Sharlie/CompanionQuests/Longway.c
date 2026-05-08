@@ -1277,7 +1277,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 		LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
 		LAi_SetCheckMinHP(characterFromID("PZ_AntoniOneDimen"), 1, true, "PZ_PlantationDimenSit");
-		PlaySound("Voice\Russian\hambit\Longway-02.wav");
+		PlaySoundSafe("VOICE\" + LanguageGetLanguage() + "\hambit", "Longway-02.wav");
 	}
 	
 	else if (sQuestName == "PZ_PlantationDimenSit") {
@@ -1432,7 +1432,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "PZ_Batavia_BitvaResidensia_3") {
-		PlaySound("Voice\Russian\hambit\Longway-02.wav");
+		PlaySoundSafe("VOICE\" + LanguageGetLanguage() + "\hambit", "Longway-02.wav");
 		LAi_SetPlayerType(pchar);
 		//LAi_LocationFightDisable(&Locations[FindLocation("Batavia_townhall")], false);
 		LocatorReloadEnterDisable("Batavia_townhall", "reload1_back", true);
@@ -2167,6 +2167,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "PZ_Mayak_Longway") {
 		sld = CharacterFromID("Longway");
+		LAi_SetImmortal(sld, false);
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";

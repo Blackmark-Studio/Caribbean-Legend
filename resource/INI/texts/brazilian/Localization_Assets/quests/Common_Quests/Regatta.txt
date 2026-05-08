@@ -1,4 +1,6 @@
 Regatta_1 {Henry}
+Regatta_10 {Passageiros a bordo.}
+Regatta_11 {Seu navio está sobrecarregado. A velocidade e a manobrabilidade foram reduzidas.}
 Regatta_2 {Stivenson}
 Regatta_3 {Você chegou tarde demais para a regata.}
 Regatta_4 {Saint Catherine}
@@ -7,5 +9,3 @@ Regatta_6 {Mahoiny}
 Regatta_7 {Vudro}
 Regatta_8 {Doggerty}
 Regatta_9 {O navegador deixou seu navio!}
-Regatta_10 {Passageiros a bordo.}
-Regatta_11 {Seu navio está sobrecarregado. A velocidade e a manobrabilidade foram reduzidas.}

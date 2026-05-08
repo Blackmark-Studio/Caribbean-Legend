@@ -153,8 +153,7 @@ void TW_InitSea_1_Turn()
 void TW_FinishSea_1_Turn()
 {
 	objTask.sea = "";
-	if(CheckAttribute(&TEV, "Tutor.BackAY"))
-		DeleteAttribute(&TEV, "Tutor.BackAY");
+	DeleteAttribute(&TEV, "Tutor.BackAY");
 	DoQuestFunctionDelay("Tutorial_TimeScale", 1.5);
     DoQuestFunctionDelay("TW_InitSea_2_TimeScale", 2.5);
 }
@@ -171,8 +170,7 @@ void TW_InitSea_2_TimeScale(string qName)
 
     // Параметры
     aref arBase;
-	if(CheckAttribute(arTask, "base_text"))
-		DeleteAttribute(arTask, "base_text");
+	DeleteAttribute(arTask, "base_text");
 	makearef(arBase, arTask.base_text);
     arBase.t0.text  = StringFromKey("Tutorial_3");
     arBase.t0.font  = "interface_normal_bold";
@@ -236,8 +234,7 @@ void TW_InitSea_3_Sails(string qName)
 
     // Параметры
     aref arBase;
-	if(CheckAttribute(arTask, "base_text"))
-		DeleteAttribute(arTask, "base_text");
+	DeleteAttribute(arTask, "base_text");
 	makearef(arBase, arTask.base_text);
     arBase.t0.text  = StringFromKey("Tutorial_8");
     arBase.t0.font  = "interface_normal_bold";
@@ -296,8 +293,7 @@ void TW_InitSea_Battle_1_AutoFire()
     TW_Reset(arTask);
 	
 	aref arBase;
-	if(CheckAttribute(arTask, "base_text"))
-		DeleteAttribute(arTask, "base_text");
+	DeleteAttribute(arTask, "base_text");
 	makearef(arBase, arTask.base_text);
     arBase.t0.text  = StringFromKey("Tutorial_11");
     arBase.t0.font  = "interface_normal_bold";
@@ -358,8 +354,7 @@ void TW_InitSea_Battle_2_AimingFire(string qName)
     TW_Reset(arTask);
 	
 	aref arBase;
-	if(CheckAttribute(arTask, "base_text"))
-		DeleteAttribute(arTask, "base_text");
+	DeleteAttribute(arTask, "base_text");
 	makearef(arBase, arTask.base_text);
     arBase.t0.text  = StringFromKey("Tutorial_13");
     arBase.t0.font  = "interface_normal_bold";
@@ -417,8 +412,7 @@ void TW_InitSea_Battle_3_WinBattle(string qName)
     TW_Reset(arTask);
 	
 	aref arBase;
-	if(CheckAttribute(arTask, "base_text"))
-		DeleteAttribute(arTask, "base_text");
+	DeleteAttribute(arTask, "base_text");
 	makearef(arBase, arTask.base_text);
     arBase.t0.text  = StringFromKey("Tutorial_17");
     arBase.t0.font  = "interface_normal_bold";
@@ -475,8 +469,7 @@ void TW_InitLand_Fight_1_Attack()
     TW_Reset(arTask);
 	
 	aref arBase;
-	if(CheckAttribute(arTask, "base_text"))
-		DeleteAttribute(arTask, "base_text");
+	DeleteAttribute(arTask, "base_text");
 	makearef(arBase, arTask.base_text);
     arBase.t0.text  = StringFromKey("Tutorial_19");
     arBase.t0.font  = "interface_normal_bold";
@@ -571,8 +564,7 @@ void TW_InitLand_Fight_2_Defence(string qName)
     TW_Reset(arTask);
 	
 	aref arBase;
-	if(CheckAttribute(arTask, "base_text"))
-		DeleteAttribute(arTask, "base_text");
+	DeleteAttribute(arTask, "base_text");
 	makearef(arBase, arTask.base_text);
     arBase.t0.text  = StringFromKey("Tutorial_23");
     arBase.t0.font  = "interface_normal_bold";
@@ -643,22 +635,17 @@ void TW_FinishLand_Fight_2_Defence()
 
 void TW_InitLand_Fight_3_Win(string qName)
 {
-	if(CheckAttribute(&TEV, "Tutor.BackControlsTips"))
-	{
-		iControlsTips = sti(TEV.Tutor.BackControlsTips);
-		DeleteAttribute(&TEV, "Tutor.BackControlsTips");
-	}
-				
+	DeleteAttribute(&TEV, "Tutor.BackControlsTips");
+
 	aref arTask, arImage, arText, arDef;
 	makearef(arDef, objTask.defines);
-	
+
 	objTask.land_fight = "3_WinFight";
 	makearef(arTask, objTask.land_fight);
     TW_Reset(arTask);
-	
+
 	aref arBase;
-	if(CheckAttribute(arTask, "base_text"))
-		DeleteAttribute(arTask, "base_text");
+	DeleteAttribute(arTask, "base_text");
 	makearef(arBase, arTask.base_text);
     arBase.t0.text  = StringFromKey("Tutorial_17");
     arBase.t0.font  = "interface_normal_bold";
@@ -667,11 +654,11 @@ void TW_InitLand_Fight_3_Win(string qName)
     arBase.t1.font  = "interface_normal";
     arBase.t1.scale = TW_DEF_STRING_SCALE;
 	arTask.fixWidth = true;
-	
+
 	makearef(arImage, arTask.images.background);
     arImage.group   = "TUTORIAL_BACK";
     arImage.picture = "background";
-	
+
 	makearef(arText, arTask.texts.WinFight_head);
 	arText.font  = "interface_normal_bold";
     arText.base.pos.y = TW_DEF_HEADER;
@@ -704,8 +691,7 @@ void TW_InitLand_Craft_1_Inventory()
     TW_Reset(arTask);
 	
 	aref arBase;
-	if(CheckAttribute(arTask, "base_text"))
-		DeleteAttribute(arTask, "base_text");
+	DeleteAttribute(arTask, "base_text");
 	makearef(arBase, arTask.base_text);
     arBase.t0.text  = StringFromKey("Tutorial_27");
     arBase.t0.font  = "interface_normal_bold";
@@ -762,8 +748,7 @@ void TW_InitLand_1_Loot()
     TW_Reset(arTask);
 	
 	aref arBase;
-	if(CheckAttribute(arTask, "base_text"))
-		DeleteAttribute(arTask, "base_text");
+	DeleteAttribute(arTask, "base_text");
 	makearef(arBase, arTask.base_text);
     arBase.t0.text  = StringFromKey("Tutorial_30");
     arBase.t0.font  = "interface_normal_bold";

@@ -159,7 +159,7 @@ int LAi_type_huber_FindEnemy(aref chr, int num)
 		for(i = 0; i < num; i++)
 		{
 			idx = sti(chrFindNearCharacters[i].index);
-			if(LAi_CheckFightMode(&Characters[idx])) return idx;
+			if(LAi_CheckFightMode(&Characters[idx]) != CHR_MODE_PEACE) return idx;
 		}
 	}
 	return -1;

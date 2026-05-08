@@ -109,7 +109,7 @@ void LAi_type_citizen_CharacterUpdate(aref chr, float dltTime)
 					idx = sti(chrFindNearCharacters[i].index);
 					by = &Characters[idx];
 					chr.chr_ai.type.checkFight = 1.5;
-					if (LAi_CheckFightMode(by) && LAi_grp_playeralarm == 0) // patch-7
+					if (LAi_CheckFightMode(by) != CHR_MODE_PEACE && LAi_grp_playeralarm == 0) // patch-7
 					{
 						if (LAi_IsSetBale(chr))
 						{

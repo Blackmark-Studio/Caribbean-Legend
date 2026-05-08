@@ -1,0 +1,18 @@
+condition_legendGuide
+{
+Dieser Gegenstand erscheint im Spiel, wenn du der Seite
+Caribbean Legend
+folgst
+}
+condition_mushket_indian
+{
+Dieser Gegenstand erscheint bei Geldleihern, wenn du
+Caribbean Legend: Age of Pirates besitzt
+}
+noRewardYetMessage
+{
+Diese Belohnung ist noch nicht verfügbar,
+bleib dran für Updates!
+}
+steamButtonAlreadyGot {Beansprucht}
+steamButtonGet {Erhalten}

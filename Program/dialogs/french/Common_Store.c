@@ -357,16 +357,6 @@ void ProcessDialogEvent()
 		break;
 
 		case "market":
-//navy -->
-			//занят ПГГ
-			if (CheckFreeServiceForNPC(NPChar, "Store") != -1)	 // to_do имя сунуть
-			{
-				dialog.text = "Désolé, mais je suis trop occupé en ce moment. Tant de clients ! Revenez demain.";
-				link.l1 = "Oh, vraiment ? Eh bien, je reviendrai plus tard, alors.";
-				link.l1.go = "exit";
-				break;
-			}
-//navy <--
 			dialog.text = RandPhraseSimple("J'ai des boulets ronds, de la toile à voile, des médicaments, du bois précieux et d'autres marchandises ! Qu'est-ce qui vous intéresse ?","Voulez-vous acheter du sucre et des épices ? Ou, peut-être, du rhum et de la poudre à canon ?");
 			link.l1 = pcharrepphrase(LinkRandPhrase("J'ai beaucoup de butin dans ma cale ! L'argent n'a pas d'odeur, n'est-ce pas ?","Je dois larguer le butin dans ma cale et la remplir de ton or. Ha-ha !","Oh, je sais que tu vendrais ta mère pour un sac de doublons bien pesés ! Mais j'ai juste besoin de réapprovisionner mes stocks."),LinkRandPhrase("Je veux vendre ma cargaison et renflouer mes provisions.","Je veux acheter des marchandises à vendre.","Montrez-moi les boulets de canon, les bombes et ce genre de choses."));
 			link.l1.go = "trade_1";
@@ -665,19 +655,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_5":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage)); 
-			NPChar.Storage.NoActivate = true;
-			DeleteAttribute(NPChar,"Storage.Activate");
+			LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
 			DialogExit();
 		break;
 		
 		case "storage_6":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			DeleteAttribute(NPChar,"Storage.Activate");
-			NPChar.Storage.NoActivate = true;
+			LeaveStorage(NPChar, rColony);
 			DialogExit();
-		break;		
+		break;
 
 		case "business":
 			iTest = 0;			
@@ -753,17 +738,6 @@ void ProcessDialogEvent()
 			}
 			// <-- генератор Место под солнцем
 			
-//navy -->
-			//занят ПГГ
-			iTmp = CheckAvailableTaskForNPC(NPChar, PGG_TASK_WORKONSTORE);
-			if (iTmp != -1)
-			{
-				dialog.text = "J'avais un travail, mais "+GetFullName(&Characters[iTmp])+"a déjà entrepris de le faire pour moi.";
-				link.l1 = "Oh, vraiment ? Eh bien, je reviendrai plus tard, alors.";
-				link.l1.go = "exit";
-				break;
-			}
-//navy <--
 			dialog.text = NPCharRepPhrase(npchar,"Quelle affaire?! Dis-moi tout!","Je vous écoute. Quelle est cette affaire dont vous parlez ?");
             ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
             if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
@@ -830,11 +804,8 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if(!CheckAttribute(NPChar,"Storage.NoActivate"))
-						{
-							link.l7 = "Excusez-moi, mon bonhomme - ne louez-vous pas des entrepôts, par hasard ?";
-							link.l7.go = "storage_01";
-						}	
+						link.l7 = "Excusez-moi, mon bonhomme - ne louez-vous pas des entrepôts, par hasard ?";
+						link.l7.go = "storage_01";
 					}
 				}				
 				// <-- ugeen

@@ -470,6 +470,7 @@ void ProcessDialogEvent()
 			dialog.text = "Matelot supérieur. Je ne sais pas grand-chose de lui, mais je peux vous dire une chose : si chaque homme cache un squelette dans son placard, Alonso, lui, a tout un cimetière.";
 			link.l1 = "On dirait que vous ne lui faites pas confiance.";
 			link.l1.go = "Captain_7_question_2_2";
+			AddCharacterSkillPoints(pchar, "Leadership", 1);
 		break;
 		
 		case "Captain_7_question_2_2":
@@ -489,6 +490,7 @@ void ProcessDialogEvent()
 			dialog.text = "Vous touchez une corde sensible, "+pchar.name+" ! Je pourrais parler de ma belle pendant des heures. Troisième classes, vingt canons, excellente vitesse – ne vous fiez pas à l’étiquette 'marchand' !";
 			link.l1 = "J’ai bien compris pour les canons et la vitesse. Mais le 'classe' ? Et 'marchand' ?";
 			link.l1.go = "Captain_7_question_3_2";
+			AddCharacterSkillPoints(pchar, "Sailing", 1);
 		break;
 		
 		case "Captain_7_question_3_2":

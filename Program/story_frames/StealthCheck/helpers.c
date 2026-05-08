@@ -33,6 +33,6 @@ void StealthCheck_CheckVerifyPapers(string letterIndex)
 	bool hasPapers = false;
 	if (CheckAttribute(pchar, "questTemp.Guardoftruth") && CheckCharacterItem(pchar, "VerifyPaper") && storyObject.context.colonyId == "santiago" && GetNationRelation2MainCharacter(StealthNat) != RELATION_ENEMY) hasPapers = true;
 	if (CheckAttribute(pchar, "questTemp.Guardoftruth.Trinidad") && CheckCharacterItem(pchar, "VerifyPaper") && storyObject.context.colonyId == "portspein" && GetNationRelation2MainCharacter(StealthNat) != RELATION_ENEMY) hasPapers = true;
-	if (!LICENSE_HasLicense() && !hasPapers) action.disabled = true; // вырубаем кнопку
+	SF_AddCondition(&action, LICENSE_HasLicense() || hasPapers, SF_CONDITION_LICENSE);
 	if (hasPapers) action.text = SF_Convert("ShowPapersAction");     // подменяем текст кнопки
 }

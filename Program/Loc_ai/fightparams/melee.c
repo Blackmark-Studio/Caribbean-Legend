@@ -79,6 +79,7 @@ void LAi_ApplyCharacterAttackDamage(ref attacker, ref enemy, string strikeType, 
 	if (isMiniStrike) damageMtp -= 0.7;                                               // если пробили ложным ударом фехтовальщика, а блока и не было
 
 	Hungman(attacker, &damageMtp);
+	DrownedBlade(attacker, enemy, &damageMtp);
 	float resultDamage = damage * func_fmax(0.0, damageMtp);                          // итого базовый урон * мультипликатор
 	
 	if(isBackstab && sti(attacker.index) == GetMainCharacterIndex())

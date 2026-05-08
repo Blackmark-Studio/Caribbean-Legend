@@ -1,22 +1,22 @@
 CONTRABAND {Контрабанда}
-EXPORT {Экспорт}
-IMPORT {Импорт}
-Trade_assistant {Торговый ассистент}
-No_price {Нет списка цен}
-No_profit {Нет выгодных сделок}
-Distance {Расстояние}
-To {Туда}
-From {Обратно}
 day {день}
 day2 {день}
 days {дней}
+Distance {Расстояние}
+EXPORT {Экспорт}
+From {Обратно}
 hour {час}
 hour2 {час}
 hours {часов}
 hours2 {часа}
+IMPORT {Импорт}
 nautical_mile {морская миля}
 nautical_mile2 {морская миля}
 nautical_miles {морских миль}
 nautical_miles2 {морские мили}
+No_price {Нет списка цен}
+No_profit {Нет выгодных сделок}
+To {Туда}
+Trade_assistant {Торговый ассистент}
 TRAVEL_from {от}
 TRAVEL_to {до}

@@ -1,0 +1,38 @@
+Node0_a {Yılın son çeyreği geliyor - Gölge Mevsimi başlıyor. Atlantik'i kasıp kavuran kasırgalar diner, ama sonuçları her yerde hissedilir. Garnizonlar hastalık ve açlıkla harap olmuştur, ticaret zincirleri kopmuştur, Karayipler ise kışı beklerken dona kalmıştır.$br$redBu mevsimde deniz kızıl renge bürünür - kıyılarda aç ve öfkeli korsanlar dehşet saçar, ulusal filolar zayıflamış düşmandan en büyük payı koparmaya çalışır ve kaçakçılar takımadaların en değerli ve en zengin insanları hâline gelir.}
+Node0_a_action {Yas ve güç zamanı geldi}
+Node0_b_a {Nemle birlikte mürettebatı ve kolonicileri kırıp geçiren hastalıklar da çekilir. Belirgin biçimde boşalan şehir sokakları, meyhaneler ve kışlalar hastalıkların yayılmasını doğal olarak zorlaştırır; bu da sefere çok daha az ilaçla çıkmayı mümkün kılar.}
+Node0_b_a_reaction {Herkese çift porsiyon grog!}
+Node0_b_a_reaction_log {Hastalıkları önlemek için herkese fazladan birer porsiyon grog vermeye karar veriyorsun. Bu, ilaçlardan tasarruf etmeni sağlayacak.}
+Node0_b_b {Fırtına Mevsimi bu yıl özellikle acımasızdı. Hastalık salgınları ölümcül bir kasırga gibi Karayipler'i kasıp kavurdu, şehirleri ve kışlaları boşalttı. Yalnızca en sağlıklı ve dayanıklı olanlar hayatta kaldı; artık hiçbir illet onları korkutmuyor. Bu da ilaçlardan ciddi ölçüde tasarruf etmeyi sağlar.}
+Node0_b_b_reaction {Herkese bir porsiyon şifalı ot!}
+Node0_b_b_reaction_log {Hastalıkları önlemek için herkese şifalı ot vermeye karar veriyorsun. Bu, ilaçlardan tasarruf etmeni sağlayacak.}
+Node0_b_c {Bu yıl yağışlı mevsim normalden daha erken çekildi. Rüzgârlar limanları kuruttu, rutubet kışlalardan ve depolardan çıktı, nefes almak belirgin biçimde kolaylaştı. Ateşli hastalıklar dinmeye başladı, insanlar daha hızlı toparlanıyor ve iskelelerde yeniden denize açılmak isteyenler görülüyor. Takımadalar sanki derin bir nefes almış gibi; herkes geleceğe umutla bakıyor.}
+Node0_b_c_reaction {Gemiye hoş geldiniz!}
+Node0_b_c_reaction_log {Olabildiğince çok denizci çekmek için bağlantılarını ve namını kullanıyorsun.}
+Node0_b_d {Yaz beklenildiği kadar acımasız çıkmadı. Hastalıklar zayıf olanları kırıp geçirmedi ve sonbahara gelindiğinde limanlarda her zamankinden daha fazla insan var. Ama dert de onlarla birlikte kaldı - peşlerinden sürüklenip yeni mürettebatlara yapışıyor. Hastalıklar gemide her an patlak verebilir; buna hazırlıklı olmak gerekir.}
+Node0_b_d_reaction {Sağlığı nasıl düzelteceğimi biliyorum}
+Node0_b_d_reaction_log {Acemiler arasından en sağlıklı olanları seçip hastalanma ihtimalini azaltacak şekilde gemiye dağıtıyorsun.}
+Node0_c_a {Buna karşılık gemi onarımı pahalı bir lükse dönüştü. Gemi kerestesi stokları gözle görülür biçimde tükeniyor, her çivi normalin üç katına mal oluyor ve ustalar, başvuranların akınıyla başa çıkabilmek için fiyatları yükseltmek zorunda kalıyor.}
+Node0_c_a_reaction {Fiyatı düşürebilir miyiz?}
+Node0_c_a_reaction_log {Geminin yapısına dair bilgini kullanarak onarım masraflarından tasarruf etmeye karar veriyorsun. İşten anlayan birini kazıklamak çok daha zordur.}
+Node0_c_b {Öte yandan bir gemiyi onarmak hiç kolay olmayacak; atölyeler kötü hava yüzünden harap olmuş, marangoz da yetersiz. Tersanelerin önünde hırpalanmış gemiler kuyruk oluşturuyor ve ustalar savaş gemilerine öncelik veriyor. Onarım, her kaptanın karşılayamayacağı bir lükse dönüşüyor.}
+Node0_c_b_reaction {Önce savaş gemileri mi?}
+Node0_c_b_reaction_log {Askeri eğitiminizi kullanarak kendinizi devriye gemisi gibi gösteriyor ve kuyrukta öne geçiyorsunuz.}
+Node0_c_c {Yaz kasırgalarından sonra resifler ve sığlıklar enkazla dolup taşıyor. Valilerin emriyle değerli ne varsa kalelere ve tersanelere taşınıyor; tahtalar, serenler, çapalar, hatta bütün direkler bile. Ambarlardan toplar çıkarılıyor, pasları temizleniyor ve depoya konuyor. Malzeme beklenenden bol çıktı, bu yüzden onarım maliyetleri o kadar da yükselmedi.}
+Node0_c_c_reaction {Bizde de var!}
+Node0_c_c_reaction_log {Onarıma yarayacak her türlü malzemenin aktif biçimde toplanması emrini veriyorsun. Deneyimli denizcilerden oluşan ekip, tersanede fiyatı düşürmeye yetecek kadar değerli şeyi hızla bir araya getirecektir.}
+Node0_d_a {Dükkânlarda son barut fıçılarıyla şeker çuvalları için kavga çıkıyor; tüccarlar ise fiyatların daha da yükselmesini bekleyerek kalan malları ellerinde tutuyor. Bazı yerlerde hâlâ mal bulunabiliyor, ama fiyatları her zamankinden çok daha yüksek.}
+Node0_d_a_reaction {Daha ucuza nereden alınacağını biliyoruz!}
+Node0_d_a_reaction_log {Kurulmuş ticari bağlantıların ve saygın birçok tüccarla olan kişisel tanışıklıkların sayesinde dükkânlardaki kâr payını önemli ölçüde azaltabileceksin.}
+Node0_d_b {Yıl sonuna doğru boşalan depolar bu kez özellikle kasvetli görünüyor. Bunun sebebinin ne olduğu tam olarak belli değil - kötü hasat, Avrupa'dan gelen birkaç başarısız sefer ya da azmış korsanlar - ama mal kıtlığı şu anda özellikle keskin.}
+Node0_d_b_reaction {Kimde hâlâ stok kaldığını biliyoruz}
+Node0_d_b_reaction_log {Kaçakçılarla kurduğun sağlam bağlar ve gölgeli çevrelerdeki iyi itibarın sayesinde, herkesten çok daha büyük bir mal stoğu sana düşecek. Seçilmiş olmak her zaman hoş bir şeydir.}
+Node0_d_c {Bu kez yetkililer bölgede aktif bir mücadeleyi dayatacak kadar güçlerini korudu ve her vali olabildiğince çok serbest kaptanı kendi sancağı altına çekmeye çalışıyor.$br$redFırtınalar diner dinmez, düzenlemelerin gevşetildiği haberi kolonilere hızla yayıldı. Artık savaşta ele geçirilen yükler ayrıntılı denetime tabi tutulmuyor. Ganimet neredeyse yasal hâle geliyor ve korsanlıkla taç adına hizmet arasındaki çizgi bulanıklaşıyor. Bu da mal kıtlığını bir nebze hafifletecek ve fiyatları düşürecek.}
+Node0_d_c_reaction {Çalıntı mallar?}
+Node0_d_c_reaction_log {Çalıntı malları yasal gibi göstermeyi her zaman bilirdin; yeni kurallar da bu işi senin için daha da kolaylaştıracak.}
+Node0_d_d {Bu sonbaharda mal kıtlığı valileri umutsuz önlemlere başvurmaya zorladı. Tüm devriyeler şehirlerden çıkarıldı; ormanlar taranıyor, kıyı koyları aranıyor, küçük tekneler denetleniyor ve şüpheli depolar fazla söze gerek görülmeden açılıyor.$br$redKaçakçılar ibret olsun diye yakalanıyor, mallara da hazine adına el konuluyor. Bu, işleri bir miktar yumuşatıyor ve fiyatları dizgin altında tutmayı sağlıyor, ama karaborsa fazla tehlikeli hâle geliyor. Bu kement gevşeyene kadar tek bir kaçakçı bile denize açılamayacak.}
+Node0_d_d_reaction {Her zaman bir anlaşma yolu vardır}
+Node0_d_d_reaction_log {Karanlık işleri nasıl ayarlayacağını ve fark edilmeden nasıl kalacağını çok iyi biliyorsun. Kaçakçıların sana inanacağı kadar kurnaz bir planı kolayca uydurabilirsin.}
+Node0_success {Bu zorlu döneme tam hazırlıklı giriyorsun. Her yıl Season of Shade, takımadalarda yaşayan herkes için bir sınav ve dayanıklılık testidir. Bir sonrakini görecek kadar yaşayacak mıyız?}
+Node0_success_action {Yelken aç!}
+Node0_title {Gölge Mevsimi}

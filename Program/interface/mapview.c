@@ -401,14 +401,6 @@ void ShowInfoWindow()
 
 	switch (sCurrentNode)
 	{
-		case "WEIGHT":
-			sHeader = XI_ConvertString("Weight");
-			sText1 = GetRPGText("Weight");
-		break;
-		case "MONEY":
-			sHeader = XI_ConvertString("Money");
-			sText1 = GetRPGText("Money");
-		break;
 		case "TABLE_MAPS":
 			int areasMap = CountAreasMapFromCharacter();
 			
@@ -426,7 +418,8 @@ void ShowInfoWindow()
 		break;
 	}
 
-	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 128, 128, false);
+	if (CommonHeaderTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3)) return;
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 128, 128, false, false);
 }
 
 void HideInfoWindow()
@@ -438,7 +431,6 @@ void HideInfoWindow()
 void ShowBestMapWindow()
 {
 	string sColony, sPic, sPicGroup, sSiegeCol;
-	int Width, Height;
 	float X, Y;
 	ref rColony;
 
@@ -464,10 +456,13 @@ void ShowBestMapWindow()
 		if(sColony == "IslaDeVieques") continue;
 		if(sColony == "SanAndres") continue;
 		if(sColony == "Is") continue;
-		if(sColony == "IslaMona" && !CheckAttribute(CharacterFromID("Islamona_carpenter"), "Storage.Activate")) continue;
 
 		if(sColony == "IslaMona")
+        {
+            int idx = GetCharacterIndex("Islamona_carpenter");
+            if (idx < 0 || "Storage.Activate" !in &Characters[idx]) continue;
 			sPic = "Smuggler";
+		}
 		else
 			sPic = GetNationNameByType(sti(rColony.nation));
 			

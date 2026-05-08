@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 			dialog.text = "멈춰라! 당장 무기를 내려놓고, 나리, 우리를 따라오시오!";
 			link.l1 = "이게 도대체 뭐야?";
 			link.l1.go = "Sharlie_arest_1";
-			if (CheckCharacterItem(PChar, "knife_03")) pchar.Sharlie.KnifeMonpe = true;
+
 		break;
 		
 		case "Sharlie_arest_1":
@@ -1752,6 +1752,7 @@ case "Europe":
 			link.l1.go = "MOT_Barbie_Escadra";
 			
 			AddItems(pchar, "gold_dublon", 40);
+			DeleteAttribute(NPChar, "moneyNotGiven");
 			Log_info("You've received 40 doubloons");
 			PlaySound("Interface\important_item.wav");
 			AddCharacterExpToSkill(pchar, "Leadership", 20);
@@ -1812,7 +1813,7 @@ case "Europe":
 		break;
 		
 		case "MOT_Barbie_101":
-			if (IsCharacterPerkOn(Pchar, "Trustworthy"))
+			if (!CheckAttribute(NPChar, "moneyNotGiven"))
 			{
 				dialog.text = "모범적으로 호위해 주셔서 감사합니다, 선장님. 아무런 사고도 없어서 기쁩니다.";
 				link.l1 = "거래하게 되어 기쁩니다, 나리. 이제 실례하겠습니다, 처리할 일이 많아서요.";

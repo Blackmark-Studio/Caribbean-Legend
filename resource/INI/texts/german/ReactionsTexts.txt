@@ -1,13 +1,5 @@
 NoLootCorpse0 {Die Taschen dieses armen Teufels sind völlig leer.}
 NoLootCorpse1 {Er hatte wohl nichts von Wert.}
-NoLootCorpse2 {Bei diesem sind die Taschen leer.}
-NoLootCorpse3 {Habe ich etwas übersehen? Nein, eindeutig leer.}
-NoLootCorpse4 {Noch ein Toter ohne einen Pfennig in der Tasche.}
-NoLootCorpse5 {Er lebte wohl auf Pump.}
-NoLootCorpse6 {Dieser Tote kann nicht mal den Fährmann bezahlen.}
-NoLootCorpse7 {Keine Kugeln, kein Pulver. Umsonst durchsucht.}
-NoLootCorpse8 {Kein Geld in seinen Taschen, auch nicht im Hemd.}
-NoLootCorpse9 {Er war bettelarm, nicht einmal eine Münze.}
 NoLootCorpse10 {Warum verschwende ich meine Zeit? Dieser ist leer.}
 NoLootCorpse11 {In seinen Taschen klafft die Leere.}
 NoLootCorpse12 {Nichts da. Vielleicht geheime Taschen?}
@@ -18,4 +10,12 @@ NoLootCorpse16 {Der arme Kerl zog leicht bepackt in die Schlacht.}
 NoLootCorpse17 {Er hat sich mit seinem letzten Geld bewaffnet.}
 NoLootCorpse18 {Eine Leiche wie jede andere. Nichts dran.}
 NoLootCorpse19 {Er hat wohl alle Schätze in einer Truhe gelassen.}
+NoLootCorpse2 {Bei diesem sind die Taschen leer.}
 NoLootCorpse20 {Er hat im Kampf wohl all seine Wertsachen verloren.}
+NoLootCorpse3 {Habe ich etwas übersehen? Nein, eindeutig leer.}
+NoLootCorpse4 {Noch ein Toter ohne einen Pfennig in der Tasche.}
+NoLootCorpse5 {Er lebte wohl auf Pump.}
+NoLootCorpse6 {Dieser Tote kann nicht mal den Fährmann bezahlen.}
+NoLootCorpse7 {Keine Kugeln, kein Pulver. Umsonst durchsucht.}
+NoLootCorpse8 {Kein Geld in seinen Taschen, auch nicht im Hemd.}
+NoLootCorpse9 {Er war bettelarm, nicht einmal eine Münze.}

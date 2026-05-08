@@ -4,15 +4,6 @@ void AIAttack_GroupAttack(string sGroupAttacker, string sGroupAttacked, bool bAt
 	ref rG1 = Group_GetGroupByID(sGroupAttacker);
 	ref rG2 = Group_GetGroupByID(sGroupAttacked);
 
-	//float fHP1 = Group_GetPowerHP_R(rG1);
-	//float fHP2 = Group_GetPowerHP_R(rG2);
-
-	//float fHPRatio1 = fHP1 / (fHP2 + 0.0001);
-	//float fHPRatio2 = fHP2 / (fHP1 + 0.0001);  //to_do
-
-	//string sGroupType1 = Group_GetTypeR(rG1);
-	//string sGroupType2 = Group_GetTypeR(rG2);
-
     //fix вылетов - проверки
     if (!CheckAttribute(rG1, "Task")) return;
 
@@ -22,87 +13,85 @@ void AIAttack_GroupAttack(string sGroupAttacker, string sGroupAttacked, bool bAt
 		if (rG1.Task.Target != sGroupAttacked)
             return;
 	}
-	
+
 	// ====================================================== set attack task to ships
 	if (sGroupAttacker != PLAYER_GROUP)
 	{
 		int iIndex = 0;
 
-		int iCharactersNum2 = Group_GetCharactersNumR(rG2);
-		int iDeadCharactersNum2 = Group_GetDeadCharactersNumR(rG2);
-		int iCharactersNum1 = Group_GetCharactersNumR(rG1) - Group_GetDeadCharactersNumR(rG1); //кол-во живых кораблей в атакующей группе
+        int iCharactersNum1 = Group_GetLiveCharactersNumR(rG1);
+		int iCharactersNum2 = Group_GetLiveCharactersNumR(rG2);
+        float fCharactersRatio =  iCharactersNum2 > 0 ? float(iCharactersNum1) / iCharactersNum2 : 0.0;
 
 		// find targets for rG1
-		if (iCharactersNum2 != iDeadCharactersNum2 && iCharactersNum2 > 0)
+		if (iCharactersNum2 > 0)
 		{
 			int i = 0;
-			
 			while (true)
 			{
-				int iCharacterIndex = Group_GetCharacterIndexR(rG1, i); i++;
-				if (iCharacterIndex < 0) { break; }
+				int iCharacterIndex = Group_GetCharacterIndexR(rG1, i);
+				i++;
+				if (iCharacterIndex < 0) break;
+                ref rChar = &Characters[iCharacterIndex];
 				//SetCharacterRelationBoth(sti(rCharacter2.index), iCharacterIndex, RELATION_ENEMY);
-				if (LAi_IsDead(&Characters[iCharacterIndex])) { continue; }
+				if (LAi_IsDead(rChar)) continue;
+				if (CheckAttribute(rChar, "ShipTaskLock")) continue; // boal eddy
 
 				int iCharacterVictim = -1;
 				while (iCharacterVictim < 0)
 				{
 					iCharacterVictim = Group_GetCharacterIndexR(rG2, iIndex); 
-					if (iCharacterVictim < 0) { iIndex = 0; continue; }
-					if (LAi_IsDead(&Characters[iCharacterVictim])) { iCharacterVictim = -1; }
+					if (iCharacterVictim < 0)
+					{
+						iIndex = 0;
+						continue;
+					}
+					if (LAi_IsDead(&Characters[iCharacterVictim])) iCharacterVictim = -1;
 					iIndex++;
 				}
-				
-                if (CheckAttribute(&Characters[iCharacterIndex], "ShipTaskLock"))  { continue; } // boal eddy
+
 				//eddy. здесь тоже надо проверять. 
-				if (CheckAttribute(&Characters[iCharacterIndex], "AnalizeShips"))
-				{				
+				if ("AnalizeShips" in rChar && "Bravery" !in rG1)
+				{
 					//если только что свалил от форта - не перебивать таск, а отправить в АИ на такты
-					if (CheckAttribute(&Characters[iCharacterIndex], "Tmp.fWatchFort.Qty") && sti(Characters[iCharacterIndex].Tmp.fWatchFort.Qty) == 200)
+					if (CheckAttribute(rChar, "Tmp.fWatchFort.Qty") && sti(rChar.Tmp.fWatchFort.Qty) == 200)
 					{
-						Characters[iCharacterIndex].Tmp.fWatchFort = 199; //следующим тактом в АИ проверим форт
-						Characters[iCharacterIndex].Ship.LastBallCharacter = iCharacterVictim;
+						rChar.Tmp.fWatchFort = 199; //следующим тактом в АИ проверим форт
+						rChar.Ship.LastBallCharacter = iCharacterVictim;
 					}
 					else
-					{	
-
-						//форты ни при чем
-						if (stf(Characters[iCharacterIndex].ship.hp) > (stf(Characters[iCharacterVictim].ship.hp) / 2) || GetCrewQuantity(&Characters[iCharacterIndex]) > GetCrewQuantity(&Characters[iCharacterVictim]))
+					{
+						// Форты ни при чем
+						if (float(rChar.ship.hp) > float(Characters[iCharacterVictim].ship.hp) * 0.35 ||
+                            GetCrewQuantity(rChar) > GetCrewQuantity(&Characters[iCharacterVictim]))
 						{	//если есть шанс победить, то проверим количественное соотношение - не лезть на большие эскадры
-							if (((iCharactersNum2 - iDeadCharactersNum2) / iCharactersNum1) >= 2.0 && sti(RealShips[sti(characters[iCharacterIndex].ship.type)].Class) > sti(RealShips[sti(characters[iCharacterVictim].ship.type)].Class))
-							{							
-								Ship_SetTaskRunaway(SECONDARY_TASK, iCharacterIndex, iCharacterVictim);								
-							}
-							else
+							if (fCharactersRatio > 0.5 ||
+                                int(RealShips[sti(rChar.ship.type)].Class) <= int(RealShips[sti(characters[iCharacterVictim].ship.type)].Class))
 							{
-								Ship_SetTaskAttack(SECONDARY_TASK, iCharacterIndex, iCharacterVictim);
-							}							
-						}
-						else
-						{	//если анализатор слабей, то проверить - а не круче ли он по количеству
-							if ((iCharactersNum1 / (iCharactersNum2 - iDeadCharactersNum2)) >= 2.2)
-							{
-								Ship_SetTaskAttack(SECONDARY_TASK, iCharacterIndex, iCharacterVictim);
+                                Ship_SetTaskAttack(SECONDARY_TASK, iCharacterIndex, iCharacterVictim);
 							}
 							else
 							{
 								Ship_SetTaskRunaway(SECONDARY_TASK, iCharacterIndex, iCharacterVictim);
-							}							
-						}						
-					}					
+							}
+						}
+						else
+						{	//если анализатор слабей, то проверить - а не круче ли он по количеству
+							if (fCharactersRatio >= 2.0) Ship_SetTaskAttack(SECONDARY_TASK, iCharacterIndex, iCharacterVictim);
+							else Ship_SetTaskRunaway(SECONDARY_TASK, iCharacterIndex, iCharacterVictim);
+						}
+					}
 				}
 				else
 				{
+                    DeleteAttribute(rG1, "Bravery");
 					Ship_SetTaskAttack(SECONDARY_TASK, iCharacterIndex, iCharacterVictim);
 				}
 				// boal это моя строка, нужно её тестить SetCharacterRelationBoth(iCharacterVictim, iCharacterIndex, RELATION_ENEMY); //fix
-				
-			}				
-		}		
+			}
+		}
 	}
 	// ====================================================== set attack task to ships
-	
-	// bool bTaskLock = false;
 
 	if (sGroupAttacked == PLAYER_GROUP) return;
 	if (!bAttackedTask) return; 
@@ -112,22 +101,7 @@ void AIAttack_GroupAttack(string sGroupAttacker, string sGroupAttacked, bool bAt
 	{ 
 		if (sti(rG2.Task) != AITASK_ATTACK) return;
 		if (rG2.Task.Target != sGroupAttacker) return;
-		// bTaskLock = true;
 	}
-
-	/*float fTmp = fHPRatio2;// * Clampf(fLeadership + 0.01);
-
-	int iTask = AITASK_ATTACK;
-	if (!bTaskLock) iTask = AIAttack_SelectTask(sGroupType2, fTmp);
-	switch (iTask)
-	{
-		case AITASK_ATTACK:
-			Group_SetTaskAttackEx(sGroupAttacked, sGroupAttacker, false);
-		break;
-		case AITASK_RUNAWAY:
-			Group_SetTaskRunaway(sGroupAttacked, sGroupAttacker);
-		break;
-	}  */
 
 	// упростил до прямого приказа, убегать будут НПС в группе по одному, а не целиком
 	Group_SetTaskAttackEx(sGroupAttacked, sGroupAttacker, false);
@@ -245,7 +219,7 @@ void AIAttack_CheckTask(string sGroupID)
 		}
 		if (iCharacterIndex != nChar1Idx) newCommanderIndex = iCharacterIndex;
 
-		if (CheckAttribute(rCharacter, "SeaAI.Task"))
+		if (CheckAttribute(rCharacter, "SeaAI.Task.Target"))
 		{
 			if (sti(rCharacter.SeaAI.Task) != AITASK_ATTACK) continue;
 			if (!LAi_IsDead(&Characters[sti(rCharacter.SeaAI.Task.Target)])) continue;

@@ -605,14 +605,6 @@ void ShowInfoWindow()
 		    sText1  = GetRPGText("PERK_TABLE_NEED_desc");
 		break;
 		// sith --->
-		case "WEIGHT":
-		    sHeader = XI_ConvertString("Weight");
-			sText1 = GetRPGText("Weight");
-		break;
-		case "MONEY":
-		    sHeader = XI_ConvertString("Money");
-			sText1 = GetRPGText("Money");
-		break;		
 		case "RANK":
 		    sHeader = XI_ConvertString("Rank");
 			sText1 = GetRPGText("Rank");
@@ -621,7 +613,8 @@ void ShowInfoWindow()
 	}
 	aref perk = PerkFromId(selectedPerk);
 	SetDescriptorsTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3, &perk);
-	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false);
+	if (CommonHeaderTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3)) return;
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false, false);
 	HidePerkSelect();
 }
 
@@ -1009,8 +1002,9 @@ void ChoosePerk(string perkName)
 	aref perk;
 	makearef(perk, ChrPerksList.list.(perkName));
 	string reason = "";
+	string disableReason = "";
 	string descr = GetPerkDescribe(perk, xi_refCharacter);
-	bool canTake = CanTakePerk(&xi_refCharacter, &perk, &reason);
+	bool canTake = CanTakePerk(xi_refCharacter, &perk, &reason);
 	bool isAlreadyHave = reason == "alreadyHave";
 	selectedPerk = perkName;
 
@@ -1020,7 +1014,13 @@ void ChoosePerk(string perkName)
 	if (IsAlreadyHave || reason == "disabled") showingPrice = "";
 	SetFormatedText("PERKPRICE", showingPrice);
 	SetNodeUsing("PERKON", isAlreadyHave); // галочка уже есть
-	SetSelectable("PERKACCEPT", canTake);  // кнопка взятия перка
+
+	// кнопка взятия перка
+	SetNodeUsing("PERKACCEPT", CouldTakePerk(xi_refCharacter, &perk, &disableReason));
+	if (disableReason != "" && !isAlreadyHave) descr += NewStr() + "~" + NewStr() + GetConvertStrB("disabled_" + disableReason, "AbilityDescribe.txt");
+	else if (reason == "NotEnoughRank") descr += NewStr() + "~" + NewStr() + DLG_Convert("rankRequired", "AbilityDescribe.txt", &perk);
+	SetSelectable("PERKACCEPT", canTake);
+
 	SetNewGroupPicture("PERKPICTURE", PERKPICTURE(isAlreadyHave), perkName); // иконка перка
 	SetNewGroupPicture("PERKPICTURE_BASE", PERKPICTURE(isAlreadyHave), PERKPICTURE_BASE(isAlreadyHave, &perk)); // подложка перка
 	int color = argb(255,128,128,128);
@@ -1071,8 +1071,7 @@ void SetFlagPictures(ref chr, ref perk, string perkName, string descr)
 
 	if (showFlags)
 	{
-		SetSelectable("PERKACCEPT", false);
-		SetNodeUsing("PERKPRICE", false);
+		SetFormatedText("PERKPRICE", "");
 		SetNewGroupPicture("PERKPICTURE", PERKPICTURE(hasAllFlags), perkName); // иконка перка
 		SetNewGroupPicture("PERKPICTURE_BASE", PERKPICTURE(hasAllFlags), PERKPICTURE_BASE(hasAllFlags, perk)); // подложка перка
 		SendMessage(&GameInterface,"lsll", MSG_INTERFACE_MSG_TO_NODE, "PERKPICTURE_BASE", 4, argb(255,128,128,128));
@@ -1394,4 +1393,19 @@ void UpdateFreePoints()
 		GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Value = sti(xi_refCharacter.perks.FreePoints_ship_exp);	
 		SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"PERSONAL_PROGRESSBAR",0);
 	}
+}
+
+// Проверяем, показывать ли кнопку «Взять» в перке, т. е. может ли быть перк в принципе вкачен персом
+bool CouldTakePerk(ref chr, ref perkEntity, ref reason)
+{
+	ref perk = FindPerk_VT(&perkEntity);
+	string perkName = GetAttributeName(perk);
+	
+	if (CheckAttribute(perk, "HeroType")) reason = "heroType";
+	else if (IsMainCharacter(chr) && CheckAttribute(perk, "NPCOnly")) reason = "NPCOnly";
+	else if (!IsMainCharacter(chr) && CheckAttribute(perk, "PlayerOnly")) reason = "PlayerOnly";
+	else if (perkName == "Captain" && CheckAttribute(chr, "CompanionDisable")) reason = "CompanionDisable";
+	if (HasSubStr(perkName, "flag")) return false;
+
+	return reason == "";
 }

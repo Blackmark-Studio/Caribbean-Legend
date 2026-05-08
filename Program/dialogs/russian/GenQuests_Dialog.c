@@ -6291,7 +6291,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddMoneyToCharacter(pchar, -1000);
 			AddCharacterCrew(pchar, 1);
-			ChangeCrewExp(pchar, "Sailors", 10);
+			ChangeCrewExp(pchar, "Sailors", 10, true);
 			AddCrewMorale(pchar, 1);
 			LAi_SetStayType(npchar);
 			GetCharacterPos(pchar, &locx, &locy, &locz);
@@ -6322,7 +6322,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddMoneyToCharacter(pchar, -1000);
 			AddCharacterCrew(pchar, 1);
-			ChangeCrewExp(pchar, "Cannoners", 10);
+			ChangeCrewExp(pchar, "Cannoners", 10, true);
 			AddCrewMorale(pchar, 1);
 			LAi_SetStayType(npchar);
 			GetCharacterPos(pchar, &locx, &locy, &locz);
@@ -6353,7 +6353,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddMoneyToCharacter(pchar, -1000);
 			AddCharacterCrew(pchar, 1);
-			ChangeCrewExp(pchar, "Soldiers", 10);
+			ChangeCrewExp(pchar, "Soldiers", 10, true);
 			AddCrewMorale(pchar, 1);
 			LAi_SetStayType(npchar);
 			GetCharacterPos(pchar, &locx, &locy, &locz);

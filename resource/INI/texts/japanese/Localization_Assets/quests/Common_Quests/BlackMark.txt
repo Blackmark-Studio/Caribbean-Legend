@@ -1,12 +1,4 @@
 BlackMark_1 {密輸業者}
-BlackMark_2 { }
-BlackMark_3 {Francis}
-BlackMark_4 {Reasley}
-BlackMark_5 {Tommy}
-BlackMark_6 {Irons}
-BlackMark_7 { }
-BlackMark_8 { }
-BlackMark_9 { }
 BlackMark_10 { }
 BlackMark_11 {Gabriel}
 BlackMark_12 {Callow}
@@ -17,4 +9,12 @@ BlackMark_16 {終わった。 ゲイブが来る前に急いで行こう}
 BlackMark_17 {2時間後…}
 BlackMark_18 {朝になった…}
 BlackMark_19 { }
+BlackMark_2 { }
 BlackMark_20 { }
+BlackMark_3 {Francis}
+BlackMark_4 {Reasley}
+BlackMark_5 {Tommy}
+BlackMark_6 {Irons}
+BlackMark_7 { }
+BlackMark_8 { }
+BlackMark_9 { }

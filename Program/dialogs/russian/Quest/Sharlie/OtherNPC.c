@@ -123,7 +123,7 @@ void ProcessDialogEvent()
 			dialog.text = "Немедленно сдайте оружие, месье, и следуйте за нами!";
 			link.l1 = "Вот так влип...";
 			link.l1.go = "Sharlie_arest_1";
-			if (CheckCharacterItem(PChar, "knife_03")) pchar.Sharlie.KnifeMonpe = true;
+
 		break;
 		
 		case "Sharlie_arest_1":
@@ -1773,6 +1773,7 @@ void ProcessDialogEvent()
 			link.l1.go = "MOT_Barbie_Escadra";
 			
 			AddItems(pchar, "gold_dublon", 40);
+			DeleteAttribute(NPChar, "moneyNotGiven");
 			Log_info("Получено 40 дублонов");
 			PlaySound("Interface\important_item.wav");
 			AddCharacterExpToSkill(pchar, "Leadership", 20);
@@ -1833,7 +1834,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "MOT_Barbie_101":
-			if (IsCharacterPerkOn(Pchar, "Trustworthy"))
+			if (!CheckAttribute(NPChar, "moneyNotGiven"))
 			{
 				dialog.text = "Благодарю вас за образцовое сопровождение, капитан. Хорошо, что обошлось без приключений.";
 				link.l1 = "Приятно было иметь с вами дело, месье. А теперь, извините, но у меня много дел.";

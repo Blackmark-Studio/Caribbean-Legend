@@ -158,7 +158,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_Dich_EtapTwo_Alonso_3":
-			dialog.text = "싸움이 벌어졌어 — 호세가 마르셀을 찔렀지. 자기가 "역병을 옮겼다"고 소리치더군.";
+			dialog.text = "싸움이 벌어졌어 — 호세가 마르셀을 찔렀지. 자기가 역병을 옮겼다 고 소리치더군.";
 			link.l1 = "상황이 더 나빠지고 있나?";
 			link.l1.go = "Memento_Dich_EtapTwo_Alonso_4";
 		break;

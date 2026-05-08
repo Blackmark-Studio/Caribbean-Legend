@@ -47,7 +47,7 @@ void wdmStormGen(float dltTime, float playerShipX, float playerShipZ, float play
 	int numStorms = wdmGetNumberStorms();
 	if(numStorms < 1)
 	{
-		wdmTimeOfLastStorm = wdmTimeOfLastStorm + dltTime * WDM_STORM_RATE * 1000.0 * iEncountersRate;
+		wdmTimeOfLastStorm = wdmTimeOfLastStorm + dltTime * GetAttributeFloatOrDefault(&SeasonSystem, "rates.storm", WDM_STORM_RATE) * 1000.0 * iEncountersRate;
 		if(rand(1001) < wdmTimeOfLastStorm)
 		{
 			wdmCreateStorm();
@@ -74,10 +74,10 @@ void wdmShipEncounter(float dltTime, float playerShipX, float playerShipZ, float
 	{
 		//Вероятности появления
 		//wdmTimeOfLastMerchant += dltTime * WDM_MERCHANTS_RATE * 1000.0 * iEncountersRate;
-		wdmTimeOfLastWarring  += dltTime * WDM_WARRING_RATE * 1000.0 * iEncountersRate;
+		wdmTimeOfLastWarring  += dltTime * GetAttributeFloatOrDefault(&SeasonSystem, "rates.fight", WDM_WARRING_RATE) * 1000.0 * iEncountersRate;
 		//wdmTimeOfLastFollow += dltTime * WDM_FOLLOW_RATE  * 1000.0 * iEncountersRate;
-		wdmTimeOfLastRandom   += dltTime * WDM_GENERAL_RATE * 1000.0 * iEncountersRate;
-		wdmTimeOfLastSpecial  += dltTime * WDM_SPECIAL_RATE * 1000.0 * iEncountersRate;
+		wdmTimeOfLastRandom   += dltTime * GetAttributeFloatOrDefault(&SeasonSystem, "rates.general", WDM_GENERAL_RATE) * 1000.0 * iEncountersRate;
+		wdmTimeOfLastSpecial  += dltTime * GetAttributeFloatOrDefault(&SeasonSystem, "rates.special", WDM_SPECIAL_RATE) * 1000.0 * iEncountersRate;
 
 		//Выбираем
 		if(bEncOffGlobal)

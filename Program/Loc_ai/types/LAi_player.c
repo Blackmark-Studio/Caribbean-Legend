@@ -107,9 +107,9 @@ void LAi_type_player_CharacterUpdate(aref chr, float dltTime)
 		chr.chr_ai.type.weapontime = "0";
 	}
 	// belamour дополнительные возможности обмануть стражу -->
-	if(CheckAttribute(loadedLocation,"soldiers"))
+	if (CheckAttribute(loadedLocation,"soldiers"))
 	{
-		if(StealthEnable)
+		if (StealthEnable)
 		{
 			int Vigilance = 360;
 			if(isDay()) Vigilance /= 3;
@@ -155,7 +155,7 @@ void LAi_type_player_CharacterUpdate(aref chr, float dltTime)
 				StealthLuck /= 5;
 				WarningTime --;
 			}
-			if(StealthLuck < 0 || LAi_CheckFightMode(pchar)) StealthLuck = 0;
+			if(StealthLuck < 0 || LAi_CheckFightMode(pchar) != CHR_MODE_PEACE) StealthLuck = 0;
 			if(StealthLuck > 360) StealthLuck = 360;
 			UpdateStealthIndicator(StealthLuck, Vigilance);
 		}
@@ -198,7 +198,7 @@ bool LAi_type_player_CanDialog(aref chr, aref by)
 	//Если уже говорим, то откажем
 	if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG) return false;
 	//Если сражаемся, то откажем
-	if(SendMessage(chr, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode") != 0) return false;
+	if(SendMessage(chr, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode") != CHR_MODE_PEACE) return false;
 	//Согласимся на диалог
 	return true;
 }

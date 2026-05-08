@@ -713,7 +713,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         }
 		//<-- LaEspadaDelRey
 		
-		Dialog.Text = LinkRandPhrase("Nun... hic! ","Ach, guter Rum! ","Nun... ")+SelectRumourEx("Stammgast",NPChar);
+		Dialog.Text = LinkRandPhrase("Nun... hic! ","Ach, guter Rum! ","Nun... ")+SelectRumourEx("habitue",NPChar);
 		link.l1 = RandPhraseSimple(RandSwear()+"Das ist einen weiteren Becher wert...","Gut, trinken wir noch einmal.");
 		link.l1.go = "sit_3";
 		link.l2 = RandPhraseSimple("Danke, ich sollte gehen.","Eh, verdammt guter Rum. Gut, ich sollte gehen, hab hier Spaß.");
@@ -732,7 +732,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		break;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         case "rumours_capitan":
-			Dialog.Text = SelectRumourEx("Kapitän",NPChar);
+			Dialog.Text = SelectRumourEx("capitan", NPChar);
 			Link.l1 = RandPhraseSimple(RandSwear()+"Interessant! Es gibt noch eine Sache, die ich fragen möchte...","Noch eine Frage.");
 			Link.l1.go = "quests";
 			Link.l2 = RandPhraseSimple("Danke, ich sollte gehen.","Auf Wiedersehen.");
@@ -742,7 +742,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		break;
 		
 		 case "rumours_landcaptain":
-			Dialog.Text = SelectRumourEx("Landkapitän",NPChar);
+			Dialog.Text = SelectRumourEx("landcaptain",NPChar);
 			Link.l1 = RandPhraseSimple(RandSwear()+"Interessant! Es gibt noch eine Sache, die ich fragen möchte...","Noch eine Frage.");
 			Link.l1.go = "question";
 			Link.l2 = RandPhraseSimple("Danke, ich sollte gehen.","Auf Wiedersehen.");
@@ -921,7 +921,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         case "rumours_poor":
 			if (!CheckAttribute(NPChar, "quest.repeat.rumours_poor") || NPChar.quest.repeat.rumours_poor <= 1)
 			{
-				Dialog.Text = SelectRumourEx("arm",NPChar);
+				Dialog.Text = SelectRumourEx("poor", NPChar);
 				Link.l1 = RandPhraseSimple(RandSwear()+"Interessant. Noch eine Frage...","Hm, lass mich etwas anderes fragen...");
 				Link.l1.go = "rumours_poor_2";
 				Link.l2 = RandPhraseSimple("Nun, leb wohl.","Tschüss, Kumpel.");

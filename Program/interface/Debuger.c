@@ -25,11 +25,16 @@ void InitInterface(string iniName)
     SetEventHandler("SetScrollerPos", "SetScrollerPos", 0);
     SetEventHandler("ScrollPosChange", "ProcScrollPosChange", 0);
     SetEventHandler("ScrollTopChange", "ProcScrollChange", 0);
-
+	SetEventHandler("ShowInfoWindow", "ShowInfoWindow", 0);
+	SetEventHandler("HideInfoWindow", "HideInfoWindow", 0);
+	
     GameInterface.reload_edit.str = "Shore75, reload, reload1"; //"Pearl_town_1, reload, reload1";
                                                                          // Pirates_Shipyard, reload, reload1
                                                                          // boarding_cargohold, rld, loc0
 	SetSelectable("B_BACK",false);
+	
+	SetFormatedTextButton("B_34", "#F34");
+	
 }
 
 void ProcessBreakExit()
@@ -57,6 +62,8 @@ void IDoExit(int exitCode)
     DelEventHandler("SetScrollerPos", "SetScrollerPos");
     DelEventHandler("ScrollPosChange", "ProcScrollPosChange");
     DelEventHandler("ScrollTopChange", "ProcScrollChange");
+	DelEventHandler("ShowInfoWindow", "ShowInfoWindow");
+	DelEventHandler("HideInfoWindow", "HideInfoWindow");
 
     if (bSeaActive)
     {
@@ -119,6 +126,20 @@ void ProcCommand()
     string comName = GetEventData();
     string nodName = GetEventData();
 	
+	if(IsStrLeft(nodName, "ANG_") && comName == "click")
+	{
+		CheckCapture(nodName);
+		return;
+	}
+	if(IsStrLeft(nodName, "SHIP_"))
+	{
+		if (comName == "activate" || comName == "click")
+		{
+			iShipType = int(strright(nodName, strlen(nodName) - strlen("SHIP_")));
+			CreateWindRosePoints();
+			WindRose_CheckPlayerShip();
+		}
+	}
 
 	if (comName == "activate" || comName == "click") {
 		if (nodName != "B_RELOAD" && nodName != "B_BACK") {
@@ -128,6 +149,30 @@ void ProcCommand()
 
     switch (nodName)
     {
+	case "WINDROSE_SAVE":
+		if (comName == "activate" || comName == "click")
+			WindRose_Save();
+		break;
+	case "WINDROSE_CANCEL":
+		if (comName == "activate" || comName == "click")
+			CreateWindRosePoints();
+		break;
+	case "WINDROSE_RESET":
+		if (comName == "activate" || comName == "click")
+			WindRose_Reset();
+		break;
+	case "WINDROSE_CHANGESHIP":
+		if (comName == "activate" || comName == "click")
+			WindRose_SetPlayerShip();
+		break;
+	case "WINDROSE_COPY":
+		if (comName == "activate" || comName == "click")
+			WindRose_CopyPoints();
+		break;
+	case "WINDROSE_PASTE":
+		if (comName == "activate" || comName == "click")
+			WindRose_PastePoints();
+		break;
     case "B_F1":
         if (comName == "activate" || comName == "click")
         {
@@ -344,6 +389,12 @@ void ProcCommand()
             CalculateInfoDataF33();
         }
         break;
+	case "B_34":
+        if (comName == "activate" || comName == "click")
+        {
+            OpenWindRoseWindow();
+        }
+        break;
     case "B_BETA":
         if (comName == "activate" || comName == "click")
         {
@@ -396,9 +447,14 @@ void CalculateInfoDataF1()
 {
     // тут высчитываем нужную информацию и выводим в totalInfo - Инициализация -->
     totalInfo = descF1;
-    Pchar.money = sti(Pchar.money) + 500000;
-    AddItems(pchar, "gold_dublon", 100);
-
+ //   - теперь все подозрения с Акулы Додсона будут сняты!
+	
+	AddMoneyToCharacter(pchar, 10000000);
+	AddItems(pchar, "gold_dublon", 500);
+	/*
+	if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie"))AddQuestUserData("BarbTemptation", "sText", " - теперь все подозрения с Акулы Додсона будут сняты");
+	AddQuestRecord("BarbTemptation", "24");
+*/
     //------- проверка ачивок ------------
     /*    
     Achievment_SetStat(pchar, 8, 1);
@@ -407,19 +463,6 @@ void CalculateInfoDataF1()
     if(bSteamAchievements) StoreStats();
 */
 
-    /*
-    float MaxSpeed             = 0.0;
-    float fWindAgainstSpeed = 1.2;
-    float fWindDotShip         = 0.0; 
-    float angY                = 0.0;
-    for(int i = 0; i < 36; i++)
-    {
-        angY = (i * 5)/180.0 * 3.1415926;
-        fWindDotShip = GetDotProduct( 0.0, angY);    
-        MaxSpeed = GetMaxSpeedZ(fWindAgainstSpeed, fWindDotShip);
-        trace("MaxSpeed " + MaxSpeed + " angY " + (i*5)); 
-    }
-*/
     //DumpAttributes(showWindow);
 
     totalInfo = totalInfo + GetAssembledString(" Денег у #sName#а теперь #dmoney#", Pchar);
@@ -477,18 +520,6 @@ void CalculateInfoDataF2()
 	SetCharacterActionSpeed(pchar, "break", 1.0);
 	SetCharacterActionSpeed(pchar, "round", 1.0);
 	SetCharacterActionSpeed(pchar, "feint", 1.0);	*/
-	
-	// МАГИЧЕСКИЕ ЧИСЛА КУРСОВОГО УГЛА
-	/*
-	pchar.test.WindAgainstSpeed.base1		= 1.0;		// База, из нее вычитаем
-	pchar.test.WindAgainstSpeed.baseshift	= 0.5;		// Базовое смещение	
-	pchar.test.WindAgainstSpeed.factor1		= 6.0;		// Множитель в скобках 1
-	pchar.test.WindAgainstSpeed.power		= 0.2;		// Степень
-	pchar.test.WindAgainstSpeed.base2		= 1.0;		// База, к ней прибавляем
-	pchar.test.WindAgainstSpeed.divider		= 6.0;		// Делитель в скобках
-	pchar.test.WindAgainstSpeed.factor2		= 6.0;		// Множитель в скобках
-	pchar.test.WindAgainstSpeed.arcade		= 0.974;	// Множитель прямопарусника по ветру	
-	*/
   
 	loadedLocation.bar_params.bar_scale = 0.7;				// скейл баров
 	loadedLocation.bar_params.archetype_scale = 2.2;		// скейл иконок архетипов
@@ -764,13 +795,7 @@ void CalculateInfoDataF12()
 	
 	// вкл/выкл усиленный пробивающий удар для нпс (симуляция перка солдата)
 	pchar.test.power_break_npc = 1;
-	
-	// вкл/выкл улучшенный выстрел из мушкета для ГГ (симуляция перка мушкетёра)
-	pchar.test.knee_shot_main = 1;
-	
-	// вкл/выкл улучшенный выстрел из мушкета для нпс (симуляция перка мушкетёра)
-	pchar.test.knee_shot_npc = 1;
-	
+		
 	// угол блока в градусах - атака, пришедшая с большего угла, считается атакой сзади
 	// считается от направления героя (например, угол 150 градусов означает, что вправо или влево можно блокировать атаку на угол вплоть до 150 градусов, общий угол покрытия блока равен 150+150=300 градусов, а сзади остаётся уязвимая зона 360-300=60 градусов)
 	pchar.test.back_block_angle = 150;
@@ -1391,8 +1416,8 @@ void CalculateInfoDataF32()
     SetBaseShipData(mc);
     mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS20;
     /*
-    //mc.Ship.Type = GenerateShipHand(SHIP_CAREERLUGGER, 12, 580, 30, 800, 20000, 16.5, 65.5, 1.6);
-    mc.Ship.Type = GenerateShipHand(pchar, SHIP_LUGGER, 6, 700, 40, 610, 16000, 15.2, 58.8, 1.42);
+    //mc.Ship.Type = GenerateShipHand(SHIP_CAREERLUGGER, 12, 580, 30, 800, 20000, 16.5, 65.5);
+    mc.Ship.Type = GenerateShipHand(pchar, SHIP_LUGGER, 6, 700, 40, 610, 16000, 15.2, 58.8);
     mc.Ship.name = "Сумрак";
     SetBaseShipData(mc);
     mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS12;
@@ -1634,25 +1659,6 @@ void ShipRepair(ref chr)
     {
         matQ = 15.0 * GetHullPPP(chr);
     }
-}
-
-float GetMaxSpeedZ(float fWindAgainstSpeed, float fWindDotShip)
-{
-    float fMaxSpeedZ = 10.0;
-    float BtWindR = 1.0 - fWindAgainstSpeed;
-    float fkoeff = fWindAgainstSpeed;
-    if (fkoeff < 1.0)
-        fkoeff = 1.0;
-
-    if (fWindDotShip < BtWindR) // по ветру
-    {
-        fMaxSpeedZ = fMaxSpeedZ * (1.0 + 0.974 * (fWindDotShip - BtWindR) / (1.0 + BtWindR));
-    }
-    else // против ветра
-    {
-        fMaxSpeedZ = fkoeff * fMaxSpeedZ * (1.0 - (fWindDotShip - BtWindR) / 2.0);
-    }
-    return fMaxSpeedZ;
 }
 
 void ReloadByStr()
@@ -1911,4 +1917,391 @@ void GetRealCoordsObjects()
     trace("---------");
     trace("IslaDeCoche                            : " + Map_GetRealCoordX(640.0) + " " + Map_GetRealCoordZ(-640.0));
     trace("---------");
+}
+
+bool bCaptured;
+string sCaptured;
+float fSpeedSum;
+
+float fPoints[SHIP_SPEEDPOINT_QUANTITY];
+bool bCopy;
+
+void OpenWindRoseWindow()
+{
+	XI_WindowDisable("MAIN_WINDOW", true);
+	XI_WindowDisable("WINDROSE_WINDOW", false);
+	XI_WindowShow("WINDROSE_WINDOW", true);
+	SetEventHandler("exitWindRose", "CloseWindRoseWindow", 0);
+	SetEventHandler("MouseClickUP", "MouseClickUP", 0);
+	SetEventHandler("CheckButtonChange", "procCheckBoxChange", 0);
+	CreateWindRoseButtons();
+	if(GetCharacterShipType(pchar) == SHIP_NOTUSED)
+		iShipType = 0;
+	else
+		iShipType = int(RealShips[int(pchar.ship.type)].basetype);
+	fSpeedSum = 0.0;
+	CreateWindRosePoints();
+	WindRose_CheckPlayerShip();
+	CheckButton_SetState("WINDROSE_GDMODE", 1, ("GameDesignerMode" in &TEV))
+	bCaptured = false;
+	sCaptured = "";
+	bCopy = false;
+}
+
+void CloseWindRoseWindow()
+{
+	XI_WindowDisable("WINDROSE_WINDOW", true);
+	XI_WindowDisable("MAIN_WINDOW", false);
+	XI_WindowShow("WINDROSE_WINDOW", false);
+	DelEventHandler("exitWindRose", "CloseWindRoseWindow");
+	DelEventHandler("MouseClickUP", "MouseClickUP");
+	DelEventHandler("CheckButtonChange", "procCheckBoxChange");
+}
+
+#define POINT_RADIUS 12
+#define WINDROSE_CENTER_X 960
+#define WINDROSE_CENTER_Y 560
+#define WINDROSE_RADIUS 400.0
+
+int iShipType = 0;
+
+void CreateWindRosePoints()
+{
+	ref rShip = &ShipsTypes[iShipType];
+	string sName = XI_ConvertString(rShip.name) + " (" + rShip.name + ")";
+	SetFormatedText("WINDROSE_NAME", sName);
+	float fAngle, fRad;
+	float fBaseSpeed, fSpeed;
+	int x, y;
+	string sNode;
+	XI_MakeNode("resource\ini\interfaces\defaultnode.ini", "STRINGCOLLECTION", "ANGLES_INFO", 500);
+	XI_WindowAddNode("WINDROSE_WINDOW", "ANGLES_INFO");
+	sNode = "WINDROSE_CIRCLE";
+	XI_MakeNode("resource\ini\interfaces\defaultnode.ini", "PICTURE", sNode, 400);
+	XI_WindowAddNode("WINDROSE_WINDOW", sNode);
+	SetNewPicture(sNode, "interfaces\le\background.tga");
+	SetNodePosition(sNode, WINDROSE_CENTER_X - 400, WINDROSE_CENTER_Y - 400, WINDROSE_CENTER_X + 400, WINDROSE_CENTER_Y + 400);
+	float angStep = 360 / float(SHIP_SPEEDPOINT_QUANTITY);
+	for(int i = 0; i < SHIP_SPEEDPOINT_QUANTITY; i++)
+	{
+		fAngle = i * angStep;
+		fRad = Degree2Radian(fAngle);
+		fBaseSpeed = Ship_SimulateSpeed_Init(iShipType, fRad);
+		fSpeed = fBaseSpeed * Ship_GetSpeedPoint(rShip, int(i * angStep), false);
+		if(fSpeed <= 0.0)
+			fSpeed = 0.001;
+		if(fSpeed > 1.0)
+			fSpeed = 1.0;
+		x = WINDROSE_CENTER_X + int(sin(fRad) * WINDROSE_RADIUS * fSpeed);
+		y = WINDROSE_CENTER_Y - int(cos(fRad) * WINDROSE_RADIUS * fSpeed);
+		
+		sNode = "ANG_" + i;
+		XI_MakeNode("resource\ini\interfaces\defaultnode.ini", "PICTURE_CLICKABLE", sNode, 500);
+		XI_WindowAddNode("WINDROSE_WINDOW", sNode);
+		SetNewPicture(sNode, "interfaces\le\markers.tga");
+		SendMessage(&GameInterface, "lslffff", MSG_INTERFACE_MSG_TO_NODE, sNode, 1, 0.8125, 0.9375, 0.625, 0.875);
+		Picture_SetColor(sNode, argb(255,200,64,64));
+		SetNodePosition(sNode, x - POINT_RADIUS, y - POINT_RADIUS, x + POINT_RADIUS, y + POINT_RADIUS);
+		StringCollection_AddText("ANGLES_INFO", sNode, fts(fSpeed, 2), "interface_normal", WINDROSE_CENTER_X + int(sin(fRad) * (WINDROSE_RADIUS + 30.0)), WINDROSE_CENTER_Y - int(cos(fRad) * (WINDROSE_RADIUS + 30.0)) - 5, argb(255,255,255,255), argb(0,128,128,128), 2, false, 1.0, 50);
+		
+		DeleteAttribute(&GameInterface, sNode + ".newspeed");
+		GameInterface.(sNode).oldspeed = fBaseSpeed;
+		GameInterface.(sNode).point = fSpeed;
+	}
+	if(iShipType == int(RealShips[int(pchar.ship.type)].basetype))
+		WindRose_CheckMaxSpeed();
+	
+	WindRose_CheckSum();
+}
+
+void CheckCapture(string sNode)
+{
+	if(sCaptured != sNode)
+		Picture_SetColor(sCaptured, argb(255,200,64,64));
+	bCaptured = true;
+	sCaptured = sNode;
+	Picture_SetColor(sCaptured, argb(255,128,255,128));
+	SetEventHandler("frame", "CheckMovePoint", 0);
+	Event("CheckMovePoint");
+}
+
+void MouseClickUP()
+{
+	bCaptured = false;
+	if(sCaptured != "")
+		Picture_SetColor(sCaptured, argb(255,200,64,64));
+	sCaptured = "";
+	DelEventHandler("frame", "CheckMovePoint");
+}
+
+void CheckMovePoint()
+{
+	if(!bCaptured || sCaptured == "")
+	{
+		DelEventHandler("frame", "CheckMovePoint");
+		return;
+	}
+	
+	float mouseX = float(GameInterface.mousepos.x);
+	float mouseY = float(GameInterface.mousepos.y);
+	int iNode = int(strright(sCaptured, strlen(sCaptured) - 4));
+	float angStep = 360 / float(SHIP_SPEEDPOINT_QUANTITY);
+	float fRad = Degree2Radian(iNode * angStep);
+	float v1_x = sin(fRad);
+	float v1_y = -cos(fRad);
+	float v2_x = mouseX - WINDROSE_CENTER_X;
+	float v2_y = mouseY - WINDROSE_CENTER_Y;
+	float fSpeedNew = v1_x * v2_x + v1_y * v2_y;
+	if(fSpeedNew > WINDROSE_RADIUS)
+		fSpeedNew = WINDROSE_RADIUS;
+	if(fSpeedNew <= 0.0)
+		fSpeedNew = 0.001;
+	
+	GameInterface.(sCaptured).newspeed = fSpeedNew / WINDROSE_RADIUS;
+	
+	float x_new = WINDROSE_CENTER_X + v1_x * fSpeedNew;
+    float y_new = WINDROSE_CENTER_Y + v1_y * fSpeedNew;
+	
+	SetNodePosition(sCaptured, int(x_new) - POINT_RADIUS, int(y_new) - POINT_RADIUS, int(x_new) + POINT_RADIUS, int(y_new) + POINT_RADIUS);
+	StringCollection_SetText("ANGLES_INFO", iNode + 1, "#" + fts(fSpeedNew / WINDROSE_RADIUS, 2));
+	
+	GameInterface.(sCaptured).point = GameInterface.(sCaptured).newspeed;
+	WindRose_CheckSum();
+	
+	if(iNode == SHIP_SPEEDPOINT_QUANTITY / 2 || iNode == 0)
+		return;
+	iNode = SHIP_SPEEDPOINT_QUANTITY - iNode;
+	fRad = Degree2Radian(iNode * angStep);
+	v1_x = sin(fRad);
+	v1_y = -cos(fRad);
+	x_new = WINDROSE_CENTER_X + v1_x * fSpeedNew;
+    y_new = WINDROSE_CENTER_Y + v1_y * fSpeedNew;
+	string sNode = "ANG_" + iNode;
+	GameInterface.(sNode).newspeed = fSpeedNew / WINDROSE_RADIUS;
+	SetNodePosition("ANG_" + iNode, int(x_new) - POINT_RADIUS, int(y_new) - POINT_RADIUS, int(x_new) + POINT_RADIUS, int(y_new) + POINT_RADIUS);
+	StringCollection_SetText("ANGLES_INFO", iNode + 1, "#" + fts(fSpeedNew / WINDROSE_RADIUS, 2));
+	
+	GameInterface.(sNode).point = GameInterface.(sNode).newspeed;
+	WindRose_CheckSum();
+}
+
+void WindRose_CheckMaxSpeed()
+{
+	int x1, y1, x2, y2, x, y;
+	float fAngle, fRad, fSpeed, fMaxSpeed, fMaxAngle, v1_x, v1_y;
+	fMaxSpeed = 0.0;
+	string sNode;
+	for(int i = 0; i <= SHIP_SPEEDPOINT_QUANTITY / 2; i++)
+	{
+		sNode = "ANG_" + i;
+		fAngle = i * 360 / float(SHIP_SPEEDPOINT_QUANTITY);
+		fRad = Degree2Radian(fAngle);
+		v1_x = sin(fRad);
+		v1_y = -cos(fRad);
+		GetNodePosition(sNode, &x1, &y1, &x2, &y2);
+		x = (x1 + x2) / 2;
+		y = (y1 + y2) / 2;
+		if(v1_x != 0.0)
+			fSpeed = (x - WINDROSE_CENTER_X) / v1_x;
+		else
+			fSpeed = (x - WINDROSE_CENTER_Y) / v1_y;
+		fSpeed /= WINDROSE_RADIUS;
+		if(fSpeed > fMaxSpeed)
+		{
+			fMaxSpeed = fSpeed;
+			fMaxAngle = fAngle;
+		}
+	}
+	pchar.max_speed_angle = fMaxAngle;
+}
+
+void WindRose_CheckSum()
+{
+	float speedSum = 0.0;
+	string sNode;
+	for(int i = 0; i < SHIP_SPEEDPOINT_QUANTITY; i++)
+	{
+		sNode = "ANG_" + i;
+		speedSum += float(GameInterface.(sNode).point);
+	}
+	fSpeedSum = speedSum;
+	SetFormatedText("WINDROSE_SUM", "Сумма: " + fts(fSpeedSum, 2));
+}
+
+void CreateWindRoseButtons()
+{
+	SetFormatedTextButton("WINDROSE_SAVE", "#Сохранить");
+	SetFormatedTextButton("WINDROSE_CANCEL", "#Отменить");
+	SetFormatedTextButton("WINDROSE_RESET", "#Сбросить");
+	SetFormatedTextButton("WINDROSE_COPY", "#Копировать");
+	SetFormatedTextButton("WINDROSE_PASTE", "#Вставить");
+	SetFormatedTextButton("WINDROSE_CHANGESHIP", "#Пересесть");
+	ref rShip;
+	string sNode;
+	int j = 0;
+	int col = 0;
+	int width = 300;
+	int height = 34;
+	int left1 = 100;
+	int left2 = 1520;
+	int top = 50;
+	int space_v = 4;
+	int x1, y1, x2, y2;
+	XI_MakeNode("resource\ini\interfaces\defaultnode.ini", "PICTURE", "PLAYER_SHIP_POINTER", 600);
+	XI_WindowAddNode("WINDROSE_WINDOW", "PLAYER_SHIP_POINTER");
+	SetNewPicture("PLAYER_SHIP_POINTER", "interfaces\le\empty_hats.tga");
+	SetNodeUsing("PLAYER_SHIP_POINTER", false);
+	for(int i = 0; i < SHIP_TYPES_QUANTITY; i++)
+	{
+		if(i == SHIP_BOAT || i == SHIP_FORT)
+			continue;
+		if(i >= SHIP_QUEST1 && i <= SHIP_QUEST8)
+			continue;
+		rShip = &ShipsTypes[i];
+		sNode = "SHIP_" + i;
+		XI_MakeNode("resource\ini\interfaces\defaultnode.ini", "TEXTBUTTON8", sNode, 500);
+		XI_WindowAddNode("WINDROSE_WINDOW", sNode);
+		SetFormatedTextButton(sNode, "#" + XI_ConvertString(rShip.name) + " (" + rShip.name + ")");
+		x1 = left1 + (left2 - left1) * col;
+		y1 = top + (height + space_v) * j;
+		x2 = x1 + width;
+		y2 = y1 + height;		
+		SetNodePosition(sNode, x1, y1, x2, y2);
+		if(int(RealShips[int(pchar.ship.type)].basetype) == i)
+		{
+			x2 = x1;
+			x1 -= height;
+			SetNodePosition("PLAYER_SHIP_POINTER", x1, y1, x2, y2);
+			SetNodeUsing("PLAYER_SHIP_POINTER", true);
+		}
+		j++;
+		if(j >= 26)
+		{
+			j = 0;
+			col++;
+		}
+	}
+}
+
+void WindRose_Save()
+{
+	string sNode;
+	float fSpeedOld, fSpeedNew, fSpeedPoint;
+	float angStep = 360 / float(SHIP_SPEEDPOINT_QUANTITY);
+	ref rShip = &ShipsTypes[iShipType];
+	for(int i = 0; i < SHIP_SPEEDPOINT_QUANTITY; i++)
+	{
+		sNode = "ANG_" + i;
+		if((sNode + ".newspeed") in &GameInterface)
+			fSpeedNew = float(GameInterface.(sNode).newspeed);
+		else
+			continue;
+		fSpeedOld = float(GameInterface.(sNode).oldspeed);
+		fSpeedPoint = fSpeedNew / fSpeedOld;
+		
+		Ship_SetSpeedPoint(rShip, int(i * angStep), fSpeedPoint);
+	}
+	
+	pchar.Tmp.SpeedRecall = 0;
+	if(iShipType == int(RealShips[int(pchar.ship.type)].basetype))
+		WindRose_CheckMaxSpeed();
+}
+
+void WindRose_Reset()
+{
+	string sNode;
+	ref rShip = &ShipsTypes[iShipType];
+	for(int i = 0; i < SHIP_SPEEDPOINT_QUANTITY; i++)
+	{
+		sNode = "ANG_" + i;
+		Ship_SetSpeedPoint(rShip, int(i * 360 / float(SHIP_SPEEDPOINT_QUANTITY)), 1.0);
+	}
+	CreateWindRosePoints();
+	
+	pchar.Tmp.SpeedRecall = 0;
+}
+
+void WindRose_CopyPoints()
+{
+	string sNode;
+	for(int i = 0; i < SHIP_SPEEDPOINT_QUANTITY; i++)
+	{
+		sNode = "ANG_" + i;
+		fPoints[i] = GameInterface.(sNode).point;
+	}
+	bCopy = true;
+}
+
+void WindRose_PastePoints()
+{
+	if(!bCopy)
+		return;
+	string sNode;
+	float fSpeedOld, fSpeedNew, fSpeedPoint;
+	float angStep = 360 / float(SHIP_SPEEDPOINT_QUANTITY);
+	ref rShip = &ShipsTypes[iShipType];
+	for(int i = 0; i < SHIP_SPEEDPOINT_QUANTITY; i++)
+	{
+		sNode = "ANG_" + i;
+		fSpeedNew = fPoints[i];
+		fSpeedOld = float(GameInterface.(sNode).oldspeed);
+		fSpeedPoint = fSpeedNew / fSpeedOld;		
+		Ship_SetSpeedPoint(rShip, int(i * angStep), fSpeedPoint);
+	}
+	CreateWindRosePoints();
+}
+
+void WindRose_CheckPlayerShip()
+{
+	SetNodeUsing("WINDROSE_CHANGESHIP", (iShipType != int(RealShips[int(pchar.ship.type)].basetype)));
+}
+
+void WindRose_SetPlayerShip()
+{
+	WindRose_CheckMaxSpeed();
+	pchar.ship.type = CreateBaseShip(iShipType);
+	SetBaseShipData(pchar);
+	SetCrewQuantity(pchar, GetOptCrewQuantity(pchar));
+	AddCrewMorale(pchar, 100);
+    ChangeCrewExp(pchar, "Sailors", 100);
+    ChangeCrewExp(pchar, "Cannoners", 100);
+    ChangeCrewExp(pchar, "Soldiers", 100);
+	
+	ProcessCancelExit();
+	if(!bSeaActive)
+		return;
+	DeleteSeaEnvironment();
+	SetEventHandler("Sea_Reload", "Sea_Reload", 0);
+	PostEvent("Sea_Reload", 1);
+}
+
+void procCheckBoxChange()
+{
+	string sNode = GetEventData();
+	int iButton = GetEventData();
+	int iState = GetEventData();
+	if(sNode != "WINDROSE_GDMODE")
+		return;
+	if(iState == 1)
+		TEV.GameDesignerMode = true;
+	else
+		DeleteAttribute(&TEV, "GameDesignerMode");
+	
+	pchar.Tmp.SpeedRecall = 0;
+}
+
+void ShowInfoWindow()
+{
+	string sCurrentNode = GetEventData();
+	string sHeader = "Режим геймдизайнера";
+	string sText1 = "В этом режиме для базового расчёта скорости корабля будет использоваться не текущая, а максимально достижимая скорость корабля (из интерфейса 'Корабли'). То есть, не будут учитываться загруженность корабля, команда и её опыт, повреждения корпуса и парусов, а также перки и предметы.";
+	string sText2 = "Также для расчётов будет использоваться скорость ветра, равная 10.0 (вне зависимости от того, какая сейчас реально у ветра скорость).";
+	string sText3 = "В таких условиях можно проверить 'идеальный' ход корабля под разными углами к ветру без учёта прочих факторов.";
+	string sText4 = "Дополнительно в режиме геймдизайнера стрелка курсового угла на миникарте устанавливается точно под тем углом, при котором скорость будет максимальной.";
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, sText4, "", "", "", 64, 64, false, true);
+}
+
+void HideInfoWindow()
+{
+	CloseTooltipNew();
 }

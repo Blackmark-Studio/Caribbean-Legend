@@ -127,7 +127,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		///////////////////////////////  квестовые ветки
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie masz pytania?","Jak mogę ci pomóc?"),"Próbowałeś zadać mi pytanie chwilę temu...","Nie spotkałem nigdy ludzi z taką ciekawością w mojej stoczni ani nigdzie indziej w tym mieście.","Co z tymi wszystkimi pytaniami? Moim zadaniem jest budować statki. Zajmijmy się tym.","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie masz pytania?","Jak mogę ci pomóc?"),"Próbowałeś zadać mi pytanie chwilę temu...","Nie spotkałem nigdy ludzi z taką ciekawością w mojej stoczni ani nigdzie indziej w tym mieście.","Co z tymi wszystkimi pytaniami? Moim zadaniem jest budować statki. Zajmijmy się tym.","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniłem zdanie...","Nie mam w tej chwili nic do powiedzenia."),"Ech, gdzież to moja pamięć się podziała...","Hm, cóż...","Dobrze, pozwólmy...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			if (!CheckAttribute(npchar, "Step_Door"))
@@ -749,7 +749,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_hull_01":
-			dialog.text = "No dobrze, policzmy... Do pełnej przebudowy kadłuba statku będę potrzebował po 150 jednostek bakautu, lin, morskiego jedwabiu i żywicy — oraz 10 000 złotych dublonów. Nie patrz tak na mnie; większość pieniędzy pójdzie na materiały. Ta praca równa się rozebraniu statku na części i zbudowaniu go od nowa.";
+			dialog.text = "Dobrze, policzmy... Do pełnej przebudowy kadłuba będę potrzebował po 150 jednostek lignum vitae, lin, jedwabiu okrętowego i żywicy. Do tego jeszcze 10 000 złotych dublonów. I nie patrzcie na mnie takim wzrokiem — większa część tych pieniędzy pójdzie na materiały. To robota równa rozebraniu statku na części i zbudowaniu go od nowa od samego zera.";
 			link.l1 = "Nie, chyba nie. Nie jestem gotów przywieźć tak wielu surowców i oddać góry złota na przebudowę. Zostanę przy tym, co mam.";
 			link.l1.go = "FDM_hull_thinking";
 			link.l2 = "Eh, czegoż nie zrobimy dla naszego statku...Dobrze, umowa stoi.";

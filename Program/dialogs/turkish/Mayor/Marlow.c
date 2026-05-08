@@ -712,7 +712,6 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 				if (NextDiag.TempNode != "I_know_you_good")
 					dialog.text = "Aklını mı kaçırdın" + GetSexPhrase("", "") + "? Bizim tayfa seni vebalı gibi kaçıyor. Hadi git, kafamı ütüleme.";
 				else
@@ -720,12 +719,12 @@ void ProcessDialogEvent()
 				link.l1 = "Anladım...";
 				link.l1.go = "exit";
 			}
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 		break;
 
 		case "pirate_threat_pay":
 			iGPThreatRate = 0;
 			iGPThreat = 0;
-			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iMarlowTotalTemp);
 			DialogExit();
 			PiratesDecreaseNotif("");

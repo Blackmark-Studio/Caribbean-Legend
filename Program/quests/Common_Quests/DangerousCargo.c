@@ -84,7 +84,7 @@ void UpgradeShipZPQ(ref chr)
 	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
 	UpgradeShipParameter(sld, "SpeedRate");
 	UpgradeShipParameter(sld, "TurnRate");
-	UpgradeShipParameter(sld, "WindAgainstSpeed");
+	UpgradeShipParameter(sld, "Rig");
 	if(CheckAttribute(&RealShips[sti(sld.Ship.Type)],"Tuning.Capacity"))
 	{
 		DeleteAttribute(&RealShips[sti(sld.Ship.Type)],"Tuning.Capacity");

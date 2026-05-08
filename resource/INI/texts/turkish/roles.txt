@@ -1,4 +1,14 @@
-portman {Liman Şefi}
+AffairOfHonor_tavern {Umutsuz Sarhoş}
+armourer_merchant {Silahçı}
+banditos {Cellat}
+captain {Kaptan}
+captain_trader {Serbest Tüccar}
+cemeteryman_merchant {Mezarlık Bekçisi}
+chaplain {Papaz}
+comandante {Komutan}
+deadman {Yaşayan Ölü}
+Deputy Director {Müdür Yardımcısı}
+Director {Yönetici}
 drinker_0 {Bu sulardaki en ünlü korsan}
 drinker_1 {Gerçek hikayelerin usta anlatıcısı}
 drinker_2 {Emekli Escorial Özel Ajanı}
@@ -9,55 +19,45 @@ drinker_6 {Başarısının doruğunda muhteşem bir adam}
 drinker_7 {Ufak tefek işlerin başı}
 drinker_8 {Sarhoş Nöbetin Kıdemlisi}
 drinker_9 {DWIC’te hatırı sayılır birinin ikinci dereceden kuzeni}
-pofficer {Aday}
-hovernor {Vali}
-tavernkeeper {Meyhaneci}
-waitress {Garson Kız}
-trader {Tüccar}
-shipyarder {Gemi Ustası}
-priest {Rahip}
-Ghovernor {Genel Vali}
-Phovernor {Baron}
-usurer {Bankacı}
-poorman {Dilenci}
-gipsy {Çingene Kadın}
-captain {Kaptan}
-sailor {Denizci}
-marginal_town {Korsan}
-noble {Asil}
-monk {Keşiş}
-chaplain {Papaz}
-potion_merchant {Simyacı}
-veteran_merchant {Demirci}
-armourer_merchant {Silahçı}
-monk_merchant {Kutsal Emanetler Satıcısı}
-indian_merchant {Falcı}
-lightman_merchant {Fenerci}
-cemeteryman_merchant {Mezarlık Bekçisi}
-legend {Efsane}
-soldier_town {Muhafız}
-banditos {Cellat}
-patrol {Devriye}
-comandante {Komutan}
-prisonboss {Komutan}
-whore {Kız}
-hostess {Ev Sahibi}
-enemy {Düşman}
-wife {Eş}
-kukulkan {Kukulkan}
-mercen {Paralı asker}
-monster {Ölümsüz}
-captain_trader {Serbest Tüccar}
-mtraxx_vanguard {Tirax'ın Öncüsü}
-fgirl {Metres}
-deadman {Yaşayan Ölü}
-friend {Arkadaş}
 duelist {Kabadayı}
-smuggler {Kaçakçı}
-AffairOfHonor_tavern {Umutsuz Sarhoş}
-hovernon_wife {Valinin Karısı}
+enemy {Düşman}
+fgirl {Metres}
+friend {Arkadaş}
+Ghovernor {Genel Vali}
+gipsy {Çingene Kadın}
 HeadSailor {Usta denizci}
 HeadSailorPlus {Mürettebatın Sesi}
-Director {Yönetici}
-Deputy Director {Müdür Yardımcısı}
+hostess {Ev Sahibi}
+hovernon_wife {Valinin Karısı}
+hovernor {Vali}
+indian_merchant {Falcı}
+kukulkan {Kukulkan}
+legend {Efsane}
+lightman_merchant {Fenerci}
+marginal_town {Korsan}
+mercen {Paralı asker}
+monk {Keşiş}
+monk_merchant {Kutsal Emanetler Satıcısı}
+monster {Ölümsüz}
+mtraxx_vanguard {Tirax'ın Öncüsü}
 Naval Registry Guard {Donanma Sicil Muhafızı}
+noble {Asil}
+patrol {Devriye}
+Phovernor {Baron}
+pofficer {Aday}
+poorman {Dilenci}
+portman {Liman Şefi}
+potion_merchant {Simyacı}
+priest {Rahip}
+prisonboss {Komutan}
+sailor {Denizci}
+shipyarder {Gemi Ustası}
+smuggler {Kaçakçı}
+soldier_town {Muhafız}
+tavernkeeper {Meyhaneci}
+trader {Tüccar}
+usurer {Bankacı}
+veteran_merchant {Demirci}
+waitress {Garson Kız}
+whore {Kız}
+wife {Eş}

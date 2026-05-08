@@ -642,7 +642,7 @@ int FindFaceGroupNum(string strAccess, string groupName)
 
 string GlobalStringConvert(string strID)
 {
-	return LanguageConvertString( GlobalLngFileID(), strID );
+	return LanguageConvertString(GlobalLngFileID(), strID);
 }
 
 void LoadIcons(string sDirectory, string sFileMask, string sControlName, int iAddListSize) {
@@ -738,7 +738,38 @@ void CloseTooltip()
 	}
 }
 
-void CreateTooltipNew(string sNode, string header, string text1, string text2, string text3, string text4, string picTexture, string picGroup, string picImage, int nPicWidth, int nPicHeight, bool isDarkTheme)
+// Создать тултип с передачей параметров в виде конфига
+void CreateTooltipWithConfig(string sNode, string header, string text1, string text2, string text3, string text4, string picTexture, string picGroup, string picImage, int nPicWidth, int nPicHeight, string getConfigFunc)
+{
+	object config = call getConfigFunc();
+	string whiteAttr = CheckAttributeEqualTo(&config, "theme", "dark") ? "" : "W";
+
+	if (header != "") XI_MakeNode("", "TOOLTIP_FRAME" + whiteAttr, "tooltip_frame", 30003 );  // рамка
+	else XI_MakeNode("", "TOOLTIP_FRAME_WITHOUT_TITLE" + whiteAttr, "tooltip_frame", 30003 ); // рамка
+
+	XI_MakeNode("", "TOOLTIP_PICTURE", "tooltip_picture", 30003);               // картинка
+	XI_MakeNode("", "TOOLTIP_FRAME_SHADOW", "tooltip_shadow", 30000);           // тень окна
+	XI_MakeNode("", "TOOLTIP_TITLERECT", "tooltip_titlerect", 30002);           // фон заголовка
+	XI_MakeNode("", "TOOLTIP_TITLE", "tooltip_title", 30004);                   // заголовок
+	XI_MakeNode("", "TOOLTIP_TITLEORN" + whiteAttr, "tooltip_ornament", 30002); // вензель
+	XI_MakeNode("", "TOOLTIP_BACK" + whiteAttr, "tooltip_back", 30001);         // фон окна
+	XI_MakeNode("", "TOOLTIP_TEXT" + whiteAttr, "tooltip_text1", 30004);
+	XI_MakeNode("", "TOOLTIP_TEXT" + whiteAttr, "tooltip_text2", 30004);
+	XI_MakeNode("", "TOOLTIP_TEXT" + whiteAttr, "tooltip_text3", 30004);
+	XI_MakeNode("", "TOOLTIP_TEXT" + whiteAttr, "tooltip_text4", 30004);
+
+	bool bWindRose = CheckAttributeEqualTo(&config, "windRose", "1");
+	if (bWindRose) = XI_MakeNode("resource\ini\interfaces\defaultnode.ini", "WINDROSE_SPEED_RED", "tooltip_windrose", 30004);
+
+	int x1, y1, x2, y2;
+	GetNodePosition(sNode, &x1, &y1, &x2, &y2);
+	SendMessage(&GameInterface, "lsslslslslssslllllllll", MSG_INTERFACE_SET_TOOLTIP,
+				header, text1, makeint(config.color1), text2, makeint(config.color2), text3, makeint(config.color3), text4, makeint(config.color4),
+				picTexture, picGroup, picImage, nPicWidth, nPicHeight, bWindRose ? 1 : 0,
+				x1, y1, x2, y2, TOOLTIP_WIDTH_MIN, TOOLTIP_WIDTH_MAX);
+}
+
+void CreateTooltipNew(string sNode, string header, string text1, string text2, string text3, string text4, string picTexture, string picGroup, string picImage, int nPicWidth, int nPicHeight, bool bWindRose, bool isDarkTheme)
 {
 	
 	/*
@@ -778,9 +809,9 @@ void CreateTooltipNew(string sNode, string header, string text1, string text2, s
 		XI_MakeNode( "", "TOOLTIP_TEXTW", "tooltip_text3", 30004 ); //
 		XI_MakeNode( "", "TOOLTIP_TEXTW", "tooltip_text4", 30004 ); //
 		// цвета текста для светлой
-		color1 = argb(255, 47, 39, 29); // черно-коричневый
-		color2 = argb(255, 120, 0, 0); // красный
-		color3 = argb(255, 0, 110, 26); // зелёный
+		color1 = bWindRose ? argb(160, 160, 0, 0) : argb(255, 47, 39, 29); // черно-коричневый
+		color2 = bWindRose ? argb(160, 0, 0, 160) : argb(255, 120, 0, 0); // красный
+		color3 = bWindRose ? argb(255, 47, 39, 29) : argb(255, 0, 110, 26); // зелёный
 		color4 = argb(255, 47, 39, 29); // черно-коричневый доп
 	}
 	else
@@ -809,26 +840,34 @@ void CreateTooltipNew(string sNode, string header, string text1, string text2, s
 		color3 = argb(255, 128, 255, 128); // зелёный
 		color4 = argb(255, 255, 255, 255); // белый
 	}
+	
+	if(bWindRose)
+		XI_MakeNode("resource\ini\interfaces\defaultnode.ini", "WINDROSE_SPEED_RED", "tooltip_windrose", 30004);
+	
 	int x1, y1, x2, y2;
 	GetNodePosition(sNode, &x1, &y1, &x2, &y2);
-	SendMessage(&GameInterface,"lsslslslslsssllllllll",MSG_INTERFACE_SET_TOOLTIP, header, text1, color1, text2, color2, text3, color3, text4, color4, picTexture, picGroup, picImage, nPicWidth, nPicHeight, x1, y1, x2, y2, TOOLTIP_WIDTH_MIN, TOOLTIP_WIDTH_MAX);
+	SendMessage(&GameInterface, "lsslslslslssslllllllll", MSG_INTERFACE_SET_TOOLTIP, 
+				header, text1, color1, text2, color2, text3, color3, text4, color4, 
+				picTexture, picGroup, picImage, nPicWidth, nPicHeight, bWindRose ? 1 : 0, 
+				x1, y1, x2, y2, TOOLTIP_WIDTH_MIN, TOOLTIP_WIDTH_MAX);
 //	if(bHeader)
 //		SendMessage(&GameInterface, "lsll", MSG_INTERFACE_MSG_TO_NODE, "tooltip_titlerect", 0, argb(255,255,100,255));
 }
 
 void CloseTooltipNew()
 {
-	XI_DeleteNode( "tooltip_frame" ); // окно
-	XI_DeleteNode( "tooltip_shadow" );
-	XI_DeleteNode( "tooltip_back" );
-	XI_DeleteNode( "tooltip_titlerect" ); // заголовок
-	XI_DeleteNode( "tooltip_picture" ); // картинка
-	XI_DeleteNode( "tooltip_ornament" );
-	XI_DeleteNode( "tooltip_title" ); // заголовок
-	XI_DeleteNode( "tooltip_text1" ); //
-	XI_DeleteNode( "tooltip_text2" ); //
-	XI_DeleteNode( "tooltip_text3" ); //
-	XI_DeleteNode( "tooltip_text4" ); //
+	XI_DeleteNode("tooltip_frame"); // окно
+	XI_DeleteNode("tooltip_shadow");
+	XI_DeleteNode("tooltip_back");
+	XI_DeleteNode("tooltip_titlerect"); // заголовок
+	XI_DeleteNode("tooltip_picture"); // картинка
+	XI_DeleteNode("tooltip_ornament");
+	XI_DeleteNode("tooltip_title"); // заголовок
+	XI_DeleteNode("tooltip_text1"); //
+	XI_DeleteNode("tooltip_text2"); //
+	XI_DeleteNode("tooltip_text3"); //
+	XI_DeleteNode("tooltip_text4"); //
+	XI_DeleteNode("tooltip_windrose");
 }
 
 string GetMoralePicture(float fMoraleValue)
@@ -1013,101 +1052,7 @@ string GetLevelComplexity(int _Level_Complexity)
     }
 	return level;
 }
-
 // boal <--
-
-#event_handler("Tips_GetTipsDirectory","Tips_GetTipsDirectory");
-string Tips_GetTipsDirectory() {
-  return "interfaces\tips\" + LanguageGetLanguage();
-}
-
-//#event_handler("Tips_GetText", "Tips_GetText");
-aref Tips_GetText()
-{
-	DeleteAttribute(&InterfaceStates, "Tip");
-	aref arTip;
-	makearef(arTip, InterfaceStates.Tip);
-	arTip.font = "interface_normal";
-	arTip.color = argb(255, 255, 255, 255);
-	arTip.scale = 3.0;
-	arTip.pos_x = sti(showWindow.right) / 2;
-	arTip.pos_y = sti(showWindow.bottom) / 5 * 4;
-	arTip.linespace = 50;
-	
-	string sTipsFile = "GameTips.txt";
-	int nTips = GetFileStringsQuantity(sTipsFile);
-	int iRandomTip = rand(nTips-1) + 1;
-	string sText = GetConvertStr("Tip" + iRandomTip, sTipsFile);
-	FillStringsAttr(arTip, "text", "strings", sText, "interface_normal", 3.0, 1000);
-	return arTip;
-}
-
-void FillStringsAttr(aref arMain, string textAttr, string nAttr, string sText, string sFont, float fScale, int maxWidth)
-{
-	int fullWidth;
-	string sLeft, sRight;
-	fullWidth = GetStringWidth(sText, sFont, fScale);
-	int iSpace;
-	string sAttr;
-	int iString;
-	iString = 1;
-	sLeft = sText;
-	sRight = "";
-	while(fullWidth > maxWidth)
-	{
-		iSpace = GetLastSeparatorPos(sLeft, " ", sFont, fScale, maxWidth);
-		if(iSpace != -1)	// искомый пробел существует
-		{
-			sAttr = textAttr + iString;
-			sRight = strright(sLeft, strlen(sLeft) - iSpace - 1);	// правая часть
-			sLeft = strleft(sLeft, iSpace);	// левая часть
-			arMain.(sAttr) = sLeft;	// записываем текст в очередной атрибут
-			sLeft = sRight;
-			iString++;
-		}
-		else	// искомого пробела не существует
-			break;
-		fullWidth = GetStringWidth(sLeft, sFont, fScale);
-	}
-	arMain.(nAttr) = iString;
-	if(iString > 1)
-	{
-		sAttr = textAttr + iString;
-		arMain.(sAttr) = sRight;
-	}
-}
-
-int GetLastSeparatorPos(string sText, string sSepar, string sFont, float fScale, int maxWidth)
-{
-	string sTemp;
-	int iSpace, iPrevSpace, curWidth;
-	iPrevSpace = -1;
-	while(true)
-	{
-		iSpace = findSubStr(sText, sSepar, iPrevSpace + 1);
-		if(iSpace != -1)	// если есть пробел
-		{
-			sTemp = strcut(sText, 0, iSpace);
-			curWidth = GetStringWidth(sTemp, sFont, fScale);
-			if(curWidth > maxWidth)	// если текущий пробел слишком далеко
-			{
-				if(iPrevSpace > 0)	// если есть предыдущий пробел
-				{
-					iSpace = iPrevSpace;	// предыдущий пробел и есть искомый
-					break;
-				}
-			}
-		}
-		else	// если пробела нет
-		{
-			if(iPrevSpace != -1)
-				iSpace = iPrevSpace;
-			break;
-		}
-		iPrevSpace = iSpace;
-	}
-	return iSpace;
-}
 
 void GetNodePosition(string sNode, ref x1, ref y1, ref x2, ref y2)
 {
@@ -1175,9 +1120,9 @@ float Event_GetTriggerDelay()
 	switch(iGlobalHelpTime)
 	{
 		// при отрицательном значении подсказки выключены
-		case 0:		fDelay = -1.0;		break;
-		case 1:		fDelay = 0.65;		break;
-		case 2: 	fDelay = 0.3;		break;
+		case 0:		fDelay = 0.65;		break;
+		case 1:		fDelay = 0.3;		break;
+		case 2: 	fDelay = 0.0;		break;
 		case 3: 	fDelay = 0.0;		break;
 	}
 	return fDelay;
@@ -1348,3 +1293,47 @@ void Scroller_SetPos(string sNode, float fPos)
 {
 	SendMessage(&GameInterface, "lsf", MSG_INTERFACE_SET_SCROLLER, sNode, fPos);
 }
+
+//////////////////////
+// TIPS -->
+//////////////////////
+#event_handler("eventChangeOption","InitTips");
+void InitTips()
+{
+    gCurTipNum = 0;
+	gTipsQty = GetFileStringsQuantity("GameTips.txt");
+    @gTips = gTipsQty;
+    @gTipsPerm = gTipsQty;
+    for (int i = 0; i < gTipsQty; i++)
+    {
+        gTipsPerm[i] = i;
+        gTips[i] = DLGO(GetConvertStr("Tip" + i, "GameTips.txt"), nullptr);
+    }
+    ShuffleArray(&gTipsPerm);
+}
+
+string GetCurTip()
+{
+    return gTips[gTipsPerm[gCurTipNum]];
+}
+
+string GetNewTip()
+{
+    if (gTipsQty == 0)
+        return "";
+
+	gCurTipNum++;
+    if (gCurTipNum == gTipsQty)
+    {
+        int prev = gTipsPerm[gTipsQty - 1];
+        ShuffleArray(&gTipsPerm);
+        gCurTipNum = (gTipsPerm[0] == prev) ? 1 : 0;
+    }
+    return gTips[gTipsPerm[gCurTipNum]];
+}
+
+#event_handler("Tips_GetText", "Tips_GetText");
+string Tips_GetText() { return GetNewTip(); }
+//////////////////////
+// <-- TIPS
+//////////////////////

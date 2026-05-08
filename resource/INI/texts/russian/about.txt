@@ -2,221 +2,361 @@ newline
 {
 
 }
-headers {26}
-header_1_text { }
+headers {32}
 header_1_color {yellow}
 header_1_lines {0}
 header_1_skip {9}
-header_2_text {BlackMark Studio}
+header_1_text { }
 header_2_color {orange}
 header_2_lines {0}
-header_3_text {Game Director}
-header_3_lines {1}
+header_2_text {BlackMark Studio}
 header_3_line_1 {Иван "Joruba" Помыткин}
-header_4_text {Lead Developers}
-header_4_lines {2}
+header_3_lines {1}
+header_3_text {Game Director}
 header_4_line_1 {Александр "BelAmour" Миронов}
 header_4_line_2 {Сергей Карпенко}
-header_5_text {Lead Game Designer}
-header_5_lines {1}
+header_4_lines {2}
+header_4_text {Lead Developers}
 header_5_line_1 {Кирилл Гайдар}
-header_6_text {Lead Artist}
-header_6_lines {1}
+header_5_lines {1}
+header_5_text {Lead Game Designer}
 header_6_line_1 {Сергей "mPlank" Недодаев}
-header_7_text {Programmers}
-header_7_lines {5}
-header_7_line_1 {Евгений "EvgAnat" Стариков}
-header_7_line_2 {Игорь "Sinistra" Ёлкин}
-header_7_line_3 {Ярик "Rosarak" Данилов}
-header_7_line_4 {Никита "nkrapivindev" Крапивин}
-header_7_line_5 {Георгий "Pvt. Joker" Сергеев}
-header_8_text {Narrative Designer}
+header_6_lines {1}
+header_6_text {Lead Artist}
+header_7_text {Engine Developer}
+header_7_line_1 {Мария Бекетова}
+header_7_lines {1}
+header_8_line_1 {Георгий "Pvt. Joker" Сергеев}
 header_8_lines {1}
-header_8_line_1 {Андрей "Andre39966" Кинденко}
-header_9_text {Level Artist}
-header_9_lines {1}
-header_9_line_1 {Сергей "Wulfrein" Федосов}
-header_10_text {Animation Artist}
+header_8_text {Gameplay Developer}
+header_9_line_1 {Евгений "EvgAnat" Стариков}
+header_9_line_2 {Игорь "Sinistra" Ёлкин}
+header_9_line_3 {Ярик "Rosarak" Данилов}
+header_9_line_4 {Никита "nkrapivindev" Крапивин}
+header_9_lines {4}
+header_9_text {Programmers}
+header_10_line_1 {Андрей "Andre39966" Кинденко}
 header_10_lines {1}
-header_10_line_1 {Никита "Antix" Ермаков}
-header_11_text {UI Artist}
+header_10_text {Narrative Designer}
+header_11_line_1 {Сергей "Wulfrein" Федосов}
 header_11_lines {1}
-header_11_line_1 {Анастасия Гайдар}
-header_12_text {Chinese Translators}
-header_12_lines {2}
-header_12_line_1 {Qian Li Gong Chan Juan "sht8694"}
-header_12_line_2 {Wa Dong De Hou Zi "MONKEY HOLE"}
-header_13_text {Translators}
-header_13_lines {9}
-header_13_line_1 {skinny}
-header_13_line_2 {Blu}
-header_13_line_3 {MasterOfDisaster}
-header_13_line_4 {Jtem}
-header_13_line_5 {Escorpion}
-header_13_line_6 {Maximousse}
-header_13_line_7 {MoonDragon}
-header_13_line_8 {BBence}
-header_13_line_9 {Bukorko}
-header_14_text {Composers}
-header_14_lines {2}
-header_14_line_1 {Юрий Потеенко}
-header_14_line_2 {Александр Дроздов}
-header_15_text {Pets}
-header_15_lines {2}
-header_15_line_1 {Кот Корсар}
-header_15_line_2 {Пёс Гордон}
-header_16_text {Sea Dogs: To Each His Own}
-header_16_color {orange}
-header_16_lines {0}
-header_16_skip {0}
-header_17_text { }
-header_17_lines {11}
-header_17_line_1 {Михаил Коваленко}
-header_17_line_2 {Денис "Jason" Забавский}
-header_17_line_3 {Олег "Metazot" Зотов}
-header_17_line_4 {Тимофей "Tymofei" Скляров}
-header_17_line_5 {Евгений "ugeen" Плисковский}
-header_17_line_6 {Александр Тураев}
-header_17_line_7 {Александр "roderik" Фролов}
-header_17_line_8 {Александр "os_" Ольховников}
-header_17_line_9 {Антон "Warship" Коваленко}
-header_17_line_10 {Алексей "Vinnie" Никифоров}
-header_17_line_11 {Теса "Tesa" Кровичене}
-header_18_text {Valkyrie Initiative}
-header_18_color {orange}
-header_18_lines {0}
-header_19_text {CEO}
-header_19_lines {1}
-header_19_line_1 {Эдуард Минин}
-header_20_text {Co founder / Executive Producer}
-header_20_lines {1}
-header_20_line_1 {Иван Помыткин}
-header_21_text {Head of Marketing and PR}
-header_21_lines {1}
-header_21_line_1 {Jesse Kellor}
-header_22_text {Business Development Manager}
-header_22_lines {1}
-header_22_line_1 {Аркадий Павлов}
-header_23_text {Head of Release}
+header_11_text {Level Artist}
+header_12_line_1 {Алексей "Apdayk" Шевченко }
+header_12_lines {1}
+header_12_text {3D Artist}
+header_13_line_1 {Никита "Antix" Ермаков}
+header_13_lines {1}
+header_13_text {Animation Artist}
+header_14_line_1 {Анастасия Гайдар}
+header_14_lines {1}
+header_14_text {UI/UX Artist}
+header_15_line_1 {Анастасия Аверина}
+header_15_lines {1}
+header_15_text {Operations Lead}
+header_16_line_1 {Qian Li Gong Chan Juan "sht8694"}
+header_16_line_2 {Wa Dong De Hou Zi "MONKEY HOLE"}
+header_16_line_3 {Miria}
+header_16_lines {3}
+header_16_text {Chinese Translators}
+header_17_line_1 {skinny}
+header_17_line_2 {Blu}
+header_17_line_3 {MasterOfDisaster}
+header_17_line_4 {Jtem}
+header_17_line_5 {Escorpion}
+header_17_line_6 {Maximousse}
+header_17_line_7 {MoonDragon}
+header_17_line_8 {BBence}
+header_17_line_9 {Bukorko}
+header_17_lines {9}
+header_17_text {Translators}
+header_18_line_1 {Юрий Потеенко}
+header_18_line_2 {Александр Дроздов}
+header_18_lines {2}
+header_18_text {Composers}
+header_19_line_1 {Кот Корсар}
+header_19_line_2 {Пёс Гордон}
+header_19_lines {2}
+header_19_text {Pets}
+header_20_color {orange}
+header_20_lines {0}
+header_20_skip {0}
+header_20_text {Sea Dogs: To Each His Own}
+header_21_line_1 {Михаил Коваленко}
+header_21_line_10 {Алексей "Vinnie" Никифоров}
+header_21_line_11 {Теса "Tesa" Кровичене}
+header_21_line_2 {Денис "Jason" Забавский}
+header_21_line_3 {Олег "Metazot" Зотов}
+header_21_line_4 {Тимофей "Tymofei" Скляров}
+header_21_line_5 {Евгений "ugeen" Плисковский}
+header_21_line_6 {Александр Тураев}
+header_21_line_7 {Александр "roderik" Фролов}
+header_21_line_8 {Александр "os_" Ольховников}
+header_21_line_9 {Антон "Warship" Коваленко}
+header_21_lines {11}
+header_21_text { }
+header_22_color {orange}
+header_22_lines {0}
+header_22_text {Valkyrie Initiative}
+header_23_line_1 {Эдуард Минин}
 header_23_lines {1}
-header_23_line_1 {Никита Крапивин}
-header_24_text {Grey Cardinal}
+header_23_text {CEO}
+header_24_line_1 {Иван Помыткин}
 header_24_lines {1}
-header_24_line_1 {Константин Обломов}
-header_25_text {Выражаем благодарность}
-header_25_color {orange}
-header_25_lines {0}
-header_25_skip {0}
-header_26_text { }
-header_26_lines {110}
-header_26_line_1 {Анастасии Авериной}
-header_26_line_2 {Константину "mitrokosta" Митрофанову}
-header_26_line_3 {Михаилу "d'Artagnan" Мельнику}
-header_26_line_4 {Ingrid "Nordilys" Borresen}
-header_26_line_5 {Артёму "conterstrike1_6" Вентцелю}
-header_26_line_6 {Vagrant95}
-header_26_line_7 {Бабкину}
-header_26_line_8 {Игорю "Wazar" Степанову}
-header_26_line_9 {wildam}
-header_26_line_10 {Aragorn}
-header_26_line_11 {Александру "Reefership" Мосяжу}
-header_26_line_12 {Андрею "Hawcker" Амарфию}
-header_26_line_13 {Одноглазый}
-header_26_line_14 {Елене "makarena" Макаровой}
-header_26_line_15 {Валерию "валера" Мошатину}
-header_26_line_16 {Дмитрию "dim10" Трубецкому}
-header_26_line_17 {Игорю "delfin_" Чернею}
-header_26_line_18 {Максиму "Shomaan" Шиманскому}
-header_26_line_19 {Матвею "Mett" Топчилко}
-header_26_line_20 {Алексею "q4a" Комарову}
-header_26_line_21 {Сергею "Serginio" Капцану}
-header_26_line_22 {Виталию "Альмейде" Нечхаеву}
-header_26_line_23 {Александру "Lexanni" Волчкову}
-header_26_line_24 {Александру "Шурик" Шпехту}
-header_26_line_25 {Дмитрию "Джафару" Стреляеву}
-header_26_line_26 {Юрию "Ursus" Рогачу}
-header_26_line_27 {Алексею "AlexusB" Бобровникову}
-header_26_line_28 {Алексею "Sonic" Рябову}
-header_26_line_29 {Montbrain}
-header_26_line_30 {pirat1}
-header_26_line_31 {Zagolsky}
-header_26_line_32 {Ивану "kb31" Кондакову}
-header_26_line_33 {Артему Кононенко}
-header_26_line_34 {Sam Hambrouck}
-header_26_line_35 {Ивану Якимчаку}
-header_26_line_36 {Andrea Mangione}
-header_26_line_37 {Константину Облаухову}
-header_26_line_38 {Артему Воротникову}
-header_26_line_39 {Вадиму Грудеву}
-header_26_line_40 {Andrei Shtabel}
-header_26_line_41 {Szymon J.}
-header_26_line_42 {Anthony Lapenok}
-header_26_line_43 {Станиславу Жукову}
-header_26_line_44 {Asapin}
-header_26_line_45 {Евгению Шалыгину}
-header_26_line_46 {kk-se}
-header_26_line_47 {Егору Олефиренко}
-header_26_line_48 {TotalCaesar659}
-header_26_line_49 {Николаю Пригодичу}
-header_26_line_50 {Nikk}
-header_26_line_51 {Johnny88}
-header_26_line_52 {Xenon}
-header_26_line_53 {Павлу Ловцову}
-header_26_line_54 {Алексею Уткину}
-header_26_line_55 {Сергею Арифулину}
-header_26_line_56 {Георгию Неприенко}
-header_26_line_57 {Александру Кузнецову}
-header_26_line_58 {Владиславу Масенко}
-header_26_line_59 {Роману Ковалеву}
-header_26_line_60 {Артему Толстоброву}
-header_26_line_61 {Максиму Хохрину}
-header_26_line_62 {Сардиону Млхоеву}
-header_26_line_63 {Тимуру Буачидзе}
-header_26_line_64 {Сергею Попову}
-header_26_line_65 {Алексею Коновалову}
-header_26_line_66 {Максиму Вандушеву}
-header_26_line_67 {Дмитрию Миропольскому}
-header_26_line_68 {Сергею Порывкину}
-header_26_line_69 {Дмитрию Лапину}
-header_26_line_70 {Федору Гончарову}
-header_26_line_71 {Михаилу Еремееву}
-header_26_line_72 {Вячеславу Никитину}
-header_26_line_73 {Антону Пантелееву}
-header_26_line_74 {Александру Заливако}
-header_26_line_75 {Герману Горшкову}
-header_26_line_76 {Jason Rhodes}
-header_26_line_77 {Eric Smith}
-header_26_line_78 {Владиславу Гольцу}
-header_26_line_79 {Damien Pittet}
-header_26_line_80 {Maik Pfarrherr}
-header_26_line_81 {Alessio Casarin}
-header_26_line_82 {Kyle J. S.}
-header_26_line_83 {Александру Меркушину}
-header_26_line_84 {Sam Muench}
-header_26_line_85 {Michael Perkins}
-header_26_line_86 {Bud Buddy}
-header_26_line_87 {Lartan}
-header_26_line_88 {Xenon Casper}
-header_26_line_89 {Артёму Вентцелю}
-header_26_line_90 {Sam}
-header_26_line_91 {Alessio Casarin}
-header_26_line_92 {Sam Muench}
-header_26_line_93 {Franciszek Jureczka}
-header_26_line_94 {William Nelson}
-header_26_line_95 {Dmytro Kekukh}
-header_26_line_96 {Maris Jurgenbergs}
-header_26_line_97 {Daniel Helmenstein}
-header_26_line_98 {Sami Vahtera}
-header_26_line_99 {Vova Bezruchuk}
-header_26_line_100 {Jakub R. K. Szczygiel}
-header_26_line_101 {Sergiy Bezruchuk}
-header_26_line_102 {Peter Mitchell}
-header_26_line_103 {Bartlomiej Borkowski}
-header_26_line_104 {Igor Juhas}
-header_26_line_105 {Mark Brooks}
-header_26_line_106 {Jonas Kaufmann}
-header_26_line_107 {ScreamPassion}
-header_26_line_108 { }
-header_26_line_109 {Audio Engine: FMOD Studio by}
-header_26_line_110 {Firelight Technologies Pty Ltd.}
-header_26_skip {10}
+header_24_text {Co founder / Executive Producer}
+header_25_line_1 {Jesse Kellor}
+header_25_lines {1}
+header_25_text {Head of Marketing and PR}
+header_26_line_1 {Аркадий Павлов}
+header_26_lines {1}
+header_26_text {Business Development Manager}
+header_27_line_1 {Никита Крапивин}
+header_27_lines {1}
+header_27_text {Head of Release}
+header_28_line_1 {Константин Обломов}
+header_28_lines {2}
+header_28_text {Grey Cardinal}
+header_29_color {orange}
+header_29_lines {0}
+header_29_skip {0}
+header_29_text {Выражаем благодарность}
+header_30_line_1 {Анастасии Авериной}
+header_30_line_10 {Aragorn}
+header_30_line_100 {Jakub R. K. Szczygiel}
+header_30_line_101 {Sergiy Bezruchuk}
+header_30_line_102 {Peter Mitchell}
+header_30_line_103 {Bartlomiej Borkowski}
+header_30_line_104 {Igor Juhas}
+header_30_line_105 {Mark Brooks}
+header_30_line_106 {Jonas Kaufmann}
+header_30_line_107 {ScreamPassion}
+header_30_line_108 { }
+header_30_line_109 {Audio Engine: FMOD Studio by}
+header_30_line_11 {Александру "Reefership" Мосяжу}
+header_30_line_110 {Firelight Technologies Pty Ltd.}
+header_30_line_12 {Андрею "Hawcker" Амарфию}
+header_30_line_13 {Одноглазый}
+header_30_line_14 {Елене "makarena" Макаровой}
+header_30_line_15 {Валерию "валера" Мошатину}
+header_30_line_16 {Дмитрию "dim10" Трубецкому}
+header_30_line_17 {Игорю "delfin_" Чернею}
+header_30_line_18 {Максиму "Shomaan" Шиманскому}
+header_30_line_19 {Матвею "Mett" Топчилко}
+header_30_line_2 {Константину "mitrokosta" Митрофанову}
+header_30_line_20 {Алексею "q4a" Комарову}
+header_30_line_21 {Сергею "Serginio" Капцану}
+header_30_line_22 {Виталию "Альмейде" Нечхаеву}
+header_30_line_23 {Александру "Lexanni" Волчкову}
+header_30_line_24 {Александру "Шурик" Шпехту}
+header_30_line_25 {Дмитрию "Джафару" Стреляеву}
+header_30_line_26 {Юрию "Ursus" Рогачу}
+header_30_line_27 {Алексею "AlexusB" Бобровникову}
+header_30_line_28 {Алексею "Sonic" Рябову}
+header_30_line_29 {Montbrain}
+header_30_line_3 {Михаилу "d'Artagnan" Мельнику}
+header_30_line_30 {pirat1}
+header_30_line_31 {Zagolsky}
+header_30_line_32 {Ивану "kb31" Кондакову}
+header_30_line_33 {Артему Кононенко}
+header_30_line_34 {Sam Hambrouck}
+header_30_line_35 {Ивану Якимчаку}
+header_30_line_36 {Andrea Mangione}
+header_30_line_37 {Константину Облаухову}
+header_30_line_38 {Артему Воротникову}
+header_30_line_39 {Вадиму Грудеву}
+header_30_line_4 {Ingrid "Nordilys" Borresen}
+header_30_line_40 {Andrei Shtabel}
+header_30_line_41 {Szymon J.}
+header_30_line_42 {Anthony Lapenok}
+header_30_line_43 {Станиславу Жукову}
+header_30_line_44 {Asapin}
+header_30_line_45 {Евгению Шалыгину}
+header_30_line_46 {kk-se}
+header_30_line_47 {Егору Олефиренко}
+header_30_line_48 {TotalCaesar659}
+header_30_line_49 {Николаю Пригодичу}
+header_30_line_5 {Артёму "conterstrike1_6" Вентцелю}
+header_30_line_50 {Nikk}
+header_30_line_51 {Johnny88}
+header_30_line_52 {Xenon}
+header_30_line_53 {Павлу Ловцову}
+header_30_line_54 {Алексею Уткину}
+header_30_line_55 {Сергею Арифулину}
+header_30_line_56 {Георгию Неприенко}
+header_30_line_57 {Александру Кузнецову}
+header_30_line_58 {Владиславу Масенко}
+header_30_line_59 {Роману Ковалеву}
+header_30_line_6 {Vagrant95}
+header_30_line_60 {Артему Толстоброву}
+header_30_line_61 {Максиму Хохрину}
+header_30_line_62 {Сардиону Млхоеву}
+header_30_line_63 {Тимуру Буачидзе}
+header_30_line_64 {Сергею Попову}
+header_30_line_65 {Алексею Коновалову}
+header_30_line_66 {Максиму Вандушеву}
+header_30_line_67 {Дмитрию Миропольскому}
+header_30_line_68 {Сергею Порывкину}
+header_30_line_69 {Дмитрию Лапину}
+header_30_line_7 {Бабкину}
+header_30_line_70 {Федору Гончарову}
+header_30_line_71 {Михаилу Еремееву}
+header_30_line_72 {Вячеславу Никитину}
+header_30_line_73 {Антону Пантелееву}
+header_30_line_74 {Александру Заливако}
+header_30_line_75 {Герману Горшкову}
+header_30_line_76 {Jason Rhodes}
+header_30_line_77 {Eric Smith}
+header_30_line_78 {Владиславу Гольцу}
+header_30_line_79 {Damien Pittet}
+header_30_line_8 {Игорю "Wazar" Степанову}
+header_30_line_80 {Maik Pfarrherr}
+header_30_line_81 {Alessio Casarin}
+header_30_line_82 {Kyle J. S.}
+header_30_line_83 {Александру Меркушину}
+header_30_line_84 {Sam Muench}
+header_30_line_85 {Michael Perkins}
+header_30_line_86 {Bud Buddy}
+header_30_line_87 {Lartan}
+header_30_line_88 {Xenon Casper}
+header_30_line_89 {Артёму Вентцелю}
+header_30_line_9 {wildam}
+header_30_line_90 {Sam}
+header_30_line_91 {Alessio Casarin}
+header_30_line_92 {Sam Muench}
+header_30_line_93 {Franciszek Jureczka}
+header_30_line_94 {William Nelson}
+header_30_line_95 {Dmytro Kekukh}
+header_30_line_96 {Maris Jurgenbergs}
+header_30_line_97 {Daniel Helmenstein}
+header_30_line_98 {Sami Vahtera}
+header_30_line_99 {Vova Bezruchuk}
+header_30_line_111 {La Hire}
+header_30_line_112 {Blackboots Burton}
+header_30_line_113 {Shado}
+header_30_line_114 {ChocolateJustice}
+header_30_line_115 {LIGHT2A14}
+header_30_line_116 {Михаилу "miha" Ленскому}
+header_30_line_117 {Cossack_440}
+header_30_line_118 {Canis}
+header_30_line_119 {Ивану Коцерубе “Hezerlighter”}
+header_30_line_120 {Владимиру Мазунину}
+header_30_line_121 {Flashdeck}
+header_30_line_122 {Hikari光莉}
+header_30_line_123 {MrGray}
+header_30_line_124 {D-X}
+header_30_line_125 {Ихмиллион}
+header_30_line_126 {CrazyDrbIn}
+header_30_line_127 {Silent Shadow}
+header_30_line_128 {Леониду "Meowmere" Соболеву}
+header_30_line_129 {Captain John Knight}
+header_30_line_130 {Feargard}
+header_30_line_131 {Breaker}
+header_30_line_132 {JaroslavIP}
+header_30_line_133 {Lucky looser}
+header_30_line_134 {Scrymax}
+header_30_line_135 {Озерову Кристоферу (в память о дедушке)}
+header_30_line_136 {Rinsvind}
+header_30_line_137 {Флибустьерро}
+header_30_line_138 {Reze070}
+header_30_line_139 {Олегу Тарасову (D.B.R.P.)}
+header_30_line_140 {Netayad}
+header_30_line_141 {Utsuho Reiuji}
+header_30_line_142 {Aivanikus}
+header_30_line_143 {Wu-Tang is for the Children}
+header_30_line_144 {ARXION}
+header_30_line_145 {fl@shka}
+header_30_line_146 {Александру Чугунову}
+header_30_line_147 {Grim Reaper}
+header_30_line_148 {tsorros}
+header_30_line_149 {Эйскъяльди}
+header_30_line_150 {Ranfoxy}
+header_30_line_151 {norimyxxu}
+header_30_line_152 {Gudwin3000}
+header_30_line_153 {Станислав "LOAL" Шпандарук}
+header_30_line_154 {Sk1F}
+header_30_line_155 {Антону Губанову}
+header_30_line_156 {Андрею Ланину}
+header_30_line_157 {RetroRinascimento}
+header_30_line_158 {Kasarmin\КокоревН.С.}
+header_30_line_159 {Николаю Еритенко "Вивек"}
+header_30_line_160 {Роману Дьяконову}
+header_30_line_161 {CaHeK AHdPeeB}
+header_30_line_162 {Августу Гончарову}
+header_30_line_163 {Miky}
+header_30_line_164 {Nordipset}
+header_30_line_165 {Dima_56}
+header_30_line_166 {alexshmalex9}
+header_30_line_167 {Перфильич}
+header_30_line_168 {Роману Цевелёву}
+header_30_line_169 {Jidezam}
+header_30_line_170 {Inkvizitor m}
+header_30_line_171 {Neocris}
+header_30_lines {171}
+header_30_text { }
+header_31_text {Карибские легенды}
+header_31_color {orange}
+header_31_lines {11}
+header_31_line_1 {Виктор Панасенко}
+header_31_line_2 {Aposteriori}
+header_31_line_3 {Михаил (Torolf) Еремеев}
+header_31_line_4 {HiddenWind}
+header_31_line_5 {Тимур Буачидзе}
+header_31_line_6 {Влад Масенко}
+header_31_line_7 {Cruzz}
+header_31_line_8 {Дэмиен Питте}
+header_31_line_9 {Михаил (Mr. Goodman) Фулга}
+header_31_line_10 {Даниэль Хельменштейн}
+header_31_line_11 {BoneCrushR}
+header_32_text {Адмиралы сообщества}
+header_32_skip {10}
+header_32_lines {51}
+header_32_line_1 {Влад Черкасов}
+header_32_line_2 {tmk}
+header_32_line_3 {Алексей Калинин }
+header_32_line_4 {nikolaschock}
+header_32_line_5 {Thomsen}
+header_32_line_6 {Михаил Plotwist Черутич}
+header_32_line_7 {Сергей Арифулин}
+header_32_line_8 {Семён Товарушкин aka Sam}
+header_32_line_9 {Никита Цыпин (Pipin77)}
+header_32_line_10 {Михаил Голохваст KILLJOYS}
+header_32_line_11 {Игорь "Legolas" Павлов}
+header_32_line_12 {IZTACCIHTLI}
+header_32_line_13 {Павел Corsaretti Ловцов}
+header_32_line_14 {Ник Бурдужель}
+header_32_line_15 {Дмитрий Dart Bane}
+header_32_line_16 {Fox}
+header_32_line_17 {AlphaKrigusOmegonusMarine}
+header_32_line_18 {Alex Carrey}
+header_32_line_19 {Игорь Капунов}
+header_32_line_20 {DefBons}
+header_32_line_21 {KACTET}
+header_32_line_22 {Валентайн}
+header_32_line_23 {Captain Nord}
+header_32_line_24 {Георгий "georg" Неприенко}
+header_32_line_25 {Гончаров "Pally" Фёдор}
+header_32_line_26 {Капитан Фадей}
+header_32_line_27 {Денис "Mr_Gualtieri" Копылов (deniskopylov)}
+header_32_line_28 {kato.ex.pskr}
+header_32_line_29 {Winarik (Пирог Данил)}
+header_32_line_30 {Kilgaharra }
+header_32_line_31 {NeatShark}
+header_32_line_32 {Родриго Валле-Мехия (El Paisano)}
+header_32_line_33 {Доминик Недьела}
+header_32_line_34 {Габриэль - Габриэле Серрагги Синдоне}
+header_32_line_35 {Rommelkaas}
+header_32_line_36 {Максим Науло}
+header_32_line_37 {I_Love_Hentai ( ͡° ͜ʖ ͡°)}
+header_32_line_38 {Laeslo }
+header_32_line_39 {Мэтью Лайл Прибе}
+header_32_line_40 {nikitabergman}
+header_32_line_41 {marion buyer}
+header_32_line_42 {Colonel Fouks}
+header_32_line_43 {- MericSever -}
+header_32_line_44 {Алия Карайкович}
+header_32_line_45 {Enigma42}
+header_32_line_46 {Artemikon}
+header_32_line_47 {Krolvar Axebearer}
+header_32_line_48 {Adrien MANOWARAD}
+header_32_line_49 {Lourens Shiba}
+header_32_line_50 {Иван Кардаш (K1ndr3d)}
+header_32_line_51 {Макс Н(hapneer)}

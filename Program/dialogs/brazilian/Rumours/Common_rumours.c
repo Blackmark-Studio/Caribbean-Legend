@@ -685,7 +685,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		break;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         case "rumours_capitan":
-			Dialog.Text = SelectRumourEx("capitão",NPChar);
+			Dialog.Text = SelectRumourEx("capitan", NPChar);
 			Link.l1 = RandPhraseSimple(RandSwear()+"Interessante! Tem mais uma coisa que quero perguntar...","Mais uma pergunta.");
 			Link.l1.go = "quests";
 			Link.l2 = RandPhraseSimple("Obrigado, eu devo ir.","Adeus.");
@@ -874,7 +874,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         case "rumours_poor":
 			if (!CheckAttribute(NPChar, "quest.repeat.rumours_poor") || NPChar.quest.repeat.rumours_poor <= 1)
 			{
-				Dialog.Text = SelectRumourEx("pobre",NPChar);
+				Dialog.Text = SelectRumourEx("poor", NPChar);
 				Link.l1 = RandPhraseSimple(RandSwear()+"Interessante. Mais uma pergunta...","Hum, deixa eu perguntar outra coisa...");
 				Link.l1.go = "rumours_poor_2";
 				Link.l2 = RandPhraseSimple("Bem, adeus.","Tchau, camarada.");
@@ -892,7 +892,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         case "rumours_poor_2":
 			if (NPChar.quest.repeat.rumours_poor <= 1)
 			{
-				Dialog.Text = SelectRumourEx("pobre",NPChar);
+				Dialog.Text = SelectRumourEx("poor",NPChar);
 				Link.l1 = RandPhraseSimple(RandSwear()+"Interessante. Mais uma pergunta...","Hum, deixa eu te perguntar outra coisa...");
 				Link.l1.go = "rumours_poor";
 				Link.l2 = RandPhraseSimple("Bem, adeus.","Até mais, camarada.");

@@ -110,7 +110,7 @@ void LAi_type_patrol_CharacterUpdate(aref chr, float dltTime)
 					if(i < num)
 					{
 						//Нашли главного персонажа
-						if(stf(chr.chr_ai.type.player) <= 0.0 || LAi_CheckFightMode(pchar))
+						if(stf(chr.chr_ai.type.player) <= 0.0 || LAi_CheckFightMode(pchar) != CHR_MODE_PEACE)
 						{
 							LAi_type_patrol_TestControl(chr);
 							return;
@@ -345,7 +345,7 @@ void LAi_type_patrol_TestControl(aref chr)
 {
 	chr.chr_ai.type.player = 5 + rand(10);
 	int iRand;
-	bool bFightMode = LAi_CheckFightMode(pchar);
+	bool bFightMode = LAi_CheckFightMode(pchar) != CHR_MODE_PEACE;
 	// belamour legendary edition адмиралу и губернатору можно ходить в боевом режиме
 	bool bAdmiral = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && chr.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation);
 	bool bGenGov = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && chr.nation == GetBaseHeroNation());

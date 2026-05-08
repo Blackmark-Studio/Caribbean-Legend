@@ -43,7 +43,6 @@ void shipsReInit()
 
 	makeref(refShip,ShipsTypes[SHIP_WAR_TARTANE]); //тартана // ку
 	refShip.SpeedRate = 8.90;
-	refShip.WindAgainstSpeed = 1.12;
 
 	makeref(refShip,ShipsTypes[SHIP_CAREERLUGGER]); //кур. люггер
 	refShip.SpeedRate = 10.05;
@@ -53,11 +52,9 @@ void shipsReInit()
 
 	makeref(refShip,ShipsTypes[SHIP_BARKENTINE]); //баркентина //ку
 	refShip.SpeedRate = 9.70;
-	refShip.WindAgainstSpeed = 1.25;
 
 	makeref(refShip,ShipsTypes[SHIP_SLOOP]); //шлюп //ку
 	refShip.SpeedRate = 9.90;
-	refShip.WindAgainstSpeed = 0.85;
 
 	makeref(refShip,ShipsTypes[SHIP_SCHOONER_W]); // воен. шхуна
 	refShip.SpeedRate = 10.45;
@@ -103,18 +100,15 @@ void shipsReInit()
 
 	makeref(refShip,ShipsTypes[SHIP_EASTINDIAMAN]); //ост-индец //ку
 	refShip.SpeedRate = 10.65;
-	refShip.WindAgainstSpeed = 0.84;
 
 	makeref(refShip,ShipsTypes[SHIP_NAVIO]); // навиo
 	refShip.SpeedRate = 10.45;
 
 	makeref(refShip,ShipsTypes[SHIP_FRIGATE_H]); // тяж. фрегат //ку
 	refShip.SpeedRate = 10.05;
-	refShip.WindAgainstSpeed = 0.61;
 	
 	makeref(refShip,ShipsTypes[SHIP_GALEON_H]); // тяж. галеон //ку
 	refShip.SpeedRate = 9.55;
-	refShip.WindAgainstSpeed = 0.78;
 
 	makeref(refShip,ShipsTypes[SHIP_LINESHIP]); // военный корабль
 	refShip.SpeedRate = 8.80;
@@ -178,7 +172,6 @@ void shipsReInit()
         if(sti(RealShips[i].BaseType) == SHIP_POLACRE_QUEST) // тяж. полакр "Тореро" //ку
         {
             RealShips[i].SpeedRate = 11.55;
-            RealShips[i].WindAgainstSpeed = 0.98;
         }
 
         if(sti(RealShips[i].BaseType) == SHIP_GALEON_SM) // королевский галеон "Святое Милосердие"

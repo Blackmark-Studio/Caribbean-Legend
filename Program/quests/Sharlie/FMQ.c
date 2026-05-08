@@ -1716,7 +1716,7 @@ void FMQN_EnglandFail(string qName) // провал английского ва�
 void FMQN_EnglandBattleFail(string qName) // тревога
 {
 	Log_Info(StringFromKey("FMQ_35"));
-	PlaySound("VOICE\Russian\EvilPirates01.wav");
+	PlaySoundSafe("VOICE\" + LanguageGetLanguage(), "EvilPirates01.wav");
 	LAi_group_SetHearRadius("HOLLAND_CITIZENS", 200);
 	for (int i=1; i<=5; i++)
 	{
@@ -5056,10 +5056,10 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 		InterfaceStates.Buttons.Save.enable = true; // разрешим сохраняться
 		RemoveGeometryFromLocation("Shore38", "smg");
 		LAi_group_Delete("EnemyFight");
-		SetCharacterGoods(pchar, GOOD_SANDAL, GetCargoGoods(sld, GOOD_SANDAL) + sti(pchar.questTemp.FMQL.Sanl));
-		SetCharacterGoods(pchar, GOOD_SHIPSILK, GetCargoGoods(sld, GOOD_SHIPSILK) + sti(pchar.questTemp.FMQL.Silk));
-		SetCharacterGoods(pchar, GOOD_ROPES, GetCargoGoods(sld, GOOD_ROPES) + sti(pchar.questTemp.FMQL.Rope));
-		SetCharacterGoods(pchar, GOOD_OIL, GetCargoGoods(sld, GOOD_OIL) + sti(pchar.questTemp.FMQL.Oil));
+		SetCharacterGoods(pchar, GOOD_SANDAL, GetCargoGoods(pchar, GOOD_SANDAL) + sti(pchar.questTemp.FMQL.Sanl));
+		SetCharacterGoods(pchar, GOOD_SHIPSILK, GetCargoGoods(pchar, GOOD_SHIPSILK) + sti(pchar.questTemp.FMQL.Silk));
+		SetCharacterGoods(pchar, GOOD_ROPES, GetCargoGoods(pchar, GOOD_ROPES) + sti(pchar.questTemp.FMQL.Rope));
+		SetCharacterGoods(pchar, GOOD_OIL, GetCargoGoods(pchar, GOOD_OIL) + sti(pchar.questTemp.FMQL.Oil));
 		DeleteAttribute(pchar, "GenQuest.CannotWait");
 		LAi_LocationDisableOfficersGen("Shore38", false);
 		locations[FindLocation("Shore38")].DisableEncounters = false;

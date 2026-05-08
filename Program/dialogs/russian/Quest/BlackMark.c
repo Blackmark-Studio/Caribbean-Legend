@@ -727,7 +727,7 @@ void ProcessDialogEvent()
 		
 		case "BM_IronsThirdJungle_29":
 			dialog.text = "Не-а. Но узнать это - невелика наука, поспрашиваем у трактирных забулдыг, эти и мать готовы продать, если купишь им чарочку-другую. Ну, что думаешь по поводу моего плана?";
-			if (GetSummonSkillFromName(pchar, SKILL_ACCURACY) > 24 && GetSummonSkillFromName(pchar, SKILL_GRAPPLING) > 24 && GetSummonSkillFromName(pchar, SKILL_SAILING) > 24)
+			if (GetSummonSkillFromName(pchar, SKILL_ACCURACY) > 4 && GetSummonSkillFromName(pchar, SKILL_GRAPPLING) > 4 && GetSummonSkillFromName(pchar, SKILL_SAILING) > 4)
 			{
 				link.l1 = "Что если он капитан корабля, приписанного к Ямайке, то и бывает он на нём в водах острова постоянно. Напасть под ложным флагом лучше, чем так сильно рисковать в самом городе.";
 				link.l1.go = "BM_IronsThirdJungle_Sea1";	// Морской вариант
@@ -737,9 +737,9 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (GetSummonSkillFromName(pchar, SKILL_SAILING) < 25) notification("Недостаточно развит навык (25)", SKILL_SAILING);
-				if (GetSummonSkillFromName(pchar, SKILL_ACCURACY) < 25) notification("Недостаточно развит навык (25)", SKILL_ACCURACY);
-				if (GetSummonSkillFromName(pchar, SKILL_GRAPPLING) < 25) notification("Недостаточно развит навык (25)", SKILL_GRAPPLING);
+				if (GetSummonSkillFromName(pchar, SKILL_SAILING) < 5) notification("Недостаточно развит навык (5)", SKILL_SAILING);
+				if (GetSummonSkillFromName(pchar, SKILL_ACCURACY) < 5) notification("Недостаточно развит навык (5)", SKILL_ACCURACY);
+				if (GetSummonSkillFromName(pchar, SKILL_GRAPPLING) < 5) notification("Недостаточно развит навык (5)", SKILL_GRAPPLING);
 			}
 			link.l2 = "Что он не лишён недостатков, и ты многое оставляешь на удачу. Но в целом - осуществимо. Я с тобой, Томми. От одного избавился, не оставлять же другого?";
 			link.l2.go = "BM_IronsThirdJungle_Land1";	// Сухопутный вариант

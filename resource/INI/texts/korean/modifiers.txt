@@ -1,10 +1,61 @@
-blade_critDamage {근접 치명타 피해}
-gun_critDamage {권총 치명타 피해}
-musket_critDamage {머스킷 치명타 피해}
+bigCannonsAvailable {대구경 화포 구매 가능}
+BigCannonsAvailable_0 {대구경 화포는 판매되지 않음}
+BigCannonsAvailable_1 {대구경 화포 판매 중}
 blade_critChance {근접무기 치명타 확률}
+blade_critDamage {근접 치명타 피해}
+caribbeanGoodsCost {식민지 물품 가격}
+caribbeanGoodsStock {식민지 물품 재고}
+contrabandTradeStatus_0 {밀수업자와 거래 가능}
+contrabandTradeStatus_1 {밀수업자와 거래 불가}
+contrabandTradeStatus_2 {밀수업자와 거래가 어려움}
+convenienceGoodsCost {필수품 가격}
+convenienceGoodsStock {필수품 재고}
+crewExpMtp {승무원 경험치 획득 속도}
+crewHireCost {선원 고용 비용}
+crewHireMoraleMtp {고용 선원 사기}
+crewHiringExpMtp {고용 승무원 경험치}
+crewMaintenanceCost {선원 유지 비용}
+crownGoodsCost {왕실 물품 가격}
+crownGoodsStock {왕실 물품 재고}
+debitRate {대출 금리}
+depositGoldRate {더블룬 예금 금리}
+depositSilverRate {페소 예금 금리}
+drugConsumption {의약품 소모}
+enemyHullDamageMtp {적 함선 선체 피해}
+europeanGoodsCost {유럽 물품 가격}
+europeanGoodsStock {유럽 물품 재고}
+exportPriceMtp {수출 가격}
+foodConsumption {식량 소모}
+GlobalSpeed {월드맵 선박 속도}
+goldsilverGoodsAvailable_0 {은과 금은 판매되지 않음}
+goldsilverGoodsAvailable_1 {은과 금 판매 중}
 gun_critChance {권총 치명타 확률}
-musket_critChance {머스킷 치명타 확률}
-incomingDamageReduction {피해 보호}
-RangeIncomingDamageReduction {화기 피해 방어}
-Shot_Damage {화기 피해}
+gun_critDamage {권총 치명타 피해}
 HeadshotDamage {헤드샷 피해}
+importPriceMtp {수입 가격}
+incomingDamageReduction {피해 보호}
+legalContraband_0 {밀수는 평소처럼 작동함}
+legalContraband_1 {밀수품이 수입품으로 간주됨}
+medicamentCost {의약품 가격}
+minFortCannonsMtp {요새 강습을 위한 파괴된 포 수 기준}
+moraleMtp {선원 사기 증가}
+musket_critChance {머스킷 치명타 확률}
+musket_critDamage {머스킷 치명타 피해}
+nationsReputationMtp {국가 평판 변화 속도}
+RangeIncomingDamageReduction {화기 피해 방어}
+recruitsMtp {신병}
+repairCost {조선소 수리 비용}
+seaRepairEfficency {해상 수리 효율}
+shipSpeedDynamic {선박 가속}
+shipyardCannonsStock {조선소 화포 재고}
+Shot_Damage {화기 피해}
+slavesGoodsAvailable_0 {노예는 판매되지 않음}
+slavesGoodsAvailable_1 {노예 판매 중}
+stealthInceptionBonus {도시 침투 확률}
+stolenGoodsMtp {장물 페널티 감소}
+stormDamageMtp {폭풍 피해}
+tradeLicenseCost {무역 허가 비용}
+uniqueGoodsAvailable_0 {전략 물자는 판매되지 않음}
+uniqueGoodsAvailable_1 {전략 물자 판매 중}
+uniqueGoodsStock {전략 물자 재고}
+SquadronPower {함대 전력}

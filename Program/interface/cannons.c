@@ -62,7 +62,7 @@ void InitInterface_R(string iniName, ref pStore)
 
 	SendMessage(&GameInterface,"ls",MSG_INTERFACE_INIT,iniName);
 
-	CreateString(true,"ShipName","",FONT_NORMAL,COLOR_MONEY, 960,247,SCRIPT_ALIGN_CENTER,1.5);
+	CreateString(true,"ShipName","",FONT_NORMAL,COLOR_MONEY, 960,250,SCRIPT_ALIGN_CENTER,1.5);
 	CreateString(true,"ShipCannons","",FONT_NORMAL,COLOR_NORMAL, 960,272,SCRIPT_ALIGN_CENTER,1.5); // QualityPL
 
     SetShipWeight();
@@ -353,6 +353,28 @@ void ShowHelpHint()
 	sPicture = "none";
 	sGroup = "none";
 	sGroupPicture = "none";
+	string sAttributeName;
+	int iShip;
+	ref refBaseShip;
+	int picW = 180;
+	int picH = 180;
+	bool bWindRose = false;
+
+	switch (sCurrentNode)
+	{
+		case "SHIPS_SCROLL":
+			iShip = sti(refCharacter.ship.type);
+			refBaseShip = GetRealShip(iShip);
+			sHeader = XI_ConvertString(refBaseShip.BaseName);
+			sText1 = GetShipDescr(refBaseShip);
+		break;
+		case "HELP":
+			sHeader = XI_Convertstring("Shipyard");
+			sText1  = GetConvertStr("Shipyard_hint", "ShipsDescribe.txt");
+		break;
+	}
+
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, bWindRose, false);
 }
 void EndTooltip()
 {

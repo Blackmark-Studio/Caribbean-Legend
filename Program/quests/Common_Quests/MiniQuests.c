@@ -1781,7 +1781,7 @@ void MarchCap2_fail(string qName)//компаньон погиб по пути �
 	DeleteQuestCondition("MarchCap1_4", true);
 	sld = characterFromId("MarchCap");	
 	AddQuestRecord("MarchCap", "3-1");
-	AddQuestUserData("КВЕСТ", "sSex1", GetSexPhrase(StringFromKey("MiniQuests_15"),StringFromKey("MiniQuests_16")));
+	AddQuestUserData("MarchCap", "sSex1", GetSexPhrase(StringFromKey("MiniQuests_15"),StringFromKey("MiniQuests_16")));
 	AddQuestUserData("MarchCap", "sName", GetFullName(sld));
 	CloseQuestHeader("MarchCap");
 	DeleteAttribute(pchar, "GenQuest.MarchCap");
@@ -1839,7 +1839,7 @@ void MarchCap3_CreatePirate(string qName)//пират с золотишком
 		case 2: UpgradeShipParameter(sld, "MaxCrew"); break;
 		case 3: UpgradeShipParameter(sld, "HP"); break;
 		case 4: UpgradeShipParameter(sld, "SpeedRate"); break;
-		case 5: UpgradeShipParameter(sld, "WindAgainstSpeed"); break;
+		case 5: UpgradeShipParameter(sld, "Rig"); break;
 	}
 	Group_AddCharacter("MarchCap_Attack", "MarchPirate");
 	sld.AlwaysEnemy = true;

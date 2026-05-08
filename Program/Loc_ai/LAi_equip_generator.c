@@ -32,42 +32,40 @@ int gItemQualityGroups[5] = {1, 2, 4, 8, 16};
 #define ITEM_GROUP_FLAG_PERSIAN               64 // индо-персидские клинки
 int gItemTargetGroups[7] = {1, 2, 4, 8, 16, 32, 64};
 
-void SetNPCEquip(ref rChar, ref rItems, bool bMushketer)
+// Закидываем сгенерированную экипировку в отдельные атрибуты, используемые внутри LAi_NPC_Equip
+void SetNPCEquip(ref rChar, ref rItems, bool bMushketer = false)
 {
-	string sBladeID = "";
-	string sGunID = "";
-	string sBulletID = "";
-	string sArmorID = "";
 	int nItemsCount = GetArraySize(rItems);
 	int nItemIndex = rand(nItemsCount - 1);
-	ref rItem = &rItems[nItemIndex];
-
-	sBladeID = rItems[nItemIndex].blade;
-	sGunID = rItems[nItemIndex].gun;
-	sBulletID = rItems[nItemIndex].bullet;
-	sArmorID = rItems[nItemIndex].armor;
+	ref itemKit = rItems[nItemIndex];
+	string sArmorID = itemKit.armor;
 
 	if (bMushketer)
 	{
-		rChar.MushketBulletType = sBulletID;
-		rChar.MushketType = sGunID;
+		rChar.MushketBulletType = itemKit.bullet;
+		rChar.MushketType = itemKit.gun;
 	}
 	else
 	{
-		rChar.GunBulletType = sBulletID;
-		rChar.GunType = sGunID;
-		rChar.BladeType = sBladeID;
+		rChar.GunBulletType = itemKit.bullet;
+		rChar.GunType = itemKit.gun;
+		rChar.BladeType = itemKit.blade;
 	}
-	//Log_Info("SetNPCEquip: sArmorID = "+sArmorID+"; sBladeID="+sBladeID+"; sGunID="+sGunID+"; sBulletID="+sBulletID);
 
-	if (sArmorID != "")
-	{
-		GiveItem2Character(rChar, sArmorID);
-		EquipCharacterbyItem(rChar, sArmorID);
-	}
+	// if (bBettaTestMode)
+	// {
+	// 	string armorNoty = (sArmorID == "") ? "" : GetItemName(sArmorID) + "|";
+	// 	if (bMushketer) Log_Info(armorNoty+GetItemName(itemKit.gun)+"&"+GetItemName(itemKit.bullet));
+	// 	else Log_Info(armorNoty+GetItemName(itemKit.blade)+"|"+GetItemName(itemKit.gun)+"&"+GetItemName(itemKit.bullet));
+	// }
+
+	if (sArmorID == "") return;
+
+	GiveItem2Character(rChar, sArmorID);
+	EquipCharacterbyItem(rChar, sArmorID);
 }
 
-void GenerateItemsForCharacter(ref rChar, string sType, ref rSoldier, ref rMushketer)
+void GenerateItemsForCharacter(ref rChar, string sType, ref rSoldier, ref rMushketer = nullptr)
 {
 	//trace("GenerateItemsForCharacter: "+rChar.id);
 	string sGenerateCallback = GetAttributeOrDefault(rChar, "GenerateItemsCallback", "");

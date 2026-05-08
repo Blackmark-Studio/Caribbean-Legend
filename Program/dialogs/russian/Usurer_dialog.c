@@ -918,7 +918,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Interest":
-			Pchar.Quest.Loans.(NPC_Area).Interest = 4.0 + (makeint((((6.0 - 4.0) * (GetSummonSkillFromName(pchar, "Commerce") + GetSummonSkillFromName(pchar, "Leadership")) / 200) ) / 0.5 + 0.5)) * 0.5;
+			Pchar.Quest.Loans.(NPC_Area).Interest = GetCreditRate();
 			// Rebbebion, добавил фикс отображения знака процента
 			dialog.text = fts(stf(Pchar.Quest.Loans.(NPC_Area).Interest), 1) + "%% в месяц. Основываясь на том, что я о вас знаю, я не могу предложить вам сейчас лучших условий."; 
 			Link.l1 = "Меня это вполне устраивает. Осталось обговорить срок.";

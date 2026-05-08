@@ -459,7 +459,7 @@ void ProcessDialogEvent()
 		    if (sti(Pchar.money) >= GetCrewQuantity(pchar)*crewWhoreCost && GetCrewQuantity(pchar)>0)
 		    {
 		        AddMoneyToCharacter(Pchar, -makeint(GetCrewQuantity(pchar)*crewWhoreCost));
-	            AddCrewMorale(Pchar, 10);
+	            AddCrewMorale(Pchar, 10, true);
 				ChangeCharacterComplexReputation(pchar,"authority", 1);
 	            LAi_Fade("", "");
                 AddTimeToCurrent(5 + rand(1), rand(30));

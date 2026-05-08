@@ -1,2 +1,2 @@
-ShowPapersAction {信任状を提示する}
 FactorQuestZpq {正体不明のガスコーニュ人}
+ShowPapersAction {信任状を提示する}

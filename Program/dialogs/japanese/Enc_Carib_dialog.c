@@ -36,6 +36,8 @@ void ProcessDialogEvent()
 				LAi_group_MoveCharacter(sld, sGroup);
 				LAi_RemoveCheckMinHP(sld);
 				LAi_SetImmortal(sld, false);
+				if("quest.agressive" in npchar)
+					sld.quest.agressive = true;
 			}
 			LAi_group_SetRelation(sGroup, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 			LAi_group_FightGroups(sGroup, LAI_GROUP_PLAYER, true);
@@ -106,6 +108,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_2_2":
+			npchar.quest.agressive = true;
 			dialog.text = RandPhraseSimple("嘘をつくな、色白の野郎め！インディアンを殺しに来たんだろう！\n戦う覚悟はできてるか、色白野郎！？","お前はインディアンを殺す。白人の舌は嘘つきの舌だ。俺はそれを切り取って火で焼いてやる！");
 			link.l1 = RandPhraseSimple("まあ、相棒、だったら俺を責めるなよ。神のみぞ知るが、俺は避けようとしたんだぜ…","「望んだのはお前だろう、戦士。」");
 			link.l1.go = "exit_fight";
@@ -123,6 +126,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
+				npchar.quest.agressive = true;
 				dialog.text = "お前は俺たちの欲しいものを持っていないな、色白野郎……お前は俺たちの戦利品になるんだ！";
 				link.l1 = "やれるもんならやってみろよ、かかし野郎……";
 				link.l1.go = "exit_fight";
@@ -130,6 +134,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_3_2":
+			npchar.quest.agressive = true;
 			dialog.text = RandPhraseSimple("俺たちは白い顔の犬どもとは取引しねえ。殺して奪うだけだ！","俺たちは汚ねえミスキートやアラワクじゃねえ、白顔どもと取引なんかしねえ！あいつらを殺して戦利品を奪うのさ！");
 			link.l1 = RandPhraseSimple("なら、俺から奪ってみろ、このろくでなし！","まずは俺のサーベルを奪ってみろ、このクズ野郎！");
 			link.l1.go = "exit_fight";
@@ -340,6 +345,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
+				npchar.quest.agressive = true;
 				dialog.text = "「だったら全部タダでもらうぜ、色白野郎！」";
 				link.l1 = "試してみてもいいぜ…";
 				link.l1.go = "exit_fight";

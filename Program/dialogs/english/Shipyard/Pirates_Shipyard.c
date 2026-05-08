@@ -749,7 +749,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_hull_01":
-			dialog.text = "Alright, let's do the math... For a full rebuild of the ship's hull I'll need 150 units each of bakaut, ropes, ship silk and resin — and 10,000 gold doubloons. Don't look at me like that; most of the money will go on materials. This job is equivalent to dismantling the ship and building it again from scratch.";
+			dialog.text = "Well, let’s do the math... For a complete rebuild of the ship’s hull, I’ll need 150 units each of ironwood, rope, ship silk, and resin. And 10,000 gold doubloons on top of that. And don’t look at me like that — most of the money will go on materials. This kind of work is the same as taking the ship apart piece by piece and building her again from scratch.";
 			link.l1 = "No, I don't think so. I'm not ready to bring that many resources and hand over a pile of gold for the rebuild. I'll stick with what I have.";
 			link.l1.go = "FDM_hull_thinking";
 			link.l2 = "Eh, what won't we do for our ship... Fine, it's a deal.";

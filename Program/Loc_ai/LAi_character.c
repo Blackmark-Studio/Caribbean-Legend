@@ -440,7 +440,7 @@ void LAi_SetFightMode(aref chr, int isFightMode)
 {
 	if(isFightMode)
 	{
-		if(SendMessage(chr, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode") != 0)
+		if(SendMessage(chr, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode") != CHR_MODE_PEACE)
 			return; //Не для переключения между режимами эта функция
 		if(CheckAttribute(chr, "PriorityMode"))
 			isFightMode = sti(chr.PriorityMode);
@@ -992,10 +992,13 @@ void LAi_AllCharactersUpdate(float dltTime)
 			makearef(chr_ai, Characters[idx].chr_ai);
 			ref chr = &Characters[idx];
 			if(LAi_IsDead(chr)) continue;
+			if (CheckAttributeEqualTo(chr, "OfficerImmortal", "injury")) continue;
+
 			//Востоновление жизни
 			float dlthp = LAI_DEFAULT_DLTHP;
 			if(CheckAttribute(chr_ai, "hp_dlt")) dlthp = stf(chr_ai.hp_dlt);
 			if (IsEquipCharacterByArtefact(chr, "amulet_7")) dlthp *= 2.0;
+			if (HasPerk(chr, "Medic") && stf(chr_ai.hp) * 2.0 < stf(chr_ai.hp_max)) dlthp *= 2.0;
 			if(idx == GetMainCharacterIndex() && CheckAttribute(chr, "cheats.hpupdate")) dlthp *= 10.0;
 			if(LAi_IsFightMode(chr) && GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE) == "blade_WR") dlthp *= 5.0;
 			float hp = stf(chr_ai.hp) + dlthp*dltTime;

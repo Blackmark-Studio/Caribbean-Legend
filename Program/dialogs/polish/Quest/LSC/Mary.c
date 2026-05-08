@@ -87,8 +87,9 @@ void ProcessDialogEvent()
 		case "Town_7":
 			PlaySound("Voice\English\LSC\Mary Casper-04.wav");
 			dialog.text = "„Co powiedziałeś?... Do diabła, nie jesteś zwykłym rabusiem! On pracuje dla admirała! Złapcie go, chłopcy!”";
-			link.l1 = "Ha, jesteś prawdziwym dżentelmenem: ledwo schowałeś szablę do pochwy, a już zasypujesz mnie komplementami. Dzięki za pomoc. Naprawdę mnie uratowałeś, tak, co nie? Przedstaw się, proszę, bo pierwszy raz cię widzę. Długo już jesteś na Wyspie?";
-			link.l1.go = "Cabin_fight";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("LSC_Cabin_fight");
 		break;
 		
 	// ---------------------------------покушение на Акулу - вариант N --------------------------------

@@ -1,4 +1,5 @@
 Consumption_1 {ёл}
+Consumption_10 {До взрыва остались считаные минуты. Нужно немедленно уходить!}
 Consumption_2 {ла}
 Consumption_3 {Сержио}
 Consumption_4 {Сальдо}
@@ -7,4 +8,3 @@ Consumption_6 {Чахотка}
 Consumption_7 { }
 Consumption_8 {а}
 Consumption_9 {Корабль сейчас взорвется. Нужно немедленно уходить!}
-Consumption_10 {До взрыва остались считаные минуты. Нужно немедленно уходить!}

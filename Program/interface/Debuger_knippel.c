@@ -322,19 +322,6 @@ void CalculateInfoDataF1()
     if(bSteamAchievements) StoreStats();
 */
 
-    /*
-    float MaxSpeed             = 0.0;
-    float fWindAgainstSpeed = 1.2;
-    float fWindDotShip         = 0.0; 
-    float angY                = 0.0;
-    for(int i = 0; i < 36; i++)
-    {
-        angY = (i * 5)/180.0 * 3.1415926;
-        fWindDotShip = GetDotProduct( 0.0, angY);    
-        MaxSpeed = GetMaxSpeedZ(fWindAgainstSpeed, fWindDotShip);
-        trace("MaxSpeed " + MaxSpeed + " angY " + (i*5)); 
-    }
-*/
     //DumpAttributes(showWindow);
 
     // тут высчитываем нужную информацию и выводим в totalInfo <--
@@ -943,25 +930,6 @@ void ShipRepair(ref chr)
     {
         matQ = 15.0 * GetHullPPP(chr);
     }
-}
-
-float GetMaxSpeedZ(float fWindAgainstSpeed, float fWindDotShip)
-{
-    float fMaxSpeedZ = 10.0;
-    float BtWindR = 1.0 - fWindAgainstSpeed;
-    float fkoeff = fWindAgainstSpeed;
-    if (fkoeff < 1.0)
-        fkoeff = 1.0;
-
-    if (fWindDotShip < BtWindR) // по ветру
-    {
-        fMaxSpeedZ = fMaxSpeedZ * (1.0 + 0.974 * (fWindDotShip - BtWindR) / (1.0 + BtWindR));
-    }
-    else // против ветра
-    {
-        fMaxSpeedZ = fkoeff * fMaxSpeedZ * (1.0 - (fWindDotShip - BtWindR) / 2.0);
-    }
-    return fMaxSpeedZ;
 }
 
 void ReloadByStr()

@@ -3157,7 +3157,7 @@ void ProcessDialogEvent()
 			link.l1.go = "SeekShip_good_1";
 		break;
 		case "SeekShip_good_1":
-			dialog.text = "我准备支付你报酬。 它由 " + FindRussianMoneyString(makeint(sti(npchar.quest.chest)*500)) + " 金币。 不幸的是, 我不能支付更多。 ";
+			dialog.text = "我准备支付你报酬。 它由 " + sti(npchar.quest.money) + " 金币。 不幸的是, 我不能支付更多。 ";
 			link.l1 = "嗯, 那足够了。 谢谢你和亲切的问候。 ";
 			link.l1.go = "exit";
 			TakeNItems(pchar, "gold_dublon", sti(npchar.quest.money));

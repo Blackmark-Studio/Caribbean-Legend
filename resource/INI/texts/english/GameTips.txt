@@ -1,0 +1,67 @@
+Tip0 {Red Mary is very jealous.}
+Tip1 {Helen is extremely superstitious — like any pirate.}
+Tip10 {Keep an eye on enemy archetypes: they are shown next to the health and energy bars.}
+Tip11 {Fencers' attacks are best not blocked — they break through guard too easily. Parrying is safer.}
+Tip12 {Musketeers deal colossal damage. Take them out first.}
+Tip13 {A quick shot is weaker than an aimed one. That is the price of speed.}
+Tip14 {Battle Amulets are especially strong when combined with one another. Choose them wisely.}
+Tip15 {Firearms knock enemies back on hit — use that to keep your distance.}
+Tip16 {A musket in hand slows movement significantly. A drawn blade does too, but less so.}
+Tip17 {You move noticeably slower backward and sideways than forward, but you keep the enemy in sight.}
+Tip18 {Many enemies can poison you in combat. Always carry antidotes.}
+Tip19 {Every weapon is unique in its own way — choose it to match your perks and skills.}
+Tip2 {Alonso does not like talking about his past.}
+Tip20 {On battle sails, your ship turns fastest.}
+Tip21 {Rolling, turning, and ship speed greatly affect gunnery accuracy.}
+Tip22 {If you often miss with your guns, close the distance.}
+Tip23 {The skills "Guns" and "Accuracy" affect both third-person shooting and aimed mode.}
+Tip24 {Sinking ships do not deal damage when they ram — do not fear them.}
+Tip25 {A precise chain shot hit on a mast can bring it down. If the sails are already damaged, the chances are higher.}
+Tip26 {With a major numerical advantage, an enemy ship may surrender as soon as you attempt to board.}
+Tip27 {Sinking pirate ships lowers the pirate threat and makes the Caribbean safer.}
+Tip28 {Officers without the perk "Captain" can command ships only up to 4th rate.}
+Tip29 {Ship traits are useful in different situations — choose them to fit your playstyle.}
+Tip3 {Remember: drawing your pistol is always faster than reloading your musket.}
+Tip30 {Forts can be destroyed by firing at their walls, but hits on embrasures speed the process up.}
+Tip31 {Fleeing ships may throw goods overboard. Sail up to them to recover the cargo.}
+Tip32 {Guns wear out over time. Keep a few spare ones in reserve.}
+Tip33 {Different ammunition types have different ranges. Round shot has the longest, grapeshot the shortest.}
+Tip34 {Round shot is universal. Use chain shot against sails and masts, grapeshot against crew, and bombs against the hull.}
+Tip35 {Read dialogues carefully — they may contain unique information.}
+Tip36 {If a colony is successfully besieged, your deposits and ships in the port authority will be lost.}
+Tip37 {Ask townsfolk and drunkards about rumors — they often know many interesting things.}
+Tip38 {Searching for treasure pays well. Look for the treasure map seller in the tavern.}
+Tip39 {Fadey Moskovit, Loxley, and Abbot Benoit can help you get rid of a bounty on your head.}
+Tip4 {The Caribbean has no shortage of strange people. They say there is a priest here who is more likely to lead you astray than guide you.}
+Tip40 {With the help of pirate barons, you can temporarily lower the pirate threat.}
+Tip41 {Amulets are destroyed if removed from a character. Plan your build in advance.}
+Tip42 {Wards can be removed and equipped as often as you like. They do not break and last forever.}
+Tip43 {Keep spare weapons aboard: every sailor who dies takes his with him to the grave.}
+Tip44 {Before leaving port, make sure you have enough rum, medicines, and provisions for the whole voyage.}
+Tip45 {Rats are the sailor's scourge. You can get rid of them with arsenic or ancient magic.}
+Tip46 {Dungeons can be very confusing. If you get lost, stick to the right-hand wall and follow it.}
+Tip47 {Items can be discarded from your inventory. Sometimes it is useful to get rid of heavy junk.}
+Tip48 {Perks can be reset by drinking a special potion. Do not be afraid to experiment with builds.}
+Tip49 {Treasures, shopkeepers, and graveyard keepers are good sources of crafting ingredients. Visit them often.}
+Tip5 {Melee weapon skill reduces the energy cost of strikes.}
+Tip50 {Ships can be left at the port authority together with their crew and officer.}
+Tip51 {At the shipyards of capital colonies, you can rent a warehouse to safely store goods and ship cannons.}
+Tip52 {If the colony fort is clearly beyond your strength, try attacking the town from land. The town garrison is noticeably weaker, but the loot will be smaller too.}
+Tip53 {In the open sea, you may find drifting barrels. They may contain valuables or junk - it is always a surprise.}
+Tip54 {Any strike can be parried. If you master this technique well, you will be able to win any duel.}
+Tip55 {Sometimes sea currents bring unexpected gifts to those who stroll along secluded coves.}
+Tip56 {Amethysts do not help against drunkenness. Seriously.}
+Tip57 {In an emergency, any officer can be assigned to the boarder position. An army of sheep led by a lion will defeat an army of lions led by a sheep.}
+Tip58 {Governors and captains are no strangers to gambling either, but do not expect them to play with strangers.}
+Tip59 {In a critical situation, you can take slaves into the crew. This undermines crew morale, but lets you replenish it quickly.}
+Tip6 {Overload and drunkenness impose penalties on skills.}
+Tip60 {If the guards catch you dealing with smugglers, sometimes it is easier to simply pay them off. It is a businesslike approach.}
+Tip61 {Crafting items takes in-game time. Sometimes it is more useful to craft than to sleep aimlessly in a tavern.}
+Tip62 {Repairing a ship at the shipyard takes in-game time. Keep this in mind when you are in a hurry.}
+Tip63 {In an emergency, any officer can be assigned to the boarder position. An army of sheep led by a lion will defeat an army of lions led by a sheep.}
+Tip64 {The colonies of the Archipelago hide ten unique town stories. Talk to townsfolk in the streets more often, and do not spare the rum for drunkards in taverns.}
+Tip65 {You can command your vanguards in battle. Try giving them orders with hotkeys.}
+Tip66 {Some perks have different effects for the main character and officers.}
+Tip7 {Potions restore health slowly — do not expect to turtle up behind your guard.}
+Tip8 {If you are surrounded, the best way out is a quick dash to the side.}
+Tip9 {Heavy weapons consume more energy, but they hit harder too.}

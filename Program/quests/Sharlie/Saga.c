@@ -120,7 +120,7 @@ void Saga_createDonovan(string qName)//ставим корвет Донован�
 	Island_SetReloadEnableGlobal("Antigua", false);//на остров нельзя
 	Group_FindOrCreateGroup("DonovanGroup");
 	Group_SetType("DonovanGroup", "war");//тип группы
-	int iRank = 18+MOD_SKILL_ENEMY_RATE;
+	int iRank = 18+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 55;
 	sld = GetCharacter(NPC_GenerateCharacter("Donovan", "Donovan", "man", "man", iRank, ENGLAND, -1, true, "quest"));
 	FantomMakeSmallSailor(sld, SHIP_CORVETTE, StringFromKey("Saga_3"), CANNON_TYPE_CANNON_LBS20, 70, iScl, iScl+5, iScl+10, iScl+5);
@@ -346,7 +346,7 @@ void Saga_CreateTrapBandos(string qName)//ловушка - бандиты у м�
 	chrDisableReloadToLocation = true;//закрыть локацию
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретить драться
 	int n = makeint(MOD_SKILL_ENEMY_RATE/3);
-	int iRank = 20+MOD_SKILL_ENEMY_RATE;
+	int iRank = 20+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 55;
 	for (i=1; i<=3+n; i++)
 	{
@@ -600,7 +600,7 @@ void Saga_NatanTreatment(string qName)// Даниэль после сдачи Н
 //------------------------------------------нахождение в ГПК (Локо-Риферте)----------------------------------
 void LSC_CreateCrabGuard() // крабик-охранник
 {
-	sld = GetCharacter(NPC_GenerateCharacter("CrabGuard", "crabBig", "crab", "crabBig", 40+(MOD_SKILL_ENEMY_RATE), PIRATE, 0, false, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("CrabGuard", "crabBig", "crab", "crabBig", 13+(MOD_SKILL_ENEMY_RATE/2), PIRATE, 0, false, "quest"));
 	sld.name = StringFromKey("Saga_16");
 	sld.lastname = StringFromKey("Saga_17");
 	GiveItem2Character(sld, "unarmed");
@@ -667,7 +667,7 @@ void LSC_CreatePantryGuard(string qName)// арест, если полез в т
 	LocatorReloadEnterDisable("LostShipsCity_town", "reload60", true);
 	LocatorReloadEnterDisable("LostShipsCity_town", "reload61", true); // закрываем вход к Мэри
 	pchar.quest.LSC_findMary.over = "yes"; //снять прерывание на Мэри
-	int iRank = 18+MOD_SKILL_ENEMY_RATE*2;
+	int iRank = 18+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 60;
 	for (i=1; i<=5; i++)
 	{
@@ -730,7 +730,7 @@ void LSC_GotoPrison(string qName)// в тюрьму на Тартарус
 void LSC_TalkWithCapper()// разговор с Каппером - подготовка
 {
 	//ставим охранников-пиратов
-	int iRank = 20+MOD_SKILL_ENEMY_RATE+2;
+	int iRank = 20+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 60;
 	for (i=1; i<=3; i++)
 	{
@@ -862,7 +862,7 @@ void LSC_EddyTalk(string qName)// Эдди к разговору
 
 void LSC_CreateAdolfClone()// ставим клона Адольфа
 {
-	int iRank = 20+MOD_SKILL_ENEMY_RATE+5;
+	int iRank = 20+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 50;
 	sld = GetCharacter(NPC_GenerateCharacter("LSC_Adolf_Clon", "Adolf", "man", "man", iRank, PIRATE, -1, true, "quest"));
 	sld.name = StringFromKey("Saga_18");
@@ -908,7 +908,7 @@ void LSC_CyclopCheck(string qName)// проверяем, где находитс
 void LSC_SetMaryNCyclopInCabin() // Мэри и Циклоп входят
 {
 	chrDisableReloadToLocation = true;//закрыть локацию
-	int iRank = 20+MOD_SKILL_ENEMY_RATE*2;
+	int iRank = 20+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 70;
 	// Мэри
 	sld = characterFromId("Mary");
@@ -963,7 +963,7 @@ void LSC_MaryNCyclopWait(string qName) // Мэри и Циклоп ждут
 {
 	pchar.quest.LSC_CyclopWaitOver.over = "yes"; //снять прерывание
 	chrDisableReloadToLocation = true;//закрыть локацию
-	int iRank = 20+MOD_SKILL_ENEMY_RATE*2;
+	int iRank = 20+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 70;
 	// Мэри
 	sld = characterFromId("Mary");
@@ -1249,7 +1249,7 @@ void LSC_WhiskeyPoison_SF(string qName) // на Санта-Флорентину 
 	GiveItem2Character(sld, "key_gun"); // ключ от сундука со штуцером
 	DoQuestFunctionDelay("LSC_KillAdolf_SF", 2.0); // убить Адольфа
 	// ставим толстого нарвала
-	int iRank = 22+MOD_SKILL_ENEMY_RATE*2;
+	int iRank = 22+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 80;
 	sld = GetCharacter(NPC_GenerateCharacter("LSC_AdolfKiller", "citiz_58", "man", "man", iRank, PIRATE, -1, true, "quest"));
 	FantomMakeCoolFighter(sld, iRank, iScl, iScl, "blade_13", "pistol4", "bullet", iScl*2);
@@ -1291,7 +1291,7 @@ void LSC_WhiskeyPoison_AE(string qName) // на Эве
 	chrDisableReloadToLocation = true;//закрыть локацию
 	LocatorReloadEnterDisable("LostShipsCity_town", "reload20", false);
 	LocatorReloadEnterDisable("LostShipsCity_town", "reload24", false);// открываем вход к Фацио
-	int iRank = 20+MOD_SKILL_ENEMY_RATE*2;
+	int iRank = 20+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 60;
 	// ставим Чада
 	sld = CharacterFromID("Capper");
@@ -1342,7 +1342,7 @@ void LSC_WhiskeyPoison_AE(string qName) // на Эве
 
 void LSC_SetCyclop_Fl(string qName) // Циклопа на Флерон - вар. если не уберег Мэри
 {
-	int iRank = 20+MOD_SKILL_ENEMY_RATE*2;
+	int iRank = 20+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 70;
 	pchar.questTemp.LSC.Attack = true; // обработка в АИ
 	sld = characterFromId("Marchello");
@@ -2047,7 +2047,7 @@ void LSC_OleAgnesRegard(string qName) // открываем дом
 void LSC_ReturnJackmanAttack(string qName) //наймиты Джекмана атакуют
 {
 	log_Testinfo("Пираты Джекмана атакуют!");
-	int iRank = 25+MOD_SKILL_ENEMY_RATE;
+	int iRank = 18+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 60;
 	int iShip = SHIP_TARTANE;
 	int iCannons = CANNON_TYPE_CANNON_LBS3;
@@ -2386,7 +2386,7 @@ void Saga_SetMorelGoods(string qName) //тайник Мореля
 
 void Saga_SetJuniorInCharles() //создаем Валета
 {
-	int iRank = 22+MOD_SKILL_ENEMY_RATE+5;
+	int iRank = 22+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 65;
 	sld = GetCharacter(NPC_GenerateCharacter("Valet", "Valet", "man", "man", iRank, PIRATE, -1, true, "quest"));
 	FantomMakeCoolFighter(sld, iRank, iScl, iScl, "blade_18", "pistol6", "bullet", iScl*2);
@@ -2418,7 +2418,7 @@ void Saga_FindValetLetter(string qName) //нашли письмо Валета
 void Saga_SetPolacreMarlin(string qName) //ставим полакр Марлин
 {
 	RemoveItems(pchar, "letter_chad", 1);
-	int iRank = 20+MOD_SKILL_ENEMY_RATE;
+	int iRank = 20+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 60;
 	Island_SetReloadEnableGlobal("Nevis", false);//на остров нельзя
 	bQuestDisableMapEnter = true; //закрываем карту
@@ -2853,7 +2853,7 @@ void Saga_CheckJackmanBermudes(string qName) // Джекман
 		// устанавливаем фрегат Джекмана
 		Group_FindOrCreateGroup("Jackman_Frigate");
 		Group_SetType("Jackman_Frigate", "pirate");//тип группы
-		int iRank = 25+MOD_SKILL_ENEMY_RATE;
+		int iRank = 25+MOD_SKILL_ENEMY_RATE/2;
 		int iScl = 90;
 		int iCannon = CANNON_TYPE_CANNON_LBS32;
 		if (sti(pchar.rank) < 15 || MOD_SKILL_ENEMY_RATE < 7) iCannon = CANNON_TYPE_CANNON_LBS24;
@@ -3005,7 +3005,7 @@ void Saga_HitSeaFugas_Detonate(string qName) // фугасом по пирата
 
 void Saga_HitSeaFugas_DetonateReaction(string qName) // Джекман атакует
 {
-	PlayStereoSound("Voice\Russian\EvilPirates01.wav");
+	PlaySoundSafe("VOICE\" + LanguageGetLanguage(), "EvilPirates01.wav");
 	sld = characterFromId("Jackman");
 	sld.AlwaysEnemy = true;
 	SetCharacterRelationBoth(sti(GetCharacterIndex("Jackman")), GetMainCharacterIndex(), RELATION_ENEMY);
@@ -3086,7 +3086,7 @@ void Saga_CreateStormingGroup(string qName) // к Барбазону
 	string model;
 	string ani;
 
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 20 + 2*sti(pchar.rank);
 
 	object aSoldier[1];
@@ -3203,7 +3203,7 @@ void Saga_MineBanditsPrepareAttack(string qName) // идем на рудник �
 	chrDisableReloadToLocation = true;//закрыть локацию
 	pchar.GenQuest.CannotWait = true;//запрет ожидания
 	// ставим людей Свенсона - 2 офицера + 12 солдат и самого Свенсона
-	int iRank = 22+MOD_SKILL_ENEMY_RATE+5;
+	int iRank = 22+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 70;
 	for (i=1; i<=2; i++)
 	{
@@ -3461,7 +3461,7 @@ void Saga_MineGunAttack(string qName) // устанавливаем орудие
 	LAi_SetActorType(sld);
 	DoQuestFunctionDelay("Saga_MineGunAttackStart", 5.0);
 	LAi_SetActorType(pchar);
-	int iRank = 22+MOD_SKILL_ENEMY_RATE*2;
+	int iRank = 22+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 80;
 	for (i=1; i<=6; i++) // ставим вражеских мушкетеров
 	{
@@ -3494,7 +3494,7 @@ void Saga_MineFightLock(string qName)
 void Saga_MineAttackMines(string qName)
 {
 	DoQuestReloadToLocation("mine_mines", "reload", "reload1", "Saga_MineAttackMinesLock");
-	int iRank = 22+MOD_SKILL_ENEMY_RATE*2;
+	int iRank = 22+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 70;
 	LAi_group_Register("Mine_enemy");
 	LAi_group_SetLookRadius("Mine_enemy", 20);
@@ -3594,7 +3594,7 @@ void Saga_GoldForLoxly(string qName) // нужны деньги для адво�
 
 void Saga_CreateMolliganInWorld()
 {
-	int iRank = 22+MOD_SKILL_ENEMY_RATE;
+	int iRank = 22+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 70;
 	int iCannon = CANNON_TYPE_CANNON_LBS24;
 	int iDays = 15;
@@ -3776,7 +3776,7 @@ void Saga_CheckRozencraftWG(string qName) // устанавливаем Розе
 	if (iUst == 1 && CheckAttribute(pchar, "questTemp.Saga.Oyster")) pchar.questTemp.Saga.Oyster = "cantalk";
 	Group_FindOrCreateGroup("Rozencraft_Group");
 	Group_SetType("Rozencraft_Group", "war");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+10;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+5;
 	if (iRank > 40) iRank = 40;
 	int iScl = 100;
 	sld = GetCharacter(NPC_GenerateCharacter("Rozencraft", "Rozencraft", "man", "man", iRank, HOLLAND, -1, true, "quest"));
@@ -3998,7 +3998,7 @@ void Saga_JessikaIsland(string qName) // вышли на риф
 	RefreshWeather();
 	RefreshLandTime();
 	// разложим скелетов
-	int iRank = 22+MOD_SKILL_ENEMY_RATE*2;
+	int iRank = 22+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 65;
 	for (int i=1; i<=6; i++)
 	{			
@@ -4053,7 +4053,7 @@ void Saga_CreateJessikaGhost(string qName) // ставим Джессику
 	sld = characterFromId("Svenson");
 	if (CheckAttribute(sld, "quest.jessika")) DeleteAttribute(sld, "quest.jessika");
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретить драться
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = MOD_SKILL_ENEMY_RATE*6;
 	int iAdd = MOD_SKILL_ENEMY_RATE*60;
 	// ставим Джесс
@@ -4311,7 +4311,7 @@ void AlexClock_Chest(string qName) // четыре разгвоздяя в по�
 {
 	chrDisableReloadToLocation = true;//закрыть локацию
 	LAi_LocationFightDisable(&Locations[FindLocation("Bermudes_Dungeon")], true);//запретить драться
-	int iRank = 25+MOD_SKILL_ENEMY_RATE;
+	int iRank = 25+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 60;
 	for (int i=1; i<=4; i++)
 	{
@@ -4708,7 +4708,7 @@ void SGF_CheckCoordinatesRestart(string qName) // запуск новой про
 void SGF_CreatGoldFleet(string qName)
 {
 	int i;
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+7;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+5;
 	if (iRank > 45) iRank = 45;
 	log_info(StringFromKey("Saga_87"));
 	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
@@ -4813,7 +4813,7 @@ void SGF_CreatGoldFleet(string qName)
 
 void SGF_CreatBattleShips(string qName)
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+7;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+4;
 	if (iRank > 45) iRank = 45;
 	int iShip, Ship3, Ship4, Ship5, Ship6, iCannon, Cannon3, Cannon4, Cannon5, Cannon6, n, i;
 	if(MOD_SKILL_ENEMY_RATE < 5) n = 5;
@@ -5423,7 +5423,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Saga_MineBandos_05Die") // генерим партию бандюков в шесть рыл
 	{
 		PlaySound("interface\abordage_wining.wav");
-		iRank = 20+MOD_SKILL_ENEMY_RATE+5;
+		iRank = 20+MOD_SKILL_ENEMY_RATE/2;
 		iScl = 65;
 		float fMft = MOD_SKILL_ENEMY_RATE/10;
 		for (i=1; i<=6; i++)
@@ -5452,7 +5452,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Saga_MineBandos_06Die") // генерим партию бандюков в восемь рыл
 	{
 		PlaySound("interface\abordage_wining.wav");
-		iRank = 20+MOD_SKILL_ENEMY_RATE+5;
+		iRank = 20+MOD_SKILL_ENEMY_RATE/2;
 		iScl = 70;
 		for (i=1; i<=8; i++)
 		{
@@ -6059,7 +6059,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "LSC_AevaWithMary") // внутри Эвы
 	{
-		iRank = 30 + MOD_SKILL_ENEMY_RATE;
+		iRank = 30 + MOD_SKILL_ENEMY_RATE/2;
 		iScl = 80;
 		// нарвалы
 		for (i = 1; i <= 3; i++)
@@ -6302,7 +6302,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "LSC_CyclopInMaryCabin") // у Мэри - спасаем её от Циклопа
 	{
-		iRank = 25 + MOD_SKILL_ENEMY_RATE * 2;
+		iRank = 25 + MOD_SKILL_ENEMY_RATE / 2;
 		iScl = 80;
 		DeleteAttribute(pchar, "questTemp.LSC.RescueMary");
 		DeleteAttribute(pchar, "questTemp.NoFast"); // убираем запрет ускорения
@@ -6799,7 +6799,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		chrDisableReloadToLocation = true; // закрыть локацию
 		LocatorReloadEnterDisable("ExternalRingInside", "reload1", true);
 		// ставим крабикусов
-		iRank = 25 + MOD_SKILL_ENEMY_RATE * 2;
+		iRank = 16 + MOD_SKILL_ENEMY_RATE/2;
 		LAi_group_Register("EnemyCrab");
 		for (i = 1; i <= 10; i++)
 		{
@@ -6844,7 +6844,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 	{
 		chrDisableReloadToLocation = true; // закрыть локацию
 		// ставим крабикусов
-		iRank = 25 + MOD_SKILL_ENEMY_RATE * 2;
+		iRank = 18 + MOD_SKILL_ENEMY_RATE/2;
 		for (i = 1; i <= 6; i++)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("CrabDeck_" + i, "crabBig", "crab", "crabBig", iRank, PIRATE, -1, false, "quest"));

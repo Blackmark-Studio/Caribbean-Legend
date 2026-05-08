@@ -1,22 +1,22 @@
 CONTRABAND {밀수품}
-EXPORT {내보내기}
-IMPORT {수입}
-Trade_assistant {거래 도우미}
-No_price {가격표 없음}
-No_profit {이득이 되는 거래 없음}
-Distance {거리}
-To {저기로}
-From {뒤로}
 day {일}
 day2 {일}
 days {일}
+Distance {거리}
+EXPORT {내보내기}
+From {뒤로}
 hour {시간}
 hour2 {시간}
 hours {시간}
 hours2 {시간}
+IMPORT {수입}
 nautical_mile {해리}
 nautical_mile2 {해리}
 nautical_miles {해리}
 nautical_miles2 {해리}
+No_price {가격표 없음}
+No_profit {이득이 되는 거래 없음}
+To {저기로}
+Trade_assistant {거래 도우미}
 TRAVEL_from {에서}
 TRAVEL_to {까지}

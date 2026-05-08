@@ -1,10 +1,61 @@
-blade_critDamage {Dano Crítico de Arma Branca}
-gun_critDamage {Dano Crítico de Pistola}
-musket_critDamage {Dano Crítico de Mosquete}
+bigCannonsAvailable {Canhões de grosso calibre disponíveis}
+BigCannonsAvailable_0 {Canhões de grosso calibre não são vendidos}
+BigCannonsAvailable_1 {Canhões de grosso calibre estão à venda}
 blade_critChance {Chance de Crítico com Arma Branca}
+blade_critDamage {Dano Crítico de Arma Branca}
+caribbeanGoodsCost {Preços dos bens coloniais}
+caribbeanGoodsStock {Estoque de bens coloniais}
+contrabandTradeStatus_0 {Negócios com contrabandistas são possíveis}
+contrabandTradeStatus_1 {Negócios com contrabandistas são impossíveis}
+contrabandTradeStatus_2 {Negócios com contrabandistas estão dificultados}
+convenienceGoodsCost {Preços de itens essenciais}
+convenienceGoodsStock {Estoque de itens essenciais}
+crewExpMtp {Taxa de ganho de experiência da tripulação}
+crewHireCost {Custo de contratação de marinheiros}
+crewHireMoraleMtp {Moral da tripulação contratada}
+crewHiringExpMtp {Experiência da tripulação contratada}
+crewMaintenanceCost {Custo de manutenção dos marinheiros}
+crownGoodsCost {Preços dos bens da Coroa}
+crownGoodsStock {Estoque de bens da Coroa}
+debitRate {Taxa de juros dos empréstimos}
+depositGoldRate {Taxa de depósito em dobrões}
+depositSilverRate {Taxa de depósito em pesos}
+drugConsumption {Consumo de remédios}
+enemyHullDamageMtp {Dano aos cascos inimigos}
+europeanGoodsCost {Preços dos bens europeus}
+europeanGoodsStock {Estoque de bens europeus}
+exportPriceMtp {Preços de exportação}
+foodConsumption {Consumo de mantimentos}
+GlobalSpeed {Velocidade do navio no mapa-múndi}
+goldsilverGoodsAvailable_0 {Prata e ouro não são vendidos}
+goldsilverGoodsAvailable_1 {Prata e ouro estão à venda}
 gun_critChance {Chance Crítica de Pistola}
-musket_critChance {Chance Crítica de Mosquete}
-incomingDamageReduction {Proteção contra Dano}
-RangeIncomingDamageReduction {Proteção contra dano de arma de fogo}
-Shot_Damage {Dano de arma de fogo}
+gun_critDamage {Dano Crítico de Pistola}
 HeadshotDamage {Dano na cabeça}
+importPriceMtp {Preços de importação}
+incomingDamageReduction {Proteção contra Dano}
+legalContraband_0 {O contrabando funciona normalmente}
+legalContraband_1 {O contrabando conta como importação}
+medicamentCost {Preços de remédios}
+minFortCannonsMtp {Limiar de canhões destruídos para o assalto ao forte}
+moraleMtp {Ganho de moral da tripulação}
+musket_critChance {Chance Crítica de Mosquete}
+musket_critDamage {Dano Crítico de Mosquete}
+nationsReputationMtp {Taxa de mudança de reputação com as nações}
+RangeIncomingDamageReduction {Proteção contra dano de arma de fogo}
+recruitsMtp {Recrutas}
+repairCost {Custo de reparo no estaleiro}
+seaRepairEfficency {Eficiência de reparos no mar}
+shipSpeedDynamic {Aceleração do navio}
+shipyardCannonsStock {Estoque de canhões no estaleiro}
+Shot_Damage {Dano de arma de fogo}
+slavesGoodsAvailable_0 {Escravos não são vendidos}
+slavesGoodsAvailable_1 {Escravos estão à venda}
+stealthInceptionBonus {Chance de infiltrar-se na cidade}
+stolenGoodsMtp {Redução da penalidade por mercadorias roubadas}
+stormDamageMtp {Dano de tempestade}
+tradeLicenseCost {Custo da licença comercial}
+uniqueGoodsAvailable_0 {Bens estratégicos não são vendidos}
+uniqueGoodsAvailable_1 {Bens estratégicos estão à venda}
+uniqueGoodsStock {Estoque de bens estratégicos}
+SquadronPower {Poder da esquadra}

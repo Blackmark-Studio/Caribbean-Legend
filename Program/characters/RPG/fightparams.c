@@ -65,3 +65,8 @@ float GetStabMtp(ref chr)
 	if (!IsMainCharacter(chr) && HasPerk(chr, "Quiet ")) result += PERK_VALUE_QUIET;
 	return result;
 }
+
+float GetDamageAmmoMtp(ref table, string ammo)
+{
+	return GetAttributeFloat(table, ammo + "_" + M_DAMAGE);
+}

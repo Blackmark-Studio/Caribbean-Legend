@@ -379,6 +379,13 @@ bool InitWeaponModifiers(ref item)
 			AddDescriptor(item, "Special", -1);
 		}
 		break;
+		case "blade_34":
+		{
+			SetWeaponDescriptors(item, WEAPON_LIGHT, WEAPON_LONG, WEAPON_STRAIGHT, 0.85, 1.15);
+			AddDescriptor(item, "Special", -1);
+			SetModifier(item, M_POISON_CHANCE, 0.07);
+		}
+		break;
 	}
 
 	return true;

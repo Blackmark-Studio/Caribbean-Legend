@@ -87,8 +87,9 @@ void ProcessDialogEvent()
 		case "Town_7":
 			PlaySound("Voice\English\LSC\Mary Casper-04.wav");
 			dialog.text = "Qu'as-tu dit ?... Bon sang, tu n'es pas un simple bandit ! Il travaille pour l'amiral ! Abattez-le, les gars !";
-			link.l1 = "Je pense qu’on forme une super équipe, non ? Ça te va ?";
-			link.l1.go = "Cabin_fight";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("LSC_Cabin_fight");
 		break;
 		
 	// ---------------------------------покушение на Акулу - вариант N --------------------------------

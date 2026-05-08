@@ -1,13 +1,5 @@
 NoLootCorpse0 {Kieszenie tego biedaka są puste jak statek widmo.}
 NoLootCorpse1 {Wygląda na to, że nie miał nic wartościowego.}
-NoLootCorpse2 {Ten ma puste kieszenie.}
-NoLootCorpse3 {Czy coś przeoczyłem? Nie, zdecydowanie pusto.}
-NoLootCorpse4 {Kolejny trup bez grosza przy duszy.}
-NoLootCorpse5 {Najwyraźniej żył na kredyt.}
-NoLootCorpse6 {Ten zmarły nie ma nawet czym zapłacić przewoźnikowi.}
-NoLootCorpse7 {Ani zapasowych kul, ani prochu. Zmarnowałem czas.}
-NoLootCorpse8 {Ani grosza w kieszeniach, ani za pazuchą.}
-NoLootCorpse9 {Był kompletnie biedny, nawet monety nie ma.}
 NoLootCorpse10 {Po co w ogóle traciłem czas? Ten jest pusty.}
 NoLootCorpse11 {W jego kieszeniach zieje pustka.}
 NoLootCorpse12 {Nic tu nie ma. Może są tajne kieszenie?}
@@ -18,4 +10,12 @@ NoLootCorpse16 {Biedak najwyraźniej szedł do walki na lekko.}
 NoLootCorpse17 {Najwyraźniej uzbroił się za ostatnie pieniądze.}
 NoLootCorpse18 {Trup jak trup. Nic nie ma.}
 NoLootCorpse19 {Chyba zostawił wszystkie skarby w skrzyni.}
+NoLootCorpse2 {Ten ma puste kieszenie.}
 NoLootCorpse20 {Wygląda na to, że zgubił wszystkie cenne rzeczy w walce.}
+NoLootCorpse3 {Czy coś przeoczyłem? Nie, zdecydowanie pusto.}
+NoLootCorpse4 {Kolejny trup bez grosza przy duszy.}
+NoLootCorpse5 {Najwyraźniej żył na kredyt.}
+NoLootCorpse6 {Ten zmarły nie ma nawet czym zapłacić przewoźnikowi.}
+NoLootCorpse7 {Ani zapasowych kul, ani prochu. Zmarnowałem czas.}
+NoLootCorpse8 {Ani grosza w kieszeniach, ani za pazuchą.}
+NoLootCorpse9 {Był kompletnie biedny, nawet monety nie ma.}

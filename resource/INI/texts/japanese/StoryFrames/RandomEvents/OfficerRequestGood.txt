@@ -1,0 +1,53 @@
+Node0_title {士官の願い}
+Node0_a_a {$attr($context.officerName)――あなたの _$attr($context.officerJob) が、うなだれて船室に入ってくる。しばし芝居がかった間を置いたあと、悲しげに自分の不運を語り出す。つい先日、船倉での賭け事で水夫の一人に $rand(家伝のブローチ|自分の十字架|父のカフスボタン) を負け取られてしまったのだという。その大事な品を取り戻すため、ひと勝負打ち直すための少しばかりの金を貸してほしいと頼んでくる。}
+Node0_a_a_action {取り返して、勝ち分は山分けだ！}
+Node0_a_a_success {あなたは必要な額を都合してやるが、条件は $rand(元金と勝ち分の半分を返すこと|元金は一文残らず返し、そのうえ勝ち分の半分を渡すこと) だ。しばらくして、上機嫌の $attr($context.officerName) が扉を叩く。大切な品は無事に戻り、彼もまた $rand(取引の約束を果たし|約束を守って)、あなたの取り分を差し出す。}
+Node0_a_a_success_action {楽な金だ！}
+Node0_a_a_fail {あなたは必要な額を貸し与える。ただし条件は $rand(元金と勝ち分の半分を返すこと|元金を返し、そのうえ勝ち分の半分を渡すこと) だ。ところが $attr($context.officerName) は $rand(長いあいだ顔を見せず|まるで船から消えたように姿を見せず)、あなたは $rand(とうとう船室へ呼びつける|ついに出頭を命じる)。その $rand(うなだれた目つき|しょげ返った様子) を見れば一目で分かる。大切な品は $rand(取り戻せなかった|結局勝ち返せなかった) し、あなたの金も $rand(失った|賭け卓に消えた) のだ。}
+Node0_a_a_fail_action {高くついた教訓}
+Node0_a_b_action {船上賭博を罰する}
+Node0_a_b_success {船の規定には賭博禁止がはっきりと記されている。あなたは $rand(見せしめとして関わった水夫たちを人前で鞭打たせ|関わった水夫たちを皆の前で鞭打つよう命じ)、士官には $rand(減俸の処分を下し|一か月の俸給を取り上げる)。}
+Node0_a_b_success_action {規則は規則だ}
+Node0_a_c_action {水夫に品を返させる}
+Node0_a_c_success {あなたは船長であり、あなたの言葉は法だ。だが、こうした事態のための決まりはどこにもない。あなたは威圧的な風貌と逞しい体格を武器に水夫を脅し、士官の品を返させる。乗組員たちはこの一件を忘れないだろう。}
+Node0_a_c_success_action {私を甘く見るな}
+Node0_a_b {夕方の見回りを終えて船室へ戻ると、扉の前で $attr($context.officerName)――あなたの _$attr($context.officerJob)――が待っている。彼は $rand(おずおずと足をもじつかせ|その場で落ち着かぬ様子を見せる) が、あなたの $rand(厳しい視線|視線) の前に $rand(観念し|ついに折れて)、やがて頼みごとを打ち明ける。向かう先の港で彼は決闘をすることになっており、負けるのを恐れているのだ。切り札として、あなたの箱にしまってある刀剣を貸してほしいと言う。_$attr($context.bladeName) が $rand(勝ち目を大きく高めてくれる|決定的な優位を与えてくれる) と言い張っている。}
+Node0_b_a_action {肝心なのは剣ではなく、それを振るう腕だ！}
+Node0_b_a_success {あなたは $casedName($attr($context.officerName)|Gen) をその場で船室の稽古試合へと引っぱり出す。彼はなかなか健闘するが、あなたの腕前にはまだ遠く及ばない。稽古の後、あなたは自慢のフェイントと打ち込みをいくつか教え、今や $attr($context.officerName) はずっと自信を取り戻している。}
+Node0_b_a_success_action {鍛錬で苦しめば、戦いは楽になる。}
+Node0_b_a_fail {$attr($context.officerName) は最初こそまずまず持ちこたえるが、すぐに息が上がり、無惨に打ち負かされる。あなたは彼に決闘への参加を禁じる――名誉も大切だが、命のほうがなお重い。}
+Node0_b_a_fail_action {もう二度とこんなことに首を突っ込むな。}
+Node0_b_b_action {持っていけ、くれてやる。}
+Node0_b_b_success {あなたは、この武器は $rand(自分よりも士官のほうがよほど役に立てられる|自分の手元に置くより士官に持たせたほうが役に立つ) と判断し、$rand(見返りも求めず与えてしまう|あっさりと手放してやる)。$attr($context.officerName) は心からあなたに感謝し、目に見えて自信を取り戻す。あなたは、$rand(こうした褒美はもっと頻繁に与えてもよいのではないか|こういう贈り物はもっとあってよい) と考える――$rand(勤続や特別な勇気に対して|勤続と特別な勇気に対して)。}
+Node0_b_b_success_action {まずはそれに見合う働きをさせよう。}
+Node0_b_c_action {決闘などさせん。}
+Node0_b_c_success {あなたは士官の願いを退け、その代わりに $rand(長々と説教をして聞かせる|延々と叩き直す)。彼は $rand(うなだれ、観念したようにそれを聞く|目を伏せたまま黙って聞いている)。あなたはさらに $rand(その教訓に懲罰当番二回を添え|念押しに懲罰当番を二度課す)。決闘そのものも、$rand(言うまでもなく|もちろん)取りやめだ。}
+Node0_b_c_success_action {規律は血で書かれている。}
+Node0_a_c {Akşam devriyesi sırasında, _$attr($context.officerJob)'iniz olan $attr($context.officerName)'ın $casedName($attr($context.prisonerName)|Abl) ile uzun uzun konuştuğunu fark ediyorsunuz. Aynı akşam subayı kamaraya çağırıp sorguya çekiyorsunuz. Önce $attr($context.officerName) işi geçiştirmeye çalışıyor, ama baskı altında $attr($context.prisonerName)'ın onun $rand}
+Node0_c_a_action {捕虜を処刑する}
+Node0_c_a_success {あなたはこの件を重い教訓にしようと決め、捕虜の処刑を命じる。$attr($context.officerName) は愕然とするが、あなたの言葉に逆らう勇気はない。アロンソが刑を執行する。あなたの残酷さについての噂は、たちまち船じゅう、そして外にまで広がっていく。}
+Node0_c_a_success_action {慈悲はない}
+Node0_c_b_action {捕虜を逃がす}
+Node0_c_b_success {あなたは捕虜を放し、いちばん近い町に着くまで炊事場で寝起きできる場所を与えるよう命じる。$attr($context.officerName) は礼を述べ、すっかり肩の荷が下りたようだ。だがこの件は秘密にしておけとあなたは言う。でなければ、願い事を抱えた連中があなたの船室の前に列をなすことになる。}
+Node0_c_b_success_action {これは例外であって、決まりではない}
+Node0_c_c_action {それなら自分で身請けしろ}
+Node0_c_c_success {あなたは筋の通った取引を持ちかける――士官が自分の給金から払って、今すぐ $attr($context.prisonerName) を身請けすればいい。そうすれば規則を破る必要はなく、誰も借りを作らずに済む。$attr($context.officerName) はしばらく迷うが、やがてあなたの条件を受け入れる。}
+Node0_c_c_success_action { }
+Node0_c_d_action {船長の決定に口は出させない}
+Node0_c_d_success {あなたは士官の願いを退ける。捕虜が誰であろうと、降伏した以上、今はあなたの手の内にある。どう扱うかを決めるのは、あなただけだ。一度でも甘い顔を見せれば、自分の私事を船長の肩代わりで片づけたがる連中が後を絶たなくなる。$attr($context.officerName) は落胆しているようだが、あなたは気にも留めない。}
+Node0_c_d_success_action {法はこの私だ}
+Node0_a_d {このところ、$attr($context.officerName) が $rand(ひどく無口で物思いに沈んでいる|不自然なほど口を閉ざし、石のような顔で歩き回っている) のに気づくようになっていた。$rand(暇さえあれば地平線を見つめて過ごしている。|ますます頻繁に舷側に立って一点を見つめ、まるで誰かの帆を待っているかのようだ。) ついにあなたは堪えきれず $rand(理由を問いただす|率直に尋ねる) と、彼は自分の悲しみを打ち明ける――前回の寄港地で、$rand(近しい親族|大切な人) の死を知らされたのだという。あなたが $rand(弔いの言葉を口にする間もなく|何か言おうとしたその矢先に)、士官はあなたに願いごとをする。祈りのために蝋燭と灯明が必要だが、あいにくそれはあなたの船室にしかないのだ}
+Node0_d_a_action {もちろんだ、持っていけ}
+Node0_d_a_success {あなたは追悼のために必要な品を士官へ渡し、彼が $rand(悲しみに沈んでいるあいだは仕事を負わせぬようにし|喪に服しているあいだ余計な役目を外してやることにする)。彼は $rand(感謝しているように見える|明らかに感謝しているようだ) が、$rand(悲嘆の色|黒い哀しみの影) がその気持ちを覆い隠している。}
+Node0_d_a_success_action {そのうち過ぎる}
+Node0_d_b_action {しかるべく執り行おう}
+Node0_d_b_success {$attr($context.officerName) はあなたの _$attr($context.officerJob) であって、ただの水夫ではない。それは彼に一定の特権を $rand(与える|意味する)。あなたは士官室で $rand(正式な追悼式|規律に則った追悼式) を執り行うよう命じる。$attr($context.officerName) は $rand(やや気まずそうに|気まずそうに) 見えるが、その感情はすぐに $rand(感謝へと変わっていく|感謝に変わる)。}
+Node0_d_b_success_action {忠実な仲間には最上を}
+Node0_d_c_action {神はそんなものがなくとも聞いている}
+Node0_d_c_success {あなたは、心からの祈りであれば儀式などなくとも届くのだと士官に言い聞かせる。$br$red$attr($context.officerName)もどうやら納得したようだ。自分の言葉が彼の心を少し軽くしたことに、あなたは静かな誇りを覚える。}
+Node0_d_c_success_action {お前なら乗り越えられる}
+Node0_d_c_fail {あなたの言葉はどうにも空々しく響き、$attr($context.officerName)は落胆した様子を見せる。どうやら彼は、あなたをけちな冷笑家と見なしただけらしい。}
+Node0_d_c_fail_action {待て、惜しいわけじゃない}
+Node0_d_d_action {船の司祭が力になってくれる}
+Node0_d_d_success {$attr($context.officerName)が船に本物の司祭がいることを失念していたのは奇妙に思えるが、あなたはそれを目もくらむような悲しみのせいだと考える。$br$redあなたは司祭を船室へ呼び、事情を話して導きを求める。$attr($context.officerName)はまだ上の空のようだが、聖職者の言葉はたちまち彼を現実へ引き戻す。}
+Node0_d_d_success_action {神は我らの声を聞き届けた}

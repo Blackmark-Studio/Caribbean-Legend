@@ -1,0 +1,17 @@
+condition_legendGuide
+{
+This item will appear in the game if you follow the page
+Caribbean Legend
+}
+condition_mushket_indian
+{
+This item will appear at usurers if you own
+Caribbean Legend: Age of Pirates
+}
+noRewardYetMessage
+{
+This reward is not available yet,
+stay tuned for updates!
+}
+steamButtonAlreadyGot {Claimed}
+steamButtonGet {Get}

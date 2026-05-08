@@ -348,7 +348,7 @@ void ShowInfoWindow()
 				if (bBettaTestMode) sText1 = AtributesToTextAref(xi_refCharacter, "personality");
 		break;
 	}
-	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false);
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false, false);
 }
 
 void HideInfoWindow()

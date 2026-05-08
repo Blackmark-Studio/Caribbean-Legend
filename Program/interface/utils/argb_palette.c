@@ -8,6 +8,7 @@ int ARGB_Color(string color)
 		case "quest":    return argb(255, 255, 192, 255); break; // лиловый квестовый
 		case "red":      return argb(255, 255, 196, 196); break;
 		case "peach":    return argb(255, 255, 196, 98);  break; // персиковый
+		case "peachD":   return argb(255, 180, 105, 0);   break; // персиковый под тёмную тему
 		case "green":    return argb(255, 105, 255, 105); break;
 		case "offGrey":  return argb(255, 196, 196, 196); break; // глубокий сервый, отключено вообще
 	}

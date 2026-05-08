@@ -2,6 +2,31 @@ new_string
 {
 
 }
+sp1 {Fanático}
+sp1_desc {Uma capela de convés equipada, junto com ícones da Virgem Maria, misteriosamente aumenta os efeitos e a duração dos amuletos cristãos.}
+sp1_desc2
+{
+Aprimoramento de cada amuleto: individual.
+Duração aumentada: 15 dias.
+}
+sp2 {Bem-vindo, convidado}
+sp2_desc {Este navio lendário é conhecido em todos os cantos do arquipélago do Caribe e é recebido por todos com respeito e admiração. A localização de Lady Beth logo é divulgada aos vendedores de mapas, e os comerciantes locais tentam reunir todo o capital possível para comprar valiosos.}
+sp2_desc2
+{
+Bônus na chance de aparecer um comerciante de mapas: 5–12%.
+Aumento da reserva de pesos: 100%.
+Aumento da reserva de dobrões: ~30%.
+}
+sp3 {Crisol}
+sp3_desc {Neste navio, a vida humana é vista apenas como uma breve etapa antes que o verdadeiro poder se revele. Poucos cruzam o Véu e retornam, mas quem retorna já não teme a morte.}
+sp3_desc2 {Marinheiros caídos aumentam a experiência e a moral da tripulação.}
+sp3_SailorsBoardingBonus_desc {Bônus de experiência em abordagem: #dSailorsBoardingBonus#%}
+sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 marinheiros caídos)}
+sp3_SurrenderChanceBonus_desc {Aumento da chance de rendição: #dSurrenderChanceBonus#%}
+sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 marinheiros mortos)}
+sp4 {Caçador de Piratas}
+sp4_desc {Este navio foi construído para purgar os mares de piratas. A cada inimigo afundado, a tripulação se une mais, os canhões ficam mais precisos e o fanatismo do capitão se revela ainda mais.}
+sp4_desc2 {Cada navio pirata destruído aumenta permanentemente a manobrabilidade, o alcance dos canhões, a velocidade no mapa global e a recarga dos canhões. Bônus atual: $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) de 15. ~ Quanto menor a ameaça pirata, menor o custo de manutenção do navio. Bônus atual: $percent($GetAmsterdamMtp( )) de 40.}
 special0 {Mercante}
 special0_desc {Um navio mercante geralmente sacrifica calibre, velocidade e número de canhões para ter um grande porão. Só um capitão muito habilidoso pode se arriscar em uma viagem solo com esse tipo de navio.}
 special0_desc2 {Bônus de Poder da frota: baixo}
@@ -18,6 +43,7 @@ special3_desc2
 Bônus ao Poder da frota: médio
 Bônus à melhoria de atributo: 15%
 }
+SpecialityUpgrade {Aprimorado pela HWIC}
 trait01 {Mapa de Correntes}
 trait01_desc {Ferramentas de navegação complexas feitas sob medida por artesãos europeus e um mapa preciso das correntes submarinas do arquipélago permitem economizar bastante tempo de viagem.}
 trait01_desc2
@@ -104,29 +130,3 @@ Dano extra ao casco e velas: 200%.
 Duração do efeito: 15 segundos.
 Aumenta a chance de incêndio: 200%
 }
-sp1 {Fanático}
-sp1_desc {Uma capela de convés equipada, junto com ícones da Virgem Maria, misteriosamente aumenta os efeitos e a duração dos amuletos cristãos.}
-sp1_desc2
-{
-Aprimoramento de cada amuleto: individual.
-Duração aumentada: 15 dias.
-}
-sp2 {Bem-vindo, convidado}
-sp2_desc {Este navio lendário é conhecido em todos os cantos do arquipélago do Caribe e é recebido por todos com respeito e admiração. A localização de Lady Beth logo é divulgada aos vendedores de mapas, e os comerciantes locais tentam reunir todo o capital possível para comprar valiosos.}
-sp2_desc2
-{
-Bônus na chance de aparecer um comerciante de mapas: 5–12%.
-Aumento da reserva de pesos: 100%.
-Aumento da reserva de dobrões: ~30%.
-}
-sp3 {Crisol}
-sp3_desc {Neste navio, a vida humana é vista apenas como uma breve etapa antes que o verdadeiro poder se revele. Poucos cruzam o Véu e retornam, mas quem retorna já não teme a morte.}
-sp3_desc2 {Marinheiros caídos aumentam a experiência e a moral da tripulação.}
-sp3_SailorsBoardingBonus_desc {Bônus de experiência em abordagem: #dSailorsBoardingBonus#%}
-sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 marinheiros caídos)}
-sp3_SurrenderChanceBonus_desc {Aumento da chance de rendição: #dSurrenderChanceBonus#%}
-sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 marinheiros mortos)}
-sp4 {Caçador de Piratas}
-sp4_desc {Este navio foi construído para purgar os mares de piratas. A cada inimigo afundado, a tripulação se une mais, os canhões ficam mais precisos e o fanatismo do capitão se revela ainda mais.}
-sp4_desc2 {Cada navio pirata destruído aumenta permanentemente a manobrabilidade, o alcance dos canhões, a velocidade no mapa global e a recarga dos canhões. Bônus atual: $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) de 15. ~ Quanto menor a ameaça pirata, menor o custo de manutenção do navio. Bônus atual: $percent($GetAmsterdamMtp( )) de 40.}
-SpecialityUpgrade {Aprimorado pela HWIC}

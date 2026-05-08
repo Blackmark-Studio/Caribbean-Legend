@@ -2,6 +2,28 @@ new_string
 {
 
 }
+sp1 {Zelot}
+sp1_desc {Eine ausgestattete Deckskapelle, zusammen mit Marienikonen, verstärkt auf geheimnisvolle Weise die Effekte und Wirkungsdauer von Kirchenamuletten.}
+sp1_desc2
+{
+Verstärkung jedes Amuletts: individuell.Verlängerung der Wirkungsdauer: 15 Tage.
+}
+sp2 {Willkommen Gast}
+sp2_desc {Dieses legendäre Schiff ist in jeder Ecke des karibischen Archipels bekannt und wird überall mit Respekt und Bewunderung empfangen. Der Standort der Lady Beth wird sofort Kartenhändlern bekannt, und lokale Händler versuchen, möglichst viel Kapital für den Kauf von Wertgegenständen zu sammeln.}
+sp2_desc2
+{
+Bonus auf die Chance, dass ein Kartenhändler erscheint: 5–12%.Erhöhung des Peso-Vorrats: 100%.Erhöhung des Dublonenvorrats: ~30%.
+}
+sp3 {Schmelztiegel}
+sp3_desc {Auf diesem Schiff gilt das menschliche Leben nur als kurze Etappe, bevor wahre Macht offenbart wird. Nur wenige überschreiten die Schwelle und kehren zurück, doch wer es schafft, fürchtet den Tod nicht mehr.}
+sp3_desc2 {Gefallene Matrosen steigern Erfahrung und Moral der Mannschaft.}
+sp3_SailorsBoardingBonus_desc {Entermesserfahrung-Bonus: #dSailorsBoardingBonus#%}
+sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 gefallene Matrosen)}
+sp3_SurrenderChanceBonus_desc {Kapitulationschance erhöht: #dSurrenderChanceBonus#%}
+sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 gefallene Matrosen)}
+sp4 {Piratenjäger}
+sp4_desc {Dieses Schiff wurde speziell dafür gebaut, die Meere von Piraten zu säubern. Mit jedem versenkten Schiff wächst der Zusammenhalt der Crew, die Geschütze werden präziser und der Fanatismus des Kapitäns deutlicher.}
+sp4_desc2 {Jedes zerstörte Piratenschiff erhöht dauerhaft Wendigkeit, Schussreichweite, Geschwindigkeit auf der Weltkarte und die Nachladegeschwindigkeit der Geschütze. Aktueller Bonus: $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) von 15. ~ Je niedriger die Piratenbedrohung, desto geringer die Unterhaltskosten des Schiffs. Aktueller Bonus: $percent($GetAmsterdamMtp( )) von 40.}
 special0 {Handelsschiff}
 special0_desc {Ein Handelsschiff verzichtet in der Regel auf Kaliber, Geschwindigkeit und Anzahl der Kanonen zugunsten eines großen Laderaums. Nur ein sehr erfahrener Kapitän kann sich eine Solofahrt auf einem solchen Schiff leisten.}
 special0_desc2 {Bonus zur Flottenstärke: niedrig}
@@ -17,6 +39,7 @@ special3_desc2
 {
 Bonus zur Flottenstärke: mittelBonus zur Attributsverbesserung: 15%
 }
+SpecialityUpgrade {Von der HWIC verbessert}
 trait01 {Strömungskarte}
 trait01_desc {Komplexe Navigationsinstrumente, die von europäischen Meistern maßgefertigt wurden, und eine genaue Karte der Unterwasserströmungen des Archipels ermöglichen erhebliche Zeitersparnis auf Reisen.}
 trait01_desc2
@@ -90,26 +113,3 @@ trait24_desc2
 {
 Zusätzlicher Schaden an Rumpf und Segeln: 200%.Wirkungsdauer: 15 Sekunden.Erhöht die Brandwahrscheinlichkeit: 200%
 }
-sp1 {Zelot}
-sp1_desc {Eine ausgestattete Deckskapelle, zusammen mit Marienikonen, verstärkt auf geheimnisvolle Weise die Effekte und Wirkungsdauer von Kirchenamuletten.}
-sp1_desc2
-{
-Verstärkung jedes Amuletts: individuell.Verlängerung der Wirkungsdauer: 15 Tage.
-}
-sp2 {Willkommen Gast}
-sp2_desc {Dieses legendäre Schiff ist in jeder Ecke des karibischen Archipels bekannt und wird überall mit Respekt und Bewunderung empfangen. Der Standort der Lady Beth wird sofort Kartenhändlern bekannt, und lokale Händler versuchen, möglichst viel Kapital für den Kauf von Wertgegenständen zu sammeln.}
-sp2_desc2
-{
-Bonus auf die Chance, dass ein Kartenhändler erscheint: 5–12%.Erhöhung des Peso-Vorrats: 100%.Erhöhung des Dublonenvorrats: ~30%.
-}
-sp3 {Schmelztiegel}
-sp3_desc {Auf diesem Schiff gilt das menschliche Leben nur als kurze Etappe, bevor wahre Macht offenbart wird. Nur wenige überschreiten die Schwelle und kehren zurück, doch wer es schafft, fürchtet den Tod nicht mehr.}
-sp3_desc2 {Gefallene Matrosen steigern Erfahrung und Moral der Mannschaft.}
-sp3_SailorsBoardingBonus_desc {Entermesserfahrung-Bonus: #dSailorsBoardingBonus#%}
-sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 gefallene Matrosen)}
-sp3_SurrenderChanceBonus_desc {Kapitulationschance erhöht: #dSurrenderChanceBonus#%}
-sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 gefallene Matrosen)}
-sp4 {Piratenjäger}
-sp4_desc {Dieses Schiff wurde speziell dafür gebaut, die Meere von Piraten zu säubern. Mit jedem versenkten Schiff wächst der Zusammenhalt der Crew, die Geschütze werden präziser und der Fanatismus des Kapitäns deutlicher.}
-sp4_desc2 {Jedes zerstörte Piratenschiff erhöht dauerhaft Wendigkeit, Schussreichweite, Geschwindigkeit auf der Weltkarte und die Nachladegeschwindigkeit der Geschütze. Aktueller Bonus: $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) von 15. ~ Je niedriger die Piratenbedrohung, desto geringer die Unterhaltskosten des Schiffs. Aktueller Bonus: $percent($GetAmsterdamMtp( )) von 40.}
-SpecialityUpgrade {Von der HWIC verbessert}

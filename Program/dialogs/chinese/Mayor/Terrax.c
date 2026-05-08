@@ -657,7 +657,6 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 				if (NextDiag.TempNode != "I_know_you_good")
 					dialog.text = "你疯了" + GetSexPhrase("", "吗") + "? 兄弟们一看到你就像见了瘟疫一样闪得远远的。 别烦我, 赶紧走人。";
 				else
@@ -665,12 +664,12 @@ void ProcessDialogEvent()
 				link.l1 = "明白了…… ";
 				link.l1.go = "exit";
 			}
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 		break;
 
 		case "pirate_threat_pay":
 			iGPThreatRate = 0;
 			iGPThreat = 0;
-			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iTerraxTotalTemp);
 			DialogExit();
 			PiratesDecreaseNotif("");

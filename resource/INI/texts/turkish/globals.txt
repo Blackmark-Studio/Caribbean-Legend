@@ -1,63 +1,121 @@
-QUEST_MESSAGE1 {El Caimano Kolonisi işgal altında.}
-QUEST_MESSAGE2 {El Caimano kolonisi ele geçirildi.}
-QUEST_MESSAGE3 {Artık Aztek altınının lanetine karşı koyamayacak kadar yaşlısın...}
-QUEST_MESSAGE4 {Bir hazine buldun!}
-QUEST_MESSAGE5 {Nigel Blight kaçakçıların korvetine saldırdı!}
-QUEST_MESSAGE6 {Nigel Blight kayboldu!}
-QUEST_MESSAGE7 {Kaptan, 'Black Pearl' ufukta göründü!}
-QUEST_MESSAGE8 {Harika iş çıkardın. Ustayı öldürdün!}
-QUEST_MESSAGE9 {Artık bu acımasız dünyayla baş başasın!}
-QUEST_MESSAGE10 {Merhametsiz bir korsan}
-QUEST_MESSAGE11 {özel bir ödülü hak ediyor!}
-QUEST_MESSAGE12 {Maalesef, zaten çok fazla subay tuttunuz! Yeni bir subay almak için önce mevcutlardan birini kovmalısınız!}
-Address_Form_Spa {Senyor}
+Address_Form_Eng {Sir}
+Address_Form_Eng_Title1 {Korsanlar}
+Address_Form_Eng_Title2 {Komutan}
+Address_Form_Eng_Title3 {Kaptan}
+Address_Form_Eng_Title4 {Komodor}
+Address_Form_Eng_Title5 {Amiral}
+Address_Form_EngWoman {Miss}
+Address_Form_EngWoman2 {Missus}
 Address_Form_Fra {Monsieur}
-Address_Form_Eng {Bayım}
-Address_Form_Por {Senyor}
-Address_Form_Hol {Mynheer}
-Swear_1 {Dalaklarım patlasın!}
+Address_Form_Fra_Title1 {Corsaire}
+Address_Form_Fra_Title2 {Komutan}
+Address_Form_Fra_Title3 {Kaptan}
+Address_Form_Fra_Title4 {Komodor}
+Address_Form_Fra_Title5 {Viceamiral}
+Address_Form_FraWoman {Mademoiselle}
+Address_Form_FraWoman2 {Madame}
+Address_Form_Hol {Mijnheer}
+Address_Form_Hol_Title1 {Filibüstür}
+Address_Form_Hol_Title2 {Komutan}
+Address_Form_Hol_Title3 {Kaptan}
+Address_Form_Hol_Title4 {Komodor}
+Address_Form_Hol_Title5 {Amiral}
+Address_Form_HolWoman {Mevrouw}
+Address_Form_HolWoman2 {Frau}
+Address_Form_Pir {Sir}
+Address_Form_Pir_Title1 {Buccaneer}
+Address_Form_Pir_Title2 {Deniz Kurdu}
+Address_Form_Pir_Title3 {Gazi}
+Address_Form_Pir_Title4 {Baron}
+Address_Form_Pir_Title5 {Efsane}
+Address_Form_PirWoman {Miss}
+Address_Form_PirWoman2 {Missus}
+Address_Form_Spa {Señor}
+Address_Form_Spa_Title1 {Corsario}
+Address_Form_Spa_Title2 {Komutan}
+Address_Form_Spa_Title3 {Kaptan}
+Address_Form_Spa_Title4 {Komodor}
+Address_Form_Spa_Title5 {Amiral}
+Address_Form_SpaWoman {Señorita}
+Address_Form_SpaWoman2 {Señora}
+DayGreeting {İyi günler}
+EveningGreeting {İyi akşamlar}
+Exclamation_1 {Aman Tanrım!!}
+Exclamation_2 {Gökler şahit!}
+Exclamation_3 {Kutsal Meryem Ana!}
+FriendlyGoodbye_0 {Görüşürüz}
+FriendlyGoodbye_1 {Hoşça kal}
+FriendlyGreeting {Selam}
+MorningGreeting {Günaydın}
+NationEuropaTown_Eng {Londra}
+NationEuropaTown_Fra {La Rochelle}
+NationEuropaTown_Hol {Amsterdam}
+NationEuropaTown_Pir {Tortuga}
+NationEuropaTown_Spa {Sevilla}
+NationKingsCrown_Eng {İngiliz Tahtı'na}
+NationKingsCrown_Fra {Fransız Tahtı'na}
+NationKingsCrown_Hol {Hollanda Krallığı'na}
+NationKingsCrown_Pir {Kıyı Kardeşliği'ne}
+NationKingsCrown_Spa {İspanyol Tahtı'na}
+NationKingsName_Eng {Lord Protektör'ün}
+NationKingsName_Fra {Majesteleri XIV. Louis'nin}
+NationKingsName_Hol {Majesteleri III. Willem van Oranje'nin}
+NationKingsName_Pir {Kıyı Kardeşliği'nin}
+NationKingsName_Spa {Kutsal Majesteleri IV. Philip Habsburg'un}
+NationNameAblative_Eng {İngiltere}
+NationNameAblative_Fra {Fransa}
+NationNameAblative_Hol {Hollanda}
+NationNameAblative_Pir {korsanlar}
+NationNameAblative_Spa {İspanya}
+NationNameGenitive_Eng {İngiltere'nin}
+NationNameGenitive_Fra {Fransa'nın}
+NationNameGenitive_Hol {Hollanda'nın}
+NationNameGenitive_Pir {korsanların}
+NationNameGenitive_Spa {İspanya'nın}
+NationNameMan_Eng {İngiliz}
+NationNameMan_Fra {Fransız}
+NationNameMan_Hol {Hollandalı}
+NationNameMan_Pir {korsan}
+NationNameMan_Spa {İspanyol}
+NationNameNominative_Eng {İngiltere}
+NationNameNominative_Fra {Fransa}
+NationNameNominative_Hol {Hollanda}
+NationNameNominative_Pir {Kıyı Kardeşliği}
+NationNameNominative_Spa {İspanya}
+NationNamePeople_Eng {İngilizler}
+NationNamePeople_Fra {Fransızlar}
+NationNamePeople_Hol {Hollandalılar}
+NationNamePeople_Pir {korsanlar}
+NationNamePeople_Spa {İspanyollar}
+NationNamePeopleAcc_Eng {İngilizleri}
+NationNamePeopleAcc_Fra {Fransızları}
+NationNamePeopleAcc_Hol {Hollandalıları}
+NationNamePeopleAcc_Pir {korsanları}
+NationNamePeopleAcc_Spa {İspanyolları}
+NationNameWoman_Eng {İngiliz kadın}
+NationNameWoman_Fra {Fransız kadın}
+NationNameWoman_Hol {Hollandalı kadın}
+NationNameWoman_Pir {kadın korsan}
+NationNameWoman_Spa {İspanyol kadın}
+NightGreeting {İyi geceler}
+PoliteGoodbye_0 {Hoşça kalın}
+PoliteGoodbye_1 {Allaha ısmarladık}
+PoliteGreeting {Merhaba}
+Swear_1 {Kahretsin!}
+Swear_10 {Yıldırım çarpsın!}
+Swear_11 {Mizana direğine yemin ederim!}
+Swear_12 {Deniz dibi seni yutsa!}
+Swear_13 {Bir düzine köpekbalığı!}
+Swear_14 {Vay aksi şeytan!}
+Swear_15 {Üç bin iblis!}
 Swear_2 {Lanet olsun!}
-Swear_3 {Aman Tanrım!}
-Swear_4 {Lanet olsun!}
-Swear_5 {Bin şeytan!}
-Swear_6 {Kıçımda çapa olsun!}
-Swear_7 {Aman Tanrım!}
-Swear_8 {Arrghhh!!!}
-Swear_9 {Bin köpekbalığı!}
-Swear_10 {Şeytan!}
-TimeGreeting {İyi günler}
-Antigua {Antigua}
-Barbados {Barbados}
-Curacao {Curacao}
-Dominica {Dominica}
-Grenada {Grenada}
-Guadeloupe {Guadeloupe}
-Hispaniola {Hispaniola}
-IslaMona {Isla Mona}
-Jamaica {Jamaica}
-MarieGalante {Marie Galante}
-Martinique {Martinique}
-Montserrat {Montserrat}
-Nevis {Nevis}
-PuertoRico {Puerto Rico}
-StEustatius {St. Eustatius}
-StKitts {St. Kitts}
-StMartin {St. Martin}
-Tortuga {Tortuga}
-LaVega {La Vega}
-SantoDomingo {Santo Domingo}
-PetitGoave {Petit Goave}
-Bridgetown {Bridgetown}
-SanJuan {San Juan}
-SantiagoVega {Santiago Vega}
-OFFIC_TYPE_BOATSWAIN {güverte subayı}
-OFFIC_TYPE_CANNONEER {Topçu}
-OFFIC_TYPE_QMASTER {dümenci}
-OFFIC_TYPE_NAVIGATOR {Seyir subayı}
-OFFIC_TYPE_FIRSTMATE {birinci zabit}
-Pirate {Korsan}
-Spain {İspanyol}
-France {Fransız}
-Smuggler {Kaçakçı}
-Holland {Hollandalı}
-England {İngiliz}
+Swear_3 {Şeytan götürsün seni!}
+Swear_4 {Kahrolasıca!}
+Swear_5 {Yüz bin belaya uğrayasın!}
+Swear_6 {Bin köpekbalığı!}
+Swear_7 {Argh!!!}
+Swear_8 {Bin iblis!}
+Swear_9 {Alle Hagel!}
+Title_Captain {kaptan}
+Title_Ghovernor {genel vali}
+Title_ViceAdmiral {viceamiral}

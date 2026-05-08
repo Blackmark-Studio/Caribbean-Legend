@@ -1,0 +1,49 @@
+Node0_title {Kara!}
+Node0_a_a {$key($ctx(islandName)Gen) kıyılarından geçerken kumların üzerinde bir $rand(brig|polaka) fark ediyorsunuz. Yan yatmış, direği kırılmış; ambarında da sandıklar ve fıçıların göründüğü kocaman bir yarık var. Etrafta tek bir canlı görünmüyor.$br$redBiraz daha yaklaşınca kumlarda boğuşma izleri ve gemi enkazının yanında yatan birkaç ceset seçiyorsunuz. Bu kıyı korkunç - su çizgisinde açık renkli lekeler var, dalgalar düzensiz çizgiler halinde kırılıyor — insan kolayca karaya oturup bu mecburi mola yerine katılabilir.}
+Node0_a_a_action {Yanaşıp aramak}
+Node0_a_a_success {Kıyı hattında derin bir geçit bulup başarıyla yanaşıyorsunuz. Geminin fırtına sırasında kıyıya savrulduğu açıkça belli. Su hattının altındaki korkunç yarığa rağmen mucize eseri batmamış, ama artık onarılacak halde değil.$br$redGeminin içinde suya gömülmüş, hiçbir değer taşımayan mallar var.$br$red Kaptan kamarasında para ve mücevher buluyorsunuz, ama ortalıkta tek bir canlının görünmemesi içinizi rahatsız ediyor.}
+Node0_a_a_success_action {Umarım kurtulmuşlardır}
+Node0_a_a_fail {Kıyı çizgisindeki oyuklar arasında uygun bir yer bulmaya çalışıyorsunuz, ama bir resife bindiriyor ve gemi su almaya başlıyor.$br$redGünün geri kalanını yarığı onarmaya harcıyor, sonunda da kıyıya vurmuş geminin buna değmediğine karar veriyorsunuz.}
+Node0_a_a_fail_action {Bu da faydalı bir tecrübe}
+Node0_a_b_action {Filikaları indirin!}
+Node0_a_b_success {Abordajlarda ve koloni kuşatmalarında kullanılan usule başvurmaya karar veriyorsunuz. Yanaşmadan çıkarma yapmak riskli bir manevradır; ama bunun kat kat geri döneceğini umuyorsunuz.$br$redGeminin fırtına sırasında kıyıya savrulduğu açıkça belli. Su hattının altındaki korkunç yarığa rağmen mucize eseri batmamış, ama artık onarılacak halde değil.$br$redİçeride suya gömülmüş, hiçbir değer taşımayan mallar var. Siz kamara üzerinde yoğunlaşırken aborda takımınız gemiyi arıyor.$br$redBirkaç saat sonra kıyıdaki filikaların yanında toplanıp ganimeti sayıyorsunuz. Tayfalar size payınızı teslim ediyor, siz de bunu kamarada bulduğunuz değerli eşyaya katıyorsunuz.}
+Node0_a_b_success_action {Güzel şey kaptan olmak}
+Node0_a_c_action {Hiç riske girmeyelim}
+Node0_a_c_success {Böylesine tehlikeli bir kıyıya yanaşma girişiminin riske değmeyeceğine karar veriyorsunuz; hem zaten yağmacılık da mürettebatınız arasında şeref sayılmaz. Batık yerini kıçınızın gerisinde bırakıp geçiyorsunuz.}
+Node0_a_c_success_action {O importante é não ir junto}
+Node0_a_b {$key($ctx(islandName)Gen) kıyılarından geçerken cangılda zar zor seçilen ışıklar fark ediyorsunuz. Bunlar kamp ateşi ya da meşale parıltısına hiç benzemiyor ve hemen dikkatinizi çekiyor.$br$redYaklaştığınızda, suda balyalarla yüklü bir filikanın zifiri karanlıkta kıyıya bağlanmış olduğu seçiliyor. İnsan görmüyorsunuz, ama burada oldukları belli.}
+Node0_b_a_action {Filikayı çalmak}
+Node0_b_a_success {Küçük bir birlikle kıyıya gizlice sokulmayı başarıyor ve filikayı kaçırıyorsunuz. Hızlı bir göz atınca üzerindeki balyaların kahve, tütün ve biraz da gemi ipeği olduğu anlaşılıyor. Belli ki kaçakçıların anlaşmasını bozmuş bulunuyorsunuz.}
+Node0_b_a_success_action {Sizin olan artık bizim}
+Node0_b_a_fail {Fark edilmeden tekneye kadar sokulmayı başarıyorsunuz, ama onu çözüp götürme vakti gelince istenmeyen dikkati üzerinize çekiyorsunuz ve cangıldan adamlar çıkıyor. Durumu bir anda kavrayıp ateş açıyorlar.$br$redKısa bir çatışma yaşanıyor; aborda takımınızdan birkaç adam kaybediyorsunuz. Filikadaki mal da zarar görüyor, geriye ancak birkaç balya gemi ipeği kurtarılabiliyor.}
+Node0_b_a_fail_action {Hiç yoktan iyidir}
+Node0_b_b_action {Kaçakçıları dağıtmak}
+Node0_b_b_success {Adamları cangıla kaçırmak için gemi toplarının ateş açmasını emrediyorsunuz. Kıyının temiz olduğuna kanaat getirince aborda birliğinizle karaya çıkıp terk edilmiş erzakı arıyorsunuz.$br$redTeknede biraz tütün, kahve ve gemi ipeği çıkıyor. Kıyıdaki sandıklarda da aynı mallardan biraz daha buluyorsunuz.}
+Node0_b_b_success_action {Kolay av}
+Node0_b_c_action {Uzaklaşmak}
+Node0_b_c_success {Kaderi zorlamamaya karar verip uzaklaşıyor, kaçakçıları kıçınızın gerisinde bırakıyorsunuz.}
+Node0_b_c_success_action { }
+Node0_a_c {$key($ctx(islandName)Gen) kıyılarına o kadar çok geldiniz ki artık size neredeyse memleket gibi geliyor. Bu yüzden, cangılın üzerinde kıvrıla kıvrıla yükselen duman daha da tuhaf görünüyor - yoğun, düzgün ve birkaç ayrı kaynaktan toplanıyor.$br$redKıyı boyunca balıkçı kayıkları ve oltalar, sayısız ayak izi ve ağır bir şeyin sürüklendiğine dair izler görüyorsunuz. Yaklaştıkça, havadaki tütsülenmiş balık ve et kokusu iyice belirginleşiyor; mideniz de buna hemen karşılık veriyor.}
+Node0_c_a_action {Biraz erzak hiç fena olmazdı}
+Node0_c_a_action_tooltip_bad {Bunun için para gerekecek...}
+Node0_c_a_success {Toplardan birinden boş atış yaptırıyor ve sese çıkan balıkçılara işaret veriyorsunuz. Başta size temkinli yaklaşıyorlar, ama elinizdeki gümüş kesesi yanlış anlamayı hemen gideriyor. Kayıklarından birini balıkla doldurup güvertenize çıkıyorlar.$br$redPek de büyük olmayan bir meblağ karşılığında bolca tütsülenmiş balık ve et satın alıyorsunuz. Tayfalar balıkçılarla hikayeler paylaşıyor, karşılığında da avcılıkta kullansınlar diye artakalan kurşun ve barutu veriyorlar. Bütün bunlar mürettebata iyi geliyor.}
+Node0_c_a_success_action {Lezzetli ve faydalı}
+Node0_c_b_action {Demek burada balık iyi vuruyor?}
+Node0_c_b_success {$rand(Demir atılmasını ve erzak toplanmasını|Geminin demirleyip erzak toplamaya koyulmasını) emrediyorsunuz. Tayfalar $rand(mızrakları ve oltaları alıyor|mızraklarla oltalara sarılıyor), $rand(birkaç sandal suya indiriliyor|birkaç sandal açılıyor). Siz $rand(bu koşuşturmayı izliyor|bu telaşı seyrediyor), ardından $rand(bir süre sonra|biraz geçince) $rand(onlara katılmaya|yanlarına inmeye) karar veriyorsunuz.$br$red Balıkçılık $rand(oldukça bereketli geçiyor|alışılmadık derecede iyi gidiyor); üstelik kaptanın $rand(tayfalarla yan yana balık tuttuğunu görmek|tayfalarla birlikte oltaya durması) $rand(mürettebatı yüreklendiriyor|mürettebatın moralini yükseltiyor).}
+Node0_c_b_success_action {Doğanın nimetleri}
+Node0_c_c_action {Onları rahatsız etmeyelim}
+Node0_c_c_success {Olup bitene karışmamaya karar veriyor ve yolunuza devam emri veriyorsunuz. Kıç tarafta balıkçı sandalları ve balık dolu sular geride kalıyor.}
+Node0_c_c_success_action {Onların buna daha çok ihtiyacı var}
+Node0_a_d {$key($ctx(islandName)Gen) kıyılarından geçerken, ormanın hemen kıyısında bir yerleşim görüyorsunuz. $rand(Birkaç kulübe, sönük ışıklar, kuma çekilmiş kanolar.|Kulübeler ormanın dibinde duruyor, su kıyısında sönük ışıklar var, kumda kanolar sıralı.) Suya doğru $rand(iyice açılmış patikalar|dar patikalar) iniyor; kıyıda $rand(sepetler ve guaiacum bağları|guaiacum bağları ile sepetler) yığılmış, ağaçların arasında $rand(yerliler gidip geliyor|insanlar dolaşıyor).$br$redAlonso bunun $rand(Karayiplerin|Taínoların|Arawakların|Guaranilerin|Ciboneylerin) toprağı olduğunu, onların da $rand(dost da düşman da olabileceğini|sizi türlü türlü karşılayabileceğini) söylüyor.}
+Node0_d_a_action {Ticarete kalkacağız}
+Node0_d_a_success {Demir atıyor ve kıyıya çıkıyorsunuz. Yerliler sağa sola kaçışıyor; kadınlarla çocuklar sepetlerini bırakıyor, erkeklerse silahlarına sarılıyor. Siz avuçlarınızı açık göstererek olabildiğince yavaş hareket etmeye çalışıyorsunuz.$br$redGördüğünüz şey tehditten çok şaşkınlık. Bunu iyi bir fırsat sayarak yanınızda getirdiğiniz süs eşyalarını ve değerli takıları gösteriyor, bu armağanları guaiacum karşılığında takas etmeyi teklif ediyorsunuz.$br$redYerliler niyetinizi anlıyor, silahlarını indiriyor ve hazinelerinizi alıyor. Guaiacum geminize yükleniyor.}
+Node0_d_a_success_action {Kıl payı atlattık}
+Node0_d_a_fail {Demir atıyor ve kıyıya çıkıyorsunuz. Yerliler sağa sola kaçışıyor; kadınlarla çocuklar sepetlerini bırakıyor, erkeklerse silahlarına davranıyor. Siz avuçlarınızı açık göstererek yavaş hareket etmeye çalışıyorsunuz.$br$redAma tavrınızdaki bir şey onları saldırganlığa itiyor ve size doğru oklarla mızraklar uçuşuyor. Siz de dağınık birkaç salvo ile karşılık verip sandallara çekiliyorsunuz. Bu çatışmada kimse ölmüyor, ama tatsızlık baki kalıyor.}
+Node0_d_a_fail_action {Kahrolası putperestler}
+Node0_d_b_action {Rab kendi kullarını bilir}
+Node0_d_b_success {Belirsizliğin sizi savunmasız bırakabileceğine karar veriyor ve saldırı hazırlığı emrini veriyorsunuz. Bordalama birliği dişine kadar silahlanmış halde sandallara doluşuyor, topçular da topları ateşe hazırlıyor.$br$redÇatışma hızlı ve kanlı başlıyor — top ateşi yerlileri dağıtıyor, misket salvoları da oyalananları yere seriyor. Kıyım bitmiş gibi görünürken cangıldan birden oklar fırlıyor — yerleşimin denizden göründüğünden daha büyük olduğu ortaya çıkıyor. Kanlı bir boğuşma başlıyor.$br$redBu kıyımda birkaç adam kaybediyorsunuz, ama bordalama birliğinin büyük kısmı sağ kalıyor. Artık guaiacum sizindir.}
+Node0_d_b_success_action {Buna değer}
+Node0_d_c_action {Riske girmeyelim}
+Node0_d_c_success {Riskin fazla büyük olduğuna ve şu an yerlilerle arayı bozmaya değmeyeceğine karar veriyorsunuz. Kıyı köyü kıç tarafınızda kalıyor.}
+Node0_d_c_success_action {Bırak yaşasınlar}
+Node0_MissingTreasures {Mücevherler ve aynalar gerekecek...}

@@ -1,4 +1,7 @@
 IslaMona_1 {Rodrigo}
+IslaMona_10 {Francisco}
+IslaMona_11 {de Alba}
+IslaMona_12 {A juzgar por los sonidos, ¡la trampa fue un éxito! ¡Es hora de ir al pueblo!}
 IslaMona_2 {Jiménez}
 IslaMona_3 {La mañana siguiente...}
 IslaMona_4 {Rodrigo Jiménez preparó otra tanda de Sándalo en Isla Mona}
@@ -7,6 +10,3 @@ IslaMona_6 {Entregaste @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> botellas 
 IslaMona_7 {Se agregaron @<sti(pchar.questTemp.IslaMona.Factory.Goods)> de Sándalo a su almacén}
 IslaMona_8 { }
 IslaMona_9 { }
-IslaMona_10 {Francisco}
-IslaMona_11 {de Alba}
-IslaMona_12 {A juzgar por los sonidos, ¡la trampa fue un éxito! ¡Es hora de ir al pueblo!}

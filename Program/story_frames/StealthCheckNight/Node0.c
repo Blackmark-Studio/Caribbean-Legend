@@ -23,10 +23,10 @@ void StealthCheckNight_Node0()
 	SF_ResolveSituation(&situation);
 
 	// Пройти переулками
-	action = SF_AddAction("a", "", "", SF_Icon("skill", SKILL_SNEAK));
+	action = SF_AddAction("a", "", "", SF_Icon("story", "forward"));
 
 	// Пройти крупными улицами
-	action = SF_AddAction("b", "", "", SF_Icon("skill", SKILL_LEADERSHIP));
+	action = SF_AddAction("b", "", "", SF_Icon("story", "forward"));
 
 	// Вернуться, пока не поздно
 	action = SF_AddAction("c", "", "", SF_Icon("story", "fail"));

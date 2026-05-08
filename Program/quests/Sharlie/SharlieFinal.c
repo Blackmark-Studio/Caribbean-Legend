@@ -4428,7 +4428,7 @@ void Tieyasal_MishelleDie1(string qName) //
 
 void Tieyasal_MishelleDie2(string qName) //
 {
-	PlaySound("VOICE\Russian\DeadmansGod.wav");
+	PlaySoundSafe("VOICE\" + LanguageGetLanguage(), "DeadmansGod.wav");
 	for (i=1; i<=5; i++)
 	{
 		CreateLocationParticles("fire_incas_Simple", "monsters", "top"+i, 0.5, 0, 0, "");
@@ -5259,7 +5259,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "GuardOT_GaleonGuardFight")
 	{
-		PlaySound("VOICE\Russian\EvilPirates01.wav");
+		PlaySoundSafe("VOICE\" + LanguageGetLanguage(), "EvilPirates01.wav");
 		DeleteAttribute(pchar, "GenQuest.CantRun");
 		CheckAndSetOverloadMode(GetMainCharacter());
 		DeleteAttribute(pchar, "questTemp.Guardoftruth.Attack");
@@ -5286,7 +5286,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "GuardOT_MarsheEscape")
 	{
-		PlaySound("VOICE\Russian\EvilPirates02.wav");
+		PlaySoundSafe("VOICE\" + LanguageGetLanguage(), "EvilPirates02.wav");
 		sld = characterFromId("GOT_Marshe");
 		LAi_SetActorType(sld);
 		ChangeCharacterAddressGroup(sld, "Deck_Galeon_Ship", "goto", "stand");
@@ -6820,7 +6820,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "bead", "", 11.0);
 		DoQuestCheckDelay("Tieyasal_Fail_DollyActivation", 11.0);
-		PlaySound("Voice\Russian\sharlie\Kanek.wav");
+		PlaySoundSafe("VOICE\" + LanguageGetLanguage() + "\sharlie", "Kanek.wav");
 		LAi_ActorTurnToCharacter(pchar, sld);
 	}
 	else if (sQuestName == "Tieyasal_Fail_DollyActivation")
@@ -6986,6 +6986,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		pchar.questTemp.Europe = true;
 		pchar.questTemp.Tieyasal_FailEnd = true; // patch
 		Achievment_Set("ach_47");
+		if(!CheckAttribute(pchar, "questTemp.PerksPotionEffect")) Achievment_Set("ach_CL_172");
 		if(MOD_SKILL_ENEMY_RATE > 9) Achievment_Set("ach_CL_103");
 		if(CheckAttribute(pchar,"questTemp.HorseQty") && sti(pchar.questTemp.HorseQty) < 1)
 		{

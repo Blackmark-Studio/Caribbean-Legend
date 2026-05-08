@@ -122,170 +122,84 @@ void SetShipParameterByModifier(ref chr, string modifier, ref value, string sour
 	UPGRD_SetShipModifier(realShip, modifier, value, sourceName);
 }
 
-void UpgradeShipParameter(ref _chr, string _param)
+void UpgradeShipParameter(ref chr, string param)
 {
-	ref 	shTo;
-	aref 	refShip;
-	int 	iCaliber;
-	int		iCannonDiff;
-	int		i;
-	string  attr; 
+	ref rShip = GetRealShip(int(chr.Ship.Type));
+	aref arShip;
+	makearef(arShip, chr.Ship);
 	
-	shTo = &RealShips[sti(_chr.Ship.Type)];
-	makearef(refShip, _chr.Ship);
+	float fTuningMod = (GetShipSpec(rShip) == SHIP_SPEC_UNIVERSAL) ? 0.35 : 0.2;
 	
-	switch(_param)
+	if (("Tuning." + param) in rShip)
+		return;
+	
+	rShip.Tuning.(param) = true;
+	switch(param)
 	{
-		case "SpeedRate":		
-			if(!CheckAttribute(shTo, "Tuning.SpeedRate"))
-			{
-				if(!CheckAttribute(shTo, "Bonus_SpeedRate"))
-				{
-					shTo.SpeedRate        = (stf(shTo.SpeedRate) + stf(shTo.SpeedRate)/5.0);
-				}
-				else
-				{
-					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.2 + stf(shTo.Bonus_SpeedRate);
-				}		
-				shTo.Tuning.SpeedRate = true;		
-			}				
-		break;		
-		
-		case "TurnRate":		
-			if(!CheckAttribute(shTo, "Tuning.TurnRate"))
-			{
-				if(!CheckAttribute(shTo, "Bonus_TurnRate"))
-				{
-					shTo.TurnRate        = (stf(shTo.TurnRate) + stf(shTo.TurnRate)/5.0);
-				}
-				else
-				{
-					shTo.TurnRate        = (stf(shTo.TurnRate) - stf(shTo.Bonus_TurnRate)) * 1.2 + stf(shTo.Bonus_TurnRate);
-				}	
-				shTo.Tuning.TurnRate = true;
-			}				
+		case "SpeedRate":
+			if ("Bonus_SpeedRate" in rShip)
+				rShip.SpeedRate = (float(rShip.SpeedRate) - float(rShip.Bonus_SpeedRate)) * (1.0 + fTuningMod) + float(rShip.Bonus_SpeedRate);
+			else
+				rShip.SpeedRate = float(rShip.SpeedRate) * (1.0 + fTuningMod);
 		break;
-		
-		case "HP":		
-			if(!CheckAttribute(shTo, "Tuning.HP"))
-			{
-				if(!CheckAttribute(shTo, "Bonus_HP"))
-				{
-					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP)/5);
-				}
-				else
-				{
-					shTo.HP        = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
-				}	
-				shTo.Tuning.HP = true;
-				ProcessHullRepair(_chr, 100.0);
-			}				
+		case "TurnRate":
+			if ("Bonus_TurnRate" in rShip)
+				rShip.TurnRate = (float(rShip.TurnRate) - float(rShip.Bonus_TurnRate)) * (1.0 + fTuningMod) + float(rShip.Bonus_TurnRate);
+			else
+				rShip.TurnRate = float(rShip.TurnRate) * (1.0 + fTuningMod);
 		break;
-		
-		case "WindAgainstSpeed":
-			if(!CheckAttribute(shTo, "Tuning.WindAgainst"))
-			{
-				shTo.WindAgainstSpeed   = FloatToString(stf(shTo.WindAgainstSpeed) +  0.20 * stf(shTo.WindAgainstSpeed), 2);
-				shTo.Tuning.WindAgainst = true;
-			}				
+		case "HP":
+			if ("Bonus_HP" in rShip && float(rShip.HP) > float(rShip.Bonus_HP))
+				rShip.HP = (float(rShip.HP) - float(rShip.Bonus_HP)) * (1.0 + fTuningMod) + float(rShip.Bonus_HP);
+			else
+				rShip.HP = float(rShip.HP) * (1.0 + fTuningMod);
+			ProcessHullRepair(chr, 100.0);
 		break;
-		
-		case "Capacity":		
-			if(!CheckAttribute(shTo, "Tuning.Capacity"))
-			{
-				if(!CheckAttribute(shTo, "Bonus_Capacity"))
-				{
-					shTo.Capacity        = sti(shTo.Capacity) + makeint(sti(shTo.Capacity)/5);
-				}
-				else
-				{
-					shTo.Capacity        = makeint((sti(shTo.Capacity) - sti(shTo.Bonus_Capacity)) * 1.2 + sti(shTo.Bonus_Capacity));
-				}					
-				shTo.Tuning.Capacity = true;
-			}				
+		case "Capacity":
+			if ("Bonus_Capacity" in rShip)
+				rShip.Capacity = (float(rShip.Capacity) - float(rShip.Bonus_Capacity)) * (1.0 + fTuningMod) + float(rShip.Bonus_Capacity);
+			else
+				rShip.Capacity = float(rShip.Capacity) * (1.0 + fTuningMod);
 		break;
-		
-		case "MaxCrew":		
-			if(!CheckAttribute(shTo, "Tuning.MaxCrew"))
-			{
-				shTo.MaxCrew        = sti(shTo.MaxCrew) + makeint(sti(shTo.MaxCrew)/5);
-				shTo.Tuning.MaxCrew = true;				
-			}				
+		case "MaxCrew":
+			rShip.MaxCrew = int(int(rShip.MaxCrew) * (1.0 + fTuningMod));		
 		break;
-		
 		case "MinCrew":
-			if(!CheckAttribute(shTo, "Tuning.MinCrew"))
-			{
-				shTo.MinCrew        = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew)/5);
-				if(sti(shTo.MinCrew) < 1) shTo.MinCrew = 1;
-				shTo.Tuning.MinCrew = true;
-			}	
+			rShip.MinCrew = int(int(rShip.MinCrew) * (1.0 - fTuningMod));		
+			if (int(rShip.MinCrew) < 1)
+				rShip.MinCrew = 1;
 		break;
-		
 		case "Cannons":					
-			if(!CheckAttribute(shTo, "Tuning.Cannon") && GetPossibilityCannonsUpgrade(_chr, true) > 0)
+			if(GetPossibilityCannonsUpgrade(chr, true) > 0)
 			{
-				iCannonDiff = sti(refShip.CannonDiff);
-				iCannonDiff -= 1;
-								
-				for (i = 0; i < sti(shTo.cannonr); i++)
+				int i;
+				string attr;								
+				for (i = 0; i < int(rShip.cannonr); i++)
 				{
 					attr = "c" + i;										
-					
-					if(i < (sti(shTo.cannonr) - iCannonDiff) )	
-					{
-						if( stf(refShip.Cannons.Borts.cannonr.damages.(attr)) > 1.0 )
-						{
-							refShip.Cannons.Borts.cannonr.damages.(attr) = 0.0; 
-						}	
-					}					
-				}	
-				for (i = 0; i < sti(shTo.cannonl); i++)
-				{
-					attr = "c" + i;
-					if(i < (sti(shTo.cannonl) - iCannonDiff) )	
-					{
-						if( stf(refShip.Cannons.Borts.cannonl.damages.(attr)) > 1.0 )
-						{
-							refShip.Cannons.Borts.cannonl.damages.(attr) = 0.0; 
-						}	
-					}										
-				}	
-				
-				shTo.Cannons = sti(shTo.CannonsQuantityMax) - iCannonDiff * 2;
-				shTo.CannonsQuantity = sti(shTo.Cannons);
-		
-				refShip.Cannons = sti(shTo.Cannons);
-				refShip.CannonDiff = iCannonDiff;
-			
-				shTo.Tuning.Cannon = true;		
-			}
-			else
-			{
-				if(!CheckAttribute(shTo, "Tuning.Cannon"))
-				{
-					shTo.Tuning.Cannon = true;
+					if (float(arShip.Cannons.Borts.cannonr.damages.(attr)) > 1.0)
+						arShip.Cannons.Borts.cannonr.damages.(attr) = 0.0;			
 				}
+				for (i = 0; i < int(rShip.cannonl); i++)
+				{
+					attr = "c" + i;										
+					if (float(arShip.Cannons.Borts.cannonl.damages.(attr)) > 1.0)
+						arShip.Cannons.Borts.cannonl.damages.(attr) = 0.0;				
+				}
+				rShip.Cannons = rShip.CannonsQuantityMax;
+				rShip.CannonsQuantity = rShip.Cannons;
+				arShip.Cannons = rShip.Cannons;
+				arShip.CannonDiff = 0;	
 			}
-		break;
-		
-		// belamour только для методов с использованием GetAttributeName shTo.Tuning.XXX
-		case "WindAgainst":
-			if(!CheckAttribute(shTo, "Tuning.WindAgainst"))
-			{
-				shTo.WindAgainstSpeed   = FloatToString(stf(shTo.WindAgainstSpeed) +  0.20 * stf(shTo.WindAgainstSpeed), 2);
-				shTo.Tuning.WindAgainst = true;
-			}				
 		break;
 	}
 }
-// ugeen
 
 void UpgradeShipFull(ref _chr)
 {
 	UpgradeShipParameter(_chr, "SpeedRate");
 	UpgradeShipParameter(_chr, "TurnRate");
-	UpgradeShipParameter(_chr, "WindAgainstSpeed");
+	UpgradeShipParameter(_chr, "Rig");
 	UpgradeShipParameter(_chr, "Capacity");
 	UpgradeShipParameter(_chr, "HP");
 	UpgradeShipParameter(_chr, "MaxCrew");
@@ -293,7 +207,6 @@ void UpgradeShipFull(ref _chr)
 	UpgradeShipParameter(_chr, "Cannons");
 	RealShips[sti(_chr.ship.type)].Tuning.All = true;
 }
-
 
 // ugeen 03.06.09 - вероятность корабликов быть проапгрейженными на 1, 2 ...  все параметры
 void Fantom_SetUpgrade(ref rFantom, string sFantomType)
@@ -379,54 +292,38 @@ void GenerateShipUpgradeParameters(ref rFantom)
 	
 	switch (iNation)
 	{
-		case ENGLAND: // SW: SpeedRate&fWindAgainstSpeed
+		case ENGLAND: // SW: SpeedRate & Rig
 			if(rand(1) == 0) 
-			{
 				UpgradeShipParameter(rFantom, "SpeedRate");
-			}	
 			else
-			{
-				UpgradeShipParameter(rFantom, "WindAgainstSpeed");
-			}
+				UpgradeShipParameter(rFantom, "Rig");
 		break;
 		
 		case FRANCE: // TM: TurnRate&MinCrew
 			if(rand(1) == 0) 
-			{
 				UpgradeShipParameter(rFantom, "TurnRate");
-			}
 			else
-			{
 				UpgradeShipParameter(rFantom, "MinCrew");
-			}
 		break;
 		
 		case SPAIN: // CC: Cannons&Capacity
 			if(rand(1) == 0) 
 			{
 				if(GetPossibilityCannonsUpgrade(rFantom, true) > 0)
-				{
 					UpgradeShipParameter(rFantom, "Cannons");
-				}	
 			}
 			else
 			{
 				if(GetPossibilityCannonsUpgrade(rFantom, false) > 0)
-				{
 					UpgradeShipParameter(rFantom, "Capacity");
-				}	
 			}
 		break;
 		
 		case HOLLAND: // HP&MMaxCrew
 			if(rand(1) == 0) 
-			{
 				UpgradeShipParameter(rFantom, "HP");
-			}
 			else
-			{
 				UpgradeShipParameter(rFantom, "MaxCrew");
-			}
 		break;
 		
 		case PIRATE:
@@ -434,49 +331,33 @@ void GenerateShipUpgradeParameters(ref rFantom)
 			{
 				case 0: 
 					if(rand(1) == 0) 
-					{
 						UpgradeShipParameter(rFantom, "SpeedRate");
-					}	
 					else
-					{
-						UpgradeShipParameter(rFantom, "WindAgainstSpeed");
-					}				
+						UpgradeShipParameter(rFantom, "Rig");			
 				break;
 				case 1: 
 					if(rand(1) == 0) 
-					{
 						UpgradeShipParameter(rFantom, "TurnRate");
-					}
 					else
-					{
 						UpgradeShipParameter(rFantom, "MinCrew");
-					}					
 				break;
 				case 2: 
 					if(rand(1) == 0) 
 					{
 						if(GetPossibilityCannonsUpgrade(rFantom, true) > 0)
-						{
 							UpgradeShipParameter(rFantom, "Cannons");
-						}	
 					}
 					else
 					{
 						if(GetPossibilityCannonsUpgrade(rFantom, false) > 0)
-						{
 							UpgradeShipParameter(rFantom, "Capacity");
-						}	
 					}				
 				break;
 				case 3: 
 					if(rand(1) == 0) 
-					{
 						UpgradeShipParameter(rFantom, "HP");
-					}
 					else
-					{
 						UpgradeShipParameter(rFantom, "MaxCrew");
-					}				
 				break;
 			}
 		break;

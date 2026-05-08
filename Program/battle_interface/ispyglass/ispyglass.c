@@ -108,13 +108,6 @@ void SetSpyGlassData()
 		nNavigationSkill = -1;
 		nBoardingSkill = -1;
 	}
-	
-	// TO_DO: выставить номера картинок в атласах и текст богатства
-	// nSpec = 0;
-	// nTrait = 1;
-	// nWealth = 2;
-	sWealth = "";
-
 	// Warship 08.07.09 Запрет спуска парусов
 	// Показываем всегда иконку полных парусов, без этого - прыгает
 	if(CheckAttribute(chref, "CanDropSails") && !sti(chref.CanDropSails))
@@ -225,10 +218,16 @@ void SetSpyGlassData()
 				if (CheckAttribute(arScopeItm,"scope.show.ship_type") && sti(arScopeItm.scope.show.ship_type)!=0 )
 				{
 					shipType = XI_ConvertString(GetShipTypeName(chref));
+					if (!isFort && CheckOfficersPerkEnable("QuickGlance")) shipType += QuickGlanceText(chref);
 				}		
 				if (CheckAttribute(arScopeItm,"scope.show.hull") && sti(arScopeItm.scope.show.hull) == true )
 				{
 					shipHull = makeint(GetHullPercent(chref));
+					if (!isFort && CheckOfficersPerkEnable("TrainedEye"))
+					{
+						nWealth = 0;
+						sWealth += TrainedEyeText(chref);
+					}
 				}
 				if (CheckAttribute(arScopeItm,"scope.show.sail") && sti(arScopeItm.scope.show.sail) == true )
 				{
@@ -338,7 +337,7 @@ void SetSpyGlassData()
 		{
             switch (sti(chref.SeaAI.Task))
             {
-                case "-1": sCaptainName = "AITASK_NONE"; break;
+                case -1: sCaptainName = "AITASK_NONE"; break;
                 case 0: sCaptainName = "AITASK_DRIFT";   break;
                 case 1: sCaptainName = "AITASK_ATTACK";  break;
                 case 2: sCaptainName = "AITASK_FOLLOW";  break;
@@ -353,7 +352,7 @@ void SetSpyGlassData()
 			if (CheckAttribute(chref, "SeaAI.Task.Target"))		                               
 			{
 		        sCaptainName = "none";
-				if (sti(chref.SeaAI.Task.Target) != -1)  sCaptainName = Characters[sti(chref.SeaAI.Task.Target)].id;
+				if (int(chref.SeaAI.Task.Target) > 0)  sCaptainName = Characters[sti(chref.SeaAI.Task.Target)].id;
 		        
 				Log_Info("SeaAI.Task.Target = " + chref.SeaAI.Task.Target + " id npc = " + sCaptainName);
 			}
@@ -397,7 +396,6 @@ void SetSpyGlassData()
 //		Log_Info("Coastal_Captain = " + CheckAttribute(chref, "Coastal_Captain"));
 	}
 	// boal <--
-	if (!isFort) ShowShipCargoEstimateCost(&objISpyGlass, chref);
 }
 
 void ResetSpyGlassData()
@@ -485,14 +483,14 @@ void FillISpyGlassParameters()
 
 	// shipname text
 	fTmp = makeint(150.0 * fHtRatio);
-    fTmp2 = makeint(40.0 * fHtRatio);
+	fTmp2 = makeint(26.0 * fHtRatio);
 	objISpyGlass.text.shipname.font = "interface_normal";
 	objISpyGlass.text.shipname.pos = fTmp + "," + fTmp2;
 	objISpyGlass.text.shipname.color = argb(255,255,255,255);
 	objISpyGlass.text.shipname.scale = 2.0 * fHtRatio;
 	// shiptype text
 	fTmp = makeint(150.0 * fHtRatio);
-    fTmp2 = makeint(80.0 * fHtRatio);
+	fTmp2 = makeint(66.0 * fHtRatio);
 	objISpyGlass.text.shiptype.font = "interface_normal";
 	objISpyGlass.text.shiptype.pos = fTmp + "," + fTmp2;
 	objISpyGlass.text.shiptype.color = argb(255,255,255,255);
@@ -645,16 +643,17 @@ void FillISpyGlassParameters()
 	objISpyGlass.captain.defence.pos = fTmp + "," + fTmp2 + "," + fTmp3 + "," + fTmp4;
 	objISpyGlass.captain.defence.uv = "0.875,0.125,1.0,0.25";
 	// Око мертвеца
-	fOffX = 25;
+	fOffX = 45;
 	fSizeX = 75;
 	fRes = 1.0;
 	objISpyGlass.captain.surrender.texture = "interfaces\morality.tga";
 	fTmp = nright - fOffX - makeint(fSizeX * fRes * fHtRatio) + makeint(0 * fHtRatio);
-	fTmp2 = ntop + fOffY + makeint(fSizeY * fHtRatio) - makeint(fSizeY * fRes * fHtRatio) + makeint((128 + fAddY*1) * fHtRatio);
+	fTmp2 = ntop + fOffY + makeint(fSizeY * fHtRatio) - makeint(fSizeY * fRes * fHtRatio) + makeint((132 + fAddY*5) * fHtRatio);
 	fTmp3 = nright - fOffX - makeint(fSizeX * fHtRatio) + makeint(fSizeX * fRes * fHtRatio) + makeint(0 * fHtRatio);
-	fTmp4 = ntop + fOffY + makeint(fSizeY * fRes * fHtRatio) + makeint((128 + fAddY*1) * fHtRatio);
+	fTmp4 = ntop + fOffY + makeint(fSizeY * fRes * fHtRatio) + makeint((132 + fAddY*5) * fHtRatio);
 	objISpyGlass.captain.surrender.pos = fTmp + "," + fTmp2 + "," + fTmp3 + "," + fTmp4;
 	objISpyGlass.captain.surrender.uv = "0.5,0.0,0.65,1.0";
+	fOffX = 25;
 
 	// text
 	fTmp = nright - makeint(150.0 * fHtRatio);
@@ -729,44 +728,45 @@ void FillISpyGlassParameters()
 	objISpyGlass.sailuvarray.uv1 = "0.5,0.0,0.5625,0.125"; // middle
 	objISpyGlass.sailuvarray.uv2 = "0.4375,0.0,0.5,0.125"; // up
 	
-	// TO_DO: выставить параметры картинок и текста
-	objISpyGlass.info.spec.texture = "interfaces\le\battle_interface\list_icons.tga";
-	fTmp = nleft + fOffX + makeint(128 * fHtRatio) - makeint(128 * fRes * fHtRatio) + makeint(fAddX * 2 * fHtRatio);
-	fTmp2 = ntop + fOffY + makeint(128 * fHtRatio) - makeint(128 * fRes * fHtRatio) + makeint((128 + fAddY*1) * fHtRatio);
-	fTmp3 = fTmp + makeint(128 * fRes * fHtRatio);
-	fTmp4 = fTmp2 + makeint(128 * fRes * fHtRatio);	
-	objISpyGlass.info.spec.pos = fTmp + "," + fTmp2 + "," + fTmp3 + "," + fTmp4;
-	objISpyGlass.info.spec.uv = "0.75,0.25,0.8125,0.375";
+	// Трейт/тип корабля оставили текстом без картинок
+	// objISpyGlass.info.spec.texture = "interfaces\le\battle_interface\list_icons.tga";
+	// fTmp = nleft + fOffX + makeint(128 * fHtRatio) - makeint(128 * fRes * fHtRatio) + makeint(fAddX * 2 * fHtRatio);
+	// fTmp2 = ntop + fOffY + makeint(128 * fHtRatio) - makeint(128 * fRes * fHtRatio) + makeint((128 + fAddY*1) * fHtRatio);
+	// fTmp3 = fTmp + makeint(128 * fRes * fHtRatio);
+	// fTmp4 = fTmp2 + makeint(128 * fRes * fHtRatio);	
+	// objISpyGlass.info.spec.pos = fTmp + "," + fTmp2 + "," + fTmp3 + "," + fTmp4;
+	// objISpyGlass.info.spec.uv = "0.75,0.25,0.8125,0.375";
 	
-	objISpyGlass.specuvarray.uv0 = "0.0,0,0.125,1.0";
-	objISpyGlass.specuvarray.uv1 = "0.125,0,0.25,1.0";
-	objISpyGlass.specuvarray.uv2 = "0.25,0,0.375,1.0";
-	objISpyGlass.specuvarray.uv3 = "0.375,0,0.5,1.0";
-	objISpyGlass.specuvarray.uv4 = "0.5,0,0.625,1.0";
-	objISpyGlass.specuvarray.uv5 = "0.5,0,0.625,1.0";
+	// objISpyGlass.specuvarray.uv0 = "0.0,0,0.125,1.0";
+	// objISpyGlass.specuvarray.uv1 = "0.125,0,0.25,1.0";
+	// objISpyGlass.specuvarray.uv2 = "0.25,0,0.375,1.0";
+	// objISpyGlass.specuvarray.uv3 = "0.375,0,0.5,1.0";
+	// objISpyGlass.specuvarray.uv4 = "0.5,0,0.625,1.0";
+	// objISpyGlass.specuvarray.uv5 = "0.5,0,0.625,1.0";
 	
-	objISpyGlass.info.trait.texture = "interfaces\le\battle_interface\list_icons.tga";
-	fTmp2 = fTmp4 + fAddY;
-	fTmp4 = fTmp2 + makeint(128 * fRes * fHtRatio);
-	objISpyGlass.info.trait.pos = fTmp + "," + fTmp2 + "," + fTmp3 + "," + fTmp4;
-	objISpyGlass.info.trait.uv = "0.75,0.25,0.8125,0.375";
+	// objISpyGlass.info.trait.texture = "interfaces\le\perks_ships.tga";
+	// fTmp2 = fTmp4 + fAddY;
+	// fTmp4 = fTmp2 + makeint(128);
+	// objISpyGlass.info.trait.pos = fTmp + "," + fTmp2 + "," + fTmp3 + "," + fTmp4;
+	// objISpyGlass.info.trait.uv = "0.75,0.25,0.8125,0.375";
 	
-	objISpyGlass.traituvarray.uv0 = "0.1875,0.0,0.25,0.125";
-	objISpyGlass.traituvarray.uv1 = "0.25,0.0,0.3125,0.125";
-	objISpyGlass.traituvarray.uv2 = "0.3125,0.0,0.375,0.125";
-	objISpyGlass.traituvarray.uv3 = "0.125,0.0,0.1875,0.125";
-	
-	objISpyGlass.info.wealth.texture = "interfaces\le\battle_interface\list_icons.tga";
-	fTmp2 = fTmp4 + fAddY;
-	fTmp4 = fTmp2 + makeint(128 * fRes * fHtRatio);
+	// objISpyGlass.traituvarray.uv0 = "0.1875,0.0,0.25,0.125";
+	// objISpyGlass.traituvarray.uv1 = "0.25,0.0,0.3125,0.125";
+	// objISpyGlass.traituvarray.uv2 = "0.3125,0.0,0.375,0.125";
+	// objISpyGlass.traituvarray.uv3 = "0.125,0.0,0.1875,0.125";
+
+
+	fTmp = makeint(144.0 * fHtRatio);
+	fTmp2 = makeint(106.0 * fHtRatio);
+	fTmp3 = fTmp + makeint(40 * fHtRatio);
+	fTmp4 = fTmp2 + makeint(40 * fHtRatio);
+	objISpyGlass.info.wealth.texture = "interfaces\le\perks_enable.tga";
 	objISpyGlass.info.wealth.pos = fTmp + "," + fTmp2 + "," + fTmp3 + "," + fTmp4;
-	objISpyGlass.info.wealth.uv = "0.75,0.25,0.8125,0.375";
+	objISpyGlass.info.wealth.uv = "0.0,0.0,1.0,1.0";
+	objISpyGlass.wealthuvarray.uv0 = "0.870,0.064,0.932,0.128";
 	
-	objISpyGlass.wealthuvarray.uv0 = "0.5625,0.0,0.625,0.125";
-	objISpyGlass.wealthuvarray.uv1 = "0.5,0.0,0.5625,0.125";
-	objISpyGlass.wealthuvarray.uv2 = "0.4375,0.0,0.5,0.125";
-	
-	fTmp2 = fTmp4 + fAddY;
+	fTmp = makeint(200.0 * fHtRatio);
+	fTmp2 = makeint(108.0 * fHtRatio);
 	objISpyGlass.text.wealth.font = "interface_normal";
 	objISpyGlass.text.wealth.pos = fTmp + "," + fTmp2;
 	objISpyGlass.text.wealth.align = "left";

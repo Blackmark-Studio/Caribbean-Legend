@@ -1,63 +1,121 @@
-QUEST_MESSAGE1 {Колония Эль Каймано окупирована.}
-QUEST_MESSAGE2 {Колония Эль Каймано захвачена.}
-QUEST_MESSAGE3 {Вы уже слишком стары чтобы сопротивляться проклятию Ацтекского золота...}
-QUEST_MESSAGE4 {Вы нашли клад!}
-QUEST_MESSAGE5 {Найджел Блайт атаковал корвет контрабандистов!}
-QUEST_MESSAGE6 {Пропал Найджел Блайт!}
-QUEST_MESSAGE7 {Капитан, Черная Жемчужина на горизонте!}
-QUEST_MESSAGE8 {Отличная работа, вы убили Учителя!}
-QUEST_MESSAGE9 {Вы теперь один на один с этим жестоким миром!}
-QUEST_MESSAGE10 {Пирату без чувства милосердия}
-QUEST_MESSAGE11 {предназначается особая награда!}
-QUEST_MESSAGE12 {К сожалению вы, уже наняли слишком много офицеров! Нанять нового вы сможете только после увольнения кого-либо из офицеров!}
-Address_Form_Spa {Сеньор}
-Address_Form_Fra {Месье}
-Address_Form_Eng {Сэр}
-Address_Form_Por {Сеньор}
-Address_Form_Hol {Минхер}
-Swear_1 {Лопни моя селезенка!}
+Address_Form_Eng {сэр}
+Address_Form_Eng_Title1 {Капер}
+Address_Form_Eng_Title2 {Коммандер}
+Address_Form_Eng_Title3 {Капитан}
+Address_Form_Eng_Title4 {Коммодор}
+Address_Form_Eng_Title5 {Адмирал}
+Address_Form_EngWoman {мисс}
+Address_Form_EngWoman2 {миссис}
+Address_Form_Fra {месье}
+Address_Form_Fra_Title1 {Приватир}
+Address_Form_Fra_Title2 {Коммандер}
+Address_Form_Fra_Title3 {Капитан}
+Address_Form_Fra_Title4 {Коммодор}
+Address_Form_Fra_Title5 {Вице-адмирал}
+Address_Form_FraWoman {мадемуазель}
+Address_Form_FraWoman2 {мадам}
+Address_Form_Hol {минхер}
+Address_Form_Hol_Title1 {Флибустьер}
+Address_Form_Hol_Title2 {Коммандер}
+Address_Form_Hol_Title3 {Капитан}
+Address_Form_Hol_Title4 {Коммодор}
+Address_Form_Hol_Title5 {Адмирал}
+Address_Form_HolWoman {мефрау}
+Address_Form_HolWoman2 {фрау}
+Address_Form_Pir {сэр}
+Address_Form_Pir_Title1 {Буканьер}
+Address_Form_Pir_Title2 {Морской волк}
+Address_Form_Pir_Title3 {Ветеран}
+Address_Form_Pir_Title4 {Барон}
+Address_Form_Pir_Title5 {Легенда}
+Address_Form_PirWoman {мисс}
+Address_Form_PirWoman2 {миссис}
+Address_Form_Spa {сеньор}
+Address_Form_Spa_Title1 {Корсар}
+Address_Form_Spa_Title2 {Коммандер}
+Address_Form_Spa_Title3 {Капитан}
+Address_Form_Spa_Title4 {Коммодор}
+Address_Form_Spa_Title5 {Адмирал}
+Address_Form_SpaWoman {сеньорита}
+Address_Form_SpaWoman2 {сеньора}
+DayGreeting {Добрый день}
+EveningGreeting {Добрый вечер}
+Exclamation_1 {О, Боже!!}
+Exclamation_2 {О, Небеса!}
+Exclamation_3 {Святая Мадонна!}
+FriendlyGoodbye_0 {Пока}
+FriendlyGoodbye_1 {Прощай}
+FriendlyGreeting {Привет}
+MorningGreeting {Доброе утро}
+NationEuropaTown_Eng {Лондон}
+NationEuropaTown_Fra {Ля Рошель}
+NationEuropaTown_Hol {Амстердам}
+NationEuropaTown_Pir {Тортугу}
+NationEuropaTown_Spa {Севилью}
+NationKingsCrown_Eng {Английскому престолу}
+NationKingsCrown_Fra {Французской короне}
+NationKingsCrown_Hol {Королевству Нидерландов}
+NationKingsCrown_Pir {Береговому братству}
+NationKingsCrown_Spa {Испанской короне}
+NationKingsName_Eng {Лорда-Протектора}
+NationKingsName_Fra {Его Величества Людовика XIV}
+NationKingsName_Hol {Его Величества Вильгельма III Оранского}
+NationKingsName_Pir {берегового пиратского братства}
+NationKingsName_Spa {Его Католического Величества Филиппа IV Габсбурга}
+NationNameAblative_Eng {Англией}
+NationNameAblative_Fra {Францией}
+NationNameAblative_Hol {Голландией}
+NationNameAblative_Pir {пиратами}
+NationNameAblative_Spa {Испанией}
+NationNameGenitive_Eng {Англии}
+NationNameGenitive_Fra {Франции}
+NationNameGenitive_Hol {Голландии}
+NationNameGenitive_Pir {пиратов}
+NationNameGenitive_Spa {Испании}
+NationNameMan_Eng {англичанин}
+NationNameMan_Fra {француз}
+NationNameMan_Hol {голландец}
+NationNameMan_Pir {пират}
+NationNameMan_Spa {испанец}
+NationNameNominative_Eng {Англия}
+NationNameNominative_Fra {Франция}
+NationNameNominative_Hol {Голландия}
+NationNameNominative_Pir {Береговое братство}
+NationNameNominative_Spa {Испания}
+NationNamePeople_Eng {англичане}
+NationNamePeople_Fra {французы}
+NationNamePeople_Hol {голландцы}
+NationNamePeople_Pir {пираты}
+NationNamePeople_Spa {испанцы}
+NationNamePeopleAcc_Eng {англичанами}
+NationNamePeopleAcc_Fra {французами}
+NationNamePeopleAcc_Hol {голландцами}
+NationNamePeopleAcc_Pir {пиратами}
+NationNamePeopleAcc_Spa {испанцами}
+NationNameWoman_Eng {англичанка}
+NationNameWoman_Fra {француженка}
+NationNameWoman_Hol {голландка}
+NationNameWoman_Pir {пиратка}
+NationNameWoman_Spa {испанка}
+NightGreeting {Доброй ночи}
+PoliteGoodbye_0 {До свидания}
+PoliteGoodbye_1 {Прощайте}
+PoliteGreeting {Здравствуйте}
+Swear_1 {Карамба!}
+Swear_10 {Разрази меня гром!}
+Swear_11 {Ар-х, твою бизань!}
+Swear_12 {А, чтоб тебя...}
+Swear_13 {Дюжина акул!}
+Swear_14 {Укуси меня селёдка!}
+Swear_15 {Три тысячи чертей!}
 Swear_2 {Проклятье!}
-Swear_3 {О мой бог!}
-Swear_4 {Черт тебя дери!}
-Swear_5 {Тысяча чертей!}
-Swear_6 {Якорь мне в корму!}
-Swear_7 {О, силы небесные!}
-Swear_8 {Аргхх!!!}
-Swear_9 {Тысяча акул!}
-Swear_10 {Дьявол!!}
-TimeGreeting {Добрый день}
-Antigua {Антигуа}
-Barbados {Барбадос}
-Curacao {Кюрасао}
-Dominica {Доминика}
-Grenada {Гренада}
-Guadeloupe {Гваделупа}
-Hispaniola {Испаньола}
-IslaMona {Исла Мона}
-Jamaica {Ямайка}
-MarieGalante {Мари-Галант}
-Martinique {Мартиника}
-Montserrat {Монтсеррат}
-Nevis {Невис}
-PuertoRico {Пуэрто-Рико}
-StEustatius {Сент-Евстафий}
-StKitts {Сент-Киттс}
-StMartin {Сент-Мартин}
-Tortuga {Тортуга}
-LaVega {Ла Вега}
-SantoDomingo {Санто-Доминго}
-PetitGoave {Петит-Гоав}
-Bridgetown {Бриджтаун}
-SanJuan {Сан-Хуан}
-SantiagoVega {Саньтяго Вега}
-OFFIC_TYPE_BOATSWAIN {боцман}
-OFFIC_TYPE_CANNONEER {канонир}
-OFFIC_TYPE_QMASTER {старшина-рулевой}
-OFFIC_TYPE_NAVIGATOR {штурман}
-OFFIC_TYPE_FIRSTMATE {первый помощник}
-Pirate {Пират}
-Spain {Испанец}
-France {Француз}
-Smuggler {Контрабандист}
-Holland {Голландец}
-England {Англичанин}
+Swear_3 {Дьявол!}
+Swear_4 {Чёрт!}
+Swear_5 {Якорь мне в ...}
+Swear_6 {Тысяча акул!}
+Swear_7 {Аргкх!!!}
+Swear_8 {Тысяча чертей!}
+Swear_9 {Алле Хагель!}
+Title_Captain {капитан}
+Title_Ghovernor {генерал-губернатор}
+Title_ViceAdmiral {вице-адмирал}

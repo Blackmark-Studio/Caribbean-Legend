@@ -1,0 +1,4 @@
+Description {Las Temporadas dividen el año de juego en partes y aplican poderosos efectos globales que permanecen activos durante todo el tiempo que dura la temporada. Cada Temporada es única y cambia de un año a otro.}
+effects_title {Efectos de la temporada}
+effects_current_title {Efectos de la temporada actual}
+additional_effects_title {Efectos adicionales de la temporada}

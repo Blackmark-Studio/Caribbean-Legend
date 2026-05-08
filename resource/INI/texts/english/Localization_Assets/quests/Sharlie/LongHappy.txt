@@ -1,12 +1,4 @@
 LongHappy_1 {To make a wedding decisions USE A THINKING OUT LOUD OPTION}
-LongHappy_2 {Abbot Benoit has come ashore!}
-LongHappy_3 {@<sti(pchar.questTemp.LongHappy.MarryRum)> barrels of rum and @<sti(pchar.questTemp.LongHappy.MarryMoney)> pesos.}
-LongHappy_4 {50 barrels of rum, 20 barrels of wine и 300 000 pesos.}
-LongHappy_5 {100 barrels of rum, 50 barrels of wine и 500 000 pesos.}
-LongHappy_6 {But before that, I have to organize a celebration at the tavern of Saint-Pierre. Hurry up!}
-LongHappy_7 {But before that, I have to organize a celebration on Isla Tesoro. Hurry up!}
-LongHappy_8 {First, you have to arrange a celebration at the tavern of Saint-Pierre!}
-LongHappy_9 {First, you have to arrange a celebration on Isla Tesoro!}
 LongHappy_10 {Sea Devil}
 LongHappy_11 {Jan}
 LongHappy_12 {Svensson}
@@ -17,6 +9,7 @@ LongHappy_16 { }
 LongHappy_17 {Steven}
 LongHappy_18 {Dodson}
 LongHappy_19 {Some time has passed...@<NewStr()>The party is in full swing...}
+LongHappy_2 {Abbot Benoit has come ashore!}
 LongHappy_20 {Tichingitu}
 LongHappy_21 {Nathaniel}
 LongHappy_22 {Mauritz}
@@ -27,6 +20,7 @@ LongHappy_26 {Black Dragon}
 LongHappy_27 {Jan Svensson escaped on a boat!}
 LongHappy_28 {Steven Dodson escaped on a boat!}
 LongHappy_29 {Marcus Tyrex escaped on a boat!}
+LongHappy_3 {@<sti(pchar.questTemp.LongHappy.MarryRum)> barrels of rum and @<sti(pchar.questTemp.LongHappy.MarryMoney)> pesos.}
 LongHappy_30 {Bernard Vensan, an old comrade and associate of Marcus Tyrex, is dead, fell while clearing the town of the remnants of mercenaries rushing through the catacombs. He did not live to victory just a few hours... ~}
 LongHappy_31 {And that's not all - Marcus Tyrex himself went missing when his ship was boarded. Jan Swenson organized the search, and I hope that the old baron was too tough for the gun balls and waves of the sea - this will be an irreparable loss for the entire Brethren of the Coast. ~}
 LongHappy_32 {The losses did not pass me by either. It is always difficult when a war takes away peaceful lives. Gino Gvineili - a good friend and a brilliant scientist accidentally fell victim to this treacherous attack. I will return to Antigua to bury him as it should.}
@@ -37,8 +31,14 @@ LongHappy_36 {Jean}
 LongHappy_37 {David}
 LongHappy_38 {Prosper}
 LongHappy_39 {Trubal}
+LongHappy_4 {50 barrels of rum, 20 barrels of wine и 300 000 pesos.}
 LongHappy_40 {Bernard}
 LongHappy_41 {Vensan}
 LongHappy_42 {@<GetFullName(sld)> added to your team as an officer}
 LongHappy_43 {You can assign @<GetFullName(sld)> as boarding officer}
 LongHappy_44 {Next morning...}
+LongHappy_5 {100 barrels of rum, 50 barrels of wine и 500 000 pesos.}
+LongHappy_6 {But before that, I have to organize a celebration at the tavern of Saint-Pierre. Hurry up!}
+LongHappy_7 {But before that, I have to organize a celebration on Isla Tesoro. Hurry up!}
+LongHappy_8 {First, you have to arrange a celebration at the tavern of Saint-Pierre!}
+LongHappy_9 {First, you have to arrange a celebration on Isla Tesoro!}

@@ -79,7 +79,7 @@ void LAI_TYPE_LSCout_CharacterUpdate(aref chr, float dltTime)
 						//--> проверяем не врагов, но дерущихся. 
 						int idx = sti(chrFindNearCharacters[i].index);
 						by = &Characters[idx];
-						if (LAi_CheckFightMode(by))
+						if (LAi_CheckFightMode(by) != CHR_MODE_PEACE)
 						{
 							//if (LAi_IsSetBale(chr))
 							if (LAi_grp_playeralarm == 0)

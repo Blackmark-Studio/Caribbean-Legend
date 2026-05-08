@@ -46,7 +46,7 @@ void UpdateSky()
 
     float fTime = GetTime();
 	float windSpeed = 5.0;
-	float timeScale = 1.0 + TimeScaleCounter * 0.25; // Текущее ускорение времени
+	float timeScale = GetTimeScale(); // Текущее ускорение времени
 
 	// Вычисление делителя для ускорения, чтоб на x8 бешенно не крутились
 	if (timeScale <= 2.0) timeScale = 1.0;

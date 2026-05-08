@@ -1,0 +1,46 @@
+Node0_a {A new calendar year is drawing near. The Season of Crown is a time of renewal and rebirth. The northeast winds grow predictable, making the Atlantic Ocean far safer for long crossings.$br$redIt is at this time that people and goods from Europe arrive in the archipelago. Governors receive fresh orders and reports, while patrols and Crown caravans bustle across the sea.}
+Node0_a_action {A sea of opportunities!}
+Node0_b_a {Trade with the colonies has, as usual, quieted down by winter. The last shipments of sugar and tobacco have long since gone to Europe, the cutting of ebony and mahogany has stopped, and the balance will not recover until next season. For now, colonial goods prices are far above normal.}
+Node0_b_a_reaction {I'm sure they missed a few things}
+Node0_b_a_reaction_log {You decide to use your reputation as a trader and your natural charisma to persuade merchants to sell you the unaccounted leftovers.}
+Node0_b_b {Last season wrung the colonies dry—stockpiles are exhausted, and the plantations were nearly destroyed by foul weather. The last remnants of colonial goods were long ago shipped off to the capital colonies, and there is almost nothing left on the market to buy or sell. Merchants have driven prices sky-high and are waiting for the Season of Cane—that is when balance will return.}
+Node0_b_b_reaction {There's always some for the likes of me}
+Node0_b_b_reaction_log {You use the talents of your quartermaster and a few informants to assess shop stocks with precision. Merchants will be forced to sell you what they meant to hold back for themselves.}
+Node0_b_c {In the capitals, the colonial duties have come up for review. While the paper-pushers argue over tariffs, merchants are in no hurry to sign long-term contracts. As a result, both prices and trade volume are taking a hit.}
+Node0_b_c_reaction {Our goods are the best!}
+Node0_b_c_reaction_log {You decide to rely on your reputation as a seasoned merchant to sell goods from your ship at a higher price. Unfortunately, this will only work in colonies that actually need your goods.}
+Node0_c_a {The shipyards, by contrast, have already fully recovered from the damage, and the flood of ship timber reaching the market has brought repair costs down.}
+Node0_c_a_reaction {Hope we won't need it}
+Node0_c_a_reaction_log {You know well how to keep a ship afloat, and you decide to use that knowledge to visit the docks for repairs less often.}
+Node0_c_b {But there is good news as well—to restore the fighting strength of the national fleets, Europe has sent especially large shipments of materials this year. Expert shipbuilders have arrived with the first Crown caravans as well. The nations are preparing for a great war, but for a free captain this will mean a substantial drop in repair costs.}
+Node0_c_b_reaction {Cheap repairs? Hit harder}
+Node0_c_b_reaction_log {If ship hulls are easily repaired, then the enemy must be struck without mercy. You decide to target only the critical parts of enemy vessels and order a reserve of heavy cast-iron shot to be kept by the gunports in case of close action.}
+Node0_c_c {Anxious rumors are spreading through the ports and harbors of a major military expedition in preparation. The best planks, ropes, and sailcloth have been reserved for warships. The shipyards are working, but materials are quickly being swallowed up by priority state orders. This drives repair costs up.}
+Node0_c_c_reaction {Our ship will be useful in war}
+Node0_c_c_reaction_log {You easily pass yourself off as a seasoned privateer in service and take your place alongside the warships.}
+Node0_d_a {Right now, every nation is trying to make use of its fresh strength and expand its influence. Any governor will welcome help, and becoming an enemy of the people is unexpectedly easy. Letters of marque are now easier to obtain, the Caribbean is overflowing with weapons and with those eager to use them. This is a time of opportunity.}
+Node0_d_a_reaction {They will remember us}
+Node0_d_a_reaction_log {Knowing whom to pay and where, it is easy to turn the spark of rumor into a full blaze. The powers are watching the actions of free captains closely, but you will be able to draw all attention to yourself.}
+Node0_d_b {Good news has arrived from the mother country: an important dynastic marriage has been concluded in Europe, strengthening ties between long-time rivals. This has greatly eased tensions both at home and in the Caribbean, and many experienced soldiers have been demobilized as a result. These veterans have joined the ranks of tavern greenhands and significantly raised the experience of hired crews.}
+Node0_d_b_reaction {Pick the talented recruits}
+Node0_d_b_reaction_log {A keen eye can easily tell seasoned soldiers from land rats. You will be able to hire only veterans, which will greatly increase your crew's effectiveness.}
+Node0_d_c {The ports and officials are overwhelmed with work. Papers are being passed from hand to hand, warehouses are taking in cargo, and the guards are busy inspecting warships. In all this confusion, a careful captain can slip through unnoticed.}
+Node0_d_c_reaction {A good opportunity}
+Node0_d_c_reaction_log {Your ability to look friendly and put people at ease will be very useful when the guards grow less attentive.}
+Node0_d_d {With the сменe of officials in the ports, a new round of inspections begins. Ships' logs are checked more carefully than usual, crews are counted again, and licenses need renewing. Strangers quickly draw unwanted attention, and it becomes harder to remain unnoticed in the harbor.}
+Node0_d_d_reaction {We'll have to lie low}
+Node0_d_d_reaction_log {Despite the closer and more painstaking inspections, your ability to look inconspicuous and avoid drawing attention will make it much easier to get through customs and deceive patrols.}
+Node0_d_e {In the mother countries, yet another conflict is brewing between Sweden and the Tsardom of Russia. Karl Gustav has asked England, his religious ally, for support, while Alexei Mikhailovich has taken advantage of Catholic outrage and secured the backing of the Habsburgs. This has split Europe into two great political blocs, and every power has decided to keep its regular troops at home.$br$redThe colonies have been told to fend for themselves. Garrisons are being reinforced with locals, and anyone even remotely fit for service is being swept out of the taverns. Only the most hopeless greenhands remain.}
+Node0_d_e_reaction {Drill will fix everything}
+Node0_d_e_reaction_log {You decide to make up for the hired crews' lack of experience with effort and drill, in the manner of a navy. Day and night, the recruits will march in formation across the deck under your watchful guidance, and sooner or later they will turn into old sea wolves.}
+Node0_d_f {Grave news has come from Europe: the Ottoman Empire is building up its military strength and tightening its hold on the region. Christians are preparing to defend the southern Balkans against a possible threat, and every power is hastily forming temporary religious alliances. Even Protestant England is ready to send its fleet into the Mediterranean. This greatly eases tensions in the Caribbean, but it comes at a cost: all the good guns have stayed in the mother countries.}
+Node0_d_f_reaction {Were the forts left without guns too?}
+Node0_d_f_reaction_log {As an experienced gunner, you can easily tell a fort still fit to fight from one that has lost all power of resistance. The shortage of guns will allow assaults to begin much earlier.}
+Node0_success
+{
+You enter the new year beneath clear skies and with a fair wind in your sails.
+The Season of Crown brings fresh orders, new faces, and full warehouses.
+Everything begins anew—and everyone has a chance to make history.
+}
+Node0_success_action {Set sail!}
+Node0_title {Season of Crown}

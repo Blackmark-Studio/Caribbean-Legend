@@ -357,16 +357,6 @@ void ProcessDialogEvent()
 		break;
 
 		case "market":
-//navy -->
-			//занят ПГГ
-			if (CheckFreeServiceForNPC(NPChar, "Store") != -1)	 // to_do имя сунуть
-			{
-				dialog.text = "Przykro mi, ale teraz jestem zbyt zajęty. Tyle klientów! Wróć jutro.";
-				link.l1 = "O, doprawdy? Cóż, wrócę później, zatem.";
-				link.l1.go = "exit";
-				break;
-			}
-//navy <--
 			dialog.text = RandPhraseSimple("Mam kulę armatnią, żagle, lekarstwa, cenne drewno i inne towary! Czym jesteś zainteresowany?","Chcesz kupić cukier i przyprawy? A może rum i proch strzelniczy?");
 			link.l1 = pcharrepphrase(LinkRandPhrase("Mam mnóstwo łupów w ładowni! Pieniądze nie mają zapachu, prawda?","Muszę pozbyć się łupu z mojego ładowni i napełnić ją twoim złotem. Ha-ha!","Och, wiem, że sprzedałbyś własną matkę za worek pełen doubloonów! Ale ja tylko potrzebuję uzupełnić swoje zapasy."),LinkRandPhrase("Chcę sprzedać mój ładunek i uzupełnić zapasy.","Chcę zakupić towary na sprzedaż.","Pokaż mi kule armatnie, bomby i takie tam."));
 			link.l1.go = "trade_1";
@@ -665,19 +655,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_5":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage)); 
-			NPChar.Storage.NoActivate = true;
-			DeleteAttribute(NPChar,"Storage.Activate");
+			LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
 			DialogExit();
 		break;
 		
 		case "storage_6":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			DeleteAttribute(NPChar,"Storage.Activate");
-			NPChar.Storage.NoActivate = true;
+			LeaveStorage(NPChar, rColony);
 			DialogExit();
-		break;		
+		break;
 
 		case "business":
 			iTest = 0;			
@@ -753,17 +738,6 @@ void ProcessDialogEvent()
 			}
 			// <-- генератор Место под солнцем
 			
-//navy -->
-			//занят ПГГ
-			iTmp = CheckAvailableTaskForNPC(NPChar, PGG_TASK_WORKONSTORE);
-			if (iTmp != -1)
-			{
-				dialog.text = "Miałem robotę, ale "+GetFullName(&Characters[iTmp])+"już się tego podjął dla mnie.";
-				link.l1 = "O, naprawdę? Cóż, wrócę później, zatem.";
-				link.l1.go = "exit";
-				break;
-			}
-//navy <--
 			dialog.text = NPCharRepPhrase(npchar,"Jaki interes?! Opowiedz mi wszystko!","Słucham. O jakiej umowie mówisz?");
             ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
             if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
@@ -830,11 +804,8 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if(!CheckAttribute(NPChar,"Storage.NoActivate"))
-						{
-							link.l7 = "Przepraszam, mój dobry człowieku - czy przypadkiem nie wynajmujesz magazynów?";
-							link.l7.go = "storage_01";
-						}	
+						link.l7 = "Przepraszam, mój dobry człowieku - czy przypadkiem nie wynajmujesz magazynów?";
+						link.l7.go = "storage_01";
 					}
 				}				
 				// <-- ugeen
@@ -1536,7 +1507,7 @@ void ProcessDialogEvent()
 		case "FindFugitiveSt":
 			if (NPChar.city == pchar.GenQuest.FindFugitive.City && sti(pchar.GenQuest.FindFugitive.Chance) == 1)
 			{
-				dialog.text = NPCStringReactionRepeat(" "+pchar.GenQuest.FindFugitive.Name+"? Tak, znam go. Kupił u mnie zapasy dla swojej długiej łodzi. W ciągu dnia zazwyczaj łowi ryby gdzieś w zacisznych zatokach, ale każdego wieczoru można go znaleźć w tawernie.","Już pytałeś mnie o tego człowieka, i powiedziałem ci wszystko, co wiedziałem!","Czy sobie ze mnie żartujesz, czy naprawdę jesteś idiotą?! Zadajesz już po raz trzeci te same pytania!","Jak to możliwe, że taki głupiec został kapitanem...","blokada",1,npchar,Dialog.CurrentNode);
+				dialog.text = NPCStringReactionRepeat(" "+pchar.GenQuest.FindFugitive.Name+"? Tak, znam go. Kupił u mnie zapasy dla swojej długiej łodzi. W ciągu dnia zazwyczaj łowi ryby gdzieś w zacisznych zatokach, ale każdego wieczoru można go znaleźć w tawernie.","Już pytałeś mnie o tego człowieka, i powiedziałem ci wszystko, co wiedziałem!","Czy sobie ze mnie żartujesz, czy naprawdę jesteś idiotą?! Zadajesz już po raz trzeci te same pytania!","Jak to możliwe, że taki głupiec został kapitanem...","block",1,npchar,Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("Dziękuję, ogromnie mi pomogłeś!","Tak, tak, dobrze.","Teraz, teraz, nie ekscytuj się tak. Po prostu zapomniałem.","No cóż, zrobił to, jak widzisz...",npchar,Dialog.CurrentNode); 
 				link.l1.go = DialogGoNodeRepeat("FindFugitiveSt_1", "exit", "", "", npchar, Dialog.CurrentNode);
 			}

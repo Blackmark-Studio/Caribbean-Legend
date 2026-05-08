@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 			dialog.text = "Stój! Oddaj broń natychmiast, monsieur, i chodź z nami!";
 			link.l1 = "Co to ma być, do diabła?";
 			link.l1.go = "Sharlie_arest_1";
-			if (CheckCharacterItem(PChar, "knife_03")) pchar.Sharlie.KnifeMonpe = true;
+
 		break;
 		
 		case "Sharlie_arest_1":
@@ -1752,6 +1752,7 @@ case "Europe":
 			link.l1.go = "MOT_Barbie_Escadra";
 			
 			AddItems(pchar, "gold_dublon", 40);
+			DeleteAttribute(NPChar, "moneyNotGiven");
 			Log_info("Otrzymałeś 40 dublonów");
 			PlaySound("Interface\important_item.wav");
 			AddCharacterExpToSkill(pchar, "Leadership", 20);
@@ -1812,7 +1813,7 @@ case "Europe":
 		break;
 		
 		case "MOT_Barbie_101":
-			if (IsCharacterPerkOn(Pchar, "Trustworthy"))
+			if (!CheckAttribute(NPChar, "moneyNotGiven"))
 			{
 				dialog.text = "Dziękuję za wzorową eskortę, Kapitanie. Cieszy mnie, że nie napotkaliśmy żadnych incydentów.";
 				link.l1 = "Z przyjemnością robić z Panem interesy, Monsieur. A teraz, jeśli Pan pozwoli, mam wiele spraw do załatwienia.";

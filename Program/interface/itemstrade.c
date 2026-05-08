@@ -80,6 +80,7 @@ void InitInterface_RI(string iniName, ref pTrader, int mode)
 	SetEventHandler("ADD_BUTTON","ADD_BUTTON",0);
 	SetEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON", 0);
 	SetEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON", 0);
+	SetEventHandler("eTabControlPress", "procTabChange", 0);
 
 	SetEventHandler("frame","ProcessFrame",1);
 
@@ -163,9 +164,38 @@ void IDoExit(int exitCode)
 	DelEventHandler("ADD_BUTTON","ADD_BUTTON");
 	DelEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON");
 	DelEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON");
+	DelEventHandler("eTabControlPress", "procTabChange");
 
 	interfaceResultCommand = exitCode;
 	EndCancelInterface(true);
+}
+
+void procTabChange()
+{
+	int comIndex = GetEventData();
+	string nodName = GetEventData();
+
+	switch(nodName)
+	{
+		case "TABBTN_1":
+			SetControlsTabModeManual(1)
+		break;
+		
+		case "TABBTN_2":
+			SetControlsTabModeManual(2)
+		break;
+		
+		case "TABBTN_3":
+			SetControlsTabModeManual(3)
+		break;
+		
+		case "TABBTN_4":
+			SetControlsTabModeManual(4)
+		break;
+		case "TABBTN_5":
+			SetControlsTabModeManual(5)
+		break;
+	}
 }
 
 void ProcCommand()
@@ -590,8 +620,8 @@ void ShowHelpHint()
 	}
 
 	SetDescriptorsTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3, currentItem);
-	SetItemStatsTooltip(refCharacter, sCurrentNode, &sHeader, &sText1, &sText2, &sText3);
-	if (sHeader != "") CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false);
+	SetItemStatsTooltip(refCharacter, sCurrentNode, &sHeader, &sText1, &sText2, &sText3, currentItem);
+	if (sHeader != "") CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false, false);
 }
 
 void HideHelpHint()
@@ -752,14 +782,14 @@ void SetVariable()
 		}
 		else
 		{
-			sText = FindRussianDublonString(sti(pchar.dublon));
+			sText = FindRussianDublonString(PCharDublonsTotal());
 		}	
 		SetFormatedText("OUR_GOLD", sText);
 	}
 	else
 	{
 		if(TradeMode == 0) sText = MakeMoneyShow(sti(pchar.Money), MONEY_SIGN,MONEY_DELIVER);
-		else			   sText = MakeMoneyShow(sti(pchar.Dublon), MONEY_SIGN,MONEY_DELIVER);
+		else			   sText = MakeMoneyShow(PCharDublonsTotal(), MONEY_SIGN,MONEY_DELIVER);
 		GameInterface.strings.Money_1 = sText;
 		SetFormatedText("OUR_GOLD", sText);
 		
@@ -982,6 +1012,8 @@ void TransactionOK()
 
  	if (BuyOrSell == 1) // BUY
 	{
+		if (Items[iCurGoodsIdx].id == "mushket_indian") DeleteAttribute(&TEV, "franshise.mushket_indian.inStock");
+
 		TakeNItems(refStoreChar, Items[iCurGoodsIdx].id, -nTradeQuantity);
 		TakeNItems(refCharacter, Items[iCurGoodsIdx].id, nTradeQuantity);				
 		moneyback = makeint(iCharPrice*stf(GameInterface.qty_edit.str) + 0.5);
@@ -1000,7 +1032,7 @@ void TransactionOK()
 		else
 		{
 			TakeNItems(refStoreChar, "gold_dublon", moneyback);
-			TakeNItems(pchar, "gold_dublon", -moneyback);
+			RemoveDublonsFromPCharTotal(moneyback);
 			AddCharacterExpToSkill(pchar, "Commerce", moneyback / 70.0);	
 		}
 		
@@ -1172,9 +1204,9 @@ void ChangeQTY_EDIT()
 			}	
 			else
 			{
-				if (makeint(iCharPrice*stf(GameInterface.qty_edit.str) + 0.5) > sti(pchar.dublon))
+				if (makeint(iCharPrice*stf(GameInterface.qty_edit.str) + 0.5) > PCharDublonsTotal())
 				{
-					GameInterface.qty_edit.str = makeint(sti(pchar.dublon) / iCharPrice);
+					GameInterface.qty_edit.str = makeint(PCharDublonsTotal() / iCharPrice);
 					iWeight = fWeight * sti(GameInterface.qty_edit.str);
 				}
 			}	

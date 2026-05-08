@@ -1,12 +1,4 @@
 Knippel_1 {你使用了钥匙}
-Knippel_2 {Peter}
-Knippel_3 {Adams}
-Knippel_4 {Jane}
-Knippel_5 {Adams}
-Knippel_6 {Charlie 前来救援!}
-Knippel_7 {Frederick}
-Knippel_8 {Stokes}
-Knippel_9 {Ralph}
 Knippel_10 {Faggle}
 Knippel_11 {1654年7月21日 @<NewStr()> 安提瓜, 圣约翰}
 Knippel_12 {Thomas}
@@ -17,6 +9,7 @@ Knippel_16 {Sheffield}
 Knippel_17 {Michael}
 Knippel_18 {Whitney}
 Knippel_19 {解锁投弹手}
+Knippel_2 {Peter}
 Knippel_20 {一段时间后... @<NewStr()> 在 Fleetwood 宅邸}
 Knippel_21 {Frederick}
 Knippel_22 {Stokes}
@@ -27,4 +20,11 @@ Knippel_26 {Thomas}
 Knippel_27 {Lynch}
 Knippel_28 {Chimera}
 Knippel_29 {当前时间}
+Knippel_3 {Adams}
 Knippel_30 {1654年8月17日, @<NewStr()>, 多米尼加东南部"}
+Knippel_4 {Jane}
+Knippel_5 {Adams}
+Knippel_6 {Charlie 前来救援!}
+Knippel_7 {Frederick}
+Knippel_8 {Stokes}
+Knippel_9 {Ralph}

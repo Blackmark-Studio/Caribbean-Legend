@@ -715,7 +715,6 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 				if (NextDiag.TempNode != "I_know_you_good")
 					dialog.text = "T’as perdu la tête" + GetSexPhrase("", " ma fille") + " ? Nos gars te fuient comme la peste. Alors fiche le camp et arrête de me casser les pieds.";
 				else
@@ -723,12 +722,12 @@ void ProcessDialogEvent()
 				link.l1 = "Je vois...";
 				link.l1.go = "exit";
 			}
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 		break;
 
 		case "pirate_threat_pay":
 			iGPThreatRate = 0;
 			iGPThreat = 0;
-			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iMarlowTotalTemp);
 			DialogExit();
 			PiratesDecreaseNotif("");

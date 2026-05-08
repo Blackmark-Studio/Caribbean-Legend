@@ -302,7 +302,7 @@ void CreatUnderwater(aref loc) // под водой
 			{
 				if (GetCharacterIndex("Crab_"+i) == -1)
 				{
-					sld = GetCharacter(NPC_GenerateCharacter("Crab_"+i, "crabBig", "crab", "crabBig", 50+(MOD_SKILL_ENEMY_RATE), PIRATE, -1, false, "quest"));
+					sld = GetCharacter(NPC_GenerateCharacter("Crab_"+i, "crabBig", "crab", "crabBig", 15+(MOD_SKILL_ENEMY_RATE/2), PIRATE, -1, false, "quest"));
 					sld.name = "Гигантский краб";
 					sld.lastname = "";
 					GiveItem2Character(sld, "unarmed");

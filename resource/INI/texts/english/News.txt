@@ -1,18 +1,20 @@
-News {Patch 1.7}
+key {d24.04.2026}
+News {1.8 Maritime Update is now available!}
+News_Attention { }
 News_descr
 {
 ***************************   Ahoy!   ***************************
 -------------------------------------------------------------------------------------------------
-— Welcome to version 1.7!
-— The fourth part of the "Ships Pack" DLC series is out
-— You can freely switch between versions via Steam
-— No need to start a new game
-— Saves have been reworked and improved
-— New city infiltration and stealth mechanics
-— AI fights better on land
-— Epilogue, quality of life improvements and more
-— You can find the detailed changelog in the news via the button below
+— Patch 1.8 Maritime Update is now available
+— Version 1.7.3 is being archived; you can switch between versions via Steam
+— No new game required
+— Maritime Stories DLC is available
+— Seasons have been added to the game, dramatically changing the Caribbean
+— Naval gunnery has been reworked
+— New sail and point-of-sail system
+— Boarding has been improved
+— World map usability has been improved
+— Naval AI has been improved, making ship battles far more engaging
+— Numerous quality-of-life improvements, balance changes, and bug fixes
+— You can find the full changelog in the news post via the button below
 }
-News_Attention { }
-
-key {31.01.2026} 

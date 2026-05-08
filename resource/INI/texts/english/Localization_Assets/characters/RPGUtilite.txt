@@ -1,12 +1,4 @@
 RPGUtilite_1 {Experience Gained ~}
-RPGUtilite_2 {awful}
-RPGUtilite_3 {bad}
-RPGUtilite_4 {poor}
-RPGUtilite_5 {moderate}
-RPGUtilite_6 {good}
-RPGUtilite_7 {excellent}
-RPGUtilite_8 {Vitality Increased}
-RPGUtilite_9 {Vitality Decreased}
 RPGUtilite_10 {National Rep Decreased!}
 RPGUtilite_11 {National Rep Increased!}
 RPGUtilite_12 {National Rep Increased!}
@@ -17,7 +9,15 @@ RPGUtilite_16 {Dislike}
 RPGUtilite_17 {Irritation}
 RPGUtilite_18 {Neutrality}
 RPGUtilite_19 {Sympathy}
+RPGUtilite_2 {awful}
 RPGUtilite_20 {Friendliness}
 RPGUtilite_21 {Admiration}
 RPGUtilite_22 {Rainbow}
 RPGUtilite_23 {Quicksilver}
+RPGUtilite_3 {bad}
+RPGUtilite_4 {poor}
+RPGUtilite_5 {moderate}
+RPGUtilite_6 {good}
+RPGUtilite_7 {excellent}
+RPGUtilite_8 {Vitality Increased}
+RPGUtilite_9 {Vitality Decreased}

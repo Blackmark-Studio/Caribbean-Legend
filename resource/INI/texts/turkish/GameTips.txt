@@ -1,0 +1,67 @@
+Tip0 {Red Mary çok kıskançtır.}
+Tip1 {Helen son derece batıl inançlıdır — her korsan gibi.}
+Tip10 {Düşman arketiplerine dikkat edin: sağlık ve enerji göstergelerinin yanında gösterilirler.}
+Tip11 {Eskrimcilerin saldırılarını engellememek daha iyidir — savunmayı kolayca delerler. Savuşturmak daha güvenlidir.}
+Tip12 {Tüfekçiler muazzam hasar verir. Önce onları indirin.}
+Tip13 {Hızlı atış, nişanlı atıştan daha zayıftır. Hızın bedeli budur.}
+Tip14 {Savaş Amuletsleri birlikte kullanıldıklarında özellikle güçlüdür. Onları akıllıca seçin.}
+Tip15 {Ateşli silahlar isabet ettiğinde geri iter — bunu mesafe korumak için kullanın.}
+Tip16 {Elde tutulan bir tüfek hareketi ciddi ölçüde yavaşlatır. Çekilmiş bir kılıç da yavaşlatır, ama daha az.}
+Tip17 {Geriye ve yana doğru, ileriye kıyasla belirgin biçimde daha yavaş hareket edersiniz, ama düşmanı gözden kaçırmazsınız.}
+Tip18 {Birçok düşman savaşta zehirleyebilir. Yanınızda her zaman panzehir taşıyın.}
+Tip19 {Her silah kendine özgüdür — onu kendi perk ve skilllerinize göre seçin.}
+Tip2 {Alonso geçmişi hakkında konuşmayı sevmez.}
+Tip20 {Savaş yelkenlerinde gemi en hızlı döner.}
+Tip21 {Sallanma, dönüşler ve gemi hızı top atışının isabetini büyük ölçüde etkiler.}
+Tip22 {Toplarla sık sık ıskalıyorsanız mesafeyi azaltın.}
+Tip23 {Toplar ve "İsabet" skillleri hem üçüncü şahıs ateşine hem de nişan moduna etki eder.}
+Tip24 {Batan gemiler çarpma sırasında hasar vermez — onlardan korkmayın.}
+Tip25 {Knippel ile direkte isabet eden bir atış direği devirebilir. Yelkenler zaten hasarlıysa şans artar.}
+Tip26 {Büyük bir sayısal üstünlükte düşman gemisi daha aborda girişiminde teslim olabilir.}
+Tip27 {Korsan gemilerini batırmak korsan tehdidini azaltır ve Karayipleri daha güvenli kılar.}
+Tip28 {Captain perki olmayan subaylar yalnızca 4. sınıfa kadar gemileri yönetebilir.}
+Tip29 {Gemi özellikleri farklı durumlarda işe yarar — onları oyun tarzınıza göre seçin.}
+Tip3 {Unutmayın: tabancayı çekmek, tüfeği yeniden doldurmaktan her zaman daha hızlıdır.}
+Tip30 {Kaleler duvarlarına ateş ederek yıkılabilir, ama mazgallara isabet etmek süreci hızlandırır.}
+Tip31 {Kaçan gemiler malları denize atabilir. Yükü almak için yanlarına yaklaşın.}
+Tip32 {Toplar zamanla aşınır. Yedekte biraz top bulundurun.}
+Tip33 {Farklı mühimmatların menzili farklıdır. En uzağa gülle, en kısaya saçma gider.}
+Tip34 {Gülle çok yönlüdür. Yelken ve direkler için knippel, mürettebat için saçma, gövde için bomba kullanın.}
+Tip35 {Diyalogları dikkatle okuyun — bazen benzersiz bilgiler içerirler.}
+Tip36 {Bir koloni başarıyla kuşatılırsa, liman idaresindeki mevduatlarınız ve gemileriniz kaybolur.}
+Tip37 {Kasabalılara ve ayyaşlara söylentileri sorun — çoğu zaman ilginç şeyler bilirler.}
+Tip38 {Hazine aramak kazançlıdır. Hazine haritası satıcısını handa arayın.}
+Tip39 {Fadey Moskovit, Loxley ve Abbot Benoit başınızdaki ödülden kurtulmanıza yardım edebilir.}
+Tip4 {Karayipler'de tuhaf insan eksik olmaz. Derler ki burada yol göstermekten çok yoldan çıkaran bir rahip varmış.}
+Tip40 {Korsan baronlarının yardımıyla korsan tehdidini bir süreliğine azaltabilirsiniz.}
+Tip41 {Amulets, karakterden çıkarılırsa yok olur. Diziliminizi önceden planlayın.}
+Tip42 {Wards istediğiniz kadar çıkarılıp takılabilir. Bozulmazlar ve sonsuza dek etkili kalırlar.}
+Tip43 {Gemide yedek silah bulundurun: ölen her denizci silahını da öte tarafa götürür.}
+Tip44 {Limandan ayrılmadan önce romun, ilaçların ve erzağın bütün yolculuğa yeteceğinden emin olun.}
+Tip45 {Sıçanlar denizcinin belasıdır. Onlardan arsenikle ya da kadim büyüyle kurtulabilirsiniz.}
+Tip46 {Zindanlar çok karmaşık olabilir. Kaybolursanız sağ taraftan ilerleyin ve orayı takip edin.}
+Tip47 {Eşyalar envanterden atılabilir. Bazen ağır ıvır zıvırdan kurtulmak faydalıdır.}
+Tip48 {Perkler özel bir iksir içilerek sıfırlanabilir. Dizilimlerle deneme yapmaktan korkmayın.}
+Tip49 {Hazineler, dükkâncılar ve mezarlık bekçileri crafting malzemeleri için iyi kaynaklardır. Onları sık sık ziyaret edin.}
+Tip5 {Yakın dövüş silahı becerisi, vuruşların enerji maliyetini azaltır.}
+Tip50 {Gemiler, mürettebatı ve subayıyla birlikte liman idaresine bırakılabilir.}
+Tip51 {Başkent kolonilerinin tersanelerinde, malları ve gemi toplarını güvenle saklamak için depo kiralayabilirsiniz.}
+Tip52 {Koloni kalesi size açıkça fazla güçlüyse, şehre karadan saldırmayı deneyin. Şehir garnizonu belirgin şekilde daha zayıftır, ama ganimet de daha az olur.}
+Tip53 {Açık denizde sürüklenen fıçılar bulabilirsiniz. İçlerinde değerli şeyler de olabilir, çer çöp de - bu her zaman sürprizdir.}
+Tip54 {Her darbe savuşturulabilir. Bu tekniği iyi öğrenirseniz her düelloyu kazanabilirsiniz.}
+Tip55 {Bazen deniz akıntıları, kuytu koylarda dolaşanlara beklenmedik hediyeler getirir.}
+Tip56 {Ametistler sarhoşluğa iyi gelmez. Cidden.}
+Tip57 {Acil durumda, herhangi bir subay bordacı pozisyonuna atanabilir. Bir aslanın yönettiği koyun ordusu, bir koyunun yönettiği aslan ordusunu yener.}
+Tip58 {Valilerle kaptanlar da kumara yabancı değildir, ama yabancılarla oynayacaklarını sanmayın.}
+Tip59 {Kritik bir durumda köleleri mürettebata katabilirsiniz. Bu, mürettebatın moralini bozar ama safları hızla doldurmanızı sağlar.}
+Tip6 {Aşırı yük ve sarhoşluk, becerilere ceza verir.}
+Tip60 {Muhafızlar sizi kaçakçılarla iş yaparken yakalarsa, bazen en kolayı parayla sıyrılmaktır. Bu da işin ticari tarafı.}
+Tip61 {Eşya üretmek oyun içi zaman harcar. Bazen handa amaçsızca uyumaktan iyisi bir şeyler üretmektir.}
+Tip62 {Tersanede gemi onarmak oyun içi zaman harcar. Bir yere yetişmeye çalışırken bunu hesaba katın.}
+Tip63 {Acil durumda, herhangi bir subay bordacı pozisyonuna atanabilir. Bir aslanın yönettiği koyun ordusu, bir koyunun yönettiği aslan ordusunu yener.}
+Tip64 {Takımadalar'ın kolonileri on benzersiz şehir hikâyesi saklıyor. Sokaklardaki şehir halkıyla daha sık konuşun ve tavernalardaki ayyaşlar için romdan kaçınmayın.}
+Tip65 {Savaşta bordacıları yönetebilirsiniz. Onlara kısayol tuşlarıyla emir vermeyi deneyin.}
+Tip66 {Bazı perkler, ana karakter ve subaylar için farklı etkilere sahiptir.}
+Tip7 {İksirler sağlığı yavaş geri kazandırır — savunmada oyalanarak kurtulmayı beklemeyin.}
+Tip8 {Etrafınızı sardılarsa, çıkmanın en iyi yolu yana doğru ani bir atılımdır.}
+Tip9 {Ağır silahlar daha fazla enerji harcar, ama daha sert vurur.}

@@ -1,0 +1,38 @@
+Node0_a {Chega o último trimestre do ano - começa a Temporada da Sombra. Os furacões que castigam o Atlântico se acalmam, mas suas consequências são sentidas por toda parte. As guarnições foram devastadas por doenças e fome, as cadeias de comércio foram rompidas, e o Caribe fica suspenso à espera do inverno.$br$redNesta temporada, o mar se tinge de vermelho - piratas famintos e enfurecidos fazem a festa ao longo da costa, as frotas nacionais tentam arrancar o maior pedaço possível de um inimigo enfraquecido, e os contrabandistas se tornam as pessoas mais valiosas e ricas do arquipélago.}
+Node0_a_action {Chegou o tempo do luto e da força}
+Node0_b_a {Junto com a umidade, vão embora também as doenças que vinham dizimando tripulações e colonos. As ruas das cidades, tavernas e quartéis, agora visivelmente mais vazios, dificultam naturalmente a propagação das enfermidades, o que permite levar muito menos remédio em viagem.}
+Node0_b_a_reaction {Ração dupla de grogue para todos!}
+Node0_b_a_reaction_log {Você decide dar a todos uma dose extra de grogue para prevenir doenças. Isso permitirá economizar com remédios.}
+Node0_b_b {A Temporada da Tempestade foi especialmente cruel este ano. Surtos de doença varreram o Caribe como um redemoinho mortal, esvaziando cidades e quartéis. Só sobreviveram os mais saudáveis e resistentes, e agora enfermidade nenhuma os assusta. Isso permite economizar bastante com remédios.}
+Node0_b_b_reaction {Uma porção de ervas curativas para todos!}
+Node0_b_b_reaction_log {Você decide dar a todos ervas curativas para prevenir doenças. Isso permitirá economizar com remédios.}
+Node0_b_c {Neste ano, a estação úmida recuou mais cedo do que de costume. Os ventos secaram os portos, a umidade saiu dos quartéis e armazéns, e respirar ficou muito mais fácil. As febres estão diminuindo, as pessoas se recuperam mais rápido, e os cais voltam a se encher de gente disposta a ir para o mar. É como se o arquipélago tivesse retomado o fôlego, e todos olham para o futuro com esperança.}
+Node0_b_c_reaction {Bem-vindos a bordo!}
+Node0_b_c_reaction_log {Você usa seus contatos e sua fama para atrair o maior número possível de marinheiros.}
+Node0_b_d {O verão acabou não sendo tão implacável quanto se esperava. As doenças não dizimaram os mais fracos e, no outono, há mais gente do que o normal nos portos. Mas, junto com eles, a enfermidade também permanece - ela vem no encalço e se agarra às novas tripulações. As doenças podem irromper a bordo a qualquer momento, e é preciso estar preparado para isso.}
+Node0_b_d_reaction {Eu sei como recuperar a saúde}
+Node0_b_d_reaction_log {Você escolhe entre os recrutas os mais saudáveis e os distribui pelo navio de modo a reduzir as chances de adoecer.}
+Node0_c_a {O reparo do navio, por outro lado, virou um luxo caro. Os estoques de madeira naval estão desaparecendo diante dos olhos, cada prego custa o triplo do normal, e os mestres são obrigados a aumentar os preços para dar conta da enxurrada de interessados.}
+Node0_c_a_reaction {Dá para baixar o preço?}
+Node0_c_a_reaction_log {Você decide usar seu conhecimento sobre a estrutura do navio para economizar nos reparos. É muito mais difícil enrolar alguém que entende do assunto.}
+Node0_c_b {Consertar um navio, porém, não será nada fácil - as oficinas foram destruídas pelo mau tempo, e faltam carpinteiros. Filas de navios avariados se formam diante dos estaleiros, e os mestres dão preferência aos navios de guerra. O reparo está virando um luxo que nem todo capitão pode pagar.}
+Node0_c_b_reaction {Navios de guerra primeiro?}
+Node0_c_b_reaction_log {Você usa seu treinamento militar para se fazer passar por um navio de patrulha e avançar na fila.}
+Node0_c_c {Depois dos furacões de verão, recifes e bancos de areia estão cobertos de destroços. Por ordem dos governadores, tudo o que tem valor está sendo levado para fortes e estaleiros - tábuas, vergas, âncoras, até mastros inteiros. Canhões são tirados dos porões, limpos da ferrugem e guardados. Há mais material do que se esperava, e os reparos não encareceram tanto assim.}
+Node0_c_c_reaction {A gente também tem o nosso!}
+Node0_c_c_reaction_log {Você dá a ordem para reunir ativamente qualquer material útil para reparos. Uma equipe de marinheiros experientes conseguirá rapidamente juntar objetos de valor suficientes para baixar o preço no estaleiro.}
+Node0_d_a {Nas lojas, brigam pelos últimos barris de pólvora e sacos de açúcar, enquanto os mercadores seguram o que restou à espera de uma alta ainda maior nos preços. Em alguns lugares ainda há mercadorias, mas elas custam muito mais do que de costume.}
+Node0_d_a_reaction {Sabemos onde comprar mais barato!}
+Node0_d_a_reaction_log {Graças às suas conexões comerciais bem estabelecidas e ao seu contato pessoal com muitos negociantes respeitados, você conseguirá reduzir bastante a margem cobrada nas lojas.}
+Node0_d_b {Os armazéns que vão esvaziando no fim do ano parecem especialmente sombrios desta vez. Não está totalmente claro o que causou isso - uma colheita ruim, várias viagens fracassadas da Europa ou piratas à solta -, mas a falta de mercadorias está especialmente severa agora.}
+Node0_d_b_reaction {Sabemos quem ainda tem estoque}
+Node0_d_b_reaction_log {Graças aos seus laços bem estabelecidos com contrabandistas e à sua boa reputação nos círculos sombrios, você conseguirá um estoque de mercadorias muito maior do que o dos outros. É sempre bom ser um dos escolhidos.}
+Node0_d_c {Desta vez, as autoridades mantiveram força suficiente para impor uma luta ativa na região, e cada governador tenta reunir sob sua bandeira o maior número possível de capitães livres.$br$redMal as tempestades cessaram, espalhou-se pelas colônias o rumor de regras mais brandas. Agora, cargas obtidas em combate já não estão sujeitas a inspeção detalhada. Os despojos estão se tornando quase legais, e a linha entre pirataria e serviço à Coroa começa a se apagar. Isso deve aliviar um pouco a escassez de mercadorias e reduzir os preços.}
+Node0_d_c_reaction {Mercadorias roubadas?}
+Node0_d_c_reaction_log {Você sempre soube fazer mercadorias roubadas passarem por legais, e as novas regras vão tornar esse processo ainda mais fácil para você.}
+Node0_d_d {Neste outono, a escassez de mercadorias obrigou os governadores a tomar medidas desesperadas. Todas as patrulhas foram tiradas das cidades, as selvas estão sendo vasculhadas, enseadas costeiras estão sendo revistadas, embarcações pequenas são inspecionadas e armazéns suspeitos são arrombados sem muita conversa.$br$redContrabandistas são capturados de forma exemplar, e as mercadorias são confiscadas em favor do erário. Isso ameniza um pouco a situação e ajuda a manter os preços sob controle, mas o comércio clandestino está perigoso demais. Enquanto o laço não afrouxar, nenhum contrabandista sairá para o mar.}
+Node0_d_d_reaction {Sempre há uma oportunidade para um acordo}
+Node0_d_d_reaction_log {Você sabe muito bem como armar negócios obscuros e passar despercebido. Será fácil bolar um plano astuto o bastante para que os contrabandistas acreditem em você.}
+Node0_success {Você entra nesse período difícil totalmente preparado. Todos os anos, a Season of Shade é uma provação e um teste de resistência para todos que vivem no arquipélago. Será que viveremos para ver a próxima?}
+Node0_success_action {Rumo ao mar!}
+Node0_title {Temporada da Sombra}

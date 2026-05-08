@@ -133,7 +133,7 @@ void MoveText()
 		SendMessage(&GameInterface,"lslllll",MSG_INTERFACE_MSG_TO_NODE,"BMS",0, 120, makeint(210 - fNewPos * factor), 430, makeint(360 - fNewPos * factor));
 		SendMessage(&GameInterface,"lslf",MSG_INTERFACE_MSG_TO_NODE,"INFO_TEXT",2, fNewPos);
 		PostEvent("My_MoveText", 20);
-		factor = 8500; // скорость лого (больше быстрее)
+		factor = 14500; // скорость лого (больше быстрее)
 		fNewPos = fNewPos + 0.00015;// скорость текста (больше быстрее)
 	}
 }

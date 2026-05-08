@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 			dialog.text = "Alt! Deponi subito le armi, Monsieur, e seguici senza fiatare!";
 			link.l1 = "Che diavolo è questa roba?";
 			link.l1.go = "Sharlie_arest_1";
-			if (CheckCharacterItem(PChar, "knife_03")) pchar.Sharlie.KnifeMonpe = true;
+
 		break;
 		
 		case "Sharlie_arest_1":
@@ -1748,6 +1748,7 @@ case "Europe":
 			link.l1.go = "MOT_Barbie_Escadra";
 			
 			AddItems(pchar, "gold_dublon", 40);
+			DeleteAttribute(NPChar, "moneyNotGiven");
 			Log_info("You've received 40 doubloons");
 			PlaySound("Interface\important_item.wav");
 			AddCharacterExpToSkill(pchar, "Leadership", 20);
@@ -1808,7 +1809,7 @@ case "Europe":
 		break;
 		
 		case "MOT_Barbie_101":
-			if (IsCharacterPerkOn(Pchar, "Trustworthy"))
+			if (!CheckAttribute(NPChar, "moneyNotGiven"))
 			{
 				dialog.text = "Grazie per la scorta impeccabile, Capitano. Son lieto che il viaggio sia filato liscio come l’olio.";
 				link.l1 = "È stato un piacere fare affari con voi, Monsieur. Ora, se volete scusarmi, ho molte faccende da sbrigare.";

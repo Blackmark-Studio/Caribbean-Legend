@@ -60,3 +60,14 @@ string DLG_ColonyVoc(string sColony)
 {
   return XiStr("Colony" + sColony + "Voc");
 }
+
+string DLG_GoodName(string input)
+{
+  return Goods[int(input)].name;
+}
+
+string DLG_Abs(string input)
+{
+  if (strleft(input, 1) != "-") return input;
+  return strcut(input, 1, strlen(input)-1);
+}

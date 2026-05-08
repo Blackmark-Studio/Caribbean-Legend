@@ -1,12 +1,4 @@
 Neutral_1 {Bandyta}
-Neutral_2 {Zostawiłeś notatki}
-Neutral_3 {Jack}
-Neutral_4 {Veils}
-Neutral_5 {Morska Bestia}
-Neutral_6 { }
-Neutral_7 { }
-Neutral_8 {Złota Mewa}
-Neutral_9 {Tristan}
 Neutral_10 {Renier}
 Neutral_11 {Piracki statek na horyzoncie! Płyną, by przeciąć nasz kurs.}
 Neutral_12 {Głos zza drzwi}
@@ -17,6 +9,7 @@ Neutral_16 {Przekazano: Dokumenty Betsy Price}
 Neutral_17 {Lea}
 Neutral_18 {Carno}
 Neutral_19 {Pierre}
+Neutral_2 {Zostawiłeś notatki}
 Neutral_20 {Statek piracki na horyzoncie! Przecinają nasz kurs.}
 Neutral_21 {Pokład}
 Neutral_22 {Wejście do jaskini pokryte jest pajęczynami. Wygląda na to, że nikogo tu dawno nie było.}
@@ -27,6 +20,7 @@ Neutral_26 {Moño}
 Neutral_27 {Marisa}
 Neutral_28 {Caldera}
 Neutral_29 {Felipe}
+Neutral_3 {Jack}
 Neutral_30 {Alarcón}
 Neutral_31 {Sebastián}
 Neutral_32 {Córdoba}
@@ -37,6 +31,12 @@ Neutral_36 {Peralta}
 Neutral_37 {... teraz wszelkie podejrzenia wobec Rekina zostaną rozwiane}
 Neutral_38 {Brak wystarczających środków (10 100 000)}
 Neutral_39 {Brak wystarczających środków (25 250 000)}
+Neutral_4 {Veils}
 Neutral_40 {Brak wystarczających środków (50 500 000)}
 Neutral_41 {ciebie}
 Neutral_42 {was oboje}
+Neutral_5 {Morska Bestia}
+Neutral_6 { }
+Neutral_7 { }
+Neutral_8 {Złota Mewa}
+Neutral_9 {Tristan}

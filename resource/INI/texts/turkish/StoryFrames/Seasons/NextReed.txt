@@ -1,0 +1,46 @@
+Node0_a {İlkbahar dönemi başlıyor. Kurak havanın son haftaları, başta kamış olmak üzere sömürge bitkilerini hasat etmek için en uygun zamandır. Akıntıların etkinliği ve alize rüzgârlarının gücü zirveye yaklaşırken, Karayipler'de ticaret canlanır.$br$redBinlerce köle Afrika'dan tıklım tıklım dolu gemilerle getirilir; baharat, kereste ve tütün yüklü sayısız kervan da gece gündüz başkent kolonilerine doğru yola çıkar.}
+Node0_a_action {Kâr zamanı!}
+Node0_b_a {Plantasyonlar durmaksızın çalışıyor. Kamış şafaktan gün batımına kadar kesiliyor, tütün sık sıralar hâlinde sundurmaların altında kurutuluyor, kıyı avlularındaysa sevkiyata hazır maun ve guaiacum tomrukları istiflenmiş yatıyor. Yakında limanlar kâr peşindeki insanlarla tıklım tıklım olacak, ticaret gemileri de Karayip Denizi'ni dolduracak.}
+Node0_b_a_reaction {Ticaret benim tutkum!}
+Node0_b_a_reaction_log {En verimli plantasyonların ve en geniş depoların nerede olduğunu tam olarak biliyorsun. Satış için herkesten daha fazla mal elde etmek senin için zor olmayacak.}
+Node0_b_b {Bu yıl adalar özellikle bol ürün veriyor. Şeker kaynatmahaneleri durmadan tütüyor, tütün depoları ağzına kadar dolu ve kıyıda maun ile abanoz kütükleri sıra sıra yığılmış duruyor. Ticaret öylesine coşmuş durumda ki limanlar tek parça devasa bir depo gibi görünüyor. Kervanlar ağzına kadar dolu olarak ayrılıyor, ama mal yine de yetiştirilemeyecek kadar hızlı gelmeye devam ediyor. Böyle bir durumda satıcılar, müşteri için kelimenin tam anlamıyla savaşmak zorunda kalıyor.}
+Node0_b_b_reaction {Kıyafete bakarlar}
+Node0_b_b_reaction_log {Seni tüm limanlarda ve dükkânlarda tanıyor, saygı duyuyorlar. Şöhretini nasıl kazandığının önemi yok; tanınmış bir kaptana her zaman en iyi koşulları sunmaya çalışırlar.}
+Node0_b_c {Season of Crown'ın son iki haftası beklenmedik şekilde kuru ve sıcak geçti, ve birkaç adada yangınlar çıktı. Kuru otlar ve kamış bir anda tutuştu, mahsulün bir kısmı daha işlenmeden kül oldu. Tütün ambarlarının hepsi kurtulamadı, birkaç kereste deposu da iskelelerle birlikte yandı. Bu, kolonilerdeki koloni mallarının miktarını ciddi ölçüde azalttı ve ticareti sarstı.}
+Node0_b_c_reaction {Şimdi al, yoksa asla!}
+Node0_b_c_reaction_log {Genel paniği fırsata çevirmeye ve malları başkent kolonilerinde daha pahalıya satmaya karar veriyorsun. Bilgi yavaş yayılır; paniği biraz daha körüklersen kimse fark etmez...}
+Node0_b_d {Kışın devletler savaş ihtimaline karşı stok biriktirdi, ama baharda gerilim düştü. Depoların Hollanda ipeği, Rus halatları ve zift fıçılarıyla dolup taştığı ortaya çıktı. Devlet parasını ölü yükte tutmamak için erzakın bir kısmını satışa çıkarmaya karar verdiler; böylece sömürge dükkânlarında beklenmedik şekilde biraz stratejik mal bulunabilir oldu.}
+Node0_b_d_reaction {Belki daha fazlası vardır?}
+Node0_b_d_reaction_log {Kayıt defterlerin, aylar boyunca büyük bir titizlikle işlenmiş her koloniye dair notlarla dolup taşıyor. Fazladan mal stokunun, hatta stratejik malların bile nerede ve kimde bulunduğunu tam olarak biliyorsun. Geriye yalnızca baskı yapmak kalıyor.}
+Node0_c_a {Sömürgeci güçlerin Afrika'daki son başarıları, özellikle büyük köle sevkiyatlarının getirilmesini mümkün kıldı; bu da tüm kolonilerde üretimi ciddi ölçüde hızlandıracak. Plantasyonlar, madenler ve araziler çok yakında piyasaya tonlarca mal sürecek, tüccarlar da fiyatların düşüşüne şimdiden hazırlanıyor.}
+Node0_c_a_reaction {Al, al!}
+Node0_c_a_reaction_log {Ticaretin temelini biliyorsun ve bir şey ucuza satılıyorsa ondan daha çok almak gerektiğini gayet iyi anlıyorsun. Toplu alım bahanesiyle fiyatları aşağı çekmeyi planlıyorsun.}
+Node0_c_b {Brezilya'da beklenmedik bir ayaklanma patlak verdi ve Avrupa'ya yapılan sevkiyatlar aksadı. Metropoller hemen tepki verip gözlerini Karayipler'e çevirdi. Açığı kapatma çabaları, Karayip kolonilerinden gelen mallara olan talebi keskin biçimde artırdı. Parti alımına dair senetler durmaksızın geliyor ve Atlantik'i geçen her seferde fiyat farkının daha da büyüyeceğini vaat ediyor. Üretici kolonilerden akıllıca mal toplanırsa, tek bir mevsimde servet yapılabilir.}
+Node0_c_b_reaction {Fazladan bir gemi zarar vermez}
+Node0_c_b_reaction_log {Sen deneyimli ve saygın bir tüccarsın; üretici koloniler ile başkent kolonileri arasındaki fiyat farkını daha da nasıl büyüteceğini tam olarak biliyorsun. Zaman ve bilgi eksikliği yalnızca senin lehine işleyecek.}
+Node0_c_c {Karayipler'i Avrupa'dan gelen bir haber heyecanlandırıyor: sarayda tatlıya yeni bir tutku patlak verdi. Kabul törenlerinde kahve ve çikolata sunuluyor, şölenler şekerlenmiş meyvelerle ve şuruplarla sona eriyor ve kendine saygısı olan hiçbir asil cimri görünmek istemiyor. Şeker, getirilebildiğinden daha hızlı tükeniyor. Tüccar evleri kârlı siparişler alıyor ve serbest satış beklemeden başkent kolonilerindeki partileri önceden satın alıyor.}
+Node0_c_c_reaction {Sat, sat!}
+Node0_c_c_reaction_log {Talep patlayınca mesele yalnızca malı satmak değildir; herkesi senin malının en iyisi olduğuna inandırmak gerekir. Tecrübeli bir tüccar olarak rakiplerine karşı üstünlüğünü kolayca öne çıkarırsın.}
+Node0_c_d {Avrupa'nın en büyük ticaret hanedanlarından biri borçların ağırlığı altında çöktü. Panik metropollere yayıldı ve Karayip limanlarına kadar ulaştı. Bankerler ve tefeciler kredi şartlarını sert biçimde sıkılaştırdı ve mevduata daha iyi koşullar sunarak yedek gümüş stoku toplamaya çalışıyor.}
+Node0_c_d_reaction {Altın en iyi yatırımdır}
+Node0_c_d_reaction_log {Dublonların değerini biliyorsun ve herhangi bir tefeciyi, altın mevduatın hem onlar hem de senin için çok daha güvenilir olduğuna kolayca ikna edebilirsin.}
+Node0_c_e {Fransız sarayındaki uzun tartışmaların ardından sömürge vergilerini yeniden gözden geçirmeye karar verildi. Malların bir kısmı resmen yasaklılar listesinden çıkarıldı ve eski cezalar geçici olarak askıya alındı. Louvre'la rekabet eden devletler de aynı şekilde karşılık verdi; artık Karayip takımadalarının dört bir yanındaki limanlarda gümüş ve altın ticareti yapılabiliyor, eskiden kaçakçılık sayılan şeyler ise şimdi yasal.}
+Node0_c_e_reaction {Ya canlı mal ne olacak?}
+Node0_c_e_reaction_log { }
+Node0_d_a {Baharın gelmesiyle kıyı suları canlanır. Sığlıklarda uskumru ve sardalya görülür, resiflere ton balığı yaklaşır, kumlu kıyılarda ise deniz kaplumbağaları avlanır. Denizciler ağları doğrudan sandallardan serer, kıyıda balık tütsüler ve her durakta kıyı derelerinden tatlı suyla fıçılarını doldurur.}
+Node0_d_a_reaction {Çeşitli beslenme faydalıdır}
+Node0_d_a_reaction_log {Normal peksimet ve tuzlu eti taze balık ve etle zenginleştirerek çeşitli ve doyurucu bir deniz tayını hazırlamaya karar veriyorsun. Gemi doktorunun gözetiminde doğru hazırlanmış bir menü, salgın ve iskorbüt riskini azaltmaya yardımcı olacaktır.}
+Node0_d_b {Bu bahar deniz hiç olmadığı kadar cömert. Elverişli hava ve bol yiyecek, balıkların ve av hayvanlarının ölçüsüzce çoğalmasına izin verdi. Ton sürüleri saymakla bitmiyor, lagünler ıstakoz ve yengeç kaynıyor. Kısa bir mola bile ambarları taze et ve balıkla doldurmaya yetiyor; stoklanan tuzlu erzak ise el değmeden kalıyor.}
+Node0_d_b_reaction {Elde ne varsa toplamak}
+Node0_d_b_reaction_log {En çevik denizcileri yalnızca iaşe toplamaya ayrılmış özel bir birliğe seçmeye karar veriyorsun. Denizle karanın cömertliğinden, hâlâ mümkünken yararlanmak gerek.}
+Node0_d_c {Kamış Mevsimi'nde herkes hızlı para kazanılabileceğini bilir; limanlar, ambarları gümüş dolu dönen kaptanların hikâyeleriyle uğuldar. Söylentiler beklentileri kabartır; denizciler artık sıradan ücret için denize açılmaz, tecrübeli lostromolar da hatırı sayılır bir avans olmadan sözleşme imzalamaz.}
+Node0_d_c_reaction {Bir planım yok, ama bir fikrim var!}
+Node0_d_c_reaction_log {Ödemelerden tasarruf etmek için karizmana, insanları peşinden sürükleme becerine ve gemideki bütün mürettebatın kocaman, sıkı sıkıya bağlı bir aile olduğuna dair anlattığın hikâyelere güvenmeye karar veriyorsun.}
+Node0_success
+{
+Kamış Mevsimi; Fleut kervanları, tüten şeker kaynatmahaneleri ve her yere sinmiş bozuk para şıngırtısı demektir.
+Takımadalar açgözlülük ve kumar ateşiyle yaşar; buna kapılmamak zordur.
+Şimdi iflas etmek de servet yapmak da aynı derecede kolay. Kaderin ne olacak?
+}
+Node0_success_action {Ben zenginliği seçiyorum!}
+Node0_title {Kamış Mevsimi}

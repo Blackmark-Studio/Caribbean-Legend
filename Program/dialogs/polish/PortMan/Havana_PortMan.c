@@ -27,7 +27,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Havana_ratP_1":
-			dialog.text = NPCStringReactionRepeat("Tak, był tutaj. Ale już poszedł. Zapytaj naszego karczmarza o niego, wynajął pokój na górze.","Już o to pytałeś i odpowiedziałem.","Powiadam ci, że już pytałeś o tego Gontiera..","Proszę cię, nie zawracaj mi głowy!","blokada",0,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("Tak, był tutaj. Ale już poszedł. Zapytaj naszego karczmarza o niego, wynajął pokój na górze.","Już o to pytałeś i odpowiedziałem.","Powiadam ci, że już pytałeś o tego Gontiera..","Proszę cię, nie zawracaj mi głowy!","block",0,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Dzięki. Tak zrobię.","Hm, cóż ...","Tak, naprawdę zapytałem ...","Przepraszam, "+npchar.name+"...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 		break;

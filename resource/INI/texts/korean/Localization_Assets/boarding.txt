@@ -1,4 +1,7 @@
 boarding_1 {선장은 스스로 생을 마감하기로 선택했다.}
+boarding_10 {@<_ShipName>에 생존자 @<_CrewSize>명 복귀}
+boarding_11 {동료가 배를 접현에 접근시키지 못했습니다.}
+boarding_12 {선장이 선실에 바리케이드를 치고 틀어박혔다. 지원을 데리고 돌파해야 한다.}
 boarding_2 {선원들이 선장을 위해 싸우기를 거부했다.}
 boarding_3 {선장님 갑판에!}
 boarding_4 {@<_Name> 전투에 합류합니다!}
@@ -7,5 +10,3 @@ boarding_6 {선장은 죽었지만, 선원들은 항복을 거부한다.}
 boarding_7 {전리품.}
 boarding_8 {전리품 아이템}
 boarding_9 {@<_ShipName>의 선봉대: @<_CrewSize>}
-boarding_10 {@<_ShipName>에 생존자 @<_CrewSize>명 복귀}
-boarding_11 {동료가 배를 접현에 접근시키지 못했습니다.}

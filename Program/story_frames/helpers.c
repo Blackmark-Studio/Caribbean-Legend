@@ -5,6 +5,7 @@ aref SF_AddAction(string nodeName, string forceText, string tooltipCallback, str
 {
 	nodeName += "_action";
 	aref link = _SF_Addlink(nodeName, forceText);
+	link.action = true;
 	if (tooltipCallback != "") link.tooltipCallback = tooltipCallback;
 	if (HasSubStr(iconData, "|")) {
 		link.iconGroup = FindStringBeforeChar(iconData, "|");
@@ -75,6 +76,21 @@ int SF_Rand(int value)
 	return DateRandom(value, storyObject.name + storyObject.currentFrame);
 }
 
+// Берем два числа из диапазона по принципу если первое число больше половины, тогда 
+// второе число берется из предыдущих, а если меньше – из следующих
+void SF_SetTwoRandomNums(int max, ref a, ref b)
+{
+	int tempA;
+	int tempB;
+
+	tempA = SF_Rand(max);
+	if (tempA > (max / 2)) tempB = SF_Rand(tempA - 1);
+	else tempB = SF_Rand(max - tempA - 1) + tempA + 1;
+
+	a = tempA;
+	b = tempB;
+}
+
 // Добавить фактор сложности проверке узла
 void SF_SetChance(aref link, ref value, string sourceName)
 {
@@ -108,7 +124,7 @@ void SF_CompleteSituation(aref situation)
 		if (GetAttributesNum(part) > 0) tempText = tempText + SF_Convert(varName + "_" + value);
 		else tempText = tempText + SF_Convert(varName);
 		if (i+1 != partNums) tempText = tempText + "<br>";
-		tempText = tempText + "~~~~~~~~";
+		tempText = tempText + SF_Indent();
 	}
 
 	_SF_Log(tempText, false);
@@ -170,18 +186,21 @@ string SF_ForceOrConvert(string forceText, string key)
 }
 
 // Ищем ключ в общем файле стори-фреймов, затем в общем файле модуля сторей, затем в файле конкретной стори
-string SF_Convert(string key)
+string SF_Convert(string key, bool returnEmpty = false)
 {
-	string locValue = DLG_ConvertE(key, "StoryFrames\Common.txt", &storyObject);
+	string locValue = DLG_ConvertE(key, "StoryFrames\Common.txt", &context);
 	if (locValue != "") return locValue; // нашли в общих ключах сторей
 
 	if (CheckAttribute(&storyObject, "module"))
 	{
-		locValue = DLG_ConvertE(key, "StoryFrames\" + storyObject.module + ".txt", &storyObject);
+		locValue = DLG_ConvertE(key, "StoryFrames\" + storyObject.module + ".txt", &context);
 		if (locValue != "") return locValue; // нашли в модуле
 	}
 
-	return DLG_Convert(storyObject.currentFrame + "_" + key, "StoryFrames\" + storyObject.name + ".txt", &storyObject);
+	string folder = GetAttributeOrDefault(&storyObject, "folder", "");
+	if (folder != "") folder = folder + "\";
+	if (returnEmpty) return DLG_ConvertE(storyObject.currentFrame + "_" + key, "StoryFrames\" + folder + storyObject.name + ".txt", &context);
+	return DLG_Convert(storyObject.currentFrame + "_" + key, "StoryFrames\" + folder + storyObject.name + ".txt", &context);
 }
 
 // Получить действие из текущего узла по буквенному индексу
@@ -220,19 +239,20 @@ void SF_ReactionWithFixedBonus(string actionName, bool autoLog)
 	if (autoLog) SF_Log(SF_Convert("log"));
 }
 
-// Общее поведение стандартных реакций. Отдельное для тех, где есть проверка с факторами, и для фиксированных
-void SF_DefaultReaction(string actionName)
+// Общее поведение стандартных реакций. Отдельное для тех, где есть проверка с факторами, и для фиксированных или просто лог
+void SF_DefaultReaction(string actionName = "a")
 {
 	aref reaction = SF_CurrentReaction();
 	if (reaction == nullptr) return; // что-то пошло не так
 
 	int bonus;
 	if (CheckAttribute(&reaction, "check")) SF_ReactionWithRandomCheck(actionName, true);
-	else SF_ReactionWithFixedBonus(actionName, true);
+	else if (CheckAttribute(&reaction, "points")) SF_ReactionWithFixedBonus(actionName, true);
+	else SF_Log(SF_Convert("log"));
 }
 
 // Триумф
-void SF_Triumph()
+aref SF_Triumph(string letterIndex = "")
 {
 	DeleteAttribute(&storyObject, "situation");
 	DeleteAttribute(&storyObject, "action");
@@ -240,18 +260,15 @@ void SF_Triumph()
 	DeleteAttribute(&storyObject, "logs");
 	storyObject.currentFrame = storyObject.currentNode;
 	storyObject.style = "triumph";
-	_SF_Log(SF_Convert("success"), false);
-	action = SF_AddAction("success", "", "", SF_Icon("story", "triumph"));
+	if (letterIndex != "") letterIndex = letterIndex + "_";
+	_SF_Log(SF_Convert(letterIndex + "success"), false);
+	action = SF_AddAction(letterIndex + "success", "", "", SF_Icon("story", "triumph"));
 	action.func = storyObject.currentNode + "_Triumph";
+	return action;
 }
 
 // Крах
-void SF_Fail()
-{
-	SF_FailEx("");
-}
-
-void SF_FailEx(string letterIndex)
+void SF_Fail(string letterIndex = "")
 {
 	DeleteAttribute(&storyObject, "situation");
 	DeleteAttribute(&storyObject, "action");
@@ -265,20 +282,29 @@ void SF_FailEx(string letterIndex)
 	action.func = storyObject.currentNode + "_Fail";
 }
 
+// Концовка без триумфа, отличается отсутствием лишнего заголовка
+aref SF_Ending(string letterIndex = "")
+{
+	aref res = SF_Triumph(letterIndex);
+	storyObject.style = "ending";
+	return res;
+}
+
 // Подбор иконки для кнопки стори-фреймов
-string SF_Icon(string type, string name)
+string SF_Icon(string type, string name = "")
 {
 	switch (type)
 	{
-		case "skill": return "EQUIP_ICONS|" + name + " skill icon"; break;
+		case "money": return "PESODUBLON|pesodublon"; break;
+		case SKILL_TYPE: return "EQUIP_ICONS|" + name + " skill icon"; break;
+		case "character": return "EQUIP_ICONS|" + name; break;
+		case PIRATES_TYPE: return "EQUIP_ICONS|" + name; break;
+		case HERO_TYPE: return "HERO_TYPE|" + name; break;
 		case "perk": return "PERKS_ENABLE|" + name; break;
 		case "item": return GetItemTextureName(name) + "|" + GetItemPictureName(name); break;
-		case "pirates": return "EQUIP_ICONS|" + name; break;
 		case "honor": return "HIRE_EFFECTS|" + name; break;
-		case "story":
-			if (name == "triumph") return "EQUIP_ICONS|Rank";
-			else return "EQUIP_ICONS|critDamage";
-		break;
+		case "season": return "SEASONS_ICONS|" + name; break;
+		case "story": return "EQUIP_ICONS|" + name; break;
 		case "fractions": return "message_icons|" + name; break;
 	}
 

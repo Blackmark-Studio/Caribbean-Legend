@@ -1,0 +1,46 @@
+Node0_a {Zbliża się nowy rok kalendarzowy. Sezon Korony to czas odnowy i odrodzenia. Północno-wschodnie wiatry stają się przewidywalne, przez co Atlantyk jest znacznie bezpieczniejszy dla długich przepraw.$br$redWłaśnie wtedy na archipelag docierają ludzie i towary z Europy. Gubernatorzy otrzymują nowe rozkazy i raporty, a po morzu krążą patrole i konwoje Korony.}
+Node0_a_action {Morze możliwości!}
+Node0_b_a {Handel z koloniami zwyczajowo ucichł wraz z nadejściem zimy. Ostatnie partie cukru i tytoniu dawno odpłynęły do Europy, wyrąb hebanu i mahoniu został wstrzymany, a równowaga wróci dopiero w następnym sezonie. Na razie ceny towarów kolonialnych są znacznie wyższe niż zwykle.}
+Node0_b_a_reaction {Jestem pewien, że nie doliczyli wszystkiego}
+Node0_b_a_reaction_log {Postanawiasz wykorzystać reputację kupca i naturalną charyzmę, by przekonać handlarzy do sprzedania ci nieujętych w ewidencji resztek towaru.}
+Node0_b_b {Ostatni sezon wycisnął kolonie do sucha - zapasy się wyczerpały, a plantacje zostały niemal zniszczone przez złą pogodę. Ostatnie resztki towarów kolonialnych dawno wywieziono do kolonii stołecznych i na rynku praktycznie nie ma już czego sprzedawać ani kupować. Kupcy wywindowali ceny i czekają na Sezon Trzciny - wtedy równowaga wróci.}
+Node0_b_b_reaction {Dla takich jak ja zawsze się coś znajdzie}
+Node0_b_b_reaction_log {Wykorzystujesz talent swojego kwatermistrza i kilku szpicli, by dokładnie oceniać zapasy towaru w sklepach. Kupcy będą zmuszeni sprzedać ci to, co chcieli zatrzymać dla siebie.}
+Node0_b_c {W stolicach postanowiono zrewidować opłaty kolonialne. Dopóki urzędasy spierają się o cła, kupcy nie śpieszą się z zawieraniem długoterminowych kontraktów. Przez to cierpią zarówno ceny, jak i wielkość handlu.}
+Node0_b_c_reaction {Nasz towar jest najlepszy!}
+Node0_b_c_reaction_log {Postanawiasz wykorzystać reputację doświadczonego kupca, by sprzedawać towar ze statku po wyższej cenie. Niestety zadziała to tylko w tych koloniach, gdzie twój towar jest potrzebny.}
+Node0_c_a {Stocznie natomiast zdążyły już w pełni odbudować się po zniszczeniach, a partie drewna okrętowego, które zalały rynek, obniżyły koszt napraw.}
+Node0_c_a_reaction {Mam nadzieję, że się nie przyda}
+Node0_c_a_reaction_log {Dobrze wiesz, jak utrzymać statek na wodzie, i postanawiasz wykorzystać tę wiedzę, by rzadziej stawać w doku na naprawy.}
+Node0_c_b {Ale są też dobre wieści - aby odbudować siłę bojową flot narodowych, Europa wysłała w tym roku wyjątkowo duże transporty materiałów. Wraz z pierwszymi konwojami Korony przybyli także eksperci od budowy okrętów. Narody szykują się do wielkiej wojny, lecz dla wolnego kapitana oznacza to wyraźny spadek kosztów napraw.}
+Node0_c_b_reaction {Tanie naprawy? To uderzmy mocniej}
+Node0_c_b_reaction_log {Jeśli kadłuby statków łatwo odbudować, wroga trzeba razić bez litości. Postanawiasz bić wyłącznie w krytyczne elementy wrogich jednostek i nakazujesz trzymać przy furtach działowych zapas ciężkich, lanych kul na wypadek zbliżenia.}
+Node0_c_c {Po portach i zatokach krążą niepokojące pogłoski o przygotowywanej wielkiej ekspedycji wojskowej. Najlepsze deski, liny i płótno żaglowe zarezerwowano dla okrętów wojennych. Stocznie pracują, lecz materiały szybko znikają na rzecz priorytetowych zamówień państwowych. To podnosi koszt napraw.}
+Node0_c_c_reaction {Nasz statek przyda się na wojnie}
+Node0_c_c_reaction_log {Z łatwością uchodzisz za doświadczonego kapra w służbie i ustawiasz się w jednym szeregu z okrętami wojennymi.}
+Node0_d_a {Teraz każda nacja stara się wykorzystać świeże siły i zwiększyć swoje wpływy. Każdy gubernator chętnie przyjmie pomoc, a wrogiem publicznym stać się zaskakująco łatwo. Uzyskanie listów kaperskich stało się prostsze, Karaiby są pełne broni i ludzi gotowych jej użyć. To czas możliwości.}
+Node0_d_a_reaction {Zapamiętają nas}
+Node0_d_a_reaction_log {Wiedząc, komu i gdzie zapłacić, bardzo łatwo rozdmuchać płomień plotek w prawdziwy pożar. Mocarstwa uważnie śledzą działania wolnych kapitanów, ale ty potrafisz przyciągnąć całą uwagę do siebie.}
+Node0_d_b {Nadeszły dobre wieści z ojczyzny - w Europie zawarto ważne małżeństwo dynastyczne, które umocniło więzi między dawnymi rywalami. To mocno obniżyło napięcie zarówno w kraju, jak i na Karaibach, przez co wielu doświadczonych żołnierzy zdemobilizowano. Ci weterani zasilili szeregi tawernianych żółtodziobów i wyraźnie podnieśli doświadczenie najętych załóg.}
+Node0_d_b_reaction {Wybrać utalentowanych rekrutów}
+Node0_d_b_reaction_log {Wprawne oko z łatwością odróżni zaprawionych wojskowych od lądowych szczurów. Będziesz mógł zatrudniać wyłącznie weteranów, co poważnie podniesie skuteczność twojej załogi.}
+Node0_d_c {Porty i urzędnicy są przeciążeni pracą. Dokumenty przechodzą z rąk do rąk, magazyny przyjmują ładunki, a straże zajmują się kontrolą okrętów wojennych. W tym zamieszaniu uważny kapitan może przemknąć niezauważony.}
+Node0_d_c_reaction {Szczęśliwa okazja}
+Node0_d_c_reaction_log {Twoja umiejętność wyglądania na przyjaznego i zjednywania sobie ludzi bardzo się przyda, gdy czujność straży osłabnie.}
+Node0_d_d {Wraz ze zmianą urzędników w portach zaczyna się ponowna ewidencja. Dzienniki okrętowe są sprawdzane dokładniej niż zwykle, załogi przelicza się na nowo, a licencje wymagają odnowienia. Obcy szybko przyciągają niepotrzebną uwagę i trudniej pozostać niezauważonym w porcie.}
+Node0_d_d_reaction {Trzeba będzie się przyczaić}
+Node0_d_d_reaction_log {Mimo bardziej wnikliwych i drobiazgowych kontroli, twoja umiejętność wyglądania niepozornie i nieprzyciągania uwagi znacznie ułatwi przechodzenie przez cła i oszukiwanie patroli.}
+Node0_d_e {W metropoliach dojrzewa kolejny konflikt między Szwecją a Carstwem Rosyjskim. Karol Gustaw poprosił o wsparcie Anglię, swego religijnego sojusznika, a Aleksiej Michajłowicz wykorzystał oburzenie katolików i zapewnił sobie poparcie Habsburgów. Podzieliło to Europę na dwa wielkie bloki polityczne i każde państwo postanowiło zatrzymać wojska regularne u siebie.$br$redKoloniom kazano liczyć na samych siebie. Garnizony wzmacnia się miejscowymi, a z tawern wyciąga się wszystkich, którzy choć trochę nadają się do służby. Zostają tylko zupełnie nieudolne żółtodzioby.}
+Node0_d_e_reaction {Musztra wszystko naprawi}
+Node0_d_e_reaction_log {Postanawiasz zrekompensować brak doświadczenia najętych załóg wysiłkiem i musztrą, jak we flocie wojennej. Dzień i noc rekruci będą maszerować po pokładzie pod twoim czujnym okiem i prędzej czy później zmienią się w wilki morskie.}
+Node0_d_f {Nadeszły niepokojące wieści z Europy - Imperium Osmańskie zwiększa swoją siłę wojskową i umacnia pozycję w regionie. Chrześcijanie przygotowują się do obrony południa Półwyspu Bałkańskiego przed możliwym zagrożeniem, a wszystkie mocarstwa w pośpiechu zawierają tymczasowe sojusze religijne. Nawet protestancka Anglia gotowa jest wysłać swoją flotę na Morze Śródziemne. To mocno obniża napięcie na Karaibach, ale ma też swoją cenę - wszystkie dobre działa zostały w metropoliach.}
+Node0_d_f_reaction {Forty też zostały bez dział?}
+Node0_d_f_reaction_log {Jako doświadczony kanonier bez trudu odróżnisz fort zdolny do walki od takiego, który całkowicie utracił zdolność oporu. Niedobór dział pozwoli rozpoczynać szturmy znacznie wcześniej.}
+Node0_success
+{
+Wchodzisz w nowy rok pod czystym niebem i z pomyślnym wiatrem w żaglach.
+Sezon Korony przynosi nowe rozkazy, nowe twarze i pełne magazyny.
+Wszystko zaczyna się od nowa - i każdy ma szansę przejść do historii.
+}
+Node0_success_action {W drogę!}
+Node0_title {Sezon Korony}

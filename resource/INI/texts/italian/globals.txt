@@ -1,0 +1,121 @@
+Address_Form_Eng {Sir}
+Address_Form_Eng_Title1 {Corsaro}
+Address_Form_Eng_Title2 {Comandante}
+Address_Form_Eng_Title3 {Capitano}
+Address_Form_Eng_Title4 {Commodoro}
+Address_Form_Eng_Title5 {Ammiraglio}
+Address_Form_EngWoman {Miss}
+Address_Form_EngWoman2 {Missus}
+Address_Form_Fra {Monsieur}
+Address_Form_Fra_Title1 {Corsaire}
+Address_Form_Fra_Title2 {Comandante}
+Address_Form_Fra_Title3 {Capitano}
+Address_Form_Fra_Title4 {Commodoro}
+Address_Form_Fra_Title5 {Viceammiraglio}
+Address_Form_FraWoman {Mademoiselle}
+Address_Form_FraWoman2 {Madame}
+Address_Form_Hol {Mijnheer}
+Address_Form_Hol_Title1 {Filibustiere}
+Address_Form_Hol_Title2 {Comandante}
+Address_Form_Hol_Title3 {Capitano}
+Address_Form_Hol_Title4 {Commodoro}
+Address_Form_Hol_Title5 {Ammiraglio}
+Address_Form_HolWoman {Mevrouw}
+Address_Form_HolWoman2 {Frau}
+Address_Form_Pir {Sir}
+Address_Form_Pir_Title1 {Bucaniere}
+Address_Form_Pir_Title2 {Lupo di mare}
+Address_Form_Pir_Title3 {Veterano}
+Address_Form_Pir_Title4 {Barone}
+Address_Form_Pir_Title5 {Leggenda}
+Address_Form_PirWoman {Miss}
+Address_Form_PirWoman2 {Missus}
+Address_Form_Spa {Señor}
+Address_Form_Spa_Title1 {Corsario}
+Address_Form_Spa_Title2 {Comandante}
+Address_Form_Spa_Title3 {Capitano}
+Address_Form_Spa_Title4 {Commodoro}
+Address_Form_Spa_Title5 {Ammiraglio}
+Address_Form_SpaWoman {Señorita}
+Address_Form_SpaWoman2 {Señora}
+DayGreeting {Buongiorno}
+EveningGreeting {Buonasera}
+Exclamation_1 {Dio mio!!}
+Exclamation_2 {Cielo santo!}
+Exclamation_3 {Santa Madonna!}
+FriendlyGoodbye_0 {Ciao}
+FriendlyGoodbye_1 {Addio}
+FriendlyGreeting {Ciao}
+MorningGreeting {Buongiorno}
+NationEuropaTown_Eng {Londra}
+NationEuropaTown_Fra {La Rochelle}
+NationEuropaTown_Hol {Amsterdam}
+NationEuropaTown_Pir {Tortuga}
+NationEuropaTown_Spa {Siviglia}
+NationKingsCrown_Eng {alla Corona inglese}
+NationKingsCrown_Fra {alla Corona francese}
+NationKingsCrown_Hol {al Regno dei Paesi Bassi}
+NationKingsCrown_Pir {alla Fratellanza della Costa}
+NationKingsCrown_Spa {alla Corona spagnola}
+NationKingsName_Eng {del Lord Protettore}
+NationKingsName_Fra {di Sua Maestà Luigi XIV}
+NationKingsName_Hol {di Sua Maestà Guglielmo III d'Orange}
+NationKingsName_Pir {della Fratellanza della Costa}
+NationKingsName_Spa {di Sua Maestà Cattolica Filippo IV d'Asburgo}
+NationNameAblative_Eng {Inghilterra}
+NationNameAblative_Fra {Francia}
+NationNameAblative_Hol {Olanda}
+NationNameAblative_Pir {i pirati}
+NationNameAblative_Spa {Spagna}
+NationNameGenitive_Eng {dell'Inghilterra}
+NationNameGenitive_Fra {della Francia}
+NationNameGenitive_Hol {dell'Olanda}
+NationNameGenitive_Pir {dei pirati}
+NationNameGenitive_Spa {della Spagna}
+NationNameMan_Eng {inglese}
+NationNameMan_Fra {francese}
+NationNameMan_Hol {olandese}
+NationNameMan_Pir {pirata}
+NationNameMan_Spa {spagnolo}
+NationNameNominative_Eng {Inghilterra}
+NationNameNominative_Fra {Francia}
+NationNameNominative_Hol {Olanda}
+NationNameNominative_Pir {la Fratellanza della Costa}
+NationNameNominative_Spa {Spagna}
+NationNamePeople_Eng {gli inglesi}
+NationNamePeople_Fra {i francesi}
+NationNamePeople_Hol {gli olandesi}
+NationNamePeople_Pir {i pirati}
+NationNamePeople_Spa {gli spagnoli}
+NationNamePeopleAcc_Eng {gli inglesi}
+NationNamePeopleAcc_Fra {i francesi}
+NationNamePeopleAcc_Hol {gli olandesi}
+NationNamePeopleAcc_Pir {i pirati}
+NationNamePeopleAcc_Spa {gli spagnoli}
+NationNameWoman_Eng {inglese}
+NationNameWoman_Fra {francese}
+NationNameWoman_Hol {olandese}
+NationNameWoman_Pir {piratessa}
+NationNameWoman_Spa {spagnola}
+NightGreeting {Buonanotte}
+PoliteGoodbye_0 {Arrivederci}
+PoliteGoodbye_1 {Addio}
+PoliteGreeting {Salve}
+Swear_1 {Caramba!}
+Swear_10 {Che il fulmine mi colpisca!}
+Swear_11 {Al diavolo la mezzana!}
+Swear_12 {Che il mare ti inghiotta!}
+Swear_13 {Una dozzina di squali!}
+Swear_14 {Caspita!}
+Swear_15 {Tremila diavoli!}
+Swear_2 {Maledizione!}
+Swear_3 {Che il diavolo ti porti!}
+Swear_4 {Accidenti!}
+Swear_5 {Porca miseria!}
+Swear_6 {Mille squali!}
+Swear_7 {Argh!!!}
+Swear_8 {Mille diavoli!}
+Swear_9 {Alle Hagel!}
+Title_Captain {capitano}
+Title_Ghovernor {governatore generale}
+Title_ViceAdmiral {viceammiraglio}

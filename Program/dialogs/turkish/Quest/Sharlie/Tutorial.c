@@ -468,6 +468,7 @@ void ProcessDialogEvent()
 			dialog.text = "Kıdemli denizci. Onu pek tanımam, ama şunu söyleyebilirim: her insanın dolabında bir iskelet varsa, Alonso’nun bütün bir mezarlığı var.";
 			link.l1 = "Onun güvenilir biri olmadığını mı düşünüyorsun?";
 			link.l1.go = "Captain_7_question_2_2";
+			AddCharacterSkillPoints(pchar, "Leadership", 1);
 		break;
 		
 				case "Captain_7_question_2_2":
@@ -487,6 +488,7 @@ void ProcessDialogEvent()
 			dialog.text = "Bir yarama dokundun, "+pchar.name+"! Güzelliğimden saatlerce bahsedebilirim. Üçüncü sınıf, yirmi toplu, çok hızlı — ‘tüccar’ kısmına aldanma!";
 			link.l1 = "Silahlar ve hız kısmını anladım. Ama ‘oran’? ‘Tüccar’?";
 			link.l1.go = "Captain_7_question_3_2";
+			AddCharacterSkillPoints(pchar, "Sailing", 1);
 		break;
 		
 		case "Captain_7_question_3_2":

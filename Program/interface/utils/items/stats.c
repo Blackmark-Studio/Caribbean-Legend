@@ -1,8 +1,14 @@
 #include "interface\utils\modifiers.c"
 
 //JOKERBACKLOG: выделение столбцов, скрытие незаполненных
-void SetItemStatsTooltip(ref chr, string sCurrentNode, ref header, ref text, ref badText, ref goodText)
+void SetItemStatsTooltip(ref chr, string sCurrentNode, ref header, ref text, ref badText, ref goodText, ref currentItem)
 {
+	if (sCurrentNode == "ITEM_WEIGHT_VALUE")
+	{
+		header = GetItemStat(currentItem, "weight", false);
+		text = GetItemStatDescr(currentItem, "weight");
+		return;
+	}
 	if (sCurrentNode != "TABLE_ITEM_STATS") return;
 	CloseTooltipNew();
 	int iColumn = GetSelectedColumn("TABLE_ITEM_STATS");
@@ -26,16 +32,18 @@ void SetItemStatsTooltip(ref chr, string sCurrentNode, ref header, ref text, ref
 		ctx.energy = ToHumanPercent(GetHungmanBonus(chr, "energy"));
 		goodText += ` ` + DLG_ConvertE("itm_stat_bonus_blade_SP_3", "ItemsStats.txt", &ctx);
 	}
-	AddItemUICharacterModifiers(chr, &goodText, stat, currentItem);
+
+	string charFuncName = "AddItemUICharacterModifiers";
+	if (chr == nullptr) return;
+
+	call charFuncName(chr, &goodText, stat, currentItem);
 }
 
 void SetUIAttributesItem(ref ref_Id_Idx, ref result, ref chr)
 {
 	ref item = FindItem_VT(&ref_Id_Idx);
 
-	result.weight.iconGroup = "EQUIP_ICONS";
-	result.weight.iconName = "weight";
-	result.weight.value = FloatToString(stf(item.weight), 1) + " " + xiStr("pounds.");
+	SetFormatedText("ITEM_WEIGHT_VALUE", FloatToString(stf(item.weight), 1));
 	if (HasDescriptor(item, "healPotion" )) SetUIAttributesHealPotion(item, result, chr);
 	if (!CheckAttribute(item, "groupID")) return;
 	
@@ -61,12 +69,15 @@ void SetUIAttributesItem(ref ref_Id_Idx, ref result, ref chr)
 void SetUIAttributesEffects(ref item, ref result, bool withSecondary)
 {
 	bool showMain = GetItemStat(item, "mainEffect", true) != "";
+	if (item.describe == "itmdescr_kaleuche_amulet1_potion") return;
+	if (item.describe == "itmdescr_kaleuche_amulet2_potion") return;
+	if (item.describe == "itmdescr_kaleuche_amulet3_potion") return;
 	if (!showMain) return;
-	
+
 	result.mainEffect.iconGroup = "EQUIP_ICONS";
 	result.mainEffect.iconName = "mainEffect";
 	result.mainEffect.value = GetSimpleItemStatKey("itm_stat_mainEffect");
-	
+
 	bool showSecondary = GetItemStat(item, "secondaryEffect", true) != "";
 	if (!showSecondary) return;
 	result.secondaryEffect.iconGroup = "EQUIP_ICONS";
@@ -129,7 +140,8 @@ void SetUIAttributesBlade(ref item, ref result, ref chr)
 	result.attack.iconGroup = "EQUIP_ICONS";
 	result.attack.iconName = "damage";
 	if (!CheckAttribute(item, "attack.min")) trace("missing attack for: " + item.id);
-	int min, max;
+	int min = 0;
+	int max = 0;
 	WeaponSetVisualDamages(item, &min, &max);
 	result.attack.value = ToHumanNumber(min) + " - " + ToHumanNumber(max) + " " + xiStr("ye.");
 }
@@ -237,10 +249,10 @@ void FillUpStats(ref item, ref chr)
 		statTable.tr1.(sCol).icon.height = 32;
 		statTable.tr1.(sCol).icon.image  = itemStats.(statName).iconName;
 		statTable.tr1.(sCol).icon.image  = itemStats.(statName).iconName;
-		statTable.tr1.(sCol).icon.offset = "34, 0";
+		statTable.tr1.(sCol).icon.offset = "32, 0";
 		statTable.tr1.(sCol).str = itemStats.(statName).value;
 		statTable.tr1.(sCol).align = "center";
-		statTable.tr1.(sCol).textoffset = "6, 18";
+		statTable.tr1.(sCol).textoffset = "0, 18";
 	}
 
 	Table_UpdateWindow("TABLE_ITEM_STATS");

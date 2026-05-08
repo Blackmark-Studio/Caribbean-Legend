@@ -123,7 +123,7 @@ void LAi_GenerateFantomFromMe(aref chr)
 bool LAi_CreateFlowers(ref location)
 {// выращивание травки: раз в 10 дней при заходе в локацию вырастает новый экземпляр - садовник Jason
 	ref rItm;
-	if (CheckAttribute(location, "fastreload") && location.id.label != "exittown") return false;
+	if (CheckAttribute(location, "fastreload") && location.id.label != "ExitTown") return false;
 	if(!CheckAttribute(location, "locators.item") || location.id.label == "Cave entrance" || location.type == "seashore" || location.type == "cave") return false;
 	if(location.type != "jungle") return false;
 	
@@ -142,8 +142,7 @@ bool LAi_CreateFlowers(ref location)
 	
 	if (!CheckAttribute(location, "growflower"))
 	{
-		int n = 1;
-		if(location.id.label == "exittown" && !CheckAttribute(location, "fastreload")) n = 2;// за городскими воротами выращиваем больше
+		int n = (location.id.label == "ExitTown") ? 2 : 1; // За городскими воротами выращиваем больше
 		for(int i = 0; i < n; i++)
 		{
 			string item = "cannabis"+(rand(5)+1);
@@ -289,22 +288,24 @@ bool LAi_CreateEncounters(ref location)
 	int num, i, iChar, iNation, iRank, n, iTemp, iMassive, iRnd, iRand, iEncrnd;
 	string model[10];
 	if (!bLandEncountersGen) //если прерывание на локацию, энкаунтеров не генерим
-	{		
+	{
 		bLandEncountersGen = true;
 		return false;
 	}
 	//Можем ли генерить
-	if(CheckAttribute(location, "DisableEncounters") && location.DisableEncounters == true) return false; // mitrokosta фикс неправильного включения энкаунтеров
-	if(!CheckAttribute(location, "locators.encdetector") || !CheckNPCQuestDate(location, "Enc_date") || bDisableLandEncounters) return false;
-	if (CheckAttribute(location, "fastreload")) return false; //отсекаем локации exitTown у пиратских городов
-    //boal 02.09.06 пауза случаек на один раз -->
+	if(CheckAttribute(location, "DisableEncounters") && location.DisableEncounters == true)
+        return false; // mitrokosta фикс неправильного включения энкаунтеров
+	if(!CheckAttribute(location, "locators.encdetector") || !CheckNPCQuestDate(location, "Enc_date") || bDisableLandEncounters)
+        return false;
+
+    // boal 02.09.06 пауза случаек на один раз
 	if (CheckAttribute(pchar, "GenQuest.Enc2Pause"))
 	{
 	    DeleteAttribute(pchar, "GenQuest.Enc2Pause");
 	    return false;
 	}
-	// boal <--
-	//--> если бухта и в ней контра, то не ставим никого
+
+	// Если бухта и в ней контра, то не ставим никого
 	if (location.type == "seashore") 
 	{
 		makearef(st, location.models.always);
@@ -319,14 +320,12 @@ bool LAi_CreateEncounters(ref location)
 			}
 		}			
 	}
-	//<-- если бухта и в ней контра, то не ставим никого
+
 	SetNPCQuestDate(location, "Enc_date"); //запись на дату не сегодня
-	
-	//Установить нацию патруля 
-	
+
 	sAreal = GiveArealByLocation(location);
 	if (sAreal == "none") return false;
-	
+
 	// На необитаемых этого всего нету, но там нету и этих квестов
 	if(!CheckAttribute(location, "onUninhabitedIsland"))
 	{
@@ -335,16 +334,15 @@ bool LAi_CreateEncounters(ref location)
 		iNation = GetCityNation(sCity);
 		if (iNation == -1 || iNation == PIRATE) return false;
 	}
-	
+
 	// земли Ица (дорога к Тайясалю), генерим воинов в другом месте
 	// "... трудна дорога и повсюду обман, но чтоб не сбиться у меня есть план ... найди попробуй сам, не буду я тебя учить..."
 	if(CheckAttribute(location, "ItzaLand")) return false;
-	
+
 	// Warship 10.08.09 Если прерывание на локацию - не генерим энкаунтеров, иначе погло накладываться, судя по всму
 	// bLandEncountersGen устанавливался вручную и не гарантиварол избежание пересечений квест-энкаункеры
 	if(!isLocationFreeForQuests(location.Id)) return false;
-	
-  Log_TestInfo("Генерируем энкаунтеры."); // mitrokosta для теста
+
 	//группа, куда будем помещать фантомов
 	encGroup = LAi_FindRandomLocator("encdetector");
 	str = "locators." + encGroup;
@@ -353,11 +351,11 @@ bool LAi_CreateEncounters(ref location)
 	{
 		if(location.type == "seashore") iRand = rand(1) + 7;
 		else iRand = 1;
-	}	
+	}
 	else
-	{	
+	{
 		iRand = rand(6);
-	}	
+	}
 	switch (iRand)
 	{
 		//------------------ Банда рейдеров типа дежурит на грабежах ----------------------

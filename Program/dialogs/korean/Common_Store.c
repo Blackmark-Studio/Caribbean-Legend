@@ -357,16 +357,6 @@ void ProcessDialogEvent()
 		break;
 
 		case "market":
-//navy -->
-			//занят ПГГ
-			if (CheckFreeServiceForNPC(NPChar, "Store") != -1)	 // to_do имя сунуть
-			{
-				dialog.text = "죄송하지만 지금은 너무 바쁩니다. 손님이 너무 많군요! 내일 다시 오십시오.";
-				link.l1 = "아, 정말인가? 그럼, 나중에 다시 오겠네.";
-				link.l1.go = "exit";
-				break;
-			}
-//navy <--
 			dialog.text = RandPhraseSimple("나는 철환, 돛천, 약, 좋은 목재 그리고 다른 상품들도 있소! 무엇에 관심이 있소?","설탕과 향신료를 사고 싶은가? 아니면 럼주와 화약을 원하나?");
 			link.l1 = pcharrepphrase(LinkRandPhrase("내 창고에 전리품이 잔뜩 있지! 돈은 냄새가 없잖아, 그렇지?","내 창고에 있는 전리품을 다 털어내고 자네 금으로 가득 채워야겠군. 하하!","오, 자네라면 무게 제대로 나가는 두블룬 한 자루에 어머니도 팔 놈이란 거 나도 알지! 하지만 난 그냥 보급품만 좀 채우려는 거야."),LinkRandPhrase("내 화물을 팔고 보급품을 보충하고 싶소.","판매할 상품을 구입하고 싶소.","대포알, 폭탄 같은 것들 좀 보여줘."));
 			link.l1.go = "trade_1";
@@ -665,19 +655,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_5":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage)); 
-			NPChar.Storage.NoActivate = true;
-			DeleteAttribute(NPChar,"Storage.Activate");
+			LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
 			DialogExit();
 		break;
 		
 		case "storage_6":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			DeleteAttribute(NPChar,"Storage.Activate");
-			NPChar.Storage.NoActivate = true;
+			LeaveStorage(NPChar, rColony);
 			DialogExit();
-		break;		
+		break;
 
 		case "business":
 			iTest = 0;			
@@ -753,17 +738,6 @@ void ProcessDialogEvent()
 			}
 			// <-- генератор Место под солнцем
 			
-//navy -->
-			//занят ПГГ
-			iTmp = CheckAvailableTaskForNPC(NPChar, PGG_TASK_WORKONSTORE);
-			if (iTmp != -1)
-			{
-				dialog.text = "일거리가 있었는데\n "+GetFullName(&Characters[iTmp])+" 이미 저를 위해 그 일을 맡았소.";
-				link.l1 = "정말인가? 그럼, 나중에 다시 오겠소.";
-				link.l1.go = "exit";
-				break;
-			}
-//navy <--
 			dialog.text = NPCharRepPhrase(npchar,"무슨 일이오?! 전부 말해 보시오!","듣고 있소. 무슨 거래를 말하는 거요?");
             ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
             if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
@@ -830,11 +804,8 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if(!CheckAttribute(NPChar,"Storage.NoActivate"))
-						{
-							link.l7 = "실례하오, 이보게 좋은 양반 - 혹시 창고를 임대하고 있지 않소?";
-							link.l7.go = "storage_01";
-						}	
+						link.l7 = "실례하오, 이보게 좋은 양반 - 혹시 창고를 임대하고 있지 않소?";
+						link.l7.go = "storage_01";
 					}
 				}				
 				// <-- ugeen

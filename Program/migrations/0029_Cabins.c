@@ -353,7 +353,6 @@ void ApplyMigration(ref migrationState)
 	refship.SpeedDependWeight			= 0.35;
 	refship.SubSeaDependWeight			= 1.0;
 	refship.TurnDependWeight			= 0.4;
-	refship.WindAgainstSpeed   			= 0.72;
 	
 	refship.CabinType          			= "CabineFDMR"; 
 	refship.DeckType           			= "Big";
@@ -412,7 +411,6 @@ void ApplyMigration(ref migrationState)
 			RealShips[i].SpeedDependWeight			= 0.35;
 			RealShips[i].SubSeaDependWeight			= 1.0;
 			RealShips[i].TurnDependWeight			= 0.4;
-			RealShips[i].WindAgainstSpeed   			= 0.72;
 			
 			RealShips[i].CabinType          			= "CabineFDMR"; 
 			RealShips[i].DeckType           			= "Big";

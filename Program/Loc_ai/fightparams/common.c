@@ -85,7 +85,7 @@ void LAi_SetResultOfDeath(ref attack, ref enemy, bool isSetBalde)
 		{
 			DoQuestCheckDelay(enemy.chr_ai.group+"Conflict", 0.5);
 		}
-		if (findsubstr(enemy.model, "canib" , 0) != -1) // Jason: репутация индейцев
+		if (findsubstr(enemy.model, "canib" , 0) != -1 && "quest.agressive" !in enemy) // Jason: репутация индейцев
 		{
 			ChangeIndianRelation(-0.5);
 		}

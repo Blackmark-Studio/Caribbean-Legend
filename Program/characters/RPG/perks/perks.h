@@ -86,6 +86,8 @@
 #define PERK_VALUE_CANNON_PROFESSIONAL 0.10 // увеличивает повреждения любой части корабля, скорости сведения и наведения орудий, а так же шанс критического выстрела
 #define PERK_VALUE_HULL_DAMAGE_UP 0.10   // здесь сложение, должно быть 0.n
 #define PERK_VALUE_CREW_DAMAGE_UP 1.10   // 
+#define PERK_VALUE_CRITICAL_SHOOT 0.05	// шанс крита
+#define PERK_VALUE2_CRITICAL_SHOOT 0.3	// процент, на который сбрасывается зарядка, когда меняем снаряд при полной зарядке
 #define PERK_VALUE_BASIC_BATTLE_STATE 0.10   // здесь сложение, должно быть 0.n
 #define PERK_VALUE_ADVANCED_BATTLE_STATE 0.10   // здесь сложение, должно быть 0.n
 #define PERK_VALUE_SHIP_DEFENSE_PROFESSIONAL 0.05   // здесь сложение, должно быть 0.n
@@ -99,7 +101,7 @@
 #define PERK_VALUE_LONE_WOLF 0.70   // здесь сложение, должно быть 0.n
 #define PERK_VALUE2_LONE_WOLF 25   // здесь сложение, должно быть 0.n
 #define PERK_VALUE2_SAILING_PROFESSIONAL 12 // увеличение шанса сбежать, 1% = 1
-#define PERK_VALUE_WIND_CATCHER 0.10 // бафф на работу с парусами
+#define PERK_VALUE_WIND_CATCHER 0.10 // бафф на динамику набора скорости
 #define PERK_VALUE2_WIND_CATCHER 0.025  // прирост скорости на глобальной карте, если есть карта акватории
 #define PERK_VALUE3_WIND_CATCHER 0.05  // прирост скорости на глобальной карте, если есть все карты акваторий
 #define PERK_VALUE_THRIFT 0.10 // уменьшает влияние повреждений парусов на скорость и маневренность
@@ -176,6 +178,8 @@ string PerkBaseValue(string valueName, string prefix)
 		case "value_CannonProfessional": return VarTypeToString(PERK_VALUE_CANNON_PROFESSIONAL); break;
 		case "value_HullDamageUp": return VarTypeToString(PERK_VALUE_HULL_DAMAGE_UP); break;
 		case "value_CrewDamageUp": return VarTypeToString(PERK_VALUE_CREW_DAMAGE_UP); break;
+		case "value_CriticalShoot": return VarTypeToString(PERK_VALUE_CRITICAL_SHOOT); break;
+		case "value_2CriticalShoot": return VarTypeToString(PERK_VALUE2_CRITICAL_SHOOT); break;
 		case "value_BasicBattleState": return VarTypeToString(PERK_VALUE_BASIC_BATTLE_STATE); break;
 		case "value_AdvancedBattleState": return VarTypeToString(PERK_VALUE_ADVANCED_BATTLE_STATE); break;
 		case "value_ShipDefenseProfessional": return VarTypeToString(PERK_VALUE_SHIP_DEFENSE_PROFESSIONAL); break;

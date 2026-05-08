@@ -363,7 +363,6 @@ void SharlieEpilog_UlysseInSea() // в Антлантическом океане
 	realships[sti(pchar.ship.type)].Capacity = 6500;
 	realships[sti(pchar.ship.type)].SpeedRate = 11.65;
 	realships[sti(pchar.ship.type)].TurnRate = 78.65;
-	realships[sti(pchar.ship.type)].WindAgainstSpeed = 1.75;
 	pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
 	SetCrewQuantityFull(pchar);
 	pchar.ship.Crew.Morale = 100;

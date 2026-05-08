@@ -36,6 +36,8 @@ void ProcessDialogEvent()
 			LAi_group_MoveCharacter(sld, sGroup);
 			LAi_RemoveCheckMinHP(sld);
 			LAi_SetImmortal(sld, false);
+			if("quest.agressive" in npchar)
+				sld.quest.agressive = true;
 		}
 		LAi_group_SetRelation(sGroup, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 		LAi_group_FightGroups(sGroup, LAI_GROUP_PLAYER, true);
@@ -110,6 +112,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "war_indian_2_2":
+		npchar.quest.agressive = true;
 		dialog.text = RandPhraseSimple("¡Mientes, canalla pálido! ¡Viniste aquí para matar indios! ¿Listo para la batalla, rostro pálido?!", "Matas a los indios. La lengua blanca es lengua mentirosa. ¡La cortaré y la freiré en el fuego!");
 		link.l1 = RandPhraseSimple("Bueno, compañero, no me culpes entonces. Dios sabe, traté de evitarlo...", "Bueno, lo pediste, guerrero.");
 		link.l1.go = "exit_fight";
@@ -127,6 +130,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
+			npchar.quest.agressive = true;
 			dialog.text = "¡Tú no tienes lo que queremos, rostro pálido... ¡Serás nuestro trofeo de guerra!";
 			link.l1 = "Inténtalo si te atreves, espantapájaros...";
 			link.l1.go = "exit_fight";
@@ -134,6 +138,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "war_indian_3_2":
+		npchar.quest.agressive = true;
 		dialog.text = RandPhraseSimple("¡No comerciamos con perros de cara pálida. ¡Matamos y tomamos!", "¡Nosotros no somos sucios miskito o arawaks, no comerciamos con caras pálidas! ¡Los matamos y obtenemos trofeos de guerra!");
 		link.l1 = RandPhraseSimple("¡Bueno, entonces intenta robarme, malandrín!", "Primero, tendrás que quitarme mi sable, ¡tú basura!");
 		link.l1.go = "exit_fight";
@@ -347,6 +352,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
+			npchar.quest.agressive = true;
 			dialog.text = "¡Entonces nos llevamos todo gratis, cara pálida!";
 			link.l1 = "Puedes intentarlo...";
 			link.l1.go = "exit_fight";

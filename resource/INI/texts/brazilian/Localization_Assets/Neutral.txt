@@ -1,12 +1,4 @@
 Neutral_1 {Bandido}
-Neutral_2 {Você deixou anotações}
-Neutral_3 {Jack}
-Neutral_4 {Véus}
-Neutral_5 {Fera Marinha}
-Neutral_6 { }
-Neutral_7 { }
-Neutral_8 {Gaivota Dourada}
-Neutral_9 {Tristan}
 Neutral_10 {Renier}
 Neutral_11 {Um navio pirata no horizonte! Eles estão vindo cortar nosso curso.}
 Neutral_12 {Uma voz atrás da porta}
@@ -17,6 +9,7 @@ Neutral_16 {Entregue: Documentos de Betsy Price}
 Neutral_17 {Lea}
 Neutral_18 {Carno}
 Neutral_19 {Pierre}
+Neutral_2 {Você deixou anotações}
 Neutral_20 {Um navio pirata no horizonte! Eles estão cruzando nosso caminho.}
 Neutral_21 {Convés}
 Neutral_22 {A entrada da caverna está coberta de teias de aranha. Parece que ninguém passa por aqui há muito tempo.}
@@ -27,6 +20,7 @@ Neutral_26 {Moño}
 Neutral_27 {Marisa}
 Neutral_28 {Caldera}
 Neutral_29 {Felipe}
+Neutral_3 {Jack}
 Neutral_30 {Alarcón}
 Neutral_31 {Sebastián}
 Neutral_32 {Córdoba}
@@ -37,6 +31,12 @@ Neutral_36 {Peralta}
 Neutral_37 {... agora todas as suspeitas sobre o Tubarão Dodson serão afastadas}
 Neutral_38 {Dinheiro insuficiente (10.100.000)}
 Neutral_39 {Dinheiro insuficiente (25.250.000)}
+Neutral_4 {Véus}
 Neutral_40 {Dinheiro insuficiente (50.500.000)}
 Neutral_41 {você}
 Neutral_42 {vocês}
+Neutral_5 {Fera Marinha}
+Neutral_6 { }
+Neutral_7 { }
+Neutral_8 {Gaivota Dourada}
+Neutral_9 {Tristan}

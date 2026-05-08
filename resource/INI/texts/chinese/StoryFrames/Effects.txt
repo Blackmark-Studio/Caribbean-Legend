@@ -1,0 +1,36 @@
+effects_title {故事结果}
+SkillExp_1 {$ctx(p1)获得经验：$key($ctx(p2))}
+SkillExp_pchar_1 {你获得经验：$key($ctx(p1))}
+Loyality_0 {$ctx(p1)不满}
+Loyality_1 {$ctx(p1)满意}
+CrewMorale_pchar_0 {船员士气$MoraleStrDiff($ctx(value))}
+CrewMorale_pchar_1 {船员士气$MoraleStrDiff($ctx(value))}
+Reputation_pchar_0 {声望下降}
+Reputation_pchar_1 {声望上升}
+CrewExp_pchar_1 {$key($ctx(p1))获得经验}
+Money_pchar_1 {你获得了$money($ctx(value))}
+Money_pchar_0 {你付出了$abs($money($ctx(value)))}
+Goods_pchar_1 {你获得了_$key($goodI($ctx(p1))Acc)：$number($ctx(value))}
+Goods_pchar_0 {你交出了_$key($goodI($ctx(p1))Acc)：$abs($number($ctx(value)))}
+NationRelation_pchar_0 {与$key($nationI($ctx(p1))Abl)的关系恶化}
+NationRelation_pchar_1 {与$key($nationI($ctx(p1))Abl)的关系改善}
+ItemsCabin_0 {你交出了物品：$GetItemName($ctx(p1)) x $abs($number($ctx(value)))}
+ItemsCabin_1 {你获得了物品：$GetItemName($ctx(p1)) x $number($ctx(value))}
+Items_pchar_0 {你交出了物品：$GetItemName($ctx(p1)) x $abs($number($ctx(value)))}
+Items_pchar_1 {你获得了物品：$GetItemName($ctx(p1)) x $number($ctx(value))}
+TempModifier_pchar_0 {$key($ctx(p1)|modifiers.txt) $percent($ctx(value))，持续 $days($ctx(duration))}
+TempModifier_pchar_1 {$key($ctx(p1)|modifiers.txt) +$percent($ctx(value))，持续 $days($ctx(duration))}
+moraleDiff_up3 {大幅提升}
+moraleDiff_up2 {提升了}
+moraleDiff_up1 {小幅提升}
+moraleDiff_stay {没有变化}
+moraleDiff_down3 {大幅下降}
+moraleDiff_down2 {下降了}
+moraleDiff_down1 {小幅下降}
+FractionRelation_0 {与$key($ctx(p1)Abl)的关系恶化}
+FractionRelation_1 {与$key($ctx(p1)Abl)的关系改善}
+CrewQty_pchar_0 {失去船员：$abs($number($ctx(value)))}
+CrewQty_pchar_1 {新增船员：$number($ctx(value))}
+NoEffectsStory {没有后果}
+LoyalityAll_1 {你的军官们现在更加忠诚了}
+LoyalityAll_0 {你的军官们现在没那么忠诚了}

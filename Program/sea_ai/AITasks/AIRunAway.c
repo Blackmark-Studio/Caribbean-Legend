@@ -18,15 +18,15 @@ void AIRunaway_GroupRunaway(string sGroupID, string sGroupAwayFrom)
 		}
 		return;
 	}
-	
+
 	int iEnemyCommanderIndex = sti(rCommander.index);
 
 	int i = 0;
 	while (true)
 	{
 		int iCharacterIndex = Group_GetCharacterIndexR(rG, i); i++;
-		if (iCharacterIndex < 0) { break; }
-		if (LAi_IsDead(&Characters[iCharacterIndex])) { continue; }
+		if (iCharacterIndex < 0) break;
+		if (LAi_IsDead(&Characters[iCharacterIndex])) continue;
 		Characters[iCharacterIndex].SeaAI.Task.Target = iEnemyCommanderIndex;
 		Ship_SetTaskRunaway(SECONDARY_TASK, iCharacterIndex, sti(Characters[iCharacterIndex].SeaAI.Task.Target));
 	}	

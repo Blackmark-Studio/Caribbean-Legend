@@ -463,6 +463,7 @@ void SetVariable()
 
 	SetFoodShipInfoShort(refCharacter, "FOOD_SHIP");
 	SetRumShipInfoShort(refCharacter,"RUM_SHIP");
+	SetMedicamentShipInfo(refCharacter,"MEDICAMENT_SHIP", "short");
 
 	SetFormatedText("CREW_CAPACITY", GetCrewQuantity(refCharacter) + "/" + GetOptCrewQuantity(refCharacter));
 	////  заполнялка города
@@ -594,6 +595,10 @@ void ShowInfoWindow()
 			sHeader = XI_Convertstring("RumShipInfoShort");
 			sText1 = GetGoodDescr("Rum");
 		break;
+		case "MEDICAMENT_SHIP":
+			sHeader = XI_Convertstring("MedicamentShipInfoShort");
+			sText1 = GetGoodDescr("Medicament");
+		break;
 		case "TABLE_EFFECTS":
 			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_EFFECTS", 1);
 			nChooseCol = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_EFFECTS", 3);
@@ -613,7 +618,7 @@ void ShowInfoWindow()
 	}
 	if (bShowHint)
 	{
-		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 160, 160, false);
+		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 160, 160, false, false);
 	}
 }
 

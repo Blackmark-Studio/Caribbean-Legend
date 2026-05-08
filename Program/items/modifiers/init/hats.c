@@ -72,6 +72,19 @@ bool InitHatModifiers(ref item)
 			SetModifier(item, SPECIAL_TYPE + SPECIAL_E, 2);
 		}
 		break;
+		case "hat12":
+		{
+			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
+			AddDescriptor(item, "Exotic", -1);
+			AddDescriptor(item, "Special", -1);
+			SetModifier(item, M_MOVE_SPEED, 0.05);
+			SetModifier(item, MUSKET_RUN_MOVE + "_" + M_ACTION_SPEED, 0.05);
+			SetModifier(item, AIMING_WALK_MOVE + "_" + M_ACTION_SPEED, 0.05);
+			SetModifier(item, GUN_ITEM_TYPE + "_" + M_CRIT_DAMAGE, 0.30);
+			SetModifier(item, MUSKET_ITEM_TYPE + "_" + M_CRIT_DAMAGE, 0.30);
+			SetModifier(item, M_HEADSHOT_DAMAGE, 0.50);
+		}
+		break;
 	}
 
 	return true;

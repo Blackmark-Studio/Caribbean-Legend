@@ -1,102 +1,5 @@
 QuestsUtilite_1 {Кoлecо Фoртуны}
-QuestsUtilite_2 {Я не хочу говорить об одном и том же по нескольку раз.}
-QuestsUtilite_3 {Мы уже говорили об этом.}
-QuestsUtilite_4 {Эту тему мы уже обсуждали.}
-QuestsUtilite_5 {Ещё раз повторяю, что я не хочу говорить об одном и том же по десять раз!}
-QuestsUtilite_6 {Повторяю, мы уже говорили об этом!}
-QuestsUtilite_7 {Я же говорю, мы это уже обсуждали. Проблемы с памятью?}
-QuestsUtilite_8 {Я не намерен более с вами общаться.}
-QuestsUtilite_9 {Не буду с тобой больше разговаривать!}
 QuestsUtilite_10 {Ты меня порядком разозлил}
-QuestsUtilite_11 { }
-QuestsUtilite_12 {а}
-QuestsUtilite_13 {, никакого общения более.}
-QuestsUtilite_14 {Хорошо, приятель.}
-QuestsUtilite_15 {Как скажешь.}
-QuestsUtilite_16 {Не то ляпнул}
-QuestsUtilite_17 { }
-QuestsUtilite_18 {а}
-QuestsUtilite_19 {, извини...}
-QuestsUtilite_20 {Хорошо, хорошо. Только не кипятись.}
-QuestsUtilite_21 {Как скажешь, только не надо кричать.}
-QuestsUtilite_22 {Извини, что-то я сегодня не в форме... Голова с утра раскалывается...}
-QuestsUtilite_23 {Как знаешь.}
-QuestsUtilite_24 {Очень жаль...}
-QuestsUtilite_25 {Невелика потеря.}
-QuestsUtilite_26 {Лукас}
-QuestsUtilite_27 {Роденбург}
-QuestsUtilite_28 {Абигайль}
-QuestsUtilite_29 {Шнеур}
-QuestsUtilite_30 {Соломон}
-QuestsUtilite_31 {Шнеур}
-QuestsUtilite_32 {Джон}
-QuestsUtilite_33 {Мердок}
-QuestsUtilite_34 {Джино}
-QuestsUtilite_35 {Гвинейли}
-QuestsUtilite_36 {Чарли}
-QuestsUtilite_37 {Книппель}
-QuestsUtilite_38 {Ричард}
-QuestsUtilite_39 {Флитвуд}
-QuestsUtilite_40 {Якоб}
-QuestsUtilite_41 {ван Берг}
-QuestsUtilite_42 {Лонгвэй}
-QuestsUtilite_43 { }
-QuestsUtilite_44 {Жоаким}
-QuestsUtilite_45 {Мерриман}
-QuestsUtilite_46 {Эркюль}
-QuestsUtilite_47 {Тонзаг}
-QuestsUtilite_48 {Мишель}
-QuestsUtilite_49 {де Монпе}
-QuestsUtilite_50 {аббат}
-QuestsUtilite_51 {Бенуа}
-QuestsUtilite_52 {Фадей}
-QuestsUtilite_53 { }
-QuestsUtilite_54 {Диего}
-QuestsUtilite_55 {де Монтойя}
-QuestsUtilite_56 {Алонсо}
-QuestsUtilite_57 {де Мальдонадо}
-QuestsUtilite_58 {Вильям}
-QuestsUtilite_59 {Патерсон}
-QuestsUtilite_60 {Арчибальд}
-QuestsUtilite_61 {Колхаун}
-QuestsUtilite_62 {Ян}
-QuestsUtilite_63 {Свенсон}
-QuestsUtilite_64 {Джоанна}
-QuestsUtilite_65 {Свенсон}
-QuestsUtilite_66 {Натаниэль}
-QuestsUtilite_67 {Хоук}
-QuestsUtilite_68 {Даниэль}
-QuestsUtilite_69 {Хоук}
-QuestsUtilite_70 {Эдвард}
-QuestsUtilite_71 {д'Ойли}
-QuestsUtilite_72 {Лоуренс}
-QuestsUtilite_73 {Белтроп}
-QuestsUtilite_74 {Глэдис}
-QuestsUtilite_75 {МакАртур}
-QuestsUtilite_76 {Элен}
-QuestsUtilite_77 {МакАртур}
-QuestsUtilite_78 {Хосе}
-QuestsUtilite_79 {Диос}
-QuestsUtilite_80 {Альберт}
-QuestsUtilite_81 {Локсли}
-QuestsUtilite_82 {Стивен}
-QuestsUtilite_83 {Додсон}
-QuestsUtilite_84 {Чад}
-QuestsUtilite_85 {Каппер}
-QuestsUtilite_86 {Лейтон}
-QuestsUtilite_87 {Декстер}
-QuestsUtilite_88 {Эдвард}
-QuestsUtilite_89 {Блэк}
-QuestsUtilite_90 {Чимисет}
-QuestsUtilite_91 { }
-QuestsUtilite_92 {Зикомо}
-QuestsUtilite_93 { }
-QuestsUtilite_94 {Джузеппе}
-QuestsUtilite_95 {Фацио}
-QuestsUtilite_96 {Аксель}
-QuestsUtilite_97 {Йост}
-QuestsUtilite_98 {Санчо}
-QuestsUtilite_99 {Карпентеро}
 QuestsUtilite_100 {брат}
 QuestsUtilite_101 {Юлиан}
 QuestsUtilite_102 {Мэри}
@@ -107,6 +10,7 @@ QuestsUtilite_106 {Юрген}
 QuestsUtilite_107 {Шмидт}
 QuestsUtilite_108 {Дональд}
 QuestsUtilite_109 {Гринспи}
+QuestsUtilite_11 { }
 QuestsUtilite_110 {Оле}
 QuestsUtilite_111 {Кристиансен}
 QuestsUtilite_112 {Марчелло}
@@ -117,6 +21,7 @@ QuestsUtilite_116 {Лайонел}
 QuestsUtilite_117 {Маскетт}
 QuestsUtilite_118 {Гхерад}
 QuestsUtilite_119 {Смиитс}
+QuestsUtilite_12 {а}
 QuestsUtilite_120 {Ришард}
 QuestsUtilite_121 {Шамбон}
 QuestsUtilite_122 {Альваро}
@@ -127,6 +32,7 @@ QuestsUtilite_126 {Адольф}
 QuestsUtilite_127 {Барбье}
 QuestsUtilite_128 {Куранай}
 QuestsUtilite_129 { }
+QuestsUtilite_13 {, никакого общения более.}
 QuestsUtilite_130 {Рамона}
 QuestsUtilite_131 {Лоцано}
 QuestsUtilite_132 {Оеларт}
@@ -137,6 +43,7 @@ QuestsUtilite_136 {Леонард}
 QuestsUtilite_137 {Маскетт}
 QuestsUtilite_138 {Джозеф}
 QuestsUtilite_139 {Лодердэйл}
+QuestsUtilite_14 {Хорошо, приятель.}
 QuestsUtilite_140 {Лоренцо}
 QuestsUtilite_141 {Сольдерра}
 QuestsUtilite_142 {Жаклин}
@@ -147,6 +54,7 @@ QuestsUtilite_146 {Таннеке}
 QuestsUtilite_147 {Эверс}
 QuestsUtilite_148 {Орели}
 QuestsUtilite_149 {Бертин}
+QuestsUtilite_15 {Как скажешь.}
 QuestsUtilite_150 {Антонио}
 QuestsUtilite_151 {Бетанкур}
 QuestsUtilite_152 {Сесиль}
@@ -157,6 +65,7 @@ QuestsUtilite_156 {Похоже, что это и есть клад.}
 QuestsUtilite_157 {му}
 QuestsUtilite_158 {й}
 QuestsUtilite_159 {ел}
+QuestsUtilite_16 {Не то ляпнул}
 QuestsUtilite_160 {ла}
 QuestsUtilite_161 {Тюремный}
 QuestsUtilite_162 {надзиратель}
@@ -167,6 +76,7 @@ QuestsUtilite_166 {Империал}
 QuestsUtilite_167 {Боннета}
 QuestsUtilite_168 {Трафальгар}
 QuestsUtilite_169 {Глостер}
+QuestsUtilite_17 { }
 QuestsUtilite_170 {Кампече}
 QuestsUtilite_171 {Лангедок}
 QuestsUtilite_172 {Лейден}
@@ -177,6 +87,7 @@ QuestsUtilite_176 {Алькантара}
 QuestsUtilite_177 {Вангард}
 QuestsUtilite_178 {Торбей}
 QuestsUtilite_179 {Рассел}
+QuestsUtilite_18 {а}
 QuestsUtilite_180 {Барфорд}
 QuestsUtilite_181 {Гаргулья}
 QuestsUtilite_182 {Монтебелло}
@@ -187,6 +98,7 @@ QuestsUtilite_186 {Феникс}
 QuestsUtilite_187 {Нептун}
 QuestsUtilite_188 {Бургундия}
 QuestsUtilite_189 {Пандора}
+QuestsUtilite_19 {, извини...}
 QuestsUtilite_190 {Роттердам}
 QuestsUtilite_191 {Меермен}
 QuestsUtilite_192 {Буцентавр}
@@ -197,6 +109,8 @@ QuestsUtilite_196 {Мapлин}
 QuestsUtilite_197 {перехватчики}
 QuestsUtilite_198 {Аврора Бардот, 1612-1637, подавальщица}
 QuestsUtilite_199 {Вы заблевали весь стол, чёртов пират!}
+QuestsUtilite_2 {Я не хочу говорить об одном и том же по нескольку раз.}
+QuestsUtilite_20 {Хорошо, хорошо. Только не кипятись.}
 QuestsUtilite_200 {Жюль Кувье, 1591-1640, кровельщик}
 QuestsUtilite_201 {Кажется, поднимается сильный ветер...}
 QuestsUtilite_202 {Жерар Лесбро, 1555-1596, алхимик}
@@ -207,6 +121,7 @@ QuestsUtilite_206 {Огюст Пуатье, 1567-1624, оружейник}
 QuestsUtilite_207 {Так-так, этот пистоль неисправен. Посмотрим поближе...}
 QuestsUtilite_208 {Марк Ромари, 1544-1599, ростовщик}
 QuestsUtilite_209 {Месье, клянусь, меня и вправду ограбили!}
+QuestsUtilite_21 {Как скажешь, только не надо кричать.}
 QuestsUtilite_210 {Марсель д'Обе, 1611-1650, грузчик}
 QuestsUtilite_211 {Кажется, эти канаты действительно прогнили...}
 QuestsUtilite_212 {Роз Дюплан, 1621-1649, служанка}
@@ -217,6 +132,7 @@ QuestsUtilite_216 {Альваро Лопес, 1587-1633, ловец жемчуг
 QuestsUtilite_217 {В эту лагуну акулы отродясь не заплывали!}
 QuestsUtilite_218 {Гаспар Ибаньес, 1599-1640, плотник}
 QuestsUtilite_219 {Хуан, кинь мне вон тот большой топор!}
+QuestsUtilite_22 {Извини, что-то я сегодня не в форме... Голова с утра раскалывается...}
 QuestsUtilite_220 {Лоренцо Пердозо, 1581-1630, артиллерист}
 QuestsUtilite_221 {Сыпь в жерло больше пороха! Ещё больше! Вот так...}
 QuestsUtilite_222 {Симон Зоррита, 1602-1645, сыщик}
@@ -227,6 +143,7 @@ QuestsUtilite_226 {Рикардо Казарес, 1590-1633, охотник}
 QuestsUtilite_227 {Я знаю эту змею. Она совершенно безобидна!}
 QuestsUtilite_228 {Исидро Давилла, 1588-1624, мельник}
 QuestsUtilite_229 {Завтра же с утра меняю треснувшие ступени на этой лестнице...}
+QuestsUtilite_23 {Как знаешь.}
 QuestsUtilite_230 {Теодоро Бельо, 1599-1646, адъютант}
 QuestsUtilite_231 {Вы подлец, сударь! Извольте обнажить свою тупую ржавую железяку!}
 QuestsUtilite_232 {Гельвира Чека, 1605-1648, торговка}
@@ -237,6 +154,7 @@ QuestsUtilite_236 {Ральф Чаплин, 1602-1649, лесоруб}
 QuestsUtilite_237 {Джон, ты надёжно закрепил топор на топорище?}
 QuestsUtilite_238 {Кермит Филлер, 1615-1653, бармен}
 QuestsUtilite_239 {Морган, ром был неразбавленный, мамой клянусь!}
+QuestsUtilite_24 {Очень жаль...}
 QuestsUtilite_240 {Лаура Харт, 1605-1627, шлюха}
 QuestsUtilite_241 {Да как вы смеете! Я проверяюсь у лекаря каждую неделю!}
 QuestsUtilite_242 {Саймон Лютер, 1598-1639, лекарь}
@@ -247,6 +165,7 @@ QuestsUtilite_246 {Маколм Камли, 1545-1587, актер}
 QuestsUtilite_247 {В этой маске с красным носом я просто вылитый комендант форта!}
 QuestsUtilite_248 {Тобиас Филлер, 1567-1599, зверолов}
 QuestsUtilite_249 {Джон, этот ягуар кажется мне совсем ручным, открывай клетку...}
+QuestsUtilite_25 {Невелика потеря.}
 QuestsUtilite_250 {Камилла Руттер, 1571-1596, крестьянка}
 QuestsUtilite_251 {Что-то наш бычок беспокойный какой-то сегодня...}
 QuestsUtilite_252 {Фриц Лоотс, 1587-1631, кок}
@@ -257,6 +176,7 @@ QuestsUtilite_256 {Паул Влекке, 1577-1622, лоцман}
 QuestsUtilite_257 {Не переживайте, кэп: я знаю проход через эти рифы как свои пять пальцев!}
 QuestsUtilite_258 {Йедам Уустген, 1589-1635, кузнец}
 QuestsUtilite_259 {Вам бы не саблю получше, а руки на наковальне подровнять следует!}
+QuestsUtilite_26 {Лукас}
 QuestsUtilite_260 {Катрина Эрб, 1610-1644, прачка}
 QuestsUtilite_261 {Лизбет, да куда ты побежала? Это мирные индейцы, они не трогают белых...}
 QuestsUtilite_262 {Петер Коннинк, 1561-1615, мушкетер}
@@ -267,6 +187,7 @@ QuestsUtilite_266 {Крелис ван Екк, 1572-1611, боцман}
 QuestsUtilite_267 {Всыпать по двадцать ударов плетью! Нет - по тридцать! Каждому!}
 QuestsUtilite_268 {Якоб де Хаез, 1611-1651, путешественник}
 QuestsUtilite_269 {Кайманы не нападают на людей. Только когда очень голодны. А этот явно сыт...}
+QuestsUtilite_27 {Роденбург}
 QuestsUtilite_270 { }
 QuestsUtilite_271 { }
 QuestsUtilite_272 {Яд не подействовал!}
@@ -277,6 +198,7 @@ QuestsUtilite_276 {Воды становятся опаснее, угроза п
 QuestsUtilite_277 {Химера}
 QuestsUtilite_278 {~ Как сильно мы их разозлили! Кажется, во главе эскадры ~}
 QuestsUtilite_279 {Диего}
+QuestsUtilite_28 {Абигайль}
 QuestsUtilite_280 {де Ланда}
 QuestsUtilite_281 {Ягуар}
 QuestsUtilite_282 {Беллона}
@@ -287,6 +209,7 @@ QuestsUtilite_286 {Пассат}
 QuestsUtilite_287 {Тритон}
 QuestsUtilite_288 {Какао}
 QuestsUtilite_289 {Колибри}
+QuestsUtilite_29 {Шнеур}
 QuestsUtilite_290 {Сибилла}
 QuestsUtilite_291 {Юнона}
 QuestsUtilite_292 {Орфей}
@@ -297,6 +220,8 @@ QuestsUtilite_296 {Баракуда}
 QuestsUtilite_297 {Гидра}
 QuestsUtilite_298 {Ламантин}
 QuestsUtilite_299 {Цитадель}
+QuestsUtilite_3 {Мы уже говорили об этом.}
+QuestsUtilite_30 {Соломон}
 QuestsUtilite_300 {Анафема}
 QuestsUtilite_301 {Химера}
 QuestsUtilite_302 {Немизида}
@@ -307,6 +232,7 @@ QuestsUtilite_306 {Дионис}
 QuestsUtilite_307 {Астарта}
 QuestsUtilite_308 {Харон}
 QuestsUtilite_309 {Гуакамайо}
+QuestsUtilite_31 {Шнеур}
 QuestsUtilite_310 {Гелиада}
 QuestsUtilite_311 {Цербер}
 QuestsUtilite_312 {Беллерифон}
@@ -317,6 +243,7 @@ QuestsUtilite_316 {Куртина}
 QuestsUtilite_317 {Фаланга}
 QuestsUtilite_318 {Легион}
 QuestsUtilite_319 {Форпост}
+QuestsUtilite_32 {Джон}
 QuestsUtilite_320 {Дриада}
 QuestsUtilite_321 {Горгона}
 QuestsUtilite_322 {Обелиск}
@@ -327,5 +254,78 @@ QuestsUtilite_326 {Гелиадон}
 QuestsUtilite_327 {Гефест}
 QuestsUtilite_328 {Центурион}
 QuestsUtilite_329 {Пираты разбиты, воды стали безопаснее}
+QuestsUtilite_33 {Мердок}
 QuestsUtilite_330 {Пираты окрепли, в море стало опаснее}
 QuestsUtilite_331 {Капитан, это фрегат 'Амстердам'! Вы добились своего — Компания признала вас угрозой.}
+QuestsUtilite_34 {Джино}
+QuestsUtilite_35 {Гвинейли}
+QuestsUtilite_36 {Чарли}
+QuestsUtilite_37 {Книппель}
+QuestsUtilite_38 {Ричард}
+QuestsUtilite_39 {Флитвуд}
+QuestsUtilite_4 {Эту тему мы уже обсуждали.}
+QuestsUtilite_40 {Якоб}
+QuestsUtilite_41 {ван Берг}
+QuestsUtilite_42 {Лонгвэй}
+QuestsUtilite_43 { }
+QuestsUtilite_44 {Жоаким}
+QuestsUtilite_45 {Мерриман}
+QuestsUtilite_46 {Эркюль}
+QuestsUtilite_47 {Тонзаг}
+QuestsUtilite_48 {Мишель}
+QuestsUtilite_49 {де Монпе}
+QuestsUtilite_5 {Ещё раз повторяю, что я не хочу говорить об одном и том же по десять раз!}
+QuestsUtilite_50 {аббат}
+QuestsUtilite_51 {Бенуа}
+QuestsUtilite_52 {Фадей}
+QuestsUtilite_53 { }
+QuestsUtilite_54 {Диего}
+QuestsUtilite_55 {де Монтойя}
+QuestsUtilite_56 {Алонсо}
+QuestsUtilite_57 {де Мальдонадо}
+QuestsUtilite_58 {Вильям}
+QuestsUtilite_59 {Патерсон}
+QuestsUtilite_6 {Повторяю, мы уже говорили об этом!}
+QuestsUtilite_60 {Арчибальд}
+QuestsUtilite_61 {Колхаун}
+QuestsUtilite_62 {Ян}
+QuestsUtilite_63 {Свенсон}
+QuestsUtilite_64 {Джоанна}
+QuestsUtilite_65 {Свенсон}
+QuestsUtilite_66 {Натаниэль}
+QuestsUtilite_67 {Хоук}
+QuestsUtilite_68 {Даниэль}
+QuestsUtilite_69 {Хоук}
+QuestsUtilite_7 {Я же говорю, мы это уже обсуждали. Проблемы с памятью?}
+QuestsUtilite_70 {Эдвард}
+QuestsUtilite_71 {д'Ойли}
+QuestsUtilite_72 {Лоуренс}
+QuestsUtilite_73 {Белтроп}
+QuestsUtilite_74 {Глэдис}
+QuestsUtilite_75 {МакАртур}
+QuestsUtilite_76 {Элен}
+QuestsUtilite_77 {МакАртур}
+QuestsUtilite_78 {Хосе}
+QuestsUtilite_79 {Диос}
+QuestsUtilite_8 {Я не намерен более с вами общаться.}
+QuestsUtilite_80 {Альберт}
+QuestsUtilite_81 {Локсли}
+QuestsUtilite_82 {Стивен}
+QuestsUtilite_83 {Додсон}
+QuestsUtilite_84 {Чад}
+QuestsUtilite_85 {Каппер}
+QuestsUtilite_86 {Лейтон}
+QuestsUtilite_87 {Декстер}
+QuestsUtilite_88 {Эдвард}
+QuestsUtilite_89 {Блэк}
+QuestsUtilite_9 {Не буду с тобой больше разговаривать!}
+QuestsUtilite_90 {Чимисет}
+QuestsUtilite_91 { }
+QuestsUtilite_92 {Зикомо}
+QuestsUtilite_93 { }
+QuestsUtilite_94 {Джузеппе}
+QuestsUtilite_95 {Фацио}
+QuestsUtilite_96 {Аксель}
+QuestsUtilite_97 {Йост}
+QuestsUtilite_98 {Санчо}
+QuestsUtilite_99 {Карпентеро}

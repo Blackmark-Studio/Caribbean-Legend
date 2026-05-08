@@ -88,7 +88,8 @@ void ProcessDialogEvent()
 			PlaySound("Voice\English\LSC\Mary Casper-04.wav");
 			dialog.text = "何だと……？くそっ、お前はただの強盗じゃねえな！あいつは提督の手先だ！やっちまえ、野郎ども！\n";
 			link.l1 = "...";
-			link.l1.go = "Cabin_fight";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("LSC_Cabin_fight");
 		break;
 		
 	// ---------------------------------покушение на Акулу - вариант N --------------------------------

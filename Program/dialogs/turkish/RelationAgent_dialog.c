@@ -201,7 +201,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "NationLicenceType2":
-			iSumm = sti(npchar.LicenceType) * (3000 + MOD_SKILL_ENEMY_RATE*500);
+			iSumm = LICENSE_GetPrice(npchar.LicenceType);
         	dialog.text = "Yani, ticaret ruhsatı"+XI_ConvertString(Nations[sti(npchar.LicenceNation)].Name+"Gen")+" için "+sti(npchar.LicenceType)+" gün, fiyatı "+FindRussianMoneyString(iSumm)+".";
 		    link.l1 = "Kabul ediyorum.";
 		    if(makeint(Pchar.money) < iSumm)
@@ -217,7 +217,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "NationLicenceType3":
-            iSumm = sti(npchar.LicenceType) * (3000 + MOD_SKILL_ENEMY_RATE*500);
+            iSumm = LICENSE_GetPrice(npchar.LicenceType);
 			dialog.text = "İşte burada. Bir limana girerken dost bayrağını çekmeyi unutma. Ve ruhsatın tarihini devriyenin kontrol edebileceğini aklında tut.";
 			link.l9 = "Teşekkür ederim.";
 			link.l9.go = "exit";

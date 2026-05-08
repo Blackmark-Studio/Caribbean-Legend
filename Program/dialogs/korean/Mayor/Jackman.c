@@ -589,7 +589,6 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 				if (NextDiag.TempNode != "I_know_you_good")
 					dialog.text = "미쳤" + GetSexPhrase("니", "니") + "? 우리 녀석들은 널 마치 전염병처럼 피해 다녀. 그러니까 꺼지고 귀찮게 하지 마.";
 				else
@@ -597,12 +596,12 @@ void ProcessDialogEvent()
 				link.l1 = "알겠어...";
 				link.l1.go = "exit";
 			}
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 		break;
 
 		case "pirate_threat_pay":
 			iGPThreatRate = 0;
 			iGPThreat = 0;
-			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iJackmanTotalTemp);
 			DialogExit();
 			PiratesDecreaseNotif("");

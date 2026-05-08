@@ -1,0 +1,36 @@
+effects_title {Resultados da história}
+SkillExp_1 {$ctx(p1) recebeu experiência: $key($ctx(p2))}
+SkillExp_pchar_1 {Você recebeu experiência: $key($ctx(p1))}
+Loyality_0 {$ctx(p1) está descontente}
+Loyality_1 {$ctx(p1) está satisfeito}
+CrewMorale_pchar_0 {O moral da tripulação $MoraleStrDiff($ctx(value))}
+CrewMorale_pchar_1 {O moral da tripulação $MoraleStrDiff($ctx(value))}
+Reputation_pchar_0 {A reputação caiu}
+Reputation_pchar_1 {A reputação aumentou}
+CrewExp_pchar_1 {$key($ctx(p1)) receberam experiência}
+Money_pchar_1 {Você recebeu $money($ctx(value))}
+Money_pchar_0 {Você entregou $abs($money($ctx(value)))}
+Goods_pchar_1 {Você recebeu _$key($goodI($ctx(p1))Acc): $number($ctx(value))}
+Goods_pchar_0 {Você entregou _$key($goodI($ctx(p1))Acc): $abs($number($ctx(value)))}
+NationRelation_pchar_0 {As relações com $key($nationI($ctx(p1))Abl) pioraram}
+NationRelation_pchar_1 {As relações com $key($nationI($ctx(p1))Abl) melhoraram}
+ItemsCabin_0 {Você entregou item: $GetItemName($ctx(p1)) x $abs($number($ctx(value)))}
+ItemsCabin_1 {Você recebeu item: $GetItemName($ctx(p1)) x $number($ctx(value))}
+Items_pchar_0 {Você entregou item: $GetItemName($ctx(p1)) x $abs($number($ctx(value)))}
+Items_pchar_1 {Você recebeu item: $GetItemName($ctx(p1)) x $number($ctx(value))}
+TempModifier_pchar_0 {$key($ctx(p1)|modifiers.txt) $percent($ctx(value)) por $days($ctx(duration))}
+TempModifier_pchar_1 {$key($ctx(p1)|modifiers.txt) +$percent($ctx(value)) por $days($ctx(duration))}
+moraleDiff_up3 {aumentou bastante}
+moraleDiff_up2 {aumentou}
+moraleDiff_up1 {aumentou um pouco}
+moraleDiff_stay {não mudou}
+moraleDiff_down3 {caiu bastante}
+moraleDiff_down2 {caiu}
+moraleDiff_down1 {caiu um pouco}
+FractionRelation_0 {As relações com $key($ctx(p1)Abl) pioraram}
+FractionRelation_1 {As relações com $key($ctx(p1)Abl) melhoraram}
+CrewQty_pchar_0 {Membros da tripulação perdidos: $abs($number($ctx(value)))}
+CrewQty_pchar_1 {Novos membros da tripulação: $number($ctx(value))}
+NoEffectsStory {Sem consequências}
+LoyalityAll_1 {Seus oficiais agora estão mais leais}
+LoyalityAll_0 {Seus oficiais agora estão menos leais}

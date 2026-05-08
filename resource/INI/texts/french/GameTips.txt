@@ -1,0 +1,67 @@
+Tip0 {Red Mary est très jalouse.}
+Tip1 {Helen est extrêmement superstitieuse — comme tout pirate.}
+Tip10 {Surveillez les archétypes ennemis : ils sont affichés à côté des barres de santé et d'énergie.}
+Tip11 {Mieux vaut ne pas bloquer les attaques des escrimeurs — elles percent trop facilement la garde. Il est plus sûr de parer.}
+Tip12 {Les mousquetaires infligent des dégâts colossaux. Éliminez-les en premier.}
+Tip13 {Un tir rapide est plus faible qu'un tir ajusté. C'est le prix de la vitesse.}
+Tip14 {Les Amulets de combat sont particulièrement puissants lorsqu'ils sont combinés entre eux. Choisissez-les avec soin.}
+Tip15 {Les armes à feu repoussent à l'impact — utilisez cela pour garder vos distances.}
+Tip16 {Un mousquet en main ralentit fortement les déplacements. Une lame dégainée aussi, mais moins.}
+Tip17 {Vous vous déplacez nettement plus lentement en arrière et sur les côtés qu'en avant, mais vous ne perdez pas l'ennemi de vue.}
+Tip18 {De nombreux ennemis savent empoisonner au combat. Ayez toujours des antidotes sur vous.}
+Tip19 {Chaque arme a ses propres particularités — choisissez-la en fonction de vos perks et de vos skills.}
+Tip2 {Alonso n'aime pas parler de son passé.}
+Tip20 {Avec les voiles de combat, le navire tourne le plus vite.}
+Tip21 {Le roulis, les virages et la vitesse du navire influencent fortement la précision du tir des canons.}
+Tip22 {Si vous manquez souvent vos tirs de canon, réduisez la distance.}
+Tip23 {Les skills « Armes » et « Précision » influencent à la fois le tir à la troisième personne et le mode visée.}
+Tip24 {Les navires en train de sombrer n'infligent pas de dégâts à l'éperonnage — ne les craignez pas.}
+Tip25 {Un tir précis de boulet ramé dans un mât peut l'abattre. Si les voiles sont déjà endommagées, les chances augmentent.}
+Tip26 {Avec une large supériorité numérique, un navire ennemi peut se rendre dès la tentative d'abordage.}
+Tip27 {Couler des navires pirates réduit la menace pirate et rend les Caraïbes plus sûres.}
+Tip28 {Les officiers sans le perk « Captain » ne peuvent commander que des navires jusqu'à la 4e classe.}
+Tip29 {Les traits de navire sont utiles dans différentes situations — choisissez-les selon votre style de jeu.}
+Tip3 {N'oubliez pas : dégainer votre pistolet est toujours plus rapide que recharger votre mousquet.}
+Tip30 {Les forts peuvent être détruits en tirant sur les murs, mais toucher les embrasures accélère le processus.}
+Tip31 {En fuyant, les navires peuvent jeter des marchandises par-dessus bord. Approchez-vous pour récupérer la cargaison.}
+Tip32 {Les canons s'usent avec le temps. Gardez-en quelques-uns en réserve.}
+Tip33 {Les différents projectiles ont des portées différentes. Le boulet plein porte le plus loin, la mitraille le moins.}
+Tip34 {Les boulets pleins sont universels. Prenez du boulet ramé pour les voiles et les mâts, de la mitraille contre l'équipage, et des bombes contre la coque.}
+Tip35 {Lisez attentivement les dialogues — ils contiennent parfois des informations uniques.}
+Tip36 {Si une colonie est prise après un siège réussi, vos dépôts et vos navires au port seront perdus.}
+Tip37 {Interrogez les habitants et les ivrognes au sujet des rumeurs — ils savent souvent beaucoup de choses intéressantes.}
+Tip38 {Chercher des trésors rapporte. Cherchez le vendeur de cartes au trésor à la taverne.}
+Tip39 {Fadey Moskovit, Loxley et l'abbé Benoit peuvent vous débarrasser d'une prime sur votre tête.}
+Tip4 {Les Caraïbes ne manquent pas d'étranges personnages. On raconte qu'il y a ici un prêtre qui risque plus de vous égarer que de vous guider.}
+Tip40 {Avec l'aide des barons pirates, vous pouvez réduire temporairement la menace pirate.}
+Tip41 {Les Amulets se détruisent si vous les retirez du personnage. Réfléchissez à votre build à l'avance.}
+Tip42 {Les Wards peuvent être retirés et remis autant que vous voulez. Ils ne se détruisent pas et durent éternellement.}
+Tip43 {Gardez des armes de rechange à bord : chaque matelot mort emporte la sienne dans la tombe.}
+Tip44 {Avant de quitter le port, assurez-vous d'avoir assez de rhum, de médicaments et de vivres pour toute la traversée.}
+Tip45 {Les rats sont le fléau du marin. On peut s'en débarrasser avec de l'arsenic ou une magie ancienne.}
+Tip46 {Les donjons peuvent être très labyrinthiques. Si vous vous perdez, suivez le mur de droite.}
+Tip47 {Vous pouvez jeter des objets depuis l'inventaire. Parfois, il est utile de se débarrasser du bric-à-brac trop lourd.}
+Tip48 {Les perks peuvent être réinitialisés en buvant une potion spéciale. N'ayez pas peur d'expérimenter avec vos builds.}
+Tip49 {Les trésors, les boutiquiers et les gardiens de cimetière sont de bonnes sources d'ingrédients d'artisanat. Rendez-leur souvent visite.}
+Tip5 {La compétence d'arme de mêlée réduit le coût en énergie des attaques.}
+Tip50 {Les navires peuvent être laissés à l'administration portuaire avec leur équipage et leur officier.}
+Tip51 {Dans les chantiers navals des colonies capitales, vous pouvez louer un entrepôt pour stocker en toute sécurité des marchandises et des canons de navire.}
+Tip52 {Si le fort de la colonie est clairement trop puissant pour vous, essayez d'attaquer la ville par la terre. La garnison urbaine est sensiblement plus faible, mais le butin sera aussi moindre.}
+Tip53 {En pleine mer, on peut trouver des barils à la dérive. Ils peuvent contenir des objets de valeur ou de la camelote - c'est toujours une surprise.}
+Tip54 {Toute attaque peut être parée. Si vous maîtrisez bien cette technique, vous pourrez gagner n'importe quel duel.}
+Tip55 {Parfois, les courants marins apportent des cadeaux inattendus à ceux qui se promènent dans des criques isolées.}
+Tip56 {Les améthystes n'aident pas contre l'ivresse. Sérieusement.}
+Tip57 {En cas d'urgence, n'importe quel officier peut être affecté au poste d'abordage. Une armée de moutons menée par un lion vaincra une armée de lions menée par un mouton.}
+Tip58 {Les gouverneurs et les capitaines ne sont pas étrangers aux jeux d'argent non plus, mais ne comptez pas sur eux pour jouer avec des inconnus.}
+Tip59 {Dans une situation critique, vous pouvez intégrer des esclaves à l'équipage. Cela mine le moral de l'équipage, mais permet de le recompléter rapidement.}
+Tip6 {La surcharge et l'ivresse infligent des pénalités aux compétences.}
+Tip60 {Si la garde vous surprend en train de traiter avec des contrebandiers, il est parfois plus simple de graisser la patte. C'est une approche pragmatique.}
+Tip61 {Fabriquer des objets fait passer du temps en jeu. Il est parfois plus avantageux de fabriquer que de dormir sans but dans une taverne.}
+Tip62 {Réparer un navire au chantier naval fait passer du temps en jeu. Gardez-le à l'esprit lorsque vous êtes pressé.}
+Tip63 {En cas d'urgence, n'importe quel officier peut être affecté au poste d'abordage. Une armée de moutons menée par un lion vaincra une armée de lions menée par un mouton.}
+Tip64 {Les colonies de l'Archipel cachent dix histoires urbaines uniques. Parlez plus souvent aux habitants dans les rues et ne soyez pas avare de rhum pour les ivrognes dans les tavernes.}
+Tip65 {Vous pouvez commander vos abordeurs au combat. Essayez de leur donner des ordres à l'aide des touches de raccourci.}
+Tip66 {Certains perks ont des effets différents pour le personnage principal et les officiers.}
+Tip7 {Les potions rendent la santé lentement — n'espérez pas vous en sortir en restant en garde.}
+Tip8 {Si vous êtes encerclé, le meilleur moyen de vous dégager est une ruée de côté.}
+Tip9 {Les armes lourdes consomment plus d'énergie, mais frappent plus fort.}

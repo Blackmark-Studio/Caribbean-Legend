@@ -524,8 +524,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Meeting_2":
+			if (SZN_CheckContrabandDialog(&Dialog, &Link)) break;	
 			Dialog.Text = "Per cosa?";
-			Link.l1 = "Forse, saresti interessato a qualche merce speciale? O forse, hai qualcosa da offrirmi in cambio?"Link.l1.go ="Meeting_3";				
+			Link.l1 = "Forse, saresti interessato a qualche merce speciale? O forse, hai qualcosa da offrirmi in cambio?";
 			Link.l1.go = "Meeting_3";
 		break;
 
@@ -857,7 +858,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(sld, "blade_04");
 			EquipCharacterbyItem(sld, "blade_04");
 			LAi_SetCitizenType(sld);
-			sld.dialog.Filename = "Common_citizen.c";
+			sld.dialog.Filename = "Population/Townman.c";
 			sld.dialog.currentnode = "First time";	
 			sld.greeting = "cit_common"; 
 			sld.city = pchar.questTemp.Shadowtrader.City;

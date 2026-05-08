@@ -671,15 +671,13 @@ void SetShipOTHERTable(string _tabName, ref _chr)
 		GameInterface.(_tabName).tr4.td3.color = argb(255,128,255,255);
 	}
 
-	GameInterface.(_tabName).tr5.UserData.ID = "AgainstWind";
+	GameInterface.(_tabName).tr5.UserData.ID = "rig";
 	GameInterface.(_tabName).tr5.td1.icon.group = "EQUIP_ICONS";
     GameInterface.(_tabName).tr5.td1.icon.image = "AgainstWind";
-	GameInterface.(_tabName).tr5.td2.str = XI_ConvertString("AgainstWind");
+	GameInterface.(_tabName).tr5.td2.str = XI_ConvertString("Rig");
+	GameInterface.(_tabName).tr5.td3.str = XI_ConvertString(GetRigType(_chr));
 	
-	fTmp = acos(1.0 - FindShipWindAgainstSpeed(_chr)) * 180.0/PI;
-	GameInterface.(_tabName).tr5.td3.str = makeint(180.0 - fTmp) + " / " + (makeint(fTmp));
-	
-	if (!CheckAttribute(&RealShips[iShip], "Tuning.WindAgainst")) 
+	if (!CheckAttribute(&RealShips[iShip], "Tuning.rig")) 
 	{
 		GameInterface.(_tabName).tr5.td3.color = ARGB_Color("white");
 	}
@@ -724,7 +722,7 @@ void SetShipOTHERTable(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr8.td2.str = XI_ConvertString("sCannons"); //XI_ConvertString("Caliber");
 	GameInterface.(_tabName).tr8.td3.str = XI_ConvertString("caliber" + refBaseShip.MaxCaliber) + " / " + sti(refBaseShip.CannonsQuantity);
 	
-	if (!CheckAttribute(&RealShips[iShip], "Tuning.Cannon")) 
+	if (int(refBaseShip.CannonsQuantity) < int(refBaseShip.CannonsQuantityMax))//   !CheckAttribute(&RealShips[iShip], "Tuning.Cannon")) 
 	{
 		GameInterface.(_tabName).tr8.td3.color = ARGB_Color("white");
 	}
@@ -812,11 +810,44 @@ void SetFoodShipInfoShort(ref chr, string _textName)
 	}
 }
 
+void SetMedicamentShipInfo(ref _character, string _node, string format = "")
+{
+	int color, rum;
+	string text;
+	
+	SetFormatedText(_node, "");
+	
+	if(sti(_character.ship.type) != SHIP_NOTUSED)
+	{
+		text = format == "short" ? "" : XI_ConvertString("MedicamentShipInfo");
+		rum = CalculateShipMedicament(_character);
+		text = text + FindRussianDaysString(rum);
+		SetFormatedText(_node, text);
+		
+		if(rum < 3)
+		{
+			color = argb(255, 255, 192, 192);
+		}
+		
+		if(rum >= 3)
+		{
+			color = argb(255, 255, 255, 192);
+		}
+		
+		if(rum >= 10)
+		{
+			color = argb(255, 192, 255, 192);
+		}
+		
+		SendMessage(&GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, _node, 8, -1, color);	
+	}
+}
+
 // Warship 11.07.09 Вывести в текстовое поле инфу о количестве дней, на сколько хватит рому на судне
 void SetRumShipInfo(ref _character, String _node)
 {
 	int color, rum;
-	String text;
+	string text;
 	
 	SetFormatedText(_node, "");
 	
@@ -849,7 +880,7 @@ void SetRumShipInfo(ref _character, String _node)
 void SetRumShipInfoShort(ref _character, String _node)
 {
 	int color, rum;
-	String text;
+	string text;
 	
 	SetFormatedText(_node, "");
 	

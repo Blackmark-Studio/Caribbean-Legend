@@ -1,0 +1,203 @@
+Abilities {Abilità}
+Alchemy {Alchimia}
+BattleInterfaceControls {interfaccia battaglia}
+BI_MapEnter {Mappa globale}
+BICommands {Menù azioni}
+BICommandsActivate {Apri menu azioni}
+BICommandsCancel {Annulla comando}
+BICommandsCancel2 {Annulla comando (alternativo)}
+BICommandsConfirm {Seleziona comando}
+BICommandsConfirm2 {Seleziona comando (alternativo)}
+BICommandsDown {Menu Azioni: giù}
+BICommandsLeft {Menu Azioni: sinistra}
+BICommandsLeftW {Menu Azioni: sinistra (alternativo)}
+BICommandsRight {Menu Azioni: destra}
+BICommandsRightW {Menu Azioni: destra (alternativo)}
+BICommandsUp {Menu Azioni: su}
+BIFastCommand {Azione rapida}
+BOAL_ActivateRush {Usa la tintura di Ometochtli}
+BOAL_DeadSearch {Saccheggio del cadavere}
+BOAL_UsePotion {Bevi un elisir di salute}
+BulletChanger {Cambia munizioni}
+CannonsRange {Portata dei cannoni}
+ChangeShowInterface {Nascondi/mostra l'interfaccia utente}
+CharacterCamera_Backward {Camera zoom indietro}
+CharacterCamera_Forward {Camera zoom avanti}
+ChrAction {Esegui l'azione}
+ChrAiming {Puntare (tenere premuto)}
+ChrAimingShot {Sparare durante la mira}
+ChrAltAttackBase {Colpo/Attacco di gruppo}
+ChrAttackBase {Affondo/Parata}
+ChrAttackBreak {Attacco pesante}
+ChrAttackBreakBase {Attacco pesante}
+ChrAttackChoseBase {Modalità scherma}
+ChrAttackFast {Colpo duro}
+ChrAttackFient {Finta (alternativa)}
+ChrAttackForce {Affondo}
+ChrAttackRound {Attacco di gruppo}
+ChrAttackRoundBase {Attacco di gruppo}
+ChrBackward {Muoversi indietro}
+ChrBackward1 {Muoversi indietro}
+ChrBlock {Ferma}
+ChrBlockBase {Bloccare}
+ChrCamCameraRadius {Zoom della Camera}
+ChrCamCameraSwitch {Modalità fotocamera}
+ChrCamNormalize {Camera centrale}
+ChrCamTurnH {Movimento orizzontale della telecamera seguendo il personaggio}
+ChrCamTurnV {Movimento verticale della telecamera seguendo il personaggio}
+ChrFightMode {Attiva/disattiva la modalità combattimento}
+ChrFire {Fuoco}
+ChrForward {Andare avanti}
+ChrForward1 {Andare avanti}
+ChrForward2 {Andare avanti (alternativo)}
+ChrParry {Parata (alternativa)}
+ChrRecoil {Torna indietro}
+ChrRunStick {Cammina/Corri}
+ChrSprint {Sprint}
+ChrStrafeLeft {Passo a sinistra}
+ChrStrafeRight {Passo a destra}
+ChrSwitchFightMode {Cambiare modalità combattimento}
+ChrSwitchWalk {Cammina/Corri}
+ChrTurnH {Rotazione dei personaggi}
+ChrTurnHL {Ruota il personaggio a sinistra}
+ChrTurnHR {Ruota il personaggio a destra}
+ChrTurnV {Movimento dei personaggi}
+DeckCamera_Backward {Indietro (vista ponte)}
+DeckCamera_Forward {Avanti (vista ponte)}
+DeckCamera_Left {Mitraglia a sinistra (vista ponte)}
+DeckCamera_Right {Muoviti verso destra (vista ponte)}
+DeckCamera_Turn_H {Rotazione orizzontale della Camera (vista ponte)}
+DeckCamera_Turn_V {Rotazione verticale della Camera (vista ponte)}
+DialogControls {Dialoghi}
+DlgAction {Rispondi in una finestra di dialogo}
+DlgAction1 {Rispondi in una finestra di dialogo}
+DlgDown {Risposta successiva in una finestra di dialogo}
+DlgScrollDown {Scorri la finestra di dialogo verso l'alto}
+DlgScrollUp {Scorri la finestra di dialogo verso il basso}
+DlgUp {Risposta precedente in una finestra di dialogo}
+Dolly {Teletrasporto}
+Fast_bank {Viaggio veloce: usuraio}
+Fast_brothel {Viaggio veloce: bordello}
+Fast_church {Viaggio veloce: Chiesa}
+Fast_port {Viaggio veloce: porto}
+Fast_portoffice {Viaggio veloce: Autorità Portuale}
+Fast_prison {Viaggio veloce: prigione}
+Fast_shipyard {Fast Viaggio: Cantiere navale}
+Fast_store {Viaggio veloce: mercato}
+Fast_tavern {Viaggio veloce: Taverna}
+Fast_townhall {Viaggio veloce: municipio}
+FightModeControls {Modalità combattimento}
+FireCamera_Set {Vista di puntamento}
+FireMode_Direct {Ordine di fuoco - Da prua a poppa}
+FireMode_Random {Ordine di fuoco - Libero}
+FireMode_Reverse {Ordine di fuoco - Da poppa a prua}
+FLT_LoadBalls {Comando della flotta: carica i cannoni con palle di cannone}
+FLT_LoadBombs {Comando della flotta: caricare i cannoni con le bombe}
+FLT_LoadChain {Comando della flotta: carica i cannoni con colpi a catena}
+FLT_LoadGrapes {Comando della flotta: carica i cannoni con la mitraglia}
+FLT_LowerSails {Comando della flotta: ammainare le vele}
+FLT_ProtFlagship {Comando della flotta: proteggere l'ammiraglia}
+FLT_SailAway {Comando della flotta: salpare}
+FreeCam {Free Camera}
+Help {Guida}
+HelpChooser {Seleziona la guida}
+HelpChooser_Action {Mostra la guida per l'elemento corrente}
+HelpChooser_Cancel {Esci dalla guida}
+HelpChooser_Down {Giù (in modalità guida)}
+HelpChooser_Left {Sinistra (in modalità guida)}
+HelpChooser_Next {Elemento di aiuto successivo}
+HelpChooser_Prev {Elemento di aiuto precedente}
+HelpChooser_Right {Destra (in modalità guida)}
+HelpChooser_Up {Su (in modalità guida)}
+HK_bullet {Caricare un'arma da fuoco con un proiettile (modificato)}
+hk_Cabin {Scendi in cabina}
+HK_cartridge {Caricare un'arma con una cartuccia di carta (modificato)}
+hk_charge1 {Carica i cannoni con le palle}
+hk_charge2 {Carica i cannoni con la mitraglia}
+hk_charge3 {Carica i cannoni con colpi a catena}
+hk_charge4 {Carica i cannoni con le bombe}
+hk_Cure {Usa una miscela curativa}
+HK_FencingH {Equipaggia un'arma pesante}
+HK_FencingL {Equipaggia un'arma leggera}
+HK_FencingS {Equipaggia un'arma media}
+HK_grapeshot {Caricare un'arma da fuoco con pallettoni (modificato)}
+HK_grenade {Caricare un'arma da fuoco con una granata (modificato)}
+HK_GunEchin {Caricare un'arma da fuoco con una carica di riccio (modificato)}
+HK_harpoon {Caricare un'arma da fuoco con una freccia (modificato)}
+hk_ImmediateReload {Ricarica immediata}
+hk_InstantRepair {Attiva la riparazione}
+hk_LightRepair {Attiva la riparazione semplificata}
+hk_Mine {Lancia}
+HK_Musket {Equipaggia il moschetto}
+hk_Rush {Usa l'abilità "Furia".}
+hk_SandbankManeuver {Attiva le manovre del banco di sabbia}
+hk_Turn180 {Girati di 180}
+Interface {Menù personaggio}
+InterfaceTakeAll {Prendi tutto}
+Inventory {Inventario}
+LI_Fast_bank {Banca}
+LI_Fast_brothel {Bordello}
+LI_Fast_church {Chiesa}
+LI_Fast_port {Porto}
+LI_Fast_portoffice {Ufficio portuale}
+LI_Fast_prison {Prigione}
+LI_Fast_shipyard {Cantiere navale}
+LI_Fast_store {Mercato}
+LI_Fast_tavern {Taverna}
+LI_Fast_townhall {Municipio}
+LICommandsActivate {Apri menu azioni}
+MainInterface {Controlli interfaccia}
+MainMenu {Menù principale}
+MainMenuDouble {Menu principale}
+MapView {Atlante}
+MiniMapZoomIn {Ingrandisci la minimappa}
+MiniMapZoomOut {Rimpicciolisci la minimappa}
+Nations {Nazioni}
+newLine
+{
+
+}
+OfficersCharge {Ordine agli ufficiali: combattere a volontà}
+OfficersFollow {Ordine agli ufficiali: inseguiteli}
+OfficersHold {Ordine agli ufficiali: mantenete la posizione}
+PotionChanger {Cambia pozione}
+PrimaryLand {Controlli a terra}
+QuestBook {Diario di bordo}
+Sailing1Pers {Mare in prima persona}
+Sailing3Pers {Mare in terza persona}
+Sea_CameraSwitch {Attiva/disattiva la telecamera dietro/ponte}
+Ship_Fire {Spara una salva}
+Ship_SailDown {Ammainare le vele}
+Ship_SailUp {Issare le vele}
+Ship_TurnLeft {Vira a sinistra}
+Ship_TurnRight {Vira a destra}
+ShipCamera_Backward {Rimpicciolisci}
+ShipCamera_Forward {Ingrandire}
+ShipCamera_Turn_H {Movimento orizzontale della Camera che segue la nave}
+ShipCamera_Turn_V {Movimento verticale della Camera che segue la nave}
+ShipState {Navi}
+SwitchCameraOffset {Vista Camera}
+TelescopeMode { }
+TelescopeZoomIn { }
+TelescopeZoomOut { }
+TimeScale {Time speed up/slow down}
+TimeScaleFasterBA {Time speed up}
+TimeScaleOff {Disattiva accelerazione}
+TimeScaleOn {Accelera il tempo}
+TimeScaleSlowerBA {Time slow down}
+Ultimate_potion {Bevi una pozione indiana}
+UseAntidote {Bevi un antidoto}
+WMapBackward {Diminuisci zoom}
+WMapCameraRotate {Modalità di scorrimento/rotazione della fotocamera attivata}
+WMapCameraSwitch {Attiva/disattiva la modalità di visualizzazione}
+WMapCancel {Esci dalla mappa,a mare}
+WMapDrawCircle {Area di combattimento}
+WMapForward {Ingrandisci zoom}
+WMapShipSailDown {Naviga indietro}
+WMapShipSailUp {Naviga avanti}
+WMapShipTurnLeft {Vira a sinistra}
+WMapShipTurnRight {Vira a destra}
+WMapTurnH {Ruota la telecamera attorno alla nave (in modalità mappa)}
+WMapTurnV {Altezza della telecamera (in modalità mappa)}
+WorldMapControls {Mappa del mondo}
+Rest {Riposo}

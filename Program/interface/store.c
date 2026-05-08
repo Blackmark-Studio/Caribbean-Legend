@@ -246,7 +246,7 @@ void AddToTable()
         row = "tr" + n;
 		sGood = Goods[i].name;
 		makearef(refGoods,refStore.Goods.(sGood));
-        tradeType = MakeInt(refGoods.TradeType);
+        tradeType = GetGoodTradeType(&refGoods);
         if (tradeType == T_TYPE_CANNONS) continue; // не пушки
         
 		sShipQ = GetCargoGoods(refCharacter, i);
@@ -392,7 +392,7 @@ void ShowHelpHint()
 	// sText3 = XI_ConvertString("GoodsColor3");
 	// sText4 = XI_ConvertString("GoodsColor4");
 		
-	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, sText4, sPicture, sGroup, sGroupPicture, 64, 64, false);
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, sText4, sPicture, sGroup, sGroupPicture, 64, 64, false, false);
 }
 
 void HideInfoWindow()
@@ -623,6 +623,8 @@ void ShowGoodsInfo(int iGoodIndex)
 
 	SetNewGroupPicture("QTY_GOODS_PICTURE", "GOODS", GoodName);	
 	SetFormatedText("QTY_CAPTION", sHeader);
+	SetFormatedText("TRADE_TYPE", xiStr("tradeType_" + goods[iGoodIndex].type));
+
     SetFormatedText("QTY_GOODS_INFO", goodsDescr);
 
 	iShipQty = GetCargoGoods(refCharacter, iGoodIndex);
@@ -641,7 +643,7 @@ void ShowGoodsInfo(int iGoodIndex)
 	BuyOrSell = 0;
 
     // Продаёт игрок (PRICE_TYPE_SELL)
-	if (MakeInt(refStore.Goods.(GoodName).TradeType) == T_TYPE_CONTRABAND)
+	if (GetGoodTradeTypeAref(refStore, "Goods." + GoodName) == T_TYPE_CONTRABAND)
 	{
 	    iStorePrice = 0;
 	    SetFormatedText("QTY_INFO_STORE_PRICE", XI_ConvertString("Price sell") + NewStr() + "-");
@@ -659,7 +661,7 @@ void ShowGoodsInfo(int iGoodIndex)
 	}
 
     // Продаёт магазин (PRICE_TYPE_BUY)
-	if ((MakeInt(refStore.Goods.(GoodName).TradeType) == T_TYPE_AMMUNITION) && (refStore.Colony == "none"))
+	if ((GetGoodTradeTypeAref(refStore, "Goods." + GoodName) == T_TYPE_AMMUNITION) && (refStore.Colony == "none"))
 	{
 	    iShipPrice = 0;
 	    SetFormatedText("QTY_INFO_SHIP_PRICE", XI_ConvertString("Price buy") + NewStr() + "-");
@@ -675,28 +677,30 @@ void ShowGoodsInfo(int iGoodIndex)
 
 void ShowFoodInfo()
 {
-	if(iCurGoodsIdx == GOOD_FOOD)
+	if (iCurGoodsIdx == GOOD_FOOD)
 	{
 		// чтоб прикинуть как оно будет, скинем на время колво на продажное
 		SetCharacterGoods(refCharacter, GOOD_FOOD, iShipQty + BuyOrSell*sti(GameInterface.qty_edit.str));
 		SetFoodShipInfo(refCharacter, "FOOD_SHIP");
 		SetCharacterGoods(refCharacter, GOOD_FOOD, iShipQty);
 	}
-	else
+	else if (iCurGoodsIdx == GOOD_RUM) // Warship 11.07.09 На сколько хватит рому
 	{
-		if(iCurGoodsIdx == GOOD_RUM) // Warship 11.07.09 На сколько хватит рому
-		{
-			// чтоб прикинуть как оно будет, скинем на время колво на продажное
-			SetCharacterGoods(refCharacter, GOOD_RUM, iShipQty + BuyOrSell*sti(GameInterface.qty_edit.str));
-			SetRumShipInfo(refCharacter, "FOOD_SHIP");
-			SetCharacterGoods(refCharacter, GOOD_RUM, iShipQty);
-		}
-		else
-		{
-			SetFormatedText("FOOD_SHIP", "");
-		}
+		// чтоб прикинуть как оно будет, скинем на время колво на продажное
+		SetCharacterGoods(refCharacter, GOOD_RUM, iShipQty + BuyOrSell*sti(GameInterface.qty_edit.str));
+		SetRumShipInfo(refCharacter, "FOOD_SHIP");
+		SetCharacterGoods(refCharacter, GOOD_RUM, iShipQty);
 	}
+	else if (iCurGoodsIdx == GOOD_MEDICAMENT) // Warship 11.07.09 На сколько хватит рому
+	{
+		// чтоб прикинуть как оно будет, скинем на время колво на продажное
+		SetCharacterGoods(refCharacter, GOOD_MEDICAMENT, iShipQty + BuyOrSell*sti(GameInterface.qty_edit.str));
+		SetMedicamentShipInfo(refCharacter, "FOOD_SHIP");
+		SetCharacterGoods(refCharacter, GOOD_MEDICAMENT, iShipQty);
+	}
+	else SetFormatedText("FOOD_SHIP", "");
 }
+
 void TransactionOK()
 {
 	int nTradeQuantity, moneyback;
@@ -800,7 +804,7 @@ void ChangeQTY_EDIT()
 		    	GameInterface.qty_edit.str = -sti(GameInterface.qty_edit.str);
 		    }
             BuyOrSell = -1;
-            if (MakeInt(refStore.Goods.(GoodName).TradeType) == T_TYPE_CONTRABAND)
+            if (GetGoodTradeTypeAref(refStore, "Goods." + GoodName) == T_TYPE_CONTRABAND)
             {  // контрабанду нельзя продать
                 GameInterface.qty_edit.str = 0;
             }
@@ -835,7 +839,7 @@ void ChangeQTY_EDIT()
 		else
 		{
             // не нужно у кэпов в море пукупать порох и ядра, а то потом они беззащитны
-			if ((MakeInt(refStore.Goods.(GoodName).TradeType) == T_TYPE_AMMUNITION) && (refStore.Colony == "none"))
+			if ((GetGoodTradeTypeAref(refStore, "Goods." + GoodName) == T_TYPE_AMMUNITION) && (refStore.Colony == "none"))
             {
                 GameInterface.qty_edit.str = 0;
             }
@@ -992,7 +996,7 @@ void BulkSale(bool isSellAll)
 	{
 		string sGood = Goods[i].name;
 		makearef(refGoods, refStore.Goods.(sGood));
-		tradeType = sti(refGoods.TradeType);
+		tradeType = GetGoodTradeType(&refGoods);
 		if (tradeType == T_TYPE_CANNONS) continue;                             // не пушки
 		if (tradeType == T_TYPE_CONTRABAND) continue;                          // не контрабанда
 

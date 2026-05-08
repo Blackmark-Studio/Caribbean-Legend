@@ -36,6 +36,8 @@ void ProcessDialogEvent()
 				LAi_group_MoveCharacter(sld, sGroup);
 				LAi_RemoveCheckMinHP(sld);
 				LAi_SetImmortal(sld, false);
+				if("quest.agressive" in npchar)
+					sld.quest.agressive = true;
 			}
 			LAi_group_SetRelation(sGroup, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 			LAi_group_FightGroups(sGroup, LAI_GROUP_PLAYER, true);
@@ -106,6 +108,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_2_2":
+			npchar.quest.agressive = true;
 			dialog.text = RandPhraseSimple("Du lügst, bleichgesichtiger Hund! Du bist hierher gekommen um Indianer zu töten! Bist du bereit für den Kampf, bleichgesicht?!","Du tötest Indianer. Weiße Zunge ist lügende Zunge. Ich schneide sie ab und brate sie über dem Feuer!");
 			link.l1 = RandPhraseSimple("Nun, Kumpel, mach mir dann keine Vorwürfe. Gott weiß, ich habe versucht, es zu vermeiden...","Nun, du hast danach gefragt, Krieger.");
 			link.l1.go = "exit_fight";
@@ -123,6 +126,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
+				npchar.quest.agressive = true;
 				dialog.text = "Du hast nicht, was wir wollen, bleichgesicht... Du wirst unsere Kriegstrophäe sein!";
 				link.l1 = "Versuche es, wenn du dich traust, Vogelscheuche...";
 				link.l1.go = "exit_fight";
@@ -130,6 +134,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_3_2":
+			npchar.quest.agressive = true;
 			dialog.text = RandPhraseSimple("Wir handeln nicht mit bleichgesichtigen Hunden. Wir töten und nehmen!","Wir sind keine dreckigen Miskito oder Arawaks, wir handeln nicht mit Bleichgesichtern! Wir töten sie und holen uns Kriegstrophäen!");
 			link.l1 = RandPhraseSimple("Nun, dann versuche mich auszurauben, Schurke!","Zuerst musst du mir mein Säbel abnehmen, du Abschaum!");
 			link.l1.go = "exit_fight";
@@ -340,6 +345,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
+				npchar.quest.agressive = true;
 				dialog.text = "Dann nehmen wir alles kostenlos, Bleichgesicht!";
 				link.l1 = "Du kannst es versuchen...";
 				link.l1.go = "exit_fight";

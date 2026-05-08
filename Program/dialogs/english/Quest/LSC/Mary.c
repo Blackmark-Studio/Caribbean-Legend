@@ -88,7 +88,8 @@ void ProcessDialogEvent()
 			PlaySound("Voice\English\LSC\Mary Casper-04.wav");
 			dialog.text = "What did you say...? Damn it, you're no ordinary robber! He's working for the Admiral! Put him down, lads!";
 			link.l1 = "...";
-			link.l1.go = "Cabin_fight";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("LSC_Cabin_fight");
 		break;
 		
 	// ---------------------------------покушение на Акулу - вариант N --------------------------------

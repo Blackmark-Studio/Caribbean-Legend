@@ -1,0 +1,18 @@
+condition_legendGuide
+{
+如果您关注了
+Caribbean Legend
+页面，该物品将出现在游戏中
+}
+condition_mushket_indian
+{
+如果您拥有
+Caribbean Legend: Age of Pirates，该物品将出现在放贷人处
+}
+noRewardYetMessage
+{
+该奖励尚未推出，
+敬请关注后续更新！
+}
+steamButtonAlreadyGot {已领取}
+steamButtonGet {获取}

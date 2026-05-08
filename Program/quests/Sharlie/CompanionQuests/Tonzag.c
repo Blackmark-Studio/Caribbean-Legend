@@ -392,7 +392,7 @@ void Tonzag_GetOut() {
 	UpgradeShipParameter(sld, "SpeedRate");
 	UpgradeShipParameter(sld, "TurnRate");
 	UpgradeShipParameter(sld, "HP");
-	UpgradeShipParameter(sld, "WindAgainstSpeed");
+	UpgradeShipParameter(sld, "Rig");
 	UpgradeShipParameter(sld, "Capacity");
 	UpgradeShipParameter(sld, "MaxCrew");
 	UpgradeShipParameter(sld, "Cannons");
@@ -429,7 +429,7 @@ void Tonzag_SpawnBrander() {
 	SetShipSkill(sld, 30, 10, 10, 10, 100, 10, 10, 10, 10);
 	UpgradeShipParameter(sld, "SpeedRate");
 	UpgradeShipParameter(sld, "Capacity");
-	UpgradeShipParameter(sld, "WindAgainstSpeed");
+	UpgradeShipParameter(sld, "Rig");
 	UpgradeShipParameter(sld, "TurnRate");
 	
 	ref ship = GetRealShip(sld.ship.type);

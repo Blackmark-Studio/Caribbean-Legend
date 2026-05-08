@@ -202,7 +202,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "NationLicenceType2":
-			iSumm = sti(npchar.LicenceType) * (3000 + MOD_SKILL_ENEMY_RATE*500);
+			iSumm = LICENSE_GetPrice(npchar.LicenceType);
         	dialog.text = "Итак, торговая лицензия " + XI_ConvertString(Nations[sti(npchar.LicenceNation)].Name + "Gen") + " сроком на " + sti(npchar.LicenceType) + " дней, цена " + FindRussianMoneyString(iSumm) + ".";
 		    link.l1 = "Меня устраивает.";
 		    if(makeint(Pchar.money) < iSumm)
@@ -218,7 +218,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "NationLicenceType3":
-            iSumm = sti(npchar.LicenceType) * (3000 + MOD_SKILL_ENEMY_RATE*500);
+            iSumm = LICENSE_GetPrice(npchar.LicenceType);
 			dialog.text = "Вот ваш документ. Входить в порт нужно под дружественным флагом. Помните, патруль может проверить, не просрочена ли лицензия.";
 			link.l9 = "Спасибо.";
 			link.l9.go = "exit";

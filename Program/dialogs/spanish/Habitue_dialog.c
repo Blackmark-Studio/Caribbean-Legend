@@ -134,8 +134,8 @@ void ProcessDialogEvent()
 							Dialog.text = RandPhraseSimple("¿Una partida de cartas, tal vez? ¡Un juego muy interesante!", "Sugiero jugar una partida de cartas. ¿Qué dices?");
 							link.l1 = "¿Y por qué no? Claro, juguemos.";
 							link.l1.go = "Cards_begin";
-							link.l2 = "¿Y cuáles son las reglas de tu juego?";
-							link.l2.go = "Cards_Rule";
+							// link.l2 = "¿Y cuáles son las reglas de tu juego?";
+							// link.l2.go = "Cards_Rule";
 							link.l3 = "No ahora.";
 							link.l3.go = "exit";
 						}
@@ -156,8 +156,8 @@ void ProcessDialogEvent()
 							Dialog.text = RandPhraseSimple("¿Una partida de dados, tal vez? ¡Un juego muy interesante!", "Sugiero lanzar algunos dados. ¿Qué dirás?");
 							link.l1 = "¿Y por qué no? Claro, juguemos.";
 							link.l1.go = "Dice_begin";
-							link.l2 = "¿Y cuáles son las reglas de tu juego?";
-							link.l2.go = "Dice_Rule";
+							// link.l2 = "¿Y cuáles son las reglas de tu juego?";
+							// link.l2.go = "Dice_Rule";
 							link.l3 = "No ahora.";
 							link.l3.go = "exit";
 						}
@@ -200,7 +200,7 @@ void ProcessDialogEvent()
 
 	// карты -->
 	case "Cards_Rule":
-		dialog.text = CARDS_RULE;
+		dialog.text = GlobalStringConvert("CARDS_RULE");
 		link.l1 = "Bueno, entonces comencemos...";
 		link.l1.go = "Cards_begin";
 		link.l3 = "No, no es para mí...";
@@ -299,7 +299,7 @@ void ProcessDialogEvent()
 	// карты <--
 	// КОСТИ -->
 	case "Dice_Rule":
-		dialog.text = DICE_RULE;
+		dialog.text = GlobalStringConvert("DICE_RULE");
 		link.l1 = "Bueno, comencemos entonces...";
 		link.l1.go = "Dice_begin";
 		link.l3 = "No, no es para mí...";

@@ -723,7 +723,7 @@ void ProcessDialogEvent()
 		
 		case "BM_IronsThirdJungle_29":
 			dialog.text = "Nie. Ale nie jest trudno się dowiedzieć. Zapytamy pijaków - sprzedaliby własną matkę, gdybyś kupił im drinka lub dwa. No, co myślisz o moim planie?";
-			if (GetSummonSkillFromName(pchar, SKILL_ACCURACY) > 24 && GetSummonSkillFromName(pchar, SKILL_GRAPPLING) > 24 && GetSummonSkillFromName(pchar, SKILL_SAILING) > 24)
+			if (GetSummonSkillFromName(pchar, SKILL_ACCURACY) > 4 && GetSummonSkillFromName(pchar, SKILL_GRAPPLING) > 4 && GetSummonSkillFromName(pchar, SKILL_SAILING) > 4)
 			{
 				link.l1 = "Jeśli jest kapitanem statku płynącego na Jamajkę, cały czas patroluje wody wyspy. Atakowanie pod fałszywą banderą jest lepsze niż próbowanie czegokolwiek w mieście.";
 				link.l1.go = "BM_IronsThirdJungle_Sea1";	// Морской вариант

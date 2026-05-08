@@ -357,16 +357,6 @@ void ProcessDialogEvent()
 		break;
 
 		case "market":
-//navy -->
-			//занят ПГГ
-			if (CheckFreeServiceForNPC(NPChar, "Store") != -1)	 // to_do имя сунуть
-			{
-				dialog.text = "申し訳ありませんが、今はとても忙しいのです。お客様が多くて！また明日お越しください。";
-				link.l1 = "「おや、本当かい？それじゃあ、また後で来るとするか。」";
-				link.l1.go = "exit";
-				break;
-			}
-//navy <--
 			dialog.text = RandPhraseSimple("丸玉、帆布、薬、上質な木材、その他の商品も取り揃えております！何にご興味がありますか？","砂糖や香辛料を買いたいのか？それともラム酒や火薬か？");
 			link.l1 = pcharrepphrase(LinkRandPhrase("俺の船倉には戦利品が山ほどあるぜ！金に匂いなんてねえだろ？","俺の船倉の戦利品を全部降ろして、お前の金でいっぱいにしてやるぜ。ははっ！","ああ、お前が満杯のドゥブロン金貨一袋のためなら母親でも売る奴だってことは知ってるぜ！だが、 俺はただ補給品を補充したいだけなんだ。"),LinkRandPhrase("俺の積み荷を売って、補給品を補充したいんだ。","販売用の商品を購入したい。","大砲の弾や爆弾、そういったものを見せてくれ。"));
 			link.l1.go = "trade_1";
@@ -665,19 +655,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_5":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage)); 
-			NPChar.Storage.NoActivate = true;
-			DeleteAttribute(NPChar,"Storage.Activate");
+			LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
 			DialogExit();
 		break;
 		
 		case "storage_6":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			DeleteAttribute(NPChar,"Storage.Activate");
-			NPChar.Storage.NoActivate = true;
+			LeaveStorage(NPChar, rColony);
 			DialogExit();
-		break;		
+		break;
 
 		case "business":
 			iTest = 0;			
@@ -753,17 +738,6 @@ void ProcessDialogEvent()
 			}
 			// <-- генератор Место под солнцем
 			
-//navy -->
-			//занят ПГГ
-			iTmp = CheckAvailableTaskForNPC(NPChar, PGG_TASK_WORKONSTORE);
-			if (iTmp != -1)
-			{
-				dialog.text = "仕事があったんだが、 "+GetFullName(&Characters[iTmp])+" すでに私のためにそれを引き受けてくれている。";
-				link.l1 = "「おや、本当かい？じゃあ、また後で来るとするか。」";
-				link.l1.go = "exit";
-				break;
-			}
-//navy <--
 			dialog.text = NPCharRepPhrase(npchar,"「何の用だって！？全部話せ！」","聞いているぞ。どんな取引の話だ？");
             ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
             if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
@@ -830,11 +804,8 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if(!CheckAttribute(NPChar,"Storage.NoActivate"))
-						{
-							link.l7 = "失礼、旦那――もしかして倉庫を貸してたりしませんか？";
-							link.l7.go = "storage_01";
-						}	
+						link.l7 = "失礼、旦那――もしかして倉庫を貸してたりしませんか？";
+						link.l7.go = "storage_01";
 					}
 				}				
 				// <-- ugeen

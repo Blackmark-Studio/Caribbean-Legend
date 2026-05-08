@@ -1,0 +1,49 @@
+Node0_title {Terra à vista!}
+Node0_a_a {Ao passar ao largo de $key($ctx(islandName)Gen), vocês avistam na areia um $rand(brigue|polaca). O casco jaz de lado, o mastro está quebrado e na porão há um rombo enorme, pelo qual se veem caixotes e barris. Não há viva alma por perto.$br$redAo se aproximarem mais, vocês notam sinais de luta na areia e vários corpos estendidos junto à carcaça do navio. A costa aqui é medonha - manchas claras à beira d'água, as ondas se quebram em linhas irregulares — é fácil encalhar e acabar se juntando a essa parada forçada.}
+Node0_a_a_action {Atracar e vasculhar}
+Node0_a_a_success {Vocês conseguem achar um trecho fundo na linha da costa e atracar. O navio evidentemente foi lançado à praia durante a tempestade. Por milagre não afundou por causa do rombo monstruoso abaixo da linha d'água, mas já não tem conserto.$br$redDentro do navio, há mercadorias encharcadas sem valor algum.$br$red Na cabine do capitão, vocês encontram dinheiro e joias, mas o que incomoda é não haver viva alma por perto.}
+Node0_a_a_success_action {Espero que tenham sobrevivido}
+Node0_a_a_fail {Vocês tentam achar um ponto adequado nos recortes da costa, mas batem num recife e o navio começa a fazer água.$br$redVocês gastam todo o resto do dia reparando o rombo e concluem que o navio lançado à praia não valia esse trabalho.}
+Node0_a_a_fail_action {É uma experiência útil}
+Node0_a_b_action {Baixar os escaleres!}
+Node0_a_b_success {Vocês decidem usar um expediente empregado em abordagens e cercos de colônias. Desembarcar um destacamento sem atracar é uma manobra arriscada, e vocês esperam que renda em dobro e mais um pouco.$br$redEstá claro que o navio foi lançado à praia durante a tempestade. Por milagre não afundou por causa do rombo monstruoso abaixo da linha d'água, mas já não tem conserto.$br$redDentro do navio, há mercadorias encharcadas sem valor algum. Sua companhia de abordagem revira o casco enquanto você se concentra na cabine.$br$redAlgumas horas depois, vocês se reúnem junto aos escaleres na praia, contando o saque. Os marinheiros entregam a sua parte, e você a junta aos valores encontrados na cabine.}
+Node0_a_b_success_action {É bom ser capitão}
+Node0_a_c_action {Melhor não arriscar}
+Node0_a_c_success {Vocês decidem que tentar atracar numa costa tão perigosa não vale o risco, e pilhagem também não é motivo de honra entre sua tripulação. Vocês deixam o local do naufrágio para trás, a popa.}
+Node0_a_c_success_action {肝心なのは仲間入りしないこと}
+Node0_a_b {Ao passar ao largo de $key($ctx(islandName)Gen), vocês avistam na selva luzes quase imperceptíveis. Não parecem em nada reflexos de fogueiras ou tochas, e isso logo chama sua atenção.$br$redQuando se aproximam, uma chalupa carregada de fardos se torna visível sobre a água, presa à margem em plena escuridão. Vocês não veem ninguém, mas é claro que eles estão por aqui.}
+Node0_b_a_action {Roubar a chalupa}
+Node0_b_a_success {Vocês conseguem se aproximar da praia às escondidas com um pequeno destacamento e roubam a chalupa. Numa inspeção rápida, descobrem que os fardos contêm café, tabaco e um pouco de seda naval. Está claro que vocês estragaram o negócio dos contrabandistas.}
+Node0_b_a_success_action {O que era de vocês agora é nosso}
+Node0_b_a_fail {Vocês conseguem se aproximar da embarcação sem serem notados, mas na hora de soltá-la acabam chamando atenção demais, e homens surgem da selva. Eles entendem tudo na mesma hora e abrem fogo.$br$redSegue-se uma luta curta, na qual vocês perdem alguns homens da companhia de abordagem. A carga da chalupa também é danificada, e só dá para salvar alguns fardos de seda naval.}
+Node0_b_a_fail_action {Melhor do que nada}
+Node0_b_b_action {Espantar os contrabandistas}
+Node0_b_b_success {Vocês mandam abrir fogo com os canhões do navio para obrigar os homens a se esconderem na selva. Quando se convencem de que a praia está limpa, desembarcam com a companhia de abordagem e revistam os suprimentos abandonados.$br$redNa embarcação há um pouco de tabaco, café e seda naval. Nas caixas da praia vocês encontram mais um pouco dessas mesmas mercadorias.}
+Node0_b_b_success_action {Fácil demais}
+Node0_b_c_action {Seguir viagem}
+Node0_b_c_success {Vocês decidem não desafiar a sorte e seguem viagem, deixando os contrabandistas para trás, a popa.}
+Node0_b_c_success_action { }
+Node0_a_c {Vocês já passaram tantas vezes pelas costas de $key($ctx(islandName)Gen) que elas quase lhes parecem familiares. Por isso mesmo, a fumaça que se enrosca sobre a selva soa ainda mais estranha - espessa, constante e vinda de vários focos ao mesmo tempo.$br$redAo longo da praia, vocês veem barcos de pesca e varas, um sem-número de pegadas e marcas de algo pesado sendo arrastado. Quanto mais se aproximam, mais nítido fica no ar o aroma de peixe e carne defumados, e o estômago responde na mesma hora.}
+Node0_c_a_action {Umas provisões cairiam muito bem}
+Node0_c_a_action_tooltip_bad {Para isso vai ser preciso dinheiro...}
+Node0_c_a_success {Vocês dão um tiro de festim de canhão e sinalizam para os pescadores que saem ao ouvir o estampido. A princípio eles os olham com cautela, mas o saco de prata em sua mão desfaz logo o mal-entendido. Eles carregam um dos barcos com peixe e sobem a bordo.$br$redPor um valor bem modesto, vocês compram um lote inteiro de peixe e carne defumados. Os marinheiros trocam histórias com os pescadores e lhes dão balas e pólvora sobrando para a caça. Tudo isso faz muito bem à tripulação.}
+Node0_c_a_success_action {Gostoso e proveitoso}
+Node0_c_b_action {Então aqui é bom de pesca?}
+Node0_c_b_success {Você ordena $rand(lançar âncora e sair em busca de mantimentos|fundear e tratar de conseguir provisões). Os marinheiros $rand(pegam lanças e varas de pesca|apanham lanças e apetrechos de pesca), e $rand(várias chalupas são postas na água|algumas chalupas seguem para a água). Você $rand(observa toda aquela movimentação|fica olhando toda aquela agitação) e, depois de $rand(algum tempo|um tempo), decide $rand(se juntar a eles|descer até eles).$br$red A pescaria $rand(se mostra bastante proveitosa|corre excepcionalmente bem), e a visão do capitão $rand(pescando ao lado dos marinheiros|que pesca junto dos marinheiros) $rand(anima a tripulação|eleva o moral da tripulação).}
+Node0_c_b_success_action {Dádivas da natureza}
+Node0_c_c_action {Não vamos constrangê-los}
+Node0_c_c_success {Você decide não interferir no que está acontecendo e ordena seguir viagem. Para trás, além da popa, ficam os barquinhos de pesca e as águas cheias de peixe.}
+Node0_c_c_success_action {Eles precisam mais disso}
+Node0_a_d {Ao navegar ao largo de $key($ctx(islandName)Gen), você avista uma aldeia bem na beira da mata. $rand(Algumas choupanas, luzes fracas, canoas puxadas para a areia.|As choupanas ficam junto da floresta, luzes baças brilham junto à água, e canoas estão puxadas na areia.) Até a água descem $rand(trilhas batidas|trilhas estreitas), e na praia estão empilhados $rand(cestos e feixes de pau-santo|feixes de pau-santo e cestos); entre as árvores $rand(indígenas se apressam|há gente indo e vindo).$br$redAlonso diz que esta é terra dos $rand(Caribes|Taínos|Arawaks|Guaranis|Ciboneis), e que eles $rand(podem tanto ser amigos quanto inimigos|podem recebê-los de maneiras bem diferentes).}
+Node0_d_a_action {Vamos tentar negociar}
+Node0_d_a_success {Você lança âncora e desembarca. Os indígenas se espalham, mulheres e crianças largam os cestos, e os homens agarram as armas. Você se esforça para se mover bem devagar, mostrando as palmas abertas.$br$redVocê vê incompreensão, mas não ameaça. Tomando isso como uma boa abertura, mostra os adornos e joias que trouxe consigo e propõe trocar esses presentes por pau-santo.$br$redOs indígenas entendem sua intenção, baixam as armas e levam seus tesouros. O pau-santo é carregado para o seu navio.}
+Node0_d_a_success_action {Por pouco deu certo}
+Node0_d_a_fail {Você lança âncora e desembarca. Os indígenas se espalham, mulheres e crianças largam os cestos, e os homens agarram as armas. Você se esforça para se mover devagar, mostrando as palmas abertas.$br$redMas algo em sua postura os provoca, e flechas e dardos vêm em sua direção. Você responde com algumas descargas desordenadas e recua até as chalupas. Ninguém morre nesse confronto, mas o ressentimento fica.}
+Node0_d_a_fail_action {Malditos pagãos}
+Node0_d_b_action {O Senhor reconhecerá os seus}
+Node0_d_b_success {Você decide que a incerteza pode deixá-lo em posição vulnerável e ordena preparar o ataque. A companhia de abordagem embarca nas chalupas, armada até os dentes, enquanto os artilheiros preparam os canhões para abrir fogo.$br$redA luta começa depressa e com sangue: o fogo da artilharia dispersa os indígenas, e as salvas de mosquete derrubam os que hesitam. Parece que a carnificina acabou, quando de repente flechas voam da selva — a aldeia se revela maior do que parecia do mar. Segue-se uma luta sangrenta.$br$redNessa chacina, você perde alguns homens, mas a maior parte da companhia de abordagem sobrevive. Agora o pau-santo é seu.}
+Node0_d_b_success_action {Bem valeu a pena}
+Node0_d_c_action {Não vamos arriscar}
+Node0_d_c_success {Você decide que o risco é grande demais e que não vale a pena azedar agora as relações com os indígenas. A aldeia costeira fica para trás, além da popa.}
+Node0_d_c_success_action {Que fiquem em paz}
+Node0_MissingTreasures {Vão ser precisos adornos e espelhos...}

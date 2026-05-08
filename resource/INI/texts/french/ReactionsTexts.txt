@@ -1,13 +1,5 @@
 NoLootCorpse0 {Les poches de ce type sont aussi vides qu'un vaisseau fantôme.}
 NoLootCorpse1 {Il semble qu'il n'avait rien de précieux.}
-NoLootCorpse2 {Les poches de celui-ci sont vides.}
-NoLootCorpse3 {Ai-je raté quelque chose ? Non, c'est définitivement vide.}
-NoLootCorpse4 {Un autre homme mort sans le moindre sou.}
-NoLootCorpse5 {On dirait qu'il a vécu avec de l'argent emprunté.}
-NoLootCorpse6 {Ce cadavre ne peut même pas payer le passeur.}
-NoLootCorpse7 {Pas de grenaille de rechange, pas de poudre. J'ai perdu mon temps.}
-NoLootCorpse8 {Pas une pièce dans ses poches, ni dans sa chemise.}
-NoLootCorpse9 {Il était très pauvre, il n'avait même pas une seule pièce.}
 NoLootCorpse10 {Pourquoi me suis-je donné la peine ? Celui-là est vide.}
 NoLootCorpse11 {Ses poches ne sont qu'un vide béant.}
 NoLootCorpse12 {Rien ici. Peut-être des poches cachées ?}
@@ -18,4 +10,12 @@ NoLootCorpse16 {Le pauvre diable est parti au combat en voyageant léger.}
 NoLootCorpse17 {Il s'est armé avec ses dernières pièces.}
 NoLootCorpse18 {Un cadavre est un cadavre. Il n'y a rien ici.}
 NoLootCorpse19 {Il a dû laisser tous ses trésors dans un coffre.}
+NoLootCorpse2 {Les poches de celui-ci sont vides.}
 NoLootCorpse20 {Il semble qu'il ait perdu tous ses objets de valeur au cours du combat.}
+NoLootCorpse3 {Ai-je raté quelque chose ? Non, c'est définitivement vide.}
+NoLootCorpse4 {Un autre homme mort sans le moindre sou.}
+NoLootCorpse5 {On dirait qu'il a vécu avec de l'argent emprunté.}
+NoLootCorpse6 {Ce cadavre ne peut même pas payer le passeur.}
+NoLootCorpse7 {Pas de grenaille de rechange, pas de poudre. J'ai perdu mon temps.}
+NoLootCorpse8 {Pas une pièce dans ses poches, ni dans sa chemise.}
+NoLootCorpse9 {Il était très pauvre, il n'avait même pas une seule pièce.}

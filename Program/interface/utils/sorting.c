@@ -39,6 +39,7 @@ void QoLSortTable(string tableName, int column, string datatype, bool preserveSt
 	if (isAscend)	hr.(sAscend) = true;
 
 	string cellName = "td" + column;
+	bool hasRawData = CheckAttribute(&table, "tr1." + cellName + ".rawdata"); // показали форматированное значение, сохранили сырое для сортировки
 
 	switch (datatype)
 	{
@@ -46,19 +47,19 @@ void QoLSortTable(string tableName, int column, string datatype, bool preserveSt
 			SmartSort(table, "index", "int", isAscend, 0, "tr");
 		break;
 		case "string":
-			SmartSort(table, cellName+".str", "string", isAscend, offset, "tr");
+			SmartSort(table, cellName + (hasRawData ? ".rawdata" : ".str"), "string", isAscend, offset, "tr");
 		break;
 		case "floatEnd": // преобразуем в число с точкой, отрезав от строки offset символов с начала
-			SmartSort(table, cellName+".str", "float", isAscend, offset, "tr");
+			SmartSort(table, cellName + (hasRawData ? ".rawdata" : ".str"), "float", isAscend, offset, "tr");
 		break;
 		case "integer":
-			SmartSort(table, cellName+".str", "int", isAscend, offset, "tr");
+			SmartSort(table, cellName + (hasRawData ? ".rawdata" : ".str"), "int", isAscend, offset, "tr");
 		break;
 		case "float":
-			SmartSort(table, cellName+".str", "float", isAscend, offset, "tr");
+			SmartSort(table, cellName + (hasRawData ? ".rawdata" : ".str"), "float", isAscend, offset, "tr");
 		break;
 		case "date":
-			SmartSort(table, cellName+".str", "date", isAscend, offset, "tr");
+			SmartSort(table, cellName + (hasRawData ? ".rawdata" : ".str"), "date", isAscend, offset, "tr");
 		break;
 		case "intIcon":
 			SmartSort(table, cellName+".icon.image", "int", isAscend, offset, "tr");

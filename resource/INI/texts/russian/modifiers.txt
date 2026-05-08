@@ -1,10 +1,61 @@
-blade_critDamage {Крит-урон холодного оружия}
-gun_critDamage {Крит-урон пистолета}
-musket_critDamage {Крит-урон мушкета}
+bigCannonsAvailable {Доступны орудия больших калибров}
+BigCannonsAvailable_0 {Крупный калибр пушек не продаётся}
+BigCannonsAvailable_1 {Крупный калибр пушек есть в продаже}
 blade_critChance {Крит-шанс холодного оружия}
+blade_critDamage {Крит-урон холодного оружия}
+caribbeanGoodsCost {Стоимость колониальных товаров}
+caribbeanGoodsStock {Запасы колониальных товаров}
+contrabandTradeStatus_0 {Сделки с контрабандистами возможны}
+contrabandTradeStatus_1 {Сделки с контрабандистами невозможны}
+contrabandTradeStatus_2 {Сделки с контрабандистами осложнены}
+convenienceGoodsCost {Стоимость товаров повседневного спроса}
+convenienceGoodsStock {Запасы товаров повседневного спроса}
+crewExpMtp {Скорость набора опыта экипажа}
+crewHireCost {Стоимость найма матросов}
+crewHireMoraleMtp {Мораль наёмного экипажа}
+crewHiringExpMtp {Опыт наёмного экипажа}
+crewMaintenanceCost {Стоимость содержания матросов}
+crownGoodsCost {Стоимость коронных товаров}
+crownGoodsStock {Запасы коронных товаров}
+debitRate {Ставка по кредитам}
+depositGoldRate {Ставка по депозитам в дублонах}
+depositSilverRate {Ставка по депозитам в песо}
+drugConsumption {Расход лекарств}
+enemyHullDamageMtp {Урон корпусу вражеских кораблей}
+europeanGoodsCost {Стоимость европейских товаров}
+europeanGoodsStock {Запасы европейских товаров}
+exportPriceMtp {Цена экспорта}
+foodConsumption {Расход продовольствия}
+GlobalSpeed {Скорость корабля на глобальной карте}
+goldsilverGoodsAvailable_0 {Серебро и золото не продаются}
+goldsilverGoodsAvailable_1 {Серебро и золото есть в продаже}
 gun_critChance {Крит-шанс пистолета}
-musket_critChance {Крит-шанс мушкета}
-incomingDamageReduction {Защита от урона}
-RangeIncomingDamageReduction {Защита от урона огнестрела}
-Shot_Damage {Урон огнестрела}
+gun_critDamage {Крит-урон пистолета}
 HeadshotDamage {Урон от попадания в голову}
+importPriceMtp {Цена импорта}
+incomingDamageReduction {Защита от урона}
+legalContraband_0 {Контрабанда работает как обычно}
+legalContraband_1 {Контрабанда становится импортом}
+medicamentCost {Стоимость лекарств}
+minFortCannonsMtp {Порог уничтоженных орудий для штурма форта}
+moraleMtp {Прирост морали экипажа}
+musket_critChance {Крит-шанс мушкета}
+musket_critDamage {Крит-урон мушкета}
+nationsReputationMtp {Скорость изменения репутации у наций}
+RangeIncomingDamageReduction {Защита от урона огнестрела}
+recruitsMtp {Рекруты}
+repairCost {Цена ремонта на верфи}
+seaRepairEfficency {Эффективность ремонта в море}
+shipSpeedDynamic {Динамика набора скорости кораблём}
+shipyardCannonsStock {Запасы орудий на верфи}
+Shot_Damage {Урон огнестрела}
+slavesGoodsAvailable_0 {Рабы не продаются}
+slavesGoodsAvailable_1 {Рабы есть в продаже}
+stealthInceptionBonus {Шанс проникновения в город}
+stolenGoodsMtp {Уменьшение штрафа краденых товаров}
+stormDamageMtp {Урон от шторма}
+tradeLicenseCost {Стоимость торговой лицензии}
+uniqueGoodsAvailable_0 {Стратегические товары не продаются}
+uniqueGoodsAvailable_1 {Стратегические товары есть в продаже}
+uniqueGoodsStock {Запасы стратегических товаров}
+SquadronPower {Мощь эскадры}

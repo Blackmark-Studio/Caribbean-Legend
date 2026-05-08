@@ -179,6 +179,7 @@ void AddCharacterExpToSkill(ref _chref, string _skill, float _addValue)
 // Текущий бонус лидерства к содержанию офицеров и набора опыта
 float LVL_GetCurrentLeadershipBonusMtp(string _temp = "")
 {
+	if (bMainMenu) return GetPiratesMtp(LVL_MAX_LEADERSHIP_BONUS_MTP, PIRATES_A, 2.5, &NullCharacter);
 	return GetPiratesMtp(LVL_MAX_LEADERSHIP_BONUS_MTP, PIRATES_A, 2.5);
 }
 
@@ -220,7 +221,7 @@ float GetCharacterExpRate(ref _chref, string _skill)
     if (!CheckAttribute(_chref, "skill." + skill_rate))
     {
         float  divBy = 1.0;
-		float  fRateReg = 0.85;
+		float  fRateReg = 0.60;
 
         switch (_skill)
         {
@@ -270,14 +271,15 @@ float GetCharacterExpRate(ref _chref, string _skill)
         }
 		
 		int Skill_Val = GetSkillValue(_chref, SKILL_TYPE, _skill);
-		if(Skill_Val > 20 && Skill_Val < 36 ) fRateReg = 0.95;
-		else if(Skill_Val > 35 && Skill_Val < 51 ) fRateReg = 1.10;
-		else if(Skill_Val > 50 && Skill_Val < 66 ) fRateReg = 1.30;
-		else if(Skill_Val > 65 && Skill_Val < 76 ) fRateReg = 1.60;
-		else if(Skill_Val > 75 && Skill_Val < 86 ) fRateReg = 1.80;
-		else if(Skill_Val > 85 && Skill_Val < 95 ) fRateReg = 2.10;
-		else if(Skill_Val > 94 && Skill_Val < 99 ) fRateReg = 2.40;
-		else if(Skill_Val > 98) fRateReg = 10.00;
+        if(Skill_Val > 15 && Skill_Val < 26) fRateReg = 0.75;
+        else if(Skill_Val > 25 && Skill_Val < 36) fRateReg = 0.85;
+        else if(Skill_Val > 35 && Skill_Val < 51) fRateReg = 1.00;
+        else if(Skill_Val > 50 && Skill_Val < 66) fRateReg = 1.43;
+        else if(Skill_Val > 65 && Skill_Val < 76) fRateReg = 1.75;
+        else if(Skill_Val > 75 && Skill_Val < 86) fRateReg = 1.97;
+        else if(Skill_Val > 85 && Skill_Val < 95) fRateReg = 2.31;
+        else if(Skill_Val > 94 && Skill_Val < 99) fRateReg = 2.64;
+        else if(Skill_Val > 98) fRateReg = 10.00;
 		
         _chref.skill.(skill_rate) = makefloat(MOD_EXP_RATE / divBy)*fRateReg;
     }

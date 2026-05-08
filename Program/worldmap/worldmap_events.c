@@ -270,18 +270,6 @@ float wdmGetMoral()
 	return stf(iMorale);
 }
 
-#event_handler("WorldMap_GetFood", "wdmGetFood");
-float wdmGetFood()
-{
-	return makefloat(CalculateFood());
-}
-
-#event_handler("WorldMap_GetRum", "wdmGetRum");
-float wdmGetRum()
-{
-	return makefloat(CalculateShipRum(pchar));
-}
-
 //  квестовый отлов входа в море по наличию НПС в случайке
 void wdmEnterSeaQuest(string _chrId)
 {
@@ -331,4 +319,63 @@ string GetPlayerShipModel()
 		if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_AMSTERDAM) return "amsterdam_sp4_player";
 	}
 	return "Ship";
+}
+
+#event_handler("ShipInArea", "ShipInArea");
+void ShipInArea()
+{
+	string s = GetEventData();
+	ref rIsland = GetIslandByID(s);
+	if(!int(rIsland.visible))
+		s = "Open Sea";
+	if(s == "Open Sea")
+		s = XI_ConvertString(s);
+	else
+		s = GetConvertStr(s, "LocLables.txt");
+	WM_SetShipAreaInfo(s);
+}
+
+#event_handler("WorldMap_GetSeasonsRingAngle", "WorldMap_GetSeasonsRingAngle");
+float WorldMap_GetSeasonsRingAngle()
+{
+	int iMonth = GetDataMonth();
+	int numSeasonDays = 90;
+	int iSeason;
+	if(iMonth >= 3 && iMonth <= 5)
+	{
+		iSeason = 0;
+		numSeasonDays = GetMonthDays(3) + GetMonthDays(4) + GetMonthDays(5);
+	}
+	else if(iMonth >= 6 && iMonth <= 8)
+	{
+		iSeason = 1;
+		numSeasonDays = GetMonthDays(6) + GetMonthDays(7) + GetMonthDays(8);
+	}
+	else if(iMonth >= 9 && iMonth <= 11)
+	{
+		iSeason = 2;
+		numSeasonDays = GetMonthDays(9) + GetMonthDays(10) + GetMonthDays(11);
+	}
+	else
+	{
+		iSeason = 3;
+		numSeasonDays = GetMonthDays(12) + GetMonthDays(1) + GetMonthDays(2);
+	}
+	int curSeasonDay = 1;
+	switch(iMonth)
+	{
+		case 1:		curSeasonDay = GetMonthDays(12) + GetDataDay();							break;
+		case 2:		curSeasonDay = GetMonthDays(12) + GetMonthDays(1) + GetDataDay();		break;
+		case 3:		curSeasonDay = GetDataDay();											break;
+		case 4:		curSeasonDay = GetMonthDays(3) + GetDataDay();							break;
+		case 5:		curSeasonDay = GetMonthDays(3) + GetMonthDays(4) + GetDataDay();		break;
+		case 6:		curSeasonDay = GetDataDay();											break;
+		case 7:		curSeasonDay = GetMonthDays(6) + GetDataDay();							break;
+		case 8:		curSeasonDay = GetMonthDays(6) + GetMonthDays(7) + GetDataDay();		break;
+		case 9:		curSeasonDay = GetDataDay();											break;
+		case 10:	curSeasonDay = GetMonthDays(9) + GetDataDay();							break;
+		case 11:	curSeasonDay = GetMonthDays(9) + GetMonthDays(10) + GetDataDay();		break;
+		case 12:	curSeasonDay = GetDataDay();											break;
+	}
+	return (iSeason + float(curSeasonDay) / float(numSeasonDays)) * PId2;
 }

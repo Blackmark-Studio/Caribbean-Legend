@@ -1,0 +1,36 @@
+effects_title {物語の結末}
+SkillExp_1 {$ctx(p1)は経験値を獲得: $key($ctx(p2))}
+SkillExp_pchar_1 {経験値を獲得: $key($ctx(p1))}
+Loyality_0 {$ctx(p1)は不満を抱いている}
+Loyality_1 {$ctx(p1)は満足している}
+CrewMorale_pchar_0 {乗組員の士気が$MoraleStrDiff($ctx(value))}
+CrewMorale_pchar_1 {乗組員の士気が$MoraleStrDiff($ctx(value))}
+Reputation_pchar_0 {名声が下がった}
+Reputation_pchar_1 {名声が上がった}
+CrewExp_pchar_1 {$key($ctx(p1))は経験値を獲得}
+Money_pchar_1 {$money($ctx(value))を受け取った}
+Money_pchar_0 {$abs($money($ctx(value)))を支払った}
+Goods_pchar_1 {獲得: _$key($goodI($ctx(p1))Acc) $number($ctx(value))}
+Goods_pchar_0 {失った: _$key($goodI($ctx(p1))Acc) $abs($number($ctx(value)))}
+NationRelation_pchar_0 {$key($nationI($ctx(p1))Abl)との関係が悪化した}
+NationRelation_pchar_1 {$key($nationI($ctx(p1))Abl)との関係が改善した}
+ItemsCabin_0 {アイテムを失った: $GetItemName($ctx(p1)) x $abs($number($ctx(value)))}
+ItemsCabin_1 {アイテムを獲得: $GetItemName($ctx(p1)) x $number($ctx(value))}
+Items_pchar_0 {アイテムを失った: $GetItemName($ctx(p1)) x $abs($number($ctx(value)))}
+Items_pchar_1 {アイテムを獲得: $GetItemName($ctx(p1)) x $number($ctx(value))}
+TempModifier_pchar_0 {$key($ctx(p1)|modifiers.txt) $percent($ctx(value)) が $days($ctx(duration)) の間}
+TempModifier_pchar_1 {$key($ctx(p1)|modifiers.txt) +$percent($ctx(value)) が $days($ctx(duration)) の間}
+moraleDiff_up3 {大きく上がった}
+moraleDiff_up2 {上がった}
+moraleDiff_up1 {少し上がった}
+moraleDiff_stay {変わらなかった}
+moraleDiff_down3 {大きく下がった}
+moraleDiff_down2 {下がった}
+moraleDiff_down1 {少し下がった}
+FractionRelation_0 {$key($ctx(p1)Abl)との関係が悪化した}
+FractionRelation_1 {$key($ctx(p1)Abl)との関係が改善した}
+CrewQty_pchar_0 {失った乗組員: $abs($number($ctx(value)))}
+CrewQty_pchar_1 {新しい乗組員: $number($ctx(value))}
+NoEffectsStory {何事もなかった}
+LoyalityAll_1 {あなたの士官たちは以前より忠実になった}
+LoyalityAll_0 {あなたの士官たちは以前より忠実ではなくなった}

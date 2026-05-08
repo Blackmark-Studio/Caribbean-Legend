@@ -292,7 +292,7 @@ void ProcessDialogEvent()
 
 		case "Zaharia_3":
 			sld = CharacterFromID("PuertoPrincipe_tavernkeeper");
-			dialog.text = "「俺がお前を信じたのは間違いじゃなかったようだな」 "+sld.name+"。明日俺の部屋に来い、ドブロン銀貨を渡してやる。";
+			dialog.text = "「俺がお前を信じたのは間違いじゃなかったようだな」 "+sld.name+"。";
 			link.l1 = "...";
 			link.l1.go = "Zaharia_4";
 			CharacterTurnByChr(npchar, sld);
@@ -314,7 +314,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tavern_1":
-			dialog.text = "船長、その銘板の件ですが……";
+			dialog.text = "船長、こちらがあなたのダブロンです。あの銘板のことですが……";
 			link.l1 = "「何の銘板だ？ああ、それか……正直、そんな名誉はいらねえよ。俺のために気を遣うな。」";
 			link.l1.go = "Tavern_2";
 		break;
@@ -332,6 +332,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("OS", "5");
 			AddQuestUserData("OS", "sSex", GetSexPhrase("","а"));
 			pchar.questTemp.OS_Tavern_FreeBuhlo = true;
+			TakeNItems(pchar, "gold_dublon", 150);
 			ChangeShowIntarface();
 			
 			sld = CharacterFromID("PuertoPrincipe_tavernkeeper");

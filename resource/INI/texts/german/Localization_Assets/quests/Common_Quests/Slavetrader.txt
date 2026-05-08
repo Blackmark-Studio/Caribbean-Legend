@@ -1,12 +1,4 @@
 Slavetrader_1 {Erkundungsmodus: Timer verlängert. Beenden Sie die Quest!}
-Slavetrader_2 { }
-Slavetrader_3 { }
-Slavetrader_4 { }
-Slavetrader_5 { }
-Slavetrader_6 { }
-Slavetrader_7 { }
-Slavetrader_8 {Nabukee}
-Slavetrader_9 {Anaconda}
 Slavetrader_10 {von Caracas}
 Slavetrader_11 {von Cumana}
 Slavetrader_12 {Fransua}
@@ -17,6 +9,7 @@ Slavetrader_16 {an der Küste von Barbados}
 Slavetrader_17 {an der Küste von Guadeloupe}
 Slavetrader_18 {nicht weit von Santiago}
 Slavetrader_19 {nicht weit von Havana}
+Slavetrader_2 { }
 Slavetrader_20 {an der Küste von Tortuga}
 Slavetrader_21 {an der Küste von Trinidad}
 Slavetrader_22 {an der Küste von St. Christopher}
@@ -27,7 +20,14 @@ Slavetrader_26 {Tamango}
 Slavetrader_27 { }
 Slavetrader_28 {Sven}
 Slavetrader_29 {Carlson}
+Slavetrader_3 { }
 Slavetrader_30 {Janna}
 Slavetrader_31 {Mollery}
 Slavetrader_32 {Izaura}
 Slavetrader_33 { }
+Slavetrader_4 { }
+Slavetrader_5 { }
+Slavetrader_6 { }
+Slavetrader_7 { }
+Slavetrader_8 {Nabukee}
+Slavetrader_9 {Anaconda}

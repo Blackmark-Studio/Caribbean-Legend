@@ -1128,6 +1128,7 @@ int LocationInitAntigua(int n)
 	locations[n].image = "loading\Gate" + rand(1) + ".tga";
 	//Town sack
 	locations[n].townsack = "SentJons";
+	locations[n].fastreload = "SentJons";
 	//Sound
 	locations[n].type = "jungle";
 	locations[n].islandId = "Antigua";

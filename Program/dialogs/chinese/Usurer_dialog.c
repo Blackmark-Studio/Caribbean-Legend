@@ -920,7 +920,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Interest":
-		    Pchar.Quest.Loans.(NPC_Area).Interest = 4.0 + (makeint((((6.0 - 4.0) * (GetSummonSkillFromName(pchar, "Commerce") + GetSummonSkillFromName(pchar, "Leadership")) / 200) ) / 0.5 + 0.5)) * 0.5;
+		    Pchar.Quest.Loans.(NPC_Area).Interest = GetCreditRate();
 			//Pchar.Quest.Loans.(NPC_Area).Interest = 16 - makeint(Pchar.skill.commerce);
 			// Rebbebion, 添加了百分比符号显示修复
 			Dialog.snd = "voice\USDI\USDI020";

@@ -72,11 +72,6 @@ bool boal_soundOn = true;
 int rColor1, rColor2, rColor3, rColor4; // 1-2-центр/край заряжено, 3-4-центр/край разряжено
 float fblindUpTime, fblindDownTime; // время возрастания/убывания
 
-int numLine = 8; // количество строк в подсказках управления
-string sAttr = "";
-string sAttrDes = "";
-string sAttrB = "";
-
 #event_handler("evntRandomSailDmg","ProcessRandomSailDmg");
 #event_handler("evntGetSailStatus","procGetSailStatus");
 //#event_handler("NextDay","ProcessDayRepair");
@@ -86,6 +81,34 @@ string sAttrB = "";
 
 #event_handler(SHIP_CREATE,"BI_CreateShip");
 #event_handler("GetRiggingData","procGetRiggingData");
+
+#define BI_CTRL_LINES 9
+int numLine; 
+string sAttr = "";
+string sAttrDes = "";
+string sAttrB = "";
+
+void BI_SetKeyInfo(string sControl, string sDes = "", int i = 0)
+{
+    sAttr = "Con" + numLine;
+    sAttrDes = "Con" + numLine + "desc";
+    sAttrB = "Con" + numLine + "Back";
+    BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg(sControl);
+    switch (i)
+    {
+        case 0:
+            BattleInterface.textinfo.(sAttrDes).text = GetConvertStr((sDes == "") ? sControl : sDes, "ControlsNames.txt");
+            break;
+        case 1:
+            BattleInterface.textinfo.(sAttrDes).text = GetConvertStr(sDes, "AbilityDescribe.txt");
+            break;
+        case 2:
+            BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString(sDes);
+            break;
+    }
+    BattleInterface.textinfo.(sAttrB).text = "1" ;
+    numLine--;
+}
 
 void InitBattleInterface()
 {
@@ -148,7 +171,7 @@ void InitBattleInterface()
 
 	procLoadIntoNew(); // Проинитим таблицу активных перков
 	SetEventHandler("Control Activation","BI_ProcessControlPress",0);
-	SendMessage(&BattleInterface,"ll",BI_MSG_SHOW_EXT_INFO, bShowExtInfo());
+	BI_ShowExtInfo();
 	SendMessage(&BattleInterface,"ll",BI_MSG_SHOW_SHIP_STATES, bShowShipStates());
 	CreateILogAndActions(LOG_FOR_SEA);
 	ControlsDesc();	
@@ -352,7 +375,7 @@ void RefreshBattleInterface()
 	SendMessage(&BattleInterface,"l",BI_MSG_REFRESH);
 	BI_SetCommandMode(BI_COMMODE_MY_SHIP_SELECT,-1,-1,-1);
 	CannonsRangeRefresh();
-	SendMessage(&BattleInterface,"ll",BI_MSG_SHOW_EXT_INFO, bShowExtInfo());
+	BI_ShowExtInfo();
 }
 
 void CannonsRangeRefresh()
@@ -678,7 +701,7 @@ void BI_LaunchCommand()
     break;
 	
 	 case "BI_Bomb":
-        if (GetCargoGoods(chRef, GOOD_POWDER) >= 200 && GetRemovable(chRef)) SetMineFree(chRef, 1); // fix ugeen 21.12.13
+        if (GetCargoGoods(chRef, GOOD_POWDER) >= MINE_POWDER && GetRemovable(chRef)) SetMineFree(chRef, 1); // fix ugeen 21.12.13
 		else PlaySound("interface\knock.wav");
 		break;
 		
@@ -1539,6 +1562,7 @@ ref GetCurrentCharge()
 		BattleInterface.textinfo.Weapon.text = sti(pchar.ship.cargo.goods.weapon);
 		BattleInterface.textinfo.Planks.text = sti(pchar.ship.cargo.goods.planks);
 		BattleInterface.textinfo.Sailcloth.text = sti(pchar.ship.cargo.goods.sailcloth);
+        BattleInterface.textinfo.MineKey.text = GetKeyCodeImg("hk_Mine");
 		BattleInterface.textinfo.BallsKey.text = GetKeyCodeImg("hk_charge1");
 		BattleInterface.textinfo.GrapesKey.text = GetKeyCodeImg("hk_charge2");
 		BattleInterface.textinfo.KnippelsKey.text = GetKeyCodeImg("hk_charge3");
@@ -1558,6 +1582,7 @@ ref GetCurrentCharge()
 		BattleInterface.textinfo.Weapon.text = "";
 		BattleInterface.textinfo.Planks.text = "";
 		BattleInterface.textinfo.Sailcloth.text = "";
+        BattleInterface.textinfo.MineKey.text = "";
 		BattleInterface.textinfo.BallsKey.text = "";
 		BattleInterface.textinfo.GrapesKey.text = "";
 		BattleInterface.textinfo.KnippelsKey.text = "";
@@ -2001,7 +2026,10 @@ void SetParameterData()
 	BattleInterface.navigation.aspectRatio				= showWindow.aspectRatio;
 	BattleInterface.navigation.navigatorWidth			= RecalculateHIcon(makeint(256 * fHtRatio));
 	BattleInterface.navigation.navigatorHeight			= RecalculateVIcon(makeint(256 * fHtRatio));
+	BattleInterface.navigation.speedringWidth			= RecalculateHIcon(makeint(278 * fHtRatio));
+	BattleInterface.navigation.speedringHeight			= RecalculateVIcon(makeint(278 * fHtRatio));
 	BattleInterface.navigation.rightPos					= sti(showWindow.right) - RecalculateHIcon(makeint(20 * fHtRatio));
+	BattleInterface.navigation.speedRingScale = 1.05;
 
 	BattleInterface.navigation.speedShowFont			= "interface_normal";
 	if(iCompassPos) 
@@ -2023,7 +2051,7 @@ void SetParameterData()
 	BattleInterface.navigation.windHeight				= makeint(246 * fHtRatio);
 
     BattleInterface.navigation.compasTexture			= "interfaces\le\battle_interface\compass.tga.tx";
-    BattleInterface.navigation.emptyTexture				= "interfaces\le\battle_interface\indicators_dark_and_center_ship.tga.tx";
+    BattleInterface.navigation.emptyTexture				= "interfaces\le\battle_interface\indicators_dark_and_center_ship.tga";
     BattleInterface.navigation.windTexture				= "interfaces\le\battle_interface\wind_pointer.tga.tx";
 	BattleInterface.navigation.bestCourseTexture		= "interfaces\le\battle_interface\best_courseS.tga";
 
@@ -2035,7 +2063,7 @@ void SetParameterData()
 	BattleInterface.ammo.forwardChargeEndAngle	        = 378;
 	BattleInterface.ammo.backwardChargeBegAngle	        = 198;
 	BattleInterface.ammo.backwardChargeEndAngle	        = 162;
-	BattleInterface.navigation.mapRadius				= makeint(94 * fHtRatio);
+	BattleInterface.navigation.mapRadius				= makeint(104 * fHtRatio);
 	BattleInterface.navigation.horizontRadius			= 400;
 	BattleInterface.navigation.minScale					= 1;
 	BattleInterface.navigation.maxScale					= 10;
@@ -2115,9 +2143,9 @@ void SetParameterData()
 	BattleInterface.navigation.windTextureGreed			= "16,8";
 	if(iCompassPos)
 	{
-		BattleInterface.navigation.sailstatePos			= RecalculateHIcon(makeint(40 * fHtRatio))+","+RecalculateVIcon(makeint(215 * fHtRatio));
+		BattleInterface.navigation.sailstatePos			= RecalculateHIcon(makeint(40 * fHtRatio))+","+RecalculateVIcon(makeint(225 * fHtRatio));
 		BattleInterface.navigation.sailstatePictureSize	= RecalculateHIcon(makeint(50 * fHtRatio))+","+RecalculateVIcon(makeint(50 * fHtRatio));
-		BattleInterface.navigation.windPos				= RecalculateHIcon(makeint(-40 * fHtRatio))+","+RecalculateVIcon(makeint(215 * fHtRatio));
+		BattleInterface.navigation.windPos				= RecalculateHIcon(makeint(-40 * fHtRatio))+","+RecalculateVIcon(makeint(225 * fHtRatio));
 		BattleInterface.navigation.windPictureSize		= RecalculateHIcon(makeint(50 * fHtRatio))+","+RecalculateVIcon(makeint(50 * fHtRatio));
 	}
 	else
@@ -2146,7 +2174,7 @@ void SetParameterData()
 	BattleInterface.textinfo.Location.font = "interface_normal_bold";
 	BattleInterface.textinfo.Location.scale = 0.7 * fHtRatio;
 	BattleInterface.textinfo.Location.pos.x = sti(showWindow.right) - RecalculateHIcon(makeint(148 * fHtRatio));
-	if(iCompassPos) BattleInterface.textinfo.Location.pos.y = RecalculateVIcon(makeint(278 * fHtRatio));
+	if(iCompassPos) BattleInterface.textinfo.Location.pos.y = RecalculateVIcon(makeint(292 * fHtRatio));
 	else BattleInterface.textinfo.Location.pos.y = RecalculateVIcon(makeint(28 * fHtRatio));
 	BattleInterface.textinfo.Location.text = GetBILocationName();	// Display MoorName or region name in location
 	BattleInterface.textinfo.Location.refreshable = true;			// Enable updates
@@ -2154,7 +2182,7 @@ void SetParameterData()
 	BattleInterface.textinfo.Date.font = "interface_normal_bold";
 	BattleInterface.textinfo.Date.scale = 0.7 * fHtRatio;
 	BattleInterface.textinfo.Date.pos.x = sti(showWindow.right) - RecalculateHIcon(makeint(148 * fHtRatio));
-	if(iCompassPos) BattleInterface.textinfo.Date.pos.y = RecalculateVIcon(makeint(300 * fHtRatio));
+	if(iCompassPos) BattleInterface.textinfo.Date.pos.y = RecalculateVIcon(makeint(314 * fHtRatio));
 	else BattleInterface.textinfo.Date.pos.y = RecalculateVIcon(makeint(52 * fHtRatio));
 	BattleInterface.textinfo.Date.text = GetQuestBookData();//GetDataDay()+" "+XI_ConvertString("MonthGen_" + GetDataMonth())+" "+GetDataYear();
 	BattleInterface.textinfo.Date.refreshable = true;
@@ -2190,6 +2218,14 @@ void SetParameterData()
 	BattleInterface.textinfo.Bombs.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(125 * fHtRatio));
 	BattleInterface.textinfo.Bombs.text = 0;
 	BattleInterface.textinfo.Bombs.refreshable = true;
+
+	BattleInterface.textinfo.MineKey.font = "keyboard_symbol";
+	BattleInterface.textinfo.MineKey.scale = 0.6 * fHtRatio;
+	BattleInterface.textinfo.MineKey.color = argb(255,255,255,255);
+	BattleInterface.textinfo.MineKey.pos.x = sti(showWindow.right)/2 + RecalculateHIcon(makeint(64 * fHtRatio));
+	BattleInterface.textinfo.MineKey.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(75 * fHtRatio));
+	BattleInterface.textinfo.MineKey.text = GetKeyCodeImg("hk_Mine");
+	BattleInterface.textinfo.MineKey.refreshable = true;
 
 	BattleInterface.textinfo.BallsKey.font = "keyboard_symbol";
 	BattleInterface.textinfo.BallsKey.scale = 0.6 * fHtRatio;
@@ -2286,18 +2322,20 @@ void SetParameterData()
 	BattleInterface.textinfo.Cannonr.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(90 * fHtRatio));
 	BattleInterface.textinfo.Cannonr.text = "";
 	BattleInterface.textinfo.Cannonr.refreshable = true;
+	
+	BI_ResizeCannons();
 
 	// подсказки управления
-	for(numLine = 1; numLine <= 8; numline ++)
+	for(numLine = 1; numLine <= BI_CTRL_LINES; numline++)
 	{
 		sAttr = "Con"+numLine;
 		sAttrDes = "Con"+numLine+"desc";
 		sAttrB = "Con"+numLine+"Back";
-		
-		int boff = -125 + (numLine-1)*45;
-		int coff = -122 + (numLine-1)*45;
-		int doff = -119 + (numLine-1)*45;
-	
+
+		int boff = -176 + (numLine-1)*45;
+		int coff = -173 + (numLine-1)*45;
+		int doff = -170 + (numLine-1)*45;
+
 		BattleInterface.textinfo.(sAttrB).font = "Info_fader_ls";
 		BattleInterface.textinfo.(sAttrB).scale = 0.6 * fHtRatio;
 		BattleInterface.textinfo.(sAttrB).color = argb(155,255,255,255);
@@ -2306,7 +2344,7 @@ void SetParameterData()
 		BattleInterface.textinfo.(sAttrB).align = "left";
 		BattleInterface.textinfo.(sAttrB).text = "";
 		BattleInterface.textinfo.(sAttrB).refreshable = true;
-		
+
 		BattleInterface.textinfo.(sAttr).font = "KEYBOARD_SYMBOL";
 		BattleInterface.textinfo.(sAttr).scale = 0.9 * fHtRatio;
 		BattleInterface.textinfo.(sAttr).color = argb(255,255,255,255);
@@ -2314,7 +2352,7 @@ void SetParameterData()
 		BattleInterface.textinfo.(sAttr).pos.y = sti(showWindow.bottom)/4*3 + RecalculateVIcon(makeint(coff * fHtRatio));
 		BattleInterface.textinfo.(sAttr).text = "";
 		BattleInterface.textinfo.(sAttr).refreshable = true;
-		
+
 		BattleInterface.textinfo.(sAttrDes).font = "interface_normal";
 		BattleInterface.textinfo.(sAttrDes).scale = 1.3 * fHtRatio;
 		BattleInterface.textinfo.(sAttrDes).color = argb(255,255,255,255);
@@ -2324,12 +2362,16 @@ void SetParameterData()
 		BattleInterface.textinfo.(sAttrDes).text = "";
 		BattleInterface.textinfo.(sAttrDes).refreshable = true;
 	}
-	
-	if( CheckAttribute(&InterfaceStates,"ShowBattleMode") ) {
+
+	if (CheckAttribute(&InterfaceStates, "ShowBattleMode"))
+    {
 		BattleInterface.battleborder.used = InterfaceStates.ShowBattleMode;
-	} else {
+	}
+    else
+    {
 		BattleInterface.battleborder.used = false;
 	}
+
 	BattleInterface.battleborder.color1 = argb(125,255,255,255);
 	BattleInterface.battleborder.color2 = argb(35,255,255,255);
 	BattleInterface.battleborder.extpos = "0,0," + ShowWindow.right + "," + ShowWindow.bottom;
@@ -2341,7 +2383,7 @@ void SetParameterData()
 	float fRes = 0.85; // для ресайза компаньонов
 	BattleInterface.ShipIcon.sailorfontid			= "interface_normal";
 	BattleInterface.ShipIcon.sailorfontcolor		= argb(255,255,255,255);
-    BattleInterface.ShipIcon.mcsailorfontscale		= 1.5 * fHtRatio;																 
+    BattleInterface.ShipIcon.mcsailorfontscale		= 1.5 * fHtRatio;
     BattleInterface.ShipIcon.sailorfontscale		= 1.2 * fHtRatio;
     fTmp = makeint(0.0 * fHtRatio);
     fTmp2 = makeint(40.0 * fHtRatio);
@@ -3098,15 +3140,15 @@ float GetRepairGoods(bool bIsHull, ref chref)
 		fGoodsQ = GetCargoGoods(chref,GOOD_PLANKS);
 		if( CheckAttribute(chref,"RepairMaterials.forHull") )   // погрешность округления списания колва досок за процент
 		{	
-			fGoodsQ += stf(chref.RepairMaterials.forHull);
+			if (!HasSubStr(chref.RepairMaterials.forHull, "nan")) fGoodsQ += stf(chref.RepairMaterials.forHull);
 		}
 	}
 	else
 	{
 		fGoodsQ = GetCargoGoods(chref,GOOD_SAILCLOTH);
-		if( CheckAttribute(chref,"RepairMaterials.forSails") )
+		if( CheckAttribute(chref,"RepairMaterials.forSails"))
 		{	
-			fGoodsQ += stf(chref.RepairMaterials.forSails);
+			if (!HasSubStr(chref.RepairMaterials.forSails, "nan")) fGoodsQ += stf(chref.RepairMaterials.forSails);
 		}
 	}
 
@@ -3125,7 +3167,7 @@ void RemoveRepairGoods(bool bIsHull, ref chref, float matQ)
 		{
 			fGoodsQ -= matQ;
 			nGoodsQ = makeint(fGoodsQ);
-			chref.RepairMaterials.forHull = fGoodsQ - nGoodsQ;
+			chref.RepairMaterials.forHull = fGoodsQ - float(nGoodsQ);
 		}
 		SetCharacterGoods(chref,GOOD_PLANKS,nGoodsQ);
 	}
@@ -3136,7 +3178,7 @@ void RemoveRepairGoods(bool bIsHull, ref chref, float matQ)
 		{
 			fGoodsQ -= matQ;
 			nGoodsQ = makeint(fGoodsQ);
-			chref.RepairMaterials.forSails = fGoodsQ - nGoodsQ;
+			chref.RepairMaterials.forSails = fGoodsQ - float(nGoodsQ);
 		}
 		SetCharacterGoods(chref,GOOD_SAILCLOTH,nGoodsQ);
 	}
@@ -3449,9 +3491,10 @@ ref procCheckEnableShip()
 void BI_ProcessControlPress()
 {
 	string ControlName = GetEventData();
-	if( sti(InterfaceStates.Launched) != 0 ) {return;}
-	if(XI_IsKeyPressed("alt") && !CheckAttribute(&objControlsState,"keygroups.AltPressedGroup"+"."+ControlName)) return;
-	if(!XI_IsKeyPressed("alt") && CheckAttribute(&objControlsState,"keygroups.AltPressedGroup"+"."+ControlName)) return;
+	if (sti(InterfaceStates.Launched) != 0) return;
+	if (XI_IsKeyPressed("alt") && !CheckAttribute(&objControlsState,"keygroups.AltPressedGroup"+"."+ControlName)) return;
+	if (!XI_IsKeyPressed("alt") && CheckAttribute(&objControlsState,"keygroups.AltPressedGroup"+"."+ControlName)) return;
+
 	switch(ControlName)
 	{
 		case "hk_charge1":
@@ -3489,7 +3532,16 @@ void BI_ProcessControlPress()
 			}
 			else PlaySound("interface\knock.wav");
 		break;
-		
+
+        case "hk_Mine":
+            if (GetCargoGoods(PChar, GOOD_POWDER) >= MINE_POWDER)
+            {
+                SetMineFree(PChar, 1);
+                ControlsDesc();
+            }
+            else PlaySound("interface\knock.wav");
+        break;
+
 		case "hk_InstantRepair":
 			if(CheckInstantRepairCondition(pchar))
 			{
@@ -3597,6 +3649,8 @@ ref BI_GetLandData()
 	int iTmp;
 	string attrName;
 	aref arLoc, arIsl, arList;
+    bool bSmallPirateTown = false;
+
 	arLoc = GetEventData();
 
 	BI_intNRetValue[0] = 0;
@@ -3607,43 +3661,48 @@ ref BI_GetLandData()
 	BI_intNRetValue[5] = -1;
 	BI_intNRetValue[6] = 0;
 
-	if( CheckAttribute(arLoc,"fort.model") )
+	if (CheckAttribute(arLoc, "fort.model"))
 	{
 		BI_intNRetValue[0] = 1; // тип форт
-		int chrIdx = Fort_FindCharacter(AISea.Island,"reload",arLoc.name);
-		if(chrIdx>=0)
+		int chrIdx = Fort_FindCharacter(AISea.Island, "reload", arLoc.name);
+		if (chrIdx >= 0)
 		{
-			switch( SeaAI_GetRelation(chrIdx,nMainCharacterIndex) )
+			switch(SeaAI_GetRelation(chrIdx, nMainCharacterIndex))
 			{
-			case RELATION_FRIEND:	BI_intNRetValue[1] = BI_RELATION_FRIEND; break;
-			case RELATION_NEUTRAL:	BI_intNRetValue[1] = BI_RELATION_NEUTRAL; break;
-			case RELATION_ENEMY:	BI_intNRetValue[1] = BI_RELATION_ENEMY; break;
+                case RELATION_FRIEND:  BI_intNRetValue[1] = BI_RELATION_FRIEND;  break;
+                case RELATION_NEUTRAL: BI_intNRetValue[1] = BI_RELATION_NEUTRAL; break;
+                case RELATION_ENEMY:   BI_intNRetValue[1] = BI_RELATION_ENEMY;   break;
 			}
 			BI_intNRetValue[5] = chrIdx;
 		}
 	}
 	else
 	{
-		if( CheckAttribute(arLoc,"istown") && arLoc.istown=="1" )
+		if (CheckAttribute(arLoc, "istown") && arLoc.istown == "1")
 		{
-			iTmp = FindLocation( arLoc.go );
-			if( iTmp>=0 ) {
-				iTmp = FindColony( Locations[iTmp].fastreload );
-				if( iTmp>=0 ) {
+			iTmp = FindLocation(arLoc.go);
+			if (iTmp >= 0)
+            {
+				iTmp = FindColony(Locations[iTmp].fastreload);
+				if (iTmp >= 0)
+                {
+                    ref rColony = &Colonies[iTmp];
+                    int iNation = rColony.nation;
+                    bSmallPirateTown = iNation == PIRATE && "HasNoFort" in rColony && int(rColony.HasNoFort) == true;
 					BI_intNRetValue[0] = 2; // тип город
-					switch( GetNationRelation2MainCharacter(sti(Colonies[iTmp].nation)) )
+					switch(GetNationRelation2MainCharacter(iNation))
 					{
-					case RELATION_FRIEND:	BI_intNRetValue[1] = BI_RELATION_FRIEND; break;
-					case RELATION_NEUTRAL:	BI_intNRetValue[1] = BI_RELATION_NEUTRAL; break;
-					case RELATION_ENEMY:	BI_intNRetValue[1] = BI_RELATION_ENEMY; break;
+                        case RELATION_FRIEND:  BI_intNRetValue[1] = BI_RELATION_FRIEND;  break;
+                        case RELATION_NEUTRAL: BI_intNRetValue[1] = BI_RELATION_NEUTRAL; break;
+                        case RELATION_ENEMY:   BI_intNRetValue[1] = BI_RELATION_ENEMY;   break;
 					}
-					BI_intNRetValue[6] = sti(Colonies[iTmp].disease);
+					BI_intNRetValue[6] = int(rColony.disease);
 				}
 			}
 		}
 		else
-		{// не форт, не город - маяк/бухта!
-			if(CheckAttribute(arLoc,"label") && HasSubStr(arLoc.label, "mayak")) BI_intNRetValue[0] = 4; // тип маяк
+		{   // не форт, не город - маяк/бухта!
+			if (CheckAttribute(arLoc,"label") && HasSubStr(arLoc.label, "mayak")) BI_intNRetValue[0] = 4; // тип маяк
 			else BI_intNRetValue[0] = 3; // тип бухта
 		}
 	}
@@ -3659,25 +3718,33 @@ ref BI_GetLandData()
 		}
 	}*/
 
-	if( CheckAttribute(arLoc,"label") ) {
+	if (CheckAttribute(arLoc,"label"))
+    {
 		arLoc.labelLoc = GetLocatorName(arLoc);
-		if( arLoc.labelLoc == "" ) {
+		if (arLoc.labelLoc == "")
 			Trace("Warning! Language: string <"+arLoc.label+"> hav`t translation into file <LocLables.txt>");
-		}
 	}
 
-	if( BI_intNRetValue[2]<0 || BI_intNRetValue[3]<0 )
+	if (BI_intNRetValue[2] < 0 || BI_intNRetValue[3] < 0)
 	{
 		BI_intNRetValue[2] = 0;//AddTextureToList( &BattleInterface, "battle_interface\cicons_locators.tga", 8, 1 );
-		switch (BI_intNRetValue[0])
+		switch(BI_intNRetValue[0])
 		{
 			case 1: // форт
 				BI_intNRetValue[3] = 62;
 				BI_intNRetValue[4] = 46;
 			break;
 			case 2: // город
-				BI_intNRetValue[3] = 63;
-				BI_intNRetValue[4] = 47;
+                if (bSmallPirateTown)
+                {
+                    BI_intNRetValue[3] = 77;
+                    BI_intNRetValue[4] = 76;
+                }
+                else
+                {
+                    BI_intNRetValue[3] = 63;
+                    BI_intNRetValue[4] = 47;
+                }
             break;
             case 3: // бухта
 				BI_intNRetValue[3] = 31;
@@ -3795,7 +3862,7 @@ string GetBILocationName()
 	float fHtRatio = stf(Render.screen_y) / iHudScale;
 
 	if (LanguageGetLanguage() != "russian" && strlen(Name) > 24 && fHtRatio > 1.0)
-	{   // ~!~ ???
+	{   // ~!~ TO_DO: WTF
 		Name += strcut("               ", 0, makeint((fHtRatio - 1.0) * 10.0 + 0.5));
 	}
 	return Name;
@@ -3803,396 +3870,233 @@ string GetBILocationName()
 
 void ControlsDesc()
 {
-	if(iControlsTips > 0 && !IsSteamDeck())
+	if (iControlsTips > 0 && !IsSteamDeck())
 	{
-		numLine = 8;
-		sAttrB = "Con"+numLine+"Back";
-		sAttr = "Con"+numLine;
-		sAttrDes = "Con"+numLine+"desc";
 		int colorbase	= argb(255,255,255,255);
 		int colorused	= argb(255,255,255,192);
 		int colorcd 	= argb(155,255,64,64);
 		int colorempty	= argb(155,255,255,255);
-		
-		string cname = "";
-		for(numline = 1; numline <= 8; numline ++)
+
+        // Clear ~!~
+		for(numline = 1; numline <= BI_CTRL_LINES; numline++)
 		{
 			sAttrB = "Con"+numLine+"Back";
 			sAttr = "Con"+numLine;
 			sAttrDes = "Con"+numLine+"desc";
-
 			BattleInterface.textinfo.(sAttrB).text = "" ;
 			BattleInterface.textinfo.(sAttr).text = "";
 			BattleInterface.textinfo.(sAttrDes).text = "" ;
-
 			BattleInterface.textinfo.(sAttr).color = colorbase;
 			BattleInterface.textinfo.(sAttrDes).color = colorbase;
-			
 		}
 
-		numLine = 8;
-		sAttrB = "Con"+numLine+"Back";
-		sAttr = "Con"+numLine;
-		sAttrDes = "Con"+numLine+"desc";
+        // First line
+		numLine = BI_CTRL_LINES;
 
         // TUTOR-ВСТАВКА
-		if(TW_IsActive())
+		if (TW_IsActive())
 		{
-			if(objTask.sea == "1_Turn")
+			if (objTask.sea == "1_Turn")
 			{
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_TurnRight");
-				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_TurnRight","ControlsNames.txt");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
-				numLine --;
-				
-				sAttr = "Con"+numLine;
-				sAttrDes = "Con"+numLine+"desc";
-				sAttrB = "Con"+numLine+"Back";
-				
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_TurnLeft");
-				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_TurnLeft","ControlsNames.txt");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
+                BI_SetKeyInfo("Ship_TurnRight");
+                BI_SetKeyInfo("Ship_TurnLeft");
 			}
-			else if(objTask.sea == "2_TimeScale" || objTask.sea == "3_TimeScale")
+			else if (objTask.sea == "2_TimeScale" || objTask.sea == "3_TimeScale")
 			{
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TimeScale");
-				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScale","ControlsNames.txt");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
+                BI_SetKeyInfo("TimeScale");
 			}
-			else if(objTask.sea == "4_TimeScale")
+			else if (objTask.sea == "4_TimeScale")
 			{
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TimeScaleFasterBA");
-				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScaleFasterBA","ControlsNames.txt");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
+                BI_SetKeyInfo("TimeScaleFasterBA");
 			}
-			else if(objTask.sea == "5_TimeScale")
+			else if (objTask.sea == "5_TimeScale")
 			{
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TimeScaleSlowerBA");
-				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScaleSlowerBA","ControlsNames.txt");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
-				numLine --;
-				
-				sAttr = "Con"+numLine;
-				sAttrDes = "Con"+numLine+"desc";
-				sAttrB = "Con"+numLine+"Back";
-				
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TimeScale");
-				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScale","ControlsNames.txt");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
+                BI_SetKeyInfo("TimeScaleSlowerBA");
+                BI_SetKeyInfo("TimeScale");
 			}
-			else if(objTask.sea == "3_Sails" || objTask.sea == "4_Sails")
+			else if (objTask.sea == "3_Sails" || objTask.sea == "4_Sails")
 			{
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_SailDown");
-				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_SailDown","ControlsNames.txt");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
+                BI_SetKeyInfo("Ship_SailDown");
 			}
 			return;
 		}
-		
-		if(CheckAttribute(pchar,"Ship.POS.Mode") && pchar.Ship.POS.Mode != SHIP_WAR)
+
+		if (CheckAttribute(PChar,"Ship.POS.Mode") && PChar.Ship.POS.Mode != SHIP_WAR)
 		{
-			if(iControlsMode == 1)
+			if (iControlsMode == 1)
+            {
+                BI_SetKeyInfo("BI_MapEnter");
+            }
+
+            BI_SetKeyInfo("BICommandsActivate");
+			BI_SetKeyInfo("TimeScale", (TimeScaleCounter <= 0) ? "TimeScaleOn" : "TimeScaleOff");
+
+            BI_SetKeyInfo("hk_Mine");
+            if (GetCargoGoods(PChar, GOOD_POWDER) < MINE_POWDER)
+            {
+                BattleInterface.textinfo.(sAttr).color = colorempty;
+                BattleInterface.textinfo.(sAttrDes).color = colorempty;
+            }
+			
+			// Смена режима залпа
+			if (CheckOfficersPerkEnable("BeneathWaterline"))
 			{
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("BI_MapEnter");
-				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("BI_MapEnter","ControlsNames.txt");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
-				numLine --;
-				
-				sAttr = "Con"+numLine;
-				sAttrDes = "Con"+numLine+"desc";
-				sAttrB = "Con"+numLine+"Back";
+				if ("firemode" !in pchar)
+					BI_SetKeyInfo("hk_FireMode", "FireMode_Random", 0);
+				else
+					BI_SetKeyInfo("hk_FireMode", "FireMode_" + pchar.firemode, 0);
 			}
 
-			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("BICommandsActivate");
-			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("BICommandsActivate","ControlsNames.txt");
-			BattleInterface.textinfo.(sAttrB).text = "1" ;
-			numLine --;
-			
-			sAttr = "Con"+numLine;
-			sAttrDes = "Con"+numLine+"desc";
-			sAttrB = "Con"+numLine+"Back";
-			
-			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TimeScale");
-			BattleInterface.textinfo.(sAttrB).text = "1";
-			if(TimeScaleCounter <= 0)
-				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScaleOn","ControlsNames.txt");
-			else
-				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScaleOff","ControlsNames.txt");
-			numline--;
-			
-			sAttr = "Con"+numLine;
-			sAttrDes = "Con"+numLine+"desc";
-			sAttrB = "Con"+numLine+"Back";
-			
-			if(!bGlobalTutor && !IsSmallShip(sti(RealShips[sti(pchar.Ship.Type)].BaseType))) // pchar.Ship.Type != SHIP_NOTUSED
+			if (!bGlobalTutor && !IsSmallShip(sti(RealShips[sti(PChar.Ship.Type)].BaseType))) // PChar.Ship.Type != SHIP_NOTUSED
 			{
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_Cabin");
-				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("hk_Cabin","ControlsNames.txt");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
-				numLine --;
-			
-				sAttr = "Con"+numLine;
-				sAttrDes = "Con"+numLine+"desc";
-				sAttrB = "Con"+numLine+"Back";
+                BI_SetKeyInfo("hk_Cabin");
 			}
 
-			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FireCamera_Set");
-			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("FireCamera_Set","ControlsNames.txt");
-			BattleInterface.textinfo.(sAttrB).text = "1" ;
-			numLine --;
-			
-			sAttr = "Con"+numLine;
-			sAttrDes = "Con"+numLine+"desc";
-			sAttrB = "Con"+numLine+"Back";
+            BI_SetKeyInfo("FireCamera_Set");
 
-			if(GetCharacterEquipByGroup(pchar,SPYGLASS_ITEM_TYPE)!="" && or(SeaCameras.Camera == "SeaDeckCamera", SeaCameras.Camera == "SeaFireCamera"))
+			if(GetCharacterEquipByGroup(PChar,SPYGLASS_ITEM_TYPE) != "" && (SeaCameras.Camera == "SeaDeckCamera" || SeaCameras.Camera == "SeaFireCamera"))
 			{
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TelescopeMode");
-				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TelescopeMode","ControlsNames.txt");
+                BI_SetKeyInfo("TelescopeMode");
 			}
 			else
 			{
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("ShipCamera_Forward");
-				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("ChrCamCameraRadius","ControlsNames.txt");
+                BI_SetKeyInfo("ShipCamera_Forward");
 			}
-			BattleInterface.textinfo.(sAttrB).text = "1" ;
-			numLine --;
-			
-			sAttr = "Con"+numLine;
-			sAttrDes = "Con"+numLine+"desc";
-			sAttrB = "Con"+numLine+"Back";
-			
-			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_SailDown");
-			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_SailDown","ControlsNames.txt");
-			BattleInterface.textinfo.(sAttrB).text = "1" ;
-			numLine --;
-			
-			sAttr = "Con"+numLine;
-			sAttrDes = "Con"+numLine+"desc";
-			sAttrB = "Con"+numLine+"Back";
-			
-			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_SailUp");
-			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_SailUp","ControlsNames.txt");
-			BattleInterface.textinfo.(sAttrB).text = "1" ;
+
+            BI_SetKeyInfo("Ship_SailDown");
+            BI_SetKeyInfo("Ship_SailUp");
 		}
 		else
-		{ 
-			if(XI_IsKeyPressed("shift") && sti(GetCompanionQuantity(pchar) > 1))
+		{
+            int iCompQty = GetCompanionQuantity(PChar);
+			if (XI_IsKeyPressed("shift") && iCompQty > 1)
 			{
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_ProtFlagship");
-				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_7short");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
-				numLine --;
-				
-				sAttr = "Con"+numLine;
-				sAttrDes = "Con"+numLine+"desc";
-				sAttrB = "Con"+numLine+"Back";
-				
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_LowerSails");
-				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_6short");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
-				numLine --;
-				
-				sAttr = "Con"+numLine;
-				sAttrDes = "Con"+numLine+"desc";
-				sAttrB = "Con"+numLine+"Back";
-				
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_SailAway");
-				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_5short");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
-				numLine --;
-				
-				sAttr = "Con"+numLine;
-				sAttrDes = "Con"+numLine+"desc";
-				sAttrB = "Con"+numLine+"Back";
-				
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_LoadBombs");
-				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_4short");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
-				numLine --;
-				
-				sAttr = "Con"+numLine;
-				sAttrDes = "Con"+numLine+"desc";
-				sAttrB = "Con"+numLine+"Back";
-				
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_LoadChain");
-				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_3short");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
-				numLine --;
-				
-				sAttr = "Con"+numLine;
-				sAttrDes = "Con"+numLine+"desc";
-				sAttrB = "Con"+numLine+"Back";
-				
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_LoadGrapes");
-				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_2short");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
-				numLine --;
-				
-				sAttr = "Con"+numLine;
-				sAttrDes = "Con"+numLine+"desc";
-				sAttrB = "Con"+numLine+"Back";
-				
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_LoadBalls");
-				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_1short");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
+                BI_SetKeyInfo("FLT_ProtFlagship", "msg_AIShip_7short", 2);
+                BI_SetKeyInfo("FLT_LowerSails", "msg_AIShip_6short", 2);
+                BI_SetKeyInfo("FLT_SailAway",   "msg_AIShip_5short", 2);
+                BI_SetKeyInfo("FLT_LoadBombs",  "msg_AIShip_4short", 2);
+                BI_SetKeyInfo("FLT_LoadChain",  "msg_AIShip_3short", 2);
+                BI_SetKeyInfo("FLT_LoadGrapes", "msg_AIShip_2short", 2);
+                BI_SetKeyInfo("FLT_LoadBalls",  "msg_AIShip_1short", 2);
 			}
 			else
 			{
-				if(sti(GetCompanionQuantity(pchar) > 1))
+				if (iCompQty > 1)
 				{
-					BattleInterface.textinfo.(sAttr).text = objControlsState.key_codes.VK_SHIFT.img;
-					BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("FLT_Commands");
-					BattleInterface.textinfo.(sAttrB).text = "1" ;
-
-					numLine --;
-					
 					sAttr = "Con"+numLine;
 					sAttrDes = "Con"+numLine+"desc";
 					sAttrB = "Con"+numLine+"Back";
-				}
-				
-				if(CheckOfficersPerkEnable("Turn180"))
-				{
+					BattleInterface.textinfo.(sAttr).text = objControlsState.key_codes.VK_SHIFT.img; // ~!~
+					BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("FLT_Commands");
 					BattleInterface.textinfo.(sAttrB).text = "1" ;
-					BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_Turn180");
-					BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Turn180", "AbilityDescribe.txt");
-					
-					if(!CheckOfficersPerk(pchar, "Turn180") && GetOfficersPerkUsing(pchar,"Turn180"))
+                    numLine--;
+				}
+
+                // Манёвренный разворот корабля
+				if (CheckOfficersPerkEnable("Turn180"))
+				{
+                    BI_SetKeyInfo("hk_Turn180", "Turn180", 1);
+					if (!CheckOfficersPerk(PChar, "Turn180") && GetOfficersPerkUsing(PChar,"Turn180"))
 					{
 						BattleInterface.textinfo.(sAttr).color = colorbase;
 						BattleInterface.textinfo.(sAttrDes).color = colorbase;
 					}
 					else
 					{
-						if(AbilityTimeDuration("active", "Turn180") > 0)
+						if (AbilityTimeDuration("active", "Turn180") > 0)
 						{
 							BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Turn180", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("active", "Turn180");
 							BattleInterface.textinfo.(sAttr).color = colorused;
 							BattleInterface.textinfo.(sAttrDes).color = colorused;
 							
 						}
-						else
-						{
-							if(AbilityTimeDuration("delay", "Turn180") > 0)
-							{
-								BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Turn180", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "Turn180");
-								BattleInterface.textinfo.(sAttr).color = colorcd; 
-								BattleInterface.textinfo.(sAttrDes).color = colorcd;
-								
-							}
-						}
+						else if (AbilityTimeDuration("delay", "Turn180") > 0)
+                        {
+                            BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Turn180", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "Turn180");
+                            BattleInterface.textinfo.(sAttr).color = colorcd; 
+                            BattleInterface.textinfo.(sAttrDes).color = colorcd;
+                            
+                        }
 					}
-					numLine --;
-					
-					sAttrB = "Con"+numLine+"Back"; 
-					sAttr = "Con"+numLine;
-					sAttrDes = "Con"+numLine+"desc";
-					
 				}
-				
-				if(CheckOfficersPerkEnable("InstantRepair") && MOD_SKILL_ENEMY_RATE < 9)
+
+                // Ремонт в бою
+				if (CheckOfficersPerkEnable("InstantRepair") && MOD_SKILL_ENEMY_RATE < 9)
 				{
-					BattleInterface.textinfo.(sAttrB).text = "1" ;
-					BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_InstantRepair");
-					BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("InstantRepair", "AbilityDescribe.txt");
+                    BI_SetKeyInfo("hk_InstantRepair", "InstantRepair", 1);
 					BattleInterface.textinfo.(sAttr).color = colorempty;
 					BattleInterface.textinfo.(sAttrDes).color = colorempty;
-					
-					if(CheckInstantRepairCondition(pchar))
+					if (CheckInstantRepairCondition(PChar))
 					{
 						BattleInterface.textinfo.(sAttr).color = colorbase;
 						BattleInterface.textinfo.(sAttrDes).color = colorbase;
 					}
 					else
 					{
-						if(AbilityTimeDuration("active", "InstantRepair") > 0)
+						if (AbilityTimeDuration("active", "InstantRepair") > 0)
 						{
-							BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("InstantRepair", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("active", "InstantRepair");
+							BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("InstantRepair", "AbilityDescribe.txt")+ " : "+AbilityTimeDuration("active", "InstantRepair");
 							BattleInterface.textinfo.(sAttr).color = colorused; 
 							BattleInterface.textinfo.(sAttrDes).color = colorused;
 							
 						}
-						else
-						{
-							if(AbilityTimeDuration("delay", "InstantRepair") > 0)
-							{
-								BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("InstantRepair", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "InstantRepair");
-								BattleInterface.textinfo.(sAttr).color = colorcd; 
-								BattleInterface.textinfo.(sAttrDes).color = colorcd;
-								
-							}
-						}
+						else if (AbilityTimeDuration("delay", "InstantRepair") > 0)
+                        {
+                            BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("InstantRepair", "AbilityDescribe.txt")+ " : "+AbilityTimeDuration("delay", "InstantRepair");
+                            BattleInterface.textinfo.(sAttr).color = colorcd; 
+                            BattleInterface.textinfo.(sAttrDes).color = colorcd;
+                            
+                        }
 					}
-					numLine --;
-					
-					sAttrB = "Con"+numLine+"Back";
-					sAttr = "Con"+numLine;
-					sAttrDes = "Con"+numLine+"desc";
-					
 				}
-				
-				if(CheckOfficersPerkEnable("ImmediateReload"))
+
+                // Подготовка к стрельбе
+				if (CheckOfficersPerkEnable("ImmediateReload"))
 				{
-					BattleInterface.textinfo.(sAttrB).text = "1" ;
-					BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_ImmediateReload");
-					BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("ImmediateReload", "AbilityDescribe.txt");
-					
-					if(!CheckOfficersPerk(pchar, "ImmediateReload") && GetOfficersPerkUsing(pchar,"ImmediateReload"))
+                    BI_SetKeyInfo("hk_ImmediateReload", "ImmediateReload", 1);
+					if (!CheckOfficersPerk(PChar, "ImmediateReload") && GetOfficersPerkUsing(PChar,"ImmediateReload"))
 					{
 						BattleInterface.textinfo.(sAttr).color = colorbase;
 						BattleInterface.textinfo.(sAttrDes).color = colorbase;
 					}
 					else
 					{
-						if(AbilityTimeDuration("active", "ImmediateReload") > 0)
+						if (AbilityTimeDuration("active", "ImmediateReload") > 0)
 						{
 							BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("ImmediateReload", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("active", "ImmediateReload");
 							BattleInterface.textinfo.(sAttr).color = colorused; 
 							BattleInterface.textinfo.(sAttrDes).color = colorused;
 							
 						}
-						else
-						{
-							if(AbilityTimeDuration("delay", "ImmediateReload") > 0)
-							{
-								BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("ImmediateReload", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "ImmediateReload");
-								BattleInterface.textinfo.(sAttr).color = colorcd; 
-								BattleInterface.textinfo.(sAttrDes).color = colorcd;
-								
-							}
-						}
+						else if (AbilityTimeDuration("delay", "ImmediateReload") > 0)
+                        {
+                            BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("ImmediateReload", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "ImmediateReload");
+                            BattleInterface.textinfo.(sAttr).color = colorcd; 
+                            BattleInterface.textinfo.(sAttrDes).color = colorcd;
+                            
+                        }
 					}
-					numLine --;
-					
-					sAttrB = "Con"+numLine+"Back"; 
-					sAttr = "Con"+numLine;
-					sAttrDes = "Con"+numLine+"desc";
-					
 				}
 				
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("CannonsRange");
-				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("CannonsRange","ControlsNames.txt");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
+                BI_SetKeyInfo("hk_Mine");
+                if (GetCargoGoods(PChar, GOOD_POWDER) < MINE_POWDER)
+                {
+                    BattleInterface.textinfo.(sAttr).color = colorempty;
+                    BattleInterface.textinfo.(sAttrDes).color = colorempty;
+                }
 				
-				numLine --;
-				
-				sAttr = "Con"+numLine;
-				sAttrDes = "Con"+numLine+"desc";
-				sAttrB = "Con"+numLine+"Back";
+				// Смена режима залпа
+				if (CheckOfficersPerkEnable("BeneathWaterline"))
+				{
+					if ("firemode" !in pchar)
+						BI_SetKeyInfo("hk_FireMode", "FireMode_Random", 0);
+					else
+						BI_SetKeyInfo("hk_FireMode", "FireMode_" + pchar.firemode, 0);
+				}
 
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FireCamera_Set");
-				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("FireCamera_Set","ControlsNames.txt");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
-				numLine --;
-				
-				sAttr = "Con"+numLine;
-				sAttrDes = "Con"+numLine+"desc";
-				sAttrB = "Con"+numLine+"Back";
-
-				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_Fire");
-				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_Fire","ControlsNames.txt");
-				BattleInterface.textinfo.(sAttrB).text = "1" ;
+                BI_SetKeyInfo("CannonsRange");
+                BI_SetKeyInfo("FireCamera_Set");
+                BI_SetKeyInfo("Ship_Fire");
 			}
 		}
 	}
@@ -4265,4 +4169,168 @@ bool bSailToEnable()
 	}
 	
 	return false;
+}
+
+#event_handler("Event_GetBestCourseVisible", "GetBestCourseVisible");
+int GetBestCourseVisible()
+{
+	return iBestCourse;
+}
+
+void BI_ResizeCannons()
+{
+	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	int iconWidth = RecalculateHIcon(int(64 * fHtRatio));
+	int iconHeight = RecalculateVIcon(int(64 * fHtRatio));
+	
+	int iconCannonWidth = RecalculateHIcon(int(64 * fHtRatio));
+	int iconCannonHeight = RecalculateVIcon(int(64 * fHtRatio));
+	
+	int offsetY = RecalculateVIcon(int(80 * fHtRatio));
+	int offsetTextY = RecalculateVIcon(int(53 * fHtRatio));
+	
+	int centerX = int(showWindow.right) / 2;
+	int centerY = int(showWindow.bottom) - offsetY;
+	
+	int cannonCircleSize = RecalculateHIcon(int(200 * fHtRatio));
+	int cannonChargeSize = int(cannonCircleSize * 74.0 / 75.0);
+	
+	int offsetX = RecalculateHIcon(int(cannonChargeSize * 0.1));
+	
+	if (centerY + cannonCircleSize * 0.4 > int(showWindow.bottom))
+	{
+		offsetY = int(cannonCircleSize * 0.4);
+		centerY = int(showWindow.bottom) - offsetY;
+	}
+	
+	BattleInterface.imageslist.CannonsReloadBack.pos = (centerX - cannonCircleSize / 2) + "," + (centerY - cannonCircleSize / 2) + "," + (centerX + cannonCircleSize / 2) + "," + (centerY + cannonCircleSize / 2);
+	
+	BattleInterface.dynamic.images.firemode_l.texture = "interfaces\le\battle_interface\cannons_arrows.tga";
+	BattleInterface.dynamic.images.firemode_l.pos = GetPosString(centerX - int(cannonCircleSize * 0.33) - 1, centerY - 10, centerX - int(cannonCircleSize * 0.33) + 19, centerY + 10);
+	BattleInterface.dynamic.images.firemode_r.texture = "interfaces\le\battle_interface\cannons_arrows.tga";
+	BattleInterface.dynamic.images.firemode_r.pos = GetPosString(centerX + int(cannonCircleSize * 0.33) - 21, centerY - 10, centerX + int(cannonCircleSize * 0.33) - 1, centerY + 10);
+	
+	aref arAmmo;
+	makearef(arAmmo, BattleInterface.ammo);
+	
+	arAmmo.BallsPos						= (centerX - cannonCircleSize / 2 + offsetX + iconWidth / 2 - iconWidth * 4) + "," + centerY;
+	arAmmo.BallsPictureSize				= iconWidth + "," + iconHeight;
+	
+	arAmmo.GrapesPos					= (centerX - cannonCircleSize / 2 + offsetX + iconWidth / 2 - iconWidth * 3) + "," + centerY;
+	arAmmo.GrapesPictureSize			= iconWidth + "," + iconHeight;
+	
+	arAmmo.KnippelsPos					= (centerX - cannonCircleSize / 2 + offsetX + iconWidth / 2 - iconWidth * 2) + "," + centerY;
+	arAmmo.KnippelsPictureSize			= iconWidth + "," + iconHeight;
+	
+	arAmmo.BombsPos						= (centerX - cannonCircleSize / 2 + offsetX + iconWidth / 2 - iconWidth) + "," + centerY;
+	arAmmo.BombsPictureSize				= iconWidth + "," + iconHeight;
+	
+	arAmmo.PowderPos					= (centerX + cannonCircleSize / 2 - offsetX - iconWidth / 2 + iconWidth) + "," + centerY;
+	arAmmo.PowderPictureSize			= iconWidth + "," + iconHeight;
+	
+	arAmmo.WeaponPos					= (centerX + cannonCircleSize / 2 - offsetX - iconWidth / 2 + iconWidth * 2) + "," + centerY;
+	arAmmo.WeaponPictureSize			= iconWidth + "," + iconHeight;
+	
+	arAmmo.PlanksPos					= (centerX + cannonCircleSize / 2 - offsetX - iconWidth / 2 + iconWidth * 3) + "," + centerY;
+	arAmmo.PlanksPictureSize			= iconWidth + "," + iconHeight;
+	
+	arAmmo.SailclothPos					= (centerX + cannonCircleSize / 2 - offsetX - iconWidth / 2 + iconWidth * 4) + "," + centerY;
+	arAmmo.SailclothPictureSize			= iconWidth + "," + iconHeight;
+	
+	arAmmo.CannonsGPos					= centerX + "," + centerY;
+	arAmmo.CannonsGPictureSize			= iconCannonWidth + "," + iconCannonHeight;
+
+	arAmmo.CannonsChargePos				= centerX + "," + centerY;
+	arAmmo.CannonsChargePictureSize		= cannonChargeSize + "," + cannonChargeSize;
+	
+	aref arText;
+	makearef(arText, BattleInterface.textinfo);
+	
+	arText.Cannonf.pos.x = centerX + 1;
+	arText.Cannonf.pos.y = centerY - iconCannonHeight / 2 - 17;
+
+	arText.Cannonb.pos.x = centerX + 1;
+	arText.Cannonb.pos.y = centerY + iconCannonHeight / 2 - 12;
+	
+	arText.Cannonl.pos.x = centerX - iconCannonWidth / 2 - 7;
+	arText.Cannonl.pos.y = centerY - 15;
+
+	arText.Cannonr.pos.x = centerX + iconCannonWidth / 2 + 10;
+	arText.Cannonr.pos.y = centerY - 15;
+	
+	int centerTextY = centerY - offsetTextY;
+	
+	arText.Balls.pos.x = (centerX - cannonCircleSize / 2 + offsetX + iconWidth / 2 - iconWidth * 4);
+	arText.Balls.pos.y = centerTextY;
+
+	arText.Grapes.pos.x = (centerX - cannonCircleSize / 2 + offsetX + iconWidth / 2 - iconWidth * 3);
+	arText.Grapes.pos.y = centerTextY;
+
+	arText.Knippels.pos.x = (centerX - cannonCircleSize / 2 + offsetX + iconWidth / 2 - iconWidth * 2);
+	arText.Knippels.pos.y = centerTextY;
+	
+	arText.Bombs.pos.x = (centerX - cannonCircleSize / 2 + offsetX + iconWidth / 2 - iconWidth);
+	arText.Bombs.pos.y = centerTextY;
+
+	arText.BallsKey.pos.x = int(arText.Balls.pos.x) - iconWidth / 4;
+	arText.BallsKey.pos.y = centerY;
+	
+	arText.GrapesKey.pos.x = int(arText.Grapes.pos.x) - iconWidth / 4;
+	arText.GrapesKey.pos.y = centerY;
+
+	arText.KnippelsKey.pos.x = int(arText.Knippels.pos.x) - iconWidth / 4;
+	arText.KnippelsKey.pos.y = centerY;
+	
+	arText.BombsKey.pos.x = int(arText.Bombs.pos.x) - iconWidth / 4;
+	arText.BombsKey.pos.y = centerY;
+
+	arText.Powder.pos.x = (centerX + cannonCircleSize / 2 - offsetX - iconWidth / 2 + iconWidth);
+	arText.Powder.pos.y = centerTextY;
+	
+	arText.Weapon.pos.x = (centerX + cannonCircleSize / 2 - offsetX - iconWidth / 2 + iconWidth * 2);
+	arText.Weapon.pos.y = centerTextY;
+	
+	arText.Planks.pos.x = (centerX + cannonCircleSize / 2 - offsetX - iconWidth / 2 + iconWidth * 3);
+	arText.Planks.pos.y = centerTextY;
+	
+	arText.Sailcloth.pos.x = (centerX + cannonCircleSize / 2 - offsetX - iconWidth / 2 + iconWidth * 4);
+	arText.Sailcloth.pos.y = centerTextY;
+	
+	arText.MineKey.pos.x = int(arText.Powder.pos.x) - iconWidth / 4;
+	arText.MineKey.pos.y = centerY;
+}
+
+void BI_SetFireModeArrows()
+{
+	if (!bShowExtInfo() || !CheckOfficersPerkEnable("BeneathWaterline"))
+	{
+		BattleInterface.dynamic.images.firemode_l.color = argb(0,128,128,128);
+		BattleInterface.dynamic.images.firemode_r.color = argb(0,128,128,128);
+		return;
+	}
+	
+	string curMode = GetFireMode(pchar);
+	aref arImage;
+	makearef(arImage, BattleInterface.dynamic.images.firemode_l);
+	arImage.color = argb(255,128,128,128);
+	switch(curMode)
+	{
+		case FIRE_MODE_DIRECT:		arImage.uv = "0.0,0.0,0.25,1.0";		break;
+		case FIRE_MODE_RANDOM:		arImage.uv = "0.75,0.0,1.0,1.0";		break;
+		case FIRE_MODE_REVERSE:		arImage.uv = "0.25,0.0,0.5,1.0";		break;
+	}
+	makearef(arImage, BattleInterface.dynamic.images.firemode_r);
+	arImage.color = argb(255,128,128,128);
+	switch(curMode)
+	{
+		case FIRE_MODE_DIRECT:		arImage.uv = "0.0,0.0,0.25,1.0";		break;
+		case FIRE_MODE_RANDOM:		arImage.uv = "0.5,0.0,0.75,1.0";		break;
+		case FIRE_MODE_REVERSE:		arImage.uv = "0.25,0.0,0.5,1.0";		break;
+	}
+}
+
+void BI_ShowExtInfo()
+{
+	SendMessage(&BattleInterface,"ll",BI_MSG_SHOW_EXT_INFO, bShowExtInfo());
+	BI_SetFireModeArrows();
 }

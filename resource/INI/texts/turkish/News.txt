@@ -1,18 +1,20 @@
-News {Yama 1.7}
+key {d24.04.2026}
+News {1.8 Maritime Update: açık beta}
+News_Attention { }
 News_descr
 {
 ***************************   Ahoy!   ***************************
 -------------------------------------------------------------------------------------------------
-— Sürüm 1.7'ye hoş geldiniz!
-— "Ships Pack" DLC serisinin dördüncü bölümü çıktı
-— Steam üzerinden sürümler arasında serbestçe geçiş yapabilirsiniz
-— Yeni oyun başlatmaya gerek yok
-— Kayıtlar yeniden tasarlandı ve iyileştirildi
-— Yeni şehir sızma ve gizlilik mekanikleri
-— Yapay zeka karada daha iyi savaşıyor
-— Epilog, yaşam kalitesi iyileştirmeleri ve daha fazlası
-— Ayrıntılı değişiklik listesini aşağıdaki düğme aracılığıyla haberlerde bulabilirsiniz
+— 1.8 Maritime Update yaması artık erişilebilir
+— 1.7.3 arşive kaldırılıyor; Steam üzerinden sürümler arasında geçiş yapabilirsiniz
+— Yeni oyuna gerek yok
+— Maritime Stories DLC erişilebilir durumda
+— Karayipler’i büyük ölçüde değiştiren Mevsimler oyuna eklendi
+— Deniz topçuluğu yeniden elden geçirildi
+— Yeni yelken ve rota açısı sistemi
+— Çatışarak ele geçirme sistemi iyileştirildi
+— Dünya haritasının kullanım kolaylığı artırıldı
+— Deniz yapay zekâsı geliştirildi; gemi savaşları artık çok daha heyecanlı
+— Çok sayıda Quality of Life iyileştirmesi, denge düzenlemesi ve hata düzeltmesi
+— Ayrıntılı değişiklik listesini aşağıdaki düğmeyle haberlerde bulabilirsiniz
 }
-News_Attention { }
-
-key {31.01.2026} 

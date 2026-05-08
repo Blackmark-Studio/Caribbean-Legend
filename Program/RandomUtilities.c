@@ -32,6 +32,11 @@ string GetRandomAttrName(aref Lottery)
     return GetAttributeName(GetRandomAttr(Lottery));
 }
 
+string GetRandomAttrValue(aref Lottery)
+{
+    return GetAttributeValue(GetRandomAttr(Lottery));
+}
+
 ////////////////////////////////////////////////////////////////////////
 //  WEIGHT RANDOM (АТРИБУТНЫЙ)
 ////////////////////////////////////////////////////////////////////////

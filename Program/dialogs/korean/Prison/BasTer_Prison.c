@@ -405,7 +405,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "PZ_BasTer_ComendantDialog_Opozdal_1":
 			dialog.text = "그래. 그자를 그렇게까지 원한다면, 너는 그에게 어떤 관계지? 상관없다 – 중요한 건 네가 이 도시에 온 목적이다.";
-			link.l1 = "불법적인 건 없소, 나리. 그런데 "이제 더는 상관없다"는 무슨 뜻이오? 설마 그가...";
+			link.l1 = "불법적인 건 없소, 나리. 그런데 이제 더는 상관없다 는 무슨 뜻이오? 설마 그가...";
 			link.l1.go = "PZ_BasTer_ComendantDialog_Opozdal_2";
 		break;
 		

@@ -1,12 +1,4 @@
 Caleuche_1 {Tuttuathapak}
-Caleuche_2 { }
-Caleuche_3 {Capitán no-muerto}
-Caleuche_4 { }
-Caleuche_5 {Ghost ship}
-Caleuche_6 {Fergus}
-Caleuche_7 {Hooper}
-Caleuche_8 {¡Has escapado del barco fantasma!}
-Caleuche_9 {Reginald}
 Caleuche_10 {Jackson}
 Caleuche_11 {Harpy}
 Caleuche_12 {jabeque 'Harpy'}
@@ -17,6 +9,7 @@ Caleuche_16 { }
 Caleuche_17 {Esberto}
 Caleuche_18 {Salinas}
 Caleuche_19 {¡Los amuletos de Tuttuathapak han perdido su poder!}
+Caleuche_2 { }
 Caleuche_20 {Presiona 'T' para usar}
 Caleuche_21 {El portal esta bloqueado!}
 Caleuche_22 {Cacique Chavinavy}
@@ -27,6 +20,7 @@ Caleuche_26 {¡Barco fantasma en el horizonte!}
 Caleuche_27 {Baltazar}
 Caleuche_28 {de Cordes}
 Caleuche_29 { }
+Caleuche_3 {Capitán no-muerto}
 Caleuche_30 {Te sientes más diestro}
 Caleuche_31 {Te sientes más robusto}
 Caleuche_32 {Te sientes más fuerte}
@@ -37,4 +31,10 @@ Caleuche_36 {Te sientes inspirado}
 Caleuche_37 {¡El barco fantasma está en el horizonte!}
 Caleuche_38 {Te has desmayado por las heridas...}
 Caleuche_39 { }
+Caleuche_4 { }
 Caleuche_40 { }
+Caleuche_5 {Ghost ship}
+Caleuche_6 {Fergus}
+Caleuche_7 {Hooper}
+Caleuche_8 {¡Has escapado del barco fantasma!}
+Caleuche_9 {Reginald}

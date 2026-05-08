@@ -1,4 +1,7 @@
 IslaMona_1 {Rodrigo}
+IslaMona_10 {Francisco}
+IslaMona_11 {de Alba}
+IslaMona_12 {Pelos sons, a armadilha funcionou! Hora de voltar para a vila!}
 IslaMona_2 {Jiménez}
 IslaMona_3 {Na manhã seguinte...}
 IslaMona_4 {Rodrigo Jimenez preparou outro lote de pau-ferro em Isla Mona}
@@ -7,6 +10,3 @@ IslaMona_6 {Você entregou @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> garra
 IslaMona_7 {@<sti(pchar.questTemp.IslaMona.Factory.Goods)> de madeira de ferro adicionados ao seu armazém}
 IslaMona_8 { }
 IslaMona_9 { }
-IslaMona_10 {Francisco}
-IslaMona_11 {de Alba}
-IslaMona_12 {Pelos sons, a armadilha funcionou! Hora de voltar para a vila!}

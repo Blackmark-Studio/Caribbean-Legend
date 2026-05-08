@@ -202,7 +202,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "NationLicenceType2":
-			iSumm = sti(npchar.LicenceType) * (3000 + MOD_SKILL_ENEMY_RATE*500);
+			iSumm = LICENSE_GetPrice(npchar.LicenceType);
 			dialog.text = "那么, " + XI_ConvertString(Nations[sti(npchar.LicenceNation)].Name + "Gen") + "的" + sti(npchar.LicenceType) + "天贸易许可证, 价格是" + FindRussianMoneyString(iSumm) + "。 ";
 			link.l1 = "我同意。 ";
 			if(makeint(Pchar.money) < iSumm)
@@ -218,7 +218,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "NationLicenceType3":
-            iSumm = sti(npchar.LicenceType) * (3000 + MOD_SKILL_ENEMY_RATE*500);
+            iSumm = LICENSE_GetPrice(npchar.LicenceType);
 			dialog.text = "给你。 进入港口时别忘了升起友好旗帜。 记住巡逻队会检查许可证的日期。 ";
 			link.l9 = "谢谢。 ";
 			link.l9.go = "exit";

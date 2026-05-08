@@ -863,7 +863,6 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 				if (NextDiag.TempNode != "I_know_you_good")
 					dialog.text = "¿Estás loco" + GetSexPhrase("", "a") + "? Nuestros muchachos te evitan como si tuvieras la peste. Así que lárgate y no me molestes.";
 				else
@@ -871,12 +870,12 @@ void ProcessDialogEvent()
 				link.l1 = "Entendido...";
 				link.l1.go = "exit";
 			}
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 		break;
 
 		case "pirate_threat_pay":
 			iGPThreatRate = 0;
 			iGPThreat = 0;
-			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iBarbazonTotalTemp);
 			DialogExit();
 			PiratesDecreaseNotif("");

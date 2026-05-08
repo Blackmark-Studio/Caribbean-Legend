@@ -1806,7 +1806,7 @@ void ProcessDialogEvent()
 			
 			LAi_LocationFightDisable(&Locations[FindLocation(PChar.location)], false);
 			LAi_SetFightMode(pchar, true);
-			PlaySound("Voice\Russian\hambit\Longway-02.wav");
+			PlaySoundSafe("Voice\" + LanguageGetLanguage() + "\hambit", "Longway-02.wav");
 			
 			sld = CharacterFromID("PZ_AntoniOneDimen");
 			LAi_SetWarriorType(sld);
@@ -2785,7 +2785,7 @@ void ProcessDialogEvent()
 			LAi_SetOfficerType(npchar);
 			npchar.Dialog.Filename = "Quest\HollandGambit\Longway.c";
 			npchar.Dialog.CurrentNode = "Longway_officer";
-			LAi_SetCheckMinHP(npchar, 1, true, "HiddenImmortality");
+			LAi_SetImmortal(npchar, true);
 			PChar.quest.PZ_MayakPodslushivanie.win_condition.l1 = "locator";
 			PChar.quest.PZ_MayakPodslushivanie.win_condition.l1.location = "Mayak4";
 			PChar.quest.PZ_MayakPodslushivanie.win_condition.l1.locator_group = "goto";
@@ -5296,7 +5296,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_AnriTibo_4":
-			dialog.text = ""저도 반갑습니다, 드 모르 나리! 저를 따라오시지요. 이런 악취 나는 선술집에 귀하 같은 분과 그의 아름다운 동행이 갇혀 있을 이유가 없지요. 각하께서 도성 안에 집을 마련해 주셨고, 저에게 모든 면에서 도와드리라고 지시하셨습니다. 나중에 푸앵시 각하께도 각하의 안부를 꼭 전해 주시기 바랍니다."\n";
+			dialog.text = "저도 반갑습니다, 드 모르 나리! 저를 따라오시지요. 이런 악취 나는 선술집에 귀하 같은 분과 그의 아름다운 동행이 갇혀 있을 이유가 없지요. 각하께서 도성 안에 집을 마련해 주셨고, 저에게 모든 면에서 도와드리라고 지시하셨습니다. 나중에 푸앵시 각하께도 각하의 안부를 꼭 전해 주시기 바랍니다.";
 			link.l1 = "사실, 제 용무는 은밀한 일입니다. 있잖습니까, Thibaut 나리, 제 생각에는...";
 			link.l1.go = "PZ_AnriTibo_5";
 		break;
@@ -7100,7 +7100,7 @@ void ProcessDialogEvent()
 				sld = CharacterFromID("Longway");
 				ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto4");
 				ReturnOfficer_Longway();
-				PlaySound("VOICE\Russian\hambit\Longway-02.wav");
+				PlaySoundSafe("Voice\" + LanguageGetLanguage() + "\hambit", "Longway-02.wav");
 			}
 			LAi_SetFightMode(pchar, true);
 			sld = CharacterFromID("Levasser");
@@ -7234,7 +7234,7 @@ void ProcessDialogEvent()
 				sld = CharacterFromID("Longway");
 				ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto4");
 				ReturnOfficer_Longway();
-				PlaySound("VOICE\Russian\hambit\Longway-02.wav");
+				PlaySoundSafe("Voice\" + LanguageGetLanguage() + "\hambit", "Longway-02.wav");
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sld = CharacterFromID("Mary");
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sld = CharacterFromID("Helena");

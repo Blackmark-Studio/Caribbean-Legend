@@ -1,45 +1,100 @@
-Reaction {반응}
 Action {결정}
+Actions {결정}
+DisabledAction {이 행동을 하려면 무언가가 부족합니다...}
+FactorAccuracy {$key(Accuracy)}
+FactorAgility {$key(Agility)}
+FactorAmmo {$key(itmtype_ammo|ItemsDescribe.txt)}
+FactorBase {기본 확률}
+FactorBlade {$key(itmtype_blade|ItemsDescribe.txt)}
+FactorCharisma {$key(Charisma)}
+FactorCirass {$key(itmtype_cirass|ItemsDescribe.txt)}
+FactorCommerce {$key(Commerce)}
+FactorDefence {$key(Defence)}
+FactorEndurance {$key(Endurance)}
+FactorFencingH {$key(FencingH)}
+FactorFencingL {$key(FencingL)}
+FactorFencingS {$key(FencingS)}
+FactorFortune {$key(Fortune)}
+FactorGrappling {$key(Grappling)}
+FactorGun {$key(itmtype_gun|ItemsDescribe.txt)}
+FactorHat {$key(itmtype_hat|ItemsDescribe.txt)}
+FactorIntellect {$key(Intellect)}
+FactorLantern {$key(itmtype_lantern|ItemsDescribe.txt)}
+FactorLeadership {$key(Leadership)}
+FactorLuck {$key(Luck)}
+FactorMaps {$key(itmtype_maps|ItemsDescribe.txt)}
+FactorMusket {$key(itmtype_musket|ItemsDescribe.txt)}
+FactorNobility {명예}
+FactorPatent {$key(itmtype_patent|ItemsDescribe.txt)}
+FactorPerception {$key(Perception)}
+FactorPistol {$key(Pistol)}
 FactorRelationship0 {$key(englandAbl) 와의 관계}
 FactorRelationship1 {$key(franceAbl) 와의 관계}
 FactorRelationship2 {$key(spainAbl) 와의 관계}
 FactorRelationship3 {$key(hollandAbl) 와의 관계}
 FactorRelationshipSmugglers {$key(SmugglerAbl) 와의 관계}
-FactorBase {기본 확률}
-FactorShipRank {함선 등급}
-FactorShipQty {전대 규모}
-FactorFencingL {$key(FencingL)}
-FactorFencingS {$key(FencingS)}
-FactorFencingH {$key(FencingH)}
-FactorPistol {$key(Pistol)}
-FactorFortune {$key(Fortune)}
-FactorLeadership {$key(Leadership)}
-FactorSailing {$key(Sailing)}
-FactorAccuracy {$key(Accuracy)}
-FactorGrappling {$key(Grappling)}
 FactorRepair {$key(Repair)}
-FactorDefence {$key(Defence)}
-FactorCommerce {$key(Commerce)}
-FactorSneak {$key(Sneak)}
-FactorStrength {$key(Strength)}
-FactorPerception {$key(Perception)}
-FactorEndurance {$key(Endurance)}
-FactorCharisma {$key(Charisma)}
-FactorIntellect {$key(Intellect)}
-FactorAgility {$key(Agility)}
-FactorLuck {$key(Luck)}
-DisabledAction {이 행동을 하려면 무언가가 부족합니다...}
-FactorGun {$key(itmtype_gun|ItemsDescribe.txt)}
-FactorBlade {$key(itmtype_blade|ItemsDescribe.txt)}
-FactorSpyglass {$key(itmtype_spyglass|ItemsDescribe.txt)}
-FactorPatent {$key(itmtype_patent|ItemsDescribe.txt)}
-FactorCirass {$key(itmtype_cirass|ItemsDescribe.txt)}
-FactorMaps {$key(itmtype_maps|ItemsDescribe.txt)}
-FactorTool {$key(itmtype_tool|ItemsDescribe.txt)}
-FactorTalisman {$key(itmtype_talisman|ItemsDescribe.txt)}
+FactorSailing {$key(Sailing)}
+FactorSeason {계절}
+FactorShipQty {전대 규모}
+FactorShipRank {함선 등급}
 FactorSlot {$key(itmtype_slot|ItemsDescribe.txt)}
+FactorSneak {$key(Sneak)}
 FactorSpecial {$key(itmtype_special|ItemsDescribe.txt)}
-FactorAmmo {$key(itmtype_ammo|ItemsDescribe.txt)}
-FactorLantern {$key(itmtype_lantern|ItemsDescribe.txt)}
-FactorHat {$key(itmtype_hat|ItemsDescribe.txt)}
-FactorMusket {$key(itmtype_musket|ItemsDescribe.txt)}
+FactorSpyglass {$key(itmtype_spyglass|ItemsDescribe.txt)}
+FactorStrength {$key(Strength)}
+FactorTalisman {$key(itmtype_talisman|ItemsDescribe.txt)}
+FactorTool {$key(itmtype_tool|ItemsDescribe.txt)}
+HelpTextActions {결정은 스토리의 세부 내용에 따라 달라지며, 언제나 이야기를 앞으로 진행시킵니다. 그것은 당신 캐릭터의 본래 목표나 그것에 접근하는 방식을 반영합니다. 어떤 결정을 선택했는지에 따라 스토리의 결말이 달라지는 경우가 많습니다.}
+HelpTextCommon
+{
+이것은 당신의 행동과 준비가 작은 이야기의 흐름에 영향을 주는 인터랙티브 내러티브입니다.
+먼저 당신은 하나의 상황과 마주하게 되며, 이 텍스트는 이미 화면에 표시되어 있습니다.
+주어진 상황에 따라 특정한 행동을 취할 수 있습니다.
+~
+스토리에서의 행동은 반응과 결정으로 나뉩니다.
+각 결정이나 반응에는 캐릭터의 skills, perks, 또는 능력치 판정이 포함될 수 있습니다.
+특정 요구 조건을 충족하지 못하면 일부 행동은 선택할 수 없을 수도 있습니다.
+~
+스토리의 모든 판정은 성공에 영향을 주는 여러 요소를 고려합니다. 해당 요소들은 마우스를 올렸을 때 표시되는 툴팁에 나열됩니다.
+판정 결과는 불러오기로 바뀌지 않으며, 조건이 바뀔 때만 달라집니다. 실패했다고 낙담하지 마세요. 다음에는 반드시 운이 따라줄 것입니다.
+}
+HelpTextReactions {반응은 스토리의 세부 내용에 따라 달라지며, 예상치 못한 이점을 얻고 일을 더 쉽게 만들 기회를 줍니다. 하지만 그 대가로 적절한 perk, 필요한 아이템, 또는 판정 통과 같은 조건을 충족해야 합니다. 반응은 스토리를 다음 단계로 넘기지 않으며, 즉시 효과를 발휘하고 종종 결정에서의 판정 난이도에 영향을 줍니다.}
+HelpTitleCommon {스토리}
+Reaction {반응}
+Reactions {반응}
+CommonTriumph {대성공}
+CommonFail {파국}
+DisabledAction_Money {이것에는 자금이 필요합니다}
+DisabledAction_Perk {필요한 기술: $ctx(value)}
+DisabledAction_Skill {기술이 충분히 발달하지 않았습니다: $ctx(value)}
+DisabledAction_Herotype {필요한 영웅 배경: $ctx(value)}
+DisabledAction_Pirates {능력치가 충분히 높지 않습니다: $ctx(value)}
+DisabledAction_Reputation {이 행동에는 일정한 평판이 필요합니다}
+DisabledAction_Relations {_$key($ctx(value)Abl) 와의 관계가 더 좋아야 합니다}
+DisabledAction_Item {필요한 아이템: $ctx(value)}
+DisabledAction_license {무역 면허가 없습니다}
+FactorFencingL_chr {장교의 $key(FencingL)}
+FactorFencingS_chr {장교의 $key(FencingS)}
+FactorFencingH_chr {장교의 $key(FencingH)}
+FactorPistol_chr {장교의 $key(Pistol)}
+FactorFortune_chr {장교의 $key(Fortune)}
+FactorLeadership_chr {장교의 $key(Leadership)}
+FactorSailing_chr {장교의 $key(Sailing)}
+FactorAccuracy_chr {장교의 $key(Accuracy)}
+FactorGrappling_chr {장교의 $key(Grappling)}
+FactorRepair_chr {장교의 $key(Repair)}
+FactorDefence_chr {장교의 $key(Defence)}
+FactorCommerce_chr {장교의 $key(Commerce)}
+FactorSneak_chr {장교의 $key(Sneak)}
+FactorStrength_chr {장교의 $key(Strength)}
+FactorPerception_chr {장교의 $key(Perception)}
+FactorEndurance_chr {장교의 $key(Endurance)}
+FactorCharisma_chr {장교의 $key(Charisma)}
+FactorIntellect_chr {장교의 $key(Intellect)}
+FactorAgility_chr {장교의 $key(Agility)}
+FactorLuck_chr {장교의 $key(Luck)}
+FactorNobility_chr {$casedName($ctx(name)|Gen)의 명예}
+FactorRelationshipIndians {$key(IndianAbl)와의 관계}
+DisabledAction_Capellan {이 선택지는 배에 군목이 있을 때만 사용할 수 있습니다}
+check_title {판정 난이도:}

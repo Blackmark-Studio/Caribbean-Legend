@@ -1,4 +1,5 @@
 SharlieTutorial_1 {Capitaine}
+SharlieTutorial_10 {Pinchon}
 SharlieTutorial_2 {Matelot}
 SharlieTutorial_3 {Bosco}
 SharlieTutorial_4 {Trésorier}
@@ -7,4 +8,3 @@ SharlieTutorial_6 { }
 SharlieTutorial_7 {Paul}
 SharlieTutorial_8 {Henry}
 SharlieTutorial_9 {Mathieu}
-SharlieTutorial_10 {Pinchon}

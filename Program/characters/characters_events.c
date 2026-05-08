@@ -255,7 +255,7 @@ void chrCharacterInLocator()
 					}
 				}
 			break; 
-			/* case "item":
+			case "item":
 				Item_OnEnterLocator(loc, locator);
 			break;
 			case "randitem":
@@ -263,7 +263,7 @@ void chrCharacterInLocator()
 			break;
 			case "box":	
 				Box_EnterToLocator(loc, locator);
-			break; */
+			break;
 		}
 	}
 }
@@ -357,7 +357,7 @@ void chrCharacterKeys()
 	{
     // boal <--
 		ref loc = &Locations[FindLocation(mc.location)];
-		if(chrGetLabelName(loc, chrWaitReloadLocator) == "sea")
+		if(chrGetLabelName(loc, chrWaitReloadLocator) == "sea" && isShipInside(mc.location))
 			LandToSea_CheckAutoSave();
 		else if (CheckStealthOnLoad(chrWaitReloadRef, chrWaitReloadLocator)) return;
 		else Reload(chrWaitReloadRef, chrWaitReloadLocator, mc.location);

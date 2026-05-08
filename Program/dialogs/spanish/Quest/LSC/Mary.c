@@ -88,8 +88,9 @@ void ProcessDialogEvent()
 		PlaySound("Voice\Spanish\LSC\Mary Casper-09.wav");
 		dialog.text = "¿Qué dijiste?... ¡Maldita sea, no eres un ladrón cualquiera! ¡Él trabaja para el almirante! ¡Derríbenlo, muchachos!";
 		link.l1 = "...";
-		link.l1.go = "Cabin_fight";
-		break;
+		link.l1.go = "exit";
+		AddDialogExitQuestFunction("LSC_Cabin_fight");
+	break;
 
 		// ---------------------------------покушение на Акулу - вариант N --------------------------------
 	case "caroline":

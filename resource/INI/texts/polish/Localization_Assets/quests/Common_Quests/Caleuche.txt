@@ -1,12 +1,4 @@
 Caleuche_1 {Tuttuathapak}
-Caleuche_2 { }
-Caleuche_3 {Nieumarły Kapitan}
-Caleuche_4 { }
-Caleuche_5 {Statek widmo}
-Caleuche_6 {Fergus}
-Caleuche_7 {Hooper}
-Caleuche_8 {Uciekłeś od statku widmo!}
-Caleuche_9 {Reginald}
 Caleuche_10 {Jackson}
 Caleuche_11 {Harpia}
 Caleuche_12 {szebeka 'Harpia'}
@@ -17,6 +9,7 @@ Caleuche_16 { }
 Caleuche_17 {Esberto}
 Caleuche_18 {Salinas}
 Caleuche_19 {Amulety Tuttuathapak utraciły swę moce!}
+Caleuche_2 { }
 Caleuche_20 {Wciśnij 'T' aby użyć}
 Caleuche_21 {Portal jest zablokowany!}
 Caleuche_22 {Wódz Chavinavy}
@@ -27,6 +20,7 @@ Caleuche_26 {Statek widmo na horyzoncie!}
 Caleuche_27 {Baltazar}
 Caleuche_28 {de Cordes}
 Caleuche_29 { }
+Caleuche_3 {Nieumarły Kapitan}
 Caleuche_30 {Czujesz się bardziej zręczny}
 Caleuche_31 {Czujesz się solidniejszy}
 Caleuche_32 {Czujesz się silniejszy}
@@ -37,4 +31,10 @@ Caleuche_36 {Czujesz inspiracje}
 Caleuche_37 {Statek widmo jest na horyzoncie!}
 Caleuche_38 {Zemdlałeś z powodu ran...}
 Caleuche_39 { }
+Caleuche_4 { }
 Caleuche_40 { }
+Caleuche_5 {Statek widmo}
+Caleuche_6 {Fergus}
+Caleuche_7 {Hooper}
+Caleuche_8 {Uciekłeś od statku widmo!}
+Caleuche_9 {Reginald}

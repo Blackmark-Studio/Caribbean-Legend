@@ -48,11 +48,11 @@ void ProcessCancelExit()
 {
 	LanguageCloseFile(idLngFile);
     bGameMenuStart = false; // выход из меню, показываем landinterface
-	if(CheckAttribute(pchar,"systeminfo.photomod"))
+/*	if(CheckAttribute(pchar,"systeminfo.photomod"))
 	{
 		PhotoModChangeInterface();
 		DeleteAttribute(pchar,"systeminfo.photomod");
-	}
+	}	*/
 	IDoExit(RC_INTERFACE_QUICK_SAVE);
 }
 
@@ -439,8 +439,7 @@ void CalculateInfoDataF2()
     // -->
     totalInfo = descF2;
 	
-	locCameraEnableFree = !locCameraEnableFree;
-	pchar.systeminfo.photomod = true;
+//	pchar.systeminfo.photomod = true;
 	
     totalInfo = totalInfo + NewStr() + NewStr() + LanguageConvertString(idLngFile, "Cheat_success");
 
@@ -1177,7 +1176,7 @@ void ChangeLanguage()
 	descF30 = LanguageConvertString(dockid,"f30");
 	LanguageCloseFile(dockid);
 }
-
+/*
 void PhotoModChangeInterface()
 {
 	if(!locCameraEnableFree) 
@@ -1234,4 +1233,4 @@ void PhotoModChangeInterface()
 		if(LanguageGetLanguage() == "russian") Log_info("Свободная камера включена");
 		if(LanguageGetLanguage() != "russian")Log_info("FreeCam On");
 	}
-}
+} */

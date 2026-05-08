@@ -1,45 +1,100 @@
-Reaction {Reakcja}
 Action {Decyzja}
+Actions {Decyzje}
+DisabledAction {Do tej akcji czegoś brakuje...}
+FactorAccuracy {$key(Accuracy)}
+FactorAgility {$key(Agility)}
+FactorAmmo {$key(itmtype_ammo|ItemsDescribe.txt)}
+FactorBase {Szansa bazowa}
+FactorBlade {$key(itmtype_blade|ItemsDescribe.txt)}
+FactorCharisma {$key(Charisma)}
+FactorCirass {$key(itmtype_cirass|ItemsDescribe.txt)}
+FactorCommerce {$key(Commerce)}
+FactorDefence {$key(Defence)}
+FactorEndurance {$key(Endurance)}
+FactorFencingH {$key(FencingH)}
+FactorFencingL {$key(FencingL)}
+FactorFencingS {$key(FencingS)}
+FactorFortune {$key(Fortune)}
+FactorGrappling {$key(Grappling)}
+FactorGun {$key(itmtype_gun|ItemsDescribe.txt)}
+FactorHat {$key(itmtype_hat|ItemsDescribe.txt)}
+FactorIntellect {$key(Intellect)}
+FactorLantern {$key(itmtype_lantern|ItemsDescribe.txt)}
+FactorLeadership {$key(Leadership)}
+FactorLuck {$key(Luck)}
+FactorMaps {$key(itmtype_maps|ItemsDescribe.txt)}
+FactorMusket {$key(itmtype_musket|ItemsDescribe.txt)}
+FactorNobility {Honor}
+FactorPatent {$key(itmtype_patent|ItemsDescribe.txt)}
+FactorPerception {$key(Perception)}
+FactorPistol {$key(Pistol)}
 FactorRelationship0 {Relacje z $key(englandAbl)}
 FactorRelationship1 {Relacje z $key(franceAbl)}
 FactorRelationship2 {Relacje z $key(spainAbl)}
 FactorRelationship3 {Relacje z $key(hollandAbl)}
 FactorRelationshipSmugglers {Relacje z $key(SmugglerAbl)}
-FactorBase {Szansa bazowa}
-FactorShipRank {Ranga statku}
-FactorShipQty {Rozmiar eskadry}
-FactorFencingL {$key(FencingL)}
-FactorFencingS {$key(FencingS)}
-FactorFencingH {$key(FencingH)}
-FactorPistol {$key(Pistol)}
-FactorFortune {$key(Fortune)}
-FactorLeadership {$key(Leadership)}
-FactorSailing {$key(Sailing)}
-FactorAccuracy {$key(Accuracy)}
-FactorGrappling {$key(Grappling)}
 FactorRepair {$key(Repair)}
-FactorDefence {$key(Defence)}
-FactorCommerce {$key(Commerce)}
-FactorSneak {$key(Sneak)}
-FactorStrength {$key(Strength)}
-FactorPerception {$key(Perception)}
-FactorEndurance {$key(Endurance)}
-FactorCharisma {$key(Charisma)}
-FactorIntellect {$key(Intellect)}
-FactorAgility {$key(Agility)}
-FactorLuck {$key(Luck)}
-DisabledAction {Do tej akcji czegoś brakuje...}
-FactorGun {$key(itmtype_gun|ItemsDescribe.txt)}
-FactorBlade {$key(itmtype_blade|ItemsDescribe.txt)}
-FactorSpyglass {$key(itmtype_spyglass|ItemsDescribe.txt)}
-FactorPatent {$key(itmtype_patent|ItemsDescribe.txt)}
-FactorCirass {$key(itmtype_cirass|ItemsDescribe.txt)}
-FactorMaps {$key(itmtype_maps|ItemsDescribe.txt)}
-FactorTool {$key(itmtype_tool|ItemsDescribe.txt)}
-FactorTalisman {$key(itmtype_talisman|ItemsDescribe.txt)}
+FactorSailing {$key(Sailing)}
+FactorSeason {Sezon }
+FactorShipQty {Rozmiar eskadry}
+FactorShipRank {Ranga statku}
 FactorSlot {$key(itmtype_slot|ItemsDescribe.txt)}
+FactorSneak {$key(Sneak)}
 FactorSpecial {$key(itmtype_special|ItemsDescribe.txt)}
-FactorAmmo {$key(itmtype_ammo|ItemsDescribe.txt)}
-FactorLantern {$key(itmtype_lantern|ItemsDescribe.txt)}
-FactorHat {$key(itmtype_hat|ItemsDescribe.txt)}
-FactorMusket {$key(itmtype_musket|ItemsDescribe.txt)}
+FactorSpyglass {$key(itmtype_spyglass|ItemsDescribe.txt)}
+FactorStrength {$key(Strength)}
+FactorTalisman {$key(itmtype_talisman|ItemsDescribe.txt)}
+FactorTool {$key(itmtype_tool|ItemsDescribe.txt)}
+HelpTextActions {Decyzje zależą od szczegółów Historii i zawsze posuwają fabułę naprzód. Odzwierciedlają pierwotny cel twojej postaci albo sposób, w jaki postanawia do niego dążyć. Od wybranych Decyzji często zależy finał Historii.}
+HelpTextCommon
+{
+To interaktywna opowieść, w której twoje działania i przygotowanie wpływają na niewielką historię.
+Najpierw stajesz wobec sytuacji - ten tekst jest już wyświetlony na ekranie.
+Na podstawie sytuacji, która ci się trafiła, możesz podjąć określone działania.
+~
+Działania w Historiach dzielą się na Reakcje i Decyzje.
+Każda Decyzja lub Reakcja może obejmować test umiejętności, perków albo cech postaci.
+Niektóre działania mogą być niedostępne, jeśli nie spełniasz określonych wymagań.
+~
+Każdy test w Historii uwzględnia wiele czynników wpływających na powodzenie. Są one wymienione w podpowiedzi po najechaniu kursorem.
+Wyniki testów nie zmieniają się po wczytaniu gry, a jedynie po zmianie warunków. Nie zniechęcaj się porażką - następnym razem na pewno dopisze ci szczęście.
+}
+HelpTextReactions {Reakcje zależą od szczegółów Historii i dają możliwość uzyskania nieoczekiwanej przewagi oraz ułatwienia sobie zadania, ale w zamian wymagają spełnienia warunku - odpowiedniego perka, przedmiotu albo zaliczenia testu. Reakcje nie powodują przejścia do kolejnej części Historii, dają natychmiastowy efekt i często wpływają na trudność testów w Decyzjach.}
+HelpTitleCommon {Historie}
+Reaction {Reakcja}
+Reactions {Reakcje}
+CommonTriumph {Triumf}
+CommonFail {Upadek}
+DisabledAction_Money {To będzie wymagało środków}
+DisabledAction_Perk {Wymagana umiejętność: $ctx(value)}
+DisabledAction_Skill {Umiejętność rozwinięta niewystarczająco: $ctx(value)}
+DisabledAction_Herotype {Wymagana przeszłość bohatera: $ctx(value)}
+DisabledAction_Pirates {Cecha rozwinięta niewystarczająco: $ctx(value)}
+DisabledAction_Reputation {To działanie wymaga określonej reputacji}
+DisabledAction_Relations {Relacje z _$key($ctx(value)Abl) muszą być lepsze}
+DisabledAction_Item {Wymagany przedmiot: $ctx(value)}
+DisabledAction_license {Brak licencji handlowej}
+FactorFencingL_chr {$key(FencingL) $ctx(name)}
+FactorFencingS_chr {$key(FencingS) $ctx(name)}
+FactorFencingH_chr {$key(FencingH) $ctx(name)}
+FactorPistol_chr {$key(Pistol) $ctx(name)}
+FactorFortune_chr {$key(Fortune) $ctx(name)}
+FactorLeadership_chr {$key(Leadership) $ctx(name)}
+FactorSailing_chr {$key(Sailing) $ctx(name)}
+FactorAccuracy_chr {$key(Accuracy) $ctx(name)}
+FactorGrappling_chr {$key(Grappling) $ctx(name)}
+FactorRepair_chr {$key(Repair) $ctx(name)}
+FactorDefence_chr {$key(Defence) $ctx(name)}
+FactorCommerce_chr {$key(Commerce) $ctx(name)}
+FactorSneak_chr {$key(Sneak) $ctx(name)}
+FactorStrength_chr {$key(Strength) $ctx(name)}
+FactorPerception_chr {$key(Perception) $ctx(name)}
+FactorEndurance_chr {$key(Endurance) $ctx(name)}
+FactorCharisma_chr {$key(Charisma) $ctx(name)}
+FactorIntellect_chr {$key(Intellect) $ctx(name)}
+FactorAgility_chr {$key(Agility) $ctx(name)}
+FactorLuck_chr {$key(Luck) $ctx(name)}
+FactorNobility_chr {Honor $casedName($ctx(name)|Gen)}
+FactorRelationshipIndians {Relacje z $key(IndianAbl)}
+DisabledAction_Capellan {Ta opcja jest dostępna tylko wtedy, gdy na statku jest kapelan}
+check_title {Trudność testu:}

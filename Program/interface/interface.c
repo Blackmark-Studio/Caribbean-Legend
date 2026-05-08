@@ -12,7 +12,6 @@
 #include "interface\utilite.c"
 #include "interface\interface_utils.c"
 
-
 #define FONT_NORMAL	"interface_normal"
 #define FONT_CAPTION	"interface_button"
 #define FONT_BOLD_NUMBERS	"bold_numbers"
@@ -33,10 +32,8 @@
 #define DISEASE_ON_SHIP	0
 #define DISEASE_ON_COLONY	1
 
-
 //extern string FindRussianDaysString(int idays); 
 //extern string FindRussianMoneyString(int imoney);
-
 
 #event_handler("LaunchIAfterFrame","ILaunchAfterFrame");
 #event_handler("ievent_GameOver","IProcEventGameOver");
@@ -47,8 +44,6 @@
 #event_handler("FaderEvent_StartFadeIn","ProcBreakInterface");
 #event_handler("FaderEvent_EndFade","ProcBreakInterface");
 #event_handler("FaderEvent_EndFadeIn","ProcBreakInterface");
-
-#event_handler("Fader_GetTipsPath","procGetTipsPath");
 #event_handler("Fader_GetFaderPicture","procGetFaderPicture");
 
 #event_handler("evntOptionsBreak","procOptionsBreak");
@@ -77,7 +72,6 @@ extern void InitInterface_BB(string iniFile, bool bParam1, bool bParam2);
 extern void InitInterface_RRS(string iniFile, ref rParam1, ref rParam2, string sParam3);
 extern void InitInterface_RIS(string iniFile, ref rParam1, int iParam2, string sParam3);
 
-
 extern ref GetMyCharacterRef();
 extern ref GetEnemyCharacterRef();
 string ICurNode;
@@ -86,6 +80,11 @@ int	   nPrevInterface;
 bool bGamePadChangeEnable = false;
 bool bPlayVideoNow = false;
 bool bMainMenuLaunchAfterVideo = false;
+
+string gTips[];
+int gTipsPerm[];
+int gTipsQty = 0;
+int gCurTipNum = 0;
 
 // Warship -->
 void LaunchBestMapScreen()	// Интерфейс отличной карты
@@ -1835,7 +1834,6 @@ void procInfoShow()
 			//objInfoList[nInfoIdx].scale = 1.0;
 			objInfoList[nInfoIdx].offset = 30;
 			objInfoList[nInfoIdx].picbackfilename = "loading\ImgBack.tga";
-            objInfoList[nInfoIdx].tips = false;
 
 			switch(sInfoID)
 			{
@@ -1857,7 +1855,6 @@ void procInfoShow()
 
 			case "MainMenuLaunch":
 				objInfoList[nInfoIdx].picfilename = "loading\start_loading.tga";
-                objInfoList[nInfoIdx].tips = true;
 			break;
 
 			case "OptionsBreak":
@@ -1866,7 +1863,6 @@ void procInfoShow()
 
 			case "Game Over Picture":
 				objInfoList[nInfoIdx].picfilename = InterfaceStates.GameOverPicture;
-                objInfoList[nInfoIdx].tips = true;
 			break;
 			}
 
@@ -2123,15 +2119,6 @@ bool g_bOptionsBreak = false;
 void procOptionsBreak()
 {
 	g_bOptionsBreak = true;
-}
-
-string g_sTipsPath;
-ref procGetTipsPath()
-{
-	string sLngID = LanguageGetLanguage();
-	if(sLngID=="")	g_sTipsPath = "tips";
-	else g_sTipsPath = "tips\" + sLngID;
-	return &g_sTipsPath;
 }
 
 string g_sFaderPic;
@@ -2861,9 +2848,10 @@ string GetCurLocationName()
             locLabel =  worldMap.island;
 			
 			int iIslandIndex = FindIsland(locLabel);
-			if (iIslandIndex != -1 && Islands[iIslandIndex].visible == true)
+			ref rIsland = &Islands[iIslandIndex];
+			if (iIslandIndex != -1 && rIsland.visible == true)
 			{
-				locLabel = GetIslandNameByID(locLabel);
+				locLabel = GetRegionName(rIsland);
 				if (locLabel == "")
 				{
 					locLabel = GetIslandNameByID("Mein");
@@ -3073,6 +3061,12 @@ void ImageCollection_SetColor(string sControl, int iCIndex, int Color)
 void ScrollImage_SetPosition(string sControl, int iPosition)
 {
 	SendMessage(&GameInterface, "lsll", MSG_INTERFACE_MSG_TO_NODE, sControl, 1, iPosition);
+}
+
+// дополнительный скейл, скейлит и размер шрифта, и межстрочный интервал
+void FormatedText_SetTextScale(string sControl, float fScale)
+{
+	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, sControl, 15, fScale);
 }
 
 void SetInterfaceGlobalsVariables()

@@ -201,7 +201,7 @@ void ProcessDialogEvent()
 		// --> Jason Похититель
 		case "Marginpassenger":
 			dialog.text = "그래? 무슨 할 말이라도 있나?";
-			link.l1 = "요즘 나는 길에서 붙잡히곤 해 "+pchar.GenQuest.Marginpassenger.Name+" 나를 위해 더러운 일을 꾸며주겠다고 제안한 자가 있었지. 그 일은 바로 "+이름+"이라는 사람을 붙잡아 몸값을 요구하는 것이었어. "+pchar.GenQuest.Marginpassenger.q1Name+". 그거야 "+pchar.GenQuest.Marginpassenger.Text+"...";
+			link.l1 = "요즘 나는 길에서 붙잡히곤 해 "+pchar.GenQuest.Marginpassenger.Name+" 나를 위해 더러운 일을 꾸며주겠다고 제안한 자가 있었지. 그 일은 바로 이름 이라는 사람을 붙잡아 몸값을 요구하는 것이었어. "+pchar.GenQuest.Marginpassenger.q1Name+". 그거야 "+pchar.GenQuest.Marginpassenger.Text+"...";
 			link.l1.go = "Marginpassenger_1";
 		break;
 		

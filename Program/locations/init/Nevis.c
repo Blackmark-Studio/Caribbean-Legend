@@ -988,6 +988,7 @@ int LocationInitNevis(int n)
 	locations[n].townsack = "Charles";
 	//Sound
 	locations[n].type = "jungle";
+	locations[n].fastreload = "Charles";
 	locations[n].islandId = "Nevis";
 	//Models
 	//Always
@@ -1045,6 +1046,7 @@ int LocationInitNevis(int n)
 	locations[n].townsack = "Charles";
 	//Sound
 	locations[n].type = "jungle";
+	locations[n].fastreload = "Charles";
 	locations[n].islandId = "Nevis";
 	locations[n].DisableEncounters = true;
 	//Models
@@ -1115,6 +1117,7 @@ int LocationInitNevis(int n)
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "House";
+	locations[n].fastreload = "Charles";
 	locations[n].islandId = "Nevis";
 	//Models
 	//Always

@@ -1,12 +1,4 @@
 RPGUtilite_1 {Zdobyto doświadczenie ~}
-RPGUtilite_2 {okropne}
-RPGUtilite_3 {złe}
-RPGUtilite_4 {kiepskie}
-RPGUtilite_5 {bez rewolucji}
-RPGUtilite_6 {dobre}
-RPGUtilite_7 {świetne}
-RPGUtilite_8 {Witalność wzrosła}
-RPGUtilite_9 {Witalność spadła}
 RPGUtilite_10 {Reputacja spadła!}
 RPGUtilite_11 {Reputacja wzrosła!}
 RPGUtilite_12 {Reputacja wzrosła!}
@@ -17,7 +9,15 @@ RPGUtilite_16 {Kiepskie}
 RPGUtilite_17 {Słabe}
 RPGUtilite_18 {Normalne}
 RPGUtilite_19 {Dobre}
+RPGUtilite_2 {okropne}
 RPGUtilite_20 {Sympatia}
 RPGUtilite_21 {Podziw}
 RPGUtilite_22 {Rainbow}
 RPGUtilite_23 {Quicksilver}
+RPGUtilite_3 {złe}
+RPGUtilite_4 {kiepskie}
+RPGUtilite_5 {bez rewolucji}
+RPGUtilite_6 {dobre}
+RPGUtilite_7 {świetne}
+RPGUtilite_8 {Witalność wzrosła}
+RPGUtilite_9 {Witalność spadła}

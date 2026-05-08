@@ -1,12 +1,4 @@
 FMQ_1 {Bertrand}
-FMQ_2 {Pinette}
-FMQ_3 {Carlos}
-FMQ_4 {de Milyar}
-FMQ_5 {Jean}
-FMQ_6 {Deno}
-FMQ_7 {Sario}
-FMQ_8 {Juan}
-FMQ_9 {Deno}
 FMQ_10 {'Sario'}
 FMQ_11 {~ En cuanto a Pinette... ¡Al diablo con él! Ese maldito banquero no lo aceptará.}
 FMQ_12 {~ El maldito banquero me ayudará a resolver esto bajo la amenaza de ser expuesto. La carta de Pinette es un argumento muy sólido. Debo dirigirme a Guadalupe y entrar a la ciudad por las puertas durante la noche.}
@@ -17,6 +9,7 @@ FMQ_16 {Ha caído la noche...@<NewStr()>La resina fue descargada en el astillero
 FMQ_17 {Topaz}
 FMQ_18 {¡Sonidos de alarma en la tartana Topaz!}
 FMQ_19 {Eres libre de desembarcar en la costa}
+FMQ_2 {Pinette}
 FMQ_20 {Modo exploración: la misión no ha fallado}
 FMQ_21 {Caspar}
 FMQ_22 {Gratton}
@@ -27,6 +20,7 @@ FMQ_26 {Filippe}
 FMQ_27 {Jaсobsen}
 FMQ_28 {Un grupo de asalto británico llegó a nuestra isla, pero nuestro comandante, siempre alerta, los descubrió y los eliminó. ¡Es un gran logro!}
 FMQ_29 {¿Has oído? Hubo un enfrentamiento fuera del pueblo. Encontraron a un grupo de asalto inglés. Los británicos se negaron a rendirse y fueron abatidos en combate. ¡Bien hecho, comandante!}
+FMQ_3 {Carlos}
 FMQ_30 {Seda de barco + 200}
 FMQ_31 {¡Oh, eres tú! ¡Bravo, capitán! ¡Tuviste el valor de enfrentarte a los espías ingleses armados hasta los dientes!}
 FMQ_32 {Las autoridades te elogian, capitán. Y con razón: ayudar a eliminar espías ingleses es un gran mérito.}
@@ -37,6 +31,7 @@ FMQ_36 {¡Qué descaro! ¡Los británicos se infiltraron en nuestra ciudad duran
 FMQ_37 {¿Has oído? Hubo un enfrentamiento en la ciudad. Encontraron a un grupo de asalto inglés. Se negaron a rendirse y fueron abatidos en combate. ¡Bien hecho, comandante!}
 FMQ_38 {¡No has atracado tu barco en la bahía!}
 FMQ_39 {Hans}
+FMQ_4 {de Milyar}
 FMQ_40 {Shulte}
 FMQ_41 {¡El corbeta Zeepard viene hacia nosotros!}
 FMQ_42 {¿Has oído el caos que hay aquí? El gobernador está furioso. ¡Espías ingleses liberaron a sus compatriotas de nuestra prisión! Dicen que hubo franceses involucrados en esto.}
@@ -47,6 +42,7 @@ FMQ_46 {El gobernador te elogia, capitán. Y con razón: ayudar a los hombres de
 FMQ_47 {Marceline}
 FMQ_48 {Levasseur}
 FMQ_49 {Claude}
+FMQ_5 {Jean}
 FMQ_50 {Durand}
 FMQ_51 {Ugo}
 FMQ_52 { }
@@ -57,6 +53,7 @@ FMQ_56 {Luis}
 FMQ_57 {Ortiz}
 FMQ_58 {Fudroyan}
 FMQ_59 {Gregoire}
+FMQ_6 {Deno}
 FMQ_60 {Valinnie}
 FMQ_61 {Prosper}
 FMQ_62 {Trubal}
@@ -67,6 +64,7 @@ FMQ_66 {Felicien}
 FMQ_67 {Gronier}
 FMQ_68 {Modo exploración: duración de la misión duplicada}
 FMQ_69 {Modo exploración: se eliminó el temporizador}
+FMQ_7 {Sario}
 FMQ_70 {Hans}
 FMQ_71 {Shulte}
 FMQ_72 {Silvestre}
@@ -74,3 +72,5 @@ FMQ_73 {McCoy}
 FMQ_74 {Domingo}
 FMQ_75 {Albalate}
 FMQ_76 {Varias horas después...@<NewStr()>Las mercancías fueron entregadas a la playa.}
+FMQ_8 {Juan}
+FMQ_9 {Deno}

@@ -1,0 +1,38 @@
+Node0_a {Nadchodzi ostatni kwartał roku - rozpoczyna się Sezon Cienia. Huragany pustoszące Atlantyk słabną, lecz ich skutki widać wszędzie. Garnizony zostały zdziesiątkowane przez choroby i głód, szlaki handlowe zerwano, a Karaiby zastygły w oczekiwaniu na zimę.$br$redW tym sezonie morze barwi się na szkarłat - u wybrzeży grasują wygłodniali, rozwścieczeni piraci, floty narodowe próbują wyrwać najtłuściejszy kąsek osłabionemu przeciwnikowi, a przemytnicy stają się najcenniejszymi i najbogatszymi ludźmi na archipelagu.}
+Node0_a_action {Nadszedł czas żałoby i siły}
+Node0_b_a {Wraz z wilgocią odchodzą też choroby, które dziesiątkowały załogi i kolonistów. Wyraźnie opustoszałe ulice miast, tawerny i koszary w naturalny sposób utrudniają rozprzestrzenianie się chorób, co pozwala zabrać w rejs znacznie mniej leków.}
+Node0_b_a_reaction {Podwójna porcja grogu dla wszystkich!}
+Node0_b_a_reaction_log {Decydujesz się wydawać wszystkim dodatkową porcję grogu, by zapobiegać chorobom. To pozwoli zaoszczędzić na lekach.}
+Node0_b_b {Sezon Burzy był w tym roku wyjątkowo srogi. Ogniska chorób przetoczyły się przez Karaiby niczym śmiercionośny wir, pustosząc miasta i koszary. Przeżyli tylko najzdrowsi i najwytrzymalsi, a teraz żadna choroba im niestraszna. Pozwala to znacznie oszczędzić na lekach.}
+Node0_b_b_reaction {Porcja leczniczych ziół dla wszystkich!}
+Node0_b_b_reaction_log {Decydujesz się wydawać wszystkim lecznicze zioła, by zapobiegać chorobom. To pozwoli zaoszczędzić na lekach.}
+Node0_b_c {W tym roku pora wilgotna ustąpiła wcześniej niż zwykle. Wiatry osuszyły porty, wilgoć opuściła koszary i magazyny, a oddychać zrobiło się wyraźnie łatwiej. Gorączki słabną, ludzie szybciej dochodzą do siebie, a na nabrzeżach znów pojawiają się chętni do wypłynięcia w morze. Archipelag jakby odetchnął, a wszyscy patrzą w przyszłość z nadzieją.}
+Node0_b_c_reaction {Witamy na pokładzie!}
+Node0_b_c_reaction_log {Wykorzystujesz swoje kontakty i rozgłos, by przyciągnąć jak najwięcej marynarzy.}
+Node0_b_d {Lato okazało się nie tak bezlitosne, jak oczekiwano. Choroby nie wycięły słabszych, więc jesienią w portach jest więcej ludzi niż zwykle. Ale wraz z nimi pozostaje też zaraza - ciągnie się za nimi i przyczepia do nowych załóg. Choroby mogą wybuchnąć na pokładzie w każdej chwili i trzeba być na to gotowym.}
+Node0_b_d_reaction {Wiem, jak poprawić zdrowie}
+Node0_b_d_reaction_log {Wybierasz spośród rekrutów najzdrowszych i rozdzielasz ich po statku tak, by zmniejszyć ryzyko zachorowań.}
+Node0_c_a {Naprawa statku stała się z kolei kosztownym luksusem. Zapasy drewna okrętowego znikają w oczach, każdy gwóźdź kosztuje trzykrotnie więcej niż zwykle, a rzemieślnicy są zmuszeni podnosić ceny, by poradzić sobie z napływem chętnych.}
+Node0_c_a_reaction {Czy uda nam się zbić cenę?}
+Node0_c_a_reaction_log {Postanawiasz wykorzystać swoją wiedzę o budowie statku, by zaoszczędzić na naprawach. Znacznie trudniej oszukać kogoś, kto się na tym zna.}
+Node0_c_b {Naprawa statku nie będzie jednak łatwa - warsztaty zostały zniszczone przez złą pogodę, a cieśli brakuje. Przed stoczniami ustawiają się kolejki poturbowanych statków, a mistrzowie dają pierwszeństwo okrętom wojennym. Naprawa staje się luksusem, na który nie każdego kapitana stać.}
+Node0_c_b_reaction {Okręty wojenne mają pierwszeństwo?}
+Node0_c_b_reaction_log {Wykorzystujesz swoje wojskowe przeszkolenie, by uchodzić za jednostkę patrolową i przesunąć się w kolejce do przodu.}
+Node0_c_c {Po letnich huraganach rafy i mielizny zasłane są wrakami. Na rozkaz gubernatorów wszystko, co przedstawia wartość, zwozi się do fortów i stoczni - deski, reje, kotwice, a nawet całe maszty. Z ładowni wyciąga się działa, czyści je z rdzy i odkłada do magazynu. Materiału okazało się więcej, niż oczekiwano, więc naprawy nie zdrożały aż tak bardzo.}
+Node0_c_c_reaction {My też coś znajdziemy!}
+Node0_c_c_reaction_log {Wydajesz rozkaz, by aktywnie zbierać wszelkie materiały nadające się do naprawy. Załoga doświadczonych marynarzy szybko zgromadzi dość kosztowności, by zbić cenę w stoczni.}
+Node0_d_a {W sklepach trwa walka o ostatnie beczki prochu i worki cukru, a kupcy przetrzymują resztki towaru w oczekiwaniu na jeszcze większy wzrost cen. Gdzieniegdzie towary są jeszcze dostępne, ale kosztują znacznie więcej niż zwykle.}
+Node0_d_a_reaction {Wiemy, gdzie kupić taniej!}
+Node0_d_a_reaction_log {Dzięki ugruntowanym powiązaniom handlowym i osobistym znajomościom z wieloma szanowanymi kupcami będziesz w stanie znacząco obniżyć narzuty w sklepach.}
+Node0_d_b {Pustoszejące pod koniec roku magazyny wyglądają tym razem wyjątkowo ponuro. Nie do końca wiadomo, co było przyczyną - nieurodzaj, kilka nieudanych rejsów z Europy czy rozhukani piraci - ale niedobór towarów jest teraz szczególnie dotkliwy.}
+Node0_d_b_reaction {Wiemy, kto ma jeszcze zapasy}
+Node0_d_b_reaction_log {Dzięki ugruntowanym kontaktom z przemytnikami i dobrej reputacji w szemranych kręgach przypadnie ci znacznie większy zapas towarów niż innym. Miło jest być wybrańcem.}
+Node0_d_c {Tym razem władze zachowały dość sił, by narzucić aktywną walkę w regionie, a każdy gubernator stara się ściągnąć pod swoje sztandary jak najwięcej wolnych kapitanów.$br$redLedwie ucichły sztormy, a po koloniach od razu rozeszła się wieść o złagodzeniu przepisów. Ładunki zdobyte w walce nie podlegają już szczegółowej kontroli. Łupy stają się niemal legalne, a granica między piractwem a służbą dla Korony się zaciera. To nieco złagodzi niedobór towarów i obniży ceny.}
+Node0_d_c_reaction {Skradzione towary?}
+Node0_d_c_reaction_log {Zawsze umiałeś uchodzić ze skradzionym towarem za legalny, a nowe zasady jeszcze bardziej ułatwią ci ten proceder.}
+Node0_d_d {Tej jesieni niedobór towarów zmusił gubernatorów do desperackich działań. Wszystkie patrole wyprowadzono z miast, przeszukuje się dżungle, sprawdza nadbrzeżne zatoki, kontroluje małe jednostki, a podejrzane magazyny otwiera bez zbędnych ceregieli.$br$redPrzemytników łapie się pokazowo, a towary konfiskuje na rzecz skarbu. To nieco łagodzi sytuację i pozwala trzymać ceny w ryzach, ale handel w cieniu staje się zbyt niebezpieczny. Dopóki pętla się nie poluzuje, żaden przemytnik nie wypłynie w morze.}
+Node0_d_d_reaction {Zawsze znajdzie się okazja do interesu}
+Node0_d_d_reaction_log {Doskonale wiesz, jak urządzać szemrane interesy i pozostawać niezauważonym. Bez trudu wymyślisz plan na tyle chytry, że przemytnicy ci uwierzą.}
+Node0_success {Wchodzisz w ten ciężki okres w pełnym rynsztunku. Każdego roku Season of Shade to próba i test wytrzymałości dla wszystkich, którzy żyją na archipelagu. Czy dożyjemy następnego?}
+Node0_success_action {W drogę!}
+Node0_title {Sezon Cienia}

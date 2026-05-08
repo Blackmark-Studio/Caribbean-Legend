@@ -344,13 +344,13 @@ void ProcessDialogEvent()
                 dialog.text = "Давайте! Немного передохну от корабельных дел...";
     			link.l1 = "Замечательно.";
     			link.l1.go = "Cards_begin";
-    			link.l2 = "По каким правилам играем?";
-    			link.l2.go = "Cards_Rule";
+    			// link.l2 = "По каким правилам играем?";
+    			// link.l2.go = "Cards_Rule";
 			}
 		break;
 
 		case "Cards_Rule":
-   			dialog.text = CARDS_RULE;
+   			dialog.text = GlobalStringConvert("CARDS_RULE");
 			link.l1 = "Что ж, давайте начнём!";
 			link.l1.go = "Cards_begin";
 			link.l3 = "Нет, это не для меня...";
@@ -435,8 +435,8 @@ void ProcessDialogEvent()
 					dialog.text = "Давайте! Отдых никогда не вредил здоровью... только кошельку...";
 	    			link.l1 = "Замечательно.";
 	    			link.l1.go = "Dice_begin";
-	    			link.l2 = "По каким правилам игра?";
-	    			link.l2.go = "Dice_Rule";
+	    			// link.l2 = "По каким правилам игра?";
+	    			// link.l2.go = "Dice_Rule";
     			}
     			else
     			{
@@ -448,7 +448,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Dice_Rule":
-   			dialog.text = DICE_RULE;
+   			dialog.text = GlobalStringConvert("DICE_RULE");
 			link.l1 = "Что ж, давайте начнём!";
 			link.l1.go = "Dice_begin";
 			link.l3 = "Нет, это не для меня...";
@@ -892,7 +892,7 @@ void ProcessDialogEvent()
 				bOk = bOk1 || bOk2;
 				if(bOk)
 				{
-					dialog.text = "Ваше превосходительство, мне же ещё отчитываться нужно будет за ход операции... Давайте хотя бы  " + GetPart(4) +".";
+					dialog.text = "Ваше превосходительство, мне же ещё отчитываться нужно будет за ход операции... Давайте хотя бы " + GetPart(4) +".";
 				}
 				else
 				{

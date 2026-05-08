@@ -192,10 +192,10 @@ void Sea_AbordageLoad(int _iAbordageMode, bool _bMCAbordageInitiator)
 		return;
 	}
 	
-	if(SeaCameras.Camera == "SeaFireCamera")
+	if(SeaCameras.Camera == SEA_CAMERA_FIRE)
 	{
-		SeaFireCamera.LastCamera = "SeaShipCamera";
-		SeaCameras_SetFireCamera();
+		SeaFireCamera.LastCamera = SEA_CAMERA_SHIP;
+		SeaCameras_Switch("FireCamera_Set");
 	}
 	
 	if(!CheckAttribute(pchar, "abordage_active"))

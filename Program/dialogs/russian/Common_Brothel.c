@@ -459,7 +459,7 @@ void ProcessDialogEvent()
 		    if (sti(Pchar.money) >= GetCrewQuantity(pchar)*crewWhoreCost && GetCrewQuantity(pchar)>0)
 		    {
 		        AddMoneyToCharacter(Pchar, -makeint(GetCrewQuantity(pchar)*crewWhoreCost));
-	            AddCrewMorale(Pchar, 10);
+	            AddCrewMorale(Pchar, 10, true);
 				ChangeCharacterComplexReputation(pchar,"authority", 1);
 	            LAi_Fade("", "");
                 AddTimeToCurrent(5 + rand(1), rand(30));
@@ -1265,7 +1265,7 @@ void ProcessDialogEvent()
 		// <-- приключенец
 		
 		case "chicken_god":
-			dialog.text = "Вы и ... господин Агуэбана? Разумеется,  я прикажу подготовить для вас комнату. Это будет стоить вам десять тысяч серебром, капитан!";
+			dialog.text = "Вы и ... господин Агуэбана? Разумеется, я прикажу подготовить для вас комнату. Это будет стоить вам десять тысяч серебром, капитан!";
 			if (sti(pchar.money) >= 10000) {
 				link.l1 = "Да нет же... А, ладно! Вот.";
 				link.l1.go = "chicken_god_pay";

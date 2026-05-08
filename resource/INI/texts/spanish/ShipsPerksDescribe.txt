@@ -2,6 +2,31 @@ new_string
 {
 
 }
+sp1 {Fanático}
+sp1_desc {Una capilla de cubierta equipada, junto con imágenes de la Virgen María, potencia misteriosamente los efectos y la duración de los amuletos de iglesia.}
+sp1_desc2
+{
+Potenciación de cada amuleto: individual.
+Aumento de duración: 15 días.
+}
+sp2 {Bienvenido invitado}
+sp2_desc {Este legendario barco es conocido en todos los rincones del archipiélago caribeño y es recibido en todas partes con respeto y admiración. La ubicación de Lady Beth se conoce de inmediato entre los vendedores de mapas, y los comerciantes locales intentan reunir todo el capital posible para comprar objetos de valor.}
+sp2_desc2
+{
+Bono a la probabilidad de aparición de un vendedor de mapas: 5–12%.
+Aumento de la reserva de pesos: 100%.
+Aumento de la reserva de doblones: ~30%.
+}
+sp3 {Crisol}
+sp3_desc {En este barco, la vida humana es solo una etapa breve antes de que se revele el verdadero poder. Pocos cruzan el Umbral y regresan, pero quienes lo logran ya no temen a la muerte.}
+sp3_desc2 {Los marineros caídos aumentan la experiencia y la moral de la tripulación.}
+sp3_SailorsBoardingBonus_desc {Bonificación de experiencia en abordaje: #dSailorsBoardingBonus#%}
+sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 marineros caídos)}
+sp3_SurrenderChanceBonus_desc {Aumento de probabilidad de rendición: #dSurrenderChanceBonus#%}
+sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 marineros caídos)}
+sp4 {Cazador de piratas}
+sp4_desc {Este barco fue construido específicamente para limpiar los mares de piratas. Con cada nave enviada al fondo, la tripulación se vuelve más unida, los cañones más precisos y el fanatismo del capitán más evidente.}
+sp4_desc2 {Cada barco pirata destruido aumenta permanentemente la maniobrabilidad, el alcance de disparo, la velocidad en el mapa global y la velocidad de recarga de los cañones. Bono actual: $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) de 15. ~ Cuanto menor sea la amenaza pirata, menor será el coste de mantenimiento del barco. Bono actual: $percent($GetAmsterdamMtp( )) de 40.}
 special0 {Mercante}
 special0_desc {Un barco mercante suele sacrificar calibre, velocidad y número de cañones en favor de una gran bodega. Solo un capitán muy hábil puede permitirse un viaje en solitario en un barco así.}
 special0_desc2 {Bono al Poder de la Flota: bajo}
@@ -18,6 +43,7 @@ special3_desc2
 Bono al Poder de la Flota: medio
 Bono a la mejora de atributos: 15%
 }
+SpecialityUpgrade {Mejorado por la Compañía Holandesa de las Indias Occidentales}
 trait01 {Carta de corrientes}
 trait01_desc {Instrumentos de navegación complejos hechos a medida por maestros europeos y un mapa preciso de las corrientes submarinas del archipiélago permiten ahorrar mucho tiempo en los viajes.}
 trait01_desc2
@@ -104,29 +130,3 @@ Daño adicional al casco y las velas: 200%.
 Duración del efecto: 15 segundos.
 Aumenta la probabilidad de incendio: 200%
 }
-sp1 {Fanático}
-sp1_desc {Una capilla de cubierta equipada, junto con imágenes de la Virgen María, potencia misteriosamente los efectos y la duración de los amuletos de iglesia.}
-sp1_desc2
-{
-Potenciación de cada amuleto: individual.
-Aumento de duración: 15 días.
-}
-sp2 {Bienvenido invitado}
-sp2_desc {Este legendario barco es conocido en todos los rincones del archipiélago caribeño y es recibido en todas partes con respeto y admiración. La ubicación de Lady Beth se conoce de inmediato entre los vendedores de mapas, y los comerciantes locales intentan reunir todo el capital posible para comprar objetos de valor.}
-sp2_desc2
-{
-Bono a la probabilidad de aparición de un vendedor de mapas: 5–12%.
-Aumento de la reserva de pesos: 100%.
-Aumento de la reserva de doblones: ~30%.
-}
-sp3 {Crisol}
-sp3_desc {En este barco, la vida humana es solo una etapa breve antes de que se revele el verdadero poder. Pocos cruzan el Umbral y regresan, pero quienes lo logran ya no temen a la muerte.}
-sp3_desc2 {Los marineros caídos aumentan la experiencia y la moral de la tripulación.}
-sp3_SailorsBoardingBonus_desc {Bonificación de experiencia en abordaje: #dSailorsBoardingBonus#%}
-sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 marineros caídos)}
-sp3_SurrenderChanceBonus_desc {Aumento de probabilidad de rendición: #dSurrenderChanceBonus#%}
-sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 marineros caídos)}
-sp4 {Cazador de piratas}
-sp4_desc {Este barco fue construido específicamente para limpiar los mares de piratas. Con cada nave enviada al fondo, la tripulación se vuelve más unida, los cañones más precisos y el fanatismo del capitán más evidente.}
-sp4_desc2 {Cada barco pirata destruido aumenta permanentemente la maniobrabilidad, el alcance de disparo, la velocidad en el mapa global y la velocidad de recarga de los cañones. Bono actual: $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) de 15. ~ Cuanto menor sea la amenaza pirata, menor será el coste de mantenimiento del barco. Bono actual: $percent($GetAmsterdamMtp( )) de 40.}
-SpecialityUpgrade {Mejorado por la Compañía Holandesa de las Indias Occidentales}

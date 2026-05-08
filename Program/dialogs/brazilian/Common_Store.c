@@ -357,16 +357,6 @@ void ProcessDialogEvent()
 		break;
 
 		case "market":
-//navy -->
-			//занят ПГГ
-			if (CheckFreeServiceForNPC(NPChar, "Store") != -1)	 // to_do имя сунуть
-			{
-				dialog.text = "Desculpe, mas estou muito ocupado agora. Muitos clientes! Volte amanhã.";
-				link.l1 = "Ah, é mesmo? Então volto mais tarde.";
-				link.l1.go = "exit";
-				break;
-			}
-//navy <--
 			dialog.text = RandPhraseSimple("Tenho balas de canhão, lonas, remédios, madeira de lei e outras mercadorias! O que lhe interessa?","Quer comprar açúcar e especiarias? Ou talvez rum e pólvora?");
 			link.l1 = pcharrepphrase(LinkRandPhrase("Tenho um monte de saque no meu porão! Dinheiro não tem cheiro, não é?","Preciso esvaziar meu porão do saque e enchê-lo com o seu ouro. Ha-ha!","Ah, eu sei que você venderia até sua mãe por um saco de dobrões pesados! Mas eu só preciso reabastecer meus suprimentos."),LinkRandPhrase("Quero vender minha carga e reabastecer os suprimentos.","Quero comprar mercadorias para revenda.","Mostre-me as balas de canhão, bombas e coisas desse tipo."));
 			link.l1.go = "trade_1";
@@ -665,19 +655,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_5":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage)); 
-			NPChar.Storage.NoActivate = true;
-			DeleteAttribute(NPChar,"Storage.Activate");
+			LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
 			DialogExit();
 		break;
 		
 		case "storage_6":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			DeleteAttribute(NPChar,"Storage.Activate");
-			NPChar.Storage.NoActivate = true;
+			LeaveStorage(NPChar, rColony);
 			DialogExit();
-		break;		
+		break;
 
 		case "business":
 			iTest = 0;			
@@ -752,18 +737,6 @@ void ProcessDialogEvent()
 				break;
 			}
 			// <-- генератор Место под солнцем
-			
-//navy -->
-			//занят ПГГ
-			iTmp = CheckAvailableTaskForNPC(NPChar, PGG_TASK_WORKONSTORE);
-			if (iTmp != -1)
-			{
-				dialog.text = "Eu tinha um trabalho, mas "+GetFullName(&Characters[iTmp])+" já se comprometeu a fazer isso por mim.";
-				link.l1 = "Ah, é mesmo? Então, volto mais tarde.";
-				link.l1.go = "exit";
-				break;
-			}
-//navy <--
 			dialog.text = NPCharRepPhrase(npchar,"Que negócio?! Me conte tudo!","Estou ouvindo. Que negócio é esse de que você está falando?");
             ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
             if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
@@ -830,11 +803,8 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if(!CheckAttribute(NPChar,"Storage.NoActivate"))
-						{
-							link.l7 = "Com licença, meu bom homem – por acaso você aluga armazéns?";
-							link.l7.go = "storage_01";
-						}	
+						link.l7 = "Com licença, meu bom homem – por acaso você aluga armazéns?";
+						link.l7.go = "storage_01";
 					}
 				}				
 				// <-- ugeen

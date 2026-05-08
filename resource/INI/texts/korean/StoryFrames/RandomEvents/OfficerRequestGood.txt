@@ -1,0 +1,53 @@
+Node0_title {장교의 부탁}
+Node0_a_a {$attr($context.officerName), 당신의 _$attr($context.officerJob), 이 풀이 죽은 얼굴로 선실에 들어옵니다. 그는 일부러 극적인 뜸을 들인 뒤, 최근 화물칸에서 벌어진 술자리 놀이판에서 그만 선원 하나에게 $rand(가문의 브로치|자기 십자가 목걸이|아버지의 커프스 단추)를 잃어버렸다고 비통하게 털어놓습니다. 그 귀중품을 다시 따내기 위해 작은 돈을 빌려 달라고 당신에게 부탁합니다.}
+Node0_a_a_action {다시 따오고 수익은 나눠라!}
+Node0_a_a_success {당신은 필요한 돈을 내주되, 조건으로 $rand(원금과 수익의 절반을 돌려받기로|한 푼도 빠짐없이 갚고 거기에 수익의 절반까지 내놓기로) 합니다. 얼마 뒤, 들뜬 표정의 $attr($context.officerName)이 당신의 문을 두드립니다. 그의 귀중품은 제자리에 돌아와 있고, 그는 $rand(거래를 지킵니다|약속을 지킵니다), 당신 몫을 넘겨주면서 말입니다.}
+Node0_a_a_success_action {거저 먹는 돈이다!}
+Node0_a_a_fail {당신은 필요한 돈을 내주되, 조건은 $rand(원금과 수익의 절반을 돌려받는 것|돈을 돌려받고 거기에 수익의 절반까지 받는 것)입니다. 그런데 $attr($context.officerName)은 $rand(오랫동안 당신 눈앞에 나타나지 않고|배에서 사라진 사람처럼 굴다가), 당신이 $rand(결국 선실로 불러들이고 나서야|마침내 당장 오라고 명하고 나서야) 모습을 드러냅니다. 그의 $rand(축 처진 눈빛|몰골)을 보는 순간 알 수 있습니다. 귀중품은 $rand(되찾지 못했고|끝내 따오지 못했으며), 당신의 돈은 $rand(날아갔고|도박판에 다 녹아버렸다는 것을) 말입니다.}
+Node0_a_a_fail_action {뼈아픈 교훈}
+Node0_a_b_action {선상 도박을 처벌한다}
+Node0_a_b_success {선내 규정에는 도박 금지가 분명히 적혀 있습니다. 당신은 $rand(본보기를 보이기 위해 관련된 선원들을 공개적으로 채찍질하게 하고|연루된 선원들을 전원 앞에서 채찍질하라고 명령하며), 장교는 $rand(급료 삭감으로 처벌하고|한 달 치 급료를 박탈합니다).}
+Node0_a_b_success_action {규칙은 규칙이다}
+Node0_a_c_action {선원에게 물건을 돌려주게 한다}
+Node0_a_c_success {당신은 이 배의 선장이며, 당신의 말이 곧 법입니다. 하지만 이런 경우를 위한 규정은 없습니다. 당신은 위압적인 기세와 우람한 체격을 앞세워 그 선원을 겁주고, 결국 당신 장교의 물건을 돌려주게 만듭니다. 승무원들은 이 일을 오래 기억할 것입니다.}
+Node0_a_c_success_action {나를 우습게 보지 마라}
+Node0_a_b {저녁 순찰을 마치고 선실로 돌아오면, 문 앞에서 $attr($context.officerName), 당신의 _$attr($context.officerJob)이 기다리고 있습니다. 그는 $rand(주눅 든 채 발만 이리저리 옮기고|제자리에서 머뭇거리다가), 당신의 $rand(매서운 시선|시선) 앞에서 결국 $rand(무너져|체념하고) 부탁을 털어놓습니다. 도착 예정인 항구에서 결투가 잡혔는데, 그는 질까 봐 두려워하고 있습니다. 마지막 비장의 수단으로 그는 당신의 상자에 보관된 검을 빌려 달라고 합니다. _$attr($context.bladeName)이 $rand(승산을 크게 높여 줄 것이라며|결정적인 우위를 안겨 줄 것이라며) 장담합니다.}
+Node0_b_a_action {중요한 건 검이 아니라 손이다!}
+Node0_b_a_success {당신은 $casedName($attr($context.officerName)|Gen)을 선실 한가운데서 곧바로 연습 결투로 끌어들입니다. 그는 제법 버텨 내지만, 당신의 경지와는 아직 한참 거리가 있습니다. 훈련이 끝난 뒤, 당신은 자신이 즐겨 쓰는 몇 가지 속임수와 일격을 보여 주고, 이제 $attr($context.officerName)은 훨씬 자신감을 되찾습니다.}
+Node0_b_a_success_action {훈련은 고되지만 실전은 쉬워진다.}
+Node0_b_a_fail {$attr($context.officerName)은 처음에는 제법 잘 버티지만, 금세 지쳐 나가떨어지고 처참하게 패배합니다. 당신은 그가 결투에 나가는 것을 금지합니다. 명예도 소중하지만, 목숨이 더 소중하니까요.}
+Node0_b_a_fail_action {다시는 이런 일에 끼어들지 마라.}
+Node0_b_b_action {가져가라, 네게 주마.}
+Node0_b_b_success {당신은 이 무기가 $rand(당신보다 그 장교에게 훨씬 더 잘 쓰일 것이라 여기고|당신 손에 있는 것보다 그 장교에게 더 유용할 거라 판단하고), $rand(아무 대가 없이 내줍니다|선뜻 넘겨줍니다). $attr($context.officerName)은 진심으로 감사를 표하고, 눈에 띄게 자신감을 되찾은 모습입니다. 당신은 $rand(이런 선물은 앞으로 좀 더 자주 내려도 되겠다고|이런 보상은 더 자주 내려도 좋겠다고) 생각합니다 - $rand(오랜 복무나 특별한 용기를 보인 자에게|오랜 복무와 특별한 용기를 보인 자에게).}
+Node0_b_b_success_action {먼저 공부터 세우게 해라.}
+Node0_b_c_action {결투는 없다.}
+Node0_b_c_success {당신은 장교의 부탁을 거절하고, 대신 $rand(길고도 진득한 훈계를 늘어놓습니다|한참 동안 그를 붙들고 따져 묻습니다). 그는 $rand(체념한 얼굴로 눈을 떨군 채 그 말을 듣고|고개를 숙인 채 말없이 듣고), 당신은 $rand(그 교훈에 징벌 당직 두 번을 덧붙입니다|그에게 징벌 당직 두 번을 얹어 줍니다). 그 결투는, $rand(당연히|물론) 취소됩니다.}
+Node0_b_c_success_action {규정은 피로 쓰인 것이다.}
+Node0_a_c {Durante il giro serale, notate che $attr($context.officerName), il vostro _$attr($context.officerJob), sta parlando a lungo con $casedName($attr($context.prisonerName)|Abl). Più tardi, quella stessa sera, fate chiamare l'ufficiale nella vostra cabina e lo interrogate. All'inizio $attr($context.officerName) cerca di svicolare, ma sotto pressione ammette che $attr($context.prisonerName) è suo $rand}
+Node0_c_a_action {포로를 처형한다}
+Node0_c_a_success {당신은 이번 일을 뼈아픈 본보기로 삼기로 하고, 포로를 처형하라고 명령합니다. $attr($context.officerName)은 충격을 받지만, 감히 당신의 말을 거스르지는 못합니다. 알론소가 형을 집행합니다. 당신의 잔혹함에 대한 소문은 곧장 배 안은 물론 배 밖까지 퍼져 나갑니다.}
+Node0_c_a_success_action {자비는 없다}
+Node0_c_b_action {포로를 풀어준다}
+Node0_c_b_success {당신은 포로를 풀어 주고, 가장 가까운 도시까지 도착할 때까지 그에게 취사장 자리를 내주라고 명령합니다. $attr($context.officerName)은 당신에게 감사를 표하며 한결 날아오를 듯한 얼굴입니다. 당신은 이 이야기를 비밀로 하라고 못 박습니다. 그렇지 않으면 당신 선실 앞에 청원자들이 줄을 설 것이기 때문입니다.}
+Node0_c_b_success_action {이건 예외일 뿐, 원칙이 아니다}
+Node0_c_c_action {그렇다면 네가 직접 몸값을 치러라}
+Node0_c_c_success {당신은 공정한 거래를 제안합니다. 장교가 자신의 급료를 당겨서 지금 당장 $attr($context.prisonerName)을 몸값으로 사들이는 것입니다. 그러면 어떤 규칙도 어길 필요가 없고, 누구도 빚진 기분을 느낄 일도 없습니다. $attr($context.officerName)은 한동안 망설이지만, 결국 당신의 조건에 동의합니다.}
+Node0_c_c_success_action {Uczciwy układ}
+Node0_c_d_action {선장의 결정은 논의 대상이 아니다}
+Node0_c_d_success {당신은 장교의 부탁을 거절합니다. 포로가 누구이든 그는 항복했고 이제 당신의 손안에 있습니다. 그를 어떻게 처리할지는 오직 당신이 결정할 일입니다. 한 번만 약한 모습을 보이면, 자신의 사적인 문제를 선장 희생으로 해결하려는 자들이 끝없이 몰려들 것입니다. $attr($context.officerName)은 실망한 표정이지만, 당신은 조금도 개의치 않습니다.}
+Node0_c_d_success_action {법은 곧 나다}
+Node0_a_d {요즘 들어 당신은 $attr($context.officerName)이 $rand(유난히 말이 없고 생각에 잠겨 있다는 것|이상할 만큼 말수가 줄고 돌처럼 굳은 얼굴로 다닌다는 것)을 눈치채기 시작합니다. $rand(그는 점점 더 자주 쉬는 시간마다 수평선을 바라보며 시간을 보냅니다.|그는 점점 더 자주 난간에 서서 한 점만 바라보며, 마치 누구의 돛이라도 기다리는 사람처럼 굽니다.) 결국 당신은 더는 참지 못하고 $rand(이유를 캐묻습니다|정면으로 물어봅니다), 그러자 그는 자신의 비극을 털어놓습니다. 지난 기항지에서 $rand(가까운 친척|소중한 사람)의 부고를 들었다는 것입니다. 당신이 $rand(미처 애도의 말을 꺼내기도 전에|막 한마디 하려던 참에) 장교가 먼저 부탁을 꺼냅니다. 기도를 드릴 촛불과 등잔이 필요한데, 하필 그런 물건은 당신 선실에만 있다는 것입니다.}
+Node0_d_a_action {물론이지, 가져가라}
+Node0_d_a_success {당신은 추도에 필요한 물건들을 장교에게 건네고, 그가 $rand(슬픔을 겪는 동안은 일을 더 얹지 않기로|상중인 동안은 여분의 임무를 덜어 주기로) 합니다. 그는 $rand(감사해 보이며|분명 감사해하고 있지만), $rand(상실의 그림자|검은 슬픔의 기운)이 그 감정을 눌러 버리고 있습니다.}
+Node0_d_a_success_action {다 지나갈 것이다}
+Node0_d_b_action {제대로 치르도록 하자}
+Node0_d_b_success {$attr($context.officerName)은 당신의 _$attr($context.officerJob)이지 평범한 선원은 아닙니다. 그것은 그에게 일정한 특권을 $rand(주고|의미합니다). 당신은 선실 식당에서 $rand(공식 추도식을|규정에 따른 추도식을) 치르라고 명합니다. $attr($context.officerName)은 $rand(조금 당황한 듯|당황한 듯) 보이지만, 곧 그 감정은 $rand(감사로 바뀝니다|감사로 바뀌어 갑니다).}
+Node0_d_b_success_action {충직한 동료에게는 가장 좋은 것을}
+Node0_d_c_action {하느님은 그런 것 없이도 너를 들으신다}
+Node0_d_c_success {당신은 장교에게 진실한 기도라면 의식이 없어도 하느님께 닿는다고 말해 줍니다.$br$red$attr($context.officerName)도 그 말에 수긍하는 듯합니다. 당신은 자신의 말이 그의 마음을 조금이나마 덜어 주었다는 데서 은근한 자부심을 느낍니다.}
+Node0_d_c_success_action {넌 이겨 낼 수 있다}
+Node0_d_c_fail {당신의 말은 영 힘이 없었고, $attr($context.officerName)은 상처받은 듯한 얼굴을 합니다. 아무래도 그는 당신을 그저 인색하고 냉소적인 사람으로 여긴 모양입니다.}
+Node0_d_c_fail_action {잠깐, 아까운 건 아니다}
+Node0_d_d_action {배의 군목이 도와줄 것이다}
+Node0_d_d_success {$attr($context.officerName)이 배에 진짜 군목이 있다는 사실을 잊었다는 게 당신에겐 이상하게 느껴지지만, 당신은 그것을 눈앞이 캄캄해질 만큼 큰 슬픔 탓으로 돌립니다.$br$red당신은 군목을 선실로 불러 사정을 설명하고 조언을 부탁합니다. $attr($context.officerName)은 넋이 나간 듯 보이지만, 성직자의 말은 곧 그를 제정신으로 돌아오게 합니다.}
+Node0_d_d_success_action {하느님께서 우리의 기도를 들으셨다}

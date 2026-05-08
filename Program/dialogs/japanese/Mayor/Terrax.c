@@ -647,7 +647,6 @@ void ProcessDialogEvent()
             }
             else
             {
-                SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
                 if (NextDiag.TempNode != "I_know_you_good")
                     dialog.text = "頭でも打ったのか" + GetSexPhrase("？", "の？") + "うちの連中はお前を疫病神みたいに避けてるぜ。とっとと消えろ、うざいんだよ。";
                 else
@@ -655,12 +654,12 @@ void ProcessDialogEvent()
                 link.l1 = "そうか…";
                 link.l1.go = "exit";
             }
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
         break;
 
 		case "pirate_threat_pay":
             iGPThreatRate = 0;
             iGPThreat = 0;
-            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iTerraxTotalTemp);
             DialogExit();
             PiratesDecreaseNotif("");

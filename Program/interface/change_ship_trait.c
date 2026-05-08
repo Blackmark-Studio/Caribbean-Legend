@@ -24,8 +24,8 @@ void InitInterface_R(string iniName, ref _chr)
 	maxTraits = SetPossibleTraits(sti(realShip.Spec), &possibleTraits);
 
 	string specName = GetShipSpecDesc(xi_refCharacter);
-	specName = DLG_Convert(specName, "ShipsPerksDescribe.txt", &NullObject);
-	SetFormatedText("SHIP_SPEC", "Тип корабля: " + specName);
+	specName = DLG_Convert(specName, "ShipsPerksDescribe.txt");
+	SetFormatedText("SHIP_SPEC", XiStr("ShipType") + ": " + specName);
 
 	SetCurrentTrait();
 	SelectTrait(0);
@@ -46,9 +46,9 @@ void SelectTrait(int direction)
 
 	selectedTrait = GetAttributeName(GetAttributeN(&possibleTraits, selectedTraitIndex));
 	string caption, desc, desc2;
-	caption = DLG_Convert(selectedTrait, "ShipsPerksDescribe.txt", &NullObject);
-	desc = DLG_Convert(selectedTrait + "_desc", "ShipsPerksDescribe.txt", &NullObject);
-	desc2 = DLG_Convert(selectedTrait + "_desc2", "ShipsPerksDescribe.txt", &NullObject);
+	caption = DLG_Convert(selectedTrait, "ShipsPerksDescribe.txt");
+	desc = DLG_Convert(selectedTrait + "_desc", "ShipsPerksDescribe.txt");
+	desc2 = DLG_Convert(selectedTrait + "_desc2", "ShipsPerksDescribe.txt");
 
 	SetFormatedText("TRAIT_CAPTION", caption);
 	SetFormatedText("TRAIT_DESC", desc);

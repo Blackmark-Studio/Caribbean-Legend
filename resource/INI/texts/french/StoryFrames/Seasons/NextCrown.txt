@@ -1,0 +1,46 @@
+Node0_a {Une nouvelle année approche. La Saison de la Couronne est une période de renouveau et de renaissance. Les vents du nord-est deviennent prévisibles, rendant l'océan Atlantique bien plus sûr pour les longues traversées.$br$redC'est à cette époque que les hommes et les marchandises venus d'Europe arrivent dans l'archipel. Les gouverneurs reçoivent de nouveaux ordres et rapports, tandis que patrouilles et convois de la Couronne sillonnent la mer.}
+Node0_a_action {Une mer d'opportunités !}
+Node0_b_a {Le commerce avec les colonies s'est, comme d'habitude, ralenti à l'approche de l'hiver. Les derniers lots de sucre et de tabac sont partis depuis longtemps pour l'Europe, l'abattage de l'ébène et de l'acajou est à l'arrêt, et l'équilibre ne reviendra qu'à la saison suivante. Pour l'heure, les prix des marchandises coloniales sont bien plus élevés que d'ordinaire.}
+Node0_b_a_reaction {Je suis sûr qu'ils n'ont pas tout compté}
+Node0_b_a_reaction_log {Vous décidez de mettre à profit votre réputation de marchand et votre charisme naturel pour convaincre les commerçants de vous vendre les restes non comptabilisés.}
+Node0_b_b {La saison passée a vidé les colonies jusqu'à la dernière goutte - les réserves sont épuisées, et les plantations ont presque été détruites par le mauvais temps. Les derniers restes de marchandises coloniales ont depuis longtemps été expédiés vers les colonies capitales, et il ne reste pratiquement plus rien à vendre ou à acheter sur le marché. Les marchands ont fait flamber les prix et attendent la Saison de la Canne - c'est alors que l'équilibre reviendra.}
+Node0_b_b_reaction {Il y en aura toujours pour des gens comme moi}
+Node0_b_b_reaction_log {Vous mettez à profit les talents de votre quartier-maître et de quelques informateurs pour évaluer avec précision les stocks des boutiques. Les marchands seront forcés de vous vendre ce qu'ils voulaient garder pour eux.}
+Node0_b_c {Dans les capitales, on a décidé de revoir les taxes coloniales. Pendant que les gratte-papiers se disputent au sujet des droits de douane, les marchands ne se pressent pas pour conclure des contrats de longue durée. Résultat, les prix comme le volume du commerce en souffrent.}
+Node0_b_c_reaction {Notre marchandise est la meilleure !}
+Node0_b_c_reaction_log {Vous décidez de tirer parti de votre réputation de négociant chevronné pour vendre les marchandises de votre navire à meilleur prix. Malheureusement, cela ne fonctionnera que dans les colonies où vos biens sont réellement demandés.}
+Node0_c_a {Les chantiers navals, en revanche, se sont déjà entièrement remis des destructions, et l'afflux de bois de construction navale sur le marché a fait baisser le coût des réparations.}
+Node0_c_a_reaction {J'espère que cela ne servira pas}
+Node0_c_a_reaction_log {Vous savez parfaitement comment maintenir un navire à flot, et vous décidez d'utiliser ce savoir pour aller moins souvent au chantier pour des réparations.}
+Node0_c_b {Mais il y a aussi de bonnes nouvelles - afin de rétablir la puissance de combat des flottes nationales, l'Europe a envoyé cette année des cargaisons de matériaux particulièrement importantes. Avec les premiers convois de la Couronne sont également arrivés des experts en construction navale. Les nations se préparent à une grande guerre, mais pour un capitaine libre, cela se traduira par une baisse sensible du coût des réparations.}
+Node0_c_b_reaction {Réparations bon marché ? Frappons plus fort}
+Node0_c_b_reaction_log {Si les coques des navires se réparent facilement, alors il faut frapper l'ennemi sans pitié. Vous décidez de ne viser que les éléments critiques des navires ennemis et demandez aussi qu'on garde près des sabords une réserve de lourds boulets de fonte en cas de rapprochement.}
+Node0_c_c {Des rumeurs inquiétantes circulent dans les ports et les havres au sujet d'une grande expédition militaire en préparation. Les meilleures planches, cordages et toiles à voile ont été réservés aux navires de guerre. Les chantiers navals tournent, mais les matériaux partent rapidement pour des commandes d'État prioritaires. Cela fait monter le coût des réparations.}
+Node0_c_c_reaction {Notre navire sera utile à la guerre}
+Node0_c_c_reaction_log {Vous vous faites aisément passer pour un corsaire chevronné au service de l'État et prenez place aux côtés des navires de guerre.}
+Node0_d_a {À présent, chaque nation cherche à profiter de ses forces retrouvées pour accroître son influence. Tout gouverneur sera ravi de recevoir de l'aide, et devenir ennemi public est étonnamment facile. L'obtention des lettres de marque a été simplifiée, les Caraïbes débordent d'armes et de gens désireux de s'en servir. C'est une époque pleine d'opportunités.}
+Node0_d_a_reaction {Ils se souviendront de nous}
+Node0_d_a_reaction_log {Quand on sait qui payer et où, il est très facile de transformer l'étincelle des rumeurs en véritable incendie. Les puissances surveillent de près les agissements des capitaines libres, mais vous saurez attirer sur vous toute l'attention.}
+Node0_d_b {De bonnes nouvelles sont arrivées de la mère patrie - un important mariage dynastique a été conclu en Europe, renforçant les liens entre de vieux rivaux. Cela a fortement réduit les tensions, tant en métropole que dans les Caraïbes, si bien que de nombreux soldats expérimentés ont été démobilisés. Ces vétérans ont rejoint les rangs des novices des tavernes et ont sensiblement relevé l'expérience des équipages engagés.}
+Node0_d_b_reaction {Choisir les recrues talentueuses}
+Node0_d_b_reaction_log {Un œil exercé distingue aisément les vieux soldats des rats de terre. Vous pourrez n'engager que des vétérans, ce qui augmentera sérieusement l'efficacité de votre équipage.}
+Node0_d_c {Les ports et les fonctionnaires sont débordés de travail. Les documents passent de main en main, les entrepôts reçoivent les cargaisons, et les gardes sont occupés à inspecter les navires de guerre. Dans cette cohue, un capitaine attentif peut passer inaperçu.}
+Node0_d_c_reaction {Une belle occasion}
+Node0_d_c_reaction_log {Votre capacité à paraître amical et à mettre les gens de votre côté vous sera très utile lorsque l'attention de la garde faiblira.}
+Node0_d_d {Avec le changement des fonctionnaires dans les ports, un nouveau recensement commence. Les journaux de bord sont contrôlés plus minutieusement que d'ordinaire, les équipages sont recomptés et les licences doivent être renouvelées. Les inconnus attirent vite une attention indésirable, et il devient plus difficile de passer inaperçu dans le port.}
+Node0_d_d_reaction {Il faudra se faire discret}
+Node0_d_d_reaction_log {Malgré des contrôles plus serrés et plus tatillons, votre capacité à paraître insignifiant et à ne pas attirer l'attention facilitera grandement le passage des douanes et la tromperie des patrouilles.}
+Node0_d_e {Dans les métropoles, un nouveau conflit couve entre la Suède et le Tsarat de Russie. Karl Gustav a demandé le soutien de l'Angleterre, son alliée religieuse, tandis qu'Alexis Mikhaïlovitch a profité de l'indignation des catholiques pour s'assurer l'appui des Habsbourg. Cela a divisé l'Europe en deux grands blocs politiques, et chaque puissance a décidé de garder ses troupes régulières au pays.$br$redIl a été ordonné aux colonies de compter sur elles-mêmes. Les garnisons sont renforcées avec des locaux, et tous ceux qui sont tant soit peu aptes au service sont raflés dans les tavernes. Il ne reste que les plus incapables des novices.}
+Node0_d_e_reaction {La discipline arrangera tout}
+Node0_d_e_reaction_log {Vous décidez de compenser le manque d'expérience des équipages engagés par l'effort et la discipline, à la manière d'une flotte militaire. Jour et nuit, les recrues marcheront au pas sur le pont sous votre direction attentive, et tôt ou tard elles se transformeront en vieux loups de mer.}
+Node0_d_f {Des nouvelles inquiétantes sont arrivées d'Europe - l'Empire ottoman renforce sa puissance militaire et consolide ses positions dans la région. Les chrétiens se préparent à défendre le sud de la péninsule balkanique contre une menace possible, et toutes les puissances concluent à la hâte des alliances religieuses temporaires. Même l'Angleterre protestante est prête à envoyer sa flotte en Méditerranée. Cela réduit fortement les tensions dans les Caraïbes, mais cela a aussi un coût - toutes les bonnes pièces d'artillerie sont restées dans les métropoles.}
+Node0_d_f_reaction {Les forts aussi sont restés sans canons ?}
+Node0_d_f_reaction_log {En tant que canonnier expérimenté, vous distinguerez facilement un fort encore en état de se battre d'un autre qui a perdu toute capacité de résistance. La pénurie de canons permettra de lancer les assauts bien plus tôt.}
+Node0_success
+{
+Vous entrez dans la nouvelle année sous un ciel dégagé, avec un vent favorable dans les voiles.
+La Saison de la Couronne apporte de nouveaux ordres, de nouveaux visages et des entrepôts pleins.
+Tout recommence - et chacun a une chance d'entrer dans l'histoire.
+}
+Node0_success_action {En route !}
+Node0_title {Saison de la Couronne}

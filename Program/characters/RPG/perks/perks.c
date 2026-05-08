@@ -573,8 +573,8 @@ void ClearActive(ref offic)
 
 	RemoveStatusEffect(offic, "Rush");
 }
-// был баг К3, этот перк не работал вовсе
-void AcceptWindCatcherPerk(ref refCharacter)
+// Применение эффектов динамики набора скорости
+void ApplyShipDynamicSpeedEffects(ref refCharacter)
 {
     int  nShipType;
     ref  refBaseShip, refRealShip;
@@ -584,23 +584,17 @@ void AcceptWindCatcherPerk(ref refCharacter)
 
 	refRealShip = GetRealShip(nShipType);
 	refBaseShip = GetShipByType(sti(refRealShip.BaseType));
-		
-	if (CheckOfficersPerk(refCharacter, "WindCatcher"))
-	{
-		refRealShip.InertiaAccelerationX	= stf(refBaseShip.InertiaAccelerationX) + stf(refBaseShip.InertiaAccelerationX) * PERK_VALUE_WIND_CATCHER;
-		refRealShip.InertiaAccelerationY	= stf(refBaseShip.InertiaAccelerationY) + stf(refBaseShip.InertiaAccelerationY) * PERK_VALUE_WIND_CATCHER;
-		refRealShip.InertiaAccelerationZ	= stf(refBaseShip.InertiaAccelerationZ) + stf(refBaseShip.InertiaAccelerationZ) * PERK_VALUE_WIND_CATCHER;
-		// потмоу что перк помогает только быстрее набирать скорость, нет торможения
-	}
-	else
-	{   // вернём, если перк снят
-	    refRealShip.InertiaAccelerationX	= stf(refBaseShip.InertiaAccelerationX);
-		refRealShip.InertiaAccelerationY	= stf(refBaseShip.InertiaAccelerationY);
-		refRealShip.InertiaAccelerationZ	= stf(refBaseShip.InertiaAccelerationZ);
-	}
+	float mtp = 1.0;
+	if (CheckOfficersPerk(refCharacter, "WindCatcher")) mtp += PERK_VALUE_WIND_CATCHER;
+	if (IsMainCharacter(refCharacter)) mtp += SZN_GetModifierMtp(M_SHIP_SPEED_DYNAMIC, 0.0);
+
+	refRealShip.InertiaAccelerationX	= stf(refBaseShip.InertiaAccelerationX) * mtp;
+	refRealShip.InertiaAccelerationY	= stf(refBaseShip.InertiaAccelerationY) * mtp;
+	refRealShip.InertiaAccelerationZ	= stf(refBaseShip.InertiaAccelerationZ) * mtp;
+
 	if (iArcadeSails == 0) // момент инерции ниже для тактики
 	{
-	    refRealShip.InertiaAccelerationY = stf(refRealShip.InertiaAccelerationY) / 2.0;
+		refRealShip.InertiaAccelerationY = stf(refRealShip.InertiaAccelerationY) / 2.0;
 	}
 }
 
@@ -813,6 +807,7 @@ void RemoveAllPerksNoCash(ref chr)
 		perk = FindPerk_VT(perkName);
 		if (CheckAttribute(perk, "HeroType")) continue;
 		if (CheckAttribute(perk, "Hidden")) continue;
+		if (HasSubStr(perkName, "flag")) continue;
 		
 		DelCharacterPerkNoCash(chr, perkName);
 	}

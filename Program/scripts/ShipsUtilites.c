@@ -104,8 +104,6 @@ int GenerateShip(int iBaseType, bool isLock)
 		rRealShip.TurnRate = fTemp;
 		fTemp = stf(rRealShip.HP) * (0.89 + frandSmall(0.24));
 		rRealShip.HP = makeInt(fTemp);
-		fTemp = stf(rRealShip.WindAgainstSpeed) * (0.94 + frandSmall(0.12));
-		rRealShip.WindAgainstSpeed = fTemp;
 	}
     rRealShip.Capacity        = sti(rRealShip.Capacity) + rand(makeint(sti(rRealShip.Capacity)/4)) - makeint(sti(rRealShip.Capacity)/8);
     rRealShip.OptCrew         = makeint(sti(rRealShip.OptCrew) + rand(makeint(sti(rRealShip.OptCrew)/3)) - makeint(sti(rRealShip.OptCrew)/6));
@@ -290,7 +288,6 @@ int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 			rRealShip.SpeedRate	   		= stf(rRealShip.SpeedRate) + Кdckyrd * (frandSmall(stf(rRealShip.SpeedRate) / 5.0) - stf(rRealShip.SpeedRate) / 10.0);
 			rRealShip.TurnRate         	= stf(rRealShip.TurnRate) + Кdckyrd * (frandSmall(stf(rRealShip.TurnRate) / 5.0) - stf(rRealShip.TurnRate) / 10.0);
 			rRealShip.HP               	= sti(rRealShip.HP) + makeint(Кdckyrd * (rand(makeint(sti(rRealShip.HP)/5)) - makeint(sti(rRealShip.HP)/10)));
-			rRealShip.WindAgainstSpeed 	= stf(rRealShip.WindAgainstSpeed) + Кdckyrd * (frandSmall(stf(rRealShip.WindAgainstSpeed)/5.0) - stf(rRealShip.WindAgainstSpeed)/10.0);
 		}	
 	}
 	
@@ -310,22 +307,25 @@ int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 	rRealShip.SailorCrew      = sti(rRealShip.OptCrew);
 	// to_do del <--
 
-	if(sti(rRealShip.CannonsQuantityMin) > 0) // баркасы не учитываем
-	{
-		if(sti(rRealShip.CannonsQuantityMax) == sti(rRealShip.CannonsQuantity)) // это в основном квестовые корабли, но мало ли .....
-		{
-			rRealShip.Capacity        = sti(rRealShip.Capacity) + makeint(sti(rRealShip.Capacity)/5);
-			rRealShip.Tuning.Capacity = true;			
-			rRealShip.Tuning.Cannon   = true;			
-		}
-	}
-
 	if(!CheckAttribute(rRealShip, "QuestShip"))
 	{
 		rRealShip.Capacity  = sti(rRealShip.Capacity) + sti(rRealShip.Bonus_Capacity);
 		rRealShip.HP        = sti(rRealShip.HP) + sti(rRealShip.Bonus_HP);
 		rRealShip.SpeedRate = stf(rRealShip.SpeedRate) + stf(rRealShip.Bonus_SpeedRate);
 		rRealShip.TurnRate  = stf(rRealShip.TurnRate) + stf(rRealShip.Bonus_TurnRate);
+	}
+	
+	if(sti(rRealShip.CannonsQuantityMin) > 0) // баркасы не учитываем
+	{
+		if(sti(rRealShip.CannonsQuantityMax) == sti(rRealShip.CannonsQuantity)) // это в основном квестовые корабли, но мало ли .....
+		{
+			float fTuningMod = (GetShipSpec(rRealShip) == SHIP_SPEC_UNIVERSAL) ? 0.35 : 0.2;
+			if ("Bonus_Capacity" in rRealShip)
+				rRealShip.Capacity = (float(rRealShip.Capacity) - float(rRealShip.Bonus_Capacity)) * (1.0 + fTuningMod) + float(rRealShip.Bonus_Capacity);
+			else
+				rRealShip.Capacity = float(rRealShip.Capacity) * (1.0 + fTuningMod);
+			rRealShip.Tuning.Capacity = true;
+		}
 	}
 
 	int 	iDiffWeight		= sti(rRealShip.Weight) 	- sti(rBaseShip.Weight);
@@ -352,11 +352,11 @@ int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 void SetMaxShipStats(ref chr)
 {
 	int iShipType = GetCharacterShipType(chr);
-	if(iShipType == SHIP_NOTUSED) return false;
+	if(iShipType == SHIP_NOTUSED) return;
 	
 	ref rRealShip = GetRealShip(iShipType);
 	ref rBaseShip = GetShipByType(sti(rRealShip.BaseType));
-	if(CheckAttribute(rRealShip, "QuestShip")) return false;
+	if(CheckAttribute(rRealShip, "QuestShip")) return;
 	
 	int iCannonDiff = sti(sti(rBaseShip.rcannon) * 10 / 100 + 1);
 	int iClass = sti(rRealShip.Class);
@@ -384,7 +384,7 @@ void SetMaxShipStats(ref chr)
 }
 
 //Jason, генерация корабля с заданными статами; кроме числа орудий - всегда макс.
-int GenerateShipHand(ref chr, int iType, int cc, int cp, int cr, int hp, int pr, float sr, float tr, float aw)
+int GenerateShipHand(ref chr, int iType, int cc, int cp, int cr, int hp, int pr, float sr, float tr)
 {
 	aref 	refShip;
 
@@ -401,7 +401,6 @@ int GenerateShipHand(ref chr, int iType, int cc, int cp, int cr, int hp, int pr,
 	rRealShip.SpeedRate = sr;
 	rRealShip.TurnRate = tr;
 	rRealShip.HP = hp;
-	rRealShip.WindAgainstSpeed = aw;
     rRealShip.Capacity = cp;
     rRealShip.OptCrew = cr;
     rRealShip.MaxCrew = makeint(sti(rRealShip.OptCrew) * 1.25 + 0.5);
@@ -776,38 +775,6 @@ float SpeedBySkill(aref refCharacter)
     fSpeedPerk = AIShip_isPerksUse(CheckOfficersPerk(refCharacter, "SailingProfessional"), fSpeedPerk, 1.20);
 	
 	return fTRFromSKill*fSpeedPerk;
-}
-
-float FindShipWindAgainstSpeed(aref refCharacter)
-{
-	if(!CheckAttribute(refCharacter, "Ship.type"))
-	{
-		trace("Character " + refCharacter.id + " have no ship!");
-		return 0.0;
-	}
-	int nShipType = sti(refCharacter.ship.type);
-	if(nShipType == SHIP_NOTUSED)
-	{
-		trace("Character " + refCharacter.id + " have invalid ship!");
-		return 1.0;
-	}
-	ref rShip = GetRealShip(nShipType);
-
-	float fWindAgainstSpeed = stf(rShip.WindAgainstSpeed);
-	
-	if(ShipBonus2Artefact(refCharacter, SHIP_GALEON_SM))
-	{
-		fWindAgainstSpeed *= isEquippedArtefactUse(refCharacter, "obereg_11", 1.0, 1.22);
-	}
-	else
-	{
-		fWindAgainstSpeed *= isEquippedArtefactUse(refCharacter, "obereg_11", 1.0, 1.15);
-	}
-	if (fWindAgainstSpeed > 1.985) { // mitrokosta фикс невозможных значений
-		fWindAgainstSpeed = 1.985;
-	}
-	
-	return fWindAgainstSpeed;
 }
 
 float FindShipTurnRate(aref refCharacter)
@@ -1206,6 +1173,7 @@ int GetSailRepairCost(int shipType, int repairPercent, ref _shipyard)
 	ref shref = GetRealShip(shipType);
 	if(CheckAttribute(shref,"Tuning.GhostShip")) SailRepairCoeff *= 3;
 	float scost = SailRepairCoeff * (shipPrice*SAIL_COST_PERCENT+99.0)/100.0;
+	scost *= SZN_GetModifierMtp(M_REPAIR_COST, 1.0, 0.01);
 	return makeint((scost*repairPercent+99.0)/100.0);
 }
 
@@ -1217,6 +1185,7 @@ int GetHullRepairCost(int shipType,int repairPercent, ref _shipyard)
 	ref shref = GetRealShip(shipType);
 	if(CheckAttribute(shref,"Tuning.GhostShip")) HullRepairCoeff *= 3;
 	float scost = HullRepairCoeff * (shipPrice*HULL_COST_PERCENT+99.0)/100.0;
+	scost *= SZN_GetModifierMtp(M_REPAIR_COST, 1.0, 0.01);
 	return makeint((scost*repairPercent+99.0)/100.0);
 }
 
@@ -1419,6 +1388,11 @@ void SetShipTraits(ref rRealShip)
 	if(spec == SHIP_SPEC_MERCHANT) traitesQty = 4;
 	
 	rRealShip.Traits = "trait" + spec + (rand(traitesQty) + 1);
+}
+
+int GetShipSpec(ref rShip)
+{
+	return int(rShip.Spec);
 }
 
 string GetShipSpecDesc(ref chr)
@@ -1737,4 +1711,29 @@ float GetExpForRepair(ref chr, int percentRepaired, string type)
 	if (type == "sails") divider = SAIL_REPAIR_EXP_MTP;
 
 	return percentRepaired * (8-GetCharacterShipClass(chr)) / divider;
+}
+
+// Распределить команду компаньона по эскадре, вернуть остаток
+int DistributeCrewFromShipToSquadron(ref squadronLeader, ref chr)
+{
+	int crewQty = GetCrewQuantity(chr);
+
+	for(int i=0; i<COMPANION_MAX; i++)
+	{
+		if (crewQty <= 0) break;
+
+		int companionIdx = GetCompanionIndex(squadronLeader, i);
+		if (companionIdx < 0 || companionIdx == sti(chr.index)) continue;
+
+		ref companion = GetCharacter(companionIdx);
+		if (!GetRemovable(companion)) continue;
+
+		int shortage = GetFreeCrewQuantity(companion);
+		int transferQty = func_min(shortage, crewQty);
+		AddCharacterCrew(companion, transferQty);
+		AddCharacterCrew(chr, -transferQty);
+		crewQty -= shortage;
+	}
+
+	return crewQty;
 }

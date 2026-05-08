@@ -1,12 +1,4 @@
 FMQ_1 {Bertrand}
-FMQ_2 {Pinette}
-FMQ_3 {Carlos}
-FMQ_4 {de Milyar}
-FMQ_5 {Jean}
-FMQ_6 {Deno}
-FMQ_7 {Sario}
-FMQ_8 {Juan}
-FMQ_9 {Deno}
 FMQ_10 {'Sario'}
 FMQ_11 {~ As for Pinette.. Hell with him, the scum banker won't have him.}
 FMQ_12 {~ The scum banker will help me to sort this out under a threat of exposure - Pinette's letter is a very serious argument. I should head to Guadeloupe and enter the town through the city gates at night.}
@@ -17,6 +9,7 @@ FMQ_16 {Evening has come...@<NewStr()>The resin was unloaded at the shipyard...}
 FMQ_17 {Topaz}
 FMQ_18 {Sounds of alarm on the Topaz tartane!}
 FMQ_19 {You are free to land on shore}
+FMQ_2 {Pinette}
 FMQ_20 {Exploration mode: the quest is not failed}
 FMQ_21 {Caspar}
 FMQ_22 {Gratton}
@@ -27,6 +20,7 @@ FMQ_26 {Filippe}
 FMQ_27 {Jaсobsen}
 FMQ_28 {British raiding party had come to our island yet our vigilant commandant found and slain them all. This is big!}
 FMQ_29 {Have you heard? There was a skirmish outside the town. They have found English raiding party. Brits refused to surrender and were killed in action. Good job, commandant!}
+FMQ_3 {Carlos}
 FMQ_30 {Ship silk + 200}
 FMQ_31 {Oh, it's you! Bravo, captain! You were brave enough to face English spies armed to the teeth!}
 FMQ_32 {Our powers praise you highly, captain. And for reasons: helping to eliminate English spies is a big deal!}
@@ -37,6 +31,7 @@ FMQ_36 {What insolence! The Brits infiltrated our town at night! And yet our com
 FMQ_37 {Have you heard? There was a skirmish in the town. They have found English raiding party. Brits refused to surrender and were killed in action. Good job, commandant!}
 FMQ_38 {Вы не поставили свое судно в бухту!}
 FMQ_39 {Hans}
+FMQ_4 {de Milyar}
 FMQ_40 {Shulte}
 FMQ_41 {The Zeepard corvette is on us!}
 FMQ_42 {Have you heard about the mess happening here? The governor is outraged. English spies have freed their countrymen from our prison! They say some French had something to do with this.}
@@ -47,6 +42,7 @@ FMQ_46 {The governor praise you highly, captain. And for reasons: helping Fox's 
 FMQ_47 {Marceline}
 FMQ_48 {Levasseur}
 FMQ_49 {Claude}
+FMQ_5 {Jean}
 FMQ_50 {Durand}
 FMQ_51 {Ugo}
 FMQ_52 { }
@@ -57,6 +53,7 @@ FMQ_56 {Luis}
 FMQ_57 {Ortiz}
 FMQ_58 {Fudroyan}
 FMQ_59 {Gregoire}
+FMQ_6 {Deno}
 FMQ_60 {Valinnie}
 FMQ_61 {Prosper}
 FMQ_62 {Trubal}
@@ -67,6 +64,7 @@ FMQ_66 {Felicien}
 FMQ_67 {Gronier}
 FMQ_68 {Exploration mode: quest duration doubled}
 FMQ_69 {Exploration mode: deleted the timer}
+FMQ_7 {Sario}
 FMQ_70 {Hans}
 FMQ_71 {Shulte}
 FMQ_72 {Silvestre}
@@ -74,3 +72,5 @@ FMQ_73 {McCoy}
 FMQ_74 {Domingo}
 FMQ_75 {Albalate}
 FMQ_76 {Several hours later...@<NewStr()>The goods were delivered to the shore}
+FMQ_8 {Juan}
+FMQ_9 {Deno}

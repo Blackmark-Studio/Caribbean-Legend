@@ -1,10 +1,61 @@
-blade_critDamage {Yakın Dövüş Kritik Hasarı}
-gun_critDamage {Tabanca Kritik Hasarı}
-musket_critDamage {Tüfek Kritik Hasarı}
+bigCannonsAvailable {Büyük kalibreli toplar mevcut}
+BigCannonsAvailable_0 {Büyük kalibreli toplar satılmıyor}
+BigCannonsAvailable_1 {Büyük kalibreli toplar satışta}
 blade_critChance {Kesici Silah Kritik Şansı}
+blade_critDamage {Yakın Dövüş Kritik Hasarı}
+caribbeanGoodsCost {Koloni mallarının fiyatı}
+caribbeanGoodsStock {Koloni malları stoğu}
+contrabandTradeStatus_0 {Kaçakçılarla anlaşmalar mümkün}
+contrabandTradeStatus_1 {Kaçakçılarla anlaşmalar imkânsız}
+contrabandTradeStatus_2 {Kaçakçılarla anlaşmalar zorlaştı}
+convenienceGoodsCost {Temel ihtiyaçların fiyatı}
+convenienceGoodsStock {Temel ihtiyaçlar stoğu}
+crewExpMtp {Mürettebatın deneyim kazanma hızı}
+crewHireCost {Denizci işe alma maliyeti}
+crewHireMoraleMtp {Kiralık mürettebat morali}
+crewHiringExpMtp {Kiralık mürettebatın deneyimi}
+crewMaintenanceCost {Denizci bakım maliyeti}
+crownGoodsCost {Taç mallarının fiyatı}
+crownGoodsStock {Taç malları stoğu}
+debitRate {Kredi faiz oranı}
+depositGoldRate {Dublon mevduat faizi}
+depositSilverRate {Peso mevduat faizi}
+drugConsumption {İlaç tüketimi}
+enemyHullDamageMtp {Düşman gövdelerine hasar}
+europeanGoodsCost {Avrupa mallarının fiyatı}
+europeanGoodsStock {Avrupa malları stoğu}
+exportPriceMtp {İhracat fiyatı}
+foodConsumption {Gıda tüketimi}
+GlobalSpeed {Dünya haritasında gemi hızı}
+goldsilverGoodsAvailable_0 {Gümüş ve altın satılmıyor}
+goldsilverGoodsAvailable_1 {Gümüş ve altın satışta}
 gun_critChance {Tabanca Kritik Şansı}
-musket_critChance {Tüfek Kritik Şansı}
-incomingDamageReduction {Hasar Koruması}
-RangeIncomingDamageReduction {Ateşli Silah Hasarına Karşı Koruma}
-Shot_Damage {Ateşli Silah Hasarı}
+gun_critDamage {Tabanca Kritik Hasarı}
 HeadshotDamage {Kafa Vuruşu Hasarı}
+importPriceMtp {İthalat fiyatı}
+incomingDamageReduction {Hasar Koruması}
+legalContraband_0 {Kaçakçılık her zamanki gibi işler}
+legalContraband_1 {Kaçak mallar ithalat sayılır}
+medicamentCost {İlaç fiyatı}
+minFortCannonsMtp {Kale hücumu için imha edilen top eşiği}
+moraleMtp {Mürettebat moral artışı}
+musket_critChance {Tüfek Kritik Şansı}
+musket_critDamage {Tüfek Kritik Hasarı}
+nationsReputationMtp {Uluslarla itibar değişim hızı}
+RangeIncomingDamageReduction {Ateşli Silah Hasarına Karşı Koruma}
+recruitsMtp {Acemiler}
+repairCost {Tersane onarım maliyeti}
+seaRepairEfficency {Denizde onarım verimliliği}
+shipSpeedDynamic {Geminin hızlanması}
+shipyardCannonsStock {Tersanedeki top stoğu}
+Shot_Damage {Ateşli Silah Hasarı}
+slavesGoodsAvailable_0 {Köleler satılmıyor}
+slavesGoodsAvailable_1 {Köleler satışta}
+stealthInceptionBonus {Şehre sızma şansı}
+stolenGoodsMtp {Çalıntı mallar cezası azalır}
+stormDamageMtp {Fırtına hasarı}
+tradeLicenseCost {Ticaret lisansı maliyeti}
+uniqueGoodsAvailable_0 {Stratejik mallar satılmıyor}
+uniqueGoodsAvailable_1 {Stratejik mallar satışta}
+uniqueGoodsStock {Stratejik mallar stoğu}
+SquadronPower {Filo Gücü}

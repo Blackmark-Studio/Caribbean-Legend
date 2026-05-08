@@ -269,9 +269,9 @@ void ProcessDialogEvent()
 			pchar.quest.Trial_CreatHabitue.win_condition.l1.location = "PortoBello_tavern";
 			pchar.quest.Trial_CreatHabitue.function = "Trial_CreatHabitue";
 			
-			pchar.quest.Tutorial_stealth.win_condition.l1 = "location";
-			pchar.quest.Tutorial_stealth.win_condition.l1.location = "PortoBello_ExitTown";
-			pchar.quest.Tutorial_stealth.function = "Tutorial_stealth";
+			// pchar.quest.Tutorial_stealth.win_condition.l1 = "location";
+			// pchar.quest.Tutorial_stealth.win_condition.l1.location = "PortoBello_ExitTown";
+			// pchar.quest.Tutorial_stealth.function = "Tutorial_stealth";
 			
 			QuestPointerToLoc("shore47", "reload", "reload1_back");
 			QuestPointerToLoc("PortoBello_Jungle_02", "reload", "reload1_back");

@@ -210,7 +210,7 @@ void ProcessDialogEvent()
 		
 		case "licence_1":
 			float fQty = stf(dialogEditStrings[6]);
-			npchar.quest.lcc_summ = makeint(sqrt(fQty)*10)*7;
+			npchar.quest.lcc_summ = LICENSE_GetPrice("", fQty);
 			if (fQty < 1)
 			{
 				dialog.text = "Mynheer bitte, sprechen Sie deutlich. Ich habe Sie nicht richtig gehört. Also, wie lange?";

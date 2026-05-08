@@ -1,22 +1,22 @@
 CONTRABAND {Contraband}
-EXPORT {Export}
-IMPORT {Import}
-Trade_assistant {Trade Assistant}
-No_price {No price list}
-No_profit {No profitable deals}
-Distance {Distance}
-To {There}
-From {Back}
 day {day}
 day2 {day}
 days {days}
+Distance {Distance}
+EXPORT {Export}
+From {Back}
 hour {hour}
 hour2 {hour}
 hours {hours}
 hours2 {hours}
+IMPORT {Import}
 nautical_mile {nautical mile}
 nautical_mile2 {nautical mile}
 nautical_miles {nautical miles}
 nautical_miles2 {nautical miles}
+No_price {No price list}
+No_profit {No profitable deals}
+To {There}
+Trade_assistant {Trade Assistant}
 TRAVEL_from {from}
 TRAVEL_to {to}

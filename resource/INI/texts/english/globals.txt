@@ -1,63 +1,121 @@
-QUEST_MESSAGE1 {Colony of El Caimano is occupied.}
-QUEST_MESSAGE2 {Colony of El Caimano is captured.}
-QUEST_MESSAGE3 {You're too old to resist the curse of the Aztec gold...}
-QUEST_MESSAGE4 {You have found a treasure!}
-QUEST_MESSAGE5 {Nigel Blight has attacked the smuggler's corvette!}
-QUEST_MESSAGE6 {Nigel Blight has disappeared!}
-QUEST_MESSAGE7 {Captain, the 'Black Pearl' is seen on the horizon!}
-QUEST_MESSAGE8 {Great work. You have killed the Master!}
-QUEST_MESSAGE9 {Now you're toe to toe with this cruel world!}
-QUEST_MESSAGE10 {A merciless pirate}
-QUEST_MESSAGE11 {deserves a special reward!}
-QUEST_MESSAGE12 {Unfortunately, you have already hired too many officers! You can hire another only after you fire one of the officers!}
-Address_Form_Spa {Senor}
-Address_Form_Fra {Monsieur}
-Address_Form_Eng {Sir}
-Address_Form_Por {Senor}
-Address_Form_Hol {Mynheer}
-Swear_1 {Burst my spleen!}
-Swear_2 {Damn it!}
-Swear_3 {Oh my God!}
-Swear_4 {Goddammit!}
-Swear_5 {A thousand devils!}
-Swear_6 {Anchor to my stern!}
-Swear_7 {Oh Heavens!}
-Swear_8 {Arrghhh!!!}
-Swear_9 {A thousand sharks!}
-Swear_10 {Devil!}
-TimeGreeting {Good afternoon}
-Antigua {Antigua}
-Barbados {Barbados}
-Curacao {Curacao}
-Dominica {Dominica}
-Grenada {Grenada}
-Guadeloupe {Guadeloupe}
-Hispaniola {Hispaniola}
-IslaMona {Isla Mona}
-Jamaica {Jamaica}
-MarieGalante {Marie Galante}
-Martinique {Martinique}
-Montserrat {Montserrat}
-Nevis {Nevis}
-PuertoRico {Puerto Rico}
-StEustatius {St. Eustatius}
-StKitts {St. Kitts}
-StMartin {St. Martin}
-Tortuga {Tortuga}
-LaVega {La Vega}
-SantoDomingo {Santo Domingo}
-PetitGoave {Petit Goave}
-Bridgetown {Bridgetown}
-SanJuan {San Juan}
-SantiagoVega {Santiago Vega}
-OFFIC_TYPE_BOATSWAIN {bosun}
-OFFIC_TYPE_CANNONEER {cannoneer}
-OFFIC_TYPE_QMASTER {helmsman}
-OFFIC_TYPE_NAVIGATOR {navigator}
-OFFIC_TYPE_FIRSTMATE {first mate}
-Pirate {Pirate}
-Spain {Spaniard}
-France {Frenchman}
-Smuggler {Smuggler}
-Holland {Dutchman}
-England {Englishman}
+Address_Form_Eng {sir}
+Address_Form_Eng_Title1 {Privateer}
+Address_Form_Eng_Title2 {Commander}
+Address_Form_Eng_Title3 {Captain}
+Address_Form_Eng_Title4 {Commodore}
+Address_Form_Eng_Title5 {Admiral}
+Address_Form_EngWoman {miss}
+Address_Form_EngWoman2 {missus}
+Address_Form_Fra {monsieur}
+Address_Form_Fra_Title1 {Corsaire}
+Address_Form_Fra_Title2 {Commander}
+Address_Form_Fra_Title3 {Captain}
+Address_Form_Fra_Title4 {Commodore}
+Address_Form_Fra_Title5 {Vice-Admiral}
+Address_Form_FraWoman {mademoiselle}
+Address_Form_FraWoman2 {madame}
+Address_Form_Hol {mijnheer}
+Address_Form_Hol_Title1 {Vrijbuiter}
+Address_Form_Hol_Title2 {Commander}
+Address_Form_Hol_Title3 {Captain}
+Address_Form_Hol_Title4 {Commodore}
+Address_Form_Hol_Title5 {Admiral}
+Address_Form_HolWoman {mevrouw}
+Address_Form_HolWoman2 {frau}
+Address_Form_Pir {sir}
+Address_Form_Pir_Title1 {Buccaneer}
+Address_Form_Pir_Title2 {Sea Dog}
+Address_Form_Pir_Title3 {Veteran}
+Address_Form_Pir_Title4 {Baron}
+Address_Form_Pir_Title5 {Legend}
+Address_Form_PirWoman {miss}
+Address_Form_PirWoman2 {missus}
+Address_Form_Spa {señor}
+Address_Form_Spa_Title1 {Corsario}
+Address_Form_Spa_Title2 {Commander}
+Address_Form_Spa_Title3 {Captain}
+Address_Form_Spa_Title4 {Commodore}
+Address_Form_Spa_Title5 {Admiral}
+Address_Form_SpaWoman {señorita}
+Address_Form_SpaWoman2 {señora}
+DayGreeting {Good day}
+EveningGreeting {Good evening}
+Exclamation_1 {Good Lord!!}
+Exclamation_2 {Heavens above!}
+Exclamation_3 {Holy Madonna!}
+FriendlyGoodbye_0 {So long}
+FriendlyGoodbye_1 {Fare thee well}
+FriendlyGreeting {Ahoy}
+MorningGreeting {Good morning}
+NationEuropaTown_Eng {London}
+NationEuropaTown_Fra {La Rochelle}
+NationEuropaTown_Hol {Amsterdam}
+NationEuropaTown_Pir {Tortuga}
+NationEuropaTown_Spa {Seville}
+NationKingsCrown_Eng {the English Crown}
+NationKingsCrown_Fra {the French Crown}
+NationKingsCrown_Hol {the Kingdom of the Netherlands}
+NationKingsCrown_Pir {the Brethren of the Coast}
+NationKingsCrown_Spa {the Spanish Crown}
+NationKingsName_Eng {the Lord Protector}
+NationKingsName_Fra {His Majesty Louis XIV}
+NationKingsName_Hol {His Majesty William III of Orange}
+NationKingsName_Pir {the Brethren of the Coast}
+NationKingsName_Spa {His Catholic Majesty Philip IV of Habsburg}
+NationNameAblative_Eng {England}
+NationNameAblative_Fra {France}
+NationNameAblative_Hol {Holland}
+NationNameAblative_Pir {the pirates}
+NationNameAblative_Spa {Spain}
+NationNameGenitive_Eng {England's}
+NationNameGenitive_Fra {France's}
+NationNameGenitive_Hol {Holland's}
+NationNameGenitive_Pir {the pirates'}
+NationNameGenitive_Spa {Spain's}
+NationNameMan_Eng {Englishman}
+NationNameMan_Fra {Frenchman}
+NationNameMan_Hol {Dutchman}
+NationNameMan_Pir {pirate}
+NationNameMan_Spa {Spaniard}
+NationNameNominative_Eng {England}
+NationNameNominative_Fra {France}
+NationNameNominative_Hol {Holland}
+NationNameNominative_Pir {the Brethren of the Coast}
+NationNameNominative_Spa {Spain}
+NationNamePeople_Eng {the English}
+NationNamePeople_Fra {the French}
+NationNamePeople_Hol {the Dutch}
+NationNamePeople_Pir {pirates}
+NationNamePeople_Spa {the Spanish}
+NationNamePeopleAcc_Eng {the English}
+NationNamePeopleAcc_Fra {the French}
+NationNamePeopleAcc_Hol {the Dutch}
+NationNamePeopleAcc_Pir {pirates}
+NationNamePeopleAcc_Spa {the Spanish}
+NationNameWoman_Eng {Englishwoman}
+NationNameWoman_Fra {Frenchwoman}
+NationNameWoman_Hol {Dutch woman}
+NationNameWoman_Pir {pirate lass}
+NationNameWoman_Spa {Spanish woman}
+NightGreeting {Good night}
+PoliteGoodbye_0 {Farewell}
+PoliteGoodbye_1 {Godspeed}
+PoliteGreeting {Greetings}
+Swear_1 {Caramba!}
+Swear_10 {Strike me down!}
+Swear_11 {Blast yer mizzen!}
+Swear_12 {Curse you to the deep!}
+Swear_13 {A dozen sharks!}
+Swear_14 {Blimey!}
+Swear_15 {Three thousand devils!}
+Swear_2 {Blast it all!}
+Swear_3 {The devil take you!}
+Swear_4 {Damn it!}
+Swear_5 {Shiver me timbers!}
+Swear_6 {A thousand sharks!}
+Swear_7 {Argh!!!}
+Swear_8 {A thousand devils!}
+Swear_9 {Alle Hagel!}
+Title_Captain {captain}
+Title_Ghovernor {governor-general}
+Title_ViceAdmiral {vice-admiral}

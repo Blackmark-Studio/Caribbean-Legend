@@ -1,12 +1,4 @@
 Longway_1 { }
-Longway_2 { }
-Longway_3 {Abe}
-Longway_4 {Bix}
-Longway_5 {Marcel}
-Longway_6 {Schulte}
-Longway_7 {Johan}
-Longway_8 {van Merden}
-Longway_9 {福尔摩沙岛 @<NewStr()> 1645年4月2日。}
 Longway_10 {Oliver}
 Longway_11 {Trust}
 Longway_12 {Antoon}
@@ -17,6 +9,7 @@ Longway_16 {Vette}
 Longway_17 {van Haan}
 Longway_18 {Luiters}
 Longway_19 {van Haan}
+Longway_2 { }
 Longway_20 {Vitus}
 Longway_21 {Hengel}
 Longway_22 {Georges}
@@ -27,6 +20,7 @@ Longway_26 {Marso}
 Longway_27 {一天后... @<NewStr()> 傍晚, 城门外。}
 Longway_28 {Mathieu}
 Longway_29 {Terugny}
+Longway_3 {Abe}
 Longway_30 {三小时后... @<NewStr()> 卡普斯维尔码头}
 Longway_31 {指挥官}
 Longway_32 { }
@@ -37,6 +31,7 @@ Longway_36 {Gravel}
 Longway_37 {Edgardo}
 Longway_38 {Sotta}
 Longway_39 {Morning Star}
+Longway_4 {Bix}
 Longway_40 {"Morning Star (晨星号)" 的后甲板}
 Longway_41 {封舱! 是时候和 Fermentelos 谈谈了...}
 Longway_42 {全队现在都到这里来!}
@@ -47,6 +42,7 @@ Longway_46 {来自星辰号的某些货物被迅速转移 到了我们的货舱}
 Longway_47 {Abraham}
 Longway_48 {Norman}
 Longway_49 {Mary}
+Longway_5 {Marcel}
 Longway_50 {Helen}
 Longway_51 {Rober}
 Longway_52 {Martene}
@@ -57,6 +53,7 @@ Longway_56 {Prevoyant}
 Longway_57 {顺便说一句, 我在船长的储物柜里找到了航海日 志, 但所有的页面都被撕掉了, 所以又是一条死胡同。}
 Longway_58 {水手}
 Longway_59 { }
+Longway_6 {Schulte}
 Longway_60 {Henri}
 Longway_61 {Thibaut}
 Longway_62 {Marceline}
@@ -66,3 +63,6 @@ Longway_65 {Chang}
 Longway_66 {Xing}
 Longway_67 {我心爱的人需要休息。 我会尽量不打扰她。}
 Longway_68 {Voltigeur}
+Longway_7 {Johan}
+Longway_8 {van Merden}
+Longway_9 {福尔摩沙岛 @<NewStr()> 1645年4月2日。}

@@ -106,6 +106,7 @@ void StartBattleLandInterface()
 	Event("evntFindDialogChar");
 	SendMessage(&objLandInterface,"ll",MSG_BATTLE_LAND_SHOW_EQUIPMENT, bShowEquipment());
     TW_Init();
+    CheckBindsBack();
 }
 
 ref BLI_CheckCommand()
@@ -408,7 +409,7 @@ void BLI_SetObjectData()
 	objLandInterface.CommandTextures.list.t0.xsize = 16;
 	objLandInterface.CommandTextures.list.t0.ysize = 4;
 	
- 	objLandInterface.CommandTextures.list.t1.name = "interfaces\le\battle_interface\LandTarget_SLB.tga.tx";
+ 	objLandInterface.CommandTextures.list.t1.name = "interfaces\le\battle_interface\LandTarget.tga.tx";
 	objLandInterface.CommandTextures.list.t1.xsize = 16;
 	objLandInterface.CommandTextures.list.t1.ysize = 4;
 	
@@ -428,17 +429,21 @@ void BLI_SetObjectData()
 	objIconsNote.1x7 = LanguageConvertString(idLngFile, "go_exittown");
 	objIconsNote.1x9 = LanguageConvertString(idLngFile, "go_brothel");
 	objIconsNote.1x10 = LanguageConvertString(idLngFile, "go_port");
-	objIconsNote.1x8 = LanguageConvertString(idLngFile, "go_portman");
-	objIconsNote.1x5 = LanguageConvertString(idLngFile, "go_prison");
+	objIconsNote.1x8  = LanguageConvertString(idLngFile, "go_portman");
+	objIconsNote.1x5  = LanguageConvertString(idLngFile, "go_prison");
+    objIconsNote.1x42 = LanguageConvertString(idLngFile, "go_storage");
+    objIconsNote.1x43 = LanguageConvertString(idLngFile, "go_hwic_office");
+    objIconsNote.1x41 = LanguageConvertString(idLngFile, "go_graveyard");
+    objIconsNote.1x44 = LanguageConvertString(idLngFile, "go_plantation");
 	// belamour legendary edition для LSC -->
-	objIconsNote.11x0 = LanguageConvertString(idLngFile, "go_EsmeraldaStoreBig");
+	objIconsNote.11x0  = LanguageConvertString(idLngFile, "go_EsmeraldaStoreBig");
 	objIconsNote.11x34 = LanguageConvertString(idLngFile, "go_CeresSmithy_Jurgen");
-	objIconsNote.11x2 = LanguageConvertString(idLngFile, "go_FleuronTavern");
+	objIconsNote.11x2  = LanguageConvertString(idLngFile, "go_FleuronTavern");
 	objIconsNote.11x13 = LanguageConvertString(idLngFile, "go_SanAugustineResidence");
 	objIconsNote.11x36 = LanguageConvertString(idLngFile, "go_ProtectorFisher");
-	objIconsNote.11x3 = LanguageConvertString(idLngFile, "go_Caroline");
-	objIconsNote.11x5 = LanguageConvertString(idLngFile, "go_TartarusPrison");
-	objIconsNote.11x6 = LanguageConvertString(idLngFile, "go_GloriaChurch");
+	objIconsNote.11x3  = LanguageConvertString(idLngFile, "go_Caroline");
+	objIconsNote.11x5  = LanguageConvertString(idLngFile, "go_TartarusPrison");
+	objIconsNote.11x6  = LanguageConvertString(idLngFile, "go_GloriaChurch");
 	objIconsNote.11x39 = LanguageConvertString(idLngFile, "go_CeresSmithy_Mary");
 	// <-- lsc
 	
@@ -1145,32 +1150,33 @@ void BLI_SetObjectData()
 
 bool bFastEnable() // belamour возможен ли переход
 {
-	if(LAi_group_IsActivePlayerAlarm()) return false;
-	if(!LAi_IsCharacterControl(pchar)) return false;
-	if(bDisableFastReload)	return false;
-	if(!IsEnableFastTravel()) return false;
-	if(chrDisableReloadToLocation) return false;
-	if (!CheckAttribute(loadedLocation, "fastreload")) return false;
-	if (STH_IsEnableFastReload(loadedLocation.fastreload)) return true;
-	if(CheckAttribute(pchar, "questTemp.Guardoftruth") && CheckCharacterItem(pchar, "VerifyPaper") && loadedLocation.fastreload == "santiago" && GetNationRelation2MainCharacter(StealthNat) != RELATION_ENEMY) return true;
-	if(CheckAttribute(pchar, "questTemp.Guardoftruth.Trinidad") && CheckCharacterItem(pchar, "VerifyPaper") && loadedLocation.fastreload == "portspein" && GetNationRelation2MainCharacter(StealthNat) != RELATION_ENEMY) return true;
-	if(!bBettaTestMode && !CheckAttribute(pchar, "Cheats.LocTeleport"))
-	{
-		string sNation = Colonies[FindColony(loadedLocation.fastreload)].nation;
-		if (sNation != "none")
-		{
-			int i = sti(sNation);
-			bool bOk = (GetNationRelation2MainCharacter(i) == RELATION_ENEMY) || GetRelation2BaseNation(i) == RELATION_ENEMY;
-			if(bOk && (i != PIRATE)) return false;
-			else return true;
-		}
-	}
-	return true;
+	if (LAi_group_IsActivePlayerAlarm()) return false;
+	if (!LAi_IsCharacterControl(PChar)) return false;
+	if (bDisableFastReload)	return false;
+	if (!IsEnableFastTravel()) return false;
+	if (chrDisableReloadToLocation) return false;
+	if ("fastreload" !in loadedLocation) return false;
+    if ("id.label" in loadedLocation && loadedLocation.id.label == "ExitTown")
+        return false; // to_do: $-оператор
+
+    string sColony = loadedLocation.fastreload;
+    if (STH_IsEnableFastReload(sColony))
+        return true;
+    if ("questTemp.Guardoftruth" in PChar && CheckCharacterItem(PChar, "VerifyPaper") &&
+        GetNationRelation2MainCharacter(StealthNat) != RELATION_ENEMY) // ~!~
+    {
+        if (sColony == "Santiago")
+            return true;
+        if (sColony == "PortSpein" && "questTemp.Guardoftruth.Trinidad" in PChar)
+            return true;
+    }
+
+	return (!bBettaTestMode && "Cheats.LocTeleport" !in PChar) ? StealthEnable : true;
 }
 
 bool FindUserIcon(string id,ref uiref)
 {
-	aref arroot,ar; makearef(arroot,objLandInterface.UserIcons);
+	aref arroot,ar; makearef(arroot, objLandInterface.UserIcons);
 	int iMax = GetAttributesNum(arroot); //fix
 	for(int i=0; i<iMax; i++)
 	{
@@ -1202,7 +1208,7 @@ void BLI_SetMessageParameters()
 
 void BLI_UpdateObjectData()
 {
-	if(LAi_group_IsActivePlayerAlarm() || !StealthEnable)
+	if (LAi_group_IsActivePlayerAlarm() || !StealthEnable)
 	{
 		objLandInterface.data.stealth = false;
 		objLandInterface.ManSign.alarmtexturename = "interfaces\le\battle_interface\alarmback.tga.tx";
@@ -1238,7 +1244,7 @@ void BLI_UpdateObjectData()
 		if(g_ActiveActionName == "DeadBox") Log_SetActiveAction("Nothing");
 	}
 
-	if(CharacterIsDead(GetMainCharacter())) Log_SetActiveAction("Nothing");
+	if(CharacterIsDead(GetMainCharacter())) Log_DeletePermanentAction();
 	
 	aref ar,arItm;
 	int i,cn;
@@ -1281,9 +1287,6 @@ void BLI_UpdateObjectData()
 
 void BLI_SetPossibleCommands()
 {
-	int chrMode = SendMessage(pchar,"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode");
-
-	bool bTmpBool;
 	bool bUseCommand = false;
 	bool bOk, bOk1;
 	int i;
@@ -1296,37 +1299,9 @@ void BLI_SetPossibleCommands()
 		curcom.enable = false;
 	}
 
-	if(chrMode==0)
+	if (LAi_CheckFightMode(PChar) == CHR_MODE_PEACE)
 	{
-		bTmpBool = true;
-		if(LAi_group_IsActivePlayerAlarm()) bTmpBool = false;
-		if(!LAi_IsCharacterControl(pchar)) bTmpBool = false;
-		if(bDisableFastReload)	bTmpBool = false;
-		if(!IsEnableFastTravel()) bTmpBool = false;
-		// boal запрет всех переходов
-		if (chrDisableReloadToLocation) bTmpBool = false;
-		if (!CheckAttribute(loadedLocation,"fastreload")) bTmpBool = false;  // в каюте некуда переходить
-		if (bTmpBool && !CheckAttribute(pchar, "Cheats.LocTeleport")) // все ещё можно переходить, проверяем город враг
-		{
-		    string sNation = Colonies[FindColony(loadedLocation.fastreload)].nation;
-			if (sNation != "none")
-			{
-				i = sti(sNation);
-				bTmpBool = (GetNationRelation2MainCharacter(i) == RELATION_ENEMY) || GetRelation2BaseNation(i) == RELATION_ENEMY;
-				if (bTmpBool && (i != PIRATE))// && !CheckAttribute(pchar, "CheckStateOk"))
-				{
-					bTmpBool = false;
-				}
-				else
-				{
-		    		bTmpBool = true;
-				}
-			}
-			if(STH_IsEnableFastReload(loadedLocation.fastreload)) bTmpBool = true;
-			if(CheckAttribute(pchar, "questTemp.Guardoftruth") && CheckCharacterItem(pchar, "VerifyPaper") && loadedLocation.fastreload == "santiago" && GetNationRelation2MainCharacter(i) != RELATION_ENEMY) bTmpBool = true;
-			if(CheckAttribute(pchar, "questTemp.Guardoftruth.Trinidad") && CheckCharacterItem(pchar, "VerifyPaper") && loadedLocation.fastreload == "portspein" && GetNationRelation2MainCharacter(i) != RELATION_ENEMY) bTmpBool = true;
-		}
-		objLandInterface.Commands.FastReload.enable	= bTmpBool;
+		objLandInterface.Commands.FastReload.enable	= bFastEnable();
 		///// boal -->
 		i = -1;
 		if (CheckAttribute(pchar,"dialogready")) i=sti(pchar.dialogready);
@@ -1371,8 +1346,7 @@ void BLI_SetPossibleCommands()
     	bUseCommand = true;
     }
 
-	bool bSeaBattle = (bDisableMapEnter) && (bSeaActive) && (!CheckAttribute(pchar, "GenQuest.MapClosedNoBattle"));
-	if(!LAi_IsFightMode(pchar) && !bSeaBattle && PChar.location != "Deck_Near_Ship" && findsubstr(PChar.location, "_shipyard" , 0) == -1 && PChar.location != "CommonPackhouse_2" && !CheckAttribute(pchar, "GenQuest.CannotWait") && !CheckAttribute(loadedLocation, "CannotWait")) // отдых/проматывание времени
+	if (CheckRestAvailable(true)) // отдых/проматывание времени
 	{
     	objLandInterface.Commands.Rest.enable = true;//отдых/проматывание времени
     	bUseCommand = true;
@@ -1570,12 +1544,13 @@ bool SetUsedPotionIcons()
 
 	bool bUsed = false;
 
-	makearef(uiref,objLandInterface.UserIcons);
+	makearef(uiref, objLandInterface.UserIcons);
 	nq = GetAttributesNum(uiref);
 	for(i=0; i<nq; i++)
 	{
 		ar = GetAttributeN(uiref,i);
-		if( CheckAttribute(ar,"potion") ) {
+		if (CheckAttribute(ar, "potion"))
+        {
 			DeleteAttribute(uiref,GetAttributeName(ar));
 			nq--; i--;
 		}
@@ -1617,7 +1592,8 @@ bool SetReloadIcons()
 	for(i=0; i<nq; i++)
 	{
 		ar = GetAttributeN(uiref,i);
-		if( CheckAttribute(ar,"location") ) {
+		if (CheckAttribute(ar, "location"))
+        {
 			DeleteAttribute(uiref,GetAttributeName(ar));
 			nq--; 
 			i--;
@@ -1627,18 +1603,18 @@ bool SetReloadIcons()
 	int idxloc = FindLoadedLocation();
 	string str1,str2,fastLocName;
 	string outGroupName = "";
-	if(idxloc>=0 && CheckAttribute(&Locations[idxloc],"fastreload"))
+	if (idxloc>=0 && CheckAttribute(&Locations[idxloc],"fastreload"))
 	{
 		outGroupName = Locations[idxloc].fastreload;
 		
-		if( CheckAttribute(&objFastReloadTable,"table."+outGroupName) )
+		if (CheckAttribute(&objFastReloadTable,"table."+outGroupName))
 		{
-			makearef(locList,objFastReloadTable.table.(outGroupName));
+			makearef(locList, objFastReloadTable.table.(outGroupName));
 			nq = GetAttributesNum(locList);
 			// to port icon
-			if( GetCharacterShipType(pchar)!=SHIP_NOTUSED )
+			if (GetCharacterShipType(pchar) != SHIP_NOTUSED)
 			{
-				if( CheckFastJump(Locations[idxloc].id, pchar.location.from_sea) )
+				if (CheckFastJump(Locations[idxloc].id, pchar.location.from_sea))
 				{
 					objLandInterface.UserIcons.port.enable = true;
 					objLandInterface.UserIcons.port.pic = 26;
@@ -1654,21 +1630,21 @@ bool SetReloadIcons()
 			for(i=0; i<nq; i++)
 			{
 				curloc = GetAttributeN(locList,i);
-				if(!CheckFastJump(Locations[idxloc].id, curloc.location) ) 
+				if (!CheckFastJump(Locations[idxloc].id, curloc.location) ) 
 				{
 					continue;
 				}
 				fastLocName = "fr_"+(i+1);
 				// belamour 
-				if(loadedlocation.islandId == "LostShipsCity")
+				if (loadedlocation.islandId == "LostShipsCity")
 				{
 					objLandInterface.UserIcons.port.locator = "reload1_back";
-					if(CheckAttribute(&locations[idxloc],"lsc_inside"))
+					if (CheckAttribute(&locations[idxloc],"lsc_inside"))
 					{
 						if(locations[idxloc].lsc_inside == "narval" && CheckAttribute(pchar, "GenQuest.NarvalConflict")) continue;
 						if(locations[idxloc].lsc_inside == "shark" && CheckAttribute(pchar, "GenQuest.SharkConflict")) continue;
 						if(locations[idxloc].lsc_inside == "rivados" && CheckAttribute(pchar, "GenQuest.RivadosConflict")) continue;
-					}									
+					}
 					objLandInterface.UserIcons.(fastLocName).enable = true;
 					objLandInterface.UserIcons.(fastLocName).pic = sti(curloc.pic)+16;
 					objLandInterface.UserIcons.(fastLocName).selpic = curloc.pic;
@@ -1688,10 +1664,10 @@ bool SetReloadIcons()
 					{
 						objLandInterface.UserIcons.(fastLocName).locator = "reload3";
 						objLandInterface.UserIcons.(fastLocName).note = LanguageConvertString(idLngFile, "go_SanGabrielMechanic");
-					}						
-				}					
+					}
+				}
 				else
-				{					
+				{
 					objLandInterface.UserIcons.(fastLocName).enable = true;
 					objLandInterface.UserIcons.(fastLocName).pic = sti(curloc.pic)+16;
 					objLandInterface.UserIcons.(fastLocName).selpic = curloc.pic;
@@ -1870,7 +1846,7 @@ void SetCharacterIconData(int chrindex, aref arData)
 void ControlsLandDesc()
 {
 	if(bMainMenu) return;
-	if(iControlsTips > 0 && !IsSteamDeck())
+	if(iControlsTips > 0 && !IsSteamDeck() && "Tutor.BackControlsTips" !in &TEV)
 	{
 		int colorbase	= ARGB_Color("white");
 		int colorused	= argb(255,255,255,192);
@@ -1882,7 +1858,7 @@ void ControlsLandDesc()
 		string cname = "";
 		string sTimerDur = "";
 		string FTC[10];
-		
+
 		for(numline = 1; numline < 11; numline++)
 		{
 			sAttrB = "Con"+numLine+"Back";
@@ -1908,7 +1884,7 @@ void ControlsLandDesc()
 			{
 				if(LAi_IsFightMode(pchar))
 				{
-					if(SendMessage(pchar, "ls", MSG_CHARACTER_EX_MSG, "IsAimingMode"))
+					if (SendMessage(pchar, "ls", MSG_CHARACTER_EX_MSG, "IsAimingMode"))
 					{
 						FTC[0] = "ChrAimingShot";
 						FTC[1] = "ChrAiming";
@@ -1919,15 +1895,15 @@ void ControlsLandDesc()
 						FTC[1] = "ChrAttackBase";
 						FTC[2] = "ChrAttackBreakBase";
 						FTC[3] = "ChrAttackChoseBase";
-						if(LAi_CharacterCanFrie(pchar)) FTC[4] = "ChrAiming";
+						if(LAi_CharacterCanFire(pchar)) FTC[4] = "ChrAiming";
 						FTC[5] = "ChrBlock";
 					}
 				}
 				else
 				{
-					if(iControlsTips > 5) // iControlsTips > 1 включит показ
+					if (iControlsTips > 5) // iControlsTips > 1 включит показ
 					{
-						if(bFastEnable() && iShowTime > 0 && iControlsTips > 2)
+						if (bFastEnable() && iShowTime > 0 && iControlsTips > 2)
 						{
 							FTC[0] = "_port";
 							FTC[1] = "_store";
@@ -1940,7 +1916,7 @@ void ControlsLandDesc()
 							FTC[8] = "_portOffice";
 							FTC[9] = "_prison";
 							
-							if(loadedlocation.islandId == "LostShipsCity")
+							if (loadedlocation.islandId == "LostShipsCity")
 							{
 								/* string LSCloc[11];
 								LSCloc[0] = "CeresSmithy";
@@ -1958,18 +1934,18 @@ void ControlsLandDesc()
 							} 
 							else
 							{
-								if(CheckFastJump(loadedLocation.id, loadedLocation.fastreload+FTC[i]))
+								if (CheckFastJump(loadedLocation.id, loadedLocation.fastreload+FTC[i]))
 								{
 									objLandInterface.textinfo.(sAttr).text = GetKeyCodeImg("Fast"+FTC[i]);
 									objLandInterface.textinfo.(sAttrDes).text = GetConvertStr("LI_Fast"+FTC[i],"ControlsNames.txt");
 									objLandInterface.textinfo.(sAttrB).text = "1" ;
-									numLine --;
+									numLine--;
 									
 									sAttr = "Con"+numLine;
 									sAttrDes = "Con"+numLine+"desc";
 									sAttrB = "Con"+numLine+"Back";
 								}
-								if(CheckFastJump(loadedLocation.id, pchar.location.from_sea))
+								if (CheckFastJump(loadedLocation.id, pchar.location.from_sea))
 								{
 									objLandInterface.textinfo.(sAttr).text = GetKeyCodeImg("Fast"+FTC[i]);
 									objLandInterface.textinfo.(sAttrDes).text = GetConvertStr("LI_Fast"+FTC[i],"ControlsNames.txt");
@@ -1998,7 +1974,7 @@ void ControlsLandDesc()
 				objLandInterface.textinfo.(sAttr).text = GetKeyCodeImg(FTC[i]);
 				objLandInterface.textinfo.(sAttrDes).text = GetConvertStr(FTC[i],"ControlsNames.txt") + sTimerDur;
 				objLandInterface.textinfo.(sAttrB).text = "1" ;
-				numLine --;
+				numLine--;
 				
 				sAttr = "Con"+numLine;
 				sAttrDes = "Con"+numLine+"desc";
@@ -2055,6 +2031,7 @@ void GetWeaponQty()
 void EquipmentDesc()
 {
 	if(bMainMenu) return;
+	int iCurControlsTips = ("Tutor.BackControlsTips" in &TEV) ? 0 : iControlsTips;
 	bool bInFight = LAi_IsFightMode(pchar);
 	string cname = "";
 	string GunType = GUN_ITEM_TYPE;
@@ -2084,8 +2061,11 @@ void EquipmentDesc()
 	objLandInterface.equipment.LanternOn = CheckAttribute(pchar, "HandLight");
 	
 	objLandInterface.equipment.RushOn = CheckCharacterItem(pchar, "berserker_potion") || AbilityTimeDuration("active", "Rush") > 0;
-	if(SendMessage(pchar,"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") == 0) objLandInterface.equipment.RushOn = false;
-	if(objLandInterface.equipment.RushOn > 0)
+	if(SendMessage(pchar,"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") == CHR_MODE_PEACE)
+    {
+        objLandInterface.equipment.RushOn = false;
+	}
+    if(objLandInterface.equipment.RushOn > 0)
 	{
 		if(AbilityTimeDuration("active", "Rush") > 0)
 		{
@@ -2103,7 +2083,7 @@ void EquipmentDesc()
 			}
 			else
 			{
-				if(iControlsTips > 0)
+				if(iCurControlsTips > 0)
 				{
 					objLandInterface.textinfo.RushCtrl.text = GetKeyCodeImg("BOAL_ActivateRush");
 				}
@@ -2122,7 +2102,7 @@ void EquipmentDesc()
 	if(objLandInterface.equipment.AntidoteOn > 0)
 	{
 		objLandInterface.equipment.Antidotetexturename	= "interfaces\le\battle_interface\items\add\"+GetItemVis("Antidote")+".tga";
-		if(iControlsTips > 0)
+		if(iCurControlsTips > 0)
 		{
 			objLandInterface.textinfo.AntidoteCtrl.text = GetKeyCodeImg("UseAntidote");
 		}
@@ -2130,7 +2110,7 @@ void EquipmentDesc()
 	}
 	else objLandInterface.textinfo.AntidoteCtrl.text = "";
 		
-	if(iControlsTips > 0 && !IsSteamDeck())
+	if(iCurControlsTips > 0 && !IsSteamDeck())
 	{
 		if(GetCharacterEquipByGroup(pchar, BLADE_ITEM_TYPE) == "blade_SP_3")
 		{
@@ -2153,11 +2133,11 @@ void EquipmentDesc()
 		}
 		
 		objLandInterface.textinfo.GunCtrl.text = "";
-		if(bInFight && GetCharacterEquipByGroup(pchar, GUN_ITEM_TYPE) != "" && LAi_CharacterCanFrie(pchar))
+		if(bInFight && GetCharacterEquipByGroup(pchar, GUN_ITEM_TYPE) != "" && LAi_CharacterCanFire(pchar))
 		{
 			objLandInterface.textinfo.GunCtrl.text = GetKeyCodeImg("ChrFire");
 		}
-		if(bInFight && GetCharacterEquipByGroup(pchar, MUSKET_ITEM_TYPE) != "" && LAi_CharacterCanFrie(pchar))
+		if(bInFight && GetCharacterEquipByGroup(pchar, MUSKET_ITEM_TYPE) != "" && LAi_CharacterCanFire(pchar))
 		{
 			objLandInterface.textinfo.GunCtrl.text = GetKeyCodeImg("ChrFire");
 		}
@@ -2284,7 +2264,7 @@ string GetItemVis(string type)
 
 bool bShowEquipment()
 {
-	if(TW_IsActive() && CheckAttribute(&TEV, "Tutor.BackControlsTips"))
+	if(TW_IsActive() && "Tutor.BackControlsTips" in &TEV)
 		return false;
 	if(!LAi_IsFightMode(pchar) && !iMoreInfo) return false;
 	return true;
@@ -2448,11 +2428,53 @@ void BI_CrosshairRefresh(float fAimingTime, bool isFindedTarget, aref target)
 bool MapCommandEnable()
 {
 	if(CharacterIsDead(GetMainCharacter())) return false;
-	if(SendMessage(GetMainCharacter(),"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") != 0) return false;
+	if(SendMessage(GetMainCharacter(),"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") != CHR_MODE_PEACE) return false;
 	if(bDisableCharacterMenu) return false;// boal
 	if(bAbordageStarted && !bCabinStarted && !bDeckBoatStarted) return false;
 	if(loadedLocation.type == "underwater") return false; // belamour фикс прогулок под водой
 	if(CheckAttribute(pchar,"chr_ai.type") && pchar.chr_ai.type != "player") return false;
 	if(questMovieIsLockPlayerCtrl) return false;
 	return true;
+}
+
+#event_handler("BICommandListStatus","BICommandListStatus");
+void BICommandListStatus()
+{
+    bool isActive = GetEventData();
+
+    if (isActive)
+    {
+        if (bLandInterfaceStart)
+        {
+            TEV.BindsBack.ChrForward2 = CI_GetKeyCode(objControlsState.keygroups.PrimaryLand.ChrForward2);
+            TEV.BindsBack.ChrAttackBase = CI_GetKeyCode(objControlsState.keygroups.FightModeControls.ChrAttackBase);
+            TEV.BindsBack.ChrAltAttackBase = CI_GetKeyCode(objControlsState.keygroups.FightModeControls.ChrAltAttackBase);
+            MapControl(int(objControlsState.map.controls.ChrForward2), -1, GetGroupIDX("PrimaryLand"));
+            MapControl(int(objControlsState.map.controls.ChrAttackBase), -1, GetGroupIDX("FightModeControls"));
+            MapControl(int(objControlsState.map.controls.ChrAltAttackBase), -1, GetGroupIDX("FightModeControls"));
+        }
+    }
+    else
+    {
+        CheckBindsBack();
+    }
+}
+
+void CheckBindsBack()
+{
+    if ("BindsBack" in &TEV)
+    {
+        ClearPostEventsForEvent("UnfreezeBindsAfterCM");
+        PostEvent("UnfreezeBindsAfterCM", int(150 * GetTimeScale()));
+    }
+}
+
+#event_handler("UnfreezeBindsAfterCM","UnfreezeBindsAfterCM");
+void UnfreezeBindsAfterCM()
+{
+    aref aKC = &TEV.BindsBack;
+    MapControl(int(objControlsState.map.controls.ChrForward2), int(aKC.ChrForward2), GetGroupIDX("PrimaryLand"));
+    MapControl(int(objControlsState.map.controls.ChrAttackBase), int(aKC.ChrAttackBase), GetGroupIDX("FightModeControls"));
+    MapControl(int(objControlsState.map.controls.ChrAltAttackBase), int(aKC.ChrAltAttackBase), GetGroupIDX("FightModeControls"));
+    DeleteAttribute(&TEV, "BindsBack");
 }

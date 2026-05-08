@@ -1399,7 +1399,6 @@ int LocationInitCuracao(int n)
 	locations[n].id = "Villemstad_ClockTower";
 	locations[n].id.label = "Office of Naval Registry";
 	locations[n].image = "loading\inside\smallresidence.tga";
-	locations[n].HWIC = true;
 	locations[n].CannotWait = true;
     locations[n].SpecialHandlers.l1 = "HWIC_SetClockSound";
 	//Town sack
@@ -1470,7 +1469,6 @@ int LocationInitCuracao(int n)
 	locations[n].id = "Villemstad_ClockCellar";
 	locations[n].image = "loading\inside\sklad.tga";
 	locations[n].id.label = "Van Doorn's Cellar";
-	locations[n].HWIC = true;
 	locations[n].CannotWait = true;
     locations[n].SpecialHandlers.l1 = "HWIC_SetClockSound";
 	//Sound
@@ -2127,6 +2125,7 @@ int LocationInitCuracao(int n)
 	locations[n].townsack = "Villemstad";
 	//Sound
 	locations[n].type = "jungle";
+    locations[n].fastreload = "Villemstad";
 	locations[n].islandId = "Curacao";
 	//Models
 	//Always
@@ -2196,6 +2195,7 @@ int LocationInitCuracao(int n)
 	locations[n].townsack = "Villemstad";
 	//Sound
 	locations[n].type = "jungle";
+    locations[n].fastreload = "Villemstad";
 	locations[n].islandId = "Curacao";
 	locations[n].DisableEncounters = true;
 	//Models
@@ -2273,6 +2273,7 @@ int LocationInitCuracao(int n)
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "House";
+    locations[n].fastreload = "Villemstad";
 	locations[n].islandId = "Curacao";
 	//Models
 	//Always

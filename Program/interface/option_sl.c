@@ -48,6 +48,9 @@ void PrepareDefaultOption(ref optref)
 	optref.itarget = 2;
 	optref.FoliageDrawDistance = 1000;
 	optref.GrassDrawDistance = 50;
+	optref.ivisualscheme = 0;
+	optref.idialogscale = 0;
+	optref.ibestcourse = 0;
 	
 	SeaParametrs.MaxVertices = MaxVertices;
 	SeaParametrs.MaxIndices = MaxIndices;
@@ -142,6 +145,24 @@ void GetRealOptions(ref optref)
 		optref.itarget = sti(InterfaceStates.Target);
 	} else {
 		optref.itarget = 2;
+	}
+	
+	if( CheckAttribute(&InterfaceStates,"VisualScheme") ) {
+		optref.ivisualscheme = sti(InterfaceStates.VisualScheme);
+	} else {
+		optref.ivisualscheme = 0;
+	}
+	
+	if( CheckAttribute(&InterfaceStates,"DialogScale") ) {
+		optref.idialogscale = sti(InterfaceStates.DialogScale);
+	} else {
+		optref.idialogscale = 0;
+	}
+	
+	if( CheckAttribute(&InterfaceStates,"BestCourse") ) {
+		optref.ibestcourse = sti(InterfaceStates.BestCourse);
+	} else {
+		optref.ibestcourse = 0;
 	}
 	
 	if( CheckAttribute(&InterfaceStates,"SeaDetails") ) {
@@ -525,6 +546,27 @@ void SetCurentOptions(ref optref)
 		InterfaceStates.Target = iGlobalTarget;
 	} else {
 		InterfaceStates.Target = 2;
+	}
+	
+	if( CheckAttribute(optref,"ivisualscheme") ) {
+		iVisualScheme = sti(optref.ivisualscheme);
+		InterfaceStates.VisualScheme = iVisualScheme;
+	} else {
+		InterfaceStates.VisualScheme = 2;
+	}
+	
+	if( CheckAttribute(optref,"idialogscale") ) {
+		iDialogScale = sti(optref.idialogscale);
+		InterfaceStates.DialogScale = iDialogScale;
+	} else {
+		InterfaceStates.DialogScale = 2;
+	}
+	
+	if( CheckAttribute(optref,"ibestcourse") ) {
+		iBestCourse = sti(optref.ibestcourse);
+		InterfaceStates.BestCourse = iBestCourse;
+	} else {
+		InterfaceStates.BestCourse = 2;
 	}
 
 	if( CheckAttribute(optref,"seadetails") ) {

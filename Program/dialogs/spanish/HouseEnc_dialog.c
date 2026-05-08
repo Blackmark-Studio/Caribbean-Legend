@@ -21,7 +21,9 @@ void ProcessDialogEvent()
 		rColony = GetColonyByIndex(iTest);
 	}
 
-	switch (Dialog.CurrentNode)
+	if (Dialog.CurrentNode == "SkladMan1") Dialog.CurrentNode = "SkladMan";
+
+	switch(Dialog.CurrentNode)
 	{
 	case "Exit":
 		NextDiag.CurrentNode = NextDiag.TempNode;
@@ -198,31 +200,14 @@ void ProcessDialogEvent()
 		break;
 	//--------------------------------- завсклад ---------------------------------
 	case "SkladMan":
-		NextDiag.TempNode = "SkladMan1";
+		NextDiag.TempNode = "SkladMan";
 		if (LAi_grp_playeralarm > 0)
 		{
 			dialog.text = NPCharRepPhrase(pchar, LinkRandPhrase("Se ha dado la alarma en la ciudad. Aparentemente, es hora de que yo también tome las armas...", "¿No estarán los guardias de la ciudad corriendo tras de ti, por casualidad?", "No encontrarás refugio aquí, ¡pero bien podrías encontrar varias pulgadas de acero frío entre tus costillas!"), LinkRandPhrase("¿Qué necesitas, " + GetSexPhrase("granuja", "granuja") + "? ¡Los guardias de la ciudad ya han encontrado tu rastro, no llegarás lejos, " + GetSexPhrase("pirata asqueroso", "zorra") + "!", "¡Sucio asesino! ¡Guardias!", "No te temo, " + GetSexPhrase("reptil", "zorra") + ". ¡Pronto serás colgado en nuestro fuerte, no llegarás lejos!"));
 			link.l1 = NPCharRepPhrase(pchar, RandPhraseSimple("Veo que estás cansado de vivir...", "Así parece, no hay vida pacífica para los ciudadanos de " + XI_ConvertString("Colony" + npchar.city + "Gen") + "¡!"), RandPhraseSimple("¡Vete al infierno!", "Je, esos serán los últimos segundos de tu vida..."));
-			link.l1.go = NPCharRepPhrase("exit_setOwner", "fight");
+			link.l1.go = NPCharRepPhrase(pchar, "exit_setOwner", "fight");
 			break;
 		}
-		dialog.text = NPCStringReactionRepeat("¡Bienvenido! Mi nombre es " + GetFullName(npchar) + ". Aquí mando yo, así que ni siquiera pienses en llevarte algo...", "Compórtate decentemente y ten en cuenta que te tengo bajo mi observación.", "Mientras no mires dentro de los cofres, puedes quedarte aquí. De todos modos, me aburro estando solo...", RandPhraseSimple("¡Ay caramba, estoy tan aburrido!", "¡Maldita sea!, ¿qué puedo hacer? ¡Estar aquí es tan aburrido!"), "block", 3, npchar, Dialog.CurrentNode);
-		link.l1 = HeroStringReactionRepeat("Está bien, no te preocupes.", "¡Claro!", "Ya veo...", "Sí, eso suena como un problema.", npchar, Dialog.CurrentNode);
-		link.l1.go = DialogGoNodeRepeat("exit", "exit", "exit", "exit", npchar, Dialog.CurrentNode);
-		break;
-
-	case "SkladMan1":
-		NextDiag.TempNode = "SkladMan1";
-		if (LAi_grp_playeralarm > 0)
-		{
-			dialog.text = NPCharRepPhrase(pchar, LinkRandPhrase("Se ha dado la alarma en la ciudad. Aparentemente, es hora de que yo también tome las armas...", "¿No estarán por casualidad los guardias de la ciudad persiguiéndote?", "No encontrarás refugio aquí, ¡pero bien podrías encontrar varias pulgadas de acero frío entre tus costillas!"), LinkRandPhrase("¿Qué necesitas," + GetSexPhrase("granuja", "granuja") + "? ¡Los guardias de la ciudad ya han encontrado tu rastro, no llegarás lejos, " + GetSexPhrase("sucio pirata", "ramera") + "!", "" + GetSexPhrase("¡Asqueroso asesino!", "¡Asquerosa asesina!") + " ¡Guardias!", "No te temo, " + GetSexPhrase("reptil", "zorra") + ". ¡Pronto serás colgado en nuestro fuerte, no llegarás muy lejos!"));
-			link.l1 = NPCharRepPhrase(pchar, RandPhraseSimple("Veo que estás cansado de vivir...", "Así parece, no hay vida pacífica para los ciudadanos de " + XI_ConvertString("Colony" + npchar.city + "Gen") + "¡!"), RandPhraseSimple("¡Vete al infierno!", "Je, esos serán los últimos segundos de tu vida..."));
-			link.l1.go = NPCharRepPhrase("exit_setOwner", "fight");
-			break;
-		}
-		dialog.text = NPCStringReactionRepeat("Aquí yo estoy al mando, así que ni siquiera pienses en llevarte algo...", "Compórtate decentemente y ten en cuenta que te tengo bajo mi mirada.", "Mientras no mires en los cofres, puedes quedarte aquí. De todos modos, me aburro estando solo...", RandPhraseSimple("¡Ay de mí, estoy tan aburrido!", "¡Maldita sea!, ¿qué puedo hacer? ¡Estar aquí es tan aburrido!"), "block", 3, npchar, Dialog.CurrentNode);
-		link.l1 = HeroStringReactionRepeat("Está bien, no te preocupes.", "¡Claro!", "Ya veo...", "Sí, eso suena como un problema.", npchar, Dialog.CurrentNode);
-		link.l1.go = DialogGoNodeRepeat("exit", "exit", "exit", "exit", npchar, Dialog.CurrentNode);
 		// открывание двери верфи по квесту промышленного шпионажа
 		if (CheckAttribute(pchar, "questTemp.different.ShipyardsMap") && pchar.questTemp.different.ShipyardsMap == "toTarget" && npchar.city == pchar.questTemp.different.ShipyardsMap.city && locations[reload_cur_location_index].type == "shipyard")
 		{
@@ -235,9 +220,8 @@ void ProcessDialogEvent()
 		{
 			if (!CheckAttribute(NPChar, "Storage.Speak"))
 			{
-				dialog.text = "Tengo una oferta tentadora para ti. Quizás, podría interesarte.";
-				link.l7 = "¿De verdad? Bueno, estoy escuchando.";
-				link.l7.go = "storage_rent";
+					link.l7 = DLG_Convert("storageRent", "Dialogs.txt");
+					link.l7.go = "storage_rent";
 			}
 			else
 			{
@@ -250,15 +234,15 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (!CheckAttribute(NPChar, "Storage.NoActivate"))
-					{
-						link.l7 = "Has mencionado un almacén. ¿Sigue estando vacío?";
-						link.l7.go = "storage_01";
-					}
+					link.l7 = "Has mencionado un almacén. ¿Sigue estando vacío?";
+					link.l7.go = "storage_01";
 				}
 			}
 			// <-- ugeen
 		}
+		dialog.text = NPCStringReactionRepeat("¡Bienvenido! Mi nombre es " + GetFullName(npchar) + ". Aquí mando yo, así que ni siquiera pienses en llevarte algo...", "Compórtate decentemente y ten en cuenta que te tengo bajo mi observación.", "Mientras no mires dentro de los cofres, puedes quedarte aquí. De todos modos, me aburro estando solo...", RandPhraseSimple("¡Ay caramba, estoy tan aburrido!", "¡Maldita sea!, ¿qué puedo hacer? ¡Estar aquí es tan aburrido!"), "block", 3, npchar, Dialog.CurrentNode);
+		link.l1 = HeroStringReactionRepeat("Está bien, no te preocupes.", "¡Claro!", "Ya veo...", "Sí, eso suena como un problema.", npchar, Dialog.CurrentNode);
+		link.l1.go = DialogGoNodeRepeat("exit", "exit", "exit", "exit", npchar, Dialog.CurrentNode);
 		break;
 
 	//--------------------------------- Аренда склада ---------------------------------
@@ -424,19 +408,14 @@ void ProcessDialogEvent()
 		break;
 
 	case "storage_5":
-		SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-		AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage));
-		NPChar.Storage.NoActivate = true;
-		DeleteAttribute(NPChar, "Storage.Activate");
+		LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
 		DialogExit();
-		break;
-
+	break;
+		
 	case "storage_6":
-		SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-		DeleteAttribute(NPChar, "Storage.Activate");
-		NPChar.Storage.NoActivate = true;
+		LeaveStorage(NPChar, rColony);
 		DialogExit();
-		break;
+	break;
 
 		//--------------------------------- Аренда склада ---------------------------------
 

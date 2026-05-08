@@ -221,7 +221,7 @@ void ProcessDialogEvent()
 				
 				if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskContra_2") && NPChar.location == PChar.GenQuest.ChurchQuest_2.Contra_Colony + "_tavern")
 				{
-					Link.l5 = ""그쪽 동료이자 내 좋은 친구가 "+  "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_2.QuestTown+"Gen")+" 어떤 일에 대해 알고 있다고 들었습니다.";
+					Link.l5 = "그쪽 동료이자 내 좋은 친구가 " + XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_2.QuestTown+"Gen") + " 어떤 일에 대해 알고 있다고 들었습니다.";
 					Link.l5.go = "Contra_GenQuest_Church_2_Contra2_1";
 				}
 				// <-- Церковный генератор №2
@@ -436,7 +436,7 @@ void ProcessDialogEvent()
 			
 			if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskContra_2") && NPChar.location == PChar.GenQuest.ChurchQuest_2.Contra_Colony + "_tavern")
 			{
-				Link.l3 = ""그대의 동료이자 내 좋은 친구가 "+  "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_2.QuestTown+"Gen")+" 당신이 어떤 일에 대해 알고 있다고 하더군.";
+				Link.l3 = "그대의 동료이자 내 좋은 친구가 "+ XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_2.QuestTown+"Gen") + " 당신이 어떤 일에 대해 알고 있다고 하더군.";
 				Link.l3.go = "Contra_GenQuest_Church_2_Contra2_1";
 			}
 			// <-- Церковный генератор №2
@@ -524,6 +524,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Meeting_2":
+			if (SZN_CheckContrabandDialog(&Dialog, &Link)) break;
 			Dialog.Text = "뭐 때문에?";
 			Link.l1 = "혹시 특별한 물건에 관심 있나? 아니면 나한테 내놓을 만한 게 있나?";
 			Link.l1.go ="Meeting_3";				
@@ -858,7 +859,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(sld, "blade_04");
 			EquipCharacterbyItem(sld, "blade_04");
 			LAi_SetCitizenType(sld);
-			sld.dialog.Filename = "Common_citizen.c";
+			sld.dialog.Filename = "Population/Townman.c";
 			sld.dialog.currentnode = "First time";	
 			sld.greeting = "cit_common"; 
 			sld.city = pchar.questTemp.Shadowtrader.City;

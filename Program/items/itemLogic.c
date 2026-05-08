@@ -714,10 +714,10 @@ void Box_EnterToLocator(aref loc, string locName)
 		return;
 	}
 	
-		pchar.boxname = locName;
-		Log_SetActiveAction("OpenBox");
-		BLI_RefreshCommandMenu();
-	}
+	pchar.boxname = locName;
+	Log_SetActiveAction("OpenBox");
+	BLI_RefreshCommandMenu();
+}
 
 void Box_ExitFromLocator(aref loc, string locName)
 {

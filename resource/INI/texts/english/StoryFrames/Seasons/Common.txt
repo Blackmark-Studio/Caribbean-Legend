@@ -1,0 +1,4 @@
+Description {Seasons divide the game year into parts and apply powerful global effects that remain active for the entire time the season lasts. Each Season is unique and changes from year to year.}
+effects_title {Season effects}
+effects_current_title {Current season effects}
+additional_effects_title {Additional season effects}

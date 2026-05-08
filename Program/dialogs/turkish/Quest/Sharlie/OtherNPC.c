@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 			dialog.text = "Dur! Silahlarınızı derhal teslim edin, Mösyö, ve bizi takip edin!";
 			link.l1 = "Bu da neyin nesi?";
 			link.l1.go = "Sharlie_arest_1";
-			if (CheckCharacterItem(PChar, "knife_03")) pchar.Sharlie.KnifeMonpe = true;
+
 		break;
 		
 		case "Sharlie_arest_1":
@@ -1752,6 +1752,7 @@ case "Europe":
 			link.l1.go = "MOT_Barbie_Escadra";
 			
 			AddItems(pchar, "gold_dublon", 40);
+			DeleteAttribute(NPChar, "moneyNotGiven");
 			Log_info("You've received 40 doubloons");
 			PlaySound("Interface\important_item.wav");
 			AddCharacterExpToSkill(pchar, "Leadership", 20);
@@ -1812,7 +1813,7 @@ case "Europe":
 		break;
 		
 		case "MOT_Barbie_101":
-			if (IsCharacterPerkOn(Pchar, "Trustworthy"))
+			if (!CheckAttribute(NPChar, "moneyNotGiven"))
 			{
 				dialog.text = "Örnek teşkil eden refakatiniz için teşekkür ederim, Kaptan. Hiçbir sorunla karşılaşmamış olmamız beni memnun etti.";
 				link.l1 = "Sizinle iş yapmak bir zevkti, Mösyö. Şimdi, müsaadenizle, ilgilenmem gereken çok şey var.";

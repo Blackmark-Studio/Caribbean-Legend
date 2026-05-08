@@ -647,7 +647,6 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 				if (NextDiag.TempNode != "I_know_you_good")
 					dialog.text = "Sei impazzit" + GetSexPhrase("o", "a") + "? I nostri ragazzi ti evitano come la peste. Sparisci e smettila di scocciarmi.";
 				else
@@ -655,12 +654,12 @@ void ProcessDialogEvent()
 				link.l1 = "Ho capito...";
 				link.l1.go = "exit";
 			}
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 		break;
 
 		case "pirate_threat_pay":
 			iGPThreatRate = 0;
 			iGPThreat = 0;
-			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iTerraxTotalTemp);
 			DialogExit();
 			PiratesDecreaseNotif("");
@@ -1569,7 +1568,7 @@ void ProcessDialogEvent()
 				break;
 			}*/
 			dialog.text = "Ottimo tempismo! Fatti avanti e rendicontami, ora.";
-			link.l1 = "Ho rintracciato il mio debitore a Le Francois. La sua polacca faceva parte di una squadra composta da una corvetta e una fregata. Marco stesso stava facendo visita a Barbaszon, hanno avuto un incontro a casa sua per due ore, gli altri visitatori sono stati allontanati dalle sue guardie. Poi è uscito di casa con due tizi cupi: uno era roscio e barbuto in un corpetto da reiter, l'altro aveva i baffi e indossava una pesante armatura da trincea. Tutti sono andati al porto e hanno salpato prima che arrivassi a Saint Pierre.";
+			link.l1 = "Ho rintracciato il mio debitore a Le Francois. La sua polacca faceva parte di una squadra composta da una corvetta e una fregata. Marco stesso stava facendo visita a Barbazon, hanno avuto un incontro a casa sua per due ore, gli altri visitatori sono stati allontanati dalle sue guardie. Poi è uscito di casa con due tizi cupi: uno era roscio e barbuto in un corpetto da reiter, l'altro aveva i baffi e indossava una pesante armatura da trincea. Tutti sono andati al porto e hanno salpato prima che arrivassi a Saint Pierre.";
 			link.l1.go = "mtraxx_74";
 		break;
 		

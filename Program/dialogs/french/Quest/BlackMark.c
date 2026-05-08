@@ -723,7 +723,7 @@ void ProcessDialogEvent()
 		
 		case "BM_IronsThirdJungle_29":
 			dialog.text = "Non. Mais ce n'est pas difficile à découvrir. Nous demanderons aux ivrognes - ils vendraient leur mère si vous leur offriez un verre ou deux. Eh bien, que penses-tu de mon plan ?";
-			if (GetSummonSkillFromName(pchar, SKILL_ACCURACY) > 24 && GetSummonSkillFromName(pchar, SKILL_GRAPPLING) > 24 && GetSummonSkillFromName(pchar, SKILL_SAILING) > 24)
+			if (GetSummonSkillFromName(pchar, SKILL_ACCURACY) > 4 && GetSummonSkillFromName(pchar, SKILL_GRAPPLING) > 4 && GetSummonSkillFromName(pchar, SKILL_SAILING) > 4)
 			{
 				link.l1 = "Si c'est le capitaine d'un navire à destination de la Jamaïque, il patrouille tout le temps dans les eaux de l'île. Attaquer sous un faux pavillon est mieux que d'essayer quoi que ce soit dans la ville.";
 				link.l1.go = "BM_IronsThirdJungle_Sea1";	// Морской вариант
@@ -733,9 +733,9 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (GetSummonSkillFromName(pchar, SKILL_SAILING) < 25) notification("Skill Check Failed (25)", SKILL_SAILING);
-				if (GetSummonSkillFromName(pchar, SKILL_ACCURACY) < 25) notification("Skill Check Failed (25)", SKILL_ACCURACY);
-				if (GetSummonSkillFromName(pchar, SKILL_GRAPPLING) < 25) notification("Skill Check Failed (25)", SKILL_GRAPPLING);
+				if (GetSummonSkillFromName(pchar, SKILL_SAILING) < 5) notification("Skill Check Failed (5)", SKILL_SAILING);
+				if (GetSummonSkillFromName(pchar, SKILL_ACCURACY) < 5) notification("Skill Check Failed (5)", SKILL_ACCURACY);
+				if (GetSummonSkillFromName(pchar, SKILL_GRAPPLING) < 5) notification("Skill Check Failed (5)", SKILL_GRAPPLING);
 			}
 			link.l2 = "C'est pas sans défauts, et tu laisses beaucoup au hasard. Mais dans l'ensemble, c'est faisable. Je suis avec toi, Tommy. T'as éliminé l'un, tu peux pas laisser l'autre partir, n'est-ce pas ?";
 			link.l2.go = "BM_IronsThirdJungle_Land1";	// Сухопутный вариант

@@ -862,7 +862,6 @@ void ProcessDialogEvent()
             }
             else
             {
-                SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
                 if (NextDiag.TempNode != "I_know_you_good")
                     dialog.text = "Ты что, спятил" + GetSexPhrase("","а") +"? Наши парни шарахаются от тебя, как от проказы. Так что сгинь и не морочь мне голову.";
                 else
@@ -870,12 +869,12 @@ void ProcessDialogEvent()
                 link.l1 = "Ясно...";
                 link.l1.go = "exit";
             }
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
         break;
 
 		case "pirate_threat_pay":
             iGPThreatRate = 0;
             iGPThreat = 0;
-            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iBarbazonTotalTemp);
             DialogExit();
             PiratesDecreaseNotif("");

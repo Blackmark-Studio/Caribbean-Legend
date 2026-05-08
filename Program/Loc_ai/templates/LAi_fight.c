@@ -42,8 +42,8 @@ bool LAi_tmpl_fight_IsGo(aref chr)
 
 bool LAi_tmpl_fight_InitTemplate(aref chr)
 {
-	bool isRes = SendMessage(&chr, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode");
-	if(!LAi_IsInitedAI) isRes = true;
+	//bool isRes = SendMessage(&chr, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode") != CHR_MODE_PEACE;
+	//if(!LAi_IsInitedAI) isRes = true;
 	CharacterPlayAction(chr, "");
 	bool isNew = false;
 	if(CheckAttribute(chr, "chr_ai.tmpl"))
@@ -89,7 +89,7 @@ bool LAi_tmpl_fight_InitTemplate(aref chr)
 void LAi_tmpl_fight_CharacterUpdate(aref chr, float dltTime)
 {
 	//Если не в режиме боя переведём в него
-	if(SendMessage(&chr, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode") == 0)
+	if(SendMessage(&chr, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode") == CHR_MODE_PEACE)
 	{
 		SendMessage(&chr, "lsl", MSG_CHARACTER_EX_MSG, "LockFightMode", false);
 		LAi_SetFightMode(chr, 1);
@@ -226,7 +226,7 @@ void LAi_tmpl_fight_FailureFight(aref chr)
 //Можно ли стрелять
 bool LAi_tmpl_fight_IsFire(aref chr)
 {	
-	return LAi_CharacterCanFrie(chr);
+	return LAi_CharacterCanFire(chr);
 }
 
 //Можно ли использовать оружие
@@ -387,7 +387,7 @@ bool LAi_tmpl_fight_CheckEnemy(aref chr)
 string LAi_tmpl_fight_GetNearIdle(aref chr) //to_do: другое для _mus, либо проверить ани
 {
 	string tag = "";
-	if(LAi_CheckFightMode(chr) == 2) tag = "_mus";
+	if(LAi_CheckFightMode(chr) == CHR_MODE_MUSKET) tag = "_mus";
 	
 	string ani = "fight stand_1" + tag;
 	if(rand(5) < 2)
@@ -421,7 +421,7 @@ string LAi_tmpl_fight_GetNearIdle(aref chr) //to_do: другое для _mus, �
 string LAi_tmpl_fight_GetFarIdle(aref chr) //to_do: другое для _mus, либо проверить ани
 {
 	string tag = "";
-    bool bMus = LAi_CheckFightMode(chr) == 2;
+    bool bMus = LAi_CheckFightMode(chr) == CHR_MODE_MUSKET;
 	if(bMus) tag = "_mus";
 	
 	string ani = "fight stand_1" + tag;

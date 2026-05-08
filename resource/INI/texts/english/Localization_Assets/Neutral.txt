@@ -1,12 +1,4 @@
 Neutral_1 {Bandit}
-Neutral_2 {You left notes}
-Neutral_3 {Jack}
-Neutral_4 {Veils}
-Neutral_5 {Sea Beast}
-Neutral_6 { }
-Neutral_7 { }
-Neutral_8 {Golden Seagull}
-Neutral_9 {Tristan}
 Neutral_10 {Renier}
 Neutral_11 {A pirate ship on the horizon! They're heading to cut off our course.}
 Neutral_12 {A voice from behind the door}
@@ -17,6 +9,7 @@ Neutral_16 {Given: Betsy Price's Documents}
 Neutral_17 {Lea}
 Neutral_18 {Carno}
 Neutral_19 {Pierre}
+Neutral_2 {You left notes}
 Neutral_20 {A pirate ship on the horizon! They're cutting across our course.}
 Neutral_21 {Deck}
 Neutral_22 {The cave entrance is covered in cobwebs. Looks like no one’s been here in a long time.}
@@ -27,6 +20,7 @@ Neutral_26 {Moño}
 Neutral_27 {Marisa}
 Neutral_28 {Caldera}
 Neutral_29 {Felipe}
+Neutral_3 {Jack}
 Neutral_30 {Alarcón}
 Neutral_31 {Sebastián}
 Neutral_32 {Córdoba}
@@ -37,6 +31,12 @@ Neutral_36 {Peralta}
 Neutral_37 {... now all suspicions about Shark Dodson will be cleared}
 Neutral_38 {Not enough money (10,100,000)}
 Neutral_39 {Not enough money (25,250,000)}
+Neutral_4 {Veils}
 Neutral_40 {Not enough money (50,500,000)}
 Neutral_41 {you}
 Neutral_42 {you both}
+Neutral_5 {Sea Beast}
+Neutral_6 { }
+Neutral_7 { }
+Neutral_8 {Golden Seagull}
+Neutral_9 {Tristan}

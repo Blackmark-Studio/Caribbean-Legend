@@ -730,6 +730,7 @@ int LocationInitPortPax(int n)
 	locations[n].image = "loading\Gate" + rand(1) + ".tga";
 	//Town sack
 	locations[n].townsack = "PortPax";
+	locations[n].fastreload = "PortPax";
 	//Sound
 	locations[n].type = "jungle";
 	locations[n].islandId = "Hispaniola";

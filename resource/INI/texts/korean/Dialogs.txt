@@ -1,0 +1,6 @@
+Shipyard_TuningRig {어떻게 손볼 수 있을지 봅시다. 이 배의 돛은 _$key($attr($context.rig_type))이고, 제가 $key($attr($context.rig_upgrade_type)) 할 수 있습니다. 그러려면 선박용 비단이 $attr($context.material) 필요합니다. 작업비로는 경비 명목의 더블룬 상자 $attr($context.price)개를 받겠습니다. 아마 그게 전부일 겁니다. 아, 맞다 — 선불입니다.}
+Smuggler_can_trade {이번 시즌에는 단속이 심해서 위험을 감수하고 싶진 않지만… 네 명성은 이미 널리 퍼졌지, 이 교활한 녀석. 총독 머리에서 가발까지 훔칠 수 있다더군. 뭘 가져왔는지 보자.}
+Smuggler_can_trade_reply {명성이 인정받는 건 언제나 기분 좋은 일이지. 거래하자.}
+Smuggler_cant_trade {무슨 말씀인지 모르겠습니다, 선장님. 밀수는 엄격히 금지되어 있으며 강하게 처벌됩니다. (속삭이며) 특히 이번 시즌에는요.}
+Smuggler_cant_trade_reply {그럴 리 없습니다, 밀수 거래를 할 생각은 전혀 없었습니다. (속삭이며) 우리는 서로 본 적이 없습니다.}
+storageRent {경비 말고 여기서 또 하는 일이 있습니까?}

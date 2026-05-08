@@ -77,6 +77,7 @@ bool LoadMainCharacterInFirstLocation(string location_id, string emerge_locator,
 	ReloadProgressUpdate();
 	LoadLocation(&Locations[lindex]);
 	//Fader
+    ClearPostEventsForEvent("LoadSceneSound");
 	PostEvent("LoadSceneSound", 500);
 	return true;
 }
@@ -103,6 +104,7 @@ bool LoadMainCharacterInFirstLocationGroup(string location_id, string sGroup, st
 	ReloadProgressUpdate();
 	LoadLocation(&Locations[lindex]);
 	//Fader
+    ClearPostEventsForEvent("LoadSceneSound");
 	PostEvent("LoadSceneSound", 500);
 	ReloadProgressEnd();
 	return true;
@@ -129,7 +131,6 @@ int Reload(aref reload_group, string locator_name, string current_location)
         reload_cur_time = GetTime();
     SetTimeScale(1.0);
 	//EmptySelectedTutorials();
-	SetReloadNextTipsImage();
 	dialogDisable = true;
 	reload_xaddress.active = "false";
 	//Trace("locator_name = " + locator_name + " lockedReloadLocator = " + lockedReloadLocator);
@@ -417,11 +418,13 @@ void ReloadEndFade()
 	{
 		if(bChangeScheme(reload_cur_location_index, reload_location_index))
 		{
+            ClearPostEventsForEvent("LoadSceneSound");
 			PostEvent("LoadSceneSound", 500);
 		}
 	}
 	else
 	{
+        ClearPostEventsForEvent("LoadSceneSound");
 		PostEvent("LoadSceneSound", 500);
 	}
     if(CheckAttribute(&Environment,"oldtime")) 

@@ -468,6 +468,7 @@ void ProcessDialogEvent()
 			dialog.text = "上級水夫。あいつのことはあまり知らねえが、一つだけ言えるぜ。誰もが秘密を抱えてるってんなら、 アロンソのは墓場丸ごとってやつだ。";
 			link.l1 = "彼のことを信用していないようだな。";
 			link.l1.go = "Captain_7_question_2_2";
+			AddCharacterSkillPoints(pchar, "Leadership", 1);
 		break;
 		
 				case "Captain_7_question_2_2":
@@ -487,6 +488,7 @@ void ProcessDialogEvent()
 			dialog.text = "痛いところを突かれたな。 "+pchar.name+"！俺の美しさについてなら、いくらでも語れるぜ。三流、二十門、大した速力――「商船」って言葉に騙されるなよ！";
 			link.l1 = "銃と速度の話は分かった。でも「レート」？「商人」って何だ？";
 			link.l1.go = "Captain_7_question_3_2";
+			AddCharacterSkillPoints(pchar, "Sailing", 1);
 		break;
 		
 		case "Captain_7_question_3_2":

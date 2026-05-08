@@ -176,6 +176,7 @@ void InitIslands()
 		Islands[n].reload.l4.radius = 300.0;
 		Islands[n].reload.l4.pic = 0;
 		Islands[n].reload.l4.tex = "t1";
+        Islands[n].reload.l4.istown = true;
 
 		Islands[n].reload.l5.label = "Mayak3";
 		Islands[n].reload.l5.name = "reload_4";

@@ -1,12 +1,4 @@
 BlackMark_1 {Contrabandista}
-BlackMark_2 { }
-BlackMark_3 {Francis}
-BlackMark_4 {Reasley}
-BlackMark_5 {Tommy}
-BlackMark_6 {Irons}
-BlackMark_7 { }
-BlackMark_8 { }
-BlackMark_9 { }
 BlackMark_10 { }
 BlackMark_11 {Gabriel}
 BlackMark_12 {Callow}
@@ -17,4 +9,12 @@ BlackMark_16 {Pronto. Hora de sair antes que o Gabe apareça}
 BlackMark_17 {Duas horas depois...}
 BlackMark_18 {Pela manhã...}
 BlackMark_19 { }
+BlackMark_2 { }
 BlackMark_20 { }
+BlackMark_3 {Francis}
+BlackMark_4 {Reasley}
+BlackMark_5 {Tommy}
+BlackMark_6 {Irons}
+BlackMark_7 { }
+BlackMark_8 { }
+BlackMark_9 { }

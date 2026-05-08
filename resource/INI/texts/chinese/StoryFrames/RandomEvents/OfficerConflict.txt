@@ -1,0 +1,76 @@
+Node0_title {军官之间的冲突}
+Node0_a_a
+{
+您惯常的午后沉思，被船钟的鸣响打断了。还没到换岗的时候，于是您循声走去，打算弄清这场骚乱。到了下层甲板，神色焦急的阿隆索拦住了您，飞快说明了情况。$br$red换岗期间，两名军官——$ctx(officerName_A)，您的_$key($ctx(officerJob_A))，以及$ctx(officerName_B)，您的_$key($ctx(officerJob_B))——为了一张更舒服的铺位扭打了起来。$rand(几句口角很快升级成冲突，而$ctx(officerName_A)先动了拳头。|几句挖苦就足以让争执演变成斗殴：$ctx(officerName_A)第一个挥拳。|他们越吵越凶，$ctx(officerName_A)终于没忍住，直接动起了拳头。)$ctx(officerName_B) $rand(也没袖手旁观|立刻还了手|也毫不示弱)，而且$rand(没过多久，他们就把半个军官餐厅砸了个稀烂|不过一分钟，军官餐厅看起来就像刚经历过一场接舷战|等人把他们硬生生拉开时，军官餐厅已经有一半碎成了木片)。$br$red
+阿隆索$rand(把这两个闹事的拉开了|把他们硬拖到了两边|总算制止了斗殴)，但冲突显然还没了结，现在需要船长亲自发话。
+}
+Node0_a_a_action {З动手的是$ctx(officerName_A)}
+Node0_a_a_success {你认定这件事是$ctx(officerName_A)的责任，因为先动拳头的人正是他。你罚他多值几班岗，并命令他用自己的薪水赔偿$casedName($ctx(officerName_B)|Dat)的损失。}
+Node0_a_a_success_action {去擦甲板吧}
+Node0_a_b_action {$ctx(officerName_B)不该被激怒}
+Node0_a_b_success {你认定这件事该由$ctx(officerName_B)负责，因为他本可以避免斗殴，把事情交给船长处理。作为惩罚，你命令$casedName($ctx(officerName_B)|Dat)接受额外的强化训练。}
+Node0_a_b_success_action {这是为了你好}
+Node0_a_c_action {惩罚他们两个}
+Node0_a_c_success {你认定两名军官都该为此事负责，于是给他们安排了共同的惩戒值更。你并不指望这会让他们变得团结，但至少能让他们今后不敢再闹出这种事。修缮军官餐厅的费用将从他们的薪水中扣除。}
+Node0_a_c_success_action {两个都是蠢货}
+Node0_a_d_action {你们自己把一切修好}
+Node0_a_d_success {你认定最合适的惩罚，就是让这两名军官亲手把军官餐厅修复如初。虽说他们并不是什么手艺高明的木匠，但这样的教训，肯定能让他们在下次闹事前先掂量两遍。}
+Node0_a_d_success_action {毁掉总比重建容易}
+Node0_a_b
+{
+在晚间巡查时，你照常走过甲板，忽然发觉今天安静得有些反常。$rand(仿佛是在嘲弄这份寂静一般|仿佛偏要跟这份寂静作对似的|偏偏就在这一刻)，两名军官$rand(闯上了甲板|快步冲上了甲板)——$ctx(officerName_A)，你的_$key($ctx(officerJob_A))，以及$ctx(officerName_B)，你的_$key($ctx(officerJob_B))。他们显然一直在找船长，$rand(一看见你就直冲过来|一秒都不耽搁，径直朝你走来)。两名军官神色$rand(紧绷|恼火)，并且在$rand(走到你身边时|冲到你面前时|直接停在你面前后)七嘴八舌地同时开口。$br$red
+冲突爆发的原因是，$ctx(officerName_B) $rand(当众拒绝执行$ctx(officerName_A)的命令|摆出一副姿态，拒不服从$ctx(officerName_A)的命令|在众目睽睽之下拒绝服从$ctx(officerName_A)的命令)。规章对于他们各自职责之间的界限$rand(写得太含糊|并未彻底划清|留下了一片灰色地带)，而这名_$key($ctx(officerJob_B)) $rand(直言自己不会听命于_$key($ctx(officerJob_A))|断然表示_$key($ctx(officerJob_A))不是他的上级|当面说_$key($ctx(officerJob_A))无权指挥他)。$br$red
+$rand(上下级秩序正在你眼前崩裂|纪律已经开始松散|连水手们都已经听见了)，两名军官都要求你立刻给出裁断，免得事情彻底演变成甲板上的公开分裂。
+}
+Node0_b_a_action {_$key($ctx(officerJob_A))有理}
+Node0_b_a_success {你对船上规章的解释是：职务优先于纵向层级。$br$red任何军官在_$key($ctx(officerJob_A))履行本职职责时，都有义务服从他。$ctx(officerName_A)对此结果感到满意，而$ctx(officerName_B)则因破坏上下级秩序向他道歉。你决定不处罚任何人。}
+Node0_b_a_success_action {正事更重要}
+Node0_b_b_action {$key($ctx(officerJob_B))无须服从}
+Node0_b_b_success {你对船上规章的解释是：纵向层级高于具体职务。军官的职责是指挥水手，而不是彼此发号施令。至于其他一切，自有船长裁断。}
+Node0_b_b_success_action {但愿别有人受伤}
+Node0_b_c_action {我来教教你们什么叫服从}
+Node0_b_c_success {你翻开船上规章，发现其中其实已经相当清楚地划分了责任范围。$ctx(officerName_B)是在钻规矩的空子，而$ctx(officerName_A)又不够熟悉章程，没能当场压住他。$br$red 你同样厌恶狂妄冒进之徒，也厌恶对规章一知半解的军官，于是决定把两人一起罚了。接下来两周里，每次值更结束后，_$key($ctx(officerJob_A))和_$key($ctx(officerJob_B))都得站在货舱里的木桶上，轮流把规章大声念给对方听。}
+Node0_b_c_success_action {正好也让水手们一起听听}
+Node0_a_c
+{
+你刚结束晨间巡查，阿隆索便以一个$rand(招手示意你过去|简短的手势拦住你)。他的信号不该被忽视，于是你$rand(停下脚步，命他汇报|立刻问出了什么事)。$br$red
+结果发现，围绕着你的俘虏$casedName($ctx(prisonerName)|Gen)，$rand(一场丑闻正在酝酿|一出大戏正在上演|一场冲突已经开始升温)。$ctx(officerName_A)，你的_$key($ctx(officerJob_A))，$rand(坚信|声称|坚持认为)$ctx(prisonerName)并非自称的那个人，并且$rand(想用拷打逼出真话|打算严刑逼供)。$ctx(officerName_B)，你的_$key($ctx(officerJob_B))，则$rand(要求任何人都别碰俘虏|坚持认为拷打不可接受|表示不能把俘虏弄残)：这个人太值钱了，$rand(可以卖出更高的价钱|能换来一笔好价|任何伤口都会让身价下跌)。$br$red
+你$rand(把两人都叫进船长室|命人把他们带到你面前|勒令他们立刻前来见你)，并要求他们为擅作主张作出解释。两名军官则$rand(理直气壮地|冷冷地|平静地)指出，他们$rand(还什么都没来得及做|根本没动手|并没有碰俘虏)，而这种决定本来就该由船长来作。
+}
+Node0_c_a_action {$ctx(officerName_A)，查清他是谁}
+Node0_c_a_success {你觉得$casedName($ctx(officerName_A)|Gen)的怀疑颇有分量，于是准许他去查清这名俘虏的底细。$ctx(officerName_B)显得有些受辱，你便感谢他的警觉，以缓和气氛。}
+Node0_c_a_success_action {我不确定这能有什么用}
+Node0_c_b_action {$ctx(officerName_B)，别让$casedName($ctx(officerName_A)|Gen)进货舱}
+Node0_c_b_success {$casedName($ctx(officerName_B)|Gen)的理由在你看来已经足够有说服力，于是你决定保护这名俘虏。不过，整件事怎么看都很像擅作主张，因此作为纪律处分，你给$casedName($ctx(officerName_A)|Dat)安排了两班惩戒值更，并命令$ctx(officerName_B)在你进港之前负责看守关着俘虏的货舱。}
+Node0_c_b_success_action {これで勝手な真似は懲りるだろう}
+Node0_c_c_action {没人敢对我发号施令}
+Node0_c_c_success {你感到怒火在胸中翻腾，猛地一拳砸在桌上，把军官们赶出了船长室。谁也没资格把你逼到这种非选不可的地步。随后，你因他们擅作主张、破坏上下级秩序而罚两人值几班惩戒岗，还抽了鞭子。这件事的风声很快就在船上传开，接下来的一个月里，人们背地里都叫你“海鳝”。}
+Node0_c_c_success_action {$name“海鳝”？倒也不赖}
+Node0_a_d {你在黎明前醒来，立刻就感觉到：船上有些不对劲。麻烦很快就来了——没过几分钟，你就听见急促的脚步声和一阵执拗的敲门声。$br$red 门口站着三个人——$ctx(officerName_A)，你的_$key($ctx(officerJob_A))，$ctx(officerName_B)，你的_$key($ctx(officerJob_B))，以及一个大约十三岁的男孩。这个少年水手看起来不知所措，而两名军官则显得相当恼火。$br$red 你要求他们正式汇报，于是他们向你说明了情况。这个男孩是在上一次停靠港口时带上船的，他的热情和天赋立刻给所有人留下了深刻印象。$ctx(officerName_A)认为他将来会成为一流的_$key($ctx(officerJob_A))，想把他带在身边亲自培养。相反，$ctx(officerName_B)则认为这孩子会成长为一名出色的_$key($ctx(officerJob_B))，想把他收作自己的助手。$br$red这个少年被明摆着朝两个方向拉扯，而这场冲突怎么谈都谈不拢。军官们请求你尽快作出决定，免得孩子先失了心气。}
+Node0_d_a_action {以后由$ctx(officerName_A)来教你}
+Node0_d_a_success {你替这孩子定下了前途。在你看来，_$key($ctx(officerJob_A))明显是更有前景的出路，这名少年水手跟在$casedName($ctx(officerName_A)|Gen)麾下会更有发展。$ctx(officerName_B)看起来很失落。}
+Node0_d_a_success_action {以后总还会有别的}
+Node0_d_b_action {_$key($ctx(officerJob_B))——这才是你的路}
+Node0_d_b_success {你认为，在$casedName($ctx(officerName_B)|Gen)的指导下，这孩子将来会大有作为，而加勒比终有一天会迎来一位新的顶尖_$key($ctx(officerJob_B))。$ctx(officerName_A)看起来有些失落。显然，这里面还有点私人的情绪。}
+Node0_d_b_success_action {有时候，他们就像我们的儿子一样}
+Node0_d_c_action {他要值双份班}
+Node0_d_c_success {你想起《圣经》里的一则典故，说你需要的是一名能身兼两职的天才军官。这个少年见习水手将轮流在两名军官手下效力。双份值更是难以承受的负担，而你仔细观察着两名军官的反应。$ctx(officerName_A)赞同地点头，而$ctx(officerName_B)则惊恐地请求你收回成命。_$key($ctx(officerJob_B))为了这孩子的身体，甘愿放弃助手的位置，于是答案对你来说已经再明显不过。这个少年将归$ctx(officerName_B)麾下。}
+Node0_d_c_success_action {这会过去的}
+Node0_a_e {你决定去看看军官们的情况，走近军官餐厅时就听见里面一片喧哗。你推门而入，正撞上一场激烈的争执。$br$red$ctx(officerName_A)正冲着$casedName($ctx(officerName_B)|Gen)大喊，指责他故意坑了自己。$ctx(officerName_B)也怒火中烧，眼看就要去拔细剑。你一声厉喝，喝止了这场闹剧。两名军官立刻站得笔直，脸色都白了。$br$red你命他们交代缘由，并威胁说，如果谁敢再绕圈子，你就把他们两个一起扔下船去。他们这才把事情讲明。上一次进港时，$ctx(officerName_A)，你的_$key($ctx(officerJob_A))，错误地执行了你的命令，导致船只蒙受损失，你也因此处罚了他。后来出了海，才查明他之所以出错，是因为受了$casedName($ctx(officerName_B)|Gen)误导，听信了错误的提醒。冲突因此骤然升级，而你推门进来时，正好撞见最激烈的那一刻。$br$red$ctx(officerName_B)坚持说自己只是想帮忙，但$ctx(officerName_A)却认定这是一次蓄意陷害。现在，轮到你来作出裁断了。}
+Node0_e_a_action {承认处罚不妥}
+Node0_e_a_success {你决定通过承认处罚不公来平息这场冲突。你自掏腰包补偿$casedName($ctx(officerName_A)|Dat)所受的委屈，冲突很快便偃旗息鼓。有时候，一句好话就够了；有时候，则得靠几枚响亮的硬币。军官们渐渐冷静下来，彼此道了歉。一件差点闹出人命的小事，最终成了一堂宝贵的教训，而你希望他们真的能从中学到点什么。}
+Node0_e_a_success_action {皆大欢喜}
+Node0_e_b_action {惩罚$casedName($ctx(officerName_B)|Gen)}
+Node0_e_b_success {你认定这件事确实很像是蓄意加害。不仅$ctx(officerName_A)平白受了不公正的处罚，连船长的脸面也被抹黑了。这种事就该受罚，于是你下令鞭打$ctx(officerName_B)。$ctx(officerName_A)看起来相当满意。}
+Node0_e_b_success_action {谁都别想逃过去}
+Node0_e_c_action {再惩罚一次$casedName($ctx(officerName_A)|Gen)}
+Node0_e_c_success {你认定$ctx(officerName_A)是在拿别人垫脚，只为了抬高自己，而且他根本无法接受自己犯了错。如果他觉得一句提示，哪怕是错误的提示，就能免去自己动脑子的责任，那他就大错特错了。$ctx(officerName_B)又不是_$key($ctx(officerJob_A))，而$ctx(officerName_A)居然听了他的，这只会让事情更糟。$br$red你下令再次鞭打$ctx(officerName_A)，好让他今后连讨论你的命令、推卸责任的念头都不敢再有。}
+Node0_e_c_success_action {是你自己把自己埋了}
+Node0_e_d_action {惩罚他们两个}
+Node0_e_d_success {在你看来，这整件事都是对秩序和上下级纪律的骇人破坏。军官们不仅胆敢议论你的命令，甚至还准备在你的船上见血。$br$red你判每名军官各挨10鞭：5鞭因为妄议你的命令，5鞭因为破坏纪律，并以武器威胁军官同僚。}
+Node0_e_d_success_action {他们早知道自己会落到这一步}
+Node0_e_e_action {那就这样吧——打吧}
+Node0_e_e_success {你把决斗安排在上甲板，由你亲自担任见证人。既然非要分个高下，那就按规矩来。$br$red 决斗开始后没多久，$ctx(officerName_A)的优势便显而易见。你叫停了这场交手，宣布$ctx(officerName_A)获胜。}
+Node0_e_e_success_action {他捍卫了自己的荣誉}
+Node0_e_e_fail {你把决斗安排在上甲板，由你亲自担任见证人。既然非要分个高下，那就按规矩来。$br$red 决斗开始后没多久，$officer_name的优势便显而易见。你叫停了这场交手，宣布$ctx(officerName_B)获胜。}
+Node0_e_e_fail_action {他证明了自己是对的}

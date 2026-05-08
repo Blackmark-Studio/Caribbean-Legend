@@ -271,14 +271,6 @@ void ShowInfoWindow()
 			}
 		break; 
 		// sith --->
-		case "WEIGHT":
-		    sHeader = XI_ConvertString("Weight");
-			sText1 = GetRPGText("Weight");
-		break;
-		case "MONEY":
-		    sHeader = XI_ConvertString("Money");
-			sText1 = GetRPGText("Money");
-		break;		
 		case "RANK":
 		    sHeader = XI_ConvertString("Rank");
 			sText1 = GetRPGText("Rank");
@@ -293,7 +285,8 @@ void ShowInfoWindow()
 			sText1 = "Описание формулы";
 		break;
 	}
-	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 160, 160, false);
+	if (CommonHeaderTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3)) return;
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 160, 160, false, false);
 }
 
 void HideInfo()

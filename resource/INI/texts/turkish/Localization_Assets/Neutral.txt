@@ -1,12 +1,4 @@
 Neutral_1 {Haydut}
-Neutral_2 {Notlar bıraktınız}
-Neutral_3 {Jack}
-Neutral_4 {Veils}
-Neutral_5 {Deniz Canavarı}
-Neutral_6 { }
-Neutral_7 { }
-Neutral_8 {Altın Martı}
-Neutral_9 {Tristan}
 Neutral_10 {Renier}
 Neutral_11 {Ufukta bir korsan gemisi! Rotamızı kesmeye geliyorlar.}
 Neutral_12 {Kapının arkasından bir ses}
@@ -17,6 +9,7 @@ Neutral_16 {Teslim edildi: Betsy Price’ın Belgeleri}
 Neutral_17 {Lea}
 Neutral_18 {Carno}
 Neutral_19 {Pierre}
+Neutral_2 {Notlar bıraktınız}
 Neutral_20 {Ufukta bir korsan gemisi! Rotamızı kesiyorlar.}
 Neutral_21 {Güverte}
 Neutral_22 {Mağara girişi ağlarla kaplı. Görünüşe göre buraya uzun zamandır kimse uğramamış.}
@@ -27,6 +20,7 @@ Neutral_26 {Moño}
 Neutral_27 {Marisa}
 Neutral_28 {Caldera}
 Neutral_29 {Felipe}
+Neutral_3 {Jack}
 Neutral_30 {Alarcón}
 Neutral_31 {Sebastián}
 Neutral_32 {Córdoba}
@@ -37,6 +31,12 @@ Neutral_36 {Peralta}
 Neutral_37 {... artık Shark hakkındaki tüm şüpheler ortadan kalkacak}
 Neutral_38 {Yetersiz para (10.100.000)}
 Neutral_39 {Yetersiz para (25.250.000)}
+Neutral_4 {Veils}
 Neutral_40 {Yetersiz para (50.500.000)}
 Neutral_41 {seni}
 Neutral_42 {ikinizi}
+Neutral_5 {Deniz Canavarı}
+Neutral_6 { }
+Neutral_7 { }
+Neutral_8 {Altın Martı}
+Neutral_9 {Tristan}

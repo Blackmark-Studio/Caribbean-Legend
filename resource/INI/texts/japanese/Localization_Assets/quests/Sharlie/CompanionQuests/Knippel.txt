@@ -1,12 +1,4 @@
 Knippel_1 {鍵を使った}
-Knippel_2 {Peter}
-Knippel_3 {Adams}
-Knippel_4 {Jane}
-Knippel_5 {Adams}
-Knippel_6 {チャーリーが助けに来た！}
-Knippel_7 {Frederick}
-Knippel_8 {Stokes}
-Knippel_9 {Ralph}
 Knippel_10 {Faggle}
 Knippel_11 {1654年7月21日@<NewStr()>セントジョンズ、アンティグア}
 Knippel_12 {トーマス}
@@ -17,6 +9,7 @@ Knippel_16 {Sheffield}
 Knippel_17 {Michael}
 Knippel_18 {Whitney}
 Knippel_19 {ボンバルディエ解除}
+Knippel_2 {Peter}
 Knippel_20 {しばらくして…@<NewStr()>フリートウッド邸にて}
 Knippel_21 {Frederick}
 Knippel_22 {Stokes}
@@ -27,4 +20,11 @@ Knippel_26 {Thomas}
 Knippel_27 {Lynch}
 Knippel_28 {Сhimera}
 Knippel_29 {現在時刻}
+Knippel_3 {Adams}
 Knippel_30 {1654年8月17日@<NewStr()>ドミニカ島南東}
+Knippel_4 {Jane}
+Knippel_5 {Adams}
+Knippel_6 {チャーリーが助けに来た！}
+Knippel_7 {Frederick}
+Knippel_8 {Stokes}
+Knippel_9 {Ralph}

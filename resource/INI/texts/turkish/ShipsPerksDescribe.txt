@@ -2,6 +2,31 @@ new_string
 {
 
 }
+sp1 {Fanatik}
+sp1_desc {Donatılmış bir güverte şapeli ve Meryem Ana ikonları, kilise muskalarının etkisini ve süresini gizemli şekilde artırır.}
+sp1_desc2
+{
+Her muskanın güçlendirmesi: bireysel.
+Süre artışı: 15 gün.
+}
+sp2 {Hoş geldin misafir}
+sp2_desc {Bu efsanevi gemi, Karayip takımadalarının her köşesinde tanınır ve her yerde saygı ve hayranlıkla karşılanır. Lady Beth’in konumu harita satıcıları tarafından hemen öğrenilir, yerel tüccarlar ise değerli eşyaları almak için tüm sermayelerini toplamaya çalışır.}
+sp2_desc2
+{
+Harita tüccarı çıkma şansı bonusu: %5–12.
+Peso stoğu artışı: %100.
+Doubloon stoğu artışı: ~%30.
+}
+sp3 {Cehennem}
+sp3_desc {Bu gemide insan hayatı, gerçek gücün ortaya çıkmasından önceki kısa bir durak olarak görülür. Az kişi Peçe’yi aşıp geri döner, ama dönenler artık ölümden korkmaz.}
+sp3_desc2 {Düşen denizciler, mürettebatın deneyimini ve moralini artırır.}
+sp3_SailorsBoardingBonus_desc {Gemiye çıkma deneyim bonusu: #dSailorsBoardingBonus#%}
+sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 ölen denizci)}
+sp3_SurrenderChanceBonus_desc {Teslim olma şansı artışı: #dSurrenderChanceBonus#%}
+sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 ölen denizci)}
+sp4 {Korsan Avcısı}
+sp4_desc {Bu gemi, denizleri korsanlardan arındırmak için özel olarak inşa edildi. Her batırılan gemiyle mürettebat daha da kenetlenir, toplar daha isabetli olur ve kaptanın fanatizmi daha da belirginleşir.}
+sp4_desc2 {Her yok edilen korsan gemisi, manevra kabiliyetini, menzili, harita hızını ve top doldurma hızını kalıcı olarak artırır. Mevcut bonus: $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) / 15. ~ Korsan tehdidi azaldıkça, gemi bakım maliyeti de azalır. Mevcut bonus: $percent($GetAmsterdamMtp( )) / 40.}
 special0 {Ticaret}
 special0_desc {Bir ticaret gemisi genellikle büyük bir ambar uğruna kalibre, hız ve top sayısından feragat eder. Böyle bir gemiyle tek başına sefere çıkmak ancak çok yetenekli bir kaptanın işidir.}
 special0_desc2 {Filo gücü bonusu: düşük}
@@ -18,6 +43,7 @@ special3_desc2
 Filo gücü bonusu: orta  
 Özellik geliştirme bonusu: %15
 }
+SpecialityUpgrade {HWIC tarafından yükseltildi}
 trait01 {Akım Haritası}
 trait01_desc {Avrupalı ustaların siparişiyle yapılmış karmaşık navigasyon aletleri ve takımadadaki sualtı akıntılarını gösteren hassas bir harita, yolculuk süresinden ciddi tasarruf sağlar.}
 trait01_desc2
@@ -104,29 +130,3 @@ Gövde ve yelkenlere ek hasar: %200.
 Etki süresi: 15 saniye.
 Yangın çıkma şansı artışı: %200
 }
-sp1 {Fanatik}
-sp1_desc {Donatılmış bir güverte şapeli ve Meryem Ana ikonları, kilise muskalarının etkisini ve süresini gizemli şekilde artırır.}
-sp1_desc2
-{
-Her muskanın güçlendirmesi: bireysel.
-Süre artışı: 15 gün.
-}
-sp2 {Hoş geldin misafir}
-sp2_desc {Bu efsanevi gemi, Karayip takımadalarının her köşesinde tanınır ve her yerde saygı ve hayranlıkla karşılanır. Lady Beth’in konumu harita satıcıları tarafından hemen öğrenilir, yerel tüccarlar ise değerli eşyaları almak için tüm sermayelerini toplamaya çalışır.}
-sp2_desc2
-{
-Harita tüccarı çıkma şansı bonusu: %5–12.
-Peso stoğu artışı: %100.
-Doubloon stoğu artışı: ~%30.
-}
-sp3 {Cehennem}
-sp3_desc {Bu gemide insan hayatı, gerçek gücün ortaya çıkmasından önceki kısa bir durak olarak görülür. Az kişi Peçe’yi aşıp geri döner, ama dönenler artık ölümden korkmaz.}
-sp3_desc2 {Düşen denizciler, mürettebatın deneyimini ve moralini artırır.}
-sp3_SailorsBoardingBonus_desc {Gemiye çıkma deneyim bonusu: #dSailorsBoardingBonus#%}
-sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 ölen denizci)}
-sp3_SurrenderChanceBonus_desc {Teslim olma şansı artışı: #dSurrenderChanceBonus#%}
-sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 ölen denizci)}
-sp4 {Korsan Avcısı}
-sp4_desc {Bu gemi, denizleri korsanlardan arındırmak için özel olarak inşa edildi. Her batırılan gemiyle mürettebat daha da kenetlenir, toplar daha isabetli olur ve kaptanın fanatizmi daha da belirginleşir.}
-sp4_desc2 {Her yok edilen korsan gemisi, manevra kabiliyetini, menzili, harita hızını ve top doldurma hızını kalıcı olarak artırır. Mevcut bonus: $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) / 15. ~ Korsan tehdidi azaldıkça, gemi bakım maliyeti de azalır. Mevcut bonus: $percent($GetAmsterdamMtp( )) / 40.}
-SpecialityUpgrade {HWIC tarafından yükseltildi}

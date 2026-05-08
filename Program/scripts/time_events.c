@@ -73,15 +73,15 @@ void WorldSituationsUpdate()
 
 			if (CheckAttribute(pchar, "questTemp.LSC")) 
 			{ //Jason: еженедельное обновление паролей кланов LSC и ежедневное вытирание
-				if (GetDataDay() == 7 || GetDataDay() == 14 || GetDataDay() == 21 || GetDataDay() == 28)
+				if (GetDataDay() % 7 == 0)
 				{
 					sNrvParol = UpdateLSCClanParol();
 					sRvdParol = UpdateLSCClanParol();
-					if (CheckAttribute(pchar, "questTemp.LSC.NParol_bye")) DeleteAttribute(pchar, "questTemp.LSC.NParol_bye");
-					if (CheckAttribute(pchar, "questTemp.LSC.RParol_bye")) DeleteAttribute(pchar, "questTemp.LSC.RParol_bye");
+					DeleteAttribute(pchar, "questTemp.LSC.NParol_bye");
+					DeleteAttribute(pchar, "questTemp.LSC.RParol_bye");
 				}
-				if (CheckAttribute(pchar, "questTemp.LSC.parol_nrv")) DeleteAttribute(pchar, "questTemp.LSC.parol_nrv");
-				if (CheckAttribute(pchar, "questTemp.LSC.parol_rvd")) DeleteAttribute(pchar, "questTemp.LSC.parol_rvd");
+				DeleteAttribute(pchar, "questTemp.LSC.parol_nrv");
+				DeleteAttribute(pchar, "questTemp.LSC.parol_rvd");
 			} 
 			if (CheckAttribute(pchar, "questTemp.Saga.JessOnShip")) 
 			{ //Jason: отрицательные явления при наличии на корабле Джессики
@@ -229,6 +229,11 @@ void WorldSituationsUpdate()
 
 		case 6:
 			UpdateCrewExp();  // изменение опыта команды	
+			if (IsEntity(&worldMap)) 
+			{
+				SZN_CheckChange(); // смена сезона
+				RE_RunEvent();     // случайные события
+			}
 		break;
 
 		case 7:
@@ -238,9 +243,12 @@ void WorldSituationsUpdate()
 		case 8:
 			if(IsEntity(&worldMap))
 			{
+				WM_SetDateInfo();		// обновляем дату
 				EmptyAllFantomCharacter(); // трем НПС
 				wdmEmptyAllDeadQuestEncounter();
 				WM_SetNationsThreat();	// обновляем индикаторы угрозы
+				WM_SetSeasonsData();	// обновляем индикаторы сезонов
+				WM_SetSuppliesData();	// обновляем индикаторы припасов
 			}
 		break;
 
@@ -260,7 +268,8 @@ void WorldSituationsUpdate()
 
 	if(iStep <= 10)
 	{
-		PostEvent("EvSituationsUpdate", 1000, "l", iStep);
+		int nDelay = (iStep == 0) ? 100 : 1;
+		PostEvent("EvSituationsUpdate", nDelay, "l", iStep);
 	}
 }
 

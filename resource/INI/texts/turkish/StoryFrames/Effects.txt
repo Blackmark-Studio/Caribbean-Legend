@@ -1,0 +1,36 @@
+effects_title {Hikayenin sonuçları}
+SkillExp_1 {$ctx(p1) deneyim kazandı: $key($ctx(p2))}
+SkillExp_pchar_1 {Deneyim kazandınız: $key($ctx(p1))}
+Loyality_0 {$ctx(p1) memnun değil}
+Loyality_1 {$ctx(p1) memnun}
+CrewMorale_pchar_0 {Mürettebat morali $MoraleStrDiff($ctx(value))}
+CrewMorale_pchar_1 {Mürettebat morali $MoraleStrDiff($ctx(value))}
+Reputation_pchar_0 {İtibar düştü}
+Reputation_pchar_1 {İtibar arttı}
+CrewExp_pchar_1 {$key($ctx(p1)) deneyim kazandı}
+Money_pchar_1 {$money($ctx(value)) aldınız}
+Money_pchar_0 {$abs($money($ctx(value))) ödediniz}
+Goods_pchar_1 {_$key($goodI($ctx(p1))Acc) alındı: $number($ctx(value))}
+Goods_pchar_0 {_$key($goodI($ctx(p1))Acc) verildi: $abs($number($ctx(value)))}
+NationRelation_pchar_0 {$key($nationI($ctx(p1))Abl) ile ilişkiler kötüleşti}
+NationRelation_pchar_1 {$key($nationI($ctx(p1))Abl) ile ilişkiler gelişti}
+ItemsCabin_0 {Eşya verildi: $GetItemName($ctx(p1)) x $abs($number($ctx(value)))}
+ItemsCabin_1 {Eşya alındı: $GetItemName($ctx(p1)) x $number($ctx(value))}
+Items_pchar_0 {Eşya verildi: $GetItemName($ctx(p1)) x $abs($number($ctx(value)))}
+Items_pchar_1 {Eşya alındı: $GetItemName($ctx(p1)) x $number($ctx(value))}
+TempModifier_pchar_0 {$key($ctx(p1)|modifiers.txt) $percent($ctx(value)) süreyle $days($ctx(duration))}
+TempModifier_pchar_1 {$key($ctx(p1)|modifiers.txt) +$percent($ctx(value)) süreyle $days($ctx(duration))}
+moraleDiff_up3 {çok arttı}
+moraleDiff_up2 {arttı}
+moraleDiff_up1 {biraz arttı}
+moraleDiff_stay {değişmedi}
+moraleDiff_down3 {çok düştü}
+moraleDiff_down2 {düştü}
+moraleDiff_down1 {biraz düştü}
+FractionRelation_0 {$key($ctx(p1)Abl) ile ilişkiler kötüleşti}
+FractionRelation_1 {$key($ctx(p1)Abl) ile ilişkiler gelişti}
+CrewQty_pchar_0 {Kaybedilen mürettebat: $abs($number($ctx(value)))}
+CrewQty_pchar_1 {Yeni mürettebat: $number($ctx(value))}
+NoEffectsStory {Sonuçsuz atlatıldı}
+LoyalityAll_1 {Subaylarınız artık daha sadık}
+LoyalityAll_0 {Subaylarınız artık daha az sadık}

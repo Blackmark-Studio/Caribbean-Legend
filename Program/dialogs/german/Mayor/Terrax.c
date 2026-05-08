@@ -647,7 +647,6 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 				if (NextDiag.TempNode != "I_know_you_good")
 					dialog.text = "Bist du verrückt geworden" + GetSexPhrase("", ", Mädchen") + "? Unsere Jungs machen einen Bogen um dich, als hättest du die Pest. Also verschwinde und nerv mich nicht.";
 				else
@@ -655,12 +654,12 @@ void ProcessDialogEvent()
 				link.l1 = "Verstanden...";
 				link.l1.go = "exit";
 			}
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 		break;
 
 		case "pirate_threat_pay":
 			iGPThreatRate = 0;
 			iGPThreat = 0;
-			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iTerraxTotalTemp);
 			DialogExit();
 			PiratesDecreaseNotif("");
@@ -1569,7 +1568,7 @@ void ProcessDialogEvent()
 				break;
 			}*/
 			dialog.text = "Gute Zeitwahl! Berichte mir jetzt.";
-			link.l1 = "Ich habe meinen Schuldner in Le Francois aufgespürt. Seine Polacre war Teil eines Geschwaders, bestehend aus einer Korvette und einer Fregatte. Marco selbst hat Barbaszon einen Besuch abgestattet, sie hatten ein zweistündiges Treffen in seinem Haus, andere Besucher wurden von seinen Wachen weggeschickt. Dann verließ er das Haus mit zwei düsteren Kerlen: der eine war ein rotbärtiger Mann in einer Reiterkürass, der andere hatte einen Schnurrbart und trug eine schwere Schützengrabenrüstung. Alle gingen zum Hafen und segelten weg, bevor ich Saint Pierre erreichte.";
+			link.l1 = "Ich habe meinen Schuldner in Le Francois aufgespürt. Seine Polacre war Teil eines Geschwaders, bestehend aus einer Korvette und einer Fregatte. Marco selbst hat Barbazon einen Besuch abgestattet, sie hatten ein zweistündiges Treffen in seinem Haus, andere Besucher wurden von seinen Wachen weggeschickt. Dann verließ er das Haus mit zwei düsteren Kerlen: der eine war ein rotbärtiger Mann in einer Reiterkürass, der andere hatte einen Schnurrbart und trug eine schwere Schützengrabenrüstung. Alle gingen zum Hafen und segelten weg, bevor ich Saint Pierre erreichte.";
 			link.l1.go = "mtraxx_74";
 		break;
 		

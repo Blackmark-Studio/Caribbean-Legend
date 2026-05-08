@@ -43,12 +43,12 @@ bool IsWeaponType(ref rItem, int weaponType)
 
 int GetWeaponType(ref rItem)
 {
-	return GetModifierInt(rItem, HAS + M_WEAPON_TYPE, -1);
+	return GetModifierState(rItem, M_WEAPON_TYPE, -1);
 }
 
 int GetArmorType(ref rItem)
 {
-	return GetModifierInt(rItem, HAS + M_ARMOR_TYPE, -1);
+	return GetModifierState(rItem, M_ARMOR_TYPE, -1);
 }
 
 void SetWeaponDamageByStrikes(ref item, int type, float dmgMin, float dmgMax)

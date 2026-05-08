@@ -21,6 +21,8 @@ void ProcessDialogEvent()
 		rColony = GetColonyByIndex(iTest);
 	}
 	
+	if (Dialog.CurrentNode == "SkladMan1") Dialog.CurrentNode = "SkladMan";
+
 	switch(Dialog.CurrentNode)
 	{
 		case "Exit":
@@ -195,31 +197,14 @@ void ProcessDialogEvent()
 		break; 
 		//--------------------------------- завсклад ---------------------------------		
 		case "SkladMan":
-			NextDiag.TempNode = "SkladMan1";
+			NextDiag.TempNode = "SkladMan";
 			if (LAi_grp_playeralarm > 0)
 			{
        			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase("Alarm wird in der Stadt ausgelöst. Anscheinend ist es an der Zeit, dass auch ich zu den Waffen greife...","Verfolgen dich zufällig nicht die Stadtwachen?","Du wirst hier keinen Schutz finden, aber du könntest durchaus einige Zentimeter kalten Stahls zwischen deinen Rippen finden!"),LinkRandPhrase("Was willst du hier, du "+GetSexPhrase("Schurke","Schurkin")+"?! Die Stadtwachen haben bereits deine Fährte aufgenommen, du wirst nicht weit kommen, "+GetSexPhrase("schmutziger Pirat","du Piratenhure")+"!","Dreckiger Mörder! Wachen!!!","Ich fürchte dich nicht, du "+GetSexPhrase("Widerling","Hure")+"! Bald wirst du in unserer Festung gehängt werden, du wirst nicht weit kommen..."));
 				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Ich sehe, du bist Lebensmüde...","So scheint es, es gibt tatsächlich kein friedliches Leben für die Bürger von "+XI_ConvertString("Colony"+npchar.city+"Gen")+"!"),RandPhraseSimple("Geh zur Hölle!","Heh, das werden die letzten Sekunden deines Lebens sein..."));
-				link.l1.go = NPCharRepPhrase("exit_setOwner", "fight");
+				link.l1.go = NPCharRepPhrase(pchar, "exit_setOwner", "fight");
 				break;
 			}
-				dialog.text = NPCStringReactionRepeat("Willkommen! Mein Name ist "+GetFullName(npchar)+". Hier bin ich der Boss, also denk nicht einmal daran, etwas mitzunehmen...","Benehmen Sie sich anständig und behalten Sie im Kopf, dass ich ein Auge auf Sie habe.","Solange du nicht in die Truhen schaust, darfst du hier bleiben. Ich bin sowieso alleine gelangweilt...",RandPhraseSimple("Oh je, mir ist so langweilig!","Verdammt, was soll ich tun? Hier zu sein ist so langweilig!"),"block",3,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("In Ordnung, mach dir keine Sorgen.","Sicher!","Ich sehe...","Ja, das klingt nach einem Problem.",npchar,Dialog.CurrentNode);
-			link.l1.go = DialogGoNodeRepeat("exit", "exit", "exit", "exit", npchar, Dialog.CurrentNode);				
-		break;
-		
-		case "SkladMan1":
-			NextDiag.TempNode = "SkladMan1";
-			if (LAi_grp_playeralarm > 0)
-			{
-       			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase("Alarm wird in der Stadt ausgelöst. Anscheinend ist es an der Zeit, dass auch ich zu den Waffen greife...","Verfolgen dich die Stadtwächter zufällig?","Du wirst hier keinen Schutz finden, aber vielleicht mehrere Zentimeter kalten Stahls zwischen deinen Rippen!"),LinkRandPhrase("Was brauchst du, "+GetSexPhrase("Schurke","Schurkin")+"?! Die Stadtwachen haben bereits deine Fährte aufgenommen, du wirst nicht weit kommen, du "+GetSexPhrase("schmutziger Pirat","Dirne")+"!",""+GetSexPhrase("Dreckiger","Widerliche")+" Mörder! Wachen!!!","Ich fürchte dich nicht, du "+GetSexPhrase("Drecksack","Hure")+"! Bald wirst du in unserem Fort gehängt, du wirst nicht weit kommen..."));
-				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Ich sehe, du bist des Lebens müde...","Also scheint es, es gibt tatsächlich kein friedliches Leben für die Bürger von "+XI_ConvertString("Colony"+npchar.city+"Gen")+"!"),RandPhraseSimple("Geh zur Hölle!","Heh, das werden die letzten Sekunden deines Lebens sein..."));
-				link.l1.go = NPCharRepPhrase("exit_setOwner", "fight");
-				break;
-			}
-			dialog.text = NPCStringReactionRepeat("Hier bin ich der Chef, also denk nicht einmal daran, etwas mitzunehmen...","Verhalte dich anständig und behalte im Hinterkopf, dass ich ein Auge auf dich habe.","Solange du nicht in die Truhen schaust, darfst du hier bleiben. Ich bin sowieso alleine gelangweilt...",RandPhraseSimple("Oh mein Gott, ich bin so gelangweilt!","Verdammt, was soll ich tun? Hier zu sein ist so langweilig!"),"block",3,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("In Ordnung, mach dir keine Sorgen.","Sicher!","Ich sehe...","Ja, das klingt nach einem Problem.",npchar,Dialog.CurrentNode);	
-			link.l1.go = DialogGoNodeRepeat("exit", "exit", "exit", "exit", npchar, Dialog.CurrentNode);				
 			//открывание двери верфи по квесту промышленного шпионажа
 			if (CheckAttribute(pchar, "questTemp.different.ShipyardsMap") && pchar.questTemp.different.ShipyardsMap == "toTarget" && npchar.city == pchar.questTemp.different.ShipyardsMap.city && locations[reload_cur_location_index].type == "shipyard")
 			{
@@ -232,8 +217,7 @@ void ProcessDialogEvent()
 			{
 				if(!CheckAttribute(NPChar, "Storage.Speak"))
 				{
-					dialog.text = "Ich habe ein verlockendes Angebot für Sie. Vielleicht könnten Sie daran interessiert sein.";
-					link.l7 = "Wirklich? Also gut, ich höre zu.";
+					link.l7 = DLG_Convert("storageRent", "Dialogs.txt");
 					link.l7.go = "storage_rent";
 				}
 				else
@@ -247,15 +231,15 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if(!CheckAttribute(NPChar,"Storage.NoActivate"))
-						{
-							link.l7 = "Sie haben ein Lagerhaus erwähnt. Ist es noch frei?";
-							link.l7.go = "storage_01";
-						}						
+						link.l7 = "Sie haben ein Lagerhaus erwähnt. Ist es noch frei?";
+						link.l7.go = "storage_01";
 					}
 				}		
 			// <-- ugeen
 			}		
+			dialog.text = NPCStringReactionRepeat("Willkommen! Mein Name ist "+GetFullName(npchar)+". Hier bin ich der Boss, also denk nicht einmal daran, etwas mitzunehmen...","Benehmen Sie sich anständig und behalten Sie im Kopf, dass ich ein Auge auf Sie habe.","Solange du nicht in die Truhen schaust, darfst du hier bleiben. Ich bin sowieso alleine gelangweilt...",RandPhraseSimple("Oh je, mir ist so langweilig!","Verdammt, was soll ich tun? Hier zu sein ist so langweilig!"),"block",3,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("In Ordnung, mach dir keine Sorgen.","Sicher!","Ich sehe...","Ja, das klingt nach einem Problem.",npchar,Dialog.CurrentNode);
+			link.l1.go = DialogGoNodeRepeat("exit", "exit", "exit", "exit", npchar, Dialog.CurrentNode);				
 		break;
 		
 		//--------------------------------- Аренда склада ---------------------------------
@@ -421,19 +405,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_5":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage)); 
-			NPChar.Storage.NoActivate = true;
-			DeleteAttribute(NPChar,"Storage.Activate");
+			LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
 			DialogExit();
 		break;
 		
 		case "storage_6":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			DeleteAttribute(NPChar,"Storage.Activate");
-			NPChar.Storage.NoActivate = true;
+			LeaveStorage(NPChar, rColony);
 			DialogExit();
-		break;		
+		break;
 
 		//--------------------------------- Аренда склада ---------------------------------
 		

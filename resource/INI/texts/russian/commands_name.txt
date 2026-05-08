@@ -1,89 +1,93 @@
-sea_Cancel {Отмена}
-sea_Moor {Причалить}
-sea_Cabin {Каюта}
-sea_SailTo {Доплыть}
-sea_Board {Абордаж}
-sea_LandTroops {Десант}
-sea_Map {Карта}
-sea_Attack {Атака}
-sea_Abordage {Абордаж}
-sea_Defend {Защита}
-sea_SailAway {Уплыть}
-sea_HeaveToDrift {Спустить паруса}
-sea_Reload {Обмен}
-sea_Charge {Перезарядить}
-sea_Speed {Паруса}
-sea_CCommand {Приказать}
-sea_Ability {Способность}
-sea_ImmediateDeath {Уничтожить!}
-sea_InstantBoarding {читовый абордаж}
-sea_Speak {Разговор}
-sea_Sneak {Прокрасться в город}
-sea_Repair {Починка}
-sea_SailDir {Уплыть на ..}
-sea_SailNW {Северо-Запад}
-sea_SailN {Север}
-sea_SailNE {Северо-Восток}
-sea_SailE {Восток}
-sea_SailSE {Юго-Восток}
-sea_SailS {Юг}
-sea_SailSW {Юго-Запад}
-sea_SailW {Запад}
-sea_Boat {Выслать шлюпку}
-sea_Bomb {Спустить мину}
-sea_Brander {Брандер}
-sea_ImmediateReload {Перезарядка}
-sea_LightRepair {Неотложный ремонт}
-sea_InstantRepair {Ремонт в бою}
-sea_SandbankManeuver {Манёвры на мелководье}
-sea_Turn180 {Быстрый разворот}
-land_TalkSelf {Мысли вслух}
-land_ItemsDead {Обыскать труп}
-land_FastReload {Переход}
-land_ItemsUse {Использовать}
-land_DialogStart {Поговорить}
-land_ItemsChange {Обмен}
-land_TakeItem {Взять}
-land_PlaceItem {Положить}
-land_OutDoor {Открыть}
-land_UseBox {Открыть}
-land_ActivateRush {Тинктура Ометочтли}
-land_ActivateCabine {Каюта капитана}
-land_DeActivateCabine {Земля}
-land_Look {Смотреть}
-land_Exit {Море}
-land_SelfRepair {Ремонт}
-land_Alchemy {Алхимия}
-land_MapAtlas {Картографический атлас}
-land_Rest {Отдохнуть}
-go_store {Магазин}
-go_shipyard {Верфь}
-go_tavern {Таверна}
-go_residence {Резиденция}
-go_port {Порт}
-go_loanshark {Ростовщик}
-go_church {Церковь}
-go_prison {Тюрьма}
 go_brothel {Бордель}
-go_usurer {Ростовщик}
-go_portman {Портовое управление}
-go_duel {Дуэль}
-go_exittown {Городские ворота}
 go_Caroline {Фрегат 'Каролина'}
-go_CeresSmithy_Mary {Мэри Каспер}
 go_CeresSmithy_Jurgen {Юрген Шмидт}
+go_CeresSmithy_Mary {Мэри Каспер}
+go_church {Церковь}
+go_duel {Дуэль}
 go_EsmeraldaStoreBig {Галеон 'Эсмеральда'}
 go_EsmeraldaStoreBig_Donald {Дональд Гринспи}
+go_exittown {Городские ворота}
 go_FenixPlatform {платформа 'Феникс'}
 go_FleuronTavern {Каравелла 'Флерон'}
 go_GloriaChurch {Галеон 'Глория'}
+go_graveyard {Кладбище}
+go_hwic_office {Штаб-квартира ГВИК}
+go_loanshark {Ростовщик}
+go_plantation {Плантация}
+go_port {Порт}
+go_portman {Портовое управление}
+go_prison {Тюрьма}
 go_ProtectorFisher {Эдвард Блэк}
+go_residence {Резиденция}
 go_SanAugustineResidence {Стивен Додсон}
 go_SanGabrielMechanic {Хенрик Ведекер}
+go_shipyard {Верфь}
+go_storage {Склад}
+go_store {Магазин}
 go_TartarusPrison {Бэттлшип 'Тартарус'}
+go_tavern {Таверна}
+go_usurer {Ростовщик}
+land_ActivateCabine {Каюта капитана}
+land_ActivateRush {Тинктура Ометочтли}
+land_Alchemy {Алхимия}
+land_DeActivateCabine {Земля}
+land_DialogStart {Поговорить}
+land_Exit {Море}
+land_FastReload {Переход}
+land_ItemsChange {Обмен}
+land_ItemsDead {Обыскать труп}
+land_ItemsUse {Использовать}
+land_Look {Смотреть}
+land_MapAtlas {Картографический атлас}
+land_OutDoor {Открыть}
+land_PlaceItem {Положить}
+land_Rest {Отдохнуть}
+land_SelfRepair {Ремонт}
+land_TakeItem {Взять}
+land_TalkSelf {Мысли вслух}
+land_UseBox {Открыть}
+sea_Ability {Способность}
+sea_Abordage {Абордаж}
+sea_Attack {Атака}
+sea_Board {Абордаж}
+sea_Boat {Выслать шлюпку}
+sea_Bomb {Спустить мину}
+sea_Brander {Брандер}
+sea_Cabin {Каюта}
+sea_Cancel {Отмена}
+sea_CCommand {Приказать}
+sea_Charge {Перезарядить}
+sea_Defend {Защита}
+sea_HeaveToDrift {Спустить паруса}
+sea_ImmediateDeath {Уничтожить!}
+sea_ImmediateReload {Перезарядка}
+sea_InstantBoarding {читовый абордаж}
+sea_InstantRepair {Ремонт в бою}
+sea_LandTroops {Десант}
+sea_LightRepair {Неотложный ремонт}
+sea_Map {Карта}
+sea_Moor {Причалить}
+sea_Reload {Обмен}
+sea_Repair {Починка}
+sea_SailAway {Уплыть}
+sea_SailDir {Уплыть на ..}
+sea_SailE {Восток}
+sea_SailN {Север}
+sea_SailNE {Северо-Восток}
+sea_SailNW {Северо-Запад}
+sea_SailS {Юг}
+sea_SailSE {Юго-Восток}
+sea_SailSW {Юго-Запад}
+sea_SailTo {Доплыть}
+sea_SailW {Запад}
+sea_SandbankManeuver {Манёвры на мелководье}
+sea_Sneak {Прокрасться в город}
+sea_Speak {Разговор}
+sea_Speed {Паруса}
+sea_Turn180 {Быстрый разворот}
+worldmap_toattack {Присоединиться к бою}
+worldmap_toenemy {Дать бой}
 worldmap_toisland {Выйти в море}
 worldmap_tosea {Выйти в море}
 worldmap_toship {Атаковать}
 worldmap_tostorm {Шторм}
-worldmap_toattack {Присоединиться к бою}
-worldmap_toenemy {Дать бой}

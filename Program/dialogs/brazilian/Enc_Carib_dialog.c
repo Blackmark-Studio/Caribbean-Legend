@@ -36,6 +36,8 @@ void ProcessDialogEvent()
 				LAi_group_MoveCharacter(sld, sGroup);
 				LAi_RemoveCheckMinHP(sld);
 				LAi_SetImmortal(sld, false);
+				if("quest.agressive" in npchar)
+					sld.quest.agressive = true;
 			}
 			LAi_group_SetRelation(sGroup, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 			LAi_group_FightGroups(sGroup, LAI_GROUP_PLAYER, true);
@@ -106,6 +108,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_2_2":
+			npchar.quest.agressive = true;
 			dialog.text = RandPhraseSimple("Mentiroso, cachorro de cara pálida! Você veio aqui para matar índios! Pronto para a luta, cara pálida?!","Você mata índios. Língua branca é língua mentirosa. Eu corto ela fora e frito na fogueira!");
 			link.l1 = RandPhraseSimple("Bem, camarada, então não me culpe. Deus sabe que eu tentei evitar isso...","Bem, você que pediu, guerreiro.");
 			link.l1.go = "exit_fight";
@@ -123,6 +126,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
+				npchar.quest.agressive = true;
 				dialog.text = "Você não tem o que queremos, cara-pálida... Você será nosso troféu de guerra!";
 				link.l1 = "Tente se tiver coragem, espantalho...";
 				link.l1.go = "exit_fight";
@@ -130,6 +134,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_3_2":
+			npchar.quest.agressive = true;
 			dialog.text = RandPhraseSimple("Não negociamos com cães de cara-pálida. Matamos e tomamos!","Não somos imundos Miskitos ou Arawaks, não negociamos com caras-pálidas! Nós os matamos e pegamos seus troféus de guerra!");
 			link.l1 = RandPhraseSimple("Então tente me roubar, canalha!","Primeiro, você vai ter que tirar meu sabre de mim, seu verme!");
 			link.l1.go = "exit_fight";
@@ -340,6 +345,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
+				npchar.quest.agressive = true;
 				dialog.text = "Então a gente pega tudo de graça, cara-pálida!";
 				link.l1 = "Pode tentar...";
 				link.l1.go = "exit_fight";

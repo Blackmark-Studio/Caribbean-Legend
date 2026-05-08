@@ -11,6 +11,7 @@
 #include "ships\ships.c"
 #include "Encounters\Encounters.c"
 #include "worldmap\worldmap.c"
+#include "seasons\seasons.c"
 #include "locations\locations.c"
 #include "Loc_ai\LAi_init.c"
 #include "store\goods.h"
@@ -193,13 +194,18 @@ native int BeginCuratorCheckAsync(string sCuratorID, int iTimeOut);
 #event_handler("CuratorCheckResult","ProcessCuratorCheckResult"); // nkrapivindev 230226
 void ProcessCuratorCheckResult()
 {
+	if (bMainMenu) return; // в главном меню предметы не выдаём
+
 	// always a lowercase english string
     string sResult = GetEventData();
     if (sResult == "success")
     {
         // user is subscribed to the curator
         // 100% sure
-		Trace("ProcessCuratorCheckResult: Success! :D");
+				Trace("ProcessCuratorCheckResult: Success! :D");
+				if (CheckAttribute(&TEV, "franshise.legendGuide")) return;
+				TEV.franshise.legendGuide = true;
+				GiveItem2Character(pchar, "legendGuide");
     }
     else if (sResult == "notsubscribedfailure")
     {
@@ -343,6 +349,7 @@ void Main()
 	EncountersInit();
 	CannonsInit();
 	ShipsInit();
+	SailsInit();
 	IslandsInit();
 	WeatherInit();
 	InitPerks();
@@ -721,6 +728,19 @@ void InterfaceDoExit()
 		case RC_INTERFACE_CHEAT_ITEMS:
 		    LaunchCheatsItems();
         break;
+
+		case RC_INTERFACE_TUTORIAL:
+			// запуск стори-фрейма после закрытия туториала
+			if (!CheckAttributeHasValue(&TEV, "Tutor.callback")) break;
+			aref callback = GetAref(&TEV, "Tutor.callback", true);
+			string funcName = GetAttributeValue(callback);
+			if (funcName == "LaunchStoryFrame")
+			{
+				aref context = GetAref(callback, "arg1", true);
+				LaunchStoryFrame(&context, callback.arg2);
+				DeleteAttribute(&TEV, "Tutor.callback");
+			}
+		break;
 	}
 }
 
@@ -901,18 +921,18 @@ void OnLoad()
     BattleInterface.ShifInfoVisible = InterfaceStates.enabledshipmarks;
     BattleInterface.battleborder.used = InterfaceStates.ShowBattleMode;
 
-	if( CheckAttribute(&InterfaceStates,"WorldSituationUpdateStep") &&
+/*	if( CheckAttribute(&InterfaceStates,"WorldSituationUpdateStep") &&
 		sti(InterfaceStates.WorldSituationUpdateStep) < 10 )
 	{
 		Event("EvSituationsUpdate", "l", sti(InterfaceStates.WorldSituationUpdateStep));
-	}
+	}	*/
 
 	actLoadFlag = 0;
 	////
 	
 	iCalculateSaveLoadCount("Load");
 	
-	String sCondition;
+	string sCondition;
 	for(int i=0; i<MAX_GAMEMODE_CONDITIONS; i++)
 	{
 		sCondition = GameModeConditions[i];
@@ -927,6 +947,23 @@ void OnLoad()
 	}
 
 	UpdateCashTablesFellows();
+	FranchiseCheck();
+}
+
+// Проверки по интеграции с франшизой, вызываем 1 раз при загрузке
+void FranchiseCheck()
+{
+	// Мушкет вождя, после покупки пропадает из продажи навсегда
+	if (!CheckAttribute(&TEV, "franshise.mushket_indian"))
+	{
+		if (BIsSubscribedApp(3549020)) TEV.franshise.mushket_indian.inStock = true;
+	}
+
+	// Руководство начинающей легенды
+	if (!CheckAttribute(&TEV, "franshise.legendGuide"))
+	{
+		BeginCuratorCheckAsync("45734318", 10);
+	}
 }
 
 void NewGame()
@@ -1016,6 +1053,7 @@ void NewGame_continue()
 	}
     	
 	UpdateCrewInColonies(); // пересчет наёмников в городах
+	FranchiseCheck();
 	ReloadProgressEnd();
 }
 
@@ -1129,7 +1167,7 @@ bool bMenuEnter() // доступность меню F2
 	} 
 	else 
 	{
-		if(SendMessage(GetMainCharacter(),"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") != 0) return false;
+		if(SendMessage(GetMainCharacter(),"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") != CHR_MODE_PEACE) return false;
 		if(CheckAttribute(&objLandInterface,"ComState") && sti(objLandInterface.ComState) != 0) return false;
 	}
 	if(bDisableCharacterMenu) return false;// boal

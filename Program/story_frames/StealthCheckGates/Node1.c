@@ -19,11 +19,11 @@ void StealthCheckGates_Node1()
 			bool anyPotion = StealthCheckGates_HasAnyPotion();
 			reaction = SF_AddReaction("b", "", "", SF_Icon("item", storyObject.temp.potion));
 			SF_SetResult(reaction, sti(storyObject.temp.potionPoints));
-			if (!anyPotion) reaction.disabled = true;
+			SF_AddCondition(&reaction, anyPotion, SF_CONDITION_CUSTOM, SF_Convert("missingPotion"));
 		break;
 		case "b":
 			//ПРОВЕРКА. Шанс успеха 25+Талант*7. При успехе результат 1 и +25, при провале результат 2 и -10.
-			reaction = SF_AddReaction("b", "", "", SF_Icon("pirates", PIRATES_T));
+			reaction = SF_AddReaction("b", "", "", SF_Icon(PIRATES_TYPE, PIRATES_T));
 			SF_SetChance(reaction, 25, "base");
 			SF_SetChance(reaction, GetSpecialAfterPenalty(pchar, PIRATES_T) * 7, PIRATES_T);
 			SF_SetResults(reaction, -10, 25);
@@ -34,7 +34,7 @@ void StealthCheckGates_Node1()
 	{
 		case "a":
 			//ПРОВЕРКА. Шанс успеха 40+Харизма/2. При успехе результат 1 и +25, при провале результат 2 и -10.
-			reaction = SF_AddReaction("c", "", "", SF_Icon("skill", SKILL_LEADERSHIP));
+			reaction = SF_AddReaction("c", "", "", SF_Icon(SKILL_TYPE, SKILL_LEADERSHIP));
 			SF_SetChance(reaction, 40, "base");
 			SF_SetChance(reaction, GetSkillAfterPenalty(pchar, SKILL_LEADERSHIP) / 2, SKILL_LEADERSHIP);
 			SF_SetResults(reaction, -10, 25);
@@ -42,15 +42,16 @@ void StealthCheckGates_Node1()
 		case "b":
 			reaction = SF_AddReaction("c", "", "", SF_Icon("item", "potionrum"));
 			SF_SetResult(reaction, 20);
-			if (GetCharacterFreeItem(pchar, "potionrum") < 1) reaction.disabled = true;
+			SF_AddCondition(&reaction, GetCharacterFreeItem(pchar, "potionrum") > 0, SF_CONDITION_ITEM, "potionrum");
 		break;
 	}
 
-	action = SF_AddAction("a", "", "", SF_Icon("skill", SKILL_SNEAK));
+	action = SF_AddAction("a", "", "", SF_Icon(SKILL_TYPE, SKILL_SNEAK));
 	SF_SetChance(action, -50.0, "base");
-	SF_SetChance(action, GetCharacterSkill(pchar, SKILL_LEADERSHIP) / 2, SKILL_LEADERSHIP);
-	SF_SetChance(action, GetCharacterSpecial(pchar, SPECIAL_L) * 2, SPECIAL_L);
+	SF_SetChance(action, GetSpecialAfterPenalty(pchar, SPECIAL_C) * 3, SPECIAL_C);
+	SF_SetChance(action, GetCharacterSkill(pchar, SKILL_FORTUNE) / 2, SKILL_FORTUNE);
 	if (IsCharacterEquippedArtefact(pchar, "indian_11")) SF_SetChance(action, 15, "indian_11"); // если маска нгомбо
+	SF_SetChance(action, makeint(SZN_GetModifierMtp(M_STEALTH_INCEPTION_BONUS, 0.0, -0.30, 0.30) * 100), "season");
 
 	SF_AddAction("b", "", "", SF_Icon("story", "fail"));
 }
@@ -59,7 +60,7 @@ void StealthCheckGates_Node1()
 void StealthCheckGates_Node1_b_a_reaction()
 {
 	SF_DefaultReaction("a");
-	TakeNItems(pchar, storyObject.temp.potion, -1);
+	SF_AddEffect(SF_E_ITEMS, pchar, storyObject.temp.potion, -1);
 }
 
 // Демонстративно подчиниться сержанту и укрепить его авторитет
@@ -78,7 +79,7 @@ void StealthCheckGates_Node1_c_a_reaction()
 void StealthCheckGates_Node1_c_b_reaction()
 {
 	SF_DefaultReaction("a");
-	TakeNItems(pchar, "potionrum", -1);
+	SF_AddEffect(SF_E_ITEMS, pchar, "potionrum", -1);
 }
 
 // Попытаться сгладить ситуацию
@@ -87,11 +88,11 @@ void StealthCheckGates_Node1_a_action()
 	if (SF_PerformCheck())
 	{
 		SF_Triumph();
-		AddCharacterExpToSkill(pchar, SKILL_FORTUNE, 7);
+		SF_AddEffect(SF_E_SKILL_EXP, pchar, SKILL_FORTUNE, 7);
 		return;
 	}
 
-	AddCharacterExpToSkill(pchar, SKILL_FORTUNE, 9);
+	SF_AddEffect(SF_E_SKILL_EXP, pchar, SKILL_FORTUNE, 9);
 	SF_Fail();
 }
 

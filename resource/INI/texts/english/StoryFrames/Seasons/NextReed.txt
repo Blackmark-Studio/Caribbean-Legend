@@ -1,0 +1,46 @@
+Node0_a {Spring begins. The last weeks of dry weather are the ideal time to harvest colonial crops, above all cane. The currents grow more active, the trade winds near their peak, and trade flourishes across the Caribbean.$br$redThousands of slaves are brought from Africa on overcrowded ships, while countless caravans laden with spices, timber, and tobacco sail day and night for the capital colonies.}
+Node0_a_action {Time for profit!}
+Node0_b_a {The plantations work without pause. Cane is cut from dawn to dusk, tobacco dries in dense rows beneath awnings, and mahogany and lignum vitae lie stacked in the coastal yards, ready for shipment. Soon the ports will be packed with those hoping to profit, and merchant ships will flood the Caribbean Sea.}
+Node0_b_a_reaction {Trade is my passion!}
+Node0_b_a_reaction_log {You know exactly where the most productive plantations and the largest storehouses are. It will be no trouble for you to secure more goods for sale than anyone else.}
+Node0_b_b {This year the islands are yielding an especially rich haul. Sugar kettles smoke without pause, tobacco sheds are overflowing, and rows of mahogany and ebony logs lie stacked along the shore. Trade is so vigorous that the harbors look like one vast warehouse. Caravans depart loaded to the brim, yet goods still arrive faster than they can be shipped out. In such conditions, sellers are forced to fight for every buyer.}
+Node0_b_b_reaction {Clothes make the man}
+Node0_b_b_reaction_log {You are known and respected in every port and every shop. No matter how you earned your fame, people always try to offer the best terms to a well-known captain.}
+Node0_b_c {The last two weeks of the Season of Crown were unexpectedly dry and hot, and fires broke out on several islands. Dry grass and cane caught at once, and part of the crop burned before it could even be processed. Not every tobacco barn survived, and several timber warehouses burned down together with the piers. This sharply reduced the amount of colonial goods in the colonies and undermined trade.}
+Node0_b_c_reaction {Buy now or never!}
+Node0_b_c_reaction_log {You decide to take advantage of the general panic and sell goods in the capital colonies at a higher price. News travels slowly—no one will know if you stir up a little more panic...}
+Node0_b_d {In winter, the powers stockpiled reserves in case of war, but in spring the tension eased. Warehouses turned out to be overflowing with Dutch silk, Russian rope, and barrels of tar. Some of the stores were released for sale so state funds would not sit idle in dead stock, and now a small amount of strategic goods can unexpectedly be found in colonial stores.}
+Node0_b_d_reaction {Maybe there's more?}
+Node0_b_d_reaction_log {Your ledgers are packed with notes on every colony, entered with painstaking care over many months. You know exactly where and with whom an extra stock of goods can still be found, even strategic goods. All that remains is to apply pressure.}
+Node0_c_a {Recent successes of the colonial powers in Africa have made it possible to bring in exceptionally large shipments of slaves, which will greatly speed up production in all colonies. Plantations, mines, and estates will soon pour tons of goods onto the market, and merchants are already preparing for falling prices.}
+Node0_c_a_reaction {Buy, buy, buy!}
+Node0_c_a_reaction_log {You know the basics of trade and understand perfectly well that if something is selling cheap, you ought to buy more of it. Under the pretext of buying in bulk, you plan to drive prices down.}
+Node0_c_b {An uprising has unexpectedly broken out in Brazil, disrupting shipments to Europe. The mother countries reacted at once and turned their eyes toward the Caribbean. Attempts to make up for the shortage have caused a sharp surge in demand for goods from Caribbean colonies. Bills for buying out entire lots keep arriving without pause, promising a wider price gap with every crossing of the Atlantic. If one buys wisely in the producing colonies, a fortune can be made in a single season.}
+Node0_c_b_reaction {An extra ship wouldn't hurt}
+Node0_c_b_reaction_log {You are an experienced and respected merchant, and you know exactly how to widen the price gap between producing colonies and capital colonies even further. Time and lack of information will only work in your favor.}
+Node0_c_c {The Caribbean is abuzz with news from Europe: a new passion for sweets has gripped the courts. Coffee and chocolate are served at receptions, feasts end with candied fruits and syrups, and no self-respecting noble wishes to appear stingy. Sugar is selling faster than it can be brought in. Merchant houses are receiving lucrative orders and are buying up lots in the capital colonies in advance, without waiting for open sale.}
+Node0_c_c_reaction {Sell, sell, sell!}
+Node0_c_c_reaction_log {When demand explodes, it is not enough just to sell goods—you must convince everyone that yours are the best. As an experienced trader, you can easily emphasize your edge over the competition.}
+Node0_c_d {One of the largest European trading houses has collapsed under the weight of its debts. Panic swept through the metropolises and reached the Caribbean ports. Bankers and usurers have sharply tightened lending terms and are trying to build up silver reserves by offering better conditions on deposits.}
+Node0_c_d_reaction {Gold is the best investment}
+Node0_c_d_reaction_log {You know the value of doubloons and can easily convince any usurer that deposits in gold are far more reliable, both for them and for you.}
+Node0_c_e {After long disputes at the French court, it was decided to revise colonial duties. Some goods have officially been removed from the list of prohibited items, and the old penalties have been temporarily suspended. The powers competing with the Louvre answered in kind, and now silver and gold can be traded in ports all across the Caribbean archipelago, while what was once considered contraband is now legal.}
+Node0_c_e_reaction {What about live cargo?}
+Node0_c_e_reaction_log {The new duties here will not last forever, and the window for contraband trade will soon close. But the slave trade promises long-term profit, and you decide to persuade Caribbean merchants of precisely that.}
+Node0_d_a {With the coming of spring, the coastal waters come alive. Mackerel and sardines run along the shallows, tuna comes in toward the reefs, and sea turtles are caught off the sandy beaches. Sailors set nets straight from the boats, smoke fish on the shore, and fill barrels with fresh water from coastal streams at every stop.}
+Node0_d_a_reaction {A varied diet helps}
+Node0_d_a_reaction_log {You decide to put together a varied and полноценный seagoing diet, supplementing the usual hardtack and salt beef with fresh fish and meat. A properly planned menu under the ship's doctor's supervision will help reduce the risk of epidemics and scurvy outbreaks.}
+Node0_d_b {This spring, the sea is more generous than ever. Favorable weather and an abundance of food have let fish and game breed beyond all measure. Schools of tuna are beyond counting, and the lagoons are full of lobsters and crabs. Even a short stop is enough to fill the holds with fresh meat and fish, leaving the salted provisions untouched.}
+Node0_d_b_reaction {Gather everything we can}
+Node0_d_b_reaction_log {You decide to pick out the nimblest sailors for a special party that will deal exclusively with foraging. We must make use of the generosity of sea and land while we still can.}
+Node0_d_c {In the Season of Cane, everyone knows money can be made quickly—the ports buzz with stories of captains returning with holds full of silver. Rumors inflate expectations, and sailors no longer put to sea for ordinary pay, while experienced boatswains refuse to sign on without a hefty advance.}
+Node0_d_c_reaction {I don't have a plan, but I have an idea!}
+Node0_d_c_reaction_log {You decide to save money on wages by relying on your charisma, your knack for persuading people to follow you, and your stories about how the whole crew aboard is one big happy family.}
+Node0_success
+{
+The Season of Cane is caravans of Fleuts, smoking sugar boilers, and the ever-present ring of coins.
+The archipelago lives on greed and gambling fever—and it is hard not to fall in love with it.
+Now it is just as easy to go broke as it is to make a fortune. What will your fate be?
+}
+Node0_success_action {I choose wealth!}
+Node0_title {Season of Cane}

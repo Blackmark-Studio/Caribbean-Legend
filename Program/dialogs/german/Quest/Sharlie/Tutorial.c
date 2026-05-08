@@ -469,6 +469,7 @@ void ProcessDialogEvent()
 			dialog.text = "Er ist der Obermatrose. Ich weiß wenig über ihn, aber eines ist sicher: Wenn jeder Mensch ein Skelett im Schrank hat, dann ist es bei Alonso ein ganzes Massengrab.";
 			link.l1 = "Das klingt, als würdet Ihr ihm nicht trauen.";
 			link.l1.go = "Captain_7_question_2_2";
+			AddCharacterSkillPoints(pchar, "Leadership", 1);
 		break;
 
 		case "Captain_7_question_2_2":
@@ -488,6 +489,7 @@ void ProcessDialogEvent()
 			dialog.text = "Ihr habt einen wunden Punkt getroffen, "+pchar.name+"! Über meine Schönheit könnte ich ewig sprechen. Dritte Klasse, zwanzig Kanonen, hervorragende Geschwindigkeit – lasst Euch nicht vom Begriff ‚Handelsschiff‘ täuschen!";
 			link.l1 = "Kanonen und Geschwindigkeit habe ich verstanden. Aber ‚Klasse‘? ‚Handelsschiff‘?";
 			link.l1.go = "Captain_7_question_3_2";
+			AddCharacterSkillPoints(pchar, "Sailing", 1);
 		break;
 
 		case "Captain_7_question_3_2":

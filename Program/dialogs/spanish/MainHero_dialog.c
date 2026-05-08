@@ -476,8 +476,7 @@ void ProcessDialogEvent()
 			Link.l6.go = "TalkSelf_TownAttack";
 		}
 
-		bool bSeaBattle = (bDisableMapEnter) && (bSeaActive) && (!CheckAttribute(pchar, "GenQuest.MapClosedNoBattle"));
-		if (!bSeaBattle && PChar.location != "Deck_Near_Ship" && findsubstr(PChar.location, "_shipyard", 0) == -1 && PChar.location != "CommonPackhouse_2" && !CheckAttribute(pchar, "GenQuest.CannotWait") && !CheckAttribute(loadedLocation, "CannotWait"))
+		if (CheckRestAvailable())
 		{
 			Link.l7 = "Debería descansar...";
 			Link.l7.go = "TalkSelf_StartWait";

@@ -357,16 +357,6 @@ void ProcessDialogEvent()
 		break;
 
 		case "market":
-//navy -->
-			//занят ПГГ
-			if (CheckFreeServiceForNPC(NPChar, "Store") != -1)	 // to_do имя сунуть
-			{
-				dialog.text = "Üzgünüm, ama şu anda çok meşgulüm. O kadar çok müşteri var ki! Yarın tekrar gel.";
-				link.l1 = "Gerçekten mi? O zaman, sonra tekrar uğrarım.";
-				link.l1.go = "exit";
-				break;
-			}
-//navy <--
 			dialog.text = RandPhraseSimple("Yuvarlak gülle, yelken bezi, ilaç, kaliteli kereste ve başka mallarım var! Hangisiyle ilgileniyorsunuz?","Şeker ve baharat almak ister misiniz? Ya da belki rom ve barut?");
 			link.l1 = pcharrepphrase(LinkRandPhrase("Ambarımda bir sürü ganimet var! Paranın kokusu olmaz, değil mi?","Ambarımdaki ganimeti boşaltıp, yerine senin altınlarını doldurmam lazım. Ha-ha!","Ah, sen anneni bile tam tartılmış bir kese dublon için satarsın, biliyorum! Ama benim sadece erzaklarımı yenilemem gerek."),LinkRandPhrase("Yükümü satmak ve erzaklarımı yenilemek istiyorum.","Satış için mal satın almak istiyorum.","Bana top güllelerini, bombaları ve buna benzer şeyleri göster."));
 			link.l1.go = "trade_1";
@@ -665,19 +655,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_5":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage)); 
-			NPChar.Storage.NoActivate = true;
-			DeleteAttribute(NPChar,"Storage.Activate");
+			LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
 			DialogExit();
 		break;
 		
 		case "storage_6":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			DeleteAttribute(NPChar,"Storage.Activate");
-			NPChar.Storage.NoActivate = true;
+			LeaveStorage(NPChar, rColony);
 			DialogExit();
-		break;		
+		break;
 
 		case "business":
 			iTest = 0;			
@@ -753,17 +738,6 @@ void ProcessDialogEvent()
 			}
 			// <-- генератор Место под солнцем
 			
-//navy -->
-			//занят ПГГ
-			iTmp = CheckAvailableTaskForNPC(NPChar, PGG_TASK_WORKONSTORE);
-			if (iTmp != -1)
-			{
-				dialog.text = "Bir işim vardı, ama "+GetFullName(&Characters[iTmp])+" bunu zaten benim için yapmayı üstlendi.";
-				link.l1 = "Gerçekten mi? O halde, daha sonra tekrar uğrarım.";
-				link.l1.go = "exit";
-				break;
-			}
-//navy <--
 			dialog.text = NPCharRepPhrase(npchar,"Ne işi?! Her şeyi anlat bana!","Dinliyorum. Bahsettiğiniz anlaşma nedir?");
             ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
             if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
@@ -830,11 +804,8 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if(!CheckAttribute(NPChar,"Storage.NoActivate"))
-						{
-							link.l7 = "Affedersiniz, iyi adamım - acaba depo kiralıyor musunuz?";
-							link.l7.go = "storage_01";
-						}	
+						link.l7 = "Affedersiniz, iyi adamım - acaba depo kiralıyor musunuz?";
+						link.l7.go = "storage_01";
 					}
 				}				
 				// <-- ugeen

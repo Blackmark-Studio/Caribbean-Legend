@@ -1,4 +1,5 @@
 SharlieTutorial_1 {Капитан}
+SharlieTutorial_10 {Пиншон}
 SharlieTutorial_2 {Матрос}
 SharlieTutorial_3 {Боцман}
 SharlieTutorial_4 {Казначей}
@@ -7,4 +8,3 @@ SharlieTutorial_6 { }
 SharlieTutorial_7 {Поль}
 SharlieTutorial_8 {Анри}
 SharlieTutorial_9 {Матье}
-SharlieTutorial_10 {Пиншон}

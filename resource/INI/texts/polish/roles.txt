@@ -1,4 +1,14 @@
-portman {Nadzorca Portu}
+AffairOfHonor_tavern {Zdesperowany pijak}
+armourer_merchant {Sprzedawca Wyposażenia}
+banditos {Łotr}
+captain {Kapitan}
+captain_trader {Wolny kupiec}
+cemeteryman_merchant {Strażnik Cmentarza}
+chaplain {Kapelan}
+comandante {Dowódca}
+deadman {Żywy nieumarły}
+Deputy Director {Zastępca Dyrektora}
+Director {Dyrektor}
 drinker_0 {Najsłynniejszy pirat na tych wodach}
 drinker_1 {Mistrz opowieści prawdziwych historii}
 drinker_2 {Emerytowany agent specjalny Escorialu}
@@ -9,55 +19,45 @@ drinker_6 {Wspaniały mężczyzna w pełni sił}
 drinker_7 {Szef od drobiazgów}
 drinker_8 {Starszy Pijanego Pokładu}
 drinker_9 {Drugi kuzyn nie byle kogo w HKW.}
-pofficer {Kandydat}
-hovernor {Gubernator}
-tavernkeeper {Karczmarz}
-waitress {Kelnerka}
-trader {Kupiec}
-shipyarder {Szkutnik}
-priest {Kapłan}
-Ghovernor {Gubernator Generalny}
-Phovernor {Piracki Baron}
-usurer {Bankier}
-poorman {Żebrak}
-gipsy {Cyganka}
-captain {Kapitan}
-sailor {Marynarz}
-marginal_town {Pirat}
-noble {Szlachcic}
-monk {Mnich}
-chaplain {Kapelan}
-potion_merchant {Alchemik}
-veteran_merchant {Sprzedawca Rupieci}
-armourer_merchant {Sprzedawca Wyposażenia}
-monk_merchant {Sprzedawca Relikwii Świętych}
-indian_merchant {Wróżka}
-lightman_merchant {Latarnik}
-cemeteryman_merchant {Strażnik Cmentarza}
-legend {Legenda}
-soldier_town {Strażnik}
-banditos {Łotr}
-patrol {Patrol}
-comandante {Dowódca}
-prisonboss {Komendant}
-whore {Służąca}
-hostess {Gospodyni}
-enemy {Wróg}
-wife {Żona}
-kukulkan {Kukulkan}
-mercen {Najemnik}
-monster {Nieumarły}
-captain_trader {Wolny kupiec}
-mtraxx_vanguard {Awangarda Tiraksa}
-fgirl {Kochanka}
-deadman {Żywy nieumarły}
-friend {Przyjaciel}
 duelist {Szermierz}
-smuggler {Przemytnik}
-AffairOfHonor_tavern {Zdesperowany pijak}
-hovernon_wife {Żona gubernatora}
+enemy {Wróg}
+fgirl {Kochanka}
+friend {Przyjaciel}
+Ghovernor {Gubernator Generalny}
+gipsy {Cyganka}
 HeadSailor {Doświadczony marynarz}
 HeadSailorPlus {Głos załogi}
-Director {Dyrektor}
-Deputy Director {Zastępca Dyrektora}
+hostess {Gospodyni}
+hovernon_wife {Żona gubernatora}
+hovernor {Gubernator}
+indian_merchant {Wróżka}
+kukulkan {Kukulkan}
+legend {Legenda}
+lightman_merchant {Latarnik}
+marginal_town {Pirat}
+mercen {Najemnik}
+monk {Mnich}
+monk_merchant {Sprzedawca Relikwii Świętych}
+monster {Nieumarły}
+mtraxx_vanguard {Awangarda Tiraksa}
 Naval Registry Guard {Strażnik Rejestru Okrętowego}
+noble {Szlachcic}
+patrol {Patrol}
+Phovernor {Piracki Baron}
+pofficer {Kandydat}
+poorman {Żebrak}
+portman {Nadzorca Portu}
+potion_merchant {Alchemik}
+priest {Kapłan}
+prisonboss {Komendant}
+sailor {Marynarz}
+shipyarder {Szkutnik}
+smuggler {Przemytnik}
+soldier_town {Strażnik}
+tavernkeeper {Karczmarz}
+trader {Kupiec}
+usurer {Bankier}
+veteran_merchant {Sprzedawca Rupieci}
+waitress {Kelnerka}
+whore {Służąca}
+wife {Żona}

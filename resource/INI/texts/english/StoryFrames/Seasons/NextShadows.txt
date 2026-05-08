@@ -1,0 +1,38 @@
+Node0_a {The last quarter of the year begins—the Season of Shade arrives. The hurricanes that ravage the Atlantic subside, but their consequences are felt everywhere. Garrisons have been devastated by disease and hunger, trade routes have been severed, and the Caribbean stands still in anticipation of winter.$br$redIn this season, the sea is stained crimson—starving, enraged pirates run rampant off the coasts, national fleets rush to tear off the fattest piece from a weakened enemy, and smugglers become the most valuable and wealthy people in the archipelago.}
+Node0_a_action {A time of grief and strength has come}
+Node0_b_a {As the humidity fades, so do the diseases that were cutting down crews and colonists alike. The noticeably emptier streets of towns, taverns, and barracks naturally make the spread of illness more difficult, which allows you to take far fewer medicines on a voyage.}
+Node0_b_a_reaction {Double grog for everyone!}
+Node0_b_a_reaction_log {You decide to issue everyone an extra ration of grog to help prevent disease. This will save on medicines.}
+Node0_b_b {The Season of Storm was especially savage this year. Outbreaks of disease swept across the Caribbean like a deadly whirlwind, emptying towns and barracks. Only the healthiest and hardiest survived, and no sickness frightens them now. This makes it possible to save significantly on medicines.}
+Node0_b_b_reaction {A dose of healing herbs for everyone!}
+Node0_b_b_reaction_log {You decide to issue everyone healing herbs to help prevent disease. This will save on medicines.}
+Node0_b_c {This year, the wet season retreated earlier than usual. The winds dried out the harbors, the dampness left the barracks and warehouses, and breathing became noticeably easier. Fevers are fading, people recover faster, and once again there are those on the piers eager to put to sea. It is as if the archipelago has caught its breath, and everyone looks to the future with hope.}
+Node0_b_c_reaction {Welcome aboard!}
+Node0_b_c_reaction_log {You use your connections and reputation to attract as many sailors as possible.}
+Node0_b_d {Summer turned out to be less merciless than expected. Disease did not wipe out the weak, and by autumn there are more people in the ports than usual. But sickness remains with them—it trails behind, clinging to new crews. Illness can flare up aboard at any moment, and one must be ready for it.}
+Node0_b_d_reaction {I know how to improve health}
+Node0_b_d_reaction_log {You pick out the healthiest recruits and assign them about the ship in a way that reduces the chances of illness.}
+Node0_c_a {Ship repair, by contrast, has become an expensive luxury. Supplies of ship timber are vanishing before one's eyes, every nail costs three times the usual price, and the craftsmen are forced to raise their prices to keep up with the flood of customers.}
+Node0_c_a_reaction {Can we talk the price down?}
+Node0_c_a_reaction_log {You decide to use your knowledge of ship construction to save on repairs. It is much harder to overcharge someone who knows the trade.}
+Node0_c_b {Repairing a ship will be no easy matter—workshops have been wrecked by the weather, and skilled carpenters are in short supply. Lines of battered ships stretch before the shipyards, and the masters give priority to warships. Repairs are becoming a luxury not every captain can afford.}
+Node0_c_b_reaction {Warships first?}
+Node0_c_b_reaction_log {You use your military training to pass for a patrol vessel and move ahead in the queue.}
+Node0_c_c {After the summer hurricanes, reefs and shoals are littered with wreckage. By order of the governors, everything of value is to be hauled to the forts and shipyards—planks, spars, anchors, even whole masts. Cannons are pulled from the holds, cleaned of rust, and put into storage. There is more material than expected, and repairs have not become quite as expensive.}
+Node0_c_c_reaction {We've got our own!}
+Node0_c_c_reaction_log {You order the crew to gather every bit of material fit for repairs. A team of seasoned sailors will quickly assemble enough valuables to drive the price down at the shipyard.}
+Node0_d_a {In the shops, people fight over the last barrels of powder and sacks of sugar, while merchants hold back the rest, waiting for prices to climb even higher. In some places, goods can still be found, but they cost far more than usual.}
+Node0_d_a_reaction {We know where it's cheaper!}
+Node0_d_a_reaction_log {Thanks to your established trade ties and personal acquaintance with many respected merchants, you will be able to significantly cut store markups.}
+Node0_d_b {This time, the warehouses emptying toward the end of the year look especially grim. It is not entirely clear what caused it—a poor harvest, several failed voyages from Europe, or pirates running wild—but the shortage of goods is especially severe right now.}
+Node0_d_b_reaction {We know who still has stock}
+Node0_d_b_reaction_log {Thanks to your established ties with smugglers and your strong reputation in shadowy circles, you will get a far larger stock of goods than anyone else. It is always nice to be among the chosen.}
+Node0_d_c {This time, the authorities have retained enough strength to enforce an active struggle in the region, and every governor is trying to rally as many free captains as possible under his banner.$br$redNo sooner had the storms subsided than word spread through the colonies of eased regulations. Cargo taken in battle is no longer subject to detailed inspection. Spoils are becoming almost legal, and the line between piracy and service to the Crown is beginning to blur. This will somewhat ease the shortage of goods and bring prices down.}
+Node0_d_c_reaction {Stolen goods?}
+Node0_d_c_reaction_log {You have always known how to pass stolen goods off as legitimate, and the new rules will make that even easier for you.}
+Node0_d_d {This autumn, the shortage of goods has forced the governors into desperate measures. Every patrol has been pulled out of the towns, the jungles are being combed, coastal coves are being searched, small craft are being inspected, and suspicious warehouses are being broken open without much ceremony.$br$redSmugglers are being hunted down as an example, and their goods are confiscated for the treasury. This helps smooth things over and keeps prices in check, but the shadow trade is becoming far too dangerous. Until the noose loosens, not a single smuggler will put to sea.}
+Node0_d_d_reaction {There's always a deal to be made}
+Node0_d_d_reaction_log {You know perfectly well how to arrange shady dealings and stay unnoticed. You will easily come up with a plan clever enough for the smugglers to believe you.}
+Node0_success {You enter this hard season fully prepared. Every year, the Season of Shade is a trial and a test of endurance for everyone who lives in the archipelago. Will we live to see the next one?}
+Node0_success_action {Set sail!}
+Node0_title {Season of Shade}

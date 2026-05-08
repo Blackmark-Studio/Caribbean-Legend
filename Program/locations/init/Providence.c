@@ -729,6 +729,7 @@ int LocationInitProvidence(int n)
 	locations[n].image = "loading\Gate" + rand(1) + ".tga";
 	//Town sack
 	locations[n].townsack = "SanAndres";
+	locations[n].fastreload = "SanAndres";
 	//Sound
 	locations[n].type = "jungle";
 	locations[n].islandId = "Providence";

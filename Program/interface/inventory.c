@@ -222,6 +222,7 @@ void ProcessCommandExecute()
 			{
 				EquipPress();
 				SetCurrentNode("TABLE_ITEMS");
+				UpdateItemInfo();
 			}
 		break;
 		case "OPENMAP_BUTTON":
@@ -334,6 +335,9 @@ void ProcessCommandExecute()
 			{
 			    nodName = "I_NATIONS";
 			}
+		break;
+		case "MUSKET_PRIORITY_CHECKBOX":
+			Inventory_ToggleMusketPriority()
 		break;
 	}
 	// boal new menu 31.12.04 -->
@@ -985,14 +989,6 @@ void ShowInfoWindow()
 			sText1 = GetRPGText("Drunk_hint");
 		break;
 		//<--navy
-		case "WEIGHT":
-		    sHeader = XI_ConvertString("Weight");
-			sText1 = GetRPGText("Weight");
-		break;
-		case "MONEY":
-		    sHeader = XI_ConvertString("Money");
-			sText1 = GetRPGText("Money");
-		break;		
 		case "RANK":
 		    sHeader = XI_ConvertString("Rank");
 			sText1 = GetRPGText("Rank");
@@ -1083,12 +1079,17 @@ void ShowInfoWindow()
 			sHeader = XI_ConvertString("ItemSlot_11");
 			sText1 = XI_ConvertString("ItemSlot_11s_d");
 		break;
+		case "MUSKET_PRIORITY_CHECKBOX":
+			sHeader = XI_ConvertString("MusketPriorityTitle");
+			sText1 = XI_ConvertString("MusketPriorityText");
+		break;
 	}
 
 	SetDescriptorsTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3, currentItem);
-	SetItemStatsTooltip(xi_refCharacter, sCurrentNode, &sHeader, &sText1, &sText2, &sText3);
+	SetItemStatsTooltip(xi_refCharacter, sCurrentNode, &sHeader, &sText1, &sText2, &sText3, currentItem);
+	if (CommonHeaderTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3)) return;
 	if(sHeader != "" || sText1 != "")
-		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false);
+		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false, false);
 }
 
 void HideInfoWindow()
@@ -1680,8 +1681,8 @@ void FillItemsTable(int _mode) // 1 - все 2 - снаряжение 3 - эли
 				GameInterface.TABLE_ITEMS.(row).td1.icon.offset = "0, 0";
 				GameInterface.TABLE_ITEMS.(row).td1.icon.width = 50;
 				GameInterface.TABLE_ITEMS.(row).td1.icon.height = 50;
-				GameInterface.TABLE_ITEMS.(row).td1.textoffset = "40,0";
-				GameInterface.TABLE_ITEMS.(row).td1.line_space_modifier = 0.7;
+				GameInterface.TABLE_ITEMS.(row).td1.textoffset = "55,0";
+				GameInterface.TABLE_ITEMS.(row).td1.line_space_modifier = 0.9;
 				GameInterface.TABLE_ITEMS.(row).td1.str = GetItemName(arItem);
 				
 				GameInterface.TABLE_ITEMS.(row).td2.str   = FloatToString(stf(arItem.Weight), 1);
@@ -1731,6 +1732,7 @@ void FillItemsSelected()
 	SetNodeUsing("ITEM_6", false);
 	SetNodeUsing("ITEM_7", false);
 	SetNodeUsing("ITEM_2B", false);
+	SetNodeUsing("MUSKET_PRIORITY_CHECKBOX", false);
 	SetNodeUsing("ITEM_5B", false);
 	SetNodeUsing("ITEM_4L", false);
 	SetNodeUsing("ITEM_11", false);
@@ -1804,6 +1806,8 @@ void FillItemsSelected()
                 SetNodeUsing("TABBTNSLOT_5B", true);
                 SetNodeUsing("ITEM_5", true);
                 sColor5 = nColor2;
+
+								Inventory_UpdateMusketPriorityCheckbox(MusketPriority(xi_refCharacter));
             break;
             case SPYGLASS_ITEM_TYPE:
                 SetNewGroupPicture("ITEM_3", curItem.picTexture, "itm" + curItem.picIndex);
@@ -2258,34 +2262,6 @@ bool ThisItemCanBeEquip(aref arItem)
 
 	if (arItem.id == "underwater" && !IsMainCharacter(xi_refCharacter)) return false;
 	
-	if (arItem.groupID == GUN_ITEM_TYPE) 
-	{
-		if (GetCharacterEquipByGroup(xi_refCharacter, CIRASS_ITEM_TYPE) == "underwater") return false;
-		if (!CheckAttribute(arItem,"chargeQ") )
-		{
-			return false;
-		}
-		int chrgQ = sti(arItem.chargeQ);
-
-		if (!CanEquipFireArmsNow(xi_refCharacter, arItem)) return false;
-	}
-	
-	if (arItem.groupID == MUSKET_ITEM_TYPE) 
-	{
-		bool bCanMush = IsMainCharacter(xi_refCharacter) || CheckAttribute(xi_refCharacter, "CanTakeMushket");
-		if (HasSubStr(arItem.id, "mushket") && !bCanMush) 
-		{
-			return false;
-		}	
-		if (!CheckAttribute(arItem,"chargeQ") )
-		{
-			return false;
-		}
-		int chrgQm = sti(arItem.chargeQ);
-
-		if (!CanEquipFireArmsNow(xi_refCharacter, arItem)) return false;
-	}
-    
 	if (arItem.groupID == ITEM_SLOT_TYPE)
 	{
 		if (IsEquipCharacterByArtefact(xi_refCharacter, arItem.id))
@@ -2304,7 +2280,7 @@ bool ThisItemCanBeEquip(aref arItem)
 		}
 	}	
 	
-    if (IsEquipCharacterByItem(xi_refCharacter, arItem.id))
+	if (IsEquipCharacterByItem(xi_refCharacter, arItem.id))
 	{		
 		SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("Remove that"));
 		// if(arItem.groupID == BLADE_ITEM_TYPE || arItem.groupID == SPYGLASS_ITEM_TYPE || arItem.groupID == PATENT_ITEM_TYPE)
@@ -2322,14 +2298,10 @@ bool ThisItemCanBeEquip(aref arItem)
 	    {
 		    return false;
 	    }
+		return true;
 	}
 	else
 	{ // Jason: убираем влияние перка кирасы - кирасу носим без перка
-		/*if (arItem.groupID == CIRASS_ITEM_TYPE && !IsCharacterPerkOn(xi_refCharacter,"Ciras") && arItem.Clothes == false)
-	    {	
-		    return false;
-	    }*/
-		//Jason: под водой ничего нельзя одевать
 		if (xi_refCharacter.location == "underwater")
 	    {
 		    return false;
@@ -2342,22 +2314,34 @@ bool ThisItemCanBeEquip(aref arItem)
 		if (arItem.groupID == AMMO_ITEM_TYPE) SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("LoadAnyGun"));
 		else SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("Equip that"));
 	}
-	
-	/*if (CheckAttribute(xi_refCharacter, "CanTakeMushket"))
+
+	if (arItem.groupID == MUSKET_ITEM_TYPE) 
 	{
-		if(CheckAttribute(xi_refCharacter, "IsMushketer"))
+		bool bCanMush = IsMainCharacter(xi_refCharacter) || CheckAttribute(xi_refCharacter, "CanTakeMushket");
+		if (HasSubStr(arItem.id, "mushket") && !bCanMush) 
 		{
-			if(arItem.ID == xi_refCharacter.IsMushketer.MushketID)
-			{
-				SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("Remove that"));
-				return true;
-			}
-			if(arItem.groupID == BLADE_ITEM_TYPE || arItem.groupID == SPYGLASS_ITEM_TYPE || arItem.groupID == GUN_ITEM_TYPE || arItem.groupID == CIRASS_ITEM_TYPE)
-			{
-				return false;
-			}
+			return false;
+		}	
+		if (!CheckAttribute(arItem,"chargeQ") )
+		{
+			return false;
 		}
-	}*/
+		int chrgQm = sti(arItem.chargeQ);
+
+		if (!CanEquipFireArmsNow(xi_refCharacter, arItem)) return false;
+	}
+
+	if (arItem.groupID == GUN_ITEM_TYPE) 
+	{
+		if (GetCharacterEquipByGroup(xi_refCharacter, CIRASS_ITEM_TYPE) == "underwater") return false;
+		if (!CheckAttribute(arItem,"chargeQ") )
+		{
+			return false;
+		}
+		int chrgQ = sti(arItem.chargeQ);
+
+		if (!CanEquipFireArmsNow(xi_refCharacter, arItem)) return false;
+	}
 
 	return true;
 }
@@ -2501,7 +2485,8 @@ void EquipPress()
             	SetNewPicture("MAP_PICTURE", "interfaces\maps\" + LanguageGetLanguage() + "\" + itmRef.imageTga + ".tga");
             	SetFormatedText("MAP_TEXT", "");
             }
-            ShowMapWindow();
+			ShowMapWindow();
+			SetEventHandler("frame", "ShowMapWindowDelayed", 1);
 		}
 		else
 		{ 
@@ -2663,6 +2648,7 @@ void EquipPress()
 						if(!CheckAttribute(xi_refCharacter, "IsMushketer")) // Не мушкетер. Делаем мушкетером
 						{
 							SetOfficerToMushketer(xi_refCharacter, itmRef.id, true);
+							SetPriorityMode(xi_refCharacter, 2);
 							SetVariable();
 							UpdateItemInfo();
 							FillItemsSelected();
@@ -2673,6 +2659,7 @@ void EquipPress()
 						else if (itmRef.id != GetCharacterEquipByGroup(xi_refCharacter, MUSKET_ITEM_TYPE)) // другой мушкет
 						{
 							SetOfficerToMushketer(xi_refCharacter, itmRef.id, true);
+							SetPriorityMode(xi_refCharacter, 2);
 							SetVariable();
 							UpdateItemInfo();
 							FillItemsSelected();
@@ -3150,6 +3137,7 @@ void SetItemInfo(int iGoodIndex)
 	SetNodeUsing("LOADMUSKET_BUTTON", false);
 	SetFormatedText("INFO_NAME", GetItemName(arItm));
 	SetFormatedText("ITEM_TYPE", GetItemType(arItm));
+	SetVAligmentFormatedText("ITEM_TYPE");
 		
 	aref attr, arGrape;
 	string sBullet;
@@ -3251,4 +3239,31 @@ ref BuildTreasureMapFromParts(ref origItem)
 	FillMapForTreasure(itmRef, GetTresuareMapSeed());
 	SetVariable();
 	return itmRef;
+}
+
+// Нарисовать галочку приоритета оружия, если есть
+void Inventory_UpdateMusketPriorityCheckbox(int priority)
+{
+	if (IsMainCharacter(xi_refCharacter)) return;
+
+	SetNodeUsing("MUSKET_PRIORITY_CHECKBOX", true);
+	ref item;
+	if (priority) item = FindItem_VT(GetCharacterEquipByGroup(xi_refCharacter, MUSKET_ITEM_TYPE));
+	else item = FindItem_VT(GetCharacterEquipByGroup(xi_refCharacter, BLADE_ITEM_TYPE));
+
+	SetNewGroupPicture("MUSKET_PRIORITY_CHECKBOX", item.picTexture, "itm" + item.picIndex);
+}
+
+// Нарисовать галочку приоритета оружия, если есть
+void Inventory_ToggleMusketPriority()
+{
+	int currentPriority = MusketPriority(xi_refCharacter);
+	SetPriorityMode(xi_refCharacter, !currentPriority+1);
+	Inventory_UpdateMusketPriorityCheckbox(!currentPriority);
+}
+
+void ShowMapWindowDelayed()
+{
+	DelEventHandler("frame" , "ShowMapWindowDelayed");
+	ShowMapWindow();
 }

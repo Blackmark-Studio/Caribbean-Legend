@@ -1,12 +1,4 @@
 BlackMark_1 {밀수업자}
-BlackMark_2 { }
-BlackMark_3 {Francis}
-BlackMark_4 {Reasley}
-BlackMark_5 {Tommy}
-BlackMark_6 {Irons}
-BlackMark_7 { }
-BlackMark_8 { }
-BlackMark_9 { }
 BlackMark_10 { }
 BlackMark_11 {Gabriel}
 BlackMark_12 {Callow}
@@ -17,4 +9,12 @@ BlackMark_16 {끝났다. 이제 Gabe 오기 전에 빨리 가자}
 BlackMark_17 {두 시간이 흐르고…}
 BlackMark_18 {아침이 밝았다...}
 BlackMark_19 { }
+BlackMark_2 { }
 BlackMark_20 { }
+BlackMark_3 {Francis}
+BlackMark_4 {Reasley}
+BlackMark_5 {Tommy}
+BlackMark_6 {Irons}
+BlackMark_7 { }
+BlackMark_8 { }
+BlackMark_9 { }

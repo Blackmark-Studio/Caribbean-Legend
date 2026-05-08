@@ -72,9 +72,6 @@ float	SeaMapLoadX = -1570.99;
 float	SeaMapLoadZ = 950.812;
 float	SeaMapLoadAY = 10.54;
 
-float	fSeaExp = 0.0;
-float	fSeaExpTimer = 0.0;
-
 void DeleteSeaEnvironment()
 {
 	ClearPostEventsForEvent(SHIP_DETONATE_SMALL);
@@ -114,7 +111,7 @@ void DeleteSeaEnvironment()
 	DeleteClass(&Telescope);
 	DeleteClass(&Sharks);
 	DeleteClass(&sLightModel);
-
+    DeleteClass(&lighthouseLightModel);
 	DeleteClass(&SeaLighter);
 
 	if (IsEntity(&Artifact))
@@ -396,17 +393,6 @@ void Sea_MapLoadXZ_AY(float x, float z, float ay)
 
 void Sea_MapLoad()
 {
-	if(GetMaxAutoSaves("Map") != 0)
-	{
-		SetAfterSaveFunction("Sea_MapLoad_Continue");
-		PostEvent("Event_NewAutoSave", 1, "s", "Map");
-	}
-	else
-		Sea_MapLoad_Continue();
-}
-
-void Sea_MapLoad_Continue()
-{	
 	// boal 201004 проверка на перегруз и мин команду -->
 	ref  rPlayer = GetMainCharacter();
     int  i, cn;
@@ -467,17 +453,26 @@ void Sea_MapLoad_Continue()
         PlaySound("interface\knock.wav");
         return;
     }
-    // boal 201004 проверка на перегруз и мин команду <--
-    // рассчет времени на карте от скорости кораблей -->
-    /*if (minShipSpeed < 1)
-	{
-		minShipSpeed = 1;
-	}
-    worldMap.date.hourPerSec = makefloat(12.5 / minShipSpeed * 4.0);  */
-    // рассчет времени на карте от скорости кораблей <--
-    pchar.CheckEnemyCompanionType = "Sea_MapLoad"; // откуда вход
+	
+	pchar.CheckEnemyCompanionType = "Sea_MapLoad"; // откуда вход
     if (!CheckEnemyCompanionDistance2GoAway(true)) return; // && !bBettaTestMode  табличка выхода из боя
-    
+	
+	Sea_MapLoad_CheckAutoSave();
+}
+
+void Sea_MapLoad_CheckAutoSave()
+{
+	if(GetMaxAutoSaves("Map") != 0)
+	{
+		SetAfterSaveFunction("Sea_MapLoad_Continue");
+		PostEvent("Event_NewAutoSave", 1, "s", "Map");
+	}
+	else
+		Sea_MapLoad_Continue();
+}
+
+void Sea_MapLoad_Continue()
+{
 	LAi_SetAlcoholNormal(pchar);
     
 	bSeaReloadStarted = true;
@@ -576,9 +571,6 @@ void SeaLogin(ref Login)
 	bSeaQuestGroupHere = false;
 	bIslandLoaded = false;
 
-	fSeaExp = 0.0;
-	fSeaExpTimer = 0.0;
-
 	Sea_FreeTaskList();	
 
 	// weather parameters
@@ -592,7 +584,7 @@ void SeaLogin(ref Login)
 	bTornado = sti(WeatherParams.Tornado);
 	if (bStorm)
 	{
-		iStormLockSeconds = 60;
+		iStormLockSeconds = 90;
 	}
 
 	// Island
@@ -843,6 +835,7 @@ void SeaLogin(ref Login)
 			}
             else if (GetNationRelation2MainCharacter(sti(Characters[iAloneCharIndex].nation)) == RELATION_ENEMY)
 			{
+                Group_SetBravery(sGName);
                 Group_SetTaskAttack(sGName, PLAYER_GROUP);
                 Group_LockTask(sGName);
 			}
@@ -1058,6 +1051,8 @@ void SeaLogin(ref Login)
 				Group_SetTaskRunAway(sGroupID, rGroup.Task.Target);
 			break;
 			case AITASK_ATTACK:
+                if (rGroup.Task.Target == PLAYER_GROUP)
+                    Group_SetBraveryR(rGroup);
                 if (CheckAttribute(rGroup, "Katavasia"))
                 {
                     Group_SetTaskAttackEx(sGroupID, rGroup.Task.Target, false);
@@ -1104,9 +1099,13 @@ void SeaLogin(ref Login)
 	StartBattleInterface();							ReloadProgressUpdate();
 	RefreshBattleInterface();						ReloadProgressUpdate();
 	
-	/*CreateEntity(&SeaOperator, "SEA_OPERATOR");
+/*	CreateEntity(&SeaOperator, "SEA_OPERATOR");
 	LayerAddObject(SEA_EXECUTE, &SeaOperator, -1);
-	LayerAddObject(SEA_REALIZE, &SeaOperator, 3);*/
+	LayerAddObject(SEA_REALIZE, &SeaOperator, 3);
+	
+	SeaOperator.Enabled = true;
+	SeaOperator.IdleTime = 1.0;
+	SeaOperator.FirstInit = true;*/
 
 	SendMessage(&Telescope, "leee", MSG_TELESCOPE_INIT_ARRAYS, &Nations, &RealShips, &Goods);
 
@@ -1636,7 +1635,7 @@ void Sea_CreateLighthouse(String _islandID)
 	islandRef = &Islands[islandIndex];
 
 	//--> eddy. да будет свет на маяке
-	if(CheckAttribute(&islandRef, "mayak"))
+	if (CheckAttribute(&islandRef, "mayak"))
 	{
 		CreateEntity(&sLightModel, "MODELR");
 		
@@ -1660,11 +1659,6 @@ void Sea_CreateLighthouse(String _islandID)
 	// Атрибут маяка у острова тут не проверяется - он есть только у маяка Ямайки
 	if(_islandID == "Jamaica" || _islandID == "Cuba1" || _islandID == "Cuba2")
 	{
-		if(IsEntity(lighthouseLightModel))
-		{
-			DeleteClass(&lighthouseLightModel);
-		}
-		
 		if(!IsDay())
 		{
 			CreateEntity(&lighthouseLightModel, "MODELR");

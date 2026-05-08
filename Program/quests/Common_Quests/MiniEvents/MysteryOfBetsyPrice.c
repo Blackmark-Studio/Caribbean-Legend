@@ -155,7 +155,7 @@ void TBP_HouseBetsi_2(string qName)
 
 void TBP_HouseBetsi_2_1(string qName)
 {
-	PlaySound("Voice\Russian\other\RapersGirl-01.wav");
+	PlaySoundSafe("VOICE\" + LanguageGetLanguage() + "\other", "RapersGirl-01.wav");
 	//PlaySound("Voice\Spanish\other\RapersGirl-01.wav");
 }
 

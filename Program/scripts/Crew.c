@@ -126,6 +126,7 @@ int GetSalaryForShip(ref chref)
 	// экипаж
 	fExp = (GetCrewExp(chref, "Sailors") + GetCrewExp(chref, "Cannoners") + GetCrewExp(chref, "Soldiers")) / 100.00; // средний коэф опыта 0..3
 	nPaymentQ += makeint( fExp * stf((0.5 + MOD_SKILL_ENEMY_RATE/5.0)*200*GetCrewQuantity(chref))/stf(shClass) * mSkillCrew );
+	nPaymentQ = makeint(makefloat(nPaymentQ) * SZN_GetModifierMtp(M_CREW_MAINTENANCE_COST, 1.0, 0.01));
     
     // теперь самого капитана и его офицеров (тут  главный герой не считается) так что пассажиров и оффицеров ниже
     if(sti(chref.index) != GetMainCharacterIndex())
@@ -200,11 +201,12 @@ int GetSalaryForShip(ref chref)
 }
 // boal новый учёт зп <--
 
-int AddCrewMorale(ref chr, int add)
+int AddCrewMorale(ref chr, int add, bool withNotification = false)
 {
 	string nameBefore, nameAfter;
 	int moraleBefore;
-	
+	if (add > 0) add = SZN_IncreaseIntByModifier(add, M_CREW_MORALE_MTP);
+
     int morale = MORALE_NORMAL;
 	if (CheckAttribute(chr, "Ship.Crew.Morale")) morale = sti(chr.Ship.Crew.Morale);
 	nameBefore = GetExpName(morale);
@@ -222,6 +224,7 @@ int AddCrewMorale(ref chr, int add)
 		}
 	}
 	
+	if (withNotification) notification(StringFromKey(add > 0 ? "food_18" : "food_19"), "Sailor");
 	return morale;
 }
 
@@ -236,16 +239,18 @@ int GetCharacterRaiseCrewMoraleMoney(ref chr)
 	return nPaymentQ;
 }
 
-float ChangeCrewExp(ref chr, string sType, float fNewExp)
+float ChangeCrewExp(ref chr, string sType, float fNewExp, bool withNotification = false)
 {
 	if (!CheckAttribute(chr, "Ship.Crew.Exp." + sType)) chr.Ship.Crew.Exp.(sType) = (1 + rand(50));
 
 	fNewExp *= isEquippedArtefactUse(chr, "totem_09", 1.0, 2.0);
+	if (IsCompanion(chr)) fNewExp *= SZN_GetModifierMtp(M_CREW_EXP_MTP, 1.0, 0.01);
 
 	chr.Ship.Crew.Exp.(sType) = (stf(chr.Ship.Crew.Exp.(sType)) + fNewExp);
 	if (stf(chr.Ship.Crew.Exp.(sType)) > 100) chr.Ship.Crew.Exp.(sType) = 100;
 	if (stf(chr.Ship.Crew.Exp.(sType)) < 1) chr.Ship.Crew.Exp.(sType)   = 1;
 	
+	if (withNotification && fNewExp > 0) notification(StringFromKey("food_20"), "Sailor");
 	return stf(chr.Ship.Crew.Exp.(sType));	
 }
 
@@ -322,7 +327,9 @@ float GetBaseCrewMtpForTavern()
 	float fKrep = GetReputationCoef(abs(COMPLEX_REPUTATION_NEUTRAL - sti(pchar.reputation.nobility)));
 	float fSpecial = 1.0;
 	if (CheckAttribute(pchar, "GenQuest.Shipshine")) fSpecial += 1.25;
+	if (IsEquipCharacterByItem(pchar, "greenIdol")) fSpecial += 0.30;
 	if (IsEquipCharacterByItem(pchar, "hat3")) fSpecial += 0.05;
+	fSpecial += SZN_GetModifierMtp(M_RECRUITS_MTP, 0.0);
 	return fKrank * fKcharisma * fKrep * fSpecial;
 }
 
@@ -405,6 +412,7 @@ void UpdateCrewInColonies()
 			nPastM = MORALE_NORMAL/3 + rand(MORALE_MAX-MORALE_NORMAL/3);
 		else
 			nPastM = MORALE_NORMAL/5 + rand(makeint(MORALE_NORMAL*1.5));
+		nPastM = makeint(makefloat(nPastM) * SZN_GetModifierMtp(M_CREW_HIRE_MORALE_MTP, 1.0, 0.01, 2.0));
 		rTown.Ship.crew.morale = nPastM;
 
 		// пороги опыта от нации
@@ -437,9 +445,9 @@ void UpdateCrewInColonies()
 			break;
 		}
 
-		rTown.Ship.Crew.Exp.Sailors   = eSailors   + rand(2*eSailors)   + rand(10);
-		rTown.Ship.Crew.Exp.Cannoners = eCannoners + rand(2*eCannoners) + rand(10);
-		rTown.Ship.Crew.Exp.Soldiers  = eSoldiers  + rand(2*eSoldiers)  + rand(10);
+		rTown.Ship.Crew.Exp.Sailors   = (eSailors   + rand(2*eSailors)   + rand(10)) * SZN_GetModifierMtp(M_CREW_HIRING_EXP_MTP, 1.0, 0.01);
+		rTown.Ship.Crew.Exp.Cannoners = (eCannoners + rand(2*eCannoners) + rand(10)) * SZN_GetModifierMtp(M_CREW_HIRING_EXP_MTP, 1.0, 0.01);
+		rTown.Ship.Crew.Exp.Soldiers  = (eSoldiers  + rand(2*eSoldiers)  + rand(10)) * SZN_GetModifierMtp(M_CREW_HIRING_EXP_MTP, 1.0, 0.01);
 		ChangeCrewExp(rTown, "Sailors", 0);  // приведение к 1-100
 		ChangeCrewExp(rTown, "Cannoners", 0);
 		ChangeCrewExp(rTown, "Soldiers", 0);
@@ -457,6 +465,7 @@ int GetCrewPriceForTavern(string sColony)
 	if (IsEquipCharacterByItem(pchar, "hat3")) nCrewCost = makeint(nCrewCost * 0.95);
 
 	nCrewCost = makeint(fExp*nCrewCost + 0.5);
+	nCrewCost = makeint(makefloat(nCrewCost) * SZN_GetModifierMtp(M_CREW_HIRE_COST, 1.0, 0.01));
 	if (nCrewCost < 10) nCrewCost = 10; // не ниже!
 	if(rTown.id == "IslaMona") return 0; 
 	return nCrewCost;

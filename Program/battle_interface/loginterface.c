@@ -115,6 +115,21 @@ void CreateILogAndActions(int loadType)
 	SendMessage(&ILogAndActions,"l", LOG_REFRESH_PIC);
 }
 
+void Log_SetPermanentAction(string actionName)
+{
+	if(bMainMenu) return;
+	if(questMovieIsLockPlayerCtrl) return;
+	TEV.permanent_action = actionName;
+	Log_SetActiveAction(actionName);
+}
+
+void Log_DeletePermanentAction()
+{
+	if("permanent_action" in &TEV)
+		DeleteAttribute(&TEV, "permanent_action");
+	Log_SetActiveAction("Nothing");
+}
+
 void Log_SetActiveAction(string actionName)
 {
 	if(bMainMenu) return;
@@ -125,7 +140,8 @@ void Log_SetActiveAction(string actionName)
 	int iTextWidth;
 	int iKeyWidth = makeint(20 * fHtRatio);
 	int iTextOffset = makeint(5 * fHtRatio);
-	
+	if("permanent_action" in pchar && actionName == "Nothing")
+		actionName = pchar.permanent_action;
 	if(ILogAndActions.type=="sea" && g_ActiveActionName!=actionName)
 	{
 		// LDH 13Feb17 clear MoorName when leave moor location
@@ -373,7 +389,7 @@ void Notification(string strLog, string ability)
 	if(notificationsQty < 8)
 	{
 		notificationsQty++;
-		Notifications[notificationsQty].str = strLog;
+		Notifications[notificationsQty].str = noDot(strLog);
 		Notifications[notificationsQty].index = IconIndex;
 		Notifications[notificationsQty].lt = fLifeTime;
 		if(notificationsQty < 1) SetEventHandler("frame","PushNotification",0);

@@ -41,12 +41,12 @@ void Process_Controls(string ControlName)
 			break;
 
 			case "Sea_CameraSwitch":  
-				SeaCameras_Switch(); 
+				SeaCameras_Switch(ControlName); 
 				ControlsDesc(); 
 			break;
 			
 			case "FireCamera_Set":
-				SeaCameras_SetFireCamera();
+				SeaCameras_Switch(ControlName);
 			break;
 			
 			case "Ship_Fire": Ship_DoFire(); break;
@@ -88,6 +88,13 @@ void Process_Controls(string ControlName)
                 FLT_SendCommand(ControlName);
                 return;
             break;
+			case "hk_FireMode":
+				if (CheckOfficersPerkEnable("BeneathWaterline"))
+				{
+					ToggleFireMode();
+					ControlsDesc();
+				}
+			break;
 		}
 	}
 	else
@@ -226,6 +233,13 @@ void Process_Controls(string ControlName)
 
 	switch(ControlName)
 	{
+		case "FreeCam":
+			if (bSeaActive && !bAbordageStarted)
+				SeaCameras_Switch(ControlName);
+			else if (!IsEntity(&worldMap))
+				locCameraFreeSwitch();
+		break;
+			
 		case "CharacterCamera_Forward":
 			if(CheckAttribute(locCamera, "zoom.lock"))
 				break;
@@ -513,8 +527,8 @@ void Process_Controls(string ControlName)
 		case "ChrSwitchFightMode":
 			if(SendMessage(pchar, "ls", MSG_CHARACTER_EX_MSG, "IsValidChangeMode"))
 			{
-				if(MusketPriority(pchar)) notification(XI_ConvertString("Swordsman_mode_Note"), "None");
-				else notification(XI_ConvertString("Musketeer_mode_Note"), "None");
+				if(MusketPriority(pchar)) Notification(XI_ConvertString("Swordsman_mode_Note"), "None");
+				else Notification(XI_ConvertString("Musketeer_mode_Note"), "None");
 			}
 		break;
 		// boal -->
@@ -737,10 +751,9 @@ void Process_Controls(string ControlName)
 			}
 		break;
 		
-		case "Person_Say": // KEY_T
-			// Интерфейс отдыха
-			/*if(bLandInterfaceStart) // В "Мыслях вслух"
-				LaunchTavernWaitScreen();*/
+		case "Rest":
+            if (CheckRestAvailable(true)) LaunchTavernWaitScreen();
+            else Notification(XI_ConvertString("CannotWait"), "None");
 		break;
 			
 		case "Say": // KEY_Y
@@ -810,13 +823,6 @@ void Process_Controls(string ControlName)
                 //LaunchFrameForm();
         	}
         break;
-
-		case "FreeCam":
-			if(!bBettaTestMode) break;
-            locCameraEnableFree = !locCameraEnableFree;
-			if(locCameraEnableFree) Log_info("FreeCam On. Press TAB");
-			else Log_info("FreeCam Off");
-		break;
 		// boal <--		
 		// sith работа с ветром -->
 		case "WindAngleIncrease": // смена угла ветра +
@@ -862,8 +868,6 @@ void Process_Controls(string ControlName)
 	}
 }
 
-
-
 void HKT_Button(string sHKB) // быстрый переход
 {
 	int curLocIdx, i; 
@@ -902,13 +906,14 @@ void HKT_Button(string sHKB) // быстрый переход
 	}
 	// <--
 
-	if (GetAttributeInt(pchar, "WeightLoadLevel") > 0)
+	if (GetAttributeInt(pchar, "WeightLoadLevel") > OVERLOAD_NONE)
 	{
 		Log_info(XI_ConvertString("CharacterOverload"));
 		PlaySound("interface\knock.wav");
 		return;
 	}
 
+	if (STH_IsEnableFastReload(sCityID)) bOk = true;
 	if(bOk)
 	{
 		if (sHKB == "Fast_port")
@@ -1224,4 +1229,18 @@ int PtnNum()
 		if(CheckAttribute(pchar, "GenQuest.Potion_choice") && pchar.GenQuest.Potion_choice == sItem) return qty;
 	}
 	return qty;
+}
+
+void ToggleFireMode()
+{
+	string curMode, newMode;
+	curMode = GetFireMode(pchar);
+	switch(curMode)
+	{
+		case FIRE_MODE_RANDOM:		newMode = FIRE_MODE_DIRECT;		break;
+		case FIRE_MODE_DIRECT:		newMode = FIRE_MODE_REVERSE;	break;
+		case FIRE_MODE_REVERSE:		newMode = FIRE_MODE_RANDOM;		break;
+	}
+	SetFireMode(pchar, newMode);
+	BI_SetFireModeArrows();
 }

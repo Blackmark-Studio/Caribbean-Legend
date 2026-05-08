@@ -468,6 +468,7 @@ void ProcessDialogEvent()
 			dialog.text = "선임 선원이오. 그에 대해 잘 아는 건 없지만, 한 가지는 말할 수 있소. 모든 사람에게 비밀이 있다면, 알론소는 아예 묘지를 숨기고 있지.";
 			link.l1 = "그를 믿지 않는 것 같군.";
 			link.l1.go = "Captain_7_question_2_2";
+			AddCharacterSkillPoints(pchar, "Leadership", 1);
 		break;
 		
 				case "Captain_7_question_2_2":
@@ -487,6 +488,7 @@ void ProcessDialogEvent()
 			dialog.text = "아픈 데를 건드렸군, "+pchar.name+"! 내 아름다움에 대해라면 끝없이 이야기할 수 있지. 삼류, 20문, 엄청난 속도 — '상선'이라는 말에 속지 마!";
 			link.l1 = "총과 속도에 대해서는 이해했어. 그런데 '비율'? '상인'?";
 			link.l1.go = "Captain_7_question_3_2";
+			AddCharacterSkillPoints(pchar, "Sailing", 1);
 		break;
 		
 		case "Captain_7_question_3_2":

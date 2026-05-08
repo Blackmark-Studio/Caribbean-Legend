@@ -666,19 +666,14 @@ void ProcessDialogEvent()
 		break;
 
 	case "storage_5":
-		SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-		AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage));
-		NPChar.Storage.NoActivate = true;
-		DeleteAttribute(NPChar, "Storage.Activate");
+		LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
 		DialogExit();
-		break;
-
+	break;
+	
 	case "storage_6":
-		SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-		DeleteAttribute(NPChar, "Storage.Activate");
-		NPChar.Storage.NoActivate = true;
+		LeaveStorage(NPChar, rColony);
 		DialogExit();
-		break;
+	break;
 
 	case "business":
 		iTest = 0;
@@ -753,17 +748,6 @@ void ProcessDialogEvent()
 		}
 		// <-- генератор Место под солнцем
 
-		// navy -->
-		// занят ПГГ
-		iTmp = CheckAvailableTaskForNPC(NPChar, PGG_TASK_WORKONSTORE);
-		if (iTmp != -1)
-		{
-			dialog.text = "Tenía un trabajo, pero " + GetFullName(&Characters[iTmp]) + "ya se ha comprometido a hacerlo por mí.";
-			link.l1 = "¿Ah, de veras? Bueno, volveré más tarde, entonces.";
-			link.l1.go = "exit";
-			break;
-		}
-		// navy <--
 		dialog.text = NPCharRepPhrase(npchar, "¿Qué negocio? ¡Cuéntamelo todo!", "Estoy escuchando. ¿De qué trato hablas?");
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
 		if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)

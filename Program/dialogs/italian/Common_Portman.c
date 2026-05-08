@@ -3143,7 +3143,7 @@ void ProcessDialogEvent()
 			link.l1.go = "SeekShip_good_1";
 		break;
 		case "SeekShip_good_1":
-			dialog.text = "Sono pronto a pagarti la tua ricompensa. Consiste in " + makeint(sti(npchar.quest.money)) + " in doubloons. Purtroppo, non posso pagarti di più di così.";
+			dialog.text = "Sono pronto a pagarti la tua ricompensa. Consiste in " + sti(npchar.quest.money) + " in doubloons. Purtroppo, non posso pagarti di più di così.";
 			link.l1 = "Bene, è sufficiente. Grazie e cordiali saluti.";
 			link.l1.go = "exit";
 			TakeNItems(pchar, "gold_dublon", sti(npchar.quest.money));

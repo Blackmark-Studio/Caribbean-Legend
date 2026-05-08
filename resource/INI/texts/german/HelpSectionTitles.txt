@@ -1,9 +1,9 @@
+alarm_indicator {Alarmanzeige.}
+Dialog_window {Dialogfenster.}
+fast_commands {Aktueller Befehl im Schnellzugriff.}
+land_commands {Befehle für Landaktionen.}
+sea_aim {Zeigt den Schussbereich Ihrer Schiffskanonen.}
 sea_minimap {Navigations-Minikarte.}
 ship_commands {Befehle zur Steuerung Ihres Schiffes und der Schiffe Ihrer Gefährten.}
-fast_commands {Aktueller Befehl im Schnellzugriff.}
-sea_aim {Zeigt den Schussbereich Ihrer Schiffskanonen.}
-alarm_indicator {Alarmanzeige.}
-land_commands {Befehle für Landaktionen.}
-WorldMap_Date_Clock {Anzeige von Datum und Uhrzeit auf der Karte.}
 WorldMap_Compas {Kompass auf der Karte.}
-Dialog_window {Dialogfenster.}
+WorldMap_Date_Clock {Anzeige von Datum und Uhrzeit auf der Karte.}

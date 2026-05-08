@@ -648,6 +648,7 @@ int LocationInitPuertoRico(int n)
 	locations[n].image = "loading\Gate" + rand(1) + ".tga";
 	//Town sack
 	locations[n].townsack = "SanJuan";
+	locations[n].fastreload = "SanJuan";
 	//Sound
 	locations[n].type = "jungle";
 	locations[n].islandId = "PuertoRico";

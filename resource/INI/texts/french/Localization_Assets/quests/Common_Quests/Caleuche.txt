@@ -1,12 +1,4 @@
 Caleuche_1 {Tuttuathapak}
-Caleuche_2 { }
-Caleuche_3 {capitaine-mort-vivant}
-Caleuche_4 { }
-Caleuche_5 {Vaisseau fantôme}
-Caleuche_6 {Fergus}
-Caleuche_7 {Hooper}
-Caleuche_8 {Vous vous êtes échappé du vaisseau fantôme !}
-Caleuche_9 {Reginald}
 Caleuche_10 {Jackson}
 Caleuche_11 {Harpy}
 Caleuche_12 {xebec 'Harpy'}
@@ -17,6 +9,7 @@ Caleuche_16 { }
 Caleuche_17 {Esberto}
 Caleuche_18 {Salinas}
 Caleuche_19 {Les amulettes de Tuttuathapak ont perdu leur pouvoir !}
+Caleuche_2 { }
 Caleuche_20 {Appuyez sur 'T' pour utiliser}
 Caleuche_21 {Le portail est bloqué !}
 Caleuche_22 {Chef Chavinavy}
@@ -27,6 +20,7 @@ Caleuche_26 {Vaisseau fantôme à l’horizon !}
 Caleuche_27 {Baltazar}
 Caleuche_28 {de Cordes}
 Caleuche_29 { }
+Caleuche_3 {capitaine-mort-vivant}
 Caleuche_30 {Vous vous sentez plus agile}
 Caleuche_31 {Vous vous sentez plus robuste}
 Caleuche_32 {Vous vous sentez plus fort}
@@ -37,4 +31,10 @@ Caleuche_36 {Vous vous sentez inspiré}
 Caleuche_37 {Le vaisseau fantôme est à l’horizon !}
 Caleuche_38 {Vous vous êtes évanoui à cause de vos blessures...}
 Caleuche_39 { }
+Caleuche_4 { }
 Caleuche_40 { }
+Caleuche_5 {Vaisseau fantôme}
+Caleuche_6 {Fergus}
+Caleuche_7 {Hooper}
+Caleuche_8 {Vous vous êtes échappé du vaisseau fantôme !}
+Caleuche_9 {Reginald}

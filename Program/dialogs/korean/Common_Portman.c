@@ -3143,7 +3143,7 @@ void ProcessDialogEvent()
 			link.l1.go = "SeekShip_good_1";
 		break;
 		case "SeekShip_good_1":
-			dialog.text = "보상금을 줄 준비가 되었소. 그것은 다음과 같소\n " + makeint(sti(npchar.quest.money)) + " 도블론으로 드리겠소. 유감이지만, 그 이상은 드릴 수 없소.";
+			dialog.text = "보상금을 줄 준비가 되었소. 그것은 다음과 같소\n " + sti(npchar.quest.money) + " 도블론으로 드리겠소. 유감이지만, 그 이상은 드릴 수 없소.";
 			link.l1 = "자, 이만하면 됐소. 감사합니다, 그리고 안부 전하오.";
 			link.l1.go = "exit";
 			TakeNItems(pchar, "gold_dublon", sti(npchar.quest.money));

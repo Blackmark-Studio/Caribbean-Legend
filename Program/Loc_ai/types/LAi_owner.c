@@ -114,7 +114,7 @@ void LAi_type_owner_CharacterUpdate(aref chr, float dltTime)
 							if(chr.chr_ai.tmpl == LAI_TMPL_STAY)
 							{
 								//проверка на обнажёнку оружия -->
-								if (LAi_CheckFightMode(pchar))
+								if (LAi_CheckFightMode(pchar) != CHR_MODE_PEACE)
 								{
 									if (LAi_IsSetBale(chr))
 									{	//Нападаем

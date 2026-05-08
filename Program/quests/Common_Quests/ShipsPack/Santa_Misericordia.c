@@ -447,7 +447,7 @@ void SantaMisericordia_SpawnBranders()
 	SetShipSkill(sld, 30, 10, 10, 10, 100, 10, 10, 10, 10);
 	UpgradeShipParameter(sld, "SpeedRate");
 	UpgradeShipParameter(sld, "Capacity");
-	UpgradeShipParameter(sld, "WindAgainstSpeed");
+	UpgradeShipParameter(sld, "Rig");
 	UpgradeShipParameter(sld, "TurnRate");
 	
 	ref ship = GetRealShip(sld.ship.type);
@@ -474,7 +474,7 @@ void SantaMisericordia_SpawnBrander2(string sQuest)
 	SetShipSkill(sld, 30, 10, 10, 10, 100, 10, 10, 10, 10);
 	UpgradeShipParameter(sld, "SpeedRate");
 	UpgradeShipParameter(sld, "Capacity");
-	UpgradeShipParameter(sld, "WindAgainstSpeed");
+	UpgradeShipParameter(sld, "Rig");
 	UpgradeShipParameter(sld, "TurnRate");
 	
 	ref ship = GetRealShip(sld.ship.type);

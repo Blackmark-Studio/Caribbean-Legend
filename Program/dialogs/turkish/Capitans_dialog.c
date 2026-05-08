@@ -343,13 +343,13 @@ void ProcessDialogEvent()
                 dialog.text = "Neden olmasın? Açıkçası, biraz ara vermek hiç fena olmazdı...";
     			link.l1 = "Mükemmel.";
     			link.l1.go = "Cards_begin";
-    			link.l2 = "Kurallar neler?";
-    			link.l2.go = "Cards_Rule";
+    			// link.l2 = "Kurallar neler?";
+    			// link.l2.go = "Cards_Rule";
 			}
 		break;
 
 		case "Cards_Rule":
-   			dialog.text = CARDS_RULE;
+   			dialog.text = GlobalStringConvert("CARDS_RULE");
 			link.l1 = "Pekala, o zaman başlayalım!";
 			link.l1.go = "Cards_begin";
 			link.l3 = "Hayır, bu bana göre değil...";
@@ -434,8 +434,8 @@ void ProcessDialogEvent()
 					dialog.text = "Neden olmasın! Rahatlamak her zaman sağlığın için iyidir... ama cüzdanın için her zaman öyle değil...";
 	    			link.l1 = "Mükemmel.";
 	    			link.l1.go = "Dice_begin";
-	    			link.l2 = "Oyunumuzun kuralları neler?";
-	    			link.l2.go = "Dice_Rule";
+	    			// link.l2 = "Oyunumuzun kuralları neler?";
+	    			// link.l2.go = "Dice_Rule";
     			}
     			else
     			{
@@ -447,7 +447,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Dice_Rule":
-   			dialog.text = DICE_RULE;
+   			dialog.text = GlobalStringConvert("DICE_RULE");
 			link.l1 = "Pekala, o zaman başlayalım!";
 			link.l1.go = "Dice_begin";
 			link.l3 = "Hayır, bu bana göre değil...";

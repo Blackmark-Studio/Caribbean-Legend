@@ -868,19 +868,11 @@ int Event_CheckPowerRound()
 	return 1;
 }
 
-#event_handler("Event_CheckKneeShot","Event_CheckKneeShot");
-int Event_CheckKneeShot()
-{
-	aref attack = GetEventData();
-	if (attack.sex == "woman" || !HasPerk(&attack, "Drill")) return 0;
-	return 1;
-}
-
-
 #event_handler("Event_PerkCollection", "Event_PerkCollection")
 void Event_PerkCollection()
 {
 	if (!HasPerk(pchar, "Collection")) return;
+	if (IsEntity(&worldMap)) return;
 	if (!HasSubStr(pchar.location.from_sea, "town")) return;
 	ref location = &Locations[FindLocation(pchar.location.from_sea)];
 	ref colony = &Colonies[FindColony(location.fastreload)];

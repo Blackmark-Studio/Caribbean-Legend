@@ -1,0 +1,20 @@
+key {d24.04.2026}
+News {1.8 Maritime Update: open beta}
+News_Attention { }
+News_descr
+{
+***************************   Ahoy!   ***************************
+-------------------------------------------------------------------------------------------------
+— È disponibile la patch 1.8 Maritime Update
+— La versione 1.7.3 passa in archivio; puoi passare da una versione all’altra tramite Steam
+— Non è necessario iniziare una nuova partita
+— Il DLC Maritime Stories è disponibile
+— Nel gioco sono state aggiunte le Stagioni, che cambiano profondamente i Caraibi
+— Il tiro navale è stato rielaborato
+— Nuovo sistema di vele e angolo di rotta
+— Gli abbordaggi sono stati migliorati
+— È stata migliorata la comodità della mappa globale
+— L’IA navale è stata migliorata, rendendo le battaglie tra navi molto più coinvolgenti
+— Numerosi miglioramenti Quality of Life, modifiche al bilanciamento e bugfix
+— L’elenco dettagliato delle modifiche è disponibile nelle notizie tramite il pulsante qui sotto
+}

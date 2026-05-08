@@ -275,9 +275,18 @@ string GetTimeStringEx(int hour, int minute)
 	}
 	else
 	{
-		if(sti(sHour) > 12)
+		if(hour == 0)
 		{
-			sHour = (sti(sHour) - 12);
+			sHour = 12;
+			sAdd = " AM";
+		}
+		else if(hour == 12)
+		{
+			sAdd = " PM";
+		}
+		else if(hour > 12)
+		{
+			sHour = hour - 12;
 			sAdd = " PM";
 		}
 		else
@@ -606,6 +615,18 @@ ref CharacterFromID(string characterID)
     {
         return &NullCharacter;
     }
+}
+
+/* Получить персонажа по id или nullptr
+@param ignoreNotFound передаём `true`, если отсутствие результата поиска является ожидаемым поведением
+*/
+ref CharacterFromIDSafe(string characterID, bool ignoreNotFound = false)
+{
+	int i = GetCharacterIndex(characterID);
+	if (i >= 0) return &characters[i];
+
+	assert(ignoreNotFound, "Не найдет НПС с characterID = "+characterID);
+	return nullptr;
 }
 
 string sPostWaitName;

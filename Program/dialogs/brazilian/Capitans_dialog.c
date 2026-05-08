@@ -343,13 +343,13 @@ void ProcessDialogEvent()
                 dialog.text = "Por que não? Eu certamente não me importaria de fazer uma pausa...";
     			link.l1 = "Excelente.";
     			link.l1.go = "Cards_begin";
-    			link.l2 = "Quais são as regras?";
-    			link.l2.go = "Cards_Rule";
+    			// link.l2 = "Quais são as regras?";
+    			// link.l2.go = "Cards_Rule";
 			}
 		break;
 
 		case "Cards_Rule":
-   			dialog.text = CARDS_RULE;
+   			dialog.text = GlobalStringConvert("CARDS_RULE");
 			link.l1 = "Então, vamos começar, né!";
 			link.l1.go = "Cards_begin";
 			link.l3 = "Não, não é pra mim...";
@@ -434,8 +434,8 @@ void ProcessDialogEvent()
 					dialog.text = "Por que não! Relaxar sempre faz bem à saúde... mas nem sempre ao bolso...";
 	    			link.l1 = "Excelente.";
 	    			link.l1.go = "Dice_begin";
-	    			link.l2 = "Quais são as regras do nosso jogo?";
-	    			link.l2.go = "Dice_Rule";
+	    			// link.l2 = "Quais são as regras do nosso jogo?";
+	    			// link.l2.go = "Dice_Rule";
     			}
     			else
     			{
@@ -447,7 +447,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Dice_Rule":
-   			dialog.text = DICE_RULE;
+   			dialog.text = GlobalStringConvert("DICE_RULE");
 			link.l1 = "Então, vamos começar!";
 			link.l1.go = "Dice_begin";
 			link.l3 = "Não, não é pra mim...";

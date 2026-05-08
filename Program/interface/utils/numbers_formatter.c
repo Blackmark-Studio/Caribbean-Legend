@@ -69,7 +69,7 @@ string ToHumanModifier(ref number_string)
 {
 	string sNumber = ToHumanNumber(number_string);
 	float number = stf(sNumber);
-	if (number > 0) sNumber = "+ " + sNumber;
+	if (number > 0) sNumber = "+" + sNumber;
 	// else if (number < 0) sNumber = "- " + sNumber;
 	return sNumber;
 }
@@ -79,7 +79,7 @@ string ToHumanModifierPercent(ref number_string)
 {
 	string sNumber = ToHumanPercent(number_string);
 	float number = stf(sNumber);
-	if (number > 0) sNumber = "+ " + sNumber;
+	if (number > 0) sNumber = "+" + sNumber;
 	// else if (number < 0) sNumber = "- " + sNumber;
 	return sNumber;
 }

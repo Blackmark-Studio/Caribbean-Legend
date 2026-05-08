@@ -280,19 +280,8 @@ void UpdateRelations()
 		return;
 	}
 	// belamour обновить стелс после смены флага
-	if(IsEntity(&locCamera) && !bAbordageStarted)
+	if (IsEntity(&locCamera) && !bAbordageStarted)
 	{
-		StealthEnable = false;
-		if(CheckAttribute(loadedLocation,"soldiers"))
-		{
-			if(CheckAttribute(loadedLocation,"fastreload") && CheckAttribute(&Colonies[FindColony(loadedLocation.fastreload)],"nation"))
-			{
-				StealthNat = Colonies[FindColony(loadedLocation.fastreload)].nation;
-				if(GetNationRelation2MainCharacter(StealthNat) == RELATION_ENEMY || GetNationRelation(StealthNat, GetBaseHeroNation()) == RELATION_ENEMY)
-					StealthEnable = true;
-				if(GetRelation2BaseNation(StealthNat) == RELATION_ENEMY) StealthEnable = true;
-			}
-		}
-		return;
+		UpdateStealthParams(loadedLocation);
 	}
 }

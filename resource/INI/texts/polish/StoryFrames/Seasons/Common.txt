@@ -1,0 +1,4 @@
+Description {Sezony dzielą rok gry na części i nakładają potężne efekty globalne, działające przez cały czas trwania sezonu. Każdy Sezon jest wyjątkowy i zmienia się z roku na rok.}
+effects_title {Efekty sezonu}
+effects_current_title {Efekty bieżącego sezonu}
+additional_effects_title {Dodatkowe efekty sezonu}

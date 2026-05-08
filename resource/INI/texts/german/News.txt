@@ -1,18 +1,20 @@
-News {Patch 1.7}
+key {d24.04.2026}
+News {1.8 Maritime Update: Open Beta}
+News_Attention { }
 News_descr
 {
 ***************************   Ahoi!   ***************************
 -------------------------------------------------------------------------------------------------
-— Willkommen bei Version 1.7!
-— Der vierte Teil der „Ships Pack"-DLC-Serie ist erschienen
-— Ihr könnt frei zwischen Versionen über Steam wechseln
+— Patch 1.8 Maritime Update ist jetzt verfügbar
+— Version 1.7.3 wandert ins Archiv; ihr könnt über Steam zwischen den Versionen wechseln
 — Kein neues Spiel erforderlich
-— Speicherstände wurden überarbeitet und verbessert
-— Neue Stadtinfiltrations- und Schleichmechaniken
-— KI kämpft besser an Land
-— Epilog, Verbesserungen der Lebensqualität und mehr
-— Den detaillierten Änderungsprotokoll findet ihr in den Neuigkeiten über den Button unten
+— Das DLC Maritime Stories ist verfügbar
+— Jahreszeiten wurden dem Spiel hinzugefügt und verändern die Karibik spürbar
+— Der Seekampf mit Kanonen wurde überarbeitet
+— Neues Segel- und Kurswinkelsystem
+— Entergefechte wurden verbessert
+— Die Bedienung der Weltkarte wurde verbessert
+— Die Schiffs-KI wurde verbessert, wodurch Kämpfe zwischen Schiffen deutlich spannender geworden sind
+— Zahlreiche Quality-of-Life-Verbesserungen, Balance-Anpassungen und Bugfixes
+— Die vollständige Liste der Änderungen findet ihr über den Button unten in den News
 }
-News_Attention { }
-
-key {31.01.2026} 

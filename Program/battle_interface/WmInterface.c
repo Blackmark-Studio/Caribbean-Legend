@@ -16,6 +16,8 @@ void InitWmInterface()
 	SetEventHandler("BI_LaunchCommand","WM_LaunchCommand",0);
 	SetEventHandler("WM_SetPossibleCommands","WM_SetPossibleCommands",0);
 	SetEventHandler("WM_UpdateCurrentAction","WM_UpdateCurrentAction",0);
+	
+	SetEventHandler("BI_GetChargeQuantity","BI_GetChargeQuantity",0);
 
 	CreateILogAndActions(LOG_FOR_WORLDMAP);
 	Log_SetActiveAction("EnterToSea");
@@ -23,6 +25,9 @@ void InitWmInterface()
 	SetEventHandler("BI_UpdateWmInterface","BI_UpdateWmInterface",0);
 	PostEvent("BI_UpdateWmInterface",1000);
 	SetEventHandler("Control Activation","WM_ProcessControlPress",0); // boal
+	
+	wdmSetInterfaceParams();
+	SendMessage(&worldMap, "l", MSG_WORLDMAP_INTERFACE_UPDATE);
 }
 // boal -->
 void WM_ProcessControlPress()
@@ -53,6 +58,8 @@ void DeleteWmInterface()
 	DelEventHandler("BI_LaunchCommand", "WM_LaunchCommand");
 	DelEventHandler("WM_SetPossibleCommands","WM_SetPossibleCommands");
 	DelEventHandler("WM_UpdateCurrentAction","WM_UpdateCurrentAction");
+	
+	DelEventHandler("BI_GetChargeQuantity","BI_GetChargeQuantity");
 
 	DelEventHandler("BI_UpdateWmInterface","BI_UpdateWmInterface");
 	DelEventHandler("Control Activation","WM_ProcessControlPress"); // boal
@@ -68,6 +75,9 @@ ref WM_CommandEndChecking()
 	{
 	case "cancel":
 		BI_retComValue = -1;
+		break;
+	case "Charge":
+		BI_retComValue = BI_COMMODE_CANNON_CHARGE;
 		break;
 	}
 
@@ -98,23 +108,46 @@ void WM_LaunchCommand()
 
 	switch(commandName)
 	{
-	case "EnterToSea":
-		SendMessage(&worldMap,"l",MSG_WORLDMAP_LAUNCH_EXIT_TO_SEA);
+		case "EnterToSea":
+			SendMessage(&worldMap,"l",MSG_WORLDMAP_LAUNCH_EXIT_TO_SEA);
 		break;
-	case "EnterToIsland":
-		SendMessage(&worldMap,"l",MSG_WORLDMAP_LAUNCH_EXIT_TO_SEA);
+		case "EnterToIsland":
+			SendMessage(&worldMap,"l",MSG_WORLDMAP_LAUNCH_EXIT_TO_SEA);
 		break;
-	case "EnterToShip":
-		SendMessage(&worldMap,"l",MSG_WORLDMAP_LAUNCH_EXIT_TO_SEA);
+		case "EnterToShip":
+			SendMessage(&worldMap,"l",MSG_WORLDMAP_LAUNCH_EXIT_TO_SEA);
 		break;
-	case "EnterToStorm":
-		SendMessage(&worldMap,"l",MSG_WORLDMAP_LAUNCH_EXIT_TO_SEA);
+		case "EnterToStorm":
+			SendMessage(&worldMap,"l",MSG_WORLDMAP_LAUNCH_EXIT_TO_SEA);
 		break;
-	case "EnterToAttack":
-		SendMessage(&worldMap,"l",MSG_WORLDMAP_LAUNCH_EXIT_TO_SEA);
+		case "EnterToAttack":
+			SendMessage(&worldMap,"l",MSG_WORLDMAP_LAUNCH_EXIT_TO_SEA);
 		break;
-	case "EnterToEnemy":
-		SendMessage(&worldMap,"l",MSG_WORLDMAP_LAUNCH_EXIT_TO_SEA);
+		case "EnterToEnemy":
+			SendMessage(&worldMap,"l",MSG_WORLDMAP_LAUNCH_EXIT_TO_SEA);
+		break;
+		case "Charge":
+			int chargeType = GOOD_BALLS;
+			switch(targetNum)
+			{
+				case 1:
+					PlaySound("interface\" + LanguageGetLanguage() + "\_balls.wav");
+					chargeType = GOOD_BALLS;
+				break;
+				case 2:
+					PlaySound("interface\" + LanguageGetLanguage() + "\_grapes.wav");
+					chargeType = GOOD_GRAPES;
+				break;
+				case 3:
+					PlaySound("interface\" + LanguageGetLanguage() + "\_chain.wav");
+					chargeType = GOOD_KNIPPELS;
+				break;
+				case 4:
+					PlaySound("interface\" + LanguageGetLanguage() + "\_bombs.wav");
+					chargeType = GOOD_BOMBS;
+				break;
+			}
+			Ship_ChangeCharge(chRef, chargeType);
 		break;
 	}
 
@@ -140,13 +173,13 @@ void WM_SetPossibleCommands()
 		return;
 	}
 
-	BattleInterface.Commands.Cancel.enable = true;
 	BattleInterface.Commands.EnterToAttack.enable = false;
 	BattleInterface.Commands.EnterToShip.enable	= false;
 	BattleInterface.Commands.EnterToSea.enable = false;
 	BattleInterface.Commands.EnterToIsland.enable = false;
 	BattleInterface.Commands.EnterToStorm.enable = false;
 	BattleInterface.Commands.EnterToEnemy.enable = false;
+	BattleInterface.Commands.Charge.enable = true;
 
 	bool bDefault = true;
 	switch( sti(worldMap.encounter_type) )
@@ -281,6 +314,13 @@ void WM_InitializeCommands()
 	BattleInterface.Commands.EnterToEnemy.texNum		= 1;
 	BattleInterface.Commands.EnterToEnemy.event			= "EnterToEnemy";
 	BattleInterface.Commands.EnterToEnemy.note			= LanguageConvertString(idLngFile, "worldmap_toenemy");
+	
+	BattleInterface.Commands.Charge.enable				= true;
+	BattleInterface.Commands.Charge.picNum				= 17;
+	BattleInterface.Commands.Charge.selPicNum			= 1;
+	BattleInterface.Commands.Charge.texNum				= 2;
+	BattleInterface.Commands.Charge.event				= "Charge";
+	BattleInterface.Commands.Charge.note				= LanguageConvertString(idLngFile, "sea_Charge");
 
 	BattleInterface.Commands.Cancel.enable				= false;
 	BattleInterface.Commands.Cancel.picNum				= 1;
@@ -305,6 +345,21 @@ void WM_SetParameterData()
 	BattleInterface.CommandTextures.list.t1.name = "interfaces\le\battle_interface\worldmapcommands.tga.tx";
 	BattleInterface.CommandTextures.list.t1.xsize = 8;
 	BattleInterface.CommandTextures.list.t1.ysize = 2;
+	
+	BattleInterface.CommandTextures.list.t2.name = "interfaces\le\battle_interface\list_icons.tga.tx";
+	BattleInterface.CommandTextures.list.t2.xsize = 16;
+	BattleInterface.CommandTextures.list.t2.ysize = 8;
+	
+	BattleInterface.charge.charge1.picNum = 19; // balls
+	BattleInterface.charge.charge1.selPicNum = 3;
+	BattleInterface.charge.charge2.picNum = 18; // grapes
+	BattleInterface.charge.charge2.selPicNum = 2;
+	BattleInterface.charge.charge3.picNum = 21; // "knippels"
+	BattleInterface.charge.charge3.selPicNum = 5;
+	BattleInterface.charge.charge4.picNum = 20; // bombs
+	BattleInterface.charge.charge4.selPicNum = 4;
+
+	BattleInterface.CommandTextures.ChargeTexNum = 2;
 
 	float fRes = 1.0; // для ресайза компаньонов
 	BattleInterface.wm_sign.fontid					= "interface_normal";
@@ -459,7 +514,16 @@ void WM_SetParameterData()
 	
 	// evganat - динамический интерфейс
 	WM_SetNationsThreat();
-
+	WM_SetSeasonsBase();
+	WM_SetSeasonsData();
+	WM_SetDateBase();
+	WM_SetDateInfo();
+	WM_SetSuppliesBase();
+	WM_SetSuppliesData();
+	WM_SetCoordinatesBase();
+	WM_SetFlagBase();
+	WM_SetFlagData();
+	
 	WM_SetShipData();
 }
 
@@ -517,9 +581,16 @@ void GetStarProgressByValue(int n, ref rLeft, ref rTop, ref rRight, ref rBottom)
 
 void WM_NullNationsThreat()
 {
-	DeleteAttribute(&BattleInterface, "wm_dynamic.images");
-//	BattleInterface.wm_dynamic.images.backtexture.group = "TUTORIAL_BACK";
-//	BattleInterface.wm_dynamic.images.backtexture.picture = "background";
+	DeleteAttribute(&BattleInterface, "wm_dynamic.images.englandflag");
+	DeleteAttribute(&BattleInterface, "wm_dynamic.images.englandthreat");
+	DeleteAttribute(&BattleInterface, "wm_dynamic.images.franceflag");
+	DeleteAttribute(&BattleInterface, "wm_dynamic.images.francethreat");
+	DeleteAttribute(&BattleInterface, "wm_dynamic.images.spainflag");
+	DeleteAttribute(&BattleInterface, "wm_dynamic.images.spainthreat");
+	DeleteAttribute(&BattleInterface, "wm_dynamic.images.hollandflag");
+	DeleteAttribute(&BattleInterface, "wm_dynamic.images.hollandthreat");
+	DeleteAttribute(&BattleInterface, "wm_dynamic.images.pirateflag");
+	DeleteAttribute(&BattleInterface, "wm_dynamic.images.piratethreat");
 	BattleInterface.wm_dynamic.images.englandflag.group = "message_icons";
 	BattleInterface.wm_dynamic.images.englandflag.picture = "england";
 	BattleInterface.wm_dynamic.images.englandthreat.group = "message_icons";
@@ -578,12 +649,7 @@ void WM_SetNationsThreat()
 	x1 = centerH - backwidth / 2;
 	x2 = x1 + backwidth;
 	
-	// выставляем задник
 	aref arImage;
-//	makearef(arImage, BattleInterface.wm_dynamic.images.backtexture);
-//	arImage.pos = GetPosString(x1, y1, x2, y2);
-	if(nLevels == 0)
-		DeleteAttribute(&BattleInterface, "wm_dynamic.images.backtexture");
 	
 	// выставляем флаги и значки угрозы
 	string sFlag, sThreat, sNation;
@@ -616,6 +682,284 @@ void WM_SetNationsThreat()
 			iFlag++;
 		}
 	}
+}
+
+void WM_SetSeasonsBase()
+{
+	float fHtRatio = float(Render.screen_y) / iHudScale;
+	int cx1 = int(showWindow.right) - int(203.0 * fHtRatio);
+	int cx2 = int(showWindow.right) - int(22.0 * fHtRatio);
+	int cy = int(showWindow.top) + int(174.0 * fHtRatio);
+	int width = int(25 * fHtRatio);
+	int width_back = int(35 * fHtRatio);
+	int x1, y1, x2, y2;
+	
+	aref arImage;
+	makearef(arImage, BattleInterface.wm_dynamic.images.season_cur_back);
+	arImage.group = "seasons_icons";
+	arImage.picture = "back";
+	x1 = cx1 - width_back / 2;
+	x2 = cx1 + width_back / 2;
+	y1 = cy - width_back / 2;
+	y2 = cy + width_back / 2;
+	arImage.pos = GetPosString(x1, y1, x2, y2);
+
+	makearef(arImage, BattleInterface.wm_dynamic.images.season_cur);
+	x1 = cx1 - width / 2;
+	x2 = cx1 + width / 2;
+	y1 = cy - width / 2;
+	y2 = cy + width / 2;
+	arImage.pos = GetPosString(x1, y1, x2, y2);
+	
+	makearef(arImage, BattleInterface.wm_dynamic.images.season_next_back);
+	arImage.group = "seasons_icons";
+	arImage.picture = "back";
+	x1 = cx2 - width_back / 2;
+	x2 = cx2 + width_back / 2;
+	y1 = cy - width_back / 2;
+	y2 = cy + width_back / 2;
+	arImage.pos = GetPosString(x1, y1, x2, y2);
+	
+	makearef(arImage, BattleInterface.wm_dynamic.images.season_next);
+	x1 = cx2 - width / 2;
+	x2 = cx2 + width / 2;
+	y1 = cy - width / 2;
+	y2 = cy + width / 2;
+	arImage.pos = GetPosString(x1, y1, x2, y2);
+}
+
+void WM_SetSeasonsData()
+{
+	aref arImage;
+	makearef(arImage, BattleInterface.wm_dynamic.images.season_cur);
+	arImage.group = "seasons_icons";
+	arImage.picture = SZN_SeasonForNow();
+	
+	makearef(arImage, BattleInterface.wm_dynamic.images.season_next);
+	arImage.group = "seasons_icons";
+	arImage.picture = SZN_NextSeason() + "_next";
+}
+
+void WM_SetDateBase()
+{
+	float fHtRatio = float(Render.screen_y) / iHudScale;
+	int cx = sti(showWindow.right) - int(114 * fHtRatio);
+	int cy = sti(showWindow.top) + int(240 * fHtRatio);
+	aref arText;
+	makearef(arText, BattleInterface.wm_dynamic.texts.date);
+	arText.pos.x = cx;
+	arText.pos.y = cy;
+	arText.font = "interface_normal_bold";
+	arText.scale = 0.7 * fHtRatio;
+	arText.color = argb(255,255,255,255);
+	arText.align = "center";
+}
+
+void WM_SetDateInfo()
+{
+	aref arText;
+	makearef(arText, BattleInterface.wm_dynamic.texts.date);
+	arText.text = GetDateString();
+}
+
+void WM_SetSuppliesBase()
+{
+	float fHtRatio = float(Render.screen_y) / iHudScale;
+	int cx1 = sti(showWindow.right) - int(174.0 * fHtRatio);
+	int cx2 = cx1 + int(60.0 * fHtRatio);
+	int cx3 = cx2 + int(60.0 * fHtRatio);
+	int cy = sti(showWindow.top) + int(300.0 * fHtRatio);
+	int width_back = int(46 * fHtRatio);
+	int width = int(40 * fHtRatio);
+	int x1, y1, x2, y2;
+	y1 = cy - width / 2;
+	y2 = cy + width / 2;
+	
+	aref arImage;
+	
+	makearef(arImage, BattleInterface.wm_dynamic.images.food_back);
+	arImage.group = "ICON_BACK";
+	arImage.picture = "back";
+	x1 = cx1 - width_back / 2;
+	x2 = cx1 + width_back / 2;
+	y1 = cy - width_back / 2;
+	y2 = cy + width_back / 2;
+	arImage.pos = GetPosString(x1, y1, x2, y2);
+	
+	makearef(arImage, BattleInterface.wm_dynamic.images.food);
+	arImage.group = "SUPPLIES_ICONS";
+	arImage.picture = "Food";
+	x1 = cx1 - width / 2;
+	x2 = cx1 + width / 2;
+	y1 = cy - width / 2;
+	y2 = cy + width / 2;
+	arImage.pos = GetPosString(x1, y1, x2, y2);
+	
+	makearef(arImage, BattleInterface.wm_dynamic.images.rum_back);
+	arImage.group = "ICON_BACK";
+	arImage.picture = "back";
+	x1 = cx2 - width_back / 2;
+	x2 = cx2 + width_back / 2;
+	y1 = cy - width_back / 2;
+	y2 = cy + width_back / 2;
+	arImage.pos = GetPosString(x1, y1, x2, y2);
+	
+	makearef(arImage, BattleInterface.wm_dynamic.images.rum);
+	arImage.group = "SUPPLIES_ICONS";
+	arImage.picture = "Rum";
+	x1 = cx2 - width / 2;
+	x2 = cx2 + width / 2;
+	y1 = cy - width / 2;
+	y2 = cy + width / 2;
+	arImage.pos = GetPosString(x1, y1, x2, y2);
+	
+	makearef(arImage, BattleInterface.wm_dynamic.images.medicament_back);
+	arImage.group = "ICON_BACK";
+	arImage.picture = "back";
+	x1 = cx3 - width_back / 2;
+	x2 = cx3 + width_back / 2;
+	y1 = cy - width_back / 2;
+	y2 = cy + width_back / 2;
+	arImage.pos = GetPosString(x1, y1, x2, y2);
+	
+	makearef(arImage, BattleInterface.wm_dynamic.images.medicament);
+	arImage.group = "SUPPLIES_ICONS";
+	arImage.picture = "Medicament";
+	x1 = cx3 - width / 2;
+	x2 = cx3 + width / 2;
+	y1 = cy - width / 2;
+	y2 = cy + width / 2;
+	arImage.pos = GetPosString(x1, y1, x2, y2);
+	
+	aref arText;
+	cy = y2 + int(5 * fHtRatio);
+	
+	makearef(arText, BattleInterface.wm_dynamic.texts.food);
+	arText.pos.x = cx1;
+	arText.pos.y = cy;
+	arText.font = "interface_normal";
+	arText.scale = 1.3 * fHtRatio;
+	arText.color = argb(255,255,255,255);
+	arText.align = "center";
+	
+	makearef(arText, BattleInterface.wm_dynamic.texts.rum);
+	arText.pos.x = cx2;
+	arText.pos.y = cy;
+	arText.font = "interface_normal";
+	arText.scale = 1.3 * fHtRatio;
+	arText.color = argb(255,255,255,255);
+	arText.align = "center";
+	
+	makearef(arText, BattleInterface.wm_dynamic.texts.medicament);
+	arText.pos.x = cx3;
+	arText.pos.y = cy;
+	arText.font = "interface_normal";
+	arText.scale = 1.3 * fHtRatio;
+	arText.color = argb(255,255,255,255);
+	arText.align = "center";
+}
+
+void WM_SetSuppliesData()
+{
+	int food, rum, medicament;
+	CalculateSupplies(&food, &rum, &medicament);
+	aref arText;
+	makearef(arText, BattleInterface.wm_dynamic.texts.food);
+	arText.text = food;
+	makearef(arText, BattleInterface.wm_dynamic.texts.rum);
+	arText.text = rum;
+	makearef(arText, BattleInterface.wm_dynamic.texts.medicament);
+	arText.text = medicament;
+}
+
+void WM_SetCoordinatesBase()
+{
+	float fHtRatio = float(Render.screen_y) / iHudScale;
+	int cx = sti(showWindow.right) - int(114 * fHtRatio);
+	int cy = sti(showWindow.top) + int(400 * fHtRatio);
+	int width = int(200 * fHtRatio);
+	int height = int(80 * fHtRatio);
+	int cy1 = cy - (4 * height) / 10;
+	int cy2 = cy1 + (3 * height) / 10;
+	int cy3 = cy2 + height / 4;
+	int x1, y1, x2, y2;
+	
+	aref arImage, arText;
+	
+	makearef(arImage, BattleInterface.wm_dynamic.images.coord_back);
+	arImage.texture = "interfaces\le\battle_interface\worldmap\coord.tga.tx";
+	arImage.uv = "0.0,0.0,1.0,1.0";
+	x1 = cx - width / 2;
+	x2 = cx + width / 2;
+	y1 = cy - height / 2;
+	y2 = cy + height / 2;
+	arImage.pos = GetPosString(x1, y1, x2, y2);
+	
+	makearef(arText, BattleInterface.wm_dynamic.texts.area);
+	arText.pos.x = cx;
+	arText.pos.y = cy1;
+	arText.font = "interface_normal";
+	arText.scale = 1.1 * fHtRatio;
+	arText.color = argb(255,255,255,255);
+	arText.align = "center";
+	
+	makearef(arText, BattleInterface.wm_dynamic.texts.coord_title);
+	arText.pos.x = cx;
+	arText.pos.y = cy2;
+	arText.font = "interface_normal";
+	arText.scale = 1.1 * fHtRatio;
+	arText.color = argb(255,255,255,255);
+	arText.align = "center";
+	arText.text = XI_ConvertString("Coordinates");
+	
+	makearef(arText, BattleInterface.wm_dynamic.texts.coord);
+	arText.pos.x = cx;
+	arText.pos.y = cy3;
+	arText.font = "interface_normal";
+	arText.scale = 1.1 * fHtRatio;
+	arText.color = argb(255,255,255,255);
+	arText.align = "center";
+}
+
+void WM_SetCoordinatesData(string sCoordinates)
+{
+	aref arText;
+	makearef(arText, BattleInterface.wm_dynamic.texts.coord);
+	arText.text = sCoordinates;
+}
+
+void WM_SetShipAreaInfo(string sArea)
+{
+	aref arText;
+	makearef(arText, BattleInterface.wm_dynamic.texts.area);
+	arText.text = sArea;
+}
+
+void WM_SetFlagBase()
+{
+	float fHtRatio = float(Render.screen_y) / iHudScale;
+	int cx = sti(showWindow.right) - int(114 * fHtRatio);
+	int cy = sti(showWindow.top) + int(490 * fHtRatio);
+	int width = int(80 * fHtRatio);
+	int height = int(80 * fHtRatio);
+	int x1, y1, x2, y2;
+	x1 = cx - width / 2;
+	x2 = x1 + width;
+	y1 = cy - height / 2;
+	y2 = y1 + height;
+	
+	aref arImage;
+	makearef(arImage, BattleInterface.wm_dynamic.images.flag);
+	arImage.pos = GetPosString(x1, y1, x2, y2);
+}
+
+void WM_SetFlagData()
+{
+	string sPicture = Nations[int(pchar.nation)].name;
+	aref arImage;
+	makearef(arImage, BattleInterface.wm_dynamic.images.flag);
+	arImage.group = "NATIONS";
+	arImage.picture = sPicture;
 }
 
 string GetPosString(int x1, int y1, int x2, int y2)

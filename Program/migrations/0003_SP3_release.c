@@ -49,7 +49,6 @@ void MementoReinit()
 	refship.SpeedDependWeight			= 0.27;
 	refship.SubSeaDependWeight			= 0.6;
 	refship.TurnDependWeight			= 0.3;
-	refship.WindAgainstSpeed   			= 0.65;
 	
 	refship.CabinType          			= "Cabin_memento";
 	refship.DeckType           			= "memento";

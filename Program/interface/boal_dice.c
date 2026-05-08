@@ -261,7 +261,7 @@ void ShowInfoWindow()
 	sText2 = XI_ConvertString("RulesDice2");
 	sText3 = XI_ConvertString("RulesDice3");
 	
-	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false);
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false, false);
 }
 
 void HideInfoWindow()

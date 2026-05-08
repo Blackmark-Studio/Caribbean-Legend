@@ -1,0 +1,46 @@
+Node0_a {Inizia la stagione primaverile. Le ultime settimane di tempo secco sono il momento ideale per raccogliere i prodotti coloniali, soprattutto la canna. L'attività delle correnti e la forza degli alisei si avvicinano al picco, e i Caraibi si riempiono di commercio.$br$redMigliaia di schiavi vengono portati dall'Africa su navi sovraffollate, mentre numerosi convogli carichi di spezie, legname e tabacco partono giorno e notte verso le colonie capitali.}
+Node0_a_action {Tempo di profitto!}
+Node0_b_a {Le piantagioni lavorano senza sosta. La canna viene tagliata dall'alba al tramonto, il tabacco asciuga in file serrate sotto le tettoie, e nei cortili costieri mogano e guaiaco giacciono in cataste, pronti per la spedizione. Presto nei porti non ci si muoverà più dalla folla di chi vuole arricchirsi, e le navi mercantili riempiranno il Mar dei Caraibi.}
+Node0_b_a_reaction {Il commercio è la mia passione!}
+Node0_b_a_reaction_log {Sapete esattamente dove si trovano le piantagioni più produttive e i magazzini più capienti. Non vi sarà difficile ottenere più merce da vendere di chiunque altro.}
+Node0_b_b {Quest'anno le isole danno un raccolto particolarmente ricco. Le caldaie dello zucchero fumano senza sosta, i capanni del tabacco sono stracolmi e sulla riva sono allineati tronchi di mogano ed ebano. Il commercio è così impetuoso che i porti sembrano un unico immenso magazzino. I convogli partono carichi fino all'orlo, ma la merce continua comunque ad arrivare più in fretta di quanto riescano a portarla via. In queste condizioni i venditori sono costretti a lottare letteralmente per ogni compratore.}
+Node0_b_b_reaction {L'abito fa il monaco}
+Node0_b_b_reaction_log {Vi conoscono e vi rispettano in tutti i porti e in tutti i negozi. Non importa come abbiate conquistato la vostra fama: a un capitano famoso si cerca sempre di offrire le condizioni migliori.}
+Node0_b_c {Le ultime due settimane della Stagione della Corona sono state insolitamente secche e calde, e su diverse isole sono scoppiati incendi. Erba secca e canna hanno preso fuoco all'istante, e parte del raccolto è andata in fumo prima ancora della lavorazione. Non tutti i capanni del tabacco si sono salvati, e diversi magazzini di legname sono bruciati insieme ai moli. Questo ha ridotto sensibilmente la quantità di merci coloniali nelle colonie e ha colpito il commercio.}
+Node0_b_c_reaction {Comprate adesso o mai più!}
+Node0_b_c_reaction_log {Decidete di approfittare del panico generale per vendere le merci a un prezzo più alto nelle colonie capitali. Le notizie viaggiano lentamente: nessuno saprà se alimenterete un po' il panico...}
+Node0_b_d {In inverno le potenze avevano accumulato scorte in previsione di una guerra, ma in primavera la tensione è calata. I magazzini si sono ritrovati pieni di seta olandese, corde russe e barili di pece. Una parte delle riserve è stata messa in vendita per non tenere il denaro pubblico fermo in merci inattive, e così nei negozi coloniali si possono trovare inaspettatamente alcuni beni strategici.}
+Node0_b_d_reaction {Forse si trova ancora qualcosa?}
+Node0_b_d_reaction_log {I vostri registri contabili sono pieni di annotazioni su ogni colonia, inserite con pazienza nel corso di molti mesi. Sapete esattamente dove e da chi si può ancora ottenere una scorta extra di merci, persino strategiche. Resta solo da fare pressione.}
+Node0_c_a {I recenti successi delle potenze coloniali in Africa hanno permesso di importare partite di schiavi particolarmente grandi, il che accelererà notevolmente la produzione in tutte le colonie. Piantagioni, miniere e tenute riverseranno presto sul mercato tonnellate di merci, e i mercanti si preparano già al calo dei prezzi.}
+Node0_c_a_reaction {Compra, compra!}
+Node0_c_a_reaction_log {Conoscete le basi del commercio e sapete bene che, se qualcosa viene venduto a poco, bisogna comprarne di più. Con il pretesto degli acquisti all'ingrosso, intendete far scendere i prezzi.}
+Node0_c_b {In Brasile è scoppiata all'improvviso una rivolta, e le forniture verso l'Europa sono state interrotte. Le metropoli hanno reagito immediatamente, volgendo lo sguardo ai Caraibi. I tentativi di compensare la carenza hanno provocato una forte crescita della domanda di merci provenienti dalle colonie caraibiche. Le cambiali per l'acquisto delle partite arrivano senza sosta, promettendo un aumento del divario di prezzo a ogni traversata dell'Atlantico. Se ci si rifornisce bene nelle colonie produttrici, si può fare una fortuna in una sola stagione.}
+Node0_c_b_reaction {Una nave in più non guasta}
+Node0_c_b_reaction_log {Siete un negoziante esperto e rispettato, e sapete perfettamente come aumentare ancora di più il divario di prezzo tra le colonie produttrici e quelle capitali. Il tempo e la mancanza di informazioni giocheranno soltanto a vostro favore.}
+Node0_c_c {I Caraibi sono scossi da una notizia proveniente dall'Europa: a corte è esplosa una nuova passione per i dolci. Ai ricevimenti si servono caffè e cioccolata, i banchetti si concludono con frutta candita e sciroppi, e nessun nobile che si rispetti vuole sembrare tirchio. Lo zucchero si vende più in fretta di quanto riesca ad arrivare. Le case mercantili ricevono ordini vantaggiosi e acquistano in anticipo le partite nelle colonie capitali, senza aspettare la vendita libera.}
+Node0_c_c_reaction {Vendi, vendi!}
+Node0_c_c_reaction_log {Quando la domanda esplode, non basta semplicemente vendere la merce: bisogna convincere tutti che la vostra è la migliore. Da commerciante esperto, saprete mettere facilmente in risalto il vostro vantaggio sulla concorrenza.}
+Node0_c_d {Una delle più grandi case commerciali europee è crollata sotto il peso dei debiti. Il panico ha attraversato le metropoli ed è arrivato fino ai porti dei Caraibi. Banchieri e usurai hanno irrigidito bruscamente le condizioni del credito e cercano di accumulare riserve d'argento offrendo condizioni migliori sui depositi.}
+Node0_c_d_reaction {L'oro è il miglior investimento}
+Node0_c_d_reaction_log {Conoscete il valore dei dobloni e convincerete facilmente qualsiasi usuraio che i depositi in oro sono molto più affidabili, sia per loro sia per voi.}
+Node0_c_e {Dopo lunghe dispute alla corte francese si è deciso di rivedere i dazi coloniali. Parte delle merci è stata ufficialmente tolta dalla lista dei beni proibiti, e le vecchie sanzioni sono state sospese temporaneamente. Le potenze rivali del Louvre hanno risposto allo stesso modo, e ora nei porti di tutto l'arcipelago caraibico si può commerciare argento e oro, mentre ciò che un tempo era considerato contrabbando è ora legale.}
+Node0_c_e_reaction {E che dire della merce viva?}
+Node0_c_e_reaction_log { }
+Node0_d_a {Con l'arrivo della primavera le acque costiere si animano. Sugli alti fondali passano sgombri e sardine, il tonno si avvicina alle barriere, e presso le spiagge sabbiose si catturano tartarughe marine. I marinai calano le reti direttamente dalle scialuppe, affumicano il pesce sulla riva e riempiono barili d'acqua dolce dai ruscelli costieri a ogni sosta.}
+Node0_d_a_reaction {Una dieta varia fa bene}
+Node0_d_a_reaction_log {Decidete di preparare una razione di bordo varia e completa, integrando le solite gallette e la carne salata con pesce e carne freschi. Un menù ben studiato sotto la supervisione del medico di bordo aiuterà a ridurre il rischio di epidemie e di scorbuto.}
+Node0_d_b {Questa primavera il mare è generoso come mai prima. Il tempo favorevole e l'abbondanza di cibo hanno permesso a pesci e selvaggina di moltiplicarsi oltre ogni misura. I banchi di tonno sono innumerevoli e le lagune pullulano di aragoste e granchi. Anche una breve sosta basta a riempire le stive di carne fresca e pesce, mentre le provviste salate restano intatte.}
+Node0_d_b_reaction {Raccogliere tutto il possibile}
+Node0_d_b_reaction_log {Decidete di scegliere i marinai più agili per formare una squadra speciale che si occuperà esclusivamente della raccolta di viveri. Bisogna approfittare della generosità del mare e della terra finché è possibile.}
+Node0_d_c {Nella Stagione della Canna tutti sanno che si può guadagnare in fretta: nei porti si racconta di capitani tornati con le stive piene d'argento. Le voci gonfiano le aspettative, e i marinai non prendono più il mare per una paga ordinaria, mentre i nostromi esperti non firmano un contratto senza un anticipo sostanzioso.}
+Node0_d_c_reaction {Non ho un piano, ma ho un'idea!}
+Node0_d_c_reaction_log {Decidete di risparmiare sui pagamenti grazie al vostro carisma, alla vostra capacità di convincere la gente a seguirvi e ai racconti secondo cui l'intero equipaggio è una grande famiglia affiatata.}
+Node0_success
+{
+La Stagione della Canna è fatta di carovane di Fluyt, caldaie dello zucchero fumanti e del tintinnio onnipresente delle monete.
+L'arcipelago vive di avidità e febbre del gioco, ed è difficile non innamorarsene.
+Ora è facile tanto rovinarsi quanto fare fortuna. Quale sarà il vostro destino?
+}
+Node0_success_action {Scelgo la ricchezza!}
+Node0_title {Stagione della Canna}

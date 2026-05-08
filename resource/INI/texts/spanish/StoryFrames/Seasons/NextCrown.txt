@@ -1,0 +1,46 @@
+Node0_a {Se acerca un nuevo año calendario. La Temporada de la Corona es una época de renovación y renacimiento. Los vientos del noreste se vuelven predecibles, haciendo que el océano Atlántico sea mucho más seguro para las travesías largas.$br$redEs en este momento cuando llegan al archipiélago personas y mercancías desde Europa. Los gobernadores reciben nuevas órdenes e informes, y por el mar se mueven patrullas y convoyes de la Corona.}
+Node0_a_action {¡Un mar de oportunidades!}
+Node0_b_a {El comercio con las colonias, como de costumbre, se ha apagado con la llegada del invierno. Las últimas partidas de azúcar y tabaco hace tiempo que partieron hacia Europa, la tala de ébano y caoba se ha detenido, y el equilibrio no se recuperará hasta la próxima temporada. Por ahora, los precios de los bienes coloniales están muy por encima de lo normal.}
+Node0_b_a_reaction {Seguro que no lo han contado todo}
+Node0_b_a_reaction_log {Decides aprovechar tu reputación de comerciante y tu carisma natural para convencer a los mercaderes de que te vendan las sobras no registradas.}
+Node0_b_b {La temporada pasada exprimió las colonias hasta secarlas: las reservas se agotaron y las plantaciones quedaron casi destruidas por el mal tiempo. Los últimos restos de bienes coloniales fueron enviados hace tiempo a las colonias capitales, y en el mercado prácticamente no queda nada que vender ni comprar. Los mercaderes han disparado los precios y esperan la Temporada de la Caña: entonces volverá el equilibrio.}
+Node0_b_b_reaction {Para tipos como yo siempre habrá algo}
+Node0_b_b_reaction_log {Usas el talento de tu contramaestre y de varios informadores para valorar con precisión las existencias de las tiendas. Los mercaderes se verán obligados a venderte lo que querían reservar para sí mismos.}
+Node0_b_c {En las capitales se ha decidido revisar los gravámenes coloniales. Mientras los leguleyos discuten sobre aranceles, los mercaderes no tienen prisa por firmar contratos a largo plazo. Como resultado, se resienten tanto los precios como el volumen del comercio.}
+Node0_b_c_reaction {¡Nuestra mercancía es la mejor!}
+Node0_b_c_reaction_log {Decides aprovechar tu reputación de negociante experimentado para vender la mercancía de tu barco a un precio más alto. Por desgracia, esto solo funcionará en aquellas colonias donde tu mercancía sea necesaria.}
+Node0_c_a {En cambio, los astilleros ya se han recuperado por completo de los destrozos, y las remesas de madera naval que han inundado el mercado han reducido el coste de las reparaciones.}
+Node0_c_a_reaction {Espero que no haga falta}
+Node0_c_a_reaction_log {Sabes bien cómo mantener un barco a flote, y decides usar ese conocimiento para entrar menos veces en dique a reparar.}
+Node0_c_b {Pero también hay buenas noticias: para restaurar la capacidad de combate de las flotas nacionales, Europa ha enviado este año remesas especialmente grandes de materiales. Junto con los primeros convoyes de la Corona llegaron también expertos constructores navales. Las naciones se preparan para una gran guerra, pero para un capitán libre esto supondrá una caída considerable en el coste de las reparaciones.}
+Node0_c_b_reaction {¿Reparaciones baratas? Golpeemos más fuerte}
+Node0_c_b_reaction_log {Si los cascos de los barcos se reparan con facilidad, entonces hay que golpear al enemigo sin piedad. Decides apuntar solo a los elementos críticos de los buques enemigos y ordenas mantener junto a las portas una reserva de pesadas balas macizas de hierro por si se entra en distancia corta.}
+Node0_c_c {Por puertos y ensenadas corren rumores inquietantes sobre una gran expedición militar en preparación. Las mejores tablas, cuerdas y lona de vela han sido reservadas para los buques de guerra. Los astilleros siguen funcionando, pero los materiales se van rápidamente a los encargos prioritarios del Estado. Esto eleva el coste de las reparaciones.}
+Node0_c_c_reaction {Nuestro barco servirá en la guerra}
+Node0_c_c_reaction_log {Te haces pasar con facilidad por un corsario veterano al servicio de la Corona y te colocas en la misma fila que los buques de guerra.}
+Node0_d_a {Ahora mismo, cada nación intenta aprovechar sus fuerzas renovadas para ampliar su influencia. Cualquier gobernador agradecerá la ayuda, y convertirse en enemigo público es sorprendentemente fácil. Conseguir patentes de corso se ha vuelto más sencillo; el Caribe rebosa de armas y de gente deseosa de usarlas. Es un tiempo de oportunidades.}
+Node0_d_a_reaction {Nos recordarán}
+Node0_d_a_reaction_log {Sabiendo a quién pagar y dónde, resulta muy fácil avivar la llama de los rumores hasta convertirla en un verdadero incendio. Las potencias observan con atención las acciones de los capitanes libres, pero tú sabrás atraer toda la atención hacia ti.}
+Node0_d_b {Llegaron buenas noticias desde la madre patria: en Europa se ha sellado un importante matrimonio dinástico que ha fortalecido los lazos entre viejos rivales. Esto ha reducido en gran medida la tensión tanto en casa como en el Caribe, por lo que muchos soldados experimentados fueron licenciados. Esos veteranos engrosaron las filas de los novatos de taberna y aumentaron notablemente la experiencia de las tripulaciones contratadas.}
+Node0_d_b_reaction {Seleccionar reclutas con talento}
+Node0_d_b_reaction_log {Un ojo entrenado distingue con facilidad a los veteranos curtidos de las ratas de tierra. Podrás contratar solo a veteranos, lo que aumentará seriamente la eficacia de tu tripulación.}
+Node0_d_c {Los puertos y los funcionarios están desbordados de trabajo. Los documentos pasan de mano en mano, los almacenes reciben cargamentos y las guardias están ocupadas revisando los buques de guerra. En medio de este caos, un capitán atento puede pasar desapercibido.}
+Node0_d_c_reaction {Una buena oportunidad}
+Node0_d_c_reaction_log {Tu habilidad para parecer amistoso y ganarte a la gente te será muy útil cuando la atención de la guardia se debilite.}
+Node0_d_d {Con el relevo de funcionarios en los puertos, comienza un nuevo recuento. Los diarios de a bordo se revisan con más cuidado de lo habitual, las tripulaciones se vuelven a contar y las licencias exigen renovación. Los desconocidos atraen enseguida una atención innecesaria, y en el puerto resulta más difícil pasar desapercibido.}
+Node0_d_d_reaction {Habrá que pasar desapercibidos}
+Node0_d_d_reaction_log {A pesar de las inspecciones más estrictas y minuciosas, tu habilidad para parecer inofensivo y no llamar la atención facilitará mucho pasar aduanas y engañar a las patrullas.}
+Node0_d_e {En las metrópolis está madurando un nuevo conflicto entre Suecia y el Zarato ruso. Karl Gustav ha solicitado apoyo a Inglaterra, su aliada religiosa, mientras que Alexéi Mijáilovich ha aprovechado la indignación de los católicos y se ha asegurado el respaldo de los Habsburgo. Esto ha dividido Europa en dos grandes bloques políticos, y cada potencia ha decidido dejar sus tropas regulares en casa.$br$redA las colonias se les ha ordenado arreglárselas por su cuenta. Las guarniciones se refuerzan con gente local, y a todo aquel que sirva aunque sea un poco se lo barre de las tabernas. Solo quedan novatos completamente inútiles.}
+Node0_d_e_reaction {La instrucción lo arreglará todo}
+Node0_d_e_reaction_log {Decides compensar la falta de experiencia de las tripulaciones contratadas con esfuerzo y disciplina, al estilo de una flota militar. Día y noche, los reclutas marcharán por la cubierta bajo tu atenta supervisión y tarde o temprano acabarán convertidos en viejos lobos de mar.}
+Node0_d_f {Han llegado noticias inquietantes desde Europa: el Imperio otomano está incrementando su poder militar y reforzando su posición en la región. Los cristianos se preparan para defender el sur de la península balcánica ante una posible amenaza, y todas las potencias se apresuran a cerrar alianzas religiosas temporales. Incluso la Inglaterra protestante está dispuesta a enviar su flota al Mediterráneo. Esto reduce mucho la tensión en el Caribe, pero también tiene un coste: toda la buena artillería se ha quedado en las metrópolis.}
+Node0_d_f_reaction {¿Los fuertes también se quedaron sin cañones?}
+Node0_d_f_reaction_log {Como artillero experimentado, distingues sin dificultad un fuerte aún capaz de luchar de otro que ha perdido toda capacidad de resistencia. La escasez de cañones permitirá iniciar los asaltos mucho antes.}
+Node0_success
+{
+Entras en el nuevo año bajo un cielo despejado y con viento favorable en las velas.
+La Temporada de la Corona trae nuevas órdenes, nuevas caras y almacenes llenos.
+Todo comienza de nuevo, y todos tienen la oportunidad de pasar a la historia.
+}
+Node0_success_action {¡A navegar!}
+Node0_title {Temporada de la Corona}

@@ -30,7 +30,7 @@ void Ship_BortFire()
             TW_RecalculateLayout();
 		}
 	}
-	
+
     // boal fix charge 29.11.03 -->
     if (bortName == "cannonr" || bortName == "cannonl")
     { // только для бортов проверяем.

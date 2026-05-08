@@ -1,4 +1,7 @@
 IslaMona_1 {Родриго}
+IslaMona_10 {Франсиско}
+IslaMona_11 {де Альба}
+IslaMona_12 {Судя по звукам, ловушка удалась! Пора в посёлок!}
 IslaMona_2 {Хименес}
 IslaMona_3 {Настало утро следующего дня...}
 IslaMona_4 {Родриго Хименес подготовил очередную партию бакаута на Исла Мона}
@@ -7,6 +10,3 @@ IslaMona_6 {Вы отдали @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> б
 IslaMona_7 {На ваш склад загружено @<sti(pchar.questTemp.IslaMona.Factory.Goods)> бревен бакаута}
 IslaMona_8 { }
 IslaMona_9 { }
-IslaMona_10 {Франсиско}
-IslaMona_11 {де Альба}
-IslaMona_12 {Судя по звукам, ловушка удалась! Пора в посёлок!}

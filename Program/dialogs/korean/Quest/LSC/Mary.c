@@ -88,7 +88,8 @@ void ProcessDialogEvent()
 			PlaySound("Voice\English\LSC\Mary Casper-04.wav");
 			dialog.text = "뭐라고 했어...? 젠장, 넌 평범한 도둑이 아니잖아! 저 자식, 제독 밑에서 일하고 있어! 놈을 쓰러뜨려라, 얘들아!";
 			link.l1 = "...";
-			link.l1.go = "Cabin_fight";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("LSC_Cabin_fight");
 		break;
 		
 	// ---------------------------------покушение на Акулу - вариант N --------------------------------

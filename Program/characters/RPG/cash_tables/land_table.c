@@ -18,6 +18,7 @@ void CT_UpdateLandTable(ref chr)
 
 	CT_SetWeaponDamageCoeff(&landTable, &equipTable, chr, blade);
 	if (hasMusket) CT_SetMusketDamageCoeff(&landTable, &equipTable, chr);
+	CT_SetAmmoDamage(&landTable, &equipTable, chr);
 
 	CT_SetAllCritChance(&landTable, &equipTable, chr, hasMusket);
 	CT_SetAllCritDamage(&landTable, &equipTable, chr, hasMusket);
@@ -45,6 +46,12 @@ void CT_SetGunUsingSpeed(ref landTable, ref equipTable, ref chr)
 	float speed = 1.0;
 	speed += GetAttributeFloat(landTable, FIRE_MOVE + "_" + M_ACTION_SPEED);
 	SetCharacterActionSpeed(chr, FIRE_MOVE, speed);
+}
+
+void CT_SetAmmoDamage(ref landTable, ref equipTable, ref chr)
+{
+	CopyModifier(landTable, equipTable, GRAPESHOT + "_" + M_DAMAGE);
+	CopyModifier(landTable, equipTable, BULLET + "_" + M_DAMAGE);
 }
 
 void CT_SetStrikeAngles(ref landTable, ref equipTable, ref chr)
@@ -115,8 +122,8 @@ void CT_SetAllReloadSpeed(ref landTable, ref equipTable, ref chr)
 	SetAttribute(landTable, modifier, mtp);
 	if (landTable.has.hasMusket != "1") return;
 
-	mtp = 1 + GetAttributeFloat(equipTable, modifier) + skillMtp;
 	modifier = MUSKET_ITEM_TYPE + "_" + M_RELOAD_SPEED;
+	mtp = 1 + GetAttributeFloat(equipTable, modifier) + skillMtp;
 	SetAttribute(landTable, modifier, mtp);
 }
 
@@ -263,6 +270,7 @@ int CT_SetMaxWeight(ref landTable, ref equipTable, ref chr)
 	if (HasPerk(chr, "Mule")) baseWeight += PERK_VALUE_MULE * sti(chr.rank);
 	if (!IsMainCharacter(chr) && IsCharacterPerkOn(chr, "Looting")) baseWeight += PERK_VALUE_LOOTING;
 	if (CheckAttribute(chr, "cheats.dopgrus")) baseWeight += 1000;
+	if (IsEquipCharacterByItem(chr, "legendGuide")) baseWeight += 15;
 	baseWeight = baseWeight + CHAR_ITEMS_WEIGHT + GetCharacterSPECIALSimple(chr, SPECIAL_S)*(GetCharacterSPECIALSimple(chr, SPECIAL_E) + 10);
 
 	float bonus = 1.0;

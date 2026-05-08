@@ -1,16 +1,16 @@
+All info {Cantidad:}
 Delete profile confirm {¿Seguro que quieres borrar el perfil y todo el progreso guardado?}
 Delete savefile confirm {¿Seguro que quieres borrar esta partida guardada?}
-Overwrite savefile confirm {¿Seguro que quieres sobrescribir esta partida guardada?}
-Low storage and unable save create {No hay suficiente espacio para guardar partidas.}
+Insert Disk Ok {Inserta el primer disco.}
 Load game confirm {¿Seguro que quieres cargar esta partida?}
-Unable to Load save game {No se ha podido cargar la partida.}
+Low storage and unable save create {No hay suficiente espacio para guardar partidas.}
+New game confirm {¿Seguro que quieres empezar una nueva partida?}
+Officer info {Tus oficiales demandan su salario mensual:}
+Overwrite savefile confirm {¿Seguro que quieres sobrescribir esta partida guardada?}
 Salary info
 {
 Tu tripulación te pide el salario del mes. 
 ¿Se lo das?
 }
-Officer info {Tus oficiales demandan su salario mensual:}
-All info {Cantidad:}
-New game confirm {¿Seguro que quieres empezar una nueva partida?}
-Insert Disk Ok {Inserta el primer disco.}
 save game limit {Has excedido la capacidad de almacenamiento, borra algunos archivos.}
+Unable to Load save game {No se ha podido cargar la partida.}

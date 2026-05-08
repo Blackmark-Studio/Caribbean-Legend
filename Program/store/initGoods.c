@@ -348,7 +348,7 @@ void InitGoods()
 	Goods[GOOD_RUM].Swim.Model	    		= "barrel";
 	Goods[GOOD_RUM].Swim.Time	    		= 30;
 	Goods[GOOD_RUM].AfraidWater 			= 1;
-	Goods[GOOD_RUM].type 					= T_TYPE_IMPORT;
+	Goods[GOOD_RUM].type 					= T_TYPE_EXPORT;
 	Goods[GOOD_RUM].Norm					= 1200;
 	Goods[GOOD_RUM].MediumNorm				= 1.0;
 	Goods[GOOD_RUM].SmallNorm				= 0.5;		

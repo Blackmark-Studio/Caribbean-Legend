@@ -1071,6 +1071,7 @@ void Caleuche_InMerrimanCave(string qName) // заполняем логово М
 	sld.LSC_clan = true;
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
+	sld.mustLoot = true;
 	GiveItem2Character(sld, "SkullAztec");
 	LAi_SetActorType(sld);
 	ChangeCharacterAddressGroup(sld, "Havana_CryptDungeon", "quest", "quest1");
@@ -1112,7 +1113,7 @@ void Caleuche_MerrimanCallMonster(string qName) // вызов Мерримано
 {
 	sld = characterFromId("Joakim");
 	if (LAi_GetCharacterHP(sld) < 1) return;
-	if (LanguageGetLanguage() == "russian") {PlaySound("VOICE\Russian\hambit\Joakim Merriman-03.wav");}
+	PlaySoundSafe("VOICE\" + LanguageGetLanguage() + "\hambit", "Joakim Merriman-03.wav");
 	sld = GetCharacter(NPC_GenerateCharacter("MerrimanChavinavi"+iGlobalTemp, "Chavinavi_1", "man", "skeleton", 20+MOD_SKILL_ENEMY_RATE*3, PIRATE, -1, false, "quest"));
 	FantomMakeCoolFighter(sld, 20+MOD_SKILL_ENEMY_RATE*3, 70, 70, "topor_01", "pistol6", "bullet", MOD_SKILL_ENEMY_RATE*60);
 	sld.name = StringFromKey("Caleuche_15");
@@ -2360,7 +2361,7 @@ bool Caleuche_QuestComplete(string sQuestName, string qname)
 		sld = characterFromId("CubaChavinavi");
 		LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "Ground_StandUp", "Caleuche_MonsterFight", 3.5);
-		PlaySound("VOICE\Russian\hambit\Chavinavy.wav");
+		PlaySoundSafe("VOICE\" + LanguageGetLanguage() + "\hambit", "Chavinavy.wav");
 	}
 	else if (sQuestName == "Caleuche_MonsterFight") // чавинави атакует
 	{

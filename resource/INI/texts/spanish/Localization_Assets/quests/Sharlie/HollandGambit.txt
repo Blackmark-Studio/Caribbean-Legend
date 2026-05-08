@@ -1,12 +1,4 @@
 HollandGambit_1 {Baltazar}
-HollandGambit_2 {Ridderbok}
-HollandGambit_3 {Modo exploración: temporizador ampliado. ¡Completa la misión!}
-HollandGambit_4 {Miguel}
-HollandGambit_5 { }
-HollandGambit_6 { }
-HollandGambit_7 {Modo exploración: duración de la misión duplicada}
-HollandGambit_8 { }
-HollandGambit_9 {¡Valkyrie está en el horizonte!}
 HollandGambit_10 {Hainrih}
 HollandGambit_11 {Claus}
 HollandGambit_12 { }
@@ -17,6 +9,7 @@ HollandGambit_16 {convoy de plata}
 HollandGambit_17 {Bote}
 HollandGambit_18 {Fernando}
 HollandGambit_19 {Rodriges}
+HollandGambit_2 {Ridderbok}
 HollandGambit_20 {Zeekalf}
 HollandGambit_21 {Charlie}
 HollandGambit_22 {Knippel}
@@ -27,6 +20,7 @@ HollandGambit_26 {¡Charlie Knippel murió por sus heridas!}
 HollandGambit_27 {¡Longway murió de fiebre!}
 HollandGambit_28 {¡Longway murió por sus heridas!}
 HollandGambit_29 {Pasó una hora...}
+HollandGambit_3 {Modo exploración: temporizador ampliado. ¡Completa la misión!}
 HollandGambit_30 {Jack}
 HollandGambit_31 {Harrison}
 HollandGambit_32 {bergantín 'Hoop'}
@@ -37,6 +31,7 @@ HollandGambit_36 {Peter}
 HollandGambit_37 {Stuyvesant}
 HollandGambit_38 {Frederic}
 HollandGambit_39 {Leiden}
+HollandGambit_4 {Miguel}
 HollandGambit_40 {Toff}
 HollandGambit_41 {Keller}
 HollandGambit_42 {Te has desmayado por las heridas...}
@@ -44,3 +39,8 @@ HollandGambit_43 {No le devolviste el dinero a Abigail, convirtiéndola así en 
 HollandGambit_44 {Chavinavy}
 HollandGambit_45 { }
 HollandGambit_46 { }
+HollandGambit_5 { }
+HollandGambit_6 { }
+HollandGambit_7 {Modo exploración: duración de la misión duplicada}
+HollandGambit_8 { }
+HollandGambit_9 {¡Valkyrie está en el horizonte!}

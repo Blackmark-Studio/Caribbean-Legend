@@ -1,24 +1,24 @@
 Adeline {Аделина}
-Twilight {Сумрак}
-Mirage {Мираж}
 Amsterdam {Амстердам}
-San Felipe {Сан Фелипе}
-San Isidro {Сан Исидро}
-Santa Magdalena {Санта Магдалена}
-Santa Anna {Санта Анна}
 Apostle {Апостол}
-Principio {Принципио}
-Meifeng {Мейфенг}
-Valkyrie {Валькирия}
-Griffondor {Гриффондор}
-Torero {Тореро}
-Fortune {Фортуна}
+Eclatant {Эклятон}
 Flying Heart {Летящее сердце}
+Fortune {Фортуна}
+Griffondor {Гриффондор}
 Holy Mercy {Святое Милосердие}
 Lady Beth {Леди Бет}
+Meifeng {Мейфенг}
 Memento {Мементо}
+Mirage {Мираж}
 Oliphant {Олифант}
-Trafalgar {Трафальгар}
-Eclatant {Эклятон}
+Principio {Принципио}
 Red Dragon {Красный дракон}
+San Felipe {Сан Фелипе}
+San Isidro {Сан Исидро}
+Santa Anna {Санта Анна}
+Santa Magdalena {Санта Магдалена}
+Torero {Тореро}
+Trafalgar {Трафальгар}
+Twilight {Сумрак}
 Ulysse {Улисс}
+Valkyrie {Валькирия}

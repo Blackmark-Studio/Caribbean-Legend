@@ -201,7 +201,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "NationLicenceType2":
-			iSumm = sti(npchar.LicenceType) * (3000 + MOD_SKILL_ENEMY_RATE*500);
+			iSumm = LICENSE_GetPrice(npchar.LicenceType);
         	dialog.text = "つまり、取引許可証は"+XI_ConvertString(Nations[sti(npchar.LicenceNation)].Name+"Gen")+" のため "+sti(npchar.LicenceType)+" 日数、価格は "+FindRussianMoneyString(iSumm)+".";
 		    link.l1 = "同意する。";
 		    if(makeint(Pchar.money) < iSumm)
@@ -217,7 +217,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "NationLicenceType3":
-            iSumm = sti(npchar.LicenceType) * (3000 + MOD_SKILL_ENEMY_RATE*500);
+            iSumm = LICENSE_GetPrice(npchar.LicenceType);
 			dialog.text = "ほら、これだ。港に入るときは友好的な旗を揚げるのを忘れるな。\nそれから、巡回隊が許可証の日付を確認することもあるから気をつけろよ。";
 			link.l9 = "感謝する。";
 			link.l9.go = "exit";

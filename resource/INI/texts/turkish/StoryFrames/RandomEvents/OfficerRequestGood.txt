@@ -1,0 +1,53 @@
+Node0_title {Bir subayın ricası}
+Node0_a_a {$attr($context.officerName), sizin _$attr($context.officerJob)'ınız, başı önde kamaraya giriyor. Bir süre dramatik bir sessizlik yaratıyor, sonra da dertli dertli başına geleni anlatıyor: Geçenlerde ambarda yapılan bir kumar oturuşunda tayfalardan birine $rand(aile yadigârı bir broşu|kendi haçını|babasının kol düğmelerini) kaptırmış. Değerli eşyasını geri almak için yeniden masaya oturmak istediğini, bunun için de sizden küçük bir borç istediğini söylüyor.}
+Node0_a_a_action {Geri kazan da kazancı paylaş!}
+Node0_a_a_success {Gerekli parayı veriyorsunuz, ama şu şartla: $rand(paranızı ve kazancın yarısını geri verecek|size her kuruşunu geri ödeyecek, üstüne kazancın yarısını da verecek). Bir süre sonra neşeden uçan $attr($context.officerName) kapınızı çalıyor. Değerli eşyası geri gelmiş, o da $rand(anlaşmanın kendi kısmını yerine getiriyor|sözünü tutuyor) ve sizin payınızı teslim ediyor.}
+Node0_a_a_success_action {Kolay para!}
+Node0_a_a_fail {Gerekli parayı veriyorsunuz, şartınız da $rand(paranızı ve kazancın yarısını geri almak|size parayı geri verip üstüne kazancın yarısını da teslim etmek). $attr($context.officerName) $rand(uzun süre ortalarda görünmüyor|sanki gemiden yok olup gidiyor), sonunda siz $rand(kamaraya çağırıyorsunuz|gelmesi için emir veriyorsunuz). $rand(Çökmüş bakışından|halinden) her şey anlaşılıyor: değerli eşyasını $rand(geri alamamış|bir türlü geri kazanamamış), sizin parayı da $rand(kaybetmiş|masada tüketmiş).}
+Node0_a_a_fail_action {Zor ama gerekli bir ders}
+Node0_a_b_action {Gemide kumarı cezalandır}
+Node0_a_b_success {Gemi nizamı kumarı açıkça yasaklıyor. Siz $rand(işe karışan tayfalara ibret olsun diye herkesin önünde kırbaç attırıyor|işe karışan tayfaların herkesin gözü önünde kırbaçlanmasını emrediyor), subayı da $rand(maaşından keserek cezalandırıyor|bir aylık maaşından mahrum bırakıyorsunuz).}
+Node0_a_b_success_action {Kural kuraldır}
+Node0_a_c_action {Tayfaya eşyayı geri verdirt}
+Node0_a_c_success {Siz geminin kaptanısınız ve sözünüz yasadır, ama böyle durumlar için yazılmış bir kural yoktur. Korkutucu görünüşünüzü ve heybetli yapınızı kullanarak tayfayı sindiriyor, subayınızın malını geri vermeye zorluyorsunuz. Mürettebat bunu unutmaz.}
+Node0_a_c_success_action {Benimle şaka olmaz}
+Node0_a_b {Akşam devriyesinden sonra kamaraya döndüğünüzde, kapıda sizi $attr($context.officerName), yani _$attr($context.officerJob)'ınız bekliyor. $rand(Utangaç bir halde ayak değiştirip duruyor|yerinde huzursuzca kıvranıyor), ama sizin $rand(sert bakışınız|bakışınız) altında sonunda $rand(dayanamayıp açılıyor|çözülüyor) ve derdini anlatıyor. Gideceğiniz limanda kendisi için bir düello ayarlanmış; o da kaybetmekten korkuyor. Koz olarak, sandığınızda saklı duran kılıcı istiyor. _$attr($context.bladeName)'ın $rand(kazanma şansını ciddi biçimde artıracağını|ona belirleyici bir üstünlük sağlayacağını) söylüyor.}
+Node0_b_a_action {Asıl mesele kılıç değil, onu kullanan eldir!}
+Node0_b_a_success {$casedName($attr($context.officerName)|Gen)'ı doğrudan kamarada talim düellosuna çıkarıyorsunuz. Kendini fena savunmuyor, ama beceri bakımından size daha çok yolu var. Antrenmandan sonra ona kendi alametifarikası olan birkaç fintayı ve darbeyi gösteriyorsunuz; şimdi $attr($context.officerName) kendine çok daha fazla güveniyor.}
+Node0_b_a_success_action {İdmanda zor, savaşta kolay.}
+Node0_b_a_fail {$attr($context.officerName) başta fena tutunmuyor, ama kısa sürede tükenip ezici biçimde yeniliyor. Düelloya katılmasını yasaklıyorsunuz — onur önemlidir, ama can daha değerlidir.}
+Node0_b_a_fail_action {Bir daha böyle işlere bulaşma.}
+Node0_b_b_action {Al, sana veriyorum.}
+Node0_b_b_success {Bu silahın subaya $rand(açıkça sizden daha faydalı olacağına|sizden çok ona yarayacağına) karar veriyor ve $rand(karşılıksız veriyorsunuz|ondan kolayca vazgeçiyorsunuz). $attr($context.officerName) size içtenlikle teşekkür ediyor ve gözle görülür biçimde daha özgüvenli duruyor. $rand(Böyle armağanları daha sık vermek gerektiğine|Böyle hediyelerin daha sık dağıtılmasının yerinde olacağına) karar veriyorsunuz - $rand(hizmet süresi ya da özel cesaret karşılığında|hizmet süresi ve özel cesaret karşılığında).}
+Node0_b_b_success_action {Önce bunu hak etsinler.}
+Node0_b_c_action {Bu düello olmayacak.}
+Node0_b_c_success {Subayın isteğini reddediyor, onun yerine de $rand(uzun bir nasihat çekiyorsunuz|onu uzun uzun azarlıyorsunuz). O da $rand(kaderine razı olmuş bir halde, bakışlarını yere indirip dinliyor|başını eğip sessizce dinliyor), siz de $rand(bu dersi iki ceza nöbetiyle pekiştiriyor|üzerine iki ceza nöbeti yüklüyorsunuz). Düello ise $rand(doğal olarak|elbette) iptal ediliyor.}
+Node0_b_c_success_action {Nizam kanla yazılmıştır.}
+Node0_a_c {Podczas wieczornego obchodu zauważasz, że $attr($context.officerName), twój _$attr($context.officerJob), długo o czymś rozmawia z $casedName($attr($context.prisonerName)|Abl). Tego samego wieczoru wzywasz oficera do kajuty i wypytujesz go o wszystko. Z początku $attr($context.officerName) się wykręca, lecz pod naciskiem przyznaje, że $attr($context.prisonerName) to jego $rand(rodak|daleki krewny|przybrany krewniak|stary znajomy). Prosi cię, by nie wydawać jeńca władzom, lecz wypuścić go w najbliższej zatoce.}
+Node0_c_a_action {Tutsağı idam et}
+Node0_c_a_success {Bunu ağır bir ibrete dönüştürmeye karar veriyor ve tutsağın idam edilmesini emrediyorsunuz. $attr($context.officerName) dehşete kapılıyor, ama sözünüze karşı gelmeye cesaret edemiyor. Alonso hükmü yerine getiriyor. Zalimliğinizle ilgili söylentiler gemide ve dışında anında yayılıyor.}
+Node0_c_a_success_action {Merhamet yok}
+Node0_c_b_action {Tutsağı salıver}
+Node0_c_b_success {Tutsağın serbest bırakılmasını ve en yakın şehre varana kadar ona mutfakta yer ayrılmasını emrediyorsunuz. $attr($context.officerName) size teşekkür ediyor ve adeta kanatlanmış görünüyor. Bu işin gizli kalmasını istiyorsunuz; yoksa kamarınızın önünde dert sahiplerinden kuyruk oluşur.}
+Node0_c_b_success_action {Bu bir istisna, kural değil}
+Node0_c_c_action {O zaman kendin fidyesini öde}
+Node0_c_c_success {Dürüst bir teklif sunuyorsunuz - subay, $attr($context.prisonerName)'ı kendi maaşından düşülmek üzere hemen şimdi fidyeyle kurtarabilir. Böylece hiçbir kural çiğnenmez ve kimse kendini borçlu hissetmez. $attr($context.officerName) bir süre kararsız kalıyor, ama sonunda şartlarınızı kabul ediyor.}
+Node0_c_c_success_action {Acordo justo}
+Node0_c_d_action {Kaptanın kararları tartışılmaz}
+Node0_c_d_success {Subayın isteğini geri çeviriyorsunuz. Tutsak kim olursa olsun teslim oldu ve artık sizin elinizde; onunla ne yapılacağına karar verecek olan da sizsiniz. Bir kez yumuşaklık gösterirseniz, kendi kişisel meselelerini kaptanın sırtından çözmek isteyenlerin arkası kesilmez. $attr($context.officerName) keyifsiz görünüyor, ama bu sizin umurunuzda değil.}
+Node0_c_d_success_action {Kanun benim}
+Node0_a_d {Son zamanlarda $attr($context.officerName)'ın $rand(alışılmadık derecede sessiz ve dalgın olduğunu|doğal olmayan bir sessizliğe gömülüp taş kesilmiş bir yüzle dolaştığını) fark etmeye başladınız. $rand(Boş vakitlerini giderek daha sık ufka bakarak geçiriyor.|Giderek daha sık küpeşteye dikilip tek bir noktaya bakıyor; sanki birinin yelkenini bekliyormuş gibi.) Sonunda dayanamayarak $rand(sebebini soruyorsunuz|doğrudan soruyorsunuz), o da trajedisini sizinle paylaşıyor: son konaklamada $rand(yakın bir akrabasının|çok sevdiği birinin) öldüğü haberini almış. Siz $rand(taziyenizi bile iletemeden|ağzınızı yeni açmışken), subay sizden bir ricada bulunuyor — dua etmek için bir mum ve kandil istiyor; kaderin cilvesi, ikisi de yalnızca sizin kamarada var.}
+Node0_d_a_action {Elbette, al götür}
+Node0_d_a_success {Subaya ağıt için gereken eşyaları veriyor ve o $rand(yasını yaşarken onu işle boğmamaya|yas süresince bazı görevlerini üzerinden almaya) karar veriyorsunuz. $rand(Minnettar görünüyor|Belli ki minnettar), ama $rand(yasın izi|kederin kara gölgesi) bu duyguyu gölgede bırakıyor.}
+Node0_d_a_success_action {Geçer bu}
+Node0_d_b_action {Bunu usulüne göre yapacağız}
+Node0_d_b_success {$attr($context.officerName) sizin _$attr($context.officerJob)'ınız; sıradan bir tayfa değil. Bu da bazı ayrıcalıklar $rand(sağlıyor|anlamına geliyor). Kamarotada $rand(resmî bir ağıt töreni|nizama uygun bir ağıt töreni) düzenlenmesini emrediyorsunuz. $attr($context.officerName) $rand(biraz mahcup görünüyor|mahcup görünüyor), ama bu duygu $rand(kısa sürede minnettarlığa bırakıyor yerini|minnettarlığa dönüşüyor).}
+Node0_d_b_success_action {Sadık yoldaşlara en iyisi yakışır}
+Node0_d_c_action {Tanrı seni bunlar olmadan da duyar}
+Node0_d_c_success {Subayı, içten edilen bir duanın törensiz de işitileceğine inandırıyorsunuz.$br$red$attr($context.officerName) galiba buna razı oluyor. Sözlerinizin ona biraz olsun ferahlık verdiğini görmek size gurur veriyor.}
+Node0_d_c_success_action {Bunu atlatacaksın}
+Node0_d_c_fail {Sözleriniz pek inandırıcı gelmiyor ve $attr($context.officerName) üzgün görünüyor. Anlaşılan sizi sadece cimri ve alaycı biri sanmış.}
+Node0_d_c_fail_action {Dur, o kadar da umurumda değil}
+Node0_d_d_action {Geminin papazı yardımcı olur}
+Node0_d_d_success {$attr($context.officerName)'ın gemideki gerçek papazı unutmuş olması size tuhaf geliyor, ama bunu gözünü kör eden kedere bağlıyorsunuz.$br$redPapazı kamaraya çağırtıyor, durumu ona anlatıyor ve yol göstermesini istiyorsunuz. $attr($context.officerName) dalgın ve kopuk görünüyor, ama din adamının sözleri onu çabucak kendine getiriyor.}
+Node0_d_d_success_action {Tanrı bizi işitti}

@@ -1,33 +1,33 @@
-Frame_HourPassed {Eine Stunde ist vergangen...}
-Frame_HourPassed_2 {Zwei Stunden sind vergangen...}
-Frame_HourPassed_3 {Drei Stunden sind vergangen...}
-Frame_HourPassed_4 {Vier Stunden sind vergangen...}
-Frame_HourPassed_5 {Fünf Stunden sind vergangen...}
-Frame_HourPassed_? {Mehrere Stunden sind vergangen...}
 Frame_BeenWhile {Ein wenig Zeit ist vergangen...}
-Frame_MinutePassed {Eine Minute ist vergangen...}
-Frame_MinutePassed_2 {Zwei Minuten sind vergangen...}
-Frame_MinutePassed_3 {Drei Minuten sind vergangen...}
-Frame_MinutePassed_5 {Fünf Minuten sind vergangen...}
-Frame_MinutePassed_10 {Zehn Minuten sind vergangen...}
-Frame_MinutePassed_20 {Zwanzig Minuten sind vergangen...}
-Frame_MinutePassed_? {Mehrere Minuten sind vergangen...}
-Frame_NextMorning {Am nächsten Morgen...}
-Frame_NextDay {Am nächsten Tag...}
-Frame_NextEvening {Am nächsten Abend...}
-Frame_NextNight {In der nächsten Nacht...}
 Frame_DayPassed {Ein Tag ist vergangen...}
 Frame_DayPassed_2 {Zwei Tage sind vergangen...}
 Frame_DayPassed_3 {Drei Tage sind vergangen...}
 Frame_DayPassed_4 {Vier Tage sind vergangen...}
 Frame_DayPassed_5 {Fünf Tage sind vergangen...}
 Frame_DayPassed_6 {Sechs Tage sind vergangen...}
-Frame_WeekPassed {Eine Woche ist vergangen...}
-Frame_WeekPassed_2 {Zwei Wochen sind vergangen...}
-Frame_WeekPassed_3 {Drei Wochen sind vergangen...}
+Frame_HourPassed {Eine Stunde ist vergangen...}
+Frame_HourPassed_? {Mehrere Stunden sind vergangen...}
+Frame_HourPassed_2 {Zwei Stunden sind vergangen...}
+Frame_HourPassed_3 {Drei Stunden sind vergangen...}
+Frame_HourPassed_4 {Vier Stunden sind vergangen...}
+Frame_HourPassed_5 {Fünf Stunden sind vergangen...}
+Frame_MinutePassed {Eine Minute ist vergangen...}
+Frame_MinutePassed_? {Mehrere Minuten sind vergangen...}
+Frame_MinutePassed_10 {Zehn Minuten sind vergangen...}
+Frame_MinutePassed_2 {Zwei Minuten sind vergangen...}
+Frame_MinutePassed_20 {Zwanzig Minuten sind vergangen...}
+Frame_MinutePassed_3 {Drei Minuten sind vergangen...}
+Frame_MinutePassed_5 {Fünf Minuten sind vergangen...}
 Frame_MonthPassed {Ein Monat ist vergangen...}
 Frame_MonthPassed_2 {Zwei Monate sind vergangen...}
 Frame_MonthPassed_3 {Drei Monate sind vergangen...}
+Frame_NextDay {Am nächsten Tag...}
+Frame_NextEvening {Am nächsten Abend...}
+Frame_NextMorning {Am nächsten Morgen...}
+Frame_NextNight {In der nächsten Nacht...}
+Frame_WeekPassed {Eine Woche ist vergangen...}
+Frame_WeekPassed_2 {Zwei Wochen sind vergangen...}
+Frame_WeekPassed_3 {Drei Wochen sind vergangen...}
 Frame_YearPassed {Ein Jahr ist vergangen...}
 Frame_YearPassed_2 {Zwei Jahre sind vergangen...}
 Frame_YearPassed_3 {Drei Jahre sind vergangen...}

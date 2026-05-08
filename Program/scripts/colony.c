@@ -940,38 +940,37 @@ void TWN_ExitForPay() // мэр даёт откуп - табличка приб�
 	}
 	else
 	{
-        nBooty = makeint(2000 * fPart);
-		SetNull2StoreManPart(rColony, 3.0 / fPart);
-		// belamour legendary edition дополнительные награды за взятие форта -->
-		if(CheckAttribute(pchar,"colonyprise.good"))
+		if (CheckAttribute(rColony, "FortValue"))
 		{
-			int fpb;
-			if(CheckAttribute(rColony, "FortValue")) fpb = hrand(sti(rColony.FortValue)*10, Builder.id);
+			int colonyFortValue = makeint(stf(rColony.FortValue) * 1.3);
+			nBooty = makeint(2000 * fPart);
+			SetNull2StoreManPart(rColony, 3.0 / fPart);
+			int fpb = colonyFortValue*5 + hrand(colonyFortValue*4, Builder.id);
 			fpb = makeint(fpb * fPart);
-			SetStoreGoods(&stores[GetStorage(sld.city)],makeint(pchar.colonyprise.good),750 + fpb);
-			pchar.colonyprise.good = 28+rand(6);
-		}
-		// орудия крупных калибров
-		if(CheckAttribute(rColony, "FortValue"))
-		{
-			int canQty = sti(rColony.FortValue);
-			canQty = makeint(fpb * fPart);
-			for(int i = 0; i < GetArraySize(&Goods); i++)
+			if(CheckAttribute(pchar,"colonyprise.good"))
+			{
+				SetStoreGoods(&stores[GetStorage(sld.city)],makeint(pchar.colonyprise.good),750 + fpb);
+				pchar.colonyprise.good = 28+rand(6);
+			}
+
+			// орудия крупных калибров
+			int cannonPoints = fpb * 88;
+			for (int i = 0; i < GetArraySize(&Goods); i++)
 			{
 				if (!CheckAttribute(&Goods[i], "type") || sti(Goods[i].type) != T_TYPE_CANNONS)
-					continue;
+				continue;
 				
 				if (!CheckAttribute(&Goods[i], "NotSale") || sti(Goods[i].NotSale) == 0)
-					continue;
+				continue;
 				
 				if (CheckAttribute(&Goods[i], "NotGenerate") && sti(Goods[i].NotGenerate) == 1)
-					continue;
-				
-				SetStoreGoods(&stores[GetStorage(sld.city)], i, makeint(canQty * fPart / 2));
+				continue;
+	
+				SetStoreGoods(&stores[GetStorage(sld.city)], i, makeint(cannonPoints / sti(Goods[i].cost)));
 			}
 		}
 		// личные призы от губернатора за сложный форт
-		if(CheckAttribute(pchar,"colonyprise.item") && CheckAttribute(rColony, "FortValue") && sti(rColony.FortValue) > GetIntByCondition(HasShipTrait(pchar, "trait14"), 69, 49))
+		if(CheckAttribute(pchar,"colonyprise.item") && CheckAttribute(rColony, "FortValue") && colonyFortValue > GetIntByCondition(HasShipTrait(pchar, "trait14"), 69, 49))
 		{
 			switch(makeint(pchar.colonyprise.item))
 			{

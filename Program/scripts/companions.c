@@ -97,7 +97,11 @@ bool Ship_AutoAbordage(ref rCharacter, float fMinEnemyDistance)
 				if (IsCompanion(rCharacter)) LeaveAbordageShipDrift(sti(rShipCharacter.index), sti(rCharacter.index));
 			    else ShipDead(sti(rShipCharacter.index),KILL_BY_ABORDAGE,sti(rCharacter.index));
 				//navy <--
-			    Ship_SetTaskRunaway(SECONDARY_TASK, sti(rCharacter.index), nMainCharacterIndex);// валим в сад  -1 не жрет, потому пусть от ГГ все бегут, даже свои - команды раздаст игрок.
+
+				// ~!~ TO_DO: REF
+				// Победили - валим в сад
+			    Ship_SetTaskRunaway(SECONDARY_TASK, sti(rCharacter.index), -1);
+				DeleteAttribute(rCharacter, "SeaAI.Task.Target "); // Убрать цель
             }
             else
             { // поражение
@@ -462,7 +466,7 @@ bool CheckEnemyCompanionDistance2GoAway(bool _loadForm)
 				if (fDistance < MIN_ENEMY_DISTANCE_TO_DISABLE_MAP_ENTER)
 				{
 				    if (!_loadForm) return false; // все, кто-то есть
-					pchar.CheckEnemyCompanionDistance.(attr)) = cn;
+					pchar.CheckEnemyCompanionDistance.(attr) = cn;
 				}
 			}
 		}

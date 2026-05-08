@@ -1297,7 +1297,7 @@ void LongHappy_SeaBattle(string qName) // морская боевка
 			SetSailsColor(sld, 8);//черный парус
 			UpgradeShipParameter(sld, "SpeedRate");//апгрейдить скорость
 			UpgradeShipParameter(sld, "TurnRate");//маневренность
-			UpgradeShipParameter(sld, "WindAgainstSpeed");//бейд
+			UpgradeShipParameter(sld, "Rig");//бейд
 			hcrew = GetMaxCrewQuantity(sld);
 			iCrew = sti(0.9*hcrew);
 			SetCrewQuantityOverMax(sld, iCrew);

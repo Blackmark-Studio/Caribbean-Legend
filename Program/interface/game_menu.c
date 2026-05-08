@@ -8,6 +8,8 @@ int	 DLCAppID = 0;
 int g_nConfirmMode;
 string g_sConfirmReturnWindow;
 
+int tbl, tbt, tbr, tbb;
+
 void InitInterface_gm(string iniName)
 {
 	GameInterface.title = "titleGameMenu";
@@ -26,6 +28,13 @@ void InitInterface_gm(string iniName)
 	SetEventHandler("eventConfirm","procConfirm",0);
 
 	InterfaceStates.showGameMenuOnExit = true;
+
+    // Типсы
+    SetFormatedText("TIPS_TEXT", GetNewTip()); // GetCurTip
+    SetVAligmentFormatedText("TIPS_TEXT");
+    SetFormatedText("TIPS_BUTTONPIC", GKIC("ChangeHint", "MainInterface"));
+    SendMessage(&GameInterface, "lslleeee", MSG_INTERFACE_MSG_TO_NODE, "TIPS_BUTTONPIC", -1, 5,
+    &tbl,&tbt,&tbr,&tbb);
 
 	// логотип
 	SetMenuLogo();
@@ -319,4 +328,31 @@ bool CheckUpdates()
 	return bOk1;
 }
 
+#event_handler("Control Activation","ProcessInterfaceControls");
+void ProcessInterfaceControls()
+{
+    string controlName = GetEventData();
+    switch (controlName)
+    {
+        case "ChangeHint":
+            PlaySound("interface\ok.wav");
+            SetFormatedText("TIPS_TEXT", GetNewTip());
+            SetVAligmentFormatedText("TIPS_TEXT");
+            SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TIPS_BUTTONPIC", -1, 4,
+            tbl+2,tbt+2,tbr+2,tbb+2);
+            break;
+    }
+}
 
+#event_handler("Control Deactivation","DectivationWaiting");
+void DectivationWaiting()
+{
+    string controlName = GetEventData();
+    switch (controlName)
+    {
+        case "ChangeHint":
+            SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TIPS_BUTTONPIC", -1, 4,
+            tbl,tbt,tbr,tbb);
+            break;
+    }
+}

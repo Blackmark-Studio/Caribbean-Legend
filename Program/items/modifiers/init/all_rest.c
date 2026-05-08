@@ -695,6 +695,29 @@ bool InitRestModifiers(ref item)
 			AddSpecialDescriptor(item, "piratesJournal");
 		}
 		break;
+		case "legendGuide":
+		{
+			AddDescriptor(item, "Tool");
+			AddSpecialDescriptor(item, "legendGuide");
+			SetModifier(item, FAST_STRIKE  + "_" + M_DAMAGE, 0.05);
+			SetModifier(item, FORCE_STRIKE + "_" + M_DAMAGE, 0.05);
+			SetModifier(item, ROUND_STRIKE + "_" + M_DAMAGE, 0.05);
+			SetModifier(item, BREAK_STRIKE + "_" + M_DAMAGE, 0.05);
+			SetModifier(item, SHOT_STRIKE  + "_" + M_DAMAGE, 0.05);
+			SetModifier(item, M_HP_MAX, 10);
+			SetModifier(item, M_ENERGY_MAX, 10);
+			SetModifier(item, PIRATES_TYPE + PIRATES_A, 1);
+		}
+		break;
+		case "greenIdol":
+		{
+			AddDescriptor(item, "Tool");
+			AddDescriptor(item, M_AMULET_TYPE, AMULET_PAGAN);
+			AddDescriptor(item, "Exotic");
+			AddDescriptor(item, "Special");
+			SetModifierFromSource(item, M_SQUADRON_POWER, 0.30, TOOL_ITEM_TYPE);
+		}
+		break;
 	}
 
 	return true;

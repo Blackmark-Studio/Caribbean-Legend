@@ -60,7 +60,9 @@ void AddItemUICharacterModifiers(ref chr, ref result, ref stat, ref item)
 	aref dummy;
 	makearef(dummy, TEV.dummy);
 	CopyAttributes(&dummy, chr);
-	EquipCharacterbyItem(&dummy, item.id);
+	dummy.dummy = true;
+	GiveItem2Character(&dummy, item.id);
+	EquipCharacterbyItem(&dummy, item.id, true);
 	CT_UpdateCashTables(&dummy);
 
 	aref landTable = CT_GetTable(&dummy, CT_LAND);
@@ -73,13 +75,13 @@ void AddItemUICharacterModifiers(ref chr, ref result, ref stat, ref item)
 	{
 		case "reloadTime":
 		{
-			int time = makeint(1.0 / LAi_GunReloadSpeed(chr, item.groupId) + 0.5);
+			int time = makeint(1.0 / LAi_GunReloadSpeed(&dummy, item.groupId) + 0.5);
 			modifier = item.groupId + "_" + M_RELOAD_SPEED;
 			makearef(sources, equipTable.(modifier));
-			sources.skill = 0.3*LAi_GetCharacterGunLevel(chr);
+			sources.skill = 0.3*LAi_GetCharacterGunLevel(&dummy);
 			result += xiStr("itemStatsModifiersTitle") + ": " + ToHumanNumber(time) + " " + xiStr("sec.");
 			result += newStr() + " " +  newStr();
-			SetCharacterStat(chr, &equipTable, modifier, result, "ToHumanModifierPercent", 0.0);
+			SetCharacterStat(&dummy, &equipTable, modifier, result, "ToHumanModifierPercent", 0.0);
 		}
 		break;
 		case "attack":
@@ -97,14 +99,32 @@ void AddItemUICharacterModifiers(ref chr, ref result, ref stat, ref item)
 		break;
 		case "gunDamage":
 		{
-			SetCharacterStatGroup(chr, equipTable, SHOT_STRIKE + "_" + M_DAMAGE, "", result, 1.0);
-			result += newStr() + " " + newStr() + " ";
-			SetCharacterStatGroup(chr, equipTable, M_HEADSHOT_DAMAGE, "", result, (1.0+HEADSHOT_MTP));
+			object tempTable;
+			ApplyModifierAsAnother(&tempTable, equipTable, SHOT_STRIKE + "_" + M_DAMAGE, SHOT_STRIKE + "_" + M_DAMAGE);
+			string ammoModifier = GetGunAmmoType(&dummy, item) + "_" + M_DAMAGE;
+			ApplyModifierAsAnother(&tempTable, equipTable, SHOT_STRIKE + "_" + M_DAMAGE, ammoModifier);
+			SetCharacterStatGroup(&dummy, &tempTable, SHOT_STRIKE + "_" + M_DAMAGE, "", result, 1.0);
+
+			result += newStr() + " " + newStr() + " ";
+			SetCharacterStatGroup(&dummy, equipTable, M_HEADSHOT_DAMAGE, "", result, (1.0+HEADSHOT_MTP));
 		}
 		break;
 	}
 
 	DeleteAttribute(&TEV, "dummy");
+}
+
+string GetGunAmmoType(ref chr, ref item)
+{
+	if (GetCharacterEquipByGroup(chr, item.groupId) == item.id)
+	{
+		string ammoType = LAi_GetCharacterBulletType(chr, item.groupId);
+		if (IsBulletGrape(ammoType)) return GRAPESHOT;
+		else return BULLET;
+	}
+	else if (IsBulletGrape(item.type.t1.bullet)) return GRAPESHOT;
+
+	return BULLET;
 }
 
 void SetUIAttackDamge(ref chr, ref item, ref result, ref landTable, string strikeType)

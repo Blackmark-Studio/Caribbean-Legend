@@ -4,7 +4,7 @@
 void StealthCheckGates_Node0()
 {
 	SF_InitModule("StealthCheck");
-	storyObject.localization.iNation = StealthCheck_Nation(); // инфа для локализации
+	context.localization.iNation = StealthCheck_Nation(); // инфа для локализации
 	storyObject.title = SF_Convert("title");
 
 	aref situation;
@@ -26,26 +26,26 @@ void StealthCheckGates_Node0()
 	switch (situation.b)
 	{
 		case "a":
-			reaction = SF_AddReaction("b", "", "", SF_Icon("Skill", SKILL_FENCING));
+			reaction = SF_AddReaction("b", "", "", SF_Icon(SKILL_TYPE, SKILL_FENCING));
 			SF_SetResult(reaction, 30);
-			if (!HasPerk(pchar, "HT1")) reaction.disabled = true;
+			SF_AddCondition(&reaction, HasPerk(pchar, HERO_TYPE_GYMNAST), SF_CONDITION_HERO_TYPE, HERO_TYPE_GYMNAST);
 		break;
 		case "b":
-			reaction = SF_AddReaction("b", "", "", SF_Icon("Skill", SKILL_COMMERCE));
+			reaction = SF_AddReaction("b", "", "", SF_Icon(SKILL_TYPE, SKILL_COMMERCE));
 			SF_SetChance(reaction, 25, "base");
 			SF_SetChance(reaction, GetCharacterSkill(pchar, SKILL_COMMERCE) / 2, SKILL_COMMERCE);
 			SF_SetResults(reaction, -10, 25);
 		break;
 		case "c": 
-			reaction = SF_AddReaction("b", "", "", SF_Icon("Skill", SKILL_LEADERSHIP));
+			reaction = SF_AddReaction("b", "", "", SF_Icon(SPECIAL_TYPE, SPECIAL_C));
 			SF_SetResult(reaction, GetSpecialAfterPenalty(pchar, SPECIAL_C) * 4);
 		break;
 		case "d":
 			storyObject.temp.prisonerCost = 1000;
 			reaction = SF_AddReaction("b", "", "", SF_Icon("perk", "Investor"));
-			if (sti(pchar.money) < sti(storyObject.temp.prisonerCost)) reaction.disabled = true;
+			SF_AddCondition(&reaction, sti(pchar.money) > sti(storyObject.temp.prisonerCost), SF_CONDITION_MONEY);
 			SF_SetResult(reaction, 25);
-			if (!HasPerk(pchar, "Investor")) reaction.disabled = true;
+			SF_AddCondition(&reaction, HasPerk(pchar, "Investor"), SF_CONDITION_PERK, "Investor");
 		break;
 	}
 
@@ -53,34 +53,35 @@ void StealthCheckGates_Node0()
 	{
 		case "a": 
 			reaction = SF_AddReaction("c", "", "", SF_Icon("honor", "repup"))
-			if (sti(pchar.reputation.nobility) < (COMPLEX_REPUTATION_NEUTRAL-10)) reaction.disabled = true;
+			SF_AddCondition(&reaction, sti(pchar.reputation.nobility) > (COMPLEX_REPUTATION_NEUTRAL-10), SF_CONDITION_REPUTATION);
 			SF_SetResult(reaction, 25);
 		break;
 		case "b":
 			//ПРОВЕРКА. Шанс успеха 35+огнестрел/2. При успехе результат 1 и +20, при провале результат 2 и +5.
-			reaction = SF_AddReaction("c", "", "", SF_Icon("skill", SKILL_PISTOL));
+			reaction = SF_AddReaction("c", "", "", SF_Icon(SKILL_TYPE, SKILL_PISTOL));
 			SF_SetChance(reaction, 35, "base");
 			SF_SetChance(reaction, GetCharacterSkill(pchar, SKILL_PISTOL) / 2, SKILL_PISTOL);
 			SF_SetResults(reaction, 5, 20);
 		break;
 		case "c":
 			//ПРОВЕРКА. Шанс успеха 16+Восприятие*8. При успехе результат 1 и +22, при провале результат 2. (и ничего)
-			reaction = SF_AddReaction("c", "", "", SF_Icon("pirates", PIRATES_I));
+			reaction = SF_AddReaction("c", "", "", SF_Icon(PIRATES_TYPE, PIRATES_I));
 			SF_SetChance(reaction, 16, "base");
 			SF_SetChance(reaction, GetSpecialAfterPenalty(pchar, PIRATES_I) * 8, PIRATES_I);
 			SF_SetResults(reaction, 0, 22);
 		break;
 	}
 
-	action = SF_AddAction("a", "", "", SF_Icon("skill", SKILL_SNEAK));
+	action = SF_AddAction("a", "", "", SF_Icon(SKILL_TYPE, SKILL_SNEAK));
 	SF_SetChance(action, -40, "base");
 	SF_SetChance(action, GetCharacterSkill(pchar, SKILL_SNEAK) / 2, SKILL_SNEAK);
 	SF_SetChance(action, GetCharacterSkill(pchar, SKILL_LEADERSHIP) / 2, SKILL_LEADERSHIP);
 	SF_SetChance(action, ChangeCharacterNationReputation(pchar, StealthCheck_Nation(), 0), "relationship" + StealthCheck_Nation()); // отношения с нацией
 	if (CheckAttributeEqualTo(pchar, "questTemp.Trial", "spy")) SF_SetChance(action, 60, "questZpq"); // +если "неизвестный гасконец" - квестовый тег для карибских нравов
 	if (IsCharacterEquippedArtefact(pchar, "indian_11")) SF_SetChance(action, 15, "itmname_indian_11"); // если маска нгомбо
+	SF_SetChance(action, makeint(SZN_GetModifierMtp(M_STEALTH_INCEPTION_BONUS, 0.0, -0.30, 0.30) * 100), "season");
 
-	SF_AddAction("b", "", "", SF_Icon("skill", SKILL_FENCING));
+	SF_AddAction("b", "", "", SF_Icon(SKILL_TYPE, SKILL_FENCING));
 	StealthCheck_CheckVerifyPapers("c");
 }
 
@@ -133,11 +134,11 @@ void StealthCheckGates_Node0_a_action()
 	if (SF_PerformCheck())
 	{
 		SF_Triumph();
-		AddCharacterExpToSkill(pchar, "Sneak", 7);
+		SF_AddEffect(SF_E_SKILL_EXP, pchar, "Sneak", 7);
 		return;
 	}
 
-	AddCharacterExpToSkill(pchar, "Sneak", 9);
+	SF_AddEffect(SF_E_SKILL_EXP, pchar, "Sneak", 9);
 	SF_SwitchNode("Node1");
 }
 

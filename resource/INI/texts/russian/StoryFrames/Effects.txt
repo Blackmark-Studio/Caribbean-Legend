@@ -1,0 +1,36 @@
+effects_title {Итоги истории}
+SkillExp_1 {$ctx(p1) получил опыт: $key($ctx(p2))}
+SkillExp_pchar_1 {Вы получили опыт: $key($ctx(p1))}
+Loyality_0 {$ctx(p1) недоволен}
+Loyality_1 {$ctx(p1) доволен}
+CrewMorale_pchar_0 {Мораль команды $MoraleStrDiff($ctx(value))}
+CrewMorale_pchar_1 {Мораль команды $MoraleStrDiff($ctx(value))}
+Reputation_pchar_0 {Репутация упала}
+Reputation_pchar_1 {Репутация выросла}
+CrewExp_pchar_1 {$key($ctx(p1)) получили опыт}
+Money_pchar_1 {Вы получили $money($ctx(value))}
+Money_pchar_0 {Вы отдали $abs($money($ctx(value)))}
+Goods_pchar_1 {Вы получили _$key($goodI($ctx(p1))Acc): $number($ctx(value))}
+Goods_pchar_0 {Вы отдали _$key($goodI($ctx(p1))Acc): $abs($number($ctx(value)))}
+NationRelation_pchar_0 {Отношения с $key($nationI($ctx(p1))Abl) ухудшились}
+NationRelation_pchar_1 {Отношения с $key($nationI($ctx(p1))Abl) улучшились}
+ItemsCabin_0 {Вы отдали предмет: $GetItemName($ctx(p1)) x $abs($number($ctx(value)))}
+ItemsCabin_1 {Вы получили предмет: $GetItemName($ctx(p1)) x $number($ctx(value))}
+Items_pchar_0 {Вы отдали предмет: $GetItemName($ctx(p1)) x $abs($number($ctx(value)))}
+Items_pchar_1 {Вы получили предмет: $GetItemName($ctx(p1)) x $number($ctx(value))}
+TempModifier_pchar_0 {$key($ctx(p1)|modifiers.txt) $percent($ctx(value)) на $days($ctx(duration))}
+TempModifier_pchar_1 {$key($ctx(p1)|modifiers.txt) +$percent($ctx(value)) на $days($ctx(duration))}
+moraleDiff_up3 {сильно выросла}
+moraleDiff_up2 {выросла}
+moraleDiff_up1 {немного подросла}
+moraleDiff_stay {не изменилась}
+moraleDiff_down3 {сильно упала}
+moraleDiff_down2 {упала}
+moraleDiff_down1 {немного снизилась}
+FractionRelation_0 {Отношения с $key($ctx(p1)Abl) ухудшились}
+FractionRelation_1 {Отношения с $key($ctx(p1)Abl) улучшились}
+CrewQty_pchar_0 {Потеряно членов экипажа: $abs($number($ctx(value)))}
+CrewQty_pchar_1 {Новых членов экипажа: $number($ctx(value))}
+NoEffectsStory {Обошлось без последствий}
+LoyalityAll_1 {Офицеры стали лояльнее}
+LoyalityAll_0 {Офицеры потеряли лояльность}

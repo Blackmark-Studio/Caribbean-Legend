@@ -420,11 +420,11 @@ void ProcessDialogEvent()
 			else SetPassengerParameter("Monkpassenger", true);
 			if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity"))
 			{
-				dialog.text = "My "+GetSexPhrase("息子","娘")+"、俺は～に行かなくちゃならねえ "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+" 始まった "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+"、のために "+FindRussianDaysString(sti(pchar.GenQuest.Monkpassenger.DaysQty))+"。支払うぜ "+FindRussianMoneyString(sti(pchar.GenQuest.Monkpassenger.Money))+" そのことで。どう思う？";
+				dialog.text = "俺の"+GetSexPhrase("息子","娘")+"、俺は～に行かなくちゃならねえ "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+" 始まった "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+"、のために "+FindRussianDaysString(sti(pchar.GenQuest.Monkpassenger.DaysQty))+"。支払うぜ "+FindRussianMoneyString(sti(pchar.GenQuest.Monkpassenger.Money))+" そのことで。どう思う？";
 			}
 			else
 			{
-				dialog.text = "My "+GetSexPhrase("息子","娘")+"、主は神秘的な方法でお導きになります。だからこそ、私は信頼できる船長を探しているのです。私を"+目的地+"まで連れて行っていただけますか "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+"、それは～にある "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+"？敵は決して眠らないから、まるで灼熱のゲヘナへの旅のようだというのは分かっている。 君がイエス・キリストじゃないのも分かっているが、俺も使徒じゃないから、多少の蓄えはある。さて\n "+FindRussianDublonString(sti(pchar.GenQuest.Monkpassenger.Money))+" お前に十分か？";
+				dialog.text = "俺の"+GetSexPhrase("息子","娘")+"、主は神秘的な方法でお導きになります。だからこそ、私は信頼できる船長を探しているのです。私を目的地まで連れて行っていただけますか "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+"、それは～にある "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+"？敵は決して眠らないから、まるで灼熱のゲヘナへの旅のようだというのは分かっている。 君がイエス・キリストじゃないのも分かっているが、俺も使徒じゃないから、多少の蓄えはある。さて\n "+FindRussianDublonString(sti(pchar.GenQuest.Monkpassenger.Money))+" お前に十分か？";
 			}
 			link.l1 = "「同意します、神父。」";
 			link.l1.go = "passenger_1";

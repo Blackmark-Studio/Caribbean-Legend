@@ -1,0 +1,67 @@
+Tip0 {Red Mary es muy celosa.}
+Tip1 {Helen es extremadamente supersticiosa, como cualquier pirata.}
+Tip10 {Fíjate en los arquetipos enemigos: se muestran junto a los indicadores de salud y energía.}
+Tip11 {Es mejor no bloquear los ataques de los espadachines: rompen la guardia con demasiada facilidad. Es más seguro desviar.}
+Tip12 {Los mosqueteros infligen un daño colosal. Acabad con ellos primero.}
+Tip13 {Un disparo rápido es más débil que uno apuntado. Ese es el precio de la velocidad.}
+Tip14 {Los Amulets de combate son especialmente poderosos en combinación entre sí. Elígelos con cabeza.}
+Tip15 {Las armas de fuego empujan al impactar: úsalo para mantener la distancia.}
+Tip16 {Un mosquete en las manos ralentiza mucho el movimiento. Una hoja desenvainada también, pero menos.}
+Tip17 {Hacia atrás y de lado te mueves bastante más lento que hacia delante, pero no pierdes de vista al enemigo.}
+Tip18 {Muchos enemigos saben envenenar en combate. Lleva siempre antídotos contigo.}
+Tip19 {Cada arma es única a su manera: elígela según tus perks y skills.}
+Tip2 {A Alonso no le gusta hablar de su pasado.}
+Tip20 {Con velas de combate, el barco gira más rápido.}
+Tip21 {El balanceo, los giros y la velocidad del barco influyen mucho en la puntería de los cañones.}
+Tip22 {Si fallas a menudo con los cañones, acorta la distancia.}
+Tip23 {Las skills «Cañones» y «Precisión» afectan tanto al disparo en tercera persona como al modo de apuntado.}
+Tip24 {Los barcos que se hunden no causan daño al embestir: no les temas.}
+Tip25 {Un impacto preciso de balas encadenadas en un mástil puede derribarlo. Si las velas ya están dañadas, las probabilidades aumentan.}
+Tip26 {Con una gran superioridad numérica, un barco enemigo puede rendirse ya al intentar abordarlo.}
+Tip27 {Hundir barcos piratas reduce la amenaza pirata y hace del Caribe un lugar más seguro.}
+Tip28 {Los oficiales sin el perk «Captain» solo pueden mandar barcos de hasta 4.ª clase.}
+Tip29 {Los rasgos de los barcos son útiles en distintas situaciones: escógelos según tu estilo de juego.}
+Tip3 {Recuerda: desenfundar la pistola siempre es más rápido que recargar el mosquete.}
+Tip30 {Los fuertes pueden derribarse disparando a los muros, pero acertar en las troneras acelera el proceso.}
+Tip31 {Al huir, los barcos pueden arrojar mercancías por la borda. Acércate para recoger la carga.}
+Tip32 {Los cañones se desgastan con el tiempo. Guarda algunas piezas de repuesto.}
+Tip33 {Cada tipo de munición tiene un alcance distinto. Las balas sólidas llegan más lejos; la metralla, menos.}
+Tip34 {Las balas sólidas son universales. Para velas y mástiles usa balas encadenadas, contra la tripulación metralla y contra el casco bombas.}
+Tip35 {Lee los diálogos con atención: a veces contienen información única.}
+Tip36 {Si asedian con éxito una colonia, tus depósitos y barcos en la autoridad portuaria se perderán.}
+Tip37 {Pregunta a vecinos y borrachos por rumores: a menudo saben muchas cosas interesantes.}
+Tip38 {Buscar tesoros sale a cuenta. Busca al vendedor de mapas del tesoro en la taberna.}
+Tip39 {Fadey Moskovit, Loxley y el abad Benoit pueden librarte de una recompensa sobre tu cabeza.}
+Tip4 {En el Caribe sobran los personajes extraños. Dicen que hay aquí un sacerdote que antes te descarriará que guiarte.}
+Tip40 {Con ayuda de los barones piratas puedes reducir temporalmente la amenaza pirata.}
+Tip41 {Los Amulets se destruyen si los quitas del personaje. Piensa tu build de antemano.}
+Tip42 {Los Wards se pueden quitar y poner tantas veces como quieras. No se destruyen y duran para siempre.}
+Tip43 {Mantén armas de sobra a bordo: cada marinero muerto se lleva la suya al otro mundo.}
+Tip44 {Antes de salir del puerto, asegúrate de que haya ron, medicinas y víveres suficientes para toda la travesía.}
+Tip45 {Las ratas son el azote del marino. Puedes deshacerte de ellas con arsénico o magia antigua.}
+Tip46 {Las mazmorras pueden ser muy enrevesadas. Si te pierdes, mantente a la derecha y síguela.}
+Tip47 {Los objetos pueden tirarse del inventario. A veces conviene deshacerse de la chatarra pesada.}
+Tip48 {Los perks pueden reiniciarse bebiendo una poción especial. No tengas miedo de experimentar con builds.}
+Tip49 {Los tesoros, tenderos y vigilantes del cementerio son buenas fuentes de ingredientes de crafteo. Visítalos a menudo.}
+Tip5 {La habilidad con armas cuerpo a cuerpo reduce el coste de energía de los golpes.}
+Tip50 {Los barcos pueden dejarse en la autoridad portuaria junto con su tripulación y un oficial.}
+Tip51 {En los astilleros de las colonias capitales puedes alquilar un almacén para guardar con seguridad mercancías y cañones del barco.}
+Tip52 {Si el fuerte de la colonia claramente te supera, prueba a atacar la ciudad por tierra. La guarnición urbana es bastante más débil, pero el botín también será menor.}
+Tip53 {En alta mar puedes encontrar barriles a la deriva. Pueden contener objetos de valor o chatarra; siempre es una sorpresa.}
+Tip54 {Cualquier golpe puede ser desviado. Si dominas bien esta técnica, podrás ganar cualquier duelo.}
+Tip55 {A veces, las corrientes marinas traen regalos inesperados a quienes pasean por calas apartadas.}
+Tip56 {Las amatistas no ayudan contra la borrachera. En serio.}
+Tip57 {En una situación de emergencia, cualquier oficial puede ocupar el puesto de abordador. Un ejército de ovejas guiado por un león vencerá a un ejército de leones guiado por una oveja.}
+Tip58 {A gobernadores y capitanes tampoco les son ajenos los juegos de azar, pero no esperes que jueguen con desconocidos.}
+Tip59 {En una situación crítica, puedes meter esclavos en la tripulación. Eso socava la moral, pero permite reponerla con rapidez.}
+Tip6 {La sobrecarga y la embriaguez imponen penalizaciones a las habilidades.}
+Tip60 {Si la guardia te pilla haciendo tratos con contrabandistas, a veces lo más fácil es simplemente comprar tu salida. Es un enfoque empresarial.}
+Tip61 {Fabricar objetos consume tiempo del juego. A veces compensa más fabricar que dormir sin rumbo en una taberna.}
+Tip62 {Reparar un barco en el astillero consume tiempo del juego. Tenlo en cuenta cuando vayas con prisa.}
+Tip63 {En una situación de emergencia, cualquier oficial puede ocupar el puesto de abordador. Un ejército de ovejas guiado por un león vencerá a un ejército de leones guiado por una oveja.}
+Tip64 {Las colonias del Archipiélago esconden diez historias urbanas únicas. Habla más a menudo con los vecinos en las calles y no escatimes ron para los borrachos de las tabernas.}
+Tip65 {Puedes dar órdenes a tus abordadores en combate. Prueba a mandarles órdenes con teclas rápidas.}
+Tip66 {Algunos perks tienen efectos distintos para el personaje principal y los oficiales.}
+Tip7 {Las pociones restauran la salud lentamente: no esperes atrincherarte detrás del bloqueo.}
+Tip8 {Si te rodean, la mejor forma de salir es una rápida arrancada lateral.}
+Tip9 {Las armas pesadas consumen más energía, pero también golpean más fuerte.}

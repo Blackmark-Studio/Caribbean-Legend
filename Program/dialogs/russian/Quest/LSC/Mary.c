@@ -88,7 +88,8 @@ void ProcessDialogEvent()
 			PlaySound("VOICE\Russian\LSC\Mary Casper-04.wav");
 			dialog.text = "Что ты сказал?.. Чёрт возьми, это не случайный грабитель! Он работает на адмирала! Ребята, валим его!";
 			link.l1 = "...";
-			link.l1.go = "Cabin_fight";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("LSC_Cabin_fight");
 		break;
 		
 	// ---------------------------------покушение на Акулу - вариант N --------------------------------

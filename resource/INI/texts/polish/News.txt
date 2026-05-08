@@ -1,18 +1,20 @@
-News {Patch 1.7}
+key {d24.04.2026}
+News {1.8 Maritime Update: otwarta beta}
+News_Attention { }
 News_descr
 {
 ***************************   Ahoj!   ***************************
 -------------------------------------------------------------------------------------------------
-— Witamy w wersji 1.7!
-— Czwarta część serii DLC „Ships Pack" jest już dostępna
-— Możesz swobodnie przełączać się między wersjami przez Steam
+— Aktualizacja 1.8 Maritime Update jest już dostępna
+— Wersja 1.7.3 trafia do archiwum; możecie przełączać się między wersjami przez Steam
 — Nie trzeba zaczynać nowej gry
-— Zapisy zostały przerobione i ulepszone
-— Nowe mechaniki infiltracji miast i skradania
-— SI lepiej walczy na lądzie
-— Epilog, ulepszenia jakości życia i więcej
-— Szczegółową listę zmian znajdziesz w aktualnościach pod przyciskiem poniżej
+— DLC Maritime Stories jest już dostępne
+— Do gry dodano Pory Roku, które znacząco zmieniają Karaiby
+— Przebudowano ostrzał morski
+— Nowy system żagli i kąta kursowego
+— Ulepszono abordaże
+— Zwiększono wygodę korzystania z mapy globalnej
+— Ulepszono morskie AI, dzięki czemu bitwy okrętów stały się znacznie ciekawsze
+— Mnóstwo zmian quality of life, poprawek balansu i bugfixów
+— Szczegółową listę zmian znajdziecie w aktualnościach pod przyciskiem poniżej
 }
-News_Attention { }
-
-key {31.01.2026}

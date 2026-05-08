@@ -782,6 +782,7 @@ int LocationInitSantoDomingo(int n)
 	locations[n].image = "loading\Gate" + rand(1) + ".tga";
 	//Town sack
 	locations[n].townsack = "SantoDomingo";
+	locations[n].fastreload = "SantoDomingo";
 	//Sound
 	locations[n].type = "jungle";
 	locations[n].islandId = "Hispaniola";

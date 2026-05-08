@@ -31,12 +31,12 @@ void ProcessDialogEvent()
 		// Диалог с курьером
 		case "SharlieEpilog_Cureer":
 			dialog.text = "Прошу прошения. Вы "+GetTitle(NPChar, false)+" "+GetFullName(pchar)+"?";
-			link.l1 = "Собственной персоной. Чему обазян?";
+			link.l1 = "Собственной персоной. Чему обязан?";
 			link.l1.go = "SharlieEpilog_Cureer_1";
 		break;
 		
 		case "SharlieEpilog_Cureer_1":
-			dialog.text = "Ох, ну наконец-то... Вас, "+GetTitle(NPChar, true)+" весьма не просто отыскать, пришлось едва ли не весь архипелаг избороздить. У меня для вас кориспонденция от аббата Бенуа.";
+			dialog.text = "Ох, ну наконец-то... Вас, "+GetTitle(NPChar, true)+", весьма не просто отыскать, пришлось едва ли не весь архипелаг избороздить. У меня для вас корреспонденция от аббата Бенуа.";
 			link.l1 = "Хм... От аббата? Неожиданно.";
 			link.l1.go = "SharlieEpilog_Cureer_2";
 		break;

@@ -1,45 +1,100 @@
-Reaction {Tepki}
 Action {Karar}
+Actions {Kararlar}
+DisabledAction {Bu eylem için bir şey eksik...}
+FactorAccuracy {$key(Accuracy)}
+FactorAgility {$key(Agility)}
+FactorAmmo {$key(itmtype_ammo|ItemsDescribe.txt)}
+FactorBase {Temel şans}
+FactorBlade {$key(itmtype_blade|ItemsDescribe.txt)}
+FactorCharisma {$key(Charisma)}
+FactorCirass {$key(itmtype_cirass|ItemsDescribe.txt)}
+FactorCommerce {$key(Commerce)}
+FactorDefence {$key(Defence)}
+FactorEndurance {$key(Endurance)}
+FactorFencingH {$key(FencingH)}
+FactorFencingL {$key(FencingL)}
+FactorFencingS {$key(FencingS)}
+FactorFortune {$key(Fortune)}
+FactorGrappling {$key(Grappling)}
+FactorGun {$key(itmtype_gun|ItemsDescribe.txt)}
+FactorHat {$key(itmtype_hat|ItemsDescribe.txt)}
+FactorIntellect {$key(Intellect)}
+FactorLantern {$key(itmtype_lantern|ItemsDescribe.txt)}
+FactorLeadership {$key(Leadership)}
+FactorLuck {$key(Luck)}
+FactorMaps {$key(itmtype_maps|ItemsDescribe.txt)}
+FactorMusket {$key(itmtype_musket|ItemsDescribe.txt)}
+FactorNobility {Onur}
+FactorPatent {$key(itmtype_patent|ItemsDescribe.txt)}
+FactorPerception {$key(Perception)}
+FactorPistol {$key(Pistol)}
 FactorRelationship0 {$key(englandAbl) ile ilişkiler}
 FactorRelationship1 {$key(franceAbl) ile ilişkiler}
 FactorRelationship2 {$key(spainAbl) ile ilişkiler}
 FactorRelationship3 {$key(hollandAbl) ile ilişkiler}
 FactorRelationshipSmugglers {$key(SmugglerAbl) ile ilişkiler}
-FactorBase {Temel şans}
-FactorShipRank {Gemi rütbesi}
-FactorShipQty {Filonun boyutu}
-FactorFencingL {$key(FencingL)}
-FactorFencingS {$key(FencingS)}
-FactorFencingH {$key(FencingH)}
-FactorPistol {$key(Pistol)}
-FactorFortune {$key(Fortune)}
-FactorLeadership {$key(Leadership)}
-FactorSailing {$key(Sailing)}
-FactorAccuracy {$key(Accuracy)}
-FactorGrappling {$key(Grappling)}
 FactorRepair {$key(Repair)}
-FactorDefence {$key(Defence)}
-FactorCommerce {$key(Commerce)}
-FactorSneak {$key(Sneak)}
-FactorStrength {$key(Strength)}
-FactorPerception {$key(Perception)}
-FactorEndurance {$key(Endurance)}
-FactorCharisma {$key(Charisma)}
-FactorIntellect {$key(Intellect)}
-FactorAgility {$key(Agility)}
-FactorLuck {$key(Luck)}
-DisabledAction {Bu eylem için bir şey eksik...}
-FactorGun {$key(itmtype_gun|ItemsDescribe.txt)}
-FactorBlade {$key(itmtype_blade|ItemsDescribe.txt)}
-FactorSpyglass {$key(itmtype_spyglass|ItemsDescribe.txt)}
-FactorPatent {$key(itmtype_patent|ItemsDescribe.txt)}
-FactorCirass {$key(itmtype_cirass|ItemsDescribe.txt)}
-FactorMaps {$key(itmtype_maps|ItemsDescribe.txt)}
-FactorTool {$key(itmtype_tool|ItemsDescribe.txt)}
-FactorTalisman {$key(itmtype_talisman|ItemsDescribe.txt)}
+FactorSailing {$key(Sailing)}
+FactorSeason {Mevsimi}
+FactorShipQty {Filonun boyutu}
+FactorShipRank {Gemi rütbesi}
 FactorSlot {$key(itmtype_slot|ItemsDescribe.txt)}
+FactorSneak {$key(Sneak)}
 FactorSpecial {$key(itmtype_special|ItemsDescribe.txt)}
-FactorAmmo {$key(itmtype_ammo|ItemsDescribe.txt)}
-FactorLantern {$key(itmtype_lantern|ItemsDescribe.txt)}
-FactorHat {$key(itmtype_hat|ItemsDescribe.txt)}
-FactorMusket {$key(itmtype_musket|ItemsDescribe.txt)}
+FactorSpyglass {$key(itmtype_spyglass|ItemsDescribe.txt)}
+FactorStrength {$key(Strength)}
+FactorTalisman {$key(itmtype_talisman|ItemsDescribe.txt)}
+FactorTool {$key(itmtype_tool|ItemsDescribe.txt)}
+HelpTextActions {Kararlar, Hikâye'nin ayrıntılarına bağlıdır ve olay örgüsünü her zaman ileri taşır. Karakterinizin başlangıçtaki hedefini ya da ona yaklaşım biçimini yansıtırlar. Hikâye'nin sonu çoğu zaman seçtiğiniz Kararlar'a bağlıdır.}
+HelpTextCommon
+{
+Bu, eylemlerinizin ve hazırlığınızın küçük bir hikâyeyi etkilediği etkileşimli bir anlatıdır.
+Önce bir durumla karşılaşırsınız - bu metin zaten ekranda yer alır.
+Karşınıza çıkan duruma göre belirli eylemlerde bulunabilirsiniz.
+~
+Hikâyeler'deki eylemler Tepkiler ve Kararlar olarak ikiye ayrılır.
+Her Karar veya Tepki, karakterin skills, perks ya da niteliklerine yönelik bir kontrol içerebilir.
+Belirli gereksinimleri karşılamıyorsanız bazı eylemler kullanılamayabilir.
+~
+Bir Hikâye'deki her kontrol, başarıyı etkileyen birçok unsuru dikkate alır. Bunlar, üzerine gelindiğinde açılan ipucunda listelenir.
+Kontrol sonuçları yeniden yükleme ile değişmez, yalnızca koşullar değiştiğinde değişir. Başarısızlıkta üzülmeyin - bir dahaki sefere şans mutlaka sizden yana olacaktır.
+}
+HelpTextReactions {Tepkiler, Hikâye'nin ayrıntılarına bağlıdır ve size beklenmedik bir avantaj kazanma ve işi kolaylaştırma fırsatı verir; ancak karşılığında bir koşulun yerine getirilmesini gerektirir - doğru perk, gerekli eşya ya da bir kontrolü geçmek gibi. Tepkiler Hikâye'nin bir sonraki bölümüne geçişe neden olmaz; anlık etki yaratırlar ve çoğu zaman Kararlar'daki kontrollerin zorluğunu etkilerler.}
+HelpTitleCommon {Hikâyeler}
+Reaction {Tepki}
+Reactions {Tepkiler}
+CommonTriumph {Zafer}
+CommonFail {Çöküş}
+DisabledAction_Money {Bu, para gerektirecek}
+DisabledAction_Perk {Gerekli beceri: $ctx(value)}
+DisabledAction_Skill {Yetenek yeterince gelişmemiş: $ctx(value)}
+DisabledAction_Herotype {Gerekli kahraman geçmişi: $ctx(value)}
+DisabledAction_Pirates {Özellik yeterince gelişmemiş: $ctx(value)}
+DisabledAction_Reputation {Bu eylem için belirli bir itibar gerekir}
+DisabledAction_Relations {_$key($ctx(value)Abl) ile ilişkiler daha iyi olmalı}
+DisabledAction_Item {Gerekli eşya: $ctx(value)}
+DisabledAction_license {Ticaret lisansı yok}
+FactorFencingL_chr {Subayın $key(FencingL)}
+FactorFencingS_chr {Subayın $key(FencingS)}
+FactorFencingH_chr {Subayın $key(FencingH)}
+FactorPistol_chr {Subayın $key(Pistol)}
+FactorFortune_chr {Subayın $key(Fortune)}
+FactorLeadership_chr {Subayın $key(Leadership)}
+FactorSailing_chr {Subayın $key(Sailing)}
+FactorAccuracy_chr {Subayın $key(Accuracy)}
+FactorGrappling_chr {Subayın $key(Grappling)}
+FactorRepair_chr {Subayın $key(Repair)}
+FactorDefence_chr {Subayın $key(Defence)}
+FactorCommerce_chr {Subayın $key(Commerce)}
+FactorSneak_chr {Subayın $key(Sneak)}
+FactorStrength_chr {Subayın $key(Strength)}
+FactorPerception_chr {Subayın $key(Perception)}
+FactorEndurance_chr {Subayın $key(Endurance)}
+FactorCharisma_chr {Subayın $key(Charisma)}
+FactorIntellect_chr {Subayın $key(Intellect)}
+FactorAgility_chr {Subayın $key(Agility)}
+FactorLuck_chr {Subayın $key(Luck)}
+FactorNobility_chr {$casedName($ctx(name)|Gen) Onuru}
+FactorRelationshipIndians {$key(IndianAbl) ile ilişkiler}
+DisabledAction_Capellan {Bu seçenek yalnızca gemide bir papaz varsa kullanılabilir}
+check_title {Kontrol zorluğu:}

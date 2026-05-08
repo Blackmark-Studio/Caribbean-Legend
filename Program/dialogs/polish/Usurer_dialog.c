@@ -210,7 +210,7 @@ void ProcessDialogEvent()
 			break;
 			
 			case "next":
-			dialog.text = NPCStringReactionRepeat("Jak mogę ci pomóc?","Czego pragniesz tym razem?","Hm... jakie są twoje obawy?","Eh, "+GetAddress_Form(npchar)+", nie możesz sobie nawet wyobrazić, jak irytujący potrafią być klienci...","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("Jak mogę ci pomóc?","Czego pragniesz tym razem?","Hm... jakie są twoje obawy?","Eh, "+GetAddress_Form(npchar)+", nie możesz sobie nawet wyobrazić, jak irytujący potrafią być klienci...","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Nie, dziękuję, tylko spaceruję i rozmawiam.","To znowu ja. Chciałem z tobą porozmawiać.","Tak, to znowu ja. Nic poważnego, po prostu chciałem z tobą porozmawiać.","Tak, bycie bankierem czasem nie jest takie łatwe. Chciałem tylko porozmawiać...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			link.l2 = "Chcę omówić nasze sprawy finansowe.";
@@ -387,7 +387,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Helen_next":
-			dialog.text = NPCStringReactionRepeat("Nie powiedziałbym, że potrzebujesz pieniędzy lub chcesz pomnożyć swoje bogactwo. Co sprowadza cię do mego biura?","Czego chcesz tym razem?","Hm... jakie są twoje obawy?","Eh, "+GetAddress_Form(npchar)+", nie możesz sobie nawet wyobrazić, jak irytujący mogą być klienci...","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("Nie powiedziałbym, że potrzebujesz pieniędzy lub chcesz pomnożyć swoje bogactwo. Co sprowadza cię do mego biura?","Czego chcesz tym razem?","Hm... jakie są twoje obawy?","Eh, "+GetAddress_Form(npchar)+", nie możesz sobie nawet wyobrazić, jak irytujący mogą być klienci...","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Nie, dziękuję, tylko spaceruję i rozmawiam.","Znowu ja. Chciałem tylko z tobą porozmawiać.","Tak, to znowu ja. Nic poważnego, po prostu chciałem z tobą porozmawiać.","Tak, bycie bankierem czasami nie jest takie łatwe. Po prostu chciałem porozmawiać...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			link.l2 = "Chcę omówić nasze sprawy finansowe.";
@@ -901,7 +901,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Interest":
-			Pchar.Quest.Loans.(NPC_Area).Interest = 4.0 + (makeint((((6.0 - 4.0) * (GetSummonSkillFromName(pchar, "Commerce") + GetSummonSkillFromName(pchar, "Leadership")) / 200) ) / 0.5 + 0.5)) * 0.5;
+			Pchar.Quest.Loans.(NPC_Area).Interest = GetCreditRate();
 			//Pchar.Quest.Loans.(NPC_Area).Interest = 16 - makeint(Pchar.skill.commerce);
 			// Rebbebion, добавил фикс отображения знака процента
 			Dialog.snd = "voice\USDI\USDI020";

@@ -20,6 +20,17 @@ aref _SF_Addlink(string nodeName, string forceText)
 	link.func = storyObject.currentFrame + "_" + nodeName;
 	if (truncatedText != fullText) link.fullText = fullText;
 
+	// в локализации есть обычный текст тултипа
+	string tooltipText = SF_Convert(nodeName + "_tooltip_main", true);
+	if (tooltipText != "") link.tooltip_main = "\n" + tooltipText;
+
+	// в локализации есть плохой текст тултипа
+	tooltipText = SF_Convert(nodeName + "_tooltip_bad", true);
+	if (tooltipText != "") link.tooltip_bad = "\n" + tooltipText;
+
+	// в локализации есть хороший текст тултипа
+	tooltipText = SF_Convert(nodeName + "_tooltip_good", true);
+	if (tooltipText != "") link.tooltip_good = "\n" + tooltipText;
 	return link;
 }
 
@@ -55,10 +66,10 @@ void _SF_Log(string text, bool addNewLine)
 		logAttributeName = storyObject.currentFrame + "/" + GetAttributesNum(&logs);
 	}
 
-	logs.(logAttributeName).value = "~~~~~~~~" + text; // с отступом слева
+	logs.(logAttributeName).value = SF_Indent() + text; // с отступом слева
 }
 
-// Значение дебажног орандома
+// Значение дебажного рандома
 int _SF_Debug_GetRandomMode()
 {
 	return GetAttributeIntOrDefault(&StealthSystem, "debug.random.mode", RAND_TAG);
@@ -68,4 +79,17 @@ int _SF_Debug_GetRandomMode()
 int _SF_Debug_GetRollChecksModeOverride()
 {
 	return GetAttributeIntOrDefault(&StealthSystem, "debug.checkResults", SF_NORMAL_MODE);
+}
+
+void SF_ExitButton(string errorMessage)
+{
+	SF_Log("Error: " + errorMessage);
+	assert(false, errorMessage);
+	aref link = _SF_Addlink("Crash", "Close");
+	link.action = true;
+	link.iconGroup = "FACE128_0";
+	link.iconName = "face";
+	link.func = "Crash";
+	link.tooltip_main = "\n\nSorry. Please report that to the developers with the logs and the last save file";
+	StoryObject.title = "Wait, what?"
 }

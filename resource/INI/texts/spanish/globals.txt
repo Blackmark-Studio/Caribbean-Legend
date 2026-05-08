@@ -1,63 +1,121 @@
-QUEST_MESSAGE1 {La colonia del Caimano está ocupada.}
-QUEST_MESSAGE2 {Han capturado la colonia del Caimano.}
-QUEST_MESSAGE3 {Eres demasiado viejo para resistir la maldición del oro azteca...}
-QUEST_MESSAGE4 {¡Has encontrado el tesoro!}
-QUEST_MESSAGE5 {¡Nigel Blight atacó a la corbeta de los contrabandistas!}
-QUEST_MESSAGE6 {¡Nigel Blight ha desaparecido!}
-QUEST_MESSAGE7 {¡Capitán, el 'Perla Negra' puede verse en el horizonte!}
-QUEST_MESSAGE8 {Gran trabajo. ¡Has acabado con el Maestro!}
-QUEST_MESSAGE9 {¡Ahora estás de puntillas ante este mundo cruel!}
-QUEST_MESSAGE10 {Un pirata despiadado}
-QUEST_MESSAGE11 {¡Te mereces una recompensa especial!}
-QUEST_MESSAGE12 {¡Desafortunadamente, has contratado demasiados oficiales! ¡Puedes contratar a otro si despides a uno de los tuyos!}
-Address_Form_Spa {Señor}
-Address_Form_Fra {Monsieur}
-Address_Form_Eng {Sir}
-Address_Form_Por {Señor}
-Address_Form_Hol {Mynheer}
-Swear_1 {¡Maldita sea!}
-Swear_2 {¡Maldición!}
-Swear_3 {¡Dios mío!}
-Swear_4 {¡Demonios!}
-Swear_5 {¡Rayos y truenos!}
-Swear_6 {¡Qué me parta un rayo!}
-Swear_7 {¡Rayos, truenos y centellas!}
-Swear_8 {¡¡¡Arrghhh!!!}
-Swear_9 {¡Malditos sean todos los pecados!}
-Swear_10 {¡Cielos!}
-TimeGreeting {Buenas tardes}
-Antigua {Antigua}
-Barbados {Barbados}
-Curacao {Curaçao}
-Dominica {Dominica}
-Grenada {Granada}
-Guadeloupe {Guadalupe}
-Hispaniola {La Española}
-IslaMona {Isla Mona}
-Jamaica {Jamaica}
-MarieGalante {Marie Galante}
-Martinique {Martinica}
-Montserrat {Montserrat}
-Nevis {Nevis}
-PuertoRico {Puerto Rico}
-StEustatius {St. Eustatius}
-StKitts {St. Kitts}
-StMartin {St. Martin}
-Tortuga {Tortuga}
-LaVega {La Vega}
-SantoDomingo {Santo Domingo}
-PetitGoave {Petit Goave}
-Bridgetown {Bridgetown}
-SanJuan {San Juan}
-SantiagoVega {Santiago Vega}
-OFFIC_TYPE_BOATSWAIN {contramaestre}
-OFFIC_TYPE_CANNONEER {artillero}
-OFFIC_TYPE_QMASTER {timonel}
-OFFIC_TYPE_NAVIGATOR {navegante}
-OFFIC_TYPE_FIRSTMATE {primer oficial}
-Pirate {Pirata}
-Spain {Español}
-France {Francés}
-Smuggler {Contrabandista}
-Holland {Holandés}
-England {Inglés}
+Address_Form_Eng {sir}
+Address_Form_Eng_Title1 {Caper}
+Address_Form_Eng_Title2 {Comandante}
+Address_Form_Eng_Title3 {Capitán}
+Address_Form_Eng_Title4 {Comodoro}
+Address_Form_Eng_Title5 {Almirante}
+Address_Form_EngWoman {miss}
+Address_Form_EngWoman2 {missis}
+Address_Form_Fra {monsieur}
+Address_Form_Fra_Title1 {Privateer}
+Address_Form_Fra_Title2 {Comandante}
+Address_Form_Fra_Title3 {Capitán}
+Address_Form_Fra_Title4 {Comodoro}
+Address_Form_Fra_Title5 {Vicealmirante}
+Address_Form_FraWoman {mademoiselle}
+Address_Form_FraWoman2 {madame}
+Address_Form_Hol {mynheer}
+Address_Form_Hol_Title1 {Filibuster}
+Address_Form_Hol_Title2 {Comandante}
+Address_Form_Hol_Title3 {Capitán}
+Address_Form_Hol_Title4 {Comodoro}
+Address_Form_Hol_Title5 {Almirante}
+Address_Form_HolWoman {mevrouw}
+Address_Form_HolWoman2 {frau}
+Address_Form_Pir {sir}
+Address_Form_Pir_Title1 {Pirate}
+Address_Form_Pir_Title2 {Comandante}
+Address_Form_Pir_Title3 {Capitán}
+Address_Form_Pir_Title4 {Comodoro}
+Address_Form_Pir_Title5 {Almirante}
+Address_Form_PirWoman {miss}
+Address_Form_PirWoman2 {missis}
+Address_Form_Spa {señor}
+Address_Form_Spa_Title1 {Corsario}
+Address_Form_Spa_Title2 {Comandante}
+Address_Form_Spa_Title3 {Capitán}
+Address_Form_Spa_Title4 {Comodoro}
+Address_Form_Spa_Title5 {Almirante}
+Address_Form_SpaWoman {señorita}
+Address_Form_SpaWoman2 {señora}
+DayGreeting {Buena mañana}
+EveningGreeting {Buenas tardes}
+Exclamation_1 {¡Oh, Señor!}
+Exclamation_2 {¡Oh, Cielos!}
+Exclamation_3 {¡Santa Virgen!}
+FriendlyGoodbye_0 {Adiós}
+FriendlyGoodbye_1 {Adiós}
+FriendlyGreeting {Hola}
+MorningGreeting {Buenos dias}
+NationEuropaTown_Eng {London}
+NationEuropaTown_Fra {Le Roshele}
+NationEuropaTown_Hol {Amsterdam}
+NationEuropaTown_Pir {Tortuga}
+NationEuropaTown_Spa {Sevilla}
+NationKingsCrown_Eng {trono inglés}
+NationKingsCrown_Fra {corona francesa}
+NationKingsCrown_Hol {Reino de Holanda}
+NationKingsCrown_Pir {Hermanos de la Costa}
+NationKingsCrown_Spa {corona española}
+NationKingsName_Eng {Su Majestad Charles II de Inglaterra}
+NationKingsName_Fra {Su Majestad Louis XIV de Francia}
+NationKingsName_Hol {Su Majestad William III de Holanda}
+NationKingsName_Pir {Los Hermanos de la Costa}
+NationKingsName_Spa {Su Católica Majestad Carlos II de España}
+NationNameAblative_Eng {Inglaterra}
+NationNameAblative_Fra {Francia}
+NationNameAblative_Hol {Holanda}
+NationNameAblative_Pir {los piratas}
+NationNameAblative_Spa {España}
+NationNameGenitive_Eng {Inglaterra}
+NationNameGenitive_Fra {Francia}
+NationNameGenitive_Hol {Holanda}
+NationNameGenitive_Pir {los piratas}
+NationNameGenitive_Spa {España}
+NationNameMan_Eng {Inglés}
+NationNameMan_Fra {Francés}
+NationNameMan_Hol {Holandés}
+NationNameMan_Pir {un pirata}
+NationNameMan_Spa {Español}
+NationNameNominative_Eng {Inglaterra}
+NationNameNominative_Fra {Francia}
+NationNameNominative_Hol {Holanda}
+NationNameNominative_Pir {Hermanos de la Costa}
+NationNameNominative_Spa {España}
+NationNamePeople_Eng {Ingleses}
+NationNamePeople_Fra {Franceses}
+NationNamePeople_Hol {Holandeses}
+NationNamePeople_Pir {piratas}
+NationNamePeople_Spa {Españoles}
+NationNamePeopleAcc_Eng {Ingleses}
+NationNamePeopleAcc_Fra {Franceses}
+NationNamePeopleAcc_Hol {Holandeses}
+NationNamePeopleAcc_Pir {piratas}
+NationNamePeopleAcc_Spa {Españoles}
+NationNameWoman_Eng {Inglés}
+NationNameWoman_Fra {Francés}
+NationNameWoman_Hol {Holandés}
+NationNameWoman_Pir {un pirata}
+NationNameWoman_Spa {Español}
+NightGreeting {Buenas noches}
+PoliteGoodbye_0 {Hasta la vista}
+PoliteGoodbye_1 {Hasta la vista}
+PoliteGreeting {Hola}
+Swear_1 {¡Caramba!}
+Swear_10 {¡Maldito sea!}
+Swear_11 {¡Mierda!}
+Swear_12 {Maldito seas...}
+Swear_13 {¡Vete a la mierda!}
+Swear_14 {¡Maldita sea!}
+Swear_15 {¡Qué me aspen!}
+Swear_2 {¡Maldita sea!}
+Swear_3 {¡Maldición!}
+Swear_4 {¡Mierda!}
+Swear_5 {No me jodas...}
+Swear_6 {¡Por los malditos tiburones!}
+Swear_7 {¡¡¡Argh!!!}
+Swear_8 {¡¡Qué demonios!!}
+Swear_9 {¡Alle hagel!}
+Title_Captain {capitán}
+Title_Ghovernor {Generalgouverneur}
+Title_ViceAdmiral {Vizeadmiral}

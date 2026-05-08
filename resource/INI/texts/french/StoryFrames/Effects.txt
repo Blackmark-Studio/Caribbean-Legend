@@ -1,0 +1,36 @@
+effects_title {Résultats de l'histoire}
+SkillExp_1 {$ctx(p1) a gagné de l'expérience : $key($ctx(p2))}
+SkillExp_pchar_1 {Vous avez gagné de l'expérience : $key($ctx(p1))}
+Loyality_0 {$ctx(p1) est mécontent}
+Loyality_1 {$ctx(p1) est satisfait}
+CrewMorale_pchar_0 {Le moral de l'équipage $MoraleStrDiff($ctx(value))}
+CrewMorale_pchar_1 {Le moral de l'équipage $MoraleStrDiff($ctx(value))}
+Reputation_pchar_0 {La réputation a baissé}
+Reputation_pchar_1 {La réputation a augmenté}
+CrewExp_pchar_1 {$key($ctx(p1)) ont gagné de l'expérience}
+Money_pchar_1 {Vous avez reçu $money($ctx(value))}
+Money_pchar_0 {Vous avez donné $abs($money($ctx(value)))}
+Goods_pchar_1 {Vous avez reçu _$key($goodI($ctx(p1))Acc) : $number($ctx(value))}
+Goods_pchar_0 {Vous avez donné _$key($goodI($ctx(p1))Acc) : $abs($number($ctx(value)))}
+NationRelation_pchar_0 {Les relations avec $key($nationI($ctx(p1))Abl) se sont détériorées}
+NationRelation_pchar_1 {Les relations avec $key($nationI($ctx(p1))Abl) se sont améliorées}
+ItemsCabin_0 {Vous avez donné l'objet : $GetItemName($ctx(p1)) x $abs($number($ctx(value)))}
+ItemsCabin_1 {Vous avez reçu l'objet : $GetItemName($ctx(p1)) x $number($ctx(value))}
+Items_pchar_0 {Vous avez donné l'objet : $GetItemName($ctx(p1)) x $abs($number($ctx(value)))}
+Items_pchar_1 {Vous avez reçu l'objet : $GetItemName($ctx(p1)) x $number($ctx(value))}
+TempModifier_pchar_0 {$key($ctx(p1)|modifiers.txt) $percent($ctx(value)) pendant $days($ctx(duration))}
+TempModifier_pchar_1 {$key($ctx(p1)|modifiers.txt) +$percent($ctx(value)) pendant $days($ctx(duration))}
+moraleDiff_up3 {a fortement augmenté}
+moraleDiff_up2 {a augmenté}
+moraleDiff_up1 {a légèrement augmenté}
+moraleDiff_stay {n'a pas changé}
+moraleDiff_down3 {a fortement baissé}
+moraleDiff_down2 {a baissé}
+moraleDiff_down1 {a légèrement baissé}
+FractionRelation_0 {Les relations avec $key($ctx(p1)Abl) se sont détériorées}
+FractionRelation_1 {Les relations avec $key($ctx(p1)Abl) se sont améliorées}
+CrewQty_pchar_0 {Membres d'équipage perdus : $abs($number($ctx(value)))}
+CrewQty_pchar_1 {Nouveaux membres d'équipage : $number($ctx(value))}
+NoEffectsStory {Sans conséquences}
+LoyalityAll_1 {Vos officiers sont désormais plus loyaux}
+LoyalityAll_0 {Vos officiers sont désormais moins loyaux}

@@ -2,6 +2,28 @@ new_string
 {
 
 }
+sp1 {Zélote}
+sp1_desc {Une chapelle de pont équipée, avec des icônes de la Vierge Marie, renforce mystérieusement les effets et la durée des amulettes d'église.}
+sp1_desc2
+{
+Renforcement de chaque amulette : individuel.Augmentation de la durée : 15 jours.
+}
+sp2 {Bienvenue, invité}
+sp2_desc {Ce navire légendaire est connu dans tous les coins de l'archipel des Caraïbes et est accueilli partout avec respect et admiration. L'emplacement de Lady Beth est immédiatement connu des vendeurs de cartes, et les commerçants locaux essaient de réunir tout le capital possible pour acheter des objets de valeur.}
+sp2_desc2
+{
+Bonus à la probabilité d'apparition d'un vendeur de cartes : 5–12%.Augmentation de la réserve de pesos : 100%.Augmentation de la réserve de doublons : ~30%.
+}
+sp3 {Creuset}
+sp3_desc {Sur ce navire, la vie humaine n’est qu’une courte étape avant la révélation du vrai pouvoir. Peu franchissent le Seuil et reviennent, mais ceux qui y parviennent ne craignent plus la mort.}
+sp3_desc2 {Les marins tombés augmentent l’expérience et le moral de l’équipage.}
+sp3_SailorsBoardingBonus_desc {Bonus d’expérience à l’abordage : #dSailorsBoardingBonus#%}
+sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 marins tombés)}
+sp3_SurrenderChanceBonus_desc {Augmentation de la chance de reddition : #dSurrenderChanceBonus#%}
+sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 marins tombés)}
+sp4 {Chasseur de pirates}
+sp4_desc {Ce navire a été conçu spécialement pour purger les mers de la piraterie. À chaque bâtiment envoyé par le fond, l’équipage se soude davantage, les canons gagnent en précision et le fanatisme du capitaine s’affirme.}
+sp4_desc2 {Chaque navire pirate détruit augmente définitivement la manœuvrabilité, la portée de tir, la vitesse sur la carte du monde et la vitesse de rechargement des canons. Bonus actuel : $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) sur 15. ~ Plus la menace pirate est faible, plus l’entretien du navire est réduit. Bonus actuel : $percent($GetAmsterdamMtp( )) sur 40.}
 special0 {Marchand}
 special0_desc {Un navire marchand sacrifie généralement le calibre, la vitesse et le nombre de canons au profit d'une grande cale. Seul un capitaine très expérimenté peut se permettre un voyage en solitaire sur un tel navire.}
 special0_desc2 {Bonus à la Puissance de la Flotte : faible}
@@ -17,6 +39,7 @@ special3_desc2
 {
 Bonus à la Puissance de la Flotte : moyenBonus à l'amélioration des attributs : 15%
 }
+SpecialityUpgrade {Amélioré par la CNIO}
 trait01 {Carte des courants}
 trait01_desc {Des instruments de navigation complexes fabriqués sur mesure par des maîtres européens et une carte précise des courants sous-marins de l'archipel permettent de gagner beaucoup de temps lors des voyages.}
 trait01_desc2
@@ -90,26 +113,3 @@ trait24_desc2
 {
 Dégâts supplémentaires à la coque et aux voiles : 200%.Durée de l'effet : 15 secondes.Augmente la probabilité d'incendie : 200%
 }
-sp1 {Zélote}
-sp1_desc {Une chapelle de pont équipée, avec des icônes de la Vierge Marie, renforce mystérieusement les effets et la durée des amulettes d'église.}
-sp1_desc2
-{
-Renforcement de chaque amulette : individuel.Augmentation de la durée : 15 jours.
-}
-sp2 {Bienvenue, invité}
-sp2_desc {Ce navire légendaire est connu dans tous les coins de l'archipel des Caraïbes et est accueilli partout avec respect et admiration. L'emplacement de Lady Beth est immédiatement connu des vendeurs de cartes, et les commerçants locaux essaient de réunir tout le capital possible pour acheter des objets de valeur.}
-sp2_desc2
-{
-Bonus à la probabilité d'apparition d'un vendeur de cartes : 5–12%.Augmentation de la réserve de pesos : 100%.Augmentation de la réserve de doublons : ~30%.
-}
-sp3 {Creuset}
-sp3_desc {Sur ce navire, la vie humaine n’est qu’une courte étape avant la révélation du vrai pouvoir. Peu franchissent le Seuil et reviennent, mais ceux qui y parviennent ne craignent plus la mort.}
-sp3_desc2 {Les marins tombés augmentent l’expérience et le moral de l’équipage.}
-sp3_SailorsBoardingBonus_desc {Bonus d’expérience à l’abordage : #dSailorsBoardingBonus#%}
-sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 marins tombés)}
-sp3_SurrenderChanceBonus_desc {Augmentation de la chance de reddition : #dSurrenderChanceBonus#%}
-sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 marins tombés)}
-sp4 {Chasseur de pirates}
-sp4_desc {Ce navire a été conçu spécialement pour purger les mers de la piraterie. À chaque bâtiment envoyé par le fond, l’équipage se soude davantage, les canons gagnent en précision et le fanatisme du capitaine s’affirme.}
-sp4_desc2 {Chaque navire pirate détruit augmente définitivement la manœuvrabilité, la portée de tir, la vitesse sur la carte du monde et la vitesse de rechargement des canons. Bonus actuel : $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) sur 15. ~ Plus la menace pirate est faible, plus l’entretien du navire est réduit. Bonus actuel : $percent($GetAmsterdamMtp( )) sur 40.}
-SpecialityUpgrade {Amélioré par la CNIO}

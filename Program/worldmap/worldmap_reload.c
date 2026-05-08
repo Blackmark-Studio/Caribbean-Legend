@@ -23,10 +23,8 @@ void wdmReloadToSea()
 	Siege_DailyUpdate();//homo осады 05/11/06
 	SaveCurrentQuestDateParam("WordMapEncounters_DailyUpdate"); //homo карта 25/03/07
 	// расчеты <--
-	
+
 	wdmLockReload = true;
-	//Обновим текст перегрузки
-	SetReloadNextTipsImage();
 	//Очищаем объект логина
 	DeleteAttribute(&wdmLoginToSea, "");
 	//Обновляем параметры
@@ -116,7 +114,7 @@ void WdmEndFade()
 	//Delete EventHandler
 	DelEventHandler("FaderEvent_EndFade", "WdmEndFade");
 	//Switch to sea
-	ReloadProgressStart();	
+	ReloadProgressStart();
 	sIslandID = worldMap.island;
 	SeaLogin(&wdmLoginToSea);
 	LayerAddObject(SEA_REALIZE, &reload_fader, -1);
@@ -523,11 +521,9 @@ void WdmStormEncounter()
 {
 	wdmLoginToSea.storm = worldMap.playerInStorm;
 	if(MakeInt(wdmLoginToSea.storm) != 0)
-	{
 		wdmLoginToSea.tornado = worldMap.stormWhithTornado;
-	}else{
+	else
 		wdmLoginToSea.tornado = "0";
-	}
 
 	//wdmLoginToSea.tornado = "1";
 

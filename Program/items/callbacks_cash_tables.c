@@ -151,6 +151,13 @@ void Jian(ref chr, ref table, ref function, ref context, string funcName)
 	else 	chr.chr_ai.FencingType = "FencingS";
 }
 
+void ChiefsMusket(ref chr, ref table, ref function, ref context, string funcName)
+{
+	int indianRep = sti(pchar.questTemp.Indian.relation);
+	if (indianRep >= 50) SetModifierFromSourceDirect(table, SHOT_STRIKE + "_" + M_DAMAGE, stf(function.arg0), MUSKET_ITEM_TYPE);
+	if (chr.id == "Tichingitu") SetModifierFromSourceDirect(table, MUSKET_ITEM_TYPE + "_" + M_RELOAD_SPEED, stf(function.arg1), MUSKET_ITEM_TYPE);
+}
+
 void KaleucheAmuletAttack(ref chr, ref table, ref function, ref context, string funcName)
 {
 	int bonus;
@@ -170,4 +177,15 @@ void KaleucheAmuletAttack(ref chr, ref table, ref function, ref context, string 
 	bonus = makeint(base * mtp);
 	context.fencingh = base + bonus;
 	context.fencingh.talisman = bonus;
+}
+
+void BlackwoodsCharter(ref chr, ref table, ref function, ref context, string funcName)
+{
+	float value;
+	ref Articles = ItemsFromID("talisman18");
+	if (!CheckAttribute(Articles, "QBonus")) return;
+	if (CheckAttribute(Articles,"QBonus.max")) value = 0.10;
+	else value = wPercentFloat(stf(Articles.QBonus), 1.0);
+
+	if (value > 0.0) SetModifierFromSourceDirect(table, GRAPESHOT + "_" + M_DAMAGE, value * 2, TALISMAN_ITEM_TYPE);
 }

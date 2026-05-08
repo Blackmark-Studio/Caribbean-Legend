@@ -218,7 +218,6 @@ void Mangarosa_DeleteEffectPower(string qName)
 	RemoveChrModifier(pchar, "MangarosaPower");
 	Mangarosa_DeleteEffect(qName);
 	DeleteAttribute(pchar, "questTemp.Mangarosa.Potion.Power");
-	Log_Info("Mangarosa_DeleteEffectPower");
 }
 
 void Mangarosa_DeleteEffectFast(string qName)
@@ -226,7 +225,6 @@ void Mangarosa_DeleteEffectFast(string qName)
 	RemoveChrModifier(pchar, "MangarosaFast");
 	Mangarosa_DeleteEffect(qName);
 	DeleteAttribute(pchar, "questTemp.Mangarosa.Potion.Fast");
-	Log_Info("Mangarosa_DeleteEffectFast");
 }
 
 void Mangarosa_DeleteEffectTotal(string qName)
@@ -234,7 +232,6 @@ void Mangarosa_DeleteEffectTotal(string qName)
 	RemoveChrModifier(pchar, "MangarosaTotal");
 	Mangarosa_DeleteEffect(qName);
 	DeleteAttribute(pchar, "questTemp.Mangarosa.Potion.Total");
-	Log_Info("Mangarosa_DeleteEffectTotal");
 	UpdatePlayerSquadronPower();
 }
 

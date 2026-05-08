@@ -133,8 +133,8 @@ void ProcessDialogEvent()
 										Dialog.text = RandPhraseSimple("玩纸牌怎么样? 很有趣的游戏! ", "我建议玩纸牌游戏。 你觉得呢? ");
 										link.l1 = "为什么不呢? 当然, 我们玩。 ";
 										link.l1.go = "Cards_begin";
-										link.l2 = "你的游戏规则是什么? ";
-										link.l2.go = "Cards_Rule";
+										// link.l2 = "你的游戏规则是什么? ";
+										// link.l2.go = "Cards_Rule";
 										link.l3 = "现在不了。 ";
 										link.l3.go = "exit";
 									}
@@ -155,8 +155,8 @@ void ProcessDialogEvent()
 										Dialog.text = RandPhraseSimple("玩骰子怎么样? 很有趣的游戏! ", "我建议掷骰子。 你觉得呢? ");
 										link.l1 = "为什么不呢? 当然, 我们玩。 ";
 										link.l1.go = "Dice_begin";
-										link.l2 = "你的游戏规则是什么? ";
-										link.l2.go = "Dice_Rule";
+										// link.l2 = "你的游戏规则是什么? ";
+										// link.l2.go = "Dice_Rule";
 										link.l3 = "现在不了。 ";
 										link.l3.go = "exit";
 									}
@@ -199,7 +199,7 @@ void ProcessDialogEvent()
 		
 	    // 纸牌 -->
 	    case "Cards_Rule":
-   			dialog.text = CARDS_RULE;
+   			dialog.text = GlobalStringConvert("CARDS_RULE");
 			link.l1 = "好吧, 那我们开始... ";
 			link.l1.go = "Cards_begin";
 			link.l3 = "不, 这不适合我... ";
@@ -298,7 +298,7 @@ void ProcessDialogEvent()
 	    // 纸牌 <--
 	    // 骰子 -->
 	    case "Dice_Rule":
-   			dialog.text = DICE_RULE;
+   			dialog.text = GlobalStringConvert("DICE_RULE");
 			link.l1 = "好吧, 那我们开始... ";
 			link.l1.go = "Dice_begin";
 			link.l3 = "不, 这不适合我... ";

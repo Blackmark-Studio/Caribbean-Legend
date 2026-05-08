@@ -7,7 +7,6 @@ bool isOkExit = false;
 int idLngFile = -1;
 string sCharacterName;
 
-bool g_bToolTipStarted = false;
 int heroQty = 0;
 string totalInfo;
 string CurTable, CurRow, CurCol;
@@ -656,7 +655,6 @@ void confirmChangeProfilePass()
 
 void ShowInfo()
 {
-//	g_bToolTipStarted = true;
 	string sHeader = " ";
 	string sNode = GetEventData();
 	string sNation;
@@ -763,17 +761,12 @@ void ShowInfo()
 			sText1 = GetRPGText("ArcadeSailMode_desc");
 		break;
 	}
-	CreateTooltipNew(sNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false);
+	CreateTooltipNew(sNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false, false);
 }
 
 void HideInfo()
 {
 	CloseTooltipNew();
-/*	if( g_bToolTipStarted ) 
-	{
-		g_bToolTipStarted = false;
-		CloseTooltipNew();
-	}*/
 }
 
 void ProcessCommandExecuteLeft()

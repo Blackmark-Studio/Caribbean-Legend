@@ -243,6 +243,8 @@ void LAi_StartBoarding(int locType, ref echr, bool _isMCAttack)
 	}
 	pchar.OfficerAttRange = 35.0;
 	OfficersCharge();
+
+	if (BRD_IsOfficersFight(boarding_enemy)) notification(StringFromKey("boarding_12"), SKILL_FENCING);
 }
 
 //Загрузить локацию абордажа
@@ -486,8 +488,8 @@ void LAi_EnableReload()
 	Surrendered = BRD_IsSurrenderBeforeCabin(boarding_enemy); // не надумла ли сдаваться
 
 	SetEventHandler("Control Activation","LAi_ActivateReload",1);
-	if(CheckAttribute(loadedlocation, "CabinType")) Log_SetActiveAction("BoardingEnd");
-	else Log_SetActiveAction("BoardingReload"); // belamour legendary edition бутафория 
+	if(CheckAttribute(loadedlocation, "CabinType")) Log_SetPermanentAction("BoardingEnd");
+	else Log_SetPermanentAction("BoardingReload"); // belamour legendary edition бутафория 
 	//Уберём саблю
 	LAi_SetFightMode(pchar, 0);
 	
@@ -526,7 +528,7 @@ void LAi_ActivateReload()
 	if(controlName != "ChrAction") return;
 	if (CheckAttribute(pchar, "GenQuest.CannotReloadBoarding")) return; // Jason
 	DelEventHandler("Control Activation", "LAi_ActivateReload");
-	Log_SetActiveAction("Nothing");
+	Log_DeletePermanentAction();
 	LAi_ReloadBoarding();
 }
 

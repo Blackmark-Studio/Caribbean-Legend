@@ -24,11 +24,11 @@ int iLocCameraCurState = -1;
 
 int locCameraCurMode;
 bool locCameraEnableSpecialMode;
-bool locCameraEnableFree;
+//bool locCameraEnableFree;
 
 void locCameraInit()
 {
-	locCameraEnableFree = false;
+//	locCameraEnableFree = false;
 	locCameraEnableSpecialMode = false;
 	//locCameraEnableFree = true;
 	locCameraCurMode = LOCCAMERA_FOLLOW;
@@ -48,6 +48,8 @@ bool locCameraFollow()
 bool locCameraFollowEx(bool isTeleport)
 {
 	if(IsEntity(&locCamera) == 0) return false;
+	if (locCameraCurMode == LOCCAMERA_FREE)
+		LAi_CharacterEnableDialog(pchar);
 	bool res;
 	if(isTeleport)
 		res = SendMessage(&locCamera, "ll", MSG_CAMERA_FOLLOW, isTeleport);
@@ -89,7 +91,7 @@ bool locCameraToPos(float x, float y, float z, bool isTeleport)
 bool locCameraToPosEx(float x, float y, float z, bool isTeleport, float fMorphSpeed)
 {
 	if(IsEntity(&locCamera) == 0) return false;
-	if(locCameraEnableFree == true) return true;
+//	if(locCameraEnableFree == true) return true;
 	int delta = GetDeltaTime();
 	fMorphSpeed *= delta * 0.02;
 	bool res = SendMessage(&locCamera, "lffflf", MSG_CAMERA_TOPOS, x, y, z, isTeleport, fMorphSpeed);
@@ -120,22 +122,15 @@ void locCameraSleep(bool isSleep)
 	SendMessage(&locCamera, "ll", MSG_CAMERA_SLEEP, isSleep);
 }
 
-void locCameraSwitch()
+void locCameraFreeSwitch()
 {
-	if(locCameraEnableFree == false)
-	{
-		LAi_CharacterEnableDialog(pchar);
-		return;
-	}
-	LAi_CharacterDisableDialog(pchar);
-	string controlName = GetEventData();
-	if(controlName != "ChrCamCameraSwitch") return;
 	if(locCameraCurMode != LOCCAMERA_FREE)
 	{
+		LAi_CharacterDisableDialog(pchar);
 		locCameraFree();
-	}else{
-		locCameraFollow();
 	}
+	else
+		locCameraFollow();
 }
 
 void locCameraSetSpecialMode(bool isEnable)
@@ -168,8 +163,8 @@ bool locCameraFromToPos(float from_x,float from_y,float from_z, bool isTeleport,
 {
 	if(IsEntity(&locCamera) == 0)
 		return false;
-	if(locCameraEnableFree == true)
-		return true;
+//	if(locCameraEnableFree == true)
+//		return true;
 	bool res = SendMessage(&locCamera, "lffflfffl", -4, from_x, from_y, from_z, isTeleport, to_x, to_y, to_z, true);
 	locCameraCurMode = LOCCAMERA_TOPOS;
 	return res;
@@ -179,8 +174,8 @@ bool locCameraFromToPosEx(float from_x, float from_y, float from_z, bool isTelep
 {
 	if(IsEntity(&locCamera) == 0)
 		return false;
-	if(locCameraEnableFree == true)
-		return true;
+//	if(locCameraEnableFree == true)
+//		return true;
 	bool res = SendMessage(&locCamera, "lffflfffl", -4, from_x, from_y, from_z, isTeleport, to_x, to_y, to_z, targetChr);
 	locCameraCurMode = LOCCAMERA_TOPOS;
 	return res;
@@ -453,7 +448,7 @@ void locCameraUpdate()
 	string sPoint = "";
 	float dltTime = GetRealDeltaTime();
 	
-	float timeScale = 1 + TimeScaleCounter * 0.25; // Текущее ускорение времени
+	float timeScale = GetTimeScale(); // Текущее ускорение времени
 	
 	if(iLocCameraCurState != -1 && !sti(InterfaceStates.Launched))
 	{

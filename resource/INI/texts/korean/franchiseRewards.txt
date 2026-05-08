@@ -1,0 +1,17 @@
+condition_legendGuide
+{
+Caribbean Legend
+페이지를 팔로우하면 이 아이템이 게임에 나타납니다
+}
+condition_mushket_indian
+{
+라이브러리에
+Caribbean Legend: Age of Pirates가 있으면 이 아이템이 고리대금업자에게 나타납니다
+}
+noRewardYetMessage
+{
+이 보상은 아직 제공되지 않습니다.
+업데이트를 기대해 주세요!
+}
+steamButtonAlreadyGot {획득함}
+steamButtonGet {획득}

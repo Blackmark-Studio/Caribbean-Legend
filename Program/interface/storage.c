@@ -441,6 +441,7 @@ void ShowGoodsInfo(int iGoodIndex)
 	SetNewGroupPicture("QTY_GOODS_PICTURE", "GOODS", GoodName);
     SetFormatedText("QTY_CAPTION", sHeader);
     SetFormatedText("QTY_GOODS_INFO", goodsDescr);
+	SetFormatedText("TRADE_TYPE", xiStr("tradeType_" + goods[iGoodIndex].type));
 
 	iShipQty = GetCargoGoods(refCharacter, iGoodIndex);
 	iStoreQty = GetStorageGoodsQuantity(refStore, iGoodIndex); 
@@ -454,27 +455,28 @@ void ShowGoodsInfo(int iGoodIndex)
 
 void ShowFoodInfo()
 {
-	if(iCurGoodsIdx == GOOD_FOOD)
+	if (iCurGoodsIdx == GOOD_FOOD)
 	{
 		// чтоб прикинуть как оно будет, скинем на время колво на продажное
 		SetCharacterGoods(refCharacter, GOOD_FOOD, iShipQty + BuyOrSell*sti(GameInterface.qty_edit.str));
 		SetFoodShipInfo(refCharacter, "FOOD_SHIP");
 		SetCharacterGoods(refCharacter, GOOD_FOOD, iShipQty);
 	}
-	else
+	else if (iCurGoodsIdx == GOOD_RUM) // Warship 11.07.09 На сколько хватит рому
 	{
-		if(iCurGoodsIdx == GOOD_RUM) // Warship 11.07.09 На сколько хватит рому
-		{
-			// чтоб прикинуть как оно будет, скинем на время колво на продажное
-			SetCharacterGoods(refCharacter, GOOD_RUM, iShipQty + BuyOrSell*sti(GameInterface.qty_edit.str));
-			SetRumShipInfo(refCharacter, "FOOD_SHIP");
-			SetCharacterGoods(refCharacter, GOOD_RUM, iShipQty);
-		}
-		else
-		{
-			SetFormatedText("FOOD_SHIP", "");
-		}
+		// чтоб прикинуть как оно будет, скинем на время колво на продажное
+		SetCharacterGoods(refCharacter, GOOD_RUM, iShipQty + BuyOrSell*sti(GameInterface.qty_edit.str));
+		SetRumShipInfo(refCharacter, "FOOD_SHIP");
+		SetCharacterGoods(refCharacter, GOOD_RUM, iShipQty);
 	}
+	else if (iCurGoodsIdx == GOOD_MEDICAMENT) // Warship 11.07.09 На сколько хватит рому
+	{
+		// чтоб прикинуть как оно будет, скинем на время колво на продажное
+		SetCharacterGoods(refCharacter, GOOD_MEDICAMENT, iShipQty + BuyOrSell*sti(GameInterface.qty_edit.str));
+		SetMedicamentShipInfo(refCharacter, "FOOD_SHIP");
+		SetCharacterGoods(refCharacter, GOOD_MEDICAMENT, iShipQty);
+	}
+	else SetFormatedText("FOOD_SHIP", "");
 }
 
 void TransactionOK()

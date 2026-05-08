@@ -470,6 +470,7 @@ void ProcessDialogEvent()
 			dialog.text = "Старший матрос. Я мало что про него знаю, но могу сказать точно: если у каждого человека можно найти скелет в шкафу, то у Алонсо там — целое кладбище.";
 			link.l1 = "Звучит так, как будто вы ему не доверяете.";
 			link.l1.go = "Captain_7_question_2_2";
+			AddCharacterSkillPoints(pchar, "Leadership", 1);
 		break;
 		
 		case "Captain_7_question_2_2":
@@ -489,6 +490,7 @@ void ProcessDialogEvent()
 			dialog.text = "Вы задели меня за живое, Шарль! О своей красавице я могу разглагольствовать вечно. Третий ранг, двадцать пушек, прекрасная скорость — не смотрите, что 'торговец'!";
 			link.l1 = "Про пушки и скорость я понял. А 'ранг'? 'Торговец'?";
 			link.l1.go = "Captain_7_question_3_2";
+			AddCharacterSkillPoints(pchar, "Sailing", 1);
 		break;
 		
 		case "Captain_7_question_3_2":

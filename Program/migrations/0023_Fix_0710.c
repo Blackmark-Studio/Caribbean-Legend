@@ -52,7 +52,7 @@ void shipsReInitNewSpeeds()
     makeref(refShip, ShipsTypes[SHIP_CAREERLUGGER]);      refShip.SpeedRate = 8.20;  // Кур. люггер
     makeref(refShip, ShipsTypes[SHIP_LUGGER]);            refShip.SpeedRate = 7.65;  // Люггер
     makeref(refShip, ShipsTypes[SHIP_BARKENTINE]);        refShip.SpeedRate = 7.90;  // Баркентина
-    makeref(refShip, ShipsTypes[SHIP_SLOOP]);             refShip.SpeedRate = 7.50; refShip.WindAgainstSpeed = 1.35; // Шлюп
+    makeref(refShip, ShipsTypes[SHIP_SLOOP]);             refShip.SpeedRate = 7.50;  // Шлюп
     makeref(refShip, ShipsTypes[SHIP_PINK]);              refShip.SpeedRate = 8.60;  // Пинк "Принципио" (КВ)
 
     // 5 класс

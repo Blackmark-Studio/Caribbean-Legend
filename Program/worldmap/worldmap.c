@@ -120,9 +120,68 @@ float GetWorldMapDistanceBonus(ref chr)
     return 1.0 + stf(rItm.worldMapBonus) * 0.01;
 }
 
-void wdmCreateWorldMap()
+void wdmSetInterfaceParams()
 {
 	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	int	fOffX = makeint(50.0 * fHtRatio);
+	int	fOffY = makeint(50.0 * fHtRatio);
+	int cx = sti(showWindow.right) - makeint(64.0 * fHtRatio) - fOffX;
+	int cy = sti(showWindow.top) + makeint(64.0 * fHtRatio) + fOffY;
+	float fRes = 1.0; // для ресайза
+	
+	fRes = 1.4;
+	worldMap.sky.texture     = "interfaces\le\battle_interface\worldmap\sky.tga.tx";
+	worldMap.sky.maskTexture = "interfaces\le\battle_interface\worldmap\sky_mask.tga.tx";
+	worldMap.sky.leftPos = cx - makeint(64.0 * fRes * fHtRatio);
+	worldMap.sky.topPos = cy - makeint(64.0 * fRes * fHtRatio);
+	worldMap.sky.width = makeint(128.0 * fRes * fHtRatio);
+	worldMap.sky.height = makeint(128.0 * fRes * fHtRatio);
+	worldMap.sky.color = argb(128,255,255,255);
+
+	fRes = 1.54;
+	worldMap.windPointer.texture = "interfaces\le\battle_interface\worldmap\wind_pointer.tga.tx";
+	worldMap.windPointer.leftPos = cx - makeint(64.0 * fRes * fHtRatio);
+	worldMap.windPointer.topPos = cy - makeint(64.0 * fRes * fHtRatio);
+	worldMap.windPointer.width = makeint(128.0 * fRes * fHtRatio);
+	worldMap.windPointer.height = makeint(128.0 * fRes * fHtRatio);
+	worldMap.windPointer.color = argb(255,255,255,255);
+
+	fRes = 1.21;
+	worldMap.windBar.texture     = "interfaces\le\battle_interface\worldmap\bar.tga.tx";
+	worldMap.windBar.maskTexture = "interfaces\le\battle_interface\worldmap\bar_mask.tga.tx";
+	worldMap.windBar.leftPos = cx - makeint(64.0 * fRes * fHtRatio);
+	worldMap.windBar.topPos = cy + makeint(5.0 * fRes * fHtRatio) ;
+	worldMap.windBar.width = makeint(128.0 * fRes * fHtRatio);
+	worldMap.windBar.height = makeint(128.0 * fRes * fHtRatio);
+	worldMap.windBar.color = argb(255,255,255,255);
+
+	fRes = 1.6;
+	worldMap.frame.texture = "interfaces\le\battle_interface\worldmap\back.tga.tx";
+	worldMap.frame.leftPos = cx - makeint(64.0 * fRes * fHtRatio);
+	worldMap.frame.topPos = cy - makeint(64.0 * fRes * fHtRatio);
+	worldMap.frame.width = makeint(128.0 * fRes * fHtRatio);
+	worldMap.frame.height = makeint(128.0 * fRes * fHtRatio);
+	worldMap.frame.color = argb(255,255,255,255);
+	
+	worldMap.seasons_ring.texture = "interfaces\le\battle_interface\worldmap\seasons_ring.tga.tx";
+	worldMap.seasons_ring.centerX = cx;
+	worldMap.seasons_ring.centerY = cy;
+	worldMap.seasons_ring.radius = makeint(74.0 * fRes * fHtRatio);
+	worldMap.seasons_ring.sector = Degree2Radian(100.0);
+	worldMap.seasons_ring.color = argb(255, 255, 255, 255);
+
+	worldMap.windText.font = "interface_normal";
+	worldMap.windText.scale = 1.2 * fHtRatio;
+	worldMap.windText.color = argb(255,255,255,255);
+	worldMap.windText.pos.x = cx;
+	worldMap.windText.pos.y = cy + makeint(73.0 * fHtRatio);
+	
+	worldMap.resizeRatio = fHtRatio;
+}
+
+void wdmCreateWorldMap()
+{
+	
 	// belamour legendary edition задать течение времени и скорость корабля ГГ
 	if(bImCasual) worldMap.date.hourPerSec = 0.6 + (MOD_SKILL_ENEMY_RATE/20.0);
 	float fSpeedBonus = 0.0;
@@ -131,7 +190,7 @@ void wdmCreateWorldMap()
 	else
 	{
 		if(IsEquipCharacterByItem(pchar, "bussol")) fSpeedBonus += 0.02;
-		if(IsEquipCharacterByItem(pchar, "piratesJournal_1"))
+		if(IsCharacterEquippedArtefact(pchar, "piratesJournal_1"))
 		{
 			if (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_AMSTERDAM) fSpeedBonus += 0.06;
 			else fSpeedBonus += 0.03;
@@ -173,128 +232,9 @@ void wdmCreateWorldMap()
 	//
 	ReloadProgressStart();
 
-	//Настраиваем имена месяцев
-	worldMap.date.monthnames.m01 = XI_ConvertString("MonthGen_1");
-	worldMap.date.monthnames.m02 = XI_ConvertString("MonthGen_2");
-	worldMap.date.monthnames.m03 = XI_ConvertString("MonthGen_3");
-	worldMap.date.monthnames.m04 = XI_ConvertString("MonthGen_4");
-	worldMap.date.monthnames.m05 = XI_ConvertString("MonthGen_5");
-	worldMap.date.monthnames.m06 = XI_ConvertString("MonthGen_6");
-	worldMap.date.monthnames.m07 = XI_ConvertString("MonthGen_7");
-	worldMap.date.monthnames.m08 = XI_ConvertString("MonthGen_8");
-	worldMap.date.monthnames.m09 = XI_ConvertString("MonthGen_9");
-	worldMap.date.monthnames.m10 = XI_ConvertString("MonthGen_10");
-	worldMap.date.monthnames.m11 = XI_ConvertString("MonthGen_11");
-	worldMap.date.monthnames.m12 = XI_ConvertString("MonthGen_12");
-
-	int	fOffX = makeint(50.0 * fHtRatio);
-	int	fOffY = makeint(50.0 * fHtRatio);
-	int cx = sti(showWindow.right) - makeint(64.0 * fHtRatio) - fOffX;
-	int cy = sti(showWindow.top) + makeint(64.0 * fHtRatio) + fOffY;
-	float fRes = 1.0; // для ресайза
-
-	fRes = 1.4;
-	worldMap.sky.texture     = "interfaces\le\battle_interface\worldmap\sky.tga.tx";
-	worldMap.sky.maskTexture = "interfaces\le\battle_interface\worldmap\sky_mask.tga.tx";
-	worldMap.sky.leftPos = cx - makeint(64.0 * fRes * fHtRatio);
-	worldMap.sky.topPos = cy - makeint(64.0 * fRes * fHtRatio);
-	worldMap.sky.width = makeint(128.0 * fRes * fHtRatio);
-	worldMap.sky.height = makeint(128.0 * fRes * fHtRatio);
-	worldMap.sky.color = argb(128,255,255,255);
-
-	fRes = 1.54;
-	worldMap.windPointer.texture = "interfaces\le\battle_interface\worldmap\wind_pointer.tga.tx";
-	worldMap.windPointer.leftPos = cx - makeint(64.0 * fRes * fHtRatio);
-	worldMap.windPointer.topPos = cy - makeint(64.0 * fRes * fHtRatio);
-	worldMap.windPointer.width = makeint(128.0 * fRes * fHtRatio);
-	worldMap.windPointer.height = makeint(128.0 * fRes * fHtRatio);
-	worldMap.windPointer.color = argb(255,255,255,255);
-
-	fRes = 1.21;
-	worldMap.windBar.texture     = "interfaces\le\battle_interface\worldmap\bar.tga.tx";
-	worldMap.windBar.maskTexture = "interfaces\le\battle_interface\worldmap\bar_mask.tga.tx";
-	worldMap.windBar.leftPos = cx - makeint(64.0 * fRes * fHtRatio);
-	worldMap.windBar.topPos = cy + makeint(5.0 * fRes * fHtRatio) ;
-	worldMap.windBar.width = makeint(128.0 * fRes * fHtRatio);
-	worldMap.windBar.height = makeint(128.0 * fRes * fHtRatio);
-	worldMap.windBar.color = argb(255,255,255,255);
-
-	fRes = 1.6;
-	worldMap.frame.texture = "interfaces\le\battle_interface\worldmap\back.tga.tx";
-	worldMap.frame.leftPos = cx - makeint(64.0 * fRes * fHtRatio);
-	worldMap.frame.topPos = cy - makeint(64.0 * fRes * fHtRatio);
-	worldMap.frame.width = makeint(128.0 * fRes * fHtRatio);
-	worldMap.frame.height = makeint(128.0 * fRes * fHtRatio);
-	worldMap.frame.color = argb(255,255,255,255);
-
-	worldMap.windText.font = "interface_normal";
-	worldMap.windText.scale = 1.2 * fHtRatio;
-	worldMap.windText.color = argb(255,255,255,255);
-	worldMap.windText.pos.x = cx;
-	worldMap.windText.pos.y = cy + makeint(73.0 * fHtRatio);
-
-	worldMap.dateText.font = "interface_normal_bold";
-	worldMap.dateText.scale = 0.7 * fHtRatio;
-	worldMap.dateText.color = argb(255,255,255,255);
-	worldMap.dateText.pos.x = cx;
-	worldMap.dateText.pos.y = cy + makeint(105.0 * fHtRatio); // 16.0 is CharHeight for font = "normal"
-
-	// Center
-	cy = cy + makeint(128.0 * fHtRatio) + 32.0;
-
-	fRes = 1.4;
-	worldMap.morale.texture     = "interfaces\le\battle_interface\worldmap\morale.tga.tx";
-	worldMap.morale.barTexture  = "interfaces\le\battle_interface\worldmap\morale_bar.tga.tx";
-	worldMap.morale.maskTexture = "interfaces\le\battle_interface\worldmap\morale_mask.tga.tx";
-	worldMap.morale.leftPos = cx - makeint(64.0 * fRes * fHtRatio);
-	worldMap.morale.topPos = cy - makeint(18.0 * fRes * fHtRatio);
-	worldMap.morale.width = makeint(128.0 * fRes * fHtRatio);
-	worldMap.morale.height = makeint(64.0 * fRes * fHtRatio);
-	worldMap.morale.color = argb(255,255,255,255);
-
-	worldMap.foodText.font = "interface_normal";
-	worldMap.foodText.scale = 1.3 * fHtRatio;
-	worldMap.foodText.color = argb(255,255,255,255);
-	worldMap.foodText.pos.x = cx - makeint(32.0 * fHtRatio);
-	worldMap.foodText.pos.y = cy + makeint(55.0 * fHtRatio);
-
-	worldMap.rumText.font = "interface_normal";
-	worldMap.rumText.scale = 1.3 * fHtRatio;
-	worldMap.rumText.color = argb(255,255,255,255);
-	worldMap.rumText.pos.x = cx + makeint(33.0 * fHtRatio);
-	worldMap.rumText.pos.y = cy + makeint(55.0 * fHtRatio);
-
-	worldMap.coord.texture = "interfaces\le\battle_interface\worldmap\coord.tga.tx";
-	worldMap.coord.leftPos = cx - makeint(64.0 * fHtRatio);
-	worldMap.coord.topPos = cy + makeint(84.0 * fHtRatio);
-	worldMap.coord.width = makeint(128.0 * fHtRatio);
-	worldMap.coord.height = makeint(64.0 * fHtRatio);
-	worldMap.coord.color = argb(225, 255, 255, 255);
-
-	worldMap.stCoordText.font = "interface_normal";
-	worldMap.stCoordText.scale = 1.2 * fHtRatio;
-	worldMap.stCoordText.color = argb(255,255,255,255);
-	worldMap.stCoordText.pos.x = cx;
-	worldMap.stCoordText.pos.y = cy + makeint((84.0 + 13) * fHtRatio);
-	worldMap.stCoordText.text = XI_ConvertString("Coordinates");
-
-	worldMap.coordText.font = "interface_normal";
-	worldMap.coordText.scale = 1.2 * fHtRatio;
-	worldMap.coordText.color = argb(255,255,255,255);
-	worldMap.coordText.pos.x = cx;
-	worldMap.coordText.pos.y = cy + makeint((84.0 + 32.0) * fHtRatio);
-
-	fRes = 1.4;
-	worldMap.nationFlag.texture  = "interfaces\le\nations.tga.tx";
-	worldMap.nationFlag.count = 8;
-	worldMap.nationFlag.leftPos = cx - makeint(48.0 * fRes * fHtRatio / 2);
-	worldMap.nationFlag.topPos = cy + makeint(115.0 * fRes * fHtRatio);
-	worldMap.nationFlag.width = makeint(48.0 * fRes * fHtRatio);
-	worldMap.nationFlag.height = makeint(48.0 * fRes * fHtRatio);
-	worldMap.nationFlag.color = argb(255,255,255,255);
-
+	wdmSetInterfaceParams();
+	
 	//Удалим все устаревшие энкаунтеры
-	worldMap.resizeRatio = fHtRatio;
 	wdmRemoveOldEncounters();
 //	Trace("Save check ---------------================--------------")
 //	DumpAttributes(&worldMap);
@@ -326,7 +266,7 @@ void wdmCreateWorldMap()
 	PostEvent("EventCoordUpdate", 100);	
 	//Создаём накопившиеся квестовые энкаунтеры
 	worldMap.addQuestEncounters = "updateQuest";
-	wdmSetNationFlag(sti(pchar.nation));
+	wdmSetNationFlag();
 	InitWmInterface();
 }
 
@@ -381,9 +321,10 @@ float wdmGetDays(int year, int month, int day, int hour)
 	return days;
 }
 
-void wdmSetNationFlag(int iNation)
+void wdmSetNationFlag()
 {
-	SendMessage(&worldMap, "ll", MSG_WORLDMAP_SET_NATION_FLAG, iNation);
+	if(IsEntity(&worldMap))
+		WM_SetFlagData();
 }
 
 void wdmMarkDeleteEncounters()

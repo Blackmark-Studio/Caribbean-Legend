@@ -1,4 +1,7 @@
 boarding_1 {Le capitaine a choisi de mettre fin à ses jours.}
+boarding_10 {Survivants revenus sur le @<_ShipName> : @<_CrewSize>.}
+boarding_11 {Le compagnon n’a pas réussi à approcher le navire pour l’abordage.}
+boarding_12 {Le capitaine s'est barricadé dans sa cabine, il va falloir forcer le passage avec du renfort.}
 boarding_2 {L’équipage a refusé de se battre pour son capitaine.}
 boarding_3 {Capitaine sur le pont !}
 boarding_4 {@<_Name> rejoint la mêlée !}
@@ -7,5 +10,3 @@ boarding_6 {Le capitaine est mort, mais l’équipage refuse de se rendre.}
 boarding_7 {Butin.}
 boarding_8 {Objets dans le butin.}
 boarding_9 {Équipe d’abordage du @<_ShipName> : @<_CrewSize>.}
-boarding_10 {Survivants revenus sur le @<_ShipName> : @<_CrewSize>.}
-boarding_11 {Le compagnon n’a pas réussi à approcher le navire pour l’abordage.}

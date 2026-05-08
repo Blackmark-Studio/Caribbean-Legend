@@ -1,3 +1,4 @@
+#include "Loc_ai\boarding\cabin_fight.c"
 // Здесь геймплейные функции абордажа
 
 // Мушкетный залп
@@ -272,7 +273,7 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 	else sLocType = "loc";
 
 	bool isCabin = CheckAttribute(&Locations[locIndex], "boarding.Loc.Capt");
-	if (BRD_IsUpperDeskFight(&boarding_enemy) && isCabin) 
+	if (BRD_IsUpperDeskFight(boarding_enemy) && isCabin)
 	{
 		PostEvent("LAi_event_boarding_EnableReload", 200);
 		limit = 0;
@@ -305,7 +306,8 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 		}
 		else if (i == capIdx)
 		{
-			BRD_PlaceCaptain(&chr, &boarding_enemy, locIndex, sLocType);
+			BRD_PlaceCaptain(chr, boarding_enemy, locIndex, sLocType);
+			ChangeCharacterAddressGroup(chr, location.id, "rld", "cabin_boarding_enemy1");
 		}
 		else 
 		{
@@ -376,7 +378,7 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 		DumpAttributes(boardingObject);
 		trace("============Абордажный положняк=================");
 	}
-	BRD_StartFight(locIndex, boarding_enemy, isCabin);
+	BRD_StartFight(locIndex, boarding_enemy, isCabin, boardingObject);
 }
 
 bool BRD_ExitToInterface(ref chr, int leftCrew, bool IsFort, ref surrender)
@@ -423,7 +425,7 @@ bool BRD_ExitToInterface(ref chr, int leftCrew, bool IsFort, ref surrender)
 }
 
 // Все участники на местах, начинаем драку или?..
-void BRD_StartFight(int locIndex, ref boarding_enemy, bool isCabin)
+void BRD_StartFight(int locIndex, ref boarding_enemy, bool isCabin, ref boardingObject)
 {
 	if (CheckAttribute(boarding_enemy, "replaceFightWithFunc"))
 	{
@@ -441,6 +443,7 @@ void BRD_StartFight(int locIndex, ref boarding_enemy, bool isCabin)
 		BRD_SetCrewSurrendered();
 	}
 
+	if (isCabin) InitCabinFight(location, boarding_enemy, boardingObject);
   LAi_group_FightGroupsEx(LAI_GROUP_PLAYER, LAI_GROUP_BRDENEMY, true, GetMainCharacterIndex(), -1, false, false);
   LAi_group_SetCheckEvent(LAI_GROUP_BRDENEMY);
 }

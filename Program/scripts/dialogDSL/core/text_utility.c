@@ -17,12 +17,12 @@ void DLG_ModifyRegister(ref input, string key, int startPos)
   string end     = "";
   if (markPos+3 > length) return;
 
-  string replace = strcut(input, markPos+1, markPos+2);
+  string replace = strcut(input, markPos+1, markPos+1);
   if (key == "^") replace = ToUpper(replace);
   else replace = GetStrSmallRegister(replace);
 
   if (markPos > 0) start = strcut(input, 0, markPos-1);
-  if (markPos+3 < length) end = strcut(input, markPos+3, length-1);
+  if (markPos+3 < length) end = strcut(input, markPos+2, length-1);
 
   input = start + replace + end;
   DLG_ModifyRegister(&input, &key, markPos); // looking for the next replacement

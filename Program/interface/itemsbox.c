@@ -484,7 +484,7 @@ void IDoExit(int exitCode)
 			{
 				arCurChar = CharacterFromID(sCurArroyID);
 				if(IsMainCharacter(arCurChar)) continue;
-				if(LAi_CheckFightMode(arCurChar)) continue;		// если перс дерется то некогда ему обменом заниматься
+				if(LAi_CheckFightMode(arCurChar) != CHR_MODE_PEACE) continue; // если перс дерется то некогда ему обменом заниматься
 				
 				if (CheckAttribute(arCurChar, "CanTakeMushket") && CheckAttribute(arCurChar, "IsMushketer")) continue;
 				
@@ -1326,7 +1326,7 @@ void ShowInfoWindow()
 			AddMapKnownMarker(rItem, &sText1);
 			sGroup = rItem.picTexture;
 			sGroupPicture = "itm" + rItem.picIndex;
-			CreateTooltipNew(sCurrentNode, sHeader, sText1, "", "", "", sPicture, sGroup, sGroupPicture, picW, picH, true);
+			CreateTooltipNew(sCurrentNode, sHeader, sText1, "", "", "", sPicture, sGroup, sGroupPicture, picW, picH, false, true);
 		}
 		else
 			CloseTooltipNew();

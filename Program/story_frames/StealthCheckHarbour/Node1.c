@@ -19,27 +19,27 @@ void StealthCheckHarbour_Node1()
 	switch (situation.b)
 	{
 		case "a":
-			reaction = SF_AddReaction("b", "", "", SF_Icon("Skill", SKILL_COMMERCE));
+			reaction = SF_AddReaction("b", "", "", SF_Icon(SKILL_TYPE, SKILL_COMMERCE));
 			SF_SetResult(reaction, 40);
-			if (!IsCharacterPerkOn(pchar, "HT2")) reaction.disabled = true;
+			SF_AddCondition(&reaction, HasPerk(pchar, HERO_TYPE_ACCOUNTANT), SF_CONDITION_HERO_TYPE, HERO_TYPE_ACCOUNTANT);
 		break;
 		case "b":
-			reaction = SF_AddReaction("b", "", "", SF_Icon("Skill", SKILL_COMMERCE));
-			if (!IsCharacterPerkOn(pchar, "HT3")) reaction.disabled = true;
+			reaction = SF_AddReaction("b", "", "", SF_Icon(SKILL_TYPE, SKILL_COMMERCE));
+			SF_AddCondition(&reaction, HasPerk(pchar, HERO_TYPE_ATHLETE), SF_CONDITION_HERO_TYPE, HERO_TYPE_ATHLETE);
 			SF_SetResult(reaction, GetCharacterSpecial(pchar, SPECIAL_E) * 4 + GetCharacterSpecial(pchar, SPECIAL_S) * 4);
 		break;
 		case "c":
-			reaction = SF_AddReaction("b", "", "", SF_Icon("pirates", PIRATES_A));
+			reaction = SF_AddReaction("b", "", "", SF_Icon(PIRATES_TYPE, PIRATES_A));
 			SF_SetResult(reaction, GetCharacterSpecial(pchar, SPECIAL_C) * 3);
 		break;
 	}
 
 	switch (situation.c)
 	{
-		case "a": SF_SetResult(SF_AddReaction("c", "", "", SF_Icon("pirates", PIRATES_S)), -4+SF_Rand(10)); break;
+		case "a": SF_SetResult(SF_AddReaction("c", "", "", SF_Icon(PIRATES_TYPE, PIRATES_S)), -4+SF_Rand(10)); break;
 		case "b": 
 			// Если честь нейтральная или положительная, то результат 1 и +30, если отрицательная - то результат 2 и +10
-			reaction = SF_AddReaction("c", "", "", SF_Icon("pirates", PIRATES_A));
+			reaction = SF_AddReaction("c", "", "", SF_Icon(PIRATES_TYPE, PIRATES_A));
 			storyObject.temp.c_b_state = sti(pchar.reputation.nobility) > (COMPLEX_REPUTATION_NEUTRAL-10);
 			if (AttributeIsTrue(storyObject, "temp.c_b_state")) bonus = 30;
 			else bonus = 10;
@@ -48,15 +48,16 @@ void StealthCheckHarbour_Node1()
 		case "c":
 			reaction = SF_AddReaction("c", "", "", SF_Icon("perk", "Collection"));
 			SF_SetResult(reaction, 30);
-			if (!HasPerk(pchar, "Collection")) reaction.disabled = true;
+			SF_AddCondition(&reaction, HasPerk(pchar, "Collection"), SF_CONDITION_PERK, "Collection");
 		break;
 	}
 
-	action = SF_AddAction("a", "", "", SF_Icon("skill", SKILL_LEADERSHIP));
+	action = SF_AddAction("a", "", "", SF_Icon(SKILL_TYPE, SKILL_LEADERSHIP));
 	SF_SetChance(action, -50.0, "base");
 	SF_SetChance(action, GetCharacterSkill(pchar, SKILL_LEADERSHIP) / 2, SKILL_LEADERSHIP);
 	SF_SetChance(action, GetCharacterSpecial(pchar, SPECIAL_L) * 2, SPECIAL_L);
 	if (HasShipTrait(pchar, "trait05")) SF_SetChance(action, 15, "trait05"); // +если трейт Фальшивые документы
+	SF_SetChance(action, makeint(SZN_GetModifierMtp(M_STEALTH_INCEPTION_BONUS, 0.0, -0.30, 0.30) * 100), "season");
 
 	SF_AddAction("b", "", "", SF_Icon("story", "fail"));
 }
@@ -104,11 +105,11 @@ void StealthCheckHarbour_Node1_a_action()
 	if (SF_PerformCheck())
 	{
 		SF_Triumph();
-		AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 7);
+		SF_AddEffect(SF_E_SKILL_EXP, pchar, SKILL_LEADERSHIP, 7);
 		return;
 	}
 
-	AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 9);
+	SF_AddEffect(SF_E_SKILL_EXP, pchar, SKILL_LEADERSHIP, 9);
 	SF_Fail();
 }
 

@@ -737,6 +737,7 @@ int LocationInitHavana(int n)
 	locations[n].townsack = "Havana";
 	//Sound
 	locations[n].type = "jungle";
+    locations[n].fastreload = "Havana";
  	locations[n].islandId = "Cuba";
 	locations[n].islandIdAreal = "Cuba2";
 	//Models
@@ -807,6 +808,7 @@ int LocationInitHavana(int n)
 	locations[n].townsack = "Havana";
 	//Sound
 	locations[n].type = "jungle";
+    locations[n].fastreload = "Havana";
 	locations[n].islandId = "Cuba";
 	locations[n].islandIdAreal = "Cuba2";
 	locations[n].DisableEncounters = true;
@@ -878,6 +880,7 @@ int LocationInitHavana(int n)
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "House";
+    locations[n].fastreload = "Havana";
 	locations[n].islandId = "Cuba";
 	locations[n].islandIdAreal = "Cuba2";
 	//Models

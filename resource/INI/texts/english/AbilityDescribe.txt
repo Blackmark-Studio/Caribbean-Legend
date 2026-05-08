@@ -1,324 +1,235 @@
+AdvancedBattleState {Advanced Ship Defense}
+AdvancedCommerce {Advanced Trading}
+AdvancedDefense {Advanced Defense}
+Alchemy {Alchemy}
+Ambuscade {Ambush Regiment}
+AmmoRig {Loadout}
+Bartender {Bartender}
+BasicBattleState {Basic Ship Defense}
+BasicCommerce {Basic Trading}
+BasicDefense {Basic Defense}
+Bayonet {Bayonet Charge}
+BeneathWaterline {Below the Waterline}
+BladeDancer {Dance with Sabres}
+BoardingPrepare {Preparation}
+Bombardier {Bombardier}
+BruteForce {Brute Force}
+Builder {Damage Control}
+ByWorker {Talented}
+ByWorker2 {Genius}
+CannonProfessional {Expert Cannoneer}
+Captain {Captain}
+Carpenter {Passive Repair}
+Chance {All or Nothing}
+ChiefCook {Senior Cook}
+Collection {Curiosity}
+Conquest {Conquista}
+Cook {Cook}
+CoordinatedBoarding {Joint Boarding}
+CrewDamageUp {Deck Broom}
+CriticalHit {Critical hit}
+CriticalShoot {Critical Shot}
+CunningStrike {Treacherous Strike}
+DarkHorse {Dark Horse}
+disabled_CompanionDisable {This character cannot or does not want to command a ship.}
+disabled_heroType {This perk is only available to a character with a certain background.}
+disabled_NPCOnly {This perk is only available to officers.}
+disabled_PlayerOnly {This perk is only available to the player.}
+Doctor {Surgeon}
+Doctor1 {Surgeon}
+Doctor2 {Expert Surgeon}
+Dodgy {Opportunism}
+Dragoon {Dragoon}
+Drill {Drill}
+EnergyPlus {Growing Energy}
+Exhaustion {Exhaustion}
+FastHands {Quick Hands}
+FastReload {Target Practice}
+FlagEng {Flag of England}
+FlagFra {Flag of France}
+FlagHol {Flag of the Netherlands}
+FlagPir {Jolly Roger}
+FlagSpa {Flag of Spain}
+Flanking {Flanking}
+Gossip {Center of Attention}
+GrapplingProfessional {Expert Boatswain}
+Grus {Strong Backbone}
+Gunman {Musketeer}
+GunProfessional {Skirmisher}
+HardHitter {Heavy Hand}
+Heartbreaker {Heartbreaker}
+HPPlus {Growing Health}
+HullDamageUp {Weak Spots}
+ImmediateReload {Prepared Shot}
+Inertia {Inertia}
+InstantBoarding {Instant Boarding}
+InstantRepair {Combat Repair}
+Intendant {Intendant}
+Investor {Investor}
+Involvement {Armorer}
+IronWill {Iron Will}
+KeenEye {Keen Eye}
+Kern {Kern}
+LeadRain {Lead Rain}
+LightRepair {Emergency Repair}
+LoneWolf {Lone Wolf}
+LongRangeGrappling {Wolf’s Grapple}
+LongRangeShoot {Broadside Reach}
+Looting {Thorough Search}
+MarathonRunner {Marathoner}
+Master {Master}
+MeatGrinder {Meat Grinder}
+Medic {Healthy Habits}
+Mimicry {Mimicry}
+Moonshiner {Distiller}
+Mule {Percheron}
+Muscles {Muscle Mountain}
+MusketsShoot {Musket Volley}
+NeckStrike {Neck Slash}
 newline
 {
 
 }
-BasicDefense {Basic Defense}
-perkBasicDefense {Reduces incoming damage by $percent($perkBaseValue(BasicDefense|1)).}
-AdvancedDefense {Advanced Defense}
+OttomanGrip {Ottoman Grip}
+PalaceGuard {Palace Guard}
+PerfectBalance {Perfect Balance}
+perkAdvancedBattleState {All damage dealt to the ship is reduced by 10% more.}
+perkAdvancedCommerce {Selling goods is 4% more profitable.}
 perkAdvancedDefense {Reduces incoming damage by $percent($perkBaseValue(AdvancedDefense|1)), and enemy critical damage by $percent($perkBaseValue(AdvancedDefense|2)).}
-CriticalHit {Critical hit}
-perkCriticalHit {Increases base critical hit chance by $percent($perkBaseValue(CriticalHit|1)).}
-Grus {Strong Backbone}
-perkGrus {Increases carry weight by 35 pounds.}
-Tireless {Tirelessness}
-perkTireless {Energy recovery speed increases by $percent($perkBaseValue(Tireless|1)).}
-HardHitter {Heavy Hand}
-perkHardHitter {Heavy attacks with Heavy Weapons deal $percent($perkBaseValue(HardHitter|1)) more damage. Unlocks advanced Heavy attack.}
-BladeDancer {Dance with Sabres}
-perkBladeDancer {Group attack with Curved weapons deals $percent($perkBaseValue(BladeDancer|1)) more damage.}
-Sliding {Irresistible Blow}
-perkSliding {Slash or thrust attack with a Light weapon can break through Block with a $percent($perkBaseValue(Sliding|1)) chance using a unique advanced strike.}
-Gunman {Musketeer}
-perkGunman
+perkAlchemy {Recipes no longer require Tools. Grants a 15% chance to save a potion on use.}
+perkAlchemy_alternate {Grants a $percent($perkBaseValue(Alchemy|1)) chance not to consume a potion when used.}
+perkAmbuscade {Duelists with rapiers and multi-shot pistols replace some of your regular sailors during a boarding.}
+perkAmmoRig {Reloading of firearms is $percent($perkBaseValue(AmmoRig|1)) faster.}
+perkBartender {Reduces rum consumption by 5%.}
+perkBasicBattleState {All damage dealt to the ship is reduced by 10%.}
+perkBasicCommerce {Buying is 4% more profitable. Highlights items in demand in banks and markets.}
+perkBasicDefense {Reduces incoming damage by $percent($perkBaseValue(BasicDefense|1)).}
+perkBayonet {Two-Handed melee attacks deal 15% more damage, and an additional 30% more damage with a Bayonet.}
+perkBeneathWaterline
 {
-Increases firearm damage and reload speed by $percent($perkBaseValue(Gunman|1)). Allows the use of single-shot two-handed and multi-shot one-handed weapons.
- ~
- Officers can use $key(descriptor_TwoHanded|ItemsDescriptors.txt) only if explicitly instructed to do so.
+On hit, there is a chance to breach a ship below the waterline, flooding and slowing the target until the leak is patched.~
+Unlocks the ability to choose a broadside fire mode.
 }
-GunProfessional {Skirmisher}
-perkGunProfessional {Increases firearm damage and reload speed by $percent($perkBaseValue(GunProfessional|1)). Unlocks the ability to use multi-shot two-handed firearms. Musketeer officers can fire through allied ranks without hitting them.}
-IronWill {Iron Will}
-perkIronWill {Allows you to survive a fatal wound once every 3 minutes.}
-SharedExperience {Quick Learner}
-perkSharedExperience {Speeds up skill development by 15%.}
-Medic {Healthy Habits}
-perkMedic {Increases health by 25 points. Doubles passive healing if health is below half of maximum.}
-HPPlus {Growing Health}
-perkHPPlus {Increases the character's HP by $perkBaseValue(HPPlus|1) for each new rank. The perk is retroactive.}
-EnergyPlus {Growing Energy}
-perkEnergyPlus {Increases the character's energy reserve by 1 for each new rank. Retroactive.}
-ByWorker {Talented}
+perkBladeDancer {Group attack with Curved weapons deals $percent($perkBaseValue(BladeDancer|1)) more damage.}
+perkBoardingPrepare {Boarding party receives potions during boarding.}
+perkBombardier {Durability of cannons is increased.}
+perkBruteForce {Heavily armed soldiers with axes and armor replace some of your regular sailors during a boarding.}
+perkBuilder {The consumption of planks and sailcloth during repairs is reduced by 25%.}
 perkByWorker {A character can hold two officer positions at once}
-perkByWorkerShort {A character can hold two officer positions at once}
-ByWorker2 {Genius}
 perkByWorker2 {The character can hold up to three officer positions at once.}
 perkByWorker2Short {A character can hold three officer positions at once}
-Trustworthy {Trustworthy}
-perkTrustworthy {Unlocks alternative persuasion options in dialogues for certain quests. Makes it easier to avoid punishment and enter hostile towns.}
-ShipEscape {Second Chance}
-perkShipEscape
-{
-Rescue by lifeboat from the hero’s sinking ship to one of the ships in their fleet.
-Allows you, during battle, when the ship’s hull is below 15%, to use the hold menu to transfer or move to another fleet ship.
-If a companion has this skill, they will escape from a sinking ship or fireship, returning as a passenger to the hero’s ship by launching a lifeboat.
-}
-Alchemy {Alchemy}
-perkAlchemy {Recipes no longer require Tools. Grants a 15% chance to save a potion on use.}
-FastReload {Target Practice}
-perkFastReload {Cannon reload speed increases by 10%.}
-ImmediateReload {Prepared Shot}
-perkImmediateReload {The next reload will be 30% faster. Can be activated every 5 minutes.}
-HullDamageUp {Weak Spots}
-perkHullDamageUp {Damage to the hull of enemy ships increases by 10%.}
-SailsDamageUp {Rigging Shot}
-perkSailsDamageUp {Damage to the sails of enemy ships is increased by 10%.}
-CrewDamageUp {Deck Broom}
-perkCrewDamageUp {Damage to the enemy ship’s crew increases by 10%.}
-CriticalShoot {Critical Shot}
-perkCriticalShoot {The character gains a chance to deliver a critical volley against the enemy. Chance: 5%.}
-LongRangeShoot {Broadside Reach}
-perkLongRangeShoot {Cannon range increases by 10%}
-CannonProfessional {Expert Cannoneer}
+perkByWorkerShort {A character can hold two officer positions at once}
 perkCannonProfessional {Increases damage to any part of the ship, gun aiming and targeting speed, and critical shot chance by 10%.}
-LongRangeGrappling {Wolf’s Grapple}
-perkLongRangeGrappling {The boarding distance increases by 15%.}
-MusketsShoot {Musket Volley}
-perkMusketsShoot
-{
-A musket volley is fired before the boarding. 
-Inflicted casualties depend on the ship class and the number of Vanguards.
-}
-GrapplingProfessional {Expert Boatswain}
-perkGrapplingProfessional {Boarding distance is increased by 25%. Possible at any approach angle and speed.}
-BasicBattleState {Basic Ship Defense}
-perkBasicBattleState {All damage dealt to the ship is reduced by 10%.}
-AdvancedBattleState {Advanced Ship Defense}
-perkAdvancedBattleState {All damage dealt to the ship is reduced by 10% more.}
-ShipDefenseProfessional {Expert Carpenter}
-perkShipDefenseProfessional {All damage dealt to the ship is reduced by even 5% more. Reduces enemy critical damage by 35%.}
-ShipSpeedUp {Swift Sail}
-perkShipSpeedUp {Increase ship’s maximum speed by 15%.}
-ShipTurnRateUp {Increase ship maneuverability}
-perkShipTurnRateUp {Increase ship maneuverability by 15%.}
-StormProfessional {Stormproof}
-perkStormProfessional {Storm damage decreased by 30%.}
-Turn180 {Evasive Maneuver}
-perkTurn180 {Ships turns 4 times faster for 1 minute. Can be activated every 3 minutes.}
-SailingProfessional {Expert Navigator}
-perkSailingProfessional {Ship speed and maneuverability increased by 5%. Improved chances to flee.}
-SeaDogProfessional {Terror of the Seas}
-perkSeaDogProfessional
-{
-At the sight of the Sea Terror’s pennant, even the boldest adventurers and outlaws dare not tempt fate. Increases Fleet Power by $percent($PerkBaseValue(SeaDogProfessional|1)).
-~
-Skill available only to the player; requires rank $attr($context.rank).
-}
-FlagPir {Jolly Roger}
+perkCaptain {The character can command a ship of rate 4 and above as part of a squadron. You don't need to be a genius to handle a lugger or a sloop, but for a serious vessel mere daring alone is not enough.}
+perkCarpenter {Hull and sails are slowly being slowly repaired while traveling. Planks and sailcloth are required.}
+perkChance {Single-Shot firearms deal 15% more damage on critical hits. One-Handed firearm critical chance increased by 2%.}
+perkChiefCook {Reduces provisions consumption by 10%.}
+perkCollection {Each exotic item placed on the ship brings 1,000 pesos per day spent in a non-hostile port.}
+perkCollection_alternate {Each exotic item equipped by the character increases their damage by $percent($perkBaseValue(Collection|2)).}
+perkConquest {Slash attacks and heavy attacks with long weapons deal $percent($perkBaseValue(Conquest|1)) more damage.}
+perkCook {Reduces provision consumption by 5%.}
+perkCoordinatedBoarding {Allows a ship from the fleet to join a boarding led by its own captain, if it is close enough.}
+perkCrewDamageUp {Damage to the enemy ship’s crew increases by 10%.}
+perkCriticalHit {Increases base critical hit chance by $percent($perkBaseValue(CriticalHit|1)).}
+perkCriticalShoot {Cannon hits deal critical damage with a $percent($perkBaseValue(CriticalShoot|1)) chance.~Switching ammunition on fully loaded guns resets their reload to $percent($perkBaseValue(CriticalShoot|2)) instead of zero.}
+perkCunningStrike {Light weapons have a $percent($perkBaseValue(CunningStrike|1)) increased critical chance. Back attacks deal $percent($perkBaseValue(CunningStrike|2)) more damage.}
+perkDarkHorse {Each equipped Mundane Amulet and Talisman increases health and energy by $percent($perkBaseValue(DarkHorse|1)).}
+perkDoctor {Reduces crew losses from wounds and grapeshot during naval combat by 5%.}
+perkDoctor1 {Reduces crew losses from wounds and grapeshot during naval combat by 5%.}
+perkDoctor2 {Reduces crew losses from wounds and grapeshot during naval combat by 10%.}
+perkDodgy {Sprint Shoving is $percent($perkBaseValue(Dodgy|1)) stronger and uses less energy.}
+perkDragoon {Medium Weapons damage increased by 10%.}
+perkDrill {Movement speed with muskets and aiming walk speed increased by 18%.}
+perkEnergyPlus {Increases the character's energy reserve by 1 for each new rank. Retroactive.}
+perkExhaustion {Parrying with Short weapons drains  $percent($perkBaseValue(Exhaustion|1)) more energy. Enemy Stun recovery is 10% longer.}
+perkFastHands {Increases the speed of drawing and holstering firearms by $percent($perkBaseValue(FastHands|1)).}
+perkFastReload {Cannon reload speed increases by 10%.}
+perkFlagEng {You can only use flags available for your ship’s rate. To obtain a flag, you must capture a ship of the corresponding rate or purchase a license.}
+perkFlagFra {You can only use flags available for your ship’s rate. To obtain a flag, you must capture a ship of the corresponding rate or purchase a license.}
+perkFlagHol {You can only use flags available for your ship’s rate. To obtain a flag, you must capture a ship of the corresponding rate or purchase a license.}
 perkFlagPir
 {
 Ability to change your flag to the Jolly Roger.
 ~
 This skill is available to the player only.
 }
-FlagEng {Flag of England}
-perkFlagEng {You can only use flags available for your ship’s rate. To obtain a flag, you must capture a ship of the corresponding rate or purchase a license.}
-FlagFra {Flag of France}
-perkFlagFra {You can only use flags available for your ship’s rate. To obtain a flag, you must capture a ship of the corresponding rate or purchase a license.}
-FlagSpa {Flag of Spain}
 perkFlagSpa {You can only use flags available for your ship’s rate. To obtain a flag, you must capture a ship of the corresponding rate or purchase a license.}
-FlagHol {Flag of the Netherlands}
-perkFlagHol {You can only use flags available for your ship’s rate. To obtain a flag, you must capture a ship of the corresponding rate or purchase a license.}
-Troopers {Siege Tactics}
-perkTroopers
+perkFlanking {Curved weapons attacks are $percent($perkBaseValue(Flanking|1)) faster. Unlocks advanced Group Attack.}
+perkGossip {The bonus to Fleet Power from Exotic items is increased by 5%.}
+perkGossip_alternate {As a companion, the character increases the squadron's might by $percent($perkBaseValue(Gossip|1)).}
+perkGrapplingProfessional {Boarding distance is increased by 25%. Possible at any approach angle and speed.}
+perkGrus {Increases carry weight by 35 pounds.}
+perkGunman
 {
-Ability to combine the crews of your fleet before storming a fort in full force.
-Reduces the number of crew required to raid a settlement from land.
+Increases firearm damage and reload speed by $percent($perkBaseValue(Gunman|1)). Allows the use of single-shot two-handed and multi-shot one-handed weapons.
+ ~
+ Officers can use $key(descriptor_TwoHanded|ItemsDescriptors.txt) only if explicitly instructed to do so.
 }
-BasicCommerce {Basic Trading}
-perkBasicCommerce {Buying is 4% more profitable. Highlights items in demand in banks and markets.}
-AdvancedCommerce {Advanced Trading}
-perkAdvancedCommerce {Selling goods is 4% more profitable.}
-ProfessionalCommerce {Expert Purser}
-perkProfessionalCommerce {Buying and selling the goods is 8% more profitable.}
-Carpenter {Passive Repair}
-perkCarpenter {Hull and sails are slowly being slowly repaired while traveling. Planks and sailcloth are required.}
-InstantRepair {Combat Repair}
+perkGunProfessional {Increases firearm damage and reload speed by $percent($perkBaseValue(GunProfessional|1)). Unlocks the ability to use multi-shot two-handed firearms. Musketeer officers can fire through allied ranks without hitting them.}
+perkHardHitter {Heavy attacks with Heavy Weapons deal $percent($perkBaseValue(HardHitter|1)) more damage. Unlocks advanced Heavy attack.}
+perkHeartbreaker {Fast attacks with straight weapons deal $percent($perkBaseValue(Heartbreaker|1)) more damage and are $percent($perkBaseValue(Heartbreaker|2)) faster.}
+perkHPPlus {Increases the character's HP by $perkBaseValue(HPPlus|1) for each new rank. The perk is retroactive.}
+perkHullDamageUp {Damage to the hull of enemy ships increases by 10%.}
+perkImmediateReload {The next reload will be 30% faster. Can be activated every 5 minutes.}
+perkInertia {Heavy Weapons damage increased by 10%.}
 perkInstantRepair
 {
 Rapid combat reapirs up to 80% of available durability. Requires planks for the hull and canvas for the sails.
 Can be activated every 1.5 minutes.
 }
-LightRepair {Emergency Repair}
+perkIntendant {Reduces the speed and maneuverability penalty from cargo hold loading during combat and while fleeing.}
+perkInvestor {Deposit interest rate is increased by 1%.}
+perkInvestor_alternate {Increases the character's Trade and Leadership skills by $number($perkBaseValue(Investor|2)).}
+perkInvolvement {The Boatswain comes up on deck during boarding, joining the fight on your side. Replaces one of the sailors and cannot be killed.}
+perkIronWill {Allows you to survive a fatal wound once every 3 minutes.}
+perkKeenEye {Headshots deal $percent($perkBaseValue(KeenEye|1)) more damage.}
+perkKeenEye_alternate {The character gains a $percent($perkBaseValue(KeenEye|2)) increased chance of a critical shot.}
+perkKern {Multi-Shot firearms gain an 8% damage bonus and 4% reload speed for each empty shot.}
+perkLeadRain {Grapeshot deals 5% more damage for each enemy hit.}
 perkLightRepair
 {
 Ability to patch up the ship’s hull without extra resources, but no more than 10% of available HP. Without this skill, the ship slowly falls apart if hull HP drops below 10%. 
 Can be activated every 3 minutes.
 }
-Builder {Damage Control}
-perkBuilder {The consumption of planks and sailcloth during repairs is reduced by 25%.}
-SelfRepair {Full Repair}
-perkSelfRepair
-{
-The ability to fully repair your ship using your crew at any suitable shore. Requires planks for the hull and masts, and canvas for the sails. Complete restoration of the hull, sails, and masts is possible.
-
-Repair options are only available on land in coastal locations.
-}
-WindCatcher {Sea Sense}
-perkWindCatcher
-{
-Ship accelerates 10% faster.
-
-Increases speed on the global map in familiar waters—if you have a map.
-}
-SailsMan {Swift Sails}
-perkSailsMan {Thanks to the use of the latest carrot-and-stick methods, all sail operations are performed 10% faster.}
-Doctor1 {Surgeon}
-perkDoctor1 {Reduces crew losses from wounds and grapeshot during naval combat by 5%.}
-Doctor2 {Expert Surgeon}
-perkDoctor2 {Reduces crew losses from wounds and grapeshot during naval combat by 10%.}
-TannedLeather {Thick Skin}
-perkTannedLeather {Light armor protects 50% better and spends 30% less energy on Snapping Back.}
-RatsWolf {Rat Wolf}
-perkRatsWolf {On this character’s ship, cargo damage from rats and other pests is prevented.}
-Mimicry {Mimicry}
-perkMimicry {Stealth check in sea are 50% more effective.}
-TreasureHunter {Treasure Hunter}
-perkTreasureHunter {Treasure map traders appear more often, and the treasures themselves are more valuable.}
-Dragoon {Dragoon}
-perkDragoon {Medium Weapons damage increased by 10%.}
-Bombardier {Bombardier}
-perkBombardier {Durability of cannons is increased.}
-Sniper {Sniper}
-perkSniper {A hit with a firearm drains the enemy’s energy.}
-perkTreeMusketer {Musketeer}
-perkTreeSoldier {Soldier}
-perkTreeMastery {Mastery}
-perkTreeBackground {Background}
-perkTreeFencing {Fencer}
-perkTreePirat {Pirate}
-perkTreeAdventurer {Adventurer}
-perkTreeOfficer {Officer}
-perkTreeFlags {Pennants}
-perkTreeCannoner {$key(Cannoner)}
-perkTreeBoatswain {$key(Boatswain)}
-perkTreeCarpenter {$key(Carpenter)}
-perkTreeNavigator {$key(Navigator)}
-perkTreeTreasurer {$key(Treasurer)}
-perkTreeDoctor {$key(Doctor)}
-FastHands {Quick Hands}
-perkFastHands {Increases the speed of drawing and holstering firearms by $percent($perkBaseValue(FastHands|1)).}
-AmmoRig {Loadout}
-perkAmmoRig {Reloading of firearms is $percent($perkBaseValue(AmmoRig|1)) faster.}
-Preaim {Sighting}
-perkPreaim {Aim mode is $percent($perkBaseValue(Preaim|1)) faster.}
-KeenEye {Keen Eye}
-perkKeenEye {Headshots deal $percent($perkBaseValue(KeenEye|1)) more damage.}
-PowderFeel {Sense of Gunpowder}
-perkPowderFeel {The amount of ammo crafted with Alchemy increases by $percent($perkBaseValue(PowderFeel|1)).}
-Drill {Drill}
-perkDrill {Movement speed with muskets and aiming walk speed increased by 18%. Unlocks advanced firing stances.}
-LeadRain {Lead Rain}
-perkLeadRain {Grapeshot deals 5% more damage for each enemy hit.}
-ShootToKill {Shoot to Kill}
-perkShootToKill {Hitting an enemy with a firearm slows them, reducing their movement speed by 25%. Duration: 5 seconds.}
-Muscles {Muscle Mountain}
-perkMuscles {Any attacks with Heavy weapons use $percent($perkBaseValue(Muscles|1)) less energy and $percent($perkBaseValue(Muscles|2)) faster. Stun recovery is $percent($perkBaseValue(Muscles|3)) faster.}
-Conquest {Conquista}
-perkConquest {Slash attacks and heavy attacks with long weapons deal $percent($perkBaseValue(Conquest|1)) more damage.}
-PalaceGuard {Palace Guard}
-perkPalaceGuard {Heavy Curved weapons deal $percent($perkBaseValue(PalaceGuard|1)) more damage with attacks, and an additional 5% more damage with group attacks.}
-CunningStrike {Treacherous Strike}
-perkCunningStrike {Light weapons have a $percent($perkBaseValue(CunningStrike|1)) increased critical chance. Back attacks deal $percent($perkBaseValue(CunningStrike|2)) more damage.}
-Heartbreaker {Heartbreaker}
-perkHeartbreaker {Fast attacks with straight weapons deal $percent($perkBaseValue(Heartbreaker|1)) more damage and are $percent($perkBaseValue(Heartbreaker|2)) faster.}
-Dodgy {Opportunism}
-perkDodgy {Sprint Shoving is $percent($perkBaseValue(Dodgy|1)) stronger and uses less energy.}
-Exhaustion {Exhaustion}
-perkExhaustion {Parrying with Short weapons drains  $percent($perkBaseValue(Exhaustion|1)) more energy. Enemy Stun recovery is 10% longer.}
-Reaper {Reaper}
-perkReaper {Critical damage increased by  $percent($perkBaseValue(Reaper|1)), and critical chance with Fast Attacks increased by  $percent($perkBaseValue(Reaper|2)).}
-MarathonRunner {Marathoner}
-perkMarathonRunner {Sprint becomes $percent($perkBaseValue(MarathonRunner|2)) faster and uses one third less energy.}
-PerfectBalance {Perfect Balance}
-perkPerfectBalance {Medium weapons in hand reduce incoming damage by $percent($perkBaseValue(PerfectBalance|1)).}
-Flanking {Flanking}
-perkFlanking {Curved weapons attacks are $percent($perkBaseValue(Flanking|1)) faster. Unlocks advanced Group Attack.}
-SabreHurricane {Saber Whirlwind}
-perkSabreHurricane {Slash and Fast Attacks with Medium Curved weapons have a wider arc, hitting adjacent enemies, and deal $percent($perkBaseValue(SabreHurricane|1)) more damage.}
-Practice {Practice Development}
-perkPractice {Each equipped craftable item increases all skills by $number($perkBaseValue(Practice|1)).}
-Strychnine {Strychnine}
-perkStrychnine {Strikes and shots have a 9% chance to poison the target. Stacks with Amulet bonuses.}
-DarkHorse {Dark Horse}
-perkDarkHorse {Each equipped Mundane Amulet and Talisman increases health and energy by $percent($perkBaseValue(DarkHorse|1)).}
-Master {Master}
-perkMaster {Each crafted item that requires a tool kit increases damage dealt by $percent($perkBaseValue(Master|2)).}
-Quiet {Light Footed}
-perkQuiet {You cannot be detected while stealing.}
-Looting {Thorough Search}
-perkLooting {After boarding is complete, the sailors automatically search the deck and deliver all the loot to you.}
-Collection {Curiosity}
-perkCollection {Each exotic item placed on the ship brings 1,000 pesos per day spent in a non-hostile port.}
-Tiefit {Tailored}
-perkTiefit {The skill bonus from Mundane and Fancy items is increased by $number($perkBaseValue(Tiefit|1)).}
-Investor {Investor}
-perkInvestor {Deposit interest rate is increased by 1%.}
-Gossip {Center of Attention}
-perkGossip {The bonus to Fleet Power from Exotic items is increased by 5%.}
-Captain {Captain}
-perkCaptain {The character can command a ship of rate 4 and above as part of a squadron. You don't need to be a genius to handle a lugger or a sloop, but for a serious vessel mere daring alone is not enough.}
-Chance {All or Nothing}
-perkChance {Single-Shot firearms deal 15% more damage on critical hits. One-Handed firearm critical chance increased by 2%.}
-Bayonet {Bayonet Charge}
-perkBayonet {Two-Handed melee attacks deal 15% more damage, and an additional 30% more damage with a Bayonet.}
-Kern {Kern}
-perkKern {Multi-Shot firearms gain an 8% damage bonus and 4% reload speed for each empty shot.}
-MeatGrinder {Meat Grinder}
-perkMeatGrinder {Damage of Short weapons increased by 10%.}
-NeckStrike {Neck Slash}
-perkNeckStrike {Long weapon damage increased by 10%.}
-Stabbing {Knife Fight}
-perkStabbing {Short weapon damage increased by 8%.}
-Virtuosity {Virtuosity}
-perkVirtuosity {Light Weapons damage increased by 10%.}
-Puncher {Hole Punch}
-perkPuncher {Straight weapon damage increased by 10%.}
-Reach {Reach}
-perkReach {Long weapon damage increased by 8%.}
-Inertia {Inertia}
-perkInertia {Heavy Weapons damage increased by 10%.}
-OttomanGrip {Ottoman Grip}
-perkOttomanGrip {Curved weapon damage increased by 10%.}
-Mule {Percheron}
-perkMule {Training pays off – Heavy weapons and armor slow you down 50% less, and carry weight increases by 2 lbs per rank.}
-BeneathWaterline {Below the Waterline}
-perkBeneathWaterline {When hitting a ship, there is a chance to breach below the waterline, flooding and slowing the target until the hole is repaired.}
-CoordinatedBoarding {Joint Boarding}
-perkCoordinatedBoarding {Allows a ship from the fleet to join a boarding led by its own captain, if it is close enough.}
-Involvement {Armorer}
-perkInvolvement {The Boatswain comes up on deck during boarding, joining the fight on your side. Replaces one of the sailors and cannot be killed.}
-BruteForce {Brute Force}
-perkBruteForce {Heavily armed soldiers with axes and armor replace some of your regular sailors during a boarding.}
-Ambuscade {Ambush Regiment}
-perkAmbuscade {Duelists with rapiers and multi-shot pistols replace some of your regular sailors during a boarding.}
-LoneWolf {Lone Wolf}
 perkLoneWolf {Better chance to flee and Fleet Power increases by $percent($perkBaseValue(LoneWolf|1)), as long as you have only one ship in the fleet.}
-Thrift {Frugality}
-perkThrift {Reduces the impact of sail damage on speed and maneuverability by 10%.}
-QuickGlance {Quick Eye}
-perkQuickGlance {Determines the ship’s type and trait when surveying it with a spyglass.}
-TrainedEye {Keen Eye}
-perkTrainedEye {Allows you to roughly estimate the amount of valuables on a ship when surveying it with a spyglass.}
-TradeConnections {Trade Connections}
-perkTradeConnections {Price lists are automatically updated when visiting a colony.}
-Intendant {Intendant}
-perkIntendant {Reduces the speed and maneuverability penalty from cargo hold loading during combat and while fleeing.}
-Doctor {Surgeon}
-perkDoctor {Reduces crew losses from wounds and grapeshot during naval combat by 5%.}
-BoardingPrepare {Preparation}
-perkBoardingPrepare {Boarding party receives potions during boarding.}
-Cook {Cook}
-perkCook {Reduces provision consumption by 5%.}
-ChiefCook {Senior Cook}
-perkChiefCook {Reduces provisions consumption by 10%.}
-Bartender {Bartender}
-perkBartender {Reduces rum consumption by 5%.}
-Moonshiner {Distiller}
+perkLongRangeGrappling {The boarding distance increases by 15%.}
+perkLongRangeShoot {Cannon range increases by 10%}
+perkLooting {After boarding is complete, the sailors automatically search the deck and deliver all the loot to you.}
+perkLooting_alternate {Increases carry weight by $perkBaseValue(Looting|1) pounds.}
+perkMarathonRunner {Sprint becomes $percent($perkBaseValue(MarathonRunner|2)) faster and uses one third less energy.}
+perkMarathonRunner_alternate {The character increases their Energy pool by $number($perkBaseValue(MarathonRunner|3)).}
+perkMaster {Each crafted item that requires a tool kit increases damage dealt by $percent($perkBaseValue(Master|2)).}
+perkMaster_alternate {Each potion the character drinks increases damage dealt by $percent($perkBaseValue(Master|2)).}
+perkMaster_currentBonus {Current bonus: $percent($attr($context.ct.static.fast_Damage.perk_master))}
+perkMeatGrinder {Damage of Short weapons increased by 10%.}
+perkMedic {Increases health by 25 points. Doubles passive healing if health is below half of maximum.}
+perkMimicry {Stealth check in sea are 50% more effective.}
 perkMoonshiner {Reduces rum consumption by 10%.}
-Quartermaster {Quartermaster}
+perkMule {Training pays off – Heavy weapons and armor slow you down 50% less, and carry weight increases by 2 lbs per rank.}
+perkMuscles {Any attacks with Heavy weapons use $percent($perkBaseValue(Muscles|1)) less energy and $percent($perkBaseValue(Muscles|2)) faster. Stun recovery is $percent($perkBaseValue(Muscles|3)) faster.}
+perkMusketsShoot
+{
+A musket volley is fired before the boarding. 
+Inflicted casualties depend on the ship class and the number of Vanguards.
+}
+perkNeckStrike {Long weapon damage increased by 10%.}
+perkOttomanGrip {Curved weapon damage increased by 10%.}
+perkPalaceGuard {Heavy Curved weapons deal $percent($perkBaseValue(PalaceGuard|1)) more damage with attacks, and an additional 5% more damage with group attacks.}
+perkPerfectBalance {Medium weapons in hand reduce incoming damage by $percent($perkBaseValue(PerfectBalance|1)).}
+perkPowderFeel {The amount of ammo crafted with Alchemy increases by $percent($perkBaseValue(PowderFeel|1)).}
+perkPowderFeel_alternate {The character gets a $percent($perkBaseValue(PowderFeel|2)) chance not to consume ammunition when firing.}
+perkPractice {Each equipped craftable item increases all skills by $number($perkBaseValue(Practice|1)).}
+perkPreaim {Aim mode is $percent($perkBaseValue(Preaim|1)) faster.}
+perkPreaim_alternate {The character deals $percent($perkBaseValue(Preaim|2)) more damage with shots against enemies who are not at full health.}
+perkProfessionalCommerce {Buying and selling the goods is 8% more profitable.}
+perkPuncher {Straight weapon damage increased by 10%.}
 perkQuartermaster {Increases maximum crew by 10%.}
-InstantBoarding {Instant Boarding}
-Rush {The Ometochtli tincture}
+perkQuickGlance {Determines the ship’s type and trait when surveying it with a spyglass.}
+perkQuiet {You cannot be detected while stealing.}
+perkQuiet_alternate {The character deals $percent($perkBaseValue(Quiet|1)) more damage with attacks from behind.}
+perkRatsWolf {On this character’s ship, cargo damage from rats and other pests is prevented.}
+perkReach {Long weapon damage increased by 8%.}
+perkReaper {Critical damage increased by  $percent($perkBaseValue(Reaper|1)), and critical chance with Fast Attacks increased by  $percent($perkBaseValue(Reaper|2)).}
 perkRush
 {
 Intoxicating tincture, contributing to the instantaneous manifestation of tremendous strength and endurance, a significant increase in dexterity and quickness of reaction with intense aggression and insensitivity to pain.
@@ -326,16 +237,114 @@ For 12 seconds, the character's attacks become much more powerful and the incomi
 ~
 This ability has a 1 minute cooldown.
 }
+perkSabreHurricane {Slash and Fast Attacks with Medium Curved weapons have a wider arc, hitting adjacent enemies, and deal $percent($perkBaseValue(SabreHurricane|1)) more damage.}
+perkSailingProfessional {Ship speed and maneuverability increased by 5%. Improved chances to flee.}
+perkSailsDamageUp {Damage to the sails of enemy ships is increased by 10%.}
+perkSailsMan {Thanks to the use of the latest carrot-and-stick methods, all sail operations are performed 10% faster.}
+perkSeaDogProfessional
+{
+At the sight of the Sea Terror’s pennant, even the boldest adventurers and outlaws dare not tempt fate. Increases Fleet Power by $percent($PerkBaseValue(SeaDogProfessional|1)).
+~
+Skill available only to the player; requires rank $attr($context.rank).
+}
+perkSelfRepair
+{
+The ability to fully repair your ship using your crew at any suitable shore. Requires planks for the hull and masts, and canvas for the sails. Complete restoration of the hull, sails, and masts is possible.
+
+Repair options are only available on land in coastal locations.
+}
+perkSharedExperience {Speeds up skill development by 15%.}
+perkShipDefenseProfessional {All damage dealt to the ship is reduced by even 5% more. Reduces enemy critical damage by 35%.}
+perkShipEscape
+{
+Rescue by lifeboat from the hero’s sinking ship to one of the ships in their fleet.
+Allows you, during battle, when the ship’s hull is below 15%, to use the hold menu to transfer or move to another fleet ship.
+If a companion has this skill, they will escape from a sinking ship or fireship, returning as a passenger to the hero’s ship by launching a lifeboat.
+}
+perkShipSpeedUp {Increase ship’s maximum speed by 15%.}
+perkShipTurnRateUp {Increase ship maneuverability by 15%.}
+perkShootToKill {Hitting an enemy with a firearm slows them, reducing their movement speed by 25%. Duration: 5 seconds.}
+perkSliding {Slash or thrust attack with a Light weapon can break through Block with a $percent($perkBaseValue(Sliding|1)) chance using a unique advanced strike.}
+perkSniper {A hit with a firearm drains the enemy’s energy.}
+perkStabbing {Short weapon damage increased by 8%.}
+perkStormProfessional {Storm damage decreased by 30%.}
+perkStrychnine {Strikes and shots have a 9% chance to poison the target. Stacks with Amulet bonuses.}
+perkTannedLeather {Light armor protects 50% better and spends 30% less energy on Snapping Back.}
+perkThrift {Reduces the impact of sail damage on speed and maneuverability by 10%.}
+perkTiefit {The skill bonus from Mundane and Fancy items is increased by $number($perkBaseValue(Tiefit|1)).}
+perkTireless {Energy recovery speed increases by $percent($perkBaseValue(Tireless|1)).}
+perkTradeConnections {Price lists are automatically updated when visiting a colony.}
+perkTrainedEye {Allows you to roughly estimate the amount of valuables on a ship when surveying it with a spyglass.}
+perkTreasureHunter {Treasure map traders appear more often, and the treasures themselves are more valuable.}
+perkTreeAdventurer {Adventurer}
+perkTreeBackground {Background}
+perkTreeBoatswain {$key(Boatswain)}
+perkTreeCannoner {$key(Cannoner)}
+perkTreeCarpenter {$key(Carpenter)}
+perkTreeDoctor {$key(Doctor)}
+perkTreeFencing {Fencer}
+perkTreeFlags {Pennants}
+perkTreeMastery {Mastery}
+perkTreeMusketer {Musketeer}
+perkTreeNavigator {$key(Navigator)}
+perkTreeOfficer {Officer}
+perkTreePirat {Pirate}
+perkTreeSoldier {Soldier}
+perkTreeTreasurer {$key(Treasurer)}
+perkTroopers
+{
+Ability to combine the crews of your fleet before storming a fort in full force.
+Reduces the number of crew required to raid a settlement from land.
+}
+perkTrustworthy {Unlocks alternative persuasion options in dialogues for certain quests. Makes it easier to avoid punishment and enter hostile towns.}
 perkTrustworthy_alternate {When serving as an officer, the character receives pay reduced by $percent($perkBaseValue(Trustworthy|1)).}
-perkAlchemy_alternate {Grants a $percent($perkBaseValue(Alchemy|1)) chance not to consume a potion when used.}
-perkPreaim_alternate {The character deals $percent($perkBaseValue(Preaim|2)) more damage with shots against enemies who are not at full health.}
-perkKeenEye_alternate {The character gains a $percent($perkBaseValue(KeenEye|2)) increased chance of a critical shot.}
-perkPowderFeel_alternate {The character gets a $percent($perkBaseValue(PowderFeel|2)) chance not to consume ammunition when firing.}
-perkMarathonRunner_alternate {The character increases their Energy pool by $number($perkBaseValue(MarathonRunner|3)).}
-perkQuiet_alternate {The character deals $percent($perkBaseValue(Quiet|1)) more damage with attacks from behind.}
-perkCollection_alternate {Each exotic item equipped by the character increases their damage by $percent($perkBaseValue(Collection|2)).}
-perkInvestor_alternate {Increases the character's Trade and Leadership skills by $number($perkBaseValue(Investor|2)).}
-perkGossip_alternate {As a companion, the character increases the squadron's might by $percent($perkBaseValue(Gossip|1)).}
-perkMaster_alternate {Each potion the character drinks increases damage dealt by $percent($perkBaseValue(Master|2)).}
-perkLooting_alternate {Increases carry weight by $perkBaseValue(Looting|1) pounds.}
-perkMaster_currentBonus {Current bonus: $percent($attr($context.ct.static.fast_Damage.perk_master))}
+perkTurn180 {Ships turns 4 times faster for 1 minute. Can be activated every 3 minutes.}
+perkVirtuosity {Light Weapons damage increased by 10%.}
+perkWindCatcher
+{
+Ship accelerates 10% faster.
+
+Increases speed on the global map in familiar waters—if you have a map.
+}
+PowderFeel {Sense of Gunpowder}
+Practice {Practice Development}
+Preaim {Sighting}
+ProfessionalCommerce {Expert Purser}
+Puncher {Hole Punch}
+Quartermaster {Quartermaster}
+QuickGlance {Quick Eye}
+Quiet {Light Footed}
+rankRequired {Requires rank $attr($context.rank) to take.}
+RatsWolf {Rat Wolf}
+Reach {Reach}
+Reaper {Reaper}
+Rush {The Ometochtli tincture}
+SabreHurricane {Saber Whirlwind}
+SailingProfessional {Expert Navigator}
+SailsDamageUp {Rigging Shot}
+SailsMan {Swift Sails}
+SeaDogProfessional {Terror of the Seas}
+SelfRepair {Full Repair}
+SharedExperience {Quick Learner}
+ShipDefenseProfessional {Expert Carpenter}
+ShipEscape {Second Chance}
+ShipSpeedUp {Swift Sail}
+ShipTurnRateUp {Increase ship maneuverability}
+ShootToKill {Shoot to Kill}
+Sliding {Irresistible Blow}
+Sniper {Sniper}
+Stabbing {Knife Fight}
+StormProfessional {Stormproof}
+Strychnine {Strychnine}
+TannedLeather {Thick Skin}
+Thrift {Frugality}
+Tiefit {Tailored}
+Tireless {Tirelessness}
+TradeConnections {Trade Connections}
+TrainedEye {Keen Eye}
+TreasureHunter {Treasure Hunter}
+Troopers {Siege Tactics}
+Trustworthy {Trustworthy}
+Turn180 {Evasive Maneuver}
+Virtuosity {Virtuosity}
+WindCatcher {Sea Sense}

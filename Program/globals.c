@@ -13,6 +13,7 @@ string savefile_info = "ver 1.5.0";
 #define DLC_APPID_5       3549890
 #define DLC_APPID_6       3549900
 #define DLC_APPID_7       3549910
+#define DLC_APPID_8       4454410
 #define DLC_NAME_1        "Loyalty Pack"
 #define DLC_NAME_2        "Vile Liittle God"
 #define DLC_NAME_3        "Black Mark"
@@ -20,6 +21,7 @@ string savefile_info = "ver 1.5.0";
 #define DLC_NAME_5        "Ships Pack #2"
 #define DLC_NAME_6        "Ships Pack #3"
 #define DLC_NAME_7        "Ships Pack #4"
+#define DLC_NAME_8        "Maritime Stories"
 #define DLC_DATE_1	      ""
 #define DLC_DATE_2        ""
 #define DLC_DATE_3        ""
@@ -62,6 +64,10 @@ int iGlobalHelpTime = 1;    // 0 off, 1 slow, 2 medium, 3 fast
 int iGlobalCamera = 1;      // 0 side, 1 classic
 int iGlobalEnemyType = 1;   // 0 off, 1 target, 2 all
 int iGlobalTarget = 2;      // 0 off, 1 fight, 2 non fight, 3 always
+
+int iVisualScheme = 0;	// 0 - градиент, 1 - градиент низкой интенсивности, 2 - температура/интенсивность, 3 - протанопия, 4 - дейтеранопия, 5 - тританопия
+int iDialogScale = 0;	// 0 - обычный, 1 - увеличенный
+int iBestCourse = 0;	// 0 - стрелочка отключена, 1 - включена
 
 //bool isLoaded = false;
 
@@ -205,6 +211,17 @@ ref GetCharacter(int iIndex)
 		return &NullCharacter;
 	}
 	return &Characters[iIndex]; 
+}
+
+/* Получить персонажа по индексу или nullptr
+@param ignoreNotFound передаём `true`, если отсутствие результата поиска является ожидаемым поведением
+*/
+ref GetCharacterSafe(int index, bool ignoreNotFound = false)
+{ 
+	if (index >= 0 && index < MAX_CHARACTERS) return &Characters[index];
+
+	assert(ignoreNotFound, "Incorrect Index for a character! Wrong Index is " + index);
+	return nullptr;
 }
 
 ref GetMainCharacter() 

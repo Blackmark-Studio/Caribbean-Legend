@@ -1,0 +1,6 @@
+Shipyard_TuningRig {Let’s see what can be done. The sails on this ship are _$key($attr($context.rig_type)), and I could $key($attr($context.rig_upgrade_type)). For that, I’ll need $attr($context.material) of sailcloth silk. As payment for the work, I’ll take $attr($context.price) chests of doubloons to cover expenses. That should be everything. Ah yes — payment up front.}
+Smuggler_can_trade {This season’s been tight for us, I wouldn’t risk it… but your reputation precedes you, you rogue. They say you could steal the wig off the governor’s head. Let’s see what you’ve got.}
+Smuggler_can_trade_reply {It’s always good to have your reputation acknowledged. Let’s trade.}
+Smuggler_cant_trade {I don’t know what you’re talking about, Captain. Smuggling is strictly forbidden and harshly punished. (whispering) Especially this season.}
+Smuggler_cant_trade_reply {Come now, I had no intention of trading contraband. (whispering) We never saw each other.}
+storageRent {And besides guard duty, do you do anything else around here?}

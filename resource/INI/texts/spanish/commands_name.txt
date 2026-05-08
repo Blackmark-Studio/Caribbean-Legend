@@ -1,89 +1,93 @@
-sea_Cancel {Cancelar}
-sea_Moor {Amarrar}
-sea_Cabin {Cabina}
-sea_SailTo {Navegar a}
-sea_Board {Subir a}
-sea_LandTroops {Tropas de tierra}
-sea_Map {Mapa}
-sea_Attack {Atacar}
-sea_Abordage {Abordar}
-sea_Defend {Defender}
-sea_SailAway {Aléjate navegando}
-sea_HeaveToDrift {Izar o replegar}
-sea_Reload {Comerciar}
-sea_Charge {Recargar}
-sea_Speed {Velocidad}
-sea_CCommand {Órdenes}
-sea_Ability {Habilidad}
-sea_ImmediateDeath {¡Destruirlo!}
-sea_InstantBoarding {Abordaje inmediato}
-sea_Speak {Hablar}
-sea_Sneak {Colarse en la ciudad}
-sea_Repair {Reparar}
-sea_SailDir {Navegar hacia...}
-sea_SailNW {Noroeste}
-sea_SailN {Norte}
-sea_SailNE {Noreste}
-sea_SailE {Este}
-sea_SailSE {Sureste}
-sea_SailS {Sur}
-sea_SailSW {Suroeste}
-sea_SailW {Oeste}
-sea_Boat {Enviar bote}
-sea_Bomb {Soltar mina}
-sea_Brander {Brulote}
-sea_ImmediateReload {Recarga preliminar}
-sea_LightRepair {Reparación ligera}
-sea_InstantRepair {Reparación rápida}
-sea_SandbankManeuver {Maniobras en bancos de arena}
-sea_Turn180 {Giro rápido}
-land_TalkSelf {Pensar en voz alta}
-land_ItemsDead {Botín}
-land_FastReload {Ir a}
-land_ItemsUse {Usar}
-land_DialogStart {Diálogo}
-land_ItemsChange {Intercambiar}
-land_TakeItem {Coger}
-land_PlaceItem {Colocar}
-land_OutDoor {Abrir}
-land_UseBox {Abrir}
-land_ActivateRush {Usar tintura Ometochtli}
-land_ActivateCabine {Cabina del Capitán}
-land_DeActivateCabine {Tierra}
-land_Look {Mirar}
-land_Exit {Mar}
-land_SelfRepair {Reparación completa}
-land_Alchemy {Elaboración}
-land_MapAtlas {Mapas}
-land_Rest {Descansar}
-go_store {Tienda}
-go_shipyard {Astillero}
-go_tavern {Taberna}
-go_residence {Gobernador}
-go_port {Puerto}
-go_loanshark {Banquero}
-go_church {Iglesia}
-go_prison {Prisión}
 go_brothel {Burdel}
-go_usurer {Usurero}
-go_portman {Autoridad portuaria}
-go_duel {Duelo}
-go_exittown {Puerta de la ciudad}
 go_Caroline {Fragata 'Carolina'}
-go_CeresSmithy_Mary {Mary Casper}
 go_CeresSmithy_Jurgen {Jurgen Schmidt}
+go_CeresSmithy_Mary {Mary Casper}
+go_church {Iglesia}
+go_duel {Duelo}
 go_EsmeraldaStoreBig {Galeón 'Esmeralda'}
 go_EsmeraldaStoreBig_Donald {Donald Greenspen}
+go_exittown {Puerta de la ciudad}
 go_FenixPlatform {Plataforma 'Fenix'}
 go_FleuronTavern {Caravela 'Fleron'}
 go_GloriaChurch {Galeón 'Gloria'}
+go_graveyard {Cementerio}
+go_hwic_office {Sede de la CIO}
+go_loanshark {Banquero}
+go_plantation {Plantación}
+go_port {Puerto}
+go_portman {Autoridad portuaria}
+go_prison {Prisión}
 go_ProtectorFisher {Eduard Black}
+go_residence {Gobernador}
 go_SanAugustineResidence {Steve Dodson}
 go_SanGabrielMechanic {Henrick Vedecker}
+go_shipyard {Astillero}
+go_storage {Almacén}
+go_store {Tienda}
 go_TartarusPrison {Buque de guerra 'Tartarus'}
+go_tavern {Taberna}
+go_usurer {Usurero}
+land_ActivateCabine {Cabina del Capitán}
+land_ActivateRush {Usar tintura Ometochtli}
+land_Alchemy {Elaboración}
+land_DeActivateCabine {Tierra}
+land_DialogStart {Diálogo}
+land_Exit {Mar}
+land_FastReload {Ir a}
+land_ItemsChange {Intercambiar}
+land_ItemsDead {Botín}
+land_ItemsUse {Usar}
+land_Look {Mirar}
+land_MapAtlas {Mapas}
+land_OutDoor {Abrir}
+land_PlaceItem {Colocar}
+land_Rest {Descansar}
+land_SelfRepair {Reparación completa}
+land_TakeItem {Coger}
+land_TalkSelf {Pensar en voz alta}
+land_UseBox {Abrir}
+sea_Ability {Habilidad}
+sea_Abordage {Abordar}
+sea_Attack {Atacar}
+sea_Board {Subir a}
+sea_Boat {Enviar bote}
+sea_Bomb {Soltar mina}
+sea_Brander {Brulote}
+sea_Cabin {Cabina}
+sea_Cancel {Cancelar}
+sea_CCommand {Órdenes}
+sea_Charge {Recargar}
+sea_Defend {Defender}
+sea_HeaveToDrift {Izar o replegar}
+sea_ImmediateDeath {¡Destruirlo!}
+sea_ImmediateReload {Recarga preliminar}
+sea_InstantBoarding {Abordaje inmediato}
+sea_InstantRepair {Reparación rápida}
+sea_LandTroops {Tropas de tierra}
+sea_LightRepair {Reparación ligera}
+sea_Map {Mapa}
+sea_Moor {Amarrar}
+sea_Reload {Comerciar}
+sea_Repair {Reparar}
+sea_SailAway {Aléjate navegando}
+sea_SailDir {Navegar hacia...}
+sea_SailE {Este}
+sea_SailN {Norte}
+sea_SailNE {Noreste}
+sea_SailNW {Noroeste}
+sea_SailS {Sur}
+sea_SailSE {Sureste}
+sea_SailSW {Suroeste}
+sea_SailTo {Navegar a}
+sea_SailW {Oeste}
+sea_SandbankManeuver {Maniobras en bancos de arena}
+sea_Sneak {Colarse en la ciudad}
+sea_Speak {Hablar}
+sea_Speed {Velocidad}
+sea_Turn180 {Giro rápido}
+worldmap_toattack {Únete a la batalla}
+worldmap_toenemy {Pelea}
 worldmap_toisland {Al mar}
 worldmap_tosea {Al mar}
 worldmap_toship {Atacar}
 worldmap_tostorm {Tormenta}
-worldmap_toattack {Únete a la batalla}
-worldmap_toenemy {Pelea}

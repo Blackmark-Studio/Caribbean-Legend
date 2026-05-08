@@ -1,63 +1,121 @@
-QUEST_MESSAGE1 {埃尔开曼殖民地已被占领。}
-QUEST_MESSAGE2 {埃尔开曼殖民地已被攻克。}
-QUEST_MESSAGE3 {你太年迈了, 无法抵抗阿兹特克黄金的诅咒...}
-QUEST_MESSAGE4 {你发现了一处宝藏!}
-QUEST_MESSAGE5 {Nigel Blight袭击了走私者的双桅纵帆船!}
-QUEST_MESSAGE6 {Nigel Blight已消失!}
-QUEST_MESSAGE7 {船长, "黑珍珠号"出现在地平线上!}
-QUEST_MESSAGE8 {干得漂亮。 你已击杀首领!}
-QUEST_MESSAGE9 {现在你正与这个残酷的世界短兵相 接!}
-QUEST_MESSAGE10 {一个冷酷无情的海盗}
-QUEST_MESSAGE11 {理应获得特殊奖励!}
-QUEST_MESSAGE12 {遗憾的是, 你已雇佣过多副官! 需解雇一名军官后才能雇佣新副官!}
-Address_Form_Spa {先生}
-Address_Form_Fra {先生}
 Address_Form_Eng {先生}
-Address_Form_Por {先生}
+Address_Form_Eng_Title1 {私掠者}
+Address_Form_Eng_Title2 {指挥官}
+Address_Form_Eng_Title3 {船长}
+Address_Form_Eng_Title4 {舰队司令}
+Address_Form_Eng_Title5 {舰队司令}
+Address_Form_EngWoman {小姐}
+Address_Form_EngWoman2 {夫人}
+Address_Form_Fra {先生}
+Address_Form_Fra_Title1 {私掠者}
+Address_Form_Fra_Title2 {指挥官}
+Address_Form_Fra_Title3 {船长}
+Address_Form_Fra_Title4 {舰队司令}
+Address_Form_Fra_Title5 {海军中将}
+Address_Form_FraWoman {小姐}
+Address_Form_FraWoman2 {夫人}
 Address_Form_Hol {先生}
-Swear_1 {我的脾脏都要炸了!}
-Swear_2 {该死!}
-Swear_3 {哦, 我的上帝!}
-Swear_4 {该死的!}
-Swear_5 {一千个恶魔!}
-Swear_6 {做我船尾的锚!}
-Swear_7 {哦, 天堂!}
-Swear_8 {啊—! !!}
-Swear_9 {一千条鲨鱼!}
-Swear_10 {魔鬼!}
-TimeGreeting {下午好}
-Antigua {Antigua}
-Barbados {Barbados}
-Curacao {Curacao}
-Dominica {Dominica}
-Grenada {Grenada}
-Guadeloupe {Guadeloupe}
-Hispaniola {Hispaniola}
-IslaMona {Isla Mona}
-Jamaica {Jamaica}
-MarieGalante {Marie Galante}
-Martinique {Martinique}
-Montserrat {Montserrat}
-Nevis {Nevis}
-PuertoRico {Puerto Rico}
-StEustatius {St. Eustatius}
-StKitts {St. Kitts}
-StMartin {St. Martin}
-Tortuga {Tortuga}
-LaVega {La Vega}
-SantoDomingo {Santo Domingo}
-PetitGoave {Petit Goave}
-Bridgetown {Bridgetown}
-SanJuan {San Juan}
-SantiagoVega {圣地亚哥 维加}
-OFFIC_TYPE_BOATSWAIN {水手长}
-OFFIC_TYPE_CANNONEER {炮手}
-OFFIC_TYPE_QMASTER {舵手}
-OFFIC_TYPE_NAVIGATOR {领航员}
-OFFIC_TYPE_FIRSTMATE {大副}
-Pirate {海盗}
-Spain {西班牙人}
-France {法国人}
-Smuggler {走私者}
-Holland {荷兰人}
-England {英国人}
+Address_Form_Hol_Title1 {海盗}
+Address_Form_Hol_Title2 {指挥官}
+Address_Form_Hol_Title3 {船长}
+Address_Form_Hol_Title4 {舰队司令}
+Address_Form_Hol_Title5 {舰队司令}
+Address_Form_HolWoman {小姐}
+Address_Form_HolWoman2 {夫人}
+Address_Form_Pir {先生}
+Address_Form_Pir_Title1 {海盗}
+Address_Form_Pir_Title2 {指挥官}
+Address_Form_Pir_Title3 {船长}
+Address_Form_Pir_Title4 {舰队司令}
+Address_Form_Pir_Title5 {舰队司令}
+Address_Form_PirWoman {小姐}
+Address_Form_PirWoman2 {夫人}
+Address_Form_Spa {先生}
+Address_Form_Spa_Title1 {私掠者}
+Address_Form_Spa_Title2 {指挥官}
+Address_Form_Spa_Title3 {船长}
+Address_Form_Spa_Title4 {舰队司令}
+Address_Form_Spa_Title5 {舰队司令}
+Address_Form_SpaWoman {小姐}
+Address_Form_SpaWoman2 {夫人}
+DayGreeting {日安}
+EveningGreeting {晚上好}
+Exclamation_1 {哦, 主啊!}
+Exclamation_2 {哦, 天啊!}
+Exclamation_3 {圣母玛利亚!}
+FriendlyGoodbye_0 {拜拜}
+FriendlyGoodbye_1 {拜拜}
+FriendlyGreeting {嗨}
+MorningGreeting {早上好}
+NationEuropaTown_Eng {伦敦}
+NationEuropaTown_Fra {勒罗谢尔}
+NationEuropaTown_Hol {阿姆斯特丹}
+NationEuropaTown_Pir {托尔图加}
+NationEuropaTown_Spa {塞维利亚}
+NationKingsCrown_Eng {英国王位}
+NationKingsCrown_Fra {法国王冠}
+NationKingsCrown_Hol {荷兰王国}
+NationKingsCrown_Pir {海岸兄弟会}
+NationKingsCrown_Spa {西班牙王冠}
+NationKingsName_Eng {护国公}
+NationKingsName_Fra {法国国王路易十四陛下}
+NationKingsName_Hol {荷兰国王威廉三世陛下}
+NationKingsName_Pir {海岸兄弟会}
+NationKingsName_Spa {天主教国王菲利普四世·冯·哈布斯堡陛下}
+NationNameAblative_Eng {英格兰}
+NationNameAblative_Fra {法国}
+NationNameAblative_Hol {荷兰}
+NationNameAblative_Pir {由海盗}
+NationNameAblative_Spa {西班牙}
+NationNameGenitive_Eng {英格兰}
+NationNameGenitive_Fra {法国}
+NationNameGenitive_Hol {荷兰}
+NationNameGenitive_Pir {海盗}
+NationNameGenitive_Spa {西班牙}
+NationNameMan_Eng {英格兰人}
+NationNameMan_Fra {法国人}
+NationNameMan_Hol {荷兰人}
+NationNameMan_Pir {一名海盗}
+NationNameMan_Spa {西班牙人}
+NationNameNominative_Eng {英格兰}
+NationNameNominative_Fra {法国}
+NationNameNominative_Hol {荷兰}
+NationNameNominative_Pir {海岸兄弟会}
+NationNameNominative_Spa {西班牙}
+NationNamePeople_Eng {英格兰人}
+NationNamePeople_Fra {法国人}
+NationNamePeople_Hol {荷兰人}
+NationNamePeople_Pir {海盗}
+NationNamePeople_Spa {西班牙人}
+NationNamePeopleAcc_Eng {英格兰人}
+NationNamePeopleAcc_Fra {法国人}
+NationNamePeopleAcc_Hol {荷兰人}
+NationNamePeopleAcc_Pir {海盗}
+NationNamePeopleAcc_Spa {西班牙人}
+NationNameWoman_Eng {英国女人}
+NationNameWoman_Fra {法国女人}
+NationNameWoman_Hol {荷兰女人}
+NationNameWoman_Pir {女海盗}
+NationNameWoman_Spa {西班牙女人}
+NightGreeting {晚安}
+PoliteGoodbye_0 {再见}
+PoliteGoodbye_1 {再会}
+PoliteGreeting {你好}
+Swear_1 {哎呀!}
+Swear_10 {该死的我!}
+Swear_11 {该死!}
+Swear_12 {该死...}
+Swear_13 {去你的!}
+Swear_14 {该死的我!}
+Swear_15 {见鬼!}
+Swear_2 {该死的!}
+Swear_3 {该死!}
+Swear_4 {废话!}
+Swear_5 {靠...}
+Swear_6 {看在血腥鲨鱼的份上!}
+Swear_7 {啊!!!}
+Swear_8 {搞什么鬼!!}
+Swear_9 {见鬼!}
+Title_Captain {船长}
+Title_Ghovernor {总督}
+Title_ViceAdmiral {副将}

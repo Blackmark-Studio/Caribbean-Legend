@@ -189,8 +189,8 @@ void ProcessDialogEvent()
 			// Леди Бет <--
 			if(NPChar.quest.meeting == "0")
 			{
-				dialog.Text = LinkRandPhrase(LinkRandPhrase("좋은 하루 되시길, "+GetAddress_Form(NPChar)+". 무엇을 도와드릴까요? 내가 당신을 아는 사람인가요?","들어오십시오, 선장님. 제 이름은 "+GetFullName(npchar)+" 그리고 나는 이곳의 은행가요.","만나서 반갑소, "+GetAddress_Form(NPChar)+"! 나는 이곳의 은행가요. 돈 문제가 있다면 내가 도와줄 수 있소."),LinkRandPhrase("전에 만난 적이 있습니까, 선장? 저는 "+GetFullName(npchar)+", 그리고 나는 이곳의 은행가요.","들어오십시오, 선장님. 제 이름은 "+GetFullName(npchar)+" 그리고 나는 이곳의 은행가요.","안녕하십니까, "+GetAddress_Form(NPChar)+". 나는 "+GetFullName(npchar)+", 이 지역 은행가요."),LinkRandPhrase("만나서 반갑소, "+GetAddress_Form(NPChar)+", 나는 "+GetFullName(npchar)+" 이 멋진 마을의 그저 소박한 은행가일 뿐입니다.","결정은 선장님이 하십시오! 저에게서 돈을 빌리시겠습니까, 아니면 이자를 받고 돈을 빌려주시겠습니까?","선장 나리! 이렇게 제 소박한 사무실을 찾아주셔서 정말 기쁩니다!"));
-				link.l1 = RandPhraseSimple(LinkRandPhrase("기꺼이요! 마침 시내를 거닐다가 당신을 찾아오기로 했습니다.","기꺼이, 나는 "+GetFullName(pchar)+", 만나서 반갑소.",""+GetFullName(pchar)+" , 라는 이름의 배의 선장 "+pchar.ship.name+" , 만나서 반갑소. 여기가 은행이 맞지요?"),RandPhraseSimple("만나서 반갑소. 나는 "+GetFullName(pchar)+". "+배의 이름+"이라는 배의 선장 "+pchar.ship.name+". 나는 그냥 당신을 알고 싶었을 뿐이오.","아하, 여기에도 은행이 있군요? 만나서 반갑소, 나는 "+GetFullName(pchar)+", 내 배의 선장이오."));
+				dialog.Text = LinkRandPhrase(LinkRandPhrase("좋은 하루 되시길, " + GetAddress_Form(NPChar) + ". 무엇을 도와드릴까요? 내가 당신을 아는 사람인가요?", "들어오십시오, 선장님. 제 이름은 " + GetFullName(npchar) + " 그리고 나는 이곳의 은행가요.", "만나서 반갑소, " + GetAddress_Form(NPChar) + "! 나는 이곳의 은행가요. 돈 문제가 있다면 내가 도와줄 수 있소."), LinkRandPhrase("전에 만난 적이 있습니까, 선장? 저는 " + GetFullName(npchar) + ", 그리고 나는 이곳의 은행가요.", "들어오십시오, 선장님. 제 이름은 " + GetFullName(npchar) + " 그리고 나는 이곳의 은행가요.", "안녕하십니까, " + GetAddress_Form(NPChar) + ". 나는 " + GetFullName(npchar)+", 이 지역 은행가요."), LinkRandPhrase("만나서 반갑소, " + GetAddress_Form(NPChar) + ", 나는 " + GetFullName(npchar) + " 이 멋진 마을의 그저 소박한 은행가일 뿐입니다.", "결정은 선장님이 하십시오! 저에게서 돈을 빌리시겠습니까, 아니면 이자를 받고 돈을 빌려주시겠습니까?", "선장 나리! 이렇게 제 소박한 사무실을 찾아주셔서 정말 기쁩니다!"));
+				link.l1 = RandPhraseSimple(LinkRandPhrase("기꺼이요! 마침 시내를 거닐다가 당신을 찾아오기로 했습니다.","기꺼이, 나는 "+GetFullName(pchar)+", 만나서 반갑소.",""+GetFullName(pchar)+" , 라는 이름의 배의 선장 "+pchar.ship.name+" , 만나서 반갑소. 여기가 은행이 맞지요?"),RandPhraseSimple("만나서 반갑소. 나는 "+GetFullName(pchar)+". 배의 이름 이라는 배의 선장 "+pchar.ship.name+". 나는 그냥 당신을 알고 싶었을 뿐이오.","아하, 여기에도 은행이 있군요? 만나서 반갑소, 나는 "+GetFullName(pchar)+", 내 배의 선장이오."));
 				link.l1.go = "next";
 				NPChar.quest.meeting = "1";
 				if(startHeroType == 4 && NPChar.location == "SantaCatalina_bank")
@@ -900,7 +900,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Interest":
-			Pchar.Quest.Loans.(NPC_Area).Interest = 4.0 + (makeint((((6.0 - 4.0) * (GetSummonSkillFromName(pchar, "Commerce") + GetSummonSkillFromName(pchar, "Leadership")) / 200) ) / 0.5 + 0.5)) * 0.5;
+			Pchar.Quest.Loans.(NPC_Area).Interest = GetCreditRate();
 			//Pchar.Quest.Loans.(NPC_Area).Interest = 16 - makeint(Pchar.skill.commerce);
 			// Rebbebion, добавил фикс отображения знака процента
 			Dialog.snd = "voice\USDI\USDI020";

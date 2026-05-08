@@ -620,6 +620,7 @@ int LocationInitMaracaibo(int n)
 	locations[n].townsack = "Maracaibo";
 	//Sound
 	locations[n].type = "jungle";
+    locations[n].fastreload = "Maracaibo";
 	locations[n].islandId = "Mein";
 	locations[n].islandIdAreal = "Maracaibo";
 	//Models
@@ -989,6 +990,7 @@ int LocationInitMaracaibo(int n)
 	locations[n].carrier = true;
 	//Sound
 	locations[n].type = "plantation";
+    locations[n].fastreload = "Maracaibo";
 	//Models
 	//Always
 	locations[n].filespath.models = "locations\BarbadosPlantation";

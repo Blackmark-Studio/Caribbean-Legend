@@ -1,0 +1,36 @@
+effects_title {이야기 결과}
+SkillExp_1 {$ctx(p1)이 경험치를 획득함: $key($ctx(p2))}
+SkillExp_pchar_1 {경험치를 획득함: $key($ctx(p1))}
+Loyality_0 {$ctx(p1)이 불만족함}
+Loyality_1 {$ctx(p1)이 만족함}
+CrewMorale_pchar_0 {선원 사기 $MoraleStrDiff($ctx(value))}
+CrewMorale_pchar_1 {선원 사기 $MoraleStrDiff($ctx(value))}
+Reputation_pchar_0 {평판 하락}
+Reputation_pchar_1 {평판 상승}
+CrewExp_pchar_1 {$key($ctx(p1))이 경험치를 획득함}
+Money_pchar_1 {$money($ctx(value)) 획득}
+Money_pchar_0 {$abs($money($ctx(value))) 지불함}
+Goods_pchar_1 {획득: _$key($goodI($ctx(p1))Acc) $number($ctx(value))}
+Goods_pchar_0 {소모: _$key($goodI($ctx(p1))Acc) $abs($number($ctx(value)))}
+NationRelation_pchar_0 {$key($nationI($ctx(p1))Abl)와의 관계 악화}
+NationRelation_pchar_1 {$key($nationI($ctx(p1))Abl)와의 관계 개선}
+ItemsCabin_0 {아이템 소모: $GetItemName($ctx(p1)) x $abs($number($ctx(value)))}
+ItemsCabin_1 {아이템 획득: $GetItemName($ctx(p1)) x $number($ctx(value))}
+Items_pchar_0 {아이템 소모: $GetItemName($ctx(p1)) x $abs($number($ctx(value)))}
+Items_pchar_1 {아이템 획득: $GetItemName($ctx(p1)) x $number($ctx(value))}
+TempModifier_pchar_0 {$key($ctx(p1)|modifiers.txt) $percent($ctx(value)) 동안 $days($ctx(duration))}
+TempModifier_pchar_1 {$key($ctx(p1)|modifiers.txt) +$percent($ctx(value)) 동안 $days($ctx(duration))}
+moraleDiff_up3 {크게 상승했다}
+moraleDiff_up2 {상승했다}
+moraleDiff_up1 {조금 상승했다}
+moraleDiff_stay {변하지 않았다}
+moraleDiff_down3 {크게 하락했다}
+moraleDiff_down2 {하락했다}
+moraleDiff_down1 {조금 하락했다}
+FractionRelation_0 {$key($ctx(p1)Abl)와의 관계 악화}
+FractionRelation_1 {$key($ctx(p1)Abl)와의 관계 개선}
+CrewQty_pchar_0 {잃은 선원 수: $abs($number($ctx(value)))}
+CrewQty_pchar_1 {새로 합류한 선원 수: $number($ctx(value))}
+NoEffectsStory {아무 일도 일어나지 않았다}
+LoyalityAll_1 {당신의 장교들은 이제 더 충성스럽습니다}
+LoyalityAll_0 {당신의 장교들은 이제 충성심이 낮아졌습니다}

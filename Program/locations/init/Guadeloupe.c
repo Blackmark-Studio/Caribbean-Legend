@@ -944,6 +944,7 @@ int LocationInitGuadeloupe(int n)
 	locations[n].image = "loading\Gate" + rand(1) + ".tga";
 	//Town sack
 	locations[n].townsack = "BasTer";
+	locations[n].fastreload = "BasTer";
 	//Sound
 	locations[n].type = "jungle";
 	locations[n].islandId = "Guadeloupe";

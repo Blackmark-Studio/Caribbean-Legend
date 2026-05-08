@@ -1,0 +1,46 @@
+Node0_a {Um novo ano civil se aproxima. A Temporada da Coroa é uma época de renovação e renascimento. Os ventos do nordeste se tornam previsíveis, deixando o oceano Atlântico muito mais seguro para travessias longas.$br$redÉ justamente nesse período que pessoas e mercadorias da Europa chegam ao arquipélago. Os governadores recebem novas ordens e relatórios, enquanto patrulhas e comboios da Coroa cruzam o mar.}
+Node0_a_action {Um mar de oportunidades!}
+Node0_b_a {O comércio com as colônias, como de costume, desacelerou com a chegada do inverno. As últimas remessas de açúcar e tabaco já seguiram há muito para a Europa, o corte de ébano e mogno foi interrompido, e o equilíbrio só será restabelecido na próxima temporada. Por enquanto, os preços dos bens coloniais estão muito acima do normal.}
+Node0_b_a_reaction {Tenho certeza de que eles não contabilizaram tudo}
+Node0_b_a_reaction_log {Você decide usar sua reputação de comerciante e seu carisma natural para convencer os mercadores a venderem a você as sobras que ficaram fora do registro.}
+Node0_b_b {A temporada passada secou as colônias até o fim - os estoques se esgotaram, e as plantações foram quase destruídas pelo mau tempo. Os últimos restos de bens coloniais já foram enviados há muito para as colônias capitais, e praticamente não há nada no mercado para vender ou comprar. Os mercadores inflaram os preços e aguardam a Temporada da Cana - é quando o equilíbrio será restabelecido.}
+Node0_b_b_reaction {Sempre vai haver algo para gente como eu}
+Node0_b_b_reaction_log {Você usa o talento do seu contramestre e de alguns informantes para avaliar com precisão os estoques das lojas. Os mercadores serão obrigados a vender a você aquilo que queriam guardar para si.}
+Node0_b_c {Nas capitais, decidiram rever as taxas coloniais. Enquanto os burocratas discutem tarifas e impostos, os mercadores não têm pressa em fechar contratos de longo prazo. Com isso, sofrem tanto os preços quanto o volume do comércio.}
+Node0_b_c_reaction {Nossa mercadoria é a melhor!}
+Node0_b_c_reaction_log {Você decide usar sua reputação de negociante experiente para vender a carga do navio por um preço mais alto. Infelizmente, isso só vai funcionar nas colônias em que a sua mercadoria for necessária.}
+Node0_c_a {Os estaleiros, por outro lado, já se recuperaram totalmente da destruição, e as remessas de madeira naval que inundaram o mercado reduziram o custo dos reparos.}
+Node0_c_a_reaction {Espero que isso não seja preciso}
+Node0_c_a_reaction_log {Você sabe bem como manter um navio à tona e decide usar esse conhecimento para precisar ir menos vezes ao dique para reparos.}
+Node0_c_b {Mas há boas notícias também - para restaurar a capacidade de combate das frotas nacionais, a Europa enviou este ano remessas especialmente grandes de materiais. Junto com os primeiros comboios da Coroa, chegaram também especialistas em construção naval. As nações estão se preparando para uma grande guerra, mas, para um capitão livre, isso resultará em uma redução substancial no custo dos reparos.}
+Node0_c_b_reaction {Reparos baratos? Então vamos bater mais forte}
+Node0_c_b_reaction_log {Se os cascos dos navios são fáceis de reparar, então o inimigo deve ser atingido sem piedade. Você decide mirar apenas nos elementos críticos dos navios inimigos e manda manter, junto às portinholas dos canhões, uma reserva de pesadas balas de ferro fundido para o caso de aproximação.}
+Node0_c_c {Por portos e enseadas correm rumores inquietantes sobre uma grande expedição militar em preparação. As melhores tábuas, cordas e lona de vela foram reservadas para os navios de guerra. Os estaleiros estão funcionando, mas os materiais vão rápido para encomendas estatais prioritárias. Isso eleva o custo dos reparos.}
+Node0_c_c_reaction {Nosso navio será útil na guerra}
+Node0_c_c_reaction_log {Você se faz passar com facilidade por um corsário experiente a serviço da Coroa e se coloca lado a lado com os navios de guerra.}
+Node0_d_a {Agora, cada nação tenta aproveitar suas forças renovadas para ampliar sua influência. Qualquer governador ficará contente com ajuda, e virar inimigo público é surpreendentemente fácil. As cartas de corso ficaram mais fáceis de obter, o Caribe está cheio de armas e de gente disposta a usá-las. Este é um tempo de oportunidades.}
+Node0_d_a_reaction {Eles vão se lembrar de nós}
+Node0_d_a_reaction_log {Sabendo a quem pagar e onde, é muito fácil transformar a chama dos boatos em um incêndio de verdade. As potências observam com atenção os atos dos capitães livres, mas você conseguirá atrair toda a atenção para si.}
+Node0_d_b {Chegaram boas notícias da metrópole: na Europa, foi celebrado um importante casamento dinástico que fortaleceu os laços entre antigos rivais. Isso reduziu bastante a tensão tanto em casa quanto no Caribe, e muitos soldados experientes foram desmobilizados por causa disso. Esses veteranos engrossaram as fileiras dos novatos de taverna e aumentaram significativamente a experiência das tripulações contratadas.}
+Node0_d_b_reaction {Escolher recrutas talentosos}
+Node0_d_b_reaction_log {Um olhar apurado distingue com facilidade veteranos de verdade de ratos de terra. Você poderá contratar apenas veteranos, o que aumentará muito a eficiência da sua tripulação.}
+Node0_d_c {Os portos e os funcionários estão sobrecarregados de trabalho. Os documentos passam de mão em mão, os armazéns recebem cargas, e as guardas estão ocupadas inspecionando navios de guerra. No meio dessa confusão, um capitão atento pode passar despercebido.}
+Node0_d_c_reaction {Uma boa oportunidade}
+Node0_d_c_reaction_log {Sua habilidade de parecer amistoso e conquistar as pessoas será muito útil quando a atenção da guarda enfraquecer.}
+Node0_d_d {Com a troca de funcionários nos portos, começa uma nova rodada de conferências. Os diários de bordo são verificados com mais rigor do que o normal, as tripulações são recontadas e as licenças precisam ser renovadas. Desconhecidos chamam atenção indesejada rapidamente, e fica mais difícil passar despercebido no porto.}
+Node0_d_d_reaction {Vai ser preciso se esconder}
+Node0_d_d_reaction_log {Apesar das inspeções mais rígidas e minuciosas, sua habilidade de parecer discreto e não chamar atenção vai facilitar bastante a passagem pelas alfândegas e o engano das patrulhas.}
+Node0_d_e {Nas metrópoles, amadurece mais um conflito entre a Suécia e o Czarado da Rússia. Karl Gustav pediu apoio à Inglaterra, sua aliada religiosa, enquanto Alexei Mikhailovich aproveitou a indignação dos católicos e garantiu o apoio dos Habsburgos. Isso dividiu a Europa em dois grandes blocos políticos, e cada potência decidiu manter as tropas regulares em casa.$br$redAs colônias foram instruídas a se virar sozinhas. As guarnições estão sendo reforçadas com gente local, e todos que tenham o mínimo de serventia para o serviço estão sendo varridos das tavernas. Só restam novatos completamente ineptos.}
+Node0_d_e_reaction {A instrução resolve tudo}
+Node0_d_e_reaction_log {Você decide compensar a falta de experiência das tripulações contratadas com esforço e instrução, à maneira de uma marinha de guerra. Dia e noite, os recrutas marcharão em formação pelo convés sob sua orientação atenta e, mais cedo ou mais tarde, vão se transformar em velhos lobos do mar.}
+Node0_d_f {Chegaram notícias alarmantes da Europa: o Império Otomano está aumentando seu poder militar e fortalecendo sua posição na região. Os cristãos se preparam para defender o sul da península balcânica de uma possível ameaça, e todas as potências correm para firmar alianças religiosas temporárias. Até a Inglaterra protestante está pronta para enviar sua frota ao Mediterrâneo. Isso reduz bastante a tensão no Caribe, mas também traz um custo: toda a boa artilharia ficou nas metrópoles.}
+Node0_d_f_reaction {Os fortes também ficaram sem canhões?}
+Node0_d_f_reaction_log {Como artilheiro experiente, você distingue com facilidade um forte ainda capaz de lutar de outro que já perdeu toda a resistência. A falta de canhões permitirá começar os assaltos muito mais cedo.}
+Node0_success
+{
+Você entra no novo ano sob um céu limpo e com vento favorável nas velas.
+A Temporada da Coroa traz novas ordens, novos rostos e armazéns cheios.
+Tudo começa de novo - e todos têm a chance de entrar para a história.
+}
+Node0_success_action {Rumo ao mar!}
+Node0_title {Temporada da Coroa}

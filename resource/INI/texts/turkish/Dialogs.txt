@@ -1,0 +1,6 @@
+Shipyard_TuningRig {Bakalım neler yapılabilir. Bu geminin yelkenleri _$key($attr($context.rig_type)) ve ben $key($attr($context.rig_upgrade_type)) yapabilirim. Bunun için $attr($context.material) gemi ipeğine ihtiyacım olacak. Yaptığım işin karşılığında masraflar için $attr($context.price) sandık dublon alırım. Sanırım hepsi bu. Ha bir de — ödeme peşin.}
+Smuggler_can_trade {Bu sezon üzerimizde büyük baskı var, risk almazdım… ama ünün senden önce geliyor, kurnaz şey. Derler ki valinin kafasından peruğunu bile çalabilirsin. Bakalım neler getirdin.}
+Smuggler_can_trade_reply {Ününün tanınması her zaman hoştur. Hadi ticaret yapalım.}
+Smuggler_cant_trade {Ne dediğinizi anlamıyorum kaptan. Kaçakçılık kesinlikle yasaktır ve ağır şekilde cezalandırılır. (fısıldayarak) Özellikle bu sezon.}
+Smuggler_cant_trade_reply {Hadi canım, kaçak mal ticareti yapmayı hiç düşünmedim. (fısıldayarak) Biz hiç karşılaşmadık.}
+storageRent {Bekçilik dışında burada başka bir işle de uğraşıyor musunuz?}

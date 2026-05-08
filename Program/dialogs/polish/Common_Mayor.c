@@ -1199,8 +1199,8 @@ void ProcessDialogEvent()
 					dialog.text = "Dlaczego nie! Relaks jest dobry dla serca, ale nie dla sakiewki...";
 	    			link.l1 = "Doskonale.";
 	    			link.l1.go = "Cards_begin";
-	    			link.l2 = "Jakie są zasady naszej gry?";
-	    			link.l2.go = "Cards_Rule";
+	    			// link.l2 = "Jakie są zasady naszej gry?";
+	    			// link.l2.go = "Cards_Rule";
     			}
     			else
     			{
@@ -1212,7 +1212,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Cards_Rule":
-   			dialog.text = CARDS_RULE;
+   			dialog.text = GlobalStringConvert("CARDS_RULE");
 			link.l1 = "No to zaczynajmy!";
 			link.l1.go = "Cards_begin";
 			link.l3 = "Nie, to nie dla mnie...";
@@ -1334,8 +1334,8 @@ void ProcessDialogEvent()
 					dialog.text = "Dlaczego nie! Relaks jest dobry dla serca... ale nie dla sakwy...";
 	    			link.l1 = "Doskonale.";
 	    			link.l1.go = "Dice_begin";
-	    			link.l2 = "Jakie są zasady naszej gry?";
-	    			link.l2.go = "Dice_Rule";
+	    			// link.l2 = "Jakie są zasady naszej gry?";
+	    			// link.l2.go = "Dice_Rule";
     			}
     			else
     			{
@@ -1347,7 +1347,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Dice_Rule":
-   			dialog.text = DICE_RULE;
+   			dialog.text = GlobalStringConvert("DICE_RULE");
 			link.l1 = "No to zaczynajmy!";
 			link.l1.go = "Dice_begin";
 			link.l3 = "Nie, to nie dla mnie...";
@@ -2040,6 +2040,7 @@ void ProcessDialogEvent()
             // цена зависит от губернатора
             qty = makeint(sti(offref.rank)*(800 + GetCharacterSPECIALSimple(NPChar, SPECIAL_L)*100) + GetCharacterSkillToOld(offref, "Leadership")*500 + GetCharacterSkillToOld(pchar, "commerce")*500);
 			if(HasShipTrait(pchar, "trait14")) qty = makeint(qty * 1.35);
+			qty = int(qty * GetAttributeFloatOrDefault(offref, "bonusCost", 1.0));
             if (sti(offref.nation) == sti(NPChar.nation))
             {
                 attrLoc = attrLoc + " Jestem gotów zapłacić okup za mojego rodaka w wysokości  " + FindRussianMoneyString(qty) + ".";

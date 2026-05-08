@@ -207,3 +207,16 @@ int GetCharacterLoyality(ref chr)
         return  0; // для пленных и гг
     }
 }
+
+// Получить строку для изменения лояльности типа «выросла/упала»
+string MoraleStrDiff(string input)
+{
+	int value = int(input);
+	if (value > 20)  return GetConvertStr("moraleDiff_up3", "StoryFrames/effects.txt");
+	if (value > 10)  return GetConvertStr("moraleDiff_up2", "StoryFrames/effects.txt");
+	if (value > 0)   return GetConvertStr("moraleDiff_up1", "StoryFrames/effects.txt");
+	if (value < -20) return GetConvertStr("moraleDiff_down3", "StoryFrames/effects.txt");
+	if (value < -10) return GetConvertStr("moraleDiff_down2", "StoryFrames/effects.txt");
+	if (value < 0)   return GetConvertStr("moraleDiff_down1", "StoryFrames/effects.txt");
+	return GetConvertStr("moraleDiff_stay", "StoryFrames/effects.txt");
+}

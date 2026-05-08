@@ -40,8 +40,3 @@ string GetHumanReadableReason(string sourceName, ref chr)
 	// прочие источники
 	return DLG_Convert("Source"+sourceName, "RPGDescribe.txt", &NullObject);
 }
-
-string GetModifierName(string modifier)
-{
-	return GetConvertStrB(modifier, "Modifiers.txt");
-}

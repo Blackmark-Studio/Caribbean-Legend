@@ -28,14 +28,19 @@ void Sharlie_enterSoldiers_2()
 	DoFunctionReloadToLocation("FortFrance_prison", "goto", "goto9", "Puancie_InJail");
 	WaitDate("", 0, 0, 2, 0, 10); //крутим время
 	RecalculateJumpTable();
-	RemoveAllCharacterItems(PChar, true);
+	RemoveCharacterEquip(pchar, BLADE_ITEM_TYPE, true);
+	RemoveCharacterEquip(pchar, GUN_ITEM_TYPE, true);
+	RemoveCharacterEquip(pchar, MUSKET_ITEM_TYPE, true);
+	RemoveCharacterEquip(pchar, CIRASS_ITEM_TYPE, true);
+	RemoveCharacterEquip(pchar, HAT_ITEM_TYPE, true);
+	CT_UpdateCashTables(pchar);
 	sld = characterFromId("Puancie");
 	sld.dialog.currentnode = "Puancie_Jail"; 
 	LAi_SetActorTypeNoGroup(sld);
 	ChangeCharacterAddressGroup(sld, "FortFrance_prison", "goto", "goto13");
 }
 
-void Puancie_InJail(string qName)//Пуанси в тюрьме //Sinistra Катсцена
+void Puancie_InJail(string qName = "")//Пуанси в тюрьме //Sinistra Катсцена
 {
     StartQuestMovie(true, false, true);
 	locCameraFromToPos(-11.50, 1.37, -3.37, false, -16.89, -0.30, -2.73);
@@ -148,6 +153,9 @@ void Sharlie_Mishelle_OpenWorld()// С этого момента открыва�
 {
 	TakeNItems(pchar, "bullet", 5);
 	TakeNItems(pchar, "gunpowder", 5);
+	TakeNItems(pchar, "mineral15", 1);
+	TakeNItems(pchar, "ArmoryPaper", 5);
+
 	pchar.questTemp.Sharlie = "trial";
 	pchar.questTemp.Trial = "begin"; // старт промежуточной линейки
 	SetFunctionTimerCondition("Sharlie_TrialOver", 0, 0, 24, false); // таймер
@@ -196,6 +204,7 @@ void Sharlie_Mishelle_OpenWorld()// С этого момента открыва�
 	SetTimerCondition("TK_Timer", 0, 0, 30, false);
 	//маркер на торговца БасТера по квесту "Бесчестный конкурент"
 	AddLandQuestMark(characterFromId("BasTer_trader"), "questmarkmain");
+	Junglejew_LeaveIsland("");
 }
 
 void Sharlie_Benua_BrotherEscape()
@@ -821,25 +830,33 @@ void Junglejew_Findjew(string qName)//нашли драгоценность
 	AddLandQuestMark(characterFromId("FortFrance_Mayor"), "questmarkmain");
 }
 
+void Junglejew_LeaveIsland(string qName) // забили на серьгу, забираем и закрываем
+{
+	if (GetCharacterFreeItem(pchar, "jewelry25") < 1) return;
+
+	RemoveItems(pchar, "jewelry25", 1);
+	CloseQuestHeader("SharlieE");
+	DeleteAttribute(pchar, "questTemp.Sharlie.Junglejew");
+}
+
 //спасение дочери горожанина
 void RescueDaughter_CreateProsper()//создаем Проспера
 {
-	sld = GetCharacter(NPC_GenerateCharacter("RD_Prosper", "Prospero_mush", "man", "mushketer", 10, FRANCE, -1, true, "soldier"));
-	SetFantomParamFromRank(sld, 10, true);
+	sld = GetCharacter(NPC_GenerateCharacter("RD_Prosper", "Prospero_mush", "man", "mushketer", 16-MOD_SKILL_ENEMY_RATE/2, FRANCE, -1, true, "soldier"));
+	SetFantomParamFromRank(sld, 16-MOD_SKILL_ENEMY_RATE/2, true);
 	GiveItem2Character(sld, "unarmed");
 	sld.equip.blade = "unarmed";
-	GiveItem2Character(sld, "mushket1");
-	EquipCharacterbyItem(sld, "mushket1");
 	sld.MushketType = "mushket1";
 	sld.MushketBulletType = "bullet";
 	TakeNItems(sld, "bullet", 50);
 	AddItems(sld, "gunpowder", 50);
 	TakeNItems(sld, "potion1", 5);
 	LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
-	LAi_SetHP(sld, 150, 150);
-	SetSelfSkill(sld, 10, 10, 10, 100, 50);
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "BasicDefense");
+	SetCharacterPerk(sld, "GunProfessional");
+	GiveItem2Character(sld, "mushket2x2");
+	EquipCharacterbyItem(sld, "mushket2x2");
 	sld.MusketerDistance = 20;
 	sld.SuperShooter = true;
 	if(bImCasual) sld.MultiShooter = 2.0;
@@ -908,7 +925,7 @@ void RescueDaughter_Advice(string qName)//у входа в пещеру
 
 void RescueDaughter_CreateIndiansLand(string qName)//бой с индеями у пещеры
 {
-	int iRank = MOD_SKILL_ENEMY_RATE*2-2;
+	int iRank = MOD_SKILL_ENEMY_RATE/2+1;
 	pchar.quest.Sharlie_RescueDaughter2.over = "yes"; //снять прерывание
 	//закрываем локаторы
 	LocatorReloadEnterDisable("Martinique_CaveEntrance", "reload1_back", true);
@@ -932,14 +949,18 @@ void RescueDaughter_CreateIndiansLand(string qName)//бой с индеями у
 		{
 			case 1:
 				GiveItem2Character(sld, "jewelry42");
+				TakeNItems(sld, "blade_02", 1);
 			break;
 			
 			case 2:
 				TakeNItems(sld, "cannabis1", 2);
+				TakeNItems(sld, "blade_01", 1);
 			break;
 			
 			case 3:
 				TakeNItems(sld, "potion5", 5);
+				TakeNItems(sld, "jewelry19", 3);
+				TakeNItems(sld, "blade_01", 1);
 			break;
 		}
 		
@@ -965,7 +986,7 @@ void RescueDaughter_NewGameTip(string qName) {
 
 void RescueDaughter_CreateIndiansGrot(string qName)//бой с индеями в гроте
 {
-	int iRank = MOD_SKILL_ENEMY_RATE*2-2;
+	int iRank = MOD_SKILL_ENEMY_RATE/2;
 	LocatorReloadEnterDisable("Martinique_CaveEntrance", "reload2_back", false);
 	chrDisableReloadToLocation = true;//закрыть локацию
 	if (!CheckAttribute(pchar, "questTemp.Sharlie.RescueDaughter.KillProsper"))
@@ -1022,6 +1043,7 @@ void RescueDaughter_CreateIndiansGrot(string qName)//бой с индеями в
 			TakeNItems(sld, "indian_3", 1);
 			TakeNItems(sld, "cannabis1", 2);
 			TakeNItems(sld, "potion3", 1);
+			TakeNItems(sld, "jewelry22", 11);
 		}
 		else
 		{
@@ -1093,7 +1115,7 @@ void RescueDaughter_Final(string qName)//пришли в город
 void SharlieJungleNative(string qName)
 {
 	chrDisableReloadToLocation = true;
-	sld = GetCharacter(NPC_GenerateCharacter("SJN_Ind", "canib_"+1, "man", "man", 2, PIRATE, 0, true, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("SJN_Ind", "canib_"+1, "man", "man", 1, PIRATE, 0, true, "soldier"));
 	if (MOD_SKILL_ENEMY_RATE <= 4) SetSelfSkill(sld, 1, 1, 1, 1, 1);
 	LAi_SetHP(sld, GetCharacterBaseHPValue(sld)/4, GetCharacterBaseHPValue(sld));
 	RemoveAllCharacterItems(sld, true);
@@ -1102,6 +1124,7 @@ void SharlieJungleNative(string qName)
 	for(i = 1; i < 7; i++)
 	{
 		TakeNItems(sld, "cannabis"+i, 1);
+		TakeNItems(sld, "slave_02", 1);
 	}
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
@@ -1118,11 +1141,11 @@ void SharlieJungleNative(string qName)
 void SharlieJungleBandos(string qName)
 {
 	chrDisableReloadToLocation = true;
-	sld = GetCharacter(NPC_GenerateCharacter("SJB_Ind", "citiz_44", "man", "man", 2, PIRATE, 0, true, "marginal"));
+	sld = GetCharacter(NPC_GenerateCharacter("SJB_Ind", "citiz_44", "man", "man", 1, PIRATE, 0, true, "marginal"));
 	if (MOD_SKILL_ENEMY_RATE <= 4) SetSelfSkill(sld, 1, 1, 1, 1, 1);
-	LAi_SetHP(sld, 40.0, 40.0);
 	TakeNItems(sld, "bullet", 5);
 	TakeNItems(sld, "gunpowder", 5);
+	TakeNItems(sld, "pistol1", 1);
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
 	ChangeCharacterAddressGroup(sld, "Martinique_Jungle_01", "goto", "goto1");
@@ -1151,7 +1174,7 @@ void Sharlie_removeLocks(string qName)
 
 void SharlieSeabattle_agent(string qName)//пиратский агент
 {
-	int iRank = MOD_SKILL_ENEMY_RATE+3;
+	int iRank = MOD_SKILL_ENEMY_RATE/2+1;
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретить драться
 	chrDisableReloadToLocation = true;//закрыть локацию
 	sld = GetCharacter(NPC_GenerateCharacter("Seabattle_pirate", "citiz_46", "man", "man", iRank, PIRATE, -1, false, "soldier"));
@@ -1184,8 +1207,8 @@ void SharlieSeabattle_ship(string qName)
 	Group_SetType("Pirate_Attack", "pirate");
 	if (MOD_SKILL_ENEMY_RATE > 8)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Seabattle_pirate_1", "citiz_45", "man", "man", 10, PIRATE, -1, false, "soldier"));
-		SetFantomParamFromRank(sld, 10, true);
+		sld = GetCharacter(NPC_GenerateCharacter("Seabattle_pirate_1", "citiz_45", "man", "man", MOD_SKILL_ENEMY_RATE/2+1, PIRATE, -1, false, "soldier"));
+		SetFantomParamFromRank(sld, MOD_SKILL_ENEMY_RATE/2+1, true);
 		FantomMakeSmallSailor(sld, SHIP_WAR_TARTANE, "", CANNON_TYPE_CANNON_LBS3, 20, 25, 25, 30, 30);
 		Group_AddCharacter("Pirate_Attack", "Seabattle_pirate_1");
 	}
@@ -1859,8 +1882,8 @@ void Sharlie_TrialOver(string qName)// пропустил сроки
 
 void Trial_StartLine(string qName)// начало линейки
 {
-	sld = GetCharacter(NPC_GenerateCharacter("Lecrua", "trader_8", "man", "man", 10, FRANCE, -1, true, "citizen"));
-	SetFantomParamFromRank(sld, 10, true);
+	sld = GetCharacter(NPC_GenerateCharacter("Lecrua", "trader_8", "man", "man", MOD_SKILL_ENEMY_RATE/2+5, FRANCE, -1, true, "citizen"));
+	SetFantomParamFromRank(sld, MOD_SKILL_ENEMY_RATE/2+5, true);
 	sld.name = StringFromKey("SharlieTrial_31");
 	sld.lastname = StringFromKey("SharlieTrial_32");
 	sld.dialog.FileName = "Quest\Sharlie\Trial.c";
@@ -2094,7 +2117,7 @@ void Trial_SpyTimeOver(string qName) //время на шпионаж вышло
 
 void Trial_TavernEnterSoldiers() //неверный путь в таверне
 {	
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 	for (i=1; i<=3; i++)
     {
         sld = GetCharacter(NPC_GenerateCharacter("TTSold"+i, "sold_spa_"+(rand(1)+1), "man", "man", iRank, SPAIN, 0, true, "soldier"));
@@ -2312,13 +2335,6 @@ void Trial_CreatePueblaBarqueInWorld()//запускаем барк 'Пуэбл�
 	sld = GetCharacter(NPC_GenerateCharacter(sCapId, "off_spa_"+(rand(1)+1), "man", "man", iRank, SPAIN, 3, true, "soldier"));
 	FantomMakeSmallSailor(sld, SHIP_BARKENTINE, StringFromKey("SharlieTrial_39"), CANNON_TYPE_CANNON_LBS3, iScl+10, iScl, iScl, iScl, iScl);
 	FantomMakeCoolFighter(sld, iRank, iScl, iScl, "blade_14", "pistol1", "bullet", iScl*2);
-	SetCharacterPerk(sld, "HullDamageUp");
-	SetCharacterPerk(sld, "SailsDamageUp");
-	SetCharacterPerk(sld, "CrewDamageUp");
-	SetCharacterPerk(sld, "BasicBattleState");
-	SetCharacterPerk(sld, "AdvancedBattleState");
-	SetCharacterPerk(sld, "ShipSpeedUp");
-	SetCharacterPerk(sld, "ShipTurnRateUp");
 	UpgradeShipParameter(sld, "Capacity");
 	SetCharacterGoods(sld,GOOD_POWDER, 5000);
 	sld.AlwaysEnemy = true;
@@ -2499,6 +2515,7 @@ void Del_Alonso_DlgExit()
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "HullDamageUp");
 	SetCharacterPerk(sld, "BasicDefense");
+	ForceAdaptivelevel(sld, 6, GEN_TYPE_OFFICER, GEN_ELITE, GEN_ARCHETYPE_NAVIGATOR, GEN_ARCHETYPE_DOCTOR, GEN_FIXED_PIRATES, 0.5);
 	FreeSitLocator("FortFrance_tavern", "sit4");
 	ChangeCharacterAddressGroup(sld, "FortFrance_tavern", "sit", "sit4");
 	AddLandQuestMark(characterFromId("Del_shturman"), "questmarkmain");
@@ -2952,11 +2969,6 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			if(CheckAttribute(pchar, "questTemp.Sharlie.Citcount"))
 				DeleteAttribute(pchar, "questTemp.Sharlie.Citcount");
 			SetFunctionExitFromLocationCondition("Sharlie_MaltieAfterJail", pchar.location, false);
-			if (CheckAttribute(pchar, "Sharlie.KnifeMonpe")) 
-			{
-				GiveItem2Character(PChar, "knife_03");
-				EquipCharacterbyItem(PChar, "knife_03");
-			}
 			sld = characterFromId("FortFrance_Mayor");
 			LAi_CharacterEnableDialog(sld);
 			QuestPointerDelLoc("FortFrance_town", "reload", "reload3_back");
@@ -3511,6 +3523,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
 			sld.dialog.filename = "Quest\Sharlie\OtherNPC.c";
 			sld.dialog.currentnode = "MOT_Barbie";
+			sld.moneyNotGiven = true;
 			ChangeCharacterAddressGroup(sld, "BasTer_town", "goto", "goto19");
 			LAi_SetActorType(sld);
 			LAi_ActorDialog(sld, pchar, "", -1, 0);

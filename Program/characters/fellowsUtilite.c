@@ -1,8 +1,9 @@
-// Получить уникальные индексы всех персонажей, имеющих корабельные должности
-void GetAllFellowsManagers(ref result, ref captain)
+// Получить уникальные индексы всех персонажей, имеющих должности
+void GetAllFellowsWithJob(ref result, ref captain, bool includeBoarders = true)
 {
-	aref passengers;
+	aref passengers, officers;
 	makearef(passengers, captain.fellows.passengers);
+	makearef(officers, passengers.officers);
 
 	for (int i=0; i < JOBS_MAX-1; i++)
 	{
@@ -11,7 +12,14 @@ void GetAllFellowsManagers(ref result, ref captain)
 		AddFellow(result, sti(passengers.(job)));
 	}
 
-	return result;
+	if (!includeBoarders) return;
+
+	// Абордажники
+	int officersQty = GetAttributesNum(officers);
+	for(i=0; i < officersQty; i++)
+	{
+		AddFellow(result, sti(GetAttributeValue(GetAttributeN(officers, i))));
+	}
 }
 
 // Собрать индексы всей команды капитана с сортировкой абордажники => офицеры => компаньоны => пассажиры/пленники
@@ -185,4 +193,82 @@ bool CanHirePrisoner(ref chr)
 
 	int leadershipDebuff = rankDiff * 5;
 	return GetSkillAfterPenalty(pchar, SKILL_LEADERSHIP) + 20 >= GetSkillAfterPenalty(chr, SKILL_LEADERSHIP) + leadershipDebuff;
+}
+
+object GetFellowJobs(ref ref_Id_Idx)
+{
+	object result;
+	ref chr = FindChar_VT(ref_Id_Idx);
+	int chrIdx = int(chr.index);
+	aref passengers;
+	makearef(passengers, pchar.Fellows.Passengers);
+	int found = 0;
+
+	for (int i=0; i < JOBS_MAX-1; i++)
+	{
+		string job = JobByIdx(i);
+		if (!CheckAttribute(passengers, job)) continue;
+		if (chr.index != passengers.(job)) continue;
+
+		result.(job) = true;
+		found++;
+	}
+
+	for (i=1; i<4; i++)
+	{
+		if (GetOfficersIndex(pchar, i) != chrIdx) continue;
+		result.fighter = true;
+		found++;
+	}
+
+	if (found > 1) return result;
+
+	for (i=0; i<COMPANION_MAX; i++)
+	{
+		if (GetCompanionIndex(pchar, i) != chrIdx) continue;
+		result.companionship = true;
+		return result;
+	}
+
+	if (found == 0) result.passenger = true;
+	return result;
+}
+
+string GetMainJob(ref chr)
+{
+	object jobs = GetFellowJobs(chr);
+	return GetAttributeName(GetAttributeN(&jobs, 0));
+}
+
+bool IsFellowHasJob(ref chr, string jobName)
+{
+	return pchar.Fellows.Passengers.(jobName) == chr.index;
+}
+
+// Собрать всех персонажей на должностях для случайных событий
+int RE_GetAllFellows(ref result)
+{
+	aref passengers = GetAref(pchar, "fellows.passengers");
+	int found = 0;
+	for (int i=0; i < JOBS_MAX-1; i++)
+	{
+		string job = JobByIdx(i);
+		if (!CheckAttribute(passengers, job)) continue;
+		ref chr = GetCharacterSafe(int(passengers.(job)), true);
+		if (chr == nullptr) continue;
+		if (chr.sex != "man") continue;
+
+		SetAttribute(result, chr.id, chr.id);
+	}
+
+	for (i=1; i<4; i++)
+	{
+		ref fighter = GetCharacterSafe(GetOfficersIndex(pchar, i), true);
+		if (fighter == nullptr) continue;
+		if (chr.sex != "man") continue;
+
+		SetAttribute(result, fighter.id, fighter.id);
+	}
+
+	return GetAttributesNum(result);
 }

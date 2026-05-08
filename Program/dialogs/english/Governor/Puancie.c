@@ -494,6 +494,7 @@ void ProcessDialogEvent()
 			SetCompanionIndex(pchar, -1, sti(sld.index));
 			sld.loyality = MAX_LOYALITY;
 			NextDiag.CurrentNode = "First time";
+			NextDiag.TempNode = "First time";
 			DeleteAttribute(pchar, "questTemp.Terrapin");
 			pchar.questTemp.Sharlie = "senpierbattle";
 			pchar.questTemp.Sharlie.DefendSP = "true";

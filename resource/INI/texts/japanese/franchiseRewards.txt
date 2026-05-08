@@ -1,0 +1,17 @@
+condition_legendGuide
+{
+Caribbean Legend
+のページをフォローしている場合、このアイテムがゲームに登場します
+}
+condition_mushket_indian
+{
+ライブラリに
+Caribbean Legend: Age of Piratesを所持している場合、このアイテムは高利貸しのもとに現れます
+}
+noRewardYetMessage
+{
+この報酬はまだ利用できません。
+今後のアップデートをお待ちください！
+}
+steamButtonAlreadyGot {受取済み}
+steamButtonGet {入手}

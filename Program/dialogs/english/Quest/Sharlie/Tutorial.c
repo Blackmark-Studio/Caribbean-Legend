@@ -468,6 +468,7 @@ void ProcessDialogEvent()
 			dialog.text = "Senior sailor. I don’t know much about him, but I can tell you this: if every man has a skeleton in the closet, Alonso’s got a whole cemetery.";
 			link.l1 = "Sounds like you don’t trust him.";
 			link.l1.go = "Captain_7_question_2_2";
+			AddCharacterSkillPoints(pchar, "Leadership", 1);
 		break;
 		
 				case "Captain_7_question_2_2":
@@ -487,6 +488,7 @@ void ProcessDialogEvent()
 			dialog.text = "You’ve struck a nerve, "+pchar.name+"! I could talk about my beauty forever. Third-rate, twenty guns, great speed — don’t let the ‘merchant’ part fool you!";
 			link.l1 = "I got the part about guns and speed. But ‘rate’? ‘Merchant’?";
 			link.l1.go = "Captain_7_question_3_2";
+			AddCharacterSkillPoints(pchar, "Sailing", 1);
 		break;
 		
 		case "Captain_7_question_3_2":

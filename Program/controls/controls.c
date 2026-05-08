@@ -21,11 +21,11 @@
 #define BIND_PRIMARY_LAND     9
 #define BIND_NETWORK          10
 
+extern void ExternControlsInit(bool bFirst, int iControlKeys);
+native int AddControlTreeNode(int nParent, string sBaseControl, string sOutControl, float fTimeOut);
+
 string curKeyGroupName = "";
 object objControlsState;
-extern void ExternControlsInit(bool bFirst, int iControlKeys);
-
-native int AddControlTreeNode(int nParent,string sBaseControl,string sOutControl,float fTimeOut);
 
 void ControlsInit(string sPlatformName, bool bFirst, int iControlKeys)
 {
@@ -101,6 +101,7 @@ void RestoreKeysFromOptions(aref arControlsRoot)
     // <-- ВРЕМЕННЫЙ КОСТЫЛЬ НА ВОЗМОЖНЫЕ НЕСОВПАДЕНИЯ (TO_DO: REF)
 
 	RunControlsContainers();
+    InitTips();
 }
 
 void CI_CreateContainer(string groupName, string containerName, float containerVal)
@@ -368,7 +369,7 @@ string GetCurControlGroup()
 	if(CheckAttribute(&objLandInterface,"ComState") && sti(objLandInterface.ComState) != 0)
 		return "BattleInterfaceControls";
 
-	if(SendMessage(&Characters[nMainCharacterIndex],"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") != 0)
+	if(SendMessage(&Characters[nMainCharacterIndex],"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") != CHR_MODE_PEACE)
 		return "FightModeControls";
 
 	return "PrimaryLand";
@@ -402,7 +403,7 @@ string SetCurControlGroup()
     {
 		iCurGroupIDX = BIND_BATTLE_INTERFACE;
     }
-    else if(SendMessage(&Characters[nMainCharacterIndex],"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") != 0)
+    else if(SendMessage(&Characters[nMainCharacterIndex],"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") != CHR_MODE_PEACE)
     {
         iCurGroupIDX = BIND_FIGHT_MODE;
     }
@@ -612,9 +613,19 @@ string GetGroupName(int iGroupIDX)
 
 bool IsSettingsGroup(string sName)
 {
-    if(sName == "PrimaryLand"  || sName == "FightModeControls" ||
-       sName == "Sailing3Pers" || sName == "Sailing1Pers"      ||
-       sName == "WorldMapControls") return true;
+    return sName in &objControlsState.SettingGroups;
+}
 
-    return false;
+void BI_MarkAlwaysDisplay()
+{
+    objControlsState.BI_AlwaysDisplay.BICommandsConfirm = "";
+    objControlsState.BI_AlwaysDisplay.BICommandsCancel = "";
+    objControlsState.BI_AlwaysDisplay.BICommandsUp = "";
+    objControlsState.BI_AlwaysDisplay.BICommandsDown = "";
+    objControlsState.BI_AlwaysDisplay.BICommandsLeft = "";
+    objControlsState.BI_AlwaysDisplay.BICommandsRight = "";
+    objControlsState.BI_AlwaysDisplay.BICommandsConfirm2 = "";
+    objControlsState.BI_AlwaysDisplay.BICommandsCancel2 = "";
+    objControlsState.BI_AlwaysDisplay.BICommandsLeftW = "";
+    objControlsState.BI_AlwaysDisplay.BICommandsRightW = "";
 }

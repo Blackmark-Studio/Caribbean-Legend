@@ -1199,8 +1199,8 @@ void ProcessDialogEvent()
 					dialog.text = "왜 안 되겠어! 쉬는 건 마음에는 좋지만, 지갑에는 안 좋지...";
 	    			link.l1 = "훌륭하오.";
 	    			link.l1.go = "Cards_begin";
-	    			link.l2 = "우리 게임의 규칙이 무엇이오?";
-	    			link.l2.go = "Cards_Rule";
+	    			// link.l2 = "우리 게임의 규칙이 무엇이오?";
+	    			// link.l2.go = "Cards_Rule";
     			}
     			else
     			{
@@ -1212,7 +1212,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Cards_Rule":
-   			dialog.text = CARDS_RULE;
+   			dialog.text = GlobalStringConvert("CARDS_RULE");
 			link.l1 = "자, 그럼 시작하자!";
 			link.l1.go = "Cards_begin";
 			link.l3 = "아니, 나를 위한 게 아니오...";
@@ -1334,8 +1334,8 @@ void ProcessDialogEvent()
 					dialog.text = "왜 안 되겠소! 쉬는 건 심장에는 좋지... 하지만 지갑에는 안 좋지...";
 	    			link.l1 = "훌륭하오.";
 	    			link.l1.go = "Dice_begin";
-	    			link.l2 = "우리 게임의 규칙이 무엇이오?";
-	    			link.l2.go = "Dice_Rule";
+	    			// link.l2 = "우리 게임의 규칙이 무엇이오?";
+	    			// link.l2.go = "Dice_Rule";
     			}
     			else
     			{
@@ -1347,7 +1347,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Dice_Rule":
-   			dialog.text = DICE_RULE;
+   			dialog.text = GlobalStringConvert("DICE_RULE");
 			link.l1 = "자, 그럼 시작하자!";
 			link.l1.go = "Dice_begin";
 			link.l3 = "아니, 나를 위한 건 아니오...";
@@ -2039,6 +2039,7 @@ void ProcessDialogEvent()
             // цена зависит от губернатора
             qty = makeint(sti(offref.rank)*(800 + GetCharacterSPECIALSimple(NPChar, SPECIAL_L)*100) + GetCharacterSkillToOld(offref, "Leadership")*500 + GetCharacterSkillToOld(pchar, "commerce")*500);
 			if(HasShipTrait(pchar, "trait14")) qty = makeint(qty * 1.35);
+			qty = int(qty * GetAttributeFloatOrDefault(offref, "bonusCost", 1.0));
             if (sti(offref.nation) == sti(NPChar.nation))
             {
                 attrLoc = attrLoc + " I am ready to pay the ransom for my compatriot in the amount of  " + FindRussianMoneyString(qty) + ".";

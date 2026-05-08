@@ -1,0 +1,76 @@
+Node0_title {Subaylar arasında çatışma}
+Node0_a_a
+{
+Her zamanki öğle sonrası düşüncelerinizi gemi çanının sesi bölüyor. Nöbet değişimine daha vakit var, siz de bu kargaşanın ne olduğunu anlamak için sesin geldiği tarafa yöneliyorsunuz. Ara güvertede sizi telaşlı Alonso karşılayıp durumu hızla özetliyor.$br$redNöbet değişimi sırasında iki subay, $ctx(officerName_A), sizin _$key($ctx(officerJob_A))'ınız, ve $ctx(officerName_B), sizin _$key($ctx(officerJob_B))'ınız, rahat bir koğuş yatağı yüzünden birbirine girmiş. $rand(Ağız dalaşı çabucak kavgaya dönmüş ve ilk yumruğu atan $ctx(officerName_A) olmuş.|Bir iki laf sokma yetmiş; konuşma kavgaya dönüşmüş ve ilk yumruğu sallayan $ctx(officerName_A) olmuş.|Bağrışmaya başlamışlar, sonunda $ctx(officerName_A) kendini tutamayıp yumruklara başvurmuş.) $ctx(officerName_B) da $rand(kenarda durmamış|anında karşılık vermiş|altta kalmamış) ve $rand(kısa süre içinde kamarotanın yarısını dağıtmışlar|bir dakika geçmeden kamarota sanki bir bordalamadan çıkmış gibi görünmeye başlamış|ikisinin arasına girildiğinde kamarotanın yarısı çoktan paramparça olmuş).$br$red
+Alonso $rand(olay çıkaranları ayırmış|onları karşı köşelere sürüklemiş|kavgayı sona erdirmiş), ama mesele açıkça kapanmış değil; şimdi kaptanın sözü gerekiyor.
+}
+Node0_a_a_action {İlk başlatan $ctx(officerName_A)'dı}
+Node0_a_a_success {Bu durumda suçlu olanın $ctx(officerName_A) olduğuna karar veriyorsunuz, çünkü yumruklara ilk başvuran oydu. Ona birkaç ceza nöbeti veriyor ve $casedName($ctx(officerName_B)|Dat)'ya verilen zararı kendi maaşından karşılamasını emrediyorsunuz.}
+Node0_a_a_success_action {Güverte ovmaya gideceksin}
+Node0_a_b_action {$ctx(officerName_B) boş yere tahrike kapıldı}
+Node0_a_b_success {Olanlardan $ctx(officerName_B)'nin sorumlu olduğuna karar veriyorsunuz, çünkü kavgadan kaçınabilir ve meseleyi kaptana taşıyabilirdi. Ceza olarak $casedName($ctx(officerName_B)|Dat)'ya ek ağır talimler veriyorsunuz.}
+Node0_a_b_success_action {Bu senin iyiliğin için}
+Node0_a_c_action {İkisini de cezalandır}
+Node0_a_c_success {Yaşananlardan iki subayın da sorumlu olduğuna karar veriyor ve onlara ortak ceza nöbetleri veriyorsunuz. Bunun aralarını düzelteceğini ummuyorsunuz, ama gelecekte benzer olaylardan kesinlikle caydıracaktır. Kamerotanın onarım masrafı maaşlarından kesilecektir.}
+Node0_a_c_success_action {İkisi de aptal}
+Node0_a_d_action {Hepsini kendiniz onaracaksınız}
+Node0_a_d_success {İdeal cezanın subayları kamarotayı kendi elleriyle eski haline getirmeye zorlamak olduğuna karar veriyorsunuz. Usta marangozlar olmayabilirler, ama böyle bir ceza bir daha ortalığı dağıtmadan önce iki kez düşünmelerini kesinlikle sağlayacaktır.}
+Node0_a_d_success_action {Yıkmak yapmak kadar kolay değildir}
+Node0_a_b
+{
+Akşam devriyeniz sırasında her zamanki gibi güvertede dolaşırken bugün fazlasıyla sessiz olduğunu fark ediyorsunuz. $rand(Sanki bu sessizlikle alay edercesine|Sanki inadına bu sessizliğe karşı gelircesine|Tam o anda) güverteye iki subay $rand(dalıyor|koşarak çıkıyor) — $ctx(officerName_A), sizin _$key($ctx(officerJob_A))'ınız, ve $ctx(officerName_B), sizin _$key($ctx(officerJob_B))'ınız. Belli ki kaptanı arıyorlarmış ve sizi görür görmez $rand(size doğru atılıyorlar|bir an bile kaybetmeden doğruca size geliyorlar). Subaylar $rand(gergin|sinirli) görünüyor ve $rand(yanınıza gelir gelmez|hemen dibinize kadar gelip|tam önünüzde durup) aynı anda konuşmaya başlıyorlar.$br$red
+Çatışma, $ctx(officerName_B)'nin $rand($ctx(officerName_A)'nın emrini herkesin önünde reddetmesiyle|ayak direyip $ctx(officerName_A)'nın emrine uymamasıyla|$ctx(officerName_A)'nın emrine tanıklar önünde karşı gelmesiyle) patlak vermiş. Nizam, görevleri arasındaki yetki alanlarını $rand(fazlasıyla muğlak bırakıyor|tam olarak ayırmıyor|gri bir alan bırakıyor), _$key($ctx(officerJob_B)) da $rand(_$key($ctx(officerJob_A)) komutası altında çalışmayacağını söylemiş|_$key($ctx(officerJob_A))'nın onun amiri olmadığını kestirip atmış|_$key($ctx(officerJob_A))'nın onun üzerinde yetkisi olmadığını yüzüne söylemiş).$br$red
+$rand(Hiyerarşi gözlerinizin önünde çatırdıyor|Disiplin çözülmeye başlıyor|Bunu mürettebat da duyuyor), subaylar da iş açık bir bölünmeye dönüşmeden önce sizin sözünüzü istiyor.
+}
+Node0_b_a_action {_$key($ctx(officerJob_A)) haklı}
+Node0_b_a_success {Gemi nizamını, görevin resmî hiyerarşiden daha önemli olduğu şekilde yorumluyorsunuz.$br$redHer subay, _$key($ctx(officerJob_A)) doğrudan görevini yerine getirirken ona itaat etmek zorundadır. $ctx(officerName_A) memnun kalıyor, $ctx(officerName_B) da hiyerarşiyi bozduğu için ondan özür diliyor. Kimseyi cezalandırmamaya karar veriyorsunuz.}
+Node0_b_a_success_action {Önce görev gelir}
+Node0_b_b_action {$key($ctx(officerJob_B)) itaat etmek zorunda değil}
+Node0_b_b_success {Gemi nizamını, dikey hiyerarşinin görevlerden daha önemli olduğu şekilde yorumluyorsunuz. Subayların işi birbirlerine değil, tayfalara komuta etmektir. Geri kalan her şey için kaptan vardır.}
+Node0_b_b_success_action {Kimse yaralanmasa bari}
+Node0_b_c_action {Size itaat etmeyi öğreteceğim}
+Node0_b_c_success {Gemi nizamını açıyor ve sorumluluk alanlarını aslında yeterince açık biçimde ayırdığını görüyorsunuz. $ctx(officerName_B) kuralları suistimal etmiş, $ctx(officerName_A) ise bunu engelleyecek kadar nizama hâkim değilmiş.$br$red Ne küstah sivri çıkıntıları ne de nizama yeterince hâkim olmayan subayları seversiniz; bu yüzden ikisini de cezalandırmaya karar veriyorsunuz. Önümüzdeki iki hafta boyunca, her nöbetten sonra _$key($ctx(officerJob_A)) ile _$key($ctx(officerJob_B)) ambar içinde bir fıçının üzerinde durup birbirlerine nizamı yüksek sesle okuyacaklar.}
+Node0_b_c_success_action {Bırak tayfalar da dinlesin}
+Node0_a_c
+{
+Sabah devriyenizi bitirirken Alonso sizi $rand(yanına çağıran|kısa bir) hareketle durduruyor. Onun işaretleri göz ardı edilmez; siz de $rand(durup rapor vermesini istiyorsunuz|hemen ne olduğunu soruyorsunuz).$br$red
+Meğer sizin tutsağınız $casedName($ctx(prisonerName)|Gen) etrafında $rand(bir skandal kopmak üzereymiş|tam bir dram yaşanıyormuş|çoktan bir çatışma alevlenmeye başlamış). Sizin _$key($ctx(officerJob_A))'ınız olan $ctx(officerName_A), $rand(emin|iddia ediyor|ısrar ediyor) ki $ctx(prisonerName) göründüğü kişi değil ve $rand(gerçeği işkenceyle söküp almak istiyor|onu sert biçimde sorgulamaya hazırlanıyor). Sizin _$key($ctx(officerJob_B))'ınız olan $ctx(officerName_B) ise $rand(tutsağa dokunulmamasını istiyor|işkencenin kabul edilemez olduğunu savunuyor|tutsağın sakatlanmaması gerektiğini söylüyor): adam fazla değerli ve $rand(daha pahalıya satılabilir|iyi para eder|her yara fiyatını düşürür).$br$red
+Siz $rand(ikisini de kamaraya çağırıyor|size getirilmesini emrediyor|derhâl huzurunuza çıkmalarını buyuruyor) ve kendi başlarına iş çevirmelerinin hesabını soruyorsunuz. Subaylar $rand(haklı olarak|kuruca|sakinlikle) $rand(henüz hiçbir şey yapmadıklarını|ellerini sürmediklerini|tutsağa dokunmadıklarını), böyle kararların da kaptana ait olduğunu belirtiyorlar.
+}
+Node0_c_a_action {$ctx(officerName_A), kim olduğunu öğren}
+Node0_c_a_success {$casedName($ctx(officerName_A)|Gen)'nın şüpheleri size yeterince ciddi görünüyor ve tutsağın geçmişini araştırmasına izin veriyorsunuz. $ctx(officerName_B) gücenmiş görünüyor; siz de ortamı yumuşatmak için dikkati için ona teşekkür ediyorsunuz.}
+Node0_c_a_success_action {Bunun işe yarayacağından emin değilim}
+Node0_c_b_action {$ctx(officerName_B), $casedName($ctx(officerName_A)|Gen)'y ambara sokma}
+Node0_c_b_success {$casedName($ctx(officerName_B)|Gen)'nın gerekçeleri size yeterince ikna edici görünüyor ve tutsağı korumaya karar veriyorsunuz. Ancak bütün bu durum fazlasıyla keyfî davranışa benziyor; bu yüzden disiplin cezası olarak $casedName($ctx(officerName_A)|Dat)'ya iki ceza nöbeti veriyor, $ctx(officerName_B)'yi de limana varıncaya kadar tutsakla birlikte ambarı korumakla görevlendiriyorsunuz.}
+Node0_c_b_success_action {Bir daha heves etmesinler diye}
+Node0_c_c_action {Kimse bana emir veremez}
+Node0_c_c_success {İçinizde kaynayan öfkeyi hissediyor, masaya yumruğunuzu indiriyor ve subayları kamaradan kovuyorsunuz. Hiç kimse sizi seçim yapmaya mecbur bırakacak bir duruma sokamaz. Sonrasında, keyfî davranış ve hiyerarşiyi bozdukları için iki subayı da birkaç ceza nöbeti ve kırbaçla cezalandırıyorsunuz. Bu olayın dedikodusu gemide hızla yayılıyor ve sonraki ay boyunca arkanızdan size Müren diyorlar.}
+Node0_c_c_success_action {$name Müren? Fena sayılmaz}
+Node0_a_d {Şafaktan önce uyanıyor ve hemen gemide bir şeylerin ters gittiğini hissediyorsunuz. Sorun kendini bekletmiyor; birkaç dakika sonra ayak seslerini ve kamarınızın kapısına vurulan ısrarlı tokmakları duyuyorsunuz. $br$red Eşikte üç kişi var — $ctx(officerName_A), sizin _$key($ctx(officerJob_A))'ınız, $ctx(officerName_B), sizin _$key($ctx(officerJob_B))'ınız ve on üç yaşlarında bir oğlan. Miço şaşkın görünüyor, subaylarsa oldukça öfkeli. $br$red Usulüne uygun rapor vermelerini emrediyorsunuz ve durum size anlatılıyor. Bu çocuk son liman konaklamasında gemiye alınmış ve daha ilk andan hevesiyle, yeteneğiyle herkesi etkilemiş. $ctx(officerName_A), ondan birinci sınıf bir _$key($ctx(officerJob_A)) çıkacağına inanıyor ve onu yetiştirmek için yanına almak istiyor. Buna karşılık $ctx(officerName_B), oğlandan yetenekli bir _$key($ctx(officerJob_B)) olacağını düşünüyor ve onu yardımcısı yapmak istiyor.$br$redMiço açıkça iki farklı yöne çekiliyor ve bu çatışma konuşmayla çözülemiyor. Subaylar, çocuk umudunu yitirmeden sizin karar vermenizi istiyor.}
+Node0_d_a_action {$ctx(officerName_A) sana eğitim verecek}
+Node0_d_a_success {Çocuğun kaderine siz karar veriyorsunuz. Size göre _$key($ctx(officerJob_A)) çok daha umut vadeden bir meslek ve miço, $casedName($ctx(officerName_A)|Gen)'nın himayesinde daha iyi olacak. $ctx(officerName_B) hayal kırıklığına uğramış görünüyor.}
+Node0_d_a_success_action {Elbet bir başkası çıkar}
+Node0_d_b_action {_$key($ctx(officerJob_B)) - senin kaderin bu}
+Node0_d_b_success {Size göre çocuk, $casedName($ctx(officerName_B)|Gen)'nın rehberliğinde büyük başarılara ulaşacak ve bir gün Karayipler yeni bir birinci sınıf _$key($ctx(officerJob_B)) kazanacak. $ctx(officerName_A) üzgün görünüyor. Demek ki işin içinde biraz kişisel bir mesele de varmış.}
+Node0_d_b_success_action {Bazen bize oğullarımız gibi olurlar}
+Node0_d_c_action {İki nöbet birden tutacak}
+Node0_d_c_success {Kutsal Kitap'tan bir kıssayı hatırlıyor ve size gerekenin çift görevli yetenekli bir subay olduğunu söylüyorsunuz. Miço sırayla iki subayın da emrinde hizmet edecek. Çift nöbet dayanılmaz bir yük ve siz subayların tepkilerini dikkatle izliyorsunuz. $ctx(officerName_A) onaylarcasına başını sallıyor, ama $ctx(officerName_B) dehşet içinde kararınızı yeniden gözden geçirmeniz için yalvarıyor. _$key($ctx(officerJob_B)), miçonun sağlığı uğruna yardımcısından vazgeçmeye hazır ve doğru karar sizin için apaçık hale geliyor. Delikanlı $ctx(officerName_B)'nin emrinde hizmet edecek.}
+Node0_d_c_success_action {Geçer bu}
+Node0_a_e {Subayları yoklamaya karar veriyor ve kamarotaya yaklaşırken bir uğultu duyuyorsunuz. Kapıyı açınca hararetli bir çatışmanın ortasına düşüyorsunuz. $br$red$ctx(officerName_A), $casedName($ctx(officerName_B)|Gen)'ya bağırarak onun kendisini tuzağa düşürdüğünü söylüyor. $ctx(officerName_B) öfkeden köpürüyor ve neredeyse kılıcına davranacak. Siz kükreyerek bu rezaleti durduruyorsunuz. Subaylar hazırola geçiyor ve yüzleri bembeyaz kesiliyor. $br$redSebebini açıklamalarını istiyor, kıvırmaya kalkarlarsa ikisini de denize attıracağınızı söylüyorsunuz. Bunun üzerine durumu anlatıyorlar. Son liman ziyaretinde sizin _$key($ctx(officerJob_A))'ınız olan $ctx(officerName_A), emrinizi yanlış yerine getirdiği için gemi zarar etmiş, siz de onu bunun için cezalandırmışsınız. Daha sonra açık denizde, onun $casedName($ctx(officerName_B)|Gen)'nın verdiği yanlış ipucu yüzünden hata yaptığı ortaya çıkmış. Çatışma da tam o noktada hararetli bir safhaya sıçramış; siz de kamarotaya girdiğiniz anda buna tanık olmuşsunuz.$br$red$ctx(officerName_B) yardım etmeye çalıştığını savunuyor, ama $ctx(officerName_A) bilerek tuzağa düşürüldüğünden emin. Şimdi karar vermeniz gerekiyor.}
+Node0_e_a_action {Hakkız verilen cezayı kabul etmek}
+Node0_e_a_success {Verilen cezanın haksız olduğunu kabul ederek çatışmayı yumuşatmaya karar veriyorsunuz. $casedName($ctx(officerName_A)|Dat)'nın uğradığı manevi zararı kendi cebinizden karşılıyor, çatışma da hızla sönüyor. Bazen bir iyi söz yeter, bazen de şıngırdayan para gerekir. Subaylar sakinleşip birbirlerinden özür diliyor. Az kalsın cana mal olacak bu önemsiz mesele değerli bir derse dönüşüyor; siz de umuyorsunuz ki bunu öğrenirler.}
+Node0_e_a_success_action {Herkes memnun oldu}
+Node0_e_b_action {$casedName($ctx(officerName_B)|Gen)'y cezalandır}
+Node0_e_b_success {Bu durumun gerçekten de kasıtlı zarar vermeye fazlasıyla benzediğine karar veriyorsunuz. $ctx(officerName_A) haksız yere cezalandırılmakla kalmadı, kaptan da yanlış bir ışık altında bırakıldı. Bunun cezası olmalı, siz de $ctx(officerName_B)'nin kırbaçlanmasını emrediyorsunuz. $ctx(officerName_A) memnun görünüyor.}
+Node0_e_b_success_action {Kimseye taviz verme}
+Node0_e_c_action {$casedName($ctx(officerName_A)|Gen)'y bir kez daha cezalandır}
+Node0_e_c_success {$ctx(officerName_A)'nın başkalarının sırtından kendini ispatlamaya çalıştığına ve hata yaptığını bir türlü kabul edemediğine karar veriyorsunuz. Eğer bir ipucunun, sahte bile olsa, onu kendi aklıyla düşünme zorunluluğundan kurtardığını sanıyorsa, fena halde yanılıyor. $ctx(officerName_B), _$key($ctx(officerJob_A)) değildir; $ctx(officerName_A)'nın onu dinlemiş olması da durumu yalnızca daha kötü hale getiriyor. $br$redBir daha emirlerinizi tartışmaya ya da sorumluluğu başkasına yıkmaya kalkmaması için $ctx(officerName_A)'nın yeniden kırbaçlanmasını emrediyorsunuz.}
+Node0_e_c_success_action {Kendi mezarını kendin kazdın}
+Node0_e_d_action {İkisini de cezalandır}
+Node0_e_d_success {Bu durum size düzenin ve hiyerarşinin korkunç bir ihlali gibi görünüyor. Subaylar bir yana emirlerinizi tartışma cüretini gösteriyor, üstüne bir de sizin geminizin güvertesinde kan dökmeye hazırlanıyorlar.$br$redHer bir subaya 10 kırbaç cezası veriyorsunuz: 5'i emirlerinizi tartıştıkları için, 5'i de hiyerarşiyi bozup silahla başka bir subayı tehdit ettikleri için.}
+Node0_e_d_success_action {Neye kalkıştıklarını biliyorlardı}
+Node0_e_e_action {Pekâlâ – dövüşün então}
+Node0_e_e_success {Üst güvertede bir düello ayarlıyorsunuz ve orada saniyelik yapacaksınız. Meseleyi halledeceklerse, bari kurallara göre olsun. $br$red Çarpışma başlıyor ve kısa süre sonra $ctx(officerName_A)'nın üstünlüğü açıkça belli oluyor. Dövüşü durduruyor ve zaferi $ctx(officerName_A)'ya veriyorsunuz.}
+Node0_e_e_success_action {Onurunu savundu}
+Node0_e_e_fail {Üst güvertede bir düello ayarlıyorsunuz ve orada saniyelik yapacaksınız. Meseleyi halledeceklerse, bari kurallara göre olsun. $br$red Çarpışma başlıyor ve kısa süre sonra $officer_name'nın üstünlüğü açıkça belli oluyor. Dövüşü durduruyor ve zaferi $ctx(officerName_B)'ya veriyorsunuz.}
+Node0_e_e_fail_action {Haklı olduğunu kanıtladı}

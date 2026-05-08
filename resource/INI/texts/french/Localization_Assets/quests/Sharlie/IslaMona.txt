@@ -1,4 +1,7 @@
 IslaMona_1 {Rodrigo}
+IslaMona_10 {Francisco}
+IslaMona_11 {de Alba}
+IslaMona_12 {D’après les sons, le piège a marché ! Il est temps de retourner au village !}
 IslaMona_2 {Jiménez}
 IslaMona_3 {Next morning...}
 IslaMona_4 {Rodrigo Jimenez prepared another batch of ironwood at Isla Mona}
@@ -7,6 +10,3 @@ IslaMona_6 {You delivered @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> bottle
 IslaMona_7 {Added @<sti(pchar.questTemp.IslaMona.Factory.Goods)> of ironwood to your warehouse}
 IslaMona_8 { }
 IslaMona_9 { }
-IslaMona_10 {Francisco}
-IslaMona_11 {de Alba}
-IslaMona_12 {D’après les sons, le piège a marché ! Il est temps de retourner au village !}

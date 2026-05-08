@@ -1,0 +1,17 @@
+condition_legendGuide
+{
+Этот предмет появится в игре, если вы подписаны на страницу
+Caribbean Legend
+}
+condition_mushket_indian
+{
+Этот предмет появится у ростовщиков, если у вас есть
+Caribbean Legend: Age of Pirates
+}
+noRewardYetMessage
+{
+Этой награды еще нет,
+следите за обновлениями!
+}
+steamButtonAlreadyGot {Получено}
+steamButtonGet {Получить}

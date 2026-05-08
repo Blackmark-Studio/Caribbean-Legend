@@ -1,0 +1,49 @@
+Node0_title {Ląd!}
+Node0_a_a {Płynąc u wybrzeży $key($ctx(islandName)Gen), dostrzegacie na piasku $rand(bryg|polakrę). Leży na burcie, maszt jest złamany, a w ładowni zieje ogromna wyrwa, przez którą widać skrzynie i beczki. Wokół nie ma żywej duszy.$br$redGdy podpływacie bliżej, widzicie na piasku ślady walki i kilka ciał leżących przy wraku. Brzeg jest tu okropny - przy samej wodzie widać jasne plamy, fale rozbijają się nierównymi liniami — łatwo tu osiąść na mieliźnie i dołączyć do tej przymusowej przystani.}
+Node0_a_a_action {Dobić i przeszukać}
+Node0_a_a_success {Udaje się wam znaleźć głębsze podejście przy brzegu i dobić do lądu. Statek najwyraźniej wyrzucił na brzeg sztorm. Cudem nie poszedł na dno mimo potwornej wyrwy poniżej linii wodnej, ale do odbudowy już się nie nadaje.$br$redWewnątrz statku znajdują się zalane wodą towary, bez żadnej wartości.$br$red W kajucie kapitańskiej znajdujecie kosztowności i pieniądze, ale niepokoi was to, że wokół nie ma żywej duszy.}
+Node0_a_a_success_action {Oby przeżyli}
+Node0_a_a_fail {Próbujecie znaleźć odpowiednie podejście w załamaniach linii brzegowej, ale wpadacie na rafę i statek zaczyna przeciekać.$br$redCałą resztę dnia tracicie na usuwanie uszkodzenia i dochodzicie do wniosku, że wyrzucony na brzeg statek nie był tego wart.}
+Node0_a_a_fail_action {To cenna nauka}
+Node0_a_b_action {Spuścić szalupy!}
+Node0_a_b_success {Postanawiacie skorzystać ze sposobu stosowanego przy abordażach i oblężeniach kolonii. Wysadzenie desantu bez dobijania do brzegu to ryzykowny manewr i liczycie, że zwróci się z nawiązką.$br$redStatek najwyraźniej wyrzucił na brzeg sztorm. Cudem nie poszedł na dno mimo potwornej wyrwy poniżej linii wodnej, ale do odbudowy już się nie nadaje.$br$redW środku znajdują się zalane wodą towary, bez żadnej wartości. Wasza drużyna abordażowa przeszukuje wrak, podczas gdy wy skupiacie się na kajucie.$br$redPo kilku godzinach zbieracie się przy szalupach na brzegu i liczycie łup. Marynarze oddają wam waszą część, a wy dokładacie ją do kosztowności znalezionych w kajucie.}
+Node0_a_b_success_action {Dobrze być kapitanem}
+Node0_a_c_action {Nie ryzykujmy}
+Node0_a_c_success {Dochodzicie do wniosku, że próba dobicia do tak niebezpiecznego brzegu nie jest warta ryzyka, a i szabrownictwo nie przynosi zaszczytu wśród waszej załogi. Zostawiacie miejsce katastrofy za rufą.}
+Node0_a_c_success_action {Lo importante es no acabar ahí}
+Node0_a_b {Płynąc u wybrzeży $key($ctx(islandName)Gen), dostrzegacie w dżungli ledwie widoczne światła. Wcale nie przypominają blasku ognisk ani pochodni, i od razu przyciągają waszą uwagę.$br$redGdy podpływacie bliżej, na wodzie zarysowuje się szalupa obładowana belami, przywiązana do brzegu w zupełnych ciemnościach. Nie widzicie ludzi, ale wyraźnie tu są.}
+Node0_b_a_action {Ukraść szalupę}
+Node0_b_a_success {Udaje się wam podkraść do brzegu z małym oddziałem i uprowadzić szalupę. Szybki ogląd pokazuje, że bele to kawa, tytoń i trochę okrętowego jedwabiu. Najwyraźniej popsuliście interes przemytnikom.}
+Node0_b_a_success_action {Co było wasze, jest teraz nasze}
+Node0_b_a_fail {Udaje się wam niepostrzeżenie podejść do łodzi, ale kiedy przychodzi pora ją odwiązać, zwracacie na siebie niepotrzebną uwagę i z dżungli wychodzą ludzie. Od razu wszystko pojmują i otwierają ogień.$br$redDochodzi do krótkiej walki, w której tracicie kilku ludzi z drużyny abordażowej. Towar na szalupie też zostaje uszkodzony i udaje się ocalić jedynie kilka bel okrętowego jedwabiu.}
+Node0_b_a_fail_action {Lepsze to niż nic}
+Node0_b_b_action {Przepędzić przemytników}
+Node0_b_b_success {Każecie otworzyć ogień z dział okrętowych, by zmusić ludzi do schronienia się w dżungli. Gdy upewniacie się, że brzeg jest czysty, wysadzacie się z drużyną abordażową i przeszukujecie porzucone zapasy.$br$redW łodzi znajdujecie trochę tytoniu, kawy i okrętowego jedwabiu. W skrzyniach na brzegu trafia się jeszcze trochę tych samych towarów.}
+Node0_b_b_success_action {Łatwy łup}
+Node0_b_c_action {Odpłynąć}
+Node0_b_c_success {Postanawiacie nie kusić losu i odpływacie, zostawiając przemytników za rufą.}
+Node0_b_c_success_action {To lepiej}
+Node0_a_c {Tyle razy bywaliście u wybrzeży $key($ctx(islandName)Gen), że wydają się wam już niemal swojskie. Tym dziwniej wygląda dym kłębiący się nad selwą - równy, gęsty i zbierający się z kilku źródeł.$br$redWzdłuż brzegu widzicie rybackie łodzie i wędki, mnóstwo śladów stóp oraz ślady po czymś ciężkim ciągniętym po ziemi. Im bardziej się zbliżacie, tym wyraźniejszy staje się w powietrzu aromat wędzonej ryby i mięsa, od którego od razu burczy wam w brzuchu.}
+Node0_c_a_action {Przydałyby się nam jakieś zapasy}
+Node0_c_a_action_tooltip_bad {Na to trzeba będzie pieniędzy...}
+Node0_c_a_success {Dajecie ślepy strzał z działa i sygnalizujecie rybakom, którzy wyszli zobaczyć, co się dzieje. Z początku patrzą na was nieufnie, lecz worek srebra w waszej dłoni szybko rozwiewa nieporozumienie. Ładują jedną z łodzi rybami i wchodzą na pokład.$br$redZa całkiem niewielkie pieniądze kupujecie całą partię wędzonej ryby i mięsa. Marynarze wymieniają się z rybakami historiami i oddają im nadmiar kul oraz prochu do polowania na zwierzynę. Wszystko to dobrze wpływa na załogę.}
+Node0_c_a_success_action {Smacznie i z pożytkiem}
+Node0_c_b_action {Czyli to tutaj dobrze biorą?}
+Node0_c_b_success {Każecie $rand(rzucić kotwicę i ruszyć po zapasy|stanąć na kotwicy i zająć się zdobywaniem prowiantu). Marynarze $rand(biorą włócznie i wędki|chwytają za włócznie i wędki), a $rand(kilka szalup schodzi na wodę|kilka szalup odbija od burty). $rand(Przyglądacie się temu zamieszaniu|Patrzycie na tę krzątaninę), po czym po $rand(chwili|jakimś czasie) postanawiacie $rand(do nich dołączyć|zejść do nich).$br$red Połów $rand(okazuje się bardzo udany|idzie nad wyraz dobrze), a widok kapitana $rand(łowiącego ramię w ramię z marynarzami|który łowi razem z marynarzami) $rand(podnosi załogę na duchu|pokrzepia załogę).}
+Node0_c_b_success_action {Dary natury}
+Node0_c_c_action {Nie krępujmy ich}
+Node0_c_c_success {Postanawiacie nie wtrącać się w to, co się dzieje, i każecie płynąć dalej. Za rufą zostają małe łodzie rybackie i woda pełna ryb.}
+Node0_c_c_success_action {Im bardziej się to przyda}
+Node0_a_d {Płynąc wzdłuż wybrzeża $key($ctx(islandName)Gen), dostrzegacie osadę tuż przy samej krawędzi lasu. $rand(Kilka chat, przygasłe światła, czółna wyciągnięte na piasek.|Chaty stoją przy lesie, przy wodzie migoczą nikłe światła, a na piasku leżą wyciągnięte czółna.) Do brzegu prowadzą $rand(wydeptane ścieżki|wąskie ścieżki), przy wodzie leżą $rand(kosze i wiązki gwajakowca|wiązki gwajakowca i kosze), a między drzewami $rand(przemykają tubylcy|krążą ludzie).$br$redAlonso mówi, że to ziemia $rand(Karaibów|Tainów|Arawaków|Guaranów|Cibonejów), a oni $rand(mogą okazać się zarówno przyjaciółmi, jak i wrogami|mogą was przyjąć na różne sposoby).}
+Node0_d_a_action {Spróbujemy pohandlować}
+Node0_d_a_success {Rzucacie kotwicę i schodzicie na ląd. Indianie rozbiegają się na boki, kobiety i dzieci porzucają kosze, a mężczyźni chwytają za broń. Staracie się poruszać bardzo powoli, pokazując otwarte dłonie.$br$redWidzicie niezrozumienie, ale nie groźbę. Uznałszy to za dobrą okazję, pokazujecie zabrane ze sobą ozdoby i kosztowności i proponujecie wymianę tych darów na gwajakowiec.$br$redIndianie wsłuchują się w wasze intencje, opuszczają broń i biorą wasze skarby. Gwajakowiec trafia na wasz statek.}
+Node0_d_a_success_action {Uszło nam na sucho}
+Node0_d_a_fail {Rzucacie kotwicę i schodzicie na ląd. Indianie rozbiegają się na boki, kobiety i dzieci porzucają kosze, a mężczyźni chwytają za broń. Staracie się poruszać powoli, pokazując otwarte dłonie.$br$redCoś jednak w waszym zachowaniu prowokuje ich do agresji i w waszą stronę lecą strzały i oszczepy. Odpowiadacie kilkoma nieporadnymi salwami i cofaciе się ku szalupom. W tym starciu nikt nie zginął, lecz niesmak pozostał.}
+Node0_d_a_fail_action {Przeklęci poganie}
+Node0_d_b_action {Pan rozpozna swoich}
+Node0_d_b_success {Uznajecie, że niepewność może postawić was w niebezpiecznym położeniu, i wydajecie rozkaz przygotowania ataku. Rota abordażowa ładuje się do szalup, uzbrojona po zęby, a kanonierzy szykują działa do ostrzału.$br$redWalka zaczyna się szybko i krwawo — ogień armatni płoszy Indian, a salwy z muszkietów dobijają tych, którzy zawahali się z ucieczką. Wydaje się, że rzeź dobiegła końca, gdy nagle z selwy lecą strzały — osada okazuje się większa, niż wyglądała od strony morza. Rozpętuje się krwawa jatka.$br$redW tej rzezi tracicie kilku ludzi, ale większość roty abordażowej ocalała. Gwajakowiec należy teraz do was.}
+Node0_d_b_success_action {To było tego warte}
+Node0_d_c_action {Nie będziemy ryzykować}
+Node0_d_c_success {Uznajecie, że ryzyko jest zbyt wielkie, a psucie stosunków z Indianami w tej chwili nie ma sensu. Nadbrzeżna osada zostaje za rufą.}
+Node0_d_c_success_action {Niech żyją}
+Node0_MissingTreasures {Przydadzą się ozdoby i lusterka...}

@@ -1051,6 +1051,7 @@ int LocationInitMartinique(int n)
 	locations[n].image = "loading\Gate" + rand(1) + ".tga";
 	//Town sack
 	locations[n].townsack = "FortFrance";
+	locations[n].fastreload = "FortFrance";
 	//Sound
 	locations[n].type = "jungle";
 	locations[n].islandId = "Martinique";

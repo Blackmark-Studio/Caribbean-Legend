@@ -111,3 +111,10 @@ float GetHungmanBonus(ref attacker, string type)
 	if (type == "damage") return 0.015 * missingHpPercents;
 	return 0.0175 * missingHpPercents;
 }
+
+// Шпага утонувшего увеличивает урон по отравленным целям
+void DrownedBlade(ref atacker, ref enemy, ref damageMtp)
+{
+	if (!CheckAttribute(enemy, "chr_ai.poison")) return; // не отравлен
+	damageMtp += 0.5;
+}

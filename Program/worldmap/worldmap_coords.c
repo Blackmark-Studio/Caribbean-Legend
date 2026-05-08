@@ -238,10 +238,13 @@ void wdmCoordUpdate()
 		sCoordinates = latitude + " " + longitude;
 		
 		// mitrokosta фикс после обновы движка
-		SendMessage(&worldMap,"ls",MSG_WORLDMAP_SET_COORDINATES, sCoordinates);
-		UpdateWorldMapSpeed(worldMap.island)
+//		SendMessage(&worldMap,"ls",MSG_WORLDMAP_SET_COORDINATES, sCoordinates);
 
-		PostEvent("EventCoordUpdate", 1000);	
+		WM_SetCoordinatesData(sCoordinates);
+		
+		UpdateWorldMapSpeed(worldMap.island);
+
+		PostEvent("EventCoordUpdate", 200);
 	}
 }
 

@@ -99,7 +99,7 @@ void LAi_type_actor_CharacterUpdate(aref chr, float dltTime)
 			{
 				int idx = sti(chrFindNearCharacters[i].index);
 				ref by = &Characters[idx];
-				if (LAi_CheckFightMode(by))
+				if (LAi_CheckFightMode(by) != CHR_MODE_PEACE)
 				{
 					LAi_group_FightGroups(chr.chr_ai.group, by.chr_ai.group, true);
 					//линейка ГПК, каспер-любовничек идёт на свиданку. вызывать ли подкрепление

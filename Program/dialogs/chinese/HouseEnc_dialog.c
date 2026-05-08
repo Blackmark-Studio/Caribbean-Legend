@@ -21,6 +21,8 @@ void ProcessDialogEvent()
 		rColony = GetColonyByIndex(iTest);
 	}
 	
+	if (Dialog.CurrentNode == "SkladMan1") Dialog.CurrentNode = "SkladMan";
+
 	switch(Dialog.CurrentNode)
 	{
 		case "Exit":
@@ -223,7 +225,7 @@ void ProcessDialogEvent()
 		break; 
 		//------------------------------- —仓库管理员 ---------------------------------		
 		case "SkladMan":
-			NextDiag.TempNode = "SkladMan1";
+			NextDiag.TempNode = "SkladMan";
 			if (LAi_grp_playeralarm > 0)
 			{
 				dialog.text = NPCharRepPhrase(pchar, 
@@ -232,42 +234,9 @@ void ProcessDialogEvent()
 				link.l1 = NPCharRepPhrase(pchar,
 					RandPhraseSimple("看来你活腻了... ", "看来在" + XI_ConvertString("Colony" + npchar.city + "Gen") + "的市民没有安宁的生活! "), 
 					RandPhraseSimple("去死吧! ", "呵, 这将是你生命的最后几秒... "));
-				link.l1.go = NPCharRepPhrase("exit_setOwner", "fight");
+				link.l1.go = NPCharRepPhrase(pchar, "exit_setOwner", "fight");
 				break;
 			}
-				dialog.text = NPCStringReactionRepeat("欢迎! 我叫" + GetFullName(npchar) + "。 这里由我负责, 所以别想带走任何东西... ", 
-				"规矩点, 记住我在盯着你。 ", 
-				"只要你不偷看箱子, 你可以待在这里。 反正我一个人也无聊... ",
-				RandPhraseSimple("哦, 我太无聊了! ", "该死的, 做什么好呢? 在这里太无聊了! "), "block", 3, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("好的, 别担心。 ", 
-				"当然! ",
-				"我知道了... ", 
-				"是啊, 这听起来是个问题。 ", npchar, Dialog.CurrentNode);
-			link.l1.go = DialogGoNodeRepeat("exit", "exit", "exit", "exit", npchar, Dialog.CurrentNode);				
-		break;
-		
-		case "SkladMan1":
-			NextDiag.TempNode = "SkladMan1";
-			if (LAi_grp_playeralarm > 0)
-			{
-				dialog.text = NPCharRepPhrase(pchar, 
-					LinkRandPhrase("镇上拉起了警报, 看来我也该拿起武器了... ", "说不定城里的卫兵正在追你? ", "你在这里找不到庇护所, 但可能会在肋骨间发现几英寸的冷钢! "), 
-					LinkRandPhrase("你需要什么, " + GetSexPhrase("恶棍", "无赖") + "? ! 卫兵已经闻到你的气味了, 你跑不远的, " + GetSexPhrase("肮脏的海盗", "婊子") + "! ", "" + GetSexPhrase("肮脏的", "肮脏的") + "凶手! 卫兵!!! ", "我不怕你, " + GetSexPhrase("爬虫", "婊子") + "! 很快你就会在我们的堡垒被绞死, 你跑不远的... "));
-				link.l1 = NPCharRepPhrase(pchar,
-					RandPhraseSimple("看来你活腻了... ", "看来在" + XI_ConvertString("Colony" + npchar.city + "Gen") + "的市民没有安宁的生活! "), 
-					RandPhraseSimple("去死吧! ", "呵, 这将是你生命的最后几秒... "));
-				link.l1.go = NPCharRepPhrase("exit_setOwner", "fight");
-				break;
-			}
-			dialog.text = NPCStringReactionRepeat("这里由我负责, 所以别想带走任何东西... ", 
-				"规矩点, 记住我在盯着你。 ", 
-				"只要你不偷看箱子, 你可以待在这里。 反正我一个人也无聊... ",
-				RandPhraseSimple("哦, 我太无聊了! ", "该死的, 做什么好呢? 在这里太无聊了! "), "block", 3, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("好的, 别担心。 ", 
-				"当然! ",
-				"我知道了... ", 
-				"是啊, 这听起来是个问题。 ", npchar, Dialog.CurrentNode);	
-			link.l1.go = DialogGoNodeRepeat("exit", "exit", "exit", "exit", npchar, Dialog.CurrentNode);				
 			// 打开造船厂的门 (工业间谍任务) 
 			if (CheckAttribute(pchar, "questTemp.different.ShipyardsMap") && pchar.questTemp.different.ShipyardsMap == "toTarget" && npchar.city == pchar.questTemp.different.ShipyardsMap.city && locations[reload_cur_location_index].type == "shipyard")
 			{
@@ -280,8 +249,7 @@ void ProcessDialogEvent()
 			{
 				if(!CheckAttribute(NPChar, "Storage.Speak"))
 				{
-					dialog.text = "我有一个诱人的提议, 也许你会感兴趣。 ";
-					link.l7 = "真的吗? 好吧, 我听听。 ";
+					link.l7 = DLG_Convert("storageRent", "Dialogs.txt");
 					link.l7.go = "storage_rent";
 				}
 				else
@@ -295,15 +263,21 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if(!CheckAttribute(NPChar, "Storage.NoActivate"))
-						{
-							link.l7 = "你提到过一个仓库, 它还空着吗? ";
-							link.l7.go = "storage_01";
-						}						
+						link.l7 = "你提到过一个仓库, 它还空着吗? ";
+						link.l7.go = "storage_01";
 					}
 				}		
 			// < —ugeen
 			}		
+			dialog.text = NPCStringReactionRepeat("欢迎! 我叫" + GetFullName(npchar) + "。 这里由我负责, 所以别想带走任何东西... ", 
+				"规矩点, 记住我在盯着你。 ", 
+				"只要你不偷看箱子, 你可以待在这里。 反正我一个人也无聊... ",
+				RandPhraseSimple("哦, 我太无聊了! ", "该死的, 做什么好呢? 在这里太无聊了! "), "block", 3, npchar, Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("好的, 别担心。 ", 
+				"当然! ",
+				"我知道了... ", 
+				"是啊, 这听起来是个问题。 ", npchar, Dialog.CurrentNode);
+			link.l1.go = DialogGoNodeRepeat("exit", "exit", "exit", "exit", npchar, Dialog.CurrentNode);				
 		break;
 		
 		//------------------------------- —仓库租赁 ---------------------------------
@@ -470,19 +444,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_5":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage)); 
-			NPChar.Storage.NoActivate = true;
-			DeleteAttribute(NPChar,"Storage.Activate");
+			LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
 			DialogExit();
 		break;
 		
 		case "storage_6":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			DeleteAttribute(NPChar,"Storage.Activate");
-			NPChar.Storage.NoActivate = true;
+			LeaveStorage(NPChar, rColony);
 			DialogExit();
-		break;		
+		break;
 
 		//------------------------------- —仓库租赁 ---------------------------------
 		

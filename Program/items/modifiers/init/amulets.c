@@ -450,6 +450,7 @@ bool InitAmuletModifiers(ref item)
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_CHURCH);
 			AddJobDescriptor(item, JOB_BOATSWAIN);
+			AddCallback(item, CT_EQUIP, "BlackwoodsCharter");
 		}
 		break;
 		case "talisman19":

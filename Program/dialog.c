@@ -1,6 +1,5 @@
 
-// #include "dialog_func.c" // old
-#include "dialogs\%language%\dialog_func.c"
+#include "dialog_func.c"
 
 #define EVENT_DIALOG_START		"evntDialogStart"
 #define EVENT_DIALOG_EXIT		"evntDialogExit"
@@ -311,8 +310,8 @@ void StartDialogWithMainCharacter()
 
 bool LoadDialogFiles(string dialogPath)
 {
-	//FullDialogPath = "dialogs/" + dialogPath;
-	FullDialogPath = "dialogs\" + LanguageGetLanguage() + "\" + dialogPath;
+	if (strleft(dialogPath, 6) == "exact$") FullDialogPath = FindStringAfterChar(dialogPath, "$");
+	else FullDialogPath = "dialogs\" + LanguageGetLanguage() + "\" + dialogPath;
 
 	// Выбор директории с языковыми файлами
 	//string sLanguageDir = "dialogs\" + LanguageGetLanguage() + "\";
@@ -594,9 +593,16 @@ bool RoleFromID(ref chr)
 				return true;
 			}
 		break;
-		
 	}
-	if(role != "") chr.role = role;
-	
+
+	if(role != "")
+        chr.role = role;
+
 	return false;
+}
+
+#event_handler("Event_GetDialogScale", "GetDialogScale");
+float GetDialogScale()
+{
+	return (iDialogScale == 1) ? 1.3 : 1.0;
 }

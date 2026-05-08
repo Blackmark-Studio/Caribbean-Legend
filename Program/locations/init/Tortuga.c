@@ -1372,6 +1372,7 @@ int LocationInitTortuga(int n)
 	locations[n].image = "loading\Gate" + rand(1) + ".tga";
 	//Town sack
 	locations[n].townsack = "Tortuga";
+	locations[n].fastreload = "Tortuga";
 	//Sound
 	locations[n].type = "jungle";
  	locations[n].islandId = "Tortuga";

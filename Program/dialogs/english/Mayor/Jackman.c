@@ -589,7 +589,6 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 				if (NextDiag.TempNode != "I_know_you_good")
 					dialog.text = "Are you insane" + GetSexPhrase("", " girl") + "? Our guys steer clear of you like you’ve got the plague. So beat it and stop wasting my time.";
 				else
@@ -597,12 +596,12 @@ void ProcessDialogEvent()
 				link.l1 = "Got it...";
 				link.l1.go = "exit";
 			}
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 		break;
 
 		case "pirate_threat_pay":
 			iGPThreatRate = 0;
 			iGPThreat = 0;
-			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iJackmanTotalTemp);
 			DialogExit();
 			PiratesDecreaseNotif("");

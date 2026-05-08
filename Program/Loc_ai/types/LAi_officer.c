@@ -174,7 +174,7 @@ void LAi_type_officer_CharacterUpdate(aref chr, float dltTime)
 		if(!GetCharacterDistByChr3D(chr, GetMainCharacter(), &dist)) dist = -1.0;
 		if (dist < 0.0 || dist > 30)
 		{
-			if( SendMessage(GetMainCharacter(),"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") == 0)
+			if( SendMessage(GetMainCharacter(),"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") == CHR_MODE_PEACE)
 			{
 				LAi_tmpl_SetFollow(chr, GetMainCharacter(), -1.0);
     			return;
@@ -201,7 +201,7 @@ void LAi_type_officer_CharacterUpdate(aref chr, float dltTime)
 					if(dist > 12.0)
 					{
 						//Пора возвращаться
-						if( SendMessage(GetMainCharacter(),"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") == 0)
+						if( SendMessage(GetMainCharacter(),"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") == CHR_MODE_PEACE)
                         {
 						    LAi_tmpl_SetFollow(chr, GetMainCharacter(), -1.0);
 						}
@@ -257,7 +257,8 @@ void LAi_type_officer_TemplateComplite(aref chr, string tmpl)
 {
 	if(chr.chr_ai.tmpl != LAI_TMPL_FOLLOW)
     {
-        if (chr.chr_ai.tmpl != LAI_TMPL_STAY && SendMessage(GetMainCharacter(),"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") == 0) // fix
+        if (chr.chr_ai.tmpl != LAI_TMPL_STAY &&
+            SendMessage(GetMainCharacter(),"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") == CHR_MODE_PEACE) // fix
         {
             LAi_tmpl_SetFollow(chr, GetMainCharacter(), -1.0);
         }
@@ -415,7 +416,7 @@ void LAi_type_officer_FindTarget(aref chr)
 	}else{
 		if(chr.chr_ai.tmpl != LAI_TMPL_FOLLOW)
 		{
-            if( SendMessage(GetMainCharacter(),"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") == 0) // fix
+            if( SendMessage(GetMainCharacter(),"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") == CHR_MODE_PEACE) // fix
             {
                 LAi_tmpl_SetFollow(chr, GetMainCharacter(), -1.0);
             }

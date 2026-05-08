@@ -1805,7 +1805,7 @@ void ProcessDialogEvent()
 			
 			LAi_LocationFightDisable(&Locations[FindLocation(PChar.location)], false);
 			LAi_SetFightMode(pchar, true);
-			PlaySound("Voice\Russian\hambit\Longway-02.wav");
+			PlaySoundSafe("Voice\" + LanguageGetLanguage() + "\hambit", "Longway-02.wav");
 			
 			sld = CharacterFromID("PZ_AntoniOneDimen");
 			LAi_SetWarriorType(sld);
@@ -2784,7 +2784,7 @@ void ProcessDialogEvent()
 			LAi_SetOfficerType(npchar);
 			npchar.Dialog.Filename = "Quest\HollandGambit\Longway.c";
 			npchar.Dialog.CurrentNode = "Longway_officer";
-			LAi_SetCheckMinHP(npchar, 1, true, "HiddenImmortality");
+			LAi_SetImmortal(npchar, true);
 			PChar.quest.PZ_MayakPodslushivanie.win_condition.l1 = "locator";
 			PChar.quest.PZ_MayakPodslushivanie.win_condition.l1.location = "Mayak4";
 			PChar.quest.PZ_MayakPodslushivanie.win_condition.l1.locator_group = "goto";
@@ -7099,7 +7099,7 @@ void ProcessDialogEvent()
 				sld = CharacterFromID("Longway");
 				ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto4");
 				ReturnOfficer_Longway();
-				PlaySound("VOICE\Russian\hambit\Longway-02.wav");
+				PlaySoundSafe("Voice\" + LanguageGetLanguage() + "\hambit", "Longway-02.wav");
 			}
 			LAi_SetFightMode(pchar, true);
 			sld = CharacterFromID("Levasser");
@@ -7233,7 +7233,7 @@ void ProcessDialogEvent()
 				sld = CharacterFromID("Longway");
 				ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto4");
 				ReturnOfficer_Longway();
-				PlaySound("VOICE\Russian\hambit\Longway-02.wav");
+				PlaySoundSafe("Voice\" + LanguageGetLanguage() + "\hambit", "Longway-02.wav");
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sld = CharacterFromID("Mary");
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sld = CharacterFromID("Helena");

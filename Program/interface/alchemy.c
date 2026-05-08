@@ -273,14 +273,14 @@ void ShowHelpHint()
 		ref    arItm = ItemsFromID(sCurItem);
 		sHeader = GetItemName(arItm);
 		sText1 =  GetItemDescr(arItm);
-		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false);
+		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false, false);
 	}
 	else
 	{
 		sHeader = XI_ConvertString("titleAlchemy");
 		sText1 = XI_ConvertString("Alchemy_Descr1");
 		sText2 = XI_ConvertString("Alchemy_Descr2");
-		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false);
+		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false, false);
 	}	
 }
 

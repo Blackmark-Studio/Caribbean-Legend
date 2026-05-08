@@ -55,6 +55,7 @@ bool CheckForSurrender(ref player, ref enemy, int _deck)
 	int fortuneLevel = GetCharacterSkill(player, SKILL_FORTUNE);                                                // удача любит храбрых
 	int fortunePoints = playerCrew * fortuneLevel * iClamp(0, 3, faithScore - 4);                               // удача любит храбрых
 	playerPoints = playerPoints - modSkillDebuff + skillBasedPoints + fortunePoints;                            // складываем очки игрока
+	if (IsEquipCharacterByItem(player, "greenIdol")) playerPoints += int(float(playerPoints)*0.3);              // зелёный идол
 
 	if (CheckAttribute(enemy, "Ship.Mode") && enemy.Ship.Mode == "Trade") enemyPoints -= enemyCrew * 300; // торговцы склонны сдаваться
 	if (sti(enemy.Nation) == PIRATE) enemyPoints += 4000 + enemyCrew * 400;                               // а вот пираты не склонны
@@ -124,7 +125,11 @@ bool BRD_CheckFaith(int mpoints, int epoints, ref enemy, int faithScore, bool re
 	else // остальные события
 	{
 		if (CheckAttribute(enemy,"chr_ai.hpchecker.quest")) return result; // квестовые ситуации имеются, лучше поговорим в каюте
+		// Блок формата, файт с кэпом на палубе или с кэпом и офицерами в каюте, или как обычно 1х1
 		if (faithScore < 3) enemy.BoardingFaith.UpperDeskFight = 1;
+		else if (faithScore < 6) enemy.BoardingFaith.OfficersFight = 1;
+		
+		// Для случаев боя на палубе, команда сдаётся после смерти кэпа
 		if (faithScore < 1) enemy.BoardingFaith.GiveUpCapOnKill = 1;
 	}
 
@@ -265,6 +270,16 @@ bool BRD_IsSurrenderBeforeCabin(ref enemy)
 	if (CheckAttribute(enemy, "DontRansackCaptain")) return false;
 
 	return CheckAttribute(enemy, "BoardingFaith.SurrenderBeforeCabin");
+}
+
+bool BRD_IsOfficersFight(ref enemy, ref location = nullptr)
+{
+	if (CheckAttribute(enemy, "DontRansackCaptain")) return false;
+
+	string locationId = location == nullptr ? GetShipCabinID(enemy) : location.id;
+	if (locationId != "Cabin" && locationId != "Cabin_Huge" && locationId != "Cabin_Medium2" && locationId != "Cabin_Medium") return false;
+
+	return CheckAttribute(enemy, "BoardingFaith.OfficersFight");
 }
 
 bool BRD_IsUpperDeskFight(ref enemy)

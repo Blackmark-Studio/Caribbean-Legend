@@ -304,7 +304,7 @@ void RegataAttack_Lugger(string qName)//засада из 2 люггеров
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
 		UpgradeShipParameter(sld, "SpeedRate");
-		if (hrand(3) == i) UpgradeShipParameter(sld, "WindAgainstSpeed");
+		if (hrand(3) == i) UpgradeShipParameter(sld, "Rig");
 		Character_SetAbordageEnable(sld, false); //нельзя абордировать
 		Group_AddCharacter("Lugger_Attack", "Lugger_CapAttack_"+i);
 		sld.AlwaysEnemy = true;
@@ -358,7 +358,7 @@ void RegataAttack_Brigantine(string qName)//засада - бригантина
 		DeleteAttribute(sld, "DontClearDead");
 		UpgradeShipParameter(sld, "SpeedRate");
 		if (hrand(1) == 0) UpgradeShipParameter(sld, "Capacity");
-		else UpgradeShipParameter(sld, "WindAgainstSpeed");
+		else UpgradeShipParameter(sld, "Rig");
 		Character_SetAbordageEnable(sld, false); //нельзя абордировать
 		sld.AlwaysEnemy = true;
 		sld.Coastal_Captain = true;
@@ -385,7 +385,7 @@ void RegataAttack_Brander(string qName)//люггер-брандер
 	DeleteAttribute(sld, "DontClearDead");
 	UpgradeShipParameter(sld, "SpeedRate");
 	UpgradeShipParameter(sld, "Capacity");
-	UpgradeShipParameter(sld, "WindAgainstSpeed");
+	UpgradeShipParameter(sld, "Rig");
 	UpgradeShipParameter(sld, "TurnRate");
 	Character_SetAbordageEnable(sld, false); //нельзя абордировать
 	sld.DontDeskTalk = true; //шлюпку не выслать
@@ -520,7 +520,7 @@ void CreateSiegeSloop(string qName)//шлюп у мыса
 	DeleteAttribute(sld, "SaveItemsForDead");
 	DeleteAttribute(sld, "DontClearDead");
 	UpgradeShipParameter(sld, "SpeedRate");
-	UpgradeShipParameter(sld, "WindAgainstSpeed");
+	UpgradeShipParameter(sld, "Rig");
 	Group_AddCharacter("Sloop_Attack", "Sloop_CapAttack");
 	sld.AlwaysEnemy = true;
 	sld.Coastal_Captain = true;

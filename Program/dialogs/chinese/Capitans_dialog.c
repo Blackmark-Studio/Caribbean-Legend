@@ -344,13 +344,13 @@ void ProcessDialogEvent()
                 dialog.text = "为什么不呢? 我当然不介意休息一下... ";
     			link.l1 = "太好了。 ";
     			link.l1.go = "Cards_begin";
-    			link.l2 = "规则是什么? ";
-    			link.l2.go = "Cards_Rule";
+    			// link.l2 = "规则是什么? ";
+    			// link.l2.go = "Cards_Rule";
 			}
 		break;
 
 		case "Cards_Rule":
-   			dialog.text = CARDS_RULE;
+   			dialog.text = GlobalStringConvert("CARDS_RULE");
 			link.l1 = "那么, 开始吧! ";
 			link.l1.go = "Cards_begin";
 			link.l3 = "不, 这不适合我... ";
@@ -435,8 +435,8 @@ void ProcessDialogEvent()
 					dialog.text = "为什么不呢! 放松总是对健康有好处... 但不总是对钱包有好处... ";
 	    			link.l1 = "太好了。 ";
 	    			link.l1.go = "Dice_begin";
-	    			link.l2 = "我们的游戏规则是什么? ";
-	    			link.l2.go = "Dice_Rule";
+	    			// link.l2 = "我们的游戏规则是什么? ";
+	    			// link.l2.go = "Dice_Rule";
     			}
     			else
     			{
@@ -448,7 +448,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Dice_Rule":
-   			dialog.text = DICE_RULE;
+   			dialog.text = GlobalStringConvert("DICE_RULE");
 			link.l1 = "那么, 开始吧! ";
 			link.l1.go = "Dice_begin";
 			link.l3 = "不, 这不适合我... ";

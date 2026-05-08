@@ -808,11 +808,14 @@ int GetItemIndex(string _ItemID)
 ref ItemsFromID(string _Items)
 {
     int idx = GetItemIndex(_Items);
-	if(idx == -1) 
-	{
-		trace("Bad index for item : " + _Items);
-	}
+    if (idx == -1) assert(false, "Bad index for item : " + _Items);
 	return &items[idx];
+}
+
+ref ItemsFromIDSafe(string _Items)
+{
+    int idx = GetItemIndex(_Items);
+	return idx == -1 ? nullptr : &items[idx];
 }
 
 void ChangeItemDescribe(string _Items, string _Describe)
@@ -982,7 +985,7 @@ void QuestCheckEnterLocItem(aref _location, string _locator) /// <<<провер
 		for (i=1; i<=8; i++)
 		{
 			string sNum = "num"+i;
-			if (_locator == "kick"+i && !CheckAttribute(pchar, "questTemp.Guardoftruth.Attack.num"+i+".kick") && !LAi_CheckFightMode(pchar))
+			if (_locator == "kick"+i && !CheckAttribute(pchar, "questTemp.Guardoftruth.Attack.num"+i+".kick") && LAi_CheckFightMode(pchar) == CHR_MODE_PEACE)
 			{
 				pchar.questTemp.Guardoftruth.num = i;
 				LAi_SetActorType(pchar);

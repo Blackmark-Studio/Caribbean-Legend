@@ -1,13 +1,5 @@
 NoLootCorpse0 {En los bolsillos de este tipo no hay nada.}
 NoLootCorpse1 {Parece que no tenía nada de valor.}
-NoLootCorpse2 {Este tiene los bolsillos vacíos.}
-NoLootCorpse3 {¿Me habré perdido algo? No, definitivamente vacío.}
-NoLootCorpse4 {Otro muerto sin un céntimo en el bolsillo.}
-NoLootCorpse5 {Por lo visto vivía a crédito.}
-NoLootCorpse6 {Este muerto ni siquiera puede pagar al barquero.}
-NoLootCorpse7 {Ni balas de repuesto, ni pólvora. Búsqueda en vano.}
-NoLootCorpse8 {Ni una moneda en sus bolsillos, ni en su camisa.}
-NoLootCorpse9 {Era pobre de solemnidad, ni una sola moneda.}
 NoLootCorpse10 {¿Por qué malgasté mi tiempo? Este está vacío.}
 NoLootCorpse11 {Sus bolsillos son un vacío abismal.}
 NoLootCorpse12 {Nada aquí. ¿Quizás bolsillos secretos?}
@@ -18,4 +10,12 @@ NoLootCorpse16 {El pobre diablo fue a la batalla con lo puesto.}
 NoLootCorpse17 {Se armó con sus últimas monedas.}
 NoLootCorpse18 {Un cadáver es un cadáver. No hay nada.}
 NoLootCorpse19 {Debe haber dejado todos sus tesoros en un cofre.}
+NoLootCorpse2 {Este tiene los bolsillos vacíos.}
 NoLootCorpse20 {Parece que perdió todos sus valores durante la pelea.}
+NoLootCorpse3 {¿Me habré perdido algo? No, definitivamente vacío.}
+NoLootCorpse4 {Otro muerto sin un céntimo en el bolsillo.}
+NoLootCorpse5 {Por lo visto vivía a crédito.}
+NoLootCorpse6 {Este muerto ni siquiera puede pagar al barquero.}
+NoLootCorpse7 {Ni balas de repuesto, ni pólvora. Búsqueda en vano.}
+NoLootCorpse8 {Ni una moneda en sus bolsillos, ni en su camisa.}
+NoLootCorpse9 {Era pobre de solemnidad, ni una sola moneda.}

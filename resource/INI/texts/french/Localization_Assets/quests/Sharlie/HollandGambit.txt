@@ -1,12 +1,4 @@
 HollandGambit_1 {Baltazar}
-HollandGambit_2 {Ridderbok}
-HollandGambit_3 {Exploration mode: timer extended. Complete the quest!}
-HollandGambit_4 {Miguel}
-HollandGambit_5 { }
-HollandGambit_6 { }
-HollandGambit_7 {Exploration mode: quest duration doubled}
-HollandGambit_8 { }
-HollandGambit_9 {Valkyrie is on the horizon!}
 HollandGambit_10 {Hainrih}
 HollandGambit_11 {Claus}
 HollandGambit_12 { }
@@ -17,6 +9,7 @@ HollandGambit_16 {silver convoy}
 HollandGambit_17 {Boat}
 HollandGambit_18 {Fernando}
 HollandGambit_19 {Rodriges}
+HollandGambit_2 {Ridderbok}
 HollandGambit_20 {Zeekalf}
 HollandGambit_21 {Charlie}
 HollandGambit_22 {Knippel}
@@ -27,6 +20,7 @@ HollandGambit_26 {Charlie Knippel died of wounds!}
 HollandGambit_27 {Longway died of calenture!}
 HollandGambit_28 {Longway died of wounds!}
 HollandGambit_29 {An hour passed...}
+HollandGambit_3 {Exploration mode: timer extended. Complete the quest!}
 HollandGambit_30 {Jack}
 HollandGambit_31 {Harrison}
 HollandGambit_32 {brigantine 'Hoop'}
@@ -37,6 +31,7 @@ HollandGambit_36 {Peter}
 HollandGambit_37 {Stuyvesant}
 HollandGambit_38 {Frederic}
 HollandGambit_39 {Leiden}
+HollandGambit_4 {Miguel}
 HollandGambit_40 {Toff}
 HollandGambit_41 {Keller}
 HollandGambit_42 {You have fainted of wounds...}
@@ -44,3 +39,8 @@ HollandGambit_43 {You didn't return money to Abigail thus making her a beggar}
 HollandGambit_44 {Chavinavy}
 HollandGambit_45 { }
 HollandGambit_46 { }
+HollandGambit_5 { }
+HollandGambit_6 { }
+HollandGambit_7 {Exploration mode: quest duration doubled}
+HollandGambit_8 { }
+HollandGambit_9 {Valkyrie is on the horizon!}

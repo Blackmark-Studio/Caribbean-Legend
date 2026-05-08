@@ -1,0 +1,6 @@
+Shipyard_TuningRig {Zobaczmy, co da się zrobić. Ożaglowanie tego statku jest _$key($attr($context.rig_type)), a ja mógłbym $key($attr($context.rig_upgrade_type)). Do tego będę potrzebował: $attr($context.material) jedwabiu żaglowego. Za swoją pracę wezmę: $attr($context.price) skrzyń dublonów na pokrycie kosztów. To chyba wszystko. Ach tak — płatność z góry.}
+Smuggler_can_trade {W tym sezonie mamy ciężko, więc nie ryzykowałbym… ale twoja reputacja cię wyprzedza, łotrze. Mówią, że potrafisz ukraść nawet perukę z głowy gubernatora. Pokaż, co masz.}
+Smuggler_can_trade_reply {Zawsze miło, gdy twoja reputacja jest doceniana. Handlujmy.}
+Smuggler_cant_trade {Nie wiem, o czym mówicie, kapitanie. Przemyt jest surowo zabroniony i ostro karany. (szeptem) Zwłaszcza w tym sezonie.}
+Smuggler_cant_trade_reply {Dajcie spokój, nie miałem zamiaru handlować żadnym przemytem. (szeptem) Nigdy się nie widzieliśmy.}
+storageRent {A poza pilnowaniem zajmujecie się tu czymś jeszcze?}

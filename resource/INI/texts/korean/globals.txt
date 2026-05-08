@@ -1,63 +1,121 @@
-QUEST_MESSAGE1 {엘 카이마노 식민지가 점령되었습니다.}
-QUEST_MESSAGE2 {엘 카이마노 식민지가 점령되었습니다.}
-QUEST_MESSAGE3 {당신은 이제 아즈텍 황금의 저주를 견딜 수 없을 만큼 늙었습니다...}
-QUEST_MESSAGE4 {보물을 발견했습니다!}
-QUEST_MESSAGE5 {나이젤 블라이트가 밀수업자의 코르벳을 공격했습니다!}
-QUEST_MESSAGE6 {나이젤 블라이트가 사라졌다!}
-QUEST_MESSAGE7 {선장님, 'Black Pearl'이 수평선에 나타났습니다!}
-QUEST_MESSAGE8 {훌륭합니다. 마스터를 처치하셨군요!}
-QUEST_MESSAGE9 {이제 이 잔혹한 세상과 맞서게 되었군!}
-QUEST_MESSAGE10 {무자비한 해적}
-QUEST_MESSAGE11 {특별한 보상이 주어집니다!}
-QUEST_MESSAGE12 {안타깝게도 이미 너무 많은 장교를 고용하셨습니다! 한 명을 해고해야 새로 고용할 수 있습니다!}
+Address_Form_Eng {경}
+Address_Form_Eng_Title1 {사략선원}
+Address_Form_Eng_Title2 {지휘관}
+Address_Form_Eng_Title3 {선장}
+Address_Form_Eng_Title4 {준장}
+Address_Form_Eng_Title5 {제독}
+Address_Form_EngWoman {미스}
+Address_Form_EngWoman2 {부인}
+Address_Form_Fra {무슈}
+Address_Form_Fra_Title1 {코르세르}
+Address_Form_Fra_Title2 {지휘관}
+Address_Form_Fra_Title3 {선장}
+Address_Form_Fra_Title4 {준장}
+Address_Form_Fra_Title5 {부제독}
+Address_Form_FraWoman {마드무아젤}
+Address_Form_FraWoman2 {마담}
+Address_Form_Hol {민헤이르}
+Address_Form_Hol_Title1 {플리버스티어}
+Address_Form_Hol_Title2 {지휘관}
+Address_Form_Hol_Title3 {선장}
+Address_Form_Hol_Title4 {준장}
+Address_Form_Hol_Title5 {제독}
+Address_Form_HolWoman {메프라우}
+Address_Form_HolWoman2 {프라우}
+Address_Form_Pir {경}
+Address_Form_Pir_Title1 {부카니어}
+Address_Form_Pir_Title2 {바다 늑대}
+Address_Form_Pir_Title3 {베테랑}
+Address_Form_Pir_Title4 {남작}
+Address_Form_Pir_Title5 {전설}
+Address_Form_PirWoman {미스}
+Address_Form_PirWoman2 {부인}
 Address_Form_Spa {세뇨르}
-Address_Form_Fra {몽시외}
-Address_Form_Eng {경爵}
-Address_Form_Por {세뇨르}
-Address_Form_Hol {민헤르}
-Swear_1 {내 지라가 터지겠군!}
-Swear_2 {젠장!}
-Swear_3 {오, 맙소사!}
-Swear_4 {젠장!}
-Swear_5 {천 개의 악마가!}
-Swear_6 {내 선미에 닻을 내려라!}
-Swear_7 {오, 하늘이시여!}
-Swear_8 {아르르르!!!}
-Swear_9 {상어가 천 마리나!}
-Swear_10 {악마!}
-TimeGreeting {안녕하세요}
-Antigua {Antigua}
-Barbados {Barbados}
-Curacao {Curacao}
-Dominica {Dominica}
-Grenada {Grenada}
-Guadeloupe {Guadeloupe}
-Hispaniola {Hispaniola}
-IslaMona {Isla Mona}
-Jamaica {Jamaica}
-MarieGalante {Marie Galante}
-Martinique {Martinique}
-Montserrat {Montserrat}
-Nevis {Nevis}
-PuertoRico {Puerto Rico}
-StEustatius {St. Eustatius}
-StKitts {St. Kitts}
-StMartin {St. Martin}
-Tortuga {Tortuga}
-LaVega {La Vega}
-SantoDomingo {Santo Domingo}
-PetitGoave {Petit Goave}
-Bridgetown {Bridgetown}
-SanJuan {San Juan}
-SantiagoVega {Santiago Vega}
-OFFIC_TYPE_BOATSWAIN {갑판장}
-OFFIC_TYPE_CANNONEER {포수}
-OFFIC_TYPE_QMASTER {키잡이}
-OFFIC_TYPE_NAVIGATOR {항해사}
-OFFIC_TYPE_FIRSTMATE {일등항해사}
-Pirate {해적}
-Spain {스페인인}
-France {프랑스인}
-Smuggler {밀수업자}
-Holland {네덜란드인}
-England {영국인}
+Address_Form_Spa_Title1 {코르사리오}
+Address_Form_Spa_Title2 {지휘관}
+Address_Form_Spa_Title3 {선장}
+Address_Form_Spa_Title4 {준장}
+Address_Form_Spa_Title5 {제독}
+Address_Form_SpaWoman {세뇨리타}
+Address_Form_SpaWoman2 {세뇨라}
+DayGreeting {안녕하세요}
+EveningGreeting {좋은 저녁이에요}
+Exclamation_1 {세상에!!}
+Exclamation_2 {하늘이시여!}
+Exclamation_3 {성모 마리아!}
+FriendlyGoodbye_0 {잘 가}
+FriendlyGoodbye_1 {잘 있어}
+FriendlyGreeting {안녕}
+MorningGreeting {좋은 아침이요}
+NationEuropaTown_Eng {런던}
+NationEuropaTown_Fra {라 로셸}
+NationEuropaTown_Hol {암스테르담}
+NationEuropaTown_Pir {토르투가}
+NationEuropaTown_Spa {세비야}
+NationKingsCrown_Eng {영국 왕실에}
+NationKingsCrown_Fra {프랑스 왕실에}
+NationKingsCrown_Hol {네덜란드 왕국에}
+NationKingsCrown_Pir {해안 형제단에}
+NationKingsCrown_Spa {스페인 왕실에}
+NationKingsName_Eng {호국경 각하}
+NationKingsName_Fra {루이 14세 폐하}
+NationKingsName_Hol {오라녜 빌렘 3세 폐하}
+NationKingsName_Pir {해안 형제단}
+NationKingsName_Spa {합스부르크 펠리페 4세 폐하}
+NationNameAblative_Eng {잉글랜드}
+NationNameAblative_Fra {프랑스}
+NationNameAblative_Hol {네덜란드}
+NationNameAblative_Pir {해적}
+NationNameAblative_Spa {스페인}
+NationNameGenitive_Eng {잉글랜드의}
+NationNameGenitive_Fra {프랑스의}
+NationNameGenitive_Hol {네덜란드의}
+NationNameGenitive_Pir {해적들의}
+NationNameGenitive_Spa {스페인의}
+NationNameMan_Eng {영국인}
+NationNameMan_Fra {프랑스인}
+NationNameMan_Hol {네덜란드인}
+NationNameMan_Pir {해적}
+NationNameMan_Spa {스페인인}
+NationNameNominative_Eng {잉글랜드}
+NationNameNominative_Fra {프랑스}
+NationNameNominative_Hol {네덜란드}
+NationNameNominative_Pir {해안 형제단}
+NationNameNominative_Spa {스페인}
+NationNamePeople_Eng {영국인들}
+NationNamePeople_Fra {프랑스인들}
+NationNamePeople_Hol {네덜란드인들}
+NationNamePeople_Pir {해적들}
+NationNamePeople_Spa {스페인인들}
+NationNamePeopleAcc_Eng {영국인들을}
+NationNamePeopleAcc_Fra {프랑스인들을}
+NationNamePeopleAcc_Hol {네덜란드인들을}
+NationNamePeopleAcc_Pir {해적들을}
+NationNamePeopleAcc_Spa {스페인인들을}
+NationNameWoman_Eng {영국 여인}
+NationNameWoman_Fra {프랑스 여인}
+NationNameWoman_Hol {네덜란드 여인}
+NationNameWoman_Pir {해적 여인}
+NationNameWoman_Spa {스페인 여인}
+NightGreeting {안녕히 주무세요}
+PoliteGoodbye_0 {안녕히 가십시오}
+PoliteGoodbye_1 {부디 평안하시길}
+PoliteGreeting {어서 오십시오}
+Swear_1 {카람바!}
+Swear_10 {번개라도 맞아라!}
+Swear_11 {뒤 돛대가 부러질 놈!}
+Swear_12 {바다에 처박혀라!}
+Swear_13 {상어 열두 마리!}
+Swear_14 {청어한테나 물려라!}
+Swear_15 {악마 삼천 놈!}
+Swear_2 {빌어먹을!}
+Swear_3 {악마한테나 가버려!}
+Swear_4 {제기랄!}
+Swear_5 {닻이나 집어삼켜라!}
+Swear_6 {상어 천 마리!}
+Swear_7 {으아악!!!}
+Swear_8 {악마 천 놈!}
+Swear_9 {Alle Hagel!}
+Title_Captain {선장}
+Title_Ghovernor {총독}
+Title_ViceAdmiral {부제독}

@@ -14,6 +14,10 @@
 #define MSGICON_LOGBOOK	1
 #define MSGICON_GETITEM	2
 
+#define CHR_MODE_PEACE  0
+#define CHR_MODE_BLADE  1
+#define CHR_MODE_MUSKET 2
+
 #event_handler("evnt_MsgIconTick","proc_MsgIconTick");
 
 bool GetShipRemovable(ref _refCharacter)
@@ -473,6 +477,34 @@ int GetIntactCannonQuantity(ref refCharacter)
 	return canQ;
 }
 
+// Получить тип парусов: косые/прямые/смешанные
+string GetRigType(ref chr)
+{
+	int nShipType = GetBaseShipType(chr);
+	if (nShipType == SHIP_NOTUSED) return "";
+
+	ref refShip;
+	makeref(refShip, ShipsTypes[nShipType]);
+	if (CheckAttribute(refShip, "rig_type")) return refShip.rig_type;
+
+	assert(false, "Missing rig_type for ship type: " + nShipType);
+	return "";
+}
+
+// Получить тип апгрейда парусов
+string GetRigUpgradeType(ref chr)
+{
+	int nShipType = GetBaseShipType(chr);
+	if (nShipType == SHIP_NOTUSED) return "";
+
+	ref refShip;
+	makeref(refShip, ShipsTypes[nShipType]);
+	if (CheckAttribute(refShip, "rig_upgrade_type")) return refShip.rig_upgrade_type;
+
+	assert(false, "Missing rig_upgrade_type for ship type: " + nShipType);
+	return "";
+}
+
 int GetMaximumCaliber(ref refCharacter)
 {
 	int nShipType = GetCharacterShipType(refCharacter);
@@ -672,19 +704,19 @@ int RemoveCharacterCrew(ref _refCharacter,int num)
 	return true;
 }
 // Repair section
-float GetSailPercent(ref _refCharacter)
+float GetSailPercent(ref _refCharacter) // ~!~ ???
 {
-	if( !CheckAttribute(_refCharacter,"Ship.SP") ) return 100.0;
+	if (!CheckAttribute(_refCharacter,"Ship.SP")) return 100.0;
 	float fSP = GetCharacterShipSP(_refCharacter);
-	if(fSP<=0.0) return 100.0;
-	float fpsp = 100.0*stf(_refCharacter.Ship.SP)/fSP;
+	if (fSP <= 0.0) return 100.0;
+	float fpsp = 100.0 * float(_refCharacter.Ship.SP) / fSP;
 	return fpsp;
 }
 float GetHullPercent(ref _refCharacter)
 {
-	if(!CheckAttribute(_refCharacter,"Ship.HP")) return 100.0;
+	if (!CheckAttribute(_refCharacter, "Ship.HP")) return 100.0;
 	int iHP = GetCharacterShipHP(_refCharacter);
-	if(iHP<=0) return 100.0;
+	if (iHP <= 0) return 100.0;
 	float fphp = 100.0*stf(_refCharacter.Ship.HP)/iHP;
 	return fphp;
 }
@@ -712,11 +744,13 @@ float GetSailRPD(ref _refCharacter) // процент ремонта парус�
 	if(IsCharacterEquippedArtefact(_refCharacter, "talisman7")) repairSkill = repairSkill * 2.0; // вдвое увеличивает 
     //<-- belamour
 
-	if (IsEquipCharacterByItem(_refCharacter, "piratesJournal_3"))
+	if (IsCharacterEquippedArtefact(_refCharacter, "piratesJournal_3"))
 	{
 		if (ShipBonus2Artefact(_refCharacter, SHIP_AMSTERDAM)) repairSkill *= 1.6;
 		else repairSkill *= 1.3;
 	}
+
+	repairSkill *= SZN_GetModifierMtp(M_SEA_REPAIR_EFFICENCY, 1.0);
 
 	float damagePercent = 100.0 - GetSailPercent(_refCharacter);
 	if (damagePercent == 0.0) return 0.0;
@@ -738,11 +772,13 @@ float GetHullRPD(ref _refCharacter) // процент ремонта корпу�
 	if(IsCharacterEquippedArtefact(_refCharacter, "talisman7")) repairSkill = repairSkill * 2.0; // вдвое увеличивает
     //<-- belamour
 
-	if (IsEquipCharacterByItem(_refCharacter, "piratesJournal_3"))
+	if (IsCharacterEquippedArtefact(_refCharacter, "piratesJournal_3"))
 	{
 		if (ShipBonus2Artefact(_refCharacter, SHIP_AMSTERDAM)) repairSkill *= 1.6;
 		else repairSkill *= 1.3;
 	}
+
+	repairSkill *= SZN_GetModifierMtp(M_SEA_REPAIR_EFFICENCY, 1.0);
 
 	float damagePercent = 100.0 - GetHullPercent(_refCharacter);
 	if(damagePercent == 0.0) return 0.0;
@@ -1895,7 +1931,7 @@ bool ReplaceItem(ref _refTakingCharacter,ref _refGivingCharacter,string itemName
 	return retVal;
 }
 
-bool TakeNItems(ref _refCharacter, string itemName, int n)
+bool TakeNItems(ref _refCharacter, string itemName, int n, bool withNotification = true)
 {
 	int q;
 	aref arItm;
@@ -2002,9 +2038,9 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 				PlayStereoSound("interface\took_item.wav");
 			}
 		}
-		else
+		else if (withNotification)
 		{
-			if(CheckAttribute(_refCharacter,"index") && sti(_refCharacter.index) == GetMainCharacterIndex())
+			if(IsMainCharacter(_refCharacter) && !CheckAttribute(_refCharacter, "dummy"))
 			{
 				if(n > 0)
 				{
@@ -2376,23 +2412,27 @@ string GetCharacterEquipPictureByGroup(ref chref, string groupID)
 	return "";
 }
 
-void RemoveCharacterEquip(ref chref, string groupID)
+void RemoveCharacterEquip(ref chref, string groupID, bool takeItem = false)
 {
-	if(groupID == GUN_ITEM_TYPE)
+	string itemId = GetCharacterEquipByGroup(chref, groupID);
+
+	if (groupID == GUN_ITEM_TYPE)
 	{
 		DeleteAttribute(chref, "bullets.gun");
-		if(CheckAttribute(chref, "equip.tempgunid"))
-			DeleteAttribute(chref, "equip.tempgunid");
+		DeleteAttribute(chref, "equip.tempgunid");
 	}
-	if(groupID == MUSKET_ITEM_TYPE)
-		DeleteAttribute(chref, "bullets.musket");
-	DeleteAttribute(chref,"equip."+groupID);
-	if (groupID == BLADE_ITEM_TYPE) 
+	else if (groupID == MUSKET_ITEM_TYPE) DeleteAttribute(chref, "bullets.musket");
+
+	DeleteAttribute(chref, "equip."+groupID);
+
+	if (groupID == BLADE_ITEM_TYPE)
 	{
 		GiveItem2Character(chref, "unarmed");
 		EquipCharacterByItem(chref, "unarmed");
 	}
 	else SetEquipedItemToCharacter(chref,groupID,"");
+
+	if (takeItem && itemId != "") TakeNItems(chref, itemId, -1); // Забираем предмет
 }
 
 void RemoveOfficerEquip(ref chref, string groupID)
@@ -2474,7 +2514,7 @@ void SetEquipedItemToCharacter(ref chref, string groupID, string itemID)
 	            }
 	        }
 	        SetNewModelToChar(chref);//boal
-			if (chref.model == "protocusto") {
+			if (chref.model == "protocusto" && !CheckAttribute(chref, "dummy")) {
 				PostEvent("InterfaceBreak", 499); // mitrokosta fix
 				DoQuestCheckDelay("TalkSelf_Quest", 0.5); // Jason
 			}
@@ -2657,7 +2697,7 @@ float GetEnergyBladeDrain(float _weight, string _bladeType)
 	return drain;
 }
 
-void EquipCharacterByItem(ref chref, string itemID)
+void EquipCharacterByItem(ref chref, string itemID, bool forceEquip = false)
 {
 	aref arItm;
 
@@ -2681,14 +2721,14 @@ void EquipCharacterByItem(ref chref, string itemID)
 		
 		if(chref.index != GetMainCharacterIndex())
 		{			
-			if (groupName == GUN_ITEM_TYPE && !HasSubStr(arItm.id, "mushket")) return;			
+			if (!forceEquip && groupName == GUN_ITEM_TYPE && !HasSubStr(arItm.id, "mushket")) return;			
 		}
 	}
 	else
 	{
 		if (groupName == MUSKET_ITEM_TYPE || groupName == GUN_ITEM_TYPE)
 		{
-			if (!CanEquipFireArmsNow(chref, arItm)) return;
+			if (!forceEquip && !CanEquipFireArmsNow(chref, arItm)) return;
 		}
 	}
 	
@@ -2703,7 +2743,7 @@ void EquipCharacterByItem(ref chref, string itemID)
 			chref.equip.(groupName).(itemID) = itemID;		
 		}	
 	}	
-	if(IsEntity(&chref)) 
+	if(forceEquip || IsEntity(&chref)) 
 	{
 		SetEquipedItemToCharacter(chref, groupName, itemID);
 	} 
@@ -2827,8 +2867,9 @@ bool IsEquipCharacterByArtefact(ref chref, string itemID)
 	aref 	arEquip;
 	string 	sAttr;
 	int 	i, q;
-	ref 	rItem = ItemsFromID(itemID);
-	
+	ref 	rItem = ItemsFromIDSafe(itemID);
+
+    if(rItem == nullptr) return false;
 	if(!CheckAttribute(rItem, "groupID")) return false;
 	if(!CheckAttribute(chref, "equip_item")) return false;
 	if(rItem.groupID == ITEM_SLOT_TYPE || rItem.groupID == TALISMAN_ITEM_TYPE)
@@ -3068,7 +3109,8 @@ bool IsCharacterEquippedArtefact(ref rChar, string itemID)
 	if (IsMainCharacter(rChar)) // ГГ и его офицеры 
 	{
 		if(IsEquipCharacterByArtefact(pchar, itemID)) return true;
-		rItem = ItemsFromID(itemID);
+		rItem = ItemsFromIDSafe(itemID);
+        if(rItem == nullptr) return false;
 		if(CheckAttribute(rItem, "kind")) 
 		{
 			sKind = rItem.kind;
@@ -4163,7 +4205,7 @@ void OfficersCharge()
 		if (idx != -1) 
 		{
 			ref offchar = GetCharacter(idx);
-			if(!LAi_CheckFightMode(offchar))
+			if(LAi_CheckFightMode(offchar) == CHR_MODE_PEACE)
 			{
 				LAi_tmpl_SetFollow(offchar, GetMainCharacter(), -1.0);
 			}
@@ -4198,7 +4240,7 @@ float GetCrewPercent(ref chr) {
 bool CharUseMusket(ref rChar)
 {
 	//Либо это чистый мушкетёр на старой анимации, либо универсал в мушкетном режиме
-	if(GetCharacterAnimation(rChar) == "mushketer" || LAi_CheckFightMode(rChar) == 2) return true;
+	if(GetCharacterAnimation(rChar) == "mushketer" || LAi_CheckFightMode(rChar) == CHR_MODE_MUSKET) return true;
 	return false;
 }
 
@@ -4255,10 +4297,12 @@ string GetCharCurAni(ref chr)
 	return sAniCaseName;
 }
 
-// Получить персонажа по ссылке/id/индексу
-ref FindChar_VT(ref entity)
+/* Получить персонажа по ссылке/id/индексу или nullptr
+@param ignoreNotFound передаём `true`, если отсутствие результата поиска является ожидаемым поведением
+*/
+ref FindChar_VT(ref entity, bool ignoreNotFound = false)
 {
-	return FindObject_VT(entity, "CharacterFromID", "GetCharacter");
+	return FindObjectSafe_VT(entity, "CharacterFromIDSafe", "GetCharacterSafe", ignoreNotFound);
 }
 
 string GetMessagePortrait(ref chr)
@@ -4330,16 +4374,27 @@ bool CheckPerkFilter(ref chr, ref perkEntity) {
 	return false;
 }
 
+float GetCreditRate()
+{
+	float result = 4.0;
+	result += (makeint((((6.0 - 4.0) * (GetSummonSkillFromName(pchar, "Commerce") + GetSummonSkillFromName(pchar, "Leadership")) / 200) ) / 0.5 + 0.5)) * 0.5;
+	result += SZN_GetModifierMtp(M_DEBIT_RATE, 0.0) * 100;
+	return result;
+}
+
 string GetDepositRate(string type)
 {
 	float result = 1.0;
 	if (type == "peso")
 	{
 		result = 2.0 + (makeint(((1.0 * (GetSummonSkillFromName(pchar, "Commerce") + GetSummonSkillFromName(pchar, "Leadership")) / 200) ) / 0.5 + 0.5)) * 0.5;
+		result += SZN_GetModifierMtp(M_DEPOSIT_SILVER_RATE, 0.0) * 100;
 	}
+	else result += SZN_GetModifierMtp(M_DEPOSIT_GOLD_RATE, 0.0) * 100;
 
 	if (HasPerk(pchar, "Investor")) result += PERK_VALUE_INVESTOR;
-	return ToHumanNumber(result);
+
+	return ToHumanNumber(func_fmax(1.0, result));
 }
 
 // Может ли персонаж управлять кораблём на глобальной карте

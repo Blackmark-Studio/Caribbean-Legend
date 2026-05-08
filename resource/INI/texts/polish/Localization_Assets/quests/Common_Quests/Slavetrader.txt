@@ -1,12 +1,4 @@
 Slavetrader_1 {Tryb eksploracji: wydłużony czas. Ukończ zadanie!}
-Slavetrader_2 { }
-Slavetrader_3 { }
-Slavetrader_4 { }
-Slavetrader_5 { }
-Slavetrader_6 { }
-Slavetrader_7 { }
-Slavetrader_8 {Nabukee}
-Slavetrader_9 {Anaconda}
 Slavetrader_10 {z Karakasu}
 Slavetrader_11 {z Kumany}
 Slavetrader_12 {Fransua}
@@ -17,6 +9,7 @@ Slavetrader_16 {na wybrzeżach Barbadosu}
 Slavetrader_17 {na wybrzeżach Gwadelupy}
 Slavetrader_18 {niedaleko Santiago}
 Slavetrader_19 {niedaleko Hawany}
+Slavetrader_2 { }
 Slavetrader_20 {na wybrzeżach Tortugi}
 Slavetrader_21 {na wybrzeżach Trynidadu}
 Slavetrader_22 {na wybrzeżach Wyspy Św. Krzysztofa}
@@ -27,7 +20,14 @@ Slavetrader_26 {Tamango}
 Slavetrader_27 { }
 Slavetrader_28 {Sven}
 Slavetrader_29 {Carlson}
+Slavetrader_3 { }
 Slavetrader_30 {Janna}
 Slavetrader_31 {Mollery}
 Slavetrader_32 {Izaura}
 Slavetrader_33 { }
+Slavetrader_4 { }
+Slavetrader_5 { }
+Slavetrader_6 { }
+Slavetrader_7 { }
+Slavetrader_8 {Nabukee}
+Slavetrader_9 {Anaconda}

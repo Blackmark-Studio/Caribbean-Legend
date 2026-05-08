@@ -1,90 +1,282 @@
+????? {?????}
+Сhapel {예배당}
+Abby_House {Abigail Shneur의 집}
+Alcove {성소}
+ammo {무기고}
 Antigua {Antigua}
+Ascold House {파데이의 집}
+Ava Cabin {갤리온 'Eva'}
 Barbados {Barbados}
-Bermudes {Isla del Tesoro}
-Beliz {Yucatan}
-Cuba {Cuba}
-Cuba1 {Cuba}
-Cuba2 {Cuba}
-Caiman {Cayman}
-Cumana {Main}
-Caracas {Main}
-Curacao {Curacao}
-Cartahena {Main}
-Dominica {Dominica}
-Guadeloupe {Guadeloupe}
-Hispaniola {Hispaniola}
-Hispaniola1 {Hispaniola}
-Hispaniola2 {Hispaniola}
-Jamaica {Jamaica}
-Maracaibo {Main}
-Martinique {Martinique}
-SentMartin {Saint-Martin}
-Nevis {Saint Christopher}
-PuertoRico {Puerto Rico}
-PortoBello {Main}
-Pearl {Pearl Beach}
-Panama {Panama}
-SantaCatalina {Main}
-Terks {Turks}
-Tortuga {Tortuga}
-Trinidad {Trinidad}
-Tenotchitlan {Lago Peten}
-Mein {Main}
-KhaelRoa {Khael Roa}
-Ksochitam {Ksocheatem}
-RockIsland {Northern Reefs}
-Providence {Providence}
-SantaQuiteria {Santa Quiteria}
-IslaDeVieques {Isla de Vieques}
-IslaMona {Isla Mona}
-IslaDeCoche {Isla de Coche}
-Tobago {Tobago}
-MarieGalante {Marie Galante}
-SentJons_town {St. John's}
-Pirates_town {Sharptown}
-Bridgetown_town {Bridgetown}
-Beliz_town {Belize}
-Santiago_town {Santiago}
-PuertoPrincipe_town {Puerto del Principe}
-Havana_town {Havana}
-Cumana_town {Cumana}
-Caracas_town {Caracas}
-Villemstad_town {Willemstad}
-Cartahena_town {Cartagena}
+Basement {지하실}
+BasTer {Basse-Terre}
+BasTer Fort {Fort of Basse-Terre}
+BasTer Port {Port of Basse-Terre}
+BasTer Town {Basse-Terre}
 BasTer_town {Basse-Terre}
-SantoDomingo_town {Santo Domingo}
-LaVega_town {La Vega}
-PortPax_town {Port-au-Prince}
-PortRoyal_town {Port Royal}
-Maracaibo_town {Maracaibo}
-FortFrance_town {Saint-Pierre}
-LeFransua_town {Le Francois}
-Marigo_town {Philipsburg}
+Beach {해변}
+Bedroom {침실}
+Beliz {Yucatan}
+Beliz Fort {Fort of Belize}
+Beliz Port {Port of Belize}
+Beliz Town {Belize}
+Beliz_town {Belize}
+Bermudes {Isla del Tesoro}
+Boarding deck {상갑판}
+Bridgetown {Bridgetown}
+Bridgetown Fort {Fort of Bridgetown}
+Bridgetown Port {Port of Bridgetown}
+Bridgetown Town {Bridgetown}
+Bridgetown_town {Bridgetown}
+Brothel {매춘굴}
+Brothel Room {사생활실}
+cabine {선실}
+cabine2 {선실}
+Cabinet {서재}
+Caiman {Cayman}
+Caracas {베네수엘라 서부}
+Caracas Fort {Fort of Caracas}
+Caracas Port {Port of Caracas}
+Caracas Town {Caracas}
+Caracas_town {Caracas}
+Caroline cabin {프리깃 'Carolina'}
+Cartahena {콜롬비아}
+Cartahena Fort {Fort of Cartagena}
+Cartahena Port {Port of Cartagena}
+Cartahena Town {Cartagena}
+Cartahena_town {Cartagena}
+Cave {동굴}
+Cave entrance {동굴 입구}
+CeresSmithy cabin {플루트 'Ceres Smithy'}
+Charles {Capsterville}
+Charles Fort {Fort of Capsterville}
+Charles Port {Port of Capsterville}
+Charles Town {Capsterville}
 Charles_town {Capsterville}
-SanJuan_town {San Juan}
-PortoBello_town {Portobello}
-Panama_town {Panama}
-SantaCatalina_town {Blueweld}
-Tortuga_town {Tortuga}
-PortSpein_town {San Jose}
-Tenotchitlan_town {Tayasal}
-FortOrange_town {Maroon Town}
-Providence_town {San Andres}
-Oglethorpe_Estate {Oglethorpe estate}
+Church {교회}
+Comendant_House {San Jose 사령관의 집}
+Comendant's House {아바나 사령관의 저택}
+Crypt {지하실}
+Cuba {Cuba}
+Cuba1 {쿠바 동부}
+Cuba2 {쿠바 서부}
+Cumana {베네수엘라 동부}
+Cumana Fort {Fort of Cumana}
+Cumana Port {Port of Cumana}
+Cumana Town {Cumana}
+Cumana_town {Cumana}
+Curacao {Curacao}
 DeMonpe_Estate {de Monpe Estate}
 DesMoines {Des Moines}
-LosTeques_town {Los-Teques mine}
+Dominica {Dominica}
+Drugstore {약국}
+Duel Field {결투장}
+Dunes house {모래언덕 집}
+Dungeon {던전}
+England {잉글랜드}
+EsmeraldaStoreBig cabin {갤리언 '에스메랄다'}
+Europe {유럽}
+Exit {종료}
 ExitMine {Passage to the mine}
+ExitTown {정글로 나가기}
 Factoria {Factoria}
+FenixPlatform cabin {Phoenix' 플랫폼}
+FernandaDiffIndoor cabin {플루트 'Fernanda'}
+Fleetwood_House {Richard Fleetwood의 집}
+FleuronTavern cabin {캐러벨 'Fleron'}
+FloodedCave {잠긴 동굴}
+Fort inside {요새}
+FortFrance {Saint-Pierre}
+FortFrance Fort {Fort of Saint-Pierre}
+FortFrance Port {Port of Saint-Pierre}
+FortFrance Town {Saint-Pierre}
+FortFrance_town {Saint-Pierre}
+FortOrange {Maroon Town}
+FortOrange Town {Maroon Town}
+FortOrange_town {Maroon Town}
+France {프랑스}
+FurieShipInside2 cabin {피나스 'Fury'}
+Gaspard_Gold House {Gaspard Goldenteeth의 집}
+Gate {도시 출입문}
+Gladis_house {글래디스 맥아더의 집}
+GloriaChurch cabin {갤리언 'Gloria'}
+Gonsales_house {엔리케 곤살레스의 집}
+Graveyard {묘지}
+Grot {동굴}
+Grotto {동굴}
+Guadeloupe {Guadeloupe}
+Havana {Havana}
+Havana Fort {Fort of Havana}
+Havana Port {Port of Havana}
+Havana Town {Havana}
+Havana_town {Havana}
+Hispaniola {Hispaniola}
+Hispaniola1 {스페인령 이스파뇰라}
+Hispaniola2 {프랑스령 이스파뇰라}
+House {집}
+HWIC_flat {HWIC 본부}
+Incas Temple {잉카 사원}
+Incquisitio {종교재판소}
+IslaDeCoche {Isla de Coche}
+IslaDeVieques {Isla de Vieques}
+IslaMona {Isla Mona}
+IslaMona Town {Isla Mona}
+Jamaica {Jamaica}
+Jungle {정글}
+Jungle Fort {정글 요새}
+KhaelRoa {Khael Roa}
+Knippel_House {Charley Knippel의 집}
+Kristian_house {Christian의 집}
+Ksochitam {Ksocheatem}
+La Espada Del Rey {플라이트 'La Espada del Rey'}
+LaVega {La Vega}
+LaVega Fort {Fort of La Vega}
+LaVega Port {Port of La Vega}
+LaVega Town {La Vega}
+LaVega_town {La Vega}
+LeFransua {Le Francois}
+LeFransua Port {Port of Le Francois}
+LeFransua Town {Le Francois}
+LeFransua_town {Le Francois}
+Lighthouse Inside {등대 내부}
+LosTeques {Los-Teques mine}
+LosTeques Town {Los-Teques mine}
+LosTeques_town {Los-Teques mine}
+LostShipsCity {Loco-Riferte}
+LostShipsCity Town {Loco-Riferte}
+Loxly_house {Albert Locksley의 사무실}
+LSC North {죽은 배의 섬 - 북쪽}
+LSC South {죽은 배의 섬 - 남쪽}
+LSC Town {로코-리페르테 거리}
+Maltese Order {몰타 기사단}
+Maracaibo {마라카이보 만}
+Maracaibo Fort {Fort of Maracaibo}
+Maracaibo Port {Port of Maracaibo}
+Maracaibo Town {Maracaibo}
+Maracaibo_town {Maracaibo}
+MarieGalante {Marie Galante}
+Marigo {Philipsburg}
+Marigo Fort {Fort of Philipsburg}
+Marigo Port {Port of Philipsburg}
+Marigo Town {Philipsburg}
+Marigo_town {Philipsburg}
+Martinique {Martinique}
+Mayak1 {Trinidad Lighthouse}
+Mayak10 {Havana Lighthouse}
+Mayak11 {Cartagena Lighthouse}
+Mayak2 {Barbados Lighthouse}
+Mayak3 {Port Royal Lighthouse}
+Mayak4 {Guadeloupe Lighthouse}
+Mayak5 {Saint Christopher Lighthouse}
+Mayak6 {Tortuga Lighthouse}
+Mayak7 {Port-au-Prince Lighthouse}
+Mayak8 {Santo Domingo Lighthouse}
+Mayak9 {Santiago Lighthouse}
+Maze {차빈 신전}
+Mein {Main}
+Merrimancave {메리먼의 소굴}
+Mines {광산}
+My_Campus {사관실}
+My_Deck {화물창}
+My_Deck_Medium {포갑甲}
+My_Ship {선박}
+Nevis {Saint Christopher}
+Office of Naval Registry {해군 등록 사무소}
+Oglethorpe_Estate {Oglethorpe estate}
+Orlop deck {오를롭 갑판}
+PackHouse {창고}
+Panama {Panama}
+Panama Fort {Fort of Panama}
+Panama Port {Port of Panama}
+Panama Town {Panama}
+Panama_town {Panama}
+Passage {다리}
+Pearl {Pearl Beach}
+Pirates {Sharptown}
+Pirates Port {Port of Sharptown}
+Pirates Town {Sharptown}
+Pirates_town {Sharptown}
+Plantation {플랜테이션}
+PlutoStoreSmall cabin {플루트 'Pluto'}
+Port {항구}
+PortoBello {남부 본토}
+PortoBello Fort {Fort of Portobello}
+PortoBello Port {Port of Portobello}
+PortoBello Town {Portobello}
+PortoBello_town {Portobello}
+PortOffice {항만 사무소}
+PortPax {Port-au-Prince}
+PortPax Fort {Fort of Port-au-Prince}
+PortPax Port {Port of Port-au-Prince}
+PortPax Town {Port-au-Prince}
+PortPax_town {Port-au-Prince}
+PortRoyal {Port Royal}
+PortRoyal Fort {Fort of Port Royal}
+PortRoyal Port {Port of Port Royal}
+PortRoyal Town {Port Royal}
+PortRoyal_town {Port Royal}
+PortSpein {San Jose}
+PortSpein Fort {Fort of San Jose}
+PortSpein Port {Port of San Jose}
+PortSpein Town {San Jose}
+PortSpein_town {San Jose}
+Prison {감옥}
+ProtectorFisher cabin {코르벳 'Protector'}
+Providence {Providence}
+Providence_town {San Andres}
+PuertoPrincipe {Puerto del Principe}
+PuertoPrincipe Fort {Fort of Puerto del Principe}
+PuertoPrincipe Port {Port of Puerto del Principe}
+PuertoPrincipe Town {Puerto del Principe}
+PuertoPrincipe_town {Puerto del Principe}
+PuertoRico {Puerto Rico}
+Residence {저택}
+River {강가}
+RockIsland {Northern Reefs}
+Room {방}
+Ruins {폐허}
+SanAndres {San Andres}
+SanAndres Fort {Fort of San Andres}
+SanAndres Port {Port of San Andres}
+SanAndres Town {San Andres}
+SanAugustineResidence cabin {전함 'San Augustine'}
+SanGabrielMechanic cabin {바르크 'San Gabriel'}
+SanJuan {San Juan}
+SanJuan Fort {Fort of San Juan}
+SanJuan Port {Port of San Juan}
+SanJuan Town {San Juan}
+SanJuan_town {San Juan}
+SantaCatalina {서부 본토}
+SantaCatalina Fort {Fort of Blueweld}
+SantaCatalina Port {Port of Blueweld}
+SantaCatalina Town {Blueweld}
+SantaCatalina_town {Blueweld}
+SantaFlorentinaShipInside4 cabin {브리그 'Santa Florentina'}
+SantaQuiteria {Santa Quiteria}
+Santiago {Santiago}
+Santiago Fort {Fort Santiago}
+Santiago Port {Port Santiago}
+Santiago Town {Santiago}
+Santiago_town {Santiago}
+SantoDomingo {Santo Domingo}
+SantoDomingo Fort {Fort Santo-Domingo}
+SantoDomingo Port {Port of Santo-Domingo}
+SantoDomingo Town {Santo Domingo}
+SantoDomingo_town {Santo Domingo}
+Sea {바다}
+SentJons {St. John's}
+SentJons Fort {Fort of St. John's}
+SentJons Port {Port of St. John's}
+SentJons Town {St. John's}
+SentJons_town {St. John's}
+SentMartin {Saint-Martin}
+shack {오두막}
+Shipyard {조선소}
+Shore_mask {Guardian's Grotto}
+Shore_ship1 {Sabo-Matila Cove}
+Shore_ship2 {Bay of Peril}
+Shore_ship3 {Cape of Delusive Hopes}
+Shore_ship4 {Cursed Cove}
 Shore1 {Cape Boon}
-Shore2 {Falmouth Cove}
-Shore3 {Benures Bay}
-Shore4 {Harrison Cape}
-Shore5 {Cape Ragged Point}
-Shore6 {Cape Catoche}
-Shore7 {Cozumel Bay}
-Shore8 {Chetumal Cove}
-Shore9 {Amatique Cove}
 Shore10 {Caratasca Lagoon}
 Shore11 {Cape Camaguey}
 Shore12 {Anna Maria Bay}
@@ -95,6 +287,7 @@ Shore16 {Desert Coast}
 Shore17 {Esmeralda Bay}
 Shore18 {Boca de la Serpienta Coast}
 Shore19 {Carupano Cove}
+Shore2 {Falmouth Cove}
 Shore20 {Los-Teques Beach}
 Shore21 {Cape Aruba}
 Shore22 {Coast Van Hato}
@@ -105,6 +298,7 @@ Shore26 {Castle Bruce Beach}
 Shore27 {Cape Scott's Head}
 Shore28 {Morne-a-l'Eau Cove}
 Shore29 {Capster Beach}
+Shore3 {Benures Bay}
 Shore30 {Grand-Bourg Cove}
 Shore31 {Cape Inaccessible}
 Shore32 {Cape Isabella}
@@ -115,6 +309,7 @@ Shore36 {Portland Bay}
 Shore37 {Guajira Bay}
 Shore38 {Lamentin Bay}
 Shore39 {Le Marin Cove}
+Shore4 {Harrison Cape}
 Shore40 {Grand Case Beach}
 Shore41 {Simpson Bay}
 Shore42 {Sandy Bay}
@@ -125,6 +320,7 @@ Shore46 {Chiriqui Lagoon}
 Shore47 {Mosquitoes Bay}
 Shore48 {Golfo del Darien}
 Shore49 {Papagayo Bay}
+Shore5 {Cape Ragged Point}
 Shore50 {Nicoya Bay}
 Shore51 {Coronado Bay}
 Shore52 {Golfo Dulce}
@@ -135,6 +331,7 @@ Shore56 {Northern Bay}
 Shore57 {Southern Bay}
 Shore58 {Fisheye Beach}
 Shore59 {Scarborough Cove}
+Shore6 {Cape Catoche}
 Shore60 {Galera Point}
 Shore61 {Tepeyakak}
 Shore62 {Iztapalapa}
@@ -148,6 +345,7 @@ Shore67_1 {Skeleton Reef - West}
 Shore67_2 {Skeleton Reef - East}
 Shore68 {Ingallado Cove}
 Shore69 {Beach Santa Maria del Mar}
+Shore7 {Cozumel Bay}
 Shore70 {Slave Cove}
 Shore71 {Scorn Cape}
 Shore72 {Oriente Cove}
@@ -158,247 +356,50 @@ Shore76 {Cape of the Drowned Man}
 Shore77 {Vieques Cove}
 Shore78 {Buccaneers Bay}
 Shore79 {Cape Cabo Rojo}
-Shore_ship1 {Sabo-Matila Cove}
-Shore_ship2 {Bay of Peril}
-Shore_ship3 {Cape of Delusive Hopes}
-Shore_ship4 {Cursed Cove}
-Shore_mask {Guardian's Grotto}
-Mayak1 {Trinidad Lighthouse}
-Mayak2 {Barbados Lighthouse}
-Mayak3 {Port Royal Lighthouse}
-Mayak4 {Guadeloupe Lighthouse}
-Mayak5 {Saint Christopher Lighthouse}
-Mayak6 {Tortuga Lighthouse}
-Mayak7 {Port-au-Prince Lighthouse}
-Mayak8 {Santo Domingo Lighthouse}
-Mayak9 {Santiago Lighthouse}
-Mayak10 {Havana Lighthouse}
-Mayak11 {Cartagena Lighthouse}
-Bridgetown {Bridgetown}
-Bridgetown Town {Bridgetown}
-Bridgetown Fort {Fort of Bridgetown}
-Bridgetown Port {Port of Bridgetown}
-SanJuan {San Juan}
-SanJuan Town {San Juan}
-SanJuan Fort {Fort of San Juan}
-SanJuan Port {Port of San Juan}
-Santiago {Santiago}
-Santiago Town {Santiago}
-Santiago Fort {Fort Santiago}
-Santiago Port {Port Santiago}
-PuertoPrincipe {Puerto del Principe}
-PuertoPrincipe Town {Puerto del Principe}
-PuertoPrincipe Fort {Fort of Puerto del Principe}
-PuertoPrincipe Port {Port of Puerto del Principe}
-SentJons {St. John's}
-SentJons Town {St. John's}
-SentJons Fort {Fort of St. John's}
-SentJons Port {Port of St. John's}
-PortRoyal {Port Royal}
-PortRoyal Town {Port Royal}
-PortRoyal Fort {Fort of Port Royal}
-PortRoyal Port {Port of Port Royal}
-FortOrange {Maroon Town}
-FortOrange Town {Maroon Town}
-Villemstad {Willemstad}
-Villemstad Town {Willemstad}
-Villemstad Fort {Fort of Willemstad}
-Villemstad Port {Port of Willemstad}
-BasTer {Basse-Terre}
-BasTer Town {Basse-Terre}
-BasTer Fort {Fort of Basse-Terre}
-BasTer Port {Port of Basse-Terre}
-LaVega {La Vega}
-LaVega Town {La Vega}
-LaVega Fort {Fort of La Vega}
-LaVega Port {Port of La Vega}
-SantoDomingo {Santo Domingo}
-SantoDomingo Town {Santo Domingo}
-SantoDomingo Fort {Fort Santo-Domingo}
-SantoDomingo Port {Port of Santo-Domingo}
-PortPax {Port-au-Prince}
-PortPax Town {Port-au-Prince}
-PortPax Fort {Fort of Port-au-Prince}
-PortPax Port {Port of Port-au-Prince}
-Pirates {Sharptown}
-Pirates Town {Sharptown}
-Pirates Port {Port of Sharptown}
-FortFrance {Saint-Pierre}
-FortFrance Town {Saint-Pierre}
-FortFrance Fort {Fort of Saint-Pierre}
-FortFrance Port {Port of Saint-Pierre}
-LeFransua {Le Francois}
-LeFransua Town {Le Francois}
-LeFransua Port {Port of Le Francois}
-Havana {Havana}
-Havana Town {Havana}
-Havana Fort {Fort of Havana}
-Havana Port {Port of Havana}
-Charles {Capsterville}
-Charles Town {Capsterville}
-Charles Fort {Fort of Capsterville}
-Charles Port {Port of Capsterville}
-PortoBello Town {Portobello}
-PortoBello Fort {Fort of Portobello}
-PortoBello Port {Port of Portobello}
-PortSpein {San Jose}
-PortSpein Town {San Jose}
-PortSpein Fort {Fort of San Jose}
-PortSpein Port {Port of San Jose}
-Tortuga Town {Tortuga}
-Tortuga Fort {Fort of Tortuga}
-Tortuga Port {Port of Tortuga}
-Marigo {Philipsburg}
-Marigo Town {Philipsburg}
-Marigo Fort {Fort of Philipsburg}
-Marigo Port {Port of Philipsburg}
-Panama Town {Panama}
-Panama Fort {Fort of Panama}
-Panama Port {Port of Panama}
-Cartahena Town {Cartagena}
-Cartahena Fort {Fort of Cartagena}
-Cartahena Port {Port of Cartagena}
-Maracaibo Town {Maracaibo}
-Maracaibo Fort {Fort of Maracaibo}
-Maracaibo Port {Port of Maracaibo}
-Caracas Town {Caracas}
-Caracas Fort {Fort of Caracas}
-Caracas Port {Port of Caracas}
-Cumana Town {Cumana}
-Cumana Fort {Fort of Cumana}
-Cumana Port {Port of Cumana}
-SantaCatalina Town {Blueweld}
-SantaCatalina Fort {Fort of Blueweld}
-SantaCatalina Port {Port of Blueweld}
-Beliz Town {Belize}
-Beliz Fort {Fort of Belize}
-Beliz Port {Port of Belize}
-SanAndres {San Andres}
-SanAndres Town {San Andres}
-SanAndres Fort {Fort of San Andres}
-SanAndres Port {Port of San Andres}
-IslaMona Town {Isla Mona}
-LosTeques {Los-Teques mine}
-LosTeques Town {Los-Teques mine}
-Duel Field {결투장}
-Boarding deck {상갑판}
-Orlop deck {오를롭 갑판}
-Fort inside {요새}
-Sea {바다}
-Jungle {정글}
+Shore8 {Chetumal Cove}
+Shore9 {Amatique Cove}
+Spain {스페인}
+Store {상점}
 Street {거리}
-ExitTown {정글로 나가기}
-Graveyard {묘지}
-Port {항구}
+Svensons_house {Jan Svenson의 집}
+TartarusPrison cabin {전함 'Tartarus'}
 Tavern {선술집}
 Tavern upstairs {여관 객실}
-Store {상점}
-Shipyard {조선소}
-PackHouse {창고}
-Townhall {총독 관저}
-TownhallRoom {저택 방}
-Residence {저택}
-PortOffice {항만 사무소}
-Church {교회}
-Incquisitio {종교재판소}
-Maltese Order {몰타 기사단}
-Incas Temple {잉카 사원}
-Usurer House {은행}
-House {집}
-ammo {무기고}
-shack {오두막}
-Room {방}
-Cabinet {서재}
-Bedroom {침실}
-Сhapel {예배당}
-Crypt {지하실}
-Exit {종료}
-The cavern {동굴}
-????? {?????}
-Passage {다리}
-Beach {해변}
-Cave {동굴}
-Cave entrance {동굴 입구}
-FloodedCave {잠긴 동굴}
-Grot {동굴}
-Prison {감옥}
-Lighthouse Inside {등대 내부}
-Mines {광산}
-Dungeon {던전}
-Gate {도시 출입문}
-Brothel {매춘굴}
-Brothel Room {사생활실}
-Village {마을}
-Plantation {플랜테이션}
-UnderWater {수중}
-Grotto {동굴}
-Dunes house {모래언덕 집}
-Torture room {고문실}
-Wine Cellar {와인 저장고}
-cabine {선실}
-My_Campus {사관실}
-My_Deck_Medium {포갑甲}
-My_Deck {화물창}
-My_Ship {선박}
-Drugstore {약국}
-HWIC_flat {HWIC 본부}
-Office of Naval Registry {해군 등록 사무소}
-Van Doorn's Cellar {반 도른의 지하실}
-Comendant's House {아바나 사령관의 저택}
-Tibo House {Henri Thibaut의 집}
-Gaspard_Gold House {Gaspard Goldenteeth의 집}
-Ascold House {파데이의 집}
-Abby_House {Abigail Shneur의 집}
-Knippel_House {Charley Knippel의 집}
-Fleetwood_House {Richard Fleetwood의 집}
-Comendant_House {San Jose 사령관의 집}
-Svensons_house {Jan Svenson의 집}
-Gladis_house {글래디스 맥아더의 집}
-Gonsales_house {엔리케 곤살레스의 집}
-Loxly_house {Albert Locksley의 사무실}
-Kristian_house {Christian의 집}
-LostShipsCity {Loco-Riferte}
-LostShipsCity Town {Loco-Riferte}
-LSC South {죽은 배의 섬 - 남쪽}
-LSC North {죽은 배의 섬 - 북쪽}
-LSC Town {로코-리페르테 거리}
-Ava Cabin {갤리온 'Eva'}
-Caroline cabin {프리깃 'Carolina'}
-CeresSmithy cabin {플루트 'Ceres Smithy'}
-EsmeraldaStoreBig cabin {갤리언 '에스메랄다'}
-FenixPlatform cabin {Phoenix' 플랫폼}
-FernandaDiffIndoor cabin {플루트 'Fernanda'}
-FleuronTavern cabin {캐러벨 'Fleron'}
-FurieShipInside2 cabin {피나스 'Fury'}
-GloriaChurch cabin {갤리언 'Gloria'}
-PlutoStoreSmall cabin {플루트 'Pluto'}
-ProtectorFisher cabin {코르벳 'Protector'}
-SanAugustineResidence cabin {전함 'San Augustine'}
-SanGabrielMechanic cabin {바르크 'San Gabriel'}
-SantaFlorentinaShipInside4 cabin {브리그 'Santa Florentina'}
-TartarusPrison cabin {전함 'Tartarus'}
-VelascoShipInside1 cabin {갤리온 'Velasco'}
-Tenochtitlan {Tayasal}
 Temple_1 {토힐 신전}
 Temple_2 {카우일 신전}
 Temple_3 {Chak 신전}
 Temple_4 {키니치 아하우 신전}
 Temple_5 {이츠암나 신전}
 Temple_6 {Ek Chuah 신전}
-TempleTreasure {금고}
 TempleGreatInside {대형 신전}
 TempleRoundInside {쿠쿨칸의 신전}
+TempleTreasure {금고}
 TempleUnderwater {수중 미로}
-Maze {차빈 신전}
-Alcove {성소}
-Merrimancave {메리먼의 소굴}
-River {강가}
-Jungle Fort {정글 요새}
-Basement {지하실}
-Ruins {폐허}
+Tenochtitlan {Tayasal}
+Tenotchitlan {Lago Peten}
+Tenotchitlan_town {Tayasal}
+Terks {Turks}
+The cavern {동굴}
+Tibo House {Henri Thibaut의 집}
+Tobago {Tobago}
+Tortuga {Tortuga}
+Tortuga Fort {Fort of Tortuga}
+Tortuga Port {Port of Tortuga}
+Tortuga Town {Tortuga}
+Tortuga_town {Tortuga}
+Torture room {고문실}
+Townhall {총독 관저}
+TownhallRoom {저택 방}
+Trinidad {Trinidad}
 Ulysse {Ulysse호에 탑승}
-La Espada Del Rey {플라이트 'La Espada del Rey'}
-Europe {유럽}
-England {잉글랜드}
-France {프랑스}
-Spain {스페인}
+UnderWater {수중}
+Usurer House {은행}
+Van Doorn's Cellar {반 도른의 지하실}
+VelascoShipInside1 cabin {갤리온 'Velasco'}
+Village {마을}
+Villemstad {Willemstad}
+Villemstad Fort {Fort of Willemstad}
+Villemstad Port {Port of Willemstad}
+Villemstad Town {Willemstad}
+Villemstad_town {Willemstad}
+Wine Cellar {와인 저장고}

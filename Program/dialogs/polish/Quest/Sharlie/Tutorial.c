@@ -469,6 +469,7 @@ void ProcessDialogEvent()
 			dialog.text = "Starszy marynarz. Niewiele o nim wiem, ale jedno jest pewne – jeśli każdy człowiek ma w szafie trupa, to Alonso ma z pewnością całe cmentarzysko.";
 			link.l1 = "Brzmi jakbyś mu nie ufał.";
 			link.l1.go = "Captain_7_question_2_2";
+			AddCharacterSkillPoints(pchar, "Leadership", 1);
 		break;
 
 		case "Captain_7_question_2_2":
@@ -488,6 +489,7 @@ void ProcessDialogEvent()
 			dialog.text = "Trafiłeś w czuły punkt, "+pchar.name+"! O mojej piękności mogę gadać bez końca. Trzecia klasa, dwadzieścia dział, doskonała prędkość — nie daj się zwieść, że 'kupiecki'!";
 			link.l1 = "Działa i prędkość — jasne. A co to za 'klasa'? 'Kupiecki'?";
 			link.l1.go = "Captain_7_question_3_2";
+			AddCharacterSkillPoints(pchar, "Sailing", 1);
 		break;
 
 		case "Captain_7_question_3_2":

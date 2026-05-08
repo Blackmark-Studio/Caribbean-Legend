@@ -589,7 +589,6 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 				if (NextDiag.TempNode != "I_know_you_good")
 					dialog.text = "お前、正気か" + GetSexPhrase("", "い") + "？うちの連中はお前を疫病のように避けてるんだ。消え失せろ、時間の無駄だ。";
 				else
@@ -597,12 +596,12 @@ void ProcessDialogEvent()
 				link.l1 = "わかったよ...";
 				link.l1.go = "exit";
 			}
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 		break;
 
 		case "pirate_threat_pay":
 			iGPThreatRate = 0;
 			iGPThreat = 0;
-			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iJackmanTotalTemp);
 			DialogExit();
 			PiratesDecreaseNotif("");

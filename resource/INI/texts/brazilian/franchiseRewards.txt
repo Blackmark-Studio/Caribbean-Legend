@@ -1,0 +1,17 @@
+condition_legendGuide
+{
+Este item aparecerá no jogo se você seguir a página
+Caribbean Legend
+}
+condition_mushket_indian
+{
+Este item aparecerá com os agiotas se você tiver
+Caribbean Legend: Age of Pirates
+}
+noRewardYetMessage
+{
+Esta recompensa ainda não está disponível,
+acompanhe as atualizações!
+}
+steamButtonAlreadyGot {Resgatado}
+steamButtonGet {Obter}

@@ -54,6 +54,13 @@ void OfficersReaction(string alignment)
 }
 //-> ugeen
 
+void ChangeOfficerLoyality(ref officer, int addLoyality)
+{
+	if (!CheckAttribute(officer, "loyality")) return;
+
+	officer.loyality = int(officer.loyality) + addLoyality;
+}
+
 void ChangeOfficersLoyality(string alignment, int iLoyality)
 { // aliggnment types : "bad" , "good" , "bad_all" , "good_all"
 

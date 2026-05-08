@@ -1,63 +1,121 @@
-QUEST_MESSAGE1 {Kolonia El Caimano jest pod okupacją.}
-QUEST_MESSAGE2 {Kolonia El Caimano została zdobyta.}
-QUEST_MESSAGE3 {Jesteś za stary, by oprzeć się klątwie azteckiego złota...}
-QUEST_MESSAGE4 {Znalazłeś skarb!}
-QUEST_MESSAGE5 {Nigel Blight zaatakował korwetę przemytników!}
-QUEST_MESSAGE6 {Nigel Blight zniknął!}
-QUEST_MESSAGE7 {Kapitanie, na horyzoncie widać "Czarną Perłę"!}
-QUEST_MESSAGE8 {Świetna robota. Zabiłeś Mistrza!}
-QUEST_MESSAGE9 {Teraz stoisz twarzą w twarz z tym okrutnym światem!}
-QUEST_MESSAGE10 {Bezlitosny pirat}
-QUEST_MESSAGE11 {zasługuje na specjalną nagrodę!}
-QUEST_MESSAGE12 {Niestety, zatrudniłeś już wystarczająco dużo oficerów! Możesz zatrudnić kolejnego dopiero po zwolnieniu jednego z nich.}
-Address_Form_Spa {Senor}
-Address_Form_Fra {Monsieur}
-Address_Form_Eng {Sir}
-Address_Form_Por {Senor}
-Address_Form_Hol {Mynheer}
-Swear_1 {Niech to szlag!}
+Address_Form_Eng {sir}
+Address_Form_Eng_Title1 {Kaper}
+Address_Form_Eng_Title2 {Dowódca}
+Address_Form_Eng_Title3 {Kapitan}
+Address_Form_Eng_Title4 {Komodor}
+Address_Form_Eng_Title5 {Admirał}
+Address_Form_EngWoman {miss}
+Address_Form_EngWoman2 {missis}
+Address_Form_Fra {monsieur}
+Address_Form_Fra_Title1 {Flibustier}
+Address_Form_Fra_Title2 {Dowódca}
+Address_Form_Fra_Title3 {Kapitan}
+Address_Form_Fra_Title4 {Komodor}
+Address_Form_Fra_Title5 {Wiceadmirał}
+Address_Form_FraWoman {mademoiselle}
+Address_Form_FraWoman2 {madame}
+Address_Form_Hol {mynheer}
+Address_Form_Hol_Title1 {Filibuster}
+Address_Form_Hol_Title2 {Dowódca}
+Address_Form_Hol_Title3 {Kapitan}
+Address_Form_Hol_Title4 {Komodor}
+Address_Form_Hol_Title5 {Admirał}
+Address_Form_HolWoman {mevrouw}
+Address_Form_HolWoman2 {frau}
+Address_Form_Pir {sir}
+Address_Form_Pir_Title1 {Pirat}
+Address_Form_Pir_Title2 {Dowódca}
+Address_Form_Pir_Title3 {Kapitan}
+Address_Form_Pir_Title4 {Komodor}
+Address_Form_Pir_Title5 {Admirał}
+Address_Form_PirWoman {miss}
+Address_Form_PirWoman2 {missis}
+Address_Form_Spa {senor}
+Address_Form_Spa_Title1 {Korsarz}
+Address_Form_Spa_Title2 {Dowódca}
+Address_Form_Spa_Title3 {Kapitan}
+Address_Form_Spa_Title4 {Komodor}
+Address_Form_Spa_Title5 {Admirał}
+Address_Form_SpaWoman {senorita}
+Address_Form_SpaWoman2 {senora}
+DayGreeting {Dzień dobry}
+EveningGreeting {Dobry wieczór}
+Exclamation_1 {O, Panie!}
+Exclamation_2 {Na niebiosa!}
+Exclamation_3 {Matko Boska!}
+FriendlyGoodbye_0 {Pa}
+FriendlyGoodbye_1 {Pa}
+FriendlyGreeting {Witam}
+MorningGreeting {Dzień dobry}
+NationEuropaTown_Eng {Londyn}
+NationEuropaTown_Fra {La Rochelle}
+NationEuropaTown_Hol {Amsterdam}
+NationEuropaTown_Pir {Tortuga}
+NationEuropaTown_Spa {Sewilla}
+NationKingsCrown_Eng {Protektorat Anglii, Szkocji i Irlandii}
+NationKingsCrown_Fra {Najjaśniejsza Korona Francji}
+NationKingsCrown_Hol {Zjednoczone Prowincje}
+NationKingsCrown_Pir {Bractwo Wybrzeża}
+NationKingsCrown_Spa {Hiszpańska Korona Katolicka}
+NationKingsName_Eng {Lorda Protektora Olivera Cromwella}
+NationKingsName_Fra {Jego Królewskiej Wysokości Ludwika XIV, Króla Francji i Nawarry}
+NationKingsName_Hol {Stanu Generalnego Zjednoczonych Prowincji Niderlandzkich}
+NationKingsName_Pir {Bractwa Wybrzeża}
+NationKingsName_Spa {Jego Katolickiej Mości Filipa IV Habsburga, Króla Hiszpanii i Indii}
+NationNameAblative_Eng {Anglikami}
+NationNameAblative_Fra {Francuzami}
+NationNameAblative_Hol {Holendrami}
+NationNameAblative_Pir {piratami}
+NationNameAblative_Spa {Hiszpanami}
+NationNameGenitive_Eng {Anglii}
+NationNameGenitive_Fra {Francji}
+NationNameGenitive_Hol {Holandii}
+NationNameGenitive_Pir {piratów}
+NationNameGenitive_Spa {Hiszpanii}
+NationNameMan_Eng {anglik}
+NationNameMan_Fra {francuz}
+NationNameMan_Hol {holender}
+NationNameMan_Pir {pirat}
+NationNameMan_Spa {hiszpan}
+NationNameNominative_Eng {Anglia}
+NationNameNominative_Fra {Francja}
+NationNameNominative_Hol {Holandia}
+NationNameNominative_Pir {Bractwo Wybrzeża}
+NationNameNominative_Spa {Hiszpania}
+NationNamePeople_Eng {anglicy}
+NationNamePeople_Fra {francuzi}
+NationNamePeople_Hol {holendrzy}
+NationNamePeople_Pir {piraci}
+NationNamePeople_Spa {hiszpanie}
+NationNamePeopleAcc_Eng {anglików}
+NationNamePeopleAcc_Fra {francuzów}
+NationNamePeopleAcc_Hol {holendrów}
+NationNamePeopleAcc_Pir {piratów}
+NationNamePeopleAcc_Spa {hiszpanów}
+NationNameWoman_Eng {angielka}
+NationNameWoman_Fra {francuzka}
+NationNameWoman_Hol {holenderka}
+NationNameWoman_Pir {piratka}
+NationNameWoman_Spa {hiszpanka}
+NightGreeting {Dobranoc}
+PoliteGoodbye_0 {Żegnaj}
+PoliteGoodbye_1 {Do zobaczenia}
+PoliteGreeting {Witajcie}
+Swear_1 {O w mordę!}
+Swear_10 {Do stu piorunów!}
+Swear_11 {Niech mnie prądy porwią!}
+Swear_12 {Osz, kurwa mać...!}
+Swear_13 {Zaraza!}
+Swear_14 {A żeby to!}
+Swear_15 {Do kurwy nędzy!}
 Swear_2 {Do diabła!}
-Swear_3 {O mój Boże!}
-Swear_4 {Cholera!}
-Swear_5 {Ja pierdolę!}
-Swear_6 {Do kroćset!}
-Swear_7 {O rany!}
-Swear_8 {Do stu tysięcy diabłów!}
-Swear_9 {Osz, kurwa mać!}
-Swear_10 {Zaraz!}
-TimeGreeting {Dzień dobry}
-Antigua {Antigua}
-Barbados {Barbados}
-Curacao {Curacao}
-Dominica {Dominika}
-Grenada {Grenada}
-Guadeloupe {Gwadelupa}
-Hispaniola {Hispaniola}
-IslaMona {Isla Mona}
-Jamaica {Jamajka}
-MarieGalante {Marie Galante}
-Martinique {Martynika}
-Montserrat {Montserrat}
-Nevis {Nevis}
-PuertoRico {Puerto Rico}
-StEustatius {St. Eustatius}
-StKitts {St. Kitts}
-StMartin {St. Martin}
-Tortuga {Tortuga}
-LaVega {La Vega}
-SantoDomingo {Santo Domingo}
-PetitGoave {Petit Goave}
-Bridgetown {Bridgetown}
-SanJuan {San Juan}
-SantiagoVega {Santiago Vega}
-OFFIC_TYPE_BOATSWAIN {bosman}
-OFFIC_TYPE_CANNONEER {kanonier}
-OFFIC_TYPE_QMASTER {kwatermistrz}
-OFFIC_TYPE_NAVIGATOR {nawigator}
-OFFIC_TYPE_FIRSTMATE {pierwszy oficer}
-Pirate {Pirat}
-Spain {Hiszpan}
-France {Francuz}
-Smuggler {Przemytnik}
-Holland {Holender}
-England {Anglik}
+Swear_3 {Cholera!}
+Swear_4 {Szlag by to!}
+Swear_5 {O kurwa...}
+Swear_6 {O ja pierdolę!}
+Swear_7 {Argh!!!}
+Swear_8 {Co u licha!}
+Swear_9 {Bóbr kurwa!}
+Title_Captain {kapitan}
+Title_Ghovernor {gubernator generalny}
+Title_ViceAdmiral {wiceadmirał}

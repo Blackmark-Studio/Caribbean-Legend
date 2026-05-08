@@ -395,7 +395,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
 		if (bOk1 || bOk2)
         {
-			dialog.text = "Two days past, there was a brazen attempt on the Port Chief's life! The would-be assassin lay in wait by his office door, but the Chief managed to cry for help. A musketeer arrived with haste and wounded the villain, though the knave managed to flee the city gates\nWord has it the Port Chief is offering a handsome bounty for the rogue's head! Thus far, no souls brave enough have come forward. Vous savez, même s'il offrait mille doublons - je n'accepterais pas...";
+			dialog.text = "The day before yesterday, there was a brazen attempt on the port chief’s life! The killer was waiting for him outside his office, but the chief managed to call for help. A musketeer who came running wounded the attacker, but the scoundrel still managed to escape the city.\nThey say the port chief is offering a handsome reward for the man’s head! So far, no one in town has proved that brave. You know, even if he offered a thousand doubloons, I still wouldn’t take the job...";
 			link.l1 = "Thank you, I must take my leave.";
 			link.l1.go = "exit";
 			GS_Start();
@@ -685,7 +685,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		break;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         case "rumours_capitan":
-			Dialog.Text = SelectRumourEx("captain",NPChar);
+			Dialog.Text = SelectRumourEx("capitan", NPChar);
 			Link.l1 = RandPhraseSimple(RandSwear()+"Interesting! There is one more thing I want to ask...","One more question.");
 			Link.l1.go = "quests";
 			Link.l2 = RandPhraseSimple("Thanks, I should go.","Farewell.");

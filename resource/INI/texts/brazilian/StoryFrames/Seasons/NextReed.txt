@@ -1,0 +1,46 @@
+Node0_a {Começa a época da primavera. As últimas semanas de tempo seco são o momento ideal para colher as plantações coloniais, acima de tudo a cana. A atividade das correntes e a força dos ventos alísios se aproximam do auge, e o comércio floresce no Caribe.$br$redMilhares de escravos são trazidos da África em navios superlotados, enquanto numerosos comboios carregados de especiarias, madeira e tabaco partem dia e noite para as colônias capitais.}
+Node0_a_action {Hora do lucro!}
+Node0_b_a {As plantações trabalham sem descanso. A cana é cortada do amanhecer ao anoitecer, o tabaco seca em fileiras cerradas sob os telhados, e nos pátios costeiros mogno e guáiaco estão empilhados, prontos para embarque. Logo os portos estarão abarrotados de gente querendo lucrar, e os navios mercantes vão inundar o mar do Caribe.}
+Node0_b_a_reaction {O comércio é minha paixão!}
+Node0_b_a_reaction_log {Você sabe exatamente onde estão as plantações mais produtivas e os armazéns mais espaçosos. Não será difícil conseguir mais mercadoria para vender do que qualquer outra pessoa.}
+Node0_b_b {Este ano, as ilhas estão produzindo em abundância excepcional. Os engenhos de açúcar fumegam sem parar, os galpões de tabaco estão abarrotados, e na costa há fileiras de troncos de mogno e ébano empilhados. O comércio anda tão intenso que os portos parecem um único armazém sem fim. Os comboios partem carregados até o topo, mas a mercadoria continua chegando mais rápido do que conseguem escoá-la. Nessas condições, os vendedores são obrigados a lutar literalmente por cada comprador.}
+Node0_b_b_reaction {A roupa faz a pessoa}
+Node0_b_b_reaction_log {Você é conhecido e respeitado em todos os portos e lojas. Não importa como conquistou sua fama - a um capitão famoso sempre tentam oferecer as melhores condições.}
+Node0_b_c {As duas últimas semanas da Temporada da Coroa foram inesperadamente secas e quentes, e incêndios eclodiram em várias ilhas. A grama seca e a cana pegaram fogo num instante, e parte da colheita se perdeu antes mesmo de ser processada. Nem todos os galpões de tabaco sobreviveram, e vários depósitos de madeira queimaram junto com os cais. Isso reduziu bastante a quantidade de bens coloniais nas colônias e prejudicou o comércio.}
+Node0_b_c_reaction {Compre agora ou nunca!}
+Node0_b_c_reaction_log {Você decide aproveitar o pânico geral para vender mercadorias mais caras nas colônias capitais. A informação corre devagar - ninguém vai saber se você espalhar um pouco mais de pânico...}
+Node0_b_d {No inverno, as potências acumularam reservas para o caso de guerra, mas na primavera a tensão diminuiu. Os armazéns ficaram abarrotados de seda holandesa, cordas russas e barris de piche. Parte dos suprimentos foi colocada à venda para não deixar dinheiro público parado em estoque morto, e agora é possível encontrar, inesperadamente, alguns bens estratégicos nas lojas coloniais.}
+Node0_b_d_reaction {Será que ainda tem mais?}
+Node0_b_d_reaction_log {Seus livros de registro estão cheios de anotações sobre cada colônia, feitas com cuidado ao longo de muitos meses. Você sabe exatamente onde e com quem ainda existe estoque extra de mercadorias, até mesmo estratégicas. Só falta apertar.}
+Node0_c_a {Os sucessos recentes das potências coloniais na África permitiram trazer carregamentos especialmente grandes de escravos, o que vai acelerar bastante a produção em todas as colônias. Plantações, minas e propriedades logo vão despejar toneladas de mercadoria no mercado, e os mercadores já estão se preparando para a queda dos preços.}
+Node0_c_a_reaction {Compre, compre!}
+Node0_c_a_reaction_log {Você conhece o básico do comércio e sabe muito bem que, se algo está sendo vendido mais barato, o certo é comprar mais. Sob a justificativa de compras em grandes lotes, você pretende derrubar os preços.}
+Node0_c_b {No Brasil, uma revolta irrompeu de forma inesperada, e os envios para a Europa foram prejudicados. As metrópoles reagiram na mesma hora, voltando os olhos para o Caribe. As tentativas de compensar a escassez levaram a um forte aumento da demanda por bens das colônias caribenhas. As letras de câmbio para a compra de lotes chegam sem parar, prometendo ampliar a diferença de preços a cada travessia do Atlântico. Se comprar bem nas colônias produtoras, dá para fazer fortuna em uma única temporada.}
+Node0_c_b_reaction {Um navio a mais não faria mal}
+Node0_c_b_reaction_log {Você é um negociante experiente e respeitado, e sabe exatamente como ampliar ainda mais a diferença de preços entre as colônias produtoras e as colônias capitais. O tempo e a falta de informação só vão jogar a seu favor.}
+Node0_c_c {O Caribe está agitado com uma notícia vinda da Europa: surgiu na corte uma nova paixão pelos doces. Nas recepções servem café e chocolate, os banquetes terminam com frutas cristalizadas e xaropes, e nenhum nobre que se preze quer parecer mesquinho. O açúcar está sendo vendido mais rápido do que consegue chegar. As casas mercantis recebem encomendas lucrativas e compram lotes adiantados nas colônias capitais, sem esperar a venda aberta.}
+Node0_c_c_reaction {Venda, venda!}
+Node0_c_c_reaction_log {Quando a demanda cresce de forma explosiva, o importante não é só vender a mercadoria, mas convencer todo mundo de que a sua é a melhor. Sendo um comerciante experiente, você vai destacar com facilidade sua vantagem sobre a concorrência.}
+Node0_c_d {Uma das maiores casas comerciais da Europa ruiu sob o peso das dívidas. O pânico varreu as metrópoles e chegou aos portos do Caribe. Banqueiros e agiotas endureceram fortemente as condições de crédito e tentam formar uma reserva de prata oferecendo melhores condições para os depósitos.}
+Node0_c_d_reaction {O ouro é o melhor investimento}
+Node0_c_d_reaction_log {Você conhece o valor dos dobrões e convencerá com facilidade qualquer agiota de que depósitos em ouro são muito mais seguros, tanto para eles quanto para você.}
+Node0_c_e {Depois de longas disputas na corte francesa, decidiram rever as tarifas coloniais. Parte das mercadorias foi oficialmente retirada da lista de itens proibidos, e as antigas penalidades foram suspensas temporariamente. As potências rivais do Louvre responderam da mesma forma, e agora é possível comerciar prata e ouro nos portos de todo o arquipélago do Caribe, enquanto aquilo que antes era considerado contrabando agora é legal.}
+Node0_c_e_reaction {E quanto à mercadoria viva?}
+Node0_c_e_reaction_log { }
+Node0_d_a {Com a chegada da primavera, as águas costeiras ganham vida. Cavalas e sardinhas aparecem nos baixios, o atum se aproxima dos recifes, e tartarugas marinhas são pescadas junto às praias de areia. Os marinheiros lançam redes direto dos botes, defumam peixe na praia e enchem barris com água doce de riachos costeiros em qualquer parada.}
+Node0_d_a_reaction {Uma dieta variada ajuda}
+Node0_d_a_reaction_log {Você decide montar uma ração marítima variada e completa, complementando os tradicionais biscoitos e a carne salgada com peixe e carne frescos. Um cardápio bem planejado, sob a supervisão do médico de bordo, ajudará a reduzir o risco de surtos de epidemias e escorbuto.}
+Node0_d_b {Nesta primavera, o mar está mais generoso do que nunca. O tempo favorável e a fartura de alimento permitiram que peixes e caça se multiplicassem além de toda medida. Os cardumes de atum são incontáveis, e as lagoas estão cheias de lagostas e caranguejos. Até uma parada curta basta para encher os porões com carne e peixe frescos, deixando intactas as provisões salgadas.}
+Node0_d_b_reaction {Há que juntar tudo o que der}
+Node0_d_b_reaction_log {Você decide selecionar os marinheiros mais ágeis para um destacamento especial que se dedicará exclusivamente à coleta de provisões. É preciso aproveitar a generosidade do mar e da terra enquanto isso ainda for possível.}
+Node0_d_c {Na Temporada da Cana, todo mundo sabe que dá para ganhar dinheiro rápido - os portos fervilham com histórias de capitães que voltaram com os porões cheios de prata. Os rumores inflam as expectativas, e os marinheiros já não vão para o mar por um pagamento comum, enquanto contramestres experientes não assinam contrato sem um adiantamento generoso.}
+Node0_d_c_reaction {Eu não tenho um plano, mas tenho uma ideia!}
+Node0_d_c_reaction_log {Você decide economizar nas remunerações graças ao seu carisma, à sua habilidade de convencer as pessoas a segui-lo e às histórias de que toda a tripulação do navio é uma grande família unida.}
+Node0_success
+{
+A Temporada da Cana é tempo de caravanas de Fleut, tachos de açúcar fumegando e do tilintar de moedas por toda parte.
+O arquipélago vive de cobiça e febre do jogo - e é difícil não se apaixonar por isso.
+Agora é tão fácil quebrar quanto fazer fortuna. Qual será o seu destino?
+}
+Node0_success_action {Eu escolho a riqueza!}
+Node0_title {Temporada da Cana}

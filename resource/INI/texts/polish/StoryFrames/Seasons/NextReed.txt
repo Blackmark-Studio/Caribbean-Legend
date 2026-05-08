@@ -1,0 +1,46 @@
+Node0_a {Zaczyna się pora wiosenna. Ostatnie tygodnie suchej pogody to idealny czas na zbiory roślin kolonialnych, przede wszystkim trzciny. Aktywność prądów i siła pasatów zbliżają się do szczytu, a handel na Karaibach rozkwita.$br$redTysiące niewolników przywozi się z Afryki na przepełnionych statkach, a liczne konwoje załadowane przyprawami, drewnem i tytoniem dniem i nocą ruszają do kolonii stołecznych.}
+Node0_a_action {Czas na zysk!}
+Node0_b_a {Plantacje pracują bez wytchnienia. Trzcinę tnie się od świtu do zmierzchu, tytoń suszy się gęstymi rzędami pod zadaszeniami, a na nadbrzeżnych dziedzińcach stosami leżą mahoń i gwajak, gotowe do wysyłki. Wkrótce w portach będzie tłok od ludzi żądnych zysku, a statki handlowe zaleją Morze Karaibskie.}
+Node0_b_a_reaction {Handel to moja pasja!}
+Node0_b_a_reaction_log {Dokładnie wiesz, gdzie są najbardziej wydajne plantacje i największe magazyny. Zdobycie większej ilości towaru na sprzedaż niż ktokolwiek inny nie sprawi ci trudności.}
+Node0_b_b {W tym roku wyspy dają wyjątkowo obfity plon. Cukrownie dymią bez przerwy, szopy z tytoniem pękają w szwach, a na brzegu rzędami leżą bale mahoniu i hebanu. Handel huczy tak mocno, że porty wyglądają jak jeden wielki magazyn. Konwoje odpływają załadowane po brzegi, a mimo to towar napływa szybciej, niż da się go wywieźć. W takich warunkach sprzedawcy są zmuszeni dosłownie walczyć o kupca.}
+Node0_b_b_reaction {Jak cię widzą, tak cię piszą}
+Node0_b_b_reaction_log {Znają cię i szanują we wszystkich portach i sklepach. Nieważne, czym zdobyłeś swoją sławę - znanemu kapitanowi zawsze starają się zaoferować najlepsze warunki.}
+Node0_b_c {Ostatnie dwa tygodnie Sezonu Korony były zaskakująco suche i gorące, a na kilku wyspach wybuchły pożary. Sucha trawa i trzcina zajmowały się ogniem natychmiast, a część plonów spłonęła jeszcze przed przerobem. Nie wszystkie szopy tytoniowe ocalały, a kilka składów drewna spłonęło razem z pomostami. To znacznie zmniejszyło ilość towarów kolonialnych w koloniach i podkopało handel.}
+Node0_b_c_reaction {Kupuj teraz albo nigdy!}
+Node0_b_c_reaction_log {Postanawiasz wykorzystać powszechną panikę, by sprzedawać towary drożej w koloniach stołecznych. Informacje rozchodzą się powoli - nikt się nie dowie, jeśli jeszcze trochę podsycisz panikę...}
+Node0_b_d {Zimą mocarstwa gromadziły zapasy na wypadek wojny, lecz wiosną napięcie opadło. Magazyny okazały się przepełnione holenderskim jedwabiem, rosyjskimi linami i beczkami smoły. Część zapasów postanowiono puścić do sprzedaży, by nie trzymać państwowych pieniędzy w martwym towarze, i w sklepach kolonialnych można niespodziewanie dostać trochę towarów strategicznych.}
+Node0_b_d_reaction {Może znajdzie się jeszcze trochę?}
+Node0_b_d_reaction_log {W twoich księgach rachunkowych tłoczą się zapiski o każdej kolonii, pieczołowicie nanoszone przez wiele miesięcy. Dokładnie wiesz, gdzie i u kogo znajdzie się dodatkowy zapas towarów, nawet strategicznych. Pozostaje tylko nacisnąć.}
+Node0_c_a {Niedawne sukcesy potęg kolonialnych w Afryce pozwoliły sprowadzić wyjątkowo duże transporty niewolników, co znacznie przyspieszy produkcję we wszystkich koloniach. Plantacje, kopalnie i posiadłości już wkrótce wyrzucą na rynek tony towaru, a kupcy zawczasu przygotowują się na spadek cen.}
+Node0_c_a_reaction {Kupuj, kupuj!}
+Node0_c_a_reaction_log {Znasz podstawy handlu i doskonale wiesz, że jeśli coś sprzedaje się taniej, trzeba kupić tego więcej. Pod przykrywką hurtowych zakupów zamierzasz zbijać ceny.}
+Node0_c_b {W Brazylii niespodziewanie wybuchło powstanie i dostawy do Europy zostały zakłócone. Metropolie zareagowały natychmiast, kierując wzrok na Karaiby. Próby zrekompensowania niedoboru doprowadziły do gwałtownego wzrostu popytu na towary z karaibskich kolonii. Weksele na wykup partii napływają bez przerwy, zapowiadając coraz większą różnicę cen z każdym rejsem przez Atlantyk. Jeśli dobrze zaopatrzyć się w koloniach produkcyjnych, w jeden sezon można zbić fortunę.}
+Node0_c_b_reaction {Przyda się dodatkowy statek}
+Node0_c_b_reaction_log {Jesteś doświadczonym i szanowanym kupcem i doskonale wiesz, jak jeszcze bardziej zwiększyć różnicę cen między koloniami wydobywczymi a stołecznymi. Czas i brak informacji zagrają tylko na twoją korzyść.}
+Node0_c_c {Karaiby zelektryzowała wieść z Europy: na dworach wybuchła nowa namiętność do słodyczy. Na przyjęciach podaje się kawę i czekoladę, uczty kończą się kandyzowanymi owocami i syropami, a żaden szanujący się możnowładca nie chce wyglądać na skąpca. Cukier schodzi szybciej, niż zdąża się go dowieźć. Domy kupieckie dostają lukratywne zamówienia i wykupują partie w koloniach stołecznych z wyprzedzeniem, nie czekając na wolną sprzedaż.}
+Node0_c_c_reaction {Sprzedawaj, sprzedawaj!}
+Node0_c_c_reaction_log {Przy gwałtownym wzroście popytu ważne jest nie tylko sprzedać towar, ale przekonać wszystkich, że twój jest najlepszy. Jako doświadczony handlarz z łatwością podkreślisz swoją przewagę nad konkurencją.}
+Node0_c_d {Jeden z największych europejskich domów handlowych runął pod ciężarem długów. Panika przetoczyła się przez metropolie i dotarła do karaibskich portów. Bankierzy i lichwiarze gwałtownie zaostrzyli warunki kredytów i próbują zgromadzić rezerwę srebra, oferując lepsze warunki lokat.}
+Node0_c_d_reaction {Złoto to najlepsza inwestycja}
+Node0_c_d_reaction_log {Znasz wartość dublonów i bez trudu przekonasz każdego bankiera, że lokaty w złocie są znacznie pewniejsze zarówno dla nich, jak i dla ciebie.}
+Node0_c_e {Po długich sporach na dworze francuskim postanowiono zrewidować cła kolonialne. Część towarów oficjalnie wykreślono z listy zakazanych, a stare kary tymczasowo zawieszono. Rywalizujące z Luwrem państwa odpowiedziały tym samym i teraz w portach całego archipelagu karaibskiego można handlować srebrem i złotem, a to, co wcześniej uchodziło za przemyt, jest już legalne.}
+Node0_c_e_reaction {A co z żywym towarem?}
+Node0_c_e_reaction_log { }
+Node0_d_a {Wraz z nadejściem wiosny ożywają przybrzeżne wody. Przy mieliznach idą makrele i sardynki, do raf podpływa tuńczyk, a przy piaszczystych plażach łapie się żółwie morskie. Marynarze stawiają sieci prosto z szalup, wędzą ryby na brzegu i podczas każdego postoju napełniają beczki słodką wodą z przybrzeżnych strumieni.}
+Node0_d_a_reaction {Zróżnicowana dieta pomaga}
+Node0_d_a_reaction_log {Postanawiasz ułożyć zróżnicowaną i pełnowartościową morską rację żywnościową, uzupełniając zwykłe suchary i solone mięso świeżą rybą oraz mięsem. Dobrze opracowane menu pod nadzorem lekarza okrętowego pozwoli zmniejszyć ryzyko wybuchu epidemii i szkorbutu.}
+Node0_d_b {Tej wiosny morze jest hojniejsze niż kiedykolwiek. Sprzyjająca pogoda i nadmiar pożywienia pozwoliły rybom i zwierzynie rozmnożyć się ponad wszelką miarę. Ławice tuńczyka są nie do przeliczenia, a laguny pełne homarów i krabów. Nawet krótki postój wystarcza, by zapełnić ładownie świeżym mięsem i rybą, a zgromadzona solonina pozostaje nietknięta.}
+Node0_d_b_reaction {Zebrać wszystko, co się da}
+Node0_d_b_reaction_log {Postanawiasz wybrać najzwinniejszych marynarzy do specjalnego oddziału, który będzie zajmował się wyłącznie zdobywaniem zapasów. Trzeba korzystać z hojności morza i lądu, póki to możliwe.}
+Node0_d_c {W Sezonie Trzciny każdy wie, że można szybko zarobić - porty huczą od opowieści o kapitanach wracających z ładowniami pełnymi srebra. Plotki rozbudzają oczekiwania i marynarze nie chcą już pływać za zwyczajną płacę, a doświadczeni bosmani nie podpisują kontraktu bez porządnej zaliczki.}
+Node0_d_c_reaction {Nie mam planu, ale mam pomysł!}
+Node0_d_c_reaction_log {Postanawiasz oszczędzić na wypłatach dzięki swojej charyzmie, umiejętności przekonywania ludzi, by za tobą szli, oraz opowieściom o tym, że cała załoga na statku to jedna wielka, zgrana rodzina.}
+Node0_success
+{
+Sezon Trzciny to karawany Fluita, dymiące warzelnie cukru i wszechobecny brzęk monet.
+Archipelag żyje chciwością i gorączką zysku - i trudno się w tym nie zakochać.
+Teraz równie łatwo można zbankrutować, co zbić fortunę. Jaki będzie twój los?
+}
+Node0_success_action {Wybieram bogactwo!}
+Node0_title {Sezon Trzciny}

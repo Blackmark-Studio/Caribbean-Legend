@@ -11,6 +11,70 @@ void InitMultiObjectCommon(
 	rItem.component.(sAttr).qty = component_qty;
 }
 
+ref InitStdMusketCommon(
+	string id,
+	string ModelID,
+	string picTexture,
+	int picIndex,
+	float Rare,
+	int MinLevel,
+	int Price,
+	float DmgMin,
+	float DmgMax,
+	float Weight,
+	int Charges,
+	int Quality,
+	float Attack )
+{
+	object Mus;
+	Mus.id				= id;		
+	Mus.groupID			= MUSKET_ITEM_TYPE;
+	Mus.name			= "itmname_" + id;
+	Mus.describe		= "itmdescr_" + id;		
+	Mus.model			= ModelID;
+	Mus.folder 			= "ammo";
+	Mus.chargeQ			= Charges;
+	Mus.picTexture		= picTexture;
+	Mus.picIndex		= picIndex;
+	Mus.dmg_min			= DmgMin;
+	Mus.dmg_max			= DmgMax;
+	Mus.price			= Price;	
+	Mus.ItemType 		= "WEAPON";
+	Mus.rare 			= Rare;
+	Mus.quality 		= Quality;
+	Mus.minlevel 		= MinLevel;
+	Mus.Weight 			= Weight;
+	Mus.ChargeSpeed 	= 10.0; // by default
+	Mus.TradeType 		= ITEM_TRADE_AMMUNITION;
+	Mus.attack = Attack;
+	return InitNewItem(&Mus);
+}
+
+void InitGunWithAmmoParams(
+	ref ref_id_idx,
+	string sAttr,
+	string sBullet,
+	string sGunPowder,
+	float  DmgMin,
+	float  DmgMax,
+	float  EnergyP,
+	bool   MultiDamage,
+	int    MisFire,
+	int    ChargeSpeed,
+	bool   isDefault )
+{
+	ref gun = FindItem_VT(ref_id_idx);
+	gun.type.(sAttr).bullet 		= sBullet;
+	gun.type.(sAttr).gunpowder 		= sGunPowder;
+	gun.type.(sAttr).DmgMin			= DmgMin;
+	gun.type.(sAttr).DmgMax			= DmgMax;
+	gun.type.(sAttr).EnergyP		= EnergyP;
+	gun.type.(sAttr).multidmg       = MultiDamage;
+	gun.type.(sAttr).misfire        = MisFire;
+	gun.type.(sAttr).ChargeSpeed    = ChargeSpeed;
+	gun.type.(sAttr).Default        = isDefault;
+}
+
 ref InitNewItem(ref newItem)
 {
 	int i;
@@ -125,6 +189,7 @@ void ReinitBladeDamage(ref blade)
 		case "blade_36": blade.attack = 100; break;
 		case "q_blade_21": blade.attack = 100; break;
 		case "blade_WR": blade.attack = 100; break;
+		case "blade_34": blade.attack = 48; break;
 	}
 }
 

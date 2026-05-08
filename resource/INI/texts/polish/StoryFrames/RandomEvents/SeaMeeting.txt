@@ -1,0 +1,78 @@
+Node0_title {Spotkanie na morzu}
+Node0_a_a {Stoicie przy sterze i rozważacie dalszą trasę, gdy nagle słyszycie gwizd z marsa. Kilka chwil później zjawia się przed wami obserwator i melduje, że dostrzegł przed dziobem statek pod $key($nationI($ctx(nation))AdjRoot) flagą.$br$red „$ctx(shipName)” to $rand(barka|barkentyna|fluita) i przecina wasz kurs z zamkniętymi furtami działowymi. Wpatrujecie się w lunetę i widzicie, że ich kapitan daje wam sygnały. Wysyłacie posłańca szalupą, by dowiedzieć się, czego chcą.$br$red Dziesięć minut później meldują wam, że na „$ctx(shipName)” sytuacja z wodą pitną jest ciężka. Podczas sztormu uderzyła w nich fala i beczki w ładowni się przewróciły, więc teraz muszą oszczędzać. Proszą was, byście podzielili się zapasami.}
+Node0_a_a_action {Oczywiście!}
+Node0_a_a_success {Bóg nakazał się dzielić i postępujecie według tego przykazania. Dziś pomożecie komuś w potrzebie, a jutro szczęście was nie opuści. Oddajecie kupcowi część swoich beczek z wodą i życzycie mu szczęśliwej drogi. Załoga uważa, że postąpiliście słusznie.}
+Node0_a_a_success_action {Każdy zrobiłby to samo}
+Node0_a_b_action {To nie za darmo}
+Node0_a_b_success {Uznajecie, że bezinteresowne pomaganie obcym, których być może nigdy więcej nie spotkacie, to jednak zbyt wiele. Jeśli kapitan chce dotrzeć do portu bez kłopotów, będzie musiał zapłacić za waszą wodę. $br$redKapitan statku „$ctx(shipName)” zgadza się na układ i przeładowujecie wodę na jego jednostkę. W załodze opinie są podzielone. Jedni uważają, że postąpiliście słusznie, inni przypominają o bezinteresowności.}
+Node0_a_b_success_action {Przykazań na suchary nie posmarujesz}
+Node0_a_c_action {Nie mamy czym wam pomóc}
+Node0_a_c_success { }
+Node0_a_c_success_action {Świat jest okrutny}
+Node0_a_b {Siedzicie przy pracy w swojej kajucie, gdy nagle słyszycie wystrzał armatni i przytłumiony okrzyk z bocianiego gniazda. Wychodząc na pokład, żądacie natychmiastowego meldunku o sytuacji.$br$red Przed wami dryfuje „$ctx(shipName)”, należący do $key($nationI($ctx(nation))Gen). Uważnie przyglądacie się temu $rand(brygowi|fluicie|galeonowi|barce) i od razu dostrzegacie kilka niepokojących szczegółów: na relingach wiszą prześcieradła, na pokładzie widać niewielu ludzi, a na masztach flagi opuszczono do połowy — znak epidemii na pokładzie. Wysyłacie posłańca w szalupie, by poznał szczegóły.$br$redPosłaniec wraca z wieścią, że na statku panuje epidemia $rand(błotnej gorączki|żółtaczki|malarii). Ich własny lekarz padł jako pierwszy po kontakcie z chorymi, a teraz wszyscy są zrozpaczeni. Gotowi są oddać cokolwiek za wasze lekarstwa, byle tylko zatrzymać śmierć. Na pierwszy rzut oka wygląda to jak zwyczajna prośba o pomoc, ale bliski kontakt z chorym statkiem zawsze niesie ryzyko.}
+Node0_b_a_action {Pomożemy}
+Node0_b_a_success {Postanawiacie zaryzykować i podpływacie burta w burtę. Marynarze przeładowują lekarstwa i pomagają pozbyć się trupów. Zachowaliście się jak porządny chrześcijanin, nie zostawiając ludzi w nieszczęściu, ale za tę szlachetność przyjdzie wam zapłacić wysoką cenę. Już podczas odpływania czujecie osłabienie i złe samopoczucie.}
+Node0_b_a_success_action {Zrobiliśmy, co mogliśmy}
+Node0_b_b_action {Spuścić szalupę z lekarstwami}
+Node0_b_b_success {Na szalupie nie zmieści się wiele lekarstw, a podniesienie jej na pokład „$ctx(shipName)” nie będzie łatwe, ale tylko na tyle jesteście gotowi. Z poczuciem spełnionego obowiązku i czystym sumieniem każecie podnieść żagle.}
+Node0_b_b_success_action {Są w rękach Pana}
+Node0_b_c_action {Nie boję się zarazy}
+Node0_b_c_success {Zawsze byliście dumni ze swojego zdrowia i od wielu miesięcy wpajaliście zdrowy tryb życia na własnym statku. Bez obawy przed epidemią przekazujecie lekarstwa na pokład „$ctx(shipName)”. Są wam szczerze wdzięczni i obiecują wszystkim opowiadać o waszej pomocy.$br$redPod wieczór czujecie lekkie osłabienie, ale to niewielka cena za ocalenie ludzkiego życia.}
+Node0_b_c_success_action {Naszego ducha nie złamać!}
+Node0_b_d_action {Nie możemy wam pomóc}
+Node0_b_d_success {Odmawiacie prośbie, zasłaniając się lękiem przed zarażeniem. Załoga pochwala tę decyzję, ale was gryzie sumienie. Czy ryzyko było naprawdę aż tak wielkie, że porzuciliście ludzi w chwili skrajnej potrzeby? Czeka ich pewna śmierć...}
+Node0_b_d_success_action {Świat jest okrutny}
+Node0_a_c {Podczas postoju na połów ryb i przegląd olinowania okręt znajduje się w niebezpiecznym położeniu, a wy jak zwykle wpatrujecie się w lunetę, $rand(wspierając obserwatora|nie spuszczając oczu z horyzontu).$br$redKoło południa na horyzoncie pojawia się $rand(szkuner|bark|barkentyna|fluita|pinasa) pod banderą $key($nationI($ctx(nation))Gen). Furty działowe ma zamknięte, zanurzenie $rand(bardzo głębokie|głębokie) — to wyraźnie nie jest przebrany okręt piracki. Statek sygnalizuje prośbę o zbliżenie, a wy wyrażacie zgodę, chcąc się dowiedzieć, czego od was chcą.$br$redGdy „$ctx(shipName)” zrównał się z wami burtą, na waszym pokładzie zjawia się ich wysłannik. Opowiada, że ich kapitan zdołał zdobyć w ostatnim rejsie $rand(przyzwoitą|sporą) partię niewolników, lecz $rand(nieco|lekko) przeliczył zapasy prowiantu i teraz zastanawia się, co z tym zrobić.$br$redKwatermistrz „$ctx(shipName)” proponuje wam $rand(wymienić|zamienić) trochę żywego towaru na prowiant.}
+Node0_c_a_action {Zgadzamy się}
+Node0_c_a_success {Zgadzacie się na układ. Niewolników zawsze można sprzedać z zyskiem, a takich ofert lepiej nie odrzucać. Marynarze z „$ctx(shipName)” sprowadzają skute kajdanami nieszczęśniki do waszej ładowni, a wy w zamian przekazujecie im bele prowiantu i beczki wody. Niektórzy członkowie załogi nie pochwalają handlu niewolnikami, ale was to nie obchodzi.}
+Node0_c_a_success_action {Czarna kość słoniowa}
+Node0_c_b_action {Możemy wam po prostu sprzedać prowiant}
+Node0_c_b_success {Proponujecie kapitanowi „$ctx(shipName)” nieco prowiantu w zamian za to, że zamieni za wami dobre słowo w porcie docelowym. Ten z radością się zgadza. Załoga waszego statku uważa takie rozwiązanie za dziwne, lecz nikt nie śmie wam się sprzeciwić.}
+Node0_c_b_success_action {To inwestycja w przyszłość}
+Node0_c_c_action {A co z większą partią?}
+Node0_c_c_success {Wykorzystujecie swoją znajomość handlu, by przekonać kapitana „$ctx(shipName)” do wymiany większej partii niewolników, niż pierwotnie planował. Po krótkich negocjacjach ustalacie liczbę, z której obie strony są zadowolone. Załodze niespecjalnie podoba się obecność tak wielu jeńców na pokładzie.}
+Node0_c_c_success_action {Będziemy bogaci!}
+Node0_c_d_action {Nas to nie interesuje}
+Node0_c_d_success {Odrzucacie układ i wydajecie rozkaz odbicia od statku. Handel niewolnikami was nie interesuje, a załoga popiera tę decyzję.}
+Node0_c_d_success_action {Wszystko ma swoje granice}
+Node0_a_d {Na pokładzie wydajecie oficerom poranne polecenia, gdy nagle rozlega się gwizd obserwatora. Wskazuje on ręką ku horyzontowi, po czym schodzi z masztu z meldunkiem.$br$redW polu widzenia pojawił się $key($nationI($ctx(nation))AdjRoot)i okręt — $rand(bryg|korweta|szkuner wojenny|szniawa|xebek) „$ctx(shipName)”. Statek płynie wyjątkowo ociężale, ma duże zanurzenie i porwane żagle. Każecie podejść bliżej i wysłać posłańca.$br$redOkazuje się, że to $key($nationI($ctx(nation))AdjRoot)y okręt patrolowy. Niedawno przeprowadzili udany rajd na karawanę handlową swoich wrogów — $key(people$nationI($ctx(enemyNation))Gen). Ich ładownia jest teraz pełna towarów, ale zapasy płótna żaglowego już się skończyły. Proponują wam wymienić część ładunku na płótno.}
+Node0_d_a_action {Z przyjemnością}
+Node0_d_a_success {Zgadzacie się na wymianę. Gdy marynarze przenoszą towary, wypytujecie kapitana „$ctx(shipName)” o jego przygody.$br$redDzieli się z wami imponującą historią o tym, jak $rand(natknął się na piracki bryg u wybrzeży $rand(Martyniki|Gwadelupy|Trynidadu|Curaçao) i stoczył ciężki bój|rozbił siatkę przemytników działających tuż pod nosem gubernatora|wpadł w straszliwy sztorm podczas patrolu i o mało nie poszedł na dno|wpadł na ledwie widoczny atol $rand(w pobliżu Kuby|niedaleko Hispanioli|między Portoryko a Tortugą)|wpadł w zasadzkę Indian podczas krenowania statku).}
+Node0_d_a_success_action {Jakie to ciekawe!}
+Node0_d_b_action {Pomożemy wam z naprawą}
+Node0_d_b_success {Naprawiacie statek wspólnym wysiłkiem. Gdy marynarze zajmują się reperowaniem żagli, kapitan przy kieliszku wina snuje wam zajmującą opowieść o tym, jak $rand(natknął się na piracki bryg u wybrzeży $rand(Martyniki|Gwadelupy|Trynidadu|Curaçao) i stoczył ciężki bój|rozbił siatkę przemytników działających tuż pod nosem gubernatora|wpadł w straszliwy sztorm podczas patrolu i o mało nie poszedł na dno|wpadł na ledwie widoczny atol $rand(w pobliżu Kuby|niedaleko Hispanioli|między Portoryko a Tortugą)|wpadł w zasadzkę Indian podczas krenowania statku).}
+Node0_d_b_success_action {Imponujące!}
+Node0_d_c_action {Nie możemy wam pomóc}
+Node0_d_c_success {Odrzucacie wymianę i zostawiacie statek za rufą. Załodze wyraźnie nie podoba się wasza decyzja, ale nikt nie odważy się powiedzieć tego wprost.}
+Node0_d_c_success_action {Sami bardziej tego potrzebujemy}
+Node0_a_e {U wybrzeży $key($ctx(islandName)Gen) natykacie się na niewielką kabotażową łajbę, z której wam $rand(zapamiętale machają flagami|machają flagami do upadłego), próbując zwrócić waszą uwagę. $rand(Wysyłacie szalupę z posłańcem|Spuszczacie szalupę i posyłacie posłańca).$br$redPosłaniec melduje, że wołają właśnie was: na ich pokładzie trwa $rand(gorący spór|kłótnia), która grozi, że $rand(przerodzi się w rzeź|skończy się rozlewem krwi), a kapitan statku o dumnym imieniu „$ctx(shipName)” chce was zaprosić jako $rand(bezstronnego sędziego|arbitra). $rand(Obiecują wam nagrodę|Oferują zapłatę), jeśli $rand(osądzicie ich po sumieniu|powiecie swoje słowo zgodnie z sumieniem).}
+Node0_e_a_action {To łatwa sprawa}
+Node0_e_a_success {Postanawiacie rozsądzić ich spór — z ciekawości, z nudów albo z prawdziwej chęci pomocy. Gdy tylko wchodzicie na pokład, szybko wdrażają was w sprawę.$br$redOkazuje się, że podczas mierzenia głębokości przybrzeżnej strefy linka sondy zahaczyła o coś ciężkiego na dnie, niczym kotwiczka abordażowa. Znaleziskiem okazała się zamknięta, zardzewiała skrzynia pełna złotych statuetek i monet. Lotos twierdzi, że skarb należy do niego, kapitan zaś obstaje przy tym, że kosztowności powinny zostać podzielone według praw morza.$br$redWystępujecie jako autorytet i bez trudu kończycie ten spór. W ramach wdzięczności dostajecie część złotych monet.}
+Node0_e_a_success_action {To było pouczające}
+Node0_e_b_action {Nie mamy na to czasu}
+Node0_e_b_success {Odmawiacie występowania jako arbiter w sporach o ryby i kiszoną kapustę, po czym wydajecie rozkaz odpłynięcia. Załoga kiwa głowami ze zrozumieniem.}
+Node0_e_b_success_action {Zabawna historia}
+Node0_e_c_action {Otworzyć ogień!}
+Node0_e_c_success {Uznajecie, że to chytrze zastawiona pułapka mająca was zwabić, i wydajecie rozkaz otwarcia ognia z dział. Jedno trafienie wystarcza, by łódź nabrała pełne wnętrze wody i szybko zaczęła iść na dno. Widzicie, jak załoga wyskakuje za burtę, ratując życie.$br$redWieść o tym okrutnym czynie szybko rozejdzie się po okolicy.}
+Node0_e_c_success_action {Czujesz drżenie w kolanach?}
+Node0_a_f {Podczas wieczornej wachty dostrzegacie na horyzoncie _$key($nationI($ctx(nation))AdjRoot)i statek. Od razu zwraca waszą uwagę jego niezwykle głębokie zanurzenie. Okręt jest tak przeciążony, że tablica z jego nazwą — „$ctx(shipName)” — niemal dotyka wody. Kiedy się zbliżacie, wysyłają do was szalupę.$br$redWysłannik melduje, że ich drugi statek wszedł na rafy, dostał przeciek poniżej linii wodnej i poszedł na dno, przez co musieli w pośpiechu ratować ładunek. Teraz ich ładownia jest wypchana po brzegi — trzcina, sól, tytoń, przyprawy. Skrzynie stoją nawet na pokładzie.$br$redIch kapitan boi się, że jeśli fale wzniosą się choć trochę wyżej, woda zaleje furty działowe i zatopi także ten statek. Proponują wam odkupienie części towarów po rozsądnej cenie.}
+Node0_f_a_action {Dobry interes}
+Node0_f_a_success {Takie okazje trafiają się rzadko, więc z zadowoleniem przystajecie na wymianę. Towary trafiają na wasz statek, a wy już liczycie zysk, jaki przyniesie ich dalsza odsprzedaż.}
+Node0_f_a_success_action {Pieniądze rosną na drzewach}
+Node0_f_b_action {Weźmiemy to siłą}
+Node0_f_b_success {Dochodzicie do wniosku, że „$ctx(shipName)” to dar od losu i łatwy łup. Kapitan oraz załoga tego statku wyraźnie nie są w położeniu, by się targować. Każecie otworzyć furty działowe i przygotować kotwiczki abordażowe.$br$redNa widok waszych przygotowań poddają się od razu i podnoszą białą flagę. Ładujecie zagarnięte towary do własnej ładowni i szyderczo zauważacie, że rozwiązaliście ich problem po swojemu.}
+Node0_f_b_success_action {Życie bywa brutalne}
+Node0_f_c_action {Nas to nie interesuje}
+Node0_f_c_success {Odrzucacie wymianę i zostawiacie statek za rufą. Handel nie mieści się teraz w waszych planach, a wolne miejsce w ładowni wolicie zachować na coś przydatniejszego.}
+Node0_f_c_success_action {I to się znajdzie}
+Node0_a_g {Na pełnym morzu napotykacie _$key($nationI($ctx(nation))AdjRoot)i statek. Dają wam sygnały z prośbą o rozmowę. Widząc zamknięte furty działowe i handlowe proporce, uznajecie, że nie stanowią zagrożenia, i rozkazujecie się zbliżyć.$br$redKapitan tamtego statku wchodzi na wasz pokład i opowiada o ciężkiej sytuacji. W $key(Colony$ctx(cityA)Voc) zabrali na pokład pasażera — $casedName($ctx(passengerName)|Gen). Szukał statku płynącego do $key(Colony$ctx(cityB)Gen), a im wydało się to łatwą okazją do zarobku. Jednak już w połowie drogi $ctx(passengerName) poróżnił się o coś z załogą i urządził bójkę na pokładzie. Teraz siedzi w ładowni i bez przerwy prowokuje nowe konflikty.$br$redProponują wam przejęcie tego krewkiego pasażera za wynagrodzeniem.}
+Node0_g_a_action {Czemu nie}
+Node0_g_a_success {Zgadzacie się zabrać agresywnego pasażera do własnej ładowni. Na waszym statku z pewnością się uspokoi. Kapitan „$ctx(shipName)” szczerze dziękuje wam garścią złota i drogich kamieni.}
+Node0_g_a_success_action {Dobrze za niego zapłacą}
+Node0_g_b_action {Powieście go po prostu na rei}
+Node0_g_b_success {$ctx(passengerName) złamał okrętowy regulamin, zaszkodził załodze i stanowi zagrożenie dla statku. We flocie wojennej za coś takiego można stracić życie, więc proponujecie kapitanowi, by po prostu kazał stracić wichrzyciela. Ten z przerażeniem odmawia, a wtedy oferujecie, że zrobicie to za niego.$br$redKapitan dziękuje za propozycję i wraca na swój pokład. „$ctx(shipName)” odpływa pod pełnymi żaglami. Po waszym statku już zaczynają krążyć pogłoski o waszej żądzy krwi.}
+Node0_g_b_success_action {Psu — psia śmierć}
+Node0_g_c_action {Nas to nie interesuje}
+Node0_g_c_success {Odmawiacie brania na pokład jeńców, a już zwłaszcza agresywnych. Kapitan wraca na swój statek, a wy kontynuujecie podróż.$br$redPozostaje wam mieć nadzieję, że więzień nie zrobi nic naprawdę strasznego.}
+Node0_g_c_success_action {Dadzą sobie radę}
+Node0_g_a_action_PassengerImprisoned {$ctx(passengerName) jest waszym więźniem}

@@ -407,8 +407,31 @@ int GetEnemyNationToMainCharacter()
 
 	return iResult;
 }
+
 // boal
 void DelCharacterRelation(int iCharacterIndex1)
 {
 	DeleteAttribute(&Characters[iCharacterIndex1], "relation");
+}
+
+void UpdateStealthParams(ref loc)
+{
+    StealthNat = PIRATE; // ~!~
+	StealthEnable = false;
+
+	if ("soldiers" !in loc || "fastreload" !in loc)
+        return;
+
+    ref rColony = &Colonies[FindColony(loc.fastreload)];
+    if ("nation" in rColony && rColony.nation != "none")
+    {
+        StealthNat = int(rColony.nation);
+        if (StealthNat == PIRATE) StealthEnable = false;
+        else if (GetNationRelation2MainCharacter(StealthNat) == RELATION_ENEMY ||
+                 GetRelation2BaseNation(StealthNat) == RELATION_ENEMY)
+        {
+            StealthEnable = true;
+        }
+    }
+
 }

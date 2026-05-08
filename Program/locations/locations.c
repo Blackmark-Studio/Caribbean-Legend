@@ -5,7 +5,6 @@
 
 extern void InitLocations();
 
-
 native int NativeFindCharacter(ref charactersArray, string id);
 native int NativeFindLocation(ref charactersArray, string id);
 native int NativeFindLoadCharacter();
@@ -16,10 +15,8 @@ native void ReloadProgressEnd();
 native void SystemDelay(int millsec);
 native void ExecuteTechnique(string techName);
 native string GetNextLineString();
-native void SetReloadNextTipsImage();
 
 #libriary "ScriptLocationLibrary"
-
 
 void LocationInit()
 {

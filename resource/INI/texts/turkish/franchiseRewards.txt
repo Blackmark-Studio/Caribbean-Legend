@@ -1,0 +1,17 @@
+condition_legendGuide
+{
+Caribbean Legend
+sayfasını takip ederseniz bu eşya oyunda görünecektir
+}
+condition_mushket_indian
+{
+Kütüphanende
+Caribbean Legend: Age of Pirates varsa bu eşya tefecilerde görünecek
+}
+noRewardYetMessage
+{
+Bu ödül henüz mevcut değil,
+güncellemeleri takip edin!
+}
+steamButtonAlreadyGot {Talep edildi}
+steamButtonGet {Al}

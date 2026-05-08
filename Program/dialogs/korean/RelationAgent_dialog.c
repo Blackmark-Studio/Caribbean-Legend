@@ -201,7 +201,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "NationLicenceType2":
-			iSumm = sti(npchar.LicenceType) * (3000 + MOD_SKILL_ENEMY_RATE*500);
+			iSumm = LICENSE_GetPrice(npchar.LicenceType);
         	dialog.text = "그래서, 무역 허가증이"+XI_ConvertString(Nations[sti(npchar.LicenceNation)].Name+"Gen")+" 위해 "+sti(npchar.LicenceType)+" 일 수, 가격은 "+FindRussianMoneyString(iSumm)+".";
 		    link.l1 = "동의하오.";
 		    if(makeint(Pchar.money) < iSumm)
@@ -217,7 +217,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "NationLicenceType3":
-            iSumm = sti(npchar.LicenceType) * (3000 + MOD_SKILL_ENEMY_RATE*500);
+            iSumm = LICENSE_GetPrice(npchar.LicenceType);
 			dialog.text = "여기 있다. 항구에 들어갈 때는 우호적인 깃발을 다는 걸 잊지 마라.\n그리고 순찰대가 면허 날짜를 확인할 수도 있다는 것도 기억해.";
 			link.l9 = "감사하오.";
 			link.l9.go = "exit";

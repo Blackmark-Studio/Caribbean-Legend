@@ -406,19 +406,6 @@ void CalculateInfoDataF1()
     if(bSteamAchievements) StoreStats();
 */
 
-    /*
-    float MaxSpeed             = 0.0;
-    float fWindAgainstSpeed = 1.2;
-    float fWindDotShip         = 0.0; 
-    float angY                = 0.0;
-    for(int i = 0; i < 36; i++)
-    {
-        angY = (i * 5)/180.0 * 3.1415926;
-        fWindDotShip = GetDotProduct( 0.0, angY);    
-        MaxSpeed = GetMaxSpeedZ(fWindAgainstSpeed, fWindDotShip);
-        trace("MaxSpeed " + MaxSpeed + " angY " + (i*5)); 
-    }
-*/
     //DumpAttributes(showWindow);
 
     totalInfo = totalInfo + GetAssembledString(" Денег у #sName#а теперь #dmoney#", Pchar);
@@ -1152,8 +1139,8 @@ void CalculateInfoDataF32()
     SetBaseShipData(mc);
     mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS20;
     /*
-    //mc.Ship.Type = GenerateShipHand(SHIP_CAREERLUGGER, 12, 580, 30, 800, 20000, 16.5, 65.5, 1.6);
-    mc.Ship.Type = GenerateShipHand(pchar, SHIP_LUGGER, 6, 700, 40, 610, 16000, 15.2, 58.8, 1.42);
+    //mc.Ship.Type = GenerateShipHand(SHIP_CAREERLUGGER, 12, 580, 30, 800, 20000, 16.5, 65.5);
+    mc.Ship.Type = GenerateShipHand(pchar, SHIP_LUGGER, 6, 700, 40, 610, 16000, 15.2, 58.8);
     mc.Ship.name = "Сумрак";
     SetBaseShipData(mc);
     mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS12;
@@ -1395,25 +1382,6 @@ void ShipRepair(ref chr)
     {
         matQ = 15.0 * GetHullPPP(chr);
     }
-}
-
-float GetMaxSpeedZ(float fWindAgainstSpeed, float fWindDotShip)
-{
-    float fMaxSpeedZ = 10.0;
-    float BtWindR = 1.0 - fWindAgainstSpeed;
-    float fkoeff = fWindAgainstSpeed;
-    if (fkoeff < 1.0)
-        fkoeff = 1.0;
-
-    if (fWindDotShip < BtWindR) // по ветру
-    {
-        fMaxSpeedZ = fMaxSpeedZ * (1.0 + 0.974 * (fWindDotShip - BtWindR) / (1.0 + BtWindR));
-    }
-    else // против ветра
-    {
-        fMaxSpeedZ = fkoeff * fMaxSpeedZ * (1.0 - (fWindDotShip - BtWindR) / 2.0);
-    }
-    return fMaxSpeedZ;
 }
 
 void ReloadByStr()

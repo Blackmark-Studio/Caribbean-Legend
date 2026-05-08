@@ -497,13 +497,13 @@ void ProcessDialogEvent()
 				{
 					// belamour legendary edition -->
 					ok = (!CheckAttribute(&RealShips[sti(Pchar.Ship.Type)], "Tuning.SpeedRate")) && 
-						 (!CheckAttribute(&RealShips[sti(Pchar.Ship.Type)], "Tuning.WindAgainst"));
+						 (!CheckAttribute(&RealShips[sti(Pchar.Ship.Type)], "Tuning.rig"));
 					if(ok)
 					{
 						Link.l1 = "Zwiększ prędkość.";
 						Link.l1.go = "ship_tunning_SpeedRate";
 						Link.l2 = "Zwiększ kąt do wiatru.";
-						Link.l2.go = "ship_tunning_WindAgainst";
+						Link.l2.go = "ship_tunning_rig";
 						Link.l3 = "Poczekaj! Zmieniłem zdanie.";
 						Link.l3.go = "ship_tunning_not_now_1";
 						break;
@@ -518,10 +518,10 @@ void ProcessDialogEvent()
 							Link.l2.go = "ship_tunning_not_now_1";
 							break;
 						}
-						if(!CheckAttribute(&RealShips[sti(Pchar.Ship.Type)], "Tuning.WindAgainst"))
+						if(!CheckAttribute(&RealShips[sti(Pchar.Ship.Type)], "Tuning.rig"))
 						{
 							Link.l1 = "Zwiększ kąt względem wiatru.";
-							Link.l1.go = "ship_tunning_WindAgainst";
+							Link.l1.go = "ship_tunning_rig";
 							Link.l2 = "Zaczekaj! Zmieniłem zdanie.";
 							Link.l2.go = "ship_tunning_not_now_1";	
 							break;
@@ -533,7 +533,7 @@ void ProcessDialogEvent()
 				}
 				if(NPChar.city == "Havana" || NPChar.city == "PortoBello")
 				{
-					ok = (!CheckAttribute(&RealShips[sti(Pchar.Ship.Type)], "Tuning.Cannon")) && 
+					ok = (!CheckAttribute(&RealShips[sti(Pchar.Ship.Type)], "Tuning.Cannons")) && 
 						 (!CheckAttribute(&RealShips[sti(Pchar.Ship.Type)], "Tuning.Capacity"));
 					if(ok)
 					{	
@@ -550,7 +550,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if(!CheckAttribute(&RealShips[sti(Pchar.Ship.Type)], "Tuning.Cannon"))
+						if(!CheckAttribute(&RealShips[sti(Pchar.Ship.Type)], "Tuning.Cannons"))
 						{
 							if(GetPossibilityCannonsUpgrade(pchar, true) > 0)
 							{	
@@ -764,45 +764,18 @@ void ProcessDialogEvent()
 		
 		case "ship_tunning_Capacity_complite":
 		    AddTimeToCurrent(6, 30);
-		    shTo = &RealShips[sti(Pchar.Ship.Type)];
 		    DeleteAttribute(NPChar, "Tuning");
-		    // изменим
-			if(!CheckAttribute(shTo, "Bonus_Capacity"))
-			{
-				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
-				{
-					shTo.Capacity        = sti(shTo.Capacity) + makeint(sti(shTo.Capacity)* 0.35);
-				}
-				else
-				{
-					shTo.Capacity        = sti(shTo.Capacity) + makeint(sti(shTo.Capacity)/5);
-				}
-			}
-			else
-			{
-				
-				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
-				{
-					shTo.Capacity        = makeint((sti(shTo.Capacity) - sti(shTo.Bonus_Capacity)) * 1.35 + sti(shTo.Bonus_Capacity));
-				}
-				else
-				{
-					shTo.Capacity        = makeint((sti(shTo.Capacity) - sti(shTo.Bonus_Capacity)) * 1.2 + sti(shTo.Bonus_Capacity));
-				}
-			}
-	        shTo.Tuning.Capacity = true;
+			UpgradeShipParameter(pchar, "Capacity");
+			shTo = &RealShips[sti(Pchar.Ship.Type)];
+			if("achievment.Tuning.stage2" !in pchar && "Tuning.Cannons" in shTo && "Tuning.Capacity" in shTo) 
+				pchar.achievment.Tuning.stage2 = true;
+			TuningAvailable();
 
-	        // finish <--
             NextDiag.TempNode = "First time";
 			dialog.Text = "...Na tym chyba koniec... Teraz możesz w pełni załadować swój ładunek, gwarantuję jakość mojej pracy.";
 			Link.l1 = "Dzięki! Przetestuję to.";
 			Link.l1.go = "Exit";
-			if(!CheckAttribute(pchar, "achievment.Tuning.stage2") && CheckAttribute(shTo,"Tuning.Cannon") && CheckAttribute(shTo,"Tuning.Capacity")) 
 			
-			{
-				pchar.achievment.Tuning.stage2 = true;
-			}	
-			TuningAvailable();
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
 			notification("Nauczyłeś się wiele o budowie tego statku!", "none");
@@ -908,38 +881,13 @@ void ProcessDialogEvent()
 		
 		case "ship_tunning_SpeedRate_complite":
 		    AddTimeToCurrent(6, 30);
-		    shTo = &RealShips[sti(Pchar.Ship.Type)];
 		    DeleteAttribute(NPChar, "Tuning");
-		    // изменим
-			if(!CheckAttribute(shTo, "Bonus_SpeedRate"))
-			{
-				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
-				{
-					shTo.SpeedRate        = (stf(shTo.SpeedRate) + stf(shTo.SpeedRate) * 0.35);
-				}
-				else
-				{
-					shTo.SpeedRate        = (stf(shTo.SpeedRate) + stf(shTo.SpeedRate)/5.0);
-				}
-			}
-			else
-			{
-				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
-				{
-					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.3 + stf(shTo.Bonus_SpeedRate);
-				}
-				else
-				{
-					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.2 + stf(shTo.Bonus_SpeedRate);
-				}
-			}
-	        shTo.Tuning.SpeedRate = true;
-			
-			if(!CheckAttribute(pchar, "achievment.Tuning.stage1") && CheckAttribute(shTo, "Bonus_SpeedRate") &&  CheckAttribute(shTo,"Tuning.WindAgainst")) 
-			{
+			UpgradeShipParameter(pchar, "SpeedRate");
+			shTo = &RealShips[sti(Pchar.Ship.Type)];
+			if("achievment.Tuning.stage1" !in pchar && "Tuning.SpeedRate" in shTo && "Tuning.Rig" in shTo) 
 				pchar.achievment.Tuning.stage1 = true;
-			}	
-            TuningAvailable();
+			TuningAvailable();
+			
             NextDiag.TempNode = "First time";
 			dialog.Text = "... Wszystko gotowe, Kapitanie. Łap wiatr w pełne żagle. Sprawdź, jeśli chcesz!";
 			Link.l1 = "Dzięki! Przetestuję to.";
@@ -1049,24 +997,13 @@ void ProcessDialogEvent()
 		
 		case "ship_tunning_TurnRate_complite":
 		    AddTimeToCurrent(6, 30);
-		    shTo = &RealShips[sti(Pchar.Ship.Type)];
 		    DeleteAttribute(NPChar, "Tuning");
-		    // изменим
-			if(!CheckAttribute(shTo, "Bonus_TurnRate"))
-			{
-				shTo.TurnRate        = (stf(shTo.TurnRate) + stf(shTo.TurnRate)/5.0);
-			}
-			else
-			{
-				shTo.TurnRate        = (stf(shTo.TurnRate) - stf(shTo.Bonus_TurnRate)) * 1.2 + stf(shTo.Bonus_TurnRate);
-			}	
-
-	        shTo.Tuning.TurnRate = true;
-			if(!CheckAttribute(pchar, "achievment.Tuning.stage4") && CheckAttribute(shTo,"Tuning.TurnRate") && CheckAttribute(shTo,"Tuning.MinCrew")) 
-			{
+			UpgradeShipParameter(pchar, "TurnRate");
+			shTo = &RealShips[sti(Pchar.Ship.Type)];
+			if("achievment.Tuning.stage4" !in pchar && "Tuning.TurnRate" in shTo && "Tuning.MinCrew" in shTo) 
 				pchar.achievment.Tuning.stage4 = true;
-			}	
-            TuningAvailable();
+			TuningAvailable();
+			
 			dialog.Text = "... Wszystko powinno być już gotowe... Sprawdź teraz ster, Kapitanie!";
 			Link.l1 = "Dzięki! Przetestuję to.";
 			Link.l1.go = "Exit";
@@ -1175,24 +1112,13 @@ void ProcessDialogEvent()
 		
 		case "ship_tunning_MaxCrew_complite":
 		    AddTimeToCurrent(6, 30);
-		    shTo = &RealShips[sti(Pchar.Ship.Type)];
-		    DeleteAttribute(NPChar, "Tuning");
-		    
-	        if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
-			{
-				shTo.MaxCrew        = sti(shTo.MaxCrew) + makeint(sti(shTo.MaxCrew) * 0.35);
-			}
-			else
-			{
-				shTo.MaxCrew        = sti(shTo.MaxCrew) + makeint(sti(shTo.MaxCrew)/5);
-			}
-	        shTo.Tuning.MaxCrew = true;
-			if(!CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(shTo,"Tuning.MaxCrew") && CheckAttribute(shTo,"Tuning.HP")) 
-			
-			{
+		    DeleteAttribute(NPChar, "Tuning");		
+			UpgradeShipParameter(pchar, "MaxCrew");
+			shTo = &RealShips[sti(Pchar.Ship.Type)];
+			if("achievment.Tuning.stage3" !in pchar && "Tuning.MaxCrew" in shTo && "Tuning.HP" in shTo) 
 				pchar.achievment.Tuning.stage3 = true;
-			}	
             TuningAvailable();
+			
             NextDiag.TempNode = "First time";
 			dialog.Text = "... Zrobione, Kapitanie. Teraz możesz zatrudnić więcej marynarzy, będzie wystarczająco miejsca dla wszystkich.";
 			Link.l1 = "Dzięki! Przetestuję to.";
@@ -1305,25 +1231,13 @@ void ProcessDialogEvent()
 		
 		case "ship_tunning_MinCrew_complite":
 		    AddTimeToCurrent(6, 30);
-		    shTo = &RealShips[sti(Pchar.Ship.Type)];
 		    DeleteAttribute(NPChar, "Tuning");
-		    // изменим
-	       if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
-			{
-				shTo.MinCrew        = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew) * 0.35);
-			}
-			else
-			{
-				shTo.MinCrew        = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew)/5);
-			}
-			if(sti(shTo.MinCrew) < 1) shTo.MinCrew = 1;
-	        shTo.Tuning.MinCrew = true;
-			
-			if(!CheckAttribute(pchar, "achievment.Tuning.stage4")  && CheckAttribute(shTo,"Tuning.TurnRate") && CheckAttribute(shTo,"Tuning.MinCrew")) 
-			{
+		    UpgradeShipParameter(pchar, "MinCrew");	
+			shTo = &RealShips[sti(Pchar.Ship.Type)];			
+			if("achievment.Tuning.stage4" !in pchar  && "Tuning.TurnRate" in shTo && "Tuning.MinCrew" in shTo) 
 				pchar.achievment.Tuning.stage4 = true;
-			}	
             TuningAvailable();
+			
             NextDiag.TempNode = "First time";
 			dialog.Text = "... Gotowe, Kapitanie! Teraz mniejsza liczba marynarzy może obsługiwać statek z takim samym ogólnym wynikiem.";
 			Link.l1 = "Dzięki! Przetestuję to.";
@@ -1435,45 +1349,13 @@ void ProcessDialogEvent()
 		
 		case "ship_tunning_HP_complite":
 		    AddTimeToCurrent(6, 30);
-		    shTo = &RealShips[sti(Pchar.Ship.Type)];
 		    DeleteAttribute(NPChar, "Tuning");
-		    // изменим
-			if(!CheckAttribute(shTo, "Bonus_HP"))
-			{
-				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
-				{
-					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP) * 0.35);
-				}
-				else
-				{
-					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP)/5);
-				}
-			}
-			else
-			{
-				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
-				{
-					if(sti(shTo.HP) > sti(shTo.Bonus_HP)) // иначе апгрейд будет умножать отрицательное значение
-					{
-						shTo.HP    = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
-					}
-				}
-				else
-				{
-					if(sti(shTo.HP) > sti(shTo.Bonus_HP)) // иначе апгрейд будет умножать отрицательное значение
-					{
-						shTo.HP    = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
-					}
-				}
-			}
-	        shTo.Tuning.HP = true;
-			ProcessHullRepair(pchar, 100.0); // у нпс при апгрейде есть, здесь тоже должно быть
-
-			if(!CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(shTo,"Tuning.MaxCrew") && CheckAttribute(shTo,"Tuning.HP")) 
-			{
+			UpgradeShipParameter(pchar, "HP");
+			shTo = &RealShips[sti(Pchar.Ship.Type)];
+			if("achievment.Tuning.stage3" !in pchar && "Tuning.MaxCrew" in shTo && "Tuning.HP" in shTo) 
 				pchar.achievment.Tuning.stage3 = true;
-			}	
 			TuningAvailable();
+			
             NextDiag.TempNode = "First time";
 			
 			dialog.Text = "... To powinno załatwić sprawę... Gwarantuję, że od teraz twoi wrogowie będą mieli znacznie trudniej, by rozszarpać kadłub twojego statku na kawałki!";
@@ -1487,23 +1369,22 @@ void ProcessDialogEvent()
 			AddCharacterExpToSkill(pchar, SKILL_REPAIR, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 		
-		////////////////////////////////////////// WindAgainst ////////////////////////////////////////////////////
-		case "ship_tunning_WindAgainst":
+		////////////////////////////////////////// rig ////////////////////////////////////////////////////
+		case "ship_tunning_rig":
 			Material 	= GetMaterialQtyUpgrade(pchar, NPChar, 1 );
 			WorkPrice 	= GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			fTmp = 180.0 - (acos(1 - stf(RealShips[sti(Pchar.Ship.Type)].WindAgainstSpeed)) * 180.0/PI);
-			s2 = "Zobaczmy, co możemy zrobić. W tej chwili punkt żagla według wiatru wynosi " + makeint(fTmp) + " stopni.";
-			// belamour legendary edition если спускать курс по ветру, то это даунгрейд
-			s2 = s2 + " Aby przyspieszyć statek pod wiatr, będę potrzebować: jedwabiu - "+ Material + ",";
-			s2 = s2 + " Jako zapłatę za moją pracę przyjmę: " + WorkPrice + " skrzynie dublonów - na pokrycie moich wydatków. To powinno wystarczyć. A, i zapłata z góry.";									
-            dialog.Text = s2;
+			dialog.rig_type = GetRigType(Pchar);
+			dialog.rig_upgrade_type = GetRigUpgradeType(Pchar);
+			dialog.material = Material;
+			dialog.price = WorkPrice;
+            dialog.Text = DLG_Convert("Shipyard_TuningRig", "Dialogs.txt", &Dialog);
 			Link.l1 = "Zgoda. Akceptuję twoje warunki. Przyniosę ci, czego potrzebujesz.";
-			Link.l1.go = "ship_tunning_WindAgainst_start";
+			Link.l1.go = "ship_tunning_rig_start";
 			Link.l2 = "Nie. To mi nie pasuje.";
 			Link.l2.go = "ship_tunning_not_now_1";
 		break;
 
-		case "ship_tunning_WindAgainst_start":
+		case "ship_tunning_rig_start":
 			amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
 			// belamour legendary edition туда сюда бегать - та ещё морока -->
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
@@ -1524,7 +1405,7 @@ void ProcessDialogEvent()
 			    NPChar.Tuning.Matherial    	= GetMaterialQtyUpgrade(pchar, NPChar, 1 );			    
 			    NPChar.Tuning.ShipType      = Pchar.Ship.Type;
 			    NPChar.Tuning.ShipName      = RealShips[sti(Pchar.Ship.Type)].BaseName;
-				NextDiag.TempNode = "ship_tunning_WindAgainst_again";
+				NextDiag.TempNode = "ship_tunning_rig_again";
                 dialog.text = "Doskonale. Będę czekał na materiał.";
 				link.l1 = LinkRandPhrase("Zapewniam cię, że nie będziesz musiał długo czekać. Mogę rozwiązać takie sprawy, dobrze?","Uważaj, że już je masz i trzymaj dla mnie molo. Będę szybki jak wiatr.","Oczywiście. Wystarczy, że odwiedzę parę osób, które mają to, o co prosiłeś, ha-ha!");
 			    link.l1.go = "Exit";
@@ -1543,13 +1424,13 @@ void ProcessDialogEvent()
 			}
 		break;
 
-		case "ship_tunning_WindAgainst_again":
+		case "ship_tunning_rig_again":
 		    if (sti(NPChar.Tuning.ShipType) == sti(Pchar.Ship.Type) && NPChar.Tuning.ShipName == RealShips[sti(Pchar.Ship.Type)].BaseName  && TuningAvailable())
 		    {
-                NextDiag.TempNode = "ship_tunning_WindAgainst_again";
+                NextDiag.TempNode = "ship_tunning_rig_again";
 			    dialog.Text = "Czas mija, a statek czeka. Czy przyniosłeś wszystko, o co prosiłem?";
 			    Link.l1 = "Tak, udało mi się coś dostarczyć.";
-			    Link.l1.go = "ship_tunning_WindAgainst_again_2";
+			    Link.l1.go = "ship_tunning_rig_again_2";
 			    Link.l2 = "Nie, wciąż nad tym pracuję.";
 			    Link.l2.go = "Exit";
 			}
@@ -1566,7 +1447,7 @@ void ProcessDialogEvent()
 			}
 		break;
 
-		case "ship_tunning_WindAgainst_again_2":
+		case "ship_tunning_rig_again_2":
 		    checkMatherial(Pchar, NPChar, GOOD_SHIPSILK);
 		    if(sti(NPChar.Tuning.Matherial) < 1)
 			{
@@ -1574,11 +1455,11 @@ void ProcessDialogEvent()
                 NextDiag.TempNode = "First time";
                 dialog.text = "Doskonale, teraz mam wszystko, czego potrzebuję. Zaczynam pracę.";
 			    link.l1 = "Czekam.";
-			    link.l1.go = "ship_tunning_WindAgainst_complite";
+			    link.l1.go = "ship_tunning_rig_complite";
 			}
 			else
 			{
-				NextDiag.TempNode = "ship_tunning_WindAgainst_again";
+				NextDiag.TempNode = "ship_tunning_rig_again";
                 dialog.Text = "Wciąż potrzebuję: jedwab okrętowy - "+sti(NPChar.Tuning.Matherial)+".";
 				link.l1 = "Dobrze.";
 				link.l1.go = "Exit";
@@ -1587,28 +1468,15 @@ void ProcessDialogEvent()
 			}
 		break;
 
-		case "ship_tunning_WindAgainst_complite":
+		case "ship_tunning_rig_complite":
 		    AddTimeToCurrent(6, 30);
-		    shTo = &RealShips[sti(Pchar.Ship.Type)];
 		    DeleteAttribute(NPChar, "Tuning");
-		    // изменим			
-			// belamour legendary edtion чем больше WindAgainstSpeed, тем круче к ветру
-			if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
-			{
-				shTo.WindAgainstSpeed   = stf(shTo.WindAgainstSpeed) + 0.35 * stf(shTo.WindAgainstSpeed);	
-			}
-			else
-			{
-				shTo.WindAgainstSpeed   = stf(shTo.WindAgainstSpeed) + 0.20 * stf(shTo.WindAgainstSpeed);
-			}
-			if (stf(shTo.WindAgainstSpeed) > 1.985) shTo.WindAgainstSpeed = 1.985;
-	        shTo.Tuning.WindAgainst = true;
-
-			if(!CheckAttribute(pchar, "achievment.Tuning.stage1") && CheckAttribute(shTo, "Bonus_SpeedRate") &&  CheckAttribute(shTo,"Tuning.WindAgainst")) 
-			{
+			UpgradeShipParameter(pchar, "Rig");
+			shTo = &RealShips[sti(Pchar.Ship.Type)];
+			if("achievment.Tuning.stage1" !in pchar && "Tuning.SpeedRate" in shTo && "Tuning.Rig" in shTo) 
 				pchar.achievment.Tuning.stage1 = true;
-			}	
-            TuningAvailable();
+			TuningAvailable();
+			
             NextDiag.TempNode = "First time";
 			dialog.Text = "... Gotowe, Kapitanie!.. Teraz twoja łajba będzie płynąć pod wiatr znacznie szybciej.";
 			Link.l1 = "Dzięki! Przetestuję to.";
@@ -1652,7 +1520,7 @@ void ProcessDialogEvent()
 				}
 				// <-- legendary edtion		
 			    NPChar.Tuning.Money  		= amount;
-				NPChar.Tuning.Cannon 		= true;				
+				NPChar.Tuning.Cannons 		= true;				
 				NPChar.Tuning.Matherial 	= GetMaterialQtyUpgrade(pchar, NPChar, 1 ); 				
 				NPChar.Tuning.ShipType      = Pchar.Ship.Type;
 				NPChar.Tuning.ShipName      = RealShips[sti(Pchar.Ship.Type)].BaseName;											    
@@ -1720,52 +1588,13 @@ void ProcessDialogEvent()
 		
 		case "ship_c_quantity_complite":
 			AddTimeToCurrent(6, 30);
+			DeleteAttribute(NPChar, "Tuning");
+			UpgradeShipParameter(pchar, "Cannons");
 			shTo = &RealShips[sti(Pchar.Ship.Type)];
-			DeleteAttribute(NPChar, "Tuning");		
-			makearef(refShip, pchar.Ship);
-			
-			iCannonDiff = sti(refShip.CannonDiff);
-			iCannonDiff -= 1;
-								
-			for (i = 0; i < sti(shTo.cannonr); i++)
-			{
-				attr = "c" + i;										
-					
-				if(i < (sti(shTo.cannonr) - iCannonDiff) )	
-				{
-					if( stf(refShip.Cannons.Borts.cannonr.damages.(attr)) > 1.0 )
-					{
-						refShip.Cannons.Borts.cannonr.damages.(attr) = 1.0; 
-					}	
-				}					
-			}	
-			for (i = 0; i < sti(shTo.cannonl); i++)
-			{
-				attr = "c" + i;
-				if(i < (sti(shTo.cannonl) - iCannonDiff) )	
-				{
-					if( stf(refShip.Cannons.Borts.cannonl.damages.(attr)) > 1.0 )
-					{
-						refShip.Cannons.Borts.cannonl.damages.(attr) = 1.0; 
-					}	
-				}										
-			}	
-			
-			if(CheckAttribute(shTo,"CannonsQuantityMax")) 	shTo.Cannons = sti(shTo.CannonsQuantityMax) - iCannonDiff * 2;
-			else										    shTo.Cannons = sti(shTo.CannonsQuantity) - iCannonDiff * 2;
-			
-			shTo.CannonsQuantity = sti(shTo.Cannons);
-		
-			refShip.Cannons = sti(shTo.Cannons);
-			refShip.CannonDiff = iCannonDiff;			
-
-			shTo.Tuning.Cannon = true;
-			
-			if(!CheckAttribute(pchar, "achievment.Tuning.stage2") && CheckAttribute(shTo,"Tuning.Cannon") && CheckAttribute(shTo,"Tuning.Capacity")) 
-			{
-				pchar.achievment.Tuning.stage2 = true;
-			}	
+			if("achievment.Tuning.stage2" !in pchar && "Tuning.Cannons" in shTo && "Tuning.Capacity" in shTo) 
+				pchar.achievment.Tuning.stage1 = true;
 			TuningAvailable();
+			
 			NextDiag.TempNode = "First time";
 			dialog.Text = "... To wszystko, Kapitanie. Możesz użyć dodatkowych dział - o ile je masz, he-he.";
 			Link.l1 = "Dzięki!";
@@ -2343,7 +2172,7 @@ void ProcessDialogEvent()
 			SetCrewQuantityOverMax(PChar, 0);
 			/* UpgradeShipParameter(pchar, "SpeedRate");
 			UpgradeShipParameter(pchar, "TurnRate");
-			UpgradeShipParameter(pchar, "WindAgainstSpeed");
+			UpgradeShipParameter(pchar, "rig");
 			UpgradeShipParameter(pchar, "HP");
 			UpgradeShipParameter(pchar, "MaxCrew");
 			UpgradeShipParameter(pchar, "Capacity");
@@ -2420,7 +2249,7 @@ void ProcessDialogEvent()
 			SetCrewQuantityOverMax(PChar, 0);
 			/* UpgradeShipParameter(pchar, "SpeedRate");
 			UpgradeShipParameter(pchar, "TurnRate");
-			UpgradeShipParameter(pchar, "WindAgainstSpeed");
+			UpgradeShipParameter(pchar, "rig");
 			UpgradeShipParameter(pchar, "HP");
 			UpgradeShipParameter(pchar, "MaxCrew"); */
 			UpgradeShipParameter(pchar, "Capacity");
@@ -2927,8 +2756,8 @@ bool TuningAvailable()
     ref shTo = &RealShips[sti(Pchar.Ship.Type)];
 
 	if(CheckAttribute(shTo, "Tuning.SpeedRate"))    num++;
-	if(CheckAttribute(shTo, "Tuning.WindAgainst"))  num++;
-	if(CheckAttribute(shTo, "Tuning.Cannon"))       num++;
+	if(CheckAttribute(shTo, "Tuning.rig"))  num++;
+	if(CheckAttribute(shTo, "Tuning.Cannons"))       num++;
 	if(CheckAttribute(shTo, "Tuning.Capacity"))     num++;
 	if(CheckAttribute(shTo, "Tuning.HP"))           num++;
 	if(CheckAttribute(shTo, "Tuning.MaxCrew"))      num++;

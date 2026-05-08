@@ -6,7 +6,7 @@
 #define SAVE_SQUADPOWER 4
 #define SAVE_MONEY 5
 #define SAVE_DOUBLOONS 6
-#define SAVE_VERSION 7
+#define SAVE_SYS_TIME 7
 
 #define PROFILE_NAME 1
 #define PROFILE_HERONAME 2
@@ -84,6 +84,7 @@ void SetSaveLoadParams()
 			SetFormatedTextButton("BUTTON_2", "Save");
 		SetFormatedTextButton("BUTTON_3", "Back");
 		SetNodeUsing("BUTTON_PROFILE", !bSave);
+		SetNodeUsing("BUTTON_PROFILE_FRAME", !bSave);
 	}
 	else
 	{
@@ -188,7 +189,7 @@ void ProcessCommandExecute()
 		ShowConfirmWindow(CONFIRMMODE_SAVE_DELETE);
 		return;
 	}
-	if(sNode == "BUTTON_PROFILE" && sCommand == "click")
+	if(sNode == "BUTTON_PROFILE_FRAME" && sCommand == "click")
 	{
 		if(XI_IsWindowEnable("PROFILE_WINDOW"))
 			ProcExitProfile();
@@ -419,8 +420,8 @@ void InitSaveList()
 	int x1, y1, x2, y2;
 	GetNodePosition("PAPER", &x1, &y1, &x2, &y2);
 	int x_base = x1 + 30;
-	int y_base = y1 + 90;
-	int y_max = y2 - 90;
+	int y_base = y1 + 110;
+	int y_max = y2 - 110;
 	float kScreen = 1920.0 / 1080.0;
 	float kSpace = 0.5;
 	int height = makeint((y_max - y_base) / ((1.0 + kSpace) * MAX_SAVE_SLOTS));
@@ -729,7 +730,7 @@ void ReadSaveData(int iSlot, int iTexture, string sData)
 	if(CheckAttribute(saveInfo, "locname"))
 		saveName = "#" + saveInfo.locname;
 	int iNameIndex = iSlot * 3 + LIST_NAME;
-	StringCollection_SetText("SAVELIST_INFO", iNameIndex, saveName);
+	StringCollection_SetText("SAVELIST_INFO", iNameIndex, Truncate(saveName, 34, "..."));
 	// выставляем часы в игре
 	string playTime = "No time";
 	if(CheckAttribute(saveInfo, "playtime"))
@@ -758,7 +759,7 @@ string GetSystemTimeString(int iSlot)
 	string fileSystemTime = "";
 	string fileSystemDate = "";
 	SendMessage(&GameInterface, "lsee", MSG_INTERFACE_GETTIME, "SAVE\" + currentProfile + "\" + g_oSaveList[iSlot].savefile, &fileSystemTime, &fileSystemDate);
-	return fileSystemTime + " " + fileSystemDate;
+	return strleft(fileSystemTime, 5) + " " + fileSystemDate;
 }
 
 void SelectSlot(int iSlot)
@@ -854,7 +855,7 @@ void SelectSlot(int iSlot)
 			case "HeroType_4":	sInfo += XI_ConvertString("Shooter");		break;
 		}
 		StringCollection_SetText("PROFILE_INFO", PROFILE_HEROTYPE, sInfo);
-		sInfo = "#" + XI_ConvertString("Difficulty") + ": " + (GetNormalizedDifficultyLevel() + 1);
+		sInfo = "#" + XI_ConvertString("Difficulty") + ": " + XiStr("m_Complexity_" + ((GetNormalizedDifficultyLevel() + 1) *2));
 		StringCollection_SetText("PROFILE_INFO", PROFILE_DIFFICULTY, sInfo);
 		if(SandBoxMode)
 			sInfo = "SandboxMode";
@@ -964,18 +965,16 @@ void SelectSlot(int iSlot)
 	}
 	else
 		StringCollection_ChangeColor("SAVE_INFO", SAVE_DOUBLOONS, argb(0,128,128,128));
+
+	StringCollection_SetText("SAVE_INFO", SAVE_SYS_TIME, "#" + GetSystemTimeString(iSlot));
+	StringCollection_ChangeColor("SAVE_INFO", SAVE_SYS_TIME, argb(255,255,255,255));
+
 	if(CheckAttribute(saveInfo, "SaveVer") && saveInfo.SaveVer != "")
 	{
-		sInfo = "#" + XI_ConvertString("GameVersion") + ": " + saveInfo.SaveVer;	// версия
-		StringCollection_SetText("SAVE_INFO", SAVE_VERSION, sInfo);
 		bBadSave = (sti(saveInfo.SaveVer) != VERSION_NUM_PRE);
-		StringCollection_ChangeColor("SAVE_INFO", SAVE_VERSION, argb(255,255,255,255));
 	}
-	else
-	{
-		StringCollection_ChangeColor("SAVE_INFO", SAVE_VERSION, argb(0,128,128,128));
-		bBadSave = true;
-	}
+	else bBadSave = true;
+
 	if(CheckAttribute(saveInfo, "questUniqueID") && CheckAttribute(saveInfo, "questID"))
 	{
 		string tag = "";
@@ -1041,7 +1040,7 @@ void SelectSlot(int iSlot)
 		StringCollection_ChangeColor("PROFILE_INFO", PROFILE_HEROTYPE, argb(0,128,128,128));
 	if(CheckAttribute(saveInfo, "difficulty") && saveInfo.difficulty != "")
 	{
-		sInfo = "#" + XI_ConvertString("Difficulty") + ": " + saveInfo.difficulty;	// сложность
+		sInfo = "#" + XI_ConvertString("Difficulty") + ": " + XiStr("m_Complexity_" + sti(saveInfo.difficulty)*2);	// сложность
 		StringCollection_SetText("PROFILE_INFO", PROFILE_DIFFICULTY, sInfo);
 		StringCollection_ChangeColor("PROFILE_INFO", PROFILE_DIFFICULTY, argb(255,255,255,255));
 	}

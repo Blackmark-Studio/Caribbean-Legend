@@ -1,10 +1,61 @@
-blade_critDamage {Melee Critical Damage}
-gun_critDamage {Pistol Critical Damage}
-musket_critDamage {Musket Critical Damage}
+bigCannonsAvailable {Large-caliber guns available}
+BigCannonsAvailable_0 {Large-caliber guns are not sold}
+BigCannonsAvailable_1 {Large-caliber guns are available}
 blade_critChance {Melee Critical Chance}
+blade_critDamage {Melee Critical Damage}
+caribbeanGoodsCost {Colonial goods prices}
+caribbeanGoodsStock {Colonial goods stock}
+contrabandTradeStatus_0 {Deals with smugglers are possible}
+contrabandTradeStatus_1 {Deals with smugglers are impossible}
+contrabandTradeStatus_2 {Deals with smugglers are hampered}
+convenienceGoodsCost {Essentials prices}
+convenienceGoodsStock {Essentials stock}
+crewExpMtp {Crew experience gain rate}
+crewHireCost {Sailor hiring cost}
+crewHireMoraleMtp {Hired crew morale}
+crewHiringExpMtp {Hired crew experience}
+crewMaintenanceCost {Sailor upkeep cost}
+crownGoodsCost {Crown goods prices}
+crownGoodsStock {Crown goods stock}
+debitRate {Loan interest rate}
+depositGoldRate {Deposit rate in doubloons}
+depositSilverRate {Deposit rate in pesos}
+drugConsumption {Medicine consumption}
+enemyHullDamageMtp {Damage to enemy hulls}
+europeanGoodsCost {European goods prices}
+europeanGoodsStock {European goods stock}
+exportPriceMtp {Export prices}
+foodConsumption {Food consumption}
+GlobalSpeed {Ship speed on the world map}
+goldsilverGoodsAvailable_0 {Silver and gold are not sold}
+goldsilverGoodsAvailable_1 {Silver and gold are available}
 gun_critChance {Pistol Critical Chance}
-musket_critChance {Musket Critical Chance}
-incomingDamageReduction {Damage Protection}
-RangeIncomingDamageReduction {Gunfire Damage Protection}
-Shot_Damage {Gunfire Damage}
+gun_critDamage {Pistol Critical Damage}
 HeadshotDamage {Headshot Damage}
+importPriceMtp {Import prices}
+incomingDamageReduction {Damage Protection}
+legalContraband_0 {Smuggling works as usual}
+legalContraband_1 {Contraband counts as imports}
+medicamentCost {Medicine prices}
+minFortCannonsMtp {Destroyed guns threshold for fort assault}
+moraleMtp {Crew morale gain}
+musket_critChance {Musket Critical Chance}
+musket_critDamage {Musket Critical Damage}
+nationsReputationMtp {Reputation change rate with nations}
+RangeIncomingDamageReduction {Gunfire Damage Protection}
+recruitsMtp {Recruits}
+repairCost {Shipyard repair cost}
+seaRepairEfficency {At-sea repair efficiency}
+shipSpeedDynamic {Ship acceleration}
+shipyardCannonsStock {Shipyard gun stock}
+Shot_Damage {Gunfire Damage}
+slavesGoodsAvailable_0 {Slaves are not sold}
+slavesGoodsAvailable_1 {Slaves are available}
+stealthInceptionBonus {Chance to infiltrate the city}
+stolenGoodsMtp {Reduced penalty for stolen goods}
+stormDamageMtp {Storm damage}
+tradeLicenseCost {Trade license cost}
+uniqueGoodsAvailable_0 {Strategic goods are not sold}
+uniqueGoodsAvailable_1 {Strategic goods are available}
+uniqueGoodsStock {Strategic goods stock}
+SquadronPower {Squadron power}

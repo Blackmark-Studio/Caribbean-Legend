@@ -1,0 +1,17 @@
+condition_legendGuide
+{
+Cet objet apparaîtra dans le jeu si vous suivez la page
+Caribbean Legend
+}
+condition_mushket_indian
+{
+Cet objet apparaîtra chez les usuriers si vous possédez
+Caribbean Legend: Age of Pirates
+}
+noRewardYetMessage
+{
+Cette récompense n'est pas encore disponible,
+restez à l'écoute des mises à jour !
+}
+steamButtonAlreadyGot {Réclamé}
+steamButtonGet {Obtenir}

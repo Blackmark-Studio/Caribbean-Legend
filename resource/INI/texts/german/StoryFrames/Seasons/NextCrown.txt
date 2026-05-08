@@ -1,0 +1,46 @@
+Node0_a {Ein neues Kalenderjahr rückt näher. Die Saison der Krone ist eine Zeit der Erneuerung und des Aufbruchs. Die Nordostwinde werden berechenbar und machen den Atlantik für lange Überfahrten deutlich sicherer.$br$redGerade in dieser Zeit treffen Menschen und Waren aus Europa im Archipel ein. Die Gouverneure erhalten frische Befehle und Berichte, während Patrouillen und Kronkonvois über das Meer kreuzen.}
+Node0_a_action {Ein Meer voller Möglichkeiten!}
+Node0_b_a {Der Handel mit den Kolonien ist wie gewohnt zum Winter hin abgeflaut. Die letzten Lieferungen von Zucker und Tabak sind längst nach Europa gegangen, der Einschlag von Ebenholz und Mahagoni wurde eingestellt, und das Gleichgewicht wird sich erst in der nächsten Saison wiederherstellen. Derzeit liegen die Preise für Kolonialwaren deutlich über dem Üblichen.}
+Node0_b_a_reaction {Ich bin sicher, sie haben nicht alles erfasst}
+Node0_b_a_reaction_log {Sie beschließen, Ihren Ruf als Händler und Ihr natürliches Charisma zu nutzen, um die Kaufleute zu überzeugen, Ihnen die nicht erfassten Restbestände zu verkaufen.}
+Node0_b_b {Die vergangene Saison hat die Kolonien völlig ausgepresst - die Vorräte sind erschöpft, und die Plantagen wurden vom Unwetter fast vernichtet. Die letzten Reste der Kolonialwaren wurden längst in die Hauptkolonien gebracht, und auf dem Markt gibt es kaum noch etwas zu kaufen oder zu verkaufen. Die Händler haben die Preise in die Höhe getrieben und warten auf die Saison des Zuckerrohrs - dann wird sich das Gleichgewicht wiederherstellen.}
+Node0_b_b_reaction {Für Leute wie mich findet sich immer etwas}
+Node0_b_b_reaction_log {Sie nutzen die Fähigkeiten Ihres Quartiermeisters und einiger Zuträger, um die Warenbestände in den Läden genau einzuschätzen. Die Händler werden gezwungen sein, Ihnen das zu verkaufen, was sie lieber für sich zurückhalten wollten.}
+Node0_b_c {In den Hauptstädten hat man beschlossen, die Kolonialabgaben zu überprüfen. Solange sich die Schreibtischhengste über Zölle streiten, haben es die Händler nicht eilig, langfristige Verträge abzuschließen. Darunter leiden sowohl die Preise als auch das Handelsvolumen.}
+Node0_b_c_reaction {Unsere Ware ist die beste!}
+Node0_b_c_reaction_log {Sie beschließen, Ihren Ruf als erfahrener Kaufmann zu nutzen, um Waren von Ihrem Schiff zu einem höheren Preis zu verkaufen. Leider funktioniert das nur in Kolonien, in denen Ihre Ware tatsächlich gebraucht wird.}
+Node0_c_a {Die Werften dagegen haben sich bereits vollständig von den Schäden erholt, und die auf den Markt strömenden Mengen an Schiffsholz haben die Reparaturkosten gesenkt.}
+Node0_c_a_reaction {Ich hoffe, wir werden das nicht brauchen}
+Node0_c_a_reaction_log {Sie wissen genau, wie man ein Schiff über Wasser hält, und beschließen, dieses Wissen zu nutzen, um seltener zur Reparatur ins Dock zu müssen.}
+Node0_c_b {Aber es gibt auch gute Nachrichten - um die Schlagkraft der nationalen Flotten wiederherzustellen, hat Europa in diesem Jahr besonders große Materiallieferungen geschickt. Mit den ersten Kronkonvois sind zudem erfahrene Schiffbaumeister eingetroffen. Die Nationen rüsten sich für einen großen Krieg, doch für einen Freikapitän bedeutet das einen deutlichen Rückgang der Reparaturkosten.}
+Node0_c_b_reaction {Billige Reparaturen? Dann schlagen wir härter zu}
+Node0_c_b_reaction_log {Wenn Schiffsrümpfe leicht wieder instand gesetzt werden können, muss der Feind ohne Gnade getroffen werden. Sie beschließen, nur auf die kritischen Teile feindlicher Schiffe zu zielen, und lassen zudem einen Vorrat schwerer Gusskugeln neben den Stückpforten bereithalten, falls es zum Nahkampf kommt.}
+Node0_c_c {Unruhige Gerüchte über eine bevorstehende große Militärexpedition gehen durch Häfen und Ankerplätze. Die besten Planken, Taue und Segeltuche wurden für Kriegsschiffe reserviert. Die Werften arbeiten zwar, doch das Material geht rasch in vorrangige Staatsaufträge. Das treibt die Reparaturkosten in die Höhe.}
+Node0_c_c_reaction {Unser Schiff wird im Krieg nützlich sein}
+Node0_c_c_reaction_log {Sie geben sich mühelos als erfahrener Freibeuter im Dienst aus und reihen sich unter die Kriegsschiffe ein.}
+Node0_d_a {Jetzt versucht jede Nation, ihre neuen Kräfte zu nutzen und ihren Einfluss zu vergrößern. Jeder Gouverneur wird Hilfe gern annehmen, und zum Staatsfeind zu werden ist überraschend leicht. Kaperbriefe sind nun einfacher zu bekommen, die Karibik ist voller Waffen und voller Menschen, die sie einsetzen wollen. Das ist eine Zeit der Möglichkeiten.}
+Node0_d_a_reaction {Sie werden sich an uns erinnern}
+Node0_d_a_reaction_log {Wenn man weiß, wem man wo bezahlen muss, lässt sich aus einem Gerücht schnell ein loderndes Feuer machen. Die Mächte beobachten die Taten freier Kapitäne sehr genau, doch Sie werden es schaffen, sämtliche Aufmerksamkeit auf sich zu ziehen.}
+Node0_d_b {Gute Nachrichten sind aus der Heimat eingetroffen - in Europa wurde eine bedeutende dynastische Heirat geschlossen, die die Beziehungen zwischen alten Rivalen gestärkt hat. Das hat die Spannungen sowohl daheim als auch in der Karibik deutlich gesenkt, weshalb viele erfahrene Soldaten entlassen wurden. Diese Veteranen haben sich unter die Grünschnäbel in den Tavernen gemischt und die Erfahrung angeheuerter Besatzungen spürbar erhöht.}
+Node0_d_b_reaction {Begabte Rekruten auswählen}
+Node0_d_b_reaction_log {Ein scharfes Auge erkennt erfahrene Soldaten mühelos unter den Landratten. Sie werden nur Veteranen anheuern können, was die Schlagkraft Ihrer Besatzung erheblich steigert.}
+Node0_d_c {Häfen und Beamte sind mit Arbeit überlastet. Papiere wandern von Hand zu Hand, die Lagerhäuser nehmen Ladungen an, und die Wachen sind mit der Kontrolle von Kriegsschiffen beschäftigt. In diesem Durcheinander kann ein aufmerksamer Kapitän unbemerkt durchkommen.}
+Node0_d_c_reaction {Eine günstige Gelegenheit}
+Node0_d_c_reaction_log {Ihre Fähigkeit, freundlich zu wirken und Menschen für sich einzunehmen, wird sich als sehr nützlich erweisen, wenn die Wachsamkeit der Wachen nachlässt.}
+Node0_d_d {Mit dem Wechsel der Beamten in den Häfen beginnt eine neue Bestandsaufnahme. Schiffstagebücher werden gründlicher als üblich geprüft, die Besatzungen werden nachgezählt, und Lizenzen müssen erneuert werden. Fremde ziehen schnell unerwünschte Aufmerksamkeit auf sich, und im Hafen unbemerkt zu bleiben wird schwieriger.}
+Node0_d_d_reaction {Wir müssen uns bedeckt halten}
+Node0_d_d_reaction_log {Trotz der schärferen und pedantischeren Kontrollen wird Ihre Fähigkeit, unauffällig zu wirken und keine Aufmerksamkeit zu erregen, das Passieren des Zolls und das Täuschen von Patrouillen erheblich erleichtern.}
+Node0_d_e {In den Mutterländern braut sich ein weiterer Konflikt zwischen Schweden und dem Zarentum Russland zusammen. Karl Gustav hat England, seinen Glaubensverbündeten, um Unterstützung gebeten, während Alexei Michailowitsch den Unmut der Katholiken genutzt und sich die Unterstützung der Habsburger gesichert hat. Das hat Europa in zwei große politische Blöcke gespalten, und jede Macht hat beschlossen, ihre regulären Truppen zu Hause zu behalten.$br$redDen Kolonien wurde befohlen, auf sich selbst zu vertrauen. Die Garnisonen werden mit Einheimischen verstärkt; jeder, der auch nur halbwegs diensttauglich ist, wird aus den Tavernen gefegt. Zurück bleiben nur völlig unfähige Grünschnäbel.}
+Node0_d_e_reaction {Exerzieren richtet alles}
+Node0_d_e_reaction_log {Sie beschließen, den Mangel an Erfahrung der angeheuerten Besatzungen durch Einsatz und Drill auszugleichen, ganz nach Art einer Kriegsflotte. Tag und Nacht werden die Rekruten unter Ihrer aufmerksamen Führung in Formation über das Deck marschieren und früher oder später zu echten Seewölfen werden.}
+Node0_d_f {Beunruhigende Nachrichten sind aus Europa eingetroffen - das Osmanische Reich baut seine militärische Stärke aus und festigt seine Stellung in der Region. Die Christen bereiten sich darauf vor, den Süden der Balkanhalbinsel gegen eine mögliche Bedrohung zu verteidigen, und alle Mächte schließen hastig befristete Religionsbündnisse. Selbst das protestantische England ist bereit, seine Flotte ins Mittelmeer zu schicken. Das senkt die Spannungen in der Karibik deutlich, bringt aber auch Nachteile mit sich - alle guten Geschütze sind in den Mutterländern geblieben.}
+Node0_d_f_reaction {Sind den Forts auch die Geschütze ausgegangen?}
+Node0_d_f_reaction_log {Als erfahrener Kanonier erkennen Sie mühelos den Unterschied zwischen einem kampffähigen Fort und einem, das jeden Widerstand verloren hat. Der Mangel an Geschützen wird es ermöglichen, Stürme deutlich früher zu beginnen.}
+Node0_success
+{
+Sie treten unter klarem Himmel und mit günstigem Wind in den Segeln in das neue Jahr ein.
+Die Saison der Krone bringt neue Befehle, neue Gesichter und volle Lagerhäuser.
+Alles beginnt von Neuem - und jeder hat die Chance, in die Geschichte einzugehen.
+}
+Node0_success_action {In See!}
+Node0_title {Saison der Krone}

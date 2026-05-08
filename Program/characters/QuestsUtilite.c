@@ -687,7 +687,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 	{
 		DeleteAttribute(_location, "box1");
 		_location.box1.money = 30000;
-		_location.box1.items.gold_dublon = 200; // Captain Beltrop, 18.02.2021, было пропущено слово items, из-за чего в сундуке были только деньги
+		_location.box1.items.gold_dublon = 200;
 		_location.box1.items.map_normal = 1;
 		_location.box1.items.pistol8 = 1;
 		_location.box1.items.harpoon = 5;
@@ -5512,14 +5512,11 @@ void Tortuga_DeleteShipGuard()
 	DeleteAttribute(&TEV, "Guards.Tortuga");
 	if (Group_FindGroup("Tortuga_Guard") != -1)
 		Group_DeleteGroup("Tortuga_Guard");
-	ref sld;
 	for (int i=1; i<=3; i++)
-	{  
-		if (GetCharacterIndex("TortugaGuardCap_"+i) != -1)
-		{
-			sld = characterFromId("TortugaGuardCap_"+i);
-			sld.lifeday = 0;
-		}
+	{
+		int iGuard = GetCharacterIndex("TortugaGuardCap_" + i);
+		if (iGuard != -1)
+			Characters[iGuard].lifeday = 0;
 	}
 }
 
@@ -6917,4 +6914,21 @@ bool IsShipInPort(string city)
 	ref rColony = GetColonyByIndex(idx);
 	bool ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
 	return sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok;
+}
+
+// Отменить аренду склада, все товары на корабль, склад оставляем пустым
+void LeaveStorage(ref storageChr, ref colony, int payment = 0)
+{
+	if (payment > 0) AddMoneyToCharacter(pchar, -payment);
+
+	ref store = &stores[sti(colony.StoreNum)];
+	SetStorageGoodsToShip(store);
+	DeleteAttribute(storageChr, "Storage.Activate");
+	storageChr.Storage.NoActivate = true;
+
+	int goodsQty = GetArraySize(&Goods);
+	for (int i = 0; i < goodsQty; i++)
+	{
+		SetStorageGoods(store, i, 0, 1.0);
+	}
 }

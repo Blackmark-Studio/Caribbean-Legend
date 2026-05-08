@@ -1,0 +1,67 @@
+Tip0 {Red Mary jest bardzo zazdrosna.}
+Tip1 {Helen jest skrajnie przesądna — jak każdy pirat.}
+Tip10 {Zwracaj uwagę na archetypy wrogów: są pokazane obok pasków zdrowia i energii.}
+Tip11 {Ataków fechmistrzów lepiej nie blokować — zbyt łatwo przebijają gardę. Pewniej jest parować.}
+Tip12 {Muszkieterzy zadają kolosalne obrażenia. Eliminuj ich w pierwszej kolejności.}
+Tip13 {Szybki strzał jest słabszy od celowanego. Taka jest cena szybkości.}
+Tip14 {Amulety bojowe są szczególnie silne w połączeniu ze sobą. Dobieraj je z głową.}
+Tip15 {Broń palna odrzuca przy trafieniu — wykorzystuj to, by trzymać dystans.}
+Tip16 {Muszkiet w rękach mocno spowalnia ruch. Dobyta klinga też, ale mniej.}
+Tip17 {Cofając się i poruszając w bok, ruszasz się wyraźnie wolniej niż do przodu, ale nie tracisz wroga z oczu.}
+Tip18 {Wielu przeciwników potrafi zatruwać w walce. Zawsze noś przy sobie odtrutki.}
+Tip19 {Każda broń jest wyjątkowa na swój sposób — dobieraj ją pod swoje perki i skille.}
+Tip2 {Alonso nie lubi mówić o swojej przeszłości.}
+Tip20 {Na żaglach bojowych statek skręca najszybciej.}
+Tip21 {Kołysanie, skręty i prędkość statku mocno wpływają na celność ognia artyleryjskiego.}
+Tip22 {Jeśli często pudłujesz z dział, skróć dystans.}
+Tip23 {Skille „Działa” i „Celność” wpływają zarówno na strzelanie z trzeciej osoby, jak i na tryb celowania.}
+Tip24 {Tonące statki nie zadają obrażeń przy taranowaniu — nie bój się ich.}
+Tip25 {Celne trafienie kniplem w maszt może go znieść. Jeśli żagle są już uszkodzone, szanse rosną.}
+Tip26 {Przy dużej przewadze liczebnej wrogi statek może poddać się już przy próbie abordażu.}
+Tip27 {Zatapianie pirackich statków obniża zagrożenie pirackie i czyni Karaiby bezpieczniejszymi.}
+Tip28 {Oficerowie bez perka „Captain” mogą dowodzić statkami tylko do 4 klasy.}
+Tip29 {Cechy statków przydają się w różnych sytuacjach — dobieraj je pod swój styl gry.}
+Tip3 {Pamiętaj: dobycie pistoletu jest zawsze szybsze niż przeładowanie muszkietu.}
+Tip30 {Forty można niszczyć ostrzałem murów, ale trafienia w strzelnice przyspieszają ten proces.}
+Tip31 {Uciekające statki mogą wyrzucać towary za burtę. Podpłyń do nich, by podnieść ładunek.}
+Tip32 {Działa z czasem się zużywają. Trzymaj trochę zapasowych w rezerwie.}
+Tip33 {Różne typy amunicji mają różny zasięg. Kule armatnie mają największy, kartacze najmniejszy.}
+Tip34 {Kule są uniwersalne. Na żagle i maszty bierz kniple, w załogę wal kartaczem, a w kadłub bombami.}
+Tip35 {Uważnie czytaj dialogi — bywają w nich unikalne informacje.}
+Tip36 {Jeśli kolonia zostanie skutecznie oblężona, twoje wkłady i statki w zarządzie portu przepadną.}
+Tip37 {Rozpytuj mieszczan i pijaków o plotki — często wiedzą mnóstwo ciekawych rzeczy.}
+Tip38 {Szukanie skarbów się opłaca. Sprzedawcy map skarbów szukaj w tawernie.}
+Tip39 {Fadey Moskovit, Loxley i opat Benoit mogą pomóc ci pozbyć się nagrody za głowę.}
+Tip4 {Na Karaibach nie brakuje dziwnych ludzi. Mówią, że jest tu pewien ksiądz, który prędzej sprowadzi cię na manowce, niż wskaże drogę.}
+Tip40 {Z pomocą pirackich baronów można na pewien czas obniżyć zagrożenie pirackie.}
+Tip41 {Amulety niszczą się po zdjęciu z postaci. Zaplanuj build wcześniej.}
+Tip42 {Wards można zdejmować i zakładać dowolnie często. Nie niszczą się i działają wiecznie.}
+Tip43 {Trzymaj zapas broni na pokładzie: każdy poległy marynarz zabiera swoją ze sobą na tamten świat.}
+Tip44 {Przed wyjściem z portu upewnij się, że rumu, leków i prowiantu wystarczy na cały rejs.}
+Tip45 {Szczury to plaga żeglarza. Można się ich pozbyć arszenikiem albo pradawną magią.}
+Tip46 {Lochy bywają bardzo zawiłe. Jeśli się zgubisz, trzymaj się prawej strony i idź wzdłuż niej.}
+Tip47 {Przedmioty można wyrzucać z ekwipunku. Czasem warto pozbyć się ciężkiego gratowiska.}
+Tip48 {Perki można zresetować, wypijając specjalną miksturę. Nie bój się eksperymentować z buildami.}
+Tip49 {Skarby, sklepikarze i strażnicy cmentarni to dobre źródła składników do craftingu. Odwiedzaj ich częściej.}
+Tip5 {Umiejętność walki bronią białą zmniejsza koszt energii przy ciosach.}
+Tip50 {Statki można zostawić w zarządzie portu razem z załogą i oficerem.}
+Tip51 {W stoczniach kolonii stołecznych można wynająć magazyn do bezpiecznego przechowywania towarów i dział okrętowych.}
+Tip52 {Jeśli fort kolonii jest wyraźnie nie do ruszenia, spróbuj zaatakować miasto od lądu. Garnizon miejski jest zauważalnie słabszy, ale łup będzie mniejszy.}
+Tip53 {Na otwartym morzu można znaleźć dryfujące beczki. Mogą kryć kosztowności albo rupiecie - to zawsze niespodzianka.}
+Tip54 {Każdy cios można sparować. Jeśli dobrze opanujesz tę technikę, będziesz w stanie wygrać każdy pojedynek.}
+Tip55 {Czasem morskie prądy przynoszą niespodziewane dary tym, którzy spacerują po ustronnych zatokach.}
+Tip56 {Ametysty nie pomagają na upojenie. Naprawdę.}
+Tip57 {W nagłej sytuacji na pozycję abordażnika można wyznaczyć dowolnego oficera. Armia owiec prowadzona przez lwa pokona armię lwów prowadzoną przez owcę.}
+Tip58 {Gubernatorom i kapitanom też nie są obce gry hazardowe, ale nie licz, że będą grać z nieznajomymi.}
+Tip59 {W krytycznej sytuacji można wziąć niewolników do załogi. To podkopuje morale załogi, ale pozwala szybko uzupełnić jej szeregi.}
+Tip6 {Przeciążenie i upojenie nakładają kary na umiejętności.}
+Tip60 {Jeśli straż przyłapie cię na interesach z przemytnikami, czasem prościej po prostu się wykupić. To podejście czysto biznesowe.}
+Tip61 {Tworzenie przedmiotów zużywa czas w grze. Czasem bardziej opłaca się coś stworzyć, niż bez celu spać w tawernie.}
+Tip62 {Naprawa statku w stoczni zużywa czas w grze. Pamiętaj o tym, gdy gdzieś ci się spieszy.}
+Tip63 {W nagłej sytuacji na pozycję abordażnika można wyznaczyć dowolnego oficera. Armia owiec prowadzona przez lwa pokona armię lwów prowadzoną przez owcę.}
+Tip64 {Kolonie Archipelagu skrywają dziesięć unikalnych miejskich historii. Częściej rozmawiaj z mieszkańcami na ulicach i nie żałuj rumu dla pijaków w tawernach.}
+Tip65 {Możesz dowodzić abordażnikami w walce. Spróbuj wydawać im rozkazy za pomocą skrótów klawiszowych.}
+Tip66 {Niektóre perki mają różne efekty dla głównego bohatera i oficerów.}
+Tip7 {Mikstury odnawiają zdrowie powoli — nie licz, że przeczekasz wszystko w bloku.}
+Tip8 {Jeśli cię otoczyli, najlepszym sposobem wyrwania się jest szybki unik w bok.}
+Tip9 {Broń ciężka zużywa więcej energii, ale też mocniej uderza.}

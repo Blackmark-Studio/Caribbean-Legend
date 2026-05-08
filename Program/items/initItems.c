@@ -163,7 +163,7 @@ int InitItems()
 	n = InitStdBlade(n, "blade_SP_3low", 	"ITEMS_41",     5,  TGT_QUEST,   B_EXCELLENT, "FencingS", 9, 1.05, 1.10, 0, 0, 0,100000); // Катлас висельник без черепа
 	n = InitStdBlade(n, "blade_SP_3", 	"ITEMS_41",     6,  TGT_QUEST,   B_EXCELLENT, "FencingS", 9, 1.05, 1.10, 0, 0, 0,100000); // Катлас висельник с черепом
 	n = InitStdBlade(n, "blade_33", "ITEMS_17",  6,    TGT_QUEST,  B_EXCELLENT, "FencingH",16, 1.00, 1.10, 1, 15, 1, 		  0); // Меч Стража
-	n = InitStdBlade(n, "blade_34", "ITEMS_17", 12,    TGT_QUEST,  B_EXCELLENT, "FencingL", 19, 0.95, 1.15, 0, 0, 0, 	   8000); // резервный клинок 1
+	n = InitStdBlade(n, "blade_34", "ITEMS_42", 9,    TGT_QUEST,  B_EXCELLENT, "FencingL", 19, 0.95, 1.15, 0, 0, 0, 	   35000); // Шпага утопленника
 	n = InitStdBlade(n, "blade_35", "ITEMS_17", 12,    TGT_QUEST,  B_EXCELLENT, "FencingS", 20, 0.95, 1.15, 0, 0, 0, 	   8000); // резервный клинок 2
 	n = InitStdBlade(n, "blade_36", "ITEMS_17", 16,    TGT_QUEST,  B_EXCELLENT, "FencingH", 21, 1.05, 1.10, 0, 0, 0, 	  10000); // мальтийский меч
 	n = InitStdBlade(n, "blade_37", "ITEMS_17", 12,    TGT_QUEST,  B_EXCELLENT, "FencingH", 21, 1.05, 1.10, 0, 0, 0, 	   8000); // резервный клинок 3
@@ -210,7 +210,7 @@ int InitItems()
 	n = InitStdMusket(n, "mushket8",    "modular_musket", "ITEMS_37", 15, 0.0001,  1,   230000,    80.0,   200.0, 17.0, 4,     B_UNIQUE); // Четырехзарядный штуцер cle
 	n = InitStdMusket(n, "mushket9",    "Mushket1_SP2", "ITEMS_39",   10, 0.0001,  1,   39000,    150.0,   375.0, 22.0, 1,     B_UNIQUE); // Аркебуза конкистадора SP2
 	n = InitStdMusket(n, "mushket10",       "mushket10",  "ITEMS_41",  9, 0.0001,  1,   52000,    130.0,   253.0, 14.8,  1,     B_UNIQUE); // Имперский мушкет
-	
+	n = InitStdMusket(n, "mushket_indian",       "mushket_indian",  "ITEMS_42",  6, 0.0001,  1,   1831,    110.0,   145.0, 14.0,  1,     B_UNIQUE); // Мушкет вождя по интеграции франшизы
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//										КИРАСЫ И КОСТЮМЫ
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3139,6 +3139,34 @@ int InitItems()
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
 	n++;
 
+	makeref(itm,Items[n]); // Руководство для начинающих легенд
+	itm.id = "legendGuide";
+	itm.name = "itmname_legendGuide";
+	itm.describe = "itmdescr_legendGuide";
+	itm.model = "";
+	itm.picIndex = 5;
+	itm.picTexture = "ITEMS_42";
+	itm.Weight = 0.1;
+	itm.price = 0;
+	itm.ItemType = "SUPPORT";
+	itm.TradeType = ITEM_TRADE_NORMAL;
+	itm.groupID	= TOOL_ITEM_TYPE;
+	n++;
+
+	makeref(itm,Items[n]); // Идол из зелёного камня
+	itm.id = "greenIdol";
+	itm.name = "itmname_greenIdol";
+	itm.describe = "itmdescr_greenIdol";
+	itm.model = "";
+	itm.picIndex = 7;
+	itm.picTexture = "ITEMS_42";
+	itm.Weight = 1.0;
+	itm.price = 19260;
+	itm.ItemType = "SUPPORT";
+	itm.TradeType = ITEM_TRADE_NORMAL;
+	itm.groupID	= TOOL_ITEM_TYPE;
+	n++;
+
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//							ШЛЯПЫ
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3298,6 +3326,20 @@ int InitItems()
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
 	n++;
+
+	makeref(itm,Items[n]); // Шляпа Утопленника
+	itm.id = "hat12";
+	itm.groupID	= HAT_ITEM_TYPE;
+	itm.name = "itmname_hat12";
+	itm.describe = "itmdescr_hat12";
+	itm.model = "hat12";
+	itm.picIndex = 8;
+	itm.picTexture = "ITEMS_42";
+	itm.price = 70000;
+	itm.Weight = 0.1;
+	itm.ItemType = "SUPPORT";
+	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	n++;
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//							ЛЕЧИЛКИ И ТРАВЫ
@@ -3314,7 +3356,7 @@ int InitItems()
 	itm.potion.pic = 21;
 	itm.potion.tex = 0; 
 	itm.potion.health = 85.0;
-	itm.potion.health.speed = 5;
+	itm.potion.health.speed = 4;
 	itm.potion.penalty = 0.1;
 	itm.minlevel = 0;
 	itm.rare = 0.3;
@@ -3338,7 +3380,7 @@ int InitItems()
 	itm.potion.pic = 22;
 	itm.potion.tex = 0; 
 	itm.potion.health = 140.0;
-	itm.potion.health.speed = 5; // скорость выпивания
+	itm.potion.health.speed = 4; // скорость выпивания
 	itm.potion.penalty = 0.3;
 	itm.minlevel = 1;
 	itm.rare = 0.005;
@@ -3362,7 +3404,7 @@ int InitItems()
 	itm.potion.tex = 0; 
 	itm.potion.antidote = true;
 	itm.potion.health = 35.0;
-	itm.potion.health.speed = 5; // скорость выпивания
+	itm.potion.health.speed = 4; // скорость выпивания
 	itm.potion.penalty = 0.2;
 	itm.minlevel = 1;
 	itm.rare = 0.001;	
@@ -3386,7 +3428,7 @@ int InitItems()
 	itm.potion.pic = 24;
 	itm.potion.tex = 0; 
 	itm.potion.health = 185.0;
-	itm.potion.health.speed = 5; // скорость выпивания
+	itm.potion.health.speed = 4; // скорость выпивания
 	itm.potion.antidote = true;
 	itm.minlevel = 1;
 	itm.rare = 0.001;
@@ -3410,7 +3452,7 @@ int InitItems()
 	itm.potion.pic = 25;
 	itm.potion.tex = 0; 
 	itm.potion.health = 45.0;
-	itm.potion.health.speed = 5;
+	itm.potion.health.speed = 4;
 	itm.potion.antidote = true;
 	//navy -->
 	itm.potion.drunk = 51;
@@ -3436,7 +3478,7 @@ int InitItems()
 	itm.potion.pic = 26;
 	itm.potion.tex = 0; 
 	itm.potion.health = 90.0;
-	itm.potion.health.speed = 5; // скорость выпивания
+	itm.potion.health.speed = 4; // скорость выпивания
 	itm.potion.antidote = true; // belamour legendary edition
 	//navy -->
 	itm.potion.drunk = 15;
@@ -3461,7 +3503,7 @@ int InitItems()
 	itm.potion.pic = 27;
 	itm.potion.tex = 0; 
 	itm.potion.health = 25.0;
-	itm.potion.health.speed = 5; // скорость выпивания
+	itm.potion.health.speed = 4; // скорость выпивания
 	itm.minlevel = 1;
 	itm.rare = 0.2;
 	itm.SortIndex = 2;
@@ -4169,20 +4211,20 @@ int InitItems()
 	//					ВСЯКАЯ ФИГНЯ 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
 	//InitStdItem( индекс, идентификатор, модель, текстура, индекс картинки, редкость, мин. уровень, цена, вес, тип)
-	n = InitStdItem( n,   "mineral1", 	  "pursel", "ITEMS_31",  5,   0.20,   1,     5, 0,   2.0,   ITEM_TRADE_NORMAL); // медный кувшин
+	n = InitStdItem( n,   "mineral1", 	  "pursel", "ITEMS_31",  5,   0.20,   1,     5, 0,   1.2,   ITEM_TRADE_NORMAL); // медный кувшин
 	n = InitStdItem( n,   "mineral2", 	  "pursel", "ITEMS_30",  5,   0.02,   0,   130, 0,   0.1,   ITEM_TRADE_NORMAL); // черепаховый гребень
-	n = InitStdItem( n,   "mineral3", 	"sapphire", "ITEMS_31",  4,   0.05,   0,    10, 0,   1.0,   ITEM_TRADE_NORMAL); // свеча
-	n = InitStdItem( n,   "mineral4", 	  "pursel", "ITEMS_31",  1,   0.05,   0,    25, 0,   2.0,   ITEM_TRADE_NORMAL);	// жук-геркулес
-	n = InitStdItem( n,   "mineral5", 	  "pursel", "ITEMS_30",  3,   0.02,   0,    40, 0,   3.0,   ITEM_TRADE_NORMAL);	// бронзовая лампадка
-	n = InitStdItem( n,   "mineral6", 	  "pursel", "ITEMS_30",  6,   0.40,   0,    20, 0,   1.0,   ITEM_TRADE_NORMAL); // зеркальце
-	n = InitStdItem( n,   "mineral7", 	  "pursel", "ITEMS_30",  7,   0.20,   0,   140, 0,   0.8,   ITEM_TRADE_NORMAL);	// фарфоровая трубка
-	n = InitStdItem( n,   "mineral8", 	  "pursel", "ITEMS_29", 16,   0.05,   4,    30, 0,   1.0,   ITEM_TRADE_NORMAL);	// туфель
-	n = InitStdItem( n,   "mineral9", 	  "pursel", "ITEMS_30", 10,   0.10,   2,    80, 0,   1.0,   ITEM_TRADE_NORMAL);	// кружка
-    n = InitStdItem( n,  "mineral10", 	  "pursel", "ITEMS_30", 16,   0.10,   0,     4, 0,   1.0,   ITEM_TRADE_NORMAL);	// огниво
+	n = InitStdItem( n,   "mineral3", 	"sapphire", "ITEMS_31",  4,   0.05,   0,    10, 0,   0.2,   ITEM_TRADE_NORMAL); // свеча
+	n = InitStdItem( n,   "mineral4", 	  "pursel", "ITEMS_31",  1,   0.05,   0,    25, 0,   0.5,   ITEM_TRADE_NORMAL);	// жук-геркулес
+	n = InitStdItem( n,   "mineral5", 	  "pursel", "ITEMS_30",  3,   0.02,   0,    40, 0,   1.0,   ITEM_TRADE_NORMAL);	// бронзовая лампадка
+	n = InitStdItem( n,   "mineral6", 	  "pursel", "ITEMS_30",  6,   0.40,   0,    20, 0,   0.7,   ITEM_TRADE_NORMAL); // зеркальце
+	n = InitStdItem( n,   "mineral7", 	  "pursel", "ITEMS_30",  7,   0.20,   0,   140, 0,   0.4,   ITEM_TRADE_NORMAL);	// фарфоровая трубка
+	n = InitStdItem( n,   "mineral8", 	  "pursel", "ITEMS_29", 16,   0.05,   4,    30, 0,   0.8,   ITEM_TRADE_NORMAL);	// туфель
+	n = InitStdItem( n,   "mineral9", 	  "pursel", "ITEMS_30", 10,   0.10,   2,    80, 0,   0.7,   ITEM_TRADE_NORMAL);	// кружка
+    n = InitStdItem( n,  "mineral10", 	  "pursel", "ITEMS_30", 16,   0.10,   0,     4, 0,   0.3,   ITEM_TRADE_NORMAL);	// огниво
 	n = InitStdItem( n,  "mineral11", 	"sapphire", "ITEMS_31", 11,   0.07,   4,   220, 0,   0.6,   ITEM_TRADE_NORMAL);	// серебряный кувшин
 	n = InitStdItem( n,  "mineral12", 	"sapphire", "ITEMS_30", 14,   0.03,   5,    60, 0,   0.1,   ITEM_TRADE_NORMAL);	// коготь ягуара
 	n = InitStdItem( n,  "mineral13", 	  "pursel", "ITEMS_30", 12,   0.10,   1,    40, 0,   0.3,   ITEM_TRADE_NORMAL);	// плетка
-	n = InitStdItem( n,  "mineral14", 	  "pursel", "ITEMS_29", 14,   0.05,   3,    55, 0,   3.0,   ITEM_TRADE_NORMAL);	// крыло вампира
+	n = InitStdItem( n,  "mineral14", 	  "pursel", "ITEMS_29", 14,   0.05,   3,    55, 0,   1.5,   ITEM_TRADE_NORMAL);	// крыло вампира
 	n = InitStdItem( n,  "mineral15", 	  "pursel", "ITEMS_30", 11,   0.05,   1,    30, 0,   0.1,   ITEM_TRADE_NORMAL);	// Складной нож
 	n = InitStdItem( n,  "mineral16", 	  "pursel", "ITEMS_31",  8,   0.05,   1,    45, 0,   0.3,   ITEM_TRADE_NORMAL);	// оселок
 	n = InitStdItem( n,  "mineral17", 	  "elixir", "ITEMS_19", 16,   0.05,   1,    45, 0,   0.3,   ITEM_TRADE_NORMAL);	// пустой стеклянный флакон
@@ -4203,9 +4245,9 @@ int InitItems()
 	n = InitStdItem( n,  "mineral32", 	  "pursel", "ITEMS_29",  9, 0.0001,   1,   700, 0,   0.3,   ITEM_TRADE_NORMAL);	// пулелейка		
 	n = InitStdItem( n,  "mineral33", 	  "pursel", "ITEMS_31", 15,   0.01,   1,   120, 0,   0.1,   ITEM_TRADE_NORMAL);	// краска для тату		
 	n = InitStdItem( n,  "mineral34", 	  "elixir", "ITEMS_31",  6,   0.05,   1,   100, 0,   0.1,   ITEM_TRADE_NORMAL);	// пустая бутылка		
-	n = InitStdItem( n,  "mineral35", 	        "", "ITEMS_33",  4,   0.01,   1,   220, 0,   6.0,   ITEM_TRADE_NORMAL);	// лютня
-	n = InitStdItem( n,  "crab_pincers",        "", "ITEMS_35",  8, 0.0001,  20,   300, 0,   3.5,   ITEM_TRADE_NORMAL);	// клешни
-	n = InitStdItem( n,  "crab_jaw", 	        "", "ITEMS_35",  9, 0.0001,  20,   500, 0,   2.0,   ITEM_TRADE_NORMAL);	// жвалы
+	n = InitStdItem( n,  "mineral35", 	        "", "ITEMS_33",  4,   0.01,   1,   220, 0,   3.5,   ITEM_TRADE_NORMAL);	// лютня
+	n = InitStdItem( n,  "crab_pincers",        "", "ITEMS_35",  8, 0.0001,  20,   300, 0,   2.2,   ITEM_TRADE_NORMAL);	// клешни
+	n = InitStdItem( n,  "crab_jaw", 	        "", "ITEMS_35",  9, 0.0001,  20,   500, 0,   1.7,   ITEM_TRADE_NORMAL);	// жвалы
 	
 	trace("Всего предметов (размерность массива) "+n);
 	/*belamour трейс должен выдать айди последнего предмета, сейчас это "crab_jaw"
@@ -4522,6 +4564,7 @@ int InitStdBlade( 	int		ItemIndex,
 	if(ModelID == "blade_SP_3low") blade.Weight = 1.6;
 	if(ModelID == "blade_SP_3")    blade.Weight = 3.8;
 	if(ModelID == "blade_WR")    blade.Weight = 3.6;
+	if(ModelID == "blade_34")    blade.Weight = 2.7;
 
 	blade.Balance = fRandSmall(2.0);
 	switch (Quality)
@@ -4562,19 +4605,6 @@ int InitStdBlade( 	int		ItemIndex,
 		break;
 	}
 
-	// if(ModelID == "unarmed") blade.Attack = 15.0;
-	// if(ModelID == "knife_01") blade.Attack = 34.5;
-	// if(ModelID == "knife_03") blade.Attack = 50.0;
-	// if(ModelID == "blade_40") blade.Attack = 42.0;
-	// if(ModelID == "blade_41") blade.Attack = 90.0;
-	// if(ModelID == "blade_42") blade.Attack = 70.0;
-
-	// if(ModelID == "blade_SP_3low") blade.Balance = 1.2;
-	// if(ModelID == "blade_SP_3") blade.Balance = 1.2;
-
-	// if(ModelID == "blade_SP_3low") blade.Attack = 77.0;
-	// if(ModelID == "blade_SP_3") blade.Attack = 77.0;
-	// if (blade.id == "machete2") blade.Attack = 70.0;
 	ReinitBladeDamage(blade);
 
 	switch (BladeType) 
@@ -5460,6 +5490,13 @@ void InitGuns()
 	InitGunExt("pistol15", "t1", "cartridge",     "",          109.0, 138.0, 0.0, 0, 2,  19, 0);
 	InitGunExt("pistol15", "t2", "bullet",        "gunpowder", 95.0, 120.0,  0.0, 0, 2,  25, 1);
 	InitGunExt("pistol15", "t3", "bullet_double", "",          190.0, 240.0, 0.0, 0, 0,  12, 0);
+
+	ref mushket_indian = ItemsFromID("mushket_indian");
+	InitGunWithAmmoParams(mushket_indian, "t1", "cartridge", "",       127.0, 167.0, 0.0,  0, 0,  29, 0);
+	InitGunWithAmmoParams(mushket_indian, "t2", "bullet", "gunpowder", 110.0, 145.0, 0.0,  0, 0,  38, 1);
+	InitGunWithAmmoParams(mushket_indian, "t3", "bullet_double", "",   220.0, 290.0, 0.0,  0, 0,  19, 0);
+	mushket_indian.PriceDublon = 450;
+	mushket_indian.attack = 55.0;
 }
 
 void InitGrapeGuns()

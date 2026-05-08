@@ -101,6 +101,7 @@ void LAi_ApplyCharacterFireDamage(ref attacker, ref enemy, int nEnemies, float f
 	}
 
 	float damageMtp = 1 + GetDamageMtp(&aTable, SHOT_STRIKE, weaponType); // множитель урона
+	damageMtp += GetDamageAmmoMtp(&aTable, sBullet);                      // множитель урона боеприпаса
 
 	GunpowderTester(attacker, &damageMtp, rAmmo);
 	ModifyGunDamageByPerks(attacker, enemy, &damageMtp, nEnemies);                    // перки, не вынесенные в модификаторы
@@ -155,11 +156,18 @@ void ModifyGunDamageByQuestSituations(ref attacker, ref enemy, ref damageMtp)
 		damageMtp -= 0.25;
 	}
 
+	bool bMonster = (CheckAttribute(enemy, "monster")) || (enemy.chr_ai.group == LAI_GROUP_MONSTERS);
+	if (IsEquipCharacterByArtefact(attacker, "knife_01") && bMonster)
+	{
+		damageMtp += 2;
+	}
+
 	if (enemy.chr_ai.group == "KSOCHITAM_MONSTERS")
 	{
-		damageMtp = 0.16;
+		if (IsEquipCharacterByArtefact(attacker, "knife_01")) damageMtp += 3;
+		else damageMtp = 0.16;
 	}
-	if (CheckAttribute(enemy, "GuardMask"))
+	if (CheckAttribute(enemy, "GuardMask") && !IsEquipCharacterByArtefact(attacker, "knife_01"))
 	{
 		damageMtp = 0;
 		if (attacker.id == "Blaze") log_info(XI_ConvertString("Bullets1"));

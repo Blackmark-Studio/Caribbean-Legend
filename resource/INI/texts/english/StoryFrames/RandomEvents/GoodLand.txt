@@ -1,0 +1,49 @@
+Node0_title {Land ho!}
+Node0_a_a {Sailing past the shores of $key($ctx(islandName)Gen), you spot a $rand(brig|polacre) lying on the sand. She is on her side, her mast broken, and a great gash yawns in the hold, with crates and barrels visible within. There is not a soul in sight.$br$redAs you draw closer, you notice signs of struggle in the sand and several bodies lying by the wreck. The shore here is dreadful - pale patches by the waterline, waves breaking in uneven lines — one could easily run aground and join this unwilling anchorage.}
+Node0_a_a_action {Put in and search}
+Node0_a_a_success {You find a deep approach through the shoreline and make landfall successfully. The ship was plainly cast ashore in a storm. By some miracle, she did not sink outright from the monstrous breach below the waterline, but she is beyond all repair.$br$redInside the ship are waterlogged goods of no value.$br$red In the captain's cabin you find money and jewels, but it troubles you that not a soul is anywhere to be seen.}
+Node0_a_a_success_action {I hope they survived}
+Node0_a_a_fail {You try to find a suitable approach along the broken coastline, but strike a reef and spring a leak.$br$redYou spend the rest of the day repairing the damage and decide that the wreck ashore is not worth such trouble.}
+Node0_a_a_fail_action {A useful lesson}
+Node0_a_b_action {Lower the boats!}
+Node0_a_b_success {You decide to employ a method used in boardings and assaults on colonies. Landing a party without bringing the ship in is a risky maneuver, and you hope it will pay for itself many times over.$br$redThe ship was plainly cast ashore in a storm. By some miracle, she did not sink outright from the monstrous breach below the waterline, but she is beyond all repair.$br$redInside are waterlogged goods of no value. Your boarding party searches the wreck while you devote your attention to the cabin.$br$redA few hours later, you gather by the boats on the shore and tally the spoil. The sailors hand over your share, and you add it to the valuables found in the cabin.}
+Node0_a_b_success_action {Good to be the captain}
+Node0_a_c_action {Let us not risk it}
+Node0_a_c_success {You decide that trying to land on such a treacherous shore is not worth the risk, and besides, plundering wrecks is not held in honor among your crew. You leave the place of wreck behind your stern.}
+Node0_a_c_success_action {The main thing is not to join it}
+Node0_a_b {Sailing past the shores of $key($ctx(islandName)Gen), you notice faint lights deep in the jungle. They look nothing like the glow of campfires or torches, which at once catches your attention.$br$redAs you draw nearer, a boat laden with bales comes into view on the water, tied up to the shore in pitch darkness. You do not see any people, but they are clearly here.}
+Node0_b_a_action {Steal the boat}
+Node0_b_a_success {You manage to creep ashore with a small party and make off with the boat. A quick inspection shows the bales to be coffee, tobacco, and a little ship's silk. You have quite plainly spoiled a smugglers' bargain.}
+Node0_b_a_success_action {What was yours is ours now}
+Node0_b_a_fail {You do manage to approach the boat unnoticed, but when it comes time to cast her off, you draw unwanted attention, and people emerge from the jungle. They understand everything at once and open fire.$br$redA short fight follows, in which you lose several men from the boarding party. The cargo in the boat is spoiled as well, and only a few bales of ship's silk can be saved.}
+Node0_b_a_fail_action {Better than nothing}
+Node0_b_b_action {Drive off the smugglers}
+Node0_b_b_success {You order the ship's guns to open fire, to drive the men back into the jungle. Once you are satisfied the shore is clear, you land with the boarding party and search the abandoned stores.$br$redIn the boat you find a little tobacco, coffee, and ship's silk. In the crates ashore, you find a little more of the same goods.}
+Node0_b_b_success_action {Easy pickings}
+Node0_b_c_action {Sail on}
+Node0_b_c_success {You decide not to tempt fate and sail on, leaving the smugglers astern.}
+Node0_b_c_success_action {That is for the best}
+Node0_a_c {You have passed the shores of $key($ctx(islandName)Gen) so many times that they already feel almost like home. All the stranger, then, is the smoke rising over the jungle - thick, steady, and coming from several different fires.$br$redAlong the shore you spot fishing boats and rods, countless footprints, and drag marks where something heavy was hauled across the ground. As you draw nearer, the smell of smoked fish and meat grows stronger in the air, and your stomach answers at once.}
+Node0_c_a_action {Fresh provisions would not go amiss}
+Node0_c_a_action_tooltip_bad {That will take coin...}
+Node0_c_a_success {You fire a blank round from one of your guns and signal the fishermen who come out at the sound. At first they regard you warily, but the sack of silver in your hand clears away any misunderstanding. They load one of their boats with fish and come aboard.$br$redFor a modest sum, you buy a full lot of smoked fish and meat. Your sailors trade stories with the fishermen and give them spare bullets and powder for hunting game. The whole business does the crew a world of good.}
+Node0_c_a_success_action {Tasty and wholesome}
+Node0_c_b_action {So this is a fine fishing ground?}
+Node0_c_b_success {You order $rand(the anchor dropped and a foraging party sent out|the ship brought to anchor while the crew gathers provisions). The sailors $rand(take up spears and fishing lines|grab spears and rods), and $rand(several boats are lowered|several boats head out onto the water). You $rand(watch the bustle from above|observe the commotion) and, after $rand(a while|some time), decide $rand(to join them|to head down to them yourself).$br$red The fishing $rand(proves richly rewarding|goes unusually well), and the sight of their captain $rand(fishing shoulder to shoulder with the men|casting lines beside the sailors) $rand(heartens the crew|lifts the crew's spirits).}
+Node0_c_b_success_action {Nature's bounty}
+Node0_c_c_action {Let's not make them self-conscious}
+Node0_c_c_success {You decide not to interfere and order the ship onward. Astern, the little fishing boats and the fish-rich waters are left behind.}
+Node0_c_c_success_action {They need it more}
+Node0_a_d {Sailing off the coast of $key($ctx(islandName)Gen), you spot a settlement right at the edge of the forest. $rand(A few huts, dim lights, canoes drawn up on the sand.|The huts stand by the forest, dim lights glimmer by the water, and canoes lie pulled up on the sand.) $rand(Well-trodden paths|Narrow paths) lead down to the shore, and by the water lie $rand(baskets and bundles of lignum vitae|bundles of lignum vitae and baskets). Between the trees, $rand(natives move to and fro|figures pass among the trunks).$br$redAlonso says this is the land of the $rand(Caribs|Taíno|Arawaks|Guaraní|Ciboney), and they $rand(may prove either friends or enemies|may receive you in more than one fashion).}
+Node0_d_a_action {We will try to trade}
+Node0_d_a_success {You drop anchor and go ashore. The Indians scatter, women and children dropping their baskets while the men snatch up their weapons. You move as slowly as you can, showing your open hands.$br$redYou see confusion, but no threat. Judging it a good opening, you display the trinkets and valuables you brought and offer to exchange these gifts for lignum vitae.$br$redThe Indians heed your meaning, lower their weapons, and take your treasures. The lignum vitae is loaded aboard your ship.}
+Node0_d_a_success_action {That went well enough}
+Node0_d_a_fail {You drop anchor and go ashore. The Indians scatter, women and children dropping their baskets while the men snatch up their weapons. You do your best to move slowly, showing your open hands.$br$redYet something in your bearing provokes them, and arrows and darts come hissing your way. You answer with a couple of ragged volleys and fall back toward the boats. No one dies in the clash, but bitterness lingers after it.}
+Node0_d_a_fail_action {Damned heathens}
+Node0_d_b_action {The Lord knows His own}
+Node0_d_b_success {You decide that uncertainty may leave you exposed, and order preparations made for an assault. The boarding company crowds into the boats armed to the teeth, while the gunners make the cannon ready to fire.$br$redThe fight begins swiftly and bloodily - cannon fire scatters the natives, and musket volleys finish those slow to flee. It seems the slaughter is over, when suddenly arrows come flying out of the jungle - the settlement proves larger than it looked from the sea. A bloody struggle breaks out.$br$redIn the carnage you lose several men, but most of the boarding party survives. Now the lignum vitae is yours.}
+Node0_d_b_success_action {It is worth the cost}
+Node0_d_c_action {Let us not risk it}
+Node0_d_c_success {You decide the risk is too great, and that now is not the time to sour relations with the Indians. The coastal village slips astern.}
+Node0_d_c_success_action {Let them be}
+Node0_MissingTreasures {Jewelry and mirrors will be needed...}

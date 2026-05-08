@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 			dialog.text = "站住! 立即放下武器, 跟我们走! ";
 			link.l1 = "这到底是怎么回事? ";
 			link.l1.go = "Sharlie_arest_1";
-			if (CheckCharacterItem(PChar, "knife_03")) pchar.Sharlie.KnifeMonpe = true;
+
 		break;
 		
 		case "Sharlie_arest_1":
@@ -1753,6 +1753,7 @@ case "Europe":
 			link.l1.go = "MOT_Barbie_Escadra";
 			
 			AddItems(pchar, "gold_dublon", 40);
+			DeleteAttribute(NPChar, "moneyNotGiven");
 			Log_info("你获得了40枚达布隆金币");
 			PlaySound("Interface\important_item.wav");
 			AddCharacterExpToSkill(pchar, "Leadership", 20);
@@ -1813,7 +1814,7 @@ case "Europe":
 		break;
 		
 		case "MOT_Barbie_101":
-			if (IsCharacterPerkOn(Pchar, "Trustworthy"))
+			if (!CheckAttribute(NPChar, "moneyNotGiven"))
 			{
 				dialog.text = "感谢你出色的护送, 船长。 很高兴我们没有遇到任何事件。 ";
 				link.l1 = "与你做生意很愉快, 先生。 现在请原谅, 我有很多事要处理。 ";

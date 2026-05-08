@@ -19,6 +19,9 @@ int iSelected, iSelectedCol;
 // для выкидывания
 int iShipQty, iUnits, iCurGoodsIdx;
 
+float fSpeeds[SHIP_SPEEDPOINT_QUANTITY];
+float fCompareSpeeds[SHIP_SPEEDPOINT_QUANTITY];
+
 int	iCrewQty = 0;
 int iBackCrew = 0;
 int iGetHired = 0;
@@ -90,6 +93,8 @@ void InitInterface_RS(string iniName, ref _chr, string _type)
 		CreateParticleEntity();
 	}
 	
+	SetWindRosePoints();
+	
 	SendMessage(&GameInterface,"ls",MSG_INTERFACE_INIT,iniName);
 
 	SetEventHandler("InterfaceBreak","ProcessExitCancel",0);
@@ -126,6 +131,10 @@ void InitInterface_RS(string iniName, ref _chr, string _type)
 	SetEventHandler("HIRE_ADD_BUTTON","HIRE_ADD_BUTTON",0);
 	SetEventHandler("HIRE_REMOVE_BUTTON", "HIRE_REMOVE_BUTTON", 0);
 	SetEventHandler("HIRE_REMOVE_ALL_BUTTON", "HIRE_REMOVE_ALL_BUTTON", 0);
+	
+	SetEventHandler("Event_GetWindRosePoints", "GetWindRosePoints", 0);
+	SetEventHandler("Event_GetWindRoseComparePoints", "GetWindRoseComparePoints", 0);
+	SetEventHandler("Event_GetGradientRingColor", "GetSpeedColor", 0);
 	
     //////////////////
     SetNewGroupPicture("CREW_PICTURE", "SHIP_STATE_ICONS", "Crew");
@@ -174,15 +183,23 @@ void InitInterface_RS(string iniName, ref _chr, string _type)
 	GameInterface.strings.CharJob = "";
 
 	if (!bTransferMode) STH_StealShipFlag(sti(refEnemyCharacter.nation), GetCharacterShipClass(refEnemyCharacter));
-	InitLootCabinButton(_type);
+	InitLootCabinButton(refEnemyCharacter, _type);
 }
 
 // кнопка обыска каюты
-void InitLootCabinButton(string situation)
+void InitLootCabinButton(ref chr, string situation)
 {
-	bool canLoot = !bTransferMode & situation != "";
-	SetNodeUsing("LOOT_CABIN_BUTTON", canLoot);
-	if (!canLoot) AutoLayoutCenter("OFF_CANNONS_BUTTON|LOOT_CABIN_BUTTON", 1); // перемещаем кнопку, если вместо двух одна
+	if (bTransferMode)
+	{
+		SetNodeUsing("LOOT_CABIN_BUTTON", false);
+		AutoLayoutCenter("OFF_CANNONS_BUTTON|LOOT_CABIN_BUTTON", 1); // перемещаем кнопку, если вместо двух одна
+		return;
+	}
+
+	bool canLoot = situation != "";
+	if (BRD_IsCrewGiveUpCaptain(chr, GetCrewQuantity(chr))) canLoot = false;
+
+	SetSelectable("LOOT_CABIN_BUTTON", canLoot);
 }
 
 void ProcessExitCancel()
@@ -283,8 +300,10 @@ void ProcessExitCancel()
 	{ // не наш корабль, соотв топим, но сперва спросим
 		if (LAi_IsDead(xi_refCharacter))
 		{
+			string crewLeftNotification = "";
+			if (GetCrewQuantity(xi_refCharacter) > 0) crewLeftNotification = NewStr() + XI_ConvertString("CrewFromSunkenShipWillSaved");
 			SetFormatedText("REMOVE_WINDOW_CAPTION", XI_ConvertString("Capture Ship"));
-			SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("Surrendered_exit_1")); // Корабль остался без капитана. Потопить его?
+			SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("Surrendered_exit_1") + crewLeftNotification); // Корабль остался без капитана. Потопить его?
 			SetSelectable("REMOVE_ACCEPT_OFFICER", true);
 			SetCurrentNode("REMOVE_WINDOW_CAPTION");
 			sMessageMode = "ShipDeadAsk";
@@ -379,6 +398,10 @@ void IDoExit(int exitCode)
 	DelEventHandler("HIRE_REMOVE_BUTTON", "HIRE_REMOVE_BUTTON");
 	DelEventHandler("HIRE_REMOVE_ALL_BUTTON", "HIRE_REMOVE_ALL_BUTTON");
 	
+	DelEventHandler("Event_GetWindRosePoints", "GetWindRosePoints");
+	DelEventHandler("Event_GetWindRoseComparePoints", "GetWindRoseComparePoints");
+	DelEventHandler("Event_GetGradientRingColor", "GetSpeedColor");
+	
 	UpdateRelations();
 	
 	if(bSeaActive)
@@ -441,8 +464,11 @@ void LootCabin()
 		for (int x = 0; x < itemsListLength; x++)
 		{
 			aref boxItem = GetAttributeN(itemsList, x);
-			PutItemToShip(SHIP_LOC_HOLD, GetAttributeName(boxItem), sti(GetAttributeValue(boxItem)));
-			Log_TestInfo("Закинули в трюм: " + GetAttributeName(boxItem) + " " + sti(GetAttributeValue(boxItem)));
+			string itemId = GetAttributeName(boxItem);
+			if (itemId == "kaleuche_amulet1") continue;
+
+			PutItemToShip(SHIP_LOC_HOLD, itemId, sti(GetAttributeValue(boxItem)));
+			Log_TestInfo("Закинули в трюм: " + itemId + " " + sti(GetAttributeValue(boxItem)));
 		}
 	}
 
@@ -846,26 +872,21 @@ void ShowShipInfo(ref chr, string sAdd)
 
 void ShowShipFoodInfo(ref chr)
 {
-	// еда -->
-	// на одном корабле
+
 	SetFoodShipInfoShort(refCharacter, "FOOD_SHIP");
 	SetFoodShipInfoShort(xi_refCharacter, "FOOD_SHIP2");
-	// еда <--
-	// ром -->
 	SetRumShipInfoShort(refCharacter, "RUM_SHIP");
 	SetRumShipInfoShort(xi_refCharacter, "RUM_SHIP2");
-	// ром <--
+	SetMedicamentShipInfo(refCharacter, "MEDICAMENT_SHIP", "short");
+	SetMedicamentShipInfo(xi_refCharacter, "MEDICAMENT_SHIP2", "short");
+
 	SetFormatedText("MONEY_SHIP", "");
 	SetFormatedText("MONEY_SHIP2", "");
 	
 	if (GetRemovable(chr) && isCompanion(chr)) // считаем только своих, а то всяких сопровождаемых кормить!!!
 	{
-	    // для каждого корабля учитываем класс и считаем отдельно
-		// информация разделена по каждому кораблю
-	    SetFormatedText("MONEY_SHIP", FindRussianMoneyString(GetSalaryForShip(refCharacter)) + "\n" + XI_ConvertString("per month"));
-	    SetFormatedText("MONEY_SHIP2", FindRussianMoneyString(GetSalaryForShip(xi_refCharacter)) + "\n" + XI_ConvertString("per month"));
-	    // SetFormatedText("MONEY_SHIP", XI_ConvertString("ShipUpkeep") + NewStr() + FindRussianMoneyString(GetSalaryForShip(refCharacter)));
-	    // SetFormatedText("MONEY_SHIP2", XI_ConvertString("ShipUpkeep") + NewStr() + FindRussianMoneyString(GetSalaryForShip(xi_refCharacter)));
+		SetFormatedText("MONEY_SHIP", FindRussianMoneyString(GetSalaryForShip(refCharacter)));
+		SetFormatedText("MONEY_SHIP2", FindRussianMoneyString(GetSalaryForShip(xi_refCharacter)));
 	}
 }
 void ShowInfoWindow()
@@ -873,8 +894,8 @@ void ShowInfoWindow()
 	string sCurrentNode = GetEventData();
 	string sHeader, sText1, sText2, sText3, sPicture;
 	string sGroup, sGroupPicture;
-	int picW = 128;
-	int picH = 128;
+	int picW = 180;
+	int picH = 180;
 	int iItem, iCharacter, iGoodIndex;
 	string sPerkName1,sPerkName2;
 	string sRow, sCol;
@@ -887,6 +908,8 @@ void ShowInfoWindow()
 	ref Cannon;
 	ref chr;
 	aref arShipBonus;
+	
+	bool bWindRose = false;
 
 	switch (sCurrentNode)
 	{
@@ -975,6 +998,18 @@ void ShowInfoWindow()
 					sText3 = XI_ConvertString("Used") + ": " + FloatToString((stf(GetCargoLoad(chr))  /  stf(GetCargoMaxSpace(chr))) * 100.0, 1)+ " %";
 				}
 			}
+			
+			if(GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Rig")
+			{
+				iShip = sti(refCharacter.ship.type);
+			    refBaseShip = GetRealShip(iShip);
+				sText1 = XI_ConvertString(refBaseShip.BaseName) + " '" + refCharacter.ship.name + "'";
+				iShip = sti(xi_refCharacter.ship.type);
+				refBaseShip = GetRealShip(iShip);
+				sText2 = XI_ConvertString(refBaseShip.BaseName) + " '" + xi_refCharacter.ship.name + "'";
+				sText3  = GetConvertStr(GameInterface.TABLE_OTHER.(sRow).UserData.ID, "ShipsDescribe.txt");
+				bWindRose = true;
+			}
 
 		break;
 		
@@ -1030,6 +1065,14 @@ void ShowInfoWindow()
 			sHeader = XI_Convertstring("RumShipInfoShort");
 			sText1 = GetGoodDescr("Rum");
 		break;
+		case "MEDICAMENT_SHIP":
+			sHeader = XI_Convertstring("MedicamentShipInfoShort");
+			sText1 = GetGoodDescr("Medicament");
+		break;
+		case "MEDICAMENT_SHIP2":
+			sHeader = XI_Convertstring("MedicamentShipInfoShort");
+			sText1 = GetGoodDescr("Medicament");
+		break;
 	}
 
 	if (sCurrentNode == "SHIP_PERK1" || sCurrentNode == "SHIP_PERK2") chr = pchar;
@@ -1037,7 +1080,7 @@ void ShowInfoWindow()
 
 	SetShipPerksTooltip(chr, &sCurrentNode, &sHeader, &sText1, &sText2, &sText3, &sPicture, &sGroup, &sGroupPicture);
 
-	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false);
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, bWindRose, false);
 }
 
 void HideInfoWindow()
@@ -1357,24 +1400,13 @@ void ShipChangeCaptan()
 		}
 		else
 		{
-			/// проверка мин команд
-			if ((GetCrewQuantity(xi_refCharacter) + GetCrewQuantity(pchar)) < (GetMinCrewQuantity(xi_refCharacter) + GetMinCrewQuantity(pchar)))
+			/// проверка на доступных капитанов
+			if (!bPassengersAccess())
 			{
 				SetFormatedText("REMOVE_WINDOW_CAPTION", XI_ConvertString("Capture Ship"));
-				SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("ShipChangeCaptan4")); // Необходимо наличие матросов на минимальные команды для обоих кораблей. Назначение капитана невозможно
+				SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("ShipChangeCaptan5")); // У вас нет доступных офицеров.\n Назначение капитана невозможно
 				sMessageMode = "ShipChangeCaptanMessage";
 				ShowOkMessage();
-			}
-			else
-			{
-				/// проверка на доступных капитанов
-				if (!bPassengersAccess())
-				{
-					SetFormatedText("REMOVE_WINDOW_CAPTION", XI_ConvertString("Capture Ship"));
-					SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("ShipChangeCaptan5")); // У вас нет доступных офицеров.\n Назначение капитана невозможно
-					sMessageMode = "ShipChangeCaptanMessage";
-					ShowOkMessage();
-				}
 			}
 			else
 			{
@@ -1475,6 +1507,7 @@ void GoToShipChange() // нажатие ОК на табличке ок-отме
 			// убить на выходе
 			if (bSeaActive)
 			{
+				SaveCrewFromSunkenShip(xi_refCharacter);
 				if (bTransferMode)
 				{
 					ShipDead(sti(xi_refCharacter.index), KILL_BY_SELF, sti(pchar.index));  // сами же и топим
@@ -2501,6 +2534,33 @@ void HIRE_ADD_BUTTON()
 	}
 }
 
+void XIShip_GetCompareArrow(string _tabName, string rowId, ref valueA, ref valueB, string mode)
+{
+	string icon = "";
+	// сравнение калибров по ступени калибра
+	if (mode == "cannonsCaliber")
+	{
+		int calibers[12] = {3, 6, 8, 12, 16, 18, 20, 24, 32, 36, 42, 48};
+		valueA = FindIndexOf(&calibers, valueA);
+		valueB = FindIndexOf(&calibers, valueB);
+
+		if (valueB == valueA) icon = "";
+		else if (valueB >= valueA + 2) icon = "arrowup2";
+		else if (valueB > valueA) icon = "arrowup1";
+		else if (valueB + 2 <= valueA ) icon = "arrowdown2";
+		else if (valueB < valueA) icon = "arrowdown1";
+	} // остальное сравниваем приблизительно
+	else if (valueB == valueA) icon = "";
+	else if (valueB >= valueA * 1.35) icon = "arrowup2";
+	else if (valueB > valueA) icon = "arrowup1";
+	else if (valueB * 1.35 <= valueA ) icon = "arrowdown2";
+	else if (valueB <= valueA) icon = "arrowdown1";
+
+	if (icon != "" && strright(icon, 1) == "1") GameInterface.(_tabName).(rowId).td2.icon.offset = "198,-10";
+	else GameInterface.(_tabName).(rowId).td2.icon.offset = "198,-7";
+	GameInterface.(_tabName).(rowId).td2.icon.image = icon;
+}
+
 void SetShipOTHERTable2(string _tabName, ref _chr)
 {
     int     i;
@@ -2526,14 +2586,20 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 		GameInterface.(_tabName).(row).td2.align = "left";
 		GameInterface.(_tabName).(row).td2.textoffset = "0,2";
 		GameInterface.(_tabName).(row).td3.align = "right";
-		GameInterface.(_tabName).(row).td3.textoffset = "0,2";
+		GameInterface.(_tabName).(row).td3.textoffset = "20,2";
+
+		GameInterface.(_tabName).(row).td2.icon.width = 16;
+		GameInterface.(_tabName).(row).td2.icon.height = 28;
+		GameInterface.(_tabName).(row).td2.icon.group = "HIRE_EFFECTS";
 	}
+
 	GameInterface.(_tabName).tr1.UserData.ID = "Hull";
 	GameInterface.(_tabName).tr1.td1.icon.group = "EQUIP_ICONS";
     GameInterface.(_tabName).tr1.td1.icon.image = "Hull";
 	GameInterface.(_tabName).tr1.td1.str = XI_ConvertString("Hull");
 	GameInterface.(_tabName).tr1.td2.str = sti(pchar.ship.hp) + " / " + sti(refBaseShip1.hp);
 	GameInterface.(_tabName).tr1.td3.str = sti(_chr.ship.hp) + " / " + sti(refBaseShip2.hp);
+	XIShip_GetCompareArrow(_tabName, "tr1", sti(refBaseShip1.hp), sti(refBaseShip2.hp), "Hull");
     if (!CheckAttribute(&RealShips[iShip1], "Tuning.HP")) 
 		GameInterface.(_tabName).tr1.td2.color = argb(255,255,255,255);
 	else 
@@ -2551,75 +2617,74 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr2.td2.str = sti(pchar.ship.sp) + " / " + sti(refBaseShip1.sp);
 	GameInterface.(_tabName).tr2.td3.str = sti(_chr.ship.sp) + " / " + sti(refBaseShip2.sp);
 
-    GameInterface.(_tabName).tr3.UserData.ID = "Speed";
-	GameInterface.(_tabName).tr3.td1.icon.group = "EQUIP_ICONS";
-    GameInterface.(_tabName).tr3.td1.icon.image = "Speed";
-	GameInterface.(_tabName).tr3.td1.str = XI_ConvertString("Speed");
+    GameInterface.(_tabName).tr4.UserData.ID = "Speed";
+	GameInterface.(_tabName).tr4.td1.icon.group = "EQUIP_ICONS";
+    GameInterface.(_tabName).tr4.td1.icon.image = "Speed";
+	GameInterface.(_tabName).tr4.td1.str = XI_ConvertString("Speed");
 
 	if (IsCompanion(pchar))
-		GameInterface.(_tabName).tr3.td2.str = FloatToString(FindShipSpeed(pchar),2) + " / " + FloatToString(FindShipSpeedMax(pchar),2);
+		GameInterface.(_tabName).tr4.td2.str = FloatToString(FindShipSpeed(pchar),2) + " / " + FloatToString(FindShipSpeedMax(pchar),2);
 	else
-	    GameInterface.(_tabName).tr3.td2.str = FloatToString(FindShipSpeedMax(pchar),2);
+	    GameInterface.(_tabName).tr4.td2.str = FloatToString(FindShipSpeedMax(pchar),2);
 
 	if (!CheckAttribute(&RealShips[iShip1], "Tuning.SpeedRate")) 
-		GameInterface.(_tabName).tr3.td2.color = argb(255,255,255,255);
-	else
-		GameInterface.(_tabName).tr3.td2.color = argb(255,128,255,255);
-
-	if (IsCompanion(_chr))
-		GameInterface.(_tabName).tr3.td3.str = FloatToString(FindShipSpeed(_chr),2) + " / " + FloatToString(FindShipSpeedMax(_chr),2);
-	else
-	    GameInterface.(_tabName).tr3.td3.str = FloatToString(FindShipSpeedMax(_chr),2);
-
-	if (!CheckAttribute(&RealShips[iShip2], "Tuning.SpeedRate")) 
-		GameInterface.(_tabName).tr3.td3.color = argb(255,255,255,255);
-	else
-		GameInterface.(_tabName).tr3.td3.color = argb(255,128,255,255);
-
-    GameInterface.(_tabName).tr4.UserData.ID = "Maneuver";
-	GameInterface.(_tabName).tr4.td1.icon.group = "EQUIP_ICONS";
-    GameInterface.(_tabName).tr4.td1.icon.image = "Maneuver";
-	GameInterface.(_tabName).tr4.td1.str = XI_ConvertString("Maneuver");
-
-	if (IsCompanion(pchar))
-  		GameInterface.(_tabName).tr4.td2.str = FloatToString((stf(refBaseShip1.turnrate) * FindShipTurnRate(pchar)), 2) + " / " + FloatToString(FindShipTurnrateMax(pchar),2);
-	else
-	    GameInterface.(_tabName).tr4.td2.str = FloatToString(FindShipTurnrateMax(pchar),2);
-
-	if (!CheckAttribute(&RealShips[iShip1], "Tuning.TurnRate")) 
 		GameInterface.(_tabName).tr4.td2.color = argb(255,255,255,255);
 	else
 		GameInterface.(_tabName).tr4.td2.color = argb(255,128,255,255);
 
 	if (IsCompanion(_chr))
-  		GameInterface.(_tabName).tr4.td3.str = FloatToString((stf(refBaseShip2.turnrate) * FindShipTurnRate(_chr)), 2) + " / " + FloatToString(FindShipTurnrateMax(_chr),2);
+		GameInterface.(_tabName).tr4.td3.str = FloatToString(FindShipSpeed(_chr),2) + " / " + FloatToString(FindShipSpeedMax(_chr),2);
 	else
-	    GameInterface.(_tabName).tr4.td3.str = FloatToString(FindShipTurnrateMax(_chr),2);
+	    GameInterface.(_tabName).tr4.td3.str = FloatToString(FindShipSpeedMax(_chr),2);
 
-	if (!CheckAttribute(&RealShips[iShip2], "Tuning.TurnRate")) 
+	if (!CheckAttribute(&RealShips[iShip2], "Tuning.SpeedRate")) 
 		GameInterface.(_tabName).tr4.td3.color = argb(255,255,255,255);
 	else
 		GameInterface.(_tabName).tr4.td3.color = argb(255,128,255,255);
+	XIShip_GetCompareArrow(_tabName, "tr4", FindShipSpeedMax(pchar), FindShipSpeedMax(_chr), "Speed");
 
-	GameInterface.(_tabName).tr5.UserData.ID = "AgainstWind";
+    GameInterface.(_tabName).tr5.UserData.ID = "Maneuver";
 	GameInterface.(_tabName).tr5.td1.icon.group = "EQUIP_ICONS";
-    GameInterface.(_tabName).tr5.td1.icon.image = "AgainstWind";
-	GameInterface.(_tabName).tr5.td1.str = XI_ConvertString("AgainstWind");
-	
-	fTmp = acos(1.0 - FindShipWindAgainstSpeed(pchar)) * 180.0/PI;
-	GameInterface.(_tabName).tr5.td2.str = makeint(180.0 - fTmp) + " / " + (makeint(fTmp));
-	fTmp = acos(1.0 - FindShipWindAgainstSpeed(_chr)) * 180.0/PI;
-	GameInterface.(_tabName).tr5.td3.str = makeint(180.0 - fTmp) + " / " + (makeint(fTmp));
+    GameInterface.(_tabName).tr5.td1.icon.image = "Maneuver";
+	GameInterface.(_tabName).tr5.td1.str = XI_ConvertString("Maneuver");
 
-	if (!CheckAttribute(&RealShips[iShip1], "Tuning.WindAgainst")) 
+	if (IsCompanion(pchar))
+  		GameInterface.(_tabName).tr5.td2.str = FloatToString((stf(refBaseShip1.turnrate) * FindShipTurnRate(pchar)), 2) + " / " + FloatToString(FindShipTurnrateMax(pchar),2);
+	else
+	    GameInterface.(_tabName).tr5.td2.str = FloatToString(FindShipTurnrateMax(pchar),2);
+
+	if (!CheckAttribute(&RealShips[iShip1], "Tuning.TurnRate")) 
 		GameInterface.(_tabName).tr5.td2.color = argb(255,255,255,255);
 	else
 		GameInterface.(_tabName).tr5.td2.color = argb(255,128,255,255);
-	
-	if (!CheckAttribute(&RealShips[iShip2], "Tuning.WindAgainst")) 
+
+	if (IsCompanion(_chr))
+  		GameInterface.(_tabName).tr5.td3.str = FloatToString((stf(refBaseShip2.turnrate) * FindShipTurnRate(_chr)), 2) + " / " + FloatToString(FindShipTurnrateMax(_chr),2);
+	else
+	    GameInterface.(_tabName).tr5.td3.str = FloatToString(FindShipTurnrateMax(_chr),2);
+
+	if (!CheckAttribute(&RealShips[iShip2], "Tuning.TurnRate")) 
 		GameInterface.(_tabName).tr5.td3.color = argb(255,255,255,255);
 	else
 		GameInterface.(_tabName).tr5.td3.color = argb(255,128,255,255);
+	XIShip_GetCompareArrow(_tabName, "tr5", FindShipTurnrateMax(pchar), FindShipTurnrateMax(_chr), "Maneuver");
+
+	GameInterface.(_tabName).tr3.UserData.ID = "Rig";
+	GameInterface.(_tabName).tr3.td1.icon.group = "EQUIP_ICONS";
+    GameInterface.(_tabName).tr3.td1.icon.image = "AgainstWind";
+	GameInterface.(_tabName).tr3.td1.str = XI_ConvertString("Rig");
+	GameInterface.(_tabName).tr3.td2.str = XI_ConvertString(GetRigType(pchar));
+	GameInterface.(_tabName).tr3.td3.str = XI_ConvertString(GetRigType(_chr));
+
+	if (!CheckAttribute(&RealShips[iShip1], "Tuning.rig")) 
+		GameInterface.(_tabName).tr3.td2.color = argb(255,255,255,255);
+	else
+		GameInterface.(_tabName).tr3.td2.color = argb(255,128,255,255);
+	
+	if (!CheckAttribute(&RealShips[iShip2], "Tuning.rig")) 
+		GameInterface.(_tabName).tr3.td3.color = argb(255,255,255,255);
+	else
+		GameInterface.(_tabName).tr3.td3.color = argb(255,128,255,255);
 	
 	RecalculateCargoLoad(pchar);
 	RecalculateCargoLoad(_chr);
@@ -2639,7 +2704,8 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 		GameInterface.(_tabName).tr6.td3.color = argb(255,255,255,255);
 	else
 		GameInterface.(_tabName).tr6.td3.color = argb(255,128,255,255);
-	
+	XIShip_GetCompareArrow(_tabName, "tr6", GetCargoMaxSpace(pchar), GetCargoMaxSpace(_chr), "Capacity");
+
 	GameInterface.(_tabName).tr7.UserData.ID = "Crew";
 	GameInterface.(_tabName).tr7.td2.str = GetCrewQuantity(pchar) + " : "+ sti(refBaseShip1.MinCrew) +" / " + sti(refBaseShip1.OptCrew);	
 	GameInterface.(_tabName).tr7.td1.icon.group = "EQUIP_ICONS";
@@ -2656,6 +2722,7 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 		GameInterface.(_tabName).tr7.td3.color = argb(255,255,255,255);
 	else
 		GameInterface.(_tabName).tr7.td3.color = argb(255,128,255,255);
+	XIShip_GetCompareArrow(_tabName, "tr7", sti(refBaseShip1.MaxCrew), sti(refBaseShip2.MaxCrew), "MaxCrew");
 
 	GameInterface.(_tabName).tr8.UserData.ID = "sCannons";
 	GameInterface.(_tabName).tr8.td2.str = XI_ConvertString("caliber" + refBaseShip1.MaxCaliber) + " / " + sti(refBaseShip1.CannonsQuantity);
@@ -2664,15 +2731,16 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr8.td1.str = XI_ConvertString("sCannons"); //XI_ConvertString("Caliber");
 	GameInterface.(_tabName).tr8.td3.str = XI_ConvertString("caliber" + refBaseShip2.MaxCaliber) + " / " + sti(refBaseShip2.CannonsQuantity);
 
-	if (!CheckAttribute(&RealShips[iShip1], "Tuning.Cannon")) 
+	if (int(refBaseShip1.CannonsQuantity) < int(refBaseShip1.CannonsQuantityMax)) //   !CheckAttribute(&RealShips[iShip1], "Tuning.Cannon")
 		GameInterface.(_tabName).tr8.td2.color = argb(255,255,255,255);
 	else
 		GameInterface.(_tabName).tr8.td2.color = argb(255,128,255,255);
 
-	if (!CheckAttribute(&RealShips[iShip2], "Tuning.Cannon")) 
+	if (int(refBaseShip2.CannonsQuantity) < int(refBaseShip2.CannonsQuantityMax)) // !CheckAttribute(&RealShips[iShip2], "Tuning.Cannon")
 		GameInterface.(_tabName).tr8.td3.color = argb(255,255,255,255);
 	else
 		GameInterface.(_tabName).tr8.td3.color = argb(255,128,255,255);
+	XIShip_GetCompareArrow(_tabName, "tr8", sti(refBaseShip1.MaxCaliber), sti(refBaseShip2.MaxCaliber), "cannonsCaliber");
 
 	GameInterface.(_tabName).tr9.UserData.ID = "CannonType";
 	GameInterface.(_tabName).tr9.td1.icon.group = "EQUIP_ICONS";
@@ -2698,6 +2766,7 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 	}
 	else
 	    GameInterface.(_tabName).tr9.td3.str = "";
+	XIShip_GetCompareArrow(_tabName, "tr9", GetCannonsNum(pchar), GetCannonsNum(_chr), "cannonsQty");
 
 	// прорисовка
 	Table_UpdateWindow(_tabName);
@@ -2726,4 +2795,40 @@ void TakeCannonsOff()
 	SetCannonsToBort(xi_refCharacter, "cannonl", 0);
 	FillGoodsTable();
 	ShowShipInfo(xi_refCharacter, "2");
+}
+
+// Если на корабле осталась команда, не топим её
+void SaveCrewFromSunkenShip(ref captain)
+{
+	AddCharacterCrew(pchar, GetCrewQuantity(captain));
+}
+
+void SetWindRosePoints()
+{
+	int iShipType1 = int(RealShips[int(refCharacter.ship.type)].basetype);
+	int iShipType2 = int(RealShips[int(xi_refCharacter.ship.type)].basetype);
+	float fAngle;
+	for(int i = 0; i <= SHIP_SPEEDPOINT_QUANTITY / 2; i++)
+	{
+		fAngle = i * PIm2 / SHIP_SPEEDPOINT_QUANTITY;
+		fSpeeds[i] = Ship_SimulateSpeed_Init(iShipType1, fAngle) * GetCurSpeedFromPoint(refCharacter, fAngle);
+		fCompareSpeeds[i] = Ship_SimulateSpeed_Init(iShipType2, fAngle) * GetCurSpeedFromPoint(xi_refCharacter, fAngle);
+		if(i > 0 && i <  SHIP_SPEEDPOINT_QUANTITY / 2)
+		{
+			fSpeeds[SHIP_SPEEDPOINT_QUANTITY - i] = fSpeeds[i];
+			fCompareSpeeds[SHIP_SPEEDPOINT_QUANTITY - i] = fCompareSpeeds[i];
+		}
+	}
+}
+
+ref GetWindRosePoints()
+{
+	string sNode = GetEventData();
+	return &fSpeeds;
+}
+
+ref GetWindRoseComparePoints()
+{
+	string sNode = GetEventData();
+	return &fCompareSpeeds;
 }

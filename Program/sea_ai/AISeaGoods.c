@@ -310,8 +310,11 @@ void SetMineFree(ref xi_refCharacter, int type)
     PlaySound("Ships\jakor_002.wav");
     RemoveCharacterGoods(xi_refCharacter, GOOD_POWDER, type * MINE_POWDER);
     xi_refCharacter.Tmp.SpeedRecall = 0;  // чтоб пересчитались скорость и маневр
-	Achievment_SetStat(61, 1);
-	if (!CheckAttribute(pchar, "questTemp.Sharlie.DelTerGuard") && pchar.location == "tortuga" && sti(xi_refCharacter.index) == GetMainCharacterIndex() && !bDisableMapEnter) Tortuga_ShipGuardAttack();
+		bool bMainCharacter = IsMainCharacter(xi_refCharacter);
+		if (bMainCharacter) Achievment_SetStat(61, 1);
+
+	if (!bDisableMapEnter && PChar.location == "tortuga" && bMainCharacter && !CheckAttribute(PChar, "questTemp.Sharlie.DelTerGuard")) // ~!~
+        Tortuga_ShipGuardAttack();
 }
 
 #event_handler("Evnt_AISG_GetAbordageSkillMultiplier", "AISeaGoods_GetAbordageSkillMultiplier");

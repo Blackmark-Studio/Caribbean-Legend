@@ -1,90 +1,282 @@
+????? {?????}
+Сhapel {小礼拜堂}
+Abby_House {Abigail Shneur宅邸}
+Alcove {圣所}
+ammo {军械库}
 Antigua {Antigua}
+Ascold House {Fadey宅邸}
+Ava Cabin {盖伦帆船'夏娃号'}
 Barbados {Barbados}
-Bermudes {Isla del Tesoro}
-Beliz {Yucatan}
-Cuba {Cuba}
-Cuba1 {Cuba}
-Cuba2 {Cuba}
-Caiman {Cayman}
-Cumana {Main}
-Caracas {Main}
-Curacao {Curacao}
-Cartahena {Main}
-Dominica {Dominica}
-Guadeloupe {Guadeloupe}
-Hispaniola {Hispaniola}
-Hispaniola1 {Hispaniola}
-Hispaniola2 {Hispaniola}
-Jamaica {Jamaica}
-Maracaibo {Main}
-Martinique {Martinique}
-SentMartin {Saint-Martin}
-Nevis {Saint Christopher}
-PuertoRico {Puerto Rico}
-PortoBello {Main}
-Pearl {Pearl Beach}
-Panama {Panama}
-SantaCatalina {Main}
-Terks {Turks}
-Tortuga {Tortuga}
-Trinidad {Trinidad}
-Tenotchitlan {Lago Peten}
-Mein {Main}
-KhaelRoa {Khael Roa}
-Ksochitam {Ksocheatem}
-RockIsland {Northern Reefs}
-Providence {Providence}
-SantaQuiteria {Santa Quiteria}
-IslaDeVieques {Isla de Vieques}
-IslaMona {Isla Mona}
-IslaDeCoche {Isla de Coche}
-Tobago {Tobago}
-MarieGalante {Marie Galante}
-SentJons_town {St. John's}
-Pirates_town {Sharptown}
-Bridgetown_town {Bridgetown}
-Beliz_town {Belize}
-Santiago_town {Santiago}
-PuertoPrincipe_town {Puerto del Principe}
-Havana_town {Havana}
-Cumana_town {Cumana}
-Caracas_town {Caracas}
-Villemstad_town {Willemstad}
-Cartahena_town {Cartagena}
+Basement {地下室}
+BasTer {Basse-Terre}
+BasTer Fort {Fort of Basse-Terre}
+BasTer Port {Port of Basse-Terre}
+BasTer Town {Basse-Terre}
 BasTer_town {Basse-Terre}
-SantoDomingo_town {Santo Domingo}
-LaVega_town {La Vega}
-PortPax_town {Port-au-Prince}
-PortRoyal_town {Port Royal}
-Maracaibo_town {Maracaibo}
-FortFrance_town {Saint-Pierre}
-LeFransua_town {Le Francois}
-Marigo_town {Philipsburg}
+Beach {泳滩}
+Bedroom {卧室}
+Beliz {Yucatan}
+Beliz Fort {Fort of Belize}
+Beliz Port {Port of Belize}
+Beliz Town {Belize}
+Beliz_town {Belize}
+Bermudes {Isla del Tesoro}
+Boarding deck {登船甲板}
+Bridgetown {Bridgetown}
+Bridgetown Fort {Fort of Bridgetown}
+Bridgetown Port {Port of Bridgetown}
+Bridgetown Town {Bridgetown}
+Bridgetown_town {Bridgetown}
+Brothel {妓院}
+Brothel Room {私密房间}
+cabine {船舱}
+cabine2 {船舱}
+Cabinet {书房}
+Caiman {Cayman}
+Caracas {委内瑞拉西部}
+Caracas Fort {Fort of Caracas}
+Caracas Port {Port of Caracas}
+Caracas Town {Caracas}
+Caracas_town {Caracas}
+Caroline cabin {护卫舰'卡罗莱纳号'}
+Cartahena {哥伦比亚}
+Cartahena Fort {Fort of Cartagena}
+Cartahena Port {Port of Cartagena}
+Cartahena Town {Cartagena}
+Cartahena_town {Cartagena}
+Cave {洞穴}
+Cave entrance {洞穴入口}
+CeresSmithy cabin {福禄特帆船'刻瑞斯铁匠号'}
+Charles {Capsterville}
+Charles Fort {Fort of Capsterville}
+Charles Port {Port of Capsterville}
+Charles Town {Capsterville}
 Charles_town {Capsterville}
-SanJuan_town {San Juan}
-PortoBello_town {Portobello}
-Panama_town {Panama}
-SantaCatalina_town {Blueweld}
-Tortuga_town {Tortuga}
-PortSpein_town {San Jose}
-Tenotchitlan_town {Tayasal}
-FortOrange_town {Maroon Town}
-Providence_town {San Andres}
-Oglethorpe_Estate {Oglethorpe estate}
+Church {教堂}
+Comendant_House {圣何塞指挥官宅邸}
+Comendant's House {哈瓦那指挥官宅邸}
+Crypt {地窖}
+Cuba {Cuba}
+Cuba1 {古巴东部}
+Cuba2 {古巴西部}
+Cumana {委内瑞拉东部}
+Cumana Fort {Fort of Cumana}
+Cumana Port {Port of Cumana}
+Cumana Town {Cumana}
+Cumana_town {Cumana}
+Curacao {Curacao}
 DeMonpe_Estate {de Monpe Estate}
 DesMoines {Des Moines}
-LosTeques_town {Los-Teques mine}
+Dominica {Dominica}
+Drugstore {药店}
+Duel Field {决斗场}
+Dunes house {沙丘房屋}
+Dungeon {地牢}
+England {英格兰}
+EsmeraldaStoreBig cabin {盖伦帆船'埃斯梅拉达号'}
+Europe {欧洲}
+Exit {退出}
 ExitMine {Passage to the mine}
+ExitTown {通往丛林的通道}
 Factoria {Factoria}
+FenixPlatform cabin {'凤凰号'平台}
+FernandaDiffIndoor cabin {福禄特帆船'费尔南达号'}
+Fleetwood_House {Richard Fleetwood宅邸}
+FleuronTavern cabin {卡拉维尔帆船'弗莱龙号'}
+FloodedCave {淹没洞穴}
+Fort inside {堡垒内部}
+FortFrance {Saint-Pierre}
+FortFrance Fort {Fort of Saint-Pierre}
+FortFrance Port {Port of Saint-Pierre}
+FortFrance Town {Saint-Pierre}
+FortFrance_town {Saint-Pierre}
+FortOrange {Maroon Town}
+FortOrange Town {Maroon Town}
+FortOrange_town {Maroon Town}
+France {法国}
+FurieShipInside2 cabin {小艇'狂怒号'}
+Gaspard_Gold House {Gaspard Goldenteeth宅邸}
+Gate {城镇大门}
+Gladis_house {Gladys McArthur宅邸}
+GloriaChurch cabin {盖伦帆船'荣耀号'}
+Gonsales_house {Enrique Gonzales宅邸}
+Graveyard {墓地}
+Grot {石窟}
+Grotto {洞穴}
+Guadeloupe {Guadeloupe}
+Havana {Havana}
+Havana Fort {Fort of Havana}
+Havana Port {Port of Havana}
+Havana Town {Havana}
+Havana_town {Havana}
+Hispaniola {Hispaniola}
+Hispaniola1 {西属伊斯帕尼奥拉}
+Hispaniola2 {法属伊斯帕尼奥拉}
+House {房屋}
+HWIC_flat {HWIC总部}
+Incas Temple {印加神庙}
+Incquisitio {宗教裁判所}
+IslaDeCoche {Isla de Coche}
+IslaDeVieques {Isla de Vieques}
+IslaMona {Isla Mona}
+IslaMona Town {Isla Mona}
+Jamaica {Jamaica}
+Jungle {丛林}
+Jungle Fort {丛林堡垒}
+KhaelRoa {Khael Roa}
+Knippel_House {Charley Knippel宅邸}
+Kristian_house {克里斯蒂安的宅邸}
+Ksochitam {Ksocheatem}
+La Espada Del Rey {长笛 'La Espada del Rey'}
+LaVega {La Vega}
+LaVega Fort {Fort of La Vega}
+LaVega Port {Port of La Vega}
+LaVega Town {La Vega}
+LaVega_town {La Vega}
+LeFransua {Le Francois}
+LeFransua Port {Port of Le Francois}
+LeFransua Town {Le Francois}
+LeFransua_town {Le Francois}
+Lighthouse Inside {灯塔内部}
+LosTeques {Los-Teques mine}
+LosTeques Town {Los-Teques mine}
+LosTeques_town {Los-Teques mine}
+LostShipsCity {Loco-Riferte}
+LostShipsCity Town {Loco-Riferte}
+Loxly_house {Albert Locksley办公室}
+LSC North {沉船岛 - 北部}
+LSC South {沉船岛 - 南部}
+LSC Town {洛科-里费特街道}
+Maltese Order {马耳他骑士团}
+Maracaibo {马拉开波湾}
+Maracaibo Fort {Fort of Maracaibo}
+Maracaibo Port {Port of Maracaibo}
+Maracaibo Town {Maracaibo}
+Maracaibo_town {Maracaibo}
+MarieGalante {Marie Galante}
+Marigo {Philipsburg}
+Marigo Fort {Fort of Philipsburg}
+Marigo Port {Port of Philipsburg}
+Marigo Town {Philipsburg}
+Marigo_town {Philipsburg}
+Martinique {Martinique}
+Mayak1 {Trinidad Lighthouse}
+Mayak10 {Havana Lighthouse}
+Mayak11 {Cartagena Lighthouse}
+Mayak2 {Barbados Lighthouse}
+Mayak3 {Port Royal Lighthouse}
+Mayak4 {Guadeloupe Lighthouse}
+Mayak5 {Saint Christopher Lighthouse}
+Mayak6 {Tortuga Lighthouse}
+Mayak7 {Port-au-Prince Lighthouse}
+Mayak8 {Santo Domingo Lighthouse}
+Mayak9 {Santiago Lighthouse}
+Maze {查文神庙}
+Mein {Main}
+Merrimancave {梅里曼巢穴}
+Mines {矿场}
+My_Campus {军官会议室}
+My_Deck {货舱}
+My_Deck_Medium {加农炮甲板}
+My_Ship {船只}
+Nevis {Saint Christopher}
+Office of Naval Registry {船舶登记处}
+Oglethorpe_Estate {Oglethorpe estate}
+Orlop deck {底舱甲板}
+PackHouse {仓库}
+Panama {Panama}
+Panama Fort {Fort of Panama}
+Panama Port {Port of Panama}
+Panama Town {Panama}
+Panama_town {Panama}
+Passage {桥牌}
+Pearl {Pearl Beach}
+Pirates {Sharptown}
+Pirates Port {Port of Sharptown}
+Pirates Town {Sharptown}
+Pirates_town {Sharptown}
+Plantation {种植园}
+PlutoStoreSmall cabin {福禄特帆船'普路托号'}
+Port {港口}
+PortoBello {南部大陆}
+PortoBello Fort {Fort of Portobello}
+PortoBello Port {Port of Portobello}
+PortoBello Town {Portobello}
+PortoBello_town {Portobello}
+PortOffice {港口办公室}
+PortPax {Port-au-Prince}
+PortPax Fort {Fort of Port-au-Prince}
+PortPax Port {Port of Port-au-Prince}
+PortPax Town {Port-au-Prince}
+PortPax_town {Port-au-Prince}
+PortRoyal {Port Royal}
+PortRoyal Fort {Fort of Port Royal}
+PortRoyal Port {Port of Port Royal}
+PortRoyal Town {Port Royal}
+PortRoyal_town {Port Royal}
+PortSpein {San Jose}
+PortSpein Fort {Fort of San Jose}
+PortSpein Port {Port of San Jose}
+PortSpein Town {San Jose}
+PortSpein_town {San Jose}
+Prison {监狱}
+ProtectorFisher cabin {轻型护卫舰'守护者号'}
+Providence {Providence}
+Providence_town {San Andres}
+PuertoPrincipe {Puerto del Principe}
+PuertoPrincipe Fort {Fort of Puerto del Principe}
+PuertoPrincipe Port {Port of Puerto del Principe}
+PuertoPrincipe Town {Puerto del Principe}
+PuertoPrincipe_town {Puerto del Principe}
+PuertoRico {Puerto Rico}
+Residence {官邸}
+River {河岸}
+RockIsland {Northern Reefs}
+Room {房间}
+Ruins {废墟}
+SanAndres {San Andres}
+SanAndres Fort {Fort of San Andres}
+SanAndres Port {Port of San Andres}
+SanAndres Town {San Andres}
+SanAugustineResidence cabin {战船'圣奥古斯丁号'}
+SanGabrielMechanic cabin {三桅帆船'圣盖博号'}
+SanJuan {San Juan}
+SanJuan Fort {Fort of San Juan}
+SanJuan Port {Port of San Juan}
+SanJuan Town {San Juan}
+SanJuan_town {San Juan}
+SantaCatalina {西部大陆}
+SantaCatalina Fort {Fort of Blueweld}
+SantaCatalina Port {Port of Blueweld}
+SantaCatalina Town {Blueweld}
+SantaCatalina_town {Blueweld}
+SantaFlorentinaShipInside4 cabin {双桅横帆船'圣弗洛伦蒂娜号'}
+SantaQuiteria {Santa Quiteria}
+Santiago {Santiago}
+Santiago Fort {Fort Santiago}
+Santiago Port {Port Santiago}
+Santiago Town {Santiago}
+Santiago_town {Santiago}
+SantoDomingo {Santo Domingo}
+SantoDomingo Fort {Fort Santo-Domingo}
+SantoDomingo Port {Port of Santo-Domingo}
+SantoDomingo Town {Santo Domingo}
+SantoDomingo_town {Santo Domingo}
+Sea {海洋}
+SentJons {St. John's}
+SentJons Fort {Fort of St. John's}
+SentJons Port {Port of St. John's}
+SentJons Town {St. John's}
+SentJons_town {St. John's}
+SentMartin {Saint-Martin}
+shack {棚屋}
+Shipyard {造船厂}
+Shore_mask {Guardian's Grotto}
+Shore_ship1 {Sabo-Matila Cove}
+Shore_ship2 {Bay of Peril}
+Shore_ship3 {Cape of Delusive Hopes}
+Shore_ship4 {Cursed Cove}
 Shore1 {Cape Boon}
-Shore2 {Falmouth Cove}
-Shore3 {Benures Bay}
-Shore4 {Harrison Cape}
-Shore5 {Cape Ragged Point}
-Shore6 {Cape Catoche}
-Shore7 {Cozumel Bay}
-Shore8 {Chetumal Cove}
-Shore9 {Amatique Cove}
 Shore10 {Caratasca Lagoon}
 Shore11 {Cape Camaguey}
 Shore12 {Anna Maria Bay}
@@ -95,6 +287,7 @@ Shore16 {Desert Coast}
 Shore17 {Esmeralda Bay}
 Shore18 {Boca de la Serpienta Coast}
 Shore19 {Carupano Cove}
+Shore2 {Falmouth Cove}
 Shore20 {Los-Teques Beach}
 Shore21 {Cape Aruba}
 Shore22 {Coast Van Hato}
@@ -105,6 +298,7 @@ Shore26 {Castle Bruce Beach}
 Shore27 {Cape Scott's Head}
 Shore28 {Morne-a-l'Eau Cove}
 Shore29 {Capster Beach}
+Shore3 {Benures Bay}
 Shore30 {Grand-Bourg Cove}
 Shore31 {Cape Inaccessible}
 Shore32 {Cape Isabella}
@@ -115,6 +309,7 @@ Shore36 {Portland Bay}
 Shore37 {Guajira Bay}
 Shore38 {Lamentin Bay}
 Shore39 {Le Marin Cove}
+Shore4 {Harrison Cape}
 Shore40 {Grand Case Beach}
 Shore41 {Simpson Bay}
 Shore42 {Sandy Bay}
@@ -125,6 +320,7 @@ Shore46 {Chiriqui Lagoon}
 Shore47 {Mosquitoes Bay}
 Shore48 {Golfo del Darien}
 Shore49 {Papagayo Bay}
+Shore5 {Cape Ragged Point}
 Shore50 {Nicoya Bay}
 Shore51 {Coronado Bay}
 Shore52 {Golfo Dulce}
@@ -135,6 +331,7 @@ Shore56 {Northern Bay}
 Shore57 {Southern Bay}
 Shore58 {Fisheye Beach}
 Shore59 {Scarborough Cove}
+Shore6 {Cape Catoche}
 Shore60 {Galera Point}
 Shore61 {Tepeyakak}
 Shore62 {Iztapalapa}
@@ -148,6 +345,7 @@ Shore67_1 {Skeleton Reef - West}
 Shore67_2 {Skeleton Reef - East}
 Shore68 {Ingallado Cove}
 Shore69 {Beach Santa Maria del Mar}
+Shore7 {Cozumel Bay}
 Shore70 {Slave Cove}
 Shore71 {Scorn Cape}
 Shore72 {Oriente Cove}
@@ -158,247 +356,50 @@ Shore76 {Cape of the Drowned Man}
 Shore77 {Vieques Cove}
 Shore78 {Buccaneers Bay}
 Shore79 {Cape Cabo Rojo}
-Shore_ship1 {Sabo-Matila Cove}
-Shore_ship2 {Bay of Peril}
-Shore_ship3 {Cape of Delusive Hopes}
-Shore_ship4 {Cursed Cove}
-Shore_mask {Guardian's Grotto}
-Mayak1 {Trinidad Lighthouse}
-Mayak2 {Barbados Lighthouse}
-Mayak3 {Port Royal Lighthouse}
-Mayak4 {Guadeloupe Lighthouse}
-Mayak5 {Saint Christopher Lighthouse}
-Mayak6 {Tortuga Lighthouse}
-Mayak7 {Port-au-Prince Lighthouse}
-Mayak8 {Santo Domingo Lighthouse}
-Mayak9 {Santiago Lighthouse}
-Mayak10 {Havana Lighthouse}
-Mayak11 {Cartagena Lighthouse}
-Bridgetown {Bridgetown}
-Bridgetown Town {Bridgetown}
-Bridgetown Fort {Fort of Bridgetown}
-Bridgetown Port {Port of Bridgetown}
-SanJuan {San Juan}
-SanJuan Town {San Juan}
-SanJuan Fort {Fort of San Juan}
-SanJuan Port {Port of San Juan}
-Santiago {Santiago}
-Santiago Town {Santiago}
-Santiago Fort {Fort Santiago}
-Santiago Port {Port Santiago}
-PuertoPrincipe {Puerto del Principe}
-PuertoPrincipe Town {Puerto del Principe}
-PuertoPrincipe Fort {Fort of Puerto del Principe}
-PuertoPrincipe Port {Port of Puerto del Principe}
-SentJons {St. John's}
-SentJons Town {St. John's}
-SentJons Fort {Fort of St. John's}
-SentJons Port {Port of St. John's}
-PortRoyal {Port Royal}
-PortRoyal Town {Port Royal}
-PortRoyal Fort {Fort of Port Royal}
-PortRoyal Port {Port of Port Royal}
-FortOrange {Maroon Town}
-FortOrange Town {Maroon Town}
-Villemstad {Willemstad}
-Villemstad Town {Willemstad}
-Villemstad Fort {Fort of Willemstad}
-Villemstad Port {Port of Willemstad}
-BasTer {Basse-Terre}
-BasTer Town {Basse-Terre}
-BasTer Fort {Fort of Basse-Terre}
-BasTer Port {Port of Basse-Terre}
-LaVega {La Vega}
-LaVega Town {La Vega}
-LaVega Fort {Fort of La Vega}
-LaVega Port {Port of La Vega}
-SantoDomingo {Santo Domingo}
-SantoDomingo Town {Santo Domingo}
-SantoDomingo Fort {Fort Santo-Domingo}
-SantoDomingo Port {Port of Santo-Domingo}
-PortPax {Port-au-Prince}
-PortPax Town {Port-au-Prince}
-PortPax Fort {Fort of Port-au-Prince}
-PortPax Port {Port of Port-au-Prince}
-Pirates {Sharptown}
-Pirates Town {Sharptown}
-Pirates Port {Port of Sharptown}
-FortFrance {Saint-Pierre}
-FortFrance Town {Saint-Pierre}
-FortFrance Fort {Fort of Saint-Pierre}
-FortFrance Port {Port of Saint-Pierre}
-LeFransua {Le Francois}
-LeFransua Town {Le Francois}
-LeFransua Port {Port of Le Francois}
-Havana {Havana}
-Havana Town {Havana}
-Havana Fort {Fort of Havana}
-Havana Port {Port of Havana}
-Charles {Capsterville}
-Charles Town {Capsterville}
-Charles Fort {Fort of Capsterville}
-Charles Port {Port of Capsterville}
-PortoBello Town {Portobello}
-PortoBello Fort {Fort of Portobello}
-PortoBello Port {Port of Portobello}
-PortSpein {San Jose}
-PortSpein Town {San Jose}
-PortSpein Fort {Fort of San Jose}
-PortSpein Port {Port of San Jose}
-Tortuga Town {Tortuga}
-Tortuga Fort {Fort of Tortuga}
-Tortuga Port {Port of Tortuga}
-Marigo {Philipsburg}
-Marigo Town {Philipsburg}
-Marigo Fort {Fort of Philipsburg}
-Marigo Port {Port of Philipsburg}
-Panama Town {Panama}
-Panama Fort {Fort of Panama}
-Panama Port {Port of Panama}
-Cartahena Town {Cartagena}
-Cartahena Fort {Fort of Cartagena}
-Cartahena Port {Port of Cartagena}
-Maracaibo Town {Maracaibo}
-Maracaibo Fort {Fort of Maracaibo}
-Maracaibo Port {Port of Maracaibo}
-Caracas Town {Caracas}
-Caracas Fort {Fort of Caracas}
-Caracas Port {Port of Caracas}
-Cumana Town {Cumana}
-Cumana Fort {Fort of Cumana}
-Cumana Port {Port of Cumana}
-SantaCatalina Town {Blueweld}
-SantaCatalina Fort {Fort of Blueweld}
-SantaCatalina Port {Port of Blueweld}
-Beliz Town {Belize}
-Beliz Fort {Fort of Belize}
-Beliz Port {Port of Belize}
-SanAndres {San Andres}
-SanAndres Town {San Andres}
-SanAndres Fort {Fort of San Andres}
-SanAndres Port {Port of San Andres}
-IslaMona Town {Isla Mona}
-LosTeques {Los-Teques mine}
-LosTeques Town {Los-Teques mine}
-Duel Field {决斗场}
-Boarding deck {登船甲板}
-Orlop deck {底舱甲板}
-Fort inside {堡垒内部}
-Sea {海洋}
-Jungle {丛林}
+Shore8 {Chetumal Cove}
+Shore9 {Amatique Cove}
+Spain {西班牙}
+Store {商店}
 Street {街道}
-ExitTown {通往丛林的通道}
-Graveyard {墓地}
-Port {港口}
+Svensons_house {Jan Svenson宅邸}
+TartarusPrison cabin {战列舰'塔耳塔罗斯号'}
 Tavern {酒馆}
 Tavern upstairs {酒馆楼上}
-Store {商店}
-Shipyard {造船厂}
-PackHouse {仓库}
-Townhall {总督官邸}
-TownhallRoom {官邸房间}
-Residence {官邸}
-PortOffice {港口办公室}
-Church {教堂}
-Incquisitio {宗教裁判所}
-Maltese Order {马耳他骑士团}
-Incas Temple {印加神庙}
-Usurer House {银行}
-House {房屋}
-ammo {军械库}
-shack {棚屋}
-Room {房间}
-Cabinet {书房}
-Bedroom {卧室}
-Сhapel {小礼拜堂}
-Crypt {地窖}
-Exit {退出}
-The cavern {洞穴}
-????? {?????}
-Passage {桥牌}
-Beach {泳滩}
-Cave {洞穴}
-Cave entrance {洞穴入口}
-FloodedCave {淹没洞穴}
-Grot {石窟}
-Prison {监狱}
-Lighthouse Inside {灯塔内部}
-Mines {矿场}
-Dungeon {地牢}
-Gate {城镇大门}
-Brothel {妓院}
-Brothel Room {私密房间}
-Village {村庄}
-Plantation {种植园}
-UnderWater {水下}
-Grotto {洞穴}
-Dunes house {沙丘房屋}
-Torture room {刑讯室}
-Wine Cellar {酒窖}
-cabine {船舱}
-My_Campus {军官会议室}
-My_Deck_Medium {加农炮甲板}
-My_Deck {货舱}
-My_Ship {船只}
-Drugstore {药店}
-HWIC_flat {HWIC总部}
-Office of Naval Registry {船舶登记处}
-Van Doorn's Cellar {Van Doorn的地窖}
-Comendant's House {哈瓦那指挥官宅邸}
-Tibo House {Henri Thibaut宅邸}
-Gaspard_Gold House {Gaspard Goldenteeth宅邸}
-Ascold House {Fadey宅邸}
-Abby_House {Abigail Shneur宅邸}
-Knippel_House {Charley Knippel宅邸}
-Fleetwood_House {Richard Fleetwood宅邸}
-Comendant_House {圣何塞指挥官宅邸}
-Svensons_house {Jan Svenson宅邸}
-Gladis_house {Gladys McArthur宅邸}
-Gonsales_house {Enrique Gonzales宅邸}
-Loxly_house {Albert Locksley办公室}
-Kristian_house {克里斯蒂安的宅邸}
-LostShipsCity {Loco-Riferte}
-LostShipsCity Town {Loco-Riferte}
-LSC South {沉船岛 - 南部}
-LSC North {沉船岛 - 北部}
-LSC Town {洛科-里费特街道}
-Ava Cabin {盖伦帆船'夏娃号'}
-Caroline cabin {护卫舰'卡罗莱纳号'}
-CeresSmithy cabin {福禄特帆船'刻瑞斯铁匠号'}
-EsmeraldaStoreBig cabin {盖伦帆船'埃斯梅拉达号'}
-FenixPlatform cabin {'凤凰号'平台}
-FernandaDiffIndoor cabin {福禄特帆船'费尔南达号'}
-FleuronTavern cabin {卡拉维尔帆船'弗莱龙号'}
-FurieShipInside2 cabin {小艇'狂怒号'}
-GloriaChurch cabin {盖伦帆船'荣耀号'}
-PlutoStoreSmall cabin {福禄特帆船'普路托号'}
-ProtectorFisher cabin {轻型护卫舰'守护者号'}
-SanAugustineResidence cabin {战船'圣奥古斯丁号'}
-SanGabrielMechanic cabin {三桅帆船'圣盖博号'}
-SantaFlorentinaShipInside4 cabin {双桅横帆船'圣弗洛伦蒂娜号'}
-TartarusPrison cabin {战列舰'塔耳塔罗斯号'}
-VelascoShipInside1 cabin {盖伦帆船'贝拉斯科号'}
-Tenochtitlan {塔亚萨尔}
 Temple_1 {托希尔神庙}
 Temple_2 {考伊尔神庙}
 Temple_3 {查克神庙}
 Temple_4 {基尼奇·阿豪神庙}
 Temple_5 {伊察姆纳神庙}
 Temple_6 {埃克·丘亚神庙}
-TempleTreasure {宝库}
 TempleGreatInside {大神庙}
 TempleRoundInside {库库尔坎神庙}
+TempleTreasure {宝库}
 TempleUnderwater {水下迷宫}
-Maze {查文神庙}
-Alcove {圣所}
-Merrimancave {梅里曼巢穴}
-River {河岸}
-Jungle Fort {丛林堡垒}
-Basement {地下室}
-Ruins {废墟}
+Tenochtitlan {塔亚萨尔}
+Tenotchitlan {Lago Peten}
+Tenotchitlan_town {Tayasal}
+Terks {Turks}
+The cavern {洞穴}
+Tibo House {Henri Thibaut宅邸}
+Tobago {Tobago}
+Tortuga {Tortuga}
+Tortuga Fort {Fort of Tortuga}
+Tortuga Port {Port of Tortuga}
+Tortuga Town {Tortuga}
+Tortuga_town {Tortuga}
+Torture room {刑讯室}
+Townhall {总督官邸}
+TownhallRoom {官邸房间}
+Trinidad {Trinidad}
 Ulysse {'尤利西斯'号上}
-La Espada Del Rey {长笛 'La Espada del Rey'}
-Europe {欧洲}
-England {英格兰}
-France {法国}
-Spain {西班牙}
+UnderWater {水下}
+Usurer House {银行}
+Van Doorn's Cellar {Van Doorn的地窖}
+VelascoShipInside1 cabin {盖伦帆船'贝拉斯科号'}
+Village {村庄}
+Villemstad {Willemstad}
+Villemstad Fort {Fort of Willemstad}
+Villemstad Port {Port of Willemstad}
+Villemstad Town {Willemstad}
+Villemstad_town {Willemstad}
+Wine Cellar {酒窖}

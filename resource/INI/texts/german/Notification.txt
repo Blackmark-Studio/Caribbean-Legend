@@ -1,17 +1,17 @@
-Notification_ReputationCheckPassed {Reputation Check Passed}
-Notification_ReputationCheckFailed {Reputation Too Low}
-Notification_PerkCheckPassed {Perk Check Passed}
-Notification_PerkCheckFailed {Perk Check Failed}
-Notification_SkillCheckPassed {Skill Check Passed}
-Notification_SkillCheckFailed {Skill Check Failed}
-Notification_LevelCheckPassed {Level Check Passed}
-Notification_LevelCheckFailed {Level Required}
 CanBeCaptain {$attr($context.name) kann auf offener See kein Schiff führen (Perk "Kapitän" erforderlich)}
-Notification_ApproveCheckPassed {approves}
 Notification_ApproveCheckFailed {disapproves}
-Notification_ReputationCheckFailed_High {Reputation Too High}
-Notification_ReputationNationCheckPassed {Relationship Check Passed}
-Notification_ReputationNationCheckFailed {Relationship Too Low}
-Notification_MoneyCheckPassed {Check passed}
-Notification_MoneyCheckFailed_Peso {Not enough peso}
+Notification_ApproveCheckPassed {approves}
+Notification_LevelCheckFailed {Level Required}
+Notification_LevelCheckPassed {Level Check Passed}
 Notification_MoneyCheckFailed_Dublon {Not enough doubloons}
+Notification_MoneyCheckFailed_Peso {Not enough peso}
+Notification_MoneyCheckPassed {Check passed}
+Notification_PerkCheckFailed {Perk Check Failed}
+Notification_PerkCheckPassed {Perk Check Passed}
+Notification_ReputationCheckFailed {Reputation Too Low}
+Notification_ReputationCheckFailed_High {Reputation Too High}
+Notification_ReputationCheckPassed {Reputation Check Passed}
+Notification_ReputationNationCheckFailed {Relationship Too Low}
+Notification_ReputationNationCheckPassed {Relationship Check Passed}
+Notification_SkillCheckFailed {Skill Check Failed}
+Notification_SkillCheckPassed {Skill Check Passed}

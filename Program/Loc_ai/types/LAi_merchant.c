@@ -235,7 +235,7 @@ int LAi_type_merchant_FindEnemy(aref chr, int num)
 		{
 			idx = sti(chrFindNearCharacters[i].index);
 			ref by = &Characters[idx];
-			if (LAi_CheckFightMode(by)) return idx;
+			if (LAi_CheckFightMode(by) != CHR_MODE_PEACE) return idx;
 		}
 	}
 	return -1;

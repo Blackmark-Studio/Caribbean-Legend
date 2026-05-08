@@ -1,108 +1,143 @@
-Smuggler {Контрабандист}
-Cristopher {Кристофер}
-Keynell {Кейнелл}
-Benjamin {Бенджамин}
-Jones {Джонс}
-Francis {Фрэнсис}
-lord Willoughby {Лорд Уиллоби}
-Gaston {Гастон}
-Bald-pate {Плешивый}
-Mirabelle {Мирабель}
-Peter {Питер}
-Walles {Уоллес}
-One-eyed {Одноглазый}
-Pascal {Паскуале}
-Voisier {Вуазье}
-Master {Мастер}
-Alexis {Алексус}
 Abraham {Абрахам}
-Norman {Норман}
-Diego Francisco {Диего Франсиско}
-de Kero {де Керо}
-Dionisio {Дионисио}
-Peres {Перес}
-Alvares {Альварес}
-Ortega {Ортега}
-Fernando {Фернандо}
-de Vilyegas {де Вильегас}
-Esteban {Эстебан}
-Garcia {Гарсия}
-Carlos {Карлос}
-Estrada {Эстрада}
-Ignasio {Игнасио}
-Matthias {Матиас}
-Beck {Бек}
-Florentina {Флорентина}
-Claude Francois {Клод Франсуа}
-de Lyon {де Лион}
-Diego {Диего}
-de Toledo {де Толедо}
 Alexandro {Алехандро}
-Jacopo {Якопо}
-Jeraldy {Джеральди}
-Edward {Эдвард}
-Doily {д'Ойли}
-Oldjivly {Олдживли}
-Moris {Морис}
-Mortimer {Мортимер}
-Hope {Хоуп}
-Ida {Ида}
-Jacob {Якоб}
-Jackman {Джекман}
-Marcus {Маркус}
-Tyrax {Тиракс}
+Alexis {Алексус}
+Alicia {Алисия}
+Alonso {Алонсо}
+Alvares {Альварес}
 Andres {Андрес}
-de Vera {де Вера}
-Jacques Dille {Жак Дьель}
-du Parquet {дю Парке}
-Jean Pierre {Жан-Пьер}
-Morua {Моруа}
 Aurora {Аврора}
-Jacques {Жак}
+Avendel {Авендел}
+Baker {Бейкер}
+Bald-pate {Плешивый}
 Barbazon {Барбазон}
-Cesare {Чезаре}
-Craig {Крейг}
-Ian {Янг}
-Snake {Снейк}
-Timothy {Тимоти}
-Vitrye {Витрие}
-Simon {Симон}
-Merilin {Мерилин}
-Sailor {Моряк}
-Pedro Carrilia {Педро Каррилья}
-de Gusman {де Гусман}
-Dolores {Долорес}
-Luis {Луис}
-de Montanos {де Монтанос}
-Ernesto {Эрнесто}
-Jeremy Deshamp {Жереми Дешамп}
-do Mussack {дю Мюссак}
-de la Cruz {де ла Круз}
-Zachary {Захария}
-Marlow {Марлоу}
-de Aguillera-Gamboa {де Агуильера-и-Гамбоа}
-Joseph {Джозеф}
+Bartel {Бартел}
 Batler {Батлер}
-Rodrigo {Родриго}
+Beck {Бек}
+Benjamin {Бенджамин}
+Bernard {Бернард}
+Brouwer {Брауэр}
+Carlos {Карлос}
+Cesare {Чезаре}
+Chardon {Шардон}
+Charlie {Чарли}
+Chavinavi {Чавинави}
+Claude {Клод}
+Claude Francois {Клод Франсуа}
+Coris {Корис}
+Craig {Крейг}
+Cristopher {Кристофер}
+d'Armagnac {д'Арманьяк}
+d'Aubuisson {д'Обюссон}
+Danielle {Даниэль}
+de Aguillera-Gamboa {де Агуильера-и-Гамбоа}
+de Aquerre {де Агуэрре}
 de Flores-Aldana {де Флорес-и-Алдана}
-Juan {дон Хуан}
+de Gusman {де Гусман}
+de Kero {де Керо}
 de Kuencka {де Куэнка}
-Lolita {Лолита}
-Martin {Мартин}
-Thomas {Томас}
+de la Cruz {де ла Круз}
+de Lyon {де Лион}
+de Maldonado {де Мальдонадо}
+de Maure {де Мор}
+de Monper {де Монпе}
+de Montanos {де Монтанос}
+de Montoya {де Монтойя}
+de Toledo {де Толедо}
+de Vera {де Вера}
+de Vilyegas {де Вильегас}
+Deluc {Делюк}
+Diego {Диего}
+Diego Francisco {Диего Франсиско}
+Dionisio {Дионисио}
+do Mussack {дю Мюссак}
+Doily {д'Ойли}
+Dolores {Долорес}
+du Parquet {дю Парке}
+Duran {Дюран}
+Edward {Эдвард}
+Ernesto {Эрнесто}
+Esteban {Эстебан}
+Estrada {Эстрада}
+Ferguson {Фергюсон}
+Fernando {Фернандо}
+Florentina {Флорентина}
+Folke {Фульк}
+Francis {Фрэнсис}
+Francois {Франсуа}
+Gachet {Гаше}
+Garcia {Гарсия}
+Gaston {Гастон}
+Gerritz {Герритц}
+Gustave {Гюстав}
+Hawk {Хоук}
+Helena {Элен}
+Hendrik {Хендрик}
+Henri {Анри}
+Hercule {Эркюль}
+Hope {Хоуп}
+Hugo {Хьюго}
+Ian {Янг}
+Ida {Ида}
+Ignasio {Игнасио}
+Irons {Айронс}
+Jackman {Джекман}
+Jacob {Якоб}
+Jacopo {Якопо}
+Jacques {Жак}
+Jacques Dille {Жак Дьель}
+Jan {Ян}
+Janetta {Жанетта}
+Jean {Жан}
+Jean Pierre {Жан-Пьер}
+Jeraldy {Джеральди}
+Jeremy Deshamp {Жереми Дешамп}
 Johan {Йохан}
 Johanna {Йоханна}
-Francois {Франсуа}
+Jones {Джонс}
+Joseph {Джозеф}
+Juan {дон Хуан}
+Julie {Жюли}
+Kasper {Каспер}
+Keynell {Кейнелл}
+Knippel {Книппель}
 Levasseur {Левассер}
-Janetta {Жанетта}
+Lolita {Лолита}
+Longway {Лонгвэй}
+lord Willoughby {Лорд Уиллоби}
+Luis {Луис}
+Maarten {Маартен}
+Marcus {Маркус}
+Marlow {Марлоу}
+Martin {Мартин}
+Mary {Мэри}
+Master {Мастер}
+Matthias {Матиас}
+McArthur {МакАртур}
+Merilin {Мерилин}
+Mirabelle {Мирабель}
+Moko {Моко}
+Moris {Морис}
+Morrison {Моррисон}
+Mortimer {Мортимер}
+Morua {Моруа}
+Niels {Нильс}
+Norman {Норман}
+Oldjivly {Олдживли}
+One-eyed {Одноглазый}
+Ortega {Ортега}
+Pascal {Паскуале}
+Paterson {Патерсон}
+Pedro Carrilia {Педро Каррилья}
+Peres {Перес}
+Peter {Питер}
+Picard {Пикар}
+Raymond {Раймонд}
+Rodrigo {Родриго}
 Ruis {Руис}
-de Aquerre {де Агуэрре}
-Coris {Корис}
-Gerritz {Герритц}
-Chavinavi {Чавинави}
-TempleSkeleton {храмовая нежить}
-Danielle {Даниэль}
-Hawk {Хоук}
+Sailor {Моряк}
+Sharle {Шарль}
+Simon {Симон}
+Smuggler {Контрабандист}
 Smuggler_0 {Таинственный пьяница}
 Smuggler_1 {Аноним}
 Smuggler_2 {Некто}
@@ -111,58 +146,23 @@ Smuggler_4 {Джон Доу}
 Smuggler_5 {Незнакомец}
 Smuggler_6 {Неизвестный}
 Smuggler_7 {Подозрительный посетитель}
-Sharle {Шарль}
-de Maure {де Мор}
-de Montoya {де Монтойя}
-Willy {Вильям}
-Paterson {Патерсон}
-Mary {Мэри}
-Kasper {Каспер}
-Helena {Элен}
-McArthur {МакАртур}
-Tichingitu {Тичингиту}
-Hercule {Эркюль}
-Tonzag {Тонзаг}
-Charlie {Чарли}
-Knippel {Книппель}
-Longway {Лонгвэй}
-Folke {Фульк}
-Deluc {Делюк}
-Claude {Клод}
-Duran {Дюран}
-Hugo {Хьюго}
-Avendel {Авендел}
-Raymond {Раймонд}
-Baker {Бейкер}
-Tommy {Томми}
-Irons {Айронс}
-Alonso {Алонсо}
-Morrison {Моррисон}
-Julie {Жюли}
-d'Armagnac {д'Арманьяк}
-Henri {Анри}
-d'Aubuisson {д'Обюссон}
-Alicia {Алисия}
-Chardon {Шардон}
-de Maldonado {де Мальдонадо}
-Jean {Жан}
-Picard {Пикар}
-Gustave {Гюстав}
-Gachet {Гаше}
-de Monper {де Монпе}
-Maarten {Маартен}
-Visser {Виссер}
-Hendrik {Хендрик}
-van Doorn {ван Дорн}
-Jan {Ян}
-Brouwer {Брауэр}
-Bartel {Бартел}
-van der Waerden {ван дер Верден}
-Niels {Нильс}
-Ferguson {Фергюсон}
-Willebrord {Виллеброрд}
+Snake {Снейк}
 Snellius {Снеллиус}
 Stieltjes {Стилтьес}
-Moko {Моко}
-Bernard {Бернард}
+TempleSkeleton {храмовая нежить}
+Thomas {Томас}
 Throckmorton {Трокмортон}
+Tichingitu {Тичингиту}
+Timothy {Тимоти}
+Tommy {Томми}
+Tonzag {Тонзаг}
+Tyrax {Тиракс}
+van der Waerden {ван дер Верден}
+van Doorn {ван Дорн}
+Visser {Виссер}
+Vitrye {Витрие}
+Voisier {Вуазье}
+Walles {Уоллес}
+Willebrord {Виллеброрд}
+Willy {Вильям}
+Zachary {Захария}

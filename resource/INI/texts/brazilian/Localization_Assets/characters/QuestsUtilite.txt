@@ -1,102 +1,5 @@
 QuestsUtilite_1 {Roda da Fortuna}
-QuestsUtilite_2 {Não quero ficar falando das mesmas coisas o tempo todo.}
-QuestsUtilite_3 {Já tivemos essa conversa.}
-QuestsUtilite_4 {Já conversamos sobre isso.}
-QuestsUtilite_5 {Repito: não quero ficar falando do mesmo assunto toda hora.}
-QuestsUtilite_6 {[ERROR: RateLimitError]}
-QuestsUtilite_7 {Já te disse que a gente já conversou sobre isso. Tá com problema de memória?}
-QuestsUtilite_8 {Não quero falar com você de novo.}
-QuestsUtilite_9 {Nunca mais vou falar com você!}
 QuestsUtilite_10 {Agora eu estou furioso}
-QuestsUtilite_11 { }
-QuestsUtilite_12 { }
-QuestsUtilite_13 {, suma daqui.}
-QuestsUtilite_14 {[ERROR: RateLimitError]}
-QuestsUtilite_15 {Como quiser.}
-QuestsUtilite_16 {Desculpa}
-QuestsUtilite_17 { }
-QuestsUtilite_18 { }
-QuestsUtilite_19 {, foi mal...}
-QuestsUtilite_20 {Tá bom, tá bom. Calma aí.}
-QuestsUtilite_21 {Como quiser, só pare de gritar comigo.}
-QuestsUtilite_22 {Perdão, estou com uma dor de cabeça terrível...}
-QuestsUtilite_23 {Tanto faz.}
-QuestsUtilite_24 {Que pena...}
-QuestsUtilite_25 {Que pena.}
-QuestsUtilite_26 {Lucas}
-QuestsUtilite_27 {Rodenburg}
-QuestsUtilite_28 {Abigail}
-QuestsUtilite_29 {Shneur}
-QuestsUtilite_30 {Solomon}
-QuestsUtilite_31 {Shneur}
-QuestsUtilite_32 {John}
-QuestsUtilite_33 {Murdock}
-QuestsUtilite_34 {Gino}
-QuestsUtilite_35 {Gvineili}
-QuestsUtilite_36 {Charlie}
-QuestsUtilite_37 {Knippel}
-QuestsUtilite_38 {Richard}
-QuestsUtilite_39 {Fleetwood}
-QuestsUtilite_40 {Jacob}
-QuestsUtilite_41 {van Berg}
-QuestsUtilite_42 {Longway}
-QuestsUtilite_43 { }
-QuestsUtilite_44 {Joachim}
-QuestsUtilite_45 {Merriman}
-QuestsUtilite_46 {Hercule}
-QuestsUtilite_47 {Tonzag}
-QuestsUtilite_48 {Michel}
-QuestsUtilite_49 {de Monper}
-QuestsUtilite_50 {abbot}
-QuestsUtilite_51 {Benoit}
-QuestsUtilite_52 {Fadey}
-QuestsUtilite_53 { }
-QuestsUtilite_54 {Diego}
-QuestsUtilite_55 {de Montoya}
-QuestsUtilite_56 {Alonso}
-QuestsUtilite_57 {de Maldonado}
-QuestsUtilite_58 {William}
-QuestsUtilite_59 {Paterson}
-QuestsUtilite_60 {Archibald}
-QuestsUtilite_61 {Colhaun}
-QuestsUtilite_62 {Jan}
-QuestsUtilite_63 {Svensson}
-QuestsUtilite_64 {Joanna}
-QuestsUtilite_65 {Svensson}
-QuestsUtilite_66 {Nathaniel}
-QuestsUtilite_67 {Hawk}
-QuestsUtilite_68 {Danielle}
-QuestsUtilite_69 {Hawk}
-QuestsUtilite_70 {Eduard}
-QuestsUtilite_71 {Doylie}
-QuestsUtilite_72 {Lawrence}
-QuestsUtilite_73 {Beltrop}
-QuestsUtilite_74 {Gladys}
-QuestsUtilite_75 {McArthur}
-QuestsUtilite_76 {Helen}
-QuestsUtilite_77 {McArthur}
-QuestsUtilite_78 {Jose}
-QuestsUtilite_79 {Dios}
-QuestsUtilite_80 {Albert}
-QuestsUtilite_81 {Loxley}
-QuestsUtilite_82 {Steven}
-QuestsUtilite_83 {Dodson}
-QuestsUtilite_84 {Chad}
-QuestsUtilite_85 {Kapper}
-QuestsUtilite_86 {Layton}
-QuestsUtilite_87 {Dexter}
-QuestsUtilite_88 {Eduard}
-QuestsUtilite_89 {Black}
-QuestsUtilite_90 {Chimiset}
-QuestsUtilite_91 { }
-QuestsUtilite_92 {Zicomo}
-QuestsUtilite_93 { }
-QuestsUtilite_94 {Giuseppe}
-QuestsUtilite_95 {Fazio}
-QuestsUtilite_96 {Axel}
-QuestsUtilite_97 {Yost}
-QuestsUtilite_98 {Sancho}
-QuestsUtilite_99 {Carpentero}
 QuestsUtilite_100 {brother}
 QuestsUtilite_101 {Julian}
 QuestsUtilite_102 {Mary}
@@ -107,6 +10,7 @@ QuestsUtilite_106 {Jurgen}
 QuestsUtilite_107 {Schmidt}
 QuestsUtilite_108 {Donald}
 QuestsUtilite_109 {Greenspen}
+QuestsUtilite_11 { }
 QuestsUtilite_110 {Ole}
 QuestsUtilite_111 {Christiansen}
 QuestsUtilite_112 {Marcello}
@@ -117,6 +21,7 @@ QuestsUtilite_116 {Lionell}
 QuestsUtilite_117 {Maskered}
 QuestsUtilite_118 {Gerard}
 QuestsUtilite_119 {Smeets}
+QuestsUtilite_12 { }
 QuestsUtilite_120 {Richard}
 QuestsUtilite_121 {Shambon}
 QuestsUtilite_122 {Alvaro}
@@ -127,6 +32,7 @@ QuestsUtilite_126 {Adolf}
 QuestsUtilite_127 {Barbier}
 QuestsUtilite_128 {Curanai}
 QuestsUtilite_129 { }
+QuestsUtilite_13 {, suma daqui.}
 QuestsUtilite_130 {Ramona}
 QuestsUtilite_131 {Lozano}
 QuestsUtilite_132 {Oelart}
@@ -137,6 +43,7 @@ QuestsUtilite_136 {Leonard}
 QuestsUtilite_137 {Musket}
 QuestsUtilite_138 {Josef}
 QuestsUtilite_139 {Loderdale}
+QuestsUtilite_14 {Certo, amigo.}
 QuestsUtilite_140 {Lorenzo}
 QuestsUtilite_141 {Solderra}
 QuestsUtilite_142 {Jacqueline}
@@ -147,6 +54,7 @@ QuestsUtilite_146 {Tanneke}
 QuestsUtilite_147 {Aevers}
 QuestsUtilite_148 {Orelie}
 QuestsUtilite_149 {Bertine}
+QuestsUtilite_15 {Como quiser.}
 QuestsUtilite_150 {Antonio}
 QuestsUtilite_151 {Betancourt}
 QuestsUtilite_152 {Cecille}
@@ -157,6 +65,7 @@ QuestsUtilite_156 {Parece que este é o tesouro que você procurava}
 QuestsUtilite_157 { }
 QuestsUtilite_158 { }
 QuestsUtilite_159 { }
+QuestsUtilite_16 {Desculpa}
 QuestsUtilite_160 { }
 QuestsUtilite_161 {Carcereiro}
 QuestsUtilite_162 { }
@@ -167,6 +76,7 @@ QuestsUtilite_166 {Imperial}
 QuestsUtilite_167 {Bonnet}
 QuestsUtilite_168 {Trafalgar}
 QuestsUtilite_169 {Gloucester}
+QuestsUtilite_17 { }
 QuestsUtilite_170 {Griffin}
 QuestsUtilite_171 {Languedoc}
 QuestsUtilite_172 {Leiden}
@@ -177,6 +87,7 @@ QuestsUtilite_176 {Alcantara}
 QuestsUtilite_177 {Vanguard}
 QuestsUtilite_178 {Torbay}
 QuestsUtilite_179 {Russell}
+QuestsUtilite_18 { }
 QuestsUtilite_180 {Barford}
 QuestsUtilite_181 {Pelican}
 QuestsUtilite_182 {Montebello}
@@ -187,6 +98,7 @@ QuestsUtilite_186 {Phoenix}
 QuestsUtilite_187 {Neptune}
 QuestsUtilite_188 {Bourgogne}
 QuestsUtilite_189 {Pandora}
+QuestsUtilite_19 {, foi mal...}
 QuestsUtilite_190 {Rotterdam}
 QuestsUtilite_191 {Meerman}
 QuestsUtilite_192 {Bucentaure}
@@ -197,6 +109,8 @@ QuestsUtilite_196 {Marlin}
 QuestsUtilite_197 {interceptadores}
 QuestsUtilite_198 {Aurora Bardot, 1612-1637, Serva}
 QuestsUtilite_199 {Você vomitou a mesa toda, seu maldito pirata!}
+QuestsUtilite_2 {Não quero ficar falando das mesmas coisas o tempo todo.}
+QuestsUtilite_20 {Tá bom, tá bom. Calma aí.}
 QuestsUtilite_200 {Jules Couvier, 1591-1640, telhadista}
 QuestsUtilite_201 {Parece que um vento forte está se levantando...}
 QuestsUtilite_202 {Gerard Lesbro, 1555-1596, alquimista}
@@ -207,6 +121,7 @@ QuestsUtilite_206 {Auguste Poitier, 1567-1624, armeiro}
 QuestsUtilite_207 {Ora, ora, esta pistola está com defeito. Vamos dar uma olhada mais de perto...}
 QuestsUtilite_208 {Marc Romari, 1544-1599, agiota}
 QuestsUtilite_209 {Monsieur, juro que fui mesmo roubado!}
+QuestsUtilite_21 {Como quiser, só pare de gritar comigo.}
 QuestsUtilite_210 {Marcel d'Aubet, 1611-1650, carregador}
 QuestsUtilite_211 {Parece que essas cordas estão mesmo podres...}
 QuestsUtilite_212 {Rose Duplan, 1621-1649, criada}
@@ -217,6 +132,7 @@ QuestsUtilite_216 {Alvaro Lopez, 1587-1633, mergulhador de pérolas}
 QuestsUtilite_217 {Nunca houve tubarões nesta lagoa!}
 QuestsUtilite_218 {Gaspar Ibanez, 1599-1640, carpinteiro}
 QuestsUtilite_219 {Juan, joga aquele machado grande pra mim!}
+QuestsUtilite_22 {Perdão, estou com uma dor de cabeça terrível...}
 QuestsUtilite_220 {Lorenzo Perdoso, 1581-1630, artilheiro}
 QuestsUtilite_221 {Joga mais pólvora no cano! Mais ainda! Assim...}
 QuestsUtilite_222 {Simon Zorrita, 1602-1645, detetive}
@@ -227,6 +143,7 @@ QuestsUtilite_226 {Ricardo Cazares, 1590-1633, caçador}
 QuestsUtilite_227 {Eu conheço essa cobra. Ela é totalmente inofensiva!}
 QuestsUtilite_228 {Isidro Davilla, 1588-1624, moleiro}
 QuestsUtilite_229 {Amanhã de manhã vou trocar os degraus rachados desta escada...}
+QuestsUtilite_23 {Tanto faz.}
 QuestsUtilite_230 {Teodoro Bello, 1599-1646, ajudante}
 QuestsUtilite_231 {Seu canalha, senhor! Por favor, mostre logo essa sua espada cega e enferrujada!}
 QuestsUtilite_232 {Gelvira Cheka, 1605-1648, mercadora}
@@ -237,6 +154,7 @@ QuestsUtilite_236 {Ralph Chaplin, 1602-1649, lenhador}
 QuestsUtilite_237 {John, você prendeu bem o machado no cabo?}
 QuestsUtilite_238 {Kermit Filler, 1615-1653, barman}
 QuestsUtilite_239 {Morgan, o rum estava puro, juro pela minha mãe!}
+QuestsUtilite_24 {Que pena...}
 QuestsUtilite_240 {Laura Hart, 1605-1627, prostituta}
 QuestsUtilite_241 {Como ousa! Eu me consulto com o curandeiro toda semana!}
 QuestsUtilite_242 {Simon Luther, 1598-1639, médico}
@@ -247,6 +165,7 @@ QuestsUtilite_246 {Macolm Camley, 1545-1587, ator}
 QuestsUtilite_247 {Com essa máscara de nariz vermelho, estou a cara do comandante do forte!}
 QuestsUtilite_248 {Tobias Filler, 1567-1599, caçador}
 QuestsUtilite_249 {John, esse jaguar me parece bem manso, abre a jaula...}
+QuestsUtilite_25 {Que pena.}
 QuestsUtilite_250 {Camille Rutter, 1571-1596, camponesa}
 QuestsUtilite_251 {Nosso bodião está inquieto hoje...}
 QuestsUtilite_252 {Fritz Loots, 1587-1631, cozinheiro}
@@ -257,6 +176,7 @@ QuestsUtilite_256 {Paul Wlecke, 1577-1622, piloto}
 QuestsUtilite_257 {Fica tranquilo, capitão: conheço esses recifes como a palma da minha mão!}
 QuestsUtilite_258 {Yedam Uustgen, 1589-1635, ferreiro}
 QuestsUtilite_259 {Você não precisa de uma espada melhor, e sim de ajeitar as mãos na bigorna!}
+QuestsUtilite_26 {Lucas}
 QuestsUtilite_260 {Katrina Erb, 1610-1644, lavadeira}
 QuestsUtilite_261 {Lisbeth, para onde você foi? Esses índios são pacíficos, eles não mexem com brancos...}
 QuestsUtilite_262 {Peter Konnink, 1561-1615, Mosqueteiro}
@@ -267,6 +187,7 @@ QuestsUtilite_266 {Krelis van Eck, 1572-1611, contramestre}
 QuestsUtilite_267 {Deem vinte chibatadas! Não, trinta! Em cada um!}
 QuestsUtilite_268 {Jacob de Haez, 1611-1651, viajante}
 QuestsUtilite_269 {Caimãs não atacam pessoas. Só quando estão com muita fome. Este aqui está claramente satisfeito...}
+QuestsUtilite_27 {Rodenburg}
 QuestsUtilite_270 { }
 QuestsUtilite_271 { }
 QuestsUtilite_272 {O veneno não fez efeito!}
@@ -277,6 +198,7 @@ QuestsUtilite_276 {As águas estão mais perigosas, a ameaça pirata aumentou}
 QuestsUtilite_277 {Quimera}
 QuestsUtilite_278 {~ Nós realmente os enfurecemos! O navio-chefe da esquadra é ~}
 QuestsUtilite_279 {Diego}
+QuestsUtilite_28 {Abigail}
 QuestsUtilite_280 {de Landa}
 QuestsUtilite_281 {Jaguar}
 QuestsUtilite_282 {Bellona}
@@ -287,6 +209,7 @@ QuestsUtilite_286 {Vento Alísio}
 QuestsUtilite_287 {Triton}
 QuestsUtilite_288 {Cacau}
 QuestsUtilite_289 {Beija-flor}
+QuestsUtilite_29 {Shneur}
 QuestsUtilite_290 {Sibila}
 QuestsUtilite_291 {Juno}
 QuestsUtilite_292 {Orfeu}
@@ -297,6 +220,8 @@ QuestsUtilite_296 {Barracuda}
 QuestsUtilite_297 {Hidra}
 QuestsUtilite_298 {Peixe-boi}
 QuestsUtilite_299 {Cidadela}
+QuestsUtilite_3 {Já tivemos essa conversa.}
+QuestsUtilite_30 {Solomon}
 QuestsUtilite_300 {Anátema}
 QuestsUtilite_301 {Quimera}
 QuestsUtilite_302 {Nêmesis}
@@ -307,6 +232,7 @@ QuestsUtilite_306 {Dionísio}
 QuestsUtilite_307 {Astarte}
 QuestsUtilite_308 {Charon}
 QuestsUtilite_309 {Guacamayo}
+QuestsUtilite_31 {Shneur}
 QuestsUtilite_310 {Heliada}
 QuestsUtilite_311 {Cérbero}
 QuestsUtilite_312 {Bellerophon}
@@ -317,6 +243,7 @@ QuestsUtilite_316 {Cortina}
 QuestsUtilite_317 {Falange}
 QuestsUtilite_318 {Legião}
 QuestsUtilite_319 {Posto avançado}
+QuestsUtilite_32 {John}
 QuestsUtilite_320 {Dríade}
 QuestsUtilite_321 {Górgona}
 QuestsUtilite_322 {Obelisco}
@@ -327,5 +254,78 @@ QuestsUtilite_326 {Heliadon}
 QuestsUtilite_327 {Hefesto}
 QuestsUtilite_328 {Centurião}
 QuestsUtilite_329 {Os piratas foram derrotados, as águas estão mais seguras.}
+QuestsUtilite_33 {Murdock}
 QuestsUtilite_330 {Os piratas ficaram mais fortes, os mares estão mais perigosos.}
 QuestsUtilite_331 {Capitão, é o Amsterdam! Parabéns — agora a Companhia vê você como uma verdadeira ameaça.}
+QuestsUtilite_34 {Gino}
+QuestsUtilite_35 {Gvineili}
+QuestsUtilite_36 {Charlie}
+QuestsUtilite_37 {Knippel}
+QuestsUtilite_38 {Richard}
+QuestsUtilite_39 {Fleetwood}
+QuestsUtilite_4 {Já conversamos sobre isso.}
+QuestsUtilite_40 {Jacob}
+QuestsUtilite_41 {van Berg}
+QuestsUtilite_42 {Longway}
+QuestsUtilite_43 { }
+QuestsUtilite_44 {Joachim}
+QuestsUtilite_45 {Merriman}
+QuestsUtilite_46 {Hercule}
+QuestsUtilite_47 {Tonzag}
+QuestsUtilite_48 {Michel}
+QuestsUtilite_49 {de Monper}
+QuestsUtilite_5 {Repito: não quero ficar falando do mesmo assunto toda hora.}
+QuestsUtilite_50 {abbot}
+QuestsUtilite_51 {Benoit}
+QuestsUtilite_52 {Fadey}
+QuestsUtilite_53 { }
+QuestsUtilite_54 {Diego}
+QuestsUtilite_55 {de Montoya}
+QuestsUtilite_56 {Alonso}
+QuestsUtilite_57 {de Maldonado}
+QuestsUtilite_58 {William}
+QuestsUtilite_59 {Paterson}
+QuestsUtilite_6 {Eu disse que não há mais nada para discutir!}
+QuestsUtilite_60 {Archibald}
+QuestsUtilite_61 {Colhaun}
+QuestsUtilite_62 {Jan}
+QuestsUtilite_63 {Svensson}
+QuestsUtilite_64 {Joanna}
+QuestsUtilite_65 {Svensson}
+QuestsUtilite_66 {Nathaniel}
+QuestsUtilite_67 {Hawk}
+QuestsUtilite_68 {Danielle}
+QuestsUtilite_69 {Hawk}
+QuestsUtilite_7 {Já te disse que a gente já conversou sobre isso. Tá com problema de memória?}
+QuestsUtilite_70 {Eduard}
+QuestsUtilite_71 {Doylie}
+QuestsUtilite_72 {Lawrence}
+QuestsUtilite_73 {Beltrop}
+QuestsUtilite_74 {Gladys}
+QuestsUtilite_75 {McArthur}
+QuestsUtilite_76 {Helen}
+QuestsUtilite_77 {McArthur}
+QuestsUtilite_78 {Jose}
+QuestsUtilite_79 {Dios}
+QuestsUtilite_8 {Não quero falar com você de novo.}
+QuestsUtilite_80 {Albert}
+QuestsUtilite_81 {Loxley}
+QuestsUtilite_82 {Steven}
+QuestsUtilite_83 {Dodson}
+QuestsUtilite_84 {Chad}
+QuestsUtilite_85 {Kapper}
+QuestsUtilite_86 {Layton}
+QuestsUtilite_87 {Dexter}
+QuestsUtilite_88 {Eduard}
+QuestsUtilite_89 {Black}
+QuestsUtilite_9 {Nunca mais vou falar com você!}
+QuestsUtilite_90 {Chimiset}
+QuestsUtilite_91 { }
+QuestsUtilite_92 {Zicomo}
+QuestsUtilite_93 { }
+QuestsUtilite_94 {Giuseppe}
+QuestsUtilite_95 {Fazio}
+QuestsUtilite_96 {Axel}
+QuestsUtilite_97 {Yost}
+QuestsUtilite_98 {Sancho}
+QuestsUtilite_99 {Carpentero}

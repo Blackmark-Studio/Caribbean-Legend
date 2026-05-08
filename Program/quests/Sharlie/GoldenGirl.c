@@ -679,7 +679,7 @@ void GoldenGirl_BasterSetFrigate(string qName) //
 	Group_FindOrCreateGroup("GG_AngerranGroup");
 	sld = GetCharacter(NPC_GenerateCharacter("GG_AngerranCap", "off_fra_3", "man", "man", 35, FRANCE, -1, true, "quest"));
 	FantomMakeCoolFighter(sld, 35, 70, 70, "blade_20", "pistol5", "bullet", 250);
-	sld.Ship.Type = GenerateShipHand(sld, SHIP_FRIGATE, 24, 4500, 350, 5200, 70000, 15.5, 39.0, 0.4);
+	sld.Ship.Type = GenerateShipHand(sld, SHIP_FRIGATE, 24, 4500, 350, 5200, 70000, 15.5, 39.0);
 	sld.Ship.name = StringFromKey("GoldenGirl_15");
 	SetBaseShipData(sld);
 	sld.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS24;
@@ -1174,7 +1174,7 @@ bool GoldenGirl_QuestComplete(string sQuestName, string qname)
 		DeleteAttribute(sld, "CompanionDisable");
 		RemovePassenger(Pchar, sld);
 		RemoveCharacterCompanion(pchar, sld);
-		sld.Ship.Type = GenerateShipHand(sld, SHIP_FRIGATE, 24, 4500, 350, 5200, 70000, 15.5, 39.0, 0.4);
+		sld.Ship.Type = GenerateShipHand(sld, SHIP_FRIGATE, 24, 4500, 350, 5200, 70000, 15.5, 39.0);
 		sld.Ship.name = StringFromKey("GoldenGirl_15");
 		SetBaseShipData(sld);
 		sld.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS24;

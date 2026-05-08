@@ -1,0 +1,46 @@
+Node0_a {Yeni takvim yılı yaklaşıyor. Taç Mevsimi yenilenme ve yeniden doğuş zamanıdır. Kuzeydoğu rüzgârları öngörülebilir hâle gelir ve Atlas Okyanusu'nu uzun geçişler için çok daha güvenli kılar.$br$redAvrupa'dan insanlar ve mallar tam da bu dönemde takımadalara ulaşır. Valiler yeni emirler ve raporlar alırken, denizde devriyeler ve taç kervanları dolaşır.}
+Node0_a_action {Fırsatlar denizi!}
+Node0_b_a {Kolonilerle ticaret kışa doğru her zamanki gibi duruldu. Son şeker ve tütün partileri çoktan Avrupa'ya gitti, abanoz ve maun kesimi durdu ve denge ancak gelecek mevsimde yeniden kurulacak. Şimdiyse koloni mallarının fiyatı normalin çok üstünde.}
+Node0_b_a_reaction {Eminim, her şeyi hesaba katmadılar}
+Node0_b_a_reaction_log {Tüccar itibarını ve doğuştan gelen karizmanı kullanarak tüccarları, kayda geçmemiş kalan malları sana satmaya ikna etmeye karar veriyorsun.}
+Node0_b_b {Geçen mevsim kolonileri kupkuru sıktı; stoklar tükendi ve plantasyonlar kötü hava yüzünden neredeyse yok oldu. Koloni mallarının son kalıntıları çoktan başkent kolonilerine taşındı, piyasada ise satacak ya da alacak neredeyse hiçbir şey kalmadı. Tüccarlar fiyatları uçurdu ve Kamış Mevsimi'ni bekliyor; denge ancak o zaman geri dönecek.}
+Node0_b_b_reaction {Benim gibiler için her zaman bir şey bulunur}
+Node0_b_b_reaction_log {Mağazalardaki stokları tam olarak değerlendirmek için levazım subayının ve birkaç muhbirin yeteneklerinden yararlanıyorsun. Tüccarlar, kendilerine saklamak istedikleri malları sana satmak zorunda kalacak.}
+Node0_b_c {Başkentlerde sömürge vergilerini yeniden gözden geçirmeye karar verdiler. Kalem efendileri gümrükleri tartışıp dururken, tüccarlar uzun vadeli sözleşmeler imzalamakta acele etmiyor. Bu yüzden hem fiyatlar hem de ticaret hacmi zarar görüyor.}
+Node0_b_c_reaction {Malımız en iyisi!}
+Node0_b_c_reaction_log {Tecrübeli bir tüccar olarak itibarını kullanıp gemindeki malları daha yüksek fiyata satmaya karar veriyorsun. Ne yazık ki bu, yalnızca malına ihtiyaç duyan kolonilerde işe yarayacak.}
+Node0_c_a {Tersaneler ise yıkımdan tamamen kurtulmuş durumda; pazara akan gemi kerestesi partileri de onarım fiyatını düşürdü.}
+Node0_c_a_reaction {Umarım buna gerek kalmaz}
+Node0_c_a_reaction_log {Gemiyi su üstünde tutmayı iyi biliyorsun; bu bilgiyi onarım için daha seyrek tersaneye girmek üzere kullanmaya karar veriyorsun.}
+Node0_c_b {Ama iyi haberler de var; Avrupa, ulusal filoların savaş gücünü yeniden kurmak için bu yıl özellikle büyük miktarda malzeme gönderdi. İlk taç kervanlarıyla birlikte uzman gemi yapımcıları da geldi. Uluslar büyük bir savaşa hazırlanıyor, ama serbest bir kaptan için bunun sonucu onarım maliyetlerinde kayda değer bir düşüş olacak.}
+Node0_c_b_reaction {Ucuz onarım mı? O zaman daha sert vuralım}
+Node0_c_b_reaction_log {Gemi gövdeleri kolayca onarılabiliyorsa, düşmana acımadan vurmak gerekir. Yalnızca düşman gemilerinin kritik kısımlarını hedef almaya karar veriyor, ayrıca yakınlaşma ihtimaline karşı top kapaklarının yanında ağır dökme demir gülle stoğu tutulmasını emrediyorsun.}
+Node0_c_c {Limanlarda ve koylarda, hazırlanmakta olan büyük bir askerî sefer hakkında kaygı verici söylentiler dolaşıyor. En iyi kalaslar, halatlar ve yelken bezi savaş gemileri için ayrıldı. Tersaneler çalışıyor, ama malzeme öncelikli devlet siparişlerine hızla gidiyor. Bu da onarım fiyatını yükseltiyor.}
+Node0_c_c_reaction {Gemimiz savaşta işe yarar}
+Node0_c_c_reaction_log {Kendini hizmetteki tecrübeli bir korsan-kaptan gibi kolayca gösteriyor ve savaş gemileriyle aynı safta yer alıyorsun.}
+Node0_d_a {Şu anda her ulus, taze gücünden yararlanıp nüfuzunu artırmaya çalışıyor. Her vali yardımdan memnun olacaktır ve halk düşmanı hâline gelmek şaşırtıcı derecede kolaydır. Mektup-ı korsanlık almak kolaylaştı; Karayipler silah ve onu kullanmaya hevesli insanlarla dolup taşıyor. Bu, fırsatlar zamanıdır.}
+Node0_d_a_reaction {Bizi unutmayacaklar}
+Node0_d_a_reaction_log {Kime ve nerede ödeme yapılacağını bilirsen, söylenti kıvılcımını gerçek bir yangına dönüştürmek çok kolaydır. Devletler serbest kaptanların hareketlerini dikkatle izliyor, ama tüm ilgiyi üzerine çekmeyi başaracaksın.}
+Node0_d_b {Ana yurttan iyi haberler geldi: Avrupa'da önemli bir hanedan evliliği yapıldı ve eski rakipler arasındaki bağlar güçlendi. Bu hem memlekette hem de Karayipler'de gerilimi büyük ölçüde düşürdü; bunun sonucunda çok sayıda deneyimli asker terhis edildi. Bu gaziler meyhanelerdeki toy acemilerin arasına katıldı ve kiralık mürettebatların tecrübesini önemli ölçüde artırdı.}
+Node0_d_b_reaction {Yetenekli acemileri seç}
+Node0_d_b_reaction_log {Keskin bir göz, tecrübeli askerleri kara sıçanlarından kolayca ayırır. Yalnızca gazileri işe alabileceksin; bu da mürettebatının etkinliğini ciddi biçimde artıracak.}
+Node0_d_c {Limanlar ve memurlar iş yükü altında eziliyor. Evraklar elden ele dolaşıyor, depolar yük kabul ediyor, nöbetçiler ise savaş gemilerini denetlemekle meşgul. Bu kargaşa içinde dikkatli bir kaptan fark edilmeden geçebilir.}
+Node0_d_c_reaction {İyi bir fırsat}
+Node0_d_c_reaction_log {Dostça görünme ve insanları kendine ısındırma becerin, muhafızların dikkati gevşediğinde çok işe yarayacak.}
+Node0_d_d {Limanlardaki memur değişimiyle birlikte yeniden sayım başlar. Gemi jurnalleri her zamankinden daha dikkatle incelenir, mürettebatlar yeniden sayılır ve ruhsatların yenilenmesi istenir. Yabancılar istemsizce dikkat çeker; limanda fark edilmeden kalmak daha zor hâle gelir.}
+Node0_d_d_reaction {Ortadan kaybolmak gerekecek}
+Node0_d_d_reaction_log {Daha sıkı ve didik didik arayan kontroller olsa da, göze batmama ve dikkat çekmeme becerin gümrüklerden geçmeyi ve devriyeleri kandırmayı büyük ölçüde kolaylaştıracak.}
+Node0_d_e {Metropollerde, İsveç ile Rus Çarlığı arasında yeni bir çatışma olgunlaşıyor. Karl Gustav, dinî müttefiki İngiltere'den destek istedi; Aleksey Mihayloviç ise Katoliklerin öfkesinden yararlanıp Habsburgların desteğini aldı. Bu durum Avrupa'yı iki büyük siyasi bloğa böldü ve her devlet düzenli ordusunu evde tutmaya karar verdi.$br$redKolonilere kendi başlarının çaresine bakmaları emredildi. Garnizonlar yerel halkla güçlendiriliyor; hizmete az çok elverişli herkes meyhanelerden süpürülüp götürülüyor. Geriye yalnızca tam anlamıyla beceriksiz acemiler kalıyor.}
+Node0_d_e_reaction {Talimi her şey düzeltecek}
+Node0_d_e_reaction_log {Kiralık mürettebatların deneyim eksikliğini, savaş donanmasındaki gibi çaba ve talimle telafi etmeye karar veriyorsun. Acemiler gece gündüz senin dikkatli yönetimin altında güvertede düzen içinde yürüyecek ve er ya da geç deniz kurduna dönüşecekler.}
+Node0_d_f {Avrupa'dan kaygı verici haberler geldi: Osmanlı İmparatorluğu askerî gücünü artırıyor ve bölgedeki konumunu sağlamlaştırıyor. Hristiyanlar, Balkan Yarımadası'nın güneyini olası bir tehdide karşı savunmaya hazırlanıyor; tüm devletler de aceleyle geçici dinî ittifaklar kuruyor. Hatta Protestan İngiltere bile filosunu Akdeniz'e göndermeye hazır. Bu, Karayipler'deki gerilimi ciddi biçimde düşürüyor, ama bir bedeli var: iyi topların hepsi metropollerde kaldı.}
+Node0_d_f_reaction {Kaleler de mi topsuz kaldı?}
+Node0_d_f_reaction_log {Tecrübeli bir topçu olarak, savaşabilecek durumdaki bir kaleyi tüm direncini yitirmiş olandan kolayca ayırt edersin. Top kıtlığı, hücumlara çok daha erken başlamayı mümkün kılacak.}
+Node0_success
+{
+Yeni yıla açık gökyüzü altında ve yelkenlerinde arka rüzgârla giriyorsun.
+Taç Mevsimi yeni emirler, yeni yüzler ve dolu depolar getirir.
+Her şey yeniden başlar ve herkesin tarihe geçme şansı vardır.
+}
+Node0_success_action {Yelken aç!}
+Node0_title {Taç Mevsimi}

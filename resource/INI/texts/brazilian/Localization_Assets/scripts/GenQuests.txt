@@ -1,11 +1,30 @@
 GenQuests_1 {Contrabandista}
-GenQuests_2 {Oficial}
-GenQuests_3 {Soldado}
-GenQuests_4 {Encontrei a aliança da moça de @<sCity>... Preciso devolvê-la para ela.}
+GenQuests_100 {Você ouviu? Um capitão salvou uma moça chamada @<pchar.GenQuest.EncGirl.name> dos bandidos — tirou ela das mãos deles! Que pessoa incrível e um verdadeiro homem!}
+GenQuests_101 {Sabe, o capitão @<GetFullName(pchar)> salvou uma moça chamada @<pchar.GenQuest.EncGirl.name> de estupradores na selva... Ah, era você! Estou impressionado...}
+GenQuests_102 { }
+GenQuests_103 {Pois é, capitão @<GetFullName(pchar)>, ninguém imaginava que você deixaria uma mulher indefesa nas mãos de bandidos para ser brinquedo deles. Pobre @<pchar.GenQuest.EncGirl.name>, nem sei o que dizer...}
+GenQuests_104 {Sabe, capitão, você é mesmo um canalha. Como pôde abandonar uma garota indefesa na selva? Tem ideia do que fizeram com ela? Pobre @<pchar.GenQuest.EncGirl.name>, ninguém nunca vai querer se casar com ela...}
+GenQuests_105 {Você ouviu falar do assassinato de @<pchar.GenQuest.EncGirlF.name>? Coitada, foi morta na selva recentemente. Deviam encontrar o assassino e enforcá-lo!}
+GenQuests_106 {Sabe, capitão @<GetFullName(pchar)>, alguém matou uma pobre moça chamada @<pchar.GenQuest.EncGirlF.name>? Que pena, ela era uma garota tão boa...}
+GenQuests_107 {O nome dela era @<pchar.GenQuest.EncGirlF.name>, e ela morreu na selva. Nada surpreendente, vou te dizer, lá fora não é seguro...}
+GenQuests_108 {Recentemente encontraram nosso oficial e toda a sua unidade mortos. Quem poderia tê-los matado? E por quê?}
+GenQuests_109 {Nosso comandante costuma enviar patrulhas para a selva, mas não faço ideia do que ele vai fazer agora. Soldados foram encontrados mortos lá recentemente...}
+GenQuests_110 {Droga, alguém massacrou uma unidade inteira dos nossos soldados fora da cidade...}
+GenQuests_111 {Dizem que o capitão @<GetFullName(pchar)> encontrou soldados de @<NationNameGenitive(sti(pchar.GenQuest.(attrName).nation))> nas selvas e acabou com todos eles. Ha, @<NationNamePeople(sti(pchar.GenQuest.(attrName).nation))> não sabem lutar...}
+GenQuests_112 {Ouvi dizer que um capitão @<GetMainCharacterNameGen()> foi inspecionado fora da cidade por uma patrulha...}
+GenQuests_113 {Hm, pelo que sei, nosso patrulha já te revistou fora da cidade. Não sei o quão eficaz isso foi...}
+GenQuests_114 {Nosso comandante vai reforçar as patrulhas na selva. Você já deve saber disso, foi inspecionado há pouco tempo...}
+GenQuests_115 {Sabe, o governador @<sTemp> ordenou que certo capitão @<GetMainCharacterNameDat()> eliminasse um famoso bandido chamado @<GetFullName(arAll)>. E parece que esse capitão cumpriu a tarefa...}
+GenQuests_116 {Um capitão corajoso se ofereceu para caçar e eliminar um bandido local chamado @<GetFullName(arAll)>. E parece que conseguiu!}
+GenQuests_117 {Ha! Nosso governador finalmente resolveu pôr ordem na selva — enviou o capitão @<GetMainCharacterNameDat()> para caçar e matar o bandido mais famoso. E sabe de uma coisa? Esse bandido, @<GetFullName(arAll)>, está morto!}
+GenQuests_118 {mapa}
+GenQuests_119 {tesouro}
+GenQuests_120 {dinheiro}
 GenQuests_16 {Tesouros estão por perto!}
 GenQuests_17 {O tempo para procurar o navio acabou}
 GenQuests_18 {O tempo para buscar o navio acabou, o capitão desembarcou}
 GenQuests_19 {Capitão foi para terra}
+GenQuests_2 {Oficial}
 GenQuests_20 {Capitão! Temos uma epidemia!}
 GenQuests_21 {A bordo do navio @<chref.Ship.Name>, @<crew> pessoas já estão mortas}
 GenQuests_22 {explodiu}
@@ -16,6 +35,7 @@ GenQuests_26 {Você soube que a patroa expulsou uma criada chamada @<pchar.GenQu
 GenQuests_27 {Você ouviu que uma prostituta tentou embarcar no navio sem documentos? Pegaram ela e levaram de volta ao bordel. Dizem que deve uma boa quantia à dona.}
 GenQuests_28 {Já ouviu? Pegaram uma prostituta sem documentos no nosso porto. Dizem que fugiu de um bordel depois de limpar os baús da dona de lá. Essa espalhadora de doença e roubo já devia ter sido parada faz tempo. Nossas crianças veem tudo isso, o que podem aprender?}
 GenQuests_29 {George}
+GenQuests_3 {Soldado}
 GenQuests_30 {Bush}
 GenQuests_31 {Rabak}
 GenQuests_32 {Maboa}
@@ -26,6 +46,7 @@ GenQuests_36 {na artilharia}
 GenQuests_37 {em navegação}
 GenQuests_38 {Capitão, como foi sua viagem num navio pirata? Tudo certo? Ninguém te incomodou lá? Ha ha ha!}
 GenQuests_39 {Oh-oh-oh, capitão, ouvi dizer que você se divertiu bastante ultimamente... Agora, meu amigo, está sem um tostão! Ha-ha-ha!!}
+GenQuests_4 {Encontrei a aliança da moça de @<sCity>... Preciso devolvê-la para ela.}
 GenQuests_40 {Você pode atracar na baía.}
 GenQuests_41 {Você ouviu, @<GetAddress_Form(pchar)>, que o capitão do patrulha @<sShipType> @<pchar.GenQuest.CaptainComission.Name>. foi preso recentemente? Descobriram que ele fazia contrabando nas horas vagas. Veja só a que ponto chegou a colônia com o governador atual! Aqueles que deveriam caçar piratas estão nos roubando!.. Dizem que em uma semana ele será executado. Bem feito.}
 GenQuests_42 {Dizem que o capitão do patrulha @<sShipType> @<pchar.GenQuest.CaptainComission.Name> era o chefe de uma quadrilha de contrabandistas. Ele foi capturado e logo será enforcado. Parece que @<GetAddress_Form(pchar)>, nosso governador, está levando a sério a ordem na colônia.}
@@ -86,24 +107,3 @@ GenQuests_96 {Você ouviu falar que a gangue local do @<pchar.GenQuest.(Gun).nam
 GenQuests_97 {Você ouviu sobre o assassinato de @<pchar.GenQuest.EncGirl.name>? Coitada, foi morta na selva recentemente. Deviam encontrar o assassino e enforcá-lo!}
 GenQuests_98 {Sabe, capitão @<GetFullName(pchar)>, alguém matou uma pobre moça chamada @<pchar.GenQuest.EncGirl.name>? Que pena, ela era uma garota tão boa...}
 GenQuests_99 {O nome dela era @<pchar.GenQuest.EncGirl.name>, e ela morreu na selva. Nada surpreendente, vou te dizer, lá fora não é seguro...}
-GenQuests_100 {Você ouviu? Um capitão salvou uma moça chamada @<pchar.GenQuest.EncGirl.name> dos bandidos — tirou ela das mãos deles! Que pessoa incrível e um verdadeiro homem!}
-GenQuests_101 {Sabe, o capitão @<GetFullName(pchar)> salvou uma moça chamada @<pchar.GenQuest.EncGirl.name> de estupradores na selva... Ah, era você! Estou impressionado...}
-GenQuests_102 { }
-GenQuests_103 {Pois é, capitão @<GetFullName(pchar)>, ninguém imaginava que você deixaria uma mulher indefesa nas mãos de bandidos para ser brinquedo deles. Pobre @<pchar.GenQuest.EncGirl.name>, nem sei o que dizer...}
-GenQuests_104 {Sabe, capitão, você é mesmo um canalha. Como pôde abandonar uma garota indefesa na selva? Tem ideia do que fizeram com ela? Pobre @<pchar.GenQuest.EncGirl.name>, ninguém nunca vai querer se casar com ela...}
-GenQuests_105 {Você ouviu falar do assassinato de @<pchar.GenQuest.EncGirlF.name>? Coitada, foi morta na selva recentemente. Deviam encontrar o assassino e enforcá-lo!}
-GenQuests_106 {Sabe, capitão @<GetFullName(pchar)>, alguém matou uma pobre moça chamada @<pchar.GenQuest.EncGirlF.name>? Que pena, ela era uma garota tão boa...}
-GenQuests_107 {O nome dela era @<pchar.GenQuest.EncGirlF.name>, e ela morreu na selva. Nada surpreendente, vou te dizer, lá fora não é seguro...}
-GenQuests_108 {Recentemente encontraram nosso oficial e toda a sua unidade mortos. Quem poderia tê-los matado? E por quê?}
-GenQuests_109 {Nosso comandante costuma enviar patrulhas para a selva, mas não faço ideia do que ele vai fazer agora. Soldados foram encontrados mortos lá recentemente...}
-GenQuests_110 {Droga, alguém massacrou uma unidade inteira dos nossos soldados fora da cidade...}
-GenQuests_111 {Dizem que o capitão @<GetFullName(pchar)> encontrou soldados de @<NationNameGenitive(sti(pchar.GenQuest.(attrName).nation))> nas selvas e acabou com todos eles. Ha, @<NationNamePeople(sti(pchar.GenQuest.(attrName).nation))> não sabem lutar...}
-GenQuests_112 {Ouvi dizer que um capitão @<GetMainCharacterNameGen()> foi inspecionado fora da cidade por uma patrulha...}
-GenQuests_113 {Hm, pelo que sei, nosso patrulha já te revistou fora da cidade. Não sei o quão eficaz isso foi...}
-GenQuests_114 {Nosso comandante vai reforçar as patrulhas na selva. Você já deve saber disso, foi inspecionado há pouco tempo...}
-GenQuests_115 {Sabe, o governador @<sTemp> ordenou que certo capitão @<GetMainCharacterNameDat()> eliminasse um famoso bandido chamado @<GetFullName(arAll)>. E parece que esse capitão cumpriu a tarefa...}
-GenQuests_116 {Um capitão corajoso se ofereceu para caçar e eliminar um bandido local chamado @<GetFullName(arAll)>. E parece que conseguiu!}
-GenQuests_117 {Ha! Nosso governador finalmente resolveu pôr ordem na selva — enviou o capitão @<GetMainCharacterNameDat()> para caçar e matar o bandido mais famoso. E sabe de uma coisa? Esse bandido, @<GetFullName(arAll)>, está morto!}
-GenQuests_118 {mapa}
-GenQuests_119 {tesouro}
-GenQuests_120 {dinheiro}

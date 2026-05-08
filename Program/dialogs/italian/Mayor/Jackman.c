@@ -589,7 +589,6 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 				if (NextDiag.TempNode != "I_know_you_good")
 					dialog.text = "Sei impazzit" + GetSexPhrase("o", "a") + "? I nostri ragazzi ti evitano come la peste. Sparisci e smettila di scocciarmi.";
 				else
@@ -597,12 +596,12 @@ void ProcessDialogEvent()
 				link.l1 = "Ho capito...";
 				link.l1.go = "exit";
 			}
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 		break;
 
 		case "pirate_threat_pay":
 			iGPThreatRate = 0;
 			iGPThreat = 0;
-			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iJackmanTotalTemp);
 			DialogExit();
 			PiratesDecreaseNotif("");

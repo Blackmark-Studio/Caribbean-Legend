@@ -256,7 +256,7 @@ void RemoveItemsFromPCharTotal(string itemId, int itemsToTakeQty)
  * @param itemsToTakeQty кол-во, которое хотим забрать, должно быть > 0
  * @return количество забранных предметов, может быть меньше переданного, если в сундуках не хватило, тогда заберем всё, что нашли
 */
-int GetItemMyCabin(string itemId, int itemsToTakeQty)
+int GetItemMyCabin(string itemId, int itemsToTakeQty, bool withNotification = false)
 {
 	if (itemsToTakeQty < 0) return 0;
 
@@ -273,9 +273,10 @@ int GetItemMyCabin(string itemId, int itemsToTakeQty)
 		if (i > 0) boxAttributeName = "private"; // костыль, в каюте box, в остальных помещениях private
 		itemsTaken += GetItemFromAllBoxes(&locations[locationId], itemId, itemsToTakeQty, boxAttributeName, 4);
 		itemsToTakeQty -= itemsTaken;
-		if (itemsToTakeQty < 1) return itemsTaken;
+		if (itemsToTakeQty < 1) break;
 	}
 
+	if (withNotification) notification(StringFromKey("characterUtilite_5")+GetItemName(itemId), "BoxMinus");
 	return itemsTaken;
 }
 
@@ -294,4 +295,44 @@ void PutItemToShip(ref loc_id_or_Idx, string itemId, int qty, int boxIndex = 1)
 	}
 
 	PutItemToLocationBox(loc_id_or_Idx, itemId, qty, boxIndex);
+}
+
+// Найти предмет на корабле игрока по функции-фильтру
+ref FindItemOnShip(bool cabinOnly, string filterFunc)
+{
+	string shipLocations[];
+	if (!_FillPlayerShipInsidesLocations(&shipLocations)) return nullptr; // нет каюты, а значит и корабля
+	if (cabinOnly) SetArraySize(&shipLocations, 1);
+
+	string boxAttributeName = "box";
+	int j, n;
+	for (int i = 0; i < 4; i++)
+	{
+		int locationIdx = FindLocation(shipLocations[i]);
+		if (locationIdx < 0) continue;
+		ref location = &Locations[locationIdx];
+
+		if (i > 0) boxAttributeName = "private"; // костыль, в каюте box, в остальных помещениях private
+		for (n = 1; n <= 4; n++)
+		{
+			string boxId = boxAttributeName + n;
+			aref box = GetAref(location, boxId + ".items");
+			if (box == nullptr) continue;
+
+			int boxItemsQty = GetAttributesNum(box);
+			for (j = 0; j < boxItemsQty; j++)
+			{
+				aref boxItem = GetAttributeN(box, j);
+				if (int(GetAttributeValue(boxItem)) < 1) continue;
+
+				ref item = ItemsFromID(GetAttributeName(boxItem));
+				bool filterOk = call filterFunc(item);
+				if (!filterOk) continue;
+
+				return item;
+			}
+		}
+	}
+
+	return nullptr;
 }

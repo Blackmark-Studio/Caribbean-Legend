@@ -1,0 +1,63 @@
+AffairOfHonor_tavern {Ubriacone disperato}
+armourer_merchant {Armaiolo}
+banditos {Tagliagole}
+captain {Capitano}
+captain_trader {Mercante indipendente}
+cemeteryman_merchant {Custode del cimitero}
+chaplain {Cappellano}
+comandante {Comandante}
+deadman {Morto vivente}
+Deputy Director {Vice Direttore}
+Director {Direttore}
+drinker_0 {Il pirata più famoso di queste acque}
+drinker_1 {Un narratore magistrale di storie vere}
+drinker_2 {Agente speciale dell’Escorial in pensione}
+drinker_3 {Conversatore estremamente erudito}
+drinker_4 {Un esperto competente in qualsiasi campo}
+drinker_5 {Un allegro senza paura né macchia}
+drinker_6 {Un uomo magnifico nel pieno vigore}
+drinker_7 {Capo delle cianfrusaglie}
+drinker_8 {Veterano della Guardia Ubriaca}
+drinker_9 {Il cugino di secondo grado di una persona non trascurabile nella DWIC.}
+duelist {Spadaccino}
+enemy {Nemico}
+fgirl {Amante}
+friend {Amico}
+Ghovernor {Governatore Generale}
+gipsy {Zingara}
+HeadSailor {Marinaio esperto}
+HeadSailorPlus {La voce dell’equipaggio}
+hostess {Padrona}
+hovernon_wife {Moglie del governatore}
+hovernor {Governatore}
+indian_merchant {Chiromante}
+kukulkan {Kukulkan}
+legend {Leggenda}
+lightman_merchant {Guardiano del faro}
+marginal_town {Pirata}
+mercen {Mercenario}
+monk {Monaco}
+monk_merchant {Venditore di Reliquie Sacre}
+monster {Non-morto}
+mtraxx_vanguard {Avanguardia di Tirax}
+Naval Registry Guard {Guardia del Registro Navale}
+noble {Nobile}
+patrol {Pattuglia}
+Phovernor {Barone}
+pofficer {Candidato}
+poorman {Mendicante}
+portman {Maestro di porto}
+potion_merchant {Alchimista}
+priest {Prete}
+prisonboss {Comandante di guarnigione}
+sailor {Marinaio}
+shipyarder {Maestro d’ascia}
+smuggler {Contrabbandiere}
+soldier_town {Guardia}
+tavernkeeper {Oste}
+trader {Mercante}
+usurer {Banchiere}
+veteran_merchant {Ferramenta}
+waitress {Cameriera}
+whore {Serva}
+wife {Moglie}

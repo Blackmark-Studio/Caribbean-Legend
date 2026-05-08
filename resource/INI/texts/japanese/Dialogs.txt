@@ -1,0 +1,6 @@
+Shipyard_TuningRig {さて、何ができるか見てみよう。この船の帆装は _$key($attr($context.rig_type)) で、$key($attr($context.rig_upgrade_type)) ことができる。そのために必要なのは、船用の絹が $attr($context.material)。作業料として、経費込みで $attr($context.price) 箱分のダブロンをもらう。たぶんこれで全部だ。ああ、それと——代金は前払いだ。}
+Smuggler_can_trade {今の季節は締め付けが厳しくてね、無茶はしたくないが……あんたの評判は先に来てる、悪党め。総督のカツラすら盗めるって話だ。何を持ってきたか見せてみろ。}
+Smuggler_can_trade_reply {評判が認められるのはいつだって気分がいい。取引しよう。}
+Smuggler_cant_trade {何のことか分かりません、船長。密輸は厳しく禁じられており、重く処罰されます。（小声で）特にこの季節は。}
+Smuggler_cant_trade_reply {冗談じゃない、密輸品を扱うつもりなんてなかった。（小声で）俺たちは会っていない。}
+storageRent {警備のほかに、ここでは何か別の仕事もしているのか？}

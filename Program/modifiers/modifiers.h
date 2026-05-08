@@ -32,6 +32,8 @@
 
 #define MELEE "Melee"
 #define RANGE "Range"
+#define BULLET "bullet"
+#define GRAPESHOT "grapeshot"
 
 #define WEAPON_LIGHT 0
 #define WEAPON_MEDIUM 1
@@ -67,7 +69,6 @@
 #define M_SHIP_CAPACITY "shipCapacity"
 #define M_SHIP_SPEED "shipSpeed"
 #define M_SHIP_TURNRATE "shipTurnrate"
-#define M_SHIP_WINDAGAINST "shipWindagainst"
 #define M_SHIP_MAXCREW "shipMaxcrew"
 #define M_SHIP_MINCREW "shipMincrew"
 #define M_SHIP_FIRE_DISTANCE "shipFireDistance"
@@ -75,3 +76,49 @@
 
 // Глобальная карта
 #define M_GLOBAL_SPEED "GlobalSpeed"
+
+// Не процессируемые на персонаже эффекты, используемые в сезонах
+#define M_MEDICAMENT_CONSUMPTION "drugConsumption"              // Потребление медикаментов
+#define M_FOOD_CONSUMPTION "foodConsumption"                    // Потребление провианта
+#define M_RECRUITS_MTP "recruitsMtp"                            // Глобальный бонус к рекрутам в тавернах
+#define M_CARIBBEAN_GOODS_COST "caribbeanGoodsCost"             // Стоимость местных товаров
+#define M_CARIBBEAN_GOODS_STOCK "caribbeanGoodsStock"           // Запасы местных товаров
+#define M_EUROPEAN_GOODS_COST "europeanGoodsCost"               // Стоимость европейских товаров
+#define M_EUROPEAN_GOODS_STOCK "europeanGoodsStock"             // Запасы европейских товаров
+#define M_CONVENIENCE_GOODS_COST "convenienceGoodsCost"         // Стоимость товаров повседневного спроса
+#define M_CONVENIENCE_GOODS_STOCK "convenienceGoodsStock"       // Запасы товаров повседневного спроса
+#define M_UNIQUE_GOODS_AVAILABLE "uniqueGoodsAvailable"         // Доступность стратегических товаров в магазинах
+#define M_UNIQUE_GOODS_STOCK "uniqueGoodsStock"                 // Запасы стратегических товаров
+#define M_GOLDSILVER_GOODS_AVAILABLE "goldsilverGoodsAvailable" // Доступность золота и серебра в магазинах
+#define M_LEGAL_CONTRABAND "legalContraband"                    // Контрабанда работает как обычно или становится импортом
+#define M_SLAVES_GOODS_AVAILABLE "slavesGoodsAvailable"         // Доступность рабов в магазинах
+#define M_MEDICAMENT_COST "medicamentCost"                      // Стоимость медикаментов
+#define M_DEBIT_RATE "debitRate"                                // Ставка кредитов
+#define M_DEPOSIT_SILVER_RATE "depositSilverRate"               // Ставка вкладов в песо
+#define M_DEPOSIT_GOLD_RATE "depositGoldRate"                   // Ставка вкладов в дублонах
+#define M_REPAIR_COST "repairCost"                              // Цена ремонта на верфи
+#define M_SHIPYARD_CANNONS_STOCK "shipyardCannonsStock"         // Запасы пушек на верфи
+#define M_BIG_CANNONS_AVAILABLE "bigCannonsAvailable"           // Доступность крупных калибров на верфи
+#define M_STOLEN_GOODS_MTP "stolenGoodsMtp"                     // Уменьшение штрафа краденых товаров
+#define M_CONTRABAND_TRADE_STATUS "contrabandTradeStatus"       // Торговля с контрабандистами возможна или нет
+#define M_IMPORT_PRICE_MTP "importPriceMtp"                     // Цена импортных товаров
+#define M_EXPORT_PRICE_MTP "exportPriceMtp"                     // Цена экспортных товаров
+#define M_SEA_REPAIR_EFFICENCY "seaRepairEfficency"             // Эффективность ремонта в море
+#define M_ENEMY_HULL_DAMAGE_MTP "enemyHullDamageMtp"            // Множитель урона по корпусу вражеских кораблей
+#define M_NATIONS_REPUTATION_MTP "nationsReputationMtp"         // Скорость изменения репутации у наций
+#define M_CREW_MORALE_MTP "moraleMtp"                           // Скорость изменения морали
+#define M_CREW_HIRING_EXP_MTP "crewHiringExpMtp"                // Множитель опыта новых матросов
+#define M_CREW_EXP_MTP "crewExpMtp"                             // Множитель опыта новых матросов
+#define M_CREW_HIRE_MORALE_MTP "crewHireMoraleMtp"              // Множитель морали новых матросов
+#define M_CREW_HIRE_COST "crewHireCost"                         // Стоимость найма матросов
+#define M_CREW_MAINTENANCE_COST "crewMaintenanceCost"           // Стоимость содержания матросов
+#define M_MIN_FORT_CANNONS_MTP "minFortCannonsMtp"              // Множитель порога пушек для разгрома форта
+#define M_STEALTH_INCEPTION_BONUS "stealthInceptionBonus"       // Бонус к сторям скрытности
+#define M_TRADE_LICENSE_COST "tradeLicenseCost"                 // Стоимость торговой лицензии
+#define M_WORLD_SHIPS_CREW_MTP "worldShipsCrewMtp"              // Множитель заполненности команд у фантомов
+#define M_WORLD_SHIPS_HULL_MTP "worldShipsHullMtp"              // Множитель целостности корпуса у фантомов
+#define M_STORM_DAMAGE_MTP "stormDamageMtp"                     // Множитель урона штормов
+#define M_AMMO_GOODS_COST "ammoGoodsCost"                       // Запасы аммуниции в магазинах
+#define M_AMMO_GOODS_STOCK "ammoGoodsStock"                     // Стоимость аммуниции в магазинах
+#define M_SHIP_SPEED_DYNAMIC "shipSpeedDynamic"                 // Множитель динамики набора скорости
+#define M_CREW_MORALE_DEBUFF_MTP "crewMoraleDebuffMtp"          // Множитель мощности дебаффа на мораль от перегруза, голода и болезней

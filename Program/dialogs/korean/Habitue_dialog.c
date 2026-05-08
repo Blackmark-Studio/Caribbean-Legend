@@ -133,8 +133,8 @@ void ProcessDialogEvent()
 										Dialog.text = RandPhraseSimple("카드 게임 한 판 어때? 아주 흥미로운 게임이지!","카드 게임 한 판 하자는 게 어때? 어떻게 생각해?");
 										link.l1 = "왜 안 되겠어? 그래, 한 판 하자.";
 										link.l1.go = "Cards_begin";
-										link.l2 = "그럼 네놈들 게임의 규칙은 뭐지?";
-										link.l2.go = "Cards_Rule";
+										// link.l2 = "그럼 네놈들 게임의 규칙은 뭐지?";
+										// link.l2.go = "Cards_Rule";
 										link.l3 = "지금은 아니야.";
 										link.l3.go = "exit";
 									}
@@ -155,8 +155,8 @@ void ProcessDialogEvent()
 										Dialog.text = RandPhraseSimple("주사위 게임 한 판 어때? 아주 재미있는 게임이지!","주사위나 굴려보자고. 어때?");
 										link.l1 = "왜 안 되겠어? 그래, 한 판 하자.";
 										link.l1.go = "Dice_begin";
-										link.l2 = "그럼 네놈들 게임의 규칙은 뭐지?";
-										link.l2.go = "Dice_Rule";
+										// link.l2 = "그럼 네놈들 게임의 규칙은 뭐지?";
+										// link.l2.go = "Dice_Rule";
 										link.l3 = "지금은 안 돼.";
 										link.l3.go = "exit";
 									}
@@ -199,7 +199,7 @@ void ProcessDialogEvent()
 		
 	    // карты -->
 	    case "Cards_Rule":
-   			dialog.text = CARDS_RULE;
+   			dialog.text = GlobalStringConvert("CARDS_RULE");
 			link.l1 = "자, 그럼 시작하자...";
 			link.l1.go = "Cards_begin";
 			link.l3 = "아니, 나를 위한 게 아니야...";
@@ -298,7 +298,7 @@ void ProcessDialogEvent()
 	    // карты <--
 	    // КОСТИ -->
 	    case "Dice_Rule":
-   			dialog.text = DICE_RULE;
+   			dialog.text = GlobalStringConvert("DICE_RULE");
 			link.l1 = "그럼, 시작하자...";
 			link.l1.go = "Dice_begin";
 			link.l3 = "아니, 나한테 필요한 건 아니야...";

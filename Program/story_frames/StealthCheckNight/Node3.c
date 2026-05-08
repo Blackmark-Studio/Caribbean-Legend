@@ -17,13 +17,13 @@ void StealthCheckNight_Node3()
 		case "a":
 			reaction = SF_AddReaction("b", "", "", SF_Icon("perk", "Trustworthy"));
 			SF_SetResult(reaction, 15);
-			if (!HasPerk(pchar, "Trustworthy")) reaction.disabled = true;
+			SF_AddCondition(&reaction, HasPerk(pchar, "Trustworthy"), SF_CONDITION_PERK, "Trustworthy");
 		break;
 		case "b":
-			SF_SetResult(SF_AddReaction("b", "", "", SF_Icon("pirates", PIRATES_T)), GetCharacterSpecial(pchar, PIRATES_T) * 4);
+			SF_SetResult(SF_AddReaction("b", "", "", SF_Icon(PIRATES_TYPE, PIRATES_T)), GetCharacterSpecial(pchar, PIRATES_T) * 4);
 		break;
 		case "c":
-			SF_SetResult(SF_AddReaction("b", "", "", SF_Icon("pirates", PIRATES_A)), GetCharacterSpecial(pchar, PIRATES_A) * 3);
+			SF_SetResult(SF_AddReaction("b", "", "", SF_Icon(PIRATES_TYPE, PIRATES_A)), GetCharacterSpecial(pchar, PIRATES_A) * 3);
 		break;
 	}
 
@@ -37,19 +37,19 @@ void StealthCheckNight_Node3()
 			SF_SetResults(reaction, -9, 16);
 		break;
 		case "b":
-			reaction = SF_AddReaction("c", "", "", SF_Icon("Skill", SKILL_COMMERCE));
+			reaction = SF_AddReaction("c", "", "", SF_Icon(SKILL_TYPE, SKILL_COMMERCE));
 			SF_SetResult(reaction, 25);
-			if (!IsCharacterPerkOn(pchar, "HT2")) reaction.disabled = true;
+			SF_AddCondition(&reaction, HasPerk(pchar, HERO_TYPE_ACCOUNTANT), SF_CONDITION_HERO_TYPE, HERO_TYPE_ACCOUNTANT);
 		break;
 		case "c":
-			reaction = SF_AddReaction("c", "", "", SF_Icon("Skill", SKILL_F_LIGHT));
+			reaction = SF_AddReaction("c", "", "", SF_Icon(SKILL_TYPE, SKILL_F_LIGHT));
 			SF_SetResult(reaction, 30);
-			if (!IsCharacterPerkOn(pchar, "HT1")) reaction.disabled = true;
+			SF_AddCondition(&reaction, HasPerk(pchar, HERO_TYPE_GYMNAST), SF_CONDITION_HERO_TYPE, HERO_TYPE_GYMNAST);
 		break;
 	}
 
 	// Попытаться сгладить ситуацию
-	action = SF_AddAction("a", "", "", SF_Icon("skill", SKILL_LEADERSHIP));
+	action = SF_AddAction("a", "", "", SF_Icon("story", "random"));
 	SF_SetChance(action, -50.0, "base");
 	SF_SetChance(action, GetCharacterSkill(pchar, SKILL_LEADERSHIP) / 2, SKILL_LEADERSHIP);
 	SF_SetChance(action, GetCharacterSpecial(pchar, SPECIAL_L) * 2, SPECIAL_L);
@@ -100,13 +100,13 @@ void StealthCheckNight_Node3_a_action()
 	if (SF_PerformCheck())
 	{
 		SF_Triumph();
-		AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 7);
+		SF_AddEffect(SF_E_SKILL_EXP, pchar, SKILL_LEADERSHIP, 7);
 		return;
 	}
 
-	AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 9);
-	if (bSeaLoaded) SF_FailEx("b");
-	else SF_FailEx("a");
+	SF_AddEffect(SF_E_SKILL_EXP, pchar, SKILL_LEADERSHIP, 9);
+	if (bSeaLoaded) SF_Fail("b");
+	else SF_Fail("a");
 }
 
 // Сказать сержанту, что произошла чудовищная ошибка

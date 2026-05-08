@@ -127,6 +127,56 @@ void IDoExit(int exitCode)
 	EndCancelInterface(true);
 }
 
+void ColonyCapture_LootAll(bool onlyGoods = false)
+{
+	if (!GetRemovable(refCharacter)) return;
+
+	int i, tradeType;
+	aref refGoods;
+	int storeCargoQty, storeCargoWeight, freeSpace, lootCargoWeight, lootCargoQty;
+
+	int goodsQty = GetArraySize(&Goods);
+	for (i=0; i < goodsQty; i++)
+	{
+		freeSpace = GetCargoFreeSpace(refCharacter);
+		if (freeSpace == 0) break;
+
+		string sGood = Goods[i].name;
+		makearef(refGoods, refStore.Goods.(sGood));
+		tradeType = GetGoodTradeType(&refGoods);
+
+		// не забираем патроны, ром и медицину
+		if (onlyGoods)
+		{
+			if (tradeType == T_TYPE_CANNONS) continue;
+			if (sti(refGoods.Type) == T_TYPE_AMMUNITION) continue;
+			if (i == GOOD_RUM) continue;
+			if (i == GOOD_WEAPON) continue;
+			if (i == GOOD_POWDER) continue;
+			if (i == GOOD_FOOD) continue;
+			if (i == GOOD_MEDICAMENT) continue;
+			if (i == GOOD_SAILCLOTH) continue;
+			if (i == GOOD_PLANKS) continue;
+		}
+
+		storeCargoQty = GetStoreGoodsQuantity(refStore, i);
+		if (storeCargoQty == 0) continue;
+
+		storeCargoWeight = GetGoodWeightByType(i, storeCargoQty);
+		lootCargoWeight = func_min(freeSpace, storeCargoWeight);
+		lootCargoQty = GetGoodQuantityByWeight(i, lootCargoWeight);
+
+		if (refStore.Colony != "none") SetStoreGoods(refStore, i, storeCargoQty - lootCargoQty);
+		else RemoveCharacterGoods(refShipChar, i, lootCargoQty);
+
+		AddCharacterGoods(refCharacter, i, lootCargoQty);
+	}
+
+	WaitDate("",0,0,0,0,15);
+	AddToTable();
+	EndTooltip();
+}
+
 void ProcCommand()
 {
 	string comName = GetEventData();
@@ -134,6 +184,12 @@ void ProcCommand()
 
 	switch(nodName)
 	{
+		case "LOOT_ALL_BUTTON":
+			if (comName == "activate" || comName == "click") ColonyCapture_LootAll();
+		break;
+		case "LOOT_GOODS_BUTTON":
+			if (comName == "activate" || comName == "click") ColonyCapture_LootAll(true);
+		break;
 		case "QTY_BUYSELL_BUTTON":
 			if(comName=="leftstep")
 			{
@@ -506,27 +562,28 @@ void ShowGoodsInfo(int iGoodIndex)
 
 void ShowFoodInfo()
 {
-	if(iCurGoodsIdx == GOOD_FOOD)
+	if (iCurGoodsIdx == GOOD_FOOD)
 	{
 		// чтоб прикинуть как оно будет, скинем на время колво на продажное
 		SetCharacterGoods(refCharacter, GOOD_FOOD, iShipQty + BuyOrSell*sti(GameInterface.qty_edit.str));
 		SetFoodShipInfo(refCharacter, "FOOD_SHIP");
 		SetCharacterGoods(refCharacter, GOOD_FOOD, iShipQty);
 	}
-	else
+	else if (iCurGoodsIdx == GOOD_RUM) // Warship 11.07.09 На сколько хватит рому
 	{
-		if(iCurGoodsIdx == GOOD_RUM) // Warship 11.07.09 На сколько хватит рому
-		{
-			// чтоб прикинуть как оно будет, скинем на время колво на продажное
-			SetCharacterGoods(refCharacter, GOOD_RUM, iShipQty + BuyOrSell*sti(GameInterface.qty_edit.str));
-			SetRumShipInfo(refCharacter, "FOOD_SHIP");
-			SetCharacterGoods(refCharacter, GOOD_RUM, iShipQty);
-		}
-		else
-		{
-			SetFormatedText("FOOD_SHIP", "");
-		}
+		// чтоб прикинуть как оно будет, скинем на время колво на продажное
+		SetCharacterGoods(refCharacter, GOOD_RUM, iShipQty + BuyOrSell*sti(GameInterface.qty_edit.str));
+		SetRumShipInfo(refCharacter, "FOOD_SHIP");
+		SetCharacterGoods(refCharacter, GOOD_RUM, iShipQty);
 	}
+	else if (iCurGoodsIdx == GOOD_MEDICAMENT) // Warship 11.07.09 На сколько хватит рому
+	{
+		// чтоб прикинуть как оно будет, скинем на время колво на продажное
+		SetCharacterGoods(refCharacter, GOOD_MEDICAMENT, iShipQty + BuyOrSell*sti(GameInterface.qty_edit.str));
+		SetMedicamentShipInfo(refCharacter, "FOOD_SHIP");
+		SetCharacterGoods(refCharacter, GOOD_MEDICAMENT, iShipQty);
+	}
+	else SetFormatedText("FOOD_SHIP", "");
 }
 void TransactionOK()
 {

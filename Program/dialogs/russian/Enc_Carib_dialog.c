@@ -36,6 +36,8 @@ void ProcessDialogEvent()
 				LAi_group_MoveCharacter(sld, sGroup);
 				LAi_RemoveCheckMinHP(sld);
 				LAi_SetImmortal(sld, false);
+				if("quest.agressive" in npchar)
+					sld.quest.agressive = true;
 			}
 			LAi_group_SetRelation(sGroup, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 			LAi_group_FightGroups(sGroup, LAI_GROUP_PLAYER, true);
@@ -106,6 +108,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_2_2":
+			npchar.quest.agressive = true;
 			dialog.text = RandPhraseSimple("Ты лгать, бледнолицый собака! Вы приходить сюда убивать индеец! Готовь к бой, яланауи!","Вы убивать индеец. Язык бледнолицых - лживый язык. Я вырвать его и поджарить огонь!");
 			link.l1 = RandPhraseSimple("Ну раз так, то не обессудь, приятель. Видит Бог, я этого не хотел...","Ну что же, ты сам напросился, горе-вояка...");
 			link.l1.go = "exit_fight";
@@ -123,6 +126,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
+				npchar.quest.agressive = true;
 				dialog.text = "У тебя нет то, что мы хотеть, "+GetSexPhrase("бледнолицый","белая скво")+"... Ты стать наш военный трофей!";
 				link.l1 = "Ну, рискни, чучело...";
 				link.l1.go = "exit_fight";
@@ -130,6 +134,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_3_2":
+			npchar.quest.agressive = true;
 			dialog.text = RandPhraseSimple("Мы не торговать с бледнолицый пёс. Мы забирать всё у них сами!","Мы не жалкий мискито или аравак, мы не торговать с яланауи! Мы убивать яланауи и получать военный трофей!");
 			link.l1 = RandPhraseSimple("Ну, попробуй ограбить меня, каналья!","Сначала тебе придётся забрать у меня саблю, мерзавец!");
 			link.l1.go = "exit_fight";
@@ -340,6 +345,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
+				npchar.quest.agressive = true;
 				dialog.text = "Тогда мы забрать всё и просто так, яланауи!";
 				link.l1 = "Ну, попробуй...";
 				link.l1.go = "exit_fight";

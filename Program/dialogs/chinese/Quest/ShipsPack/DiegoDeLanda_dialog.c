@@ -102,7 +102,13 @@ void ProcessDialogEvent()
 			link.l1.go = "DiegoDeLanda_Meeting_2";
 		break;
 		//< —相遇
-		
+
+		case "DiegoDeLanda_Meeting_Fourth_2":
+			dialog.text = "\n完全正确, 船长。 第三幕开始了。";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_Meeting_2";
+		break;
+
 		//--> 神圣慈悲
 		case "DiegoDeLanda_SantaMisericordia_2":
 			dialog.text = "啊... 那本日记。 非凡的东西 —文字。 它就像... 黑暗中的一条路。 引领你到启示等待的地方。 费尔南多先生经常访问我们的教区。 尤其是在最后一年。 ";

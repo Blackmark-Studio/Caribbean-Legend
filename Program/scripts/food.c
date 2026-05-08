@@ -1,132 +1,208 @@
 #define I_MIN_MORALE	10
 
-// boal -->
 #define FOOD_BY_CREW       10.0
 #define FOOD_BY_SLAVES     20.0
 #define FOOD_BY_PASSENGERS 10.0
-#define RUM_BY_CREW        60.0
-// boal <--
+#define RUM_BY_CREW        50.0
+#define MEDICAMENT_BY_CREW 50.0
+#define MEDICAMENT_BY_SLAVES 50.0
 
-//bool bInterfaceFood = false;
-//int iFoodQuantity = 0;
+#define MAINTENANCE_MOD_ALL 0
+#define MAINTENANCE_MOD_FOOD_LEFT 1
+#define MAINTENANCE_MOD_FOOD_INFO 2
+#define MAINTENANCE_MOD_MEDICAMENT_LEFT 3
+#define MAINTENANCE_MOD_MEDICAMENT_INFO 4
+#define MAINTENANCE_MOD_RUM_LEFT 5
+#define MAINTENANCE_MOD_RUM_INFO 6
 
-// вернет число дней на сколько есть еда на всех кораблях
+// На сколько дней еды в эскадре
 int CalculateFood()
 {
 	int chrIndex;
-	int iCrewQuantity = 0;
-	float foodNeeded = 0;
-	int iSlavesQuantity = 0;
-	int iFoodQuantity = 0;
-
+	int foodStock = 0;
+	float foodConsumption = 0;
 	for (int i=0; i<COMPANION_MAX; i++)
 	{
 		chrIndex = GetCompanionIndex(pchar, i);
-		if (chrIndex != -1)
-		{
-            if (!GetRemovable(&characters[chrIndex])) continue;
-			if (characters[chrIndex].ship.type != SHIP_NOTUSED)
-			{
-				iCrewQuantity   += sti(characters[chrIndex].ship.crew.quantity);
-				float cookMtp = GetCookMtp(characters[chrIndex]);
-				iFoodQuantity   += makeint(GetCargoGoods(&characters[chrIndex], GOOD_FOOD) / isEquippedArtefactUse(&characters[chrIndex], "talisman6", 1.0, 0.75) / cookMtp);
-				iSlavesQuantity += GetCargoGoods(&characters[chrIndex], GOOD_SLAVES);
-			}
-		}
-	}
-	int iPassQuantity = GetPassengersQuantity(pchar);
+		if (chrIndex < 0) continue;
 
-	foodNeeded = makefloat(iCrewQuantity/FOOD_BY_CREW + iPassQuantity/FOOD_BY_PASSENGERS + iSlavesQuantity/FOOD_BY_SLAVES);
+		ref chr = &characters[chrIndex];
+		if (chr.ship.type == SHIP_NOTUSED) continue;
 
-	if (foodNeeded < 1)
-	{
-		foodNeeded = 1;
+		object shipInfo;
+		SetShipMaintenanceInfo(chr, &shipInfo, MAINTENANCE_MOD_FOOD_INFO);
+		foodStock += GetAttributeInt(&shipInfo, "foodStock");
+		foodConsumption += GetAttributeFloat(&shipInfo, "foodConsumption");
 	}
 
-	iFoodQuantity = makeint(iFoodQuantity/foodNeeded + 0.2);
-
-	return iFoodQuantity;
+	return makeint(foodStock/foodConsumption);
 }
 
-// еды на одном корабле
-int CalculateShipFood(ref _chr)
-{
-	int iCrewQuantity = 0;
-	float foodNeeded = 0.0;
-	int iSlavesQuantity = 0;
-	int iFoodQuantity = 0;
-	int iPassQuantity = 0;
-
-	iCrewQuantity   =  sti(_chr.ship.crew.quantity);
-	iFoodQuantity   =  GetCargoGoods(_chr, GOOD_FOOD);
-	iSlavesQuantity =  GetCargoGoods(_chr, GOOD_SLAVES);
-	if (_chr.id == pchar.id) 
-	{
-		iPassQuantity = GetPassengersQuantity(pchar);
-	}
-
-	float cookMtp = GetCookMtp(_chr);
-	foodNeeded = isEquippedArtefactUse(_chr, "talisman6", 1.0, 0.75) * cookMtp * makefloat(iCrewQuantity/FOOD_BY_CREW + iPassQuantity/FOOD_BY_PASSENGERS + iSlavesQuantity/FOOD_BY_SLAVES);
-
-	if (foodNeeded < 1.0)
-	{
-		foodNeeded = 1.0;
-	}
-
-	if (CheckAttribute(pchar, "questTemp.VPVL_Food")) // andre39966, для квеста "В плену великого улова"
-    {
-		foodNeeded *= 0.85; // Уменьшаем на 15%
-    }
-	
-	iFoodQuantity = makeint(iFoodQuantity/foodNeeded + 0.2);
-
-	return iFoodQuantity;
-}
-
-// Warship 11.07.09 Вернет кол-во дней, на сколько хватит рому на одном корабле
-int CalculateShipRum(ref _character)
-{
-	int crewQuantity 	= GetCrewQuantity(_character);
-	int rumQuantity     = GetCargoGoods(_character, GOOD_RUM);	
-	float bartenderMtp = GetBartenderMtp(_character);
-	float rumNeeded 	= isEquippedArtefactUse(_character, "talisman4", 1.0, 0.2) * bartenderMtp * makefloat( (crewQuantity + 5.1) / (RUM_BY_CREW - MOD_SKILL_ENEMY_RATE * 2.5)); // Сколько жрут за день);
-	
-	if(rumNeeded < 1.0) rumNeeded = 1.0;	
-	rumQuantity = makeint(rumQuantity/rumNeeded + 0.2);		
-	return rumQuantity;
-}
-
-// Ugeen  29.10.10 вернет число дней на сколько есть рому на всех кораблях
+// На сколько дней рома в эскадре
 int CalculateRum()
 {
-	int 	chrIndex;
-	int 	iCrewQuantity = 0;
-	int 	iRumCount = 0;
-	float 	RumNeeded = 0;
-
+	int rumStock = 0;
+	float rumConsumption = 0;
 	for (int i=0; i<COMPANION_MAX; i++)
 	{
-		chrIndex = GetCompanionIndex(pchar, i);
-		if (chrIndex != -1)
-		{
-            if (!GetRemovable(&characters[chrIndex])) continue;
-			if (characters[chrIndex].ship.type != SHIP_NOTUSED)
-			{
-				iCrewQuantity   += GetCrewQuantity(&characters[chrIndex]);
-				float bartenderMtp = GetBartenderMtp(&characters[chrIndex]);
-				iRumCount       += makeint(GetCargoGoods(&characters[chrIndex], GOOD_RUM) / isEquippedArtefactUse(&characters[chrIndex], "talisman4", 1.0, 0.75) / bartenderMtp);							
-			}
-		}
-	}
-	RumNeeded = makefloat(iCrewQuantity/(RUM_BY_CREW - MOD_SKILL_ENEMY_RATE * 2.5));
+		int chrIndex = GetCompanionIndex(pchar, i);
+		if (chrIndex < 0) continue;
 
-	if (RumNeeded < 1.0)
-	{
-		RumNeeded = 1.0;
+		ref chr = &characters[chrIndex];
+		if (chr.ship.type == SHIP_NOTUSED) continue;
+
+		object shipInfo;
+		SetShipMaintenanceInfo(chr, &shipInfo, MAINTENANCE_MOD_RUM_INFO);
+		rumStock += GetAttributeInt(&shipInfo, "rumStock");
+		rumConsumption += GetAttributeFloat(&shipInfo, "rumConsumption");
 	}
 
-	return makeint(iRumCount/RumNeeded + 0.2);
+	return makeint(rumStock/rumConsumption);
 }
+
+// На сколько дней медикаментов в эскадре
+int CalculateMedicament()
+{
+	int medicamentStock = 0;
+	float medicamentConsumption = 0;
+	for (int i=0; i<COMPANION_MAX; i++)
+	{
+		int chrIndex = GetCompanionIndex(pchar, i);
+		if (chrIndex < 0) continue;
+
+		ref chr = &characters[chrIndex];
+		if (chr.ship.type == SHIP_NOTUSED) continue;
+
+		object shipInfo;
+		SetShipMaintenanceInfo(chr, &shipInfo, MAINTENANCE_MOD_MEDICAMENT_INFO);
+		medicamentStock += GetAttributeInt(&shipInfo, "medicamentStock");
+		medicamentConsumption += GetAttributeFloat(&shipInfo, "crewMedicamentConsumption");
+		medicamentConsumption += GetAttributeFloat(&shipInfo, "slavesMedicamentConsumption");
+	}
+
+	return makeint(medicamentStock/medicamentConsumption);
+}
+
+void CalculateSupplies(ref food, ref rum, ref medicament)
+{
+	int foodStock = 0;
+	float foodConsumption = 0;
+	int rumStock = 0;
+	float rumConsumption = 0;
+	int medicamentStock = 0;
+	float medicamentConsumption = 0;
+	for (int i=0; i<COMPANION_MAX; i++)
+	{
+		int chrIndex = GetCompanionIndex(pchar, i);
+		if (chrIndex < 0) continue;
+
+		ref chr = &characters[chrIndex];
+		if (chr.ship.type == SHIP_NOTUSED) continue;
+
+		object shipInfo;
+		SetShipMaintenanceInfo(chr, &shipInfo, MAINTENANCE_MOD_ALL);
+		foodStock += GetAttributeInt(&shipInfo, "foodStock");
+		foodConsumption += GetAttributeFloat(&shipInfo, "foodConsumption");
+		rumStock += GetAttributeInt(&shipInfo, "rumStock");
+		rumConsumption += GetAttributeFloat(&shipInfo, "rumConsumption");
+		medicamentStock += GetAttributeInt(&shipInfo, "medicamentStock");
+		medicamentConsumption += GetAttributeFloat(&shipInfo, "crewMedicamentConsumption");
+		medicamentConsumption += GetAttributeFloat(&shipInfo, "slavesMedicamentConsumption");
+	}
+	food = int(foodStock / foodConsumption);
+	rum = int(rumStock / rumConsumption);
+	medicament = int(medicamentStock / medicamentConsumption);
+}
+
+/* Метод расчёта содержания корабля. Работает в разных режимах от параметра `mode`
+	0 – посчитать всё вместе, результат в объекте
+	1 – еда, вернуть количество дней
+	2 – еда, результат в объекте
+	3 – мед, вернуть количество дней
+	4 – мед, результат в объекте
+	5 – ром, вернуть количество дней
+	6 – ром, результат в объекте
+*/
+int SetShipMaintenanceInfo(ref chr, ref shipInfo = nullptr, int mode = 0)
+{
+	int crewQty = GetCrewQuantity(chr);
+	int slavesQty = GetCargoGoods(chr, GOOD_SLAVES);
+	float mtp;
+
+	// Еда
+	if (mode <= MAINTENANCE_MOD_FOOD_INFO)
+	{
+		int passengersQty = IsMainCharacter(chr) ? GetPassengersQuantity(pchar) : 0;
+		int foodStock = GetCargoGoods(chr, GOOD_FOOD);
+		float foodConsumption = makefloat(crewQty/FOOD_BY_CREW + passengersQty/FOOD_BY_PASSENGERS + slavesQty/FOOD_BY_SLAVES); // база
+		mtp = SZN_GetModifierMtp(M_FOOD_CONSUMPTION, 1.0, 0.01);
+		foodConsumption *= mtp;
+		foodConsumption *= isEquippedArtefactUse(chr, "talisman6", 1.0, 0.75);
+		foodConsumption *= GetCookMtp(chr);
+		if (CheckAttribute(pchar, "questTemp.VPVL_Food")) foodConsumption *= 0.85; // Уменьшаем на 15% andre39966, для квеста "В плену великого улова"
+		int iFoodConsumption = func_max(1, ceil(foodConsumption)); // не меньше 1, округляем в большую
+		int foodDaysLeft = int(foodStock/iFoodConsumption);        // дни округляем в меньшую
+		if (mode == MAINTENANCE_MOD_FOOD_LEFT) return foodDaysLeft;
+
+		shipInfo.foodConsumption = iFoodConsumption;
+		shipInfo.foodStock = foodStock;
+		shipInfo.foodDaysLeft = foodDaysLeft;
+	}
+
+	// Медикаменты
+	if (mode == MAINTENANCE_MOD_ALL || mode == MAINTENANCE_MOD_MEDICAMENT_LEFT || mode == MAINTENANCE_MOD_MEDICAMENT_INFO)
+	{
+		int medicamentStock = GetCargoGoods(chr, GOOD_MEDICAMENT);
+		mtp = SZN_GetModifierMtp(M_MEDICAMENT_CONSUMPTION, 1.0, 0.01);
+		int crewMedicamentConsumption = func_max(1, ceil(crewQty / MEDICAMENT_BY_CREW * mtp)); // не меньше 1, округляем в большую
+		int slavesMedicamentConsumption = ceil(slavesQty / MEDICAMENT_BY_SLAVES * mtp);        // округляем в большую, но тут может быть 0, когда рабов нет вовсе
+
+		int medicamentDaysLeft = int(medicamentStock / (crewMedicamentConsumption + slavesMedicamentConsumption)); // дни округляем в меньшую
+		if (mode == MAINTENANCE_MOD_MEDICAMENT_LEFT) return medicamentDaysLeft;
+
+		shipInfo.medicamentStock = medicamentStock;
+		shipInfo.medicamentDaysLeft = medicamentDaysLeft;
+		shipInfo.crewMedicamentConsumption = crewMedicamentConsumption;
+		shipInfo.slavesMedicamentConsumption = slavesMedicamentConsumption;
+	}
+
+	// Ром
+	if (mode == MAINTENANCE_MOD_ALL || mode == MAINTENANCE_MOD_RUM_LEFT || mode == MAINTENANCE_MOD_RUM_INFO)
+	{
+		int rumStock = GetCargoGoods(chr, GOOD_RUM);
+		float rumConsumption = makefloat(crewQty) / RUM_BY_CREW;
+		rumConsumption *= isEquippedArtefactUse(chr, "talisman4", 1.0, 0.2);
+		rumConsumption *= GetBartenderMtp(chr);
+		int iRumConsumption = func_max(1, ceil(rumConsumption));              // не меньше 1, округляем в большую
+		int rumDaysLeft = crewQty != 0 ? int(rumStock / iRumConsumption) : 0; // дни округляем в меньшую
+		if (mode == MAINTENANCE_MOD_RUM_LEFT) return rumDaysLeft;
+
+		shipInfo.rumStock = rumStock;
+		shipInfo.rumConsumption = iRumConsumption;
+		shipInfo.rumDaysLeft = rumDaysLeft;
+	}
+
+	return 0;
+}
+
+// На сколько дней еды на корабле
+int CalculateShipFood(ref chr)
+{
+	return SetShipMaintenanceInfo(chr, nullptr, MAINTENANCE_MOD_FOOD_LEFT);
+}
+
+// На сколько дней еды на корабле
+int CalculateShipMedicament(ref chr)
+{
+	return SetShipMaintenanceInfo(chr, nullptr, MAINTENANCE_MOD_MEDICAMENT_LEFT);
+}
+
+// На сколько дней рома на корабле
+int CalculateShipRum(ref chr)
+{
+	return SetShipMaintenanceInfo(chr, nullptr, MAINTENANCE_MOD_RUM_LEFT);
+}
+
 // boal 21.04.04 крысы на корабле -->
 void DailyRatsEatGoodsUpdate(ref chref)
 {
@@ -171,7 +247,6 @@ void DailyEatCrewUpdate()   // сюда пихаю все что в 1 день
     ref mainCh = GetMainCharacter();
     int i, cn, crew, morale;
     ref chref;
-    int nMoraleDecreaseQ;
     
     // to_do
     // boal 030804 Начисление денег верфям -->
@@ -213,7 +288,7 @@ void DailyEatCrewUpdate()   // сюда пихаю все что в 1 день
 		if (rand(cn) > 1000)
 		{
 			// belamour legendary edition перк получил время работы, старый метод не подходит
-            morale = 5 + GetOfficersPerkUsing(pchar, "IronWill");   // true = 1
+            morale = 5;
 			for (i = 0; i<GetPassengersQuantity(pchar); i++)
 			{   // любой пассажир у кого есть пристрастие может свалить
 				cn = GetPassenger(pchar, i);
@@ -248,125 +323,176 @@ void DailyEatCrewUpdate()   // сюда пихаю все что в 1 день
 	}
 }
 
-// boal 20.01.2004 <--
+void DailyMedicamentUpdate(ref chr, bool IsCompanionTraveler, ref shipInfo, int crewQty, int slavesQty)
+{
+	int crewMedicamentConsumption = GetAttributeInt(shipInfo, "crewMedicamentConsumption");
+	int slavesMedicamentConsumption = GetAttributeInt(shipInfo, "slavesMedicamentConsumption");
+	int medicamentStock = GetAttributeInt(shipInfo, "medicamentStock");
+
+	if (crewMedicamentConsumption > 0)
+	{
+		if (medicamentStock < 1)
+		{
+			int deadCrewQty = crewMedicamentConsumption;
+			if(!IsCompanionTraveler) Log_Info(StringFromKey("food_6", chr.Ship.Name, FindRussianSailorString(deadCrewQty, "No")));
+
+			Statistic_AddValue(pchar, "Sailors_dead", deadCrewQty);
+			AddMementoShipBonus(deadCrewQty);
+			Achievment_SetStat(21, deadCrewQty);
+			chr.Ship.Crew.Quantity = crewQty - deadCrewQty;
+			float nMoraleDecreaseQ = deadCrewQty / 2;
+			nMoraleDecreaseQ *= (1-SZN_GetModifierMtp(M_CREW_MORALE_DEBUFF_MTP, 0.0, 0.0, 0.99));
+			AddCrewMorale(chr, -makeint(nMoraleDecreaseQ));
+			ChangeCharacterComplexReputation(pchar,"authority", -1);
+		}
+		else
+		{
+			if(CheckShipSituationDaily_GenQuest(chr) == 2) crewMedicamentConsumption = crewMedicamentConsumption * 2;
+			if(CheckShipSituationDaily_GenQuest(chr) == 3) crewMedicamentConsumption = crewMedicamentConsumption * 3;
+			
+			RemoveCharacterGoodsSelf(chr, GOOD_MEDICAMENT, crewMedicamentConsumption);
+			if (medicamentStock < 16)
+			{
+				if(!IsCompanionTraveler) Log_Info(StringFromKey("food_7", chr.Ship.Name));
+			}
+		}
+	}
+
+	// рабы
+	if (slavesMedicamentConsumption > 0)
+	{
+		if (medicamentStock < 1)
+		{
+			if(!IsCompanionTraveler) Log_Info(StringFromKey("food_8", chr.Ship.Name, FindRussianSlavesString(slavesMedicamentConsumption, "No")));
+
+			RemoveCharacterGoodsSelf(chr, GOOD_SLAVES, slavesMedicamentConsumption);
+		}
+		else
+		{
+			slavesMedicamentConsumption /= 3;
+			RemoveCharacterGoodsSelf(chr, GOOD_MEDICAMENT, slavesMedicamentConsumption);
+		}
+	}
+}
+
+void DailyRumUpdate(ref chr, bool IsCompanionTraveler, ref shipInfo, int crewQty)
+{
+	int rumConsumption = GetAttributeInt(shipInfo, "rumConsumption");
+	if (rumConsumption < 1) return;
+
+	int rumStock = GetAttributeInt(shipInfo, "rumStock");
+	if (rumStock >= rumConsumption)
+	{
+		RemoveCharacterGoodsSelf(chr, GOOD_RUM, rumConsumption);
+		if (CheckShipSituationDaily_GenQuest(chr) == 1) AddCrewMorale(chr, 2); // поднимем мораль
+		if (rumStock - rumConsumption > rumConsumption) return;
+		if (IsCompanionTraveler) return;
+		Log_Info(StringFromKey("food_9", chr.Ship.Name)); // проверка на остатки
+		return;
+	}
+
+	RemoveCharacterGoodsSelf(chr, GOOD_RUM, rumStock);
+}
+
+void DailyFoodUpdate(ref chr, bool IsCompanionTraveler, ref shipInfo, int crewQty, int slavesQty)
+{
+	int foodConsumption = GetAttributeInt(shipInfo, "foodConsumption");
+	int foodStock = GetAttributeInt(shipInfo, "foodStock");
+
+	// Если еды хватает
+	if (foodStock >= foodConsumption)
+	{
+		RemoveCharacterGoodsSelf(chr, GOOD_FOOD, foodConsumption);
+		// проверка на остатки
+		int daysLeft = GetAttributeInt(shipInfo, "foodDaysLeft");
+		if (daysLeft < 5 && !IsCompanionTraveler)
+		{
+			Log_Info(StringFromKey("food_10", chr.Ship.Name, FindRussianDaysString(daysLeft-1)));
+			Log_Info(StringFromKey("food_11"));
+			PlaySound("interface\notebook.wav");
+		}
+
+		// возможный бунт рабов
+		if (IsMainCharacter(chr) && slavesQty > (crewQty * 1.5 + sti(chr.Ship.Crew.Morale)))
+		{
+			if(rand(2) == 1 && 12 - GetSummonSkillFromNameToOld(chr, SKILL_LEADERSHIP) > rand(10))
+			{
+				if(IsEntity(&worldMap) && !IsCharacterEquippedArtefact(chr, "totem_02")) // belamour legendary edition
+				{
+					chr.GenQuest.SlavesMunity = true;
+					Log_Info(StringFromKey("food_12"));
+					MunityOnShip("SlavesMunity");
+				}
+			}
+		}
+		return;
+	}
+
+	// Далее код на случай, если еды не хватило
+	RemoveCharacterGoodsSelf(chr, GOOD_FOOD, foodStock);
+	PlaySound("interface\notebook.wav");
+	
+	if(!IsCompanionTraveler) Log_Info(StringFromKey("food_13", chr.Ship.Name));
+	if (IsMainCharacter(chr))
+	{
+		AddCharacterHealth(pchar, -1);
+		ChangeCharacterComplexReputation(pchar,"authority", -1);
+	}
+	
+	if (crewQty > 1)
+	{
+		int iDeadCrew = makeint(crewQty/10 +0.5);
+		chr.Ship.Crew.Quantity = crewQty - iDeadCrew;
+		Statistic_AddValue(pchar, "Sailors_dead", iDeadCrew);
+		AddMementoShipBonus(iDeadCrew);
+		Achievment_SetStat(21, iDeadCrew);
+		if(!IsCompanionTraveler) Log_Info(StringFromKey("food_14"));
+	}
+
+	if (slavesQty > 0)
+	{
+		RemoveCharacterGoodsSelf(chr, GOOD_SLAVES, makeint(slavesQty/5 + 0.5));
+		if(!IsCompanionTraveler) Log_Info(StringFromKey("food_15"));
+	}
+
+	int nMoraleDecreaseQ = 12 - GetSummonSkillFromNameToOld(chr, SKILL_LEADERSHIP);
+	nMoraleDecreaseQ = makeint(makefloat(nMoraleDecreaseQ) * (1-SZN_GetModifierMtp(M_CREW_MORALE_DEBUFF_MTP, 0.0, 0.0, 0.99)));
+	chr.Ship.Crew.Morale = func_max(MORALE_MIN, sti(chr.Ship.Crew.Morale) - nMoraleDecreaseQ);
+}
 
 // Warship. Вынес в отдельный метод
 void DailyEatCrewUpdateForShip(ref rChar, bool IsCompanionTraveler) // IsCompanionTraveler - спец флаг для компаньонов-путешественников
 {
+	object shipInfo;
+	SetShipMaintenanceInfo(rChar, &shipInfo);
 	int iCrewQty = GetCrewQuantity(rChar);
+	int slavesQty = GetCargoGoods(rChar, GOOD_SLAVES);
 	int cn, morale, nMoraleDecreaseQ, iDeadCrew;
-	if(iCrewQty < 1 && GetCargoGoods(rChar, GOOD_SLAVES) < 1) return;
-	if(!CheckAttribute(rChar, "Ship.Crew.Morale"))
+	if (iCrewQty + slavesQty < 1) return;
+	if (!CheckAttribute(rChar, "Ship.Crew.Morale")) rChar.Ship.Crew.Morale = 50;
+
+	// Расчёт медицины
+	DailyMedicamentUpdate(rChar, IsCompanionTraveler, &shipInfo, iCrewQty, slavesQty);
+	if (iCrewQty + slavesQty < 1)
 	{
-		rChar.Ship.Crew.Morale = 50;
+		UpdatePlayerSquadronPower();
+		return;
 	}
-	// расчёт медицины -->
-	if(rand(4) == 2)
-	{
-		// матросы
-		cn = iCrewQty / 10;
-		if(cn > 30) cn = 30;
-		cn = rand(cn)+1;
-		if(iCrewQty < cn) cn = iCrewQty;
-		if(cn > 0)
-		{
-			if(GetCargoGoods(rChar, GOOD_MEDICAMENT) < 1)
-			{
-				if(!IsCompanionTraveler) Log_Info(StringFromKey("food_6", rChar.Ship.Name, FindRussianSailorString(cn, "No")));
 
-				iCrewQty = iCrewQty - cn;
-				Statistic_AddValue(pchar, "Sailors_dead", cn);
-				AddMementoShipBonus(cn);
-				Achievment_SetStat(21, cn);
-				rChar.Ship.Crew.Quantity = iCrewQty;
-				// мораль в минус
-				morale = sti(rChar.Ship.Crew.Morale);
-				
-				if(CheckOfficersPerk(rChar, "IronWill")) cn /= 1.5;
-				
-				AddCrewMorale(rChar, -makeint(cn / 2)); // до 15 пунктов за раз
-				ChangeCharacterComplexReputation(pchar,"authority", -1);
-			}
-			else
-			{
-				if(CheckShipSituationDaily_GenQuest(rChar) == 2) cn = cn * 2;
-				if(CheckShipSituationDaily_GenQuest(rChar) == 3) cn = cn * 3;
-				
-				RemoveCharacterGoodsSelf(rChar, GOOD_MEDICAMENT, cn);
-				if(GetCargoGoods(rChar, GOOD_MEDICAMENT) < 16)
-				{
-					if(!IsCompanionTraveler) Log_Info(StringFromKey("food_7", rChar.Ship.Name));
+	DailyRumUpdate(rChar, IsCompanionTraveler, &shipInfo, iCrewQty);
 
-				}
-			}
-		}
-		// рабы
-		cn = GetCargoGoods(rChar, GOOD_SLAVES) / 10;
-		if(cn > 30) cn = 30;
-		cn = rand(cn)+1;
-		if(GetCargoGoods(rChar, GOOD_SLAVES) < cn) cn = GetCargoGoods(rChar, GOOD_SLAVES);
-		if(cn > 0)
-		{
-			if(GetCargoGoods(rChar, GOOD_MEDICAMENT) < 1)
-			{
-				if(!IsCompanionTraveler) Log_Info(StringFromKey("food_8", rChar.Ship.Name, FindRussianSlavesString(cn, "No")));
-
-				RemoveCharacterGoodsSelf(rChar, GOOD_SLAVES, cn);
-			}
-			else
-			{
-				cn /= 3;
-				RemoveCharacterGoodsSelf(rChar, GOOD_MEDICAMENT, cn);
-			}
-		}
-		// повторный контроль
-		if(iCrewQty < 1 && GetCargoGoods(rChar, GOOD_SLAVES) < 1)
-        {
-            UpdatePlayerSquadronPower();
-            return;
-        }
-	}
-	// расчёт медицины <--
-
-	// расчёт рома	
-	iCrewQty = GetCrewQuantity(rChar);
-	float bartenderMtp = GetBartenderMtp(rChar);
-	float rumNeeded = isEquippedArtefactUse(rChar, "talisman4", 1.0, 0.2) * bartenderMtp * makefloat( (iCrewQty + 5.1) / (RUM_BY_CREW - MOD_SKILL_ENEMY_RATE * 2.5)); // Сколько жрут за день);
-	
-	if(rumNeeded < 1.0) rumNeeded = 1.0;
-	iCrewQty = makeint(rumNeeded);
-	
-	if(iCrewQty > 0)
-	{
-		if(GetCargoGoods(rChar, GOOD_RUM) >= iCrewQty)
-		{
-			RemoveCharacterGoodsSelf(rChar, GOOD_RUM, iCrewQty);
-			// проверка на остатки
-			cn = makeint(GetCargoGoods(rChar, GOOD_RUM) / iCrewQty);
-			if (cn < 1)
-			{
-				if(!IsCompanionTraveler) Log_Info(StringFromKey("food_9", rChar.Ship.Name));
-
-			}
-			// поднимем мораль
-			if(CheckShipSituationDaily_GenQuest(rChar) == 1) AddCrewMorale(rChar, 2);
-		}
-		else
-		{
-			iCrewQty = GetCargoGoods(rChar, GOOD_RUM);
-			RemoveCharacterGoodsSelf(rChar, GOOD_RUM, iCrewQty);
-		}
-	}
-	// расчёт рома
-	
 	iCrewQty = GetCrewQuantity(rChar);
 	// рассчет перегруза команды на мораль  и авторитет -->
 	if(iCrewQty > GetOptCrewQuantity(rChar) && !IsCharacterEquippedArtefact(rChar, "talisman4"))
 	{
-		AddCrewMorale(rChar, -(1+rand(3)));
+		float debuff = makefloat(1+rand(3));
+		debuff *= (1-SZN_GetModifierMtp(M_CREW_MORALE_DEBUFF_MTP, 0.0, 0.0, 0.99));
+		AddCrewMorale(rChar, -makeint(debuff));
 		ChangeCharacterComplexReputation(pchar,"authority", -0.1);
 	} 
 	// рассчет перегруза команды на мораль <--
+
+	if (IsEquipCharacterByItem(pchar, "greenIdol")) AddCrewMorale(rChar, -1);
 	
 	// расчёт долга на мораль
 	if(iCrewQty > 0 && CheckAttribute(PChar, "CrewPayment"))
@@ -377,88 +503,14 @@ void DailyEatCrewUpdateForShip(ref rChar, bool IsCompanionTraveler) // IsCompani
 		{
 			ChangeCharacterComplexReputation(pchar,"authority", -0.2);
 			AddCrewMorale(rChar, -1);
-			cn = 5 + CheckOfficersPerk(PChar, "IronWill");  // перк у ГГ
-			if(i > 0 && rand(cn) == 2 && !CheckAttribute(rChar, "OfficerWantToGo.DontGo") && !IsEquipCharacterByArtefact(rChar, "totem_04"))
+			if(i > 0 && rand(5) == 2 && !CheckAttribute(rChar, "OfficerWantToGo.DontGo") && !IsEquipCharacterByArtefact(rChar, "totem_04"))
 			{
 				rChar.loyality = sti(rChar.loyality) - 1;
 			}
 		}
 	}
 
-	float cookMtp = GetCookMtp(rChar);
-
-	// расчёт еды после Рома	
-	iCrewQty = makeint(isEquippedArtefactUse(rChar, "talisman6", 1.0, 0.75) * cookMtp * (iCrewQty+5.1) / FOOD_BY_CREW + GetPassengersQuantity(rChar) / FOOD_BY_PASSENGERS); // eat ratio
-	iCrewQty = iCrewQty + makeint((GetCargoGoods(rChar, GOOD_SLAVES)+6)/ FOOD_BY_SLAVES);  // учёт рабов
-	if(iCrewQty == 0) iCrewQty = 1;
-	if(GetCargoGoods(rChar, GOOD_FOOD) >= iCrewQty)
-	{
-		RemoveCharacterGoodsSelf(rChar, GOOD_FOOD, iCrewQty);
-		// проверка на остатки
-		cn = makeint(GetCargoGoods(rChar, GOOD_FOOD) / iCrewQty);
-		if (cn < 4)
-		{
-			if(!IsCompanionTraveler)
-			{
-				Log_Info(StringFromKey("food_10", rChar.Ship.Name, FindRussianDaysString(cn)));
-				Log_Info(StringFromKey("food_11"));
-				PlaySound("interface\notebook.wav");
-			}
-		}
-		// возможный бунт рабов
-		if (sti(rChar.index) == GetMainCharacterIndex() && GetCargoGoods(rChar, GOOD_SLAVES) > (GetCrewQuantity(rChar)*1.5 + sti(rChar.Ship.Crew.Morale)))
-		{
-			nMoraleDecreaseQ = 12 - GetSummonSkillFromNameToOld(rChar, SKILL_LEADERSHIP);
-			if(CheckOfficersPerk(rChar, "IronWill")) nMoraleDecreaseQ /= 2;
-			if(rand(2) == 1 && nMoraleDecreaseQ > rand(10))
-			{
-				if(IsEntity(&worldMap) && !IsCharacterEquippedArtefact(rChar, "totem_02")) // belamour legendary edition
-				{
-					rChar.GenQuest.SlavesMunity = true;
-					Log_Info(StringFromKey("food_12"));
-					MunityOnShip("SlavesMunity");
-				}
-			}
-		}
-	}
-	else
-	{
-		iCrewQty = GetCargoGoods(rChar, GOOD_FOOD);
-		RemoveCharacterGoodsSelf(rChar, GOOD_FOOD, iCrewQty);
-		PlaySound("interface\notebook.wav");
-		
-		if(!IsCompanionTraveler) Log_Info(StringFromKey("food_13", rChar.Ship.Name));
-
-		
-		if(sti(rChar.index) == GetMainCharacterIndex())
-		{
-			AddCharacterHealth(PChar, -1);
-			ChangeCharacterComplexReputation(pchar,"authority", -1);
-		}
-		
-		cn = GetCrewQuantity(rChar);
-		if(cn > 1)
-		{
-			iDeadCrew = makeint(cn/10 +0.5);
-			rChar.Ship.Crew.Quantity = cn - iDeadCrew;
-			Statistic_AddValue(pchar, "Sailors_dead", iDeadCrew);
-			AddMementoShipBonus(iDeadCrew);
-			Achievment_SetStat(21, iDeadCrew);
-			if(!IsCompanionTraveler) Log_Info(StringFromKey("food_14"));
-		}
-		cn = GetCargoGoods(rChar, GOOD_SLAVES);
-		if(cn > 0)
-		{
-			RemoveCharacterGoodsSelf(rChar, GOOD_SLAVES, makeint(cn/5 + 0.5));
-			if(!IsCompanionTraveler) Log_Info(StringFromKey("food_15"));
-		}
-		morale = sti(rChar.Ship.Crew.Morale);
-		
-		nMoraleDecreaseQ = 12 - GetSummonSkillFromNameToOld(rChar, SKILL_LEADERSHIP);
-		if(CheckOfficersPerk(rChar, "IronWill")) nMoraleDecreaseQ /= 2;
-		rChar.Ship.Crew.Morale = morale - nMoraleDecreaseQ;
-		if(sti(rChar.Ship.Crew.Morale) < MORALE_MIN) rChar.Ship.Crew.Morale = MORALE_MIN;  
-	}
+	DailyFoodUpdate(rChar, IsCompanionTraveler, &shipInfo, iCrewQty, slavesQty);
 	
 	if(sti(rChar.index) == GetMainCharacterIndex())
 	{

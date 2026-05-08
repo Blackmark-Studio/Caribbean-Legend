@@ -98,7 +98,6 @@ void InitInterface(string iniName)
 	GameInterface.title = "titlePaperMap";
 
 	string sColony, sPic, sPicGroup, sSiegeCol;
-	int Width, Height;
 	float X, Y;
 	ref rColony;
 
@@ -124,11 +123,14 @@ void InitInterface(string iniName)
 		if(sColony == "IslaDeVieques") continue;
 		if(sColony == "SanAndres") continue;
 		if(sColony == "Is") continue;
-		if(sColony == "IslaMona" && !CheckAttribute(CharacterFromID("Islamona_carpenter"), "Storage.Activate")) continue;
 
 		if(sColony == "IslaMona")
+        {
+            int idx = GetCharacterIndex("Islamona_carpenter");
+            if (idx < 0 || "Storage.Activate" !in &Characters[idx]) continue;
 			sPic = "Smuggler";
-		else
+		}
+        else
 			sPic = GetNationNameByType(sti(rColony.nation));
 			
 		if(sColony != "FortOrange" && sColony != "LaVega" && sColony != "IslaMona")

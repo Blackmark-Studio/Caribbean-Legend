@@ -21,6 +21,8 @@ void ProcessDialogEvent()
 		rColony = GetColonyByIndex(iTest);
 	}
 	
+	if (Dialog.CurrentNode == "SkladMan1") Dialog.CurrentNode = "SkladMan";
+
 	switch(Dialog.CurrentNode)
 	{
 		case "Exit":
@@ -195,31 +197,14 @@ void ProcessDialogEvent()
 		break; 
 		//--------------------------------- завсклад ---------------------------------		
 		case "SkladMan":
-			NextDiag.TempNode = "SkladMan1";
+			NextDiag.TempNode = "SkladMan";
 			if (LAi_grp_playeralarm > 0)
 			{
        			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase("町で警報が鳴ったようだ。どうやら俺も武器を取る時が来たらしいな……","もしかして、街の衛兵に追われてるんじゃねえか？ ","ここには隠れ場所なんてねえが、肋骨の間に冷たい刃を何本か突き立てられることはあるかもな！"),LinkRandPhrase("何の用だ？"+GetSexPhrase("悪党","悪党")+"？！街の衛兵たちはもうお前の匂いを嗅ぎつけてるぜ、そう遠くへは行けねえぞ。 "+GetSexPhrase("汚ねえ海賊","あばずれ")+"!","汚ねえ殺し屋め！衛兵！","「俺はお前なんか怖くねえ」 "+GetSexPhrase("這い寄る","あばずれ")+"！すぐに砦で絞首刑にされるぞ、お前はもう逃げられねえ……"));
 				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("生きるのに飽きちまったようだな……","どうやら、の市民には平穏な生活はないようだ "+XI_ConvertString("Colony"+npchar.city+"Gen")+"!"),RandPhraseSimple("地獄へ落ちろ！","へっ、これがお前の人生の最後の数秒になるぜ……"));
-				link.l1.go = NPCharRepPhrase("exit_setOwner", "fight");
+				link.l1.go = NPCharRepPhrase(pchar, "exit_setOwner", "fight");
 				break;
 			}
-				dialog.text = NPCStringReactionRepeat("いらっしゃいませ！私の名前は "+GetFullName(npchar)+"……ここでは俺が仕切ってるんだ、だから何も持ち出そうなんて考えるんじゃねえぞ……","おとなしくしてろよ、俺がちゃんと見張ってることを忘れるな。","宝箱を覗き見しなければ、ここにいてもいいぜ。どうせ一人じゃ退屈だからな……",RandPhraseSimple("あらまあ、退屈ですわ！","くそっ、どうすりゃいいんだ？ここにいるのは退屈でたまらねえ！"),"ブロック",3,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("わかった、心配するな。","もちろんだぜ！","なるほど……","ああ、それは困ったことだな。",npchar,Dialog.CurrentNode);
-			link.l1.go = DialogGoNodeRepeat("exit", "exit", "exit", "exit", npchar, Dialog.CurrentNode);				
-		break;
-		
-		case "SkladMan1":
-			NextDiag.TempNode = "SkladMan1";
-			if (LAi_grp_playeralarm > 0)
-			{
-       			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase("町で警報が鳴ったようだ。どうやら俺も武器を取る時が来たらしいな……","もしかして、街の衛兵たちに追われてるんじゃねえか？ ","ここには隠れる場所なんてねえが、肋骨の間に冷たい刃を何寸か突き立てられることならあるかもな！"),LinkRandPhrase("何の用だ？"+GetSexPhrase("ろくでなし","悪党")+"？！街の衛兵たちはもうお前の匂いを嗅ぎつけてるぜ、そう遠くへは行けねえぞ。 "+GetSexPhrase("汚い海賊","あばずれ")+"!",""+GetSexPhrase("Filthy","Filthy")+" 殺人者だ！衛兵、来てくれ！！","俺はお前なんか怖くねえ、 "+GetSexPhrase("這い寄る","あばずれ")+"！すぐにお前は俺たちの砦で絞首刑だ、逃げ切れると思うなよ…"));
-				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("生きるのに飽きたようだな……","そうらしいな、この町の市民に安らかな暮らしはないようだ "+XI_ConvertString("Colony"+npchar.city+"Gen")+"!"),RandPhraseSimple("地獄へ落ちろ！","へっ、これがお前の人生の最後の数秒だぜ……"));
-				link.l1.go = NPCharRepPhrase("exit_setOwner", "fight");
-				break;
-			}
-			dialog.text = NPCStringReactionRepeat("ここでは俺が仕切ってるんだ、だから何も持ち出そうなんて考えるんじゃねえぞ……","おとなしくしてろよ、俺がちゃんと見張ってることを忘れるな。","宝箱を覗き見しなければ、ここにいてもいいぜ。どうせ一人じゃ退屈だからな……",RandPhraseSimple("あらまあ、退屈ですわ！","くそっ、どうすりゃいいんだ？ここにいるのは退屈でたまらねえ！"),"block",3,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("わかった、心配するな。","もちろんだ！","なるほど……","ああ、それは困ったことだな。",npchar,Dialog.CurrentNode);	
-			link.l1.go = DialogGoNodeRepeat("exit", "exit", "exit", "exit", npchar, Dialog.CurrentNode);				
 			//открывание двери верфи по квесту промышленного шпионажа
 			if (CheckAttribute(pchar, "questTemp.different.ShipyardsMap") && pchar.questTemp.different.ShipyardsMap == "toTarget" && npchar.city == pchar.questTemp.different.ShipyardsMap.city && locations[reload_cur_location_index].type == "shipyard")
 			{
@@ -232,8 +217,7 @@ void ProcessDialogEvent()
 			{
 				if(!CheckAttribute(NPChar, "Storage.Speak"))
 				{
-					dialog.text = "お前さんにとっておきの話があるんだ。興味があるかもしれねえな。";
-					link.l7 = "本当か？よし、聞いてやる。";
+					link.l7 = DLG_Convert("storageRent", "Dialogs.txt");
 					link.l7.go = "storage_rent";
 				}
 				else
@@ -247,15 +231,15 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if(!CheckAttribute(NPChar,"Storage.NoActivate"))
-						{
-							link.l7 = "倉庫のことを言っていたな。まだ空いているのか？";
-							link.l7.go = "storage_01";
-						}						
+						link.l7 = "倉庫のことを言っていたな。まだ空いているのか？";
+						link.l7.go = "storage_01";
 					}
 				}		
 			// <-- ugeen
 			}		
+			dialog.text = NPCStringReactionRepeat("いらっしゃいませ！私の名前は "+GetFullName(npchar)+"……ここでは俺が仕切ってるんだ、だから何も持ち出そうなんて考えるんじゃねえぞ……","おとなしくしてろよ、俺がちゃんと見張ってることを忘れるな。","宝箱を覗き見しなければ、ここにいてもいいぜ。どうせ一人じゃ退屈だからな……",RandPhraseSimple("あらまあ、退屈ですわ！","くそっ、どうすりゃいいんだ？ここにいるのは退屈でたまらねえ！"),"ブロック",3,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("わかった、心配するな。","もちろんだぜ！","なるほど……","ああ、それは困ったことだな。",npchar,Dialog.CurrentNode);
+			link.l1.go = DialogGoNodeRepeat("exit", "exit", "exit", "exit", npchar, Dialog.CurrentNode);				
 		break;
 		
 		//--------------------------------- Аренда склада ---------------------------------
@@ -421,19 +405,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_5":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage)); 
-			NPChar.Storage.NoActivate = true;
-			DeleteAttribute(NPChar,"Storage.Activate");
+			LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
 			DialogExit();
 		break;
 		
 		case "storage_6":
-			SetStorageGoodsToShip(&stores[sti(rColony.StoreNum)]);
-			DeleteAttribute(NPChar,"Storage.Activate");
-			NPChar.Storage.NoActivate = true;
+			LeaveStorage(NPChar, rColony);
 			DialogExit();
-		break;		
+		break;
 
 		//--------------------------------- Аренда склада ---------------------------------
 		

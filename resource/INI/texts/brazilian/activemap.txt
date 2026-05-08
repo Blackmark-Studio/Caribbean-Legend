@@ -1,22 +1,22 @@
 CONTRABAND {Contrabando}
-EXPORT {Exportar}
-IMPORT {Importar}
-Trade_assistant {Assistente de Comércio}
-No_price {Sem lista de preços}
-No_profit {Nenhum negócio lucrativo}
-Distance {Distância}
-To {Lá}
-From {Voltar}
 day {dia}
 day2 {dia}
 days {dias}
+Distance {Distância}
+EXPORT {Exportar}
+From {Voltar}
 hour {hora}
 hour2 {hora}
 hours {horas}
 hours2 {horas}
+IMPORT {Importar}
 nautical_mile {milha náutica}
 nautical_mile2 {milha náutica}
 nautical_miles {milhas náuticas}
 nautical_miles2 {milhas náuticas}
+No_price {Sem lista de preços}
+No_profit {Nenhum negócio lucrativo}
+To {Lá}
+Trade_assistant {Assistente de Comércio}
 TRAVEL_from {de}
 TRAVEL_to {até}

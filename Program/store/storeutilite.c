@@ -60,7 +60,8 @@ void RefreshStoresForTheNewGood(int idx)
 
 void UpdateAllStores()
 {
-	for(int i=0; i<GetArraySize(&stores); i++)
+	int storesQty = GetArraySize(&stores);
+	for(int i=0; i<storesQty; i++)
 	{
 		UpdateStore(&stores[i]);
 	}
@@ -322,7 +323,7 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 	int basePrice = MakeInt(Goods[_Goods].Cost);
 	if (!CheckAttribute(_refStore,"Goods."+tmpstr) ) return 0;
 	makearef(refGoods,_refStore.Goods.(tmpstr));
- 	int tradeType = MakeInt(refGoods.TradeType);
+ 	int tradeType = GetGoodTradeType(&refGoods);
 	int Type = MakeInt(refGoods.Type);	 
 
 	float tradeModify 	= 1.0;
@@ -337,10 +338,10 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 			tradeModify = 1.00 + stf(refGoods.RndPriceModify); 
 			break;
 		case T_TYPE_EXPORT:
-			tradeModify = 0.75 + stf(refGoods.RndPriceModify); 
+			tradeModify = SZN_GetModifierMtp(M_EXPORT_PRICE_MTP, 0.75, 0.01) + stf(refGoods.RndPriceModify); 
 			break;
 		case T_TYPE_IMPORT:
-			tradeModify = 1.30 + stf(refGoods.RndPriceModify); 
+			tradeModify = SZN_GetModifierMtp(M_IMPORT_PRICE_MTP, 1.30, 0.01)  + stf(refGoods.RndPriceModify); 
 			break;
 		case T_TYPE_AGGRESSIVE:
 			tradeModify = 1.40 + stf(refGoods.RndPriceModify); 
@@ -387,10 +388,15 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 	}
 
 	
-	if (costCoeff < 1.0 && IsEquipCharacterByItem(chref, "piratesJournal_2"))
+	if (costCoeff < 1.0)
 	{
-		if (ShipBonus2Artefact(chref, SHIP_AMSTERDAM)) costCoeff = costCoeff += 0.16;
-		else costCoeff = costCoeff += 0.08;
+		if (IsCharacterEquippedArtefact(chref, "piratesJournal_2"))
+		{
+			if (ShipBonus2Artefact(chref, SHIP_AMSTERDAM)) costCoeff += 0.16;
+			else costCoeff += 0.08;
+		}
+
+		costCoeff += SZN_GetModifierMtp(M_STOLEN_GOODS_MTP, 0.0, 0.0);
 		if (costCoeff > 1.0) costCoeff = 1.0;
 	}
 
@@ -398,22 +404,27 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 	if (MakeInt(basePrice * tradeModify * skillModify * costCoeff + 0.5) < 1) return 1;
 	// boal 23.01.2004 <--
 	
+	float seasonGlobalModify = 1.0
 	switch (Type)
 	{
 		case T_TYPE_NORMAL			:
 			priceModify = 1.0;
+			seasonGlobalModify = SZN_GetModifierMtp(M_CONVENIENCE_GOODS_COST, 1.0, 0.01);
 			break;
 		case T_TYPE_AMMUNITION		:
 			priceModify = 1.0;
+			seasonGlobalModify = SZN_GetModifierMtp(M_AMMO_GOODS_COST, 1.0, 0.01);
 			break;
 		case T_TYPE_CROWN			:
 			priceModify = 5.0;
 			break;
 		case T_TYPE_EXPORT			:
 			priceModify = 2.0;
+			seasonGlobalModify = SZN_GetModifierMtp(M_CARIBBEAN_GOODS_COST, 1.0, 0.01);
 			break;
 		case T_TYPE_IMPORT			:
 			priceModify = 3.0;
+			seasonGlobalModify = SZN_GetModifierMtp(M_EUROPEAN_GOODS_COST, 1.0, 0.01);
 			break;
 		case T_TYPE_UNIQUE			:
 			priceModify = 10.0;
@@ -422,8 +433,10 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 			priceModify = 1.0;
 			break;
 	}
-	
-    return MakeInt(priceModify * basePrice * tradeModify * skillModify * _qty * costCoeff * cModify + 0.5);
+
+	if (_Goods == GOOD_MEDICAMENT) seasonGlobalModify += SZN_GetModifierMtp(M_MEDICAMENT_COST, 0.0);
+
+	return MakeInt(priceModify * basePrice * tradeModify * skillModify * _qty * costCoeff * cModify * seasonGlobalModify + 0.5);
 }
 
 // обратное преобразование цены в RndPriceModify
@@ -554,6 +567,7 @@ void UpdateStore(ref pStore)
 	int 	Norm, delta;
 	int 	TradeType;
 	int 	Type; 
+	int 	goodType;
 	string 	tmpstr, nsale;
     float 	rateInc 	= 0.0;
 	float 	aim 		= 0.0;		
@@ -563,19 +577,31 @@ void UpdateStore(ref pStore)
 
 	aref gref, curref, arTypes;
 	makearef(gref, pStore.Goods);
-	
-	for(int i=0; i<GetArraySize(&Goods); i++)
+	int goodsQty = GetArraySize(&Goods);
+	for(int i=0; i<goodsQty; i++)
 	{
 		tmpstr = Goods[i].name;
 		if (!CheckAttribute(gref,tmpstr) ) continue;		
 		makearef(curref, gref.(tmpstr));
+		TradeType 	= GetGoodTradeType(&curref);
 		delta = 0;
+		goodType = goodType = sti(Goods[i].type);
 				
 		// -->>>  новая система затаривания товаром в магазинах 
 		Manufacture = 0.0;					// ежедневное производство
 		Consumption = 0.0;					// ежедневное потребление
 		oldQty 	= sti(curref.Quantity);		// текущее кол-во товара в магазине
 		Norm	= sti(curref.Norm);			// норма товара в магазине
+
+		// модификация количеств от модификаторов товара в глобальной экономике
+		if (goodType == T_TYPE_IMPORT) Norm = makeint(stf(Norm) * SZN_GetModifierMtp(M_EUROPEAN_GOODS_STOCK));
+		else if (goodType == T_TYPE_EXPORT) Norm = makeint(stf(Norm) * SZN_GetModifierMtp(M_CARIBBEAN_GOODS_STOCK));
+		else if (goodType == T_TYPE_UNIQUE) Norm = makeint(stf(Norm) * SZN_GetModifierMtp(M_UNIQUE_GOODS_STOCK));
+		else if (goodType == T_TYPE_NORMAL) Norm = makeint(stf(Norm) * SZN_GetModifierMtp(M_CONVENIENCE_GOODS_STOCK));
+		else if (goodType == T_TYPE_AMMUNITION) Norm = makeint(stf(Norm) * SZN_GetModifierMtp(M_AMMO_GOODS_STOCK));
+
+		if (TradeType == T_TYPE_CANNONS) Norm = makeint(stf(Norm) * SZN_GetModifierMtp(M_SHIPYARD_CANNONS_STOCK));
+
 		aim = frnd();
 		if(Aim < 0.25) { Aim = 1.0; } 		// товар привезли
 		else 
@@ -605,10 +631,13 @@ void UpdateStore(ref pStore)
 		}
 		if(sti(curref.Quantity) < 0) curref.Quantity = 0;	// может быть и меньше 0
 		// <<<--  новая система затаривания товаром в магазинах 
-				
-		if( sti(Goods[i].type) == T_TYPE_UNIQUE || sti(Goods[i].type) == T_TYPE_CROWN ) curref.Quantity = 0;
 		
-		TradeType 	= sti(pStore.Goods.(tmpstr).TradeType);		
+		// Обнуления, запреты на продажу
+		if (goodType == T_TYPE_UNIQUE && SZN_GetModifierState(M_UNIQUE_GOODS_AVAILABLE) != 1) curref.Quantity = 0;
+		else if (i == GOOD_GOLD && SZN_GetModifierState(M_GOLDSILVER_GOODS_AVAILABLE) != 1) curref.Quantity = 0;
+		else if (i == GOOD_SILVER && SZN_GetModifierState(M_GOLDSILVER_GOODS_AVAILABLE) != 1) curref.Quantity = 0;
+		else if (i == GOOD_SLAVES && SZN_GetModifierState(M_SLAVES_GOODS_AVAILABLE) != 1) curref.Quantity = 0;
+		
 		Type 		= sti(pStore.Goods.(tmpstr).Type);	
 		
 		pStore.Goods.(tmpstr).canbecontraband = 0; 		// по умолчанию товаров для контры нет
@@ -620,7 +649,7 @@ void UpdateStore(ref pStore)
 			curref.Quantity = oldQty - delta + (rand(2) - 1)*rand(sti(sti(curref.Norm) * 3/100));
 			if(sti(Goods[i].NotSale) == 1) // 1.2.5 --> старшие калибры не продаем !!!
 			{
-				curref.Quantity = 0; continue;
+				if (SZN_GetModifierState(M_BIG_CANNONS_AVAILABLE) != 1) curref.Quantity = 0; continue;
 			}		
 		}
 		else
@@ -666,7 +695,7 @@ void UpdateStore(ref pStore)
 
 float AddPriceModify(float rateInc)
 {
-	float modifier = 1.05 - (rateInc /20.0));
+	float modifier = 1.05 - (rateInc /20.0);
 	return modifier;
 }
 
@@ -685,7 +714,7 @@ void StoreDayUpdateStart()
 
 	if(storeDayUpdateCnt >= 0) return;
 	storeDayUpdateCnt = 0;
-	PostEvent("EvStoreDayUpdate", 200);
+	PostEvent("EvStoreDayUpdate", 10);
 }
 
 void StoreDayUpdate()
@@ -695,7 +724,7 @@ void StoreDayUpdate()
 		UpdateStore(&Stores[storeDayUpdateCnt]);
 		storeDayUpdateCnt++;
 		if(storeDayUpdateCnt >= GetArraySize(&stores)) storeDayUpdateCnt = -1;
-		PostEvent("EvStoreDayUpdate", 200);
+		PostEvent("EvStoreDayUpdate", 10);
 	}
 }
 
@@ -962,4 +991,21 @@ float GetShipTraitTransaction(ref chr, ref rStore)
 	if(rep < 20) return 0.0;
 	
 	return Bring2Range(0.0, 0.10, 20.0, 100.0, makefloat(rep));
+}
+
+// Обычный tradeType, но с проверкой на случай влияния модификатора
+int GetGoodTradeType(ref good)
+{
+	int res = MakeInt(good.TradeType);
+	if (res != T_TYPE_CONTRABAND) return res;
+	if (SZN_GetModifierState(M_LEGAL_CONTRABAND) != 1) return res;
+
+	return T_TYPE_IMPORT;
+}
+
+int GetGoodTradeTypeAref(ref rObject, string attribute)
+{
+	aref good;
+	makearef(good, rObject.(attribute));
+	return GetGoodTradeType(good);
 }

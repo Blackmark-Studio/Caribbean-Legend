@@ -622,6 +622,7 @@ void ShowInfoWindow()
 		case "TABLE_GOODS":
 			CloseTooltipNew();
 			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_GOODS", 1);
+			if (nChooseNum == 0) return;
 			sRow = "tr"+nChooseNum;
 			makearef(arCurRow, GameInterface.TABLE_GOODS.(sRow));
 			sGroup = "GOODS";
@@ -634,11 +635,13 @@ void ShowInfoWindow()
 				picW = 128;
 				picH = 128;
 				sText1  = GetAssembledString(GetGoodDescr(arCurRow.UserData.ID), &Goods[iItem]);
+				sText1 = xiStr("tradeType_" + goods[iItem].type) + "\n\n" + sText1;
 			}
 		break;
 		case "TABLE_SHIP_PLACE":
 			CloseTooltipNew();
 			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SHIP_PLACE", 1);
+			if (nChooseNum == 0) return;
 			sRow = "tr"+nChooseNum;
 			makearef(arCurRow, GameInterface.TABLE_SHIP_PLACE.(sRow));
 			if (!CheckAttribute(arCurRow, "UserData.IDX")) {
@@ -661,6 +664,7 @@ void ShowInfoWindow()
 		case "TRADEBOOK_TABLE_GOODS":
 			CloseTooltipNew();
 			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TRADEBOOK_TABLE_GOODS", 1);
+			if (nChooseNum == 0) return;
 			sRow = "tr"+nChooseNum;
 			makearef(arCurRow, GameInterface.TRADEBOOK_TABLE_GOODS.(sRow));
 		    sGroup = "GOODS";
@@ -673,27 +677,22 @@ void ShowInfoWindow()
 		    sHeader = XI_ConvertString(arCurRow.UserData.ID);
 		    sText1  = GetAssembledString(GetGoodDescr(arCurRow.UserData.ID), &Goods[iItem]);
 			sText2 = XI_ConvertString("TradeBook_Descr3");
+			sText1 = xiStr("tradeType_" + goods[iItem].type) + "\n\n" + sText1;
 			picW = 128;
 			picH = 128;
 			}
 		break;
 		// sith --->
-		case "WEIGHT":
-		    sHeader = XI_ConvertString("Weight");
-			sText1 = GetRPGText("Weight");
-		break;
-		case "MONEY":
-		    sHeader = XI_ConvertString("Money");
-			sText1 = GetRPGText("Money");
-		break;		
 		case "RANK":
 		    sHeader = XI_ConvertString("Rank");
 			sText1 = GetRPGText("Rank");
 		break;
 		//<--- sith
 	}
+
+	if (CommonHeaderTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3)) return;
 	if(bTooltip)
-		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false);
+		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false, false);
 }
 
 void procTabChange()
@@ -1053,6 +1052,7 @@ void InitTableHeader()
 	GameInterface.TABLE_DEBIT.hr.td5.str = XI_ConvertString("DepType");
 	GameInterface.TABLE_DEBIT.select = 0;
 	i = 1;
+	string rawData;
     if (CheckAttribute(pchar, "Quest.Deposits")) // не треться при возврате
     {
     	makearef(quests,Characters[GetMainCharacterIndex()].Quest.Deposits);
@@ -1070,10 +1070,14 @@ void InitTableHeader()
                 row = "tr" + i;
     			i++;
 				GameInterface.TABLE_DEBIT.(row).td1.str = GetCityName(Pchar.Quest.Deposits.(sQuestName).City);
-				GameInterface.TABLE_DEBIT.(row).td2.str = MakeMoneyShow(sti(Pchar.Quest.Deposits.(sQuestName).Sum), MONEY_SIGN,MONEY_DELIVER);
-				GameInterface.TABLE_DEBIT.(row).td3.str = GetBookData(sti(Pchar.Quest.Deposits.(sQuestName).StartDay),
+				rawData = MakeMoneyShow(sti(Pchar.Quest.Deposits.(sQuestName).Sum), MONEY_SIGN,MONEY_DELIVER);
+				GameInterface.TABLE_DEBIT.(row).td2.str = rawData;
+				GameInterface.TABLE_DEBIT.(row).td2.rawData = Pchar.Quest.Deposits.(sQuestName).Sum;
+				rawData = GetBookData(sti(Pchar.Quest.Deposits.(sQuestName).StartDay),
 	                               sti(Pchar.Quest.Deposits.(sQuestName).StartMonth),
 	                               sti(Pchar.Quest.Deposits.(sQuestName).StartYear));
+				GameInterface.TABLE_DEBIT.(row).td3.str = rawData;
+				GameInterface.TABLE_DEBIT.(row).td3.rawData = "00:00 " + rawData;
 				GameInterface.TABLE_DEBIT.(row).td4.str = fts(stf(Pchar.Quest.Deposits.(sQuestName).Interest), 1);
 				if(HasSubStr(sQuestName, "_type1"))
 				{
@@ -1388,6 +1392,7 @@ void TradebookFillPriceListTown(string _tabName)
 			if (CheckAttribute(nulChr, "PriceList." + cityId + ".AltDate"))
 		    {
 		        GameInterface.(_tabName).(row).td4.str = DateTimeToDate(nulChr.PriceList.(cityId).AltDate);
+						GameInterface.(_tabName).(row).td4.rawData = nulChr.PriceList.(cityId).AltDate;
 		    }
 		    else
 		    {
@@ -1430,7 +1435,7 @@ void TradebookFillPriceList(string _tabName, string  attr1)
 	    {
 	        row = "tr" + n;
 	        sGoods = "Gidx" + i;			
-	        if (sti(nulChr.PriceList.(attr1).(sGoods).TradeType) == T_TYPE_CANNONS && !bBettaTestMode) continue; // не пушки
+	        if (GetGoodTradeTypeAref(nulChr, "PriceList." + attr1 + "." + sGoods) == T_TYPE_CANNONS && !bBettaTestMode) continue; // не пушки
 	        
             GameInterface.(_tabName).(row).UserData.ID = Goods[i].name;
             GameInterface.(_tabName).(row).UserData.IDX = i;
@@ -1444,7 +1449,7 @@ void TradebookFillPriceList(string _tabName, string  attr1)
 			GameInterface.(_tabName).(row).td1.str = XI_ConvertString(Goods[i].name);
 
 	        GameInterface.(_tabName).(row).td2.icon.group = "TRADE_TYPE";
-			GameInterface.(_tabName).(row).td2.icon.image = "ico_" + nulChr.PriceList.(attr1).(sGoods).TradeType;
+			GameInterface.(_tabName).(row).td2.icon.image = "ico_" + GetGoodTradeTypeAref(nulChr,  "PriceList." + attr1 + "." + sGoods);
 			GameInterface.(_tabName).(row).td2.icon.offset = "5,2";
 			GameInterface.(_tabName).(row).td2.icon.width = 24;
 			GameInterface.(_tabName).(row).td2.icon.height = 34;
@@ -1761,7 +1766,7 @@ void TradebookFillPriceListByGood(string _tabName, int goodIdx)
 		GameInterface.(_tabName).(row).td1.icon.offset = "13, 2";
 		GameInterface.(_tabName).(row).td2.str = GetCityName(cityId);
 		GameInterface.(_tabName).(row).td3.icon.group = "TRADE_TYPE";
-		GameInterface.(_tabName).(row).td3.icon.image = "ico_" + nulChr.PriceList.(cityId).(sGoods).TradeType;
+		GameInterface.(_tabName).(row).td3.icon.image = "ico_" + GetGoodTradeTypeAref(nulChr, "PriceList." + cityId + "." + sGoods);
 		GameInterface.(_tabName).(row).td3.icon.offset = "5,2";
 		GameInterface.(_tabName).(row).td3.icon.width = 24;
 		GameInterface.(_tabName).(row).td3.icon.height = 34;
@@ -1855,6 +1860,7 @@ int _GetDistanceToColony2D(string _sColony)
 bool TradeFilterColony(string cityId)
 {
 	if (cityId == "LosTeques") return true;
+	if (cityId == "IslaMona") return true;
 	if (cityId == "Panama") return true;
 	if (cityId == "SanAndres") return true;
 	return false;

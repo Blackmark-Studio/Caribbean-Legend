@@ -489,7 +489,7 @@ void Mtraxx_SilkRemoveBilly(string qName) // удаляем Билли
 
 void Mtraxx_SilkCreateSmuggler(string qName) // Утрехт отправляется из Кюрасао
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+2;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 	if (iRank > 45) iRank = 45;
 	Group_FindOrCreateGroup("Mtr_Utreht");
 	sld = GetCharacter(NPC_GenerateCharacter("Cap_Utreht", "mercen_19", "man", "man", iRank, ENGLAND, -1, true, "quest"));
@@ -545,7 +545,7 @@ void Mtraxx_SilkSmugglerAfterBattle(string qName) // после боя с Утр
 void Mtraxx_SilkInShore(string qName) // высадились в бухте
 {
 	if (pchar.questTemp.Mtraxx == "fail") return;
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+10;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+5;
 	if (iRank > 50) iRank = 50;
 	pchar.GenQuest.Hunter2Pause = true;
 	bQuestDisableMapEnter = false;
@@ -811,7 +811,7 @@ void Mtraxx_PlantCreatePelly(string qName) // ставим Пелли
 	pchar.GenQuest.MapClosedNoBattle = true;
 	Group_FindOrCreateGroup("PellyGroup");
 	Group_SetType("PellyGroup", "pirate");//тип группы
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+10;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+5;
 	if (iRank > 50) iRank = 50;
 	sld = GetCharacter(NPC_GenerateCharacter("Pelly_sea", "Tesak", "man", "man", iRank, ENGLAND, -1, true, "quest"));
 	FantomMakeCoolSailor(sld, SHIP_BARKENTINE, StringFromKey("Roger_26"), CANNON_TYPE_CANNON_LBS12, 65, 65, 65);
@@ -901,14 +901,14 @@ void Mtraxx_PlantPellyArrive(string qName) // 3 прогона
 	LAi_LocationFightDisable(&Locations[FindLocation("shore37")], true);//запретить драться
 	for (int i=1; i<=4; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Pelly_sailor_"+i, "citiz_2"+i, "man", "man", 25, ENGLAND, -1, true, "quest"));
-		FantomMakeCoolFighter(sld, 25, 50, 50, "blade_0"+(5+i), "pistol1", "bullet", 100);
+		sld = GetCharacter(NPC_GenerateCharacter("Pelly_sailor_"+i, "citiz_2"+i, "man", "man", 216+MOD_SKILL_ENEMY_RATE/2, ENGLAND, -1, true, "quest"));
+		FantomMakeCoolFighter(sld, 16+MOD_SKILL_ENEMY_RATE/2, 50, 50, "blade_0"+(5+i), "pistol1", "bullet", 100);
 		LAi_SetWarriorType(sld);
 		LAi_CharacterDisableDialog(sld);
 		ChangeCharacterAddressGroup(sld, "shore37", "goto", "goto"+i);
 	}
 	// клон Пелли - сухопутный
-	sld = GetCharacter(NPC_GenerateCharacter("Pelly", "Tesak", "man", "man", 25, PIRATE, -1, false, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("Pelly", "Tesak", "man", "man", 16+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, false, "quest"));
 	sld.name = StringFromKey("Roger_27");
 	sld.lastname = StringFromKey("Roger_28");
 	sld.greeting = "Pelly_02";
@@ -1252,8 +1252,13 @@ void Mtraxx_PlantPlantVykup_1(string qName)
 	LAi_ActorDialog(sld, pchar, "", 0, 0);
 }
 
-void Mtraxx_PlantPlantVykup_2(string qName)
+void Mtraxx_PlantPlantVykup_2(string qName = "")
 {
+	RemoveCharacterGoods(pchar, sti(pchar.questTemp.Mtraxx.PlantGood.Cargo), 500);
+	SetCharacterGoods(pchar, GOOD_SUGAR, GetCargoGoods(pchar, GOOD_SUGAR) + sti(pchar.questTemp.Mtraxx.PlantGood.Sugar));
+	SetCharacterGoods(pchar, GOOD_CHOCOLATE, GetCargoGoods(pchar, GOOD_CHOCOLATE) + sti(pchar.questTemp.Mtraxx.PlantGood.Cocoa));
+	DeleteAttribute(pchar, "questTemp.Mtraxx.PlantGood");
+
 	Achievment_Set("ach_CL_144");
 	pchar.quest.Mtraxx_SeekWeaponOver.over = "yes";
 	sld = characterFromId("Mrt_Rocur");
@@ -1266,7 +1271,7 @@ void Mtraxx_PlantPlantVykup_2(string qName)
 	LAi_ActorDialog(sld, pchar, "", 0, 0);
 }
 
-void Mtraxx_PlantPlantVykup_3(string qName)
+void Mtraxx_PlantPlantVykup_3(string qName = "")
 {
 	
 	sld = characterFromId("Pelly");
@@ -1448,7 +1453,7 @@ void Mtraxx_PlantMutinyOver(string qName) // не пришёл до 4 часов
 void Mtraxx_PlantMutiny() // восстание на плантации
 {
 	DeleteAttribute(pchar, "questTemp.Mtraxx.Mutiny");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+3;
 	int iScl = 30 + 2*sti(pchar.rank);
 	chrDisableReloadToLocation = true;//закрыть локацию
 	pchar.GenQuest.FrameLockEsc = true; // закрыть ESC
@@ -1458,7 +1463,7 @@ void Mtraxx_PlantMutiny() // восстание на плантации
 	SetNationRelation2MainCharacter(SPAIN, RELATION_ENEMY);
 	pchar.quest.Mtraxx_TimerPlantMutiny1.over = "yes";
 	pchar.quest.Mtraxx_TimerPlantMutiny2.over = "yes";
-	PlaySound("VOICE\Russian\EvilPirates01.wav");
+	PlaySoundSafe("VOICE\" + LanguageGetLanguage(), "EvilPirates01.wav");
 	PlaySound("interface\abordage_wining.wav");
 	for(int n=0; n<MAX_LOCATIONS; n++)
 	{	
@@ -1555,8 +1560,8 @@ void Mtraxx_PlantMutiny() // восстание на плантации
 	{
 		if (i > 7) // мушкетеры до 2 шт
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Mtr_RocursPirat_"+i, "mush_ctz_"+i, "man", "mushketer", iRank, PIRATE, 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl);
+			sld = GetCharacter(NPC_GenerateCharacter("Mtr_RocursPirat_"+i, "mush_ctz_"+i, "man", "mushketer", iRank+2, PIRATE, 0, false, "soldier"));
+			FantomMakeCoolFighter(sld, iRank+2, iScl, iScl, "", "mushket1", "cartridge", iScl);
 			RemoveItems(sld, "cartridge", GetCharacterItem(sld, "cartridge"));
 			RemoveItems(sld, "bullet", GetCharacterItem(sld, "bullet"));
 			RemoveItems(sld, "gunpowder", GetCharacterItem(sld, "gunpowder"));
@@ -1574,8 +1579,8 @@ void Mtraxx_PlantMutiny() // восстание на плантации
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Mtr_RocursPirat_"+i, "citiz_4"+(i+2), "man", "man", iRank, PIRATE, 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, LinkRandPhrase("blade_03","blade_05","blade_07"), "", "", iScl);
+			sld = GetCharacter(NPC_GenerateCharacter("Mtr_RocursPirat_"+i, "citiz_4"+(i+2), "man", "man", iRank+1, PIRATE, 0, false, "soldier"));
+			FantomMakeCoolFighter(sld, iRank+1, iScl, iScl, LinkRandPhrase("blade_03","blade_05","blade_07"), "", "", iScl);
 			RemoveItems(sld, "bullet", GetCharacterItem(sld, "bullet"));
 			RemoveItems(sld, "gunpowder", GetCharacterItem(sld, "gunpowder"));
 			RemoveItems(sld, "potion1", GetCharacterItem(sld, "potion1"));
@@ -2851,7 +2856,7 @@ void Mtraxx_MeridaTimeOverFail() // не доплыли до Маракайбо
 void Mtraxx_MeridaCreateLepricon(string qName) // ставим Леприкона с бригадой
 {
 	chrDisableReloadToLocation = true;
-	sld = GetCharacter(NPC_GenerateCharacter("Lepricon", "Leprechaun", "man", "man", 25, PIRATE, -1, true, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("Lepricon", "Leprechaun", "man", "man", 22+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, true, "quest"));
 	sld.name = StringFromKey("Roger_54");
 	sld.lastname = StringFromKey("Roger_55");
 	sld.dialog.FileName = "Quest\Roger.c";
@@ -2895,8 +2900,8 @@ void Mtraxx_MeridaCreateLepricon(string qName) // ставим Леприкон�
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
 	for (int i=5; i<=9; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Lepricons_pirate_"+i, "mercen_"+i, "man", "man", 20, PIRATE, -1, true, "quest"));
-		FantomMakeCoolFighter(sld, 20, 55, 55, LinkRandPhrase("blade_04","blade_06","topor_02"), "pistol3", "grapeshot", 150);
+		sld = GetCharacter(NPC_GenerateCharacter("Lepricons_pirate_"+i, "mercen_"+i, "man", "man", 16+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, true, "quest"));
+		FantomMakeCoolFighter(sld, 16+MOD_SKILL_ENEMY_RATE/2, 55, 55, LinkRandPhrase("blade_04","blade_06","topor_02"), "pistol3", "grapeshot", 150);
 		LAi_CharacterDisableDialog(sld);
 		TakeNItems(sld, "potion2", 5);
 		TakeNItems(sld, "potion3", 6);
@@ -3380,8 +3385,8 @@ void Mtraxx_MeridaCapongAttack(string qName) // атака капонгов
 	LAi_group_Delete("EnemyFight");
 	for (i=1; i<=12; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Capong_land_"+i, "canib_"+(rand(5)+1), "man", "man", 18, PIRATE, -1, false, "native"));
-		FantomMakeCoolFighter(sld, 18, 55, 55, RandPhraseSimple("blade_01","blade_02"), "", "", 140);
+		sld = GetCharacter(NPC_GenerateCharacter("Capong_land_"+i, "canib_"+(rand(5)+1), "man", "man", 14+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, false, "native"));
+		FantomMakeCoolFighter(sld, 14+MOD_SKILL_ENEMY_RATE/2, 55, 55, RandPhraseSimple("blade_01","blade_02"), "", "", 140);
 		sld.name = GetIndianName(MAN);
 		sld.lastname = "";
 		sld.viper = true;
@@ -3407,8 +3412,8 @@ void Mtraxx_MeridaExitTown(string qName) // у ворот Мериды
 	//LAi_group_MoveCharacter(sld, "TMP_FRIEND"); // правки прогона 3
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 	// ставим дозорного
-	sld = GetCharacter(NPC_GenerateCharacter("Merida_guard", "mercen_23", "man", "man", 25, SPAIN, -1, true, "quest"));
-	FantomMakeCoolFighter(sld, 25, 70, 70, "blade_13", "pistol3", "grapeshot", 150);
+	sld = GetCharacter(NPC_GenerateCharacter("Merida_guard", "mercen_23", "man", "man", 17+MOD_SKILL_ENEMY_RATE/2, SPAIN, -1, true, "quest"));
+	FantomMakeCoolFighter(sld, 17+MOD_SKILL_ENEMY_RATE/2, 70, 70, "blade_13", "pistol3", "grapeshot", 150);
 	sld.dialog.Filename = "Quest\Roger.c";
 	sld.dialog.currentnode = "merida_guard";
 	sld.greeting = "";
@@ -3428,10 +3433,10 @@ void Mtraxx_MeridaHouseGuards(string qName) // выскочили мушкете
 	// ставим трёх поселенцев-мушкетеров
 	for (int i=1; i<=3; i++) 
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Merida_mushketer_"+i, "mush_ctz_"+i, "man", "mushketer", 25, SPAIN, -1, true, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("Merida_mushketer_"+i, "mush_ctz_"+i, "man", "mushketer", 16+MOD_SKILL_ENEMY_RATE/2, SPAIN, -1, true, "quest"));
 		if (i == 1) 
 		{
-			FantomMakeCoolFighter(sld, 25, 100, 100, "", "grape_mushket", "grenade", 180);
+			FantomMakeCoolFighter(sld, 16+MOD_SKILL_ENEMY_RATE/2, 100, 100, "", "grape_mushket", "grenade", 180);
 			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "grenade");
 			if (MOD_SKILL_ENEMY_RATE > 2)
 			{
@@ -3442,7 +3447,7 @@ void Mtraxx_MeridaHouseGuards(string qName) // выскочили мушкете
 		}
 		else 
 		{
-			FantomMakeCoolFighter(sld, 25, 60, 60, "", "mushket1", "cartridge", 150);
+			FantomMakeCoolFighter(sld, 16+MOD_SKILL_ENEMY_RATE/2, 60, 60, "", "mushket1", "cartridge", 150);
 			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
 			sld.MusketerDistance = 0;
 		}
@@ -3472,15 +3477,15 @@ void Mtraxx_MeridaGateAttack(string qName) // драка у ворот
 	{
 		if (i < 3)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Merida_defender_"+i, "mush_spa_"+i, "man", "mushketer", 25, SPAIN, -1, true, "quest"));
-			FantomMakeCoolFighter(sld, 25, 70, 70, "", "mushket1", "cartridge", 170);
+			sld = GetCharacter(NPC_GenerateCharacter("Merida_defender_"+i, "mush_spa_"+i, "man", "mushketer", 16+MOD_SKILL_ENEMY_RATE/2, SPAIN, -1, true, "quest"));
+			FantomMakeCoolFighter(sld, 16+MOD_SKILL_ENEMY_RATE/2, 70, 70, "", "mushket1", "cartridge", 170);
 			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
 			if (MOD_SKILL_ENEMY_RATE > 2) sld.cirassId = Items_FindItemIdx("cirass1");
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Merida_defender_"+i, "sold_spa_"+(rand(7)+1), "man", "man", 25, SPAIN, -1, true, "quest"));
-			FantomMakeCoolFighter(sld, 25, 70, 70, LinkRandPhrase("blade_08","blade_12","blade_14"), "pistol3", "grapeshot", 150);
+			sld = GetCharacter(NPC_GenerateCharacter("Merida_defender_"+i, "sold_spa_"+(rand(7)+1), "man", "man", 18+MOD_SKILL_ENEMY_RATE/2, SPAIN, -1, true, "quest"));
+			FantomMakeCoolFighter(sld, 18+MOD_SKILL_ENEMY_RATE/2, 70, 70, LinkRandPhrase("blade_08","blade_12","blade_14"), "pistol3", "grapeshot", 150);
 			if (MOD_SKILL_ENEMY_RATE > 2) sld.cirassId = Items_FindItemIdx("cirass2");
 		}
 		DeleteAttribute(sld, "SaveItemsForDead");
@@ -3510,8 +3515,8 @@ void Mtraxx_MeridaTown(string qName) // бой в Мериде
 	{
 		if (i > 9)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Merida_citizen_"+i, "mush_spa_"+(i-9), "man", "mushketer", 25, SPAIN, -1, true, "quest"));
-			FantomMakeCoolFighter(sld, 25, 70, 70, "", "mushket1", "cartridge", 170);
+			sld = GetCharacter(NPC_GenerateCharacter("Merida_citizen_"+i, "mush_spa_"+(i-9), "man", "mushketer", 18+MOD_SKILL_ENEMY_RATE/2, SPAIN, -1, true, "quest"));
+			FantomMakeCoolFighter(sld, 18+MOD_SKILL_ENEMY_RATE/2, 70, 70, "", "mushket1", "cartridge", 170);
 			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
 			if (MOD_SKILL_ENEMY_RATE > 2) sld.cirassId = Items_FindItemIdx("cirass1");
 			sld.MusketerDistance = 0;
@@ -3519,8 +3524,8 @@ void Mtraxx_MeridaTown(string qName) // бой в Мериде
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Merida_citizen_"+i, "citiz_1"+i, "man", "man", 15, SPAIN, -1, true, "quest"));
-			FantomMakeCoolFighter(sld, 15, 40, 40, LinkRandPhrase("blade_09","blade_11","blade_14"), "pistol1", "bullet", 100);
+			sld = GetCharacter(NPC_GenerateCharacter("Merida_citizen_"+i, "citiz_1"+i, "man", "man", 11+MOD_SKILL_ENEMY_RATE/2, SPAIN, -1, true, "quest"));
+			FantomMakeCoolFighter(sld, 11+MOD_SKILL_ENEMY_RATE/2, 40, 40, LinkRandPhrase("blade_09","blade_11","blade_14"), "pistol1", "bullet", 100);
 			ChangeCharacterAddressGroup(sld, "Merida_Town", "goto", "goto"+i);
 		}
 		DeleteAttribute(sld, "SaveItemsForDead");
@@ -3710,8 +3715,8 @@ void Mtraxx_MeridaCaveAttack(string qName) // атака капонгов в п�
 	LAi_group_Delete("EnemyFight");
 	for (i=1; i<=8; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Capong_cave_"+i, "canib_"+(rand(5)+1), "man", "man", 25, PIRATE, -1, false, "native"));
-		FantomMakeCoolFighter(sld, 25, 80, 80, RandPhraseSimple("blade_01","blade_02"), "", "", 150);
+		sld = GetCharacter(NPC_GenerateCharacter("Capong_cave_"+i, "canib_"+(rand(5)+1), "man", "man", 16+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, false, "native"));
+		FantomMakeCoolFighter(sld, 16+MOD_SKILL_ENEMY_RATE/2, 80, 80, RandPhraseSimple("blade_01","blade_02"), "", "", 150);
 		sld.name = GetIndianName(MAN);
 		sld.lastname = "";
 		sld.viper = true;
@@ -3840,9 +3845,9 @@ void Mtraxx_IgnasioKitty(string qName) // ставим пинас Китти
 	pchar.quest.Mtraxx_MeridaReturnLate.over = "yes";
 	LocatorReloadEnterDisable("LaVega_port", "boat", true);
 	Group_FindOrCreateGroup("Mtr_Kitty");
-	sld = GetCharacter(NPC_GenerateCharacter("Mtr_KittyCap", "mercen_10", "man", "man", 20, ENGLAND, -1, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Mtr_KittyCap", "mercen_10", "man", "man", 16+MOD_SKILL_ENEMY_RATE/2, ENGLAND, -1, false, "soldier"));
 	FantomMakeCoolSailor(sld, SHIP_PINNACE, StringFromKey("Roger_65"), CANNON_TYPE_CANNON_LBS16, 50, 50, 50);
-	FantomMakeCoolFighter(sld, 20, 40, 40, "blade_11", "pistol1", "bullet", 50);
+	FantomMakeCoolFighter(sld, 16+MOD_SKILL_ENEMY_RATE/2, 40, 40, "blade_11", "pistol1", "bullet", 50);
 	SetShipSkill(sld, 30, 90, 40, 45, 65, 55, 20, 50, 45);
 	sld.Dialog.Filename = "Quest\Roger.c";
 	sld.DeckDialogNode = "kittycap";
@@ -3909,9 +3914,9 @@ void Mtraxx_IgnasioArrive(string qName) // прибыли на Барбадос
 void Mtraxx_IgnasioCreateMarko() // ставим Игнасио Марко
 {
 	float locx, locy, locz;
-	sld = GetCharacter(NPC_GenerateCharacter("Ignasio", "Marco", "man", "man", 30, ENGLAND, -1, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Ignasio", "Marco", "man", "man", 21+MOD_SKILL_ENEMY_RATE/2, ENGLAND, -1, false, "soldier"));
 	FantomMakeCoolSailor(sld, SHIP_POLACRE_QUEST, GetShipName("Torero"), CANNON_TYPE_CANNON_LBS20, 60, 60, 60);
-	FantomMakeCoolFighter(sld, 30, 80, 80, "blade_10", "pistol6", "bullet", 150);
+	FantomMakeCoolFighter(sld, 21+MOD_SKILL_ENEMY_RATE/2, 80, 80, "blade_10", "pistol6", "bullet", 150);
 	sld.Dialog.Filename = "Quest\Roger.c";
 	sld.dialog.currentnode = "ignasio";
 	//sld.greeting = "captain";
@@ -4035,7 +4040,7 @@ void Mtraxx_IgnasioCreateCaravane(string qName) // ставим голландц
 	Island_SetReloadEnableGlobal("IslaDeCoche", false);
 	bQuestDisableMapEnter = true;//закрыть карту
 	Group_FindOrCreateGroup("Mtr_IgnasioSeaGroup");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+3;
 	int iScl = 30 + 3*sti(pchar.rank);
 	int Type, iSpace, iCrew, hcrew;
 	int n = 3;
@@ -4237,17 +4242,17 @@ void Mtraxx_IgnasioCreateSpanish(string qName) //
 		switch (i)
 		{
 			case 1:
-				iRank = 45;
+				iRank = 23+MOD_SKILL_ENEMY_RATE/2;
 				iScl = 100;
 			break;
 			
 			case 2:
-				iRank = 25;
+				iRank = 21+MOD_SKILL_ENEMY_RATE/2;
 				iScl = 50;
 			break;
 			
 			case 3:
-				iRank = 25;
+				iRank = 19+MOD_SKILL_ENEMY_RATE/2;
 				iScl = 50;
 			break;
 		}
@@ -4493,8 +4498,8 @@ void Mtraxx_WolfreekGrot(string qName) // в гроте - злые индеи, 6
 	//индеи
 	for (int i=1; i<=6; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Mtr_indian_grot_"+i, "canib_"+i, "man", "man", 25, PIRATE, -1, true, "native"));
-		FantomMakeCoolFighter(sld, 25, 70, 70, LinkRandPhrase("blade_01","blade_02","topor_02"), "", "", 150);
+		sld = GetCharacter(NPC_GenerateCharacter("Mtr_indian_grot_"+i, "canib_"+i, "man", "man", 19+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, true, "native"));
+		FantomMakeCoolFighter(sld, 19+MOD_SKILL_ENEMY_RATE/2, 70, 70, LinkRandPhrase("blade_01","blade_02","topor_02"), "", "", 150);
 		sld.name = GetIndianName(MAN);
 		sld.lastname = "";
 		DeleteAttribute(sld, "SaveItemsForDead");
@@ -4574,8 +4579,8 @@ void Mtraxx_WolfreekCaveEntrance(string qName) // у выхода из шахт�
 	// босяки
 	for (int i=5; i<=9; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Mtr_bandit_cave_"+i, "citiz_4"+i, "man", "man", 20, PIRATE, -1, true, "quest"));
-		FantomMakeCoolFighter(sld, 20, 60, 60, LinkRandPhrase("blade_07","blade_08","blade_11"), "pistol1", "bullet", 120);
+		sld = GetCharacter(NPC_GenerateCharacter("Mtr_bandit_cave_"+i, "citiz_4"+i, "man", "man", 14+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, true, "quest"));
+		FantomMakeCoolFighter(sld, 14+MOD_SKILL_ENEMY_RATE/2, 60, 60, LinkRandPhrase("blade_07","blade_08","blade_11"), "pistol1", "bullet", 120);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
 		if (i == 5)
@@ -4805,15 +4810,15 @@ void Mtraxx_WolfreekIslaMonaPirates(string qName) // пиратусы в кус�
 	{
 		if (i > 6)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Islamona_pirate_"+i, "mush_ctz_"+i, "man", "mushketer", 20, PIRATE, -1, false, "quest"));
+			sld = GetCharacter(NPC_GenerateCharacter("Islamona_pirate_"+i, "mush_ctz_"+i, "man", "mushketer", 14+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, false, "quest"));
 			if (i == 2) 
 			{
-				FantomMakeCoolFighter(sld, 20, 60, 60, "", "mushket3", "grapeshot", 120);
+				FantomMakeCoolFighter(sld, 14+MOD_SKILL_ENEMY_RATE/2, 60, 60, "", "mushket3", "grapeshot", 120);
 				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "grapeshot");
 			}
 			else 
 			{
-				FantomMakeCoolFighter(sld, 20, 60, 60, "", "mushket2", "bullet", 120);
+				FantomMakeCoolFighter(sld, 14+MOD_SKILL_ENEMY_RATE/2, 60, 60, "", "mushket2", "bullet", 120);
 				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 			}
 			SetCharacterPerk(sld, "Gunman");
@@ -4822,8 +4827,8 @@ void Mtraxx_WolfreekIslaMonaPirates(string qName) // пиратусы в кус�
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Islamona_pirate_"+i, "citiz_4"+i, "man", "man", 18, PIRATE, -1, true, "quest"));
-			FantomMakeCoolFighter(sld, 18, 50, 50, LinkRandPhrase("blade_07","blade_08","blade_11"), "pistol1", "bullet", 100);
+			sld = GetCharacter(NPC_GenerateCharacter("Islamona_pirate_"+i, "citiz_4"+i, "man", "man", 12+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, true, "quest"));
+			FantomMakeCoolFighter(sld, 12+MOD_SKILL_ENEMY_RATE/2, 50, 50, LinkRandPhrase("blade_07","blade_08","blade_11"), "pistol1", "bullet", 100);
 			if (MOD_SKILL_ENEMY_RATE > 4) sld.cirassId = Items_FindItemIdx("cirass2");
 		}
 		DeleteAttribute(sld, "SaveItemsForDead");
@@ -4889,7 +4894,7 @@ void Mtraxx_WolfreekMarch(string qName) // собираем штурмовую �
 	string model;
 	string ani;
 
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 20 + 2*sti(pchar.rank);
 
 	object aSoldier[1];
@@ -5029,7 +5034,7 @@ void Mtraxx_WolfreekComplete() // завершаем квест
 void Mtraxx_CorridaStart(string qName) // пришли на Мартинику
 {
 	Island_SetReloadEnableGlobal("Martinique", false);
-	int iRank = 20+MOD_SKILL_ENEMY_RATE;
+	int iRank = 20+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 55;
 	// ставим полакр Марко и корабли пиратов Барбазона - Бродяги и Упыря
 	// Марко
@@ -5067,7 +5072,7 @@ void Mtraxx_CorridaStart(string qName) // пришли на Мартинику
 	// Упырь
 	sld = GetCharacter(NPC_GenerateCharacter("Mtr_vampire", "mercen_25", "man", "man", iRank+5, PIRATE, -1, true, "quest")); 
 	FantomMakeCoolSailor(sld, SHIP_FRIGATE, StringFromKey("Roger_80"), CANNON_TYPE_CANNON_LBS24, iScl+5, iScl+5, iScl+5);
-	FantomMakeCoolFighter(sld, iRank+5, iScl+15, iScl+15, "blade_14", "pistol5", "bullet", iScl*2+100);
+	FantomMakeCoolFighter(sld, iRank+3, iScl+15, iScl+15, "blade_14", "pistol5", "bullet", iScl*2+100);
 	sld.name = StringFromKey("Roger_81");
 	sld.lastname = StringFromKey("Roger_82");
 	sld.DontRansackCaptain = true;
@@ -5757,13 +5762,12 @@ void Mtraxx_MarkusSetShipParameter()
 	RealShips[sti(sld.Ship.Type)].TurnRate = 29.5;
 	RealShips[sti(sld.Ship.Type)].MaxCrew = 800;
 	RealShips[sti(sld.Ship.Type)].HP = 8000;
-	RealShips[sti(sld.Ship.Type)].WindAgainstSpeed = 0.42;
 	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
     sld.ship.HP = 8000;    //belamour текущее состояние корпуса в макс.
 	SetSailsColor(sld, 8);//черный парус
 	UpgradeShipParameter(sld, "SpeedRate");//апгрейдить скорость
 	UpgradeShipParameter(sld, "TurnRate");//маневренность
-	UpgradeShipParameter(sld, "WindAgainstSpeed");//бейд
+	UpgradeShipParameter(sld, "Rig");//бейд
 	DeleteAttribute(sld, "ship.hulls");
 	int hcrew = GetMaxCrewQuantity(sld);
 	SetCrewQuantity(sld, hcrew);
@@ -6607,7 +6611,7 @@ void Mtraxx_RetributionRuins(string qName) // вошли в подземелья
 	QuestPointerToLoc("Judgement_dungeon_05", "quest", "pelly");
 	// ставим Тесака и его приспешников у клетки с сокровищами
 	LAi_LocationFightDisable(&Locations[FindLocation("Judgement_dungeon_05")], true);//запретить драться
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+3;
 	int iScl = 30 + 2*sti(pchar.rank);
 	sld = characterFromId("Pelly");
 	sld.dialog.currentnode = "Pelly_30";
@@ -6678,7 +6682,7 @@ void Mtraxx_RetributionSetJeffry(string qName) // ставим Джеффри в
 	LAi_LocationFightDisable(&Locations[FindLocation("Judgement_dungeon_05")], true);//запретить драться
 	chrDisableReloadToLocation = true;
 	// ставим Джеффри и его пиратов
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 10 + sti(pchar.rank);
 	sld = characterFromId("Jeffry");
 	sld.dialog.currentnode = "Jeffry_22";
@@ -6810,7 +6814,7 @@ void Mtraxx_RetributionJeffryFight(string qName) // бой с Джеффри
 
 void Mtraxx_RetributionMushketers(string qName) // ставим 2 мушкетеров в шахте №3
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+3;
 	int iScl = 30 + 2*sti(pchar.rank);
 	chrDisableReloadToLocation = true;
 	LAi_group_Delete("EnemyFight");
@@ -6831,7 +6835,7 @@ void Mtraxx_RetributionMushketers(string qName) // ставим 2 мушкете
 
 void Mtraxx_RetributionNextMushketers(string qName) // ставим 2 мушкетеров в шахте №2
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+3;
 	int iScl = 30 + 2*sti(pchar.rank);
 	chrDisableReloadToLocation = true;
 	LAi_group_Delete("EnemyFight");
@@ -6852,7 +6856,7 @@ void Mtraxx_RetributionNextMushketers(string qName) // ставим 2 мушке
 
 void Mtraxx_RetributionLastMushketers(string qName) // ставим 2 мушкетеров в шахте №1
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+4;
 	int iScl = 35 + 2*sti(pchar.rank);
 	chrDisableReloadToLocation = true;
 	LAi_group_Delete("EnemyFight");
@@ -6874,7 +6878,7 @@ void Mtraxx_RetributionLastMushketers(string qName) // ставим 2 мушке
 void Mtraxx_RetributionSetLepricon(string qName) // ставим Леприкона // прогона 3
 {
 	LAi_LocationFightDisable(&Locations[FindLocation("Judgement_dungeon_01")], true);//запретить драться
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
+	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+4;
 	int iScl = 30 + 2*sti(pchar.rank);
 	sld = characterFromId("Lepricon");
 	sld.dialog.currentnode = "lepricon_13";
@@ -7473,7 +7477,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		LAi_SetActorType(sld);
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
-		iRank = sti(pchar.rank)+5;
+		iRank = sti(pchar.rank)+2;
 		iScl = 30 + 2*sti(pchar.rank);
 		for (i=1; i<=7; i++)
 		{
@@ -7819,7 +7823,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 
 		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
 
-		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 		iScl = 20 + 2*sti(pchar.rank);
 
 		for (i=1; i<=8; i++) // наши красавцы
@@ -8018,8 +8022,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		PlaySound("interface\abordage_wining.wav");
 		for (i=1; i<=6; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Capong_cave_podkreplenie_"+i, "canib_"+(rand(5)+1), "man", "man", 25, PIRATE, -1, false, "native"));
-			FantomMakeCoolFighter(sld, 25, 80, 80, RandPhraseSimple("blade_01","blade_02"), "", "", 50);
+			sld = GetCharacter(NPC_GenerateCharacter("Capong_cave_podkreplenie_"+i, "canib_"+(rand(5)+1), "man", "man", 14+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, false, "native"));
+			FantomMakeCoolFighter(sld, 14+MOD_SKILL_ENEMY_RATE/2, 80, 80, RandPhraseSimple("blade_01","blade_02"), "", "", 50);
 			sld.name = GetIndianName(MAN);
 			sld.lastname = "";
 			sld.viper = true;
@@ -8077,10 +8081,10 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "Mtraxx_IgnasioEscape") // 
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Ignasio_spy", "Alonso", "man", "man", 25, FRANCE, 0, false, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("Ignasio_spy", "Alonso", "man", "man", 19+MOD_SKILL_ENEMY_RATE/2, FRANCE, 0, false, "soldier"));
 		sld.name = GetCharacterName("Alonso");
 		sld.lastname = "";
-		FantomMakeCoolFighter(sld, 25, 30, 30, "blade_05", "pistol1", "bullet", 120);
+		FantomMakeCoolFighter(sld, 19+MOD_SKILL_ENEMY_RATE/2, 30, 30, "blade_05", "pistol1", "bullet", 120);
 		sld.Dialog.Filename = "Quest\Roger.c";
 		sld.dialog.currentnode = "spy_sailor";
 		ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload1");
@@ -8131,8 +8135,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		AddQuestRecord("Roger_7", "17");
 		AddComplexSelfExpToScill(30, 30, 30, 30);
 		// ставим троих в форте
-		sld = GetCharacter(NPC_GenerateCharacter("Islamona_carpenter", "mercen_30", "man", "man", 25, PIRATE, -1, true, "quest"));
-		FantomMakeCoolFighter(sld, 25, 60, 60, "topor_02", "pistol1", "bullet", 100);
+		sld = GetCharacter(NPC_GenerateCharacter("Islamona_carpenter", "mercen_30", "man", "man", 19+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, true, "quest"));
+		FantomMakeCoolFighter(sld, 19+MOD_SKILL_ENEMY_RATE/2, 60, 60, "topor_02", "pistol1", "bullet", 100);
 		sld.Dialog.Filename = "Quest\Roger.c";
 		sld.dialog.currentnode = "carpenter";
 		sld.name = StringFromKey("Roger_110");
@@ -8385,9 +8389,9 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		PChar.nation = PIRATE;
 		pchar.DisableChangeFlagMode = true;
 		// установим клон Бернара Венсана
-		sld = GetCharacter(NPC_GenerateCharacter("Mtr_Vensan", "Vensan", "man", "man", 20, PIRATE, -1, true, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("Mtr_Vensan", "Vensan", "man", "man", 14+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, true, "quest"));
 		FantomMakeCoolSailor(sld, SHIP_BRIGANTINE, StringFromKey("Roger_116"), CANNON_TYPE_CANNON_LBS12, 50, 50, 50);
-		FantomMakeCoolFighter(sld, 20, 50, 50, "blade_16", "pistol5", "bullet", 100);
+		FantomMakeCoolFighter(sld, 14+MOD_SKILL_ENEMY_RATE/2, 50, 50, "blade_16", "pistol5", "bullet", 100);
 		sld.name = StringFromKey("Roger_117");
 		sld.lastname = StringFromKey("Roger_118");
 		sld.rank = 22;
@@ -8640,8 +8644,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		ChangeCharacterAddressGroup(sld, "shore25", "rld", "loc9");
 		for (i = 5; i <= 10; i++) // буканьеры Леприкона
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Lepricons_bukaneers_" + i, "mercen_" + i, "man", "man", 25, PIRATE, -1, true, "quest"));
-			FantomMakeCoolFighter(sld, 25, 65, 65, LinkRandPhrase("blade_04", "blade_06", "topor_04"), "pistol3", "grapeshot", 200);
+			sld = GetCharacter(NPC_GenerateCharacter("Lepricons_bukaneers_" + i, "mercen_" + i, "man", "man", 14+MOD_SKILL_ENEMY_RATE/2, PIRATE, -1, true, "quest"));
+			FantomMakeCoolFighter(sld, 14+MOD_SKILL_ENEMY_RATE/2, 65, 65, LinkRandPhrase("blade_04", "blade_06", "topor_04"), "pistol3", "grapeshot", 200);
 			LAi_CharacterDisableDialog(sld);
 			TakeNItems(sld, "potion2", 5);
 			TakeNItems(sld, "potion3", 2);
@@ -8715,7 +8719,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		nSoldierIndex = 0;
 		GenerateCrew(pchar, "mushketer", &aCrewMushketer);
 
-		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 		iScl = 20 + 2*sti(pchar.rank);
 		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
 		for (i = 1; i <= iTotalTemp; i++)
@@ -8870,7 +8874,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		nSoldierIndex = 0;
 		GenerateCrew(pchar, "mushketer", &aCrewMushketer);
 		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
-		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 		iScl = 20 + 2*sti(pchar.rank);
 		for (i = 1; i <= iTotalTemp; i++)
 		{
@@ -9016,7 +9020,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		nSoldierIndex = 0;
 		GenerateCrew(pchar, "mushketer", &aCrewMushketer);
 		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
-		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 		iScl = 20 + 2*sti(pchar.rank);
 		for (i = 1; i <= iTotalTemp; i++)
 		{
@@ -9141,7 +9145,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 				if (i == 12) // офицер
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaExittownGuard_"+i, "off_spa_5", "man", "man", iRank+5, SPAIN, -1, false, "soldier"));
-					FantomMakeCoolFighter(sld, iRank+5, 70, 70, "topor_04", "pistol4", "bullet", 200);
+					FantomMakeCoolFighter(sld, iRank+3, 70, 70, "topor_04", "pistol4", "bullet", 200);
 				
 					SetCharacterPerk(sld, "Gunman");
 					SetCharacterPerk(sld, "GunProfessional");
@@ -9235,7 +9239,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		GenerateCrew(pchar, "mushketer", &aCrewMushketer);
 
 		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
-		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 		iScl = 20 + 2*sti(pchar.rank);
 		for (i=1; i<=iTotalTemp; i++)
 		{
@@ -9299,7 +9303,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		LAi_group_Delete("EnemyFight");
 		// офицер
 		sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaTownOfficer_"+i, "off_spa_5", "man", "man", iRank+7, SPAIN, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, iRank+7, 75, 75, "topor_04", "pistol4", "bullet", 220);
+		FantomMakeCoolFighter(sld, iRank+5, 75, 75, "topor_04", "pistol4", "bullet", 220);
 	
 		SetCharacterPerk(sld, "Gunman");
 		SetCharacterPerk(sld, "GunProfessional");
@@ -9588,19 +9592,19 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "Mtraxx_RetributionVoiceInBrothel_1") // голоса
 	{
-		PlaySound("VOICE\Russian\brothel\Shluhi-11.wav");
+		PlaySoundSafe("VOICE\" + LanguageGetLanguage() + "\brothel", "Shluhi-11.wav");
 		PlaySound("ambient\tavern\krujki_003.wav");
 		PlaySound("ambient\tavern\naliv_001.wav");
 	}
 	else if (sQuestName == "Mtraxx_RetributionVoiceInBrothel_2") // голоса
 	{
-		PlaySound("VOICE\Russian\brothel\Shluhi-12.wav");
+		PlaySoundSafe("VOICE\" + LanguageGetLanguage() + "\brothel", "Shluhi-12.wav");
 		PlaySound("ambient\tavern\krujki_004.wav");
 		PlaySound("ambient\tavern\naliv_002.wav");
 	}
 	else if (sQuestName == "Mtraxx_RetributionVoiceInBrothel_3") // голоса
 	{
-		PlaySound("VOICE\Russian\brothel\Shluhi-13.wav");
+		PlaySoundSafe("VOICE\" + LanguageGetLanguage() + "\brothel", "Shluhi-13.wav");
 		PlaySound("ambient\tavern\krujki_005.wav");
 		PlaySound("ambient\tavern\naliv_003.wav");
 	}
@@ -10298,7 +10302,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		LAi_SetActorType(pchar);
 		LAi_ActorTurnToLocator(pchar, "quest", "door");
 		sld = GetCharacter(NPC_GenerateCharacter("Zorro", "Enrique_1", "man", "man", 40, SPAIN, -1, false, "quest"));
-		FantomMakeCoolFighter(sld, 40, 110, 110, "blade_17", "pistol5", "bullet", 250);
+		FantomMakeCoolFighter(sld, 25+MOD_SKILL_ENEMY_RATE/2, 110, 110, "blade_17", "pistol5", "bullet", 250);
 		LAi_SetHP(sld, 750.0, 750.0);
 		sld.viper = true;
 		GiveItem2Character(sld, "cirass3");
@@ -10621,7 +10625,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		sld = characterFromId("Sleep_Mishelle");    
 		ChangeCharacterAddressGroup(sld, "none", "", "");
 		sld = GetCharacter(NPC_GenerateCharacter("Sleep_Terrax", "Terrax", "man", "man", 1, PIRATE, 1, true, "quest"));
-		FantomMakeCoolFighter(sld, 50, 110, 110, "blade_19", "pistol4", "bullet", 300);
+		FantomMakeCoolFighter(sld, 25+MOD_SKILL_ENEMY_RATE/2, 110, 110, "blade_19", "pistol4", "bullet", 300);
 		sld.name = StringFromKey("Roger_129");
 		sld.lastname = StringFromKey("Roger_130");
 		sld.dialog.Filename = "Quest\Roger.c";

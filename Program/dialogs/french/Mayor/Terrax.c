@@ -647,7 +647,6 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 				if (NextDiag.TempNode != "I_know_you_good")
 					dialog.text = "T’as perdu la tête" + GetSexPhrase("", " ma fille") + " ? Nos gars te fuient comme la peste. Alors fiche le camp et arrête de me casser les pieds.";
 				else
@@ -655,12 +654,12 @@ void ProcessDialogEvent()
 				link.l1 = "Je vois...";
 				link.l1.go = "exit";
 			}
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 		break;
 
 		case "pirate_threat_pay":
 			iGPThreatRate = 0;
 			iGPThreat = 0;
-			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iTerraxTotalTemp);
 			DialogExit();
 			PiratesDecreaseNotif("");
@@ -1568,7 +1567,7 @@ void ProcessDialogEvent()
 				break;
 			}*/
 			dialog.text = "Bonne synchronisation ! Rapportez-vous à moi, maintenant.";
-			link.l1 = "J'ai traqué mon débiteur à Le François. Sa polacre faisait partie d'une escadre comprenant une corvette et une frégate. Marco lui-même rendait visite à Barbaszon, ils ont eu une réunion chez lui pendant deux heures, les autres visiteurs ont été écartés par ses gardes. Puis il est sorti de la maison avec deux types lugubres : l'un était roux avec une barbe et portait une cuirasse de reître, l'autre avait une moustache et portait une lourde armure de tranchée. Tous sont allés au port et ont pris la mer avant que je n'atteigne Saint Pierre.";
+			link.l1 = "J'ai traqué mon débiteur à Le François. Sa polacre faisait partie d'une escadre comprenant une corvette et une frégate. Marco lui-même rendait visite à Barbazon, ils ont eu une réunion chez lui pendant deux heures, les autres visiteurs ont été écartés par ses gardes. Puis il est sorti de la maison avec deux types lugubres : l'un était roux avec une barbe et portait une cuirasse de reître, l'autre avait une moustache et portait une lourde armure de tranchée. Tous sont allés au port et ont pris la mer avant que je n'atteigne Saint Pierre.";
 			link.l1.go = "mtraxx_74";
 		break;
 		

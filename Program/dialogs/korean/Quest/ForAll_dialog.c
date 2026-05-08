@@ -737,7 +737,7 @@ void ProcessDialogEvent()
 		case "NM_battleBoard":
 			sld = &characters[GetCharacterIndex("QuestCitiz_"+npchar.quest.cribCity)];
 			dialog.text = "왜 내 배를 공격했지, 이 악당아?";
-			link.l1 = "나는 여기 "+GetFullName(npchar)+"의 최고의 안부를 전하러 왔소 "+XI_ConvertString("Colony"+npchar.quest.cribCity)+" , "+남자 이름+"에게서 온 "+GetFullName(&characters[GetCharacterIndex("QuestCitiz_"+npchar.quest.cribCity)])+". 이제 상황을 이해했으리라 생각하오.";
+			link.l1 = "나는 여기 "+GetFullName(npchar)+"의 최고의 안부를 전하러 왔소 "+XI_ConvertString("Colony"+npchar.quest.cribCity)+" , 남자 이름 에게서 온 "+GetFullName(&characters[GetCharacterIndex("QuestCitiz_"+npchar.quest.cribCity)])+". 이제 상황을 이해했으리라 생각하오.";
 			link.l1.go = "NM_battleBoard_1";
 		break;
 		

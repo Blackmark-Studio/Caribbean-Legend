@@ -310,7 +310,7 @@ float GetAllSailsDamagePercent(ref chref)
 		SailPow = 100.0;
 		chref.ship.sailstatus.sailpow = SailPow;
 		chref.ship.sailstatus.saildmg = SailDmg;
-		return SailPow = 0.0;
+		return SailPow;
 	}	
 	makearef(arRoot, chref.ship.sailstatus);
 	rq = GetAttributesNum(arRoot);

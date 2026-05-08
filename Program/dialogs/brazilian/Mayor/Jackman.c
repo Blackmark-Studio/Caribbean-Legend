@@ -589,7 +589,6 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 				if (NextDiag.TempNode != "I_know_you_good")
 					dialog.text = "Você ficou maluco" + GetSexPhrase("", "a") + "? Nossos caras fogem de você como o diabo foge da cruz. Some daqui e para de encher!";
 				else
@@ -597,12 +596,12 @@ void ProcessDialogEvent()
 				link.l1 = "Entendi...";
 				link.l1.go = "exit";
 			}
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 		break;
 
 		case "pirate_threat_pay":
 			iGPThreatRate = 0;
 			iGPThreat = 0;
-			SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iJackmanTotalTemp);
 			DialogExit();
 			PiratesDecreaseNotif("");

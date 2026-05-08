@@ -864,6 +864,15 @@ int PlaySound(string name)
 	return PlayStereoSound(name);
 }
 
+int PlaySoundSafe(string folderName, string fileName)
+{
+	string fullPath = folderName + "\" + fileName;
+	if (IsFileExist("Resource\Sounds\" + folderName, fileName)) return PlayStereoSound(fullPath);
+
+	assert(false, "Missing sound file, fallback to silence: " + fullPath);
+	return 0;
+}
+
 int PlaySoundComplex(string sSoundName, bool bSimpleCache, bool bLooped, bool bCached, int iFadeTime)
 {
 	return SendMessage(Sound,"lsllllll",MSG_SOUND_PLAY,VOLUME_FX,sSoundName,SOUND_WAV_3D,bSimpleCache,bLooped,bCached,iFadeTime);

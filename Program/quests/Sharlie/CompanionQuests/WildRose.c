@@ -23,6 +23,7 @@ void WildRose_Start_2(string qName)
 	{
 		chrDisableReloadToLocation = true;
 		DeleteQuestCondition("WildRose_Start");
+		DeleteAttribute(pchar, "questTemp.WildRose_Start");
 		
 		pchar.questTemp.WildRose_DialogeWithSoldierOnPier = true;
 	}

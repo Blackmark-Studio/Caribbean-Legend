@@ -749,7 +749,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_hull_01":
-			dialog.text = "Très bien, faisons les comptes... Pour une reconstruction complète de la coque, il me faudra 150 unités de bakaut, de cordes, de soie de navire et de résine — ainsi que 10 000 doublons d'or. Ne me regardez pas comme ça ; la majeure partie de l'argent ira aux matériaux. Ce travail équivaut à démonter le navire et à le reconstruire entièrement.";
+			dialog.text = "Bon, faisons les comptes... Pour une reconstruction complète de la coque du navire, il me faudra 150 unités de gaïac, de cordages, de soie navale et de résine pour chacune. Et 10 000 doublons d’or par-dessus le marché. Et ne me regardez pas comme ça — la plus grande partie de l’argent passera dans les matériaux. Ce travail revient à démonter le navire pièce par pièce pour le reconstruire entièrement depuis zéro.";
 			link.l1 = "Non, je ne crois pas. Je ne suis pas prêt à apporter autant de ressources et à verser une montagne d'or pour la reconstruction. Je resterai avec ce que j'ai.";
 			link.l1.go = "FDM_hull_thinking";
 			link.l2 = "Eh, que ne ferions-nous pas pour notre navire...Très bien, c'est un marché.";

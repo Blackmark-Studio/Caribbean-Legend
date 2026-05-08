@@ -293,7 +293,7 @@ void ProcessDialogEvent()
 
 		case "Zaharia_3":
 			sld = CharacterFromID("PuertoPrincipe_tavernkeeper");
-			dialog.text = "Gut, dass ich mich in dir nicht getäuscht habe, "+sld.name+". Komm morgen zu mir – dann bekommst du deine Dublonen.";
+			dialog.text = "Gut, dass ich mich in dir nicht getäuscht habe, "+sld.name+".";
 			link.l1 = "...";
 			link.l1.go = "Zaharia_4";
 			CharacterTurnByChr(npchar, sld);
@@ -315,7 +315,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Tavern_1":
-			dialog.text = "Kapitän, wegen der Plakette...";
+			dialog.text = "Kapitän, hier sind eure Dublonen. Was die Plakette angeht...";
 			link.l1 = "Welche Plakette? Ah, die da... Ich denke, ich brauche keine solchen Ehren. Bemüht euch nicht, ich komme auch ohne klar.";
 			link.l1.go = "Tavern_2";
 		break;
@@ -333,6 +333,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("OS", "5");
 			AddQuestUserData("OS", "sSex", GetSexPhrase("","а"));
 			pchar.questTemp.OS_Tavern_FreeBuhlo = true;
+			TakeNItems(pchar, "gold_dublon", 150);
 			ChangeShowIntarface();
 			
 			sld = CharacterFromID("PuertoPrincipe_tavernkeeper");

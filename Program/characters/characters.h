@@ -74,8 +74,14 @@ string  LoyalityTable[MORALE_TABLE_SIZE];
 #define PIRATES_E	"Endurance"  // Выносливость
 #define PIRATES_S	"Luck"       // Удача
 
+#define PIRATES_TYPE	"SPECIAL"
 #define SPECIAL_TYPE	"SPECIAL"
 #define SKILL_TYPE	    "Skill"
+#define HERO_TYPE "HeroType"
+#define HERO_TYPE_GYMNAST "HT1"    // Дуэлянт
+#define HERO_TYPE_ACCOUNTANT "HT2" // Счетовод
+#define HERO_TYPE_ATHLETE "HT3"    // Атлет
+#define HERO_TYPE_SHOOTER "HT4"    // Стрелок
 // boal <--
 
 #define KILL_BY_BALL		1

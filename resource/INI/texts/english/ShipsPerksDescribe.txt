@@ -2,6 +2,28 @@ new_string
 {
 
 }
+sp1 {Zealot}
+sp1_desc {An equipped deck chapel, together with icons of the Virgin Mary, mysteriously enhances the effects and duration of church amulets.}
+sp1_desc2
+{
+Each amulet's enhancement: individual.Duration increase: 15 days.
+}
+sp2 {Welcome guest}
+sp2_desc {This legendary ship is known in every corner of the Caribbean archipelago and is met everywhere with respect and admiration. The location of Lady Beth immediately becomes known to map sellers, and local merchants try to gather all possible capital to buy valuables.}
+sp2_desc2
+{
+Bonus to the chance of a map trader appearing: 5–12%.Peso reserve increase: 100%.Doubloon reserve increase: ~30%.
+}
+sp3 {Crucible}
+sp3_desc {On this ship, human life is seen as just a brief stage before true power is revealed. Few cross the Veil and return, but those who do no longer fear death.}
+sp3_desc2 {Fallen sailors increase the crew’s experience and morale.}
+sp3_SailorsBoardingBonus_desc {Boarding experience bonus: #dSailorsBoardingBonus#%}
+sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 fallen sailors)}
+sp3_SurrenderChanceBonus_desc {Surrender chance increase: #dSurrenderChanceBonus#%}
+sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 fallen sailors)}
+sp4 {Pirate Hunter}
+sp4_desc {This ship was purpose-built to cleanse the seas of pirates. With every ship sent to the bottom, the crew grows more united, the guns more accurate, and the captain’s fanaticism ever clearer.}
+sp4_desc2 {Each destroyed pirate ship permanently increases maneuverability, firing range, global map speed, and gun reload speed. Current bonus: $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) of 15. ~ The lower the pirate threat, the lower the ship’s upkeep. Current bonus: $percent($GetAmsterdamMtp( )) of 40.}
 special0 {Trader}
 special0_desc {A merchant ship usually sacrifices caliber, speed, and the number of guns in favor of a large hold. Only a very skilled captain can afford to go on a solo voyage on such a ship.}
 special0_desc2 {Fleet Power bonus: low}
@@ -17,6 +39,7 @@ special3_desc2
 {
 Fleet Power bonus: mediumBonus to stat improvement: 15%
 }
+SpecialityUpgrade {Upgraded by HWIC}
 trait01 {Current Map}
 trait01_desc {Complex navigation tools made to order by European craftsmen and an accurate map of the archipelago's underwater currents allow you to save significant travel time.}
 trait01_desc2
@@ -90,26 +113,3 @@ trait24_desc2
 {
 Additional damage to hull and sails: 200%.Effect duration: 15 seconds.Increases chance of fire: 200%
 }
-sp1 {Zealot}
-sp1_desc {An equipped deck chapel, together with icons of the Virgin Mary, mysteriously enhances the effects and duration of church amulets.}
-sp1_desc2
-{
-Each amulet's enhancement: individual.Duration increase: 15 days.
-}
-sp2 {Welcome guest}
-sp2_desc {This legendary ship is known in every corner of the Caribbean archipelago and is met everywhere with respect and admiration. The location of Lady Beth immediately becomes known to map sellers, and local merchants try to gather all possible capital to buy valuables.}
-sp2_desc2
-{
-Bonus to the chance of a map trader appearing: 5–12%.Peso reserve increase: 100%.Doubloon reserve increase: ~30%.
-}
-sp3 {Crucible}
-sp3_desc {On this ship, human life is seen as just a brief stage before true power is revealed. Few cross the Veil and return, but those who do no longer fear death.}
-sp3_desc2 {Fallen sailors increase the crew’s experience and morale.}
-sp3_SailorsBoardingBonus_desc {Boarding experience bonus: #dSailorsBoardingBonus#%}
-sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 fallen sailors)}
-sp3_SurrenderChanceBonus_desc {Surrender chance increase: #dSurrenderChanceBonus#%}
-sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 fallen sailors)}
-sp4 {Pirate Hunter}
-sp4_desc {This ship was purpose-built to cleanse the seas of pirates. With every ship sent to the bottom, the crew grows more united, the guns more accurate, and the captain’s fanaticism ever clearer.}
-sp4_desc2 {Each destroyed pirate ship permanently increases maneuverability, firing range, global map speed, and gun reload speed. Current bonus: $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) of 15. ~ The lower the pirate threat, the lower the ship’s upkeep. Current bonus: $percent($GetAmsterdamMtp( )) of 40.}
-SpecialityUpgrade {Upgraded by HWIC}

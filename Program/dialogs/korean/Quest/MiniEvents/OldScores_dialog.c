@@ -292,7 +292,7 @@ void ProcessDialogEvent()
 
 		case "Zaharia_3":
 			sld = CharacterFromID("PuertoPrincipe_tavernkeeper");
-			dialog.text = "내가 너를 믿은 게 헛된 일이 아니어서 다행이군, "+sld.name+". 내일 내 방으로 와서 두블룬을 받아가라.";
+			dialog.text = "내가 너를 믿은 게 헛된 일이 아니어서 다행이군, "+sld.name+".";
 			link.l1 = "...";
 			link.l1.go = "Zaharia_4";
 			CharacterTurnByChr(npchar, sld);
@@ -314,7 +314,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tavern_1":
-			dialog.text = "선장님, 그 명패 말인데...";
+			dialog.text = "선장님, 여기 더블룬입니다. 그 명패 말인데요...";
 			link.l1 = "무슨 명패? 아, 그거 말이오... 솔직히 그런 영예는 필요 없소. 나 때문에 일부러 신경 쓸 것 없소.";
 			link.l1.go = "Tavern_2";
 		break;
@@ -332,6 +332,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("OS", "5");
 			AddQuestUserData("OS", "sSex", GetSexPhrase("","а"));
 			pchar.questTemp.OS_Tavern_FreeBuhlo = true;
+			TakeNItems(pchar, "gold_dublon", 150);
 			ChangeShowIntarface();
 			
 			sld = CharacterFromID("PuertoPrincipe_tavernkeeper");

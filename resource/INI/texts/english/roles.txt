@@ -1,4 +1,14 @@
-portman {Harbormaster}
+AffairOfHonor_tavern {Desperate Drunk}
+armourer_merchant {Gunsmith}
+banditos {Cutthroat}
+captain {Captain}
+captain_trader {Free Trader}
+cemeteryman_merchant {Graveyard Keeper}
+chaplain {Chaplain}
+comandante {Commander}
+deadman {Living Dead}
+Deputy Director {Deputy Director}
+Director {Director}
 drinker_0 {The most famous pirate in these waters}
 drinker_1 {A masterful teller of true tales}
 drinker_2 {Retired Escorial Special Agent}
@@ -9,55 +19,45 @@ drinker_6 {A magnificent man in his prime}
 drinker_7 {Head of odds and ends}
 drinker_8 {Senior of the Drunken Watch}
 drinker_9 {The second cousin of a not insignificant person in the DWIC}
-pofficer {Candidate}
-hovernor {Governor}
-tavernkeeper {Innkeeper}
-waitress {Waitress}
-trader {Trader}
-shipyarder {Shipwright}
-priest {Priest}
-Ghovernor {Governor-General}
-Phovernor {Baron}
-usurer {Banker}
-poorman {Beggar}
-gipsy {Gypsy Woman}
-captain {Captain}
-sailor {Sailor}
-marginal_town {Pirate}
-noble {Noble}
-monk {Monk}
-chaplain {Chaplain}
-potion_merchant {Alchemist}
-veteran_merchant {Ironmonger}
-armourer_merchant {Gunsmith}
-monk_merchant {Holy Relics Vendor}
-indian_merchant {Fortune Teller}
-lightman_merchant {Lighthouse Keeper}
-cemeteryman_merchant {Graveyard Keeper}
-legend {Legend}
-soldier_town {Guard}
-banditos {Cutthroat}
-patrol {Patrol}
-comandante {Commander}
-prisonboss {Commandant}
-whore {Wench}
-hostess {Hostess}
-enemy {Enemy}
-wife {Wife}
-kukulkan {Kukulkan}
-mercen {Mercenary}
-monster {Undead}
-captain_trader {Free Trader}
-mtraxx_vanguard {Vanguard of Tirax}
-fgirl {Mistress}
-deadman {Living Dead}
-friend {Friend}
 duelist {Swashbuckler}
-smuggler {Smuggler}
-AffairOfHonor_tavern {Desperate Drunk}
-hovernon_wife {Governor's Wife}
+enemy {Enemy}
+fgirl {Mistress}
+friend {Friend}
+Ghovernor {Governor-General}
+gipsy {Gypsy Woman}
 HeadSailor {Able Seaman}
 HeadSailorPlus {The Crew's Voice}
-Director {Director}
-Deputy Director {Deputy Director}
+hostess {Hostess}
+hovernon_wife {Governor's Wife}
+hovernor {Governor}
+indian_merchant {Fortune Teller}
+kukulkan {Kukulkan}
+legend {Legend}
+lightman_merchant {Lighthouse Keeper}
+marginal_town {Pirate}
+mercen {Mercenary}
+monk {Monk}
+monk_merchant {Holy Relics Vendor}
+monster {Undead}
+mtraxx_vanguard {Vanguard of Tirax}
 Naval Registry Guard {Naval Registry Guard}
+noble {Noble}
+patrol {Patrol}
+Phovernor {Baron}
+pofficer {Candidate}
+poorman {Beggar}
+portman {Harbormaster}
+potion_merchant {Alchemist}
+priest {Priest}
+prisonboss {Commandant}
+sailor {Sailor}
+shipyarder {Shipwright}
+smuggler {Smuggler}
+soldier_town {Guard}
+tavernkeeper {Innkeeper}
+trader {Trader}
+usurer {Banker}
+veteran_merchant {Ironmonger}
+waitress {Waitress}
+whore {Wench}
+wife {Wife}

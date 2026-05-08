@@ -1,12 +1,4 @@
 MerchantOnMap_1 {Händler}
-MerchantOnMap_2 {Es gab ein Gerücht, dass}
-MerchantOnMap_3 {verwegener Pirat}
-MerchantOnMap_4 {verwegener Pirat}
-MerchantOnMap_5 {erwischt wurde.}
-MerchantOnMap_6 { }
-MerchantOnMap_7 { }
-MerchantOnMap_8 {~ in einer Falle, in der ~}
-MerchantOnMap_9 {er}
 MerchantOnMap_10 {sie}
 MerchantOnMap_11 {~ wurde von @<NationNameSK(sti(MerPrm.ination))> Behörden geködert. Sie schickten nach ~}
 MerchantOnMap_12 {ihm}
@@ -17,6 +9,7 @@ MerchantOnMap_16 { }
 MerchantOnMap_17 {, ~}
 MerchantOnMap_18 {er}
 MerchantOnMap_19 {sie}
+MerchantOnMap_2 {Es gab ein Gerücht, dass}
 MerchantOnMap_20 {~  hat sie einfach alle getötet!}
 MerchantOnMap_21 { }
 MerchantOnMap_22 { }
@@ -27,4 +20,11 @@ MerchantOnMap_26 { }
 MerchantOnMap_27 { }
 MerchantOnMap_28 { }
 MerchantOnMap_29 {~ So sieht unser verwegener Pirat @<GetFullName(pchar)> aus.}
+MerchantOnMap_3 {verwegener Pirat}
 MerchantOnMap_30 {Man sagt, dass der verwegene Pirat - @<GetFullName(pchar)> begann, @<NationNameSK(sti(MerPrm.ination))> Handelsschiffe zu überfallen. Und dann beschloss unser Generalgouverneur, ihm ein Ende zu bereiten. Er rüstete ein als Händler getarntes Schiff mit mehreren Dutzend gut ausgebildeten Soldaten aus Europa aus und schickte es zu ihm. Doch der blutrünstige Pirat tötete sie alle und entkam erneut der Justiz!}
+MerchantOnMap_4 {verwegener Pirat}
+MerchantOnMap_5 {erwischt wurde.}
+MerchantOnMap_6 { }
+MerchantOnMap_7 { }
+MerchantOnMap_8 {~ in einer Falle, in der ~}
+MerchantOnMap_9 {er}

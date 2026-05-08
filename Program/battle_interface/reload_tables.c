@@ -14,7 +14,7 @@ void CreateReloadPaths(string groupID)
 	// запишем все переходы в локациях используемой группы
 	for(i=0; i<MAX_LOCATIONS; i++)
 	{
-		if( !CheckAttribute(&Locations[i],"fastreload") ) 
+		if (!CheckAttribute(&Locations[i], "fastreload"))
 		{
 			continue;
 		}
@@ -169,15 +169,17 @@ bool CheckQuestPresents(string locationName)
 	{
 		quest = GetAttributeN(quests,n);
 		sQuestName = GetAttributeName(quest);
-		if(CheckAttribute(quest,"win_condition"))
+		if (CheckAttribute(quest,"win_condition"))
 		{
 			makearef(conditions,quest.win_condition);
-			if( CheckConditionPresents(conditions,locationName) ) return true;
+			if (CheckConditionPresents(conditions,locationName))
+                return true;
 		}
-		if(CheckAttribute(quest,"fail_condition"))
+		if (CheckAttribute(quest,"fail_condition"))
 		{
 			makearef(conditions,quest.fail_condition);
-			if( CheckConditionPresents(conditions,locationName) ) return true;
+			if (CheckConditionPresents(conditions,locationName))
+                return true;
 		}
 	}
 	return false;
@@ -186,23 +188,27 @@ bool CheckQuestPresents(string locationName)
 bool CheckConditionPresents(aref conditions, string locationName)
 {
 	int n;
+    string sType;
 	aref condition;
 	int  nConditionsNum = GetAttributesNum(conditions);
 	for(n = 0; n < nConditionsNum; n++)
 	{
 		condition = GetAttributeN(conditions,n);
+        sType = GetAttributeValue(condition);
+        if (sType == "location" || sType == "locator" || sType == "ExitFromLocation")
+        {
+            if (condition.location == locationName && "silent" !in condition)
+                return true;
+        }
+        /* to_do: раскомментить после влива свича
 		switch(GetAttributeValue(condition))
 		{
-		case "location":
-			if(condition.location==locationName) return true;
-		break;
-		case "locator":
-			if(condition.location==locationName) return true;
-		break;
-		case "ExitFromLocation":
-			if(condition.location==locationName) return true;
-		break;
-		}
+            case "location":
+            case "locator":
+            case "ExitFromLocation":
+                if (condition.location == locationName && "silent" !in condition)
+                    return true;
+		}*/
 	}
 	return false;
 }
@@ -287,14 +293,15 @@ void PlayerFastTravel(int startLocIdx, string finishLocName, string locatorname)
 
 int GetLocationNation(aref arLocation)
 {
-	if( CheckAttribute(arLocation,"ItsNation") )	return sti(arLocation.ItsNation);
-	if( CheckAttribute(arLocation,"fastreload") )
+	if (CheckAttribute(arLocation,"ItsNation"))
+        return sti(arLocation.ItsNation);
+	if (CheckAttribute(arLocation,"fastreload"))
 	{
 		string islName,locName;
-		if( GetFortReloadFromTable(arLocation.fastreload, &islName, &locName) )
+		if (GetFortReloadFromTable(arLocation.fastreload, &islName, &locName))
 		{
 			int chidx = Fort_FindCharacter(islName,"reload",locName);
-			if(chidx>=0)
+			if (chidx>=0)
 			{
 				ref chref = GetCharacter(chidx);
 				return sti(chref.nation);
@@ -306,7 +313,7 @@ int GetLocationNation(aref arLocation)
 
 bool GetFortReloadFromTable(string tblName, ref refIslName, ref refLocName)
 {
-	switch (tblName)
+	switch(tblName)
 	{
 	case "SentJons":
 		refIslName="Antigua";
@@ -605,7 +612,6 @@ bool IsEnableLocToLocReload(string sFromLocName, string sToLocName, string locat
 {
 	aref tbl;
 	makearef(tbl,objFastReloadTable.Paths.table);
-	if( !CheckAttribute(tbl,sFromLocName) ) return false;
-
-	return chrCheckReload( &Locations[sti(tbl.(sFromLocName))], locatorName );
+	if (!CheckAttribute(tbl,sFromLocName)) return false;
+	return chrCheckReload(&Locations[sti(tbl.(sFromLocName))], locatorName);
 }

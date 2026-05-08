@@ -1,0 +1,53 @@
+Node0_title {Prośba oficera}
+Node0_a_a {Do waszej kajuty ze spuszczoną głową wchodzi $attr($context.officerName) — wasz _$attr($context.officerJob). Robi dramatyczną pauzę, po czym z żalem opowiada o swoim nieszczęściu: podczas niedawnego posiedzenia w ładowni zdołał przegrać z jednym z marynarzy $rand(rodzinną broszę|swój krzyżyk|spinki po ojcu). Prosi was o niewielką pożyczkę, by się odegrać i odzyskać cenną pamiątkę.}
+Node0_a_a_action {Odegraj się i podziel wygraną!}
+Node0_a_a_success {Wydzielacie potrzebną kwotę pod warunkiem, że $rand(odda wam pieniądze i połowę wygranej|zwróci wam wszystko co do ostatniej monety i dorzuci połowę wygranej). Po pewnym czasie do waszych drzwi puka rozradowany $attr($context.officerName). Jego kosztowność znów jest na miejscu, a on $rand(dotrzzymuje swojej części umowy|dotrzymuje słowa), oddając wam waszą dolę.}
+Node0_a_a_success_action {Łatwe pieniądze!}
+Node0_a_a_fail {Wydzielacie potrzebną sumę pod warunkiem $rand(zwrotu waszych pieniędzy i połowy wygranej|że odda wam pieniądze i jeszcze dorzuci połowę wygranej). $attr($context.officerName) $rand(przez długi czas nie pokazuje się wam na oczy|jakby znika ze statku), i w końcu $rand(wzywacie go do kajuty|każecie mu się stawić). Po jego $rand(spuszczonym spojrzeniu|wyglądzie) od razu widać, że kosztowności $rand(nie odzyskał|ostatecznie nie wygrał z powrotem), a wasze pieniądze $rand(przegrał|roztrwonił przy stole).}
+Node0_a_a_fail_action {Cenna lekcja}
+Node0_a_b_action {Ukarać hazard na pokładzie}
+Node0_a_b_success {Regulamin okrętowy jasno zakazuje hazardu. $rand(Urządzacie pokazową chłostę zamieszanym w to marynarzom|Każecie wychłostać zamieszanych marynarzy na oczach całej załogi), a oficera $rand(karzecie odebraniem żołdu|pozbawiacie żołdu na miesiąc).}
+Node0_a_b_success_action {Zasady to zasady}
+Node0_a_c_action {Zmusić marynarza do oddania rzeczy}
+Node0_a_c_success {Jesteście kapitanem statku i wasze słowo jest prawem, ale na takie sytuacje nie ma żadnych przepisów. Wykorzystujecie swój groźny wygląd i potężną posturę, by zastraszyć marynarza i zmusić go do oddania własności waszego oficera. Załoga tego nie zapomni.}
+Node0_a_c_success_action {Ze mną nie ma żartów}
+Node0_a_b {Kiedy wracacie do kajuty po wieczornym obchodzie, pod drzwiami czeka już $attr($context.officerName) — wasz _$attr($context.officerJob). $rand(Niepewnie przestępuje z nogi na nogę|miętoszy się w miejscu), lecz pod waszym $rand(groźnym spojrzeniem|spojrzeniem) $rand(pęka|ustępuje) i wreszcie przechodzi do rzeczy. W porcie, do którego zmierzacie, wyznaczono mu pojedynek, a on boi się przegrać. Jako atut prosi o klingę przechowywaną w waszej skrzyni. Zapewnia, że _$attr($context.bladeName) $rand(znacznie zwiększy jego szanse na zwycięstwo|da mu rozstrzygającą przewagę).}
+Node0_b_a_action {Nie szpada, lecz ręka decyduje!}
+Node0_b_a_success {Wzywacie $casedName($attr($context.officerName)|Gen) na treningowy pojedynek wprost w kajucie. Trzyma się dzielnie, choć do waszego kunsztu jeszcze mu daleko. Po ćwiczeniu pokazujecie mu kilka swoich popisowych fint i uderzeń, a teraz $attr($context.officerName) czuje się znacznie pewniej.}
+Node0_b_a_success_action {Ciężko na ćwiczeniach, lżej w boju.}
+Node0_b_a_fail {$attr($context.officerName) z początku trzyma się całkiem nieźle, ale szybko opada z sił i przegrywa z kretesem. Zakazujecie mu udziału w pojedynku — honor jest cenny, lecz życie cenniejsze.}
+Node0_b_a_fail_action {Nie pakuj się już więcej w takie sprawy.}
+Node0_b_b_action {Bierz, daję ci go.}
+Node0_b_b_success {Postanawiacie, że ta broń będzie $rand(zdecydowanie bardziej przydatna oficerowi niż wam|bardziej przydatna oficerowi niż wam), i $rand(oddajecie mu ją bez żadnej zapłaty|bez żalu się z nią rozstajecie). $attr($context.officerName) szczerze wam dziękuje i wygląda na wyraźnie pewniejszego siebie. Dochodzicie do wniosku, że $rand(takie dary warto wręczać częściej|takie prezenty powinno się przyznawać częściej) — $rand(za wysługę albo wyjątkową odwagę|za wysługę i wyjątkową odwagę).}
+Node0_b_b_success_action {Niech najpierw sobie zasłużą.}
+Node0_b_c_action {Nie będzie żadnego pojedynku.}
+Node0_b_c_success {Odmawiacie oficerowi i zamiast tego $rand(przeprowadzacie z nim długą wychowawczą rozmowę|urządzacie mu długą reprymendę). $rand(Słucha jej ze spuszczonym wzrokiem i miną człowieka pogodzonego z losem|Słucha w milczeniu, patrząc w dół), a wy $rand(wzmacniacie tę nauczkę dwiema karnymi wachtami|dokładacie mu dwie karne wachty). Sam pojedynek, $rand(oczywiście|rzecz jasna), zostaje odwołany.}
+Node0_b_c_success_action {Regulamin spisano krwią.}
+Node0_a_c {paesano|parente alla lontana|parente acquisito|vecchia conoscenza). Vi chiede di non consegnare il prigioniero alle autorità, ma di lasciarlo andare nella baia più vicina.}
+Node0_c_a_action {Wykonać egzekucję jeńca}
+Node0_c_a_success {Postanawiasz uczynić z tej sytuacji surową nauczkę i wydajesz rozkaz zgładzenia jeńca. $attr($context.officerName) jest wstrząśnięty, lecz nie odważa się sprzeciwić twojemu słowu. Alonso wykonuje wyrok. Wieści o twoim okrucieństwie błyskawicznie rozchodzą się po całym statku i daleko poza nim.}
+Node0_c_a_success_action {Nie będzie litości}
+Node0_c_b_action {Wypuścić jeńca}
+Node0_c_b_success {Rozkazujesz wypuścić jeńca i przydzielić mu miejsce przy kambuzie aż do przybycia do najbliższego miasta. $attr($context.officerName) dziękuje ci i aż promienieje. Żądasz, by całą sprawę zachować w tajemnicy, inaczej pod twoją kajutą zaraz ustawi się kolejka proszących.}
+Node0_c_b_success_action {To wyjątek, nie zasada}
+Node0_c_c_action {W takim razie sam go wykup}
+Node0_c_c_success {Proponujesz uczciwy układ - oficer może już teraz wykupić $attr($context.prisonerName) z własnego żołdu. Wtedy nie trzeba będzie łamać żadnych zasad i nikt nie będzie czuł się niczyim dłużnikiem. $attr($context.officerName) przez chwilę się waha, lecz ostatecznie przystaje na twoje warunki.}
+Node0_c_c_success_action {Trato justo}
+Node0_c_d_action {Decyzji kapitana się nie dyskutuje}
+Node0_c_d_success {Odmawiasz oficerowi. Kimkolwiek jest jeniec, poddał się i znajduje się teraz w twojej władzy, a to do ciebie należy decyzja, co z nim zrobić. Raz okażesz słabość - i nie będzie końca chętnym do załatwiania własnych spraw kosztem kapitana. $attr($context.officerName) wygląda na przygnębionego, ale niewiele cię to obchodzi.}
+Node0_c_d_success_action {Prawo to ja}
+Node0_a_d {Ostatnio zaczęliście zauważać, że $attr($context.officerName) jest $rand(niezwykle milczący i zamyślony|nienaturalnie milczy i chodzi z kamienną twarzą). $rand(Coraz częściej spędza wolny czas, wpatrując się w horyzont.|Coraz częściej stoi przy burcie i patrzy w jeden punkt, jakby wypatrywał czyjegoś żagla.) W końcu nie wytrzymujecie i $rand(wypytujecie go o powód|pytacie wprost), a on dzieli się z wami swoją tragedią — podczas ostatniego postoju otrzymał wieść o śmierci $rand(bliskiego krewnego|bliskiej osoby). $rand(Nie zdążacie jeszcze złożyć kondolencji|Ledwo zamierzacie coś powiedzieć), gdy oficer prosi was o przysługę — potrzebuje świecy i lampki do modlitwy, a na złość losu są one tylko w waszej kajucie.}
+Node0_d_a_action {Oczywiście, bierz}
+Node0_d_a_success {Oddajecie oficerowi potrzebne do nabożeństwa żałobnego przedmioty i postanawiacie $rand(nie obciążać go pracą|zdjąć z niego część obowiązków), póki $rand(opłakuje stratę|jest w żałobie). Wygląda na $rand(wdzięcznego|wyraźnie wdzięcznego), choć $rand(piętno żałoby|czarny cień smutku) przytłumia to uczucie.}
+Node0_d_a_success_action {To minie}
+Node0_d_b_action {Zrobimy to jak należy}
+Node0_d_b_success {$attr($context.officerName) jest waszym _$attr($context.officerJob), a nie zwykłym marynarzem. To $rand(daje mu|oznacza) pewne przywileje. Każecie urządzić w mesie $rand(oficjalne nabożeństwo żałobne|nabożeństwo żałobne zgodne z regulaminem). $attr($context.officerName) wygląda na $rand(nieco speszonego|speszonego), ale szybko $rand(ustępuje to wdzięczności|przechodzi to w wdzięczność).}
+Node0_d_b_success_action {Wiernym towarzyszom — to, co najlepsze}
+Node0_d_c_action {Bóg i tak cię usłyszy}
+Node0_d_c_success {Przekonujecie oficera, że szczera modlitwa zostanie wysłuchana nawet bez obrzędu.$br$red$attr($context.officerName) zdaje się z tym zgadzać. Czujecie dumę, że wasze słowa przyniosły mu choć odrobinę ulgi.}
+Node0_d_c_success_action {Poradzisz sobie}
+Node0_d_c_fail {Wasze słowa brzmią mało przekonująco, a $attr($context.officerName) wygląda na przygnębionego. Najwyraźniej uznał was po prostu za skąpca i cynika.}
+Node0_d_c_fail_action {Czekaj, nie szkoda mi tego}
+Node0_d_d_action {Kapelan okrętowy pomoże}
+Node0_d_d_success {Wydaje się wam dziwne, że $attr($context.officerName) zapomniał o prawdziwym kapelanie na waszym statku, ale składacie to na karb oślepiającej żałoby.$br$redWzywacie kapelana do kajuty, opowiadacie mu o sprawie i prosicie o słowo pouczenia. $attr($context.officerName) wygląda na nieobecnego duchem, lecz słowa duchownego szybko przywracają mu jasność myśli.}
+Node0_d_d_success_action {Bóg nas usłyszał}

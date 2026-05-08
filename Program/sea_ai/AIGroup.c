@@ -533,7 +533,7 @@ void Group_SetTaskRunaway(string sGroupID, string sGroupAwayFrom)
 
 	rGroup.Task = AITASK_RUNAWAY;
 	rGroup.Task.Target = "";
-	if (bSeaActive)	{ AIRunaway_GroupRunaway(sGroupID, sGroupAwayFrom); }
+	if (bSeaActive) AIRunaway_GroupRunaway(sGroupID, sGroupAwayFrom);
 }
 
 // Task: Attack
@@ -667,7 +667,6 @@ void Group_SetNeutralToCharacter(string sGroupID, int iEnemyToCharacter)
 	}
 }
 
-
 void Group_CheckTask()
 {
 	string sGroupID = GetEventData();
@@ -687,4 +686,13 @@ void Group_CheckTask()
 			AIAttack_CheckTask(sGroupID);
 		break;
 	}
+}
+
+// Не убегать на первичном распределении целей
+// Ставится строго перед Group_SetTaskAttack и когда bSeaActive == true
+void Group_SetBraveryR(ref rGroup) { rGroup.Bravery = ""; }
+void Group_SetBravery(string sGroupID)
+{
+	ref rGroup = Group_FindOrCreateGroup(sGroupID);
+	rGroup.Bravery = "";
 }

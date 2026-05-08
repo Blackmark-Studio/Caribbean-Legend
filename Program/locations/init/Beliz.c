@@ -870,6 +870,7 @@ int LocationInitBeliz(int n)
 	locations[n].image = "loading\Gate" + rand(1) + ".tga";
 	//Town sack
 	Locations[n].townsack = "Beliz";
+	Locations[n].fastreload = "Beliz";
 	//Sound
 	locations[n].type = "jungle";
 	locations[n].islandId = "Mein";

@@ -48,7 +48,7 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 		CI_CreateAndSetControls("", "CoastFoamINS", CI_GetKeyCode("VK_INSERT"), 0, true);
 		CI_CreateAndSetControls("", "CoastFoamDEL", CI_GetKeyCode("VK_DELETE"), 0, true);
 		CI_CreateAndSetControls("", "CoastFoamCopy", CI_GetKeyCode("KEY_C"), 0, true);
-		CI_CreateAndSetControls("", "FreeCam", CI_GetKeyCode("KEY_0"), 0, true);
+		CI_CreateAndSetControls("", "FreeCam", CI_GetKeyCode("VK_A_TILDA"), 0, false);
 	}
 
 // Character ===================================================================
@@ -85,9 +85,11 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	
 	// evganat - ПРИЦЕЛИВАНИЕ
 	CI_CreateAndSetControls("FightModeControls", "ChrAiming", CI_GetKeyCode("KEY_Q"), 0, true);
-    CI_CreateAndSetControls("FightModeControls", "ChrFire", CI_GetKeyCode("KEY_Q"), 0, true);
+    CI_CreateAndSetControls("FightModeControls", "ChrFire", CI_GetKeyCode("KEY_Q"), 0, true); // Фикция (to_do: del)
 	CI_CreateAndSetControls("FightModeControls", "ChrAimingShot", CI_GetKeyCode("VK_LBUTTON"), 0, true);
-    MapControlToGroup("ChrFire","BattleInterfaceControls");
+    // MapControlToGroup("ChrFire","BattleInterfaceControls");
+    // MapControlToGroup("ChrAiming","BattleInterfaceControls");
+    // MapControlToGroup("ChrAimingShot","BattleInterfaceControls");
 
 	// evganat - камера
 	// CI_CreateAndSetControls("PrimaryLand", "SwitchCameraOffset", CI_GetKeyCode("VK_TAB"), 0, true);
@@ -100,9 +102,9 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 
 	// CI_CreateAndSetControls( "PrimaryLand", "ChrCamNormalize", CI_GetKeyCode("KEY_Y"), 0, true );
 	// fight
-	CI_CreateAndSetControls("FightModeControls", "ChrAltAttackBase", CI_GetKeyCode("VK_LBUTTON"), 0, true);   //2
+	CI_CreateAndSetControls("FightModeControls", "ChrAltAttackBase", CI_GetKeyCode("VK_LBUTTON"), 0, true); //2
 	CI_CreateAndSetControls("FightModeControls", "ChrAttackBreakBase", CI_GetKeyCode("VK_MBUTTON"), 0, true); 
-	CI_CreateAndSetControls("FightModeControls", "ChrAttackBase", CI_GetKeyCode("VK_RBUTTON"), 0, true);   //1
+	CI_CreateAndSetControls("FightModeControls", "ChrAttackBase", CI_GetKeyCode("VK_RBUTTON"), 0, true); //1
 	CI_CreateAndSetControls("FightModeControls", "ChrAttackChoseBase", CI_GetKeyCode("VK_SHIFT"), 0, true);
 	CI_CreateAndSetControls("FightModeControls", "ChrBlock", CI_GetKeyCode("VK_SPACE"), 0, true);
 	//belamour альтернативные клавиши --->
@@ -200,6 +202,9 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	// переход в каюту
 	CI_CreateAndSetControls("Sailing3Pers","hk_Cabin", CI_GetKeyCode("KEY_C"), 0, true);
 	AddControlToGroups("hk_Cabin", "Sailing1Pers", "BattleInterfaceControls", "PrimaryLand", "SailingFire");
+    // спустить мину
+	CI_CreateAndSetControls("Sailing3Pers","hk_Mine", CI_GetKeyCode("KEY_G"), 0, true);
+	AddControlToGroups("hk_Mine", "Sailing1Pers", "BattleInterfaceControls", "SailingFire", "");
 	// рендж пушек
 	CI_CreateAndSetControls("Sailing3Pers", "CannonsRange", CI_GetKeyCode("KEY_Q"), 0, true);
     AddControlToGroups("CannonsRange", "Sailing1Pers", "BattleInterfaceControls", "SailingFire", "");
@@ -215,6 +220,9 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	// предварительная перезарядка
 	CI_CreateAndSetControls("Sailing3Pers","hk_ImmediateReload", CI_GetKeyCode("KEY_B"), 0, true);
     AddControlToGroups("hk_ImmediateReload", "Sailing1Pers", "BattleInterfaceControls", "SailingFire", "");
+	// переключение режимов залпа (случайный - от носа к корме - от кормы к носу)
+	CI_CreateAndSetControls("Sailing3Pers", "hk_FireMode", CI_GetKeyCode("KEY_T"), 0, true);
+    AddControlToGroups("hk_FireMode", "Sailing1Pers", "BattleInterfaceControls", "SailingFire", "");
 	// hot keys for cannon charge reload
 		// Balls
 	CI_CreateAndSetControls("Sailing3Pers","hk_charge1", CI_GetKeyCode("KEY_1"), 0, true);
@@ -345,6 +353,7 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	CI_CreateAndSetControls("MainInterface", "InterfaceTabSwitch", CI_GetKeyCode("VK_TAB"), 0, false);
 	CI_CreateAndSetControls("MainInterface", "InterfaceInfoSwitch", CI_GetKeyCode("KEY_S"), 0, false);
 	CI_CreateAndSetControls("MainInterface", "InterfaceTakeAll", CI_GetKeyCode("KEY_F"), 0, true);
+    CI_CreateAndSetControls("MainInterface", "ChangeHint", CI_GetKeyCode("KEY_Z"), 0, false);
 	MapControlToGroup("InterfaceTakeAll","PrimaryLand");
 
 	// controls for instant exit from interface (used by function XI_RegistryExitKey() )
@@ -364,6 +373,8 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 // Interface open controls for alternative layout =======================================
 	CI_CreateAndSetControls("PrimaryLand", "Alchemy", CI_GetKeyCode("KEY_K"), 0, true); // Алхимия
 	MapControlToGroup("Alchemy","BattleInterfaceControls");
+    CI_CreateAndSetControls("PrimaryLand", "Rest", CI_GetKeyCode("KEY_T"), 0, true); // Отдых
+    MapControlToGroup("Rest","BattleInterfaceControls");
 	CI_CreateAndSetControls("PrimaryLand", "MapView", CI_GetKeyCode("KEY_M"), 0, true); // Атлас
 	MapControlToGroup("MapView","Sailing3Pers");
 	MapControlToGroup("MapView","WorldMapControls");
@@ -413,9 +424,7 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	CI_CreateAndSetControls("", "Turn V", 257, INVERSE_CONTROL, false);
 	SetControlForInverting("Turn V",true);
 	CI_CreateAndSetControls("", "Turn H", 256, 0, false);
-	if (MOD_BETTATESTMODE == "On") CI_CreateAndSetControls("PrimaryLand", "ChrCamCameraSwitch", CI_GetKeyCode("VK_A_TILDA"), 0, false);
 	//CI_CreateAndSetControls("PrimaryLand", "ChrCamCameraRadius", CI_GetKeyCode("VK_MWHEEL_UP"), 0, false);
-    //MapControlToGroup("ChrCamCameraSwitch","FightModeControls"); // evganat - добавляем таб в бой
 
 		// ship follow camera
 	CI_CreateAndSetControls("Sailing3Pers", "ShipCamera_Forward", CI_GetKeyCode("VK_MWHEEL_UP"), 0, true);
@@ -437,7 +446,7 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	CI_CreateAndSetControls("Sailing1Pers", "DeckCamera_Forward", CI_GetKeyCode("VK_LBUTTON"), 0, true);
 	CI_CreateAndSetControls("Sailing1Pers", "DeckCamera_Backward", CI_GetKeyCode("VK_MBUTTON"), 0, true);
 	CI_CreateAndSetControls("Sailing1Pers", "DeckCamera_Turn_V", 257, 0, false);
-	SetControlForInverting("DeckCamera_Turn_V",false);
+	SetControlForInverting("DeckCamera_Turn_V", false);
 	DoControlInvisible("Sailing1Pers", "DeckCamera_Turn_V");
 	CI_CreateAndSetControls("Sailing1Pers", "DeckCamera_Turn_H", 256, 0, false);
 	DoControlInvisible("Sailing1Pers", "DeckCamera_Turn_H");
@@ -453,14 +462,14 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	CI_CreateAndSetControls("", "FreeCamera_Turn_V", 257, INVERSE_CONTROL, false);
 	SetControlForInverting("FreeCamera_Turn_V",true);
 	CI_CreateAndSetControls("", "FreeCamera_Turn_H", 256, 0, false);
-	CI_CreateAndSetControls("", "FreeCamera_Forward", CI_GetKeyCode("VK_LBUTTON"), 0, false);  //VK_LBUTTON
-	CI_CreateAndSetControls("", "FreeCamera_Backward", CI_GetKeyCode("VK_RBUTTON"), 0, false);   //VK_RBUTTON
+	CI_CreateAndSetControls("", "FreeCamera_Forward", CI_GetKeyCode("VK_LBUTTON"), 0, false);
+	CI_CreateAndSetControls("", "FreeCamera_Backward", CI_GetKeyCode("VK_RBUTTON"), 0, false);
 
 // Dialog =====================================================================
 	CI_CreateAndSetControls("DialogControls", "DlgAction", CI_GetKeyCode("VK_SPACE"), 0, false);
-	CI_CreateAndSetControls("DialogControls", "DlgAction1", CI_GetKeyCode("VK_LBUTTON"), 0, false);   // boal new engine
+	CI_CreateAndSetControls("DialogControls", "DlgAction1", CI_GetKeyCode("VK_LBUTTON"), 0, false);
 	CI_CreateAndSetControls("DialogControls", "DlgAction2", CI_GetKeyCode("VK_RETURN"), 0, false);
-	CI_CreateAndSetControls("", "DlgCancel", CI_GetKeyCode("VK_ESCAPE"), 0, false);
+	CI_CreateAndSetControls("", "DlgCancel", CI_GetKeyCode("VK_ESCAPE"), 0, false); // ~!~
 	CI_CreateAndSetControls("DialogControls", "DlgUp", CI_GetKeyCode("VK_UP"), 0, false);
 	CI_CreateAndSetControls("DialogControls", "DlgDown", CI_GetKeyCode("VK_DOWN"), 0, false);
 	CI_CreateAndSetControls("DialogControls", "DlgUp2", CI_GetKeyCode("VK_MWHEEL_UP"), 0, false);
@@ -470,7 +479,8 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	CI_CreateAndSetControls("DialogControls", "DlgScrollUp", CI_GetKeyCode("VK_PRIOR"), 0, false);
 	CI_CreateAndSetControls("DialogControls", "DlgScrollDown", CI_GetKeyCode("VK_NEXT"), 0, false);
 
-	for (int i = 1; i <= 9; i++) {
+	for (int i = 1; i <= 9; i++)
+    {
 		CI_CreateAndSetControls("DialogControls", "DlgActionSel" + i, CI_GetKeyCode("KEY_" + i), 0, false);
 	}
 
@@ -533,21 +543,19 @@ void ExternControlsInit(bool bFirst, bool bClassic)
     AddControlToGroups("BICommandsActivate", "Sailing1Pers", "WorldMapControls", "SailingFire", "");
     // Действия на панели
     CI_CreateAndSetControls("BattleInterfaceControls", "BICommandsConfirm", CI_GetKeyCode("VK_RETURN"), 0, true);
-    AddControlToSettingsGroups("BICommandsConfirm");
 	CI_CreateAndSetControls("BattleInterfaceControls", "BICommandsCancel",  CI_GetKeyCode("VK_ESCAPE"), 0, false);
-    AddControlToSettingsGroups("BICommandsCancel");
     // Навигация по панели
 	CI_CreateAndSetControls("BattleInterfaceControls", "BICommandsUp", CI_GetKeyCode("VK_UP"), 0, true);
-    AddControlToSettingsGroups("BICommandsUp");
 	CI_CreateAndSetControls("BattleInterfaceControls", "BICommandsDown", CI_GetKeyCode("VK_DOWN"), 0, true);
-    AddControlToSettingsGroups("BICommandsDown");
 	CI_CreateAndSetControls("BattleInterfaceControls", "BICommandsLeft", CI_GetKeyCode("VK_LEFT"), 0, true);
-    AddControlToSettingsGroups("BICommandsLeft");
 	CI_CreateAndSetControls("BattleInterfaceControls", "BICommandsRight", CI_GetKeyCode("VK_RIGHT"), 0, true);
-    AddControlToSettingsGroups("BICommandsRight");
-    // Вешаем флаг принудительного обновления во всех группах
-    // По факту используется лишь функционал BattleInterfaceControls, а остальные группы нужны лишь для интерфейса
-    BI_ControlsSyncLock();
+    // Альтернативные
+    CI_CreateAndSetControls("BattleInterfaceControls", "BICommandsConfirm2", CI_GetKeyCode("VK_LBUTTON"), 0, false);
+    CI_CreateAndSetControls("BattleInterfaceControls", "BICommandsCancel2",  CI_GetKeyCode("VK_RBUTTON"), 0, false);
+	CI_CreateAndSetControls("BattleInterfaceControls", "BICommandsLeftW",  CI_GetKeyCode("VK_MWHEEL_UP"), 0, false);
+	CI_CreateAndSetControls("BattleInterfaceControls", "BICommandsRightW", CI_GetKeyCode("VK_MWHEEL_DOWN"), 0, false);
+    // Маркировать основные клавиши панели для отображения во всех вкладках
+    BI_MarkAlwaysDisplay();
 
     // Рас/Синхронизация клавиш
     SetKeySyncParametres();
@@ -678,15 +686,15 @@ void ExternInitKeyCodes()
 	objControlsState.key_codes.VK_ADD     = 107;
 	objControlsState.key_codes.VK_ADD.img = "⊕"; //TO_DO
 	objControlsState.key_codes.VK_SEPARATOR	= 108;
-	objControlsState.key_codes.VK_SEPARATOR.img = "⊙"; //TO_DO
+	objControlsState.key_codes.VK_SEPARATOR.img = "⌴"; //TO_DO ⊙
 	objControlsState.key_codes.VK_SUBTRACT	= 109;
 	objControlsState.key_codes.VK_SUBTRACT.img = "⊖";
 	objControlsState.key_codes.VK_DECIMAL	= 110;
-	objControlsState.key_codes.VK_DECIMAL.img = "⊚";
+	objControlsState.key_codes.VK_DECIMAL.img = "⌴"; //TO_DO ⊚
 	objControlsState.key_codes.VK_DIVIDE	= 111;
 	objControlsState.key_codes.VK_DIVIDE.img = "⊘";
 
-    // FUNCTION KEYS (F1 to F5; TO_DO ОСТАЛЬНЫЕ)
+    // FUNCTION KEYS
 	objControlsState.key_codes.VK_F1     = 112;
 	objControlsState.key_codes.VK_F1.img = "⑴";
 	objControlsState.key_codes.VK_F2     = 113;
@@ -698,19 +706,19 @@ void ExternInitKeyCodes()
 	objControlsState.key_codes.VK_F5     = 116;
 	objControlsState.key_codes.VK_F5.img = "⑸";
 	objControlsState.key_codes.VK_F6     = 117;
-	objControlsState.key_codes.VK_F6.img = "⌴";
+	objControlsState.key_codes.VK_F6.img = "⑹";
 	objControlsState.key_codes.VK_F7     = 118;
-	objControlsState.key_codes.VK_F7.img = "⌴";
+	objControlsState.key_codes.VK_F7.img = "⑺";
 	objControlsState.key_codes.VK_F8     = 119;
-	objControlsState.key_codes.VK_F8.img = "⌴";
+	objControlsState.key_codes.VK_F8.img = "⑻";
 	objControlsState.key_codes.VK_F9     = 120;
-	objControlsState.key_codes.VK_F9.img = "⌴";
+	objControlsState.key_codes.VK_F9.img = "⑼";
 	objControlsState.key_codes.VK_F10     = 121;
-	objControlsState.key_codes.VK_F10.img = "⌴";
+	objControlsState.key_codes.VK_F10.img = "⑽";
     objControlsState.key_codes.VK_F11     = 122;
-	objControlsState.key_codes.VK_F11.img = "⌴";
+	objControlsState.key_codes.VK_F11.img = "⑾";
     objControlsState.key_codes.VK_F12     = 123;
-	objControlsState.key_codes.VK_F12.img = "⌴";
+	objControlsState.key_codes.VK_F12.img = "⑿";
 
     // OTHER (TO_DO: ПЕРЕВЕРИТЬ)
 	objControlsState.key_codes.VK_BACK     = 8;
@@ -783,6 +791,13 @@ void ExternInitKeyCodes()
 	objControlsState.keygroups.Sailing1Pers = "";
 	objControlsState.keygroups.WorldMapControls = "";
 
+    // Группы, отображаемые в опциях
+    objControlsState.SettingGroups.FightModeControls = "";
+	objControlsState.SettingGroups.PrimaryLand  = "";
+	objControlsState.SettingGroups.Sailing3Pers = "";
+	objControlsState.SettingGroups.Sailing1Pers = "";
+	objControlsState.SettingGroups.WorldMapControls = "";
+
 	// Группы для сохранения в опции
 	objControlsState.grouplist.FightModeControls = true;
 	objControlsState.grouplist.PrimaryLand  = true;
@@ -817,14 +832,12 @@ void SetKeySyncParametres()
     SameBindingAllowed("Ship_SailDown",  "BICommandsDown",  3);
     SameBindingAllowed("Ship_TurnLeft",  "BICommandsLeft",  3);
     SameBindingAllowed("Ship_TurnRight", "BICommandsRight", 3);
-}
-
-void BI_ControlsSyncLock()
-{
-    ControlSyncLock("BICommandsConfirm");
-    ControlSyncLock("BICommandsCancel");
-    ControlSyncLock("BICommandsUp");
-    ControlSyncLock("BICommandsDown");
-    ControlSyncLock("BICommandsLeft");
-    ControlSyncLock("BICommandsRight");
+    // Командное меню, удары, выстрелы
+    SameBindingAllowed("ChrAltAttackBase", "ChrAimingShot", 0);
+    SameBindingAllowed("BICommandsConfirm2", "ChrAltAttackBase", 0);
+    SameBindingAllowed("BICommandsConfirm2", "ChrAimingShot", 0);
+    SameBindingAllowed("BICommandsConfirm2", "Ship_Fire", 0);
+    SameBindingAllowed("BICommandsCancel2", "ChrForward2", 0);
+    SameBindingAllowed("BICommandsCancel2", "ChrAttackBase", 0);
+    SameBindingAllowed("BICommandsCancel2", "FireCamera_Set", 0);
 }

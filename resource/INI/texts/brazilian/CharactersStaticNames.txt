@@ -1,108 +1,143 @@
-Smuggler {Contrabandista}
-Cristopher {Cristopher}
-Keynell {Keynell}
-Benjamin {Benjamin}
-Jones {Jones}
-Francis {Francis}
-lord Willoughby {lord Willoughby}
-Gaston {Gaston}
-Bald-pate {Bald-pate}
-Mirabelle {Mirabelle}
-Peter {Peter}
-Walles {Walles}
-One-eyed {One-eyed}
-Pascal {Pascal}
-Voisier {Voisier}
-Master {Master}
-Alexis {Alexis}
 Abraham {Abraham}
-Norman {Norman}
-Diego Francisco {Diego Francisco}
-de Kero {de Kero}
-Dionisio {Dionisio}
-Peres {Peres}
-Alvares {Alvares}
-Ortega {Ortega}
-Fernando {Fernando}
-de Vilyegas {de Vilyegas}
-Esteban {Esteban}
-Garcia {Garcia}
-Carlos {Carlos}
-Estrada {Estrada}
-Ignasio {Ignasio}
-Matthias {Matthias}
-Beck {Beck}
-Florentina {Florentina}
-Claude Francois {Claude Francois}
-de Lyon {de Lyon}
-Diego {Diego}
-de Toledo {de Toledo}
 Alexandro {Alexandro}
-Jacopo {Jacopo}
-Jeraldy {Jeraldy}
-Edward {Edward}
-Doily {Doily}
-Oldjivly {Oldjivly}
-Moris {Moris}
-Mortimer {Mortimer}
-Hope {Hope}
-Ida {Ida}
-Jacob {Jacob}
-Jackman {Jackman}
-Marcus {Marcus}
-Tyrax {Tyrex}
+Alexis {Alexis}
+Alicia {Alicia}
+Alonso {Alonso}
+Alvares {Alvares}
 Andres {Andres}
-de Vera {de Vera}
-Jacques Dille {Jacques Dille}
-du Parquet { }
-Jean Pierre {Jean Pierre}
-Morua {Morua}
 Aurora {Aurora}
-Jacques {Jacques}
+Avendel {Avendel}
+Baker {Baker}
+Bald-pate {Bald-pate}
 Barbazon {Barbazon}
-Cesare {Cesare}
-Craig {Craig}
-Ian {Ian}
-Snake {Snake}
-Timothy {Timothy}
-Vitrye {Vitrye}
-Simon {Simon}
-Merilin {Merilin}
-Sailor {Sailor}
-Pedro Carrilia {Pedro Carrilia}
-de Gusman {de Gusman}
-Dolores {Dolores}
-Luis {Luis}
-de Montanos {de Montanos}
-Ernesto {Ernesto}
-Jeremy Deshamp {Jeremy Deshamp}
-do Mussack {do Mussack}
-de la Cruz {de la Cruz}
-Zachary {Zachary}
-Marlow {Marlow}
-de Aguillera-Gamboa {de Aguillera-Gamboa}
-Joseph {Joseph}
+Bartel {Bartel}
 Batler {Batler}
-Rodrigo {Rodrigo}
+Beck {Beck}
+Benjamin {Benjamin}
+Bernard {Bernard}
+Brouwer {Brouwer}
+Carlos {Carlos}
+Cesare {Cesare}
+Chardon {Chardon}
+Charlie {Charlie}
+Chavinavi {Chavinavi}
+Claude {Claude}
+Claude Francois {Claude Francois}
+Coris {Coris}
+Craig {Craig}
+Cristopher {Cristopher}
+d'Armagnac {d'Armagnac}
+d'Aubuisson {d'Aubuisson}
+Danielle {Danielle}
+de Aguillera-Gamboa {de Aguillera-Gamboa}
+de Aquerre {de Aquerre}
 de Flores-Aldana {de Flores-Aldana}
-Juan {Juan}
+de Gusman {de Gusman}
+de Kero {de Kero}
 de Kuencka {de Kuencka}
-Lolita {Lolita}
-Martin {Martin}
-Thomas {Thomas}
+de la Cruz {de la Cruz}
+de Lyon {de Lyon}
+de Maldonado {de Maldonado}
+de Maure {de Maure}
+de Monper {de Monper}
+de Montanos {de Montanos}
+de Montoya {de Montoya}
+de Toledo {de Toledo}
+de Vera {de Vera}
+de Vilyegas {de Vilyegas}
+Deluc {Deluc}
+Diego {Diego}
+Diego Francisco {Diego Francisco}
+Dionisio {Dionisio}
+do Mussack {do Mussack}
+Doily {Doily}
+Dolores {Dolores}
+du Parquet { }
+Duran {Durand}
+Edward {Edward}
+Ernesto {Ernesto}
+Esteban {Esteban}
+Estrada {Estrada}
+Ferguson {Ferguson}
+Fernando {Fernando}
+Florentina {Florentina}
+Folke {Folke}
+Francis {Francis}
+Francois {Francois}
+Gachet {Gachet}
+Garcia {Garcia}
+Gaston {Gaston}
+Gerritz {Gerritz}
+Gustave {Gustave}
+Hawk {Hawk}
+Helena {Helen}
+Hendrik {Hendrik}
+Henri {Henri}
+Hercule {Hercule}
+Hope {Hope}
+Hugo {Hugo}
+Ian {Ian}
+Ida {Ida}
+Ignasio {Ignasio}
+Irons {Irons}
+Jackman {Jackman}
+Jacob {Jacob}
+Jacopo {Jacopo}
+Jacques {Jacques}
+Jacques Dille {Jacques Dille}
+Jan {Jan}
+Janetta {Janetta}
+Jean {Jean}
+Jean Pierre {Jean Pierre}
+Jeraldy {Jeraldy}
+Jeremy Deshamp {Jeremy Deshamp}
 Johan {Johan}
 Johanna {Johanna}
-Francois {Francois}
+Jones {Jones}
+Joseph {Joseph}
+Juan {Juan}
+Julie {Julie}
+Kasper {Kasper}
+Keynell {Keynell}
+Knippel {Knippel}
 Levasseur {Levasseur}
-Janetta {Janetta}
+Lolita {Lolita}
+Longway {Longway}
+lord Willoughby {lord Willoughby}
+Luis {Luis}
+Maarten {Maarten}
+Marcus {Marcus}
+Marlow {Marlow}
+Martin {Martin}
+Mary {Mary}
+Master {Master}
+Matthias {Matthias}
+McArthur {McArthur}
+Merilin {Merilin}
+Mirabelle {Mirabelle}
+Moko {Moko}
+Moris {Moris}
+Morrison {Morrison}
+Mortimer {Mortimer}
+Morua {Morua}
+Niels {Niels}
+Norman {Norman}
+Oldjivly {Oldjivly}
+One-eyed {One-eyed}
+Ortega {Ortega}
+Pascal {Pascal}
+Paterson {Paterson}
+Pedro Carrilia {Pedro Carrilia}
+Peres {Peres}
+Peter {Peter}
+Picard {Picard}
+Raymond {Raymond}
+Rodrigo {Rodrigo}
 Ruis {Ruis}
-de Aquerre {de Aquerre}
-Coris {Coris}
-Gerritz {Gerritz}
-Chavinavi {Chavinavi}
-TempleSkeleton {temple skeleton}
-Danielle {Danielle}
-Hawk {Hawk}
+Sailor {Sailor}
+Sharle {Sharle}
+Simon {Simon}
+Smuggler {Contrabandista}
 Smuggler_0 {Bêbado Misterioso}
 Smuggler_1 {Anônimo}
 Smuggler_2 {Alguém}
@@ -111,58 +146,23 @@ Smuggler_4 {John Doe}
 Smuggler_5 {Desconhecido}
 Smuggler_6 {Desconhecido}
 Smuggler_7 {Visitante suspeito}
-Sharle {Sharle}
-de Maure {de Maure}
-de Montoya {de Montoya}
-Willy {Willy}
-Paterson {Paterson}
-Mary {Mary}
-Kasper {Kasper}
-Helena {Helen}
-McArthur {McArthur}
-Tichingitu {Tichingitu}
-Hercule {Hercule}
-Tonzag {Tonzag}
-Charlie {Charlie}
-Knippel {Knippel}
-Longway {Longway}
-Folke {Folke}
-Deluc {Deluc}
-Claude {Claude}
-Duran {Durand}
-Hugo {Hugo}
-Avendel {Avendel}
-Raymond {Raymond}
-Baker {Baker}
-Tommy {Tommy}
-Irons {Irons}
-Alonso {Alonso}
-Morrison {Morrison}
-Julie {Julie}
-d'Armagnac {d'Armagnac}
-Henri {Henri}
-d'Aubuisson {d'Aubuisson}
-Alicia {Alicia}
-Chardon {Chardon}
-de Maldonado {de Maldonado}
-Jean {Jean}
-Picard {Picard}
-Gustave {Gustave}
-Gachet {Gachet}
-de Monper {de Monper}
-Maarten {Maarten}
-Visser {Visser}
-Hendrik {Hendrik}
-van Doorn {van Doorn}
-Jan {Jan}
-Brouwer {Brouwer}
-Bartel {Bartel}
-van der Waerden {van der Waerden}
-Niels {Niels}
-Ferguson {Ferguson}
-Willebrord {Willebrord}
+Snake {Snake}
 Snellius {Snellius}
 Stieltjes {Stieltjes}
-Moko {Moko}
-Bernard {Bernard}
+TempleSkeleton {temple skeleton}
+Thomas {Thomas}
 Throckmorton {Throckmorton}
+Tichingitu {Tichingitu}
+Timothy {Timothy}
+Tommy {Tommy}
+Tonzag {Tonzag}
+Tyrax {Tyrex}
+van der Waerden {van der Waerden}
+van Doorn {van Doorn}
+Visser {Visser}
+Vitrye {Vitrye}
+Voisier {Voisier}
+Walles {Walles}
+Willebrord {Willebrord}
+Willy {Willy}
+Zachary {Zachary}

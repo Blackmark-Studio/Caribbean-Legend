@@ -2329,14 +2329,14 @@ void ProcessDialogEvent()
 		case "SharkGoldFleet_05f":
 			pchar.questTemp.SharkGoldFleet.KGBB = "Phantom";
 			dialog.text = "너 꼴 좀 봐라 - 군인 놈들도 곧 따라 하겠네, 하! 자, 결정됐지. 잔 들어, 친구야. 내 새 배를 위해 마시자고. '팬텀'을 위하여!";
-			link.l1 = " 팬텀을 위하여!";
+			link.l1 = "팬텀을 위하여!";
 			link.l1.go = "SharkGoldFleet_06";
 		break;
 		
 		case "SharkGoldFleet_05a":
 			pchar.questTemp.SharkGoldFleet.KGBB = "Shark";
-			dialog.text = "그리고 내 길을 가로지르기 전에 세 번은 생각하게 해! 자, 결정됐군. 잔 들어, 친구. 내 새 배를 위해 한잔하자. '샤크'를 위하여!\n";
-			link.l1 = ""상어"를 위하여!";
+			dialog.text = "그리고 내 길을 가로지르기 전에 세 번은 생각하게 해! 자, 결정됐군. 잔 들어, 친구. 내 새 배를 위해 한잔하자. '샤크'를 위하여!";
+			link.l1 = "상어를 위하여!";
 			link.l1.go = "SharkGoldFleet_06";
 		break;
 		

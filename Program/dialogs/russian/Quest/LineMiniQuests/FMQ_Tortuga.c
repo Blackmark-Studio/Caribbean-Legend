@@ -406,7 +406,7 @@ void ProcessDialogEvent()
 		case "wife_27":
 			PlaySound("VOICE\Russian\Girls_2.wav");
 			dialog.text = "Кто вы такой и что вам нужно в моей спальне?";
-			link.l1 = "Гм... Мы же договаривались с вами о встерече сегодня, в шесть...";
+			link.l1 = "Гм... Мы же договаривались с вами о встрече сегодня, в шесть...";
 			link.l1.go = "wife_28";
 		break;
 		

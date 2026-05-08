@@ -579,7 +579,6 @@ void SharlieTutorial_StartShip(string qName)//начинается морско�
 	realships[sti(pchar.ship.type)].Capacity = 6500;
 	realships[sti(pchar.ship.type)].SpeedRate = 11.65;
 	realships[sti(pchar.ship.type)].TurnRate = 78.65;
-	realships[sti(pchar.ship.type)].WindAgainstSpeed = 1.75;
 	pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
 	SetCrewQuantityFull(pchar);
 	pchar.ship.Crew.Morale = 100;
@@ -809,8 +808,7 @@ void SharlieTutorial_TrumBitva_2()
 	if(bGlobalTutor)
     {
 		SetDummy(sld, true);
-		TEV.Tutor.BackControlsTips = iControlsTips;
-		iControlsTips = 0;
+		TEV.Tutor.BackControlsTips = true;
         TW_InitLand_Fight_1_Attack();
         TW_Open("land_fight");
 	}
@@ -1924,7 +1922,6 @@ void SharlieTutorial_SeaNearMartinique()
 	realships[sti(pchar.ship.type)].Capacity = 6500;
 	realships[sti(pchar.ship.type)].SpeedRate = 11.65;
 	realships[sti(pchar.ship.type)].TurnRate = 78.65;
-	realships[sti(pchar.ship.type)].WindAgainstSpeed = 1.75;
 	pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
 	SetCrewQuantityFull(pchar);
 	pchar.ship.Crew.Morale = 100;

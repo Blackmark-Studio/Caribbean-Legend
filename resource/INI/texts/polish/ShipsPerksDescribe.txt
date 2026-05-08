@@ -2,6 +2,31 @@ new_string
 {
 
 }
+sp1 {Fanatyk}
+sp1_desc {Wyposażona kapliczka pokładowa wraz z ikonami Matki Boskiej w tajemniczy sposób wzmacnia efekty i czas działania kościelnych amuletów.}
+sp1_desc2
+{
+Wzmocnienie każdego amuletu: indywidualnie.
+Wydłużenie czasu działania: 15 dni.
+}
+sp2 {Witaj gościu}
+sp2_desc {Ten legendarny statek jest znany w każdym zakątku archipelagu karaibskiego i wszędzie witany z szacunkiem i podziwem. Miejsce postoju Lady Beth jest natychmiast znane sprzedawcom map, a lokalni kupcy starają się zebrać jak najwięcej kapitału na zakup wartościowych przedmiotów.}
+sp2_desc2
+{
+Premia do szansy pojawienia się sprzedawcy map: 5–12%.
+Zwiększenie zapasu peso: 100%.
+Zwiększenie zapasu dublonów: ~30%.
+}
+sp3 {Tygiel}
+sp3_desc {Na tym okręcie ludzkie życie to tylko krótki etap przed ujawnieniem prawdziwej potęgi. Niewielu przekracza Próg i wraca, ale ci, którym się to udaje, nie boją się już śmierci.}
+sp3_desc2 {Polegli marynarze zwiększają doświadczenie i morale załogi.}
+sp3_SailorsBoardingBonus_desc {Premia do doświadczenia abordażowego: #dSailorsBoardingBonus#%}
+sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 poległych marynarzy)}
+sp3_SurrenderChanceBonus_desc {Zwiększenie szansy na kapitulację: #dSurrenderChanceBonus#%}
+sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 poległych marynarzy)}
+sp4 {Łowca piratów}
+sp4_desc {Ten okręt został zbudowany specjalnie do oczyszczania mórz z piratów. Z każdym zatopionym statkiem załoga staje się bardziej zgrana, działa celniejsze, a fanatyzm kapitana coraz wyraźniejszy.}
+sp4_desc2 {Każdy zniszczony piracki statek na stałe zwiększa zwrotność, zasięg ostrzału, prędkość na mapie świata oraz szybkość przeładowania dział. Aktualny bonus: $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) z 15. ~ Im niższe zagrożenie pirackie, tym niższe koszty utrzymania okrętu. Aktualny bonus: $percent($GetAmsterdamMtp( )) z 40.}
 special0 {Handlowy}
 special0_desc {Statek handlowy zazwyczaj poświęca kaliber, prędkość i liczbę dział na rzecz dużej ładowni. Na samotny rejs takim statkiem może sobie pozwolić tylko bardzo doświadczony kapitan.}
 special0_desc2 {Premia do Siły Floty: niska}
@@ -18,6 +43,7 @@ special3_desc2
 Premia do Siły Floty: średnia
 Premia do ulepszania cech: 15%
 }
+SpecialityUpgrade {Ulepszone przez HWIC}
 trait01 {Mapa prądów}
 trait01_desc {Złożone przyrządy nawigacyjne wykonane na zamówienie przez europejskich mistrzów oraz dokładna mapa podwodnych prądów archipelagu pozwalają znacznie zaoszczędzić czas w podróży.}
 trait01_desc2
@@ -104,29 +130,3 @@ Dodatkowe obrażenia kadłuba i żagli: 200%.
 Czas trwania efektu: 15 sekund.
 Zwiększa szansę pożaru: 200%
 }
-sp1 {Fanatyk}
-sp1_desc {Wyposażona kapliczka pokładowa wraz z ikonami Matki Boskiej w tajemniczy sposób wzmacnia efekty i czas działania kościelnych amuletów.}
-sp1_desc2
-{
-Wzmocnienie każdego amuletu: indywidualnie.
-Wydłużenie czasu działania: 15 dni.
-}
-sp2 {Witaj gościu}
-sp2_desc {Ten legendarny statek jest znany w każdym zakątku archipelagu karaibskiego i wszędzie witany z szacunkiem i podziwem. Miejsce postoju Lady Beth jest natychmiast znane sprzedawcom map, a lokalni kupcy starają się zebrać jak najwięcej kapitału na zakup wartościowych przedmiotów.}
-sp2_desc2
-{
-Premia do szansy pojawienia się sprzedawcy map: 5–12%.
-Zwiększenie zapasu peso: 100%.
-Zwiększenie zapasu dublonów: ~30%.
-}
-sp3 {Tygiel}
-sp3_desc {Na tym okręcie ludzkie życie to tylko krótki etap przed ujawnieniem prawdziwej potęgi. Niewielu przekracza Próg i wraca, ale ci, którym się to udaje, nie boją się już śmierci.}
-sp3_desc2 {Polegli marynarze zwiększają doświadczenie i morale załogi.}
-sp3_SailorsBoardingBonus_desc {Premia do doświadczenia abordażowego: #dSailorsBoardingBonus#%}
-sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 poległych marynarzy)}
-sp3_SurrenderChanceBonus_desc {Zwiększenie szansy na kapitulację: #dSurrenderChanceBonus#%}
-sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 poległych marynarzy)}
-sp4 {Łowca piratów}
-sp4_desc {Ten okręt został zbudowany specjalnie do oczyszczania mórz z piratów. Z każdym zatopionym statkiem załoga staje się bardziej zgrana, działa celniejsze, a fanatyzm kapitana coraz wyraźniejszy.}
-sp4_desc2 {Każdy zniszczony piracki statek na stałe zwiększa zwrotność, zasięg ostrzału, prędkość na mapie świata oraz szybkość przeładowania dział. Aktualny bonus: $percent($attr($context.tuning.modifiers.shipTurnrate.trait_SP4)) z 15. ~ Im niższe zagrożenie pirackie, tym niższe koszty utrzymania okrętu. Aktualny bonus: $percent($GetAmsterdamMtp( )) z 40.}
-SpecialityUpgrade {Ulepszone przez HWIC}

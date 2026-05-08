@@ -834,7 +834,7 @@ void ProcessDialogEvent()
 			UpgradeShipFull(sld);
 			/* UpgradeShipParameter(sld, "SpeedRate");
 			UpgradeShipParameter(sld, "TurnRate");
-			UpgradeShipParameter(sld, "WindAgainstSpeed");
+			UpgradeShipParameter(sld, "rig");
 			UpgradeShipParameter(sld, "HP");
 			UpgradeShipParameter(sld, "MaxCrew");
 			sld.ship.HP = 11880; */
@@ -1408,7 +1408,7 @@ void ProcessDialogEvent()
 		
 		case "holoff_3":
 			dialog.text = "하지만...";
-			link.l1 = ""장교, 여기서는 우리가 조건을 정한다. 네 함대는 파괴됐고, 주둔군은 도시와 단절됐으며, 우리가 결심만 하면 프리깃함이 조각배를 부수듯 빌렘스타트의 방어선을 뚫고 들어갈 것이다. 이제 너는 스타이베산트 나리에게 전할 편지를 받을 것이고, 우리의 초대장과 함께 그에게 전달해야 한다..."\n";
+			link.l1 = "장교, 여기서는 우리가 조건을 정한다. 네 함대는 파괴됐고, 주둔군은 도시와 단절됐으며, 우리가 결심만 하면 프리깃함이 조각배를 부수듯 빌렘스타트의 방어선을 뚫고 들어갈 것이다. 이제 너는 스타이베산트 나리에게 전할 편지를 받을 것이고, 우리의 초대장과 함께 그에게 전달해야 한다...";
 			link.l1.go = "holoff_4";
 		break;
 		

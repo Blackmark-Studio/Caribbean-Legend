@@ -437,8 +437,7 @@ void TW_RefreshTimer()
 		return;
 	}
 	arTask.timer = iCurTimer;
-	float timeScale = 1 + TimeScaleCounter * 0.25;
-	PostEvent("TW_RefreshTimer", makeint(1000 * timeScale));
+	PostEvent("TW_RefreshTimer", int(1000 * GetTimeScale()));
 }
 
 void TW_RestartTimer()
@@ -450,8 +449,7 @@ void TW_RestartTimer()
 void TW_DeleteTimer()
 {
 	string sTask = objTask.current;
-	if(CheckAttribute(&objTask, sTask + ".timer"))
-		DeleteAttribute(&objTask, sTask + ".timer");
+	DeleteAttribute(&objTask, sTask + ".timer");
 }
 
 ////////////////////////////////////////////////////////////////////////

@@ -73,6 +73,7 @@ int ChangeCharacterHunterScore(ref chref, string _huntName, int incr)
 
 	if (_huntName == "pirhunter") return 0;
 	if (CheckAttribute(chref, "GenQuest.HunterScore2Pause")) incr = 0;
+	incr = makeint(makefloat(incr) * SZN_GetModifierMtp(M_NATIONS_REPUTATION_MTP, 1.0, 0.01));
 
 	if (CheckAttribute(chref, "reputation." + _huntName) )	prevVal = sti(chref.reputation.(_huntName));
 
@@ -189,8 +190,10 @@ float GetBonusDeceptionChance(ref chr)
 
 	*@return ножитель вида n.n
 */
-float GetPiratesMtp(float maxmtp, string pirates, float degree)
+float GetPiratesMtp(float maxmtp, string pirates, float degree, ref chr = nullptr)
 {
-	int stat = GetPirates(pchar, pirates);
+	if (chr == nullptr) chr = pchar;
+
+	int stat = GetPirates(chr, pirates);
 	return maxmtp*pow(stat/10.0, degree);
 }

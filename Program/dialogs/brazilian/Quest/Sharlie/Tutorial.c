@@ -468,6 +468,7 @@ void ProcessDialogEvent()
 			dialog.text = "Marinheiro experiente. Não sei muito sobre ele, mas posso te dizer uma coisa: se todo homem tem um esqueleto no armário, o Alonso tem um cemitério inteiro.";
 			link.l1 = "Parece que você não confia nele.";
 			link.l1.go = "Captain_7_question_2_2";
+			AddCharacterSkillPoints(pchar, "Leadership", 1);
 		break;
 		
 				case "Captain_7_question_2_2":
@@ -487,6 +488,7 @@ void ProcessDialogEvent()
 			dialog.text = "Você tocou num ponto sensível, "+pchar.name+"! Eu poderia falar da minha beleza para sempre. Terceira classe, vinte canhões, ótima velocidade — não se deixe enganar pelo ‘mercante’!";
 			link.l1 = "Entendi a parte das armas e da velocidade. Mas ‘taxa’? ‘Mercante’?";
 			link.l1.go = "Captain_7_question_3_2";
+			AddCharacterSkillPoints(pchar, "Sailing", 1);
 		break;
 		
 		case "Captain_7_question_3_2":

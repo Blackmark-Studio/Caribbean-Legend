@@ -553,7 +553,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_wife_23":
 			dialog.text = "お前は残酷で無慈悲な男だ！誓って俺は……";
-			link.l1 = "「ボースン！こいつを見張って、俺たちが"+到着地+"に着くまでずっと目を離すなよ」 "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.QuestCity+"Gen")+"!";
+			link.l1 = "「ボースン！こいつを見張って、俺たちが到着地に着くまでずっと目を離すなよ」 "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.QuestCity+"Gen")+"!";
 			link.l1.go = "FalseTrace_wife_18";
 			SetCharacterRemovable(&characters[sti(pchar.GenQuest.LastQuestPrisonerIdx)], true);
 		break;

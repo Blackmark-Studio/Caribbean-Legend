@@ -507,11 +507,11 @@ void ProcessDialogEvent()
 			PChar.GenQuest.ChurchQuest_1.CapGoToColony = sColony;
 			if(CheckAttribute(pchar, "GenQuest.ChurchQuest_1.NoMoneyToPortMan"))
 			{
-				dialog.text = "完璧だ！さてと……ちょっと待ってくれ……ここだ……よし。船の改名は登録された、そしてこれからこの船は『"+PChar.GenQuest.ChurchQuest_1.CapShipName+"「」+Captain+"船長の指揮下" "+PChar.GenQuest.ChurchQuest_1.CapFullName+" 本日、出航して向かった "+XI_ConvertString("Colony"+sColony+"Gen")+".";
+				dialog.text = "よし！今から見てみますね…少々お待ちを…はい、どうぞ。船籍簿には改名が記録されており、『" + PChar.GenQuest.ChurchQuest_1.CapShipName + "』と名付けられた船は、船長" + PChar.GenQuest.ChurchQuest_1.CapFullName + "の指揮のもと、本日" + XI_ConvertString("Colony" + sColony + "Gen") + "へ向けて出航しました。";
 				DeleteAttribute(pchar, "GenQuest.ChurchQuest_1.NoMoneyToPortMan");
 			}
 			else
-				dialog.text = "おお！君は私がとても忙しい男だと本当に理解してくれているんだな、それを分かってくれて嬉しいよ！さてと……ちょっと待ってくれ……ここだ……よし。船の改名は登録された、そしてこの船は今後『"+PChar.GenQuest.ChurchQuest_1.CapShipName+"『』"+GetFullName(sld)+"船長が指揮する "+PChar.GenQuest.ChurchQuest_1.CapFullName+" 本日出航し、～へ向かった "+XI_ConvertString("Colony"+sColony+"Gen")+".";			
+				dialog.text = "おおっ！.. つまり、ええ、私がとても、とても忙しい人だと評価していただいたのですね。少々お待ちを…ええと…はい、どうぞ。船籍簿には改名が記録されています。『" + PChar.GenQuest.ChurchQuest_1.CapShipName + "』と名付けられた船は、船長" + PChar.GenQuest.ChurchQuest_1.CapFullName + "の指揮で、本日" + XI_ConvertString("Colony" + sColony + "Gen") + "へ向けて出航しました。";
 				link.l1 = "ありがとうございます、旦那、あなたは私に大きな恩を売ってくれました。";
 				link.l1.go = "Church_GenQuest1_Node_FillFullInfo_4";
 				AddMoneyToCharacter(pchar, -1000);
@@ -3143,7 +3143,7 @@ void ProcessDialogEvent()
 			link.l1.go = "SeekShip_good_1";
 		break;
 		case "SeekShip_good_1":
-			dialog.text = "報酬を支払う準備ができている。内容は\n " + makeint(sti(npchar.quest.money)) + " ドゥブロン金貨で支払う。残念だが、それ以上は払えない。";
+			dialog.text = "報酬を支払う準備ができている。内容は\n " + sti(npchar.quest.money) + " ドゥブロン金貨で支払う。残念だが、それ以上は払えない。";
 			link.l1 = "さて、もう十分だ。ありがとう、よろしく頼む。";
 			link.l1.go = "exit";
 			TakeNItems(pchar, "gold_dublon", sti(npchar.quest.money));

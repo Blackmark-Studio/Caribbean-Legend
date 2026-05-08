@@ -1,0 +1,9 @@
+alarm_indicator {Indicatore di allarme.}
+Dialog_window {Finestra di dialogo.}
+fast_commands {Comando corrente in accesso rapido.}
+land_commands {Comandi di azione a terra.}
+sea_aim {La vista dei cannoni della nave.}
+sea_minimap {Minimappa di navigazione.}
+ship_commands {Comandi per controllare la tua nave e le navi dei tuoi compagni.}
+WorldMap_Compas {Bussola sulla mappa.}
+WorldMap_Date_Clock {Indicatore di data e ora sulla mappa.}

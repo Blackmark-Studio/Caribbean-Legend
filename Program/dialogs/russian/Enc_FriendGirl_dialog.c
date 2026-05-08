@@ -77,6 +77,7 @@ void ProcessDialogEvent()
 						SetFantomParamFromRank(sld, iRank, true);
 						sld.SaveItemsForDead = true;
 						sld.DontClearDead = true; 
+						LAi_CharacterDisableDialog(sld);
 						sld.money = iRank*200+1000+rand(500);
 						LAi_SetWarriorType(sld);
 						LAi_warrior_SetStay(sld, true);

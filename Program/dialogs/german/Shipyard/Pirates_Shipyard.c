@@ -749,7 +749,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_hull_01":
-			dialog.text = "Gut, rechnen wir nach... Für einen kompletten Neuaufbau des Rumpfes brauche ich je 150 Einheiten Bakaut, Taue, Schiffseide und Harz – und 10.000 goldene Dukaten. Schau mich nicht so an; das meiste Geld geht für Materialien drauf. Diese Arbeit entspricht dem Zerlegen des Schiffs und dem Neubau von Grund auf.";
+			dialog.text = "Also, rechnen wir nach... Für einen vollständigen Neuaufbau des Schiffsrumpfs brauche ich je 150 Einheiten Eisenholz, Tauwerk, Schiffseide und Harz. Dazu kommen noch 10.000 Golddukaten. Und schaut mich nicht so an — der Großteil des Geldes geht für Materialien drauf. Diese Arbeit kommt dem völligen Zerlegen des Schiffs und seinem Neubau von Grund auf gleich.";
 			link.l1 = "Nein, ich glaube nicht. Ich bin nicht bereit, so viele Ressourcen zu bringen und einen Berg Gold für den Neuaufbau abzugeben. Ich bleibe bei dem, was ich habe.";
 			link.l1.go = "FDM_hull_thinking";
 			link.l2 = "Eh, was werden wir nicht alles für unser Schiff tun...Na gut, es ist ein Deal.";

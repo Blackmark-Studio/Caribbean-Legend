@@ -931,6 +931,11 @@ void GiveItemToTrader(aref ch)
 				if(irand == 7) GenerateAndAddItems(ch, "blade_13", 1);
 				if(irand == 7) GenerateAndAddItems(ch, "blade_04", 1);
 			}
+
+			if (CheckAttribute(&TEV, "franshise.mushket_indian.inStock"))
+			{
+				AddItems(ch, "mushket_indian", 1);
+			}
 		break;
 		
 		case "lightman": //Jason - смотрители маяков
@@ -1271,7 +1276,8 @@ void GiveItemToTrader(aref ch)
 		break;
 		
 		case "GasparGold": // ПЧФ
-			AddItems(ch, "gold_dublon", 1000); // дублоны
+			if (ShipBonus2Artefact(pchar, SHIP_LADYBETH)) AddItems(ch, "gold_dublon", 1300);
+			else AddItems(ch, "gold_dublon", 1000); // дублоны
 		break;
 		
 		case "SharlieTurorial": // Sinistra стартовое обучение
@@ -2889,6 +2895,7 @@ bool CharacterIsHere(string id)
     return false;
 }
 
+// TO_DO: Заменить на nullaref, убрав проверки "error"
 aref ErrorAttr()
 {
     aref aError;
@@ -3180,10 +3187,15 @@ string GetIslandNameByRef(ref rIsland)
 {
 	string sIslandUserName = rIsland.name;
 	string sKeyFilePath = "LocLables.txt";
-
 	return GetConvertStr(sIslandUserName, sKeyFilePath);
 }
 
+string GetRegionName(ref rIsland)
+{
+	string sIslandUserName = rIsland.id;
+	string sKeyFilePath = "LocLables.txt";
+	return GetConvertStr(sIslandUserName, sKeyFilePath);
+}
 
 string GetLocationNameByRef(ref rLoc)
 {
@@ -3238,9 +3250,9 @@ string GetCharacterRoleSuffix(ref rChar, string sSuffix)
 	return GetConvertStr(rChar.(sSuffix), sKeyFilePath);
 }
 
-aref GetAref(ref rObject, string attributeName)
+aref GetAref(ref rObject, string attributeName, bool forceCreate = false)
 {
-	if (!CheckAttribute(rObject, attributeName)) return nullptr;
+	if (!CheckAttribute(rObject, attributeName) && !forceCreate) return nullptr;
 
 	aref result;
 	makearef(result, rObject.(attributeName));
@@ -3278,4 +3290,24 @@ string DateTimeToDate(string input)
 	SplitString(&temp, input, " ", 0);
 	int lastPart = GetAttributesNum(&temp) - 1;
 	return GetAttributeOrDefault(&temp, "p" + lastPart, input);
+}
+
+// Залить в массив индексы пленников
+void FillAllPrisonersIndexes(ref result)
+{
+	int found = 0;
+	int passengersQty = GetPassengersQuantity(pchar);
+	for(int i=0; i < passengersQty; i++)
+	{
+		int cn = GetPassenger(pchar,i);
+		if (cn < 0) continue;
+
+		ref passenger = GetCharacter(cn);
+		if (!CheckAttribute(passenger,"prisoned")) continue;
+		if (sti(passenger.prisoned) != true || !GetRemovable(passenger)) continue;
+
+		SetArraySize(&result, found+1);
+		result[found] = cn;
+		found++;
+	}
 }

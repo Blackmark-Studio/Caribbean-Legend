@@ -813,6 +813,7 @@ int LocationInitBarbados(int n)
 	locations[n].image = "loading\Gate" + rand(1) + ".tga";
 	//Town sack
 	locations[n].townsack = "Bridgetown";
+	locations[n].fastreload = "Bridgetown";
 	//Sound
 	locations[n].type = "jungle";
 	locations[n].islandId = "Barbados";
@@ -881,6 +882,7 @@ int LocationInitBarbados(int n)
 	locations[n].carrier = true;
 	//Sound
 	locations[n].type = "plantation";
+    locations[n].fastreload = "Bridgetown";
 	//Models
 	//Always
 	locations[n].filespath.models = "locations\BarbadosPlantation";

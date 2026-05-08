@@ -681,7 +681,7 @@ void HelenDrinking_AddRainbow() {
 	UpgradeShipParameter(shipOwner, "SpeedRate");
 	UpgradeShipParameter(shipOwner, "TurnRate");
 	UpgradeShipParameter(shipOwner, "HP");
-	UpgradeShipParameter(shipOwner, "WindAgainstSpeed");
+	UpgradeShipParameter(shipOwner, "Rig");
 	UpgradeShipParameter(shipOwner, "Capacity");
 	UpgradeShipParameter(shipOwner, "MaxCrew");
 	
@@ -2160,7 +2160,7 @@ void HelenUpgradeShip2() {
 	UpgradeShipParameter(pchar, "SpeedRate");
 	UpgradeShipParameter(pchar, "TurnRate");
 	UpgradeShipParameter(pchar, "HP");
-	UpgradeShipParameter(pchar, "WindAgainstSpeed");
+	UpgradeShipParameter(pchar, "Rig");
 	UpgradeShipParameter(pchar, "Capacity");
 	UpgradeShipParameter(pchar, "MaxCrew");
 	UpgradeShipParameter(pchar, "Cannons");
@@ -2220,8 +2220,9 @@ void Helen_GiveSex(string qName) {
 		return;
 	}
 	
+	ref sld = CharacterFromID("Helena");
+	if (sld.dialog.filename == "Quest\Sharlie\Epilog.c") return; // эпилог без секса
 	chrDisableReloadToLocation = true;
-	sld = CharacterFromID("Helena");
 	PlaceCharacter(sld, "goto", "random_must_be_near");
 	sld.dialog.currentnode = "give_sex";
 	LAi_SetActorType(sld);

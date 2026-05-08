@@ -8,7 +8,7 @@ int g_ControlsLngFile = -1;
 string sBtn1 = "";
 bool bControlsWin = false;
 bool bAdvancedChange = false;
-bool g_bToolTipStarted = false;
+int iEsc = 78;
 
 float 	fHUDRatio 	= 1.0;
 int 	iHUDBase 	= iHudScale;
@@ -59,8 +59,7 @@ void InitInterface_B(string iniName, bool isMainMenu)
     fHUDRatio = stf(Render.screen_y) / iHudScale;
     iHUDBase = makeint(iHudScale);
     newBase = iHUDBase;
-	
-	trace("2 : " + iHudScale);
+
 	g_nCurControlsMode = -1;
 	GameInterface.title = "titleOptions";
 	g_ControlsLngFile = LanguageOpenFile("ControlsNames.txt");
@@ -101,8 +100,18 @@ void InitInterface_B(string iniName, bool isMainMenu)
 
 	SetEventHandler("evFaderFrame","FaderFrame",0);
 
-	aref ar; makearef(ar,objControlsState.key_codes);
+	aref ar;
+    makearef(ar, objControlsState.key_codes);
 	SendMessage(&GameInterface,"lsla",MSG_INTERFACE_MSG_TO_NODE,"KEY_CHOOSER", 0, ar);
+    // Найти номер атрибута VK_ESCAPE
+    for(int i = 0; i < @ar; i++)
+    {
+        if (GetAttributeName(GetAttributeN(ar, i)) == "VK_ESCAPE")
+        {
+            iEsc = i;
+            break;
+        }
+    }
 
 	// if(sti(Render.full_screen)==0)
 	// {
@@ -199,7 +208,6 @@ void ProcessOkExit()
 	// Warship 07.07.09 Эффект свечения
 	SetGlowParams(1.0, sti(InterfaceStates.GlowEffect), 2));
 	iHudScale = newBase;
-	trace("3 : " + iHudScale);
 	// sith дальность прорисовки растительности на островах
 	if(CheckAttribute(&InterfaceStates,"FoliageDrawDistance") && sti(InterfaceStates.FoliageDrawDistance) != curFoliageDrawDistance)
     {
@@ -249,11 +257,13 @@ void ProcessOkExit()
 		string sAutoSave = "AutoSave_" + GetAutoSaveType(i);
 		InterfaceStates.(sAutoSave) = nAutoSaves[i];
 	}
+	
+	SetSpeedColors();
 
 	SaveGameOptions();
 
+    Event("eventChangeOption");
 	ProcessExit();
-	Event("eventChangeOption");
 
 	// change sea settings
 	SetSeaGridStep(stf(InterfaceStates.SeaDetails));
@@ -282,6 +292,7 @@ void ShowConfirmExitWindow()
 	XI_WindowDisable("CONTROLS_WINDOW",true);
 	XI_WindowDisable("AUDIO_WINDOW",true);
 	XI_WindowDisable("OTHER_WINDOW",true);
+	XI_WindowDisable("ACCESSIBILITY_WINDOW",true);
 	XI_WindowDisable("CONFIRM_EXIT_WINDOW",false);
 	XI_WindowShow("CONFIRM_EXIT_WINDOW", true);
 	SetFormatedText("CONFIRM_EXIT_TEXT",XI_ConvertString("ControlsAtt"));
@@ -302,6 +313,7 @@ void ConfirmExitCancel()
 	XI_WindowDisable("CONTROLS_WINDOW",false);
 	XI_WindowDisable("AUDIO_WINDOW",false);
 	XI_WindowDisable("OTHER_WINDOW",false);
+	XI_WindowDisable("ACCESSIBILITY_WINDOW",false);
 	SetCurrentNode("BTN_OK");
 }
 
@@ -359,6 +371,9 @@ void IReadVariableAfterInit()
 	InitSelectors("Camera", "CAMERA", &iGlobalCamera);
 	InitSelectors("EnemyType", "ENEMYTYPE", &iGlobalEnemyType);
 	InitSelectors("Target", "TARGET", &iGlobalTarget);
+	InitSelectors("VisualScheme", "VISUAL_SCHEME", &iVisualScheme);
+	InitSelectors("DialogScale", "DIALOG_SCALE", &iDialogScale);
+	InitSelectors("BestCourse", "BEST_COURSE", &iBestCourse);
 
 	if(iEnabledShipMarks > 0) bDrawBars = true;
 	else bDrawBars = false;
@@ -566,6 +581,7 @@ void procBtnAction()
 			XI_WindowShow("CONTROLS_WINDOW", false);
 			XI_WindowShow("AUDIO_WINDOW", false);
 			XI_WindowShow("OTHER_WINDOW", false);
+			XI_WindowShow("ACCESSIBILITY_WINDOW", false);
 			bControlsWin = false;
 		}	
 		if(iComIndex==ACTION_ACTIVATE) {
@@ -575,6 +591,7 @@ void procBtnAction()
 			XI_WindowShow("CONTROLS_WINDOW", false);
 			XI_WindowShow("AUDIO_WINDOW", false);
 			XI_WindowShow("OTHER_WINDOW", false);
+			XI_WindowShow("ACCESSIBILITY_WINDOW", false);
 			bControlsWin = false;
 			SetCurrentNode("HUD_SLIDE_FRAME");
 		}
@@ -588,6 +605,7 @@ void procBtnAction()
 			XI_WindowShow("CONTROLS_WINDOW", false);
 			XI_WindowShow("AUDIO_WINDOW", false);
 			XI_WindowShow("OTHER_WINDOW", false);
+			XI_WindowShow("ACCESSIBILITY_WINDOW", false);
 			bControlsWin = false;
 		}	
 		if(iComIndex==ACTION_ACTIVATE) {
@@ -597,6 +615,7 @@ void procBtnAction()
 			XI_WindowShow("CONTROLS_WINDOW", false);
 			XI_WindowShow("AUDIO_WINDOW", false);
 			XI_WindowShow("OTHER_WINDOW", false);
+			XI_WindowShow("ACCESSIBILITY_WINDOW", false);
 			bControlsWin = false;
 			SetCurrentNode("GLOW_SLIDE_FRAME");
 		}
@@ -610,6 +629,7 @@ void procBtnAction()
 			XI_WindowShow("CONTROLS_WINDOW", true);
 			XI_WindowShow("AUDIO_WINDOW", false);
 			XI_WindowShow("OTHER_WINDOW", false);
+			XI_WindowShow("ACCESSIBILITY_WINDOW", false);
 			bControlsWin = true;
 			SetAlertMarksControls();
 		}
@@ -620,6 +640,7 @@ void procBtnAction()
 			XI_WindowShow("CONTROLS_WINDOW", true);
 			XI_WindowShow("AUDIO_WINDOW", false);
 			XI_WindowShow("OTHER_WINDOW", false);
+			XI_WindowShow("ACCESSIBILITY_WINDOW", false);
 			bControlsWin = true;
 			SetCurrentNode("LOC_MOUSE_SENSITIVITY_SLIDE_FRAME");
 			SetAlertMarksControls();
@@ -634,6 +655,7 @@ void procBtnAction()
 			XI_WindowShow("CONTROLS_WINDOW", false);
 			XI_WindowShow("AUDIO_WINDOW", true);
 			XI_WindowShow("OTHER_WINDOW", false);
+			XI_WindowShow("ACCESSIBILITY_WINDOW", false);
 			bControlsWin = false;
 		}	
 		if(iComIndex==ACTION_ACTIVATE) {
@@ -643,6 +665,7 @@ void procBtnAction()
 			XI_WindowShow("CONTROLS_WINDOW", false);
 			XI_WindowShow("AUDIO_WINDOW", true);
 			XI_WindowShow("OTHER_WINDOW", false);
+			XI_WindowShow("ACCESSIBILITY_WINDOW", false);
 			bControlsWin = false;
 			SetCurrentNode("MUSIC_SLIDE_FRAME");
 		}
@@ -656,6 +679,7 @@ void procBtnAction()
 			XI_WindowShow("CONTROLS_WINDOW", false);
 			XI_WindowShow("AUDIO_WINDOW", false);
 			XI_WindowShow("OTHER_WINDOW", true);
+			XI_WindowShow("ACCESSIBILITY_WINDOW", false);
 			bControlsWin = false;
 		}	
 		if(iComIndex==ACTION_ACTIVATE) {
@@ -665,8 +689,33 @@ void procBtnAction()
 			XI_WindowShow("CONTROLS_WINDOW", false);
 			XI_WindowShow("AUDIO_WINDOW", false);
 			XI_WindowShow("OTHER_WINDOW", true);
+			XI_WindowShow("ACCESSIBILITY_WINDOW", false);
 			bControlsWin = false;
-			SetCurrentNode("MUSIC_SLIDE_FRAME");
+			SetCurrentNode("FRAME_AUTOSAVE_RANK");
+		}
+		return;
+	}
+	if(sNodName == "BTN_ACCESSIBILITY") {
+		if(iComIndex==ACTION_MOUSECLICK) {
+			XI_WindowDisable("ACCESSIBILITY_WINDOW", false);
+			XI_WindowShow("INTERFACE_WINDOW", false);
+			XI_WindowShow("GRAPHICS_WINDOW", false);
+			XI_WindowShow("CONTROLS_WINDOW", false);
+			XI_WindowShow("AUDIO_WINDOW", false);
+			XI_WindowShow("OTHER_WINDOW", false);
+			XI_WindowShow("ACCESSIBILITY_WINDOW", true);
+			bControlsWin = false;
+		}	
+		if(iComIndex==ACTION_ACTIVATE) {
+			XI_WindowDisable("ACCESSIBILITY_WINDOW", false);
+			XI_WindowShow("INTERFACE_WINDOW", false);
+			XI_WindowShow("GRAPHICS_WINDOW", false);
+			XI_WindowShow("CONTROLS_WINDOW", false);
+			XI_WindowShow("AUDIO_WINDOW", false);
+			XI_WindowShow("OTHER_WINDOW", false);
+			XI_WindowShow("ACCESSIBILITY_WINDOW", true);
+			bControlsWin = false;
+			SetCurrentNode("FRAME_VISUAL_SCHEME");
 		}
 		return;
 	}
@@ -717,10 +766,14 @@ void SelectorValueChanged()
 	if (HandleSelector(sNodeName, "CompassPos",			direction, "COMPASS_POS",		1, &iCompassPos)) return;
 	if (HandleSelector(sNodeName, "MapLabelsMode",		direction, "MAP_LABELS",		2, 0)) return;
 	
-	if (HandleSelector(sNodeName, "HelpTime",			direction, "HELPTIME",			3, &iGlobalHelpTime)) return;
+	if (HandleSelector(sNodeName, "HelpTime",			direction, "HELPTIME",			2, &iGlobalHelpTime)) return;
 	if (HandleSelector(sNodeName, "Camera",				direction, "CAMERA",			1, &iGlobalCamera)) return;
 	if (HandleSelector(sNodeName, "EnemyType",			direction, "ENEMYTYPE",			2, &iGlobalEnemyType)) return;
 	if (HandleSelector(sNodeName, "Target",				direction, "TARGET",			3, &iGlobalTarget)) return;
+	
+	if (HandleSelector(sNodeName, "VisualScheme",		direction, "VISUAL_SCHEME",		5, &iVisualScheme)) return;
+	if (HandleSelector(sNodeName, "DialogScale",		direction, "DIALOG_SCALE",		1, &iDialogScale)) return;
+	if (HandleSelector(sNodeName, "BestCourse",			direction, "BEST_COURSE",		1, &iBestCourse)) return;
 	
 	// обработка автосейвов
 	if(FindSubStr(sNodeName, "AUTOSAVE", 0) != -1)
@@ -960,33 +1013,58 @@ void ChangeSoundSetting()
 void FillControlsList(int nMode)
 {
 	int n,qC,idx;
-	string groupName;
+	string groupName, cName;
 	aref arGrp, arC;
 
-	if(nMode == g_nCurControlsMode) {return;}
+	if (nMode == g_nCurControlsMode)
+        return;
+
 	g_nCurControlsMode = nMode;
 	DeleteAttribute(&GameInterface,"controls_list");
 	GameInterface.controls_list.select = 1;
 	GameInterface.controls_list.top = 0;
 
+    // Текущая группа
 	groupName = GetGroupNameByMode(nMode);
-	if(CheckAttribute(&objControlsState,"keygroups."+groupName))
+	if (CheckAttribute(&objControlsState, "keygroups." + groupName))
     {
 		makearef(arGrp,objControlsState.keygroups.(groupName));
 		qC = GetAttributesNum(arGrp);
 		idx = 0;
-		for(n=0; n<qC; n++)
+		for(n = 0; n < qC; n++)
         {
 			arC = GetAttributeN(arGrp,n);
-			if(!CheckAttribute(arC,"invisible") || arC.invisible!="1")
+			if (!CheckAttribute(arC, "invisible") || arC.invisible != "1")
             {
-				if(AddToControlsList(idx, GetAttributeName(arC), GetAttributeValue(arC), CheckAttribute(arC,"remapping") && arC.remapping=="1"))
+				if (AddToControlsList(idx, GetAttributeName(arC), GetAttributeValue(arC), "remapping" in arC && arC.remapping == "1"))
                 {
 					idx++;
 				}
 			}
 		}
 	}
+
+    cName = "tr" + (idx+1);
+    GameInterface.controls_list.(cName).td1.str = LanguageConvertString(g_ControlsLngFile, "BICommands");
+    GameInterface.controls_list.(cName).td1.align = "center";
+    GameInterface.controls_list.(cName).td1.textoffset = "120,2";
+    idx++;
+
+    // Меню действий отображается везде
+    makearef(arGrp, objControlsState.keygroups.BattleInterfaceControls);
+    qC = GetAttributesNum(arGrp);
+    for(n = 0; n < qC; n++)
+    {
+        arC = GetAttributeN(arGrp, n);
+        cName = GetAttributeName(arC);
+        if (cName in &objControlsState.BI_AlwaysDisplay)
+        {
+            if (AddToControlsList(idx, cName, GetAttributeValue(arC), "remapping" in arC && arC.remapping == "1"))
+            {
+                idx++;
+            }
+        }
+    }
 
 	SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "CONTROLS_LIST", 0);
 	SendMessage(&GameInterface, "lsf", MSG_INTERFACE_SET_SCROLLER, "SCROLL_CONTROLS", 0);
@@ -999,21 +1077,22 @@ bool AddToControlsList(int row, string sControl, string sKey, bool bRemapable)
 	GameInterface.controls_list.(rowname).userdata.control = sControl;
 	GameInterface.controls_list.(rowname).userdata.key = sKey;
 	GameInterface.controls_list.(rowname).td1.str = LanguageConvertString(g_ControlsLngFile,sControl);
-	if(GameInterface.controls_list.(rowname).td1.str == "")
+	if (GameInterface.controls_list.(rowname).td1.str == "")
     {
 		trace("Warning!!! " + sControl + " hav`t translate value");
 	}
-	if(!bRemapable) // выделение контролок которые нельзя поменять
+	if (!bRemapable) // выделение контролок которые нельзя поменять
     {
 		GameInterface.controls_list.(rowname).td1.color = argb(255,128,128,128);
 	}
-	if(CheckAttribute(&objControlsState,"key_codes."+sKey+".img"))
+	if (CheckAttribute(&objControlsState,"key_codes."+sKey+".img"))
     {
 		GameInterface.controls_list.(rowname).td2.fontidx = 0;
 		GameInterface.controls_list.(rowname).td2.textoffset = "78,-10";
 		GameInterface.controls_list.(rowname).td2.scale = 1.00;
 		GameInterface.controls_list.(rowname).td2.str = objControlsState.key_codes.(sKey).img;
-		if(CheckAttribute(&objControlsState,"keygroups.AltPressedGroup"+"."+sControl))
+
+		if (CheckAttribute(&objControlsState,"keygroups.AltPressedGroup"+"."+sControl))
 		{
 			GameInterface.controls_list.(rowname).td3.fontidx = 0;
 			GameInterface.controls_list.(rowname).td3.textoffset = "-17,-10";
@@ -1033,20 +1112,24 @@ bool AddToControlsList(int row, string sControl, string sKey, bool bRemapable)
 void RefreshControlsList()
 {
 	string groupName = GetGroupNameByMode(g_nCurControlsMode);
-	
-	aref rows;
+	string key, controlName;
+	aref rows, row;
 	makearef(rows, GameInterface.controls_list);
 	int rowsCount = GetAttributesNum(rows);
-	for (int i = 0; i < rowsCount; i++) {
-		aref row = GetAttributeN(rows, i);
-		if (!CheckAttribute(row, "userdata.control")) {
-			continue;
-		}
-		string controlName = row.userdata.control;
-		string key = objControlsState.keygroups.(groupName).(controlName);
-		RefreshControlInList(GetAttributeName(row), controlName, key, sti(row.userdata.remapable));
+
+    // Обновить клавиши текущей группы
+	for (int i = 0; i < rowsCount; i++)
+    {
+		row = GetAttributeN(rows, i);
+		if ("userdata.control" !in row) continue;
+        controlName = row.userdata.control;
+        if (controlName in &objControlsState.BI_AlwaysDisplay)
+            key = objControlsState.keygroups.BattleInterfaceControls.(controlName);
+        else
+            key = objControlsState.keygroups.(groupName).(controlName);
+        RefreshControlInList(GetAttributeName(row), controlName, key, sti(row.userdata.remapable));
 	}
-	
+
 	SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "CONTROLS_LIST", 0);
 }
 
@@ -1055,30 +1138,34 @@ void RefreshControlInList(string rowname, string sControl, string sKey, bool bRe
 	aref rowData;
 	makearef(rowData, GameInterface.controls_list.(rowname));
 	DeleteAttribute(rowData, "");
-	
+
 	GameInterface.controls_list.(rowname).userdata.remapable = bRemapable;
 	GameInterface.controls_list.(rowname).userdata.control = sControl;
 	GameInterface.controls_list.(rowname).userdata.key = sKey;
 	GameInterface.controls_list.(rowname).td1.str = LanguageConvertString(g_ControlsLngFile,sControl);
-	if(GameInterface.controls_list.(rowname).td1.str == "") {
+
+	if (GameInterface.controls_list.(rowname).td1.str == "")
+    {
 		trace("Warning!!! " + sControl + " hav`t translate value");
 	}
-	if(!bRemapable) // выделение контролок которые нельзя поменять
+	if (!bRemapable) // выделение контролок которые нельзя поменять
     {
 		GameInterface.controls_list.(rowname).td1.color = argb(255,128,128,128);
 	}
-	if(CheckAttribute(&objControlsState,"key_codes."+sKey+".img")) {
+	if (CheckAttribute(&objControlsState,"key_codes."+sKey+".img"))
+    {
 		GameInterface.controls_list.(rowname).td2.fontidx = 0;
 		GameInterface.controls_list.(rowname).td2.textoffset = "78,-10";
 		GameInterface.controls_list.(rowname).td2.scale = 1.00;
 		GameInterface.controls_list.(rowname).td2.str = objControlsState.key_codes.(sKey).img;
-		if(CheckAttribute(&objControlsState,"keygroups.AltPressedGroup"+"."+sControl))
+
+		if (CheckAttribute(&objControlsState,"keygroups.AltPressedGroup."+sControl))
 		{
 			GameInterface.controls_list.(rowname).td3.fontidx = 0;
 			GameInterface.controls_list.(rowname).td3.textoffset = "-17,-10";
 			GameInterface.controls_list.(rowname).td3.scale = 1.00;
 			GameInterface.controls_list.(rowname).td3.str = objControlsState.key_codes.VK_MENU.img;
-			
+
 			GameInterface.controls_list.(rowname).td4.fontidx = 2;
 			GameInterface.controls_list.(rowname).td4.textoffset = "-15,-8";
 			GameInterface.controls_list.(rowname).td4.scale = 1.00;
@@ -1234,8 +1321,9 @@ void procKeyChange()
 {
 	//FillControlsList();
 	string srow = "tr" + GameInterface.controls_list.select;
-	if(!CheckAttribute(&GameInterface,"controls_list."+srow)) {return;}
-	if(sti(GameInterface.controls_list.(srow).userdata.remapable)!=1) {return;}
+	if(!CheckAttribute(&GameInterface,"controls_list."+srow)) return;
+    if("userdata" !in &GameInterface.controls_list.(srow)) return;
+	if(int(GameInterface.controls_list.(srow).userdata.remapable) != 1) return;
 	ChooseOtherControl();
 }
 
@@ -1269,15 +1357,14 @@ ref procKeyChoose()
 
 	glob_retVal = false;
 
-    // ~!~ DANGER ШИЗА
-    // 78 - НОМЕР АТРИБУТА VK_ESCAPE ИЗ ИНИТОВ
-	if (keyIdx == 78) {
+	if (keyIdx == iEsc)
+    {
 		ReturnFromReassign();
 		glob_retVal = true;
 		return &glob_retVal;
 	}
 
-	if(DoMapToOtherKey(keyIdx,stickUp))
+	if (DoMapToOtherKey(keyIdx,stickUp))
 	{
 		ReturnFromReassign();
 		glob_retVal = true;
@@ -1298,15 +1385,17 @@ void ReturnFromReassign()
 }
 
 // проверка пустых клавиш в конкретной группе
-bool TestGroupForEmptyControls(string group) {
+bool TestGroupForEmptyControls(string group)
+{
 	aref keyGroup;
-
 	makearef(keyGroup, objControlsState.keygroups.(group));
-	
 	int keyGroupControlsNum = GetAttributesNum(keyGroup);
-	for (int i = 0; i < keyGroupControlsNum; i++) {
+
+	for (int i = 0; i < keyGroupControlsNum; i++)
+    {
 		aref keyGroupControl = GetAttributeN(keyGroup, i);
-		if (GetAttributeValue(keyGroupControl) == "") {
+		if (GetAttributeValue(keyGroupControl) == "")
+        {
 			trace("Control " + GetAttributeName(keyGroupControl) + " has empty key");
 			return true;
 		}
@@ -1340,8 +1429,8 @@ bool TestForEmptyControls()
 bool DoMapToOtherKey(int keyIdx, int stickUp)
 {
 	string srow = "tr" + GameInterface.controls_list.select;
-	string groupName = GetGroupNameByMode(g_nCurControlsMode);
-	string sControl = GameInterface.controls_list.(srow).userdata.control;
+    string sControl = GameInterface.controls_list.(srow).userdata.control;
+	string groupName = sControl in &objControlsState.BI_AlwaysDisplay ? "BattleInterfaceControls" : GetGroupNameByMode(g_nCurControlsMode);
 	string sKey = GameInterface.controls_list.(srow).userdata.key;
 	bool bAltPress = XI_IsKeyPressed("alt");
 
@@ -1372,8 +1461,8 @@ bool DoMapToOtherKey(int keyIdx, int stickUp)
 	{
 		return false;
 	}
-	
-	if(CheckAttribute(arKey,"stick") && sti(arKey.stick)==true) return false;
+
+	if (CheckAttribute(arKey,"stick") && sti(arKey.stick) == true) return false;
 
 	string controlReplacement = ""; // friends текущей клавиши сюда не кладутся
 	if(KeyAlreadyUsed(groupName, sControl, GetAttributeName(arKey), bAltPress, &controlReplacement) && controlReplacement == "")
@@ -1404,23 +1493,29 @@ bool DoMapToOtherKey(int keyIdx, int stickUp)
     aref aFriend;
 	if (controlReplacement != "")
     {
-        if(!bAdvancedChange || IsSyncLock(sControl))
+        if (!bAdvancedChange || IsSyncLock(sControl))
         {
             // Затереть всех дублёров во всех группах, кроме friends
             EraseCopiesInAllGroups(sControl);
+        }
+        else if (controlReplacement in &objControlsState.BI_AlwaysDisplay &&
+                 objControlsState.keygroups.BattleInterfaceControls.(sControl).remapping == "0")
+        {
+            // Не затирать клавиши из настроек с выключенным ремапингом (кнопки которых при этом доступны)
+            ;
         }
         else
         {
             // Если меняем внутри одной группы, достаточно проверить дублёра и его friends
             GroupKeyUpdate(controlReplacement, -1, groupName);
-            if(CheckAttribute(&objControlsState, "map.controls." + controlReplacement + ".friends"))
+            if (CheckAttribute(&objControlsState, "map.controls." + controlReplacement + ".friends"))
             {
                 makearef(aFriend, objControlsState.map.controls.(controlReplacement).friends);
                 num = GetAttributesNum(aFriend);
                 for(i = 0; i < num; i++)
                 {
                     sName = GetAttributeName(GetAttributeN(aFriend, i));
-                    if(CheckAttribute(arControlGroup, sName) && arControlGroup.(sName) == arControlGroup.(sControl))
+                    if (CheckAttribute(arControlGroup, sName) && arControlGroup.(sName) == arControlGroup.(sControl))
                     {
                         GroupKeyUpdate(sName, -1, groupName);
                     }
@@ -1481,7 +1576,6 @@ void SetMouseToDefault()
 
 void ShowInfo()
 {
-//	g_bToolTipStarted = true;
 	string sHeader = " ";
 	string sNode = GetEventData();
 
@@ -1607,6 +1701,11 @@ void ShowInfo()
 			sHeader = XI_ConvertString("SFW");
 			sText1 = XI_ConvertString("SFW_descr");
 		break;
+// Accessibility	
+		case "FRAME_VISUAL_SCHEME":
+			sHeader = XI_ConvertString("SFW");
+			sText1 = XI_ConvertString("SFW_descr");
+		break;
 // Other
 		if(FindSubStr(sNode, "AUTOSAVE", 0) != -1)
 		{
@@ -1629,7 +1728,10 @@ void ShowInfo()
 	HandleSelectorDescription(sNode, &sHeader, &sText1, "Camera", "CAMERA");
 	HandleSelectorDescription(sNode, &sHeader, &sText1, "EnemyType", "ENEMYTYPE");
 	HandleSelectorDescription(sNode, &sHeader, &sText1, "Target", "TARGET");
-	CreateTooltipNew(sNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false);
+	HandleSelectorDescription(sNode, &sHeader, &sText1, "VisualScheme", "VISUAL_SCHEME");
+	HandleSelectorDescription(sNode, &sHeader, &sText1, "DialogScale", "DIALOG_SCALE");
+	HandleSelectorDescription(sNode, &sHeader, &sText1, "BestCourse", "BEST_COURSE");
+	CreateTooltipNew(sNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false, false);
 }
 
 void HideInfo()
@@ -1771,6 +1873,9 @@ void RestoreDefaultSettings()
 	SetSelectorDefault("Camera", "CAMERA", 1, &iGlobalCamera);
 	SetSelectorDefault("EnemyType", "ENEMYTYPE", 1, &iGlobalEnemyType);
 	SetSelectorDefault("Target", "TARGET", 2, &iGlobalTarget);
+	SetSelectorDefault("VisualScheme", "VISUAL_SCHEME", 0, &iVisualScheme);
+	SetSelectorDefault("DialogScale", "DIALOG_SCALE", 0, &iDialogScale);
+	SetSelectorDefault("BestCourse", "BEST_COURSE", 0, &iBestCourse);
 	ControlSettings(iControlsMode);
 	bDrawBars = true;
 
@@ -1931,18 +2036,24 @@ void EraseCopiesInAllGroups(string sControl)
     for(i = 0; i < nGQ; i++)
     {
         arKG = GetAttributeN(arKGRoot, i);
-        if(CheckAttribute(arKG, sControl))
+        if (CheckAttribute(arKG, sControl))
         {
             sGroupName = GetAttributeName(arKG);
             num = GetAttributesNum(arKG);
             for(j = 0; j < num; j++)
             {
                 sName = GetAttributeName(GetAttributeN(arKG, j));
-                if(sName == sControl)
+                if (sName == sControl)
                     continue;
-                if(CheckAttribute(&objControlsState, "map.controls." + sControl + ".friends." + sName))
+                if (CheckAttribute(&objControlsState, "map.controls." + sControl + ".friends." + sName))
                     continue;
-                if(arKG.(sName) == arKG.(sControl))
+                if (sName in &objControlsState.BI_AlwaysDisplay &&
+                    objControlsState.keygroups.BattleInterfaceControls.(sName).remapping == "0")
+                {
+                    // Не затирать клавиши из настроек с выключенным ремапингом (кнопки которых при этом доступны)
+                    continue;
+                }
+                if (arKG.(sName) == arKG.(sControl))
                 {
                     GroupKeyUpdate(sName, -1, sGroupName);
                 }

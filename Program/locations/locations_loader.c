@@ -267,19 +267,7 @@ bool LoadLocation(ref loc)
 	}
 
 	// инит данных для режима скрытности
-	StealthEnable = false;
-	if(CheckAttribute(loc,"soldiers"))
-	{
-		if(CheckAttribute(loc,"fastreload") && CheckAttribute(&Colonies[FindColony(loc.fastreload)],"nation"))
-		{
-			
-			StealthNat = Colonies[FindColony(loc.fastreload)].nation;
-			if(GetNationRelation2MainCharacter(StealthNat) == RELATION_ENEMY || GetNationRelation(StealthNat, GetBaseHeroNation()) == RELATION_ENEMY)
-				StealthEnable = true;
-			if(GetRelation2BaseNation(StealthNat) == RELATION_ENEMY) StealthEnable = true;
-			if(StealthNat == PIRATE) StealthEnable = false;
-		}
-	}
+	UpdateStealthParams(loc);
  
 	//Loading always models================================================================
 	aref st, at, lit, lit1;
@@ -567,7 +555,6 @@ bool LoadLocation(ref loc)
 		locCameraSetFPVMode(false);
 	
 	SendMessage(&locCamera, "lf", MSG_CAMERA_SET_RADIUS, stf(locCamera.maxRadius)*stf(locCamera.zoom)); // belamour высота камеры
-	SetEventHandler("Control Activation","locCameraSwitch",1);
 	/*if(isNoBoarding) мешало релоду на абордаже и каюте*/ SetEventHandler("Control Activation","chrCharacterKeys",1);
     if(!LAi_IsCharacterControl(PChar)) SendMessage(&locCamera, "ll", MSG_CAMERA_SPECIALMODE, true); // Не доворачивать за камерой
 
@@ -1085,7 +1072,7 @@ bool UnloadLocation(aref loc)
 
     LocUnloadGrass(loc);
 	ref mainCharacter = GetMainCharacter();
-	if (SendMessage(&mainCharacter, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode") != 0)
+	if (SendMessage(&mainCharacter, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode") != CHR_MODE_PEACE)
 	{
 		mainCharacter.lastFightMode = "1";
 	}
@@ -1130,7 +1117,6 @@ bool UnloadLocation(aref loc)
 		DeleteWeather();
 	}
 
-	DelEventHandler("Control Activation","locCameraSwitch");
 	/*if(isNoBoarding) fix 31.03.05 */ DelEventHandler("Control Activation","chrCharacterKeys");
 	Item_OnUnLoadLocation();
 	LocAi_Release();

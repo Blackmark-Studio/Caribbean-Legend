@@ -786,6 +786,7 @@ int LocationInitPanama(int n)
 	locations[n].image = "loading\Gate" + rand(1) + ".tga";
 	//Town sack
 	locations[n].townsack = "Panama";
+	locations[n].fastreload = "Panama";
 	//Sound
 	locations[n].type = "jungle";
 	locations[n].islandId = "Mein";

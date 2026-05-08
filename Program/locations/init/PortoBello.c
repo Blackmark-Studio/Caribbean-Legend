@@ -835,6 +835,7 @@ int LocationInitPortoBello(int n)
 	locations[n].townsack = "PortoBello";
 	//Sound
 	locations[n].type = "jungle";
+	locations[n].fastreload = "PortoBello";
 	locations[n].islandId = "Mein";
 	locations[n].islandIdAreal = "PortoBello";
 	//Models
@@ -910,6 +911,7 @@ int LocationInitPortoBello(int n)
 	locations[n].carrier = true;
 	//Sound
 	locations[n].type = "plantation";
+    locations[n].fastreload = "PortoBello";
 	//Models
 	//Always
 	locations[n].filespath.models = "locations\BarbadosPlantation";

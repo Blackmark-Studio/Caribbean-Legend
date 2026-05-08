@@ -468,6 +468,7 @@ void ProcessDialogEvent()
 			dialog.text = "高级水手。 我对他了解不多, 但可以告诉你: 如果每个人都有不可告人的秘密, 阿隆索的秘密能装满整个墓地。 ";
 			link.l1 = "听起来你不信任他。 ";
 			link.l1.go = "Captain_7_question_2_2";
+			AddCharacterSkillPoints(pchar, "Leadership", 1);
 		break;
 		
 				case "Captain_7_question_2_2":
@@ -487,6 +488,7 @@ void ProcessDialogEvent()
 			dialog.text = "你触动了我的神经, "+pchar.name+"! 我可以永远谈论我的宝贝。 三流, 二十门炮, 速度极快 —别被‘商船’这个词骗了! ";
 			link.l1 = "我明白炮和速度的部分。 但‘等级’? ‘商船’? ";
 			link.l1.go = "Captain_7_question_3_2";
+			AddCharacterSkillPoints(pchar, "Sailing", 1);
 		break;
 		
 		case "Captain_7_question_3_2":

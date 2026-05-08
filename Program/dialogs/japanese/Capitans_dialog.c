@@ -343,13 +343,13 @@ void ProcessDialogEvent()
                 dialog.text = "なぜだ？俺はちょっと休憩してもかまわねえんだが…";
     			link.l1 = "素晴らしい。";
     			link.l1.go = "Cards_begin";
-    			link.l2 = "「規則は何だ？」";
-    			link.l2.go = "Cards_Rule";
+    			// link.l2 = "「規則は何だ？」";
+    			// link.l2.go = "Cards_Rule";
 			}
 		break;
 
 		case "Cards_Rule":
-   			dialog.text = CARDS_RULE;
+   			dialog.text = GlobalStringConvert("CARDS_RULE");
 			link.l1 = "さあ、始めようぜ！";
 			link.l1.go = "Cards_begin";
 			link.l3 = "いや、俺のためじゃねえ……";
@@ -434,8 +434,8 @@ void ProcessDialogEvent()
 					dialog.text = "いいじゃねえか！くつろぐのは体にはいいが……財布にはそうでもねえからな……";
 	    			link.l1 = "素晴らしい。";
 	    			link.l1.go = "Dice_begin";
-	    			link.l2 = "俺たちのゲームのルールは何だ？";
-	    			link.l2.go = "Dice_Rule";
+	    			// link.l2 = "俺たちのゲームのルールは何だ？";
+	    			// link.l2.go = "Dice_Rule";
     			}
     			else
     			{
@@ -447,7 +447,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Dice_Rule":
-   			dialog.text = DICE_RULE;
+   			dialog.text = GlobalStringConvert("DICE_RULE");
 			link.l1 = "さあ、始めようぜ！";
 			link.l1.go = "Dice_begin";
 			link.l3 = "いいえ、俺のためじゃねえんだ……";

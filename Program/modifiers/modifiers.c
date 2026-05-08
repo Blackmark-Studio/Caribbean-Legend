@@ -2,6 +2,11 @@
 #include "modifiers\descriptors.h"
 #include "modifiers\descriptors.c"
 
+string GetModifierName(string modifier)
+{
+	return GetConvertStrB(modifier, "Modifiers.txt");
+}
+
 // Добавить модификатор предмету/навыку с перезаписью значения
 void SetModifier(ref rObject, string modifier, ref value)
 {
@@ -86,7 +91,9 @@ void RunTableCallbacks(ref chr, string callbackName, ref table, ref context)
 
 	aref functionList;
 	makearef(functionList, table.callbacks.(callbackName));
-	for (int i = 0; i < GetAttributesNum(functionList); i++)
+
+	int functionsQty = GetAttributesNum(functionList);
+	for (int i = 0; i < functionsQty; i++)
 	{
 		aref rFunction = GetAttributeN(functionList, i);
 		string sFunction = GetAttributeName(rFunction);
@@ -100,7 +107,8 @@ void RunCallbacks(ref rObject, string attributeName)
 	aref callbacksObject;
 	makearef(callbacksObject, rObject.(attributeName));
 
-	for (int i = 0; i < GetAttributesNum(callbacksObject); i++)
+	int modifiersQty = GetAttributesNum(callbacksObject);
+	for (int i = 0; i < modifiersQty; i++)
 	{
 		aref functionObject = GetAttributeN(callbacksObject, i);
 		string sFunction = GetAttributeName(functionObject);
@@ -145,7 +153,106 @@ void CopyModifier(ref rTo, ref rFrom, string modifier)
 	rTo.(modifier) = rFrom.(modifier);
 }
 
-int GetModifierInt(ref rObject, string sModifierName, int iDefault)
+// Получить значение модификатора на чём-либо как int
+int GetModifierInt(ref rObject, string modifierName, int iDefault = 0)
 {
-	return GetAttributeIntOrDefault(rObject, "modifiers." + sModifierName, iDefault);
+	return GetAttributeIntOrDefault(rObject, "modifiers." + modifierName, iDefault);
+}
+
+// Получить значение модификатора на чём-либо как float
+float GetModifierFloat(ref rObject, string modifierName, float iDefault = 0.0)
+{
+	return GetAttributeFloatOrDefault(rObject, "modifiers." + modifierName, iDefault);
+}
+
+/*
+	Получить множитель модификатора на чём-либо, то есть база 1.0 + float-значение модификатора
+	@param base базовый множитель, обычно единица, т. е. 100%
+	@param min минимальный множитель, для цен используем 0.01 (1%), чтобы не получалось бесплатно
+	@param max максимальный множитель, если нужен
+
+	@return ножитель вида n.n
+*/
+float GetModifierMtp(ref rObject, string modifierName, float base = 1.0, float min = 0.0, float max = 10.0)
+{
+	return fClamp(min, max, base + GetModifierFloat(rObject, modifierName));
+}
+
+/*
+	Получить значение модификатора состояния на чём-либо
+	@param modifierName имя модификатора
+	@param defaultState состояние по умолчанию
+
+	@return состояние как число
+*/
+int GetModifierState(ref rObject, string modifierName, int defaultState = 0)
+{
+	return GetAttributeIntOrDefault(rObject, "modifiers." + HAS + modifierName, defaultState);
+}
+
+void RemoveModifiersFromSource(ref rObject, string sourceName)
+{
+	int modifiersQty = GetAttributesNum(rObject);
+
+	for (int i = modifiersQty-1; i >= 0; i--)
+	{
+		aref modifier = GetAttributeN(rObject, i);
+		if (!CheckAttribute(modifier, sourceName)) continue;
+
+		string modifierName = GetAttributeName(modifier);
+		float value = stf(modifier.(sourceName));
+		rObject.(modifierName) = stf(GetAttributeValue(modifier)) - value; // вычитаем эффект
+		DeleteAttribute(&modifier, sourceName);                            // убираем источник
+	}
+}
+
+// Складываем бонусы от одного модификатора в другой
+// в частности, используется для отображения бонусов к урону картечью/пулями в общем бонусе к урону огнестрела
+void ApplyModifierAsAnother(ref rTo, ref rFrom, string modifierNameTo, string modifierNameFrom)
+{
+	if (!CheckAttribute(rFrom, modifierNameFrom)) return;
+
+	aref modifierTo, modifierFrom;
+	makearef(modifierTo, rTo.(modifierNameTo));
+	makearef(modifierFrom, rFrom.(modifierNameFrom));
+	CopyAttributesSafe(modifierTo, modifierFrom);
+	AddToAttributeFloat(rTo, modifierNameTo, GetAttributeFloat(rFrom, modifierNameFrom));
+}
+
+// Удаляем временные модификаторы, распиханные по персонажам
+void GlobalRemoveTempModifiers()
+{
+	aref modifiers = GetAref(&TEV, "tempModifiers", true);
+	int now = TMSTD_Timestamp(0);
+	int modifiersQty = GetAttributesNum(modifiers);
+
+	for (int i = modifiersQty-1; i >= 0; i--)
+	{
+		aref modifier = GetAttributeN(modifiers, i);
+		if (now < int(GetAttributeValue(modifier))) continue;
+
+		ref chr = CharacterFromIDSafe(modifier.chrId, true);
+		string sourceName = GetAttributeName(modifier);
+
+		// персонажа нет, значит и модификатор не нужен
+		if (chr == nullptr)
+		{
+			DeleteAttribute(&modifiers, sourceName);
+			continue;
+		}
+
+		aref table = CT_GetTable(chr, modifier.table);
+		RemoveModifiersFromSource(table, sourceName);
+		CT_UpdateCashTables(chr);
+		DeleteAttribute(&modifiers, sourceName);
+	}
+}
+
+// Установить персонажу модификатор на n дней
+void SetTempChrModifier(ref chr, string modifierName, ref value, string sourceName, int days)
+{
+	SetChrModifier(chr, modifierName, value, sourceName);
+	TEV.tempModifiers.(sourceName) = TMSTD_Timestamp(days);
+	TEV.tempModifiers.(sourceName).chrId = chr.id
+	TEV.tempModifiers.(sourceName).table = CT_STATIC;
 }

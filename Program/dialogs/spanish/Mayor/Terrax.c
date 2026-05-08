@@ -647,7 +647,6 @@ void ProcessDialogEvent()
             }
             else
             {
-                SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
                 if (NextDiag.TempNode != "I_know_you_good")
                     dialog.text = "¿Estás loco" + GetSexPhrase("", "a") + "? Mis chicos te evitan como si tuvieras la peste. Así que lárgate y no me molestes.";
                 else
@@ -655,12 +654,12 @@ void ProcessDialogEvent()
                 link.l1 = "Entendido...";
                 link.l1.go = "exit";
             }
+            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
         break;
 
 		case "pirate_threat_pay":
             iGPThreatRate = 0;
             iGPThreat = 0;
-            SaveCurrentNpcQuestDateParam(NPChar, "ThreatTalk");
 			RemoveDublonsFromPCharTotal(iTerraxTotalTemp);
             DialogExit();
             PiratesDecreaseNotif("");
@@ -1569,7 +1568,7 @@ void ProcessDialogEvent()
 				break;
 			}*/
 			dialog.text = "¡Buen momento! Infórmame ahora.";
-			link.l1 = "He rastreado a mi deudor en Le Francois. Su polacra formaba parte de un escuadrón compuesto por una corbeta y una fragata. Marco en persona fue a visitar a Barbaszon, tuvieron una reunión en su lugar durante dos horas, otros visitantes fueron despachados por sus guardias. Luego salió de la casa con dos tipos sombríos: uno era pelirrojo y barbudo con una coraza de reiter, el otro tenía bigote y llevaba una armadura pesada de trincheras. Todos se dirigieron al puerto y zarparon antes de que yo llegara a Saint-Pierre.";
+			link.l1 = "He rastreado a mi deudor en Le Francois. Su polacra formaba parte de un escuadrón compuesto por una corbeta y una fragata. Marco en persona fue a visitar a Barbazon, tuvieron una reunión en su lugar durante dos horas, otros visitantes fueron despachados por sus guardias. Luego salió de la casa con dos tipos sombríos: uno era pelirrojo y barbudo con una coraza de reiter, el otro tenía bigote y llevaba una armadura pesada de trincheras. Todos se dirigieron al puerto y zarparon antes de que yo llegara a Saint-Pierre.";
 			link.l1.go = "mtraxx_74";
 		break;
 		

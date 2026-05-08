@@ -1,5 +1,6 @@
 bool InitGunsModifiers(ref item)
 {
+	aref modifier;
 	if (item.groupID != GUN_ITEM_TYPE && item.groupID != MUSKET_ITEM_TYPE) return false;
 
 	string realId = item.id;
@@ -145,6 +146,15 @@ bool InitGunsModifiers(ref item)
 			AddDescriptor(item, "SingleCharge", -1);
 			AddDescriptor(item, "Fancy", -1);
 			AddDescriptor(item, "Bayonet", -1);
+		}
+		break;
+		case "mushket_indian":
+		{
+			AddSpecialDescriptor(item, "Fury");
+			AddDescriptor(item, "Special");
+			modifier = AddCallback(item, CT_EQUIP, "ChiefsMusket");
+			modifier.arg0 = 0.50;
+			modifier.arg1 = 0.25;
 		}
 		break;
 	}

@@ -1,12 +1,4 @@
 LongHappy_1 {Pour prendre des décisions de mariage, UTILISEZ L'OPTION "PENSÉE À VOIX HAUTE"}
-LongHappy_2 {L'abbé Benoît est arrivé à terre !}
-LongHappy_3 {@<sti(pchar.questTemp.LongHappy.MarryRum)> barils de rhum et @<sti(pchar.questTemp.LongHappy.MarryMoney)> pesos.}
-LongHappy_4 {50 barils de rhum, 20 barils de vin et 300 000 pesos.}
-LongHappy_5 {100 barils de rhum, 50 barils de vin et 500 000 pesos.}
-LongHappy_6 {Mais avant cela, je dois organiser une fête à la taverne de Saint-Pierre. Dépêche-toi !}
-LongHappy_7 {Mais avant cela, je dois organiser une fête sur l'Isla Tesoro. Dépêche-toi !}
-LongHappy_8 {D'abord, tu dois organiser une fête à la taverne de Saint-Pierre !}
-LongHappy_9 {D'abord, tu dois organiser une fête sur l'Isla Tesoro !}
 LongHappy_10 {Sea Devil}
 LongHappy_11 {Jan}
 LongHappy_12 {Svensson}
@@ -17,6 +9,7 @@ LongHappy_16 { }
 LongHappy_17 {Steven}
 LongHappy_18 {Dodson}
 LongHappy_19 {Un certain temps s'est écoulé...@<NewStr()>La fête bat son plein...}
+LongHappy_2 {L'abbé Benoît est arrivé à terre !}
 LongHappy_20 {Tichingitu}
 LongHappy_21 {Nathaniel}
 LongHappy_22 {Mauritz}
@@ -27,6 +20,7 @@ LongHappy_26 {Black Dragon}
 LongHappy_27 {Jan Svensson s'est échappé en bateau !}
 LongHappy_28 {Steven Dodson s'est échappé en bateau !}
 LongHappy_29 {Marcus Tyrex s'est échappé en bateau !}
+LongHappy_3 {@<sti(pchar.questTemp.LongHappy.MarryRum)> barils de rhum et @<sti(pchar.questTemp.LongHappy.MarryMoney)> pesos.}
 LongHappy_30 {Bernard Vensan, un ancien camarade et associé de Marcus Tyrex, est mort en nettoyant la ville des derniers mercenaires fuyant par les catacombes. Il n’a survécu à la victoire que de quelques heures... ~}
 LongHappy_31 {Et ce n’est pas tout – Marcus Tyrex lui-même a disparu lorsque son navire a été abordé. Jan Swenson a organisé les recherches, et j’espère que ce vieux baron était trop coriace pour les boulets de canon et les vagues de la mer – ce serait une perte irréparable pour toute la Fraternité de la Côte. ~}
 LongHappy_32 {Les pertes ne m’ont pas épargné non plus. C’est toujours difficile quand la guerre emporte des vies innocentes. Gino Gvineili – un bon ami et un brillant scientifique – a accidentellement été victime de cette attaque traîtresse. Je retournerai à Antigua pour l’enterrer comme il se doit.}
@@ -37,8 +31,14 @@ LongHappy_36 {Jean}
 LongHappy_37 {David}
 LongHappy_38 {Prosper}
 LongHappy_39 {Trubal}
+LongHappy_4 {50 barils de rhum, 20 barils de vin et 300 000 pesos.}
 LongHappy_40 {Bernard}
 LongHappy_41 {Vensan}
 LongHappy_42 {@<GetFullName(sld)> a été ajouté à votre équipe en tant qu’officier}
 LongHappy_43 {Vous pouvez assigner @<GetFullName(sld)> comme officier d’abordage}
 LongHappy_44 {Le lendemain matin...}
+LongHappy_5 {100 barils de rhum, 50 barils de vin et 500 000 pesos.}
+LongHappy_6 {Mais avant cela, je dois organiser une fête à la taverne de Saint-Pierre. Dépêche-toi !}
+LongHappy_7 {Mais avant cela, je dois organiser une fête sur l'Isla Tesoro. Dépêche-toi !}
+LongHappy_8 {D'abord, tu dois organiser une fête à la taverne de Saint-Pierre !}
+LongHappy_9 {D'abord, tu dois organiser une fête sur l'Isla Tesoro !}

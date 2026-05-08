@@ -36,6 +36,8 @@ void ProcessDialogEvent()
 				LAi_group_MoveCharacter(sld, sGroup);
 				LAi_RemoveCheckMinHP(sld);
 				LAi_SetImmortal(sld, false);
+				if("quest.agressive" in npchar)
+					sld.quest.agressive = true;
 			}
 			LAi_group_SetRelation(sGroup, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 			LAi_group_FightGroups(sGroup, LAI_GROUP_PLAYER, true);
@@ -106,6 +108,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_2_2":
+			npchar.quest.agressive = true;
 			dialog.text = RandPhraseSimple("你在撒谎, 白脸杂种! 你来到这里是为了杀印第安人! 准备战斗吧, 白脸? ! ", "你杀印第安人。 白人的舌头是说谎的舌头。 我会把它割下来放在火上烤! ");
 			link.l1 = RandPhraseSimple("好吧, 伙计, 那就别怪我了。 天知道, 我试过避免这样... ", "好吧, 这是你自找的, 战士。 ");
 			link.l1.go = "exit_fight";
@@ -123,6 +126,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
+				npchar.quest.agressive = true;
 				dialog.text = "你没有我们想要的东西, 白脸... 你将成为我们的战利品! ";
 				link.l1 = "如果你敢, 就试试... ";
 				link.l1.go = "exit_fight";
@@ -130,6 +134,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_3_2":
+			npchar.quest.agressive = true;
 			dialog.text = RandPhraseSimple("我们不与白脸狗交易。 我们杀人并夺取! ", "我们不是肮脏的米斯基托人或阿拉瓦克人, 我们不与白脸交易! 我们杀了他们并获得战利品! ");
 			link.l1 = RandPhraseSimple("好吧, 那试试抢劫我吧, 无赖! ", "首先, 你需要从我这里夺走我的军刀, 你们这些垃圾! ");
 			link.l1.go = "exit_fight";
@@ -340,6 +345,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
+				npchar.quest.agressive = true;
 				dialog.text = "那么我们就免费拿走一切, 白脸! ";
 				link.l1 = "你可以试试... ";
 				link.l1.go = "exit_fight";

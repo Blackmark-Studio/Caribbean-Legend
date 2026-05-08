@@ -15,7 +15,7 @@ void InitInterface(string iniName)
     SetNodeUsing("NoEatNoRats",false);
     SetNodeUsing("ExpLogShow",false);
     SetNodeUsing("PGGLogShow",false);
-    SetNodeUsing("CameraEnableFree",false);
+ //   SetNodeUsing("CameraEnableFree",false);
     SetNodeUsing("WorldAlivePause",false);
         
 	if (MOD_BETTATESTMODE == "On")
@@ -34,8 +34,8 @@ void InitInterface(string iniName)
 	    TmpI_ShowExpLogShow();
 	    SetNodeUsing("PGGLogShow",true);
 	    TmpI_ShowPGGLogShow();
-	    SetNodeUsing("CameraEnableFree",true);
-	    TmpI_ShowCameraEnableFree();
+//	    SetNodeUsing("CameraEnableFree",true);
+//	    TmpI_ShowCameraEnableFree();
 	    SetNodeUsing("WorldAlivePause",true);
 	    TmpI_ShowWorldAlivePause();
 	}
@@ -161,14 +161,14 @@ void ProcessCommandExecute()
     			TmpI_ShowPGGLogShow();
     		}
     	break;
-    	
+    	/*
     	case "CameraEnableFree":
     		if(comName=="activate" || comName=="click")
     		{
     			locCameraEnableFree = !locCameraEnableFree;
     			TmpI_ShowCameraEnableFree();
     		}
-    	break;
+    	break;*/
     	
     	case "WorldAlivePause":
     		if(comName=="activate" || comName=="click")
@@ -236,6 +236,7 @@ void TmpI_ShowPGGLogShow()
 }
 
 // CameraEnableFree
+/*
 void TmpI_ShowCameraEnableFree()
 {
 	if(!locCameraEnableFree) {
@@ -243,7 +244,7 @@ void TmpI_ShowCameraEnableFree()
 	} else {
 		CreateImage("iCameraEnableFree","icons","complete",1180,670,1230,720);
 	}
-}
+}	*/
 
 // WorldAlivePause
 void TmpI_ShowWorldAlivePause()
@@ -251,7 +252,7 @@ void TmpI_ShowWorldAlivePause()
 	if(!bWorldAlivePause) {
 		CreateImage("iWorldAlivePause","icons","complete",0,0,0,0);
 	} else {
-		CreateImage("iWorldAlivePause","icons","complete",1180,760,1230,810);
+		CreateImage("iWorldAlivePause","icons","complete",1180,670,1230,720);
 	}
 }
 
@@ -263,6 +264,6 @@ void TmpI_ShowBettaTestMode()
 	} else {
 		// CreateImage("BettaTestMode","icons","complete",560,510,592,542);
 		// CreateImage("BettaTestMode","icons","complete",1180,859,1212,891);
-		CreateImage("BettaTestMode","icons","complete",1180,850,1230,900);
+		CreateImage("BettaTestMode","icons","complete",1180,760,1230,810);
 	}
 }

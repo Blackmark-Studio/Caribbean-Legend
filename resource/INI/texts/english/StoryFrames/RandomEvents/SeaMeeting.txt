@@ -1,0 +1,78 @@
+Node0_title {Meeting at Sea}
+Node0_a_a {You are standing by the helm, plotting your course ahead, when a whistle rings out from the tops. A few moments later, the lookout appears before you and reports a ship ahead under a $key($nationI($ctx(nation))AdjRoot) flag.$br$red "$ctx(shipName)" is a $rand(barque|barquentine|fleut), and she is cutting across your course with her gunports closed. You raise your spyglass and see their captain signaling to you. You send a messenger over in a boat to find out what they want.$br$red Ten minutes later, you are told that "$ctx(shipName)" is in dire straits for fresh water. During the storm, a wave hit them hard and the casks in the hold overturned; now they are forced to ration what remains. They ask you to share your supplies.}
+Node0_a_a_action {Of course!}
+Node0_a_a_success {God commanded that we share, and you follow that commandment. Today you help someone in hardship, and tomorrow luck will not abandon you. You give some of your water casks to the merchant and wish him a safe voyage. The crew believes you did the right thing.}
+Node0_a_a_success_action {Anyone would do the same}
+Node0_a_b_action {This is not free}
+Node0_a_b_success {You decide that helping strangers for nothing, strangers you may never see again, is asking too much. If the captain wants to reach port without mishap, he will have to pay for your water. $br$redThe captain of "$ctx(shipName)" agrees to the bargain, and you transfer the water to his vessel. Opinion among the crew is divided. Some think you did right; others mutter about charity and detachment from worldly gain.}
+Node0_a_b_success_action {Commandments won't spread on hardtack}
+Node0_a_c_action {We have nothing to spare}
+Node0_a_c_success {You refuse the request, citing the limits of your own stores. Whether those limits are real no longer seems to matter - among the crew you are called a miser and a godless man.}
+Node0_a_c_success_action {The world is cruel}
+Node0_a_b {You are at work in your cabin when a cannon shot and the muffled cry of the lookout suddenly reach your ears. Coming up on deck, you demand a report on the situation.$br$red Ahead, “$ctx(shipName),” belonging to $key($nationI($ctx(nation))Gen), is drifting helplessly. You study the $rand(brig|fleut|galleon|barque) closely and at once note several oddities: sheets hang from the rails, there are few people on deck, and the flags on the masts are flying at half-mast — a sign of plague aboard. You send a messenger over in a boat to learn the details.$br$redThe messenger reports that there is an outbreak of $rand(swamp fever|jaundice|malaria) on the ship. Their own physician was the first to go down after tending the sick, and now they are in despair. They are willing to trade your medicines for anything, so long as the dying can be stopped. On the face of it, this is only a plea for help, but close contact with an infected ship is always a risk.}
+Node0_b_a_action {We will help}
+Node0_b_a_success {You decide to take the risk and come alongside, hull to hull. The sailors transfer the medicine and help dispose of the corpses. You have acted as a decent Christian ought, not abandoning people in their misery, but this act of charity will cost you dearly. Even as you sail away, you begin to feel weak and unwell.}
+Node0_b_a_success_action {We did all we could}
+Node0_b_b_action {Send the boat with medicine}
+Node0_b_b_success {There is room for only a small supply of medicine in the boat, and getting it aboard "$ctx(shipName)" will not be easy, but it is all you are willing to do. With your duty done and your conscience clear, you order the sails raised.}
+Node0_b_b_success_action {They are in the Lord's hands}
+Node0_b_c_action {I am not afraid of infection}
+Node0_b_c_success {You have always taken pride in your health, and for many months you have encouraged sound habits aboard your own ship. You send medicine over to "$ctx(shipName)" without fearing the epidemic. They are sincerely grateful and promise to tell everyone of your help.$br$redBy evening, you feel a slight malaise, but it is a small price to pay for saving lives.}
+Node0_b_c_success_action {Our spirit will not be broken!}
+Node0_b_d_action {We can do nothing for you}
+Node0_b_d_success {You refuse the request, citing fear of infection. The crew approves the decision, yet your conscience torments you. Was the danger truly so great that you abandoned people in desperate need? Certain death awaits them...}
+Node0_b_d_success_action {The world is cruel}
+Node0_a_c {During a halt for fishing and rigging work, the ship lies in a vulnerable position, and you habitually peer through your spyglass, $rand(backing up the lookout|keeping your eyes fixed on the horizon).$br$redBy noon, a $rand(schooner|barque|barquentine|fleut|pinnace) flying the flag of $key($nationI($ctx(nation))Gen) appears on the horizon. Her gunports are shut, and her draft is $rand(very deep|deep) — clearly no pirate raider in disguise. She signals to close, and you consent, curious to hear what they want.$br$redWhen "$ctx(shipName)" comes alongside, their messenger steps onto your deck. He explains that their captain managed to acquire a $rand(decent|substantial) lot of slaves on the last voyage, but $rand(misjudged|slightly misjudged) the provisions, and is now deciding what to do about it.$br$redThe purser of "$ctx(shipName)" offers to $rand(trade|swap) some human cargo for provisions.}
+Node0_c_a_action {We agree}
+Node0_c_a_success {You accept the bargain. Slaves can always be sold at a profit, and offers like this are not the sort to refuse. Sailors from "$ctx(shipName)" march the shackled captives down into your hold, and in return you hand over sacks of provisions and barrels of water. Some among the crew disapprove of the slave trade, but that concerns you not at all.}
+Node0_c_a_success_action {Black ivory}
+Node0_c_b_action {We can simply sell you provisions}
+Node0_c_b_success {You offer the captain of "$ctx(shipName)" a measure of provisions in exchange for putting in a good word for you at the port of call. He agrees readily enough. Your crew finds the arrangement a strange one, but none dare gainsay you.}
+Node0_c_b_success_action {An investment in the future}
+Node0_c_c_action {What about a larger lot?}
+Node0_c_c_success {You bring your knowledge of trade to bear and persuade the captain of "$ctx(shipName)" to part with a more substantial lot of slaves than he had first intended. After brief negotiation, you settle upon a quantity that leaves both parties satisfied. Your crew is none too pleased to have so many captives aboard.}
+Node0_c_c_success_action {We shall be rich!}
+Node0_c_d_action {We are not interested}
+Node0_c_d_success {You refuse the bargain and give the order to sail on. The slave trade holds no appeal for you, and the crew supports the decision.}
+Node0_c_d_success_action {Everything has its limits}
+Node0_a_d {You are giving your officers their morning orders on deck when the lookout's whistle cuts through the air. He points toward the horizon, then climbs down to make his report.$br$redA $key($nationI($ctx(nation))AdjRoot) $rand(brig|corvette|war schooner|snow|xebec), the "$ctx(shipName)," has come into view. She handles clumsily, sits low in the water, and her sails are torn to ribbons. You order the ship brought closer and send over a messenger.$br$redIt turns out to be a $key($nationI($ctx(nation))AdjRoot) patrol vessel. Not long ago they struck a successful raid against a merchant convoy belonging to their enemies, the $key(people$nationI($ctx(enemyNation))Gen). Their hold is now packed with goods, but their запас of sailcloth has been spent to the last scrap. They offer to trade part of their cargo for canvas.}
+Node0_d_a_action {Gladly}
+Node0_d_a_success {You agree to the exchange. While the sailors haul the goods across, you question the captain of "$ctx(shipName)" about his adventures.$br$redHe answers with an impressive tale of how he $rand(ran afoul of a pirate brig off $rand(Martinique|Guadeloupe|Trinidad|Curacao) and fought a hard action|uncovered a ring of smugglers operating right under the governor's nose|was caught in a dreadful storm while on patrol and nearly foundered|struck a barely visible atoll $rand(near Cuba|off Hispaniola|between Puerto Rico and Tortuga)|fell into an Indian ambush while careening his ship).}
+Node0_d_a_success_action {How fascinating!}
+Node0_d_b_action {We will help with the repairs}
+Node0_d_b_success {By combined effort, you set the ship to rights. While the sailors work at restoring the sails, the captain, over a glass of wine, tells you a gripping tale of how he $rand(ran afoul of a pirate brig off $rand(Martinique|Guadeloupe|Trinidad|Curacao) and fought a hard action|uncovered a ring of smugglers operating right under the governor's nose|was caught in a dreadful storm while on patrol and nearly foundered|struck a barely visible atoll $rand(near Cuba|off Hispaniola|between Puerto Rico and Tortuga)|fell into an Indian ambush while careening his ship).}
+Node0_d_b_success_action {Impressive!}
+Node0_d_c_action {We can do nothing for you}
+Node0_d_c_success {You decline the exchange and leave the ship astern. The crew plainly dislikes your decision, but none dares say so outright.}
+Node0_d_c_success_action {We have greater need of it ourselves}
+Node0_a_e {Off the coast of $key($ctx(islandName)Gen), you come upon a small coasting craft whose crew are $rand(waving flags like mad|frantically signaling with flags) in hopes of catching your eye. You $rand(send a boat with a messenger|lower a boat and dispatch a messenger).$br$redThe messenger reports that it is you specifically they are hailing: aboard, a $rand(heated quarrel|bitter dispute) is brewing, and it threatens to $rand(turn into a massacre|end in bloodshed). The captain of the proudly named "$ctx(shipName)" wishes to call upon you as a $rand(neutral judge|third-party arbiter). They $rand(promise a reward|offer payment) if you will $rand(render judgment in good conscience|give your word according to conscience).}
+Node0_e_a_action {That is easily done}
+Node0_e_a_success {You decide to judge their quarrel—whether from interest, idle curiosity, or a genuine desire to help. Once aboard, you are quickly brought up to speed.$br$redIt turns out that while sounding the coastal shallows, the leadline caught on something heavy on the bottom, as though it were a grapnel. The find proved to be a locked, rusty chest with gold statuettes and coins inside. The leadsman claims the treasure as his own; the captain insists the valuables must be divided according to the customs of the sea.$br$redYou speak with authority and settle the matter without difficulty. In gratitude, they present you with a share of the gold coins.}
+Node0_e_a_success_action {That was enlightening}
+Node0_e_b_action {We have no time for this}
+Node0_e_b_success {You decline to sit as arbiter over quarrels about fish and sauerkraut, and order the ship under way. The crew nod in understanding.}
+Node0_e_b_success_action {Funny story}
+Node0_e_c_action {Open fire!}
+Node0_e_c_success {You decide it is a cunning snare meant to draw you in, and order the guns to fire. A single hit is enough to flood the craft to the gunwales and send her plunging under. You watch the crew leap overboard to save their lives.$br$redWord of this brutal act will spread quickly.}
+Node0_e_c_success_action {Do you feel your knees shaking?}
+Node0_a_f {During the evening watch, you spot a _$key($nationI($ctx(nation))AdjRoot) ship on the horizon. What catches your eye at once is her unusually deep draft. She is so heavily laden that the board bearing her name — "$ctx(shipName)" — nearly kisses the water. As you close the distance, they send a boat across.$br$redTheir envoy reports that a second ship of theirs struck reefs, stove in below the waterline, and sank, forcing them to salvage the cargo in haste. Now their hold is crammed to bursting — cane, salt, tobacco, spices. Crates are stacked even upon the deck.$br$redTheir captain fears that if the seas rise any further, water will pour through the gunports and drag this ship down as well. They offer to sell you part of their cargo at a fair price.}
+Node0_f_a_action {Profitable deal}
+Node0_f_a_success {Chances like this do not come often, and you gladly agree to the exchange. The goods are transferred to your ship, and you are already reckoning the profit you will make on the resale.}
+Node0_f_a_success_action {Money grows on trees}
+Node0_f_b_action {We will take the goods by force}
+Node0_f_b_success {You come to the conclusion that "$ctx(shipName)" is a gift of fate and easy pickings. Her captain and crew are plainly in no condition to bargain. You order the gunports opened and the grapnels made ready.$br$redAt the sight of your preparations, they strike at once and raise the white flag. You fill your hold with the seized cargo and dryly remark that you have solved their problem in your own fashion.}
+Node0_f_b_success_action {Life is cruel}
+Node0_f_c_action {We are not interested}
+Node0_f_c_success {You decline the exchange and leave the ship astern. Trade is not in your plans just now, and you mean to keep the spare room in your hold for something of greater use.}
+Node0_f_c_success_action {And it will be found}
+Node0_a_g {In the open sea, you encounter a _$key($nationI($ctx(nation))AdjRoot) ship. They signal a request to parley. Seeing their gunports closed and their merchant pennants flying, you judge they pose no threat and order to close the distance.$br$redTheir captain comes aboard and tells you of a troublesome situation. In $key(Colony$ctx(cityA)Voc), they took on a passenger — $casedName($ctx(passengerName)|Gen). He was seeking passage to $key(Colony$ctx(cityB)Gen), and it seemed an easy chance to make a little money. But halfway through the voyage, $ctx(passengerName) fell out with the crew over something and started a brawl aboard. He now sits in the hold and keeps stirring up fresh trouble.$br$redThey offer to hand this unruly passenger over to you for a reward.}
+Node0_g_a_action {Why not}
+Node0_g_a_success {You agree to take the violent passenger into your own hold. Aboard your ship, he will clearly calm down soon enough. The captain of "$ctx(shipName)" thanks you sincerely with a handful of gold and precious stones.}
+Node0_g_a_success_action {He will fetch a good price}
+Node0_g_b_action {Just hang him from the yardarm}
+Node0_g_b_success {$ctx(passengerName) has broken the ship's articles, harmed the crew, and become a danger to the vessel. In a naval service, a man might lose his life for less, and you suggest the captain simply execute the troublemaker. He refuses in horror, whereupon you offer to do the deed for him.$br$redThe captain thanks you for the offer and returns to his own ship. "$ctx(shipName)" sails off under full canvas. Rumors of your bloodthirst are already beginning to creep through the ship.}
+Node0_g_b_success_action {A dog's death for a cur}
+Node0_g_c_action {We are not interested}
+Node0_g_c_success {You refuse to take prisoners aboard, least of all violent ones. The captain returns to his own ship, and you continue on your voyage.$br$redYou can only hope the captive does nothing truly dreadful.}
+Node0_g_c_success_action {They will manage}
+Node0_g_a_action_PassengerImprisoned {$ctx(passengerName) is your prisoner}

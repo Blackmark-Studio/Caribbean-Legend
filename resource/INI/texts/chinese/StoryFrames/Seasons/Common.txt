@@ -1,0 +1,4 @@
+Description {各个季节将游戏中的一年划分为不同阶段，并施加强大的全局效果，在整个季节持续期间始终生效。每个季节都是独特的，并且会随着年份而变化。}
+effects_title {季节效果}
+effects_current_title {当前季节效果}
+additional_effects_title {额外季节效果}

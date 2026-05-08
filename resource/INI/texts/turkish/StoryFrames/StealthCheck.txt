@@ -1,2 +1,2 @@
-ShowPapersAction {Yetki belgesini göster}
 FactorQuestZpq {Bilinmeyen Gaskon}
+ShowPapersAction {Yetki belgesini göster}

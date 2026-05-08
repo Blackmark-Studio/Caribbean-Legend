@@ -791,12 +791,13 @@ void QuestComplete(string sQuestName, string qname)
             Flag_HOLLAND();
         break;
 
-        case "QuestAboardCabinDialog":  // диалог в абордаже, в каюте при достижении минНР
+		case "QuestAboardCabinDialog":  // диалог в абордаже, в каюте при достижении минНР
 			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)]; // фантом, тень отца капитана
 			LAi_SetActorType(pchar);
-            LAi_SetActorType(sld);
-            SetActorDialogAny2Pchar(sld.id, "", 0.0, 0.0);
-		    LAi_ActorFollow(pchar, sld, "ActorDialog_Any2Pchar", 0.5);
+			LAi_SetActorType(sld);
+			SetActorDialogAny2Pchar(sld.id, "", 0.0, 0.0);
+			LAi_ActorFollow(pchar, sld, "ActorDialog_Any2Pchar", 0.5);
+			LAi_group_SetRelation(LAI_GROUP_BRDENEMY, LAI_GROUP_PLAYER, LAI_GROUP_NEITRAL); // помирим абордажников
 		break;
 		
 		case "LAi_ReloadBoarding": // задержка нужна
@@ -1147,8 +1148,7 @@ void QuestComplete(string sQuestName, string qname)
 		case "LigaAttack_LoginKillers":
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретить драться
 			chrDisableReloadToLocation = true;//закрыть локацию
-			int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+10;
-			if (iRank > 50) iRank = 50;
+			int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 			int iScl = 30 + 3*sti(pchar.rank);
 			if (iScl > 110) iScl = 110;
 			for (i=1; i<=2; i++)
@@ -1776,7 +1776,7 @@ void Flag_PIRATE()
 	DoQuestCheckDelay("NationUpdate", 3.0);
 	UpdateRelations();
 	RefreshBattleInterface();
-	wdmSetNationFlag(sti(pchar.nation));
+	wdmSetNationFlag();
 	SetSchemeAfterFlagRise();
 }            
 
@@ -1806,7 +1806,7 @@ void Flag_FRANCE()
     DoQuestCheckDelay("NationUpdate", 3.0);
     UpdateRelations();
 	RefreshBattleInterface();
-	wdmSetNationFlag(sti(pchar.nation));
+	wdmSetNationFlag();
 	SetSchemeAfterFlagRise();
 }
 
@@ -1828,7 +1828,7 @@ void Flag_ENGLAND()
     DoQuestCheckDelay("NationUpdate", 3.0);
     UpdateRelations();
 	RefreshBattleInterface();
-	wdmSetNationFlag(sti(pchar.nation));
+	wdmSetNationFlag();
 	SetSchemeAfterFlagRise();
 }
 
@@ -1858,7 +1858,7 @@ void Flag_SPAIN()
     DoQuestCheckDelay("NationUpdate", 3.0);
     UpdateRelations();
 	RefreshBattleInterface();
-	wdmSetNationFlag(sti(pchar.nation));
+	wdmSetNationFlag();
 	SetSchemeAfterFlagRise();
 }
 
@@ -1880,7 +1880,7 @@ void Flag_HOLLAND()
     DoQuestCheckDelay("NationUpdate", 3.0);
     UpdateRelations();
 	RefreshBattleInterface();
-	wdmSetNationFlag(sti(pchar.nation));
+	wdmSetNationFlag();
 	SetSchemeAfterFlagRise();
 }
 

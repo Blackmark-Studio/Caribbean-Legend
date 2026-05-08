@@ -813,7 +813,7 @@ void ShowInfoWindow()
 		break;
 	}
 
-	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, sText4, sPicture, sGroup, sGroupPicture, picW, picH, true);
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, sText4, sPicture, sGroup, sGroupPicture, picW, picH, false, true);
 }
 
 void HideInfoWindow()

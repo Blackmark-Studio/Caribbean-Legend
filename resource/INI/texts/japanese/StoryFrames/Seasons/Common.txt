@@ -1,0 +1,4 @@
+Description {季節はゲーム内の一年をいくつかの区切りに分け、季節のあいだじゅう強力な全体効果を与える。どの季節も固有のものであり、その内容は年ごとに変化する。}
+effects_title {季節効果}
+effects_current_title {現在の季節効果}
+additional_effects_title {追加の季節効果}

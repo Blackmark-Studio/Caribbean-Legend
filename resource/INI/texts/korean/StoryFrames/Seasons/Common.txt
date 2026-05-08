@@ -1,0 +1,4 @@
+Description {시즌은 게임 내 1년을 여러 구간으로 나누고, 시즌이 진행되는 내내 강력한 전역 효과를 적용합니다. 각 시즌은 고유하며 해마다 달라집니다.}
+effects_title {시즌 효과}
+effects_current_title {현재 시즌 효과}
+additional_effects_title {추가 시즌 효과}

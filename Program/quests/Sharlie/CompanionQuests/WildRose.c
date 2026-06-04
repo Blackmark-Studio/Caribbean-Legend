@@ -23,12 +23,12 @@ void WildRose_Start_2(string qName)
 	{
 		chrDisableReloadToLocation = true;
 		DeleteQuestCondition("WildRose_Start");
-		DeleteAttribute(pchar, "questTemp.WildRose_Start");
 		
 		pchar.questTemp.WildRose_DialogeWithSoldierOnPier = true;
 	}
 	else
 	{
+		DeleteAttribute(pchar, "questTemp.WildRose_Start");
 		SetFunctionTimerCondition("WildRose_Start", 0, 0, 14, true); // таймер
 	}
 }
@@ -44,7 +44,7 @@ void WildRose_MaryFollowing()
 // =================================================================
 // ================== ЭТАП 1. «ЛОЩИНА ВЛЮБЛЁННЫХ» ==================
 // =================================================================
-void WildRose_Etap1_EscapeSlaves(string qName)
+void WildRose_Etap1_EscapeSlaves(string qName = "")
 {
 	SetQuestHeader("WildRose");
 	AddQuestRecord("WildRose", "1");

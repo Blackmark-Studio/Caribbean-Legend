@@ -38,7 +38,8 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth.Archy") && pchar.questTemp.Guardoftruth.Archy == "begin")
 			{
 				dialog.text = "Pax vobiscum, figliuolo... Che posso fare per te?";
-				link.l1 = TimeGreeting()+", Vostra Eccellenza. Avete notizie riguardo al nostro accordo?"link.l1.go ="guardoftruth_17";
+				link.l1 = TimeGreeting()+", Vostra Eccellenza. Avete notizie riguardo al nostro accordo?";
+				link.l1.go ="guardoftruth_17";
 				break;
 			}
 			dialog.text = "Cercavi qualcosa, figliolo?";

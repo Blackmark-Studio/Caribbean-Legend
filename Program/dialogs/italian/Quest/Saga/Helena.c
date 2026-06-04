@@ -2072,8 +2072,9 @@ void ProcessDialogEvent()
 			dialog.text = "Sì. Tutti i baroni dissero direttamente a mio padre che era uno sciocco, ma fu il Diavolo della Foresta a dargli il suo benestare e a stringergli la mano dopo che avevo battuto il record dell’equipaggio scalando l’albero maestro. Quel momento non lo dimenticherò mai: le urla trionfanti dell’equipaggio e, ovunque guardassi, solo il mare pulito all’orizzonte. E lo sguardo compiaciuto di mio padre... non potevo vederlo, ma lo sentivo con tutto il cuore.";
 			link.l1 = "La mia gloria finì quando caddi dagli alberi il primo giorno, mentre si andava verso Guadalupa.";
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.TakeFolke")) {
-				link.l1 = link.l1+" Anche il mio timoniere, Deluc, aveva uno sguardo molto eloquente."}
-			link.l1.go ="Bere mi aiuta a dimenticare per un po’ chi sono e da dove vengo, mio capitano.";
+				link.l1 = link.l1+" Anche il mio timoniere, Deluc, aveva uno sguardo molto eloquente."
+			}
+			link.l1.go = "drinking_my_background_7";
 		break;
 		
 		case "drinking_my_background_7":

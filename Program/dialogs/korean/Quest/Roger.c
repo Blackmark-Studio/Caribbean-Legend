@@ -3353,7 +3353,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "spy_sailor_1":
-            dialog.text = "예, 선장님. 배가 세 척입니다. 기함은 갤리온인데, 내가 본 것 중 가장 크고 빠르게 다가오고 있습니다. 나머지 두 척은 코르벳과 제벡입니다.";
+			Mtraxx_IgnasioRandomShips();
+			string ship1 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.flagman)].name));
+			string ship2 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.first)].name));
+			string ship3 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.second)].name));
+			dialog.text = "예, 선장님. 배는 세 척입니다. 기함은 " + ship1 + "이고, 나머지 두 척은 " + ship2 + "와 " + ship3 + "입니다.";
 			link.l1 = "모두 배에 올라. 아직 도망칠 수 있을지도 몰라.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_IgnasioOurEscape");

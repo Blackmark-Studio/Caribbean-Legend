@@ -810,7 +810,8 @@ void ProcessDialogEvent()
 			//нет, посылаем в сад...
 			else
 			{
-				Dialog.Text = "Sembra che tu non abbia abbastanza soldi."Link.l1 ="Che peccato, tornerò più tardi.";
+				Dialog.Text = "Sembra che tu non abbia abbastanza soldi.";
+				Link.l1 ="Che peccato, tornerò più tardi.";
 			}
 			Link.l1.go = "Exit";
 		break;  

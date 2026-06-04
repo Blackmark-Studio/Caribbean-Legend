@@ -372,7 +372,7 @@ void ProcessDialogEvent()
 		case "mtraxx_soldier_1":
             dialog.text = "Tüccara benzemiyorsun, yabancı. Ruhsatını göster.";
 			link.l1 = "Beni bağışlayın! Bir kağıt parçası mı insanların ticaret yapıp yapamayacağına karar veriyor? Bunlar çok pahalı! Daha yeni ticarete başladım ama şimdiden tutkum oldu! Beni bırakın, ikiniz için de sahibine güzel bir söz söyleyeceğim.";
-			link.l1.go = "mtraxx_10";
+			link.l1.go = "mtraxx_soldier_2";
 		break;
 		
 		case "mtraxx_soldier_2":

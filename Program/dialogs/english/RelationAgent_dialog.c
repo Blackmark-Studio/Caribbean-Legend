@@ -82,7 +82,8 @@ void ProcessDialogEvent()
 			// генератор  "Найденные документы"
 			if ((pchar.questTemp.different == "GiveShipLetters") && !CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakAgent"))			
 			{
-				link.l4 = "I want to offer you a deal."link.l4.go ="D_ShipLetters_1"; 
+				link.l4 = "I want to offer you a deal.";
+				link.l4.go ="D_ShipLetters_1"; 
 				pchar.questTemp.different.GiveShipLetters.speakAgent = true;
 			}			
 

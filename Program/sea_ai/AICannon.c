@@ -172,7 +172,7 @@ float Cannon_GetRechargeTime()
 	}
 	
 	ref refBaseShip = GetRealShip(sti(aCharacter.ship.Type));
-	fMultiply += GetAttributeFloat(refBaseShip, "tuning.modifiers." + M_SHIP_RELOAD_SPEED);
+	fMultiply -= GetAttributeFloat(refBaseShip, "tuning.modifiers." + M_SHIP_RELOAD_SPEED);
 	if (sti(refBaseShip.BaseType) != SHIP_FORT)
 	{
         // boal 060804 для компа поблажки

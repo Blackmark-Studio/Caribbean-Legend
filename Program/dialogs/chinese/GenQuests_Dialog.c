@@ -7365,16 +7365,16 @@ void ProcessDialogEvent()
 				link.l2.go = "NightAdventure_NobleGame_9_2";
 			}
 			link.l3 = "嗯, 抱歉, 我的口袋现在好像空了..."; 
-			link.l3.go = "NightAdventure_NobleGame_Голодранeц";
+			link.l3.go = "NightAdventure_NobleGame_Голодранец";
 		break;
 		
-		case "NightAdventure_NobleGame_Голодранeц": 
+		case "NightAdventure_NobleGame_Голодранец": 
 			dialog.text = "什...什么? ..你有...嗝! ..没钱和我...和我玩? .."; 
 			link.l1 = "嗯, 这很正常。 我们下次玩, 别担心。 "; 
-			link.l1.go = "NightAdventure_NobleGame_Голодранeц_1";
+			link.l1.go = "NightAdventure_NobleGame_Голодранец_1";
 		break;
 		
-		case "NightAdventure_NobleGame_Голодранeц_1": 
+		case "NightAdventure_NobleGame_Голодранец_1": 
 			DialogExit();
 			SetFunctionExitFromLocationCondition("NightAdventure_KillPhant", pchar.location, false);
 			chrDisableReloadToLocation = false; // 打开地点

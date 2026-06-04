@@ -284,40 +284,10 @@ void ProcessDialogEvent()
 		case "crab_2":
 			dialog.text = "Почему клешни? Да потому что на них находится больше всего мяса. На ногах у крабов мяса почти нет, а тело покрыто твёрдым панцирем. Если ты не в курсе, у нас крабовое мясо - деликатес, поскольку оно очень вкусное и питательное\nА я ещё умею делать из него такие блюда, которые не сможет сделать никто на Острове, так что в желающих их отведать недостатка не было и не будет. Поэтому я и готов платить по пять дублонов за штуку.";
 			link.l1 = "Хорошо. Буду иметь в виду.";
-			link.l1.go = "crab_8"; // потом вернуть на "crab_3"
+			link.l1.go = "crab_3";
 		break;
-		
+
 		case "crab_3":
-			dialog.text = "Погоди-погоди, дружище! Ещё кое-что.";
-			link.l1 = "Да, Санчо?";
-			link.l1.go = "crab_4";
-		break;
-		
-		case "crab_4":
-			dialog.text = "Как и в любом цивилизованном заведении, мы тут иногда и отмечаем какие-нибудь знаменательные даты. И готовим по этим случаям праздничные блюда. В большом количестве. Понимаешь, к чему я?";
-			link.l1 = "Что чем больше крабовых клешней я тебе принесу, тем лучше, логично?";
-			link.l1.go = "crab_5";
-		break;
-		
-		case "crab_5":
-			dialog.text = "В принципе, да. Но крабовое мясо очень быстро портится. Поэтому если ты будешь просто притаскивать его время от времени – это, конечно, славно, но...";
-			link.l1 = "Тебе нужно, чтобы я за раз принёс тебе целую гору клешней.";
-			link.l1.go = "crab_6";
-		break;
-		
-		case "crab_6":
-			dialog.text = "Именно! За такую поставку у меня будет для тебя кое-какой подарок, хе-хе.";
-			link.l1 = "Хм, и сколько же клешней тебе нужно для приготовления твоего гастрономического шедевра?";
-			link.l1.go = "crab_7";
-		break;
-		
-		case "crab_7":
-			dialog.text = "Двадцать пять клешней. Да, многовато, но награда будет стоящей, зуб даю.";
-			link.l1 = "Ловлю тебя на слове! До встречи.";
-			link.l1.go = "crab_8";
-		break;
-			
-		case "crab_8":
 			DialogExit();
 			npchar.quest.crab = "current";
 		break;
@@ -327,8 +297,6 @@ void ProcessDialogEvent()
 			dialog.text = "Отлично! Сколько у тебя есть?";
 			link.l1 = ""+FindRussianQtyString(iTotalTemp)+".";
 			link.l1.go = "crab_trade_1";
-			//if (GetCharacterItem(pchar, "crab_pincers") >= 25 && !CheckAttribute(pchar, "questTemp.CrabPoisonNagrada")) link.l1.go = "CrabPoisonNagrada";
-			//else link.l1.go = "crab_trade_1"; // потом вернуть
 			link.l2 = "Я передумал.";
 			link.l2.go = "exit";
 		break;
@@ -345,58 +313,6 @@ void ProcessDialogEvent()
 			TakeNItems(pchar, "gold_dublon", iTotalTemp*5);
 			PlaySound("interface\important_item.wav");
 			//Log_Info("Вы получили "+iTotalTemp*5+" дублонов");
-		break;
-		
-		case "CrabPoisonNagrada":
-			dialog.text = "Прекрасно! Большая партия, разом, как я и хотел. Ты меня очень выручил, дружище.";
-			link.l1 = "Рад это слышать, приятель. Кажется, ты мне кое-что за это обещал.";
-			link.l1.go = "CrabPoisonNagrada_1";
-		break;
-		
-		case "CrabPoisonNagrada_1":
-			dialog.text = "А вот и то, о чём я тебе говорил!";
-			link.l1 = "Э-э, Санчо, что в этой бутылочке? Выглядит мерзко. Да и попахивает тоже.";
-			link.l1.go = "CrabPoisonNagrada_2";
-			//GiveItem2Character(PChar, "CrabPoison"); // Крабовый яд
-			TakeNItems(pchar, "gold_dublon", iTotalTemp*5);
-			RemoveItems(pchar, "crab_pincers", iTotalTemp);
-		break;
-		
-		case "CrabPoisonNagrada_2":
-			dialog.text = "Крабовый яд.";
-			link.l1 = "Яд??";
-			link.l1.go = "CrabPoisonNagrada_3";
-		break;
-		
-		case "CrabPoisonNagrada_3":
-			dialog.text = "Ну да. Смельчаки, что отбивались от особо смелых крабов, что на корабли заползали, нередко потом умирали от ран, даже если это были обычные царапины.";
-			link.l1 = "Да, я иногда замечал слабость, когда бился с этими бестиями. Удивительные создания. Кстати, никто не пытался разобраться в природе этого яда?";
-			link.l1.go = "CrabPoisonNagrada_4";
-		break;
-		
-		case "CrabPoisonNagrada_4":
-			dialog.text = "Ха, учёных у нас тут не водится, а остальных это не особо волнует. Но знаешь, что я думаю на этот счёт?";
-			link.l1 = "Ну, поделись.";
-			link.l1.go = "CrabPoisonNagrada_5";
-		break;
-		
-		case "CrabPoisonNagrada_5":
-			dialog.text = "Всё просто, приятель! Зачастую эти чудовища рвут плоть тех, кто уже опустился на дно. То есть уже мёртвых.";
-			link.l1 = "Трупный яд? Любопытная теория.";
-			link.l1.go = "CrabPoisonNagrada_6";
-		break;
-		
-		case "CrabPoisonNagrada_6":
-			dialog.text = "Верно! Представь, сколько его накапливается и загустевает у них на клешнях за годы такой “диеты”. Всегда счищаю его с клешней первым делом, чтобы не бояться пораниться во время очистки - сам понимаешь.";
-			link.l1 = "Весьма... необычная награда.";
-			link.l1.go = "CrabPoisonNagrada_7";
-		break;
-		
-		case "CrabPoisonNagrada_7":
-			dialog.text = "Зря ты так. Трупный яд на удивление силён. И быстро парализует и убивает свою жертву. Так что бери, пригодится. Не завидую я тем, кто испытает это на себе!";
-			link.l1 = "Твоя правда! Что ж, спасибо, Санчо! Весьма необычный подарок.";
-			link.l1.go = "exit";
-			pchar.questTemp.CrabPoisonNagrada = true;
 		break;
 		
 		// крыс

@@ -3353,7 +3353,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "spy_sailor_1":
-            dialog.text = "是的, 船长。 三艘船。 他们的旗舰是一艘大型帆船, 是我见过的最大的, 而且它开得很快, 另外两艘是护卫舰和双桅横帆船。 ";
+			Mtraxx_IgnasioRandomShips();
+			string ship1 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.flagman)].name));
+			string ship2 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.first)].name));
+			string ship3 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.second)].name));
+			dialog.text = "是，船长。三艘船。旗舰是 " + ship1 + "，另外两艘是" + ship2 + "和" + ship3 + "。";
 			link.l1 = "所有人上船。 我们可能还有机会逃脱。 ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_IgnasioOurEscape");

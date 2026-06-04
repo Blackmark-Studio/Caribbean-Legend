@@ -624,6 +624,7 @@ void ShowInfoWindow()
 			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_GOODS", 1);
 			if (nChooseNum == 0) return;
 			sRow = "tr"+nChooseNum;
+			if (!CheckAttribute(&GameInterface, "TABLE_GOODS." + sRow)) return;
 			makearef(arCurRow, GameInterface.TABLE_GOODS.(sRow));
 			sGroup = "GOODS";
 			if (!CheckAttribute(arCurRow, "UserData.IDX")) {
@@ -643,6 +644,7 @@ void ShowInfoWindow()
 			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SHIP_PLACE", 1);
 			if (nChooseNum == 0) return;
 			sRow = "tr"+nChooseNum;
+			if (!CheckAttribute(&GameInterface, "TABLE_SHIP_PLACE." + sRow)) return;
 			makearef(arCurRow, GameInterface.TABLE_SHIP_PLACE.(sRow));
 			if (!CheckAttribute(arCurRow, "UserData.IDX")) {
 				bTooltip = false;
@@ -1120,6 +1122,7 @@ void FillShipPlaceTable(string _tabName)
 	GameInterface.(_tabName).hr.td7.line_space_modifier = 0.8;
     // <--
     cn = 1;
+		ref refBaseShip;
     for (n=0; n<MAX_COLONIES; n++)
 	{
 		rCity = &Colonies[n];
@@ -1132,7 +1135,7 @@ void FillShipPlaceTable(string _tabName)
 		        {
                     row = "tr" + cn;
 					int iShip = sti(chref.ship.type);
-					ref refBaseShip = GetRealShip(iShip);
+					refBaseShip = GetRealShip(iShip);
 					string sShip = refBaseShip.BaseName + refBaseShip.ship.upgrades.hull;
 					GameInterface.(_tabName).(row).UserData.IDX = i; // belamour запомнить в кого тыкать будем
                     GameInterface.(_tabName).(row).td1.str = cn;
@@ -1159,8 +1162,8 @@ void FillShipPlaceTable(string _tabName)
 					
 					GameInterface.(_tabName).(row).td5.str = GetIslandName(rCity);
 					
-					GameInterface.(_tabName).(row).td6.str = chref.ShipInStockMan.AltDate;
-					
+					GameInterface.(_tabName).(row).td6.str = DateTimeToDate(chref.ShipInStockMan.AltDate);
+					GameInterface.(_tabName).(row).td6.rawData = chref.ShipInStockMan.AltDate;
 					GameInterface.(_tabName).(row).td7.str = chref.ShipInStockMan.MoneyForShip;
     		        cn++;
 		        }
@@ -1171,39 +1174,32 @@ void FillShipPlaceTable(string _tabName)
 	for (i=1; i<MAX_CHARACTERS; i++)
 	{
 		makeref(chref, Characters[i]);
-		if (CheckAttribute(chref, "ShipInStockMan"))
-		{
-			if (chref.ShipInStockMan == "Islamona_carpenter")
-			{
-				row = "tr" + cn;
-				GameInterface.(_tabName).(row).UserData.IDX = i; // belamour запомнить в кого тыкать будем
-				GameInterface.(_tabName).(row).td1.str = cn;
-				GameInterface.(_tabName).(row).td2.icon.texture = "interfaces\le\ships\" + sShip + ".tga";
-	            GameInterface.(_tabName).(row).td2.icon.uv = "0,0,1,1";
-	            GameInterface.(_tabName).(row).td2.icon.offset = "-2, 0";
-	            GameInterface.(_tabName).(row).td2.icon.width  = 40;
-				GameInterface.(_tabName).(row).td2.icon.height = 40;
-				GameInterface.(_tabName).(row).td2.str = XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'";
-				
-				GameInterface.(_tabName).(row).td3.str = sti(RealShips[sti(chref.Ship.Type)].Class) + "";
-				
-				GameInterface.(_tabName).(row).td4.icon.group  = "NATIONSQ";
-				GameInterface.(_tabName).(row).td4.icon.image  = Nations[PIRATE].Name;
-				GameInterface.(_tabName).(row).td4.icon.width  = 40;
-				GameInterface.(_tabName).(row).td4.icon.height = 40;
-				GameInterface.(_tabName).(row).td4.icon.offset = "-2, 0";
-		
-				GameInterface.(_tabName).(row).td4.str = XI_ConvertString("IslaMona");
-				GameInterface.(_tabName).(row).td4.textoffset = "40, 0";
-				
-				GameInterface.(_tabName).(row).td5.str = XI_ConvertString("IslaMona");
-				
-				GameInterface.(_tabName).(row).td6.str = chref.ShipInStockMan.AltDate;
+		if (!CheckAttributeEqualTo(chref, "ShipInStockMan", "Islamona_carpenter")) continue;
 
-				GameInterface.(_tabName).(row).td7.str = chref.ShipInStockMan.MoneyForShip;
-				cn++;
-			}
-		}
+		row = "tr" + cn;
+		refBaseShip = GetRealShip(int(chref.ship.type));
+		GameInterface.(_tabName).(row).UserData.IDX = i; // belamour запомнить в кого тыкать будем
+		GameInterface.(_tabName).(row).td1.str = cn;
+		GameInterface.(_tabName).(row).td2.icon.texture = "interfaces\le\ships\" + refBaseShip.BaseName + refBaseShip.ship.upgrades.hull + ".tga";
+		GameInterface.(_tabName).(row).td2.icon.uv = "0,0,1,1";
+		GameInterface.(_tabName).(row).td2.icon.offset = "-2, 0";
+		GameInterface.(_tabName).(row).td2.icon.width  = 40;
+		GameInterface.(_tabName).(row).td2.icon.height = 40;
+		GameInterface.(_tabName).(row).td2.str = Truncate(XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'", 36, "..");
+		GameInterface.(_tabName).(row).td2.textoffset = "40, 0";
+		GameInterface.(_tabName).(row).td3.str = sti(RealShips[sti(chref.Ship.Type)].Class) + "";
+		GameInterface.(_tabName).(row).td4.icon.group  = "NATIONSQ";
+		GameInterface.(_tabName).(row).td4.icon.image  = Nations[PIRATE].Name;
+		GameInterface.(_tabName).(row).td4.icon.width  = 40;
+		GameInterface.(_tabName).(row).td4.icon.height = 40;
+		GameInterface.(_tabName).(row).td4.icon.offset = "-2, 0";
+		GameInterface.(_tabName).(row).td4.str = XI_ConvertString("IslaMona");
+		GameInterface.(_tabName).(row).td4.textoffset = "40, 0";
+		GameInterface.(_tabName).(row).td5.str = XI_ConvertString("IslaMona");
+		GameInterface.(_tabName).(row).td6.str = DateTimeToDate(chref.ShipInStockMan.AltDate);
+		GameInterface.(_tabName).(row).td6.rawData = chref.ShipInStockMan.AltDate;
+		GameInterface.(_tabName).(row).td7.str = chref.ShipInStockMan.MoneyForShip;
+		cn++;
 	}
 	Table_UpdateWindow(_tabName);
 }
@@ -1790,8 +1786,8 @@ void TradebookFillPriceListByGood(string _tabName, int goodIdx)
 		}
 		if (CheckAttribute(nulChr, "PriceList." + cityId + "." + sGoods + ".Qty"))
 		{
-				GameInterface.(_tabName).(row).td8.str = nulChr.PriceList.(cityId).(sGoods).Qty;
-				GameInterface.(_tabName).(row).td7.str = nulChr.PriceList.(cityId).(sGoods).Qty;
+			GameInterface.(_tabName).(row).td7.str = GetGoodWeightByType(goodIdx, int(nulChr.PriceList.(cityId).(sGoods).Qty));
+			GameInterface.(_tabName).(row).td8.str = nulChr.PriceList.(cityId).(sGoods).Qty;
 		}
 		else
 		{

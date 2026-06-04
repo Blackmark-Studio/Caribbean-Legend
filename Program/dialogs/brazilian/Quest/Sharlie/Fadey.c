@@ -15,6 +15,13 @@ void ProcessDialogEvent()
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
 	
+
+	if (FindStringBeforeChar(Dialog.CurrentNode, "$") == "relation")
+	{
+		pchar.GenQuest.FadeyNation = FindStringAfterChar(Dialog.CurrentNode, "$");
+		Dialog.CurrentNode = "relation";
+	}
+	
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
@@ -1107,7 +1114,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_6":
-			dialog.text = "My dear naive friend, if the priest's ears truly are closed to proclamations of conscience, then surely his hands will be open to gold... Or perhaps the other way around. I'll help you; I think that keeping such a tainted treasure here is bound to cause greater trouble down the road. However, it will require certain expenses."link.l1 = "Por que eu não estou surpreso? Quanto é desta vez?";
+			dialog.text = "My dear naive friend, if the priest's ears truly are closed to proclamations of conscience, then surely his hands will be open to gold... Or perhaps the other way around. I'll help you; I think that keeping such a tainted treasure here is bound to cause greater trouble down the road. However, it will require certain expenses.";
+			link.l1 = "Por que eu não estou surpreso? Quanto é desta vez?";
 			link.l1.go = "guardoftruth_7";
 		break;
 		
@@ -1462,14 +1470,14 @@ void ProcessDialogEvent()
 			if (ChangeCharacterNationReputation(pchar, ENGLAND, 0) < 0 && !CheckAttribute(npchar, "quest.relation"))
 			{
 				link.l1 = "Estou com um problema com as autoridades inglesas.";
-				link.l1.go = "relation";
-				pchar.GenQuest.FadeyNation = ENGLAND;
+				link.l1.go = "relation$" + ENGLAND;
+	
 			}
 			if (ChangeCharacterNationReputation(pchar, FRANCE, 0) < 0 && !CheckAttribute(npchar, "quest.relation"))
 			{
 				link.l2 = "Estou com problemas com as autoridades francesas.";
-				link.l2.go = "relation";
-				pchar.GenQuest.FadeyNation = FRANCE;
+				link.l2.go = "relation$" + FRANCE;
+	
 			}
 			if (ChangeContrabandRelation(pchar, 0) <= 5)
             {

@@ -46,6 +46,8 @@ string DLG_RunKnownFunction(string functionName, ref context, ref args, int args
     case "nationI":         return GetNationNameByType(int(DLG_A0(args)));                    break;
     case "money":           return FindRussianMoneyString(int(DLG_A0(args)));                 break;
     case "abs":             return DLG_Abs(DLG_A0(args));                                     break;
+    // Имеется $decl(N|пират|пирата|пиратов)
+    case "decl":            return _DLG_DeclensionString(args);                               break;
   }
 
   return "$custom";

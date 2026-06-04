@@ -125,6 +125,7 @@ HK_grenade {装填手榴弹 (修改器)}
 HK_GunEchin {装填刺猬弹 (修改器)}
 HK_harpoon {装填鱼叉 (修改器)}
 hk_ImmediateReload {立即装填}
+hk_FireMode {切换射击模式}
 hk_InstantRepair {维修}
 hk_LightRepair {紧急维修}
 hk_Mine {发射水雷}

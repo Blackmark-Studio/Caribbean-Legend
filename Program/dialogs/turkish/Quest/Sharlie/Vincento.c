@@ -38,7 +38,8 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth.Archy") && pchar.questTemp.Guardoftruth.Archy == "begin")
 			{
 				dialog.text = "Pax vobiscum, evladım... Senin için ne yapabilirim?";
-				link.l1 = TimeGreeting()+" , Ekselansları. Anlaşmamızla ilgili bir haberiniz var mı?"link.l1.go ="guardoftruth_17";
+				link.l1 = TimeGreeting()+" , Ekselansları. Anlaşmamızla ilgili bir haberiniz var mı?";
+				link.l1.go ="guardoftruth_17";
 				break;
 			}
 			dialog.text = "Bir şey mi istedin, oğlum?";

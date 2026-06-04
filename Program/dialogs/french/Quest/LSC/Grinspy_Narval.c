@@ -235,7 +235,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "De qui je parle ? Je parle de l'attaque sur Mary la Rouge et de ces deux Narvals qui l'ont tuée."link.l1.go ="negotiations_6";
+				link.l1 = "De qui je parle ? Je parle de l'attaque sur Mary la Rouge et de ces deux Narvals qui l'ont tuée.";
+				link.l1.go ="negotiations_6";
 			}
 		break;
 		

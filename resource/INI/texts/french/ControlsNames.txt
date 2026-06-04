@@ -125,6 +125,7 @@ HK_grenade {Charger une grenade (modificateur)}
 HK_GunEchin {Charger une charge d'hérisson (modificateur)}
 HK_harpoon {Charger une flèche (modificateur)}
 hk_ImmediateReload {Rechargement préparé}
+hk_FireMode {Changer le mode de tir}
 hk_InstantRepair {Réparation en combat}
 hk_LightRepair {Réparation d'urgence}
 hk_Mine {Lancer une mine}

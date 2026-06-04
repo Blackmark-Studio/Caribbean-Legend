@@ -125,6 +125,7 @@ HK_grenade {グレネードを装填（修正）}
 HK_GunEchin {ハリネズミ弾を装填（修正）}
 HK_harpoon {矢を装填（修飾）}
 hk_ImmediateReload {即時リロード}
+hk_FireMode {射撃モードを変更}
 hk_InstantRepair {修理}
 hk_LightRepair {緊急修理}
 hk_Mine {機雷を発射}

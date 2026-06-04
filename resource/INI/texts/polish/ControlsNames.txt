@@ -125,6 +125,7 @@ HK_grenade {Załaduj granat (modyfikator)}
 HK_GunEchin {Załaduj hedgehog charge (modyfikator)}
 HK_harpoon {Załaduj harpun (modyfikator)}
 hk_ImmediateReload {Natychmiastowe przeładowanie}
+hk_FireMode {Zmień tryb strzału}
 hk_InstantRepair {Naprawa}
 hk_LightRepair {Naprawa awaryjna}
 hk_Mine {Zrzuć minę}

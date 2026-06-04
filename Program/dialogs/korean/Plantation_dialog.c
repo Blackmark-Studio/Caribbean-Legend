@@ -372,7 +372,7 @@ void ProcessDialogEvent()
 		case "mtraxx_soldier_1":
             dialog.text = "너는 상인처럼 안 보이는데, 이방인아. 허가증을 보여라.";
 			link.l1 = "살려줘! 종이 한 장이 사람이 장사를 할 수 있는지 없는지 결정한단 말이야? 너무 비싸잖아! 나 이제 막 장사를 시작했는데, 벌써 내 인생의 열정이 됐어! 그냥 보내줘, 그러면 내가 주인한테 너희 둘 좋게 얘기해줄게.";
-			link.l1.go = "mtraxx_10";
+			link.l1.go = "mtraxx_soldier_2";
 		break;
 		
 		case "mtraxx_soldier_2":

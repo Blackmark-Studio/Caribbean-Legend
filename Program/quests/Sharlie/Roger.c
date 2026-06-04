@@ -4223,19 +4223,24 @@ void Mtraxx_IgnasioPrepareSpanish(string qName) // ставим убегающе
 	DoQuestFunctionDelay("Mtraxx_IgnasioCreateSpanish", 2.0);
 }
 
-void Mtraxx_IgnasioCreateSpanish(string qName) // 
+void Mtraxx_IgnasioRandomShips()
 {
-	int iShip[4], iRank, iScl;
-	
 	int iClass = sti(RealShips[sti(pchar.ship.type)].Class) + 1;
-	
 	if (MOD_SKILL_ENEMY_RATE > 8) iClass -= 1;
 	if(iClass < 3) iClass = 3;
 	if(iClass > 5) iClass = 5;
-	
-	iShip[1] = SHIP_GALEON_L;
-	iShip[2] = GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
-	iShip[3] = GetRandomShipType(GetClassFlag(iClass + 1), FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
+	pchar.questTemp.Mtraxx.spanishShip.flagman = SHIP_GALEON_L;
+	pchar.questTemp.Mtraxx.spanishShip.first = GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
+	pchar.questTemp.Mtraxx.spanishShip.second = GetRandomShipType(GetClassFlag(iClass + 1), FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
+}
+
+void Mtraxx_IgnasioCreateSpanish(string qName) // 
+{
+	int iShip[4], iRank, iScl;
+
+	iShip[1] = int(pchar.questTemp.Mtraxx.spanishShip.flagman);
+	iShip[2] = int(pchar.questTemp.Mtraxx.spanishShip.first);
+	iShip[3] = int(pchar.questTemp.Mtraxx.spanishShip.second);
 	Group_FindOrCreateGroup("LosadaSeaGroup");
 	for (int i=1; i<=3; i++)
 	{
@@ -4372,7 +4377,7 @@ void Mtraxx_IgnasioClearSeaGroups(string qName) //
 	pchar.quest.mtraxx_ignasio_brave.over = "yes";
 	pchar.quest.mtraxx_ignasio_open.over = "yes";
 	Group_DeleteGroup("LosadaSeaGroup");
-	AddQuestRecord("Roger_6", "11");
+	if (!CheckAttribute(pchar, "questTemp.Mtraxx.LosadaSink")) AddQuestRecord("Roger_6", "11");
 	QuestSetCurrentNode("Terrax", "mtraxx_48");
 	AddCharacterExpToSkill(pchar, "Fortune", 300);
 	AddCharacterExpToSkill(pchar, "Sneak", 300);

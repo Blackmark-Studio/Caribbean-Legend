@@ -136,7 +136,8 @@ void ProcessDialogEvent()
 					// вторая проверка времени. Отбираем Элен, со Свенсоном нейтральные отношения - ну не выщло и не вышло, хоть попытались. Данни и Натана - в Марун-Таун
 					if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 					{
-						dialog.text = "J'ai entendu parler de tes exploits héroïques ! Dannie m'a raconté la version courte. D'ailleurs, nous sommes amis maintenant. Et Nathan a complètement changé ! Toute sa dépression s'est envolée quand il a vu son 'Centurion'.\nMais j'ai de mauvaises nouvelles pour toi, "+pchar.name+"Nous avons perdu tellement de temps que les droits d'héritage du testament de Sharp sont depuis longtemps révolus et Isla Tesoro est devenue une base militaire anglaise. Je ne peux plus rien faire pour vous aider avec Levasseur."link.l1 ="Je suis absolument sans voix... Nous avons traversé tant de péripéties pour rien. Y a-t-il vraiment rien que nous puissions faire ?";
+						dialog.text = "J'ai entendu parler de tes exploits héroïques ! Dannie m'a raconté la version courte. D'ailleurs, nous sommes amis maintenant. Et Nathan a complètement changé ! Toute sa dépression s'est envolée quand il a vu son 'Centurion'.\nMais j'ai de mauvaises nouvelles pour toi, "+pchar.name+"Nous avons perdu tellement de temps que les droits d'héritage du testament de Sharp sont depuis longtemps révolus et Isla Tesoro est devenue une base militaire anglaise. Je ne peux plus rien faire pour vous aider avec Levasseur.";
+						link.l1 ="Je suis absolument sans voix... Nous avons traversé tant de péripéties pour rien. Y a-t-il vraiment rien que nous puissions faire ?";
 						link.l1.go = "saga_l2";
 					}
 					else
@@ -1658,7 +1659,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trade_bakaut_1":
-			RemoveDublonsFromPCharTotal(750);
+			if (CheckAttribute(pchar, "questTemp.UpgradeBakaut")) RemoveDublonsFromPCharTotal(3150);
+			else RemoveDublonsFromPCharTotal(750);
 			Log_Info("You have given 750 doubloons");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Remarquable. Je vais ordonner à mes gens de transporter le bois de fer sur votre navire.";
@@ -1670,7 +1672,8 @@ void ProcessDialogEvent()
 			dialog.text = "Si tu veux en acheter plus, reviens dans deux semaines. J'aurai préparé un autre lot d'ici là.";
 			link.l1 = "Très bien, Jan. À la prochaine !";
 			link.l1.go = "exit";
-			AddCharacterGoods(pchar, GOOD_SANDAL, 25);
+			if (CheckAttribute(pchar, "questTemp.UpgradeBakaut")) AddCharacterGoods(pchar, GOOD_SANDAL, 125);
+			else AddCharacterGoods(pchar, GOOD_SANDAL, 25);
 			DeleteAttribute(npchar, "quest.trade_bakaut");
 			SetFunctionTimerCondition("Bakaut_SvensonAttrReturn", 0, 0, 1, false); // таймер
 			AddCharacterExpToSkill(pchar, "Commerce", 100);

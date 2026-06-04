@@ -55,7 +55,7 @@ void ProcessDialogEvent()
 			else
 			{
 				// eddy。 检查是否为敌人。 -->
-				if (GetRelation2BaseNation(sti(npchar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+				if (GetRelation2BaseNation(sti(npchar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE && STH_GetColonyStatus(NPChar.City) != STH_LEGAL)
 				{
 					dialog.text = RandPhraseSimple("你是谁, 在这里做什么? ", "站住! 你是谁? 为什么试图进入堡垒? ");
 					//==> 按许可证
@@ -416,7 +416,7 @@ void ProcessDialogEvent()
 			dialog.text = RandPhraseSimple("在我看来这是某种诡计。 我们和指挥官谈谈, " + GetSexPhrase("伙计","亲爱的") + ", 把事情弄清楚... ", "嗯... 我觉得你不是你假装的那个人... " + GetAddress_Form(npchar) + "放下武器, 跟我来接受进一步调查! ");
 			link.l1 = RandPhraseSimple("去你的! ", "当两个星期天在一周内到来时... ");
 			link.l1.go = "fight";
-			if (sti(pchar.questTemp.stels.landFort) != GetDataDay())
+			if (GetAttributeInt(pchar, "questTemp.stels.landFort") != GetDataDay())
 			{
 				AddCharacterExpToSkill(pchar, SKILL_SNEAK, 40);
 				pchar.questTemp.stels.landFort = GetDataDay();
@@ -426,7 +426,7 @@ void ProcessDialogEvent()
 			dialog.text = RandPhraseSimple("哦, 我明白了... 一切似乎都没问题, " + GetAddress_Form(pchar) + "你可以走了。 ", "我站岗太久有点累了... 一切似乎都很好, " + GetAddress_Form(pchar) + ", 对不起。 ");
 			link.l1 = "没问题! ";
 			link.l1.go = "exit";
-			if (sti(pchar.questTemp.stels.landFort) != GetDataDay())
+			if (GetAttributeInt(pchar, "questTemp.stels.landFort") != GetDataDay())
 			{
 				AddCharacterExpToSkill(pchar, SKILL_SNEAK, 80);
 				pchar.questTemp.stels.landFort = GetDataDay();

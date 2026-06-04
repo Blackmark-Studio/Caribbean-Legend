@@ -556,7 +556,7 @@ void ProcessDialogEvent()
 		case "ClockTower_VanDoorn_1":
 			NationName = GetSexPhrase(""+NationNameMan(sti(pchar.baseNation))+"",""+NationNameWoman(sti(pchar.baseNation))+"");
 			shipType = LowerFirst(XI_ConvertString(GetShipTypeName(pchar)));
-			dialog.text = ""+UpperFirst(GetTitle(NPChar, false))+" "+GetFullName(pchar)+", "+NationName+". Ваш корабль — '"+PChar.Ship.Name+"', "+shipType+". "+GetCannonQuantity(pchar)+" пушек и "+GetMaxCrewQuantity(pchar)+" экипажа.";
+			dialog.text = ""+UpperFirst(GetTitle(NPChar, false))+" "+GetFullName(pchar)+", "+NationName+". Ваш корабль — '"+PChar.Ship.Name+"', "+shipType+". "+FindRussianCannonString(GetCannonQuantity(pchar), "No") +" и "+GetMaxCrewQuantity(pchar)+" экипажа.";
 			link.l1 = "Всё верно.";
 			link.l1.go = "ClockTower_VanDoorn_2";
 			DelLandQuestMark(npchar);
@@ -1441,7 +1441,7 @@ void ProcessDialogEvent()
 		case "ClockTower_VanDoorn_21":
 			NationName = GetSexPhrase(""+NationNameMan(sti(pchar.baseNation))+"",""+NationNameWoman(sti(pchar.baseNation))+"");
 			shipType = LowerFirst(XI_ConvertString(GetShipTypeName(pchar)));
-			dialog.text = ""+UpperFirst(GetTitle(NPChar, false))+" "+GetFullName(pchar)+", "+NationName+". Ваш корабль — '"+PChar.Ship.Name+"', "+shipType+". "+GetCannonQuantity(pchar)+" пушек и "+GetMaxCrewQuantity(pchar)+" экипажа.";
+			dialog.text = ""+UpperFirst(GetTitle(NPChar, false))+" "+GetFullName(pchar)+", "+NationName+". Ваш корабль — '"+PChar.Ship.Name+"', "+shipType+". "+FindRussianCannonString(GetCannonQuantity(pchar), "No")+" и "+GetMaxCrewQuantity(pchar)+" экипажа.";
 			link.l1 = "Вы, как всегда, точны, минхер директор.";
 			link.l1.go = "ClockTower_VanDoorn_22";
 		break;

@@ -21,7 +21,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				{
 					link.l1 = "Söylesene, bugünlerin kahramanı Kaptan Edgardo Sotta'yı gördün mü? Maalesef ben kaçırdım. Nasıl biri? Şuna inanamıyorum, bir tüccar o meşhur Geveze Matt'i yakalamış!";
 					link.l1.go = "Sotta1_1";
-					link.l2 = "Bütün kasabanın Lutter'ın yakalanışını kutladığını görüyorum, denize hiç açılmayanlar bile."link.l2.go ="Lutter1_1";
+					link.l2 = "Bütün kasabanın Lutter'ın yakalanışını kutladığını görüyorum, denize hiç açılmayanlar bile.";
+					link.l2.go ="Lutter1_1";
 				}
 			}
 			// <== квест "Путеводная звезда"

@@ -235,7 +235,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "Di chi parlo? Parlo dell’agguato a Mary la Rossa e di quei due Narvali che l’hanno fatta fuori."link.l1.go ="negoziazioni_6";
+				link.l1 = "Di chi parlo? Parlo dell’agguato a Mary la Rossa e di quei due Narvali che l’hanno fatta fuori.";
+				link.l1.go ="negotiations_6";
 			}
 		break;
 		

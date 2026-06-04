@@ -1659,7 +1659,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trade_bakaut_1":
-			RemoveDublonsFromPCharTotal(750);
+			if (CheckAttribute(pchar, "questTemp.UpgradeBakaut")) RemoveDublonsFromPCharTotal(3150);
+			else RemoveDublonsFromPCharTotal(750);
 			Log_Info("你已支付750杜布隆");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "值得称赞。 我会命令我的人把铁木搬到你的船上。 ";
@@ -1671,7 +1672,8 @@ void ProcessDialogEvent()
 			dialog.text = "如果你想购买更多, 两周后再来。 到那时我会再准备一批。 ";
 			link.l1 = "好的, 扬。 下次见! ";
 			link.l1.go = "exit";
-			AddCharacterGoods(pchar, GOOD_SANDAL, 25);
+			if (CheckAttribute(pchar, "questTemp.UpgradeBakaut")) AddCharacterGoods(pchar, GOOD_SANDAL, 125);
+			else AddCharacterGoods(pchar, GOOD_SANDAL, 25);
 			DeleteAttribute(npchar, "quest.trade_bakaut");
 			SetFunctionTimerCondition("Bakaut_SvensonAttrReturn", 0, 0, 1, false); // 定时器
 			AddCharacterExpToSkill(pchar, "Commerce", 100);

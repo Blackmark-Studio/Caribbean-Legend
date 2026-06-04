@@ -21,7 +21,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				{
 					link.l1 = "Tell me, have you seen the hero of the day, Captain Edgardo Sotta? I missed him, unfortunately. What's he like? I can't believe a merchant caught the infamous Windbag Matt!";
 					link.l1.go = "Sotta1_1";
-					link.l2 = "I see the whole town is celebrating Lutter's capture, even those who never go to sea."link.l2.go ="Lutter1_1";
+					link.l2 = "I see the whole town is celebrating Lutter's capture, even those who never go to sea.";
+					link.l2.go ="Lutter1_1";
 				}
 			}
 			// <== квест "Путеводная звезда"

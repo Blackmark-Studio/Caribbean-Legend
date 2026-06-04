@@ -235,7 +235,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "De quem estou falando? Estou falando do ataque à Mary Vermelha e daqueles dois Narvais que a mataram."link.l1.go ="negotiations_6";
+				link.l1 = "De quem estou falando? Estou falando do ataque à Mary Vermelha e daqueles dois Narvais que a mataram.";
+				link.l1.go ="negotiations_6";
 			}
 		break;
 		

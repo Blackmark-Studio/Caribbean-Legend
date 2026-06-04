@@ -21,7 +21,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				{
 					link.l1 = "말해 봐, 오늘의 영웅 에드가르도 소타 선장을 본 적 있어? 난 아쉽게도 못 봤어. 어떤 사람이야? 상인이 악명 높은 바람쟁이 맷을 잡았다니 믿기지가 않아!";
 					link.l1.go = "Sotta1_1";
-					link.l2 = "루터가 붙잡힌 걸 온 마을이 축하하는구만, 바다에 나가본 적도 없는 녀석들까지도."link.l2.go ="Lutter1_1";
+					link.l2 = "루터가 붙잡힌 걸 온 마을이 축하하는구만, 바다에 나가본 적도 없는 녀석들까지도.";
+					link.l2.go ="Lutter1_1";
 				}
 			}
 			// <== квест "Путеводная звезда"

@@ -1662,7 +1662,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trade_bakaut_1":
-			RemoveDublonsFromPCharTotal(750);
+			if (CheckAttribute(pchar, "questTemp.UpgradeBakaut")) RemoveDublonsFromPCharTotal(3150);
+			else RemoveDublonsFromPCharTotal(750);
 			Log_Info("You have given 750 doubloons");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "칭찬할 만하군. 내 부하들에게 철목을 네 배로 옮기라고 명령하겠다.";
@@ -1674,7 +1675,8 @@ void ProcessDialogEvent()
 			dialog.text = "더 사고 싶으면 2주 후에 다시 오시오. 그때쯤이면 새로 한 번 더 만들어 놓겠소.";
 			link.l1 = "알겠어, 얀. 다음에 또 보자!";
 			link.l1.go = "exit";
-			AddCharacterGoods(pchar, GOOD_SANDAL, 25);
+			if (CheckAttribute(pchar, "questTemp.UpgradeBakaut")) AddCharacterGoods(pchar, GOOD_SANDAL, 125);
+			else AddCharacterGoods(pchar, GOOD_SANDAL, 25);
 			DeleteAttribute(npchar, "quest.trade_bakaut");
 			SetFunctionTimerCondition("Bakaut_SvensonAttrReturn", 0, 0, 1, false); // таймер
 			AddCharacterExpToSkill(pchar, "Commerce", 100);

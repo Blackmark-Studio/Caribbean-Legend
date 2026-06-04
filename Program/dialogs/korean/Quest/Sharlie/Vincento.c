@@ -38,7 +38,8 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth.Archy") && pchar.questTemp.Guardoftruth.Archy == "begin")
 			{
 				dialog.text = "평화가 함께하길, 아들아... 무엇을 도와줄까?";
-				link.l1 = TimeGreeting()+", 각하. 우리 합의에 관한 소식이 있으십니까?"link.l1.go ="guardoftruth_17";
+				link.l1 = TimeGreeting()+", 각하. 우리 합의에 관한 소식이 있으십니까?";
+				link.l1.go ="guardoftruth_17";
 				break;
 			}
 			dialog.text = "무슨 볼일이 있느냐, 아들아?";

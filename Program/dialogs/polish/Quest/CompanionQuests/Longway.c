@@ -7683,7 +7683,8 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
 			{
 				dialog.text = "Kto wie, co on planuje, Charles? Miej oczy szeroko otwarte, tak, co nie?";
-				link.l1 = "Zrobię to. Wrócę wkrótce, Helen."link.l1.go ="Nie mogę się doczekać, aż w końcu z tobą porozmawiam, Wielmożny Panie Kapitanie.";
+				link.l1 = "Zrobię to. Wrócę wkrótce, Helen.";
+				link.l1.go ="Nie mogę się doczekać, aż w końcu z tobą porozmawiam, Wielmożny Panie Kapitanie.";
 			}
 		break;
 		

@@ -3850,7 +3850,8 @@ void ProcessDialogEvent()
 
 		case "WildRose_Chimiset_64_2":
 			dialog.text = "Arkadaşım, zihin ve beden tamamen farklı düzene ait şeylerdir. Zihin bedeni yönetir, bazen de beden zihni ele geçirmeye çalışır. Birbirlerine çok bağlıdırlar, ama aslında tam anlamıyla bir ve aynı değiller. Bir insan dışarıdan tamamen sağlıklı görünebilir, ama ruhu çoktan ölüm yolunda yürümeye başlamış olabilir.";
-			link.l1 = "Biliyor musun, Orelie’nin sanki bizi bekliyormuş gibi davrandığı aklıma geldi, sanki geleceğimizi biliyordu. Yaşlı kadın bir gün önce ya da sonra da ölebilirdi, ama tam da Mary’nin babasıyla ilgili önemli bir şeyi anlattıktan hemen sonra oldu bu."link.l1.go ="WildRose_Chimiset_65";
+			link.l1 = "Biliyor musun, Orelie’nin sanki bizi bekliyormuş gibi davrandığı aklıma geldi, sanki geleceğimizi biliyordu. Yaşlı kadın bir gün önce ya da sonra da ölebilirdi, ama tam da Mary’nin babasıyla ilgili önemli bir şeyi anlattıktan hemen sonra oldu bu.";
+			link.l1.go ="WildRose_Chimiset_65";
 			AddCharacterExpToSkill(pchar, "sneak", 100);
 		break;
 

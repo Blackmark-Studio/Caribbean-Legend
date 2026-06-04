@@ -810,7 +810,8 @@ void ProcessDialogEvent()
 			//нет, посылаем в сад...
 			else
 			{
-				Dialog.Text = "Görünüşe göre yeterince paran yok."Link.l1 ="Ne yazık, sonra tekrar geleceğim.";
+				Dialog.Text = "Görünüşe göre yeterince paran yok.";
+				Link.l1 ="Ne yazık, sonra tekrar geleceğim.";
 			}
 			Link.l1.go = "Exit";
 		break;  

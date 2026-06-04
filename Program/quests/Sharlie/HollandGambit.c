@@ -716,7 +716,7 @@ void GetMeifengToCharacter(ref rChar)//сажаем на Мейфенг
 	rChar.Ship.Type = GenerateShipExt(SHIP_MAYFANG, true, rChar);
 	rChar.Ship.name = GetShipName("Meifeng");
 	SetBaseShipData(rChar);
-	rChar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS20;
+	rChar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS16;
 	SetCrewQuantityFull(rChar);
 	AddCrewMorale(rChar, 50);
 	ChangeCrewExp(rChar, "Sailors", 30);

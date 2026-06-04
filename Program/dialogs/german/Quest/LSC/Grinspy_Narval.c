@@ -235,7 +235,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "Wovon rede ich? Ich rede vom Angriff auf die Rote Mary und den beiden Narwalen, die sie getötet haben."link.l1.go ="Verhandlungen_6";
+				link.l1 = "Wovon rede ich? Ich rede vom Angriff auf die Rote Mary und den beiden Narwalen, die sie getötet haben.";
+				link.l1.go ="negotiations_6";
 			}
 		break;
 		

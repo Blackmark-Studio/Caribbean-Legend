@@ -100,7 +100,7 @@ void NextShadows_Node0()
 			SZN_IncreaseTempEffect(M_EUROPEAN_GOODS_STOCK, -0.95);
 			reaction = SF_AddReaction("d", "", "", SF_Icon("fractions", "smugglers"));
 			SZN_SetReactionEffect(&reaction, M_EUROPEAN_GOODS_STOCK, 0.15);
-			SF_AddCondition(&reaction, sti(pchar.questTemp.Contraband.relation) > 70, SF_CONDITION_RELATIONS, "Contraband");
+			SF_AddCondition(&reaction, sti(pchar.questTemp.Contraband.relation) > 70, SF_CONDITION_RELATIONS, "Smuggler");
 		break;
 		case "c":
 			SZN_IncreaseTempEffect(M_EUROPEAN_GOODS_COST, 1.20);

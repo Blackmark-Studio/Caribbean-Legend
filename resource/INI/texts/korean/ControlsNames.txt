@@ -125,6 +125,7 @@ HK_grenade {수류탄 장전 (변경자)}
 HK_GunEchin {고슴도치 탄 장전 (변경자)}
 HK_harpoon {화기에 화살 장전 (변경자)}
 hk_ImmediateReload {즉시 재장전}
+hk_FireMode {사격 모드 변경}
 hk_InstantRepair {수리}
 hk_LightRepair {긴급 수리}
 hk_Mine {기뢰 투하}

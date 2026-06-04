@@ -125,6 +125,7 @@ HK_grenade {El bombası yükle (değiştirici)}
 HK_GunEchin {Kirpi mermisi yükle (değiştirici)}
 HK_harpoon {Ok atı yükle (değiştirici)}
 hk_ImmediateReload {Anında Yeniden Doldurma}
+hk_FireMode {Ates modunu degistir}
 hk_InstantRepair {Onarım}
 hk_LightRepair {Acil onarım}
 hk_Mine {Mayın bırak}

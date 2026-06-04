@@ -235,7 +235,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "O kim mówię? Mówię o ataku na Czerwoną Marię i tych dwóch Narwalach, którzy ją zabili."link.l1.go ="negocjacje_6";
+				link.l1 = "O kim mówię? Mówię o ataku na Czerwoną Marię i tych dwóch Narwalach, którzy ją zabili.";
+				link.l1.go ="negotiations_6";
 			}
 		break;
 		

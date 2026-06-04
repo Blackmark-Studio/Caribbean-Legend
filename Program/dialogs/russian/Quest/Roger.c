@@ -3359,7 +3359,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "spy_sailor_1":
-            dialog.text = "Да, капитан. Три корабля. Флагман - тяжёлый галеон, остальные два - корвет и шебека.";
+			Mtraxx_IgnasioRandomShips();
+			string ship1 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.flagman)].name));
+			string ship2 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.first)].name));
+			string ship3 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.second)].name));
+			dialog.text = "Да, капитан. Три корабля. Флагман - " + ship1 + ", остальные два - " + ship2 + " и " + ship3 + ".";
 			link.l1 = "Все на борт! Может, ещё успеем скрыться.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_IgnasioOurEscape");

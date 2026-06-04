@@ -70,6 +70,26 @@ void ProcessDialogEvent()
 				link.l1 = "Sì, padre. Ho bisogno d'una nave per aiutare Michel, ma son giunto or ora nei Caraibi e la mia borsa è vuota. Mio fratello mi disse che potevi prestarmi qualche moneta...";
 				link.l1.go = "FastStart_2";
 			}
+			//--> Rosa Selvaggia
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap3_Benua"))
+			{
+				link.l1 = "Buongiorno, padre. Abbiamo bisogno del vostro aiuto per una questione piuttosto insolita.";
+				link.l1.go = "WildRose_Abb_2";
+				break;
+			}
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap3_Benua_2") && PCharDublonsTotal() >= 800)
+			{
+				link.l3 = "Padre, ho procurato la somma richiesta. Ottocento monete d'oro.";
+				link.l3.go = "WildRose_Abb_14_pay";
+			}
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap3_Benua_3"))
+			{
+				dialog.text = "Salute, figlio mio. Immagino che tu sia venuto a informarti sui risultati della tua... ehm, della vostra faccenda?";
+				link.l1 = "Siete perspicace come sempre, padre. Non tenetemi sulle spine: ditemi, che cosa è riuscito a scoprire il vostro uomo?";
+				link.l1.go = "WildRose_Abb_16";
+				break;
+			}
+			//<-- Rosa Selvaggia
 			if (CheckAttribute(npchar, "quest.help") && CheckAttribute(npchar, "quest.meet"))
 			{
 				link.l1 = "Sì, padre. Ho bisogno del vostro aiuto.";

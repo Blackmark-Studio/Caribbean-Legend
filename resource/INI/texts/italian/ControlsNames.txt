@@ -125,6 +125,7 @@ HK_grenade {Caricare un'arma da fuoco con una granata (modificato)}
 HK_GunEchin {Caricare un'arma da fuoco con una carica di riccio (modificato)}
 HK_harpoon {Caricare un'arma da fuoco con una freccia (modificato)}
 hk_ImmediateReload {Ricarica immediata}
+hk_FireMode {Modifica modalità di fuoco}
 hk_InstantRepair {Attiva la riparazione}
 hk_LightRepair {Attiva la riparazione semplificata}
 hk_Mine {Lancia}

@@ -15,6 +15,13 @@ void ProcessDialogEvent()
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
 	
+
+	if (FindStringBeforeChar(Dialog.CurrentNode, "$") == "relation")
+	{
+		pchar.GenQuest.FadeyNation = FindStringAfterChar(Dialog.CurrentNode, "$");
+		Dialog.CurrentNode = "relation";
+	}
+	
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
@@ -1464,14 +1471,12 @@ void ProcessDialogEvent()
 			if (ChangeCharacterNationReputation(pchar, ENGLAND, 0) < 0 && !CheckAttribute(npchar, "quest.relation"))
 			{
 				link.l1 = "У меня возникли неприятности с английскими властями.";
-				link.l1.go = "relation";
-				pchar.GenQuest.FadeyNation = ENGLAND;
+				link.l1.go = "relation$" + ENGLAND;
 			}
 			if (ChangeCharacterNationReputation(pchar, FRANCE, 0) < 0 && !CheckAttribute(npchar, "quest.relation"))
 			{
 				link.l2 = "У меня возникли неприятности с французскими властями.";
-				link.l2.go = "relation";
-				pchar.GenQuest.FadeyNation = FRANCE;
+				link.l2.go = "relation$" + FRANCE;
 			}
 			if (ChangeContrabandRelation(pchar, 0) <= 5)
             {

@@ -131,12 +131,18 @@ void ProcessDialogEvent()
 					link.l1.go = "saga_f_1";
 					break;
 				}
-				if(pchar.questTemp.Saga == "calendar") // квесты баронов завершены
+				if(pchar.questTemp.Saga == "calendar") // 男爵たちのクエスト完了
 				{
-					// вторая проверка времени. Отбираем Элен, со Свенсоном нейтральные отношения - ну не выщло и не вышло, хоть попытались. Данни и Натана - в Марун-Таун
+					// 2回目の時間チェック。エレンを取り上げる。スヴェンソンとは中立関係――まあ、駄目だったものは駄目だったが、試みはした。ダニーとネイサンはマルーン・タウンへ
 					if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 					{
-						dialog.text = "あなたの英雄的な活躍は聞いたぜ！ダニーが簡単に説明してくれたんだ。ちなみに、今じゃ俺たち友達さ。 それにナサンもすっかり変わったぜ！自分の“センチュリオン”を見た瞬間、あいつの落ち込みは全部吹き飛んじまった。\nでも、悪い知らせがあるんだ。 "+pchar.name+"。俺たちはあまりにも時間を無駄にしたせいで、シャープの遺言に対する相続権はとうの昔になくなっちまったし、 イスラ・テソロもイギリスの軍事基地になっちまった。ルヴァスールの件でこれ以上お前を助けることはできねえよ。"link.l1 ="まったく言葉も出ません……これだけ苦労したのに、全部無駄だったなんて。\n本当に、どうしようもないのでしょうか？";			dialog.text = "お前の武勇伝は全部聞いてるぜ！ダニーから説明も受けたしな。ちなみに、俺たちはもう仲直りしたんだ。 ナサンのことなんて、きっとお前はもう分からないだろうな。あいつ、自分の“センチュリオン”を見た瞬間、文句なんて悪い夢みたいに忘れちまったよ…";
+						dialog.text = "お前の活躍は聞いている！ダニーがかいつまんで話してくれた。ちなみに、俺たちは仲直りした。ネイサンのほうはまるで別人だ！自分の『センチュリオン』を見た途端、憂鬱なんぞすっかり忘れちまった。\nだが残念な知らせがある、"+pchar.name+"。俺たちはあまりにも多くの時間を失った――シャープの遺言状は相続効力を失い、イスラ・テソロは今やイングランドの軍事基地だ。これで、レヴァスールとの問題について俺がお前を助けることはもうできない。"
+						link.l1 = "言葉もない... あれだけ力を尽くしたのに、すべて無駄だったなんて。どうにもならないのか？";
+						link.l1.go = "saga_l2";
+					}
+					else
+					{
+						dialog.text = "お前の活躍は聞いている！ダニーがかいつまんで話してくれた。ちなみに、俺たちは仲直りした。ネイサンのほうはまるで別人だ！自分の『センチュリオン』を見た途端、憂鬱なんぞすっかり忘れちまった...";
 						link.l1 = "ネイサンが元気になったのか？それは嬉しい知らせだ！";
 						link.l1.go = "saga_26";
 					}
@@ -1653,7 +1659,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trade_bakaut_1":
-			RemoveDublonsFromPCharTotal(750);
+			if (CheckAttribute(pchar, "questTemp.UpgradeBakaut")) RemoveDublonsFromPCharTotal(3150);
+			else RemoveDublonsFromPCharTotal(750);
 			Log_Info("You have given 750 doubloons");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "感心だな。俺の部下に鉄の木をお前の船まで運ばせるぜ。";
@@ -1665,7 +1672,8 @@ void ProcessDialogEvent()
 			dialog.text = "もっと買いたいなら、二週間後にまた来てくれ。\nその頃には新しい品を用意しておくぜ。";
 			link.l1 = "よし、ヤン。また今度な！";
 			link.l1.go = "exit";
-			AddCharacterGoods(pchar, GOOD_SANDAL, 25);
+			if (CheckAttribute(pchar, "questTemp.UpgradeBakaut")) AddCharacterGoods(pchar, GOOD_SANDAL, 125);
+			else AddCharacterGoods(pchar, GOOD_SANDAL, 25);
 			DeleteAttribute(npchar, "quest.trade_bakaut");
 			SetFunctionTimerCondition("Bakaut_SvensonAttrReturn", 0, 0, 1, false); // таймер
 			AddCharacterExpToSkill(pchar, "Commerce", 100);

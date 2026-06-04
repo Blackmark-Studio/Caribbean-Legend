@@ -15,6 +15,13 @@ void ProcessDialogEvent()
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
 	
+
+	if (FindStringBeforeChar(Dialog.CurrentNode, "$") == "relation")
+	{
+		pchar.GenQuest.FadeyNation = FindStringAfterChar(Dialog.CurrentNode, "$");
+		Dialog.CurrentNode = "relation";
+	}
+	
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
@@ -1109,7 +1116,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_6":
-			dialog.text = "Mio caro ingenuo amico, se davvero le orecchie del prete sono sorde ai richiami della coscienza, di certo le sue mani saranno ben pronte ad accogliere l’oro... O magari il contrario. Ti darò una mano, ché lasciare un bottino così maledetto qui porterà solo guai peggiori in futuro. Tuttavia, la faccenda avrà il suo prezzo."link.l1 ="Perché non mi stupisce? Quanto stavolta?";
+			dialog.text = "Mio caro ingenuo amico, se davvero le orecchie del prete sono sorde ai richiami della coscienza, di certo le sue mani saranno ben pronte ad accogliere l’oro... O magari il contrario. Ti darò una mano, ché lasciare un bottino così maledetto qui porterà solo guai peggiori in futuro. Tuttavia, la faccenda avrà il suo prezzo.";
+			link.l1 ="Perché non mi stupisce? Quanto stavolta?";
 			link.l1.go = "guardoftruth_7";
 		break;
 		
@@ -1464,14 +1472,14 @@ void ProcessDialogEvent()
 			if (ChangeCharacterNationReputation(pchar, ENGLAND, 0) < 0 && !CheckAttribute(npchar, "quest.relation"))
 			{
 				link.l1 = "Ho dei guai con le autorità inglesi.";
-				link.l1.go = "relation";
-				pchar.GenQuest.FadeyNation = ENGLAND;
+				link.l1.go = "relation$" + ENGLAND;
+	
 			}
 			if (ChangeCharacterNationReputation(pchar, FRANCE, 0) < 0 && !CheckAttribute(npchar, "quest.relation"))
 			{
 				link.l2 = "Ho avuto dei guai con le autorità francesi.";
-				link.l2.go = "relation";
-				pchar.GenQuest.FadeyNation = FRANCE;
+				link.l2.go = "relation$" + FRANCE;
+	
 			}
 			if (ChangeContrabandRelation(pchar, 0) <= 5)
             {

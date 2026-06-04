@@ -125,6 +125,7 @@ HK_grenade {Load a grenade (modifier)}
 HK_GunEchin {Load a hedgehog charge (modifier)}
 HK_harpoon {Load an arrow (modifier)}
 hk_ImmediateReload {Immediate Reloading}
+hk_FireMode {Change firing order}
 hk_InstantRepair {Repair}
 hk_LightRepair {Emergency repair}
 hk_Mine {Launch mine}

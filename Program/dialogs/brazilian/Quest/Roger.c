@@ -3353,7 +3353,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "spy_sailor_1":
-            dialog.text = "Sim, capitão. Três navios. A nau capitânia deles é um galeão, o maior que já vi, e está vindo rápido. Os outros dois são uma corveta e um xebec.";
+			Mtraxx_IgnasioRandomShips();
+			string ship1 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.flagman)].name));
+			string ship2 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.first)].name));
+			string ship3 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.second)].name));
+			dialog.text = "Sim, capitão. Três navios. A capitânia é " + ship1 + ", os outros dois são " + ship2 + " e " + ship3 + ".";
 			link.l1 = "Todos a bordo. Ainda podemos estar em posição de fugir.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_IgnasioOurEscape");

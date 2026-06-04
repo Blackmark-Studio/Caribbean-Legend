@@ -136,7 +136,8 @@ void ProcessDialogEvent()
 					// вторая проверка времени. Отбираем Элен, со Свенсоном нейтральные отношения - ну не выщло и не вышло, хоть попытались. Данни и Натана - в Марун-Таун
 					if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 					{
-						dialog.text = "Kahramanlıklarını duydum! Dannie bana kısaca anlattı. Bu arada, artık arkadaşız. Nathan da tamamen değişti! 'Centurion'unu görünce bütün o depresyonu yok oldu.\nAma sana kötü bir haberim var, "+pchar.name+". O kadar çok zaman kaybettik ki, Sharp'ın vasiyetindeki miras hakları çoktan gitti ve Isla Tesoro artık bir İngiliz askeri üssü oldu. Levasseur konusunda sana daha fazla yardımcı olamam."link.l1 ="Gerçekten nutkum tutuldu... Bunca sıkıntıyı boşuna çekmişiz. Hiç mi yapabileceğimiz bir şey yok?";
+						dialog.text = "Kahramanlıklarını duydum! Dannie bana kısaca anlattı. Bu arada, artık arkadaşız. Nathan da tamamen değişti! 'Centurion'unu görünce bütün o depresyonu yok oldu.\nAma sana kötü bir haberim var, "+pchar.name+". O kadar çok zaman kaybettik ki, Sharp'ın vasiyetindeki miras hakları çoktan gitti ve Isla Tesoro artık bir İngiliz askeri üssü oldu. Levasseur konusunda sana daha fazla yardımcı olamam.";
+						link.l1 ="Gerçekten nutkum tutuldu... Bunca sıkıntıyı boşuna çekmişiz. Hiç mi yapabileceğimiz bir şey yok?";
 						link.l1.go = "saga_l2";
 					}
 					else
@@ -1658,7 +1659,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trade_bakaut_1":
-			RemoveDublonsFromPCharTotal(750);
+			if (CheckAttribute(pchar, "questTemp.UpgradeBakaut")) RemoveDublonsFromPCharTotal(3150);
+			else RemoveDublonsFromPCharTotal(750);
 			Log_Info("You have given 750 doubloons");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Takdire şayan. Adamlarıma demir ağacını geminize taşımalarını emredeceğim.";
@@ -1670,7 +1672,8 @@ void ProcessDialogEvent()
 			dialog.text = "Daha fazla almak istersen, iki hafta sonra tekrar gel. O zamana kadar yeni bir parti hazırlamış olurum.";
 			link.l1 = "Pekala, Jan. Bir dahaki sefere görüşürüz!";
 			link.l1.go = "exit";
-			AddCharacterGoods(pchar, GOOD_SANDAL, 25);
+			if (CheckAttribute(pchar, "questTemp.UpgradeBakaut")) AddCharacterGoods(pchar, GOOD_SANDAL, 125);
+			else AddCharacterGoods(pchar, GOOD_SANDAL, 25);
 			DeleteAttribute(npchar, "quest.trade_bakaut");
 			SetFunctionTimerCondition("Bakaut_SvensonAttrReturn", 0, 0, 1, false); // таймер
 			AddCharacterExpToSkill(pchar, "Commerce", 100);

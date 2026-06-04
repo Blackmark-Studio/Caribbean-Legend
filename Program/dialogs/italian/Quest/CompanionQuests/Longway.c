@@ -1262,7 +1262,8 @@ void ProcessDialogEvent()
 			pchar.questTemp.PZ_Batavia_plantation_Go = true;
 			
 			dialog.text = "Buona scelta! Mi hai sorpreso. Per sfruttarla al meglio, ti servirà un'arma da fuoco decente. Dimmi, quanto lontano sai mirare, Chang Tu?";
-			link.l1 = "A dirla schietta... non troppo lontano, devo assicurarmi di non mancare il bersaglio."link.l1.go ="Piantagione in vista, Mio Signore Capitano. Siamo abbastanza vicini per sentire l'odore del sangue nascosto sotto il profumo della canna da zucchero.";
+			link.l1 = "A dirla schietta... non troppo lontano, devo assicurarmi di non mancare il bersaglio.";
+			link.l1.go ="Piantagione in vista, Mio Signore Capitano. Siamo abbastanza vicini per sentire l'odore del sangue nascosto sotto il profumo della canna da zucchero.";
 			link.l2 = "Colpirò da lontano – il mio nemico non capirà nemmeno da dove gli sia piovuta addosso la morte.";
 			link.l2.go = "PZ_OliverTrust_Plantation_FarDistance1";
 			notification(GetConvertStr("Sniper", "AbilityDescribe.txt")+" Unlocked", "Longway");
@@ -7682,7 +7683,8 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
 			{
 				dialog.text = "Chi lo sa cosa gli passa per la testa, Charles? Tieni gli occhi aperti, giusto?";
-				link.l1 = "Lo farò. Tornerò presto, Helen."link.l1.go ="Mio Signore Capitano, la ragazza... respira ancora, ma il suo spirito è già naufragato. Non resta che pietà per chi è stato spezzato così, giusto?";
+				link.l1 = "Lo farò. Tornerò presto, Helen.";
+				link.l1.go ="PZ_Etap6_NaBeregu_DevaBolnaya_7";
 			}
 		break;
 		

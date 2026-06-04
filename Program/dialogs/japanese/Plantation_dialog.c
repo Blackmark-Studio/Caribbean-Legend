@@ -372,7 +372,7 @@ void ProcessDialogEvent()
 		case "mtraxx_soldier_1":
             dialog.text = "お前は商人には見えねえな、よそ者。許可証を見せろ。";
 			link.l1 = "勘弁してくれよ！紙切れ一枚で人が商売できるかどうか決まるのか？高すぎるんだよ！ 俺は最近商売を始めたばかりだけど、もうすっかり夢中なんだ！通してくれたら、 あんたたち二人のことを店主にしっかり伝えておくからさ。";
-			link.l1.go = "mtraxx_10";
+			link.l1.go = "mtraxx_soldier_2";
 		break;
 		
 		case "mtraxx_soldier_2":

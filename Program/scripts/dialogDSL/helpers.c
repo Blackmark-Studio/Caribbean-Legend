@@ -71,3 +71,31 @@ string DLG_Abs(string input)
   if (strleft(input, 1) != "-") return input;
   return strcut(input, 1, strlen(input)-1);
 }
+
+string _DLG_DeclensionString(ref args)
+{
+  string form5 = DLG_HasArgument(args, 3) ? DLG_A(args, 3) : DLG_A2(args);
+  return DLG_A0(args) + " " + DLG_DeclensionForm(int(DLG_A0(args)), DLG_A1(args), DLG_A2(args), form5);
+}
+
+string DLG_DeclensionString(int num, string form1, string form2, string form5 = "")
+{
+  return num + " " + DLG_DeclensionForm(num, form1, form2, form5);
+}
+
+string DLG_DeclensionForm(int num, string form1, string form2, string form5 = "")
+{
+  if (form5 == "") form5 = form2;
+
+  int remainder = num % 100;
+  if (remainder >= 11 && remainder <= 14) return form5;
+
+  switch (num % 10) {
+    case 1: return form1; break;
+    case 2: return form2; break;
+    case 3: return form2; break;
+    case 4: return form2; break;
+  }
+
+return form5;
+}

@@ -1498,7 +1498,7 @@ int LocationInitCuracao(int n)
  	//Reload map
 	locations[n].reload.l1.name = "reload1";
 	locations[n].reload.l1.go = "Villemstad_ClockTower";
-	locations[n].reload.l1.emerge = "reload2";
+	locations[n].reload.l1.emerge = "reload1"; // ночью reload2 недоступен и багует, пока что выходим к двери https://tracker.yandex.ru/CARIBBEANLEGEND-1270
 	locations[n].reload.l1.autoreload = "0";
 	locations[n].reload.l1.label = "Office of Naval Registry";
 	n = n + 1;

@@ -21,7 +21,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				{
 					link.l1 = "Me diga, você viu o herói do dia, o Capitão Edgardo Sotta? Eu perdi ele, infelizmente. Como ele é? Não acredito que um mercador pegou o infame Tagarela Matt!";
 					link.l1.go = "Sotta1_1";
-					link.l2 = "Vejo que a cidade inteira está comemorando a captura do Lutter, até mesmo quem nunca vai ao mar."link.l2.go ="Lutter1_1";
+					link.l2 = "Vejo que a cidade inteira está comemorando a captura do Lutter, até mesmo quem nunca vai ao mar.";
+					link.l2.go ="Lutter1_1";
 				}
 			}
 			// <== квест "Путеводная звезда"

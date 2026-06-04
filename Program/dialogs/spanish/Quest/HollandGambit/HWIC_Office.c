@@ -417,20 +417,47 @@ void ProcessDialogEvent()
 		AddQuestRecordInfo("Unique_Goods", "3");
 		break;
 
-	// торговля шелком
+	// торговля шёлком
 	case "trade_silk":
-		dialog.text = "Claro, kapitein. Su seda le está esperando. ¿Está listo para pagarla?";
-		if (PCharDublonsTotal() >= 600)
-		{
-			link.l1 = "¡Claro! Aquí, toma seiscientos doblones.";
-			link.l1.go = "trade_silk_1";
-		}
-		else
-		{
-			link.l1 = "¡Maldita sea, he olvidado el dinero en mi barco. Lo traeré en un segundo!";
-			link.l1.go = "exit";
-		}
-		NextDiag.TempNode = "HWIC_Boss";
+			if (CheckAttribute(pchar, "questTemp.UpgradeSilk"))
+			{
+				dialog.text = "Por supuesto, capitán. La seda le está esperando. ¿Está listo para pagarla?";
+				if (PCharDublonsTotal() >= 2550)
+				{
+					link.l1 = "¡Por supuesto! Tome, aquí tiene 2550 doblones.";
+					link.l1.go = "trade_silk_1";
+				}
+				else
+				{
+					link.l1 = "Vaya contratiempo, se me olvidó el dinero en el barco. ¡Ahora mismo lo traigo!";
+					link.l1.go = "exit";
+				}
+			}
+			else
+			{
+				dialog.text = "Por supuesto, capitán. La seda le está esperando. ¿Está listo para pagarla?";
+				if (PCharDublonsTotal() >= 600)
+				{
+					link.l1 = "¡Por supuesto! Tome, aquí tiene seiscientos doblones.";
+					link.l1.go = "trade_silk_1";
+				}
+				else
+				{
+					link.l1 = "Vaya contratiempo, se me olvidó el dinero en el barco. ¡Ahora mismo lo traigo!";
+					link.l1.go = "exit";
+				}
+			}
+			if(sti(pchar.questTemp.GVIKSilk) >= 1 && !CheckAttribute(pchar, "questTemp.GVIKSilkBlock")) // aumentar el volumen de los suministros de seda
+			{
+				link.l4 = "Mijnheer "+npchar.name+", quisiera discutir la posibilidad de aumentar los suministros de seda.";
+				link.l4.go = "UpgradeSilk";
+			}
+			if(sti(pchar.questTemp.GVIKSilk) >= 1 && CheckAttribute(pchar, "questTemp.GVIKSilkPotom") && PCharDublonsTotal() >= 3000) // aumentar el volumen de los suministros de seda si no trajeron el dinero la primera vez
+			{
+				link.l4 = "He traído sus doblones, mijnheer "+npchar.name+". Tenga la bondad de recibirlos.";
+				link.l4.go = "UpgradeSilk_Agreed";
+			}
+			NextDiag.TempNode = "HWIC_Boss";
 		break;
 
 	case "trade_silk_1":
@@ -451,7 +478,79 @@ void ProcessDialogEvent()
 		SetFunctionTimerCondition("Silk_TraderAttrReturn", 0, 0, 1, false); // таймер
 		AddCharacterExpToSkill(pchar, "Commerce", 150);
 		NextDiag.TempNode = "HWIC_Boss";
-		break;
+	break;
+	
+	case "UpgradeSilk": //
+		if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 80)
+		{
+			dialog.text = "Valoro su enfoque comercial y estoy dispuesto a considerar su petición. Tal vez podríamos aumentar el volumen, digamos que cinco veces. Sin embargo, organizar tales suministros exigirá recursos considerables. Habrá que ampliar los almacenes, reforzar la guardia y garantizar rutas fiables para la entrega. Puesto que esto también le beneficia a usted, propongo que compartamos estos gastos.";
+			link.l1 = "Todo eso suena razonable. ¿Qué suma considera necesaria para cubrir esos gastos?";
+			link.l1.go = "UpgradeSilk_1";
+			Notification_Skill(true, 80, SKILL_COMMERCE);
+		}
+		else
+		{
+			dialog.text = "Comprendo su interés en aumentar los suministros, pero en esta etapa me resulta difícil aceptar tales cambios. No dudo de su deseo de prosperar, pero para tratos de esta clase se requiere mucha más experiencia en asuntos mercantiles y mayor seguridad en las propias acciones. Le sugiero que amplíe sus conocimientos en el arte de la negociación y luego vuelva a verme con una propuesta más concreta. Cuando esté listo, me alegrará fortalecer nuestra cooperación.";
+			link.l1 = "Hum... Está bien. Volveré a esta conversación más tarde.";
+			link.l1.go = "exit";
+			Notification_Skill(false, 80, SKILL_COMMERCE);
+		}
+		NextDiag.TempNode = "HWIC_Boss";
+	break;
+	
+	case "UpgradeSilk_1":
+		dialog.text = "Teniendo en cuenta todos los matices, su parte de los gastos será de tres mil doblones de oro. Estos fondos nos permitirán organizar sin demora todas las medidas necesarias.";
+		link.l1 = "Mijnheer "+npchar.name+", ¿tres mil doblones? ¿Es una broma? He venido a usted con una propuesta honrada, ¿y quiere que pague una suma tan fabulosa por organizar los suministros?";
+		link.l1.go = "UpgradeSilk_2";
+	break;
+	
+	case "UpgradeSilk_2":
+		dialog.text = "Le ruego que me entienda correctamente. No intento engañarle. Ese dinero es la suma que nos permitirá garantizar el debido orden en la organización de los suministros. No se trata solo de ampliar los almacenes y la guardia, sino también de asegurar la entrega de la mercancía sin retrasos ni pérdidas, pese a lo imprevisible de este negocio. Son gastos habituales para volúmenes semejantes. Al final, su inversión se justificará, y recibirá la mercancía en buen estado y a tiempo.";
+		link.l1 = "Sus explicaciones me tranquilizan un poco, mijnheer. Pero aun así la suma sigue siendo demasiado alta. Aceptaré sus condiciones si rebaja el precio al menos a dos mil quinientos doblones. Estoy seguro de que eso bastará para organizar los suministros y cumplir con todas las medidas de seguridad.";
+		link.l1.go = "UpgradeSilk_3";
+	break;
+	
+	case "UpgradeSilk_3":
+		dialog.text = "Comprendo que la suma es grande, pero, como ya he dicho, es necesaria para realizar el trabajo como es debido. No puedo rebajarla, porque eso pondría en peligro todos nuestros esfuerzos. Sin embargo, para que no sienta que le han engañado, estoy dispuesto a ofrecerle un descuento del quince por ciento en todos los suministros futuros. Espero que eso le permita compensar los gastos.";
+		if (PCharDublonsTotal() >= 3000)
+		{
+			link.l1 = "Hum, un descuento del quince por ciento es, desde luego, un paso en la dirección correcta. Está bien. Aceptaré su propuesta, aunque el precio me parezca extremadamente alto. Espero que nuestra cooperación cumpla mis expectativas. Aquí tiene su dinero.";
+			link.l1.go = "UpgradeSilk_Agreed";
+		}
+		link.l2 = "Mijnheer "+npchar.name+", su propuesta no me deja elección. Que sean tres mil doblones, aunque no sea una suma pequeña. Sin embargo, ahora no puedo pagarlo todo de una vez. Volveré en cuanto reúna el dinero.";
+		link.l2.go = "UpgradeSilk_5";
+		link.l3 = "¿Un descuento del quince por ciento? Mijnheer "+npchar.name+", no es lo que esperaba. ¡Esta suma no son simples gastos, sino un robo abierto y descarado! Pero no tengo intención de romper nuestras relaciones comerciales. Volveremos a las condiciones anteriores: 30 rollos de seda a 20 doblones cada uno.";
+		link.l3.go = "UpgradeSilk_4";
+	break;
+	
+	case "UpgradeSilk_Agreed":
+		dialog.text = "Me alegra que haya aceptado, "+pchar.name+". Ahora, en cuanto a los detalles: 150 rollos de seda a 17 doblones cada uno. En total, 2550 doblones por toda la partida. Podrá recoger la mercancía como siempre: los días 1 y 15 de cada mes. Creo que este trato traerá buenos beneficios para ambas partes.";
+		link.l1 = "¡Excelente! Esto ya es un volumen respetable. Que le vaya bien, mijnheer. Nos veremos pronto.";
+		link.l1.go = "exit";
+		NextDiag.TempNode = "HWIC_Boss";
+		RemoveDublonsFromPCharTotal(3000);
+		AddQuestRecordInfo("Unique_Goods", "3_1");
+		pchar.questTemp.UpgradeSilk = true;
+		pchar.questTemp.GVIKSilkBlock = true;
+		DeleteAttribute(pchar, "questTemp.GVIKSilkPotom");
+	break;
+	
+	case "UpgradeSilk_4":
+		dialog.text = "No es más que un enfoque comercial, y en absoluto un robo, como quizá le haya parecido. Pero como guste. Venga como siempre, los días 1 y 15, por la partida de seda; me alegrará cerrar un nuevo trato.";
+		link.l1 = "Sin falta, mijnheer. Que le vaya bien.";
+		link.l1.go = "exit";
+		pchar.questTemp.GVIKSilkBlock = true;
+		NextDiag.TempNode = "HWIC_Boss";
+	break;
+	
+	case "UpgradeSilk_5":
+		dialog.text = "Me alegra que haya tomado la decisión correcta. En cuanto traiga el dinero, discutiremos todos los detalles del trato y procederemos a ponerlo en marcha.";
+		link.l1 = "Hasta la vista, mijnheer "+npchar.name+". Nos veremos en cuanto reúna la suma necesaria.";
+		link.l1.go = "exit";
+		pchar.questTemp.GVIKSilkBlock = true;
+		pchar.questTemp.GVIKSilkPotom = true;
+		NextDiag.TempNode = "HWIC_Boss";
+	break;
 
 	case "fight":
 		DialogExit();

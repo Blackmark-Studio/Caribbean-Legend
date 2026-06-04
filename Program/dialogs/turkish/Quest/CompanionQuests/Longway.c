@@ -1262,7 +1262,8 @@ void ProcessDialogEvent()
 			pchar.questTemp.PZ_Batavia_plantation_Go = true;
 			
 			dialog.text = "Güzel seçim! Etkilendim. Bundan en iyi şekilde yararlanmak için iyi bir ateşli silaha ihtiyacın olacak. Söyle bakalım, Chang Tu, ne kadar uzağa nişan alabilirsin?";
-			link.l1 = "Doğrusunu söylemek gerekirse... çok uzağa değil, ıskalamamalıyım."link.l1.go ="PZ_OliverTrust_Plantation_MediumDistance1";
+			link.l1 = "Doğrusunu söylemek gerekirse... çok uzağa değil, ıskalamamalıyım.";
+			link.l1.go ="PZ_OliverTrust_Plantation_MediumDistance1";
 			link.l2 = "Uzaklardan saldıracağım - düşmanım ona nereden vurduğumu bile anlamayacak.";
 			link.l2.go = "PZ_OliverTrust_Plantation_FarDistance1";
 			notification(GetConvertStr("Sniper", "AbilityDescribe.txt")+" Unlocked", "Longway");
@@ -7682,7 +7683,8 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
 			{
 				dialog.text = "Kim bilir aklından ne geçiyor, Charles? Gözünü dört aç, di mi?";
-				link.l1 = "Geleceğim. Yakında döneceğim, Helen."link.l1.go ="PZ_Etap6_NaBeregu_DevaBolnaya_7";
+				link.l1 = "Geleceğim. Yakında döneceğim, Helen.";
+				link.l1.go ="PZ_Etap6_NaBeregu_DevaBolnaya_7";
 			}
 		break;
 		

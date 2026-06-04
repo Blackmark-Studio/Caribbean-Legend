@@ -21,7 +21,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				{
 					link.l1 = "Sagen Sie, haben Sie den Helden des Tages, Kapitän Edgardo Sotta, gesehen? Ich habe ihn leider verpasst. Wie ist er so? Ich kann nicht glauben, dass ein Kaufmann den berüchtigten Schwätzer Matt gefangen hat!";
 					link.l1.go = "Sotta1_1";
-					link.l2 = "Ich sehe, die ganze Stadt feiert Lutters Gefangennahme, sogar diejenigen, die nie zur See fahren."link.l2.go ="Lutter1_1";
+					link.l2 = "Ich sehe, die ganze Stadt feiert Lutters Gefangennahme, sogar diejenigen, die nie zur See fahren.";
+					link.l2.go ="Lutter1_1";
 				}
 			}
 			// <== квест "Путеводная звезда"

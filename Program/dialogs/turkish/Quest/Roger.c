@@ -3353,7 +3353,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "spy_sailor_1":
-            dialog.text = "Evet, kaptan. Üç gemi var. Amiral gemileri bir kalyon, şimdiye kadar gördüğüm en büyüklerinden, hem de hızlı ilerliyor. Diğer ikisi ise bir korvet ve bir şebek.";
+			Mtraxx_IgnasioRandomShips();
+			string ship1 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.flagman)].name));
+			string ship2 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.first)].name));
+			string ship3 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.second)].name));
+			dialog.text = "Evet, kaptan. Uc gemi. Amiral gemisi " + ship1 + ", diger ikisi ise " + ship2 + " ve " + ship3 + ".";
 			link.l1 = "Herkes güverteye. Hâlâ kaçma şansımız olabilir.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_IgnasioOurEscape");

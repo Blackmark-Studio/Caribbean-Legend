@@ -15,6 +15,13 @@ void ProcessDialogEvent()
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
 	
+
+	if (FindStringBeforeChar(Dialog.CurrentNode, "$") == "relation")
+	{
+		pchar.GenQuest.FadeyNation = FindStringAfterChar(Dialog.CurrentNode, "$");
+		Dialog.CurrentNode = "relation";
+	}
+	
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
@@ -1109,7 +1116,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_6":
-			dialog.text = "Mein lieber naiver Freund, wenn die Ohren des Priesters wirklich gegen Gewissensbekenntnisse taub sind, dann werden sicherlich seine Hände für Gold offen sein... Oder andersherum. Ich werde dir helfen, ich denke, dass es größere Probleme verursachen wird, wenn wir einen solch befleckten Schatz hier behalten. Es wird jedoch bestimmte Ausgaben erfordern."link.l1 ="Warum bin ich nicht überrascht? Wie viel diesmal?";
+			dialog.text = "Mein lieber naiver Freund, wenn die Ohren des Priesters wirklich gegen Gewissensbekenntnisse taub sind, dann werden sicherlich seine Hände für Gold offen sein... Oder andersherum. Ich werde dir helfen, ich denke, dass es größere Probleme verursachen wird, wenn wir einen solch befleckten Schatz hier behalten. Es wird jedoch bestimmte Ausgaben erfordern.";
+			link.l1 ="Warum bin ich nicht überrascht? Wie viel diesmal?";
 			link.l1.go = "guardoftruth_7";
 		break;
 		
@@ -1464,14 +1472,14 @@ void ProcessDialogEvent()
 			if (ChangeCharacterNationReputation(pchar, ENGLAND, 0) < 0 && !CheckAttribute(npchar, "quest.relation"))
 			{
 				link.l1 = "Ich habe ein Problem mit den englischen Behörden.";
-				link.l1.go = "relation";
-				pchar.GenQuest.FadeyNation = ENGLAND;
+				link.l1.go = "relation$" + ENGLAND;
+	
 			}
 			if (ChangeCharacterNationReputation(pchar, FRANCE, 0) < 0 && !CheckAttribute(npchar, "quest.relation"))
 			{
 				link.l2 = "Ich habe Ärger mit den französischen Behörden bekommen.";
-				link.l2.go = "relation";
-				pchar.GenQuest.FadeyNation = FRANCE;
+				link.l2.go = "relation$" + FRANCE;
+	
 			}
 			if (ChangeContrabandRelation(pchar, 0) <= 5)
             {

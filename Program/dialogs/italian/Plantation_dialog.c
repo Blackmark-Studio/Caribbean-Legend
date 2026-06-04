@@ -372,7 +372,7 @@ void ProcessDialogEvent()
 		case "mtraxx_soldier_1":
             dialog.text = "Non sembri un mercante, straniero. Mostra la tua licenza.";
 			link.l1 = "Risparmiatemi! Un pezzo di carta decide se una persona può commerciare o no? Sono troppo costosi! Ho iniziato a commerciare solo recentemente, ma è già diventata la mia passione! Lasciatemi passare, e mi assicurerò di parlare bene di voi due al proprietario.";
-			link.l1.go = "mtraxx_10";
+			link.l1.go = "mtraxx_soldier_2";
 		break;
 		
 		case "mtraxx_soldier_2":

@@ -1074,6 +1074,7 @@ void ProcessDialogEvent()
 			else
 			{
 				link.l1 = "Ich will nicht lügen – ich weiß es nicht.";
+				link.l1.go = "OldSailor_9_1";
 				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;

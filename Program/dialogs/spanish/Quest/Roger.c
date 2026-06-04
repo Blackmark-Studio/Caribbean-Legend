@@ -3371,7 +3371,11 @@ void ProcessDialogEvent()
 		break;
 
 	case "spy_sailor_1":
-		dialog.text = "Sí, capitán. Tres barcos. Su buque insignia es un galeón, el más grande que jamás haya visto y se mueve rápido, los otros dos son una corbeta y un jabeque.";
+		Mtraxx_IgnasioRandomShips();
+		string ship1 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.flagman)].name));
+		string ship2 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.first)].name));
+		string ship3 = LowerFirst(xiStr(ShipsTypes[int(pchar.questTemp.Mtraxx.spanishShip.second)].name));
+		dialog.text = "Sí, capitán. Tres barcos. El buque insignia es " + ship1 + ", los otros dos son " + ship2 + " y " + ship3 + ".";
 		link.l1 = "Todos a bordo.  Todavía podríamos estar en posición de huir.";
 		link.l1.go = "exit";
 		AddDialogExitQuestFunction("Mtraxx_IgnasioOurEscape");

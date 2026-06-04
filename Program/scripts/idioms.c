@@ -1233,3 +1233,19 @@ string CasedName(string name, string caseName, string sex = "M")
 	if (res == "") res = GetConvertStr(name + caseName, "nameCases.txt"); // пытаемся без пола
 	return res == "" ? name : res;                                        // не склоняется
 }
+
+string FindRussianCannonString(int num, string sCase)
+{
+	if (LanguageGetLanguage() != "russian") return num + " " + xiStr("Cannons");
+
+	switch(sCase)
+	{
+		case "No":
+				return DLG_DeclensionString(num, "пушка", "пушки", "пушек");
+		break;
+
+		case "Acc":
+			return DLG_DeclensionString(num, "пушки", "пушек");
+		break;
+	}
+}

@@ -1262,7 +1262,8 @@ void ProcessDialogEvent()
 			pchar.questTemp.PZ_Batavia_plantation_Go = true;
 			
 			dialog.text = "¡Buena elección! Estoy impresionado. Para sacarle el máximo provecho, necesitarás una buena arma de fuego. Dime, ¿hasta dónde puedes apuntar, Chang Tu?";
-			link.l1 = "Para ser honesto... no muy lejos, debo asegurarme de no fallar."link.l1.go ="PZ_OliverTrust_Plantation_MediumDistance1";
+			link.l1 = "Para ser honesto... no muy lejos, debo asegurarme de no fallar.";
+			link.l1.go ="PZ_OliverTrust_Plantation_MediumDistance1";
 			link.l2 = "Atacaré desde lejos - mi enemigo ni siquiera se dará cuenta de dónde lo golpeé.";
 			link.l2.go = "PZ_OliverTrust_Plantation_FarDistance1";
 			notification(GetConvertStr("Sniper", "AbilityDescribe.txt") +" Unlocked", "Longway");

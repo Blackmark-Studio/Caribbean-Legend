@@ -173,7 +173,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.LSC.parol_nrv = "true";
 		break;
 		
-		case "Rcheck_parol_wrong":
+		case "check_parol_wrong":
 			dialog.text = "Hm... Les gars ! Nous avons de la compagnie !";
 			link.l1 = "Merde !";
 			link.l1.go = "check_parol_fight";

@@ -3850,7 +3850,8 @@ void ProcessDialogEvent()
 
 		case "WildRose_Chimiset_64_2":
 			dialog.text = "My friend, mind and body are things of completely different orders. The mind rules the body, and sometimes the body tries to take control of the mind. They're closely connected, but they're not truly one and the same. A person may look perfectly healthy on the outside, but their soul may already be walking the path of death.";
-			link.l1 = "You know, it occurred to me that Orelie seemed to be waiting for us, like she knew we’d come to her. The old woman could have died a day earlier or later, but it happened almost right after she told us something important about Mary’s father."link.l1.go ="WildRose_Chimiset_65";
+			link.l1 = "You know, it occurred to me that Orelie seemed to be waiting for us, like she knew we’d come to her. The old woman could have died a day earlier or later, but it happened almost right after she told us something important about Mary’s father.";
+			link.l1.go ="WildRose_Chimiset_65";
 			AddCharacterExpToSkill(pchar, "sneak", 100);
 		break;
 

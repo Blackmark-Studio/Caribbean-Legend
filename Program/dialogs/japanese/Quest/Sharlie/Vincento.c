@@ -38,7 +38,8 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth.Archy") && pchar.questTemp.Guardoftruth.Archy == "begin")
 			{
 				dialog.text = "パックス・ヴォビスクム、息子よ……何かご用かな？";
-				link.l1 = TimeGreeting()+"、閣下。私たちの取り決めについて何かご報告はございますか？"link.l1.go ="guardoftruth_17";
+				link.l1 = TimeGreeting()+"、閣下。私たちの取り決めについて何かご報告はございますか？";
+				link.l1.go ="guardoftruth_17";
 				break;
 			}
 			dialog.text = "何か用かい、息子よ？";

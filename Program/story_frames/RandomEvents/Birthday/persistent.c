@@ -93,7 +93,7 @@ void _Birthday_End(string temp = "")
 	SetOfficersInCampusToNone();
 	int idxLoadLoc = FindLoadedLocation();
 	if (idxLoadLoc != -1) UnloadLocation(&Locations[idxLoadLoc]);
-	WdmReloadStart(false);
+	wdmReloadToSea();
 	RecalculateJumpTable();
 	RefreshWeather();
 	RefreshLandTime();

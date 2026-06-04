@@ -55,7 +55,7 @@ void ProcessDialogEvent()
 			else
 			{
 				// eddy. проверяем, не казачок ли. -->
-				if (GetRelation2BaseNation(sti(npchar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+				if (GetRelation2BaseNation(sti(npchar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE && STH_GetColonyStatus(NPChar.City) != STH_LEGAL)
 				{
 					dialog.text = RandPhraseSimple("Quem é você e o que está fazendo aqui?","Fique parado! Quem é você? Por que está tentando entrar no forte?");
 					//==> по лицензии
@@ -416,7 +416,7 @@ void ProcessDialogEvent()
 			dialog.text = RandPhraseSimple("Me parece que isso é algum tipo de trapaça. Vamos falar com o comandante, "+GetSexPhrase("companheiro","querida")+", e descobrir tudo isso...","Hmm... Algo me diz que você não é quem diz ser... Entregue sua arma "+GetAddress_Form(npchar)+", e me siga para uma investigação mais detalhada!");
 			link.l1 = RandPhraseSimple("Vai se ferrar!","Quando dois domingos caem na mesma semana...");
 			link.l1.go = "fight";
-			if (sti(pchar.questTemp.stels.landFort) != GetDataDay())
+			if (GetAttributeInt(pchar, "questTemp.stels.landFort") != GetDataDay())
 			{
 				AddCharacterExpToSkill(pchar, SKILL_SNEAK, 40);
 				pchar.questTemp.stels.landFort = GetDataDay();
@@ -426,7 +426,7 @@ void ProcessDialogEvent()
 			dialog.text = RandPhraseSimple("Ah, entendi... Está tudo certo, pode ir, "+GetAddress_Form(pchar)+".","Devo ter ficado um pouco cansado de ficar de vigia... Parece que está tudo bem, "+GetAddress_Form(pchar)+", me desculpe.");
 			link.l1 = "Sem problema!";
 			link.l1.go = "exit";
-			if (sti(pchar.questTemp.stels.landFort) != GetDataDay())
+			if (GetAttributeInt(pchar, "questTemp.stels.landFort") != GetDataDay())
 			{
 				AddCharacterExpToSkill(pchar, SKILL_SNEAK, 80);
 				pchar.questTemp.stels.landFort = GetDataDay();

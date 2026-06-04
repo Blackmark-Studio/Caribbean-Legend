@@ -235,7 +235,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "내가 누구에 대해 말하는지 아나? 나는 레드 메리를 공격하고 그녀를 죽인 그 두 명의 나르발에 대해 말하고 있지."link.l1.go ="negotiations_6";
+				link.l1 = "내가 누구에 대해 말하는지 아나? 나는 레드 메리를 공격하고 그녀를 죽인 그 두 명의 나르발에 대해 말하고 있지.";
+				link.l1.go ="negotiations_6";
 			}
 		break;
 		

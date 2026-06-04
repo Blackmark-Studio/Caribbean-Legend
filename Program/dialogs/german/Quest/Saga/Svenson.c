@@ -1659,7 +1659,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trade_bakaut_1":
-			RemoveDublonsFromPCharTotal(750);
+			if (CheckAttribute(pchar, "questTemp.UpgradeBakaut")) RemoveDublonsFromPCharTotal(3150);
+			else RemoveDublonsFromPCharTotal(750);
 			Log_Info("Du hast 750 Dublonen gegeben");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Lobenswert. Ich werde meinen Leuten befehlen, das Eisenholz auf dein Schiff zu bringen.";
@@ -1671,7 +1672,8 @@ void ProcessDialogEvent()
 			dialog.text = "Wenn du mehr kaufen möchtest, komm in zwei Wochen zurück. Bis dahin werde ich eine weitere Charge zusammengestellt haben.";
 			link.l1 = "In Ordnung, Jan. Bis zum nächsten Mal!";
 			link.l1.go = "exit";
-			AddCharacterGoods(pchar, GOOD_SANDAL, 25);
+			if (CheckAttribute(pchar, "questTemp.UpgradeBakaut")) AddCharacterGoods(pchar, GOOD_SANDAL, 125);
+			else AddCharacterGoods(pchar, GOOD_SANDAL, 25);
 			DeleteAttribute(npchar, "quest.trade_bakaut");
 			SetFunctionTimerCondition("Bakaut_SvensonAttrReturn", 0, 0, 1, false); // таймер
 			AddCharacterExpToSkill(pchar, "Commerce", 100);

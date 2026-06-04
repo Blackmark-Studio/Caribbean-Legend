@@ -1505,7 +1505,7 @@ void RepairOk()
 	if (RepairSail > 0)
 	{
 	  	timeRig = timeRig + RepairSail * (9-GetCharacterShipClass(refCharacter));
-		AddCharacterExpToSkill(pchar, "Repair", GetExpForRepair(refCharacter, RepairSail, "sail"));
+		AddCharacterExpToSkill(pchar, "Repair", GetExpForRepair(refCharacter, RepairSail, "sails"));
 		AddMoneyToCharacter(pchar,-GetSailRepairCost(st, RepairSail, refNPCShipyard));
 
 		ret = ProcessSailRepair(refCharacter, stf(RepairSail));
@@ -1542,7 +1542,7 @@ void RepairOk()
 void RepairAll()
 {
 	CheckButton_SetState("CHECKBOX_SAILS", 1, true);
-    ClickRepairArror("sail", 100);
+    ClickRepairArror("sails", 100);
     ClickRepairArror("hull", 100);
 }
 

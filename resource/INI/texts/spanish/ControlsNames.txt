@@ -125,6 +125,7 @@ HK_grenade {Cargar arma de fuego con una granada (modificador)}
 HK_GunEchin {Cargar clavos (modificador)}
 HK_harpoon {Cargar punta de arpón (modificador)}
 hk_ImmediateReload {Activar habilidad "Recarga preliminar"}
+hk_FireMode {Cambiar modo de disparo}
 hk_InstantRepair {Activar habilidad "Reparación rápida"}
 hk_LightRepair {Activar habilidad "Reparación ligera"}
 hk_Mine {Soltar mina}

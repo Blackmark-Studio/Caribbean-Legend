@@ -125,6 +125,7 @@ HK_grenade {Granate laden (Modifikator)}
 HK_GunEchin {Igel-Ladung laden (Modifikator)}
 HK_harpoon {Pfeil laden (Modifikator)}
 hk_ImmediateReload {Sofortiges Nachladen}
+hk_FireMode {Feuermodus ändern}
 hk_InstantRepair {Reparieren}
 hk_LightRepair {Notreparatur}
 hk_Mine {Mine abwerfen}

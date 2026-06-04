@@ -101,6 +101,12 @@ void ProcessDialogEvent()
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_Meeting_2";
 		break;
+
+		case "DiegoDeLanda_Meeting_Fourth_2":
+			dialog.text = "\nC’est exact, capitaine. Le troisième acte commence.";
+			link.l1 = "...";
+			link.l1.go = "DiegoDeLanda_Meeting_2";
+		break;
 		//<-- Встреча
 		
 		//--> Святое Милосердие

@@ -886,25 +886,19 @@ void HKT_Button(string sHKB) // быстрый переход
 	if (chrDisableReloadToLocation) bOk = false;
 	if (sHKB != "Fast_port" && !CheckFastJump(Locations[curLocIdx].id, sCityID + locID)) bOk = false;
 	if (sHKB == "Fast_port" && !CheckFastJump(Locations[curLocIdx].id, pchar.location.from_sea)) bOk = false;
+	bool enemyCity = false;
 	if (!bBettaTestMode && bOk && !CheckAttribute(pchar, "Cheats.LocTeleport")) // проверка города на враждебность
 	{
 		string sNation = Colonies[FindColony(loadedLocation.fastreload)].nation;
 		if (sNation != "none")
 		{
 			i = sti(sNation);
-			bOk = (GetNationRelation2MainCharacter(i) == RELATION_ENEMY) || GetRelation2BaseNation(i) == RELATION_ENEMY;
-			if (bOk && (i != PIRATE))
-			{
-				bOk = false;
-			}
-			else
-			{
-				bOk = true;
-			}
+			enemyCity = (GetNationRelation2MainCharacter(i) == RELATION_ENEMY) || GetRelation2BaseNation(i) == RELATION_ENEMY;
+			if (i == PIRATE) enemyCity = false;
+			else if (STH_IsEnableFastReload(sCityID)) enemyCity = false;
 		}
-		if(CheckNationLicence(HOLLAND)) bOk = true;
 	}
-	// <--
+	if (enemyCity) bOk = false;
 
 	if (GetAttributeInt(pchar, "WeightLoadLevel") > OVERLOAD_NONE)
 	{
@@ -913,7 +907,6 @@ void HKT_Button(string sHKB) // быстрый переход
 		return;
 	}
 
-	if (STH_IsEnableFastReload(sCityID)) bOk = true;
 	if(bOk)
 	{
 		if (sHKB == "Fast_port")

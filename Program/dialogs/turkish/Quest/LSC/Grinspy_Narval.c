@@ -235,7 +235,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "Kimden mi bahsediyorum? Kırmızı Mary'ye yapılan saldırıdan ve onu öldüren o iki Narval'dan bahsediyorum."link.l1.go ="negotiations_6";
+				link.l1 = "Kimden mi bahsediyorum? Kırmızı Mary'ye yapılan saldırıdan ve onu öldüren o iki Narval'dan bahsediyorum.";
+				link.l1.go ="negotiations_6";
 			}
 		break;
 		

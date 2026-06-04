@@ -235,7 +235,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "Who am I talking about? I am talking about the attack on Red Mary and those two Narwhals who killed her."link.l1.go ="negotiations_6";
+				link.l1 = "Who am I talking about? I am talking about the attack on Red Mary and those two Narwhals who killed her.";
+				link.l1.go ="negotiations_6";
 			}
 		break;
 		

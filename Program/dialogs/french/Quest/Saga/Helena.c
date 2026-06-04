@@ -2072,8 +2072,9 @@ void ProcessDialogEvent()
 			dialog.text = "Oui. Tous les barons ont directement dit à mon père qu'il était un imbécile, mais c'est le Diable de la Forêt qui lui a donné son approbation et lui a serré la main après que j'ai battu le record de l'équipage en grimpant au mât. Ce moment restera avec moi pour toujours : les cris triomphants de l'équipage et, partout où je regardais, l'horizon marin dégagé. Et le regard approbateur de mon père, je ne pouvais pas le voir, mais je le sentais de tout mon cœur.";
 			link.l1 = "Mon triomphe s'est terminé quand je suis tombée du gréement le premier jour en route vers la Guadeloupe.";
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.TakeFolke")) {
-				link.l1 = link.l1+" Mon timonier, Deluc, avait aussi un regard très révélateur."}
-			link.l1.go ="boire_mon_histoire_7";
+				link.l1 = link.l1+" Mon timonier, Deluc, avait aussi un regard très révélateur."
+			}
+			link.l1.go = "drinking_my_background_7";
 		break;
 		
 		case "drinking_my_background_7":

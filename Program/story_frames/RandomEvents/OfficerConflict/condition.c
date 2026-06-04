@@ -15,7 +15,7 @@ bool SF_InitConditions(ref context, ref situation, bool fromStory = false)
 	situation.a.a = 20;
 	situation.a.b = 20;
 
-	ref prisoner = _RE_GetRandomPrisoner();
+	ref prisoner = fromStory ? _RE_GetRandomPrisoner("SF_Rand") : _RE_GetRandomPrisoner();
 	if (prisoner != nullptr)
 	{
 		context.prisonerId = prisoner.id;
@@ -28,14 +28,14 @@ bool SF_InitConditions(ref context, ref situation, bool fromStory = false)
 	return true;
 }
 
-
-ref _RE_GetRandomPrisoner()
+ref _RE_GetRandomPrisoner(string randMethod = "rand")
 {
 	int prisonerIds[] = {};
 	FillAllPrisonersIndexes(&prisonerIds);
 	int prisonersQty = GetArraySize(&prisonerIds);
 	if (prisonersQty == 0) return nullptr;
 
-	return GetCharacterSafe(prisonerIds[SF_Rand(prisonersQty-1)]);
+	int randIdx = call randMethod(prisonersQty-1);
+	return GetCharacterSafe(prisonerIds[randIdx]);
 }
 

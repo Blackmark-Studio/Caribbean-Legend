@@ -21,7 +21,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				{
 					link.l1 = "Powiedz mi, czy widziałeś bohatera dnia, kapitana Edgardo Sottę? Niestety, przegapiłem go. Jaki on jest? Nie mogę uwierzyć, że kupiec złapał niesławnego Gadający Wicher Matta!";
 					link.l1.go = "Sotta1_1";
-					link.l2 = "Widzę, że całe miasto świętuje pojmanie Luttera, nawet ci, którzy nigdy nie chodzą na morze."link.l2.go ="Lutter1_1";
+					link.l2 = "Widzę, że całe miasto świętuje pojmanie Luttera, nawet ci, którzy nigdy nie chodzą na morze.";
+					link.l2.go ="Lutter1_1";
 				}
 			}
 			// <== квест "Путеводная звезда"

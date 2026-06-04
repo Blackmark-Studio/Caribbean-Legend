@@ -230,7 +230,6 @@ void InitCannons()
 	rCannon.Weight = 80;
 	rCannon.FireAngMax = 0.60;
 	rCannon.FireAngMin = -0.45;
-	rCannon.DamageMultiply = 10.0;
 	rCannon.TimeSpeedMultiply = 1.0;
 	rCannon.BigBall = 0;
 	rCannon.SizeMultiply = 1.0;
